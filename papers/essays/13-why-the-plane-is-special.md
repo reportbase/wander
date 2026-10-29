@@ -18,7 +18,8 @@ The reader of these essays lives mostly in the plane: one other party, across an
 other. The fifth essay added a second party and found that most of what mattered survived. This essay asks the sharper
 question. Of everything the reader has in the plane, what is a fact about readers, and what is a fact about the plane?
 
-*Demos: `central-reader.html` (step 5, a reader off the centre of a circle: its uniform turn lands unevenly, and the
+*Demos: `plane-sphere.html` (the four parts as one curve in the plane and three on the sphere, walkers released at the
+standpoint, and a book turned two ways); `central-reader.html` (step 5, a reader off the centre of a circle: its uniform turn lands unevenly, and the
 landing, doubled less the uniform, is harmonic measure); `one-read.html` (the landing point ½e^(2iθ) and the Cayley
 disc); `boost-sky.html` (a sky seen under a boost: the spherical Cauchy); `wedge.html` (step 7, position, then sweep);
 `sphere-cube.html` (step 7, the two sweeps).*

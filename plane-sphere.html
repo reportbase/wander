@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Why the plane is special</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    plane-sphere.html: why the plane is special (29 October 2026; Tom: "What's next", then "Yes" to "a demo for essay 13";
+    SPN R583; essay 13, `papers/essays/13-why-the-plane-is-special.md`; EUL, `plans/eul-plan.md` + `runs/eul/eul.py`).
+    A standalone page, plain canvas, no libraries. Three panels:
+      1. The plane, one law in four parts. A reader at z inside the unit circle (drag it). Its uniform turn lands unevenly
+         (L); harmonic measure from z (P, where a walker released at z first meets the circle); the Möbius image of the
+         uniform law, computed here from the map itself, not from a formula; and 2L less the uniform. The last three are one
+         curve. The mean of e^(iφ) under P is z; the landings' centroid z/2.
+      2. The sphere, three laws. The same reader inside the unit ball, on the axis at r. Harmonic measure
+         (1 − r²)/(4π(1 + r² − 2rt)^(3/2)), its mean r; the spherical Cauchy (the uniform law under a boost, ρ = tanh(η/2)),
+         computed by pushing the uniform through the boost, its mean coth η − η/sinh² η; the nearest harmonic measure to it
+         and the best a·L + b, neither equal (EUL's E5b, E5c, E6, on the same 401-point grid).
+      3. Turns. Two quarter turns of the plane in either order end in one place; two of space (about x, then y) in two.
+    Walkers: walk-on-spheres from z, in the disc and in the ball, histogrammed against harmonic measure.
+    `?r=&beta=<degrees>&a=<degrees>&walk=1`; hook `window.__plane` (`plane`, `planeMeans`, `sphere`, `sphereMean`, `bestR`,
+    `fitL`, `boostCheck`, `turnGap`, `walk`, `set`, `state`).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 20px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15;
+        overflow-x: auto }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Why the plane is special</h1>
+    <p class="lede">In the plane, the reader's Cauchy plays four parts at once: the <span class="g">uniform turn carried by a
+    Möbius map</span>, <span class="r">where a random walker from the standpoint lands</span> (harmonic measure), the law whose
+    averages are <span class="b">the powers of the standpoint</span>, and <span class="w">the two sweeps' rates combined</span>.
+    In space those parts come apart into separate laws, and turns stop commuting. Move the standpoint and watch one curve in
+    the plane become several on the sphere.</p>
+
+    <div class="panel">
+        <div class="row"><label for="r">standpoint's distance from the centre, r (and ρ)</label>
+            <input id="r" type="range" min="0" max="0.95" step="0.01" value="0.5"><span id="rv" class="b"></span>
+            <button id="walk">release 4,000 walkers</button></div>
+    </div>
+
+    <div class="panel">
+        <h2>The plane: one law</h2>
+        <div class="grid">
+            <div><canvas id="cv1" height="400"></canvas><p class="cap">A reader at <span class="b">z</span> inside the unit
+            circle (drag it). Faint rays: its uniform turn, landing unevenly (<span class="w">violet</span> ticks, their
+            centroid the violet dot, z/2). <span class="r">Teal</span> band: harmonic measure from z, where a walker released
+            at z first meets the circle; its mean point is the <span class="g">gold</span> dot, exactly z.</p></div>
+            <div><canvas id="cv2" height="400"></canvas><p class="cap">Density round the circle against the angle from z's
+            side, times 2π (the uniform law is 1). <span class="r">Teal</span>: harmonic measure. <span class="g">Gold
+            dashes</span>: the uniform law pushed through the Möbius map that takes the centre to z, computed from the map.
+            <span class="w">Violet dots</span>: 2L − 1, twice the landing less the uniform. Grey: the landing L itself. The
+            first three are one curve.</p></div>
+        </div>
+        <div class="read" id="r1"></div>
+    </div>
+
+    <div class="panel">
+        <h2>The sphere: three laws</h2>
+        <div class="grid">
+            <div><canvas id="cv3" height="400"></canvas><p class="cap">The same reader inside the unit ball, on the axis at
+            distance r. Density on the sphere against the angle χ from the axis, times 4π. <span class="r">Teal</span>:
+            harmonic measure from the reader. <span class="g">Gold</span>: the spherical Cauchy at ρ = r, the uniform sky
+            under a boost of rapidity η = 2·artanh ρ, pushed through the boost here. Thin dashes: the nearest harmonic
+            measure to the gold, and (<span class="w">violet</span>) the best a·L + b. Grey: the landing L.</p></div>
+            <div class="read" id="r2"></div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>Turns: the plane's take turns, space's do not</h2>
+        <div class="row"><label for="a">each turn</label><input id="a" type="range" min="0" max="180" step="1" value="90">
+            <span id="av" class="b"></span></div>
+        <div class="grid">
+            <div><canvas id="cv4" height="300"></canvas><p class="cap">The plane: an arrow turned by a and then by a/2
+            (<span class="g">gold</span>), and by a/2 and then by a (<span class="r">teal</span>). One place.</p></div>
+            <div><canvas id="cv5" height="300"></canvas><p class="cap">Space: a book turned by a about x and then about y
+            (<span class="g">gold</span>), and about y and then about x (<span class="r">teal</span>), from where it started
+            (grey). Two places, unless a is 0 or the turns share an axis.</p></div>
+        </div>
+        <div class="read" id="r3"></div>
+    </div>
+
+    <p class="note">What survives in space: a point is still an amount times a direction, and scaling the world moves only
+    the amount; every pair of parties keeps its corner; from home, at the centre of the directions, all three laws are the
+    uniform one, so the wedge's results stand. What is the plane's alone: one law for the turn, the walker and the powers,
+    and turns that add. Essay: <code>papers/essays/13-why-the-plane-is-special.md</code>; numbers: EUL. Other demos:
+    <a href="central-reader.html?step=5">off the centre</a>, <a href="one-read.html">one turn, one read</a>,
+    <a href="boost-sky.html">sampling a boosted sky</a>, <a href="wedge.html?step=7">position, then sweep</a>.</p>
+</main>
+<script>
+(() => {
+'use strict';
+const TAU = 2 * Math.PI;
+const q = new URLSearchParams(location.search);
+const st = { r: +(q.get('r') ?? 0.5), beta: (+(q.get('beta') ?? 30)) * Math.PI / 180, a: +(q.get('a') ?? 90), walk: null };
+st.r = Math.min(0.95, Math.max(0, st.r));
+
+// ── the plane ──
+// harmonic measure of the unit circle from z = r e^{iβ}, at e^{iφ}: (1 − r²)/(2π|e^{iφ} − z|²)
+const P2 = (r, c) => (1 - r * r) / (TAU * (1 + r * r - 2 * r * c));
+// the landing of a uniform turn from z: (1/2π)·d arg(u − z)/dφ = Re(u/(u − z))/2π
+const L2 = (r, c) => (1 - r * c) / (TAU * (1 + r * r - 2 * r * c));
+// the uniform law pushed through the disc's Möbius map w ↦ (w + ρ)/(1 + ρw), measured from the map by a central
+// difference of the inverse map's argument (no closed form used)
+function mobius2(rho, phi) {
+    const inv = p => { const ux = Math.cos(p), uy = Math.sin(p);           // (u − ρ)/(1 − ρu)
+        const nx = ux - rho, ny = uy, dx = 1 - rho * ux, dy = -rho * uy, d = dx * dx + dy * dy;
+        return Math.atan2((ny * dx - nx * dy) / d, (nx * dx + ny * dy) / d); };
+    const h = 1e-5; let dpsi = inv(phi + h) - inv(phi - h);
+    if (dpsi < -Math.PI) dpsi += TAU; if (dpsi > Math.PI) dpsi -= TAU;
+    return dpsi / (2 * h) / TAU;
+}
+function plane(r, n = 721) {
+    let dM = 0, d2L = 0;
+    for (let i = 0; i < n; i++) {
+        const phi = Math.PI * i / (n - 1), c = Math.cos(phi), p = P2(r, c);
+        dM = Math.max(dM, Math.abs(mobius2(r, phi) - p) * TAU);
+        d2L = Math.max(d2L, Math.abs(2 * L2(r, c) - 1 / TAU - p) * TAU);
+    }
+    return { mobius: dM, twoLminusU: d2L };
+}
+function planeMeans(r, beta = 0, n = 20000) {
+    // the mean point of harmonic measure, and the centroid of the landings (midpoint rule round the circle)
+    let hx = 0, hy = 0, lx = 0, ly = 0;
+    for (let i = 0; i < n; i++) {
+        const phi = TAU * (i + 0.5) / n, c = Math.cos(phi - beta), w = TAU / n;
+        hx += P2(r, c) * Math.cos(phi) * w; hy += P2(r, c) * Math.sin(phi) * w;
+        lx += L2(r, c) * Math.cos(phi) * w; ly += L2(r, c) * Math.sin(phi) * w;
+    }
+    return { harmonic: [hx, hy], landing: [lx, ly], z: [r * Math.cos(beta), r * Math.sin(beta)] };
+}
+
+// ── the sphere ── (t the cosine to the axis through the reader)
+const PH = (r, t) => (1 - r * r) / (2 * TAU * Math.pow(1 + r * r - 2 * r * t, 1.5));
+const PMk = (rho, t) => (1 - rho * rho) ** 2 / (2 * TAU * (1 + rho * rho - 2 * rho * t) ** 2);   // Kato–McCullagh
+const L3 = (r, t) => (1 - r * t) / (2 * TAU * Math.pow(1 + r * r - 2 * r * t, 1.5));
+// the uniform sky under a boost of rapidity η: t′ = (t + b)/(1 + bt), b = tanh η; its density in t′ per steradian
+function PMboost(rho, t) {
+    const eta = 2 * Math.atanh(rho), b = Math.tanh(eta);
+    return (1 - b * b) / (2 * TAU * (1 - b * t) ** 2);
+}
+const TS = Array.from({ length: 401 }, (_, i) => -1 + 2 * i / 400);           // EUL's grid
+function supGap(fa, fb) { let peak = 0, g = 0;
+    for (const t of TS) { peak = Math.max(peak, fb(t)); g = Math.max(g, Math.abs(fa(t) - fb(t))); } return g / peak; }
+function bestR(rho) {                                                       // golden-section search, as EUL
+    const target = t => PMboost(rho, t), f = r => supGap(t => PH(r, t), target);
+    let lo = 1e-6, hi = 0.999999; const phi = (1 + Math.sqrt(5)) / 2;
+    for (let k = 0; k < 80; k++) { const a = hi - (hi - lo) / phi, b = lo + (hi - lo) / phi; if (f(a) < f(b)) hi = b; else lo = a; }
+    const r = (lo + hi) / 2; return { r, gap: f(r) };
+}
+function fitL(r) {                                                          // least squares a·L + b/(4π) against P_H
+    let s11 = 0, s12 = 0, s22 = 0, y1 = 0, y2 = 0, peak = 0;
+    for (const t of TS) { const x1 = L3(r, t), x2 = 1 / (2 * TAU), y = PH(r, t);
+        s11 += x1 * x1; s12 += x1 * x2; s22 += x2 * x2; y1 += x1 * y; y2 += x2 * y; peak = Math.max(peak, y); }
+    const det = s11 * s22 - s12 * s12, a = (y1 * s22 - y2 * s12) / det, b = (s11 * y2 - s12 * y1) / det;
+    let res = 0; for (const t of TS) res = Math.max(res, Math.abs(a * L3(r, t) + b / (2 * TAU) - PH(r, t)));
+    return { a, b, res: res / peak };
+}
+function integrate(f, n = 4000) {                                          // ∫₋₁¹ f(t)·2π dt, Simpson
+    let s = 0; const h = 2 / n;
+    for (let i = 0; i <= n; i++) { const t = -1 + i * h, w = i === 0 || i === n ? 1 : i % 2 ? 4 : 2; s += w * f(t); }
+    return s * h / 3 * TAU;
+}
+function sphereMean(rho) {
+    const eta = 2 * Math.atanh(rho);
+    return { numeric: integrate(t => t * PMboost(rho, t)), closed: rho === 0 ? 0 : 1 / Math.tanh(eta) - eta / Math.sinh(eta) ** 2,
+        plane: rho, kato: integrate(t => t * PMk(rho, t)) };
+}
+function sphere(r) {
+    const m = sphereMean(r), b = bestR(r), f = fitL(r);
+    return { meanH: integrate(t => t * PH(r, t)), meanM: m.numeric, meanMclosed: m.closed,
+        sameAsKato: supGap(t => PMboost(r, t), t => PMk(r, t)), nearest: b, fit: f, total: [integrate(t => PH(r, t)), integrate(t => PMboost(r, t))] };
+}
+function boostCheck(e1, e2) {                                               // rapidities add along one axis
+    const b = Math.tanh(e2), rho1 = Math.tanh(e1 / 2), rho12 = Math.tanh((e1 + e2) / 2);
+    const boosted = t => PMboost(rho1, (t - b) / (1 - b * t)) * (1 - b * b) / (1 - b * t) ** 2;
+    return supGap(boosted, t => PMboost(rho12, t));
+}
+
+// ── turns ──
+function rotX(a) { const c = Math.cos(a), s = Math.sin(a); return [[1, 0, 0], [0, c, -s], [0, s, c]]; }
+function rotY(a) { const c = Math.cos(a), s = Math.sin(a); return [[c, 0, s], [0, 1, 0], [-s, 0, c]]; }
+const mul = (A, B) => A.map((row, i) => B[0].map((_, j) => row.reduce((s, _, k) => s + A[i][k] * B[k][j], 0)));
+function turnGap(deg) {
+    const a = deg * Math.PI / 180;
+    const R1 = mul(rotY(a), rotX(a)), R2 = mul(rotX(a), rotY(a));          // x then y, y then x
+    const D = mul(R1, R2[0].map((_, j) => R2.map(row => row[j])));          // R1·R2ᵀ
+    const tr = D[0][0] + D[1][1] + D[2][2];
+    const space = Math.acos(Math.max(-1, Math.min(1, (tr - 1) / 2))) * 180 / Math.PI;
+    const p1 = (a + a / 2) % TAU, p2 = (a / 2 + a) % TAU;
+    return { plane: Math.abs(p1 - p2) * 180 / Math.PI, space, R1, R2 };
+}
+
+// ── walkers: walk-on-spheres, seeded ──
+function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s;
+    t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function walk(r, n = 4000, seed = 1, eps = 1e-4) {
+    const R = rng(seed), bins = 36, h2 = new Array(bins).fill(0), h3 = new Array(bins).fill(0);
+    let m2 = 0, m3 = 0;
+    for (let k = 0; k < n; k++) {                                          // the disc, from (r, 0)
+        let x = r, y = 0;
+        for (let s = 0; s < 1000; s++) { const d = 1 - Math.hypot(x, y); if (d < eps) break;
+            const a = TAU * R(); x += d * Math.cos(a); y += d * Math.sin(a); }
+        const phi = Math.abs(Math.atan2(y, x)); h2[Math.min(bins - 1, Math.floor(phi / Math.PI * bins))]++; m2 += Math.cos(phi);
+    }
+    for (let k = 0; k < n; k++) {                                          // the ball, from (0, 0, r)
+        let x = 0, y = 0, z = r;
+        for (let s = 0; s < 1000; s++) { const d = 1 - Math.hypot(x, y, z); if (d < eps) break;
+            const u = 2 * R() - 1, a = TAU * R(), sq = Math.sqrt(1 - u * u); x += d * sq * Math.cos(a); y += d * sq * Math.sin(a); z += d * u; }
+        const t = z / Math.hypot(x, y, z), chi = Math.acos(Math.max(-1, Math.min(1, t)));
+        h3[Math.min(bins - 1, Math.floor(chi / Math.PI * bins))]++; m3 += t;
+    }
+    // densities relative to uniform, per bin: the plane's per angle (×2π over two sides), the sphere's per solid angle
+    const d2 = h2.map(c => c / n / (Math.PI / bins) * Math.PI), d3 = h3.map((c, i) => {
+        const t0 = Math.cos(Math.PI * i / bins), t1 = Math.cos(Math.PI * (i + 1) / bins); return c / n / ((t0 - t1) / 2); });
+    return { r, n, bins, plane: d2, sphere: d3, meanPlane: m2 / n, meanSphere: m3 / n };
+}
+
+// ── drawing ──
+const $ = id => document.getElementById(id);
+const C = { gold: '#d4a052', teal: '#8ce6cd', violet: '#b59cf0', red: '#d96e5b', dim: '#8a8a96', line: 'rgba(255,255,255,0.12)', ink: '#c8c8d0' };
+function fit(cv) { const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth || 500, h = +cv.getAttribute('height');
+    if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+    const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h); return { g, w, h }; }
+function drawCircle() {
+    const { g, w, h } = fit($('cv1')), cx = w / 2, cy = h / 2, R = Math.min(w, h) * 0.32, zx = st.r * Math.cos(st.beta), zy = st.r * Math.sin(st.beta);
+    const X = x => cx + x * R, Y = y => cy - y * R;
+    // harmonic measure band
+    g.beginPath();
+    for (let i = 0; i <= 360; i++) { const phi = TAU * i / 360, d = P2(st.r, Math.cos(phi - st.beta)) * TAU, rr = 1 + Math.min(1.6, 0.18 * d);
+        const px = X(rr * Math.cos(phi)), py = Y(rr * Math.sin(phi)); i ? g.lineTo(px, py) : g.moveTo(px, py); }
+    for (let i = 360; i >= 0; i--) { const phi = TAU * i / 360; g.lineTo(X(Math.cos(phi)), Y(Math.sin(phi))); }
+    g.fillStyle = 'rgba(140,230,205,0.22)'; g.fill();
+    g.strokeStyle = C.ink; g.lineWidth = 1.2; g.beginPath(); g.arc(cx, cy, R, 0, TAU); g.stroke();
+    // the uniform turn's rays and landings
+    const N = 72;
+    for (let k = 0; k < N; k++) {
+        const a = TAU * (k + 0.5) / N, dx = Math.cos(a), dy = Math.sin(a);
+        const bq = zx * dx + zy * dy, s = -bq + Math.sqrt(bq * bq - (zx * zx + zy * zy - 1)), lx = zx + s * dx, ly = zy + s * dy;
+        g.strokeStyle = 'rgba(181,156,240,0.18)'; g.lineWidth = 1; g.beginPath(); g.moveTo(X(zx), Y(zy)); g.lineTo(X(lx), Y(ly)); g.stroke();
+        g.strokeStyle = C.violet; g.lineWidth = 2; g.beginPath(); g.moveTo(X(lx * 0.97), Y(ly * 0.97)); g.lineTo(X(lx * 1.03), Y(ly * 1.03)); g.stroke();
+    }
+    const m = planeMeans(st.r, st.beta, 4000);
+    const dot = (x, y, col, rad) => { g.fillStyle = col; g.beginPath(); g.arc(X(x), Y(y), rad, 0, TAU); g.fill(); };
+    dot(m.landing[0], m.landing[1], C.violet, 5);
+    dot(m.harmonic[0], m.harmonic[1], C.gold, 7);
+    g.strokeStyle = '#fff'; g.lineWidth = 1.5; g.beginPath(); g.arc(X(zx), Y(zy), 3.5, 0, TAU); g.stroke();
+    g.fillStyle = C.ink; g.font = '12px DM Mono, monospace'; g.fillText('z', X(zx) + 8, Y(zy) - 8);
+    if (st.walk) {                                                          // walkers' landings, on the angle from z
+        g.fillStyle = 'rgba(140,230,205,0.9)';
+        for (let i = 0; i < st.walk.bins; i++) for (const sgn of [1, -1]) {
+            const phi = st.beta + sgn * Math.PI * (i + 0.5) / st.walk.bins, d = st.walk.plane[i], rr = 1 + Math.min(1.6, 0.18 * d);
+            g.beginPath(); g.arc(X(rr * Math.cos(phi)), Y(rr * Math.sin(phi)), 2.2, 0, TAU); g.fill(); }
+    }
+}
+function profile(cv, curves, ymax, xlabel) {
+    const { g, w, h } = fit(cv), l = 44, rgt = 12, t = 14, b = 30, W = w - l - rgt, H = h - t - b;
+    const X = x => l + x / Math.PI * W, Y = y => t + H - Math.min(y, ymax) / ymax * H;
+    g.strokeStyle = C.line; g.lineWidth = 1; g.fillStyle = C.dim; g.font = '11px DM Mono, monospace';
+    for (let k = 0; k <= 4; k++) { const y = ymax * k / 4; g.beginPath(); g.moveTo(l, Y(y)); g.lineTo(l + W, Y(y)); g.stroke(); g.fillText(y.toFixed(y < 10 ? 1 : 0), 4, Y(y) + 4); }
+    for (const [deg, s] of [[0, '0°'], [45, '45°'], [90, '90°'], [135, '135°'], [180, '180°']]) g.fillText(s, X(deg * Math.PI / 180) - 10, h - 12);
+    g.fillText(xlabel, l + W - 150, h - 1);
+    g.strokeStyle = 'rgba(255,255,255,0.35)'; g.setLineDash([2, 4]); g.beginPath(); g.moveTo(l, Y(1)); g.lineTo(l + W, Y(1)); g.stroke(); g.setLineDash([]);
+    for (const cu of curves) {
+        if (cu.bars) { g.fillStyle = cu.color; cu.bars.forEach((v, i) => { const x0 = X(Math.PI * i / cu.bars.length), x1 = X(Math.PI * (i + 1) / cu.bars.length);
+            g.fillRect(x0 + 1, Y(v), x1 - x0 - 2, Y(0) - Y(v)); }); continue; }
+        g.strokeStyle = cu.color; g.lineWidth = cu.width || 2; g.setLineDash(cu.dash || []); g.beginPath();
+        for (let i = 0; i <= 360; i++) { const x = Math.PI * i / 360, y = cu.f(x); i ? g.lineTo(X(x), Y(y)) : g.moveTo(X(x), Y(y)); }
+        g.stroke(); g.setLineDash([]);
+    }
+}
+function drawTurns() {
+    const a = st.a * Math.PI / 180;
+    { const { g, w, h } = fit($('cv4')), cx = w / 2, cy = h / 2, R = Math.min(w, h) * 0.38;
+      g.strokeStyle = C.line; g.beginPath(); g.arc(cx, cy, R, 0, TAU); g.stroke();
+      const arrow = (ang, col, wd) => { g.strokeStyle = col; g.lineWidth = wd; g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx + R * Math.cos(ang), cy - R * Math.sin(ang)); g.stroke(); };
+      arrow(0, 'rgba(200,200,208,0.5)', 2); arrow(a + a / 2, C.gold, 6); arrow(a / 2 + a, C.teal, 2); }
+    { const { g, w, h } = fit($('cv5')), T = turnGap(st.a);
+      // a book: a box 1 × 0.7 × 0.15, its spine red; orthographic, seen from a little above and to the side
+      const V = mul(rotX(-0.45), rotY(0.6));
+      const corners = []; for (const sx of [-1, 1]) for (const sy of [-1, 1]) for (const sz of [-1, 1]) corners.push([sx * 0.5, sy * 0.35, sz * 0.075]);
+      const edges = [[0, 1], [2, 3], [4, 5], [6, 7], [0, 2], [1, 3], [4, 6], [5, 7], [0, 4], [1, 5], [2, 6], [3, 7]];
+      const book = (M, ox, col, wd) => {
+          const P = corners.map(p => { const q1 = M.map(row => row[0] * p[0] + row[1] * p[1] + row[2] * p[2]);
+              const q2 = V.map(row => row[0] * q1[0] + row[1] * q1[1] + row[2] * q1[2]); return [ox + q2[0] * 110, h / 2 - q2[1] * 110]; });
+          g.strokeStyle = col; g.lineWidth = wd;
+          for (const [i, j] of edges) { g.beginPath(); g.moveTo(...P[i]); g.lineTo(...P[j]); g.stroke(); }
+          g.strokeStyle = C.red; g.lineWidth = wd + 1.5; g.beginPath(); g.moveTo(...P[0]); g.lineTo(...P[2]); g.stroke();   // the spine
+      };
+      const I = [[1, 0, 0], [0, 1, 0], [0, 0, 1]];
+      book(I, w * 0.18, 'rgba(200,200,208,0.5)', 1); book(T.R1, w * 0.52, C.gold, 2); book(T.R2, w * 0.82, C.teal, 2); }
+}
+function draw() {
+    const r = st.r;
+    $('rv').textContent = r.toFixed(2); $('av').textContent = st.a + '°';
+    drawCircle();
+    const L = x => L2(r, Math.cos(x)) * TAU, Pp = x => P2(r, Math.cos(x)) * TAU;
+    const ymax2 = Math.max(2, Math.min(40, (1 + r) / (1 - r) * 1.08));
+    const c2 = [{ f: L, color: C.dim, width: 1.5 }, { f: Pp, color: C.teal, width: 5 },
+        { f: x => mobius2(r, x) * TAU, color: C.gold, width: 2, dash: [8, 6] }, { f: x => (2 * L2(r, Math.cos(x)) - 1 / TAU) * TAU, color: C.violet, width: 2, dash: [2, 4] }];
+    if (st.walk) c2.unshift({ bars: st.walk.plane, color: 'rgba(140,230,205,0.25)' });
+    profile($('cv2'), c2, ymax2, 'angle from z\'s side');
+    const pl = plane(r), m = planeMeans(r, st.beta);
+    $('r1').innerHTML = `<span class="r">harmonic measure</span>, <span class="g">the Möbius image of the uniform turn</span> and <span class="w">2L − 1</span> agree everywhere:
+  largest gap, Möbius map (by its derivative, numerically): ${pl.mobius.toExponential(1)};  2L − U: ${pl.twoLminusU.toExponential(1)}
+<span class="g">mean point of harmonic measure</span>  (${m.harmonic[0].toFixed(5)}, ${m.harmonic[1].toFixed(5)})   z = (${m.z[0].toFixed(5)}, ${m.z[1].toFixed(5)})
+<span class="w">centroid of the landings</span>         (${m.landing[0].toFixed(5)}, ${m.landing[1].toFixed(5)})   z/2
+on the circle the law's averages are the powers of its mean point: in the plane, the standpoint is the mean.${st.walk ? `
+walkers: ${st.walk.n} released at z, mean cosine of where they land ${st.walk.meanPlane.toFixed(3)} (r = ${r.toFixed(3)})` : ''}`;
+    // the sphere
+    const S = sphere(r), near = S.nearest.r;
+    const c3 = [{ f: x => L3(r, Math.cos(x)) * 2 * TAU, color: C.dim, width: 1.5 },
+        { f: x => PH(r, Math.cos(x)) * 2 * TAU, color: C.teal, width: 4 },
+        { f: x => PMboost(r, Math.cos(x)) * 2 * TAU, color: C.gold, width: 3 },
+        { f: x => PH(near, Math.cos(x)) * 2 * TAU, color: C.teal, width: 1, dash: [5, 5] },
+        { f: x => (S.fit.a * L3(r, Math.cos(x)) + S.fit.b / (2 * TAU)) * 2 * TAU, color: C.violet, width: 1.5, dash: [2, 4] }];
+    if (st.walk) c3.unshift({ bars: st.walk.sphere, color: 'rgba(140,230,205,0.25)' });
+    const ymax3 = Math.max(2, Math.min(60, Math.max(PH(r, 1), PMboost(r, 1)) * 2 * TAU * 1.08));
+    profile($('cv3'), c3, ymax3, 'angle χ from the axis');
+    const eta = 2 * Math.atanh(r);
+    $('r2').innerHTML = `r = ρ = ${r.toFixed(2)}   (η = ${eta.toFixed(4)})
+
+<span class="r">harmonic measure</span>   mean cos χ = ${S.meanH.toFixed(6)}  = r
+  its averages of the Legendre polynomials are r, r², r³ …: the standpoint is still the mean.
+
+<span class="g">spherical Cauchy</span>    mean cos χ = ${S.meanM.toFixed(6)}
+  coth η − η/sinh² η    = ${S.meanMclosed.toFixed(6)}
+  the plane's would be ρ = ${r.toFixed(6)}
+  pushed through the boost, against Kato and McCullagh's formula: ${S.sameAsKato.toExponential(1)}
+
+<span class="b">no harmonic measure is this law</span>
+  nearest r = ${near.toFixed(4)}, least gap ${(100 * S.nearest.gap).toFixed(2)}% of the peak
+
+<span class="w">the two sweeps' rates combine into neither</span>
+  best a·L + b: a = ${S.fit.a.toFixed(3)}, b = ${S.fit.b.toFixed(3)} (the plane's 2 and −1)
+  residual ${(100 * S.fit.res).toFixed(2)}% of harmonic measure's peak${st.walk ? `
+
+walkers: ${st.walk.n} released in the ball, mean cos χ ${st.walk.meanSphere.toFixed(3)}` : ''}`;
+    drawTurns();
+    const T = turnGap(st.a);
+    $('r3').innerHTML = `each turn ${st.a}°
+<span class="b">the plane</span>: a then a/2, or a/2 then a: apart by ${T.plane.toFixed(6)}°   (angles add)
+<span class="b">space</span>: about x then y, or about y then x: apart by ${T.space.toFixed(3)}°   (no single angle to add)`;
+}
+
+// ── input ──
+$('r').value = st.r;
+$('r').addEventListener('input', e => { st.r = +e.target.value; st.walk = null; draw(); });
+$('a').value = st.a;
+$('a').addEventListener('input', e => { st.a = +e.target.value; draw(); });
+$('walk').addEventListener('click', () => { st.walk = walk(st.r, 4000, 1); draw(); });
+const cv1 = $('cv1');
+function dragAt(ev) {
+    const b = cv1.getBoundingClientRect(), R = Math.min(b.width, +cv1.getAttribute('height')) * 0.32;
+    const x = (ev.clientX - b.left - b.width / 2) / R, y = -(ev.clientY - b.top - b.height / 2) / R;
+    st.r = Math.min(0.95, Math.hypot(x, y)); st.beta = Math.atan2(y, x); st.walk = null; $('r').value = st.r; draw();
+}
+cv1.addEventListener('pointerdown', ev => { cv1.setPointerCapture(ev.pointerId); dragAt(ev); });
+cv1.addEventListener('pointermove', ev => { if (ev.buttons) dragAt(ev); });
+window.addEventListener('resize', draw);
+if (q.get('walk') === '1') st.walk = walk(st.r, 4000, 1);
+draw();
+
+window.__plane = { plane, planeMeans, sphere, sphereMean, bestR, fitL, boostCheck, turnGap, walk, PH, PMboost, PMk, L3,
+    set(o) { if ('r' in o) st.r = o.r; if ('beta' in o) st.beta = o.beta; if ('a' in o) st.a = o.a; st.walk = o.walk ? walk(st.r, o.walk, 1) : null;
+        $('r').value = st.r; $('a').value = st.a; draw(); return this.state(); },
+    state() { return { r: st.r, beta: st.beta, a: st.a, walk: !!st.walk, read: [$('r1').textContent, $('r2').textContent, $('r3').textContent] }; } };
+})();
+</script>
+</body>
+</html>
