@@ -386,6 +386,26 @@ So nothing has to be withdrawn, only named. The edge and the sum h + v = 1 are b
 a factor of 2 apart at the corner. The inscribed sweep's 2/π is measured against an edge, one axis filled from 0 to 1; the
 central sweep's π/2 against the chord taken as a diameter; and the chord's own length, √2, is the reader's.
 
+**Two sweeps, three axes.** The hand can be swept two ways, both out from the horizontal: horizontal to vertical, the
+altitude, and horizontal to depth, the azimuth. From the writer's side these
+are three number lines, h, v and v₂, independent, a point three amounts: the cube, which is Descartes' grid, X, Y and Z.
+From the reader's side they are two sweeps of one length: the altitude a, with tan a = v/√(h² + v₂²), and the azimuth ψ,
+with tan ψ = v₂/h. Every direction is two numbers and no distance, and the two sweeps together reach all of them: the
+sphere, in the horizon coordinates Ptolemy's astronomers used.
+
+Going from the reader's two to the writer's three is the writer's work, and it is where the trigonometry is:
+
+> X = H·cos a·cos ψ, Y = H·sin a, Z = H·cos a·sin ψ.
+
+It needs H and it needs the angles evaluated, which are the two things the sixth section gave the writer. The reader
+has its two sweeps; the writer turns them into X, Y and Z.
+
+Each sweep has its own corner at 45°: for the azimuth the plane v₂ = h, for the altitude the cone v = √(h² + v₂²). The
+cube's corner is a third place. The triple corner [1 : 1 : 1] lands on the cube's vertex (1, 1, 1) at azimuth 45° but
+altitude atan(1/√2) ≈ 35.26°, inside the altitude's corner cone, not on it. The three axes meet there, and neither sweep's
+own corner does. And a sweep even in azimuth and even in height, by Archimedes' equal slices, is even over the whole
+sphere, which is why the reader's numbers there are 2 and ½.
+
 ---
 
 ## 11. What it comes to

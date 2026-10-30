@@ -2581,7 +2581,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   sentence in OFS §4. R588, two 1's: a 1 needs a measure; the cube's (larger), the diamond's (sum, h + v = 1)
   and the circle's (Pythagoras) agree on the axes and part at the corner (1, 2, √2); the writer cannot choose, the turn
   picks the round one; Hölder ‖x‖₂² ≤ ‖x‖₁‖x‖∞, equality on axes and corner diagonals, √2 the geometric mean of the
-  writer's 1 and 2. 2/π is against an edge, π/2 against the chord as diameter. Essay 14 §10. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
+  writer's 1 and 2. 2/π is against an edge, π/2 against the chord as diameter. Essay 14 §10. R589, two sweeps, three axes: the hand's altitude (h→v) and
+  azimuth (h→v₂) the reader's sphere, the cube Descartes' X, Y, Z = h, v, v₂, reached only with H and the angles
+  (X = H·cos a·cos ψ …); the triple corner at azimuth 45°, altitude 35.26°, apart from each sweep's 45° corner. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
   `papers/essays/14-rates-not-angles.md` (a roof's pitch), on `essays.html` and in `explainers.html`'s not-yet list.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS

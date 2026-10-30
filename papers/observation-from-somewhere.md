@@ -1226,7 +1226,11 @@ Put as two shapes: the writer's is a cube (a number line on each axis, every edg
 length turned every way); about the reader's home the corner direction [1 : 1 : 1] lands on the cube's vertex, where all
 three number lines read 1, and with the cube's near corner at home, the inscribed sweep's unit circle has the cube outside
 it, touching at the sweep's ends, while the central sweep's circle, the circle on the chord, has the cube inside it, through
-home, the ends and the far corner. An angle is a share
+home, the ends and the far corner. The hand's two sweeps, both out from the horizontal (the altitude, h toward v,
+and the azimuth, h toward v₂, §2), are the sphere; the cube's three axes are the writer's Cartesian X, Y, Z, reached from
+them only with H and the angles evaluated (X = H·cos a·cos ψ, Y = H·sin a, Z = H·cos a·sin ψ), and the triple corner
+[1 : 1 : 1] lands on the cube's vertex at azimuth 45° and altitude atan(1/√2) ≈ 35.26°, apart from either sweep's own
+corner. An angle is a share
 of the whole turn and needs the turn's total, π; to evaluate the tangent or the arctangent is to cross from a direction
 to such a share or back, so both are the writer's tools: the arctangent is the writer's formula for how much of the turn
 a reading has passed (§2), and laying an array on the quarter turn by it is a writer's construction (§7.3). The reader
