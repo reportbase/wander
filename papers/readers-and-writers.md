@@ -2,8 +2,10 @@
 
 **What can be known from a standpoint, and what it costs to know more**
 
-*Tom Brinkman. Draft, 30 October 2026. Written with AI assistance (Claude). The long companion, with the propositions
-and proofs this paper draws on, is* Observation from Somewhere.
+*Tom Brinkman. Draft, 30 October 2026. Written with AI assistance (Claude).*
+
+The propositions and proofs this paper draws on are in *Observation from Somewhere*, now archived and kept for
+reference; where its wording differs from this paper, this paper stands.
 
 ## Abstract
 
@@ -348,7 +350,7 @@ inside the reader's, and what carries an observer across.
 - Archimedes. *On the Sphere and Cylinder*, Book I.
 - Bernoulli, J. (1690). *Quæstiones nonnullæ de usuris.* Acta Eruditorum.
 - Bridgman, P. W. (1922). *Dimensional Analysis.* Yale University Press.
-- Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met.* Working paper.
+- Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met.* Working paper, archived.
 - Buckingham, E. (1914). On physically similar systems. *Physical Review* 4, 345–376.
 - Euclid. *Elements*, Book III, Proposition 20.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.

@@ -1162,7 +1162,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Call it readers and writers."): *Readers and Writers*, a normal paper (about 5,000 words) gathering the two vantages, the two
   tests, V as the line, the reader's free geometry, rates not angles, whose numbers (rational, algebraic, transcendental),
   near and far, the wedge, the sphere and cube, becoming a writer by degrees, what a blueprint adds and the mountain; written
-  to R599, ahead of OFS until the audit's corrections (`plans/ofs-audit-r584-r599.md`) are made. Under R421 OFS stays the source.
+  to R599. **Since R601 (30 Oct; Tom: "Archive the ofs papers. Use them for reference.") it is the single source of truth**
+  (R421 moved to it); OFS, its CS and physics companions, its two records and the submission are in `papers/archive/ofs/`,
+  frozen, never edited, cited for their proofs; where their wording differs from later rulings, the rulings stand (the audit's
+  28 passages are a record, not edits). Everything below about OFS describes the archived paper; its old paths in plans, demo
+  comments and working papers are history.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

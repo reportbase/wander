@@ -1,8 +1,10 @@
 # What can be known from where one stands
 
 A series of fifteen essays, read in order, drafted 28 October 2026. Each opens on something familiar, shows the geometry in
-full, says which older work saw which piece, and ends with what it changes. *Observation from Somewhere* (`../observation-from-somewhere.md`)
-holds the proofs and stays the source of truth; where an essay and it differ, the essay is the one to fix.
+full, says which older work saw which piece, and ends with what it changes. *Readers and Writers* (`../readers-and-writers.md`)
+is the source of truth; where an essay and it differ, the essay is the one to fix. *Observation from Somewhere* and its companions
+are archived (`../archive/ofs/`), kept unchanged for reference: their proofs stand, and where their wording differs from the
+later rulings, the later rulings stand.
 
 Two ideas run through all of them:
 - **Reading and writing.** A reading is a ratio from a standpoint, free and unchanged when the world is scaled. A writing
