@@ -278,14 +278,15 @@ length directly. It has it twice over, once from each pivot, and the two reading
 writer holds in one. What they return is the reader's own length measured in itself, H in H. They do not return the
 size of anything else.
 
-**They are rates, not angles.** Raise the hand from horizontal to vertical and the sweep comes at one of two rates
-against the straight line from start to end: π/2 from the middle of the chord, 2/π from a point of the circle. Never 1.
-The 1 is the writer's rate, the angle, arc per radius read against the completed turn; the reader has it only by joining
-the two sweeps. Writers have angles, readers have sweeps. These rates are the spacing of the reader's addresses, with
-nothing arriving in them: a rate a reader reads is always of something per something, the payload per address. The
-corner, in the same terms, is the one place where v fills exactly as fast as h empties. The fourteenth essay, "Rates, not
-angles", takes this up, and with it why the tangent and arctangent, which convert a direction into a share of the whole
-turn and back, are the writer's tools and not the reader's.
+**They are rates, not angles, and they are the writer's.** Raise the hand from horizontal to vertical, and a writer
+holding the straight line from start to end measures the sweep at one of two rates against it: π/2 from the middle of the
+chord, 2/π from a point of the circle. Never 1: the 1 is the writer's own rate, the angle, arc per radius read against the
+completed turn, which the reader has only by joining the two sweeps. Writers have angles, readers have sweeps. And
+because each of these numbers has π in it, the count of a completed turn, they are the writer's account of the sweep, not
+the reader's own: the writer is transcendental, the reader is not. The reader holds the same sweep as the Cauchy, its
+readings and their corner at 1, where v fills exactly as fast as h empties. A rate a reader reads is always of something
+per something, the payload per address. The fourteenth essay, "Rates, not angles", takes this up, and with it why the
+tangent and arctangent, which convert a direction into a share of the whole turn and back, are the writer's tools.
 
 *Demo: the mountain and the thumb, "the two vantages": π/2 and 2/π on the thumb's circle, their product 1.*
 

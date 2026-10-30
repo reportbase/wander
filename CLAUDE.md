@@ -2586,7 +2586,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (X = H·cos a·cos ψ …); the triple corner at azimuth 45°, altitude 35.26°, apart from each sweep's 45° corner.
   R590: the closest classical framing is Poincaré's (the universe a thousand times larger overnight, representative
   and geometric space, geometry from the observer's group of displacements), Leibniz the root (an order of
-  coexistences, analysis situs), Klein the group; essay 14 §9–§10, OFS Appendix A; quoted from memory, to check. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
+  coexistences, analysis situs), Klein the group; essay 14 §9–§10, OFS Appendix A; quoted from memory, to check.
+  R591: the sphere is the writer's read of the reader; the reader reads with the Cauchy. The writer is transcendental,
+  the reader is not: π is not a reader's number, so π/2, 2/π (and the sphere's 2, ½) are the writer's measure of the
+  reader's sweep; the reader's numbers are constructible (ratios, tangent addition, the halving). Never call π/2 or 2/π
+  the reader's own. Older text that does (OFS §3.4, §4, §10 step 3, R329, demos) still waits for a pass. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
   `papers/essays/14-rates-not-angles.md` (a roof's pitch), on `essays.html` and in `explainers.html`'s not-yet list.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS

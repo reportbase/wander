@@ -941,7 +941,8 @@ point: the directions themselves, drawn at H (its radius is H, a value chosen, n
 What arrives along each direction paints that point. The paint is the payload; no distance is on these directions, and
 of two things on one line the nearer paints the point. The reader need send nothing. It receives what the world puts
 there, and it never holds the sphere whole: joining patches into one painted sphere in a common frame is the writer's
-work, as above. A reader that carries in the signal's speed to turn a delay into a distance is no longer only reading:
+work, as above. The sphere itself, with its total turn and its π, is the writer's picture of the reader; what the reader
+reads with is the Cauchy, its readings from home toward a horizon, never closed (§4, "Rates, not angles"). A reader that carries in the signal's speed to turn a delay into a distance is no longer only reading:
 the speed is an amount, and stating the range in it is writing (§9). The picture is Gibson's ambient optic array, the
 light at a point of observation (Gibson 1979, ch. 5). In an earlier essay he sets it apart from "the radiant light,
 emitted from a point-source", and describes it as "visual solid angles all having a common apex at the point of
@@ -1210,24 +1211,30 @@ address. Scaling the world moves no address, so the per never moves; a payload c
 address is a ratio and stays, one stated in an agreed unit moves with k and is a writing. The geometry fixes the per,
 and its spacing has rates of its own, with no payload in them. The writer measures the turn by its angle, arc per radius
 step for step: rate 1, read against the completed turn, the chord between the sweep's ends held whole as 1. The reader
-has no angle; it has the sweep, at one of the two even pivots, and a sweep from horizontal to vertical comes at that
-pivot's rate against the writer's chord: π/2 from the middle (arc over chord, θ/sin θ along the way, attained when the
+has no angle; it has the sweep, at one of the two even pivots, and a sweep from horizontal to vertical, measured by the
+writer against its chord, comes at that pivot's rate: π/2 from the middle (arc over chord, θ/sin θ along the way, attained when the
 radius lands on home) or 2/π from a point of the circle (chord over arc, sin θ/θ, approached at the horizon). Neither is
 1; both leave 1 at zero, before any sweeping, and their product is 1 at every θ, the writer's 1 had only by joining the
-two sweeps. Writers have angles; readers have sweeps. In the writer's angle the radius's end moves one step of arc per
+two sweeps. Writers have angles; readers have sweeps. These two rates are the writer's measure of the reader's sweep,
+not the reader's own: each has π in it, the total of a completed turn, and the writer is transcendental where the reader
+is not. The reader's operations (ratios, tangent addition, the halving's one square root, order, the reciprocal) reach
+only the constructible numbers, and π is transcendental; the reader reads with the Cauchy, its readings and their corner
+at 1, the spread 1/(1 + s²) up to its total, and the total π/2 and the normalizing 2/π are the writer's count. In the
+writer's angle the radius's end moves one step of arc per
 step of turn and the ray's two (above); the reading v/h moves on by 1 + (v/h)² per step, so the Cauchy's density
 2/(π(1 + s²)) is a speed, turn per reading, the per against itself with no payload in it, which is the main result
 (§7.2) said in rates: the Cauchy is the sweep over the something, the law of the per. The corner is where the three
 rates meet, with no angle named: v fills exactly as fast as h empties there, their ratio is the writer's 1, and the
-writer's 1 is the geometric mean of the reader's two rates, √(π/2 · 2/π), ln(π/2) and ln(2/π) symmetric about it on the
+writer's 1 is the geometric mean of the two sweeps' rates, √(π/2 · 2/π), ln(π/2) and ln(2/π) symmetric about it on the
 levels, the fixed point of the reciprocal that pairs the two sweeps. The sweeps' running rates are not 1 there (θ/sin θ
 is 1.1107, sin θ/θ 0.9003); they are 1 only at zero.
-Put as two shapes: the writer's is a cube (a number line on each axis, every edge at rate 1), the reader's a sphere (its one
-length turned every way); about the reader's home the corner direction [1 : 1 : 1] lands on the cube's vertex, where all
+Put as two shapes, both the writer's: its own frame is a cube (a number line on each axis, every edge at rate 1), and its
+picture of the reader a sphere (the reader's one length turned every way), which the reader, reading with the Cauchy,
+never holds; about the reader's home the corner direction [1 : 1 : 1] lands on the cube's vertex, where all
 three number lines read 1, and with the cube's near corner at home, the inscribed sweep's unit circle has the cube outside
 it, touching at the sweep's ends, while the central sweep's circle, the circle on the chord, has the cube inside it, through
 home, the ends and the far corner. The hand's two sweeps, both out from the horizontal (the altitude, h toward v,
-and the azimuth, h toward v₂, §2), are the sphere; the cube's three axes are the writer's Cartesian X, Y, Z, reached from
+and the azimuth, h toward v₂, §2), are what the writer draws as the sphere; the cube's three axes are the writer's Cartesian X, Y, Z, reached from
 them only with H and the angles evaluated (X = H·cos a·cos ψ, Y = H·sin a, Z = H·cos a·sin ψ), and the triple corner
 [1 : 1 : 1] lands on the cube's vertex at azimuth 45° and altitude atan(1/√2) ≈ 35.26°, apart from either sweep's own
 corner. An angle is a share

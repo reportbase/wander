@@ -14,14 +14,25 @@ difference, and its claim fits in one line:
 > Writers have angles; readers have sweeps.
 
 Three things follow. A rate is always a rate *of* something *per* something: the per is the sweep's, an address, and the
-of is what arrives there, the payload. A hand swept from horizontal to vertical goes at one of two rates, π/2 or 2/π,
-depending on where it pivots, and never at 1: the 1 is the writer's rate, the angle. And the tangent and arctangent,
+of is what arrives there, the payload. A hand swept from horizontal to vertical, measured by a writer against the straight
+line it holds, goes at one of two rates, π/2 or 2/π, depending on where it pivots, and never at 1, the writer's own rate,
+the angle. And the tangent and arctangent,
 which convert between a direction and an angle, are the writer's tools: they need the completed turn. The reader runs the
 sweep and never needs them.
 
 Put together, this is the Cauchy's framing: it is the sweep over the something. The sweep lays the per, and the Cauchy is
 the law of that per, the reader's sweep rate counted in readings; the payload is what lies over it. The writer's rate is
-1, the reader's π/2 or 2/π, and the corner is where the three come together.
+1, its account of the reader's sweep π/2 or 2/π, and the corner is where the three come together.
+
+**The writer is transcendental; the reader is not.** π is not a reader's number. It is the total of a completed turn, and
+every number with π in it, π/2 and 2/π among them, is the writer's: the reader's sweep as measured by someone holding the
+whole turn. What the reader does with the sweep is algebraic: it holds readings, ratios; it composes them by tangent
+addition, adds, multiplies and divides; it halves them with one square root; it orders them and turns them over. Those
+operations reach the constructible numbers and nothing beyond (π is transcendental, Lindemann 1882). So the reader reads
+with the Cauchy and not with the circle: the readings from home to a horizon never reached, their corner at 1, their
+spread 1/(1 + s²) up to its total. The total, π/2, and the normalizing 2/π are the writer's count of the turn. The sphere
+on which a writer draws the reader, every direction about a point at radius H, is likewise the writer's picture of the
+reader, not anything the reader holds.
 
 None of this corrects trigonometry. It says where trigonometry sits.
 
@@ -71,7 +82,7 @@ From each, the same sweep from horizontal to vertical comes at its own rate agai
   approached and never arrived at.
 
 Neither is 1. Both start at 1, at zero, before any sweeping has happened, and part from it at once. Once the hand is
-moving, the reader has π/2 or 2/π, never the writer's 1. The two together, multiplied, give back 1, at every point of the
+moving, the writer's account of it is π/2 or 2/π, never its own 1. The two together, multiplied, give back 1, at every point of the
 sweep and not only at its ends; but no one sweep has it. The second essay put this as the two sweeps each reaching the
 writer's 1 through the arc, one too long and one too short. In rates it is plainer: the writer has the angle, the reader
 has the sweep, and the angle is what the two sweeps make when they are joined.
@@ -79,6 +90,11 @@ has the sweep, and the angle is what the two sweeps make when they are joined.
 None of these rates changes when the world is scaled, and none of them is a rate of anything that arrives. They are the
 per, measured against the writer's straight line: the spacing the sweep gives its addresses. They are the frame's own
 rates, empty until a payload fills them.
+
+They are also the writer's numbers, not the reader's. Each has π in it, and π is the count of a completed turn. They are
+how a writer, holding the chord and the whole quarter turn, measures the reader's sweep. The reader's own hold on the same
+sweep is the Cauchy: its readings, their order, the corner at 1. It meets 2/π only as the limit of its own halvings, and
+never holds it (the sixth section).
 
 ---
 
@@ -97,7 +113,7 @@ not a turning point.
 **Their ratio is the writer's 1.** At the corner the reading is v/h = 1. Everywhere else along the sweep the reader's
 reading differs from 1; here, and only here, it agrees with the writer's rate.
 
-**The writer's 1 is the corner of the reader's two rates.** π/2 and 2/π are reciprocals, and 1 is their geometric mean,
+**The writer's 1 is the corner of the two sweeps' rates.** π/2 and 2/π are reciprocals, and 1 is their geometric mean,
 √(π/2 · 2/π). On the levels they sit either side of it, ln(π/2) = 0.4516 above and ln(2/π) = −0.4516 below. So the
 writer's rate is the fixed point of the reciprocal that pairs the two sweeps: the corner between them.
 
@@ -120,7 +136,7 @@ where the rate is the same wherever the ray points. Anywhere else a step of turn
 arc, t and t′ the distances ahead and behind, which changes as the ray turns.
 
 So the inscribed angle theorem, read this way, is a statement about rates: the facing turns twice as fast as the sweep.
-Read from the reader's side, without the angle, the two pivots are the two rates of the last section, π/2 and 2/π.
+Measured against the writer's chord, the two pivots give the two rates of the second section, π/2 and 2/π.
 The square of the second essay, the central point ½(h + iv)², is that doubling written as a point.
 
 A reader off the centre and off the circle has no uniform rate, and this is where the circle's own law comes from. Turned
@@ -188,9 +204,9 @@ and multiply the cosines of the halves:
 
 This is Viète's product of 1593, and each factor is a halving, the reader's own operation. The reader approaches 2/π by
 halvings and never arrives. π is transcendental (Lindemann, 1882), so no finite chain of the reader's operations, which
-are field operations and the halving square root, can reach it. Even the inscribed sweep's number, the reader's own
-rate, is one the reader meets only at the horizon. And the writer's 1, the angle, the reader has only by joining both
-sweeps.
+are field operations and the halving square root, can reach it. So 2/π, the writer's number for the inscribed sweep, is
+one the reader meets only as a limit, at the horizon, and never holds. π is not a reader's number. And the writer's 1, the
+angle, the reader has only by joining both sweeps.
 
 ---
 
@@ -316,8 +332,8 @@ navigator's name too: the course where departure equals the difference of latitu
 the two motions go equally fast. And Wright's chart, the one that straightens every rhumb line, is the chart OFS
 Proposition 5(g) shows keeps every bearing true only when the two directions are drawn at one length.
 
-**A sphere adds altitude, and changes the reader's numbers.** On a circle the reader compares arc with chord, and gets
-π/2 and 2/π. On a sphere it compares the hemisphere with the flat disc under it, and Archimedes gives the answer: 2 at
+**A sphere adds altitude, and changes the numbers.** On a circle the writer compares the reader's arc with its chord, and
+gets π/2 and 2/π. On a sphere it compares the hemisphere with the flat disc under it, and Archimedes gives the answer: 2 at
 once, ½ one direction at a time (the mean of a direction's projection onto the axis, over the hemisphere by area). The
 product is still 1, and the writer's 1 is still their geometric mean, the corner between them. Archimedes' equal slices
 are why the up-down sweep is the even one: a sweep uniform in height is uniform over the sphere, which is how the fifth
@@ -328,7 +344,7 @@ azimuth are measured from a standpoint, against one's own horizon: a reader's sw
 the sky and holds all of it: a writer's frame, from no standpoint.
 
 **The closest is Poincaré.** His enlarged universe is this series' first test, scale the world, nearly word for word: a
-reading is what survives it, a writing what does not. His representative space is the reader's sphere, and his geometric
+reading is what survives it, a writing what does not. His representative space is the reader's, and his geometric
 space, the same for everyone, is the writer's cube. His geometry from the observer's movements is the reader's two sweeps
 of one length; and his group of displacements is Klein's idea applied to an observer, the line that leads to Jaynes, on
 whom the main paper builds. Leibniz is the root: space as relations, and a geometry of situation, which is what "situated"
@@ -344,24 +360,27 @@ from the mean it cannot.
 **What is ours.** Every piece above is classical: the two motions, the fluxions, the hemisphere's 2, the observer's
 coordinates, the rhumb line. What this essay adds is the sorting. The straight chord and the angle are the writer's; the
 two motions and their mix are the reader's; the mix is a rate, of a payload per address; and the three numbers 1, π/2 and
-2/π, or on a sphere 1, 2 and ½, are the writer's rate and the reader's two.
+2/π, or on a sphere 1, 2 and ½, are the writer's rate and its account of the reader's two sweeps. The reader's own
+numbers are the Cauchy's, and have no π in them.
 
-**The writer's cube, the reader's sphere.** The picture settles into two shapes. The writer's is a cube: one number line
-on each axis, every point three amounts, every edge run at the writer's rate, 1, nothing round (the first essay's box). The
-reader's is a sphere: its one length H turned every way from where it stands, every direction an address, no distance on
-it, the sweeps running at π/2 and 2/π on a circle and at 2 and ½ over a hemisphere. From A = (1, 0) to B = (0, 1) there are
+**The writer's cube, and its sphere of the reader.** The picture settles into two shapes, both the writer's. The writer's
+own is a cube: one number line on each axis, every point three amounts, every edge run at the writer's rate, 1, nothing
+round (the first essay's box). The sphere is how the writer draws the reader: its one length H turned every way from where
+it stands, every direction an address, no distance on it, the sweeps measured at π/2 and 2/π on a circle and at 2 and ½
+over a hemisphere. The reader itself holds no sphere. It reads with the Cauchy: its readings on one open line from home to
+a horizon, in space the two ratios v/h and v₂/h, never closed, never totalled. From A = (1, 0) to B = (0, 1) there are
 then three ways, two the writer's and one the reader's:
 
 | way | whose | length |
 |---|---|---|
 | along the cube's edges, one axis and then the other | the writer's number lines | 2 |
 | straight across, the chord | the writer's | √2 |
-| round the sphere, the sweep | the reader's | π/2 |
+| round the sphere, the sweep | the reader's, as the writer measures it | π/2 |
 
 The navigator's plane sailing, keeping the difference of latitude and the departure apart, is the cube's way; the great
 circle is the sphere's.
 
-**It explains the corner.** Put the reader's sphere inside the writer's cube, both about the reader's home, as
+**It explains the corner.** Put the sphere inside the cube, both about the reader's home, as
 `sphere-cube.html` does. Every direction on the sphere lands on a point of the cube, and the reader's corner, the direction
 [1 : 1 : 1] (in the plane, 45°), lands exactly on a vertex of the cube, where all three of the writer's number lines read 1.
 The corner is the cube's corner seen from the sphere's centre: the one direction in which the reader's sweep and the
@@ -406,21 +425,23 @@ They part most at the corner: (1, 1) is 1, 2 and √2, and in n dimensions the t
 The writer cannot choose among them. Its symmetries are swapping its number lines and reversing their signs, and every
 one of these rules is unchanged by both, so the writer has an exact 1 along each axis and none in between. The reader's
 turn chooses exactly one: the only measure unchanged by every turn is Pythagoras (up to a scale), which is why the round 1
-is the reader's.
+belongs to the turn. Its totals, the circle's 2π and the sphere's 4π, are the writer's; but the round length of one
+diagonal, √2, is algebraic, a number the reader's own halving reaches (halving the corner's reading 1 gives √2 − 1).
 
-And the reader's 1 sits at the corner of the writer's two. The cube's measure and the diamond's are dual to each other,
+And the round 1 sits at the corner of the writer's two. The cube's measure and the diamond's are dual to each other,
 and the round one is its own dual; Hölder's inequality, here Cauchy and Schwarz, ties them together:
 
 > (round)² ≤ (added) × (larger),
 
 with equality exactly when every component that is not zero has the same size: on the axes, and on the corner's diagonal.
 At the corner the round √2 is the geometric mean of the writer's 1 and 2, as √n is of 1 and n. It is the third section's
-pattern one level down: there the writer's 1 is the geometric mean of the reader's π/2 and 2/π; here the reader's √2 is
-the geometric mean of the writer's two 1's.
+pattern one level down: there the writer's 1 is the geometric mean of the sweeps' π/2 and 2/π; here the round √2 is the
+geometric mean of the writer's two 1's.
 
 So nothing has to be withdrawn, only named. The edge and the sum h + v = 1 are both the writer's, the same 1 at A and B and
 a factor of 2 apart at the corner. The inscribed sweep's 2/π is measured against an edge, one axis filled from 0 to 1; the
-central sweep's π/2 against the chord taken as a diameter; and the chord's own length, √2, is the reader's.
+central sweep's π/2 against the chord taken as a diameter (both the writer's measures, each with its π); and the chord's
+own length, √2, is algebraic, within the reader's reach.
 
 **Two sweeps, three axes.** The hand can be swept two ways, both out from the horizontal: horizontal to vertical, the
 altitude, and horizontal to depth, the azimuth. From the writer's side these
@@ -440,16 +461,21 @@ Each sweep has its own corner at 45°: for the azimuth the plane v₂ = h, for t
 cube's corner is a third place. The triple corner [1 : 1 : 1] lands on the cube's vertex (1, 1, 1) at azimuth 45° but
 altitude atan(1/√2) ≈ 35.26°, inside the altitude's corner cone, not on it. The three axes meet there, and neither sweep's
 own corner does. And a sweep even in azimuth and even in height, by Archimedes' equal slices, is even over the whole
-sphere, which is why the reader's numbers there are 2 and ½.
+sphere, which is why the writer's numbers for the reader's sweep there are 2 and ½.
 
 ---
 
 ## 11. What it comes to
 
 **Writers have angles; readers have sweeps.** An angle is a share of the whole turn, measured at rate 1, arc per radius,
-against a turn held complete. A sweep is what one length does from where it stands, and from either even pivot it comes at
-its own rate: π/2 from the middle, 2/π from a point of the circle. Never 1. The 1 is the writer's, and the reader has it
-only by joining the two sweeps.
+against a turn held complete. A sweep is what one length does from where it stands; measured by the writer from either
+even pivot it comes at its own rate: π/2 from the middle, 2/π from a point of the circle. Never 1. The 1 is the writer's,
+and the reader has it only by joining the two sweeps.
+
+**The writer is transcendental; the reader is not.** π, and every number with π in it, is the writer's: the count of a
+completed turn. The reader's operations (ratios, tangent addition, the halving's one square root, order, the reciprocal)
+reach only the constructible numbers. The reader reads with the Cauchy, its readings and their corner at 1; the sphere is
+the writer's picture of the reader.
 
 **A rate is of something, per something.** The per is the sweep's: the addresses, given before anything arrives, their
 spacing the frame's own rates. The of is the payload, met. What a reader reads is payload per address.
