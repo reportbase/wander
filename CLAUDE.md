@@ -2593,7 +2593,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the reader's own. Older text that does (OFS §3.4, §4, §10 step 3, R329, demos) still waits for a pass.
   R592: one variable (H) makes only rationals, the reader's; irrationals need two variables combined (√2 the diagonal),
   π the whole turn, both the writer's; the reader meets irrational directions but does not make them. Bisecting a
-  direction ((√(1 + s²) − 1)/s) and Viète's product are the writer's. OFS §5 "Why halving" not yet reconciled. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
+  direction ((√(1 + s²) − 1)/s) and Viète's product are the writer's. OFS §5 "Why halving" not yet reconciled.
+  The inconsistencies these rulings leave in the older corpus (π/2 and 2/π as the reader's, the reader's circle and
+  sphere, halving by square roots, the lay's ln, H·tan(kπ/2K), Euler's formula, the Cauchy's constant, the 1's, demos)
+  are listed, not changed, in `plans/flags-r584-r592.md` (30 Oct, Tom: "Flag any inconsistencies for future
+  consideration."); entries 1–3 wait on one decision, whether the circle is the writer's too. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
   `papers/essays/14-rates-not-angles.md` (a roof's pitch), on `essays.html` and in `explainers.html`'s not-yet list.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
