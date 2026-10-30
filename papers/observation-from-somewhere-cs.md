@@ -115,7 +115,7 @@ offers instead, a baseline against which existing designs can be read.
 - **One length.** The reader holds one length, H, and turns it; the orbit is a circle because the length is fixed, and
   the uniform turn's readings are the half-Cauchy on one quadrant, its median at the corner (the standard Cauchy
   signed over two). No breadth is given to the other party: V belongs to a writer,
-  and V = H is the writer's name for the reader's circle. Working back from the Cauchy, on one quadrant its median at the
+  and V = H is the writer's name for the one-length circle. Working back from the Cauchy, on one quadrant its median at the
   corner, arrives at a turn of one length (§4); a drawing with two axes at V = cH gives a Cauchy of scale 1/c.
 - **Arrays.** For an even-length array indexed at equal steps of turn, the slopes of its places are exactly the evenly
   spaced quantiles of the Cauchy. The index is the address and the stored values are the payload; the floor function
@@ -286,7 +286,11 @@ past the corner the expansion in 1/x converges instead, since the singularities 
 This is a property of expansions, not a break in the function, but it is one reason near and far seem to obey different
 mathematics, and one reason a numerical routine evaluates them by different formulas.
 
-## 4. One length: the reader's circle
+## 4. One length: the one-length circle
+
+The circle here is the one an observer's single length traces when turned. From one place a reader has only the open
+quarter of it, its readings, the Cauchy; the closed circle, with its total turn and its π, is held by an observer that
+is writing, joining facings or standpoints (OFS §3.1, §5). Earlier versions called it "the reader's circle".
 
 We assume three things.
 - **(P0)** A relation needs two unit relations, one for each party. For a writer, who holds both hemispheres, each
@@ -295,13 +299,13 @@ We assume three things.
   H will do.
 - **(P2)** A level carries no measure: nothing on it but its two ends, their order and the reciprocal between them.
 
-**Proposition 3 (the reader's circle), in part.** Under (P0) and (P1):
+**Proposition 3 (the one-length circle), in part.** Under (P0) and (P1):
 (a) the reader holds no breadth for the other party, so it has no c; a writer can write the reader's drawing with two
 axes as V = cH, and no unit relation and no single reading depends on c;
 (b) the corner lies at distance 1 from home, in H, whatever H was chosen, and a reader with unit λH in a world
 scaled by λ receives exactly the same readings;
 (e) on a page with two axes, V = cH, the attitudes are turns of one rigid bar only if c = 1: with c ≠ 1 nothing turns
-all of h into all of v, and there is no circle. So the reader's circle, written with two axes, is V = H.
+all of h into all of v, and there is no circle. So the one-length circle, written with two axes, is V = H.
 (g) The bar can be derived rather than assumed: a sweep that is continuous and uniform (every step the same linear map of the plane),
 returns to its start after one full turn, and carries all of h into all of v in a quarter of it, preserves an inner
 product unique up to a positive factor. In that inner product every attitude has one length and
@@ -331,7 +335,7 @@ law laid on a circle that already held a V; it is the measure of the addresses t
 construction (two unit relations, a rigid bar's linear periodic turn) working back from the Cauchy (the half-Cauchy on one quadrant) arrives at
 a turn of one length, and on a page with two axes at c = 1 and nowhere else. "V = H is still a choice" is a writer's
 objection: only one who holds both axes sees c as a number to set, and the reader holds one. It is not a claim about
-the world either: where the true V* differs from H, every amount taken from the reader's circle is off by V*/H (§10).
+the world either: where the true V* differs from H, every amount taken from the one-length circle is off by V*/H (§10).
 The addresses are exact; the amounts are not.
 
 The parent paper shows c = 1 required in two familiar drawings with two axes: a lighthouse whose flashes land on a straight
@@ -728,7 +732,7 @@ k = 1.
 multiplicative form (Cauchy 1821), whose only increasing solutions are k·ln λ. At x = 1 the near lay has slope 1 and the
 far lay slope k. ∎
 
-The reader's circle rests on the same equation in its exponential form. A uniform sweep is a one-parameter group,
+The one-length circle rests on the same equation in its exponential form. A uniform sweep is a one-parameter group,
 Φ(t₁ + t₂) = Φ(t₁)Φ(t₂), so Φ(t) = exp(tA); because it returns after a full turn its rate is imaginary, and in its own
 inner product the bar's attitude is h + iv = e^(iωt), Euler's formula. The return makes the rate imaginary; the one
 length fixes only the scale of that inner product. Each form needs its regularity condition, continuity of the sweep or
@@ -740,7 +744,8 @@ derived.
 (S) does the work, and it is assumed, not derived: scale invariance of the lay's increments, motivated by the fact that
 no reading can fix a scale. Monotonicity, a fixed corner and a matched slope are not enough by themselves:
 1 + ln x + α(ln x)² satisfies all three. Proportion past the corner, L(x) = x, gives the stretch from x to λx room
-(λ − 1)·x, which grows with x; a power does the same; only the logarithm gives room that depends on λ alone.
+(λ − 1)·x, which grows with x; a power does the same; only the logarithm gives room that depends on λ alone. What the
+reader holds is the count, so many addresses a doubling; the smooth 1 + ln x is the writer's formula for it.
 
 **Floating point.** Floating-point numbers lay their addresses this way. The exponent counts levels and the significand
 is a plain share within the level; below the smallest normal number the subnormals lay one stretch in proportion from
@@ -781,7 +786,9 @@ half by an order-preserving map that commutes with the reciprocal. Applied again
 halvings: binary subdivision. Three parts, or any other number, need an added measure. A reader whose resolution steps
 by r matches levels that are powers of r, but every ratio other than the halving costs a measure carried in the reader.
 A layout whose levels are uneven, as a calendar's are (years, months of about 30 days, hours, minutes, seconds), matches
-no single factor and costs a table of its levels. Uniformity can be free; variation has to be stored somewhere.
+no single factor and costs a table of its levels. Uniformity can be free; variation has to be stored somewhere. Halving a
+length or a count is rational and the reader's; halving a turn or a level's ratio at its geometric middle takes a square
+root, two lengths combined, and is the writer's (OFS §4, "Rates, not angles").
 
 **One figure, three rulers.** The circle, the number line and Mercator's height lay one reading x three ways:
 x = tan θ = sinh ζ, θ = gd ζ. The writer's number line x has no corner, only a point. The turn θ = arctan x gives 45°
@@ -841,7 +848,8 @@ reader's one length along distance. Their boundaries fall at
 
   d_k = H·tan(kπ/2K),  k = 1, …, K − 1,
 
-the quantiles of the Cauchy with its scale at H.
+the quantiles of the Cauchy with its scale at H. The addresses are the reader's; the formula placing them, with its
+tangent and π, is the writer's account of where they fall.
 - Since tan(π/4) = 1, the middle boundary is d = H whatever H is: half the addresses inside the corner and half past it,
   at every H. H moves the split; it never changes the count.
 - A small H gives the near half a short stretch, each address fine, the first about πH/2K wide; a large H gives the same
@@ -1132,7 +1140,7 @@ reader whose addresses are laid before anything arrives. The Cauchy is that spli
 **Premises named.** The logarithm past the corner rests on (S), assumed, not derived; real readers have preferred
 scales, their own resolution among them, and here a preferred scale sets where the lay stops, not its form. The
 Cauchy's exact shape rests on the uniform turn, which is selected by treating every attitude alike, a stated ignorance
-(below), not forced. The reader's circle is its one length turned, a rigid bar's linear periodic turn; that every reader
+(below), not forced. The one-length circle is its one length turned, a rigid bar's linear periodic turn; that every reader
 uses this construction is not claimed, and whether real eyes, brains or instruments sweep by such a turn, with nothing
 imposing a c, is an empirical question left open. The paper's claim is conditional on the stated group and premises: a reader should, since only that gives
 it a turn, the Cauchy with its median at the corner, and true angles.

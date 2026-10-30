@@ -475,3 +475,12 @@ corrected there, its §0.
 - Uppercase V, H as fullnesses on [0, 1], the census V² + H² = 1; serial and parallel as the definition; the signed half
   turn's quartiles read as the corner and home; 2/π "a density per unit of arc".
 
+
+## Note, 30 October 2026 (SPN R592, R596)
+
+*The Algebra of Discrete Observation* gives its observer the field operations and the halving square root, so the
+constructible numbers. Since R592 (Tom: "Reader use H to construct it's geometry. Can NOT create irrational numbers with
+a single variable.") the reader's own numbers are the rationals: a square root combines two lengths and is the writer's.
+The gems pulled forward from that paper that rest on the observer's square root (the fisheye rebuilt from the corner,
+the halving and tangent addition; the halving descent; "algebra kept, evaluation declined" read as covering square
+roots) keep their mathematics, but the square-root step in each is now the writer's. Essay 14 §6 says so.

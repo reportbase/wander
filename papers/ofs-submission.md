@@ -158,7 +158,7 @@ v held at 1. The reading is v/h on the first half and h/v on the second. Exchang
 sends v/h to h/v. The limit v/h → ∞ is the *horizon*.
 
 This describes h and v on the *capped chart*, the edges of the unit square, the larger always held at 1. The paper's
-main picture is the reader's circle (§4), on which the same direction is (h, v) = (cos θ, sin θ), with h² + v² = 1. A
+main picture is the one-length circle (§4), on which the same direction is (h, v) = (cos θ, sin θ), with h² + v² = 1. A
 reading, being a ratio, is the same on both; where an amount of h or v enters (a distance, a foot, a height) we work on
 the circle unless the capped chart is named.
 
@@ -249,14 +249,18 @@ Order on the arc needs no division: for readings (h₁, v₁) and (h₂, v₂) t
 when the two are one direction and, with h₁, h₂ > 0, positive exactly when v₁/h₁ > v₂/h₂; comparing a reading with its
 own reciprocal gives D = v² − h², zero exactly at the corner.
 
-## 4. The reader's circle
+## 4. The one-length circle
+
+The circle here is the one an observer's single length traces when turned. From one place a reader has the open
+quarter of it, its readings, whose law is the Cauchy; the closed circle, with its total turn and its π, is held by an
+observer joining facings or standpoints, which is writing. Earlier versions called it "the reader's circle".
 
 We assume:
 - **(P0)** A relation requires two unit relations, h and v, each in [0, 1]. For a writer each relates its party to that
   party's breadth; a situated reader has no V, and for it both are shares of its own one length.
 - **(P1)** A situated reader holds exactly one length, H, the value it starts from, and holds no whole of the system.
 
-**Proposition 3 (the reader's circle).** Under (P0) and (P1):
+**Proposition 3 (the one-length circle).** Under (P0) and (P1):
 
 (a) the reader holds no breadth for the other party, so there is no number c relating a second length to H; a writer,
 holding the other's breadth, can write the reader's drawing on a page with two axes as V = cH, and no unit relation and
@@ -308,7 +312,7 @@ inner product. *Read*: that the return is what the reader's turn supplies, so th
 returning turn rather than as an added ingredient. That a returning one-parameter group has an imaginary generator is
 classical; Euler's formula is used here, not derived.
 
-**What V = H names.** V = H is a writer's name for the reader's circle. A writer, holding a breadth for the other party,
+**What V = H names.** V = H is a writer's name for the one-length circle. A writer, holding a breadth for the other party,
 can draw it on a second axis; looking at the circle the reader's one length traces, it finds that axis drawn at H. The
 reader set nothing: it has no V to set. Nor is V = H a claim that the other party has the reader's size. Where it does
 not, every amount taken from the reader's drawing is off by V*/H, by the same factor on both sides of the corner.
@@ -616,8 +620,9 @@ law is both the Möbius image of the uniform turn and harmonic measure is a fact
 part (Kato and McCullagh 2020 give the first), so a statement about a standpoint off the centre in three dimensions has
 to say which it means.
 
-**What the two sweeps return.** A writer holds a line of true breadth 1 as 1. The central sweep measures it as an arc,
-a half turn about the centre, π/2; the inscribed sweep as its projection over the turn, 2/π. Their product, not their
+**What the two sweeps return.** A writer holds a line of true breadth 1 as 1. Measured by the writer through the
+central sweep it is an arc, a half turn about the centre, π/2; through the inscribed sweep, its projection over the turn,
+2/π. Both numbers have π in them and are the writer's; from one place the reader has its readings and their corner. Their product, not their
 difference (π/2 − 2/π ≈ 0.934), gives the 1 back, and what it gives back is the reader's own H measured in H, not the
 true breadth of anything read. Out to 45° the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, with product
 1 again. Both rates are exact only on the circle; on the ellipse of a stretched drawing the inscribed angle theorem
@@ -718,7 +723,8 @@ multiplicative form (Cauchy 1821), whose increasing solutions are k·ln λ. At x
 slope k. ∎
 
 (S) does the work, and it is assumed, motivated by Proposition 3(b) and not derived: monotonicity, a fixed corner and a
-matched slope are not enough, since 1 + ln x + α(ln x)² satisfies all three. It passes through amounts. A second route
+matched slope are not enough, since 1 + ln x + α(ln x)² satisfies all three. (The reader holds the count of addresses
+a doubling; the smooth logarithm is the writer's formula for it.) It passes through amounts. A second route
 stays with ratios: relations chain by multiplying, v/h = (v/m)·(m/h), and a measure under which chained relations add
 and which grows with the relation can only be k·ln. The turn is not such a measure, and read against ln(v/h) it is
 arctan(v/h) = π/4 + ½·gd(ln(v/h)), the Gudermannian: the logarithm seen whole from one side, the turn per doubling past
@@ -728,7 +734,7 @@ of v/h being (h/v)², the Jacobian of the reciprocal.
 
 **A fixed count, aimed by H.** Let the reader hold a fixed number K of addresses, laid at equal steps of the turn. Read a
 distance d against H as a pair, the direction [H : d], as the reader reads any pair; once d/H is had (§8), the K
-address boundaries lie along distance at H·tan(kπ/2K), k = 1, …, K − 1, the last address running to the horizon, half of them inside H at every H; a larger H gives the near field less detail and
+address boundaries lie along distance at H·tan(kπ/2K) (the writer's formula for where the reader's addresses fall), k = 1, …, K − 1, the last address running to the horizon, half of them inside H at every H; a larger H gives the near field less detail and
 reaches farther, a smaller H the reverse. Every H gives the same geometry; its value sets only the zoom. The K
 addresses hold any number of things, with no table and no count of them, though things sharing an address arrive there
 as one. H cannot be declined: without a length there is no relation, and an H that favours no value is H at 0 or ∞,
@@ -740,7 +746,7 @@ A reader looks at a mountain range, face on, from opposite its middle. As writer
 thumb H = 1 mile (whatever single measure it holds), the range's width V* = 20 miles, its distance d = 10 miles. The
 reader knows only its thumb.
 
-1. *The addresses come first.* The reader's circle has radius 1 mile, its corner at 1 mile: proportional addresses
+1. *The addresses come first.* The one-length circle has radius 1 mile, its corner at 1 mile: proportional addresses
    inside, and past it the same number of addresses for each doubling. All of this is laid whether or not anything is
    there.
 2. *What it reads exactly.* Zero, v/h = 0, is straight ahead at the middle of the range, and its ends are at v/h = ±1,
@@ -748,12 +754,12 @@ reader knows only its thumb.
    uniformly over the half turn, the range takes exactly the middle half of them, between the Cauchy's quartiles, and
    the median points at its middle.
 3. *The two sweeps, on the thumb.* On the thumb's circle each quarter turn is an arc of π/2 thumbs over a projection of
-   1 thumb. Read by the central sweep the half turn gives π/2, by the inscribed sweep 2/π (with 36 directions at the midpoints of 36 equal steps
+   1 thumb. Measured by a writer through the central sweep the half turn gives π/2, through the inscribed sweep 2/π (with 36 directions at the midpoints of 36 equal steps
    of the half turn the mean projection is 0.6368; 0.6367 over a quarter); their product is 1, the thumb measured in thumbs. A range 2 miles wide at 1 mile gives the
    same directions and the same products.
 4. *What it cannot read.* A range 20 miles wide at 10 miles, 2 at 1 or 2,000 at 1,000 gives the same readings
    (Theorem 5(a)).
-5. *The reader's drawing.* A writer reading amounts off the reader's circle takes the range to be one thumb wide, and
+5. *The reader's drawing.* A writer reading amounts off the one-length circle takes the range to be one thumb wide, and
    the width-to-distance reading of 2 then puts it half a mile away. Every amount is off by V*/H = 20, by the same factor
    on both sides of the corner: a rigid shift of log₂ 20 ≈ 4.32 levels, the pattern of readings untouched.
 6. *Constructing the truth.* Walk one H toward the range: its half-angle grows from 45° to 48.0°, the reading from s = 1

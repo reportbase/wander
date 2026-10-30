@@ -185,7 +185,8 @@ other party the same question is asked of each: each party's breadth is known, a
 - **Both read.** Every direction of the octant is an address [h : v : v₂], two numbers, laid evenly by area and painted
   by whatever arrives along it.
 
-The second essay's π/2 and 2/π have their counterparts here. Over a whole hemisphere, the measure from the centre is its
+The second essay's π/2 and 2/π have their counterparts here, the writer's measures too (they come from the sphere's
+totals, though the π cancels). Over a whole hemisphere, the measure from the centre is its
 area over its base, 2; the measure from the edge is its mean height, ½; and 2 × ½ = 1, as π/2 × 2/π = 1 for two
 parties. These are not the two-party numbers squared. They are those times 8/π² and π²/8.
 
@@ -259,6 +260,6 @@ third of where you can look.
   Multivariate Analysis* 128, 147–153.
 
 The geometry is set out with proofs in *Observation from Somewhere*: the cuts, the sum and the two angles in §2, readers
-and writers with two parties in §3.1, the reader's sphere in §5 (Proposition 3(f)), the Cauchy wedge in §7.1
+and writers with two parties in §3.1, the one-length sphere in §5 (Proposition 3(f)), the Cauchy wedge in §7.1
 (Proposition 5(e), "Why uniformly by area", "Swept by altitude and azimuth", "More parties"), and the sphere in a cube in
 §9.

@@ -302,12 +302,48 @@ stand, and the one amount it is handed.
 
 ---
 
-## 12. What it comes to
+## 12. Becoming the writer
 
-**Reading and writing.** Standpoints are how a reader climbs from directions to places without ever writing. One gives
-lines, two give the figure, and the figure is exact, in the reader's own length. Writing enters at exactly one rung: the
-agreed length that fixes the scale. Astronomy's history of the astronomical unit is that rung, measured from outside for
-two centuries and finally agreed. Everything else in the cosmic distance scale is reading.
+Climb the ladder of this essay once more, and count the variables. From one standpoint there is one length, H, and a
+direction; nothing in it is a place, and what can be made from one length alone is rational (the fourteenth essay). A
+second standpoint adds a second variable, the step between the two. Now each point is two rays crossing, and its place
+comes out of the crossing's lengths and angles, sines and square roots, numbers no single length makes. More standpoints
+give every place seen, in the step's length: the writer's box, its three number lines, up to its size. Count the step in
+an agreed unit and the box is in that unit.
+
+So parallax is how a reader reconstructs the writer's cube, and while it does, it is the writer. It has moved, joined its
+standpoints and is holding what no one standpoint holds. When it stops and looks again, it reads. Reader and writer are
+not two kinds of observer; they are what one observer is doing. The labels move with the act.
+
+The first essay's survey says the same thing in its own words: the many angles are read, and the one base walked and
+counted is written; a surveyor does both in one morning.
+
+And the passage has degrees. Knowing V is not a switch thrown by the second standpoint; it comes in amounts, three
+ways. *In what:* in the step taken, in H if the step was H, in metres only if the step was counted. *How well:* best at
+the pair's corner, the circle on the baseline, the error stretching by d/(B/2) farther out, and past about B/ε nothing
+but a ray (the fifth section). *Of which things:* the same two standpoints give V for the near things and leave it
+unknown for the far ones. More standpoints, a longer baseline, narrow the band; nothing closes it. The writer who holds
+V exactly, the one the papers call the writer, is the limit of this, never a stage of it. That is the fifteenth essay's
+shape again: every stage of learning V is a finite approximant, as every partial sum of π is, and holding V exactly, like
+holding π, would need the infinite process finished. A reader becoming a writer holds V to so many digits, for so many
+things, out to so far.
+
+One way to speed the passage is to aim it. Set H to the thing itself and there are two senses. Make the thing the unit,
+and its V is 1 by choice; its own two ends become the baseline, and you are the point placed: ninety degrees across a
+mountain range, centred, puts you half a range-width from it, from one look (`mountain.html`, "the mountain as H"). Or
+keep your H and make the thing the focus: choose the baseline so that half of it equals the distance, which puts the thing
+at parallax's corner, where its error is least. You need the distance roughly first, so it goes in passes, a short step,
+then a longer baseline set from what the short one gave.
+
+---
+
+## 13. What it comes to
+
+**Reading and writing.** Standpoints are how a reader climbs from directions to places, and the climb is where reading
+turns into writing. One gives lines, two give the figure, exact, in the length of the step between them; the observer
+that joined them has written the figure. The last rung is the agreed length that fixes the scale. Astronomy's history of
+the astronomical unit is that rung, measured from outside for two centuries and finally agreed. Each standpoint's
+reading is reading; joining them, and agreeing the unit, is writing.
 
 **The Cauchy.** It appears twice here. Parallax has the corner and the bell of the steady turn, for the same reason: the
 pair's facing turns fastest at the corner. And on the far side of the reciprocal, inverted parallaxes behave exactly as

@@ -369,7 +369,7 @@ function render() {
     $('shellTag').textContent = S.pulse ? 'the reader, sending: writing' : 'the reader'; $('shellHead').textContent = S.pulse ? 'A pulse sent: ranges, in its unit' : 'A sphere, painted by what arrives'; $('roof').classList.toggle('on', S.roof);
     drawTri(); drawMap();
     $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}, the rooms ${fmtM(2.7 * k)} high, its box round everything ${fmtM(48 * k)} × ${fmtM(32 * k)} × ${fmtM(TOP * k)}, one number line a side. ` +
-        `The reader's sphere is the same at every k: its directions, and the colours arriving along them` + (S.pulse ? `; a pulse's ranges come back with geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in. ` : `, and no distance. `) + `From home the reader holds ${NA.toLocaleString('en')} addresses: v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
+        `The one-length sphere is the same at every k: the reader's directions, and the colours arriving along them` + (S.pulse ? `; a pulse's ranges come back with geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in. ` : `, and no distance. `) + `From home the reader holds ${NA.toLocaleString('en')} addresses: v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
         `v₂ ≤ h ${(100 * C.v2h).toFixed(1)}%, v₂ ≤ v ${(100 * C.v2v).toFixed(1)}%, the near field ${(100 * C.near).toFixed(1)}%, at every k and in every room.`;
     describe(); if (draw3d) draw3d();
 }

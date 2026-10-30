@@ -87,7 +87,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   The two vantages (13 Oct, SPN R223; OFS §10 step 3): on the thumb's circle the outer reads π/2, the inner the fingers'
   mean shadow 2/π, product 1, H in H, the starting value returned (R226; it said "the thumb's true breadth"); to the
   ends 1.1107 × 0.9003 = 1; the mountain never enters.
-  `?V=&d=&k=&walk=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `vantages`, `lay`, `set`).
+  "The mountain as H" (30 Oct, SPN R599): as the unit, the range's ends a baseline placing the reader 0.5 range-widths off
+  from one look; as the focus, a baseline 2d at parallax's corner, one thumb walked 10.025 times its error.
+  `?V=&d=&k=&walk=1&asH=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `vantages`, `asH`, `lay`, `set`).
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -1156,6 +1158,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and comes free where that method needs N (IMS's table, DPR's far plane). The lens restates draw's Tangent Bridge §10.2–10.3
   (known beforehand, not checked first). Two things from that paper await a ruling: its pan × tilt measure in 3D against
   OFS 5(e)'s uniform octant, and its §1.1 "unique Möbius-invariant distribution" (rotation-invariant is meant).
+  `readers-and-writers.md` (30 Oct 2026, SPN R600; Tom: "Write a paper that brings in all together for readers and writers.
+  Call it readers and writers."): *Readers and Writers*, a normal paper (about 5,000 words) gathering the two vantages, the two
+  tests, V as the line, the reader's free geometry, rates not angles, whose numbers (rational, algebraic, transcendental),
+  near and far, the wedge, the sphere and cube, becoming a writer by degrees, what a blueprint adds and the mountain; written
+  to R599, ahead of OFS until the audit's corrections (`plans/ofs-audit-r584-r599.md`) are made. Under R421 OFS stays the source.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
@@ -2560,6 +2567,63 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   what survives; which law a 3D statement means), a README row, pointers from essays 2 and 5; a pass over essays 1–12
   (vocabulary and cross-references, none wrong); the CS companion §2.4 "Polar form, and where it stops"; one sentence in
   the submission after the Cayley transform.
+  **Rates, not angles** (30 Oct, SPN R584; Tom: "The sweep is how things work in the natural world. Not angles or trig.
+  What that actually means is pi/2 and 2/pi and one are rates. Scale invarient rates of the sweep."; "tan and arctan are
+  writer tools, not reader tools"; then "A rate is a rate of something, that is the payload." and "When you sweep your hand
+  for horizontal to vertical you do it at an angular rate at either pi/2 or 2/pi. Never 1, 1 is the writers rate. Writers
+  have angles, readers have sweeps."): a rate is of something per something, the per the sweep's (the addresses, given),
+  the of the payload (met): a reader reads payload per address. 1 is the writer's rate, the angle (arc per radius against
+  the completed turn, the chord held as 1); a sweep from horizontal to vertical comes at π/2 (central) or 2/π (inscribed),
+  never 1, their product the writer's 1 had only by joining both. The corner is where v fills as fast as h empties; the
+  Cauchy a speed, turn per reading, the per against itself with no payload. An angle needs π, so evaluating tan or arctan
+  is the writer's; the reader runs tangent addition and the halving (the archive's *Algebra of Discrete Observation*,
+  draw's TB algebraic form). A rate per second, or of an amount (road per turn), is a writing. Never say 1 is the reader's
+  rate. The corner is where the three meet (R585): v fills as fast as h empties, v/h is the writer's 1, and 1 is the
+  geometric mean of π/2 and 2/π (the reciprocal's fixed point between the two sweeps); the running rates there are 1.1107
+  and 0.9003, not 1. Essay 14 §9–§10 (R586): the classical thinkers (the *Mechanica*, Newton's fluxions, Archimedes,
+  Ptolemy, Nunes and Wright) and our reading; on a sphere the reader's 2 and ½; the metaphor marked unfinished (which
+  three ways), nothing in OFS yet. Then R587, the writer's cube and the reader's sphere: the corner the
+  cube's vertex seen from the sphere's centre; the cube outside the sphere the inscribed sweep's picture (touching at the
+  ends), inside it the central sweep's (Thales' circle through home, the ends and the far corner); essay 14 §10, one
+  sentence in OFS §4. R588, two 1's: a 1 needs a measure; the cube's (larger), the diamond's (sum, h + v = 1)
+  and the circle's (Pythagoras) agree on the axes and part at the corner (1, 2, √2); the writer cannot choose, the turn
+  picks the round one; Hölder ‖x‖₂² ≤ ‖x‖₁‖x‖∞, equality on axes and corner diagonals, √2 the geometric mean of the
+  writer's 1 and 2. 2/π is against an edge, π/2 against the chord as diameter. Essay 14 §10. R589, two sweeps, three axes: the hand's altitude (h→v) and
+  azimuth (h→v₂) the reader's sphere, the cube Descartes' X, Y, Z = h, v, v₂, reached only with H and the angles
+  (X = H·cos a·cos ψ …); the triple corner at azimuth 45°, altitude 35.26°, apart from each sweep's 45° corner.
+  R590: the closest classical framing is Poincaré's (the universe a thousand times larger overnight, representative
+  and geometric space, geometry from the observer's group of displacements), Leibniz the root (an order of
+  coexistences, analysis situs), Klein the group; essay 14 §9–§10, OFS Appendix A; quoted from memory, to check.
+  R591: the sphere is the writer's read of the reader; the reader reads with the Cauchy. The writer is transcendental,
+  the reader is not: π is not a reader's number, so π/2, 2/π (and the sphere's 2, ½) are the writer's measure of the
+  reader's sweep; the reader's numbers are constructible (ratios, tangent addition, the halving). Never call π/2 or 2/π
+  the reader's own. Older text that does (OFS §3.4, §4, §10 step 3, R329, demos) still waits for a pass.
+  R592: one variable (H) makes only rationals, the reader's; irrationals need two variables combined (√2 the diagonal),
+  π the whole turn, both the writer's; the reader meets irrational directions but does not make them. Bisecting a
+  direction ((√(1 + s²) − 1)/s) and Viète's product are the writer's. OFS §5 "Why halving" not yet reconciled.
+  The inconsistencies these rulings leave in the older corpus (π/2 and 2/π as the reader's, the reader's circle and
+  sphere, halving by square roots, the lay's ln, H·tan(kπ/2K), Euler's formula, the Cauchy's constant, the 1's, demos)
+  are listed, not changed, in `plans/flags-r584-r592.md` (30 Oct, Tom: "Flag any inconsistencies for future
+  consideration."); entries 1–3 wait on one decision, whether the circle is the writer's too.
+  R594: the reader reconstructs the writer's cube by parallax (a second standpoint, a second variable, places from the
+  crossings) and in doing it is writing; the labels name the act, not the observer (narrows R442). OFS §3.1 "Roles, not
+  kinds", §9 "Recovered, by writing", essay 6 §12 "Becoming the writer"; a proposed way through flags 1–3.
+  R595 applied it: "the reader's circle" is now "the one-length circle" everywhere in the papers (OFS §5's title,
+  Proposition 3), held whole only by an observer writing; say "the one-length circle", not "the reader's circle".
+  R596 carried flags 4–13 through: being unmoved by scaling is needed for a reading, not enough (√2 and π are made
+  while writing); halving a length is the reader's, halving a turn the writer's; the lay's ln, H·tan(kπ/2K), Euler's
+  formula and the Cauchy's constant are the writer's formulas for the reader's things; essay 14 names its five 1's. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
+  `papers/essays/14-rates-not-angles.md` (a roof's pitch), on `essays.html` and in `explainers.html`'s not-yet list.
+  R597 (Tom: "That topic deserves its own essay"): transcendentals are a completed infinity, the writer's: π completes the
+  turn, e the scale (the period and the base of the exponential maps of the reader's two groups), meeting at e^(iπ) = −1;
+  the reader meets them and makes none, a machine's floats are fractions. Essay 15, `papers/essays/15-what-only-a-writer-holds.md`
+  (Bernoulli's bank), on `essays.html` and the explainers' not-yet list.
+  R598 (Tom: "it's not binary, you can learn V through paralax"): knowing V by degrees, in what (the step, H, an agreed
+  unit), how well (the band, best at the pair's corner, a ray past B/ε) and of which things (near, not far); the exact
+  writer the limit, as π of its approximants. OFS §9 "Knowing V, by degrees"; essay 6 §12; essay 15 §6.
+  R599 (Tom: "if you set H to equal the mountain"): the thing itself as H, as the unit (its V 1 by choice, its ends a baseline
+  placing the reader, 1/(2·tan(α/2)) breadths off) or as the focus (a baseline with B/2 = d, parallax's corner, found in
+  passes). OFS §9 "The thing itself as H"; essay 6 §12; `mountain.html`'s "the mountain as H".
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
@@ -2896,7 +2960,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     thirteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     fifteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
@@ -2924,7 +2988,7 @@ In short:
   18. **mountain.html:** the range's ends at 45°, 18 of 36 fingers on it, the same at a thousand times the scale; mountain
       equals thumb reads 1 mi at 0.5 mi, off by 20, log₂ 20 doublings; one thumb walked recovers d = 10 and V = 20; the
       two vantages on the thumb π/2 × 2/π = 1 (the 36 fingers' mean shadow within 0.001 of 2/π), to the ends at 45°
-      1.1107 × 0.9003 = 1, the same at a thousand times the scale.
+      1.1107 × 0.9003 = 1, the same at a thousand times the scale; the mountain as H puts the reader 0.5 range-widths off.
 
   19. **play-marbles.html:** the pour of 500 at rest in the bowl, the bowl and table carrying the weight within 1%; the arc seen
       ahead ends at its first contact; a throw near the rim knocks marbles out and is heard (glass, bowl, felt); the pull

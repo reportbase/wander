@@ -107,7 +107,7 @@ v = h, the *corner*, the only reading fixed by the reciprocal x ↦ 1/x (OFS Pro
 geometry and carry no unit; uppercase H, V and the distance d are amounts. A conclusion crosses from one to the other only
 across a named bridge: an amount supplied from outside.
 
-**The reader's circle.** The reader holds one length, H, and nothing else to measure with. Turned uniformly, that one
+**The one-length circle.** The reader holds one length, H, and nothing else to measure with. Turned uniformly, that one
 length traces a circle, and the readings of the turn follow the Cauchy distribution: on the quarter turn, median at the
 corner, quartiles √2 − 1 and √2 + 1, no mean (OFS Proposition 5).
 
@@ -704,8 +704,9 @@ computed from the step where π enters matches its source. Sorted:
 
 So 2/π is not one thing, and a single 2/π does not fingerprint the uniform turn. OFS's reader, counting by its inscribed
 sweep, holds shares and medians, not means, so most of these 2/π belong to the payload's side: a mean taken over the turn. The even turn shows
-instead in every projection's mean being 2/π at every offset. OFS's π/2 · 2/π = 1, the two sweeps' readings of one line
-whose product returns the reader's own H, is one more: a ratio of two sums over the turn.
+instead in every projection's mean being 2/π at every offset. OFS's π/2 · 2/π = 1, a writer's measure of the two sweeps
+over one line whose product returns the reader's own H, is one more: a ratio of two sums over the turn, the writer's
+(OFS §4, "Rates, not angles").
 
 ## 12. What failed, and what it taught
 

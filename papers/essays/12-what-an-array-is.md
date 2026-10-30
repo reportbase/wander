@@ -165,7 +165,7 @@ The second essay showed that one turn is read two ways, from two pivots. From th
 circle on it, a radius turns through a half turn. From one end of the chord, home, a ray turns through a quarter turn.
 Both sweep the same arc, and both end at the same point.
 
-They measure it differently. The central sweep reads arc over chord, θ/sin θ: 1 at the start, 1.1107 at the corner,
+A writer measures it differently through each (these numbers carry π, the writer's; the fourteenth essay). The central sweep reads arc over chord, θ/sin θ: 1 at the start, 1.1107 at the corner,
 π/2 at the end. The inscribed sweep reads chord over arc, sin θ/θ: 1 at the start, 0.9003 at the corner, 2/π at the
 end. At every θ their product is 1, the chord, which is the writer's: only the writer walks the chord; the readers face
 the arc.

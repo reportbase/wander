@@ -153,6 +153,11 @@ Divide at the corner, and apply the same argument to each half, and you get halv
 parts, or any other number, need something added to the level, a measure it does not have. This is Felix Klein's
 principle that a geometry supplies what its symmetries keep, applied to the points of a level.
 
+Two halvings should be kept apart. Halving a length or a count, H to H/2, the doublings 2ᵏ, is rational, and a reader
+with one length makes it. Placing the cut inside a doubling at its geometric middle, √2 inside the first, takes a square
+root, two lengths combined, and that is the writer's (the fourteenth essay, "One variable, two, and the whole turn"). The argument above says which point a level's
+symmetries mark; it does not make the reader the one who places it.
+
 A reader can still match any other ratio. A reader whose resolution grows by a factor of three from level to level
 matches levels of three exactly, as one with a factor of two matches doublings. But every ratio other than the halving
 costs something carried in the reader. A layout with uneven levels costs more. A calendar's centuries, months, days,

@@ -230,7 +230,7 @@ the horizon, the radius has made a half turn and sits back at A, home. That half
 made only a quarter. The e and the π are only notation here: the same squaring, written with the reading s, is (1 +
 is)/(1 − is), and as s runs off to infinity that runs to −1. What the identity records is projective: the reader's two
 ends, zero and the horizon, land at the two ends of one diameter. Section 9 comes back to Euler's formula as the
-reader's notation.
+writer's notation for the reader's turn.
 
 **One turn, two charts.** The even turn belongs to neither sweep. Written as the inscribed sweep's ratio, it is the
 Cauchy: the long tails and the missing mean come from the ratio running off to infinity. Written as the central sweep's
@@ -258,14 +258,15 @@ only the reader's own length turned.
 
 ---
 
-## 7. π/2 and 2/π: the writer's 1, read twice
+## 7. π/2 and 2/π: the writer's 1, measured twice
 
 There is a number on each side of the chord and the arc, and the two numbers are reciprocals.
 
 Raise the arm through its quarter turn. Its tip travels π/2 of the arm's length along the arc, while its straight reach
 upward goes from nothing to all of the arm, 1. Read the turn as arc over straight reach and it comes to π/2 over the whole
-quarter; read it as straight reach over arc and it comes to 2/π. The first is the central sweep's reading; the second is
-the inscribed sweep's.
+quarter; read it as straight reach over arc and it comes to 2/π. The first is what a writer, holding the straight reach
+and the whole quarter, measures through the central sweep; the second, through the inscribed sweep. Both have π in them,
+and π is not a reader's number: from one place the reader has its readings and their corner, not these.
 
 Neither is the straight length itself. The writer, holding it whole, has it as 1, no curve involved. Each sweep gets at
 that 1 through the arc, and each gets it distorted: one too long by π/2, one too short by 2/π. Only their product
@@ -277,6 +278,17 @@ This is not a coincidence of numbers. It says that the reader, facing the arc fr
 length directly. It has it twice over, once from each pivot, and the two readings together return exactly what the
 writer holds in one. What they return is the reader's own length measured in itself, H in H. They do not return the
 size of anything else.
+
+**They are rates, not angles, and they are the writer's.** Raise the hand from horizontal to vertical, and a writer
+holding the straight line from start to end measures the sweep at one of two rates against it: π/2 from the middle of the
+chord, 2/π from a point of the circle. Never 1: the 1 is the writer's own rate, the angle, arc per radius read against the
+completed turn, which the reader has only by joining the two sweeps. Writers have angles, readers have sweeps. And
+because each of these numbers has π in it, the count of a completed turn, they are the writer's account of the sweep, not
+the reader's own: the writer is transcendental, the reader is not. The reader holds one length, and one length makes
+only rationals; the irrationals need two lengths combined, and π the whole turn. The reader holds the same sweep as the Cauchy, its
+readings and their corner at 1, where v fills exactly as fast as h empties. A rate a reader reads is always of something
+per something, the payload per address. The fourteenth essay, "Rates, not angles", takes this up, and with it why the
+tangent and arctangent, which convert a direction into a share of the whole turn and back, are the writer's tools.
 
 *Demo: the mountain and the thumb, "the two vantages": π/2 and 2/π on the thumb's circle, their product 1.*
 
@@ -316,7 +328,7 @@ describes the reader's.
 
 A writer holds both lengths, the reader's H and the other party's V, and can draw them on a page with two axes. Looking at
 the circle the reader's one length traces, the writer sees two axes drawn at the same length and writes that down as
-**V = H**. It is the writer's name for the reader's circle. The reader never set it. It has no V to set.
+**V = H**. It is the writer's name for the one-length circle. The reader never set it. It has no V to set.
 
 On a page, though, two different lengths are possible. Draw the upward axis at c times the forward axis, so V = cH with c
 not equal to 1. Then nothing turns all of the forward reach into all of the upward reach without stretching on the way.
@@ -338,7 +350,7 @@ So where does a c other than 1 come from, if the reader never chooses it? Four p
 Practice has found c = 1 again and again, under other names, each field for its own reason. Statistics standardizes its
 variables before comparing directions. Charts that must keep compass bearings true draw them at c = 1; that is what
 Mercator's projection does. Graphs of slopes are drawn with equal axes, and cameras have square pixels. The geometry gives
-the one reason underneath: c = 1 is the only two-axis drawing that has the reader's circle on it.
+the one reason underneath: c = 1 is the only two-axis drawing that has the one-length circle on it.
 
 ### Circular mathematics without V
 
@@ -353,18 +365,25 @@ about the shares of one length. The v in it is the turned length's own up share,
 breadth. Reading it as the second is where the confusion comes from.
 
 And circular mathematics was always ratio mathematics. Sine, cosine and tangent are sides over the hypotenuse. A radian
-is arc over radius. π is circumference over diameter, a ratio, so π itself is a reading. e^(iθ) is the unit circle, any
-circle divided by its own radius. The corner, π/2 and 2/π, and the Cauchy are ratios too. None of them moves when the
-world is scaled, which is the test for a reading. Trigonometry is the reader's mathematics.
+is arc over radius. π is circumference over diameter, a ratio. e^(iθ) is the unit circle, any circle divided by its own
+radius. The corner, π/2 and 2/π, and the Cauchy are ratios too. None of them moves when the world is scaled. But being
+unmoved by scaling is needed for a reading and is not enough. √2 combines two lengths, and π, with every number that
+carries it, needs the whole turn; both are made only by an observer combining lengths or holding the turn complete, and
+that is writing (the fourteenth essay). So the reader has the corner, its readings and the Cauchy's shape; sine and
+cosine as numbers, the radian, π, π/2 and 2/π are the writer's, scale-free as they are. Trigonometry is the writer's
+record of the reader's turn.
 
 What the reader cannot do without an amount carried in is place a point at (x, y) in metres, state the circumference as
 2π times so many metres or the area as so many square metres, or say how large another party's circle is beside its own.
 Those are amounts, and amounts are writing. The reader does every part of circular mathematics except the parts that
 state a size.
 
-### Euler's formula, the reader's notation
+### Euler's formula, the writer's notation for the reader's turn
 
-One piece of classical notation holds all of this at once: Euler's formula, written in polar form,
+One piece of classical notation holds all of this at once: Euler's formula, written in polar form. It is the writer's
+notation: e^(iθ) takes the angle as a number, and the whole turn, π, with it (the fourteenth essay). What it records of
+the reader is the split of address from amount and the composition of readings, which in the readings themselves is
+tangent addition, rational:
 
 > z = r·e^(iθ).
 
@@ -443,13 +462,15 @@ of the two it means. The thirteenth essay, *Why the plane is special*, takes thi
 The two unifying ideas of the series, reading against writing and the Cauchy, meet in the circle, and this essay has
 been about how.
 
-**The circle is the reader's before it is the writer's.** A writer starts with the circle as an equation in two lengths
-and turns it. A reader starts with one length and turns it, and the circle is what the turning traces. The writer's
-equation describes, in two lengths, a thing the reader made with one.
+**The circle is one length's before it is two lengths'.** A writer starts with the circle as an equation in two lengths
+and turns it. A reader starts with one length and turns it, and the circle is what the turning traces. From one place
+it has the open quarter of it, its readings; the circle closed, with its π, is held by an observer that has joined its
+facings, which is writing, and the same observer reads again when it stands still (the sixth essay, "Becoming the
+writer"; the fourteenth). The writer's equation describes, in two lengths, a thing one length made.
 
 **Everything special about the circle is available from one length.** That includes the corner at 45°, its two
-mirrored halves, the right angle on the chord, and the inscribed sweep's ratios and the central sweep's squares. So are
-π/2 and 2/π, whose product returns the reader's own length. None of it needs a second length or the size of anything.
+mirrored halves, the right angle on the chord, and the inscribed sweep's ratios and the central sweep's squares. So is
+the writer's measure of the two sweeps, π/2 and 2/π, whose product returns the reader's own length. None of it needs a second length or the size of anything.
 
 **The Cauchy is the circle read from its edge.** The inscribed sweep, from the reader's own point on the circle, reads
 directions as ratios, unbounded, with their median at the corner and no mean. That is the Cauchy, the circle's law
@@ -469,5 +490,5 @@ their median.
 - Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Berlin.
 
 The geometry is set out with proofs in *Observation from Somewhere*: the corner in §4 (Propositions 1 and 2), the arc from
-the chord, the two sweeps and what each reads in §4, the reader's circle in §5 (Proposition 3, with the derivation of the
+the chord, the two sweeps and what each reads in §4, the one-length circle in §5 (Proposition 3, with the derivation of the
 circle from a uniform returning sweep as part (g)), and the three paths in §12.2.
