@@ -1221,7 +1221,12 @@ step of turn and the ray's two (above); the reading v/h moves on by 1 + (v/h)² 
 rates meet, with no angle named: v fills exactly as fast as h empties there, their ratio is the writer's 1, and the
 writer's 1 is the geometric mean of the reader's two rates, √(π/2 · 2/π), ln(π/2) and ln(2/π) symmetric about it on the
 levels, the fixed point of the reciprocal that pairs the two sweeps. The sweeps' running rates are not 1 there (θ/sin θ
-is 1.1107, sin θ/θ 0.9003); they are 1 only at zero. An angle is a share
+is 1.1107, sin θ/θ 0.9003); they are 1 only at zero.
+Put as two shapes: the writer's is a cube (a number line on each axis, every edge at rate 1), the reader's a sphere (its one
+length turned every way); about the reader's home the corner direction [1 : 1 : 1] lands on the cube's vertex, where all
+three number lines read 1, and with the cube's near corner at home, the inscribed sweep's unit circle has the cube outside
+it, touching at the sweep's ends, while the central sweep's circle, the circle on the chord, has the cube inside it, through
+home, the ends and the far corner. An angle is a share
 of the whole turn and needs the turn's total, π; to evaluate the tangent or the arctangent is to cross from a direction
 to such a share or back, so both are the writer's tools: the arctangent is the writer's formula for how much of the turn
 a reading has passed (§2), and laying an array on the quarter turn by it is a writer's construction (§7.3). The reader

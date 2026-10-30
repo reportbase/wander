@@ -2575,7 +2575,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   geometric mean of π/2 and 2/π (the reciprocal's fixed point between the two sweeps); the running rates there are 1.1107
   and 0.9003, not 1. Essay 14 §9–§10 (R586): the classical thinkers (the *Mechanica*, Newton's fluxions, Archimedes,
   Ptolemy, Nunes and Wright) and our reading; on a sphere the reader's 2 and ½; the metaphor marked unfinished (which
-  three ways), nothing in OFS yet. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
+  three ways), nothing in OFS yet. Then R587, the writer's cube and the reader's sphere: the corner the
+  cube's vertex seen from the sphere's centre; the cube outside the sphere the inscribed sweep's picture (touching at the
+  ends), inside it the central sweep's (Thales' circle through home, the ends and the far corner); essay 14 §10, one
+  sentence in OFS §4. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
   `papers/essays/14-rates-not-angles.md` (a roof's pitch), on `essays.html` and in `explainers.html`'s not-yet list.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS

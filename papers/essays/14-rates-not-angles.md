@@ -310,8 +310,47 @@ coordinates, the rhumb line. What this essay adds is the sorting. The straight c
 two motions and their mix are the reader's; the mix is a rate, of a payload per address; and the three numbers 1, π/2 and
 2/π, or on a sphere 1, 2 and ½, are the writer's rate and the reader's two.
 
-This is a picture still being settled. Which of the navigator's three ways the series should name as the reader's
-three, the chord with the two motions, or the chord, the great circle and the rhumb line, is left open here.
+**The writer's cube, the reader's sphere.** The picture settles into two shapes. The writer's is a cube: one number line
+on each axis, every point three amounts, every edge run at the writer's rate, 1, nothing round (the first essay's box). The
+reader's is a sphere: its one length H turned every way from where it stands, every direction an address, no distance on
+it, the sweeps running at π/2 and 2/π on a circle and at 2 and ½ over a hemisphere. From A = (1, 0) to B = (0, 1) there are
+then three ways, two the writer's and one the reader's:
+
+| way | whose | length |
+|---|---|---|
+| along the cube's edges, one axis and then the other | the writer's number lines | 2 |
+| straight across, the chord | the writer's | √2 |
+| round the sphere, the sweep | the reader's | π/2 |
+
+The navigator's plane sailing, keeping the difference of latitude and the departure apart, is the cube's way; the great
+circle is the sphere's.
+
+**It explains the corner.** Put the reader's sphere inside the writer's cube, both about the reader's home, as
+`sphere-cube.html` does. Every direction on the sphere lands on a point of the cube, and the reader's corner, the direction
+[1 : 1 : 1] (in the plane, 45°), lands exactly on a vertex of the cube, where all three of the writer's number lines read 1.
+The corner is the cube's corner seen from the sphere's centre: the one direction in which the reader's sweep and the
+writer's equal amounts agree, which is where, in the third section, the horizontal, the vertical and the writer's 1 met.
+The classical ratios between the two shapes hold for both measures at once: a circle in its square takes π/4 of its area
+and π/4 of its perimeter, a sphere in its cube π/6 of its volume and π/6 of its surface, and measured in its own
+straight-edged norm the square's π is 4 where the circle's is π (Adler and Tanton).
+
+**The cube outside the sphere, and inside it.** The two placements are the two sweeps. Put the writer's unit cube with
+home at one vertex, its near vertices A, B (and C) on the axes and its far vertex at (1, 1, 1).
+
+- *The cube outside the sphere* is the inscribed sweep's picture. Its circle is the reader's own unit circle, centred at
+  home, radius 1: it passes through A and B, the sweep's two ends, and the cube's far corner stands outside it, at √2 in
+  the plane and √3 in space.
+- *The cube inside the sphere* is the central sweep's. The sphere round the cube, centred at the cube's middle (in the
+  plane the middle of the chord AB), passes through every vertex: home, A, B and the far corner. It is the circle on the
+  chord, Thales' circle, which runs through home because the angle at home is square. Its centre is the central sweep's
+  pivot, and home, a point of it, the inscribed sweep's.
+
+In both, the reader's corner direction from home points at the cube's far corner. On the circle round the cube it lands
+there exactly: a ray from home in direction d meets that circle at the distance d·(1, 1), which is 1 on each axis and √2
+at 45°, so at 0° the ray lands on A, at 45° on the far corner (1, 1), at 90° on B. From the middle that is the central
+sweep's half turn from A through the corner to B; from home the inscribed sweep's quarter turn. So the cube outside the
+sphere touches it at the sweep's ends, and the cube inside the sphere touches it at the corner as well: the inscribed sweep
+holds the ends, the central sweep holds the corner, and the writer's cube is what both are drawn against.
 
 ---
 
