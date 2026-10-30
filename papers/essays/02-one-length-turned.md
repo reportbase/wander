@@ -258,14 +258,15 @@ only the reader's own length turned.
 
 ---
 
-## 7. π/2 and 2/π: the writer's 1, read twice
+## 7. π/2 and 2/π: the writer's 1, measured twice
 
 There is a number on each side of the chord and the arc, and the two numbers are reciprocals.
 
 Raise the arm through its quarter turn. Its tip travels π/2 of the arm's length along the arc, while its straight reach
 upward goes from nothing to all of the arm, 1. Read the turn as arc over straight reach and it comes to π/2 over the whole
-quarter; read it as straight reach over arc and it comes to 2/π. The first is the central sweep's reading; the second is
-the inscribed sweep's.
+quarter; read it as straight reach over arc and it comes to 2/π. The first is what a writer, holding the straight reach
+and the whole quarter, measures through the central sweep; the second, through the inscribed sweep. Both have π in them,
+and π is not a reader's number: from one place the reader has its readings and their corner, not these.
 
 Neither is the straight length itself. The writer, holding it whole, has it as 1, no curve involved. Each sweep gets at
 that 1 through the arc, and each gets it distorted: one too long by π/2, one too short by 2/π. Only their product
@@ -327,7 +328,7 @@ describes the reader's.
 
 A writer holds both lengths, the reader's H and the other party's V, and can draw them on a page with two axes. Looking at
 the circle the reader's one length traces, the writer sees two axes drawn at the same length and writes that down as
-**V = H**. It is the writer's name for the reader's circle. The reader never set it. It has no V to set.
+**V = H**. It is the writer's name for the one-length circle. The reader never set it. It has no V to set.
 
 On a page, though, two different lengths are possible. Draw the upward axis at c times the forward axis, so V = cH with c
 not equal to 1. Then nothing turns all of the forward reach into all of the upward reach without stretching on the way.
@@ -349,7 +350,7 @@ So where does a c other than 1 come from, if the reader never chooses it? Four p
 Practice has found c = 1 again and again, under other names, each field for its own reason. Statistics standardizes its
 variables before comparing directions. Charts that must keep compass bearings true draw them at c = 1; that is what
 Mercator's projection does. Graphs of slopes are drawn with equal axes, and cameras have square pixels. The geometry gives
-the one reason underneath: c = 1 is the only two-axis drawing that has the reader's circle on it.
+the one reason underneath: c = 1 is the only two-axis drawing that has the one-length circle on it.
 
 ### Circular mathematics without V
 
@@ -454,9 +455,11 @@ of the two it means. The thirteenth essay, *Why the plane is special*, takes thi
 The two unifying ideas of the series, reading against writing and the Cauchy, meet in the circle, and this essay has
 been about how.
 
-**The circle is the reader's before it is the writer's.** A writer starts with the circle as an equation in two lengths
-and turns it. A reader starts with one length and turns it, and the circle is what the turning traces. The writer's
-equation describes, in two lengths, a thing the reader made with one.
+**The circle is one length's before it is two lengths'.** A writer starts with the circle as an equation in two lengths
+and turns it. A reader starts with one length and turns it, and the circle is what the turning traces. From one place
+it has the open quarter of it, its readings; the circle closed, with its π, is held by an observer that has joined its
+facings, which is writing, and the same observer reads again when it stands still (the sixth essay, "Becoming the
+writer"; the fourteenth). The writer's equation describes, in two lengths, a thing one length made.
 
 **Everything special about the circle is available from one length.** That includes the corner at 45°, its two
 mirrored halves, the right angle on the chord, and the inscribed sweep's ratios and the central sweep's squares. So are
@@ -480,5 +483,5 @@ their median.
 - Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Berlin.
 
 The geometry is set out with proofs in *Observation from Somewhere*: the corner in §4 (Propositions 1 and 2), the arc from
-the chord, the two sweeps and what each reads in §4, the reader's circle in §5 (Proposition 3, with the derivation of the
+the chord, the two sweeps and what each reads in §4, the one-length circle in §5 (Proposition 3, with the derivation of the
 circle from a uniform returning sweep as part (g)), and the three paths in §12.2.

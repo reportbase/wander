@@ -2600,7 +2600,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   consideration."); entries 1–3 wait on one decision, whether the circle is the writer's too.
   R594: the reader reconstructs the writer's cube by parallax (a second standpoint, a second variable, places from the
   crossings) and in doing it is writing; the labels name the act, not the observer (narrows R442). OFS §3.1 "Roles, not
-  kinds", §9 "Recovered, by writing", essay 6 §12 "Becoming the writer"; a proposed way through flags 1–3. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
+  kinds", §9 "Recovered, by writing", essay 6 §12 "Becoming the writer"; a proposed way through flags 1–3.
+  R595 applied it: "the reader's circle" is now "the one-length circle" everywhere in the papers (OFS §5's title,
+  Proposition 3), held whole only by an observer writing; say "the one-length circle", not "the reader's circle". The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
   `papers/essays/14-rates-not-angles.md` (a roof's pitch), on `essays.html` and in `explainers.html`'s not-yet list.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS

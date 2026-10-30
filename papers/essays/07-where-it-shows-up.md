@@ -14,7 +14,7 @@ one length, or the turn is lost. The freedom is the size, which every one of the
 
 The third essay already took three cases from data: LIGO's two detectors, the quasar dipole, and photons arriving one at
 a time. Those sorted the address from the payload. The cases here are older and more familiar, and they sort something
-else: what the reader's circle looks like once it is drawn on a page, a shore or a chart, where a second axis exists and
+else: what the one-length circle looks like once it is drawn on a page, a shore or a chart, where a second axis exists and
 can be stretched.
 
 ---
@@ -214,7 +214,7 @@ weighting of features chosen for a task sets c deliberately, because the task ca
 
 None of these fields cites another for the idea. Statisticians standardize to make a coefficient unit-free, cartographers
 want straight rhumb lines, graph designers want legible slopes, camera makers want isotropic images. The geometry gives
-the common reason. The drawing with both axes at one length is the only two-axis drawing that has the reader's circle,
+the common reason. The drawing with both axes at one length is the only two-axis drawing that has the one-length circle,
 so it is the only one in which the sweep is a turn and the median of every pair's readings sits on the corner.
 
 ---
@@ -368,7 +368,7 @@ The first test of the first essay, scale the world, sorts them at once. Scale th
 moves by k while every angle stays. Scale the globe and Mercator's chart is redrawn at a new scale with the same courses.
 Rescale a variable and its correlations stand. Move every star k times farther and the moving sky is unchanged.
 
-**The Cauchy.** Each case is the reader's circle drawn on something with two axes, and each requires the two axes at one
+**The Cauchy.** Each case is the one-length circle drawn on something with two axes, and each requires the two axes at one
 length for the circle to survive. The lighthouse's corner, Mercator's 45° northeast, the correlation of standardized
 variables, the eye's best judgment of slopes, a sky's median moving by exactly η: in every one, c = 1 is what keeps the
 turn a turn and puts the median on the corner. Every field met the requirement for its own reasons. The geometry says why

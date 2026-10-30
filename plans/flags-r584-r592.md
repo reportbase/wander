@@ -219,6 +219,11 @@ has the open quarter and the Cauchy. So "the reader's circle" in OFS §5 and ess
 observer's one length traces, held whole only by the observer writing. That is consistent with R533 (one length, no V)
 and R591 (the sphere is the writer's read). It still needs Tom's word before any rewording.
 
+*Applied 30 Oct (R595, Tom: "Yes."):* "the one-length circle" throughout OFS, the companions and the essays; §5's opening
+paragraph in OFS, the CS companion and the submission; π/2 and 2/π made the writer's measure in OFS's introduction,
+§3.3, §3.4, §4 and §10 step 3, and in essay 2. Not yet: the π/2 and 2/π sentences in the companions and in essays other
+than 2 and 14, R329/R450/R570 (kept as the record), and the demos (entry 13).
+
 ## Order suggested
 
 Entries 1 to 3 are one decision for Tom: whether the circle goes the way of the sphere. Once that is made:

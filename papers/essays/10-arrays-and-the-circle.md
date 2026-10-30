@@ -187,7 +187,7 @@ wearing the tangent's normalization.
   K_2 = Im[(1 + is)²]/(2s(1 + s²)) = 2s/(2s(1 + s²)) = 1/(1 + s²).
 
 That is the Cauchy's curve, π times its density. It is also h², the piece of the chord that, in the second essay, the
-crossing for slope s cut off beneath it, since h = 1/√(1 + s²) on the reader's circle. With two places, at opposite ends of a diameter, each stored
+crossing for slope s cut off beneath it, since h = 1/√(1 + s²) on the one-length circle. With two places, at opposite ends of a diameter, each stored
 value is carried round the circle with weight h² from its own end and v² from the other's, and the two add to one. The
 higher kernels follow from it:
 

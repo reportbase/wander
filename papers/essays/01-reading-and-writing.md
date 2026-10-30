@@ -247,7 +247,7 @@ Every one of those features survives in the Cauchy, and none of them needs V.
   corner, between a half and two. The rest thin out toward each end. Every equal step of turning holds equal weight;
   only the slope, read as a number, crowds and thins.
 
-The writer's circle has every one of these properties, with V known. The reader's circle has every one of them with V
+The writer's circle has every one of these properties, with V known. The one-length circle has every one of them with V
 unknown. That is the sense in which the Cauchy is the circle without the V. It is the circle's geometry, the corner, the
 halves and the swap, carried by one length alone.
 
@@ -291,8 +291,8 @@ direction read from a standpoint. Its median is the corner, a feature of the geo
 there is no amount to be had.
 
 One more point, about a phrase that appears often in the writings this essay draws on: "V = H". A writer looking at the
-reader's circle sees the reader's one length turned, and describes it in the writer's own terms: two breadths, both
-equal to H. The phrase is the writer's name for the reader's circle. The reader never sets V equal to H. It has no V to
+one-length circle sees the reader's one length turned, and describes it in the writer's own terms: two breadths, both
+equal to H. The phrase is the writer's name for the one-length circle. The reader never sets V equal to H. It has no V to
 set.
 
 ### What is old and what is new
@@ -583,5 +583,5 @@ The essay draws on these; each is cited for something it uses.
   Psychology: Human Perception and Performance* 10(5), 683–703.
 
 The geometry is set out with proofs in *Observation from Somewhere*, in the same collection: readers and writers in
-§3.1, the reader's circle in §5, the Cauchy as the law of the uniform turn in §7, reading and writing in §9, and the
+§3.1, the one-length circle in §5, the Cauchy as the law of the uniform turn in §7, reading and writing in §9, and the
 classical pieces in Appendix A ("The Cauchy from one length").

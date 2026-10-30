@@ -107,7 +107,7 @@ v = h, the *corner*, the only reading fixed by the reciprocal x ↦ 1/x (OFS Pro
 geometry and carry no unit; uppercase H, V and the distance d are amounts. A conclusion crosses from one to the other only
 across a named bridge: an amount supplied from outside.
 
-**The reader's circle.** The reader holds one length, H, and nothing else to measure with. Turned uniformly, that one
+**The one-length circle.** The reader holds one length, H, and nothing else to measure with. Turned uniformly, that one
 length traces a circle, and the readings of the turn follow the Cauchy distribution: on the quarter turn, median at the
 corner, quartiles √2 − 1 and √2 + 1, no mean (OFS Proposition 5).
 

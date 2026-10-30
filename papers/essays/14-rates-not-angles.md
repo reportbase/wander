@@ -409,7 +409,7 @@ straight-edged norm the square's π is 4 where the circle's is π (Adler and Tan
 **The cube outside the sphere, and inside it.** The two placements are the two sweeps. Put the writer's unit cube with
 home at one vertex, its near vertices A, B (and C) on the axes and its far vertex at (1, 1, 1).
 
-- *The cube outside the sphere* is the inscribed sweep's picture. Its circle is the reader's own unit circle, centred at
+- *The cube outside the sphere* is the inscribed sweep's picture. Its circle is the unit circle about home, centred at
   home, radius 1: it passes through A and B, the sweep's two ends, and the cube's far corner stands outside it, at √2 in
   the plane and √3 in space.
 - *The cube inside the sphere* is the central sweep's. The sphere round the cube, centred at the cube's middle (in the

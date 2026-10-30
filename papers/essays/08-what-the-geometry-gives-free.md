@@ -97,7 +97,7 @@ be earned.
 
 Once the reader chooses H, its one length, these follow with no further choice:
 - **a zoom**, the value of H. Small H is fine near and coarse far; large H the reverse. Nothing else changes.
-- **a split between near and far**, the corner v = h, at 45° on the reader's circle.
+- **a split between near and far**, the corner v = h, at 45° on the one-length circle.
 - **readings that no change of the world's size can move**, since every reading is a ratio. That is the first essay's test,
   scale the world.
 - **addresses for any number of things, with no table and no count**, given that the sweep is uniform: the turn's Cauchy.
