@@ -1217,8 +1217,10 @@ radius lands on home) or 2/π from a point of the circle (chord over arc, sin θ
 1; both leave 1 at zero, before any sweeping, and their product is 1 at every θ, the writer's 1 had only by joining the
 two sweeps. Writers have angles; readers have sweeps. These two rates are the writer's measure of the reader's sweep,
 not the reader's own: each has π in it, the total of a completed turn, and the writer is transcendental where the reader
-is not. The reader's operations (ratios, tangent addition, the halving's one square root, order, the reciprocal) reach
-only the constructible numbers, and π is transcendental; the reader reads with the Cauchy, its readings and their corner
+is not. The reader holds one variable, H, and from one variable come only rationals (counts, doublings and halvings of
+H, ratios of H to itself; tangent addition and the reciprocal keep rational readings rational); an irrational needs two
+variables combined (√2 the diagonal √(h² + v²), where incommensurability first appears), and π the whole turn, both the
+writer's. The reader meets irrational directions (the Cauchy's quartiles √2 ∓ 1) but does not make them; the reader reads with the Cauchy, its readings and their corner
 at 1, the spread 1/(1 + s²) up to its total, and the total π/2 and the normalizing 2/π are the writer's count. In the
 writer's angle the radius's end moves one step of arc per
 step of turn and the ray's two (above); the reading v/h moves on by 1 + (v/h)² per step, so the Cauchy's density
@@ -1241,9 +1243,9 @@ corner. An angle is a share
 of the whole turn and needs the turn's total, π; to evaluate the tangent or the arctangent is to cross from a direction
 to such a share or back, so both are the writer's tools: the arctangent is the writer's formula for how much of the turn
 a reading has passed (§2), and laying an array on the quarter turn by it is a writer's construction (§7.3). The reader
-runs the tangent's addition law (§2) and the halving s′ = (√(1 + s²) − 1)/s on readings, with no π, and meets the turn's
-share by turning. It reaches 2/π only as a limit of its own halvings, Viète's product √½ · √(½ + ½√½) · …, and π not at
-all (π is transcendental, and the reader's operations reach only the constructible numbers). A rate per second, not per
+runs the tangent's addition law (§2) on readings, with no π, and meets the turn's share by turning. Bisecting a
+direction, s′ = (√(1 + s²) − 1)/s, takes the Pythagorean length √(1 + s²), two variables combined, and is the writer's;
+so are Viète's product √½ · √(½ + ½√½) · … for 2/π, a square root a factor, and π itself (transcendental). A rate per second, not per
 address, carries the clock's unit, and moving between the two is a writing.
 
 **One measure, two charts, and no Gaussian in either.** The uniform turn is one measure on the directions, the turn's

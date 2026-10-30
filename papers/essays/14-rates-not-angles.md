@@ -26,9 +26,11 @@ the law of that per, the reader's sweep rate counted in readings; the payload is
 
 **The writer is transcendental; the reader is not.** π is not a reader's number. It is the total of a completed turn, and
 every number with π in it, π/2 and 2/π among them, is the writer's: the reader's sweep as measured by someone holding the
-whole turn. What the reader does with the sweep is algebraic: it holds readings, ratios; it composes them by tangent
-addition, adds, multiplies and divides; it halves them with one square root; it orders them and turns them over. Those
-operations reach the constructible numbers and nothing beyond (π is transcendental, Lindemann 1882). So the reader reads
+whole turn. The reader holds one length, H, and what it makes from one length is rational: counting, doubling and halving
+H, and every ratio of H to itself. On its readings it composes by tangent addition, turns them over and orders them, and
+all of that stays rational too. An irrational number needs two variables combined (√2 is the diagonal of h and v), and
+that is the writer's; a transcendental one, π, needs the whole turn, and that is the writer's again (the sixth section).
+So the reader reads
 with the Cauchy and not with the circle: the readings from home to a horizon never reached, their corner at 1, their
 spread 1/(1 + s²) up to its total. The total, π/2, and the normalizing 2/π are the writer's count of the turn. The sphere
 on which a writer draws the reader, every direction about a point at radius H, is likewise the writer's picture of the
@@ -93,8 +95,7 @@ rates, empty until a payload fills them.
 
 They are also the writer's numbers, not the reader's. Each has π in it, and π is the count of a completed turn. They are
 how a writer, holding the chord and the whole quarter turn, measures the reader's sweep. The reader's own hold on the same
-sweep is the Cauchy: its readings, their order, the corner at 1. It meets 2/π only as the limit of its own halvings, and
-never holds it (the sixth section).
+sweep is the Cauchy: its readings, their order, the corner at 1. It never makes 2/π at all (the sixth section).
 
 ---
 
@@ -186,7 +187,6 @@ The reader never makes the crossing, and never needs to. What it does do is all 
 
 - **It composes.** A new zero composes with the old by tangent addition, s ⊕ t = (s + t)/(1 − st). That is the tangent's
   *addition law*, and the reader runs it on readings, never on angles. It needs no π.
-- **It halves.** The reading halfway to s is (√(1 + s²) − 1)/s: one square root, no angle.
 - **It orders and flips.** It tells which of two readings is nearer the horizon, and it reads 1/s for s.
 
 *The Algebra of Discrete Observation*, a paper of this series' archive, put the pairing in four words: algebra kept,
@@ -197,16 +197,33 @@ The writer does go there, and is right to. It holds the whole turn, so it can na
 degree on a protractor, lay an array of N slots evenly over the quarter turn and find a reading's slot by its arctangent
 (the twelfth essay). That is construction from the completed turn, and it is the writer's.
 
-The reader does reach π's neighbourhood, but only as a limit of its own steps. Halve the quarter turn, then halve again,
-and multiply the cosines of the halves:
+**One variable, two, and the whole turn.** The numbers sort into a ladder by what it takes to make them.
+
+- *One variable makes rationals.* From H alone, adding, counting, doubling, halving the length and taking ratios of H to
+  itself give rational multiples of H and nothing else: 1, 2, ½, ¾, the doublings 2ᵏ. The reader's operations on its
+  readings stay rational as well: the reciprocal, tangent addition (rational readings compose to a rational reading), the
+  Cauchy's shape 1/(1 + s²), the corner at 1. This is the reader.
+- *Two variables make irrationals.* √2 first appears as the diagonal of a square, √(h² + v²) at h = v = 1: Pythagoras
+  combines two independent lengths through their squares, and that needs two axes. It is where the Greeks met
+  incommensurability, the side and the diagonal sharing no common measure, and on one line, from one unit, it never
+  happens. Bisecting a direction is of this kind: the reading halfway to s is (√(1 + s²) − 1)/s, and √(1 + s²) is the
+  Pythagorean length of [1 : s], two variables combined. So the angle's halving is the writer's.
+- *The whole turn makes transcendentals.* π needs the completed turn, beyond any finite combination of h, v and v₂
+  (Lindemann, 1882).
+
+So the ladder runs: the reader, rational; the writer with several variables, irrational; the writer with the whole turn,
+transcendental. Viète's product of 1593 shows the last two rungs together:
 
 > 2/π = √½ · √(½ + ½√½) · √(½ + ½√(½ + ½√½)) · …
 
-This is Viète's product of 1593, and each factor is a halving, the reader's own operation. The reader approaches 2/π by
-halvings and never arrives. π is transcendental (Lindemann, 1882), so no finite chain of the reader's operations, which
-are field operations and the halving square root, can reach it. So 2/π, the writer's number for the inscribed sweep, is
-one the reader meets only as a limit, at the horizon, and never holds. π is not a reader's number. And the writer's 1, the
-angle, the reader has only by joining both sweeps.
+Each factor is the cosine of a halved angle, a square root of two variables combined, and the product closes on a
+transcendental only in the limit. It is the writer's ladder from the corner to 2/π; the reader has none of its rungs.
+π is not a reader's number, and neither is √2 made. And the writer's 1, the angle, the reader has only by joining both
+sweeps.
+
+**Met, not made.** A reader still meets irrational directions. A star can lie at v/h = √2, and the Cauchy's own
+quartiles are √2 − 1 and √2 + 1. The turn hands every direction to the reader as an address, the irrational ones
+included; it does not make them. Constructing one, or naming it as a number, is the writer's work.
 
 ---
 
@@ -217,7 +234,7 @@ the angle chart, where classical approximation theory already sits, and is execu
 calls to sin, tan and arctan held at zero. Its reconstruction kernel is a rational function of the held slope; the round
 trip, exactness at the leaves and the partition of unity were checked that way to machine precision for up to 1,024
 leaves. Its fisheye, which the editor's layout computes with tan, was rebuilt from the corner, the halving and tangent
-addition alone, value for value. The format's decoder evaluates no trigonometric function.
+addition alone, value for value, the halving's one square root the only step past the rationals. The format's decoder evaluates no trigonometric function.
 
 The one place a π showed up in its numbers was the worst-case growth of reconstruction error, (2/π)·ln N. Read in the
 slope chart, its 2 is the reader's, an algebraic integral, and its π is the normalization: "what share of the whole
@@ -425,8 +442,8 @@ They part most at the corner: (1, 1) is 1, 2 and √2, and in n dimensions the t
 The writer cannot choose among them. Its symmetries are swapping its number lines and reversing their signs, and every
 one of these rules is unchanged by both, so the writer has an exact 1 along each axis and none in between. The reader's
 turn chooses exactly one: the only measure unchanged by every turn is Pythagoras (up to a scale), which is why the round 1
-belongs to the turn. Its totals, the circle's 2π and the sphere's 4π, are the writer's; but the round length of one
-diagonal, √2, is algebraic, a number the reader's own halving reaches (halving the corner's reading 1 gives √2 − 1).
+belongs to the turn. But measuring with it is the writer's: the round length of a diagonal, √2, combines two variables,
+and the circle's and sphere's totals, 2π and 4π, need the whole turn.
 
 And the round 1 sits at the corner of the writer's two. The cube's measure and the diamond's are dual to each other,
 and the round one is its own dual; Hölder's inequality, here Cauchy and Schwarz, ties them together:
@@ -441,7 +458,7 @@ geometric mean of the writer's two 1's.
 So nothing has to be withdrawn, only named. The edge and the sum h + v = 1 are both the writer's, the same 1 at A and B and
 a factor of 2 apart at the corner. The inscribed sweep's 2/π is measured against an edge, one axis filled from 0 to 1; the
 central sweep's π/2 against the chord taken as a diameter (both the writer's measures, each with its π); and the chord's
-own length, √2, is algebraic, within the reader's reach.
+own length, √2, is the writer's too, two variables combined.
 
 **Two sweeps, three axes.** The hand can be swept two ways, both out from the horizontal: horizontal to vertical, the
 altitude, and horizontal to depth, the azimuth. From the writer's side these
@@ -473,9 +490,10 @@ even pivot it comes at its own rate: π/2 from the middle, 2/π from a point of 
 and the reader has it only by joining the two sweeps.
 
 **The writer is transcendental; the reader is not.** π, and every number with π in it, is the writer's: the count of a
-completed turn. The reader's operations (ratios, tangent addition, the halving's one square root, order, the reciprocal)
-reach only the constructible numbers. The reader reads with the Cauchy, its readings and their corner at 1; the sphere is
-the writer's picture of the reader.
+completed turn. The reader holds one variable, H, and one variable makes only rationals; the irrationals need two
+variables combined (√2, the diagonal), and π the whole turn, both the writer's. The reader meets irrational directions;
+it does not make them. It reads with the Cauchy, its readings and their corner at 1; the sphere is the writer's picture
+of the reader.
 
 **A rate is of something, per something.** The per is the sweep's: the addresses, given before anything arrives, their
 spacing the frame's own rates. The of is the payload, met. What a reader reads is payload per address.
@@ -484,8 +502,7 @@ spacing the frame's own rates. The of is the payload, met. What a reader reads i
 the per against itself with no payload in it: which is why it is the addresses' law and not what arrives.
 
 **Tangent and arctangent are the writer's tools.** Evaluating either crosses between a direction and a share of the whole
-turn, and the whole turn, with its π, is the writer's. The reader runs the tangent's addition law and the halving, and
-never evaluates. Trigonometry is the completion of the sweep, not its equipment, and where the completion is available,
+turn, and the whole turn, with its π, is the writer's. The reader runs the tangent's addition law, and never evaluates. Trigonometry is the completion of the sweep, not its equipment, and where the completion is available,
 as it is in nearly all of practice, it is a superb tool. It is the writer's record of what the reader does by turning.
 
 The degree on a protractor and the pitch on a roof name the same direction. The carpenter's is the one the reader has.
