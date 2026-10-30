@@ -2607,6 +2607,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   while writing); halving a length is the reader's, halving a turn the writer's; the lay's ln, H·tan(kπ/2K), Euler's
   formula and the Cauchy's constant are the writer's formulas for the reader's things; essay 14 names its five 1's. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
   `papers/essays/14-rates-not-angles.md` (a roof's pitch), on `essays.html` and in `explainers.html`'s not-yet list.
+  R597 (Tom: "That topic deserves its own essay"): transcendentals are a completed infinity, the writer's: π completes the
+  turn, e the scale (the period and the base of the exponential maps of the reader's two groups), meeting at e^(iπ) = −1;
+  the reader meets them and makes none, a machine's floats are fractions. Essay 15, `papers/essays/15-what-only-a-writer-holds.md`
+  (Bernoulli's bank), on `essays.html` and the explainers' not-yet list.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
@@ -2943,7 +2947,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     fourteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     fifteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.

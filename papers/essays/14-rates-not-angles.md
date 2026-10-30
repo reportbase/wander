@@ -211,7 +211,7 @@ degree on a protractor, lay an array of N slots evenly over the quarter turn and
   happens. Bisecting a direction is of this kind: the reading halfway to s is (√(1 + s²) − 1)/s, and √(1 + s²) is the
   Pythagorean length of [1 : s], two variables combined. So the angle's halving is the writer's.
 - *The whole turn makes transcendentals.* π needs the completed turn, beyond any finite combination of h, v and v₂
-  (Lindemann, 1882).
+  (Lindemann, 1882); e, likewise, needs the completed scale (the fifteenth essay).
 
 So the ladder runs: the reader, rational; the writer with several variables, irrational; the writer with the whole turn,
 transcendental. Viète's product of 1593 shows the last two rungs together:

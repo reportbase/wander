@@ -1816,7 +1816,7 @@ try {
   await page.goto(new URL('index.html', base).href, { waitUntil: 'load' });
   await Promise.all([page.waitForURL(/demos\.html/, { timeout: 15000 }), page.click('#demosOpen')]);
   console.log(`${failures.length === before7 ? 'ok  ' : 'FAIL'} demos.html (${pages.length} pages, ${links.length} links)`);
-  // essays.html: the essays' own page, every page of the site it links to there, fourteen essays
+  // essays.html: the essays' own page, every page of the site it links to there, fifteen essays
   const before7e = failures.length;
   await page.goto(new URL('essays.html', base).href, { waitUntil: 'load' });
   const elinks = await page.evaluate(() => ({ cards: document.querySelectorAll('main .card').length,
@@ -1825,7 +1825,7 @@ try {
     const r = await page.request.get(new URL(pth, base).href);
     if (!r.ok()) failures.push(`[essays.html] ${pth} answers ${r.status()}`);
   }
-  if (elinks.cards !== 14) failures.push(`[essays.html] ${elinks.cards} essays, not 14`);
+  if (elinks.cards !== 15) failures.push(`[essays.html] ${elinks.cards} essays, not 15`);
   console.log(`${failures.length === before7e ? 'ok  ' : 'FAIL'} essays.html (${elinks.cards} essays, ${elinks.local.length} links into the site)`);
   // explainers.html: the explainers' page beside it, its links into the site answering
   const before7x = failures.length;
