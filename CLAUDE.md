@@ -2560,6 +2560,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   what survives; which law a 3D statement means), a README row, pointers from essays 2 and 5; a pass over essays 1–12
   (vocabulary and cross-references, none wrong); the CS companion §2.4 "Polar form, and where it stops"; one sentence in
   the submission after the Cayley transform.
+  **Rates, not angles** (30 Oct, SPN R584; Tom: "The sweep is how things work in the natural world. Not angles or trig.
+  What that actually means is pi/2 and 2/pi and one are rates. Scale invarient rates of the sweep.", then "tan and arctan
+  are writer tools, not reader tools"): everything the sweep gives is one increment of it against another, scale-free, a
+  reading: 1 the arc per step of turn (H in H), 2/π the mean rate a share fills against the arc (inscribed), π/2 the arc per
+  share (central), one rate from two sides; the corner where v fills as fast as h empties; the Cauchy a speed. An angle is
+  a share of the whole turn and needs π, so evaluating tan or arctan is the writer's; the reader runs tangent addition and
+  the halving and never evaluates (the archive's *Algebra of Discrete Observation*, draw's TB algebraic form). A rate
+  against a clock is a writing. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
+  `papers/essays/14-rates-not-angles.md` (a roof's pitch), on `essays.html` and in `explainers.html`'s not-yet list.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
@@ -2896,7 +2905,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     thirteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     fourteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
