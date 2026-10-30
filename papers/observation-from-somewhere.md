@@ -1204,25 +1204,27 @@ ellipse of a stretched drawing, the inscribed angle theorem fails and neither pi
 arc. So the two sweeps, like the pointing, need the circle, which the reader's one length gives (Proposition 3(e)). The two sweeps are also one classical map, the Cayley transform,
 under which the Cauchy is the harmonic measure from the standpoint (Appendix A).
 
-**Rates, not angles.** Everything the sweep gives is a rate: one increment of the sweep against another. In a step of
-the turn the end moves that step along the arc (in H), v rises by h times it and h falls by v times it; the reading v/h
-moves on by 1 + (v/h)² times it; and the ray from a point of the circle carries its end two steps of arc for each step of
-turn, the radius one (above). Each is a ratio of two increments of one sweep, so scaling the world moves none: they are
-readings. Three of them are the numbers of this section. The sweep against itself is 1, the arc per step of turn in the
-reader's own length, H in H. Over the quarter sweep the share v fills by 1 while the arc runs π/2, so 2/π is the mean rate
-at which a share fills against the arc (chord over arc, the inscribed sweep's, sin θ/θ along the way), and π/2 the arc it
-takes per share filled (arc over chord, the central sweep's, θ/sin θ); they are one rate read from its two sides, and
-their product is the first. The corner is where two rates meet, v filling exactly as fast as h empties, with no angle
-named. The Cauchy's density 2/(π(1 + s²)) is a speed: the turn per unit of reading, scaled so the quarter is one; its
-median at the corner is the turn's halfway point, and its missing mean is the readings outrunning the steps of turn past
-the corner. An angle, by contrast, is a share of the whole turn and needs the turn's total, π. To evaluate the tangent
-or the arctangent is to cross from a rate to such a share or back, so both are the writer's tools: the arctangent is the
-writer's formula for how much of the turn a reading has passed (§2), and laying an array on the quarter turn by it is a
-writer's construction (§7.3). The reader runs the tangent's addition law (§2) and the halving
-s′ = (√(1 + s²) − 1)/s, on readings, with no π, and meets the turn's share by turning, not by evaluating. It reaches 2/π
-only as a limit of its own halvings, Viète's product √½ · √(½ + ½√½) · …, and π not at all (π is transcendental, and
-the reader's operations reach only the constructible numbers). A rate measured against the sweep's own advance is a
-ratio; measured against a clock, it carries the clock's unit, and moving between the two is a writing.
+**Rates, not angles.** A rate is of something per something. For a reader the per is the sweep's, the addresses laid
+in order before anything arrives, and the of is what arrives along them, the payload: what a reader reads is payload per
+address. Scaling the world moves no address, so the per never moves; a payload compared with a payload at a neighbouring
+address is a ratio and stays, one stated in an agreed unit moves with k and is a writing. The geometry fixes the per,
+and its spacing has rates of its own, with no payload in them. The writer measures the turn by its angle, arc per radius
+step for step: rate 1, read against the completed turn, the chord between the sweep's ends held whole as 1. The reader
+has no angle; it has the sweep, at one of the two even pivots, and a sweep from horizontal to vertical comes at that
+pivot's rate against the writer's chord: π/2 from the middle (arc over chord, θ/sin θ along the way, attained when the
+radius lands on home) or 2/π from a point of the circle (chord over arc, sin θ/θ, approached at the horizon). Neither is
+1; both leave 1 at zero, before any sweeping, and their product is 1 at every θ, the writer's 1 had only by joining the
+two sweeps. Writers have angles; readers have sweeps. In the writer's angle the radius's end moves one step of arc per
+step of turn and the ray's two (above); the reading v/h moves on by 1 + (v/h)² per step, so the Cauchy's density
+2/(π(1 + s²)) is a speed, turn per reading, the per against itself with no payload in it, which is the main result
+(§7.2) said in rates. The corner is where v fills exactly as fast as h empties, with no angle named. An angle is a share
+of the whole turn and needs the turn's total, π; to evaluate the tangent or the arctangent is to cross from a direction
+to such a share or back, so both are the writer's tools: the arctangent is the writer's formula for how much of the turn
+a reading has passed (§2), and laying an array on the quarter turn by it is a writer's construction (§7.3). The reader
+runs the tangent's addition law (§2) and the halving s′ = (√(1 + s²) − 1)/s on readings, with no π, and meets the turn's
+share by turning. It reaches 2/π only as a limit of its own halvings, Viète's product √½ · √(½ + ½√½) · …, and π not at
+all (π is transcendental, and the reader's operations reach only the constructible numbers). A rate per second, not per
+address, carries the clock's unit, and moving between the two is a writing.
 
 **One measure, two charts, and no Gaussian in either.** The uniform turn is one measure on the directions, the turn's
 own, and belongs to neither pivot. The Cauchy is that measure written in the inscribed chart: its long tails and its

@@ -2561,13 +2561,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (vocabulary and cross-references, none wrong); the CS companion §2.4 "Polar form, and where it stops"; one sentence in
   the submission after the Cayley transform.
   **Rates, not angles** (30 Oct, SPN R584; Tom: "The sweep is how things work in the natural world. Not angles or trig.
-  What that actually means is pi/2 and 2/pi and one are rates. Scale invarient rates of the sweep.", then "tan and arctan
-  are writer tools, not reader tools"): everything the sweep gives is one increment of it against another, scale-free, a
-  reading: 1 the arc per step of turn (H in H), 2/π the mean rate a share fills against the arc (inscribed), π/2 the arc per
-  share (central), one rate from two sides; the corner where v fills as fast as h empties; the Cauchy a speed. An angle is
-  a share of the whole turn and needs π, so evaluating tan or arctan is the writer's; the reader runs tangent addition and
-  the halving and never evaluates (the archive's *Algebra of Discrete Observation*, draw's TB algebraic form). A rate
-  against a clock is a writing. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
+  What that actually means is pi/2 and 2/pi and one are rates. Scale invarient rates of the sweep."; "tan and arctan are
+  writer tools, not reader tools"; then "A rate is a rate of something, that is the payload." and "When you sweep your hand
+  for horizontal to vertical you do it at an angular rate at either pi/2 or 2/pi. Never 1, 1 is the writers rate. Writers
+  have angles, readers have sweeps."): a rate is of something per something, the per the sweep's (the addresses, given),
+  the of the payload (met): a reader reads payload per address. 1 is the writer's rate, the angle (arc per radius against
+  the completed turn, the chord held as 1); a sweep from horizontal to vertical comes at π/2 (central) or 2/π (inscribed),
+  never 1, their product the writer's 1 had only by joining both. The corner is where v fills as fast as h empties; the
+  Cauchy a speed, turn per reading, the per against itself with no payload. An angle needs π, so evaluating tan or arctan
+  is the writer's; the reader runs tangent addition and the halving (the archive's *Algebra of Discrete Observation*,
+  draw's TB algebraic form). A rate per second, or of an amount (road per turn), is a writing. Never say 1 is the reader's
+  rate. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
   `papers/essays/14-rates-not-angles.md` (a roof's pitch), on `essays.html` and in `explainers.html`'s not-yet list.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS

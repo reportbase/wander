@@ -7,13 +7,17 @@ ten for every hundred it goes. A wheelchair ramp is built to "one in twelve". No
 site needs to know that six in twelve is 26.57°, and if someone asks, the number has to be looked up, or computed by a
 function that sums an infinite series. The pitch itself is had at once, with a level and a tape.
 
-The pitch is a rate: so much rise for so much run. It is the reading the earlier essays have called v/h, a direction held
-as a ratio. The degrees are something else, a share of the whole turn, and to give one you have to hold the whole turn
-first. This essay is about the difference. Its claim is short. The sweep, one length turning from where it stands, gives
-**rates**: one increment of the sweep against another. The three numbers that keep coming back, 1, π/2 and 2/π, are
-three of those rates, and none of them changes when the world is scaled. Angles, and the tangent and arctangent that
-convert between an angle and a rate, are the writer's tools: they need the completed turn. The reader runs the sweep and
-never needs them.
+The pitch is the reading the earlier essays have called v/h, a direction held as a ratio. The degrees are something
+else, a share of the whole turn, and to give one you have to hold the whole turn first. This essay is about the
+difference, and its claim fits in one line:
+
+> Writers have angles; readers have sweeps.
+
+Three things follow. A rate is always a rate *of* something *per* something: the per is the sweep's, an address, and the
+of is what arrives there, the payload. A hand swept from horizontal to vertical goes at one of two rates, π/2 or 2/π,
+depending on where it pivots, and never at 1: the 1 is the writer's rate, the angle. And the tangent and arctangent,
+which convert between a direction and an angle, are the writer's tools: they need the completed turn. The reader runs the
+sweep and never needs them.
 
 None of this corrects trigonometry. It says where trigonometry sits.
 
@@ -24,83 +28,81 @@ tangent addition); `slide-rule.html` (the circular rule: a turn from a new zero 
 
 ---
 
-## 1. What one length turned gives
+## 1. The of and the per
 
-Hold out an arm of length H and raise it. The second essay drew what it traces, a quarter of a circle, and named the two
-shares of the arm's length: h along the ground, v straight up, h = v at the corner. Here look at the turning itself.
+A rate has two places. Light per square metre, cars per hour, rise per run: there is the thing counted, and the thing it
+is counted against. The first is what the rate is *of*; the second is what it is *per*.
 
-Take one small step of the sweep. The tip moves along the arc by that step (measured in H, the arm's own length). In the
-same step v rises, by h times the step, and h falls, by v times the step. Near the ground v rises almost one for one and
-h barely moves; near the top it is the other way round. Nothing in this needs an angle to be named. It needs a step, and
-what each share does during it.
+For a reader the two places are filled from opposite sides. The per is the sweep's. Turning from where it stands, one
+length lays out the reader's addresses in order, one after the next, before anything arrives (the third essay). The of is
+the payload: the light, the colour, whatever arrives along each address. So what a reader reads is always payload per
+address, and the third essay's split between the two is a fraction, the address underneath and the payload on top.
 
-So everything the sweep gives comes as one increment against another:
-
-- the arc against the step of turn (the sweep against itself);
-- each share against the arc (how fast v fills, how fast h empties);
-- the reading v/h against the arc (how fast the readings go by);
-- one pivot's arc against another's (the two sweeps of the second essay).
-
-Each is a **rate**, and each is a ratio of two increments of the same sweep. Scale the world by k: the arm, the arc and
-both shares are all k times as long, and every one of these rates is what it was. By the first essay's test they are
-readings. The reader has them free, from where it stands, by turning.
-
-What the reader does not have is the turn's position as a number on a scale fixed in advance. It has the arc by turning
-through it, met, not computed (the second section of *Observation from Somewhere*, "Zero, and a new zero"). The
-arctangent is the writer's formula for how much of the turn a reading has passed.
+The two places behave differently when the world is scaled. Scale everything by k and every address stays where it was,
+since a direction has no size. So the per never moves. The of may or may not: a payload compared with another payload
+arriving at a neighbouring address is a ratio and stays put; a payload stated in an agreed unit moves with k, and is a
+writing (the first essay). The geometry fixes the per, completely and in advance. What fills the of is the world's.
 
 ---
 
-## 2. The corner, as a meeting of rates
+## 2. The hand's two rates
+
+Hold out a hand at arm's length, level, and raise it until it points straight up: a sweep from horizontal to vertical.
+How fast does it go?
+
+The writer has a ready answer. Holding the whole quarter circle at once, it measures the turn by its angle: so much arc
+for so much radius, step for step. In the writer's measure the sweep goes at rate 1, and the straight line from the
+hand's first place to its last, the chord, is a length it holds whole. That 1 is the writer's rate. It is what an angle
+is: arc per radius, read against the completed turn.
+
+The reader has no such measure. It has the sweep, from where it stands, and only two places to stand where a sweep is
+even (the second essay): the middle of the chord, where the radius turns, and a point of the circle, where the ray turns.
+From each, the same sweep from horizontal to vertical comes at its own rate against the straight line the writer holds:
+
+- **π/2, the central sweep.** From the middle, the sweep runs π/2 of arc for the chord's 1. Along the way the running
+  value is arc over chord, θ/sin θ, from 1 at the start through 1.1107 at the corner, and it is attained when the radius,
+  its half turn done, lands back on home, a point.
+- **2/π, the inscribed sweep.** From a point of the circle, the chord comes at 2/π per unit of sweep. Along the way it is
+  chord over arc, sin θ/θ, through 0.9003 at the corner, and it reaches 2/π only as the ray goes to the horizon,
+  approached and never arrived at.
+
+Neither is 1. Both start at 1, at zero, before any sweeping has happened, and part from it at once. Once the hand is
+moving, the reader has π/2 or 2/π, never the writer's 1. The two together, multiplied, give back 1, at every point of the
+sweep and not only at its ends; but no one sweep has it. The second essay put this as the two sweeps each reaching the
+writer's 1 through the arc, one too long and one too short. In rates it is plainer: the writer has the angle, the reader
+has the sweep, and the angle is what the two sweeps make when they are joined.
+
+None of these rates changes when the world is scaled, and none of them is a rate of anything that arrives. They are the
+per, measured against the writer's straight line: the spacing the sweep gives its addresses. They are the frame's own
+rates, empty until a payload fills them.
+
+---
+
+## 3. The corner, as a meeting of rates
 
 Where is the corner? The second essay found it three ways: the one ratio the reciprocal leaves alone, the halfway point
 of the turn, the place where the facing stands square to the chord.
 
-Here is a fourth, in rates. As the sweep goes, v fills and h empties. Early on v fills fast and h hardly moves; late, h
-empties fast and v hardly moves. There is one place where v fills exactly as fast as h empties. That place is the
-corner. It is where the rate of v and the rate of h trade places, which is why v − h changes sign there at its steepest:
-the corner is a crossing, not a turning point.
+Here is a fourth, in rates. As the hand rises, v fills and h empties. Early on v fills fast and h hardly moves; late, h
+empties fast and v hardly moves. There is one place where v fills exactly as fast as h empties. That place is the corner.
+It is where the two rates trade places, which is why v − h changes sign there at its steepest: the corner is a crossing,
+not a turning point.
 
 No 45° was used. "45°" is the writer's name for the corner, the corner written as an eighth of the whole turn. The reader
-finds it by the rates alone.
-
----
-
-## 3. The three numbers
-
-**1.** The sweep against itself: a step of arc per step of turn, measured in the arm's own length. This is the reader's
-own rate, H in H. It is what the first essay called the reader's one length, read against itself: the only amount the
-reader holds, and it holds it as 1.
-
-**2/π.** Over the whole quarter sweep, v rises from nothing to the whole arm, 1, while the arc runs π/2. On average, then,
-the share fills at 2/π per unit of arc. That is the mean rate of the projection, how fast the straight reach grows
-against the curve, and it is the inscribed sweep's number: chord over arc. Along the way the running value is
-sin θ/θ, from 1 at the start through 0.9003 at the corner, and it reaches 2/π only as the ray goes to the horizon,
-approached and never arrived at.
-
-**π/2.** The same rate the other way: arc per unit of straight reach, how much sweep it takes to fill a share. It is the
-central sweep's number, arc over chord, running as θ/sin θ from 1 through 1.1107 at the corner, and attained when the
-radius lands back on home, a point.
-
-Their product is 1 at every point of the sweep, not only at its ends. That is not a coincidence of two constants. They are
-one rate read from its two sides, and turned over and multiplied it gives back the sweep against itself, the reader's
-own 1. The second essay said the two sweeps each get at the writer's 1 through the arc, one too long and one too short.
-In rates the same thing is plainer: the writer holds the chord as an amount; the reader has only how fast the chord
-grows against the arc, and that rate turned over.
-
-None of the three changes when the world is scaled. They are not lengths of anything. They are the sweep's own rates.
+finds it by the sweep alone.
 
 ---
 
 ## 4. Two sweeps, two rates
 
-The second essay showed two pivots for one standpoint. A radius turned about the circle's centre moves its end one step
-of arc for each step of turn. A ray turned about a point of the circle moves its end two steps of arc for each step of
-turn (Euclid III.20: the angle at the centre is double the angle at the circumference). Those are the only two places
+The second essay showed two pivots for one standpoint. Measured in the writer's angle, a radius turned about the
+circle's centre moves its end one step of arc for each step of turn, and a ray turned about a point of the circle moves
+its end two steps of arc for each step of turn (Euclid III.20: the angle at the centre is double the angle at the circumference). Those are the only two places
 where the rate is the same wherever the ray points. Anywhere else a step of turn carries the end by 2t/(t + t′) steps of
 arc, t and t′ the distances ahead and behind, which changes as the ray turns.
 
 So the inscribed angle theorem, read this way, is a statement about rates: the facing turns twice as fast as the sweep.
+Read from the reader's side, without the angle, the two pivots are the two rates of the last section, π/2 and 2/π.
 The square of the second essay, the central point ½(h + iv)², is that doubling written as a point.
 
 A reader off the centre and off the circle has no uniform rate, and this is where the circle's own law comes from. Turned
@@ -130,9 +132,13 @@ Both of the Cauchy's famous features come from this one speed:
 That is the third essay's advice, "to average, average the angle", said in rates: average the sweep's own advance, never
 the quantity that runs away from it.
 
+Notice what this speed is a rate of. It is turn per reading: address against address, the per against itself, with no
+payload anywhere in it. That is the main result of the third essay said in rates. The Cauchy is the spacing of the per,
+and so it belongs to the addresses, never to what arrives.
+
 ---
 
-## 6. Tangent and arctangent are the writer's tools
+## 6. Writers have angles, readers have sweeps
 
 The tangent turns an angle into a rate: tan θ = v/h. The arctangent turns a rate into an angle. Both cross between two
 sides.
@@ -165,7 +171,8 @@ and multiply the cosines of the halves:
 This is Viète's product of 1593, and each factor is a halving, the reader's own operation. The reader approaches 2/π by
 halvings and never arrives. π is transcendental (Lindemann, 1882), so no finite chain of the reader's operations, which
 are field operations and the halving square root, can reach it. Even the inscribed sweep's number, the reader's own
-rate, is one the reader meets only at the horizon.
+rate, is one the reader meets only at the horizon. And the writer's 1, the angle, the reader has only by joining both
+sweeps.
 
 ---
 
@@ -192,39 +199,42 @@ cross to the angle before it has to.
 ## 8. The natural world
 
 The claim that started this essay was that the sweep is how things work in the world, and trigonometry is not. Read
-carefully, it is a claim about what a turning thing has to hand.
+carefully, it is a claim about what a turning thing has to hand: a sweep, and what comes along it.
 
-A wheel of diameter 1 rolls π along the road for each turn it makes. That is π as a rate: road per turn. The wheel does
-not compute it. A planet sweeps out equal areas in equal times; the law is a rate, area against time. A pendulum, a gear
-train, a sunflower following the light, a hand raised to point: each has its turning and how much of something else
-comes with each bit of it. Where a quantity in physics is an angle, it is usually an angle per something, a frequency,
-an angular speed, a phase advance per metre.
+The second claim of this essay sorts the examples. A rate is of something, and the something decides whether it is a
+reading. A wheel of diameter 1 rolls π along the road for each turn: road per turn. But road is an amount, so stated that
+way it is a writing, the writer's angle carried onto the ground. A planet sweeps equal areas in equal times: area per
+time, and a time is a clock carried in, so that too is a writing. The rates a reader has are of what arrives per address:
+how much brighter one direction is than its neighbour, which addresses are painted and which are dark, where along the
+sweep the paint changes. Those are payload per address, compared between addresses, and they are unchanged when the world
+is scaled. A sunflower following the light, an eye tracking an edge, a hand raised to point: each has its sweep and what
+arrives along it.
 
 The earlier essays' rule applies: this is a reading of known physics, not new physics, and nothing here says how nature
-computes, or that it computes. What it says is that the quantities a turning thing has are rates of its own turn against
-other things, and that the angle as a share of a whole turn, with π in it, is the record a writer makes of those rates
-afterwards, once the whole turn is in hand.
+computes, or that it computes. What it says is that what a turning thing has is its sweep and what arrives along it, and
+that the angle as a share of a whole turn, with π in it, is the record a writer makes afterwards, once the whole turn is
+in hand.
 
-One caution keeps the claim exact. A rate must say what it is measured against. Measured against the sweep's own
-advance, the rates are pure ratios and scale-free. Measured against a clock, they carry the clock's unit (radians per
-second), and moving between them needs the clock carried in. That is a writing. The rates in this essay are all of the
-first kind.
+One caution keeps the claim exact. A rate must say what it is per. Per address, against the sweep's own spacing, a rate
+is a ratio of payloads and scale-free. Per second, it carries the clock's unit (radians per second, photons per second),
+and moving between the two needs the clock carried in. That is a writing.
 
 ---
 
 ## 9. What it comes to
 
-**The sweep gives rates.** Every quantity one length turned produces is one increment of the sweep against another,
-and every one is unchanged when the world is scaled. They are readings.
+**Writers have angles; readers have sweeps.** An angle is a share of the whole turn, measured at rate 1, arc per radius,
+against a turn held complete. A sweep is what one length does from where it stands, and from either even pivot it comes at
+its own rate: π/2 from the middle, 2/π from a point of the circle. Never 1. The 1 is the writer's, and the reader has it
+only by joining the two sweeps.
 
-**1, 2/π and π/2 are three of those rates.** The sweep against itself, the mean rate at which a share fills against the
-arc, and the arc it takes per share filled. The last two are one rate read from its two sides; their product is the
-first.
+**A rate is of something, per something.** The per is the sweep's: the addresses, given before anything arrives, their
+spacing the frame's own rates. The of is the payload, met. What a reader reads is payload per address.
 
-**The corner is where two rates meet**, v filling as fast as h empties, and **the Cauchy is a speed**, the rate at which
-the turn passes readings. Its median and its missing mean both come from that speed.
+**The corner is where two rates meet**, v filling as fast as h empties, and **the Cauchy is a speed**, turn per reading,
+the per against itself with no payload in it: which is why it is the addresses' law and not what arrives.
 
-**Tangent and arctangent are the writer's tools.** Evaluating either crosses between a rate and a share of the whole
+**Tangent and arctangent are the writer's tools.** Evaluating either crosses between a direction and a share of the whole
 turn, and the whole turn, with its π, is the writer's. The reader runs the tangent's addition law and the halving, and
 never evaluates. Trigonometry is the completion of the sweep, not its equipment, and where the completion is available,
 as it is in nearly all of practice, it is a superb tool. It is the writer's record of what the reader does by turning.
@@ -247,5 +257,5 @@ its π is the normalization") and the format's specification (`papers/tvf.md`, "
 can be trig-free").
 
 The geometry is in *Observation from Somewhere*: §2, "Zero, and a new zero" (the turn met, not computed; tangent
-addition); §4, "Why the corner sits at 45°", "Why there are two sweeps, and only two" and "Rates, not angles" (the three
-numbers as rates); §7.1 (the uniform turn and the Cauchy).
+addition); §4, "Why the corner sits at 45°", "Why there are two sweeps, and only two" and "Rates, not angles" (the two
+sweeps' rates, the writer's 1, and payload per address); §7.1 (the uniform turn and the Cauchy).

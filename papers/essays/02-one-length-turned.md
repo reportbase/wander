@@ -278,13 +278,14 @@ length directly. It has it twice over, once from each pivot, and the two reading
 writer holds in one. What they return is the reader's own length measured in itself, H in H. They do not return the
 size of anything else.
 
-**They are rates, not angles.** Read each of the three numbers as one increment of the sweep against another. The 1 is
-the arc per step of turn, in the arm's own length. 2/π is the mean rate at which the straight reach fills against the
-arc over the quarter; π/2 is the arc it takes per unit of reach filled. They are one rate read from its two sides, and
-their product is the first. Scale the world and none of them moves: they are not lengths of anything, only the sweep's
-own rates. The corner, in the same terms, is the one place where v fills exactly as fast as h empties. The fourteenth
-essay, "Rates, not angles", takes this up, and with it why the tangent and arctangent, which convert a rate into a share of
-the whole turn and back, are the writer's tools and not the reader's.
+**They are rates, not angles.** Raise the hand from horizontal to vertical and the sweep comes at one of two rates
+against the straight line from start to end: π/2 from the middle of the chord, 2/π from a point of the circle. Never 1.
+The 1 is the writer's rate, the angle, arc per radius read against the completed turn; the reader has it only by joining
+the two sweeps. Writers have angles, readers have sweeps. These rates are the spacing of the reader's addresses, with
+nothing arriving in them: a rate a reader reads is always of something per something, the payload per address. The
+corner, in the same terms, is the one place where v fills exactly as fast as h empties. The fourteenth essay, "Rates, not
+angles", takes this up, and with it why the tangent and arctangent, which convert a direction into a share of the whole
+turn and back, are the writer's tools and not the reader's.
 
 *Demo: the mountain and the thumb, "the two vantages": π/2 and 2/π on the thumb's circle, their product 1.*
 
