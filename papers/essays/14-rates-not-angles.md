@@ -352,6 +352,40 @@ sweep's half turn from A through the corner to B; from home the inscribed sweep'
 sphere touches it at the sweep's ends, and the cube inside the sphere touches it at the corner as well: the inscribed sweep
 holds the ends, the central sweep holds the corner, and the writer's cube is what both are drawn against.
 
+**Two 1's, and the corner between them.** The table above gives A to B three lengths, and it is fair to ask which is the
+writer's 1. The answer is that a 1 needs a measure. On one number line there is only one way to measure, and so only one
+1, the line's unit. Across two lines a rule is needed to combine them, and each rule has its own 1: the larger of the two
+differences (the cube's own measure, by which A to B is 1), the two added (the diamond h + v = 1, by which it is 2), and
+Pythagoras (the circle, √2).
+
+| rule for combining h and v | A to B | everything at distance 1 |
+|---|---|---|
+| the larger of the two | 1 | the cube (in the plane, the square) |
+| the two added | 2 | the diamond, the line h + v = 1 |
+| Pythagoras | √2 | the circle |
+
+All three agree on the axes: (1, 0) is at distance 1 by every rule, so the sweep's ends, A and B, have one 1 for everyone.
+They part most at the corner: (1, 1) is 1, 2 and √2, and in n dimensions the triple corner is 1, n and √n.
+
+The writer cannot choose among them. Its symmetries are swapping its number lines and reversing their signs, and every
+one of these rules is unchanged by both, so the writer has an exact 1 along each axis and none in between. The reader's
+turn chooses exactly one: the only measure unchanged by every turn is Pythagoras (up to a scale), which is why the round 1
+is the reader's.
+
+And the reader's 1 sits at the corner of the writer's two. The cube's measure and the diamond's are dual to each other,
+and the round one is its own dual; Hölder's inequality, here Cauchy and Schwarz, ties them together:
+
+> (round)² ≤ (added) × (larger),
+
+with equality exactly when every component that is not zero has the same size: on the axes, and on the corner's diagonal.
+At the corner the round √2 is the geometric mean of the writer's 1 and 2, as √n is of 1 and n. It is the third section's
+pattern one level down: there the writer's 1 is the geometric mean of the reader's π/2 and 2/π; here the reader's √2 is
+the geometric mean of the writer's two 1's.
+
+So nothing has to be withdrawn, only named. The edge and the sum h + v = 1 are both the writer's, the same 1 at A and B and
+a factor of 2 apart at the corner. The inscribed sweep's 2/π is measured against an edge, one axis filled from 0 to 1; the
+central sweep's π/2 against the chord taken as a diameter; and the chord's own length, √2, is the reader's.
+
 ---
 
 ## 11. What it comes to
