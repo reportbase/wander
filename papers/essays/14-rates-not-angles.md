@@ -239,7 +239,83 @@ and moving between the two needs the clock carried in. That is a writing.
 
 ---
 
-## 9. What it comes to
+## 9. How the classical thinkers would describe it
+
+Nothing here needs a new picture. Five old ones, each from a different century, already say most of it.
+
+**The *Mechanica*** (Aristotle's school, around 300 BC) opens on the circle as "the origin of every marvel", and says why.
+The radius that sweeps a circle has two motions at once, one along its way and one toward the centre, and the two are
+never in a fixed ratio. If they were, the end would go straight. The changing ratio is what bends the path into a circle.
+The same text holds that points farther out on the radius go faster, which led to the puzzle later called Aristotle's
+wheel.
+
+**Newton** (*Quadrature of Curves*, written 1691–92, printed 1704) treats quantities as made by motion, not built from
+parts: "Lines are described, and by describing are generated, not by the apposition of parts, but by the continued motion
+of points … Angles by the Rotation of their Legs." His fluxions are the rates at which such quantities grow, and he
+compares them one against another. A fluxion is never alone; it is always one flowing quantity against another.
+
+**Archimedes** (*On the Sphere and Cylinder*, Book I) gives the sphere's numbers. A sphere's surface is four of its great
+circles, so a hemisphere is exactly twice the flat disc under it. And slices of a sphere of equal height have equal
+areas, the result that lets a globe be wrapped in its cylinder (the hat-box): a sweep up or down a sphere is even in
+height.
+
+**Ptolemy** and the astronomers after him kept two systems of coordinates on the sky. Altitude and azimuth are measured
+from where the observer stands, against its own horizon and its own zenith. The equatorial coordinates are fixed to the
+sky, the same for every observer, a frame that holds the whole sphere at once.
+
+**The navigators** made it practical. Pedro Nunes (1537) showed that a ship holding one compass heading does not sail a
+great circle: it sails a rhumb line, a spiral that runs into the pole. Edward Wright (1599) worked out the chart on which
+such lines come out straight, the chart Mercator had drawn. So between two ports A and B there are three ways: straight
+through the earth along the chord, which no ship can take; along the great circle, the shortest way on the surface, with
+the heading changing all the time; and along the rhumb line, one heading held the whole way. And in plane sailing the
+navigator never names an angle. It keeps two running counts, the difference of latitude (how far north or south) and the
+departure (how far east or west), and reads its course as their ratio from a traverse table.
+
+---
+
+## 10. Our reading of them
+
+Laid side by side, the five say what this essay says, each from one side.
+
+**The writer goes straight; the reader has two motions.** From A to B the writer takes the chord, held whole as 1, the
+way through the earth no navigator can sail. The reader stays on the surface and has what the *Mechanica*'s radius has:
+two motions at once, across and up-down, the navigator's departure and difference of latitude, the reader's h and v.
+That is the first line of this essay again. Writers have angles; readers have sweeps.
+
+**How the two motions mix is the rate.** The *Mechanica* saw that a circle is two motions in a ratio that keeps
+changing; the navigator's course is that ratio, read from a table, with no angle named. Newton's fluxions are what the
+ratio is made of: one flowing quantity against another. In this essay's words, a rate is of something per something,
+and the reader's sweep supplies the per. Along one great circle from horizontal to vertical, the mix runs at π/2 or 2/π
+against the writer's chord, never at 1.
+
+**Holding the mix fixed is a rhumb line; letting it change is a great circle.** A rhumb line is one reading held: the
+same ratio of across to up-down the whole way, a single v/h. A great circle lets the ratio turn. The corner has a
+navigator's name too: the course where departure equals the difference of latitude, northeast, the one heading on which
+the two motions go equally fast. And Wright's chart, the one that straightens every rhumb line, is the chart OFS
+Proposition 5(g) shows keeps every bearing true only when the two directions are drawn at one length.
+
+**A sphere adds altitude, and changes the reader's numbers.** On a circle the reader compares arc with chord, and gets
+π/2 and 2/π. On a sphere it compares the hemisphere with the flat disc under it, and Archimedes gives the answer: 2 at
+once, ½ one direction at a time (the mean of a direction's projection onto the axis, over the hemisphere by area). The
+product is still 1, and the writer's 1 is still their geometric mean, the corner between them. Archimedes' equal slices
+are why the up-down sweep is the even one: a sweep uniform in height is uniform over the sphere, which is how the fifth
+essay's wedge is laid.
+
+**Altitude and azimuth were always the reader's.** Ptolemy's two systems are this series' two vantages. Altitude and
+azimuth are measured from a standpoint, against one's own horizon: a reader's sweeps. The equatorial frame is fixed to
+the sky and holds all of it: a writer's frame, from no standpoint.
+
+**What is ours.** Every piece above is classical: the two motions, the fluxions, the hemisphere's 2, the observer's
+coordinates, the rhumb line. What this essay adds is the sorting. The straight chord and the angle are the writer's; the
+two motions and their mix are the reader's; the mix is a rate, of a payload per address; and the three numbers 1, π/2 and
+2/π, or on a sphere 1, 2 and ½, are the writer's rate and the reader's two.
+
+This is a picture still being settled. Which of the navigator's three ways the series should name as the reader's
+three, the chord with the two motions, or the chord, the great circle and the rhumb line, is left open here.
+
+---
+
+## 11. What it comes to
 
 **Writers have angles; readers have sweeps.** An angle is a share of the whole turn, measured at rate 1, arc per radius,
 against a turn held complete. A sweep is what one length does from where it stands, and from either even pivot it comes at
@@ -266,6 +342,14 @@ The degree on a protractor and the pitch on a roof name the same direction. The 
 - Euclid, *Elements*: Book III, proposition 20 (the angle at the centre is double the angle at the circumference).
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII*. Tours. (The product for 2/π.)
 - Lindemann, F. (1882). Über die Zahl π. *Mathematische Annalen* 20, 213–225. (π is transcendental.)
+- *Mechanica* (*Mechanical Problems*), Peripatetic, late fourth or early third century BC; translated by W. S. Hett,
+  Loeb Classical Library (Aristotle, *Minor Works*). (The radius's two motions.)
+- Newton, I. (1704). *Tractatus de quadratura curvarum*, appended to *Opticks*; its introduction translated by J. Harris
+  (1710). (Quantities generated by motion; fluxions.)
+- Archimedes, *On the Sphere and Cylinder*, Book I. (The sphere four great circles; a segment's surface.)
+- Ptolemy, *Almagest*. (The observer's horizon against the sky's frame.)
+- Nunes, P. (1537). *Tratado da sphera*. Lisbon. (The rhumb line is not a great circle.)
+- Wright, E. (1599). *Certaine Errors in Navigation*. London. (The chart that straightens the rhumb lines.)
 
 From this series' own record: *The Algebra of Discrete Observation* (`../archive/algebra-of-discrete-observation.md`;
 its sections "Trigonometry is the completion, not the equipment", "Trigonometry is an abstraction layer; the observer
