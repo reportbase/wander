@@ -1158,6 +1158,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and comes free where that method needs N (IMS's table, DPR's far plane). The lens restates draw's Tangent Bridge §10.2–10.3
   (known beforehand, not checked first). Two things from that paper await a ruling: its pan × tilt measure in 3D against
   OFS 5(e)'s uniform octant, and its §1.1 "unique Möbius-invariant distribution" (rotation-invariant is meant).
+  `readers-and-writers.md` (30 Oct 2026, SPN R600; Tom: "Write a paper that brings in all together for readers and writers.
+  Call it readers and writers."): *Readers and Writers*, a normal paper (about 5,000 words) gathering the two vantages, the two
+  tests, V as the line, the reader's free geometry, rates not angles, whose numbers (rational, algebraic, transcendental),
+  near and far, the wedge, the sphere and cube, becoming a writer by degrees, what a blueprint adds and the mountain; written
+  to R599, ahead of OFS until the audit's corrections (`plans/ofs-audit-r584-r599.md`) are made. Under R421 OFS stays the source.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
