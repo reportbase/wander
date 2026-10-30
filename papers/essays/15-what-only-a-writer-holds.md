@@ -179,6 +179,10 @@ This is essay 14's "met, not made" one rung higher. The reader meets irrational 
 meets transcendental directions and sizes and does not make π or e. Its own numbers, the ones it makes, are the
 rationals, and with them it does everything a reader does: composes, turns over, orders, counts levels, finds the corner.
 
+V is learned the same way. A reader becoming a writer by parallax (the sixth essay, "Becoming the writer") knows V by
+degrees: in the step it took, to within a band set by its baseline and its resolution, for the things near enough. Each
+standpoint more is one more finite step; holding V exactly, like holding π, is the end of a process that does not end.
+
 ## 7. A machine is a reader here
 
 Essay 12 asked what a computer can hold, and found that every machine operation on numbers is monotone and finite. Here

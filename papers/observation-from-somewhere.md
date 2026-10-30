@@ -3482,6 +3482,15 @@ that passage the observer is writing (§3.1, "Roles, not kinds"). The cleverness
 closed and what it carried in; the joining is writing. What is recovered is exact where it is exact, and its
 completeness is not known from the routes taken, by the one who took them in either role.
 
+**Knowing V, by degrees.** Knowing V is not all or nothing, and parallax is how it is learned, by degrees on three
+counts. *In what:* two standpoints a step apart give every place seen in that step; a step of H gives V*/H, the reader's
+own unit; only a step counted in an agreed unit gives an amount, the one rung moved by scaling the world. *How well:*
+the place's error grows away from the corner of the pair, the circle on the baseline, stretching by d/(B/2), and past
+about B/ε a thing is a direction alone (Proposition 11). *Of which things:* so one observer, from the same standpoints,
+knows V for near things and does not for far ones; knowing V belongs to a thing at its distance, not to the observer.
+More standpoints and longer baselines narrow the band and never close it. The writer of this paper, holding V exactly,
+is the limit of that passage, not a stage of it, as π is the limit of its approximants and not one of them.
+
 **Inside a room.** Each room is a hold, and the reader's one length gives it a unit circle on which both sweeps of §4 lie. From
 home on that circle the things in the room are directions [h : v], addresses, and together they are the room's layout,
 with no amount in it; each address is painted by the thing it meets, and the central sweep places where that paint lands

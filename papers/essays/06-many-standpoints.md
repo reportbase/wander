@@ -318,6 +318,16 @@ not two kinds of observer; they are what one observer is doing. The labels move 
 The first essay's survey says the same thing in its own words: the many angles are read, and the one base walked and
 counted is written; a surveyor does both in one morning.
 
+And the passage has degrees. Knowing V is not a switch thrown by the second standpoint; it comes in amounts, three
+ways. *In what:* in the step taken, in H if the step was H, in metres only if the step was counted. *How well:* best at
+the pair's corner, the circle on the baseline, the error stretching by d/(B/2) farther out, and past about B/ε nothing
+but a ray (the fifth section). *Of which things:* the same two standpoints give V for the near things and leave it
+unknown for the far ones. More standpoints, a longer baseline, narrow the band; nothing closes it. The writer who holds
+V exactly, the one the papers call the writer, is the limit of this, never a stage of it. That is the fifteenth essay's
+shape again: every stage of learning V is a finite approximant, as every partial sum of π is, and holding V exactly, like
+holding π, would need the infinite process finished. A reader becoming a writer holds V to so many digits, for so many
+things, out to so far.
+
 ---
 
 ## 13. What it comes to

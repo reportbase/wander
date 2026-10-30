@@ -2611,6 +2611,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   turn, e the scale (the period and the base of the exponential maps of the reader's two groups), meeting at e^(iπ) = −1;
   the reader meets them and makes none, a machine's floats are fractions. Essay 15, `papers/essays/15-what-only-a-writer-holds.md`
   (Bernoulli's bank), on `essays.html` and the explainers' not-yet list.
+  R598 (Tom: "it's not binary, you can learn V through paralax"): knowing V by degrees, in what (the step, H, an agreed
+  unit), how well (the band, best at the pair's corner, a ray past B/ε) and of which things (near, not far); the exact
+  writer the limit, as π of its approximants. OFS §9 "Knowing V, by degrees"; essay 6 §12; essay 15 §6.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
