@@ -27,7 +27,7 @@
     "yes"): on the thumb's own circle a quarter turn is an arc of π/2 thumbs over a shadow of 1; central (the radius from the circle's centre, limb to
     limb, the half turn: π over 2) π/2, inscribed (the ray from home, a quarter turn, the fingers' mean shadow) 2/π, product 1, H measured in H, the value the reader started from. To the ends, at
     45°, 1.1107 × 0.9003 = 1. The mountain never enters: the vantages joined return only what the reader holds.
-    Links: ?V=20&d=10&k=1&walk=1. Test hook: window.__mountain.
+    Links: ?V=20&d=10&k=1&walk=1&asH=1. Test hook: window.__mountain.
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -69,6 +69,7 @@
         <div class="row">
             <button id="paper">the paper's example</button>
             <button id="walk">walk one thumb</button>
+            <button id="asH">the mountain as H</button>
             <button id="scale1000">scale the world ×1000</button>
         </div>
         <div class="ctl">
@@ -130,6 +131,16 @@
                          innerFingers: meanShadow, fingers: side.length },
                  ends: { deg: th / D, outer: th / Math.sin(th), inner: Math.sin(th) / th, product: (th / Math.sin(th)) * (Math.sin(th) / th) } };
     }
+    // the mountain as H (SPN R599): two senses. As the unit, the range is drawn at one length and its V is 1 by choice;
+    // its own two ends are then a baseline and the reader the thing placed, from one look: the angle α across the range,
+    // centred, puts it d/V = 1/(2·tan(α/2)) range-widths off, and the thumb is H/V of a range. As the focus, the reader
+    // keeps H and puts the range at parallax's corner, a half-baseline equal to the distance (B = 2d), where the error per
+    // step, cosh(ln(d/(B/2))), is least, 1; one thumb walked is cosh(ln(d/(H/2))) of it.
+    function asH(V, d) {
+        const alpha = 2 * Math.atan((V / 2) / d), dInRanges = 1 / (2 * Math.tan(alpha / 2));
+        return { alphaDeg: alpha / D, dInRanges, thumbInRanges: H / V, onCircle: Math.abs(alpha - Math.PI / 2) < 1e-9,
+                 cornerBaseline: 2 * d, errThumb: Math.cosh(Math.log(d / (H / 2))), errCorner: 1 };
+    }
     const lay = x => x <= 1 ? x : 1 + Math.log(x);                              // proportion, then one step per doubling
     const fingers = () => Array.from({ length: FINGERS }, (_, i) => -90 + 180 * (i + 0.5) / FINGERS);
     // the ridge: heights as a share of the range's width, so it scales with the world
@@ -142,7 +153,7 @@
     }
 
     // ── state ──
-    let V = 20, d = 10, k = 1, walked = false;
+    let V = 20, d = 10, k = 1, walked = false, asUnit = false;
     function fit(cv) {
         const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
         if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
@@ -170,6 +181,10 @@
             g.strokeStyle = 'rgba(212,160,82,0.75)'; g.setLineDash([2, 3]);
             g.beginPath(); g.moveTo(ox, oy2); g.lineTo(ox - Vt / 2 * px, ry); g.moveTo(ox, oy2); g.lineTo(ox + Vt / 2 * px, ry); g.stroke(); g.setLineDash([]);
             g.fillStyle = '#d4a052'; g.beginPath(); g.arc(ox, oy2, 3, 0, 2 * Math.PI); g.fill();
+        }
+        if (asUnit) {                                                                      // the circle on the range
+            g.strokeStyle = 'rgba(212,160,82,0.6)'; g.setLineDash([4, 3]); g.lineWidth = 1;
+            g.beginPath(); g.arc(ox, ry, Vt / 2 * px, 0, 2 * Math.PI); g.stroke(); g.setLineDash([]);
         }
         g.fillStyle = '#8a8a96';
         g.fillText(`mountain V = ${fmt(Vt)} mi`, Math.max(6, ox - Vt / 2 * px), Math.max(14, ry - 8));
@@ -232,27 +247,31 @@
             `mountain equals thumb (amounts read off the thumb's circle): read ${e.Vread} mi wide at ${fmt(e.dRead)} mi; truly ${fmt(Vt)} at ${fmt(dt)}: off by V/H = ${fmt(e.factor)}, ${e.doublings.toFixed(2)} doublings, the same on both sides of the corner`,
             w ? `walked one thumb: half-angle ${w.a1.toFixed(1)}° → ${w.a2.toFixed(1)}°, s ${w.s1.toFixed(3)} → ${w.s2.toFixed(3)}; d = H·s₂/(s₂ − s₁) = ${fmt(w.d)} mi, V = 2·s₁·d = ${fmt(w.V)} mi`
               : (walked ? 'too near to walk a whole thumb toward it' : 'walk one thumb toward the range to construct the true distance and width')];
+        if (asUnit) { const m = asH(Vt, dt);
+            lines.push(`the mountain as H, as the unit: the range is 1 by choice; its ends a baseline, the reader the thing placed: ${m.alphaDeg.toFixed(1)}° across${m.onCircle ? ' (on the circle drawn on the range)' : ''} puts it ${m.dInRanges.toFixed(3)} range-widths off, from one look; the thumb is ${fmt(m.thumbInRanges)} of a range; unmoved by scaling the world`,
+                       `the mountain as H, as the focus: a baseline of 2d = ${fmt(m.cornerBaseline)} mi puts the range at parallax's corner, error per step ${m.errCorner.toFixed(3)}; one thumb walked, ${fmt(m.errThumb)} times that; found in passes, each baseline from the last rough distance`); }
         $('hud').textContent = lines.join('\n');
     }
 
-    function sync() { $('V').value = Math.log10(V); $('d').value = Math.log10(d); $('k').value = Math.log10(k); $('walk').classList.toggle('on', walked); }
+    function sync() { $('V').value = Math.log10(V); $('d').value = Math.log10(d); $('k').value = Math.log10(k); $('walk').classList.toggle('on', walked); $('asH').classList.toggle('on', asUnit); }
     $('V').addEventListener('input', () => { V = 10 ** +$('V').value; walked = false; sync(); draw(); });
     $('d').addEventListener('input', () => { d = 10 ** +$('d').value; walked = false; sync(); draw(); });
     $('k').addEventListener('input', () => { k = 10 ** +$('k').value; walked = false; sync(); draw(); });
     $('paper').addEventListener('click', () => { V = 20; d = 10; k = 1; walked = false; sync(); draw(); });
     $('walk').addEventListener('click', () => { walked = !walked; sync(); draw(); });
+    $('asH').addEventListener('click', () => { asUnit = !asUnit; sync(); draw(); });
     $('scale1000').addEventListener('click', () => { k = k === 1000 ? 1 : 1000; walked = false; sync(); draw(); });
     window.addEventListener('resize', draw);
     const q = new URLSearchParams(location.search);
     if (q.has('V')) V = Math.min(200, Math.max(1, +q.get('V') || 20));
     if (q.has('d')) d = Math.min(200, Math.max(2, +q.get('d') || 10));
     if (q.has('k')) k = Math.min(1000, Math.max(0.001, +q.get('k') || 1));
-    walked = q.get('walk') === '1';
+    walked = q.get('walk') === '1'; asUnit = q.get('asH') === '1';
     sync(); draw();
 
-    window.__mountain = { reading, equalsThumb, walk, vantages, lay, elevation, fingers, H,
-        state: () => ({ V: V * k, d: d * k, k, walked }),
-        set: o => { if (o.V) V = o.V; if (o.d) d = o.d; if (o.k) k = o.k; walked = !!o.walk; sync(); draw(); } };
+    window.__mountain = { reading, equalsThumb, walk, vantages, asH, lay, elevation, fingers, H,
+        state: () => ({ V: V * k, d: d * k, k, walked, asUnit }),
+        set: o => { if (o.V) V = o.V; if (o.d) d = o.d; if (o.k) k = o.k; walked = !!o.walk; if ('asH' in o) asUnit = !!o.asH; sync(); draw(); } };
 })();
 </script>
 </body>

@@ -328,6 +328,13 @@ shape again: every stage of learning V is a finite approximant, as every partial
 holding π, would need the infinite process finished. A reader becoming a writer holds V to so many digits, for so many
 things, out to so far.
 
+One way to speed the passage is to aim it. Set H to the thing itself and there are two senses. Make the thing the unit,
+and its V is 1 by choice; its own two ends become the baseline, and you are the point placed: ninety degrees across a
+mountain range, centred, puts you half a range-width from it, from one look (`mountain.html`, "the mountain as H"). Or
+keep your H and make the thing the focus: choose the baseline so that half of it equals the distance, which puts the thing
+at parallax's corner, where its error is least. You need the distance roughly first, so it goes in passes, a short step,
+then a longer baseline set from what the short one gave.
+
 ---
 
 ## 13. What it comes to

@@ -3491,6 +3491,18 @@ knows V for near things and does not for far ones; knowing V belongs to a thing 
 More standpoints and longer baselines narrow the band and never close it. The writer of this paper, holding V exactly,
 is the limit of that passage, not a stage of it, as π is the limit of its approximants and not one of them.
 
+**The thing itself as H.** H can be set to the thing whose size is wanted, in two senses, and they find different
+things. *As the unit:* the thing is drawn at one length, so its V is 1 by choice and nothing about it is found; what is
+found is everything else in its units. Its own two ends are then a baseline and the reader the point placed (parallax
+turned round, a resection): an angle α across it, centred, puts the reader 1/(2·tan(α/2)) of its breadth away, from one
+look; at α = 90° the reader stands on the circle drawn on it, half a breadth from its middle. *As the focus:* the reader
+keeps its own H and chooses a baseline that puts the thing at the corner of the pair, half the baseline equal to the
+distance, where parallax's error per step, cosh(ln(d/(B/2))), is least (Proposition 13's best H, §8's corner on the
+focus). That needs the distance roughly first, so it is reached in passes, each baseline set from the last rough reading,
+each a degree of the paragraph above. In §10's worked example the two coincide: the range is twice its distance, its ends
+at the corner, so a baseline as long as the range would put it at parallax's corner, and its own ends place the reader on
+their circle, 10 mi off, in range-widths 0.5.
+
 **Inside a room.** Each room is a hold, and the reader's one length gives it a unit circle on which both sweeps of §4 lie. From
 home on that circle the things in the room are directions [h : v], addresses, and together they are the room's layout,
 with no amount in it; each address is painted by the thing it meets, and the central sweep places where that paint lands

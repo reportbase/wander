@@ -87,7 +87,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   The two vantages (13 Oct, SPN R223; OFS §10 step 3): on the thumb's circle the outer reads π/2, the inner the fingers'
   mean shadow 2/π, product 1, H in H, the starting value returned (R226; it said "the thumb's true breadth"); to the
   ends 1.1107 × 0.9003 = 1; the mountain never enters.
-  `?V=&d=&k=&walk=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `vantages`, `lay`, `set`).
+  "The mountain as H" (30 Oct, SPN R599): as the unit, the range's ends a baseline placing the reader 0.5 range-widths off
+  from one look; as the focus, a baseline 2d at parallax's corner, one thumb walked 10.025 times its error.
+  `?V=&d=&k=&walk=1&asH=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `vantages`, `asH`, `lay`, `set`).
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -2614,6 +2616,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R598 (Tom: "it's not binary, you can learn V through paralax"): knowing V by degrees, in what (the step, H, an agreed
   unit), how well (the band, best at the pair's corner, a ray past B/ε) and of which things (near, not far); the exact
   writer the limit, as π of its approximants. OFS §9 "Knowing V, by degrees"; essay 6 §12; essay 15 §6.
+  R599 (Tom: "if you set H to equal the mountain"): the thing itself as H, as the unit (its V 1 by choice, its ends a baseline
+  placing the reader, 1/(2·tan(α/2)) breadths off) or as the focus (a baseline with B/2 = d, parallax's corner, found in
+  passes). OFS §9 "The thing itself as H"; essay 6 §12; `mountain.html`'s "the mountain as H".
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
   is already way to long."): a direction kept as one number has chosen the chart that sends an end to infinity; the
@@ -2978,7 +2983,7 @@ In short:
   18. **mountain.html:** the range's ends at 45°, 18 of 36 fingers on it, the same at a thousand times the scale; mountain
       equals thumb reads 1 mi at 0.5 mi, off by 20, log₂ 20 doublings; one thumb walked recovers d = 10 and V = 20; the
       two vantages on the thumb π/2 × 2/π = 1 (the 36 fingers' mean shadow within 0.001 of 2/π), to the ends at 45°
-      1.1107 × 0.9003 = 1, the same at a thousand times the scale.
+      1.1107 × 0.9003 = 1, the same at a thousand times the scale; the mountain as H puts the reader 0.5 range-widths off.
 
   19. **play-marbles.html:** the pour of 500 at rest in the bowl, the bowl and table carrying the weight within 1%; the arc seen
       ahead ends at its first contact; a throw near the rim knocks marbles out and is heard (glass, bowl, felt); the pull
