@@ -597,6 +597,16 @@ reader down. There are two vantages on such a system, the writer's and the reade
 | the writer | known | known: equal to H, or unequal or varying with direction | none | the whole at once | an equation, the circle h² + v² = 1; an array, a shape's breadth in every direction |
 | the reader | known | never known | home | the addresses, directions with no amount, and their paint, what arrives along each | a hand held up to a stained-glass window |
 
+**Roles, not kinds; parallax the passage between them.** The two vantages are what an observer is doing, not what it
+is. Standing at one place it reads: one length, H, its directions and their paint, and from one length only rationals
+(§4, "Rates, not angles"). Taking a second standpoint adds a second variable, the step between the two; each point seen
+from both is then two rays crossing, and its place is found from the lengths and angles of the crossing, irrational in
+general, the writer's numbers. Standpoints joined give the places of everything seen, in the step's length: the writer's
+box up to its size (§9, "Reading and writing"; one known move writes in the reader's own H). The step counted in an
+agreed unit gives the box in that unit. So parallax is how a reader reconstructs the writer's cube, and in doing it the
+observer is writing: moving, joining standpoints and holding what no one standpoint holds. When it stands still it reads
+again. The labels name the act, not the observer.
+
 **One reader, two ways to read an address.** The reader's directions are read two ways, by the inscribed sweep and by
 the central sweep: one set of directions counted about two pivots (§4), not two readers and not two motions. The
 inscribed sweep gives the addresses: the places a reading can be put, laid before anything arrives, whose law is the
@@ -3429,16 +3439,16 @@ choose for it (§5), and taking standpoints, a second one for a loop to close or
 amount to be written. The heavy lifting is done by the geometry
 and by being situated.
 
-**Recovered, not written.** A reader is not powerless. By taking standpoints, closing loops and carrying in one amount
+**Recovered, by writing.** A reader is not powerless. By taking standpoints, closing loops and carrying in one amount
 it can recover a thing exactly: its shape, its places, even its size (§10). What it recovers can be true and still
 partial. A loop that closes shows that the routes taken agree; it cannot show that no route remains untaken, and only a
 second route that disagrees reveals a gap (above). So completeness is never a reading: a reader can find its account
 incomplete, never prove it complete, and the correctness of what it has recovered does not settle how much it has
-recovered. Nor does recovering the truth make the reader the writer. The writer holds the whole by walking it or by
-carrying in its measure, and states it in amounts from a vantage that holds both hemispheres. A reader that reaches the
-same statement has reached it by cleverness, in where it stood, which routes it closed and what it carried in, and not
-by holding the whole. Reading does not turn into writing; what the reader recovers is exact where it is exact, and its
-completeness is not the reader's to know.
+recovered. What recovers the thing is not reading harder: no reading from one standpoint carries a place or a size. It
+is the passage through standpoints, parallax, which joins them and so holds what no one standpoint holds, and in making
+that passage the observer is writing (§3.1, "Roles, not kinds"). The cleverness is in where it stood, which routes it
+closed and what it carried in; the joining is writing. What is recovered is exact where it is exact, and its
+completeness is not known from the routes taken, by the one who took them in either role.
 
 **Inside a room.** Each room is a hold, and the reader's one length gives it a unit circle on which both sweeps of §4 lie. From
 home on that circle the things in the room are directions [h : v], addresses, and together they are the room's layout,

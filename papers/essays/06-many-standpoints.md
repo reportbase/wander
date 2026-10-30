@@ -302,12 +302,31 @@ stand, and the one amount it is handed.
 
 ---
 
-## 12. What it comes to
+## 12. Becoming the writer
 
-**Reading and writing.** Standpoints are how a reader climbs from directions to places without ever writing. One gives
-lines, two give the figure, and the figure is exact, in the reader's own length. Writing enters at exactly one rung: the
-agreed length that fixes the scale. Astronomy's history of the astronomical unit is that rung, measured from outside for
-two centuries and finally agreed. Everything else in the cosmic distance scale is reading.
+Climb the ladder of this essay once more, and count the variables. From one standpoint there is one length, H, and a
+direction; nothing in it is a place, and what can be made from one length alone is rational (the fourteenth essay). A
+second standpoint adds a second variable, the step between the two. Now each point is two rays crossing, and its place
+comes out of the crossing's lengths and angles, sines and square roots, numbers no single length makes. More standpoints
+give every place seen, in the step's length: the writer's box, its three number lines, up to its size. Count the step in
+an agreed unit and the box is in that unit.
+
+So parallax is how a reader reconstructs the writer's cube, and while it does, it is the writer. It has moved, joined its
+standpoints and is holding what no one standpoint holds. When it stops and looks again, it reads. Reader and writer are
+not two kinds of observer; they are what one observer is doing. The labels move with the act.
+
+The first essay's survey says the same thing in its own words: the many angles are read, and the one base walked and
+counted is written; a surveyor does both in one morning.
+
+---
+
+## 13. What it comes to
+
+**Reading and writing.** Standpoints are how a reader climbs from directions to places, and the climb is where reading
+turns into writing. One gives lines, two give the figure, exact, in the length of the step between them; the observer
+that joined them has written the figure. The last rung is the agreed length that fixes the scale. Astronomy's history of
+the astronomical unit is that rung, measured from outside for two centuries and finally agreed. Each standpoint's
+reading is reading; joining them, and agreeing the unit, is writing.
 
 **The Cauchy.** It appears twice here. Parallax has the corner and the bell of the steady turn, for the same reason: the
 pair's facing turns fastest at the corner. And on the far side of the reciprocal, inverted parallaxes behave exactly as

@@ -477,7 +477,9 @@ has its two sweeps; the writer turns them into X, Y and Z.
 Each sweep has its own corner at 45°: for the azimuth the plane v₂ = h, for the altitude the cone v = √(h² + v₂²). The
 cube's corner is a third place. The triple corner [1 : 1 : 1] lands on the cube's vertex (1, 1, 1) at azimuth 45° but
 altitude atan(1/√2) ≈ 35.26°, inside the altitude's corner cone, not on it. The three axes meet there, and neither sweep's
-own corner does. And a sweep even in azimuth and even in height, by Archimedes' equal slices, is even over the whole
+own corner does. The reader reaches the writer's cube by parallax: a second standpoint adds the second variable, the
+crossings give places, and joining them is writing (the sixth essay, "Becoming the writer"). The labels are not fixed;
+they name what the observer is doing. And a sweep even in azimuth and even in height, by Archimedes' equal slices, is even over the whole
 sphere, which is why the writer's numbers for the reader's sweep there are 2 and ½.
 
 ---

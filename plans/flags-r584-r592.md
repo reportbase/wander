@@ -11,6 +11,8 @@ The rulings behind it (SPN):
 - **R588:** two 1's.
 - **R589:** two sweeps, three axes.
 - **R591:** the sphere is the writer's read of the reader. The reader reads with the Cauchy. π is not a reader's number.
+- **R594:** the reader reconstructs the writer's cube by parallax and becomes the writer in doing it; the labels are
+  roles, not kinds. It narrows R442 ("a reader can't become a writer").
 - **R592:** one variable, H, makes only rationals. Irrationals need two variables and π the whole turn, both the
   writer's. The reader meets irrational directions but does not make them.
 
@@ -206,6 +208,16 @@ A wording pass, as R459 and R533 did, is needed once entries 1–3 are decided. 
 they are.
 
 ---
+
+## A proposed way through 1–3 (R594, 30 Oct)
+
+Tom: "Seems to me the reader uses paralax to reconstruct the writers cube. And I'm the process becomes the writer, so the
+labels are not static." If the labels name the act and not the observer, entries 1–3 can be read this way. Holding the
+closed circle, the whole sphere, π, or π/2 and 2/π as totals of a completed turn, is something an observer does while
+writing: joining facings or standpoints, holding what no one standpoint holds. The same observer reading from one place
+has the open quarter and the Cauchy. So "the reader's circle" in OFS §5 and essay 2 would become the circle the
+observer's one length traces, held whole only by the observer writing. That is consistent with R533 (one length, no V)
+and R591 (the sphere is the writer's read). It still needs Tom's word before any rewording.
 
 ## Order suggested
 
