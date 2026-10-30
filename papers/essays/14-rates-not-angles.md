@@ -271,6 +271,28 @@ the heading changing all the time; and along the rhumb line, one heading held th
 navigator never names an angle. It keeps two running counts, the difference of latitude (how far north or south) and the
 departure (how far east or west), and reads its course as their ratio from a traverse table.
 
+Three later thinkers come closer still, and the nearest of them is Poincaré.
+
+**Leibniz**, against Newton's absolute space, held space to be "something merely relative", "an order of coexistences, as
+time is an order of successions" (the correspondence with Clarke, 1715–16). Shift the whole world, he argued, and nothing
+anyone could observe would differ, so the shift is no real difference. Earlier, in a letter to Huygens (1679), he had
+asked for an *analysis situs*, a geometry of situation that would treat position directly, by relation, as algebra treats
+magnitude.
+
+**Klein** (the Erlangen programme, 1872) said what a geometry is: whatever a group of transformations leaves unchanged.
+Change the group and you change the geometry.
+
+**Poincaré** put both to work. In "The Relativity of Space" (*Science and Method*, 1908) he asks us to suppose that in one
+night every dimension of the universe became a thousand times larger, our bodies and our rulers with it, and he answers
+that nobody would notice: the world would be similar to itself, and what we measure, being ratios, would be unchanged. He
+credits the thought to Delbœuf, and goes on to argue that even a deformation that is not a similarity would pass
+unnoticed if every body and instrument were deformed with it. In *Science and Hypothesis* (1902) he separates the space an
+observer has, "representative space", made of what is seen, touched and moved through, from "geometric space", which is
+continuous, infinite, homogeneous and isotropic, the same for everyone. He builds geometry from the observer's own
+movements: the object of geometry, he wrote, is the study of a particular group, the displacements an observer can make
+and undo. And he held which geometry to use a matter of convention: one geometry cannot be more true than another, only
+more convenient.
+
 ---
 
 ## 10. Our reading of them
@@ -304,6 +326,20 @@ essay's wedge is laid.
 **Altitude and azimuth were always the reader's.** Ptolemy's two systems are this series' two vantages. Altitude and
 azimuth are measured from a standpoint, against one's own horizon: a reader's sweeps. The equatorial frame is fixed to
 the sky and holds all of it: a writer's frame, from no standpoint.
+
+**The closest is Poincaré.** His enlarged universe is this series' first test, scale the world, nearly word for word: a
+reading is what survives it, a writing what does not. His representative space is the reader's sphere, and his geometric
+space, the same for everyone, is the writer's cube. His geometry from the observer's movements is the reader's two sweeps
+of one length; and his group of displacements is Klein's idea applied to an observer, the line that leads to Jaynes, on
+whom the main paper builds. Leibniz is the root: space as relations, and a geometry of situation, which is what "situated"
+means.
+
+We part from Poincaré in three places. His test is wider than ours: he allows any deformation that every instrument
+shares, where a reading survives only a similarity, since a stretch moves the sweep's corner off its median (the one
+place the essays let c differ from 1). He takes the choice of Euclidean geometry for a convention; here the reader's turn
+selects it, the round measure being the only one every turn leaves unchanged, while the writer's measure is the one left
+open (the "two 1's" above). And nothing in him separates the address from the payload, or the median a reader can take
+from the mean it cannot.
 
 **What is ours.** Every piece above is classical: the two motions, the fluxions, the hemisphere's 2, the observer's
 coordinates, the rhumb line. What this essay adds is the sorting. The straight chord and the angle are the writer's; the
@@ -443,6 +479,15 @@ The degree on a protractor and the pitch on a roof name the same direction. The 
 - Ptolemy, *Almagest*. (The observer's horizon against the sky's frame.)
 - Nunes, P. (1537). *Tratado da sphera*. Lisbon. (The rhumb line is not a great circle.)
 - Wright, E. (1599). *Certaine Errors in Navigation*. London. (The chart that straightens the rhumb lines.)
+- Leibniz, G. W. (1679). Letter to Huygens, 8 September (the *analysis situs*); and the correspondence with Clarke
+  (1715–16), third and fifth letters (space an order of coexistences; the world shifted).
+- Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen* (the Erlangen programme).
+- Poincaré, H. (1902). *La Science et l'hypothèse*, chapters III–V (representative and geometric space; geometry as the
+  study of a group; convention). (1908). *Science et méthode*, Book II, chapter I, "La relativité de l'espace" (the
+  universe a thousand times larger overnight, after Delbœuf).
+
+The words of Leibniz, Poincaré and Newton above are given from memory, in the usual English renderings, and are to be
+checked against the texts.
 
 From this series' own record: *The Algebra of Discrete Observation* (`../archive/algebra-of-discrete-observation.md`;
 its sections "Trigonometry is the completion, not the equipment", "Trigonometry is an abstraction layer; the observer

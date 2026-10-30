@@ -3916,6 +3916,18 @@ with a focus at the origin, |w| = ℓ + e·Re w with ℓ = 2a²b²/(a² + b²) a
 while z goes round twice (Bohlin 1911; Levi-Civita 1920). The doubling of the angle that separates the two sweeps is the
 same square that takes a figure's centre to its focus.
 
+**Poincaré's enlarged universe, and Leibniz's situation** (§3, §9). The test of §9, scale the world, is Poincaré's thought
+experiment (1908, after Delbœuf): every dimension of the universe a thousand times larger overnight, rulers and observers
+with it, and nothing observed changed, because what is observed are ratios. His representative space (what an observer
+sees, touches and moves through) against his geometric space (homogeneous, isotropic, the same for all) is the reader's
+sphere against the writer's cube (§3.7), and his geometry built from the group of the observer's own displacements
+(1902) is the line through Klein (1872) to Jaynes on which §2 builds. Leibniz's space as an order of coexistences, and his
+*analysis situs*, a geometry of situation (1679), are its root. Two differences: Poincaré allows any deformation every
+instrument shares, where a reading here survives only a similarity (a stretch moves the corner off the median, §5); and he
+takes the choice of the Euclidean measure for a convention, where here the turn selects it (the round measure the only one
+every turn leaves unchanged) and the writer's measure is the one left open. The separation of address and payload is not in
+either.
+
 **Cauchy's functional equation, twice** (§5, §6). Two steps of the main line are Cauchy's functional equations
 (Cauchy 1821). The uniform sweep of Proposition 3(g) is a one-parameter group, Φ(t₁ + t₂) = Φ(t₁)Φ(t₂), the equation in
 its exponential form for matrices, whose continuous solutions are Φ(t) = exp(tA). Because the sweep returns after a full
@@ -4563,6 +4575,9 @@ Pattern Analysis and Machine Intelligence* 16(2), 150–162.
 Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*
 5(4), 437–459.
 
+Leibniz, G. W. (1679). Letter to Huygens, 8 September (*analysis situs*); and (1717) *A Collection of Papers,
+which passed between the late Learned Mr. Leibnitz, and Dr. Clarke*. London.
+
 Leonard, D. (2011). Estimating a bivariate linear relationship. *Bayesian Analysis* 6(4), 727–754.
 
 Levi-Civita, T. (1920). Sur la régularisation du problème des trois corps. *Acta Mathematica* 42, 99–144.
@@ -4635,6 +4650,9 @@ Plücker, J. (1865). On a new geometry of space. *Philosophical Transactions of 
 725–791.
 
 Poggio, T., Torre, V. and Koch, C. (1985). Computational vision and regularization theory. *Nature* 317, 314–319.
+
+Poincaré, H. (1902). *La Science et l'hypothèse*. Paris: Flammarion. (1908). *Science et méthode*. Paris:
+Flammarion; Book II, chapter I, "La relativité de l'espace".
 
 Polyak, B. T. and Juditsky, A. B. (1992). Acceleration of stochastic approximation by averaging. *SIAM Journal on
 Control and Optimization* 30(4), 838–855.

@@ -2583,7 +2583,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   picks the round one; Hölder ‖x‖₂² ≤ ‖x‖₁‖x‖∞, equality on axes and corner diagonals, √2 the geometric mean of the
   writer's 1 and 2. 2/π is against an edge, π/2 against the chord as diameter. Essay 14 §10. R589, two sweeps, three axes: the hand's altitude (h→v) and
   azimuth (h→v₂) the reader's sphere, the cube Descartes' X, Y, Z = h, v, v₂, reached only with H and the angles
-  (X = H·cos a·cos ψ …); the triple corner at azimuth 45°, altitude 35.26°, apart from each sweep's 45° corner. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
+  (X = H·cos a·cos ψ …); the triple corner at azimuth 45°, altitude 35.26°, apart from each sweep's 45° corner.
+  R590: the closest classical framing is Poincaré's (the universe a thousand times larger overnight, representative
+  and geometric space, geometry from the observer's group of displacements), Leibniz the root (an order of
+  coexistences, analysis situs), Klein the group; essay 14 §9–§10, OFS Appendix A; quoted from memory, to check. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
   `papers/essays/14-rates-not-angles.md` (a roof's pitch), on `essays.html` and in `explainers.html`'s not-yet list.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS
