@@ -2602,7 +2602,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   crossings) and in doing it is writing; the labels name the act, not the observer (narrows R442). OFS §3.1 "Roles, not
   kinds", §9 "Recovered, by writing", essay 6 §12 "Becoming the writer"; a proposed way through flags 1–3.
   R595 applied it: "the reader's circle" is now "the one-length circle" everywhere in the papers (OFS §5's title,
-  Proposition 3), held whole only by an observer writing; say "the one-length circle", not "the reader's circle". The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
+  Proposition 3), held whole only by an observer writing; say "the one-length circle", not "the reader's circle".
+  R596 carried flags 4–13 through: being unmoved by scaling is needed for a reading, not enough (√2 and π are made
+  while writing); halving a length is the reader's, halving a turn the writer's; the lay's ln, H·tan(kπ/2K), Euler's
+  formula and the Cauchy's constant are the writer's formulas for the reader's things; essay 14 names its five 1's. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
   `papers/essays/14-rates-not-angles.md` (a roof's pitch), on `essays.html` and in `explainers.html`'s not-yet list.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS

@@ -620,8 +620,9 @@ law is both the Möbius image of the uniform turn and harmonic measure is a fact
 part (Kato and McCullagh 2020 give the first), so a statement about a standpoint off the centre in three dimensions has
 to say which it means.
 
-**What the two sweeps return.** A writer holds a line of true breadth 1 as 1. The central sweep measures it as an arc,
-a half turn about the centre, π/2; the inscribed sweep as its projection over the turn, 2/π. Their product, not their
+**What the two sweeps return.** A writer holds a line of true breadth 1 as 1. Measured by the writer through the
+central sweep it is an arc, a half turn about the centre, π/2; through the inscribed sweep, its projection over the turn,
+2/π. Both numbers have π in them and are the writer's; from one place the reader has its readings and their corner. Their product, not their
 difference (π/2 − 2/π ≈ 0.934), gives the 1 back, and what it gives back is the reader's own H measured in H, not the
 true breadth of anything read. Out to 45° the same two readings are θ/sin θ = 1.1107 and sin θ/θ = 0.9003, with product
 1 again. Both rates are exact only on the circle; on the ellipse of a stretched drawing the inscribed angle theorem
@@ -722,7 +723,8 @@ multiplicative form (Cauchy 1821), whose increasing solutions are k·ln λ. At x
 slope k. ∎
 
 (S) does the work, and it is assumed, motivated by Proposition 3(b) and not derived: monotonicity, a fixed corner and a
-matched slope are not enough, since 1 + ln x + α(ln x)² satisfies all three. It passes through amounts. A second route
+matched slope are not enough, since 1 + ln x + α(ln x)² satisfies all three. (The reader holds the count of addresses
+a doubling; the smooth logarithm is the writer's formula for it.) It passes through amounts. A second route
 stays with ratios: relations chain by multiplying, v/h = (v/m)·(m/h), and a measure under which chained relations add
 and which grows with the relation can only be k·ln. The turn is not such a measure, and read against ln(v/h) it is
 arctan(v/h) = π/4 + ½·gd(ln(v/h)), the Gudermannian: the logarithm seen whole from one side, the turn per doubling past
@@ -732,7 +734,7 @@ of v/h being (h/v)², the Jacobian of the reciprocal.
 
 **A fixed count, aimed by H.** Let the reader hold a fixed number K of addresses, laid at equal steps of the turn. Read a
 distance d against H as a pair, the direction [H : d], as the reader reads any pair; once d/H is had (§8), the K
-address boundaries lie along distance at H·tan(kπ/2K), k = 1, …, K − 1, the last address running to the horizon, half of them inside H at every H; a larger H gives the near field less detail and
+address boundaries lie along distance at H·tan(kπ/2K) (the writer's formula for where the reader's addresses fall), k = 1, …, K − 1, the last address running to the horizon, half of them inside H at every H; a larger H gives the near field less detail and
 reaches farther, a smaller H the reverse. Every H gives the same geometry; its value sets only the zoom. The K
 addresses hold any number of things, with no table and no count of them, though things sharing an address arrive there
 as one. H cannot be declined: without a length there is no relation, and an H that favours no value is H at 0 or ∞,
@@ -752,7 +754,7 @@ reader knows only its thumb.
    uniformly over the half turn, the range takes exactly the middle half of them, between the Cauchy's quartiles, and
    the median points at its middle.
 3. *The two sweeps, on the thumb.* On the thumb's circle each quarter turn is an arc of π/2 thumbs over a projection of
-   1 thumb. Read by the central sweep the half turn gives π/2, by the inscribed sweep 2/π (with 36 directions at the midpoints of 36 equal steps
+   1 thumb. Measured by a writer through the central sweep the half turn gives π/2, through the inscribed sweep 2/π (with 36 directions at the midpoints of 36 equal steps
    of the half turn the mean projection is 0.6368; 0.6367 over a quarter); their product is 1, the thumb measured in thumbs. A range 2 miles wide at 1 mile gives the
    same directions and the same products.
 4. *What it cannot read.* A range 20 miles wide at 10 miles, 2 at 1 or 2,000 at 1,000 gives the same readings

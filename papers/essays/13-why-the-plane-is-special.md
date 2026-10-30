@@ -216,8 +216,8 @@ from the centre, where the laws agree, or about the boosted sky, where the Möbi
 In the plane, the reader's Cauchy wears four hats: the uniform turn under every change of chart, where a walker
 lands, the law whose averages are the powers of the standpoint, and the two sweeps' rates combined. It wears them
 because the plane has endless angle-keeping maps, because those maps keep heat as heat, and because turning is
-multiplication that does not care about order. Euler's formula, z = r·e^(iθ), is the notation of all three, which is
-why the second essay could call it the reader's notation.
+multiplication that does not care about order. Euler's formula, z = r·e^(iθ), is the notation of all three, the
+writer's notation for the reader's turn (the second essay).
 
 In space the hats come off. Liouville leaves only the Möbius maps; the heat problem stops being kept by them; turns
 stop commuting. Harmonic measure keeps the powers and the mean. The spherical Cauchy keeps the Möbius maps and the

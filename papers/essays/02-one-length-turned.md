@@ -230,7 +230,7 @@ the horizon, the radius has made a half turn and sits back at A, home. That half
 made only a quarter. The e and the π are only notation here: the same squaring, written with the reading s, is (1 +
 is)/(1 − is), and as s runs off to infinity that runs to −1. What the identity records is projective: the reader's two
 ends, zero and the horizon, land at the two ends of one diameter. Section 9 comes back to Euler's formula as the
-reader's notation.
+writer's notation for the reader's turn.
 
 **One turn, two charts.** The even turn belongs to neither sweep. Written as the inscribed sweep's ratio, it is the
 Cauchy: the long tails and the missing mean come from the ratio running off to infinity. Written as the central sweep's
@@ -365,18 +365,25 @@ about the shares of one length. The v in it is the turned length's own up share,
 breadth. Reading it as the second is where the confusion comes from.
 
 And circular mathematics was always ratio mathematics. Sine, cosine and tangent are sides over the hypotenuse. A radian
-is arc over radius. π is circumference over diameter, a ratio, so π itself is a reading. e^(iθ) is the unit circle, any
-circle divided by its own radius. The corner, π/2 and 2/π, and the Cauchy are ratios too. None of them moves when the
-world is scaled, which is the test for a reading. Trigonometry is the reader's mathematics.
+is arc over radius. π is circumference over diameter, a ratio. e^(iθ) is the unit circle, any circle divided by its own
+radius. The corner, π/2 and 2/π, and the Cauchy are ratios too. None of them moves when the world is scaled. But being
+unmoved by scaling is needed for a reading and is not enough. √2 combines two lengths, and π, with every number that
+carries it, needs the whole turn; both are made only by an observer combining lengths or holding the turn complete, and
+that is writing (the fourteenth essay). So the reader has the corner, its readings and the Cauchy's shape; sine and
+cosine as numbers, the radian, π, π/2 and 2/π are the writer's, scale-free as they are. Trigonometry is the writer's
+record of the reader's turn.
 
 What the reader cannot do without an amount carried in is place a point at (x, y) in metres, state the circumference as
 2π times so many metres or the area as so many square metres, or say how large another party's circle is beside its own.
 Those are amounts, and amounts are writing. The reader does every part of circular mathematics except the parts that
 state a size.
 
-### Euler's formula, the reader's notation
+### Euler's formula, the writer's notation for the reader's turn
 
-One piece of classical notation holds all of this at once: Euler's formula, written in polar form,
+One piece of classical notation holds all of this at once: Euler's formula, written in polar form. It is the writer's
+notation: e^(iθ) takes the angle as a number, and the whole turn, π, with it (the fourteenth essay). What it records of
+the reader is the split of address from amount and the composition of readings, which in the readings themselves is
+tangent addition, rational:
 
 > z = r·e^(iθ).
 
@@ -462,8 +469,8 @@ facings, which is writing, and the same observer reads again when it stands stil
 writer"; the fourteenth). The writer's equation describes, in two lengths, a thing one length made.
 
 **Everything special about the circle is available from one length.** That includes the corner at 45°, its two
-mirrored halves, the right angle on the chord, and the inscribed sweep's ratios and the central sweep's squares. So are
-π/2 and 2/π, whose product returns the reader's own length. None of it needs a second length or the size of anything.
+mirrored halves, the right angle on the chord, and the inscribed sweep's ratios and the central sweep's squares. So is
+the writer's measure of the two sweeps, π/2 and 2/π, whose product returns the reader's own length. None of it needs a second length or the size of anything.
 
 **The Cauchy is the circle read from its edge.** The inscribed sweep, from the reader's own point on the circle, reads
 directions as ratios, unbounded, with their median at the corner and no mean. That is the Cauchy, the circle's law

@@ -191,7 +191,9 @@ The reader never makes the crossing, and never needs to. What it does do is all 
 
 *The Algebra of Discrete Observation*, a paper of this series' archive, put the pairing in four words: algebra kept,
 evaluation declined. The reader runs the tangent's algebra; it never evaluates the tangent. π is not missing from the
-reader's world. It is located, on the angle side, and the reader does not go there.
+reader's world. It is located, on the angle side, and the reader does not go there. (That paper also gave its observer
+the halving's square root and the constructible numbers; by the ladder below, the square root is already the writer's,
+and the reader's own numbers are the rationals.)
 
 The writer does go there, and is right to. It holds the whole turn, so it can name any direction as a share of it, put a
 degree on a protractor, lay an array of N slots evenly over the quarter turn and find a reading's slot by its arctangent
@@ -485,6 +487,12 @@ sphere, which is why the writer's numbers for the reader's sweep there are 2 and
 ---
 
 ## 11. What it comes to
+
+**Five things called 1, kept apart.** This essay has used the number 1 for five different things, and they are worth
+naming once. *The writer's rate*: the angle, arc per radius, against the completed turn. *The corner*: the reading
+v/h = 1, the reader's. *The edge*: one number line's unit, the cube's 1. *The sum*: h + v = 1, the diamond's 1. *The
+product*: π/2 · 2/π = 1, the writer's two measures of one sweep multiplied. The running rates of the sweep are also 1 at
+zero, before any sweeping; that is the start, not a sixth thing.
 
 **Writers have angles; readers have sweeps.** An angle is a share of the whole turn, measured at rate 1, arc per radius,
 against a turn held complete. A sweep is what one length does from where it stands; measured by the writer from either

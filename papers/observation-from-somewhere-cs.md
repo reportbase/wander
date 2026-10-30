@@ -744,7 +744,8 @@ derived.
 (S) does the work, and it is assumed, not derived: scale invariance of the lay's increments, motivated by the fact that
 no reading can fix a scale. Monotonicity, a fixed corner and a matched slope are not enough by themselves:
 1 + ln x + α(ln x)² satisfies all three. Proportion past the corner, L(x) = x, gives the stretch from x to λx room
-(λ − 1)·x, which grows with x; a power does the same; only the logarithm gives room that depends on λ alone.
+(λ − 1)·x, which grows with x; a power does the same; only the logarithm gives room that depends on λ alone. What the
+reader holds is the count, so many addresses a doubling; the smooth 1 + ln x is the writer's formula for it.
 
 **Floating point.** Floating-point numbers lay their addresses this way. The exponent counts levels and the significand
 is a plain share within the level; below the smallest normal number the subnormals lay one stretch in proportion from
@@ -785,7 +786,9 @@ half by an order-preserving map that commutes with the reciprocal. Applied again
 halvings: binary subdivision. Three parts, or any other number, need an added measure. A reader whose resolution steps
 by r matches levels that are powers of r, but every ratio other than the halving costs a measure carried in the reader.
 A layout whose levels are uneven, as a calendar's are (years, months of about 30 days, hours, minutes, seconds), matches
-no single factor and costs a table of its levels. Uniformity can be free; variation has to be stored somewhere.
+no single factor and costs a table of its levels. Uniformity can be free; variation has to be stored somewhere. Halving a
+length or a count is rational and the reader's; halving a turn or a level's ratio at its geometric middle takes a square
+root, two lengths combined, and is the writer's (OFS §4, "Rates, not angles").
 
 **One figure, three rulers.** The circle, the number line and Mercator's height lay one reading x three ways:
 x = tan θ = sinh ζ, θ = gd ζ. The writer's number line x has no corner, only a point. The turn θ = arctan x gives 45°
@@ -845,7 +848,8 @@ reader's one length along distance. Their boundaries fall at
 
   d_k = H·tan(kπ/2K),  k = 1, …, K − 1,
 
-the quantiles of the Cauchy with its scale at H.
+the quantiles of the Cauchy with its scale at H. The addresses are the reader's; the formula placing them, with its
+tangent and π, is the writer's account of where they fall.
 - Since tan(π/4) = 1, the middle boundary is d = H whatever H is: half the addresses inside the corner and half past it,
   at every H. H moves the split; it never changes the count.
 - A small H gives the near half a short stretch, each address fine, the first about πH/2K wide; a large H gives the same

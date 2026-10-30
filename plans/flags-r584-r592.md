@@ -224,6 +224,13 @@ paragraph in OFS, the CS companion and the submission; π/2 and 2/π made the wr
 §3.3, §3.4, §4 and §10 step 3, and in essay 2. Not yet: the π/2 and 2/π sentences in the companions and in essays other
 than 2 and 14, R329/R450/R570 (kept as the record), and the demos (entry 13).
 
+## Carried through (R596, 30 Oct, Tom: "Proceed")
+
+Entries 4–13 applied in the papers, the essays and the demos' visible wording; see SPN R596 for the list. A consequence
+to keep in view: being unmoved by scaling (the scale test, R568) is necessary for a reading and no longer sufficient;
+a ratio that combines two lengths or takes the whole turn is made while writing. What remains: code comments and page
+header comments that carry the older wording as history, and any passage this pass missed.
+
 ## Order suggested
 
 Entries 1 to 3 are one decision for Tom: whether the circle goes the way of the sphere. Once that is made:

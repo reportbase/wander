@@ -185,7 +185,8 @@ other party the same question is asked of each: each party's breadth is known, a
 - **Both read.** Every direction of the octant is an address [h : v : v₂], two numbers, laid evenly by area and painted
   by whatever arrives along it.
 
-The second essay's π/2 and 2/π have their counterparts here. Over a whole hemisphere, the measure from the centre is its
+The second essay's π/2 and 2/π have their counterparts here, the writer's measures too (they come from the sphere's
+totals, though the π cancels). Over a whole hemisphere, the measure from the centre is its
 area over its base, 2; the measure from the edge is its mean height, ½; and 2 × ½ = 1, as π/2 × 2/π = 1 for two
 parties. These are not the two-party numbers squared. They are those times 8/π² and π²/8.
 

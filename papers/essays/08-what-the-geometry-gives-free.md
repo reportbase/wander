@@ -104,7 +104,8 @@ Once the reader chooses H, its one length, these follow with no further choice:
   This is the one the dial leans on hardest.
 
 Two more need one stated premise each, and are free once it is granted:
-- **precision far off**, the lay past the corner, 1 + ln s on the reader's lay or 2 − 1/s on the in-place lay. The
+- **precision far off**, the lay past the corner, 1 + ln s on the reader's lay (the writer's formula for the reader's
+  count of doublings) or 2 − 1/s on the in-place lay. The
   premise is the fourth essay's: that no level past the corner is preferred to another.
 - **a level of detail**, given a fixed count K of addresses. H then divides the K between the near field and the far, half
   inside H at every H.
@@ -331,7 +332,7 @@ is the arithmetic face of the steps that never close.
 
 A sampling table or a grid of cells fixed in advance has to know beforehand the extent it covers and the resolution it
 needs, and it is rebuilt when either changes. The uniform turn's addresses need neither. A direction is given whatever
-the count of things and whatever their size, and the fourth essay's K addresses at H·tan(kπ/2K) hold half inside H at
+the count of things and whatever their size, and the fourth essay's K addresses at H·tan(kπ/2K) (the writer's formula for where they fall) hold half inside H at
 every H and every N.
 
 Rendering meets this in importance sampling. To light a scene by a sky, a renderer draws directions in proportion to how

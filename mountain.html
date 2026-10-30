@@ -87,7 +87,7 @@
         <h2 style="margin-top:14px">Mountain equals thumb</h2>
         <canvas id="lay" height="170"></canvas>
         <p class="cap">The reader's lay of distances, in thumbs: proportional inside the corner (one thumb), one equal step per
-        doubling past it. Gold: where the range lands when amounts are read off the reader's circle, which holds only the thumb (a writer would say it set the mountain equal to its thumb, V = H). Teal: where it
+        doubling past it. Gold: where the range lands when amounts are read off the one-length circle, which holds only the thumb (a writer would say it set the mountain equal to its thumb, V = H). Teal: where it
         truly is. The gap is V/H, the number of thumbs the mountain really is.</p>
         <div id="hud"></div>
     </div>
@@ -228,7 +228,7 @@
             `from nowhere: thumb H = 1 mi, mountain V = ${fmt(Vt)} mi, distance d = ${fmt(dt)} mi`,
             `  pairs: half-width/distance ${r.endsVH.toFixed(3)}${r.atCorner ? ' (at its corner)' : ''}; width/distance ${r.widthToDistance.toFixed(3)}; distance/thumb ${fmt(dt / H)} (${Math.log2(dt / H).toFixed(2)} doublings); mountain/thumb ${fmt(Vt / H)} (${e.doublings.toFixed(2)} doublings)`,
             `from the reader: ends at v/h = ±${r.endsVH.toFixed(3)} (±${r.alpha.toFixed(1)}°); ${r.fingersOn} of ${FINGERS} fingers on the range, share ${r.share.toFixed(3)}; the same at every scale`,
-            `the two vantages, on the thumb: central (the radius, a half turn) π/2 = ${vt.limb.outer.toFixed(4)}, inscribed (the ray from home, the fingers' mean shadow) ${vt.limb.innerFingers.toFixed(4)} for ${2 * vt.limb.fingers} fingers (2/π = ${vt.limb.inner.toFixed(4)}): product 1, H in H, the starting value returned; to the ends (${vt.ends.deg.toFixed(1)}°) ${vt.ends.outer.toFixed(4)} × ${vt.ends.inner.toFixed(4)} = 1; the mountain never enters`,
+            `a writer's measure of the two sweeps, on the thumb: central (the radius, a half turn) π/2 = ${vt.limb.outer.toFixed(4)}, inscribed (the ray from home, the fingers' mean shadow) ${vt.limb.innerFingers.toFixed(4)} for ${2 * vt.limb.fingers} fingers (2/π = ${vt.limb.inner.toFixed(4)}): product 1, H in H, the starting value returned; to the ends (${vt.ends.deg.toFixed(1)}°) ${vt.ends.outer.toFixed(4)} × ${vt.ends.inner.toFixed(4)} = 1; the mountain never enters`,
             `mountain equals thumb (amounts read off the thumb's circle): read ${e.Vread} mi wide at ${fmt(e.dRead)} mi; truly ${fmt(Vt)} at ${fmt(dt)}: off by V/H = ${fmt(e.factor)}, ${e.doublings.toFixed(2)} doublings, the same on both sides of the corner`,
             w ? `walked one thumb: half-angle ${w.a1.toFixed(1)}° → ${w.a2.toFixed(1)}°, s ${w.s1.toFixed(3)} → ${w.s2.toFixed(3)}; d = H·s₂/(s₂ − s₁) = ${fmt(w.d)} mi, V = 2·s₁·d = ${fmt(w.V)} mi`
               : (walked ? 'too near to walk a whole thumb toward it' : 'walk one thumb toward the range to construct the true distance and width')];

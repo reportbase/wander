@@ -815,14 +815,16 @@ only with no turn at all. To the writer, then, a relation is the chord between i
 The chord comes first: it needs no turn, and the arc is drawn on it by one, where the rays from its two ends cross (§4,
 "The arc from the chord").
 
-**With three unit relations.** Taken over a hemisphere instead of a half-turn, the same two measures are its area over
+**With three unit relations.** Taken over a hemisphere instead of a half-turn, the same two measures, a writer's (the
+hemisphere's surface is a total over a completed half sphere), are its area over
 its projection on the base, 2, since a hemisphere's surface is twice its base (Archimedes, *On the Sphere and
 Cylinder*), and its projection over its area, ½, the mean height over the hemisphere, since the height is uniform over a
 sphere (the hat-box theorem). Their product is again 1. In n dimensions they are √π·Γ((n + 1)/2)/Γ(n/2) and its
-reciprocal: π/2 and 2/π for the circle, 2 and ½ for the sphere, 3π/4 and 4/(3π) next.
+reciprocal: π/2 and 2/π for the circle, 2 and ½ for the sphere, 3π/4 and 4/(3π) next. On the sphere the π cancels and
+the numbers are rational, but they come from the sphere's totals all the same.
 
 Archimedes measured the circle from both sides, and the inscribed measure equals his inscribed polygon in number; its
-halvings give Viète's product for 2/π (Appendix A).
+halvings give Viète's product for 2/π (Appendix A), a square root a factor, the writer's.
 
 **From the reader's vantage to the writer's.** The argument runs in seven steps, each resting on the one before.
 1. A line has a true breadth, 1. That is what the writer holds.
@@ -1422,9 +1424,13 @@ shares of the same H, and h² + v² = 1 is a fact about the shares of one length
 up share, not a share of a second party's breadth. Circular mathematics was always ratio mathematics in this sense: sine,
 cosine and tangent are sides over the hypotenuse, the radian is arc over radius, π is circumference over diameter,
 e^(iθ) is any circle over its own radius, and the corner, π/2 and 2/π and the Cauchy are ratios too; none moves when the
-world is scaled (§9), so all of it is reading. What the reader cannot do without an amount carried in is place a point at
-(x, y) in a unit, state the circumference or the area as so many units, or set its circle beside another party's: those
-are writings. The reader does every part of circular mathematics except the parts that state a size.
+world is scaled (§9). Being unmoved by scaling is needed for a reading but is not enough. A ratio that takes two lengths
+combined (√2, the diagonal) or the whole turn (π, and every number with π in it) is made only by an observer combining
+lengths or holding the turn complete, which is writing (§3.1, "Roles, not kinds"; §4, "Rates, not angles"). So the
+reader, from one place, has the corner, its readings, tangent addition and the Cauchy's shape; sine and cosine as
+numbers, the radian as a share of the turn, π, π/2 and 2/π are the writer's, scale-free as they are. And what needs an
+amount carried in, a point at (x, y) in a unit, the circumference or the area as so many units, one's circle set beside
+another party's, is writing in the other sense, the sense the scale test detects.
 
 **One choice, and two numbers that are not the reader's.**
 - *H, the reference.* The reader's one choice, and free. Every H gives the same circle and the same corner (part (b)),
@@ -1497,7 +1503,9 @@ ellipse. Less rests on the Euclidean choice than it seems. The readings are dire
 reaches them only through the measure on directions that "sweeping uniformly" uses; laid by direction, every path gives
 the same readings (§7.4). Swept uniformly along their own paths, the square and the line give other laws, with the same
 median at the corner and no mean (Theorem 6(e)). What the circle and the uniform turn add is the Cauchy's exact shape.
-Among the p-norms the circle is also the extreme case (Appendix A).
+Among the p-norms the circle is also the extreme case (Appendix A). The turn fixes which measure (the Euclidean, the only
+one every turn leaves unchanged); measuring a length with it, the diagonal √2 for instance, combines two lengths and is
+the writer's (§4, "Rates, not angles").
 
 **What the count of orthants borrows.** The count 2^m needs no angle. That the orthants tile the circle or the sphere in
 equal shares, a quarter turn each or π/2 of the sphere's area each, is the Euclidean measure of (c), not part of the
@@ -1537,7 +1545,10 @@ k = 1.
 f(λμ) = f(λ) + f(μ) for all λ, μ ≥ 1. This is Cauchy's functional equation in multiplicative form (Cauchy 1821),
 and its only increasing solutions are f(λ) = k·ln λ. At x = 1 the near lay has slope 1 and the far lay slope k. ∎
 
-Room here is the number of addresses a doubling receives, not its length.
+Room here is the number of addresses a doubling receives, not its length. What the reader holds of the lay is that
+count: so many addresses a doubling, the doublings counted, all rational. The smooth form 1 + ln x, with its ln 2 a
+doubling, is the writer's formula for the count (a logarithm is transcendental, and from one length the reader makes
+only rationals; §4, "Rates, not angles"), as the hyperbolic ruler of §6, ζ = asinh x, is the writer's smoothing of it.
 
 The premise (S) does the work. Monotonicity, a fixed corner and a matched slope are not enough by themselves:
 L(x) = 1 + ln x + α(ln x)² with α > 0 satisfies all three and gives successive doublings different room.
@@ -1621,7 +1632,10 @@ what its symmetries keep, applied to the points of a level. Halving is a branchi
 of 2 between level edges, since where the edges fall depends on how the readings are laid out. On the lays of this
 section they fall at the doublings of v/h. The constructions agree: square roots reach every halving of the turn, and not every other
 division (Appendix A). The halvings, factor by factor, are also what give 2/π (Viète's product,
-Appendix A).
+Appendix A). Two halvings are to be kept apart. Halving a length or a count, H to H/2, a level's doublings 2ᵏ, is
+rational and the reader's. Halving a turn or a level's ratio at its geometric middle (the bisector, the √2 inside the
+first doubling) takes a square root, a Pythagorean length of two lengths combined, and is the writer's (§4, "Rates, not
+angles"); the argument above shows only that a level's symmetries single out its corner, not who places the cut.
 
 *What another ratio costs.* A reader whose own resolution multiplies by r from level to level matches levels that are
 powers of r exactly, one level per factor: a reader with r = 3 matches levels of three as one with r = 2 matches
@@ -2118,7 +2132,9 @@ f(X) ≥ f(mean X) on every X, with equality only if f is affine on the smallest
 
 (d) *The Cauchy is an address law.* Over one quadrant its median is v/h = 1, the corner, and its quartiles are √2 − 1
 and √2 + 1, a reciprocal pair. Its mean does not exist: ∫₀^s x·2/(π(1 + x²)) dx = (1/π)·ln(1 + s²), which grows without
-bound.
+bound. The law is the turn's; the reader holds it as order and the corner, its shape 1/(1 + s²) up to the total. The
+constant 2/π, the total π/2 and the quartiles as numbers are the writer's; the reader meets the quartile directions
+without making them (§4, "Rates, not angles").
 
 (e) *The median needs only reciprocal symmetry, and the missing mean a density of h bounded away from zero near the horizon.* Let the sweep
 follow any continuous path from all of h to all of v that comes near h = 0 only at its end, with any weight, both
@@ -2735,7 +2751,9 @@ the best estimate of a size is the corner of what is known (Proposition 13).
 the same whatever it looks at. The turn's addresses are continuous; a fixed K is a model of a reader's finite
 capacity added to them, not something the turn supplies, and what follows holds for whatever K a reader has. K comes before H. Choosing H does not change K; it splits it in two. Lay the K addresses
 of a uniform turn of the reader's one length along distance. Their boundaries fall at d_k = H·tan(kπ/2K), k = 1, …, K − 1,
-the quantiles of the Cauchy with its scale at H.
+the quantiles of the Cauchy with its scale at H. The addresses are the reader's; the formula placing them, with its
+tangent and its π, is the writer's account of where they fall (§4, "Rates, not angles"; laying K places on the quarter
+turn is a writer's construction, §7.3).
 - Since tan(π/4) = 1, the middle boundary is d = H whatever H is. Half the addresses lie inside the corner and half past
   it, at every H (Proposition 5(d)). H moves the split; it never changes the count.
 - A small H gives the near half a short stretch of amounts, each address a fine one, the first tan(π/2K)·H ≈ πH/2K wide.
@@ -3978,7 +3996,9 @@ generator is classical; Euler's formula and identity are used, not derived. The 
 origin, his exchange with Bienaymé in 1853 (Stigler 1974).
 
 **Polar form and the complex logarithm** (§2, §4, §9). Euler's formula puts three things of this paper into one
-notation. In polar form, z = r·e^(iθ), the factor e^(iθ) has modulus 1, a direction with no size: the address, held in
+notation. It is the writer's notation for the reader's turn: e^(iθ) takes the angle as a number and the whole turn, π,
+with it. What is the reader's in it is the split of address from amount and the composition of readings by tangent
+addition, rational in the readings. In polar form, z = r·e^(iθ), the factor e^(iθ) has modulus 1, a direction with no size: the address, held in
 the reader's one length. The modulus r is an amount, the payload's radius, stated in a unit only by a writer. The
 logarithm, ln z = ln r + iθ, turns the two groups of the reader's ignorance (§2) into translations of one plane:
 scaling the world by k adds ln k to the real part alone, and a turn adds to the imaginary part alone. So the scale
@@ -4032,7 +4052,8 @@ largest-component norm are such a pair, dual to each other, and both give 4; the
 own dual. This is classical and nothing here rests on it; it says that the norm the rigid bar needs is the one fixed
 point of that pairing.
 
-**What square roots reach** (§5). The constructions agree. Halving a turn needs one square root, tan(θ/2) = (√(1 + t²) −
+**What square roots reach** (§5). The constructions agree, and they are the writer's (a square root combines two
+lengths; §4, "Rates, not angles"). Halving a turn needs one square root, tan(θ/2) = (√(1 + t²) −
 1)/t, so square roots reach tan(π/2ᵏ) from the corner at every level; other divisions are not all in reach, since
 tan(π/7) and tan(π/9) have degree 6 over the rationals and no ruler and compass divide a half turn into seven or nine
 (Wantzel 1837, completing Gauss).

@@ -326,7 +326,7 @@ function render() {
     $('kv').textContent = 'k = ' + (k >= 1 ? k.toPrecision(3) : k.toFixed(k < 0.1 ? 4 : 3)); $('home').value = S.home;
     const below = A.filter(o => o.ratio < 1).length;
     $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}. Its circle round the whole is ${fmtM(Math.hypot(24, 16) * k)} in radius. ` +
-        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The reader's circle is the same at every k: its directions and what paints them, no distance.`) + ` From home the reader holds ${NA} addresses: ${below} below v = h and ${NA - below} above, at every k.`;
+        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The one-length circle is the same at every k: the reader's directions and what paints them, no distance.`) + ` From home the reader holds ${NA} addresses: ${below} below v = h and ${NA - below} above, at every k.`;
     describe();
 }
 function describe() {
