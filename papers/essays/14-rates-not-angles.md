@@ -250,7 +250,7 @@ The same text holds that points farther out on the radius go faster, which led t
 wheel.
 
 **Newton** (*Quadrature of Curves*, written 1691–92, printed 1704) treats quantities as made by motion, not built from
-parts: "Lines are described, and by describing are generated, not by the apposition of parts, but by the continued motion
+parts: "Lines are described, and thereby generated, not by the apposition of parts, but by the continued motion
 of points … Angles by the Rotation of their Legs." His fluxions are the rates at which such quantities grow, and he
 compares them one against another. A fluxion is never alone; it is always one flowing quantity against another.
 
