@@ -1217,7 +1217,11 @@ radius lands on home) or 2/π from a point of the circle (chord over arc, sin θ
 two sweeps. Writers have angles; readers have sweeps. In the writer's angle the radius's end moves one step of arc per
 step of turn and the ray's two (above); the reading v/h moves on by 1 + (v/h)² per step, so the Cauchy's density
 2/(π(1 + s²)) is a speed, turn per reading, the per against itself with no payload in it, which is the main result
-(§7.2) said in rates. The corner is where v fills exactly as fast as h empties, with no angle named. An angle is a share
+(§7.2) said in rates: the Cauchy is the sweep over the something, the law of the per. The corner is where the three
+rates meet, with no angle named: v fills exactly as fast as h empties there, their ratio is the writer's 1, and the
+writer's 1 is the geometric mean of the reader's two rates, √(π/2 · 2/π), ln(π/2) and ln(2/π) symmetric about it on the
+levels, the fixed point of the reciprocal that pairs the two sweeps. The sweeps' running rates are not 1 there (θ/sin θ
+is 1.1107, sin θ/θ 0.9003); they are 1 only at zero. An angle is a share
 of the whole turn and needs the turn's total, π; to evaluate the tangent or the arctangent is to cross from a direction
 to such a share or back, so both are the writer's tools: the arctangent is the writer's formula for how much of the turn
 a reading has passed (§2), and laying an array on the quarter turn by it is a writer's construction (§7.3). The reader

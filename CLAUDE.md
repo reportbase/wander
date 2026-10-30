@@ -2571,7 +2571,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Cauchy a speed, turn per reading, the per against itself with no payload. An angle needs π, so evaluating tan or arctan
   is the writer's; the reader runs tangent addition and the halving (the archive's *Algebra of Discrete Observation*,
   draw's TB algebraic form). A rate per second, or of an amount (road per turn), is a writing. Never say 1 is the reader's
-  rate. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
+  rate. The corner is where the three meet (R585): v fills as fast as h empties, v/h is the writer's 1, and 1 is the
+  geometric mean of π/2 and 2/π (the reciprocal's fixed point between the two sweeps); the running rates there are 1.1107
+  and 0.9003, not 1. The Cauchy is the sweep over the something, the law of the per. OFS §4 "Rates, not angles" and a note under §7.3's worked example; essay 2 §7; essay 14,
   `papers/essays/14-rates-not-angles.md` (a roof's pitch), on `essays.html` and in `explainers.html`'s not-yet list.
   The horizon without V (27 Oct, SPN R535; Tom: "without V, there is no divide by zero problem."; "no need to state the
   obvious"): nothing added to OFS. The CS companion's §3 has "Division by zero" (Tom: "yes, add it to the companion. OFS

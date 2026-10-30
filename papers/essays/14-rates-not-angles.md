@@ -19,6 +19,10 @@ depending on where it pivots, and never at 1: the 1 is the writer's rate, the an
 which convert between a direction and an angle, are the writer's tools: they need the completed turn. The reader runs the
 sweep and never needs them.
 
+Put together, this is the Cauchy's framing: it is the sweep over the something. The sweep lays the per, and the Cauchy is
+the law of that per, the reader's sweep rate counted in readings; the payload is what lies over it. The writer's rate is
+1, the reader's π/2 or 2/π, and the corner is where the three come together.
+
 None of this corrects trigonometry. It says where trigonometry sits.
 
 *Demos: `facing.html` (the facing turns twice as fast as the sweep); `one-read.html` (arc over chord and chord over arc,
@@ -78,15 +82,29 @@ rates, empty until a payload fills them.
 
 ---
 
-## 3. The corner, as a meeting of rates
+## 3. The corner, where the three meet
 
 Where is the corner? The second essay found it three ways: the one ratio the reciprocal leaves alone, the halfway point
 of the turn, the place where the facing stands square to the chord.
 
-Here is a fourth, in rates. As the hand rises, v fills and h empties. Early on v fills fast and h hardly moves; late, h
+In rates it is where three things come together: the horizontal, the vertical and the writer's 1.
+
+**The horizontal and the vertical meet.** As the hand rises, v fills and h empties. Early on v fills fast and h hardly moves; late, h
 empties fast and v hardly moves. There is one place where v fills exactly as fast as h empties. That place is the corner.
 It is where the two rates trade places, which is why v − h changes sign there at its steepest: the corner is a crossing,
 not a turning point.
+
+**Their ratio is the writer's 1.** At the corner the reading is v/h = 1. Everywhere else along the sweep the reader's
+reading differs from 1; here, and only here, it agrees with the writer's rate.
+
+**The writer's 1 is the corner of the reader's two rates.** π/2 and 2/π are reciprocals, and 1 is their geometric mean,
+√(π/2 · 2/π). On the levels they sit either side of it, ln(π/2) = 0.4516 above and ln(2/π) = −0.4516 below. So the
+writer's rate is the fixed point of the reciprocal that pairs the two sweeps: the corner between them.
+
+One thing does not happen there. The sweeps' running rates are not 1 at the corner: arc over chord is 1.1107 and chord
+over arc 0.9003. They are 1 only at zero, before any sweeping. The corner is not where the reader's sweep runs at the
+writer's rate. It is where the horizontal and vertical balance, their ratio is the writer's 1, and the writer's 1 sits
+between the reader's two rates.
 
 No 45° was used. "45°" is the writer's name for the corner, the corner written as an eighth of the whole turn. The reader
 finds it by the sweep alone.
