@@ -582,6 +582,6 @@ The essay draws on these; each is cited for something it uses.
 - Warren, W. H. (1984). Perceiving affordances: visual guidance of stair climbing. *Journal of Experimental
   Psychology: Human Perception and Performance* 10(5), 683–703.
 
-The geometry is set out with proofs in *Observation from Somewhere*, in the same collection: readers and writers in
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*), in the same collection: readers and writers in
 §3.1, the one-length circle in §5, the Cauchy as the law of the uniform turn in §7, reading and writing in §9, and the
 classical pieces in Appendix A ("The Cauchy from one length").

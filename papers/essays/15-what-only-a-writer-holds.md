@@ -251,7 +251,7 @@ the turn comes back, and the scale goes on, and to say either in a number you ha
 
 The dates and titles above are given from memory and are to be checked against the texts.
 
-The geometry is in *Observation from Somewhere*: §2 (the reader's ignorance as turns and rescalings; zero and a new zero;
+The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*): §2 (the reader's ignorance as turns and rescalings; zero and a new zero;
 tangent addition), §3.8 (the reader never knows V), §4 ("Rates, not angles"; the landing point), §5 ("Why halving",
 "Circular mathematics without V"), §7.4 (a shape as ln r = a₀ + f(θ)), Appendix A ("Polar form and the complex
 logarithm", "What square roots reach") and Appendix B ("Machine arithmetic and the infinite"). The essays before this one:

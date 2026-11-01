@@ -2,6 +2,8 @@
 
 *30 October 2026. A consistency read of `papers/observation-from-somewhere.md` (4,829 lines, read whole by a fresh agent given the rulings), after Tom's "Proceed" to a read of OFS for passages the rulings R584–R599 left behind. Nothing here is changed in OFS until Tom rules. Line numbers are those of commit 14e843b.*
 
+*Since R601 (30 Oct) OFS is archived and is not edited; this list stands as a record of where its wording differs from the later rulings and from* Readers and Writers.
+
 # OFS consistency audit against R584–R599
 
 File: /home/user/wander/papers/observation-from-somewhere.md (4,829 lines, read in full). No edits made.

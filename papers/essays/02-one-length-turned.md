@@ -352,6 +352,25 @@ variables before comparing directions. Charts that must keep compass bearings tr
 Mercator's projection does. Graphs of slopes are drawn with equal axes, and cameras have square pixels. The geometry gives
 the one reason underneath: c = 1 is the only two-axis drawing that has the one-length circle on it.
 
+### The circle's equation, divided by its own length
+
+Set the writer's circle beside the reader's law and the second turns out to be the first with its lengths divided out.
+The writer's circle holds amounts: a point is (H cos θ, V sin θ), the curve (x/H)² + (y/V)² = 1, round when V = H, and
+then x² + y² = r² with r an amount. Divide that by x²:
+
+  1 + s² = (r/x)² = sec²θ,  s = y/x.
+
+No length is left: r/x is a ratio of two amounts and not an amount. Two things follow. The density of the reader's law is
+the share squared, 1/(1 + s²) = (x/r)² = h², the reader's own share of H, squared. And the even turn becomes the Cauchy:
+ds = sec²θ·dθ, so dθ = ds/(1 + s²). The Cauchy is the circle's equation used to carry an even turn into readings. Its scale
+is 1 because every amount has been divided out, not because anyone set V equal to H.
+
+Divide the two-axis curve the same way and one thing survives: s = (V/H)·tan θ, a Cauchy of scale c = V/H. The amounts go;
+their ratio stays, as the law's scale. So V enters the Cauchy in exactly one place, its scale, and only for whoever holds V.
+A third form puts the law on a line in the world, the lighthouse's shore: the landings follow a Cauchy with a location and
+a scale that are both amounts, the foot of the lamp and its distance, and they are had only by finding the shore and
+measuring along it. The reader has the law's shape; the writer adds its parameters.
+
 ### Circular mathematics without V
 
 That raises a fair question. The circle's equation seems to need V. On a page it reads (x/H)² + (y/V)² = 1, and it is a
@@ -489,6 +508,6 @@ their median.
   31 (the angle in a semicircle is right); Book VI, propositions 8 and 13 (the mean proportional).
 - Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Berlin.
 
-The geometry is set out with proofs in *Observation from Somewhere*: the corner in §4 (Propositions 1 and 2), the arc from
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*): the corner in §4 (Propositions 1 and 2), the arc from
 the chord, the two sweeps and what each reads in §4, the one-length circle in §5 (Proposition 3, with the derivation of the
 circle from a uniform returning sweep as part (g)), and the three paths in §12.2.

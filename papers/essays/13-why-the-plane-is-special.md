@@ -248,6 +248,6 @@ Named as history in the text and not cited in *Observation from Somewhere*: Hami
 theorem on conformal maps in space (1850), Frobenius's theorem on division algebras (1878), Riemann's mapping theorem.
 
 The computations are in `../../plans/eul-plan.md` and `../../runs/eul/eul.py` (run 1, forty digits). The geometry is in
-*Observation from Somewhere*: Appendix A, "Polar form and the complex logarithm" (the notation, its limit in three
+*Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*): Appendix A, "Polar form and the complex logarithm" (the notation, its limit in three
 dimensions, the four parts and how they split) and "Cauchy's functional equation, twice"; Proposition 5(e) and "More
 parties" for the wedge; §11 for the boosted sky.

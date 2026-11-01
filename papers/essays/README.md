@@ -1,8 +1,10 @@
 # What can be known from where one stands
 
 A series of fifteen essays, read in order, drafted 28 October 2026. Each opens on something familiar, shows the geometry in
-full, says which older work saw which piece, and ends with what it changes. *Observation from Somewhere* (`../observation-from-somewhere.md`)
-holds the proofs and stays the source of truth; where an essay and it differ, the essay is the one to fix.
+full, says which older work saw which piece, and ends with what it changes. *Readers and Writers* (`../readers-and-writers.md`)
+is the source of truth; where an essay and it differ, the essay is the one to fix. *Observation from Somewhere* and its companions
+are archived (`../archive/ofs/`), kept unchanged for reference: their proofs stand, and where their wording differs from the
+later rulings, the later rulings stand.
 
 Two ideas run through all of them:
 - **Reading and writing.** A reading is a ratio from a standpoint, free and unchanged when the world is scaled. A writing
@@ -18,8 +20,8 @@ amount carried in, as no function of invariants can vary) and the vantage that h
 | # | essay | opens on | what it does |
 |---|---|---|---|
 | 1 | [Reading and writing](01-reading-and-writing.md) | mapping a room with no ruler | two questions, two vantages, the reader and the writer; the circle without the V, what is old and what is new; the test, scale the world; what writing costs, counted; the survey, the body as a base, towers of ratios, closing a loop |
-| 2 | [One length turned](02-one-length-turned.md) | an arm held out | why a turned length traces a circle; the corner at 45°; the arc from the chord (Thales); the inscribed and central sweeps; π/2 and 2/π; c = 1 as the writer's name for the one-length circle; Euler's formula as the writer's notation for the reader's turn, r·e^(iθ) address and payload, the logarithm's two parts reading and writing |
-| 3 | [Addresses given, payloads met](03-addresses-given-payloads-met.md) | a hand at a stained-glass window | how the Cauchy is usually read; Jaynes's invariant measure; an address is not a payload; the theorem; closure and what breaks it; find the turn, find the amount; water and wine, Bertrand; the second test; three cases in data |
+| 2 | [One length turned](02-one-length-turned.md) | an arm held out | why a turned length traces a circle; the corner at 45°; the arc from the chord (Thales); the inscribed and central sweeps; π/2 and 2/π; c = 1 as the writer's name for the one-length circle; Euler's formula as the writer's notation for the reader's turn, r·e^(iθ) address and payload, the logarithm's two parts reading and writing; the circle's equation divided by its own length, the Cauchy with no V and V as its scale |
+| 3 | [Addresses given, payloads met](03-addresses-given-payloads-met.md) | a hand at a stained-glass window | how the Cauchy is usually read; Jaynes's invariant measure; an address is not a payload; the theorem; closure and what breaks it; find the turn, find the amount; water and wine, Bertrand; the second test; three cases in data; why there is no mean (directions have no sum; the mean appears when V is written in); the payload not lost (its ratios, the address law divided out, the blur undone, its amounts averaged) |
 | 4 | [Near and far](04-near-and-far.md) | fence posts on a plain | proportion inside the corner, levels past it; the in-place lay; why halving; floating point and Mercator; three rulers; level of detail; H as a zoom; a fixed count K; the corner follows the focus |
 | 5 | [Three parties](05-three-parties.md) | standing in a room's corner | the wedge; the sum's triangle; altitude and azimuth; the Cauchy wedge; why by area; the flat screen; more parties; a sphere in a cube |
 | 6 | [Many standpoints](06-many-standpoints.md) | one eye, then the other | what one standpoint gives; the ladder; parallax's corner and band; working back from astronomy; shape, place, direction; the visual hull; a shape as a function on the circle; the centroid first |

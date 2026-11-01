@@ -450,7 +450,7 @@ logarithmic in its distance, and never asks how long the list is.
 - Boyd, J. P. (1987). Spectral methods using rational basis functions on an infinite interval. *Journal of Computational
   Physics* 69, 112–142.
 
-The geometry is set out with proofs in *Observation from Somewhere*, §8 ("What the floor discards", "What the height
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*), §8 ("What the floor discards", "What the height
 fixes"), §12.4 and Appendix B, and for programmers in the computer-science companion, §7 ("What Math.floor throws away"),
 §11 ("A dial: scrolling without end") and §12. The tests behind section 9 and section 10's verdicts are in the working
 paper `mapping.md`, §9½.

@@ -2,8 +2,10 @@
 
 **What can be known from a standpoint, and what it costs to know more**
 
-*Tom Brinkman. Draft, 30 October 2026. Written with AI assistance (Claude). The long companion, with the propositions
-and proofs this paper draws on, is* Observation from Somewhere.
+*Tom Brinkman. Draft, 30 October 2026. Written with AI assistance (Claude).*
+
+The propositions and proofs this paper draws on are in *Observation from Somewhere*, now archived and kept for
+reference; where its wording differs from this paper, this paper stands.
 
 ## Abstract
 
@@ -98,6 +100,120 @@ breaks it.
 So the Cauchy is not a law of what is measured. It is the law of the uniform turn, the measure on the reader's addresses.
 Practice already treats it so, taking its median and never its mean; this is the reason.
 
+**The Cauchy, derived from H and from V.** The Cauchy is usually met as a family with two parameters, a location m and a
+scale γ. Derived from what an observer holds, it comes in three forms, and the parameters arrive with V.
+
+- *From one length.* Turn one length H uniformly. Its tip is at (H cos θ, H sin θ), and the reading v/h = tan θ divides H
+  out. The share of a quarter turn passed before the reading reaches s is (2/π)·arctan s: the standard half-Cauchy, scale 1,
+  median at the corner. No V appears anywhere, and H appears only in the circle, never in the law. The scale is 1 not
+  because anything was set equal to anything, but because the reading is a ratio, and a ratio carries no scale.
+- *From two axes.* Draw the second axis at a length V of its own. The drawn point is (H cos θ, V sin θ), its reading
+  (V/H)·tan θ, and the law a Cauchy of scale c = V/H, its median at c, off the corner unless c = 1. Scaling the world leaves
+  c unchanged, so c is not an amount; but it needs two lengths held against each other, as √2 needs the square's two sides,
+  and holding both is the writer's.
+- *From a line in the world.* A lamp turning uniformly lights a shore at distance d; its landings x = m + d·tan θ follow
+  C(m, d), its quartiles at m ± d. Both parameters are amounts, moved by scaling the world. The angles follow the uniform turn
+  whatever d is: nothing in the directions carries d. The scale appears only when the landings are measured on a ruler laid
+  along the shore, which needs the shore found and walked.
+
+The same three come from the ratio of two normal amounts: equal spreads, and the spread cancels (the first form); unequal
+spreads σ₁ and σ₂, and the scale is σ₁/σ₂ (the second); means away from zero, and a location appears (the third).
+
+| form | what is held | scale | location | whose |
+|---|---|---|---|---|
+| one length turned | H | 1 | 0 (the corner) | the reader's |
+| two axes drawn | H and V | V/H | 0 | the writer's ratio |
+| a line in the world | the line's place, in amounts | d | m | the writer's amounts |
+
+So V enters the Cauchy as its scale, and only there; the location is where the line lies relative to the standpoint. The
+point m + iγ that indexes the family is the standpoint's place with respect to the line. The reader's ignorance is turns
+and rescalings, never translations, since a situated reader cannot step outside its own place: in its own chart it stands
+at i, foot 0 and height 1, and holds the standard Cauchy. Moving the standpoint is walking; two standpoints differ by an
+amount, and that difference is what parallax uses (§8). The reader has the law's shape; the writer adds its parameters.
+
+**The circle's equation, divided by its own length.** Set the writer's circle beside the reader's Cauchy and the second is
+the first with its lengths divided out.
+
+The writer's circle holds amounts. A point is x = H cos θ, y = V sin θ; the curve is (x/H)² + (y/V)² = 1, round only when
+V = H, and then x² + y² = r² with r an amount. It states the area πHV, the circumference and every point's place, and all of
+them move when the world is scaled.
+
+Divide the round circle by x²:
+
+  1 + s² = (r/x)² = sec²θ,  s = y/x.
+
+The ratio r/x of two amounts is not an amount, and no length is left. Two things follow. The density is the share squared:
+1/(1 + s²) = (x/r)² = h², the reader's own share of H, squared. And the even turn becomes the Cauchy: ds = sec²θ·dθ, so
+dθ = ds/(1 + s²), and the uniform turn, read as s, is (2/π)·1/(1 + s²). The Cauchy is the circle's equation used to carry an
+even turn into readings. It has scale 1 because every amount has been divided out, not because V was set equal to H.
+
+Divide the two-axis curve the same way and something survives: s = (V/H)·tan θ, with the law (2/π)·c/(c² + s²), c = V/H.
+The amounts go and their ratio stays, and that ratio is the Cauchy's scale. With V unknown there is no c to leave behind,
+and the law is the reader's.
+
+| | the writer's circle (with V) | the reader's Cauchy (without V) |
+|---|---|---|
+| a point, a reading | (x, y) = (H cos θ, V sin θ), amounts | s = tan θ, a ratio |
+| the equation | (x/H)² + (y/V)² = 1 | 1 + s² = sec²θ |
+| the law | none needed: every point is stated | (2/π)/(1 + s²) = (2/π)·h² |
+| lengths in it | H and V | none |
+| what it states | the area πHV, the circumference, places | the median 1, the quartiles √2 ∓ 1, the horizon, no mean |
+| if V ≠ H | an ellipse | a Cauchy of scale V/H |
+| the world scaled | everything moves | nothing moves |
+
+The writer's circle states the lengths; the reader's Cauchy is that circle's equation with the lengths divided out, and V
+comes back into it only as the scale, for whoever holds V.
+
+**The missing mean, because the Cauchy is an address.** The Cauchy has a median and no mean. Over a quarter turn the readings
+s = v/h up to S average (1/π)·ln(1 + S²) divided by the share they cover, and that climbs without limit, by (2/π)·ln 10 ≈ 1.47
+for every tenfold further the readings run. This is usually told as a defect of the law. Read as an address, it is what an
+address should do.
+
+A mean is a sum of amounts divided by their count. An address is a direction, and directions have no sum: there is no
+length along a direction to add. To average the readings v/h is to treat each direction as an amount laid along a line,
+the chart in which the horizon sits at s = ∞, and the sum picks up that chart's far end. The missing mean belongs to the
+chart that takes a direction for an amount, not to the directions. Other charts of the same directions do have means (the
+bounded chart s/(1 + s) averages ½), and the order statistics do not depend on the chart at all: the median and the
+quartiles are the same directions however the readings are written, because they commute with every increasing map of the
+reading, and a mean does not. So the median is a property of the addresses and the mean is not; asking for the mean of a
+Cauchy is asking an address for something only an amount has.
+
+A mean of directions can be had, by a writer. Take each direction as a unit vector and add: over the uniform quarter turn
+the average of (cos θ, sin θ) is (2/π)(1, 1), pointing at the corner, of length 2√2/π ≈ 0.900. The direction it gives is the
+corner, the median again; its length is the writer's measure, π and all. And a writer holding a finite world, capped at an
+extent M, has a Cauchy with a mean, (1/π)·ln(1 + M²) over the share below M, about 8.8 at M = 10⁶: finite, and set by the
+extent, an amount that moves when the world is scaled. The mean appears exactly when V is written in, and its value is V's.
+A machine's Cauchy, capped by its largest number, has one for the same reason.
+
+The payload has means where it is an amount: the light along each address, its colour, its brightness, all add. The
+lighthouse's landings on the shore lack a mean although they are written in a unit, because they are still the turn's
+addresses, carried onto the shore's ruler; the light that lands there is the payload, and it averages. What arrives can be
+averaged; where it arrives cannot. Practice already takes the median of a Cauchy and never its mean: this is the reason.
+
+**The payload is not lost.** The separation spends nothing of the payload: no part of it goes into making the addresses, so
+all of it arrives, on addresses known before it came. The Cauchy then gives it back in four ways.
+
+- *By its ratios.* Two payloads read against each other make a ratio, and a ratio is a reading. The light along one
+  address over the light along another, one colour channel over another, the radius in one direction over the radius in
+  another: each is a direction [p₁ : p₂] in the payload's own space, read exactly as an address is read, unchanged when the
+  world is scaled. A shape about a centre, ln r = a₀ + f(θ), comes back this way whole: every mode of f from ratios of radii,
+  exactly. Two detectors' signals read against each other are a direction too, and where the signals are like noise that
+  direction follows a Cauchy: the payload read as a ratio is an address again. What the ratios leave out is one number,
+  the payload's overall scale a₀, and that number is V again.
+- *By dividing the address law out.* What is counted along the addresses is the address law times the payload's own
+  weight, ρ(θ)·2/(π(1 + s²)). The address law is known before anything arrives, so dividing by it leaves the payload's
+  distribution exactly: the astronomer's flat field, importance sampling's 1/p. The median direction of what arrives is then
+  the payload's median, at the corner only when the payload weighs alike on both sides.
+- *By undoing the blur.* Seen from a height γ, the payload arrives smoothed by the Cauchy kernel, whose Fourier transform
+  e^(−γ|k|) is never zero. Every mode survives, damped and not destroyed, and comes back multiplied by e^(γ|k|). A box blur,
+  the floor's, has a transform with zeros, and the modes there are gone for good. How fine a mode comes back is set by the
+  resolution, which is level of detail, not loss.
+- *By averaging it.* The payload is amounts, and amounts have means: weighted by the known address measure, the light across
+  the turn totals exactly. The mean was never missing from the payload, only from the addresses.
+
+What the payload carries along its address all comes back; its scale and its distance are V, and come back only by
+writing. A known measure can be divided out and an invertible blur undone; a floor that discards cannot.
+
 **The picture.** Hold a hand up to a stained-glass window, fingers spread between flat and upright. Each finger lines up
 with a pane and is lit by its colour. The fingers are the addresses: wherever the hand is, the same fingers, spread the same
 way. The colours are the payload: they change with the window. No colour carries a distance; to learn how far the window
@@ -111,7 +227,56 @@ whole; the shape was never the reader's to lack.
 **Passive.** The reader sends nothing. It is not a radar. A ranging instrument carries in the signal's speed and a clock,
 two amounts, and so it writes.
 
-## 3. Rates, not angles
+## 3. Four pictures
+
+Four pictures carry most of what the earlier sections say. Each shows what the reader has, what the writer adds, and where
+V enters.
+
+**The hand.** Hold up a hand, thumb out. The thumb is H: the one length the reader holds, its size chosen, setting only the
+zoom. The fingers, spread from flat to upright, are the addresses. The reader does nothing to lay them; wherever the hand
+is held, the geometry gives the same fingers spread the same way, evenly by turn, and read as v/h they follow the Cauchy,
+half below the corner. The light that falls along each finger is the payload: it paints the fingers and changes with what is
+in front of them, and no finger carries how far that light came. The hand moves two ways, raised from the ground toward
+the vertical and turned round the horizontal, and the two are the altitude and the azimuth of §7. Hold
+the thumb up against a mountain range, and the range spans so many fingers; with no V the reader draws the mountain at the
+thumb's own size, and every amount it then reads is off by the one number it lacks, V/H. To learn that number it must walk
+(§10).
+
+**The lighthouse.** A lamp turns evenly and throws a flash along each direction. Where a flash lands on a straight shore, the
+landing x obeys (x − α)/β = tan θ, with α the foot of the lamp on the shore and β its distance from it. The angles are the
+lamp's addresses, laid evenly by its turn, whatever shore there is; the landings follow a Cauchy because the shore is
+straight. Within each flash the path to the shore cancels: the angle carries no distance. The lamp's own corner is the flash
+halfway through the quarter turn, and it lands at the foot plus one distance, the shore's corner, only if the shore is
+measured at the sea's own scale; drawn on a ruler c times the sea's, the halfway flash lands at arctan c, and the corner
+slides off. To read β from the landings, take half the spread between the quartiles; never the mean, which the landings do
+not have. That reading is a writer's: it needs the shore found and a ruler laid along it. The lamp is the reader, its turn
+the addresses; the shore is the writer's line, where V comes in as the scale.
+
+**Mercator's map.** A navigator wants a straight line on the chart to be a constant compass bearing. On a chart whose
+parallels are spaced so that a degree of latitude is drawn c times a degree of longitude at that latitude, a bearing ψ is
+drawn at tan ψ′ = tan ψ/c. Bearings are true everywhere only at c = 1: both directions drawn at one length at every place,
+which is Mercator's chart (1569). It keeps every direction and pays in area, stretched by sec² of the latitude, so Greenland is
+drawn about as large as Africa, which is some fourteen times its area. The chart that keeps areas instead draws c = cos² of
+the latitude and gives up the bearings. Neither is wrong; each keeps what it was made to keep, and only the globe, the
+writer's whole, keeps both. Mercator's map is also not the reader's picture. It is a chart of the whole field, every level
+of distance alike, with no focus; the reader's picture is the turn, proportional in direction and finest where it looks.
+Bearings are the reader's; areas are amounts, and the writer's.
+
+**A moving sky.** An observer moving through a field of stars at a fraction β of the speed of light sees each star change in
+two ways, and special relativity already writes them as two formulas. Where the star is seen moves: aberration,
+cos θ′ = (cos θ + β)/(1 + β cos θ), the same at every frequency. On the stereographic chart of the sky it is z ↦ z/k, with
+k = e^η and η the rapidity, a Möbius map of the directions; it moves addresses and carries the Cauchy's family onto itself.
+A sky uniform in the stars' own frame is seen as the spherical Cauchy, its density D²/4π. What arrives at each place
+changes: the Doppler factor D = √(1 − β²)/(1 − β cos θ′) scales each photon's energy and its rate of arrival, a weighting
+of the payload that moves no address. The familiar D⁴ brightening ahead is D² of addresses crowding and D² of payload.
+Laid on the level ξ = −ln tan(θ/2) (the pseudorapidity), aberration is a slide by η, so a reader holding directions alone
+reads its own rapidity, with no clock, no frequency and no speed of light carried in, provided every source is counted
+whatever its brightness and the sources are uniform in their own frame. That is a reading. To state the speed in metres
+a second needs the speed of light carried in, and to read D as the shift of a spectral line needs the line's rest
+frequency, a known kind of atom: both are writings. The theory makes the split in its formulas without naming it; the
+reader's part is the directions, the writer's the amounts.
+
+## 4. Rates, not angles
 
 A carpenter calls a roof "six in twelve". A road sign says "10%". A ramp is built "one in twelve". None of them says an
 angle. The pitch is a ratio, had at once with a level and a tape; the degrees are a share of the whole turn, and to state
@@ -150,7 +315,7 @@ sum h + v (the diamond's) and the length √(h² + v²) (the circle's) all give 
 a measure. The writer cannot choose the measure by fiat; the turn picks the round one, and √2 is the geometric mean of the
 other two (Hölder: ‖x‖₂² ≤ ‖x‖₁‖x‖∞, with equality on the axes and the corner's diagonals).
 
-## 4. Which numbers belong to whom
+## 5. Which numbers belong to whom
 
 **One length makes the rationals.** From H alone, counting, doubling, halving and taking ratios of H to itself give rational
 multiples of H and nothing else. The reader's operations on readings, the reciprocal, tangent addition, the order, keep
@@ -196,7 +361,7 @@ order statistics come out as the true ones rounded, and sums of amounts do not. 
 pair [h : v] or as a turn, and the computation keeps to order, the machine is faithful. Where it sits in a sum of amounts,
 the machine's Cauchy, truncated, has a mean that the true one lacks.
 
-## 5. Near and far
+## 6. Near and far
 
 **The levels.** The reader's distances, as ratios d/H, are in proportion inside the corner and counted in doublings past it:
 one level from H to 2H, the next from 2H to 4H, each holding the same number of addresses. This is the logarithm as the
@@ -213,7 +378,7 @@ reader's relative grain is finest. That is why the corner follows the focus: wha
 capabilities, useful wherever readers with different H must agree about far things, since the number line has no corner to
 disagree about.
 
-## 6. Three parties, the reader's sphere and the writer's cube
+## 7. Three parties, the reader's sphere and the writer's cube
 
 With a third party, V₂, the reader turns two ways: up from the horizontal (altitude) and round it (azimuth). These are the
 horizon coordinates of astronomy. Its directions fill one octant, the *wedge*: [h : v : v₂], two numbers a direction. The
@@ -236,7 +401,7 @@ like π/2 and 2/π, are the writer's measure.
 a Möbius map, harmonic measure, the powers of the standpoint, and the two sweeps' rates. On the sphere they part, and turns
 of space do not commute. What survives is the split between address and payload, the corners, and the wedge seen from home.
 
-## 7. Becoming a writer
+## 8. Becoming a writer
 
 **Parallax is the passage.** One standpoint gives directions and a frame, and no size: every ghost of the room, twice as far
 and twice as large, gives the same readings. A second standpoint adds a second variable, the step between the two. Each
@@ -280,7 +445,7 @@ loop that closes shows that the routes taken agree; it cannot show that no route
 reading. What recovers the thing is not reading harder but the passage through standpoints, and in that passage the observer
 is writing.
 
-## 8. What a blueprint adds
+## 9. What a blueprint adds
 
 Ratios suffice for a great deal. A tower of ratios, each level read against the next, holds a building, its rooms and their
 things with one amount at the top. A loop of ratios checks itself. A reader builds with ratios alone and never needs a unit,
@@ -297,7 +462,7 @@ until one of these is wanted:
 Each is a capability, not a condition. A blueprint adds them, and to make or read a blueprint is to write. Nothing here is
 against the writer or the number line: they are what holds what no standpoint holds.
 
-## 9. A worked example: the mountain and the thumb
+## 10. A worked example: the mountain and the thumb
 
 Hold up a thumb, one mile wide in the writer's units, and look at a mountain range twenty miles wide, ten miles off.
 
@@ -320,7 +485,7 @@ it is in miles.
 from its middle, from one look. Or make the range the focus: a baseline of twenty miles puts it at parallax's corner, where
 its error per step is least; one thumb walked has about ten times that error.
 
-## 10. What this changes
+## 11. What this changes
 
 It changes no mathematics. It sorts.
 
@@ -348,7 +513,7 @@ inside the reader's, and what carries an observer across.
 - Archimedes. *On the Sphere and Cylinder*, Book I.
 - Bernoulli, J. (1690). *Quæstiones nonnullæ de usuris.* Acta Eruditorum.
 - Bridgman, P. W. (1922). *Dimensional Analysis.* Yale University Press.
-- Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met.* Working paper.
+- Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met.* Working paper, archived.
 - Buckingham, E. (1914). On physically similar systems. *Physical Review* 4, 345–376.
 - Euclid. *Elements*, Book III, Proposition 20.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.

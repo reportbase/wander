@@ -1162,7 +1162,31 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Call it readers and writers."): *Readers and Writers*, a normal paper (about 5,000 words) gathering the two vantages, the two
   tests, V as the line, the reader's free geometry, rates not angles, whose numbers (rational, algebraic, transcendental),
   near and far, the wedge, the sphere and cube, becoming a writer by degrees, what a blueprint adds and the mountain; written
-  to R599, ahead of OFS until the audit's corrections (`plans/ofs-audit-r584-r599.md`) are made. Under R421 OFS stays the source.
+  to R599. **Since R601 (30 Oct; Tom: "Archive the ofs papers. Use them for reference.") it is the single source of truth**
+  (R421 moved to it); OFS, its CS and physics companions, its two records and the submission are in `papers/archive/ofs/`,
+  frozen, never edited, cited for their proofs; where their wording differs from later rulings, the rulings stand (the audit's
+  28 passages are a record, not edits). Everything below about OFS describes the archived paper; its old paths in plans, demo
+  comments and working papers are history.
+  R602 (1 Nov; Tom: "the writers circle requires V, and that it is the scale"): the Cauchy derived three ways in *Readers and
+  Writers* §2: one length turned, the standard half-Cauchy (scale 1, H divided out, no V; the reader's); two axes drawn,
+  scale V/H (unmoved by scaling, yet two lengths held: the writer's ratio); a line in the world, C(m, d) (amounts, the
+  writer's, the shore walked). V enters only as the scale; m + iγ is the standpoint's place; the reader stands at i.
+  R603 (1 Nov): the Cauchy is the circle's equation divided by its own length: x² + y² = r² over x² gives 1 + s² = sec²θ, the
+  density (x/r)² = h², dθ = ds/(1 + s²); the two-axis curve leaves c = V/H as the scale. *Readers and Writers* §2, with a table.
+  R604 (1 Nov): the missing mean, because the Cauchy is an address: directions have no sum, the mean is the chart's that takes
+  a direction for an amount; the median commutes with every increasing map; a capped world's mean is set by its extent (V
+  written in); unit vectors average to the corner at 2√2/π; the payload averages. *Readers and Writers* §2.
+  R605 (1 Nov): the payload is not lost: recovered by its ratios (a direction in payload space, read as an address; every
+  mode but a₀, which is V), by dividing the known address law out, by undoing the Cauchy's blur (e^(−γ|k|) never zero), and
+  by averaging it. *Readers and Writers* §2, "The payload is not lost".
+  R606 (1 Nov; Tom: "update the essays"): essay 2 §9 "The circle's equation, divided by its own length"; essay 3 §5 "Why there
+  is no mean" and "The payload is not lost"; every essay's Sources names OFS archived, *Readers and Writers* the current account.
+  R607 (1 Nov; Tom: "did you add the fingers/hand metaphore, merkator map and light house metaphores?", then "yes"): *Readers and
+  Writers* §3 "Three pictures" (four since R609) (the hand, the lighthouse, Mercator's map), from the archived OFS; later sections renumbered 4–11.
+  R608 (1 Nov; Tom: "update the essays"): essay 3 §1 the thumb as H; essay 7 §1 "The lamp, the shore and V" (R602's three forms,
+  R604's missing mean); both Sources point to *Readers and Writers* §3.
+  R609 (1 Nov; Tom: "what about the SR framnig"): *Readers and Writers* §3 "Four pictures", the fourth "A moving sky" (aberration
+  the addresses, Doppler the payload, the rapidity read from directions alone, metres a second and a line's shift writings).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
