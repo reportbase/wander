@@ -1182,9 +1182,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R606 (1 Nov; Tom: "update the essays"): essay 2 §9 "The circle's equation, divided by its own length"; essay 3 §5 "Why there
   is no mean" and "The payload is not lost"; every essay's Sources names OFS archived, *Readers and Writers* the current account.
   R607 (1 Nov; Tom: "did you add the fingers/hand metaphore, merkator map and light house metaphores?", then "yes"): *Readers and
-  Writers* §3 "Three pictures" (the hand, the lighthouse, Mercator's map), from the archived OFS; later sections renumbered 4–11.
+  Writers* §3 "Three pictures" (four since R609) (the hand, the lighthouse, Mercator's map), from the archived OFS; later sections renumbered 4–11.
   R608 (1 Nov; Tom: "update the essays"): essay 3 §1 the thumb as H; essay 7 §1 "The lamp, the shore and V" (R602's three forms,
   R604's missing mean); both Sources point to *Readers and Writers* §3.
+  R609 (1 Nov; Tom: "what about the SR framnig"): *Readers and Writers* §3 "Four pictures", the fourth "A moving sky" (aberration
+  the addresses, Doppler the payload, the rapidity read from directions alone, metres a second and a line's shift writings).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

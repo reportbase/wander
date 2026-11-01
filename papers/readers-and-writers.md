@@ -227,9 +227,9 @@ whole; the shape was never the reader's to lack.
 **Passive.** The reader sends nothing. It is not a radar. A ranging instrument carries in the signal's speed and a clock,
 two amounts, and so it writes.
 
-## 3. Three pictures
+## 3. Four pictures
 
-Three pictures carry most of what the earlier sections say. Each shows what the reader has, what the writer adds, and where
+Four pictures carry most of what the earlier sections say. Each shows what the reader has, what the writer adds, and where
 V enters.
 
 **The hand.** Hold up a hand, thumb out. The thumb is H: the one length the reader holds, its size chosen, setting only the
@@ -261,6 +261,20 @@ the latitude and gives up the bearings. Neither is wrong; each keeps what it was
 writer's whole, keeps both. Mercator's map is also not the reader's picture. It is a chart of the whole field, every level
 of distance alike, with no focus; the reader's picture is the turn, proportional in direction and finest where it looks.
 Bearings are the reader's; areas are amounts, and the writer's.
+
+**A moving sky.** An observer moving through a field of stars at a fraction β of the speed of light sees each star change in
+two ways, and special relativity already writes them as two formulas. Where the star is seen moves: aberration,
+cos θ′ = (cos θ + β)/(1 + β cos θ), the same at every frequency. On the stereographic chart of the sky it is z ↦ z/k, with
+k = e^η and η the rapidity, a Möbius map of the directions; it moves addresses and carries the Cauchy's family onto itself.
+A sky uniform in the stars' own frame is seen as the spherical Cauchy, its density D²/4π. What arrives at each place
+changes: the Doppler factor D = √(1 − β²)/(1 − β cos θ′) scales each photon's energy and its rate of arrival, a weighting
+of the payload that moves no address. The familiar D⁴ brightening ahead is D² of addresses crowding and D² of payload.
+Laid on the level ξ = −ln tan(θ/2) (the pseudorapidity), aberration is a slide by η, so a reader holding directions alone
+reads its own rapidity, with no clock, no frequency and no speed of light carried in, provided every source is counted
+whatever its brightness and the sources are uniform in their own frame. That is a reading. To state the speed in metres
+a second needs the speed of light carried in, and to read D as the shift of a spectral line needs the line's rest
+frequency, a known kind of atom: both are writings. The theory makes the split in its formulas without naming it; the
+reader's part is the directions, the writer's the amounts.
 
 ## 4. Rates, not angles
 
