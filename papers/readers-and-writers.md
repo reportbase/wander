@@ -164,6 +164,32 @@ and the law is the reader's.
 The writer's circle states the lengths; the reader's Cauchy is that circle's equation with the lengths divided out, and V
 comes back into it only as the scale, for whoever holds V.
 
+**The missing mean, because the Cauchy is an address.** The Cauchy has a median and no mean. Over a quarter turn the readings
+s = v/h up to S average (1/π)·ln(1 + S²) divided by the share they cover, and that climbs without limit, by (2/π)·ln 10 ≈ 1.47
+for every tenfold further the readings run. This is usually told as a defect of the law. Read as an address, it is what an
+address should do.
+
+A mean is a sum of amounts divided by their count. An address is a direction, and directions have no sum: there is no
+length along a direction to add. To average the readings v/h is to treat each direction as an amount laid along a line,
+the chart in which the horizon sits at s = ∞, and the sum picks up that chart's far end. The missing mean belongs to the
+chart that takes a direction for an amount, not to the directions. Other charts of the same directions do have means (the
+bounded chart s/(1 + s) averages ½), and the order statistics do not depend on the chart at all: the median and the
+quartiles are the same directions however the readings are written, because they commute with every increasing map of the
+reading, and a mean does not. So the median is a property of the addresses and the mean is not; asking for the mean of a
+Cauchy is asking an address for something only an amount has.
+
+A mean of directions can be had, by a writer. Take each direction as a unit vector and add: over the uniform quarter turn
+the average of (cos θ, sin θ) is (2/π)(1, 1), pointing at the corner, of length 2√2/π ≈ 0.900. The direction it gives is the
+corner, the median again; its length is the writer's measure, π and all. And a writer holding a finite world, capped at an
+extent M, has a Cauchy with a mean, (1/π)·ln(1 + M²) over the share below M, about 8.8 at M = 10⁶: finite, and set by the
+extent, an amount that moves when the world is scaled. The mean appears exactly when V is written in, and its value is V's.
+A machine's Cauchy, capped by its largest number, has one for the same reason.
+
+The payload has means where it is an amount: the light along each address, its colour, its brightness, all add. The
+lighthouse's landings on the shore lack a mean although they are written in a unit, because they are still the turn's
+addresses, carried onto the shore's ruler; the light that lands there is the payload, and it averages. What arrives can be
+averaged; where it arrives cannot. Practice already takes the median of a Cauchy and never its mean: this is the reason.
+
 **The picture.** Hold a hand up to a stained-glass window, fingers spread between flat and upright. Each finger lines up
 with a pane and is lit by its colour. The fingers are the addresses: wherever the hand is, the same fingers, spread the same
 way. The colours are the payload: they change with the window. No colour carries a distance; to learn how far the window
