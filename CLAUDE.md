@@ -1176,6 +1176,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R604 (1 Nov): the missing mean, because the Cauchy is an address: directions have no sum, the mean is the chart's that takes
   a direction for an amount; the median commutes with every increasing map; a capped world's mean is set by its extent (V
   written in); unit vectors average to the corner at 2√2/π; the payload averages. *Readers and Writers* §2.
+  R605 (1 Nov): the payload is not lost: recovered by its ratios (a direction in payload space, read as an address; every
+  mode but a₀, which is V), by dividing the known address law out, by undoing the Cauchy's blur (e^(−γ|k|) never zero), and
+  by averaging it. *Readers and Writers* §2, "The payload is not lost".
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

@@ -190,6 +190,30 @@ lighthouse's landings on the shore lack a mean although they are written in a un
 addresses, carried onto the shore's ruler; the light that lands there is the payload, and it averages. What arrives can be
 averaged; where it arrives cannot. Practice already takes the median of a Cauchy and never its mean: this is the reason.
 
+**The payload is not lost.** The separation spends nothing of the payload: no part of it goes into making the addresses, so
+all of it arrives, on addresses known before it came. The Cauchy then gives it back in four ways.
+
+- *By its ratios.* Two payloads read against each other make a ratio, and a ratio is a reading. The light along one
+  address over the light along another, one colour channel over another, the radius in one direction over the radius in
+  another: each is a direction [p₁ : p₂] in the payload's own space, read exactly as an address is read, unchanged when the
+  world is scaled. A shape about a centre, ln r = a₀ + f(θ), comes back this way whole: every mode of f from ratios of radii,
+  exactly. Two detectors' signals read against each other are a direction too, and where the signals are like noise that
+  direction follows a Cauchy: the payload read as a ratio is an address again. What the ratios leave out is one number,
+  the payload's overall scale a₀, and that number is V again.
+- *By dividing the address law out.* What is counted along the addresses is the address law times the payload's own
+  weight, ρ(θ)·2/(π(1 + s²)). The address law is known before anything arrives, so dividing by it leaves the payload's
+  distribution exactly: the astronomer's flat field, importance sampling's 1/p. The median direction of what arrives is then
+  the payload's median, at the corner only when the payload weighs alike on both sides.
+- *By undoing the blur.* Seen from a height γ, the payload arrives smoothed by the Cauchy kernel, whose Fourier transform
+  e^(−γ|k|) is never zero. Every mode survives, damped and not destroyed, and comes back multiplied by e^(γ|k|). A box blur,
+  the floor's, has a transform with zeros, and the modes there are gone for good. How fine a mode comes back is set by the
+  resolution, which is level of detail, not loss.
+- *By averaging it.* The payload is amounts, and amounts have means: weighted by the known address measure, the light across
+  the turn totals exactly. The mean was never missing from the payload, only from the addresses.
+
+What the payload carries along its address all comes back; its scale and its distance are V, and come back only by
+writing. A known measure can be divided out and an invertible blur undone; a floor that discards cannot.
+
 **The picture.** Hold a hand up to a stained-glass window, fingers spread between flat and upright. Each finger lines up
 with a pane and is lit by its colour. The fingers are the addresses: wherever the hand is, the same fingers, spread the same
 way. The colours are the payload: they change with the window. No colour carries a distance; to learn how far the window
