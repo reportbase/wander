@@ -129,7 +129,7 @@ So V enters the Cauchy as its scale, and only there; the location is where the l
 point m + iγ that indexes the family is the standpoint's place with respect to the line. The reader's ignorance is turns
 and rescalings, never translations, since a situated reader cannot step outside its own place: in its own chart it stands
 at i, foot 0 and height 1, and holds the standard Cauchy. Moving the standpoint is walking; two standpoints differ by an
-amount, and that difference is what parallax uses (§7). The reader has the law's shape; the writer adds its parameters.
+amount, and that difference is what parallax uses (§8). The reader has the law's shape; the writer adds its parameters.
 
 **The circle's equation, divided by its own length.** Set the writer's circle beside the reader's Cauchy and the second is
 the first with its lengths divided out.
@@ -227,7 +227,42 @@ whole; the shape was never the reader's to lack.
 **Passive.** The reader sends nothing. It is not a radar. A ranging instrument carries in the signal's speed and a clock,
 two amounts, and so it writes.
 
-## 3. Rates, not angles
+## 3. Three pictures
+
+Three pictures carry most of what the earlier sections say. Each shows what the reader has, what the writer adds, and where
+V enters.
+
+**The hand.** Hold up a hand, thumb out. The thumb is H: the one length the reader holds, its size chosen, setting only the
+zoom. The fingers, spread from flat to upright, are the addresses. The reader does nothing to lay them; wherever the hand
+is held, the geometry gives the same fingers spread the same way, evenly by turn, and read as v/h they follow the Cauchy,
+half below the corner. The light that falls along each finger is the payload: it paints the fingers and changes with what is
+in front of them, and no finger carries how far that light came. The hand moves two ways, raised from the ground toward
+the vertical and turned round the horizontal, and the two are the altitude and the azimuth of §7. Hold
+the thumb up against a mountain range, and the range spans so many fingers; with no V the reader draws the mountain at the
+thumb's own size, and every amount it then reads is off by the one number it lacks, V/H. To learn that number it must walk
+(§10).
+
+**The lighthouse.** A lamp turns evenly and throws a flash along each direction. Where a flash lands on a straight shore, the
+landing x obeys (x − α)/β = tan θ, with α the foot of the lamp on the shore and β its distance from it. The angles are the
+lamp's addresses, laid evenly by its turn, whatever shore there is; the landings follow a Cauchy because the shore is
+straight. Within each flash the path to the shore cancels: the angle carries no distance. The lamp's own corner is the flash
+halfway through the quarter turn, and it lands at the foot plus one distance, the shore's corner, only if the shore is
+measured at the sea's own scale; drawn on a ruler c times the sea's, the halfway flash lands at arctan c, and the corner
+slides off. To read β from the landings, take half the spread between the quartiles; never the mean, which the landings do
+not have. That reading is a writer's: it needs the shore found and a ruler laid along it. The lamp is the reader, its turn
+the addresses; the shore is the writer's line, where V comes in as the scale.
+
+**Mercator's map.** A navigator wants a straight line on the chart to be a constant compass bearing. On a chart whose
+parallels are spaced so that a degree of latitude is drawn c times a degree of longitude at that latitude, a bearing ψ is
+drawn at tan ψ′ = tan ψ/c. Bearings are true everywhere only at c = 1: both directions drawn at one length at every place,
+which is Mercator's chart (1569). It keeps every direction and pays in area, stretched by sec² of the latitude, so Greenland is
+drawn about as large as Africa, which is some fourteen times its area. The chart that keeps areas instead draws c = cos² of
+the latitude and gives up the bearings. Neither is wrong; each keeps what it was made to keep, and only the globe, the
+writer's whole, keeps both. Mercator's map is also not the reader's picture. It is a chart of the whole field, every level
+of distance alike, with no focus; the reader's picture is the turn, proportional in direction and finest where it looks.
+Bearings are the reader's; areas are amounts, and the writer's.
+
+## 4. Rates, not angles
 
 A carpenter calls a roof "six in twelve". A road sign says "10%". A ramp is built "one in twelve". None of them says an
 angle. The pitch is a ratio, had at once with a level and a tape; the degrees are a share of the whole turn, and to state
@@ -266,7 +301,7 @@ sum h + v (the diamond's) and the length √(h² + v²) (the circle's) all give 
 a measure. The writer cannot choose the measure by fiat; the turn picks the round one, and √2 is the geometric mean of the
 other two (Hölder: ‖x‖₂² ≤ ‖x‖₁‖x‖∞, with equality on the axes and the corner's diagonals).
 
-## 4. Which numbers belong to whom
+## 5. Which numbers belong to whom
 
 **One length makes the rationals.** From H alone, counting, doubling, halving and taking ratios of H to itself give rational
 multiples of H and nothing else. The reader's operations on readings, the reciprocal, tangent addition, the order, keep
@@ -312,7 +347,7 @@ order statistics come out as the true ones rounded, and sums of amounts do not. 
 pair [h : v] or as a turn, and the computation keeps to order, the machine is faithful. Where it sits in a sum of amounts,
 the machine's Cauchy, truncated, has a mean that the true one lacks.
 
-## 5. Near and far
+## 6. Near and far
 
 **The levels.** The reader's distances, as ratios d/H, are in proportion inside the corner and counted in doublings past it:
 one level from H to 2H, the next from 2H to 4H, each holding the same number of addresses. This is the logarithm as the
@@ -329,7 +364,7 @@ reader's relative grain is finest. That is why the corner follows the focus: wha
 capabilities, useful wherever readers with different H must agree about far things, since the number line has no corner to
 disagree about.
 
-## 6. Three parties, the reader's sphere and the writer's cube
+## 7. Three parties, the reader's sphere and the writer's cube
 
 With a third party, V₂, the reader turns two ways: up from the horizontal (altitude) and round it (azimuth). These are the
 horizon coordinates of astronomy. Its directions fill one octant, the *wedge*: [h : v : v₂], two numbers a direction. The
@@ -352,7 +387,7 @@ like π/2 and 2/π, are the writer's measure.
 a Möbius map, harmonic measure, the powers of the standpoint, and the two sweeps' rates. On the sphere they part, and turns
 of space do not commute. What survives is the split between address and payload, the corners, and the wedge seen from home.
 
-## 7. Becoming a writer
+## 8. Becoming a writer
 
 **Parallax is the passage.** One standpoint gives directions and a frame, and no size: every ghost of the room, twice as far
 and twice as large, gives the same readings. A second standpoint adds a second variable, the step between the two. Each
@@ -396,7 +431,7 @@ loop that closes shows that the routes taken agree; it cannot show that no route
 reading. What recovers the thing is not reading harder but the passage through standpoints, and in that passage the observer
 is writing.
 
-## 8. What a blueprint adds
+## 9. What a blueprint adds
 
 Ratios suffice for a great deal. A tower of ratios, each level read against the next, holds a building, its rooms and their
 things with one amount at the top. A loop of ratios checks itself. A reader builds with ratios alone and never needs a unit,
@@ -413,7 +448,7 @@ until one of these is wanted:
 Each is a capability, not a condition. A blueprint adds them, and to make or read a blueprint is to write. Nothing here is
 against the writer or the number line: they are what holds what no standpoint holds.
 
-## 9. A worked example: the mountain and the thumb
+## 10. A worked example: the mountain and the thumb
 
 Hold up a thumb, one mile wide in the writer's units, and look at a mountain range twenty miles wide, ten miles off.
 
@@ -436,7 +471,7 @@ it is in miles.
 from its middle, from one look. Or make the range the focus: a baseline of twenty miles puts it at parallax's corner, where
 its error per step is least; one thumb walked has about ten times that error.
 
-## 10. What this changes
+## 11. What this changes
 
 It changes no mathematics. It sorts.
 
