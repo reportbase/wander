@@ -549,6 +549,6 @@ algebraic form (`papers/tb_algebra.md`: the two charts and their exchange rate, 
 its π is the normalization") and the format's specification (`papers/tvf.md`, "The kernel is rational, and the decoder
 can be trig-free").
 
-The geometry is in *Observation from Somewhere*: §2, "Zero, and a new zero" (the turn met, not computed; tangent
+The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*): §2, "Zero, and a new zero" (the turn met, not computed; tangent
 addition); §4, "Why the corner sits at 45°", "Why there are two sweeps, and only two" and "Rates, not angles" (the two
 sweeps' rates, the writer's 1, and payload per address); §7.1 (the uniform turn and the Cauchy).

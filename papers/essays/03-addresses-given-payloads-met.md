@@ -165,6 +165,28 @@ magnitudes at all, neither the size of the other party nor the size of what arri
 Its one length, H, is its own unit: measured in itself it is 1, and what it is in metres is something only a writer can
 say. The reader has no scale whatsoever. Every magnitude, and the unit it is stated in, belongs to the writer.
 
+**Why there is no mean.** The missing mean is usually told as the Cauchy's defect. Read as an address it is what an
+address should do. A mean is a sum of amounts divided by their count, and a direction has no length to add. To average the
+readings v/h is to lay each direction out as an amount on the chart that puts the horizon at infinity, and the sum picks
+up that chart's far end: the running average climbs by about 1.47 for every tenfold further the readings run. The missing
+mean belongs to that chart, not to the directions; the bounded chart s/(1 + s) of the same directions averages ½. The
+median and the quartiles name the same directions on every chart, because they commute with every order-keeping change,
+so they belong to the addresses; the mean does not. A mean can be had, by a writer. Add the directions as unit vectors and
+the average points at the corner, at length 2√2/π, a writer's measure with π in it. Cap the world at some extent and the
+Cauchy has a mean, set by the extent (about 8.8 at a cap of a million): the mean appears exactly when V is written in, and
+its value is V's. A computer's Cauchy has one for the same reason.
+
+**The payload is not lost.** None of the payload goes into making the addresses, so all of it arrives, on addresses known
+before it came, and the Cauchy gives it back four ways. By its ratios: two payloads read against each other, one light over
+another, one colour channel over another, one radius over another, make a direction in the payload's own space, read
+exactly as an address is and unchanged when the world is scaled; a shape about a centre comes back whole this way, every
+mode but its overall size, and that size is V again. By dividing the address law out: what is counted is the address law
+times the payload's weight, and the address law is known in advance, so dividing by it leaves the payload's distribution,
+as an astronomer flat-fields an image. By undoing the blur: seen from a height, the payload arrives smoothed by the Cauchy
+kernel, whose transform e^(−γ|k|) is never zero, so every mode comes back, as far as the resolution allows; the floor's box
+blur has zeros, and what it drops is gone. And by averaging it: the payload is amounts, and amounts have means. What
+arrives can be averaged; where it arrives cannot.
+
 *Demo: Theorem 6 at a glance: scale, reshape, reshuffle or thin what arrives, and no address moves.*
 
 ---
@@ -400,5 +422,5 @@ addresses are given before anything arrives. The payloads are met at them.
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
   *Physics Letters A* 128, 391–394.
 
-The theorem and its proof are in *Observation from Somewhere*, §7.2 (Theorem 6), with the closure table, what breaks
+The theorem and its proof are in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*), §7.2 (Theorem 6), with the closure table, what breaks
 it, the four cases and the three cases in data; the background in §1.
