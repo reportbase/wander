@@ -131,6 +131,39 @@ and rescalings, never translations, since a situated reader cannot step outside 
 at i, foot 0 and height 1, and holds the standard Cauchy. Moving the standpoint is walking; two standpoints differ by an
 amount, and that difference is what parallax uses (§7). The reader has the law's shape; the writer adds its parameters.
 
+**The circle's equation, divided by its own length.** Set the writer's circle beside the reader's Cauchy and the second is
+the first with its lengths divided out.
+
+The writer's circle holds amounts. A point is x = H cos θ, y = V sin θ; the curve is (x/H)² + (y/V)² = 1, round only when
+V = H, and then x² + y² = r² with r an amount. It states the area πHV, the circumference and every point's place, and all of
+them move when the world is scaled.
+
+Divide the round circle by x²:
+
+  1 + s² = (r/x)² = sec²θ,  s = y/x.
+
+The ratio r/x of two amounts is not an amount, and no length is left. Two things follow. The density is the share squared:
+1/(1 + s²) = (x/r)² = h², the reader's own share of H, squared. And the even turn becomes the Cauchy: ds = sec²θ·dθ, so
+dθ = ds/(1 + s²), and the uniform turn, read as s, is (2/π)·1/(1 + s²). The Cauchy is the circle's equation used to carry an
+even turn into readings. It has scale 1 because every amount has been divided out, not because V was set equal to H.
+
+Divide the two-axis curve the same way and something survives: s = (V/H)·tan θ, with the law (2/π)·c/(c² + s²), c = V/H.
+The amounts go and their ratio stays, and that ratio is the Cauchy's scale. With V unknown there is no c to leave behind,
+and the law is the reader's.
+
+| | the writer's circle (with V) | the reader's Cauchy (without V) |
+|---|---|---|
+| a point, a reading | (x, y) = (H cos θ, V sin θ), amounts | s = tan θ, a ratio |
+| the equation | (x/H)² + (y/V)² = 1 | 1 + s² = sec²θ |
+| the law | none needed: every point is stated | (2/π)/(1 + s²) = (2/π)·h² |
+| lengths in it | H and V | none |
+| what it states | the area πHV, the circumference, places | the median 1, the quartiles √2 ∓ 1, the horizon, no mean |
+| if V ≠ H | an ellipse | a Cauchy of scale V/H |
+| the world scaled | everything moves | nothing moves |
+
+The writer's circle states the lengths; the reader's Cauchy is that circle's equation with the lengths divided out, and V
+comes back into it only as the scale, for whoever holds V.
+
 **The picture.** Hold a hand up to a stained-glass window, fingers spread between flat and upright. Each finger lines up
 with a pane and is lit by its colour. The fingers are the addresses: wherever the hand is, the same fingers, spread the same
 way. The colours are the payload: they change with the window. No colour carries a distance; to learn how far the window

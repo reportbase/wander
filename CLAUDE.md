@@ -1171,6 +1171,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Writers* §2: one length turned, the standard half-Cauchy (scale 1, H divided out, no V; the reader's); two axes drawn,
   scale V/H (unmoved by scaling, yet two lengths held: the writer's ratio); a line in the world, C(m, d) (amounts, the
   writer's, the shore walked). V enters only as the scale; m + iγ is the standpoint's place; the reader stands at i.
+  R603 (1 Nov): the Cauchy is the circle's equation divided by its own length: x² + y² = r² over x² gives 1 + s² = sec²θ, the
+  density (x/r)² = h², dθ = ds/(1 + s²); the two-axis curve leaves c = V/H as the scale. *Readers and Writers* §2, with a table.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
