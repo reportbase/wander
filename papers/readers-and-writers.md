@@ -100,6 +100,37 @@ breaks it.
 So the Cauchy is not a law of what is measured. It is the law of the uniform turn, the measure on the reader's addresses.
 Practice already treats it so, taking its median and never its mean; this is the reason.
 
+**The Cauchy, derived from H and from V.** The Cauchy is usually met as a family with two parameters, a location m and a
+scale γ. Derived from what an observer holds, it comes in three forms, and the parameters arrive with V.
+
+- *From one length.* Turn one length H uniformly. Its tip is at (H cos θ, H sin θ), and the reading v/h = tan θ divides H
+  out. The share of a quarter turn passed before the reading reaches s is (2/π)·arctan s: the standard half-Cauchy, scale 1,
+  median at the corner. No V appears anywhere, and H appears only in the circle, never in the law. The scale is 1 not
+  because anything was set equal to anything, but because the reading is a ratio, and a ratio carries no scale.
+- *From two axes.* Draw the second axis at a length V of its own. The drawn point is (H cos θ, V sin θ), its reading
+  (V/H)·tan θ, and the law a Cauchy of scale c = V/H, its median at c, off the corner unless c = 1. Scaling the world leaves
+  c unchanged, so c is not an amount; but it needs two lengths held against each other, as √2 needs the square's two sides,
+  and holding both is the writer's.
+- *From a line in the world.* A lamp turning uniformly lights a shore at distance d; its landings x = m + d·tan θ follow
+  C(m, d), its quartiles at m ± d. Both parameters are amounts, moved by scaling the world. The angles follow the uniform turn
+  whatever d is: nothing in the directions carries d. The scale appears only when the landings are measured on a ruler laid
+  along the shore, which needs the shore found and walked.
+
+The same three come from the ratio of two normal amounts: equal spreads, and the spread cancels (the first form); unequal
+spreads σ₁ and σ₂, and the scale is σ₁/σ₂ (the second); means away from zero, and a location appears (the third).
+
+| form | what is held | scale | location | whose |
+|---|---|---|---|---|
+| one length turned | H | 1 | 0 (the corner) | the reader's |
+| two axes drawn | H and V | V/H | 0 | the writer's ratio |
+| a line in the world | the line's place, in amounts | d | m | the writer's amounts |
+
+So V enters the Cauchy as its scale, and only there; the location is where the line lies relative to the standpoint. The
+point m + iγ that indexes the family is the standpoint's place with respect to the line. The reader's ignorance is turns
+and rescalings, never translations, since a situated reader cannot step outside its own place: in its own chart it stands
+at i, foot 0 and height 1, and holds the standard Cauchy. Moving the standpoint is walking; two standpoints differ by an
+amount, and that difference is what parallax uses (§7). The reader has the law's shape; the writer adds its parameters.
+
 **The picture.** Hold a hand up to a stained-glass window, fingers spread between flat and upright. Each finger lines up
 with a pane and is lit by its colour. The fingers are the addresses: wherever the hand is, the same fingers, spread the same
 way. The colours are the payload: they change with the window. No colour carries a distance; to learn how far the window

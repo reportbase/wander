@@ -1167,6 +1167,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   frozen, never edited, cited for their proofs; where their wording differs from later rulings, the rulings stand (the audit's
   28 passages are a record, not edits). Everything below about OFS describes the archived paper; its old paths in plans, demo
   comments and working papers are history.
+  R602 (1 Nov; Tom: "the writers circle requires V, and that it is the scale"): the Cauchy derived three ways in *Readers and
+  Writers* §2: one length turned, the standard half-Cauchy (scale 1, H divided out, no V; the reader's); two axes drawn,
+  scale V/H (unmoved by scaling, yet two lengths held: the writer's ratio); a line in the world, C(m, d) (amounts, the
+  writer's, the shore walked). V enters only as the scale; m + iγ is the standpoint's place; the reader stands at i.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
