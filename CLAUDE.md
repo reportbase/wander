@@ -1214,6 +1214,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   thumbs": the plane one thumb (H square to the look, v/h), space two crossed thumbs (v/h and v₂/h, the wedge's pair, the 2D
   Cauchy); both the one H, so no second length (V = V₂ = H the writer's name for equal thumbs); the right angle no amount;
   the dimension the count of thumbs square to the look.
+  R617 (2 Nov; Tom: "Let's work a 3d parallax example, with 2 thumbs"): *Reads and Writes* §10 "In three dimensions: a tower
+  and two thumbs": top (¼, ⅓), foot (0, ⅓); a step across, only the across thumb moves 1/12, 12 thumbs off, 3 tall, 4 aside;
+  the second thumb a check, not a length (the epipolar condition; a misread step caught); a step forward scales both
+  alike. `runs/two/two_thumbs.py` (exact).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

@@ -533,6 +533,27 @@ it is in miles.
 from its middle, from one look. Or make the range the focus: a baseline of twenty miles puts it at parallax's corner, where
 its error per step is least; one thumb walked has about ten times that error.
 
+**In three dimensions: a tower and two thumbs.** Hold both thumbs crossed (§7), one reading up (v/h), one across (v₂/h),
+and look at a tower off to one side. Its top reads (¼, ⅓): a quarter of a thumb up and a third across for every thumb
+along the look. Its foot reads (0, ⅓). From one place that is all: two directions, no distance, and a tower twice as large
+twice as far off reads the same.
+
+Step one thumb across and read again. The top now reads (¼, ¼), the foot (0, ¼). Only the across thumb moved, by 1/12, so
+the distance along the look is 1/(1/12) = 12 thumbs. Then the top is 12·⅓ = 4 thumbs across and 12·¼ = 3 up, and the foot
+4 across and 0 up: the tower is 3 thumbs tall, 12 off and 4 to the side, in thumbs, exactly.
+
+The up thumb did not move, and that is the gain of the second thumb. In the plane one step gives one change for one
+unknown, the distance, and nothing is left over. In space each step gives two changes for the same one unknown, so one is
+spare, and it must agree: a reading can move only along the line through where the step itself points (the epipolar
+condition of stereo vision). A step across points straight across, so readings move straight across. Step one thumb across and up together and both thumbs move by 1/12, and both give 12. Take the step for
+diagonal when it was across, and the up thumb, which did not move, says the step had no up in it: the misreading is caught.
+Step one thumb forward instead and both readings grow by the same factor, the top to (3/11, 4/11): the tower slides
+straight out from the middle of the cross, its up over its across still ¾, and either thumb gives 12.
+
+Scale the world, the step with it, and no reading changes, so every place in thumbs stands. Count the thumb as 5 metres and
+the tower is 15 metres tall and 60 away. The writer's one amount is still one amount; the second thumb adds no length, only
+a check (`runs/two/two_thumbs.py`, exact).
+
 ## 11. What this changes
 
 It changes no mathematics. It sorts.
