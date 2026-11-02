@@ -53,7 +53,7 @@ likewise needs an amount carried in from outside. But the two pairs part in five
 - *Who lays out the addresses.* A computer's address space is laid out before anything is read: a known size, indices
   counted from 0 to N − 1, an end. That layout is a writer's work (an array whose `sizeof` is known is held by a writer).
   A reader's addresses are given by the turn, uniform by the turn's own measure, from home toward a horizon that is never
-  reached; there is no N, no last address, and no end to fall off.
+  reached; there is no N, no last address, and no end to fall off. What it holds is K, its own count (§6, "K and N").
 - *What a read returns.* A computer's read returns an amount in a unit: bytes, a float, a count. A read here returns a
   direction and the paint arriving along it, with every amount along that direction already gone. Nothing in it would
   change if the world were k times as large.
@@ -399,6 +399,19 @@ doublings with no corner of their own.
 addresses lie inside H at every H; a small H makes the near ones fine and puts more of the world past the held edge; a large
 H does the reverse. No H holds everything. The best H for a thing is the one that puts it at the corner, where the
 reader's relative grain is finest. That is why the corner follows the focus: what is looked at is drawn at H.
+
+**K and N.** Computer science has two letters for this, and they sort the acts as well as anything. N is how many items
+there are; K is how many are held. To know N is to know the whole: its extent, V, and how much is in it. That is
+writing, and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own count of
+addresses, fixed before H is chosen. The Cauchy is what goes between them. It lays the reader's K addresses over a
+world of any size, the near field in proportion, the far field in doublings, and everything past the last address on
+the one address at the horizon. Double N and the reader's view does not change; make N unbounded and it still does not
+change (an infinite star field browsed at N and 2N shows the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull: whatever N is, the reader's work is
+K, and in N it is constant, O(1). What the cull gives up is sameness. A writer who knows N can hold every item as 1/N
+of the whole, all alike, on a number line with no corner, and no item has an advantage over another, because no
+standpoint is favoured: there is none. A reader's K is spent unevenly, finest at the corner and coarser each level away,
+and that unevenness is the vantage: what is looked at gets the most. Knowing N buys equality; holding only K buys a
+standpoint, at a cost that does not grow with the world.
 
 **The far field in proportion.** The number line keeps the far field proportional everywhere. That is one of the writer's
 capabilities, useful wherever readers with different H must agree about far things, since the number line has no corner to

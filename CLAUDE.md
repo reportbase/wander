@@ -1202,6 +1202,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   from outside; parting on who lays out the addresses (memory a writer's layout, N and an end; the turn's, no N, a horizon),
   what a read returns (an amount in a unit, or a direction with the amounts gone), what a write changes, what stays the same
   (across reads, or across scaled worlds), and caching as a write in both. Memory is a written world.
+  R614 (2 Nov; Tom: "Knowing H means you know N. Not Knowing H means you know K. Cauchy is the great kull"): *Reads and Writes*
+  §6 "K and N": knowing N is knowing V, a writing; the reader knows K; the Cauchy a cull, the reader's work K whatever N, O(1)
+  in N; knowing N, all items alike, no vantage; holding K, finest at the corner. Written with V where Tom said H (R533).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
