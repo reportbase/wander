@@ -65,8 +65,9 @@ round the whole.
 - Each array has its places at θ_k = (k + ½)·(π/2)/N, read as tan θ_k: the N evenly spaced quantiles of the
   half-Cauchy, the law of one quarter turn.
 - Within an array, its middle is the corner, and reading it backwards is the reciprocal: tan θ_k · tan θ_(N−1−k) = 1.
-- A closed curve stored as 4N samples over the full turn is these four arrays laid end to end. A sphere is eight
-  arrays, one per octant, each two-dimensional, uniform in azimuth and in height, the fifth essay's wedge.
+- A closed curve stored as 4N samples over the full turn is these four arrays laid end to end. A sphere is eight arrays,
+  one per octant, each two-dimensional, uniform in azimuth and in height, the fifth essay's wedge (the writer's
+  description; the reader looks down a tunnel).
 
 **The reader reads the arrays; the writer joins them.** A reading carries no sign, and turns composed by tangent
 addition repeat after a half turn. So from a standpoint every facing is the same array, and a reader reads within one.

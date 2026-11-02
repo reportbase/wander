@@ -462,16 +462,16 @@ one plane, each a mirror line. Each is moved by sliding the plane along its own 
 across the world's directions, and choosing H, the size of the thumb, slides the second along the distances, so many thumbs
 away. That is why the two corners can be set independently: they sit on different axes.
 
-**Where it stops.** Euler's formula is a tool for the flat case, one other party and turns in a plane. With three
-parties, the fifth essay's wedge, only half of it survives. The split survives: a point of space is still an amount
-times a direction, scaling the world still moves only the amount, and the scale test still asks the same question. What
-fails is composition as addition. Turns in a plane commute, so their angles add. Turns in space do not: a quarter turn
-about one axis and then another ends somewhere different from the same two turns in the other order. With no fixed
-order there is no single angle to add, and no logarithm turns combining them into a sum. Quaternions compose turns of
-space, but they do not commute, and no number system of more than two dimensions does both. Each sweep on its own,
-altitude or azimuth, is still a plane's turn and still adds; it is putting the two together that does not. It can look
-strange that so tidy a tool stops at two dimensions, but the reason is that space has more than one way to turn, and
-the ways do not take turns politely.
+**Where it stops.** Euler's formula is a tool for the flat case, one other party and turns in a plane. With three parties
+(the fifth essay's wedge, which is the writer's description of the reader's tunnel), only half of it survives. The split
+survives: a point of space is still an amount times a direction, scaling the world still moves only the amount, and the
+scale test still asks the same question. What fails is composition as addition. Turns in a plane commute, so their angles
+add. Turns in space do not: a quarter turn about one axis and then another ends somewhere different from the same two turns
+in the other order. With no fixed order there is no single angle to add, and no logarithm turns combining them into a sum.
+Quaternions compose turns of space, but they do not commute, and no number system of more than two dimensions does both.
+Each sweep on its own, altitude or azimuth, is still a plane's turn and still adds; it is putting the two together that
+does not. It can look strange that so tidy a tool stops at two dimensions, but the reason is that space has more than one
+way to turn, and the ways do not take turns politely.
 
 The Cauchy's own coincidences part at the same place. In the plane one law plays four parts: it is the uniform turn
 carried by a Möbius map, it is where a random walk from the standpoint first meets the circle (harmonic measure), its

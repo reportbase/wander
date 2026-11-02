@@ -6,9 +6,10 @@ So far the reader has related itself to one other thing: across and up, h and v,
 The world has more than one other thing in it. This essay adds a second, v₂, and asks what changes.
 
 Less than one might fear. The writer's circle becomes a sphere, the reader's one thumb becomes two crossed thumbs, the
-quarter turn becomes a wedge, and the Cauchy becomes its two-dimensional cousin. Every pair of parties keeps its own
-corner, exactly as before. One thing is new: a third party brings a third kind of share, and the reader turns out to be
-"near in everything" for exactly a third of the directions it can look in. With n other parties it is 1/(n + 1).
+quarter turn becomes a wedge in the writer's description and a tunnel in the reader's look, and the Cauchy becomes its
+two-dimensional cousin. Every pair of parties keeps its own corner, exactly as before. One thing is new: a third party
+brings a third kind of share, and the reader turns out to be "near in everything" for exactly a third of the directions it
+can look in. With n other parties it is 1/(n + 1).
 
 ---
 
@@ -18,13 +19,14 @@ Stand in the corner of a room, back to where two walls meet the floor. One wall 
 and the floor runs away in front of you. Every direction you can look in, from straight along one wall, through up the
 corner, to straight along the other, lies between those three edges.
 
-That is the reader's space with three parties. Along the first wall is h; up is v; along the second wall is v₂. A
+That is how a writer draws the reader's directions with three parties. Along the first wall is h; up is v; along the second wall is v₂. A
 direction is the three of them together, [h : v : v₂], and like a direction in two parties it carries no distance. It
 says how much of each, compared with the others.
 
-None of the three is ever negative. The wall to your left is not "minus the wall to your right"; it is just another
-wall. So the reader's space is one wedge, an eighth of the sphere of all directions: an *octant*. The other seven
-octants of a full sphere are only this wedge faced another way.
+None of the three is ever negative. The wall to your left is not "minus the wall to your right"; it is just another wall.
+So the reader's directions, drawn whole from outside as a writer draws them, make one wedge, an eighth of the sphere of all
+directions: an *octant*. The other seven octants of a full sphere are only this wedge faced another way. The wedge is the
+writer's description of the reader's geometry. The reader never holds it whole; section 4 says what it has instead.
 
 *Demos: the room (home in the floor corner, the room one wedge); the wedge.*
 
@@ -87,19 +89,28 @@ vertical are set by where the reader stands. They choose an order, a forward dir
 not.
 
 The third essay's picture, a hand held up to a stained-glass window, carries over with both hands. One hand spreads its
-fingers from flat to upright, the altitude; the other spreads its fingers round the horizontal, the azimuth. The two
-thumbs cross at a right angle, and where they cross is the triple corner, where both read 1. Each pane now lines up with a
-crossing, one finger of each hand, and that pair of fingers is the address: a direction of the wedge, (v/h, v₂/h). The
-colour at each crossing is the payload, and still no colour carries a distance. Two hands add no second length: both
-thumbs are the one H, and the right angle between them is a quarter turn, no amount. (For every crossing to hold the same
-share of the window, the round hand spreads its fingers evenly by turn and the upright hand evenly in height, not in
-angle; section 6 says why.)
+fingers from flat to upright, the altitude; the other spreads its fingers round the horizontal, the azimuth. The two thumbs
+cross at a right angle, and where they cross is the triple corner, where both read 1. Each pane now lines up with a
+crossing, one finger of each hand, and that pair of fingers is the address: a direction, (v/h, v₂/h). The colour at each
+crossing is the payload, and still no colour carries a distance. Two hands add no second length: both thumbs are the one H,
+and the right angle between them is a quarter turn, no amount. (For every crossing to hold the same share of the window,
+the round hand spreads its fingers evenly by turn and the upright hand evenly in height, not in angle; section 6 says why.)
 
 No one holds a window that way; the picture is not about hands. What it shows is that the reader's space in three
 dimensions is not Cartesian. There are no three axes of amounts, no X, Y and Z counted out from an origin: there is one
 thumb, crossed with itself, and two sweeps of fingers from where it is held. Everything else, the corner, the near and
 far fields, the law over the crossings, follows from the thumb. The Cartesian frame, three number lines and every point
 three amounts, is the writer's (section 11).
+
+Nor is it a wedge. The wedge, with its faces, its edges and its triple corner, is the writer's description of the reader's
+geometry, drawn whole from outside. What the reader experiences is a tunnel of addresses about its line of sight. Laid out
+as readings on a screen held square to the look, the screen the crossed thumbs make, the directions crowd toward the line
+of sight and thin on every side by the Cauchy: at r thumbs off the line of sight their density is 1/(2π(1 + r²)^(3/2)) per
+unit of screen, over the whole hemisphere in front, out toward a horizon never reached. Nothing of it is stored. It is
+generated from the thumb, and it is there wherever the reader looks. As the reader sweeps, the tunnel turns with the look,
+continuously and without a seam, so what it looks at is always at the centre, where the addresses are finest, and each
+address is exact: given, not computed. That is perfect fidelity wherever it looks, because the tunnel is wherever it looks.
+Section 5's law over the wedge is this tunnel's law on a quarter of its screen, and section 10 comes back to it.
 
 ---
 
@@ -108,9 +119,11 @@ three amounts, is the writer's (section 11).
 In two parties the reader's directions, turned steadily, gave the Cauchy. What is the steady sweep of a wedge, and what
 does it give?
 
-The natural answer is that every direction of the octant gets equal weight by area: no direction favoured over any
-other. Swept that way, the readings v/h and v₂/h have a definite law, the **two-dimensional half-Cauchy**. Its density at
-(s, s₂) is 2/π divided by (1 + s² + s₂²) to the power three halves. Four things follow, each checkable.
+The natural answer is that every direction of the octant gets equal weight by area: no direction favoured over any other.
+Swept that way, the readings v/h and v₂/h have a definite law, the **two-dimensional half-Cauchy**. Its density at (s, s₂)
+is 2/π divided by (1 + s² + s₂²) to the power three halves. It is the reader's tunnel of section 4, cut by the writer to
+the quarter of its screen where v and v₂ are not negative: the octant is a quarter of the hemisphere, so the constant is
+four times the tunnel's 1/(2π). Four things follow, each checkable.
 
 - **Every pair keeps its corner.** Take v/h alone: it has exactly the law of the one-party case, median at 1, no mean. So
   does v₂/h. So does v/v₂, the pair the reader never divided by directly. Every one of the three pairs has its median at
@@ -210,18 +223,23 @@ parties. These are not the two-party numbers squared. They are those times 8/π�
 
 ---
 
-## 10. The wedge, not the sphere
+## 10. The wedge and the tunnel
 
 The sphere of all directions, every octant at once, is the writer's picture. A sphere that placed every place by its
 direction *and* its distance would need every distance, the size of everything, which no reader at a standpoint has.
 
-The reader's space is the wedge, given afresh at each standpoint from the relations there. The wedge needs no size: its
-readings are ratios, laid by the two-dimensional Cauchy. What a blueprint would add is what it added in the plane, once per
-party: the true size of each against H, in thumbs.
+The wedge is the writer's too: the writer's description of the reader's geometry, given afresh at each standpoint from the
+relations there and drawn whole from outside. It needs no size: its readings are ratios, laid by the two-dimensional
+Cauchy. What a blueprint would add is what it added in the plane, once per party: the true size of each against H, in
+thumbs.
 
-The wedge can still be placed anywhere on the sphere. One rotation positions it; the reader's two sweeps then work
-inside it, in its own frame. The readings are the same at every position. Only a frame fixed outside, the sphere's,
-records where the wedge points. Position, then sweep.
+The writer can place the wedge anywhere on the sphere. One rotation positions it; the reader's two sweeps then work inside
+it, in its own frame. The readings are the same at every position. Only a frame fixed outside, the sphere's, records where
+the wedge points. Position, then sweep.
+
+The reader has none of this as a thing with faces and edges. It has the tunnel of section 4, generated from the thumb about
+wherever it looks and stored nowhere. From inside there is no position to record: the tunnel turns with the look, and what
+is looked at is always at its centre, at the finest addresses.
 
 *Demo: the wedge, step 7 (position, then sweep).*
 
@@ -250,8 +268,9 @@ as dense as its corners.
 ## 12. What it comes to
 
 **Reading and writing.** The writer's drawing of three parties is the flat triangle, the sum, needing no standpoint and
-holding the truth as one point. The reader's drawing is the wedge, built from a standpoint, holding every party at its
-one length: the triangle's centre. The difference between them is two numbers, one per party, and both are amounts.
+holding the truth as one point. The writer's description of the reader is the wedge, built from a standpoint, holding every
+party at its one length: the triangle's centre. The difference between them is two numbers, one per party, and both are
+amounts. What the reader itself looks down is neither: it is the tunnel, generated from the thumb wherever it looks.
 
 **The Cauchy.** It does not stay a one-party curiosity. Swept evenly by area, the wedge's readings are the Cauchy's
 two-dimensional form, every pair keeps its corner, and the near field becomes a third, then a quarter, then 1/(n + 1).

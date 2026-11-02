@@ -172,9 +172,10 @@ and the near field in all readings a third (1/(n + 1) with n other parties), are
 home. At home, at the centre of the directions, all three of space's laws are the same law: the uniform one. Nothing in the
 fifth essay assumed a standpoint off the centre, so nothing there depends on the plane.
 
-**The Cauchy wedge survives.** The two-dimensional Cauchy of the wedge's readings, (v/h, v₂/h), is the uniform law on
-the octant seen through a flat screen. It is the image of the uniform directions, with no standpoint moved. It holds in
-every dimension, and the fifth essay's numbers stand.
+**The Cauchy wedge survives.** The two-dimensional Cauchy of the wedge's readings, (v/h, v₂/h), is the uniform law on the
+octant seen through a flat screen: the writer's description of the reader's tunnel, cut to a quarter of its screen. It is
+the image of the uniform directions, with no standpoint moved. It holds in every dimension, and the fifth essay's numbers
+stand.
 
 **What depends on the plane** is everything that moves the standpoint off the centre:
 - that the mean, in the bounded chart, is the standpoint (in space it is for harmonic measure, not for the Möbius law);
