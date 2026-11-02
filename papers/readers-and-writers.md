@@ -45,6 +45,29 @@ The first part is reading. The second and third are writing. The rest of this pa
 turns, and writes while it walks, counts, ranges or agrees a unit. *Read*, *reading* and *reader* are used as each sentence
 needs (a reader is whatever is reading, for as long as it reads), and likewise *write*, *writing* and *writer*.
 
+**Read and write in computing.** Computer science has used these words for longer, and the likeness is real. A computer's
+read takes an address and returns what is stored there, changing nothing; that is this paper's split of address and
+payload, met in hardware. A computer's write stores at an address a value that came from somewhere else; a write here
+likewise needs an amount carried in from outside. But the two pairs part in five places.
+
+- *Who lays out the addresses.* A computer's address space is laid out before anything is read: a known size, indices
+  counted from 0 to N − 1, an end. That layout is a writer's work (an array whose `sizeof` is known is held by a writer).
+  A reader's addresses are given by the turn, uniform by the turn's own measure, from home toward a horizon that is never
+  reached; there is no N, no last address, and no end to fall off.
+- *What a read returns.* A computer's read returns an amount in a unit: bytes, a float, a count. A read here returns a
+  direction and the paint arriving along it, with every amount along that direction already gone. Nothing in it would
+  change if the world were k times as large.
+- *What a write changes.* A computer's write changes the memory, and the next read sees it. A write here states amounts
+  (the room is 15 metres wide); it changes the world only when it is acted on, as moving the furniture is.
+- *What stays the same.* A computer's read is repeatable: read the same address twice, with no write between, and the
+  value is the same. A read here has a stronger sameness, across worlds: scale the world, and no reading moves.
+- *Where caching falls.* In a computer, keeping a value read (a cache, a variable) is a write into another place. Here too:
+  to keep a reading as a number, a length in a unit, a value in a table of known size, is to write it.
+
+So the computing words are the writer's frame applied to both acts: memory is a written world, and a computer's read is
+an address looked up in it. The read of this paper comes before any such layout; it is what a reader has when no one has
+written the memory yet.
+
 **The read.** A read is taken from one point, *home*, by turning there. The reader holds one length, H, which it chooses:
 any value, since every reading is a ratio and H only sets the zoom, where its finest detail falls. It does not hold the
 other party's breadth, V. Every reading is a direction, written [h : v] in homogeneous coordinates, or v/h, the reading

@@ -1197,6 +1197,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   in the words). The current account is retitled *Reads and Writes* (file `papers/readers-and-writers.md` kept): "Two acts" in
   §1 with a note on the words, §8 "From reading to writing"; the essays cite the new title. Use read/reading/reader and
   write/writing/writer as each sentence needs; identifiers, file names, essay titles and demo ids keep theirs.
+  R613 (2 Nov; Tom: "Computer science uses the terms read and write.  Contrast them in the paper."): *Reads and Writes* §1,
+  "Read and write in computing": a computer's read an address looked up (address and payload in hardware), its write a value
+  from outside; parting on who lays out the addresses (memory a writer's layout, N and an end; the turn's, no N, a horizon),
+  what a read returns (an amount in a unit, or a direction with the amounts gone), what a write changes, what stays the same
+  (across reads, or across scaled worlds), and caching as a write in both. Memory is a written world.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
