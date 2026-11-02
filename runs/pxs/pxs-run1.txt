@@ -1,0 +1,50 @@
+X1: depth exactly Cauchy(D)
+  g=0.001 x=0 d=0.125: D=0.125000+0.001016i KS=0.00071 neg=0.00253 pred=0.00259 z=-1.19 ok
+  g=0.001 x=0 d=0.5: D=0.499999+0.001250i KS=0.00119 neg=0.00078 pred=0.00080 z=-0.70 ok
+  g=0.001 x=0 d=1: D=0.999998+0.002000i KS=0.00089 neg=0.00060 pred=0.00064 z=-1.29 ok
+  g=0.001 x=0 d=2: D=1.999990+0.005000i KS=0.00090 neg=0.00075 pred=0.00080 z=-1.59 ok
+  g=0.001 x=0 d=8: D=7.999480+0.064996i KS=0.00100 neg=0.00260 pred=0.00259 z=+0.27 ok
+  g=0.001 x=0.6 d=1.5: D=1.499994+0.003610i KS=0.00082 neg=0.00075 pred=0.00077 z=-0.62 ok
+  g=0.001 x=-2 d=3: D=2.999942+0.014000i KS=0.00067 neg=0.00147 pred=0.00149 z=-0.43 ok
+  g=0.1 x=0 d=0.125: D=0.123731+0.101547i KS=0.00069 neg=0.21848 pred=0.21876 z=-0.66 ok
+  g=0.1 x=0 d=0.5: D=0.493766+0.124688i KS=0.00098 neg=0.07904 pred=0.07874 z=+1.12 ok
+  g=0.1 x=0 d=1: D=0.980198+0.198020i KS=0.00096 neg=0.06349 pred=0.06345 z=+0.16 ok
+  g=0.1 x=0 d=2: D=1.903846+0.480769i KS=0.00048 neg=0.07893 pred=0.07874 z=+0.73 ok
+  g=0.1 x=0 d=8: D=4.829268+3.963415i KS=0.00092 neg=0.21863 pred=0.21876 z=-0.29 ok
+  g=0.1 x=0.6 d=1.5: D=1.443577+0.351430i KS=0.00097 neg=0.07628 pred=0.07601 z=+1.02 ok
+  g=0.1 x=-2 d=3: D=2.508347+1.191424i KS=0.00073 neg=0.14111 pred=0.14115 z=-0.12 ok
+  g=0.3 x=0 d=0.125: D=0.113590+0.304260i KS=0.00058 neg=0.38659 pred=0.38627 z=+0.67 ok
+  g=0.3 x=0 d=0.5: D=0.444988+0.366748i KS=0.00086 neg=0.21981 pred=0.21941 z=+0.94 ok
+  g=0.3 x=0 d=1: D=0.834862+0.550459i KS=0.00116 neg=0.18555 pred=0.18555 z=+0.01 ok
+  g=0.3 x=0 d=2: D=1.338235+1.102941i KS=0.00136 neg=0.21899 pred=0.21941 z=-1.03 ok
+  g=0.3 x=0 d=8: D=1.076923+2.884615i KS=0.00138 neg=0.38666 pred=0.38627 z=+0.81 ok
+  g=0.3 x=0.6 d=1.5: D=1.083729+0.870606i KS=0.00065 neg=0.21500 pred=0.21542 z=-1.04 ok
+  g=0.3 x=-2 d=3: D=1.007610+1.659754i KS=0.00073 neg=0.32621 pred=0.32633 z=-0.26 ok
+X2: first-order law at gamma 0.3 vs 1e-3
+  g=0.3 k=1: KS to first order=0.09250 ok
+  g=0.3 k=8: KS to first order=0.37416 ok
+  g=0.001 k=1: KS to first order=0.00052 ok
+  g=0.001 k=8: KS to first order=0.00339 FAIL
+X3: |D| = d at the corner only (50 digits)
+  k=1 g=0.001: ||D|-d|=1.34e-51 |argD-2atan g|=0.0 ok
+  k=1 g=0.1: ||D|-d|=0.0 |argD-2atan g|=0.0 ok
+  k=1 g=0.3: ||D|-d|=0.0 |argD-2atan g|=1.34e-51 ok
+  k=1 g=1: ||D|-d|=0.0 |argD-2atan g|=0.0 ok
+  k=1 g=3: ||D|-d|=0.0 |argD-2atan g|=5.35e-51 ok
+  k=0.125 g=0.3: |D|/d-1=1.59817 ok
+  k=0.5 g=0.3: |D|/d-1=0.153288 ok
+  k=2 g=0.3: |D|/d-1=0.132914 ok
+  k=8 g=0.3: |D|/d-1=0.615114 ok
+X4: mean of reciprocal depths vs median of depths, g=0.1, k=1
+  n=1: HIQR mean 1/d = 0.20013 (law 0.19802, rel 0.0107) HIQR median d = 0.19935
+  n=10: HIQR mean 1/d = 0.19923 (law 0.19802, rel 0.0061) HIQR median d = 0.06544
+  n=100: HIQR mean 1/d = 0.19809 (law 0.19802, rel 0.0003) HIQR median d = 0.02093
+  median narrows n=1 -> 100 by 9.53x ok
+X5: two uniform half turns
+  ahead=0.50097 z=+1.94 median ahead=1.00465 KS to C(i)=0.00146 ok
+X6: two quarter turns
+  all ahead=True median=0.73295 KS to half-Cauchy same median=0.07452 ok
+X7: the place, k=1
+  g=0.001: fitted m=0.00000 s=0.00200 KS=0.00080 ok
+  g=0.3: fitted m=-0.00274 s=0.59904 KS=0.03036 ok
+VERDICTS: X1 not killed, X2 KILLED, X3 not killed, X4 KILLED, X5 not killed, X6 not killed, X7 not killed, X8 not killed

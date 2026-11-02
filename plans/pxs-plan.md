@@ -122,3 +122,43 @@ pairs' depths gains nothing while their median does.
   across the line of sight beyond first order, or about three standpoints solved together by least squares.
 
 ## Runs
+
+### Run 1 (2 Nov 2026; `runs/pxs/pxs.py`, output `runs/pxs/pxs-run1.txt`; seed 20261102, about 7 s)
+
+- **X1 not killed.** In all 21 cases (three γ, seven targets) the triangulated depth is Cauchy(D), D = 2/conj(w_A + w_B).
+  - KS distances run from 0.0005 to 0.0014.
+  - The share with no forward crossing is within 1.6 standard errors of ½ − (1/π)·atan(Re D/Im D) every time.
+  - At γ = 0.3 the law is far from first order: at k = 8, D = 1.08 + 2.88i, against the true depth 8.
+- **X2 killed, by my threshold.** At γ = 0.3 the first-order law is far off: KS 0.093 at k = 1 and 0.374 at k = 8. At
+  γ = 10⁻³ it is 0.0005 at k = 1 but 0.0034 at k = 8, over my 0.002. At k = 8 the first-order law already parts at
+  γ = 10⁻³: the exact centre sits 6.5·10⁻⁵ of d short, about 0.008 of a scale, and that is enough. What X2 was for (the
+  exact law holds where the first order does not) stands; my bound on the first order at the far k was too tight.
+- **X3 not killed.**
+  - At the corner, |D| = d and arg D = 2·atan γ to 10⁻⁵⁰ for every γ from 10⁻³ to 3.
+  - Off it, at γ = 0.3, |D|/d − 1 is 1.598, 0.153, 0.133 and 0.615 at k = 1/8, 1/2, 2 and 8.
+- **X4 killed, by my threshold.**
+  - The mean of n reciprocal depths has half-interquartile range 0.2001, 0.1992 and 0.1981 at n = 1, 10 and 100. The law's
+    is 0.1980, so averaging gains nothing.
+  - But at n = 1 that is 1.07% off, over my 1%. A quartile from 10⁵ draws has a standard error of about 0.6% here, so this
+    is about 1.8 standard errors: the bound was tighter than the sampling.
+  - The median of the depths narrows 9.5× from n = 1 to 100, as predicted.
+- **X5 not killed.**
+  - 0.50097 of the pairs cross ahead (1.9 standard errors).
+  - Their median depth is 1.0047 half-baselines.
+  - d/b against the standard Cauchy: KS 0.0015.
+- **X6 not killed.** Two quarter turns cross ahead every time; the median depth is 0.733 b; the KS distance to the
+  half-Cauchy with that median is 0.075. Not closed.
+- **X7 not killed.** The place x̂ against its quartile-fitted Cauchy: KS 0.0008 at γ = 10⁻³, 0.030 at γ = 0.3. Cauchy to first
+  order only.
+- **X8 not killed.**
+
+### Run 2, predictions (written after run 1, before running)
+
+Run 2 repeats only the two kills, with bounds the sampling and the geometry allow.
+
+- **X2′.** At γ = 10⁻³, for k ∈ {1, 8}, the KS distance of (d̂ − d)/d to the exact law (Cauchy(D), shifted and scaled to
+  relative error) is under 0.002. The first-order law is under 0.002 at k = 1. At γ = 0.3 the first-order law's distance
+  exceeds 0.01 at both. *Killed* if the exact law fails anywhere, or the first-order law is under 0.01 at γ = 0.3.
+- **X4′.** At γ = 0.1, k = 1 (10⁵ sets, a new seed), the half-interquartile range of the mean of n reciprocal depths is
+  within 3 standard errors of the law's at n = 1, 10, 100. The standard error is taken as √(3/16M)·2πσ/√2, from the
+  quartiles' asymptotic variance. The median of the depths narrows by over 5× from n = 1 to 100. *Killed* if either fails.
