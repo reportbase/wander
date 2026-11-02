@@ -1253,6 +1253,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "keep it generic and geometric"): a turn about the standpoint gives the addresses, the same in every world; a step along a
   straight line gives the world (parallax); any motion is both, only the step places. *Reads and Writes* §8; essay 6 §2.
   Say it geometrically: no eyes, heads or two eyes.
+  R628 (2 Nov; Tom: "I wonder if parallax has a tighter cauchy connection?", then "Yes"): `plans/pxs-plan.md` (PXS), parallax
+  as a sum of reads: under TRI's errors the depth predicted exactly Cauchy, its point the triangulation of the reads' complex
+  points, on the circle of radius d at the corner; predictions X1–X8 written first, not yet run.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
