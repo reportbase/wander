@@ -19,9 +19,9 @@ Stand in the corner of a room, back to where two walls meet the floor. One wall 
 and the floor runs away in front of you. Every direction you can look in, from straight along one wall, through up the
 corner, to straight along the other, lies between those three edges.
 
-That is how a writer draws the reader's directions with three parties. Along the first wall is h; up is v; along the second wall is v₂. A
-direction is the three of them together, [h : v : v₂], and like a direction in two parties it carries no distance. It
-says how much of each, compared with the others.
+That is how a writer draws the reader's directions with three parties. Along the first wall is h; up is v; along the second
+wall is v₂. A direction is the three of them together, [h : v : v₂], and like a direction in two parties it carries no
+distance. It says how much of each, compared with the others.
 
 None of the three is ever negative. The wall to your left is not "minus the wall to your right"; it is just another wall.
 So the reader's directions, drawn whole from outside as a writer draws them, make one wedge, an eighth of the sphere of all
