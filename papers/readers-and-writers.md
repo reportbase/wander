@@ -282,6 +282,12 @@ neither hand reads leaves its corner. The coloured light at each crossing is the
 carries a distance. Two hands add no second length: both thumbs are the one H, the same size, and the right angle between
 them is a quarter turn, no amount.
 
+No one holds a window this way; the picture is not about hands. What it shows is that the reader's space in three
+dimensions is not Cartesian. There are no three axes of amounts, no X, Y and Z counted out from an origin: there is one
+thumb, crossed with itself, and two sweeps of fingers from where it is held. Everything else, the corner, the near and far
+fields, the Cauchy over the crossings, follows from the thumb. The writer's cube (below) is the Cartesian frame, and it is
+the writer's.
+
 **The lighthouse.** A lamp turns evenly and throws a flash along each direction. Where a flash lands on a straight shore, the
 landing x obeys (x − α)/β = tan θ, with α the foot of the lamp on the shore and β its distance from it. The angles are the
 lamp's addresses, laid evenly by its turn, whatever shore there is; the landings follow a Cauchy because the shore is

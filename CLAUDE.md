@@ -1230,6 +1230,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and crossing thumbs"): *Reads and Writes* §3 "Two hands": one hand's fingers in altitude, the other's in azimuth, the
   thumbs crossed at the triple corner; each pane lines up with a crossing (one finger of each), a direction of the wedge;
   the round hand even by turn, the upright hand even in height (equal shares); the colour the payload, no second length.
+  R621 (2 Nov; Tom: "not ergonomically accurate but it does express the idea that 3d space for the reader is not Cartesian
+  and the thumb is what drives it all"): "Two hands" closes on it: the reader's 3D is one thumb crossed with itself and two
+  sweeps, not three axes of amounts; the Cartesian frame is the writer's cube.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
