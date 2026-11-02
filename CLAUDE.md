@@ -1244,6 +1244,20 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   a cauchy density tunnel all generated from the thumb, which changes continuously as he sweeps with perfect fidelity
   where he ever he looks."): *Reads and Writes* §7; the wedge (octant, sphere) is the writer's; the reader has a Cauchy
   tunnel about its line of sight, generated from the thumb, turning with the look, perfect fidelity wherever it looks.
+  R625 (2 Nov; Tom: "Yes, proceed", to review 1 of *Reads and Writes*, `plans/rw-review-1.md`): the capped mean set by
+  the extent, not V's; the world decides what meets an address, moving none; two lengths give square roots, not all
+  algebraic numbers (∛2), a transcendental a limit though it may have a short name; work O(K); D⁴'s split scoped.
+  R626 (2 Nov; Tom: "Proceed"): π with the address (the turn closes, its total forced), e with the payload (an open line,
+  no natural size, its base a convention; why no reading gives a₀). *Reads and Writes* §5; essay 15 §4.
+  R627 (2 Nov; Tom: "the facing and rotation … teaches you about your addresses and walking teaches about the world", then
+  "keep it generic and geometric"): a turn about the standpoint gives the addresses, the same in every world; a step along a
+  straight line gives the world (parallax); any motion is both, only the step places. *Reads and Writes* §8; essay 6 §2.
+  Say it geometrically: no eyes, heads or two eyes.
+  R628 (2 Nov; Tom: "I wonder if parallax has a tighter cauchy connection?", then "Yes"): `plans/pxs-plan.md` (PXS), parallax
+  as a sum of reads: under TRI's errors the depth predicted exactly Cauchy, its point the triangulation of the reads' complex
+  points, on the circle of radius d at the corner. Run 1 (`runs/pxs/pxs.py`): X1, X3, X5–X8 not killed, X2 and X4 killed by my
+  bounds; run 2 (`pxs2.py`): X2′, X4′ not killed. The place, and two quarter turns, leave the family. In
+  *Reads and Writes* §8 ("Parallax is a sum of reads"), essay 6 §4, a pointer in essay 3 §6.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

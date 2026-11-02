@@ -283,16 +283,16 @@ length directly. It has it twice over, once from each pivot, and the two reading
 holds in one. What they return is the reader's own length measured in itself, H in H: one thumb, in thumbs. They do not
 return the size of anything else.
 
-**They are rates, not angles, and they are the writer's.** Raise the hand from horizontal to vertical, and a writer
-holding the straight line from start to end measures the sweep at one of two rates against it: π/2 from the middle of the
-chord, 2/π from a point of the circle. Never 1: the 1 is the writer's own rate, the angle, arc per radius read against the
-completed turn, which the reader has only by joining the two sweeps. Writers have angles, readers have sweeps. And
-because each of these numbers has π in it, the count of a completed turn, they are the writer's account of the sweep, not
-the reader's own: the writer is transcendental, the reader is not. The reader holds one length, and one length makes
-only rationals; the irrationals need two lengths combined, and π the whole turn. The reader holds the same sweep as the Cauchy, its
-readings and their corner at 1, where v fills exactly as fast as h empties. A rate a reader reads is always of something
-per something, the payload per address. The fourteenth essay, "Rates, not angles", takes this up, and with it why the
-tangent and arctangent, which convert a direction into a share of the whole turn and back, are the writer's tools.
+**They are rates, not angles, and they are the writer's.** Raise the hand from horizontal to vertical, and a writer holding
+the straight line from start to end measures the sweep at one of two rates against it: π/2 from the middle of the chord,
+2/π from a point of the circle. Never 1: the 1 is the writer's own rate, the angle, arc per radius read against the
+completed turn, which the reader has only by joining the two sweeps. Writers have angles, readers have sweeps. And because
+each of these numbers has π in it, the count of a completed turn, they are the writer's account of the sweep, not the
+reader's own: the writer is transcendental, the reader is not. The reader holds one length, and one length makes only
+rationals; square roots need two lengths combined, and π a limit, the whole turn. The reader holds the same sweep as the
+Cauchy, its readings and their corner at 1, where v fills exactly as fast as h empties. A rate a reader reads is always of
+something per something, the payload per address. The fourteenth essay, "Rates, not angles", takes this up, and with it why
+the tangent and arctangent, which convert a direction into a share of the whole turn and back, are the writer's tools.
 
 *Demo: the mountain and the thumb, "the two vantages": π/2 and 2/π on the thumb's circle, their product 1.*
 

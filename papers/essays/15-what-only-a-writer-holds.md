@@ -34,16 +34,18 @@ Its readings compose by tangent addition, (a + b)/(1 − ab), which takes ration
 and stay rational; their order is kept. The corner, s = 1, is rational. A reader working in finite steps from one length
 never leaves the rationals.
 
-**Two lengths, finite steps: the algebraic numbers.** Combine two lengths at right angles and the diagonal of the unit
-square is √2, which is no ratio of whole numbers. Square roots, cube roots, any root of a polynomial with rational
-coefficients: these are the algebraic numbers, and every one of them is reached in finitely many steps by adding,
-multiplying, dividing and taking roots. It takes a second variable held against the first, so it is the writer's: the
-reader meets the direction of the diagonal (it reads s = 1 there, exactly) and never makes the length.
+**Two lengths, finite steps: square roots.** Combine two lengths at right angles and the diagonal of the unit square is √2,
+which is no ratio of whole numbers. Square roots, nested as deep as one likes, are what two lengths and a straight edge and
+compass give. They are not all the algebraic numbers, the roots of polynomials with rational coefficients: the cube root of
+2, which doubles a cube, is beyond them (Wantzel 1837), though it too is fixed by a finite equation. It takes a second
+variable held against the first, so it is the writer's: the reader meets the direction of the diagonal (it reads s = 1
+there, exactly) and never makes the length.
 
-**A completed infinity: the transcendental numbers.** The algebraic numbers are closed under every finite operation:
-add, subtract, multiply, divide or take roots of algebraic numbers, any finite number of times, and the result is
-algebraic. So a number that is not algebraic, a transcendental, is not reached by any finite construction at all. It is
-reached only as the limit of an infinite one, and is had only by someone for whom that infinity is finished.
+**A limit: the transcendental numbers.** The algebraic numbers are closed under every finite operation: add,
+subtract, multiply, divide or take roots of algebraic numbers, any finite number of times, and the result is algebraic. So
+a number that is not algebraic, a transcendental, is reached by no finite algebraic step. As a number it is had only
+through a limit, by someone for whom that infinity is finished. It may still have a short name (tan 1, or π = 4·arctan 1):
+the reader meets the direction tan 1 whole, and only stating it as a number needs the limit.
 
 Being a limit is not what makes a number transcendental (√2 is a limit too, of 1, 1.4, 1.41, …). Being reachable only
 as a limit is. That is the ladder's top rung, and the reader, which never finishes, is on the first.
@@ -141,6 +143,14 @@ The real part is the scale's, measured in e's unit; the imaginary part is the tu
 Essay 2 (§9) read it as address and payload, the turn the address and the size the payload, with the scale test on the
 real part alone. Here it reads as the two completions: e on the real axis, π on the imaginary.
 
+**Which constant goes with which side.** The two parts of that line are the essays' two sides. Turns act on the imaginary
+part alone, the address; scaling the world acts on the real part alone, the payload's size. So π goes with the address and
+e with the payload, and the two are not alike. The address closes, so it has a total, and π is that total; it is forced.
+The payload's size lies on an open line with no total and no natural size; its base is a convention (doublings would count
+it as well), and e is the base that lets one unit serve both parts, so that e^(iθ) is a turn of θ. That open line, with no
+mark on it, is why no reading ever gives a₀, the overall size (the sixth essay). Closed and forced, open and chosen:
+address and payload, in two numbers.
+
 ## 5. Where they meet
 
 Euler's identity is the place where the two constants touch:
@@ -212,7 +222,7 @@ It changes nothing about π or e or how to compute them. It sorts.
   or the natural logarithm appears (the lay's 1 + ln x, a decay's e^(−t/τ), the Gaussian's e^(−x²/2)), the reader's version
   is a count of thumbs, two, four, eight, an order, a ratio.
 - **The reader's arithmetic is the rationals**, made from one length in finite steps, and it is enough for everything
-  the reader does. The algebraic numbers need a second length, the transcendentals a completed whole; both are where the
+  the reader does. Square roots need a second length, the transcendentals a limit; both are where the
   reader becomes a writer (essay 6, "Becoming the writer").
 
 Essay 14 ended on five things called 1. This one ends on two numbers that are not 1 and are not the reader's, and on why:

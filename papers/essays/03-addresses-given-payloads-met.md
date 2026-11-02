@@ -118,10 +118,10 @@ An **address** is a point: a direction, a place on the reader's layout. A **payl
 amount, a colour, a strength. The law of the addresses, the Cauchy, is a measure on the points. It is fixed by the
 standpoint and the turn alone. No payload enters it.
 
-Whatever arrives can be swapped for anything else, at any address, and the addresses and their law do not move. So
-nothing the Cauchy says, its median, its spread, its missing mean, is a statement about the payload, and nothing about
-the payload can be read from it. The two share one place, the point where an address meets what it points at, and
-nothing passes between them there.
+Whatever arrives can be swapped for anything else, at any address, and the addresses and their law do not move. So nothing
+the Cauchy says, its median, its spread, its missing mean, is a statement about the payload, and nothing about the payload
+can be read from it. The two share one place, the point where an address meets what it points at. The world decides what
+meets each address, which thing is nearest and what it sends back; nothing it does moves an address.
 
 Why say this out loud? Because a number on a page carries no mark of which it is. Write a direction as a single value
 x = tan θ, a number on the real line, and the same number is both *where* a reading is made and *what* is read. Nothing
@@ -177,16 +177,16 @@ neither the size of the other party nor the size of what arrives. It has no unit
 thumb, is its own unit: measured in itself it is 1, one thumb, and what it is in metres is something only a writer can say.
 The reader has no scale whatsoever. Every magnitude, and the unit it is stated in, belongs to the writer.
 
-**Why there is no mean.** The missing mean is usually told as the Cauchy's defect. Read as an address it is what an
-address should do. A mean is a sum of amounts divided by their count, and a direction has no length to add. To average the
-readings v/h is to lay each direction out as an amount on the chart that puts the horizon at infinity, and the sum picks
-up that chart's far end: the running average climbs by about 1.47 for every tenfold further the readings run. The missing
-mean belongs to that chart, not to the directions; the bounded chart s/(1 + s) of the same directions averages ½. The
-median and the quartiles name the same directions on every chart, because they commute with every order-keeping change,
-so they belong to the addresses; the mean does not. A mean can be had, by a writer. Add the directions as unit vectors and
-the average points at the corner, at length 2√2/π, a writer's measure with π in it. Cap the world at some extent and the
-Cauchy has a mean, set by the extent (about 8.8 at a cap of a million): the mean appears exactly when V is written in, and
-its value is V's. A computer's Cauchy has one for the same reason.
+**Why there is no mean.** The missing mean is usually told as the Cauchy's defect. Read as an address it is what an address
+should do. A mean is a sum of amounts divided by their count, and a direction has no length to add. To average the readings
+v/h is to lay each direction out as an amount on the chart that puts the horizon at infinity, and the sum picks up that
+chart's far end: the running average climbs by about 1.47 for every tenfold further the readings run. The missing mean
+belongs to that chart, not to the directions; the bounded chart s/(1 + s) of the same directions averages ½. The median and
+the quartiles name the same directions on every chart, because they commute with every order-keeping change, so they belong
+to the addresses; the mean does not. A mean can be had, by a writer. Add the directions as unit vectors and the average
+points at the corner, at length 2√2/π, a writer's measure with π in it. Cap the world at some extent and the Cauchy has a
+mean, set by the extent (about 8.8 at a cap of a million): the mean appears only once an extent is written in, and its
+value is set by that extent, not equal to it. A computer's Cauchy has one for the same reason.
 
 **The payload is not lost.** None of the payload goes into making the addresses, so all of it arrives, on addresses known
 before it came, and the Cauchy gives it back four ways. By its ratios: two payloads read against each other, one light over
@@ -224,7 +224,9 @@ The sum deserves a word, because it looks like amounts being added, and is not. 
 above a line. Turn steadily from it and land on a line at height γ₂; take that landing as a new standpoint and turn again
 down to the bottom line. Where you land is the sum of two Cauchys, of scales γ₁ and γ₂. It is exactly where one steady
 turn from the first standpoint would have landed. What adds is the heights of the standpoints. The sum itself is still a
-direction from the combined standpoint, with no mean. A sum of Cauchys is a relay of standpoints.
+direction from the combined standpoint, with no mean. A sum of Cauchys is a relay of standpoints. Parallax is the same
+sum carried across two standpoints a step apart: the sixth essay shows the triangulated depth is exactly a Cauchy, its
+point the triangulation of the two reads' points.
 
 The normal distribution is the Cauchy's counterpart among amounts. It is closed under sums and rescalings, the
 operations on amounts, and not under ratios or turns. Take the ratio of two independent centred normals and you get a
