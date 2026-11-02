@@ -143,6 +143,14 @@ The real part is the scale's, measured in e's unit; the imaginary part is the tu
 Essay 2 (§9) read it as address and payload, the turn the address and the size the payload, with the scale test on the
 real part alone. Here it reads as the two completions: e on the real axis, π on the imaginary.
 
+**Which constant goes with which side.** The two parts of that line are the essays' two sides. Turns act on the imaginary
+part alone, the address; scaling the world acts on the real part alone, the payload's size. So π goes with the address and
+e with the payload, and the two are not alike. The address closes, so it has a total, and π is that total; it is forced.
+The payload's size lies on an open line with no total and no natural size; its base is a convention (doublings would count
+it as well), and e is the base that lets one unit serve both parts, so that e^(iθ) is a turn of θ. That open line, with no
+mark on it, is why no reading ever gives a₀, the overall size (the second essay). Closed and forced, open and chosen:
+address and payload, in two numbers.
+
 ## 5. Where they meet
 
 Euler's identity is the place where the two constants touch:

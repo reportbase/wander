@@ -406,6 +406,17 @@ the turn on the imaginary part, measured against π's total. They meet at e^(iπ
 of the reader's sweep, which the reader holds as the finite pair [0 : 1]. It was through that meeting that Lindemann proved
 π transcendental (1882): a power of e with a nonzero algebraic exponent is never algebraic, and e^(iπ) is −1.
 
+**π with the address, e with the payload.** The two parts of ln z = ln r + iθ are the two sides of this paper. The
+imaginary part is the address: turns act on it alone. The real part is the payload's size: scaling the world acts on it
+alone, sliding ln r and leaving θ where it was. So π belongs with the address and e with the payload, and they are not
+alike. The address coordinate closes, so it has a total, and π is that total in the unit the exponential sets; nothing can
+choose it away. The payload coordinate is an open line with no total and no natural size, so nothing on it marks a place;
+its base is a convention (counting in thumbs, doublings serve as well), and e is the base that lets one unit serve both
+coordinates, so that e^(iθ) is a turn of θ and e^t growth at a rate of one. That open line is why the reader never reads
+a₀, the overall size: there is no mark on it to read against. One coordinate closed and its constant forced, one open and
+its constant chosen: the asymmetry of address and payload, in two numbers. Both numbers are still the writer's; the reader
+meets the closing and the openness, and states neither.
+
 **Met, not made.** None of this keeps irrational or transcendental numbers out of the reader's world. A direction whose
 reading is tan 1 is a direction like any other, painted, passed, ordered. The reader holds it as a pair and by its order; the
 decimal 1.5574… is the writer's account of where it is. The reader meets these numbers and does not make them.

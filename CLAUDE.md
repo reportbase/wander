@@ -1247,6 +1247,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R625 (2 Nov; Tom: "Yes, proceed", to review 1 of *Reads and Writes*, `plans/rw-review-1.md`): the capped mean set by
   the extent, not V's; the world decides what meets an address, moving none; two lengths give square roots, not all
   algebraic numbers (∛2), a transcendental a limit though it may have a short name; work O(K); D⁴'s split scoped.
+  R626 (2 Nov; Tom: "Proceed"): π with the address (the turn closes, its total forced), e with the payload (an open line,
+  no natural size, its base a convention; why no reading gives a₀). *Reads and Writes* §5; essay 15 §4.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
