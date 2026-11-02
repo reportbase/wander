@@ -1237,6 +1237,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   distance. The writers circle is the thumb equals the mountain."): **a standing rule for new writing in *Reads and
   Writes* and the essays: say the far field in thumbs (two, four, eight), never "doubling" or "level"; V is the mountain
   in the distance; the writer's circle, V = H, is the thumb equal to the mountain.** Formulas keep ln 2 and 1 + ln(d/H).
+  R623 (2 Nov; Tom: "The reader does not have a circle, instead he points his crossed thumbs at the mountain and generates
+  his personal geometry."): *Reads and Writes* §2 "The thumbs pointed"; the circle (V = H) is the writer's; the reader
+  points its thumbs and has the turn. Never give the reader a circle.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

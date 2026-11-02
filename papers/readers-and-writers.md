@@ -97,11 +97,13 @@ as a median, the missing mean are all the traces of a breadth no reading holds.
 
 ## 2. What the reader has for free
 
-**One length, turned.** A length held fixed and turned about one end traces a circle. The circle needs one length, not two:
-V = H is the writer's name for it, the writer's way of saying that the two axes of its drawing are drawn at one length: the
-thumb equal to the mountain. The reader does not draw V = H, set it or choose it; it holds H, its thumb, and the turn does
-the rest. We call this the *one-length circle*. Held whole, as a closed curve with a circumference and an area, it is the
-writer's; the reader has its turn.
+**The thumbs pointed.** The reader has no circle. It points its crossed thumbs at the mountain, and that pointing
+generates its own geometry: the corner where the thumbs cross, the fingers spread from it, near and far counted in thumbs.
+What the reader holds is H, its thumb; never V, the mountain. A writer watching would say that a length held fixed and
+turned about one end traces a circle, and would call that circle V = H, the writer's way of saying that the two axes of its
+drawing are drawn at one length: the thumb equal to the mountain. We call it the *one-length circle*. It is the writer's,
+held whole, with a circumference and an area. The reader does not draw it, set it or choose it; it points, and has the
+turn.
 
 **The uniform turn.** The reader's directions are laid by turning, and a turn measured by itself is uniform: equal turns,
 equal shares. Nothing the reader does produces the directions; they are given by the geometry before anything arrives,
@@ -132,7 +134,7 @@ scale γ. Derived from what an observer holds, it comes in three forms, and the 
 
 - *From one length.* Turn one length H, the thumb, uniformly. Its tip is at (H cos θ, H sin θ), and the reading v/h = tan θ
   divides H out. The share of a quarter turn passed before the reading reaches s is (2/π)·arctan s: the standard
-  half-Cauchy, scale 1, median at the corner. No V appears anywhere, and H appears only in the circle, never in the law.
+  half-Cauchy, scale 1, median at the corner. No V appears anywhere, and H appears only in the tip's place, never in the law.
   The scale is 1 not because anything was set equal to anything, but because the reading is a ratio, and a ratio carries no
   scale.
 - *From two axes.* Draw the second axis at a length V of its own. The drawn point is (H cos θ, V sin θ), its reading
@@ -552,7 +554,7 @@ still 45°, still eighteen fingers.
 away. This is the writer's circle, V = H: the thumb taken to equal the mountain. Every amount is then off by V*/H = 20, the
 range twenty thumbs wide and not one, the same on both sides of the corner.
 
-**The two sweeps, measured.** On the thumb's own circle the writer measures the central sweep at π/2 and the inscribed at
+**The two sweeps, measured.** On the circle it draws about the thumb, the writer measures the central sweep at π/2 and the inscribed at
 2/π; to the range's ends, 1.1107 and 0.9003. Their product is 1, the starting length returned, H in H. The mountain never
 enters.
 
@@ -560,7 +562,7 @@ enters.
 distance is d = H·s′/(s′ − s) = 10 thumbs, the range V = 2·s·d = 20 thumbs. In thumbs, exactly. Count the thumb in miles and
 it is in miles.
 
-**The mountain as H.** Make the range the unit: its ends at 90° across, the reader on the circle drawn on it, half a range-width
+**The mountain as H.** Make the range the unit: its ends at 90° across, the reader on the writer's circle drawn on it, half a range-width
 from its middle, from one look. Or make the range the focus: a baseline of twenty miles puts it at parallax's corner, where
 its error per step is least; one thumb walked has about ten times that error.
 
