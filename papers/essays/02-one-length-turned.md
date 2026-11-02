@@ -508,6 +508,6 @@ their median.
   31 (the angle in a semicircle is right); Book VI, propositions 8 and 13 (the mean proportional).
 - Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Berlin.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*): the corner in §4 (Propositions 1 and 2), the arc from
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): the corner in §4 (Propositions 1 and 2), the arc from
 the chord, the two sweeps and what each reads in §4, the one-length circle in §5 (Proposition 3, with the derivation of the
 circle from a uniform returning sweep as part (g)), and the three paths in §12.2.

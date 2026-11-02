@@ -429,5 +429,5 @@ addresses are given before anything arrives. The payloads are met at them.
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
   *Physics Letters A* 128, 391–394.
 
-The theorem and its proof are in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*, whose §3 has the hand beside the lighthouse and Mercator's map), §7.2 (Theorem 6), with the closure table, what breaks
+The theorem and its proof are in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, whose §3 has the hand beside the lighthouse and Mercator's map), §7.2 (Theorem 6), with the closure table, what breaks
 it, the four cases and the three cases in data; the background in §1.

@@ -379,6 +379,6 @@ are looking at, and you can move it.
   large hierarchies. *Proceedings of CHI '95*, 401–408.
 - Williams, L. (1983). Pyramidal parametrics. *Computer Graphics (SIGGRAPH '83)* 17(3), 1–11.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*): the two address spaces in §6 (Proposition 4, the
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): the two address spaces in §6 (Proposition 4, the
 in-place lay, why halving, floating point, Mercator's map, one figure and three rulers) and level of detail and the
 choice of H in §8 (H is a zoom, a fixed count aimed by H, the corner follows the focus, Corollary 6.1).
