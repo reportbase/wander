@@ -2,9 +2,9 @@
 
 *The seventh of a series of essays on what can be known from where one stands. Draft, 28 October 2026.*
 
-The first six essays built the geometry from the inside out. A reader holds one length, H, and turns it. The turn gives the
-circle, the readings are the Cauchy, and the corner sits at their median. Ratios are free and amounts cost something
-carried in.
+The first six essays built the geometry from the inside out. A reader holds one length, H, its thumb held out at arm's
+length, points it at the mountain and turns it. A writer watching draws the circle; the reader holds none, its readings are
+the Cauchy, and the corner sits at their median. Ratios are free and amounts cost something carried in.
 
 This essay goes the other way. It looks at places where people met the geometry long before anyone named it: a lamp on a
 cliff, a navigator's chart, a statistician dividing by a standard deviation, a graph drawn with equal axes, a camera with
@@ -12,10 +12,10 @@ square pixels, a sky seen from a moving ship. Each field found the same thing fo
 show one requirement and one freedom. The requirement is that whatever is drawn with two axes must be drawn with both at
 one length, or the turn is lost. The freedom is the size, which every one of them leaves to be fixed some other way.
 
-The third essay already took three cases from data: LIGO's two detectors, the quasar dipole, and photons arriving one at
-a time. Those sorted the address from the payload. The cases here are older and more familiar, and they sort something
-else: what the one-length circle looks like once it is drawn on a page, a shore or a chart, where a second axis exists and
-can be stretched.
+The third essay already took three cases from data: LIGO's two detectors, the quasar dipole, and photons arriving one at a
+time. Those sorted the address from the payload. The cases here are older and more familiar, and they sort something else:
+what the one-length circle, the writer's drawing of the reader's pointing, looks like once it is drawn on a page, a shore
+or a chart, where a second axis exists and can be stretched.
 
 ---
 
@@ -50,7 +50,7 @@ paces along the sand. The paces are amounts, carried in by walking; the lamp's t
 **Where the path goes.** Each flash travels β/cos θ to reach the shore, a different length for every flash. That length
 cancels. The landing depends only on the ratio of the flash's two legs, β out to sea and x − α along the shore, and one
 length remains, β. It is the same for every flash because the shore is straight. So the lighthouse is one length turned,
-the lamp's distance playing H.
+the lamp's distance playing H, the thumb.
 
 **Drawing it with the shore stretched.** Now draw the picture on paper and make a mistake: draw the shore at c times the
 scale of the sea. Write it as V = cH, the sea drawn at H and the shore at cH.
@@ -64,10 +64,11 @@ All three return to what they should be if and only if c = 1. The drawing with t
 only one in which the turn is still a turn: the median flash at 45°, half the landings within one lamp-distance, the near
 side the mirror of the far.
 
-**Drawing it at the wrong size.** Now make a different mistake: draw the picture at c = 1 but with the wrong lamp
-distance, any H in place of β. Each landing is laid H·tan θ from the foot. Every angle is kept, and the 45° flash is still
-the corner. Every length is off by β/H, along the shore and out to sea alike. That is not a distortion, it is a similar
-figure. The picture is right in every way a reading can check and wrong only in its scale, which no reading fixes.
+**Drawing it at the wrong size.** Now make a different mistake: draw the picture at c = 1 but with the wrong lamp distance,
+any H, a thumb of any size, in place of β. Each landing is laid H·tan θ from the foot. Every angle is kept, and the 45°
+flash is still the corner. Every length is off by β/H, along the shore and out to sea alike. That is not a distortion, it
+is a similar figure. The picture is right in every way a reading can check and wrong only in its scale, which no reading
+fixes.
 
 The two mistakes are different in kind. A stretch, c ≠ 1, breaks the turn and moves the median off the corner. A wrong
 size, H ≠ β, breaks nothing that can be read. The first is a stretch, the second a zoom.
@@ -81,10 +82,11 @@ find the amount: here the lamp turns and the flash is the amount, and the beach 
 **The lamp, the shore and V.** The picture holds the Cauchy in each of the three forms the second essay derived. At the
 lamp, the reading tan θ is the standard half-Cauchy of one length turned: scale 1, no V, the corner at its median. On a
 drawing with two axes it is a Cauchy of scale c, the ratio of the shore's drawn length to the sea's. On the beach the marks
-follow C(α, β), a location and a scale, both amounts, both moved by scaling the world. So V comes in only as the scale,
-and only when someone finds the shore and lays a ruler along it: the walker's paces are the writing. And the marks have no
-mean for the reason the third essay gave: they are the lamp's addresses carried onto the sand, directions written as
-places, and directions have no sum. The flashes' light, which is payload, averages as any amount does.
+follow C(α, β), a location and a scale, both amounts, both moved by scaling the world. So V, the shore playing the mountain
+in the distance, comes in only as the scale, and only when someone finds the shore and lays a ruler along it: the walker's
+paces are the writing. And the marks have no mean for the reason the third essay gave: they are the lamp's addresses
+carried onto the sand, directions written as places, and directions have no sum. The flashes' light, which is payload,
+averages as any amount does.
 
 ---
 
@@ -116,10 +118,10 @@ That is Mercator's chart of 1569. Where c = 1 at every latitude, the slope tan �
 course is a straight line. That is why navigators have laid compass courses on it for four and a half centuries.
 
 **The small circle.** A circle of small radius δ on the globe, its points δ·(cos t, sin t) north and east, is drawn as
-δ·(f′(φ)·cos t, sec φ·sin t): an ellipse whose axes stand in the ratio c. Cartographers call it Tissot's indicatrix
-(Tissot 1881), and they use it to see at a glance what any chart does at each place. In the language of these essays, it
-is the reader's one length traced in two units. It is a circle exactly where the chart keeps angles, and among the charts
-of this kind, only Mercator's keeps it a circle everywhere.
+δ·(f′(φ)·cos t, sec φ·sin t): an ellipse whose axes stand in the ratio c. Cartographers call it Tissot's indicatrix (Tissot
+1881), and they use it to see at a glance what any chart does at each place. In the language of these essays, it is the
+writer's circle of one length, one thumb, traced in two units. It is a circle exactly where the chart keeps angles, and
+among the charts of this kind, only Mercator's keeps it a circle everywhere.
 
 **Four charts, one course.** In v and h, with v = sin φ (the height above the equator's plane) and h = cos φ (the distance
 from the axis), four familiar cylindrical charts compare like this. The last column is the course northeast, drawn at
@@ -146,9 +148,9 @@ angle. It is the same kind of freedom as the lighthouse drawn at the wrong size:
 anything, and Mercator lets the scale vary from latitude to latitude.
 
 The fourth essay made a further point, which is worth repeating here only briefly. Mercator's chart is not a picture of
-what a reader sees. It is a chart of the whole field, every far level drawn alike, with no focus. A reader's turn is
-centred on what it looks at, its far field in proportion. Mercator's levels belong to distance laid by a count of places,
-not to the picture.
+what a reader sees. It is a chart of the whole field, every far stretch, from a value to twice it, drawn alike, with no
+focus. A reader's turn is centred on what it looks at, its far field in proportion. Mercator's equal stretches belong to
+distance laid by a count of places, as much room from one thumb to two as from four to eight, not to the picture.
 
 ---
 
@@ -229,9 +231,10 @@ so it is the only one in which the sweep is a turn and the median of every pair'
 
 ## 5. Where c ≠ 1 comes from
 
-The cases above invite an objection: "V = H is still a choice. Someone decided to draw both axes at one length, and
-could have decided otherwise." The second essay answered it. It is a writer's objection, supposing someone who holds both
-axes and sets c; a reader whose sweep is a turn holds one length and has no c to set.
+The cases above invite an objection: "V = H is still a choice. Someone decided to draw both axes at one length, and could
+have decided otherwise." The second essay answered it. It is a writer's objection, supposing someone who holds both axes
+and sets c, who holds the thumb up to equal the mountain; a reader whose sweep is a turn holds one length and has no c to
+set.
 
 But a c ≠ 1 can still appear in what a reader's readings are taken through, imposed rather than chosen. When it does, it
 has a signature, and the cases above sort into four.
@@ -240,9 +243,9 @@ has a signature, and the cases above sort into four.
 - **It is uncalibrated.** Unequal gains, pixels that are not square, variables left in their own units: c is imposed by
   the instrument or the data's units. The median of the readings then sits at c instead of on the corner, and
   standardizing restores it. Whitening, square pixels and calibrated stereo pairs are cures for this case.
-- **An estimate has been taken for the circle.** What is known or guessed of the other's true size belongs to the
-  amounts, a shift in levels. Redrawing the circle with it runs the estimate together with c. The lighthouse drawn with the
-  shore stretched because someone thought the shore "should" look longer is this mistake.
+- **An estimate has been taken for the circle.** What is known or guessed of the other's true size belongs to the amounts,
+  a factor on them. Redrawing the circle with it runs the estimate together with c. The lighthouse drawn with the shore
+  stretched because someone thought the shore "should" look longer is this mistake.
 - **It does not turn.** If the measure is not a turn at all, a boost or some other group, there is no circle to stretch.
   It has another geometry, with no corner at its median and other tails. Section 7 meets a boost, and finds that its
   readings still come back to a turn in the right chart.
@@ -333,10 +336,10 @@ The second is a weighting of the payload at each address, and it moves no addres
   crowding, and D² is the payload: energy and arrival rate, D each. The D⁴ is standard. The split into two squares, one
   for addresses and one for payload, is these essays' reading.
 
-**Reading one's own speed from directions alone.** Lay each direction on the level ξ = −ln tan(θ/2), the quantity
-particle physicists call pseudorapidity. On that axis aberration is a shift by η exactly: every star slides the same
-distance. A sky uniform in the stars' frame lies as ½·sech²ξ, a bell whose median is the plane square to the motion. Seen
-from the moving frame it lies as ½·sech²(ξ′ − η), the same bell with its median moved to η.
+**Reading one's own speed from directions alone.** Lay each direction on the axis ξ = −ln tan(θ/2), the quantity particle
+physicists call pseudorapidity. On that axis aberration is a shift by η exactly: every star slides the same distance. A sky
+uniform in the stars' frame lies as ½·sech²ξ, a bell whose median is the plane square to the motion. Seen from the moving
+frame it lies as ½·sech²(ξ′ − η), the same bell with its median moved to η.
 
 So a reader holding directions alone can read its own rapidity, a reading, with no clock, no frequency and no speed of
 light carried in. It needs two things of the sky: that every source is counted whatever its brightness, and that the
@@ -346,7 +349,7 @@ colours. That is still a reading, needing no rest frequency, but no longer of di
 factor as a frequency, a shift of a spectral line, needs the line's rest frequency carried in, a known kind of atom: a
 writing.
 
-The `boost-sky.html` demo shows the slide. A sky drawn on the level ξ moves bodily by η as the boost grows, and the
+The `boost-sky.html` demo shows the slide. A sky drawn on the axis ξ moves bodily by η as the boost grows, and the
 directions sampled from it follow the slide with no table rebuilt.
 
 **Three rulers again.** The fourth essay laid one reading x three ways: the writer's number line x, the turn θ = arctan x,

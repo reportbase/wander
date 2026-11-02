@@ -54,7 +54,7 @@ The landmarks are the ones every essay has met.
 - **Home**: the arrival is nothing, v/h = 0. The screen shows black, truthfully.
 - **The corner**: the arrival equals the hold, v/h = 1. Nothing has changed.
 - **The horizon**: the hold becomes small against the arrival. A register of finite size cannot follow the reading
-  there; past its last level everything reads the same, and that clip is the register's edge, not an error.
+  there; past its last step everything reads the same, and that clip is the register's edge, not an error.
 
 *The Unit Rule* specified its reader as a short list of capabilities, each paid for in state, never in a unit.
 
@@ -62,7 +62,7 @@ The landmarks are the ones every essay has met.
 |---|---|---|
 | 0 | reception: arrivals in order | nothing |
 | 1 | relation: the arrival read against the hold | one held value |
-| 2 | representation: the reading named by its level | a step g |
+| 2 | representation: the reading named by its count of steps | a step g |
 | 3 | continuity: something held across the gaps | a carry rule |
 | 4 | landmark: the corner crossed, and counted | a direction bit and two counters |
 
@@ -75,28 +75,28 @@ once; this reader holds one value and the next arrival.
 
 ---
 
-## 3. The levels, and the step
+## 3. The steps, and the step size
 
-The register names each reading by a whole number of steps of a ratio g greater than 1: the level n nearest
+The register names each reading by a whole number of steps of a ratio g greater than 1: the count n nearest
 log_g(arrival ÷ hold). The run of those numbers is the record.
 - **The step is the reader's, not the stream's.** Nothing in the broadcast recommends a g. A finer step buys resolution
-  and costs levels.
+  and costs more steps.
 - **One step, repeated, is the only discrete design.** Every discrete set of ratios closed under multiplication is the
   powers of one ratio. Two unrelated ratios together, 2 and 3, are dense: their products come as close as you like to any
-  ratio at all. That is why levels, wherever they appear, are one ratio repeated.
-- **The count of levels is a logarithm in whole numbers.** "How many steps of g from the hold to the arrival" is log_g,
+  ratio at all. That is why such steps, wherever they appear, are one ratio repeated.
+- **The count of steps is a logarithm in whole numbers.** "How many steps of g from the hold to the arrival" is log_g,
   rounded. The reader computes no logarithm. The logarithm is what its count becomes when the steps are made fine. This
   is the fourth essay's lay past the corner, 1 + ln s by count of addresses, met in time.
-- **A logarithm of one amount is not formed.** A level needs two magnitudes, a hold and an arrival. "The logarithm of
+- **A logarithm of one amount is not formed.** A count of steps needs two magnitudes, a hold and an arrival. "The logarithm of
   five metres" is not forbidden; it is not yet a reading.
-- **The count does not carry the world's size.** Scaling the stream shifts the hold's level and leaves every reading
-  where it was. The reader's count of levels is fixed beforehand, the fourth essay's K, apart from whatever N the stream
+- **The count does not carry the world's size.** Scaling the stream shifts the hold's count and leaves every reading
+  where it was. The reader's count of steps is fixed beforehand, the fourth essay's K, apart from whatever N the stream
   has.
 
-**Odd and even K.** With an even number of levels the corner, v/h = 1, falls on a boundary between two of them; with an
-odd number one level is centred on it. For this reader the choice is not a matter of taste. Show a one-slot
+**Odd and even K.** With an even number of steps the corner, v/h = 1, falls on a boundary between two of them; with an
+odd number one step is centred on it. For this reader the choice is not a matter of taste. Show a one-slot
 reader a still scene and it is handed its own hold, look after look, with its reading sitting exactly on the corner. With
-31 levels it returns the hold times 1.00000. With 32 it must round half a step one way or the other, and returns the hold
+31 steps it returns the hold times 1.00000. With 32 it must round half a step one way or the other, and returns the hold
 times 1.01815: a twitch on every look of a scene that is not moving. A reader that must be able to say "nothing changed"
 needs an odd K. Other readers need not.
 
@@ -117,7 +117,7 @@ It assumes nothing about the stream and costs one slot. It is the rule a reader 
 the reader's unit for the moment, which is where the rule's name comes from.
 
 It has two outputs.
-- **A level.** Each arrival is placed against the hold, which is what makes the stream readable at all.
+- **A count of steps.** Each arrival is placed against the hold, which is what makes the stream readable at all.
 - **The corner, as an event.** The look at which the reading crosses 1. Two readers with different steps and different
   gains find the same look, because a crossing of 1 needs no scale. That is the pier: the turn of the tide, agreed by
   people counting in feet and in metres.
@@ -135,18 +135,18 @@ with information about the stream. The unit rule is the one member of the space 
 ## 5. Reading is seeking
 
 A reader with a finite register has to keep its hold near the arrivals, or the arrivals run off the edge. *The Unit Rule*
-proved that this is not optional. Its premises: the reading is the arrival's level less the hold's; the register reads
-while that difference is at most R and clips otherwise; the stream steps at most J levels a look and is told nothing
+proved that this is not optional. Its premises: the reading is the arrival's count less the hold's; the register reads
+while that difference is at most R and clips otherwise; the stream steps at most J steps a look and is told nothing
 about the reader; the reader knows no window the stream will stay in, since that would be a unit.
 - **A hold that never moves** is clipped after finitely many looks, for some stream.
 - **A reader reads every stream** exactly when its hold tracks the arrivals, within R. It must keep returning to the
   corner.
-- **"Hold while the reading is within one level, else move the hold to the arrival"** keeps the reading within J, with
+- **"Hold while the reading is within one step, else move the hold to the arrival"** keeps the reading within J, with
   no model of the stream. The price of knowing nothing is a lateness of one of the stream's own steps.
 
 This is the fourth essay's "the corner follows the focus", met in time. And the band, hold until the reading leaves ±1,
 is a device found twice: a playground study of a first-person view found that re-laying the corner only when the look
-had left a band of 0.4 levels about it moved the corner on one look in twenty, for 1% more coarseness. A reader moves
+had left a band of 0.4 nats about it moved the corner on one look in twenty, for 1% more coarseness. A reader moves
 its corner only when the look has left a band about it.
 
 What the snap buys is not accuracy but **stretches of agreement**. At the look where the hold moves, the reading is
@@ -157,9 +157,9 @@ it held 1,622 times and moved 378. Where a model is exactly right, a constant tr
 look and the unit rule wobbles. A predictor's stillness is borrowed from its premise. The unit rule's holds whenever
 nothing has left the band.
 
-Measured over 20,000 looks with a register of 15 levels and a stream that steps at most one: a fixed hold is clipped on
+Measured over 20,000 looks with a register of 15 steps and a stream that steps at most one: a fixed hold is clipped on
 18,087 looks of a random walk, 19,975 of a trend and 18,350 of a stream that turns every 200. The unit rule is never
-clipped; its worst readings are 1.99, 1.20 and 1.80 levels. A linear predictor is never clipped either, and its worst are
+clipped; its worst readings are 1.99, 1.20 and 1.80 steps. A linear predictor is never clipped either, and its worst are
 1.98, 0.60 and 1.80. Its advantage is gone once the stream turns.
 
 ---
@@ -178,7 +178,7 @@ median 1 the hold settles at 1.11, with the mean at 1.69.
 
 Once the hold sits at the median, the far arrivals cancel: of 50,335 arrivals past 16, 24,145 were above the hold and
 26,190 below. That says they no longer move the hold. It does not license ignoring them. A reader that clips before its
-hold has settled strands itself: told to ignore arrivals four levels from its start, it ignored 99.8% of looks and left
+hold has settled strands itself: told to ignore arrivals four steps from its start, it ignored 99.8% of looks and left
 its hold at −101 on a stream of median 10.
 
 ---
@@ -193,13 +193,13 @@ price the rule, and they answer a writer's question, how closely the held values
 - **A tailored step,** like a camera's auto-exposure, is 2.3 times better at the median and 3 times worse at the worst
   look, and its records close on 2 of the 49 signals against the unit rule's 49 of 49. A step that changes during the run
   states its symbols in different units, and the sum stops adding up.
-- **The unit rule with more levels** at the same bill beats the tailored step's worst look sixfold and still closes on all
+- **The unit rule with more steps** at the same bill beats the tailored step's worst look sixfold and still closes on all
   49.
-- **An oracle** given the whole schedule in advance is 28 times better. Four fifths of that is a finer level, which the
+- **An oracle** given the whole schedule in advance is 28 times better. Four fifths of that is a finer step, which the
   unit rule can buy too. Offset the oracle by one sample and it clips 536 times.
 
 The paper's summary stands: **at a matched bill, with every guarantee kept, sophistication buys about 1.2 times.** Every
-larger figure was more levels in disguise, a handicapped baseline or a guarantee given up. Beating the rule costs
+larger figure was more steps in disguise, a handicapped baseline or a guarantee given up. Beating the rule costs
 information about the stream, and when that information is wrong the cost is paid in the worst look, the clips and the
 checksum.
 
@@ -207,7 +207,7 @@ checksum.
 
 ## 8. The turn as a landmark
 
-The question where the rule wins by much more than 1.2 is not "what was the level" but "where did the stream turn". A
+The question where the rule wins by much more than 1.2 is not "what was the reading" but "where did the stream turn". A
 turn is the sign of the reading changing: the arrival stops exceeding the hold and starts falling short. Two readers with
 different steps and gains agree that it happened. A count of looks between two turns is a duration in the stream's own
 terms, so the reader carries a reference it was never handed. That is designating, not sizing: the turn is a place in
@@ -260,16 +260,16 @@ scoring window; the second, at 60 digits, killed nothing.) Scaling the world doe
 of them is unchanged by it. The order test does.
 
 **Noise and a threshold.** A threshold is an amount, and the unit it is written in decides what it costs. A debounce on
-order alone, three opposite signs in a row, keeps every increasing change. A threshold in levels keeps only the scale of
+order alone, three opposite signs in a row, keeps every increasing change. A threshold in steps keeps only the scale of
 the world. A threshold in amounts keeps neither. The price of order alone is noise: it makes false turns once the noise is
-a few percent of a look's change, where a threshold in levels makes none at five times that noise or more.
+a few percent of a look's change, where a threshold in steps makes none at five times that noise or more.
 
 **A recorded tide.** Then the pier, for real: NOAA's six-minute water levels for September 2026 at San Francisco and
 Boston, with NOAA's own published highs and lows as the independent record of when the tide turned. The split held
 exactly on data no one made for the test.
 - Order alone gave the same turns under a change of datum, metres to feet, and a cube of the heights.
 - A threshold in amounts kept the datum and lost the unit.
-- A threshold in levels kept the unit and lost the datum.
+- A threshold in steps kept the unit and lost the datum.
 
 Order alone, with no threshold, reported exactly one turn between each pair of NOAA's highs and lows at Boston every six
 minutes, and at both stations every eighteen. It was the earliest of the detectors there. Where the water wiggled more in
@@ -307,14 +307,14 @@ depends on what is held.
 
 On a turning rod, the unit rule's corners gather at the turns (31.5% near a turn against 13.4% on a flank) and the trend
 rule's on the straight stretches (21.2% against 41.5%). The same law names the unit rule's blind spot. A stream climbing
-exactly one level a look is as quiet to it as a still one: a steady geometric ramp is all corners under every rule.
+exactly one step a look is as quiet to it as a still one: a steady geometric ramp is all corners under every rule.
 
 ---
 
 ## 11. What the record is
 
-**A projection, not a loop.** Every value the unit rule holds is a level of the lattice anchored at the founding arrival,
-and rounding from any level lands on the level nearest the arrival. So the held run is the nearest-level projection of
+**A projection, not a loop.** Every value the unit rule holds is a point of the lattice anchored at the founding arrival,
+and rounding from any point lands on the point nearest the arrival. So the held run is the nearest-point projection of
 the stream, the same whatever path led there. That was verified in exact integer arithmetic on every sample of 56 scenes.
 A held value grows stale within a gap; it does not decay across a run.
 
@@ -324,13 +324,13 @@ not forced. Continuity in a record is the carry rule, whatever it is.
 
 **Two checksums, both needed.** The sum of the symbols telescopes to zero on a scene that returns, and ignores order. The
 sequence of crossings, corners passed and clips, must come round to where it began, and keeps order. Neither implies the
-other, and both can only refute: a scene ending within half a level of its start rounds to "returned".
+other, and both can only refute: a scene ending within half a step of its start rounds to "returned".
 
 > **An open record proves the scene did not return. A closed record does not prove it did, and how much it can refute is
 > set by the step.**
 
-Closing also needs the horizon resolved. On a loop 40 levels high, every register from 64 levels down to 4 closes while
-the largest step between looks is 1.1 levels. At 40 looks a lap, a register of 4 is clipped on 152 looks and the record
+Closing also needs the horizon resolved. On a loop 40 steps high, every register from 64 steps down to 4 closes while
+the largest step between looks is 1.1 steps. At 40 looks a lap, a register of 4 is clipped on 152 looks and the record
 sums to −30, the same −30 every lap: the excursion past the horizon, lost the same way each time. The corner agreed makes
 the sum telescope; the horizon resolved makes it telescope to the right total.
 
@@ -357,11 +357,11 @@ And the frame is exact over any arrivals at all: white noise gives a crossing an
 
 Four questions are left.
 1. Does the corner found this way follow a change in the world, or only a change in the sampling?
-2. Do two readers at different rates agree, once each counts in levels from its own corner? For turns this is partly
+2. Do two readers at different rates agree, once each counts in steps from its own corner? For turns this is partly
    answered: readers holding order alone at any rate inside a station's exact window report the same turns, one between
-   each pair of the tide's highs and lows. Counts in levels from each reader's corner were not compared.
+   each pair of the tide's highs and lows. Counts in steps from each reader's corner were not compared.
 3. Does the frame earn anything where a unit is available anyway?
-4. Is the unit rule's ±1 band the same reader as the first-person view's band of 0.4 levels? A test would race them on one
+4. Is the unit rule's ±1 band the same reader as the first-person view's band of 0.4 nats? A test would race them on one
    trace.
 
 ---

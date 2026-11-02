@@ -33,9 +33,9 @@ Write that standpoint as one complex number, z = m + iγ. Turn uniformly and rea
 and the readings are a Cauchy law with foot m and height γ (the third essay, section 6). In the plane this one law is
 four different things at once.
 
-**It is the uniform turn carried by a Möbius map.** A Möbius map of the line, x ↦ (ax + b)/(cx + d), moves the
-standpoint z to (az + b)/(cz + d) and carries a Cauchy law to the Cauchy law of the new standpoint. Nothing else
-changes. Every change of chart the reader can make, a new zero, a new H, the reciprocal, is such a map, and so the
+**It is the uniform turn carried by a Möbius map.** A Möbius map of the line, x ↦ (ax + b)/(cx + d), moves the standpoint z
+to (az + b)/(cz + d) and carries a Cauchy law to the Cauchy law of the new standpoint. Nothing else changes. Every change
+of chart the reader can make, a new zero, a new H (a thumb of another size), the reciprocal, is such a map, and so the
 family of Cauchy laws is closed under all of them. The third essay called this "once a Cauchy, always a Cauchy".
 
 **It is harmonic measure.** Release a random walker at the standpoint and let it wander until it first touches the line.
@@ -145,12 +145,12 @@ showed in 1878 that the only number systems with division in which multiplicatio
 real and the complex numbers. The quaternions keep division and give up the order; nothing keeps both past two
 dimensions.
 
-For the reader with two other parties this has a plain meaning. The fifth essay's two sweeps, altitude (from H up to V)
-and azimuth (round from H to V₂), are each the turn of a plane. Each on its own still composes by adding angles, still
-has its corner at 45°, still lays a half-Cauchy over its quarter turn. What fails is putting them together: a sweep in
-altitude then a sweep in azimuth is not the same motion as the two in the other order, and the wedge's demo makes the
-point by its own design. `wedge.html` step 7 places the wedge first and sweeps second ("position, then sweep"), because
-the other order would give another wedge.
+For the reader with two other parties this has a plain meaning. The fifth essay's two sweeps, altitude (from H up to V, the
+thumb up to the mountain) and azimuth (round from H to V₂), are each the turn of a plane. Each on its own still composes by
+adding angles, still has its corner at 45°, still lays a half-Cauchy over its quarter turn. What fails is putting them
+together: a sweep in altitude then a sweep in azimuth is not the same motion as the two in the other order, and the wedge's
+demo makes the point by its own design. `wedge.html` step 7 places the wedge first and sweeps second ("position, then
+sweep"), because the other order would give another wedge.
 
 ---
 
@@ -165,16 +165,17 @@ question in any number of dimensions: which part moved. The logarithm ln r survi
 logarithm's plane; only its imaginary part, which in the plane was one angle that added, becomes a direction on a
 sphere that does not.
 
-**The corners survive.** Each pair of parties has its corner, where the two shares are equal, and the reciprocal that
-swaps them leaves it in place: a mirror plane in place of a mirror line. The corner in distance, d = H, is a mirror in
-the logarithm of distance whatever the number of directions. The fifth essay's results, every pair at its corner and
-the near field in all readings a third (1/(n + 1) with n other parties), are statements about uniform directions from
-home. At home, at the centre of the directions, all three of space's laws are the same law: the uniform one. Nothing in
-the fifth essay assumed a standpoint off the centre, so nothing there depends on the plane.
+**The corners survive.** Each pair of parties has its corner, where the two shares are equal, and the reciprocal that swaps
+them leaves it in place: a mirror plane in place of a mirror line. The corner in distance, d = H, one thumb away, is a
+mirror in the logarithm of distance whatever the number of directions. The fifth essay's results, every pair at its corner
+and the near field in all readings a third (1/(n + 1) with n other parties), are statements about uniform directions from
+home. At home, at the centre of the directions, all three of space's laws are the same law: the uniform one. Nothing in the
+fifth essay assumed a standpoint off the centre, so nothing there depends on the plane.
 
-**The Cauchy wedge survives.** The two-dimensional Cauchy of the wedge's readings, (v/h, v₂/h), is the uniform law on
-the octant seen through a flat screen. It is the image of the uniform directions, with no standpoint moved. It holds in
-every dimension, and the fifth essay's numbers stand.
+**The Cauchy wedge survives.** The two-dimensional Cauchy of the wedge's readings, (v/h, v₂/h), is the uniform law on the
+octant seen through a flat screen: the writer's description of the reader's tunnel, cut to a quarter of its screen. It is
+the image of the uniform directions, with no standpoint moved. It holds in every dimension, and the fifth essay's numbers
+stand.
 
 **What depends on the plane** is everything that moves the standpoint off the centre:
 - that the mean, in the bounded chart, is the standpoint (in space it is for harmonic measure, not for the Möbius law);

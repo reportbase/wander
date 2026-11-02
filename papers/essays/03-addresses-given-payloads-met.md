@@ -2,9 +2,10 @@
 
 *The third of a series of essays on what can be known from where one stands. Draft, 28 October 2026.*
 
-The first essay found that a reader with no second length still has a circle, and that read from where it stands the
-circle is the Cauchy distribution. The second showed how one length turned gives that circle, and how two sweeps of it
-read the same point twice. This essay is about the Cauchy itself: what it is a law *of*.
+The first essay found that a reader with no second length has no circle, yet pointing its thumb at the mountain gives it
+the circle's geometry, and that read from where it stands that geometry is the Cauchy distribution. The second showed how
+one length pointed and turned generates it, the circle being the writer's drawing of the turn, and how two sweeps read the
+same point twice. This essay is about the Cauchy itself: what it is a law *of*.
 
 The usual answer is that it is a law of something measured: noise, a spectral line, a ratio of two measurements. The
 answer here is that it is the law of the places where measurements can be put, the reader's *addresses*, fixed before
@@ -34,11 +35,15 @@ distribution belongs entirely to the fingers. It is the law of how the fingers a
 can change it.
 
 One more part of the hand finishes the picture. Hold the thumb out beside the fingers: it is the one length you hold, H,
-its size yours to choose, setting only how fine the near field is drawn. The fingers are spread against it. The hand
-moves two ways, raised from the ground toward the vertical and turned round the horizontal, the altitude and the azimuth
-of the fifth essay. Held up against a mountain range, the range spans so many fingers, and with nothing else known you
-draw it at the thumb's own size; every amount you then read is off by one number, V/H, which no finger carries. The first
-essay walked to find it.
+its size yours to choose, setting only how fine the near field is drawn. The fingers are spread against it. The hand moves
+two ways, raised from the ground toward the vertical and turned round the horizontal, the altitude and the azimuth of the
+fifth essay. Held up against a mountain range, the range spans so many fingers, and with nothing else known you draw it at
+the thumb's own size, the thumb held to equal the mountain; every amount you then read is off by one number, V/H, which no
+finger carries. The first essay walked to find it.
+
+In space the window takes both hands: one spreading its fingers upright, the other round, the two thumbs crossed, each
+pane lining up with a crossing of one finger from each. The fifth essay works it out. It shows that the reader's space is
+not Cartesian, no three axes of amounts, but one thumb crossed with itself and two sweeps of fingers.
 
 *Demo: the central reader, step 1 (the hand, its fingers laid by the turn, painted by the light).*
 
@@ -166,11 +171,11 @@ is where the reader can put what arrives, never what arrives.
 
 **The geometry creates the reader.** It is tempting to picture the reader doing this work: taking two amounts and dividing
 one by the other, so that the scale cancels. It does not. The geometry removes the scale before anything is read. A
-direction arrives as a direction, with the distance along it already gone; the projection did the dividing, not the
-reader. What the light paints on a direction arrives as paint, never as so many units. So the reader manages no
-magnitudes at all, neither the size of the other party nor the size of what arrives. It has no unit to manage them in.
-Its one length, H, is its own unit: measured in itself it is 1, and what it is in metres is something only a writer can
-say. The reader has no scale whatsoever. Every magnitude, and the unit it is stated in, belongs to the writer.
+direction arrives as a direction, with the distance along it already gone; the projection did the dividing, not the reader.
+What the light paints on a direction arrives as paint, never as so many units. So the reader manages no magnitudes at all,
+neither the size of the other party nor the size of what arrives. It has no unit to manage them in. Its one length, H, the
+thumb, is its own unit: measured in itself it is 1, one thumb, and what it is in metres is something only a writer can say.
+The reader has no scale whatsoever. Every magnitude, and the unit it is stated in, belongs to the writer.
 
 **Why there is no mean.** The missing mean is usually told as the Cauchy's defect. Read as an address it is what an
 address should do. A mean is a sum of amounts divided by their count, and a direction has no length to add. To average the
@@ -274,19 +279,19 @@ The theorem is classical in its parts. Here are four cases where the reading let
 answers are known. What the reading adds is where each answer's facts belong.
 
 **Water and wine.** Richard von Mises posed it in 1928: a glass holds wine and water, and the ratio of wine to water is
-somewhere between a third and three. What is the chance it is at most two? Spread your ignorance evenly over the ratio
-and you get 5/8. Spread it evenly over the inverse ratio, water to wine, and you get 15/16. It is the standard case of
-the principle of indifference contradicting itself, and Jaynes left it open. Read as an address, the ratio is a direction,
+somewhere between a third and three. What is the chance it is at most two? Spread your ignorance evenly over the ratio and
+you get 5/8. Spread it evenly over the inverse ratio, water to wine, and you get 15/16. It is the standard case of the
+principle of indifference contradicting itself, and Jaynes left it open. Read as an address, the ratio is a direction,
 [water : wine]. Swapping the liquids carries it to its reciprocal, so every answer that treats them alike puts the chance
 of at most one at exactly a half: the corner, whatever else is assumed. And if one law must hold on every range of the
-ratio, as Jaynes required in his own problems, the only law left is the one even in levels, and the answer is ln 6 over
-ln 9, about 0.816.
+ratio, as Jaynes required in his own problems, the only law left is the one even in the logarithm of the ratio, as much
+chance between 1 and 2 as between 2 and 4, and the answer is ln 6 over ln 9, about 0.816.
 
 **The marginalization paradox.** In the 1970s Philip Dawid, Mervyn Stone and James Zidek showed that, under certain
-improper priors, two reasoners from the same data can disagree. One integrates an unknown scale out of the likelihood;
-the other reasons only from statistics free of the scale. Read with the reader's own measure on the unknown size, the
-one even in levels, they cannot disagree. The second reasoner is reading the data's direction, its address, and the
-scale's invariant measure is exactly what makes the two routes agree, whatever the law of the data.
+improper priors, two reasoners from the same data can disagree. One integrates an unknown scale out of the likelihood; the
+other reasons only from statistics free of the scale. Read with the reader's own measure on the unknown size, the one even
+in the logarithm of the size, they cannot disagree. The second reasoner is reading the data's direction, its address, and
+the scale's invariant measure is exactly what makes the two routes agree, whatever the law of the data.
 
 **Bertrand from a standpoint.** Joseph Bertrand asked in 1889 for the chance that a chord drawn "at random" in a circle is
 longer than the side of the inscribed equilateral triangle. He got three answers, ⅓, ½ and ¼, from three procedures, and

@@ -1205,6 +1205,45 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R614 (2 Nov; Tom: "Knowing H means you know N. Not Knowing H means you know K. Cauchy is the great kull"): *Reads and Writes*
   §6 "K and N": knowing N is knowing V, a writing; the reader knows K; the Cauchy a cull, the reader's work K whatever N, O(1)
   in N; knowing N, all items alike, no vantage; holding K, finest at the corner. Written with V where Tom said H (R533).
+  R615 (2 Nov; Tom: "bring the computer science paper forward and rewrite it as an essay with our newer vocabulary"): essay
+  16, `papers/essays/16-k-not-n.md`, *K, not N: reading and writing for computer science*, opening on `x = mem[a]; mem[a] = y;`:
+  the archived CS companion in the read/write and K/N vocabulary (R612–R614), its numbers carried over (the machine's
+  Cauchy from `runs/arr/infinity.mjs`), pointing to essays 8 and 12 where they go further. A card on `essays.html`, a row in
+  the essays README, in `explainers.html`'s not-yet list; the smoke test counts sixteen essays.
+  R616 (2 Nov; Tom: "2d is one thumb, 3d is both thumbs held perpendicularly"): *Reads and Writes* §7 "One thumb, two
+  thumbs": the plane one thumb (H square to the look, v/h), space two crossed thumbs (v/h and v₂/h, the wedge's pair, the 2D
+  Cauchy); both the one H, so no second length (V = V₂ = H the writer's name for equal thumbs); the right angle no amount;
+  the dimension the count of thumbs square to the look.
+  R617 (2 Nov; Tom: "Let's work a 3d parallax example, with 2 thumbs"): *Reads and Writes* §10 "In three dimensions: a tower
+  and two thumbs": top (¼, ⅓), foot (0, ⅓); a step across, only the across thumb moves 1/12, 12 thumbs off, 3 tall, 4 aside;
+  the second thumb a check, not a length (the epipolar condition; a misread step caught); a step forward scales both
+  alike. `runs/two/two_thumbs.py` (exact).
+  R618 (2 Nov; Tom: "Let's lean on the thumb metaphor. When H is discussed add the thumb reference."): H is the thumb held
+  out at arm's length. *Reads and Writes* names the thumb wherever it discusses H; formulas keep the letter. **A standing
+  rule for new writing: when H comes up, name the thumb.**
+  R619 (2 Nov; Tom: "the corner is the cross hairs of the thumbs, which in turn sets the near and far fields. The near
+  field is a uniform distributed single thumb. The far field is then 2 thumbs than 4 thumbs than 8 thumbs etc."): *Reads
+  and Writes* §6 "The crosshairs": the crossed thumbs' crossing is the corner; near field one thumb laid evenly, far field
+  two, four, eight thumbs, each the same count; move the crosshairs and the split moves.
+  The essays name the thumb wherever H comes up; essay 4 §4 has the crosshairs.
+  R620 (2 Nov; Tom: "The stain glass window metaphor can then be extended into 3d with both hands and two sets of fingers
+  and crossing thumbs"): *Reads and Writes* §3 "Two hands": one hand's fingers in altitude, the other's in azimuth, the
+  thumbs crossed at the triple corner; each pane lines up with a crossing (one finger of each), a direction of the wedge;
+  the round hand even by turn, the upright hand even in height (equal shares); the colour the payload, no second length.
+  R621 (2 Nov; Tom: "not ergonomically accurate but it does express the idea that 3d space for the reader is not Cartesian
+  and the thumb is what drives it all"): "Two hands" closes on it: the reader's 3D is one thumb crossed with itself and two
+  sweeps, not three axes of amounts; the Cartesian frame is the writer's cube. In essay 5 §4, pointers in essays 3 §1 and 1.
+  R622 (2 Nov; Tom: "Don't use the terms doubling and levels, use thumbs. Also lean on that V is the mountains in the
+  distance. The writers circle is the thumb equals the mountain."): **a standing rule for new writing in *Reads and
+  Writes* and the essays: say the far field in thumbs (two, four, eight), never "doubling" or "level"; V is the mountain
+  in the distance; the writer's circle, V = H, is the thumb equal to the mountain.** Formulas keep ln 2 and 1 + ln(d/H).
+  R623 (2 Nov; Tom: "The reader does not have a circle, instead he points his crossed thumbs at the mountain and generates
+  his personal geometry."): *Reads and Writes* §2 "The thumbs pointed"; the circle (V = H) is the writer's; the reader
+  points its thumbs and has the turn. Never give the reader a circle.
+  R624 (2 Nov; Tom: "The wedge is the writers description of the readers geometry. What the reader experiences is more of
+  a cauchy density tunnel all generated from the thumb, which changes continuously as he sweeps with perfect fidelity
+  where he ever he looks."): *Reads and Writes* §7; the wedge (octant, sphere) is the writer's; the reader has a Cauchy
+  tunnel about its line of sight, generated from the thumb, turning with the look, perfect fidelity wherever it looks.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
@@ -3002,7 +3041,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     fifteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     sixteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.

@@ -28,9 +28,9 @@ None of this changes a digit of either number. It says whose numbers they are.
 
 The series has been climbing a ladder of numbers by what it takes to make them (essay 14, the sixth section).
 
-**One length, finite steps: the rationals.** A reader holds one length, H. It can count H, double it, halve it, and
-take any length it has made over any other. Everything it makes that way is a ratio of whole numbers, a rational. Its
-readings compose by tangent addition, (a + b)/(1 − ab), which takes rationals to rationals; they turn over (s to 1/s)
+**One length, finite steps: the rationals.** A reader holds one length, H, the thumb. It can count thumbs, double H, halve
+it, and take any length it has made over any other. Everything it makes that way is a ratio of whole numbers, a rational.
+Its readings compose by tangent addition, (a + b)/(1 − ab), which takes rationals to rationals; they turn over (s to 1/s)
 and stay rational; their order is kept. The corner, s = 1, is rational. A reader working in finite steps from one length
 never leaves the rationals.
 
@@ -85,20 +85,20 @@ The reader's other freedom is size. Essay 3 and OFS §2 named the reader's ignor
 (it does not know which way it faces) and rescalings (it does not know how large anything is, κ = V*/H). Turns gave π.
 Rescalings give e.
 
-The reader counts sizes in doublings. Past the corner its addresses go a level a doubling (essay 4), and the count of
-levels between H and a thing 8H away is 3, exactly. A doubling is a step the reader takes, like a step of tangent
-addition: from one length, finite, rational. Halving H is as easy. A thing 3H away is between levels, and the reader
-holds it there, between its first and second doubling, by its order among the levels (essay 4, "the count is the level
-of detail").
+The reader counts sizes in thumbs: one thumb, then two, four, eight. Past the corner its addresses go as many to each
+stretch from a count of thumbs to twice it (essay 4), and a thing 8H away, 8 thumbs, is past 2, 4 and 8: three stretches,
+exactly. Taking a length twice is a step the reader takes, like a step of tangent addition: from one length, finite,
+rational. Halving H is as easy. A thing 3H away, 3 thumbs, is past two thumbs and short of four, and the reader holds it
+there by its order among the counts of thumbs (essay 4, "the count is the detail").
 
-The number of levels as a continuous quantity is the logarithm, and to give it a value is to choose a unit for it and
-finish a series. In doublings, log₂ 3 = 1.58496…; in the natural unit, ln 3 = 1.0986…; one doubling is ln 2 =
-0.693147…, which is
+How many times the thumbs go twice over to reach a thing, counted as a continuous quantity, is the logarithm, and to give
+it a value is to choose a unit for it and finish a series. Counted in twos, log₂ 3 = 1.58496…; in the natural unit, ln 3 =
+1.0986…; one step from a count of thumbs to twice it is ln 2 = 0.693147…, which is
 
   ln 2 = 1 − 1/2 + 1/3 − 1/4 + …
 
 again an alternating sum of fractions, again every partial sum a fraction (a thousand terms give 0.69265), again the
-number itself only at the end. The doubling is the reader's step. Its length in nats is the writer's measure of it.
+number itself only at the end. Twice the thumbs is the reader's step. Its length in nats is the writer's measure of it.
 
 e is the base that makes that measure natural: the size reached by growing continuously at a rate of one, every bit of
 growth itself growing at once. That is Bernoulli's bank with the payments made infinitely often, and it is
@@ -106,12 +106,12 @@ growth itself growing at once. That is Bernoulli's bank with the payments made i
   e = 1 + 1/1! + 1/2! + 1/3! + … ,
 
 ten terms of which give 98641/36288 = 2.7182815, three ten-millionths short, and no number of terms gives e. The
-reader steps its size by doubling, a step at a time. To compound without steps is to have finished infinitely many
+reader steps its size by taking it twice, a step at a time. To compound without steps is to have finished infinitely many
 steps, and that is what e records.
 
 And as π was the turn completed, e is tied to the size completed. The unknown size of the world, in the units the reader
 might have used, is a₀ = ln(V*/H) (OFS §7.4, essay 6: a shape as ln r = a₀ + f(θ), where no ratio reads a₀). The reader
-reads the shape, f, as differences of levels, and never a₀. To give a₀ a value is to know V*, the size as an amount: a
+reads the shape, f, as ratios of its radii, and never a₀. To give a₀ a value is to know V*, the size as an amount: a
 writing. The constant that turns a size into a number of nats belongs to the same writer who knows the size.
 
 ## 4. Two groups, two constants
@@ -125,13 +125,13 @@ their angles add. The constants live in those two maps.
 
 - The turns close. A turn by a full revolution is no turn at all, so the turn's exponential map has a period, and the
   period is 2π. π is the measure of the group's closing.
-- The rescalings do not close. Doubling, doubling again, never comes back. Their exponential map has no period, only a
-  base, and the base that makes its parameter count growth at a rate of one is e.
+- The rescalings do not close. Twice, then twice again, never comes back. Their exponential map has no period, only a base,
+  and the base that makes its parameter count growth at a rate of one is e.
 
-So π is what you need to say that the turn comes back, and e is what you need to say how the scale goes on. The reader
-uses both groups without stating either constant: it composes turns by tangent addition and sizes by doubling, finite
-steps, rational. The writer, who holds the whole of each group (the turn once round, the scale as a continuum of
-amounts), states its constant.
+So π is what you need to say that the turn comes back, and e is what you need to say how the scale goes on. The reader uses
+both groups without stating either constant: it composes turns by tangent addition and sizes by taking them twice, finite
+steps, rational. The writer, who holds the whole of each group (the turn once round, the scale as a continuum of amounts),
+states its constant.
 
 The complex logarithm puts them in one line:
 
@@ -172,16 +172,17 @@ along it; the reader's hand passes it; the reader orders it among its neighbours
 make its number. It holds the direction as a pair and its place by order; the decimal 1.5574… is the writer's account of
 where it is.
 
-The same goes for the levels. A thing e times H away is a thing the reader holds between its first and second doubling,
-nearer the second. The reader holds it; it does not hold "e times".
+The same goes for sizes. A thing e times H away, e thumbs, is a thing the reader holds past two thumbs and short of four.
+The reader holds it; it does not hold "e times".
 
-This is essay 14's "met, not made" one rung higher. The reader meets irrational directions and does not make √2; it
-meets transcendental directions and sizes and does not make π or e. Its own numbers, the ones it makes, are the
-rationals, and with them it does everything a reader does: composes, turns over, orders, counts levels, finds the corner.
+This is essay 14's "met, not made" one rung higher. The reader meets irrational directions and does not make √2; it meets
+transcendental directions and sizes and does not make π or e. Its own numbers, the ones it makes, are the rationals, and
+with them it does everything a reader does: composes, turns over, orders, counts thumbs, finds the corner.
 
-V is learned the same way. A reader becoming a writer by parallax (the sixth essay, "Becoming the writer") knows V by
-degrees: in the step it took, to within a band set by its baseline and its resolution, for the things near enough. Each
-standpoint more is one more finite step; holding V exactly, like holding π, is the end of a process that does not end.
+V, the mountain in the distance, is learned the same way. A reader becoming a writer by parallax (the sixth essay,
+"Becoming the writer") knows V by degrees: in the step it took, to within a band set by its baseline and its resolution,
+for the things near enough. Each standpoint more is one more finite step; holding V exactly, like holding π, is the end of
+a process that does not end.
 
 ## 7. A machine is a reader here
 
@@ -207,9 +208,9 @@ It changes nothing about π or e or how to compute them. It sorts.
 - **π is a writer's number** because it states a turn closed, and closing the turn is knowing V (OFS §3.8). Wherever π
   appears in a result (π/2 and 2/π, the Cauchy's normalizing 1/π, a circle's area), the result is the writer's measure
   of something, and the reader's own version of it is a finite statement: an order, a count, a corner.
-- **e is a writer's number** because it states a scale completed, and giving a size as an amount is knowing V*. Wherever
-  e or the natural logarithm appears (the lay's 1 + ln x, a decay's e^(−t/τ), the Gaussian's e^(−x²/2)), the reader's
-  version is a count of doublings, an order, a ratio.
+- **e is a writer's number** because it states a scale completed, and giving a size as an amount is knowing V*. Wherever e
+  or the natural logarithm appears (the lay's 1 + ln x, a decay's e^(−t/τ), the Gaussian's e^(−x²/2)), the reader's version
+  is a count of thumbs, two, four, eight, an order, a ratio.
 - **The reader's arithmetic is the rationals**, made from one length in finite steps, and it is enough for everything
   the reader does. The algebraic numbers need a second length, the transcendentals a completed whole; both are where the
   reader becomes a writer (essay 6, "Becoming the writer").
@@ -221,8 +222,9 @@ the turn comes back, and the scale goes on, and to say either in a number you ha
 
 - `one-read.html`: the landing point ½e^(2iθ) at +1, i and −1 as the turn goes from zero to the horizon, and the Cayley
   disc; the reader's pair against the writer's notation.
-- `levels.html`: the reader's lay, each level past the corner one doubling, ln 2 wide on the writer's ruler.
-- `slide-rule.html`: readings laid as levels, ratios read as gaps between places, no number of nats needed.
+- `levels.html`: the reader's lay, each stretch past the corner from a count of thumbs to twice it ln 2 wide on the
+  writer's ruler.
+- `slide-rule.html`: readings laid on the logarithm, ratios read as gaps between places, no number of nats needed.
 - `paths.html`: the share of the sweep along three paths, ½ at the corner on each; the angle π/4 is the circle's alone.
 - `mountain.html`: the two vantages, π/2 and 2/π, the writer's measure of the reader's sweeps, their product 1.
 
@@ -251,8 +253,9 @@ the turn comes back, and the scale goes on, and to say either in a number you ha
 
 The dates and titles above are given from memory and are to be checked against the texts.
 
-The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): §2 (the reader's ignorance as turns and rescalings; zero and a new zero;
-tangent addition), §3.8 (the reader never knows V), §4 ("Rates, not angles"; the landing point), §5 ("Why halving",
-"Circular mathematics without V"), §7.4 (a shape as ln r = a₀ + f(θ)), Appendix A ("Polar form and the complex
-logarithm", "What square roots reach") and Appendix B ("Machine arithmetic and the infinite"). The essays before this one:
-2 (§9, Euler's formula), 4 (levels and halving), 12 (what a machine holds), 14 (the ladder, "met, not made").
+The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is
+*Reads and Writes*): §2 (the reader's ignorance as turns and rescalings; zero and a new zero; tangent addition), §3.8 (the
+reader never knows V), §4 ("Rates, not angles"; the landing point), §5 ("Why halving", "Circular mathematics without V"),
+§7.4 (a shape as ln r = a₀ + f(θ)), Appendix A ("Polar form and the complex logarithm", "What square roots reach") and
+Appendix B ("Machine arithmetic and the infinite"). The essays before this one: 2 (§9, Euler's formula), 4 (thumbs past the
+corner, and halving), 12 (what a machine holds), 14 (the ladder, "met, not made").

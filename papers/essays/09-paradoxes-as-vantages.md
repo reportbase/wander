@@ -38,9 +38,9 @@ appears, and how big something A carries appears, a hand at arm's length. A's ob
 
   r_A = (how big B appears) / (how big my hand appears).
 
-That is a ratio, a reading in the sense of the first essay. Its denominator is A's own one length, A's H. B does the same
-from the other end and gets r_B, against B's own hand. The two readings have different denominators, and each denominator
-is private to its seat.
+That is a ratio, a reading in the sense of the first essay. Its denominator is A's own one length, A's H: its thumb at
+arm's length. B does the same from the other end and gets r_B, against B's own hand. The two readings have different
+denominators, and each denominator is private to its seat.
 
 Both readings are correct, and both are less than 1. "Less than 1" means, in each case, "the other looks smaller than my
 hand". There is no contradiction yet.
@@ -157,9 +157,9 @@ The field has a specific shape, two private denominators. The other paradoxes in
 it is worth stating before going on.
 
 The essays have kept apart two vantages.
-- **The reader** stands somewhere. It holds one length, its H, and turns it. What it reads are ratios: directions,
-  addresses, the order of things, the corner where two of its relations are equal. It holds no total and no count of
-  what there is, and it meets a horizon.
+- **The reader** stands somewhere. It holds one length, its H, the thumb, and turns it. What it reads are ratios:
+  directions, addresses, the order of things, the corner where two of its relations are equal. It holds no total and no
+  count of what there is, and it meets a horizon.
 - **The writer** holds the whole. It has every amount in a unit, both hemispheres, the count, the sum. It is the
   blueprint, the equation on the page, the globe. It has no standpoint, no corner and no horizon.
 
@@ -185,10 +185,10 @@ The rest of the essay goes through the catalogue by kind.
 **Zeno's runner.** To cross a distance one must first cross half of it, then half of what is left, without end; so the
 runner never arrives. The writer holds the whole series and sums it: ½ + ¼ + ⅛ + … = 1. The reader counts the steps, and
 each halving is one more step, without end. The fourth essay showed both on one lay. Drawn by length, on the in-place lay,
-every doubling past the corner fits into one more H, so infinitely many levels fit in a finite stretch. Counted, each level
-takes the same number of addresses, so the count never ends. Finite by length and endless by count: both true, from
-different vantages. The standard resolutions, the convergent series and Aristotle's distinction between potential and
-actual infinity, are the two vantages named.
+the stretches past the corner, one thumb to two, two to four, four to eight, all fit into one more H, one more thumb, so
+infinitely many fit in a finite length. Counted, each takes the same number of addresses, so the count never ends. Finite
+by length and endless by count: both true, from different vantages. The standard resolutions, the convergent series and
+Aristotle's distinction between potential and actual infinity, are the two vantages named.
 
 **Galileo's squares and Hilbert's hotel.** There are as many square numbers as whole numbers, since each n pairs with n²,
 yet the squares are a vanishing share of the whole numbers (Galileo 1638). A hotel with infinitely many rooms, every one
@@ -198,8 +198,8 @@ is true from its vantage. Cantor's cardinality makes the writer's answer precise
 
 **The coastline.** A coastline's measured length grows without bound as the ruler shrinks (Richardson 1961; Mandelbrot
 1967). "The length" is the writer's single amount. The measured length is a reader's count at its own step, and the fourth
-essay's level of detail is exactly that count: a thing is held at the levels its span covers. For such a curve the
-writer's single length does not exist, and what exists is the count at each step.
+essay's detail is exactly that count: a thing is held as finely as its span covers. For such a curve the writer's single
+length does not exist, and what exists is the count at each step.
 
 **A growing list looks finished.** A reader of fixed resolution watches a list grow. Past a size set by its resolution,
 the part not yet arrived falls below one step: the frontier cannot be told from the horizon, and the list looks
@@ -218,28 +218,29 @@ x·arccos x is largest at x ≈ 0.6522, where it is 0.5611, and twice that is 1.
 ## 5. No scale preferred
 
 Several famous puzzles turn on a quantity whose scale is unknown. The fourth essay showed what a reader does with such a
-quantity: past its own unit it prefers no level to another, so equal ratios get equal room, the measure dx/x. The writer
-holds a scale and can put a flat measure on the amounts. Running the two together makes the puzzle.
+quantity: past its own unit it prefers no stretch to another, one thumb to two no more than four to eight, so equal ratios
+get equal room, the measure dx/x. The writer holds a scale and can put a flat measure on the amounts. Running the two
+together makes the puzzle.
 
 **Benford's first digits.** In many real collections of numbers, from river lengths to tax returns, the leading digit is 1
 about 30% of the time, not the 11% an even spread of digits would give. The even spread assumes a writer's scale. Numbers
-met with no preferred scale are spread as the far field is, equal room for each doubling, and the measure dx/x gives the
-leading digit d the share log₁₀(1 + 1/d), which is 30.1% for a 1. Hill proved that scale invariance implies the law (Hill
-1995). The vantage reading is his theorem said in the essays' terms.
+met with no preferred scale are spread as the far field is, equal room from any amount to twice it, and the measure dx/x
+gives the leading digit d the share log₁₀(1 + 1/d), which is 30.1% for a 1. Hill proved that scale invariance implies the
+law (Hill 1995). The vantage reading is his theorem said in the essays' terms.
 
 **Two envelopes.** One envelope holds twice what the other does. Whichever you hold, the argument goes, switching gains on
-average, half the time doubling and half the time halving; so you should switch for ever. The argument averages over the
+average, half the time twice as much and half the time half; so you should switch for ever. The argument averages over the
 amounts, which needs a total over all of them, a writer's distribution. The holder of one envelope knows neither amount and
 has no scale. With none preferred the measure is dx/x, which has no total and cannot be made a probability. The averaging
 step needs exactly what the holder lacks. The standard resolutions say the paradox needs an improper prior; the vantage
 reading says why that prior is the one a reader with no scale would hold.
 
-**The St Petersburg game.** A coin is tossed until it lands heads; the payout doubles with each tail. Its expected payout is
-infinite, and nobody will pay much to play (Bernoulli 1738). The infinite expectation is the writer's total. The player
-values payouts from where it stands. Past its own unit there is no preferred scale, so each doubling counts the same:
-Bernoulli's logarithmic utility is the far field's lay. The reading adds one thing: inside the player's unit, value would be
-in proportion, so the reading predicts near-linear valuation of small stakes and logarithmic of large ones. That is a
-prediction, and it has not been tested here.
+**The St Petersburg game.** A coin is tossed until it lands heads; the payout doubles with each tail. Its expected payout
+is infinite, and nobody will pay much to play (Bernoulli 1738). The infinite expectation is the writer's total. The player
+values payouts from where it stands. Past its own unit there is no preferred scale, so each step from a payout to twice it
+counts the same: Bernoulli's logarithmic utility is the far field's lay. The reading adds one thing: inside the player's
+unit, value would be in proportion, so the reading predicts near-linear valuation of small stakes and logarithmic of large
+ones. That is a prediction, and it has not been tested here.
 
 **Weber and Fechner.** A just-noticeable change in a stimulus is a fixed fraction of it, not a fixed amount, and sensation
 grows as its logarithm (Weber 1834; Fechner 1860), except near threshold. A fixed step would be a writer's scale. The
@@ -247,9 +248,10 @@ perceiver reads from its own unit, and past it equal ratios get equal room: the 
 the reading predicts proportion, which is where the law is known to bend.
 
 **Water and wine, and Bertrand's chord.** The third essay worked these two in full. Every fair answer to von Mises's water
-and wine puts the corner at a half, and the levels give ln 6/ln 9; Jaynes's ½ for Bertrand's chord is a thrower's for
-whom the circle may lie anywhere, and from a standpoint the share runs from ⅓ to ½ with the circle's distance. Both are this section's
-puzzle: a question about an unknown scale, answered by indifference over a writer's amounts instead of a reader's levels.
+and wine puts the corner at a half, and the logarithm of the ratio gives ln 6/ln 9; Jaynes's ½ for Bertrand's chord is a
+thrower's for whom the circle may lie anywhere, and from a standpoint the share runs from ⅓ to ½ with the circle's
+distance. Both are this section's puzzle: a question about an unknown scale, answered by indifference over a writer's
+amounts instead of a reader's ratios.
 
 ---
 
@@ -291,16 +293,17 @@ approximations are standard, and that they are one function is known; the readin
 does.
 
 **v/h read as V/H.** A geometric result seems to predict a physical amount, and then fails by a constant factor. The
-reading v/h is a ratio of unit relations, the reader's. V/H is a ratio of breadths, the writer's. The bridge between them is
-(v·V)/(h·H) = (v/h)·(V/H). Reading one as the other assumes the writer's breadths. With both drawn at one length the two
-agree in number, which is why the confusion is easy, and why it fails by V/H when the breadths differ. These essays have
-kept the case of the letters because this one mistake undid many earlier attempts, including some of our own.
+reading v/h is a ratio of unit relations, the reader's. V/H is a ratio of breadths, the writer's. The bridge between them
+is (v·V)/(h·H) = (v/h)·(V/H). Reading one as the other assumes the writer's breadths, V the mountain in the distance
+measured. With both drawn at one length, the thumb equal to the mountain, the two agree in number, which is why the
+confusion is easy, and why it fails by V/H when the breadths differ. These essays have kept the case of the letters because
+this one mistake undid many earlier attempts, including some of our own.
 
 **The seam in a flight simulator.** The change from ground to sky looks wrong in flight simulators however finely the
 ground is drawn. The ground is modelled in the writer's metres; the eye reads it as h/v ahead. A line on the ground h ahead
-lands v/h below eye level, so the corner, h = v, keeps one row of the screen at every height. Levels of detail set by
-metres slide across the screen as the height changes; set by h/v they stay put. The seam is where the two disagree. That is
-a reading with an illustration, the `flight.html` demo, and it is the eighth essay's depth buffer in another costume.
+lands v/h below eye level, so the corner, h = v, keeps one row of the screen at every height. Detail set by metres slides
+across the screen as the height changes; set by h/v they stay put. The seam is where the two disagree. That is a reading
+with an illustration, the `flight.html` demo, and it is the eighth essay's depth buffer in another costume.
 
 ---
 

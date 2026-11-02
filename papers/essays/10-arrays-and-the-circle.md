@@ -65,8 +65,9 @@ round the whole.
 - Each array has its places at θ_k = (k + ½)·(π/2)/N, read as tan θ_k: the N evenly spaced quantiles of the
   half-Cauchy, the law of one quarter turn.
 - Within an array, its middle is the corner, and reading it backwards is the reciprocal: tan θ_k · tan θ_(N−1−k) = 1.
-- A closed curve stored as 4N samples over the full turn is these four arrays laid end to end. A sphere is eight
-  arrays, one per octant, each two-dimensional, uniform in azimuth and in height, the fifth essay's wedge.
+- A closed curve stored as 4N samples over the full turn is these four arrays laid end to end. A sphere is eight arrays,
+  one per octant, each two-dimensional, uniform in azimuth and in height, the fifth essay's wedge (the writer's
+  description; the reader looks down a tunnel).
 
 **The reader reads the arrays; the writer joins them.** A reading carries no sign, and turns composed by tangent
 addition repeat after a half turn. So from a standpoint every facing is the same array, and a reader reads within one.
@@ -75,12 +76,13 @@ in amounts. The reader holds each array only up to its own factor, the size no r
 two ends meet. The writer knows the sizes, and which facing each array is, and so it can join the four into the closed
 circle or the eight into the sphere.
 
-**Not knowing the size makes the corner and the horizon.** This is the array's way of saying what the first essay
-said about the missing V. Knowing an array's size, the writer has its far end at an amount, the other party's whole. Its ruler is the
-number line, on which the point where the two parties are equal is simply computed. Not knowing it, a reader whose sweep
-is a turn has only its own one length, and v = h becomes its split of near from far and the median of its readings: the
-corner. With no size, the array's far end is no amount at all, only a direction, [0 : 1], where the chart v/h runs out:
-the horizon. Both are the reader's because the size is missing. The writer, holding the size, has neither.
+**Not knowing the size makes the corner and the horizon.** This is the array's way of saying what the first essay said
+about the missing V. Knowing an array's size, the writer has its far end at an amount, the other party's whole, the
+mountain in the distance. Its ruler is the number line, on which the point where the two parties are equal is simply
+computed. Not knowing it, a reader whose sweep is a turn has only its own one length, its thumb, and v = h becomes its
+split of near from far and the median of its readings: the corner. With no size, the array's far end is no amount at all,
+only a direction, [0 : 1], where the chart v/h runs out: the horizon. Both are the reader's because the size is missing.
+The writer, holding the size, has neither.
 
 **Readers' and writers' arrays.** The first essay's two vantages give four kinds of array, two each.
 - **The writer's circle** is a constant array of known length, every entry the radius. Its one value needs no storing, so the
@@ -92,7 +94,7 @@ the horizon. Both are the reader's because the size is missing. The writer, hold
 - **The reader's inscribed sweep** gives the index alone, laid before any value arrives and with no length: its places the Cauchy's
   quantiles, its middle the corner, its last place running to the horizon, K places for any N.
 
-With nothing related there is no array: a length H, but no index and no relation to store.
+With nothing related there is no array: a length H, the thumb, but no index and no relation to store.
 
 The writer's arrays are the circle and the shape, with the length known. The reader's are the payload on the index and the index
 itself, with the length missing. That one number is what writing supplies.
@@ -112,9 +114,9 @@ central sweep, meeting the same point at twice the angle (the second essay's III
 half turn and lands on the same place, place for place. One index serves both sweeps.
 
 Against that, a writer places an amount x on [0, X] at ⌊N·x/X⌋, which needs X. With N = 8 and X = 100, the amounts 10, 50
-and 99 go to places 0, 4 and 7. Read from home at a distance laid by H, ⌊8·(2/π)·arctan(x/H)⌋, they go to places 4, 6 and
-7 with H = 10, and to 1, 4 and 5 with H = 50. H moves them, as a zoom, and X never enters. The count index needs the
-extent; the turn index needs only the zoom.
+and 99 go to places 0, 4 and 7. Read from home at a distance laid by H, ⌊8·(2/π)·arctan(x/H)⌋, they go to places 4, 6 and 7
+with H = 10, and to 1, 4 and 5 with H = 50. H moves them, as a zoom, the size of the thumb, and X never enters. The count
+index needs the extent; the turn index needs only the zoom.
 
 ---
 
@@ -211,25 +213,24 @@ it. The slope chart is the chart of one reading at a time, and the operation, wh
 
 ---
 
-## 5. The doubling, the pyramid and the fast transform
+## 5. The nesting, the pyramid and the fast transform
 
-**The places nest.** The doubling map θ ↦ 2θ carries the lattice at depth d two to one onto the lattice at depth d − 1:
-twice an odd multiple of π/N is an odd multiple of π/(N/2). So refining from one depth to the next adds places between
-the existing ones and leaves the coarser ones where they were. Each level of detail is places within places. This is the
-eighth essay's hyperbolic plane again, read on a circle: each doubling one step down, every step the same.
+**The places nest.** The map θ ↦ 2θ, each angle taken twice, carries the lattice at depth d two to one onto the lattice at
+depth d − 1: twice an odd multiple of π/N is an odd multiple of π/(N/2). So refining from one depth to the next adds places
+between the existing ones and leaves the coarser ones where they were. Each finer depth is places within places. This is
+the eighth essay's hyperbolic plane again, read on a circle: each halving one step down, every step the same.
 
-**The cosines of the same places are Chebyshev's nodes.** Read the places by their cosine instead of their tangent and
-they are the Chebyshev nodes of the first kind on an interval, crowded at its ends; the doubling map becomes Chebyshev's
-relation T₂(x) = 2x² − 1. The same equal angles read three ways: by the tangent, the Cauchy's quantiles, spread out to the
-horizon; by the cosine, Chebyshev's nodes, crowded at the ends of a chord; by the angle itself, evenly. The eighth essay met
-Boyd's rational Chebyshev points, which are the first of these used to solve problems on the whole line.
+**The cosines of the same places are Chebyshev's nodes.** Read the places by their cosine instead of their tangent and they
+are the Chebyshev nodes of the first kind on an interval, crowded at its ends; the map θ ↦ 2θ becomes Chebyshev's relation
+T₂(x) = 2x² − 1. The same equal angles read three ways: by the tangent, the Cauchy's quantiles, spread out to the horizon;
+by the cosine, Chebyshev's nodes, crowded at the ends of a chord; by the angle itself, evenly. The eighth essay met Boyd's
+rational Chebyshev points, which are the first of these used to solve problems on the whole line.
 
-**The fast Fourier transform is the doubling.** Because N = 2^(d+1), the transform from stored values to modes is a radix-2
+**The fast Fourier transform is that map.** Because N = 2^(d+1), the transform from stored values to modes is a radix-2
 discrete Fourier transform, and its Cooley–Tukey factorization runs in N·log N steps. One stage of it pairs element j with
-element j + N/2; those two places are exactly the two that the doubling map sends to one place at the next depth. So one
-stage of the transform is one application of the doubling map, and the d + 1 stages are the d + 1 levels of the
-lattice, peeled one at a time. Its twiddle factors, which look transcendental, are the places' own slopes through the
-Cayley transform:
+element j + N/2; those two places are exactly the two that θ ↦ 2θ sends to one place at the next depth. So one stage of the
+transform is one application of θ ↦ 2θ, and the d + 1 stages are the d + 1 depths of the lattice, peeled one at a time. Its
+twiddle factors, which look transcendental, are the places' own slopes through the Cayley transform:
 
   e^(−2it) = (1 − i·tan t)/(1 + i·tan t),
 
@@ -237,7 +238,7 @@ a rational function of the slope. The papers run a whole radix-2 transform with 
 call, against a standard library: agreement to 10⁻¹⁵ at N = 8 and 10⁻¹² at N = 1024, the drift ordinary accumulation over
 the stages.
 
-The doubling that nests the places, the pyramid of levels, and the fast transform of the values are one recursion.
+The map θ ↦ 2θ that nests the places, the pyramid of depths, and the fast transform of the values are one recursion.
 
 ---
 
@@ -278,8 +279,8 @@ these essays do. Three are worth naming, so that a reader of both is not misled.
   it was found to be: a ratio of two sums over the turn, the uniform turn's mean of a projection, taken by whoever adds the
   projections.
 
-None of this touches the mathematics. The kernel identities, the round trip, the slope form, the doubling and the
-transform are exact, and checked.
+None of this touches the mathematics. The kernel identities, the round trip, the slope form, the nesting and the transform
+are exact, and checked.
 
 ---
 
@@ -297,10 +298,10 @@ own curve, 1/(1 + s²), which is also the foot h². Every finer kernel is that c
 only the law of where an array's places fall; it is the shape of the weights by which the places share the circle. The
 whole reconstruction runs in slopes, with no angle, because the slope is the reading and the reading is all a reader has.
 
-Back to the array of N points. Its index was laid before any point was stored, at the Cauchy's quantiles. Its values can
-be anything. The kernel that turns it back into a curve is exact at the places and a model between them. And the whole of
-it, places, kernel, levels and transform, can be run on ratios alone, with no angle and no unit, because a ratio is what
-an index on a circle already was.
+Back to the array of N points. Its index was laid before any point was stored, at the Cauchy's quantiles. Its values can be
+anything. The kernel that turns it back into a curve is exact at the places and a model between them. And the whole of it,
+places, kernel, depths and transform, can be run on ratios alone, with no angle and no unit, because a ratio is what an
+index on a circle already was.
 
 ---
 
