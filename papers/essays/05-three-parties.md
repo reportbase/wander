@@ -85,6 +85,21 @@ v against the whole horizontal reach, whatever the azimuth. These are *horizon* 
 vertical are set by where the reader stands. They choose an order, a forward direction and an up. The wedge itself does
 not.
 
+The third essay's picture, a hand held up to a stained-glass window, carries over with both hands. One hand spreads its
+fingers from flat to upright, the altitude; the other spreads its fingers round the horizontal, the azimuth. The two
+thumbs cross at a right angle, and where they cross is the triple corner, where both read 1. Each pane now lines up with a
+crossing, one finger of each hand, and that pair of fingers is the address: a direction of the wedge, (v/h, v₂/h). The
+colour at each crossing is the payload, and still no colour carries a distance. Two hands add no second length: both
+thumbs are the one H, and the right angle between them is a quarter turn, no amount. (For every crossing to hold the same
+share of the window, the round hand spreads its fingers evenly by turn and the upright hand evenly in height, not in
+angle; section 6 says why.)
+
+No one holds a window that way; the picture is not about hands. What it shows is that the reader's space in three
+dimensions is not Cartesian. There are no three axes of amounts, no X, Y and Z counted out from an origin: there is one
+thumb, crossed with itself, and two sweeps of fingers from where it is held. Everything else, the corner, the near and
+far fields, the law over the crossings, follows from the thumb. The Cartesian frame, three number lines and every point
+three amounts, is the writer's (section 11).
+
 ---
 
 ## 5. The Cauchy wedge

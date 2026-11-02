@@ -40,6 +40,10 @@ of the fifth essay. Held up against a mountain range, the range spans so many fi
 draw it at the thumb's own size; every amount you then read is off by one number, V/H, which no finger carries. The first
 essay walked to find it.
 
+In space the window takes both hands: one spreading its fingers upright, the other round, the two thumbs crossed, each
+pane lining up with a crossing of one finger from each. The fifth essay works it out. It shows that the reader's space is
+not Cartesian, no three axes of amounts, but one thumb crossed with itself and two sweeps of fingers.
+
 *Demo: the central reader, step 1 (the hand, its fingers laid by the turn, painted by the light).*
 
 ---

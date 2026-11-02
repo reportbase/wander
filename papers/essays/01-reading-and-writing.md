@@ -100,7 +100,8 @@ drawing, every wall drawn to scale, front and back, from no particular place, ev
 The reader has a stained-glass window seen from inside a church, with its own hand held up against it, fingers spread.
 Each finger points in one direction. The fingers are there whether the light is bright or dim, red or blue, or out
 altogether. They are the places the colour can be put. They are not the colour. Each pane lights the finger it lines up
-with, and the window tells you nothing about how far away the sun is.
+with, and the window tells you nothing about how far away the sun is. In space it takes both hands, thumbs crossed: not
+three axes of amounts, as the writer's drawing has, but one thumb and two sweeps of fingers (the fifth essay).
 
 ### Things that look like a third vantage
 
