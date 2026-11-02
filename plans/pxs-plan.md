@@ -162,3 +162,30 @@ Run 2 repeats only the two kills, with bounds the sampling and the geometry allo
 - **X4′.** At γ = 0.1, k = 1 (10⁵ sets, a new seed), the half-interquartile range of the mean of n reciprocal depths is
   within 3 standard errors of the law's at n = 1, 10, 100. The standard error is taken as √(3/16M)·2πσ/√2, from the
   quartiles' asymptotic variance. The median of the depths narrows by over 5× from n = 1 to 100. *Killed* if either fails.
+
+### Run 2 (2 Nov 2026; `runs/pxs/pxs2.py`, output `runs/pxs/pxs-run2.txt`; seed 20261103)
+
+- **X2′ not killed.**
+  - The exact law fits at every case: KS 0.0006–0.0010.
+  - The first-order law fits at γ = 10⁻³, k = 1 (0.0009) and parts at γ = 0.3 (0.093 at k = 1, 0.374 at k = 8).
+- **X4′ not killed.**
+  - The mean of n reciprocal depths keeps the law's half-interquartile range at every n, within 1.2 standard errors.
+  - The median of the depths narrows 9.4× from n = 1 to 100.
+
+### What it comes to
+
+Parallax is the Cauchy's own composition, across two standpoints.
+
+- Under reads from a height, each read is a Cauchy point w in its cot chart. The triangulation done on the two points,
+  D = 2/conj(w_A + w_B), is the depth's law exactly, at every γ, not only to first order (TRI). Rays not meeting ahead are
+  part of that law.
+- At the pair's corner the depth's point stays on the circle of radius d, turned by twice the read's error angle, the
+  facing. Its median falls short as d·cos 2φ.
+- The place across the line of sight is a ratio of two sums and leaves the family. So does the depth when each standpoint
+  turns only a quarter turn: there the reads are half-Cauchys, which do not add to one.
+- Two uniform half turns give d/b a standard Cauchy: half the pairs cross ahead, with median depth the half-baseline.
+- Repeating the reads, the mean of the reciprocal depths gains nothing (the sum stays a Cauchy of the same scale), and
+  the median of the depths narrows.
+
+The pieces are classical (Möbius closure; Lévy's sum). Reading the triangulation as the composition of the reads'
+standpoints is ours.

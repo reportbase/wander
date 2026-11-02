@@ -1,0 +1,9 @@
+X2' g=0.001 k=1: KS exact=0.00059 KS first order=0.00089 ok
+X2' g=0.001 k=8: KS exact=0.00099 KS first order=0.00244 ok
+X2' g=0.3 k=1: KS exact=0.00095 KS first order=0.09255 ok
+X2' g=0.3 k=8: KS exact=0.00085 KS first order=0.37410 ok
+X2' not killed
+X4' n=1: HIQR mean 1/d=0.19732 law=0.19802 z=-0.59 HIQR median d=0.19678
+X4' n=10: HIQR mean 1/d=0.19893 law=0.19802 z=+0.76 HIQR median d=0.06535
+X4' n=100: HIQR mean 1/d=0.19940 law=0.19802 z=+1.15 HIQR median d=0.02087
+X4' median narrows 9.43x; not killed
