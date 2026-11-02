@@ -458,6 +458,18 @@ and its law in the readings (v/h, v₂/h) is the two-dimensional Cauchy, 2/(π(1
 its own corner, half its readings on each side; the near field in both readings is a third. The triple corner,
 h = v = v₂, sits at azimuth 45° and altitude 35.26°, not at either sweep's 45°.
 
+**The wedge is the writer's; the reader has a tunnel.** The wedge, an octant of directions with its faces, its edges and
+its triple corner, is the writer's description of the reader's geometry: drawn whole, from outside, at once. The reader
+never holds it. What the reader has is what its crossed thumbs give where it looks: a tunnel of addresses about the line of
+sight. Laid out as readings, as on a screen held square to the look, the directions crowd toward the line of sight and thin
+out on every side by the Cauchy, 1/(2π(1 + r²)^(3/2)) per unit of the screen at r thumbs off the line of sight (the whole
+hemisphere in front; over the wedge alone, a quarter of the screen, the same law reads 2/(π(1 + a² + b²)^(3/2))), toward a
+horizon they never reach. All of it is generated from the thumb; none of it is stored. As the reader sweeps, the tunnel
+turns with the look, continuously and without a seam, so whatever it looks at is at the tunnel's centre with the finest
+addresses, and each address is exact, given by the geometry, not computed. That is the reader's fidelity: perfect wherever
+it looks, because it is wherever it looks. The wedge, the octant and the sphere are what a writer draws to describe that
+tunnel from outside.
+
 **One thumb, two thumbs.** In the plane the reader holds one thumb at arm's length: H, square to the line of sight, and one
 reading, v against h. In space it holds two thumbs crossed at a right angle, both square to the line of sight: one reads up,
 v against h, the other across, v₂ against h. The pair (v/h, v₂/h) is a direction of the wedge; each thumb alone reads the

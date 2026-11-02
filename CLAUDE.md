@@ -1240,6 +1240,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R623 (2 Nov; Tom: "The reader does not have a circle, instead he points his crossed thumbs at the mountain and generates
   his personal geometry."): *Reads and Writes* §2 "The thumbs pointed"; the circle (V = H) is the writer's; the reader
   points its thumbs and has the turn. Never give the reader a circle.
+  R624 (2 Nov; Tom: "The wedge is the writers description of the readers geometry. What the reader experiences is more of
+  a cauchy density tunnel all generated from the thumb, which changes continuously as he sweeps with perfect fidelity
+  where he ever he looks."): *Reads and Writes* §7; the wedge (octant, sphere) is the writer's; the reader has a Cauchy
+  tunnel about its line of sight, generated from the thumb, turning with the look, perfect fidelity wherever it looks.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
