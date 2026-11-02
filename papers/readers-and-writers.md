@@ -89,19 +89,19 @@ and the vantage that holds each.
 a wall by a row of trees. The *addresses*, the directions the turn lays down, are unchanged; the *payload*, what is found
 along each, changes. The first test separates reading from writing; the second separates address from payload.
 
-**V.** One quantity sits on the line between the two acts: V, the breadth of the other party. Every reading is a ratio in
-which V cancels, so no reading ever carries it. To have V is to have written: walked a baseline, counted a step, timed a
-pulse, or agreed a unit. A reader that comes to know V has not read better; it has written. This is not a shortcoming of
-the reader. Its geometry needs V unknown: the horizon, the corner as a median, the missing mean are all the traces of a
-breadth no reading holds.
+**V.** One quantity sits on the line between the two acts: V, the breadth of the other party, the mountain in the distance
+that the thumb is held up against. Every reading is a ratio in which V cancels, so no reading ever carries it. To have V is
+to have written: walked a baseline, counted a step, timed a pulse, or agreed a unit. A reader that comes to know V has not
+read better; it has written. This is not a shortcoming of the reader. Its geometry needs V unknown: the horizon, the corner
+as a median, the missing mean are all the traces of a breadth no reading holds.
 
 ## 2. What the reader has for free
 
 **One length, turned.** A length held fixed and turned about one end traces a circle. The circle needs one length, not two:
-V = H is the writer's name for it, the writer's way of saying that the two axes of its drawing are drawn at one length. The
-reader does not draw V = H, set it or choose it; it holds H, its thumb, and the turn does the rest. We call this the
-*one-length circle*. Held whole, as a closed curve with a circumference and an area, it is the writer's; the reader has its
-turn.
+V = H is the writer's name for it, the writer's way of saying that the two axes of its drawing are drawn at one length: the
+thumb equal to the mountain. The reader does not draw V = H, set it or choose it; it holds H, its thumb, and the turn does
+the rest. We call this the *one-length circle*. Held whole, as a closed curve with a circumference and an area, it is the
+writer's; the reader has its turn.
 
 **The uniform turn.** The reader's directions are laid by turning, and a turn measured by itself is uniform: equal turns,
 equal shares. Nothing the reader does produces the directions; they are given by the geometry before anything arrives,
@@ -163,8 +163,8 @@ amount, and that difference is what parallax uses (§8). The reader has the law'
 the first with its lengths divided out.
 
 The writer's circle holds amounts. A point is x = H cos θ, y = V sin θ; the curve is (x/H)² + (y/V)² = 1, round only when
-V = H, and then x² + y² = r² with r an amount. It states the area πHV, the circumference and every point's place, and all of
-them move when the world is scaled.
+V = H, the thumb equal to the mountain, and then x² + y² = r² with r an amount. It states the area πHV, the circumference and
+every point's place, and all of them move when the world is scaled.
 
 Divide the round circle by x²:
 
@@ -236,7 +236,7 @@ all of it arrives, on addresses known before it came. The Cauchy then gives it b
 - *By undoing the blur.* Seen from a height γ, the payload arrives smoothed by the Cauchy kernel, whose Fourier transform
   e^(−γ|k|) is never zero. Every mode survives, damped and not destroyed, and comes back multiplied by e^(γ|k|). A box blur,
   the floor's, has a transform with zeros, and the modes there are gone for good. How fine a mode comes back is set by the
-  resolution, which is level of detail, not loss.
+  resolution, which is how finely the reader draws, not loss.
 - *By averaging it.* The payload is amounts, and amounts have means: weighted by the known address measure, the light across
   the turn totals exactly. The mean was never missing from the payload, only from the addresses.
 
@@ -304,8 +304,9 @@ drawn at tan ψ′ = tan ψ/c. Bearings are true everywhere only at c = 1: both 
 which is Mercator's chart (1569). It keeps every direction and pays in area, stretched by sec² of the latitude, so Greenland is
 drawn about as large as Africa, which is some fourteen times its area. The chart that keeps areas instead draws c = cos² of
 the latitude and gives up the bearings. Neither is wrong; each keeps what it was made to keep, and only the globe, the
-writer's whole, keeps both. Mercator's map is also not the reader's picture. It is a chart of the whole field, every level
-of distance alike, with no focus; the reader's picture is the turn, proportional in direction and finest where it looks.
+writer's whole, keeps both. Mercator's map is also not the reader's picture. It is a chart of the whole field, every stretch
+from a count of thumbs to twice it alike, with no focus; the reader's picture is the turn, proportional in direction
+and finest where it looks.
 Bearings are the reader's; areas are amounts, and the writer's.
 
 **A moving sky.** An observer moving through a field of stars at a fraction β of the speed of light sees each star change in
@@ -315,7 +316,7 @@ k = e^η and η the rapidity, a Möbius map of the directions; it moves addresse
 A sky uniform in the stars' own frame is seen as the spherical Cauchy, its density D²/4π. What arrives at each place
 changes: the Doppler factor D = √(1 − β²)/(1 − β cos θ′) scales each photon's energy and its rate of arrival, a weighting
 of the payload that moves no address. The familiar D⁴ brightening ahead is D² of addresses crowding and D² of payload.
-Laid on the level ξ = −ln tan(θ/2) (the pseudorapidity), aberration is a slide by η, so a reader holding directions alone
+Laid on ξ = −ln tan(θ/2) (the pseudorapidity), aberration is a slide by η, so a reader holding directions alone
 reads its own rapidity, with no clock, no frequency and no speed of light carried in, provided every source is counted
 whatever its brightness and the sources are uniform in their own frame. That is a reading. To state the speed in metres
 a second needs the speed of light carried in, and to read D as the shift of a spectral line needs the line's rest
@@ -363,9 +364,9 @@ other two (Hölder: ‖x‖₂² ≤ ‖x‖₁‖x‖∞, with equality on the 
 
 ## 5. Which numbers belong to whom
 
-**One length makes the rationals.** From H alone, counting thumbs, doubling and halving a thumb and taking ratios of thumbs
-to thumbs give rational multiples of H and nothing else. The reader's operations on readings, the reciprocal, tangent
-addition, the order, keep rationals rational. The corner is 1. This is the reader's arithmetic, and it is enough.
+**One length makes the rationals.** From H alone, counting thumbs, taking twice a thumb or half a thumb and taking ratios
+of thumbs to thumbs give rational multiples of H and nothing else. The reader's operations on readings, the reciprocal,
+tangent addition, the order, keep rationals rational. The corner is 1. This is the reader's arithmetic, and it is enough.
 
 **Two lengths make the algebraic numbers.** √2 first appears as the diagonal of a square, the length of [1 : 1]: Pythagoras
 combines two independent lengths through their squares, which needs two axes held at once. This is where the Greeks met
@@ -384,10 +385,11 @@ infinity is finished.
   exactly 1, the corner. That much is finite, rational and the reader's. The number π comes next, from the arctangent's
   series. Viète's product shows it from the other side: 2/π is a product of nested square roots, each algebraic, the whole
   only in the limit.
-- *e completes the scale.* The reader counts sizes in doublings: a thing 8H away is three levels out, exactly. The level
-  as a continuous quantity is the logarithm, and to give it a value is to choose a unit and finish a series: one doubling
-  is ln 2 = 1 − 1/2 + 1/3 − … nats. e itself is Bernoulli's limit, a coin lent at a hundred per cent compounded ever more
-  often, (1 + 1/n)ⁿ, or 1 + 1 + 1/2! + 1/3! + …: every term a fraction, the number only at the end.
+- *e completes the scale.* The reader counts sizes in thumbs: a thing 8 thumbs away is past two, four and eight, exactly.
+  That count as a continuous quantity is the logarithm, and to give it a value is to choose a unit and finish a series:
+  from one count of thumbs to twice it is ln 2 = 1 − 1/2 + 1/3 − … nats. e itself is Bernoulli's limit, a coin lent at a
+  hundred per cent compounded ever more often, (1 + 1/n)ⁿ, or 1 + 1 + 1/2! + 1/3! + …: every term a fraction, the number
+  only at the end.
 
 The reader's two ignorances, after Jaynes (1968), are which way it faces and how large things are: turns and rescalings.
 Each is a one-parameter group with an exponential map. Turns close, so their map has a period, 2π. Rescalings never close,
@@ -412,16 +414,15 @@ the machine's Cauchy, truncated, has a mean that the true one lacks.
 **The crosshairs.** Cross the two thumbs (§7) over whatever is looked at. Where they cross is the corner: the thing there
 reads one thumb up for one thumb along and one thumb across, v/h = v₂/h = 1, and it is drawn one thumb wide. That crossing
 sets the near field and the far field. The near field is a single thumb, laid evenly: everything nearer than the crossing
-gets its addresses in proportion, the first half of the thumb as much room as the second. The far field is laid in
-doublings of it: two thumbs, then four, then eight, each level the same number of addresses as the one before, out toward
-the horizon. Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with
-them.
+gets its addresses in proportion, the first half of the thumb as much room as the second. The far field is laid in thumbs:
+two thumbs, then four, then eight, each stretch the same number of addresses as the one before, out toward the horizon.
+Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them.
 
-**The levels.** The reader's distances, as ratios d/H, in thumbs, are in proportion inside the corner and counted in
-doublings past it: one level from one thumb to two, the next from two thumbs to four, each holding the same number of
-addresses. This is the logarithm as the reader holds it: a count, not a value. The writer's formula for it is 1 + ln(d/H),
-or 2 − H/d on a lay that keeps all of reality within 2H. There is one corner, the split between the near field and the
-first level; past it the levels are plain doublings with no corner of their own.
+**Counted in thumbs.** The reader's distances, as ratios d/H, in thumbs, are in proportion inside the corner and counted in
+thumbs past it: one stretch from one thumb to two, the next from two thumbs to four, then four to eight, each holding the
+same number of addresses. This is the logarithm as the reader holds it: a count, not a value. The writer's formula for it
+is 1 + ln(d/H), or 2 − H/d on a lay that keeps all of reality within two thumbs. There is one corner, the split between the
+near field and the first stretch, one thumb to two; past it the stretches are plain, with no corner of their own.
 
 **H is a zoom.** The reader's addresses are finite: some count K, which comes before H. H, the thumb it holds up, decides
 how K is split. Half the addresses lie inside H at every H; a small H makes the near ones fine and puts more of the world
@@ -430,17 +431,17 @@ the corner, where the reader's relative grain is finest. That is why the corner 
 drawn one thumb wide.
 
 **K and N.** Computer science has two letters for this, and they sort the acts as well as anything. N is how many items
-there are; K is how many are held. To know N is to know the whole: its extent, V, and how much is in it. That is
-writing, and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own count of
-addresses, fixed before H is chosen. The Cauchy is what goes between them. It lays the reader's K addresses over a
-world of any size, the near field in proportion, the far field in doublings, and everything past the last address on
-the one address at the horizon. Double N and the reader's view does not change; make N unbounded and it still does not
-change (an infinite star field browsed at N and 2N shows the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull: whatever N is, the reader's work is
-K, and in N it is constant, O(1). What the cull gives up is sameness. A writer who knows N can hold every item as 1/N
-of the whole, all alike, on a number line with no corner, and no item has an advantage over another, because no
-standpoint is favoured: there is none. A reader's K is spent unevenly, finest at the corner and coarser each level away,
-and that unevenness is the vantage: what is looked at gets the most. Knowing N buys equality; holding only K buys a
-standpoint, at a cost that does not grow with the world.
+there are; K is how many are held. To know N is to know the whole: its extent, V, and how much is in it. That is writing,
+and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own count of addresses,
+fixed before H is chosen. The Cauchy is what goes between them. It lays the reader's K addresses over a world of any size,
+the near field in proportion, the far field in two thumbs, four, eight, and everything past the last address on the one
+address at the horizon. Double N and the reader's view does not change; make N unbounded and it still does not change (an
+infinite star field browsed at N and 2N shows the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull:
+whatever N is, the reader's work is K, and in N it is constant, O(1). What the cull gives up is sameness. A writer who
+knows N can hold every item as 1/N of the whole, all alike, on a number line with no corner, and no item has an advantage
+over another, because no standpoint is favoured: there is none. A reader's K is spent unevenly, finest at the corner and
+coarser each stretch of thumbs away, and that unevenness is the vantage: what is looked at gets the most. Knowing N buys
+equality; holding only K buys a standpoint, at a cost that does not grow with the world.
 
 **The far field in proportion.** The number line keeps the far field proportional everywhere. That is one of the writer's
 capabilities, useful wherever readers with different H (different thumbs) must agree about far things, since the number
@@ -524,7 +525,7 @@ is writing.
 
 ## 9. What a blueprint adds
 
-Ratios suffice for a great deal. A tower of ratios, each level read against the next, holds a building, its rooms and their
+Ratios suffice for a great deal. A tower of ratios, each storey read against the next, holds a building, its rooms and their
 things with one amount at the top. A loop of ratios checks itself. A reader builds with ratios alone and never needs a unit,
 until one of these is wanted:
 
@@ -547,8 +548,9 @@ Hold up a thumb, one mile wide in the writer's units, and look at a mountain ran
 spread evenly over the half turn, eighteen land on the range. Scale the world by a thousand and nothing in the view moves:
 still 45°, still eighteen fingers.
 
-**Mountain equals thumb.** With no V, the reader drawing the range at its own H reads it one thumb wide at half a thumb away.
-Every amount is off by V*/H = 20, 4.32 doublings, the same on both sides of the corner.
+**Mountain equals thumb.** With no V, the reader drawing the range at its own H reads it one thumb wide at half a thumb
+away. This is the writer's circle, V = H: the thumb taken to equal the mountain. Every amount is then off by V*/H = 20, the
+range twenty thumbs wide and not one, the same on both sides of the corner.
 
 **The two sweeps, measured.** On the thumb's own circle the writer measures the central sweep at π/2 and the inscribed at
 2/π; to the range's ends, 1.1107 and 0.9003. Their product is 1, the starting length returned, H in H. The mountain never
@@ -592,7 +594,7 @@ It changes no mathematics. It sorts.
   is a direction; find the turn that lays it, and the amount that the payload carries is found separately.
 - **The constants have owners.** π, e, π/2, 2/π, the hemisphere's 2 and ½, the Cauchy's normalizing constant, the logarithm's
   nats and the angle's degrees are the writer's measures of the reader's things. The reader's own versions are finite: an
-  order, a count of doublings, a corner, a composition by tangent addition.
+  order, a count of thumbs, a corner, a composition by tangent addition.
 - **The roles move.** No observer is a reader or a writer once and for all. It reads while it stands and turns; it writes while
   it walks, counts, ranges or agrees a unit. The passage between is parallax, and it comes by degrees.
 - **The line is where knowing V is.** On one side of it every reading holds, whatever the world's size; on the other every

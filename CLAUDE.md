@@ -1233,6 +1233,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R621 (2 Nov; Tom: "not ergonomically accurate but it does express the idea that 3d space for the reader is not Cartesian
   and the thumb is what drives it all"): "Two hands" closes on it: the reader's 3D is one thumb crossed with itself and two
   sweeps, not three axes of amounts; the Cartesian frame is the writer's cube. In essay 5 §4, pointers in essays 3 §1 and 1.
+  R622 (2 Nov; Tom: "Don't use the terms doubling and levels, use thumbs. Also lean on that V is the mountains in the
+  distance. The writers circle is the thumb equals the mountain."): **a standing rule for new writing in *Reads and
+  Writes* and the essays: say the far field in thumbs (two, four, eight), never "doubling" or "level"; V is the mountain
+  in the distance; the writer's circle, V = H, is the thumb equal to the mountain.** Formulas keep ln 2 and 1 + ln(d/H).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
