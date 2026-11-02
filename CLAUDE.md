@@ -788,7 +788,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
 - `explainers.html`: **the explainers' page**, beside `essays.html` (29 Oct 2026, Tom: "Create an accompying index page
   for explainers"), the same style: a card an explainer (draw's scrolling explainers, `gallery/explained.html?x=…` in
   reportbase/draw: reading and writing for essay 1, one length turned for essay 2, addresses for essay 3, near and far
-  for essay 4, many standpoints for essay 6, the Tangent Bridge and how leaves become a curve for essay 10), the essay it
+  for essay 4, many standpoints for essay 6, where it shows up for essay 7 (since 1 Nov, SPN R610: the lighthouse,
+  Mercator's chart and the moving sky), the Tangent Bridge and how leaves become a curve for essay 10), the essay it
   explains, its steps (the scene's beats), and links to the explainer, the essay's card, the essay and the scene's tile;
   then the essays with none yet. Linked from `essays.html` and `demos.html`. Add a card when an explainer is made.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
@@ -1187,6 +1188,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R604's missing mean); both Sources point to *Readers and Writers* §3.
   R609 (1 Nov; Tom: "what about the SR framnig"): *Readers and Writers* §3 "Four pictures", the fourth "A moving sky" (aberration
   the addresses, Doppler the payload, the rapidity read from directions alone, metres a second and a line's shift writings).
+  R610 (1 Nov; Tom: "lets do a top quality explainer with the best features, to test high end explainiers."): draw's
+  `explained.html?x=pictures`, essay 7 and §3's pictures in six beats; a card on `explainers.html`, a link on essay 7's card.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
