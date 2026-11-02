@@ -148,7 +148,7 @@ part alone, the address; scaling the world acts on the real part alone, the payl
 e with the payload, and the two are not alike. The address closes, so it has a total, and π is that total; it is forced.
 The payload's size lies on an open line with no total and no natural size; its base is a convention (doublings would count
 it as well), and e is the base that lets one unit serve both parts, so that e^(iθ) is a turn of θ. That open line, with no
-mark on it, is why no reading ever gives a₀, the overall size (the second essay). Closed and forced, open and chosen:
+mark on it, is why no reading ever gives a₀, the overall size (the sixth essay). Closed and forced, open and chosen:
 address and payload, in two numbers.
 
 ## 5. Where they meet
