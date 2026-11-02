@@ -1244,6 +1244,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   a cauchy density tunnel all generated from the thumb, which changes continuously as he sweeps with perfect fidelity
   where he ever he looks."): *Reads and Writes* §7; the wedge (octant, sphere) is the writer's; the reader has a Cauchy
   tunnel about its line of sight, generated from the thumb, turning with the look, perfect fidelity wherever it looks.
+  R625 (2 Nov; Tom: "Yes, proceed", to review 1 of *Reads and Writes*, `plans/rw-review-1.md`): the capped mean set by
+  the extent, not V's; the world decides what meets an address, moving none; two lengths give square roots, not all
+  algebraic numbers (∛2), a transcendental a limit though it may have a short name; work O(K); D⁴'s split scoped.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

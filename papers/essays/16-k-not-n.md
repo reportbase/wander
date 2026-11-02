@@ -92,7 +92,7 @@ at the horizon. Double N and the reader's view does not change. Make N unbounded
 field browsed at N and at 2N stars, counted exactly at K addresses, gives views that differ by less than 10⁻⁷ at N = 2⁴⁰
 (`star-field.html`), and by less as N grows.
 
-So the Cauchy is a *cull*. Whatever N is, the reader's work is K. In N it is constant, O(1); there is no N in it to grow.
+So the Cauchy is a *cull*. Whatever N is, the reader's work is K, O(K). For a fixed K it does not grow with N; there is no N in it to grow.
 
 What the cull gives up is sameness. A writer who knows N can hold every item as 1/N of the whole, all alike, on a number
 line with no corner, and no item has an advantage over another, because no standpoint is favoured: there is none. A

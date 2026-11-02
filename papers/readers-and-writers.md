@@ -16,15 +16,17 @@ turn, the unit. The two are told apart by one test, *scale the world*: a reading
 multiplied by the same factor, a writing changes with it. And they are told apart by one quantity, V, the other party's
 breadth: no reading carries it, and every writing needs it.
 
-This paper brings together what each vantage holds, gives the geometry the reader has for free, and says exactly what
-is added in becoming a writer. The reader's directions are laid by the uniform turn, whose law in the reading v/h is the
+This paper brings together what each vantage holds, gives the geometry the reader has for free, and says exactly what is
+added in becoming a writer. The reader's directions are laid by the uniform turn, whose law in the reading v/h is the
 Cauchy, with its median at the corner v = h, its horizon never reached and no mean: an *address* given before anything
 arrives. What arrives along an address is the *payload*, met. A rate is of a payload per an address. The writer has the
 angle, the rate 1, and measures the reader's two sweeps from horizontal to vertical as π/2 (central) and 2/π (inscribed),
-whose product is its own 1. The reader's own numbers are the rationals, which one length makes in finite steps; the
-irrational numbers need two lengths combined, and the transcendental ones a completed infinity: π completes the turn, e
-completes the scale, and both are the writer's. The passage from reading to writing is parallax: a second standpoint, a
-second variable, places from crossings. An observer making that passage is writing: read and write are acts, not kinds of observer. And the passage has degrees: V is learned in some unit, to some precision, for some things, never all at once.
+whose product is its own 1. The reader's own numbers are the rationals, which one length makes in finite steps; the square
+roots need two lengths combined, and the transcendental numbers a limit no finite algebraic step reaches: π completes the
+turn, e completes the scale, and both are the writer's. The reader meets such a direction whole; the writer needs the limit
+to state it as a number. The passage from reading to writing is parallax: a second standpoint, the step between them,
+places from crossings. An observer making that passage is writing: read and write are acts, not kinds of observer. And the
+passage has degrees: V is learned in some unit, to some precision, for some things, never all at once.
 
 None of the mathematics is new. What is offered is a division of it: which parts a standpoint has, which parts need the
 whole, and what carries an observer from one to the other.
@@ -113,18 +115,18 @@ which is why we call them addresses. In the reading s = v/h the uniform turn ove
 
 the half-Cauchy. Its median is s = 1, the *corner*, where v = h. Its quartiles are √2 − 1 and √2 + 1. Its far end, s = ∞,
 the direction [0 : 1], is the *horizon*, reached by no finite reading. It has no mean: averages of readings climb without
-settling, by (2/π)·ln 10 for every tenfold further the readings run. These facts hold whatever is looked at: a straight
+settling, by (2/π)·ln 10 for every tenfold further the readings run. Given the uniform turn, these facts hold whatever is looked at: a straight
 wall, a row of trees, a curved hill, an empty sky. The wall's shape only decides where each direction meets it.
 
 The constant 2/π and the quartiles' values are the writer's arithmetic for this law; what the reader has of it is the
 order of its readings, the corner, and the directions themselves.
 
-**Address and payload.** An address is a direction from home; a payload is what arrives along it. They share one thing,
-the point where a direction meets the world, and nothing passes between them. Scale the world and no address moves.
-Change the world and no address moves. Change the turn's standpoint and the addresses move, as a family: the Cauchy is
-carried into another Cauchy, its centre and width the new standpoint's foot and height (m + iγ). This closure, under
-every operation on directions alone, is the law's own; only an amount entering, an edge, a square, a sum of amounts,
-breaks it.
+**Address and payload.** An address is a direction from home; a payload is what arrives along it. They share one thing, the
+point where a direction meets the world. The world decides what meets each address, which thing is nearest and what it
+sends back; nothing it does moves an address. Scale the world and no address moves. Change the world and no address moves.
+Change the turn's standpoint and the addresses move, as a family: the Cauchy is carried into another Cauchy, its centre and
+width the new standpoint's foot and height (m + iγ). This closure, under every operation on directions alone, is the law's
+own; only an amount entering, an edge, a square, a sum of amounts, breaks it.
 
 So the Cauchy is not a law of what is measured. It is the law of the uniform turn, the measure on the reader's addresses.
 Practice already treats it so, taking its median and never its mean; this is the reason.
@@ -213,7 +215,7 @@ A mean of directions can be had, by a writer. Take each direction as a unit vect
 the average of (cos θ, sin θ) is (2/π)(1, 1), pointing at the corner, of length 2√2/π ≈ 0.900. The direction it gives is the
 corner, the median again; its length is the writer's measure, π and all. And a writer holding a finite world, capped at an
 extent M, has a Cauchy with a mean, (1/π)·ln(1 + M²) over the share below M, about 8.8 at M = 10⁶: finite, and set by the
-extent, an amount that moves when the world is scaled. The mean appears exactly when V is written in, and its value is V's.
+extent, an amount that moves when the world is scaled. The mean appears only once an extent is written in, and its value is set by that extent, not equal to it.
 A machine's Cauchy, capped by its largest number, has one for the same reason.
 
 The payload has means where it is an amount: the light along each address, its colour, its brightness, all add. The
@@ -311,19 +313,19 @@ from a count of thumbs to twice it alike, with no focus; the reader's picture is
 and finest where it looks.
 Bearings are the reader's; areas are amounts, and the writer's.
 
-**A moving sky.** An observer moving through a field of stars at a fraction β of the speed of light sees each star change in
-two ways, and special relativity already writes them as two formulas. Where the star is seen moves: aberration,
-cos θ′ = (cos θ + β)/(1 + β cos θ), the same at every frequency. On the stereographic chart of the sky it is z ↦ z/k, with
-k = e^η and η the rapidity, a Möbius map of the directions; it moves addresses and carries the Cauchy's family onto itself.
-A sky uniform in the stars' own frame is seen as the spherical Cauchy, its density D²/4π. What arrives at each place
-changes: the Doppler factor D = √(1 − β²)/(1 − β cos θ′) scales each photon's energy and its rate of arrival, a weighting
-of the payload that moves no address. The familiar D⁴ brightening ahead is D² of addresses crowding and D² of payload.
-Laid on ξ = −ln tan(θ/2) (the pseudorapidity), aberration is a slide by η, so a reader holding directions alone
-reads its own rapidity, with no clock, no frequency and no speed of light carried in, provided every source is counted
-whatever its brightness and the sources are uniform in their own frame. That is a reading. To state the speed in metres
-a second needs the speed of light carried in, and to read D as the shift of a spectral line needs the line's rest
-frequency, a known kind of atom: both are writings. The theory makes the split in its formulas without naming it; the
-reader's part is the directions, the writer's the amounts.
+**A moving sky.** An observer moving through a field of stars at a fraction β of the speed of light sees each star change
+in two ways, and special relativity already writes them as two formulas. Where the star is seen moves: aberration, cos θ′ =
+(cos θ + β)/(1 + β cos θ), the same at every frequency. On the stereographic chart of the sky it is z ↦ z/k, with k = e^η
+and η the rapidity, a Möbius map of the directions; it moves addresses and carries the Cauchy's family onto itself. A sky
+uniform in the stars' own frame is seen as the spherical Cauchy, its density D²/4π. What arrives at each place changes: the
+Doppler factor D = √(1 − β²)/(1 − β cos θ′) scales each photon's energy and its rate of arrival, a weighting of the payload
+that moves no address. For a sky uniform in its own frame, counting total power, the familiar D⁴ brightening ahead is D² of
+addresses crowding and D² of payload. Laid on ξ = −ln tan(θ/2) (the pseudorapidity), aberration is a slide by η, so a
+reader holding directions alone reads its own rapidity, with no clock, no frequency and no speed of light carried in,
+provided every source is counted whatever its brightness and the sources are uniform in their own frame. That is a reading.
+To state the speed in metres a second needs the speed of light carried in, and to read D as the shift of a spectral line
+needs the line's rest frequency, a known kind of atom: both are writings. The theory makes the split in its formulas
+without naming it; the reader's part is the directions, the writer's the amounts.
 
 ## 4. Rates, not angles
 
@@ -344,8 +346,9 @@ centre of the circle on the chord (the *central* sweep), the hand turns twice as
 chord over arc sin θ/θ runs from 1 to 2/π, approached at the horizon and never reached. Their product is 1 at every θ.
 These are the only two standpoints from which equal turns cut equal arcs (Euclid III.20: the inscribed angle is half the
 central). So the sweep from horizontal to vertical comes at π/2 or 2/π, never at 1; 1 is had only by joining both, which is
-the writer's join. And π/2 and 2/π are the writer's measure of the reader's sweeps, not numbers the reader holds: π is the
-total of a completed turn.
+the writer's join. Euclid's theorem, the two reciprocal ratios and the writer's rate of 1 in radians are three things that
+correspond here, not one theorem. And π/2 and 2/π are the writer's measure of the reader's sweeps, not numbers the reader
+holds: π is the total of a completed turn.
 
 **The corner, where three meet.** At v = h three things coincide: v fills as fast as h empties; the reading v/h is 1, the
 writer's 1; and 1 is the geometric mean of π/2 and 2/π, the fixed point of the reciprocal that exchanges the two sweeps.
@@ -370,16 +373,18 @@ other two (Hölder: ‖x‖₂² ≤ ‖x‖₁‖x‖∞, with equality on the 
 of thumbs to thumbs give rational multiples of H and nothing else. The reader's operations on readings, the reciprocal,
 tangent addition, the order, keep rationals rational. The corner is 1. This is the reader's arithmetic, and it is enough.
 
-**Two lengths make the algebraic numbers.** √2 first appears as the diagonal of a square, the length of [1 : 1]: Pythagoras
-combines two independent lengths through their squares, which needs two axes held at once. This is where the Greeks met
+**Two lengths make square roots.** √2 first appears as the diagonal of a square, the length of [1 : 1]: Pythagoras combines
+two independent lengths through their squares, which needs two axes held at once. This is where the Greeks met
 incommensurability. On one line, from one unit, it never happens. Bisecting a direction is of this kind: the reading
-halfway to s is (√(1 + s²) − 1)/s, a square root of two lengths combined. Halving a length is the reader's; halving a turn is
-the writer's.
+halfway to s is (√(1 + s²) − 1)/s, a square root of two lengths combined. Halving a length is the reader's; halving a turn
+is the writer's. Square roots, nested as deep as one likes, are what two lengths and a straight edge and compass give: not
+every algebraic number (the cube root of 2, which doubles a cube, is beyond them; Wantzel 1837).
 
-**A completed infinity makes the transcendental numbers.** The algebraic numbers are closed under every finite operation:
-add, subtract, multiply, divide or take roots of them, any finite number of times, and the result is algebraic. So a number
-that is not algebraic is reached only as the limit of an infinite construction, and is had only by one for whom that
-infinity is finished.
+**A limit makes the transcendental numbers.** The algebraic numbers are closed under every finite operation: add, subtract,
+multiply, divide or take roots of them, any finite number of times, and the result is algebraic. So a number that is not
+algebraic is reached by no finite algebraic step, and as a number it is had only through a limit, by one for whom that
+infinity is finished. It may still have a short name (tan 1, or π = 4·arctan 1); the reader meets the direction tan 1
+whole, and only stating it as a number needs the limit.
 
 - *π completes the turn.* The reader meets the corner as s = 1, exactly. Its angle is π/4 = 1 − 1/3 + 1/5 − …
   (Madhava, Gregory, Leibniz), every partial sum a fraction, none of them π/4. Machin's identity shows the split with no
@@ -439,11 +444,11 @@ fixed before H is chosen. The Cauchy is what goes between them. It lays the read
 the near field in proportion, the far field in two thumbs, four, eight, and everything past the last address on the one
 address at the horizon. Double N and the reader's view does not change; make N unbounded and it still does not change (an
 infinite star field browsed at N and 2N shows the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull:
-whatever N is, the reader's work is K, and in N it is constant, O(1). What the cull gives up is sameness. A writer who
-knows N can hold every item as 1/N of the whole, all alike, on a number line with no corner, and no item has an advantage
-over another, because no standpoint is favoured: there is none. A reader's K is spent unevenly, finest at the corner and
-coarser each stretch of thumbs away, and that unevenness is the vantage: what is looked at gets the most. Knowing N buys
-equality; holding only K buys a standpoint, at a cost that does not grow with the world.
+whatever N is, the reader's work is K, O(K), and for a fixed K it does not grow with N. What the cull gives up is sameness.
+A writer who knows N can hold every item as 1/N of the whole, all alike, on a number line with no corner, and no item has
+an advantage over another, because no standpoint is favoured: there is none. A reader's K is spent unevenly, finest at the
+corner and coarser each stretch of thumbs away, and that unevenness is the vantage: what is looked at gets the most.
+Knowing N buys equality; holding only K buys a standpoint, at a cost that does not grow with the world.
 
 **The far field in proportion.** The number line keeps the far field proportional everywhere. That is one of the writer's
 capabilities, useful wherever readers with different H (different thumbs) must agree about far things, since the number
@@ -471,13 +476,14 @@ it looks, because it is wherever it looks. The wedge, the octant and the sphere 
 tunnel from outside.
 
 **One thumb, two thumbs.** In the plane the reader holds one thumb at arm's length: H, square to the line of sight, and one
-reading, v against h. In space it holds two thumbs crossed at a right angle, both square to the line of sight: one reads up,
-v against h, the other across, v₂ against h. The pair (v/h, v₂/h) is a direction of the wedge; each thumb alone reads the
-one-dimensional Cauchy with its own corner, and the two together the two-dimensional Cauchy above. Two thumbs add no second
-length: both are the reader's own H, so no breadth for either party enters, and what a writer would write as V = V₂ = H is
-the two thumbs being the same size. The triple corner is where both read 1. The right angle between them is no amount
-either: it is the quarter turn that takes one thumb onto the other, unchanged when the world is scaled. So the dimension is the count of thumbs, one
-for each direction square to the look: one in the plane, two in space.
+reading, v against h. In space it holds two thumbs crossed at a right angle, both square to the line of sight: one reads
+up, v against h, the other across, v₂ against h. The pair (v/h, v₂/h) is a direction of the wedge; each thumb alone reads
+the one-dimensional Cauchy with its own corner, and the two together the two-dimensional Cauchy above. Two thumbs add no
+second length: both are the reader's own H, so no breadth for either party enters, and what a writer would write as V = V₂
+= H is the two thumbs being the same size. The triple corner is where both read 1. The right angle between them is no
+amount either: it is the quarter turn that takes one thumb onto the other, unchanged when the world is scaled. So the
+dimension, counted from a standpoint, is the number of transverse facings, a thumb for each direction square to the look:
+one in the plane, two in space.
 
 **The writer's cube.** The writer's frame with three parties is Descartes's: X, Y, Z, three number lines, every point three
 amounts. It reaches the reader's directions only with H and the angles: X = H·cos a·cos ψ, and so on.
@@ -495,12 +501,13 @@ of space do not commute. What survives is the split between address and payload,
 
 ## 8. From reading to writing
 
-**Parallax is the passage.** One standpoint gives directions and a frame, and no size: every ghost of the room, twice as far
-and twice as large, gives the same readings. A second standpoint adds a second variable, the step between the two. Each
-point is then two rays crossing, and its place comes out of the crossing, in the step's length. More standpoints give every
-place seen. This is how a reader reconstructs the writer's cube, and while it does, it is writing: it has moved, joined its
-standpoints and holds what no one standpoint holds. When it stops and looks again, it reads. A read and a write are not two
-kinds of observer; they are what one observer is doing.
+**Parallax is the passage.** One standpoint gives directions and a frame, and no size: every ghost of the room, twice as
+far and twice as large, gives the same readings. A second standpoint adds a second variable, the step between the two. Each
+point, matched in both looks, is then two rays crossing, and its place comes out of the crossing, in the step's length; the
+step's length in any other unit is what a writer carries in. More standpoints give every place seen. This is how a reader
+reconstructs the writer's cube, and while it does, it is writing: it has moved, joined its standpoints and holds what no
+one standpoint holds. When it stops and looks again, it reads. A read and a write are not two kinds of observer; they are
+what one observer is doing.
 
 **Turning in place gives no parallax.** A turn about the point seen from moves every direction alike. A head's eye sits a
 little in front of the head's axis, so a turn carries it along a chord, a baseline; that is parallax, and to write in metres

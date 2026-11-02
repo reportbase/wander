@@ -2,7 +2,7 @@
 
 Pasted by Tom on 2 Nov 2026, from an outside reviewer (likely ChatGPT), with no message of his own. The reviewer judges
 the paper as a synthesis, not as new mathematics. Below it is condensed, its points in its own order, followed by Claude's
-response. Nothing in the paper has been changed for it yet: the edits wait for Tom.
+response. Tom: "Yes, proceed". The edits below were made in the paper and the essays (SPN R625).
 
 ## The review, condensed
 
