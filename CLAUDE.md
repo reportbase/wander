@@ -1205,6 +1205,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R614 (2 Nov; Tom: "Knowing H means you know N. Not Knowing H means you know K. Cauchy is the great kull"): *Reads and Writes*
   §6 "K and N": knowing N is knowing V, a writing; the reader knows K; the Cauchy a cull, the reader's work K whatever N, O(1)
   in N; knowing N, all items alike, no vantage; holding K, finest at the corner. Written with V where Tom said H (R533).
+  R615 (2 Nov; Tom: "bring the computer science paper forward and rewrite it as an essay with our newer vocabulary"): essay
+  16, `papers/essays/16-k-not-n.md`, *K, not N: reading and writing for computer science*, opening on `x = mem[a]; mem[a] = y;`:
+  the archived CS companion in the read/write and K/N vocabulary (R612–R614), its numbers carried over (the machine's
+  Cauchy from `runs/arr/infinity.mjs`), pointing to essays 8 and 12 where they go further. A card on `essays.html`, a row in
+  the essays README, in `explainers.html`'s not-yet list; the smoke test counts sixteen essays.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
@@ -3002,7 +3007,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     fifteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     sixteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
