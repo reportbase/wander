@@ -1,17 +1,17 @@
-# Readers and Writers
+# Reads and Writes
 
 **What can be known from a standpoint, and what it costs to know more**
 
-*Tom Brinkman. Draft, 30 October 2026. Written with AI assistance (Claude).*
+*Tom Brinkman. Draft, 30 October 2026; retitled 2 November 2026 (it was* Readers and Writers*). Written with AI assistance (Claude).*
 
 The propositions and proofs this paper draws on are in *Observation from Somewhere*, now archived and kept for
 reference; where its wording differs from this paper, this paper stands.
 
 ## Abstract
 
-An observer can stand in one of two vantages. A *reader* stands somewhere and turns. It holds one length, its own H, and
-what reaches it along each direction; every reading it takes is a ratio, a direction [h : v], and no amount survives into
-it. A *writer* holds the whole: both sides of every axis, the extents in amounts, the completed turn, the unit. The two
+Observation comes in two acts. A *read* is taken from a standpoint, turning there. It needs one length, H, and what
+reaches the standpoint along each direction; every reading is a ratio, a direction [h : v], and no amount survives into
+it. A *write* holds the whole: both sides of every axis, the extents in amounts, the completed turn, the unit. The two
 are told apart by one test, *scale the world*: a reading is unchanged when every length is multiplied by the same factor,
 a writing changes with it. And they are told apart by one quantity, V, the other party's breadth: no reading carries it,
 and every writing needs it.
@@ -24,13 +24,12 @@ angle, the rate 1, and measures the reader's two sweeps from horizontal to verti
 whose product is its own 1. The reader's own numbers are the rationals, which one length makes in finite steps; the
 irrational numbers need two lengths combined, and the transcendental ones a completed infinity: π completes the turn, e
 completes the scale, and both are the writer's. The passage from reading to writing is parallax: a second standpoint, a
-second variable, places from crossings. An observer making that passage is writing, so reader and writer are roles, not
-kinds. And the passage has degrees: V is learned in some unit, to some precision, for some things, never all at once.
+second variable, places from crossings. An observer making that passage is writing: read and write are acts, not kinds of observer. And the passage has degrees: V is learned in some unit, to some precision, for some things, never all at once.
 
 None of the mathematics is new. What is offered is a division of it: which parts a standpoint has, which parts need the
 whole, and what carries an observer from one to the other.
 
-## 1. Two vantages
+## 1. Two acts
 
 Map a room without a ruler. Stand in a corner, look at each thing, and note where it is: so far round, so far up. You now
 have every thing's direction and nothing's distance. A room twice as large, seen from the same corner, gives the same
@@ -42,15 +41,19 @@ in metres.
 
 The first part is reading. The second and third are writing. The rest of this paper is about the line between them.
 
-**The reader.** A reader stands at one point, *home*, and turns. It holds one length, H, which it chooses: any value,
-since every reading it takes is a ratio and H only sets the zoom, where its finest detail falls. It does not hold the
+**Words.** The paper names acts, a *read* and a *write*, not two kinds of observer: one observer reads while it stands and
+turns, and writes while it walks, counts, ranges or agrees a unit. *Read*, *reading* and *reader* are used as each sentence
+needs (a reader is whatever is reading, for as long as it reads), and likewise *write*, *writing* and *writer*.
+
+**The read.** A read is taken from one point, *home*, by turning there. The reader holds one length, H, which it chooses:
+any value, since every reading is a ratio and H only sets the zoom, where its finest detail falls. It does not hold the
 other party's breadth, V. Every reading is a direction, written [h : v] in homogeneous coordinates, or v/h, the reading
 in its usual chart: h is how much of H lies along the first axis, v how much of it along the second, each between 0 and
 1. A reading needs no division by the reader; the projection from home divides.
 
-**The writer.** A writer holds what no standpoint gives: both hemispheres, so both signs of every axis; the extent of each
+**The write.** A write holds what no standpoint gives: both hemispheres, so both signs of every axis; the extent of each
 axis as an amount; the unit those amounts are in; the completed turn. Its frame is a box, a number line on each axis, every
-point three amounts. Nothing in it is round, and nothing in it has a corner of the reader's kind: the number line is
+point three amounts. Nothing in it is round, and nothing in it has a corner of a read's kind: the number line is
 proportional everywhere, with no place where one unit gives way to another.
 
 **The test.** Multiply every length in the world by k. A reading is unchanged; a writing is multiplied by k (or by a
@@ -63,7 +66,7 @@ and the vantage that holds each.
 a wall by a row of trees. The *addresses*, the directions the turn lays down, are unchanged; the *payload*, what is found
 along each, changes. The first test separates reading from writing; the second separates address from payload.
 
-**V.** One quantity sits on the line between the vantages: V, the breadth of the other party. Every reading is a ratio in
+**V.** One quantity sits on the line between the two acts: V, the breadth of the other party. Every reading is a ratio in
 which V cancels, so no reading ever carries it. To have V is to have written: walked a baseline, counted a step, timed a
 pulse, or agreed a unit. A reader that comes to know V has not read better; it has written. This is not a shortcoming of
 the reader. Its geometry needs V unknown: the horizon, the corner as a median, the missing mean are all the traces of a
@@ -401,13 +404,13 @@ like π/2 and 2/π, are the writer's measure.
 a Möbius map, harmonic measure, the powers of the standpoint, and the two sweeps' rates. On the sphere they part, and turns
 of space do not commute. What survives is the split between address and payload, the corners, and the wedge seen from home.
 
-## 8. Becoming a writer
+## 8. From reading to writing
 
 **Parallax is the passage.** One standpoint gives directions and a frame, and no size: every ghost of the room, twice as far
 and twice as large, gives the same readings. A second standpoint adds a second variable, the step between the two. Each
 point is then two rays crossing, and its place comes out of the crossing, in the step's length. More standpoints give every
 place seen. This is how a reader reconstructs the writer's cube, and while it does, it is writing: it has moved, joined its
-standpoints and holds what no one standpoint holds. When it stops and looks again, it reads. Reader and writer are not two
+standpoints and holds what no one standpoint holds. When it stops and looks again, it reads. A read and a write are not two
 kinds of observer; they are what one observer is doing.
 
 **Turning in place gives no parallax.** A turn about the point seen from moves every direction alike. A head's eye sits a
@@ -505,8 +508,8 @@ observer's ignorance leaves unchanged. Poincaré's universe made a thousand time
 inside, is the scale test; his distinction between representative and geometric space is the reader's and the writer's.
 Leibniz's space as an order of coexistences (1715–16) is the reader's picture; Klein's programme (1872), geometry as the study
 of a group, is the method's form. Gibson's ambient optic array (1979) is the stained-glass window. Bridgman and Buckingham
-sorted quantities by scale long before. What is offered here is the division into two vantages, the address and payload
-inside the reader's, and what carries an observer across.
+sorted quantities by scale long before. What is offered here is the division into two acts, the address and payload
+inside a read, and what carries an observer from one to the other.
 
 ## References
 

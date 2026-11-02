@@ -259,7 +259,7 @@ third of where you can look.
 - Cacoullos, T. (2014). Polar angle tangent vectors follow Cauchy distributions under spherical symmetry. *Journal of
   Multivariate Analysis* 128, 147–153.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*): the cuts, the sum and the two angles in §2, readers
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): the cuts, the sum and the two angles in §2, readers
 and writers with two parties in §3.1, the one-length sphere in §5 (Proposition 3(f)), the Cauchy wedge in §7.1
 (Proposition 5(e), "Why uniformly by area", "Swept by altitude and azimuth", "More parties"), and the sphere in a cube in
 §9.

@@ -314,5 +314,5 @@ Lebesgue's lemma, Jackson's estimate, Erdős and Turán's bound on the Lebesgue 
 summation and the Cooley–Tukey factorization, as presented there.
 
 The array picture, its four facings, readers' and writers' arrays and the worked example with K = 8 are set out in
-*Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*), §7.3 ("In the picture of an array", "Laid on the sweeps"), and for programmers in the
+*Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*), §7.3 ("In the picture of an array", "Laid on the sweeps"), and for programmers in the
 computer-science companion, §6 ("The array").

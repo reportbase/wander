@@ -1192,6 +1192,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `explained.html?x=pictures`, essay 7 and §3's pictures in six beats; a card on `explainers.html`, a link on essay 7's card.
   R611 (2 Nov; Tom: "yes, build 14"): draw's `explained.html?x=rates`, essay 14 in six beats (a roof's pitch with a dial, the two
   running rates plotted, the corner, the Cauchy as a speed on a post, ½ ⊕ ⅓ = 1); a card on `explainers.html`, a link on essay 14's card.
+  R612 (2 Nov; Tom: "Maybe we should call readers a read, and writers a write.", then "yes, proceed. The word reading, read or reader
+  can be used as appropriate to the situation. Same for writer, write, writing."): the acts named, not kinds of observer (R594
+  in the words). The current account is retitled *Reads and Writes* (file `papers/readers-and-writers.md` kept): "Two acts" in
+  §1 with a note on the words, §8 "From reading to writing"; the essays cite the new title. Use read/reading/reader and
+  write/writing/writer as each sentence needs; identifiers, file names, essay titles and demo ids keep theirs.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

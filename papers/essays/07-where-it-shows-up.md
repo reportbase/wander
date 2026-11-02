@@ -423,6 +423,6 @@ paces supply the only amount.
 - Penrose, R. and Rindler, W. (1984). *Spinors and Space-Time*, Vol. 1. Cambridge University Press.
 - Rybicki, G. B. and Lightman, A. P. (1979). *Radiative Processes in Astrophysics*. Wiley, New York.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Readers and Writers*, whose §3 has the lighthouse, Mercator's map and the moving sky beside the hand): Proposition 5(f) and (g), "Two charts" and "What the
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, whose §3 has the lighthouse, Mercator's map and the moving sky beside the hand): Proposition 5(f) and (g), "Two charts" and "What the
 two pictures show" in §7.1; "Already drawn, under other names" and "Where c ≠ 1 comes from" in §5; "Special relativity's
 sky" in §11; Appendix A, "V = H under other names" and "Why the payload is Gaussian".
