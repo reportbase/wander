@@ -1218,6 +1218,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and two thumbs": top (¼, ⅓), foot (0, ⅓); a step across, only the across thumb moves 1/12, 12 thumbs off, 3 tall, 4 aside;
   the second thumb a check, not a length (the epipolar condition; a misread step caught); a step forward scales both
   alike. `runs/two/two_thumbs.py` (exact).
+  R618 (2 Nov; Tom: "Let's lean on the thumb metaphor. When H is discussed add the thumb reference."): H is the thumb held
+  out at arm's length. *Reads and Writes* names the thumb wherever it discusses H; formulas keep the letter. **A standing
+  rule for new writing: when H comes up, name the thumb.**
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
