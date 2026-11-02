@@ -392,11 +392,19 @@ the machine's Cauchy, truncated, has a mean that the true one lacks.
 
 ## 6. Near and far
 
+**The crosshairs.** Cross the two thumbs (§7) over whatever is looked at. Where they cross is the corner: the thing there
+reads one thumb up for one thumb along and one thumb across, v/h = v₂/h = 1, and it is drawn one thumb wide. That crossing
+sets the near field and the far field. The near field is a single thumb, laid evenly: everything nearer than the crossing
+gets its addresses in proportion, the first half of the thumb as much room as the second. The far field is laid in
+doublings of it: two thumbs, then four, then eight, each level the same number of addresses as the one before, out toward
+the horizon. Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with
+them.
+
 **The levels.** The reader's distances, as ratios d/H, in thumbs, are in proportion inside the corner and counted in
-doublings past it: one level from one thumb to two, the next from two thumbs to four, each holding the same number of addresses. This
-is the logarithm as the reader holds it: a count, not a value. The writer's formula for it is 1 + ln(d/H), or 2 − H/d on a
-lay that keeps all of reality within 2H. There is one corner, the split between the near field and the first level; past it
-the levels are plain doublings with no corner of their own.
+doublings past it: one level from one thumb to two, the next from two thumbs to four, each holding the same number of
+addresses. This is the logarithm as the reader holds it: a count, not a value. The writer's formula for it is 1 + ln(d/H),
+or 2 − H/d on a lay that keeps all of reality within 2H. There is one corner, the split between the near field and the
+first level; past it the levels are plain doublings with no corner of their own.
 
 **H is a zoom.** The reader's addresses are finite: some count K, which comes before H. H, the thumb it holds up, decides
 how K is split. Half the addresses lie inside H at every H; a small H makes the near ones fine and puts more of the world

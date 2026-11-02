@@ -1221,6 +1221,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R618 (2 Nov; Tom: "Let's lean on the thumb metaphor. When H is discussed add the thumb reference."): H is the thumb held
   out at arm's length. *Reads and Writes* names the thumb wherever it discusses H; formulas keep the letter. **A standing
   rule for new writing: when H comes up, name the thumb.**
+  R619 (2 Nov; Tom: "the corner is the cross hairs of the thumbs, which in turn sets the near and far fields. The near
+  field is a uniform distributed single thumb. The far field is then 2 thumbs than 4 thumbs than 8 thumbs etc."): *Reads
+  and Writes* §6 "The crosshairs": the crossed thumbs' crossing is the corner; near field one thumb laid evenly, far field
+  two, four, eight thumbs, each the same count; move the crosshairs and the split moves.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
