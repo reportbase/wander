@@ -1249,6 +1249,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   algebraic numbers (∛2), a transcendental a limit though it may have a short name; work O(K); D⁴'s split scoped.
   R626 (2 Nov; Tom: "Proceed"): π with the address (the turn closes, its total forced), e with the payload (an open line,
   no natural size, its base a convention; why no reading gives a₀). *Reads and Writes* §5; essay 15 §4.
+  R627 (2 Nov; Tom: "the facing and rotation … teaches you about your addresses and walking teaches about the world", then
+  "keep it generic and geometric"): a turn about the standpoint gives the addresses, the same in every world; a step along a
+  straight line gives the world (parallax); any motion is both, only the step places. *Reads and Writes* §8; essay 6 §2.
+  Say it geometrically: no eyes, heads or two eyes.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

@@ -520,9 +520,15 @@ reconstructs the writer's cube, and while it does, it is writing: it has moved, 
 one standpoint holds. When it stops and looks again, it reads. A read and a write are not two kinds of observer; they are
 what one observer is doing.
 
-**Turning in place gives no parallax.** A turn about the point seen from moves every direction alike. A head's eye sits a
-little in front of the head's axis, so a turn carries it along a chord, a baseline; that is parallax, and to write in metres
-it needs the eye's offset carried in.
+**Turning teaches the addresses; walking teaches the world.** A standpoint has two motions, a turn about itself and a
+step along a straight line. A turn moves every direction by the same angle, near and far alike, so nothing shifts against
+anything else: it gives the frame, the corner where the thumbs cross and the Cauchy of the fingers, and these are the same
+in every world. A reader that only turns learns its own addresses and nothing about what is out there; what meets its
+fingers changes, and a colour carries no place. A step is the first motion whose effect depends on the world: near things
+cross the fingers faster than far ones, and that difference is parallax. Any motion of a standpoint is a turn and a step
+together (a turn about any point but the standpoint carries the standpoint along a chord, and the chord is a step), and only
+the step's part places anything. The straight line walked is the writer's own: count it in a unit and every place found
+from it is written.
 
 **Knowing V comes by degrees.** The crossing is not a switch thrown. It has three counts.
 

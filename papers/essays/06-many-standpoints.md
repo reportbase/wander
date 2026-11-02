@@ -34,15 +34,16 @@ distance between your eyes, which you have never measured, is the length every p
 A reader that does not move has the directions to everything it can see, and the steady turn lays them as the Cauchy.
 That much the earlier essays established. Three more things are worth saying about one standpoint before leaving it.
 
-**Turning in place gives no parallax.** Turn your head about the point you see from, and every direction turns by the
-same angle, near and far alike. Nothing shifts against anything else. Turning gives the directions, the frame and the
-corner, and no distance.
+**Turning in place gives no parallax.** Turn about the point you see from, and every direction turns by the same
+angle, near and far alike. Nothing shifts against anything else. Turning gives the directions, the frame and the corner,
+and no distance, and it gives them the same in every world: a reader that only turns learns its own addresses, and
+nothing about what is out there. What meets the fingers changes as it turns, but a colour carries no place.
 
-A real head is not quite a point, though. Your eye sits a few centimetres in front of the axis your head turns on, so a
-turn carries the eye along a short arc, and that arc is a baseline. A head turning through a quarter turn with the eye
-10 cm off its axis can place things out to about 100 m at a resolution of a milliradian. The eye alone, rotating in its
-socket about a centre 7.6 mm behind its lens, reaches about 4.5 m at a resolution of one arcminute. That is real
-parallax, but it comes from the eye moving, not from the turn. A pure turn about the seeing point places nothing.
+A step along a straight line is the other motion a standpoint has, and the first whose effect depends on the world: near
+things cross the fingers faster than far ones. Any motion of a standpoint is a turn and a step together. A turn about any
+point other than the standpoint carries the standpoint along a short arc, and that arc is a step; whatever it places, it
+places by the step, not by the turn. So the two motions divide the work: turning teaches the reader its addresses, and
+walking teaches it the world.
 
 **One stream is one relation.** Read over time from one place, a reading is a ratio of two amounts, a over b. Multiply
 both by any changing factor and the reading does not change. So a thing coming nearer and a thing at rest growing at the
