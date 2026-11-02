@@ -426,6 +426,15 @@ and its law in the readings (v/h, v₂/h) is the two-dimensional Cauchy, 2/(π(1
 its own corner, half its readings on each side; the near field in both readings is a third. The triple corner,
 h = v = v₂, sits at azimuth 45° and altitude 35.26°, not at either sweep's 45°.
 
+**One thumb, two thumbs.** In the plane the reader holds one thumb at arm's length: H, square to the line of sight, and one
+reading, v against h. In space it holds two thumbs crossed at a right angle, both square to the line of sight: one reads up,
+v against h, the other across, v₂ against h. The pair (v/h, v₂/h) is a direction of the wedge; each thumb alone reads the
+one-dimensional Cauchy with its own corner, and the two together the two-dimensional Cauchy above. Two thumbs add no second
+length: both are the reader's own H, so no breadth for either party enters, and what a writer would write as V = V₂ = H is
+the two thumbs being the same size. The triple corner is where both read 1. The right angle between them is no amount
+either: it is the quarter turn that takes one thumb onto the other, unchanged when the world is scaled. So the dimension is the count of thumbs, one
+for each direction square to the look: one in the plane, two in space.
+
 **The writer's cube.** The writer's frame with three parties is Descartes's: X, Y, Z, three number lines, every point three
 amounts. It reaches the reader's directions only with H and the angles: X = H·cos a·cos ψ, and so on.
 

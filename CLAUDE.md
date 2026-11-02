@@ -1210,6 +1210,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the archived CS companion in the read/write and K/N vocabulary (R612–R614), its numbers carried over (the machine's
   Cauchy from `runs/arr/infinity.mjs`), pointing to essays 8 and 12 where they go further. A card on `essays.html`, a row in
   the essays README, in `explainers.html`'s not-yet list; the smoke test counts sixteen essays.
+  R616 (2 Nov; Tom: "2d is one thumb, 3d is both thumbs held perpendicularly"): *Reads and Writes* §7 "One thumb, two
+  thumbs": the plane one thumb (H square to the look, v/h), space two crossed thumbs (v/h and v₂/h, the wedge's pair, the 2D
+  Cauchy); both the one H, so no second length (V = V₂ = H the writer's name for equal thumbs); the right angle no amount;
+  the dimension the count of thumbs square to the look.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
