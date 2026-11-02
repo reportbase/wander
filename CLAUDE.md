@@ -1225,6 +1225,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   field is a uniform distributed single thumb. The far field is then 2 thumbs than 4 thumbs than 8 thumbs etc."): *Reads
   and Writes* §6 "The crosshairs": the crossed thumbs' crossing is the corner; near field one thumb laid evenly, far field
   two, four, eight thumbs, each the same count; move the crosshairs and the split moves.
+  The essays name the thumb wherever H comes up; essay 4 §4 has the crosshairs.
+  R620 (2 Nov; Tom: "The stain glass window metaphor can then be extended into 3d with both hands and two sets of fingers
+  and crossing thumbs"): *Reads and Writes* §3 "Two hands": one hand's fingers in altitude, the other's in azimuth, the
+  thumbs crossed at the triple corner; each pane lines up with a crossing (one finger of each), a direction of the wedge;
+  the round hand even by turn, the upright hand even in height (equal shares); the colour the payload, no second length.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

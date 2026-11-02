@@ -271,6 +271,17 @@ the thumb up against a mountain range, and the range spans so many fingers; with
 thumb's own size, and every amount it then reads is off by the one number it lacks, V/H. To learn that number it must walk
 (§10).
 
+**Two hands.** In space the window is held with both hands. One hand spreads its fingers from flat to upright, the
+altitude; the other spreads its fingers round the horizontal, the azimuth. The two thumbs cross at a right angle (§7), and
+where they cross is the corner, the triple corner of the wedge, where both read 1. Each pane of the window now lines up with
+a crossing, one finger of each hand: the address is the pair of fingers, a direction of the wedge, (v/h, v₂/h). Each hand
+alone gives its own sweep, the one-dimensional Cauchy with its own corner; the crossings together give the two-dimensional
+Cauchy. For every crossing to hold the same share of the window, the round hand spreads its fingers evenly by turn and the
+upright hand evenly in height, not in angle (Archimedes' hat-box, Lambert's map); spread both evenly by angle and the pair
+neither hand reads leaves its corner. The coloured light at each crossing is the payload, as before, and still no colour
+carries a distance. Two hands add no second length: both thumbs are the one H, the same size, and the right angle between
+them is a quarter turn, no amount.
+
 **The lighthouse.** A lamp turns evenly and throws a flash along each direction. Where a flash lands on a straight shore, the
 landing x obeys (x − α)/β = tan θ, with α the foot of the lamp on the shore and β its distance from it. The angles are the
 lamp's addresses, laid evenly by its turn, whatever shore there is; the landings follow a Cauchy because the shore is
