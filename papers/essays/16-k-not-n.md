@@ -82,9 +82,9 @@ Read the two letters as vantages:
 
 - **N is the writer's.** To know N is to know the whole: how many there are, which is to know the extent, V, and how much
   is in it. That is writing. The first essay's test sorts it at once: double the world and N doubles.
-- **K is the reader's.** A reader never knows V (it holds one length, its own H, and every reading cancels V), so it never
-  knows N. What it knows is K, its own count of addresses, fixed before it chooses H and unchanged by anything it looks
-  at.
+- **K is the reader's.** A reader never knows V (it holds one length, its own H, the thumb it holds up, and every reading
+  cancels V), so it never knows N. What it knows is K, its own count of addresses, fixed before it chooses H and unchanged
+  by anything it looks at.
 
 The Cauchy is the map from a world of N to a holding of K. It lays the reader's K addresses over a world of any size: in
 proportion inside the corner, a doubling at a time past it, and everything past the last address on the one address at
@@ -108,8 +108,8 @@ Everything in the series is built from the *unit relation*: a number between 0 a
 the fraction of a day gone or the share of a road behind. A relation needs two, one for each party, and they are written
 h and v, in lower case.
 
-The wholes are written in upper case. The reader holds one, H, a value it chooses to start from rather than a size it
-measured; any H will do, and H only sets where the finest addresses fall. It holds no other. A writer, holding both
+The wholes are written in upper case. The reader holds one, H, the thumb, a value it chooses to start from rather than a
+size it measured; any H will do, and H only sets where the finest addresses fall. It holds no other. A writer, holding both
 sides, also holds V, the other party's breadth, and V* is the other party's true size, an amount. The amounts are h·H and
 v·V*, and so
 
@@ -403,9 +403,10 @@ Now the K addresses can be laid along distance. The writer's account of where th
 
 the Cauchy's quantiles with its scale at H. The addresses are the reader's; the formula placing them is the writer's.
 
-- Since tan(π/4) = 1, the middle boundary is d = H whatever H is: half the addresses inside the corner and half past it,
-  at every H. H moves the split; it never changes the count.
-- The first address is about πH/2K wide: a small H makes the near half fine, a large H carries the far half farther.
+- Since tan(π/4) = 1, the middle boundary is d = H, one thumb away, whatever H is: half the addresses inside the corner and
+  half past it, at every H. H moves the split; it never changes the count.
+- The first address is about πH/2K wide: a small H, a small thumb, makes the near half fine, a large H carries the far half
+  farther.
 - The world's count enters nowhere. A world of N things, of 2N, or of infinitely many is held at the same K addresses,
   each holding its share. N enters only as that share, which is payload.
 
@@ -415,20 +416,20 @@ unbounded world. Tables fixed in advance (a sampling grid, a histogram's bins, a
 extent they cover and the resolution they need, and are rebuilt when either changes. The turn's addresses need neither;
 what needs them is the payload or the writer.
 
-**H is a zoom, not an escape.** A reader could choose a very large H and hold everything in proportion, with no
-logarithm. The cost is detail: with K addresses spread over a very large H, everything at the reader's own scale falls
-inside the first. With n addresses across the near field, a thing covering d to d + Δ spans nΔ/H of them inside the
-corner, one level fewer each time H doubles; past the corner, on the logarithmic lay, n·ln(1 + Δ/d), whatever H is. The
-best H puts the thing read at the corner. The hyperbolic browser (Lamping, Rao and Pirolli 1995), mipmaps (Williams 1983)
-and map tiles whose key gains a digit a level all make this choice by design.
+**H is a zoom, not an escape.** A reader could choose a very large H, a big thumb, and hold everything in proportion, with
+no logarithm. The cost is detail: with K addresses spread over a very large H, everything at the reader's own scale falls
+inside the first. With n addresses across the near field, a thing covering d to d + Δ spans nΔ/H of them inside the corner,
+one level fewer each time H doubles; past the corner, on the logarithmic lay, n·ln(1 + Δ/d), whatever H is. The best H puts
+the thing read at the corner. The hyperbolic browser (Lamping, Rao and Pirolli 1995), mipmaps (Williams 1983) and map tiles
+whose key gains a digit a level all make this choice by design.
 
-**The corner follows the focus.** On the turn's addresses a cell's width relative to its distance is (π/2K)(s + 1/s),
-least at s = 1. The corner is the addresses' median, their finest relative grain and the reciprocal's fixed point, the
-roles a focus wants; it is also where the expected travel to the next look is least, whenever the next look is as likely
-on either side. So what is looked at is drawn at H. Near and far are then nearer and farther than the focus, held alike;
-their job is to show where to look next. The fewest addresses for a focus of extent F at grain δ, with a field to X whose
-cells stay within a factor ρ of each other, are ⌈F/δ⌉ + ⌈log_ρ(X/F)⌉: proportion on the focus, levels past its edge. At
-X/F = 64 and ρ = 2 the field costs six addresses, whatever K is. `fpv.html` lays a first-person view's depth this way.
+**The corner follows the focus.** On the turn's addresses a cell's width relative to its distance is (π/2K)(s + 1/s), least
+at s = 1. The corner is the addresses' median, their finest relative grain and the reciprocal's fixed point, the roles a
+focus wants; it is also where the expected travel to the next look is least, whenever the next look is as likely on either
+side. So what is looked at is drawn at H, one thumb wide. Near and far are then nearer and farther than the focus, held
+alike; their job is to show where to look next. The fewest addresses for a focus of extent F at grain δ, with a field to X
+whose cells stay within a factor ρ of each other, are ⌈F/δ⌉ + ⌈log_ρ(X/F)⌉: proportion on the focus, levels past its edge.
+At X/F = 64 and ρ = 2 the field costs six addresses, whatever K is. `fpv.html` lays a first-person view's depth this way.
 
 **Only the turn's cull composes.** Other paths from all of h to all of v, each swept uniformly along its own length, also
 squeeze the line into K addresses with H at their median and a tail that sends the rest to the horizon: the line
@@ -487,10 +488,10 @@ knowing nothing either way, at H itself.
 
 ## 12. What comes free, and what was built
 
-Once a reader chooses H, some structures follow with no further choice: a zoom; a split between near and far; readings no
-change of size can move; and, given uniform directions, addresses for any number of things with no table and no count.
-Two more need one premise: the logarithm past the corner (the premise of §9), and a level of detail (a fixed K). What
-hides what is not among them; that is the payload's, set by which surfaces are opaque.
+Once a reader chooses H, the size of its thumb, some structures follow with no further choice: a zoom; a split between near
+and far; readings no change of size can move; and, given uniform directions, addresses for any number of things with no
+table and no count. Two more need one premise: the logarithm past the corner (the premise of §9), and a level of detail (a
+fixed K). What hides what is not among them; that is the payload's, set by which surfaces are opaque.
 
 Engineers have arrived at many of these by design. The geometry does not do their jobs better; it says where each comes
 from, so that what a design adds can be named. Essay 8 goes through them; in brief:

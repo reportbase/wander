@@ -124,8 +124,8 @@ about log₂(2/ε) doublings on each side of the corner. At ε = 10⁻³, that i
 - **Past the far edge a place is a ray.** The shift between the two views is less than one step, and the pair reads one
   direction, as a single standpoint does. Parallax needs situated reading, and past its band it returns to it.
 
-The baseline works like a second zoom. Choosing B slides the band along the doublings, as choosing H slides the reader's
-window in the fourth essay. The band's width in doublings is set by the step alone.
+The baseline works like a second zoom. Choosing B slides the band along the doublings, as choosing H, the size of the
+reader's thumb, slides its window in the fourth essay. The band's width in doublings is set by the step alone.
 
 At published precisions:
 
@@ -304,12 +304,12 @@ stand, and the one amount it is handed.
 
 ## 12. Becoming the writer
 
-Climb the ladder of this essay once more, and count the variables. From one standpoint there is one length, H, and a
-direction; nothing in it is a place, and what can be made from one length alone is rational (the fourteenth essay). A
+Climb the ladder of this essay once more, and count the variables. From one standpoint there is one length, H, the thumb,
+and a direction; nothing in it is a place, and what can be made from one length alone is rational (the fourteenth essay). A
 second standpoint adds a second variable, the step between the two. Now each point is two rays crossing, and its place
 comes out of the crossing's lengths and angles, sines and square roots, numbers no single length makes. More standpoints
-give every place seen, in the step's length: the writer's box, its three number lines, up to its size. Count the step in
-an agreed unit and the box is in that unit.
+give every place seen, in the step's length: the writer's box, its three number lines, up to its size. Count the step in an
+agreed unit and the box is in that unit.
 
 So parallax is how a reader reconstructs the writer's cube, and while it does, it is the writer. It has moved, joined its
 standpoints and is holding what no one standpoint holds. When it stops and looks again, it reads. Reader and writer are
@@ -318,22 +318,22 @@ not two kinds of observer; they are what one observer is doing. The labels move 
 The first essay's survey says the same thing in its own words: the many angles are read, and the one base walked and
 counted is written; a surveyor does both in one morning.
 
-And the passage has degrees. Knowing V is not a switch thrown by the second standpoint; it comes in amounts, three
-ways. *In what:* in the step taken, in H if the step was H, in metres only if the step was counted. *How well:* best at
-the pair's corner, the circle on the baseline, the error stretching by d/(B/2) farther out, and past about B/ε nothing
-but a ray (the fifth section). *Of which things:* the same two standpoints give V for the near things and leave it
-unknown for the far ones. More standpoints, a longer baseline, narrow the band; nothing closes it. The writer who holds
-V exactly, the one the papers call the writer, is the limit of this, never a stage of it. That is the fifteenth essay's
-shape again: every stage of learning V is a finite approximant, as every partial sum of π is, and holding V exactly, like
-holding π, would need the infinite process finished. A reader becoming a writer holds V to so many digits, for so many
-things, out to so far.
+And the passage has degrees. Knowing V is not a switch thrown by the second standpoint; it comes in amounts, three ways.
+*In what:* in the step taken, in H if the step was H (one thumb, and places come out in thumbs), in metres only if the step
+was counted. *How well:* best at the pair's corner, the circle on the baseline, the error stretching by d/(B/2) farther
+out, and past about B/ε nothing but a ray (the fifth section). *Of which things:* the same two standpoints give V for the
+near things and leave it unknown for the far ones. More standpoints, a longer baseline, narrow the band; nothing closes it.
+The writer who holds V exactly, the one the papers call the writer, is the limit of this, never a stage of it. That is the
+fifteenth essay's shape again: every stage of learning V is a finite approximant, as every partial sum of π is, and holding
+V exactly, like holding π, would need the infinite process finished. A reader becoming a writer holds V to so many digits,
+for so many things, out to so far.
 
-One way to speed the passage is to aim it. Set H to the thing itself and there are two senses. Make the thing the unit,
-and its V is 1 by choice; its own two ends become the baseline, and you are the point placed: ninety degrees across a
-mountain range, centred, puts you half a range-width from it, from one look (`mountain.html`, "the mountain as H"). Or
-keep your H and make the thing the focus: choose the baseline so that half of it equals the distance, which puts the thing
-at parallax's corner, where its error is least. You need the distance roughly first, so it goes in passes, a short step,
-then a longer baseline set from what the short one gave.
+One way to speed the passage is to aim it. Set H, the thumb, to the thing itself and there are two senses. Make the thing
+the unit, and its V is 1 by choice; its own two ends become the baseline, and you are the point placed: ninety degrees
+across a mountain range, centred, puts you half a range-width from it, from one look (`mountain.html`, "the mountain as
+H"). Or keep your H and make the thing the focus: choose the baseline so that half of it equals the distance, which puts
+the thing at parallax's corner, where its error is least. You need the distance roughly first, so it goes in passes, a
+short step, then a longer baseline set from what the short one gave.
 
 ---
 

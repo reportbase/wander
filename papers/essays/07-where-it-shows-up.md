@@ -2,9 +2,9 @@
 
 *The seventh of a series of essays on what can be known from where one stands. Draft, 28 October 2026.*
 
-The first six essays built the geometry from the inside out. A reader holds one length, H, and turns it. The turn gives the
-circle, the readings are the Cauchy, and the corner sits at their median. Ratios are free and amounts cost something
-carried in.
+The first six essays built the geometry from the inside out. A reader holds one length, H, its thumb held out at arm's
+length, and turns it. The turn gives the circle, the readings are the Cauchy, and the corner sits at their median. Ratios
+are free and amounts cost something carried in.
 
 This essay goes the other way. It looks at places where people met the geometry long before anyone named it: a lamp on a
 cliff, a navigator's chart, a statistician dividing by a standard deviation, a graph drawn with equal axes, a camera with
@@ -50,7 +50,7 @@ paces along the sand. The paces are amounts, carried in by walking; the lamp's t
 **Where the path goes.** Each flash travels β/cos θ to reach the shore, a different length for every flash. That length
 cancels. The landing depends only on the ratio of the flash's two legs, β out to sea and x − α along the shore, and one
 length remains, β. It is the same for every flash because the shore is straight. So the lighthouse is one length turned,
-the lamp's distance playing H.
+the lamp's distance playing H, the thumb.
 
 **Drawing it with the shore stretched.** Now draw the picture on paper and make a mistake: draw the shore at c times the
 scale of the sea. Write it as V = cH, the sea drawn at H and the shore at cH.
@@ -64,10 +64,11 @@ All three return to what they should be if and only if c = 1. The drawing with t
 only one in which the turn is still a turn: the median flash at 45°, half the landings within one lamp-distance, the near
 side the mirror of the far.
 
-**Drawing it at the wrong size.** Now make a different mistake: draw the picture at c = 1 but with the wrong lamp
-distance, any H in place of β. Each landing is laid H·tan θ from the foot. Every angle is kept, and the 45° flash is still
-the corner. Every length is off by β/H, along the shore and out to sea alike. That is not a distortion, it is a similar
-figure. The picture is right in every way a reading can check and wrong only in its scale, which no reading fixes.
+**Drawing it at the wrong size.** Now make a different mistake: draw the picture at c = 1 but with the wrong lamp distance,
+any H, a thumb of any size, in place of β. Each landing is laid H·tan θ from the foot. Every angle is kept, and the 45°
+flash is still the corner. Every length is off by β/H, along the shore and out to sea alike. That is not a distortion, it
+is a similar figure. The picture is right in every way a reading can check and wrong only in its scale, which no reading
+fixes.
 
 The two mistakes are different in kind. A stretch, c ≠ 1, breaks the turn and moves the median off the corner. A wrong
 size, H ≠ β, breaks nothing that can be read. The first is a stretch, the second a zoom.
@@ -116,10 +117,10 @@ That is Mercator's chart of 1569. Where c = 1 at every latitude, the slope tan �
 course is a straight line. That is why navigators have laid compass courses on it for four and a half centuries.
 
 **The small circle.** A circle of small radius δ on the globe, its points δ·(cos t, sin t) north and east, is drawn as
-δ·(f′(φ)·cos t, sec φ·sin t): an ellipse whose axes stand in the ratio c. Cartographers call it Tissot's indicatrix
-(Tissot 1881), and they use it to see at a glance what any chart does at each place. In the language of these essays, it
-is the reader's one length traced in two units. It is a circle exactly where the chart keeps angles, and among the charts
-of this kind, only Mercator's keeps it a circle everywhere.
+δ·(f′(φ)·cos t, sec φ·sin t): an ellipse whose axes stand in the ratio c. Cartographers call it Tissot's indicatrix (Tissot
+1881), and they use it to see at a glance what any chart does at each place. In the language of these essays, it is the
+reader's one length, one thumb, traced in two units. It is a circle exactly where the chart keeps angles, and among the
+charts of this kind, only Mercator's keeps it a circle everywhere.
 
 **Four charts, one course.** In v and h, with v = sin φ (the height above the equator's plane) and h = cos φ (the distance
 from the axis), four familiar cylindrical charts compare like this. The last column is the course northeast, drawn at

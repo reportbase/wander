@@ -38,9 +38,9 @@ appears, and how big something A carries appears, a hand at arm's length. A's ob
 
   r_A = (how big B appears) / (how big my hand appears).
 
-That is a ratio, a reading in the sense of the first essay. Its denominator is A's own one length, A's H. B does the same
-from the other end and gets r_B, against B's own hand. The two readings have different denominators, and each denominator
-is private to its seat.
+That is a ratio, a reading in the sense of the first essay. Its denominator is A's own one length, A's H: its thumb at
+arm's length. B does the same from the other end and gets r_B, against B's own hand. The two readings have different
+denominators, and each denominator is private to its seat.
 
 Both readings are correct, and both are less than 1. "Less than 1" means, in each case, "the other looks smaller than my
 hand". There is no contradiction yet.
@@ -157,9 +157,9 @@ The field has a specific shape, two private denominators. The other paradoxes in
 it is worth stating before going on.
 
 The essays have kept apart two vantages.
-- **The reader** stands somewhere. It holds one length, its H, and turns it. What it reads are ratios: directions,
-  addresses, the order of things, the corner where two of its relations are equal. It holds no total and no count of
-  what there is, and it meets a horizon.
+- **The reader** stands somewhere. It holds one length, its H, the thumb, and turns it. What it reads are ratios:
+  directions, addresses, the order of things, the corner where two of its relations are equal. It holds no total and no
+  count of what there is, and it meets a horizon.
 - **The writer** holds the whole. It has every amount in a unit, both hemispheres, the count, the sum. It is the
   blueprint, the equation on the page, the globe. It has no standpoint, no corner and no horizon.
 
@@ -185,10 +185,10 @@ The rest of the essay goes through the catalogue by kind.
 **Zeno's runner.** To cross a distance one must first cross half of it, then half of what is left, without end; so the
 runner never arrives. The writer holds the whole series and sums it: ½ + ¼ + ⅛ + … = 1. The reader counts the steps, and
 each halving is one more step, without end. The fourth essay showed both on one lay. Drawn by length, on the in-place lay,
-every doubling past the corner fits into one more H, so infinitely many levels fit in a finite stretch. Counted, each level
-takes the same number of addresses, so the count never ends. Finite by length and endless by count: both true, from
-different vantages. The standard resolutions, the convergent series and Aristotle's distinction between potential and
-actual infinity, are the two vantages named.
+every doubling past the corner fits into one more H, one more thumb, so infinitely many levels fit in a finite stretch.
+Counted, each level takes the same number of addresses, so the count never ends. Finite by length and endless by count:
+both true, from different vantages. The standard resolutions, the convergent series and Aristotle's distinction between
+potential and actual infinity, are the two vantages named.
 
 **Galileo's squares and Hilbert's hotel.** There are as many square numbers as whole numbers, since each n pairs with n²,
 yet the squares are a vanishing share of the whole numbers (Galileo 1638). A hotel with infinitely many rooms, every one

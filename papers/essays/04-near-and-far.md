@@ -6,9 +6,9 @@ The first three essays built a reader with one length, a circle traced by turnin
 directions that turn gives. This essay asks a practical question. A reader has only so many places to put things. How
 should it lay them out, near and far?
 
-The answer has two parts, split at the corner. Near, in proportion. Far, in doublings. Between them there is one point
-and no seam. The essay also asks where the corner should go, and answers that a reader should put it on whatever it is
-looking at. That is what H, the reader's one length, is for: not a measurement, but a zoom.
+The answer has two parts, split at the corner. Near, in proportion. Far, in doublings. Between them there is one point and
+no seam. The essay also asks where the corner should go, and answers that a reader should put it on whatever it is looking
+at. That is what H, the reader's one length, is for (its thumb, held out at arm's length): not a measurement, but a zoom.
 
 ---
 
@@ -32,28 +32,28 @@ either side of it.
 
 ## 2. Inside the corner: proportion
 
-The reader has one length, H. Anything within that length can be laid out at its true scale against it: a thing half
-of H away goes halfway out; a thing a quarter of H away goes a quarter of the way. This is the **near field**, and it is
-laid in proportion. Inside it, H is a ruler.
+The reader has one length, H: its thumb, held out at arm's length. Anything within that length can be laid out at its true
+scale against it: a thing half a thumb away goes halfway out; a thing a quarter of a thumb away goes a quarter of the way.
+This is the **near field**, one thumb laid evenly, in proportion. Inside it, the thumb is a ruler.
 
 Proportion is exactly what the near field needs. Differences there are what matter: whether a cup is a hand's width or
 two hand's widths away decides whether you can reach it. A ruler with equal marks is the right tool.
 
-The trouble comes past H. A ruler with equal marks never ends. A reader that kept laying things out in proportion beyond
-its own length would need room without limit.
+The trouble comes past H, past one thumb. A ruler with equal marks never ends. A reader that kept laying things out in
+proportion beyond its own length would need room without limit.
 
 ---
 
 ## 3. Past the corner: what the far field has to be
 
-So how should a reader lay out the things beyond H? Suppose it places a far thing, x times H away, at some position on
-its layout, and that the position grows with x. What rule should the growth follow?
+So how should a reader lay out the things beyond H? Suppose it places a far thing, x times H away (x thumbs), at some
+position on its layout, and that the position grows with x. What rule should the growth follow?
 
-There is one natural condition. The reader's choice of H is free; nothing in its readings fixes it. A reader that chose
-H twice as large would see every far amount as half as many H's away. If the layout gave a stretch of distances more or
-less room depending on where that stretch happened to fall, then the room would depend on the arbitrary choice of H. So
-the layout should give a stretch from x to λx the same room wherever it falls: room that depends on the ratio λ alone,
-not on x.
+There is one natural condition. The reader's choice of H is free; nothing in its readings fixes it. A reader that chose H
+twice as large, a thumb twice the size, would see every far amount as half as many thumbs away. If the layout gave a
+stretch of distances more or less room depending on where that stretch happened to fall, then the room would depend on the
+arbitrary choice of H. So the layout should give a stretch from x to λx the same room wherever it falls: room that depends
+on the ratio λ alone, not on x.
 
 That one condition decides the layout. Only one rule gives every stretch of the same ratio the same room: the
 logarithm. Every doubling gets the same number of places, every tenfold the same number again. The proof is a classical
@@ -91,12 +91,19 @@ They join without a kink. There is only one such corner built into the relation:
 parties leaves fixed, where v equals h. Past it the levels are plain doublings laid side by side. They have no corners of
 their own and nothing nested inside them.
 
+**The crosshairs.** Picture H as a thumb held out at arm's length; in space, two thumbs crossed at a right angle across the
+line of sight, one reading up and one across, both the same H (the fifth essay). Where they cross is the corner: the thing
+there reads one thumb up for one thumb along, v equal to h, and it is drawn one thumb wide. That crossing sets the near
+field and the far field. The near field is a single thumb, laid evenly: everything nearer than the crossing gets its places
+in proportion. The far field is laid in doublings of it: two thumbs, then four, then eight, each with the same count of
+places as the one before, out toward the horizon.
+
 ### Reality in 2H
 
 There is a second way to lay out the same far addresses, by length instead of by count. Place a far reading at a distance
-of 2 minus h/v from home, in units of H. Then the first doubling past the corner, from H to 2H, takes up half of the next
-H; the second doubling takes a quarter; the third an eighth. The whole far field, out to infinity, fits between H and
-2H.
+of 2 minus h/v from home, in units of H, in thumbs. Then the first doubling past the corner, from one thumb to two (H to
+2H), takes up half of the next thumb; the second doubling takes a quarter; the third an eighth. The whole far field, out to
+infinity, fits between one thumb and two, H and 2H.
 
 The reader holds the same addresses either way, the same number per doubling. Laid by count they run on forever; laid by
 length they crowd toward a wall at 2H. A reader with finitely many places runs out of them at the end of its own range
@@ -153,10 +160,11 @@ Divide at the corner, and apply the same argument to each half, and you get halv
 parts, or any other number, need something added to the level, a measure it does not have. This is Felix Klein's
 principle that a geometry supplies what its symmetries keep, applied to the points of a level.
 
-Two halvings should be kept apart. Halving a length or a count, H to H/2, the doublings 2ᵏ, is rational, and a reader
-with one length makes it. Placing the cut inside a doubling at its geometric middle, √2 inside the first, takes a square
-root, two lengths combined, and that is the writer's (the fourteenth essay, "One variable, two, and the whole turn"). The argument above says which point a level's
-symmetries mark; it does not make the reader the one who places it.
+Two halvings should be kept apart. Halving a length or a count, a thumb to half a thumb (H to H/2), the doublings 2ᵏ, is
+rational, and a reader with one length makes it. Placing the cut inside a doubling at its geometric middle, √2 inside the
+first, takes a square root, two lengths combined, and that is the writer's (the fourteenth essay, "One variable, two, and
+the whole turn"). The argument above says which point a level's symmetries mark; it does not make the reader the one who
+places it.
 
 A reader can still match any other ratio. A reader whose resolution grows by a factor of three from level to level
 matches levels of three exactly, as one with a factor of two matches doublings. But every ratio other than the halving
@@ -265,25 +273,25 @@ Mipmaps halve an image at each level. Web map tiles add one digit to their key f
 
 ## 11. H is a zoom, not an escape
 
-H is not a measured size. It is the value the reader starts from, and nothing in the geometry fixes it. Every H gives
-the same circle and the same corner. So a reader could choose an enormous H and hold everything it will ever look at
-inside the near field, in proportion, with no logarithm at all.
+H, the thumb, is not a measured size. It is the value the reader starts from, a thumb of any size, and nothing in the
+geometry fixes it. Every H gives the same circle and the same corner. So a reader could choose an enormous H and hold
+everything it will ever look at inside the near field, in proportion, with no logarithm at all.
 
-The cost is the level of detail. With a fixed number of places spread across an enormous H, everything at the reader's
-own scale falls inside the first place and becomes a point. A small H holds the small at true scale and the large in
-levels. A large H holds the large and loses the small. There is always something smaller than any H's first place, as
-there is always something larger past any corner. No single H holds every scale at true scale.
+The cost is the level of detail. With a fixed number of places spread across an enormous H, everything at the reader's own
+scale falls inside the first place and becomes a point. A small H, a small thumb, holds the small at true scale and the
+large in levels. A large H, a big thumb, holds the large and loses the small. There is always something smaller than any
+H's first place, as there is always something larger past any corner. No single H holds every scale at true scale.
 
-So the best choice is to set H to the scale of the thing being read, which puts that thing at the corner. That is what
-focusing an eye or zooming a lens does.
+So the best choice is to set H to the scale of the thing being read, which puts that thing at the corner, one thumb wide.
+That is what focusing an eye or zooming a lens does.
 
 ### What a larger H gives and takes
 
 Count the room one object gets, the stretch from distance d to d + Δ.
 
-- **Inside the corner,** it spans a number of places proportional to Δ/H. A larger H moves the corner further out and
-  gives the proportional field more reach, but the count is fixed, so every object inside gets fewer places: one level
-  of detail fewer for each doubling of H.
+- **Inside the corner,** it spans a number of places proportional to Δ/H. A larger H, a bigger thumb, moves the corner
+  further out and gives the proportional field more reach, but the count is fixed, so every object inside gets fewer
+  places: one level of detail fewer for each doubling of H.
 - **Past the corner, on the logarithmic lay,** its room depends only on where it is, not on H. A larger H only moves the
   held levels outward.
 - **On the in-place lay,** a larger H gives the far more detail as well. The object gets the most room when H is the
@@ -298,8 +306,8 @@ corner of what is known.
 
 ## 12. A fixed count, aimed by H
 
-Call the reader's whole count of places **K**: its fixed capacity to observe, the same whatever it looks at. K comes
-before H. Choosing H does not change K; it splits it.
+Call the reader's whole count of places **K**: its fixed capacity to observe, the same whatever it looks at. K comes before
+H. Choosing H, the size of the thumb, does not change K; it splits it.
 
 Lay the K places of a steady turn along distance. Their boundaries fall at H times the tangent of kπ/2K, for k from 1 to
 K − 1. These are the Cauchy's quantiles with its scale at H.
@@ -355,9 +363,9 @@ This says where a focus *should* go, and why. It is not a claim about what any e
 The two unifying ideas of the series meet here in a practical form.
 
 **Reading and writing.** The writer's ruler is the number line: proportion everywhere, no corner, every unit like every
-other, which is what adding amounts needs. The reader's layout has a corner, set by its own length: proportion inside,
-doublings past it, so that a finite count of places covers everything from the cup in its hand to the horizon. Neither
-is better. They are made for different acts.
+other, which is what adding amounts needs. The reader's layout has a corner, set by its own length, its thumb: proportion
+inside, one thumb laid evenly, doublings past it (two thumbs, then four, then eight), so that a finite count of places
+covers everything from the cup in its hand to the horizon. Neither is better. They are made for different acts.
 
 **The Cauchy.** The reader's K places, laid by a steady turn, fall at the Cauchy's quantiles with H as their scale. Half
 inside the corner, half past it, whatever H is and however many things the world holds. The corner, where the law's

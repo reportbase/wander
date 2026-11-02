@@ -75,12 +75,12 @@ in amounts. The reader holds each array only up to its own factor, the size no r
 two ends meet. The writer knows the sizes, and which facing each array is, and so it can join the four into the closed
 circle or the eight into the sphere.
 
-**Not knowing the size makes the corner and the horizon.** This is the array's way of saying what the first essay
-said about the missing V. Knowing an array's size, the writer has its far end at an amount, the other party's whole. Its ruler is the
-number line, on which the point where the two parties are equal is simply computed. Not knowing it, a reader whose sweep
-is a turn has only its own one length, and v = h becomes its split of near from far and the median of its readings: the
-corner. With no size, the array's far end is no amount at all, only a direction, [0 : 1], where the chart v/h runs out:
-the horizon. Both are the reader's because the size is missing. The writer, holding the size, has neither.
+**Not knowing the size makes the corner and the horizon.** This is the array's way of saying what the first essay said
+about the missing V. Knowing an array's size, the writer has its far end at an amount, the other party's whole. Its ruler
+is the number line, on which the point where the two parties are equal is simply computed. Not knowing it, a reader whose
+sweep is a turn has only its own one length, its thumb, and v = h becomes its split of near from far and the median of its
+readings: the corner. With no size, the array's far end is no amount at all, only a direction, [0 : 1], where the chart v/h
+runs out: the horizon. Both are the reader's because the size is missing. The writer, holding the size, has neither.
 
 **Readers' and writers' arrays.** The first essay's two vantages give four kinds of array, two each.
 - **The writer's circle** is a constant array of known length, every entry the radius. Its one value needs no storing, so the
@@ -92,7 +92,7 @@ the horizon. Both are the reader's because the size is missing. The writer, hold
 - **The reader's inscribed sweep** gives the index alone, laid before any value arrives and with no length: its places the Cauchy's
   quantiles, its middle the corner, its last place running to the horizon, K places for any N.
 
-With nothing related there is no array: a length H, but no index and no relation to store.
+With nothing related there is no array: a length H, the thumb, but no index and no relation to store.
 
 The writer's arrays are the circle and the shape, with the length known. The reader's are the payload on the index and the index
 itself, with the length missing. That one number is what writing supplies.
@@ -112,9 +112,9 @@ central sweep, meeting the same point at twice the angle (the second essay's III
 half turn and lands on the same place, place for place. One index serves both sweeps.
 
 Against that, a writer places an amount x on [0, X] at ⌊N·x/X⌋, which needs X. With N = 8 and X = 100, the amounts 10, 50
-and 99 go to places 0, 4 and 7. Read from home at a distance laid by H, ⌊8·(2/π)·arctan(x/H)⌋, they go to places 4, 6 and
-7 with H = 10, and to 1, 4 and 5 with H = 50. H moves them, as a zoom, and X never enters. The count index needs the
-extent; the turn index needs only the zoom.
+and 99 go to places 0, 4 and 7. Read from home at a distance laid by H, ⌊8·(2/π)·arctan(x/H)⌋, they go to places 4, 6 and 7
+with H = 10, and to 1, 4 and 5 with H = 50. H moves them, as a zoom, the size of the thumb, and X never enters. The count
+index needs the extent; the turn index needs only the zoom.
 
 ---
 

@@ -59,13 +59,13 @@ Every reading you could ever take can be sorted by asking two questions about it
 each answer either ends the sorting or leads to the next question. So every reading lands in exactly one place, and the
 places do not overlap. There are two of them: the writer's and the reader's.
 
-Before the questions, a little language. You, the reader, have a length of your own. It might be your stride, your
-thumb held at arm's length, your eye height above the floor, or the length of a rod you happen to be carrying. Call it
-**H**. You always have it, because it is yours. Anything else in the world, the mountain, the table, the other end of a
-measurement, has a breadth of its own. Call that **V**. How far a thing reaches along your length is a share of H,
-written **h**, a number between 0 and 1. How far it reaches along the other is **v**, also between 0 and 1. These small
-letters are *relations*: how much of a length is filled, with no unit in them. The capital letters are amounts.
-Keeping the two apart is most of the work.
+Before the questions, a little language. You, the reader, have a length of your own. It might be your stride, your thumb
+held at arm's length, your eye height above the floor, or the length of a rod you happen to be carrying. Call it **H**; the
+essays picture it as the thumb. You always have it, because it is yours. Anything else in the world, the mountain, the
+table, the other end of a measurement, has a breadth of its own. Call that **V**. How far a thing reaches along your length
+is a share of H, written **h**, a number between 0 and 1. How far it reaches along the other is **v**, also between 0 and
+1. These small letters are *relations*: how much of a length is filled, with no unit in them. The capital letters are
+amounts. Keeping the two apart is most of the work.
 
 Now the questions.
 
@@ -183,10 +183,11 @@ The writer's ruler is the number line. Its marks are evenly spaced, 1, 2, 3, as 
 and every unit of length is like every other. That is exactly what you want for stating amounts: an amount is a count
 of units, and counting needs equal units. The number line has no special place on it. The mark at 1 is just a mark.
 
-The reader's ruler, as later essays will show in detail, has a special place: the point where the thing you are
-reading equals your own length, where v equals h. Near you, inside that point, the reader's ruler is proportional,
-like the number line. Past it, each step outward is a doubling, so far things are laid by how many times farther they
-are, not how many units. Neither ruler is better. They are made for different acts. The writer counts; the reader sees.
+The reader's ruler, as later essays will show in detail, has a special place: the point where the thing you are reading
+equals your own length, one thumb, where v equals h. Near you, inside that point, the reader's ruler is proportional, like
+the number line: one thumb laid evenly. Past it, each step outward is a doubling (two thumbs, then four, then eight), so
+far things are laid by how many times farther they are, not how many units. Neither ruler is better. They are made for
+different acts. The writer counts; the reader sees.
 
 *Demo: one blueprint, two vantages, in two dimensions and three; the writer and the reader.*
 
@@ -206,10 +207,10 @@ timing a signal of known speed, or being handed an agreed unit, each an amount c
 comes to know V has not read better. It has written, and taken the writer's vantage. Yet the reader has a circle too.
 Where does it come from?
 
-It comes from turning. Take your one length, H, and turn it about one end, steadily, like the beam of a lighthouse
-sweeping the sea, or your gaze sweeping along a row of trees. The free end traces a circle, and it traces a circle for
-one simple reason: the length does not change as it turns. No second length is needed to make the circle round. The
-circle is just what a fixed length does when it turns.
+It comes from turning. Take your one length, H, your thumb, and turn it about one end, steadily, like the beam of a
+lighthouse sweeping the sea, or your gaze sweeping along a row of trees. The free end traces a circle, and it traces a
+circle for one simple reason: the length does not change as it turns. No second length is needed to make the circle round.
+The circle is just what a fixed length does when it turns.
 
 Now ask what the reader reads as it turns. At each moment its length points in some direction. The direction has an
 across part and an up part, two shares of the same length: h across and v up. What the reader reads is how they compare,
@@ -291,9 +292,9 @@ direction read from a standpoint. Its median is the corner, a feature of the geo
 there is no amount to be had.
 
 One more point, about a phrase that appears often in the writings this essay draws on: "V = H". A writer looking at the
-one-length circle sees the reader's one length turned, and describes it in the writer's own terms: two breadths, both
-equal to H. The phrase is the writer's name for the one-length circle. The reader never sets V equal to H. It has no V to
-set.
+one-length circle sees the reader's one length, its thumb, turned, and describes it in the writer's own terms: two
+breadths, both equal to H. The phrase is the writer's name for the one-length circle. The reader never sets V equal to H.
+It has no V to set.
 
 ### What is old and what is new
 

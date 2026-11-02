@@ -33,9 +33,9 @@ Write that standpoint as one complex number, z = m + iγ. Turn uniformly and rea
 and the readings are a Cauchy law with foot m and height γ (the third essay, section 6). In the plane this one law is
 four different things at once.
 
-**It is the uniform turn carried by a Möbius map.** A Möbius map of the line, x ↦ (ax + b)/(cx + d), moves the
-standpoint z to (az + b)/(cz + d) and carries a Cauchy law to the Cauchy law of the new standpoint. Nothing else
-changes. Every change of chart the reader can make, a new zero, a new H, the reciprocal, is such a map, and so the
+**It is the uniform turn carried by a Möbius map.** A Möbius map of the line, x ↦ (ax + b)/(cx + d), moves the standpoint z
+to (az + b)/(cz + d) and carries a Cauchy law to the Cauchy law of the new standpoint. Nothing else changes. Every change
+of chart the reader can make, a new zero, a new H (a thumb of another size), the reciprocal, is such a map, and so the
 family of Cauchy laws is closed under all of them. The third essay called this "once a Cauchy, always a Cauchy".
 
 **It is harmonic measure.** Release a random walker at the standpoint and let it wander until it first touches the line.
@@ -165,12 +165,12 @@ question in any number of dimensions: which part moved. The logarithm ln r survi
 logarithm's plane; only its imaginary part, which in the plane was one angle that added, becomes a direction on a
 sphere that does not.
 
-**The corners survive.** Each pair of parties has its corner, where the two shares are equal, and the reciprocal that
-swaps them leaves it in place: a mirror plane in place of a mirror line. The corner in distance, d = H, is a mirror in
-the logarithm of distance whatever the number of directions. The fifth essay's results, every pair at its corner and
-the near field in all readings a third (1/(n + 1) with n other parties), are statements about uniform directions from
-home. At home, at the centre of the directions, all three of space's laws are the same law: the uniform one. Nothing in
-the fifth essay assumed a standpoint off the centre, so nothing there depends on the plane.
+**The corners survive.** Each pair of parties has its corner, where the two shares are equal, and the reciprocal that swaps
+them leaves it in place: a mirror plane in place of a mirror line. The corner in distance, d = H, one thumb away, is a
+mirror in the logarithm of distance whatever the number of directions. The fifth essay's results, every pair at its corner
+and the near field in all readings a third (1/(n + 1) with n other parties), are statements about uniform directions from
+home. At home, at the centre of the directions, all three of space's laws are the same law: the uniform one. Nothing in the
+fifth essay assumed a standpoint off the centre, so nothing there depends on the plane.
 
 **The Cauchy wedge survives.** The two-dimensional Cauchy of the wedge's readings, (v/h, v₂/h), is the uniform law on
 the octant seen through a flat screen. It is the image of the uniform directions, with no standpoint moved. It holds in

@@ -100,7 +100,7 @@ farther along: the share of the turn that lands on slots near i is
 the Cauchy. Half the quarter turn lands within γ of the foot; that is the corner. The other half covers everything
 past it, thinning as 1/i².
 
-**A breadth.** γ, the reader's own length, its H. It sets where the corner falls on the array.
+**A breadth.** γ, the reader's own length, its H, the thumb it holds up. It sets where the corner falls on the array.
 
 `sizeof` is not among them. The reader's breadth is its own, never the array's.
 
@@ -237,14 +237,15 @@ Run with K = 32 and H = 10, on a world whose slots are numbered positions 0, 1, 
   about 204 onward falls in the last slot, already painted by the first thing met there.
 - *The scale is invisible.* Spread the world's positions seven times as far and take H seven times as large, and the
   reader's slots are unchanged.
-- *H is a zoom.* Change H alone and different elements land in the slots; the slots themselves do not move.
+- *H is a zoom.* Change H alone, the size of the thumb, and different elements land in the slots; the slots themselves do
+  not move.
 - *The payload is not the address.* Repaint every element and every slot keeps its place. Six of the 32 near home stay
   unpainted, because no element of a world laid in whole steps lies in their narrow cones: directions with nothing on
   them, as real as the painted ones.
 
 And where the world does end, the paint stops. A world of 100 elements leaves the reader's last painted slot at 29, which
-reads N/H as between 6.7 and 10.2 (the truth, 99/10, inside). The reader reads N/H to its slot's width, never N. The
-script is `runs/arr/reader.mjs`.
+reads N/H, the world's length in thumbs, as between 6.7 and 10.2 (the truth, 99/10, inside). The reader reads N/H to its
+slot's width, never N. The script is `runs/arr/reader.mjs`.
 
 **What the program does not have: the Cauchy itself.** The program recreates the reader's K addresses, a finite picture
 of the Cauchy cut into K quantiles. It does not recreate the Cauchy, because the Cauchy handles a true infinity and a
@@ -371,14 +372,14 @@ abstract gifts, given free in the world, become operational in a machine.
 An array, as programmers know it, is a writer's object. Its size is held, its index is an amount, its shares are shares
 of a known total, and every one of those moves when the world is scaled. That is exactly right for whoever made it.
 
-Read from where one stands, the same array is something else. The reader adds one degree of freedom, its standpoint off
-the line, and gets exactly two things: a density, the Cauchy laid over the slots by its turn, and a breadth, its own H.
-It reads a sweep, not the array. A writer can lay any array on the quarter turn and move between slots and ratios by
+Read from where one stands, the same array is something else. The reader adds one degree of freedom, its standpoint off the
+line, and gets exactly two things: a density, the Cauchy laid over the slots by its turn, and a breadth, its own H, the
+thumb. It reads a sweep, not the array. A writer can lay any array on the quarter turn and move between slots and ratios by
 tangent and arctangent, but that drawing needs N; the reader has only its turn, the share passed and no end. Where an N
-exists it reads N only as N/H. Where none does, or none could, the sweep runs
-to a horizon, and at a horizon there is no inside, no outside and no half of anything, only the two ends 0 and ∞ of the
-projective line, the reciprocal that swaps them, and the corner it fixes. The central sweep's π/2 is reached at a
-point; the inscribed sweep's 2/π only at the horizon; and their product is the writer's 1.
+exists it reads N only as N/H. Where none does, or none could, the sweep runs to a horizon, and at a horizon there is no
+inside, no outside and no half of anything, only the two ends 0 and ∞ of the projective line, the reciprocal that swaps
+them, and the corner it fixes. The central sweep's π/2 is reached at a point; the inscribed sweep's 2/π only at the
+horizon; and their product is the writer's 1.
 
 Holding is how a reader becomes the writer of a thing: the hand holds the back and knows the turn. What cannot be held
 (a street, the sky, a list too long to iterate) can only be swept, and a program can hold such a sweep faithfully: keep

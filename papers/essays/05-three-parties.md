@@ -58,13 +58,15 @@ The triangle shows something about the reader very clearly. It holds every way t
 system's true breadths, taken as shares of their total, would be one point of it, and no common unit moves that point.
 Finding it needs the true breadths, which are amounts, and the reader does not have them.
 
-What the reader has is its one length, H. It gives every party that same length; a writer would write V = V₂ = H. On the
-triangle that is equal shares, the centre (⅓, ⅓, ⅓). That centre is the *triple corner*, where every pair of parties is
-at its own corner at once. The whole of the reader's geometry follows from standing there.
+What the reader has is its one length, H, the thumb. With a third party it holds two thumbs crossed at a right angle across
+the line of sight, one reading up, v against h, the other across, v₂ against h, and both are the same H: no second length.
+So it gives every party that same length; a writer would write V = V₂ = H. On the triangle that is equal shares, the centre
+(⅓, ⅓, ⅓). That centre is the *triple corner*, where every pair of parties is at its own corner at once, where the two
+thumbs both read 1. The whole of the reader's geometry follows from standing there.
 
-The truth lies off the centre by two ratios that no reading carries: how many of the reader's lengths the second party
-really is, and how many the third is. Amounts brought in from outside move the reader's amounts toward the true point.
-They do not redraw anything.
+The truth lies off the centre by two ratios that no reading carries: how many of the reader's lengths, how many thumbs, the
+second party really is, and how many the third is. Amounts brought in from outside move the reader's amounts toward the
+true point. They do not redraw anything.
 
 *Demo: the sphere in the cube, step 7 (the triangle, the reader's drawing at the centre and a true point beside it).*
 
@@ -103,7 +105,7 @@ other. Swept that way, the readings v/h and v₂/h have a definite law, the **tw
   its directions. It is past its corner in one reading for a third, and past in both for a third.
 - **The one length matters.** Draw the second and third parties on a page at c₁ and c₂ times H. Then the medians of v/h,
   v₂/h and v/v₂ move to 1/c₁, 1/c₂ and c₂/c₁. Every pair keeps its corner only when both are drawn at the reader's one
-  length.
+  length, one thumb.
 
 With one other party the near and far fields were halves. With two, near in everything is a third.
 
@@ -167,8 +169,8 @@ length, the relation lies on the sphere in n + 1 dimensions, and the reader's sp
 The pairs' corners alone would not give these shares: a weight on two of the six chambers of the octant can keep every
 pair's median at its corner and never have h the largest. The equal shares come from treating every turn alike.
 
-None of this involves any party's true size. The turn of H is the geometry's whole work. Each true size is one number of
-the amounts, a shift in levels of that party's amounts alone.
+None of this involves any party's true size. The turn of H, the thumb, is the geometry's whole work. Each true size is one
+number of the amounts, a shift in levels of that party's amounts alone.
 
 ---
 
@@ -198,8 +200,8 @@ The sphere of all directions, every octant at once, is the writer's picture. A s
 direction *and* its distance would need every distance, the size of everything, which no reader at a standpoint has.
 
 The reader's space is the wedge, given afresh at each standpoint from the relations there. The wedge needs no size: its
-readings are ratios, laid by the two-dimensional Cauchy. What a blueprint would add is what it added to the circle,
-once per party: the true size of each against H.
+readings are ratios, laid by the two-dimensional Cauchy. What a blueprint would add is what it added to the circle, once
+per party: the true size of each against H, in thumbs.
 
 The wedge can still be placed anywhere on the sphere. One rotation positions it; the reader's two sweeps then work
 inside it, in its own frame. The readings are the same at every position. Only a frame fixed outside, the sphere's,
@@ -219,11 +221,11 @@ Every point inside the cube, except the centre, is some fraction t of the way ou
 between 0 and 1. So the pair (direction on the sphere, fraction t) addresses every point of the cube, and it is the same
 pair whatever size the cube is. The point itself, in amounts, is e times it.
 
-This is the essays' story in one object. A reader that holds the addresses and not e has the cube up to scale. It draws
-the cube at its own one length, right as addresses and off as amounts by the true ratio of e to H. Each face of the cube
-is the plane of readings against one denominator, so a sphere swept evenly lays the two-dimensional Cauchy on it: a
-face's middle quarter, by area, takes 38% of that face's directions, and the centre of a face is 3^(3/2), about 5.2
-times as dense as its corners.
+This is the essays' story in one object. A reader that holds the addresses and not e has the cube up to scale. It draws the
+cube at its own one length, one thumb, right as addresses and off as amounts by the true ratio of e to H. Each face of the
+cube is the plane of readings against one denominator, so a sphere swept evenly lays the two-dimensional Cauchy on it: a
+face's middle quarter, by area, takes 38% of that face's directions, and the centre of a face is 3^(3/2), about 5.2 times
+as dense as its corners.
 
 *Demo: the sphere in the cube (any size, the address unchanged; the extent unknown, off by e/H).*
 

@@ -28,9 +28,9 @@ None of this changes a digit of either number. It says whose numbers they are.
 
 The series has been climbing a ladder of numbers by what it takes to make them (essay 14, the sixth section).
 
-**One length, finite steps: the rationals.** A reader holds one length, H. It can count H, double it, halve it, and
-take any length it has made over any other. Everything it makes that way is a ratio of whole numbers, a rational. Its
-readings compose by tangent addition, (a + b)/(1 − ab), which takes rationals to rationals; they turn over (s to 1/s)
+**One length, finite steps: the rationals.** A reader holds one length, H, the thumb. It can count thumbs, double H, halve
+it, and take any length it has made over any other. Everything it makes that way is a ratio of whole numbers, a rational.
+Its readings compose by tangent addition, (a + b)/(1 − ab), which takes rationals to rationals; they turn over (s to 1/s)
 and stay rational; their order is kept. The corner, s = 1, is rational. A reader working in finite steps from one length
 never leaves the rationals.
 
@@ -86,10 +86,10 @@ The reader's other freedom is size. Essay 3 and OFS §2 named the reader's ignor
 Rescalings give e.
 
 The reader counts sizes in doublings. Past the corner its addresses go a level a doubling (essay 4), and the count of
-levels between H and a thing 8H away is 3, exactly. A doubling is a step the reader takes, like a step of tangent
-addition: from one length, finite, rational. Halving H is as easy. A thing 3H away is between levels, and the reader
-holds it there, between its first and second doubling, by its order among the levels (essay 4, "the count is the level
-of detail").
+levels between H and a thing 8H away (one thumb, then two, four, eight) is 3, exactly. A doubling is a step the reader
+takes, like a step of tangent addition: from one length, finite, rational. Halving H is as easy. A thing 3H away is between
+levels, and the reader holds it there, between its first and second doubling, by its order among the levels (essay 4, "the
+count is the level of detail").
 
 The number of levels as a continuous quantity is the logarithm, and to give it a value is to choose a unit for it and
 finish a series. In doublings, log₂ 3 = 1.58496…; in the natural unit, ln 3 = 1.0986…; one doubling is ln 2 =
@@ -172,8 +172,8 @@ along it; the reader's hand passes it; the reader orders it among its neighbours
 make its number. It holds the direction as a pair and its place by order; the decimal 1.5574… is the writer's account of
 where it is.
 
-The same goes for the levels. A thing e times H away is a thing the reader holds between its first and second doubling,
-nearer the second. The reader holds it; it does not hold "e times".
+The same goes for the levels. A thing e times H away, e thumbs, is a thing the reader holds between its first and second
+doubling, nearer the second. The reader holds it; it does not hold "e times".
 
 This is essay 14's "met, not made" one rung higher. The reader meets irrational directions and does not make √2; it
 meets transcendental directions and sizes and does not make π or e. Its own numbers, the ones it makes, are the

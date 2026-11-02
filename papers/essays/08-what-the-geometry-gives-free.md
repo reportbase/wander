@@ -9,11 +9,12 @@ three faces of one fact. The interface was built on the writer's number line, wh
 list without end laid on that line has no end that fits on a screen.
 
 This essay is about what changes when such things are built on the reader's geometry instead. Once a reader holds one
-length H and turns it, some structures follow with no further choice: a zoom, a split between near and far, readings no
-change of size can move, and addresses for any number of things with no table and no count. Engineers have arrived at
-most of them already, by design, under other names: depth buffers, log depth, floating point, level of detail, hashing on
-a circle, a filter's steady state. The geometry does not do any of these jobs better. What it offers is a baseline. It
-says where each structure comes from, so that what a design adds, and what that costs, can be named.
+length H, the thumb it holds up at arm's length, and turns it, some structures follow with no further choice: a zoom, a
+split between near and far, readings no change of size can move, and addresses for any number of things with no table and
+no count. Engineers have arrived at most of them already, by design, under other names: depth buffers, log depth, floating
+point, level of detail, hashing on a circle, a filter's steady state. The geometry does not do any of these jobs better.
+What it offers is a baseline. It says where each structure comes from, so that what a design adds, and what that costs, can
+be named.
 
 The essay opens on the dial, the cleanest case, and then goes through the others one at a time.
 
@@ -95,8 +96,9 @@ the list because its push is the hyperbolic angle.
 The dial used most of what the geometry gives. It is worth listing it plainly, because "free" is a strong word and has to
 be earned.
 
-Once the reader chooses H, its one length, these follow with no further choice:
-- **a zoom**, the value of H. Small H is fine near and coarse far; large H the reverse. Nothing else changes.
+Once the reader chooses H, its one length, the thumb it holds up, these follow with no further choice:
+- **a zoom**, the value of H, the thumb's size. Small H is fine near and coarse far; large H the reverse. Nothing else
+  changes.
 - **a split between near and far**, the corner v = h, at 45° on the one-length circle.
 - **readings that no change of the world's size can move**, since every reading is a ratio. That is the first essay's test,
   scale the world.
@@ -107,8 +109,8 @@ Two more need one stated premise each, and are free once it is granted:
 - **precision far off**, the lay past the corner, 1 + ln s on the reader's lay (the writer's formula for the reader's
   count of doublings) or 2 − 1/s on the in-place lay. The
   premise is the fourth essay's: that no level past the corner is preferred to another.
-- **a level of detail**, given a fixed count K of addresses. H then divides the K between the near field and the far, half
-  inside H at every H.
+- **a level of detail**, given a fixed count K of addresses. H then divides the K between the near field (one thumb, laid
+  evenly) and the far (two thumbs, then four, then eight), half inside H at every H.
 
 And one thing is not on the list. What hides what, which surface is in front, is the payload's. It is set by which
 surfaces are opaque, and the geometry says nothing about it.
@@ -132,7 +134,7 @@ distant surfaces close together flicker through each other, which is called z-fi
 
 Read against the geometry, the stored number is a familiar one. With H = n, the near plane, the fourth essay's in-place lay
 is 2 − n/d. The depth buffer stores that, less its constant 1, rescaled to fit between 0 and 1. So:
-- **Setting the near plane is choosing H.** It is the zoom, with the corner placed at the near plane.
+- **Setting the near plane is choosing H, the thumb.** It is the zoom, with the corner placed at the near plane.
 - **The near field inside it is thrown away.** Everything nearer than n is clipped. The renderer has chosen H at the very
   front of what it draws.
 - **Precision runs out far off because every address there has already been spent toward the horizon.** The in-place lay
@@ -410,7 +412,7 @@ buffer's lay, the flat screen's weighting, a key floored from a share of the tur
 when every amount in the world is scaled, so all are readings, and all came free once H was chosen. What moves is what was
 carried in: the near plane's distance, the cell width of a floor taken of an amount, the noises of a filter, a far plane.
 Engineering keeps rediscovering which numbers it must carry in, often one at a time and by trouble. The geometry says in
-advance: one length H for the zoom, a count K if one is wanted, and an amount for each thing to be written.
+advance: one length H, the thumb, for the zoom, a count K if one is wanted, and an amount for each thing to be written.
 
 **The Cauchy.** The property this essay has leaned on most is the one the fourth essay found: its addresses need no
 count. That is what the dial

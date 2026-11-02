@@ -31,8 +31,9 @@ The ratio v/h is what the direction *reads*: how steeply it points. It starts at
 grows without bound as the arm nears the vertical. It is a slope, and it has no unit, because both of its parts are
 shares of one arm. If your arm were twice as long, every reading would be the same.
 
-The first essay called a reader's own length **H**. Your arm is a good H: always with you, never measured, and enough
-to start a geometry.
+The first essay called a reader's own length **H**. Your arm is a good H: always with you, never measured, and enough to
+start a geometry. The later essays picture it as the thumb held out at the end of that arm, the one length the reader holds
+up against the world: H, the thumb.
 
 ---
 
@@ -59,8 +60,8 @@ overall factor. In that measure every direction of the arm has the same length, 
 the arm's tip moves along the circle. The square and the line fail: no single repeated step carries the square's corners
 round its sides at an even pace and comes back. The turn's own ruler is the round one.
 
-The single overall factor left free is the arm's own length, H. The turn fixes everything about the geometry except how
-big it is drawn, and that it leaves to the reader.
+The single overall factor left free is the arm's own length, H, the thumb. The turn fixes everything about the geometry
+except how big it is drawn, and that it leaves to the reader.
 
 This matters for what follows. The circle is not assumed and then turned. The turn is assumed, a plain repeated motion
 that comes back, and the circle is what it must trace. The only thing still taken on trust is that the motion is linear:
@@ -275,9 +276,9 @@ gives back the 1:
 > π/2 × 2/π = 1.
 
 This is not a coincidence of numbers. It says that the reader, facing the arc from where it stands, never has the chord's
-length directly. It has it twice over, once from each pivot, and the two readings together return exactly what the
-writer holds in one. What they return is the reader's own length measured in itself, H in H. They do not return the
-size of anything else.
+length directly. It has it twice over, once from each pivot, and the two readings together return exactly what the writer
+holds in one. What they return is the reader's own length measured in itself, H in H: one thumb, in thumbs. They do not
+return the size of anything else.
 
 **They are rates, not angles, and they are the writer's.** Raise the hand from horizontal to vertical, and a writer
 holding the straight line from start to end measures the sweep at one of two rates against it: π/2 from the middle of the
@@ -326,9 +327,9 @@ turn carries onto itself unchanged. That is the law of the reader's own turning,
 Everything so far has been from the reader's side. The writer has a circle too, and it is worth seeing how the writer
 describes the reader's.
 
-A writer holds both lengths, the reader's H and the other party's V, and can draw them on a page with two axes. Looking at
-the circle the reader's one length traces, the writer sees two axes drawn at the same length and writes that down as
-**V = H**. It is the writer's name for the one-length circle. The reader never set it. It has no V to set.
+A writer holds both lengths, the reader's H (its thumb) and the other party's V, and can draw them on a page with two axes.
+Looking at the circle the reader's one length traces, the writer sees two axes drawn at the same length and writes that
+down as **V = H**. It is the writer's name for the one-length circle. The reader never set it. It has no V to set.
 
 On a page, though, two different lengths are possible. Draw the upward axis at c times the forward axis, so V = cH with c
 not equal to 1. Then nothing turns all of the forward reach into all of the upward reach without stretching on the way.
@@ -406,11 +407,11 @@ tangent addition, rational:
 
 > z = r·e^(iθ).
 
-**The two factors are the address and the payload.** The factor e^(iθ) has size exactly 1. It is a direction and
-nothing else: the address, held in the reader's own length, H measured in H. The factor r is an amount, how far, how
-bright, how big, and it means something only in a unit, which only a writer can supply. Polar form has been splitting a
-number into its direction and its amount since the eighteenth century. Read from a standpoint, that split is the
-reader's and the writer's.
+**The two factors are the address and the payload.** The factor e^(iθ) has size exactly 1. It is a direction and nothing
+else: the address, held in the reader's own length, H measured in H, the thumb in thumbs. The factor r is an amount, how
+far, how bright, how big, and it means something only in a unit, which only a writer can supply. Polar form has been
+splitting a number into its direction and its amount since the eighteenth century. Read from a standpoint, that split is
+the reader's and the writer's.
 
 **The logarithm makes the scale test a question of which part moved.** Take the logarithm:
 
@@ -446,13 +447,13 @@ chart's", said in Euler's notation. For the reader's own quarter turn the mean d
 (2/π)·i: it points at the corner, and its length is 2/π.
 
 **The two corners are two mirrors.** The plane of the logarithm also shows the corners plainly. Swap a reading for its
-reciprocal, v/h for h/v, and the angle θ becomes 90° − θ: a reflection of the imaginary part, and the line it leaves
-in place is θ = 45°, the corner in direction. Swap a distance for its reciprocal about the reader's length, d/H for
-H/d, and ln d becomes 2 ln H − ln d: a reflection of the real part, and the line it leaves in place is d = H, the corner
-in distance (the fourth essay's corner of near and far). So the reader has two corners, one on each axis of one plane,
-each a mirror line. Each is moved by sliding the plane along its own axis: turning the head slides the first across
-the world's directions, and choosing H slides the second along the levels of distance. That is why the two corners can
-be set independently: they sit on different axes.
+reciprocal, v/h for h/v, and the angle θ becomes 90° − θ: a reflection of the imaginary part, and the line it leaves in
+place is θ = 45°, the corner in direction. Swap a distance for its reciprocal about the reader's length, d/H (the distance
+in thumbs) for H/d, and ln d becomes 2 ln H − ln d: a reflection of the real part, and the line it leaves in place is d =
+H, the corner in distance (the fourth essay's corner of near and far). So the reader has two corners, one on each axis of
+one plane, each a mirror line. Each is moved by sliding the plane along its own axis: turning the head slides the first
+across the world's directions, and choosing H, the size of the thumb, slides the second along the levels of distance. That
+is why the two corners can be set independently: they sit on different axes.
 
 **Where it stops.** Euler's formula is a tool for the flat case, one other party and turns in a plane. With three
 parties, the fifth essay's wedge, only half of it survives. The split survives: a point of space is still an amount

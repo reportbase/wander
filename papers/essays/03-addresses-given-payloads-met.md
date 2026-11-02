@@ -166,11 +166,11 @@ is where the reader can put what arrives, never what arrives.
 
 **The geometry creates the reader.** It is tempting to picture the reader doing this work: taking two amounts and dividing
 one by the other, so that the scale cancels. It does not. The geometry removes the scale before anything is read. A
-direction arrives as a direction, with the distance along it already gone; the projection did the dividing, not the
-reader. What the light paints on a direction arrives as paint, never as so many units. So the reader manages no
-magnitudes at all, neither the size of the other party nor the size of what arrives. It has no unit to manage them in.
-Its one length, H, is its own unit: measured in itself it is 1, and what it is in metres is something only a writer can
-say. The reader has no scale whatsoever. Every magnitude, and the unit it is stated in, belongs to the writer.
+direction arrives as a direction, with the distance along it already gone; the projection did the dividing, not the reader.
+What the light paints on a direction arrives as paint, never as so many units. So the reader manages no magnitudes at all,
+neither the size of the other party nor the size of what arrives. It has no unit to manage them in. Its one length, H, the
+thumb, is its own unit: measured in itself it is 1, one thumb, and what it is in metres is something only a writer can say.
+The reader has no scale whatsoever. Every magnitude, and the unit it is stated in, belongs to the writer.
 
 **Why there is no mean.** The missing mean is usually told as the Cauchy's defect. Read as an address it is what an
 address should do. A mean is a sum of amounts divided by their count, and a direction has no length to add. To average the
