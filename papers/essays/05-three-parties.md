@@ -5,10 +5,10 @@
 So far the reader has related itself to one other thing: across and up, h and v, a quarter turn from one to the other.
 The world has more than one other thing in it. This essay adds a second, v₂, and asks what changes.
 
-Less than one might fear. The circle becomes a sphere, the quarter turn becomes a wedge, and the Cauchy becomes its
-two-dimensional cousin. Every pair of parties keeps its own corner, exactly as before. One thing is new: a third
-party brings a third kind of share, and the reader turns out to be "near in everything" for exactly a third of the
-directions it can look in. With n other parties it is 1/(n + 1).
+Less than one might fear. The writer's circle becomes a sphere, the reader's one thumb becomes two crossed thumbs, the
+quarter turn becomes a wedge, and the Cauchy becomes its two-dimensional cousin. Every pair of parties keeps its own
+corner, exactly as before. One thing is new: a third party brings a third kind of share, and the reader turns out to be
+"near in everything" for exactly a third of the directions it can look in. With n other parties it is 1/(n + 1).
 
 ---
 
@@ -60,9 +60,10 @@ Finding it needs the true breadths, which are amounts, and the reader does not h
 
 What the reader has is its one length, H, the thumb. With a third party it holds two thumbs crossed at a right angle across
 the line of sight, one reading up, v against h, the other across, v₂ against h, and both are the same H: no second length.
-So it gives every party that same length; a writer would write V = V₂ = H. On the triangle that is equal shares, the centre
-(⅓, ⅓, ⅓). That centre is the *triple corner*, where every pair of parties is at its own corner at once, where the two
-thumbs both read 1. The whole of the reader's geometry follows from standing there.
+So it gives every party that same length; a writer would write V = V₂ = H, the thumb held to equal both mountains in the
+distance. On the triangle that is equal shares, the centre (⅓, ⅓, ⅓). That centre is the *triple corner*, where every pair
+of parties is at its own corner at once, where the two thumbs both read 1. The whole of the reader's geometry follows from
+standing there.
 
 The truth lies off the centre by two ratios that no reading carries: how many of the reader's lengths, how many thumbs, the
 second party really is, and how many the third is. Amounts brought in from outside move the reader's amounts toward the
@@ -185,7 +186,7 @@ The pairs' corners alone would not give these shares: a weight on two of the six
 pair's median at its corner and never have h the largest. The equal shares come from treating every turn alike.
 
 None of this involves any party's true size. The turn of H, the thumb, is the geometry's whole work. Each true size is one
-number of the amounts, a shift in levels of that party's amounts alone.
+number of the amounts, a factor on that party's amounts alone, so many thumbs.
 
 ---
 
@@ -215,8 +216,8 @@ The sphere of all directions, every octant at once, is the writer's picture. A s
 direction *and* its distance would need every distance, the size of everything, which no reader at a standpoint has.
 
 The reader's space is the wedge, given afresh at each standpoint from the relations there. The wedge needs no size: its
-readings are ratios, laid by the two-dimensional Cauchy. What a blueprint would add is what it added to the circle, once
-per party: the true size of each against H, in thumbs.
+readings are ratios, laid by the two-dimensional Cauchy. What a blueprint would add is what it added in the plane, once per
+party: the true size of each against H, in thumbs.
 
 The wedge can still be placed anywhere on the sphere. One rotation positions it; the reader's two sweeps then work
 inside it, in its own frame. The readings are the same at every position. Only a frame fixed outside, the sphere's,

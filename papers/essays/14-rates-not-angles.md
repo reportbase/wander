@@ -26,14 +26,14 @@ the law of that per, the reader's sweep rate counted in readings; the payload is
 
 **The writer is transcendental; the reader is not.** π is not a reader's number. It is the total of a completed turn, and
 every number with π in it, π/2 and 2/π among them, is the writer's: the reader's sweep as measured by someone holding the
-whole turn. The reader holds one length, H, the thumb, and what it makes from one length is rational: counting, doubling
-and halving H, and every ratio of H to itself, thumbs to thumbs. On its readings it composes by tangent addition, turns
-them over and orders them, and all of that stays rational too. An irrational number needs two variables combined (√2 is the
-diagonal of h and v), and that is the writer's; a transcendental one, π, needs the whole turn, and that is the writer's
-again (the sixth section). So the reader reads with the Cauchy and not with the circle: the readings from home to a horizon
-never reached, their corner at 1, their spread 1/(1 + s²) up to its total. The total, π/2, and the normalizing 2/π are the
-writer's count of the turn. The sphere on which a writer draws the reader, every direction about a point at radius H, one
-thumb, is likewise the writer's picture of the reader, not anything the reader holds.
+whole turn. The reader holds one length, H, the thumb, and what it makes from one length is rational: counting thumbs, two
+thumbs, four, half a thumb, and every ratio of H to itself, thumbs to thumbs. On its readings it composes by tangent
+addition, turns them over and orders them, and all of that stays rational too. An irrational number needs two variables
+combined (√2 is the diagonal of h and v), and that is the writer's; a transcendental one, π, needs the whole turn, and that
+is the writer's again (the sixth section). So the reader reads with the Cauchy and not with the circle: the readings from
+home to a horizon never reached, their corner at 1, their spread 1/(1 + s²) up to its total. The total, π/2, and the
+normalizing 2/π are the writer's count of the turn. The sphere on which a writer draws the reader, every direction about a
+point at radius H, one thumb, is likewise the writer's picture of the reader, not anything the reader holds.
 
 None of this corrects trigonometry. It says where trigonometry sits.
 
@@ -114,7 +114,7 @@ not a turning point.
 reading differs from 1; here, and only here, it agrees with the writer's rate.
 
 **The writer's 1 is the corner of the two sweeps' rates.** π/2 and 2/π are reciprocals, and 1 is their geometric mean,
-√(π/2 · 2/π). On the levels they sit either side of it, ln(π/2) = 0.4516 above and ln(2/π) = −0.4516 below. So the
+√(π/2 · 2/π). On the logarithm they sit either side of it, ln(π/2) = 0.4516 above and ln(2/π) = −0.4516 below. So the
 writer's rate is the fixed point of the reciprocal that pairs the two sweeps: the corner between them.
 
 One thing does not happen there. The sweeps' running rates are not 1 at the corner: arc over chord is 1.1107 and chord
@@ -137,7 +137,7 @@ arc, t and t′ the distances ahead and behind, which changes as the ray turns.
 
 So the inscribed angle theorem, read this way, is a statement about rates: the facing turns twice as fast as the sweep.
 Measured against the writer's chord, the two pivots give the two rates of the second section, π/2 and 2/π.
-The square of the second essay, the central point ½(h + iv)², is that doubling written as a point.
+The square of the second essay, the central point ½(h + iv)², is that twice-as-fast turn written as a point.
 
 A reader off the centre and off the circle has no uniform rate, and this is where the circle's own law comes from. Turned
 uniformly, its end lands unevenly; twice its rate less the central rate, (2·dθ/dφ − 1)/2π, is the circle's harmonic
@@ -200,10 +200,10 @@ degree on a protractor, lay an array of N slots evenly over the quarter turn and
 
 **One variable, two, and the whole turn.** The numbers sort into a ladder by what it takes to make them.
 
-- *One variable makes rationals.* From H alone, the thumb, adding, counting, doubling, halving the length and taking ratios
-  of H to itself give rational multiples of H and nothing else: 1, 2, ½, ¾, the doublings 2ᵏ. The reader's operations on
-  its readings stay rational as well: the reciprocal, tangent addition (rational readings compose to a rational reading),
-  the Cauchy's shape 1/(1 + s²), the corner at 1. This is the reader.
+- *One variable makes rationals.* From H alone, the thumb, adding, counting, taking the length twice or half and taking
+  ratios of H to itself give rational multiples of H and nothing else: 1, 2, ½, ¾, the counts of thumbs 2ᵏ. The reader's
+  operations on its readings stay rational as well: the reciprocal, tangent addition (rational readings compose to a
+  rational reading), the Cauchy's shape 1/(1 + s²), the corner at 1. This is the reader.
 - *Two variables make irrationals.* √2 first appears as the diagonal of a square, √(h² + v²) at h = v = 1: Pythagoras
   combines two independent lengths through their squares, and that needs two axes. It is where the Greeks met
   incommensurability, the side and the diagonal sharing no common measure, and on one line, from one unit, it never
@@ -385,9 +385,10 @@ numbers are the Cauchy's, and have no π in them.
 own is a cube: one number line on each axis, every point three amounts, every edge run at the writer's rate, 1, nothing
 round (the first essay's box). The sphere is how the writer draws the reader: its one length H, the thumb, turned every way
 from where it stands, every direction an address, no distance on it, the sweeps measured at π/2 and 2/π on a circle and at
-2 and ½ over a hemisphere. The reader itself holds no sphere. It reads with the Cauchy: its readings on one open line from
-home to a horizon, in space the two ratios v/h and v₂/h, never closed, never totalled. From A = (1, 0) to B = (0, 1) there
-are then three ways, two the writer's and one the reader's:
+2 and ½ over a hemisphere. The reader itself holds no sphere, nor a circle. It points its crossed thumbs at the mountain
+and reads with the Cauchy: its readings on one open line from home to a horizon, in space the two ratios v/h and v₂/h,
+never closed, never totalled. From A = (1, 0) to B = (0, 1) there are then three ways, two the writer's and one the
+reader's:
 
 | way | whose | length |
 |---|---|---|
@@ -453,8 +454,8 @@ and the round one is its own dual; Hölder's inequality, here Cauchy and Schwarz
 
 with equality exactly when every component that is not zero has the same size: on the axes, and on the corner's diagonal.
 At the corner the round √2 is the geometric mean of the writer's 1 and 2, as √n is of 1 and n. It is the third section's
-pattern one level down: there the writer's 1 is the geometric mean of the sweeps' π/2 and 2/π; here the round √2 is the
-geometric mean of the writer's two 1's.
+pattern again, one step smaller: there the writer's 1 is the geometric mean of the sweeps' π/2 and 2/π; here the round √2
+is the geometric mean of the writer's two 1's.
 
 So nothing has to be withdrawn, only named. The edge and the sum h + v = 1 are both the writer's, the same 1 at A and B and
 a factor of 2 apart at the corner. The inscribed sweep's 2/π is measured against an edge, one axis filled from 0 to 1; the

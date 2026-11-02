@@ -2,25 +2,27 @@
 
 *The second of a series of essays on what can be known from where one stands. Draft, 28 October 2026.*
 
-The first essay ended on a claim: a reader with no second length still has a circle, because its own single length,
-turned, traces one. This essay takes that claim slowly. It asks what a turned length gives you, why it gives a circle and
-not some other curve, and why there is one special direction on it, at 45°. It also shows how two different ways of
-pivoting the same length read the same point twice, once as a ratio and once as a square.
+The first essay ended on a claim: a reader with no second length has no circle, yet has the circle's geometry, because its
+own single length, pointed at the mountain and turned, generates it. This essay takes that claim slowly. It asks what
+pointing one length gives you, why a writer watching it turn sees a circle and not some other curve, and why there is one
+special direction, at 45°. It also shows how two different ways of pivoting the same length read the same point twice, once
+as a ratio and once as a square.
 
 All of it is classical geometry, most of it in Euclid. What is new is the order in which it is read. Usually the circle
-comes first, as an object held whole, and turning is something done to it afterwards. Here the turning comes first,
-and the circle is what it leaves behind.
+comes first, as an object held whole, and turning is something done to it afterwards. Here the pointing comes first. The
+circle is what a writer draws of it; the reader holds no circle, only the geometry its pointing generates.
 
 ---
 
 ## 1. An arm held out
 
 Hold your arm out straight in front of you, level with the ground, and raise it slowly until it points straight up.
-Your arm does not change length. Your hand traces a quarter of a circle.
+Your arm does not change length. To anyone watching, your hand traces a quarter of a circle.
 
-That is all a circle is, from where you stand: one length, turning. You did not need to know how far away anything was.
-You did not need a second length, a radius chosen to match something else, or a centre measured out. You needed your
-arm and the ability to turn it.
+From where you stand there is no circle, only your arm pointing: one length, turning, held up at the mountains in the
+distance. The circle is what a writer watching draws of it. You did not need to know how far away anything was. You did not
+need a second length, a radius chosen to match something else, or a centre measured out. You needed your arm and the
+ability to turn it.
 
 At each moment of the turn your arm points somewhere. Its reach has two parts: how far it reaches forward, and how far
 it reaches up. Call the forward part **h** and the upward part **v**. Both are shares of the same arm, so each lies
@@ -63,10 +65,10 @@ round its sides at an even pace and comes back. The turn's own ruler is the roun
 The single overall factor left free is the arm's own length, H, the thumb. The turn fixes everything about the geometry
 except how big it is drawn, and that it leaves to the reader.
 
-This matters for what follows. The circle is not assumed and then turned. The turn is assumed, a plain repeated motion
-that comes back, and the circle is what it must trace. The only thing still taken on trust is that the motion is linear:
-each step mixes forward and upward reach the same way, however far round the arm has gone. That is what "one motion,
-repeated" means.
+This matters for what follows. The circle is not assumed and then turned. The turn is assumed, a plain repeated motion that
+comes back, and the circle is what a writer watching sees it trace; the reader holds the pointing, not the curve. The only
+thing still taken on trust is that the motion is linear: each step mixes forward and upward reach the same way, however far
+round the arm has gone. That is what "one motion, repeated" means.
 
 *Demo: one sweep, three paths: the circle, the line and the square, each swept along its own length.*
 
@@ -133,7 +135,8 @@ This marks a difference of vantage that runs through the whole series.
 - **The reader faces the arc.** It does not walk along the chord. It stays where it stands and turns, and the point it
   reads crosses from one end to the other.
 
-The circle is what the reader's facing traces. The chord is what the writer holds.
+The chord is what the writer holds, and so is the circle the arc closes into. The reader holds neither: it points its
+thumb, and the arc is what that pointing sweeps.
 
 *Demo: the facing: one sweep from A to B, the facing turning through square to the line at the corner.*
 
@@ -168,11 +171,11 @@ At the corner, s = 1, both lines of sight are at 45°, and the crossing stands d
 the top of the arc. The swap of s and 1/s is the mirror across the line through that top.
 
 There is a modern name for this construction. In the nineteenth century Jakob Steiner showed that whenever the lines
-through one point are paired with the lines through another by a correspondence of this kind, the crossings trace a
-conic: an ellipse, a parabola or a hyperbola. A circle is the case where the pairing turns each line through a right
-angle, and that needs forward and up measured at one length. If someone draws the picture on a page with the upward
-direction stretched by a factor c, the same lines of sight cross on an ellipse instead. The circle belongs to the reader's
-one length. A page with two different lengths on its two axes gets an ellipse.
+through one point are paired with the lines through another by a correspondence of this kind, the crossings trace a conic:
+an ellipse, a parabola or a hyperbola. A circle is the case where the pairing turns each line through a right angle, and
+that needs forward and up measured at one length. If someone draws the picture on a page with the upward direction
+stretched by a factor c, the same lines of sight cross on an ellipse instead. The circle is the writer's drawing of one
+length pointed and turned. A page with two different lengths on its two axes gets an ellipse.
 
 One more classical fact comes out of the construction, and it is the point of the next section. As A's line of sight
 turns through an angle θ, the crossing moves round the circle by twice that angle, seen from the middle of the chord.
@@ -202,8 +205,8 @@ wild as your gaze grazes the edge. So a circle has exactly two places to sweep i
 on it. There is no third.
 
 These are not two readers, and not two motions. They are one standpoint's directions, counted about the two pivots the
-geometry allows. The reader stands at A, the circle's own point. The centre belongs to the pair, A and B, and is neither
-party's place.
+geometry allows. The reader stands at A, a point the writer's circle passes through. The centre belongs to the pair, A and
+B, and is neither party's place.
 
 ### What each sweep reads
 
@@ -314,9 +317,10 @@ its sweep, the line about 0.293 of its, and the square about 0.207 of its. And a
 sweep lies on each side of the corner, and the readings v/h have no mean. Those two features need only that the path is
 the same on both sides of the corner and reaches all the way to the vertical.
 
-What only the circle gives is the exact shape of the law: the Cauchy itself, with no other choice made. The square and
-the line give other laws with the same median and the same missing mean. The circle gives the one law that a further
-turn carries onto itself unchanged. That is the law of the reader's own turning, the circle with no V.
+What only the circle gives is the exact shape of the law: the Cauchy itself, with no other choice made. The square and the
+line give other laws with the same median and the same missing mean. The circle gives the one law that a further turn
+carries onto itself unchanged. That is the law of the reader's own pointing, turned: the circle's geometry with no V and no
+circle held.
 
 *Demo: one sweep, three paths.*
 
@@ -327,9 +331,11 @@ turn carries onto itself unchanged. That is the law of the reader's own turning,
 Everything so far has been from the reader's side. The writer has a circle too, and it is worth seeing how the writer
 describes the reader's.
 
-A writer holds both lengths, the reader's H (its thumb) and the other party's V, and can draw them on a page with two axes.
-Looking at the circle the reader's one length traces, the writer sees two axes drawn at the same length and writes that
-down as **V = H**. It is the writer's name for the one-length circle. The reader never set it. It has no V to set.
+A writer holds both lengths, the reader's H (its thumb) and the other party's V (the mountain in the distance), and can
+draw them on a page with two axes. Watching the reader point its one length and turn it, the writer draws the circle the
+tip would trace, sees two axes drawn at the same length and writes that down as **V = H**: the thumb held to equal the
+mountain. It is the writer's name for that circle, the one-length circle. The reader never set it. It has no V to set, and
+no circle.
 
 On a page, though, two different lengths are possible. Draw the upward axis at c times the forward axis, so V = cH with c
 not equal to 1. Then nothing turns all of the forward reach into all of the upward reach without stretching on the way.
@@ -377,12 +383,13 @@ measuring along it. The reader has the law's shape; the writer adds its paramete
 That raises a fair question. The circle's equation seems to need V. On a page it reads (x/H)² + (y/V)² = 1, and it is a
 circle only when V equals H. If the reader never knows V, how can it do circular mathematics at all?
 
-The answer is that the equation on the page is the writer's. It describes a drawing with two axes, each with its own
-extent, and that drawing does need two lengths. The circle itself needs only one. Its classical definition is everything
-at one distance from a centre, and that is one length. Turn the length and its tip traces the circle, as section 2 showed.
-The turn's two parts are h = cos θ and v = sin θ, the across and up shares of the same length. So h² + v² = 1 is a fact
-about the shares of one length. The v in it is the turned length's own up share, not a share of some second party's
-breadth. Reading it as the second is where the confusion comes from.
+The answer is that the circle is the writer's either way. The equation on the page describes a drawing with two axes, each
+with its own extent, and that drawing needs two lengths. The circle's classical definition, everything at one distance from
+a centre, needs only one, and a writer watching a length turned sees its tip trace it, as section 2 showed. The reader
+holds no circle; it points its thumb, and its readings need only that one length. The turn's two parts are h = cos θ and v
+= sin θ, the across and up shares of the same length. So h² + v² = 1 is a fact about the shares of one length. The v in it
+is the turned length's own up share, not a share of some second party's breadth. Reading it as the second is where the
+confusion comes from.
 
 And circular mathematics was always ratio mathematics. Sine, cosine and tangent are sides over the hypotenuse. A radian
 is arc over radius. π is circumference over diameter, a ratio. e^(iθ) is the unit circle, any circle divided by its own
@@ -393,10 +400,10 @@ that is writing (the fourteenth essay). So the reader has the corner, its readin
 cosine as numbers, the radian, π, π/2 and 2/π are the writer's, scale-free as they are. Trigonometry is the writer's
 record of the reader's turn.
 
-What the reader cannot do without an amount carried in is place a point at (x, y) in metres, state the circumference as
-2π times so many metres or the area as so many square metres, or say how large another party's circle is beside its own.
-Those are amounts, and amounts are writing. The reader does every part of circular mathematics except the parts that
-state a size.
+What the reader cannot do without an amount carried in is place a point at (x, y) in metres, state the circumference as 2π
+times so many metres or the area as so many square metres, or say how large another party is beside its own thumb. Those
+are amounts, and amounts are writing. The reader does every part of circular mathematics except the parts that state a
+size.
 
 ### Euler's formula, the writer's notation for the reader's turn
 
@@ -417,12 +424,12 @@ the reader's and the writer's.
 
 > ln z = ln r + iθ.
 
-Scale the world by k and only the real part moves, by ln k. Turn, and only the imaginary part moves. So the first test
-of the series, scale the world, comes down to which part of the logarithm changed: the imaginary part is a reading, the
-real part a writing. The real part's starting point, the one amount that sets every size, is exactly what no reading
-fixes. And the reader's ignorance, which turn it faces and how large anything is, is nothing more than sliding this
-plane up and down and left and right. Sliding keeps area, so the measure that suits that ignorance is plain area on the
-logarithm's plane: uniform in direction, and uniform in levels of distance.
+Scale the world by k and only the real part moves, by ln k. Turn, and only the imaginary part moves. So the first test of
+the series, scale the world, comes down to which part of the logarithm changed: the imaginary part is a reading, the real
+part a writing. The real part's starting point, the one amount that sets every size, is exactly what no reading fixes. And
+the reader's ignorance, which turn it faces and how large anything is, is nothing more than sliding this plane up and down
+and left and right. Sliding keeps area, so the measure that suits that ignorance is plain area on the logarithm's plane:
+uniform in direction, and uniform in distance counted in thumbs, as much room from one thumb to two as from four to eight.
 
 **Composition becomes addition.** In the reader's own chart, readings taken from two zeros combine by tangent addition,
 (s₁ + s₂)/(1 − s₁s₂). That is awkward, and it blows up when the two turns together reach the vertical. In Euler's form
@@ -452,8 +459,8 @@ place is θ = 45°, the corner in direction. Swap a distance for its reciprocal 
 in thumbs) for H/d, and ln d becomes 2 ln H − ln d: a reflection of the real part, and the line it leaves in place is d =
 H, the corner in distance (the fourth essay's corner of near and far). So the reader has two corners, one on each axis of
 one plane, each a mirror line. Each is moved by sliding the plane along its own axis: turning the head slides the first
-across the world's directions, and choosing H, the size of the thumb, slides the second along the levels of distance. That
-is why the two corners can be set independently: they sit on different axes.
+across the world's directions, and choosing H, the size of the thumb, slides the second along the distances, so many thumbs
+away. That is why the two corners can be set independently: they sit on different axes.
 
 **Where it stops.** Euler's formula is a tool for the flat case, one other party and turns in a plane. With three
 parties, the fifth essay's wedge, only half of it survives. The split survives: a point of space is still an amount
@@ -482,20 +489,22 @@ of the two it means. The thirteenth essay, *Why the plane is special*, takes thi
 The two unifying ideas of the series, reading against writing and the Cauchy, meet in the circle, and this essay has
 been about how.
 
-**The circle is one length's before it is two lengths'.** A writer starts with the circle as an equation in two lengths
-and turns it. A reader starts with one length and turns it, and the circle is what the turning traces. From one place
-it has the open quarter of it, its readings; the circle closed, with its π, is held by an observer that has joined its
-facings, which is writing, and the same observer reads again when it stands still (the sixth essay, "Becoming the
-writer"; the fourteenth). The writer's equation describes, in two lengths, a thing one length made.
+**The circle is one length's before it is two lengths'.** A writer starts with the circle as an equation in two lengths and
+turns it. A reader starts with one length, points it at the mountain and turns it, and holds no circle: the circle is what
+a writer draws of the turning. From one place the reader has the open quarter's directions, its readings; the circle
+closed, with its π, is held by an observer that has joined its facings, which is writing, and the same observer reads again
+when it stands still (the sixth essay, "Becoming the writer"; the fourteenth). The writer's equation describes, in two
+lengths, a thing one length made.
 
-**Everything special about the circle is available from one length.** That includes the corner at 45°, its two
-mirrored halves, the right angle on the chord, and the inscribed sweep's ratios and the central sweep's squares. So is
-the writer's measure of the two sweeps, π/2 and 2/π, whose product returns the reader's own length. None of it needs a second length or the size of anything.
+**Everything special about the circle is available from one length pointed, with no circle held.** That includes the corner
+at 45°, its two mirrored halves, the right angle on the chord, and the inscribed sweep's ratios and the central sweep's
+squares. So is the writer's measure of the two sweeps, π/2 and 2/π, whose product returns the reader's own length. None of
+it needs a second length or the size of anything.
 
-**The Cauchy is the circle read from its edge.** The inscribed sweep, from the reader's own point on the circle, reads
-directions as ratios, unbounded, with their median at the corner and no mean. That is the Cauchy, the circle's law
-without the V. The central sweep, from the middle of the pair, reads the same points as squares, bounded, with means. They
-are two names for one point, joined by a theorem in Euclid.
+**The Cauchy is the circle read from its edge.** The inscribed sweep, from the reader's own point, where the writer's
+circle passes, reads directions as ratios, unbounded, with their median at the corner and no mean. That is the Cauchy, the
+circle's law without the V. The central sweep, from the middle of the pair, reads the same points as squares, bounded, with
+means. They are two names for one point, joined by a theorem in Euclid.
 
 The third essay takes the inscribed sweep's law on its own terms: what it means that the reader's addresses are laid
 before anything arrives, how they stay apart from what arrives, and why practice has always been right to read them by

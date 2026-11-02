@@ -287,9 +287,9 @@ end at the same point of the circle. The address is the ray; the payload is what
 point and nothing else. Change what is stored and no address moves. That is the third essay's theorem, met in the most
 ordinary data structure there is. The papers' first intuition for the Cauchy came from arrays, and this is why.
 
-**The floor is the writer's index.** `Math.floor(N·x)` turns a share into a slot, and it needs N. The reader's address
-is continuous. What the floor throws away, the fraction below the slot, is not noise: its binary digits are the finer
-levels, the end at 0 of section 4. The eighth essay gives it its full room.
+**The floor is the writer's index.** `Math.floor(N·x)` turns a share into a slot, and it needs N. The reader's address is
+continuous. What the floor throws away, the fraction below the slot, is not noise: its binary digits are the address halved
+again and again, toward the end at 0 of section 4. The eighth essay gives it its full room.
 
 ---
 

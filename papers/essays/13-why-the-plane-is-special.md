@@ -145,12 +145,12 @@ showed in 1878 that the only number systems with division in which multiplicatio
 real and the complex numbers. The quaternions keep division and give up the order; nothing keeps both past two
 dimensions.
 
-For the reader with two other parties this has a plain meaning. The fifth essay's two sweeps, altitude (from H up to V)
-and azimuth (round from H to V₂), are each the turn of a plane. Each on its own still composes by adding angles, still
-has its corner at 45°, still lays a half-Cauchy over its quarter turn. What fails is putting them together: a sweep in
-altitude then a sweep in azimuth is not the same motion as the two in the other order, and the wedge's demo makes the
-point by its own design. `wedge.html` step 7 places the wedge first and sweeps second ("position, then sweep"), because
-the other order would give another wedge.
+For the reader with two other parties this has a plain meaning. The fifth essay's two sweeps, altitude (from H up to V, the
+thumb up to the mountain) and azimuth (round from H to V₂), are each the turn of a plane. Each on its own still composes by
+adding angles, still has its corner at 45°, still lays a half-Cauchy over its quarter turn. What fails is putting them
+together: a sweep in altitude then a sweep in azimuth is not the same motion as the two in the other order, and the wedge's
+demo makes the point by its own design. `wedge.html` step 7 places the wedge first and sweeps second ("position, then
+sweep"), because the other order would give another wedge.
 
 ---
 

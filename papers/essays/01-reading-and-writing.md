@@ -62,10 +62,11 @@ places do not overlap. There are two of them: the writer's and the reader's.
 Before the questions, a little language. You, the reader, have a length of your own. It might be your stride, your thumb
 held at arm's length, your eye height above the floor, or the length of a rod you happen to be carrying. Call it **H**; the
 essays picture it as the thumb. You always have it, because it is yours. Anything else in the world, the mountain, the
-table, the other end of a measurement, has a breadth of its own. Call that **V**. How far a thing reaches along your length
-is a share of H, written **h**, a number between 0 and 1. How far it reaches along the other is **v**, also between 0 and
-1. These small letters are *relations*: how much of a length is filled, with no unit in them. The capital letters are
-amounts. Keeping the two apart is most of the work.
+table, the other end of a measurement, has a breadth of its own. Call that **V**; the essays picture it as the mountains in
+the distance, the far thing the thumb is held up against. How far a thing reaches along your length is a share of H,
+written **h**, a number between 0 and 1. How far it reaches along the other is **v**, also between 0 and 1. These small
+letters are *relations*: how much of a length is filled, with no unit in them. The capital letters are amounts. Keeping the
+two apart is most of the work.
 
 Now the questions.
 
@@ -75,8 +76,9 @@ the same as having a reading. A ruler in a dark room measures nothing.
 
 **Second: is the other's breadth V known?** If it is, the whole thing is in your hands: both lengths, both amounts, and
 everything that follows from them. That is the **writer**. If V equals H in every direction, the whole is a circle, the
-equation h² + v² = 1, held whole. If V is known but differs from H, or differs from one direction to another, the whole
-is some other shape, an ellipse, a coastline, a floor plan, a breadth given in every direction.
+equation h² + v² = 1, held whole: the writer's circle is the thumb held to equal the mountain. If V is known but differs
+from H, or differs from one direction to another, the whole is some other shape, an ellipse, a coastline, a floor plan, a
+breadth given in every direction.
 
 If V is not known, you have a standpoint, and you are the **reader**. You are somewhere, looking out, and what you have
 is what arrives at that place. It comes in two parts. One part is the directions themselves, the places on your view
@@ -141,19 +143,21 @@ blueprint has no point to turn from.
 **The addresses and their paint are reading alone.** They are what a standpoint has: directions, and what arrives along
 them. No second breadth is known, and none is needed to read.
 
-**The circle is shared, and that is why the whole distinction is so easy to miss.** The circle is the most familiar
-object in mathematics, and it belongs to both sides. A writer holds it as an equation, h² + v² = 1, with V known to
-equal H. A reader holds it in a quite different way, as its own single length turned round, which section 4 will
-explain. The two hold the same circle. Because of that, the line between reading and writing runs straight through the
-middle of the thing everyone starts from, and it is very hard to see. Classical geometry works almost entirely on the
-writer's side. It never needs to say so, because the circle it begins with looks the same from both sides.
+**The circle is the writer's, and the reader's geometry looks just like it, which is why the whole distinction is so easy
+to miss.** The circle is the most familiar object in mathematics. A writer holds it as an equation, h² + v² = 1, with V
+known to equal H: the thumb held to equal the mountain. The reader has no circle. It points its crossed thumbs (in the
+plane, one thumb) at the mountain, and that pointing generates a geometry of its own, which section 4 will explain: a
+corner where the thumbs cross, directions laid by turning, near and far counted in thumbs. That geometry has every feature
+of the circle except the circle. Because of that, the line between reading and writing runs straight through the middle of
+the thing everyone starts from, and it is very hard to see. Classical geometry works almost entirely on the writer's side.
+It never needs to say so, because the circle it begins with looks, from a standpoint, like what the pointing gives.
 
 So the map is simple:
 
 | what | whose |
 |---|---|
 | nothing related | no one's: nothing to read |
-| the circle | both: the writer's equation, the reader's turned length |
+| the circle | the writer's: V = H, the thumb equal to the mountain; the reader's pointing gives its features, not the circle |
 | any other shape, in amounts | the writer's alone |
 | the addresses and their paint | the reader's alone |
 
@@ -186,9 +190,10 @@ of units, and counting needs equal units. The number line has no special place o
 
 The reader's ruler, as later essays will show in detail, has a special place: the point where the thing you are reading
 equals your own length, one thumb, where v equals h. Near you, inside that point, the reader's ruler is proportional, like
-the number line: one thumb laid evenly. Past it, each step outward is a doubling (two thumbs, then four, then eight), so
-far things are laid by how many times farther they are, not how many units. Neither ruler is better. They are made for
-different acts. The writer counts; the reader sees.
+the number line: one thumb laid evenly. Past it the ruler goes by thumbs: two thumbs, then four, then eight, each stretch
+from a count of thumbs to twice it holding as many places as the last. So far things are laid by how many times farther
+they are, not how many units. Neither ruler is better. They are made for different acts. The writer counts; the reader
+sees.
 
 *Demo: one blueprint, two vantages, in two dimensions and three; the writer and the reader.*
 
@@ -204,14 +209,14 @@ equals H. Two amounts, and a claim about how they compare.
 
 The reader has no V. More than that, it never knows V. Every reading is a ratio, and a ratio cancels the very amount V
 would be, so no reading, however many, carries it. V is known only by writing: by walking a baseline, counting a step,
-timing a signal of known speed, or being handed an agreed unit, each an amount carried in from outside. A reader that
-comes to know V has not read better. It has written, and taken the writer's vantage. Yet the reader has a circle too.
-Where does it come from?
+timing a signal of known speed, or being handed an agreed unit, each an amount carried in from outside. A reader that comes
+to know V has not read better. It has written, and taken the writer's vantage. Yet the reader has the circle's geometry,
+without the circle. Where does it come from?
 
-It comes from turning. Take your one length, H, your thumb, and turn it about one end, steadily, like the beam of a
-lighthouse sweeping the sea, or your gaze sweeping along a row of trees. The free end traces a circle, and it traces a
-circle for one simple reason: the length does not change as it turns. No second length is needed to make the circle round.
-The circle is just what a fixed length does when it turns.
+It comes from pointing. Hold your one length, H, your thumb, up at the mountain, and turn it about one end, steadily, like
+the beam of a lighthouse sweeping the sea, or your gaze sweeping along a row of trees. A writer watching sees the free end
+trace a circle, for one simple reason: the length does not change as it turns. The reader does not hold that circle. It
+holds where its thumb points, and each pointing is a reading. Its geometry is what the pointing generates.
 
 Now ask what the reader reads as it turns. At each moment its length points in some direction. The direction has an
 across part and an up part, two shares of the same length: h across and v up. What the reader reads is how they compare,
@@ -231,10 +236,10 @@ there: the line's shape, the measurements' ratio, the flashes on the beach.
 Read from the standpoint, it is something else. It is the law of the directions themselves: the turn's own measure,
 there before anything arrives to be measured. And it needs no V at all.
 
-**The Cauchy is the circle with the second breadth taken away.**
+**The Cauchy is the writer's circle with the second breadth taken away.**
 
-Consider what a circle gives you. On a quarter turn, from straight ahead to straight up, there is a special place in the
-middle: 45°, where the across and the up are equal and v equals h. The quarter turn is symmetric about it. Swap across
+Consider what the writer's circle gives. On a quarter turn, from straight ahead to straight up, there is a special place in
+the middle: 45°, where the across and the up are equal and v equals h. The quarter turn is symmetric about it. Swap across
 for up and the near half lands on the far half, point for point. Half of the turn lies on each side.
 
 Every one of those features survives in the Cauchy, and none of them needs V.
@@ -249,9 +254,9 @@ Every one of those features survives in the Cauchy, and none of them needs V.
   corner, between a half and two. The rest thin out toward each end. Every equal step of turning holds equal weight;
   only the slope, read as a number, crowds and thins.
 
-The writer's circle has every one of these properties, with V known. The one-length circle has every one of them with V
-unknown. That is the sense in which the Cauchy is the circle without the V. It is the circle's geometry, the corner, the
-halves and the swap, carried by one length alone.
+The writer's circle has every one of these properties, with V known. The reader's pointing has every one of them with V
+unknown, and no circle. That is the sense in which the Cauchy is the circle without the V. It is the circle's geometry, the
+corner, the halves and the swap, generated by one thumb pointed, with no circle held.
 
 ### What the missing V does
 
@@ -292,10 +297,10 @@ usual explanation is that the mean does not exist, which is true but not a reaso
 direction read from a standpoint. Its median is the corner, a feature of the geometry. Its mean would be an amount, and
 there is no amount to be had.
 
-One more point, about a phrase that appears often in the writings this essay draws on: "V = H". A writer looking at the
-one-length circle sees the reader's one length, its thumb, turned, and describes it in the writer's own terms: two
-breadths, both equal to H. The phrase is the writer's name for the one-length circle. The reader never sets V equal to H.
-It has no V to set.
+One more point, about a phrase that appears often in the writings this essay draws on: "V = H". A writer watching the
+reader point its thumb sees one length turned, draws the circle its tip would trace, and describes it in the writer's own
+terms: two breadths, both equal to H, the thumb equal to the mountain. The phrase is the writer's name for that circle. The
+reader never sets V equal to H. It has no V to set, and no circle.
 
 ### What is old and what is new
 
@@ -314,9 +319,9 @@ A writer, holding V, has its far end as an amount: no horizon, and the corner on
 assembly in print; the pieces are classical.
 
 The Cauchy's own story is long, and it has its own essay, the third: how its addresses are kept apart from what arrives,
-why it is the law a reasoner ignorant of scale must assign, and a second test to go with the one below. For now the
-point is only this. The deepest piece of the reader's side, the law of its directions, is a circle that needs nothing
-but the reader's own length.
+why it is the law a reasoner ignorant of scale must assign, and a second test to go with the one below. For now the point
+is only this. The deepest piece of the reader's side, the law of its directions, is the circle's geometry without the
+circle: what one thumb, pointed, generates.
 
 *Demos: one turn and one read (the ray and the radius meeting on one circle); sweeping from zero (the turn counted
 against itself); the central reader, step 1 (the hand, its fingers laid by the turn, painted by the light).*
@@ -349,10 +354,9 @@ Scale by a hundred, so the range is two thousand miles wide, a thousand miles aw
 large. The view is still the same. The mountain's width in miles changed every time. Its width against your thumb never
 did.
 
-Try it on the two vantages. The reader's paint and addresses never move: they are what a standpoint has, and a
-standpoint has only directions. The writer's blueprint moves by k in every number it states. The circle
-splits down the middle: the writer's equation, read as amounts, moves; the reader's turned length, read as directions,
-does not.
+Try it on the two vantages. The reader's paint and addresses never move: they are what a standpoint has, and a standpoint
+has only directions. The writer's blueprint moves by k in every number it states. The circle is the writer's, and it moves
+with the amounts; the reader's pointing, read as directions, does not.
 
 In Euler's notation the test has a picture. Write a thing as a direction times an amount, r·e^(iθ), and take the
 logarithm, ln r + iθ. Scaling the world by k slides the real part by ln k and leaves the imaginary part alone: the
@@ -476,7 +480,7 @@ holds it: each room against the building, each thing against its room.
 Seven lengths, six readings, and not a single amount. Yet any length can be compared with any other. The two things in
 room A compare directly, 3/4 against 1/2, a ratio of 3/2. The first thing in A and the first thing in B compare through
 the building that holds them both: 3/4 over 2/3 inside the rooms, times 1/2 over 1/3 between them, which is 27/16. Every
-comparison is a chain of ratios through the levels.
+comparison is a chain of ratios through the tower.
 
 Now carry in one amount, any one. If the building is twelve metres long, the first thing in A is four and a half metres
 and the second thing in B is one and a third. If instead someone measures that second thing in B as one metre, the
@@ -542,12 +546,12 @@ more for a public standard. When a measurement fails, the count says where to lo
 the readings.
 
 **It explains how much a lone reader can do.** This is perhaps the most surprising lesson. With no unit at all, a reader
-can map a room, size every object against every other, build a tower of units, check it by closing loops, and have the
-full geometry of the circle, its corner, its halves and its symmetry, as the law of its own directions. Almost
-everything comes free. What it cannot have is one number per agreement. The writer's world, the blueprint, the map in
-metres, the number line, is a fine and useful thing: it lets sizes be stated before anything is built, lets readers who
-never meet compare notes, and lets amounts be added up. But it rests on that handful of numbers, carried in from
-outside, and the reader's world was complete before they arrived.
+can map a room, size every object against every other, build a tower of units, check it by closing loops, and have the full
+geometry of the circle, its corner, its halves and its symmetry, as the law of its own directions, with no circle held:
+only its thumbs pointed. Almost everything comes free. What it cannot have is one number per agreement. The writer's world,
+the blueprint, the map in metres, the number line, is a fine and useful thing: it lets sizes be stated before anything is
+built, lets readers who never meet compare notes, and lets amounts be added up. But it rests on that handful of numbers,
+carried in from outside, and the reader's world was complete before they arrived.
 
 Go back to the room. The map in steps was finished before anyone asked for metres. The metre was the one thing it had
 to be handed.

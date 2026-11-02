@@ -3,8 +3,8 @@
 *The sixth of a series of essays on what can be known from where one stands. Draft, 28 October 2026.*
 
 Everything so far has been read from one place. One standpoint gives directions, and directions are a great deal: the
-whole circle, the Cauchy, the corner, the near and far fields. What one standpoint never gives is a place. It gives the
-line a thing lies on, never where along the line.
+circle's whole geometry with no circle held, the Cauchy, the corner, the near and far fields. What one standpoint never
+gives is a place. It gives the line a thing lies on, never where along the line.
 
 This essay is about what a second standpoint buys, and a third, and what each loses as things recede. The answer is a
 ladder. One standpoint fixes lines. Two fix the figure up to its size. One agreed length fixes the size. Along the way the
@@ -65,8 +65,8 @@ growth. Reading at once recovers payloads relative to each other, never their sc
 Suppose each reader reads only directions: for each place on some figure, the direction in which it stands. Then there is
 a ladder of what each rung buys.
 
-- **One reader fixes, for each place, only a line through it.** However many readings it takes, it fixes no place. Laid
-  out with nothing else, its readings return the circle of the second essay, the same for every figure.
+- **One reader fixes, for each place, only a line through it.** However many readings it takes, it fixes no place. Laid out
+  with nothing else, its readings return the second essay's directions, the Cauchy, the same for every figure.
 - **Two readers, whose placement relative to each other is known up to scale, fix every place both can see,** except
   places in line with them both, up to one common scale. Two lines from different points meet in one point; move both
   readers by a common shape-preserving change and every meeting point moves the same way.
@@ -97,13 +97,14 @@ per unit error in γ is the hyperbolic cosine of ln k.
 - **It is least at the corner,** where it is 1.
 - **It is the same at k and 1/k.** The target at distance d and the one at (B/2)²/d are read equally well. The swap is
   the corner's symmetry again.
-- **It grows on both sides, and far off it nearly doubles per level.** At 0, 1, 2, 3 and 4 doublings either side of the
-  corner it is 1, 1.25, 2.125, 4.06 and 8.03. Far off, the depth error is the error in the angle times d/B, the familiar
-  rule that stereo error grows as the square of distance.
+- **It grows on both sides, and far off it is nearly twice as large each time the target is twice as far.** With the target
+  1, 2, 4, 8 and 16 half-baselines out, or a half, a quarter, an eighth and a sixteenth of one, it is 1, 1.25, 2.125, 4.06
+  and 8.03. Far off, the depth error is the error in the angle times d/B, the familiar rule that stereo error grows as the
+  square of distance.
 
 This bell is not a coincidence. The steady turn lays its readings densest at the corner because there the pair's facing
-turns fastest per level of the pair's reading. Parallax reads depth best at the corner for the same reason. They are one
-function: the rate at which the pair's facing turns.
+turns fastest per unit of the logarithm of the pair's reading. Parallax reads depth best at the corner for the same reason.
+They are one function: the rate at which the pair's facing turns.
 
 The error has a shape too. Along the line of sight, the depth's error is least at the corner. Across the line of sight,
 the error belongs to the direction, and it keeps falling with distance. Combined, the total error is least a little
@@ -116,16 +117,17 @@ read equally well. Elsewhere it stretches along the line of sight by d over the 
 
 ## 5. The band, and its far edge
 
-Read the angle to a step ε, the smallest change the pair can tell. The relative depth error stays below 1 for a band of
-about log₂(2/ε) doublings on each side of the corner. At ε = 10⁻³, that is 10.97 doublings each side.
+Read the angle to a step ε, the smallest change the pair can tell. The relative depth error stays below 1 for a band
+reaching a factor of about 2/ε on each side of the corner, out to 2/ε half-baselines and in to ε/2 of one. At ε = 10⁻³,
+that is a factor of 2,000 each side (2 to the power 10.97).
 
 - **The far edge is near d = B/ε,** where the whole parallax is one step.
 - **The near edge is its mirror,** εB/4.
 - **Past the far edge a place is a ray.** The shift between the two views is less than one step, and the pair reads one
   direction, as a single standpoint does. Parallax needs situated reading, and past its band it returns to it.
 
-The baseline works like a second zoom. Choosing B slides the band along the doublings, as choosing H, the size of the
-reader's thumb, slides its window in the fourth essay. The band's width in doublings is set by the step alone.
+The baseline works like a second zoom. Choosing B slides the band along the distances, as choosing H, the size of the
+reader's thumb, slides its window in the fourth essay. The band's width, as a factor, is set by the step alone.
 
 At published precisions:
 
@@ -136,8 +138,8 @@ At published precisions:
 | Earth's orbit, Gaia | 2 AU | 40 microarcseconds | 1 AU | about 50 kiloparsecs |
 
 Two things follow. The eyes' corner, 3 cm off, is nearer than they can focus, so binocular depth is only ever used on the
-far side of its bell. And every star is many doublings past the orbit's corner: one parsec is 17.7 doublings beyond it.
-Stellar parallax lives in the bell's far tail.
+far side of its bell. And every star is far past the orbit's corner: one parsec is 206,265 times as far as it. Stellar
+parallax lives in the bell's far tail.
 
 ---
 
@@ -235,12 +237,11 @@ support function plays the same part, and the areas carried by its outward norma
 Minkowski problem, 1903; in vision, Horn's extended Gaussian image, 1984). Planets and asteroids are described by series
 of spherical harmonics in the radius.
 
-What the reading adds is where each part of that function comes from. The directions are the addresses, the same for
-every shape. The radius along each is an amount, the payload, had only by ranging, which is writing, or from further
-standpoints. Write the outline as ln r = a₀ + f(θ): the constant a₀ is the one term no ratio of radii reads, so the
-normalisation the descriptors make by choice is here what reading leaves out. The terms of f, taken in order, are a
-level of detail, the broad form first. The classical treatments begin with r(θ) in hand; the reading says what it cost
-to get it.
+What the reading adds is where each part of that function comes from. The directions are the addresses, the same for every
+shape. The radius along each is an amount, the payload, had only by ranging, which is writing, or from further standpoints.
+Write the outline as ln r = a₀ + f(θ): the constant a₀ is the one term no ratio of radii reads, so the normalisation the
+descriptors make by choice is here what reading leaves out. The terms of f, taken in order, are detail, the broad form
+first. The classical treatments begin with r(θ) in hand; the reading says what it cost to get it.
 
 *Demos: the face from home (ranges against silhouettes); one moon.*
 
@@ -318,15 +319,15 @@ not two kinds of observer; they are what one observer is doing. The labels move 
 The first essay's survey says the same thing in its own words: the many angles are read, and the one base walked and
 counted is written; a surveyor does both in one morning.
 
-And the passage has degrees. Knowing V is not a switch thrown by the second standpoint; it comes in amounts, three ways.
-*In what:* in the step taken, in H if the step was H (one thumb, and places come out in thumbs), in metres only if the step
-was counted. *How well:* best at the pair's corner, the circle on the baseline, the error stretching by d/(B/2) farther
-out, and past about B/ε nothing but a ray (the fifth section). *Of which things:* the same two standpoints give V for the
-near things and leave it unknown for the far ones. More standpoints, a longer baseline, narrow the band; nothing closes it.
-The writer who holds V exactly, the one the papers call the writer, is the limit of this, never a stage of it. That is the
-fifteenth essay's shape again: every stage of learning V is a finite approximant, as every partial sum of π is, and holding
-V exactly, like holding π, would need the infinite process finished. A reader becoming a writer holds V to so many digits,
-for so many things, out to so far.
+And the passage has degrees. Knowing V, the mountain in the distance, is not a switch thrown by the second standpoint; it
+comes in amounts, three ways. *In what:* in the step taken, in H if the step was H (one thumb, and places come out in
+thumbs), in metres only if the step was counted. *How well:* best at the pair's corner, the circle on the baseline, the
+error stretching by d/(B/2) farther out, and past about B/ε nothing but a ray (the fifth section). *Of which things:* the
+same two standpoints give V for the near things and leave it unknown for the far ones. More standpoints, a longer baseline,
+narrow the band; nothing closes it. The writer who holds V exactly, the one the papers call the writer, is the limit of
+this, never a stage of it. That is the fifteenth essay's shape again: every stage of learning V is a finite approximant, as
+every partial sum of π is, and holding V exactly, like holding π, would need the infinite process finished. A reader
+becoming a writer holds V to so many digits, for so many things, out to so far.
 
 One way to speed the passage is to aim it. Set H, the thumb, to the thing itself and there are two senses. Make the thing
 the unit, and its V is 1 by choice; its own two ends become the baseline, and you are the point placed: ninety degrees

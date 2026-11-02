@@ -82,13 +82,13 @@ Read the two letters as vantages:
 
 - **N is the writer's.** To know N is to know the whole: how many there are, which is to know the extent, V, and how much
   is in it. That is writing. The first essay's test sorts it at once: double the world and N doubles.
-- **K is the reader's.** A reader never knows V (it holds one length, its own H, the thumb it holds up, and every reading
-  cancels V), so it never knows N. What it knows is K, its own count of addresses, fixed before it chooses H and unchanged
-  by anything it looks at.
+- **K is the reader's.** A reader never knows V, the mountain in the distance (it holds one length, its own H, the thumb it
+  holds up, and every reading cancels V), so it never knows N. What it knows is K, its own count of addresses, fixed before
+  it chooses H and unchanged by anything it looks at.
 
 The Cauchy is the map from a world of N to a holding of K. It lays the reader's K addresses over a world of any size: in
-proportion inside the corner, a doubling at a time past it, and everything past the last address on the one address at
-the horizon. Double N and the reader's view does not change. Make N unbounded and it still does not. An infinite star
+proportion inside the corner, by thumbs past it, two, four, eight, and everything past the last address on the one address
+at the horizon. Double N and the reader's view does not change. Make N unbounded and it still does not. An infinite star
 field browsed at N and at 2N stars, counted exactly at K addresses, gives views that differ by less than 10⁻⁷ at N = 2⁴⁰
 (`star-field.html`), and by less as N grows.
 
@@ -96,7 +96,7 @@ So the Cauchy is a *cull*. Whatever N is, the reader's work is K. In N it is con
 
 What the cull gives up is sameness. A writer who knows N can hold every item as 1/N of the whole, all alike, on a number
 line with no corner, and no item has an advantage over another, because no standpoint is favoured: there is none. A
-reader's K is spent unevenly: finest at the corner, coarser by a level each doubling away, and that unevenness is the
+reader's K is spent unevenly: finest at the corner, coarser each time a thing is twice as far, and that unevenness is the
 vantage. What is looked at gets the most. Knowing N buys equality; holding only K buys a standpoint, at a cost that does
 not grow with the world.
 
@@ -318,13 +318,13 @@ its chart runs out.
 **Growth.** A dynamic array is still a writer, but every growth rewrites the one number, and what moves when it does is
 exactly what divided by it. An index counted from the start survives an append. An index from the end moves, and so does
 any position stated as i/N: a percentile, a scroll fraction, a progress bar. An index laid by turn never moves, because it
-never used N. Growing capacity by a factor g puts the reallocations at levels g, g², g³, …, and the copying over N appends
-stays under gN/(g − 1): 2N at g = 2, 3N at g = 1.5. Any g above 1 gives a constant cost per element. The levels are
+never used N. Growing capacity by a factor g puts the reallocations at capacities g, g², g³, …, and the copying over N
+appends stays under gN/(g − 1): 2N at g = 2, 3N at g = 1.5. Any g above 1 gives a constant cost per element. The powers are
 forced; their base is not.
 
-A timestamp is the other side. An address made of slots, a fixed number to each level whatever the level holds, does not
-move as the world grows: the radix was agreed beforehand, and it is a written amount carried into every address. The
-price is the slots held empty.
+A timestamp is the other side. An address made of slots, a fixed number to each digit whatever the digit holds, does not
+move as the world grows: the radix was agreed beforehand, and it is a written amount carried into every address. The price
+is the slots held empty.
 
 ---
 
@@ -339,30 +339,30 @@ Every programmer has kept `i` and dropped `f`. Essay 8 (§5) follows this all th
 and N.
 
 The value stored in the cell is untouched by the floor. Nothing of the payload goes. What goes is where in the cell the
-place was, and that is address. Written in binary, f = 0.b₁b₂b₃…, each digit answers one question, which half, then
-which half of that half: the digits of f are the finer levels of the address, one level a digit. `Math.floor(2 * x / w)` is
-the key one level finer. So the floor does not round one number. It takes an address that runs through every level at
-once and keeps one, discarding every finer level in a single step.
+place was, and that is address. Written in binary, f = 0.b₁b₂b₃…, each digit answers one question, which half, then which
+half of that half: the digits of f are the address carried finer, one halving a digit. `Math.floor(2 * x / w)` is the key
+one halving finer. So the floor does not round one number. It takes an address that runs through every depth at once and
+keeps one, discarding every finer depth in a single step.
 
-Those levels are not a list to store beside the index; they are its other coordinate. Give the cell of level j and index
-k the point z = m + iγ, its middle m and its half-width γ, in the upper half-plane. Then:
+Those digits are not a list to store beside the index; they are its other coordinate. Give the cell of depth j and index k
+the point z = m + iγ, its middle m and its half-width γ, in the upper half-plane. Then:
 
-- z ↦ 2z carries each level onto the next, every step alike;
-- every cell has hyperbolic area exactly 1, at every level (Böröczky's binary tiling, 1974);
+- z ↦ 2z carries each depth onto the next, every step alike;
+- every cell has hyperbolic area exactly 1, at every depth (Böröczky's binary tiling, 1974);
 - each z is a Cauchy law C(m, γ), and from its own point it puts exactly half its weight in the cell: the cell is that
   law's interquartile range.
 
-So the plane the floor's remainder lives in is the space of the address law's own parameters. A tree (a quadtree, a
-mipmap chain) keeps the levels and loses the plane: two cells side by side across the middle of level j are 2j steps
-apart in the tree and a fixed hyperbolic distance apart in the plane. Add the sideways links, each cell joined to its
-neighbours on its own level, and the graph measures the plane: an array `cells[level][index]` read with its neighbours is
-the address plane, sampled.
+So the plane the floor's remainder lives in is the space of the address law's own parameters. A tree (a quadtree, a mipmap
+chain) keeps the depths and loses the plane: two cells side by side across the middle of depth j are 2j steps apart in the
+tree and a fixed hyperbolic distance apart in the plane. Add the sideways links, each cell joined to its neighbours at its
+own depth, and the graph measures the plane: an array `cells[depth][index]` read with its neighbours is the address plane,
+sampled.
 
-And the floor imposes a level of detail where a reader reads one off what it meets. The floor sets one depth for
-everything, chosen by the store before anything is read. A reader at height γ keeps each level softly, multiplying a wave
-by e^(−kγ), never zero and never a wall; the floor keeps every level coarser than the cell whole and none finer. Where the
-floor is taken of an amount, `Math.floor(x / w)`, the width w is an amount, and the scale test moves the key unless w moves
-with it: the key is a writing. A floor taken of a share of the turn carries no amount and nothing moves it.
+And the floor imposes a depth where a reader reads one off what it meets. The floor sets one depth for everything, chosen
+by the store before anything is read. A reader at height γ keeps each depth softly, multiplying a wave by e^(−kγ), never
+zero and never a wall; the floor keeps every halving coarser than the cell whole and none finer. Where the floor is taken
+of an amount, `Math.floor(x / w)`, the width w is an amount, and the scale test moves the key unless w moves with it: the
+key is a writing. A floor taken of a share of the turn carries no amount and nothing moves it.
 
 ---
 
@@ -370,24 +370,26 @@ with it: the key is a writing. A floor taken of a share of the turn carries no a
 
 Inside the corner the reader can lay its readings in proportion. Past it the reciprocal gives h/v within [0, 1], but says
 nothing about layout. Ask only that a lay not build in a scale the reader cannot have: that the room between x and λx
-depend on λ alone. Then the far lay is the logarithm, a fixed count of addresses for each doubling (Cauchy's functional
-equation, Cauchy 1821). The count is what the reader holds; the smooth 1 + ln x is the writer's formula for it. The
-premise is assumed, not derived, and it is the only premise the logarithm needs.
+depend on λ alone. Then the far lay is the logarithm, a fixed count of addresses from any count of thumbs to twice it
+(Cauchy's functional equation, Cauchy 1821). The count is what the reader holds; the smooth 1 + ln x is the writer's
+formula for it. The premise is assumed, not derived, and it is the only premise the logarithm needs.
 
-**Floating point lays its numbers this way.** The exponent counts levels and the significand is a plain share within the
-level; the subnormals lay one stretch in proportion from zero. Count of levels plus the share within is the logarithm
-laid straight between level edges, never more than 0.086 of a level from the smooth curve. A float differs from the
-reader in having levels on both sides of 1 and a floor; the reader has proportion inside the corner and no floor.
+**Floating point lays its numbers this way.** The exponent counts powers of two and the significand is a plain share
+between one and the next; the subnormals lay one stretch in proportion from zero. Count of powers plus the share toward the
+next is the logarithm laid straight between powers of two, never more than 0.086 of the way to the next from the smooth
+curve. A float differs from the reader in counting powers of two on both sides of 1 and in having a floor; the reader has
+proportion inside the corner and no floor.
 
 **Why not proportion all the way out.** A reader that kept v/h in proportion past the corner would overflow (its range
 runs to infinity), divide by the smaller part, have averages that never settle, have to crop as a flat camera does near
 the corner, and find its expansions failing. Each of these is familiar from numerical work.
 
-**Why halving.** If a level has only its two ends, their order and the reciprocal between them, the only subdivision its
-symmetries preserve is the cut at the corner into two halves; applied again, binary subdivision. Any other number of parts
-needs a measure carried in. Halving a count or a length is rational and the reader's. Halving a turn, or a level's ratio
-at its geometric middle, takes a square root, two lengths combined, and is the writer's. A calendar's uneven levels
-(months, hours, minutes) match no single factor and cost a table: uniformity can be free; variation has to be stored.
+**Why halving.** If a stretch, from one thumb to two say, has only its two ends, their order and the reciprocal between
+them, the only subdivision its symmetries preserve is the cut at the corner into two halves; applied again, binary
+subdivision. Any other number of parts needs a measure carried in. Halving a count or a length is rational and the
+reader's. Halving a turn, or a stretch's ratio at its geometric middle, takes a square root, two lengths combined, and is
+the writer's. A calendar's uneven units (months, hours, minutes) match no single factor and cost a table: uniformity can be
+free; variation has to be stored.
 
 **Three boundaries.** The *corner*, v = h, between the two sides of a reading, which every reader finds. The *end of its
 range*, where its count of addresses runs out, as a float overflows when its exponent runs out; a reader can reach it.
@@ -419,17 +421,18 @@ what needs them is the payload or the writer.
 **H is a zoom, not an escape.** A reader could choose a very large H, a big thumb, and hold everything in proportion, with
 no logarithm. The cost is detail: with K addresses spread over a very large H, everything at the reader's own scale falls
 inside the first. With n addresses across the near field, a thing covering d to d + Δ spans nΔ/H of them inside the corner,
-one level fewer each time H doubles; past the corner, on the logarithmic lay, n·ln(1 + Δ/d), whatever H is. The best H puts
-the thing read at the corner. The hyperbolic browser (Lamping, Rao and Pirolli 1995), mipmaps (Williams 1983) and map tiles
-whose key gains a digit a level all make this choice by design.
+one halving of detail fewer each time H, the thumb, is made twice as big; past the corner, on the logarithmic lay, n·ln(1 +
+Δ/d), whatever H is. The best H puts the thing read at the corner. The hyperbolic browser (Lamping, Rao and Pirolli 1995),
+mipmaps (Williams 1983) and map tiles whose key gains a digit a halving all make this choice by design.
 
 **The corner follows the focus.** On the turn's addresses a cell's width relative to its distance is (π/2K)(s + 1/s), least
 at s = 1. The corner is the addresses' median, their finest relative grain and the reciprocal's fixed point, the roles a
 focus wants; it is also where the expected travel to the next look is least, whenever the next look is as likely on either
 side. So what is looked at is drawn at H, one thumb wide. Near and far are then nearer and farther than the focus, held
 alike; their job is to show where to look next. The fewest addresses for a focus of extent F at grain δ, with a field to X
-whose cells stay within a factor ρ of each other, are ⌈F/δ⌉ + ⌈log_ρ(X/F)⌉: proportion on the focus, levels past its edge.
-At X/F = 64 and ρ = 2 the field costs six addresses, whatever K is. `fpv.html` lays a first-person view's depth this way.
+whose cells stay within a factor ρ of each other, are ⌈F/δ⌉ + ⌈log_ρ(X/F)⌉: proportion on the focus, the logarithm past its
+edge. At X/F = 64 and ρ = 2 the field costs six addresses, whatever K is. `fpv.html` lays a first-person view's depth this
+way.
 
 **Only the turn's cull composes.** Other paths from all of h to all of v, each swept uniformly along its own length, also
 squeeze the line into K addresses with H at their median and a tail that sends the rest to the horizon: the line
@@ -442,8 +445,8 @@ told apart R(N) = (N/π)·arccos(εN/2π) of them. That peaks at about 1.12/ε p
 peak, more points mean fewer told apart. The addresses never overflow; the resolution does.
 
 **From far off, a thing is its total at its centroid.** A cluster read from far off arrives as its total at its centroid,
-each finer order smaller by one more power of the reading, the corner of the pair (cluster radius, distance) the seam.
-This is level of detail by distance, and it is the cull's far field: a whole subtree held as one address.
+each finer order smaller by one more power of the reading, the corner of the pair (cluster radius, distance) the seam. This
+is detail chosen by distance, and it is the cull's far field: a whole subtree held as one address.
 
 **The dial.** Put the cull under a thumb. A held push adds to the hyperbolic angle ζ; the place is sinh ζ; the screen is
 the turn gd ζ, which never leaves the quarter turn. Any place up to N is reached in about ln(2N)/rate: a list of 2⁵³
@@ -480,9 +483,9 @@ intricate system of many parts. A blueprint is a capability, not a condition.
 looks. Each becomes a distance only with an amount carried in, the signal's speed and a clock, or the thing's true
 brightness. Ranging is writing. Scale the world and the distance so stated moves.
 
-**The best guess is the median.** A reader that must guess the other's size, knowing only V₋ ≤ V* ≤ V₊, does best in
-levels at √(V₋V₊), the corner of its bounds; holding a distribution, at its median, for every increasing measure of error;
-knowing nothing either way, at H itself.
+**The best guess is the median.** A reader that must guess the other's size, the mountain's, knowing only V₋ ≤ V* ≤ V₊,
+does best, on the logarithm, at √(V₋V₊), the corner of its bounds; holding a distribution, at its median, for every
+increasing measure of error; knowing nothing either way, at H itself.
 
 ---
 
@@ -490,8 +493,8 @@ knowing nothing either way, at H itself.
 
 Once a reader chooses H, the size of its thumb, some structures follow with no further choice: a zoom; a split between near
 and far; readings no change of size can move; and, given uniform directions, addresses for any number of things with no
-table and no count. Two more need one premise: the logarithm past the corner (the premise of §9), and a level of detail (a
-fixed K). What hides what is not among them; that is the payload's, set by which surfaces are opaque.
+table and no count. Two more need one premise: the logarithm past the corner (the premise of §9), and detail (a fixed K).
+What hides what is not among them; that is the payload's, set by which surfaces are opaque.
 
 Engineers have arrived at many of these by design. The geometry does not do their jobs better; it says where each comes
 from, so that what a design adds can be named. Essay 8 goes through them; in brief:
@@ -612,9 +615,9 @@ The references are carried over from the archived companion, where they were che
 The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`): §1 ("Read and write in computing"), §6
 ("K and N"). The proofs are in the archived *Observation from Somewhere* and its computer-science companion
 (`../archive/ofs/observation-from-somewhere-cs.md`), kept for reference: the corner and the registers in §3, the
-separation in §5, the array in §6, the floor in §7, the two layouts in §8, level of detail and the fixed count in §9, the
+separation in §5, the array in §6, the floor in §7, the two layouts in §8, detail and the fixed count in §9, the
 blueprint in §10, the dial in §11, what comes free in §12. Where the companion's wording differs from the later rulings
 (it speaks of "the reader's circle", of π/2 and 2/π as the reader's own, and says the word *writer* has nothing to do with a
-memory write, which R613 qualifies), the rulings stand. The essays before this one: 3 (address and payload), 4 (levels, H as a zoom, K), 8 (the dial, the
+memory write, which R613 qualifies), the rulings stand. The essays before this one: 3 (address and payload), 4 (thumbs past the corner, H as a zoom, K), 8 (the dial, the
 depth buffer, the floor), 12 (what an array is, what a machine holds), 13 (where the plane's conveniences stop), 15 (what
 only a writer holds).
