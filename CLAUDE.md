@@ -1256,7 +1256,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R628 (2 Nov; Tom: "I wonder if parallax has a tighter cauchy connection?", then "Yes"): `plans/pxs-plan.md` (PXS), parallax
   as a sum of reads: under TRI's errors the depth predicted exactly Cauchy, its point the triangulation of the reads' complex
   points, on the circle of radius d at the corner. Run 1 (`runs/pxs/pxs.py`): X1, X3, X5–X8 not killed, X2 and X4 killed by my
-  bounds; run 2 (`pxs2.py`): X2′, X4′ not killed. The place, and two quarter turns, leave the family.
+  bounds; run 2 (`pxs2.py`): X2′, X4′ not killed. The place, and two quarter turns, leave the family. In
+  *Reads and Writes* §8 ("Parallax is a sum of reads"), essay 6 §4, a pointer in essay 3 §6.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

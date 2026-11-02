@@ -520,6 +520,20 @@ reconstructs the writer's cube, and while it does, it is writing: it has moved, 
 one standpoint holds. When it stops and looks again, it reads. A read and a write are not two kinds of observer; they are
 what one observer is doing.
 
+**Parallax is a sum of reads.** Put the two standpoints a step apart and let each read a point in its h/v chart along
+the step, cot a from one end and cot b from the other. Then cot a + cot b is the step over the point's distance from the
+step's line: the depth is the reciprocal of a sum of two reads. Those are the two operations the Cauchy is closed under,
+the sum (a relay of standpoints, their points m + iγ adding) and the reciprocal (the exchange). So parallax never takes a
+read out of the family. If each read is uncertain as a read from a height γ is (the uniform turn's law about the true
+direction), each is a Cauchy point w = (c + iγ)/(1 − iγc) in that chart, c its true value, and the depth is exactly a
+Cauchy whose point is the same triangulation done on the two points: D = B/conj(w_a + w_b), B the step. That holds at every
+γ, not only for small errors; rays that do not meet ahead are part of the same law. At the pair's corner, the circle on
+the step, the depth's point stays at the true distance d, turned by twice the read's error angle: D = d·e^(2i·atan γ). Two
+things leave the family: the place across the line of sight, a ratio of two sums, and the depth when each standpoint
+reads only a quarter turn, since two half-Cauchys do not add to one. And repeating the reads, the mean of the reciprocal
+depths gains nothing, while their median narrows. Parallax is the Cauchy's own composition, carried across two
+standpoints; the step is the one amount in it. (Checked in PXS, `plans/pxs-plan.md`.)
+
 **Turning teaches the addresses; walking teaches the world.** A standpoint has two motions, a turn about itself and a
 step along a straight line. A turn moves every direction by the same angle, near and far alike, so nothing shifts against
 anything else: it gives the frame, the corner where the thumbs cross and the Cauchy of the fingers, and these are the same

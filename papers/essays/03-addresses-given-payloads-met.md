@@ -224,7 +224,9 @@ The sum deserves a word, because it looks like amounts being added, and is not. 
 above a line. Turn steadily from it and land on a line at height γ₂; take that landing as a new standpoint and turn again
 down to the bottom line. Where you land is the sum of two Cauchys, of scales γ₁ and γ₂. It is exactly where one steady
 turn from the first standpoint would have landed. What adds is the heights of the standpoints. The sum itself is still a
-direction from the combined standpoint, with no mean. A sum of Cauchys is a relay of standpoints.
+direction from the combined standpoint, with no mean. A sum of Cauchys is a relay of standpoints. Parallax is the same
+sum carried across two standpoints a step apart: the sixth essay shows the triangulated depth is exactly a Cauchy, its
+point the triangulation of the two reads' points.
 
 The normal distribution is the Cauchy's counterpart among amounts. It is closed under sums and rescalings, the
 operations on amounts, and not under ratios or turns. Take the ratio of two independent centred normals and you get a

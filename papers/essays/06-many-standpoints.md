@@ -112,6 +112,33 @@ the error belongs to the direction, and it keeps falling with distance. Combined
 beyond the corner, at √2 times the half-baseline. At the corner itself the error is round, provided the two standpoints
 read equally well. Elsewhere it stretches along the line of sight by d over the half-baseline.
 
+### A sum of two reads
+
+There is a tighter way to say what parallax does. Let each standpoint read the target against the baseline in its h/v
+chart, the cotangent of its angle: cot a from one end, cot b from the other. Then
+
+  cot a + cot b = B / d.
+
+The depth is the reciprocal of a sum of two reads. Those are exactly the operations the third essay found the Cauchy
+closed under: a sum, which is a relay of standpoints, and a reciprocal, which is the exchange. So parallax never takes a
+read out of the family.
+
+That makes the errors exact. Suppose each read is uncertain the way a read from a height γ is, the steady turn's law about
+the true direction. In the cot chart each read is then a Cauchy with its point at w = (c + iγ)/(1 − iγc), c being the true
+value. The depth is then exactly a Cauchy, at every γ and not only for small errors, and its point is the same
+triangulation done on the two points instead of the two values: D = B / conj(w_a + w_b). The rays that fail to meet ahead
+are part of the same law. At the corner the depth's point stays at the true distance, turned by twice the read's error
+angle: D = d·e^(2i·atan γ). Its median falls a little short, at d·cos(2·atan γ).
+
+Two things leave the family. The place across the line of sight is a ratio of two sums, and is a Cauchy only for small
+errors. And if each standpoint turns only a quarter turn, its reads are half-Cauchys, which do not add to one. Turned
+over the whole half turn, two standpoints' crossings are a standard Cauchy in half-baselines: half meet ahead, at a
+median depth of one half-baseline, the corner.
+
+Repeating the reads shows the order again. Averaging the reciprocal depths gains nothing, since a sum of Cauchys is a
+Cauchy of the same scale; the median of the depths narrows. Parallax is the Cauchy's own composition carried across two
+standpoints, and the baseline is the one amount in it.
+
 *Demo: parallax from the corner (the bell; round at the corner, stretched elsewhere).*
 
 ---
