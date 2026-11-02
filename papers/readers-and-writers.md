@@ -545,8 +545,8 @@ the distance along the look is 1/(1/12) = 12 thumbs. Then the top is 12·⅓ = 4
 The up thumb did not move, and that is the gain of the second thumb. In the plane one step gives one change for one
 unknown, the distance, and nothing is left over. In space each step gives two changes for the same one unknown, so one is
 spare, and it must agree: a reading can move only along the line through where the step itself points (the epipolar
-condition of stereo vision). A step across points straight across, so readings move straight across. Step one thumb across and up together and both thumbs move by 1/12, and both give 12. Take the step for
-diagonal when it was across, and the up thumb, which did not move, says the step had no up in it: the misreading is caught.
+condition of stereo vision). A step across points straight across, so readings move straight across. Step one thumb
+across and up together and both thumbs move by 1/12, and both give 12. Take the step for diagonal when it was across, and the up thumb, which did not move, says the step had no up in it: the misreading is caught.
 Step one thumb forward instead and both readings grow by the same factor, the top to (3/11, 4/11): the tower slides
 straight out from the middle of the cross, its up over its across still ¾, and either thumb gives 12.
 
