@@ -550,6 +550,17 @@ together (a turn about any point but the standpoint carries the standpoint along
 the step's part places anything. The straight line walked is the writer's own: count it in a unit and every place found
 from it is written.
 
+**Motion, read.** A thing coming toward the reader is read at its edge: x, the thing's breadth against its distance, the
+reading v/h of the line to its edge, and that reading grows. The reading over its own rate of growth, x/ẋ, is the time
+until the thing arrives, if it keeps coming as it comes: the breadth cancels, and so do the distance and the speed. Lee
+(1976) proposed that a driver braking reads exactly this, and the rule he found is a reading too: brake so that the time
+to contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car stops at the thing, since at τ̇ = −½ the
+distance it needs to stop is the distance it has. Two limits keep this honest. The time comes out in the reader's own
+ticks, as places come out in its own thumbs; seconds are a writer's unit, carried in. And one stream cannot tell a thing
+coming nearer from a thing growing where it stands, since both raise x alike; a neighbour at the same depth, read at
+once, tells them apart, approach moving both readings and growth one. The rate at which the reader turns cancels from
+every reading. A speed in metres a second is a writing twice over: a metre and a second, both carried in.
+
 **Knowing V comes by degrees.** The crossing is not a switch thrown. It has three counts.
 
 - *In what.* Two standpoints a step apart give every place in that step. If the step was H, one thumb, places are in thumbs
@@ -658,6 +669,28 @@ It changes no mathematics. It sorts.
 - **The line is where knowing V is.** On one side of it every reading holds, whatever the world's size; on the other every
   amount holds, in some unit. The passage across is always by an amount carried in.
 
+**Three cases in data.** Practice already reads the median where it should; the sort says why, and where to look. In
+open data from the two LIGO detectors (Abbott et al. 2023; 512 s, about two million whitened samples each), each
+detector's signal taken alone is an amount, and its heavy tail is one loud transient on a law of finite spread: block
+means shrink as n^(−½), which nothing Cauchy can do. The Cauchy is in the direction [H1 : L1] of the two read at one
+instant: its median at 1, its spread unmoved by averaging, its angle near uniform, and the small departure from uniform
+reproduced from each channel alone, by pairing samples 8 s apart, to 0.0001; a prediction written before the data were
+fetched, which could have failed.
+
+A reader moving through a sky of sources counts more ahead. With no limit on brightness the census is a count of
+directions, and its dipole is 2β, Ellis and Baldwin's 2, from the addresses alone (1984). A real census is cut at a
+brightness, and the cut adds a term set by what arrives: the counts' slope and the sources' spectra, read from the same
+catalogue. On Secrest et al.'s quasars (2021) four slices by brightness give one β, as one motion of the reader should;
+slices by colour disagree, which no motion of the reader can do, so part of the dipole belongs to what arrives. The sort
+does not settle where the dipole comes from; it says which part could be the reader's.
+
+In a double slit lit one photon at a time, the fringes' visibility is at most 2hv, h and v the two paths' shares, and
+the which-path predictability |h² − v²| (Greenberger and Yasin 1988; Englert 1996): full visibility only at the corner.
+On Aspden, Padgett and Spalding's frames (2016) the shares give 2hv = 0.997 and 1.000, the pair at its corner, and the
+measured contrast, 0.69 and 0.56, lies under that bound, short by the source. The bound is the shares', the geometry's;
+how far below it a pattern falls is what arrives. None of the three is new physics. What the reading adds is where each
+part lives.
+
 **Where the ideas come from.** Jaynes's principle of transformation groups (1968, 1973) gives the method: the measure that an
 observer's ignorance leaves unchanged. Poincaré's universe made a thousand times larger overnight (1908), undetectable from
 inside, is the scale test; his distinction between representative and geometric space is the reader's and the writer's.
@@ -668,24 +701,38 @@ inside a read, and what carries an observer from one to the other.
 
 ## References
 
+- Abbott, R. et al. (LIGO, Virgo and KAGRA Collaborations) (2023). Open data from the third observing run of LIGO, Virgo,
+  KAGRA and GEO. *Astrophysical Journal Supplement Series* 267, 29.
 - Archimedes. *On the Sphere and Cylinder*, Book I.
+- Aspden, R. S., Padgett, M. J. and Spalding, G. C. (2016). Video recording true single-photon double-slit interference.
+  *American Journal of Physics* 84, 671.
 - Bernoulli, J. (1690). *Quæstiones nonnullæ de usuris.* Acta Eruditorum.
 - Bridgman, P. W. (1922). *Dimensional Analysis.* Yale University Press.
 - Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met.* Working paper, archived.
 - Buckingham, E. (1914). On physically similar systems. *Physical Review* 4, 345–376.
+- Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
+  Royal Astronomical Society* 206, 377.
+- Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77,
+  2154–2157.
 - Euclid. *Elements*, Book III, Proposition 20.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.
+- Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
+  *Physics Letters A* 128, 391–394.
 - Hölder, O. (1889). Ueber einen Mittelwerthssatz. *Göttinger Nachrichten*, 38–47.
 - Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 - Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3, 477–492.
 - Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen.* Erlangen.
 - Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten.* Berlin.
+- Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*
+  5, 437–459.
 - Leibniz, G. W., and Clarke, S. (1717). *A Collection of Papers … Relating to the Principles of Natural Philosophy and
   Religion.* London.
 - Lindemann, F. (1882). Über die Zahl π. *Mathematische Annalen* 20, 213–225.
 - Machin, J. (1706), in W. Jones, *Synopsis palmariorum matheseos.* London.
 - Poincaré, H. (1902). *La Science et l'hypothèse.* Paris. (1908). *Science et méthode.* Paris.
 - Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions* 75, 385–480.
+- Secrest, N. J. et al. (2021). A test of the cosmological principle with quasars. *Astrophysical Journal Letters* 908,
+  L51.
 - Snellius, W. (1617). *Eratosthenes Batavus.* Leiden.
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII.* Tours.
 

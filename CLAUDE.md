@@ -1261,6 +1261,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R629 (3 Nov; Tom: "Proceed", to a referee's report, `plans/rw-review-2.md`): §8 states the reads independent and proves
   the two ways out (the place's density infinite over each standpoint; two quarter turns' depth tail 1/d³, with a mean);
   §2's recovery scoped (up to the total; unique, not stable; the payload's mean where finite). Essay 6 §4; the PXS plan.
+  R630 (3 Nov; Tom: "What ideas should we add to the paper", then "Proceed"): *Reads and Writes* §8 "Motion, read" (time to
+  contact x/ẋ from readings alone, Lee's τ̇ ≥ −½, ticks the reader's and seconds a writer's, approach against growth) and
+  §11 "Three cases in data" (LIGO's [H1 : L1], the quasar dipole, one photon at a time), with their references.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
