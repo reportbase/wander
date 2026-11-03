@@ -107,3 +107,52 @@ outlines with corners, most of the library, it is 3–4 times longer at 0.5% and
 token much better than SVG and imprecise numbers about as well as absolute SVG, and it is hurt more by one wrong
 number. The case for TVF as a format for models is for smooth curves, or with corners carried separately (draw's
 `#meta` structure, `papers/tvf.md` §2.9), which this run did not test.
+
+## Run 3: readers' formats and writers' formats (predictions written 3 November, before any code for run 3)
+
+Tom, after run 2: "Readers have a facing, they rotate. Writers walk the line, they interact with the world. TVF is a
+readers format.", then "I actually think this is our best proof of readers and writers being different situations.",
+then "Proceed" to a test that could fail: more than one format on each side, a crossover predicted per figure, and a
+hybrid. Run 2's reading was made after its numbers were seen; this run states its predictions first.
+
+**The claim under test.** A *reader's* format lays its numbers at addresses fixed in advance by an even turn (the same
+addresses for every shape); the shape is the payload painted on them. A *writer's* format walks the line, each number a
+step or a place met along the way. If the two are different situations, then, whatever the particular format:
+a reader's format is short where the outline is smooth and long at corners; a writer's the other way; a reader's
+format with *place* addresses (neighbouring addresses hold similar values) is barely moved when one number is lost and
+spreads one wrong number over its neighbours; a writer's absolute format keeps a wrong number local, and a writer's
+relative format (steps) carries every error on to the end of the walk. A format that gives the smooth runs to a reader
+and the corners to a writer should be shortest.
+
+**Formats** (box 0–1000, τ = 5 by the plan's Hausdorff test, numbers integers, or one decimal where integers cannot
+pass; the fewest numbers that pass, by doubling then bisection; o200k_base tokens):
+- Readers: **TVF** (run 2's texts, unchanged); **FD**, Fourier descriptors: the complex coefficients c₋K … c_K of the
+  outline walked by arc length, a row of real parts and a row of imaginary parts (frequency addresses, not places);
+  **RAD**, the radial function from the area centroid, the radius at N even angles (k + ½)·2π/N, rebuilt by draw's
+  kernel (place addresses by angle; defined only on figures every ray from the centroid meets once; elsewhere it does
+  not apply and is left out).
+- Writers: **SVG** (run 2's texts, absolute and relative, the shorter for length); **POLY**, the outline's vertices by
+  Douglas–Peucker, absolute x y pairs; **STEP**, the same vertices as a start and steps dx dy; **TURTLE**, a start and a
+  heading, then forward d, turn a (degrees).
+- Hybrid: **HYB**, the corners (the plan's rule) as absolute places, and for each run between two corners its
+  departure from the straight chord at n even places, rebuilt by sine interpolation (a reader's leaves on each run);
+  on a figure with no corners it is TVF's text.
+
+Slips as in run 2, every format, 20 a figure a kind. Jitter moves a number by ±1% of its own range (±10 units; a
+turtle's turn ±3.6°). A second measure joins the Hausdorff: the share of the rebuilt outline (by length) more than 10
+units (1%) from the figure, "share disturbed".
+
+**Predictions** (figures: smooth = no corner, 12 in run 2; cornered = 2 or more corners):
+- **Q1** Smooth figures: every reader format's median tokens is below every writer format's. Killed if not.
+- **Q2** Cornered figures: every writer format's median tokens is below every reader format's. Killed if not.
+- **Q3** Per figure, the best reader format is shorter than the best writer format on at least 75% of smooth figures,
+  and longer on at least 90% of cornered figures. Killed if either share falls short.
+- **Q4** HYB is the shortest format (ties count) on at least 70% of figures, and its median over the best writer
+  format on cornered figures is at most 1.0. Killed if either fails.
+- **Q5** Dropped token, broken share: TVF and RAD (place addresses) break less often than every writer format. FD
+  (frequency addresses: a lost number shifts every later coefficient to another frequency) breaks at least as often as
+  the median writer format. Killed if any part fails.
+- **Q6** Wrong number, median share disturbed: the absolute writers (SVG absolute, POLY) are below TVF and RAD; the
+  relative writers (SVG relative, STEP, TURTLE) are above both absolute writers. Killed if any ordering fails.
+- **Q7** Imprecise numbers: each relative writer (SVG relative, STEP, TURTLE) breaks more often than every absolute
+  writer and every reader format. Killed if not.
