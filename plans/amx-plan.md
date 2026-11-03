@@ -154,3 +154,16 @@ Read after the run:
 
 So aimed terms do not make TVF competitive on audio. What separates it from FLAC at fine accuracy is the cost of each
 number (decimal text against prediction and entropy coding), not how the waveform is approximated.
+
+### Run 4: the same leaves, packed as binary (predictions written before it ran)
+
+Tom (3 Nov): "text only can be an option, not a requirement." The leaves alone, the same N per frame as run 3's leaves
+at each target, are written as FLAC writes samples. Each number is rounded to a uniform step q, the largest power of two
+that still meets every frame's target. Each frame's sequence (its line's two ends, then its leaves, then the top
+frequency where N = M) is predicted by the best fixed polynomial predictor of order 0–3, as FLAC's fixed predictors do.
+The residuals are Rice coded with the best parameter per frame. A frame's header is 7 bits for N/8, 2 for the order and
+5 for the parameter. No aimed terms, no text, no gzip.
+
+- **D1.** At the 16-bit floor, binary leaves are under 1.0× FLAC on the snare and under 1.3× on the trumpet. The leaves
+  are fewer than the samples (10,955 of 44,032 numbers, and 43,669) and as predictable.
+- **D2.** At every target binary is at most half the bytes of run 3's gzipped text on both clips.
