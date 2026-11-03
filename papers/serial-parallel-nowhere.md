@@ -7020,6 +7020,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   continuity is never counted. ln z = ln r + iθ is the writer's notation showing both tests in one line (scaling slides
   ln r, a turn slides θ), pointed to from §1 and kept in §5, not moved to the front (it needs π and e; the reader holds
   [h : v]); a shape's ln r = a₀ + f(θ) its real part as a function of the turn. *Reads and Writes* §1, §2, §5, §8.
+- **R647** (3 Nov; Tom: "i'm just wondering if a tighter connection to euler's is possible. where should we look?", then a
+  Gemini reply read as "write that plan"): ELM (`plans/elm-plan.md`, `runs/elm/`), Euler's formula as a count of reads.
+  n reads of θ/n composed by tangent addition are (1 + iθ/n)ⁿ, exact and in ℚ[i] for rational steps; the count falls
+  short of the angle by θ³/(3n²) and grows the length by θ²/(2n), which no reading sees; the limit, the writer's, is
+  e^(iθ). Bernoulli's (1 + 1/n)ⁿ and Euler's (1 + iθ/n)ⁿ are one limit on two axes, error −w²/(2n) on both; from a
+  standpoint z = m + iγ the limit is the Cauchy's e^(izt) (Gemini's sign for its modulus term corrected before the run);
+  in space the alternating count leaves (θ₁θ₂/2)·sin(φ/2)/(φ/2) at 1/n (Lie–Trotter), the plane nothing. Run 1's L6
+  killed by my set-up (acos near 1 at 50 digits), L6′ not. Classical mathematics; the reading ours. Not in the paper yet.
 
 ## Appendix B. Demos and computations
 

@@ -1,0 +1,3 @@
+L6: alternating 0.136239 against 0.136239 (off 9.382e-9): True; symmetric steady within 2: True; plane leftover 1.14e-48: True; not killed
+
+verdicts: L1 not killed, L2 not killed, L3 not killed, L4 not killed, L5 not killed, L6 not killed

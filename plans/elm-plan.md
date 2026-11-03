@@ -60,4 +60,29 @@ iz into its real and imaginary parts; whether it says more is a reading, not tes
 
 ## Runs
 
-(none yet)
+**Run 1** (3 Nov, `runs/elm/elm.py`, output `runs/elm/elm-run1.txt`). L1–L5 not killed; L6 killed.
+- L1: tangent addition in fractions equals Im/Re of (1 + is)ⁿ in ℚ[i] at every n to 64, θ = 1 and ½.
+- L2: n²·shortfall/(θ³/3) = 0.99994, 0.99985, 0.99941 at n = 100 for θ = 1, π/2, π.
+- L3: n(R − 1)/(θ²/2) = 1.00025, 1.00062, 1.00247 at n = 1000 (the predicted θ²/(4n)); the reading the same with each
+  step normalized, to 40 digits.
+- L4: n(E_n − 1) against −w²/2 off 0.09%, 0.12%, 0.32% for w = 1, iπ/2, iπ; (1 + iπ/1000)¹⁰⁰⁰ = −1.00495 + 1.04·10⁻⁵ i.
+- L5: n(E_n − 1) = 0.3204 + 0.6002i against 0.32 + 0.6i (off 0.07%); Gemini's sign off 94%.
+- L6: alternating n·leftover 0.1362390 against 0.1362390 (off 9·10⁻⁹); symmetric n²·leftover 0.0121047 at all three n;
+  the plane's leftover 1.6·10⁻²⁴ against my 10⁻⁴⁰. Killed by my set-up: the angle was read by acos of a trace near 1,
+  which keeps only half of 50 digits (√(10⁻⁴⁸) ≈ 10⁻²⁴).
+
+**L6′ (written after run 1, before run 2).** The plane's leftover measured as the largest entry of the difference of the
+two matrices, below 10⁻⁴⁰ at n = 1, 7, 64, 1000; the rest of L6 unchanged. Killed if not.
+
+**Run 2** (3 Nov, `python3 runs/elm/elm.py --run2`, output `runs/elm/elm-run2.txt`). L6′ not killed: the plane's
+leftover 1.1·10⁻⁴⁸ (the working precision); the rest as run 1. Nothing else changed.
+
+**What it says (a reading).** Every finite count of reads is exact and the reader's: composed by tangent addition, it
+stays in ℚ[i] for rational steps, and the length each step adds (1 + θ²/(2n) over the whole turn) is never in the
+reading. What the count misses is the angle, θ³/(3n²), the tangent running ahead of the arc at every step; the limit,
+the writer's, repairs both the angle and the length and lands on e^(iθ). Bernoulli's e and Euler's e^(iθ) are the same
+limit with the step along the scale or square to it, and the error has the same form, −w²/(2n), on both axes. From a
+standpoint z = m + iγ the same limit gives the Cauchy's characteristic function, the foot as the turn and the height as
+a damping on the real axis (an amount, not a read). In space the order of the steps matters at 1/n, the leftover the
+bracket carried through the turn, (θ₁θ₂/2)·sin(φ/2)/(φ/2), to nine digits; the plane has none. So the count of reads
+gives Euler's formula exactly where the turns commute, and no further.
