@@ -612,8 +612,8 @@ geometry of a reader is K, not N.
 
 The references are carried over from the archived companion, where they were checked when it was written.
 
-The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`): §1 ("Read and write in computing"), §6
-("K and N"). The proofs are in the archived *Observation from Somewhere* and its computer-science companion
+The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`): §6 ("K and N"); its passages on
+computing are now a note, `plans/rw-computing-note.md` (a machine is built to do both acts, R641). The proofs are in the archived *Observation from Somewhere* and its computer-science companion
 (`../archive/ofs/observation-from-somewhere-cs.md`), kept for reference: the corner and the registers in §3, the
 separation in §5, the array in §6, the floor in §7, the two layouts in §8, detail and the fixed count in §9, the
 blueprint in §10, the dial in §11, what comes free in §12. Where the companion's wording differs from the later rulings

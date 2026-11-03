@@ -21,8 +21,8 @@ added in becoming a writer. The reader's directions are laid by the uniform turn
 Cauchy, with its median at the corner v = h, its horizon never reached and no mean: an *address* given before anything
 arrives. What arrives along an address is the *payload*, met. A rate is of a payload per an address. The writer has the
 angle, the rate 1, and measures the reader's two sweeps from horizontal to vertical as π/2 (central) and 2/π (inscribed),
-whose product is its own 1. The reader's own numbers are the rationals, which one length makes in finite steps; the square
-roots need two lengths combined, and the transcendental numbers a limit no finite algebraic step reaches: π completes the
+whose product is its own 1. One length, counted, makes the rationals; but counting is done in parallax and in writing, not in
+a pure read, which holds directions and their order. The square roots need two lengths combined, and the transcendental numbers a limit no finite algebraic step reaches: π completes the
 turn, e completes the scale, and both are the writer's. The reader meets such a direction whole; the writer needs the limit
 to state it as a number. The passage from reading to writing is parallax: a second standpoint, the step between them,
 places from crossings. An observer making that passage is writing: read and write are acts, not kinds of observer. And the
@@ -48,30 +48,6 @@ The first part is reading. The second and third are writing. The rest of this pa
 **Words.** The paper names acts, a *read* and a *write*, not two kinds of observer: one observer reads while it stands and
 turns, and writes while it walks, counts, ranges or agrees a unit. *Read*, *reading* and *reader* are used as each sentence
 needs (a reader is whatever is reading, for as long as it reads), and likewise *write*, *writing* and *writer*.
-
-**Read and write in computing.** Computer science has used these words for longer, and the likeness is real. A computer's
-read takes an address and returns what is stored there, changing nothing; that is this paper's split of address and
-payload, met in hardware. A computer's write stores at an address a value that came from somewhere else; a write here
-likewise needs an amount carried in from outside. But the two pairs part in five places.
-
-- *Who lays out the addresses.* A computer's address space is laid out before anything is read: a known size, indices
-  counted from 0 to N − 1, an end. That layout is a writer's work (an array whose `sizeof` is known is held by a writer).
-  A reader's addresses are given by the turn, uniform by the turn's own measure, from home toward a horizon that is never
-  reached; there is no N, no last address, and no end to fall off. What it holds is K, its own resolution, read
-  continuously (§6, "K and N").
-- *What a read returns.* A computer's read returns an amount in a unit: bytes, a float, a count. A read here returns a
-  direction and the paint arriving along it, with every amount along that direction already gone. Nothing in it would
-  change if the world were k times as large.
-- *What a write changes.* A computer's write changes the memory, and the next read sees it. A write here states amounts
-  (the room is 15 metres wide); it changes the world only when it is acted on, as moving the furniture is.
-- *What stays the same.* A computer's read is repeatable: read the same address twice, with no write between, and the
-  value is the same. A read here has a stronger sameness, across worlds: scale the world, and no reading moves.
-- *Where caching falls.* In a computer, keeping a value read (a cache, a variable) is a write into another place. Here too:
-  to keep a reading as a number, a length in a unit, a value in a table of known size, is to write it.
-
-So the computing words are the writer's frame applied to both acts: memory is a written world, and a computer's read is
-an address looked up in it. The read of this paper comes before any such layout; it is what a reader has when no one has
-written the memory yet.
 
 **The read.** A read is taken from one point, *home*, by turning there. The reader holds one length, H, which it chooses,
 as you hold up your thumb: any value, since every reading is a ratio and H only sets the zoom, where its finest detail
@@ -226,7 +202,6 @@ the average of (cos θ, sin θ) is (2/π)(1, 1), pointing at the corner, of leng
 corner, the median again; its length is the writer's measure, π and all. And a writer holding a finite world, capped at an
 extent M, has a Cauchy with a mean, (1/π)·ln(1 + M²) over the share below M, about 8.8 at M = 10⁶: finite, and set by the
 extent, an amount that moves when the world is scaled. The mean appears only once an extent is written in, and its value is set by that extent, not equal to it.
-A machine's Cauchy, capped by its largest number, has one for the same reason.
 
 The payload has means where it is an amount: the light along each address, its colour, its brightness, all add. The
 lighthouse's landings on the shore lack a mean although they are written in a unit, because they are still the turn's
@@ -381,9 +356,11 @@ other two (Hölder: ‖x‖₂² ≤ ‖x‖₁‖x‖∞, with equality on the 
 
 ## 5. Which numbers belong to whom
 
-**One length makes the rationals.** From H alone, counting thumbs, taking twice a thumb or half a thumb and taking ratios
-of thumbs to thumbs give rational multiples of H and nothing else. The reader's operations on readings, the reciprocal,
-tangent addition, the order, keep rationals rational. The corner is 1. This is the reader's arithmetic, and it is enough.
+**One length, counted, makes the rationals.** From H alone, counting thumbs, taking twice a thumb or half a thumb and
+taking ratios of thumbs to thumbs give rational multiples of H and nothing else. Counting is not a pure read: it is done in
+parallax, where a step is counted, and in writing. A pure read holds directions and their order; its operations on them,
+the reciprocal, tangent addition and the order, take directions to directions, and keep a rational direction rational once
+one has been counted. The corner is 1, met whole. This is the arithmetic of the first count, and it is enough.
 
 **Two lengths make square roots.** √2 first appears as the diagonal of a square, the length of [1 : 1]: Pythagoras combines
 two independent lengths through their squares, which needs two axes held at once. This is where the Greeks met
@@ -404,7 +381,7 @@ whole, and only stating it as a number needs the limit.
   exactly 1, the corner. That much is finite, rational and the reader's. The number π comes next, from the arctangent's
   series. Viète's product shows it from the other side: 2/π is a product of nested square roots, each algebraic, the whole
   only in the limit.
-- *e completes the scale.* The reader counts sizes in thumbs: a thing 8 thumbs away is past two, four and eight, exactly.
+- *e completes the scale.* Counted in thumbs, a thing 8 thumbs away is past two, four and eight, exactly.
   That count as a continuous quantity is the logarithm, and to give it a value is to choose a unit and finish a series:
   from one count of thumbs to twice it is ln 2 = 1 − 1/2 + 1/3 − … nats. e itself is Bernoulli's limit, a coin lent at a
   hundred per cent compounded ever more often, (1 + 1/n)ⁿ, or 1 + 1 + 1/2! + 1/3! + …: every term a fraction, the number
@@ -432,12 +409,6 @@ meets the closing and the openness, and states neither.
 **Met, not made.** None of this keeps irrational or transcendental numbers out of the reader's world. A direction whose
 reading is tan 1 is a direction like any other, painted, passed, ordered. The reader holds it as a pair and by its order; the
 decimal 1.5574… is the writer's account of where it is. The reader meets these numbers and does not make them.
-
-**A machine is a reader here.** Every floating-point number is rational, an integer times a power of two. The machine's π
-is 884279719003555/2⁴⁸, within 1.2·10⁻¹⁶ of π and not π. Every operation a machine does on numbers is monotone and finite, so
-order statistics come out as the true ones rounded, and sums of amounts do not. Where the infinity is a horizon, kept as a
-pair [h : v] or as a turn, and the computation keeps to order, the machine is faithful. Where it sits in a sum of amounts,
-the machine's Cauchy, truncated, has a mean that the true one lacks.
 
 ## 6. Near and far
 
@@ -473,7 +444,7 @@ outline with nothing local the even circles win, ten against nineteen: the centr
 is nowhere to step toward. This is the corner following the focus, applied to drawing a shape. The radii drawn are the
 outline's amounts, and its overall size a₀ is in none of the terms.
 
-**K and N.** Computer science has two letters for this, and they sort the acts as well as anything. N is how many items
+**K and N.** Two letters sort the acts here. N is how many items
 there are; K is how many are held. To know N is to know the whole: its extent, V, and how much is in it. That is writing,
 and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own resolution,
 fixed before H is chosen. K is read continuously, as the turn is: a count of addresses, so many and no more, is a writer's

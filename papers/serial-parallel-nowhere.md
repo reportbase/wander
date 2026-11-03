@@ -6971,6 +6971,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   *Reads and Writes*: the abstract, §1 "Continuous and discrete", §6's K, §8 "Turns, counts and corners"; no TVF in it.
   Left for a ruling: §5 still calls one length's rationals "the reader's arithmetic" by counting thumbs, and "a machine is
   a reader here"; both read differently if every count is a write.
+- **R641** (3 Nov; Tom: "A machine is engineered to blur the distinction of reading and writing. It does both. Move the
+  computer sections into a note.", and "Yes, counting is done in parallax and writing, not pure reading."): settles what
+  R640 left. A machine is neither a reader nor a writer: it counts (writing) and keeps to order (as a read does), built to
+  do both. *Reads and Writes*' passages on computing (§1 "Read and write in computing", §2's machine's capped Cauchy, §5 "A
+  machine is a reader here") moved verbatim into `plans/rw-computing-note.md`; §6's "K and N" stays, without its
+  computing framing. Counting is done in parallax and in writing, not in a pure read: §5 is now "One length, counted,
+  makes the rationals", "the arithmetic of the first count"; a pure read holds directions and their order. Supersedes
+  R591–R592's "the reader's numbers are the rationals" and R613's section in the paper. Essay 16's pointer follows.
 
 ## Appendix B. Demos and computations
 

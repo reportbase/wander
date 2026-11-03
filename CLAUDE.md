@@ -1310,6 +1310,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   a reader's length follows the turning (ρ 0.85), a writer's the corners (0.59, the turning 0.00). In *Reads and Writes*:
   abstract, §1 "Continuous and discrete", §6's K read continuously, §8 "Turns, counts and corners" (Gibbs ringing, π and e
   where a count holds a read); TVF kept out of the paper. §5's "reader's arithmetic" and "a machine is a reader" wait.
+  R641 (3 Nov; Tom: "A machine is engineered to blur the distinction of reading and writing. It does both.", "counting is
+  done in parallax and writing, not pure reading."): the paper's computing passages moved to `plans/rw-computing-note.md`
+  (a machine does both acts); §5 "One length, counted, makes the rationals", counting the writer's and parallax's, a pure
+  read holding directions and their order. Supersedes R591–R592's rationals as the reader's and R613's section in the paper.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
