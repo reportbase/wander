@@ -52,8 +52,9 @@ is counted against. The first is what the rate is *of*; the second is what it is
 
 For a reader the two places are filled from opposite sides. The per is the sweep's. Turning from where it stands, one
 length lays out the reader's addresses in order, one after the next, before anything arrives (the third essay). The of is
-the payload: the light, the colour, whatever arrives along each address. So what a reader reads is always payload per
-address, and the third essay's split between the two is a fraction, the address underneath and the payload on top.
+the payload: the light, the colour, whatever arrives along each address. So a rate is always payload per
+address, and the third essay's split between the two is a fraction, the address underneath and the payload on top: the
+per is read, and is geometry; the of is written, the world's marks met there, and is physics.
 
 The two places behave differently when the world is scaled. Scale everything by k and every address stays where it was,
 since a direction has no size. So the per never moves. The of may or may not: a payload compared with another payload
@@ -510,7 +511,7 @@ it does not make them. It reads with the Cauchy, its readings and their corner a
 the reader.
 
 **A rate is of something, per something.** The per is the sweep's: the addresses, given before anything arrives, their
-spacing the frame's own rates. The of is the payload, met. What a reader reads is payload per address.
+spacing the frame's own rates. The of is the payload, met: the world's writing. A rate lays a write over a read.
 
 **The corner is where two rates meet**, v filling as fast as h empties, and **the Cauchy is a speed**, turn per reading,
 the per against itself with no payload in it: which is why it is the addresses' law and not what arrives.

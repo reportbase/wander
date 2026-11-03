@@ -7107,7 +7107,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   account is held, not a claim about the world (R441, R449). *Reads and Writes* §1, after the flag. Still to restate where
   they appear: the paint as part of the read (*Reads and Writes* §2, §3; essays 2, 3), R584's "payload per address" (the per
   read, the of written; §5, essay 14), R605's payload recovered by its ratios (directions in the payload's own space, so a
-  write read again; §2, essay 3).
+  write read again; §2, essay 3). Then (Tom: "Yes"): restated. *Reads and Writes* §1 (the payload the world's writing
+  met, the per read and the of written; the two tests one split seen two ways), §2 (the paint the world's writing met there;
+  the payload recovered by its ratios a write read again), §3 (the fingers stay geometry, with or without the light), §4
+  (a rate lays a write over a read); essays 2 §9, 3 §5 (the paint and the ratios), 14 §1 and §10.
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations

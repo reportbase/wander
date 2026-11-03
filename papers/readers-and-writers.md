@@ -19,7 +19,8 @@ breadth: no reading carries it, and every writing needs it.
 This paper brings together what each vantage holds, gives the geometry the reader has for free, and says exactly what is
 added in becoming a writer. The reader's directions are laid by the uniform turn, whose law in the reading v/h is the
 Cauchy, with its median at the corner v = h, its horizon never reached and no mean: an *address* given before anything
-arrives. What arrives along an address is the *payload*, met. A rate is of a payload per an address. The writer has the
+arrives. What arrives along an address is the *payload*, met: the world's writing found there, so the address is read
+and the payload written. A rate is of a payload per an address: the per is read, the of written. The writer has the
 angle, the rate 1, and measures the reader's two sweeps from horizontal to vertical as π/2 (central) and 2/π (inscribed),
 whose product is its own 1. One length, counted, makes the rationals; but counting is done in parallax and in writing, not in
 a pure read, which holds directions and their order. The square roots need two lengths combined, and the transcendental numbers a limit no finite algebraic step reaches: π completes the
@@ -95,7 +96,8 @@ and the vantage that holds each.
 
 **The second test.** Change what arrives, keeping the standpoint and the turn: repaint the world, move the light, replace
 a wall by a row of trees. The *addresses*, the directions the turn lays down, are unchanged; the *payload*, what is found
-along each, changes. The first test separates reading from writing; the second separates address from payload.
+along each, changes. The first test separates reading from writing; the second separates address from payload. They are one split seen two
+ways: the address is what a read holds, and the payload is what is written on the world where the address falls (§1).
 In the writer's notation both splits sit in one line: write a point as z = r·e^(iθ), so that ln z = ln r + iθ. Scaling the
 world slides the real part by ln k and leaves θ; a turn about the standpoint slides θ and leaves ln r; the address lives
 on the imaginary part and the payload's size on the real. The notation needs π and e, so it is the writer's (§5); the
@@ -256,7 +258,8 @@ all of it arrives, on addresses known before it came. The Cauchy then gives it b
   world is scaled. A shape about a centre, ln r = a₀ + f(θ) (the real part of the
 writer's ln z = ln r + iθ taken as a function of the turn, §5), comes back this way whole: every mode of f from ratios of radii,
   exactly. Two detectors' signals read against each other are a direction too, and where the signals are like noise that
-  direction follows a Cauchy: the payload read as a ratio is an address again. What the ratios leave out is one number,
+  direction follows a Cauchy: the payload read as a ratio is an address again. The payload arrived written, as marks; read
+  against itself it gives directions in its own space, so recovering it this way is a write read again. What the ratios leave out is one number,
   the payload's overall scale a₀, and that number is V again.
 - *By dividing the address law out.* What is counted along the addresses is the address law times the payload's own
   weight, ρ(θ)·2/(π(1 + s²)). The address law is known before anything arrives, so dividing by it leaves the payload's
@@ -279,7 +282,7 @@ with a pane and is lit by its colour. The fingers are the addresses: wherever th
 way. The colours are the payload: they change with the window. No colour carries a distance; to learn how far the window
 is, you must walk.
 
-**The reader never sees a shape.** A thing is, to the reader, the addresses it paints and the paint. Its shape is a radius
+**The reader never sees a shape.** A thing is, to the reader, the addresses it paints; the paint is the world's writing, met there. Its shape is a radius
 along each direction from its own centre, an amount, and amounts are removed before reading. Every way to a shape is a
 writing: ranging, a counted step, a blueprint. This is not a shortfall to be made up by inference. The reader's side is
 whole; the shape was never the reader's to lack.
@@ -295,7 +298,8 @@ V enters.
 **The hand.** Hold up a hand, thumb out. The thumb is H: the one length the reader holds, its size chosen, setting only the
 zoom. The fingers, spread from flat to upright, are the addresses. The reader does nothing to lay them; wherever the hand
 is held, the geometry gives the same fingers spread the same way, evenly by turn, and read as v/h they follow the Cauchy,
-half below the corner. The light that falls along each finger is the payload: it paints the fingers and changes with what is
+half below the corner. The light that falls along each finger is the payload, the world's writing met on the fingers; the fingers stay
+geometry, there with or without it. The light paints the fingers and changes with what is
 in front of them, and no finger carries how far that light came. The hand moves two ways, raised from the ground toward
 the vertical and turned round the horizontal, and the two are the altitude and the azimuth of §7. Hold
 the thumb up against a mountain range, and the range spans so many fingers; with no V the reader draws the mountain at the
@@ -361,7 +365,7 @@ angle. The pitch is a ratio, had at once with a level and a tape; the degrees ar
 one you must hold the whole turn first.
 
 **A rate is of something per something.** The *per* is the sweep's: an address. The *of* is the payload: what arrives
-there. A reader reads payload per address. The Cauchy is the law of the per against itself: a speed of the turn through
+there. A rate lays a write over a read: the per is read, the of is written. The Cauchy is the law of the per against itself: a speed of the turn through
 the readings, with no payload in it.
 
 **The writer's rate is 1.** The angle is arc per radius, measured against the completed turn; the chord between home and

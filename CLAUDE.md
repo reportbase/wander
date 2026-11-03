@@ -1384,7 +1384,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   not two). A write records a read: a mark, discrete, lasting, countable; order, nearness and amounts are said of marks.
   Reality a sheet of paper every physical thing writes on; a read adds nothing, its addresses there over blank or full
   paper; the thumb a mark, H the read's own length. A picture, not a claim about the world. *Reads and Writes* §1. Still to
-  restate: the paint as part of the read (§2, §3, essays 2, 3), R584's "payload per address", R605.
+  restate: the paint as part of the read (§2, §3, essays 2, 3), R584's "payload per address", R605. Then (Tom: "Yes"):
+  restated in *Reads and Writes* §1–§4 and essays 2, 3, 14.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
