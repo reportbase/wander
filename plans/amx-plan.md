@@ -74,3 +74,35 @@ Kill: any number on the wrong side of its bound. A killed prediction stays kille
 predictions.
 
 ## Runs
+
+### Set-up amended before any result was seen (3 Nov)
+
+Run 1 as planned was stopped unfinished (Tom: "that is to long. normally we get results right away."); it printed
+nothing. The search is cut to run in minutes. The predictions are unchanged:
+- **Shorter clips.** The snare's first 2 s and the trumpet's first 2 s (43 frames each).
+- **A coarser grid for mixing.** In the mixed reader, N in steps of 64 (the leaves alone keep steps of 8).
+- **A cheaper search per term.** The Nelder–Mead refinement is capped at 60 iterations.
+
+All three changes can only make the mixed reader look worse, never better.
+
+### Run 1 (3 Nov, as amended; `runs/amx/amx-run1.txt`, 5 min on 4 cores)
+
+All three of A1–A3 were killed. At the 16-bit floor no digit count from 2 to 9 met the target on either clip, nor at
+60 dB on the snare. A1, A3 and A2's floor clause were killed by my set-up, which was a bug: the even leaves keep
+frequencies |k| < N/2, so even at N = M they leave out the top frequency (k = M/2). Wherever a frame carries more there
+than the allowance, no rounding can meet the target. A4 was not killed, but on 1 frame of 1.
+- **Snare.** At 40 dB the mixed reader chose no aimed term at all, so it equals the leaves alone (18,924 bytes,
+  0.972× FLAC). At 60 dB it used 39 aimed terms against 8,856 leaves (0.6% fewer numbers); at the floor 11 against
+  10,704.
+- **Trumpet.** At 40 dB mixed/leaves was 0.994 (45,521 against 45,794 bytes, 0.83× FLAC). At 60 dB it was 0.959
+  (98,410 against 102,656, 1.79× FLAC; 167 terms against 33,160 leaves).
+- **References.** FLAC 19,464 bytes (snare) and 54,882 (trumpet). The raw PCM gzipped was 15,187 for the snare, below
+  FLAC on so short a clip.
+
+Read after the run: the greedy, given the choice, takes almost no aimed terms on these real frames. Where it takes any
+it saves under 5% of the numbers, on the tonal clip more than on the drum.
+
+### Run 2: the top frequency included (predictions written before it ran)
+
+The only change: at N = M the leaves keep every frequency (the frame exactly, with M numbers). A1–A4 are restated
+unchanged as B1–B4 for this run, with the same bounds.

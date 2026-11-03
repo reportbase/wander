@@ -1,2 +1,24 @@
 AMX run 1 (plans/amx-plan.md). Frames of 1024, the line off each, targets per frame against the clip RMS.
 
+## snare (first 2 s): 43 frames of 1024, 2.00 s, clip RMS 0.04522 of full scale
+   FLAC (level 12) 19,464 bytes; PCM16 gzipped 15,187; PCM16 raw 88,064
+   40 dB (SNR 40.0 dB) leaves: 6,454 numbers (6,368 leaves, 0 aimed terms), d = 4, gzipped 18,924 bytes = 0.972 × FLAC
+   40 dB (SNR 40.0 dB) mixed : 6,454 numbers (6,368 leaves, 0 aimed terms), d = 4, gzipped 18,924 bytes = 0.972 × FLAC
+   60 dB (SNR 60.0 dB) leaves: 9,150 numbers (9,064 leaves, 0 aimed terms), no d from 2 to 9 meets it
+   60 dB (SNR 60.0 dB) mixed : 9,098 numbers (8,856 leaves, 39 aimed terms), no d from 2 to 9 meets it
+   16-bit floor (SNR 74.2 dB) leaves: 10,950 numbers (10,864 leaves, 0 aimed terms), no d from 2 to 9 meets it
+   16-bit floor (SNR 74.2 dB) mixed : 10,834 numbers (10,704 leaves, 11 aimed terms), no d from 2 to 9 meets it
+
+## trumpet (first 2 s): 43 frames of 1024, 2.00 s, clip RMS 0.1039 of full scale
+   FLAC (level 12) 54,882 bytes; PCM16 gzipped 78,340; PCM16 raw 88,064
+   40 dB (SNR 40.0 dB) leaves: 20,054 numbers (19,968 leaves, 0 aimed terms), d = 3, gzipped 45,794 bytes = 0.834 × FLAC
+   40 dB (SNR 40.0 dB) mixed : 19,874 numbers (19,640 leaves, 37 aimed terms), d = 3, gzipped 45,521 bytes = 0.829 × FLAC
+   60 dB (SNR 60.0 dB) leaves: 35,550 numbers (35,464 leaves, 0 aimed terms), d = 4, gzipped 102,656 bytes = 1.870 × FLAC
+   60 dB (SNR 60.0 dB) mixed : 33,914 numbers (33,160 leaves, 167 aimed terms), d = 4, gzipped 98,410 bytes = 1.793 × FLAC
+   16-bit floor (SNR 81.4 dB) leaves: 43,638 numbers (43,552 leaves, 0 aimed terms), no d from 2 to 9 meets it
+   16-bit floor (SNR 81.4 dB) mixed : 43,638 numbers (43,552 leaves, 0 aimed terms), no d from 2 to 9 meets it
+
+A1 snare mixed/leaves: 16-bit floor nan (≤ 0.8), 40 dB 1.000 (≥ 0.95): KILLED
+A2 trumpet mixed/leaves at 40, 60 dB, 16-bit floor: 0.994, 0.959, nan (all ≥ 0.95): KILLED
+A3 at the 16-bit floor, leaves/FLAC snare nan, trumpet nan (0.7–1.5); mixed/FLAC snare nan (< 1.0): KILLED
+A4 snare at 60 dB: the first deep standpoint within 32 samples of the largest remainder in 1 of 1 frames (≥ 60%): not killed

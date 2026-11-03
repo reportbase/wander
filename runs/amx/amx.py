@@ -67,7 +67,7 @@ def best_a(g):
 
     r0 = min(max(abs(best[1]), 1e-4), RHO_MAX * 0.999)
     res = minimize(neg, [np.log(r0 / (RHO_MAX - r0)), np.angle(best[1])], method='Nelder-Mead',
-                   options={'xatol': 1e-9, 'fatol': 1e-20, 'maxiter': 200})
+                   options={'xatol': 1e-9, 'fatol': 1e-20, 'maxiter': 60})
     if -res.fun > best[0]:
         return RHO_MAX / (1 + np.exp(-res.x[0])) * np.exp(1j * res.x[1])
     return best[1]
@@ -105,6 +105,8 @@ def synth_terms(terms):
 # ── one frame ──────────────────────────────────────────────────────────
 def leaves_of(c, N):
     """The frame's band-limited projection with N leaves: frequencies |k| < N/2."""
+    if N >= M:              # run 2: the whole frame, the top frequency included
+        return c.copy()
     keep = np.zeros(M, complex)
     if N > 0:
         h = N // 2
@@ -137,7 +139,7 @@ def frame_job(args):
                 Nmin = N
                 break
         best.append({'cost': Nmin, 'N': Nmin, 'terms': [], 'leaf': Nmin})
-    for N in range(max(b['leaf'] for b in best) - NSTEP, -1, -NSTEP):
+    for N in range((max(b['leaf'] for b in best) - 1) // 64 * 64, -1, -64):
         budgets = [(b['cost'] - N - 1) // 4 for b in best]
         budget = min(NMAX_TERMS, max(budgets))
         if budget < 1:
@@ -252,8 +254,9 @@ def run_clip(name, x16, pool):
             nterm = sum(len(s['terms']) for s in chosen)
             nleaf = sum(s['N'] for s in chosen)
             rows[kind] = gz if ok_d else None
+            tail = f'd = {ok_d}, gzipped {gz:,} bytes = {gz / flac:.3f} × FLAC' if ok_d else 'no d from 2 to 9 meets it'
             print(f'   {tname} (SNR {snr:.1f} dB) {kind:6s}: {nums:,} numbers ({nleaf:,} leaves, {nterm:,} aimed terms), '
-                  f'd = {ok_d}, gzipped {gz if ok_d else "—":,} bytes = {gz / flac if ok_d else float("nan"):.3f} × FLAC')
+                  + tail)
         res[tname] = rows
         res[tname + ' sols'] = [s[ti] for s in sols]
     return res, frames
@@ -277,13 +280,13 @@ def a4(sols, frames):
 
 if __name__ == '__main__':
     d = sys.argv[1]
-    snare = pcm(os.path.join(d, 'snare-accelerate.ogg'), 0, 6)
-    trumpet = pcm(os.path.join(d, 'sorohanro_-_solo-trumpet-06.ogg'))
-    print('AMX run 1 (plans/amx-plan.md). Frames of 1024, the line off each, targets per frame against the clip RMS.\n')
+    snare = pcm(os.path.join(d, 'snare-accelerate.ogg'), 0, 2)
+    trumpet = pcm(os.path.join(d, 'sorohanro_-_solo-trumpet-06.ogg'), 0, 2)
+    print('AMX run 2 (plans/amx-plan.md). Frames of 1024, the line off each, targets per frame against the clip RMS.\n')
     with Pool(4) as pool:
-        rs, fs = run_clip('snare (first 6 s)', snare, pool)
+        rs, fs = run_clip('snare (first 2 s)', snare, pool)
         print()
-        rt, ft = run_clip('trumpet', trumpet, pool)
+        rt, ft = run_clip('trumpet (first 2 s)', trumpet, pool)
     print()
 
     def ratio(r, t):
@@ -296,9 +299,8 @@ if __name__ == '__main__':
     ok = all(v >= 0.95 for v in tr)
     print(f'A2 trumpet mixed/leaves at 40, 60 dB, 16-bit floor: {", ".join(f"{v:.3f}" for v in tr)} (all ≥ 0.95): '
           f'{"not killed" if ok else "KILLED"}')
-    ls = rs['16-bit floor']['leaves'] / rs['flac']
-    lt = rt['16-bit floor']['leaves'] / rt['flac']
-    ms = rs['16-bit floor']['mixed'] / rs['flac']
+    q = lambda r, k: (r['16-bit floor'][k] or float('nan')) / r['flac']
+    ls, lt, ms = q(rs, 'leaves'), q(rt, 'leaves'), q(rs, 'mixed')
     ok = 0.7 <= ls <= 1.5 and 0.7 <= lt <= 1.5 and ms < 1.0
     print(f'A3 at the 16-bit floor, leaves/FLAC snare {ls:.3f}, trumpet {lt:.3f} (0.7–1.5); mixed/FLAC snare {ms:.3f} '
           f'(< 1.0): {"not killed" if ok else "KILLED"}')
