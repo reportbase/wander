@@ -1264,6 +1264,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R630 (3 Nov; Tom: "What ideas should we add to the paper", then "Proceed"): *Reads and Writes* §8 "Motion, read" (time to
   contact x/ẋ from readings alone, Lee's τ̇ ≥ −½, ticks the reader's and seconds a writer's, approach against growth) and
   §11 "Three cases in data" (LIGO's [H1 : L1], the quasar dipole, one photon at a time), with their references.
+  R631 (3 Nov; Tom: "Should the algebra paper be written as an essay", then "if you agree"): no new essay; essay 10 already
+  carries draw's TB papers. Added to it: the lattice built with zero trigonometric calls, its square root the writer's,
+  the rationalised half-angle, Gauss's reachable N, the corner the seed and no leaf, Erdős's bound, and where 2/π's π sits.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
