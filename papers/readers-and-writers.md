@@ -51,7 +51,8 @@ sweep at once, given whole, not performed one after another. Each sweep is centr
 one thumb, from the far field beyond it, read as ratios (one in two, one in four, …) and counted by a writer in thumbs.
 The read's addresses are K, the addresses available to it in that moment, arranged by the Cauchy: half of them before the corner and half
 after, whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Two reads, at two moments or two standpoints, are
-joined only across a step that is counted: parallax, and so a write. Everything else in this paper is built on the read,
+joined only across a step that is counted: parallax, and so a write. (A *facing* is a writer's word, for several reads held together with their signs; no read
+is one.) Everything else in this paper is built on the read,
 and on its opposite, a count.
 
 **Words.** The paper names acts, a *read* and a *write*, not two kinds of observer: one observer reads while it stands and
