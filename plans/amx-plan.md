@@ -253,3 +253,35 @@ So binary leaves at the floor were not under FLAC even on the Vorbis-sourced sna
 ### Run 6: run 5 against FLAC's audio bytes (predictions written before it ran)
 
 The only change: FLAC's audio bytes alone. E1–E4 are restated unchanged as F1–F4.
+
+### Run 6 (3 Nov; `runs/amx/amx-run6.txt`, 43 s)
+
+F1, F2 and F4 not killed; F3 killed (the script prints them under run 5's letters E1–E4).
+
+| | percussive (Snow Fight) | tonal (Sintel's Song) |
+|---|---|---|
+| FLAC, audio bytes | 41,625 | 87,115 |
+| binary leaves, 40 dB | 2,742 (0.07×) | 34,282 (0.39×) |
+| binary leaves, 60 dB | 11,439 (0.27×) | 89,012 (1.02×, F3 killed) |
+| binary leaves, 16-bit floor | 81,804 (1.97×) | 120,122 (1.38×) |
+| lossless TVF, best | 45,676 (1.10×, leaves at 40 dB + remainder) | 96,826 (1.11×, no leaves) |
+| PCM alone, fixed predictor + Rice | 45,759 (1.10×) | 96,826 (1.11×) |
+| Opus 64 / 128 / 256 kb/s, SNR | 27.4 / 29.7 / 29.9 dB | 24.1 / 29.2 / 34.5 dB |
+| Opus 64 / 128 / 256 kb/s, size | 0.31 / 0.73 / 1.46× | 0.23 / 0.41 / 0.77× |
+
+Read after the run:
+- **Lossless: the leaves add nothing.** The best lossless TVF is the bare PCM by a fixed predictor (or within 0.2% of
+  it on the percussive clip). Its 10% over FLAC is FLAC's adaptive linear prediction against fixed polynomials, not
+  anything about leaves.
+- **Near-transparent: worse than lossless.** On a source never through a lossy codec, binary leaves at the 16-bit floor
+  are 1.4–2.0× FLAC. They are larger than the lossless file, so there is no point being "about as good" when being
+  exact is cheaper.
+- **Lossy, by SNR: leaves far ahead of Opus.** At 40 dB the leaves are 2.7 KB and 34 KB, where Opus at 128 kb/s is
+  30 KB and 36 KB at 29–30 dB. But SNR is the leaves' own measure and not Opus's: Opus spends its bits on what the ear
+  hears, and no listening test or perceptual measure was run. This says nothing about which sounds better at a size.
+- **The percussive window starts the track** (0.0 s). Most of its frames are quiet or low in frequency, which is why
+  40 dB costs so little there.
+
+So, with packed binary on a clean source, TVF's leaves are about 1.1× FLAC lossless (the predictor's gap, closable
+with FLAC's own adaptive prediction) and no use at near-transparent quality. As a lossy waveform coder they are small
+by SNR, but whether they compete with Opus needs a perceptual measure.

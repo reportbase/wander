@@ -6946,6 +6946,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   snare and 1.22× on the trumpet (2.0× and 2.8× as text), and 0.33–0.83× at 40 and 60 dB; binary is 0.34–0.44 of the
   text. Caveats: the floor is near-transparent, not lossless; the sources were Vorbis, whose missing top band the leaves
   exploit; the bit counts carry no container; two clips of 2 s each.
+- **R638** (3 Nov; Tom: "proceed"): AMX runs 5–6, the lossless *Sintel* score (Xiph, CC BY). Every FLAC size in runs 1–5
+  had included ffmpeg's 8.3 KB of metadata and padding (run 5 killed by my set-up). Corrected, run 4's binary leaves at
+  the 16-bit floor are 1.26× and 1.44× FLAC, not 0.73× and 1.22×; R637's numbers are superseded. Run 6: lossless TVF
+  1.10× and 1.11× FLAC, the leaves adding nothing to a fixed predictor; near-transparent leaves 1.97× and 1.38×, worse
+  than lossless; at 40 dB SNR the leaves are far smaller than Opus at 128 kb/s (2.7 KB against 30 KB, 34 KB against
+  36 KB), but SNR is not Opus's aim and no perceptual measure was run.
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |
