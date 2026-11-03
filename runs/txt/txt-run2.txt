@@ -1,0 +1,180 @@
+TXT run 1 (plans/txt-plan.md): draw library figures, box 0–1000.
+
+## τ = 5 (integers)
+   figure         corners     N cubics   tokens o200k: TVF / SVG abs / SVG rel   ratio   chars TVF / SVG best
+   circle               0     4      4       24 /    58 /    55     0.44   41 / 107
+   ellipse              0    12      6       56 /    80 /    79     0.71   98 / 149
+   oval                 0    10      6       49 /    79 /    78     0.63   85 / 153
+   egg                  0     4      5       24 /    69 /    66     0.36   39 / 131
+   pill                 0     8      8       40 /   103 /   102     0.39   67 / 185
+   square               4   174      4      792 /    64 /    60    13.20   1299 / 96
+   rectangle            4   142      6      603 /    86 /    81     7.44   1014 / 131
+   roundsq              0    18     12       83 /   161 /   151     0.55   143 / 272
+   squircle             0    26     12      119 /   162 /   151     0.79   201 / 274
+   triangle             3   178      7      720 /    92 /    91     7.91   1283 / 161
+   diamond              4   134      4      544 /    56 /    55     9.89   1047 / 106
+   parallel             4   162      6      656 /    79 /    78     8.41   1188 / 138
+   trapezoid            4   146      9      592 /   116 /   115     5.15   1043 / 203
+   ell                  6   174      8      740 /   116 /   104     7.12   1247 / 160
+   stairs               8   182     12      770 /   161 /   152     5.07   1299 / 236
+   wedge                3   170      7      690 /    92 /    90     7.67   1163 / 140
+   pie                  3   194      6      786 /    79 /    78    10.08   1473 / 150
+   pentagon             5   116     12      472 /   151 /   150     3.15   866 / 269
+   hexagon              6   100     12      408 /   152 /   151     2.70   753 / 257
+   heptagon             7    90     15      368 /   187 /   186     1.98   677 / 340
+   octagon              8    82      8      357 /   111 /   103     3.47   631 / 191
+   nonagon              9    74     14      305 /   175 /   174     1.75   563 / 325
+   decagon             10    62     18      256 /   223 /   222     1.15   472 / 397
+   dodecagon            2    50     29      209 /   359 /   355     0.59   389 / 621
+   reuleaux             3    96      7      393 /    92 /    90     4.37   722 / 171
+   star5               10   240     18      968 /   223 /   222     4.36   1873 / 414
+   star6               12   210     20      848 /   248 /   247     3.43   1637 / 453
+   star8               16   244     16      984 /   201 /   199     4.94   1931 / 389
+   burst               24   218     32      881 /   393 /   391     2.25   1710 / 687
+   arrow                7   168     11      680 /   140 /   139     4.89   1293 / 240
+   arrowup              7   168     11      680 /   140 /   139     4.89   1293 / 234
+   arrow2              10   194     14      784 /   176 /   175     4.48   1511 / 310
+   chevron              6   134     12      544 /   151 /   150     3.63   1037 / 281
+   cross               12   168     20      712 /   254 /   246     2.89   1307 / 374
+   xmark               12   200     20      812 /   250 /   246     3.30   1559 / 470
+   check                6   132      9      536 /   115 /   114     4.70   1040 / 219
+   banner               6   162      6      656 /    80 /    80     8.20   1151 / 136
+   bubble               3    64     17      272 /   215 /   210     1.30   500 / 353
+   graze3               0    30     12      128 /   152 /   151     0.85   227 / 276
+   graze8               2    90     12      368 /   153 /   150     2.45   666 / 273
+   graze21              2   158     12      642 /   153 /   150     4.28   1173 / 275
+   graze68              2   166      8      674 /   105 /   102     6.61   1235 / 187
+   graze200             2   194     12      786 /   153 /   150     5.24   1439 / 279
+   hinge3               3   190     10      770 /   129 /   126     6.11   1464 / 244
+   hinge4               4   172      4      704 /    58 /    54    13.04   1279 / 114
+   hinge5               5   126     12      513 /   153 /   150     3.42   968 / 285
+   hinge7               7    94     17      385 /   214 /   210     1.83   721 / 369
+   crescent             0    42      8      176 /   103 /   102     1.73   326 / 184
+   teardrop             1    98      5      401 /    67 /    66     6.08   735 / 128
+   heart                2   218      8      882 /   104 /   102     8.65   1698 / 197
+   flower               6    72     30      297 /   369 /   366     0.81   573 / 649
+   blob                 0    22     15       96 /   188 /   186     0.52   176 / 346
+   rose                 0    30     12      129 /   155 /   151     0.85   245 / 293
+   cardioid             1   228      8      922 /   103 /   102     9.04   1716 / 195
+   astroid              4   200      4      808 /    57 /    55    14.69   1579 / 107
+   infinity             0    24     13      104 /   164 /   163     0.64   192 / 314
+   spiro                5    76     15      312 /   187 /   186     1.68   601 / 359
+   leaf                 2   146      6      594 /    80 /    78     7.62   1091 / 138
+   cloud                5    74     18      304 /   224 /   222     1.37   523 / 383
+   flame                1   128      8      520 /   104 /   103     5.05   972 / 197
+   shield               3   132      6      570 /    86 /    80     7.12   1038 / 144
+   gear                48   226     48      912 /   586 /   582     1.57   1763 / 1002
+   bolt                 6   174     11      704 /   140 /   139     5.06   1373 / 239
+   tulip                9   168     22      680 /   271 /   270     2.52   1292 / 460
+   clover               6   194     16      785 /   199 /   198     3.96   1510 / 370
+   tree                 8   126     12      513 /   152 /   150     3.42   968 / 260
+   sprout               9   196     17      792 /   212 /   210     3.77   1546 / 361
+   snowflake           36   384     94     1544 /  1135 /  1134     1.36   3038 / 1839
+   spoon                1    46     12      192 /   153 /   150     1.28   362 / 273
+   fork                14   160     32      659 /   398 /   390     1.69   1253 / 624
+   knife                3    74     13      304 /   164 /   163     1.87   556 / 272
+   bottle               6    90     17      374 /   212 /   210     1.78   657 / 359
+   bulb                10    76     25      313 /   308 /   306     1.02   584 / 506
+   o200k_base: median TVF/SVG 3.42 over 73 figures (0 beyond 1,024 leaves); smooth 0.63 (12), with corners 4.28 (61)
+   cl100k_base: median TVF/SVG 3.42 over 73 figures (0 beyond 1,024 leaves); smooth 0.63 (12), with corners 4.28 (61)
+
+## τ = 1 (one decimal)
+   figure         corners     N cubics   tokens o200k: TVF / SVG abs / SVG rel   ratio   chars TVF / SVG best
+   circle               0     4     12       40 /   274 /   279     0.15   57 / 408
+   ellipse              0    18      6      144 /   124 /   131     1.16   208 / 193
+   oval                 0    18      8      137 /   183 /   188     0.75   199 / 272
+   egg                  0     8     11       64 /   266 /   266     0.24   93 / 392
+   pill                 0    26     14      186 /   292 /   304     0.64   270 / 427
+   square               4   890      4     5614 /    80 /    76    73.87   8189 / 112
+   rectangle            4   720     10     4466 /   199 /   195    22.90   6533 / 261
+   roundsq              0    26     18      201 /   410 /   413     0.49   287 / 583
+   squircle             0    34     17      251 /   400 /   379     0.66   357 / 537
+   triangle             3   802      9     5616 /   208 /   209    27.00   8137 / 289
+   diamond              4   646      4     4912 /    72 /    71    69.18   7331 / 122
+   parallel             4   742     10     4964 /   187 /   198    26.55   7394 / 274
+   trapezoid            4   766     12     5353 /   266 /   257    20.83   7701 / 356
+   ell                  6   932     10     5614 /   200 /   190    29.55   8313 / 254
+   stairs               8   930     19     5575 /   357 /   354    15.75   8266 / 467
+   wedge                3   794     13     5258 /   268 /   272    19.62   7449 / 371
+   pie                  3   896     10     6773 /   232 /   238    29.19   9932 / 343
+   pentagon             5   582     17     4225 /   359 /   380    11.77   6187 / 514
+   hexagon              6   484     18     3396 /   352 /   367     9.65   5063 / 489
+   heptagon             7   430     23     3140 /   515 /   538     6.10   4611 / 729
+   octagon              8   398      8     2768 /   161 /   177    17.19   4090 / 243
+   nonagon              9   330     30     2452 /   655 /   656     3.74   3594 / 858
+   decagon             10   304     26     2246 /   589 /   554     4.05   3299 / 776
+   dodecagon            2   260     57     1960 /  1281 /  1353     1.53   2887 / 1753
+   reuleaux             3   510     13     3873 /   299 /   288    13.45   5608 / 429
+   star5               10  None     30     None /   677 /   664   over 1024 leaves   None / 917
+   star6               12  1014     28     7709 /   626 /   655    12.31   11514 / 909
+   star8               16  None     16     None /   313 /   343   over 1024 leaves   None / 503
+   burst               24  None     48     None /  1097 /  1095   over 1024 leaves   None / 1461
+   arrow                7   754     19     4866 /   362 /   371    13.44   7605 / 510
+   arrowup              7   754     19     4866 /   362 /   371    13.44   7605 / 507
+   arrow2              10   786     22     5676 /   482 /   483    11.78   8617 / 668
+   chevron              6   644     18     4904 /   419 /   420    11.70   7274 / 613
+   cross               12   890     28     5344 /   526 /   550    10.16   8489 / 720
+   xmark               12   998     32     7588 /   724 /   752    10.48   11297 / 1042
+   check                6   656     17     5020 /   389 /   392    12.90   7509 / 559
+   banner               6   814     10     5180 /   219 /   234    23.65   7654 / 317
+   bubble               3   642     34     4760 /   755 /   738     6.45   7039 / 947
+   graze3               0    50     16      390 /   362 /   369     1.08   557 / 526
+   graze8               2   214     20     1644 /   459 /   454     3.62   2353 / 633
+   graze21              2   570     24     4296 /   547 /   560     7.85   6203 / 759
+   graze68              2   846     16     6454 /   355 /   354    18.23   9289 / 509
+   graze200             2   886     12     6738 /   283 /   292    23.81   9709 / 417
+   hinge3               3   972     21     7407 /   505 /   486    15.24   10936 / 681
+   hinge4               4   840     20     6356 /   478 /   464    13.70   9143 / 674
+   hinge5               5   606     21     4590 /   489 /   486     9.44   6766 / 673
+   hinge7               7   454     23     3441 /   534 /   532     6.47   5052 / 714
+   crescent             0   190     16     1442 /   378 /   376     3.84   2102 / 511
+   teardrop             1   468     11     3561 /   253 /   256    14.08   5149 / 366
+   heart                2  None     16     None /   344 /   364   over 1024 leaves   None / 526
+   flower               6   142     50     1086 /  1156 /  1144     0.95   1631 / 1542
+   blob                 0    38     22      298 /   505 /   510     0.59   437 / 698
+   rose                 0    46     26      337 /   575 /   589     0.59   515 / 837
+   cardioid             1   988     14     7503 /   327 /   330    22.94   10932 / 481
+   astroid              4   968     20     7400 /   441 /   471    16.78   11131 / 659
+   infinity             0    32     29      252 /   664 /   677     0.38   366 / 970
+   spiro                5   134     30     1020 /   695 /   694     1.47   1527 / 998
+   leaf                 2   770     12     5858 /   276 /   282    21.22   8459 / 398
+   cloud                5   306     31     2096 /   697 /   712     3.01   2997 / 933
+   flame                1   706     18     5344 /   414 /   425    12.91   7823 / 595
+   shield               3   644     13     4744 /   295 /   285    16.65   7026 / 405
+   gear                48  None    108     None /  2390 /  2514   over 1024 leaves   None / 3238
+   bolt                 6   904     17     6580 /   362 /   371    18.18   10034 / 508
+   tulip                9   768     34     5838 /   777 /   758     7.70   8622 / 1013
+   clover               6   950    129     7160 /  2928 /  2934     2.45   10698 / 3678
+   tree                 8   650     29     4889 /   672 /   672     7.28   7223 / 882
+   sprout               9  None     36     None /   839 /   770   over 1024 leaves   None / 1031
+   snowflake           36  None    216     None /  4919 /  4938   over 1024 leaves   None / 6171
+   spoon                1   138     26     1064 /   587 /   594     1.81   1565 / 809
+   fork                14   640     64     4748 /  1417 /  1312     3.62   7118 / 1664
+   knife                3   256     26     1950 /   590 /   567     3.44   2815 / 724
+   bottle               6   358     34     2360 /   688 /   704     3.43   3478 / 925
+   bulb                10   476     44     3610 /  1002 /   990     3.65   5301 / 1273
+   o200k_base: median TVF/SVG 11.77 over 73 figures (7 beyond 1,024 leaves); smooth 0.61 (12), with corners 13.44 (61)
+   cl100k_base: median TVF/SVG 11.77 over 73 figures (7 beyond 1,024 leaves); smooth 0.61 (12), with corners 13.44 (61)
+
+## slips at τ = 5 (20 a figure a kind a form); broken = Hausdorff over 5% of the figure or nothing drawn
+   abs  drop    drawn  97.7%  broken  91.4%  median distance 50.99%
+   abs  jitter  drawn 100.0%  broken   0.0%  median distance 1.06%
+   abs  wrong   drawn 100.0%  broken  61.1%  median distance 8.06%
+   rel  drop    drawn  95.0%  broken  89.5%  median distance 64.01%
+   rel  jitter  drawn 100.0%  broken   9.7%  median distance 2.81%
+   rel  wrong   drawn 100.0%  broken  49.0%  median distance 4.73%
+   tvf  drop    drawn  98.6%  broken  51.2%  median distance 5.37%, read strictly 1.6%
+   tvf  jitter  drawn 100.0%  broken   0.0%  median distance 1.52%, read strictly 100.0%
+   tvf  wrong   drawn 100.0%  broken  71.1%  median distance 9.93%, read strictly 97.3%
+   against the shorter SVG variant per figure:
+   wrong   broken TVF 71.1%, SVG 49.2%; median distance TVF 9.93%, SVG 4.77%
+   drop    broken TVF 51.2%, SVG 89.3%; median distance TVF 5.37%, SVG 63.88%
+   jitter  broken TVF 0.0%, SVG 9.7%; median distance TVF 1.52%, SVG 2.80%
+
+T1 median TVF/SVG tokens at τ = 5: 3.42 (1.0–2.5): KILLED
+T2 median at τ = 1 11.77 > at τ = 5 3.42: not killed
+T3 smooth figures at τ = 5: 0.63 over 12 (< 1): not killed
+T4 TVF read leniently draws a closed curve 99.5% (100%), SVG draws something 98.8% (≥ 95%): KILLED
+T5 dropped token: broken TVF 51.2% ≤ half SVG 89.3%: KILLED
+T6 wrong number: broken TVF 71.1% ≤ SVG 49.2%: KILLED
+T7 imprecise numbers: broken TVF 0.0%, SVG 9.7% (both < 5%); median TVF 1.52% within 3× SVG 2.80%: KILLED

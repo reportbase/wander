@@ -82,3 +82,28 @@ segments. Scripts: `runs/txt/txt_lib.cjs`, `txt_fit.cjs`, `txt_slip.py`, `txt_re
 **Run 1 (3 November): killed by my set-up, no result.** The fit ran under a 15-minute limit of mine and was stopped
 after 50 of the 73 figures, before writing anything; no number was read. Run 2 is the same set-up, the figures split
 over four processes, and the distance's search confined to its grid (a speed change; the distances are the same).
+
+**Run 2 (3 November)** (`runs/txt/txt-run2.txt`; the scripts were tried first on two figures, circle and square, whose
+numbers were seen before the full run). 73 figures, 12 smooth and 61 with corners by the plan's rule.
+
+- **T1 killed.** At τ = 5 the median TVF/SVG ratio in o200k_base tokens is 3.42 (cl100k_base the same): TVF 3.4 times
+  longer. On figures with corners it is 4.28. A square takes 174 leaves (≈ 1,300 tokens) against 4 cubics.
+- **T2 not killed.** At τ = 1 the median ratio is 11.77; 7 figures could not reach τ = 1 within 1,024 leaves.
+- **T3 not killed.** On the 12 smooth figures TVF is shorter: median 0.63 (circle 24 tokens against 55, egg 0.36,
+  blob 0.52; only the crescent, with two near-corners, is longer at 1.73).
+- **T4 killed by my bound.** TVF read leniently drew a closed curve in 99.5% of slips, not 100%: a dropped newline
+  merges the two rows. SVG drew something in 98.8%.
+- **T5 killed.** Dropped token: TVF broken 51.2% against SVG 89.3%, not half. TVF's median distance was 5.4%, SVG's
+  64%: TVF moves much less but still breaks half the time, because a dropped token is often part of a number (digits
+  lost), not a whole number. Read strictly, only 1.6% of TVF slips pass.
+- **T6 killed.** Wrong number: TVF broken 71.1% against SVG 49.2%. One wrong leaf moves the curve near it by the error,
+  the kernel spreading it; one wrong SVG number moves a control point, which a cubic pulls on less.
+- **T7 killed, by SVG.** Imprecise numbers: TVF broken 0.0%, median 1.52%; absolute SVG 0.0%, 1.06%; relative SVG 9.7%
+  broken, 2.81%, since in relative form every error carries on to every later point. Against the shorter SVG (mostly
+  relative) the 5% clause fails on SVG's side.
+
+**Reading, after the run.** As text a model writes, TVF is shorter and steadier than SVG only on smooth outlines. On
+outlines with corners, most of the library, it is 3–4 times longer at 0.5% and 12 times at 0.1%. It survives a dropped
+token much better than SVG and imprecise numbers about as well as absolute SVG, and it is hurt more by one wrong
+number. The case for TVF as a format for models is for smooth curves, or with corners carried separately (draw's
+`#meta` structure, `papers/tvf.md` §2.9), which this run did not test.
