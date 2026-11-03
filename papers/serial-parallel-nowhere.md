@@ -6957,6 +6957,20 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   every size (4.69–5.00 against 1.89–4.64), the leaves needing 2.53× its bytes to match 128 kb/s. Percussive opening: the
   leaves ahead by both measures from 5.4 to 11.4 KB (4.45 against 3.73 at Opus's 24 kb/s size). G1 killed, G2–G4 not. One
   window each; whether the percussive result holds needs more material and an ear.
+- **R640** (3 Nov; Tom: "the advantage is the text format", then on TXT's runs "Readers rotate, writers walk.", "A write
+  is a count, it is discrete. A read is continuous. The weird numbers of pi and e arise when a write tries to convert a
+  read into a write.", "K is continuous, not discrete. K is read continuously.", "it only reads, never counts", and "Move
+  the notes into the paper. Leave tvf out of this paper ... reading and writing is just a refrain of the continuous
+  discrete distinction."): a read is continuous and a write is a count. A read's turns are rotational, so a read never
+  turns sharply; a corner is a counted place, the writer's. K, the reader's resolution, is read continuously; a count of
+  addresses is a writer's rounding of it (R408's "K is prior to H" stands). π and e appear where a count tries to hold a
+  read (Archimedes' sides, Bernoulli's compoundings; R597). A count of even waves made to hold a corner rings (Gibbs),
+  on both sides and not shrinking, unlike nature's ringing. TXT (`plans/txt-plan.md`) is the evidence: runs 3–4, readers'
+  formats shorter on every smooth outline and writers' on every cornered one, and a reader's length following the turning
+  (ρ 0.85) where a writer's follows the corners (0.59; with the turning 0.00); its failed predictions recorded there.
+  *Reads and Writes*: the abstract, §1 "Continuous and discrete", §6's K, §8 "Turns, counts and corners"; no TVF in it.
+  Left for a ruling: §5 still calls one length's rationals "the reader's arithmetic" by counting thumbs, and "a machine is
+  a reader here"; both read differently if every count is a write.
 
 ## Appendix B. Demos and computations
 

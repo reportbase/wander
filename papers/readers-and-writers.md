@@ -26,7 +26,9 @@ roots need two lengths combined, and the transcendental numbers a limit no finit
 turn, e completes the scale, and both are the writer's. The reader meets such a direction whole; the writer needs the limit
 to state it as a number. The passage from reading to writing is parallax: a second standpoint, the step between them,
 places from crossings. An observer making that passage is writing: read and write are acts, not kinds of observer. And the
-passage has degrees: V is learned in some unit, to some precision, for some things, never all at once.
+passage has degrees: V is learned in some unit, to some precision, for some things, never all at once. Underneath it all is
+an older line: a read is continuous and a write is a count. A read turns through every direction between two, and never
+turns sharply; a write counts steps, units and places, and where a count is made to hold a turn, π and e appear.
 
 None of the mathematics is new. What is offered is a division of it: which parts a standpoint has, which parts need the
 whole, and what carries an observer from one to the other.
@@ -55,7 +57,8 @@ likewise needs an amount carried in from outside. But the two pairs part in five
 - *Who lays out the addresses.* A computer's address space is laid out before anything is read: a known size, indices
   counted from 0 to N − 1, an end. That layout is a writer's work (an array whose `sizeof` is known is held by a writer).
   A reader's addresses are given by the turn, uniform by the turn's own measure, from home toward a horizon that is never
-  reached; there is no N, no last address, and no end to fall off. What it holds is K, its own count (§6, "K and N").
+  reached; there is no N, no last address, and no end to fall off. What it holds is K, its own resolution, read
+  continuously (§6, "K and N").
 - *What a read returns.* A computer's read returns an amount in a unit: bytes, a float, a count. A read here returns a
   direction and the paint arriving along it, with every amount along that direction already gone. Nothing in it would
   change if the world were k times as large.
@@ -90,6 +93,13 @@ and the vantage that holds each.
 **The second test.** Change what arrives, keeping the standpoint and the turn: repaint the world, move the light, replace
 a wall by a row of trees. The *addresses*, the directions the turn lays down, are unchanged; the *payload*, what is found
 along each, changes. The first test separates reading from writing; the second separates address from payload.
+
+**Continuous and discrete.** The two acts are, in the end, an old distinction under new names. A read is continuous: a turn
+passes through every direction between two, none is next to another, and nothing in a turn is counted. A write is a count:
+strides along a baseline, units on a ruler, items in a list, digits in a number, each with a next and, in a finite count, a
+last. Scaling the world leaves a turn as it was and multiplies every count of units; that is the first test seen from this
+side. The rest of the paper keeps returning to this line, in the corner and the horizon, in which numbers belong to whom, in
+K and N, and in the passage from one act to the other (§8, "Turns, counts and corners").
 
 **V.** One quantity sits on the line between the two acts: V, the breadth of the other party, the mountain in the distance
 that the thumb is held up against. Every reading is a ratio in which V cancels, so no reading ever carries it. To have V is
@@ -465,8 +475,9 @@ outline's amounts, and its overall size a₀ is in none of the terms.
 
 **K and N.** Computer science has two letters for this, and they sort the acts as well as anything. N is how many items
 there are; K is how many are held. To know N is to know the whole: its extent, V, and how much is in it. That is writing,
-and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own count of addresses,
-fixed before H is chosen. The Cauchy is what goes between them. It lays the reader's K addresses over a world of any size,
+and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own resolution,
+fixed before H is chosen. K is read continuously, as the turn is: a count of addresses, so many and no more, is a writer's
+rounding of it. The Cauchy is what goes between them. It lays the reader's K addresses over a world of any size,
 the near field in proportion, the far field in two thumbs, four, eight, and everything past the last address on the one
 address at the horizon. Double N and the reader's view does not change; make N unbounded and it still does not change (an
 infinite star field browsed at N and 2N shows the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull:
@@ -562,6 +573,32 @@ cross the fingers faster than far ones, and that difference is parallax. Any mot
 together (a turn about any point but the standpoint carries the standpoint along a chord, and the chord is a step), and only
 the step's part places anything. The straight line walked is the writer's own: count it in a unit and every place found
 from it is written.
+
+**Turns, counts and corners.** A read's turns are rotational: between two directions it passes through every one between,
+so a read never turns sharply. A corner, a change of direction at one place, is met only by walking the line and stopping
+there, which is a count: at the third stop, turn this much. That is why a corner is the writer's. Three things follow.
+
+- *A count made to hold a turn rings.* Lay a finite count of even waves, or of evenly spaced samples, along a turn and ask
+  it to hold a sharp change. It overshoots on both sides of the change, by about 9% of a jump however many waves are used,
+  the ripples only crowding nearer (Wilbraham 1848, Gibbs 1899). Nature's ringing is not like that: a struck bell rings
+  after it is struck and never before, and light past a sharp edge makes fringes on the lit side only. The ringing is the
+  mark of a turn written as a count, where the count has no place to put the corner.
+- *Written down, the two acts cost differently.* An outline can be written as numbers at even places of one turn (its
+  Fourier coefficients, its radius from a centre at even angles, its points at even shares of its length rebuilt by a
+  band-limited sum) or as a walk along it (Bézier pieces, a list of points, the same points as steps, a turtle's forward and
+  turn). On 73 outlines from a shape library, each written to within half a percent of its size, every one of the first
+  three was shorter as text than every walk on the smooth outlines, and every walk shorter than every one of the three on
+  the outlines with corners. Rounding the corners of a square, a triangle, a star and an arrow by a growing radius took the
+  even samples from two to three times a Bézier path's length to between a half and three quarters of it, on all four,
+  while a list of points grew longer, a walk needing more stops to follow a gentle curve. Across the library the even
+  samples' length followed how fast the outline turns (its length over its tightest radius of curvature; Spearman ρ 0.85)
+  more than how many corners it has (0.55); the Bézier path's followed its corners (0.59) and not its turning at all
+  (0.00). (TXT runs 3–4, `plans/txt-plan.md`, where the predictions that failed are recorded too: the exact rate at which
+  the count grows as a corner sharpens, and a walk's cost staying flat as a corner rounds.)
+- *π and e are where a count tries to hold a read.* Archimedes counted the sides of polygons about a circle, 6, 12, 24,
+  96, and every count gave a rational bound; π is where the count would end if it held the whole turn, which no count
+  does. Bernoulli's coin compounded n times, (1 + 1/n)ⁿ, is a count of periods; e is where it lands when the compounding
+  becomes continuous. These are §5's "π completes the turn" and "e completes the scale", seen as the price of a count.
 
 **Motion, read.** A thing coming toward the reader is read at its edge: x, the thing's breadth against its distance, the
 reading v/h of the line to its edge, and that reading grows. The reading over its own rate of growth, x/ẋ, is the time
@@ -728,6 +765,7 @@ inside a read, and what carries an observer from one to the other.
 - Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77,
   2154–2157.
 - Euclid. *Elements*, Book III, Proposition 20.
+- Gibbs, J. W. (1899). Fourier's series. *Nature* 59, 606.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
   *Physics Letters A* 128, 391–394.
@@ -754,5 +792,6 @@ inside a read, and what carries an observer from one to the other.
 - Takenaka, S. (1925). On the orthogonal functions and a new formula of interpolation. *Japanese Journal of
   Mathematics* 2, 129–145.
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII.* Tours.
+- Wilbraham, H. (1848). On a certain periodic function. *Cambridge and Dublin Mathematical Journal* 3, 198–201.
 
 Some details of the classical works above are given from memory and are to be checked against the texts.

@@ -1303,6 +1303,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R639 (3 Nov; Tom: "do the perecptual comparison"): AMX run 7 (`runs/amx/amx_percept.py`; Zimtohrli and a Python
   ViSQOL, both via pip, at 48 kHz): Opus far ahead on the tonal window, the leaves 2.53× its bytes for its 128 kb/s
   score; the leaves ahead on the percussive opening from 5.4 to 11.4 KB. One window each, no listening.
+  R640 (3 Nov; Tom: "A write is a count, it is discrete. A read is continuous.", "K is read continuously.", "reading and
+  writing is just a refrain of the continuous discrete distinction"): TXT (`plans/txt-plan.md` + `runs/txt/`), TVF text
+  against SVG and other formats as text for models: run 2 TVF 3.4× SVG's tokens (shorter only on smooth outlines); run 3
+  three readers' formats (rotating) shorter on every smooth outline, four writers' (walking) on every cornered one; run 4
+  a reader's length follows the turning (ρ 0.85), a writer's the corners (0.59, the turning 0.00). In *Reads and Writes*:
+  abstract, §1 "Continuous and discrete", §6's K read continuously, §8 "Turns, counts and corners" (Gibbs ringing, π and e
+  where a count holds a read); TVF kept out of the paper. §5's "reader's arithmetic" and "a machine is a reader" wait.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
