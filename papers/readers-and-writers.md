@@ -52,7 +52,8 @@ one thumb, from the far field beyond it, read as ratios (one in two, one in four
 The read's addresses are K, the addresses available to it in that moment, arranged by the Cauchy: half of them before the corner and half
 after, whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Two reads, at two moments or two standpoints, are
 joined only across a step that is counted: parallax, and so a write. (A *facing* is a writer's word, for several reads held together with their signs; no read
-is one.) Everything else in this paper is built on the read,
+is one.) A read holds no time: time is the step between reads. Their order is the reader's, reading over
+time; a count of ticks between them is a write. Everything else in this paper is built on the read,
 and on its opposite, a count.
 
 **Words.** The paper names acts, a *read* and a *write*, not two kinds of observer: one observer reads while it stands and
@@ -629,8 +630,9 @@ reading v/h of the line to its edge, and that reading grows. The reading over it
 until the thing arrives, if it keeps coming as it comes: the breadth cancels, and so do the distance and the speed. Lee
 (1976) proposed that a driver braking reads exactly this, and the rule he found is a reading too: brake so that the time
 to contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car stops at the thing, since at τ̇ = −½ the
-distance it needs to stop is the distance it has. Two limits keep this honest. The time comes out in the reader's own
-ticks, as places come out in its own thumbs; seconds are a writer's unit, carried in. And one stream cannot tell a thing
+distance it needs to stop is the distance it has. Two limits keep this honest. The time τ comes out as a count of the reader's
+own ticks, a write in its own tick as places after a counted step are written in its own thumbs; τ̇, ticks per tick,
+is unmoved by any change of clock and is a read; seconds are a writer's unit, carried in. And one stream cannot tell a thing
 coming nearer from a thing growing where it stands, since both raise x alike; a neighbour at the same depth, read at
 once, tells them apart, approach moving both readings and growth one. The rate at which the reader turns cancels from
 every reading. A speed in metres a second is a writing twice over: a metre and a second, both carried in.

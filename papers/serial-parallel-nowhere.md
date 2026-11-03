@@ -7047,6 +7047,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   is the writer's term for several reads held together (their spans joined with their signs, which no read carries), so
   "a facing the writer's name for a read's span" and "for one sweep's span" above are withdrawn. *Reads and Writes* §1
   says so in one sentence.
+- **R649** (3 Nov; Tom: "so writing includes time, reading over time"): a read is one moment, so it holds no time; time
+  is the step between reads, and joining two reads across a step is a write, the step in space parallax, in time a
+  duration. The order of reads is the reader's, unmoved by any rescaling of the clock (TIM: order and ratios free,
+  durations amounts; UNR: order alone keeps every increasing map): reading over time. A count of ticks between reads is
+  a write in the reader's own tick, as places after one counted step are written in its own thumbs; seconds a further
+  write, carried in. So §8's "the time comes out in the reader's own ticks" (R630) is corrected: Lee's τ is a write in
+  the reader's tick, τ̇ (ticks per tick, unmoved by any clock) a read. *Reads and Writes* §1 (after "What a read is")
+  and §8 "Motion, read".
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations

@@ -1350,6 +1350,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   reads, at two moments or standpoints, joined only across a counted step (parallax, a write).
   Then (Tom: "facing is writers term, that describes multiple reads."): **a facing is the writer's term for several reads
   together**, never a read's or a sweep's span.
+  R649 (3 Nov; Tom: "so writing includes time, reading over time"): **a read holds no time; time is the step between
+  reads**, joined by a write (in space parallax, in time a duration); the order of reads is the reader's (reading over
+  time), a count of ticks between them a write in the reader's own tick, seconds carried in. Lee's τ a write in ticks,
+  τ̇ a read. *Reads and Writes* §1 and §8 "Motion, read" (R630's "ticks the reader's" corrected).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
