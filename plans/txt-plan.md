@@ -71,3 +71,14 @@ path data. Two things a model meets can be measured without training one:
   not.
 
 ## Runs
+
+**Set-up amended before any run (3 November).** draw's `_fitCubics` joins every split with a shared tangent, so on its
+own it cannot make a corner and would spend many cubics rounding each one: unfair to SVG. Each outline is cut at its
+corners (the plan's corner rule) and each run between corners fitted by `_fitCubics` on its own, so SVG keeps corners.
+The fewest even N is found by doubling and then bisection, which assumes the error falls with N. An SVG cubic is drawn as
+24 straight pieces, a TVF as 4,096 samples (1,024 in the slip trials); a Hausdorff distance is measured from points to
+segments. Scripts: `runs/txt/txt_lib.cjs`, `txt_fit.cjs`, `txt_slip.py`, `txt_read.cjs`.
+
+**Run 1 (3 November): killed by my set-up, no result.** The fit ran under a 15-minute limit of mine and was stopped
+after 50 of the 73 figures, before writing anything; no number was read. Run 2 is the same set-up, the figures split
+over four processes, and the distance's search confined to its grid (a speed change; the distances are the same).
