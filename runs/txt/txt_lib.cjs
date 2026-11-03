@@ -33,7 +33,7 @@ function walk(P, fr) {
 }
 
 // Distance from each point of A to the closed polyline B (segments), through a grid of buckets. Returns the max.
-function directed(A, B, closedB = true) {
+function nearestAll(A, B, closedB = true) {
     let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
     for (const p of B) { x0 = Math.min(x0, p[0]); y0 = Math.min(y0, p[1]); x1 = Math.max(x1, p[0]); y1 = Math.max(y1, p[1]); }
     const span = Math.max(x1 - x0, y1 - y0, 1e-9), G = 64, cs = span / G * (1 + 1e-9) + 1e-12;
@@ -55,7 +55,8 @@ function directed(A, B, closedB = true) {
         t = Math.max(0, Math.min(1, t));
         return Math.hypot(a[0] - p[0] - t * dx, a[1] - p[1] - t * dy);
     };
-    let worst = 0;
+    const out = new Float64Array(A.length);
+    let ai = 0;
     for (const a of A) {
         const ci = Math.floor((a[0] - x0) / cs), cj = Math.floor((a[1] - y0) / cs);
         let best = Infinity;
@@ -75,9 +76,14 @@ function directed(A, B, closedB = true) {
             // every segment not yet seen lies at least (r) cells away from the point's cell
             if (best <= r * cs) break;
         }
-        if (best > worst) worst = best;
+        out[ai++] = best;
     }
-    return worst;
+    return out;
+}
+function directed(A, B, closedB = true) {
+    let w = 0;
+    for (const d of nearestAll(A, B, closedB)) if (d > w) w = d;
+    return w;
 }
 const hausdorff = (A, B, closedB = true) => Math.max(directed(A, B, closedB), directed(B, A, true));
 
@@ -185,4 +191,4 @@ function readSvg(text, K = 24) {
     return pts.length >= 2 ? pts : null;
 }
 
-module.exports = { loadDraw, walk, hausdorff, directed, fmt, rnd, tvfText, svgAbs, svgRel, readTvf, readSvg };
+module.exports = { nearestAll, loadDraw, walk, hausdorff, directed, fmt, rnd, tvfText, svgAbs, svgRel, readTvf, readSvg };
