@@ -92,7 +92,7 @@
         </div>
         <div class="stack">
             <div class="panel">
-                <p class="tag p" id="payTag">the reader</p><h2 id="payHead">A circle, painted by what arrives</h2>
+                <p class="tag p" id="payTag">the reader</p><h2 id="payHead">A vantage, painted by what arrives</h2>
                 <canvas id="pay"></canvas>
                 <p class="cap">Passive: 128 directions given round one point, each dot the colour of what its line meets first.
                     Nothing on the lot sends, so no distance arrives and every dot sits on the circle. Send a pulse and a
@@ -111,8 +111,9 @@
         </div>
     </div>
     <p class="cap" style="margin-top:12px">Two vantages. The writer writes: it needs the whole and a unit. Its circle is round
-        the whole, looking in; the reader's is round one point, looking out, its directions given and painted by what
-        arrives, holding no distance. A pulse's ranges are a writing. Other demos: <a href="room.html">the room</a>, <a href="room-walk.html">walking the room</a>,
+        the whole, looking in: circles are the writer's tools. The reader has a vantage, not a shape: one point, looking out,
+        its directions given and painted by what arrives, holding no distance. The circle drawn round it is the writer's picture
+        of that vantage. A pulse's ranges are a writing. Other demos: <a href="room.html">the room</a>, <a href="room-walk.html">walking the room</a>,
         <a href="writer-readers.html">the writer and two standpoints</a>, <a href="blueprint-3d.html">the blueprint in 3D</a>, <a href="demos.html">all demos</a>.</p>
 </main>
 <script>
@@ -321,12 +322,12 @@ function drawAddr() {
 function shareOf(list) { const c = {}; for (const o of list) c[o.what] = (c[o.what] || 0) + 1; return c; }
 function render() {
     const k = K(); P = payload(k, S.at); A = addresses(k, S.home); WR = S.write ? writeFrom(k, S.home) : null; $('write').classList.toggle('on', S.write); $('pulse').classList.toggle('on', S.pulse);
-    $('payTag').textContent = S.pulse ? 'the reader, sending: writing' : 'the reader'; $('payHead').textContent = S.pulse ? 'A pulse sent: ranges, in its unit' : 'A circle, painted by what arrives';
+    $('payTag').textContent = S.pulse ? 'the reader, sending: writing' : 'the reader'; $('payHead').textContent = S.pulse ? 'A pulse sent: ranges, in its unit' : 'A vantage, painted by what arrives';
     drawPlan(); drawPay(); drawAddr();
     $('kv').textContent = 'k = ' + (k >= 1 ? k.toPrecision(3) : k.toFixed(k < 0.1 ? 4 : 3)); $('home').value = S.home;
     const below = A.filter(o => o.ratio < 1).length;
     $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}. Its circle round the whole is ${fmtM(Math.hypot(24, 16) * k)} in radius. ` +
-        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The one-length circle is the same at every k: the reader's directions and what paints them, no distance.`) + ` From home the reader holds ${NA} addresses: ${below} below v = h and ${NA - below} above, at every k.`;
+        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The reader's vantage is the same at every k: its directions and what paints them, no distance (the circle drawn round it is the writer's picture).`) + ` From home the reader holds ${NA} addresses: ${below} below v = h and ${NA - below} above, at every k.`;
     describe();
 }
 function describe() {
@@ -336,9 +337,9 @@ function describe() {
         (WR ? `\nWritten from one stride (${fmtM(WR.stride)}, counted): ${WR.points.length} corners seen from home and from the stride's end, each two rays crossing, ` +
             `out to ${fmtM(WR.span[0])} along h and ${fmtM(WR.span[1])} along v; the largest error ${WR.maxErr.toExponential(1)} of a length. In strides the same at every k; in metres by k.` : '');
     const pr = t ? P.rays.filter(o => o.what === t) : [];
-    $('readP').textContent = t ? (pr.length ? `${THINGS[t].name}: ${pr.length} of ${NP} directions on the circle (a share of the turn, not a size)` + (S.pulse ? `; the pulse's ranges ${pr.map(o => o.shape).reduce((a, b) => Math.min(a, b)).toFixed(3)} to ${pr.map(o => o.shape).reduce((a, b) => Math.max(a, b)).toFixed(3)} of their mean` : '') : `${THINGS[t].name}: nothing arrives from it here`)
+    $('readP').textContent = t ? (pr.length ? `${THINGS[t].name}: ${pr.length} of ${NP} directions from its vantage (a share of the turn, not a size)` + (S.pulse ? `; the pulse's ranges ${pr.map(o => o.shape).reduce((a, b) => Math.min(a, b)).toFixed(3)} to ${pr.map(o => o.shape).reduce((a, b) => Math.max(a, b)).toFixed(3)} of their mean` : '') : `${THINGS[t].name}: nothing arrives from it here`)
         : S.pulse ? `A pulse sent: ${NP} ranges back, the shape from ${Math.min(...P.rays.map(o => o.shape)).toFixed(3)} to ${Math.max(...P.rays.map(o => o.shape)).toFixed(3)} of their mean, in the unit the pulse carried in (its speed and a clock).`
-            : `${new Set(P.rays.map(o => o.what)).size} things paint the circle; no distance on it. Send a pulse for ranges, and the reader writes.`;
+            : `${new Set(P.rays.map(o => o.what)).size} things paint its directions; no distance in them. Send a pulse for ranges, and the reader writes.`;
     const ar = t ? A.filter(o => o.what === t) : [];
     $('readA').textContent = t ? (ar.length ? `${THINGS[t].name}: addresses from [1 : ${ar[0].ratio.toPrecision(3)}] to [1 : ${ar[ar.length - 1].ratio.toPrecision(3)}], ${ar.length} of ${NA} (g ${ar[0].g.toFixed(3)} to ${ar[ar.length - 1].g.toFixed(3)}); how far, never` : `${THINGS[t].name}: not seen from ${HOMES[S.home].name}`)
         : `From ${HOMES[S.home].name}: ${Object.keys(shareOf(A)).length} things met, each a stretch of addresses; half the turn either side of v = h.`;

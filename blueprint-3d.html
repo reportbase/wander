@@ -80,10 +80,10 @@
 <main>
     <h1>One blueprint in 3D</h1>
     <p class="lede">The same property in three dimensions. The <span class="w">writer</span> has the model, every length in
-        metres, heights too. Its frame is a box, a number line on each axis held on both signs, each extent an amount. The <span class="p">reader</span> is a sphere
-        round one point, looking out: nothing in the room sends, so it receives only the light the room scatters, each
+        metres, heights too. Its frame is a box, a number line on each axis held on both signs, each extent an amount. The <span class="p">reader</span> has a vantage,
+        not a shape (spheres are the writer's tools; the shell drawn here is the writer's picture of it): one point, looking out: nothing in the room sends, so it receives only the light the room scatters, each
         direction painted by the first surface on its line, and no distance. Put in a floor corner, the room is one octant
-        of that sphere, the wedge, each address [h : v : v₂], given before anything arrives. Two vantages, the writer's and
+        of the writer's sphere round it, the wedge, each address [h : v : v₂], given before anything arrives. Two vantages, the writer's and
         the reader's. Scale the world and only the writer's numbers change. Write the room: one counted stride turns two
         looks from home into metres. <a href="blueprint.html">The plan in 2D</a>.</p>
     <div class="panel" style="margin-bottom:12px">
@@ -109,7 +109,7 @@
         </div>
         <div class="stack">
             <div class="panel">
-                <p class="tag p" id="shellTag">the reader</p><h2 id="shellHead">A sphere, painted by what arrives</h2>
+                <p class="tag p" id="shellTag">the reader</p><h2 id="shellHead">A vantage, painted by what arrives</h2>
                 <canvas id="shell"></canvas>
                 <div class="nogl" id="nogl2"></div>
                 <p class="cap">Passive: 2,048 directions given round one point, each dot the colour of the light arriving along it
@@ -142,8 +142,8 @@
         </div>
     </div>
     <p class="cap" style="margin-top:12px">Two vantages. The writer writes: it needs the whole and a unit. Its frame is a box,
-        one number line on each axis, both signs held, nothing round in it; the reader's is a sphere round one point, looking
-        out, its directions given and painted by what arrives, holding no distance; a pulse's ranges are a writing. From a corner its wedge is one octant of it, and it stands
+        one number line on each axis, both signs held, nothing round in it; the reader has a vantage, not a shape: one point, looking
+        out, its directions given and painted by what arrives, holding no distance; a pulse's ranges are a writing. From a corner its wedge, as the writer draws it, is one octant of a sphere, and it stands
         inside the writer's box: in the far field every direction of its wedge reaches the box, its horizon, whose size the
         reader never reads. The writer holds three numbers a point, the reader two (a direction); the one between is the size. One stride counted is the amount that turns the looks from home into the writer's metres.
         Other demos: <a href="blueprint.html">the blueprint</a>, <a href="room-ratios.html">the room in ratios</a>,
@@ -366,10 +366,10 @@ function render() {
     const k = K(); P = payload(k, S.at); A = addresses(k, S.home); C = counts(A); WR = S.write ? writeFrom(k, S.home) : null;
     $('kv').textContent = 'k = ' + (k >= 1 ? k.toPrecision(3) : k.toFixed(k < 0.1 ? 4 : 3)); $('home').value = S.home; $('at').value = SPOTS[S.spot] ? S.spot : '';
     $('write').classList.toggle('on', S.write); $('pulse').classList.toggle('on', S.pulse);
-    $('shellTag').textContent = S.pulse ? 'the reader, sending: writing' : 'the reader'; $('shellHead').textContent = S.pulse ? 'A pulse sent: ranges, in its unit' : 'A sphere, painted by what arrives'; $('roof').classList.toggle('on', S.roof);
+    $('shellTag').textContent = S.pulse ? 'the reader, sending: writing' : 'the reader'; $('shellHead').textContent = S.pulse ? 'A pulse sent: ranges, in its unit' : 'A vantage, painted by what arrives'; $('roof').classList.toggle('on', S.roof);
     drawTri(); drawMap();
     $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}, the rooms ${fmtM(2.7 * k)} high, its box round everything ${fmtM(48 * k)} × ${fmtM(32 * k)} × ${fmtM(TOP * k)}, one number line a side. ` +
-        `The one-length sphere is the same at every k: the reader's directions, and the colours arriving along them` + (S.pulse ? `; a pulse's ranges come back with geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in. ` : `, and no distance. `) + `From home the reader holds ${NA.toLocaleString('en')} addresses: v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
+        `The reader's vantage is the same at every k: its directions, and the colours arriving along them` + (S.pulse ? `; a pulse's ranges come back with geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in. ` : `, and no distance. `) + `From home the reader holds ${NA.toLocaleString('en')} addresses: v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
         `v₂ ≤ h ${(100 * C.v2h).toFixed(1)}%, v₂ ≤ v ${(100 * C.v2v).toFixed(1)}%, the near field ${(100 * C.near).toFixed(1)}%, at every k and in every room.`;
     describe(); if (draw3d) draw3d();
 }
