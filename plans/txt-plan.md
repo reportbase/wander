@@ -212,3 +212,33 @@ it became continuous (essay 15, R597); a `.tvf` is a count (N numbers), its leav
 the residue of a finite count holding a corner, is a number defined through π (about 0.0895 of the jump). K continuous
 agrees with OFS's "A resolution, not cells" (R367: the level continuous, the array rounds and the reader does not) and
 with R373 (the floor is what discards); the count of addresses is the writer's floor of it.
+
+## Run 4: rounded corners, the cost of writing a turn (predictions written 3 November, before any code for run 4)
+
+Tom: "Why does tvf work so well, because it's rotational.", "A write is a count, it is discrete. A read is
+continuous.", then "Ok" to this test. **The claim:** a reader's format pays for how fast the direction turns along the
+outline (a continuous turn written as a count); a writer's format pays for how many places its walk stops, and hardly
+for how fast it turns.
+
+**Figures.** Four polygons, a square, an equilateral triangle, a five-pointed star (inner radius 0.4) and a seven-sided
+arrow, every corner rounded to one radius r by a circular arc tangent to both edges. r runs over 0.003, 0.01, 0.03, 0.1
+and 0.3 of the figure's size (the box's longer side, 1,000 units), each capped at the largest radius every corner can
+take (r_max: the arcs' tangent lengths along an edge may not exceed it); a capped value is used once. Formats and τ = 5
+as run 3 (TVF, FD, RAD where it applies; SVG, POLY, STEP, TURTLE), the outline walked to 2,048 points.
+
+**Known beforehand.** Approximation theory: a periodic analytic curve sampled evenly converges at a rate set by the width
+of its strip of analyticity, here about r/L, so even samples need about (L/r)·log(1/τ); α ≈ 1 below is classical. That a
+piecewise curve costs by its pieces is classical too (splines). What is tested is the pairing: two kinds of format whose
+costs follow two different properties of a shape.
+
+**Predictions** (L the outline's length, r the radius used):
+- **U1** For each polygon and each reader format (TVF's N, FD's 2K + 1, RAD's N where it applies), the slope of
+  log(count) against log(L/r), over the radii where the count is under its limit and the corner rule finds no corner
+  (so the fillet, not a corner, sets it), is between 0.7 and 1.3. Killed if any is outside.
+- **U2** For each polygon, SVG's cubic count varies by no more than 1.5 times across the radii. Killed if more.
+- **U3** For each polygon, POLY's vertex count is larger at the largest radius than at the smallest. Killed if not.
+- **U4** For each polygon, TVF's tokens over SVG's best are above 1 at the smallest radius and below 1 at 0.1 of the
+  size (or at r_max if that is smaller). Killed if either fails for any polygon.
+- **U5** On run 3's 73 library figures, with D = L / r_min (r_min the tightest radius of curvature, from circles through
+  points 5 apart of the 2,048), Spearman's ρ of TVF's tokens is higher with D than with the corner count, and SVG's
+  (the shorter variant) is higher with the corner count than with D. Killed if either fails.
