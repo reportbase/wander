@@ -167,3 +167,32 @@ The residuals are Rice coded with the best parameter per frame. A frame's header
 - **D1.** At the 16-bit floor, binary leaves are under 1.0× FLAC on the snare and under 1.3× on the trumpet. The leaves
   are fewer than the samples (10,955 of 44,032 numbers, and 43,669) and as predictable.
 - **D2.** At every target binary is at most half the bytes of run 3's gzipped text on both clips.
+
+### Run 4 (3 Nov; `runs/amx/amx_bin.py`, `runs/amx/amx-run4.txt`, 19 s)
+
+D1 and D2 not killed.
+
+| clip, target | binary leaves (bytes, × FLAC) | run 3's text (× FLAC) |
+|---|---|---|
+| snare, 40 dB | 6,450, 0.33 | 0.97 |
+| snare, 60 dB | 9,701, 0.50 | 1.38 |
+| snare, 16-bit floor | 14,129, 0.73 | 2.00 |
+| trumpet, 40 dB | 20,060, 0.37 | 0.83 |
+| trumpet, 60 dB | 45,444, 0.83 | 1.87 |
+| trumpet, 16-bit floor | 66,947, 1.22 | 2.78 |
+
+Binary is 0.34–0.44 of the gzipped text throughout.
+
+Read after the run, with caveats:
+- **The floor is not lossless.** At the 16-bit floor the error equals the PCM's own rounding noise, so the decoded
+  sound carries that noise twice over (about 3 dB more). FLAC gives back the PCM bit for bit. The comparison is
+  "about as good as the 16-bit file" against "exactly the 16-bit file".
+- **The sources were Vorbis.** Both were decoded from Vorbis, which takes off the highest frequencies; the leaves
+  exploit that (the snare needs 10,955 numbers for 44,032 samples) and FLAC cannot. On a recording never through a lossy
+  codec, the leaves would need more.
+- **The bit counts are estimates.** They are the bits of the residuals and the frame headers, with no container; FLAC's
+  size includes its headers (under 1% here).
+- **Two clips of 2 s each.**
+
+Within those limits, the price of a number is the whole gap: TVF's leaves, packed as FLAC packs samples, come in under
+FLAC on the snare and 1.2× on the trumpet at the floor, against 2.0× and 2.8× as text.

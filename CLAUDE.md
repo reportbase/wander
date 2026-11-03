@@ -1293,6 +1293,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   trumpet (CC BY), against FLAC. Runs 1–2 killed by my set-up (the top frequency invisible at the half-shifted leaves);
   in run 3 the greedy took almost no aimed terms (gain under 5%), and the leaves were 2.0× and 2.8× FLAC at the 16-bit
   floor. Aimed terms do not make TVF competitive on audio: the gap is the cost of each number written as text.
+  R637 (3 Nov; Tom: "text only can be an option, not a requirement."): AMX run 4 (`runs/amx/amx_bin.py`), the same
+  leaves packed as binary (fixed prediction, Rice): 0.73× FLAC (snare) and 1.22× (trumpet) at the 16-bit floor, against
+  2.0× and 2.8× as text. Near-transparent, not lossless; the sources were Vorbis.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

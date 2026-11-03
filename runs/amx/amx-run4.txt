@@ -1,0 +1,13 @@
+AMX run 4 (plans/amx-plan.md): run 3's leaves as binary (quantized, fixed prediction, Rice).
+
+## snare (first 2 s): FLAC 19,464 bytes
+   40 dB: 6,454 numbers, step 2^-12, 6,450 bytes = 0.331 × FLAC
+   60 dB: 9,155 numbers, step 2^-14, 9,701 bytes = 0.498 × FLAC
+   16-bit floor: 10,955 numbers, step 2^-17, 14,129 bytes = 0.726 × FLAC
+## trumpet (first 2 s): FLAC 54,882 bytes
+   40 dB: 20,054 numbers, step 2^-10, 20,060 bytes = 0.366 × FLAC
+   60 dB: 35,551 numbers, step 2^-14, 45,444 bytes = 0.828 × FLAC
+   16-bit floor: 43,669 numbers, step 2^-17, 66,947 bytes = 1.220 × FLAC
+
+D1 at the 16-bit floor binary/FLAC snare 0.726 (< 1.0), trumpet 1.220 (< 1.3): not killed
+D2 binary/text: 0.341, 0.361, 0.363, 0.438, 0.443, 0.440 (all ≤ 0.5): not killed

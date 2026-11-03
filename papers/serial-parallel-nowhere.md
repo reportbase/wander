@@ -6941,6 +6941,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   most on the tonal clip. The leaves alone were 2.0× and 2.8× FLAC at the 16-bit floor. Aimed terms do not make TVF
   competitive on audio; the gap is the price of each number written as decimal text, against FLAC's prediction and
   entropy coding.
+- **R637** (3 Nov; Tom: "text only can be an option, not a requirement."): AMX run 4 packed run 3's leaves as binary
+  (quantized, fixed prediction, Rice coded, as FLAC packs samples). At the 16-bit floor this came to 0.73× FLAC on the
+  snare and 1.22× on the trumpet (2.0× and 2.8× as text), and 0.33–0.83× at 40 and 60 dB; binary is 0.34–0.44 of the
+  text. Caveats: the floor is near-transparent, not lossless; the sources were Vorbis, whose missing top band the leaves
+  exploit; the bit counts carry no container; two clips of 2 s each.
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |
