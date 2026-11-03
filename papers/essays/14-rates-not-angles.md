@@ -269,7 +269,9 @@ in hand.
 
 One caution keeps the claim exact. A rate must say what it is per. Per address, against the sweep's own spacing, a rate
 is a ratio of payloads and scale-free. Per second, it carries the clock's unit (radians per second, photons per second),
-and moving between the two needs the clock carried in. That is a writing.
+and moving between the two needs the clock carried in. That is a writing. Motion says the same (the sixth essay, §2): the
+time until a thing arrives, read from its growing edge, comes out in the reader's own ticks, and a speed in metres a second
+carries two units in.
 
 ---
 
