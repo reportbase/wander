@@ -75,13 +75,18 @@ line on each axis, the circle stated as x² + y² = r², the blueprint, the stri
 scaling the world moves it, and it is the geometry physics writes in, the marks on the paper with their sizes and places.
 *Reader geometry* has no V: directions from one standpoint, shares of one thumb [h : v], the corner, the horizon, the
 Cauchy and order. No figure in it has a size, and scaling the world moves nothing in it, not because V cancels but
-because V was never there. Classically the line falls where Klein drew it: the reader's is close to the geometry of the
+because V was never there. Classically the line falls where Klein (1872) drew it: the reader's is close to the geometry of the
 lines through one point, projective geometry seen from a standpoint (incidence, order, cross ratio, no length), with a
 home and a corner of its own; metric geometry is had from it by fixing something more, and here what is fixed is V,
 carried in by a write. The scale test sorts the two geometries, and the bridge v·V\*, a share of the thumb times a breadth
 carried in, is where a reading crosses from one to the other. So a read is reader geometry, and a write is physical
 geometry, where physics is written. This is how the account is held, not a claim about the world: it says
 where physics sits in this frame and tells physics nothing it does not already know.
+
+Projective geometry can be reached two ways. Taken as lines through the origin of a plane, with the scale divided out,
+it is the writer's route: the box first, the lengths then set aside. Von Staudt's synthetic geometry (1847) reaches it
+from incidence and order alone, with no length to set aside. The reader's route is the second kind: the thumb's shares
+[h : v] first, V never there, and the box built later, by walking and counting.
 
 Everything else in this paper is built on the read, and on its opposite, a count.
 
@@ -890,6 +895,7 @@ and `runs/elm/`.
 - Secrest, N. J. et al. (2021). A test of the cosmological principle with quasars. *Astrophysical Journal Letters* 908,
   L51.
 - Snellius, W. (1617). *Eratosthenes Batavus.* Leiden.
+- Staudt, K. G. C. von (1847). *Geometrie der Lage.* Nürnberg: Bauer und Raspe.
 - Takenaka, S. (1925). On the orthogonal functions and a new formula of interpolation. *Japanese Journal of
   Mathematics* 2, 129–145.
 - Trotter, H. F. (1959). On the product of semi-groups of operators. *Proceedings of the American Mathematical Society*

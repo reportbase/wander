@@ -7130,6 +7130,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   by fixing something more, here V, carried in by a write. The scale test sorts the two geometries; the bridge v·V* is
   where a reading crosses. R653's "a read is geometry, a write is physics" now reads: a read is reader geometry, a write is
   physical geometry, where physics is written. *Reads and Writes* §1.
+  Then (Gemini, pasted by Tom with "Tell Claude: Yes"): §1 names the two classical routes to projective geometry, the
+  quotient of the plane by scale (the writer's, the box first) and von Staudt's synthetic geometry (1847), from incidence
+  and order with no length (the reader's kind); neutral, no claim about what textbooks or other fields obscure (R335,
+  R364, R478). Von Staudt added to the references.
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations
