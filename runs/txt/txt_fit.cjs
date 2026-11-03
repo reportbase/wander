@@ -5,8 +5,8 @@ const fs = require('fs');
 const L = require('./txt_lib.cjs');
 const [drawDir, figsIn, out, shard] = process.argv.slice(2);
 const [sk, sn] = (shard || '1/1').split('/').map(Number);
-const { tvf, fitCubics } = L.loadDraw(drawDir);
-const figs = JSON.parse(fs.readFileSync(figsIn, 'utf8')).filter((_, i) => i % sn === sk - 1);
+const { tvf, fitCubics } = L.loadDraw(require.main === module ? drawDir : process.env.DRAW_DIR);
+const figs = require.main === module ? JSON.parse(fs.readFileSync(figsIn, 'utf8')).filter((_, i) => i % sn === sk - 1) : [];
 const NP = 2048, TAUS = [[5, 0], [1, 1]];
 
 function prep(raw) {
@@ -88,4 +88,5 @@ for (const f of figs) {
     res.push(row);
     process.stderr.write(`${f.key}: corners ${cs.length}; τ5 N ${row.forms[5].N} segs ${row.forms[5].segs}; τ1 N ${row.forms[1].N} segs ${row.forms[1].segs}\n`);
 }
-fs.writeFileSync(out, JSON.stringify(res));
+if (require.main === module) fs.writeFileSync(out, JSON.stringify(res));
+module.exports = { prep, corners, fitTvf, fitSvg };

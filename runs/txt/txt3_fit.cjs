@@ -6,7 +6,7 @@ const L = require('./txt_lib.cjs');
 const F = require('./txt3_formats.cjs');
 const [drawDir, formsIn, out, shard] = process.argv.slice(2);
 const [sk, sn] = (shard || '1/1').split('/').map(Number);
-const { tvf } = L.loadDraw(drawDir);
+const { tvf } = L.loadDraw(require.main === module ? drawDir : process.env.DRAW_DIR);
 const TAU = 5, DPS = [0, 1];
 const pass = (P, form, text) => { const R = F.read(form, text, tvf); return R ? L.hausdorff(P, R) <= TAU : false; };
 
@@ -85,7 +85,7 @@ function fitHYB(P, cs, tvfText) {
     return null;
 }
 
-const forms = JSON.parse(fs.readFileSync(formsIn, 'utf8')).filter((_, i) => i % sn === sk - 1);
+const forms = require.main === module ? JSON.parse(fs.readFileSync(formsIn, 'utf8')).filter((_, i) => i % sn === sk - 1) : [];
 const res = [];
 for (const f of forms) {
     const P = f.P, cs = F.corners(P), f5 = f.forms['5'];
@@ -101,4 +101,5 @@ for (const f of forms) {
     res.push({ key: f.key, corners: cs.length, radApplies: rad.applies !== false, P, texts, check });
     process.stderr.write(`${f.key}: corners ${cs.length} ${Object.keys(texts).join(',')} ${((Date.now() - t0) / 1000).toFixed(1)} s\n`);
 }
-fs.writeFileSync(out, JSON.stringify(res));
+if (require.main === module) fs.writeFileSync(out, JSON.stringify(res));
+module.exports = { fitFD, fitRAD, fitPolys };

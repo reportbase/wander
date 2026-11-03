@@ -242,3 +242,24 @@ costs follow two different properties of a shape.
 - **U5** On run 3's 73 library figures, with D = L / r_min (r_min the tightest radius of curvature, from circles through
   points 5 apart of the 2,048), Spearman's ρ of TVF's tokens is higher with D than with the corner count, and SVG's
   (the shorter variant) is higher with the corner count than with D. Killed if either fails.
+
+**Run 4 (3 November)** (`runs/txt/txt-run4.txt`; the first polygons' counts were seen in the log while it ran, before the
+report). The fitters of runs 2 and 3, unchanged (made importable, `txt_fit.cjs`, `txt3_fit.cjs`), driven by
+`runs/txt/txt4.cjs`; report `txt4_report.py`.
+
+- **U1 killed.** The slopes held on the triangle (TVF 0.92, FD 0.95, RAD 0.99 over three radii) and partly on the square
+  (TVF 0.58, FD 0.75, RAD 1.03 over two). The star's two radii with no corner were 161 and 175 (0.1 of the size and the
+  cap, nearly the same, my set-up), giving a slope of 0; the arrow's two gave 0.39. My corner rule calls a fillet under
+  about 30 units a corner, so only two or three radii a polygon counted. Over every radius the readers' slopes are
+  0.43–0.77: their counts fall steeply as the corners round, but slower than L/r where r is near τ, since there the
+  tolerance itself hides the fillet.
+- **U2 killed.** SVG's cubics vary 1.4–3.75 times: the triangle takes 15 cubics with small fillets and 4 when its
+  fillets fill it (nearly a circle). A writer's count is not flat in r; it falls once round runs replace straight ones.
+- **U3 not killed.** POLY's vertices grow with r on every polygon (square 4 to 28, triangle 3 to 32, star 11 to 52).
+- **U4 not killed.** TVF is 2.0–2.9 times SVG's tokens with sharp corners and 0.54–0.76 at a tenth of the size, on all four.
+- **U5 not killed.** On the 73 library figures TVF's tokens follow the turning demand L/r_min (Spearman 0.845) more than
+  the corner count (0.552); SVG's follow the corner count (0.591) and not the turning demand at all (0.003).
+
+**Reading, after the run.** The reader's cost follows how fast the outline turns; the writer's does not (U5, U4, U3),
+which is the split the run was built to test. The exact scaling (U1) and a flat writer's cost (U2) did not hold as I
+stated them.

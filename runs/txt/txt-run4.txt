@@ -1,0 +1,78 @@
+TXT run 4 (plans/txt-plan.md): four polygons, every corner rounded to radius r; τ = 5, o200k_base tokens.
+
+## square
+         r     L/r corners | counts: TVF N, FD 2K+1, RAD N, SVG cubics, POLY vertices | tokens: TVF, SVG best, ratio
+       3.0  1331.5       4 |   154   103   226    20     4 |   701   246   2.85
+      10.0   398.3       4 |   100    75   146    16     4 |   458   198   2.31
+      30.0   131.6       4 |    56    47    82    12    12 |   258   150   1.72
+     100.0    38.3       0 |    24    27    34    13    20 |   114   162   0.70
+     300.0    11.6       0 |    12    11    10    11    28 |    58   138   0.42
+   U1 tvf slope over 2 radii with no corner: 0.581 (0.7–1.3): KILLED
+   U1 fd slope over 2 radii with no corner: 0.753 (0.7–1.3): not killed
+   U1 rad slope over 2 radii with no corner: 1.026 (0.7–1.3): not killed
+      (all radii, tvf: slope 0.553 over 5)
+      (all radii, fd: slope 0.465 over 5)
+      (all radii, rad: slope 0.651 over 5)
+   U2 SVG cubics 11–20, ×1.82 (≤ 1.5): KILLED
+   U3 POLY 4 at the smallest r, 28 at the largest: not killed
+   U4 TVF/SVG 2.85 at the smallest r, 0.70 at 0.1 of the size (> 1, < 1): not killed
+
+## triangle
+         r     L/r corners | counts: TVF N, FD 2K+1, RAD N, SVG cubics, POLY vertices | tokens: TVF, SVG best, ratio
+       3.0   995.8       3 |   124    89   250    14     3 |   505   174   2.90
+      10.1   295.9       3 |    90    63   134    15     8 |   369   186   1.98
+      31.4    95.9       0 |    48    39    58    15    13 |   200   186   1.08
+     117.2    25.9       0 |    22    21    36    10    17 |    96   126   0.76
+     499.1     6.3       0 |     4     3     4     4    32 |    24    54   0.44   (capped at r_max)
+   U1 tvf slope over 3 radii with no corner: 0.916 (0.7–1.3): not killed
+   U1 fd slope over 3 radii with no corner: 0.948 (0.7–1.3): not killed
+   U1 rad slope over 3 radii with no corner: 0.989 (0.7–1.3): not killed
+      (all radii, tvf: slope 0.666 over 5)
+      (all radii, fd: slope 0.636 over 5)
+      (all radii, rad: slope 0.77 over 5)
+   U2 SVG cubics 4–15, ×3.75 (≤ 1.5): KILLED
+   U3 POLY 3 at the smallest r, 32 at the largest: not killed
+   U4 TVF/SVG 2.90 at the smallest r, 0.76 at 0.1 of the size (> 1, < 1): not killed
+
+## star5
+         r     L/r corners | counts: TVF N, FD 2K+1, RAD N, SVG cubics, POLY vertices | tokens: TVF, SVG best, ratio
+       3.0  1237.4      10 |   178   113   256    30    11 |   721   366   1.97
+      10.4   359.2      10 |   110    73   122    30    19 |   448   366   1.22
+      33.9   108.2      10 |    70    33   102    30    37 |   289   366   0.79
+     161.1    20.4       0 |    28    19    30    18    52 |   120   222   0.54
+     175.2    18.5       0 |    28    19    30    18    52 |   120   222   0.54   (capped at r_max)
+   U1 tvf slope over 2 radii with no corner: 0.0 (0.7–1.3): KILLED
+   U1 fd slope over 2 radii with no corner: 0.0 (0.7–1.3): KILLED
+   U1 rad slope over 2 radii with no corner: 0.0 (0.7–1.3): KILLED
+      (all radii, tvf: slope 0.451 over 5)
+      (all radii, fd: slope 0.438 over 5)
+      (all radii, rad: slope 0.506 over 5)
+   U2 SVG cubics 18–30, ×1.67 (≤ 1.5): KILLED
+   U3 POLY 11 at the smallest r, 52 at the largest: not killed
+   U4 TVF/SVG 1.97 at the smallest r, 0.54 at 0.1 of the size (> 1, < 1): not killed
+
+## arrow
+         r     L/r corners | counts: TVF N, FD 2K+1, RAD N, SVG cubics, POLY vertices | tokens: TVF, SVG best, ratio
+       3.0  1036.6       7 |   138    93  None    23     7 |   561   282   1.99
+      10.0   306.0       7 |    92    67  None    19    12 |   376   234   1.61
+      30.4    97.3       0 |    50    43  None    16    23 |   208   198   1.05
+      75.4    35.7       0 |    34    29  None    16    30 |   144   198   0.73   (capped at r_max)
+   U1 tvf slope over 2 radii with no corner: 0.385 (0.7–1.3): KILLED
+   U1 fd slope over 2 radii with no corner: 0.393 (0.7–1.3): KILLED
+   U1 rad: does not apply
+      (all radii, tvf: slope 0.427 over 4)
+      (all radii, fd: slope 0.349 over 4)
+      (all radii, rad: slope None over 0)
+   U2 SVG cubics 16–23, ×1.44 (≤ 1.5): not killed
+   U3 POLY 7 at the smallest r, 30 at the largest: not killed
+   U4 TVF/SVG 1.99 at the smallest r, 0.73 at 0.1 of the size (> 1, < 1): not killed
+
+## library (73 figures): Spearman ρ
+   TVF tokens with D = L/r_min 0.845, with corners 0.552
+   SVG tokens with D 0.003, with corners 0.591
+
+U1 reader formats' slopes in 0.7–1.3 on every polygon: KILLED
+U2 SVG within ×1.5 across the radii on every polygon: KILLED
+U3 POLY larger at the largest radius on every polygon: not killed
+U4 TVF longer than SVG at the smallest radius and shorter at 0.1 on every polygon: not killed
+U5 TVF with D 0.845 > with corners 0.552, and SVG with corners 0.591 > with D 0.003: not killed
