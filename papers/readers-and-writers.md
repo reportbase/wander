@@ -45,6 +45,13 @@ in metres.
 
 The first part is reading. The second and third are writing. The rest of this paper is about the line between them.
 
+**What a read is.** A read is a sweep of the thumb: the one length the reader holds, H, turned from all of it lying along
+h to all of it standing along v. It is centred on the crosshairs of two thumbs, the corner, which separates the near field,
+one thumb, from the far field beyond it, read as ratios (one in two, one in four, …) and counted by a writer in thumbs.
+The read's addresses are K, the addresses available to it, arranged by the Cauchy: half of them before the corner and half
+after, whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Everything else in
+this paper is built on that sweep, and on its opposite, a count.
+
 **Words.** The paper names acts, a *read* and a *write*, not two kinds of observer: one observer reads while it stands and
 turns, and writes while it walks, counts, ranges or agrees a unit. *Read*, *reading* and *reader* are used as each sentence
 needs (a reader is whatever is reading, for as long as it reads), and likewise *write*, *writing* and *writer*.
@@ -441,7 +448,7 @@ decimal 1.5574… is the writer's account of where it is. The reader meets these
 
 ## 6. Near and far
 
-**The crosshairs.** Cross the two thumbs (§7) over whatever is looked at. Where they cross is the corner: the thing there
+**The crosshairs.** (The read as §1 defines it.) Cross the two thumbs (§7) over whatever is looked at. Where they cross is the corner: the thing there
 reads one thumb up for one thumb along and one thumb across, v/h = v₂/h = 1, and it is drawn one thumb wide. That crossing
 sets the near field and the far field. The near field is a single thumb, laid evenly: everything nearer than the crossing
 gets its addresses in proportion, the first half of the thumb as much room as the second. The far field is read in ratios:

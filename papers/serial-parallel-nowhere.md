@@ -7027,7 +7027,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   e^(iθ). Bernoulli's (1 + 1/n)ⁿ and Euler's (1 + iθ/n)ⁿ are one limit on two axes, error −w²/(2n) on both; from a
   standpoint z = m + iγ the limit is the Cauchy's e^(izt) (Gemini's sign for its modulus term corrected before the run);
   in space the alternating count leaves (θ₁θ₂/2)·sin(φ/2)/(φ/2) at 1/n (Lie–Trotter), the plane nothing. Run 1's L6
-  killed by my set-up (acos near 1 at 50 digits), L6′ not. Classical mathematics; the reading ours. In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
+  killed by my set-up (acos near 1 at 50 digits), L6′ not. Classical mathematics; the reading ours.
+- **R648** (3 Nov; Tom: "what is a read exactly. possibly its just a facing, so 4 reads to equal a circle. parallax
+  connects them."; "A read is a sweep of H."; "A read is a sweep of the thumb, centered by the intersection of two thumbs,
+  that seperates the near field, 1 thumb, with the far field, of many thumbs. K is split evenly between the near field and
+  the far field."; "K is the avaialble address, and they are arranged according to cauchy. with half before the corner and
+  half after."): a read is a sweep of the thumb H, from all h to all v, centred on the crosshairs (the corner), which split
+  the near field (one thumb, in proportion) from the far field (read as ratios, counted by a writer in thumbs); its K
+  available addresses are laid by the Cauchy, half before the corner and half after at every H (R408). A reading is one
+  direction in it. A facing is the writer's name for a read's span (π/2 its writer's measure); four reads joined with their
+  signs are the circle, 2π, a count, so a write (to the reader, once round is no turn, R327); parallax joins reads, two
+  sweeps from two standpoints tied by a counted step. *Reads and Writes* §1 "What a read is"; §6's crosshairs point to it.
+ In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations
 

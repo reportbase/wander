@@ -1339,6 +1339,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   composed by tangent addition, exact in ℚ[i]; the angle short by θ³/(3n²), the length grown by θ²/(2n) and unread; the
   limit e^(iθ) the writer's; Bernoulli's and Euler's one limit on two axes; from z = m + iγ the Cauchy's e^(izt); in space
   the Lie–Trotter leftover, in the plane none. Run 1's L6 killed by my set-up, run 2's L6′ not. In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
+  R648 (3 Nov; Tom: "A read is a sweep of the thumb, centered by the intersection of two thumbs, that seperates the near
+  field, 1 thumb, with the far field, of many thumbs."; "K is the avaialble address, and they are arranged according to
+  cauchy. with half before the corner and half after."): **a read is a sweep of the thumb**, centred on the crosshairs (the
+  corner); near field one thumb, far field read as ratios and counted in thumbs; K available addresses laid by the Cauchy,
+  half each side of the corner at every H. A reading is one direction in it; a facing the writer's name for its span; four
+  joined the circle (a write); parallax joins reads by a counted step. *Reads and Writes* §1 "What a read is".
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
