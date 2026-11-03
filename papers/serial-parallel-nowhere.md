@@ -6933,6 +6933,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   on polygons with few corners, capped on detail at many places); P2 killed by my set-up (the library's "round" holds
   cusped figures); P3 held (the standpoints at percentile 83 of the leaves' error). A standpoint costs twice a leaf; it
   pays where the detail is in a few places. A mixed reader (even leaves, a few aimed terms at corners) is untested.
+- **R636** (3 Nov; Tom: "tvf was slightly larger than industry formats for vector graphics and audio. i'm wondering if
+  this could make tvf competitive.", "yes, do the audio test", "that is to long."): AMX (`plans/amx-plan.md`,
+  `runs/amx/`), the mixed reader on two real clips (a snare, a trumpet; 2 s each after the set-up was cut for time). Runs 1
+  and 2 failed on my set-up: the top frequency is invisible at the half-shifted leaves. In run 3 the greedy took almost
+  no aimed terms (39 against 8,856 leaves on the snare at 60 dB; none on the trumpet at the floor), saving under 5%,
+  most on the tonal clip. The leaves alone were 2.0× and 2.8× FLAC at the 16-bit floor. Aimed terms do not make TVF
+  competitive on audio; the gap is the price of each number written as decimal text, against FLAC's prediction and
+  entropy coding.
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |

@@ -119,3 +119,38 @@ however many digits they had. Run 2 kept it in the projection but not in the num
 
 The only change: a frame that takes all M leaves also stores its top-frequency coefficient as one more number
 (M + 1 numbers). A1–A4 are restated unchanged as C1–C4, with the same bounds.
+
+### Run 3 (3 Nov; `runs/amx/amx-run3.txt`, 5 min on 4 cores)
+
+Every target met. C1 killed, C2 not killed, C3 killed, C4 not killed, on 1 frame of 1 (too few to mean anything).
+
+| clip, target | leaves alone (bytes, × FLAC) | mixed (bytes, × FLAC) | aimed terms used |
+|---|---|---|---|
+| snare, 40 dB | 18,924, 0.97 | 18,924, 0.97 | 0 |
+| snare, 60 dB | 26,897, 1.38 | 26,787, 1.38 | 39 (against 8,856 leaves) |
+| snare, 16-bit floor | 38,925, 2.00 | 38,492, 1.98 | 11 (against 10,704 leaves) |
+| trumpet, 40 dB | 45,794, 0.83 | 45,521, 0.83 | 37 |
+| trumpet, 60 dB | 102,660, 1.87 | 98,412, 1.79 | 167 |
+| trumpet, 16-bit floor | 152,281, 2.78 | 152,281, 2.78 | 0 |
+
+FLAC: 19,464 bytes (snare), 54,882 (trumpet).
+
+- **C1 killed.** On the snare at the floor, mixed/leaves was 0.989, not ≤ 0.8.
+- **C3 killed.** At the floor the leaves alone were 2.0× FLAC (snare) and 2.8× FLAC (trumpet), not within 0.7–1.5; and
+  the mixed reader did not get under FLAC. This encoder matches §7's "about twice FLAC at bit-exact", not its tie at the
+  transparent point. It is not the cascade (§7's file and settings are not recorded), so this does not test §7's tie.
+
+Read after the run:
+- **The greedy takes almost no aimed terms.** Even on the drum, an attack in a real 46 ms frame is not one sharp place
+  in an otherwise smooth frame. The frame is full of broadband detail (the snare's rattle, the reverb, the codec's noise
+  floor), which is the leaves' case. The gain is under 5% wherever there is one, and most on the tonal clip at 60 dB,
+  the opposite of the prediction.
+- **FLAC wins at fine accuracy for another reason.** Its linear prediction carries each frame's resonances in about 12
+  coefficients, and its residual is coded in whole bits. Leaves written as decimal text at 5 digits cost more per
+  number; at the floor the numbers alone (10,955 for the snare) are fewer than the 88,064 raw bytes, but each is about
+  3.5 bytes once gzipped.
+- **At 40 dB TVF-style leaves are under FLAC** (0.97×, 0.83×). That is no win: FLAC is lossless, and any lossy codec is
+  smaller at 40 dB.
+
+So aimed terms do not make TVF competitive on audio. What separates it from FLAC at fine accuracy is the cost of each
+number (decimal text against prediction and entropy coding), not how the waveform is approximated.

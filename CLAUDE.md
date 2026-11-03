@@ -1288,6 +1288,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R635 (3 Nov; Tom: "yes, lets test on tvf draw labs."): EPI in draw's labs, `?lab=aim` (draw `labs/aimed-terms.js`,
   its `papers/labs.md` §58), aimed terms against the even leaves on 40 library figures in reals; P1, P2 killed (P2 by my
   set-up), P3 held. Recorded below EPI's runs.
+  R636 (3 Nov; Tom: "i'm wondering if this could make tvf competitive.", "yes, do the audio test"): AMX
+  (`plans/amx-plan.md` + `runs/amx/amx.py`), even leaves against leaves plus aimed terms on 2 s of librosa's snare and
+  trumpet (CC BY), against FLAC. Runs 1–2 killed by my set-up (the top frequency invisible at the half-shifted leaves);
+  in run 3 the greedy took almost no aimed terms (gain under 5%), and the leaves were 2.0× and 2.8× FLAC at the 16-bit
+  floor. Aimed terms do not make TVF competitive on audio: the gap is the cost of each number written as text.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
