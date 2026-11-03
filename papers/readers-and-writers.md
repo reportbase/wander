@@ -782,8 +782,8 @@ measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumb
 - Machin, J. (1706), in W. Jones, *Synopsis palmariorum matheseos.* London.
 - Malmquist, F. (1926). Sur la détermination d'une classe de fonctions analytiques par leurs valeurs dans un
   ensemble donné de points. *Comptes Rendus du Sixième Congrès des Mathématiciens Scandinaves* (Copenhagen, 1925), 253–259.
-- Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata.* Duisburg.
 - McCullagh, P. (1992). Conditional inference and Cauchy models. *Biometrika* 79, 247–259.
+- Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata.* Duisburg.
 - Poincaré, H. (1902). *La Science et l'hypothèse.* Paris. (1908). *Science et méthode.* Paris.
 - Qian, T. and Wang, Y.-B. (2011). Adaptive Fourier series, a variation of greedy algorithm. *Advances in
   Computational Mathematics* 34, 279–293.
