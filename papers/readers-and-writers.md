@@ -637,6 +637,21 @@ coming nearer from a thing growing where it stands, since both raise x alike; a 
 once, tells them apart, approach moving both readings and growth one. The rate at which the reader turns cancels from
 every reading. A speed in metres a second is a writing twice over: a metre and a second, both carried in.
 
+**Walking to the mountain.** Hold the thumb out at arm's length, H against the arm L, and walk toward a mountain whose
+breadth V\* and distance d are unknown. The thumb never changes; each read is the mountain against it,
+v/h = (V\*/d)/(H/L), and only d moves it. Far off the mountain is one in eight of the thumb, then one in four, one in
+two: each time the distance halves the reading doubles, and each such stretch takes as many addresses as the last. Then
+there is one place where the mountain exactly covers the thumb. That is the corner, met by looking, with no amount
+needed: the reader can say "now the mountain is my thumb" while V\*, d and the corner's distance d_c = V\*·L/H stay
+unknown. Past it the mountain grows past the thumb, and the two sides mirror each other: standing at d and at d_c²/d
+read as reciprocals. At the foot h falls to 0 and the reading is the horizon, [0 : 1]: the mountain is no longer a thing
+in the sweep but all of v. By halvings the horizon is never reached, and yet the walk arrives, because the walk is a
+count of strides and ends; arrival is contact, a write in one's own H. On the way τ̇ is a read with V unknown: a steady
+pace reads −1, past Lee's −½, so the walker arrives at speed; easing so that τ̇ holds at −½ stops at the foot. And the
+strides from the corner to the foot are d_c, so counting them writes the mountain: V\* = (strides from the corner) × H/L,
+in the walker's own stride, and in metres once the stride is carried in. Scale the world and no reading along the walk
+moves, only that count. We do this whenever we walk toward something: the corner is free, the size is counted.
+
 **Knowing V comes by degrees.** The crossing is not a switch thrown. It has three counts.
 
 - *In what.* Two standpoints a step apart give every place in that step. If the step was H, one thumb, places are in thumbs
