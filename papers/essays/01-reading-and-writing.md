@@ -216,8 +216,8 @@ without the circle. Where does it come from?
 
 It comes from pointing. Hold your one length, H, your thumb, up at the mountain, and turn it about one end, steadily, like
 the beam of a lighthouse sweeping the sea, or your gaze sweeping along a row of trees. A writer watching sees the free end
-trace a circle, for one simple reason: the length does not change as it turns. The reader does not hold that circle. It
-holds where its thumb points, and each pointing is a reading. Its geometry is what the pointing generates.
+trace a circle, for one simple reason: the length does not change as it turns. The reader does not hold that circle.
+Circles and spheres are the writer's tools; a reader has a vantage, not a shape. It holds where its thumb points, and each pointing is a reading. Its geometry is what the pointing generates.
 
 Now ask what the reader reads as it turns. At each moment its length points in some direction. The direction has an
 across part and an up part, two shares of the same length: h across and v up. What the reader reads is how they compare,

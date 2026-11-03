@@ -277,8 +277,9 @@ share addresses; near slots each get several. That is not a fault of the reader'
 
 **Central: the values as payload.** Lay the slots round a circle instead, one per equal step of turn, and stand at its
 centre. Now the directions are given, one per slot, and what each slot holds arrives along its direction as an amount:
-a radius. The reader gets the shape those radii make, but in a unit no reading fixes. Multiply every value by the same
-factor and the shape, divided by the radii's geometric mean, does not change. The overall size is the one term no reading
+a radius, an amount in a unit no reading fixes. Held together, the radii make a shape, and holding them as a shape is
+the writer's: a reader has a vantage, not a shape. Multiply every value by the same factor and that shape, divided by the
+radii's geometric mean, does not change. The overall size is the one term no reading
 reaches.
 
 **`a[i]` holds both as one.** In code, `a[i]` is one expression, the place and what is at the place. From a standpoint

@@ -136,7 +136,8 @@ This marks a difference of vantage that runs through the whole series.
   reads crosses from one end to the other.
 
 The chord is what the writer holds, and so is the circle the arc closes into. The reader holds neither: it points its
-thumb, and the arc is what that pointing sweeps.
+thumb, and the arc is what that pointing sweeps. Circles and spheres are the writer's tools. A reader has a vantage, not a
+shape, and walking the shape, round it or along it, is how it becomes a writer.
 
 *Demo: the facing: one sweep from A to B, the facing turning through square to the line at the corner.*
 

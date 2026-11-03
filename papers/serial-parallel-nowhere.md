@@ -6993,6 +6993,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   held at once, the writer's. A reader has a vantage (a standpoint and its turn), not a shape, in any dimension; walking
   the shape makes it a writer (R594). *Reads and Writes* §2 "A vantage, not a shape"; §7 retitled "the reader's vantage
   and the writer's cube" (it said "the reader's sphere").
+  The essays follow (Tom: "update the essays"): 1 §5, 2 (the chord and the arc), 5 (the wedge and §8's orthants), 6 §12
+  (nothing counted from one standpoint, R641), 12 (the central slots' radii a shape only as the writer holds them, R569),
+  14 §10.
 
 ## Appendix B. Demos and computations
 

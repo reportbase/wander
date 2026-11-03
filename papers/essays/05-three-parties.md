@@ -26,7 +26,8 @@ distance. It says how much of each, compared with the others.
 None of the three is ever negative. The wall to your left is not "minus the wall to your right"; it is just another wall.
 So the reader's directions, drawn whole from outside as a writer draws them, make one wedge, an eighth of the sphere of all
 directions: an *octant*. The other seven octants of a full sphere are only this wedge faced another way. The wedge is the
-writer's description of the reader's geometry. The reader never holds it whole; section 4 says what it has instead.
+writer's description of the reader's geometry. The reader never holds it whole: it has a vantage, not a shape, and section
+4 says what that vantage is.
 
 *Demos: the room (home in the floor corner, the room one wedge); the wedge.*
 
@@ -186,7 +187,8 @@ n + 1: one more power of the cosine for each party added.
 ## 8. More parties
 
 Nothing in the argument depended on there being exactly two other parties. With n of them, each read on the reader's one
-length, the relation lies on the sphere in n + 1 dimensions, and the reader's space is one of its 2^(n+1) orthants.
+length, the relation lies on the sphere in n + 1 dimensions, and the reader's directions, drawn whole by a writer, are one of its
+2^(n+1) orthants. The reader itself has the vantage, not the sphere or the orthant.
 
 - **Every reading and every pair keeps its corner.** Integrate out all but one reading and you get the one-party
   Cauchy. Integrate out all but two and you get the wedge's. Adding a party changes nothing about the pairs already held.

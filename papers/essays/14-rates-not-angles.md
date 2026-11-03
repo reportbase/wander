@@ -388,7 +388,7 @@ numbers are the Cauchy's, and have no π in them.
 own is a cube: one number line on each axis, every point three amounts, every edge run at the writer's rate, 1, nothing
 round (the first essay's box). The sphere is how the writer draws the reader: its one length H, the thumb, turned every way
 from where it stands, every direction an address, no distance on it, the sweeps measured at π/2 and 2/π on a circle and at
-2 and ½ over a hemisphere. The reader itself holds no sphere, nor a circle. It points its crossed thumbs at the mountain
+2 and ½ over a hemisphere. The reader itself holds no sphere, nor a circle: it has a vantage, not a shape. It points its crossed thumbs at the mountain
 and reads with the Cauchy: its readings on one open line from home to a horizon, in space the two ratios v/h and v₂/h,
 never closed, never totalled. From A = (1, 0) to B = (0, 1) there are then three ways, two the writer's and one the
 reader's:
