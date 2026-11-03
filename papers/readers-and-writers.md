@@ -413,7 +413,8 @@ e^(izt) = e^(imt − γt) for t ≥ 0, the Cauchy's own characteristic function:
 along the real axis, an amount rather than a read. And the construction is the plane's. In space, where turns do not
 commute, alternating small steps about the two thumbs leaves a turn of order 1/n, (θ₁θ₂/2)·sin(φ/2)/(φ/2) for a whole
 turn φ; in the plane it leaves none. All of this is classical (Euler 1748; the Lie–Trotter product formula, Trotter 1959); what is ours
-is the reading: each finite count a read, the limit a write, exact only where the turns commute.
+is the reading: each finite count a read, the limit a write, exact only where the turns commute. So Euler's formula
+sorts like everything else here: the turn it describes is read, and the number it is written in is a count completed.
 
 The reader's two ignorances, after Jaynes (1968), are which way it faces and how large things are: turns and rescalings.
 Each is a one-parameter group with an exponential map. Turns close, so their map has a period, 2π. Rescalings never close,
