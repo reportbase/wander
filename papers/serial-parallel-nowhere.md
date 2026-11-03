@@ -7121,6 +7121,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   wording of R565 ("every reading a ratio, cancelling V"). *Reads and Writes* §1 "V.", §2 ("Why there is no mean: the
   Cauchy is an address"; scale 1), §8 (the parallax proof, the turning rate, the walk); essays 1, 16 and the README.
   The essays' other uses of "the missing mean" (a phrase for the law, said of a chart) are left as they are.
+- **R655** (3 Nov; Tom: "there is a physical geometry that has a V and a reader geomerty that doesn't.", then "yes"):
+  **two geometries.** Physical geometry has V (lengths, extents, the writer's cube of number lines, x² + y² = r², the
+  blueprint, the counted stride; every figure sized, moved by scaling the world; the geometry physics writes in). Reader
+  geometry has no V (directions from one standpoint, the thumb's shares [h : v], the corner, the horizon, the Cauchy,
+  order; nothing sized, nothing moved by scaling, V never there, R654). Klein's line: the reader's close to the pencil of
+  lines through a point, projective geometry from a standpoint with a home and a corner of its own; metric geometry is had
+  by fixing something more, here V, carried in by a write. The scale test sorts the two geometries; the bridge v·V* is
+  where a reading crosses. R653's "a read is geometry, a write is physics" now reads: a read is reader geometry, a write is
+  physical geometry, where physics is written. *Reads and Writes* §1.
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations

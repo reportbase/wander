@@ -68,7 +68,19 @@ physical thing writes on it, a stone's mass, a planet's path, a cell dividing; p
 writer that copies its own marks forward. A read adds nothing to the paper. Its addresses are the geometry laid over it,
 there whether the paper is blank or full, and the light that arrives at them is the paper's writing met there. A reader's
 body is written too, its thumb a mark like any other; but the thumb held out as H is not a mark, it is the read's own
-length, which is why no read carries a scale. This is how the account is held, not a claim about the world: it says
+length, which is why no read carries a scale.
+
+There are two geometries here, not one. *Physical geometry* has V: lengths and extents, the writer's cube with a number
+line on each axis, the circle stated as x² + y² = r², the blueprint, the stride counted. Every figure in it has a size,
+scaling the world moves it, and it is the geometry physics writes in, the marks on the paper with their sizes and places.
+*Reader geometry* has no V: directions from one standpoint, shares of one thumb [h : v], the corner, the horizon, the
+Cauchy and order. No figure in it has a size, and scaling the world moves nothing in it, not because V cancels but
+because V was never there. Classically the line falls where Klein drew it: the reader's is close to the geometry of the
+lines through one point, projective geometry seen from a standpoint (incidence, order, cross ratio, no length), with a
+home and a corner of its own; metric geometry is had from it by fixing something more, and here what is fixed is V,
+carried in by a write. The scale test sorts the two geometries, and the bridge v·V\*, a share of the thumb times a breadth
+carried in, is where a reading crosses from one to the other. So a read is reader geometry, and a write is physical
+geometry, where physics is written. This is how the account is held, not a claim about the world: it says
 where physics sits in this frame and tells physics nothing it does not already know.
 
 Everything else in this paper is built on the read, and on its opposite, a count.

@@ -1390,6 +1390,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   enters a read**: a reading is a ratio of the thumb's own shares; never say V "cancels" from a reading or is "missing",
   and say "no mean", not "the missing mean". "Cancels" and "divided out" only where the text speaks as the writer, marked
   so. Supersedes R565's wording. *Reads and Writes* §1, §2, §8; essays 1, 16, README.
+  R655 (3 Nov; Tom: "there is a physical geometry that has a V and a reader geomerty that doesn't."; "yes"): **two
+  geometries: physical geometry has V (sized, moved by scaling, where physics is written); reader geometry has none**
+  (directions, shares of the thumb, corner, horizon, Cauchy, order). Klein's line (projective from a standpoint against
+  metric, V the thing fixed). A read is reader geometry, a write physical geometry. *Reads and Writes* §1.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
