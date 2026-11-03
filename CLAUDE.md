@@ -1365,7 +1365,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R650 (3 Nov; Tom: "You keep a constant H the entire distance between H and V. What happens as we approach V and then
   finally arrive at V.", then "this would be a great demo …"): the thumb held out on the walk, v/h = (V*/d)/(H/L); far off
   ratios, the corner met by looking at d_c = V*·L/H, d and d_c²/d reciprocals, the foot the horizon reached only by the
-  counted walk; steady τ̇ = −1, eased −½; strides from the corner to the foot write V* = strides × H/L. `approach.html`.
+  counted walk; steady τ̇ = −1, eased −½; strides from the corner to the foot write V* = strides × H/L. `approach.html`. *Reads and
+  Writes* §8 "Walking to the mountain".
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

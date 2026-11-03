@@ -7065,6 +7065,7 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   one's own H, R538). A steady pace reads τ̇ = −1 (arriving at speed), an eased one −½ (stopping at the foot), V
   unknown; τ in ticks a write (R649). Counting strides from the corner to the foot writes V* = strides × H/L, metres
   once the stride is carried in; scaling the world moves no reading along the walk, only the count. `approach.html`.
+  Then (Tom: "add it."): *Reads and Writes* §8, "Walking to the mountain", after "Motion, read".
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations
