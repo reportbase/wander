@@ -6996,6 +6996,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   The essays follow (Tom: "update the essays"): 1 §5, 2 (the chord and the arc), 5 (the wedge and §8's orthants), 6 §12
   (nothing counted from one standpoint, R641), 12 (the central slots' radii a shape only as the writer holds them, R569),
   14 §10.
+  The demos follow (Tom: "update the demos"), visible wording only, ids, params and hooks kept: `blueprint.html` and
+  `blueprint-3d.html` ("A vantage, painted by what arrives"; the circle or shell drawn round it the writer's picture),
+  `glass-box.html`, `writer-box.html` and `wedge.html` (the sphere and wedge the writer's drawing of a reader's
+  directions), `demos.html`'s cards for these and the star field and sphere-cube, `essays.html`'s essay 5 card,
+  `mountain.html` (read from where it stands, not "off its circle"), `room-walk.html` (the writer's one-length circle),
+  `star-field.html`'s check line. No demo said the far field in counted thumbs (R642 needed nothing).
 
 ## Appendix B. Demos and computations
 

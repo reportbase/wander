@@ -360,7 +360,7 @@ function render() {
         `${S.inf ? 'every level filled' : `out to level ${w.jN} (d ≤ 2^${w.jN} u)`}; at H = 2^${S.k} u, ${fmt(near)} inside the corner and ` +
         `${far === null ? 'infinitely many' : fmt(far)} past it. The reader: ${S.n} addresses, ${S.n / 2} inside H and ${S.n / 2} past it, the same at every N and every H.`;
     $('check').innerHTML = `<span class="ok">The reader's view at N and at 2N differ by at most ${last.diff.toExponential(2)} in any address's share × K;</span> ` +
-        `each is the unit circle to within ${Math.max(a.maxDev, b.maxDev).toExponential(2)}, half its reading past the corner${N !== Infinity && N < 16n * BigInt(S.n) ? ` (only ${fmt(N)} stars for ${S.n} addresses: the reader sees single stars; raise N)` : ''}. The writer meanwhile ` +
+        `each, drawn as a writer draws it, is the unit circle to within ${Math.max(a.maxDev, b.maxDev).toExponential(2)}, half its reading past the corner${N !== Infinity && N < 16n * BigInt(S.n) ? ` (only ${fmt(N)} stars for ${S.n} addresses: the reader sees single stars; raise N)` : ''}. The writer meanwhile ` +
         `${S.inf ? 'has no end to its count' : `counts ${fmt(Ne)} stars, then ${fmt(worldOf(2n * N).N)}`}. `;
     document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
     $('inf').classList.toggle('on', S.inf); $('m').value = S.m; $('m').disabled = S.inf; $('half').disabled = S.inf; $('dbl').disabled = S.inf; $('H').value = S.k;

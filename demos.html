@@ -200,7 +200,8 @@
         <p>N is invisible to the reader. The writer's view: N stars where they are, four times as many each doubling of
             distance, made from their cells so the field can be infinite, each with an index; double N and the far field
             fills. The reader's view: each star a direction only, counted at the reader's own addresses at equal angles, the
-            share at each laid on its unit circle, in proportion on both sides of the corner: at N and at 2N the same circle.
+            share at each drawn, as a writer draws it, on a unit circle, in proportion on both sides of the corner: at N and at 2N
+            the same drawing.
             Zoom the writer's map anywhere and point at a star for its index.</p>
         <p class="try">Try: <a href="star-field.html?N=8">few stars (the reader sees single ones)</a><a href="star-field.html?N=30">2^30, and × 2</a><a href="star-field.html?N=inf">N infinite</a><a href="star-field.html?N=inf&amp;star=123456789012">star #123,456,789,012</a></p>
     </section>
@@ -215,8 +216,8 @@
     <section class="card" id="blueprint">
         <h2><a href="blueprint.html">One blueprint, two vantages</a></h2>
         <p>A property held by the writer and by the reader. The writer has the blueprint, every length in metres, and its
-            circle is round the whole lot, looking in, its radius an amount. The reader is a circle round one point,
-            looking out: nothing on the lot sends, so each direction is painted by the light from the first thing on its
+            circle is round the whole lot, looking in, its radius an amount. The reader has a vantage, not a shape (the circle
+            drawn round it is the writer's picture): one point, looking out: nothing on the lot sends, so each direction is painted by the light from the first thing on its
             line, and no distance arrives (send a pulse for ranges: that is writing). At a home corner the reader's
             addresses are the quarter turn, each [h : v], half of them either side of v = h, given before anything is
             painted. Write: one counted stride, and two looks place every corner in
@@ -236,8 +237,8 @@
     <section class="card" id="writer-box">
         <h2><a href="writer-box.html">The writer's box</a></h2>
         <p>Full screen, in three.js. The writer is a box: one number line on each axis, both signs, every extent an
-            amount, nothing round. A reader stands inside it: a sphere round one point, radius H, and one octant of it, the
-            wedge, drawn with the other seven faint. Its addresses, cells of Lambert's map uniform over the octant, are
+            amount, nothing round. A reader stands inside it with a vantage, drawn as the writer draws it: a sphere round one point,
+            radius H, and one octant of it, the wedge, drawn with the other seven faint. Its addresses, cells of Lambert's map uniform over the octant, are
             directions, two numbers each, and each points at a point of the box's faces, three numbers. The one between is
             the distance, never read. Drag the wedge anywhere, turn it, resize the box, change H or scale the world: the
             points it reaches change, the addresses and their shares (every pair at its corner, the near field a third)
@@ -249,8 +250,8 @@
     </section>
     <section class="card" id="glass-box">
         <h2><a href="glass-box.html">The stained-glass box</a></h2>
-        <p>Full screen, in three.js. The writer's box with a picture on every face, and a reader inside it: a sphere of
-            radius H round one point and one octant of it, the wedge. Light leaves each pixel and travels in, through the
+        <p>Full screen, in three.js. The writer's box with a picture on every face, and a reader inside it, its vantage drawn as
+            the writer draws it: a sphere of radius H round one point and one octant of it, the wedge. Light leaves each pixel and travels in, through the
             wedge, to the reader, and paints the address it arrives along. From home the wedge holds the pictures as
             received, one colour per address, no distance. Turn the wedge or move the reader and the colours change, never
             the addresses; scale the world and nothing changes. A ghost box twice as large (or half), its pictures with it,
@@ -573,7 +574,8 @@
     <section class="card" id="sphere-cube">
         <div class="tag">a demo in 3D: the sphere in the cube</div>
         <h2><a href="sphere-cube.html">The sphere in the cube</a></h2>
-        <p>A sphere, free to turn, inside the unit cube, the reader's frame, every party a share of its one length. Each
+        <p>A sphere, free to turn, inside the unit cube: the writer's picture of a reader's directions (the reader itself has a
+        vantage, not a shape), every party a share of its one length. Each
         point of the sphere is a direction from the centre: an address. Its ray lands on one point of an inner cube, on the
         face of its largest component, whatever the cube's size and however the sphere is turned; a point inside is a share
         t of the way along. The address is the same at every size; the point in amounts needs the cube's extent, and a
@@ -587,7 +589,7 @@
     <section class="card" id="wedge">
         <div class="tag">a demo in 3D: the wedge</div>
         <h2><a href="wedge.html">The wedge</a></h2>
-        <p>Not a sphere: the reader's own space. Three unit relations, h, v and v₂, each from 0 to 1, every party a share
+        <p>Not a sphere: the writer's drawing of one reader's directions; the reader itself has a vantage, not a shape. Three unit relations, h, v and v₂, each from 0 to 1, every party a share
         of the one length H; every [h, v, v₂] is a point of the unit cube and its directions are one octant, the wedge, given to one
         observation. A relation is never negative, so a sphere's other seven octants are only this wedge faced another
         way. Seen from home, the apex, through a flat screen the wedge is the triangle h + v + v₂ = 1: each direction lands
