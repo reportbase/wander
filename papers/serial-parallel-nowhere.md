@@ -7043,6 +7043,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   one sweep's span, the circle (and in 3D the sphere) the writer's join of the sweeps with their signs, so "four reads make
   a circle" above is withdrawn: one read holds every sweep. Two reads, at two moments or two standpoints, are joined only
   across a counted step: parallax, a write. *Reads and Writes* §1 rewritten to it.
+  Then (Tom: "facing is writers term, that describes multiple reads."): a facing is not a read's span or a sweep's; it
+  is the writer's term for several reads held together (their spans joined with their signs, which no read carries), so
+  "a facing the writer's name for a read's span" and "for one sweep's span" above are withdrawn. *Reads and Writes* §1
+  says so in one sentence.
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations
