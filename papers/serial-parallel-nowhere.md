@@ -7111,6 +7111,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   met, the per read and the of written; the two tests one split seen two ways), §2 (the paint the world's writing met there;
   the payload recovered by its ratios a write read again), §3 (the fingers stay geometry, with or without the light), §4
   (a rate lays a write over a read); essays 2 §9, 3 §5 (the paint and the ratios), 14 §1 and §10.
+- **R654** (3 Nov; Gemini, pasted by Tom: "There is no V in a reading, its not missing, it was never there."; Tom:
+  "yes"): **V never enters a read.** A reading is a ratio of the thumb's own shares, [h : v]; to say V "cancels" from it,
+  or that its scale is 1 "because every amount has been divided out", looks at the read through the writer's eyes, as if
+  a box of amounts came first and the projection divided V away. "Cancels" and "divided out" stay where the text speaks
+  as the writer, marked so (§2's derivations of the Cauchy from the circle's equation and from two normal amounts, the
+  lighthouse's path, Lee's τ, the walk's v/h = (V*/d)/(H/L) as the writer's account of which finger the mountain's edge
+  touches). "The missing mean" becomes "no mean": directions have no sum, so a mean was never there (R604). Supersedes the
+  wording of R565 ("every reading a ratio, cancelling V"). *Reads and Writes* §1 "V.", §2 ("Why there is no mean: the
+  Cauchy is an address"; scale 1), §8 (the parallax proof, the turning rate, the walk); essays 1, 16 and the README.
+  The essays' other uses of "the missing mean" (a phrase for the law, said of a chart) are left as they are.
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations

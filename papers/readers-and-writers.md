@@ -112,10 +112,11 @@ side. The rest of the paper keeps returning to this line, in the corner and the 
 K and N, and in the passage from one act to the other (§8, "Turns, counts and corners").
 
 **V.** One quantity sits on the line between the two acts: V, the breadth of the other party, the mountain in the distance
-that the thumb is held up against. Every reading is a ratio in which V cancels, so no reading ever carries it. To have V is
+that the thumb is held up against. A reading is a ratio of the thumb's own shares, [h : v]; V was never in it, so no
+reading carries it. It is not missing from a read; it was never there. To have V is
 to have written: walked a baseline, counted a step, timed a pulse, or agreed a unit. A reader that comes to know V has not
-read better; it has written. This is not a shortcoming of the reader. Its geometry needs V unknown: the horizon, the corner
-as a median, the missing mean are all the traces of a breadth no reading holds.
+read better; it has written. This is not a shortcoming of the reader. Its geometry is a read of directions with no breadth in it: the
+horizon, the corner as a median and the absence of any mean are what such a read is.
 
 ## 2. What the reader has for free
 
@@ -203,8 +204,8 @@ Divide the round circle by x²:
 The ratio r/x of two amounts is not an amount, and no length is left. Two things follow. The density is the share squared:
 1/(1 + s²) = (x/r)² = h², the reader's own share of its thumb, squared. And the even turn becomes the Cauchy: ds =
 sec²θ·dθ, so dθ = ds/(1 + s²), and the uniform turn, read as s, is (2/π)·1/(1 + s²). The Cauchy is the circle's equation
-used to carry an even turn into readings. It has scale 1 because every amount has been divided out, not because V was set
-equal to H.
+used to carry an even turn into readings. It has scale 1 because a reading holds only shares of one thumb: no amount was ever in it, and no V was set
+equal to H. (The division above is the writer's account of the circle, not something the read does.)
 
 Divide the two-axis curve the same way and something survives: s = (V/H)·tan θ, with the law (2/π)·c/(c² + s²), c = V/H.
 The amounts go and their ratio stays, and that ratio is the Cauchy's scale. With V unknown there is no c to leave behind,
@@ -223,15 +224,15 @@ and the law is the reader's.
 The writer's circle states the lengths; the reader's Cauchy is that circle's equation with the lengths divided out, and V
 comes back into it only as the scale, for whoever holds V.
 
-**The missing mean, because the Cauchy is an address.** The Cauchy has a median and no mean. Over a quarter turn the readings
+**Why there is no mean: the Cauchy is an address.** The Cauchy has a median and no mean. Over a quarter turn the readings
 s = v/h up to S average (1/π)·ln(1 + S²) divided by the share they cover, and that climbs without limit, by (2/π)·ln 10 ≈ 1.47
 for every tenfold further the readings run. This is usually told as a defect of the law. Read as an address, it is what an
 address should do.
 
 A mean is a sum of amounts divided by their count. An address is a direction, and directions have no sum: there is no
 length along a direction to add. To average the readings v/h is to treat each direction as an amount laid along a line,
-the chart in which the horizon sits at s = ∞, and the sum picks up that chart's far end. The missing mean belongs to the
-chart that takes a direction for an amount, not to the directions. Other charts of the same directions do have means (the
+the chart in which the horizon sits at s = ∞, and the sum picks up that chart's far end. A mean belongs to the
+chart that takes a direction for an amount, not to the directions; they never had one. Other charts of the same directions do have means (the
 bounded chart s/(1 + s) averages ½), and the order statistics do not depend on the chart at all: the median and the
 quartiles are the same directions however the readings are written, because they commute with every increasing map of the
 reading, and a mean does not. So the median is a property of the addresses and the mean is not; asking for the mean of a
@@ -600,7 +601,7 @@ D = B/conj(w_a + w_b), B the step. That holds at every γ, not only for small er
 part of the same law, as negative depths. At the pair's corner, the circle on the step, the depth's point stays at the
 true distance d, turned by twice the read's error angle: D = d·e^(2i·atan γ). Two things leave the family, and each can
 be seen in a line. The place across the line of sight is a ratio of two sums, −1 + 2·cot a/(cot a + cot b) in
-half-steps; its density over each standpoint is a read's density at zero times the sum's missing mean, so it is infinite
+half-steps; its density over each standpoint is a read's density at zero times a mean the sum does not have, so it is infinite
 there, where a Cauchy's never is. And when each standpoint reads only a quarter turn, the sum of two half-Cauchys has
 density (4/π²)·s near zero, where every half-Cauchy's is positive; so the depth's tail falls as 1/d³, not 1/d², and that
 depth has a mean. And repeating the reads, the mean of the reciprocal depths gains nothing, while their median narrows.
@@ -656,12 +657,12 @@ ticks, as places after a counted step are written in its own thumbs, and τ̇, t
 moves. Being unmoved by the clock makes τ̇ scale-free, not a read: no single read holds it. Seconds are a writer's unit,
 carried in. One stream cannot tell a thing coming nearer from a thing growing where it stands, since both raise x alike;
 a neighbour at the same depth, read at once, tells them apart, approach moving both readings and growth one. And a speed
-in metres a second is a writing twice over: a metre and a second, both carried in. The rate at which the reader turns
-cancels from every reading.
+in metres a second is a writing twice over: a metre and a second, both carried in. No reading holds the rate at which the
+reader turns.
 
 **Walking to the mountain.** Hold the thumb out at arm's length, H against the arm L, and walk toward a mountain whose
-breadth V\* and distance d are unknown. The thumb never changes; each read is the mountain against it,
-v/h = (V\*/d)/(H/L). A read is one place, now: "one in eight of the thumb", or "four thumbs". It does not hold that the
+breadth V\* and distance d are unknown. The thumb never changes; each read is the finger of the thumb the mountain's edge touches,
+[h : v]. The writer's account of which finger that is, v/h = (V\*/d)/(H/L), uses the amounts the read never holds. A read is one place, now: "one in eight of the thumb", or "four thumbs". It does not hold that the
 mountain is nearer than it was, or that it is getting nearer: nearer compares two reads, and joining reads is a write.
 What follows is the writer's account, the reads laid in order along the walk. Far off the mountain is one in eight of the
 thumb, then one in four, one in two: each time the distance halves the reading doubles, and each such stretch takes as

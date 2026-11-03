@@ -83,7 +83,7 @@ Read the two letters as vantages:
 - **N is the writer's.** To know N is to know the whole: how many there are, which is to know the extent, V, and how much
   is in it. That is writing. The first essay's test sorts it at once: double the world and N doubles.
 - **K is the reader's.** A reader never knows V, the mountain in the distance (it holds one length, its own H, the thumb it
-  holds up, and every reading cancels V), so it never knows N. What it knows is K, its own count of addresses, fixed before
+  holds up, and V was never in a reading), so it never knows N. What it knows is K, its own count of addresses, fixed before
   it chooses H and unchanged by anything it looks at.
 
 The Cauchy is the map from a world of N to a holding of K. It lays the reader's K addresses over a world of any size: in

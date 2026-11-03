@@ -208,8 +208,8 @@ Look again at the circle, the place where reader and writer meet. The writer's c
 two breadths. To write h² + v² = 1, and to mean it as a statement about lengths, you must know V and know that it
 equals H. Two amounts, and a claim about how they compare.
 
-The reader has no V. More than that, it never knows V. Every reading is a ratio, and a ratio cancels the very amount V
-would be, so no reading, however many, carries it. V is known only by writing: by walking a baseline, counting a step,
+The reader has no V. More than that, it never knows V. Every reading is a ratio of the thumb's own shares, and V was
+never in it: not missing, never there. So no reading, however many, carries it. V is known only by writing: by walking a baseline, counting a step,
 timing a signal of known speed, or being handed an agreed unit, each an amount carried in from outside. A reader that comes
 to know V has not read better. It has written, and taken the writer's vantage. Yet the reader has the circle's geometry,
 without the circle. Where does it come from?
@@ -315,7 +315,8 @@ missing mean are textbook facts.
 None of these mentions a second breadth, and none needs one. The slope v/h is already a ratio of two shares of one
 radius, so the absence of a V is never remarked. What is new is the reading of who holds what: the reader holds one
 length and never knows V, and each feature of the Cauchy is a feature of the circle that survives without V. The corner
-is the median, the near and far halves are mirrored by the reciprocal, and the missing mean is what the absent V leaves.
+is the median, the near and far halves are mirrored by the reciprocal, and the lack of a mean is what a read of directions
+is, with no V in it to leave anything behind.
 A writer, holding V, has its far end as an amount: no horizon, and the corner only a point. We did not find this
 assembly in print; the pieces are classical.
 
