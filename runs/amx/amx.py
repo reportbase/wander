@@ -28,6 +28,18 @@ def pcm(path, start=0.0, dur=None):
     return np.frombuffer(raw, dtype='<i2').astype(np.int16)
 
 
+def flac_audio_bytes(path):
+    """FLAC's audio frames only: ffmpeg writes STREAMINFO, a VORBIS_COMMENT and 8,192 bytes of PADDING before them,
+    a fixed cost that is not the coding (found in run 5; runs 1-5 counted it)."""
+    b = open(path, 'rb').read()
+    i = 4
+    while True:
+        last, n = b[i] >> 7, int.from_bytes(b[i + 1:i + 4], 'big')
+        i += 4 + n
+        if last:
+            return len(b) - i
+
+
 def flac_bytes(x16):
     with tempfile.TemporaryDirectory() as d:
         p = os.path.join(d, 'a.raw')
@@ -35,7 +47,7 @@ def flac_bytes(x16):
         q = os.path.join(d, 'a.flac')
         subprocess.run(['ffmpeg', '-v', 'error', '-f', 's16le', '-ar', '22050', '-ac', '1', '-i', p,
                         '-c:a', 'flac', '-compression_level', '12', q], check=True)
-        return os.path.getsize(q)
+        return flac_audio_bytes(q)
 
 
 # ── the aimed terms on an analytic remainder ────────────────────────────

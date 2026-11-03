@@ -227,3 +227,29 @@ scale left out).
 - **E2.** Lossless TVF is between 1.0× and 1.3× FLAC on both clips.
 - **E3.** At 60 dB, binary leaves are under 1.0× FLAC on both clips.
 - **E4.** Opus at 128 kb/s gives an SNR under 30 dB on both clips.
+
+### Run 5 (3 Nov; `runs/amx/amx-run5.txt`, 43 s), and a correction to runs 1–4
+
+The windows came out as Snow Fight from 0.0 s (attack 10.0, RMS 0.102) and Sintel's Song from 98.0 s (attack 1.17, RMS
+0.074). As printed: E1, E3 and E4 not killed, E2 killed. On the percussive clip, lossless TVF came out at 0.915×
+FLAC, and so did the bare PCM by my fixed predictor and Rice code (0.917×).
+
+That second number gave it away. **Every FLAC size in runs 1–5 included ffmpeg's metadata**: STREAMINFO, a
+VORBIS_COMMENT and 8,192 bytes of PADDING, about 8.3 KB a file whatever the audio. My coders' counts carry no
+container. On 2 s clips that is a large error, all of it in TVF's favour. Run 5 is killed by my set-up. The FLAC sizes
+are now its audio frames alone (`flac_audio_bytes`).
+
+**Runs 3–4 corrected** (post hoc, no new run; the predictions stay judged as printed). FLAC's audio bytes are 11,176
+(snare) and 46,594 (trumpet), not 19,464 and 54,882.
+
+| target | binary leaves, snare | binary leaves, trumpet | text, snare | text, trumpet |
+|---|---|---|---|---|
+| 40 dB | 0.58× | 0.43× | 1.69× | 0.98× |
+| 60 dB | 0.87× | 0.98× | 2.41× | 2.20× |
+| 16-bit floor | **1.26×** | **1.44×** | 3.48× | 3.27× |
+
+So binary leaves at the floor were not under FLAC even on the Vorbis-sourced snare.
+
+### Run 6: run 5 against FLAC's audio bytes (predictions written before it ran)
+
+The only change: FLAC's audio bytes alone. E1–E4 are restated unchanged as F1–F4.
