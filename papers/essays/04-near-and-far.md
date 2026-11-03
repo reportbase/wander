@@ -358,7 +358,11 @@ that something is there and where to look next. Moving the corner there is a new
 
 This says where a focus *should* go, and why. It is not a claim about what any eye does.
 
-*Demos: the focus is the corner; the crosshair is the corner; friend or foe.*
+The same holds when the thing read is a shape. Epicycles draw an outline from one standpoint at the centre; terms read from
+standpoints stepped toward a dent draw it in about an eighth as many, and every one of them stands at the dent (the tenth essay,
+§3).
+
+*Demos: the focus is the corner; the crosshair is the corner; friend or foe; circles and standpoints.*
 
 ---
 

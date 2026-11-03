@@ -1805,6 +1805,30 @@ try {
   if (!plspOk) failures.push(`[plane-sphere.html] ${JSON.stringify(plsp)}`);
   console.log(`${failures.length === before63 ? 'ok  ' : 'FAIL'} plane-sphere.html (the plane: harmonic measure, the Möbius image and 2L − U one curve to ${plsp.pl.toExponential(0)}, the mean point z, the landings' centroid z/2; the sphere: harmonic measure's mean r, the boosted sky's ${plsp.sm.closed.toFixed(4)} at ρ = ½, the nearest harmonic measure ${(100 * plsp.b5.gap).toFixed(2)}% off, a·L + b ${(100 * plsp.f3.res).toFixed(1)}% and ${(100 * plsp.f7.res).toFixed(1)}% off; two quarter turns of space 120° apart)`);
 
+  // ── 64. epicycles.html (SPN R633, R634; EPI): the wrapped Cauchy's blur is each circle scaled by e^(−γ|k|); aimed
+  // Takenaka–Malmquist terms draw the dent in a quarter of the circles' terms or fewer, their standpoints at the dent, two
+  // dents split between them; the broad shape needs more aimed terms than circles
+  current = 'epicycles.html';
+  const before64 = failures.length;
+  await page.goto(new URL('epicycles.html', base).href, { waitUntil: 'load' });
+  const epi = await page.evaluate(() => {
+    const E = window.__epi, fb = (st, t) => [E.firstBelow(st.fe, t), E.firstBelow(st.errs, t)];
+    const z = E.shape('dent'); let blur = 0;
+    for (const g of [0.05, 0.2, 1]) { const a = E.blurScaled(z, g), b = E.blurDirect(z, g);
+      for (let j = 0; j < E.M; j++) blur = Math.max(blur, Math.hypot(a[0][j] - b[0][j], a[1][j] - b[1][j])); }
+    const off = st => st.picks.filter(p => Math.hypot(p.a[0], p.a[1]) > 0.5).map(p => Math.atan2(p.a[1], p.a[0]));
+    const near = (x, c) => { const d = Math.abs(((x - c) % (2 * Math.PI) + 3 * Math.PI) % (2 * Math.PI) - Math.PI); return d < 0.3; };
+    const dent = E.set({ shape: 'dent' }), two = E.set({ shape: 'two' }), broad = E.set({ shape: 'broad' });
+    const d10 = off(dent).slice(0, 10), t20 = two.picks.slice(0, 20).filter(p => Math.hypot(p.a[0], p.a[1]) > 0.5).map(p => Math.atan2(p.a[1], p.a[0]));
+    return { blur, dent: fb(dent, 1e-3), broad: fb(broad, 1e-3), two: fb(two, 1e-3), atDent: d10.filter(x => near(x, 1)).length,
+      n1: t20.filter(x => near(x, 1)).length, n2: t20.filter(x => near(x, 3.5)).length, nt: t20.length };
+  });
+  const epiOk = epi.blur < 1e-12 && epi.dent[0] >= 80 && epi.dent[0] <= 90 && epi.dent[1] <= epi.dent[0] / 4
+    && epi.broad[1] > epi.broad[0] && epi.two[1] <= epi.two[0] / 2 && epi.atDent >= 8
+    && epi.n1 >= 0.3 * epi.nt && epi.n2 >= 0.3 * epi.nt;
+  if (!epiOk) failures.push(`[epicycles.html] ${JSON.stringify(epi)}`);
+  console.log(`${failures.length === before64 ? 'ok  ' : 'FAIL'} epicycles.html (the Cauchy's blur each circle scaled by e^(−γ|k|) to ${epi.blur.toExponential(0)}; to 10⁻³ the dent in ${epi.dent[1]} aimed terms against ${epi.dent[0]} circles, ${epi.atDent} of the first ten standpoints at the dent; two dents ${epi.two[1]} against ${epi.two[0]}, split ${epi.n1} and ${epi.n2}; the broad shape ${epi.broad[1]} aimed against ${epi.broad[0]} circles)`);
+
   // ── 7. demos.html: every page it links to is there ──
   current = 'demos.html';
   const before7 = failures.length;

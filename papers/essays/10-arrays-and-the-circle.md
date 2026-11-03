@@ -157,6 +157,22 @@ is exactness: Fejér's reconstruction no longer passes through the stored values
 only at first order even on curves the interpolating kernel reproduces exactly. The two kernels are the two horns of
 one choice: exact at the places and able to ring, or never ringing and only approaching the places.
 
+**A third kernel: the Cauchy's own.** The curve can be written another way, as circles on circles: its Fourier series, each
+term a circle of fixed radius turning a whole number of times round the lap. These are epicycles, and they are the turns
+of one standpoint at the centre. There is a positive kernel between the two above that keeps every one of those circles
+and moves none: the circle's own Cauchy, the wrapped Cauchy (Poisson's kernel). Smoothing by it multiplies circle k by
+rᵏ, r = e^(−γ), where γ is the height it is read from, so the broad form stays and the fine circles fade first, smoothly,
+none ever reaching zero. That is level of detail by height, and it can be undone, since nothing was thrown away. Fejér's
+kernel damps by a straight-line taper and stops at a last circle; the Cauchy's damps by a constant ratio and never stops.
+
+The same kernel can also be stepped toward the detail. Put the standpoint at a point a inside the circle instead of at its
+centre, and the term it reads is the Szegő kernel 1/(1 − āz), whose square on the circle is the wrapped Cauchy about a's
+place. Built one after another, each from the remainder left by those before (the Takenaka–Malmquist terms, chosen greedily
+as adaptive Fourier decomposition chooses them), these terms draw a curve with local detail in far fewer terms than
+circles do. On a circle with one narrow dent, the best 85 epicycles reach a part in a thousand and eleven aimed terms do,
+every one of them standing at the dent. On a broad shape with nothing local, the even circles win. Which reader to be
+depends on where the detail is (EPI, `plans/epi-plan.md`; the demo *Circles and standpoints*).
+
 **What reconstruction assumes.** The kernel fills in between the places, and filling in is a model of the payload: that
 the curve has no detail finer than the lattice can carry, no wave of more than N/2 cycles round the circle. The places are
 exact whatever the curve is. The values between them are exact only for curves that fit the model. The third essay's
@@ -331,7 +347,8 @@ presentation, `tb_classical.md`), its algebraic presentation (`tb_algebra.md`), 
 Court* (`tb_spectral.md`, §§17–22: the slope kernel as a rotation raised to the depth, aliasing, the fast transform as the
 cascade, Fejér's cure), and *TVF — The Tangent Vector Format* (`tvf.md`). The classical results they restate are
 Lebesgue's lemma, Jackson's estimate, Erdős and Turán's bound on the Lebesgue constant, Faber's theorem, Fejér's
-summation and the Cooley–Tukey factorization, as presented there.
+summation and the Cooley–Tukey factorization, as presented there. The aimed terms are Takenaka's (1925) and Malmquist's (1926), chosen as in
+Qian and Wang's adaptive Fourier decomposition (2011); Poisson's kernel and Abel's summation are classical.
 
 The array picture, its four facings, readers' and writers' arrays and the worked example with K = 8 are set out in
 *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*), §7.3 ("In the picture of an array", "Laid on the sweeps"), and for programmers in the

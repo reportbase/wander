@@ -6916,6 +6916,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   in the standpoint's own ticks and seconds a writer's, the rate of turning cancelling, a speed in m/s a writing twice
   over. Essay 14's caution on rates per second points to it. The data cases were already in essay 3 §10 as in §11; essay
   1 §9 points to them.
+- **R633** (3 Nov; Tom: "It is interesting that it uses circles to draw the shapes pertibations, I wonder if cauchy here could
+  do the same thing", then "start the epi cycle test"): EPI (`plans/epi-plan.md`, `runs/epi/`). The wrapped Cauchy blurs an
+  outline by shrinking epicycle k by e^{−γ|k|}, exactly (10⁻¹⁴), and mixes no circles. Takenaka–Malmquist terms, each a
+  standpoint moved toward a place, draw a dent in 11 terms where the best Fourier circles need 85 (to 10⁻³). They go to
+  the dent and step toward the outline as the detail gets finer. The broad shape needs twice Fourier's terms. Run 1 was killed
+  by my set-up (no a₁ = 0 shift). Run 2's E2′, a pole found exactly, was killed by my reasoning: the greedy finds the place,
+  not the pole. Classical (Poisson, Takenaka–Malmquist, Qian); the reading is ours.
+- **R634** (3 Nov; Tom: "Yes, add it to the papers and build the demo"): EPI is in *Reads and Writes* §6 ("Drawing a shape: the
+  circles, a height, a step toward the detail"), essay 10 §3 ("A third kernel: the Cauchy's own") and essay 4 §13 (the
+  focus, applied to a shape). The references (Takenaka, Malmquist, Qian and Wang) are added. `epicycles.html` is the demo:
+  epicycles, the outline from a height, and the aimed standpoints drawn in the outline's own plane, with the error
+  against terms for both. It is on `demos.html` and on the cards for essays 4 and 10.
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |
