@@ -7077,7 +7077,19 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   scale-free, not a read (being unmoved by scaling is needed for a read, not enough: R596). This corrects R630's and
   R649's "τ̇ a read". *Reads and Writes* §8, "Motion, from reads" (was "Motion, read") and "Walking to the mountain";
   essays 6 §2 and 14; `approach.html`. Open: R649's "the order of reads is the reader's, reading over time" also compares
-  reads; whether order stays the reader's is not ruled.
+  reads; whether order stays the reader's is not ruled (ruled in R652: it does not).
+- **R652** (3 Nov; Tom: "A write could plant a flag for example, and say this is the starting point. but that has nothing
+  to do with a read and H.", then "I like the metaphor of planting a flag and how it explains reading and writing. Reads
+  don't plant flags. reads are continuous, but each read has no connection to the previous read. A write could plant a
+  flag, and a read could then read that flag, but the read itself has no concept of how close it is to the flag."): a
+  flag is a write, a mark that says "this is the starting point", a zero chosen, from which strides and ticks are counted.
+  Reads plant no flags: H is the thumb, held wherever one stands, not an origin; the corner is a read, met by looking, and
+  counting from it plants a flag there (the corner free, the flag a write). Reads are continuous (one can be taken at any
+  place and moment) but each has no connection to the one before, so their order, and anything said across them, is a
+  write: R649's "the order of reads is the reader's, reading over time" is withdrawn. A write, once made, is read (R644):
+  a later read reads the flag as paint in a direction, against the thumb, with no notion of how close it is to the flag;
+  how far and how long since are the count's. The sweep's zero (v/h = 0, R327) is a direction of the turn's own measure,
+  not a place, and no one plants it. *Reads and Writes* §1 (after "What a read is") and §8 "Walking to the mountain".
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations

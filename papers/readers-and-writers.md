@@ -52,9 +52,12 @@ one thumb, from the far field beyond it, read as ratios (one in two, one in four
 The read's addresses are K, the addresses available to it in that moment, arranged by the Cauchy: half of them before the corner and half
 after, whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Two reads, at two moments or two standpoints, are
 joined only across a step that is counted: parallax, and so a write. (A *facing* is a writer's word, for several reads held together with their signs; no read
-is one.) A read holds no time: time is the step between reads. Their order is the reader's, reading over
-time; a count of ticks between them is a write. Everything else in this paper is built on the read,
-and on its opposite, a count.
+is one.) A read holds no time: time is the step between reads. Reads are continuous, one can be taken at any place and
+any moment, but each read has no connection to the one before; their order, and anything said across them, is a write.
+A write can plant a flag: a mark in the world that says "this is the starting point", from which strides and ticks are
+counted. Reads plant no flags. A later read can read the flag, as paint in a direction, against the thumb ("the flag is
+one in four of a thumb"), but the read has no notion of how close it is to the flag; how far, and how long since, are
+the count's. Everything else in this paper is built on the read, and on its opposite, a count.
 
 **Words.** The paper names acts, a *read* and a *write*, not two kinds of observer: one observer reads while it stands and
 turns, and writes while it walks, counts, ranges or agrees a unit. *Read*, *reading* and *reader* are used as each sentence
@@ -654,7 +657,8 @@ read, wherever it is taken, has the whole sweep of the thumb, its corner and its
 the end is. The walk arrives because the walk is a count of strides and ends; arrival is contact, a write in one's own H,
 and what the reader then has is one more read, the mountain's foot straight down. So the τ̇ of the walk is the
 writer's too, from reads joined: a steady pace makes it −1, past Lee's −½, arriving at speed; easing so that it holds at
-−½ stops at the foot. The strides from the corner to the foot are d_c, so counting them writes the mountain:
+−½ stops at the foot. Counting from the corner plants a flag there: the corner is a read and free, the flag at it a write. The strides from
+the corner to the foot are d_c, so counting them writes the mountain:
 V\* = (strides from the corner) × H/L, in the walker's own stride, and in metres once the stride is carried in. To know V
 at the foot is to have counted one's own steps, and to be looking at one's feet. Scale the world and no read along the
 walk moves, only that count. We do this whenever we walk toward something: the corner is free, the approach and the size

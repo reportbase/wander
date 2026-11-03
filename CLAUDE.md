@@ -1373,6 +1373,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   more read, its feet. A rate of change joins reads, so ẋ, τ and τ̇ are writes (τ̇ scale-free, not a read; corrects R630,
   R649). *Reads and Writes* §8 "Motion, from reads" (was "Motion, read") and "Walking to the mountain"; essays 6, 14;
   `approach.html`. Whether the order of reads stays the reader's (R649) is open.
+  R652 (3 Nov; Tom: "Reads don't plant flags. reads are continuous, but each read has no connection to the previous read.
+  A write could plant a flag, and a read could then read that flag, but the read itself has no concept of how close it is
+  to the flag."): **a write plants a flag (a starting point, a zero counted from); reads plant none.** Reads are continuous
+  but unconnected, so their order is a write (R649's "order the reader's" withdrawn); a read reads a flag as paint, with no
+  notion of how close it is. H is no origin; counting from the corner plants a flag there. *Reads and Writes* §1, §8.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
