@@ -7090,6 +7090,24 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a later read reads the flag as paint in a direction, against the thumb, with no notion of how close it is to the flag;
   how far and how long since are the count's. The sweep's zero (v/h = 0, R327) is a direction of the turn's own measure,
   not a place, and no one plants it. *Reads and Writes* §1 (after "What a read is") and §8 "Walking to the mountain".
+- **R653** (3 Nov; Tom: "a write then is simply the recording of a read."; "but then a write is moving away from geometry
+  and into physics. A read must then be the address, and the write is the payload."; "life itself is writing reality.
+  Any kind of physical thing writes onto reality. say reality is piece of paper, a write adds to the paper. that is
+  physics."; "A read is geometry, a write is physics."): **a read is geometry, a write is physics.** A write is the
+  recording of a read: a mark, discrete where the read is continuous (R640, the floor), over once made and used only by
+  being read (R644); it lasts, so it can be counted and set beside other marks, and order, nearness, durations and
+  amounts are said of marks (R649, R651, R652). A mark keeps an address and what was met there: the address is the
+  read's, the payload the write's, so address/payload and read/write are one split. Earlier rulings already pointed so:
+  the fingers free, a read with nothing met (R453); painting on is writing, the light writing on the fingers (R460); an
+  arrival a detection, a count; order statistics the addresses', sums the payload's (Theorem 6); physics assigning the
+  values (R227, R231); `mem[a] = y` (R613). The picture: reality a sheet of paper every physical thing writes on, physics
+  that writing, a life a writer copying its marks forward; a read adds nothing (R346, R577), its addresses there over
+  blank or full paper (R405). A reader's body is written, its thumb a mark; the thumb held as H is the read's own length,
+  not a mark. Changing or erasing a mark is a write too; whether marks can be lost is left to physics. A picture of how the
+  account is held, not a claim about the world (R441, R449). *Reads and Writes* §1, after the flag. Still to restate where
+  they appear: the paint as part of the read (*Reads and Writes* §2, §3; essays 2, 3), R584's "payload per address" (the per
+  read, the of written; §5, essay 14), R605's payload recovered by its ratios (directions in the payload's own space, so a
+  write read again; §2, essay 3).
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations

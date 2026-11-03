@@ -57,7 +57,20 @@ any moment, but each read has no connection to the one before; their order, and 
 A write can plant a flag: a mark in the world that says "this is the starting point", from which strides and ticks are
 counted. Reads plant no flags. A later read can read the flag, as paint in a direction, against the thumb ("the flag is
 one in four of a thumb"), but the read has no notion of how close it is to the flag; how far, and how long since, are
-the count's. Everything else in this paper is built on the read, and on its opposite, a count.
+the count's.
+
+**A read is geometry, a write is physics.** A write is the recording of a read: a mark kept, discrete where the read
+was continuous, which lasts and can be counted and set beside other marks; order, nearness, durations and amounts are
+all said of marks. What a mark keeps is the address the read gave and what was met there: the address is the read's, and
+the payload is the write. So the two distinctions this paper keeps are one. Picture reality as a sheet of paper. Every
+physical thing writes on it, a stone's mass, a planet's path, a cell dividing; physics is that writing, and a life is a
+writer that copies its own marks forward. A read adds nothing to the paper. Its addresses are the geometry laid over it,
+there whether the paper is blank or full, and the light that arrives at them is the paper's writing met there. A reader's
+body is written too, its thumb a mark like any other; but the thumb held out as H is not a mark, it is the read's own
+length, which is why no read carries a scale. This is how the account is held, not a claim about the world: it says
+where physics sits in this frame and tells physics nothing it does not already know.
+
+Everything else in this paper is built on the read, and on its opposite, a count.
 
 **Words.** The paper names acts, a *read* and a *write*, not two kinds of observer: one observer reads while it stands and
 turns, and writes while it walks, counts, ranges or agrees a unit. *Read*, *reading* and *reader* are used as each sentence

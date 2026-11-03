@@ -1378,6 +1378,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   to the flag."): **a write plants a flag (a starting point, a zero counted from); reads plant none.** Reads are continuous
   but unconnected, so their order is a write (R649's "order the reader's" withdrawn); a read reads a flag as paint, with no
   notion of how close it is. H is no origin; counting from the corner plants a flag there. *Reads and Writes* §1, §8.
+  R653 (3 Nov; Tom: "a write then is simply the recording of a read."; "A read must then be the address, and the write is
+  the payload."; "say reality is piece of paper, a write adds to the paper. that is physics."; "A read is geometry, a write
+  is physics."): **a read is geometry, a write is physics; the read is the address, the write the payload** (one split,
+  not two). A write records a read: a mark, discrete, lasting, countable; order, nearness and amounts are said of marks.
+  Reality a sheet of paper every physical thing writes on; a read adds nothing, its addresses there over blank or full
+  paper; the thumb a mark, H the read's own length. A picture, not a claim about the world. *Reads and Writes* §1. Still to
+  restate: the paint as part of the read (§2, §3, essays 2, 3), R584's "payload per address", R605.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
