@@ -196,3 +196,34 @@ Read after the run, with caveats:
 
 Within those limits, the price of a number is the whole gap: TVF's leaves, packed as FLAC packs samples, come in under
 FLAC on the snare and 1.2× on the trumpet at the floor, against 2.0× and 2.8× as text.
+
+### Run 5: a lossless source, bit-exact and against Opus (predictions written before it ran)
+
+Tom (3 Nov): "proceed", on testing a lossless source against FLAC at bit-exact and against a lossy codec.
+
+**Data.** Jan Morgenstern's score for *Sintel* (Blender Foundation), CC BY 3.0, as lossless FLAC from Xiph
+(`media.xiph.org/sintel/Jan_Morgenstern-Sintel-FLAC.zip`, 60,258,620 bytes, sha256
+f04fd0d69e349901fe087614644d1e759f653c8ddf68d3a2dba9e501bca50ecc; not committed). 16-bit, 44.1 kHz, stereo, mixed to
+mono by ffmpeg (`-ac 1`); the mono 16-bit PCM is the truth. Never through a lossy codec.
+
+**Clips, by a rule fixed before any coding.** Each clip is 2 s, in frames of 1024. For every 2 s window starting on a
+multiple of 0.5 s, the attack is the largest ratio of one frame's RMS to the frame before it (frames under 10⁻³ of full
+scale left out).
+- *Percussive*: the window of largest attack in `1-Snow_Fight.flac`.
+- *Tonal*: the window of smallest attack in `7-I_Move_On-Sintels_Song.flac`, among windows whose RMS is at least 0.02.
+
+**Coders.**
+- Binary leaves as in run 4.
+- **Lossless TVF**: the leaves at a target, then the integer remainder (PCM minus the rounded rebuild) coded by the same
+  fixed predictor and Rice code. The best of the 40 dB, 60 dB and 16-bit-floor targets is kept, and no leaves (the
+  remainder alone) is a fourth choice.
+- FLAC level 12.
+- Opus (libopus) at 64, 128 and 256 kb/s, decoded and aligned by cross-correlation, its SNR measured. SNR is not what
+  Opus aims at: it is a perceptual codec.
+
+**Predictions.**
+- **E1.** At the 16-bit floor, binary leaves are at least 1.0× FLAC on both clips. Run 4's win came from Vorbis's
+  missing top band.
+- **E2.** Lossless TVF is between 1.0× and 1.3× FLAC on both clips.
+- **E3.** At 60 dB, binary leaves are under 1.0× FLAC on both clips.
+- **E4.** Opus at 128 kb/s gives an SNR under 30 dB on both clips.
