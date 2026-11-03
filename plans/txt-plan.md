@@ -195,3 +195,11 @@ readers as a group did better than every writer. The hybrid did not beat the bes
 is." The hybrid was my construction, not the framework's: in *Reads and Writes* a read and a write are two acts, and an
 observer who reads and then writes is writing (R594), not doing a third thing. Q4 tested an engineering mixture, not a
 consequence of the distinction, and its kill says nothing about the distinction either way.
+
+**An observation, not a ruling (3 November).** Tom: "Gibbs corner i think demonstrates the problem. We're shocked when
+we see the ringing, because nature does not ring like that.", then "This is just an observation at this point. Readers
+don't take sharp turns, there turns are rotational." A reader's turn passes through every direction between two
+directions, so a reader has no sharp turn of its own; a corner, a jump in direction at one place, is met only by walking
+the line. Asked to hold one, a reader's even addresses ring (Gibbs: on both sides, not shrinking with more addresses;
+on an outline's corner, ringing in direction that shrinks only as 1/N, which is the cost run 2 and run 3 measured).
+Nature's ringing comes after its event (a struck bell) or on one side of an edge (diffraction). Not tested here.
