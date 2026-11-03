@@ -54,8 +54,10 @@ and the rule he found is a reading too: brake so that the time to contact shrink
 τ̇ ≥ −½, and the car stops at the thing, since at τ̇ = −½ the distance it needs to stop is the distance it has. Over time,
 a standpoint is given motion before it is given an object.
 
-Three limits keep this honest. The time comes out in the standpoint's own ticks, as places come out in its own thumbs;
-seconds are a writer's unit, carried in from a clock. The rate at which the standpoint turns cancels from every reading,
+Three limits keep this honest. A read holds no time, so the time to contact is a count
+of the standpoint's own ticks between reads, a write in its own tick as places after a counted step are written in its own
+thumbs; the braking rule, ticks per tick, is unmoved by any clock and stays a reading; seconds are a writer's unit, carried
+in from a clock. The rate at which the standpoint turns cancels from every reading,
 as the thumb's length does. And a speed in metres a second is a writing twice over: a metre and a second, both carried in.
 
 **A shared denominator gives relative payloads.** Two readings taken at the same moment against the same thing, say two
