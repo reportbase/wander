@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Walking to the mountain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    approach.html: walking to the mountain with the thumb held out (3 November 2026; Tom: "lets keep H and V. Lets say you
+    walk between H and V. You don't know V, but you walk in its direction. You keep a constant H the entire distance between
+    H and V. What happens as we approach V and then finally arrive at V.", then "this would be a great demo to develop
+    intuition for the situation because we do just this all the time."; SPN R650). A standalone page like walk.html.
+
+    Keep the case. The thumb H is held at arm's length L the whole way, so H/L is fixed: a ratio of the reader's own body.
+    The thing ahead (the mountain) is V* wide at distance d; both are amounts the reader never reads. Every look gives one
+    reading, the thing against the thumb:  v/h = (V*/d) / (H/L).
+      - far off v/h < 1: the thing is one in two, one in four, one in eight of the thumb; each halving of d doubles it;
+      - the corner, v/h = 1, at d_c = V*·L/H: the thing exactly covers the thumb, met by looking, no amount needed;
+      - past it v/h > 1, climbing; d and d_c²/d read as reciprocals (the mirror about the corner);
+      - at the foot h → 0: the thing is no longer a thing in the sweep but the horizon [0 : 1]. By halvings never
+        reached; the walk, a count of strides, arrives. Arrival is contact, a write in one's own H (R538).
+    Time (R649): a read holds no time; τ = x/ẋ comes out as a count of the reader's own ticks (a write in its own tick);
+    τ̇, ticks per tick, is a read. A steady pace reads τ̇ = −1, past Lee's −½: you arrive at speed. Easing so τ̇ holds at
+    −½ stops exactly at the foot.
+    Counting strides from the corner to the foot writes the thing:  V* = (strides from the corner) × (H/L), in strides,
+    and in metres once the stride is carried in. Scaling the world (k on V* and the start) moves no reading along the walk,
+    only the count.
+    Links: ?thing=house|tower|mountain&k=<log10 k>&pace=steady|ease&count=1&ground=0&u=<0..1>&play=1.
+    Test hook: window.__approach.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button, select { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 220px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .note { color: var(--dim); font-size: 12.5px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    a { color: var(--teal) }
+    label { color: var(--dim) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Walking to the mountain</h1>
+    <p class="lede">Hold your thumb out at arm's length and walk toward something whose size and distance you do not know.
+    The thumb never changes; only the reading does. Far off the thing is a fraction of the thumb. At one place it exactly
+    covers the thumb: the corner, found by looking. Past it the thing grows past the thumb toward the horizon, and at the
+    foot it is no longer a thing in view at all. Count your strides from the corner to the foot and you have written its
+    size.</p>
+    <div class="panel">
+        <div class="row">
+            <button id="play">walk</button>
+            <button id="fast">×5</button>
+            <button id="restart">start far</button>
+            <button id="toCorner">to the corner</button>
+            <label for="u">walked</label>
+            <input id="u" type="range" min="0" max="1" step="0.0005" value="0">
+        </div>
+        <div class="row" style="margin-top:8px">
+            <label for="thing">the thing</label>
+            <select id="thing"><option value="house">a house</option><option value="tower">a tower</option><option value="mountain" selected>a mountain</option></select>
+            <button id="pace">pace: steady</button>
+            <button id="count">count strides</button>
+            <button id="groundBtn" class="on">the writer's ground</button>
+            <label for="k">scale the world</label>
+            <input id="k" type="range" min="-2" max="2" step="0.01" value="0" style="flex:0 1 160px">
+        </div>
+        <canvas id="view" height="260" style="margin-top:10px"></canvas>
+        <p class="cap">What you see. Your thumb (gold) held at arm's length, the crosshairs on the thing. The thumb is the same
+        size the whole walk; the thing grows behind it.</p>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="lay" height="300"></canvas><p class="cap">The reading on the quarter turn: home (the thing on your
+            horizon, far off) to the horizon (at its foot). The corner at 45°, where it covers the thumb. Ticks at one in 8, 4, 2
+            and 2, 4, 8 thumbs; the faint ray is the reading's mirror about the corner.</p></div>
+            <div><canvas id="time" height="300"></canvas><p class="cap">Time to contact, τ = x/ẋ from two looks, in your own
+            ticks (a count, a write), against ticks walked. Its slope τ̇ is a read: −1 at a steady pace, past Lee's −½ (you
+            arrive at speed); held at −½ you stop at the foot.</p></div>
+        </div>
+        <canvas id="ground" height="110" style="margin-top:10px"></canvas>
+        <p class="cap" id="groundCap">The writer's ground, which the reader never sees: you, the thing, the distance, the corner's
+        place. Strides counted from the corner are marked.</p>
+        <div id="hud"></div>
+    </div>
+    <p class="note">Keep the case: h and v are unit relations, the reading v/h has no scale; V*, d, the corner's distance and
+    every stride are amounts. Behind it: <i>Reads and Writes</i> §8 ("Motion, read") and §6 ("The crosshairs"); the corner
+    as the thing equal to the thumb, §2. Other demos: <a href="mountain.html">the mountain and the thumb</a>,
+    <a href="walk.html">the walk</a>, <a href="fpv.html">the crosshair is the corner</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), D = Math.PI / 180;
+    const THUMB = 0.02, ARM = 0.6, HL = THUMB / ARM, STRIDE = 0.7, START = 16, TICKS = 600;   // thumb 2 cm at 60 cm; 0.7 m a stride
+    const THINGS = { house: { V: 12, name: 'house' }, tower: { V: 60, name: 'tower' }, mountain: { V: 3000, name: 'mountain' } };
+    const S = { thing: 'mountain', k: 1, pace: 'steady', count: false, ground: true, u: 0, playing: false, speed: 1 };
+
+    const Vstar = (thing = S.thing, k = S.k) => THINGS[thing].V * k;                // the thing's true breadth, metres (never read)
+    const cornerD = (thing, k) => Vstar(thing, k) / HL;                             // where it covers the thumb: d_c = V*·L/H
+    const startD = (thing, k) => START * cornerD(thing, k);                         // the walk starts 16 corners out
+    // where you are after a share u of the walk's time: steady (d falls evenly) or eased so τ̇ = −½ (d ∝ (1 − u)²)
+    const dOf = (u, pace = S.pace, thing = S.thing, k = S.k) => startD(thing, k) * (pace === 'ease' ? (1 - u) ** 2 : 1 - u);
+    // the reading: the thing against the thumb, v/h = (V*/d)/(H/L)
+    const reading = (d, thing = S.thing, k = S.k) => d <= 0 ? Infinity : (Vstar(thing, k) / d) / HL;
+    const mirror = (d, thing = S.thing, k = S.k) => cornerD(thing, k) ** 2 / d;     // the distance that reads the reciprocal
+    // τ from two looks a tick apart, in ticks: x/(x − x_prev) with x the reading now (the reader's own estimate)
+    function tauRead(u, pace = S.pace, thing = S.thing, k = S.k) {
+        const du = 1 / TICKS; if (u < du) u = du;
+        const x = reading(dOf(u, pace, thing, k), thing, k), xp = reading(dOf(u - du, pace, thing, k), thing, k);
+        return x / (x - xp);
+    }
+    const tauExact = (u, pace = S.pace) => (pace === 'ease' ? (1 - u) / 2 : 1 - u) * TICKS;
+    const tauDotRead = (u, pace = S.pace, thing = S.thing, k = S.k) => {
+        const du = 1 / TICKS; return tauRead(Math.min(u, 1 - 3 * du), pace, thing, k) - tauRead(Math.min(u, 1 - 3 * du) - du, pace, thing, k);
+    };
+    // strides from the corner to the foot, and the thing written from them
+    const stridesFromCorner = (thing = S.thing, k = S.k) => cornerD(thing, k) / STRIDE;
+    const writeV = (strides) => ({ inStrides: strides * HL, inMetres: strides * HL * STRIDE });
+    function words(x) {
+        if (!isFinite(x)) return 'the horizon: it is all of v';
+        if (Math.abs(Math.log2(x)) < 0.02) return 'it covers the thumb: the corner';
+        return x < 1 ? `one in ${(1 / x).toFixed(x > 0.1 ? 2 : 1)} of the thumb` : `${x.toFixed(x < 10 ? 2 : 1)} thumbs`;
+    }
+
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return [g, w, hh];
+    }
+    function draw() {
+        const d = dOf(S.u), x = reading(d), dc = cornerD(S.thing, S.k), crossed = d <= dc, arrived = S.u >= 1 - 1e-9;
+        // ── the view ──
+        let [g, W, H] = fit($('view'));
+        const sky = g.createLinearGradient(0, 0, 0, H); sky.addColorStop(0, '#0b1020'); sky.addColorStop(1, '#1a1f2c');
+        g.fillStyle = sky; g.fillRect(0, 0, W, H);
+        const hy = H * 0.62, cx = W / 2, TP = Math.min(56, W / 9);                       // horizon line, thumb width in px
+        g.fillStyle = '#10140f'; g.fillRect(0, hy, W, H - hy);
+        g.strokeStyle = 'rgba(255,255,255,0.15)'; g.beginPath(); g.moveTo(0, hy); g.lineTo(W, hy); g.stroke();
+        const wpx = arrived ? 1e9 : TP * x, cover = wpx >= W * 1.05;
+        g.fillStyle = '#5d6f86';
+        if (cover) { g.fillRect(0, 0, W, H); }
+        else if (S.thing === 'mountain') {
+            const ht = wpx * 0.42; g.beginPath(); g.moveTo(cx - wpx / 2, hy); g.lineTo(cx - wpx * 0.12, hy - ht);
+            g.lineTo(cx + wpx * 0.05, hy - ht * 0.82); g.lineTo(cx + wpx * 0.18, hy - ht * 0.95); g.lineTo(cx + wpx / 2, hy); g.closePath(); g.fill();
+            if (wpx > 30) { g.fillStyle = '#d9dee6'; g.beginPath(); g.moveTo(cx - wpx * 0.12, hy - ht); g.lineTo(cx - wpx * 0.2, hy - ht * 0.78);
+                g.lineTo(cx - wpx * 0.04, hy - ht * 0.8); g.closePath(); g.fill(); }
+        } else {
+            const ht = wpx * (S.thing === 'tower' ? 1.6 : 0.7); g.fillRect(cx - wpx / 2, hy - ht, Math.max(1, wpx), ht);
+            if (S.thing === 'house') { g.beginPath(); g.moveTo(cx - wpx * 0.58, hy - ht); g.lineTo(cx, hy - ht - wpx * 0.35); g.lineTo(cx + wpx * 0.58, hy - ht); g.fill(); }
+        }
+        // the thumb, the same size the whole walk, and the crosshairs
+        g.fillStyle = 'rgba(212,160,82,0.55)'; g.strokeStyle = '#d4a052'; g.lineWidth = 2;
+        g.beginPath(); g.roundRect ? g.roundRect(cx - TP / 2, hy - TP * 0.2, TP, H, TP / 2) : g.rect(cx - TP / 2, hy - TP * 0.2, TP, H); g.fill(); g.stroke();
+        g.strokeStyle = 'rgba(255,255,255,0.6)'; g.lineWidth = 1;
+        g.beginPath(); g.moveTo(cx - 14, hy); g.lineTo(cx + 14, hy); g.moveTo(cx, hy - 14); g.lineTo(cx, hy + 14); g.stroke();
+        g.fillStyle = cover ? '#0c0c11' : '#e6e4ee'; g.font = '13px DM Mono, monospace';
+        g.fillText(`the ${THINGS[S.thing].name}: ${words(x)}`, 12, 20);
+        if (crossed && !arrived) { g.fillStyle = cover ? '#0c0c11' : '#d4a052'; g.fillText('past the corner', 12, 38); }
+        // ── the lay: the quarter turn ──
+        [g, W, H] = fit($('lay'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        const R = Math.min(W - 70, H - 84), ox = 36, oy = H - 30, P = (t, r = R) => [ox + r * Math.cos(t), oy - r * Math.sin(t)];
+        g.strokeStyle = 'rgba(181,156,240,0.35)'; g.lineWidth = 1.5; g.beginPath();
+        for (let i = 0; i <= 90; i++) { const q = P(i * D); i ? g.lineTo(...q) : g.moveTo(...q); } g.stroke();
+        g.strokeStyle = 'rgba(255,255,255,0.15)'; g.beginPath(); g.moveTo(...P(0)); g.lineTo(ox, oy); g.lineTo(...P(90 * D)); g.stroke();
+        g.font = '11px DM Mono, monospace';
+        for (let j = -3; j <= 3; j++) {
+            const t = Math.atan(2 ** j), [a, b] = P(t, R - 6), [c, e] = P(t, R + 6);
+            g.strokeStyle = j ? 'rgba(255,255,255,0.5)' : '#d4a052'; g.lineWidth = j ? 1 : 2;
+            g.beginPath(); g.moveTo(a, b); g.lineTo(c, e); g.stroke();
+            g.fillStyle = j ? '#8a8a96' : '#d4a052'; const [lx, ly] = P(t, R + 12);
+            g.fillText(j < 0 ? `1:${2 ** -j}` : j > 0 ? `${2 ** j}` : 'corner', lx, ly);
+        }
+        g.fillStyle = '#8a8a96'; g.fillText('home (far off)', ...P(0.02, R * 0.45)); g.fillText('↑ horizon (the foot)', ox - 4, oy - R - 26);
+        const th = arrived ? 90 * D : Math.atan(x), thm = arrived ? 0 : Math.atan(1 / x);
+        g.strokeStyle = 'rgba(140,230,205,0.25)'; g.setLineDash([3, 5]); g.beginPath(); g.moveTo(ox, oy); g.lineTo(...P(thm)); g.stroke(); g.setLineDash([]);
+        g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath(); g.moveTo(ox, oy); g.lineTo(...P(th)); g.stroke();
+        g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(...P(th), 5, 0, 2 * Math.PI); g.fill();
+        // ── time to contact ──
+        [g, W, H] = fit($('time'));
+        g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+        const x0 = 44, x1 = W - 12, y0 = H - 28, y1 = 16, X = t => x0 + (x1 - x0) * t / TICKS, Y = v => y0 - (y0 - y1) * Math.min(v, TICKS) / TICKS;
+        g.strokeStyle = 'rgba(255,255,255,0.15)'; g.lineWidth = 1; g.beginPath(); g.moveTo(x0, y1); g.lineTo(x0, y0); g.lineTo(x1, y0); g.stroke();
+        g.fillStyle = '#8a8a96'; g.fillText('τ (ticks)', 4, y1 + 4); g.fillText('ticks walked →', x1 - 110, y0 + 18); g.fillText(`${TICKS}`, 8, y1 + 18);
+        for (const [pace, col] of [['steady', 'rgba(217,110,91,0.6)'], ['ease', 'rgba(140,230,205,0.6)']]) {
+            g.strokeStyle = col; g.lineWidth = pace === S.pace ? 2 : 1; g.setLineDash(pace === S.pace ? [] : [4, 4]); g.beginPath();
+            for (let i = 1; i < TICKS - 2; i += 3) { const v = tauRead(i / TICKS, pace); i === 1 ? g.moveTo(X(i), Y(v)) : g.lineTo(X(i), Y(v)); }
+            g.stroke(); g.setLineDash([]);
+        }
+        g.fillStyle = 'rgba(217,110,91,0.9)'; g.fillText('steady: τ̇ = −1', X(TICKS * 0.55), Y(TICKS * 0.5) - 6);
+        g.fillStyle = 'rgba(140,230,205,0.9)'; g.fillText('eased: τ̇ = −½', X(TICKS * 0.5), Y(TICKS * 0.25) + 18);
+        if (!arrived) { const tk = S.u * TICKS; g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(X(tk), Y(tauRead(S.u)), 4, 0, 2 * Math.PI); g.fill(); }
+        // ── the writer's ground ──
+        $('ground').style.display = $('groundCap').style.display = S.ground ? '' : 'none';
+        if (S.ground) {
+            [g, W, H] = fit($('ground'));
+            g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+            const d0 = startD(S.thing, S.k), gx = 14, gx1 = W - 24, GX = dd => gx1 - (gx1 - gx) * dd / d0, gy = H - 40;
+            g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(gx, gy); g.lineTo(gx1, gy); g.stroke();
+            g.fillStyle = '#5d6f86'; g.fillRect(gx1, gy - 18, 6, 18);
+            g.fillStyle = '#d4a052'; g.fillRect(GX(dc) - 1, gy - 8, 2, 16); g.font = '11px DM Mono, monospace';
+            g.fillText('the corner', GX(dc) - 34, gy + 22);
+            if (S.count && crossed) {
+                g.fillStyle = 'rgba(140,230,205,0.7)'; const n = Math.round((dc - d) / STRIDE), every = Math.max(1, Math.ceil(n / 60));
+                for (let i = 0; i <= n; i += every) g.fillRect(GX(dc - i * STRIDE) - 0.5, gy + 3, 1, 5);
+            }
+            g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(GX(Math.max(0, d)), gy - 4, 4, 0, 2 * Math.PI); g.fill();
+            g.fillStyle = '#8a8a96'; g.fillText('in metres the far field is 15/16 of the way; past the corner, the last 1/16', gx, H - 8);
+            g.fillText(`you, ${fmtM(d)} from the ${THINGS[S.thing].name} (${fmtM(Vstar())} wide)`, gx, 16);
+        }
+        // ── the readout ──
+        const tr = tauRead(S.u), tdot = tauDotRead(S.u), sc = Math.max(0, (dc - Math.max(d, 0)) / STRIDE), wv = writeV(sc);
+        $('hud').textContent =
+            `reading v/h = ${isFinite(x) ? x.toPrecision(4) : '∞'}   ${words(x)}\n` +
+            (arrived ? `arrived: the reading is the horizon [0 : 1]; touching the ${THINGS[S.thing].name} is a write\n`
+                : `time to contact τ ≈ ${tr.toFixed(1)} ticks (a count, a write)   τ̇ ≈ ${tdot.toFixed(3)} (a read)   ${S.pace === 'steady' ? 'you will arrive at speed' : 'you will stop at the foot'}\n`) +
+            (S.count ? (crossed ? `strides counted from the corner: ${sc.toFixed(0)}   written: the ${THINGS[S.thing].name} is ${wv.inStrides.toFixed(2)} strides wide` +
+                `${arrived ? ` = ${wv.inMetres.toFixed(1)} m with the stride (0.7 m) carried in` : ' so far'}\n` : 'counting starts at the corner\n') : 'not counting: no amount is written\n') +
+            (S.ground ? `the writer's account: d = ${fmtM(Math.max(d, 0))}, the corner at ${fmtM(dc)}, its mirror partner at ${fmtM(isFinite(x) && d > 0 ? mirror(d) : 0)}, true width ${fmtM(Vstar())}` : '');
+    }
+    const fmtM = m => m >= 1000 ? `${(m / 1000).toFixed(m >= 1e5 ? 0 : 2)} km` : `${m.toFixed(m >= 100 ? 0 : 1)} m`;
+
+    let last = null;
+    function frame(now) {
+        if (S.playing) {
+            const dt = last === null ? 0 : (now - last) / 1000;
+            S.u = Math.min(1, S.u + dt * S.speed / 40);                               // 40 s a walk at ×1
+            if (S.u >= 1) setPlaying(false);
+            $('u').value = S.u; draw();
+        }
+        last = now; requestAnimationFrame(frame);
+    }
+    function setPlaying(on) { S.playing = on; $('play').textContent = on ? 'stop' : 'walk'; $('play').classList.toggle('on', on); }
+    function set(o = {}) {
+        Object.assign(S, o); if ('k' in o) $('k').value = Math.log10(S.k);
+        $('thing').value = S.thing; $('u').value = S.u;
+        $('pace').textContent = `pace: ${S.pace === 'ease' ? 'eased (τ̇ = −½)' : 'steady'}`; $('pace').classList.toggle('on', S.pace === 'ease');
+        $('count').classList.toggle('on', S.count); $('groundBtn').classList.toggle('on', S.ground);
+        draw(); return state();
+    }
+    function state() {
+        const d = dOf(S.u), x = reading(d);
+        return { ...S, d, reading: x, corner: cornerD(S.thing, S.k), crossed: d <= cornerD(S.thing, S.k), Vstar: Vstar() };
+    }
+    $('play').onclick = () => { if (!S.playing && S.u >= 1) S.u = 0; setPlaying(!S.playing); };
+    $('fast').onclick = () => { S.speed = S.speed === 1 ? 5 : 1; $('fast').classList.toggle('on', S.speed === 5); };
+    $('restart').onclick = () => { setPlaying(false); set({ u: 0 }); };
+    $('toCorner').onclick = () => { setPlaying(false);
+        const r = 1 / START; set({ u: S.pace === 'ease' ? 1 - Math.sqrt(r) : 1 - r }); };
+    $('u').oninput = () => { setPlaying(false); set({ u: +$('u').value }); };
+    $('thing').onchange = () => set({ thing: $('thing').value });
+    $('pace').onclick = () => set({ pace: S.pace === 'ease' ? 'steady' : 'ease' });
+    $('count').onclick = () => set({ count: !S.count });
+    $('groundBtn').onclick = () => set({ ground: !S.ground });
+    $('k').oninput = () => set({ k: 10 ** +$('k').value });
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search);
+    set({
+        thing: THINGS[q.get('thing')] ? q.get('thing') : 'mountain', k: q.has('k') ? 10 ** (+q.get('k') || 0) : 1,
+        pace: q.get('pace') === 'ease' ? 'ease' : 'steady', count: q.get('count') === '1', ground: q.get('ground') !== '0',
+        u: Math.min(1, Math.max(0, +q.get('u') || 0)),
+    });
+    requestAnimationFrame(frame);
+    if (q.get('play') === '1') setPlaying(true);
+
+    window.__approach = { THINGS, HL, STRIDE, START, TICKS, Vstar, cornerD, startD, dOf, reading, mirror, tauRead, tauExact,
+        tauDotRead, stridesFromCorner, writeV, words, set, state };
+})();
+</script>
+</body>
+</html>

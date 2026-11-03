@@ -7055,6 +7055,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   write, carried in. So §8's "the time comes out in the reader's own ticks" (R630) is corrected: Lee's τ is a write in
   the reader's tick, τ̇ (ticks per tick, unmoved by any clock) a read. *Reads and Writes* §1 (after "What a read is")
   and §8 "Motion, read".
+- **R650** (3 Nov; Tom: "lets keep H and V. Lets say you walk between H and V. You don't know V, but you walk in its
+  direction. You keep a constant H the entire distance between H and V. What happens as we approach V and then finally
+  arrive at V.", then "this would be a great demo to develop intuition for the situation because we do just this all the
+  time."): the thumb H held at arm's length L the whole walk, each read v/h = (V*/d)/(H/L). Far off V is one in two, four,
+  eight of the thumb, each halving of d doubling the reading, each such stretch the same count of addresses; the corner,
+  V covering the thumb, met by looking at d_c = V*·L/H; past it d and d_c²/d read as reciprocals; at the foot h → 0, the
+  horizon [0 : 1], never reached by halvings but reached by the walk, a count of strides, arrival contact (a write in
+  one's own H, R538). A steady pace reads τ̇ = −1 (arriving at speed), an eased one −½ (stopping at the foot), V
+  unknown; τ in ticks a write (R649). Counting strides from the corner to the foot writes V* = strides × H/L, metres
+  once the stride is carried in; scaling the world moves no reading along the walk, only the count. `approach.html`.
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations
