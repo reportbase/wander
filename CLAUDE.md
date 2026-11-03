@@ -1323,6 +1323,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   however to become a writer."): **never give a reader a circle, a sphere or any shape: a reader has a vantage.** A full
   write is a line (two points, walked and counted); circles and spheres are its turn held whole, the writer's. *Reads and
   Writes* §2 "A vantage, not a shape"; §7 "the reader's vantage and the writer's cube".
+  R644 (3 Nov; Tom: "Once a write occurs, its over. It must be then read."): a write, a count, stops once made; it is
+  used only by being read (marks seen from a standpoint, in directions and ratios). Read, write, read again: the write the
+  past tense, the read the present. *Reads and Writes* §8, "And back: a write is over, and must be read".
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

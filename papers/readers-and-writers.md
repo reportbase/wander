@@ -625,6 +625,14 @@ loop that closes shows that the routes taken agree; it cannot show that no route
 reading. What recovers the thing is not reading harder but the passage through standpoints, and in that passage the observer
 is writing.
 
+**And back: a write is over, and must be read.** A write is a count, and a count stops: the stride walked, the number
+put down, the blueprint drawn. Once made, it is over; nothing more happens in it. To be used it must be read: someone stands
+somewhere and looks at it, at marks on a page in their directions and their ratios, as at anything else that arrives. A
+blueprint in a drawer does nothing until it is looked at; a survey's base, once walked, is read against by every angle that
+follows; a drawing of a known room, rendered from a standpoint, is a write turned back into a read. So the passage runs
+both ways: reading becomes writing through standpoints and a count, and every write, once made, joins what is read. The
+write is the past tense; the read is the present.
+
 ## 9. What a blueprint adds
 
 Ratios suffice for a great deal. A tower of ratios, each storey read against the next, holds a building, its rooms and their

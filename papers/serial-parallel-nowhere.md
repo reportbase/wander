@@ -7002,6 +7002,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   directions), `demos.html`'s cards for these and the star field and sphere-cube, `essays.html`'s essay 5 card,
   `mountain.html` (read from where it stands, not "off its circle"), `room-walk.html` (the writer's one-length circle),
   `star-field.html`'s check line. No demo said the far field in counted thumbs (R642 needed nothing).
+- **R644** (3 Nov; Tom: "Once a write occurs, its over. It must be then read.", then "Yes, add it to the paper"): a write
+  is a count, and a count stops, so a write once made is over; to be used it must be read, from a standpoint, its marks
+  in directions and ratios like anything else that arrives. The passage runs both ways: read, write (through standpoints
+  and a count), read again. Already present in particular: DPR's rendering a blueprint "a writing turned into a
+  reading" (R401), the `.tvf3d` as a pre-read signal (R250), a survey's base read against (R314), memory a written
+  world read by lookup (R641's note). *Reads and Writes* §8, "And back: a write is over, and must be read".
 
 ## Appendix B. Demos and computations
 
