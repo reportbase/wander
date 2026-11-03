@@ -387,6 +387,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (walk-on-spheres, seeded) histogrammed in both. Turns: two in the plane in either order one place; a book turned about x
   then y against y then x (120° apart at 90°). `?r=&beta=<degrees>&a=<degrees>&walk=1`; hook `window.__plane` (`plane`,
   `planeMeans`, `sphere`, `sphereMean`, `bestR`, `fitL`, `boostCheck`, `turnGap`, `walk`, `set`, `state`). Not in the flying page.
+- `epicycles.html`: **circles and standpoints** (3 Nov 2026, Tom: "I wonder if cauchy here could do the same thing", of
+  epicycles, then "Yes, add it to the papers and build the demo"; SPN R633, R634; EPI), a standalone page, plain canvas,
+  EPI's arithmetic at 2,048 samples. A closed outline (one dent, two dents, a broad shape, one pole) drawn three ways: the
+  best n epicycles chained (play the pen); from a height γ, every circle shrunk by e^(−γ|k|), none moved; aimed
+  Takenaka–Malmquist terms (Qian's greedy, a = 0 first on each part), their standpoints drawn in the outline's own plane;
+  beside it the error against terms for both. The dent 13 aimed terms against 85 circles to 10⁻³, the broad shape 19
+  against 10. `?shape=dent|two|broad|pole&show=circles|blur|aimed&n=&g=`; hook `window.__epi` (`shape`, `coeffs`,
+  `fourierErrs`, `afd`, `blurScaled`, `blurDirect`, `firstBelow`, `set`, `state`, `M`). Not in the flying page.
 - `head-turn.html`: **turning the head** (17 Oct 2026, Tom: "can you get parallax from just rotating your head", "yes", then
   "1,2,3"; SPN R339, R340; HTP), a standalone page, plain canvas. The head's axis, the eye r in front of it, a turn Δ
   carrying it along the chord 2r·sin(Δ/2); seven posts (0.5 m to 500 m) read before and after and crossed with the turn
@@ -1274,7 +1282,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   epicycles against aimed Cauchy terms (Takenaka–Malmquist, Qian's AFD). The Poisson blur shrinks circle k by e^{−γ|k|}
   exactly. Aimed terms draw a dent in 11 terms against Fourier's 85 (10⁻³), sit at the dent and step toward the outline;
   the broad shape takes twice Fourier's terms. Run 1 was killed by my set-up (no a₁ = 0); in run 2 E2′ was killed by my
-  reasoning (the greedy finds a place, not the pole). Not in the papers yet.
+  reasoning (the greedy finds a place, not the pole).
+  R634 (3 Nov; Tom: "Yes, add it to the papers and build the demo"): EPI in *Reads and Writes* §6, essay 10 §3 ("A third
+  kernel: the Cauchy's own") and essay 4 §13; `epicycles.html` the demo.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
@@ -3306,6 +3316,10 @@ In short:
       at r = 0.9), its mean point z and the landings' centroid z/2; on the sphere harmonic measure's mean r, the boosted
       sky's 0.63203 at ρ = ½ (coth η − η/sinh² η), the nearest harmonic measure 3.84% off, a·L + b 2.6% and 5.83% off at
       r = 0.3 and 0.7, rapidities adding; two quarter turns of space 120° apart, of the plane none.
+
+  64. **epicycles.html:** the Cauchy's blur each circle scaled by e^(−γ|k|), matching its direct sum to 10⁻¹²; to 10⁻³ the
+      dent in a quarter of the circles' terms or fewer (85 circles), eight or more of the first ten standpoints at the dent;
+      two dents in half the circles' terms, split at least 30% each way; the broad shape needing more aimed terms than circles.
 
   It fails on an uncaught error, or on a lab returning "error" or no verdict.
   "Killed" is listed but doesn't fail the run, because the page treats it as a

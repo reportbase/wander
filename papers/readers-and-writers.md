@@ -450,6 +450,19 @@ past the held edge; a large H does the reverse. No H holds everything. The best 
 the corner, where the reader's relative grain is finest. That is why the corner follows the focus: what is looked at is
 drawn one thumb wide.
 
+**Drawing a shape: the circles, a height, a step toward the detail.** A closed outline about a centre can be written as
+circles on circles, epicycles: its Fourier series, each term a circle turning a whole number of times a lap. Those are the
+turns of one standpoint at the centre, evenly. The Cauchy draws with the same circles two ways. Seen from a height γ, the
+outline is smoothed by the circle's own Cauchy, the wrapped Cauchy, and that smoothing shrinks circle k by e^(−γ|k|) and
+moves none: the broad form stays, the fine circles fade first, which is the height as level of detail. Or each term can be
+the circle seen from a standpoint stepped off the centre toward where the detail is: the Takenaka–Malmquist terms, whose
+kernel on the outline is the wrapped Cauchy about that place, chosen one at a time to take the most of what is left
+(adaptive Fourier decomposition). On an outline with one dent, the best 85 circles draw it to a part in a thousand; eleven
+such terms do, and every one of them stands at the dent, stepping nearer the outline as the detail gets finer. On a broad
+outline with nothing local the even circles win, ten against nineteen: the centre is the right place to stand when there
+is nowhere to step toward. This is the corner following the focus, applied to drawing a shape. The radii drawn are the
+outline's amounts, and its overall size a₀ is in none of the terms.
+
 **K and N.** Computer science has two letters for this, and they sort the acts as well as anything. N is how many items
 there are; K is how many are held. To know N is to know the whole: its extent, V, and how much is in it. That is writing,
 and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own count of addresses,
@@ -729,11 +742,17 @@ inside a read, and what carries an observer from one to the other.
   Religion.* London.
 - Lindemann, F. (1882). Über die Zahl π. *Mathematische Annalen* 20, 213–225.
 - Machin, J. (1706), in W. Jones, *Synopsis palmariorum matheseos.* London.
+- Malmquist, F. (1926). Sur la détermination d'une classe de fonctions analytiques par leurs valeurs dans un
+  ensemble donné de points. *Comptes Rendus du Sixième Congrès des Mathématiciens Scandinaves* (Copenhagen, 1925), 253–259.
 - Poincaré, H. (1902). *La Science et l'hypothèse.* Paris. (1908). *Science et méthode.* Paris.
+- Qian, T. and Wang, Y.-B. (2011). Adaptive Fourier series, a variation of greedy algorithm. *Advances in
+  Computational Mathematics* 34, 279–293.
 - Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions* 75, 385–480.
 - Secrest, N. J. et al. (2021). A test of the cosmological principle with quasars. *Astrophysical Journal Letters* 908,
   L51.
 - Snellius, W. (1617). *Eratosthenes Batavus.* Leiden.
+- Takenaka, S. (1925). On the orthogonal functions and a new formula of interpolation. *Japanese Journal of
+  Mathematics* 2, 129–145.
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII.* Tours.
 
 Some details of the classical works above are given from memory and are to be checked against the texts.

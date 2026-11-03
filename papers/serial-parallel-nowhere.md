@@ -6923,6 +6923,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   the dent and step toward the outline as the detail gets finer. The broad shape needs twice Fourier's terms. Run 1 was killed
   by my set-up (no a₁ = 0 shift). Run 2's E2′, a pole found exactly, was killed by my reasoning: the greedy finds the place,
   not the pole. Classical (Poisson, Takenaka–Malmquist, Qian); the reading is ours.
+- **R634** (3 Nov; Tom: "Yes, add it to the papers and build the demo"): EPI is in *Reads and Writes* §6 ("Drawing a shape: the
+  circles, a height, a step toward the detail"), essay 10 §3 ("A third kernel: the Cauchy's own") and essay 4 §13 (the
+  focus, applied to a shape). The references (Takenaka, Malmquist, Qian and Wang) are added. `epicycles.html` is the demo:
+  epicycles, the outline from a height, and the aimed standpoints drawn in the outline's own plane, with the error
+  against terms for both. It is on `demos.html` and on the cards for essays 4 and 10.
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |

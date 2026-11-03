@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Circles and standpoints</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    epicycles.html: circles and standpoints (3 November 2026; Tom: "It is interesting that it uses circles to draw the
+    shapes pertibations, I wonder if cauchy here could do the same thing", then "start the epi cycle test" and "Yes, add it
+    to the papers and build the demo"; SPN R633, R634; EPI, `plans/epi-plan.md` + `runs/epi/epi.py`). A standalone page,
+    plain canvas, no libraries; EPI's arithmetic redone here at 2,048 samples.
+    A closed outline z(θ) = r(θ)·e^{iθ}, ln r = f(θ), drawn three ways:
+      1. Epicycles: the outline's Fourier series, a circle a term, the n largest (best-n). The reader at the centre.
+      2. From a height: the wrapped Cauchy (the Poisson kernel) of height γ shrinks circle k by e^{−γ|k|} and mixes none,
+         so every circle stays where it was; the fine ones fade first. Checked against the blur summed directly.
+      3. Aimed terms: Takenaka–Malmquist terms chosen greedily (Qian's adaptive Fourier decomposition), each a
+         standpoint a inside the disc, its kernel the wrapped Cauchy at a/|a| with height −ln|a|. The standpoints are drawn
+         in the outline's own plane, so they can be seen going to the detail.
+    Below, the error against the number of terms for both (relative L2 to ‖z − c₀‖).
+    `?shape=dent|two|broad|pole&show=circles|blur|aimed&n=&g=`; hook `window.__epi` (`shape`, `coeffs`, `fourierErrs`,
+    `afd`, `blurScaled`, `blurDirect`, `firstBelow`, `set`, `state`).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 20px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 3fr 2fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15;
+        overflow-x: auto }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Circles and standpoints</h1>
+    <p class="lede">Epicycles draw a shape with circles on circles, each turning a whole number of times a lap: the reader at
+    the centre, turning evenly. The Cauchy can draw with the same circles in two ways. <span class="g">From a height</span>, it
+    shrinks circle k by e<sup>−γ|k|</sup> and moves none: the fine circles fade first, which is level of detail.
+    <span class="r">From standpoints stepped toward the detail</span>, each term is the circle seen from a point inside it, and
+    a dent that takes eighty circles takes about a dozen such terms. Where nothing is local, the even circles win.</p>
+
+    <div class="panel">
+        <div class="row"><label>shape</label>
+            <button data-shape="dent">one dent</button><button data-shape="two">two dents</button>
+            <button data-shape="broad">a broad shape</button><button data-shape="pole">one pole</button></div>
+        <div class="row"><label>show</label>
+            <button data-show="circles">epicycles</button><button data-show="blur">from a height</button>
+            <button data-show="aimed">aimed standpoints</button>
+            <button id="play">play the pen</button></div>
+        <div class="row"><label for="n">terms</label><input id="n" type="range" min="1" max="60" step="1" value="11">
+            <span id="nv" class="b"></span></div>
+        <div class="row" id="grow"><label for="g">height γ</label><input id="g" type="range" min="0" max="1" step="0.005" value="0.05">
+            <span id="gv" class="b"></span></div>
+    </div>
+
+    <div class="panel">
+        <div class="grid">
+            <div><canvas id="cv1" height="560"></canvas><p class="cap" id="cap1"></p></div>
+            <div><canvas id="cv2" height="560"></canvas><p class="cap">Error against terms, on a log scale:
+            <span class="g">gold</span> the best n epicycles, <span class="r">teal</span> the aimed terms. The dashed lines
+            are 10⁻², 10⁻³ and 10⁻⁴; the white tick is the slider's n.</p></div>
+        </div>
+        <p class="read" id="read"></p>
+        <p class="note">Classical throughout: Abel–Poisson summation, Takenaka (1925) and Malmquist (1926), Qian's adaptive
+        Fourier decomposition (Qian and Wang 2011). The reading is ours: even circles are one standpoint at the centre; the
+        aimed terms are standpoints moved toward the detail, the focus at the corner applied to drawing a shape. The outline's
+        size, a₀, is in none of the terms. The test is EPI (<code>plans/epi-plan.md</code>, runs 1 and 2).</p>
+    </div>
+</main>
+<script>
+(() => {
+    'use strict';
+    const M = 2048, KMAX = M / 2, RHO_MAX = 1 - 0.012, NMAX = 60;
+    const TH = new Float64Array(M);
+    for (let j = 0; j < M; j++) TH[j] = 2 * Math.PI * j / M;
+
+    // ── complex arrays as [re, im] of Float64Array; an in-place radix-2 FFT ──
+    const C = n => [new Float64Array(n), new Float64Array(n)];
+    function fft(re, im, inv) {
+        const n = re.length;
+        for (let i = 1, j = 0; i < n; i++) {
+            let bit = n >> 1;
+            for (; j & bit; bit >>= 1) j ^= bit;
+            j ^= bit;
+            if (i < j) { let t = re[i]; re[i] = re[j]; re[j] = t; t = im[i]; im[i] = im[j]; im[j] = t; }
+        }
+        for (let len = 2; len <= n; len <<= 1) {
+            const ang = (inv ? 2 : -2) * Math.PI / len, wr = Math.cos(ang), wi = Math.sin(ang);
+            for (let i = 0; i < n; i += len) {
+                let cr = 1, ci = 0;
+                for (let k = 0; k < len / 2; k++) {
+                    const a = i + k, b = a + len / 2;
+                    const xr = re[b] * cr - im[b] * ci, xi = re[b] * ci + im[b] * cr;
+                    re[b] = re[a] - xr; im[b] = im[a] - xi; re[a] += xr; im[a] += xi;
+                    const t = cr * wr - ci * wi; ci = cr * wi + ci * wr; cr = t;
+                }
+            }
+        }
+    }
+    function coeffs(z) { const c = [Float64Array.from(z[0]), Float64Array.from(z[1])]; fft(c[0], c[1], false);
+        for (let k = 0; k < M; k++) { c[0][k] /= M; c[1][k] /= M; } return c; }
+    function synth(c) { const z = [Float64Array.from(c[0]), Float64Array.from(c[1])]; fft(z[0], z[1], true); return z; }
+    const kOf = i => (i < M / 2 ? i : i - M);
+
+    // ── the shapes (EPI's, at 2,048 samples) ──
+    function wrapgauss(t, t0, w) { let s = 0; for (let m = -3; m <= 3; m++) { const d = (t - t0 + 2 * Math.PI * m) / w; s += Math.exp(-d * d / 2); } return s; }
+    function shape(name) {
+        const z = C(M);
+        for (let j = 0; j < M; j++) {
+            const t = TH[j];
+            if (name === 'pole') {
+                const ar = 0.8 * Math.cos(1), ai = -0.8 * Math.sin(1);       // conj(a), a = 0.8·e^{i}
+                const dr = 1 - (ar * Math.cos(t) - ai * Math.sin(t)), di = -(ar * Math.sin(t) + ai * Math.cos(t));
+                const q = dr * dr + di * di;
+                z[0][j] = Math.cos(t) + 0.3 * dr / q; z[1][j] = Math.sin(t) - 0.3 * di / q;
+                continue;
+            }
+            let f;
+            if (name === 'two') f = -0.25 * (wrapgauss(t, 1, 0.05) + wrapgauss(t, 3.5, 0.05));
+            else if (name === 'broad') f = 0.10 * Math.cos(2 * t) + 0.05 * Math.sin(3 * t);
+            else f = -0.25 * wrapgauss(t, 1, 0.05);
+            const r = Math.exp(f);
+            z[0][j] = r * Math.cos(t); z[1][j] = r * Math.sin(t);
+        }
+        return z;
+    }
+
+    // ── epicycles: the best n circles ──
+    function fourierErrs(z, nmax) {
+        const c = coeffs(z), p = [];
+        for (let i = 1; i < M; i++) p.push(c[0][i] * c[0][i] + c[1][i] * c[1][i]);
+        p.sort((a, b) => b - a);
+        const tot = p.reduce((s, x) => s + x, 0), out = [];
+        let acc = 0;
+        for (let n = 0; n < nmax; n++) { acc += p[n]; out.push(Math.sqrt(Math.max(tot - acc, 0) / tot)); }
+        return out;
+    }
+    function bestCircles(z, n) {
+        const c = coeffs(z), idx = [];
+        for (let i = 1; i < M; i++) idx.push(i);
+        idx.sort((a, b) => Math.hypot(c[0][b], c[1][b]) - Math.hypot(c[0][a], c[1][a]));
+        return { c0: [c[0][0], c[1][0]], circles: idx.slice(0, n).map(i => ({ k: kOf(i), re: c[0][i], im: c[1][i] })) };
+    }
+
+    // ── from a height: each circle scaled by e^{−γ|k|}, and the same blur summed directly ──
+    function blurScaled(z, g) {
+        const c = coeffs(z);
+        for (let i = 0; i < M; i++) { const s = Math.exp(-g * Math.abs(kOf(i))); c[0][i] *= s; c[1][i] *= s; }
+        return synth(c);
+    }
+    function blurDirect(z, g) {
+        const r = Math.exp(-g), P = new Float64Array(M), out = C(M);
+        for (let j = 0; j < M; j++) P[j] = (1 - r * r) / (1 - 2 * r * Math.cos(TH[j]) + r * r);
+        for (let j = 0; j < M; j++) {
+            let sr = 0, si = 0;
+            for (let i = 0; i < M; i++) { const w = P[(j - i + M) % M]; sr += w * z[0][i]; si += w * z[1][i]; }
+            out[0][j] = sr / M; out[1][j] = si / M;
+        }
+        return out;
+    }
+
+    // ── aimed terms: Takenaka–Malmquist, chosen greedily (adaptive Fourier decomposition) ──
+    function cmul(ar, ai, br, bi) { return [ar * br - ai * bi, ar * bi + ai * br]; }
+    function cdiv(ar, ai, br, bi) { const q = br * br + bi * bi; return [(ar * br + ai * bi) / q, (ai * br - ar * bi) / q]; }
+    function makePart(vals) { return { g: vals, B: [new Float64Array(M).fill(1), new Float64Array(M)], approx: C(M) }; }
+    function posCoeffs(part) { const c = coeffs(part.g); return [c[0].slice(0, KMAX), c[1].slice(0, KMAX)]; }
+    function gainAt(cp, ar, ai) {           // (1 − |a|²)·|g(a)|², g(a) by Horner
+        let vr = 0, vi = 0;
+        for (let k = KMAX - 1; k >= 0; k--) { const t = vr * ar - vi * ai + cp[0][k]; vi = vr * ai + vi * ar + cp[1][k]; vr = t; }
+        return (1 - ar * ar - ai * ai) * (vr * vr + vi * vi);
+    }
+    function nelderMead(f, x0, step, iters) {
+        let pts = [x0, [x0[0] + step, x0[1]], [x0[0], x0[1] + step]].map(p => ({ p, v: f(p) }));
+        for (let it = 0; it < iters; it++) {
+            pts.sort((a, b) => a.v - b.v);
+            const [b, m, w] = pts, cx = [(b.p[0] + m.p[0]) / 2, (b.p[1] + m.p[1]) / 2];
+            const at = s => [cx[0] + s * (w.p[0] - cx[0]), cx[1] + s * (w.p[1] - cx[1])];
+            const r = at(-1), vr = f(r);
+            if (vr < b.v) { const e = at(-2), ve = f(e); pts[2] = ve < vr ? { p: e, v: ve } : { p: r, v: vr }; }
+            else if (vr < m.v) pts[2] = { p: r, v: vr };
+            else { const k = at(0.5), vk = f(k);
+                if (vk < w.v) pts[2] = { p: k, v: vk };
+                else pts = pts.map((q, i) => i === 0 ? q : (() => { const p = [(q.p[0] + b.p[0]) / 2, (q.p[1] + b.p[1]) / 2]; return { p, v: f(p) }; })()); }
+            if (Math.abs(pts[2].v - pts[0].v) < 1e-20 * Math.max(1, Math.abs(pts[0].v))) break;
+        }
+        pts.sort((a, b) => a.v - b.v);
+        return pts[0];
+    }
+    function bestA(part) {
+        const cp = posCoeffs(part);
+        let best = { v: -1, ar: 0, ai: 0 };
+        const xmax = Math.log10(1 / (1 - RHO_MAX));
+        for (let s = 0; s < 40; s++) {
+            const x = xmax * s / 39, rho = s === 0 ? 0 : 1 - Math.pow(10, -x);
+            const re = new Float64Array(M), im = new Float64Array(M);
+            let pw = 1;
+            for (let k = 0; k < KMAX; k++) { re[k] = cp[0][k] * pw; im[k] = cp[1][k] * pw; pw *= rho; }
+            fft(re, im, true);
+            for (let m = 0; m < M; m++) {
+                const v = (1 - rho * rho) * (re[m] * re[m] + im[m] * im[m]);
+                if (v > best.v) best = { v, ar: rho * Math.cos(TH[m]), ai: rho * Math.sin(TH[m]) };
+            }
+        }
+        const r0 = Math.min(Math.hypot(best.ar, best.ai), RHO_MAX * 0.999), ph0 = Math.atan2(best.ai, best.ar);
+        const u0 = r0 > 1e-6 ? Math.log(r0 / (RHO_MAX - r0)) : -8;
+        const f = p => { const rho = RHO_MAX / (1 + Math.exp(-p[0])); return -gainAt(cp, rho * Math.cos(p[1]), rho * Math.sin(p[1])); };
+        const nm = nelderMead(f, [u0, ph0], 0.05, 300);
+        if (-nm.v > best.v) { const rho = RHO_MAX / (1 + Math.exp(-nm.p[0])); return { v: -nm.v, ar: rho * Math.cos(nm.p[1]), ai: rho * Math.sin(nm.p[1]) }; }
+        return best;
+    }
+    function take(part, ar, ai) {
+        const s = Math.sqrt(1 - ar * ar - ai * ai), eR = new Float64Array(M), eI = new Float64Array(M);
+        let cr = 0, ci = 0;
+        for (let j = 0; j < M; j++) {
+            const zr = Math.cos(TH[j]), zi = Math.sin(TH[j]);
+            const dr = 1 - (ar * zr + ai * zi), di = -(ar * zi - ai * zr);        // 1 − conj(a)·ζ
+            const [er, ei] = cdiv(s, 0, dr, di); eR[j] = er; eI[j] = ei;
+            cr += part.g[0][j] * er + part.g[1][j] * ei; ci += part.g[1][j] * er - part.g[0][j] * ei;
+        }
+        cr /= M; ci /= M;
+        const ng = C(M);
+        for (let j = 0; j < M; j++) {
+            const zr = Math.cos(TH[j]), zi = Math.sin(TH[j]);
+            const [tr, ti] = cmul(cr, ci, eR[j], eI[j]), [pr, pi] = cmul(tr, ti, part.B[0][j], part.B[1][j]);
+            part.approx[0][j] += pr; part.approx[1][j] += pi;
+            const dr = 1 - (ar * zr + ai * zi), di = -(ar * zi - ai * zr);        // 1 − conj(a)ζ
+            const [br, bi] = cdiv(zr - ar, zi - ai, dr, di);                        // the Blaschke factor
+            const [qr, qi] = cdiv(part.g[0][j] - tr, part.g[1][j] - ti, br, bi);
+            ng[0][j] = qr; ng[1][j] = qi;
+            const [Br, Bi] = cmul(part.B[0][j], part.B[1][j], br, bi); part.B[0][j] = Br; part.B[1][j] = Bi;
+        }
+        const c = coeffs(ng);
+        for (let k = KMAX; k < M; k++) { c[0][k] = 0; c[1][k] = 0; }
+        part.g = synth(c);
+        return [cr, ci];
+    }
+    function afd(z, nmax) {
+        const c = coeffs(z), c0 = [c[0][0], c[1][0]];
+        const plus = C(M), minus = C(M);
+        for (let k = 1; k < KMAX; k++) { plus[0][k] = c[0][k]; plus[1][k] = c[1][k]; minus[0][k] = c[0][M - k]; minus[1][k] = -c[1][M - k]; }
+        const P = makePart(synth(plus)), Q = makePart(synth(minus));
+        let norm = 0;
+        for (let j = 0; j < M; j++) norm += (z[0][j] - c0[0]) ** 2 + (z[1][j] - c0[1]) ** 2;
+        norm = Math.sqrt(norm / M);
+        const errs = [], picks = [], approxes = [];
+        const record = () => {
+            const ap = C(M); let e = 0;
+            for (let j = 0; j < M; j++) {
+                ap[0][j] = c0[0] + P.approx[0][j] + Q.approx[0][j];
+                ap[1][j] = c0[1] + P.approx[1][j] - Q.approx[1][j];
+                e += (z[0][j] - ap[0][j]) ** 2 + (z[1][j] - ap[1][j]) ** 2;
+            }
+            errs.push(Math.sqrt(e / M) / norm); approxes.push(ap);
+        };
+        take(P, 0, 0); picks.push({ part: '+', ar: 0, ai: 0 }); record();      // Qian's first step, a = 0, on each part
+        take(Q, 0, 0); picks.push({ part: '-', ar: 0, ai: 0 }); record();
+        while (picks.length < nmax) {
+            const bp = bestA(P), bq = bestA(Q);
+            if (bp.v >= bq.v) { take(P, bp.ar, bp.ai); picks.push({ part: '+', ar: bp.ar, ai: bp.ai }); }
+            else { take(Q, bq.ar, bq.ai); picks.push({ part: '-', ar: bq.ar, ai: bq.ai }); }
+            record();
+        }
+        return { errs, picks, approxes };
+    }
+    function firstBelow(errs, t) { for (let i = 0; i < errs.length; i++) if (errs[i] < t) return i + 1; return null; }
+
+    // ── state, cached per shape ──
+    const cache = {};
+    function dataOf(name) {
+        if (!cache[name]) { const z = shape(name); cache[name] = { z, fe: fourierErrs(z, 600), af: null }; }
+        const d = cache[name];
+        if (!d.af) d.af = afd(d.z, NMAX);
+        return d;
+    }
+    const q = new URLSearchParams(location.search);
+    const S = {
+        shape: ['dent', 'two', 'broad', 'pole'].includes(q.get('shape')) ? q.get('shape') : 'dent',
+        show: ['circles', 'blur', 'aimed'].includes(q.get('show')) ? q.get('show') : 'aimed',
+        n: Math.max(1, Math.min(NMAX, +q.get('n') || 11)),
+        g: q.has('g') ? Math.max(0, Math.min(1, +q.get('g'))) : 0.05,
+        play: false, phase: 0
+    };
+
+    const cv1 = document.getElementById('cv1'), cv2 = document.getElementById('cv2');
+    function fit(cv) { const w = cv.clientWidth || 600; if (cv.width !== Math.round(w * devicePixelRatio)) { cv.width = Math.round(w * devicePixelRatio);
+        cv.height = Math.round(cv.width * (cv === cv1 ? 1 : 1.2)); } return cv.getContext('2d'); }
+    function poly(ctx, z, X, Y, col, lw, dash) {
+        ctx.beginPath(); for (let j = 0; j <= M; j++) { const i = j % M; const x = X(z[0][i]), y = Y(z[1][i]); j ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
+        ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.setLineDash(dash || []); ctx.stroke(); ctx.setLineDash([]);
+    }
+    function drawShape() {
+        const ctx = fit(cv1), W = cv1.width, H = cv1.height, d = dataOf(S.shape), z = d.z;
+        ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
+        let rmax = 1;                                   // the view fits the outline, the origin (the disc's centre) kept in the middle
+        for (let j = 0; j < M; j++) rmax = Math.max(rmax, Math.hypot(z[0][j], z[1][j]));
+        const sc = Math.min(W, H) * 0.45 / rmax, X = x => W / 2 + x * sc, Y = y => H / 2 - y * sc, px = devicePixelRatio;
+        ctx.strokeStyle = 'rgba(255,255,255,0.08)'; ctx.lineWidth = px; ctx.beginPath(); ctx.arc(W / 2, H / 2, sc, 0, 2 * Math.PI); ctx.stroke();
+        poly(ctx, z, X, Y, 'rgba(255,255,255,0.35)', 1.2 * px);
+        const cap = document.getElementById('cap1');
+        if (S.show === 'circles') {
+            const bc = bestCircles(z, S.n), ap = C(M);
+            for (let j = 0; j < M; j++) { let r = bc.c0[0], i = bc.c0[1];
+                for (const cc of bc.circles) { const a = cc.k * TH[j]; r += cc.re * Math.cos(a) - cc.im * Math.sin(a); i += cc.re * Math.sin(a) + cc.im * Math.cos(a); }
+                ap[0][j] = r; ap[1][j] = i; }
+            poly(ctx, ap, X, Y, '#d4a052', 1.6 * px);
+            let cx = bc.c0[0], cy = bc.c0[1];
+            const t = S.phase;
+            for (const cc of bc.circles) {
+                const rad = Math.hypot(cc.re, cc.im), a = cc.k * t;
+                const nx = cx + cc.re * Math.cos(a) - cc.im * Math.sin(a), ny = cy + cc.re * Math.sin(a) + cc.im * Math.cos(a);
+                ctx.strokeStyle = 'rgba(212,160,82,0.35)'; ctx.lineWidth = px;
+                ctx.beginPath(); ctx.arc(X(cx), Y(cy), Math.max(rad * sc, 0.5), 0, 2 * Math.PI); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(X(cx), Y(cy)); ctx.lineTo(X(nx), Y(ny)); ctx.stroke();
+                cx = nx; cy = ny;
+            }
+            ctx.fillStyle = '#e6e4ee'; ctx.beginPath(); ctx.arc(X(cx), Y(cy), 3 * px, 0, 2 * Math.PI); ctx.fill();
+            cap.innerHTML = `The <span class="g">${S.n} largest epicycles</span>, chained, and the outline they draw; faint white the
+            true outline. Every circle turns a whole number of times a lap: the reader at the centre, turning evenly.`;
+        } else if (S.show === 'blur') {
+            const bz = blurScaled(z, S.g);
+            poly(ctx, bz, X, Y, '#d4a052', 1.6 * px);
+            cap.innerHTML = `The outline <span class="g">seen from a height γ = ${S.g.toFixed(3)}</span>: the wrapped Cauchy (the
+            Poisson kernel) shrinks circle k by e<sup>−γ|k|</sup> and moves none. The broad form stays; the dent's fine circles fade
+            first. Every circle survives, damped, so the blur can be undone.`;
+        } else {
+            const af = d.af, n = Math.min(S.n, af.approxes.length);
+            poly(ctx, af.approxes[n - 1], X, Y, '#8ce6cd', 1.6 * px);
+            af.picks.slice(0, n).forEach((p, i) => {
+                const col = p.part === '+' ? 'rgba(140,230,205,' : 'rgba(181,156,240,';
+                const fade = 0.35 + 0.65 * (i + 1) / n;
+                ctx.fillStyle = col + fade + ')'; ctx.beginPath(); ctx.arc(X(p.ar), Y(p.ai), (2 + 2 * (i + 1) / n) * px, 0, 2 * Math.PI); ctx.fill();
+            });
+            cap.innerHTML = `The <span class="r">first ${n} aimed terms</span> and the outline they draw. Each dot is a term's
+            standpoint a, drawn in the outline's own plane (<span class="r">teal</span> for the outline's forward circles,
+            <span class="w">violet</span> for its backward ones; later terms brighter). The first two sit at the centre (Qian's
+            first step); the rest step out toward where the detail is, nearer the outline as the detail gets finer.`;
+        }
+    }
+    function drawErr() {
+        const ctx = fit(cv2), W = cv2.width, H = cv2.height, d = dataOf(S.shape), px = devicePixelRatio;
+        ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
+        const L = 48 * px, R = W - 10 * px, T = 12 * px, B = H - 28 * px, nmax = 120, lo = -7, hi = 0;
+        const X = n => L + (R - L) * (n - 1) / (nmax - 1), Y = e => T + (B - T) * (hi - Math.log10(Math.max(e, 1e-12))) / (hi - lo);
+        ctx.font = `${11 * px}px DM Mono, monospace`; ctx.fillStyle = '#8a8a96';
+        for (let e = lo; e <= hi; e++) { ctx.fillText(`1e${e}`, 4 * px, Y(10 ** e) + 4 * px);
+            ctx.strokeStyle = (e === -2 || e === -3 || e === -4) ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.06)';
+            ctx.setLineDash(e >= -4 && e <= -2 ? [4 * px, 4 * px] : []); ctx.beginPath(); ctx.moveTo(L, Y(10 ** e)); ctx.lineTo(R, Y(10 ** e)); ctx.stroke(); ctx.setLineDash([]); }
+        for (let n = 20; n <= nmax; n += 20) ctx.fillText(String(n), X(n) - 8 * px, H - 8 * px);
+        const line = (errs, col) => { ctx.beginPath(); errs.slice(0, nmax).forEach((e, i) => { const x = X(i + 1), y = Y(e); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); });
+            ctx.strokeStyle = col; ctx.lineWidth = 1.8 * px; ctx.stroke(); };
+        line(d.fe, '#d4a052'); line(d.af.errs, '#8ce6cd');
+        ctx.strokeStyle = '#e6e4ee'; ctx.lineWidth = px; ctx.beginPath(); ctx.moveTo(X(S.n), T); ctx.lineTo(X(S.n), B); ctx.stroke();
+    }
+    function readout() {
+        const d = dataOf(S.shape), row = t => `  to ${t.toExponential(0)}: epicycles ${firstBelow(d.fe, t) ?? '—'}, aimed ${firstBelow(d.af.errs, t) ?? `> ${NMAX}`}`;
+        const near = d.af.picks.filter(p => Math.hypot(p.ar, p.ai) > 0.5).slice(0, 10);
+        const ang = p => Math.atan2(p.ai, p.ar);
+        let s = `terms to reach an error of\n${row(1e-2)}\n${row(1e-3)}\n${row(1e-4)}\n`;
+        s += `at n = ${S.n}: epicycles ${d.fe[S.n - 1].toExponential(2)}, aimed ${d.af.errs[Math.min(S.n, NMAX) - 1].toExponential(2)}\n`;
+        s += `the first ten standpoints off the centre: ` + near.map(p => `${ang(p).toFixed(2)}`).join(' ') + ` (angles; |a| `
+            + near.map(p => Math.hypot(p.ar, p.ai).toFixed(2)).join(' ') + ')';
+        document.getElementById('read').textContent = s;
+    }
+    function render() {
+        document.querySelectorAll('[data-shape]').forEach(b => b.classList.toggle('on', b.dataset.shape === S.shape));
+        document.querySelectorAll('[data-show]').forEach(b => b.classList.toggle('on', b.dataset.show === S.show));
+        document.getElementById('grow').style.display = S.show === 'blur' ? '' : 'none';
+        document.getElementById('play').style.display = S.show === 'circles' ? '' : 'none';
+        document.getElementById('n').value = S.n; document.getElementById('nv').textContent = S.n;
+        document.getElementById('g').value = S.g; document.getElementById('gv').textContent = S.g.toFixed(3);
+        drawShape(); drawErr(); readout();
+    }
+    function set(o) { Object.assign(S, o); render(); return state(); }
+    function state() { const d = dataOf(S.shape); return { shape: S.shape, show: S.show, n: S.n, g: S.g,
+        fe: d.fe.slice(0, 200), errs: d.af.errs.slice(), picks: d.af.picks.map(p => ({ part: p.part, a: [p.ar, p.ai] })) }; }
+
+    document.querySelectorAll('[data-shape]').forEach(b => b.onclick = () => set({ shape: b.dataset.shape }));
+    document.querySelectorAll('[data-show]').forEach(b => b.onclick = () => set({ show: b.dataset.show }));
+    document.getElementById('n').oninput = e => set({ n: +e.target.value });
+    document.getElementById('g').oninput = e => set({ g: +e.target.value });
+    document.getElementById('play').onclick = () => { S.play = !S.play; document.getElementById('play').classList.toggle('on', S.play); if (S.play) tick(); };
+    function tick() { if (!S.play) return; S.phase = (S.phase + 0.01) % (2 * Math.PI); if (S.show === 'circles') drawShape(); requestAnimationFrame(tick); }
+    addEventListener('resize', () => render());
+
+    window.__epi = { shape, coeffs, fourierErrs, afd, blurScaled, blurDirect, firstBelow, set, state, M };
+    render();
+})();
+</script>
+</body>
+</html>

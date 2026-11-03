@@ -147,3 +147,15 @@ constant, zero here), and that shift counts as a term. Thresholds as before.
 - Classical throughout: Abel–Poisson summation, Takenaka–Malmquist, Qian's adaptive Fourier decomposition. The reading is
   ours: the even circles are one standpoint at the centre, and the aimed terms are standpoints moved toward the detail, the
   focus as the corner, applied to drawing a shape.
+
+### After the runs: the demo and the papers (3 Nov, R634)
+
+`epicycles.html` redoes the arithmetic at 2,048 samples (1 − |a| ≥ 0.012), with up to 60 aimed terms. The numbers move
+a little: the dent takes 13 aimed terms to 10⁻³ against 85 circles. The two dents take 22 against 84 and the broad shape
+19 against 10, and the blur matches its direct sum to 3·10⁻¹⁴. Seen there after the runs, and not a test: with no cap at
+12, the one-pole shape reaches 10⁻⁴ in 13 aimed terms against 37 circles. The greedy still never takes the pole itself
+(|a| 0.869 against 0.8). Its error falls below run 2's cap shortly after. E2′ stays killed as stated.
+
+Into the papers: *Reads and Writes* §6, "Drawing a shape: the circles, a height, a step toward the detail"; essay 10 §3,
+"A third kernel: the Cauchy's own"; a paragraph in essay 4 §13. The references (Takenaka 1925, Malmquist 1926, Qian and
+Wang 2011) are from memory and are to be checked.
