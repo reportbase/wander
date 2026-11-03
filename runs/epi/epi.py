@@ -2,10 +2,13 @@
 decomposition), on a dent, two dents, a broad shape and a one-pole shape. Plan: plans/epi-plan.md.
 
 python3 runs/epi/epi.py > runs/epi/epi-run1.txt
+python3 runs/epi/epi.py 2 > runs/epi/epi-run2.txt   (run 2: each part takes a = 0 first, as Qian's first step)
 """
+import sys
 import numpy as np
 from scipy.optimize import minimize
 
+RUN = int(sys.argv[1]) if len(sys.argv) > 1 else 1
 M = 4096
 TH = 2 * np.pi * np.arange(M) / M
 ZETA = np.exp(1j * TH)
@@ -133,7 +136,12 @@ def afd(z, nmax, target=None):
     Q = Part(np.fft.ifft(minus) * M)
     norm = np.sqrt(np.mean(np.abs(z - c0) ** 2))
     errs, picks = [], []
-    for n in range(nmax):
+    if RUN >= 2:                                   # Qian's first step: a = 0, the constant, then divide by z
+        for part, sgn in ((P, '+'), (Q, '-')):
+            part.take(0j); picks.append((sgn, 0j))
+            approx = c0 + P.approx + np.conj(Q.approx)
+            errs.append(np.sqrt(np.mean(np.abs(z - approx) ** 2)) / norm)
+    for n in range(nmax - len(picks)):
         gp, ap = P.best()
         gq, aq = Q.best()
         if gp >= gq:
@@ -168,7 +176,7 @@ def angdist(x, y):
 
 
 if __name__ == '__main__':
-    print('EPI run 1 (plans/epi-plan.md). M = 4096 samples; errors relative L2 to ||z - c0||.\n')
+    print(f'EPI run {RUN} (plans/epi-plan.md). M = 4096 samples; errors relative L2 to ||z - c0||.\n')
     rows, worst = e1()
     print('E1: the wrapped Cauchy (Poisson kernel) by direct sum against each circle scaled by r^|k|, on S1')
     gmax = 0

@@ -72,4 +72,40 @@ Kill: any prediction failing as stated. A killed run stays recorded; a fix is a 
 
 ## Runs
 
-(none yet)
+### Run 1 (3 Nov; `runs/epi/epi.py`, output `runs/epi/epi-run1.txt`)
+
+- **E1 not killed.** The direct sum with the wrapped Cauchy equals each circle scaled by e^{−γ|k|} to 1.4·10⁻¹⁴ (γ = 0.05),
+  1.2·10⁻¹⁵ (0.2, 1). The Cauchy's shrink ratio is e^{−γ} at every k to 10⁻¹⁶; the wrapped Gaussian's varies by 6.7,
+  2,000 and 3·10¹⁶ over k = 1…20.
+- **E2 killed.** On S4 the aimed terms reached 10⁻² in 11 terms and never 10⁻³ in 12; Fourier needed 37 terms for 10⁻⁴.
+- **E3 not killed.** On S1, 24 aimed terms against 85 Fourier to 10⁻³ (96 reals against 170); 12 against 40 to 10⁻²,
+  37 against 111 to 10⁻⁴.
+- **E4 not killed.** On S3, 24 aimed against 10 Fourier to 10⁻³.
+- **E5 killed.** 5 of the first 10 terms with |a| > 0.5 within 0.3 of θ₀. The median 1 − |a| fell from 0.42 (terms 2–5)
+  to 0.37 (6–10).
+- **E6 killed.** 4 and 3 of 19 at the two dents.
+- Two dents: 13 aimed against 42 Fourier to 10⁻², 34 against 84 to 10⁻³, 58 against 108 to 10⁻⁴. No aimed run reached
+  10⁻⁶ within its cap. The remainders' negative frequencies leaked at most 6.5·10⁻¹⁵.
+
+**Killed by my set-up.** Qian's decomposition takes a₁ = 0 first: the constant, then the remainder divided by z. I
+counted a term's worth only by its gain, |g(a)|²(1 − |a|²). With the mean given free, a = 0 gains nothing, so it was never
+taken, and its real value is the division it makes possible. Without that shift, the outline's own circle (the e^{iθ}
+term, most of every shape) can only be reached through off-centre kernels. g(a) = a has gain (1 − |a|²)|a|², which is
+largest at |a| = 1/√2, and the greedy spent its first terms there (0.707, 0.708, 0.718 on S1, S2, S3), at the place
+opposite the detail, chasing the circle.
+
+Post hoc, seen only after the run: the conj(z₋) part had no such circle to chase, and its picks were at the dent from the
+start (S1: |a| 0.957, 0.979, 0.926, 0.971 at arg 0.93–1.13; S2 likewise at both dents). E3 held despite the waste.
+
+### Run 2, predictions (written before it runs)
+
+The same script and shapes, with one change: each part takes a₁ = 0 first (Qian's first step, its coefficient the part's
+constant, zero here), and that shift counts as a term. Thresholds as before.
+
+- **E2′.** On S4 the aimed terms reach 10⁻⁴ in at most 6 terms (the shift, the circle, the pole, and room for the greedy's
+  inexact a); Fourier 37 (run 1).
+- **E3′.** On S1, aimed ≤ half of Fourier's 85 to 10⁻³.
+- **E4′.** On S3, aimed ≥ Fourier's count less one to 10⁻³ (no gain where nothing is local).
+- **E5′.** On S1, of the first ten aimed terms with |a| > 0.5, at least eight within 0.3 of θ₀; the median 1 − |a| over
+  terms 6–10 smaller than over terms 2–5.
+- **E6′.** On S2, of the terms with |a| > 0.5 among the first twenty, each dent gets at least 30%.
