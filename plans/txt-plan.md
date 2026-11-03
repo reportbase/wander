@@ -190,3 +190,8 @@ writer's. The robustness profile did not sort by reader and writer. It sorts by 
 *places* (TVF, RAD, POLY, SVG absolute) keep imprecise numbers local; *steps* (STEP, TURTLE, SVG relative) carry them to
 the end of the walk; *frequencies* (FD) spread them over the whole outline. Losing a token is the one slip where the
 readers as a group did better than every writer. The hybrid did not beat the best single format on its own figures.
+
+**On the hybrid (3 November, after run 3).** Tom: "Readers rotate, writers walk. I don't know what a hybrid system even
+is." The hybrid was my construction, not the framework's: in *Reads and Writes* a read and a write are two acts, and an
+observer who reads and then writes is writing (R594), not doing a third thing. Q4 tested an engineering mixture, not a
+consequence of the distinction, and its kill says nothing about the distinction either way.
