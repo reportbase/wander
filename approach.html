@@ -20,9 +20,11 @@
       - past it v/h > 1, climbing; d and d_c²/d read as reciprocals (the mirror about the corner);
       - at the foot h → 0: the thing is no longer a thing in the sweep but the horizon [0 : 1]. By halvings never
         reached; the walk, a count of strides, arrives. Arrival is contact, a write in one's own H (R538).
-    Time (R649): a read holds no time; τ = x/ẋ comes out as a count of the reader's own ticks (a write in its own tick);
-    τ̇, ticks per tick, is a read. A steady pace reads τ̇ = −1, past Lee's −½: you arrive at speed. Easing so τ̇ holds at
-    −½ stops exactly at the foot.
+    Now, not nearer (R651; Tom: "getting closer and closer to V is a writer concept. All you know is where you are now,
+    getting closer is not something you can know as a reader."): a read is one place, now. The walk laid in order, the
+    climb toward the horizon (a limit) and arrival are the writer's account of many reads. So is time: τ = x/ẋ needs two
+    reads joined, a count of the reader's own ticks; τ̇, ticks per tick, is scale-free and still a write. A steady pace
+    makes τ̇ = −1, past Lee's −½: you arrive at speed. Easing so τ̇ holds at −½ stops exactly at the foot.
     Counting strides from the corner to the foot writes the thing:  V* = (strides from the corner) × (H/L), in strides,
     and in metres once the stride is carried in. Scaling the world (k on V* and the start) moves no reading along the walk,
     only the count.
@@ -57,10 +59,11 @@
 <main>
     <h1>Walking to the mountain</h1>
     <p class="lede">Hold your thumb out at arm's length and walk toward something whose size and distance you do not know.
-    The thumb never changes; only the reading does. Far off the thing is a fraction of the thumb. At one place it exactly
-    covers the thumb: the corner, found by looking. Past it the thing grows past the thumb toward the horizon, and at the
-    foot it is no longer a thing in view at all. Count your strides from the corner to the foot and you have written its
-    size.</p>
+    The thumb never changes; only the reading does. Each look is one place, now; that you are nearer is the writer's
+    account, the looks laid in order. Far off the thing is a fraction of the thumb. At one place it exactly covers the
+    thumb: the corner, found by looking. Laid in order, the readings past it climb toward the horizon, a limit no look
+    meets, and at the foot you are looking down at your feet. Count your strides from the corner to the foot and you have
+    written its size.</p>
     <div class="panel">
         <div class="row">
             <button id="play">walk</button>
@@ -86,9 +89,9 @@
             <div><canvas id="lay" height="300"></canvas><p class="cap">The reading on the quarter turn: home (the thing on your
             horizon, far off) to the horizon (at its foot). The corner at 45°, where it covers the thumb. Ticks at one in 8, 4, 2
             and 2, 4, 8 thumbs; the faint ray is the reading's mirror about the corner.</p></div>
-            <div><canvas id="time" height="300"></canvas><p class="cap">Time to contact, τ = x/ẋ from two looks, in your own
-            ticks (a count, a write), against ticks walked. Its slope τ̇ is a read: −1 at a steady pace, past Lee's −½ (you
-            arrive at speed); held at −½ you stop at the foot.</p></div>
+            <div><canvas id="time" height="300"></canvas><p class="cap">Time to contact, τ = x/ẋ from two looks joined, in your
+            own ticks (a count, a write), against ticks walked. Its slope τ̇ is scale-free and a write too: −1 at a steady pace,
+            past Lee's −½ (you arrive at speed); held at −½ you stop at the foot.</p></div>
         </div>
         <canvas id="ground" height="110" style="margin-top:10px"></canvas>
         <p class="cap" id="groundCap">The writer's ground, which the reader never sees: you, the thing, the distance, the corner's
@@ -96,7 +99,7 @@
         <div id="hud"></div>
     </div>
     <p class="note">Keep the case: h and v are unit relations, the reading v/h has no scale; V*, d, the corner's distance and
-    every stride are amounts. Behind it: <i>Reads and Writes</i> §8 ("Motion, read") and §6 ("The crosshairs"); the corner
+    every stride are amounts. Behind it: <i>Reads and Writes</i> §8 ("Motion, from reads", "Walking to the mountain") and §6 ("The crosshairs"); the corner
     as the thing equal to the thumb, §2. Other demos: <a href="mountain.html">the mountain and the thumb</a>,
     <a href="walk.html">the walk</a>, <a href="fpv.html">the crosshair is the corner</a>, <a href="demos.html">all demos</a>.</p>
 </main>
@@ -224,8 +227,8 @@
         const tr = tauRead(S.u), tdot = tauDotRead(S.u), sc = Math.max(0, (dc - Math.max(d, 0)) / STRIDE), wv = writeV(sc);
         $('hud').textContent =
             `reading v/h = ${isFinite(x) ? x.toPrecision(4) : '∞'}   ${words(x)}\n` +
-            (arrived ? `arrived: the reading is the horizon [0 : 1]; touching the ${THINGS[S.thing].name} is a write\n`
-                : `time to contact τ ≈ ${tr.toFixed(1)} ticks (a count, a write)   τ̇ ≈ ${tdot.toFixed(3)} (a read)   ${S.pace === 'steady' ? 'you will arrive at speed' : 'you will stop at the foot'}\n`) +
+            (arrived ? `arrived: the ${THINGS[S.thing].name}'s foot is straight down, at your feet; touching it is a write\n`
+                : `time to contact τ ≈ ${tr.toFixed(1)} ticks (two looks joined, a write)   τ̇ ≈ ${tdot.toFixed(3)} (scale-free, a write)   ${S.pace === 'steady' ? 'you will arrive at speed' : 'you will stop at the foot'}\n`) +
             (S.count ? (crossed ? `strides counted from the corner: ${sc.toFixed(0)}   written: the ${THINGS[S.thing].name} is ${wv.inStrides.toFixed(2)} strides wide` +
                 `${arrived ? ` = ${wv.inMetres.toFixed(1)} m with the stride (0.7 m) carried in` : ' so far'}\n` : 'counting starts at the corner\n') : 'not counting: no amount is written\n') +
             (S.ground ? `the writer's account: d = ${fmtM(Math.max(d, 0))}, the corner at ${fmtM(dc)}, its mirror partner at ${fmtM(isFinite(x) && d > 0 ? mirror(d) : 0)}, true width ${fmtM(Vstar())}` : '');

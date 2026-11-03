@@ -625,32 +625,40 @@ there, which is a count: at the third stop, turn this much. That is why a corner
   angle by θ³/(3n²), and e^(iπ) = −1 where the count of π/n would land if completed across the half turn (§5). These are §5's "π completes the turn" and "e completes the scale", seen as the price of a count; the continuum a writer
 holds is that count completed, not the reader's uncounted turn.
 
-**Motion, read.** A thing coming toward the reader is read at its edge: x, the thing's breadth against its distance, the
-reading v/h of the line to its edge, and that reading grows. The reading over its own rate of growth, x/ẋ, is the time
-until the thing arrives, if it keeps coming as it comes: the breadth cancels, and so do the distance and the speed. Lee
-(1976) proposed that a driver braking reads exactly this, and the rule he found is a reading too: brake so that the time
-to contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car stops at the thing, since at τ̇ = −½ the
-distance it needs to stop is the distance it has. Two limits keep this honest. The time τ comes out as a count of the reader's
-own ticks, a write in its own tick as places after a counted step are written in its own thumbs; τ̇, ticks per tick,
-is unmoved by any change of clock and is a read; seconds are a writer's unit, carried in. And one stream cannot tell a thing
-coming nearer from a thing growing where it stands, since both raise x alike; a neighbour at the same depth, read at
-once, tells them apart, approach moving both readings and growth one. The rate at which the reader turns cancels from
-every reading. A speed in metres a second is a writing twice over: a metre and a second, both carried in.
+**Motion, from reads.** A thing coming toward the reader is read at its edge: x, the thing's breadth against its distance,
+the reading v/h of the line to its edge. One read holds one x; that x grows is two reads joined, and so a write. The
+reading over its rate of growth, x/ẋ, is the time until the thing arrives, if it keeps coming as it comes: the breadth
+cancels, and so do the distance and the speed. Lee (1976) proposed that a driver braking uses exactly this, and found a
+rule on it: brake so that the time to contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car stops at
+the thing, since at τ̇ = −½ the distance it needs to stop is the distance it has. Three limits keep this honest. A rate
+of change needs two reads joined, so ẋ is a write, and so is everything made from it: τ, a count of the reader's own
+ticks, as places after a counted step are written in its own thumbs, and τ̇, ticks per tick, which no change of clock
+moves. Being unmoved by the clock makes τ̇ scale-free, not a read: no single read holds it. Seconds are a writer's unit,
+carried in. One stream cannot tell a thing coming nearer from a thing growing where it stands, since both raise x alike;
+a neighbour at the same depth, read at once, tells them apart, approach moving both readings and growth one. And a speed
+in metres a second is a writing twice over: a metre and a second, both carried in. The rate at which the reader turns
+cancels from every reading.
 
 **Walking to the mountain.** Hold the thumb out at arm's length, H against the arm L, and walk toward a mountain whose
 breadth V\* and distance d are unknown. The thumb never changes; each read is the mountain against it,
-v/h = (V\*/d)/(H/L), and only d moves it. Far off the mountain is one in eight of the thumb, then one in four, one in
-two: each time the distance halves the reading doubles, and each such stretch takes as many addresses as the last. Then
-there is one place where the mountain exactly covers the thumb. That is the corner, met by looking, with no amount
-needed: the reader can say "now the mountain is my thumb" while V\*, d and the corner's distance d_c = V\*·L/H stay
-unknown. Past it the mountain grows past the thumb, and the two sides mirror each other: standing at d and at d_c²/d
-read as reciprocals. At the foot h falls to 0 and the reading is the horizon, [0 : 1]: the mountain is no longer a thing
-in the sweep but all of v. By halvings the horizon is never reached, and yet the walk arrives, because the walk is a
-count of strides and ends; arrival is contact, a write in one's own H. On the way τ̇ is a read with V unknown: a steady
-pace reads −1, past Lee's −½, so the walker arrives at speed; easing so that τ̇ holds at −½ stops at the foot. And the
-strides from the corner to the foot are d_c, so counting them writes the mountain: V\* = (strides from the corner) × H/L,
-in the walker's own stride, and in metres once the stride is carried in. Scale the world and no reading along the walk
-moves, only that count. We do this whenever we walk toward something: the corner is free, the size is counted.
+v/h = (V\*/d)/(H/L). A read is one place, now: "one in eight of the thumb", or "four thumbs". It does not hold that the
+mountain is nearer than it was, or that it is getting nearer: nearer compares two reads, and joining reads is a write.
+What follows is the writer's account, the reads laid in order along the walk. Far off the mountain is one in eight of the
+thumb, then one in four, one in two: each time the distance halves the reading doubles, and each such stretch takes as
+many addresses as the last. One read has the mountain exactly covering the thumb. That is the corner, and that read
+needs no amount: the reader can say "now the mountain is my thumb" while V\*, d and the corner's distance
+d_c = V\*·L/H stay unknown. Past it the mountain is more than the thumb, and the two sides mirror each other: standing at
+d and at d_c²/d read as reciprocals. Laid in order, the reads climb toward the horizon, [0 : 1], h falling to 0, and
+halvings never reach it. That is a limit, and a limit is a sequence completed, the writer's (§5). No read meets it: each
+read, wherever it is taken, has the whole sweep of the thumb, its corner and its horizon, and nothing in it says how near
+the end is. The walk arrives because the walk is a count of strides and ends; arrival is contact, a write in one's own H,
+and what the reader then has is one more read, the mountain's foot straight down. So the τ̇ of the walk is the
+writer's too, from reads joined: a steady pace makes it −1, past Lee's −½, arriving at speed; easing so that it holds at
+−½ stops at the foot. The strides from the corner to the foot are d_c, so counting them writes the mountain:
+V\* = (strides from the corner) × H/L, in the walker's own stride, and in metres once the stride is carried in. To know V
+at the foot is to have counted one's own steps, and to be looking at one's feet. Scale the world and no read along the
+walk moves, only that count. We do this whenever we walk toward something: the corner is free, the approach and the size
+are written.
 
 **Knowing V comes by degrees.** The crossing is not a switch thrown. It has three counts.
 

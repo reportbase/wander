@@ -7066,6 +7066,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   unknown; τ in ticks a write (R649). Counting strides from the corner to the foot writes V* = strides × H/L, metres
   once the stride is carried in; scaling the world moves no reading along the walk, only the count. `approach.html`.
   Then (Tom: "add it."): *Reads and Writes* §8, "Walking to the mountain", after "Motion, read".
+- **R651** (3 Nov; Tom: "its some kind of a limit. getting closer and closer to V is a writer concept. All you know is
+  where you are now, getting closer is not something you can know as a reader.", then "yes, record it."): a read is one
+  place, now. "Nearer", "closer", "getting closer" compare two reads, and joining reads is a write; so the walk laid in
+  order, the reading climbing toward the horizon, the horizon as a limit (a sequence completed, the writer's, as π and e,
+  R597) and arrival (contact, R538) are the writer's account of many reads. No read meets the limit; each, wherever taken,
+  has the thumb's whole sweep, its corner and its horizon, and nothing in it says how near the end is. At the foot what the
+  reader has is one more read, the mountain's foot straight down: knowing V is having counted one's own steps, and
+  looking at one's feet. A rate of change joins reads, so ẋ, Lee's τ and τ̇ are all writes; τ̇, unmoved by any clock, is
+  scale-free, not a read (being unmoved by scaling is needed for a read, not enough: R596). This corrects R630's and
+  R649's "τ̇ a read". *Reads and Writes* §8, "Motion, from reads" (was "Motion, read") and "Walking to the mountain";
+  essays 6 §2 and 14; `approach.html`. Open: R649's "the order of reads is the reader's, reading over time" also compares
+  reads; whether order stays the reader's is not ruled.
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations

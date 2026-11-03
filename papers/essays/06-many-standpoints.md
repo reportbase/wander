@@ -49,15 +49,16 @@ walking teaches it the world.
 both by any changing factor and the reading does not change. So a thing coming nearer and a thing at rest growing at the
 matching rate give the same stream, and so does every mixture of the two. What the stream does fix is its own pace: the
 reading x over its rate of change, x/ẋ. For a thing approaching steadily, that is the time left until contact: its breadth
-cancels, and so do its distance and its speed. David Lee proposed in 1976 that drivers read exactly this when braking,
-and the rule he found is a reading too: brake so that the time to contact shrinks no faster than half a tick each tick,
+cancels, and so do its distance and its speed. David Lee proposed in 1976 that drivers use exactly this when braking,
+and found a rule on it: brake so that the time to contact shrinks no faster than half a tick each tick,
 τ̇ ≥ −½, and the car stops at the thing, since at τ̇ = −½ the distance it needs to stop is the distance it has. Over time,
 a standpoint is given motion before it is given an object.
 
-Three limits keep this honest. A read holds no time, so the time to contact is a count
-of the standpoint's own ticks between reads, a write in its own tick as places after a counted step are written in its own
-thumbs; the braking rule, ticks per tick, is unmoved by any clock and stays a reading; seconds are a writer's unit, carried
-in from a clock. The rate at which the standpoint turns cancels from every reading,
+Three limits keep this honest. A read holds no time and holds only where the standpoint is now, so a stream, and
+everything said along it, is reads joined: a write. The time to contact is a count of the standpoint's own ticks between
+reads, a write in its own tick as places after a counted step are written in its own thumbs; the braking rule, ticks per
+tick, is unmoved by any clock, which makes it scale-free, and it is still a write, since no single read holds a rate of
+change. Seconds are a writer's unit, carried in from a clock. The rate at which the standpoint turns cancels from every reading,
 as the thumb's length does. And a speed in metres a second is a writing twice over: a metre and a second, both carried in.
 
 **A shared denominator gives relative payloads.** Two readings taken at the same moment against the same thing, say two
