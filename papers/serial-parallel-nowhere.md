@@ -7066,6 +7066,51 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   unknown; τ in ticks a write (R649). Counting strides from the corner to the foot writes V* = strides × H/L, metres
   once the stride is carried in; scaling the world moves no reading along the walk, only the count. `approach.html`.
   Then (Tom: "add it."): *Reads and Writes* §8, "Walking to the mountain", after "Motion, read".
+- **R651** (3 Nov; Tom: "its some kind of a limit. getting closer and closer to V is a writer concept. All you know is
+  where you are now, getting closer is not something you can know as a reader.", then "yes, record it."): a read is one
+  place, now. "Nearer", "closer", "getting closer" compare two reads, and joining reads is a write; so the walk laid in
+  order, the reading climbing toward the horizon, the horizon as a limit (a sequence completed, the writer's, as π and e,
+  R597) and arrival (contact, R538) are the writer's account of many reads. No read meets the limit; each, wherever taken,
+  has the thumb's whole sweep, its corner and its horizon, and nothing in it says how near the end is. At the foot what the
+  reader has is one more read, the mountain's foot straight down: knowing V is having counted one's own steps, and
+  looking at one's feet. A rate of change joins reads, so ẋ, Lee's τ and τ̇ are all writes; τ̇, unmoved by any clock, is
+  scale-free, not a read (being unmoved by scaling is needed for a read, not enough: R596). This corrects R630's and
+  R649's "τ̇ a read". *Reads and Writes* §8, "Motion, from reads" (was "Motion, read") and "Walking to the mountain";
+  essays 6 §2 and 14; `approach.html`. Open: R649's "the order of reads is the reader's, reading over time" also compares
+  reads; whether order stays the reader's is not ruled (ruled in R652: it does not).
+- **R652** (3 Nov; Tom: "A write could plant a flag for example, and say this is the starting point. but that has nothing
+  to do with a read and H.", then "I like the metaphor of planting a flag and how it explains reading and writing. Reads
+  don't plant flags. reads are continuous, but each read has no connection to the previous read. A write could plant a
+  flag, and a read could then read that flag, but the read itself has no concept of how close it is to the flag."): a
+  flag is a write, a mark that says "this is the starting point", a zero chosen, from which strides and ticks are counted.
+  Reads plant no flags: H is the thumb, held wherever one stands, not an origin; the corner is a read, met by looking, and
+  counting from it plants a flag there (the corner free, the flag a write). Reads are continuous (one can be taken at any
+  place and moment) but each has no connection to the one before, so their order, and anything said across them, is a
+  write: R649's "the order of reads is the reader's, reading over time" is withdrawn. A write, once made, is read (R644):
+  a later read reads the flag as paint in a direction, against the thumb, with no notion of how close it is to the flag;
+  how far and how long since are the count's. The sweep's zero (v/h = 0, R327) is a direction of the turn's own measure,
+  not a place, and no one plants it. *Reads and Writes* §1 (after "What a read is") and §8 "Walking to the mountain".
+- **R653** (3 Nov; Tom: "a write then is simply the recording of a read."; "but then a write is moving away from geometry
+  and into physics. A read must then be the address, and the write is the payload."; "life itself is writing reality.
+  Any kind of physical thing writes onto reality. say reality is piece of paper, a write adds to the paper. that is
+  physics."; "A read is geometry, a write is physics."): **a read is geometry, a write is physics.** A write is the
+  recording of a read: a mark, discrete where the read is continuous (R640, the floor), over once made and used only by
+  being read (R644); it lasts, so it can be counted and set beside other marks, and order, nearness, durations and
+  amounts are said of marks (R649, R651, R652). A mark keeps an address and what was met there: the address is the
+  read's, the payload the write's, so address/payload and read/write are one split. Earlier rulings already pointed so:
+  the fingers free, a read with nothing met (R453); painting on is writing, the light writing on the fingers (R460); an
+  arrival a detection, a count; order statistics the addresses', sums the payload's (Theorem 6); physics assigning the
+  values (R227, R231); `mem[a] = y` (R613). The picture: reality a sheet of paper every physical thing writes on, physics
+  that writing, a life a writer copying its marks forward; a read adds nothing (R346, R577), its addresses there over
+  blank or full paper (R405). A reader's body is written, its thumb a mark; the thumb held as H is the read's own length,
+  not a mark. Changing or erasing a mark is a write too; whether marks can be lost is left to physics. A picture of how the
+  account is held, not a claim about the world (R441, R449). *Reads and Writes* §1, after the flag. Still to restate where
+  they appear: the paint as part of the read (*Reads and Writes* §2, §3; essays 2, 3), R584's "payload per address" (the per
+  read, the of written; §5, essay 14), R605's payload recovered by its ratios (directions in the payload's own space, so a
+  write read again; §2, essay 3). Then (Tom: "Yes"): restated. *Reads and Writes* §1 (the payload the world's writing
+  met, the per read and the of written; the two tests one split seen two ways), §2 (the paint the world's writing met there;
+  the payload recovered by its ratios a write read again), §3 (the fingers stay geometry, with or without the light), §4
+  (a rate lays a write over a read); essays 2 §9, 3 §5 (the paint and the ratios), 14 §1 and §10.
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations

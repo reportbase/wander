@@ -1367,6 +1367,25 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   ratios, the corner met by looking at d_c = V*·L/H, d and d_c²/d reciprocals, the foot the horizon reached only by the
   counted walk; steady τ̇ = −1, eased −½; strides from the corner to the foot write V* = strides × H/L. `approach.html`. *Reads and
   Writes* §8 "Walking to the mountain".
+  R651 (3 Nov; Tom: "getting closer and closer to V is a writer concept. All you know is where you are now, getting closer
+  is not something you can know as a reader."): **a read is one place, now; "nearer", "getting closer", a limit and
+  arrival are the writer's account of reads joined.** No read meets the horizon as a limit; at the foot the reader has one
+  more read, its feet. A rate of change joins reads, so ẋ, τ and τ̇ are writes (τ̇ scale-free, not a read; corrects R630,
+  R649). *Reads and Writes* §8 "Motion, from reads" (was "Motion, read") and "Walking to the mountain"; essays 6, 14;
+  `approach.html`. Whether the order of reads stays the reader's (R649) is open.
+  R652 (3 Nov; Tom: "Reads don't plant flags. reads are continuous, but each read has no connection to the previous read.
+  A write could plant a flag, and a read could then read that flag, but the read itself has no concept of how close it is
+  to the flag."): **a write plants a flag (a starting point, a zero counted from); reads plant none.** Reads are continuous
+  but unconnected, so their order is a write (R649's "order the reader's" withdrawn); a read reads a flag as paint, with no
+  notion of how close it is. H is no origin; counting from the corner plants a flag there. *Reads and Writes* §1, §8.
+  R653 (3 Nov; Tom: "a write then is simply the recording of a read."; "A read must then be the address, and the write is
+  the payload."; "say reality is piece of paper, a write adds to the paper. that is physics."; "A read is geometry, a write
+  is physics."): **a read is geometry, a write is physics; the read is the address, the write the payload** (one split,
+  not two). A write records a read: a mark, discrete, lasting, countable; order, nearness and amounts are said of marks.
+  Reality a sheet of paper every physical thing writes on; a read adds nothing, its addresses there over blank or full
+  paper; the thumb a mark, H the read's own length. A picture, not a claim about the world. *Reads and Writes* §1. Still to
+  restate: the paint as part of the read (§2, §3, essays 2, 3), R584's "payload per address", R605. Then (Tom: "Yes"):
+  restated in *Reads and Writes* §1–§4 and essays 2, 3, 14.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

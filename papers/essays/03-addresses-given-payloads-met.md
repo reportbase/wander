@@ -172,7 +172,8 @@ is where the reader can put what arrives, never what arrives.
 **The geometry creates the reader.** It is tempting to picture the reader doing this work: taking two amounts and dividing
 one by the other, so that the scale cancels. It does not. The geometry removes the scale before anything is read. A
 direction arrives as a direction, with the distance along it already gone; the projection did the dividing, not the reader.
-What the light paints on a direction arrives as paint, never as so many units. So the reader manages no magnitudes at all,
+What the light paints on a direction arrives as paint, never as so many units. The paint is the world's writing, met
+where the address falls; the read is the address, and it is geometry, there whether the paint is or not. So the reader manages no magnitudes at all,
 neither the size of the other party nor the size of what arrives. It has no unit to manage them in. Its one length, H, the
 thumb, is its own unit: measured in itself it is 1, one thumb, and what it is in metres is something only a writer can say.
 The reader has no scale whatsoever. Every magnitude, and the unit it is stated in, belongs to the writer.
@@ -191,7 +192,8 @@ value is set by that extent, not equal to it. A computer's Cauchy has one for th
 **The payload is not lost.** None of the payload goes into making the addresses, so all of it arrives, on addresses known
 before it came, and the Cauchy gives it back four ways. By its ratios: two payloads read against each other, one light over
 another, one colour channel over another, one radius over another, make a direction in the payload's own space, read
-exactly as an address is and unchanged when the world is scaled; a shape about a centre comes back whole this way, every
+exactly as an address is and unchanged when the world is scaled (the payload arrived written, and read against itself it
+is a write read again); a shape about a centre comes back whole this way, every
 mode but its overall size, and that size is V again. By dividing the address law out: what is counted is the address law
 times the payload's weight, and the address law is known in advance, so dividing by it leaves the payload's distribution,
 as an astronomer flat-fields an image. By undoing the blur: seen from a height, the payload arrives smoothed by the Cauchy

@@ -19,7 +19,8 @@ breadth: no reading carries it, and every writing needs it.
 This paper brings together what each vantage holds, gives the geometry the reader has for free, and says exactly what is
 added in becoming a writer. The reader's directions are laid by the uniform turn, whose law in the reading v/h is the
 Cauchy, with its median at the corner v = h, its horizon never reached and no mean: an *address* given before anything
-arrives. What arrives along an address is the *payload*, met. A rate is of a payload per an address. The writer has the
+arrives. What arrives along an address is the *payload*, met: the world's writing found there, so the address is read
+and the payload written. A rate is of a payload per an address: the per is read, the of written. The writer has the
 angle, the rate 1, and measures the reader's two sweeps from horizontal to vertical as π/2 (central) and 2/π (inscribed),
 whose product is its own 1. One length, counted, makes the rationals; but counting is done in parallax and in writing, not in
 a pure read, which holds directions and their order. The square roots need two lengths combined, and the transcendental numbers a limit no finite algebraic step reaches: π completes the
@@ -52,9 +53,25 @@ one thumb, from the far field beyond it, read as ratios (one in two, one in four
 The read's addresses are K, the addresses available to it in that moment, arranged by the Cauchy: half of them before the corner and half
 after, whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Two reads, at two moments or two standpoints, are
 joined only across a step that is counted: parallax, and so a write. (A *facing* is a writer's word, for several reads held together with their signs; no read
-is one.) A read holds no time: time is the step between reads. Their order is the reader's, reading over
-time; a count of ticks between them is a write. Everything else in this paper is built on the read,
-and on its opposite, a count.
+is one.) A read holds no time: time is the step between reads. Reads are continuous, one can be taken at any place and
+any moment, but each read has no connection to the one before; their order, and anything said across them, is a write.
+A write can plant a flag: a mark in the world that says "this is the starting point", from which strides and ticks are
+counted. Reads plant no flags. A later read can read the flag, as paint in a direction, against the thumb ("the flag is
+one in four of a thumb"), but the read has no notion of how close it is to the flag; how far, and how long since, are
+the count's.
+
+**A read is geometry, a write is physics.** A write is the recording of a read: a mark kept, discrete where the read
+was continuous, which lasts and can be counted and set beside other marks; order, nearness, durations and amounts are
+all said of marks. What a mark keeps is the address the read gave and what was met there: the address is the read's, and
+the payload is the write. So the two distinctions this paper keeps are one. Picture reality as a sheet of paper. Every
+physical thing writes on it, a stone's mass, a planet's path, a cell dividing; physics is that writing, and a life is a
+writer that copies its own marks forward. A read adds nothing to the paper. Its addresses are the geometry laid over it,
+there whether the paper is blank or full, and the light that arrives at them is the paper's writing met there. A reader's
+body is written too, its thumb a mark like any other; but the thumb held out as H is not a mark, it is the read's own
+length, which is why no read carries a scale. This is how the account is held, not a claim about the world: it says
+where physics sits in this frame and tells physics nothing it does not already know.
+
+Everything else in this paper is built on the read, and on its opposite, a count.
 
 **Words.** The paper names acts, a *read* and a *write*, not two kinds of observer: one observer reads while it stands and
 turns, and writes while it walks, counts, ranges or agrees a unit. *Read*, *reading* and *reader* are used as each sentence
@@ -79,7 +96,8 @@ and the vantage that holds each.
 
 **The second test.** Change what arrives, keeping the standpoint and the turn: repaint the world, move the light, replace
 a wall by a row of trees. The *addresses*, the directions the turn lays down, are unchanged; the *payload*, what is found
-along each, changes. The first test separates reading from writing; the second separates address from payload.
+along each, changes. The first test separates reading from writing; the second separates address from payload. They are one split seen two
+ways: the address is what a read holds, and the payload is what is written on the world where the address falls (§1).
 In the writer's notation both splits sit in one line: write a point as z = r·e^(iθ), so that ln z = ln r + iθ. Scaling the
 world slides the real part by ln k and leaves θ; a turn about the standpoint slides θ and leaves ln r; the address lives
 on the imaginary part and the payload's size on the real. The notation needs π and e, so it is the writer's (§5); the
@@ -240,7 +258,8 @@ all of it arrives, on addresses known before it came. The Cauchy then gives it b
   world is scaled. A shape about a centre, ln r = a₀ + f(θ) (the real part of the
 writer's ln z = ln r + iθ taken as a function of the turn, §5), comes back this way whole: every mode of f from ratios of radii,
   exactly. Two detectors' signals read against each other are a direction too, and where the signals are like noise that
-  direction follows a Cauchy: the payload read as a ratio is an address again. What the ratios leave out is one number,
+  direction follows a Cauchy: the payload read as a ratio is an address again. The payload arrived written, as marks; read
+  against itself it gives directions in its own space, so recovering it this way is a write read again. What the ratios leave out is one number,
   the payload's overall scale a₀, and that number is V again.
 - *By dividing the address law out.* What is counted along the addresses is the address law times the payload's own
   weight, ρ(θ)·2/(π(1 + s²)). The address law is known before anything arrives, so dividing by it leaves the payload's
@@ -263,7 +282,7 @@ with a pane and is lit by its colour. The fingers are the addresses: wherever th
 way. The colours are the payload: they change with the window. No colour carries a distance; to learn how far the window
 is, you must walk.
 
-**The reader never sees a shape.** A thing is, to the reader, the addresses it paints and the paint. Its shape is a radius
+**The reader never sees a shape.** A thing is, to the reader, the addresses it paints; the paint is the world's writing, met there. Its shape is a radius
 along each direction from its own centre, an amount, and amounts are removed before reading. Every way to a shape is a
 writing: ranging, a counted step, a blueprint. This is not a shortfall to be made up by inference. The reader's side is
 whole; the shape was never the reader's to lack.
@@ -279,7 +298,8 @@ V enters.
 **The hand.** Hold up a hand, thumb out. The thumb is H: the one length the reader holds, its size chosen, setting only the
 zoom. The fingers, spread from flat to upright, are the addresses. The reader does nothing to lay them; wherever the hand
 is held, the geometry gives the same fingers spread the same way, evenly by turn, and read as v/h they follow the Cauchy,
-half below the corner. The light that falls along each finger is the payload: it paints the fingers and changes with what is
+half below the corner. The light that falls along each finger is the payload, the world's writing met on the fingers; the fingers stay
+geometry, there with or without it. The light paints the fingers and changes with what is
 in front of them, and no finger carries how far that light came. The hand moves two ways, raised from the ground toward
 the vertical and turned round the horizontal, and the two are the altitude and the azimuth of §7. Hold
 the thumb up against a mountain range, and the range spans so many fingers; with no V the reader draws the mountain at the
@@ -345,7 +365,7 @@ angle. The pitch is a ratio, had at once with a level and a tape; the degrees ar
 one you must hold the whole turn first.
 
 **A rate is of something per something.** The *per* is the sweep's: an address. The *of* is the payload: what arrives
-there. A reader reads payload per address. The Cauchy is the law of the per against itself: a speed of the turn through
+there. A rate lays a write over a read: the per is read, the of is written. The Cauchy is the law of the per against itself: a speed of the turn through
 the readings, with no payload in it.
 
 **The writer's rate is 1.** The angle is arc per radius, measured against the completed turn; the chord between home and
@@ -625,32 +645,41 @@ there, which is a count: at the third stop, turn this much. That is why a corner
   angle by θ³/(3n²), and e^(iπ) = −1 where the count of π/n would land if completed across the half turn (§5). These are §5's "π completes the turn" and "e completes the scale", seen as the price of a count; the continuum a writer
 holds is that count completed, not the reader's uncounted turn.
 
-**Motion, read.** A thing coming toward the reader is read at its edge: x, the thing's breadth against its distance, the
-reading v/h of the line to its edge, and that reading grows. The reading over its own rate of growth, x/ẋ, is the time
-until the thing arrives, if it keeps coming as it comes: the breadth cancels, and so do the distance and the speed. Lee
-(1976) proposed that a driver braking reads exactly this, and the rule he found is a reading too: brake so that the time
-to contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car stops at the thing, since at τ̇ = −½ the
-distance it needs to stop is the distance it has. Two limits keep this honest. The time τ comes out as a count of the reader's
-own ticks, a write in its own tick as places after a counted step are written in its own thumbs; τ̇, ticks per tick,
-is unmoved by any change of clock and is a read; seconds are a writer's unit, carried in. And one stream cannot tell a thing
-coming nearer from a thing growing where it stands, since both raise x alike; a neighbour at the same depth, read at
-once, tells them apart, approach moving both readings and growth one. The rate at which the reader turns cancels from
-every reading. A speed in metres a second is a writing twice over: a metre and a second, both carried in.
+**Motion, from reads.** A thing coming toward the reader is read at its edge: x, the thing's breadth against its distance,
+the reading v/h of the line to its edge. One read holds one x; that x grows is two reads joined, and so a write. The
+reading over its rate of growth, x/ẋ, is the time until the thing arrives, if it keeps coming as it comes: the breadth
+cancels, and so do the distance and the speed. Lee (1976) proposed that a driver braking uses exactly this, and found a
+rule on it: brake so that the time to contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car stops at
+the thing, since at τ̇ = −½ the distance it needs to stop is the distance it has. Three limits keep this honest. A rate
+of change needs two reads joined, so ẋ is a write, and so is everything made from it: τ, a count of the reader's own
+ticks, as places after a counted step are written in its own thumbs, and τ̇, ticks per tick, which no change of clock
+moves. Being unmoved by the clock makes τ̇ scale-free, not a read: no single read holds it. Seconds are a writer's unit,
+carried in. One stream cannot tell a thing coming nearer from a thing growing where it stands, since both raise x alike;
+a neighbour at the same depth, read at once, tells them apart, approach moving both readings and growth one. And a speed
+in metres a second is a writing twice over: a metre and a second, both carried in. The rate at which the reader turns
+cancels from every reading.
 
 **Walking to the mountain.** Hold the thumb out at arm's length, H against the arm L, and walk toward a mountain whose
 breadth V\* and distance d are unknown. The thumb never changes; each read is the mountain against it,
-v/h = (V\*/d)/(H/L), and only d moves it. Far off the mountain is one in eight of the thumb, then one in four, one in
-two: each time the distance halves the reading doubles, and each such stretch takes as many addresses as the last. Then
-there is one place where the mountain exactly covers the thumb. That is the corner, met by looking, with no amount
-needed: the reader can say "now the mountain is my thumb" while V\*, d and the corner's distance d_c = V\*·L/H stay
-unknown. Past it the mountain grows past the thumb, and the two sides mirror each other: standing at d and at d_c²/d
-read as reciprocals. At the foot h falls to 0 and the reading is the horizon, [0 : 1]: the mountain is no longer a thing
-in the sweep but all of v. By halvings the horizon is never reached, and yet the walk arrives, because the walk is a
-count of strides and ends; arrival is contact, a write in one's own H. On the way τ̇ is a read with V unknown: a steady
-pace reads −1, past Lee's −½, so the walker arrives at speed; easing so that τ̇ holds at −½ stops at the foot. And the
-strides from the corner to the foot are d_c, so counting them writes the mountain: V\* = (strides from the corner) × H/L,
-in the walker's own stride, and in metres once the stride is carried in. Scale the world and no reading along the walk
-moves, only that count. We do this whenever we walk toward something: the corner is free, the size is counted.
+v/h = (V\*/d)/(H/L). A read is one place, now: "one in eight of the thumb", or "four thumbs". It does not hold that the
+mountain is nearer than it was, or that it is getting nearer: nearer compares two reads, and joining reads is a write.
+What follows is the writer's account, the reads laid in order along the walk. Far off the mountain is one in eight of the
+thumb, then one in four, one in two: each time the distance halves the reading doubles, and each such stretch takes as
+many addresses as the last. One read has the mountain exactly covering the thumb. That is the corner, and that read
+needs no amount: the reader can say "now the mountain is my thumb" while V\*, d and the corner's distance
+d_c = V\*·L/H stay unknown. Past it the mountain is more than the thumb, and the two sides mirror each other: standing at
+d and at d_c²/d read as reciprocals. Laid in order, the reads climb toward the horizon, [0 : 1], h falling to 0, and
+halvings never reach it. That is a limit, and a limit is a sequence completed, the writer's (§5). No read meets it: each
+read, wherever it is taken, has the whole sweep of the thumb, its corner and its horizon, and nothing in it says how near
+the end is. The walk arrives because the walk is a count of strides and ends; arrival is contact, a write in one's own H,
+and what the reader then has is one more read, the mountain's foot straight down. So the τ̇ of the walk is the
+writer's too, from reads joined: a steady pace makes it −1, past Lee's −½, arriving at speed; easing so that it holds at
+−½ stops at the foot. Counting from the corner plants a flag there: the corner is a read and free, the flag at it a write. The strides from
+the corner to the foot are d_c, so counting them writes the mountain:
+V\* = (strides from the corner) × H/L, in the walker's own stride, and in metres once the stride is carried in. To know V
+at the foot is to have counted one's own steps, and to be looking at one's feet. Scale the world and no read along the
+walk moves, only that count. We do this whenever we walk toward something: the corner is free, the approach and the size
+are written.
 
 **Knowing V comes by degrees.** The crossing is not a switch thrown. It has three counts.
 
