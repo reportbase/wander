@@ -1285,6 +1285,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   reasoning (the greedy finds a place, not the pole).
   R634 (3 Nov; Tom: "Yes, add it to the papers and build the demo"): EPI in *Reads and Writes* §6, essay 10 §3 ("A third
   kernel: the Cauchy's own") and essay 4 §13; `epicycles.html` the demo.
+  R635 (3 Nov; Tom: "yes, lets test on tvf draw labs."): EPI in draw's labs, `?lab=aim` (draw `labs/aimed-terms.js`,
+  its `papers/labs.md` §58), aimed terms against the even leaves on 40 library figures in reals; P1, P2 killed (P2 by my
+  set-up), P3 held. Recorded below EPI's runs.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

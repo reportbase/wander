@@ -6928,6 +6928,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   focus, applied to a shape). The references (Takenaka, Malmquist, Qian and Wang) are added. `epicycles.html` is the demo:
   epicycles, the outline from a height, and the aimed standpoints drawn in the outline's own plane, with the error
   against terms for both. It is on `demos.html` and on the cards for essays 4 and 10.
+- **R635** (3 Nov; Tom: "yes, lets test on tvf draw labs."): EPI in draw, `?lab=aim`, aimed terms against draw's even
+  leaves on 40 library figures, counted in reals. P1 killed (aimed fewer on 12/24 not marked round: about half the reals
+  on polygons with few corners, capped on detail at many places); P2 killed by my set-up (the library's "round" holds
+  cusped figures); P3 held (the standpoints at percentile 83 of the leaves' error). A standpoint costs twice a leaf; it
+  pays where the detail is in a few places. A mixed reader (even leaves, a few aimed terms at corners) is untested.
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |
