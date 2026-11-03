@@ -253,9 +253,9 @@ whole; the shape was never the reader's to lack.
 **Passive.** The reader sends nothing. It is not a radar. A ranging instrument carries in the signal's speed and a clock,
 two amounts, and so it writes.
 
-## 3. Four pictures
+## 3. Five pictures
 
-Four pictures carry most of what the earlier sections say. Each shows what the reader has, what the writer adds, and where
+Five pictures carry most of what the earlier sections say. Each shows what the reader has, what the writer adds, and where
 V enters.
 
 **The hand.** Hold up a hand, thumb out. The thumb is H: the one length the reader holds, its size chosen, setting only the
@@ -437,7 +437,8 @@ stretches past the corner", is the writer's, and so is giving the count a value:
 reads as a ratio. There is one corner, the split between the near field and the first stretch; past it the stretches are
 plain, with no corner of their own.
 
-**H is a zoom.** The reader's addresses are finite: some count K, which comes before H. H, the thumb it holds up, decides
+**H is a zoom.** The reader's addresses are finite: its resolution K, read continuously (a writer counts it as K
+addresses), which comes before H. H, the thumb it holds up, decides
 how K is split. Half the addresses lie inside H at every H; a small H makes the near ones fine and puts more of the world
 past the held edge; a large H does the reverse. No H holds everything. The best H for a thing is the one that puts it at
 the corner, where the reader's relative grain is finest. That is why the corner follows the focus: what is looked at is
@@ -479,7 +480,8 @@ line has no corner to disagree about.
 With a third party, V₂, the reader turns two ways: up from the horizontal (altitude) and round it (azimuth). These are the
 horizon coordinates of astronomy. Its directions fill one octant, the *wedge*: [h : v : v₂], two numbers a direction. The
 uniform measure over the octant's area is uniform in azimuth and in height (Archimedes' hat-box; Lambert's equal-area map),
-and its law in the readings (v/h, v₂/h) is the two-dimensional Cauchy, 2/(π(1 + a² + b²)^(3/2)). Every pair of parties is at
+and its law in the readings (v/h, v₂/h), the two tangent readings on a screen square to the look (not the altitude and
+the azimuth themselves), is the two-dimensional Cauchy, 2/(π(1 + a² + b²)^(3/2)). Every pair of parties is at
 its own corner, half its readings on each side; the near field in both readings is a third. The triple corner,
 h = v = v₂, sits at azimuth 45° and altitude 35.26°, not at either sweep's 45°.
 
@@ -535,7 +537,8 @@ step's line: the depth is the reciprocal of a sum of two reads. Those are the tw
 the sum (a relay of standpoints, their points m + iγ adding) and the reciprocal (the exchange). So parallax never takes
 a read out of the family. If each read is uncertain as a read from a height γ is (the uniform turn's law about the true
 direction), and the two reads' errors are independent, each is a Cauchy point w = (c + iγ)/(1 − iγc) in that chart, c
-its true value, and the depth is exactly a Cauchy whose point is the same triangulation done on the two points:
+its true value (a Cauchy law written by one complex number, its location plus i times its scale, as McCullagh 1992
+does; the depth's point D below is written the same way), and the depth is exactly a Cauchy whose point is the same triangulation done on the two points:
 D = B/conj(w_a + w_b), B the step. That holds at every γ, not only for small errors; rays that do not meet ahead are
 part of the same law, as negative depths. At the pair's corner, the circle on the step, the depth's point stays at the
 true distance d, turned by twice the read's error angle: D = d·e^(2i·atan γ). Two things leave the family, and each can
@@ -544,8 +547,8 @@ half-steps; its density over each standpoint is a read's density at zero times t
 there, where a Cauchy's never is. And when each standpoint reads only a quarter turn, the sum of two half-Cauchys has
 density (4/π²)·s near zero, where every half-Cauchy's is positive; so the depth's tail falls as 1/d³, not 1/d², and that
 depth has a mean. And repeating the reads, the mean of the reciprocal depths gains nothing, while their median narrows.
-Parallax is the Cauchy's own composition, carried across two standpoints; the step is the one amount in it. (Checked in
-PXS, `plans/pxs-plan.md`.)
+Parallax is the Cauchy's own composition, carried across two standpoints; the step is the one amount in it. (Checked exactly;
+see Code and data.)
 
 **Turning teaches the addresses; walking teaches the world.** A standpoint has two motions, a turn about itself and a
 step along a straight line. A turn moves every direction by the same angle, near and far alike, so nothing shifts against
@@ -576,7 +579,7 @@ there, which is a count: at the third stop, turn this much. That is why a corner
   while a list of points grew longer, a walk needing more stops to follow a gentle curve. Across the library the even
   samples' length followed how fast the outline turns (its length over its tightest radius of curvature; Spearman ρ 0.85)
   more than how many corners it has (0.55); the Bézier path's followed its corners (0.59) and not its turning at all
-  (0.00). (TXT runs 3–4, `plans/txt-plan.md`, where the predictions that failed are recorded too: the exact rate at which
+  (0.00). (Measured; see Code and data, where the predictions that failed are recorded too: the exact rate at which
   the count grows as a corner sharpens, and a walk's cost staying flat as a corner rounds.)
 - *π and e are where a count tries to hold a read.* Archimedes counted the sides of polygons about a circle, 6, 12, 24,
   96, and every count gave a rational bound; π is where the count would end if it held the whole turn, which no count
@@ -693,7 +696,7 @@ straight out from the middle of the cross, its up over its across still ¾, and 
 
 Scale the world, the step with it, and no reading changes, so every place in thumbs stands. Count the thumb as 5 metres and
 the tower is 15 metres tall and 60 away. The writer's one amount is still one amount; the second thumb adds no length, only
-a check (`runs/two/two_thumbs.py`, exact).
+a check (checked exactly; see Code and data).
 
 ## 11. What this changes
 
@@ -740,6 +743,12 @@ of a group, is the method's form. Gibson's ambient optic array (1979) is the sta
 sorted quantities by scale long before. What is offered here is the division into two acts, the address and payload
 inside a read, and what carries an observer from one to the other.
 
+## Code and data
+
+The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each
+with its plan written before it was run: parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
+measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`.
+
 ## References
 
 - Abbott, R. et al. (LIGO, Virgo and KAGRA Collaborations) (2023). Open data from the third observing run of LIGO, Virgo,
@@ -773,6 +782,7 @@ inside a read, and what carries an observer from one to the other.
 - Machin, J. (1706), in W. Jones, *Synopsis palmariorum matheseos.* London.
 - Malmquist, F. (1926). Sur la détermination d'une classe de fonctions analytiques par leurs valeurs dans un
   ensemble donné de points. *Comptes Rendus du Sixième Congrès des Mathématiciens Scandinaves* (Copenhagen, 1925), 253–259.
+- McCullagh, P. (1992). Conditional inference and Cauchy models. *Biometrika* 79, 247–259.
 - Poincaré, H. (1902). *La Science et l'hypothèse.* Paris. (1908). *Science et méthode.* Paris.
 - Qian, T. and Wang, Y.-B. (2011). Adaptive Fourier series, a variation of greedy algorithm. *Advances in
   Computational Mathematics* 34, 279–293.
