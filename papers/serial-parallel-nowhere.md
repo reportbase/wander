@@ -7027,7 +7027,7 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   e^(iθ). Bernoulli's (1 + 1/n)ⁿ and Euler's (1 + iθ/n)ⁿ are one limit on two axes, error −w²/(2n) on both; from a
   standpoint z = m + iγ the limit is the Cauchy's e^(izt) (Gemini's sign for its modulus term corrected before the run);
   in space the alternating count leaves (θ₁θ₂/2)·sin(φ/2)/(φ/2) at 1/n (Lie–Trotter), the plane nothing. Run 1's L6
-  killed by my set-up (acos near 1 at 50 digits), L6′ not. Classical mathematics; the reading ours. Not in the paper yet.
+  killed by my set-up (acos near 1 at 50 digits), L6′ not. Classical mathematics; the reading ours. In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations
 

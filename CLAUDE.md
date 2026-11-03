@@ -1338,7 +1338,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `elm-plan.md` (+ `runs/elm/elm.py`, 3 Nov; SPN R647; Tom: "a tighter connection to euler's"): (1 + iθ/n)ⁿ as n reads
   composed by tangent addition, exact in ℚ[i]; the angle short by θ³/(3n²), the length grown by θ²/(2n) and unread; the
   limit e^(iθ) the writer's; Bernoulli's and Euler's one limit on two axes; from z = m + iγ the Cauchy's e^(izt); in space
-  the Lie–Trotter leftover, in the plane none. Run 1's L6 killed by my set-up, run 2's L6′ not. Not in the paper yet.
+  the Lie–Trotter leftover, in the plane none. Run 1's L6 killed by my set-up, run 2's L6′ not. In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

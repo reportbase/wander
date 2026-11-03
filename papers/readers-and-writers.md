@@ -401,6 +401,20 @@ whole, and only stating it as a number needs the limit.
   hundred per cent compounded ever more often, (1 + 1/n)ⁿ, or 1 + 1 + 1/2! + 1/3! + …: every term a fraction, the number
   only at the end.
 
+**Euler's formula as a count of reads.** The two limits are one construction on two axes. Cut a turn into n equal reads,
+each [1 : θ/n], and compose them by tangent addition: in complex numbers that is (1 + iθ/n)ⁿ, exact at every n and
+rational whenever θ/n is. As n grows it becomes e^(iθ), Euler's formula, by the same limit that takes Bernoulli's
+(1 + 1/n)ⁿ to e: one compounds along the thumb, the other square to it, and both miss their limit by the same leading
+term, −w²/(2n), with w = 1 or w = iθ. At every finite n the count falls short of the angle by θ³/(3n²), each step's
+tangent running out past its arc, and it stretches the length by θ²/(2n), which no reading sees, since [h : v] divides
+the length out at every step. The limit, the writer's, repairs the angle and returns the length to 1; a thousand reads of
+π/1000 land at −1.005, on their way to e^(iπ) = −1. From a standpoint z = m + iγ the same limit, (1 + izt/n)ⁿ, lands on
+e^(izt) = e^(imt − γt) for t ≥ 0, the Cauchy's own characteristic function: the foot m turns, and the height γ damps
+along the real axis, an amount rather than a read. And the construction is the plane's. In space, where turns do not
+commute, alternating small steps about the two thumbs leaves a turn of order 1/n, (θ₁θ₂/2)·sin(φ/2)/(φ/2) for a whole
+turn φ; in the plane it leaves none. All of this is classical (Euler 1748; the Lie–Trotter product formula, Trotter 1959); what is ours
+is the reading: each finite count a read, the limit a write, exact only where the turns commute.
+
 The reader's two ignorances, after Jaynes (1968), are which way it faces and how large things are: turns and rescalings.
 Each is a one-parameter group with an exponential map. Turns close, so their map has a period, 2π. Rescalings never close,
 so their map has no period, only a base, e. π is what is needed to say that the turn comes back; e, to say how the scale
@@ -595,7 +609,8 @@ there, which is a count: at the third stop, turn this much. That is why a corner
 - *π and e are where a count tries to hold a read.* Archimedes counted the sides of polygons about a circle, 6, 12, 24,
   96, and every count gave a rational bound; π is where the count would end if it held the whole turn, which no count
   does. Bernoulli's coin compounded n times, (1 + 1/n)ⁿ, is a count of periods; e is where it lands when the compounding
-  becomes continuous. These are §5's "π completes the turn" and "e completes the scale", seen as the price of a count; the continuum a writer
+  becomes continuous. n reads of θ/n composed, (1 + iθ/n)ⁿ, are both at once: each finite count an exact reading, short in
+  angle by θ³/(3n²), and e^(iπ) = −1 where the count of π/n would land if completed across the half turn (§5). These are §5's "π completes the turn" and "e completes the scale", seen as the price of a count; the continuum a writer
 holds is that count completed, not the reader's uncounted turn.
 
 **Motion, read.** A thing coming toward the reader is read at its edge: x, the thing's breadth against its distance, the
@@ -759,7 +774,8 @@ inside a read, and what carries an observer from one to the other.
 
 The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each
 with its plan written before it was run: parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
-measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`.
+measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; Euler's formula as a count of reads in `plans/elm-plan.md`
+and `runs/elm/`.
 
 ## References
 
@@ -777,6 +793,7 @@ measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumb
 - Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77,
   2154–2157.
 - Euclid. *Elements*, Book III, Proposition 20.
+- Euler, L. (1748). *Introductio in analysin infinitorum.* Lausanne.
 - Gibbs, J. W. (1899). Fourier's series. *Nature* 59, 606.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
@@ -805,6 +822,8 @@ measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumb
 - Snellius, W. (1617). *Eratosthenes Batavus.* Leiden.
 - Takenaka, S. (1925). On the orthogonal functions and a new formula of interpolation. *Japanese Journal of
   Mathematics* 2, 129–145.
+- Trotter, H. F. (1959). On the product of semi-groups of operators. *Proceedings of the American Mathematical Society*
+  10, 545–551.
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII.* Tours.
 - Wantzel, P. L. (1837). Recherches sur les moyens de reconnaître si un problème de géométrie peut se résoudre avec la
   règle et le compas. *Journal de Mathématiques Pures et Appliquées* 2, 366–372.
