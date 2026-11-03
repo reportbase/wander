@@ -1300,6 +1300,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   in runs 1–5 had included ffmpeg's 8.3 KB of padding; corrected, run 4 was 1.26× and 1.44× FLAC (R637 superseded).
   Lossless TVF 1.10–1.11× FLAC, the leaves adding nothing; near-transparent leaves 1.4–2.0×; by SNR the leaves beat Opus
   by far at 40 dB, untested perceptually.
+  R639 (3 Nov; Tom: "do the perecptual comparison"): AMX run 7 (`runs/amx/amx_percept.py`; Zimtohrli and a Python
+  ViSQOL, both via pip, at 48 kHz): Opus far ahead on the tonal window, the leaves 2.53× its bytes for its 128 kb/s
+  score; the leaves ahead on the percussive opening from 5.4 to 11.4 KB. One window each, no listening.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

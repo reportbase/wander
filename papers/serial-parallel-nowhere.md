@@ -6952,6 +6952,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   1.10× and 1.11× FLAC, the leaves adding nothing to a fixed predictor; near-transparent leaves 1.97× and 1.38×, worse
   than lossless; at 40 dB SNR the leaves are far smaller than Opus at 128 kb/s (2.7 KB against 30 KB, 34 KB against
   36 KB), but SNR is not Opus's aim and no perceptual measure was run.
+- **R639** (3 Nov; Tom: "do the perecptual comparison"): AMX run 7, binary TVF leaves against Opus by perceptual measures
+  (Zimtohrli MOS; an unofficial Python ViSQOL; no listening) on run 6's two *Sintel* windows. Tonal: Opus far ahead at
+  every size (4.69–5.00 against 1.89–4.64), the leaves needing 2.53× its bytes to match 128 kb/s. Percussive opening: the
+  leaves ahead by both measures from 5.4 to 11.4 KB (4.45 against 3.73 at Opus's 24 kb/s size). G1 killed, G2–G4 not. One
+  window each; whether the percussive result holds needs more material and an ear.
+
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |

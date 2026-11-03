@@ -317,3 +317,37 @@ have points.
   never reach it within 60 dB.
 - **G3.** By SNR at equal size, the leaves beat Opus on both clips (run 6 again).
 - **G4.** ViSQOL agrees with Zimtohrli on which coder wins in at least 75% of the matched-size comparisons.
+
+### Run 7 (3 Nov; `runs/amx/amx_percept.py`, `runs/amx/amx-run7.txt`, 84 s)
+
+G1 killed; G2, G3, G4 not killed. The two clips split.
+
+**Tonal (Sintel's Song): Opus far ahead by ear.** At equal size Opus scores 4.69–5.00 by Zimtohrli where the leaves score
+1.89–4.64; by ViSQOL 4.22–4.64 against 1.52–3.90. The leaves reach Opus's 128 kb/s score (4.992, 35,184 bytes) only at
+60 dB, 2.53× the bytes (G2 not killed), while beating Opus by SNR at every size (G3).
+
+**Percussive (Snow Fight's opening): the leaves ahead from 5.4 to 11.4 KB.**
+
+| size | leaves (Zimtohrli / ViSQOL) | Opus (Zimtohrli / ViSQOL) |
+|---|---|---|
+| 5,425 bytes (Opus at 24 kb/s) | 4.45 / 4.34 | 3.73 / 4.44 |
+| 7,878 bytes | 4.67 / 4.50 | 4.27 / 4.41 |
+| 11,439 bytes (Opus near 64 kb/s) | 4.88 / 4.66 | 4.83 / 4.64 |
+
+That kills G1. ViSQOL agreed on the winner in 16 of 18 comparisons (G4); it disagreed only at the two smallest sizes on the
+percussive clip.
+
+Read after the run:
+- **Not monotone at low targets.** On the percussive clip the leaves' scores dip from 25 to 35 dB (2.90, 2.82, 2.70)
+  before climbing; the rounding's noise and the band edge sit where the ear is sensitive. Not looked into.
+- **The percussive window is the track's opening**, low in frequency where the frames are loud. That suits a reader that
+  keeps the low leaves and drops the rest, and does not suit a perceptual codec at its lowest rates (24–48 kb/s, where
+  Opus spends bits on bandwidth replication and its SNR falls to 15–19 dB). One window, picked by attack, is not a
+  percussive repertoire.
+- **The common sizes are narrow.** Opus was not run below 24 kb/s, nor the leaves above 60 dB.
+- **Caveats on the measures.** Zimtohrli's MOS is its own mapping; the ViSQOL is an unofficial pure-Python port; no
+  person listened.
+
+So: on a tonal passage a perceptual codec is far ahead at every size; on a low, loud percussive opening the leaves were
+ahead by both measures from 5 to 11 KB. Whether that holds over more percussive material is the next question, and an
+ear's.

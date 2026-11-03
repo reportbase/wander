@@ -1,0 +1,59 @@
+AMX run 7 (plans/amx-plan.md). Windows: Snow Fight from 0.0 s, Sintel's Song from 98.0 s.
+
+## percussive: 86 frames, clip RMS 0.102
+   leaves 20 dB: 896 bytes, Zimtohrli MOS 2.712, ViSQOL 3.470, SNR at 48 kHz 25.9 dB
+   leaves 25 dB: 1,190 bytes, Zimtohrli MOS 2.903, ViSQOL 3.518, SNR at 48 kHz 30.0 dB
+   leaves 30 dB: 1,589 bytes, Zimtohrli MOS 2.821, ViSQOL 3.356, SNR at 48 kHz 33.9 dB
+   leaves 35 dB: 2,256 bytes, Zimtohrli MOS 2.698, ViSQOL 3.695, SNR at 48 kHz 39.2 dB
+   leaves 40 dB: 2,742 bytes, Zimtohrli MOS 3.406, ViSQOL 3.795, SNR at 48 kHz 42.7 dB
+   leaves 50 dB: 5,431 bytes, Zimtohrli MOS 4.454, ViSQOL 4.345, SNR at 48 kHz 51.9 dB
+   leaves 60 dB: 11,439 bytes, Zimtohrli MOS 4.882, ViSQOL 4.662, SNR at 48 kHz 61.2 dB
+   Opus 24 kb/s: 5,425 bytes (packets), Zimtohrli MOS 3.727, ViSQOL 4.438, SNR 19.2 dB (lag 5, gain 1.015)
+   Opus 32 kb/s: 6,937 bytes (packets), Zimtohrli MOS 4.076, ViSQOL 4.351, SNR 15.6 dB (lag 6, gain 1.047)
+   Opus 48 kb/s: 9,727 bytes (packets), Zimtohrli MOS 4.586, ViSQOL 4.513, SNR 15.5 dB (lag 5, gain 1.038)
+   Opus 64 kb/s: 12,599 bytes (packets), Zimtohrli MOS 4.967, ViSQOL 4.716, SNR 27.4 dB (lag 4, gain 1.002)
+   Opus 96 kb/s: 21,962 bytes (packets), Zimtohrli MOS 4.991, ViSQOL 4.725, SNR 29.3 dB (lag 4, gain 0.998)
+   Opus 128 kb/s: 29,837 bytes (packets), Zimtohrli MOS 4.994, ViSQOL 4.727, SNR 29.8 dB (lag 4, gain 0.998)
+   Opus 192 kb/s: 45,039 bytes (packets), Zimtohrli MOS 4.997, ViSQOL 4.729, SNR 29.4 dB (lag 4, gain 1.001)
+
+## tonal: 86 frames, clip RMS 0.07404
+   leaves 20 dB: 8,597 bytes, Zimtohrli MOS 1.887, ViSQOL 1.520, SNR at 48 kHz 22.4 dB
+   leaves 25 dB: 10,024 bytes, Zimtohrli MOS 2.179, ViSQOL 1.532, SNR at 48 kHz 26.5 dB
+   leaves 30 dB: 16,702 bytes, Zimtohrli MOS 2.518, ViSQOL 2.180, SNR at 48 kHz 31.6 dB
+   leaves 35 dB: 25,302 bytes, Zimtohrli MOS 3.389, ViSQOL 3.014, SNR at 48 kHz 36.5 dB
+   leaves 40 dB: 34,282 bytes, Zimtohrli MOS 4.108, ViSQOL 3.435, SNR at 48 kHz 41.5 dB
+   leaves 50 dB: 59,292 bytes, Zimtohrli MOS 4.836, ViSQOL 4.074, SNR at 48 kHz 51.3 dB
+   leaves 60 dB: 89,012 bytes, Zimtohrli MOS 4.998, ViSQOL 4.711, SNR at 48 kHz 62.5 dB
+   Opus 24 kb/s: 7,865 bytes (packets), Zimtohrli MOS 4.648, ViSQOL 4.264, SNR 16.8 dB (lag 0, gain 0.993)
+   Opus 32 kb/s: 9,860 bytes (packets), Zimtohrli MOS 4.760, ViSQOL 4.221, SNR 18.6 dB (lag 0, gain 0.997)
+   Opus 48 kb/s: 14,284 bytes (packets), Zimtohrli MOS 4.880, ViSQOL 4.231, SNR 21.6 dB (lag 0, gain 1.000)
+   Opus 64 kb/s: 19,792 bytes (packets), Zimtohrli MOS 4.954, ViSQOL 4.624, SNR 24.1 dB (lag 0, gain 0.996)
+   Opus 96 kb/s: 27,250 bytes (packets), Zimtohrli MOS 4.981, ViSQOL 4.639, SNR 27.3 dB (lag 0, gain 1.000)
+   Opus 128 kb/s: 35,184 bytes (packets), Zimtohrli MOS 4.992, ViSQOL 4.638, SNR 29.2 dB (lag 0, gain 1.000)
+   Opus 192 kb/s: 51,032 bytes (packets), Zimtohrli MOS 4.998, ViSQOL 4.637, SNR 32.5 dB (lag 0, gain 1.000)
+
+percussive: at equal size (interpolated in log size; leaves | Opus)
+       5,425 bytes  Zimtohrli 4.453 | 3.727   ViSQOL 4.344 | 4.438   SNR 51.9 | 19.2 dB
+       5,955 bytes  Zimtohrli 4.507 | 3.859   ViSQOL 4.384 | 4.405   SNR 53.1 | 17.9 dB
+       6,537 bytes  Zimtohrli 4.561 | 3.992   ViSQOL 4.424 | 4.372   SNR 54.2 | 16.5 dB
+       7,176 bytes  Zimtohrli 4.614 | 4.127   ViSQOL 4.464 | 4.367   SNR 55.4 | 15.6 dB
+       7,878 bytes  Zimtohrli 4.668 | 4.268   ViSQOL 4.503 | 4.412   SNR 56.6 | 15.6 dB
+       8,648 bytes  Zimtohrli 4.721 | 4.408   ViSQOL 4.543 | 4.456   SNR 57.7 | 15.6 dB
+       9,493 bytes  Zimtohrli 4.775 | 4.549   ViSQOL 4.583 | 4.501   SNR 58.9 | 15.5 dB
+      10,421 bytes  Zimtohrli 4.828 | 4.687   ViSQOL 4.623 | 4.567   SNR 60.1 | 18.7 dB
+      11,439 bytes  Zimtohrli 4.882 | 4.825   ViSQOL 4.662 | 4.640   SNR 61.2 | 23.0 dB
+tonal: at equal size (interpolated in log size; leaves | Opus)
+       8,597 bytes  Zimtohrli 1.887 | 4.692   ViSQOL 1.520 | 4.247   SNR 22.4 | 17.5 dB
+      10,741 bytes  Zimtohrli 2.225 | 4.788   ViSQOL 1.620 | 4.223   SNR 27.2 | 19.3 dB
+      13,419 bytes  Zimtohrli 2.372 | 4.860   ViSQOL 1.902 | 4.229   SNR 29.4 | 21.1 dB
+      16,765 bytes  Zimtohrli 2.526 | 4.916   ViSQOL 2.188 | 4.424   SNR 31.7 | 22.8 dB
+      20,946 bytes  Zimtohrli 2.993 | 4.959   ViSQOL 2.635 | 4.626   SNR 34.3 | 24.6 dB
+      26,169 bytes  Zimtohrli 3.469 | 4.978   ViSQOL 3.061 | 4.637   SNR 37.0 | 26.9 dB
+      32,694 bytes  Zimtohrli 3.996 | 4.989   ViSQOL 3.370 | 4.638   SNR 40.7 | 28.6 dB
+      40,847 bytes  Zimtohrli 4.341 | 4.995   ViSQOL 3.639 | 4.638   SNR 44.6 | 30.5 dB
+      51,032 bytes  Zimtohrli 4.636 | 4.998   ViSQOL 3.899 | 4.637   SNR 48.6 | 32.5 dB
+
+G1 Opus above the leaves by Zimtohrli at every common size: KILLED
+G2 tonal: Opus 128 kb/s Zimtohrli MOS 4.992 at 35,184 bytes; the leaves reach it at 2.53× those bytes (≥ 2× or never): not killed
+G3 the leaves above Opus by SNR at every common size: not killed
+G4 ViSQOL agrees with Zimtohrli on the winner in 16 of 18 (≥ 75%): not killed
