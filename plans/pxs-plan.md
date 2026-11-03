@@ -189,3 +189,19 @@ Parallax is the Cauchy's own composition, across two standpoints.
 
 The pieces are classical (Möbius closure; Lévy's sum). Reading the triangulation as the composition of the reads'
 standpoints is ours.
+
+### After the runs: the two ways out, proved (3 Nov 2026, review 2 of *Reads and Writes*, SPN R629)
+
+A referee's report (`plans/rw-review-2.md`) asked for a derivation of the two cases X6 and X7 found by simulation. Each
+follows in a line; no prediction above is changed.
+
+- **The place (X7).** x̂ = −1 + 2·cot a/(cot a + cot b) in half-baselines. Write U = cot a and S = cot a + cot b. The
+  density of U/S at 0 is f_U(0)·∫|s|·f_S(s) ds, and with U and the other read independent Cauchys that integral is a
+  Cauchy's missing mean: infinite. So x̂ has an infinite density at −1 (over A), and likewise at +1 (over B); a Cauchy's
+  density is finite everywhere. Checked on 4·10⁶ draws at γ-free standard reads: the density within 10⁻², 10⁻³, 10⁻⁴ of
+  −1 is 0.64, 0.88, 1.09, rising about 0.22 a decade, as a logarithm does.
+- **Two quarter turns (X6).** The sum S of two independent positive standard half-Cauchys has density
+  ∫₀ˢ f(x) f(s − x) dx ~ (4/π²)·s near zero, while every half-Cauchy's density is positive at zero, so S is no
+  half-Cauchy. The depth B/S then has density (B/d²)·f_S(B/d) ~ 4B²/(π²d³) far out: a tail of 1/d³, not 1/d², and a
+  finite mean. Checked: P(d > D)·D² is 0.80 and 0.83 at D = 10 and 100 against the predicted 2B²/π² = 0.81 (B = 2), and
+  the sample mean depth settles (1.27 half-baselines on 4·10⁶ pairs).

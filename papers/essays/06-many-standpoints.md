@@ -123,17 +123,21 @@ The depth is the reciprocal of a sum of two reads. Those are exactly the operati
 closed under: a sum, which is a relay of standpoints, and a reciprocal, which is the exchange. So parallax never takes a
 read out of the family.
 
-That makes the errors exact. Suppose each read is uncertain the way a read from a height γ is, the steady turn's law about
-the true direction. In the cot chart each read is then a Cauchy with its point at w = (c + iγ)/(1 − iγc), c being the true
-value. The depth is then exactly a Cauchy, at every γ and not only for small errors, and its point is the same
-triangulation done on the two points instead of the two values: D = B / conj(w_a + w_b). The rays that fail to meet ahead
-are part of the same law. At the corner the depth's point stays at the true distance, turned by twice the read's error
-angle: D = d·e^(2i·atan γ). Its median falls a little short, at d·cos(2·atan γ).
+That makes the errors exact. Suppose each read is uncertain the way a read from a height γ is, the steady turn's law
+about the true direction, and the two reads' errors are independent. In the cot chart each read is then a Cauchy with
+its point at w = (c + iγ)/(1 − iγc), c being the true value. The depth is then exactly a Cauchy, at every γ and not only
+for small errors, and its point is the same triangulation done on the two points instead of the two values:
+D = B/conj(w_a + w_b). The rays that fail to meet ahead are part of the same law, as negative depths. At the corner the
+depth's point stays at the true distance, turned by twice the read's error angle: D = d·e^(2i·atan γ). Its median falls
+a little short, at d·cos(2·atan γ).
 
-Two things leave the family. The place across the line of sight is a ratio of two sums, and is a Cauchy only for small
-errors. And if each standpoint turns only a quarter turn, its reads are half-Cauchys, which do not add to one. Turned
-over the whole half turn, two standpoints' crossings are a standard Cauchy in half-baselines: half meet ahead, at a
-median depth of one half-baseline, the corner.
+Two things leave the family, and each can be seen in a line. The place across the line of sight is a ratio of two sums,
+a Cauchy only for small errors: its density right over each standpoint is infinite, because it multiplies a read's
+density at zero by the sum's missing mean, and a Cauchy's density is never infinite. And if each standpoint turns only a
+quarter turn, its reads are half-Cauchys, which do not add to one: their sum's density falls to nothing at zero, where a
+half-Cauchy's never does, so the depth's far tail thins as 1/d³ instead of 1/d², and that depth has a mean. Turned over
+the whole half turn, two standpoints' crossings are a standard Cauchy in half-baselines: half meet ahead, at a median
+depth of one half-baseline, the corner.
 
 Repeating the reads shows the order again. Averaging the reciprocal depths gains nothing, since a sum of Cauchys is a
 Cauchy of the same scale; the median of the depths narrows. Parallax is the Cauchy's own composition carried across two

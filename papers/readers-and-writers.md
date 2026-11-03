@@ -235,14 +235,16 @@ all of it arrives, on addresses known before it came. The Cauchy then gives it b
   the payload's overall scale a₀, and that number is V again.
 - *By dividing the address law out.* What is counted along the addresses is the address law times the payload's own
   weight, ρ(θ)·2/(π(1 + s²)). The address law is known before anything arrives, so dividing by it leaves the payload's
-  distribution exactly: the astronomer's flat field, importance sampling's 1/p. The median direction of what arrives is then
-  the payload's median, at the corner only when the payload weighs alike on both sides.
-- *By undoing the blur.* Seen from a height γ, the payload arrives smoothed by the Cauchy kernel, whose Fourier transform
-  e^(−γ|k|) is never zero. Every mode survives, damped and not destroyed, and comes back multiplied by e^(γ|k|). A box blur,
-  the floor's, has a transform with zeros, and the modes there are gone for good. How fine a mode comes back is set by the
-  resolution, which is how finely the reader draws, not loss.
-- *By averaging it.* The payload is amounts, and amounts have means: weighted by the known address measure, the light across
-  the turn totals exactly. The mean was never missing from the payload, only from the addresses.
+  distribution exactly, up to its total: the astronomer's flat field, importance sampling's 1/p. The median direction of
+  what arrives is then the payload's median, at the corner only when the payload weighs alike on both sides.
+- *By undoing the blur.* Seen from a height γ, the payload arrives smoothed by the Cauchy kernel, whose Fourier
+  transform e^(−γ|k|) is never zero. Every mode survives, damped and not destroyed, and comes back multiplied by
+  e^(γ|k|), noise with it. A box blur, the floor's, has a transform with zeros, and the modes there are gone for good.
+  How fine a mode comes back is set by the resolution and the noise, which is how finely the reader draws, not loss:
+  unique in principle is not the same as stable.
+- *By averaging it.* The payload is amounts, and amounts have means: weighted by the known address measure, the light
+  across the turn totals exactly wherever that total is finite, which is the payload's to say. The mean was never
+  missing from the payload, only from the addresses.
 
 What the payload carries along its address all comes back; its scale and its distance are V, and come back only by
 writing. A known measure can be divided out and an invertible blur undone; a floor that discards cannot.
@@ -523,16 +525,20 @@ what one observer is doing.
 **Parallax is a sum of reads.** Put the two standpoints a step apart and let each read a point in its h/v chart along
 the step, cot a from one end and cot b from the other. Then cot a + cot b is the step over the point's distance from the
 step's line: the depth is the reciprocal of a sum of two reads. Those are the two operations the Cauchy is closed under,
-the sum (a relay of standpoints, their points m + iγ adding) and the reciprocal (the exchange). So parallax never takes a
-read out of the family. If each read is uncertain as a read from a height γ is (the uniform turn's law about the true
-direction), each is a Cauchy point w = (c + iγ)/(1 − iγc) in that chart, c its true value, and the depth is exactly a
-Cauchy whose point is the same triangulation done on the two points: D = B/conj(w_a + w_b), B the step. That holds at every
-γ, not only for small errors; rays that do not meet ahead are part of the same law. At the pair's corner, the circle on
-the step, the depth's point stays at the true distance d, turned by twice the read's error angle: D = d·e^(2i·atan γ). Two
-things leave the family: the place across the line of sight, a ratio of two sums, and the depth when each standpoint
-reads only a quarter turn, since two half-Cauchys do not add to one. And repeating the reads, the mean of the reciprocal
-depths gains nothing, while their median narrows. Parallax is the Cauchy's own composition, carried across two
-standpoints; the step is the one amount in it. (Checked in PXS, `plans/pxs-plan.md`.)
+the sum (a relay of standpoints, their points m + iγ adding) and the reciprocal (the exchange). So parallax never takes
+a read out of the family. If each read is uncertain as a read from a height γ is (the uniform turn's law about the true
+direction), and the two reads' errors are independent, each is a Cauchy point w = (c + iγ)/(1 − iγc) in that chart, c
+its true value, and the depth is exactly a Cauchy whose point is the same triangulation done on the two points:
+D = B/conj(w_a + w_b), B the step. That holds at every γ, not only for small errors; rays that do not meet ahead are
+part of the same law, as negative depths. At the pair's corner, the circle on the step, the depth's point stays at the
+true distance d, turned by twice the read's error angle: D = d·e^(2i·atan γ). Two things leave the family, and each can
+be seen in a line. The place across the line of sight is a ratio of two sums, −1 + 2·cot a/(cot a + cot b) in
+half-steps; its density over each standpoint is a read's density at zero times the sum's missing mean, so it is infinite
+there, where a Cauchy's never is. And when each standpoint reads only a quarter turn, the sum of two half-Cauchys has
+density (4/π²)·s near zero, where every half-Cauchy's is positive; so the depth's tail falls as 1/d³, not 1/d², and that
+depth has a mean. And repeating the reads, the mean of the reciprocal depths gains nothing, while their median narrows.
+Parallax is the Cauchy's own composition, carried across two standpoints; the step is the one amount in it. (Checked in
+PXS, `plans/pxs-plan.md`.)
 
 **Turning teaches the addresses; walking teaches the world.** A standpoint has two motions, a turn about itself and a
 step along a straight line. A turn moves every direction by the same angle, near and far alike, so nothing shifts against

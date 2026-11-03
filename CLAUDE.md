@@ -1258,6 +1258,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   points, on the circle of radius d at the corner. Run 1 (`runs/pxs/pxs.py`): X1, X3, X5–X8 not killed, X2 and X4 killed by my
   bounds; run 2 (`pxs2.py`): X2′, X4′ not killed. The place, and two quarter turns, leave the family. In
   *Reads and Writes* §8 ("Parallax is a sum of reads"), essay 6 §4, a pointer in essay 3 §6.
+  R629 (3 Nov; Tom: "Proceed", to a referee's report, `plans/rw-review-2.md`): §8 states the reads independent and proves
+  the two ways out (the place's density infinite over each standpoint; two quarter turns' depth tail 1/d³, with a mean);
+  §2's recovery scoped (up to the total; unique, not stable; the payload's mean where finite). Essay 6 §4; the PXS plan.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
