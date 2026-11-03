@@ -1319,6 +1319,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   four, one in eight; each stretch over which the reading halves holds as many addresses), a writer's counted in thumbs
   (two thumbs, four, eight). Still never "doubling" or "level".** The logarithm 1 + ln(d/H) is the writer's number for the
   reader's ratio. *Reads and Writes* §2, §5's e, §6; essays 1, 2, 4, 8, 14, 15, 16 and the README.
+  R643 (3 Nov; Tom: "Circles and spheres are writes tools. Readers have a vantage, not a shape. They can walk the shape
+  however to become a writer."): **never give a reader a circle, a sphere or any shape: a reader has a vantage.** A full
+  write is a line (two points, walked and counted); circles and spheres are its turn held whole, the writer's. *Reads and
+  Writes* §2 "A vantage, not a shape"; §7 "the reader's vantage and the writer's cube".
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

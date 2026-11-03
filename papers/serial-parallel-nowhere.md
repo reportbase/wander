@@ -6986,6 +6986,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   1 + ln(d/H) are the writer's. Splits R622's standing rule; replaces "the logarithm as the reader holds it: a count" in
   *Reads and Writes* §6. Made in the paper (§2, §5's e, §6) and essays 1, 2, 4, 8, 14, 15, 16 and the README; essay 4's
   analytic passages naming stretches by distance ("from one thumb to two") kept, as the writer's description.
+- **R643** (3 Nov; Tom: "a full write is a line. A full 2d read is the circle that this two points creates. A full 3d read
+  is the sphere that the two points creates.", then, asked how that sits with R623: "Circles and spheres are writes tools.
+  Readers have a vantage, not a shape. They can walk the shape however to become a writer."): restates R623 and R591
+  generally. Two points give the writer a line, walked and counted; a circle or sphere on them is that line's whole turn
+  held at once, the writer's. A reader has a vantage (a standpoint and its turn), not a shape, in any dimension; walking
+  the shape makes it a writer (R594). *Reads and Writes* §2 "A vantage, not a shape"; §7 retitled "the reader's vantage
+  and the writer's cube" (it said "the reader's sphere").
 
 ## Appendix B. Demos and computations
 

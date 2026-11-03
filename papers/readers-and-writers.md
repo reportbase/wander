@@ -94,6 +94,11 @@ drawing are drawn at one length: the thumb equal to the mountain. We call it the
 held whole, with a circumference and an area. The reader does not draw it, set it or choose it; it points, and has the
 turn.
 
+**A vantage, not a shape.** Circles and spheres are the writer's tools. Two points give the writer a line, the segment
+between them walked and counted; a circle on them, or a sphere, is that line's whole turn held at once, which only a
+writer holds. A reader has a vantage, not a shape: a standpoint and the turn from it, in the plane and in space alike.
+It can walk the shape, round it or along it, and in walking it becomes a writer (§8).
+
 **The uniform turn.** The reader's directions are laid by turning, and a turn measured by itself is uniform: equal turns,
 equal shares. Nothing the reader does produces the directions; they are given by the geometry before anything arrives,
 which is why we call them addresses. In the reading s = v/h the uniform turn over a quarter turn has the law
@@ -469,7 +474,7 @@ Knowing N buys equality; holding only K buys a standpoint, at a cost that does n
 capabilities, useful wherever readers with different H (different thumbs) must agree about far things, since the number
 line has no corner to disagree about.
 
-## 7. Three parties, the reader's sphere and the writer's cube
+## 7. Three parties, the reader's vantage and the writer's cube
 
 With a third party, V₂, the reader turns two ways: up from the horizontal (altitude) and round it (azimuth). These are the
 horizon coordinates of astronomy. Its directions fill one octant, the *wedge*: [h : v : v₂], two numbers a direction. The
