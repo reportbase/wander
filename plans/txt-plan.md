@@ -203,3 +203,12 @@ directions, so a reader has no sharp turn of its own; a corner, a jump in direct
 the line. Asked to hold one, a reader's even addresses ring (Gibbs: on both sides, not shrinking with more addresses;
 on an outline's corner, ringing in direction that shrinks only as 1/N, which is the cost run 2 and run 3 measured).
 Nature's ringing comes after its event (a struck bell) or on one side of an edge (diffraction). Not tested here.
+
+**Observations continued (3 November, not rulings).** Tom: "A write is a count, it is discrete. A read is continuous.
+The weird numbers of pi and e arise when a write tries to convert a read into a write." Then, asked whether the
+reader's K addresses (R408) are a count: "K is continuous, not discrete. K is read continuously." Read here: π is where
+Archimedes' count of sides would end if it held the whole turn, e where Bernoulli's count of compoundings would end if
+it became continuous (essay 15, R597); a `.tvf` is a count (N numbers), its leaves at (k + ½)·π/N, and Gibbs's overshoot,
+the residue of a finite count holding a corner, is a number defined through π (about 0.0895 of the jump). K continuous
+agrees with OFS's "A resolution, not cells" (R367: the level continuous, the array rounds and the reader does not) and
+with R373 (the floor is what discards); the count of addresses is the writer's floor of it.
