@@ -69,11 +69,17 @@ and the vantage that holds each.
 **The second test.** Change what arrives, keeping the standpoint and the turn: repaint the world, move the light, replace
 a wall by a row of trees. The *addresses*, the directions the turn lays down, are unchanged; the *payload*, what is found
 along each, changes. The first test separates reading from writing; the second separates address from payload.
+In the writer's notation both splits sit in one line: write a point as z = r·e^(iθ), so that ln z = ln r + iθ. Scaling the
+world slides the real part by ln k and leaves θ; a turn about the standpoint slides θ and leaves ln r; the address lives
+on the imaginary part and the payload's size on the real. The notation needs π and e, so it is the writer's (§5); the
+reader holds the same split as a direction [h : v] and what arrives along it.
 
 **Continuous and discrete.** The two acts are, in the end, an old distinction under new names. A read is continuous: a turn
 passes through every direction between two, none is next to another, and nothing in a turn is counted. A write is a count:
 strides along a baseline, units on a ruler, items in a list, digits in a number, each with a next and, in a finite count, a
-last. Scaling the world leaves a turn as it was and multiplies every count of units; that is the first test seen from this
+last. The writer's continuous things, the real line, the circle held whole, π and e, are counts carried to their limit
+and held as finished: a ruler subdivided without end, a polygon given ever more sides, interest compounded ever more
+often. So there are two continuities. The reader's is never counted; the writer's is a count completed. Scaling the world leaves a turn as it was and multiplies every count of units; that is the first test seen from this
 side. The rest of the paper keeps returning to this line, in the corner and the horizon, in which numbers belong to whom, in
 K and N, and in the passage from one act to the other (§8, "Turns, counts and corners").
 
@@ -220,7 +226,8 @@ all of it arrives, on addresses known before it came. The Cauchy then gives it b
 - *By its ratios.* Two payloads read against each other make a ratio, and a ratio is a reading. The light along one
   address over the light along another, one colour channel over another, the radius in one direction over the radius in
   another: each is a direction [p₁ : p₂] in the payload's own space, read exactly as an address is read, unchanged when the
-  world is scaled. A shape about a centre, ln r = a₀ + f(θ), comes back this way whole: every mode of f from ratios of radii,
+  world is scaled. A shape about a centre, ln r = a₀ + f(θ) (the real part of the
+writer's ln z = ln r + iθ taken as a function of the turn, §5), comes back this way whole: every mode of f from ratios of radii,
   exactly. Two detectors' signals read against each other are a direction too, and where the signals are like noise that
   direction follows a Cauchy: the payload read as a ratio is an address again. What the ratios leave out is one number,
   the payload's overall scale a₀, and that number is V again.
@@ -409,7 +416,7 @@ alike. The address coordinate closes, so it has a total, and π is that total in
 choose it away. The payload coordinate is an open line with no total and no natural size, so nothing on it marks a place;
 its base is a convention (counting in thumbs, doublings serve as well), and e is the base that lets one unit serve both
 coordinates, so that e^(iθ) is a turn of θ and e^t growth at a rate of one. That open line is why the reader never reads
-a₀, the overall size: there is no mark on it to read against. One coordinate closed and its constant forced, one open and
+a₀, the overall size (the a₀ of a shape's ln r = a₀ + f(θ), §2): there is no mark on it to read against. One coordinate closed and its constant forced, one open and
 its constant chosen: the asymmetry of address and payload, in two numbers. Both numbers are still the writer's; the reader
 meets the closing and the openness, and states neither.
 
@@ -588,7 +595,8 @@ there, which is a count: at the third stop, turn this much. That is why a corner
 - *π and e are where a count tries to hold a read.* Archimedes counted the sides of polygons about a circle, 6, 12, 24,
   96, and every count gave a rational bound; π is where the count would end if it held the whole turn, which no count
   does. Bernoulli's coin compounded n times, (1 + 1/n)ⁿ, is a count of periods; e is where it lands when the compounding
-  becomes continuous. These are §5's "π completes the turn" and "e completes the scale", seen as the price of a count.
+  becomes continuous. These are §5's "π completes the turn" and "e completes the scale", seen as the price of a count; the continuum a writer
+holds is that count completed, not the reader's uncounted turn.
 
 **Motion, read.** A thing coming toward the reader is read at its edge: x, the thing's breadth against its distance, the
 reading v/h of the line to its edge, and that reading grows. The reading over its own rate of growth, x/ẋ, is the time

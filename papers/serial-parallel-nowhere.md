@@ -7015,6 +7015,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   cut), so it is where the discrete and the continuous meet. The world likewise: whatever is out there, discrete or not,
   arrives as directions read continuously (WVP's single photons building one pattern); its discreteness, like K's, is a
   writer's statement. No claim that the universe is discrete (physics, R364). *Reads and Writes* §6, "K and N".
+- **R646** (3 Nov; Tom: "yes", to Claude's reading of a Gemini review): two continuities. The writer's continuous things
+  (the real line, the circle held whole, π, e) are counts carried to their limit and held as finished; the reader's
+  continuity is never counted. ln z = ln r + iθ is the writer's notation showing both tests in one line (scaling slides
+  ln r, a turn slides θ), pointed to from §1 and kept in §5, not moved to the front (it needs π and e; the reader holds
+  [h : v]); a shape's ln r = a₀ + f(θ) its real part as a function of the turn. *Reads and Writes* §1, §2, §5, §8.
 
 ## Appendix B. Demos and computations
 

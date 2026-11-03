@@ -1332,6 +1332,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   The same day (Tom: "yes", to an outside review): §3 "Five pictures", §7's (v/h, v₂/h) the tangent readings on a screen
   square to the look, §8's complex Cauchy points after McCullagh (1992), file paths moved to "Code and data", the
   references checked against Crossref and catalogues (Wantzel and Mercator added).
+  R646 (3 Nov; Tom: "yes", to a Gemini review): two continuities, the writer's a count completed (ℝ, the circle held
+  whole, π, e), the reader's never counted; ln z = ln r + iθ the writer's notation for both tests, pointed to from §1,
+  kept in §5. *Reads and Writes* §1, §2, §5, §8.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
