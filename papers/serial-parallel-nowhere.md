@@ -6916,6 +6916,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   in the standpoint's own ticks and seconds a writer's, the rate of turning cancelling, a speed in m/s a writing twice
   over. Essay 14's caution on rates per second points to it. The data cases were already in essay 3 §10 as in §11; essay
   1 §9 points to them.
+- **R633** (3 Nov; Tom: "It is interesting that it uses circles to draw the shapes pertibations, I wonder if cauchy here could
+  do the same thing", then "start the epi cycle test"): EPI (`plans/epi-plan.md`, `runs/epi/`). The wrapped Cauchy blurs an
+  outline by shrinking epicycle k by e^{−γ|k|}, exactly (10⁻¹⁴), and mixes no circles. Takenaka–Malmquist terms, each a
+  standpoint moved toward a place, draw a dent in 11 terms where the best Fourier circles need 85 (to 10⁻³). They go to
+  the dent and step toward the outline as the detail gets finer. The broad shape needs twice Fourier's terms. Run 1 was killed
+  by my set-up (no a₁ = 0 shift). Run 2's E2′, a pole found exactly, was killed by my reasoning: the greedy finds the place,
+  not the pole. Classical (Poisson, Takenaka–Malmquist, Qian); the reading is ours.
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |

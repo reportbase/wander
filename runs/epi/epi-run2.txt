@@ -1,0 +1,41 @@
+EPI run 2 (plans/epi-plan.md). M = 4096 samples; errors relative L2 to ||z - c0||.
+
+E1: the wrapped Cauchy (Poisson kernel) by direct sum against each circle scaled by r^|k|, on S1
+  gamma 0.05  max rel diff 1.38e-14   Cauchy shrink ratio off e^-gamma by 1.1e-16   wrapped Gaussian ratio max/min over k=1..20: 6.69
+  gamma 0.2   max rel diff 1.22e-15   Cauchy shrink ratio off e^-gamma by 1.1e-16   wrapped Gaussian ratio max/min over k=1..20: 2e+03
+  gamma 1.0   max rel diff 1.37e-15   Cauchy shrink ratio off e^-gamma by 5.6e-17   wrapped Gaussian ratio max/min over k=1..20: 3.19e+16
+  E1 not killed (worst 1.38e-14)
+
+S4: negative-frequency leak in the remainders at most 1.9e-15
+  to 1e-02: Fourier best-n 16 terms (32 reals); aimed 8 terms (32 reals)
+  to 1e-03: Fourier best-n 27 terms (54 reals); aimed 10 terms (40 reals)
+  to 1e-04: Fourier best-n 37 terms (74 reals); aimed None terms (None reals)
+  to 1e-06: Fourier best-n 58 terms (116 reals); aimed None terms (None reals)
+  aimed terms: +|a|=0.000 arg=+0.000, -|a|=0.000 arg=+0.000, +|a|=0.203 arg=+1.606, +|a|=0.885 arg=+0.976, +|a|=0.216 arg=-2.260, +|a|=0.869 arg=+0.998, +|a|=0.224 arg=-2.153, +|a|=0.869 arg=+1.000, +|a|=0.225 arg=-2.143, +|a|=0.869 arg=+1.000, +|a|=0.225 arg=-2.142, +|a|=0.869 arg=+1.000
+
+S1: negative-frequency leak in the remainders at most 3.6e-13
+  to 1e-02: Fourier best-n 40 terms (80 reals); aimed 5 terms (20 reals)
+  to 1e-03: Fourier best-n 85 terms (170 reals); aimed 11 terms (44 reals)
+  to 1e-04: Fourier best-n 111 terms (222 reals); aimed 18 terms (72 reals)
+  to 1e-06: Fourier best-n 200 terms (400 reals); aimed 45 terms (180 reals)
+  aimed terms: +|a|=0.000 arg=+0.000, -|a|=0.000 arg=+0.000, +|a|=0.000 arg=+0.000, +|a|=0.952 arg=+1.000, -|a|=0.951 arg=+1.000, +|a|=0.944 arg=+1.130, +|a|=0.969 arg=+0.939, -|a|=0.943 arg=+1.132, -|a|=0.969 arg=+0.939, +|a|=0.959 arg=+1.075, -|a|=0.958 arg=+1.077, +|a|=0.970 arg=+0.922, -|a|=0.970 arg=+0.921, +|a|=0.969 arg=+1.046, -|a|=0.968 arg=+1.048, +|a|=0.974 arg=+0.915, -|a|=0.974 arg=+0.915, +|a|=0.977 arg=+1.020, -|a|=0.976 arg=+1.023, +|a|=0.981 arg=+0.906
+
+S3: negative-frequency leak in the remainders at most 2.4e-15
+  to 1e-02: Fourier best-n 5 terms (10 reals); aimed 10 terms (40 reals)
+  to 1e-03: Fourier best-n 10 terms (20 reals); aimed 19 terms (76 reals)
+  to 1e-04: Fourier best-n 12 terms (24 reals); aimed 27 terms (108 reals)
+  to 1e-06: Fourier best-n 18 terms (36 reals); aimed None terms (None reals)
+  aimed terms: +|a|=0.000 arg=+0.000, -|a|=0.000 arg=+0.000, +|a|=0.001 arg=+1.571, -|a|=0.353 arg=+1.571, +|a|=0.743 arg=+1.571, +|a|=0.387 arg=-2.224, +|a|=0.668 arg=+0.960, +|a|=0.500 arg=-2.784, +|a|=0.650 arg=+0.546, -|a|=0.607 arg=-1.571, -|a|=0.580 arg=+1.571, +|a|=0.534 arg=+3.113, -|a|=0.548 arg=-1.571, +|a|=0.643 arg=+0.247, -|a|=0.596 arg=+1.571, +|a|=0.539 arg=+2.873, -|a|=0.537 arg=-1.571, +|a|=0.641 arg=+0.028, -|a|=0.603 arg=+1.571, +|a|=0.529 arg=+2.708
+
+S2: negative-frequency leak in the remainders at most 7.6e-15
+  to 1e-02: Fourier best-n 42 terms (84 reals); aimed 7 terms (28 reals)
+  to 1e-03: Fourier best-n 84 terms (168 reals); aimed 22 terms (88 reals)
+  to 1e-04: Fourier best-n 108 terms (216 reals); aimed 39 terms (156 reals)
+  to 1e-06: Fourier best-n 200 terms (400 reals); aimed None terms (None reals)
+  aimed terms: +|a|=0.000 arg=+0.000, -|a|=0.000 arg=+0.000, +|a|=0.003 arg=-0.892, -|a|=0.949 arg=+1.005, -|a|=0.952 arg=-2.782, +|a|=0.956 arg=+1.004, +|a|=0.953 arg=-2.789, +|a|=0.334 arg=-1.490, -|a|=0.940 arg=+0.891, +|a|=0.974 arg=+0.929, +|a|=0.964 arg=+1.073, +|a|=0.969 arg=-2.698, -|a|=0.948 arg=-2.910, -|a|=0.968 arg=-2.723, +|a|=0.969 arg=-2.848, -|a|=0.969 arg=+1.065, -|a|=0.953 arg=-2.865, +|a|=0.969 arg=+0.920, +|a|=0.973 arg=-2.717, -|a|=0.960 arg=+0.932
+
+E2 one pole: aimed None terms, Fourier 37 to 1e-4: KILLED
+E3 one dent: aimed 11 terms, Fourier 85 to 1e-3: not killed
+E4 broad: aimed 19 terms, Fourier 10 to 1e-3: not killed
+E5 aimed at the dent: 10 of the first 10 with |a| > 0.5 within 0.3 of theta0; median 1-|a| terms 2-5 0.5245063207466515, terms 6-10 0.040931952361401125: not killed
+E6 two dents: of 16 with |a| > 0.5 in the first 20, 8 at the first, 8 at the second: not killed

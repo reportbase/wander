@@ -109,3 +109,41 @@ constant, zero here), and that shift counts as a term. Thresholds as before.
 - **E5′.** On S1, of the first ten aimed terms with |a| > 0.5, at least eight within 0.3 of θ₀; the median 1 − |a| over
   terms 6–10 smaller than over terms 2–5.
 - **E6′.** On S2, of the terms with |a| > 0.5 among the first twenty, each dent gets at least 30%.
+
+### Run 2 (3 Nov; `python3 runs/epi/epi.py 2`, output `runs/epi/epi-run2.txt`)
+
+- **E1** is unchanged (the same check, 1.4·10⁻¹⁴).
+- **E2′ killed.** On S4 the aimed terms reached 10⁻² in 8 and 10⁻³ in 10, but not 10⁻⁴ within the cap of 12; Fourier needs
+  37. The greedy never took the pole. It alternated between 0.869·e^{i·1.000} and 0.225 at the opposite place, and the
+  pole is at 0.8·e^{i}. My prediction assumed that taking the most energy finds the pole. It does not: the energy's maximum
+  for 1 + 0.3ā/(1 − āζ) lies beyond the pole, and the greedy closes the gap only slowly. Killed by my reasoning; the place
+  (arg 1.000) was found exactly.
+- **E3′ not killed.** On S1, 11 aimed terms against 85 Fourier to 10⁻³ (44 reals against 170). The rest:
+  - 5 against 40 to 10⁻²;
+  - 18 against 111 to 10⁻⁴;
+  - 45 against 200 to 10⁻⁶.
+- **E4′ not killed.** On S3, 19 aimed against 10 Fourier to 10⁻³. Where nothing is local, the even circles win.
+- **E5′ not killed.** All 10 of the first ten with |a| > 0.5 lie within 0.3 of θ₀. Their places were 0.91–1.13, against
+  the dent's width of 0.05. The median 1 − |a| fell from 0.52 (terms 2–5) to 0.041 (terms 6–10). Terms 2–5 include
+  the second shift (|a| = 0), which raises that median; the terms after it lie at 1 − |a| = 0.03–0.06, and that is the
+  reader stepping toward the dent.
+- **E6′ not killed.** Of the 16 terms with |a| > 0.5 among the first twenty, 8 lie at each dent. Two dents: 7 aimed
+  against 42 Fourier to 10⁻², 22 against 84 to 10⁻³, 39 against 108 to 10⁻⁴.
+
+## What it comes to
+
+- **The Cauchy draws with the same circles.** Its blur (the Poisson kernel, the wrapped Cauchy) leaves every epicycle
+  where it is and shrinks circle k by e^{−γ|k|}: exactly, and as no other blur tried does. The reader's height is the
+  level of detail.
+- **Aimed Cauchy terms draw local detail with far fewer terms.** Each term is a standpoint stepped off the centre toward a
+  place, its Szegő kernel the wrapped Cauchy there. On a dent the aimed terms took a seventh to an eighth as many terms as
+  the best Fourier circles, and a quarter as many reals. Their standpoints went to the dent (within the dent's own width of
+  it) and stepped nearer the outline as the detail got finer: 1 − |a| from about 0.05 to 0.02. Two dents split them evenly.
+- **Where nothing is local, the even circles win.** The broad shape needed twice the terms and four times the reals. The
+  reader at the centre is the right one for a shape with no place to step toward: Corollary 6.1's focus has nothing to
+  follow.
+- **The greedy finds places, not exact poles.** On the one-pole shape it found the pole's direction exactly, but took the
+  energy's maximum, not the pole, and converged slowly.
+- Classical throughout: Abel–Poisson summation, Takenaka–Malmquist, Qian's adaptive Fourier decomposition. The reading is
+  ours: the even circles are one standpoint at the centre, and the aimed terms are standpoints moved toward the detail, the
+  focus as the corner, applied to drawing a shape.

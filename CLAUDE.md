@@ -1270,6 +1270,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R632 (3 Nov; Tom: "Update the essays with motion and the data cases"): essay 6 §2 has §8's "Motion, read" (Lee's
   τ̇ ≥ −½, ticks not seconds, the turning rate cancelling, m/s a writing twice over); essay 14 and essay 1 §9 point to it
   and to essay 3 §10's data cases, which already matched §11.
+  R633 (3 Nov; Tom: "I wonder if cauchy here could do the same thing", of epicycles): EPI (`plans/epi-plan.md`, `runs/epi/`),
+  epicycles against aimed Cauchy terms (Takenaka–Malmquist, Qian's AFD). The Poisson blur shrinks circle k by e^{−γ|k|}
+  exactly. Aimed terms draw a dent in 11 terms against Fourier's 85 (10⁻³), sit at the dent and step toward the outline;
+  the broad shape takes twice Fourier's terms. Run 1 was killed by my set-up (no a₁ = 0); in run 2 E2′ was killed by my
+  reasoning (the greedy finds a place, not the pole). Not in the papers yet.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
