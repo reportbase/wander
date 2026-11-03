@@ -140,7 +140,9 @@ The Tangent Bridge papers state what this does as five properties, and the first
 - **Bounded between.** Between the places the error is at most C·log N times how much the curve can change over one
   spacing, its modulus of continuity at π/N. The log N is the Lebesgue constant of an even lattice, which grows as
   (2/π)·ln N: 1.85 at N = 8, 2.73 at 32, 3.61 at 128, 4.49 at 512. That is Lebesgue's lemma with Jackson's estimate, and
-  the growth is Erdős and Turán's.
+  the growth is Erdős and Turán's. It is also as low as any choice of places allows: projected onto the chord by the
+  cosine, the leaves are Chebyshev's nodes, and Erdős showed that no n nodes on an interval, however chosen, do better than
+  (2/π)·ln n less a constant. The lattice was never optimized, and it lands within a constant of the best.
 - **Convergence, with a price.** For curves smooth enough that their modulus beats the logarithm (every Hölder curve
   does), the reconstruction converges uniformly as N doubles. For some merely continuous curves it does not: since the
   Lebesgue constant grows without bound, the uniform boundedness principle produces curves whose reconstructions
@@ -201,8 +203,12 @@ each the Cauchy's curve raised to a power, times a polynomial in s that puts its
 is s ↦ s/(1 + √(1 + s²)), one square root. Adding two turns is tangent addition, rational. So the whole lattice at
 N = 2^(d+1) is built by bisection and tangent addition from the corner, s = 1, and the papers rerun the round trip with
 every kernel value computed only as the rational function above of these constructed slopes, with no trigonometric call
-anywhere, exact to 10⁻¹⁶ at N up to 64. That it can be done at all rests on one fact: halving a turn needs one square
-root and nothing more.
+anywhere, exact to 10⁻¹⁶ at N up to 64; the algebraic paper carries the lattice alone to N = 2048, within 3·10⁻¹⁵ of the
+tangent construction, with every trigonometric function replaced by a counter that stays at zero. That it can be done at
+all rests on one fact: halving a turn needs one square root and nothing more. On these essays' rulings that square root
+is where the writer comes in: halving a length is the reader's, halving a turn takes two lengths combined, the
+hypotenuse √(1 + s²) (the fifteenth essay, and *Reads and Writes* §5). So the lattice is built by a writer, and what a
+reader holds are its leaves, each one a ratio.
 
 **Two charts, one circle.** So the reconstruction theorem is proved in one coordinate and run in another. The proof uses
 the angle: Fourier modes, the Lebesgue constant, Jackson's estimate, the language classical approximation theory already
@@ -210,6 +216,17 @@ speaks. The operation uses the slope: ratios, the reciprocal, tangent addition, 
 same closed line, the third essay's projective line of directions, read through s = tan(φ/2). The angle chart needs the
 whole circle at once, every period and every closed identity defined on a finished turn, and the proof is right to use
 it. The slope chart is the chart of one reading at a time, and the operation, which reads one point, never needs more.
+
+**Three things the construction shows.** *The arithmetic has its own craft.* The textbook half-angle, (√(1 + s²) − 1)/s,
+is the same number as s/(1 + √(1 + s²)), but it subtracts nearly equal numbers once s is small: built that way the
+lattice drifts to 1.6·10⁻⁹ by N = 2048, and built the second way it holds 10⁻¹³. Ratio arithmetic is not self-executing;
+its leaks are visible as arithmetic instead of sealed inside a named function. *The places it reaches are Gauss's.*
+tan(π/2N) is constructible by square roots exactly when 2N is a power of two times distinct Fermat primes, so halving
+from the corner reaches N = 2^m, and with the seeds 1/√3 and tan(π/10) also 3·2^m and 5·2^m; at N = 33 or 72 it stops.
+The halving that the levels use is the one radix under which every place stays reachable. *The corner seeds the lattice
+and holds no leaf of it.* The lattice has a leaf at s = 1 only when N leaves a remainder of 2 on division by 4, and
+among N = 2^(d+1) only N = 2 does. At every finer depth the corner, the reciprocal's fixed point, is where the
+construction starts and a place the reconstruction passes through, never one of the places held.
 
 ---
 
@@ -277,7 +294,9 @@ these essays do. Three are worth naming, so that a reader of both is not misled.
   the completed grid, are the fourth essay's K and N.
 - **2/π.** The papers read the Lebesgue constant's 2/π as the chord over the arc. The essays have kept that number to what
   it was found to be: a ratio of two sums over the turn, the uniform turn's mean of a projection, taken by whoever adds the
-  projections.
+  projections. The algebraic paper shows where its π sits: the sum of |sin| over the turn, written in the slope, is
+  2∫₀^∞ s(1 + s²)^(−3/2) ds = 2, algebraic, and the π is the turn's own total, dividing it. The 2 is in the slope's
+  arithmetic; the π is the writer's count of the whole turn.
 
 None of this touches the mathematics. The kernel identities, the round trip, the slope form, the nesting and the transform
 are exact, and checked.

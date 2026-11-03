@@ -1258,6 +1258,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   points, on the circle of radius d at the corner. Run 1 (`runs/pxs/pxs.py`): X1, X3, X5–X8 not killed, X2 and X4 killed by my
   bounds; run 2 (`pxs2.py`): X2′, X4′ not killed. The place, and two quarter turns, leave the family. In
   *Reads and Writes* §8 ("Parallax is a sum of reads"), essay 6 §4, a pointer in essay 3 §6.
+  R629 (3 Nov; Tom: "Proceed", to a referee's report, `plans/rw-review-2.md`): §8 states the reads independent and proves
+  the two ways out (the place's density infinite over each standpoint; two quarter turns' depth tail 1/d³, with a mean);
+  §2's recovery scoped (up to the total; unique, not stable; the payload's mean where finite). Essay 6 §4; the PXS plan.
+  R630 (3 Nov; Tom: "What ideas should we add to the paper", then "Proceed"): *Reads and Writes* §8 "Motion, read" (time to
+  contact x/ẋ from readings alone, Lee's τ̇ ≥ −½, ticks the reader's and seconds a writer's, approach against growth) and
+  §11 "Three cases in data" (LIGO's [H1 : L1], the quasar dipole, one photon at a time), with their references.
+  R631 (3 Nov; Tom: "Should the algebra paper be written as an essay", then "if you agree"): no new essay; essay 10 already
+  carries draw's TB papers. Added to it: the lattice built with zero trigonometric calls, its square root the writer's,
+  the rationalised half-angle, Gauss's reachable N, the corner the seed and no leaf, Erdős's bound, and where 2/π's π sits.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

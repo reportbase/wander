@@ -235,14 +235,16 @@ all of it arrives, on addresses known before it came. The Cauchy then gives it b
   the payload's overall scale a₀, and that number is V again.
 - *By dividing the address law out.* What is counted along the addresses is the address law times the payload's own
   weight, ρ(θ)·2/(π(1 + s²)). The address law is known before anything arrives, so dividing by it leaves the payload's
-  distribution exactly: the astronomer's flat field, importance sampling's 1/p. The median direction of what arrives is then
-  the payload's median, at the corner only when the payload weighs alike on both sides.
-- *By undoing the blur.* Seen from a height γ, the payload arrives smoothed by the Cauchy kernel, whose Fourier transform
-  e^(−γ|k|) is never zero. Every mode survives, damped and not destroyed, and comes back multiplied by e^(γ|k|). A box blur,
-  the floor's, has a transform with zeros, and the modes there are gone for good. How fine a mode comes back is set by the
-  resolution, which is how finely the reader draws, not loss.
-- *By averaging it.* The payload is amounts, and amounts have means: weighted by the known address measure, the light across
-  the turn totals exactly. The mean was never missing from the payload, only from the addresses.
+  distribution exactly, up to its total: the astronomer's flat field, importance sampling's 1/p. The median direction of
+  what arrives is then the payload's median, at the corner only when the payload weighs alike on both sides.
+- *By undoing the blur.* Seen from a height γ, the payload arrives smoothed by the Cauchy kernel, whose Fourier
+  transform e^(−γ|k|) is never zero. Every mode survives, damped and not destroyed, and comes back multiplied by
+  e^(γ|k|), noise with it. A box blur, the floor's, has a transform with zeros, and the modes there are gone for good.
+  How fine a mode comes back is set by the resolution and the noise, which is how finely the reader draws, not loss:
+  unique in principle is not the same as stable.
+- *By averaging it.* The payload is amounts, and amounts have means: weighted by the known address measure, the light
+  across the turn totals exactly wherever that total is finite, which is the payload's to say. The mean was never
+  missing from the payload, only from the addresses.
 
 What the payload carries along its address all comes back; its scale and its distance are V, and come back only by
 writing. A known measure can be divided out and an invertible blur undone; a floor that discards cannot.
@@ -523,16 +525,20 @@ what one observer is doing.
 **Parallax is a sum of reads.** Put the two standpoints a step apart and let each read a point in its h/v chart along
 the step, cot a from one end and cot b from the other. Then cot a + cot b is the step over the point's distance from the
 step's line: the depth is the reciprocal of a sum of two reads. Those are the two operations the Cauchy is closed under,
-the sum (a relay of standpoints, their points m + iγ adding) and the reciprocal (the exchange). So parallax never takes a
-read out of the family. If each read is uncertain as a read from a height γ is (the uniform turn's law about the true
-direction), each is a Cauchy point w = (c + iγ)/(1 − iγc) in that chart, c its true value, and the depth is exactly a
-Cauchy whose point is the same triangulation done on the two points: D = B/conj(w_a + w_b), B the step. That holds at every
-γ, not only for small errors; rays that do not meet ahead are part of the same law. At the pair's corner, the circle on
-the step, the depth's point stays at the true distance d, turned by twice the read's error angle: D = d·e^(2i·atan γ). Two
-things leave the family: the place across the line of sight, a ratio of two sums, and the depth when each standpoint
-reads only a quarter turn, since two half-Cauchys do not add to one. And repeating the reads, the mean of the reciprocal
-depths gains nothing, while their median narrows. Parallax is the Cauchy's own composition, carried across two
-standpoints; the step is the one amount in it. (Checked in PXS, `plans/pxs-plan.md`.)
+the sum (a relay of standpoints, their points m + iγ adding) and the reciprocal (the exchange). So parallax never takes
+a read out of the family. If each read is uncertain as a read from a height γ is (the uniform turn's law about the true
+direction), and the two reads' errors are independent, each is a Cauchy point w = (c + iγ)/(1 − iγc) in that chart, c
+its true value, and the depth is exactly a Cauchy whose point is the same triangulation done on the two points:
+D = B/conj(w_a + w_b), B the step. That holds at every γ, not only for small errors; rays that do not meet ahead are
+part of the same law, as negative depths. At the pair's corner, the circle on the step, the depth's point stays at the
+true distance d, turned by twice the read's error angle: D = d·e^(2i·atan γ). Two things leave the family, and each can
+be seen in a line. The place across the line of sight is a ratio of two sums, −1 + 2·cot a/(cot a + cot b) in
+half-steps; its density over each standpoint is a read's density at zero times the sum's missing mean, so it is infinite
+there, where a Cauchy's never is. And when each standpoint reads only a quarter turn, the sum of two half-Cauchys has
+density (4/π²)·s near zero, where every half-Cauchy's is positive; so the depth's tail falls as 1/d³, not 1/d², and that
+depth has a mean. And repeating the reads, the mean of the reciprocal depths gains nothing, while their median narrows.
+Parallax is the Cauchy's own composition, carried across two standpoints; the step is the one amount in it. (Checked in
+PXS, `plans/pxs-plan.md`.)
 
 **Turning teaches the addresses; walking teaches the world.** A standpoint has two motions, a turn about itself and a
 step along a straight line. A turn moves every direction by the same angle, near and far alike, so nothing shifts against
@@ -543,6 +549,17 @@ cross the fingers faster than far ones, and that difference is parallax. Any mot
 together (a turn about any point but the standpoint carries the standpoint along a chord, and the chord is a step), and only
 the step's part places anything. The straight line walked is the writer's own: count it in a unit and every place found
 from it is written.
+
+**Motion, read.** A thing coming toward the reader is read at its edge: x, the thing's breadth against its distance, the
+reading v/h of the line to its edge, and that reading grows. The reading over its own rate of growth, x/ẋ, is the time
+until the thing arrives, if it keeps coming as it comes: the breadth cancels, and so do the distance and the speed. Lee
+(1976) proposed that a driver braking reads exactly this, and the rule he found is a reading too: brake so that the time
+to contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car stops at the thing, since at τ̇ = −½ the
+distance it needs to stop is the distance it has. Two limits keep this honest. The time comes out in the reader's own
+ticks, as places come out in its own thumbs; seconds are a writer's unit, carried in. And one stream cannot tell a thing
+coming nearer from a thing growing where it stands, since both raise x alike; a neighbour at the same depth, read at
+once, tells them apart, approach moving both readings and growth one. The rate at which the reader turns cancels from
+every reading. A speed in metres a second is a writing twice over: a metre and a second, both carried in.
 
 **Knowing V comes by degrees.** The crossing is not a switch thrown. It has three counts.
 
@@ -652,6 +669,28 @@ It changes no mathematics. It sorts.
 - **The line is where knowing V is.** On one side of it every reading holds, whatever the world's size; on the other every
   amount holds, in some unit. The passage across is always by an amount carried in.
 
+**Three cases in data.** Practice already reads the median where it should; the sort says why, and where to look. In
+open data from the two LIGO detectors (Abbott et al. 2023; 512 s, about two million whitened samples each), each
+detector's signal taken alone is an amount, and its heavy tail is one loud transient on a law of finite spread: block
+means shrink as n^(−½), which nothing Cauchy can do. The Cauchy is in the direction [H1 : L1] of the two read at one
+instant: its median at 1, its spread unmoved by averaging, its angle near uniform, and the small departure from uniform
+reproduced from each channel alone, by pairing samples 8 s apart, to 0.0001; a prediction written before the data were
+fetched, which could have failed.
+
+A reader moving through a sky of sources counts more ahead. With no limit on brightness the census is a count of
+directions, and its dipole is 2β, Ellis and Baldwin's 2, from the addresses alone (1984). A real census is cut at a
+brightness, and the cut adds a term set by what arrives: the counts' slope and the sources' spectra, read from the same
+catalogue. On Secrest et al.'s quasars (2021) four slices by brightness give one β, as one motion of the reader should;
+slices by colour disagree, which no motion of the reader can do, so part of the dipole belongs to what arrives. The sort
+does not settle where the dipole comes from; it says which part could be the reader's.
+
+In a double slit lit one photon at a time, the fringes' visibility is at most 2hv, h and v the two paths' shares, and
+the which-path predictability |h² − v²| (Greenberger and Yasin 1988; Englert 1996): full visibility only at the corner.
+On Aspden, Padgett and Spalding's frames (2016) the shares give 2hv = 0.997 and 1.000, the pair at its corner, and the
+measured contrast, 0.69 and 0.56, lies under that bound, short by the source. The bound is the shares', the geometry's;
+how far below it a pattern falls is what arrives. None of the three is new physics. What the reading adds is where each
+part lives.
+
 **Where the ideas come from.** Jaynes's principle of transformation groups (1968, 1973) gives the method: the measure that an
 observer's ignorance leaves unchanged. Poincaré's universe made a thousand times larger overnight (1908), undetectable from
 inside, is the scale test; his distinction between representative and geometric space is the reader's and the writer's.
@@ -662,24 +701,38 @@ inside a read, and what carries an observer from one to the other.
 
 ## References
 
+- Abbott, R. et al. (LIGO, Virgo and KAGRA Collaborations) (2023). Open data from the third observing run of LIGO, Virgo,
+  KAGRA and GEO. *Astrophysical Journal Supplement Series* 267, 29.
 - Archimedes. *On the Sphere and Cylinder*, Book I.
+- Aspden, R. S., Padgett, M. J. and Spalding, G. C. (2016). Video recording true single-photon double-slit interference.
+  *American Journal of Physics* 84, 671.
 - Bernoulli, J. (1690). *Quæstiones nonnullæ de usuris.* Acta Eruditorum.
 - Bridgman, P. W. (1922). *Dimensional Analysis.* Yale University Press.
 - Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met.* Working paper, archived.
 - Buckingham, E. (1914). On physically similar systems. *Physical Review* 4, 345–376.
+- Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
+  Royal Astronomical Society* 206, 377.
+- Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77,
+  2154–2157.
 - Euclid. *Elements*, Book III, Proposition 20.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.
+- Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
+  *Physics Letters A* 128, 391–394.
 - Hölder, O. (1889). Ueber einen Mittelwerthssatz. *Göttinger Nachrichten*, 38–47.
 - Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 - Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3, 477–492.
 - Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen.* Erlangen.
 - Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten.* Berlin.
+- Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*
+  5, 437–459.
 - Leibniz, G. W., and Clarke, S. (1717). *A Collection of Papers … Relating to the Principles of Natural Philosophy and
   Religion.* London.
 - Lindemann, F. (1882). Über die Zahl π. *Mathematische Annalen* 20, 213–225.
 - Machin, J. (1706), in W. Jones, *Synopsis palmariorum matheseos.* London.
 - Poincaré, H. (1902). *La Science et l'hypothèse.* Paris. (1908). *Science et méthode.* Paris.
 - Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions* 75, 385–480.
+- Secrest, N. J. et al. (2021). A test of the cosmological principle with quasars. *Astrophysical Journal Letters* 908,
+  L51.
 - Snellius, W. (1617). *Eratosthenes Batavus.* Leiden.
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII.* Tours.
 
