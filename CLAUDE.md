@@ -1285,6 +1285,44 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   reasoning (the greedy finds a place, not the pole).
   R634 (3 Nov; Tom: "Yes, add it to the papers and build the demo"): EPI in *Reads and Writes* §6, essay 10 §3 ("A third
   kernel: the Cauchy's own") and essay 4 §13; `epicycles.html` the demo.
+  R635 (3 Nov; Tom: "yes, lets test on tvf draw labs."): EPI in draw's labs, `?lab=aim` (draw `labs/aimed-terms.js`,
+  its `papers/labs.md` §58), aimed terms against the even leaves on 40 library figures in reals; P1, P2 killed (P2 by my
+  set-up), P3 held. Recorded below EPI's runs.
+  R636 (3 Nov; Tom: "i'm wondering if this could make tvf competitive.", "yes, do the audio test"): AMX
+  (`plans/amx-plan.md` + `runs/amx/amx.py`), even leaves against leaves plus aimed terms on 2 s of librosa's snare and
+  trumpet (CC BY), against FLAC. Runs 1–2 killed by my set-up (the top frequency invisible at the half-shifted leaves);
+  in run 3 the greedy took almost no aimed terms (gain under 5%), and the leaves were 2.0× and 2.8× FLAC at the 16-bit
+  floor. Aimed terms do not make TVF competitive on audio: the gap is the cost of each number written as text.
+  R637 (3 Nov; Tom: "text only can be an option, not a requirement."): AMX run 4 (`runs/amx/amx_bin.py`), the same
+  leaves packed as binary (fixed prediction, Rice): 0.73× FLAC (snare) and 1.22× (trumpet) at the 16-bit floor, against
+  2.0× and 2.8× as text. Near-transparent, not lossless; the sources were Vorbis.
+  R638 (3 Nov; Tom: "proceed"): AMX runs 5–6 (`runs/amx/amx_lossless.py`) on the lossless *Sintel* score. FLAC sizes
+  in runs 1–5 had included ffmpeg's 8.3 KB of padding; corrected, run 4 was 1.26× and 1.44× FLAC (R637 superseded).
+  Lossless TVF 1.10–1.11× FLAC, the leaves adding nothing; near-transparent leaves 1.4–2.0×; by SNR the leaves beat Opus
+  by far at 40 dB, untested perceptually.
+  R639 (3 Nov; Tom: "do the perecptual comparison"): AMX run 7 (`runs/amx/amx_percept.py`; Zimtohrli and a Python
+  ViSQOL, both via pip, at 48 kHz): Opus far ahead on the tonal window, the leaves 2.53× its bytes for its 128 kb/s
+  score; the leaves ahead on the percussive opening from 5.4 to 11.4 KB. One window each, no listening.
+  R640 (3 Nov; Tom: "A write is a count, it is discrete. A read is continuous.", "K is read continuously.", "reading and
+  writing is just a refrain of the continuous discrete distinction"): TXT (`plans/txt-plan.md` + `runs/txt/`), TVF text
+  against SVG and other formats as text for models: run 2 TVF 3.4× SVG's tokens (shorter only on smooth outlines); run 3
+  three readers' formats (rotating) shorter on every smooth outline, four writers' (walking) on every cornered one; run 4
+  a reader's length follows the turning (ρ 0.85), a writer's the corners (0.59, the turning 0.00). In *Reads and Writes*:
+  abstract, §1 "Continuous and discrete", §6's K read continuously, §8 "Turns, counts and corners" (Gibbs ringing, π and e
+  where a count holds a read); TVF kept out of the paper. §5's "reader's arithmetic" and "a machine is a reader" wait.
+  R641 (3 Nov; Tom: "A machine is engineered to blur the distinction of reading and writing. It does both.", "counting is
+  done in parallax and writing, not pure reading."): the paper's computing passages moved to `plans/rw-computing-note.md`
+  (a machine does both acts); §5 "One length, counted, makes the rationals", counting the writer's and parallax's, a pure
+  read holding directions and their order. Supersedes R591–R592's rationals as the reader's and R613's section in the paper.
+  R642 (3 Nov; Tom: "Can the far field be ratio based for readers and counted by writers.", then "Yes and update the
+  essays"): **R622's standing rule split: a reader's far field in ratios (a thing one thumb wide reads one in two, one in
+  four, one in eight; each stretch over which the reading halves holds as many addresses), a writer's counted in thumbs
+  (two thumbs, four, eight). Still never "doubling" or "level".** The logarithm 1 + ln(d/H) is the writer's number for the
+  reader's ratio. *Reads and Writes* §2, §5's e, §6; essays 1, 2, 4, 8, 14, 15, 16 and the README.
+  R643 (3 Nov; Tom: "Circles and spheres are writes tools. Readers have a vantage, not a shape. They can walk the shape
+  however to become a writer."): **never give a reader a circle, a sphere or any shape: a reader has a vantage.** A full
+  write is a line (two points, walked and counted); circles and spheres are its turn held whole, the writer's. *Reads and
+  Writes* §2 "A vantage, not a shape"; §7 "the reader's vantage and the writer's cube".
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

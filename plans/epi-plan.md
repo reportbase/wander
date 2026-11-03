@@ -159,3 +159,15 @@ a little: the dent takes 13 aimed terms to 10⁻³ against 85 circles. The two d
 Into the papers: *Reads and Writes* §6, "Drawing a shape: the circles, a height, a step toward the detail"; essay 10 §3,
 "A third kernel: the Cauchy's own"; a paragraph in essay 4 §13. The references (Takenaka 1925, Malmquist 1926, Qian and
 Wang 2011) are from memory and are to be checked.
+
+
+After the runs: a lab in draw (3 Nov, R635; Tom: "yes, lets test on tvf draw labs."). draw's `?lab=aim`
+(`labs/aimed-terms.js`, draw's `papers/labs.md` §58) put the same greedy against draw's own reader, N even leaves
+reconstructed by its kernel, on 40 library figures walked by arc length, counted in reals (2N against 4n + 2), with its
+predictions in the drawer first. Run 1: to 10⁻³ the aimed terms took fewer reals on 12/24 figures not marked round (P1
+killed; they won by about half on polygons with few corners, the square 186 against 312, and hit their cap of 60 terms
+on nine with detail at many places, stars, arrows, the snowflake); on 8/16 "round" ones (P2 killed by my set-up: the
+library's round is a drawing category and holds cusped figures, heart, astroid, grazing ones, where the aimed terms won;
+on the smooth ones the leaves won, circle 8 against 14, blob 64 against 170); the deep standpoints sat at the median
+percentile 83 of the 32 leaves' error (P3 held). To 10⁻² the leaves won in reals on 36/40. A standpoint costs twice a
+leaf: stepping toward the detail pays where the detail is in a few places, at fine tolerance.

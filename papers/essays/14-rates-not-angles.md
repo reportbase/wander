@@ -26,9 +26,10 @@ the law of that per, the reader's sweep rate counted in readings; the payload is
 
 **The writer is transcendental; the reader is not.** π is not a reader's number. It is the total of a completed turn, and
 every number with π in it, π/2 and 2/π among them, is the writer's: the reader's sweep as measured by someone holding the
-whole turn. The reader holds one length, H, the thumb, and what it makes from one length is rational: counting thumbs, two
-thumbs, four, half a thumb, and every ratio of H to itself, thumbs to thumbs. On its readings it composes by tangent
-addition, turns them over and orders them, and all of that stays rational too. An irrational number needs two variables
+whole turn. The reader holds one length, H, the thumb, and reads every far thing as a ratio of it, one in two, one in four.
+Counting thumbs, two thumbs, four, half a thumb, is a count, and a count is done in parallax and in writing, not in a
+pure read; what one length counted makes is rational. On its readings the reader composes by tangent addition, turns
+them over and orders them, and that keeps a rational reading rational. An irrational number needs two variables
 combined (√2 is the diagonal of h and v), and that is the writer's; a transcendental one, π, needs the whole turn, and that
 is the writer's again (the sixth section). So the reader reads with the Cauchy and not with the circle: the readings from
 home to a horizon never reached, their corner at 1, their spread 1/(1 + s²) up to its total. The total, π/2, and the
@@ -387,7 +388,7 @@ numbers are the Cauchy's, and have no π in them.
 own is a cube: one number line on each axis, every point three amounts, every edge run at the writer's rate, 1, nothing
 round (the first essay's box). The sphere is how the writer draws the reader: its one length H, the thumb, turned every way
 from where it stands, every direction an address, no distance on it, the sweeps measured at π/2 and 2/π on a circle and at
-2 and ½ over a hemisphere. The reader itself holds no sphere, nor a circle. It points its crossed thumbs at the mountain
+2 and ½ over a hemisphere. The reader itself holds no sphere, nor a circle: it has a vantage, not a shape. It points its crossed thumbs at the mountain
 and reads with the Cauchy: its readings on one open line from home to a horizon, in space the two ratios v/h and v₂/h,
 never closed, never totalled. From A = (1, 0) to B = (0, 1) there are then three ways, two the writer's and one the
 reader's:

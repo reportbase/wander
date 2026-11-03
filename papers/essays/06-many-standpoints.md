@@ -344,7 +344,8 @@ stand, and the one amount it is handed.
 ## 12. Becoming the writer
 
 Climb the ladder of this essay once more, and count the variables. From one standpoint there is one length, H, the thumb,
-and a direction; nothing in it is a place, and what can be made from one length alone is rational (the fourteenth essay). A
+and a direction; nothing in it is a place, nothing is counted, and the reader has a vantage, not a shape (counting comes
+with parallax and writing, and one length counted makes the rationals: the fourteenth essay). A
 second standpoint adds a second variable, the step between the two. Now each point, matched in both looks, is two rays
 crossing, and its place comes out of the crossing's lengths and angles, sines and square roots, numbers no single length
 makes. More standpoints give every place seen, in the step's length: the writer's box, its three number lines, up to its

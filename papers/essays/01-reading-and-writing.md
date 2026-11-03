@@ -147,7 +147,7 @@ them. No second breadth is known, and none is needed to read.
 to miss.** The circle is the most familiar object in mathematics. A writer holds it as an equation, h² + v² = 1, with V
 known to equal H: the thumb held to equal the mountain. The reader has no circle. It points its crossed thumbs (in the
 plane, one thumb) at the mountain, and that pointing generates a geometry of its own, which section 4 will explain: a
-corner where the thumbs cross, directions laid by turning, near and far counted in thumbs. That geometry has every feature
+corner where the thumbs cross, directions laid by turning, near and far read as ratios of the thumb. That geometry has every feature
 of the circle except the circle. Because of that, the line between reading and writing runs straight through the middle of
 the thing everyone starts from, and it is very hard to see. Classical geometry works almost entirely on the writer's side.
 It never needs to say so, because the circle it begins with looks, from a standpoint, like what the pointing gives.
@@ -190,9 +190,10 @@ of units, and counting needs equal units. The number line has no special place o
 
 The reader's ruler, as later essays will show in detail, has a special place: the point where the thing you are reading
 equals your own length, one thumb, where v equals h. Near you, inside that point, the reader's ruler is proportional, like
-the number line: one thumb laid evenly. Past it the ruler goes by thumbs: two thumbs, then four, then eight, each stretch
-from a count of thumbs to twice it holding as many places as the last. So far things are laid by how many times farther
-they are, not how many units. Neither ruler is better. They are made for different acts. The writer counts; the reader
+the number line: one thumb laid evenly. Past it the ruler goes by ratios: a thing one thumb wide reads one in two, then
+one in four, then one in eight, each stretch over which the reading halves holding as many places as the last. So far
+things are laid by how many times farther they are, read as a ratio, not counted in units. A writer counting the same
+stretches says two thumbs, four, eight. Neither ruler is better. They are made for different acts. The writer counts; the reader
 sees.
 
 *Demo: one blueprint, two vantages, in two dimensions and three; the writer and the reader.*
@@ -215,8 +216,8 @@ without the circle. Where does it come from?
 
 It comes from pointing. Hold your one length, H, your thumb, up at the mountain, and turn it about one end, steadily, like
 the beam of a lighthouse sweeping the sea, or your gaze sweeping along a row of trees. A writer watching sees the free end
-trace a circle, for one simple reason: the length does not change as it turns. The reader does not hold that circle. It
-holds where its thumb points, and each pointing is a reading. Its geometry is what the pointing generates.
+trace a circle, for one simple reason: the length does not change as it turns. The reader does not hold that circle.
+Circles and spheres are the writer's tools; a reader has a vantage, not a shape. It holds where its thumb points, and each pointing is a reading. Its geometry is what the pointing generates.
 
 Now ask what the reader reads as it turns. At each moment its length points in some direction. The direction has an
 across part and an up part, two shares of the same length: h across and v up. What the reader reads is how they compare,

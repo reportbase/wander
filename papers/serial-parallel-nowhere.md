@@ -6928,6 +6928,75 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   focus, applied to a shape). The references (Takenaka, Malmquist, Qian and Wang) are added. `epicycles.html` is the demo:
   epicycles, the outline from a height, and the aimed standpoints drawn in the outline's own plane, with the error
   against terms for both. It is on `demos.html` and on the cards for essays 4 and 10.
+- **R635** (3 Nov; Tom: "yes, lets test on tvf draw labs."): EPI in draw, `?lab=aim`, aimed terms against draw's even
+  leaves on 40 library figures, counted in reals. P1 killed (aimed fewer on 12/24 not marked round: about half the reals
+  on polygons with few corners, capped on detail at many places); P2 killed by my set-up (the library's "round" holds
+  cusped figures); P3 held (the standpoints at percentile 83 of the leaves' error). A standpoint costs twice a leaf; it
+  pays where the detail is in a few places. A mixed reader (even leaves, a few aimed terms at corners) is untested.
+- **R636** (3 Nov; Tom: "tvf was slightly larger than industry formats for vector graphics and audio. i'm wondering if
+  this could make tvf competitive.", "yes, do the audio test", "that is to long."): AMX (`plans/amx-plan.md`,
+  `runs/amx/`), the mixed reader on two real clips (a snare, a trumpet; 2 s each after the set-up was cut for time). Runs 1
+  and 2 failed on my set-up: the top frequency is invisible at the half-shifted leaves. In run 3 the greedy took almost
+  no aimed terms (39 against 8,856 leaves on the snare at 60 dB; none on the trumpet at the floor), saving under 5%,
+  most on the tonal clip. The leaves alone were 2.0× and 2.8× FLAC at the 16-bit floor. Aimed terms do not make TVF
+  competitive on audio; the gap is the price of each number written as decimal text, against FLAC's prediction and
+  entropy coding.
+- **R637** (3 Nov; Tom: "text only can be an option, not a requirement."): AMX run 4 packed run 3's leaves as binary
+  (quantized, fixed prediction, Rice coded, as FLAC packs samples). At the 16-bit floor this came to 0.73× FLAC on the
+  snare and 1.22× on the trumpet (2.0× and 2.8× as text), and 0.33–0.83× at 40 and 60 dB; binary is 0.34–0.44 of the
+  text. Caveats: the floor is near-transparent, not lossless; the sources were Vorbis, whose missing top band the leaves
+  exploit; the bit counts carry no container; two clips of 2 s each.
+- **R638** (3 Nov; Tom: "proceed"): AMX runs 5–6, the lossless *Sintel* score (Xiph, CC BY). Every FLAC size in runs 1–5
+  had included ffmpeg's 8.3 KB of metadata and padding (run 5 killed by my set-up). Corrected, run 4's binary leaves at
+  the 16-bit floor are 1.26× and 1.44× FLAC, not 0.73× and 1.22×; R637's numbers are superseded. Run 6: lossless TVF
+  1.10× and 1.11× FLAC, the leaves adding nothing to a fixed predictor; near-transparent leaves 1.97× and 1.38×, worse
+  than lossless; at 40 dB SNR the leaves are far smaller than Opus at 128 kb/s (2.7 KB against 30 KB, 34 KB against
+  36 KB), but SNR is not Opus's aim and no perceptual measure was run.
+- **R639** (3 Nov; Tom: "do the perecptual comparison"): AMX run 7, binary TVF leaves against Opus by perceptual measures
+  (Zimtohrli MOS; an unofficial Python ViSQOL; no listening) on run 6's two *Sintel* windows. Tonal: Opus far ahead at
+  every size (4.69–5.00 against 1.89–4.64), the leaves needing 2.53× its bytes to match 128 kb/s. Percussive opening: the
+  leaves ahead by both measures from 5.4 to 11.4 KB (4.45 against 3.73 at Opus's 24 kb/s size). G1 killed, G2–G4 not. One
+  window each; whether the percussive result holds needs more material and an ear.
+- **R640** (3 Nov; Tom: "the advantage is the text format", then on TXT's runs "Readers rotate, writers walk.", "A write
+  is a count, it is discrete. A read is continuous. The weird numbers of pi and e arise when a write tries to convert a
+  read into a write.", "K is continuous, not discrete. K is read continuously.", "it only reads, never counts", and "Move
+  the notes into the paper. Leave tvf out of this paper ... reading and writing is just a refrain of the continuous
+  discrete distinction."): a read is continuous and a write is a count. A read's turns are rotational, so a read never
+  turns sharply; a corner is a counted place, the writer's. K, the reader's resolution, is read continuously; a count of
+  addresses is a writer's rounding of it (R408's "K is prior to H" stands). π and e appear where a count tries to hold a
+  read (Archimedes' sides, Bernoulli's compoundings; R597). A count of even waves made to hold a corner rings (Gibbs),
+  on both sides and not shrinking, unlike nature's ringing. TXT (`plans/txt-plan.md`) is the evidence: runs 3–4, readers'
+  formats shorter on every smooth outline and writers' on every cornered one, and a reader's length following the turning
+  (ρ 0.85) where a writer's follows the corners (0.59; with the turning 0.00); its failed predictions recorded there.
+  *Reads and Writes*: the abstract, §1 "Continuous and discrete", §6's K, §8 "Turns, counts and corners"; no TVF in it.
+  Left for a ruling: §5 still calls one length's rationals "the reader's arithmetic" by counting thumbs, and "a machine is
+  a reader here"; both read differently if every count is a write.
+- **R641** (3 Nov; Tom: "A machine is engineered to blur the distinction of reading and writing. It does both. Move the
+  computer sections into a note.", and "Yes, counting is done in parallax and writing, not pure reading."): settles what
+  R640 left. A machine is neither a reader nor a writer: it counts (writing) and keeps to order (as a read does), built to
+  do both. *Reads and Writes*' passages on computing (§1 "Read and write in computing", §2's machine's capped Cauchy, §5 "A
+  machine is a reader here") moved verbatim into `plans/rw-computing-note.md`; §6's "K and N" stays, without its
+  computing framing. Counting is done in parallax and in writing, not in a pure read: §5 is now "One length, counted,
+  makes the rationals", "the arithmetic of the first count"; a pure read holds directions and their order. Supersedes
+  R591–R592's "the reader's numbers are the rationals" and R613's section in the paper. Essay 16's pointer follows.
+- **R642** (3 Nov; Tom: "Can the far field be ratio based for readers and counted by writers.", then "Yes and update the
+  essays"): the far field is read in ratios and counted by writers. A thing one thumb wide reads one in two, one in four,
+  one in eight; each stretch over which the reading halves holds as many addresses, the far field's self-similarity read
+  with nothing counted. Counting the stretches (two thumbs, four, eight; "three stretches past the corner") and their value
+  1 + ln(d/H) are the writer's. Splits R622's standing rule; replaces "the logarithm as the reader holds it: a count" in
+  *Reads and Writes* §6. Made in the paper (§2, §5's e, §6) and essays 1, 2, 4, 8, 14, 15, 16 and the README; essay 4's
+  analytic passages naming stretches by distance ("from one thumb to two") kept, as the writer's description.
+- **R643** (3 Nov; Tom: "a full write is a line. A full 2d read is the circle that this two points creates. A full 3d read
+  is the sphere that the two points creates.", then, asked how that sits with R623: "Circles and spheres are writes tools.
+  Readers have a vantage, not a shape. They can walk the shape however to become a writer."): restates R623 and R591
+  generally. Two points give the writer a line, walked and counted; a circle or sphere on them is that line's whole turn
+  held at once, the writer's. A reader has a vantage (a standpoint and its turn), not a shape, in any dimension; walking
+  the shape makes it a writer (R594). *Reads and Writes* §2 "A vantage, not a shape"; §7 retitled "the reader's vantage
+  and the writer's cube" (it said "the reader's sphere").
+  The essays follow (Tom: "update the essays"): 1 §5, 2 (the chord and the arc), 5 (the wedge and §8's orthants), 6 §12
+  (nothing counted from one standpoint, R641), 12 (the central slots' radii a shape only as the writer holds them, R569),
+  14 §10.
+
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |

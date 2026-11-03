@@ -21,12 +21,14 @@ added in becoming a writer. The reader's directions are laid by the uniform turn
 Cauchy, with its median at the corner v = h, its horizon never reached and no mean: an *address* given before anything
 arrives. What arrives along an address is the *payload*, met. A rate is of a payload per an address. The writer has the
 angle, the rate 1, and measures the reader's two sweeps from horizontal to vertical as π/2 (central) and 2/π (inscribed),
-whose product is its own 1. The reader's own numbers are the rationals, which one length makes in finite steps; the square
-roots need two lengths combined, and the transcendental numbers a limit no finite algebraic step reaches: π completes the
+whose product is its own 1. One length, counted, makes the rationals; but counting is done in parallax and in writing, not in
+a pure read, which holds directions and their order. The square roots need two lengths combined, and the transcendental numbers a limit no finite algebraic step reaches: π completes the
 turn, e completes the scale, and both are the writer's. The reader meets such a direction whole; the writer needs the limit
 to state it as a number. The passage from reading to writing is parallax: a second standpoint, the step between them,
 places from crossings. An observer making that passage is writing: read and write are acts, not kinds of observer. And the
-passage has degrees: V is learned in some unit, to some precision, for some things, never all at once.
+passage has degrees: V is learned in some unit, to some precision, for some things, never all at once. Underneath it all is
+an older line: a read is continuous and a write is a count. A read turns through every direction between two, and never
+turns sharply; a write counts steps, units and places, and where a count is made to hold a turn, π and e appear.
 
 None of the mathematics is new. What is offered is a division of it: which parts a standpoint has, which parts need the
 whole, and what carries an observer from one to the other.
@@ -46,29 +48,6 @@ The first part is reading. The second and third are writing. The rest of this pa
 **Words.** The paper names acts, a *read* and a *write*, not two kinds of observer: one observer reads while it stands and
 turns, and writes while it walks, counts, ranges or agrees a unit. *Read*, *reading* and *reader* are used as each sentence
 needs (a reader is whatever is reading, for as long as it reads), and likewise *write*, *writing* and *writer*.
-
-**Read and write in computing.** Computer science has used these words for longer, and the likeness is real. A computer's
-read takes an address and returns what is stored there, changing nothing; that is this paper's split of address and
-payload, met in hardware. A computer's write stores at an address a value that came from somewhere else; a write here
-likewise needs an amount carried in from outside. But the two pairs part in five places.
-
-- *Who lays out the addresses.* A computer's address space is laid out before anything is read: a known size, indices
-  counted from 0 to N − 1, an end. That layout is a writer's work (an array whose `sizeof` is known is held by a writer).
-  A reader's addresses are given by the turn, uniform by the turn's own measure, from home toward a horizon that is never
-  reached; there is no N, no last address, and no end to fall off. What it holds is K, its own count (§6, "K and N").
-- *What a read returns.* A computer's read returns an amount in a unit: bytes, a float, a count. A read here returns a
-  direction and the paint arriving along it, with every amount along that direction already gone. Nothing in it would
-  change if the world were k times as large.
-- *What a write changes.* A computer's write changes the memory, and the next read sees it. A write here states amounts
-  (the room is 15 metres wide); it changes the world only when it is acted on, as moving the furniture is.
-- *What stays the same.* A computer's read is repeatable: read the same address twice, with no write between, and the
-  value is the same. A read here has a stronger sameness, across worlds: scale the world, and no reading moves.
-- *Where caching falls.* In a computer, keeping a value read (a cache, a variable) is a write into another place. Here too:
-  to keep a reading as a number, a length in a unit, a value in a table of known size, is to write it.
-
-So the computing words are the writer's frame applied to both acts: memory is a written world, and a computer's read is
-an address looked up in it. The read of this paper comes before any such layout; it is what a reader has when no one has
-written the memory yet.
 
 **The read.** A read is taken from one point, *home*, by turning there. The reader holds one length, H, which it chooses,
 as you hold up your thumb: any value, since every reading is a ratio and H only sets the zoom, where its finest detail
@@ -91,6 +70,13 @@ and the vantage that holds each.
 a wall by a row of trees. The *addresses*, the directions the turn lays down, are unchanged; the *payload*, what is found
 along each, changes. The first test separates reading from writing; the second separates address from payload.
 
+**Continuous and discrete.** The two acts are, in the end, an old distinction under new names. A read is continuous: a turn
+passes through every direction between two, none is next to another, and nothing in a turn is counted. A write is a count:
+strides along a baseline, units on a ruler, items in a list, digits in a number, each with a next and, in a finite count, a
+last. Scaling the world leaves a turn as it was and multiplies every count of units; that is the first test seen from this
+side. The rest of the paper keeps returning to this line, in the corner and the horizon, in which numbers belong to whom, in
+K and N, and in the passage from one act to the other (§8, "Turns, counts and corners").
+
 **V.** One quantity sits on the line between the two acts: V, the breadth of the other party, the mountain in the distance
 that the thumb is held up against. Every reading is a ratio in which V cancels, so no reading ever carries it. To have V is
 to have written: walked a baseline, counted a step, timed a pulse, or agreed a unit. A reader that comes to know V has not
@@ -100,12 +86,18 @@ as a median, the missing mean are all the traces of a breadth no reading holds.
 ## 2. What the reader has for free
 
 **The thumbs pointed.** The reader has no circle. It points its crossed thumbs at the mountain, and that pointing
-generates its own geometry: the corner where the thumbs cross, the fingers spread from it, near and far counted in thumbs.
+generates its own geometry: the corner where the thumbs cross, the fingers spread from it, near and far read as ratios of
+the thumb.
 What the reader holds is H, its thumb; never V, the mountain. A writer watching would say that a length held fixed and
 turned about one end traces a circle, and would call that circle V = H, the writer's way of saying that the two axes of its
 drawing are drawn at one length: the thumb equal to the mountain. We call it the *one-length circle*. It is the writer's,
 held whole, with a circumference and an area. The reader does not draw it, set it or choose it; it points, and has the
 turn.
+
+**A vantage, not a shape.** Circles and spheres are the writer's tools. Two points give the writer a line, the segment
+between them walked and counted; a circle on them, or a sphere, is that line's whole turn held at once, which only a
+writer holds. A reader has a vantage, not a shape: a standpoint and the turn from it, in the plane and in space alike.
+It can walk the shape, round it or along it, and in walking it becomes a writer (§8).
 
 **The uniform turn.** The reader's directions are laid by turning, and a turn measured by itself is uniform: equal turns,
 equal shares. Nothing the reader does produces the directions; they are given by the geometry before anything arrives,
@@ -216,7 +208,6 @@ the average of (cos θ, sin θ) is (2/π)(1, 1), pointing at the corner, of leng
 corner, the median again; its length is the writer's measure, π and all. And a writer holding a finite world, capped at an
 extent M, has a Cauchy with a mean, (1/π)·ln(1 + M²) over the share below M, about 8.8 at M = 10⁶: finite, and set by the
 extent, an amount that moves when the world is scaled. The mean appears only once an extent is written in, and its value is set by that extent, not equal to it.
-A machine's Cauchy, capped by its largest number, has one for the same reason.
 
 The payload has means where it is an amount: the light along each address, its colour, its brightness, all add. The
 lighthouse's landings on the shore lack a mean although they are written in a unit, because they are still the turn's
@@ -311,7 +302,7 @@ which is Mercator's chart (1569). It keeps every direction and pays in area, str
 drawn about as large as Africa, which is some fourteen times its area. The chart that keeps areas instead draws c = cos² of
 the latitude and gives up the bearings. Neither is wrong; each keeps what it was made to keep, and only the globe, the
 writer's whole, keeps both. Mercator's map is also not the reader's picture. It is a chart of the whole field, every stretch
-from a count of thumbs to twice it alike, with no focus; the reader's picture is the turn, proportional in direction
+where the reading halves alike, with no focus; the reader's picture is the turn, proportional in direction
 and finest where it looks.
 Bearings are the reader's; areas are amounts, and the writer's.
 
@@ -371,9 +362,11 @@ other two (Hölder: ‖x‖₂² ≤ ‖x‖₁‖x‖∞, with equality on the 
 
 ## 5. Which numbers belong to whom
 
-**One length makes the rationals.** From H alone, counting thumbs, taking twice a thumb or half a thumb and taking ratios
-of thumbs to thumbs give rational multiples of H and nothing else. The reader's operations on readings, the reciprocal,
-tangent addition, the order, keep rationals rational. The corner is 1. This is the reader's arithmetic, and it is enough.
+**One length, counted, makes the rationals.** From H alone, counting thumbs, taking twice a thumb or half a thumb and
+taking ratios of thumbs to thumbs give rational multiples of H and nothing else. Counting is not a pure read: it is done in
+parallax, where a step is counted, and in writing. A pure read holds directions and their order; its operations on them,
+the reciprocal, tangent addition and the order, take directions to directions, and keep a rational direction rational once
+one has been counted. The corner is 1, met whole. This is the arithmetic of the first count, and it is enough.
 
 **Two lengths make square roots.** √2 first appears as the diagonal of a square, the length of [1 : 1]: Pythagoras combines
 two independent lengths through their squares, which needs two axes held at once. This is where the Greeks met
@@ -394,9 +387,10 @@ whole, and only stating it as a number needs the limit.
   exactly 1, the corner. That much is finite, rational and the reader's. The number π comes next, from the arctangent's
   series. Viète's product shows it from the other side: 2/π is a product of nested square roots, each algebraic, the whole
   only in the limit.
-- *e completes the scale.* The reader counts sizes in thumbs: a thing 8 thumbs away is past two, four and eight, exactly.
+- *e completes the scale.* The reader reads a far thing as a ratio, one in eight. Counted in thumbs, by a writer, the
+  same thing is 8 thumbs away, past two, four and eight, exactly.
   That count as a continuous quantity is the logarithm, and to give it a value is to choose a unit and finish a series:
-  from one count of thumbs to twice it is ln 2 = 1 − 1/2 + 1/3 − … nats. e itself is Bernoulli's limit, a coin lent at a
+  one stretch, where the reading halves, is ln 2 = 1 − 1/2 + 1/3 − … nats. e itself is Bernoulli's limit, a coin lent at a
   hundred per cent compounded ever more often, (1 + 1/n)ⁿ, or 1 + 1 + 1/2! + 1/3! + …: every term a fraction, the number
   only at the end.
 
@@ -423,26 +417,25 @@ meets the closing and the openness, and states neither.
 reading is tan 1 is a direction like any other, painted, passed, ordered. The reader holds it as a pair and by its order; the
 decimal 1.5574… is the writer's account of where it is. The reader meets these numbers and does not make them.
 
-**A machine is a reader here.** Every floating-point number is rational, an integer times a power of two. The machine's π
-is 884279719003555/2⁴⁸, within 1.2·10⁻¹⁶ of π and not π. Every operation a machine does on numbers is monotone and finite, so
-order statistics come out as the true ones rounded, and sums of amounts do not. Where the infinity is a horizon, kept as a
-pair [h : v] or as a turn, and the computation keeps to order, the machine is faithful. Where it sits in a sum of amounts,
-the machine's Cauchy, truncated, has a mean that the true one lacks.
-
 ## 6. Near and far
 
 **The crosshairs.** Cross the two thumbs (§7) over whatever is looked at. Where they cross is the corner: the thing there
 reads one thumb up for one thumb along and one thumb across, v/h = v₂/h = 1, and it is drawn one thumb wide. That crossing
 sets the near field and the far field. The near field is a single thumb, laid evenly: everything nearer than the crossing
-gets its addresses in proportion, the first half of the thumb as much room as the second. The far field is laid in thumbs:
-two thumbs, then four, then eight, each stretch the same number of addresses as the one before, out toward the horizon.
+gets its addresses in proportion, the first half of the thumb as much room as the second. The far field is read in ratios:
+a thing one thumb wide reads one in two, then one in four, then one in eight, each stretch over which the reading halves
+holding the same number of addresses as the one before, out toward the horizon. A writer counts the same stretches as two
+thumbs, four, eight.
 Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them.
 
-**Counted in thumbs.** The reader's distances, as ratios d/H, in thumbs, are in proportion inside the corner and counted in
-thumbs past it: one stretch from one thumb to two, the next from two thumbs to four, then four to eight, each holding the
-same number of addresses. This is the logarithm as the reader holds it: a count, not a value. The writer's formula for it
-is 1 + ln(d/H), or 2 − H/d on a lay that keeps all of reality within two thumbs. There is one corner, the split between the
-near field and the first stretch, one thumb to two; past it the stretches are plain, with no corner of their own.
+**Read in ratios, counted in thumbs.** Inside the corner the reader's readings are in proportion; past it each is a ratio,
+one in two, one in four, one in eight, and two far things are related by the ratio of their readings ("one in eight is
+half of one in four"), the same at every scale. Each stretch over which the reading halves holds the same number of
+addresses: that is the far field's self-similarity, read with nothing counted. To count the stretches, "8 thumbs out, three
+stretches past the corner", is the writer's, and so is giving the count a value: 1 + ln(d/H), with a base chosen (§5), or
+2 − H/d on a lay that keeps all of reality within two thumbs. The logarithm is the writer's number for what the reader
+reads as a ratio. There is one corner, the split between the near field and the first stretch; past it the stretches are
+plain, with no corner of their own.
 
 **H is a zoom.** The reader's addresses are finite: some count K, which comes before H. H, the thumb it holds up, decides
 how K is split. Half the addresses lie inside H at every H; a small H makes the near ones fine and puts more of the world
@@ -463,11 +456,12 @@ outline with nothing local the even circles win, ten against nineteen: the centr
 is nowhere to step toward. This is the corner following the focus, applied to drawing a shape. The radii drawn are the
 outline's amounts, and its overall size a₀ is in none of the terms.
 
-**K and N.** Computer science has two letters for this, and they sort the acts as well as anything. N is how many items
+**K and N.** Two letters sort the acts here. N is how many items
 there are; K is how many are held. To know N is to know the whole: its extent, V, and how much is in it. That is writing,
-and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own count of addresses,
-fixed before H is chosen. The Cauchy is what goes between them. It lays the reader's K addresses over a world of any size,
-the near field in proportion, the far field in two thumbs, four, eight, and everything past the last address on the one
+and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own resolution,
+fixed before H is chosen. K is read continuously, as the turn is: a count of addresses, so many and no more, is a writer's
+rounding of it. The Cauchy is what goes between them. It lays the reader's K addresses over a world of any size,
+the near field in proportion, the far field in ratios (one in two, one in four, one in eight), and everything past the last address on the one
 address at the horizon. Double N and the reader's view does not change; make N unbounded and it still does not change (an
 infinite star field browsed at N and 2N shows the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull:
 whatever N is, the reader's work is K, O(K), and for a fixed K it does not grow with N. What the cull gives up is sameness.
@@ -480,7 +474,7 @@ Knowing N buys equality; holding only K buys a standpoint, at a cost that does n
 capabilities, useful wherever readers with different H (different thumbs) must agree about far things, since the number
 line has no corner to disagree about.
 
-## 7. Three parties, the reader's sphere and the writer's cube
+## 7. Three parties, the reader's vantage and the writer's cube
 
 With a third party, V₂, the reader turns two ways: up from the horizontal (altitude) and round it (azimuth). These are the
 horizon coordinates of astronomy. Its directions fill one octant, the *wedge*: [h : v : v₂], two numbers a direction. The
@@ -562,6 +556,32 @@ cross the fingers faster than far ones, and that difference is parallax. Any mot
 together (a turn about any point but the standpoint carries the standpoint along a chord, and the chord is a step), and only
 the step's part places anything. The straight line walked is the writer's own: count it in a unit and every place found
 from it is written.
+
+**Turns, counts and corners.** A read's turns are rotational: between two directions it passes through every one between,
+so a read never turns sharply. A corner, a change of direction at one place, is met only by walking the line and stopping
+there, which is a count: at the third stop, turn this much. That is why a corner is the writer's. Three things follow.
+
+- *A count made to hold a turn rings.* Lay a finite count of even waves, or of evenly spaced samples, along a turn and ask
+  it to hold a sharp change. It overshoots on both sides of the change, by about 9% of a jump however many waves are used,
+  the ripples only crowding nearer (Wilbraham 1848, Gibbs 1899). Nature's ringing is not like that: a struck bell rings
+  after it is struck and never before, and light past a sharp edge makes fringes on the lit side only. The ringing is the
+  mark of a turn written as a count, where the count has no place to put the corner.
+- *Written down, the two acts cost differently.* An outline can be written as numbers at even places of one turn (its
+  Fourier coefficients, its radius from a centre at even angles, its points at even shares of its length rebuilt by a
+  band-limited sum) or as a walk along it (Bézier pieces, a list of points, the same points as steps, a turtle's forward and
+  turn). On 73 outlines from a shape library, each written to within half a percent of its size, every one of the first
+  three was shorter as text than every walk on the smooth outlines, and every walk shorter than every one of the three on
+  the outlines with corners. Rounding the corners of a square, a triangle, a star and an arrow by a growing radius took the
+  even samples from two to three times a Bézier path's length to between a half and three quarters of it, on all four,
+  while a list of points grew longer, a walk needing more stops to follow a gentle curve. Across the library the even
+  samples' length followed how fast the outline turns (its length over its tightest radius of curvature; Spearman ρ 0.85)
+  more than how many corners it has (0.55); the Bézier path's followed its corners (0.59) and not its turning at all
+  (0.00). (TXT runs 3–4, `plans/txt-plan.md`, where the predictions that failed are recorded too: the exact rate at which
+  the count grows as a corner sharpens, and a walk's cost staying flat as a corner rounds.)
+- *π and e are where a count tries to hold a read.* Archimedes counted the sides of polygons about a circle, 6, 12, 24,
+  96, and every count gave a rational bound; π is where the count would end if it held the whole turn, which no count
+  does. Bernoulli's coin compounded n times, (1 + 1/n)ⁿ, is a count of periods; e is where it lands when the compounding
+  becomes continuous. These are §5's "π completes the turn" and "e completes the scale", seen as the price of a count.
 
 **Motion, read.** A thing coming toward the reader is read at its edge: x, the thing's breadth against its distance, the
 reading v/h of the line to its edge, and that reading grows. The reading over its own rate of growth, x/ẋ, is the time
@@ -676,7 +696,7 @@ It changes no mathematics. It sorts.
   is a direction; find the turn that lays it, and the amount that the payload carries is found separately.
 - **The constants have owners.** π, e, π/2, 2/π, the hemisphere's 2 and ½, the Cauchy's normalizing constant, the logarithm's
   nats and the angle's degrees are the writer's measures of the reader's things. The reader's own versions are finite: an
-  order, a count of thumbs, a corner, a composition by tangent addition.
+  order, a ratio (one in two, one in four), a corner, a composition by tangent addition.
 - **The roles move.** No observer is a reader or a writer once and for all. It reads while it stands and turns; it writes while
   it walks, counts, ranges or agrees a unit. The passage between is parallax, and it comes by degrees.
 - **The line is where knowing V is.** On one side of it every reading holds, whatever the world's size; on the other every
@@ -728,6 +748,7 @@ inside a read, and what carries an observer from one to the other.
 - Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77,
   2154–2157.
 - Euclid. *Elements*, Book III, Proposition 20.
+- Gibbs, J. W. (1899). Fourier's series. *Nature* 59, 606.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
   *Physics Letters A* 128, 391–394.
@@ -754,5 +775,6 @@ inside a read, and what carries an observer from one to the other.
 - Takenaka, S. (1925). On the orthogonal functions and a new formula of interpolation. *Japanese Journal of
   Mathematics* 2, 129–145.
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII.* Tours.
+- Wilbraham, H. (1848). On a certain periodic function. *Cambridge and Dublin Mathematical Journal* 3, 198–201.
 
 Some details of the classical works above are given from memory and are to be checked against the texts.
