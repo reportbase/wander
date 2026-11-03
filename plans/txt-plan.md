@@ -156,3 +156,37 @@ units (1%) from the figure, "share disturbed".
   relative writers (SVG relative, STEP, TURTLE) are above both absolute writers. Killed if any ordering fails.
 - **Q7** Imprecise numbers: each relative writer (SVG relative, STEP, TURTLE) breaks more often than every absolute
   writer and every reader format. Killed if not.
+
+**Run 3 (3 November)** (`runs/txt/txt-run3.txt`; the fitting scripts were tried first on five figures, whose token
+counts were seen before the full run). 73 figures: 12 smooth, 4 with one corner, 57 cornered; every text checked
+within τ as read back. Median tokens, o200k_base:
+
+| | TVF | FD | RAD | SVG | POLY | STEP | TURTLE | HYB |
+|---|---|---|---|---|---|---|---|---|
+| smooth (12) | 90 | 63 | 35 (10) | 127 | 135 | 134 | 199 | 90 |
+| cornered (57) | 656 | 569 | 409 (44) | 150 | 74 | 72 | 110 | 56 |
+
+- **Q1 not killed.** On smooth figures all three readers' formats are shorter than all four writers'.
+- **Q2 not killed.** On cornered figures all four writers' formats are shorter than all three readers'.
+- **Q3 killed narrowly.** The best reader beats the best writer on 100% of smooth figures; the best writer beats the
+  best reader on 89% of cornered figures, against 90%. The six exceptions: four `graze` figures, which my corner rule
+  calls cornered but which FD and RAD hold in 19 tokens (a sharp but smooth turn, not a corner); the polar `flower`,
+  whose radius from its centre is its own formula (RAD 31 tokens against 267); and `hinge7` (179 against 195).
+- **Q4 killed.** HYB has the lowest median on cornered figures (56), but per figure it is 1.03 times the best writer, and
+  it is the shortest format on only 25% of figures: on smooth figures it is TVF, which FD and RAD beat.
+- **Q5 killed by FD.** Dropped token, broken: TVF 51%, RAD 58%, FD 42%, every writer 75–94%. The readers all break
+  less than every writer; my reason for FD breaking was wrong (most of its coefficients are small, so the ones a drop
+  shifts are near nothing; its median distance 0.9%).
+- **Q6 killed.** Wrong number, share disturbed: RAD 1.9%, FD 0.0%, TVF 17%; SVG absolute 10%, POLY 16%; STEP 40%,
+  TURTLE 42%, SVG relative 8%. Post hoc, a fault of my slip: a wrong number is drawn from the same text, so a format
+  whose numbers are alike (RAD's radii, FD's small coefficients, SVG relative's small steps) is barely moved by it.
+  The slip measures how alike a format's numbers are as much as where an error goes.
+- **Q7 killed by FD.** Imprecise numbers, broken: TURTLE 84%, STEP 29%, SVG relative 10%; SVG absolute, POLY, TVF and
+  RAD 0%; but FD 92% (±10 on every coefficient adds up over the whole outline).
+
+**Reading, after the run.** The length profile held cleanly on three formats of each kind (Q1, Q2) and figure by figure
+in 89% of cornered and all smooth figures: where a shape is smooth a reader's format is shorter, where it has corners a
+writer's. The robustness profile did not sort by reader and writer. It sorts by how a format addresses its numbers:
+*places* (TVF, RAD, POLY, SVG absolute) keep imprecise numbers local; *steps* (STEP, TURTLE, SVG relative) carry them to
+the end of the walk; *frequencies* (FD) spread them over the whole outline. Losing a token is the one slip where the
+readers as a group did better than every writer. The hybrid did not beat the best single format on its own figures.
