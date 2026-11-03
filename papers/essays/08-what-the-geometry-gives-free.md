@@ -109,7 +109,7 @@ Two more need one stated premise each, and are free once it is granted:
 - **precision far off**, the lay past the corner, 1 + ln s on the reader's lay (the writer's formula for the reader's
   ratios, as many places from one in two to one in four as from one in four to one in eight) or 2 − 1/s on the in-place lay. The premise is the
   fourth essay's: that no stretch past the corner, over which the reading halves, is preferred to another.
-- **detail**, how finely things are drawn, given a fixed count K of addresses. H then divides the K between the near field
+- **detail**, how finely things are drawn, given the reader's resolution K (a writer counts it as K addresses). H then divides the K between the near field
   (one thumb, laid evenly) and the far (read in ratios, one in two, one in four, one in eight), half inside H at every H.
 
 And one thing is not on the list. What hides what, which surface is in front, is the payload's. It is set by which

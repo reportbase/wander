@@ -1,0 +1,20 @@
+L1 closure: tangent addition = Im/Re of (1 + i s)^n in Q, theta = 1, 1/2, n = 1..64: not killed
+L2 theta 1.0: n^2 * shortfall / (theta^3/3) = 0.99994 at n = 100
+L2 theta 1.5708: n^2 * shortfall / (theta^3/3) = 0.99985198 at n = 100
+L2 theta 3.14159: n^2 * shortfall / (theta^3/3) = 0.99940824 at n = 100
+L2: not killed
+L3 theta 1.0: n(R-1)/(theta^2/2) = 1.0002495 at n = 1000; reading unchanged by normalizing: True
+L3 theta 1.5708: n(R-1)/(theta^2/2) = 1.0006159 at n = 1000; reading unchanged by normalizing: True
+L3 theta 3.14159: n(R-1)/(theta^2/2) = 1.0024665 at n = 1000; reading unchanged by normalizing: True
+L3: not killed
+L4 w = 1 (Bernoulli): n(E_n - 1) = (-0.4995421 + 0.0j), -w^2/2 = (-0.5 + 0.0j), off 0.0009158; (1 + w/n)^n = (2.7169239 + 0.0j)
+L4 w = i pi/2: n(E_n - 1) = (1.2344603 - 0.0012935211j), -w^2/2 = (1.2337006 + 0.0j), off 0.001216; (1 + w/n)^n = (1.2935211e-6 + 1.0012345j)
+L4 w = i pi: n(E_n - 1) = (4.9469739 - 0.010386493j), -w^2/2 = (4.9348022 + 0.0j), off 0.003242; (1 + w/n)^n = (-1.004947 + 1.0386493e-5j)
+L4: not killed
+L5: n(E_n - 1) = (0.32039956 + 0.6002186j); predicted (0.32 + 0.6j) (off 0.0006698); with the other sign (-0.32 + 0.6j) (off 0.9418): not killed
+L6 n = 250: alternating n * leftover = 0.13623904; symmetric n^2 * leftover = 0.012104674
+L6 n = 500: alternating n * leftover = 0.13623903; symmetric n^2 * leftover = 0.012104672
+L6 n = 1000: alternating n * leftover = 0.13623902; symmetric n^2 * leftover = 0.012104671
+L6: alternating 0.136239 against 0.136239 (off 9.382e-9): True; symmetric steady within 2: True; plane leftover 1.6e-24: False; KILLED
+
+verdicts: L1 not killed, L2 not killed, L3 not killed, L4 not killed, L5 not killed, L6 KILLED

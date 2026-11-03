@@ -1326,6 +1326,19 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R644 (3 Nov; Tom: "Once a write occurs, its over. It must be then read."): a write, a count, stops once made; it is
   used only by being read (marks seen from a standpoint, in directions and ratios). Read, write, read again: the write the
   past tense, the read the present. *Reads and Writes* §8, "And back: a write is over, and must be read".
+  R645 (3 Nov; Tom: "K is a discrete thing (count) that is read continusly. It may be the bridge between discrete and
+  continuity, it has one foot in both worlds."): K a count (the writer's) read continuously (the reader's), where discrete
+  and continuous meet; the world's discreteness, like K's, a writer's statement, no physics claimed. *Reads and Writes* §6.
+  The same day (Tom: "yes", to an outside review): §3 "Five pictures", §7's (v/h, v₂/h) the tangent readings on a screen
+  square to the look, §8's complex Cauchy points after McCullagh (1992), file paths moved to "Code and data", the
+  references checked against Crossref and catalogues (Wantzel and Mercator added).
+  R646 (3 Nov; Tom: "yes", to a Gemini review): two continuities, the writer's a count completed (ℝ, the circle held
+  whole, π, e), the reader's never counted; ln z = ln r + iθ the writer's notation for both tests, pointed to from §1,
+  kept in §5. *Reads and Writes* §1, §2, §5, §8.
+  `elm-plan.md` (+ `runs/elm/elm.py`, 3 Nov; SPN R647; Tom: "a tighter connection to euler's"): (1 + iθ/n)ⁿ as n reads
+  composed by tangent addition, exact in ℚ[i]; the angle short by θ³/(3n²), the length grown by θ²/(2n) and unread; the
+  limit e^(iθ) the writer's; Bernoulli's and Euler's one limit on two axes; from z = m + iγ the Cauchy's e^(izt); in space
+  the Lie–Trotter leftover, in the plane none. Run 1's L6 killed by my set-up, run 2's L6′ not. In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

@@ -69,11 +69,17 @@ and the vantage that holds each.
 **The second test.** Change what arrives, keeping the standpoint and the turn: repaint the world, move the light, replace
 a wall by a row of trees. The *addresses*, the directions the turn lays down, are unchanged; the *payload*, what is found
 along each, changes. The first test separates reading from writing; the second separates address from payload.
+In the writer's notation both splits sit in one line: write a point as z = r·e^(iθ), so that ln z = ln r + iθ. Scaling the
+world slides the real part by ln k and leaves θ; a turn about the standpoint slides θ and leaves ln r; the address lives
+on the imaginary part and the payload's size on the real. The notation needs π and e, so it is the writer's (§5); the
+reader holds the same split as a direction [h : v] and what arrives along it.
 
 **Continuous and discrete.** The two acts are, in the end, an old distinction under new names. A read is continuous: a turn
 passes through every direction between two, none is next to another, and nothing in a turn is counted. A write is a count:
 strides along a baseline, units on a ruler, items in a list, digits in a number, each with a next and, in a finite count, a
-last. Scaling the world leaves a turn as it was and multiplies every count of units; that is the first test seen from this
+last. The writer's continuous things, the real line, the circle held whole, π and e, are counts carried to their limit
+and held as finished: a ruler subdivided without end, a polygon given ever more sides, interest compounded ever more
+often. So there are two continuities. The reader's is never counted; the writer's is a count completed. Scaling the world leaves a turn as it was and multiplies every count of units; that is the first test seen from this
 side. The rest of the paper keeps returning to this line, in the corner and the horizon, in which numbers belong to whom, in
 K and N, and in the passage from one act to the other (§8, "Turns, counts and corners").
 
@@ -220,7 +226,8 @@ all of it arrives, on addresses known before it came. The Cauchy then gives it b
 - *By its ratios.* Two payloads read against each other make a ratio, and a ratio is a reading. The light along one
   address over the light along another, one colour channel over another, the radius in one direction over the radius in
   another: each is a direction [p₁ : p₂] in the payload's own space, read exactly as an address is read, unchanged when the
-  world is scaled. A shape about a centre, ln r = a₀ + f(θ), comes back this way whole: every mode of f from ratios of radii,
+  world is scaled. A shape about a centre, ln r = a₀ + f(θ) (the real part of the
+writer's ln z = ln r + iθ taken as a function of the turn, §5), comes back this way whole: every mode of f from ratios of radii,
   exactly. Two detectors' signals read against each other are a direction too, and where the signals are like noise that
   direction follows a Cauchy: the payload read as a ratio is an address again. What the ratios leave out is one number,
   the payload's overall scale a₀, and that number is V again.
@@ -253,9 +260,9 @@ whole; the shape was never the reader's to lack.
 **Passive.** The reader sends nothing. It is not a radar. A ranging instrument carries in the signal's speed and a clock,
 two amounts, and so it writes.
 
-## 3. Four pictures
+## 3. Five pictures
 
-Four pictures carry most of what the earlier sections say. Each shows what the reader has, what the writer adds, and where
+Five pictures carry most of what the earlier sections say. Each shows what the reader has, what the writer adds, and where
 V enters.
 
 **The hand.** Hold up a hand, thumb out. The thumb is H: the one length the reader holds, its size chosen, setting only the
@@ -394,6 +401,21 @@ whole, and only stating it as a number needs the limit.
   hundred per cent compounded ever more often, (1 + 1/n)ⁿ, or 1 + 1 + 1/2! + 1/3! + …: every term a fraction, the number
   only at the end.
 
+**Euler's formula as a count of reads.** The two limits are one construction on two axes. Cut a turn into n equal reads,
+each [1 : θ/n], and compose them by tangent addition: in complex numbers that is (1 + iθ/n)ⁿ, exact at every n and
+rational whenever θ/n is. As n grows it becomes e^(iθ), Euler's formula, by the same limit that takes Bernoulli's
+(1 + 1/n)ⁿ to e: one compounds along the thumb, the other square to it, and both miss their limit by the same leading
+term, −w²/(2n), with w = 1 or w = iθ. At every finite n the count falls short of the angle by θ³/(3n²), each step's
+tangent running out past its arc, and it stretches the length by θ²/(2n), which no reading sees, since [h : v] divides
+the length out at every step. The limit, the writer's, repairs the angle and returns the length to 1; a thousand reads of
+π/1000 land at −1.005, on their way to e^(iπ) = −1. From a standpoint z = m + iγ the same limit, (1 + izt/n)ⁿ, lands on
+e^(izt) = e^(imt − γt) for t ≥ 0, the Cauchy's own characteristic function: the foot m turns, and the height γ damps
+along the real axis, an amount rather than a read. And the construction is the plane's. In space, where turns do not
+commute, alternating small steps about the two thumbs leaves a turn of order 1/n, (θ₁θ₂/2)·sin(φ/2)/(φ/2) for a whole
+turn φ; in the plane it leaves none. All of this is classical (Euler 1748; the Lie–Trotter product formula, Trotter 1959); what is ours
+is the reading: each finite count a read, the limit a write, exact only where the turns commute. So Euler's formula
+sorts like everything else here: the turn it describes is read, and the number it is written in is a count completed.
+
 The reader's two ignorances, after Jaynes (1968), are which way it faces and how large things are: turns and rescalings.
 Each is a one-parameter group with an exponential map. Turns close, so their map has a period, 2π. Rescalings never close,
 so their map has no period, only a base, e. π is what is needed to say that the turn comes back; e, to say how the scale
@@ -409,7 +431,7 @@ alike. The address coordinate closes, so it has a total, and π is that total in
 choose it away. The payload coordinate is an open line with no total and no natural size, so nothing on it marks a place;
 its base is a convention (counting in thumbs, doublings serve as well), and e is the base that lets one unit serve both
 coordinates, so that e^(iθ) is a turn of θ and e^t growth at a rate of one. That open line is why the reader never reads
-a₀, the overall size: there is no mark on it to read against. One coordinate closed and its constant forced, one open and
+a₀, the overall size (the a₀ of a shape's ln r = a₀ + f(θ), §2): there is no mark on it to read against. One coordinate closed and its constant forced, one open and
 its constant chosen: the asymmetry of address and payload, in two numbers. Both numbers are still the writer's; the reader
 meets the closing and the openness, and states neither.
 
@@ -437,7 +459,8 @@ stretches past the corner", is the writer's, and so is giving the count a value:
 reads as a ratio. There is one corner, the split between the near field and the first stretch; past it the stretches are
 plain, with no corner of their own.
 
-**H is a zoom.** The reader's addresses are finite: some count K, which comes before H. H, the thumb it holds up, decides
+**H is a zoom.** The reader's addresses are finite: its resolution K, read continuously (a writer counts it as K
+addresses), which comes before H. H, the thumb it holds up, decides
 how K is split. Half the addresses lie inside H at every H; a small H makes the near ones fine and puts more of the world
 past the held edge; a large H does the reverse. No H holds everything. The best H for a thing is the one that puts it at
 the corner, where the reader's relative grain is finest. That is why the corner follows the focus: what is looked at is
@@ -450,7 +473,7 @@ outline is smoothed by the circle's own Cauchy, the wrapped Cauchy, and that smo
 moves none: the broad form stays, the fine circles fade first, which is the height as level of detail. Or each term can be
 the circle seen from a standpoint stepped off the centre toward where the detail is: the Takenaka–Malmquist terms, whose
 kernel on the outline is the wrapped Cauchy about that place, chosen one at a time to take the most of what is left
-(adaptive Fourier decomposition). On an outline with one dent, the best 85 circles draw it to a part in a thousand; eleven
+(adaptive Fourier decomposition; Qian and Wang 2011). On an outline with one dent, the best 85 circles draw it to a part in a thousand; eleven
 such terms do, and every one of them stands at the dent, stepping nearer the outline as the detail gets finer. On a broad
 outline with nothing local the even circles win, ten against nineteen: the centre is the right place to stand when there
 is nowhere to step toward. This is the corner following the focus, applied to drawing a shape. The radii drawn are the
@@ -460,7 +483,11 @@ outline's amounts, and its overall size a₀ is in none of the terms.
 there are; K is how many are held. To know N is to know the whole: its extent, V, and how much is in it. That is writing,
 and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own resolution,
 fixed before H is chosen. K is read continuously, as the turn is: a count of addresses, so many and no more, is a writer's
-rounding of it. The Cauchy is what goes between them. It lays the reader's K addresses over a world of any size,
+rounding of it. So K has a foot in each act. It is a count, discrete, the writer's way of saying how much the reader
+holds; and it is read continuously, as a fineness with no last address, the reader's way of holding it. That makes it
+the meeting place of the discrete and the continuous here: whatever is out there, discrete or not, arrives as directions
+and is read continuously, and saying it comes in so many pieces, of the world or of the reader's K, is the writer's
+statement. The Cauchy is what goes between them. It lays the reader's K addresses over a world of any size,
 the near field in proportion, the far field in ratios (one in two, one in four, one in eight), and everything past the last address on the one
 address at the horizon. Double N and the reader's view does not change; make N unbounded and it still does not change (an
 infinite star field browsed at N and 2N shows the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull:
@@ -479,7 +506,8 @@ line has no corner to disagree about.
 With a third party, V₂, the reader turns two ways: up from the horizontal (altitude) and round it (azimuth). These are the
 horizon coordinates of astronomy. Its directions fill one octant, the *wedge*: [h : v : v₂], two numbers a direction. The
 uniform measure over the octant's area is uniform in azimuth and in height (Archimedes' hat-box; Lambert's equal-area map),
-and its law in the readings (v/h, v₂/h) is the two-dimensional Cauchy, 2/(π(1 + a² + b²)^(3/2)). Every pair of parties is at
+and its law in the readings (v/h, v₂/h), the two tangent readings on a screen square to the look (not the altitude and
+the azimuth themselves), is the two-dimensional Cauchy, 2/(π(1 + a² + b²)^(3/2)). Every pair of parties is at
 its own corner, half its readings on each side; the near field in both readings is a third. The triple corner,
 h = v = v₂, sits at azimuth 45° and altitude 35.26°, not at either sweep's 45°.
 
@@ -535,7 +563,8 @@ step's line: the depth is the reciprocal of a sum of two reads. Those are the tw
 the sum (a relay of standpoints, their points m + iγ adding) and the reciprocal (the exchange). So parallax never takes
 a read out of the family. If each read is uncertain as a read from a height γ is (the uniform turn's law about the true
 direction), and the two reads' errors are independent, each is a Cauchy point w = (c + iγ)/(1 − iγc) in that chart, c
-its true value, and the depth is exactly a Cauchy whose point is the same triangulation done on the two points:
+its true value (a Cauchy law written by one complex number, its location plus i times its scale, as McCullagh 1992
+does; the depth's point D below is written the same way), and the depth is exactly a Cauchy whose point is the same triangulation done on the two points:
 D = B/conj(w_a + w_b), B the step. That holds at every γ, not only for small errors; rays that do not meet ahead are
 part of the same law, as negative depths. At the pair's corner, the circle on the step, the depth's point stays at the
 true distance d, turned by twice the read's error angle: D = d·e^(2i·atan γ). Two things leave the family, and each can
@@ -544,8 +573,8 @@ half-steps; its density over each standpoint is a read's density at zero times t
 there, where a Cauchy's never is. And when each standpoint reads only a quarter turn, the sum of two half-Cauchys has
 density (4/π²)·s near zero, where every half-Cauchy's is positive; so the depth's tail falls as 1/d³, not 1/d², and that
 depth has a mean. And repeating the reads, the mean of the reciprocal depths gains nothing, while their median narrows.
-Parallax is the Cauchy's own composition, carried across two standpoints; the step is the one amount in it. (Checked in
-PXS, `plans/pxs-plan.md`.)
+Parallax is the Cauchy's own composition, carried across two standpoints; the step is the one amount in it. (Checked exactly;
+see Code and data.)
 
 **Turning teaches the addresses; walking teaches the world.** A standpoint has two motions, a turn about itself and a
 step along a straight line. A turn moves every direction by the same angle, near and far alike, so nothing shifts against
@@ -576,12 +605,14 @@ there, which is a count: at the third stop, turn this much. That is why a corner
   while a list of points grew longer, a walk needing more stops to follow a gentle curve. Across the library the even
   samples' length followed how fast the outline turns (its length over its tightest radius of curvature; Spearman ρ 0.85)
   more than how many corners it has (0.55); the Bézier path's followed its corners (0.59) and not its turning at all
-  (0.00). (TXT runs 3–4, `plans/txt-plan.md`, where the predictions that failed are recorded too: the exact rate at which
+  (0.00). (Measured; see Code and data, where the predictions that failed are recorded too: the exact rate at which
   the count grows as a corner sharpens, and a walk's cost staying flat as a corner rounds.)
 - *π and e are where a count tries to hold a read.* Archimedes counted the sides of polygons about a circle, 6, 12, 24,
   96, and every count gave a rational bound; π is where the count would end if it held the whole turn, which no count
   does. Bernoulli's coin compounded n times, (1 + 1/n)ⁿ, is a count of periods; e is where it lands when the compounding
-  becomes continuous. These are §5's "π completes the turn" and "e completes the scale", seen as the price of a count.
+  becomes continuous. n reads of θ/n composed, (1 + iθ/n)ⁿ, are both at once: each finite count an exact reading, short in
+  angle by θ³/(3n²), and e^(iπ) = −1 where the count of π/n would land if completed across the half turn (§5). These are §5's "π completes the turn" and "e completes the scale", seen as the price of a count; the continuum a writer
+holds is that count completed, not the reader's uncounted turn.
 
 **Motion, read.** A thing coming toward the reader is read at its edge: x, the thing's breadth against its distance, the
 reading v/h of the line to its edge, and that reading grows. The reading over its own rate of growth, x/ẋ, is the time
@@ -693,7 +724,7 @@ straight out from the middle of the cross, its up over its across still ¾, and 
 
 Scale the world, the step with it, and no reading changes, so every place in thumbs stands. Count the thumb as 5 metres and
 the tower is 15 metres tall and 60 away. The writer's one amount is still one amount; the second thumb adds no length, only
-a check (`runs/two/two_thumbs.py`, exact).
+a check (checked exactly; see Code and data).
 
 ## 11. What this changes
 
@@ -740,6 +771,13 @@ of a group, is the method's form. Gibson's ambient optic array (1979) is the sta
 sorted quantities by scale long before. What is offered here is the division into two acts, the address and payload
 inside a read, and what carries an observer from one to the other.
 
+## Code and data
+
+The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each
+with its plan written before it was run: parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
+measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; Euler's formula as a count of reads in `plans/elm-plan.md`
+and `runs/elm/`.
+
 ## References
 
 - Abbott, R. et al. (LIGO, Virgo and KAGRA Collaborations) (2023). Open data from the third observing run of LIGO, Virgo,
@@ -750,12 +788,13 @@ inside a read, and what carries an observer from one to the other.
 - Bernoulli, J. (1690). *Quæstiones nonnullæ de usuris.* Acta Eruditorum.
 - Bridgman, P. W. (1922). *Dimensional Analysis.* Yale University Press.
 - Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met.* Working paper, archived.
-- Buckingham, E. (1914). On physically similar systems. *Physical Review* 4, 345–376.
+- Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical Review* 4, 345–376.
 - Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
   Royal Astronomical Society* 206, 377.
 - Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77,
   2154–2157.
 - Euclid. *Elements*, Book III, Proposition 20.
+- Euler, L. (1748). *Introductio in analysin infinitorum.* Lausanne.
 - Gibbs, J. W. (1899). Fourier's series. *Nature* 59, 606.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
@@ -764,15 +803,17 @@ inside a read, and what carries an observer from one to the other.
 - Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 - Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3, 477–492.
 - Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen.* Erlangen.
-- Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten.* Berlin.
+- Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten.* In *Beyträge zum Gebrauche der Mathematik*, Theil III. Berlin.
 - Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*
   5, 437–459.
 - Leibniz, G. W., and Clarke, S. (1717). *A Collection of Papers … Relating to the Principles of Natural Philosophy and
   Religion.* London.
-- Lindemann, F. (1882). Über die Zahl π. *Mathematische Annalen* 20, 213–225.
+- Lindemann, F. (1882). Ueber die Zahl π. *Mathematische Annalen* 20, 213–225.
 - Machin, J. (1706), in W. Jones, *Synopsis palmariorum matheseos.* London.
 - Malmquist, F. (1926). Sur la détermination d'une classe de fonctions analytiques par leurs valeurs dans un
   ensemble donné de points. *Comptes Rendus du Sixième Congrès des Mathématiciens Scandinaves* (Copenhagen, 1925), 253–259.
+- McCullagh, P. (1992). Conditional inference and Cauchy models. *Biometrika* 79, 247–259.
+- Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata.* Duisburg.
 - Poincaré, H. (1902). *La Science et l'hypothèse.* Paris. (1908). *Science et méthode.* Paris.
 - Qian, T. and Wang, Y.-B. (2011). Adaptive Fourier series, a variation of greedy algorithm. *Advances in
   Computational Mathematics* 34, 279–293.
@@ -782,7 +823,12 @@ inside a read, and what carries an observer from one to the other.
 - Snellius, W. (1617). *Eratosthenes Batavus.* Leiden.
 - Takenaka, S. (1925). On the orthogonal functions and a new formula of interpolation. *Japanese Journal of
   Mathematics* 2, 129–145.
+- Trotter, H. F. (1959). On the product of semi-groups of operators. *Proceedings of the American Mathematical Society*
+  10, 545–551.
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII.* Tours.
+- Wantzel, P. L. (1837). Recherches sur les moyens de reconnaître si un problème de géométrie peut se résoudre avec la
+  règle et le compas. *Journal de Mathématiques Pures et Appliquées* 2, 366–372.
 - Wilbraham, H. (1848). On a certain periodic function. *Cambridge and Dublin Mathematical Journal* 3, 198–201.
 
-Some details of the classical works above are given from memory and are to be checked against the texts.
+The entries were checked against Crossref and library catalogues on 3 November 2026; Malmquist (1926) is given as it is
+usually cited.

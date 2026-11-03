@@ -7008,6 +7008,26 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   and a count), read again. Already present in particular: DPR's rendering a blueprint "a writing turned into a
   reading" (R401), the `.tvf3d` as a pre-read signal (R250), a survey's base read against (R314), memory a written
   world read by lookup (R641's note). *Reads and Writes* §8, "And back: a write is over, and must be read".
+- **R645** (3 Nov; Tom: "K is a discrete thing (count) that is read continusly. It may be the bridge between discrete and
+  continuity, it has one foot in both worlds."; before it, "seems to me that this is the same as universe itself which is
+  discreate, it exists, but it is read continuously"): K is a count (the writer's statement of how much the reader holds)
+  read continuously (a fineness with no last address, the reader's holding of it; in the half-plane a height γ, DYH's soft
+  cut), so it is where the discrete and the continuous meet. The world likewise: whatever is out there, discrete or not,
+  arrives as directions read continuously (WVP's single photons building one pattern); its discreteness, like K's, is a
+  writer's statement. No claim that the universe is discrete (physics, R364). *Reads and Writes* §6, "K and N".
+- **R646** (3 Nov; Tom: "yes", to Claude's reading of a Gemini review): two continuities. The writer's continuous things
+  (the real line, the circle held whole, π, e) are counts carried to their limit and held as finished; the reader's
+  continuity is never counted. ln z = ln r + iθ is the writer's notation showing both tests in one line (scaling slides
+  ln r, a turn slides θ), pointed to from §1 and kept in §5, not moved to the front (it needs π and e; the reader holds
+  [h : v]); a shape's ln r = a₀ + f(θ) its real part as a function of the turn. *Reads and Writes* §1, §2, §5, §8.
+- **R647** (3 Nov; Tom: "i'm just wondering if a tighter connection to euler's is possible. where should we look?", then a
+  Gemini reply read as "write that plan"): ELM (`plans/elm-plan.md`, `runs/elm/`), Euler's formula as a count of reads.
+  n reads of θ/n composed by tangent addition are (1 + iθ/n)ⁿ, exact and in ℚ[i] for rational steps; the count falls
+  short of the angle by θ³/(3n²) and grows the length by θ²/(2n), which no reading sees; the limit, the writer's, is
+  e^(iθ). Bernoulli's (1 + 1/n)ⁿ and Euler's (1 + iθ/n)ⁿ are one limit on two axes, error −w²/(2n) on both; from a
+  standpoint z = m + iγ the limit is the Cauchy's e^(izt) (Gemini's sign for its modulus term corrected before the run);
+  in space the alternating count leaves (θ₁θ₂/2)·sin(φ/2)/(φ/2) at 1/n (Lie–Trotter), the plane nothing. Run 1's L6
+  killed by my set-up (acos near 1 at 50 digits), L6′ not. Classical mathematics; the reading ours. In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations
 
