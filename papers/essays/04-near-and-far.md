@@ -86,18 +86,21 @@ fact that nothing in the readings fixes H. It is not derived.
 So the reader has two ways of laying out its places, and they meet at the corner.
 
 - **Inside the corner, the addresses are proportional.** Each step out is the same distance.
-- **Past the corner, they are logarithmic.** From a count of thumbs to twice it, the same number of places.
+- **Past the corner, they are logarithmic.** Each stretch over which the reading halves, one in two to one in four, one
+  in four to one in eight, holds the same number of places. A writer counts these stretches in thumbs: one to two, two to
+  four, four to eight.
 
 They join without a kink. There is only one such corner built into the relation: the one point the swap of the two parties
-leaves fixed, where v equals h. Past it the far field is plain stretches of thumbs laid side by side, one to two, two to
-four, four to eight. They have no corners of their own and nothing nested inside them.
+leaves fixed, where v equals h. Past it the far field is plain stretches laid side by side, the reading halving across
+each. They have no corners of their own and nothing nested inside them.
 
 **The crosshairs.** Picture H as a thumb held out at arm's length; in space, two thumbs crossed at a right angle across the
 line of sight, one reading up and one across, both the same H (the fifth essay). Where they cross is the corner: the thing
 there reads one thumb up for one thumb along, v equal to h, and it is drawn one thumb wide. That crossing sets the near
 field and the far field. The near field is a single thumb, laid evenly: everything nearer than the crossing gets its places
-in proportion. The far field is laid by thumbs: two thumbs, then four, then eight, each with the same count of places as
-the one before, out toward the horizon.
+in proportion. The far field is read in ratios: a thing one thumb wide reads one in two, then one in four, then one in
+eight, each stretch with as many places as the one before, out toward the horizon. Counted by a writer, the same stretches
+are two thumbs, four, eight.
 
 ### Reality in 2H
 
@@ -106,7 +109,7 @@ of 2 minus h/v from home, in units of H, in thumbs. Then the stretch past the co
 up half of the next thumb; from two to four takes a quarter; from four to eight an eighth. The whole far field, out to
 infinity, fits between one thumb and two, H and 2H.
 
-The reader holds the same addresses either way, the same number from each count of thumbs to twice it. Laid by count they
+The reader holds the same addresses either way, the same number over each stretch where the reading halves. Laid by count they
 run on forever; laid by length they crowd toward a wall at 2H. A reader with finitely many places runs out of them at the
 end of its own range in either case.
 
@@ -210,12 +213,12 @@ A reader looking out from a standpoint is laid the other way, on two counts.
 - **Its picture is the turn.** Stand with your eye one height H above level ground. The ground at distance 2H appears 26.6°
   below the horizon, at 4H 14.0°, at 8H 7.1°. Each stretch past the corner, one thumb to two, two to four, takes half the
   room of the last. The far field is in proportion to the reciprocal of distance, not to its logarithm.
-- **Its turn has a focus.** The turn's room from a count of thumbs to twice it is greatest at the corner and falls off
+- **Its turn has a focus.** The turn's room over each stretch where the reading halves is greatest at the corner and falls off
   alike toward home and toward the horizon. Turning your head carries the corner, and the most room, to whatever you look
   at.
 
 Mercator's equal stretches belong somewhere else in the reader's account: in distance laid by a count of places, where
-every stretch from a count of thumbs to twice it is held alike because none is known beforehand to matter more. The map
+every stretch where the reading halves is held alike because none is known beforehand to matter more. The map
 represents the field. The reader observes from somewhere within it.
 
 ---
@@ -252,9 +255,9 @@ logarithm of 2x past it. The lay of section 3, x then 1 plus the logarithm of x,
 
 ## 10. The count is the detail
 
-The forms of the two address spaces are fixed by the geometry: proportion, then thumbs counted two, four, eight. Their
-*counts* are not. How many places the near field is divided into, and how many each stretch from a count of thumbs to twice
-it gets, is the **detail**, how finely things are drawn. The geometry gives the forms. The detail gives the count.
+The forms of the two address spaces are fixed by the geometry: proportion, then ratios, one in two, one in four, one in
+eight (a writer's two thumbs, four, eight). Their *counts* are not. How many places the near field is divided into, and how
+many each stretch where the reading halves gets, is the **detail**, how finely things are drawn. The geometry gives the forms. The detail gives the count.
 
 A thing that spans n of the reader's places can be halved about log₂ n times before its halves are single places, one fewer
 each time it halves. When it spans a single place it is a point. Nothing is requested: the span sets how finely it is
@@ -372,7 +375,7 @@ The two unifying ideas of the series meet here in a practical form.
 
 **Reading and writing.** The writer's ruler is the number line: proportion everywhere, no corner, every unit like every
 other, which is what adding amounts needs. The reader's layout has a corner, set by its own length, its thumb: proportion
-inside, one thumb laid evenly, and past it two thumbs, then four, then eight, so that a finite count of places covers
+inside, one thumb laid evenly, and past it ratios, one in two, one in four, one in eight, so that a finite count of places covers
 everything from the cup in its hand to the horizon. Neither is better. They are made for different acts.
 
 **The Cauchy.** The reader's K places, laid by a steady turn, fall at the Cauchy's quantiles with H as their scale. Half

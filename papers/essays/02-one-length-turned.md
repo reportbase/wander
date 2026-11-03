@@ -429,7 +429,8 @@ the series, scale the world, comes down to which part of the logarithm changed: 
 part a writing. The real part's starting point, the one amount that sets every size, is exactly what no reading fixes. And
 the reader's ignorance, which turn it faces and how large anything is, is nothing more than sliding this plane up and down
 and left and right. Sliding keeps area, so the measure that suits that ignorance is plain area on the logarithm's plane:
-uniform in direction, and uniform in distance counted in thumbs, as much room from one thumb to two as from four to eight.
+uniform in direction, and uniform in distance read as a ratio, as much room from one in two to one in four as from one in
+four to one in eight (a writer counts the same stretches as one thumb to two, four to eight).
 
 **Composition becomes addition.** In the reader's own chart, readings taken from two zeros combine by tangent addition,
 (s₁ + s₂)/(1 − s₁s₂). That is awkward, and it blows up when the two turns together reach the vertical. In Euler's form

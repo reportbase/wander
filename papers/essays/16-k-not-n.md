@@ -370,9 +370,9 @@ key is a writing. A floor taken of a share of the turn carries no amount and not
 
 Inside the corner the reader can lay its readings in proportion. Past it the reciprocal gives h/v within [0, 1], but says
 nothing about layout. Ask only that a lay not build in a scale the reader cannot have: that the room between x and λx
-depend on λ alone. Then the far lay is the logarithm, a fixed count of addresses from any count of thumbs to twice it
-(Cauchy's functional equation, Cauchy 1821). The count is what the reader holds; the smooth 1 + ln x is the writer's
-formula for it. The premise is assumed, not derived, and it is the only premise the logarithm needs.
+depend on λ alone. Then the far lay is the logarithm, as many addresses over each stretch where the reading halves
+(Cauchy's functional equation, Cauchy 1821). The ratio is what the reader holds; counting the stretches, and the smooth
+1 + ln x, are the writer's. The premise is assumed, not derived, and it is the only premise the logarithm needs.
 
 **Floating point lays its numbers this way.** The exponent counts powers of two and the significand is a plain share
 between one and the next; the subnormals lay one stretch in proportion from zero. Count of powers plus the share toward the

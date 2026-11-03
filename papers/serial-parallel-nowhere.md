@@ -6979,6 +6979,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   computing framing. Counting is done in parallax and in writing, not in a pure read: §5 is now "One length, counted,
   makes the rationals", "the arithmetic of the first count"; a pure read holds directions and their order. Supersedes
   R591–R592's "the reader's numbers are the rationals" and R613's section in the paper. Essay 16's pointer follows.
+- **R642** (3 Nov; Tom: "Can the far field be ratio based for readers and counted by writers.", then "Yes and update the
+  essays"): the far field is read in ratios and counted by writers. A thing one thumb wide reads one in two, one in four,
+  one in eight; each stretch over which the reading halves holds as many addresses, the far field's self-similarity read
+  with nothing counted. Counting the stretches (two thumbs, four, eight; "three stretches past the corner") and their value
+  1 + ln(d/H) are the writer's. Splits R622's standing rule; replaces "the logarithm as the reader holds it: a count" in
+  *Reads and Writes* §6. Made in the paper (§2, §5's e, §6) and essays 1, 2, 4, 8, 14, 15, 16 and the README; essay 4's
+  analytic passages naming stretches by distance ("from one thumb to two") kept, as the writer's description.
 
 ## Appendix B. Demos and computations
 

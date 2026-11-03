@@ -86,7 +86,8 @@ as a median, the missing mean are all the traces of a breadth no reading holds.
 ## 2. What the reader has for free
 
 **The thumbs pointed.** The reader has no circle. It points its crossed thumbs at the mountain, and that pointing
-generates its own geometry: the corner where the thumbs cross, the fingers spread from it, near and far counted in thumbs.
+generates its own geometry: the corner where the thumbs cross, the fingers spread from it, near and far read as ratios of
+the thumb.
 What the reader holds is H, its thumb; never V, the mountain. A writer watching would say that a length held fixed and
 turned about one end traces a circle, and would call that circle V = H, the writer's way of saying that the two axes of its
 drawing are drawn at one length: the thumb equal to the mountain. We call it the *one-length circle*. It is the writer's,
@@ -296,7 +297,7 @@ which is Mercator's chart (1569). It keeps every direction and pays in area, str
 drawn about as large as Africa, which is some fourteen times its area. The chart that keeps areas instead draws c = cos² of
 the latitude and gives up the bearings. Neither is wrong; each keeps what it was made to keep, and only the globe, the
 writer's whole, keeps both. Mercator's map is also not the reader's picture. It is a chart of the whole field, every stretch
-from a count of thumbs to twice it alike, with no focus; the reader's picture is the turn, proportional in direction
+where the reading halves alike, with no focus; the reader's picture is the turn, proportional in direction
 and finest where it looks.
 Bearings are the reader's; areas are amounts, and the writer's.
 
@@ -381,9 +382,10 @@ whole, and only stating it as a number needs the limit.
   exactly 1, the corner. That much is finite, rational and the reader's. The number π comes next, from the arctangent's
   series. Viète's product shows it from the other side: 2/π is a product of nested square roots, each algebraic, the whole
   only in the limit.
-- *e completes the scale.* Counted in thumbs, a thing 8 thumbs away is past two, four and eight, exactly.
+- *e completes the scale.* The reader reads a far thing as a ratio, one in eight. Counted in thumbs, by a writer, the
+  same thing is 8 thumbs away, past two, four and eight, exactly.
   That count as a continuous quantity is the logarithm, and to give it a value is to choose a unit and finish a series:
-  from one count of thumbs to twice it is ln 2 = 1 − 1/2 + 1/3 − … nats. e itself is Bernoulli's limit, a coin lent at a
+  one stretch, where the reading halves, is ln 2 = 1 − 1/2 + 1/3 − … nats. e itself is Bernoulli's limit, a coin lent at a
   hundred per cent compounded ever more often, (1 + 1/n)ⁿ, or 1 + 1 + 1/2! + 1/3! + …: every term a fraction, the number
   only at the end.
 
@@ -415,15 +417,20 @@ decimal 1.5574… is the writer's account of where it is. The reader meets these
 **The crosshairs.** Cross the two thumbs (§7) over whatever is looked at. Where they cross is the corner: the thing there
 reads one thumb up for one thumb along and one thumb across, v/h = v₂/h = 1, and it is drawn one thumb wide. That crossing
 sets the near field and the far field. The near field is a single thumb, laid evenly: everything nearer than the crossing
-gets its addresses in proportion, the first half of the thumb as much room as the second. The far field is laid in thumbs:
-two thumbs, then four, then eight, each stretch the same number of addresses as the one before, out toward the horizon.
+gets its addresses in proportion, the first half of the thumb as much room as the second. The far field is read in ratios:
+a thing one thumb wide reads one in two, then one in four, then one in eight, each stretch over which the reading halves
+holding the same number of addresses as the one before, out toward the horizon. A writer counts the same stretches as two
+thumbs, four, eight.
 Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them.
 
-**Counted in thumbs.** The reader's distances, as ratios d/H, in thumbs, are in proportion inside the corner and counted in
-thumbs past it: one stretch from one thumb to two, the next from two thumbs to four, then four to eight, each holding the
-same number of addresses. This is the logarithm as the reader holds it: a count, not a value. The writer's formula for it
-is 1 + ln(d/H), or 2 − H/d on a lay that keeps all of reality within two thumbs. There is one corner, the split between the
-near field and the first stretch, one thumb to two; past it the stretches are plain, with no corner of their own.
+**Read in ratios, counted in thumbs.** Inside the corner the reader's readings are in proportion; past it each is a ratio,
+one in two, one in four, one in eight, and two far things are related by the ratio of their readings ("one in eight is
+half of one in four"), the same at every scale. Each stretch over which the reading halves holds the same number of
+addresses: that is the far field's self-similarity, read with nothing counted. To count the stretches, "8 thumbs out, three
+stretches past the corner", is the writer's, and so is giving the count a value: 1 + ln(d/H), with a base chosen (§5), or
+2 − H/d on a lay that keeps all of reality within two thumbs. The logarithm is the writer's number for what the reader
+reads as a ratio. There is one corner, the split between the near field and the first stretch; past it the stretches are
+plain, with no corner of their own.
 
 **H is a zoom.** The reader's addresses are finite: some count K, which comes before H. H, the thumb it holds up, decides
 how K is split. Half the addresses lie inside H at every H; a small H makes the near ones fine and puts more of the world
@@ -449,7 +456,7 @@ there are; K is how many are held. To know N is to know the whole: its extent, V
 and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own resolution,
 fixed before H is chosen. K is read continuously, as the turn is: a count of addresses, so many and no more, is a writer's
 rounding of it. The Cauchy is what goes between them. It lays the reader's K addresses over a world of any size,
-the near field in proportion, the far field in two thumbs, four, eight, and everything past the last address on the one
+the near field in proportion, the far field in ratios (one in two, one in four, one in eight), and everything past the last address on the one
 address at the horizon. Double N and the reader's view does not change; make N unbounded and it still does not change (an
 infinite star field browsed at N and 2N shows the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull:
 whatever N is, the reader's work is K, O(K), and for a fixed K it does not grow with N. What the cull gives up is sameness.
@@ -684,7 +691,7 @@ It changes no mathematics. It sorts.
   is a direction; find the turn that lays it, and the amount that the payload carries is found separately.
 - **The constants have owners.** π, e, π/2, 2/π, the hemisphere's 2 and ½, the Cauchy's normalizing constant, the logarithm's
   nats and the angle's degrees are the writer's measures of the reader's things. The reader's own versions are finite: an
-  order, a count of thumbs, a corner, a composition by tangent addition.
+  order, a ratio (one in two, one in four), a corner, a composition by tangent addition.
 - **The roles move.** No observer is a reader or a writer once and for all. It reads while it stands and turns; it writes while
   it walks, counts, ranges or agrees a unit. The passage between is parallax, and it comes by degrees.
 - **The line is where knowing V is.** On one side of it every reading holds, whatever the world's size; on the other every

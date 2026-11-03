@@ -1314,6 +1314,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   done in parallax and writing, not pure reading."): the paper's computing passages moved to `plans/rw-computing-note.md`
   (a machine does both acts); §5 "One length, counted, makes the rationals", counting the writer's and parallax's, a pure
   read holding directions and their order. Supersedes R591–R592's rationals as the reader's and R613's section in the paper.
+  R642 (3 Nov; Tom: "Can the far field be ratio based for readers and counted by writers.", then "Yes and update the
+  essays"): **R622's standing rule split: a reader's far field in ratios (a thing one thumb wide reads one in two, one in
+  four, one in eight; each stretch over which the reading halves holds as many addresses), a writer's counted in thumbs
+  (two thumbs, four, eight). Still never "doubling" or "level".** The logarithm 1 + ln(d/H) is the writer's number for the
+  reader's ratio. *Reads and Writes* §2, §5's e, §6; essays 1, 2, 4, 8, 14, 15, 16 and the README.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
