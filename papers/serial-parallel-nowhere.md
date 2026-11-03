@@ -7008,6 +7008,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   and a count), read again. Already present in particular: DPR's rendering a blueprint "a writing turned into a
   reading" (R401), the `.tvf3d` as a pre-read signal (R250), a survey's base read against (R314), memory a written
   world read by lookup (R641's note). *Reads and Writes* §8, "And back: a write is over, and must be read".
+- **R645** (3 Nov; Tom: "K is a discrete thing (count) that is read continusly. It may be the bridge between discrete and
+  continuity, it has one foot in both worlds."; before it, "seems to me that this is the same as universe itself which is
+  discreate, it exists, but it is read continuously"): K is a count (the writer's statement of how much the reader holds)
+  read continuously (a fineness with no last address, the reader's holding of it; in the half-plane a height γ, DYH's soft
+  cut), so it is where the discrete and the continuous meet. The world likewise: whatever is out there, discrete or not,
+  arrives as directions read continuously (WVP's single photons building one pattern); its discreteness, like K's, is a
+  writer's statement. No claim that the universe is discrete (physics, R364). *Reads and Writes* §6, "K and N".
 
 ## Appendix B. Demos and computations
 

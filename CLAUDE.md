@@ -1326,6 +1326,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R644 (3 Nov; Tom: "Once a write occurs, its over. It must be then read."): a write, a count, stops once made; it is
   used only by being read (marks seen from a standpoint, in directions and ratios). Read, write, read again: the write the
   past tense, the read the present. *Reads and Writes* §8, "And back: a write is over, and must be read".
+  R645 (3 Nov; Tom: "K is a discrete thing (count) that is read continusly. It may be the bridge between discrete and
+  continuity, it has one foot in both worlds."): K a count (the writer's) read continuously (the reader's), where discrete
+  and continuous meet; the world's discreteness, like K's, a writer's statement, no physics claimed. *Reads and Writes* §6.
+  The same day (Tom: "yes", to an outside review): §3 "Five pictures", §7's (v/h, v₂/h) the tangent readings on a screen
+  square to the look, §8's complex Cauchy points after McCullagh (1992), file paths moved to "Code and data", the
+  references checked against Crossref and catalogues (Wantzel and Mercator added).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

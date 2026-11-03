@@ -461,7 +461,11 @@ outline's amounts, and its overall size a₀ is in none of the terms.
 there are; K is how many are held. To know N is to know the whole: its extent, V, and how much is in it. That is writing,
 and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own resolution,
 fixed before H is chosen. K is read continuously, as the turn is: a count of addresses, so many and no more, is a writer's
-rounding of it. The Cauchy is what goes between them. It lays the reader's K addresses over a world of any size,
+rounding of it. So K has a foot in each act. It is a count, discrete, the writer's way of saying how much the reader
+holds; and it is read continuously, as a fineness with no last address, the reader's way of holding it. That makes it
+the meeting place of the discrete and the continuous here: whatever is out there, discrete or not, arrives as directions
+and is read continuously, and saying it comes in so many pieces, of the world or of the reader's K, is the writer's
+statement. The Cauchy is what goes between them. It lays the reader's K addresses over a world of any size,
 the near field in proportion, the far field in ratios (one in two, one in four, one in eight), and everything past the last address on the one
 address at the horizon. Double N and the reader's view does not change; make N unbounded and it still does not change (an
 infinite star field browsed at N and 2N shows the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull:
