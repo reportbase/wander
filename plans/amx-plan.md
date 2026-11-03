@@ -285,3 +285,35 @@ Read after the run:
 So, with packed binary on a clean source, TVF's leaves are about 1.1× FLAC lossless (the predictor's gap, closable
 with FLAC's own adaptive prediction) and no use at near-transparent quality. As a lossy waveform coder they are small
 by SNR, but whether they compete with Opus needs a perceptual measure.
+
+### Run 7: a perceptual comparison with Opus (predictions written before it ran)
+
+Tom (3 Nov): "do the perecptual comparison". Run 6's lossy result was by SNR, the leaves' own measure. This run asks
+which sounds closer to the original at the same size.
+
+**Measures.** Both compare the coded clip with the original at 48 kHz (everything resampled by ffmpeg) and report a mean
+opinion score (MOS, 1–5).
+- **Zimtohrli**, the primary measure. Google's psychoacoustic distance (Apache 2.0), from PyPI `zimtohrli` 0.2.1.post1,
+  wheel sha256 be6fbb52bc5967970a0dd5159b32812c9dbf7e8d6c9ef85b1b05afc0cf1db05b. Its own mapping `mos_from_zimtohrli` turns the distance into a MOS.
+- **ViSQOL**, audio mode, as a check. `visqol-python` 3.8.0, an unofficial pure-Python port of Google's ViSQOL with its
+  bundled model; not the reference C++ build.
+
+No listening test with people.
+
+**Clips.** Run 6's two windows: Snow Fight from 0.0 s, Sintel's Song from 98.0 s.
+
+**Coders.**
+- **TVF leaves** packed as binary, as in runs 4–6, at targets of 20, 25, 30, 35, 40, 50 and 60 dB SNR, each giving a
+  size and a reconstruction.
+- **Opus** (libopus) at 24, 32, 48, 64, 96, 128 and 192 kb/s, its size the sum of its packets (no Ogg pages or headers;
+  the TVF counts carry no container either), decoded and aligned by cross-correlation.
+
+The two curves (size against MOS) are compared at equal size, by interpolation in log size, at the sizes where both
+have points.
+
+**Predictions.**
+- **G1.** By Zimtohrli, at every common size, Opus scores higher than the leaves on both clips.
+- **G2.** To match Opus's Zimtohrli MOS at 128 kb/s, the leaves need at least 2× Opus's bytes on the tonal clip, or
+  never reach it within 60 dB.
+- **G3.** By SNR at equal size, the leaves beat Opus on both clips (run 6 again).
+- **G4.** ViSQOL agrees with Zimtohrli on which coder wins in at least 75% of the matched-size comparisons.
