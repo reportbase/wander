@@ -1345,6 +1345,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   corner); near field one thumb, far field read as ratios and counted in thumbs; K available addresses laid by the Cauchy,
   half each side of the corner at every H. A reading is one direction in it; a facing the writer's name for its span; four
   joined the circle (a write); parallax joins reads by a counted step. *Reads and Writes* §1 "What a read is".
+  Refined (Tom: "a read is the set of all H sweeps in one moment."): **a read is every sweep of the thumb at once, one
+  moment, one standpoint**; a sweep one thumb turned; the circle the writer's join of the sweeps (not "four reads"); two
+  reads, at two moments or standpoints, joined only across a counted step (parallax, a write).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

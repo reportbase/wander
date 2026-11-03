@@ -7038,6 +7038,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   direction in it. A facing is the writer's name for a read's span (π/2 its writer's measure); four reads joined with their
   signs are the circle, 2π, a count, so a write (to the reader, once round is no turn, R327); parallax joins reads, two
   sweeps from two standpoints tied by a counted step. *Reads and Writes* §1 "What a read is"; §6's crosshairs point to it.
+  Then (Tom: "a read is the set of all H sweeps in one moment."): refined. A read is every sweep of the thumb held at once,
+  one moment, one standpoint, given whole; a sweep is one thumb turned from all h to all v; a facing the writer's name for
+  one sweep's span, the circle (and in 3D the sphere) the writer's join of the sweeps with their signs, so "four reads make
+  a circle" above is withdrawn: one read holds every sweep. Two reads, at two moments or two standpoints, are joined only
+  across a counted step: parallax, a write. *Reads and Writes* §1 rewritten to it.
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations
