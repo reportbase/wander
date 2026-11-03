@@ -48,9 +48,15 @@ walking teaches it the world.
 **One stream is one relation.** Read over time from one place, a reading is a ratio of two amounts, a over b. Multiply
 both by any changing factor and the reading does not change. So a thing coming nearer and a thing at rest growing at the
 matching rate give the same stream, and so does every mixture of the two. What the stream does fix is its own pace: the
-reading over its rate of change. For a thing approaching steadily, that is the time left until contact. David Lee
-proposed in 1976 that drivers read exactly this when braking, without ever knowing the distance or the speed. Over time,
+reading x over its rate of change, x/ẋ. For a thing approaching steadily, that is the time left until contact: its breadth
+cancels, and so do its distance and its speed. David Lee proposed in 1976 that drivers read exactly this when braking,
+and the rule he found is a reading too: brake so that the time to contact shrinks no faster than half a tick each tick,
+τ̇ ≥ −½, and the car stops at the thing, since at τ̇ = −½ the distance it needs to stop is the distance it has. Over time,
 a standpoint is given motion before it is given an object.
+
+Three limits keep this honest. The time comes out in the standpoint's own ticks, as places come out in its own thumbs;
+seconds are a writer's unit, carried in from a clock. The rate at which the standpoint turns cancels from every reading,
+as the thumb's length does. And a speed in metres a second is a writing twice over: a metre and a second, both carried in.
 
 **A shared denominator gives relative payloads.** Two readings taken at the same moment against the same thing, say two
 objects side by side at the same distance, have a ratio in which the distance cancels. So a neighbour at the same depth

@@ -540,6 +540,8 @@ the Lutz–Kelker bias). Keeping the reading and the writing apart is most of th
 **It asks one question of any quantity.** Was it read or written? Was it a direction, something painted on a
 direction, a shape held whole, or an amount stated in a unit? The answer says what the quantity can and cannot contain.
 A record that scaling the world would leave unchanged cannot contain the world's size, however carefully it was made.
+Measured data sorts the same way: the third essay's three cases (two gravitational-wave detectors, the quasar dipole,
+photons arriving one at a time) each split into a part read as a direction and a part that is the payload's.
 
 **It counts what must be brought in.** One amount for a lone observer, one more for each observer who must agree, one
 more for a public standard. When a measurement fails, the count says where to look: at the amounts carried in, not at
