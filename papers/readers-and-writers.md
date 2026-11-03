@@ -451,7 +451,7 @@ outline is smoothed by the circle's own Cauchy, the wrapped Cauchy, and that smo
 moves none: the broad form stays, the fine circles fade first, which is the height as level of detail. Or each term can be
 the circle seen from a standpoint stepped off the centre toward where the detail is: the Takenaka–Malmquist terms, whose
 kernel on the outline is the wrapped Cauchy about that place, chosen one at a time to take the most of what is left
-(adaptive Fourier decomposition). On an outline with one dent, the best 85 circles draw it to a part in a thousand; eleven
+(adaptive Fourier decomposition; Qian and Wang 2011). On an outline with one dent, the best 85 circles draw it to a part in a thousand; eleven
 such terms do, and every one of them stands at the dent, stepping nearer the outline as the detail gets finer. On a broad
 outline with nothing local the even circles win, ten against nineteen: the centre is the right place to stand when there
 is nowhere to step toward. This is the corner following the focus, applied to drawing a shape. The radii drawn are the
@@ -759,7 +759,7 @@ measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumb
 - Bernoulli, J. (1690). *Quæstiones nonnullæ de usuris.* Acta Eruditorum.
 - Bridgman, P. W. (1922). *Dimensional Analysis.* Yale University Press.
 - Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met.* Working paper, archived.
-- Buckingham, E. (1914). On physically similar systems. *Physical Review* 4, 345–376.
+- Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical Review* 4, 345–376.
 - Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
   Royal Astronomical Society* 206, 377.
 - Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77,
@@ -773,15 +773,16 @@ measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumb
 - Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 - Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3, 477–492.
 - Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen.* Erlangen.
-- Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten.* Berlin.
+- Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten.* In *Beyträge zum Gebrauche der Mathematik*, Theil III. Berlin.
 - Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*
   5, 437–459.
 - Leibniz, G. W., and Clarke, S. (1717). *A Collection of Papers … Relating to the Principles of Natural Philosophy and
   Religion.* London.
-- Lindemann, F. (1882). Über die Zahl π. *Mathematische Annalen* 20, 213–225.
+- Lindemann, F. (1882). Ueber die Zahl π. *Mathematische Annalen* 20, 213–225.
 - Machin, J. (1706), in W. Jones, *Synopsis palmariorum matheseos.* London.
 - Malmquist, F. (1926). Sur la détermination d'une classe de fonctions analytiques par leurs valeurs dans un
   ensemble donné de points. *Comptes Rendus du Sixième Congrès des Mathématiciens Scandinaves* (Copenhagen, 1925), 253–259.
+- Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata.* Duisburg.
 - McCullagh, P. (1992). Conditional inference and Cauchy models. *Biometrika* 79, 247–259.
 - Poincaré, H. (1902). *La Science et l'hypothèse.* Paris. (1908). *Science et méthode.* Paris.
 - Qian, T. and Wang, Y.-B. (2011). Adaptive Fourier series, a variation of greedy algorithm. *Advances in
@@ -793,6 +794,9 @@ measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumb
 - Takenaka, S. (1925). On the orthogonal functions and a new formula of interpolation. *Japanese Journal of
   Mathematics* 2, 129–145.
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII.* Tours.
+- Wantzel, P. L. (1837). Recherches sur les moyens de reconnaître si un problème de géométrie peut se résoudre avec la
+  règle et le compas. *Journal de Mathématiques Pures et Appliquées* 2, 366–372.
 - Wilbraham, H. (1848). On a certain periodic function. *Cambridge and Dublin Mathematical Journal* 3, 198–201.
 
-Some details of the classical works above are given from memory and are to be checked against the texts.
+The entries were checked against Crossref and library catalogues on 3 November 2026; Malmquist (1926) is given as it is
+usually cited.
