@@ -77,11 +77,10 @@ Everything else in this paper is built on the read, and on its opposite, a count
 turns, and writes while it walks, counts, ranges or agrees a unit. *Read*, *reading* and *reader* are used as each sentence
 needs (a reader is whatever is reading, for as long as it reads), and likewise *write*, *writing* and *writer*.
 
-**The read.** A read is taken from one point, *home*, by turning there. The reader holds one length, H, which it chooses,
-as you hold up your thumb: any value, since every reading is a ratio and H only sets the zoom, where its finest detail
-falls. It does not hold the other party's breadth, V. Every reading is a direction, written [h : v] in homogeneous
-coordinates, or v/h, the reading in its usual chart: h is how much of the thumb lies along the first axis, v how much of it
-along the second, each between 0 and 1. A reading needs no division by the reader; the projection from home divides.
+**The read.** A read is taken from one point, *home*, by turning there, with the thumb held out as above: H any value,
+since every reading is a ratio and H only sets the zoom, and no V, the other party's breadth. In a reading [h : v],
+charted as v/h, h is how much of the thumb lies along the first axis and v how much along the second, each between 0 and
+1. A reading needs no division by the reader; the projection from home divides.
 
 **The write.** A write holds what no standpoint gives: both hemispheres, so both signs of every axis; the extent of each
 axis as an amount; the unit those amounts are in; the completed turn. Its frame is a box, a number line on each axis, every
@@ -451,8 +450,9 @@ The reader's two ignorances, after Jaynes (1968), are which way it faces and how
 Each is a one-parameter group with an exponential map. Turns close, so their map has a period, 2π. Rescalings never close,
 so their map has no period, only a base, e. π is what is needed to say that the turn comes back; e, to say how the scale
 goes on. The complex logarithm puts them in one line, ln z = ln r + iθ: the scale on the real part, measured in e's unit,
-the turn on the imaginary part, measured against π's total. They meet at e^(iπ) = −1, the writer's notation for the far end
-of the reader's sweep, which the reader holds as the finite pair [0 : 1]. It was through that meeting that Lindemann proved
+the turn on the imaginary part, measured against π's total. They meet at e^(iπ) = −1, which is where the doubling (h + iv)² = e^(2iθ)
+sends the far end of the reader's sweep, the horizon the reader holds as the finite pair [0 : 1] (the horizon itself is a
+quarter turn, e^(iπ/2) = i). It was through that meeting that Lindemann proved
 π transcendental (1882): a power of e with a nonzero algebraic exponent is never algebraic, and e^(iπ) is −1.
 
 **π with the address, e with the payload.** The two parts of ln z = ln r + iθ are the two sides of this paper. The
