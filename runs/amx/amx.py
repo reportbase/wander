@@ -186,6 +186,8 @@ def recon(c, sol, d):
         if h > 1:
             full[M - h + 1:] = Lc[sol['N'] - h + 1:]
         leaves_part = np.real(np.fft.ifft(full) * M)
+    if sol['N'] >= M:       # run 3: the top frequency is invisible at the half-shifted leaves; stored as one number
+        leaves_part = leaves_part + rnd((c[M // 2] / M).real) * np.cos(np.pi * np.arange(M))
     terms = [(complex(rnd(a.real), rnd(a.imag)), complex(rnd(co.real), rnd(co.imag))) for a, co in sol['terms']]
     if terms and max(abs(a) for a, _ in terms) >= 1:
         return None
@@ -223,7 +225,7 @@ def run_clip(name, x16, pool):
                 if kind == 'leaves':
                     sol = {'N': sol['leaf'], 'terms': []}
                 chosen.append(sol)
-            nums = sum(2 + s['N'] + 4 * len(s['terms']) for s in chosen)
+            nums = sum(2 + s['N'] + (s['N'] >= M) + 4 * len(s['terms']) for s in chosen)
             ok_d = None
             for d in range(2, 10):
                 text, good = [], True
@@ -244,6 +246,8 @@ def run_clip(name, x16, pool):
                     vals = [line[0], line[-1]]
                     if N:
                         vals += list(leaf_values(c, N))
+                    if N >= M:
+                        vals.append((c[M // 2] / M).real)
                     for a, co in terms:
                         vals += [a.real, a.imag, co.real, co.imag]
                     text.append(f'{N} {len(terms)} ' + ' '.join(fmt(v) for v in vals))
@@ -282,7 +286,7 @@ if __name__ == '__main__':
     d = sys.argv[1]
     snare = pcm(os.path.join(d, 'snare-accelerate.ogg'), 0, 2)
     trumpet = pcm(os.path.join(d, 'sorohanro_-_solo-trumpet-06.ogg'), 0, 2)
-    print('AMX run 2 (plans/amx-plan.md). Frames of 1024, the line off each, targets per frame against the clip RMS.\n')
+    print('AMX run 3 (plans/amx-plan.md). Frames of 1024, the line off each, targets per frame against the clip RMS.\n')
     with Pool(4) as pool:
         rs, fs = run_clip('snare (first 2 s)', snare, pool)
         print()

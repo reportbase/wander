@@ -106,3 +106,16 @@ it saves under 5% of the numbers, on the tonal clip more than on the drum.
 
 The only change: at N = M the leaves keep every frequency (the frame exactly, with M numbers). A1–A4 are restated
 unchanged as B1–B4 for this run, with the same bounds.
+
+### Run 2 (3 Nov; `runs/amx/amx-run2.txt`)
+
+The output was the same as run 1's, number for number. B1–B3 were killed, and the cause was my diagnosis, which was
+wrong. Only one frame failed: snare frame 17, which needs every leaf (N = M). There the leaves sit half-way between
+samples, at (k + ½)·M/N, and the top frequency cos(πj) is exactly zero at those points. That is TVF's invisible mode,
+the first of draw's decoder test vectors. So no leaf value carries it, and the stored numbers could not write the frame
+however many digits they had. Run 2 kept it in the projection but not in the numbers written.
+
+### Run 3: the invisible mode stored (predictions written before it ran)
+
+The only change: a frame that takes all M leaves also stores its top-frequency coefficient as one more number
+(M + 1 numbers). A1–A4 are restated unchanged as C1–C4, with the same bounds.
