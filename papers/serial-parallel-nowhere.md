@@ -7027,7 +7027,45 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   e^(iθ). Bernoulli's (1 + 1/n)ⁿ and Euler's (1 + iθ/n)ⁿ are one limit on two axes, error −w²/(2n) on both; from a
   standpoint z = m + iγ the limit is the Cauchy's e^(izt) (Gemini's sign for its modulus term corrected before the run);
   in space the alternating count leaves (θ₁θ₂/2)·sin(φ/2)/(φ/2) at 1/n (Lie–Trotter), the plane nothing. Run 1's L6
-  killed by my set-up (acos near 1 at 50 digits), L6′ not. Classical mathematics; the reading ours. In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
+  killed by my set-up (acos near 1 at 50 digits), L6′ not. Classical mathematics; the reading ours.
+- **R648** (3 Nov; Tom: "what is a read exactly. possibly its just a facing, so 4 reads to equal a circle. parallax
+  connects them."; "A read is a sweep of H."; "A read is a sweep of the thumb, centered by the intersection of two thumbs,
+  that seperates the near field, 1 thumb, with the far field, of many thumbs. K is split evenly between the near field and
+  the far field."; "K is the avaialble address, and they are arranged according to cauchy. with half before the corner and
+  half after."): a read is a sweep of the thumb H, from all h to all v, centred on the crosshairs (the corner), which split
+  the near field (one thumb, in proportion) from the far field (read as ratios, counted by a writer in thumbs); its K
+  available addresses are laid by the Cauchy, half before the corner and half after at every H (R408). A reading is one
+  direction in it. A facing is the writer's name for a read's span (π/2 its writer's measure); four reads joined with their
+  signs are the circle, 2π, a count, so a write (to the reader, once round is no turn, R327); parallax joins reads, two
+  sweeps from two standpoints tied by a counted step. *Reads and Writes* §1 "What a read is"; §6's crosshairs point to it.
+  Then (Tom: "a read is the set of all H sweeps in one moment."): refined. A read is every sweep of the thumb held at once,
+  one moment, one standpoint, given whole; a sweep is one thumb turned from all h to all v; a facing the writer's name for
+  one sweep's span, the circle (and in 3D the sphere) the writer's join of the sweeps with their signs, so "four reads make
+  a circle" above is withdrawn: one read holds every sweep. Two reads, at two moments or two standpoints, are joined only
+  across a counted step: parallax, a write. *Reads and Writes* §1 rewritten to it.
+  Then (Tom: "facing is writers term, that describes multiple reads."): a facing is not a read's span or a sweep's; it
+  is the writer's term for several reads held together (their spans joined with their signs, which no read carries), so
+  "a facing the writer's name for a read's span" and "for one sweep's span" above are withdrawn. *Reads and Writes* §1
+  says so in one sentence.
+- **R649** (3 Nov; Tom: "so writing includes time, reading over time"): a read is one moment, so it holds no time; time
+  is the step between reads, and joining two reads across a step is a write, the step in space parallax, in time a
+  duration. The order of reads is the reader's, unmoved by any rescaling of the clock (TIM: order and ratios free,
+  durations amounts; UNR: order alone keeps every increasing map): reading over time. A count of ticks between reads is
+  a write in the reader's own tick, as places after one counted step are written in its own thumbs; seconds a further
+  write, carried in. So §8's "the time comes out in the reader's own ticks" (R630) is corrected: Lee's τ is a write in
+  the reader's tick, τ̇ (ticks per tick, unmoved by any clock) a read. *Reads and Writes* §1 (after "What a read is")
+  and §8 "Motion, read".
+- **R650** (3 Nov; Tom: "lets keep H and V. Lets say you walk between H and V. You don't know V, but you walk in its
+  direction. You keep a constant H the entire distance between H and V. What happens as we approach V and then finally
+  arrive at V.", then "this would be a great demo to develop intuition for the situation because we do just this all the
+  time."): the thumb H held at arm's length L the whole walk, each read v/h = (V*/d)/(H/L). Far off V is one in two, four,
+  eight of the thumb, each halving of d doubling the reading, each such stretch the same count of addresses; the corner,
+  V covering the thumb, met by looking at d_c = V*·L/H; past it d and d_c²/d read as reciprocals; at the foot h → 0, the
+  horizon [0 : 1], never reached by halvings but reached by the walk, a count of strides, arrival contact (a write in
+  one's own H, R538). A steady pace reads τ̇ = −1 (arriving at speed), an eased one −½ (stopping at the foot), V
+  unknown; τ in ticks a write (R649). Counting strides from the corner to the foot writes V* = strides × H/L, metres
+  once the stride is carried in; scaling the world moves no reading along the walk, only the count. `approach.html`.
+ In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations
 

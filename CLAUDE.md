@@ -90,6 +90,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "The mountain as H" (30 Oct, SPN R599): as the unit, the range's ends a baseline placing the reader 0.5 range-widths off
   from one look; as the focus, a baseline 2d at parallax's corner, one thumb walked 10.025 times its error.
   `?V=&d=&k=&walk=1&asH=1`; hook `window.__mountain` (`reading`, `equalsThumb`, `walk`, `vantages`, `asH`, `lay`, `set`).
+- `approach.html`: **walking to the mountain** (3 Nov 2026, SPN R650), a standalone page like `walk.html`, plain canvas. The
+  thumb (2 cm at 60 cm, H/L = 1/30) held out the whole walk toward a house, tower or mountain (12 m, 60 m, 3 km), starting 16
+  corners out: the view (the thumb fixed, the thing growing behind it, the words one in n / n thumbs), the reading on the
+  quarter turn (ticks 1:8 … 8, the corner, the mirror ray), τ from two looks in ticks against ticks walked (steady −1,
+  eased −½), the writer's ground (toggle). Count strides from the corner: at the foot V* = strides × H/L, 3.0 km with the
+  0.7 m stride. Scale the world moves no reading. `?thing=&k=<log10 k>&pace=steady|ease&count=1&ground=0&u=&play=1`; hook
+  `window.__approach` (`reading`, `cornerD`, `mirror`, `dOf`, `tauRead`, `tauExact`, `tauDotRead`, `stridesFromCorner`,
+  `writeV`, `set`, `state`). Not in the flying page.
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -1339,6 +1347,25 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   composed by tangent addition, exact in ℚ[i]; the angle short by θ³/(3n²), the length grown by θ²/(2n) and unread; the
   limit e^(iθ) the writer's; Bernoulli's and Euler's one limit on two axes; from z = m + iγ the Cauchy's e^(izt); in space
   the Lie–Trotter leftover, in the plane none. Run 1's L6 killed by my set-up, run 2's L6′ not. In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
+  R648 (3 Nov; Tom: "A read is a sweep of the thumb, centered by the intersection of two thumbs, that seperates the near
+  field, 1 thumb, with the far field, of many thumbs."; "K is the avaialble address, and they are arranged according to
+  cauchy. with half before the corner and half after."): **a read is a sweep of the thumb**, centred on the crosshairs (the
+  corner); near field one thumb, far field read as ratios and counted in thumbs; K available addresses laid by the Cauchy,
+  half each side of the corner at every H. A reading is one direction in it; four
+  joined the circle (a write); parallax joins reads by a counted step. *Reads and Writes* §1 "What a read is".
+  Refined (Tom: "a read is the set of all H sweeps in one moment."): **a read is every sweep of the thumb at once, one
+  moment, one standpoint**; a sweep one thumb turned; the circle the writer's join of the sweeps (not "four reads"); two
+  reads, at two moments or standpoints, joined only across a counted step (parallax, a write).
+  Then (Tom: "facing is writers term, that describes multiple reads."): **a facing is the writer's term for several reads
+  together**, never a read's or a sweep's span.
+  R649 (3 Nov; Tom: "so writing includes time, reading over time"): **a read holds no time; time is the step between
+  reads**, joined by a write (in space parallax, in time a duration); the order of reads is the reader's (reading over
+  time), a count of ticks between them a write in the reader's own tick, seconds carried in. Lee's τ a write in ticks,
+  τ̇ a read. *Reads and Writes* §1 and §8 "Motion, read" (R630's "ticks the reader's" corrected).
+  R650 (3 Nov; Tom: "You keep a constant H the entire distance between H and V. What happens as we approach V and then
+  finally arrive at V.", then "this would be a great demo …"): the thumb held out on the walk, v/h = (V*/d)/(H/L); far off
+  ratios, the corner met by looking at d_c = V*·L/H, d and d_c²/d reciprocals, the foot the horizon reached only by the
+  counted walk; steady τ̇ = −1, eased −½; strides from the corner to the foot write V* = strides × H/L. `approach.html`.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

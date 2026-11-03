@@ -45,6 +45,17 @@ in metres.
 
 The first part is reading. The second and third are writing. The rest of this paper is about the line between them.
 
+**What a read is.** A read is the set of all sweeps of the thumb in one moment, from one standpoint. A sweep is the one
+length the reader holds, H, turned from all of it lying along h to all of it standing along v; the read is every such
+sweep at once, given whole, not performed one after another. Each sweep is centred on the crosshairs of two thumbs, the corner, which separates the near field,
+one thumb, from the far field beyond it, read as ratios (one in two, one in four, …) and counted by a writer in thumbs.
+The read's addresses are K, the addresses available to it in that moment, arranged by the Cauchy: half of them before the corner and half
+after, whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Two reads, at two moments or two standpoints, are
+joined only across a step that is counted: parallax, and so a write. (A *facing* is a writer's word, for several reads held together with their signs; no read
+is one.) A read holds no time: time is the step between reads. Their order is the reader's, reading over
+time; a count of ticks between them is a write. Everything else in this paper is built on the read,
+and on its opposite, a count.
+
 **Words.** The paper names acts, a *read* and a *write*, not two kinds of observer: one observer reads while it stands and
 turns, and writes while it walks, counts, ranges or agrees a unit. *Read*, *reading* and *reader* are used as each sentence
 needs (a reader is whatever is reading, for as long as it reads), and likewise *write*, *writing* and *writer*.
@@ -441,7 +452,7 @@ decimal 1.5574… is the writer's account of where it is. The reader meets these
 
 ## 6. Near and far
 
-**The crosshairs.** Cross the two thumbs (§7) over whatever is looked at. Where they cross is the corner: the thing there
+**The crosshairs.** (The read as §1 defines it.) Cross the two thumbs (§7) over whatever is looked at. Where they cross is the corner: the thing there
 reads one thumb up for one thumb along and one thumb across, v/h = v₂/h = 1, and it is drawn one thumb wide. That crossing
 sets the near field and the far field. The near field is a single thumb, laid evenly: everything nearer than the crossing
 gets its addresses in proportion, the first half of the thumb as much room as the second. The far field is read in ratios:
@@ -619,8 +630,9 @@ reading v/h of the line to its edge, and that reading grows. The reading over it
 until the thing arrives, if it keeps coming as it comes: the breadth cancels, and so do the distance and the speed. Lee
 (1976) proposed that a driver braking reads exactly this, and the rule he found is a reading too: brake so that the time
 to contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car stops at the thing, since at τ̇ = −½ the
-distance it needs to stop is the distance it has. Two limits keep this honest. The time comes out in the reader's own
-ticks, as places come out in its own thumbs; seconds are a writer's unit, carried in. And one stream cannot tell a thing
+distance it needs to stop is the distance it has. Two limits keep this honest. The time τ comes out as a count of the reader's
+own ticks, a write in its own tick as places after a counted step are written in its own thumbs; τ̇, ticks per tick,
+is unmoved by any change of clock and is a read; seconds are a writer's unit, carried in. And one stream cannot tell a thing
 coming nearer from a thing growing where it stands, since both raise x alike; a neighbour at the same depth, read at
 once, tells them apart, approach moving both readings and growth one. The rate at which the reader turns cancels from
 every reading. A speed in metres a second is a writing twice over: a metre and a second, both carried in.
