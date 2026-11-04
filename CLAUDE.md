@@ -140,6 +140,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Since R680 (Tom: "Don't hide or blur the objects."): every thing at full strength, its colour its field (another wedge
   grey, not faint; far not dimmed), labels for all; the address cells removed (`layCells` gone, `?fid=cells` reads as
   compress); the menu's "view" toggles by turns / flat screen. `plane-thumbs.html` likewise shows every thing.
+  Since R681 (Tom: "Add small objects on the ground and airplanes in the sky. I want to be able to zoom to both."): 160
+  stones, cones and posts (0.1–0.5 units, 2 to 400 off; a second seeded stream, so the 140 stand where they did) and 14
+  airplanes (20–60 across, 150–2,500 up, flying, wrapping at 4,500); things carry a lift `y` and a heading `hd`. A zoom Z
+  (1–256, gliding): the wheel (shift+wheel now walks), a pinch, + and −, the +/− buttons bottom right, F to what is
+  pointed at, 1 back; the drag and turn slow by Z. H held on an airplane keeps the look on it. `?zoom=`; hook adds
+  `aim(i)`, `zoom(z, fit)`.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1504,6 +1510,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R679 (5 Nov; Tom: "The distortion its excessive"): the grain a precision, not a size; both pages lay the view by turns
   off the look (azimuthal equidistant), no thing shrunk; essay 5 and *Reads and Writes* §6 say so.
   R680 (5 Nov; Tom: "Don't hide or blur the objects."): nothing hidden, dimmed or pixelated on either page; cells removed.
+  R681 (5 Nov; Tom: "Add small objects on the ground and airplanes in the sky. I want to be able to zoom to both."):
+  `crosshairs.html` gains small things on the ground, airplanes in the sky and a zoom; zoom is not H.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

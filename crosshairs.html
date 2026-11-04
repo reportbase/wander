@@ -22,8 +22,13 @@
     addresses at tan(kπ/2K) as ticks, half inside the corner at every H. Below, the same lay as a strip. Scale the world
     (k on every length, the eye's place included) moves H in units and no reading. Hold H keeps the thumbs where they were
     while you look round.
-    Controls: drag the view to look (or the arrow keys), W A S D or the wheel to walk (▲ ▼ on a touch screen), Space to hold H
-    on what is under the crosshairs.
+    Controls: drag the view to look (or the arrow keys), W A S D (or shift and the wheel) to walk (▲ ▼ on a touch screen),
+    Space to hold H on what is under the crosshairs; the wheel, a pinch, + and − (or the buttons at the bottom right) zoom,
+    F zooms to what is pointed at and 1 back out.
+    Small things and airplanes (5 November 2026, Tom: "Add small objects on the ground and airplanes in the sky. I want to be
+    able to zoom to both."): 160 stones, cones and posts a tenth to a half of a unit, 2 to 400 units off, and 14 airplanes
+    20 to 60 units across, 150 to 2,500 units up, flying; zoom (1 to 256) narrows the view, the drag and the turn with it,
+    and H held on an airplane keeps the look on it.
     Full screen, and no text until asked for (5 November 2026, Tom: "Should be full screen. Any text you want to show should
     be hidden until the user ask for it from a menu. Explain all the ways H is used to create the scene."): the view fills
     the window; the menu (☰) shows the readout, the map, the line, words on things, the crosshairs' name and counts, and
@@ -48,10 +53,10 @@
     line through the crosshair, from home (35.26°) to the horizon at the third thumb (54.74°), a quarter turn.
     Depth (R677; THM run 4): the compress squeeze is the direction's times the distance's, cosh(ln r), r the thing's distance
     over the corner's; in the thumbs' levels distance and direction are orthogonal.
-    Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
+    Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&zoom=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
     &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=compress|off (cells and blur read as compress).
     Test hook: window.__crosshairs (objects, target, H, read, readings, frame, lay, addresses, counts, pick, set (with words,
-    show), show, menu, state).
+    show), show, menu, aim(i), zoom(z, fit), state).
     -->
     <style>
     :root { color-scheme: dark; --ground: #04040a; --panel: rgba(18,18,26,0.94); --line: rgba(255,255,255,0.10); --ink: #c8c8d0;
@@ -93,6 +98,11 @@
     #walk button { width: 52px; height: 52px; border-radius: 26px; background: rgba(20,20,28,0.7); font-size: 1.1rem }
     @media (pointer: coarse) { #walk { display: flex } }
     body.strip #walk { display: none }
+    #zoomBtns { position: fixed; right: max(10px, env(safe-area-inset-right)); bottom: max(10px, env(safe-area-inset-bottom)); z-index: 2;
+        display: flex; flex-direction: column; gap: 8px }
+    #zoomBtns button { width: 44px; height: 44px; border-radius: 22px; background: rgba(20,20,28,0.7); font-size: 1.2rem; padding: 0 }
+    @media (pointer: coarse) { #zoomBtns button { width: 52px; height: 52px; border-radius: 26px } }
+    body.strip #zoomBtns { display: none }
     </style>
 </head>
 <body>
@@ -111,6 +121,9 @@
     <button id="fid">view <span>by turns</span></button>
     <div class="sec">H and the world</div>
     <button id="hold">hold H <span>off</span></button>
+    <button id="zin">zoom in <span>× 1</span></button>
+    <button id="zout">zoom out</button>
+    <button id="zfit">zoom to what is pointed at</button>
     <label>K, the addresses <select id="K"><option>16</option><option selected>32</option><option>64</option></select></label>
     <button id="kup">scale the world × 10</button>
     <button id="kdown">scale the world ÷ 10</button>
@@ -124,13 +137,14 @@
 <div id="mapBox" class="over"><canvas id="map"></canvas></div>
 <div id="stripBox" class="over"><canvas id="strip"></canvas></div>
 <div id="walk"><button id="fwd" aria-label="walk">▲</button><button id="back" aria-label="back">▼</button></div>
+<div id="zoomBtns"><button id="zi" aria-label="zoom in">+</button><button id="zo" aria-label="zoom out">−</button></div>
 <div id="about" class="over">
     <button class="x" id="aboutX" aria-label="close">✕</button>
     <h1>How H makes the scene</h1>
     <p>Three thumbs, held square to each other at arm's length: one vertical, one horizontal, one in depth. The look runs
     down between them, so each thumb is 55° off the line of sight, and the crosshair is where all three thumbs' sweeps
     meet: the <span class="g">corner</span>. H is the thumb. Drag to look (or the arrow keys), W A S D or the wheel to
-    walk (▲ ▼ on a phone), Space (or the menu) holds H. The wireframes, the ground and the look are plain perspective and
+    walk (▲ ▼ on a phone), the wheel or a pinch zooms, Space (or the menu) holds H. The wireframes, the ground and the look are plain perspective and
     use no H at all; everything below is what H adds.</p>
     <h2>Where H comes from</h2>
     <ol>
@@ -209,6 +223,10 @@
     <li><b>Nothing hidden or blurred.</b> Every thing is drawn whole and at full strength, near, far or in another wedge
     (grey); its colour says which field it is in, never how faintly. The view is laid by turns (menu: view), or on a flat
     screen.</li>
+    <li><b>Zoom is not H.</b> Zooming (the wheel, a pinch, + and −, F for what is pointed at) narrows the view, so a stone
+    far off or an airplane high up can be seen and pointed at; it changes how large things look, never a reading. H still
+    comes from what the crosshairs pass through: zoom onto an airplane and H is its distance, onto a stone at your feet and
+    H is a step. Held on an airplane, the look follows it as it flies.</li>
     </ol>
     <p class="d">After <i>Reads and Writes</i> §6 ("The crosshairs") and §7 ("One thumb, two thumbs"), and essay 4.</p>
 </div>
@@ -237,6 +255,26 @@ function shapeEdges(kind) {
         for (let i = 0; i < 4; i++) E.push([c[i], c[(i + 1) % 4]], [c[i], a]); }
     else if (kind === 'diamond') { const m = [[0.5, 0.7, 0], [0, 0.7, 0.5], [-0.5, 0.7, 0], [0, 0.7, -0.5]], t = [0, 1.4, 0], b = [0, 0, 0];
         for (let i = 0; i < 4; i++) E.push([m[i], m[(i + 1) % 4]], [m[i], t], [m[i], b]); }
+    else if (kind === 'stone') { const w = 0.5, t = 0.3, h = 0.4, c = [[-w, 0, -w], [w, 0, -w], [w, 0, w], [-w, 0, w]],
+        u = c.map(p => [p[0] * t / w, h, p[2] * t / w]);
+        for (let i = 0; i < 4; i++) { const j = (i + 1) % 4; E.push([c[i], c[j]], [u[i], u[j]], [c[i], u[i]]); } }
+    else if (kind === 'cone') { const n = 8, a = [0, 1, 0];
+        for (let i = 0; i < n; i++) { const p = [0.5 * Math.cos(i / n * 2 * Math.PI), 0, 0.5 * Math.sin(i / n * 2 * Math.PI)],
+            q = [0.5 * Math.cos((i + 1) / n * 2 * Math.PI), 0, 0.5 * Math.sin((i + 1) / n * 2 * Math.PI)]; E.push([p, q]); if (i % 2 === 0) E.push([p, a]); } }
+    else if (kind === 'post') box(0.06, 1);
+    else if (kind === 'plane') {             // nose along +z, wingspan 1, standing on y = 0 (lifted by its own y)
+        const y = 0.1, f = 0.045, N = [0, y, 0.5], T = [0, y, -0.5];
+        const ring = z => [[f, y, z], [0, y + f, z], [-f, y, z], [0, y - f, z]], A = ring(0.32), B = ring(-0.36);
+        for (let i = 0; i < 4; i++) { E.push([N, A[i]], [A[i], B[i]], [B[i], T], [A[i], A[(i + 1) % 4]], [B[i], B[(i + 1) % 4]]); }
+        for (const sx of [1, -1]) {
+            const r0 = [sx * f, y, 0.16], r1 = [sx * f, y, -0.06], t0 = [sx * 0.5, y, -0.12], t1 = [sx * 0.5, y, -0.2];
+            E.push([r0, t0], [t0, t1], [t1, r1]);
+            const s0 = [sx * f, y, -0.36], s1 = [sx * 0.18, y, -0.47], s2 = [sx * 0.18, y, -0.52], s3 = [sx * f, y, -0.5];
+            E.push([s0, s1], [s1, s2], [s2, s3]);
+        }
+        const g0 = [0, y + f, -0.34], g1 = [0, 0.3, -0.49], g2 = [0, 0.3, -0.54], g3 = [0, y + f, -0.5];
+        E.push([g0, g1], [g1, g2], [g2, g3]);
+    }
     else { const n = 16; for (let r = 0; r < 3; r++) { const ax = r; for (let i = 0; i < n; i++) {
         const a = i / n * 2 * Math.PI, b = (i + 1) / n * 2 * Math.PI;
         const P = (t) => ax === 0 ? [0.5 * Math.cos(t), 0.5 + 0.5 * Math.sin(t), 0] : ax === 1 ? [0, 0.5 + 0.5 * Math.sin(t), 0.5 * Math.cos(t)]
@@ -244,9 +282,14 @@ function shapeEdges(kind) {
         E.push([P(a), P(b)]); } } }
     return E;
 }
-const SHAPES = Object.fromEntries(KINDS.map(k => [k, shapeEdges(k)]));
-const HEIGHT = { box: 1, tower: 2.6, pyramid: 1.2, diamond: 1.4, ring: 1 };
-const NAMES = { box: 'a box', tower: 'a tower', pyramid: 'a pyramid', diamond: 'a diamond', ring: 'a ring' };
+// Small things on the ground and airplanes in the sky (5 Nov 2026, Tom: "Add small objects on the ground and airplanes in
+// the sky. I want to be able to zoom to both."): stones, cones and posts a tenth to a half of a unit, near and far, too
+// small to see far off without the zoom; airplanes 20 to 60 units across, 150 to 2,500 units up, flying.
+const SMALL = ['stone', 'cone', 'post'], ALL = [...KINDS, ...SMALL, 'plane'];
+const SHAPES = Object.fromEntries(ALL.map(k => [k, shapeEdges(k)]));
+const HEIGHT = { box: 1, tower: 2.6, pyramid: 1.2, diamond: 1.4, ring: 1, stone: 0.4, cone: 1, post: 1, plane: 0.3 };
+const NAMES = { box: 'a box', tower: 'a tower', pyramid: 'a pyramid', diamond: 'a diamond', ring: 'a ring',
+    stone: 'a stone', cone: 'a cone', post: 'a post', plane: 'an airplane' };
 function makeField(seed) {
     const R = rng(seed), out = [];
     const N = 140;
@@ -255,14 +298,26 @@ function makeField(seed) {
         const az = (R() * 2 - 1) * Math.PI;
         const kind = KINDS[Math.floor(R() * KINDS.length)];
         const size = 0.45 * Math.pow(d, 0.72) * (0.7 + 0.6 * R());
-        out.push({ i, kind, x: d * Math.sin(az), z: d * Math.cos(az), size });
+        out.push({ i, kind, x: d * Math.sin(az), z: d * Math.cos(az), size, y: 0, hd: 0 });
+    }
+    // the small things and the airplanes from a stream of their own, so the 140 above are where they always were
+    const R2 = rng(seed + 1000);
+    for (let n = 0; n < 160; n++) {
+        const d = 2 * Math.pow(400 / 2, R2()), az = (R2() * 2 - 1) * Math.PI, kind = SMALL[Math.floor(R2() * SMALL.length)];
+        const size = (kind === 'post' ? 0.6 : 0.12) * Math.pow(4, R2());
+        out.push({ i: out.length, kind, x: d * Math.sin(az), z: d * Math.cos(az), size, y: 0, hd: R2() * 2 * Math.PI });
+    }
+    for (let n = 0; n < 14; n++) {
+        const d = 300 * Math.pow(4000 / 300, R2()), az = (R2() * 2 - 1) * Math.PI, hd = R2() * 2 * Math.PI;
+        const size = 20 + 40 * R2(), y = 150 * Math.pow(2500 / 150, R2()), v = 15 + 35 * R2();
+        out.push({ i: out.length, kind: 'plane', x: d * Math.sin(az), z: d * Math.cos(az), size, y, hd, v });
     }
     return out;
 }
 const FIELD = makeField(SEED);
 
 // ---- state ----
-const EYE = 1.6;
+const EYE = 1.6, ZMAX = 256;
 const S = {
     yaw: num('yaw', 0) * DEG, pitch: num('pitch', -2) * DEG, x: num('x', 0), z: num('z', 0),
     k: Math.pow(10, num('k', 0)), K: [16, 32, 64].includes(num('K', 32)) ? num('K', 32) : 32,
@@ -273,22 +328,24 @@ const S = {
     show: { about: Q.get('about') === '1', read: Q.get('read') === '1', map: Q.get('map') === '1', strip: Q.get('strip') === '1',
         hud: Q.get('hud') === '1', cube: Q.get('cube') !== '0', density: Q.get('density') !== '0' },
     target: -1, H: 10, Hshow: 10, walkT: 0,
+    // the zoom (Z, 1 to 256): how many times nearer the view looks, gliding on its logarithm as H does
+    Z: Math.max(1, Math.min(ZMAX, num('zoom', 1))), Zshow: Math.max(1, Math.min(ZMAX, num('zoom', 1))),
     // the view (R672, R679, R680): 'compress' laid by turns off the look, or 'off' the flat screen; nothing hidden or blurred
     fid: Q.get('fid') === 'off' ? 'off' : 'compress',   // R680: 'cells' (and 'blur') read as 'compress'
 };
 $('K').value = String(S.K);
 
 // world lengths are the field's times k (the eye's place too: x, z are in field units)
-function centre(o) { const h = HEIGHT[o.kind] * o.size * 0.5; return [o.x * S.k, h * S.k, o.z * S.k]; }
+function centre(o) { const h = o.y + HEIGHT[o.kind] * o.size * 0.5; return [o.x * S.k, h * S.k, o.z * S.k]; }
 function radius(o) { return 0.75 * o.size * Math.max(1, HEIGHT[o.kind]) * S.k; }
 function eye() { return [S.x * S.k, EYE * S.k, S.z * S.k]; }
 function dist(o) { const c = centre(o), e = eye(); return Math.hypot(c[0] - e[0], c[1] - e[1], c[2] - e[2]); }
 function lookDir(yaw, pitch) { return [Math.sin(yaw) * Math.cos(pitch), Math.sin(pitch), Math.cos(yaw) * Math.cos(pitch)]; }
 
 // the thing under the crosshairs: the nearest whose own box (its footprint and height) the line of sight passes through
-const HALF = { box: 0.5, tower: 0.3, pyramid: 0.5, diamond: 0.5, ring: 0.5 };
+const HALF = { box: 0.5, tower: 0.3, pyramid: 0.5, diamond: 0.5, ring: 0.5, stone: 0.5, cone: 0.5, post: 0.06, plane: 0.5 };
 function hitBox(o, e, u) {
-    const h = HALF[o.kind] * o.size * S.k, lo = [o.x * S.k - h, 0, o.z * S.k - h], hi = [o.x * S.k + h, HEIGHT[o.kind] * o.size * S.k, o.z * S.k + h];
+    const h = HALF[o.kind] * o.size * S.k, lo = [o.x * S.k - h, o.y * S.k, o.z * S.k - h], hi = [o.x * S.k + h, (o.y + HEIGHT[o.kind] * o.size) * S.k, o.z * S.k + h];
     let t0 = 0, t1 = Infinity;
     for (let a = 0; a < 3; a++) {
         if (Math.abs(u[a]) < 1e-12) { if (e[a] < lo[a] || e[a] > hi[a]) return Infinity; continue; }
@@ -399,7 +456,8 @@ function sizeFull(cv) { const d = window.devicePixelRatio || 1, W = Math.round((
 function drawView() {
     const dpr = sizeFull(view), W = view.width, Hh = view.height;
     // 84° across the shorter side, so the one-thumb cube's near corners (35.3° off the look) are in view
-    const fov = 84 * DEG, f = (Math.min(W, Hh) / 2) / Math.tan(fov / 2), cx = W / 2, cy = Hh / 2;
+    // the zoom multiplies both screens' scale: Z times narrower a view, the crosshair's neighbourhood Z times larger
+    const fov = 84 * DEG, Z = S.Zshow, f = Z * (Math.min(W, Hh) / 2) / Math.tan(fov / 2), cx = W / 2, cy = Hh / 2;
     // Compress (R679; Tom: "The distortion its excessive. Things don't distort that much until far into the horizon"):
     // the view laid by the reader's own addresses, equal turns off the look (r = fa·α, the azimuthal equidistant
     // projection), not by the flat screen's tan α. Near the crosshair the two agree (tan α ≈ α); they part only far out
@@ -407,7 +465,7 @@ function drawView() {
     // angle Δ/d, which already falls one in two each time the distance doubles); nothing is shrunk further. R674–R677
     // shrank each thing by its grain, (π/K)·cosh of its levels, which is a precision (how finely an address holds it),
     // not a size: drawn as a size it squeezed everything off the crosshair at once.
-    const angle = S.fid === 'compress', fa = (Math.min(W, Hh) / 2) / (fov / 2);
+    const angle = S.fid === 'compress', fa = Z * (Math.min(W, Hh) / 2) / (fov / 2);
     const P = c => { if (!angle) return [cx + f * c[0] / c[2], cy - f * c[1] / c[2]];
         const rho = Math.hypot(c[0], c[1]), a = Math.atan2(rho, c[2]), k = rho > 0 ? fa * a / rho : 0;
         return [cx + k * c[0], cy - k * c[1]]; };
@@ -459,8 +517,9 @@ function drawView() {
         const isT = o.i === S.target, sh = 1, cc = centre(o);
         vc.strokeStyle = colourOf(o, 1, RD.get(o.i)); vc.lineWidth = (isT ? 2.4 : 1.1) * dpr;
         vc.beginPath();
-        const base = [o.x * S.k, 0, o.z * S.k], sc = o.size * S.k;
-        const P = q => { const w = [base[0] + q[0] * sc, q[1] * sc, base[2] + q[2] * sc]; return [0, 1, 2].map(n => cc[n] + sh * (w[n] - cc[n])); };
+        const base = [o.x * S.k, o.y * S.k, o.z * S.k], sc = o.size * S.k, ch = Math.cos(o.hd), sh2 = Math.sin(o.hd);
+        const P = q0 => { const q = [q0[0] * ch + q0[2] * sh2, q0[1], -q0[0] * sh2 + q0[2] * ch];
+            const w = [base[0] + q[0] * sc, base[1] + q[1] * sc, base[2] + q[2] * sc]; return [0, 1, 2].map(n => cc[n] + sh * (w[n] - cc[n])); };
         for (const [p, q] of SHAPES[o.kind]) seg(P(p), P(q));
         vc.stroke();
     }
@@ -608,21 +667,37 @@ const fmt = v => v >= 100 ? Math.round(v).toLocaleString() : v >= 1 ? v.toFixed(
 const keys = new Set();
 addEventListener('keydown', ev => { if (ev.target.tagName === 'SELECT') return;
     const k = ev.key.toLowerCase(); if (k === ' ') { toggleHold(); ev.preventDefault(); return; }
+    if (k === '+' || k === '=') { zoomBy(1.5); return; } if (k === '-' || k === '_') { zoomBy(1 / 1.5); return; }
+    if (k === 'f') { zoomFit(); return; } if (k === '1') { S.Z = 1; syncMenu(); return; }
     if (['w', 'a', 's', 'd', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright'].includes(k)) { keys.add(k); ev.preventDefault(); } });
 addEventListener('keyup', ev => keys.delete(ev.key.toLowerCase()));
 let drag = null;
 view.addEventListener('pointerdown', ev => { drag = { x: ev.clientX, y: ev.clientY, moved: 0 }; view.setPointerCapture(ev.pointerId); view.style.cursor = 'grabbing'; });
-view.addEventListener('pointermove', ev => { if (!drag) return; const dx = ev.clientX - drag.x, dy = ev.clientY - drag.y;
+view.addEventListener('pointermove', ev => { if (!drag || pinch0) return; const dx = ev.clientX - drag.x, dy = ev.clientY - drag.y;
     drag.moved += Math.abs(dx) + Math.abs(dy); drag.x = ev.clientX; drag.y = ev.clientY;
-    const k = 72 * DEG / (view.clientWidth || 600);
+    const k = 72 * DEG / (view.clientWidth || 600) / S.Zshow;
     S.yaw -= dx * k; S.pitch = Math.max(-80 * DEG, Math.min(80 * DEG, S.pitch + dy * k)); });
 // A tap used to hold H; a stray tap then froze the split and nothing changed as one looked or walked (5 Nov, Tom:
 // "very buggy, moving around does not change anyhing."). Holding is now Space or the menu only.
 const endDrag = ev => { if (!drag) return; drag = null; view.style.cursor = 'grab'; };
-// the wheel walks: a notch is a tenth of the way to what is under the crosshairs (at least 2 units)
+// The wheel zooms (5 Nov 2026, Tom: "I want to be able to zoom to both."): a notch about a fifth nearer or farther.
+// With shift it walks, a tenth of the way to what is under the crosshairs (at least 2 units), as the wheel did before.
 view.addEventListener('wheel', ev => { ev.preventDefault();
-    const d = S.H * ROOT3 / S.k, step = Math.max(2, 0.1 * d) * Math.sign(-ev.deltaY);
-    walkBy(step, 0); }, { passive: false });
+    if (ev.shiftKey) { const d = S.H * ROOT3 / S.k; walkBy(Math.max(2, 0.1 * d) * Math.sign(-(ev.deltaY || ev.deltaX)), 0); return; }
+    zoomBy(Math.exp(-Math.max(-3, Math.min(3, ev.deltaY / 100)) * 0.2)); }, { passive: false });
+function zoomBy(m) { S.Z = Math.max(1, Math.min(ZMAX, S.Z * m)); syncMenu(); }
+// zoom to what is pointed at: its size half the shorter side
+function zoomFit() { const o = FIELD[S.target]; if (!o) { S.Z = 1; syncMenu(); return; }
+    const a = Math.atan2(radius(o), dist(o)); S.Z = Math.max(1, Math.min(ZMAX, 0.5 * (42 * DEG) / a)); syncMenu(); }
+// two fingers pinch to zoom
+const touches = new Map(); let pinch0 = null;
+view.addEventListener('pointerdown', ev => { touches.set(ev.pointerId, [ev.clientX, ev.clientY]);
+    if (touches.size === 2) { const [a, b] = [...touches.values()]; pinch0 = { d: Math.hypot(a[0] - b[0], a[1] - b[1]), Z: S.Z }; drag = null; } });
+view.addEventListener('pointermove', ev => { if (!touches.has(ev.pointerId)) return; touches.set(ev.pointerId, [ev.clientX, ev.clientY]);
+    if (pinch0 && touches.size === 2) { const [a, b] = [...touches.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]);
+        S.Z = S.Zshow = Math.max(1, Math.min(ZMAX, pinch0.Z * d / Math.max(1, pinch0.d))); syncMenu(); } });
+const lift = ev => { touches.delete(ev.pointerId); if (touches.size < 2) pinch0 = null; };
+view.addEventListener('pointerup', lift); view.addEventListener('pointercancel', lift);
 view.addEventListener('pointerup', endDrag); view.addEventListener('pointercancel', () => { drag = null; });
 function toggleHold() { S.hold = !S.hold; syncMenu(); }
 $('hold').onclick = toggleHold;
@@ -633,6 +708,8 @@ $('fid').onclick = () => { S.fid = FIDS[(FIDS.indexOf(S.fid) + 1) % FIDS.length]
 $('K').onchange = () => { S.K = +$('K').value; };
 $('kup').onclick = () => { S.k *= 10; S.H *= 10; S.Hshow *= 10; };
 $('kdown').onclick = () => { S.k /= 10; S.H /= 10; S.Hshow /= 10; };
+$('zin').onclick = () => zoomBy(2); $('zout').onclick = () => zoomBy(0.5); $('zfit').onclick = zoomFit;
+$('zi').onclick = () => zoomBy(2); $('zo').onclick = () => zoomBy(0.5);
 $('home').onclick = () => { S.x = 0; S.z = 0; S.yaw = 0; S.pitch = -2 * DEG; };
 let hold = { fwd: false, back: false };
 for (const [id, k] of [['fwd', 'fwd'], ['back', 'back']]) {
@@ -642,6 +719,7 @@ for (const [id, k] of [['fwd', 'fwd'], ['back', 'back']]) {
 function syncMenu() {
     for (const b of document.querySelectorAll('#menu [data-show]')) { const k = b.dataset.show, on = S.show[k];
         b.classList.toggle('on', on); const sp = b.querySelector('span'); if (sp) sp.textContent = on ? 'on' : 'off'; }
+    $('zin').querySelector('span').textContent = '× ' + (S.Z < 10 ? S.Z.toFixed(1) : Math.round(S.Z));
     $('hold').classList.toggle('on', S.hold); $('hold').querySelector('span').textContent = S.hold ? 'on' : 'off';
     $('words').classList.toggle('on', S.words > 0); $('words').querySelector('span').textContent = WORDS[S.words];
     $('fid').classList.toggle('on', S.fid !== 'off'); $('fid').querySelector('span').textContent = FIDNAME[S.fid];
@@ -671,7 +749,7 @@ function groundT() { const u = lookDir(S.yaw, S.pitch); return u[1] < -1e-6 ? ey
 function reachOf(o) { const c = centre(o), e = eye(), u = lookDir(S.yaw, S.pitch);
     return Math.max(1e-6, ((c[0] - e[0]) * u[0] + (c[1] - e[1]) * u[1] + (c[2] - e[2]) * u[2]) / ROOT3); }
 function update(dt) {
-    const turn = 1.2 * dt;
+    const turn = 1.2 * dt / S.Zshow;
     if (keys.has('arrowleft')) S.yaw -= turn; if (keys.has('arrowright')) S.yaw += turn;
     if (keys.has('arrowup')) S.pitch = Math.min(80 * DEG, S.pitch + turn); if (keys.has('arrowdown')) S.pitch = Math.max(-80 * DEG, S.pitch - turn);
     // Walking speed in field units: a third of the way to what is pointed at each second (at least 6), doubling for
@@ -686,6 +764,13 @@ function update(dt) {
         const sp = Math.max(6, d / 3) * Math.pow(2, Math.min(3, S.walkT)) * dt;
         walkBy(sp * f, sp * r);
     } else S.walkT = 0;
+    // the airplanes fly straight on; one gone 4,500 units out comes back in on the far side
+    for (const o of FIELD) if (o.kind === 'plane') { o.x += o.v * Math.sin(o.hd) * dt; o.z += o.v * Math.cos(o.hd) * dt;
+        if (Math.hypot(o.x - S.x, o.z - S.z) > 4500) { o.x = 2 * S.x - o.x; o.z = 2 * S.z - o.z; } }
+    // holding H on an airplane keeps the look on it as it flies
+    if (S.hold && S.target >= 0 && FIELD[S.target].kind === 'plane' && !drag) { const c = centre(FIELD[S.target]), e = eye();
+        S.yaw = Math.atan2(c[0] - e[0], c[2] - e[2]); S.pitch = Math.atan2(c[1] - e[1], Math.hypot(c[0] - e[0], c[2] - e[2])); }
+    S.Zshow = Math.exp(Math.log(S.Zshow) + (1 - Math.exp(-dt / 0.15)) * (Math.log(S.Z) - Math.log(S.Zshow)));
     const t = pick();
     // Nothing under the crosshairs: the ground, if they point below the horizon, is what they point at, its distance H
     // (before, H stayed where it was, and looking or walking between things changed nothing); the sky keeps H.
@@ -718,7 +803,10 @@ window.__crosshairs = {
         if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); if ('fid' in o) S.fid = o.fid; syncMenu();
         update(0); S.Hshow = S.H; return this.state(); },
     show: k => showIt(k), menu: () => ({ open: $('menu').classList.contains('open'), words: S.words, show: { ...S.show } }),
-    state: () => ({ yaw: S.yaw / DEG, pitch: S.pitch / DEG, x: S.x, z: S.z, k: S.k, K: S.K, hold: S.hold, target: S.target, H: S.Hshow, counts: counts() }),
+    aim: i => { const c = centre(FIELD[i]), e = eye(); S.yaw = Math.atan2(c[0] - e[0], c[2] - e[2]);
+        S.pitch = Math.atan2(c[1] - e[1], Math.hypot(c[0] - e[0], c[2] - e[2])); update(0); return S.target; },
+    zoom: (z, fit) => { if (fit) zoomFit(); else if (z) S.Z = z; S.Zshow = S.Z; syncMenu(); return S.Z; },
+    state: () => ({ zoom: S.Z, yaw: S.yaw / DEG, pitch: S.pitch / DEG, x: S.x, z: S.z, k: S.k, K: S.K, hold: S.hold, target: S.target, H: S.Hshow, counts: counts() }),
 };
 })();
 </script>
