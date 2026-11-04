@@ -129,6 +129,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   reading, things in blur bins on small layers, each blurred once), address cells (`layCells`, the view through a quarter
   turn's K cells on the flat screen, each filled with its brightest pixel), off. `?fid=blur|cells|off`; hook adds `grain`,
   `cells`, and `set` takes `fid`.
+  Since R674 (5 Nov; Tom: "Things don't blur, they get compressed"; THM runs 2–3): blur replaced by "compress" (`dirGrain`,
+  `shrinkOf`: each thing shrunk about its centre by cosh of its direction's worst pair level), the one-thumb circle (35.26°,
+  fixed) and its three homes drawn; `?fid=compress|cells|off`; hook adds `shrink`, `dirGrain`, `homes`.
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -1473,6 +1476,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   crosshair holds at every look; the crosshair as the corner of all three thumbs only down their diagonal, so R670 is
   forced; the corner √3 thumbs along the look. T5 killed by my tolerance, T6 by my guess (the wedge 0.51 of the view).
   R672 (5 Nov; Tom: "Do both options with a menu toggle"): `crosshairs.html`'s fidelity, blur by grain or address cells.
+  R673 (5 Nov; Tom: "Things don't blur, they get compressed. Would there not be a 1 thumb circle around the cross hairs";
+  "let the math tell us"): THM runs 2–3: one thumb about the crosshair's point touches the wedge's faces; its outline the
+  fixed 35.26° circle, corner at its centre, home at its three touch points, distortion growing as 1/(2·reading) toward home.
+  R674 (5 Nov; "yes"): `crosshairs.html`'s blur replaced by compress (each thing shrunk by its direction's grain) with the
+  one-thumb circle and its three homes drawn.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

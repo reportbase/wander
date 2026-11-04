@@ -1,0 +1,30 @@
+U1 face 1 distance from C 1 touch point [0, 1, 1]
+U1 face 2 distance from C 1 touch point [1, 0, 1]
+U1 face 3 distance from C 1 touch point [1, 1, 0]
+U1 outline half-angle 35.2643896828 deg; |C| = sqrt(3)
+U1 touch points off the look: [35.2643896828, 35.2643896828, 35.2643896828]
+U1 KILLED
+U2 least component on the outline -6.68191e-52 ; zeros at 3 of 3600 samples: [900, 2100, 3300]
+U2 touch point (1,1,0)/√2: readings e1/e2 = 1.0 , e3/e1 = 0 (home), e1/e3 = ∞ (horizon)
+U2 not killed
+U3 outline half-angle 45.0000000000 deg about 45°: from 0 to 90.0000000000000
+U3 not killed
+U4 share inside the cone 4 - 4*sqrt(6)/3 = 0.734013676289
+U4 not killed
+U5 Σℓ² to second order: 9*epsilon**2 (no φ: round)
+U5 dℓ/dε at the crosshair: [sqrt(6)*cos(phi), -sqrt(6)*cos(phi + pi/3), -sqrt(6)*sin(phi + pi/6)]
+U5 worst level per unit angle: max 2.44948974278 min 2.12132034356 ratio 1.15470053838 (2/√3 = 1.15470053838 )
+U5 toward the touch point at   0.0°: worst grain ×1.0, least reading 1.0, grain × reading 1.0
+U5 toward the touch point at   1.0°: worst grain ×1.0006774, least reading 0.96386423, grain × reading 0.96451713
+U5 toward the touch point at   5.0°: worst grain ×1.0163365, least reading 0.83484301, grain × reading 0.84848142
+U5 toward the touch point at  15.0°: worst grain ×1.144535, least reading 0.58779414, grain × reading 0.67275097
+U5 toward the touch point at  25.0°: worst grain ×1.4398564, least reading 0.40390926, grain × reading 0.58157134
+U5 toward the touch point at  30.0°: worst grain ×1.6977296, least reading 0.32576539, grain × reading 0.55306154
+U5 toward the touch point at  34.0°: worst grain ×2.00164, least reading 0.26769574, grain × reading 0.5358305
+U5 toward the touch point at  35.0°: worst grain ×2.0978502, least reading 0.25367681, grain × reading 0.53217596
+U5 toward the touch point at  35.2°: worst grain ×2.1183179, least reading 0.25089434, grain × reading 0.53147399
+U5 KILLED
+U6 sideways corner off the look 30.0000000000 deg; for any H since D/H = √3
+U6 not killed
+U7 corner 45°, share of the hemisphere within 1 - sqrt(2)/2 = 0.2928932188
+U7 not killed

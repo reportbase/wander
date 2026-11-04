@@ -1,0 +1,15 @@
+U1' touch points off the look minus the half-angle: ['0.0', '0.0', '0.0'] ; their distance from C: ['1.0', '1.0', '1.0']
+U1' not killed
+U5' toward the touch point   0.000°: worst grain ×1.0, least reading 1.0, grain × reading 1.0
+U5' toward the touch point   5.000°: worst grain ×1.0185088, least reading 0.82522102, grain × reading 0.8404948619
+U5' toward the touch point  15.000°: worst grain ×1.2186749, least reading 0.52213448, grain × reading 0.6363122083
+U5' toward the touch point  25.000°: worst grain ×2.0804246, least reading 0.25609828, grain × reading 0.532793164
+U5' toward the touch point  30.000°: worst grain ×3.9022704, least reading 0.13030615, grain × reading 0.5084898469
+U5' toward the touch point  33.000°: worst grain ×8.9692522, least reading 0.05592033, grain × reading 0.5015635417
+U5' toward the touch point  34.000°: worst grain ×16.034267, least reading 0.031213597, grain × reading 0.5004871443
+U5' toward the touch point  35.000°: worst grain ×76.621129, least reading 0.006525893, grain × reading 0.5000212936
+U5' toward the touch point  35.200°: worst grain ×314.60257, least reading 0.0015893108, grain × reading 0.500001263
+U5' toward the touch point  35.260°: worst grain ×4614.711, least reading 0.00010834915, grain × reading 0.5000000059
+U5' toward the touch point  35.264°: worst grain ×51983.612, least reading 9.6184159e-6, grain × reading 0.5
+U5' at 10⁻¹⁵ short of the outline: grain × reading 0.5 ; the grain passes ×2.118 at 25.214039 °
+U5' not killed

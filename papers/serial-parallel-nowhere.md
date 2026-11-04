@@ -7267,6 +7267,22 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   default) draws each thing softened by it (another wedge's things most); "address cells" draws the view through the
   cells a quarter turn of K lays (22 px at the crosshair, 83 px at the edge at K = 32 on 1280 × 800), part of whose growth
   is the flat screen's. A demo, nothing new claimed.
+- **R673** (5 Nov; Tom: "The blur does not look correct. Things don't blur, they get compressed. Would there not be a 1
+  thumb circle around the cross hairs, no distortion at the corner and proportional distortion around it. But that raised
+  the question, where is the corner and home.", then "let the math tell us"): THM runs 2–3 (`plans/thm-plan.md`,
+  `runs/thm/thm2.py`, `thm3.py`). The ball of one thumb about the crosshair's point touches the wedge's three faces at the
+  cube's vertices one thumb back along each thumb; from the eye its outline is the circle 35.26° about the look, the
+  largest about the crosshair inside the wedge (73.4% of its directions), fixed on the screen since H follows the target.
+  The corner is its centre (the crosshair, every pair reading 1); home is on it, at the three touch points (one reading 0,
+  its reciprocal the horizon); in the plane the same circle runs home to horizon. Inside, no distortion at the corner
+  (Σℓ² = 9ε², round to second order) and distortion growing outward as 1/(2·reading) toward home; the grain's contours
+  hexagons, unbounded at the touch points, ×2.12 at the outline toward the thumbs. The sideways reading at the target's
+  distance has its corner at 30°, also fixed. U1 and U5 killed by my check and my set-up, U1′ and U5′ not.
+- **R674** (5 Nov; Tom: "yes", to building R673 into the demo): `crosshairs.html`'s "blur by grain" replaced by
+  "compress": each thing drawn shrunk about its own centre by the grain of its direction, cosh of its worst pair level
+  (1 at the crosshair, 1/(2·reading) toward home; another wedge's things at 0.12), and the one-thumb circle drawn, 35.26°
+  about the look (f/√2 on the flat screen), its three touch points marked home; the one-thumb cube's near corners lie on
+  them. Address cells kept. A demo, nothing new claimed.
 
 ## Appendix B. Demos and computations
 
