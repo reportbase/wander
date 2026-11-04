@@ -7260,6 +7260,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   one thumb at the corner, the corner is √3 thumbs along the look, no thumb along the line of sight; each thumb 54.74° off
   it, the wedge's nearest edge 35.26°. T5 killed by my tolerance (a quadrature across a step), T6 killed (the wedge 0.51
   of a 42° × 53° view, not under ½).
+- **R672** (5 Nov; Tom: "How can we show perfect fidelity at the center and increasing distortion moving away", then "Do
+  both options with a menu toggle"): `crosshairs.html`'s fidelity. A thing's grain is (π/K)·cosh(ln q) at its worst
+  reading q of the three thumbs (`focus.html`'s relative cell, OFS Corollary 6.1), least at the crosshair, the corner of
+  all three; at K = 32 about 10% there, 12% at one in 2, 40% at one in 8, over 300% at one in 64. "Blur by grain" (the
+  default) draws each thing softened by it (another wedge's things most); "address cells" draws the view through the
+  cells a quarter turn of K lays (22 px at the crosshair, 83 px at the edge at K = 32 on 1280 × 800), part of whose growth
+  is the flat screen's. A demo, nothing new claimed.
 
 ## Appendix B. Demos and computations
 

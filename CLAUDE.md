@@ -124,6 +124,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   thing's depth along the look over √3 (`reachOf`); the near field the one-thumb cube eye to crosshair (`?cube=0` hides
   it), the Cauchy's cos³ shading on the crosshair (`?density=0`), a reading below zero another wedge (grey); the map the
   wedge from home (the triangle); the ground rings and polar map gone. Hook adds `readings`, `frame`.
+  Since R672 (5 Nov; Tom: "How can we show perfect fidelity at the center and increasing distortion moving away"; "Do both
+  options with a menu toggle"): the menu's fidelity: blur by grain (default; `grainOf`, (π/K)·cosh(ln q) at the worst
+  reading, things in blur bins on small layers, each blurred once), address cells (`layCells`, the view through a quarter
+  turn's K cells on the flat screen, each filled with its brightest pixel), off. `?fid=blur|cells|off`; hook adds `grain`,
+  `cells`, and `set` takes `fid`.
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -1467,6 +1472,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R671 (5 Nov; Tom: "let the math tell us."): THM (`plans/thm-plan.md`, `runs/thm/`): the Cauchy centred on the
   crosshair holds at every look; the crosshair as the corner of all three thumbs only down their diagonal, so R670 is
   forced; the corner √3 thumbs along the look. T5 killed by my tolerance, T6 by my guess (the wedge 0.51 of the view).
+  R672 (5 Nov; Tom: "Do both options with a menu toggle"): `crosshairs.html`'s fidelity, blur by grain or address cells.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

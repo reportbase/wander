@@ -36,8 +36,12 @@
     three thumbs square to each other, the look down their diagonal; a thing reads its reach along each in thumbs; the
     pointed thing reads one in all three (the triple corner at the crosshair); the near field the one-thumb cube from the
     eye to the crosshair (drawn, gold); the Cauchy's cos³ shading centred on the crosshair; the map the wedge from home.
+    Fidelity (5 November 2026, R672; Tom: "How can we show perfect fidelity at the center and increasing distortion moving
+    away", then "Do both options with a menu toggle"): a thing's grain is (π/K)·cosh(ln q) at its worst reading q, least at
+    the corner; "blur by grain" (the default) draws each thing softened by it (in blur bins, each a small layer blurred
+    once), "address cells" draws the view through the cells a quarter turn of K lays, growing outward on the flat screen.
     Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
-    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0.
+    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=blur|cells|off.
     Test hook: window.__crosshairs (objects, target, H, read, readings, frame, lay, addresses, counts, pick, set (with words,
     show), show, menu, state).
     -->
@@ -96,6 +100,7 @@
     <button data-show="hud">the crosshairs' name and counts <span>off</span></button>
     <button data-show="cube">the one-thumb cube <span>on</span></button>
     <button data-show="density">the Cauchy's shading <span>on</span></button>
+    <button id="fid">fidelity <span>blur by grain</span></button>
     <div class="sec">H and the world</div>
     <button id="hold">hold H <span>off</span></button>
     <label>K, the addresses <select id="K"><option>16</option><option selected>32</option><option>64</option></select></label>
@@ -169,6 +174,19 @@
     <li><b>The field itself.</b> No thing moves when H moves; only the near and far fields do, because they are where the
     three thumbs meet.</li>
     </ol>
+    <h2>Fidelity, finest at the crosshair</h2>
+    <ol start="17">
+    <li><b>Each thing's grain.</b> The K addresses are laid evenly by turning, so at a reading q one address is a relative
+    cell of (π/K)·cosh(ln q): least at one, the corner. A thing's grain is the worst of its three readings. The thing at the
+    crosshair, one in all three, is held finest; a thing off the look, or nearer or farther than the corner, coarser, as
+    cosh of how far its ratio is from one. At K = 32 about 10% at the corner, 12% at one in 2, 40% at one in 8, over 300%
+    at one in 64.</li>
+    <li><b>Blur by grain</b> (menu: fidelity). Each thing drawn softened by its grain: sharp at the crosshair, softer away
+    from it across the view and in depth. More addresses (K) sharpen everything; the crosshair stays the sharpest.</li>
+    <li><b>Address cells</b> (menu: fidelity). The view drawn through the cells themselves, a quarter turn holding K of
+    them: smallest at the crosshair, growing outward on the flat screen (the cos³ thinning). Part of this growth is the flat
+    screen's, not the reader's: in turn every cell is the same size.</li>
+    </ol>
     <p class="d">After <i>Reads and Writes</i> §6 ("The crosshairs") and §7 ("One thumb, two thumbs"), and essay 4.</p>
 </div>
 <script>
@@ -232,6 +250,8 @@ const S = {
     show: { about: Q.get('about') === '1', read: Q.get('read') === '1', map: Q.get('map') === '1', strip: Q.get('strip') === '1',
         hud: Q.get('hud') === '1', cube: Q.get('cube') !== '0', density: Q.get('density') !== '0' },
     target: -1, H: 10, Hshow: 10, walkT: 0,
+    // fidelity (R672): 'blur' by each thing's grain, 'cells' the view drawn through the address cells, or 'off'
+    fid: ['blur', 'cells', 'off'].includes(Q.get('fid')) ? Q.get('fid') : 'blur',
 };
 $('K').value = String(S.K);
 
@@ -313,7 +333,55 @@ function colourOf(o, alpha = 1, r = read(o)) {
 }
 
 // ---- the view ----
-const view = $('view'), vc = view.getContext('2d');
+const view = $('view'), mainCtx = view.getContext('2d');
+let vc = mainCtx;                           // the context drawn into (an offscreen one while laying address cells)
+const off = document.createElement('canvas'), offCtx = off.getContext('2d', { willReadFrequently: true });
+
+// ---- fidelity (5 Nov 2026, R672; Tom: "How can we show perfect fidelity at the center and increasing distortion moving
+// away", then "Do both options with a menu toggle") ----
+// The reader's K addresses are laid evenly by turn; at a reading q one address is a relative cell (π/2K)(q + 1/q) =
+// (π/K)·cosh(ln q), least at q = 1, the corner (focus.html's grain; OFS Corollary 6.1). A thing has three readings, its
+// reach along each thumb; its grain is the worst of the three, so the thing at the crosshair (all three one) is held
+// finest, and a thing off the look or nearer or farther than the corner coarser, as cosh of how far its ratio is from one.
+// Blur draws each thing softened by its grain; cells draws the view through the address cells themselves.
+const LAYERS = [];
+function layerOf(i, W, Hh) { let L = LAYERS[i]; if (!L) { const cv = document.createElement('canvas'); L = LAYERS[i] = { cv, ctx: cv.getContext('2d') }; }
+    if (L.cv.width !== W) L.cv.width = W; if (L.cv.height !== Hh) L.cv.height = Hh; return L; }
+function grainOf(r) {
+    if (r.field === 'other') return Infinity;
+    let worst = 1;
+    for (const t of THUMBS) { const q = r.q[t]; if (q > 0) worst = Math.max(worst, Math.cosh(Math.log(q))); }
+    return (Math.PI / S.K) * worst;
+}
+// The address cells on the flat screen: a quarter turn holds K addresses, so a cell spans (π/2)/K of turn across and up
+// from the crosshair; laid on the flat screen its width grows as sec² of the angle off the look (the cos³ thinning in
+// two directions). Each cell is filled with the brightest thing the scene drew in it.
+function layCells(W, Hh, f, cx, cy, dpr) {
+    const img = offCtx.getImageData(0, 0, W, Hh).data, D = (Math.PI / 2) / S.K;
+    const edges = (n, c) => { const out = []; const lim = Math.atan((Math.max(c, n - c)) / f) + D;
+        for (let a = -Math.ceil(lim / D) - 0.5; a <= Math.ceil(lim / D) + 0.5; a++) out.push(c + f * Math.tan(Math.max(-1.55, Math.min(1.55, a * D))));
+        return out.filter((x, i, A) => i === 0 || x > A[i - 1]); };
+    const XS = edges(W, cx), YS = edges(Hh, cy), stride = Math.max(1, Math.floor(dpr));
+    mainCtx.fillStyle = '#04040a'; mainCtx.fillRect(0, 0, W, Hh);
+    for (let i = 0; i + 1 < XS.length; i++) {
+        const x0 = Math.max(0, Math.round(XS[i])), x1 = Math.min(W, Math.round(XS[i + 1])); if (x1 <= x0) continue;
+        for (let j = 0; j + 1 < YS.length; j++) {
+            const y0 = Math.max(0, Math.round(YS[j])), y1 = Math.min(Hh, Math.round(YS[j + 1])); if (y1 <= y0) continue;
+            let best = -1, br = 0, bg = 0, bb = 0;
+            for (let y = y0; y < y1; y += stride) for (let x = x0; x < x1; x += stride) {
+                const k = (y * W + x) * 4, sum = img[k] + img[k + 1] + img[k + 2];
+                if (sum > best) { best = sum; br = img[k]; bg = img[k + 1]; bb = img[k + 2]; } }
+            mainCtx.fillStyle = `rgb(${br},${bg},${bb})`; mainCtx.fillRect(x0, y0, x1 - x0, y1 - y0);
+        }
+    }
+    // the cells' own outlines, faint, so their growth from the crosshair shows
+    mainCtx.strokeStyle = 'rgba(255,255,255,0.06)'; mainCtx.lineWidth = 1; mainCtx.beginPath();
+    for (const x of XS) { mainCtx.moveTo(Math.round(x) + 0.5, 0); mainCtx.lineTo(Math.round(x) + 0.5, Hh); }
+    for (const y of YS) { mainCtx.moveTo(0, Math.round(y) + 0.5); mainCtx.lineTo(W, Math.round(y) + 0.5); }
+    mainCtx.stroke();
+    return { across: XS.length - 1, up: YS.length - 1, centre: XS[XS.findIndex(x => x > cx)] - XS[XS.findIndex(x => x > cx) - 1],
+             edge: XS[1] - XS[0] };
+}
 function size(cv, ratio) { const d = window.devicePixelRatio || 1, w = cv.clientWidth || 600;
     const W = Math.round(w * d), H = Math.round(w * ratio * d);
     if (cv.width !== W) cv.width = W; if (cv.height !== H) cv.height = H; return d; }
@@ -323,6 +391,8 @@ function drawView() {
     const dpr = sizeFull(view), W = view.width, Hh = view.height;
     // 84° across the shorter side, so the one-thumb cube's near corners (35.3° off the look) are in view
     const fov = 84 * DEG, f = (Math.min(W, Hh) / 2) / Math.tan(fov / 2), cx = W / 2, cy = Hh / 2;
+    const cells = S.fid === 'cells';
+    if (cells) { if (off.width !== W) off.width = W; if (off.height !== Hh) off.height = Hh; vc = offCtx; }
     vc.fillStyle = '#04040a'; vc.fillRect(0, 0, W, Hh);
     // The 3D Cauchy, centred on the crosshair: directions laid evenly by turning, seen on the screen, thin out as
     // cos³ of the angle off the look (the flat screen's (1/2π)(1 + r²)^(−3/2), r = tan of that angle). Shaded faintly.
@@ -356,14 +426,37 @@ function drawView() {
     vc.strokeStyle = 'rgba(255,255,255,0.12)'; vc.beginPath(); vc.moveTo(0, cy + f * Math.tan(S.pitch)); vc.lineTo(W, cy + f * Math.tan(S.pitch)); vc.stroke();
     // the things, far first
     const order = FIELD.map(o => [dist(o), o]).sort((a, b) => b[0] - a[0]);
-    for (const [, o] of order) {
-        const isT = o.i === S.target;
-        vc.strokeStyle = colourOf(o, 1, RD.get(o.i)); vc.lineWidth = (isT ? 2.4 : 1.1) * dpr;
-        vc.beginPath();
-        const base = [o.x * S.k, 0, o.z * S.k], sc = o.size * S.k;
-        for (const [p, q] of SHAPES[o.kind]) seg([base[0] + p[0] * sc, p[1] * sc, base[2] + p[2] * sc], [base[0] + q[0] * sc, q[1] * sc, base[2] + q[2] * sc]);
-        vc.stroke();
-    }
+    // Blur by grain: 8 px per unit of relative cell, at most 14 (0.8 px at the corner when K = 32). A filter per thing was
+    // too slow (2.5 frames a second), so things are put in blur bins (none, 1, 2, 3.5, 6, 9, 14 px), each bin drawn on
+    // a layer of its own and the layer blurred once.
+    const BINS = [0, 1, 2, 3.5, 6, 9, 14], binOf = px => { let b = 0; for (let i = 0; i < BINS.length; i++) if (px >= BINS[i] * 0.85) b = i; return b; };
+    const blur = S.fid === 'blur', groups = BINS.map(() => []);
+    for (const [, o] of order) { const rd = RD.get(o.i); const gr = blur ? grainOf(rd) : 0;
+        // another wedge's things (no reading in this look's wedge) are held by no address of it: the most blur
+        groups[blur ? binOf(Math.min(14, 8 * gr)) : 0].push(o); }
+    const target = vc;
+    groups.forEach((list, bi) => {
+        if (!list.length) return;
+        let ctx = target;
+        // a blurred layer is drawn small (half size, a quarter for 6 px and more: the blur hides it) and scaled up
+        const sc = BINS[bi] >= 6 ? 0.25 : 0.5, lw = Math.ceil(W * sc), lh = Math.ceil(Hh * sc);
+        if (bi > 0) { const L = layerOf(bi, lw, lh); L.ctx.setTransform(1, 0, 0, 1, 0, 0); L.ctx.clearRect(0, 0, lw, lh);
+            L.ctx.setTransform(sc, 0, 0, sc, 0, 0); ctx = L.ctx; }
+        vc = ctx;
+        for (const o of list) {
+            const isT = o.i === S.target;
+            vc.strokeStyle = colourOf(o, 1, RD.get(o.i)); vc.lineWidth = (isT ? 2.4 : 1.1) * dpr;
+            vc.beginPath();
+            const base = [o.x * S.k, 0, o.z * S.k], sc = o.size * S.k;
+            for (const [p, q] of SHAPES[o.kind]) seg([base[0] + p[0] * sc, p[1] * sc, base[2] + p[2] * sc], [base[0] + q[0] * sc, q[1] * sc, base[2] + q[2] * sc]);
+            vc.stroke();
+        }
+        if (bi > 0) { const L = LAYERS[bi], B = layerOf(bi + 10, lw, lh);
+            B.ctx.clearRect(0, 0, lw, lh); B.ctx.filter = `blur(${(BINS[bi] * dpr * sc).toFixed(2)}px)`; B.ctx.drawImage(L.cv, 0, 0); B.ctx.filter = 'none';
+            target.drawImage(B.cv, 0, 0, W, Hh); }
+    });
+    vc = target;
+    if (cells) { vc = mainCtx; S.lastCells = layCells(W, Hh, f, cx, cy, dpr); } else S.lastCells = null;
     // labels: the thing at the crosshairs always, the others if asked and big enough on the screen
     vc.font = `${11 * dpr}px DM Mono, monospace`; vc.textAlign = 'center';
     for (const [d, o] of order) {
@@ -498,6 +591,8 @@ function toggleHold() { S.hold = !S.hold; syncMenu(); }
 $('hold').onclick = toggleHold;
 const WORDS = ['off', 'at the crosshairs', 'all'];
 $('words').onclick = () => { S.words = (S.words + 1) % 3; syncMenu(); };
+const FIDS = ['blur', 'cells', 'off'], FIDNAME = { blur: 'blur by grain', cells: 'address cells', off: 'off' };
+$('fid').onclick = () => { S.fid = FIDS[(FIDS.indexOf(S.fid) + 1) % 3]; syncMenu(); };
 $('K').onchange = () => { S.K = +$('K').value; };
 $('kup').onclick = () => { S.k *= 10; S.H *= 10; S.Hshow *= 10; };
 $('kdown').onclick = () => { S.k /= 10; S.H /= 10; S.Hshow /= 10; };
@@ -512,6 +607,7 @@ function syncMenu() {
         b.classList.toggle('on', on); const sp = b.querySelector('span'); if (sp) sp.textContent = on ? 'on' : 'off'; }
     $('hold').classList.toggle('on', S.hold); $('hold').querySelector('span').textContent = S.hold ? 'on' : 'off';
     $('words').classList.toggle('on', S.words > 0); $('words').querySelector('span').textContent = WORDS[S.words];
+    $('fid').classList.toggle('on', S.fid !== 'off'); $('fid').querySelector('span').textContent = FIDNAME[S.fid];
     $('about').classList.toggle('open', S.show.about); $('readBox').classList.toggle('open', S.show.read);
     $('mapBox').classList.toggle('open', S.show.map); $('stripBox').classList.toggle('open', S.show.strip);
     document.body.classList.toggle('strip', S.show.strip);
@@ -579,10 +675,10 @@ requestAnimationFrame(frame);
 window.__crosshairs = {
     objects: () => FIELD.map(o => ({ i: o.i, kind: o.kind, d: dist(o) })),
     target: () => S.target, H: () => S.Hshow,
-    read: i => read(FIELD[i]), readings: i => readings(FIELD[i]), frame: () => frameOf(), lay, addresses, counts, pick,
+    grain: i => grainOf(read(FIELD[i])), cells: () => S.lastCells, read: i => read(FIELD[i]), readings: i => readings(FIELD[i]), frame: () => frameOf(), lay, addresses, counts, pick,
     set(o = {}) { if ('yaw' in o) S.yaw = o.yaw * DEG; if ('pitch' in o) S.pitch = o.pitch * DEG; if ('x' in o) S.x = o.x; if ('z' in o) S.z = o.z;
         if ('k' in o) { const r = o.k / S.k; S.k = o.k; S.H *= r; S.Hshow *= r; } if ('hold' in o) S.hold = !!o.hold; if ('K' in o) S.K = o.K;
-        if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); syncMenu();
+        if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); if ('fid' in o) S.fid = o.fid; syncMenu();
         update(0); S.Hshow = S.H; return this.state(); },
     show: k => showIt(k), menu: () => ({ open: $('menu').classList.contains('open'), words: S.words, show: { ...S.show } }),
     state: () => ({ yaw: S.yaw / DEG, pitch: S.pitch / DEG, x: S.x, z: S.z, k: S.k, K: S.K, hold: S.hold, target: S.target, H: S.Hshow, counts: counts() }),
