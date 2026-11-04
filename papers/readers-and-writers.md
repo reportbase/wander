@@ -58,7 +58,7 @@ Computing has to build that separation by hand; geometry starts with it (see "Re
 length the reader holds, H, turned from all of it lying along h to all of it standing along v; the read is every such
 sweep at once, given whole, not performed one after another. Geometry is free in this sense: nothing in it is computed,
 no procedure runs, and there is no tangent or arctangent in it; tan, arctan and every formula for the turn are the writer's
-way of stating what is already there. Each sweep is centred on the crosshairs of two thumbs, the corner, which separates the near field,
+way of stating what is already there. Each sweep is centred on the crosshairs, the corner where the thumbs cross (§6, §7), which separates the near field,
 one thumb, from the far field beyond it, read as ratios (one in two, one in four, …) and counted by a writer in thumbs.
 The read's addresses are K, the addresses available to it in that moment, arranged by the Cauchy: half of them before the corner and half
 after, whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Two reads, at two moments or two standpoints, are
@@ -527,14 +527,32 @@ decimal 1.5574… is the writer's account of where it is. The reader meets these
 
 ## 6. Near and far
 
-**The crosshairs.** (The read as §1 defines it.) Cross the two thumbs (§7) over whatever is looked at. Where they cross is the corner: the thing there
-reads one thumb up for one thumb along and one thumb across, v/h = v₂/h = 1, and it is drawn one thumb wide. That crossing
+**The crosshairs.** (The read as §1 defines it.) Cross the thumbs (§7) over whatever is looked at, the look running down
+their diagonal. Where they cross is the corner: the thing there reads one thumb along each thumb, every pair alike,
+v/h = v₂/h = 1, and it is drawn one thumb wide. Along the line of sight it lies √2 thumbs off in the plane and √3 in space,
+the diagonal of a square or a cube one thumb on a side; no thumb lies along the line of sight. That crossing
 sets the near field and the far field. The near field is a single thumb, laid evenly: everything nearer than the crossing
 gets its addresses in proportion, the first half of the thumb as much room as the second. The far field is read in ratios:
 a thing one thumb wide reads one in two, then one in four, then one in eight, each stretch over which the reading halves
 holding the same number of addresses as the one before, out toward the horizon. A writer counts the same stretches as two
 thumbs, four, eight.
 Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them.
+
+**The one-thumb circle, and the three corners.** Everything within one thumb of the crosshair's point is a ball (a disc in
+the plane) that touches each face of the wedge, at the cube's corners one thumb back from the crosshair along each thumb.
+From the eye its outline is a circle 35.26° about the look, the largest about the crosshair inside the wedge, holding
+73% of its directions; in the plane the same construction runs ±45°, home to horizon, the whole quarter turn. It never
+changes size: whatever is pointed at becomes the corner, so the circle goes with the look. The corner is its centre; home
+is on it, at the three points it touches, where one reading is zero. Each pair of thumbs has its own corner, where the two
+read alike: a line through the crosshair, the three crossing there 120° apart. Along each, the third thumb runs a whole
+quarter turn against the pair, from home on the circle (35.26° off the look) through the corner at the crosshair to the
+horizon at that thumb's own direction (54.74° off, the other side). The view down the diagonal is three of the plane's
+quarter turns crossed, each with its corner under the crosshair. Inside the circle the addresses hold the world with no
+distortion at the corner, the pair levels ln(v/h) all zero there and their squares the same in every direction to second
+order; moving out each address holds more, in proportion, as one over twice the reading toward home. That is
+compression, not blur: a fixed count of addresses squeezes more of the world into each, it does not make it fuzzy. The
+squeeze is not round, hexagonal near the corner and unbounded only at the three homes. (Checked exactly; see Code and
+data.)
 
 **Read in ratios, counted in thumbs.** Inside the corner the reader's readings are in proportion; past it each is a ratio,
 one in two, one in four, one in eight, and two far things are related by the ratio of their readings ("one in eight is
@@ -610,15 +628,23 @@ addresses, and each address is exact, given by the geometry, not computed. That 
 it looks, because it is wherever it looks. The wedge, the octant and the sphere are what a writer draws to describe that
 tunnel from outside.
 
-**One thumb, two thumbs.** In the plane the reader holds one thumb at arm's length: H, square to the line of sight, and one
-reading, v against h. In space it holds two thumbs crossed at a right angle, both square to the line of sight: one reads
-up, v against h, the other across, v₂ against h. The pair (v/h, v₂/h) is a direction of the wedge; each thumb alone reads
-the one-dimensional Cauchy with its own corner, and the two together the two-dimensional Cauchy above. Two thumbs add no
-second length: both are the reader's own H, so no breadth for either party enters, and what a writer would write as V = V₂
-= H is the two thumbs being the same size. The triple corner is where both read 1. The right angle between them is no
-amount either: it is the quarter turn that takes one thumb onto the other, unchanged when the world is scaled. So the
-dimension, counted from a standpoint, is the number of transverse facings, a thumb for each direction square to the look:
-one in the plane, two in space.
+**One thumb, two thumbs, three.** In the plane the reader holds one thumb at arm's length: H, square to the line of sight,
+and one reading, v against h. In space it holds two thumbs crossed at a right angle, both square to the line of sight: one
+reads up, v against h, the other across, v₂ against h. The pair (v/h, v₂/h) is a direction of the wedge; each thumb alone
+reads the one-dimensional Cauchy with its own corner, and the two together the two-dimensional Cauchy above. Two thumbs add
+no second length: both are the reader's own H, so no breadth for either party enters, and what a writer would write as
+V = V₂ = H is the two thumbs being the same size. The right angle between them is no amount either: it is the quarter turn
+that takes one thumb onto the other, unchanged when the world is scaled. So the dimension, counted from a standpoint, is the
+number of transverse facings, a thumb for each direction square to the look: one in the plane, two in space.
+
+Held that way, with the look along h, the middle of the cross reads (0, 0): it is home for both pairs, as the middle of a
+camera's screen is, and the triple corner, where both read 1, lies 54.74° off the look. To put the corner under the
+crosshairs the look turns onto the diagonal, and then every party is a thumb at the same angle to it, h with the rest: two
+thumbs at 45° in the plane, three at 54.74° in space, horizontal, vertical and depth, each reaching one thumb at the corner.
+The three pairs' corners are three planes through the eye and meet in one line only, so that look is the only one that
+puts the crosshair at the corner of all three (the Cauchy's thinning, centred on whatever is looked at, does not choose
+it). They are the same one length either way: the thumbs counted across the look are the dimension, and the thumbs counted
+at the corner are the parties, one more.
 
 **The writer's cube.** The writer's frame with three parties is Descartes's: X, Y, Z, three number lines, every point three
 amounts. It reaches the reader's directions only with H and the angles: X = H·cos a·cos ψ, and so on.
@@ -828,7 +854,8 @@ from its middle, from one look. Or make the range the focus: a baseline of twent
 its error per step is least; one thumb walked has about ten times that error.
 
 **In three dimensions: a tower and two thumbs.** Hold both thumbs crossed (§7), one reading up (v/h), one across (v₂/h),
-and look at a tower off to one side. Its top reads (¼, ⅓): a quarter of a thumb up and a third across for every thumb
+the look along h, so the middle of the cross reads (0, 0) as a camera's screen does (not §6's look down the diagonal), and
+look at a tower off to one side. Its top reads (¼, ⅓): a quarter of a thumb up and a third across for every thumb
 along the look. Its foot reads (0, ⅓). From one place that is all: two directions, no distance, and a tower twice as large
 twice as far off reads the same.
 
@@ -914,7 +941,7 @@ inside a read, and what carries an observer from one to the other.
 
 The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each
 with its plan written before it was run: parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
-measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; Euler's formula as a count of reads in `plans/elm-plan.md`
+measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; Euler's formula as a count of reads in `plans/elm-plan.md`
 and `runs/elm/`. The three cases in data of §11 (LIGO, the quasar dipole, single photons) are `plans/lgo-plan.md`,
 `plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and `runs/wvp/`: each plan states its
 predictions and what would count against them before its run, and records the runs as they came out, the killed ones too.

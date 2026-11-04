@@ -134,6 +134,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   fixed) and its three homes drawn; `?fid=compress|cells|off`; hook adds `shrink`, `dirGrain`, `homes`.
   Since R676: the three corner lines drawn through the crosshair, each home → corner → horizon (the third thumb, ringed);
   hook adds `corners`.
+  Since R677: the squeeze is the direction's times the distance's, cosh(ln r) (`distGrain`; THM run 4).
+- `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
+  plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
+  side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
+  horizon, as a flat screen draws it and compressed (each thing shrunk by cosh(ln v/h)·cosh(ln r), half size at ±30° off the
+  look); tap a thing to point at it, ← → turn. `?target=&look=&seed=`; hook `window.__planeThumbs` (`things`, `target`,
+  `read`, `disc`, `halfAt`, `set`, `state`). Not in the flying page.
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -1486,6 +1493,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R675 (5 Nov; Tom: "update the essays"): essay 5 §10 "Three thumbs at the crosshair" (THM runs 1–3), a pointer in essay 4.
   R676 (5 Nov; Tom: "Where are the corners"): each pair's corner a line through the crosshair, a quarter turn from home
   (35.26°) to the horizon at the third thumb (54.74°); drawn on `crosshairs.html`, in essay 5.
+  R677 (5 Nov; Tom: "1 2 3"): THM run 4, distance along the thumbs' diagonal and direction square to it, the squeezes
+  multiplying; `crosshairs.html` compresses by both; *Reads and Writes* §6, §7, §10 brought to three thumbs.
+  R678: `plane-thumbs.html`, the same in the plane.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

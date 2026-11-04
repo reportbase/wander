@@ -46,6 +46,8 @@
     growing as 1/(2·reading) toward home; the one-thumb circle (the outline of one thumb's ball about the crosshair's point,
     35.26° about the look, fixed) drawn with home at its three touch points. The three corners (R676): each pair's corner
     line through the crosshair, from home (35.26°) to the horizon at the third thumb (54.74°), a quarter turn.
+    Depth (R677; THM run 4): the compress squeeze is the direction's times the distance's, cosh(ln r), r the thing's distance
+    over the corner's; in the thumbs' levels distance and direction are orthogonal.
     Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
     &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=compress|cells|off.
     Test hook: window.__crosshairs (objects, target, H, read, readings, frame, lay, addresses, counts, pick, set (with words,
@@ -190,7 +192,10 @@
     <li><b>Compress</b> (menu: fidelity). A fixed count of addresses does not blur the world, it squeezes it: toward home each
     address holds more. Each thing is drawn shrunk about its own centre by the grain of its direction, the worst of its
     three pair ratios: full size at the crosshair (the corner, every pair reading one), no distortion near it, then
-    smaller in proportion, as 1/(2·reading) toward home, where a reading reaches zero.</li>
+    smaller in proportion, as 1/(2·reading) toward home, where a reading reaches zero. Depth squeezes too, and separately:
+    in the three thumbs' levels distance runs along their diagonal and direction lies square to it, so the two multiply.
+    A thing nearer or farther than the corner is shrunk by cosh of the level of its distance over the corner's: half size at
+    3.73 times nearer or farther. Only the thing at the crosshairs is drawn at its full size.</li>
     <li><b>The one-thumb circle.</b> A ball one thumb across round the crosshair's point touches the wedge's three faces,
     at the cube's corners one thumb back along each thumb. From the eye its outline is a circle 35.26° round the crosshair,
     the largest inside the wedge, holding 73% of its directions. It never changes size: H follows what is pointed at. The
@@ -374,8 +379,13 @@ function dirGrain(d, F = frameOf()) {
     return Math.cosh(w);
 }
 const OTHER_SCALE = 0.12;                   // another wedge's things, held by none of this look's addresses
+// Depth too (R677, THM run 4): in the thumbs' levels Lᵢ = ln(reach along thumb i, in thumbs) distance runs along the
+// diagonal and direction lies square to it, orthogonal, so the two squeezes multiply: the direction's (above) and the
+// distance's, cosh(ln r), r the thing's distance over the corner's (√3 thumbs). Full size only at the crosshair's point;
+// along the look, half size at 2 ± √3 times the corner's distance.
+function distGrain(o) { return Math.cosh(Math.log(Math.max(1e-9, dist(o) / (ROOT3 * S.Hshow)))); }
 function shrinkOf(o, F = frameOf()) { const c = centre(o), e = eye(); const g = dirGrain([c[0] - e[0], c[1] - e[1], c[2] - e[2]], F);
-    return isFinite(g) ? 1 / g : OTHER_SCALE; }
+    return isFinite(g) ? 1 / (g * distGrain(o)) : OTHER_SCALE; }
 function grainOf(r) {
     if (r.field === 'other') return Infinity;
     let worst = 1;
@@ -715,7 +725,7 @@ requestAnimationFrame(frame);
 window.__crosshairs = {
     objects: () => FIELD.map(o => ({ i: o.i, kind: o.kind, d: dist(o) })),
     target: () => S.target, H: () => S.Hshow,
-    grain: i => grainOf(read(FIELD[i])), shrink: i => shrinkOf(FIELD[i]), dirGrain: d => dirGrain(d), homes: () => S.lastHomes, corners: () => S.lastCorners, cells: () => S.lastCells, read: i => read(FIELD[i]), readings: i => readings(FIELD[i]), frame: () => frameOf(), lay, addresses, counts, pick,
+    grain: i => grainOf(read(FIELD[i])), shrink: i => shrinkOf(FIELD[i]), distGrain: i => distGrain(FIELD[i]), dirGrain: d => dirGrain(d), homes: () => S.lastHomes, corners: () => S.lastCorners, cells: () => S.lastCells, read: i => read(FIELD[i]), readings: i => readings(FIELD[i]), frame: () => frameOf(), lay, addresses, counts, pick,
     set(o = {}) { if ('yaw' in o) S.yaw = o.yaw * DEG; if ('pitch' in o) S.pitch = o.pitch * DEG; if ('x' in o) S.x = o.x; if ('z' in o) S.z = o.z;
         if ('k' in o) { const r = o.k / S.k; S.k = o.k; S.H *= r; S.Hshow *= r; } if ('hold' in o) S.hold = !!o.hold; if ('K' in o) S.K = o.K;
         if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); if ('fid' in o) S.fid = o.fid; syncMenu();

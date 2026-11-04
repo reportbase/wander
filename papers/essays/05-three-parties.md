@@ -91,7 +91,8 @@ not.
 
 The third essay's picture, a hand held up to a stained-glass window, carries over with both hands. One hand spreads its
 fingers from flat to upright, the altitude; the other spreads its fingers round the horizontal, the azimuth. The two thumbs
-cross at a right angle, and where they cross is the triple corner, where both read 1. Each pane now lines up with a
+cross at a right angle, and where they cross is the triple corner, where both read 1 (as an address: it lies under the line
+of sight only when the look runs down the thumbs' diagonal, section 10). Each pane now lines up with a
 crossing, one finger of each hand, and that pair of fingers is the address: a direction, (v/h, v₂/h). The colour at each
 crossing is the payload, and still no colour carries a distance. Two hands add no second length: both thumbs are the one H,
 and the right angle between them is a quarter turn, no amount. (For every crossing to hold the same share of the window,
@@ -292,7 +293,17 @@ crosshair, its home on the one-thumb circle and its horizon out at a thumb. That
 all three, and why the near-field side of each line is the shorter. In depth, the corner is the thing pointed at, one
 thumb along each thumb.
 
-*Demo: crosshairs in a field (fidelity: compress, the one-thumb circle and its three homes).*
+Distance and direction squeeze separately. Take each thing's reach along each thumb, in thumbs, and its level, the
+logarithm of that reach: three numbers, all zero at the crosshair's point. Moving a thing out along its own ray adds the
+same amount to all three, along their diagonal; turning it changes their differences, the pair levels, square to that
+diagonal. The two are at right angles, so the squeezes multiply: the direction's above, and the distance's, which shrinks a
+thing nearer or farther than the corner by cosh of the level of its distance over the corner's, to half its size at 3.73
+times nearer or farther. Only the thing at the crosshairs keeps its full size. In the plane it is the same with two
+thumbs: the disc one thumb round the corner touches both, at home and the horizon, and a thing is half size 30° either
+side of the look.
+
+*Demos: crosshairs in a field (fidelity: compress, the one-thumb circle, the three corners and their homes and horizons);
+two thumbs in the plane.*
 
 ---
 
