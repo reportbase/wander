@@ -194,7 +194,10 @@ before it came, and the Cauchy gives it back four ways. By its ratios: two paylo
 another, one colour channel over another, one radius over another, make a direction in the payload's own space, read
 exactly as an address is and unchanged when the world is scaled (the payload arrived written, and read against itself it
 is a write read again); a shape about a centre comes back whole this way, every
-mode but its overall size, and that size is V again. By dividing the address law out: what is counted is the address law
+mode but its overall size, and that size is V again. (Radio astronomers read polarization so: a source's own
+polarization angle, from the ratio of two of its Stokes parameters, is a reading of the payload, unchanged by scale, while
+the Faraday rotation that turns it on the way carries a rotation measure in radians per square metre, and is a writing.)
+By dividing the address law out: what is counted is the address law
 times the payload's weight, and the address law is known in advance, so dividing by it leaves the payload's distribution,
 as an astronomer flat-fields an image. By undoing the blur: seen from a height, the payload arrives smoothed by the Cauchy
 kernel, whose transform e^(−γ|k|) is never zero, so every mode comes back, as far as the resolution allows; the floor's box
@@ -378,17 +381,32 @@ departure would mean.
 limit on brightness, that census is a count of directions alone, and the motion turns a uniform sky into a Cauchy on the
 sphere. The count's dipole is twice the speed, to first order: the "2" that George Ellis and John Baldwin derived in 1984.
 Every real census is cut at a brightness limit, and the cut adds a second term that depends on how the counts and the
-sources' spectra change with brightness. That term belongs to the payload. On a large catalogue of quasars from the WISE
-satellite, four disjoint brightness slices give one speed, as one motion should. Three colour slices disagree with each
-other, which no single motion can do, so part of the dipole belongs to the sources themselves. The sort does not settle
-the dipole's origin. It says where to look.
+sources' spectra change with brightness. That term belongs to the payload, and here the sort changes the number reported. On a large catalogue of quasars from
+the WISE satellite, each brightness slice's expected dipole is the speed times 2 + x(1 + α), the 2 from the addresses and
+x(1 + α) from the slice's own counts and colours, read from the catalogue itself. That factor comes to between 5.3 and
+6.6, so the payload carries 60 to 70 per cent of the dipole. Read as addresses alone, the measured dipoles (about 0.02)
+would give a speed nearly three times too large. With the payload's part divided out, four disjoint brightness slices
+give one speed, 3.3 thousandths of light's, about 2.7 times the speed read from the microwave background, as one motion
+should. Three colour slices give 2.3, 2.8 and 4.6 times it, which no single motion can do, so part of the dipole belongs
+to the sources themselves. The sort does not settle the dipole's origin. It says where to look.
 
 **One photon at a time.** In a double-slit experiment lit one photon at a time, each photon lands at one place and the
 fringes build up over many. With the two paths' amplitudes as h and v, the fringes' visibility can be at most 2hv, and the
 which-path predictability is the difference of their squares. That is the central sweep's height and foot from the
-second essay, a known bound in quantum optics. In published frames the two slits' shares put the pair at its corner, where
-the bound is 1. The measured contrast falls below it, short by the source's coherence. The bound is set by the two shares
+second essay, a known bound in quantum optics. In published frames the two slits' counts, 9,026 against 10,465 and 11,993 against 11,891,
+give 2hv = 2√(n₁n₂)/(n₁ + n₂) = 0.997 and 1.000: the pair at its corner, where the bound is 1. The measured contrast falls below it, short by the source's coherence. The bound is set by the two shares
 alone, which is geometry. How far below it a pattern falls belongs to the source, what arrives.
+
+**A spin carried round a loop.** One more case, classical and not run here. Carry a spin slowly round a closed loop of
+field directions and it comes back with two phases, as Michael Berry showed in 1984. The geometric one is half the solid
+angle the loop of directions encloses. It depends on which directions were visited and on nothing else: take the loop
+twice as slowly, in a field twice as strong, in an apparatus twice the size, and it is the same. The dynamical one is
+energy times time, and it moves with all three. Experiments have pulled them apart by keeping the loop and changing the
+rest: light in a coiled optical fibre, whose polarization turned by the solid angle of the coil's turning alone (Tomita
+and Chiao, 1986), and neutrons in a turning field, where strength and time were varied and the geometric part stayed
+(Bitter and Dubbers, 1987). Both tests sort it. Scale the world, or change what is carried along the loop, and only the
+dynamical phase moves. Read in this series' terms, the half is the central sweep's doubling from the second essay: a
+spin's direction at θ has its point on the sphere of states at 2θ, so a loop counted on that sphere is counted twice.
 
 None of these is new physics. Each is classical. What the reading supplies is the sort.
 
@@ -441,6 +459,14 @@ addresses are given before anything arrives. The payloads are met at them.
   Royal Astronomical Society* 206, 377.
 - Secrest, N. J. et al. (2021). A test of the cosmological principle with quasars. *Astrophysical Journal Letters* 908,
   L51.
+- Berry, M. V. (1984). Quantal phase factors accompanying adiabatic changes. *Proceedings of the Royal Society of London A*
+  392, 45–57.
+- Bitter, T. and Dubbers, D. (1987). Manifestation of Berry's topological phase in neutron spin rotation. *Physical Review
+  Letters* 59, 251–254.
+- Tomita, A. and Chiao, R. Y. (1986). Observation of Berry's topological phase by use of an optical fiber. *Physical Review
+  Letters* 57, 937–940.
+- Burn, B. J. (1966). On the depolarization of discrete radio sources by Faraday dispersion. *Monthly Notices of the Royal
+  Astronomical Society* 133, 67–83.
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
   *Physics Letters A* 128, 391–394.
 

@@ -7203,6 +7203,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   and the 120° of two quarter turns (EUL, essay 13), and why the split and the corners survive (they need only the
   exchange). §1: no real instrument is a pure read; the tests are what applies to instruments. Not taken: the referee's
   Euler-in-space point (§5 already has the Lie–Trotter leftover) and the cut of restatements (Tom's call, R657).
+- **R664** (4 Nov; Tom: "update the essays"): R663 carried out. Essay 3 §10: the dipole's [2 + x(1 + α)] factor (5.3–6.6,
+  the payload 60–70%), addresses alone nearly three times too fast, one speed 2.7 times the CMB's, colour slices 2.3, 2.8,
+  4.6; the double slit's 2hv from the slits' counts. Essay 6 §12: the error ε·cosh(ln k) and the walk at k = 20. Essay 13:
+  the two orders of quarter turns 120° apart; the split and corners need only the exchange. Essay 1 §5: no real instrument
+  reads purely, the test sorts quantity by quantity.
+- **R665** (4 Nov; a list of four physics cases; Tom: "proceed with your recomendation"): Berry's phase added, classical and
+  not run here: the geometric phase half the solid angle of the loop of directions (address; unmoved by speed, field
+  strength or size), the dynamical phase energy × time (moves with all three); Tomita and Chiao 1986, Bitter and Dubbers
+  1987; the half read as the central sweep's doubling. Faraday rotation as one example of the payload read by its ratios
+  (the intrinsic angle a reading, RM in rad/m² a writing; Burn 1966). Not taken: caustics (in lensing the caustics' place
+  moves with the lens mass, and magnification is a ratio, so the list's labels were off) and the critical angle (Fresnel's
+  share is a ratio too; only Goos–Hänchen's shift is a length). *Reads and Writes* §2, §11; essay 3 §5, §10; README.
 
 ## Appendix B. Demos and computations
 

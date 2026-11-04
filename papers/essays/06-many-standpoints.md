@@ -363,8 +363,10 @@ counted is written; a surveyor does both in one morning.
 
 And the passage has degrees. Knowing V, the mountain in the distance, is not a switch thrown by the second standpoint; it
 comes in amounts, three ways. *In what:* in the step taken, in H if the step was H (one thumb, and places come out in
-thumbs), in metres only if the step was counted. *How well:* best at the pair's corner, the circle on the baseline, the
-error stretching by d/(B/2) farther out, and past about B/ε nothing but a ray (the fifth section). *Of which things:* the
+thumbs), in metres only if the step was counted. *How well:* the fractional error in the distance, and so in V, is ε·cosh(ln k) with k = d/(B/2), ε at the
+pair's corner, about ε·d/B far off, and past about B/ε nothing but a ray (the fourth and fifth sections). In the mountain
+example, one thumb walked toward a range ten thumbs off puts it at k = 20, an error about ten times the step's ε; a
+baseline of twenty thumbs would put it at the corner. *Of which things:* the
 same two standpoints give V for the near things and leave it unknown for the far ones. More standpoints, a longer baseline,
 narrow the band; nothing closes it. The writer who holds V exactly, the one the papers call the writer, is the limit of
 this, never a stage of it. That is the fifteenth essay's shape again: every stage of learning V is a finite approximant, as

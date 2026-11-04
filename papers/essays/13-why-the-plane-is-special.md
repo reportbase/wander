@@ -139,7 +139,7 @@ e^(i(α + β)), it is plain addition of angles (the second essay's Euler section
 commute: a turn by α and then by β ends where β and then α ends.
 
 Turns of space do not. Hold a book flat, turn it a quarter about the vertical and then a quarter about the line pointing
-at you; then start again and do the two turns in the other order. The book ends in two different positions. With no
+at you; then start again and do the two turns in the other order. The book ends in two different positions, 120° of turn apart. With no
 fixed order there is no single angle to add, and no logarithm turns combining two turns of space into a sum. Frobenius
 showed in 1878 that the only number systems with division in which multiplication does not care about order are the
 real and the complex numbers. The quaternions keep division and give up the order; nothing keeps both past two
@@ -170,7 +170,8 @@ them leaves it in place: a mirror plane in place of a mirror line. The corner in
 mirror in the logarithm of distance whatever the number of directions. The fifth essay's results, every pair at its corner
 and the near field in all readings a third (1/(n + 1) with n other parties), are statements about uniform directions from
 home. At home, at the centre of the directions, all three of space's laws are the same law: the uniform one. Nothing in the
-fifth essay assumed a standpoint off the centre, so nothing there depends on the plane.
+fifth essay assumed a standpoint off the centre, so nothing there depends on the plane. The split and the corners need
+only the exchange of two shares, never two turns taken in order, which is why they survive what the turns lose.
 
 **The Cauchy wedge survives.** The two-dimensional Cauchy of the wedge's readings, (v/h, v₂/h), is the uniform law on the
 octant seen through a flat screen: the writer's description of the reader's tunnel, cut to a quarter of its screen. It is
