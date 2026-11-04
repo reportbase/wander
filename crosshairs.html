@@ -54,7 +54,7 @@
     Depth (R677; THM run 4): the compress squeeze is the direction's times the distance's, cosh(ln r), r the thing's distance
     over the corner's; in the thumbs' levels distance and direction are orthogonal.
     Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&zoom=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
-    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=compress|off (cells and blur read as compress).
+    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=focus|compress|off (cells and blur read as compress).
     Test hook: window.__crosshairs (objects, target, H, read, readings, frame, lay, addresses, counts, pick, set (with words,
     show), show, menu, aim(i), zoom(z, fit), state).
     -->
@@ -227,6 +227,10 @@
     far off or an airplane high up can be seen and pointed at; it changes how large things look, never a reading. H still
     comes from what the crosshairs pass through: zoom onto an airplane and H is its distance, onto a stone at your feet and
     H is a step. Held on an airplane, the look follows it as it flies.</li>
+    <li><b>True at the focus</b> (menu: view). The thing at the crosshairs is drawn true, out to its own edge; past it each
+    direction is laid by its address grain, cosh of how far its three readings part, so the squeeze is nothing at first,
+    1% a few degrees out, 8% at 10°, 28% at 20°, and the whole half of the world in front lands within about 36° more.
+    Point at something else and it is the one drawn true. The other views: by turns (even angles), and the flat screen.</li>
     </ol>
     <p class="d">After <i>Reads and Writes</i> §6 ("The crosshairs") and §7 ("One thumb, two thumbs"), and essay 4.</p>
 </div>
@@ -331,7 +335,9 @@ const S = {
     // the zoom (Z, 1 to 256): how many times nearer the view looks, gliding on its logarithm as H does
     Z: Math.max(1, Math.min(ZMAX, num('zoom', 1))), Zshow: Math.max(1, Math.min(ZMAX, num('zoom', 1))),
     // the view (R672, R679, R680): 'compress' laid by turns off the look, or 'off' the flat screen; nothing hidden or blurred
-    fid: Q.get('fid') === 'off' ? 'off' : 'compress',   // R680: 'cells' (and 'blur') read as 'compress'
+    // since R682 'focus' (the default): laid by the address grain off the thing pointed at (FOCUS below)
+    fid: Q.get('fid') === 'off' ? 'off' : ['compress', 'cells', 'blur'].includes(Q.get('fid')) ? 'compress' : 'focus',
+    a0: 0, a0show: 0,                       // the pointed thing's angular radius, the region kept true
 };
 $('K').value = String(S.K);
 
@@ -448,6 +454,20 @@ function grainOf(r) {
     for (const t of THUMBS) { const q = r.q[t]; if (q > 0) worst = Math.max(worst, Math.cosh(Math.log(q))); }
     return (Math.PI / S.K) * worst;
 }
+// ---- true at the focus (5 Nov 2026, R682; Tom: "When I move the cross hairs to an object, it should have perfect
+// fidelity. Moving away from the object should be increasingly distorted, by gentle at first") ----
+// The view laid by the address grain. Off the look by α a direction's grain is cosh of its worst pair level, and that
+// level grows as C·α near the crosshair (C = √6 along a thumb, 2.11–2.45 round the look; THM). Laying the screen by one
+// address per cell, the room given to dα is 1/cosh(C·α), so the radius is its integral, the Gudermannian:
+// R(α) = gd(C·α)/C. Its slope is 1 at the crosshair and its curvature 0 there (cosh is flat to second order), so the
+// compression starts gently: 1% at 3.4°, 8% at 10°, 28% at 20°, 48% at 30°, and the whole front half lands within
+// gd(C·π/2)/C ≈ 35.7°. The thing pointed at is kept true to its own angular radius a₀ and the grain counted from its edge:
+// R = α inside a₀, a₀ + gd(C·(α − a₀))/C past it (slope and curvature continuous). Nothing hidden or blurred (R680): the
+// edges are laid point by point, so things off the focus are drawn squeezed toward it, more the farther off.
+const FOCUS_C = Math.sqrt(6), gd = x => 2 * Math.atan(Math.tanh(x / 2)), gdInv = y => 2 * Math.atanh(Math.tan(y / 2));
+function focusLay(a, a0 = S.a0show) { return a <= a0 ? a : a0 + gd(FOCUS_C * (a - a0)) / FOCUS_C; }
+function focusUnlay(r, a0 = S.a0show) { if (r <= a0) return r; const y = (r - a0) * FOCUS_C;
+    return y >= Math.PI / 2 - 1e-9 ? Math.PI / 2 : a0 + gdInv(y) / FOCUS_C; }
 function size(cv, ratio) { const d = window.devicePixelRatio || 1, w = cv.clientWidth || 600;
     const W = Math.round(w * d), H = Math.round(w * ratio * d);
     if (cv.width !== W) cv.width = W; if (cv.height !== H) cv.height = H; return d; }
@@ -465,16 +485,16 @@ function drawView() {
     // angle Δ/d, which already falls one in two each time the distance doubles); nothing is shrunk further. R674–R677
     // shrank each thing by its grain, (π/K)·cosh of its levels, which is a precision (how finely an address holds it),
     // not a size: drawn as a size it squeezed everything off the crosshair at once.
-    const angle = S.fid === 'compress', fa = Z * (Math.min(W, Hh) / 2) / (fov / 2);
+    const angle = S.fid !== 'off', fa = Z * (Math.min(W, Hh) / 2) / (fov / 2), Rm = S.fid === 'focus' ? focusLay : (a => a);
     const P = c => { if (!angle) return [cx + f * c[0] / c[2], cy - f * c[1] / c[2]];
-        const rho = Math.hypot(c[0], c[1]), a = Math.atan2(rho, c[2]), k = rho > 0 ? fa * a / rho : 0;
+        const rho = Math.hypot(c[0], c[1]), a = Math.atan2(rho, c[2]), k = rho > 0 ? fa * Rm(a) / rho : 0;
         return [cx + k * c[0], cy - k * c[1]]; };
     vc.fillStyle = '#04040a'; vc.fillRect(0, 0, W, Hh);
     // The 3D Cauchy, centred on the crosshair: directions laid evenly by turning, seen on the screen, thin out as
     // cos³ of the angle off the look (the flat screen's (1/2π)(1 + r²)^(−3/2), r = tan of that angle). Shaded faintly.
     if (S.show.density) {
         const R = Math.hypot(W, Hh) / 2, gr = vc.createRadialGradient(cx, cy, 0, cx, cy, R);
-        for (let i = 0; i <= 8; i++) { const rr = angle ? Math.tan(Math.min(1.55, i / 8 * R / fa)) : i / 8 * R / f, c3 = Math.pow(1 + rr * rr, -1.5);
+        for (let i = 0; i <= 8; i++) { const rr = angle ? Math.tan(Math.min(1.55, (S.fid === 'focus' ? focusUnlay(i / 8 * R / fa) : i / 8 * R / fa))) : i / 8 * R / f, c3 = Math.pow(1 + rr * rr, -1.5);
             gr.addColorStop(i / 8, `rgba(212,160,82,${0.11 * c3})`); }
         vc.fillStyle = gr; vc.fillRect(0, 0, W, Hh);
     }
@@ -512,7 +532,7 @@ function drawView() {
     // the things, far first
     const order = FIELD.map(o => [dist(o), o]).sort((a, b) => b[0] - a[0]);
     // Compress (R679): the view laid by turns (P above); no thing is shrunk beyond what perspective gives.
-    const comp = S.fid === 'compress', target = vc;
+    const comp = S.fid !== 'off', target = vc;
     for (const [, o] of order) {
         const isT = o.i === S.target, sh = 1, cc = centre(o);
         vc.strokeStyle = colourOf(o, 1, RD.get(o.i)); vc.lineWidth = (isT ? 2.4 : 1.1) * dpr;
@@ -553,7 +573,7 @@ function drawView() {
     // cube's corners one thumb back along each thumb from the crosshair (one reading zero there).
     if (comp) {
         vc.strokeStyle = 'rgba(212,160,82,0.35)'; vc.lineWidth = 1.2 * dpr; vc.setLineDash([5 * dpr, 6 * dpr]);
-        vc.beginPath(); vc.arc(cx, cy, angle ? fa * Math.asin(1 / ROOT3) : f / Math.SQRT2, 0, 2 * Math.PI); vc.stroke(); vc.setLineDash([]);
+        vc.beginPath(); vc.arc(cx, cy, angle ? fa * Rm(Math.asin(1 / ROOT3)) : f / Math.SQRT2, 0, 2 * Math.PI); vc.stroke(); vc.setLineDash([]);
         const A = F.ax; vc.fillStyle = 'rgba(212,160,82,0.9)'; vc.textAlign = 'center'; vc.font = `${10 * dpr}px DM Mono, monospace`;
         S.lastHomes = []; S.lastCorners = [];
         // The three corners (R676): each pair's corner (the two reading alike) is a plane through the eye, a straight line
@@ -703,7 +723,7 @@ function toggleHold() { S.hold = !S.hold; syncMenu(); }
 $('hold').onclick = toggleHold;
 const WORDS = ['off', 'at the crosshairs', 'all'];
 $('words').onclick = () => { S.words = (S.words + 1) % 3; syncMenu(); };
-const FIDS = ['compress', 'off'], FIDNAME = { compress: 'by turns', off: 'flat screen' };
+const FIDS = ['focus', 'compress', 'off'], FIDNAME = { focus: 'true at the focus', compress: 'by turns', off: 'flat screen' };
 $('fid').onclick = () => { S.fid = FIDS[(FIDS.indexOf(S.fid) + 1) % FIDS.length]; syncMenu(); };
 $('K').onchange = () => { S.K = +$('K').value; };
 $('kup').onclick = () => { S.k *= 10; S.H *= 10; S.Hshow *= 10; };
@@ -781,6 +801,9 @@ function update(dt) {
     // H glides on its logarithm, so the field slides from one split to the next
     const a = 1 - Math.exp(-dt / 0.18);
     S.Hshow = Math.exp(Math.log(S.Hshow) + a * (Math.log(S.H) - Math.log(S.Hshow)));
+    // the region kept true: the pointed thing's angular radius (none for the ground or the sky), gliding as H does
+    S.a0 = S.target >= 0 ? Math.min(0.6, Math.atan2(radius(FIELD[S.target]), dist(FIELD[S.target]))) : 0;
+    S.a0show += a * (S.a0 - S.a0show);
 }
 let last = performance.now();
 function frame(now) {
@@ -801,10 +824,11 @@ window.__crosshairs = {
     set(o = {}) { if ('yaw' in o) S.yaw = o.yaw * DEG; if ('pitch' in o) S.pitch = o.pitch * DEG; if ('x' in o) S.x = o.x; if ('z' in o) S.z = o.z;
         if ('k' in o) { const r = o.k / S.k; S.k = o.k; S.H *= r; S.Hshow *= r; } if ('hold' in o) S.hold = !!o.hold; if ('K' in o) S.K = o.K;
         if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); if ('fid' in o) S.fid = o.fid; syncMenu();
-        update(0); S.Hshow = S.H; return this.state(); },
+        update(0); S.Hshow = S.H; S.a0show = S.a0; return this.state(); },
     show: k => showIt(k), menu: () => ({ open: $('menu').classList.contains('open'), words: S.words, show: { ...S.show } }),
     aim: i => { const c = centre(FIELD[i]), e = eye(); S.yaw = Math.atan2(c[0] - e[0], c[2] - e[2]);
         S.pitch = Math.atan2(c[1] - e[1], Math.hypot(c[0] - e[0], c[2] - e[2])); update(0); return S.target; },
+    focusLay: (a, a0) => focusLay(a, a0 ?? S.a0show), a0: () => S.a0show,
     zoom: (z, fit) => { if (fit) zoomFit(); else if (z) S.Z = z; S.Zshow = S.Z; syncMenu(); return S.Z; },
     state: () => ({ zoom: S.Z, yaw: S.yaw / DEG, pitch: S.pitch / DEG, x: S.x, z: S.z, k: S.k, K: S.K, hold: S.hold, target: S.target, H: S.Hshow, counts: counts() }),
 };

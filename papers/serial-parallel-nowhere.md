@@ -7312,6 +7312,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   `crosshairs.html` has stones, cones and posts on the ground and airplanes flying overhead, and a zoom (1 to 256). The
   zoom narrows the view and changes no reading; H still comes from what the crosshairs pass through, so zooming onto an
   airplane makes H its distance and onto a stone at one's feet a step. A demo, nothing new claimed.
+- **R682** (5 Nov; Tom: "When I move the cross hairs to an object, it should have perfect fidelity. Moving away from the
+  object should be increasingly distorted, by gentle at first"): `crosshairs.html`'s default view is laid by the address
+  grain: true out to the pointed thing's own edge, then the radius gd(√6·α)/√6 past it, since a direction's worst pair
+  level grows as √6·α off the crosshair (THM) and its grain is cosh of that; the slope 1 and the curvature 0 at the focus
+  (cosh is flat to second order), so the squeeze is 1% at 3.4°, 8% at 10°, 28% at 20°. Positions laid, not things
+  shrunk (R679, R680). A demo, nothing new claimed.
 
 ## Appendix B. Demos and computations
 
