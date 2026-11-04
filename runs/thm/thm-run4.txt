@@ -1,0 +1,12 @@
+V1 worst |ΣL² − (3L̄² + Σpairs/3)| over 10⁴: 4.28e-49
+V1 not killed
+V2 worst shift error: 2.14e-50
+V2 not killed
+V3 L̄ − (ln r + term) worst 2.14e-50 ; largest term -1.35303e-5 (≤ 0)
+V3 term on the look 0.0 ; toward home ['-0.105586', '-4.28691']
+V3 not killed
+V4 half size at r = 0.267949192431 and 3.73205080757 ; 2 ± √3 = 0.267949192431 3.73205080757
+V4 at r = 1, 0.4 rad toward a home: worst-thumb grain 1.5352798 ; product (direction × distance) 1.77007
+V4 not killed
+V5 plane: worst 1.71e-49 ; largest term -1.9915e-10 ; disc outline half-angle 45.0 °
+V5 not killed

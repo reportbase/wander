@@ -155,3 +155,43 @@ at the three touch points and only ×2.12 at the outline between them, toward th
 points lies another wedge (a reading below zero), and between them the triangle's corners, out to the thumbs at 54.74°. The
 sideways reading at the target's distance has its own corner at 30°, also fixed (Claude's guess that it follows H was
 wrong); a turn from the look has its corner at 45°, past the view's short edge.
+
+## Run 4: distance and direction together (predictions written before the run)
+
+5 November 2026. Tom: "1 2 3", the second being depth in the compressed view: how a direction's grain and a distance's
+grain combine for one thing. Setting as above; a thing at p, its reach along each thumb in thumbs qᵢ = p·eᵢ/H (H the
+pointed thing's reach, so the pointed thing reads 1, 1, 1), its levels Lᵢ = ln qᵢ, their mean L̄, its distance r = |p| over
+the corner's √3·H, its direction n = p/|p|.
+
+- **V1.** Σ Lᵢ² = 3·L̄² + (1/3)·Σᵢ<ⱼ (Lᵢ − Lⱼ)², exactly: in the three thumbs' levels, the diagonal (1, 1, 1) and the plane
+  square to it are orthogonal, and the pair levels (direction, run 2) live only in the plane.
+- **V2.** Moving a thing along its own ray by k adds ln k to every Lᵢ: it moves only along the diagonal, its pair levels
+  unchanged. Turning it about the eye at fixed |p| moves it across the diagonal and along it.
+- **V3.** L̄ = ln r + (1/3)·Σ ln(√3·nᵢ), the second term ≤ 0, zero only on the look (AM–GM, then Cauchy–Schwarz on Σnᵢ), and
+  −∞ at home and at the thumbs. So the thumbs' mean level is distance only on the look; off it they read a thing nearer than
+  it is along the line, the more so toward home.
+- **V4.** The split the math makes for drawing: the direction's squeeze 1/cosh(max pair level) (run 2) times the distance's
+  squeeze 1/cosh(ln r), r along the ray (the turn about the focus in distance, `fpv.html`), equal to 1 only at the
+  crosshair's point; along the look a thing is drawn half size at r = 2 ± √3 (cosh = 2), 3.73 times nearer or farther than
+  the corner. The worst-thumb grain cosh(max|Lᵢ|) (R672's) is not this product: it mixes the two through V3.
+- **V5.** In the plane (two thumbs, the look at 45°) the same: L₁ + L₂ along the diagonal is distance plus a term ≤ 0, L₁ − L₂
+  the one direction level; the one-thumb disc about (1, 1) touches both axes, its outline ±45° about the look.
+
+Kill conditions: V1 or V2 off by more than 10⁻⁴⁰ at 50 digits; V3's term positive anywhere on 10⁴ seeded directions of the
+wedge; V4's half-size distances not 2 ± √3 to 10⁻⁴⁰.
+
+### Run 4 (5 Nov 2026; `runs/thm/thm4.py`, output `runs/thm/thm-run4.txt`)
+
+- V1 not killed: Σ Lᵢ² = 3·L̄² + (1/3)·Σ pairs to 4·10⁻⁴⁹ over 10⁴ seeded things.
+- V2 not killed: along a ray every level moves by ln k and no pair level moves (2·10⁻⁵⁰).
+- V3 not killed: L̄ = ln r + (1/3)·Σ ln(√3·nᵢ) to 2·10⁻⁵⁰; the term never above 0 (largest −1.4·10⁻⁵, near the look), 0 on
+  it, −0.106 at 0.3 rad toward a home and −4.29 a millionth of a radian short of it.
+- V4 not killed: half size at r = 0.2679 and 3.7321, 2 ± √3; the worst-thumb grain (1.535 at r = 1, 0.4 rad toward a home)
+  is not the product (1.770).
+- V5 not killed: the plane's levels split the same way; the disc's outline ±45°.
+
+What the math says (run 4). In the three thumbs' levels a thing is a point (L_h, L_v, L_d), the corner the origin. Distance
+runs along the diagonal and direction lies square to it, orthogonal, Pythagoras holding exactly. So the two squeezes are
+separate and multiply: the direction's, cosh of the worst pair level (run 2), and the distance's, cosh of ln r along the
+ray. The worst-thumb grain R672 used mixed them, because off the look the thumbs' mean level reads a thing nearer than it
+is. A thing is drawn at its full size only at the crosshair's point; along the look, half size 3.73 times nearer or farther.
