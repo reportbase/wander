@@ -348,7 +348,12 @@ half of the directions in front into a disc whose rim is the horizon. Shown as a
 is the corner and whose tails never reach zero. Nothing in it changes when the look turns or the world is scaled, because
 there is no world in it: no payload, only the geometry the payload would paint.
 
-*Demo: the read (the addresses in thumbs and by count, the hill, and from the side, where the reader stands).*
+Nor does it change when the thumb is dragged. Put a row of things along the look and drag H: the things slide along the
+distance addresses, in or out of the near field, half the addresses inside the thumb at every H, and the screen and the hill
+stay exactly as they were. The Cauchy is the same at every H; the thumb decides only where the things land.
+
+*Demo: the read (the addresses in thumbs and by count, the hill, from the side where the reader stands, and the thumb
+dragged).*
 
 ---
 

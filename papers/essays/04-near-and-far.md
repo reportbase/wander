@@ -317,7 +317,17 @@ Count the room one object gets, the stretch from distance d to d + Δ.
 The best H is the corner of what is read, as the best estimate of a size, when nothing says bigger or smaller, is the
 corner of what is known.
 
-*Demos: H is a zoom; what is H.*
+### Dragging the thumb
+
+What moves when H moves? Not the read. The directions never held H: a reading is a ratio of the thumb's own shares, and the
+Cauchy over them is the same at every H. What H moves is distance. The K addresses along distance sit at H·tan(kπ/2K), half
+inside the thumb and half past it, at every H; laid as the reader lays them, each with the same room and the corner in the
+middle, they do not move at all. Drag the thumb out and the things in the world slide along those fixed addresses, more of
+them into the near field, each with less room; drag it in and they slide out past the corner, the near ones held finer.
+The addresses stay; the world slides along them. Nothing is written: no amount is carried in, only which things land
+where changes.
+
+*Demos: H is a zoom; what is H; the read (drag the thumb).*
 
 ---
 

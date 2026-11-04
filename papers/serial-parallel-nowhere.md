@@ -7352,6 +7352,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R694** (5 Nov; Tom: "update the essays"): R693 in essay 4 §11 ("Dragging the thumb": the read never holds H, the K
+  distance addresses fixed on the reader's lay, the world sliding along them) and essay 5 §10's "Where the reader stands"
+  (the screen and the hill unmoved as the thumb is dragged); `essays.html`'s essay 4 card links `read.html?H=2`.
 - **R693** (5 Nov; Tom: "so the cauchy is the same regardless, but you can drag the near field in or out.", then "Yes"):
   the direction law never sees H (a reading is a ratio of the thumb's own shares); in distance H is a zoom, the K
   addresses at H·tan(kπ/2K), half inside H at every H. Dragging H moves which things fall in the near field, not the
