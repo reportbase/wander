@@ -137,6 +137,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Since R677: the squeeze is the direction's times the distance's, cosh(ln r) (`distGrain`; THM run 4).
   Since R679: compress lays the view by turns off the look (r = fa·α, edges drawn in pieces, the horizon bent), sizes the
   angle a thing spans, nothing shrunk (`shrinkOf` kept in the hook only); the circle at fa·35.26°.
+  Since R680 (Tom: "Don't hide or blur the objects."): every thing at full strength, its colour its field (another wedge
+  grey, not faint; far not dimmed), labels for all; the address cells removed (`layCells` gone, `?fid=cells` reads as
+  compress); the menu's "view" toggles by turns / flat screen. `plane-thumbs.html` likewise shows every thing.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1500,6 +1503,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R678: `plane-thumbs.html`, the same in the plane.
   R679 (5 Nov; Tom: "The distortion its excessive"): the grain a precision, not a size; both pages lay the view by turns
   off the look (azimuthal equidistant), no thing shrunk; essay 5 and *Reads and Writes* §6 say so.
+  R680 (5 Nov; Tom: "Don't hide or blur the objects."): nothing hidden, dimmed or pixelated on either page; cells removed.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

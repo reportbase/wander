@@ -82,7 +82,7 @@ function read(i, F = frame(), h = H()) {
 }
 function colour(i, rd, a = 1) {
     if (i === S.target) return `rgba(212,160,82,${a})`;
-    if (rd.other) return `rgba(150,150,170,${0.25 * a})`;
+    if (rd.other) return `rgba(170,170,190,${a})`;          // R680: never hidden or dimmed
     return rd.field === 'near' ? `rgba(140,230,205,${a})` : `rgba(181,156,240,${a})`;
 }
 function fit(cv, ratio) { const d = window.devicePixelRatio || 1, w = cv.clientWidth || 800;
@@ -143,7 +143,7 @@ function draw() {
     s.fillStyle = 'rgba(200,200,208,0.6)'; s.textAlign = 'left';
     s.fillText('flat screen', 6 * dpr, rows[0] - 22 * dpr); s.fillText('by turns', 6 * dpr, rows[1] - 26 * dpr);
     const k = half * 0.3, cap = SH * 0.16;             // pixels per unit of angle (a third of the true scale), capped
-    for (const [, i] of order) { const t = THINGS[i], rd = read(i, F, h); if (rd.other && i !== S.target) continue;
+    for (const [, i] of order) { const t = THINGS[i], rd = read(i, F, h);
         const off = Math.atan2(Math.sin(rd.off), Math.cos(rd.off)); if (Math.abs(off) > 45 * DEG) continue;
         const ang = Math.asin(Math.min(1, t.size / Math.hypot(t.x, t.y)));
         // the flat screen stretches a thing by sec² across (its place tan off); by turns it is the angle it spans
