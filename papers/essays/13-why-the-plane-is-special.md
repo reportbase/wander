@@ -152,6 +152,15 @@ together: a sweep in altitude then a sweep in azimuth is not the same motion as 
 demo makes the point by its own design. `wedge.html` step 7 places the wedge first and sweeps second ("position, then
 sweep"), because the other order would give another wedge.
 
+The leftover has a size. Carry a direction round a closed loop on a sphere, keeping it as straight as the surface allows,
+and it comes back turned, by exactly the solid angle the loop encloses (Gauss and Bonnet). In the plane it comes back
+unturned, whatever the loop: the plane's turns commute, and there is nothing left over. The quarter turns of the book are
+that leftover in its largest form. Physics meets it as Berry's geometric phase (1984): a spin carried slowly round a loop
+of field directions comes back with a phase of half the loop's solid angle, set by the directions visited and by nothing
+else, not the field's strength, not the speed, not the size of the apparatus (the third essay, section 10). It is an
+address quantity in the strict sense, and it exists only because space, unlike the plane, does not let its turns be
+taken in either order.
+
 ---
 
 ## 5. What survives in space

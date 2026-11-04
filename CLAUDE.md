@@ -1428,6 +1428,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R665 (4 Nov; Tom: "proceed with your recomendation"): Berry's phase in *Reads and Writes* §11 and essay 3 §10 (geometric
   half the solid angle, an address; dynamical energy × time); Faraday rotation in §2's "by its ratios" and essay 3 §5.
   Caustics and the critical angle not taken (mislabelled as offered).
+  R666 (4 Nov; Tom: "Update essays"): Berry's phase in essay 2 (the doubling, the spin's sphere of states) and essay 13 §4
+  (a loop on the sphere comes back turned by its solid angle, none in the plane; Berry's phase that leftover).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

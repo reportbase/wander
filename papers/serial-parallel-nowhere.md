@@ -7215,6 +7215,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   (the intrinsic angle a reading, RM in rad/m² a writing; Burn 1966). Not taken: caustics (in lensing the caustics' place
   moves with the lens mass, and magnification is a ratio, so the list's labels were off) and the critical angle (Fresnel's
   share is a ratio too; only Goos–Hänchen's shift is a length). *Reads and Writes* §2, §11; essay 3 §5, §10; README.
+- **R666** (4 Nov; Tom: "Update essays"): Berry's phase carried to essay 2 (the central sweep's doubling is the spin's
+  sphere of states, the half in half the solid angle) and essay 13 §4 (the leftover of turns that do not commute has a
+  size: a direction carried round a loop on the sphere comes back turned by the enclosed solid angle, Gauss–Bonnet, none
+  in the plane; Berry's phase is that leftover, an address quantity). README rows 2 and 13.
 
 ## Appendix B. Demos and computations
 
