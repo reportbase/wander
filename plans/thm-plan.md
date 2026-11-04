@@ -54,3 +54,27 @@ corners meet; T6 at or above ½.
 ## Runs
 
 (below this line, as they came out)
+
+### Run 1 (5 Nov 2026; `runs/thm/thm.py`, output `runs/thm/thm-run1.txt`)
+
+- T1 not killed: the hemisphere's (1/2π)(1 + r²)^(−3/2) integrates to 1 and falls from r = 0, for every look.
+- T2 not killed: the three corner planes' normals have rank 2; their one common line is x = y = z, the diagonal.
+- T3 not killed: looking along the depth thumb the crosshair reads 0 and 0 (home of two pairs, the third pair 0/0);
+  looking down the diagonal it reads 1, 1, 1.
+- T4 not killed: the corner √3 thumbs along the look; each thumb 54.735610° off it.
+- T5 killed by my set-up: the quadrature across the corner's discontinuity gave P(v ≤ h) = 0.4999909, 9·10⁻⁶ from ½
+  against my 10⁻⁶. The ½ is exact by the swap symmetry (and the ⅓, ⅙ by WDG run 1); my tolerance did not allow for a
+  quadrature over a step. The edge 35.264390° off the look as predicted.
+- T6 killed: the wedge takes 0.512 of the view's screen area (0.503 to 0.514 as the view turns about the look), not
+  under ½. My guess was wrong: the inscribed cone (35.26°) is most of a 42° × 53° screen, and the wedge's triangular
+  outline reaches past the screen's corners in three directions.
+- T7 not killed: every reading unchanged by k.
+- T8 not killed: cos³ at the wedge's nearest edge 2√6/9 = 0.5443, at the thumbs √3/9 = 0.1925.
+
+What the math says. "The Cauchy centred on the crosshair" (A) holds for every look: it is the flat screen's cos³ about
+whatever is looked at, so it picks nothing. "The crosshair the corner of all three thumbs" (B) holds for one look only,
+down the thumbs' diagonal, since the three corners meet in one line. So (A) and (B) together force R670's construction;
+it is not one interpretation among several. Looking along the depth thumb puts the crosshair at home, not the corner.
+And with each thumb reaching one thumb at the corner (C), the corner is √3 thumbs along the look: "the distance to the
+corner is the depth sweep, 1 thumb" holds for the reach along the depth thumb, not for the distance along the line of
+sight; the two differ by √3, and no thumb lies along the line of sight.

@@ -1464,6 +1464,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   ground's pick fixed, so moving and looking always move H.
   R670 (5 Nov; Tom: "there are three thumbs, and they all intersect at the corner"): `crosshairs.html` on three
   thumbs, the crosshair the triple corner, the near field the one-thumb cube, the 3D Cauchy centred on the crosshair.
+  R671 (5 Nov; Tom: "let the math tell us."): THM (`plans/thm-plan.md`, `runs/thm/`): the Cauchy centred on the
+  crosshair holds at every look; the crosshair as the corner of all three thumbs only down their diagonal, so R670 is
+  forced; the corner √3 thumbs along the look. T5 killed by my tolerance, T6 by my guess (the wedge 0.51 of the view).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
