@@ -54,7 +54,10 @@
     Depth (R677; THM run 4): the compress squeeze is the direction's times the distance's, cosh(ln r), r the thing's distance
     over the corner's; in the thumbs' levels distance and direction are orthogonal.
     Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&zoom=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
-    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=tunnel|area|compress|round|off (cells and blur read as compress)&sky=1.
+    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=addr|tunnel|area|compress|round|off (cells and blur read as compress)&sky=1.
+    By distance address (R689; Tom: "there severe distortion at the horizon"), the default: across the direction, up the
+    distance address (2/π)·atan(D/ρ), the thumb at ½, heights laid in the same addresses, the far world bunching under
+    the horizon. The world has no N: things made from their cells at every scale as the view reaches them, culled by K.
     The Cauchy tunnel (R687, R688; Tom: "it is a cauchy tunnel"), the default: Reads and Writes §7's tunnel, the readings off
     the line of sight laid by their addresses (radius 2·sin(α/2), equal room equal addresses), the rings at the corner and
     one in 2, 4, 8 bunching toward the horizon's rim at √2.
@@ -234,7 +237,12 @@
     far off or an airplane high up can be seen and pointed at; it changes how large things look, never a reading. H still
     comes from what the crosshairs pass through: zoom onto an airplane and H is its distance, onto a stone at your feet and
     H is a step. Held on an airplane, the look follows it as it flies.</li>
-    <li><b>The views</b> (menu: view). The Cauchy tunnel, the default: what the crossed thumbs give where you look.
+    <li><b>The views</b> (menu: view). By distance address, the default: across, the direction; up, the distance
+    address, your feet at the bottom, the thumb at the crosshair, the horizon at the top of the ground, never reached.
+    Heights are laid in the same addresses as depths, so past the thumb everything is flattened more and more: one in 2,
+    one in 4, one in 8, each band thinner, the whole far world bunched under the horizon. The world has no count: things
+    are made from their place as you look, at every size, and only those that cover part of one of your K addresses are
+    made at all. The Cauchy tunnel, the default: what the crossed thumbs give where you look.
     Each direction's reading off the line of sight, in thumbs, is laid by its addresses: every ring of the screen holds as
     many addresses as its room, so the Cauchy's thinning becomes the rings bunching. The rings are the tunnel's walls: the
     corner one thumb off, then one in 2, one in 4, one in 8, each closer to the last, toward the horizon's rim, which no
@@ -335,7 +343,45 @@ function makeField(seed) {
     }
     return out;
 }
-const FIELD = makeField(SEED);
+// The world without N (R689; Tom: "the problem with this demo is N is known, in real cauchy N is not known, only K is
+// culled, the rest of N increasingly bunces up at N."). Until R689 the page made 314 things and drew them all: the
+// writer's count, held and shown. Now the ground's things are made from their place as the view reaches them, never
+// stored and never counted: at every scale s = 2^j (j from −3 to 11, an eighth of a unit to 2,048) the plane is cut
+// into cells s across, and a cell holds a thing (with one chance in WORLD_P, a hash of the scale and the cell) about a
+// fifth of s across, at a place in the cell its hash gives. Every scale holds the same number of things a ring of
+// distance, so the world looks alike at every distance and goes on. Only what spans at least a quarter of one of the
+// reader's K addresses over a quarter turn is made (cullAngle, set by K, never by N); everything finer is the bunch at
+// the horizon. The airplanes, which fly, are kept as before.
+const WORLD = { lo: -3, hi: 11, p: 0.012 };
+const PLANES = makeField(SEED).filter(o => o.kind === 'plane').map((o, n) => ({ ...o, key: 'plane' + n }));
+let FIELD = [], WORLD_AT = null;
+const cullAngle = () => (Math.PI / 2) / (4 * S.K);
+function cellRng(j, ix, iz) { return rng((Math.imul(SEED + 101, 0x9E3779B1) ^ Math.imul(j + 64, 0x85EBCA77)
+    ^ Math.imul(ix | 0, 0xC2B2AE3D) ^ Math.imul(iz | 0, 0x27D4EB2F)) >>> 0); }
+function makeWorld() {
+    const th = cullAngle(), out = [];
+    for (let j = WORLD.lo; j <= WORLD.hi; j++) {
+        const s = Math.pow(2, j), n = Math.ceil(0.45 * s / th / s) + 1, ix0 = Math.floor(S.x / s), iz0 = Math.floor(S.z / s);
+        for (let a = -n; a <= n; a++) for (let b = -n; b <= n; b++) {
+            if (a * a + b * b > n * n) continue;
+            const R = cellRng(j, ix0 + a, iz0 + b); if (R() > WORLD.p) continue;
+            const x = (ix0 + a + R()) * s, z = (iz0 + b + R()) * s;
+            const kind = j < 0 ? SMALL[Math.floor(R() * SMALL.length)] : KINDS[Math.floor(R() * KINDS.length)];
+            const size = s * (0.12 + 0.2 * R()), hd = R() * 2 * Math.PI;
+            const r = 0.75 * size * Math.max(1, HEIGHT[kind]);
+            if (Math.hypot(x - S.x, z - S.z) * th > r) continue;          // finer than the cull: in the bunch, not made
+            out.push({ key: j + ':' + (ix0 + a) + ':' + (iz0 + b), kind, x, z, size, y: 0, hd });
+        }
+    }
+    return out;
+}
+// made again when the eye moves or K changes; the target is kept by its key across a remake
+function worldNow() {
+    const at = S.x + ',' + S.z + ',' + S.K; if (at === WORLD_AT) return;
+    const tk = S.target >= 0 && FIELD[S.target] ? FIELD[S.target].key : null;
+    FIELD = makeWorld().concat(PLANES); FIELD.forEach((o, i) => { o.i = i; }); WORLD_AT = at;
+    if (tk) { const t = FIELD.findIndex(o => o.key === tk); S.target = t; }
+}
 
 // ---- state ----
 const EYE = 1.6, ZMAX = 256;
@@ -358,7 +404,8 @@ const S = {
     // in gently (tan α/α 1.03 at 15°, 1.10 at 30°) against the flat screen; the two grain lays are options
     // since R685 the equal-area view is the default (the addresses' own screen); 'focus' (R683) reads as it
     // since R687 the Cauchy tunnel is the default (Tom: "it is a cauchy tunnel"; Reads and Writes §7); the others options
-    fid: ['off', 'round', 'compress', 'area'].includes(Q.get('fid')) ? Q.get('fid') : 'tunnel',
+    // since R689 the distance-address view is the default (the bunching at the horizon), the tunnel and the others options
+    fid: ['off', 'round', 'compress', 'area', 'tunnel'].includes(Q.get('fid')) ? Q.get('fid') : 'addr',
     // the whole sky (5 Nov 2026, Tom: "do the whole sky"): every direction at once, behind included, on the equal-area
     // view; at zoom 1 the sphere is a disc, the look its centre and straight behind its rim
     sky: Q.get('sky') === '1',
@@ -514,7 +561,19 @@ function focusUnlay(r, a0 = S.a0show) { if (r <= a0) return r; const y = (r - a0
 // radius √(2(1 − cos α)) = 2·sin(α/2), the hemisphere's equal-area map: true at the crosshair, the corner (one thumb off)
 // at 0.765, one in 2, 4, 8 at 1.05, 1.23, 1.32, bunching toward the horizon's rim at √2, reached by no reading. Nothing
 // is drawn behind it: the sphere is the writer's (the whole sky).
+// By distance address (R689, the default; Tom: "there severe distortion at the horizon, I see none in these demos", then
+// "yes, make it default"). Moving a thing along its own ray changes no direction, so no view of directions alone can
+// show the bunching: it is in distance. Here the vertical is the distance address. A point ρ away over the ground (D
+// the thumb's ground distance) sits on the row (2/π)·atan(D/ρ): one's feet at the bottom, the thumb at ½ (the crosshair),
+// the horizon at 0, never reached; and its height above the ground is laid in the same addresses as a depth there, at
+// the rate (2/π)·D/(ρ² + D²). Inside the thumb heights and depths keep their proportion; past it a thing ρ off keeps
+// its width (across is the direction, equal angles) and is flattened by D/ρ more than perspective does, so the far
+// world, airplanes included, bunches more and more into the band under the horizon: one in 2, then one in 4, one in
+// 8, each band thinner. The K is the look's: point at something else and D moves, and every look has its own fine
+// band and its own bunch. (A first try laid the dip angle by the Cauchy; heights then came out κ times taller, spikes.)
+const ADDR_ACROSS = 75 * DEG;
 const VIEWS = {
+    addr: { R: a => a, inv: r => r, name: 'by distance address (the bunching)' },
     tunnel: { R: a => 2 * Math.sin(Math.min(a, Math.PI / 2) / 2), inv: r => 2 * Math.asin(Math.min(Math.SQRT1_2, r / 2)), name: 'the Cauchy tunnel' },
     area: { R: a => 2 * Math.sin(a / 2), inv: r => 2 * Math.asin(Math.min(1, r / 2)), name: 'equal area (the addresses)' },
     compress: { R: a => a, inv: r => r, name: 'by turns' },
@@ -547,10 +606,21 @@ function drawView() {
     // inside R = √2. At zoom 1 that disc fills the shorter side; zooming in from it is the ordinary equal-area view.
     const sky = S.sky, FID = sky ? 'area' : S.fid;
     const angle = FID !== 'off', VW = VIEWS[FID];
-    const tunnel = !sky && FID === 'tunnel';
-    const fa = sky ? Z * 0.94 * (Math.min(W, Hh) / 2) / 2 : tunnel ? Z * 0.94 * (Math.min(W, Hh) / 2) / Math.SQRT2 : Z * (Math.min(W, Hh) / 2) / (fov / 2);
+    const tunnel = !sky && FID === 'tunnel', addr = !sky && FID === 'addr';
+    // the thumb's ground distance D (the look's reach over the ground), the row address of a ground distance ρ,
+    // (2/π)·atan(D/ρ) (1 at one's feet, ½ at the thumb, 0 the horizon), and its rate (2/π)·D/(ρ² + D²), by which
+    // a height at ρ is laid in the same addresses as a depth there
+    const eyeH = EYE * S.k, Dl = Math.max(1e-3 * S.k, S.Hshow * ROOT3 * Math.cos(S.pitch));
+    const Grow = r => (2 / Math.PI) * Math.atan2(Dl, r), gRate = r => (2 / Math.PI) * Dl / (r * r + Dl * Dl);
+    const sv = Z * 0.55 * Hh, fx = Z * (W / 2) / ADDR_ACROSS, cpA = Math.cos(S.pitch), spA = Math.sin(S.pitch);
+    const yA = (r, y) => Grow(r) - y * gRate(r);
+    const Y0 = yA(Dl, eyeH + S.Hshow * ROOT3 * Math.sin(S.pitch));
+    S.lastAddr = addr ? { D: Dl, row: r => Grow(r), rate: r => gRate(r) } : null;
+    const fa = addr ? fx : sky ? Z * 0.94 * (Math.min(W, Hh) / 2) / 2 : tunnel ? Z * 0.94 * (Math.min(W, Hh) / 2) / Math.SQRT2 : Z * (Math.min(W, Hh) / 2) / (fov / 2);
     S.lastSky = sky ? { cx, cy, rim: 2 * fa, front: Math.SQRT2 * fa } : null;
     const P = c => { if (!angle) return [cx + f * c[0] / c[2], cy - f * c[1] / c[2]];
+        if (addr) { const dy = c[1] * cpA + c[2] * spA, z1 = -c[1] * spA + c[2] * cpA, ph = Math.atan2(c[0], z1);
+            return [cx + fx * ph, cy + sv * (yA(Math.hypot(c[0], z1), dy + eyeH) - Y0)]; }
         const rho = Math.hypot(c[0], c[1]), a = Math.atan2(rho, c[2]);
         const R = VW.R(a), k = rho > 0 ? fa * R / rho : 0;
         return [cx + k * c[0], cy - k * c[1]]; };
@@ -567,11 +637,32 @@ function drawView() {
     // sin α/(R·R′) (R685): cos³α on the flat screen, sin α/α by turns, flat on the equal-area view. Shaded faintly.
     if (S.show.density && (sky || tunnel)) { // flat when laid by the addresses: every address alike, the disc evenly
         vc.fillStyle = 'rgba(212,160,82,0.11)'; vc.beginPath(); vc.arc(cx, cy, (sky ? 2 : Math.SQRT2) * fa, 0, 2 * Math.PI); vc.fill();
-    } else if (S.show.density) {
+    } else if (S.show.density && !addr) {
         const R = Math.hypot(W, Hh) / 2, gr = vc.createRadialGradient(cx, cy, 0, cx, cy, R);
         for (let i = 0; i <= 8; i++) { const a = VW.inv(i / 8 * R / (angle ? fa : f));
             gr.addColorStop(i / 8, `rgba(212,160,82,${0.11 * Math.max(0, viewDensity(FID, a))})`); }
         vc.fillStyle = gr; vc.fillRect(0, 0, W, Hh);
+    }
+    if (addr) {                              // the ground's distance addresses: the look, then one in 2, 4, 8 … to the horizon
+        vc.lineWidth = 1 * dpr; vc.font = `${10 * dpr}px DM Mono, monospace`; vc.textAlign = 'left';
+        const yOf = g => cy + sv * (g - Y0), rows = [];
+        let prev = yOf(0.5), lastLab = -1e9;
+        for (let n = 1; n < 60; n++) {                // past the thumb: one in 2^n, bunching up under the horizon
+            const y = yOf((2 / Math.PI) * Math.atan(Math.pow(2, -n))); if (prev - y < 1.2 * dpr) break; prev = y; rows.push(['1/' + Math.pow(2, n), y]);
+            vc.strokeStyle = `rgba(167,139,250,${0.28 * Math.pow(0.9, n)})`; vc.beginPath(); vc.moveTo(0, y); vc.lineTo(W, y); vc.stroke();
+            if (S.words > 0 && lastLab - y > 13 * dpr || (S.words > 0 && n === 1)) { lastLab = y; vc.fillStyle = 'rgba(200,200,220,0.5)'; vc.fillText('one in ' + Math.pow(2, n), 8 * dpr, y - 3 * dpr); }
+        }
+        prev = yOf(0.5); lastLab = 1e9;
+        for (let n = 1; n < 30; n++) {                // inside the thumb: 1/2, 1/4 … of it, in proportion, toward one's feet
+            const y = yOf((2 / Math.PI) * Math.atan(Math.pow(2, n))); if (y - prev < 1.2 * dpr) break; prev = y; rows.push([String(Math.pow(2, n)), y]);
+            vc.strokeStyle = 'rgba(45,212,191,0.18)'; vc.beginPath(); vc.moveTo(0, y); vc.lineTo(W, y); vc.stroke();
+            if (S.words > 0 && y - lastLab > 13 * dpr) { lastLab = y; vc.fillStyle = 'rgba(200,200,220,0.5)'; vc.fillText(1 / Math.pow(2, n) + ' of the thumb', 8 * dpr, y - 3 * dpr); }
+        }
+        const yt = yOf(0.5); vc.strokeStyle = 'rgba(212,160,82,0.4)'; vc.beginPath(); vc.moveTo(0, yt); vc.lineTo(W, yt); vc.stroke();
+        const yh = yOf(0); vc.strokeStyle = 'rgba(220,220,235,0.55)'; vc.lineWidth = 1.4 * dpr; vc.beginPath(); vc.moveTo(0, yh); vc.lineTo(W, yh); vc.stroke();
+        if (S.words > 0) { vc.fillStyle = 'rgba(212,160,82,0.8)'; vc.fillText('the thumb', 8 * dpr, yt - 3 * dpr);
+            vc.fillStyle = 'rgba(220,220,235,0.7)'; vc.fillText('the horizon, never reached', 8 * dpr, yh - 4 * dpr); }
+        S.lastAddr.rows = rows; S.lastAddr.thumbY = yt; S.lastAddr.horizonY = yh;
     }
     if (tunnel) {                            // the walls: one thumb off (the corner), then one in 2, 4, 8, … bunching
         vc.lineWidth = 1 * dpr; vc.font = `${10 * dpr}px DM Mono, monospace`; vc.textAlign = 'center';
@@ -600,8 +691,8 @@ function drawView() {
     // On the whole sky nothing is behind the screen: a piece is cut only where it passes through the eye, and where it
     // crosses straight behind (its two ends land on opposite sides of the rim), a seam no line is drawn across.
     const piece = (p, q) => {
-        if (sky) { if (Math.hypot(...p) < NEAR || Math.hypot(...q) < NEAR) return;
-            const a = P(p), b = P(q); if (Math.hypot(a[0] - b[0], a[1] - b[1]) > 1.2 * fa) return;
+        if (sky || addr) { if (Math.hypot(...p) < NEAR || Math.hypot(...q) < NEAR) return;
+            const a = P(p), b = P(q); if (Math.hypot(a[0] - b[0], a[1] - b[1]) > (sky ? 1.2 * fa : 0.5 * W)) return;
             vc.moveTo(...a); vc.lineTo(...b); return; }
         if (p[2] < NEAR && q[2] < NEAR) return;
         if (p[2] < NEAR || q[2] < NEAR) { const t = (NEAR - p[2]) / (q[2] - p[2]); const m = [p[0] + t * (q[0] - p[0]), p[1] + t * (q[1] - p[1]), NEAR];
@@ -624,12 +715,12 @@ function drawView() {
     if (!angle) { vc.moveTo(0, cy + f * Math.tan(S.pitch)); vc.lineTo(W, cy + f * Math.tan(S.pitch)); }
     else { let first = true;                 // the horizon, every level direction, bent when laid by turns
         for (let a = -179; a <= 179; a += 2) { const yw = S.yaw + a * DEG, c = cam([e[0] + Math.sin(yw), e[1], e[2] + Math.cos(yw)]);
-            if (!sky && (c[2] <= 0.02 || Math.abs(a) > 170)) { first = true; continue; } const [x, y] = P(c); if (first) vc.moveTo(x, y); else vc.lineTo(x, y); first = false; } }
+            if (!sky && !addr && (c[2] <= 0.02 || Math.abs(a) > 170)) { first = true; continue; } const [x, y] = P(c); if (first) vc.moveTo(x, y); else vc.lineTo(x, y); first = false; } }
     vc.stroke();
     // the things, far first
     const order = FIELD.map(o => [dist(o), o]).sort((a, b) => b[0] - a[0]);
     // Compress (R679): the view laid by turns (P above); no thing is shrunk beyond what perspective gives.
-    const comp = FID !== 'off', target = vc;
+    const comp = FID !== 'off' && !addr, target = vc;
     for (const [, o] of order) {
         const isT = o.i === S.target, sh = 1, cc = centre(o);
         vc.strokeStyle = colourOf(o, 1, RD.get(o.i)); vc.lineWidth = (isT ? 2.4 : 1.1) * dpr;
@@ -645,7 +736,7 @@ function drawView() {
     vc.font = `${11 * dpr}px DM Mono, monospace`; vc.textAlign = 'center';
     for (const [d, o] of order) {
         const c = cam(centre(o)); if (sky ? Math.hypot(...c) < NEAR : c[2] < NEAR) continue;
-        const px = (sky || tunnel ? fa : f) * radius(o) / (sky ? Math.hypot(...c) : c[2]);
+        const px = (sky || tunnel || addr ? fa : f) * radius(o) / (sky ? Math.hypot(...c) : c[2]);
         const isT = o.i === S.target;
         if (S.words === 0 || (!isT && (S.words < 2 || px < 18 * dpr))) continue;
         const [x, y] = P([c[0], c[1] + radius(o) * 0.9, c[2]]);
@@ -825,7 +916,7 @@ function toggleHold() { S.hold = !S.hold; syncMenu(); }
 $('hold').onclick = toggleHold;
 const WORDS = ['off', 'at the crosshairs', 'all'];
 $('words').onclick = () => { S.words = (S.words + 1) % 3; syncMenu(); };
-const FIDS = ['tunnel', 'area', 'compress', 'round', 'off'], FIDNAME = Object.fromEntries(FIDS.map(k => [k, VIEWS[k].name]));
+const FIDS = ['addr', 'tunnel', 'area', 'compress', 'round', 'off'], FIDNAME = Object.fromEntries(FIDS.map(k => [k, VIEWS[k].name]));
 $('fid').onclick = () => { S.fid = FIDS[(FIDS.indexOf(S.fid) + 1) % FIDS.length]; S.Z = Math.max(zmin(), S.Z); syncMenu(); };
 function toggleSky() { S.sky = !S.sky; S.Z = Math.max(zmin(), S.Z); syncMenu(); }
 $('sky').onclick = toggleSky; $('zs').onclick = toggleSky;
@@ -874,6 +965,7 @@ function groundT() { const u = lookDir(S.yaw, S.pitch); return u[1] < -1e-6 ? ey
 function reachOf(o) { const c = centre(o), e = eye(), u = lookDir(S.yaw, S.pitch);
     return Math.max(1e-6, ((c[0] - e[0]) * u[0] + (c[1] - e[1]) * u[1] + (c[2] - e[2]) * u[2]) / ROOT3); }
 function update(dt) {
+    worldNow();
     const turn = 1.2 * dt / Math.max(1, S.Zshow);
     if (keys.has('arrowleft')) S.yaw -= turn; if (keys.has('arrowright')) S.yaw += turn;
     if (keys.has('arrowup')) S.pitch = Math.min(80 * DEG, S.pitch + turn); if (keys.has('arrowdown')) S.pitch = Math.max(-80 * DEG, S.pitch - turn);
@@ -918,6 +1010,7 @@ function frame(now) {
     requestAnimationFrame(frame);
 }
 // a start that is looking at something
+worldNow();
 (() => { S.target = pick(); if (S.target < 0) { for (let a = 0; a < 360; a += 3) { const t = pick(a * DEG, S.pitch); if (t >= 0) { S.yaw = a * DEG; break; } } S.target = pick(); }
     if (S.target >= 0) S.H = S.Hshow = reachOf(FIELD[S.target]); })();
 requestAnimationFrame(frame);
@@ -933,7 +1026,7 @@ window.__crosshairs = {
     show: k => showIt(k), menu: () => ({ open: $('menu').classList.contains('open'), words: S.words, show: { ...S.show } }),
     aim: i => { const c = centre(FIELD[i]), e = eye(); S.yaw = Math.atan2(c[0] - e[0], c[2] - e[2]);
         S.pitch = Math.atan2(c[1] - e[1], Math.hypot(c[0] - e[0], c[2] - e[2])); update(0); return S.target; },
-    focusLay: (a, a0) => focusLay(a, a0 ?? S.a0show), views: VIEWS, viewDensity, a0: () => S.a0show, sky: () => S.lastSky, tunnel: () => S.lastTunnel,
+    focusLay: (a, a0) => focusLay(a, a0 ?? S.a0show), views: VIEWS, viewDensity, a0: () => S.a0show, sky: () => S.lastSky, tunnel: () => S.lastTunnel, addr: () => S.lastAddr, cull: () => cullAngle(),
     zoom: (z, fit) => { if (fit) zoomFit(); else if (z) S.Z = z; S.Zshow = S.Z; syncMenu(); return S.Z; },
     state: () => ({ zoom: S.Z, yaw: S.yaw / DEG, pitch: S.pitch / DEG, x: S.x, z: S.z, k: S.k, K: S.K, hold: S.hold, target: S.target, H: S.Hshow, counts: counts() }),
 };
