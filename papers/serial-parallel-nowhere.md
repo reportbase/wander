@@ -7167,6 +7167,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   the precise form: reads commute because they write nothing; races need a write. What makes geometry race-free is that
   nothing writes to it, not its scale invariance. A reading of a known result, no physics claimed (an actual reading
   registers, so writes). In `plans/rw-computing-note.md`, not the paper (R641).
+- **R659** (4 Nov; Tom: "in computer science, reading and writing incorrectly have great potential for race conditions.
+  geometry seems to be free of such concerns. how can we add that idea without bringing a huge computer section to the
+  read write paper?", then "yes"): **reads do not conflict**: a read adds nothing, so reads of one geometry agree in any
+  order or all at once; a conflict needs a write. *Reads and Writes* §1, one short paragraph after the flags, citing
+  Bernstein (1966, checked against Crossref, doi 10.1109/pgec.1966.264565); the race is named, not explained (no locks,
+  no CREW), the detail staying in `plans/rw-computing-note.md` (R641, R658). Holds by construction for the idealized read
+  (R656: a sampling instrument has written).
 
 ## Appendix B. Demos and computations
 
