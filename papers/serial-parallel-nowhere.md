@@ -7352,6 +7352,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R690** (5 Nov; Tom: "we still don't have a good demo of the read write paper and the 3d cauchy. lets try a new one.
+  the buildings are actually irrelevent, they are the physics. cauchy is the geometry. lets show one of just the geometry
+  and not get distracted by the physics.", then "proceed"): `read.html`, the read with no world. The screen square to
+  the look down the three thumbs' diagonal, the crosshair the triple corner; a direction r = tan α off the look has the
+  3D Cauchy's density 1/(2π(1 + r²)^{3/2}) and share 1 − 1/√(1 + r²) within r. Two views: in thumbs (rings of equal
+  share, one thumb off at r = 1, holding 0.293; then one in 2, 4, 8) and by count (radius √share, the hemisphere a disc,
+  the rim the horizon of the look). The thumbs at r = √2, the homes at 1/√2, the wedge a quarter of what is in front.
+  Beside it the density as a hill to turn, its contours at the same shares. Turning or scaling the world moves nothing
+  on the page: the geometry is given before any payload paints it.
 - **R689** (5 Nov; Tom: "the problem with this demo is N is known, in real cauchy N is not known, only K is culled, the
   rest of N increasingly bunces up at N.", "yes, I just look around, looking at my K, but the K is different wherever i
   look. all the other address increasingly bunch up at the horizon. there severe distortion at the horizon, I see none
