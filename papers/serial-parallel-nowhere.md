@@ -7203,6 +7203,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   and the 120° of two quarter turns (EUL, essay 13), and why the split and the corners survive (they need only the
   exchange). §1: no real instrument is a pure read; the tests are what applies to instruments. Not taken: the referee's
   Euler-in-space point (§5 already has the Lie–Trotter leftover) and the cut of restatements (Tom's call, R657).
+- **R664** (4 Nov; Tom: "update the essays"): R663 carried out. Essay 3 §10: the dipole's [2 + x(1 + α)] factor (5.3–6.6,
+  the payload 60–70%), addresses alone nearly three times too fast, one speed 2.7 times the CMB's, colour slices 2.3, 2.8,
+  4.6; the double slit's 2hv from the slits' counts. Essay 6 §12: the error ε·cosh(ln k) and the walk at k = 20. Essay 13:
+  the two orders of quarter turns 120° apart; the split and corners need only the exchange. Essay 1 §5: no real instrument
+  reads purely, the test sorts quantity by quantity.
 
 ## Appendix B. Demos and computations
 

@@ -378,6 +378,10 @@ The psychologist S. S. Stevens built his classification of measurement scales on
 statement unchanged. Louis Narens and others in the theory of measurement call a statement *meaningful* when it survives
 the symmetries of what is being measured.
 
+No real instrument reads purely: a sensor that samples, a register that holds a value, a machine that rounds it, has
+already written something. The pure read is the limit. What the test offers a real instrument is a sorting, quantity by
+quantity: scale the world, and see which of its numbers move.
+
 What is new is a question these accounts do not ask: **who can apply the test, and from where?** Invariance under
 rescaling has been treated as a property of statements, laws and scales. Here it is a property of standpoints. A reader
 standing somewhere gets every invariant quantity for free and nothing else. Everything that moves under scaling is what
