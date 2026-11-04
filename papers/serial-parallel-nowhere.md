@@ -7292,6 +7292,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   thumb runs a quarter turn against the pair, home at the circle's touch point (35.26°), corner at the crosshair, horizon
   at that thumb (54.74°, the other side). Drawn on `crosshairs.html` (compress mode; hook `corners`), and in essay 5's
   "Three thumbs at the crosshair".
+- **R677** (5 Nov; Tom: "1 2 3", the second depth in the compressed view): THM run 4. In the thumbs' levels Lᵢ = ln(reach
+  along thumb i in thumbs) distance runs along the diagonal and direction lies square to it, Σ Lᵢ² = 3L̄² + (1/3)Σ pairs
+  exactly; off the look the thumbs' mean level reads a thing nearer than it is (a term ≤ 0, −∞ at home). So the squeezes
+  multiply: direction's cosh(max pair level) times distance's cosh(ln r), half size at r = 2 ± √3. `crosshairs.html`'s
+  compress uses both; *Reads and Writes* §6, §7 and §10 updated for the three thumbs (R675, R676); essay 5 likewise.
+- **R678** (5 Nov; the third): `plane-thumbs.html`, two thumbs in the plane: the writer's plane round the corner (the
+  square one thumb on a side, the disc touching both thumbs at home and the horizon, ±45° from the eye) and the reader's
+  view from home to the horizon, flat and compressed (half size at ±30°, v/h = 2 ± √3). A demo, nothing new claimed.
 
 ## Appendix B. Demos and computations
 
