@@ -1420,6 +1420,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   because address and payload are separate; the computing principle cited as known, never proved here.
   R662 (4 Nov; Tom: "update the essays with the no race conditions"): essay 1's opening and §9, essay 3's "The second
   test", essay 16 §1 "Why reads never race" (Bernstein, CREW, addresses that move with their contents); README, `essays.html`.
+  R663 (4 Nov; a third referee's list; Tom: "proceed"): *Reads and Writes* §11's dipole with EBD's numbers (the payload
+  60–70% of the expected dipole; one β, 2.7× the CMB's), the double slit's 2hv from counts, §8's error ε·cosh(ln k), §7's
+  three laws on the sphere and the 120°, §1's pure read a limit. No new test; the cut of restatements left to Tom.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
