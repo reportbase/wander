@@ -7352,6 +7352,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R692** (5 Nov; Tom: "update the reads and writes paper"): R685–R691 carried into *Reads and Writes*. §6 gains "Laid
+  by the addresses" after the one-thumb circle (the equal-area screen 2·sin(α/2), the flat screen's tan α and cos³α; the
+  tunnel's rings at 0.765, 1.05, 1.23, 1.32 packing toward √2, the bands 0.26, 0.20, 0.12, 0.12; the ground's distance
+  address (2/π)·atan(D/ρ); a world culled by K at π/(8K), the work K whatever N); §7 gains "Where the reader stands" after
+  the tunnel (a point behind the screen, a vantage; the read with no world); Code and data names `read.html` and
+  `crosshairs.html`.
 - **R691** (5 Nov; Tom: "update the essays"): R685–R690 carried into the essays. Essay 5 §10 gains "Laid by the
   addresses" (the equal-area screen 2·sin(α/2) the addresses' own; the tunnel's rings at 0.765, 1.05, 1.23, 1.32 packing
   toward √2, the bands holding 0.26, 0.20, 0.12 and the last 0.12; the distance address (2/π)·atan(D/ρ); no N, the world

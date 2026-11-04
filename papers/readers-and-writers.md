@@ -555,6 +555,18 @@ squeeze is not round, hexagonal near the corner and unbounded only at the three 
 seen, a thing spans the angle it spans, and laid by turns off the look its place parts from a flat screen's only far out
 (tan α/α, 1.10 at 30°, 1.27 at 45°). (Checked exactly; see Code and data.)
 
+**Laid by the addresses.** A flat screen does not give each address the same room: off the look it stretches the
+directions as tan α and thins them as cos³α. The screen that does is the one where equal room holds equal addresses. For
+directions taken uniformly, that is Lambert's equal-area map about the look, a direction α off it at radius 2·sin(α/2):
+true at the crosshair, off by 0.9% at 15°, 3.4% at 30°, 7.6% at 45°. Laid that way, the tunnel's rings come where the
+readings fall: one thumb off the look at 0.765, then one in two, one in four, one in eight at 1.05, 1.23 and 1.32, packing
+toward the rim at √2, the horizon. They pack because each stretch holds fewer of the look's directions than the one before
+(0.26, 0.20, 0.12 of what is in front, and 0.12 past one in eight); in the plane, with one thumb, they are as many. The
+ground has its own address: a point ρ along it, with the thumb's ground point D away, reads (2/π)·atan(D/ρ), one at the
+feet, a half at the thumb, zero at the horizon, so the far ground gathers in rows just under the horizon. Nothing in this
+needs to know how much world there is. A world made only where the view reaches, from cells at every scale and kept only
+where a thing spans π/(8K) or more, gives the same read, and the reader's work is its K addresses whatever the world's N.
+
 **Read in ratios, counted in thumbs.** Inside the corner the reader's readings are in proportion; past it each is a ratio,
 one in two, one in four, one in eight, and two far things are related by the ratio of their readings ("one in eight is
 half of one in four"), the same at every scale. Each stretch over which the reading halves holds the same number of
@@ -628,6 +640,13 @@ turns with the look, continuously and without a seam, so whatever it looks at is
 addresses, and each address is exact, given by the geometry, not computed. That is the reader's fidelity: perfect wherever
 it looks, because it is wherever it looks. The wedge, the octant and the sphere are what a writer draws to describe that
 tunnel from outside.
+
+**Where the reader stands.** Behind the screen, at one point. The look runs from it to the crosshair; a thumb lands √2
+off the look on a screen one thumb away, home at 1/√2, one thumb off at 1, and the horizon runs parallel to the screen and
+never lands on it. The point has no size and draws no shape: it is a vantage, the place the read is from. With no world at
+all the read is still there, the addresses in thumbs (the Cauchy's rings of equal share) or by count (a disc whose rim is
+the horizon), the 3D Cauchy a hill about the look; turning and scaling the world change none of it. The buildings are what
+paints it.
 
 **One thumb, two thumbs, three.** In the plane the reader holds one thumb at arm's length: H, square to the line of sight,
 and one reading, v against h. In space it holds two thumbs crossed at a right angle, both square to the line of sight: one
@@ -942,7 +961,7 @@ inside a read, and what carries an observer from one to the other.
 
 The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each
 with its plan written before it was run: parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
-measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; Euler's formula as a count of reads in `plans/elm-plan.md`
+measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the read with no world, and where the reader stands, in `read.html`; the tunnel laid by its addresses, the distance address and a world culled by K in `crosshairs.html`; Euler's formula as a count of reads in `plans/elm-plan.md`
 and `runs/elm/`. The three cases in data of §11 (LIGO, the quasar dipole, single photons) are `plans/lgo-plan.md`,
 `plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and `runs/wvp/`: each plan states its
 predictions and what would count against them before its run, and records the runs as they came out, the killed ones too.
