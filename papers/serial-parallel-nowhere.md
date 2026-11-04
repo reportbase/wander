@@ -7147,6 +7147,26 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   data cases, which illustrate and do not alone establish. The referee's diffraction point was not taken (a straight
   edge's fringes are on the lit side only); its mean point already answered (R604). *Reads and Writes* §1, §2, §4, §5, §6,
   §8, Code and data; essays 14, 15, 16. Corrects R591's and R597's "π the total of a completed turn".
+- **R657** (4 Nov; a second ChatGPT referee report of *Reads and Writes*, 8.2/10; Tom: "Yes. Proceed with R657: the six
+  one-sentence edits only … precision without retreat"): **six scoping sentences, no ruling changed.** §1: the scale test
+  necessary, not sufficient (a probability is unmoved by scaling and is no direction); the second test, standpoint and
+  turn fixed, tells address from payload. §2: the reading is of the Cauchy this construction makes; another Cauchy (a
+  resonance's line, a ratio of normals, a stable sum) may have another origin, a question for each case (R341, R358).
+  §2: a direction, read as a direction, has no length to add; its number is a chart, the question what survives
+  re-charting. §2: the payload's four recoveries exact in the ideal model, estimates from finite noisy samples, the blur's
+  the least stable. §5: a transcendental's value as a decimal or fraction needs a limit, its definition can be finite and
+  exact; π with the address and e with the payload marked as this paper's reading. §2: "never sees a shape" is what one
+  read determines from one standpoint with nothing written, not what a visual system infers; no shape in amounts.
+  Special relativity and Euler left as they were; a roadmap, claim labels and repetition cuts not taken (Tom's to decide).
+- **R658** (4 Nov; Tom: "geometry is free, it is not computed or algoritmic. there is no arctan or tangent in geometry
+  for example."; "the speculation is that is why geometry has no race conditions, it has a clean, free,
+  non-algorithimic and a clean seperation between reading and writing."; "yes"): **geometry is free: given, not
+  computed; tan, arctan and every formula for the turn are the writer's way of stating it** (R458, R584 restated). *Reads
+  and Writes* §1 says so in one sentence after "given whole, not performed"; §2's (2/π)·arctan s is marked the writer's
+  account. **The speculation:** that is why geometry has no race conditions. Bernstein's conditions (1966) and CREW give
+  the precise form: reads commute because they write nothing; races need a write. What makes geometry race-free is that
+  nothing writes to it, not its scale invariance. A reading of a known result, no physics claimed (an actual reading
+  registers, so writes). In `plans/rw-computing-note.md`, not the paper (R641).
 
 ## Appendix B. Demos and computations
 
