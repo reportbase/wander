@@ -1583,6 +1583,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   with no world: the addresses in thumbs and by count, the 3D Cauchy as a hill, the read drawn out on opening.
   R691 (5 Nov; Tom: "update the essays"): R685–R690 in essay 5 §10 ("Laid by the addresses", "Where the reader stands"),
   essay 4, essay 16 §10 ("A world made where the view reaches"), essay 3's demos and the essays page.
+  R692 (5 Nov; Tom: "update the reads and writes paper"): R685–R691 in *Reads and Writes* §6 ("Laid by the addresses"),
+  §7 ("Where the reader stands") and Code and data.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
