@@ -146,7 +146,9 @@ last. The writer's continuous things, the real line, the circle held whole, π a
 and held as finished: a ruler subdivided without end, a polygon given ever more sides, interest compounded ever more
 often. So there are two continuities. The reader's is never counted; the writer's is a count completed. Scaling the world leaves a turn as it was and multiplies every count of units; that is the first test seen from this
 side. These are the two acts idealized, not their implementations: a sensor that samples, a register that holds a
-reading, a machine that rounds it, has already written; the read is what is taken, before anything takes it. The rest of the paper keeps returning to this line, in the corner and the horizon, in which numbers belong to whom, in
+reading, a machine that rounds it, has already written; the read is what is taken, before anything takes it. No real
+instrument is a pure read; the pure read is the limit, and what the paper offers for real instruments is the two tests,
+applied quantity by quantity. The rest of the paper keeps returning to this line, in the corner and the horizon, in which numbers belong to whom, in
 K and N, and in the passage from one act to the other (§8, "Turns, counts and corners").
 
 **V.** One quantity sits on the line between the two acts: V, the breadth of the other party, the mountain in the distance
@@ -627,7 +629,12 @@ on the sphere, it is the central sweep's (Thales' circle through home, the ends 
 
 **What survives in space, and what does not.** In the plane, one law plays four parts: the image of the uniform turn under
 a Möbius map, harmonic measure, the powers of the standpoint, and the two sweeps' rates. On the sphere they part, and turns
-of space do not commute. What survives is the split between address and payload, the corners, and the wedge seen from home.
+of space do not commute. They come apart into three laws: harmonic measure keeps the powers of the standpoint and its
+mean; the spherical Cauchy, the uniform turn pushed through a boost, keeps the Möbius maps; and neither is the image of
+the other. A quarter turn about one axis and then another ends 120° away from the same two taken in the other order,
+where in the plane any two turns commute. What survives is the split between address and payload, the corners, and the
+wedge seen from home: the second test still sorts every quantity, and every pair of thumbs still has its corner at the
+median, since those need only the exchange of two shares, not commuting turns (the essays' thirteenth works this through).
 
 ## 8. From reading to writing
 
@@ -740,8 +747,11 @@ are written.
   and V is written as V*/H. Only a step counted in an agreed unit gives an amount, and that is the one rung scaling the
   world moves.
 - *How well.* The place's error per unit of angular error is least when the thing sits at the pair's corner, the circle on
-  the baseline, half the baseline equal to the distance. Elsewhere the error stretches as d/(B/2). Past about B/ε, with ε
-  the smallest angle the reader can tell apart, the thing is a direction alone.
+  the baseline, half the baseline equal to the distance. With k = d/(B/2) and ε the smallest angle the reader can tell
+  apart, the fractional error in the distance, and so in V, is ε·cosh(ln k) = ε·(k + 1/k)/2: ε at the corner, about
+  ε·d/B far off, the same at k and 1/k. It reaches 1, and the thing is a direction alone, near d = B/ε. In the worked
+  example (§10) one thumb walked toward a range ten thumbs off puts it at k = 20, an error 10.025 times the step's ε; a
+  baseline of twenty thumbs would put it at the corner, with ε alone.
 - *Of which things.* So one observer, from the same two standpoints, knows V for near things and does not for far ones.
   Knowing V belongs to a thing at its distance, not to the observer.
 
@@ -861,13 +871,19 @@ fetched, which could have failed.
 A reader moving through a sky of sources counts more ahead. With no limit on brightness the census is a count of
 directions, and its dipole is 2β, Ellis and Baldwin's 2, from the addresses alone (1984). A real census is cut at a
 brightness, and the cut adds a term set by what arrives: the counts' slope and the sources' spectra, read from the same
-catalogue. On Secrest et al.'s quasars (2021) four slices by brightness give one β, as one motion of the reader should;
-slices by colour disagree, which no motion of the reader can do, so part of the dipole belongs to what arrives. The sort
+catalogue. On Secrest et al.'s quasars (2021) the sort sets the number. Per slice the expected dipole is
+[2 + x(1 + α)]·β, the 2 the addresses' and x(1 + α) the payload's, read from the slice's own counts and colours: 5.3 to
+6.6 times β, so the payload carries 60–70% of it. Taken as addresses alone (2β), the measured 0.018–0.023 would give a
+speed nearly three times too large; with the payload's part divided out, four slices by brightness give one β,
+3.3·10⁻³ ± 0.3·10⁻³, 2.7 times the speed read from the microwave background, as one motion of the reader should. Slices
+by colour give 2.3, 2.8 and 4.6 times it, which no motion of the reader can do, so part of the dipole belongs to what
+arrives. The sort
 does not settle where the dipole comes from; it says which part could be the reader's.
 
 In a double slit lit one photon at a time, the fringes' visibility is at most 2hv, h and v the two paths' shares, and
 the which-path predictability |h² − v²| (Greenberger and Yasin 1988; Englert 1996): full visibility only at the corner.
-On Aspden, Padgett and Spalding's frames (2016) the shares give 2hv = 0.997 and 1.000, the pair at its corner, and the
+On Aspden, Padgett and Spalding's frames (2016) the slits' counts, 9,026 : 10,465 and 11,993 : 11,891, give
+2hv = 2√(n₁n₂)/(n₁ + n₂) = 0.997 and 1.000, the pair at its corner, and the
 measured contrast, 0.69 and 0.56, lies under that bound, short by the source. The bound is the shares', the geometry's;
 how far below it a pattern falls is what arrives. None of the three is new physics. What the reading adds is where each
 part lives.

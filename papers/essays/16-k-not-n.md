@@ -70,6 +70,28 @@ So the computing words are the writer's frame applied to both acts. Memory is a 
 an address looked up in it. The read of this series comes before any such layout. It is what a reader has when no one
 has written the memory, and when no one could, because the world it reads has no size anyone holds.
 
+### Why reads never race
+
+The first thing a programmer thinks of, seeing *read* and *write* together, is a race. Bernstein's conditions (1966)
+say when two operations may run together: neither writes what the other reads, and they do not write the same place.
+Reads with reads are always safe (the concurrent-read side of CREW); a race needs a write meeting a read or another
+write on one location. Most of the machinery of concurrency, locks, versions, copy-on-write, persistent structures, MVCC
+(multiversion concurrency control), exists to keep that meeting from happening, or to make it harmless.
+
+The split this series turns on is that condition, given rather than built. A read adds nothing, so reads of one geometry
+agree in whatever order they are taken, or all at once. A write states the payload, and the second test of the third
+essay says a change of payload moves no address. So a write never moves what a read stands on, and never runs into one.
+
+The failures in computing are exactly where that breaks: places whose addresses move with their contents. A vector
+that reallocates invalidates every pointer into it; a hash table that rehashes moves every entry; a compacting
+collector moves objects under their references. Each is repaired by rebuilding the separation by hand: stable handles,
+indirection tables, copies kept for the readers, versions that leave the old addresses standing. The reader's addresses
+need none of it. They are the turn's, laid before anything arrives, and nothing written can move them.
+
+This is not a claim that geometry proves anything new about concurrency. It is the other way: a principle computing
+already holds, applied to geometry, says why the reader's world has no races to manage. It does not make a computer
+race-free, which does both acts in one memory (*Reads and Writes* sets the machine aside for that reason).
+
 ---
 
 ## 2. Two letters
@@ -581,6 +603,8 @@ geometry of a reader is K, not N.
 
 ## Sources
 
+- Bernstein, A. J. (1966). Analysis of programs for parallel processing. *IEEE Transactions on Electronic Computers*
+  EC-15(5), 757–763.
 - Böröczky, K. (1974). Gömbkitöltések állandó görbületű terekben I. *Matematikai Lapok* 25, 265–306. (The binary tiling.)
 - Boyd, J. P. (1982). The optimization of convergence for Chebyshev polynomial methods in an unbounded domain. *Journal of
   Computational Physics* 45, 43–79; (1987). Spectral methods using rational basis functions on an infinite interval.

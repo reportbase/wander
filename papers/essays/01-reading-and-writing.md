@@ -12,6 +12,12 @@ The ideas here are not new one by one. Pieces of them are scattered through surv
 and the geometry of the circle, each seen from one side. The aim is to put the pieces in one place and show that they
 fit.
 
+One consequence belongs up front, because the words invite it. Put *read* and *write* side by side and anyone who has
+programmed thinks of a race: a read and a write meeting on one thing, the answer depending on which came first. Here that
+never arises. A read adds nothing, so reads taken in any order, or all at once, agree. What a read gives is an address, a
+direction; what a write states is the payload met along it, and writing the payload moves no address, so no write runs
+into a read. Computing has to engineer that separation; the geometry starts with it.
+
 ---
 
 ## 1. Mapping a room with no ruler
@@ -549,6 +555,14 @@ photons arriving one at a time) each split into a part read as a direction and a
 more for a public standard. When a measurement fails, the count says where to look: at the amounts carried in, not at
 the readings.
 
+**It keeps reads from racing.** In computing, two operations can run together without a race when neither writes what
+the other reads or writes (Bernstein's conditions, 1966): reads with reads are always safe, and the trouble is a read
+and a write meeting on one place. The split here is that condition built in. Reads add nothing, so they never conflict
+with one another; a write states the payload, and the payload is not where the addresses are kept, so it moves none of
+them. A system whose addresses move with their contents, an array that reallocates or a table that rehashes, has to
+rebuild the separation by hand, with stable handles or copies kept for its readers. Geometry never had to: its addresses
+are given, and nothing writes to them. This is argued from a principle computing already holds, not proved anew.
+
 **It explains how much a lone reader can do.** This is perhaps the most surprising lesson. With no unit at all, a reader
 can map a room, size every object against every other, build a tower of units, check it by closing loops, and have the full
 geometry of the circle, its corner, its halves and its symmetry, as the law of its own directions, with no circle held:
@@ -566,6 +580,8 @@ to be handed.
 
 The essay draws on these; each is cited for something it uses.
 
+- Bernstein, A. J. (1966). Analysis of programs for parallel processing. *IEEE Transactions on Electronic Computers*
+  EC-15(5), 757–763. (When operations can run together without a race.)
 - Bridgman, P. W. (1922). *Dimensional Analysis*. Yale University Press. "The absolute significance of relative
   magnitude", pp. 18–20 and 73.
 - Buckingham, E. (1914). On physically similar systems. *Physical Review* 4, 345–376.

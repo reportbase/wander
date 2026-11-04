@@ -7189,6 +7189,20 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   geometry meets it. *Reads and Writes*' abstract says it after the address and payload are named (the two acts never
   race; computing engineers the separation, geometry is given it), and §1 meets the title's expectation right after its
   opening example, pointing to R659–R660's paragraph for the detail.
+- **R662** (4 Nov; Tom: "update the essays with the no race conditions"): the no-race argument carried into the essays.
+  Essay 1 says it in its opening (the words invite a race; here none arises) and in §9 ("It keeps reads from racing",
+  Bernstein cited); essay 3's "The second test" says the second test is why a write never runs into a read; essay 16 §1 has
+  "Why reads never race" (Bernstein, CREW, the remedies for addresses that move with their contents; a principle applied to
+  geometry, not a claim about concurrency; a machine still does both acts in one memory). The README and `essays.html` name it.
+- **R663** (4 Nov; a third referee's list of six content changes; Tom: "proceed" to Claude's triage): *Reads and Writes*
+  made to do more with results already in the record, no new test. §11's dipole now shows the sort setting the number
+  (EBD run 1: [2 + x(1 + α)]·β per slice, the payload 60–70%; addresses alone would read β nearly three times too large;
+  one β, 3.3·10⁻³, 2.7 times the CMB's; colour slices 2.3, 2.8, 4.6); the double slit's 2hv from the slits' counts (WVP run
+  4). §8's "How well" gives the error ε·cosh(ln k), k = d/(B/2) (`parallax.md` Prop. 4; the referee's (d/(B/2))·ε is
+  twice too large far off), with §10's walk at k = 20, 10.025 ε. §7's "What survives" names the three laws on the sphere
+  and the 120° of two quarter turns (EUL, essay 13), and why the split and the corners survive (they need only the
+  exchange). §1: no real instrument is a pure read; the tests are what applies to instruments. Not taken: the referee's
+  Euler-in-space point (§5 already has the Lie–Trotter leftover) and the cut of restatements (Tom's call, R657).
 
 ## Appendix B. Demos and computations
 
