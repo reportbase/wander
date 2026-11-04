@@ -160,6 +160,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   3°, 0.83 and 1.20 at 34°), three-fold: squeezed toward the thumbs (the horizons), stretched toward the homes, creased
   where the worst pair changes, another wedge's directions past the ring. R682's round lay kept as `fid=round`. Hook adds
   `focusR(c, a0)`, `rateAt(φ)`.
+  Since R684 (Tom, of the round lay: "it interesting, keep it as an option, but its heavily distorted, not what it
+  actaully looks like."): by turns is the default again (`fid=compress`); the round lay is "silver ball" (`fid=round`),
+  the exact one "grain, exact" (`fid=focus`); the toggle by turns / silver ball / grain, exact / flat screen.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1529,6 +1532,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R682 (5 Nov; Tom: "When I move the cross hairs to an object, it should have perfect fidelity. Moving away from the
   object should be increasingly distorted, by gentle at first"): `crosshairs.html`'s view true at the focus, laid by grain.
   R683 (5 Nov; Tom: "Yes, make it exact"): the lay by each direction's own pair turn; not gentle and not round, R682's kept.
+  R684 (5 Nov; Tom: "it interesting, keep it as an option, but its heavily distorted, not what it actaully looks like."):
+  by turns the default again; the grain lays options ("silver ball", "grain, exact").
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

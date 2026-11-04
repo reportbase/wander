@@ -54,7 +54,7 @@
     Depth (R677; THM run 4): the compress squeeze is the direction's times the distance's, cosh(ln r), r the thing's distance
     over the corner's; in the thumbs' levels distance and direction are orthogonal.
     Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&zoom=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
-    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=focus|round|compress|off (cells and blur read as compress).
+    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=compress|round|focus|off (cells and blur read as compress).
     Test hook: window.__crosshairs (objects, target, H, read, readings, frame, lay, addresses, counts, pick, set (with words,
     show), show, menu, aim(i), zoom(z, fit), state).
     -->
@@ -227,10 +227,11 @@
     far off or an airplane high up can be seen and pointed at; it changes how large things look, never a reading. H still
     comes from what the crosshairs pass through: zoom onto an airplane and H is its distance, onto a stone at your feet and
     H is a step. Held on an airplane, the look follows it as it flies.</li>
-    <li><b>True at the focus</b> (menu: view). The thing at the crosshairs is drawn true, out to its own edge; past it each
-    direction is laid by its address grain, cosh of how far its three readings part, so the squeeze is nothing at first,
-    1% a few degrees out, 8% at 10°, 28% at 20°, and the whole half of the world in front lands within about 36° more.
-    Point at something else and it is the one drawn true. The other views: by turns (even angles), and the flat screen.</li>
+    <li><b>The views</b> (menu: view). By turns, the default: even angles off the look, true at the crosshair and eased
+    gently against the flat screen farther out (3% at 15°, 10% at 30°). Silver ball: the thing at the crosshairs drawn true
+    to its edge, then each direction laid by its address grain, so the whole half of the world in front lands within about
+    36° more, like a mirror ball. Grain, exact: the same from each direction's own three readings, three-sided and creased.
+    And the flat screen.</li>
     </ol>
     <p class="d">After <i>Reads and Writes</i> §6 ("The crosshairs") and §7 ("One thumb, two thumbs"), and essay 4.</p>
 </div>
@@ -336,7 +337,10 @@ const S = {
     Z: Math.max(1, Math.min(ZMAX, num('zoom', 1))), Zshow: Math.max(1, Math.min(ZMAX, num('zoom', 1))),
     // the view (R672, R679, R680): 'compress' laid by turns off the look, or 'off' the flat screen; nothing hidden or blurred
     // since R682 'focus' (the default): laid by the address grain off the thing pointed at (FOCUS below)
-    fid: Q.get('fid') === 'off' ? 'off' : Q.get('fid') === 'round' ? 'round' : ['compress', 'cells', 'blur'].includes(Q.get('fid')) ? 'compress' : 'focus',
+    // since R684 by turns again by default (Tom, of the round lay: "it interesting, keep it as an option, but its heavily
+    // distorted, not what it actaully looks like."): even angles off the look, true at the crosshair, the periphery eased
+    // in gently (tan α/α 1.03 at 15°, 1.10 at 30°) against the flat screen; the two grain lays are options
+    fid: ['off', 'round', 'focus'].includes(Q.get('fid')) ? Q.get('fid') : 'compress',
     a0: 0, a0show: 0,                       // the pointed thing's angular radius, the region kept true
 };
 $('K').value = String(S.K);
@@ -755,8 +759,8 @@ function toggleHold() { S.hold = !S.hold; syncMenu(); }
 $('hold').onclick = toggleHold;
 const WORDS = ['off', 'at the crosshairs', 'all'];
 $('words').onclick = () => { S.words = (S.words + 1) % 3; syncMenu(); };
-const FIDS = ['focus', 'round', 'compress', 'off'],
-    FIDNAME = { focus: 'true at the focus, exact', round: 'true at the focus, round', compress: 'by turns', off: 'flat screen' };
+const FIDS = ['compress', 'round', 'focus', 'off'],
+    FIDNAME = { compress: 'by turns', round: 'silver ball (grain, round)', focus: 'grain, exact', off: 'flat screen' };
 $('fid').onclick = () => { S.fid = FIDS[(FIDS.indexOf(S.fid) + 1) % FIDS.length]; syncMenu(); };
 $('K').onchange = () => { S.K = +$('K').value; };
 $('kup').onclick = () => { S.k *= 10; S.H *= 10; S.Hshow *= 10; };

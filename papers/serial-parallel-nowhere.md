@@ -7326,6 +7326,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   stretched toward each home, with a crease wherever the farthest pair changes. Because a reading falling to zero turns at
   a finite rate in angle, the addresses do not crowd at the homes; they crowd only in levels. The round lay of R682 is
   gentle (second order) because it uses the linear level. Both kept on the page; which is default is Tom's. A demo.
+- **R684** (5 Nov; Tom, of the round lay, "a christmas tree ornement silver ball": "it interesting, keep it as an option,
+  but its heavily distorted, not what it actaully looks like."): the default view of `crosshairs.html` is by turns again
+  (even angles, true at the crosshair, eased 3% at 15° and 10% at 30° against the flat screen); the grain lays are options,
+  "silver ball" (R682) and "grain, exact" (R683). The grain is a precision, not how a view looks (R679 again). A demo.
 
 ## Appendix B. Demos and computations
 
