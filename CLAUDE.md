@@ -170,6 +170,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   directions per screen area, sin α/(R·R′) (`viewDensity`): flat on equal area, cos³ on the flat screen, sin α/α by
   turns. "Grain, exact" (R683) removed (`fid=focus` reads as equal area), `focusR`/`rateAt` gone; the toggle equal area /
   by turns / silver ball (approximate) / flat screen. Hook adds `views`, `viewDensity`.
+  Since R686 (Tom: "do the whole sky"): "the whole sky" (menu, a ◯ button above the zoom buttons, O, `?sky=1`) carries the
+  equal-area view to every direction: the sphere a disc of radius 2 at zoom 1, the look its centre, square to the look on
+  the dashed circle at √2, straight behind the rim; lines crossing the rim's seam are not drawn; zoom in from it. Hook adds
+  `sky()` (the disc's centre, rim and forward-half radii, or null), and `set` takes `sky`.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1543,6 +1547,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   by turns the default again; the grain lays options ("silver ball", "grain, exact").
   R685 (5 Nov; Tom: "we are looking for the correct math, not hard coded approximation."): `crosshairs.html`'s default is
   Lambert's equal-area projection about the crosshair, the addresses' own screen; the shading exact per view.
+  R686 (5 Nov; Tom: "do the whole sky"): `crosshairs.html`'s whole sky, equal area to every direction, the sphere a disc.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

@@ -7338,6 +7338,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   directions is flat; the Cauchy's cos³α is the flat screen's density of the same directions, sin α/(R·R′) with
   R = tan α, and by turns it is sin α/α. `crosshairs.html`'s default; the silver ball kept as an approximation, R683's
   lay dropped (its rate C(φ) was the linear level again). A demo, the projection classical.
+- **R686** (5 Nov; Tom asked which view first-person games use, was told the flat screen, then: "do the whole sky"): the
+  equal-area view carried to every direction. R(α) = 2·sin(α/2) reaches straight behind at R = 2, every direction still
+  given the same room, so the whole sphere of directions is one disc: the look its centre, the directions square to it on
+  R = √2 (the forward half, the most a flat screen could ever show, inside it with exactly half the area), straight
+  behind spread round the rim. The flat screen cannot pass 90°; by turns reaches 180° but stretches the back across the
+  rim by α/sin α. `crosshairs.html`'s "the whole sky" (menu, the ◯ button, O, `?sky=1`); zooming in from it is the usual
+  equal-area view. A demo, the projection classical.
 
 ## Appendix B. Demos and computations
 

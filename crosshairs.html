@@ -54,7 +54,9 @@
     Depth (R677; THM run 4): the compress squeeze is the direction's times the distance's, cosh(ln r), r the thing's distance
     over the corner's; in the thumbs' levels distance and direction are orthogonal.
     Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&zoom=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
-    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=area|compress|round|off (cells and blur read as compress).
+    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=area|compress|round|off (cells and blur read as compress)&sky=1.
+    The whole sky (R686; Tom: "do the whole sky"): the menu's "the whole sky", the ◯ button or O: the equal-area view carried to
+    every direction, the sphere a disc of radius 2, straight behind its rim and the forward half inside √2; zoom in from it.
     Test hook: window.__crosshairs (objects, target, H, read, readings, frame, lay, addresses, counts, pick, set (with words,
     show), show, menu, aim(i), zoom(z, fit), state).
     -->
@@ -102,6 +104,7 @@
         display: flex; flex-direction: column; gap: 8px }
     #zoomBtns button { width: 44px; height: 44px; border-radius: 22px; background: rgba(20,20,28,0.7); font-size: 1.2rem; padding: 0 }
     @media (pointer: coarse) { #zoomBtns button { width: 52px; height: 52px; border-radius: 26px } }
+    #zoomBtns button.on { background: rgba(212,160,82,0.35) }
     body.strip #zoomBtns { display: none }
     </style>
 </head>
@@ -119,6 +122,7 @@
     <button data-show="cube">the one-thumb cube <span>on</span></button>
     <button data-show="density">the Cauchy's shading <span>on</span></button>
     <button id="fid">view <span>by turns</span></button>
+    <button id="sky">the whole sky <span>off</span></button>
     <div class="sec">H and the world</div>
     <button id="hold">hold H <span>off</span></button>
     <button id="zin">zoom in <span>× 1</span></button>
@@ -137,7 +141,7 @@
 <div id="mapBox" class="over"><canvas id="map"></canvas></div>
 <div id="stripBox" class="over"><canvas id="strip"></canvas></div>
 <div id="walk"><button id="fwd" aria-label="walk">▲</button><button id="back" aria-label="back">▼</button></div>
-<div id="zoomBtns"><button id="zi" aria-label="zoom in">+</button><button id="zo" aria-label="zoom out">−</button></div>
+<div id="zoomBtns"><button id="zs" aria-label="the whole sky" title="the whole sky (O)">◯</button><button id="zi" aria-label="zoom in">+</button><button id="zo" aria-label="zoom out">−</button></div>
 <div id="about" class="over">
     <button class="x" id="aboutX" aria-label="close">✕</button>
     <h1>How H makes the scene</h1>
@@ -233,6 +237,10 @@
     distortion is nothing at first and grows: under 1% at 15°, 3% at 30°, 8% at 45°. The shading, the directions per bit
     of screen, is flat on it. By turns: equal angles (radius α). Silver ball: an approximation, the grain's √6 taken as
     exact. And the flat screen, where the shading is the cos³ falloff.</li>
+    <li><b>The whole sky</b> (menu, the ◯ button, or O). The equal-area view carried all the way round: every direction at
+    once, behind you included, still each with the same room. The sphere becomes a disc, the look at its centre, the
+    directions square to it on the dashed circle (radius √2) and straight behind on the rim (radius 2). A flat screen
+    can never pass 90°; games that show everything at once use this kind of map. Zoom in and it becomes the usual view.</li>
     </ol>
     <p class="d">After <i>Reads and Writes</i> §6 ("The crosshairs") and §7 ("One thumb, two thumbs"), and essay 4.</p>
 </div>
@@ -343,6 +351,9 @@ const S = {
     // in gently (tan α/α 1.03 at 15°, 1.10 at 30°) against the flat screen; the two grain lays are options
     // since R685 the equal-area view is the default (the addresses' own screen); 'focus' (R683) reads as it
     fid: ['off', 'round', 'compress'].includes(Q.get('fid')) ? Q.get('fid') : 'area',
+    // the whole sky (5 Nov 2026, Tom: "do the whole sky"): every direction at once, behind included, on the equal-area
+    // view; at zoom 1 the sphere is a disc, the look its centre and straight behind its rim
+    sky: Q.get('sky') === '1',
     a0: 0, a0show: 0,                       // the pointed thing's angular radius, the region kept true
 };
 $('K').value = String(S.K);
@@ -511,18 +522,35 @@ function drawView() {
     // angle Δ/d, which already falls one in two each time the distance doubles); nothing is shrunk further. R674–R677
     // shrank each thing by its grain, (π/K)·cosh of its levels, which is a precision (how finely an address holds it),
     // not a size: drawn as a size it squeezed everything off the crosshair at once.
-    const angle = S.fid !== 'off', fa = Z * (Math.min(W, Hh) / 2) / (fov / 2), VW = VIEWS[S.fid];
+    // The whole sky (R686): Lambert's view carried to every direction. The flat screen cannot pass 90° (tan α runs
+    // off); by turns could reach 180° but stretches the back across the rim; equal area reaches straight behind at
+    // R = 2, each direction still given the same room, so the whole sphere is a disc of radius 2, the forward half
+    // inside R = √2. At zoom 1 that disc fills the shorter side; zooming in from it is the ordinary equal-area view.
+    const sky = S.sky, FID = sky ? 'area' : S.fid;
+    const angle = FID !== 'off', VW = VIEWS[FID];
+    const fa = sky ? Z * 0.94 * (Math.min(W, Hh) / 2) / 2 : Z * (Math.min(W, Hh) / 2) / (fov / 2);
+    S.lastSky = sky ? { cx, cy, rim: 2 * fa, front: Math.SQRT2 * fa } : null;
     const P = c => { if (!angle) return [cx + f * c[0] / c[2], cy - f * c[1] / c[2]];
         const rho = Math.hypot(c[0], c[1]), a = Math.atan2(rho, c[2]);
         const R = VW.R(a), k = rho > 0 ? fa * R / rho : 0;
         return [cx + k * c[0], cy - k * c[1]]; };
     vc.fillStyle = '#04040a'; vc.fillRect(0, 0, W, Hh);
+    if (sky) {                               // the sphere's disc, its rim straight behind, and the forward half
+        vc.fillStyle = '#0a0a12'; vc.beginPath(); vc.arc(cx, cy, 2 * fa, 0, 2 * Math.PI); vc.fill();
+        vc.strokeStyle = 'rgba(200,200,220,0.25)'; vc.lineWidth = 1.2 * dpr; vc.stroke();
+        vc.strokeStyle = 'rgba(200,200,220,0.14)'; vc.setLineDash([4 * dpr, 6 * dpr]);
+        vc.beginPath(); vc.arc(cx, cy, Math.SQRT2 * fa, 0, 2 * Math.PI); vc.stroke(); vc.setLineDash([]);
+        if (S.words > 0) { vc.fillStyle = 'rgba(200,200,220,0.55)'; vc.font = `${10 * dpr}px DM Mono, monospace`; vc.textAlign = 'center';
+            vc.fillText('square to the look', cx, cy - Math.SQRT2 * fa - 5 * dpr); vc.fillText('straight behind (the rim)', cx, cy - 2 * fa + 14 * dpr); }
+    }
     // The 3D Cauchy, centred on the crosshair: the directions, laid evenly by area, per unit of this view's screen,
     // sin α/(R·R′) (R685): cos³α on the flat screen, sin α/α by turns, flat on the equal-area view. Shaded faintly.
-    if (S.show.density) {
+    if (S.show.density && sky) {             // flat on the equal-area view: every direction alike, the disc evenly
+        vc.fillStyle = 'rgba(212,160,82,0.11)'; vc.beginPath(); vc.arc(cx, cy, 2 * fa, 0, 2 * Math.PI); vc.fill();
+    } else if (S.show.density) {
         const R = Math.hypot(W, Hh) / 2, gr = vc.createRadialGradient(cx, cy, 0, cx, cy, R);
         for (let i = 0; i <= 8; i++) { const a = VW.inv(i / 8 * R / (angle ? fa : f));
-            gr.addColorStop(i / 8, `rgba(212,160,82,${0.11 * Math.max(0, viewDensity(S.fid, a))})`); }
+            gr.addColorStop(i / 8, `rgba(212,160,82,${0.11 * Math.max(0, viewDensity(FID, a))})`); }
         vc.fillStyle = gr; vc.fillRect(0, 0, W, Hh);
     }
     const F = frameOf(), RD = new Map(FIELD.map(o => [o.i, read(o, F)]));
@@ -532,7 +560,12 @@ function drawView() {
         const y2 = dy * cp - z1 * sp, z2 = dy * sp + z1 * cp;       // tip by −pitch
         return [x1, y2, z2]; };
     const NEAR = 0.05 * S.k;
+    // On the whole sky nothing is behind the screen: a piece is cut only where it passes through the eye, and where it
+    // crosses straight behind (its two ends land on opposite sides of the rim), a seam no line is drawn across.
     const piece = (p, q) => {
+        if (sky) { if (Math.hypot(...p) < NEAR || Math.hypot(...q) < NEAR) return;
+            const a = P(p), b = P(q); if (Math.hypot(a[0] - b[0], a[1] - b[1]) > 1.2 * fa) return;
+            vc.moveTo(...a); vc.lineTo(...b); return; }
         if (p[2] < NEAR && q[2] < NEAR) return;
         if (p[2] < NEAR || q[2] < NEAR) { const t = (NEAR - p[2]) / (q[2] - p[2]); const m = [p[0] + t * (q[0] - p[0]), p[1] + t * (q[1] - p[1]), NEAR];
             if (p[2] < NEAR) p = m; else q = m; }
@@ -553,13 +586,13 @@ function drawView() {
     vc.strokeStyle = 'rgba(255,255,255,0.12)'; vc.beginPath();
     if (!angle) { vc.moveTo(0, cy + f * Math.tan(S.pitch)); vc.lineTo(W, cy + f * Math.tan(S.pitch)); }
     else { let first = true;                 // the horizon, every level direction, bent when laid by turns
-        for (let a = -170; a <= 170; a += 2) { const yw = S.yaw + a * DEG, c = cam([e[0] + Math.sin(yw), e[1], e[2] + Math.cos(yw)]);
-            if (c[2] <= 0.02) { first = true; continue; } const [x, y] = P(c); if (first) vc.moveTo(x, y); else vc.lineTo(x, y); first = false; } }
+        for (let a = -179; a <= 179; a += 2) { const yw = S.yaw + a * DEG, c = cam([e[0] + Math.sin(yw), e[1], e[2] + Math.cos(yw)]);
+            if (!sky && (c[2] <= 0.02 || Math.abs(a) > 170)) { first = true; continue; } const [x, y] = P(c); if (first) vc.moveTo(x, y); else vc.lineTo(x, y); first = false; } }
     vc.stroke();
     // the things, far first
     const order = FIELD.map(o => [dist(o), o]).sort((a, b) => b[0] - a[0]);
     // Compress (R679): the view laid by turns (P above); no thing is shrunk beyond what perspective gives.
-    const comp = S.fid !== 'off', target = vc;
+    const comp = FID !== 'off', target = vc;
     for (const [, o] of order) {
         const isT = o.i === S.target, sh = 1, cc = centre(o);
         vc.strokeStyle = colourOf(o, 1, RD.get(o.i)); vc.lineWidth = (isT ? 2.4 : 1.1) * dpr;
@@ -574,8 +607,8 @@ function drawView() {
     // labels: the thing at the crosshairs always, the others if asked and big enough on the screen
     vc.font = `${11 * dpr}px DM Mono, monospace`; vc.textAlign = 'center';
     for (const [d, o] of order) {
-        const c = cam(centre(o)); if (c[2] < NEAR) continue;
-        const px = f * radius(o) / c[2];
+        const c = cam(centre(o)); if (sky ? Math.hypot(...c) < NEAR : c[2] < NEAR) continue;
+        const px = (sky ? fa : f) * radius(o) / (sky ? Math.hypot(...c) : c[2]);
         const isT = o.i === S.target;
         if (S.words === 0 || (!isT && (S.words < 2 || px < 18 * dpr))) continue;
         const [x, y] = P([c[0], c[1] + radius(o) * 0.9, c[2]]);
@@ -717,6 +750,7 @@ const keys = new Set();
 addEventListener('keydown', ev => { if (ev.target.tagName === 'SELECT') return;
     const k = ev.key.toLowerCase(); if (k === ' ') { toggleHold(); ev.preventDefault(); return; }
     if (k === '+' || k === '=') { zoomBy(1.5); return; } if (k === '-' || k === '_') { zoomBy(1 / 1.5); return; }
+    if (k === 'o') { toggleSky(); return; }
     if (k === 'f') { zoomFit(); return; } if (k === '1') { S.Z = 1; syncMenu(); return; }
     if (['w', 'a', 's', 'd', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright'].includes(k)) { keys.add(k); ev.preventDefault(); } });
 addEventListener('keyup', ev => keys.delete(ev.key.toLowerCase()));
@@ -754,6 +788,8 @@ const WORDS = ['off', 'at the crosshairs', 'all'];
 $('words').onclick = () => { S.words = (S.words + 1) % 3; syncMenu(); };
 const FIDS = ['area', 'compress', 'round', 'off'], FIDNAME = Object.fromEntries(FIDS.map(k => [k, VIEWS[k].name]));
 $('fid').onclick = () => { S.fid = FIDS[(FIDS.indexOf(S.fid) + 1) % FIDS.length]; syncMenu(); };
+function toggleSky() { S.sky = !S.sky; syncMenu(); }
+$('sky').onclick = toggleSky; $('zs').onclick = toggleSky;
 $('K').onchange = () => { S.K = +$('K').value; };
 $('kup').onclick = () => { S.k *= 10; S.H *= 10; S.Hshow *= 10; };
 $('kdown').onclick = () => { S.k /= 10; S.H /= 10; S.Hshow /= 10; };
@@ -772,6 +808,7 @@ function syncMenu() {
     $('hold').classList.toggle('on', S.hold); $('hold').querySelector('span').textContent = S.hold ? 'on' : 'off';
     $('words').classList.toggle('on', S.words > 0); $('words').querySelector('span').textContent = WORDS[S.words];
     $('fid').classList.toggle('on', S.fid !== 'off'); $('fid').querySelector('span').textContent = FIDNAME[S.fid];
+    $('sky').classList.toggle('on', S.sky); $('sky').querySelector('span').textContent = S.sky ? 'on' : 'off'; $('zs').classList.toggle('on', S.sky);
     $('about').classList.toggle('open', S.show.about); $('readBox').classList.toggle('open', S.show.read);
     $('mapBox').classList.toggle('open', S.show.map); $('stripBox').classList.toggle('open', S.show.strip);
     document.body.classList.toggle('strip', S.show.strip);
@@ -852,12 +889,12 @@ window.__crosshairs = {
     grain: i => grainOf(read(FIELD[i])), shrink: i => shrinkOf(FIELD[i]), distGrain: i => distGrain(FIELD[i]), dirGrain: d => dirGrain(d), homes: () => S.lastHomes, corners: () => S.lastCorners, read: i => read(FIELD[i]), readings: i => readings(FIELD[i]), frame: () => frameOf(), lay, addresses, counts, pick,
     set(o = {}) { if ('yaw' in o) S.yaw = o.yaw * DEG; if ('pitch' in o) S.pitch = o.pitch * DEG; if ('x' in o) S.x = o.x; if ('z' in o) S.z = o.z;
         if ('k' in o) { const r = o.k / S.k; S.k = o.k; S.H *= r; S.Hshow *= r; } if ('hold' in o) S.hold = !!o.hold; if ('K' in o) S.K = o.K;
-        if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); if ('fid' in o) S.fid = o.fid; syncMenu();
+        if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); if ('fid' in o) S.fid = o.fid; if ('sky' in o) S.sky = !!o.sky; syncMenu();
         update(0); S.Hshow = S.H; S.a0show = S.a0; return this.state(); },
     show: k => showIt(k), menu: () => ({ open: $('menu').classList.contains('open'), words: S.words, show: { ...S.show } }),
     aim: i => { const c = centre(FIELD[i]), e = eye(); S.yaw = Math.atan2(c[0] - e[0], c[2] - e[2]);
         S.pitch = Math.atan2(c[1] - e[1], Math.hypot(c[0] - e[0], c[2] - e[2])); update(0); return S.target; },
-    focusLay: (a, a0) => focusLay(a, a0 ?? S.a0show), views: VIEWS, viewDensity, a0: () => S.a0show,
+    focusLay: (a, a0) => focusLay(a, a0 ?? S.a0show), views: VIEWS, viewDensity, a0: () => S.a0show, sky: () => S.lastSky,
     zoom: (z, fit) => { if (fit) zoomFit(); else if (z) S.Z = z; S.Zshow = S.Z; syncMenu(); return S.Z; },
     state: () => ({ zoom: S.Z, yaw: S.yaw / DEG, pitch: S.pitch / DEG, x: S.x, z: S.z, k: S.k, K: S.K, hold: S.hold, target: S.target, H: S.Hshow, counts: counts() }),
 };
