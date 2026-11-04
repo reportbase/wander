@@ -7181,6 +7181,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   compacting), computing rebuilds the separation by hand (stable handles, persistent structures, copy-on-write, MVCC).
   *Reads and Writes* §1, two sentences closing R659's paragraph. Scope: a design argument, what a system needs for free
   reads and what geometry has without effort, not a proof that the world is so built; R659's "by construction" stands.
+- **R661** (4 Nov; Tom: "its a well known principle in computer science, it does not need to be proved, just argued that
+  the ideas also apply to geometry."; "The title of our paper is read/write and the first thing I think about when i see
+  those words together is potential race conditions. our seperation of the address and the payload nicely keeps that from
+  every being a concern in geometry. that is not a small idea, it should be foregrouned."): **no race is foregrounded.**
+  The computing principle is taken as known (Bernstein, immutability), never proved here; the paper argues only that
+  geometry meets it. *Reads and Writes*' abstract says it after the address and payload are named (the two acts never
+  race; computing engineers the separation, geometry is given it), and §1 meets the title's expectation right after its
+  opening example, pointing to R659–R660's paragraph for the detail.
 
 ## Appendix B. Demos and computations
 
