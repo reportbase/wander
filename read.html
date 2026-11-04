@@ -69,12 +69,18 @@
         border: 1px solid var(--line); border-radius: 10px; display: none; pointer-events: none }
     #side.open { display: block }
     @media (max-aspect-ratio: 1/1) { #side { width: min(260px, 48vw); height: min(160px, 30vw); bottom: calc(50% + 10px) } }
+    #strip { position: fixed; right: max(10px, env(safe-area-inset-right)); bottom: max(10px, env(safe-area-inset-bottom));
+        width: min(560px, 46vw); height: 128px; z-index: 2; background: rgba(10,10,18,0.9); border: 1px solid var(--line);
+        border-radius: 10px; display: none; touch-action: none; cursor: ew-resize }
+    #strip.open { display: block }
+    @media (max-aspect-ratio: 1/1) { #strip { width: calc(100vw - 20px); height: 112px } }
     .g { color: var(--gold) } .t { color: var(--teal) } .v { color: var(--violet) } .b { color: var(--bright) } .d { color: var(--dim) }
     </style>
 </head>
 <body>
 <div id="wrap"><canvas id="screen"></canvas><canvas id="hill"></canvas></div>
 <canvas id="side"></canvas>
+<canvas id="strip"></canvas>
 <button id="menuBtn" title="menu" aria-label="menu">☰</button>
 <div id="menu" role="menu">
     <div class="sec">show</div>
@@ -85,6 +91,7 @@
     <button id="viewB">view <span>in thumbs</span></button>
     <button id="RB">rings <span>16</span></button>
     <button id="sideB">where the reader stands <span>on</span></button>
+    <button id="stripB">drag the thumb (H) <span>on</span></button>
     <button id="playB">read again</button>
     <div class="sec">nothing changes</div>
     <button id="turnB">turn the look 30° <span>0</span></button>
@@ -114,6 +121,12 @@
     running from it through the crosshair. Every mark on the screen is a direction from that point, landing tan α off the
     crosshair; the thumb leaves at 54.74° and lands at √2, its home at 35.26° the other side; the horizon, 90° off the
     look, runs parallel to the screen and never lands.</li>
+    <li><b class="t">Drag the thumb.</b> Bottom right, a row of things at their distances. Above, the writer's line in
+    units, H the gold mark, the reader's distance addresses H·tan(kπ/2K) as ticks: drag along it to make H larger or
+    smaller. Below, the reader's lay: the same addresses, each the same room, half before the corner and half after. Drag
+    H and the ticks below never move; the things slide along them, more of them into the near field (teal) as H grows,
+    out past the corner (violet) as it shrinks. Nothing on the screen or the hill moves either: the Cauchy is the same at
+    every H. H decides only where the things land.</li>
     <li><b>The hill.</b> On the right the same law as a height. Its contours are the rings, each enclosing the same share;
     its tails go on and never reach zero. Drag it to turn it.</li>
     <li><b>A read is every sweep at once.</b> "Read again" draws the sweeps out from the crosshair to the horizon. The
@@ -154,7 +167,8 @@ const RAYS = 12;
 // ---- state ----
 const S = { view: Q.get('view') === 'count' ? 'count' : 'thumbs', R: [8, 16, 32].includes(num('R', 16)) ? num('R', 16) : 16,
     words: Q.get('words') === '1', side: Q.get('side') !== '0', nums: false, about: Q.get('about') === '1',
-    az: num('az', 35) * DEG, el: num('el', 30) * DEG, t: Q.get('play') === '0' ? 1 : 0, turns: 0, scale: 1, zoom: 1 };
+    az: num('az', 35) * DEG, el: num('el', 30) * DEG, t: Q.get('play') === '0' ? 1 : 0, turns: 0, scale: 1, zoom: 1,
+    strip: Q.get('strip') !== '0', lgH: Math.max(-2, Math.min(3, num('H', 0.5))) };
 
 // ---- the screen ----
 const sc = $('screen'), sx = sc.getContext('2d'), hc = $('hill'), hx = hc.getContext('2d');
@@ -314,8 +328,69 @@ function drawHill() {
     hx.strokeStyle = rgba('gold', 0.5); hx.setLineDash([3 * dpr, 4 * dpr]); hx.beginPath(); hx.moveTo(...top); hx.lineTo(...P(0, 0, 0)); hx.stroke(); hx.setLineDash([]);
     if (S.words) { hx.font = `${10 * dpr}px DM Mono, monospace`; hx.textAlign = 'left'; hx.fillStyle = rgba('gold', 0.9);
         hx.fillText('the corner, at the peak', top[0] + 8 * dpr, top[1] - 4 * dpr);
-        hx.fillStyle = rgba('ink', 0.55); hx.fillText('each contour holds the same share; the tails never reach zero', 10 * dpr, H - 12 * dpr); }
+        hx.fillStyle = rgba('ink', 0.55); hx.fillText('each contour holds the same share; the tails never reach zero', 10 * dpr, 22 * dpr); }
 }
+
+// ---- dragging the thumb: H, the distance corner ----
+// A row of things at the writer's distances (seeded, even in log d over 10⁻² … 10³ units). The reader's K distance
+// addresses are H·tan(kπ/2K): on the writer's line they move with H, half inside it at every H; on the reader's own lay
+// (a thing at (2/π)·atan(d/H), every address the same room) they never move. Dragging H slides the things, not the read.
+const KD = () => 2 * S.R;
+const THINGS = (() => { let a = 20261105 >>> 0; const r = () => ((a = (a * 1664525 + 1013904223) >>> 0) / 4294967296);
+    return Array.from({ length: 40 }, () => Math.pow(10, -2 + 5 * r())).sort((x, y) => x - y); })();
+const LG = [-2.5, 3.5];                                                   // the writer's axis, log10 of units (times the scale)
+const Hnow = () => Math.pow(10, S.lgH) * S.scale;
+const addrOf = (d, H) => (2 / Math.PI) * Math.atan(d / H);                // the share of the turn passed: the corner at ½
+const distAddresses = H => Array.from({ length: KD() - 1 }, (_, k) => H * Math.tan((k + 1) * Math.PI / (2 * KD())));
+const st = $('strip'), stx = st.getContext('2d');
+function stripGeom() { const dpr = devicePixelRatio || 1, W = st.width, H = st.height, x0 = 14 * dpr, x1 = W - 14 * dpr;
+    return { dpr, W, H, x0, x1, y1: 0.32 * H, y2: 0.78 * H }; }
+function drawStrip() {
+    if (!S.strip) return;
+    fit(st); const g = stripGeom(), { dpr, W, H, x0, x1, y1, y2 } = g, K = KD(), Hd = Hnow();
+    const xd = d => x0 + (Math.log10(d / S.scale) - LG[0]) / (LG[1] - LG[0]) * (x1 - x0);
+    const xa = a => x0 + a * (x1 - x0);
+    stx.clearRect(0, 0, W, H);
+    // the writer's line in units
+    stx.strokeStyle = rgba('ink', 0.35); stx.lineWidth = 1 * dpr; stx.beginPath(); stx.moveTo(x0, y1); stx.lineTo(x1, y1); stx.stroke();
+    for (const d of distAddresses(Hd)) { const x = xd(d); if (x < x0 || x > x1) continue;
+        stx.strokeStyle = rgba(d < Hd ? 'teal' : 'violet', 0.35); stx.beginPath(); stx.moveTo(x, y1 - 7 * dpr); stx.lineTo(x, y1 + 7 * dpr); stx.stroke(); }
+    // the reader's lay: K addresses, each the same room, the corner in the middle
+    stx.strokeStyle = rgba('ink', 0.35); stx.beginPath(); stx.moveTo(x0, y2); stx.lineTo(x1, y2); stx.stroke();
+    for (let k = 1; k < K; k++) { const x = xa(k / K); stx.strokeStyle = rgba(k < K / 2 ? 'teal' : 'violet', 0.35);
+        stx.beginPath(); stx.moveTo(x, y2 - 7 * dpr); stx.lineTo(x, y2 + 7 * dpr); stx.stroke(); }
+    // each thing on both lines, joined
+    for (const d0 of THINGS) { const d = d0 * S.scale, a = addrOf(d, Hd), xw = xd(d), xr = xa(a), near = d < Hd;
+        const col = Math.abs(Math.log(d / Hd)) < Math.PI / K ? 'gold' : near ? 'teal' : 'violet';
+        stx.strokeStyle = rgba(col, 0.18); stx.beginPath(); stx.moveTo(xw, y1); stx.lineTo(xr, y2); stx.stroke();
+        stx.fillStyle = rgba(col, 0.9);
+        stx.beginPath(); stx.arc(xw, y1, 2.6 * dpr, 0, 2 * Math.PI); stx.fill();
+        stx.beginPath(); stx.arc(xr, y2, 2.6 * dpr, 0, 2 * Math.PI); stx.fill(); }
+    // H: the thumb on the writer's line, the corner on the reader's
+    const xH = xd(Hd); stx.strokeStyle = rgba('gold', 0.95); stx.lineWidth = 2 * dpr;
+    stx.beginPath(); stx.moveTo(xH, y1 - 13 * dpr); stx.lineTo(xH, y1 + 13 * dpr); stx.stroke();
+    stx.beginPath(); stx.moveTo(xa(0.5), y2 - 13 * dpr); stx.lineTo(xa(0.5), y2 + 13 * dpr); stx.stroke();
+    stx.fillStyle = rgba('gold', 1); stx.beginPath(); stx.arc(xH, y1 - 15 * dpr, 4.5 * dpr, 0, 2 * Math.PI); stx.fill();
+    if (S.words) { stx.font = `${9.5 * dpr}px DM Mono, monospace`; stx.textAlign = 'left'; stx.fillStyle = rgba('ink', 0.6);
+        stx.fillText('the writer\'s line, in units', x0, y1 - 18 * dpr);
+        stx.fillText('the reader\'s lay: K addresses, each the same room', x0, y2 + 22 * dpr);
+        stx.fillStyle = rgba('gold', 0.95); stx.textAlign = xH > W / 2 ? 'right' : 'left';
+        stx.fillText('H = ' + fmtU(Hd), xH + (xH > W / 2 ? -8 : 8) * dpr, y1 - 12 * dpr);
+        stx.textAlign = 'center'; stx.fillText('the corner', xa(0.5), y2 - 16 * dpr); }
+}
+const fmtU = x => (x >= 1e4 || x < 1e-2 ? x.toExponential(1) : x.toPrecision(3)) + ' u';
+function stripCounts() { const Hd = Hnow(), K = KD();
+    const inside = THINGS.filter(d => d * S.scale < Hd).length;
+    const addrIn = distAddresses(Hd).filter(d => d < Hd * (1 - 1e-12)).length + 1;   // cells inside H: one more than the boundaries below it, K/2 at every H
+    return { H: Hd, K, things: THINGS.length, inside, addrInside: addrIn }; }
+let sdrag = false;
+const setHfromX = cx => { const r = st.getBoundingClientRect(), g = stripGeom(), x = (cx - r.left) * g.dpr;
+    const f = Math.max(0, Math.min(1, (x - g.x0) / (g.x1 - g.x0)));
+    S.lgH = Math.max(-2, Math.min(3, LG[0] + f * (LG[1] - LG[0]))); sync(); };
+st.addEventListener('pointerdown', e => { sdrag = true; st.setPointerCapture(e.pointerId); setHfromX(e.clientX); $('menu').classList.remove('open'); });
+st.addEventListener('pointermove', e => { if (sdrag) setHfromX(e.clientX); });
+st.addEventListener('pointerup', () => { sdrag = false; }); st.addEventListener('pointercancel', () => { sdrag = false; });
+st.addEventListener('wheel', e => { e.preventDefault(); S.lgH = Math.max(-2, Math.min(3, S.lgH - e.deltaY / 1000)); sync(); }, { passive: false });
 
 // ---- the numbers (behind the menu) ----
 const wedgeShare = 0.25;                                     // an octant of the sphere, a quarter of what is in front
@@ -330,7 +405,9 @@ function numbers() {
         `half the addresses within     ${f(ringR(0.5))} thumbs (60°)\n` +
         `<span class="v">one in 2, 4, 8</span>  hold ${f(share(2) - share(1))}, ${f(share(4) - share(2))}, ${f(share(8) - share(4))} of them\n` +
         `the wedge      ${wedgeShare} of what is in front, each pair's corner halving it\n` +
-        `turned ${S.turns}×, scaled ×${S.scale}: every number above the same`;
+        `turned ${S.turns}×, scaled ×${S.scale}: every number above the same\n` +
+        (() => { const c = stripCounts(); return `<span class="g">H</span> = ${fmtU(c.H)}: ${c.addrInside} of ${c.K} distance addresses inside it (at every H), ` +
+            `${c.inside} of ${c.things} things in the near field`; })();
 }
 
 // ---- input ----
@@ -346,6 +423,7 @@ function sync() {
     on('numB', S.nums, S.nums ? 'on' : 'off'); on('wordsB', S.words, S.words ? 'on' : 'off');
     on('viewB', S.view === 'count', S.view === 'count' ? 'by count' : 'in thumbs'); on('RB', false, String(S.R));
     on('sideB', S.side, S.side ? 'on' : 'off'); $('side').classList.toggle('open', S.side);
+    on('stripB', S.strip, S.strip ? 'on' : 'off'); $('strip').classList.toggle('open', S.strip);
     on('turnB', false, String(S.turns)); on('scaleB', false, '× ' + S.scale.toLocaleString());
     $('numbers').classList.toggle('open', S.nums); $('about').classList.toggle('open', S.about);
     if (S.nums) numbers();
@@ -358,6 +436,7 @@ $('wordsB').onclick = () => { S.words = !S.words; sync(); };
 $('viewB').onclick = () => { S.view = S.view === 'count' ? 'thumbs' : 'count'; sync(); };
 $('RB').onclick = () => { S.R = S.R === 8 ? 16 : S.R === 16 ? 32 : 8; sync(); };
 $('sideB').onclick = () => { S.side = !S.side; sync(); };
+$('stripB').onclick = () => { S.strip = !S.strip; sync(); };
 $('playB').onclick = () => { S.t = 0; $('menu').classList.remove('open'); };
 // turning the look turns the thumbs with it, and scaling the world reaches no reading: the geometry is drawn again unchanged
 $('turnB').onclick = () => { S.turns++; sync(); };
@@ -368,7 +447,7 @@ sc.addEventListener('pointerdown', () => $('menu').classList.remove('open'));
 let last = performance.now();
 function frame(now) { const dt = Math.min(0.1, (now - last) / 1000); last = now;
     if (S.t < 1) S.t = Math.min(1, S.t + dt / 2.4);           // a read drawn out over 2.4 s, from the crosshair to the horizon
-    drawScreen(); drawHill(); drawSide(); requestAnimationFrame(frame); }
+    drawScreen(); drawHill(); drawSide(); drawStrip(); requestAnimationFrame(frame); }
 sync(); requestAnimationFrame(frame);
 
 window.__read = {
@@ -376,9 +455,11 @@ window.__read = {
     cells: () => S.R * RAYS,
     side: () => S.side ? { reader: [0, 0], screen: 1, thumb: Math.tan(SIDE.thumb), home: Math.tan(SIDE.home), one: Math.tan(SIDE.one),
         thumbDeg: SIDE.thumb / DEG, homeDeg: SIDE.home / DEG } : null,
-    set: o => { if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t; if ('side' in o) S.side = !!o.side;
+    strip: () => ({ ...stripCounts(), lgH: S.lgH, open: S.strip, addrOf: d => addrOf(d * S.scale, Hnow()), distAddresses: () => distAddresses(Hnow()),
+        things: () => THINGS.map(d => d * S.scale), lay: () => Array.from({ length: KD() - 1 }, (_, k) => (k + 1) / KD()) }),
+    set: o => { if ('H' in o) S.lgH = Math.max(-2, Math.min(3, o.H)); if ('strip' in o) S.strip = !!o.strip; if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t; if ('side' in o) S.side = !!o.side;
         if ('az' in o) S.az = o.az * DEG; if ('el' in o) S.el = o.el * DEG; sync(); },
-    state: () => ({ view: S.view, R: S.R, cells: S.R * RAYS, t: S.t, turns: S.turns, scale: S.scale, az: S.az / DEG, el: S.el / DEG }),
+    state: () => ({ lgH: S.lgH, strip: S.strip, view: S.view, R: S.R, cells: S.R * RAYS, t: S.t, turns: S.turns, scale: S.scale, az: S.az / DEG, el: S.el / DEG }),
 };
 })();
 </script>

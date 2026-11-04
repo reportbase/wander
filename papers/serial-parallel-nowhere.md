@@ -7352,6 +7352,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R693** (5 Nov; Tom: "so the cauchy is the same regardless, but you can drag the near field in or out.", then "Yes"):
+  the direction law never sees H (a reading is a ratio of the thumb's own shares); in distance H is a zoom, the K
+  addresses at H·tan(kπ/2K), half inside H at every H. Dragging H moves which things fall in the near field, not the
+  read. `read.html` gains a strip: 40 things on the writer's line in units with H draggable, and on the reader's lay,
+  (2/π)·atan(d/H), the addresses fixed; the screen and the hill do not move. Turning moves the direction corner,
+  choosing H the distance corner; both free, neither a write.
 - **R692** (5 Nov; Tom: "update the reads and writes paper"): R685–R691 carried into *Reads and Writes*. §6 gains "Laid
   by the addresses" after the one-thumb circle (the equal-area screen 2·sin(α/2), the flat screen's tan α and cos³α; the
   tunnel's rings at 0.765, 1.05, 1.23, 1.32 packing toward √2, the bands 0.26, 0.20, 0.12, 0.12; the ground's distance

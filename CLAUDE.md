@@ -199,6 +199,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "yes"): an inset bottom left, the side view through the look and one thumb, the reader a point behind the screen, the
   look to the crosshair, the thumb landing at √2, the home at 1/√2, one thumb off at 1, the horizon parallel to the screen,
   the read's sweep turning off the look; menu "where the reader stands", `?side=0`, hook `side()`.
+  Drag the thumb (5 Nov; Tom: "so the cauchy is the same regardless, but you can drag the near field in or out.", then "Yes";
+  SPN R693): a strip bottom right, 40 seeded things (10⁻² … 10³ u) on the writer's line in units with H (gold, drag or
+  wheel) and the K = 2R distance addresses H·tan(kπ/2K), and on the reader's lay ((2/π)·atan(d/H), every address the
+  same room, the corner at ½); dragging H slides the things along the fixed addresses, K/2 inside H at every H, the
+  screen and the hill unmoved. Menu "drag the thumb (H)", `?strip=0&H=<log10 H>`; hook `strip()`, `set({H, strip})`.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1585,6 +1590,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   essay 4, essay 16 §10 ("A world made where the view reaches"), essay 3's demos and the essays page.
   R692 (5 Nov; Tom: "update the reads and writes paper"): R685–R691 in *Reads and Writes* §6 ("Laid by the addresses"),
   §7 ("Where the reader stands") and Code and data.
+  R693 (5 Nov; Tom: "so the cauchy is the same regardless, but you can drag the near field in or out.", then "Yes"):
+  `read.html`'s strip, H dragged, the things sliding along addresses that never move.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
