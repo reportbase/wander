@@ -7189,6 +7189,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   geometry meets it. *Reads and Writes*' abstract says it after the address and payload are named (the two acts never
   race; computing engineers the separation, geometry is given it), and §1 meets the title's expectation right after its
   opening example, pointing to R659–R660's paragraph for the detail.
+- **R662** (4 Nov; Tom: "update the essays with the no race conditions"): the no-race argument carried into the essays.
+  Essay 1 says it in its opening (the words invite a race; here none arises) and in §9 ("It keeps reads from racing",
+  Bernstein cited); essay 3's "The second test" says the second test is why a write never runs into a read; essay 16 §1 has
+  "Why reads never race" (Bernstein, CREW, the remedies for addresses that move with their contents; a principle applied to
+  geometry, not a claim about concurrency; a machine still does both acts in one memory). The README and `essays.html` name it.
 
 ## Appendix B. Demos and computations
 

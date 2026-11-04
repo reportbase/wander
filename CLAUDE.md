@@ -1418,6 +1418,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R661 (4 Nov; Tom: "it does not need to be proved, just argued that the ideas also apply to geometry"; "that is not a small
   idea, it should be foregrouned."): **no race foregrounded**: the abstract and §1's opening say the two acts never race
   because address and payload are separate; the computing principle cited as known, never proved here.
+  R662 (4 Nov; Tom: "update the essays with the no race conditions"): essay 1's opening and §9, essay 3's "The second
+  test", essay 16 §1 "Why reads never race" (Bernstein, CREW, addresses that move with their contents); README, `essays.html`.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
