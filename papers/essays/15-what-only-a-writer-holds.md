@@ -15,7 +15,7 @@ every payment there could be, which no bank and no clock does. It is the end of 
 π is the same. 1 − 1/3 + 1/5 − 1/7 + … is a sum of fractions, and every partial sum is a fraction; five terms give
 0.8349, a thousand give π/4 to within a two-thousandth, and none gives π/4. To have π you must have added every term.
 
-The earlier essays found that π is not a reader's number (essay 14): it is the total of a completed turn, and the
+The earlier essays found that π is not a reader's number (essay 14): it is the total of a completed half turn (a line's period; 2π an oriented turn's), and the
 reader, which holds one length and never closes its turn, does not hold it. This essay asks the same of e, and finds
 the same answer for a reason of the same kind. Its claim:
 

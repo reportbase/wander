@@ -7136,6 +7136,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   R364, R478). Von Staudt added to the references.
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
+- **R656** (4 Nov; ChatGPT's referee report of *Reads and Writes*, 8.1/10, pasted by Tom; Claude's assessment, then Tom:
+  "ok"): **local corrections, no ruling changed.** Machin's 120/119 and 1/239 meet at 1 by tangent subtraction, not a − b
+  (it said "less"); the count's angle shortfall is exactly θ − n·arctan(θ/n), θ³/(3n²) only to leading order, and the
+  length's θ²/(2n) likewise; π is the half turn, the period of a line's direction, 2π an oriented turn's (it said "the total
+  of a completed turn"); the Cauchy is closed under the real Möbius maps of the reading (changes of standpoint and chart),
+  not under every operation on directions, and "not a law of what is measured" is said of it here; O(K) is said of an
+  implementation holding K samples; the Gibbs overshoot belongs to the representation, physical ringing being a dynamics;
+  the two acts are idealized, a sensor that samples has already written; Code and data names the plans of §11's three
+  data cases, which illustrate and do not alone establish. The referee's diffraction point was not taken (a straight
+  edge's fringes are on the lit side only); its mean point already answered (R604). *Reads and Writes* §1, §2, §4, §5, §6,
+  §8, Code and data; essays 14, 15, 16. Corrects R591's and R597's "π the total of a completed turn".
+
 ## Appendix B. Demos and computations
 
 | demo or script | section | items |

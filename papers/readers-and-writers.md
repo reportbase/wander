@@ -125,7 +125,8 @@ strides along a baseline, units on a ruler, items in a list, digits in a number,
 last. The writer's continuous things, the real line, the circle held whole, π and e, are counts carried to their limit
 and held as finished: a ruler subdivided without end, a polygon given ever more sides, interest compounded ever more
 often. So there are two continuities. The reader's is never counted; the writer's is a count completed. Scaling the world leaves a turn as it was and multiplies every count of units; that is the first test seen from this
-side. The rest of the paper keeps returning to this line, in the corner and the horizon, in which numbers belong to whom, in
+side. These are the two acts idealized, not their implementations: a sensor that samples, a register that holds a
+reading, a machine that rounds it, has already written; the read is what is taken, before anything takes it. The rest of the paper keeps returning to this line, in the corner and the horizon, in which numbers belong to whom, in
 K and N, and in the passage from one act to the other (§8, "Turns, counts and corners").
 
 **V.** One quantity sits on the line between the two acts: V, the breadth of the other party, the mountain in the distance
@@ -169,10 +170,11 @@ order of its readings, the corner, and the directions themselves.
 point where a direction meets the world. The world decides what meets each address, which thing is nearest and what it
 sends back; nothing it does moves an address. Scale the world and no address moves. Change the world and no address moves.
 Change the turn's standpoint and the addresses move, as a family: the Cauchy is carried into another Cauchy, its centre and
-width the new standpoint's foot and height (m + iγ). This closure, under every operation on directions alone, is the law's
-own; only an amount entering, an edge, a square, a sum of amounts, breaks it.
+width the new standpoint's foot and height (m + iγ). This closure, under the real Möbius maps of the reading (the changes
+of standpoint and of chart), is the law's own; not every operation on directions keeps it, and an amount entering, an
+edge, a square, a sum of amounts, breaks it.
 
-So the Cauchy is not a law of what is measured. It is the law of the uniform turn, the measure on the reader's addresses.
+So the Cauchy here is not a law of what is measured. It is the law of the uniform turn, the measure on the reader's addresses.
 Practice already treats it so, taking its median and never its mean; this is the reason.
 
 **The Cauchy, derived from H and from V.** The Cauchy is usually met as a family with two parameters, a location m and a
@@ -396,7 +398,7 @@ These are the only two standpoints from which equal turns cut equal arcs (Euclid
 central). So the sweep from horizontal to vertical comes at π/2 or 2/π, never at 1; 1 is had only by joining both, which is
 the writer's join. Euclid's theorem, the two reciprocal ratios and the writer's rate of 1 in radians are three things that
 correspond here, not one theorem. And π/2 and 2/π are the writer's measure of the reader's sweeps, not numbers the reader
-holds: π is the total of a completed turn.
+holds: π is the total of a completed half turn, the period of a line's direction (2π that of an oriented turn).
 
 **The corner, where three meet.** At v = h three things coincide: v fills as fast as h empties; the reading v/h is 1, the
 writer's 1; and 1 is the geometric mean of π/2 and 2/π, the fixed point of the reciprocal that exchanges the two sweeps.
@@ -438,8 +440,8 @@ whole, and only stating it as a number needs the limit.
 
 - *π completes the turn.* The reader meets the corner as s = 1, exactly. Its angle is π/4 = 1 − 1/3 + 1/5 − …
   (Madhava, Gregory, Leibniz), every partial sum a fraction, none of them π/4. Machin's identity shows the split with no
-  rounding: the direction 1/5 composed with itself four times, by tangent addition, is 120/119, and 120/119 less 1/239 is
-  exactly 1, the corner. That much is finite, rational and the reader's. The number π comes next, from the arctangent's
+  rounding: the direction 1/5 composed with itself four times, by tangent addition, is 120/119, and 120/119 taken back by
+  1/239, by tangent subtraction ((a − b)/(1 + ab), not a − b), is exactly 1, the corner. That much is finite, rational and the reader's. The number π comes next, from the arctangent's
   series. Viète's product shows it from the other side: 2/π is a product of nested square roots, each algebraic, the whole
   only in the limit.
 - *e completes the scale.* The reader reads a far thing as a ratio, one in eight. Counted in thumbs, by a writer, the
@@ -453,8 +455,9 @@ whole, and only stating it as a number needs the limit.
 each [1 : θ/n], and compose them by tangent addition: in complex numbers that is (1 + iθ/n)ⁿ, exact at every n and
 rational whenever θ/n is. As n grows it becomes e^(iθ), Euler's formula, by the same limit that takes Bernoulli's
 (1 + 1/n)ⁿ to e: one compounds along the thumb, the other square to it, and both miss their limit by the same leading
-term, −w²/(2n), with w = 1 or w = iθ. At every finite n the count falls short of the angle by θ³/(3n²), each step's
-tangent running out past its arc, and it stretches the length by θ²/(2n), which no reading sees, since [h : v] divides
+term, −w²/(2n), with w = 1 or w = iθ. At every finite n the count falls short of the angle, each step's tangent
+running out past its arc: exactly by θ − n·arctan(θ/n), which is θ³/(3n²) − θ⁵/(5n⁴) + …, so θ³/(3n²) to leading order;
+and it stretches the length by (1 + θ²/n²)^(n/2), θ²/(2n) to leading order, which no reading sees, since [h : v] divides
 the length out at every step. The limit, the writer's, repairs the angle and returns the length to 1; a thousand reads of
 π/1000 land at −1.005, on their way to e^(iπ) = −1. From a standpoint z = m + iγ the same limit, (1 + izt/n)ⁿ, lands on
 e^(izt) = e^(imt − γt) for t ≥ 0, the Cauchy's own characteristic function: the foot m turns, and the height γ damps
@@ -465,10 +468,11 @@ is the reading: each finite count a read, the limit a write, exact only where th
 sorts like everything else here: the turn it describes is read, and the number it is written in is a count completed.
 
 The reader's two ignorances, after Jaynes (1968), are which way it faces and how large things are: turns and rescalings.
-Each is a one-parameter group with an exponential map. Turns close, so their map has a period, 2π. Rescalings never close,
+Each is a one-parameter group with an exponential map. Turns close, so their map has a period: 2π for an oriented turn, π for the direction of a line, which comes back to
+itself after a half turn (the projective line the reader's readings live on). Rescalings never close,
 so their map has no period, only a base, e. π is what is needed to say that the turn comes back; e, to say how the scale
 goes on. The complex logarithm puts them in one line, ln z = ln r + iθ: the scale on the real part, measured in e's unit,
-the turn on the imaginary part, measured against π's total. They meet at e^(iπ) = −1, which is where the doubling (h + iv)² = e^(2iθ)
+the turn on the imaginary part, measured against π, a line's period. They meet at e^(iπ) = −1, which is where the doubling (h + iv)² = e^(2iθ)
 sends the far end of the reader's sweep, the horizon the reader holds as the finite pair [0 : 1] (the horizon itself is a
 quarter turn, e^(iπ/2) = i). It was through that meeting that Lindemann proved
 π transcendental (1882): a power of e with a nonzero algebraic exponent is never algebraic, and e^(iπ) is −1.
@@ -476,7 +480,8 @@ quarter turn, e^(iπ/2) = i). It was through that meeting that Lindemann proved
 **π with the address, e with the payload.** The two parts of ln z = ln r + iθ are the two sides of this paper. The
 imaginary part is the address: turns act on it alone. The real part is the payload's size: scaling the world acts on it
 alone, sliding ln r and leaving θ where it was. So π belongs with the address and e with the payload, and they are not
-alike. The address coordinate closes, so it has a total, and π is that total in the unit the exponential sets; nothing can
+alike. The address coordinate closes, so it has a period, and π (a line's half turn; 2π an oriented turn) is that period in
+the unit the exponential sets; nothing can
 choose it away. The payload coordinate is an open line with no total and no natural size, so nothing on it marks a place;
 its base is a convention (counting in thumbs, doublings serve as well), and e is the base that lets one unit serve both
 coordinates, so that e^(iθ) is a turn of θ and e^t growth at a rate of one. That open line is why the reader never reads
@@ -540,7 +545,8 @@ statement. The Cauchy is what goes between them. It lays the reader's K addresse
 the near field in proportion, the far field in ratios (one in two, one in four, one in eight), and everything past the last address on the one
 address at the horizon. Double N and the reader's view does not change; make N unbounded and it still does not change (an
 infinite star field browsed at N and 2N shows the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull:
-whatever N is, the reader's work is K, O(K), and for a fixed K it does not grow with N. What the cull gives up is sameness.
+whatever N is, the reader's work is K: an implementation that holds K samples does O(K) work, and for a fixed K it does
+not grow with N. What the cull gives up is sameness.
 A writer who knows N can hold every item as 1/N of the whole, all alike, on a number line with no corner, and no item has
 an advantage over another, because no standpoint is favoured: there is none. A reader's K is spent unevenly, finest at the
 corner and coarser each stretch of thumbs away, and that unevenness is the vantage: what is looked at gets the most.
@@ -641,9 +647,11 @@ there, which is a count: at the third stop, turn this much. That is why a corner
 
 - *A count made to hold a turn rings.* Lay a finite count of even waves, or of evenly spaced samples, along a turn and ask
   it to hold a sharp change. It overshoots on both sides of the change, by about 9% of a jump however many waves are used,
-  the ripples only crowding nearer (Wilbraham 1848, Gibbs 1899). Nature's ringing is not like that: a struck bell rings
-  after it is struck and never before, and light past a sharp edge makes fringes on the lit side only. The ringing is the
-  mark of a turn written as a count, where the count has no place to put the corner.
+  the ripples only crowding nearer (Wilbraham 1848, Gibbs 1899). The overshoot belongs to the representation, a finite
+  count of even waves, not to the edge it is asked to hold: physical ringing is a different thing, a dynamics (a struck
+  bell rings after it is struck and never before; light past a straight edge makes fringes on the lit side, fading
+  smoothly into the shadow). What the overshoot shows is the cost of writing a sharp change as an even count, which has
+  no place to put the corner.
 - *Written down, the two acts cost differently.* An outline can be written as numbers at even places of one turn (its
   Fourier coefficients, its radius from a centre at even angles, its points at even shares of its length rebuilt by a
   band-limited sum) or as a walk along it (Bézier pieces, a list of points, the same points as steps, a turtle's forward and
@@ -660,7 +668,7 @@ there, which is a count: at the third stop, turn this much. That is why a corner
   96, and every count gave a rational bound; π is where the count would end if it held the whole turn, which no count
   does. Bernoulli's coin compounded n times, (1 + 1/n)ⁿ, is a count of periods; e is where it lands when the compounding
   becomes continuous. n reads of θ/n composed, (1 + iθ/n)ⁿ, are both at once: each finite count an exact reading, short in
-  angle by θ³/(3n²), and e^(iπ) = −1 where the count of π/n would land if completed across the half turn (§5). These are §5's "π completes the turn" and "e completes the scale", seen as the price of a count; the continuum a writer
+  angle by θ³/(3n²) to leading order, and e^(iπ) = −1 where the count of π/n would land if completed across the half turn (§5). These are §5's "π completes the turn" and "e completes the scale", seen as the price of a count; the continuum a writer
 holds is that count completed, not the reader's uncounted turn.
 
 **Motion, from reads.** A thing coming toward the reader is read at its edge: x, the thing's breadth against its distance,
@@ -850,7 +858,10 @@ inside a read, and what carries an observer from one to the other.
 The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each
 with its plan written before it was run: parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
 measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; Euler's formula as a count of reads in `plans/elm-plan.md`
-and `runs/elm/`.
+and `runs/elm/`. The three cases in data of §11 (LIGO, the quasar dipole, single photons) are `plans/lgo-plan.md`,
+`plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and `runs/wvp/`: each plan states its
+predictions and what would count against them before its run, and records the runs as they came out, the killed ones too.
+They illustrate the sorting of address from payload; none of them alone establishes it.
 
 ## References
 

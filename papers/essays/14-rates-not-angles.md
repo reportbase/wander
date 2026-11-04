@@ -24,7 +24,7 @@ Put together, this is the Cauchy's framing: it is the sweep over the something. 
 the law of that per, the reader's sweep rate counted in readings; the payload is what lies over it. The writer's rate is
 1, its account of the reader's sweep π/2 or 2/π, and the corner is where the three come together.
 
-**The writer is transcendental; the reader is not.** π is not a reader's number. It is the total of a completed turn, and
+**The writer is transcendental; the reader is not.** π is not a reader's number. It is the total of a completed half turn (a line's period; 2π an oriented turn's), and
 every number with π in it, π/2 and 2/π among them, is the writer's: the reader's sweep as measured by someone holding the
 whole turn. The reader holds one length, H, the thumb, and reads every far thing as a ratio of it, one in two, one in four.
 Counting thumbs, two thumbs, four, half a thumb, is a count, and a count is done in parallax and in writing, not in a
@@ -180,7 +180,7 @@ The tangent turns an angle into a rate: tan θ = v/h. The arctangent turns a rat
 sides.
 
 On one side is the slope, v/h: a ratio, the thing the reader holds, with no circle in it and no π. On the other side is
-the angle, a share of the whole turn, and a share of the whole needs the whole: π, the total of a completed turn.
+the angle, a share of the whole turn, and a share of the whole needs the whole: π, the total of a completed half turn.
 Angles need π by definition. To evaluate the tangent or the arctangent is to cross from one side to the other, and that
 crossing is where π lives.
 
