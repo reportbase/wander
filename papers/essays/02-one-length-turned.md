@@ -228,6 +228,10 @@ The factor of two between the sweeps *is* that squaring. It is why the radius tu
 one sweep's readings are ratios, unbounded and held by their median, and the other's are squares, bounded and held by
 their mean.
 
+The same doubling is how a spin's state is drawn in physics: a state at angle θ has its point on the sphere of states at
+2θ. Carry a spin round a closed loop of directions and the phase it gains from the loop alone, Berry's geometric phase, is
+half the solid angle the loop encloses, the half being this doubling (the third essay, section 10).
+
 There is a pretty corollary. In complex form, the central sweep's point is half of e raised to 2iθ. At the start, zero
 turn, it sits at B. At the corner, it sits at the top of the arc, in the direction i. At the end of the quarter turn,
 the horizon, the radius has made a half turn and sits back at A, home. That half turn is e to the power iπ, which equals
