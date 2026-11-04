@@ -49,7 +49,7 @@
     Depth (R677; THM run 4): the compress squeeze is the direction's times the distance's, cosh(ln r), r the thing's distance
     over the corner's; in the thumbs' levels distance and direction are orthogonal.
     Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
-    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=compress|cells|off.
+    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=compress|off (cells and blur read as compress).
     Test hook: window.__crosshairs (objects, target, H, read, readings, frame, lay, addresses, counts, pick, set (with words,
     show), show, menu, state).
     -->
@@ -108,7 +108,7 @@
     <button data-show="hud">the crosshairs' name and counts <span>off</span></button>
     <button data-show="cube">the one-thumb cube <span>on</span></button>
     <button data-show="density">the Cauchy's shading <span>on</span></button>
-    <button id="fid">fidelity <span>compress</span></button>
+    <button id="fid">view <span>by turns</span></button>
     <div class="sec">H and the world</div>
     <button id="hold">hold H <span>off</span></button>
     <label>K, the addresses <select id="K"><option>16</option><option selected>32</option><option>64</option></select></label>
@@ -189,13 +189,12 @@
     crosshair, one in all three, is held finest; a thing off the look, or nearer or farther than the corner, coarser, as
     cosh of how far its ratio is from one. At K = 32 about 10% at the corner, 12% at one in 2, 40% at one in 8, over 300%
     at one in 64.</li>
-    <li><b>Compress</b> (menu: fidelity). A fixed count of addresses does not blur the world, it squeezes it: toward home each
-    address holds more. Each thing is drawn shrunk about its own centre by the grain of its direction, the worst of its
-    three pair ratios: full size at the crosshair (the corner, every pair reading one), no distortion near it, then
-    smaller in proportion, as 1/(2·reading) toward home, where a reading reaches zero. Depth squeezes too, and separately:
-    in the three thumbs' levels distance runs along their diagonal and direction lies square to it, so the two multiply.
-    A thing nearer or farther than the corner is shrunk by cosh of the level of its distance over the corner's: half size at
-    3.73 times nearer or farther. Only the thing at the crosshairs is drawn at its full size.</li>
+    <li><b>Laid by turns</b> (menu: view). The grain is a precision, how finely an address holds a thing, not its size:
+    a fixed count of addresses squeezes more of the world into each toward home, the direction's grain times the
+    distance's (in the three thumbs' levels the two are at right angles). Seen, a thing spans the angle it spans, which
+    already falls by half each time its distance doubles. The view is laid by equal turns off the look rather than on a
+    flat screen: the two agree near the crosshair and part only far out, the flat screen stretching by tan α/α, 1.10 at
+    30°, 1.27 at 45°.</li>
     <li><b>The one-thumb circle.</b> A ball one thumb across round the crosshair's point touches the wedge's three faces,
     at the cube's corners one thumb back along each thumb. From the eye its outline is a circle 35.26° round the crosshair,
     the largest inside the wedge, holding 73% of its directions. It never changes size: H follows what is pointed at. The
@@ -207,9 +206,9 @@
     the circle's dot (35.26° off the look), the corner at the crosshair, the horizon at the third thumb's own direction
     (the ring, 54.74° off on the other side); 35.26° + 54.74° = 90°. Three quarter turns, crossed, each with its corner on
     the crosshair: that is why it is the corner of all three.</li>
-    <li><b>Address cells</b> (menu: fidelity). The view drawn through the cells themselves, a quarter turn holding K of
-    them: smallest at the crosshair, growing outward on the flat screen (the cos³ thinning). Part of this growth is the flat
-    screen's, not the reader's: in turn every cell is the same size.</li>
+    <li><b>Nothing hidden or blurred.</b> Every thing is drawn whole and at full strength, near, far or in another wedge
+    (grey); its colour says which field it is in, never how faintly. The view is laid by turns (menu: view), or on a flat
+    screen.</li>
     </ol>
     <p class="d">After <i>Reads and Writes</i> §6 ("The crosshairs") and §7 ("One thumb, two thumbs"), and essay 4.</p>
 </div>
@@ -274,8 +273,8 @@ const S = {
     show: { about: Q.get('about') === '1', read: Q.get('read') === '1', map: Q.get('map') === '1', strip: Q.get('strip') === '1',
         hud: Q.get('hud') === '1', cube: Q.get('cube') !== '0', density: Q.get('density') !== '0' },
     target: -1, H: 10, Hshow: 10, walkT: 0,
-    // fidelity (R672, R674): 'compress' by the grain of each thing's direction, 'cells' the view drawn through the address cells, or 'off'
-    fid: ['compress', 'cells', 'off'].includes(Q.get('fid')) ? Q.get('fid') : 'compress',
+    // the view (R672, R679, R680): 'compress' laid by turns off the look, or 'off' the flat screen; nothing hidden or blurred
+    fid: Q.get('fid') === 'off' ? 'off' : 'compress',   // R680: 'cells' (and 'blur') read as 'compress'
 };
 $('K').value = String(S.K);
 
@@ -348,18 +347,18 @@ function counts() { const F = frameOf(); let n = 0, f = 0, x = 0;
     for (const o of FIELD) { const r = read(o, F); r.field === 'other' ? x++ : r.s < 1 ? n++ : f++; } return { near: n, far: f, other: x }; }
 
 // ---- colour ----
+// R680 (Tom: "Don't hide or blur the objects."): every thing at full strength; the colour names its field (near teal,
+// the corner gold, far violet, another wedge grey), never dims it.
 function colourOf(o, alpha = 1, r = read(o)) {
-    if (r.field === 'other') return `rgba(150,150,170,${alpha * 0.16})`;
+    if (r.field === 'other') return `rgba(170,170,190,${alpha})`;
     if (r.field === 'corner') return `rgba(212,160,82,${alpha})`;
-    if (r.field === 'near') return `rgba(140,230,205,${alpha * (0.45 + 0.55 * r.s)})`;
-    const th = Math.log2(r.s);                                   // how many halvings of the reading
-    return `rgba(181,156,240,${alpha * Math.max(0.18, 1 - th / 9)})`;
+    if (r.field === 'near') return `rgba(140,230,205,${alpha})`;
+    return `rgba(181,156,240,${alpha})`;
 }
 
 // ---- the view ----
 const view = $('view'), mainCtx = view.getContext('2d');
-let vc = mainCtx;                           // the context drawn into (an offscreen one while laying address cells)
-const off = document.createElement('canvas'), offCtx = off.getContext('2d', { willReadFrequently: true });
+let vc = mainCtx;                           // the context drawn into
 
 // ---- fidelity (5 Nov 2026, R672; Tom: "How can we show perfect fidelity at the center and increasing distortion moving
 // away", then "Do both options with a menu toggle") ----
@@ -367,7 +366,7 @@ const off = document.createElement('canvas'), offCtx = off.getContext('2d', { wi
 // (π/K)·cosh(ln q), least at q = 1, the corner (focus.html's grain; OFS Corollary 6.1). A thing has three readings, its
 // reach along each thumb; its grain is the worst of the three, so the thing at the crosshair (all three one) is held
 // finest, and a thing off the look or nearer or farther than the corner coarser, as cosh of how far its ratio is from one.
-// Compress (R674, below) shrinks each thing by the grain of its direction; cells draws the view through the address cells themselves.
+// The grain is kept for the readout and the hook; since R679 no thing is drawn shrunk by it, and since R680 no cells or blur.
 // The grain of a direction (R674, THM runs 2–3): its three components along the thumbs, n·eᵢ; the worst pair level
 // max|ln(n·eᵢ/n·eⱼ)|; cosh of it. 1 at the crosshair and flat there (Σℓ² = 9ε², round to second order), growing as
 // 1/(2·reading) toward the three touch points of the one-thumb circle, where a reading reaches zero (home). A direction
@@ -392,35 +391,6 @@ function grainOf(r) {
     for (const t of THUMBS) { const q = r.q[t]; if (q > 0) worst = Math.max(worst, Math.cosh(Math.log(q))); }
     return (Math.PI / S.K) * worst;
 }
-// The address cells on the flat screen: a quarter turn holds K addresses, so a cell spans (π/2)/K of turn across and up
-// from the crosshair; laid on the flat screen its width grows as sec² of the angle off the look (the cos³ thinning in
-// two directions). Each cell is filled with the brightest thing the scene drew in it.
-function layCells(W, Hh, f, cx, cy, dpr) {
-    const img = offCtx.getImageData(0, 0, W, Hh).data, D = (Math.PI / 2) / S.K;
-    const edges = (n, c) => { const out = []; const lim = Math.atan((Math.max(c, n - c)) / f) + D;
-        for (let a = -Math.ceil(lim / D) - 0.5; a <= Math.ceil(lim / D) + 0.5; a++) out.push(c + f * Math.tan(Math.max(-1.55, Math.min(1.55, a * D))));
-        return out.filter((x, i, A) => i === 0 || x > A[i - 1]); };
-    const XS = edges(W, cx), YS = edges(Hh, cy), stride = Math.max(1, Math.floor(dpr));
-    mainCtx.fillStyle = '#04040a'; mainCtx.fillRect(0, 0, W, Hh);
-    for (let i = 0; i + 1 < XS.length; i++) {
-        const x0 = Math.max(0, Math.round(XS[i])), x1 = Math.min(W, Math.round(XS[i + 1])); if (x1 <= x0) continue;
-        for (let j = 0; j + 1 < YS.length; j++) {
-            const y0 = Math.max(0, Math.round(YS[j])), y1 = Math.min(Hh, Math.round(YS[j + 1])); if (y1 <= y0) continue;
-            let best = -1, br = 0, bg = 0, bb = 0;
-            for (let y = y0; y < y1; y += stride) for (let x = x0; x < x1; x += stride) {
-                const k = (y * W + x) * 4, sum = img[k] + img[k + 1] + img[k + 2];
-                if (sum > best) { best = sum; br = img[k]; bg = img[k + 1]; bb = img[k + 2]; } }
-            mainCtx.fillStyle = `rgb(${br},${bg},${bb})`; mainCtx.fillRect(x0, y0, x1 - x0, y1 - y0);
-        }
-    }
-    // the cells' own outlines, faint, so their growth from the crosshair shows
-    mainCtx.strokeStyle = 'rgba(255,255,255,0.06)'; mainCtx.lineWidth = 1; mainCtx.beginPath();
-    for (const x of XS) { mainCtx.moveTo(Math.round(x) + 0.5, 0); mainCtx.lineTo(Math.round(x) + 0.5, Hh); }
-    for (const y of YS) { mainCtx.moveTo(0, Math.round(y) + 0.5); mainCtx.lineTo(W, Math.round(y) + 0.5); }
-    mainCtx.stroke();
-    return { across: XS.length - 1, up: YS.length - 1, centre: XS[XS.findIndex(x => x > cx)] - XS[XS.findIndex(x => x > cx) - 1],
-             edge: XS[1] - XS[0] };
-}
 function size(cv, ratio) { const d = window.devicePixelRatio || 1, w = cv.clientWidth || 600;
     const W = Math.round(w * d), H = Math.round(w * ratio * d);
     if (cv.width !== W) cv.width = W; if (cv.height !== H) cv.height = H; return d; }
@@ -430,7 +400,6 @@ function drawView() {
     const dpr = sizeFull(view), W = view.width, Hh = view.height;
     // 84° across the shorter side, so the one-thumb cube's near corners (35.3° off the look) are in view
     const fov = 84 * DEG, f = (Math.min(W, Hh) / 2) / Math.tan(fov / 2), cx = W / 2, cy = Hh / 2;
-    const cells = S.fid === 'cells';
     // Compress (R679; Tom: "The distortion its excessive. Things don't distort that much until far into the horizon"):
     // the view laid by the reader's own addresses, equal turns off the look (r = fa·α, the azimuthal equidistant
     // projection), not by the flat screen's tan α. Near the crosshair the two agree (tan α ≈ α); they part only far out
@@ -442,7 +411,6 @@ function drawView() {
     const P = c => { if (!angle) return [cx + f * c[0] / c[2], cy - f * c[1] / c[2]];
         const rho = Math.hypot(c[0], c[1]), a = Math.atan2(rho, c[2]), k = rho > 0 ? fa * a / rho : 0;
         return [cx + k * c[0], cy - k * c[1]]; };
-    if (cells) { if (off.width !== W) off.width = W; if (off.height !== Hh) off.height = Hh; vc = offCtx; }
     vc.fillStyle = '#04040a'; vc.fillRect(0, 0, W, Hh);
     // The 3D Cauchy, centred on the crosshair: directions laid evenly by turning, seen on the screen, thin out as
     // cos³ of the angle off the look (the flat screen's (1/2π)(1 + r²)^(−3/2), r = tan of that angle). Shaded faintly.
@@ -497,7 +465,6 @@ function drawView() {
         vc.stroke();
     }
     vc = target;
-    if (cells) { vc = mainCtx; S.lastCells = layCells(W, Hh, f, cx, cy, dpr); } else S.lastCells = null;
     // labels: the thing at the crosshairs always, the others if asked and big enough on the screen
     vc.font = `${11 * dpr}px DM Mono, monospace`; vc.textAlign = 'center';
     for (const [d, o] of order) {
@@ -507,7 +474,7 @@ function drawView() {
         if (S.words === 0 || (!isT && (S.words < 2 || px < 18 * dpr))) continue;
         const [x, y] = P([c[0], c[1] + radius(o) * 0.9, c[2]]);
         if (x < 0 || x > W || y < 0 || y > Hh) continue;
-        const r = RD.get(o.i); if (r.field === 'other' && !isT) continue;
+        const r = RD.get(o.i);
         vc.fillStyle = colourOf(o, isT ? 1 : 0.85, r);
         vc.fillText(r.words, x, y - 4 * dpr);
     }
@@ -661,8 +628,8 @@ function toggleHold() { S.hold = !S.hold; syncMenu(); }
 $('hold').onclick = toggleHold;
 const WORDS = ['off', 'at the crosshairs', 'all'];
 $('words').onclick = () => { S.words = (S.words + 1) % 3; syncMenu(); };
-const FIDS = ['compress', 'cells', 'off'], FIDNAME = { compress: 'compress', cells: 'address cells', off: 'off' };
-$('fid').onclick = () => { S.fid = FIDS[(FIDS.indexOf(S.fid) + 1) % 3]; syncMenu(); };
+const FIDS = ['compress', 'off'], FIDNAME = { compress: 'by turns', off: 'flat screen' };
+$('fid').onclick = () => { S.fid = FIDS[(FIDS.indexOf(S.fid) + 1) % FIDS.length]; syncMenu(); };
 $('K').onchange = () => { S.K = +$('K').value; };
 $('kup').onclick = () => { S.k *= 10; S.H *= 10; S.Hshow *= 10; };
 $('kdown').onclick = () => { S.k /= 10; S.H /= 10; S.Hshow /= 10; };
@@ -745,7 +712,7 @@ requestAnimationFrame(frame);
 window.__crosshairs = {
     objects: () => FIELD.map(o => ({ i: o.i, kind: o.kind, d: dist(o) })),
     target: () => S.target, H: () => S.Hshow,
-    grain: i => grainOf(read(FIELD[i])), shrink: i => shrinkOf(FIELD[i]), distGrain: i => distGrain(FIELD[i]), dirGrain: d => dirGrain(d), homes: () => S.lastHomes, corners: () => S.lastCorners, cells: () => S.lastCells, read: i => read(FIELD[i]), readings: i => readings(FIELD[i]), frame: () => frameOf(), lay, addresses, counts, pick,
+    grain: i => grainOf(read(FIELD[i])), shrink: i => shrinkOf(FIELD[i]), distGrain: i => distGrain(FIELD[i]), dirGrain: d => dirGrain(d), homes: () => S.lastHomes, corners: () => S.lastCorners, read: i => read(FIELD[i]), readings: i => readings(FIELD[i]), frame: () => frameOf(), lay, addresses, counts, pick,
     set(o = {}) { if ('yaw' in o) S.yaw = o.yaw * DEG; if ('pitch' in o) S.pitch = o.pitch * DEG; if ('x' in o) S.x = o.x; if ('z' in o) S.z = o.z;
         if ('k' in o) { const r = o.k / S.k; S.k = o.k; S.H *= r; S.Hshow *= r; } if ('hold' in o) S.hold = !!o.hold; if ('K' in o) S.K = o.K;
         if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); if ('fid' in o) S.fid = o.fid; syncMenu();

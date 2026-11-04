@@ -7305,6 +7305,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   shrank everything off the crosshair at once. `crosshairs.html`'s compress and `plane-thumbs.html`'s lower row now lay the
   view by turns off the look (r = fa·α, azimuthal equidistant), sizes the angle each thing spans: alike near the crosshair,
   parting from the flat screen only far out (tan α/α 1.10 at 30°, 1.27 at 45°). Essay 5 and *Reads and Writes* §6 say so.
+- **R680** (5 Nov; Tom: "Don't hide or blur the objects."): on `crosshairs.html` and `plane-thumbs.html` every thing is
+  drawn whole and at full strength, the colour naming its field (another wedge grey), never dimmed or left out; the
+  address cells (R672) removed. A demo, nothing new claimed.
 
 ## Appendix B. Demos and computations
 
