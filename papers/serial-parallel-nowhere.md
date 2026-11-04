@@ -7352,6 +7352,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R691** (5 Nov; Tom: "update the essays"): R685–R690 carried into the essays. Essay 5 §10 gains "Laid by the
+  addresses" (the equal-area screen 2·sin(α/2) the addresses' own; the tunnel's rings at 0.765, 1.05, 1.23, 1.32 packing
+  toward √2, the bands holding 0.26, 0.20, 0.12 and the last 0.12; the distance address (2/π)·atan(D/ρ); no N, the world
+  made where the view reaches and culled to π/8K) and "Where the reader stands" (a point behind the screen, a vantage; the
+  read with no world); essay 4 the distance address; essay 16 §10 "A world made where the view reaches"; essay 3 and the
+  essays page point to `read.html`.
 - **R690** (5 Nov; Tom: "we still don't have a good demo of the read write paper and the 3d cauchy. lets try a new one.
   the buildings are actually irrelevent, they are the physics. cauchy is the geometry. lets show one of just the geometry
   and not get distracted by the physics.", then "proceed"): `read.html`, the read with no world. The screen square to

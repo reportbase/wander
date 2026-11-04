@@ -302,11 +302,53 @@ corner touches both, at home and the horizon.
 
 The grain is how finely an address holds a thing, not how large the thing looks. Seen, the world keeps its look near the
 crosshair and far beyond it. A thing's size is the angle it spans, which already falls by half each time its distance
-doubles; laid by turns off the look, its place parts from a flat screen's only far out, the screen stretching by tan α/α,
-1.10 at 30°, 1.27 at 45°, without bound toward the horizon. The squeeze is in the addresses, and it shows only far off.
+doubles.
 
-*Demos: crosshairs in a field (fidelity: compress, the one-thumb circle, the three corners and their homes and horizons);
-two thumbs in the plane.*
+### Laid by the addresses
+
+Which screen, then, shows the reader's own addresses? They are the directions uniform by area about the look, so the
+screen that gives each the same room is the one that keeps area: Lambert's azimuthal equal-area projection about the
+crosshair, a direction α off the look drawn 2·sin(α/2) out. It is true at the crosshair and departs gently: 0.9% at 15°,
+3.4% at 30°, 7.6% at 45°. A flat screen does the opposite. Its distance out is tan α, the reading itself, so the far
+readings stretch without bound toward the horizon, and the directions thin on it as cos³α.
+
+Laid by its addresses, the tunnel of section 4 shows the far field the way the reader holds it. The ring one thumb off
+the look, at 45°, sits 0.765 out; one in 2, one in 4 and one in 8 sit at 1.05, 1.23 and 1.32; and the rest bunch toward
+the horizon's rim at √2, never reached. Equal room holds equal addresses, so each band gets the room its share takes:
+the corner to one in 2 holds 0.26 of the directions in front, one in 2 to one in 4 holds 0.20, one in 4 to one in 8
+holds 0.12, and everything past one in 8 the last 0.12, packed under the rim. The far field is not stretched but packed.
+That is the distortion at the horizon, and it is the addresses', not the world's.
+
+Distance bunches the same way. No direction moves when a thing is moved along its own ray, so a view of directions alone
+can never show distance bunching. A view laid by distance address can: a point on the ground ρ away goes on the row
+(2/π)·atan(D/ρ), where D is the thumb's own ground distance, so that the feet are at one, the thumb at ½ and the horizon
+at zero. Then everything inside the thumb is held in proportion, and past it each band of one in 2, one in 4, one in 8 is
+thinner than the last, the far world packed under the horizon.
+
+And the reader never counts the world. A view of a world of N stored things is a writer's: N was written first. The
+reader's view has K addresses and nothing else. A world drawn for it can be made where the view reaches, at every scale,
+and culled to what spans an address, a quarter of π/2K; the rest is in the far field's bunched rows, held, never listed.
+Look elsewhere and the same K fall on other things.
+
+*Demos: crosshairs in a field (the view by distance address, the tunnel, equal area, by turns, the flat screen; the
+one-thumb circle, the three corners and their homes and horizons); two thumbs in the plane.*
+
+### Where the reader stands
+
+Every picture above is drawn on a screen, and the reader is not on it. The reader stands at the point the screen is
+projected from, where the three thumbs meet, behind the screen with the look running out through the crosshair. Every mark
+on the screen is a direction from that point, set tan α off the crosshair. The crosshair is the look itself. The thumbs
+are at √2, 54.74° off; the homes are at 1/√2, 35.26° off. The horizon, 90° off, runs parallel to the screen and never
+lands on it. The reader has no shape here: a point, a vantage. The rings and the screen are the writer's drawing of what
+that point holds.
+
+Strip away the world and that drawing is the read itself: the addresses in thumbs, thinning off the crosshair as the
+two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)); or laid by count, each ring holding the same share, which turns the whole
+half of the directions in front into a disc whose rim is the horizon. Shown as a height, the same law is a hill whose peak
+is the corner and whose tails never reach zero. Nothing in it changes when the look turns or the world is scaled, because
+there is no world in it: no payload, only the geometry the payload would paint.
+
+*Demo: the read (the addresses in thumbs and by count, the hill, and from the side, where the reader stands).*
 
 ---
 

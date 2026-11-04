@@ -107,6 +107,11 @@ horizontal, vertical and depth, the thing pointed at one thumb along each and �
 circle one thumb wide in space, 35° on the screen, runs from the corner out to home, the addresses squeezing toward home as
 they go (the fifth essay, "Three thumbs at the crosshair").
 
+Laid by distance address, a view shows the far field as the reader holds it: a point on the ground ρ away goes on the row
+(2/π)·atan(D/ρ), D the thumb's own ground distance, so that the thumb sits at ½ and the bands one in 2, 4 and 8 pack ever
+thinner under the horizon. The world is never counted for it: drawn only where the view reaches and culled to what spans an
+address, it needs K and no N (the fifth essay, "Laid by the addresses").
+
 ### Reality in 2H
 
 There is a second way to lay out the same far addresses, by length instead of by count. Place a far reading at a distance
@@ -124,7 +129,7 @@ end of its own range in either case.
 | the in-place lay | length | yes, out to 2H | H, halfway |
 | the logarithmic lay | number of places | no | at one thumb, where the equal stretches start |
 
-*Demos: levels (the reader's lay, and the in-place lay at* `?lay=inplace`*); H is a zoom.*
+*Demos: levels (the reader's lay, and the in-place lay at* `?lay=inplace`*); H is a zoom; crosshairs in a field (by distance address).*
 
 ---
 
