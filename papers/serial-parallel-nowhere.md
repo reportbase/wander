@@ -7235,6 +7235,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   (one reading d/H, its field, colour, words, place on the map), what it shares out (the K addresses at H·tan(kπ/2K), the
   counts, the rings on the ground, the walking pace, a convenience of the page) and what it does not change (scaling the
   world; the field itself). The perspective, the wireframes and the pick use no H. A demo, nothing new claimed.
+- **R669** (5 Nov; Tom: "very buggy, moving around does not change anyhing."): `crosshairs.html` fixed: a tap held H
+  (a stray tap froze the split); walking was a fixed 4 units a second in a field 2,000 across and could stop inside a
+  box; pointing between things left H where it was. Now holding is Space or the menu only; the walk is a third of the
+  way to what is pointed at each second, doubling while held (to 8 times), and the wheel walks a tenth of the way; the
+  eye walks through wireframes and never picks the one it stands in; below the horizon the ground is what the
+  crosshairs meet, its distance H, the sky keeping H. "How H makes the scene" item 2 says so.
 
 ## Appendix B. Demos and computations
 

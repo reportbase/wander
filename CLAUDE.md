@@ -115,6 +115,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and counts, and "How H makes the scene" (fifteen numbered ways H enters); rings on the ground (the corner at H, one in 2,
   4, 8) on at first; ▲ ▼ walk buttons only on a touch screen. Params also `words=0|1|2&about=1&read=1&map=1&strip=1&hud=1&rings=0`;
   hook adds `show`, `menu`, and `set` takes `words` and `show`. Keep new text on this page behind the menu.
+  Since R669 (5 Nov; Tom: "very buggy, moving around does not change anyhing."): a tap no longer holds H (Space or the menu
+  only); the walk a third of the way to the target a second, doubling while held (×8 at most), the wheel a tenth; walking
+  through wireframes, the box the eye stands in never picked; below the horizon the ground is met, its distance H.
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -1451,6 +1454,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   crosshair setting H on what they point at, the near and far fields following.
   R668 (5 Nov; Tom: "Should be full screen. Any text you want to show should be hidden until the user ask for it from a
   menu."): `crosshairs.html` full screen, every word behind its menu, "How H makes the scene" the fifteen ways H enters.
+  R669 (5 Nov; Tom: "very buggy, moving around does not change anyhing."): `crosshairs.html`'s walking, holding and the
+  ground's pick fixed, so moving and looking always move H.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
