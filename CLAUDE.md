@@ -152,6 +152,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   screen laid by the direction grain cosh(√6·α) (its worst pair level √6·α near the crosshair); squeeze 1% at 3.4°, 8% at
   10°, 28% at 20°, the front half within 35.7° past a₀. The view toggles true at the focus / by turns / flat screen.
   Hook adds `focusLay(a, a0)`, `a0`.
+  Since R683 (Tom: "Did you use the tangent sweep for the gradient?", then "Yes, make it exact"): gd is the tangent sweep's
+  turn on the level (gd(x) = 2·(atan eˣ − 45°)); "true at the focus, exact" (`fid=focus`, the default, `focusR`) lays each
+  direction by its own three readings: R = 2·|turn − 45°|/C(φ), the turn atan2(c_j·e_i, c_i·e_j) of the pair turned
+  farthest, counted from the pointed thing's edge e as a new zero, C(φ) = √2·max|cos(φ − φᵢ) − cos(φ − φⱼ)| (√6 on a
+  thumb, 3/√2 between). True at the crosshair to first order, but the departure is first order in α (R/α 0.98 and 1.02 at
+  3°, 0.83 and 1.20 at 34°), three-fold: squeezed toward the thumbs (the horizons), stretched toward the homes, creased
+  where the worst pair changes, another wedge's directions past the ring. R682's round lay kept as `fid=round`. Hook adds
+  `focusR(c, a0)`, `rateAt(φ)`.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1520,6 +1528,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `crosshairs.html` gains small things on the ground, airplanes in the sky and a zoom; zoom is not H.
   R682 (5 Nov; Tom: "When I move the cross hairs to an object, it should have perfect fidelity. Moving away from the
   object should be increasingly distorted, by gentle at first"): `crosshairs.html`'s view true at the focus, laid by grain.
+  R683 (5 Nov; Tom: "Yes, make it exact"): the lay by each direction's own pair turn; not gentle and not round, R682's kept.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

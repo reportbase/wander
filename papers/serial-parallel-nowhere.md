@@ -7318,6 +7318,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   level grows as √6·α off the crosshair (THM) and its grain is cosh of that; the slope 1 and the curvature 0 at the focus
   (cosh is flat to second order), so the squeeze is 1% at 3.4°, 8% at 10°, 28% at 20°. Positions laid, not things
   shrunk (R679, R680). A demo, nothing new claimed.
+- **R683** (5 Nov; Tom: "Did you use the tangent sweep for the gradient?", then "Yes, make it exact"): R682's gd is the tangent
+  sweep's turn written on the level, gd(x) = 2·(atan eˣ − 45°), applied to √6·α as the level. Laid instead by each
+  direction's own readings (the three reaches along the thumbs, the pair turned farthest, atan2 against the pointed thing's
+  edge as a new zero), the view is true at the crosshair only to first order: R/α is 0.98 and 1.02 at 3°, 0.94 and 1.06 at
+  10°, 0.83 and 1.20 at 34°, the difference first order in α, three-fold, squeezed toward each thumb (its horizon) and
+  stretched toward each home, with a crease wherever the farthest pair changes. Because a reading falling to zero turns at
+  a finite rate in angle, the addresses do not crowd at the homes; they crowd only in levels. The round lay of R682 is
+  gentle (second order) because it uses the linear level. Both kept on the page; which is default is Tom's. A demo.
 
 ## Appendix B. Demos and computations
 
