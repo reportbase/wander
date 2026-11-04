@@ -307,7 +307,10 @@ writer's ln z = ln r + iθ taken as a function of the turn, §5), comes back thi
   exactly. Two detectors' signals read against each other are a direction too, and where the signals are like noise that
   direction follows a Cauchy: the payload read as a ratio is an address again. The payload arrived written, as marks; read
   against itself it gives directions in its own space, so recovering it this way is a write read again. What the ratios leave out is one number,
-  the payload's overall scale a₀, and that number is V again.
+  the payload's overall scale a₀, and that number is V again. Radio astronomy reads polarization this way: a source's
+  intrinsic polarization angle, from the ratio of its Stokes U to Q, is a reading of the payload, unchanged by scale,
+  while the Faraday rotation that turns it on the way, RM·λ², carries the rotation measure in radians per square metre
+  and so is a writing (Burn 1966).
 - *By dividing the address law out.* What is counted along the addresses is the address law times the payload's own
   weight, ρ(θ)·2/(π(1 + s²)). The address law is known before anything arrives, so dividing by it leaves the payload's
   distribution exactly, up to its total: the astronomer's flat field, importance sampling's 1/p. The median direction of
@@ -888,6 +891,17 @@ measured contrast, 0.69 and 0.56, lies under that bound, short by the source. Th
 how far below it a pattern falls is what arrives. None of the three is new physics. What the reading adds is where each
 part lives.
 
+One classical case, not run here, shows the sort as cleanly as any. A spin carried slowly round a closed loop of field
+directions comes back with two phases (Berry 1984). The geometric one is half the solid angle the loop of directions
+encloses: it depends on which directions were visited and nothing else, the same if the loop is taken twice as slowly,
+in a field twice as strong, or in an apparatus twice the size. The dynamical one is energy times time, and moves with all
+three. Experiments have separated them by keeping the loop and changing the rest: photons in a coiled fibre, whose
+rotation followed the solid angle of the coil's turning alone (Tomita and Chiao 1986), and neutrons in a turning field,
+where the field's strength and the time were varied and the geometric part stayed (Bitter and Dubbers 1987). Both tests
+sort it: scaling moves only the dynamical phase, and changing what is carried along the loop moves only the dynamical
+phase. Read here, the half is the central sweep's doubling: a spin state at angle θ has its point on the sphere of states at 2θ, as
+the radius stands at twice the ray's angle (§4), so a loop counted on that sphere is counted twice.
+
 **Where the ideas come from.** Jaynes's principle of transformation groups (1968, 1973) gives the method: the measure that an
 observer's ignorance leaves unchanged. Poincaré's universe made a thousand times larger overnight (1908), undetectable from
 inside, is the scale test; his distinction between representative and geometric space is the reader's and the writer's.
@@ -916,8 +930,14 @@ They illustrate the sorting of address from payload; none of them alone establis
 - Bernoulli, J. (1690). *Quæstiones nonnullæ de usuris.* Acta Eruditorum.
 - Bernstein, A. J. (1966). Analysis of programs for parallel processing. *IEEE Transactions on Electronic Computers*
   EC-15(5), 757–763.
+- Berry, M. V. (1984). Quantal phase factors accompanying adiabatic changes. *Proceedings of the Royal Society of London A*
+  392, 45–57.
+- Bitter, T. and Dubbers, D. (1987). Manifestation of Berry's topological phase in neutron spin rotation. *Physical Review
+  Letters* 59, 251–254.
 - Bridgman, P. W. (1922). *Dimensional Analysis.* Yale University Press.
 - Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met.* Working paper, archived.
+- Burn, B. J. (1966). On the depolarization of discrete radio sources by Faraday dispersion. *Monthly Notices of the Royal
+  Astronomical Society* 133, 67–83.
 - Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical Review* 4, 345–376.
 - Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
   Royal Astronomical Society* 206, 377.
@@ -954,6 +974,8 @@ They illustrate the sorting of address from payload; none of them alone establis
 - Staudt, K. G. C. von (1847). *Geometrie der Lage.* Nürnberg: Bauer und Raspe.
 - Takenaka, S. (1925). On the orthogonal functions and a new formula of interpolation. *Japanese Journal of
   Mathematics* 2, 129–145.
+- Tomita, A. and Chiao, R. Y. (1986). Observation of Berry's topological phase by use of an optical fiber. *Physical Review
+  Letters* 57, 937–940.
 - Trotter, H. F. (1959). On the product of semi-groups of operators. *Proceedings of the American Mathematical Society*
   10, 545–551.
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII.* Tours.

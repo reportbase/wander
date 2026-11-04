@@ -7208,6 +7208,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   4.6; the double slit's 2hv from the slits' counts. Essay 6 §12: the error ε·cosh(ln k) and the walk at k = 20. Essay 13:
   the two orders of quarter turns 120° apart; the split and corners need only the exchange. Essay 1 §5: no real instrument
   reads purely, the test sorts quantity by quantity.
+- **R665** (4 Nov; a list of four physics cases; Tom: "proceed with your recomendation"): Berry's phase added, classical and
+  not run here: the geometric phase half the solid angle of the loop of directions (address; unmoved by speed, field
+  strength or size), the dynamical phase energy × time (moves with all three); Tomita and Chiao 1986, Bitter and Dubbers
+  1987; the half read as the central sweep's doubling. Faraday rotation as one example of the payload read by its ratios
+  (the intrinsic angle a reading, RM in rad/m² a writing; Burn 1966). Not taken: caustics (in lensing the caustics' place
+  moves with the lens mass, and magnification is a ratio, so the list's labels were off) and the critical angle (Fresnel's
+  share is a ratio too; only Goos–Hänchen's shift is a length). *Reads and Writes* §2, §11; essay 3 §5, §10; README.
 
 ## Appendix B. Demos and computations
 

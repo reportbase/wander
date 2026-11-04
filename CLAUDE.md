@@ -1425,6 +1425,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   three laws on the sphere and the 120°, §1's pure read a limit. No new test; the cut of restatements left to Tom.
   R664 (4 Nov; Tom: "update the essays"): R663 in essays 3 §10 (dipole and double-slit numbers), 6 §12 (ε·cosh(ln k)),
   13 (120°; the split needs only the exchange) and 1 §5 (the pure read a limit).
+  R665 (4 Nov; Tom: "proceed with your recomendation"): Berry's phase in *Reads and Writes* §11 and essay 3 §10 (geometric
+  half the solid angle, an address; dynamical energy × time); Faraday rotation in §2's "by its ratios" and essay 3 §5.
+  Caustics and the critical angle not taken (mislabelled as offered).
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
