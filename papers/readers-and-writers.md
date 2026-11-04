@@ -551,8 +551,9 @@ quarter turns crossed, each with its corner under the crosshair. Inside the circ
 distortion at the corner, the pair levels ln(v/h) all zero there and their squares the same in every direction to second
 order; moving out each address holds more, in proportion, as one over twice the reading toward home. That is
 compression, not blur: a fixed count of addresses squeezes more of the world into each, it does not make it fuzzy. The
-squeeze is not round, hexagonal near the corner and unbounded only at the three homes. (Checked exactly; see Code and
-data.)
+squeeze is not round, hexagonal near the corner and unbounded only at the three homes. It is a precision, not a size:
+seen, a thing spans the angle it spans, and laid by turns off the look its place parts from a flat screen's only far out
+(tan α/α, 1.10 at 30°, 1.27 at 45°). (Checked exactly; see Code and data.)
 
 **Read in ratios, counted in thumbs.** Inside the corner the reader's readings are in proportion; past it each is a ratio,
 one in two, one in four, one in eight, and two far things are related by the ratio of their readings ("one in eight is
