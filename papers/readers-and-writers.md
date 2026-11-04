@@ -20,7 +20,9 @@ This paper brings together what each vantage holds, gives the geometry the reade
 added in becoming a writer. The reader's directions are laid by the uniform turn, whose law in the reading v/h is the
 Cauchy, with its median at the corner v = h, its horizon never reached and no mean: an *address* given before anything
 arrives. What arrives along an address is the *payload*, met: the world's writing found there, so the address is read
-and the payload written. A rate is of a payload per an address: the per is read, the of written. The writer has the
+and the payload written. So the two acts never race: a read adds nothing, and a write to the payload moves no address, so
+reads of one geometry agree in whatever order they are taken and a write never runs into them. Where reading and writing
+share memory, in computing, that separation has to be engineered; here it is given. A rate is of a payload per an address: the per is read, the of written. The writer has the
 angle, the rate 1, and measures the reader's two sweeps from horizontal to vertical as π/2 (central) and 2/π (inscribed),
 whose product is its own 1. One length, counted, makes the rationals; but counting is done in parallax and in writing, not in
 a pure read, which holds directions and their order. The square roots need two lengths combined, and the transcendental numbers a limit no finite algebraic step reaches: π completes the
@@ -45,6 +47,12 @@ its place, in strides. The room has a shape and a size now, in your stride. Coun
 in metres.
 
 The first part is reading. The second and third are writing. The rest of this paper is about the line between them.
+
+Put read and write side by side and anyone who has programmed thinks first of a race: a read and a write meeting on one
+thing, the result depending on which came first. In this geometry that never arises, and the reason is the split the
+paper turns on. A read gives the address, a direction; what is written is the payload met along it. A read adds nothing,
+and a write to the payload moves no address, so reads agree in whatever order they are taken and no write runs into one.
+Computing has to build that separation by hand; geometry starts with it (see "Reads do not conflict", below).
 
 **What a read is.** A read is the set of all sweeps of the thumb in one moment, from one standpoint. A sweep is the one
 length the reader holds, H, turned from all of it lying along h to all of it standing along v; the read is every such
