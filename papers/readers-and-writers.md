@@ -666,6 +666,22 @@ puts the crosshair at the corner of all three (the Cauchy's thinning, centred on
 it). They are the same one length either way: the thumbs counted across the look are the dimension, and the thumbs counted
 at the corner are the parties, one more.
 
+**The shape is swept, not each thumb.** The even read in space does not come from sweeping each thumb through its own
+angle. Sweep them that way, evenly and one after the other, round about the up thumb and then up toward it, and every pose
+reached is still a turn of the whole frame, but the poses are weighed otherwise: the directions pile toward the thumb the
+first sweep turns about, where the second sweep shrinks to a point; the hill in the readings is not round; v falls below h
+for 0.343 of the readings, not a half, and the near field is 0.233, not a third. Taken in the other order, the pile goes
+to another thumb and another pair leaves its corner. The three thumbs turned together, one rigid frame with every turn
+weighed alike, give the round hill, every pair at its corner and the near field a third, and there is no order to it: any
+turns of a rigid frame compose to one turn about one axis (Euler), and only one law is unchanged by composing them (Haar).
+Written in the thumbs' own angles, that sweep is even round the horizontal and even in height, not in angle; the weight on
+the second angle comes from the frame turning as one, not from either thumb (Archimedes' hat-box, as above, seen from the
+turns). So the thumbs are marks the shape carries: a thumb lands √2 off the look and a home 1/√2 at every turn of it. In
+the plane there is one thumb, its turns commute, and the two ways are the same. The shape can be swept further than turns:
+any linear map of the thumbs' space, a projective map of the screen, carries the even read to an elliptical Cauchy, the
+same family, its standpoint five numbers in space against the plane's m + iγ; only the turns keep it round, and a stretch
+is a drawing with two lengths, a writer's.
+
 **The writer's cube.** The writer's frame with three parties is Descartes's: X, Y, Z, three number lines, every point three
 amounts. It reaches the reader's directions only with H and the angles: X = H·cos a·cos ψ, and so on.
 
@@ -961,7 +977,7 @@ inside a read, and what carries an observer from one to the other.
 
 The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each
 with its plan written before it was run: parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
-measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the read with no world, and where the reader stands, in `read.html`; the tunnel laid by its addresses, the distance address and a world culled by K in `crosshairs.html`; Euler's formula as a count of reads in `plans/elm-plan.md`
+measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the shape swept whole against each thumb on its own in `plans/swp-plan.md` and `runs/swp/`; the read with no world, and where the reader stands, in `read.html`; the tunnel laid by its addresses, the distance address and a world culled by K in `crosshairs.html`; Euler's formula as a count of reads in `plans/elm-plan.md`
 and `runs/elm/`. The three cases in data of §11 (LIGO, the quasar dipole, single photons) are `plans/lgo-plan.md`,
 `plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and `runs/wvp/`: each plan states its
 predictions and what would count against them before its run, and records the runs as they came out, the killed ones too.
@@ -992,10 +1008,13 @@ They illustrate the sorting of address from payload; none of them alone establis
   2154–2157.
 - Euclid. *Elements*, Book III, Proposition 20.
 - Euler, L. (1748). *Introductio in analysin infinitorum.* Lausanne.
+- Euler, L. (1776). Formulae generales pro translatione quacunque corporum rigidorum. *Novi Commentarii Academiae
+  Scientiarum Petropolitanae* 20, 189–207.
 - Gibbs, J. W. (1899). Fourier's series. *Nature* 59, 606.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
   *Physics Letters A* 128, 391–394.
+- Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *Annals of Mathematics* 34, 147–169.
 - Hölder, O. (1889). Ueber einen Mittelwerthssatz. *Göttinger Nachrichten*, 38–47.
 - Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 - Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3, 477–492.

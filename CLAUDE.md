@@ -204,6 +204,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   wheel) and the K = 2R distance addresses H·tan(kπ/2K), and on the reader's lay ((2/π)·atan(d/H), every address the
   same room, the corner at ½); dragging H slides the things along the fixed addresses, K/2 inside H at every H, the
   screen and the hill unmoved. Menu "drag the thumb (H)", `?strip=0&H=<log10 H>`; hook `strip()`, `set({H, strip})`.
+  The shape swept whole (5 Nov; Tom: "the thumbs are swept as part of the cauchy shape", then "proceed"; SPN R695, SWP):
+  menu "swept" cycles the shape whole (the round hill), each thumb on its own pan then tilt (the law painted over the
+  wedge, (2/π)/cos a times the even one, piling toward the up thumb; the hill a capped mesh, 0.78 of the round peak at the
+  crosshair) and tilt then pan (the pile on the depth thumb). `?sweep=pantilt|tiltpan`; hook `sweep()`, `set({sweep})`.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1593,6 +1597,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R693 (5 Nov; Tom: "so the cauchy is the same regardless, but you can drag the near field in or out.", then "Yes"):
   `read.html`'s strip, H dragged, the things sliding along addresses that never move.
   R694 (5 Nov; Tom: "update the essays"): R693 in essay 4 §11 ("Dragging the thumb") and essay 5 §10; the essays page.
+  R695 (5 Nov; Tom: "the thumbs are swept as part of the cauchy shape", then "proceed"): SWP (`plans/swp-plan.md`,
+  `runs/swp/`), nothing killed: each thumb swept through its own even angle reaches every pose a turn of the frame does but
+  weighs them otherwise (one pair 0.3426, the near field 0.2326, a pile toward one thumb, which pair and which thumb set by
+  the order); the three thumbs turned as one frame, every turn alike, give the round hill, every pair ½, the near field ⅓,
+  no order (Euler, Haar); written per thumb that is even in azimuth and in height; any linear map of the thumbs' space
+  keeps the elliptical Cauchy family (the shape can be swept, its standpoint five numbers); same-shape hills stack.
+  *Reads and Writes* §7 "The shape is swept, not each thumb"; essay 5 §6; `read.html`'s "swept".
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

@@ -164,6 +164,15 @@ its height. So sweeping evenly in azimuth and evenly in *height*, rather than in
 That is Johann Lambert's equal-area map of 1772. Swept that way, every pair keeps its corner and the near field is a
 third.
 
+Put another way: the even sweep is not two sweeps, one per thumb. It is the three thumbs turned together, a single rigid
+shape, every turn of it weighed alike. Every pose the two angle sweeps reach is also a turn of the whole shape; what they
+get wrong is the weight on the poses. Swept one after the other, round and then up, the directions pile toward the up
+thumb, where a turn round it shrinks to nothing; swept up and then round, they pile toward another thumb, and the pair that
+leaves its corner changes with the order. Turned whole there is no order at all: any turns of a rigid shape add up to one
+turn about one axis, Euler's theorem of 1776, and Haar's even law is the one that composing turns leaves alone. The thumbs
+ride the shape as marks, landing at the same places on the screen whatever turn it is given. With one thumb, in the plane,
+the two ways are one, which is why the difference waits for the third.
+
 This even-in-height sweep is special to three parties. With two, the even sweep is the turn itself. With four, the
 height's density on the even sweep is (4/π)·√(1 − t²), not flat.
 
@@ -352,8 +361,8 @@ Nor does it change when the thumb is dragged. Put a row of things along the look
 distance addresses, in or out of the near field, half the addresses inside the thumb at every H, and the screen and the hill
 stay exactly as they were. The Cauchy is the same at every H; the thumb decides only where the things land.
 
-*Demo: the read (the addresses in thumbs and by count, the hill, from the side where the reader stands, and the thumb
-dragged).*
+*Demo: the read (the addresses in thumbs and by count, the hill, from the side where the reader stands, the thumb
+dragged, and the shape swept whole against each thumb on its own).*
 
 ---
 
@@ -402,6 +411,8 @@ third of where you can look.
 
 - Archimedes, *On the Sphere and Cylinder* (the hat-box theorem).
 - Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten*. Berlin.
+- Euler, L. (1776). Formulae generales pro translatione quacunque corporum rigidorum. *Novi Commentarii Academiae
+  Scientiarum Petropolitanae* 20, 189–207.
 - Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *Annals of Mathematics* 34, 147–169.
 - Smart, W. M. (1977). *Textbook on Spherical Astronomy*, 6th ed., revised by R. M. Green. Cambridge University Press.
   (Horizon coordinates.)
