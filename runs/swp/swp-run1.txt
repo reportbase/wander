@@ -1,0 +1,38 @@
+W1 P(v2<=h) = 1/2 exactly (ψ <= 45°); P(v<=h) = 0.342583477852475 ; P(v<=v2) = 0.342583477852475 ; near field 0.232631533384301
+W1 not killed
+W2 v<=h            0.50011 vs 0.50000  (+0.22 se)
+W2 v2<=h           0.50003 vs 0.50000  (+0.06 se)
+W2 v2<=v           0.49959 vs 0.50000  (-0.82 se)
+W2 near            0.33352 vs 0.33333  (+0.40 se)
+W2 chamber h>v>v2  0.16677 vs 0.16667  (+0.29 se)
+W2 not killed
+W3 totals 1.0 1.0 ; thumb-by-thumb f(1,0)/f(0,1) = 1.4142135623730950488 (√2 = 1.4142135623730950488 )
+W3 cell s∈[0,0.5) s2∈[0,0.5): thumbs 0.08425 vs 0.08443 (-0.64), whole 0.12822 vs 0.12819 (+0.09)
+W3 cell s∈[0.5,1.5) s2∈[0,0.5): thumbs 0.09669 vs 0.09703 (-1.18), whole 0.11438 vs 0.11454 (-0.50)
+W3 cell s∈[0,0.5) s2∈[0.5,1.5): thumbs 0.07462 vs 0.07454 (+0.32), whole 0.11457 vs 0.11454 (+0.09)
+W3 cell s∈[1,3) s2∈[1,3): thumbs 0.09617 vs 0.09576 (+1.42), whole 0.10990 vs 0.10997 (-0.22)
+W3 not killed
+W4 thumb-by-thumb over uniform: horizon 0.636619772368 ; down the diagonal 0.779696801234 (2/π·√(3/2) = 0.779696801234 ); at sin a = 0.999999 450.158
+W4 whole sweep even in height True , even in azimuth True ; not killed
+W5 tilt-then-pan: P(v<=h) = 0.5 ; P(v2<=h) = 0.342583477852475
+W5 e1 then e2: 120.0 ° about ['0.57735', '0.57735', '0.57735'] ; other order: 120.0 ° about ['0.57735', '0.57735', '-0.57735']
+W5 the two poses differ by a turn of 120.0 °
+W5 fixed∘R: near 0.33363, v<=h 0.50061
+W5 R∘fixed: near 0.33316, v<=h 0.49954
+W5 not killed
+W6 a=0.3, ψ=1.1: carries e1 to n 0.0, |RᵀR−I| 2.7e-51, det 1.0, one turn 65.0937491° (axis fixed 3.34e-52)
+W6 a=1.2, ψ=0.2: carries e1 to n 0.0, |RᵀR−I| 1.57e-51, det 1.0, one turn 69.58731622° (axis fixed 1.67e-52)
+W6 a=0.7, ψ=0.7: carries e1 to n 0.0, |RᵀR−I| 2.11e-51, det 1.0, one turn 56.12837601° (axis fixed 0.0)
+W6 not killed
+W7 readings moved 1.34e-51 ; thumbs at ['1.4142135623731', '1.4142135623731', '1.4142135623731'] ; homes at ['0.707106781186548', '0.707106781186548', '0.707106781186548']
+W7 readings moved 0.0 ; thumbs at ['1.4142135623731', '1.4142135623731', '1.4142135623731'] ; homes at ['0.707106781186548', '0.707106781186548', '0.707106781186548']
+W7 readings moved 0.0 ; thumbs at ['1.4142135623731', '1.4142135623731', '1.4142135623731'] ; homes at ['0.707106781186548', '0.707106781186548', '0.707106781186548']
+W7 not killed
+W8 plane turns commute 0.0 ; the even turn its own Haar measure; pair at ½ by the exchange; not killed
+W9 map 1: location [0.488  0.4563], scatter [[2.7686, 1.3139], [1.3139, 0.6316]], worst of 16 shares 1.44 se
+W9 map 2: location [-3.9092 -1.2138], scatter [[6.6283, 0.4858], [0.4858, 0.1607]], worst of 16 shares 1.70 se
+W9 map 3: location [-0.0085 -0.358 ], scatter [[0.0527, 0.1293], [0.1293, 0.321]], worst of 16 shares 1.47 se
+W9 a turn: location [0. 0.] scatter [[1.0, 0.0], [0.0, 1.0]] (a turn of the screen about its point: round; the look itself moves)
+W9 not killed
+W10 one shape, γ 0.7 + 1.6: 0.0 from 2.3 ; two shapes: the Σ' fitted on three directions misses a fourth by 0.004697368
+W10 not killed

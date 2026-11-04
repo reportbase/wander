@@ -7352,6 +7352,21 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R695** (5 Nov; Tom: "the shape of the 3d cauchy shows why two cauchys combine into another cauchy. seems like we have
+  the sweep of three thumbs and that geometric structure that is created also sweeps as a shape."; "the larger point is that
+  this capability means the shape itself can be swept."; "so I think must actually happen is not the sweep of each thumb
+  individually, the thumbs are swept as part of the cauchy shape."; then "proceed"): SWP (`plans/swp-plan.md`, run 1,
+  nothing killed). Each thumb swept through its own angle, evenly and one after the other, reaches every pose a turn of the
+  whole frame reaches but weighs them otherwise: (2/π)/cos a times the even law per solid angle, a pile toward the thumb
+  the first sweep turns about; one pair at 0.3426, the near field 0.2326; the hill not round; the order moving which pair
+  and which thumb. The three thumbs turned as one rigid frame, every turn alike, give the round hill, every pair ½, the
+  near field ⅓, and no order: turns compose to one turn about one axis (Euler 1776), and Haar's measure is the one law
+  composing leaves alone. Per thumb that sweep is even in azimuth and in height, the weight on the altitude the frame's,
+  not a thumb's. The thumbs are marks the shape carries (√2, 1/√2 at every turn). Beyond turns, any linear map of the
+  thumbs' space (a projective map of the screen) carries the even read to an elliptical 2D Cauchy: the shape can be swept,
+  its standpoint five numbers in space against the plane's m + iγ; only turns keep it round, a stretch is a writer's
+  two-length drawing; same-shape hills stack (scales add), differently shaped ones do not. Classical pieces, our reading.
+  *Reads and Writes* §7, essay 5 §6, `read.html`'s "swept".
 - **R694** (5 Nov; Tom: "update the essays"): R693 in essay 4 §11 ("Dragging the thumb": the read never holds H, the K
   distance addresses fixed on the reader's lay, the world sliding along them) and essay 5 §10's "Where the reader stands"
   (the screen and the hill unmoved as the thumb is dragged); `essays.html`'s essay 4 card links `read.html?H=2`.

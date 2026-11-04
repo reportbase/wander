@@ -92,6 +92,7 @@
     <button id="RB">rings <span>16</span></button>
     <button id="sideB">where the reader stands <span>on</span></button>
     <button id="stripB">drag the thumb (H) <span>on</span></button>
+    <button id="sweepB">swept <span>the shape whole</span></button>
     <button id="playB">read again</button>
     <div class="sec">nothing changes</div>
     <button id="turnB">turn the look 30° <span>0</span></button>
@@ -127,6 +128,13 @@
     H and the ticks below never move; the things slide along them, more of them into the near field (teal) as H grows,
     out past the corner (violet) as it shrinks. Nothing on the screen or the hill moves either: the Cauchy is the same at
     every H. H decides only where the things land.</li>
+    <li><b>The shape swept whole.</b> The even read comes from the three thumbs turned together, one rigid frame, every
+    turn weighed alike. "Swept" in the menu shows the other way: each thumb swept through its own angle, evenly, one after
+    the other (pan, then tilt; or tilt, then pan). Every pose is still a turn of the frame, but the poses are weighed
+    otherwise: the directions pile toward one thumb, where the other sweep shrinks to a point, the hill is no longer round
+    and no longer peaks at the crosshair, and one pair of thumbs leaves its corner (0.343 below it, not a half). The pile
+    goes to a different thumb when the order is changed. Turned whole, there is no order: any turns compose to one turn
+    about one axis, and the hill is round about the crosshair.</li>
     <li><b>The hill.</b> On the right the same law as a height. Its contours are the rings, each enclosing the same share;
     its tails go on and never reach zero. Drag it to turn it.</li>
     <li><b>A read is every sweep at once.</b> "Read again" draws the sweeps out from the crosshair to the horizon. The
@@ -168,7 +176,24 @@ const RAYS = 12;
 const S = { view: Q.get('view') === 'count' ? 'count' : 'thumbs', R: [8, 16, 32].includes(num('R', 16)) ? num('R', 16) : 16,
     words: Q.get('words') === '1', side: Q.get('side') !== '0', nums: false, about: Q.get('about') === '1',
     az: num('az', 35) * DEG, el: num('el', 30) * DEG, t: Q.get('play') === '0' ? 1 : 0, turns: 0, scale: 1, zoom: 1,
-    strip: Q.get('strip') !== '0', lgH: Math.max(-2, Math.min(3, num('H', 0.5))) };
+    strip: Q.get('strip') !== '0', lgH: Math.max(-2, Math.min(3, num('H', 0.5))),
+    sweep: ['pantilt', 'tiltpan'].includes(Q.get('sweep')) ? Q.get('sweep') : 'whole' };
+
+// ---- the shape swept whole, or each thumb on its own (SWP) ----
+// Whole: the three thumbs turned as one frame, every turn alike (the Haar measure): the directions even by area, the round
+// hill above. Each thumb on its own: two even angles, one after the other. Pan then tilt is n = (cos a cos ψ, sin a,
+// cos a sin ψ), the azimuth about the up thumb (e₂) first; per unit of solid angle that is (2/π)/cos a times the even
+// law inside the wedge (sin a = n·e₂), without bound toward e₂, where the azimuth's sweep shrinks to a point. Tilt then pan
+// puts the pile on e₃ instead (sin ψ = n·e₃). Outside the wedge neither reaches. Every pose is still a turn of the frame
+// (SWP W6); what differs is the weight on the poses.
+const POLE = { pantilt: 1, tiltpan: 2 };
+const unscreen = (x, y) => { const u = [0, 1, 2].map(i => LOOK[i] + x * E1[i] + y * E2[i]), l = Math.hypot(...u); return u.map(c => c / l); };
+// the even law's density relative to itself (1), or the thumb-by-thumb law's, at a direction u
+const relOf = (u, mode) => { if (mode === 'whole') return 1; if (u[0] < 0 || u[1] < 0 || u[2] < 0) return 0;
+    const p = u[POLE[mode]]; return (2 / Math.PI) / Math.sqrt(Math.max(1e-12, 1 - p * p)); };
+// height over the screen at (x, y) thumbs, the round hill's peak 1
+const heightAt = (x, y, mode) => relOf(unscreen(x, y), mode) * Math.pow(1 + x * x + y * y, -1.5);
+const SWEEP_NAME = { whole: 'the shape whole', pantilt: 'each thumb: pan, tilt', tiltpan: 'each thumb: tilt, pan' };
 
 // ---- the screen ----
 const sc = $('screen'), sx = sc.getContext('2d'), hc = $('hill'), hx = hc.getContext('2d');
@@ -187,6 +212,7 @@ function drawScreen() {
         const R = byCount(r), f = r > 0 ? R / r : 0; return [cx + k * f * x, cy - k * f * y]; };
     const radOf = r => byC ? k * byCount(r) : k * r;
     sx.fillStyle = '#04040a'; sx.fillRect(0, 0, W, H);
+    if (S.sweep !== 'whole') { paintThumbs(W, H, cx, cy, k, byC); drawMarks(dpr, place, sweep); return; }
     // the density: thick at the crosshair, thinning outward (by count it is flat: every cell the same share)
     const far = Math.hypot(W, H) / 2;
     if (byC) { sx.fillStyle = 'rgba(212,160,82,0.10)'; sx.beginPath(); sx.arc(cx, cy, k, 0, 2 * Math.PI); sx.fill(); }
@@ -213,7 +239,11 @@ function drawScreen() {
         if (S.words) { sx.fillStyle = r === 1 ? rgba('gold', 0.85) : rgba('violet', 0.75); sx.fillText(name, cx + 4 * dpr, cy - rr - 4 * dpr); } }
     if (byC) { sx.strokeStyle = rgba('ink', 0.4); sx.lineWidth = 1.2 * dpr; sx.beginPath(); sx.arc(cx, cy, k, 0, 2 * Math.PI); sx.stroke();
         if (S.words && sweep >= 1) { sx.fillStyle = rgba('ink', 0.6); sx.textAlign = 'center'; sx.fillText('the horizon of the look, never reached', cx, cy - k - 6 * dpr); } }
-    // the wedge's triangle, the three corners and the homes (drawn in pieces, so they bend by count)
+    drawMarks(dpr, place, sweep);
+}
+// the wedge's triangle, the three corners, the homes and the crosshair (drawn in pieces, so they bend by count)
+function drawMarks(dpr, place, sweep) {
+    const W = sc.width, H = sc.height, cx = W / 2, cy = H / 2;
     const seg = (p, q, n = 40) => { for (let i = 0; i <= n; i++) { const t = i / n, [x, y] = place(p[0] + t * (q[0] - p[0]), p[1] + t * (q[1] - p[1]));
         if (i) sx.lineTo(x, y); else sx.moveTo(x, y); } };
     if (sweep >= share(SQ2)) {
@@ -234,7 +264,26 @@ function drawScreen() {
     for (const t of THUMBS) { const a = Math.atan2(t[1], t[0]); sx.moveTo(cx + 7 * dpr * Math.cos(a), cy - 7 * dpr * Math.sin(a));
         sx.lineTo(cx + 40 * dpr * Math.cos(a), cy - 40 * dpr * Math.sin(a)); }
     sx.stroke(); sx.lineCap = 'butt';
-    if (S.words) { sx.fillStyle = rgba('gold', 0.95); sx.textAlign = 'left'; sx.fillText('the corner', cx + 10 * dpr, cy + 16 * dpr); }
+    if (S.words) { sx.fillStyle = rgba('gold', 0.95); sx.textAlign = 'left'; sx.fillText('the corner', cx + 10 * dpr, cy + 16 * dpr);
+        if (S.sweep !== 'whole') { const t = THUMBS[POLE[S.sweep]], [x, y] = place(...t); sx.fillStyle = rgba('violet', 0.9); sx.textAlign = 'center';
+            sx.fillText('the pile: the other sweep shrinks to a point', x, y + 22 * dpr); } }
+}
+// each thumb swept on its own: the law painted over the wedge (cached until the size, zoom, view or order changes)
+let paintKey = '', paintImg = null;
+function paintThumbs(W, H, cx, cy, k, byC) {
+    const key = [W, H, k, byC, S.sweep].join(',');
+    if (key !== paintKey) { paintKey = key; const img = sx.createImageData(W, H), dd = img.data, st = 2;
+        for (let py = 0; py < H; py += st) for (let px = 0; px < W; px += st) {
+            let x = (px - cx) / k, y = (cy - py) / k;
+            if (byC) { const R = Math.hypot(x, y); if (R >= 1) continue; const r = ringR(R * R), f = R > 0 ? r / R : 0; x *= f; y *= f; }
+            const u = unscreen(x, y), rel = relOf(u, S.sweep); if (!rel) continue;
+            // by count the even law is flat (equal room for equal share): show the weight against it; in thumbs, the density
+            const val = byC ? rel / 2.2 : rel * Math.pow(1 + x * x + y * y, -1.5);
+            const a = Math.min(1, val) * 0.55, b = Math.max(0, Math.min(1, val - 1)) * 0.6;
+            for (let j = 0; j < st; j++) for (let i = 0; i < st; i++) { const o = ((py + j) * W + px + i) * 4; if (px + i >= W || py + j >= H) continue;
+                dd[o] = 212 * a + 181 * b + 4; dd[o + 1] = 160 * a + 156 * b * 0.6 + 4; dd[o + 2] = 82 * a + 240 * b + 10; dd[o + 3] = 255; } }
+        paintImg = img; }
+    sx.putImageData(paintImg, 0, 0);
 }
 
 // ---- where the reader stands: a side view, the section through the look and one thumb ----
@@ -307,6 +356,7 @@ function drawHill() {
         for (let i = 0; i < 3; i++) { hx.moveTo(...P(HOMES[i][0], HOMES[i][1], 0)); hx.lineTo(...P(THUMBS[i][0], THUMBS[i][1], 0)); }
         hx.stroke();
     }
+    if (S.sweep !== 'whole') { hillThumbs(P, dpr, sweep); return; }
     // the contours: the rings of equal share, each at its own height
     for (let j = 1; j < S.R; j++) { const s = j / S.R; if (s > sweep) break; const r = ringR(s); if (r > RMAX) break;
         const z = zOf(r); hx.strokeStyle = rgba('ink', 0.35); hx.beginPath();
@@ -329,6 +379,26 @@ function drawHill() {
     if (S.words) { hx.font = `${10 * dpr}px DM Mono, monospace`; hx.textAlign = 'left'; hx.fillStyle = rgba('gold', 0.9);
         hx.fillText('the corner, at the peak', top[0] + 8 * dpr, top[1] - 4 * dpr);
         hx.fillStyle = rgba('ink', 0.55); hx.fillText('each contour holds the same share; the tails never reach zero', 10 * dpr, 22 * dpr); }
+}
+
+// the thumb-by-thumb law as a surface over the wedge: lines of the triangle's grid, capped where it piles up
+function hillThumbs(P, dpr, sweep) {
+    const CAP = 1.5, n = 36, zOf = (x, y) => Math.min(CAP, heightAt(x, y, S.sweep));
+    const T = THUMBS, pt = (i, j) => { const a = i / n, b = j / n, c = 1 - a - b;            // barycentric over the triangle
+        return [c * T[0][0] + a * T[1][0] + b * T[2][0], c * T[0][1] + a * T[1][1] + b * T[2][1]]; };
+    hx.lineWidth = 1 * dpr;
+    for (let fam = 0; fam < 3; fam++) for (let l = 0; l <= n; l += 2) { hx.strokeStyle = rgba(fam === 0 ? 'ink' : 'violet', 0.3); hx.beginPath(); let first = true;
+        for (let m = 0; m <= n - l; m++) { const [i, j] = fam === 0 ? [l, m] : fam === 1 ? [m, l] : [m, n - l - m];
+            const [x, y] = pt(i, j), q = P(x, y, zOf(x, y)); if (first) { hx.moveTo(...q); first = false; } else hx.lineTo(...q); }
+        hx.stroke(); }
+    // where the round hill's peak was: the crosshair, at the thumb-by-thumb height there (2/π·√(3/2) = 0.78 of it)
+    const top = P(0, 0, heightAt(0, 0, S.sweep)), was = P(0, 0, 1);
+    hx.fillStyle = rgba('gold', 0.95); hx.beginPath(); hx.arc(top[0], top[1], 4 * dpr, 0, 2 * Math.PI); hx.fill();
+    hx.strokeStyle = rgba('gold', 0.5); hx.setLineDash([3 * dpr, 4 * dpr]); hx.beginPath(); hx.moveTo(...was); hx.lineTo(...P(0, 0, 0)); hx.stroke(); hx.setLineDash([]);
+    hx.strokeStyle = rgba('gold', 0.7); hx.beginPath(); hx.arc(was[0], was[1], 4 * dpr, 0, 2 * Math.PI); hx.stroke();
+    if (S.words) { hx.font = `${10 * dpr}px DM Mono, monospace`; hx.textAlign = 'left'; hx.fillStyle = rgba('gold', 0.9);
+        hx.fillText('the crosshair: below the round peak (ring)', top[0] + 8 * dpr, top[1] + 12 * dpr);
+        hx.fillStyle = rgba('ink', 0.55); hx.fillText(`each thumb swept on its own (${S.sweep === 'pantilt' ? 'pan, then tilt' : 'tilt, then pan'}): not round, piling toward one thumb`, 10 * dpr, 22 * dpr); }
 }
 
 // ---- dragging the thumb: H, the distance corner ----
@@ -405,6 +475,8 @@ function numbers() {
         `half the addresses within     ${f(ringR(0.5))} thumbs (60°)\n` +
         `<span class="v">one in 2, 4, 8</span>  hold ${f(share(2) - share(1))}, ${f(share(4) - share(2))}, ${f(share(8) - share(4))} of them\n` +
         `the wedge      ${wedgeShare} of what is in front, each pair's corner halving it\n` +
+        `<span class="v">swept</span>          ${SWEEP_NAME[S.sweep]}: ` + (S.sweep === 'whole' ? `every pair ½, the near field ⅓, no order\n`
+            : `one pair 0.3426 below its corner (not ½), the near field 0.2326 (not ⅓), the pile at ${S.sweep === 'pantilt' ? 'the up thumb' : 'the depth thumb'}\n`) +
         `turned ${S.turns}×, scaled ×${S.scale}: every number above the same\n` +
         (() => { const c = stripCounts(); return `<span class="g">H</span> = ${fmtU(c.H)}: ${c.addrInside} of ${c.K} distance addresses inside it (at every H), ` +
             `${c.inside} of ${c.things} things in the near field`; })();
@@ -424,6 +496,7 @@ function sync() {
     on('viewB', S.view === 'count', S.view === 'count' ? 'by count' : 'in thumbs'); on('RB', false, String(S.R));
     on('sideB', S.side, S.side ? 'on' : 'off'); $('side').classList.toggle('open', S.side);
     on('stripB', S.strip, S.strip ? 'on' : 'off'); $('strip').classList.toggle('open', S.strip);
+    on('sweepB', S.sweep !== 'whole', SWEEP_NAME[S.sweep]);
     on('turnB', false, String(S.turns)); on('scaleB', false, '× ' + S.scale.toLocaleString());
     $('numbers').classList.toggle('open', S.nums); $('about').classList.toggle('open', S.about);
     if (S.nums) numbers();
@@ -437,6 +510,7 @@ $('viewB').onclick = () => { S.view = S.view === 'count' ? 'thumbs' : 'count'; s
 $('RB').onclick = () => { S.R = S.R === 8 ? 16 : S.R === 16 ? 32 : 8; sync(); };
 $('sideB').onclick = () => { S.side = !S.side; sync(); };
 $('stripB').onclick = () => { S.strip = !S.strip; sync(); };
+$('sweepB').onclick = () => { S.sweep = S.sweep === 'whole' ? 'pantilt' : S.sweep === 'pantilt' ? 'tiltpan' : 'whole'; sync(); };
 $('playB').onclick = () => { S.t = 0; $('menu').classList.remove('open'); };
 // turning the look turns the thumbs with it, and scaling the world reaches no reading: the geometry is drawn again unchanged
 $('turnB').onclick = () => { S.turns++; sync(); };
@@ -457,9 +531,10 @@ window.__read = {
         thumbDeg: SIDE.thumb / DEG, homeDeg: SIDE.home / DEG } : null,
     strip: () => ({ ...stripCounts(), lgH: S.lgH, open: S.strip, addrOf: d => addrOf(d * S.scale, Hnow()), distAddresses: () => distAddresses(Hnow()),
         things: () => THINGS.map(d => d * S.scale), lay: () => Array.from({ length: KD() - 1 }, (_, k) => (k + 1) / KD()) }),
-    set: o => { if ('H' in o) S.lgH = Math.max(-2, Math.min(3, o.H)); if ('strip' in o) S.strip = !!o.strip; if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t; if ('side' in o) S.side = !!o.side;
+    sweep: () => ({ mode: S.sweep, name: SWEEP_NAME[S.sweep], heightAt: (x, y) => heightAt(x, y, S.sweep), relOf: u => relOf(u, S.sweep), unscreen }),
+    set: o => { if ('sweep' in o) S.sweep = o.sweep; if ('H' in o) S.lgH = Math.max(-2, Math.min(3, o.H)); if ('strip' in o) S.strip = !!o.strip; if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t; if ('side' in o) S.side = !!o.side;
         if ('az' in o) S.az = o.az * DEG; if ('el' in o) S.el = o.el * DEG; sync(); },
-    state: () => ({ lgH: S.lgH, strip: S.strip, view: S.view, R: S.R, cells: S.R * RAYS, t: S.t, turns: S.turns, scale: S.scale, az: S.az / DEG, el: S.el / DEG }),
+    state: () => ({ sweep: S.sweep, lgH: S.lgH, strip: S.strip, view: S.view, R: S.R, cells: S.R * RAYS, t: S.t, turns: S.turns, scale: S.scale, az: S.az / DEG, el: S.el / DEG }),
 };
 })();
 </script>
