@@ -163,6 +163,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Since R684 (Tom, of the round lay: "it interesting, keep it as an option, but its heavily distorted, not what it
   actaully looks like."): by turns is the default again (`fid=compress`); the round lay is "silver ball" (`fid=round`),
   the exact one "grain, exact" (`fid=focus`); the toggle by turns / silver ball / grain, exact / flat screen.
+  Since R685 (Tom: "we are looking for the correct math, not hard coded approximation."): the default view is equal area
+  (`fid=area`, `VIEWS`): the reader's addresses are the directions uniform by area (OFS 5(e), R418), and the screen giving
+  each the same room is Lambert's azimuthal equal-area projection about the crosshair, R(α) = 2·sin(α/2): scale 1 at the
+  crosshair, radial cos(α/2), across 1/cos(α/2), 0.9% at 15°, 3.4% at 30°, 7.6% at 45°. The shading is each view's
+  directions per screen area, sin α/(R·R′) (`viewDensity`): flat on equal area, cos³ on the flat screen, sin α/α by
+  turns. "Grain, exact" (R683) removed (`fid=focus` reads as equal area), `focusR`/`rateAt` gone; the toggle equal area /
+  by turns / silver ball (approximate) / flat screen. Hook adds `views`, `viewDensity`.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1534,6 +1541,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R683 (5 Nov; Tom: "Yes, make it exact"): the lay by each direction's own pair turn; not gentle and not round, R682's kept.
   R684 (5 Nov; Tom: "it interesting, keep it as an option, but its heavily distorted, not what it actaully looks like."):
   by turns the default again; the grain lays options ("silver ball", "grain, exact").
+  R685 (5 Nov; Tom: "we are looking for the correct math, not hard coded approximation."): `crosshairs.html`'s default is
+  Lambert's equal-area projection about the crosshair, the addresses' own screen; the shading exact per view.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

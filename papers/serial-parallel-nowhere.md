@@ -7330,6 +7330,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   but its heavily distorted, not what it actaully looks like."): the default view of `crosshairs.html` is by turns again
   (even angles, true at the crosshair, eased 3% at 15° and 10% at 30° against the flat screen); the grain lays are options,
   "silver ball" (R682) and "grain, exact" (R683). The grain is a precision, not how a view looks (R679 again). A demo.
+- **R685** (5 Nov; Tom: "we are looking for the correct math, not hard coded approximation."): the reader's addresses in
+  three dimensions are the directions uniform by area (OFS 5(e), R418), so the screen on which every address has the same
+  room is the equal-area azimuthal projection about the crosshair (Lambert 1772), R(α) = 2·sin(α/2), with nothing fitted:
+  scale 1 at the crosshair in every direction, squeezed along the radius by cos(α/2) and widened across by 1/cos(α/2), the
+  distortion second order and growing (0.9% at 15°, 3.4% at 30°, 7.6% at 45°, 29% at 90°). On it the density of the
+  directions is flat; the Cauchy's cos³α is the flat screen's density of the same directions, sin α/(R·R′) with
+  R = tan α, and by turns it is sin α/α. `crosshairs.html`'s default; the silver ball kept as an approximation, R683's
+  lay dropped (its rate C(φ) was the linear level again). A demo, the projection classical.
 
 ## Appendix B. Demos and computations
 
