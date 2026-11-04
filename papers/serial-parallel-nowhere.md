@@ -7308,6 +7308,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 - **R680** (5 Nov; Tom: "Don't hide or blur the objects."): on `crosshairs.html` and `plane-thumbs.html` every thing is
   drawn whole and at full strength, the colour naming its field (another wedge grey), never dimmed or left out; the
   address cells (R672) removed. A demo, nothing new claimed.
+- **R681** (5 Nov; Tom: "Add small objects on the ground and airplanes in the sky. I want to be able to zoom to both."):
+  `crosshairs.html` has stones, cones and posts on the ground and airplanes flying overhead, and a zoom (1 to 256). The
+  zoom narrows the view and changes no reading; H still comes from what the crosshairs pass through, so zooming onto an
+  airplane makes H its distance and onto a stone at one's feet a step. A demo, nothing new claimed.
 
 ## Appendix B. Demos and computations
 
