@@ -26,8 +26,12 @@
     never zero. The page opens on a read: every sweep of the thumb at once, drawn out from the crosshair to the horizon.
     Turning the look or scaling the world changes nothing (the counters say so): the K is the same wherever one looks, and
     no V enters. Every word is behind the menu (☰).
-    `?view=thumbs|count&R=8|16|32&words=1&about=1&play=0&az=&el=`; hook `window.__read` (`share`, `ringR`, `density`,
-    `screenOf`, `byCount`, `cells`, `thumbs`, `homes`, `wedgeShare`, `set`, `state`).
+    `?view=thumbs|count&R=8|16|32&words=1&about=1&play=0&side=0&az=&el=`; hook `window.__read` (`share`, `ringR`, `density`,
+    `screenOf`, `byCount`, `cells`, `thumbs`, `homes`, `wedgeShare`, `side`, `set`, `state`).
+    Where the reader stands (5 Nov, Tom: "where is the reader standing?", then "yes" to a side view): an inset, the
+    section through the look and one thumb; the reader a point (R643), the screen square to the look one length out, the
+    look to the crosshair, one thumb off at 45°, the thumb at 54.74° landing at √2, the home at 35.26° at 1/√2, the
+    horizon parallel to the screen; the read's sweep turning off the look as it is drawn out.
     -->
     <style>
     :root { color-scheme: dark; --ground: #04040a; --panel: rgba(18,18,26,0.94); --line: rgba(255,255,255,0.10); --ink: #c8c8d0;
@@ -60,11 +64,17 @@
     #about h1 { font: 400 1.6rem/1.15 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
     #about ol { padding-left: 1.4em; margin: 0 } #about li { margin: 0 0 8px } #about p { margin: 0 0 8px }
     #about .x { float: right }
+    #side { position: fixed; left: max(10px, env(safe-area-inset-left)); bottom: max(10px, env(safe-area-inset-bottom));
+        width: min(300px, 42vw); height: min(180px, 26vw); z-index: 2; background: rgba(10,10,18,0.88);
+        border: 1px solid var(--line); border-radius: 10px; display: none; pointer-events: none }
+    #side.open { display: block }
+    @media (max-aspect-ratio: 1/1) { #side { width: min(260px, 48vw); height: min(160px, 30vw); bottom: calc(50% + 10px) } }
     .g { color: var(--gold) } .t { color: var(--teal) } .v { color: var(--violet) } .b { color: var(--bright) } .d { color: var(--dim) }
     </style>
 </head>
 <body>
 <div id="wrap"><canvas id="screen"></canvas><canvas id="hill"></canvas></div>
+<canvas id="side"></canvas>
 <button id="menuBtn" title="menu" aria-label="menu">☰</button>
 <div id="menu" role="menu">
     <div class="sec">show</div>
@@ -74,6 +84,7 @@
     <div class="sec">the read</div>
     <button id="viewB">view <span>in thumbs</span></button>
     <button id="RB">rings <span>16</span></button>
+    <button id="sideB">where the reader stands <span>on</span></button>
     <button id="playB">read again</button>
     <div class="sec">nothing changes</div>
     <button id="turnB">turn the look 30° <span>0</span></button>
@@ -99,6 +110,10 @@
     <li><b>The thumbs and the wedge.</b> The three thumbs point out at 120° from each other, the wedge the triangle between
     them, a quarter of what is in front. Each pair's corner is a line from its home, on the triangle's edge, through the
     crosshair to the third thumb, its horizon.</li>
+    <li><b>Where the reader stands.</b> Bottom left, from the side: the reader is a point behind the screen, the look
+    running from it through the crosshair. Every mark on the screen is a direction from that point, landing tan α off the
+    crosshair; the thumb leaves at 54.74° and lands at √2, its home at 35.26° the other side; the horizon, 90° off the
+    look, runs parallel to the screen and never lands.</li>
     <li><b>The hill.</b> On the right the same law as a height. Its contours are the rings, each enclosing the same share;
     its tails go on and never reach zero. Drag it to turn it.</li>
     <li><b>A read is every sweep at once.</b> "Read again" draws the sweeps out from the crosshair to the horizon. The
@@ -138,7 +153,7 @@ const RAYS = 12;
 
 // ---- state ----
 const S = { view: Q.get('view') === 'count' ? 'count' : 'thumbs', R: [8, 16, 32].includes(num('R', 16)) ? num('R', 16) : 16,
-    words: Q.get('words') === '1', nums: false, about: Q.get('about') === '1',
+    words: Q.get('words') === '1', side: Q.get('side') !== '0', nums: false, about: Q.get('about') === '1',
     az: num('az', 35) * DEG, el: num('el', 30) * DEG, t: Q.get('play') === '0' ? 1 : 0, turns: 0, scale: 1, zoom: 1 };
 
 // ---- the screen ----
@@ -206,6 +221,51 @@ function drawScreen() {
         sx.lineTo(cx + 40 * dpr * Math.cos(a), cy - 40 * dpr * Math.sin(a)); }
     sx.stroke(); sx.lineCap = 'butt';
     if (S.words) { sx.fillStyle = rgba('gold', 0.95); sx.textAlign = 'left'; sx.fillText('the corner', cx + 10 * dpr, cy + 16 * dpr); }
+}
+
+// ---- where the reader stands: a side view, the section through the look and one thumb ----
+// The reader is a point, a vantage, not a shape (R643): the eye the screen is projected from. The screen stands square
+// to the look one length out; a direction α off the look lands tan α from the crosshair. The thumb in this section
+// leaves the reader 54.74° off the look and lands at √2; the home opposite it, 35.26° the other way, at 1/√2; one thumb
+// off is 45°, at 1; the horizon of the look is 90°, parallel to the screen, never landing.
+const SIDE = { thumb: Math.atan(SQ2), home: -Math.atan(1 / SQ2), one: Math.PI / 4, horizon: Math.PI / 2 };
+const sd = $('side'), sdx = sd.getContext('2d');
+function drawSide() {
+    if (!S.side) return;
+    const dpr = fit(sd), W = sd.width, H = sd.height;
+    sdx.clearRect(0, 0, W, H);
+    const top = 14 * dpr, bot = H - 8 * dpr, ey = top + 0.62 * (bot - top), ex = 0.16 * W;
+    const u = Math.min(0.5 * W, (ey - top) / SQ2 * 0.96);                                   // one length in pixels: the thumb lands
+    const sxp = ex + u;                                                                       // the screen
+    const yOf = r => ey - r * u;                                                              // a mark r on the screen
+    // the screen square to the look
+    sdx.strokeStyle = rgba('ink', 0.5); sdx.lineWidth = 1.5 * dpr; sdx.beginPath(); sdx.moveTo(sxp, top); sdx.lineTo(sxp, bot); sdx.stroke();
+    // rays: the look (to the crosshair), one thumb off, the thumb, the home, and the horizon (parallel, dashed)
+    const ray = (a, col, w, dash) => { sdx.setLineDash(dash || []); sdx.strokeStyle = col; sdx.lineWidth = w * dpr; sdx.beginPath(); sdx.moveTo(ex, ey);
+        const r = Math.tan(a), y = yOf(r), yc = Math.max(top, Math.min(bot, y)), x = ex + (yc === y ? 1 : (ey - yc) / (ey - y)) * u;
+        sdx.lineTo(x, yc); sdx.stroke(); sdx.setLineDash([]); return [x, yc, y === yc]; };
+    sdx.setLineDash([3 * dpr, 4 * dpr]); sdx.strokeStyle = rgba('ink', 0.35); sdx.lineWidth = 1 * dpr; sdx.beginPath();
+    sdx.moveTo(ex, ey); sdx.lineTo(ex, top); sdx.moveTo(ex, ey); sdx.lineTo(ex, bot); sdx.stroke(); sdx.setLineDash([]);
+    ray(SIDE.one, rgba('gold', 0.5), 1);
+    const th = ray(SIDE.thumb, rgba('teal', 0.85), 1.4), ho = ray(SIDE.home, rgba('gold', 0.7), 1.2);
+    // the read sweeping: a ray turning off the look as the read is drawn out (share passed → its angle)
+    if (S.t < 1) { const a = Math.acos(1 - Math.min(0.999, S.t)); ray(a, rgba('violet', 0.8), 1.2); ray(-a, rgba('violet', 0.8), 1.2); }
+    ray(0, rgba('gold', 0.95), 2);
+    // marks on the screen: the crosshair, one thumb off, the thumb and the home where they land
+    const dot = (y, col, r) => { sdx.fillStyle = col; sdx.beginPath(); sdx.arc(sxp, y, r * dpr, 0, 2 * Math.PI); sdx.fill(); };
+    dot(ey, rgba('gold', 1), 3.5); dot(yOf(1), rgba('gold', 0.7), 2.5);
+    if (th[2]) dot(yOf(SQ2), rgba('teal', 1), 3); dot(yOf(-1 / SQ2), rgba('gold', 0.9), 3);
+    // the reader: a point
+    sdx.fillStyle = '#fff'; sdx.beginPath(); sdx.arc(ex, ey, 4 * dpr, 0, 2 * Math.PI); sdx.fill();
+    sdx.strokeStyle = rgba('gold', 0.9); sdx.lineWidth = 1.5 * dpr; sdx.beginPath(); sdx.arc(ex, ey, 7 * dpr, 0, 2 * Math.PI); sdx.stroke();
+    if (S.words) { sdx.font = `${9.5 * dpr}px DM Mono, monospace`;
+        sdx.fillStyle = 'rgba(255,255,255,0.9)'; sdx.textAlign = 'center'; sdx.fillText('the reader', ex, ey + 18 * dpr);
+        sdx.textAlign = 'left'; sdx.fillStyle = rgba('gold', 0.9); sdx.fillText('the look', ex + 12 * dpr, ey - 4 * dpr);
+        sdx.fillStyle = rgba('ink', 0.7); sdx.textAlign = 'right'; sdx.fillText('the screen', sxp - 5 * dpr, bot - 2 * dpr); sdx.textAlign = 'left';
+        sdx.fillStyle = rgba('gold', 1); sdx.fillText('the corner', sxp + 6 * dpr, ey + 3 * dpr);
+        sdx.fillStyle = rgba('teal', 0.9); if (th[2]) sdx.fillText('a thumb', sxp + 6 * dpr, yOf(SQ2) + 3 * dpr);
+        sdx.fillStyle = rgba('gold', 0.85); sdx.fillText('home', sxp + 6 * dpr, yOf(-1 / SQ2) + 3 * dpr);
+        sdx.fillStyle = rgba('ink', 0.55); sdx.textAlign = 'center'; sdx.fillText('horizon', ex, top + 9 * dpr); }
 }
 
 // ---- the hill: the 3D Cauchy as a height over the screen ----
@@ -285,6 +345,7 @@ function sync() {
     const on = (id, v, txt) => { $(id).classList.toggle('on', !!v); const s = $(id).querySelector('span'); if (s) s.textContent = txt; };
     on('numB', S.nums, S.nums ? 'on' : 'off'); on('wordsB', S.words, S.words ? 'on' : 'off');
     on('viewB', S.view === 'count', S.view === 'count' ? 'by count' : 'in thumbs'); on('RB', false, String(S.R));
+    on('sideB', S.side, S.side ? 'on' : 'off'); $('side').classList.toggle('open', S.side);
     on('turnB', false, String(S.turns)); on('scaleB', false, '× ' + S.scale.toLocaleString());
     $('numbers').classList.toggle('open', S.nums); $('about').classList.toggle('open', S.about);
     if (S.nums) numbers();
@@ -296,6 +357,7 @@ $('numB').onclick = () => { S.nums = !S.nums; sync(); };
 $('wordsB').onclick = () => { S.words = !S.words; sync(); };
 $('viewB').onclick = () => { S.view = S.view === 'count' ? 'thumbs' : 'count'; sync(); };
 $('RB').onclick = () => { S.R = S.R === 8 ? 16 : S.R === 16 ? 32 : 8; sync(); };
+$('sideB').onclick = () => { S.side = !S.side; sync(); };
 $('playB').onclick = () => { S.t = 0; $('menu').classList.remove('open'); };
 // turning the look turns the thumbs with it, and scaling the world reaches no reading: the geometry is drawn again unchanged
 $('turnB').onclick = () => { S.turns++; sync(); };
@@ -306,13 +368,15 @@ sc.addEventListener('pointerdown', () => $('menu').classList.remove('open'));
 let last = performance.now();
 function frame(now) { const dt = Math.min(0.1, (now - last) / 1000); last = now;
     if (S.t < 1) S.t = Math.min(1, S.t + dt / 2.4);           // a read drawn out over 2.4 s, from the crosshair to the horizon
-    drawScreen(); drawHill(); requestAnimationFrame(frame); }
+    drawScreen(); drawHill(); drawSide(); requestAnimationFrame(frame); }
 sync(); requestAnimationFrame(frame);
 
 window.__read = {
     share, ringR, density, byCount, screenOf, thumbs: () => THUMBS, homes: () => HOMES, wedgeShare: () => wedgeShare,
     cells: () => S.R * RAYS,
-    set: o => { if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t;
+    side: () => S.side ? { reader: [0, 0], screen: 1, thumb: Math.tan(SIDE.thumb), home: Math.tan(SIDE.home), one: Math.tan(SIDE.one),
+        thumbDeg: SIDE.thumb / DEG, homeDeg: SIDE.home / DEG } : null,
+    set: o => { if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t; if ('side' in o) S.side = !!o.side;
         if ('az' in o) S.az = o.az * DEG; if ('el' in o) S.el = o.el * DEG; sync(); },
     state: () => ({ view: S.view, R: S.R, cells: S.R * RAYS, t: S.t, turns: S.turns, scale: S.scale, az: S.az / DEG, el: S.el / DEG }),
 };
