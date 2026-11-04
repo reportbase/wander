@@ -7318,6 +7318,26 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   level grows as √6·α off the crosshair (THM) and its grain is cosh of that; the slope 1 and the curvature 0 at the focus
   (cosh is flat to second order), so the squeeze is 1% at 3.4°, 8% at 10°, 28% at 20°. Positions laid, not things
   shrunk (R679, R680). A demo, nothing new claimed.
+- **R683** (5 Nov; Tom: "Did you use the tangent sweep for the gradient?", then "Yes, make it exact"): R682's gd is the tangent
+  sweep's turn written on the level, gd(x) = 2·(atan eˣ − 45°), applied to √6·α as the level. Laid instead by each
+  direction's own readings (the three reaches along the thumbs, the pair turned farthest, atan2 against the pointed thing's
+  edge as a new zero), the view is true at the crosshair only to first order: R/α is 0.98 and 1.02 at 3°, 0.94 and 1.06 at
+  10°, 0.83 and 1.20 at 34°, the difference first order in α, three-fold, squeezed toward each thumb (its horizon) and
+  stretched toward each home, with a crease wherever the farthest pair changes. Because a reading falling to zero turns at
+  a finite rate in angle, the addresses do not crowd at the homes; they crowd only in levels. The round lay of R682 is
+  gentle (second order) because it uses the linear level. Both kept on the page; which is default is Tom's. A demo.
+- **R684** (5 Nov; Tom, of the round lay, "a christmas tree ornement silver ball": "it interesting, keep it as an option,
+  but its heavily distorted, not what it actaully looks like."): the default view of `crosshairs.html` is by turns again
+  (even angles, true at the crosshair, eased 3% at 15° and 10% at 30° against the flat screen); the grain lays are options,
+  "silver ball" (R682) and "grain, exact" (R683). The grain is a precision, not how a view looks (R679 again). A demo.
+- **R685** (5 Nov; Tom: "we are looking for the correct math, not hard coded approximation."): the reader's addresses in
+  three dimensions are the directions uniform by area (OFS 5(e), R418), so the screen on which every address has the same
+  room is the equal-area azimuthal projection about the crosshair (Lambert 1772), R(α) = 2·sin(α/2), with nothing fitted:
+  scale 1 at the crosshair in every direction, squeezed along the radius by cos(α/2) and widened across by 1/cos(α/2), the
+  distortion second order and growing (0.9% at 15°, 3.4% at 30°, 7.6% at 45°, 29% at 90°). On it the density of the
+  directions is flat; the Cauchy's cos³α is the flat screen's density of the same directions, sin α/(R·R′) with
+  R = tan α, and by turns it is sin α/α. `crosshairs.html`'s default; the silver ball kept as an approximation, R683's
+  lay dropped (its rate C(φ) was the linear level again). A demo, the projection classical.
 
 ## Appendix B. Demos and computations
 
