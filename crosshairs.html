@@ -22,80 +22,143 @@
     addresses at tan(kπ/2K) as ticks, half inside the corner at every H. Below, the same lay as a strip. Scale the world
     (k on every length, the eye's place included) moves H in units and no reading. Hold H keeps the thumbs where they were
     while you look round.
-    Controls: drag the view to look (or the arrow keys), W A S D to walk, a tap or Space to hold H on what is under the
-    crosshairs.
-    Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&seed=&K=16|32|64&k=<log10 k>&hold=1&labels=1.
-    Test hook: window.__crosshairs (objects, target, H, read, lay, addresses, counts, pick, set, state).
+    Controls: drag the view to look (or the arrow keys), W A S D to walk (▲ ▼ on a touch screen), a tap or Space to hold H
+    on what is under the crosshairs.
+    Full screen, and no text until asked for (5 November 2026, Tom: "Should be full screen. Any text you want to show should
+    be hidden until the user ask for it from a menu. Explain all the ways H is used to create the scene."): the view fills
+    the window; the menu (☰) shows the readout, the map, the line, words on things, the crosshairs' name and counts, and
+    "How H makes the scene", fifteen numbered ways H enters (where it comes from, what each thing gets from it, what it
+    shares out, what it does not change). Rings on the ground (the corner at H, one in 2, 4, 8) are on at first, being no
+    text. Escape closes the explanation, then the menu.
+    Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
+    &about=1&read=1&map=1&strip=1&hud=1&rings=0.
+    Test hook: window.__crosshairs (objects, target, H, read, lay, addresses, counts, pick, set (with words, show), show,
+    menu, state).
     -->
     <style>
-    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
-        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    :root { color-scheme: dark; --ground: #04040a; --panel: rgba(18,18,26,0.94); --line: rgba(255,255,255,0.10); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --violet: #b59cf0 }
     * { box-sizing: border-box }
-    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
-    main { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px }
-    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
-    .lede { color: var(--dim); margin: 0 0 14px; max-width: 86ch }
-    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
-    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
-    button, select { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground); color: var(--ink);
+        font: 0.875rem/1.5 'DM Mono', ui-monospace, monospace }
+    #view { position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100dvh; display: block; touch-action: none; cursor: grab }
+    button, select { font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
         border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
     button.on { border-color: var(--gold); color: var(--gold) }
-    label { color: var(--dim) }
-    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
-    #view { cursor: grab }
-    .grid > * { min-width: 0 }
-    .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 12px }
-    @media (max-width: 820px) { .grid { grid-template-columns: 1fr } }
-    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
-    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15 }
-    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .b { color: var(--bright) }
-    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    #menuBtn { position: fixed; top: max(10px, env(safe-area-inset-top)); right: max(10px, env(safe-area-inset-right)); z-index: 5;
+        width: 44px; height: 44px; padding: 0; font-size: 1.3rem; background: rgba(20,20,28,0.7); border-radius: 22px }
+    #menu { position: fixed; top: calc(max(10px, env(safe-area-inset-top)) + 52px); right: max(10px, env(safe-area-inset-right)); z-index: 5;
+        width: min(300px, calc(100vw - 20px)); max-height: calc(100dvh - 80px); overflow: auto; background: var(--panel);
+        border: 1px solid var(--line); border-radius: 10px; padding: 8px; display: none }
+    #menu.open { display: block }
+    #menu .sec { color: var(--dim); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; margin: 8px 6px 4px }
+    #menu button, #menu label { display: flex; width: 100%; justify-content: space-between; align-items: center; margin: 0 0 4px; text-align: left }
+    #menu label { padding: 6px 10px; color: var(--ink) }
+    #menu a { color: var(--teal); display: block; padding: 6px 10px }
+    .over { position: fixed; z-index: 3; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: none }
+    .over.open { display: block }
+    #mapBox { right: max(10px, env(safe-area-inset-right)); bottom: max(10px, env(safe-area-inset-bottom)); width: min(340px, 44vw); padding: 6px }
+    #stripBox { left: max(10px, env(safe-area-inset-left)); bottom: max(10px, env(safe-area-inset-bottom)); width: min(760px, 52vw); padding: 6px }
+    @media (max-width: 760px) { #mapBox { width: 46vw } #stripBox { width: calc(100vw - 20px); bottom: calc(46vw + 24px) } }
+    .over canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    #readBox { left: max(10px, env(safe-area-inset-left)); top: max(10px, env(safe-area-inset-top)); padding: 8px 12px;
+        font-size: 0.8rem; white-space: pre-wrap; max-width: calc(100vw - 80px) }
+    #about { left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(640px, calc(100vw - 20px)); max-height: calc(100dvh - 40px);
+        overflow: auto; padding: 16px 20px; z-index: 6 }
+    #about h1 { font: 400 1.6rem/1.15 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    #about h2 { font: 400 1.1rem/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 16px 0 6px }
+    #about ol { padding-left: 1.4em; margin: 0 } #about li { margin: 0 0 8px } #about p { margin: 0 0 8px }
+    #about .x { float: right }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .b { color: var(--bright) } .d { color: var(--dim) }
     a { color: var(--teal) }
+    #walk { position: fixed; left: max(10px, env(safe-area-inset-left)); bottom: max(10px, env(safe-area-inset-bottom)); z-index: 2; display: none; gap: 8px }
+    #walk button { width: 52px; height: 52px; border-radius: 26px; background: rgba(20,20,28,0.7); font-size: 1.1rem }
+    @media (pointer: coarse) { #walk { display: flex } }
+    body.strip #walk { display: none }
     </style>
 </head>
 <body>
-<main>
-    <h1>Crosshairs in a field</h1>
-    <p class="lede">Reader geometry from inside. Hold up both thumbs, crossed, at arm's length: the crossing is the
-    <span class="g">corner</span>, and whatever it points at is one thumb away by definition, so its distance is H. Everything
-    nearer is the <span class="r">near field</span>, read in proportion, a fraction of the one thumb. Everything farther is the
-    <span class="w">far field</span>, read as a ratio, one in two, one in four, one in eight. Nothing in the field moves when you
-    point somewhere else; the near and far fields do, because they are where the thumbs are pointed.</p>
-
-    <div class="grid">
-        <div class="panel">
-            <canvas id="view" height="560"></canvas>
-            <div class="cap">Drag to look, W A S D to walk, a tap (or Space) holds H on what is under the crosshairs.</div>
-            <div class="row">
-                <button id="hold">hold H</button>
-                <button id="labels">labels</button>
-                <label>K <select id="K"><option>16</option><option selected>32</option><option>64</option></select></label>
-                <button id="kdown">world ÷ 10</button>
-                <button id="kup">world × 10</button>
-                <button id="home">back home</button>
-            </div>
-            <div class="row">
-                <button id="fwd">▲ walk</button>
-                <button id="back">▼ back</button>
-            </div>
-        </div>
-        <div class="panel">
-            <canvas id="map" height="420"></canvas>
-            <div class="cap">The field as the reader lays it: bearing from the look, and d/H out to the
-            <span class="g">corner ring</span>, 1 + ln(d/H) past it. Ticks: the K addresses, half inside the ring at every H.</div>
-            <div class="read" id="readout"></div>
-        </div>
-    </div>
-    <div class="panel">
-        <canvas id="strip" height="150"></canvas>
-        <div class="cap">The same lay as a line: home at the left, the corner where the crosshairs are, the far field in
-        ratios past it (one in two, one in four, one in eight; a writer counts them as two thumbs, four, eight). The grey
-        ticks are the K addresses: the same marks at every H, so the things slide under them as you point.</div>
-        <p class="note">The writer's numbers (H in units, the distances) move with the world's scale; nothing the reader reads
-        does. See <i>Reads and Writes</i> §6, essay 4 (near and far) and <a href="fpv.html">the crosshair is the corner</a>.
-        <a href="demos.html">All demos</a>.</p>
-    </div>
-</main>
+<canvas id="view"></canvas>
+<button id="menuBtn" title="menu" aria-label="menu">☰</button>
+<div id="menu" role="menu">
+    <div class="sec">show</div>
+    <button data-show="about">How H makes the scene</button>
+    <button data-show="read">the readout <span>off</span></button>
+    <button data-show="map">the reader's map <span>off</span></button>
+    <button data-show="strip">the lay as a line <span>off</span></button>
+    <button id="words">words on things <span>off</span></button>
+    <button data-show="hud">the crosshairs' name and counts <span>off</span></button>
+    <button data-show="rings">rings on the ground <span>on</span></button>
+    <div class="sec">H and the world</div>
+    <button id="hold">hold H <span>off</span></button>
+    <label>K, the addresses <select id="K"><option>16</option><option selected>32</option><option>64</option></select></label>
+    <button id="kup">scale the world × 10</button>
+    <button id="kdown">scale the world ÷ 10</button>
+    <button id="home">back home</button>
+    <button id="full">full screen</button>
+    <div class="sec">more</div>
+    <a href="fpv.html">the crosshair is the corner</a>
+    <a href="demos.html">all demos</a>
+</div>
+<div id="readBox" class="over"></div>
+<div id="mapBox" class="over"><canvas id="map"></canvas></div>
+<div id="stripBox" class="over"><canvas id="strip"></canvas></div>
+<div id="walk"><button id="fwd" aria-label="walk">▲</button><button id="back" aria-label="back">▼</button></div>
+<div id="about" class="over">
+    <button class="x" id="aboutX" aria-label="close">✕</button>
+    <h1>How H makes the scene</h1>
+    <p>Hold up both thumbs, crossed, at arm's length. The crossing is the <span class="g">corner</span>. H is the thumb:
+    whatever the crossing points at is one thumb away by definition. Drag to look (or the arrow keys), W A S D to walk
+    (▲ ▼ on a phone), a tap or Space holds H. The wireframes, the ground and the look are plain perspective and use no H
+    at all; everything below is what H adds.</p>
+    <h2>Where H comes from</h2>
+    <ol>
+    <li><b>Pointing sets it.</b> The line of sight through the crosshairs is followed into the field, and the first thing
+    whose box it passes through is the thing pointed at. Its distance is H. Nothing else is measured: point somewhere else
+    and H is somewhere else.</li>
+    <li><b>Pointing at nothing keeps it.</b> Looking at the sky, the thumbs stay where they last were.</li>
+    <li><b>Holding keeps it on one thing.</b> With H held you look round and walk while H stays on the thing that was
+    pointed at, following its distance as you move.</li>
+    <li><b>It glides.</b> A new H is reached on its logarithm in about a fifth of a second, so the split slides through the
+    field rather than jumping.</li>
+    </ol>
+    <h2>What every thing gets from H</h2>
+    <ol start="5">
+    <li><b>One reading, d/H.</b> Each thing is read by its distance in thumbs. That one ratio decides everything else it
+    shows.</li>
+    <li><b>Its field.</b> Below one thumb it is in the <span class="r">near field</span>; at one thumb (within 3%) it is at
+    the <span class="g">corner</span>; past one thumb it is in the <span class="w">far field</span>. The field is the same;
+    the split is where the thumbs point.</li>
+    <li><b>Its colour.</b> Near: teal, brighter the closer it comes to one thumb, in proportion. The corner: gold. Far:
+    violet, a little dimmer for each halving of the reading (one in two, one in four, one in eight).</li>
+    <li><b>Its words</b> (menu: words on things). Near, a fraction of the thumb ("0.42 of the thumb"); far, a ratio
+    ("one in 12"). A writer would count the far field in thumbs (two thumbs, four, eight); the reader reads the ratio.</li>
+    <li><b>Its place on the reader's map</b> (menu). Round the eye, at its bearing from the look, out to d/H inside the gold
+    ring and 1 + ln(d/H) past it: in proportion to the corner, then each stretch over which the reading halves gets the same
+    room. The dashed rings are one in 2, 4, 8, 16 and 64. The line (menu) is the same lay without the bearing.</li>
+    </ol>
+    <h2>What H shares out</h2>
+    <ol start="10">
+    <li><b>The K addresses.</b> The reader has K addresses along distance, at H·tan(kπ/2K). Half are always inside one
+    thumb, whatever H is: a small H makes the near ones fine and close, a large H spreads them far. On the map and the line
+    they are the faint rings and ticks, the same marks at every H, so the things slide under them as you point.</li>
+    <li><b>The counts.</b> How many things are near and how many far (menu: the readout, or the crosshairs' name and
+    counts) is only how H falls among them.</li>
+    <li><b>The rings on the ground</b> (menu). The gold ring is the corner laid on the ground round your feet, radius H; the
+    violet ones are one in 2, 4 and 8. They are the map's rings seen from where you stand.</li>
+    <li><b>The walking pace.</b> A step is a fraction of the thumb (half a thumb a second, at least 4 units), so the
+    near field takes a moment to cross whatever H is. A convenience of this page, not part of the reading.</li>
+    </ol>
+    <h2>What H does not change</h2>
+    <ol start="14">
+    <li><b>Scaling the world.</b> Scale every length by 10, the eye's place included, and H in units grows by 10, but the
+    thing pointed at still reads one thumb, every reading, colour, word and place on the map is as it was. H in units is a
+    writer's number; the readings are the reader's.</li>
+    <li><b>The field itself.</b> No thing moves when H moves. Only the near and far fields move, because they are where the
+    thumbs are pointed.</li>
+    </ol>
+    <p class="d">After <i>Reads and Writes</i> §6 ("The crosshairs") and essay 4 (near and far).</p>
+</div>
 <script>
 (() => {
 'use strict';
@@ -150,7 +213,12 @@ const EYE = 1.6;
 const S = {
     yaw: num('yaw', 0) * DEG, pitch: num('pitch', -2) * DEG, x: num('x', 0), z: num('z', 0),
     k: Math.pow(10, num('k', 0)), K: [16, 32, 64].includes(num('K', 32)) ? num('K', 32) : 32,
-    hold: Q.get('hold') === '1', labels: Q.get('labels') === '1',
+    hold: Q.get('hold') === '1',
+    // words on the things: 0 none (the default: no text until asked for), 1 the one at the crosshairs, 2 every one big enough
+    words: Q.get('labels') === '1' ? 2 : Math.max(0, Math.min(2, num('words', 0) | 0)),
+    // what else is shown, each from the menu; only the rings, which are no text, start on
+    show: { about: Q.get('about') === '1', read: Q.get('read') === '1', map: Q.get('map') === '1', strip: Q.get('strip') === '1',
+        hud: Q.get('hud') === '1', rings: Q.get('rings') !== '0' },
     target: -1, H: 10, Hshow: 10,
 };
 $('K').value = String(S.K);
@@ -208,9 +276,11 @@ const view = $('view'), vc = view.getContext('2d');
 function size(cv, ratio) { const d = window.devicePixelRatio || 1, w = cv.clientWidth || 600;
     const W = Math.round(w * d), H = Math.round(w * ratio * d);
     if (cv.width !== W) cv.width = W; if (cv.height !== H) cv.height = H; return d; }
+function sizeFull(cv) { const d = window.devicePixelRatio || 1, W = Math.round((cv.clientWidth || innerWidth) * d),
+    H = Math.round((cv.clientHeight || innerHeight) * d); if (cv.width !== W) cv.width = W; if (cv.height !== H) cv.height = H; return d; }
 function drawView() {
-    const dpr = size(view, 0.62), W = view.width, Hh = view.height;
-    const fov = 72 * DEG, f = (W / 2) / Math.tan(fov / 2), cx = W / 2, cy = Hh / 2;
+    const dpr = sizeFull(view), W = view.width, Hh = view.height;
+    const fov = 72 * DEG, f = (Math.max(W, Hh) / 2) / Math.tan(fov / 2), cx = W / 2, cy = Hh / 2;   // 72° across the longer side
     vc.fillStyle = '#04040a'; vc.fillRect(0, 0, W, Hh);
     const e = eye(), cyw = Math.cos(S.yaw), syw = Math.sin(S.yaw), cp = Math.cos(S.pitch), sp = Math.sin(S.pitch);
     const cam = p => { const dx = p[0] - e[0], dy = p[1] - e[1], dz = p[2] - e[2];
@@ -232,6 +302,16 @@ function drawView() {
         seg([gx - span * step, 0, gz + i * step], [gx + span * step, 0, gz + i * step]);
     }
     vc.stroke();
+    // the corner laid on the ground round the eye, radius H, and the far field's one in 2, 4, 8 (rings, no text)
+    if (S.show.rings) {
+        const ring = (r, col, w) => { vc.strokeStyle = col; vc.lineWidth = w * dpr; vc.beginPath();
+            for (let i = 0; i < 96; i++) { const a = i / 96 * 2 * Math.PI, b = (i + 1) / 96 * 2 * Math.PI;
+                seg([e[0] + r * Math.sin(a), 0, e[2] + r * Math.cos(a)], [e[0] + r * Math.sin(b), 0, e[2] + r * Math.cos(b)]); }
+            vc.stroke(); };
+        for (const t of [2, 4, 8]) ring(t * S.Hshow, `rgba(181,156,240,${0.32 - 0.06 * Math.log2(t)})`, 1);
+        ring(S.Hshow, 'rgba(212,160,82,0.55)', 1.6);
+        vc.lineWidth = 1 * dpr;
+    }
     vc.strokeStyle = 'rgba(255,255,255,0.12)'; vc.beginPath(); vc.moveTo(0, cy + f * Math.tan(S.pitch)); vc.lineTo(W, cy + f * Math.tan(S.pitch)); vc.stroke();
     // the things, far first
     const order = FIELD.map(o => [dist(o), o]).sort((a, b) => b[0] - a[0]);
@@ -249,7 +329,7 @@ function drawView() {
         const c = cam(centre(o)); if (c[2] < NEAR) continue;
         const px = f * radius(o) / c[2];
         const isT = o.i === S.target;
-        if (!isT && (!S.labels || px < 18 * dpr)) continue;
+        if (S.words === 0 || (!isT && (S.words < 2 || px < 18 * dpr))) continue;
         const x = cx + f * c[0] / c[2], y = cy - f * (c[1] + radius(o) * 0.9) / c[2];
         if (x < 0 || x > W || y < 0 || y > Hh) continue;
         const r = read(o);
@@ -261,11 +341,15 @@ function drawView() {
     vc.strokeStyle = 'rgba(212,160,82,0.95)'; vc.lineWidth = 3 * dpr; vc.lineCap = 'round';
     vc.beginPath(); vc.moveTo(cx - L, cy); vc.lineTo(cx - g, cy); vc.moveTo(cx + g, cy); vc.lineTo(cx + L, cy);
     vc.moveTo(cx, cy - L); vc.lineTo(cx, cy - g); vc.moveTo(cx, cy + g); vc.lineTo(cx, cy + L); vc.stroke();
-    vc.lineCap = 'butt'; vc.fillStyle = 'rgba(212,160,82,0.95)'; vc.textAlign = 'left';
-    vc.fillText('H', cx + L + 6 * dpr, cy + 4 * dpr);
-    vc.textAlign = 'left'; vc.fillStyle = 'rgba(200,200,208,0.8)';
-    const c = counts();
-    vc.fillText(`near field ${c.near}   far field ${c.far}${S.hold ? '   H held' : ''}`, 10 * dpr, 18 * dpr);
+    vc.lineCap = 'butt';
+    if (S.show.hud) {
+        vc.fillStyle = 'rgba(212,160,82,0.95)'; vc.textAlign = 'left'; vc.font = `${12 * dpr}px DM Mono, monospace`;
+        vc.fillText('H', cx + L + 6 * dpr, cy + 4 * dpr);
+        vc.fillStyle = 'rgba(200,200,208,0.8)'; const c = counts();
+        vc.fillText(`near field ${c.near}   far field ${c.far}${S.hold ? '   H held' : ''}`, cx - L, cy + L + 18 * dpr);
+    } else if (S.hold) {                     // held, without words: the crossing ringed
+        vc.strokeStyle = 'rgba(212,160,82,0.95)'; vc.lineWidth = 1.6 * dpr; vc.beginPath(); vc.arc(cx, cy, g + 6 * dpr, 0, 2 * Math.PI); vc.stroke();
+    }
 }
 
 // ---- the reader's lay as a map round the eye ----
@@ -312,11 +396,13 @@ function drawStrip() {
         sc2.strokeStyle = colourOf(o); sc2.lineWidth = (o.i === S.target ? 3 : 1.4) * dpr;
         sc2.beginPath(); sc2.moveTo(X(l), y0 - (o.i === S.target ? 30 : 20) * dpr); sc2.lineTo(X(l), y0); sc2.stroke(); }
     sc2.font = `${10.5 * dpr}px DM Mono, monospace`; sc2.textAlign = 'center'; sc2.fillStyle = 'rgba(200,200,208,0.75)';
-    sc2.textAlign = 'left'; sc2.fillText('home', X(0), y0 - 38 * dpr); sc2.textAlign = 'center';
-    sc2.fillStyle = 'rgba(212,160,82,0.95)'; sc2.fillText('the corner, H', X(1), y0 - 38 * dpr);
+    sc2.textAlign = 'left'; sc2.fillText('home', X(0), y0 - 38 * dpr); sc2.textAlign = 'right';
+    sc2.textAlign = 'left'; sc2.fillStyle = 'rgba(212,160,82,0.95)'; sc2.fillText('the corner, H', X(1) + 4 * dpr, y0 - 38 * dpr); sc2.textAlign = 'center';
     sc2.fillStyle = 'rgba(140,230,205,0.9)'; sc2.fillText('near field', (X(0) + X(1)) / 2, y0 + 26 * dpr);
     sc2.fillStyle = 'rgba(181,156,240,0.85)';
-    for (const [t, w] of [[2, 'one in 2'], [4, 'one in 4'], [8, 'one in 8'], [64, 'one in 64'], [512, 'one in 512']]) sc2.fillText(w, X(lay(t)), y0 + 26 * dpr);
+    let lastX = -Infinity;                   // a label too near the last one is left out (a narrow strip)
+    for (const [t, w] of [[2, 'one in 2'], [4, 'one in 4'], [8, 'one in 8'], [64, 'one in 64'], [512, 'one in 512']]) {
+        const x = X(lay(t)); if (x - lastX < 78 * dpr) continue; sc2.fillText(w, x, y0 + 26 * dpr); lastX = x; }
 }
 
 // ---- readout ----
@@ -326,12 +412,12 @@ function readout() {
     let s = '';
     if (t) { const r = read(t); s += `<span class="g">at the crosshairs</span>  ${NAMES[t.kind]} (#${t.i})\n`; }
     else s += `<span class="g">at the crosshairs</span>  nothing; H kept\n`;
-    s += `<span class="b">H, the thumb</span>      ${fmt(S.Hshow)} units  <span class="note">(a writer's number)</span>\n`;
+    s += `<span class="b">H, the thumb</span>      ${fmt(S.Hshow)} units  <span class="d">(a writer's number)</span>\n`;
     s += `<span class="r">near field</span>  ${c.near} things, inside one thumb\n`;
     s += `<span class="w">far field</span>   ${c.far} things, one in 2 and beyond\n`;
     s += `K = ${S.K} addresses: ${half} inside the corner, ${S.K - 1 - half} past it\n`;
     s += `world scale k = ${fmt(S.k)}: every reading the same at any k`;
-    $('readout').innerHTML = s;
+    $('readBox').innerHTML = s;
 }
 const fmt = v => v >= 100 ? Math.round(v).toLocaleString() : v >= 1 ? v.toFixed(2) : v.toPrecision(2);
 
@@ -349,9 +435,10 @@ view.addEventListener('pointermove', ev => { if (!drag) return; const dx = ev.cl
     S.yaw -= dx * k; S.pitch = Math.max(-80 * DEG, Math.min(80 * DEG, S.pitch + dy * k)); });
 const endDrag = ev => { if (!drag) return; if (drag.moved < 6) toggleHold(); drag = null; view.style.cursor = 'grab'; };
 view.addEventListener('pointerup', endDrag); view.addEventListener('pointercancel', () => { drag = null; });
-function toggleHold() { S.hold = !S.hold; $('hold').classList.toggle('on', S.hold); }
+function toggleHold() { S.hold = !S.hold; syncMenu(); }
 $('hold').onclick = toggleHold;
-$('labels').onclick = () => { S.labels = !S.labels; $('labels').classList.toggle('on', S.labels); };
+const WORDS = ['off', 'at the crosshairs', 'all'];
+$('words').onclick = () => { S.words = (S.words + 1) % 3; syncMenu(); };
 $('K').onchange = () => { S.K = +$('K').value; };
 $('kup').onclick = () => { S.k *= 10; S.H *= 10; S.Hshow *= 10; };
 $('kdown').onclick = () => { S.k /= 10; S.H /= 10; S.Hshow /= 10; };
@@ -360,7 +447,27 @@ let hold = { fwd: false, back: false };
 for (const [id, k] of [['fwd', 'fwd'], ['back', 'back']]) {
     const b = $(id); b.onpointerdown = () => { hold[k] = true; }; b.onpointerup = b.onpointerleave = b.onpointercancel = () => { hold[k] = false; };
 }
-$('hold').classList.toggle('on', S.hold); $('labels').classList.toggle('on', S.labels);
+// ---- the menu: everything with words in it is behind it ----
+function syncMenu() {
+    for (const b of document.querySelectorAll('#menu [data-show]')) { const k = b.dataset.show, on = S.show[k];
+        b.classList.toggle('on', on); const sp = b.querySelector('span'); if (sp) sp.textContent = on ? 'on' : 'off'; }
+    $('hold').classList.toggle('on', S.hold); $('hold').querySelector('span').textContent = S.hold ? 'on' : 'off';
+    $('words').classList.toggle('on', S.words > 0); $('words').querySelector('span').textContent = WORDS[S.words];
+    $('about').classList.toggle('open', S.show.about); $('readBox').classList.toggle('open', S.show.read);
+    $('mapBox').classList.toggle('open', S.show.map); $('stripBox').classList.toggle('open', S.show.strip);
+    document.body.classList.toggle('strip', S.show.strip);
+    $('full').textContent = document.fullscreenElement ? 'leave full screen' : 'full screen';
+}
+function showIt(k, on = !S.show[k]) { S.show[k] = on; if (k === 'about' && on) $('menu').classList.remove('open'); syncMenu(); }
+for (const b of document.querySelectorAll('#menu [data-show]')) b.onclick = () => showIt(b.dataset.show);
+$('menuBtn').onclick = () => $('menu').classList.toggle('open');
+$('aboutX').onclick = () => showIt('about', false);
+$('full').onclick = () => { const d = document; if (d.fullscreenElement) d.exitFullscreen(); else d.documentElement.requestFullscreen?.().catch(() => {}); };
+if (!document.documentElement.requestFullscreen) $('full').style.display = 'none';
+document.addEventListener('fullscreenchange', syncMenu);
+addEventListener('keydown', ev => { if (ev.key === 'Escape') { if (S.show.about) showIt('about', false); else $('menu').classList.remove('open'); } });
+view.addEventListener('pointerdown', () => $('menu').classList.remove('open'));
+syncMenu();
 
 function update(dt) {
     const turn = 1.2 * dt;
@@ -382,7 +489,8 @@ function update(dt) {
 let last = performance.now();
 function frame(now) {
     const dt = Math.min(0.1, (now - last) / 1000); last = now;
-    update(dt); drawView(); drawMap(); drawStrip(); readout();
+    update(dt); drawView();
+    if (S.show.map) drawMap(); if (S.show.strip) drawStrip(); if (S.show.read) readout();
     requestAnimationFrame(frame);
 }
 // a start that is looking at something
@@ -396,7 +504,9 @@ window.__crosshairs = {
     read: i => read(FIELD[i]), lay, addresses, counts, pick,
     set(o = {}) { if ('yaw' in o) S.yaw = o.yaw * DEG; if ('pitch' in o) S.pitch = o.pitch * DEG; if ('x' in o) S.x = o.x; if ('z' in o) S.z = o.z;
         if ('k' in o) { const r = o.k / S.k; S.k = o.k; S.H *= r; S.Hshow *= r; } if ('hold' in o) S.hold = !!o.hold; if ('K' in o) S.K = o.K;
+        if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); syncMenu();
         update(0); S.Hshow = S.H; return this.state(); },
+    show: k => showIt(k), menu: () => ({ open: $('menu').classList.contains('open'), words: S.words, show: { ...S.show } }),
     state: () => ({ yaw: S.yaw / DEG, pitch: S.pitch / DEG, x: S.x, z: S.z, k: S.k, K: S.K, hold: S.hold, target: S.target, H: S.Hshow, counts: counts() }),
 };
 })();
