@@ -7345,6 +7345,20 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   behind spread round the rim. The flat screen cannot pass 90°; by turns reaches 180° but stretches the back across the
   rim by α/sin α. `crosshairs.html`'s "the whole sky" (menu, the ◯ button, O, `?sky=1`); zooming in from it is the usual
   equal-area view. A demo, the projection classical.
+- **R687** (5 Nov; Tom: "the real cacuhy view is a tunnel not a sphere.", then "yes, keep the spehere as an option. mostly
+  we should use the correct math in read and write paper. it is a cauchy tunnel."): R686's whole sky is the writer's sphere
+  (R624, R643), kept as an option. The reader's view is *Reads and Writes* §7's tunnel: every direction at its readings off
+  the line of sight, (v/h, v₂/h), on a screen held square to the look, in thumbs (r = tan α); the directions per unit of
+  that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
+  off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
+  read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R688** (5 Nov; Tom: "why does it stretch at the horizon, it should actually bunch up the addresses."): R687 laid the
+  tunnel by its readings (the flat screen), where equal steps of reading near the horizon take ever more room while
+  holding ever fewer addresses. Laid by its addresses instead, each ring's room is the share of addresses inside it,
+  1 − 1/√(1 + r²) = 1 − cos α, so its radius is 2·sin(α/2), the hemisphere's equal-area map: the corner (one thumb off)
+  at 0.765, one in 2, 4, 8 at 1.051, 1.231, 1.324, bunching toward the horizon's rim at √2, which no reading reaches. Flat
+  shading (every address alike). The 2D Cauchy's thinning in the readings and the rings' bunching on the screen are one
+  fact. R687's zoom out below 1 removed.
 
 ## Appendix B. Demos and computations
 
