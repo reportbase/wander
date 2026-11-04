@@ -1400,6 +1400,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   period, 2π an oriented turn's** (not "the total of a completed turn"); the Cauchy closed under real Möbius maps, not every
   operation on directions; O(K) of an implementation; Gibbs the representation's; the two acts idealized (a sampling
   sensor has written); Code and data names §11's plans. Essays 14, 15, 16 likewise.
+  R657 (4 Nov; a second ChatGPT referee report, 8.2/10; Tom: "Yes. Proceed with R657: the six one-sentence edits only"):
+  the scale test necessary, not sufficient, the second test the discriminating one; the Cauchy read is this construction's,
+  other Cauchys a question each; a direction has no length to add, its number a chart; the payload's recoveries exact only
+  in the ideal model; a transcendental's value (not its definition) needs a limit, π/e's owners the paper's reading; "never
+  sees a shape" is what one read determines, no shape in amounts, not a claim about visual systems. Nothing else changed.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

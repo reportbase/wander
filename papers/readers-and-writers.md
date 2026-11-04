@@ -112,7 +112,9 @@ and the vantage that holds each.
 
 **The second test.** Change what arrives, keeping the standpoint and the turn: repaint the world, move the light, replace
 a wall by a row of trees. The *addresses*, the directions the turn lays down, are unchanged; the *payload*, what is found
-along each, changes. The first test separates reading from writing; the second separates address from payload. They are one split seen two
+along each, changes. The first test separates reading from writing; the second separates address from payload. The first is necessary, not
+sufficient: a probability or a ratio of two amounts is unmoved by scaling and is still not a direction; the second, with
+the standpoint and the turn held fixed, is the one that tells an address from a payload. They are one split seen two
 ways: the address is what a read holds, and the payload is what is written on the world where the address falls (§1).
 In the writer's notation both splits sit in one line: write a point as z = r·e^(iθ), so that ln z = ln r + iθ. Scaling the
 world slides the real part by ln k and leaves θ; a turn about the standpoint slides θ and leaves ln r; the address lives
@@ -175,7 +177,10 @@ of standpoint and of chart), is the law's own; not every operation on directions
 edge, a square, a sum of amounts, breaks it.
 
 So the Cauchy here is not a law of what is measured. It is the law of the uniform turn, the measure on the reader's addresses.
-Practice already treats it so, taking its median and never its mean; this is the reason.
+Practice already treats it so, taking its median and never its mean; this is the reason. The reading is of the Cauchy
+this construction makes. A Cauchy met elsewhere, a resonance's line, a ratio of two normal amounts, a stable sum, may
+have another origin; whether a turn lies behind it is a question to ask of each case, not a consequence of this
+derivation.
 
 **The Cauchy, derived from H and from V.** The Cauchy is usually met as a family with two parameters, a location m and a
 scale γ. Derived from what an observer holds, it comes in three forms, and the parameters arrive with V.
@@ -248,8 +253,8 @@ s = v/h up to S average (1/π)·ln(1 + S²) divided by the share they cover, and
 for every tenfold further the readings run. This is usually told as a defect of the law. Read as an address, it is what an
 address should do.
 
-A mean is a sum of amounts divided by their count. An address is a direction, and directions have no sum: there is no
-length along a direction to add. To average the readings v/h is to treat each direction as an amount laid along a line,
+A mean is a sum of amounts divided by their count. An address is a direction, and a direction, read as a direction, has
+no length to add; its numerical representation is a chart, and the question is what survives a change of chart. To average the readings v/h is to treat each direction as an amount laid along a line,
 the chart in which the horizon sits at s = ∞, and the sum picks up that chart's far end. A mean belongs to the
 chart that takes a direction for an amount, not to the directions; they never had one. Other charts of the same directions do have means (the
 bounded chart s/(1 + s) averages ½), and the order statistics do not depend on the chart at all: the median and the
@@ -269,7 +274,9 @@ addresses, carried onto the shore's ruler; the light that lands there is the pay
 averaged; where it arrives cannot. Practice already takes the median of a Cauchy and never its mean: this is the reason.
 
 **The payload is not lost.** The separation spends nothing of the payload: no part of it goes into making the addresses, so
-all of it arrives, on addresses known before it came. The Cauchy then gives it back in four ways.
+all of it arrives, on addresses known before it came. The Cauchy then gives it back in four ways. Each is exact in the
+ideal model, with the address measure known and the payload given whole; from finite, noisy samples each is an estimate,
+and undoing the blur is the least stable of the four.
 
 - *By its ratios.* Two payloads read against each other make a ratio, and a ratio is a reading. The light along one
   address over the light along another, one colour channel over another, the radius in one direction over the radius in
@@ -301,8 +308,9 @@ with a pane and is lit by its colour. The fingers are the addresses: wherever th
 way. The colours are the payload: they change with the window. No colour carries a distance; to learn how far the window
 is, you must walk.
 
-**The reader never sees a shape.** A thing is, to the reader, the addresses it paints; the paint is the world's writing, met there. Its shape is a radius
-along each direction from its own centre, an amount, and amounts are removed before reading. Every way to a shape is a
+**The reader never sees a shape.** This is about what one read determines, from one standpoint with nothing written; not
+about what a visual system infers. A thing is, to that read, the addresses it paints; the paint is the world's writing, met there. Its shape is a radius
+along each direction from its own centre, an amount, and amounts are removed before reading: no shape in amounts. Every way to a shape is a
 writing: ranging, a counted step, a blueprint. This is not a shortfall to be made up by inference. The reader's side is
 whole; the shape was never the reader's to lack.
 
@@ -434,8 +442,8 @@ every algebraic number (the cube root of 2, which doubles a cube, is beyond them
 
 **A limit makes the transcendental numbers.** The algebraic numbers are closed under every finite operation: add, subtract,
 multiply, divide or take roots of them, any finite number of times, and the result is algebraic. So a number that is not
-algebraic is reached by no finite algebraic step, and as a number it is had only through a limit, by one for whom that
-infinity is finished. It may still have a short name (tan 1, or π = 4·arctan 1); the reader meets the direction tan 1
+algebraic is reached by no finite algebraic step, and its value as a decimal or a fraction is had only through a
+limit, by one for whom that infinity is finished; as a definition it can be finite and exact. It may still have a short name (tan 1, or π = 4·arctan 1); the reader meets the direction tan 1
 whole, and only stating it as a number needs the limit.
 
 - *π completes the turn.* The reader meets the corner as s = 1, exactly. Its angle is π/4 = 1 − 1/3 + 1/5 − …
@@ -479,8 +487,8 @@ quarter turn, e^(iπ/2) = i). It was through that meeting that Lindemann proved
 
 **π with the address, e with the payload.** The two parts of ln z = ln r + iθ are the two sides of this paper. The
 imaginary part is the address: turns act on it alone. The real part is the payload's size: scaling the world acts on it
-alone, sliding ln r and leaving θ where it was. So π belongs with the address and e with the payload, and they are not
-alike. The address coordinate closes, so it has a period, and π (a line's half turn; 2π an oriented turn) is that period in
+alone, sliding ln r and leaving θ where it was. So, in this paper's reading of the period and the base, π belongs with the address and e with the payload, and they are
+not alike. The address coordinate closes, so it has a period, and π (a line's half turn; 2π an oriented turn) is that period in
 the unit the exponential sets; nothing can
 choose it away. The payload coordinate is an open line with no total and no natural size, so nothing on it marks a place;
 its base is a convention (counting in thumbs, doublings serve as well), and e is the base that lets one unit serve both

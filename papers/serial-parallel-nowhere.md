@@ -7147,6 +7147,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   data cases, which illustrate and do not alone establish. The referee's diffraction point was not taken (a straight
   edge's fringes are on the lit side only); its mean point already answered (R604). *Reads and Writes* §1, §2, §4, §5, §6,
   §8, Code and data; essays 14, 15, 16. Corrects R591's and R597's "π the total of a completed turn".
+- **R657** (4 Nov; a second ChatGPT referee report of *Reads and Writes*, 8.2/10; Tom: "Yes. Proceed with R657: the six
+  one-sentence edits only … precision without retreat"): **six scoping sentences, no ruling changed.** §1: the scale test
+  necessary, not sufficient (a probability is unmoved by scaling and is no direction); the second test, standpoint and
+  turn fixed, tells address from payload. §2: the reading is of the Cauchy this construction makes; another Cauchy (a
+  resonance's line, a ratio of normals, a stable sum) may have another origin, a question for each case (R341, R358).
+  §2: a direction, read as a direction, has no length to add; its number is a chart, the question what survives
+  re-charting. §2: the payload's four recoveries exact in the ideal model, estimates from finite noisy samples, the blur's
+  the least stable. §5: a transcendental's value as a decimal or fraction needs a limit, its definition can be finite and
+  exact; π with the address and e with the payload marked as this paper's reading. §2: "never sees a shape" is what one
+  read determines from one standpoint with nothing written, not what a visual system infers; no shape in amounts.
+  Special relativity and Euler left as they were; a roadmap, claim labels and repetition cuts not taken (Tom's to decide).
 
 ## Appendix B. Demos and computations
 
