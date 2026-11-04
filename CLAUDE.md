@@ -132,6 +132,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Since R674 (5 Nov; Tom: "Things don't blur, they get compressed"; THM runs 2–3): blur replaced by "compress" (`dirGrain`,
   `shrinkOf`: each thing shrunk about its centre by cosh of its direction's worst pair level), the one-thumb circle (35.26°,
   fixed) and its three homes drawn; `?fid=compress|cells|off`; hook adds `shrink`, `dirGrain`, `homes`.
+  Since R676: the three corner lines drawn through the crosshair, each home → corner → horizon (the third thumb, ringed);
+  hook adds `corners`.
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -1481,6 +1483,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   fixed 35.26° circle, corner at its centre, home at its three touch points, distortion growing as 1/(2·reading) toward home.
   R674 (5 Nov; "yes"): `crosshairs.html`'s blur replaced by compress (each thing shrunk by its direction's grain) with the
   one-thumb circle and its three homes drawn.
+  R675 (5 Nov; Tom: "update the essays"): essay 5 §10 "Three thumbs at the crosshair" (THM runs 1–3), a pointer in essay 4.
+  R676 (5 Nov; Tom: "Where are the corners"): each pair's corner a line through the crosshair, a quarter turn from home
+  (35.26°) to the horizon at the third thumb (54.74°); drawn on `crosshairs.html`, in essay 5.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
