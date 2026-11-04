@@ -246,7 +246,7 @@ one point m + iγ, the standpoint's foot and height:
 | relays through a standpoint between | a sum: Cauchy |
 | averages n readings | the same Cauchy: nothing gained, nothing lost |
 
-For a programmer the family is a closed type: every operation on directions returns the same type, and the whole state of
+For a programmer the family is a closed type: every change of standpoint or chart (a real Möbius map) returns the same type, and the whole state of
 a law is two numbers. Averaging gains nothing, as it should not, since it is an operation on amounts. (The table is about
 the signed reading over two quadrants; the reader's half-Cauchy on one quadrant is carried off its arc by a turn.)
 
