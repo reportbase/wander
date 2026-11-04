@@ -7227,6 +7227,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   one in four. Beside it the field on the reader's lay (bearing from the look, L(d/H) out, the corner a ring, the K
   addresses half inside it at every H) and a strip of the same lay; hold H, labels, K, scale the world (no reading moves).
   On `demos.html` and essay 4's card on `essays.html`. A demo, nothing new claimed.
+- **R668** (5 Nov; Tom: "Should be full screen. Any text you want to show should be hidden until the user ask for it from a
+  menu. Explain all the ways H is used to create the scene."): `crosshairs.html` fills the window; every word (the readout,
+  the map, the line, words on things, the crosshairs' name and counts) is behind a menu, off at first; the rings on the
+  ground (the corner at H, one in 2, 4, 8), being no text, start on. The menu's "How H makes the scene" lists fifteen ways:
+  where H comes from (pointing, kept when pointing at nothing, held, gliding on its logarithm), what each thing gets from it
+  (one reading d/H, its field, colour, words, place on the map), what it shares out (the K addresses at H·tan(kπ/2K), the
+  counts, the rings on the ground, the walking pace, a convenience of the page) and what it does not change (scaling the
+  world; the field itself). The perspective, the wireframes and the pick use no H. A demo, nothing new claimed.
 
 ## Appendix B. Demos and computations
 

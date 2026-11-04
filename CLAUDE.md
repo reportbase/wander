@@ -109,6 +109,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the K addresses tan(kπ/2K) as rings, half inside) and the lay as a strip. Hold H (tap, Space), K 16/32/64, scale the world
   ×10 ÷10 (H in units moves, no reading). `?yaw=&pitch=&x=&z=&seed=&K=&k=<log10 k>&hold=1&labels=1`; hook `window.__crosshairs`
   (`objects`, `target`, `H`, `read`, `lay`, `addresses`, `counts`, `pick`, `set`, `state`). Not in the flying page.
+  Since 5 Nov (SPN R668; Tom: "Should be full screen. Any text you want to show should be hidden until the user ask for it
+  from a menu. Explain all the ways H is used to create the scene."): full screen, the panels overlays; no text until asked
+  for from the menu (☰): the readout, the map, the line, words on things (off, at the crosshairs, all), the crosshairs' name
+  and counts, and "How H makes the scene" (fifteen numbered ways H enters); rings on the ground (the corner at H, one in 2,
+  4, 8) on at first; ▲ ▼ walk buttons only on a touch screen. Params also `words=0|1|2&about=1&read=1&map=1&strip=1&hud=1&rings=0`;
+  hook adds `show`, `menu`, and `set` takes `words` and `show`. Keep new text on this page behind the menu.
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -1443,6 +1449,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (a loop on the sphere comes back turned by its solid angle, none in the plane; Berry's phase that leftover).
   R667 (4 Nov; Tom: "The way to understand reader geometry is with fpv …"): `crosshairs.html`, the crossed thumbs as an FPV
   crosshair setting H on what they point at, the near and far fields following.
+  R668 (5 Nov; Tom: "Should be full screen. Any text you want to show should be hidden until the user ask for it from a
+  menu."): `crosshairs.html` full screen, every word behind its menu, "How H makes the scene" the fifteen ways H enters.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
