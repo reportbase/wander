@@ -7219,6 +7219,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   sphere of states, the half in half the solid angle) and essay 13 §4 (the leftover of turns that do not commute has a
   size: a direction carried round a loop on the sphere comes back turned by the enclosed solid angle, Gauss–Bonnet, none
   in the plane; Berry's phase is that leftover, an address quantity). README rows 2 and 13.
+- **R667** (4 Nov; Tom: "The way to understand reader geometry is with fpv. Create a field full of objects with wire
+  frame and let the user point at the objects with H cross hairs and change the near and far field accordingly."):
+  `crosshairs.html`, a first-person walk through 140 seeded wireframe things (4 to 2,000 units off, even in the logarithm
+  of distance). The crosshairs are the crossed thumbs: the thing they point at is the corner and its distance H, gliding
+  there on its logarithm; every thing coloured by its own d/H, the near field in proportion, the far field as one in two,
+  one in four. Beside it the field on the reader's lay (bearing from the look, L(d/H) out, the corner a ring, the K
+  addresses half inside it at every H) and a strip of the same lay; hold H, labels, K, scale the world (no reading moves).
+  On `demos.html` and essay 4's card on `essays.html`. A demo, nothing new claimed.
 
 ## Appendix B. Demos and computations
 

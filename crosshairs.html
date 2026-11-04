@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Crosshairs in a field</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    crosshairs.html: reader geometry in a first-person view (4 November 2026, Tom: "The way to understand reader geometry
+    is with fpv. Create a field full of objects with wire frame and let the user point at the objects with H cross hairs
+    and change the near and far field accordingly."; SPN R667). A standalone page, plain canvas, wireframe only.
+    A field of seeded wireframe things (boxes, towers, pyramids, diamonds, rings) on a grid, from a couple of units to two
+    thousand off. The crosshairs are the two thumbs crossed (Reads and Writes §6, "The crosshairs"): whatever they point
+    at is the corner, and its distance becomes H, the thumb. Every thing is then coloured by its own d/H: nearer than the
+    thumb, the near field, read in proportion (teal); at the crosshairs, the corner (gold); past it, the far field, read as
+    a ratio, one in two, one in four (violet, dimmer the farther). Point at something else and the split moves: the field is
+    the same, the near and far fields are where the thumbs are pointed. H glides to its new value on a logarithm, so the
+    field visibly slides.
+    Beside it the field laid as the reader lays it: each thing at its bearing from the look and at L(d/H) out, d/H inside
+    the corner and 1 + ln(d/H) past it (the writer's number for the reader's ratio), the corner the ring at 1, the K
+    addresses at tan(kπ/2K) as ticks, half inside the corner at every H. Below, the same lay as a strip. Scale the world
+    (k on every length, the eye's place included) moves H in units and no reading. Hold H keeps the thumbs where they were
+    while you look round.
+    Controls: drag the view to look (or the arrow keys), W A S D to walk, a tap or Space to hold H on what is under the
+    crosshairs.
+    Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&seed=&K=16|32|64&k=<log10 k>&hold=1&labels=1.
+    Test hook: window.__crosshairs (objects, target, H, read, lay, addresses, counts, pick, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 86ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button, select { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    #view { cursor: grab }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 12px }
+    @media (max-width: 820px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15 }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Crosshairs in a field</h1>
+    <p class="lede">Reader geometry from inside. Hold up both thumbs, crossed, at arm's length: the crossing is the
+    <span class="g">corner</span>, and whatever it points at is one thumb away by definition, so its distance is H. Everything
+    nearer is the <span class="r">near field</span>, read in proportion, a fraction of the one thumb. Everything farther is the
+    <span class="w">far field</span>, read as a ratio, one in two, one in four, one in eight. Nothing in the field moves when you
+    point somewhere else; the near and far fields do, because they are where the thumbs are pointed.</p>
+
+    <div class="grid">
+        <div class="panel">
+            <canvas id="view" height="560"></canvas>
+            <div class="cap">Drag to look, W A S D to walk, a tap (or Space) holds H on what is under the crosshairs.</div>
+            <div class="row">
+                <button id="hold">hold H</button>
+                <button id="labels">labels</button>
+                <label>K <select id="K"><option>16</option><option selected>32</option><option>64</option></select></label>
+                <button id="kdown">world ÷ 10</button>
+                <button id="kup">world × 10</button>
+                <button id="home">back home</button>
+            </div>
+            <div class="row">
+                <button id="fwd">▲ walk</button>
+                <button id="back">▼ back</button>
+            </div>
+        </div>
+        <div class="panel">
+            <canvas id="map" height="420"></canvas>
+            <div class="cap">The field as the reader lays it: bearing from the look, and d/H out to the
+            <span class="g">corner ring</span>, 1 + ln(d/H) past it. Ticks: the K addresses, half inside the ring at every H.</div>
+            <div class="read" id="readout"></div>
+        </div>
+    </div>
+    <div class="panel">
+        <canvas id="strip" height="150"></canvas>
+        <div class="cap">The same lay as a line: home at the left, the corner where the crosshairs are, the far field in
+        ratios past it (one in two, one in four, one in eight; a writer counts them as two thumbs, four, eight). The grey
+        ticks are the K addresses: the same marks at every H, so the things slide under them as you point.</div>
+        <p class="note">The writer's numbers (H in units, the distances) move with the world's scale; nothing the reader reads
+        does. See <i>Reads and Writes</i> §6, essay 4 (near and far) and <a href="fpv.html">the crosshair is the corner</a>.
+        <a href="demos.html">All demos</a>.</p>
+    </div>
+</main>
+<script>
+(() => {
+'use strict';
+const Q = new URLSearchParams(location.search);
+const num = (k, d) => { const v = parseFloat(Q.get(k)); return Number.isFinite(v) ? v : d; };
+const $ = id => document.getElementById(id);
+const DEG = Math.PI / 180;
+
+// ---- the field, seeded ----
+function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const SEED = num('seed', 7);
+const KINDS = ['box', 'tower', 'pyramid', 'diamond', 'ring'];
+function shapeEdges(kind) {
+    // unit shapes standing on y = 0, about 1 across, as lists of [p, q] segments
+    const E = [];
+    const box = (w, h) => { const c = [[-w, 0, -w], [w, 0, -w], [w, 0, w], [-w, 0, w]];
+        const t = c.map(p => [p[0], h, p[2]]);
+        for (let i = 0; i < 4; i++) { const j = (i + 1) % 4; E.push([c[i], c[j]], [t[i], t[j]], [c[i], t[i]]); } };
+    if (kind === 'box') box(0.5, 1);
+    else if (kind === 'tower') box(0.3, 2.6);
+    else if (kind === 'pyramid') { const c = [[-0.5, 0, -0.5], [0.5, 0, -0.5], [0.5, 0, 0.5], [-0.5, 0, 0.5]], a = [0, 1.2, 0];
+        for (let i = 0; i < 4; i++) E.push([c[i], c[(i + 1) % 4]], [c[i], a]); }
+    else if (kind === 'diamond') { const m = [[0.5, 0.7, 0], [0, 0.7, 0.5], [-0.5, 0.7, 0], [0, 0.7, -0.5]], t = [0, 1.4, 0], b = [0, 0, 0];
+        for (let i = 0; i < 4; i++) E.push([m[i], m[(i + 1) % 4]], [m[i], t], [m[i], b]); }
+    else { const n = 16; for (let r = 0; r < 3; r++) { const ax = r; for (let i = 0; i < n; i++) {
+        const a = i / n * 2 * Math.PI, b = (i + 1) / n * 2 * Math.PI;
+        const P = (t) => ax === 0 ? [0.5 * Math.cos(t), 0.5 + 0.5 * Math.sin(t), 0] : ax === 1 ? [0, 0.5 + 0.5 * Math.sin(t), 0.5 * Math.cos(t)]
+            : [0.5 * Math.cos(t), 0.5, 0.5 * Math.sin(t)];
+        E.push([P(a), P(b)]); } } }
+    return E;
+}
+const SHAPES = Object.fromEntries(KINDS.map(k => [k, shapeEdges(k)]));
+const HEIGHT = { box: 1, tower: 2.6, pyramid: 1.2, diamond: 1.4, ring: 1 };
+const NAMES = { box: 'a box', tower: 'a tower', pyramid: 'a pyramid', diamond: 'a diamond', ring: 'a ring' };
+function makeField(seed) {
+    const R = rng(seed), out = [];
+    const N = 140;
+    for (let i = 0; i < N; i++) {
+        const d = 4 * Math.pow(2000 / 4, R());               // even in the logarithm of distance, 4 to 2000
+        const az = (R() * 2 - 1) * Math.PI;
+        const kind = KINDS[Math.floor(R() * KINDS.length)];
+        const size = 0.45 * Math.pow(d, 0.72) * (0.7 + 0.6 * R());
+        out.push({ i, kind, x: d * Math.sin(az), z: d * Math.cos(az), size });
+    }
+    return out;
+}
+const FIELD = makeField(SEED);
+
+// ---- state ----
+const EYE = 1.6;
+const S = {
+    yaw: num('yaw', 0) * DEG, pitch: num('pitch', -2) * DEG, x: num('x', 0), z: num('z', 0),
+    k: Math.pow(10, num('k', 0)), K: [16, 32, 64].includes(num('K', 32)) ? num('K', 32) : 32,
+    hold: Q.get('hold') === '1', labels: Q.get('labels') === '1',
+    target: -1, H: 10, Hshow: 10,
+};
+$('K').value = String(S.K);
+
+// world lengths are the field's times k (the eye's place too: x, z are in field units)
+function centre(o) { const h = HEIGHT[o.kind] * o.size * 0.5; return [o.x * S.k, h * S.k, o.z * S.k]; }
+function radius(o) { return 0.75 * o.size * Math.max(1, HEIGHT[o.kind]) * S.k; }
+function eye() { return [S.x * S.k, EYE * S.k, S.z * S.k]; }
+function dist(o) { const c = centre(o), e = eye(); return Math.hypot(c[0] - e[0], c[1] - e[1], c[2] - e[2]); }
+function lookDir(yaw, pitch) { return [Math.sin(yaw) * Math.cos(pitch), Math.sin(pitch), Math.cos(yaw) * Math.cos(pitch)]; }
+
+// the thing under the crosshairs: the nearest whose own box (its footprint and height) the line of sight passes through
+const HALF = { box: 0.5, tower: 0.3, pyramid: 0.5, diamond: 0.5, ring: 0.5 };
+function hitBox(o, e, u) {
+    const h = HALF[o.kind] * o.size * S.k, lo = [o.x * S.k - h, 0, o.z * S.k - h], hi = [o.x * S.k + h, HEIGHT[o.kind] * o.size * S.k, o.z * S.k + h];
+    let t0 = 0, t1 = Infinity;
+    for (let a = 0; a < 3; a++) {
+        if (Math.abs(u[a]) < 1e-12) { if (e[a] < lo[a] || e[a] > hi[a]) return Infinity; continue; }
+        let ta = (lo[a] - e[a]) / u[a], tb = (hi[a] - e[a]) / u[a]; if (ta > tb) [ta, tb] = [tb, ta];
+        t0 = Math.max(t0, ta); t1 = Math.min(t1, tb); if (t0 > t1) return Infinity;
+    }
+    return t0;
+}
+function pick(yaw = S.yaw, pitch = S.pitch) {
+    const e = eye(), u = lookDir(yaw, pitch);
+    let best = -1, bt = Infinity;
+    for (const o of FIELD) { const t = hitBox(o, e, u); if (t < bt) { bt = t; best = o.i; } }
+    return best;
+}
+
+// the reader's lay of distance: in proportion inside the corner, 1 + ln past it
+const lay = s => s <= 1 ? s : 1 + Math.log(s);
+function addresses(K = S.K) { const a = []; for (let k = 1; k < K; k++) a.push(Math.tan(k * Math.PI / (2 * K))); return a; }
+function read(o, H = S.Hshow) {
+    const s = dist(o) / H;
+    let field, words;
+    if (Math.abs(Math.log(s)) < 0.03) { field = 'corner'; words = 'at the crosshairs, one thumb'; }
+    else if (s < 1) { field = 'near'; words = s.toFixed(2) + ' of the thumb'; }
+    else { field = 'far'; words = 'one in ' + (s < 10 ? s.toFixed(1) : Math.round(s)); }
+    return { s, field, words, lay: lay(s) };
+}
+function counts() { let n = 0, f = 0; for (const o of FIELD) (dist(o) < S.Hshow ? n++ : f++); return { near: n, far: f }; }
+
+// ---- colour ----
+function colourOf(o, alpha = 1) {
+    const r = read(o);
+    if (r.field === 'corner') return `rgba(212,160,82,${alpha})`;
+    if (r.field === 'near') return `rgba(140,230,205,${alpha * (0.45 + 0.55 * r.s)})`;
+    const th = Math.log2(r.s);                                   // how many halvings of the reading
+    return `rgba(181,156,240,${alpha * Math.max(0.18, 1 - th / 9)})`;
+}
+
+// ---- the view ----
+const view = $('view'), vc = view.getContext('2d');
+function size(cv, ratio) { const d = window.devicePixelRatio || 1, w = cv.clientWidth || 600;
+    const W = Math.round(w * d), H = Math.round(w * ratio * d);
+    if (cv.width !== W) cv.width = W; if (cv.height !== H) cv.height = H; return d; }
+function drawView() {
+    const dpr = size(view, 0.62), W = view.width, Hh = view.height;
+    const fov = 72 * DEG, f = (W / 2) / Math.tan(fov / 2), cx = W / 2, cy = Hh / 2;
+    vc.fillStyle = '#04040a'; vc.fillRect(0, 0, W, Hh);
+    const e = eye(), cyw = Math.cos(S.yaw), syw = Math.sin(S.yaw), cp = Math.cos(S.pitch), sp = Math.sin(S.pitch);
+    const cam = p => { const dx = p[0] - e[0], dy = p[1] - e[1], dz = p[2] - e[2];
+        const x1 = dx * cyw - dz * syw, z1 = dx * syw + dz * cyw;   // turn by −yaw
+        const y2 = dy * cp - z1 * sp, z2 = dy * sp + z1 * cp;       // tip by −pitch
+        return [x1, y2, z2]; };
+    const NEAR = 0.05 * S.k;
+    const seg = (a, b) => { let p = cam(a), q = cam(b);
+        if (p[2] < NEAR && q[2] < NEAR) return;
+        if (p[2] < NEAR || q[2] < NEAR) { const t = (NEAR - p[2]) / (q[2] - p[2]); const m = [p[0] + t * (q[0] - p[0]), p[1] + t * (q[1] - p[1]), NEAR];
+            if (p[2] < NEAR) p = m; else q = m; }
+        vc.moveTo(cx + f * p[0] / p[2], cy - f * p[1] / p[2]); vc.lineTo(cx + f * q[0] / q[2], cy - f * q[1] / q[2]); };
+    // the horizon line and the ground grid round the eye
+    vc.lineWidth = 1 * dpr;
+    vc.strokeStyle = 'rgba(255,255,255,0.05)'; vc.beginPath();
+    const step = 5 * S.k, span = 30, gx = Math.round(e[0] / step) * step, gz = Math.round(e[2] / step) * step;
+    for (let i = -span; i <= span; i++) {
+        seg([gx + i * step, 0, gz - span * step], [gx + i * step, 0, gz + span * step]);
+        seg([gx - span * step, 0, gz + i * step], [gx + span * step, 0, gz + i * step]);
+    }
+    vc.stroke();
+    vc.strokeStyle = 'rgba(255,255,255,0.12)'; vc.beginPath(); vc.moveTo(0, cy + f * Math.tan(S.pitch)); vc.lineTo(W, cy + f * Math.tan(S.pitch)); vc.stroke();
+    // the things, far first
+    const order = FIELD.map(o => [dist(o), o]).sort((a, b) => b[0] - a[0]);
+    for (const [, o] of order) {
+        const isT = o.i === S.target;
+        vc.strokeStyle = colourOf(o); vc.lineWidth = (isT ? 2.4 : 1.1) * dpr;
+        vc.beginPath();
+        const base = [o.x * S.k, 0, o.z * S.k], sc = o.size * S.k;
+        for (const [p, q] of SHAPES[o.kind]) seg([base[0] + p[0] * sc, p[1] * sc, base[2] + p[2] * sc], [base[0] + q[0] * sc, q[1] * sc, base[2] + q[2] * sc]);
+        vc.stroke();
+    }
+    // labels: the thing at the crosshairs always, the others if asked and big enough on the screen
+    vc.font = `${11 * dpr}px DM Mono, monospace`; vc.textAlign = 'center';
+    for (const [d, o] of order) {
+        const c = cam(centre(o)); if (c[2] < NEAR) continue;
+        const px = f * radius(o) / c[2];
+        const isT = o.i === S.target;
+        if (!isT && (!S.labels || px < 18 * dpr)) continue;
+        const x = cx + f * c[0] / c[2], y = cy - f * (c[1] + radius(o) * 0.9) / c[2];
+        if (x < 0 || x > W || y < 0 || y > Hh) continue;
+        const r = read(o);
+        vc.fillStyle = colourOf(o, isT ? 1 : 0.85);
+        vc.fillText(r.words, x, y - 4 * dpr);
+    }
+    // the crosshairs: two thumbs crossed, the corner where they meet
+    const L = 46 * dpr, g = 7 * dpr;
+    vc.strokeStyle = 'rgba(212,160,82,0.95)'; vc.lineWidth = 3 * dpr; vc.lineCap = 'round';
+    vc.beginPath(); vc.moveTo(cx - L, cy); vc.lineTo(cx - g, cy); vc.moveTo(cx + g, cy); vc.lineTo(cx + L, cy);
+    vc.moveTo(cx, cy - L); vc.lineTo(cx, cy - g); vc.moveTo(cx, cy + g); vc.lineTo(cx, cy + L); vc.stroke();
+    vc.lineCap = 'butt'; vc.fillStyle = 'rgba(212,160,82,0.95)'; vc.textAlign = 'left';
+    vc.fillText('H', cx + L + 6 * dpr, cy + 4 * dpr);
+    vc.textAlign = 'left'; vc.fillStyle = 'rgba(200,200,208,0.8)';
+    const c = counts();
+    vc.fillText(`near field ${c.near}   far field ${c.far}${S.hold ? '   H held' : ''}`, 10 * dpr, 18 * dpr);
+}
+
+// ---- the reader's lay as a map round the eye ----
+const map = $('map'), mc = map.getContext('2d');
+function drawMap() {
+    const dpr = size(map, 0.9), W = map.width, Hh = map.height, cx = W / 2, cy = Hh / 2;
+    mc.fillStyle = '#04040a'; mc.fillRect(0, 0, W, Hh);
+    const maxL = 1 + Math.log(256), R = Math.min(W, Hh) * 0.47, sc = R / maxL;
+    // the K addresses as rings, faint; the corner ring gold; two, four, eight thumbs dashed
+    mc.lineWidth = 1 * dpr;
+    for (const a of addresses()) { const l = lay(a); if (l > maxL) continue;
+        mc.strokeStyle = a < 1 ? 'rgba(140,230,205,0.10)' : 'rgba(181,156,240,0.10)'; mc.beginPath(); mc.arc(cx, cy, l * sc, 0, 2 * Math.PI); mc.stroke(); }
+    mc.setLineDash([3 * dpr, 4 * dpr]); mc.strokeStyle = 'rgba(181,156,240,0.35)';
+    for (const t of [2, 4, 8, 16, 64]) { mc.beginPath(); mc.arc(cx, cy, lay(t) * sc, 0, 2 * Math.PI); mc.stroke(); }
+    mc.setLineDash([]); mc.strokeStyle = 'rgba(212,160,82,0.9)'; mc.lineWidth = 1.6 * dpr;
+    mc.beginPath(); mc.arc(cx, cy, sc, 0, 2 * Math.PI); mc.stroke();
+    // the look, up the page
+    mc.strokeStyle = 'rgba(212,160,82,0.4)'; mc.lineWidth = 1 * dpr; mc.beginPath(); mc.moveTo(cx, cy); mc.lineTo(cx, cy - R); mc.stroke();
+    const e = eye();
+    for (const o of FIELD) {
+        const c = centre(o), b = Math.atan2(c[0] - e[0], c[2] - e[2]) - S.yaw;
+        const r = read(o), l = Math.min(lay(r.s), maxL) * sc;
+        const x = cx + l * Math.sin(b), y = cy - l * Math.cos(b);
+        mc.fillStyle = colourOf(o); mc.beginPath(); mc.arc(x, y, (o.i === S.target ? 4.5 : 2.4) * dpr, 0, 2 * Math.PI); mc.fill();
+    }
+    mc.fillStyle = 'rgba(200,200,208,0.8)'; mc.font = `${10.5 * dpr}px DM Mono, monospace`; mc.textAlign = 'left';
+    mc.fillText('corner: one thumb', cx + sc + 4 * dpr, cy - 3 * dpr);
+    mc.fillStyle = 'rgba(181,156,240,0.7)';
+    for (const [t, w] of [[2, 'one in 2'], [8, 'one in 8'], [64, 'one in 64']]) mc.fillText(w, cx + lay(t) * sc * 0.71, cy + lay(t) * sc * 0.71);
+}
+
+// ---- the lay as a strip ----
+const strip = $('strip'), sc2 = strip.getContext('2d');
+function drawStrip() {
+    const dpr = size(strip, 0.13), W = strip.width, Hh = strip.height;
+    sc2.fillStyle = '#04040a'; sc2.fillRect(0, 0, W, Hh);
+    const maxL = 1 + Math.log(4000), pad = 14 * dpr, X = l => pad + (W - 2 * pad) * l / maxL, y0 = Hh * 0.62;
+    sc2.strokeStyle = 'rgba(255,255,255,0.15)'; sc2.lineWidth = 1 * dpr; sc2.beginPath(); sc2.moveTo(X(0), y0); sc2.lineTo(X(maxL), y0); sc2.stroke();
+    sc2.strokeStyle = 'rgba(255,255,255,0.22)';
+    for (const a of addresses()) { const l = lay(a); if (l > maxL) continue; sc2.beginPath(); sc2.moveTo(X(l), y0 + 4 * dpr); sc2.lineTo(X(l), y0 + 12 * dpr); sc2.stroke(); }
+    sc2.fillStyle = 'rgba(212,160,82,0.18)'; sc2.fillRect(X(0), y0 - 30 * dpr, X(1) - X(0), 30 * dpr);
+    sc2.strokeStyle = 'rgba(212,160,82,0.95)'; sc2.lineWidth = 2 * dpr; sc2.beginPath(); sc2.moveTo(X(1), y0 - 34 * dpr); sc2.lineTo(X(1), y0 + 14 * dpr); sc2.stroke();
+    for (const o of FIELD) { const r = read(o); const l = Math.min(r.lay, maxL);
+        sc2.strokeStyle = colourOf(o); sc2.lineWidth = (o.i === S.target ? 3 : 1.4) * dpr;
+        sc2.beginPath(); sc2.moveTo(X(l), y0 - (o.i === S.target ? 30 : 20) * dpr); sc2.lineTo(X(l), y0); sc2.stroke(); }
+    sc2.font = `${10.5 * dpr}px DM Mono, monospace`; sc2.textAlign = 'center'; sc2.fillStyle = 'rgba(200,200,208,0.75)';
+    sc2.textAlign = 'left'; sc2.fillText('home', X(0), y0 - 38 * dpr); sc2.textAlign = 'center';
+    sc2.fillStyle = 'rgba(212,160,82,0.95)'; sc2.fillText('the corner, H', X(1), y0 - 38 * dpr);
+    sc2.fillStyle = 'rgba(140,230,205,0.9)'; sc2.fillText('near field', (X(0) + X(1)) / 2, y0 + 26 * dpr);
+    sc2.fillStyle = 'rgba(181,156,240,0.85)';
+    for (const [t, w] of [[2, 'one in 2'], [4, 'one in 4'], [8, 'one in 8'], [64, 'one in 64'], [512, 'one in 512']]) sc2.fillText(w, X(lay(t)), y0 + 26 * dpr);
+}
+
+// ---- readout ----
+function readout() {
+    const c = counts(), t = FIELD[S.target];
+    const half = addresses().filter(a => a < 1).length;
+    let s = '';
+    if (t) { const r = read(t); s += `<span class="g">at the crosshairs</span>  ${NAMES[t.kind]} (#${t.i})\n`; }
+    else s += `<span class="g">at the crosshairs</span>  nothing; H kept\n`;
+    s += `<span class="b">H, the thumb</span>      ${fmt(S.Hshow)} units  <span class="note">(a writer's number)</span>\n`;
+    s += `<span class="r">near field</span>  ${c.near} things, inside one thumb\n`;
+    s += `<span class="w">far field</span>   ${c.far} things, one in 2 and beyond\n`;
+    s += `K = ${S.K} addresses: ${half} inside the corner, ${S.K - 1 - half} past it\n`;
+    s += `world scale k = ${fmt(S.k)}: every reading the same at any k`;
+    $('readout').innerHTML = s;
+}
+const fmt = v => v >= 100 ? Math.round(v).toLocaleString() : v >= 1 ? v.toFixed(2) : v.toPrecision(2);
+
+// ---- motion and input ----
+const keys = new Set();
+addEventListener('keydown', ev => { if (ev.target.tagName === 'SELECT') return;
+    const k = ev.key.toLowerCase(); if (k === ' ') { toggleHold(); ev.preventDefault(); return; }
+    if (['w', 'a', 's', 'd', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright'].includes(k)) { keys.add(k); ev.preventDefault(); } });
+addEventListener('keyup', ev => keys.delete(ev.key.toLowerCase()));
+let drag = null;
+view.addEventListener('pointerdown', ev => { drag = { x: ev.clientX, y: ev.clientY, moved: 0 }; view.setPointerCapture(ev.pointerId); view.style.cursor = 'grabbing'; });
+view.addEventListener('pointermove', ev => { if (!drag) return; const dx = ev.clientX - drag.x, dy = ev.clientY - drag.y;
+    drag.moved += Math.abs(dx) + Math.abs(dy); drag.x = ev.clientX; drag.y = ev.clientY;
+    const k = 72 * DEG / (view.clientWidth || 600);
+    S.yaw -= dx * k; S.pitch = Math.max(-80 * DEG, Math.min(80 * DEG, S.pitch + dy * k)); });
+const endDrag = ev => { if (!drag) return; if (drag.moved < 6) toggleHold(); drag = null; view.style.cursor = 'grab'; };
+view.addEventListener('pointerup', endDrag); view.addEventListener('pointercancel', () => { drag = null; });
+function toggleHold() { S.hold = !S.hold; $('hold').classList.toggle('on', S.hold); }
+$('hold').onclick = toggleHold;
+$('labels').onclick = () => { S.labels = !S.labels; $('labels').classList.toggle('on', S.labels); };
+$('K').onchange = () => { S.K = +$('K').value; };
+$('kup').onclick = () => { S.k *= 10; S.H *= 10; S.Hshow *= 10; };
+$('kdown').onclick = () => { S.k /= 10; S.H /= 10; S.Hshow /= 10; };
+$('home').onclick = () => { S.x = 0; S.z = 0; S.yaw = 0; S.pitch = -2 * DEG; };
+let hold = { fwd: false, back: false };
+for (const [id, k] of [['fwd', 'fwd'], ['back', 'back']]) {
+    const b = $(id); b.onpointerdown = () => { hold[k] = true; }; b.onpointerup = b.onpointerleave = b.onpointercancel = () => { hold[k] = false; };
+}
+$('hold').classList.toggle('on', S.hold); $('labels').classList.toggle('on', S.labels);
+
+function update(dt) {
+    const turn = 1.2 * dt;
+    if (keys.has('arrowleft')) S.yaw -= turn; if (keys.has('arrowright')) S.yaw += turn;
+    if (keys.has('arrowup')) S.pitch = Math.min(80 * DEG, S.pitch + turn); if (keys.has('arrowdown')) S.pitch = Math.max(-80 * DEG, S.pitch - turn);
+    // walking speed in field units, faster the farther the look reaches
+    const sp = Math.max(4, 0.5 * S.Hshow / S.k) * dt;
+    let f = 0, r = 0;
+    if (keys.has('w') || hold.fwd) f += 1; if (keys.has('s') || hold.back) f -= 1;
+    if (keys.has('d')) r += 1; if (keys.has('a')) r -= 1;
+    S.x += sp * (f * Math.sin(S.yaw) + r * Math.cos(S.yaw)); S.z += sp * (f * Math.cos(S.yaw) - r * Math.sin(S.yaw));
+    const t = pick();
+    if (!S.hold) { S.target = t; if (t >= 0) S.H = dist(FIELD[t]); }
+    else if (S.target >= 0) S.H = dist(FIELD[S.target]);
+    // H glides on its logarithm, so the field slides from one split to the next
+    const a = 1 - Math.exp(-dt / 0.18);
+    S.Hshow = Math.exp(Math.log(S.Hshow) + a * (Math.log(S.H) - Math.log(S.Hshow)));
+}
+let last = performance.now();
+function frame(now) {
+    const dt = Math.min(0.1, (now - last) / 1000); last = now;
+    update(dt); drawView(); drawMap(); drawStrip(); readout();
+    requestAnimationFrame(frame);
+}
+// a start that is looking at something
+(() => { S.target = pick(); if (S.target < 0) { for (let a = 0; a < 360; a += 3) { const t = pick(a * DEG, S.pitch); if (t >= 0) { S.yaw = a * DEG; break; } } S.target = pick(); }
+    if (S.target >= 0) S.H = S.Hshow = dist(FIELD[S.target]); })();
+requestAnimationFrame(frame);
+
+window.__crosshairs = {
+    objects: () => FIELD.map(o => ({ i: o.i, kind: o.kind, d: dist(o) })),
+    target: () => S.target, H: () => S.Hshow,
+    read: i => read(FIELD[i]), lay, addresses, counts, pick,
+    set(o = {}) { if ('yaw' in o) S.yaw = o.yaw * DEG; if ('pitch' in o) S.pitch = o.pitch * DEG; if ('x' in o) S.x = o.x; if ('z' in o) S.z = o.z;
+        if ('k' in o) { const r = o.k / S.k; S.k = o.k; S.H *= r; S.Hshow *= r; } if ('hold' in o) S.hold = !!o.hold; if ('K' in o) S.K = o.K;
+        update(0); S.Hshow = S.H; return this.state(); },
+    state: () => ({ yaw: S.yaw / DEG, pitch: S.pitch / DEG, x: S.x, z: S.z, k: S.k, K: S.K, hold: S.hold, target: S.target, H: S.Hshow, counts: counts() }),
+};
+})();
+</script>
+</body>
+</html>

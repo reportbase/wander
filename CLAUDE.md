@@ -98,6 +98,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   0.7 m stride. Scale the world moves no reading. `?thing=&k=<log10 k>&pace=steady|ease&count=1&ground=0&u=&play=1`; hook
   `window.__approach` (`reading`, `cornerD`, `mirror`, `dOf`, `tauRead`, `tauExact`, `tauDotRead`, `stridesFromCorner`,
   `writeV`, `set`, `state`). Not in the flying page.
+- `crosshairs.html`: **crosshairs in a field** (4 Nov 2026, SPN R667; Tom: "The way to understand reader geometry is with fpv.
+  Create a field full of objects with wire frame and let the user point at the objects with H cross hairs and change the near
+  and far field accordingly."), a standalone page, plain canvas, wireframe only. A first-person view of 140 seeded things
+  (box, tower, pyramid, diamond, ring; 4 to 2,000 units, even in ln d) on a ground grid; drag or arrows to look, W A S D or
+  the walk buttons to move. The crosshairs are the crossed thumbs: the thing they pass through (its box, a slab test) is the
+  corner and its distance H (gliding on its logarithm, 0.18 s); each thing coloured by d/H: near field teal in proportion,
+  the corner gold, far field violet dimming by log₂(d/H), labelled "0.42 of the thumb" / "one in 3.2" (all with labels on,
+  the target always). A map of the field on the reader's lay (bearing from the look, d/H then 1 + ln(d/H), the corner ring,
+  the K addresses tan(kπ/2K) as rings, half inside) and the lay as a strip. Hold H (tap, Space), K 16/32/64, scale the world
+  ×10 ÷10 (H in units moves, no reading). `?yaw=&pitch=&x=&z=&seed=&K=&k=<log10 k>&hold=1&labels=1`; hook `window.__crosshairs`
+  (`objects`, `target`, `H`, `read`, `lay`, `addresses`, `counts`, `pick`, `set`, `state`). Not in the flying page.
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -1430,6 +1441,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Caustics and the critical angle not taken (mislabelled as offered).
   R666 (4 Nov; Tom: "Update essays"): Berry's phase in essay 2 (the doubling, the spin's sphere of states) and essay 13 §4
   (a loop on the sphere comes back turned by its solid angle, none in the plane; Berry's phase that leftover).
+  R667 (4 Nov; Tom: "The way to understand reader geometry is with fpv …"): `crosshairs.html`, the crossed thumbs as an FPV
+  crosshair setting H on what they point at, the near and far fields following.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
