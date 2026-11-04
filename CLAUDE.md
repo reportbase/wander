@@ -1481,6 +1481,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   fixed 35.26° circle, corner at its centre, home at its three touch points, distortion growing as 1/(2·reading) toward home.
   R674 (5 Nov; "yes"): `crosshairs.html`'s blur replaced by compress (each thing shrunk by its direction's grain) with the
   one-thumb circle and its three homes drawn.
+  R675 (5 Nov; Tom: "update the essays"): essay 5 §10 "Three thumbs at the crosshair" (THM runs 1–3), a pointer in essay 4.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

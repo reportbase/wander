@@ -245,6 +245,45 @@ is looked at is always at its centre, at the finest addresses.
 
 *Demo: the wedge, step 7 (position, then sweep).*
 
+### Three thumbs at the crosshair
+
+Look along one of the thumbs, h, and hold the other two crossed across the line of sight, as section 4 does. Then the
+crosshair, the middle of the screen, reads v/h = 0 and v₂/h = 0: it is *home* for both pairs, not their corner. The triple
+corner, where both read one, is the direction (1, 1, 1), 54.74° off the look, out near the edge of the view. In the
+window picture of section 4 the thumbs' crossing is the triple corner as an address; it sits under the crosshair only for
+one look.
+
+Which look? Put a third thumb along the depth, so that three thumbs, horizontal, vertical and depth, stand square to each
+other at the eye, and ask for the crosshair to be the corner of all three at once, every pair reading one. The three pairs'
+corners are three planes through the eye, and they meet in one line only: the diagonal of the three thumbs. So there is
+exactly one look that does it, straight down the diagonal, each thumb 54.74° off the line of sight. The Cauchy centred on
+the crosshair does not choose it: the flat screen's cos³ thinning is centred on whatever is looked at, for every look.
+Being the corner of all three thumbs is what chooses it.
+
+The thing at the crosshair then reaches one thumb along each thumb. Along the line of sight that is √3 thumbs, the
+diagonal of a cube one thumb on a side, the eye at its near corner and the crosshair at its far one. "The distance to the
+corner is one thumb" holds along the depth thumb; along the line of sight it is √3, and no thumb lies along the line of
+sight.
+
+Now take everything within one thumb of the crosshair's point: a ball one thumb across. It touches each of the wedge's
+three faces, at the cube's corners one thumb back from the crosshair along each thumb. From the eye its outline is a circle
+35.26° round the look, the largest circle about the crosshair that fits inside the wedge, holding 73% of its directions.
+It never changes size on the screen: H follows whatever is pointed at, so the pointed thing is always √3 thumbs out. The
+corner is the circle's centre. Home is on the circle, at the three points where the ball touches a face: there one reading
+is zero, and the opposite reading of that pair is the horizon. In the plane the same construction, one thumb round the
+corner point, touches both axes, and its outline runs from home to the horizon: the whole quarter turn. So the circle does
+not mark where things start to squeeze. It runs from the corner out to home.
+
+Inside it, the addresses hold the world with no distortion at the corner: the three pair levels, ln(n·eᵢ/n·eⱼ), all vanish
+there, and their squares add to the same amount in every direction to second order. Moving out, each address holds more,
+in proportion: toward a touch point the worst pair's cell grows as one over twice its reading, without bound at home. That
+is compression, not blur. A fixed count of addresses never makes the world fuzzy; it squeezes more of it into each address
+the nearer home it looks. The squeeze is not round: near the corner its contours are hexagons, and on the circle between
+the touch points, toward the thumbs, it is only about twice what it is at the corner. Past the touch points lies another
+wedge, where a reading would go below zero; between them the wedge runs on in three points out to the thumbs.
+
+*Demo: crosshairs in a field (fidelity: compress, the one-thumb circle and its three homes).*
+
 ---
 
 ## 11. A sphere in a cube
@@ -301,4 +340,4 @@ third of where you can look.
 The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): the cuts, the sum and the two angles in §2, readers
 and writers with two parties in §3.1, the one-length sphere in §5 (Proposition 3(f)), the Cauchy wedge in §7.1
 (Proposition 5(e), "Why uniformly by area", "Swept by altitude and azimuth", "More parties"), and the sphere in a cube in
-§9.
+§9. "Three thumbs at the crosshair" is checked exactly in THM runs 1–3 (`plans/thm-plan.md`, `runs/thm/`).

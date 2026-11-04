@@ -7283,6 +7283,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   (1 at the crosshair, 1/(2·reading) toward home; another wedge's things at 0.12), and the one-thumb circle drawn, 35.26°
   about the look (f/√2 on the flat screen), its three touch points marked home; the one-thumb cube's near corners lie on
   them. Address cells kept. A demo, nothing new claimed.
+- **R675** (5 Nov; Tom: "update the essays"): essay 5 §10 gains "Three thumbs at the crosshair" (two crossed thumbs put the
+  crosshair at home; the corner of all three only down the diagonal; one thumb along each, √3 along the look; the
+  one-thumb circle, 35.26°, corner at its centre and home on it; compression, not blur, as 1/(2·reading)); essay 4's
+  crosshairs paragraph points to it; README and the demos card follow.
 
 ## Appendix B. Demos and computations
 

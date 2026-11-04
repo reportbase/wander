@@ -102,6 +102,11 @@ in proportion. The far field is read in ratios: a thing one thumb wide reads one
 eight, each stretch with as many places as the one before, out toward the horizon. Counted by a writer, the same stretches
 are two thumbs, four, eight.
 
+For the crosshair to be the corner of every pair at once, the look has to run down the diagonal of three thumbs,
+horizontal, vertical and depth, the thing pointed at one thumb along each and √3 thumbs along the line of sight; round it a
+circle one thumb wide in space, 35° on the screen, runs from the corner out to home, the addresses squeezing toward home as
+they go (the fifth essay, "Three thumbs at the crosshair").
+
 ### Reality in 2H
 
 There is a second way to lay out the same far addresses, by length instead of by count. Place a far reading at a distance
