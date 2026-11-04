@@ -7111,6 +7111,29 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   met, the per read and the of written; the two tests one split seen two ways), §2 (the paint the world's writing met there;
   the payload recovered by its ratios a write read again), §3 (the fingers stay geometry, with or without the light), §4
   (a rate lays a write over a read); essays 2 §9, 3 §5 (the paint and the ratios), 14 §1 and §10.
+- **R654** (3 Nov; Gemini, pasted by Tom: "There is no V in a reading, its not missing, it was never there."; Tom:
+  "yes"): **V never enters a read.** A reading is a ratio of the thumb's own shares, [h : v]; to say V "cancels" from it,
+  or that its scale is 1 "because every amount has been divided out", looks at the read through the writer's eyes, as if
+  a box of amounts came first and the projection divided V away. "Cancels" and "divided out" stay where the text speaks
+  as the writer, marked so (§2's derivations of the Cauchy from the circle's equation and from two normal amounts, the
+  lighthouse's path, Lee's τ, the walk's v/h = (V*/d)/(H/L) as the writer's account of which finger the mountain's edge
+  touches). "The missing mean" becomes "no mean": directions have no sum, so a mean was never there (R604). Supersedes the
+  wording of R565 ("every reading a ratio, cancelling V"). *Reads and Writes* §1 "V.", §2 ("Why there is no mean: the
+  Cauchy is an address"; scale 1), §8 (the parallax proof, the turning rate, the walk); essays 1, 16 and the README.
+  The essays' other uses of "the missing mean" (a phrase for the law, said of a chart) are left as they are.
+- **R655** (3 Nov; Tom: "there is a physical geometry that has a V and a reader geomerty that doesn't.", then "yes"):
+  **two geometries.** Physical geometry has V (lengths, extents, the writer's cube of number lines, x² + y² = r², the
+  blueprint, the counted stride; every figure sized, moved by scaling the world; the geometry physics writes in). Reader
+  geometry has no V (directions from one standpoint, the thumb's shares [h : v], the corner, the horizon, the Cauchy,
+  order; nothing sized, nothing moved by scaling, V never there, R654). Klein's line: the reader's close to the pencil of
+  lines through a point, projective geometry from a standpoint with a home and a corner of its own; metric geometry is had
+  by fixing something more, here V, carried in by a write. The scale test sorts the two geometries; the bridge v·V* is
+  where a reading crosses. R653's "a read is geometry, a write is physics" now reads: a read is reader geometry, a write is
+  physical geometry, where physics is written. *Reads and Writes* §1.
+  Then (Gemini, pasted by Tom with "Tell Claude: Yes"): §1 names the two classical routes to projective geometry, the
+  quotient of the plane by scale (the writer's, the box first) and von Staudt's synthetic geometry (1847), from incidence
+  and order with no length (the reader's kind); neutral, no claim about what textbooks or other fields obscure (R335,
+  R364, R478). Von Staudt added to the references.
  In *Reads and Writes* §5, "Euler's formula as a count of reads", and §8.
 
 ## Appendix B. Demos and computations

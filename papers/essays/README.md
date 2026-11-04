@@ -10,8 +10,8 @@ Two ideas run through all of them:
 - **Reading and writing.** A reading is a ratio from a standpoint, free and unchanged when the world is scaled. A writing
   states amounts, and costs an amount carried in.
 - **The Cauchy.** The law of a reader's directions, what its thumbs, pointed at the mountain, give, the circle's geometry
-  with no circle held and no second breadth: its median the corner, its far end the horizon, its missing mean the trace of
-  the V it lacks.
+  with no circle held and no second breadth: its median the corner, its far end the horizon, no mean, since directions have
+  none and no V was ever in them.
 
 Two tests sort any quantity: **scale the world** (reading or writing?) and **change what arrives** (address or payload?).
 Each is an invariance. By the first, reading and writing are the scale-invariant and the scale-variant, the old
