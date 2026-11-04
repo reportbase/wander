@@ -296,11 +296,14 @@ thumb along each thumb.
 Distance and direction squeeze separately. Take each thing's reach along each thumb, in thumbs, and its level, the
 logarithm of that reach: three numbers, all zero at the crosshair's point. Moving a thing out along its own ray adds the
 same amount to all three, along their diagonal; turning it changes their differences, the pair levels, square to that
-diagonal. The two are at right angles, so the squeezes multiply: the direction's above, and the distance's, which shrinks a
-thing nearer or farther than the corner by cosh of the level of its distance over the corner's, to half its size at 3.73
-times nearer or farther. Only the thing at the crosshairs keeps its full size. In the plane it is the same with two
-thumbs: the disc one thumb round the corner touches both, at home and the horizon, and a thing is half size 30° either
-side of the look.
+diagonal. The two are at right angles, so the grains multiply: the direction's above, and the distance's, cosh of the
+level of a thing's distance over the corner's. In the plane it is the same with two thumbs: the disc one thumb round the
+corner touches both, at home and the horizon.
+
+The grain is how finely an address holds a thing, not how large the thing looks. Seen, the world keeps its look near the
+crosshair and far beyond it. A thing's size is the angle it spans, which already falls by half each time its distance
+doubles; laid by turns off the look, its place parts from a flat screen's only far out, the screen stretching by tan α/α,
+1.10 at 30°, 1.27 at 45°, without bound toward the horizon. The squeeze is in the addresses, and it shows only far off.
 
 *Demos: crosshairs in a field (fidelity: compress, the one-thumb circle, the three corners and their homes and horizons);
 two thumbs in the plane.*

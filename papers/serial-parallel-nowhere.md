@@ -7300,6 +7300,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 - **R678** (5 Nov; the third): `plane-thumbs.html`, two thumbs in the plane: the writer's plane round the corner (the
   square one thumb on a side, the disc touching both thumbs at home and the horizon, ±45° from the eye) and the reader's
   view from home to the horizon, flat and compressed (half size at ±30°, v/h = 2 ± √3). A demo, nothing new claimed.
+- **R679** (5 Nov; Tom: "The distortion its excessive. Things don't distort that much until far into the horizon"): the
+  grain (R673, R677) is a precision, how finely an address holds a thing, not a size; drawn as a size (R674–R678) it
+  shrank everything off the crosshair at once. `crosshairs.html`'s compress and `plane-thumbs.html`'s lower row now lay the
+  view by turns off the look (r = fa·α, azimuthal equidistant), sizes the angle each thing spans: alike near the crosshair,
+  parting from the flat screen only far out (tan α/α 1.10 at 30°, 1.27 at 45°). Essay 5 and *Reads and Writes* §6 say so.
 
 ## Appendix B. Demos and computations
 

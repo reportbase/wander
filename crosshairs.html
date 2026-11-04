@@ -431,13 +431,24 @@ function drawView() {
     // 84° across the shorter side, so the one-thumb cube's near corners (35.3° off the look) are in view
     const fov = 84 * DEG, f = (Math.min(W, Hh) / 2) / Math.tan(fov / 2), cx = W / 2, cy = Hh / 2;
     const cells = S.fid === 'cells';
+    // Compress (R679; Tom: "The distortion its excessive. Things don't distort that much until far into the horizon"):
+    // the view laid by the reader's own addresses, equal turns off the look (r = fa·α, the azimuthal equidistant
+    // projection), not by the flat screen's tan α. Near the crosshair the two agree (tan α ≈ α); they part only far out
+    // (tan α/α is 1.03 at 15°, 1.10 at 30°, 1.27 at 45°, without bound at 90°). Sizes are what perspective gives (a thing's
+    // angle Δ/d, which already falls one in two each time the distance doubles); nothing is shrunk further. R674–R677
+    // shrank each thing by its grain, (π/K)·cosh of its levels, which is a precision (how finely an address holds it),
+    // not a size: drawn as a size it squeezed everything off the crosshair at once.
+    const angle = S.fid === 'compress', fa = (Math.min(W, Hh) / 2) / (fov / 2);
+    const P = c => { if (!angle) return [cx + f * c[0] / c[2], cy - f * c[1] / c[2]];
+        const rho = Math.hypot(c[0], c[1]), a = Math.atan2(rho, c[2]), k = rho > 0 ? fa * a / rho : 0;
+        return [cx + k * c[0], cy - k * c[1]]; };
     if (cells) { if (off.width !== W) off.width = W; if (off.height !== Hh) off.height = Hh; vc = offCtx; }
     vc.fillStyle = '#04040a'; vc.fillRect(0, 0, W, Hh);
     // The 3D Cauchy, centred on the crosshair: directions laid evenly by turning, seen on the screen, thin out as
     // cos³ of the angle off the look (the flat screen's (1/2π)(1 + r²)^(−3/2), r = tan of that angle). Shaded faintly.
     if (S.show.density) {
         const R = Math.hypot(W, Hh) / 2, gr = vc.createRadialGradient(cx, cy, 0, cx, cy, R);
-        for (let i = 0; i <= 8; i++) { const rr = i / 8 * R / f, c3 = Math.pow(1 + rr * rr, -1.5);
+        for (let i = 0; i <= 8; i++) { const rr = angle ? Math.tan(Math.min(1.55, i / 8 * R / fa)) : i / 8 * R / f, c3 = Math.pow(1 + rr * rr, -1.5);
             gr.addColorStop(i / 8, `rgba(212,160,82,${0.11 * c3})`); }
         vc.fillStyle = gr; vc.fillRect(0, 0, W, Hh);
     }
@@ -448,27 +459,36 @@ function drawView() {
         const y2 = dy * cp - z1 * sp, z2 = dy * sp + z1 * cp;       // tip by −pitch
         return [x1, y2, z2]; };
     const NEAR = 0.05 * S.k;
-    const seg = (a, b) => { let p = cam(a), q = cam(b);
+    const piece = (p, q) => {
         if (p[2] < NEAR && q[2] < NEAR) return;
         if (p[2] < NEAR || q[2] < NEAR) { const t = (NEAR - p[2]) / (q[2] - p[2]); const m = [p[0] + t * (q[0] - p[0]), p[1] + t * (q[1] - p[1]), NEAR];
             if (p[2] < NEAR) p = m; else q = m; }
-        vc.moveTo(cx + f * p[0] / p[2], cy - f * p[1] / p[2]); vc.lineTo(cx + f * q[0] / q[2], cy - f * q[1] / q[2]); };
+        vc.moveTo(...P(p)); vc.lineTo(...P(q)); };
+    // a straight edge is straight on the flat screen; laid by turns it bends, so it is drawn in pieces
+    const seg = (a, b, n = 6) => { const p = cam(a), q = cam(b); if (!angle) return piece(p, q);
+        let prev = p; for (let i = 1; i <= n; i++) { const t = i / n, m = [p[0] + t * (q[0] - p[0]), p[1] + t * (q[1] - p[1]), p[2] + t * (q[2] - p[2])];
+            piece(prev, m); prev = m; } };
     // the horizon line and the ground grid round the eye
     vc.lineWidth = 1 * dpr;
     vc.strokeStyle = 'rgba(255,255,255,0.05)'; vc.beginPath();
     const step = 5 * S.k, span = 30, gx = Math.round(e[0] / step) * step, gz = Math.round(e[2] / step) * step;
     for (let i = -span; i <= span; i++) {
-        seg([gx + i * step, 0, gz - span * step], [gx + i * step, 0, gz + span * step]);
-        seg([gx - span * step, 0, gz + i * step], [gx + span * step, 0, gz + i * step]);
+        seg([gx + i * step, 0, gz - span * step], [gx + i * step, 0, gz + span * step], 40);
+        seg([gx - span * step, 0, gz + i * step], [gx + span * step, 0, gz + i * step], 40);
     }
     vc.stroke();
-    vc.strokeStyle = 'rgba(255,255,255,0.12)'; vc.beginPath(); vc.moveTo(0, cy + f * Math.tan(S.pitch)); vc.lineTo(W, cy + f * Math.tan(S.pitch)); vc.stroke();
+    vc.strokeStyle = 'rgba(255,255,255,0.12)'; vc.beginPath();
+    if (!angle) { vc.moveTo(0, cy + f * Math.tan(S.pitch)); vc.lineTo(W, cy + f * Math.tan(S.pitch)); }
+    else { let first = true;                 // the horizon, every level direction, bent when laid by turns
+        for (let a = -170; a <= 170; a += 2) { const yw = S.yaw + a * DEG, c = cam([e[0] + Math.sin(yw), e[1], e[2] + Math.cos(yw)]);
+            if (c[2] <= 0.02) { first = true; continue; } const [x, y] = P(c); if (first) vc.moveTo(x, y); else vc.lineTo(x, y); first = false; } }
+    vc.stroke();
     // the things, far first
     const order = FIELD.map(o => [dist(o), o]).sort((a, b) => b[0] - a[0]);
-    // Compress (R674): each thing shrunk about its own centre by the grain of its direction (1 at the crosshair).
+    // Compress (R679): the view laid by turns (P above); no thing is shrunk beyond what perspective gives.
     const comp = S.fid === 'compress', target = vc;
     for (const [, o] of order) {
-        const isT = o.i === S.target, sh = comp ? shrinkOf(o, F) : 1, cc = centre(o);
+        const isT = o.i === S.target, sh = 1, cc = centre(o);
         vc.strokeStyle = colourOf(o, 1, RD.get(o.i)); vc.lineWidth = (isT ? 2.4 : 1.1) * dpr;
         vc.beginPath();
         const base = [o.x * S.k, 0, o.z * S.k], sc = o.size * S.k;
@@ -485,7 +505,7 @@ function drawView() {
         const px = f * radius(o) / c[2];
         const isT = o.i === S.target;
         if (S.words === 0 || (!isT && (S.words < 2 || px < 18 * dpr))) continue;
-        const x = cx + f * c[0] / c[2], y = cy - f * (c[1] + radius(o) * 0.9) / c[2];
+        const [x, y] = P([c[0], c[1] + radius(o) * 0.9, c[2]]);
         if (x < 0 || x > W || y < 0 || y > Hh) continue;
         const r = RD.get(o.i); if (r.field === 'other' && !isT) continue;
         vc.fillStyle = colourOf(o, isT ? 1 : 0.85, r);
@@ -507,14 +527,14 @@ function drawView() {
     // cube's corners one thumb back along each thumb from the crosshair (one reading zero there).
     if (comp) {
         vc.strokeStyle = 'rgba(212,160,82,0.35)'; vc.lineWidth = 1.2 * dpr; vc.setLineDash([5 * dpr, 6 * dpr]);
-        vc.beginPath(); vc.arc(cx, cy, f / Math.SQRT2, 0, 2 * Math.PI); vc.stroke(); vc.setLineDash([]);
+        vc.beginPath(); vc.arc(cx, cy, angle ? fa * Math.asin(1 / ROOT3) : f / Math.SQRT2, 0, 2 * Math.PI); vc.stroke(); vc.setLineDash([]);
         const A = F.ax; vc.fillStyle = 'rgba(212,160,82,0.9)'; vc.textAlign = 'center'; vc.font = `${10 * dpr}px DM Mono, monospace`;
         S.lastHomes = []; S.lastCorners = [];
         // The three corners (R676): each pair's corner (the two reading alike) is a plane through the eye, a straight line
         // on the screen through the crosshair. Along it lies a whole quarter turn of the third thumb against the pair:
         // home at the circle's touch point (35.26° off the look), the corner at the crosshair, the horizon at the third
         // thumb's own direction (54.74° off, the other side). 35.26° + 54.74° = 90°.
-        const scr = d => { const c = cam([e[0] + d[0], e[1] + d[1], e[2] + d[2]]); return c[2] > 0 ? [cx + f * c[0] / c[2], cy - f * c[1] / c[2]] : null; };
+        const scr = d => { const c = cam([e[0] + d[0], e[1] + d[1], e[2] + d[2]]); return c[2] > 0 ? P(c) : null; };
         for (const [a, b, t] of [['h', 'v', 'd'], ['v', 'd', 'h'], ['d', 'h', 'v']]) {
             const hm = scr([0, 1, 2].map(n => A[a][n] + A[b][n])), hz = scr(A[t]);
             if (hm && hz) { S.lastCorners.push({ home: hm, horizon: hz });
@@ -526,7 +546,7 @@ function drawView() {
         for (const [a, b] of [['h', 'v'], ['v', 'd'], ['d', 'h']]) {
             const dir = [0, 1, 2].map(n => A[a][n] + A[b][n]), c = cam([e[0] + dir[0], e[1] + dir[1], e[2] + dir[2]]);
             if (c[2] <= 0) continue;
-            const x = cx + f * c[0] / c[2], y = cy - f * c[1] / c[2]; S.lastHomes.push([x, y]);
+            const [x, y] = P(c); S.lastHomes.push([x, y]);
             vc.beginPath(); vc.arc(x, y, 3.5 * dpr, 0, 2 * Math.PI); vc.fill();
             if (S.words > 0) vc.fillText('home', x, y - 8 * dpr);
         }

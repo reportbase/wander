@@ -14,9 +14,11 @@
     thumb of it is a disc that touches both thumbs' lines, at one thumb along h (home: v/h = 0) and one thumb along v (the
     horizon: v/h = ∞); from the eye its outline runs ±45° about the look, the whole quarter turn. The upper panel is the
     writer's plane round the corner, true to scale; the lower the reader's view, a strip from home to the horizon, as a flat
-    screen draws it and compressed: each thing shrunk by its direction's grain, cosh(ln(v/h)), times its distance's,
-    cosh(ln r), r its distance over the corner's (in the thumbs' levels ln qₕ, ln qᵥ distance runs along the diagonal and
-    direction square to it, orthogonal, THM run 4). Half size at ±30° off the look (v/h = 2 ± √3) and at 2 ± √3 times the
+    screen draws it and laid by turns (R679; Tom: "The distortion its excessive. Things don't distort that much until far
+    into the horizon"): place by the angle off the look, size by the angle a thing spans; the two agree near the corner and
+    part only toward home and the horizon (tan α/α 1.10 at 30°, 1.27 at 45°). Until R679 the lower row shrank each thing by
+    its grain, cosh(ln(v/h))·cosh(ln r) (THM run 4: in the thumbs' levels distance runs along the diagonal and direction
+    square to it): a precision drawn as a size, half size at ±30° off the look and at 2 ± √3 times the
     corner's distance. Tap a thing (either panel) to point at it; ← → turn the look.
     Links: ?target=<index>&look=<degrees>&seed=.
     Test hook: window.__planeThumbs (things, target, read, disc, halfAt, set, state).
@@ -47,8 +49,9 @@
         side), the corner (gold), the one-thumb disc touching the thumbs at home and the horizon, the quarter turn's edges.</p></div>
     <div class="panel"><canvas id="strip"></canvas>
         <p class="cap">The reader's view, as the plane above has it: from home (right, along h) through the corner (middle)
-        to the horizon (left, along v): above as a flat screen draws it, below compressed, each thing shrunk by its direction's grain times its
-        distance's. The ticks mark half size, ±30° off the look.</p></div>
+        to the horizon (left, along v): above as a flat screen draws it, below laid by turns, each thing at its angle off the
+        look and as wide as the angle it spans. Near the corner the two rows agree; they part only toward home and the
+        horizon, where the flat screen stretches.</p></div>
     <div class="panel"><div id="out"></div></div>
     <p class="cap">After THM runs 2–4 (the one-thumb circle, the three corners, distance and direction); the same in space:
     <a href="crosshairs.html">crosshairs in a field</a>.</p>
@@ -133,20 +136,20 @@ function draw() {
     ST = { X, rows, half };
     s.strokeStyle = 'rgba(255,255,255,0.12)'; s.lineWidth = 1 * dpr; s.beginPath();
     for (const y of rows) { s.moveTo(X(-45 * DEG), y); s.lineTo(X(45 * DEG), y); } s.stroke();
-    s.strokeStyle = 'rgba(212,160,82,0.5)'; s.beginPath();
-    for (const a of [-30, 30]) { s.moveTo(X(a * DEG), rows[1] - 8 * dpr); s.lineTo(X(a * DEG), rows[1] + 8 * dpr); } s.stroke();
+    const XA = off => mid - half * off / (45 * DEG); // laid by turns: equal angles, equal room
     s.font = `${11 * dpr}px DM Mono, monospace`; s.textAlign = 'center'; s.fillStyle = 'rgba(212,160,82,0.95)';
     // on the strip the look is the middle; as in the plane above, h (home) is to the right and v (the horizon) to the left
     s.fillText('home', X(-45 * DEG), SH - 6 * dpr); s.fillText('corner', mid, SH - 6 * dpr); s.fillText('horizon', X(45 * DEG), SH - 6 * dpr);
     s.fillStyle = 'rgba(200,200,208,0.6)'; s.textAlign = 'left';
-    s.fillText('flat screen', 6 * dpr, rows[0] - 22 * dpr); s.fillText('compressed', 6 * dpr, rows[1] - 26 * dpr);
+    s.fillText('flat screen', 6 * dpr, rows[0] - 22 * dpr); s.fillText('by turns', 6 * dpr, rows[1] - 26 * dpr);
     const k = half * 0.3, cap = SH * 0.16;             // pixels per unit of angle (a third of the true scale), capped
     for (const [, i] of order) { const t = THINGS[i], rd = read(i, F, h); if (rd.other && i !== S.target) continue;
         const off = Math.atan2(Math.sin(rd.off), Math.cos(rd.off)); if (Math.abs(off) > 45 * DEG) continue;
-        const ang = Math.asin(Math.min(1, t.size / Math.hypot(t.x, t.y))) / Math.cos(off) ** 2, x = X(off);
-        for (const [ri, f] of [[0, 1], [1, rd.shrink]]) {
+        const ang = Math.asin(Math.min(1, t.size / Math.hypot(t.x, t.y)));
+        // the flat screen stretches a thing by sec² across (its place tan off); by turns it is the angle it spans
+        for (const [ri, x, w] of [[0, X(off), ang / Math.cos(off) ** 2], [1, XA(off), ang]]) {
             s.strokeStyle = colour(i, rd, ri ? 1 : 0.8); s.lineWidth = (i === S.target ? 2 : 1) * dpr;
-            s.beginPath(); s.arc(x, rows[ri], Math.max(1 * dpr, Math.min(cap, k * ang) * f), 0, 2 * Math.PI); s.stroke(); } }
+            s.beginPath(); s.arc(x, rows[ri], Math.max(1 * dpr, Math.min(cap, k * w)), 0, 2 * Math.PI); s.stroke(); } }
 
     // ---- the readout ----
     const t = read(S.target, F, h), cnt = THINGS.map((_, i) => read(i, F, h));
@@ -155,7 +158,7 @@ function draw() {
 `Pointing at thing ${S.target}: one thumb along h and one along v, √2 thumbs out along the look. H = ${h.toPrecision(3)} (the writer's units).
 The one-thumb disc touches h at home (v/h = 0) and v at the horizon (v/h = ∞): from the eye it spans ±45°, the whole quarter turn.
 In the quarter turn: ${near} near (both readings under one thumb), ${far} far, ${THINGS.length - near - far - 0} outside it (another facing).
-Compressed: each thing shrunk by cosh(ln v/h) × cosh(ln r); half size at ±30° off the look (v/h = 2 ± √3) and at 2 ± √3 times the corner's distance.`;
+By turns: each thing at its angle off the look, as wide as the angle it spans; the flat screen stretches it by tan α/α, 1.10 at 30°, 1.27 at 45°.`;
 }
 // taps: the nearest thing in either panel
 function tapAt(cv, ev) { const b = cv.getBoundingClientRect(), d = window.devicePixelRatio || 1, x = (ev.clientX - b.left) * d, y = (ev.clientY - b.top) * d;
