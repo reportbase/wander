@@ -1409,6 +1409,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "yes"): geometry given, not computed, tan and arctan the writer's way of stating it (*Reads and Writes* §1, one sentence;
   §2's arctan marked the writer's); the race-condition speculation, by Bernstein's conditions and CREW (reads commute,
   races need a write; immutability, not scale invariance), in `plans/rw-computing-note.md`, not the paper.
+  R659 (4 Nov; Tom: "how can we add that idea without bringing a huge computer section"; "yes"): *Reads and Writes* §1
+  "Reads do not conflict", three sentences after the flags, Bernstein (1966) cited; reads agree in any order, a conflict
+  needs a write, by construction here; the computing detail stays in the note.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

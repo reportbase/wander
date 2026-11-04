@@ -62,6 +62,11 @@ counted. Reads plant no flags. A later read can read the flag, as paint in a dir
 one in four of a thumb"), but the read has no notion of how close it is to the flag; how far, and how long since, are
 the count's.
 
+**Reads do not conflict.** A read adds nothing, so reads of one geometry can be taken in any order, or all at once, and
+they agree; a conflict needs a write, a mark made where something else reads or writes. In computing this is the
+condition for running operations together without a race (Bernstein 1966), and much of the work there goes into keeping
+reads and writes from meeting. Here it holds by construction: the geometry is given, and nothing writes to it.
+
 **A read is geometry, a write is physics.** A write is the recording of a read: a mark kept, discrete where the read
 was continuous, which lasts and can be counted and set beside other marks; order, nearness, durations and amounts are
 all said of marks. What a mark keeps is the address the read gave and what was met there: the address is the read's, and
@@ -882,6 +887,8 @@ They illustrate the sorting of address from payload; none of them alone establis
 - Aspden, R. S., Padgett, M. J. and Spalding, G. C. (2016). Video recording true single-photon double-slit interference.
   *American Journal of Physics* 84, 671.
 - Bernoulli, J. (1690). *Quæstiones nonnullæ de usuris.* Acta Eruditorum.
+- Bernstein, A. J. (1966). Analysis of programs for parallel processing. *IEEE Transactions on Electronic Computers*
+  EC-15(5), 757–763.
 - Bridgman, P. W. (1922). *Dimensional Analysis.* Yale University Press.
 - Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met.* Working paper, archived.
 - Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical Review* 4, 345–376.
