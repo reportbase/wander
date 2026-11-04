@@ -1405,6 +1405,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   other Cauchys a question each; a direction has no length to add, its number a chart; the payload's recoveries exact only
   in the ideal model; a transcendental's value (not its definition) needs a limit, π/e's owners the paper's reading; "never
   sees a shape" is what one read determines, no shape in amounts, not a claim about visual systems. Nothing else changed.
+  R658 (4 Nov; Tom: "geometry is free, it is not computed or algoritmic"; "that is why geometry has no race conditions";
+  "yes"): geometry given, not computed, tan and arctan the writer's way of stating it (*Reads and Writes* §1, one sentence;
+  §2's arctan marked the writer's); the race-condition speculation, by Bernstein's conditions and CREW (reads commute,
+  races need a write; immutability, not scale invariance), in `plans/rw-computing-note.md`, not the paper.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

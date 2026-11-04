@@ -48,7 +48,9 @@ The first part is reading. The second and third are writing. The rest of this pa
 
 **What a read is.** A read is the set of all sweeps of the thumb in one moment, from one standpoint. A sweep is the one
 length the reader holds, H, turned from all of it lying along h to all of it standing along v; the read is every such
-sweep at once, given whole, not performed one after another. Each sweep is centred on the crosshairs of two thumbs, the corner, which separates the near field,
+sweep at once, given whole, not performed one after another. Geometry is free in this sense: nothing in it is computed,
+no procedure runs, and there is no tangent or arctangent in it; tan, arctan and every formula for the turn are the writer's
+way of stating what is already there. Each sweep is centred on the crosshairs of two thumbs, the corner, which separates the near field,
 one thumb, from the far field beyond it, read as ratios (one in two, one in four, …) and counted by a writer in thumbs.
 The read's addresses are K, the addresses available to it in that moment, arranged by the Cauchy: half of them before the corner and half
 after, whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Two reads, at two moments or two standpoints, are
@@ -186,7 +188,8 @@ derivation.
 scale γ. Derived from what an observer holds, it comes in three forms, and the parameters arrive with V.
 
 - *From one length.* Turn one length H, the thumb, uniformly. Its tip is at (H cos θ, H sin θ), and the reading v/h = tan θ
-  divides H out. The share of a quarter turn passed before the reading reaches s is (2/π)·arctan s: the standard
+  divides H out. The share of a quarter turn passed before the reading reaches s is, in the writer's account,
+(2/π)·arctan s: the standard
   half-Cauchy, scale 1, median at the corner. No V appears anywhere, and H appears only in the tip's place, never in the law.
   The scale is 1 not because anything was set equal to anything, but because the reading is a ratio, and a ratio carries no
   scale.

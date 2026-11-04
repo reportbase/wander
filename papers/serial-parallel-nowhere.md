@@ -7158,6 +7158,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   exact; π with the address and e with the payload marked as this paper's reading. §2: "never sees a shape" is what one
   read determines from one standpoint with nothing written, not what a visual system infers; no shape in amounts.
   Special relativity and Euler left as they were; a roadmap, claim labels and repetition cuts not taken (Tom's to decide).
+- **R658** (4 Nov; Tom: "geometry is free, it is not computed or algoritmic. there is no arctan or tangent in geometry
+  for example."; "the speculation is that is why geometry has no race conditions, it has a clean, free,
+  non-algorithimic and a clean seperation between reading and writing."; "yes"): **geometry is free: given, not
+  computed; tan, arctan and every formula for the turn are the writer's way of stating it** (R458, R584 restated). *Reads
+  and Writes* §1 says so in one sentence after "given whole, not performed"; §2's (2/π)·arctan s is marked the writer's
+  account. **The speculation:** that is why geometry has no race conditions. Bernstein's conditions (1966) and CREW give
+  the precise form: reads commute because they write nothing; races need a write. What makes geometry race-free is that
+  nothing writes to it, not its scale invariance. A reading of a known result, no physics claimed (an actual reading
+  registers, so writes). In `plans/rw-computing-note.md`, not the paper (R641).
 
 ## Appendix B. Demos and computations
 

@@ -48,3 +48,23 @@ order statistics come out as the true ones rounded, and sums of amounts do not. 
 pair [h : v] or as a turn, and the computation keeps to order, the machine is faithful. Where it sits in a sum of amounts,
 the machine's Cauchy, truncated, has a mean that the true one lacks.
 
+
+## Why reads do not race (4 Nov 2026, SPN R658)
+
+Tom: "the speculation is that is why geometry has no race conditions, it has a clean, free, non-algorithimic and a
+clean seperation between reading and writing." A speculation, recorded as one.
+
+Computing already has the precise form. Bernstein's conditions (1966): two operations may run in either order, or at
+once, with the same result if neither writes what the other reads or writes. Pure reads always meet them; the PRAM
+models say the same (concurrent reads allowed, only concurrent writes need a rule: CREW, concurrent read, exclusive
+write). In the paper's terms:
+
+- read with read: no race, ever. A read adds nothing to the paper (R653), so the order of two reads cannot matter; that
+  is also why order between reads exists only once it is written (R652);
+- read with write, write with write: where races live, a mark being made while something else reads or makes it;
+- geometry: given whole and never written to (R458), so any number of reads of it commute. Being free and being
+  race-free are one fact seen from two sides.
+
+What makes geometry race-free is that nothing writes to it, not that it is scale-free: scale invariance sorts reading
+from writing, immutability lets reads run together. A reading of a known result, no claim about physics: an actual
+reading registers somewhere, and so writes (Bennett's point), which is where a physical race could come back.
