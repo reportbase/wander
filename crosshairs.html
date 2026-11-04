@@ -22,7 +22,7 @@
     addresses at tan(kπ/2K) as ticks, half inside the corner at every H. Below, the same lay as a strip. Scale the world
     (k on every length, the eye's place included) moves H in units and no reading. Hold H keeps the thumbs where they were
     while you look round.
-    Controls: drag the view to look (or the arrow keys), W A S D to walk (▲ ▼ on a touch screen), a tap or Space to hold H
+    Controls: drag the view to look (or the arrow keys), W A S D or the wheel to walk (▲ ▼ on a touch screen), Space to hold H
     on what is under the crosshairs.
     Full screen, and no text until asked for (5 November 2026, Tom: "Should be full screen. Any text you want to show should
     be hidden until the user ask for it from a menu. Explain all the ways H is used to create the scene."): the view fills
@@ -108,15 +108,17 @@
     <button class="x" id="aboutX" aria-label="close">✕</button>
     <h1>How H makes the scene</h1>
     <p>Hold up both thumbs, crossed, at arm's length. The crossing is the <span class="g">corner</span>. H is the thumb:
-    whatever the crossing points at is one thumb away by definition. Drag to look (or the arrow keys), W A S D to walk
-    (▲ ▼ on a phone), a tap or Space holds H. The wireframes, the ground and the look are plain perspective and use no H
+    whatever the crossing points at is one thumb away by definition. Drag to look (or the arrow keys), W A S D or the wheel to walk
+    (▲ ▼ on a phone), Space (or the menu) holds H. The wireframes, the ground and the look are plain perspective and use no H
     at all; everything below is what H adds.</p>
     <h2>Where H comes from</h2>
     <ol>
     <li><b>Pointing sets it.</b> The line of sight through the crosshairs is followed into the field, and the first thing
     whose box it passes through is the thing pointed at. Its distance is H. Nothing else is measured: point somewhere else
     and H is somewhere else.</li>
-    <li><b>Pointing at nothing keeps it.</b> Looking at the sky, the thumbs stay where they last were.</li>
+    <li><b>The ground counts, the sky keeps it.</b> Between things, below the horizon, the crosshairs meet the ground, and
+    its distance is H: tip the look down and H comes in, up toward the horizon and it runs out. Above the horizon nothing
+    is met, and the thumbs stay where they last were.</li>
     <li><b>Holding keeps it on one thing.</b> With H held you look round and walk while H stays on the thing that was
     pointed at, following its distance as you move.</li>
     <li><b>It glides.</b> A new H is reached on its logarithm in about a fifth of a second, so the split slides through the
@@ -146,8 +148,9 @@
     counts) is only how H falls among them.</li>
     <li><b>The rings on the ground</b> (menu). The gold ring is the corner laid on the ground round your feet, radius H; the
     violet ones are one in 2, 4 and 8. They are the map's rings seen from where you stand.</li>
-    <li><b>The walking pace.</b> A step is a fraction of the thumb (half a thumb a second, at least 4 units), so the
-    near field takes a moment to cross whatever H is. A convenience of this page, not part of the reading.</li>
+    <li><b>The walking pace.</b> A third of the way to what is pointed at each second, faster the longer you hold the key,
+    and a wheel notch a tenth of the way: the step is set by what the thumbs point at. A convenience of this page, not
+    part of the reading.</li>
     </ol>
     <h2>What H does not change</h2>
     <ol start="14">
@@ -219,7 +222,7 @@ const S = {
     // what else is shown, each from the menu; only the rings, which are no text, start on
     show: { about: Q.get('about') === '1', read: Q.get('read') === '1', map: Q.get('map') === '1', strip: Q.get('strip') === '1',
         hud: Q.get('hud') === '1', rings: Q.get('rings') !== '0' },
-    target: -1, H: 10, Hshow: 10,
+    target: -1, H: 10, Hshow: 10, walkT: 0,
 };
 $('K').value = String(S.K);
 
@@ -245,7 +248,7 @@ function hitBox(o, e, u) {
 function pick(yaw = S.yaw, pitch = S.pitch) {
     const e = eye(), u = lookDir(yaw, pitch);
     let best = -1, bt = Infinity;
-    for (const o of FIELD) { const t = hitBox(o, e, u); if (t < bt) { bt = t; best = o.i; } }
+    for (const o of FIELD) { const t = hitBox(o, e, u); if (t > 0 && t < bt) { bt = t; best = o.i; } }   // t = 0: the eye inside it
     return best;
 }
 
@@ -411,7 +414,8 @@ function readout() {
     const half = addresses().filter(a => a < 1).length;
     let s = '';
     if (t) { const r = read(t); s += `<span class="g">at the crosshairs</span>  ${NAMES[t.kind]} (#${t.i})\n`; }
-    else s += `<span class="g">at the crosshairs</span>  nothing; H kept\n`;
+    else if (S.target === GROUND) s += `<span class="g">at the crosshairs</span>  the ground\n`;
+    else s += `<span class="g">at the crosshairs</span>  the sky; H kept\n`;
     s += `<span class="b">H, the thumb</span>      ${fmt(S.Hshow)} units  <span class="d">(a writer's number)</span>\n`;
     s += `<span class="r">near field</span>  ${c.near} things, inside one thumb\n`;
     s += `<span class="w">far field</span>   ${c.far} things, one in 2 and beyond\n`;
@@ -433,7 +437,13 @@ view.addEventListener('pointermove', ev => { if (!drag) return; const dx = ev.cl
     drag.moved += Math.abs(dx) + Math.abs(dy); drag.x = ev.clientX; drag.y = ev.clientY;
     const k = 72 * DEG / (view.clientWidth || 600);
     S.yaw -= dx * k; S.pitch = Math.max(-80 * DEG, Math.min(80 * DEG, S.pitch + dy * k)); });
-const endDrag = ev => { if (!drag) return; if (drag.moved < 6) toggleHold(); drag = null; view.style.cursor = 'grab'; };
+// A tap used to hold H; a stray tap then froze the split and nothing changed as one looked or walked (5 Nov, Tom:
+// "very buggy, moving around does not change anyhing."). Holding is now Space or the menu only.
+const endDrag = ev => { if (!drag) return; drag = null; view.style.cursor = 'grab'; };
+// the wheel walks: a notch is a tenth of the way to what is under the crosshairs (at least 2 units)
+view.addEventListener('wheel', ev => { ev.preventDefault();
+    const d = S.H / S.k, step = Math.max(2, 0.1 * d) * Math.sign(-ev.deltaY);
+    walkBy(step, 0); }, { passive: false });
 view.addEventListener('pointerup', endDrag); view.addEventListener('pointercancel', () => { drag = null; });
 function toggleHold() { S.hold = !S.hold; syncMenu(); }
 $('hold').onclick = toggleHold;
@@ -469,18 +479,32 @@ addEventListener('keydown', ev => { if (ev.key === 'Escape') { if (S.show.about)
 view.addEventListener('pointerdown', () => $('menu').classList.remove('open'));
 syncMenu();
 
+// a step forward f and right r, in field units. Wireframes are walked through (stopping at walls left one stuck by the
+// first thing met); the crosshairs never pick the thing the eye stands inside (pick, below).
+function walkBy(f, r) { S.x += f * Math.sin(S.yaw) + r * Math.cos(S.yaw); S.z += f * Math.cos(S.yaw) - r * Math.sin(S.yaw); }
+const GROUND = -2;
+function groundT() { const u = lookDir(S.yaw, S.pitch); return u[1] < -1e-6 ? eye()[1] / -u[1] : Infinity; }
 function update(dt) {
     const turn = 1.2 * dt;
     if (keys.has('arrowleft')) S.yaw -= turn; if (keys.has('arrowright')) S.yaw += turn;
     if (keys.has('arrowup')) S.pitch = Math.min(80 * DEG, S.pitch + turn); if (keys.has('arrowdown')) S.pitch = Math.max(-80 * DEG, S.pitch - turn);
-    // walking speed in field units, faster the farther the look reaches
-    const sp = Math.max(4, 0.5 * S.Hshow / S.k) * dt;
+    // Walking speed in field units: a third of the way to what is pointed at each second (at least 6), doubling for
+    // every second the key is held, up to 8 times, so the far field (to 2,000 units) can be reached; before, a fixed
+    // 4 units a second hardly moved anything.
     let f = 0, r = 0;
     if (keys.has('w') || hold.fwd) f += 1; if (keys.has('s') || hold.back) f -= 1;
     if (keys.has('d')) r += 1; if (keys.has('a')) r -= 1;
-    S.x += sp * (f * Math.sin(S.yaw) + r * Math.cos(S.yaw)); S.z += sp * (f * Math.cos(S.yaw) - r * Math.sin(S.yaw));
+    if (f || r) {
+        S.walkT += dt;
+        const d = S.H / S.k;
+        const sp = Math.max(6, d / 3) * Math.pow(2, Math.min(3, S.walkT)) * dt;
+        walkBy(sp * f, sp * r);
+    } else S.walkT = 0;
     const t = pick();
-    if (!S.hold) { S.target = t; if (t >= 0) S.H = dist(FIELD[t]); }
+    // Nothing under the crosshairs: the ground, if they point below the horizon, is what they point at, its distance H
+    // (before, H stayed where it was, and looking or walking between things changed nothing); the sky keeps H.
+    const g = groundT();
+    if (!S.hold) { if (t >= 0) { S.target = t; S.H = dist(FIELD[t]); } else if (g < Infinity) { S.target = GROUND; S.H = g; } else S.target = -1; }
     else if (S.target >= 0) S.H = dist(FIELD[S.target]);
     // H glides on its logarithm, so the field slides from one split to the next
     const a = 1 - Math.exp(-dt / 0.18);
