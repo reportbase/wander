@@ -7278,6 +7278,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   (Σℓ² = 9ε², round to second order) and distortion growing outward as 1/(2·reading) toward home; the grain's contours
   hexagons, unbounded at the touch points, ×2.12 at the outline toward the thumbs. The sideways reading at the target's
   distance has its corner at 30°, also fixed. U1 and U5 killed by my check and my set-up, U1′ and U5′ not.
+- **R674** (5 Nov; Tom: "yes", to building R673 into the demo): `crosshairs.html`'s "blur by grain" replaced by
+  "compress": each thing drawn shrunk about its own centre by the grain of its direction, cosh of its worst pair level
+  (1 at the crosshair, 1/(2·reading) toward home; another wedge's things at 0.12), and the one-thumb circle drawn, 35.26°
+  about the look (f/√2 on the flat screen), its three touch points marked home; the one-thumb cube's near corners lie on
+  them. Address cells kept. A demo, nothing new claimed.
 
 ## Appendix B. Demos and computations
 
