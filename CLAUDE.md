@@ -195,7 +195,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   its rim the horizon of the look). Right: the density as a hill (drag to turn), contours at the same shares. Opens with
   the read drawn out (2.4 s). Turn and scale the world change nothing. `?view=thumbs|count&R=8|16|32&words=1&about=1&play=0&az=&el=`;
   hook `window.__read` (`share`, `ringR`, `density`, `byCount`, `screenOf`, `thumbs()`, `homes()`, `wedgeShare()`, `cells`,
-  `set`, `state`). Not in the flying page.
+  `set`, `state`). Not in the flying page. Where the reader stands (5 Nov; Tom: "where is the reader standing?", then
+  "yes"): an inset bottom left, the side view through the look and one thumb, the reader a point behind the screen, the
+  look to the crosshair, the thumb landing at √2, the home at 1/√2, one thumb off at 1, the horizon parallel to the screen,
+  the read's sweep turning off the look; menu "where the reader stands", `?side=0`, hook `side()`.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
