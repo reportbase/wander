@@ -7241,6 +7241,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   way to what is pointed at each second, doubling while held (to 8 times), and the wheel walks a tenth of the way; the
   eye walks through wireframes and never picks the one it stands in; below the horizon the ground is what the
   crosshairs meet, its distance H, the sky keeping H. "How H makes the scene" item 2 says so.
+- **R670** (5 Nov; Tom: "seems to me your doing the 2d cauchy here. 3d cauchy would be centered at the crosshair and
+  extend out from there. you have the cauchy on the ground."; "seems to me there are three thumbs, and they all intersect
+  at the corner. one for vertical, on for horizontal and one for depth."; "the distance to the corner is the depth sweep,
+  1 thumb. this is then intersected with the horizontal and vertical sweeps, each also 1 thumb."): `crosshairs.html`'s
+  near/far split was distance on the ground (rings round the feet, a polar map: the plane's one-thumb picture). Now three
+  thumbs square to each other, the look down their diagonal (each 54.7° off it); a thing reads its reach along each, in
+  thumbs; the pointed thing one in all three (its depth along the look over √3), the crosshair the triple corner where
+  the three sweeps meet; the near field the one-thumb cube from the eye to the crosshair (drawn; from its own corner it
+  looks the same at every H); the far field the largest reading as a ratio; a reading below zero another wedge (most of a
+  wide view: the octant is the look's, 104 of 140 things at the start); the Cauchy's cos³ shading centred on the
+  crosshair; the map the wedge from home, the triangle with the crosshair at its centre. Proposition 5(e) and
+  `wedge.html`'s view from home laid on the look. A demo, nothing new claimed.
 
 ## Appendix B. Demos and computations
 

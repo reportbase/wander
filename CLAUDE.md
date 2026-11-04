@@ -118,6 +118,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Since R669 (5 Nov; Tom: "very buggy, moving around does not change anyhing."): a tap no longer holds H (Space or the menu
   only); the walk a third of the way to the target a second, doubling while held (×8 at most), the wheel a tenth; walking
   through wireframes, the box the eye stands in never picked; below the horizon the ground is met, its distance H.
+  Since R670 (5 Nov; Tom: "3d cauchy would be centered at the crosshair … you have the cauchy on the ground."; "three
+  thumbs … all intersect at the corner"): three thumbs (horizontal, vertical, depth) square to each other, the look down
+  their diagonal (`frameOf`, `PHI`); a thing's three readings its reach along each in thumbs (`readings`); H the pointed
+  thing's depth along the look over √3 (`reachOf`); the near field the one-thumb cube eye to crosshair (`?cube=0` hides
+  it), the Cauchy's cos³ shading on the crosshair (`?density=0`), a reading below zero another wedge (grey); the map the
+  wedge from home (the triangle); the ground rings and polar map gone. Hook adds `readings`, `frame`.
 - `zoom.html`: **H is a zoom** (12 Oct 2026, Tom: "create a demo that shows what the implications of setting H for near
   and far field zoom and LOD"), a standalone page like `mountain.html`: OFS §8 ("The count is the level of detail", "H is
   a zoom, not an escape") on one screen. Amounts x read against H as s = x/H (V = H); the lay s to the corner, then the
@@ -1456,6 +1462,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   menu."): `crosshairs.html` full screen, every word behind its menu, "How H makes the scene" the fifteen ways H enters.
   R669 (5 Nov; Tom: "very buggy, moving around does not change anyhing."): `crosshairs.html`'s walking, holding and the
   ground's pick fixed, so moving and looking always move H.
+  R670 (5 Nov; Tom: "there are three thumbs, and they all intersect at the corner"): `crosshairs.html` on three
+  thumbs, the crosshair the triple corner, the near field the one-thumb cube, the 3D Cauchy centred on the crosshair.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

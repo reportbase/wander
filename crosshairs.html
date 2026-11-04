@@ -28,12 +28,18 @@
     be hidden until the user ask for it from a menu. Explain all the ways H is used to create the scene."): the view fills
     the window; the menu (☰) shows the readout, the map, the line, words on things, the crosshairs' name and counts, and
     "How H makes the scene", fifteen numbered ways H enters (where it comes from, what each thing gets from it, what it
-    shares out, what it does not change). Rings on the ground (the corner at H, one in 2, 4, 8) are on at first, being no
-    text. Escape closes the explanation, then the menu.
+    shares out, what it does not change). Escape closes the explanation, then the menu.
+    Three thumbs (5 November 2026, R670; Tom: "3d cauchy would be centered at the crosshair and extend out from there. you
+    have the cauchy on the ground."; "there are three thumbs, and they all intersect at the corner"; "the distance to the
+    corner is the depth sweep, 1 thumb. this is then intersected with the horizontal and vertical sweeps, each also 1
+    thumb."): the near/far split was by distance on the ground (rings round the feet, a polar map), the 2D picture. Now
+    three thumbs square to each other, the look down their diagonal; a thing reads its reach along each in thumbs; the
+    pointed thing reads one in all three (the triple corner at the crosshair); the near field the one-thumb cube from the
+    eye to the crosshair (drawn, gold); the Cauchy's cos³ shading centred on the crosshair; the map the wedge from home.
     Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
-    &about=1&read=1&map=1&strip=1&hud=1&rings=0.
-    Test hook: window.__crosshairs (objects, target, H, read, lay, addresses, counts, pick, set (with words, show), show,
-    menu, state).
+    &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0.
+    Test hook: window.__crosshairs (objects, target, H, read, readings, frame, lay, addresses, counts, pick, set (with words,
+    show), show, menu, state).
     -->
     <style>
     :root { color-scheme: dark; --ground: #04040a; --panel: rgba(18,18,26,0.94); --line: rgba(255,255,255,0.10); --ink: #c8c8d0;
@@ -84,11 +90,12 @@
     <div class="sec">show</div>
     <button data-show="about">How H makes the scene</button>
     <button data-show="read">the readout <span>off</span></button>
-    <button data-show="map">the reader's map <span>off</span></button>
+    <button data-show="map">the wedge from home <span>off</span></button>
     <button data-show="strip">the lay as a line <span>off</span></button>
     <button id="words">words on things <span>off</span></button>
     <button data-show="hud">the crosshairs' name and counts <span>off</span></button>
-    <button data-show="rings">rings on the ground <span>on</span></button>
+    <button data-show="cube">the one-thumb cube <span>on</span></button>
+    <button data-show="density">the Cauchy's shading <span>on</span></button>
     <div class="sec">H and the world</div>
     <button id="hold">hold H <span>off</span></button>
     <label>K, the addresses <select id="K"><option>16</option><option selected>32</option><option>64</option></select></label>
@@ -107,60 +114,62 @@
 <div id="about" class="over">
     <button class="x" id="aboutX" aria-label="close">✕</button>
     <h1>How H makes the scene</h1>
-    <p>Hold up both thumbs, crossed, at arm's length. The crossing is the <span class="g">corner</span>. H is the thumb:
-    whatever the crossing points at is one thumb away by definition. Drag to look (or the arrow keys), W A S D or the wheel to walk
-    (▲ ▼ on a phone), Space (or the menu) holds H. The wireframes, the ground and the look are plain perspective and use no H
-    at all; everything below is what H adds.</p>
+    <p>Three thumbs, held square to each other at arm's length: one vertical, one horizontal, one in depth. The look runs
+    down between them, so each thumb is 55° off the line of sight, and the crosshair is where all three thumbs' sweeps
+    meet: the <span class="g">corner</span>. H is the thumb. Drag to look (or the arrow keys), W A S D or the wheel to
+    walk (▲ ▼ on a phone), Space (or the menu) holds H. The wireframes, the ground and the look are plain perspective and
+    use no H at all; everything below is what H adds.</p>
     <h2>Where H comes from</h2>
     <ol>
-    <li><b>Pointing sets it.</b> The line of sight through the crosshairs is followed into the field, and the first thing
-    whose box it passes through is the thing pointed at. Its distance is H. Nothing else is measured: point somewhere else
-    and H is somewhere else.</li>
-    <li><b>The ground counts, the sky keeps it.</b> Between things, below the horizon, the crosshairs meet the ground, and
-    its distance is H: tip the look down and H comes in, up toward the horizon and it runs out. Above the horizon nothing
-    is met, and the thumbs stay where they last were.</li>
+    <li><b>Pointing sets it.</b> The line of sight through the crosshair is followed into the field, and the first thing
+    whose box it passes through is the thing pointed at. Its reach along each thumb is H: one thumb in depth, one
+    vertical, one horizontal, all three meeting there. (Its depth along the look is H·√3, the cube's diagonal.)</li>
+    <li><b>The ground counts, the sky keeps it.</b> Between things, below the horizon, the crosshair meets the ground,
+    and that point is the corner. Above the horizon nothing is met, and the thumbs stay where they last were.</li>
     <li><b>Holding keeps it on one thing.</b> With H held you look round and walk while H stays on the thing that was
-    pointed at, following its distance as you move.</li>
-    <li><b>It glides.</b> A new H is reached on its logarithm in about a fifth of a second, so the split slides through the
-    field rather than jumping.</li>
+    pointed at.</li>
+    <li><b>It glides.</b> A new H is reached on its logarithm in about a fifth of a second.</li>
+    </ol>
+    <h2>The one-thumb cube</h2>
+    <ol start="5">
+    <li><b>The near field is a cube.</b> The three thumbs, each one thumb long, are the edges of a cube with the eye at one
+    corner and the crosshair at the other (menu: the one-thumb cube). Everything nearer than one thumb along all three is
+    the <span class="r">near field</span>; the thing pointed at is the far corner.</li>
+    <li><b>It looks the same at every H.</b> Seen from its own corner a cube of any size looks the same, so the gold
+    lines round the crosshair never change as H changes: H changes what lies inside it, never how it looks.</li>
+    <li><b>The Cauchy is centred on the crosshair.</b> Directions laid evenly by turning thin out from the look as cos³ of
+    the angle off it, the two-dimensional Cauchy (menu: the Cauchy's shading). It is densest at the crosshair and spreads
+    out from there; it is laid by the look, not on the ground.</li>
     </ol>
     <h2>What every thing gets from H</h2>
-    <ol start="5">
-    <li><b>One reading, d/H.</b> Each thing is read by its distance in thumbs. That one ratio decides everything else it
-    shows.</li>
-    <li><b>Its field.</b> Below one thumb it is in the <span class="r">near field</span>; at one thumb (within 3%) it is at
-    the <span class="g">corner</span>; past one thumb it is in the <span class="w">far field</span>. The field is the same;
-    the split is where the thumbs point.</li>
-    <li><b>Its colour.</b> Near: teal, brighter the closer it comes to one thumb, in proportion. The corner: gold. Far:
-    violet, a little dimmer for each halving of the reading (one in two, one in four, one in eight).</li>
-    <li><b>Its words</b> (menu: words on things). Near, a fraction of the thumb ("0.42 of the thumb"); far, a ratio
-    ("one in 12"). A writer would count the far field in thumbs (two thumbs, four, eight); the reader reads the ratio.</li>
-    <li><b>Its place on the reader's map</b> (menu). Round the eye, at its bearing from the look, out to d/H inside the gold
-    ring and 1 + ln(d/H) past it: in proportion to the corner, then each stretch over which the reading halves gets the same
-    room. The dashed rings are one in 2, 4, 8, 16 and 64. The line (menu) is the same lay without the bearing.</li>
+    <ol start="8">
+    <li><b>Three readings.</b> Its reach along each thumb, in thumbs. All three are one at the crosshair.</li>
+    <li><b>Its field.</b> All three below one: the <span class="r">near field</span>, read in proportion. The largest at one:
+    the <span class="g">corner</span>. The largest past one: the <span class="w">far field</span>, read as a ratio, one in
+    two, one in four, one in eight. One below zero: behind a thumb, in another wedge, not this look's (faint grey).</li>
+    <li><b>Its colour and words</b> (menu: words on things). Near, a fraction of the thumb; far, a ratio, dimmer for each
+    halving. A writer would count the far field in thumbs (two, four, eight); the reader reads the ratio.</li>
+    <li><b>Its place in the wedge</b> (menu: the wedge from home). Its three readings as shares of their sum lay it on the
+    triangle seen down the look: the crosshair at the centre, each thumb a corner, each pair of thumbs' corner a median
+    through the centre. The line (menu) lays the largest reading as the reader lays distance: in proportion to the corner,
+    then each halving of the ratio the same room.</li>
     </ol>
     <h2>What H shares out</h2>
-    <ol start="10">
-    <li><b>The K addresses.</b> The reader has K addresses along distance, at H·tan(kπ/2K). Half are always inside one
-    thumb, whatever H is: a small H makes the near ones fine and close, a large H spreads them far. On the map and the line
-    they are the faint rings and ticks, the same marks at every H, so the things slide under them as you point.</li>
-    <li><b>The counts.</b> How many things are near and how many far (menu: the readout, or the crosshairs' name and
-    counts) is only how H falls among them.</li>
-    <li><b>The rings on the ground</b> (menu). The gold ring is the corner laid on the ground round your feet, radius H; the
-    violet ones are one in 2, 4 and 8. They are the map's rings seen from where you stand.</li>
-    <li><b>The walking pace.</b> A third of the way to what is pointed at each second, faster the longer you hold the key,
-    and a wheel notch a tenth of the way: the step is set by what the thumbs point at. A convenience of this page, not
-    part of the reading.</li>
+    <ol start="12">
+    <li><b>The K addresses.</b> Half are always inside one thumb, whatever H is; on the line they are the ticks, the same
+    marks at every H, and the things slide under them as you point.</li>
+    <li><b>The counts</b> of near, far and another wedge (menu: the readout) are only how H falls among the things.</li>
+    <li><b>The walking pace.</b> A third of the way to what is pointed at each second, faster while held, and a wheel notch
+    a tenth: a convenience of this page, not part of the reading.</li>
     </ol>
     <h2>What H does not change</h2>
-    <ol start="14">
-    <li><b>Scaling the world.</b> Scale every length by 10, the eye's place included, and H in units grows by 10, but the
-    thing pointed at still reads one thumb, every reading, colour, word and place on the map is as it was. H in units is a
-    writer's number; the readings are the reader's.</li>
-    <li><b>The field itself.</b> No thing moves when H moves. Only the near and far fields move, because they are where the
-    thumbs are pointed.</li>
+    <ol start="15">
+    <li><b>Scaling the world.</b> Scale every length by 10, the eye's place included, and H in units grows by 10, but every
+    reading, colour, word and place in the wedge is as it was. H in units is a writer's number.</li>
+    <li><b>The field itself.</b> No thing moves when H moves; only the near and far fields do, because they are where the
+    three thumbs meet.</li>
     </ol>
-    <p class="d">After <i>Reads and Writes</i> §6 ("The crosshairs") and essay 4 (near and far).</p>
+    <p class="d">After <i>Reads and Writes</i> §6 ("The crosshairs") and §7 ("One thumb, two thumbs"), and essay 4.</p>
 </div>
 <script>
 (() => {
@@ -219,9 +228,9 @@ const S = {
     hold: Q.get('hold') === '1',
     // words on the things: 0 none (the default: no text until asked for), 1 the one at the crosshairs, 2 every one big enough
     words: Q.get('labels') === '1' ? 2 : Math.max(0, Math.min(2, num('words', 0) | 0)),
-    // what else is shown, each from the menu; only the rings, which are no text, start on
+    // what else is shown, each from the menu; only the cube and the shading, which are no text, start on
     show: { about: Q.get('about') === '1', read: Q.get('read') === '1', map: Q.get('map') === '1', strip: Q.get('strip') === '1',
-        hud: Q.get('hud') === '1', rings: Q.get('rings') !== '0' },
+        hud: Q.get('hud') === '1', cube: Q.get('cube') !== '0', density: Q.get('density') !== '0' },
     target: -1, H: 10, Hshow: 10, walkT: 0,
 };
 $('K').value = String(S.K);
@@ -255,19 +264,48 @@ function pick(yaw = S.yaw, pitch = S.pitch) {
 // the reader's lay of distance: in proportion inside the corner, 1 + ln past it
 const lay = s => s <= 1 ? s : 1 + Math.log(s);
 function addresses(K = S.K) { const a = []; for (let k = 1; k < K; k++) a.push(Math.tan(k * Math.PI / (2 * K))); return a; }
-function read(o, H = S.Hshow) {
-    const s = dist(o) / H;
+// ---- three thumbs (5 Nov 2026, R670; Tom: "seems to me your doing the 2d cauchy here. 3d cauchy would be centered at
+// the crosshair and extend out from there. you have the cauchy on the ground."; "seems to me there are three thumbs, and
+// they all intersect at the corner. one for vertical, on for horizontal and one for depth."; "the distance to the corner
+// is the depth sweep, 1 thumb. this is then intersected with the horizontal and vertical sweeps, each also 1 thumb.")
+// The reader's three thumbs are three axes meeting square at the eye, laid so the look runs down their diagonal: each
+// thumb 54.7° off the look, at 90° (vertical), 330° (horizontal) and 210° (depth) round it on the screen. A thing's three
+// readings are its reach along each thumb, in thumbs; the thing pointed at reads one thumb in all three, so the crosshair
+// is the triple corner where the three thumbs' sweeps meet, and H is the thumb: the pointed thing's reach along each,
+// its distance over √3. Nearer than one thumb in all three (inside the one-thumb cube whose near corner is the eye and
+// far corner the crosshair) is the near field; past it, the largest reading read as a ratio; a thing with a reading
+// below zero lies in another wedge (another octant) and is not this look's.
+const ROOT3 = Math.sqrt(3), PHI = { v: 90 * DEG, h: -30 * DEG, d: 210 * DEG }, THUMBS = ['h', 'v', 'd'];
+function frameOf(yaw = S.yaw, pitch = S.pitch) {
+    const u = lookDir(yaw, pitch), r = [Math.cos(yaw), 0, -Math.sin(yaw)];
+    const w = [u[1] * r[2] - u[2] * r[1], u[2] * r[0] - u[0] * r[2], u[0] * r[1] - u[1] * r[0]];   // up on the screen
+    const ax = {}, k = Math.sqrt(2 / 3);
+    for (const t of THUMBS) { const c = Math.cos(PHI[t]), si = Math.sin(PHI[t]);
+        ax[t] = [0, 1, 2].map(i => u[i] / ROOT3 + k * (c * r[i] + si * w[i])); }
+    return { u, r, w, ax };
+}
+function readings(o, F = frameOf(), H = S.Hshow) {
+    const c = centre(o), e = eye(), p = [c[0] - e[0], c[1] - e[1], c[2] - e[2]];
+    const out = {}; for (const t of THUMBS) out[t] = (p[0] * F.ax[t][0] + p[1] * F.ax[t][1] + p[2] * F.ax[t][2]) / H;
+    return out;
+}
+function read(o, F = frameOf(), H = S.Hshow) {
+    const q = readings(o, F, H), lo = Math.min(q.h, q.v, q.d), s = Math.max(q.h, q.v, q.d);
+    const sum = q.h + q.v + q.d;
     let field, words;
-    if (Math.abs(Math.log(s)) < 0.03) { field = 'corner'; words = 'at the crosshairs, one thumb'; }
+    if (o.i === S.target) { field = 'corner'; words = 'at the corner, one thumb'; }
+    else if (lo < 0) { field = 'other'; words = 'another wedge'; }
+    else if (Math.abs(Math.log(s)) < 0.03) { field = 'corner'; words = 'at the corner, one thumb'; }
     else if (s < 1) { field = 'near'; words = s.toFixed(2) + ' of the thumb'; }
     else { field = 'far'; words = 'one in ' + (s < 10 ? s.toFixed(1) : Math.round(s)); }
-    return { s, field, words, lay: lay(s) };
+    return { q, s, field, words, lay: lay(Math.max(s, 1e-9)), shares: sum > 0 ? [q.h / sum, q.v / sum, q.d / sum] : null };
 }
-function counts() { let n = 0, f = 0; for (const o of FIELD) (dist(o) < S.Hshow ? n++ : f++); return { near: n, far: f }; }
+function counts() { const F = frameOf(); let n = 0, f = 0, x = 0;
+    for (const o of FIELD) { const r = read(o, F); r.field === 'other' ? x++ : r.s < 1 ? n++ : f++; } return { near: n, far: f, other: x }; }
 
 // ---- colour ----
-function colourOf(o, alpha = 1) {
-    const r = read(o);
+function colourOf(o, alpha = 1, r = read(o)) {
+    if (r.field === 'other') return `rgba(150,150,170,${alpha * 0.16})`;
     if (r.field === 'corner') return `rgba(212,160,82,${alpha})`;
     if (r.field === 'near') return `rgba(140,230,205,${alpha * (0.45 + 0.55 * r.s)})`;
     const th = Math.log2(r.s);                                   // how many halvings of the reading
@@ -283,8 +321,18 @@ function sizeFull(cv) { const d = window.devicePixelRatio || 1, W = Math.round((
     H = Math.round((cv.clientHeight || innerHeight) * d); if (cv.width !== W) cv.width = W; if (cv.height !== H) cv.height = H; return d; }
 function drawView() {
     const dpr = sizeFull(view), W = view.width, Hh = view.height;
-    const fov = 72 * DEG, f = (Math.max(W, Hh) / 2) / Math.tan(fov / 2), cx = W / 2, cy = Hh / 2;   // 72° across the longer side
+    // 84° across the shorter side, so the one-thumb cube's near corners (35.3° off the look) are in view
+    const fov = 84 * DEG, f = (Math.min(W, Hh) / 2) / Math.tan(fov / 2), cx = W / 2, cy = Hh / 2;
     vc.fillStyle = '#04040a'; vc.fillRect(0, 0, W, Hh);
+    // The 3D Cauchy, centred on the crosshair: directions laid evenly by turning, seen on the screen, thin out as
+    // cos³ of the angle off the look (the flat screen's (1/2π)(1 + r²)^(−3/2), r = tan of that angle). Shaded faintly.
+    if (S.show.density) {
+        const R = Math.hypot(W, Hh) / 2, gr = vc.createRadialGradient(cx, cy, 0, cx, cy, R);
+        for (let i = 0; i <= 8; i++) { const rr = i / 8 * R / f, c3 = Math.pow(1 + rr * rr, -1.5);
+            gr.addColorStop(i / 8, `rgba(212,160,82,${0.11 * c3})`); }
+        vc.fillStyle = gr; vc.fillRect(0, 0, W, Hh);
+    }
+    const F = frameOf(), RD = new Map(FIELD.map(o => [o.i, read(o, F)]));
     const e = eye(), cyw = Math.cos(S.yaw), syw = Math.sin(S.yaw), cp = Math.cos(S.pitch), sp = Math.sin(S.pitch);
     const cam = p => { const dx = p[0] - e[0], dy = p[1] - e[1], dz = p[2] - e[2];
         const x1 = dx * cyw - dz * syw, z1 = dx * syw + dz * cyw;   // turn by −yaw
@@ -305,22 +353,12 @@ function drawView() {
         seg([gx - span * step, 0, gz + i * step], [gx + span * step, 0, gz + i * step]);
     }
     vc.stroke();
-    // the corner laid on the ground round the eye, radius H, and the far field's one in 2, 4, 8 (rings, no text)
-    if (S.show.rings) {
-        const ring = (r, col, w) => { vc.strokeStyle = col; vc.lineWidth = w * dpr; vc.beginPath();
-            for (let i = 0; i < 96; i++) { const a = i / 96 * 2 * Math.PI, b = (i + 1) / 96 * 2 * Math.PI;
-                seg([e[0] + r * Math.sin(a), 0, e[2] + r * Math.cos(a)], [e[0] + r * Math.sin(b), 0, e[2] + r * Math.cos(b)]); }
-            vc.stroke(); };
-        for (const t of [2, 4, 8]) ring(t * S.Hshow, `rgba(181,156,240,${0.32 - 0.06 * Math.log2(t)})`, 1);
-        ring(S.Hshow, 'rgba(212,160,82,0.55)', 1.6);
-        vc.lineWidth = 1 * dpr;
-    }
     vc.strokeStyle = 'rgba(255,255,255,0.12)'; vc.beginPath(); vc.moveTo(0, cy + f * Math.tan(S.pitch)); vc.lineTo(W, cy + f * Math.tan(S.pitch)); vc.stroke();
     // the things, far first
     const order = FIELD.map(o => [dist(o), o]).sort((a, b) => b[0] - a[0]);
     for (const [, o] of order) {
         const isT = o.i === S.target;
-        vc.strokeStyle = colourOf(o); vc.lineWidth = (isT ? 2.4 : 1.1) * dpr;
+        vc.strokeStyle = colourOf(o, 1, RD.get(o.i)); vc.lineWidth = (isT ? 2.4 : 1.1) * dpr;
         vc.beginPath();
         const base = [o.x * S.k, 0, o.z * S.k], sc = o.size * S.k;
         for (const [p, q] of SHAPES[o.kind]) seg([base[0] + p[0] * sc, p[1] * sc, base[2] + p[2] * sc], [base[0] + q[0] * sc, q[1] * sc, base[2] + q[2] * sc]);
@@ -335,15 +373,27 @@ function drawView() {
         if (S.words === 0 || (!isT && (S.words < 2 || px < 18 * dpr))) continue;
         const x = cx + f * c[0] / c[2], y = cy - f * (c[1] + radius(o) * 0.9) / c[2];
         if (x < 0 || x > W || y < 0 || y > Hh) continue;
-        const r = read(o);
-        vc.fillStyle = colourOf(o, isT ? 1 : 0.85);
+        const r = RD.get(o.i); if (r.field === 'other' && !isT) continue;
+        vc.fillStyle = colourOf(o, isT ? 1 : 0.85, r);
         vc.fillText(r.words, x, y - 4 * dpr);
     }
-    // the crosshairs: two thumbs crossed, the corner where they meet
+    // The one-thumb cube: the three thumbs from the eye, each H long, the eye its near corner and the crosshair its far
+    // corner, where the thumbs' three sweeps meet. Drawn after the things, over them. From the eye a cube of any size
+    // looks the same (the eye is its corner), so H changes what lies inside it, never how it looks.
+    if (S.show.cube) {
+        const Hs = S.Hshow, A = F.ax, P = (i, j, l) => [0, 1, 2].map(n => e[n] + Hs * (i * A.h[n] + j * A.v[n] + l * A.d[n]));
+        vc.strokeStyle = 'rgba(212,160,82,0.5)'; vc.lineWidth = 1.4 * dpr; vc.beginPath();
+        for (const [a, b] of [[[1,0,0],[1,1,0]], [[1,0,0],[1,0,1]], [[0,1,0],[1,1,0]], [[0,1,0],[0,1,1]], [[0,0,1],[1,0,1]], [[0,0,1],[0,1,1]],
+                              [[1,1,0],[1,1,1]], [[1,0,1],[1,1,1]], [[0,1,1],[1,1,1]], [[0,0,0],[1,0,0]], [[0,0,0],[0,1,0]], [[0,0,0],[0,0,1]]])
+            seg(P(...a), P(...b));
+        vc.stroke();
+    }
+    // the crosshairs: three thumbs meeting at the corner, each arm toward its thumb's place round the look
     const L = 46 * dpr, g = 7 * dpr;
-    vc.strokeStyle = 'rgba(212,160,82,0.95)'; vc.lineWidth = 3 * dpr; vc.lineCap = 'round';
-    vc.beginPath(); vc.moveTo(cx - L, cy); vc.lineTo(cx - g, cy); vc.moveTo(cx + g, cy); vc.lineTo(cx + L, cy);
-    vc.moveTo(cx, cy - L); vc.lineTo(cx, cy - g); vc.moveTo(cx, cy + g); vc.lineTo(cx, cy + L); vc.stroke();
+    vc.strokeStyle = 'rgba(212,160,82,0.95)'; vc.lineWidth = 3 * dpr; vc.lineCap = 'round'; vc.beginPath();
+    for (const t of THUMBS) { const c = Math.cos(PHI[t]), si = -Math.sin(PHI[t]);
+        vc.moveTo(cx + g * c, cy + g * si); vc.lineTo(cx + L * c, cy + L * si); }
+    vc.stroke();
     vc.lineCap = 'butt';
     if (S.show.hud) {
         vc.fillStyle = 'rgba(212,160,82,0.95)'; vc.textAlign = 'left'; vc.font = `${12 * dpr}px DM Mono, monospace`;
@@ -355,33 +405,30 @@ function drawView() {
     }
 }
 
-// ---- the reader's lay as a map round the eye ----
+// ---- the wedge from home: the triangle of the three thumbs' shares ----
+// Every direction of this look's wedge at its shares of the three thumbs, h + v + d = 1 (the triangle seen from the eye
+// down the diagonal): the crosshair at the centre (⅓, ⅓, ⅓), each thumb a corner, each pair's corner a median.
 const map = $('map'), mc = map.getContext('2d');
 function drawMap() {
-    const dpr = size(map, 0.9), W = map.width, Hh = map.height, cx = W / 2, cy = Hh / 2;
+    const dpr = size(map, 0.9), W = map.width, Hh = map.height, cx = W / 2, cy = Hh * 0.56;
     mc.fillStyle = '#04040a'; mc.fillRect(0, 0, W, Hh);
-    const maxL = 1 + Math.log(256), R = Math.min(W, Hh) * 0.47, sc = R / maxL;
-    // the K addresses as rings, faint; the corner ring gold; two, four, eight thumbs dashed
-    mc.lineWidth = 1 * dpr;
-    for (const a of addresses()) { const l = lay(a); if (l > maxL) continue;
-        mc.strokeStyle = a < 1 ? 'rgba(140,230,205,0.10)' : 'rgba(181,156,240,0.10)'; mc.beginPath(); mc.arc(cx, cy, l * sc, 0, 2 * Math.PI); mc.stroke(); }
-    mc.setLineDash([3 * dpr, 4 * dpr]); mc.strokeStyle = 'rgba(181,156,240,0.35)';
-    for (const t of [2, 4, 8, 16, 64]) { mc.beginPath(); mc.arc(cx, cy, lay(t) * sc, 0, 2 * Math.PI); mc.stroke(); }
-    mc.setLineDash([]); mc.strokeStyle = 'rgba(212,160,82,0.9)'; mc.lineWidth = 1.6 * dpr;
-    mc.beginPath(); mc.arc(cx, cy, sc, 0, 2 * Math.PI); mc.stroke();
-    // the look, up the page
-    mc.strokeStyle = 'rgba(212,160,82,0.4)'; mc.lineWidth = 1 * dpr; mc.beginPath(); mc.moveTo(cx, cy); mc.lineTo(cx, cy - R); mc.stroke();
-    const e = eye();
-    for (const o of FIELD) {
-        const c = centre(o), b = Math.atan2(c[0] - e[0], c[2] - e[2]) - S.yaw;
-        const r = read(o), l = Math.min(lay(r.s), maxL) * sc;
-        const x = cx + l * Math.sin(b), y = cy - l * Math.cos(b);
-        mc.fillStyle = colourOf(o); mc.beginPath(); mc.arc(x, y, (o.i === S.target ? 4.5 : 2.4) * dpr, 0, 2 * Math.PI); mc.fill();
-    }
-    mc.fillStyle = 'rgba(200,200,208,0.8)'; mc.font = `${10.5 * dpr}px DM Mono, monospace`; mc.textAlign = 'left';
-    mc.fillText('corner: one thumb', cx + sc + 4 * dpr, cy - 3 * dpr);
-    mc.fillStyle = 'rgba(181,156,240,0.7)';
-    for (const [t, w] of [[2, 'one in 2'], [8, 'one in 8'], [64, 'one in 64']]) mc.fillText(w, cx + lay(t) * sc * 0.71, cy + lay(t) * sc * 0.71);
+    const R = Math.min(W, Hh) * 0.46, V = {};
+    for (const t of THUMBS) V[t] = [cx + R * Math.cos(PHI[t]), cy - R * Math.sin(PHI[t])];
+    const at = sh => [sh[0] * V.h[0] + sh[1] * V.v[0] + sh[2] * V.d[0], sh[0] * V.h[1] + sh[1] * V.v[1] + sh[2] * V.d[1]];
+    mc.strokeStyle = 'rgba(255,255,255,0.25)'; mc.lineWidth = 1 * dpr; mc.beginPath();
+    mc.moveTo(...V.h); mc.lineTo(...V.v); mc.lineTo(...V.d); mc.closePath(); mc.stroke();
+    mc.setLineDash([3 * dpr, 4 * dpr]); mc.strokeStyle = 'rgba(212,160,82,0.45)'; mc.beginPath();
+    for (const t of THUMBS) { const o = THUMBS.filter(x => x !== t), m = [(V[o[0]][0] + V[o[1]][0]) / 2, (V[o[0]][1] + V[o[1]][1]) / 2];
+        mc.moveTo(...V[t]); mc.lineTo(...m); }
+    mc.stroke(); mc.setLineDash([]);
+    const F = frameOf();
+    for (const o of FIELD) { const r = read(o, F); if (!r.shares) continue; if (r.field === 'other') continue;
+        const [x, y] = at(r.shares);
+        mc.fillStyle = colourOf(o, 1, r); mc.beginPath(); mc.arc(x, y, (o.i === S.target ? 4.5 : 2.4) * dpr, 0, 2 * Math.PI); mc.fill(); }
+    mc.strokeStyle = 'rgba(212,160,82,0.95)'; mc.lineWidth = 1.6 * dpr; mc.beginPath(); mc.arc(cx, cy, 5 * dpr, 0, 2 * Math.PI); mc.stroke();
+    mc.fillStyle = 'rgba(200,200,208,0.8)'; mc.font = `${10.5 * dpr}px DM Mono, monospace`; mc.textAlign = 'center';
+    const NAME = { h: 'horizontal', v: 'vertical', d: 'depth' };
+    for (const t of THUMBS) mc.fillText(NAME[t], V[t][0], V[t][1] + (t === 'v' ? -6 : 14) * dpr);
 }
 
 // ---- the lay as a strip ----
@@ -395,8 +442,9 @@ function drawStrip() {
     for (const a of addresses()) { const l = lay(a); if (l > maxL) continue; sc2.beginPath(); sc2.moveTo(X(l), y0 + 4 * dpr); sc2.lineTo(X(l), y0 + 12 * dpr); sc2.stroke(); }
     sc2.fillStyle = 'rgba(212,160,82,0.18)'; sc2.fillRect(X(0), y0 - 30 * dpr, X(1) - X(0), 30 * dpr);
     sc2.strokeStyle = 'rgba(212,160,82,0.95)'; sc2.lineWidth = 2 * dpr; sc2.beginPath(); sc2.moveTo(X(1), y0 - 34 * dpr); sc2.lineTo(X(1), y0 + 14 * dpr); sc2.stroke();
-    for (const o of FIELD) { const r = read(o); const l = Math.min(r.lay, maxL);
-        sc2.strokeStyle = colourOf(o); sc2.lineWidth = (o.i === S.target ? 3 : 1.4) * dpr;
+    const F = frameOf();
+    for (const o of FIELD) { const r = read(o, F); if (r.field === 'other') continue; const l = Math.min(r.lay, maxL);
+        sc2.strokeStyle = colourOf(o, 1, r); sc2.lineWidth = (o.i === S.target ? 3 : 1.4) * dpr;
         sc2.beginPath(); sc2.moveTo(X(l), y0 - (o.i === S.target ? 30 : 20) * dpr); sc2.lineTo(X(l), y0); sc2.stroke(); }
     sc2.font = `${10.5 * dpr}px DM Mono, monospace`; sc2.textAlign = 'center'; sc2.fillStyle = 'rgba(200,200,208,0.75)';
     sc2.textAlign = 'left'; sc2.fillText('home', X(0), y0 - 38 * dpr); sc2.textAlign = 'right';
@@ -413,12 +461,13 @@ function readout() {
     const c = counts(), t = FIELD[S.target];
     const half = addresses().filter(a => a < 1).length;
     let s = '';
-    if (t) { const r = read(t); s += `<span class="g">at the crosshairs</span>  ${NAMES[t.kind]} (#${t.i})\n`; }
+    if (t) { const q = read(t).q; s += `<span class="g">at the crosshairs</span>  ${NAMES[t.kind]} (#${t.i}), reading ${q.h.toFixed(2)}, ${q.v.toFixed(2)}, ${q.d.toFixed(2)} thumbs\n`; }
     else if (S.target === GROUND) s += `<span class="g">at the crosshairs</span>  the ground\n`;
     else s += `<span class="g">at the crosshairs</span>  the sky; H kept\n`;
-    s += `<span class="b">H, the thumb</span>      ${fmt(S.Hshow)} units  <span class="d">(a writer's number)</span>\n`;
-    s += `<span class="r">near field</span>  ${c.near} things, inside one thumb\n`;
+    s += `<span class="b">H, the thumb</span>      ${fmt(S.Hshow)} units along each thumb  <span class="d">(a writer's number)</span>\n`;
+    s += `<span class="r">near field</span>  ${c.near} things, inside one thumb in all three\n`;
     s += `<span class="w">far field</span>   ${c.far} things, one in 2 and beyond\n`;
+    s += `<span class="d">another wedge</span>  ${c.other} things, behind a thumb\n`;
     s += `K = ${S.K} addresses: ${half} inside the corner, ${S.K - 1 - half} past it\n`;
     s += `world scale k = ${fmt(S.k)}: every reading the same at any k`;
     $('readBox').innerHTML = s;
@@ -442,7 +491,7 @@ view.addEventListener('pointermove', ev => { if (!drag) return; const dx = ev.cl
 const endDrag = ev => { if (!drag) return; drag = null; view.style.cursor = 'grab'; };
 // the wheel walks: a notch is a tenth of the way to what is under the crosshairs (at least 2 units)
 view.addEventListener('wheel', ev => { ev.preventDefault();
-    const d = S.H / S.k, step = Math.max(2, 0.1 * d) * Math.sign(-ev.deltaY);
+    const d = S.H * ROOT3 / S.k, step = Math.max(2, 0.1 * d) * Math.sign(-ev.deltaY);
     walkBy(step, 0); }, { passive: false });
 view.addEventListener('pointerup', endDrag); view.addEventListener('pointercancel', () => { drag = null; });
 function toggleHold() { S.hold = !S.hold; syncMenu(); }
@@ -484,6 +533,10 @@ syncMenu();
 function walkBy(f, r) { S.x += f * Math.sin(S.yaw) + r * Math.cos(S.yaw); S.z += f * Math.cos(S.yaw) - r * Math.sin(S.yaw); }
 const GROUND = -2;
 function groundT() { const u = lookDir(S.yaw, S.pitch); return u[1] < -1e-6 ? eye()[1] / -u[1] : Infinity; }
+// the pointed thing's reach along each thumb: its depth along the look over √3, so its three readings average one
+// exactly (a thing's centre is seldom exactly on the line of sight, so they are near one, not each one)
+function reachOf(o) { const c = centre(o), e = eye(), u = lookDir(S.yaw, S.pitch);
+    return Math.max(1e-6, ((c[0] - e[0]) * u[0] + (c[1] - e[1]) * u[1] + (c[2] - e[2]) * u[2]) / ROOT3); }
 function update(dt) {
     const turn = 1.2 * dt;
     if (keys.has('arrowleft')) S.yaw -= turn; if (keys.has('arrowright')) S.yaw += turn;
@@ -496,7 +549,7 @@ function update(dt) {
     if (keys.has('d')) r += 1; if (keys.has('a')) r -= 1;
     if (f || r) {
         S.walkT += dt;
-        const d = S.H / S.k;
+        const d = S.H * ROOT3 / S.k;
         const sp = Math.max(6, d / 3) * Math.pow(2, Math.min(3, S.walkT)) * dt;
         walkBy(sp * f, sp * r);
     } else S.walkT = 0;
@@ -504,8 +557,9 @@ function update(dt) {
     // Nothing under the crosshairs: the ground, if they point below the horizon, is what they point at, its distance H
     // (before, H stayed where it was, and looking or walking between things changed nothing); the sky keeps H.
     const g = groundT();
-    if (!S.hold) { if (t >= 0) { S.target = t; S.H = dist(FIELD[t]); } else if (g < Infinity) { S.target = GROUND; S.H = g; } else S.target = -1; }
-    else if (S.target >= 0) S.H = dist(FIELD[S.target]);
+    // H is the pointed thing's reach along each thumb: its distance over √3 (the look runs down the thumbs' diagonal)
+    if (!S.hold) { if (t >= 0) { S.target = t; S.H = reachOf(FIELD[t]); } else if (g < Infinity) { S.target = GROUND; S.H = g / ROOT3; } else S.target = -1; }
+    else if (S.target >= 0) S.H = reachOf(FIELD[S.target]);
     // H glides on its logarithm, so the field slides from one split to the next
     const a = 1 - Math.exp(-dt / 0.18);
     S.Hshow = Math.exp(Math.log(S.Hshow) + a * (Math.log(S.H) - Math.log(S.Hshow)));
@@ -519,13 +573,13 @@ function frame(now) {
 }
 // a start that is looking at something
 (() => { S.target = pick(); if (S.target < 0) { for (let a = 0; a < 360; a += 3) { const t = pick(a * DEG, S.pitch); if (t >= 0) { S.yaw = a * DEG; break; } } S.target = pick(); }
-    if (S.target >= 0) S.H = S.Hshow = dist(FIELD[S.target]); })();
+    if (S.target >= 0) S.H = S.Hshow = reachOf(FIELD[S.target]); })();
 requestAnimationFrame(frame);
 
 window.__crosshairs = {
     objects: () => FIELD.map(o => ({ i: o.i, kind: o.kind, d: dist(o) })),
     target: () => S.target, H: () => S.Hshow,
-    read: i => read(FIELD[i]), lay, addresses, counts, pick,
+    read: i => read(FIELD[i]), readings: i => readings(FIELD[i]), frame: () => frameOf(), lay, addresses, counts, pick,
     set(o = {}) { if ('yaw' in o) S.yaw = o.yaw * DEG; if ('pitch' in o) S.pitch = o.pitch * DEG; if ('x' in o) S.x = o.x; if ('z' in o) S.z = o.z;
         if ('k' in o) { const r = o.k / S.k; S.k = o.k; S.H *= r; S.Hshow *= r; } if ('hold' in o) S.hold = !!o.hold; if ('K' in o) S.K = o.K;
         if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); syncMenu();
