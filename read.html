@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The read</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    read.html: the read, geometry only (5 November 2026, Tom: "we still don't have a good demo of the read write paper and
+    the 3d cauchy. lets try a new one. the buildings are actually irrelevent, they are the physics. cauchy is the geometry.
+    lets show one of just the geometry and not get distracted by the physics.", then "proceed"; SPN R690; Reads and Writes
+    §6 "The crosshairs", §7 "One thumb, two thumbs", "The wedge is the writer's; the reader has a tunnel"; THM runs 1–3).
+    No things, no ground, no paint, no metres: only what a read is.
+    The screen square to the look, the look down the three thumbs' diagonal, so the crosshair is the triple corner (every
+    reading one). A direction α off the look sits r = tan α out (r = 1 is 45°). The directions, uniform by area, are on
+    it the 3D Cauchy centred on the crosshair, 1/(2π(1 + r²)^(3/2)) per unit of screen, the same at every look. The
+    reader's K addresses are its equal shares: rings where the share inside is j/R (r = √(1/(1 − j/R)² − 1)) cut by 12
+    rays (a third of them between each pair of thumbs), every cell the same share. The three thumbs at r = √2 (54.74°),
+    120° apart, the wedge's triangle between them; home on each edge at r = 1/√2 (35.26°); each pair's corner a line from
+    its home through the crosshair to the third thumb (R676). Rings one thumb off (45°), one in 2, one in 4, one in 8 marked.
+    Two views of one geometry: in thumbs (the screen as it is, r: the cells growing outward without end, the horizon of
+    the look never reached) and by count (each cell the same room: radius √(share inside), the hemisphere a disc, the
+    rings one in 2, 4, 8 bunching toward its rim). Beside it the 3D Cauchy itself as a hill over the screen, drag to turn
+    it: the crosshair its peak, the rings its contours (each holding the same share), the rays down its sides, the tails
+    never zero. The page opens on a read: every sweep of the thumb at once, drawn out from the crosshair to the horizon.
+    Turning the look or scaling the world changes nothing (the counters say so): the K is the same wherever one looks, and
+    no V enters. Every word is behind the menu (☰).
+    `?view=thumbs|count&R=8|16|32&words=1&about=1&play=0&az=&el=`; hook `window.__read` (`share`, `ringR`, `density`,
+    `screenOf`, `byCount`, `cells`, `thumbs`, `homes`, `wedgeShare`, `set`, `state`).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #04040a; --panel: rgba(18,18,26,0.94); --line: rgba(255,255,255,0.10); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground); color: var(--ink);
+        font: 0.875rem/1.5 'DM Mono', ui-monospace, monospace }
+    #wrap { position: fixed; inset: 0; display: flex }
+    #screen, #hill { flex: 1 1 50%; min-width: 0; height: 100%; display: block; touch-action: none }
+    #screen { cursor: grab } #hill { cursor: grab; border-left: 1px solid var(--line) }
+    @media (max-aspect-ratio: 1/1) { #wrap { flex-direction: column } #screen, #hill { height: 50%; width: 100% } #hill { border-left: 0; border-top: 1px solid var(--line) } }
+    button { font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line); border-radius: 6px;
+        padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    #menuBtn { position: fixed; top: max(10px, env(safe-area-inset-top)); right: max(10px, env(safe-area-inset-right)); z-index: 5;
+        width: 44px; height: 44px; padding: 0; font-size: 1.3rem; background: rgba(20,20,28,0.7); border-radius: 22px }
+    #menu { position: fixed; top: calc(max(10px, env(safe-area-inset-top)) + 52px); right: max(10px, env(safe-area-inset-right)); z-index: 5;
+        width: min(300px, calc(100vw - 20px)); max-height: calc(100dvh - 80px); overflow: auto; background: var(--panel);
+        border: 1px solid var(--line); border-radius: 10px; padding: 8px; display: none }
+    #menu.open { display: block }
+    #menu .sec { color: var(--dim); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; margin: 8px 6px 4px }
+    #menu button { display: flex; width: 100%; justify-content: space-between; align-items: center; margin: 0 0 4px; text-align: left }
+    #menu a { color: var(--teal); display: block; padding: 6px 10px }
+    .over { position: fixed; z-index: 3; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: none }
+    .over.open { display: block }
+    #numbers { left: max(10px, env(safe-area-inset-left)); top: max(10px, env(safe-area-inset-top)); padding: 8px 12px;
+        font-size: 0.8rem; white-space: pre-wrap; max-width: calc(100vw - 80px) }
+    #about { left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(640px, calc(100vw - 20px)); max-height: calc(100dvh - 40px);
+        overflow: auto; padding: 16px 20px; z-index: 6 }
+    #about h1 { font: 400 1.6rem/1.15 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    #about ol { padding-left: 1.4em; margin: 0 } #about li { margin: 0 0 8px } #about p { margin: 0 0 8px }
+    #about .x { float: right }
+    .g { color: var(--gold) } .t { color: var(--teal) } .v { color: var(--violet) } .b { color: var(--bright) } .d { color: var(--dim) }
+    </style>
+</head>
+<body>
+<div id="wrap"><canvas id="screen"></canvas><canvas id="hill"></canvas></div>
+<button id="menuBtn" title="menu" aria-label="menu">☰</button>
+<div id="menu" role="menu">
+    <div class="sec">show</div>
+    <button id="aboutB">What a read is</button>
+    <button id="numB">the numbers <span>off</span></button>
+    <button id="wordsB">words <span>off</span></button>
+    <div class="sec">the read</div>
+    <button id="viewB">view <span>in thumbs</span></button>
+    <button id="RB">rings <span>16</span></button>
+    <button id="playB">read again</button>
+    <div class="sec">nothing changes</div>
+    <button id="turnB">turn the look 30° <span>0</span></button>
+    <button id="scaleB">scale the world × 10 <span>× 1</span></button>
+    <div class="sec">more</div>
+    <a href="crosshairs.html">crosshairs in a field</a>
+    <a href="demos.html">all demos</a>
+</div>
+<div id="numbers" class="over"></div>
+<div id="about" class="over">
+    <button class="x" id="aboutX">✕</button>
+    <h1>What a read is</h1>
+    <p>Nothing in the world is drawn here. What is drawn is the read itself: the geometry the crossed thumbs give, wherever
+    they point.</p>
+    <ol>
+    <li><b class="g">The crosshair.</b> Three thumbs, each one thumb long, square to each other, with the look down their
+    diagonal. Where they cross, every reading is one: the corner. It is the middle of the screen and the top of the hill.</li>
+    <li><b class="t">The addresses.</b> The directions, taken evenly, land on the screen square to the look as the 3D
+    Cauchy, thick at the crosshair and thinning outward without end. The reader's K addresses are equal shares of them:
+    rings, each holding the same share, cut by rays. On the left in thumbs, as they fall on the screen: the cells grow,
+    one thumb off, one in 2, one in 4, one in 8, toward a horizon no ring reaches. Switch the view to "by count" and every
+    cell gets the same room: the same rings now bunch toward the rim.</li>
+    <li><b>The thumbs and the wedge.</b> The three thumbs point out at 120° from each other, the wedge the triangle between
+    them, a quarter of what is in front. Each pair's corner is a line from its home, on the triangle's edge, through the
+    crosshair to the third thumb, its horizon.</li>
+    <li><b>The hill.</b> On the right the same law as a height. Its contours are the rings, each enclosing the same share;
+    its tails go on and never reach zero. Drag it to turn it.</li>
+    <li><b>A read is every sweep at once.</b> "Read again" draws the sweeps out from the crosshair to the horizon. The
+    geometry is given, not computed; it is the same whatever is there.</li>
+    <li><b>Nothing changes.</b> Turn the look and the thumbs turn with it: the same addresses. Scale the world and no
+    reading moves: there is no V in a read, only the thumb's own shares. What would change is the paint, and that is
+    physics, left out.</li>
+    </ol>
+    <p class="d">After <i>Reads and Writes</i> §6 ("The crosshairs") and §7 ("One thumb, two thumbs"; "the reader has a
+    tunnel").</p>
+</div>
+<script>
+(() => {
+'use strict';
+const Q = new URLSearchParams(location.search);
+const num = (k, d) => { const v = parseFloat(Q.get(k)); return Number.isFinite(v) ? v : d; };
+const $ = id => document.getElementById(id);
+const DEG = Math.PI / 180, SQ2 = Math.SQRT2;
+
+// ---- the geometry ----
+// share of the directions within r of the crosshair (α off the look, r = tan α): 1 − cos α
+const share = r => 1 - 1 / Math.sqrt(1 + r * r);
+// the ring holding share s inside
+const ringR = s => s >= 1 ? Infinity : Math.sqrt(1 / ((1 - s) * (1 - s)) - 1);
+// the 3D Cauchy on the screen square to the look
+const density = r => 1 / (2 * Math.PI * Math.pow(1 + r * r, 1.5));
+// by count: the radius whose disc holds the same share (equal room for equal share), the hemisphere a disc of radius 1
+const byCount = r => Math.sqrt(share(r));
+// the look down the thumbs' diagonal; a direction's place on the screen square to it, in thumbs
+const LOOK = [1, 1, 1].map(x => x / Math.sqrt(3));
+const E1 = [1, -1, 0].map(x => x / SQ2), E2 = [-1, -1, 2].map(x => x / Math.sqrt(6));
+const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+const screenOf = u => { const d = dot(u, LOOK); return d <= 0 ? null : [dot(u, E1) / d, dot(u, E2) / d]; };
+const THUMBS = [[1, 0, 0], [0, 1, 0], [0, 0, 1]].map(screenOf);       // r = √2, 54.74° off the look
+const HOMES = [[0, 1, 1], [1, 0, 1], [1, 1, 0]].map(screenOf);        // r = 1/√2, 35.26°, home of the pair opposite each thumb
+const RAYS = 12;
+
+// ---- state ----
+const S = { view: Q.get('view') === 'count' ? 'count' : 'thumbs', R: [8, 16, 32].includes(num('R', 16)) ? num('R', 16) : 16,
+    words: Q.get('words') === '1', nums: false, about: Q.get('about') === '1',
+    az: num('az', 35) * DEG, el: num('el', 30) * DEG, t: Q.get('play') === '0' ? 1 : 0, turns: 0, scale: 1, zoom: 1 };
+
+// ---- the screen ----
+const sc = $('screen'), sx = sc.getContext('2d'), hc = $('hill'), hx = hc.getContext('2d');
+function fit(cv) { const d = devicePixelRatio || 1, W = Math.round(cv.clientWidth * d), H = Math.round(cv.clientHeight * d);
+    if (cv.width !== W) cv.width = W; if (cv.height !== H) cv.height = H; return d; }
+const COL = { gold: '212,160,82', teal: '140,230,205', violet: '181,156,240', ink: '200,200,208' };
+const rgba = (c, a) => `rgba(${COL[c]},${a})`;
+
+function drawScreen() {
+    const dpr = fit(sc), W = sc.width, H = sc.height, cx = W / 2, cy = H / 2, m = Math.min(W, H) / 2;
+    const sweep = Math.min(1, S.t);                         // the read drawn out: the share of addresses passed so far
+    const byC = S.view === 'count';
+    // in thumbs: one thumb (45°) at a third of the half-side, times the zoom; by count: the hemisphere fills 0.92 of it
+    const k = byC ? 0.92 * m : S.zoom * m / 3;
+    const place = (x, y) => { const r = Math.hypot(x, y); if (!byC) return [cx + k * x, cy - k * y];
+        const R = byCount(r), f = r > 0 ? R / r : 0; return [cx + k * f * x, cy - k * f * y]; };
+    const radOf = r => byC ? k * byCount(r) : k * r;
+    sx.fillStyle = '#04040a'; sx.fillRect(0, 0, W, H);
+    // the density: thick at the crosshair, thinning outward (by count it is flat: every cell the same share)
+    const far = Math.hypot(W, H) / 2;
+    if (byC) { sx.fillStyle = 'rgba(212,160,82,0.10)'; sx.beginPath(); sx.arc(cx, cy, k, 0, 2 * Math.PI); sx.fill(); }
+    else { const g = sx.createRadialGradient(cx, cy, 0, cx, cy, far);
+        for (let i = 0; i <= 12; i++) { const r = (i / 12) * far / k; g.addColorStop(i / 12, rgba('gold', 0.26 * Math.pow(1 + r * r, -1.5))); }
+        sx.fillStyle = g; sx.fillRect(0, 0, W, H); }
+    // the address cells: rings of equal share and rays, drawn out as the read sweeps
+    sx.lineWidth = 1 * dpr;
+    for (let j = 1; j < S.R; j++) {
+        const s = j / S.R; if (s > sweep) break;
+        const rr = radOf(ringR(s)); if (rr > far * 1.5) continue;
+        sx.strokeStyle = rgba('ink', 0.16); sx.beginPath(); sx.arc(cx, cy, rr, 0, 2 * Math.PI); sx.stroke();
+    }
+    const reach = byC ? k : far * 1.5, rayTo = Math.min(reach, radOf(ringR(Math.min(sweep, 0.9999))));
+    sx.strokeStyle = rgba('ink', 0.12);
+    for (let i = 0; i < RAYS; i++) { const a = (i + 0.5) / RAYS * 2 * Math.PI + Math.PI / 2;
+        sx.beginPath(); sx.moveTo(cx, cy); sx.lineTo(cx + rayTo * Math.cos(a), cy - rayTo * Math.sin(a)); sx.stroke(); }
+    // the rings named: one thumb off (45°), then one in 2, 4, 8
+    const named = [[1, 'one thumb off'], [2, 'one in 2'], [4, 'one in 4'], [8, 'one in 8']];
+    sx.font = `${10 * dpr}px DM Mono, monospace`; sx.textAlign = 'left';
+    for (const [r, name] of named) { if (share(r) > sweep) break; const rr = radOf(r); if (rr > far) continue;
+        sx.setLineDash(r === 1 ? [] : [3 * dpr, 5 * dpr]); sx.strokeStyle = r === 1 ? rgba('gold', 0.55) : rgba('violet', 0.45);
+        sx.lineWidth = 1.2 * dpr; sx.beginPath(); sx.arc(cx, cy, rr, 0, 2 * Math.PI); sx.stroke(); sx.setLineDash([]);
+        if (S.words) { sx.fillStyle = r === 1 ? rgba('gold', 0.85) : rgba('violet', 0.75); sx.fillText(name, cx + 4 * dpr, cy - rr - 4 * dpr); } }
+    if (byC) { sx.strokeStyle = rgba('ink', 0.4); sx.lineWidth = 1.2 * dpr; sx.beginPath(); sx.arc(cx, cy, k, 0, 2 * Math.PI); sx.stroke();
+        if (S.words && sweep >= 1) { sx.fillStyle = rgba('ink', 0.6); sx.textAlign = 'center'; sx.fillText('the horizon of the look, never reached', cx, cy - k - 6 * dpr); } }
+    // the wedge's triangle, the three corners and the homes (drawn in pieces, so they bend by count)
+    const seg = (p, q, n = 40) => { for (let i = 0; i <= n; i++) { const t = i / n, [x, y] = place(p[0] + t * (q[0] - p[0]), p[1] + t * (q[1] - p[1]));
+        if (i) sx.lineTo(x, y); else sx.moveTo(x, y); } };
+    if (sweep >= share(SQ2)) {
+        sx.strokeStyle = rgba('teal', 0.45); sx.lineWidth = 1.2 * dpr; sx.beginPath();
+        for (let i = 0; i < 3; i++) seg(THUMBS[i], THUMBS[(i + 1) % 3]); sx.stroke();
+        sx.strokeStyle = rgba('gold', 0.35); sx.beginPath();
+        for (let i = 0; i < 3; i++) seg(HOMES[i], THUMBS[i]); sx.stroke();
+        sx.fillStyle = rgba('gold', 0.9);
+        for (const h of HOMES) { const [x, y] = place(...h); sx.beginPath(); sx.arc(x, y, 3.5 * dpr, 0, 2 * Math.PI); sx.fill(); }
+        sx.strokeStyle = rgba('teal', 0.9);
+        for (const t of THUMBS) { const [x, y] = place(...t); sx.beginPath(); sx.arc(x, y, 5 * dpr, 0, 2 * Math.PI); sx.stroke(); }
+        if (S.words) { sx.textAlign = 'center';
+            for (const h of HOMES) { const [x, y] = place(...h); sx.fillStyle = rgba('gold', 0.85); sx.fillText('home', x, y + 14 * dpr); }
+            for (const t of THUMBS) { const [x, y] = place(...t); sx.fillStyle = rgba('teal', 0.85); sx.fillText('a thumb', x, y - 9 * dpr); } }
+    }
+    // the crosshair: three arms toward the thumbs, crossing at the corner
+    sx.strokeStyle = rgba('gold', 0.95); sx.lineWidth = 3 * dpr; sx.lineCap = 'round'; sx.beginPath();
+    for (const t of THUMBS) { const a = Math.atan2(t[1], t[0]); sx.moveTo(cx + 7 * dpr * Math.cos(a), cy - 7 * dpr * Math.sin(a));
+        sx.lineTo(cx + 40 * dpr * Math.cos(a), cy - 40 * dpr * Math.sin(a)); }
+    sx.stroke(); sx.lineCap = 'butt';
+    if (S.words) { sx.fillStyle = rgba('gold', 0.95); sx.textAlign = 'left'; sx.fillText('the corner', cx + 10 * dpr, cy + 16 * dpr); }
+}
+
+// ---- the hill: the 3D Cauchy as a height over the screen ----
+function drawHill() {
+    const dpr = fit(hc), W = hc.width, H = hc.height, m = Math.min(W, H);
+    const ca = Math.cos(S.az), sa = Math.sin(S.az), ce = Math.cos(S.el), se = Math.sin(S.el);
+    const RMAX = 4.5, sXY = 0.42 * m / RMAX, sZ = 0.42 * m, p0 = density(0);
+    // orthographic: turn by az about the upright, tip by el
+    const P = (x, y, z) => { const X = x * ca - y * sa, Y = x * sa + y * ca;
+        return [W / 2 + sXY * X, H * 0.62 - (sZ * z * ce - sXY * Y * se)]; };
+    const zOf = r => density(r) / p0;
+    hx.fillStyle = '#04040a'; hx.fillRect(0, 0, W, H);
+    const sweep = Math.min(1, S.t);
+    hx.lineWidth = 1 * dpr;
+    // the base: the screen square to the look, to RMAX thumbs
+    hx.strokeStyle = rgba('ink', 0.07); hx.beginPath();
+    for (let g = -4; g <= 4; g++) { let a = P(g, -RMAX, 0), b = P(g, RMAX, 0); hx.moveTo(...a); hx.lineTo(...b);
+        a = P(-RMAX, g, 0); b = P(RMAX, g, 0); hx.moveTo(...a); hx.lineTo(...b); }
+    hx.stroke();
+    // the wedge's triangle and the corners on the base
+    if (sweep >= share(SQ2)) {
+        hx.strokeStyle = rgba('teal', 0.4); hx.beginPath();
+        for (let i = 0; i < 3; i++) { const a = THUMBS[i], b = THUMBS[(i + 1) % 3]; hx.moveTo(...P(a[0], a[1], 0)); hx.lineTo(...P(b[0], b[1], 0)); }
+        hx.stroke(); hx.strokeStyle = rgba('gold', 0.3); hx.beginPath();
+        for (let i = 0; i < 3; i++) { hx.moveTo(...P(HOMES[i][0], HOMES[i][1], 0)); hx.lineTo(...P(THUMBS[i][0], THUMBS[i][1], 0)); }
+        hx.stroke();
+    }
+    // the contours: the rings of equal share, each at its own height
+    for (let j = 1; j < S.R; j++) { const s = j / S.R; if (s > sweep) break; const r = ringR(s); if (r > RMAX) break;
+        const z = zOf(r); hx.strokeStyle = rgba('ink', 0.35); hx.beginPath();
+        for (let i = 0; i <= 96; i++) { const a = i / 96 * 2 * Math.PI, q = P(r * Math.cos(a), r * Math.sin(a), z); if (i) hx.lineTo(...q); else hx.moveTo(...q); }
+        hx.stroke(); }
+    // the rays down its sides, to the edge of what is drawn (the tails go on, never zero)
+    const rEnd = Math.min(RMAX, ringR(Math.min(sweep, 0.9999)));
+    for (let i = 0; i < RAYS; i++) { const a = (i + 0.5) / RAYS * 2 * Math.PI + Math.PI / 2, c = Math.cos(a), s = Math.sin(a);
+        hx.strokeStyle = rgba('ink', 0.3); hx.beginPath();
+        for (let n = 0; n <= 60; n++) { const r = rEnd * n / 60, q = P(r * c, r * s, zOf(r)); if (n) hx.lineTo(...q); else hx.moveTo(...q); }
+        hx.stroke(); }
+    // the named rings on the hill: one thumb off gold, one in 2 and 4 violet
+    for (const [r, col] of [[1, 'gold'], [2, 'violet'], [4, 'violet']]) { if (share(r) > sweep) break; const z = zOf(r);
+        hx.strokeStyle = rgba(col, 0.75); hx.lineWidth = 1.4 * dpr; hx.beginPath();
+        for (let i = 0; i <= 96; i++) { const a = i / 96 * 2 * Math.PI, q = P(r * Math.cos(a), r * Math.sin(a), z); if (i) hx.lineTo(...q); else hx.moveTo(...q); }
+        hx.stroke(); }
+    // the peak: the crosshair, the corner
+    const top = P(0, 0, 1); hx.fillStyle = rgba('gold', 0.95); hx.beginPath(); hx.arc(top[0], top[1], 4 * dpr, 0, 2 * Math.PI); hx.fill();
+    hx.strokeStyle = rgba('gold', 0.5); hx.setLineDash([3 * dpr, 4 * dpr]); hx.beginPath(); hx.moveTo(...top); hx.lineTo(...P(0, 0, 0)); hx.stroke(); hx.setLineDash([]);
+    if (S.words) { hx.font = `${10 * dpr}px DM Mono, monospace`; hx.textAlign = 'left'; hx.fillStyle = rgba('gold', 0.9);
+        hx.fillText('the corner, at the peak', top[0] + 8 * dpr, top[1] - 4 * dpr);
+        hx.fillStyle = rgba('ink', 0.55); hx.fillText('each contour holds the same share; the tails never reach zero', 10 * dpr, H - 12 * dpr); }
+}
+
+// ---- the numbers (behind the menu) ----
+const wedgeShare = 0.25;                                     // an octant of the sphere, a quarter of what is in front
+function numbers() {
+    const f = x => x.toFixed(4);
+    $('numbers').innerHTML =
+        `<span class="g">the corner</span>   the crosshair, every reading 1, the top of the hill\n` +
+        `<span class="t">addresses</span>    ${S.R} rings × ${RAYS} rays = ${S.R * RAYS} cells, each 1/${S.R * RAYS} of the directions in front\n` +
+        `within one thumb off (45°)   ${f(share(1))}\n` +
+        `within home (35.26°)         ${f(share(1 / SQ2))}\n` +
+        `within the thumbs (54.74°)   ${f(share(SQ2))}\n` +
+        `half the addresses within     ${f(ringR(0.5))} thumbs (60°)\n` +
+        `<span class="v">one in 2, 4, 8</span>  hold ${f(share(2) - share(1))}, ${f(share(4) - share(2))}, ${f(share(8) - share(4))} of them\n` +
+        `the wedge      ${wedgeShare} of what is in front, each pair's corner halving it\n` +
+        `turned ${S.turns}×, scaled ×${S.scale}: every number above the same`;
+}
+
+// ---- input ----
+let drag = null;
+hc.addEventListener('pointerdown', e => { drag = { x: e.clientX, y: e.clientY }; hc.setPointerCapture(e.pointerId); });
+hc.addEventListener('pointermove', e => { if (!drag) return; S.az -= (e.clientX - drag.x) * 0.01;
+    S.el = Math.max(-10 * DEG, Math.min(85 * DEG, S.el + (e.clientY - drag.y) * 0.01)); drag = { x: e.clientX, y: e.clientY }; });
+const end = () => { drag = null; }; hc.addEventListener('pointerup', end); hc.addEventListener('pointercancel', end);
+sc.addEventListener('wheel', e => { e.preventDefault(); if (S.view === 'thumbs') S.zoom = Math.max(0.25, Math.min(4, S.zoom * Math.exp(-e.deltaY / 500))); }, { passive: false });
+
+function sync() {
+    const on = (id, v, txt) => { $(id).classList.toggle('on', !!v); const s = $(id).querySelector('span'); if (s) s.textContent = txt; };
+    on('numB', S.nums, S.nums ? 'on' : 'off'); on('wordsB', S.words, S.words ? 'on' : 'off');
+    on('viewB', S.view === 'count', S.view === 'count' ? 'by count' : 'in thumbs'); on('RB', false, String(S.R));
+    on('turnB', false, String(S.turns)); on('scaleB', false, '× ' + S.scale.toLocaleString());
+    $('numbers').classList.toggle('open', S.nums); $('about').classList.toggle('open', S.about);
+    if (S.nums) numbers();
+}
+$('menuBtn').onclick = () => $('menu').classList.toggle('open');
+$('aboutB').onclick = () => { S.about = true; $('menu').classList.remove('open'); sync(); };
+$('aboutX').onclick = () => { S.about = false; sync(); };
+$('numB').onclick = () => { S.nums = !S.nums; sync(); };
+$('wordsB').onclick = () => { S.words = !S.words; sync(); };
+$('viewB').onclick = () => { S.view = S.view === 'count' ? 'thumbs' : 'count'; sync(); };
+$('RB').onclick = () => { S.R = S.R === 8 ? 16 : S.R === 16 ? 32 : 8; sync(); };
+$('playB').onclick = () => { S.t = 0; $('menu').classList.remove('open'); };
+// turning the look turns the thumbs with it, and scaling the world reaches no reading: the geometry is drawn again unchanged
+$('turnB').onclick = () => { S.turns++; sync(); };
+$('scaleB').onclick = () => { S.scale *= 10; sync(); };
+addEventListener('keydown', e => { if (e.key === 'Escape') { if (S.about) { S.about = false; sync(); } else $('menu').classList.remove('open'); } });
+sc.addEventListener('pointerdown', () => $('menu').classList.remove('open'));
+
+let last = performance.now();
+function frame(now) { const dt = Math.min(0.1, (now - last) / 1000); last = now;
+    if (S.t < 1) S.t = Math.min(1, S.t + dt / 2.4);           // a read drawn out over 2.4 s, from the crosshair to the horizon
+    drawScreen(); drawHill(); requestAnimationFrame(frame); }
+sync(); requestAnimationFrame(frame);
+
+window.__read = {
+    share, ringR, density, byCount, screenOf, thumbs: () => THUMBS, homes: () => HOMES, wedgeShare: () => wedgeShare,
+    cells: () => S.R * RAYS,
+    set: o => { if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t;
+        if ('az' in o) S.az = o.az * DEG; if ('el' in o) S.el = o.el * DEG; sync(); },
+    state: () => ({ view: S.view, R: S.R, cells: S.R * RAYS, t: S.t, turns: S.turns, scale: S.scale, az: S.az / DEG, el: S.el / DEG }),
+};
+})();
+</script>
+</body>
+</html>

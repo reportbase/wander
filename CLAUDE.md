@@ -187,6 +187,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `fid=addr`, by distance address: across equal angles (±75°), up the row (2/π)·atan(D/ρ) with heights at the rate
   (2/π)·D/(ρ² + D²), the thumb at the crosshair, rows one in 2, 4, 8 bunching under the horizon (labelled with words on).
   The toggle: by distance address / tunnel / equal area / by turns / silver ball / flat screen. Hook adds `addr()`, `cull()`.
+- `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
+  the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
+  screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
+  homes at 1/√2, the wedge's triangle and corner lines; the addresses in thumbs (the 3D Cauchy's density
+  1/(2π(1 + r²)^{3/2}), R rings of equal share, one thumb off at r = 1, one in 2, 4, 8) or by count (radius √share, a disc,
+  its rim the horizon of the look). Right: the density as a hill (drag to turn), contours at the same shares. Opens with
+  the read drawn out (2.4 s). Turn and scale the world change nothing. `?view=thumbs|count&R=8|16|32&words=1&about=1&play=0&az=&el=`;
+  hook `window.__read` (`share`, `ringR`, `density`, `byCount`, `screenOf`, `thumbs()`, `homes()`, `wedgeShare()`, `cells`,
+  `set`, `state`). Not in the flying page.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1567,6 +1576,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   rings bunching toward the horizon's rim.
   R689 (5 Nov; Tom: "yes, make it default"): `crosshairs.html` without N (made from cells, culled by K) and laid by
   distance address, the far world bunching under the horizon.
+  R690 (5 Nov; Tom: "lets show one of just the geometry and not get distracted by the physics."): `read.html`, the read
+  with no world: the addresses in thumbs and by count, the 3D Cauchy as a hill, the read drawn out on opening.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
