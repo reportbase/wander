@@ -66,6 +66,9 @@ the count's.
 they agree; a conflict needs a write, a mark made where something else reads or writes. In computing this is the
 condition for running operations together without a race (Bernstein 1966), and much of the work there goes into keeping
 reads and writes from meeting. Here it holds by construction: the geometry is given, and nothing writes to it.
+This is what the second test buys: a write to the payload moves no address, so it never runs into a read. A system whose
+addresses move with their contents (an array that reallocates, a table that rehashes) has to rebuild that separation by
+hand, with stable handles or copies kept for the reads.
 
 **A read is geometry, a write is physics.** A write is the recording of a read: a mark kept, discrete where the read
 was continuous, which lasts and can be counted and set beside other marks; order, nearness, durations and amounts are

@@ -7174,6 +7174,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   Bernstein (1966, checked against Crossref, doi 10.1109/pgec.1966.264565); the race is named, not explained (no locks,
   no CREW), the detail staying in `plans/rw-computing-note.md` (R641, R658). Holds by construction for the idealized read
   (R656: a sampling instrument has written).
+- **R660** (4 Nov; Tom: "In my mind, that is very strong defense of the read write framing. if geometry did not seperate
+  address from the payloads, you would have race conditions."; "yes"): **the second test is the race-freedom condition**:
+  a write to the payload moves no address (the second test), so it never meets a read (Bernstein's condition for a read
+  against a payload write). Where addresses move with contents (an array reallocating, a table rehashing, a collector
+  compacting), computing rebuilds the separation by hand (stable handles, persistent structures, copy-on-write, MVCC).
+  *Reads and Writes* §1, two sentences closing R659's paragraph. Scope: a design argument, what a system needs for free
+  reads and what geometry has without effort, not a proof that the world is so built; R659's "by construction" stands.
 
 ## Appendix B. Demos and computations
 
