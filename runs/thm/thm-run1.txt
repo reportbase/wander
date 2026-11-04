@@ -1,0 +1,22 @@
+T1 hemisphere total 1 ; density peak at r=0 (decreasing): d/dr = -3*r/(2*pi*(r**2 + 1)**(5/2))
+T1 not killed
+T2 common line of the three corner planes: [{x: z, y: z}]
+T2 rank 2 not killed
+T3 depth look readings e1/e3, e2/e3: 0 0 ; diagonal look: [1, 1, 1]
+T3 not killed
+T4 distance along look sqrt(3) ; thumb off look 54.735610 deg
+T4 not killed
+T5 edge off look 35.264390 deg
+T5 P(v<=h) on the octant 0.499990920909 (quadrature over a discontinuity; exact 1/2 by the swap symmetry)
+T5 KILLED (numeric; the 1/3 and 1/6 are WDG run 1 exact)
+T6 share of the view (screen area) in the wedge 0.5123 (grid 600x600; depends on the turn about the look:
+   turned 0 deg: 0.5139
+   turned 15 deg: 0.5111
+   turned 30 deg: 0.5031
+   turned 45 deg: 0.5111
+   turned 60 deg: 0.5139
+   turned 90 deg: 0.5031
+T6 KILLED
+T7 not killed
+T8 cos^3 at the edge 2*sqrt(6)/9 0.544331 ; at the thumbs sqrt(3)/9 0.192450
+T8 not killed
