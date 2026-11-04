@@ -7352,6 +7352,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R689** (5 Nov; Tom: "the problem with this demo is N is known, in real cauchy N is not known, only K is culled, the
+  rest of N increasingly bunces up at N.", "yes, I just look around, looking at my K, but the K is different wherever i
+  look. all the other address increasingly bunch up at the horizon. there severe distortion at the horizon, I see none
+  in these demos.", then "yes, make it default"): `crosshairs.html` drops its stored 314 things for a world without N,
+  made from its cells at every scale 2^j (j −3 to 11) as the view reaches them and never counted, a thing made only if
+  it spans a quarter of one of K addresses over a quarter turn (π/8K). Moving a thing along its ray changes no direction,
+  so no view of directions shows the bunching; the new default lays the vertical by distance address: a point ρ away
+  over the ground on the row (2/π)·atan(D/ρ) (D the thumb's ground distance; feet 1, thumb ½, horizon 0), its height at
+  the row's rate (2/π)·D/(ρ² + D²). Inside the thumb in proportion; past it a thing keeps its angular width and is
+  flattened by D/ρ beyond perspective, the bands one in 2, 4, 8 thinner each, the far world bunched under the
+  horizon. The far rows alone fall as 1/ρ, as perspective's ground does; the bunching is in the flattening. A first
+  try laying the dip by the Cauchy stretched heights κ-fold (spikes) and was replaced before shipping.
 - **R688** (5 Nov; Tom: "why does it stretch at the horizon, it should actually bunch up the addresses."): R687 laid the
   tunnel by its readings (the flat screen), where equal steps of reading near the horizon take ever more room while
   holding ever fewer addresses. Laid by its addresses instead, each ring's room is the share of addresses inside it,
