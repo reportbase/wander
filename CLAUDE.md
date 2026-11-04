@@ -146,6 +146,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (1–256, gliding): the wheel (shift+wheel now walks), a pinch, + and −, the +/− buttons bottom right, F to what is
   pointed at, 1 back; the drag and turn slow by Z. H held on an airplane keeps the look on it. `?zoom=`; hook adds
   `aim(i)`, `zoom(z, fit)`.
+  Since R682 (Tom: "When I move the cross hairs to an object, it should have perfect fidelity. Moving away from the object
+  should be increasingly distorted, by gentle at first"): the default view "true at the focus" (`fid=focus`): the radius
+  off the look R(α) = α inside the pointed thing's angular radius a₀ (gliding), a₀ + gd(√6·(α − a₀))/√6 past it, the
+  screen laid by the direction grain cosh(√6·α) (its worst pair level √6·α near the crosshair); squeeze 1% at 3.4°, 8% at
+  10°, 28% at 20°, the front half within 35.7° past a₀. The view toggles true at the focus / by turns / flat screen.
+  Hook adds `focusLay(a, a0)`, `a0`.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1512,6 +1518,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R680 (5 Nov; Tom: "Don't hide or blur the objects."): nothing hidden, dimmed or pixelated on either page; cells removed.
   R681 (5 Nov; Tom: "Add small objects on the ground and airplanes in the sky. I want to be able to zoom to both."):
   `crosshairs.html` gains small things on the ground, airplanes in the sky and a zoom; zoom is not H.
+  R682 (5 Nov; Tom: "When I move the cross hairs to an object, it should have perfect fidelity. Moving away from the
+  object should be increasingly distorted, by gentle at first"): `crosshairs.html`'s view true at the focus, laid by grain.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
