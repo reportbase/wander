@@ -282,6 +282,16 @@ the nearer home it looks. The squeeze is not round: near the corner its contours
 the touch points, toward the thumbs, it is only about twice what it is at the corner. Past the touch points lies another
 wedge, where a reading would go below zero; between them the wedge runs on in three points out to the thumbs.
 
+Where, then, are the corners? Each pair of thumbs has its own, everywhere the two read alike: a plane through the eye, a
+straight line on the screen through the crosshair. The three lines cross only there, 120° apart, the medians of the
+triangle the wedge makes seen from home. Along each line the pair reads one all the way, and the third thumb, against
+them, runs a whole quarter turn: from home, at the circle's touch point 35.26° off the look, through its corner at the
+crosshair, to the horizon at that thumb's own direction, 54.74° off on the other side. 35.26° and 54.74° make 90°. So the
+view down the diagonal is three of the plane's quarter turns laid across one another, each with its corner under the
+crosshair, its home on the one-thumb circle and its horizon out at a thumb. That is what makes the crosshair the corner of
+all three, and why the near-field side of each line is the shorter. In depth, the corner is the thing pointed at, one
+thumb along each thumb.
+
 *Demo: crosshairs in a field (fidelity: compress, the one-thumb circle and its three homes).*
 
 ---

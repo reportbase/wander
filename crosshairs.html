@@ -44,7 +44,8 @@
     thumb circle around the cross hairs"; THM runs 2–3, R673): "blur by grain" replaced by "compress": each thing drawn
     shrunk about its own centre by the grain of its direction, cosh of its worst pair level ln(n·eᵢ/n·eⱼ), 1 at the crosshair,
     growing as 1/(2·reading) toward home; the one-thumb circle (the outline of one thumb's ball about the crosshair's point,
-    35.26° about the look, fixed) drawn with home at its three touch points.
+    35.26° about the look, fixed) drawn with home at its three touch points. The three corners (R676): each pair's corner
+    line through the crosshair, from home (35.26°) to the horizon at the third thumb (54.74°), a quarter turn.
     Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
     &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=compress|cells|off.
     Test hook: window.__crosshairs (objects, target, H, read, readings, frame, lay, addresses, counts, pick, set (with words,
@@ -196,6 +197,11 @@
     corner is its centre; home is on it, at the three points where it touches (gold dots), where one reading is zero. So
     the circle runs from the corner out to home, not from undistorted to compressed. Past those points lies another wedge;
     between them the wedge runs on in three points out to the thumbs, 54.74° off.</li>
+    <li><b>The three corners.</b> Each pair of thumbs has its own corner, where the two read alike: a line on the screen
+    through the crosshair (drawn faint gold). Along it lies a whole quarter turn of the third thumb against the pair: home at
+    the circle's dot (35.26° off the look), the corner at the crosshair, the horizon at the third thumb's own direction
+    (the ring, 54.74° off on the other side); 35.26° + 54.74° = 90°. Three quarter turns, crossed, each with its corner on
+    the crosshair: that is why it is the corner of all three.</li>
     <li><b>Address cells</b> (menu: fidelity). The view drawn through the cells themselves, a quarter turn holding K of
     them: smallest at the crosshair, growing outward on the flat screen (the cos³ thinning). Part of this growth is the flat
     screen's, not the reader's: in turn every cell is the same size.</li>
@@ -493,7 +499,20 @@ function drawView() {
         vc.strokeStyle = 'rgba(212,160,82,0.35)'; vc.lineWidth = 1.2 * dpr; vc.setLineDash([5 * dpr, 6 * dpr]);
         vc.beginPath(); vc.arc(cx, cy, f / Math.SQRT2, 0, 2 * Math.PI); vc.stroke(); vc.setLineDash([]);
         const A = F.ax; vc.fillStyle = 'rgba(212,160,82,0.9)'; vc.textAlign = 'center'; vc.font = `${10 * dpr}px DM Mono, monospace`;
-        S.lastHomes = [];
+        S.lastHomes = []; S.lastCorners = [];
+        // The three corners (R676): each pair's corner (the two reading alike) is a plane through the eye, a straight line
+        // on the screen through the crosshair. Along it lies a whole quarter turn of the third thumb against the pair:
+        // home at the circle's touch point (35.26° off the look), the corner at the crosshair, the horizon at the third
+        // thumb's own direction (54.74° off, the other side). 35.26° + 54.74° = 90°.
+        const scr = d => { const c = cam([e[0] + d[0], e[1] + d[1], e[2] + d[2]]); return c[2] > 0 ? [cx + f * c[0] / c[2], cy - f * c[1] / c[2]] : null; };
+        for (const [a, b, t] of [['h', 'v', 'd'], ['v', 'd', 'h'], ['d', 'h', 'v']]) {
+            const hm = scr([0, 1, 2].map(n => A[a][n] + A[b][n])), hz = scr(A[t]);
+            if (hm && hz) { S.lastCorners.push({ home: hm, horizon: hz });
+                vc.strokeStyle = 'rgba(212,160,82,0.28)'; vc.lineWidth = 1.2 * dpr; vc.beginPath(); vc.moveTo(...hm); vc.lineTo(...hz); vc.stroke();
+                vc.strokeStyle = 'rgba(212,160,82,0.7)'; vc.beginPath(); vc.arc(hz[0], hz[1], 4.5 * dpr, 0, 2 * Math.PI); vc.stroke();
+                if (S.words > 0) { vc.fillStyle = 'rgba(212,160,82,0.9)'; vc.fillText('horizon', hz[0], hz[1] - 9 * dpr); } }
+        }
+        vc.fillStyle = 'rgba(212,160,82,0.9)';
         for (const [a, b] of [['h', 'v'], ['v', 'd'], ['d', 'h']]) {
             const dir = [0, 1, 2].map(n => A[a][n] + A[b][n]), c = cam([e[0] + dir[0], e[1] + dir[1], e[2] + dir[2]]);
             if (c[2] <= 0) continue;
@@ -696,7 +715,7 @@ requestAnimationFrame(frame);
 window.__crosshairs = {
     objects: () => FIELD.map(o => ({ i: o.i, kind: o.kind, d: dist(o) })),
     target: () => S.target, H: () => S.Hshow,
-    grain: i => grainOf(read(FIELD[i])), shrink: i => shrinkOf(FIELD[i]), dirGrain: d => dirGrain(d), homes: () => S.lastHomes, cells: () => S.lastCells, read: i => read(FIELD[i]), readings: i => readings(FIELD[i]), frame: () => frameOf(), lay, addresses, counts, pick,
+    grain: i => grainOf(read(FIELD[i])), shrink: i => shrinkOf(FIELD[i]), dirGrain: d => dirGrain(d), homes: () => S.lastHomes, corners: () => S.lastCorners, cells: () => S.lastCells, read: i => read(FIELD[i]), readings: i => readings(FIELD[i]), frame: () => frameOf(), lay, addresses, counts, pick,
     set(o = {}) { if ('yaw' in o) S.yaw = o.yaw * DEG; if ('pitch' in o) S.pitch = o.pitch * DEG; if ('x' in o) S.x = o.x; if ('z' in o) S.z = o.z;
         if ('k' in o) { const r = o.k / S.k; S.k = o.k; S.H *= r; S.Hshow *= r; } if ('hold' in o) S.hold = !!o.hold; if ('K' in o) S.K = o.K;
         if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); if ('fid' in o) S.fid = o.fid; syncMenu();

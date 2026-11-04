@@ -7287,6 +7287,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   crosshair at home; the corner of all three only down the diagonal; one thumb along each, √3 along the look; the
   one-thumb circle, 35.26°, corner at its centre and home on it; compression, not blur, as 1/(2·reading)); essay 4's
   crosshairs paragraph points to it; README and the demos card follow.
+- **R676** (5 Nov; Tom: "Where are the corners", then "yes, both"): each pair's corner is a plane through the eye, a line on
+  the screen through the crosshair (the three cross only there, 120° apart, the triangle's medians); along it the third
+  thumb runs a quarter turn against the pair, home at the circle's touch point (35.26°), corner at the crosshair, horizon
+  at that thumb (54.74°, the other side). Drawn on `crosshairs.html` (compress mode; hook `corners`), and in essay 5's
+  "Three thumbs at the crosshair".
 
 ## Appendix B. Demos and computations
 
