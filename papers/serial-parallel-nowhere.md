@@ -7352,6 +7352,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R688** (5 Nov; Tom: "why does it stretch at the horizon, it should actually bunch up the addresses."): R687 laid the
+  tunnel by its readings (the flat screen), where equal steps of reading near the horizon take ever more room while
+  holding ever fewer addresses. Laid by its addresses instead, each ring's room is the share of addresses inside it,
+  1 − 1/√(1 + r²) = 1 − cos α, so its radius is 2·sin(α/2), the hemisphere's equal-area map: the corner (one thumb off)
+  at 0.765, one in 2, 4, 8 at 1.051, 1.231, 1.324, bunching toward the horizon's rim at √2, which no reading reaches. Flat
+  shading (every address alike). The 2D Cauchy's thinning in the readings and the rings' bunching on the screen are one
+  fact. R687's zoom out below 1 removed.
 
 ## Appendix B. Demos and computations
 

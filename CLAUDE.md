@@ -175,9 +175,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the dashed circle at √2, straight behind the rim; lines crossing the rim's seam are not drawn; zoom in from it. Hook adds
   `sky()` (the disc's centre, rim and forward-half radii, or null), and `set` takes `sky`.
   Since R687 (Tom: "the real cacuhy view is a tunnel not a sphere."; "it is a cauchy tunnel."): the default view is the
-  Cauchy tunnel (`fid=tunnel`, *Reads and Writes* §7): each direction at its readings off the line of sight in thumbs
-  (r = tan α, a thumb `TUNNEL_T` = a third of the half shorter side), shaded by the Cauchy, rings at the corner and one in 2,
-  4, 8 (labelled with words on), zoom down to 1/16 there to see more of it; the whole sky is relabelled "the writer's
+  Cauchy tunnel (`fid=tunnel`, *Reads and Writes* §7): the readings off the line of sight (r = tan α thumbs) laid by their
+  addresses (R688; Tom: "why does it stretch at the horizon, it should actually bunch up the addresses."), radius
+  2·sin(α/2) so equal room holds equal addresses, the rings at the corner (0.765) and one in 2, 4, 8 (1.05, 1.23, 1.32)
+  bunching toward the horizon's rim at √2 (labelled with words on), flat shading; the whole sky is relabelled "the writer's
   sphere". The toggle: tunnel / equal area / by turns / silver ball / flat screen. Hook adds `tunnel()`.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
@@ -1555,6 +1556,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R686 (5 Nov; Tom: "do the whole sky"): `crosshairs.html`'s whole sky, equal area to every direction, the sphere a disc.
   R687 (5 Nov; Tom: "it is a cauchy tunnel."): the whole sky is the writer's sphere, an option; the default is *Reads and
   Writes* §7's Cauchy tunnel, the readings off the look in thumbs.
+  R688 (5 Nov; Tom: "it should actually bunch up the addresses."): the tunnel laid by its addresses, 2·sin(α/2), the
+  rings bunching toward the horizon's rim.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

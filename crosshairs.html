@@ -55,8 +55,9 @@
     over the corner's; in the thumbs' levels distance and direction are orthogonal.
     Links: ?yaw=<degrees>&pitch=<degrees>&x=&z=&zoom=&seed=&K=16|32|64&k=<log10 k>&hold=1&words=0|1|2 (labels=1 is words=2)
     &about=1&read=1&map=1&strip=1&hud=1&cube=0&density=0&fid=tunnel|area|compress|round|off (cells and blur read as compress)&sky=1.
-    The Cauchy tunnel (R687; Tom: "it is a cauchy tunnel"), the default: Reads and Writes §7's tunnel, each direction at its
-    readings off the line of sight in thumbs, the Cauchy's shading, rings at the corner and one in 2, 4, 8; zoom out to 1/16.
+    The Cauchy tunnel (R687, R688; Tom: "it is a cauchy tunnel"), the default: Reads and Writes §7's tunnel, the readings off
+    the line of sight laid by their addresses (radius 2·sin(α/2), equal room equal addresses), the rings at the corner and
+    one in 2, 4, 8 bunching toward the horizon's rim at √2.
     The whole sky (R686; Tom: "do the whole sky"): the menu's "the whole sky", the ◯ button or O: the equal-area view carried to
     every direction, the sphere a disc of radius 2, straight behind its rim and the forward half inside √2; zoom in from it.
     Test hook: window.__crosshairs (objects, target, H, read, readings, frame, lay, addresses, counts, pick, set (with words,
@@ -234,10 +235,10 @@
     comes from what the crosshairs pass through: zoom onto an airplane and H is its distance, onto a stone at your feet and
     H is a step. Held on an airplane, the look follows it as it flies.</li>
     <li><b>The views</b> (menu: view). The Cauchy tunnel, the default: what the crossed thumbs give where you look.
-    Each direction is drawn at its readings off the line of sight, in thumbs, on a screen held square to the look; the
-    directions crowd toward the line of sight and thin out by the Cauchy toward a horizon never reached. The rings are the
-    tunnel's walls: the corner one thumb off, then one in 2, one in 4, one in 8. Zoom out and more of the tunnel shows; it
-    never ends, and nothing is behind it. Equal area, the default: the reader's addresses are the directions laid evenly by
+    Each direction's reading off the line of sight, in thumbs, is laid by its addresses: every ring of the screen holds as
+    many addresses as its room, so the Cauchy's thinning becomes the rings bunching. The rings are the tunnel's walls: the
+    corner one thumb off, then one in 2, one in 4, one in 8, each closer to the last, toward the horizon's rim, which no
+    reading reaches. Nothing is behind it. Equal area, the default: the reader's addresses are the directions laid evenly by
     area, and this is the screen that gives each the same room (Lambert's equal-area projection about the crosshair,
     radius 2·sin(α/2)). True at the crosshair, squeezed along the radius by cos(α/2) and widened across by as much, so the
     distortion is nothing at first and grows: under 1% at 15°, 3% at 30°, 8% at 45°. The shading, the directions per bit
@@ -349,7 +350,7 @@ const S = {
         hud: Q.get('hud') === '1', cube: Q.get('cube') !== '0', density: Q.get('density') !== '0' },
     target: -1, H: 10, Hshow: 10, walkT: 0,
     // the zoom (Z, 1 to 256): how many times nearer the view looks, gliding on its logarithm as H does
-    Z: Math.max(1 / 16, Math.min(ZMAX, num('zoom', 1))), Zshow: Math.max(1 / 16, Math.min(ZMAX, num('zoom', 1))),
+    Z: Math.max(1, Math.min(ZMAX, num('zoom', 1))), Zshow: Math.max(1, Math.min(ZMAX, num('zoom', 1))),
     // the view (R672, R679, R680): 'compress' laid by turns off the look, or 'off' the flat screen; nothing hidden or blurred
     // since R682 'focus' (the default): laid by the address grain off the thing pointed at (FOCUS below)
     // since R684 by turns again by default (Tom, of the round lay: "it interesting, keep it as an option, but its heavily
@@ -504,15 +505,17 @@ function focusLay(a, a0 = S.a0show) { return a <= a0 ? a : a0 + gd(FOCUS_C * (a 
 function focusUnlay(r, a0 = S.a0show) { if (r <= a0) return r; const y = (r - a0) * FOCUS_C;
     return y >= Math.PI / 2 - 1e-9 ? Math.PI / 2 : a0 + gdInv(y) / FOCUS_C; }
 // The Cauchy tunnel (R687; Tom: "the real cacuhy view is a tunnel not a sphere", "it is a cauchy tunnel"; Reads and
-// Writes §7): what the crossed thumbs give where the reader looks. Each direction is laid as its readings off the line
-// of sight, (v/h, v₂/h), on a screen held square to the look, a thumb to TUNNEL_T of the screen (r thumbs off the line of
-// sight is r = tan α). There the directions crowd toward the line of sight and thin out by the Cauchy,
-// 1/(2π(1 + r²)^(3/2)) per unit of screen, toward a horizon (r = ∞, 90°) never reached; the rings one thumb off (the
-// corner), then one in 2, one in 4, one in 8 are the tunnel's walls, closing in toward the look. Zoom out (below 1) and
-// more of the tunnel shows; it never ends. Nothing is drawn behind the reader: the sphere is the writer's (the whole sky).
-const TUNNEL_T = 3;
+// Writes §7): what the crossed thumbs give where the reader looks, the readings off the line of sight, (v/h, v₂/h), r
+// thumbs off (r = tan α), whose addresses are the Cauchy, 1/(2π(1 + r²)^(3/2)) per unit of the readings' plane.
+// Laid by readings (the flat screen) the horizon stretched (R688; Tom: "why does it stretch at the horizon, it should
+// actually bunch up the addresses."): equal steps of reading near 90° took ever more room while holding ever fewer
+// addresses. So the tunnel is laid by its addresses: each ring's radius the share of the addresses inside it, so equal
+// room holds equal addresses. The share within r is 1 − 1/√(1 + r²) = 1 − cos α, and room in proportion to it is the
+// radius √(2(1 − cos α)) = 2·sin(α/2), the hemisphere's equal-area map: true at the crosshair, the corner (one thumb off)
+// at 0.765, one in 2, 4, 8 at 1.05, 1.23, 1.32, bunching toward the horizon's rim at √2, reached by no reading. Nothing
+// is drawn behind it: the sphere is the writer's (the whole sky).
 const VIEWS = {
-    tunnel: { R: a => Math.tan(a), inv: r => Math.atan(r), name: 'the Cauchy tunnel' },
+    tunnel: { R: a => 2 * Math.sin(Math.min(a, Math.PI / 2) / 2), inv: r => 2 * Math.asin(Math.min(Math.SQRT1_2, r / 2)), name: 'the Cauchy tunnel' },
     area: { R: a => 2 * Math.sin(a / 2), inv: r => 2 * Math.asin(Math.min(1, r / 2)), name: 'equal area (the addresses)' },
     compress: { R: a => a, inv: r => r, name: 'by turns' },
     round: { R: a => focusLay(a), inv: r => focusUnlay(r), name: 'silver ball (approximate)' },
@@ -545,10 +548,9 @@ function drawView() {
     const sky = S.sky, FID = sky ? 'area' : S.fid;
     const angle = FID !== 'off', VW = VIEWS[FID];
     const tunnel = !sky && FID === 'tunnel';
-    const fa = sky ? Z * 0.94 * (Math.min(W, Hh) / 2) / 2 : tunnel ? Z * (Math.min(W, Hh) / 2) / TUNNEL_T : Z * (Math.min(W, Hh) / 2) / (fov / 2);
+    const fa = sky ? Z * 0.94 * (Math.min(W, Hh) / 2) / 2 : tunnel ? Z * 0.94 * (Math.min(W, Hh) / 2) / Math.SQRT2 : Z * (Math.min(W, Hh) / 2) / (fov / 2);
     S.lastSky = sky ? { cx, cy, rim: 2 * fa, front: Math.SQRT2 * fa } : null;
     const P = c => { if (!angle) return [cx + f * c[0] / c[2], cy - f * c[1] / c[2]];
-        if (tunnel) return [cx + fa * c[0] / c[2], cy - fa * c[1] / c[2]];   // readings in thumbs, straight lines straight
         const rho = Math.hypot(c[0], c[1]), a = Math.atan2(rho, c[2]);
         const R = VW.R(a), k = rho > 0 ? fa * R / rho : 0;
         return [cx + k * c[0], cy - k * c[1]]; };
@@ -563,26 +565,30 @@ function drawView() {
     }
     // The 3D Cauchy, centred on the crosshair: the directions, laid evenly by area, per unit of this view's screen,
     // sin α/(R·R′) (R685): cos³α on the flat screen, sin α/α by turns, flat on the equal-area view. Shaded faintly.
-    if (S.show.density && sky) {             // flat on the equal-area view: every direction alike, the disc evenly
-        vc.fillStyle = 'rgba(212,160,82,0.11)'; vc.beginPath(); vc.arc(cx, cy, 2 * fa, 0, 2 * Math.PI); vc.fill();
+    if (S.show.density && (sky || tunnel)) { // flat when laid by the addresses: every address alike, the disc evenly
+        vc.fillStyle = 'rgba(212,160,82,0.11)'; vc.beginPath(); vc.arc(cx, cy, (sky ? 2 : Math.SQRT2) * fa, 0, 2 * Math.PI); vc.fill();
     } else if (S.show.density) {
         const R = Math.hypot(W, Hh) / 2, gr = vc.createRadialGradient(cx, cy, 0, cx, cy, R);
         for (let i = 0; i <= 8; i++) { const a = VW.inv(i / 8 * R / (angle ? fa : f));
             gr.addColorStop(i / 8, `rgba(212,160,82,${0.11 * Math.max(0, viewDensity(FID, a))})`); }
         vc.fillStyle = gr; vc.fillRect(0, 0, W, Hh);
     }
-    if (tunnel) {                            // the walls: one thumb off (the corner), then one in 2, 4, 8, … to the edge
+    if (tunnel) {                            // the walls: one thumb off (the corner), then one in 2, 4, 8, … bunching
         vc.lineWidth = 1 * dpr; vc.font = `${10 * dpr}px DM Mono, monospace`; vc.textAlign = 'center';
-        const far = Math.hypot(W, Hh) / 2 / fa;
-        for (let r = 1, n = 0; r <= far && n < 24; r *= 2, n++) {
-            vc.strokeStyle = r === 1 ? 'rgba(212,160,82,0.32)' : `rgba(200,200,220,${0.16 * Math.pow(0.85, n)})`;
-            vc.setLineDash(r === 1 ? [] : [3 * dpr, 5 * dpr]);
-            vc.beginPath(); vc.arc(cx, cy, fa * r, 0, 2 * Math.PI); vc.stroke();
-            if (S.words > 0 && fa * r < Math.min(W, Hh) / 2 - 12 * dpr) { vc.fillStyle = 'rgba(200,200,220,0.5)';
-                vc.fillText(r === 1 ? 'the corner, one thumb off' : 'one in ' + r, cx, cy + fa * r + 12 * dpr); }
+        const rings = [], rim = Math.SQRT2 * fa;
+        let lastLab = -1e9;
+        for (let r = 1, n = 0, prev = 0; n < 40; r *= 2, n++) {
+            const Rr = fa * VW.R(Math.atan(r)); if (Rr - prev < 1.5 * dpr || rim - Rr < 1.5 * dpr) break; prev = Rr; rings.push([r, Rr]);
+            vc.strokeStyle = r === 1 ? 'rgba(212,160,82,0.4)' : `rgba(200,200,220,${0.22 * Math.pow(0.88, n)})`;
+            vc.setLineDash(r === 1 ? [] : [3 * dpr, 4 * dpr]);
+            vc.beginPath(); vc.arc(cx, cy, Rr, 0, 2 * Math.PI); vc.stroke();
+            if (S.words > 0 && Rr - lastLab > 13 * dpr) { lastLab = Rr; vc.fillStyle = 'rgba(200,200,220,0.5)';
+                vc.fillText(r === 1 ? 'the corner, one thumb off' : 'one in ' + r, cx, cy + Rr + 11 * dpr); }
         }
         vc.setLineDash([]);
-        S.lastTunnel = { cx, cy, thumb: fa };
+        vc.strokeStyle = 'rgba(200,200,220,0.3)'; vc.beginPath(); vc.arc(cx, cy, rim, 0, 2 * Math.PI); vc.stroke();
+        if (S.words > 0) { vc.fillStyle = 'rgba(200,200,220,0.55)'; vc.fillText('the horizon, never reached', cx, cy - rim - 6 * dpr); }
+        S.lastTunnel = { cx, cy, scale: fa, rim, rings };
     } else S.lastTunnel = null;
     const F = frameOf(), RD = new Map(FIELD.map(o => [o.i, read(o, F)]));
     const e = eye(), cyw = Math.cos(S.yaw), syw = Math.sin(S.yaw), cp = Math.cos(S.pitch), sp = Math.sin(S.pitch);
@@ -799,13 +805,12 @@ const endDrag = ev => { if (!drag) return; drag = null; view.style.cursor = 'gra
 view.addEventListener('wheel', ev => { ev.preventDefault();
     if (ev.shiftKey) { const d = S.H * ROOT3 / S.k; walkBy(Math.max(2, 0.1 * d) * Math.sign(-(ev.deltaY || ev.deltaX)), 0); return; }
     zoomBy(Math.exp(-Math.max(-3, Math.min(3, ev.deltaY / 100)) * 0.2)); }, { passive: false });
-// the tunnel never ends, so there one may zoom out to 1/16, sixteen times as many thumbs; the other views stop at 1
-const zmin = () => S.fid === 'tunnel' && !S.sky ? 1 / 16 : 1;
+const zmin = () => 1;
 function zoomBy(m) { S.Z = Math.max(zmin(), Math.min(ZMAX, S.Z * m)); syncMenu(); }
 // zoom to what is pointed at: its size half the shorter side
 function zoomFit() { const o = FIELD[S.target]; if (!o) { S.Z = 1; syncMenu(); return; }
     const a = Math.atan2(radius(o), dist(o));
-    S.Z = Math.max(zmin(), Math.min(ZMAX, S.fid === 'tunnel' && !S.sky ? 0.5 * TUNNEL_T / Math.tan(a) : 0.5 * (42 * DEG) / a)); syncMenu(); }
+    S.Z = Math.max(zmin(), Math.min(ZMAX, S.fid === 'tunnel' && !S.sky ? Math.SQRT2 / (4 * 0.94 * Math.sin(a / 2)) : 0.5 * (42 * DEG) / a)); syncMenu(); }
 // two fingers pinch to zoom
 const touches = new Map(); let pinch0 = null;
 view.addEventListener('pointerdown', ev => { touches.set(ev.pointerId, [ev.clientX, ev.clientY]);
