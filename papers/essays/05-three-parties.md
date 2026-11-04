@@ -91,7 +91,8 @@ not.
 
 The third essay's picture, a hand held up to a stained-glass window, carries over with both hands. One hand spreads its
 fingers from flat to upright, the altitude; the other spreads its fingers round the horizontal, the azimuth. The two thumbs
-cross at a right angle, and where they cross is the triple corner, where both read 1. Each pane now lines up with a
+cross at a right angle, and where they cross is the triple corner, where both read 1 (as an address: it lies under the line
+of sight only when the look runs down the thumbs' diagonal, section 10). Each pane now lines up with a
 crossing, one finger of each hand, and that pair of fingers is the address: a direction, (v/h, v₂/h). The colour at each
 crossing is the payload, and still no colour carries a distance. Two hands add no second length: both thumbs are the one H,
 and the right angle between them is a quarter turn, no amount. (For every crossing to hold the same share of the window,
