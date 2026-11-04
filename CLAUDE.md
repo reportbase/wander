@@ -1592,6 +1592,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   §7 ("Where the reader stands") and Code and data.
   R693 (5 Nov; Tom: "so the cauchy is the same regardless, but you can drag the near field in or out.", then "Yes"):
   `read.html`'s strip, H dragged, the things sliding along addresses that never move.
+  R694 (5 Nov; Tom: "update the essays"): R693 in essay 4 §11 ("Dragging the thumb") and essay 5 §10; the essays page.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
