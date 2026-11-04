@@ -440,6 +440,12 @@ unbounded world. Tables fixed in advance (a sampling grid, a histogram's bins, a
 extent they cover and the resolution they need, and are rebuilt when either changes. The turn's addresses need neither;
 what needs them is the payload or the writer.
 
+**A world made where the view reaches.** A program that recreates the reader's view need not store a world at all. Make
+each thing from its cell, at every scale, only when the view reaches that cell, and keep only what spans a quarter of one
+address, π/8K; give each thing a key so that it is the same thing when made again. The view's work is then K whatever the
+world holds, and there is no N anywhere to know. `crosshairs.html` draws its field that way, and lays its far field by
+distance address, the bands one in 2, 4, 8 packing ever thinner under the horizon.
+
 **H is a zoom, not an escape.** A reader could choose a very large H, a big thumb, and hold everything in proportion, with
 no logarithm. The cost is detail: with K addresses spread over a very large H, everything at the reader's own scale falls
 inside the first. With n addresses across the near field, a thing covering d to d + Δ spans nΔ/H of them inside the corner,
