@@ -106,7 +106,8 @@ The Cauchy is the other way round: the even turn laid on that flat grid,
   dθ/ds = 1/(1 + s²),  dΩ/dA = cos³α,
 
 the turn per unit of the writer's grid. It is a rate, the *per* of essay 14: how much of the looking per tile. The tiles
-are the writer's; the turn is the reader's; the Cauchy is how one sits on the other. It is not the layout of the world.
+are the writer's; the turn is the reader's; the Cauchy is how one sits on the other. It belongs neither to the wall alone
+nor to the eye alone: it is the rate at which a turn consumes the world. It is not the layout of the world.
 
 ## 4. The same map, from a walker
 
@@ -135,7 +136,10 @@ wall's own measure.
 Two cautions keep this honest.
 
 The walker's map is Laplace's: a steady state, with no time in it. It is not the heat equation, whose kernel is the
-Gaussian, e^(−tk²) in frequency; mixing them up would bring the Gaussian back where it does not belong. The "heat" of the
+Gaussian, e^(−tk²) in frequency; mixing them up would bring the Gaussian back where it does not belong. The Gaussian
+too keeps every frequency, its transform never zero; what differs is that it damps the fine ones by k² where the Cauchy
+damps by |k|, and that it has a variance where the Cauchy has only a scale. The kernel that loses frequencies outright is
+the floor's box blur, whose transform has zeros. The "heat" of the
 heat map is a weight over the readings, not diffusion in time.
 
 And on a sphere the two part. Seen from inside a ball, the walker's landings and the turn's directions carried through a
