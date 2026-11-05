@@ -7352,6 +7352,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R721** (5 Nov; Tom: "lets work on the math. I know cauchy shows up for a variety of reasons, not just ours.", then
+  "ok"): a working note, `plans/cauchy-routes.md`, checked in `runs/crt/` at 30 digits. Run 1 had two misses from my
+  quadrature, fixed in run 2.
+  - Every Cauchy is the Poisson kernel seen from a point z = m + iγ. The routes in are the turn (with the isotropic ratio
+    and the stereographic view), diffusion and its hitting-time mixture, a pole, stable sums and Möbius closure.
+  - In the plane they are one measure. On a flat boundary they agree in every dimension. On a curved boundary they part:
+    0.482 against 0.359 in the ball.
+  - Routes are told apart only by what γ tracks (a distance, a rate, a sum) and by the boundary's shape.
+  - The 2Dt at p = ½ is exactly the hitting-time mixture, so TCF's seeds (p ≈ 0.1) are harmonic by no route.
+  - "Find the turn" becomes "find the z". No paper change until Tom rules.
 - **R720** (5 Nov; Tom: "update the essays and demos"): R718–R719 carried out.
   - `cauchy-map.html` gains a panel, "Where no turn can be found: seeds". It draws the 35 fitted wind kernels at their own
     scales against the turn's p = ½, with their fitted p against the band predicted beforehand. Hook `seeds()`.

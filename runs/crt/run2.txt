@@ -1,0 +1,15 @@
+1 turn: uniform direction from z, straight to the line     max |difference| 9.86e-32
+2 ratio Y/X of a rotation-invariant (uniform-disc) pair    max |difference| 9.86e-32
+3 normal mixed over the Levy hitting time (Brownian exit)  max |difference| 4.93e-32
+4a pole: (g/pi)|1/(x - z)|^2 = p(x) = (1/pi) Im 1/(x - z)  max |difference| 2.47e-32
+4b Fourier pair: e^{imt - g|t|}, a damped oscillation      max |difference| 4.93e-32
+5 stable sum: C(z1)*C(z2) = C(z1 + z2)                     max |difference| 2.47e-32
+6 Moebius image: (aX + b)/(cX + d) of C(z) is C(g(z))      max |difference| 9.86e-32
+7 stereographic: uniform on a circle seen from a point of it max |difference| 1.23e-32
+8 flat boundary, n = 3, 4, 5: hemisphere landing = Poisson kernel max |difference| 9.86e-32
+9 curved boundary (ball, r0 = 1/2, cap 45 deg): harmonic   0.48210248   straight turn 0.35945768   they part by 0.123
+10 2Dt(p) = Gaussian mixed over InvGamma(p): p = 0.1, 0.5, 2 max |difference| 1.73e-31
+10b at p = 1/2, u = g^2: the 3D hemisphere/hitting law     max |difference| 1.23e-32
+
+all routes land on the Poisson kernel to 1e-20
+the curved boundary parts the turn from harmonic measure
