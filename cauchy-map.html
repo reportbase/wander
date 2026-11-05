@@ -108,6 +108,19 @@
         the first map, the heat is greatest at one point: on the look, one thumb out, the thing looked at.</p>
     </div>
 
+    <div class="panel">
+        <h2>Where no turn can be found: seeds</h2>
+        <canvas id="cv6" height="300"></canvas>
+        <p class="cap">The test that could fail, and did (TCF). A seed leaving a plant straight, every downward direction
+        alike, would land as the hemisphere's Cauchy: Clark's 2Dt with shape p = ½, its tail falling as r⁻³ (gold).
+        Thin lines: the 2Dt fitted to each of the 35 wind-dispersed kernels in Bullock et al.'s compilation (2017), each
+        drawn at its own scale (distance over √u, density over its value at the foot), dashed where the fit ended on a
+        bound. Below, each fit's p on a log axis against the band [0.3, 0.8] predicted beforehand. The tails are fatter,
+        about r⁻², and the shapes spread widely, as a mixture over wind speeds makes them: amounts, not a turn. A fat tail
+        alone does not find a turn.</p>
+        <pre id="read6" class="read"></pre>
+    </div>
+
     <p class="note">Essay 17, "The Cauchy map: heat given, paint met"; <i>Reads and Writes</i> §7, "Where the heat
     comes from". Harmonic measure as a walker's landing: Kakutani (1944). Other demos: <a
     href="plane-sphere.html">why the plane is special</a> (where the walker and the turn part, on a sphere), <a
@@ -251,15 +264,47 @@
         txt(g, 'distance (log axis) →', W - 150, Hh - 26, '#8a8a96', 10);
     }
 
+    // TCF run 1 (plans/tcf-plan.md, runs/tcf/run1.txt): each primary wind kernel's fitted p, and whether the fit ended on a bound
+    const SEEDS = [[0.288,0],[0.574,0],[0.02,1],[0.02,1],[1.328,0],[0.642,0],[0.274,1],[1.156,0],[0.395,0],[0.02,1],[0.198,1],[0.136,1],[50.0,1],[0.02,1],[0.02,1],[2.21,0],[0.02,1],[0.492,0],[1.515,0],[0.02,1],[0.104,0],[0.124,0],[0.78,0],[2.189,0],[0.02,1],[0.02,1],[0.02,1],[0.352,0],[0.02,1],[0.02,1],[0.02,1],[0.02,1],[0.02,1],[0.02,1],[0.02,1]];
+    function seeds() { const ps = SEEDS.map(x => x[0]).sort((a, b) => a - b), n = ps.length;
+        const med = n % 2 ? ps[(n - 1) / 2] : (ps[n / 2 - 1] + ps[n / 2]) / 2;
+        return { n, median: med, outside: ps.filter(p => p < 0.15 || p > 1.5).length / n, onBound: SEEDS.filter(x => x[1]).length,
+            predicted: 0.5, band: [0.3, 0.8], medianTailSlope: -2.02, predictedSlope: -3 }; }
+    function drawSeeds() {
+        const [g, W, Hh] = fit($('cv6')), top = Hh - 70;
+        const lx0 = -1, lx1 = 2, ly0 = -5, ly1 = 0;
+        const X = l => 40 + (W - 60) * (l - lx0) / (lx1 - lx0), Y = l => 12 + (top - 24) * (ly1 - l) / (ly1 - ly0);
+        g.strokeStyle = 'rgba(255,255,255,0.25)'; g.beginPath(); g.moveTo(40, Y(ly0)); g.lineTo(40, Y(ly1)); g.moveTo(40, Y(ly0)); g.lineTo(W - 20, Y(ly0)); g.stroke();
+        for (let l = lx0; l <= lx1; l++) txt(g, `10^${l}`, X(l) - 10, Y(ly0) + 12, '#8a8a96', 10);
+        txt(g, 'r / √u →', W - 70, Y(ly0) - 6, '#8a8a96', 10);
+        const curve = (p, col, w, dash) => { g.strokeStyle = col; g.lineWidth = w; g.setLineDash(dash || []); g.beginPath();
+            for (let i = 0; i <= 200; i++) { const l = lx0 + (lx1 - lx0) * i / 200, x = 10 ** l, v = Math.log10((1 + x * x) ** -(p + 1));
+                const pt = [X(l), Y(Math.max(ly0, v))]; i ? g.lineTo(...pt) : g.moveTo(...pt); } g.stroke(); g.setLineDash([]); g.lineWidth = 1; };
+        for (const [p, b] of SEEDS) curve(Math.min(p, 8), b ? 'rgba(181,156,240,0.35)' : 'rgba(140,230,205,0.6)', 1, b ? [3, 3] : null);
+        curve(0.5, '#d4a052', 2.5);
+        txt(g, "the turn's: p = ½, tail r⁻³", X(0.6), Y(-2.2), '#d4a052', 11);
+        // the p strip
+        const sy = Hh - 34, P0 = -2, P1 = 2, PX = l => 40 + (W - 60) * (l - P0) / (P1 - P0);
+        g.fillStyle = 'rgba(212,160,82,0.18)'; g.fillRect(PX(Math.log10(0.3)), sy - 12, PX(Math.log10(0.8)) - PX(Math.log10(0.3)), 24);
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(40, sy); g.lineTo(W - 20, sy); g.stroke();
+        for (const l of [-2, -1, 0, 1, 2]) txt(g, `${10 ** l}`, PX(l) - 8, sy + 24, '#8a8a96', 10);
+        SEEDS.forEach(([p, b], i) => { g.fillStyle = b ? '#b59cf0' : '#8ce6cd'; g.beginPath();
+            g.arc(PX(Math.log10(p)), sy + ((i % 5) - 2) * 3, 3, 0, 2 * Math.PI); g.fill(); });
+        txt(g, 'fitted p (log axis); the band predicted beforehand shaded', 44, sy - 16, '#8a8a96', 10);
+        const r = seeds();
+        $('read6').textContent = `${r.n} wind kernels fitted (${r.onBound} ended on a bound): median p ${r.median.toFixed(3)} against ½, ` +
+            `${Math.round(r.outside * 100)}% outside [0.15, 1.5]; median tail slope ${r.medianTailSlope} against −3. T1 and T5 killed.`;
+    }
+
     function set(o = {}) { if (o.dim) S.dim = o.dim; if (o.d) S.d = o.d; if (o.H) S.H = o.H; if (o.n) S.n = o.n; if (o.walk === false) S.land = null;
         $('dim2').classList.toggle('on', S.dim === 2); $('dim3').classList.toggle('on', S.dim === 3);
         $('d').value = Math.log2(S.d); $('H').value = Math.log2(S.H); if (S.land && (o.dim || o.d)) runWalk(); else draw(); return state(); }
     function state() { return { dim: S.dim, d: S.d, H: S.H, walkers: S.land ? S.land.length : 0, median: S.land ? median(S.land) : null }; }
     $('dim2').onclick = () => set({ dim: 2 }); $('dim3').onclick = () => set({ dim: 3 });
     $('d').oninput = e => set({ d: 2 ** +e.target.value }); $('H').oninput = e => set({ H: 2 ** +e.target.value });
-    $('walk').onclick = runWalk; addEventListener('resize', draw);
-    set({}); if (q.get('walkers')) runWalk();
-    window.__cauchyMap = { heat, heat3, walk, landings: () => S.land, poissonConst, hemiConst, damp, gauss, box, sechMap, median, set, state };
+    $('walk').onclick = runWalk; addEventListener('resize', () => { draw(); drawSeeds(); });
+    set({}); drawSeeds(); if (q.get('walkers')) runWalk();
+    window.__cauchyMap = { seeds, heat, heat3, walk, landings: () => S.land, poissonConst, hemiConst, damp, gauss, box, sechMap, median, set, state };
 })();
 </script>
 </body>

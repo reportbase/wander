@@ -1648,6 +1648,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R720 (5 Nov; Tom: "update the essays and demos"): `cauchy-map.html`'s last panel "Where no turn can be found: seeds"
+  (TCF run 1's 35 fitted p embedded, hook `seeds()`); essays README rows 3 and 17, `essays.html` cards 3 and 17,
+  `demos.html`'s Cauchy-map card.
   R719 (5 Nov; Tom: "narrow it"): **a Cauchy-type law is a turn's heat only where the turn can be named apart from its
   shape; a fat tail alone is no evidence** (TCF's seed kernels a mixture of amounts). *Reads and Writes* §11 (a bullet and
   "And one where it failed"); essays 3 §7, 16, 17 §11. Never say every Cauchy met in the world is a turn.
