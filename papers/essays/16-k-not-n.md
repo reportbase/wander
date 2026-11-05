@@ -88,6 +88,20 @@ collector moves objects under their references. Each is repaired by rebuilding t
 indirection tables, copies kept for the readers, versions that leave the old addresses standing. The reader's addresses
 need none of it. They are the turn's, laid before anything arrives, and nothing written can move them.
 
+### The projection is the dereference
+
+In memory, an address and the value it reaches are the same kind of thing: a pattern of bits, an integer in a layout of
+N slots. Untyped, nothing tells a pointer from a number, and the machine needs a separate step, the dereference
+(`*p`, a load), to go from the one to the other. Typed languages, tagged machines and capability hardware such as CHERI
+keep the two apart again, by type or in the hardware; the separation is built.
+
+For the reader it is not built, because the two were never one kind. The address is a direction [h : v], a share of the
+thumb with no length in it; what reaches it is paint, an arrival with no direction to add to. There is nothing to do
+arithmetic between them, and no step from one to the other: pointing is the dereference. Looking along a direction is
+already to be met by whatever arrives along it, and which thing that is (the first met) is the world's, the payload's.
+So there is no indirection to pay for, in cycles or misses; that cost belongs to a machine, which holds both acts in one
+memory, not to the geometry, which is given before anything arrives.
+
 This is not a claim that geometry proves anything new about concurrency. It is the other way: a principle computing
 already holds, applied to geometry, says why the reader's world has no races to manage. It does not make a computer
 race-free, which does both acts in one memory (*Reads and Writes* sets the machine aside for that reason).

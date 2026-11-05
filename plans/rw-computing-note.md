@@ -68,3 +68,31 @@ write). In the paper's terms:
 What makes geometry race-free is that nothing writes to it, not that it is scale-free: scale invariance sorts reading
 from writing, immutability lets reads run together. A reading of a known result, no claim about physics: an actual
 reading registers somewhere, and so writes (Bennett's point), which is where a physical race could come back.
+
+## The projection is the dereference (5 Nov 2026, SPN R705)
+
+A comparison from Gemini, pasted by Tom, recorded corrected (Tom: "Yes"). Kept: "the projection is the dereference". In
+memory an address and its value share one representation, bits, and need a step between them (`*p`, a load); for the
+reader the address is a direction and what reaches it is paint, two kinds with no arithmetic between them, and pointing
+is already being met by what arrives (the first thing met the world's, the payload's).
+
+| | Memory | The reader |
+|---|---|---|
+| Address | an integer in a layout of N slots (a writer's layout) | a direction [h : v], no length |
+| What it reaches | a value, an amount in a unit | paint: what arrives, no length in it |
+| Between them | an explicit dereference | none: pointing is the dereference |
+| Races | where a write meets a read or a write on one place | none among reads; a payload write moves no address |
+
+Corrected from the pasted text:
+
+- its table gave the payload as V* and memory's as V, and the address as N: V* is a true breadth, an amount no read
+  carries, not the payload; N is a count, not an address (keep the case, R226, R533);
+- "the machine cannot tell them apart" holds for raw bits and untyped code, not for typed languages, tagged
+  architectures or capability hardware (CHERI), which build the separation back;
+- races come from concurrent writes to shared data whatever the representation; virtual memory is isolation and
+  translation, not this. The paper's claim stays the narrower one (§1, "Reads do not conflict", R659–R661), a design
+  argument, not a proof;
+- "reading expends no cycles" is the geometry being given (R658); a machine does both acts (R641), so the cost of a
+  dereference is a fact about machines, not a contest the geometry wins.
+
+In essay 16 §1, "The projection is the dereference". Not in *Reads and Writes* (R641, R658).

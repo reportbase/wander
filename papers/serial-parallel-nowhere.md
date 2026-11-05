@@ -7352,6 +7352,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R705** (5 Nov; a comparison from Gemini, pasted by Tom; Tom: "Yes", to adding it corrected): "the projection is the
+  dereference": in memory an address and its value share one representation and need a step between them; for the
+  reader the address is a direction and what reaches it paint, two kinds, pointing already being met. Corrected: the
+  payload is not V* nor an address N; "cannot tell them apart" only for raw bits (typed languages, tagged machines,
+  CHERI rebuild the separation); races from concurrent writes, not shared representation; a dereference's cost a
+  machine's (R641). Essay 16 §1 and `plans/rw-computing-note.md`; not *Reads and Writes* (R641, R658).
+- **R704** (5 Nov; Tom: "update the essays"): R700–R703 in the essays. Essay 5 §6 (the even sweep: each pair's quarter
+  turn the wedge, a part of the hemisphere; the sphere behind the head turned round) and §10 (the screen the hemisphere,
+  the Cauchy's shape the hemisphere itself, half within 60°, the rim its tail; near and far an overlay H lays on, a split
+  moved by looking; the two heat maps, cos³ about the look and sech(ln(d/H)), meeting at the thing looked at); essay 4 §4
+  (the crossing lays near and far over the read), §11 "Dragging the thumb" (an overlay, not a shape) and §13 (looking
+  around sets the split; parallax's corner the same thing; the distance heat map).
 - **R703** (5 Nov; Tom: "the cauchy does not have concept of the near and far fields. that seems to be a seperate overlay.";
   then "the demo has served its purpose … no more changes are needed", and "yes" to the papers): the Cauchy is the
   hemisphere of directions and their crowding about the look (cos³), no length in it, its one marked place the look; it

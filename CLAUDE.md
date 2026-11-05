@@ -1639,6 +1639,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R705 (5 Nov; Gemini's comparison, Tom: "Yes"): "the projection is the dereference", corrected, in essay 16 §1 and
+  `plans/rw-computing-note.md`, not the paper.
+  R704 (5 Nov; Tom: "update the essays"): R700–R703 in essay 5 §6 and §10 and essay 4 §4, §11 and §13.
   R703 (5 Nov; Tom: "the cauchy does not have concept of the near and far fields. that seems to be a seperate overlay."):
   **the Cauchy has no near or far; near and far are an overlay H lays on the read** (the split and its sech heat), the
   Cauchy's own heat cos³ about the look. *Reads and Writes* §1, §6, §7. `read.html` not changed (Tom: "the demo has served
