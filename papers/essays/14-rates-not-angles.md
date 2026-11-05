@@ -13,7 +13,7 @@ difference, and its claim fits in one line:
 
 > Writers have angles; readers have sweeps.
 
-Three things follow. A rate is always a rate *of* something *per* something: the per is the sweep's, an address, and the
+Three things follow. A rate is always a rate *of* something *per* something: the per is the sweep's, a direction, and the
 of is what arrives there, the payload. A hand swept from horizontal to vertical, measured by a writer against the straight
 line it holds, goes at one of two rates, π/2 or 2/π, depending on where it pivots, and never at 1, the writer's own rate,
 the angle. And the tangent and arctangent,
@@ -51,14 +51,14 @@ A rate has two places. Light per square metre, cars per hour, rise per run: ther
 is counted against. The first is what the rate is *of*; the second is what it is *per*.
 
 For a reader the two places are filled from opposite sides. The per is the sweep's. Turning from where it stands, one
-length lays out the reader's addresses in order, one after the next, before anything arrives (the third essay). The of is
-the payload: the light, the colour, whatever arrives along each address. So a rate is always payload per
-address, and the third essay's split between the two is a fraction, the address underneath and the payload on top: the
+length gives the reader its directions in order, one after the next, before anything arrives (the third essay). The of is
+the payload: the light, the colour, whatever arrives along each direction. So a rate is always payload per
+direction, and the third essay's split between the two is a fraction, the direction underneath and the payload on top: the
 per is read, and is geometry; the of is written, the world's marks met there, and is physics.
 
-The two places behave differently when the world is scaled. Scale everything by k and every address stays where it was,
+The two places behave differently when the world is scaled. Scale everything by k and every direction stays where it was,
 since a direction has no size. So the per never moves. The of may or may not: a payload compared with another payload
-arriving at a neighbouring address is a ratio and stays put; a payload stated in an agreed unit moves with k, and is a
+arriving along a neighbouring direction is a ratio and stays put; a payload stated in an agreed unit moves with k, and is a
 writing (the first essay). The geometry fixes the per, completely and in advance. What fills the of is the world's.
 
 ---
@@ -91,7 +91,7 @@ writer's 1 through the arc, one too long and one too short. In rates it is plain
 has the sweep, and the angle is what the two sweeps make when they are joined.
 
 None of these rates changes when the world is scaled, and none of them is a rate of anything that arrives. They are the
-per, measured against the writer's straight line: the spacing the sweep gives its addresses. They are the frame's own
+per, measured against the writer's straight line: the spacing the sweep gives its directions. They are the frame's own
 rates, empty until a payload fills them.
 
 They are also the writer's numbers, not the reader's. Each has π in it, and π is the count of a completed turn. They are
@@ -150,7 +150,7 @@ combination of two rates, and needs nothing else.
 
 ## 5. The Cauchy is a speed
 
-The third essay read the Cauchy as the law of the reader's addresses: turn uniformly, read each direction as v/h, and the
+The third essay read the Cauchy as the heat of the reader's directions: turn uniformly, read each direction as v/h, and the
 readings are spread as 2/(π(1 + s²)). Read in rates, that density is a speed.
 
 Per step of turn, the reading s = v/h moves on by 1 + s². Near home, where s is small, it moves about one for one. At the
@@ -168,9 +168,11 @@ Both of the Cauchy's famous features come from this one speed:
 That is the third essay's advice, "to average, average the angle", said in rates: average the sweep's own advance, never
 the quantity that runs away from it.
 
-Notice what this speed is a rate of. It is turn per reading: address against address, the per against itself, with no
+Notice what this speed is a rate of. It is turn per reading: direction against direction, the per against itself, with no
 payload anywhere in it. That is the main result of the third essay said in rates. The Cauchy is the spacing of the per,
-and so it belongs to the addresses, never to what arrives.
+and so it belongs to the directions, never to what arrives. Said as a heat, it is a continuous weight over the
+directions, hottest where the turn lingers and cooling toward the horizon, with nothing counted in it: the turn per unit
+of the writer's grid, dθ/ds = 1/(1 + s²), which is this essay's per. The heat is given; the paint is met.
 
 ---
 
@@ -225,7 +227,7 @@ transcendental only in the limit. It is the writer's ladder from the corner to 2
 sweeps.
 
 **Met, not made.** A reader still meets irrational directions. A star can lie at v/h = √2, and the Cauchy's own
-quartiles are √2 − 1 and √2 + 1. The turn hands every direction to the reader as an address, the irrational ones
+quartiles are √2 − 1 and √2 + 1. The turn hands every direction to the reader, with its heat, the irrational ones
 included; it does not make them. Constructing one, or naming it as a number, is the writer's work.
 
 ---
@@ -258,9 +260,9 @@ carefully, it is a claim about what a turning thing has to hand: a sweep, and wh
 The second claim of this essay sorts the examples. A rate is of something, and the something decides whether it is a
 reading. A wheel of diameter 1 rolls π along the road for each turn: road per turn. But road is an amount, so stated that
 way it is a writing, the writer's angle carried onto the ground. A planet sweeps equal areas in equal times: area per
-time, and a time is a clock carried in, so that too is a writing. The rates a reader has are of what arrives per address:
-how much brighter one direction is than its neighbour, which addresses are painted and which are dark, where along the
-sweep the paint changes. Those are payload per address, compared between addresses, and they are unchanged when the world
+time, and a time is a clock carried in, so that too is a writing. The rates a reader has are of what arrives per direction:
+how much brighter one direction is than its neighbour, which directions are painted and which are dark, where along the
+sweep the paint changes. Those are payload per direction, compared between directions, and they are unchanged when the world
 is scaled. A sunflower following the light, an eye tracking an edge, a hand raised to point: each has its sweep and what
 arrives along it.
 
@@ -269,7 +271,7 @@ computes, or that it computes. What it says is that what a turning thing has is 
 that the angle as a share of a whole turn, with π in it, is the record a writer makes afterwards, once the whole turn is
 in hand.
 
-One caution keeps the claim exact. A rate must say what it is per. Per address, against the sweep's own spacing, a rate
+One caution keeps the claim exact. A rate must say what it is per. Per direction, against the sweep's own spacing, a rate
 is a ratio of payloads and scale-free. Per second, it carries the clock's unit (radians per second, photons per second),
 and moving between the two needs the clock carried in. That is a writing. Motion says the same (the sixth essay, §2): the
 time until a thing arrives, from its growing edge, comes out as a count of the reader's own ticks (a write in its own
@@ -377,19 +379,19 @@ We part from Poincaré in three places. His test is wider than ours: he allows a
 shares, where a reading survives only a similarity, since a stretch moves the sweep's corner off its median (the one
 place the essays let c differ from 1). He takes the choice of Euclidean geometry for a convention; here the reader's turn
 selects it, the round measure being the only one every turn leaves unchanged, while the writer's measure is the one left
-open (the "two 1's" above). And nothing in him separates the address from the payload, or the median a reader can take
+open (the "two 1's" above). And nothing in him separates the direction from the payload, or the median a reader can take
 from the mean it cannot.
 
 **What is ours.** Every piece above is classical: the two motions, the fluxions, the hemisphere's 2, the observer's
 coordinates, the rhumb line. What this essay adds is the sorting. The straight chord and the angle are the writer's; the
-two motions and their mix are the reader's; the mix is a rate, of a payload per address; and the three numbers 1, π/2 and
+two motions and their mix are the reader's; the mix is a rate, of a payload per direction; and the three numbers 1, π/2 and
 2/π, or on a sphere 1, 2 and ½, are the writer's rate and its account of the reader's two sweeps. The reader's own
 numbers are the Cauchy's, and have no π in them.
 
 **The writer's cube, and its sphere of the reader.** The picture settles into two shapes, both the writer's. The writer's
 own is a cube: one number line on each axis, every point three amounts, every edge run at the writer's rate, 1, nothing
 round (the first essay's box). The sphere is how the writer draws the reader: its one length H, the thumb, turned every way
-from where it stands, every direction an address, no distance on it, the sweeps measured at π/2 and 2/π on a circle and at
+from where it stands, every direction with its heat, no distance on it, the sweeps measured at π/2 and 2/π on a circle and at
 2 and ½ over a hemisphere. The reader itself holds no sphere, nor a circle: it has a vantage, not a shape. It points its crossed thumbs at the mountain
 and reads with the Cauchy: its readings on one open line from home to a horizon, in space the two ratios v/h and v₂/h,
 never closed, never totalled. From A = (1, 0) to B = (0, 1) there are then three ways, two the writer's and one the
@@ -510,11 +512,11 @@ two variables combined (√2, the diagonal), and π the whole turn, both the wri
 it does not make them. It reads with the Cauchy, its readings and their corner at 1; the sphere is the writer's picture of
 the reader.
 
-**A rate is of something, per something.** The per is the sweep's: the addresses, given before anything arrives, their
+**A rate is of something, per something.** The per is the sweep's: the directions and their heat, given before anything arrives, their
 spacing the frame's own rates. The of is the payload, met: the world's writing. A rate lays a write over a read.
 
 **The corner is where two rates meet**, v filling as fast as h empties, and **the Cauchy is a speed**, turn per reading,
-the per against itself with no payload in it: which is why it is the addresses' law and not what arrives.
+the per against itself with no payload in it: which is why it is the heat of the directions and not what arrives.
 
 **Tangent and arctangent are the writer's tools.** Evaluating either crosses between a direction and a share of the whole
 turn, and the whole turn, with its π, is the writer's. The reader runs the tangent's addition law, and never evaluates. Trigonometry is the completion of the sweep, not its equipment, and where the completion is available,
@@ -556,4 +558,4 @@ can be trig-free").
 
 The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): §2, "Zero, and a new zero" (the turn met, not computed; tangent
 addition); §4, "Why the corner sits at 45°", "Why there are two sweeps, and only two" and "Rates, not angles" (the two
-sweeps' rates, the writer's 1, and payload per address); §7.1 (the uniform turn and the Cauchy).
+sweeps' rates, the writer's 1, and payload per direction); §7.1 (the uniform turn and the Cauchy).

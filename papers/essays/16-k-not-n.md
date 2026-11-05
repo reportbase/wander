@@ -53,9 +53,9 @@ Then the two pairs part, in five places.
 
 - **Who lays out the addresses.** A computer's address space exists before the first read: a known size, addresses
   counted from 0 to N − 1, an end, and an error past it. Someone laid that out, and laying out a space of known size is
-  a writer's act. An array whose `sizeof` is known is held by a writer (essay 12). A reader's addresses are given by
-  its turn: uniform by the turn's own measure, from home toward a horizon it never reaches. There is no N among them, no
-  last address, and no end to fall off.
+  a writer's act. An array whose `sizeof` is known is held by a writer (essay 12). A reader has no addresses at all: it
+  has directions and their heat, given by its turn, uniform by the turn's own measure, from home toward a horizon it never
+  reaches. There is no N among them, no last place, and no end to fall off.
 - **What a read returns.** A computer's read returns an amount: a byte, an integer, a float, in whatever unit the
   program agreed. A read here returns a direction and the paint arriving along it, with every amount along that
   direction already gone. Nothing in it would change if the world were k times as large.
@@ -85,8 +85,8 @@ essay says a change of payload moves no address. So a write never moves what a r
 The failures in computing are exactly where that breaks: places whose addresses move with their contents. A vector
 that reallocates invalidates every pointer into it; a hash table that rehashes moves every entry; a compacting
 collector moves objects under their references. Each is repaired by rebuilding the separation by hand: stable handles,
-indirection tables, copies kept for the readers, versions that leave the old addresses standing. The reader's addresses
-need none of it. They are the turn's, laid before anything arrives, and nothing written can move them.
+indirection tables, copies kept for the readers, versions that leave the old addresses standing. The reader's directions
+need none of it. They and their heat are the turn's, given before anything arrives, and nothing written can move them.
 
 ### The projection is the dereference
 
@@ -95,12 +95,20 @@ N slots. Untyped, nothing tells a pointer from a number, and the machine needs a
 (`*p`, a load), to go from the one to the other. Typed languages, tagged machines and capability hardware such as CHERI
 keep the two apart again, by type or in the hardware; the separation is built.
 
-For the reader it is not built, because the two were never one kind. The address is a direction [h : v], a share of the
-thumb with no length in it; what reaches it is paint, an arrival with no direction to add to. There is nothing to do
+For the reader it is not built, because the two were never one kind. Where memory has an address, the reader has a
+direction [h : v], a share of the thumb with no length in it; what reaches it is paint, an arrival with no direction to add to. There is nothing to do
 arithmetic between them, and no step from one to the other: pointing is the dereference. Looking along a direction is
 already to be met by whatever arrives along it, and which thing that is (the first met) is the world's, the payload's.
 So there is no indirection to pay for, in cycles or misses; that cost belongs to a machine, which holds both acts in one
 memory, not to the geometry, which is given before anything arrives.
+
+### Heat, not addresses
+
+The words in this essay are the programmer's, and a programmer's addresses are discrete: places counted in a layout, the
+writer's. The reader has none. What it has is a heat over its directions, the Cauchy: continuous, hottest along the look
+and cooling toward the horizon, with nothing counted in it (*Reads and Writes* §7, "Where the heat comes from"). Where this
+essay says "the reader's addresses" or "K addresses", read: K places a writer lays at the heat's quantiles. The heat is
+given; the paint is met.
 
 This is not a claim that geometry proves anything new about concurrency. It is the other way: a principle computing
 already holds, applied to geometry, says why the reader's world has no races to manage. It does not make a computer
@@ -119,10 +127,11 @@ Read the two letters as vantages:
 - **N is the writer's.** To know N is to know the whole: how many there are, which is to know the extent, V, and how much
   is in it. That is writing. The first essay's test sorts it at once: double the world and N doubles.
 - **K is the reader's.** A reader never knows V, the mountain in the distance (it holds one length, its own H, the thumb it
-  holds up, and V was never in a reading), so it never knows N. What it knows is K, its own count of addresses, fixed before
+  holds up, and V was never in a reading), so it never knows N. What it knows is K, its own fineness, read continuously (a writer counts it as K addresses), fixed before
   it chooses H and unchanged by anything it looks at.
 
-The Cauchy is the map from a world of N to a holding of K. It lays the reader's K addresses over a world of any size: in
+The Cauchy is the map from a world of N to a holding of K. Its heat spreads the reader's K over a world of any size, and
+counted as K addresses it puts them: in
 proportion inside the corner, by thumbs past it, two, four, eight, and everything past the last address on the one address
 at the horizon. Double N and the reader's view does not change. Make N unbounded and it still does not. An infinite star
 field browsed at N and at 2N stars, counted exactly at K addresses, gives views that differ by less than 10⁻⁷ at N = 2⁴⁰
@@ -237,7 +246,7 @@ formulas.
 
 ## 6. Index statistics and value statistics
 
-> **The Cauchy is not the payload; it is the address to the payload.**
+> **The Cauchy is not the payload; it is the heat of the directions the payload arrives along.**
 
 Directions taken uniformly by turn from where a reader stands, each read as v/h, follow the half-Cauchy on one quadrant,
 density 2/(π(1 + x²)), its median at the corner. Whatever arrives along a direction, at whatever reach ℓ, its components
@@ -439,7 +448,8 @@ Now the K addresses can be laid along distance. The writer's account of where th
 
   d_k = H·tan(kπ/2K),  k = 1, …, K − 1,
 
-the Cauchy's quantiles with its scale at H. The addresses are the reader's; the formula placing them is the writer's.
+the Cauchy's quantiles with its scale at H. The heat they sample is the reader's; the places, and the formula placing
+them, are the writer's.
 
 - Since tan(π/4) = 1, the middle boundary is d = H, one thumb away, whatever H is: half the addresses inside the corner and
   half past it, at every H. H moves the split; it never changes the count.

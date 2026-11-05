@@ -86,7 +86,7 @@ log_g(arrival ÷ hold). The run of those numbers is the record.
   ratio at all. That is why such steps, wherever they appear, are one ratio repeated.
 - **The count of steps is a logarithm in whole numbers.** "How many steps of g from the hold to the arrival" is log_g,
   rounded. The reader computes no logarithm. The logarithm is what its count becomes when the steps are made fine. This
-  is the fourth essay's lay past the corner, 1 + ln s by count of addresses, met in time.
+  is the fourth essay's lay past the corner, 1 + ln s as a writer counts places past it, met in time.
 - **A logarithm of one amount is not formed.** A count of steps needs two magnitudes, a hold and an arrival. "The logarithm of
   five metres" is not forbidden; it is not yet a reading.
 - **The count does not carry the world's size.** Scaling the stream shifts the hold's count and leaves every reading
@@ -339,7 +339,7 @@ the sum telescope; the horizon resolved makes it telescope to the right total.
 ## 12. Periods, and what a shape does to them
 
 One more result from the August paper reads cleanly in this frame. Divide a stream by its own increment. For anything
-locally like a sine wave, the ratio is the tangent of the phase: an address, with the gain cancelled. From that, the
+locally like a sine wave, the ratio is the tangent of the phase: a direction, with the gain cancelled. From that, the
 period of a single tone comes back from 55 Hz to 3 kHz within about 1%, unmoved by any scaling of the stream, and cross
 ratios come back exact to 10⁻¹⁰ or better on every stream tried, video included.
 

@@ -88,7 +88,7 @@ The reader's other freedom is size. Essay 3 and OFS §2 named the reader's ignor
 Rescalings give e.
 
 The reader reads sizes as ratios of its thumb: a thing one thumb wide reads one in two, then one in four, one in eight.
-Past the corner its addresses go as many to each stretch over which the reading halves (essay 4), and a thing that reads
+Past the corner a writer laying out its fineness gives as many places to each stretch over which the reading halves (essay 4), and a thing that reads
 one in eight is three such stretches out, which a writer counts as 8 thumbs, past 2, 4 and 8. Counting is done in
 parallax and in writing, not in a pure read; what one length counted makes is finite and rational. A thing 3H away reads
 one in three, between one in two and one in four, and the reader holds it there by its order among the readings (essay
@@ -141,16 +141,16 @@ The complex logarithm puts them in one line:
   ln z = ln r + iθ.
 
 The real part is the scale's, measured in e's unit; the imaginary part is the turn's, measured against π's total.
-Essay 2 (§9) read it as address and payload, the turn the address and the size the payload, with the scale test on the
+Essay 2 (§9) read it as direction and payload, the turn the direction and the size the payload, with the scale test on the
 real part alone. Here it reads as the two completions: e on the real axis, π on the imaginary.
 
 **Which constant goes with which side.** The two parts of that line are the essays' two sides. Turns act on the imaginary
-part alone, the address; scaling the world acts on the real part alone, the payload's size. So π goes with the address and
-e with the payload, and the two are not alike. The address closes, so it has a total, and π is that total; it is forced.
+part alone, the direction; scaling the world acts on the real part alone, the payload's size. So π goes with the direction and
+e with the payload, and the two are not alike. The direction closes, so it has a total, and π is that total; it is forced.
 The payload's size lies on an open line with no total and no natural size; its base is a convention (doublings would count
 it as well), and e is the base that lets one unit serve both parts, so that e^(iθ) is a turn of θ. That open line, with no
 mark on it, is why no reading ever gives a₀, the overall size (the sixth essay). Closed and forced, open and chosen:
-address and payload, in two numbers.
+direction and payload, heat and paint, in two numbers.
 
 ## 5. Where they meet
 

@@ -155,7 +155,7 @@ The reason is Thales' theorem, which Euclid gives in Book III of the *Elements*:
 angle, and conversely, every right angle on a diameter has its corner on the circle. The two lines of sight, slope s and
 slope 1/s turned the other way, always meet at a right angle. So their crossing is always on the circle.
 
-The crossing has a tidy address. Put A at 0 and B at 1. The crossing for slope s lands at
+The crossing has a tidy place. Put A at 0 and B at 1. The crossing for slope s lands at
 
 > the point (1, s) divided by (1 + s²).
 
@@ -249,18 +249,18 @@ along two axes vary independently and look the same however the axes are turned,
 the direction of that bell's samples is an even turn, which is why its ratio is a Cauchy. That is a fact about one kind
 of paint, not about either sweep.
 
-### Address, landing, payload
+### Direction, landing, payload
 
 Three things meet at that one point of the arc, and the series keeps them apart.
 
-- **The address** is the direction of A's ray, the reading s. It is there before anything arrives.
-- **The landing point** is where the radius ends, the point the address points at.
+- **The direction** is A's ray, the reading s, with its heat. It is there before anything arrives.
+- **The landing point** is where the radius ends, the point the direction points at.
 - **The payload** is whatever is found there: the colour, the light, the thing.
 
-The inscribed angle theorem guarantees the address and the landing point meet. It says nothing about what is found.
-That is the world's business. The address is laid whatever arrives, and each address points exactly at where its payload
-will land. The third essay is about what that separation means. Here the point is only that it is built into the circle:
-the reader's addresses and the world's landing points are joined, one to one, by a theorem that needs no second length,
+The inscribed angle theorem guarantees the direction and the landing point meet. It says nothing about what is found.
+That is the world's business. The direction and its heat are given whatever arrives, and each direction points exactly at
+where its payload will land. *The heat is given; the paint is met.* The third essay is about what that separation means. Here the point is only that it is built into the circle:
+the reader's directions and the world's landing points are joined, one to one, by a theorem that needs no second length,
 only the reader's own length turned.
 
 *Demos: one turn and one read; the central reader, step 6 (one read).*
@@ -296,7 +296,7 @@ each of these numbers has π in it, the count of a completed turn, they are the 
 reader's own: the writer is transcendental, the reader is not. The reader holds one length, and one length makes only
 rationals; square roots need two lengths combined, and π a limit, the whole turn. The reader holds the same sweep as the
 Cauchy, its readings and their corner at 1, where v fills exactly as fast as h empties. A rate a reader reads is always of
-something per something, the payload per address: the per is read, the of is written. The fourteenth essay, "Rates, not angles", takes this up, and with it why
+something per something, the payload per direction: the per is read, the of is written. The fourteenth essay, "Rates, not angles", takes this up, and with it why
 the tangent and arctangent, which convert a direction into a share of the whole turn and back, are the writer's tools.
 
 *Demo: the mountain and the thumb, "the two vantages": π/2 and 2/π on the thumb's circle, their product 1.*
@@ -375,7 +375,9 @@ then x² + y² = r² with r an amount. Divide that by x²:
 No length is left: r/x is a ratio of two amounts and not an amount. Two things follow. The density of the reader's law is
 the share squared, 1/(1 + s²) = (x/r)² = h², the reader's own share of H, squared. And the even turn becomes the Cauchy:
 ds = sec²θ·dθ, so dθ = ds/(1 + s²). The Cauchy is the circle's equation used to carry an even turn into readings. Its scale
-is 1 because every amount has been divided out, not because anyone set V equal to H.
+is 1 because every amount has been divided out, not because anyone set V equal to H. Read as the reader has it, that
+density is a heat: a continuous weight over the readings, hottest at s = 0 (on a screen held square to the look, the look itself) and cooling as cos²θ toward the
+horizon, with nothing counted in it, the turn per unit of the writer's grid.
 
 Divide the two-axis curve the same way and one thing survives: s = (V/H)·tan θ, a Cauchy of scale c = V/H. The amounts go;
 their ratio stays, as the law's scale. So V enters the Cauchy in exactly one place, its scale, and only for whoever holds V.
@@ -414,13 +416,13 @@ size.
 
 One piece of classical notation holds all of this at once: Euler's formula, written in polar form. It is the writer's
 notation: e^(iθ) takes the angle as a number, and the whole turn, π, with it (the fourteenth essay). What it records of
-the reader is the split of address from amount and the composition of readings, which in the readings themselves is
+the reader is the split of direction from amount and the composition of readings, which in the readings themselves is
 tangent addition, rational:
 
 > z = r·e^(iθ).
 
-**The two factors are the address and the payload.** The factor e^(iθ) has size exactly 1. It is a direction and nothing
-else: the address, held in the reader's own length, H measured in H, the thumb in thumbs. The factor r is an amount, how
+**The two factors are the direction and the payload.** The factor e^(iθ) has size exactly 1. It is a direction and
+nothing else, held in the reader's own length, H measured in H, the thumb in thumbs. The factor r is an amount, how
 far, how bright, how big, and it means something only in a unit, which only a writer can supply. Polar form has been
 splitting a number into its direction and its amount since the eighteenth century. Read from a standpoint, that split is
 the reader's and the writer's.
@@ -445,7 +447,7 @@ and the same turn plus a half turn give the same reading; the reader's line clos
 squaring of section 6 turns that half turn into one whole turn of the central sweep.
 
 All of this is classical: polar form, the complex logarithm, the area that multiplication keeps, the double cover. What is
-the series' own is the reading: e^(iθ) as the address, r as the payload, the logarithm's two parts as reading and
+the series' own is the reading: e^(iθ) as the direction, r as the payload, the logarithm's two parts as reading and
 writing. It is the right notation for a reader because it keeps the two apart. The reader holds the imaginary part; the
 writer needs the real one.
 
@@ -512,8 +514,8 @@ circle passes, reads directions as ratios, unbounded, with their median at the c
 circle's law without the V. The central sweep, from the middle of the pair, reads the same points as squares, bounded, with
 means. They are two names for one point, joined by a theorem in Euclid.
 
-The third essay takes the inscribed sweep's law on its own terms: what it means that the reader's addresses are laid
-before anything arrives, how they stay apart from what arrives, and why practice has always been right to read them by
+The third essay takes the inscribed sweep's law on its own terms: what it means that the reader's directions and their
+heat are given before anything arrives, how they stay apart from what arrives, and why practice has always been right to read them by
 their median.
 
 ---

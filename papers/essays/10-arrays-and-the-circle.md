@@ -34,8 +34,9 @@ laid end to end ever claim the same element.
 
 The array is a representation, and whoever builds it chooses its indexing. The world has no indices of its own. The
 point of the picture is not that a reader is an array. It is that an array shows, in a form a programmer already
-handles, that addresses and payloads can be held apart. Why a reader's addresses follow the uniform turn is the second
-essay's result, not the array's.
+handles, that addresses and payloads can be held apart. An index is counted, so its addresses are the writer's; the
+reader's side of the same split is a direction and its heat, continuous and with nothing counted in it, and the paint that
+arrives along it. Why the reader's heat follows the uniform turn is the second essay's result, not the array's.
 
 **The index is the address.** The places are fixed by the index before any value is stored, at equal steps of turn.
 Read each place as the slope of the inscribed angle, s_k = tan(θ_k/2), the reading v/h of the second essay. For even N
@@ -44,14 +45,14 @@ those slopes are exactly the N evenly spaced quantiles of the standard Cauchy. A
   ±0.199, ±0.668, ±1.497, ±5.027,
 
 which are the Cauchy's quantiles at 1/16, 3/16, … , 15/16. Half of them lie within the corner, |s| ≤ 1. For odd N one
-place lands on the horizon itself, the direction [0 : 1], an address like any other, and the share within the corner is
+place lands on the horizon itself, the direction [0 : 1], a place like any other, and the share within the corner is
 then not exactly a half.
 
 A finite array samples the continuous law at N quantiles. The law itself is the continuous turn's.
 
 **The stored values are the payload.** Change them and no place moves. The places' ranks, their median and their corner
 are untouched by anything stored. That is the third essay's main theorem, met in a data structure: change what arrives,
-and the addresses stand.
+and the places stand.
 
 **Places compose without angles.** The offset from one place to another is the tangent subtraction of their slopes,
 (s₁ − s₂)/(1 + s₁s₂), which is a turn composed.
@@ -123,7 +124,7 @@ index needs the extent; the turn index needs only the zoom.
 ## 3. From an array back to a curve
 
 An array holds N numbers. A curve is continuous. Going from the array back to a curve, at places the array never
-stored, is reconstruction, and it is where the payload is asked to do something the addresses alone cannot.
+stored, is reconstruction, and it is where the payload is asked to do something the places alone cannot.
 
 The classical way, for samples laid evenly round a circle, is trigonometric interpolation. Each stored value is spread
 over the whole circle by a kernel that is 1 at its own place and 0 at every other place. For the even-N lattice of
@@ -176,7 +177,7 @@ depends on where the detail is (EPI, `plans/epi-plan.md`; the demo *Circles and 
 **What reconstruction assumes.** The kernel fills in between the places, and filling in is a model of the payload: that
 the curve has no detail finer than the lattice can carry, no wave of more than N/2 cycles round the circle. The places are
 exact whatever the curve is. The values between them are exact only for curves that fit the model. The third essay's
-split holds here too: the addresses need nothing, and everything about what lies between them is the payload's. The
+split holds here too: the places need nothing, and everything about what lies between them is the payload's. The
 eighth essay's `Math.floor` throws away where within a cell a place was; the kernel puts something back, but what it puts
 back is a guess about the payload, not an address recovered.
 
@@ -323,7 +324,8 @@ are exact, and checked.
 
 **Reading and writing.** An array on a circle is the clearest small instance of the whole split. Its index is the
 address, laid before anything is stored, the Cauchy's quantiles. Its values are the payload, and storing them moves no
-place. Its length is what the writer has and the reader lacks, and the lack is what makes the corner and the horizon.
+place. The index is a writer's count laid on the reader's heat, which counts nothing: *the heat is given; the paint is
+met.* Its length is what the writer has and the reader lacks, and the lack is what makes the corner and the horizon.
 The four kinds of array, the constant, the known-length, the values without the length and the index alone, are the
 writer's two and the reader's one read, counted two ways. Joining arrays into a closed circle is a writer's act; reading within one
 is a reader's.

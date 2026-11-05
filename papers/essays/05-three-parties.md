@@ -91,9 +91,9 @@ not.
 
 The third essay's picture, a hand held up to a stained-glass window, carries over with both hands. One hand spreads its
 fingers from flat to upright, the altitude; the other spreads its fingers round the horizontal, the azimuth. The two thumbs
-cross at a right angle, and where they cross is the triple corner, where both read 1 (as an address: it lies under the line
+cross at a right angle, and where they cross is the triple corner, where both read 1 (as a direction: it lies under the line
 of sight only when the look runs down the thumbs' diagonal, section 10). Each pane now lines up with a
-crossing, one finger of each hand, and that pair of fingers is the address: a direction, (v/h, v₂/h). The colour at each
+crossing, one finger of each hand, and that pair of fingers is the reading: a direction, (v/h, v₂/h). The colour at each
 crossing is the payload, and still no colour carries a distance. Two hands add no second length: both thumbs are the one H,
 and the right angle between them is a quarter turn, no amount. (For every crossing to hold the same share of the window,
 the round hand spreads its fingers evenly by turn and the upright hand evenly in height, not in angle; section 6 says why.)
@@ -105,13 +105,15 @@ far fields, the law over the crossings, follows from the thumb. The Cartesian fr
 three amounts, is the writer's (section 11).
 
 Nor is it a wedge. The wedge, with its faces, its edges and its triple corner, is the writer's description of the reader's
-geometry, drawn whole from outside. What the reader experiences is a tunnel of addresses about its line of sight. Laid out
+geometry, drawn whole from outside. What the reader experiences is a tunnel of heat about its line of sight. Laid out
 as readings on a screen held square to the look, the screen the crossed thumbs make, the directions crowd toward the line
-of sight and thin on every side by the Cauchy: at r thumbs off the line of sight their density is 1/(2π(1 + r²)^(3/2)) per
+of sight and thin on every side by the Cauchy: at r thumbs off the line of sight their heat is 1/(2π(1 + r²)^(3/2)) per
 unit of screen, over the whole hemisphere in front, out toward a horizon never reached. Nothing of it is stored. It is
 generated from the thumb, and it is there wherever the reader looks. As the reader sweeps, the tunnel turns with the look,
-continuously and without a seam, so what it looks at is always at the centre, where the addresses are finest, and each
-address is exact: given, not computed. That is perfect fidelity wherever it looks, because the tunnel is wherever it looks.
+continuously and without a seam, so what it looks at is always at the centre, where the heat is greatest, and each
+direction is exact: given, not computed. That is perfect fidelity wherever it looks, because the tunnel is wherever it looks.
+The heat is continuous, nothing counted in it and no grain of its own; what arrives along each direction is the paint.
+*The heat is given; the paint is met.*
 Section 5's law over the wedge is this tunnel's law on a quarter of its screen, and section 10 comes back to it.
 
 ---
@@ -229,7 +231,7 @@ other party the same question is asked of each: each party's breadth is known, a
 - **One known, one not.** One pair is held as a writer holds it; the other is read from somewhere. With V known, the
   corner of h and v is computed and V's amounts are exact. V₂ is read on the reader's length, its corner with h found,
   and its amounts known up to one missing ratio. Written in one freedom, read in the other.
-- **Both read.** Every direction of the octant is an address [h : v : v₂], two numbers, laid evenly by area and painted
+- **Both read.** Every direction of the octant is a reading [h : v : v₂], two numbers, laid evenly by area and painted
   by whatever arrives along it.
 
 The second essay's π/2 and 2/π have their counterparts here, the writer's measures too (they come from the sphere's
@@ -255,7 +257,7 @@ the wedge points. Position, then sweep.
 
 The reader has none of this as a thing with faces and edges. It has the tunnel of section 4, generated from the thumb about
 wherever it looks and stored nowhere. From inside there is no position to record: the tunnel turns with the look, and what
-is looked at is always at its centre, at the finest addresses.
+is looked at is always at its centre, where the heat is greatest.
 
 *Demo: the wedge, step 7 (position, then sweep).*
 
@@ -264,7 +266,7 @@ is looked at is always at its centre, at the finest addresses.
 Look along one of the thumbs, h, and hold the other two crossed across the line of sight, as section 4 does. Then the
 crosshair, the middle of the screen, reads v/h = 0 and v₂/h = 0: it is *home* for both pairs, not their corner. The triple
 corner, where both read one, is the direction (1, 1, 1), 54.74° off the look, out near the edge of the view. In the
-window picture of section 4 the thumbs' crossing is the triple corner as an address; it sits under the crosshair only for
+window picture of section 4 the thumbs' crossing is the triple corner as a direction; it sits under the crosshair only for
 one look.
 
 Which look? Put a third thumb along the depth, so that three thumbs, horizontal, vertical and depth, stand square to each
@@ -288,10 +290,10 @@ is zero, and the opposite reading of that pair is the horizon. In the plane the 
 corner point, touches both axes, and its outline runs from home to the horizon: the whole quarter turn. So the circle does
 not mark where things start to squeeze. It runs from the corner out to home.
 
-Inside it, the addresses hold the world with no distortion at the corner: the three pair levels, ln(n·eᵢ/n·eⱼ), all vanish
-there, and their squares add to the same amount in every direction to second order. Moving out, each address holds more,
+Inside it, the directions hold the world with no distortion at the corner: the three pair levels, ln(n·eᵢ/n·eⱼ), all vanish
+there, and their squares add to the same amount in every direction to second order. Moving out, each direction's cell holds more,
 in proportion: toward a touch point the worst pair's cell grows as one over twice its reading, without bound at home. That
-is compression, not blur. A fixed count of addresses never makes the world fuzzy; it squeezes more of it into each address
+is compression, not blur. A fixed fineness never makes the world fuzzy; it squeezes more of it into each cell
 the nearer home it looks. The squeeze is not round: near the corner its contours are hexagons, and on the circle between
 the touch points, toward the thumbs, it is only about twice what it is at the corner. Past the touch points lies another
 wedge, where a reading would go below zero; between them the wedge runs on in three points out to the thumbs.
@@ -313,35 +315,36 @@ diagonal. The two are at right angles, so the grains multiply: the direction's a
 level of a thing's distance over the corner's. In the plane it is the same with two thumbs: the disc one thumb round the
 corner touches both, at home and the horizon.
 
-The grain is how finely an address holds a thing, not how large the thing looks. Seen, the world keeps its look near the
+The grain is how finely a direction is told apart there, not how large the thing looks. Seen, the world keeps its look near the
 crosshair and far beyond it. A thing's size is the angle it spans, which already falls by half each time its distance
 doubles.
 
-### Laid by the addresses
+### Laid by the heat
 
-Which screen, then, shows the reader's own addresses? They are the directions uniform by area about the look, so the
+Which screen, then, shows the reader's own directions as it holds them? They are uniform by area about the look, so the
 screen that gives each the same room is the one that keeps area: Lambert's azimuthal equal-area projection about the
 crosshair, a direction α off the look drawn 2·sin(α/2) out. It is true at the crosshair and departs gently: 0.9% at 15°,
 3.4% at 30°, 7.6% at 45°. A flat screen does the opposite. Its distance out is tan α, the reading itself, so the far
 readings stretch without bound toward the horizon, and the directions thin on it as cos³α.
 
-Laid by its addresses, the tunnel of section 4 shows the far field the way the reader holds it. The ring one thumb off
+Laid so, the tunnel of section 4 shows the far field the way the reader holds it. The ring one thumb off
 the look, at 45°, sits 0.765 out; one in 2, one in 4 and one in 8 sit at 1.05, 1.23 and 1.32; and the rest bunch toward
-the horizon's rim at √2, never reached. Equal room holds equal addresses, so each band gets the room its share takes:
+the horizon's rim at √2, never reached. Equal room holds equal shares of the directions, so each band gets the room its share takes:
 the corner to one in 2 holds 0.26 of the directions in front, one in 2 to one in 4 holds 0.20, one in 4 to one in 8
 holds 0.12, and everything past one in 8 the last 0.12, packed under the rim. The far field is not stretched but packed.
-That is the distortion at the horizon, and it is the addresses', not the world's.
+That is the distortion at the horizon, and it is the directions', not the world's.
 
 Distance bunches the same way. No direction moves when a thing is moved along its own ray, so a view of directions alone
-can never show distance bunching. A view laid by distance address can: a point on the ground ρ away goes on the row
+can never show distance bunching. A view laid by the share of distance can: a point on the ground ρ away goes on the row
 (2/π)·atan(D/ρ), where D is the thumb's own ground distance, so that the feet are at one, the thumb at ½ and the horizon
 at zero. Then everything inside the thumb is held in proportion, and past it each band of one in 2, one in 4, one in 8 is
 thinner than the last, the far world packed under the horizon.
 
 And the reader never counts the world. A view of a world of N stored things is a writer's: N was written first. The
-reader's view has K addresses and nothing else. A world drawn for it can be made where the view reaches, at every scale,
-and culled to what spans an address, a quarter of π/2K; the rest is in the far field's bunched rows, held, never listed.
-Look elsewhere and the same K fall on other things.
+reader's view has its directions and their heat, told apart to a fineness K, and nothing else. A world drawn for it can be
+made where the view reaches, at every scale, and culled to what that fineness can tell, a quarter of π/2K (a program that
+does it lays K places, a writer's count of the heat); the rest is in the far field's bunched rows, held, never listed.
+Look elsewhere and the same fineness falls on other things.
 
 *Demos: crosshairs in a field (the view by distance address, the tunnel, equal area, by turns, the flat screen; the
 one-thumb circle, the three corners and their homes and horizons); two thumbs in the plane.*
@@ -355,7 +358,7 @@ are at √2, 54.74° off; the homes are at 1/√2, 35.26° off. The horizon, 90�
 lands on it. The reader has no shape here: a point, a vantage. The rings and the screen are the writer's drawing of what
 that point holds.
 
-Strip away the world and that drawing is the read itself: the addresses in thumbs, thinning off the crosshair as the
+Strip away the world and that drawing is the read itself: the heat of directions in thumbs, cooling off the crosshair as the
 two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)), in rings about the look out toward a horizon on every side; or laid by count,
 each ring holding the same share. The whole screen is the hemisphere in front: every direction ahead lands on it once,
 tan α from the crosshair, and only the rim, 90° off, never lands. A reader sees that hemisphere, with the most fidelity
@@ -367,11 +370,11 @@ other facings joined, the writer's. Shown as a height, the same law is a hill ab
 there is no world in it: no payload, only the geometry the payload would paint.
 
 Nor does it change when the thumb is dragged. Put a row of things along the look and drag H: the things slide along the
-distance addresses, in or out of the near field, half the addresses inside the thumb at every H, and the screen and the hill
+heat in distance, in or out of the near field, half of it inside the thumb at every H, and the screen and the hill
 stay exactly as they were. The Cauchy is the same at every H; the thumb decides only where the things land.
 
 So the Cauchy has no near field and no far field. No length enters it. Near and far are a separate overlay, which H lays
-over the read: along every direction one thumb out, half that direction's addresses nearer and half farther. The overlay
+over the read: along every direction one thumb out, half that direction's heat in distance nearer and half farther. The overlay
 is a split, a mark on every direction, not a body or a dome; take it away and the Cauchy is unchanged. The reader moves it
 by looking: the thing the crossed thumbs point at is taken as H, so it sits at the corner. That a reader does so is a
 speculation, and the reason to is that it is optimal (the fourth essay, section 13).
@@ -383,7 +386,7 @@ read by ratio, (1/π)·sech(ln(d/H)), hottest at one thumb and cooling alike bot
 thumbs, 0.47 at four, 0.25 at eight. Multiplied, they are hottest at one point, the thing looked at, on the look one thumb
 out, and they meet there only because the look points at it.
 
-*Demo: the read (the addresses in thumbs and by count, the hill, from the side where the reader stands, the thumb
+*Demo: the read (the directions in thumbs and by count, the hill, from the side where the reader stands, the thumb
 dragged, and the shape swept whole against each thumb on its own).*
 
 ---
@@ -395,16 +398,16 @@ its ray to exactly one point of the cube's surface, on the face of its largest c
 reached once, at every size of cube and after any turn of the sphere.
 
 Every point inside the cube, except the centre, is some fraction t of the way out to its surface point, for exactly one t
-between 0 and 1. So the pair (direction on the sphere, fraction t) addresses every point of the cube, and it is the same
+between 0 and 1. So the pair (direction on the sphere, fraction t) reaches every point of the cube, and it is the same
 pair whatever size the cube is. The point itself, in amounts, is e times it.
 
-This is the essays' story in one object. A reader that holds the addresses and not e has the cube up to scale. It draws the
-cube at its own one length, one thumb, right as addresses and off as amounts by the true ratio of e to H. Each face of the
+This is the essays' story in one object. A reader that holds the directions and not e has the cube up to scale. It draws the
+cube at its own one length, one thumb, right as directions and off as amounts by the true ratio of e to H. Each face of the
 cube is the plane of readings against one denominator, so a sphere swept evenly lays the two-dimensional Cauchy on it: a
 face's middle quarter, by area, takes 38% of that face's directions, and the centre of a face is 3^(3/2), about 5.2 times
 as dense as its corners.
 
-*Demo: the sphere in the cube (any size, the address unchanged; the extent unknown, off by e/H).*
+*Demo: the sphere in the cube (any size, the direction unchanged; the extent unknown, off by e/H).*
 
 ---
 

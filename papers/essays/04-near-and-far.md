@@ -81,14 +81,14 @@ fact that nothing in the readings fixes H. It is not derived.
 
 ---
 
-## 4. Two address spaces, one corner
+## 4. In proportion, then in ratios: one corner
 
-So the reader has two ways of laying out its places, and they meet at the corner.
+So the reader reads distance in two ways, and they meet at the corner.
 
-- **Inside the corner, the addresses are proportional.** Each step out is the same distance.
-- **Past the corner, they are logarithmic.** Each stretch over which the reading halves, one in two to one in four, one
-  in four to one in eight, holds the same number of places. A writer counts these stretches in thumbs: one to two, two to
-  four, four to eight.
+- **Inside the corner, distance is read in proportion.** Each step out is the same distance.
+- **Past the corner, it is read in ratios.** Each stretch over which the reading halves, one in two to one in four, one
+  in four to one in eight, holds the same share of the heat. A writer, laying the heat out as places, puts the same
+  number in each, and counts these stretches in thumbs: one to two, two to four, four to eight.
 
 They join without a kink. There is only one such corner built into the relation: the one point the swap of the two parties
 leaves fixed, where v equals h. Past it the far field is plain stretches laid side by side, the reading halving across
@@ -97,33 +97,34 @@ each. They have no corners of their own and nothing nested inside them.
 **The crosshairs.** Picture H as a thumb held out at arm's length; in space, two thumbs crossed at a right angle across the
 line of sight, one reading up and one across, both the same H (the fifth essay). Where they cross is the corner: the thing
 there reads one thumb up for one thumb along, v equal to h, and it is drawn one thumb wide. That crossing, with H, lays
-the near field and the far field over the read; the Cauchy of directions has neither (the fifth essay, section 10). The near field is a single thumb, laid evenly: everything nearer than the crossing gets its places
+the near field and the far field over the read; the Cauchy of directions has neither (the fifth essay, section 10). The near field is a single thumb, laid evenly: everything nearer than the crossing is read
 in proportion. The far field is read in ratios: a thing one thumb wide reads one in two, then one in four, then one in
-eight, each stretch with as many places as the one before, out toward the horizon. Counted by a writer, the same stretches
+eight, each stretch with as much of the heat as the one before, out toward the horizon. Counted by a writer, the same stretches
 are two thumbs, four, eight.
 
 For the crosshair to be the corner of every pair at once, the look has to run down the diagonal of three thumbs,
 horizontal, vertical and depth, the thing pointed at one thumb along each and √3 thumbs along the line of sight; round it a
-circle one thumb wide in space, 35° on the screen, runs from the corner out to home, the addresses squeezing toward home as
+circle one thumb wide in space, 35° on the screen, runs from the corner out to home, the readings squeezing toward home as
 they go (the fifth essay, "Three thumbs at the crosshair").
 
-Laid by distance address, a view shows the far field as the reader holds it: a point on the ground ρ away goes on the row
+Laid by distance address (K places along distance, a writer's layout of the reader's heat), a view shows the far field
+as the reader holds it: a point on the ground ρ away goes on the row
 (2/π)·atan(D/ρ), D the thumb's own ground distance, so that the thumb sits at ½ and the bands one in 2, 4 and 8 pack ever
-thinner under the horizon. The world is never counted for it: drawn only where the view reaches and culled to what spans an
-address, it needs K and no N (the fifth essay, "Laid by the addresses").
+thinner under the horizon. The world is never counted for it: drawn only where the view reaches and culled to what spans one
+of those places, it needs K and no N (the fifth essay, "Laid by the heat").
 
 ### Reality in 2H
 
-There is a second way to lay out the same far addresses, by length instead of by count. Place a far reading at a distance
+There is a second way to lay out the same far field, by length instead of by count. Place a far reading at a distance
 of 2 minus h/v from home, in units of H, in thumbs. Then the stretch past the corner from one thumb to two (H to 2H) takes
 up half of the next thumb; from two to four takes a quarter; from four to eight an eighth. The whole far field, out to
 infinity, fits between one thumb and two, H and 2H.
 
-The reader holds the same addresses either way, the same number over each stretch where the reading halves. Laid by count they
-run on forever; laid by length they crowd toward a wall at 2H. A reader with finitely many places runs out of them at the
-end of its own range in either case.
+The reader holds the same heat either way, the same share over each stretch where the reading halves. Laid by count it
+runs on forever; laid by length it crowds toward a wall at 2H. A reader of finite fineness K runs out of what it can tell
+apart at the end of its own range in either case.
 
-| drawing of the same addresses | measured by | bounded? | corner at |
+| drawing of the same heat | measured by | bounded? | corner at |
 |---|---|---|---|
 | the fisheye, the turn itself | steps of turning | yes, a quarter turn | half the turn |
 | the in-place lay | length | yes, out to 2H | H, halfway |
@@ -206,7 +207,8 @@ on both sides of 1 and in having a floor at the bottom. The reader has proportio
 
 ### Mercator's map
 
-Gerardus Mercator's map of 1569 is the oldest instance of the two address spaces laid out. On the globe at latitude φ, the
+Gerardus Mercator's map of 1569 is the oldest instance of the near field's proportion and the far field's ratios laid out
+together. On the globe at latitude φ, the
 height above the equator is v = sin φ and the radius of the circle of latitude is h = cos φ, so v/h is tan φ. Mercator
 stretched each circle of latitude out to the same width, and stretched the map vertically by the same amount at each place,
 to keep shapes true. Summed from the equator, the height on the map comes out as a function of v/h alone. Near the equator
@@ -265,9 +267,10 @@ logarithm of 2x past it. The lay of section 3, x then 1 plus the logarithm of x,
 
 ## 10. The count is the detail
 
-The forms of the two address spaces are fixed by the geometry: proportion, then ratios, one in two, one in four, one in
+The forms of the near and far fields are fixed by the geometry: proportion, then ratios, one in two, one in four, one in
 eight (a writer's two thumbs, four, eight). Their *counts* are not. How many places the near field is divided into, and how
-many each stretch where the reading halves gets, is the **detail**, how finely things are drawn. The geometry gives the forms. The detail gives the count.
+many each stretch where the reading halves gets, is the **detail**, how finely things are drawn. The geometry gives the forms. The detail gives the count. The reader reads that
+fineness, K, continuously; laid out as K places it is a writer's count, K addresses.
 
 A thing that spans n of the reader's places can be halved about log₂ n times before its halves are single places, one fewer
 each time it halves. When it spans a single place it is a point. Nothing is requested: the span sets how finely it is
@@ -320,11 +323,12 @@ corner of what is known.
 ### Dragging the thumb
 
 What moves when H moves? Not the read. The directions never held H: a reading is a ratio of the thumb's own shares, and the
-Cauchy over them is the same at every H. What H moves is distance. The K addresses along distance sit at H·tan(kπ/2K), half
-inside the thumb and half past it, at every H; laid as the reader lays them, each with the same room and the corner in the
-middle, they do not move at all. Drag the thumb out and the things in the world slide along those fixed addresses, more of
-them into the near field, each with less room; drag it in and they slide out past the corner, the near ones held finer.
-The addresses stay; the world slides along them. Nothing is written: no amount is carried in, only which things land
+Cauchy over them is the same at every H. What H moves is distance, and with it the overlay's heat in distance, (1/π)·sech(ln(d/H)), half nearer than the thumb and
+half past it at every H. Counted by a writer as K places, K addresses, it sits at H·tan(kπ/2K); laid as the reader lays
+it, each share the same room and the corner in the middle, it does not move at all. Drag the thumb out and the things in
+the world slide through that fixed heat, more of them into the near field, each with less room; drag it in and they slide
+out past the corner, the near ones held finer. The heat stays; the world slides through it, its paint met wherever it
+lands. *The heat is given; the paint is met.* Nothing is written: no amount is carried in, only which things land
 where changes. Near and far, then, are an overlay the thumb lays over the read, a split on every direction one thumb out,
 not part of the read's Cauchy, and not a shape.
 
@@ -383,7 +387,7 @@ that something is there and where to look next. Moving the corner there is a new
 This says where a focus *should* go, and why. It is not a claim about what any eye does.
 
 So a reader separates the near field from the far field by looking around at things: whatever the crossed thumbs point at
-is taken as H, half of every direction's addresses nearer than it and half farther, and looking at something else moves
+is taken as H, half of every direction's heat in distance nearer than it and half farther, and looking at something else moves
 the split there. Parallax gives one more reason to think it should. A thing at the corner is a thing at parallax's corner:
 a step of two thumbs, half the baseline equal to the distance, places it with the least error, ε·cosh(ln k) at its least,
 just ε (the sixth essay). The finest grain and the best baseline fall on the same thing, the one looked at. Counted per
@@ -427,6 +431,6 @@ post you are looking at, and you can move it.
   large hierarchies. *Proceedings of CHI '95*, 401–408.
 - Williams, L. (1983). Pyramidal parametrics. *Computer Graphics (SIGGRAPH '83)* 17(3), 1–11.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): the two address spaces in §6 (Proposition 4, the
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): the proportional and logarithmic lays in §6 (Proposition 4, the
 in-place lay, why halving, floating point, Mercator's map, one figure and three rulers) and detail and the
 choice of H in §8 (H is a zoom, a fixed count aimed by H, the corner follows the focus, Corollary 6.1).

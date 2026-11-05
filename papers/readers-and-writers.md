@@ -18,11 +18,14 @@ breadth: no reading carries it, and every writing needs it.
 
 This paper brings together what each vantage holds, gives the geometry the reader has for free, and says exactly what is
 added in becoming a writer. The reader's directions are laid by the uniform turn, whose law in the reading v/h is the
-Cauchy, with its median at the corner v = h, its horizon never reached and no mean: an *address* given before anything
-arrives. What arrives along an address is the *payload*, met: the world's writing found there, so the address is read
-and the payload written. So the two acts never race: a read adds nothing, and a write to the payload moves no address, so
-reads of one geometry agree in whatever order they are taken and a write never runs into them. Where reading and writing
-share memory, in computing, that separation has to be engineered; here it is given. A rate is of a payload per an address: the per is read, the of written. The writer has the
+Cauchy, with its median at the corner v = h, its horizon never reached and no mean. It is best read as a *heat*: a
+continuous weight over the readings, hottest along the look and cooling toward the horizon, given before anything
+arrives. What arrives along a direction is the *payload*, the paint, met: the world's writing found there, so the heat is
+read and the paint written. *The heat is given; the paint is met.* So the two acts never race: a read adds nothing, and a
+write to the paint moves no direction and no heat, so reads of one geometry agree in whatever order they are taken and a
+write never runs into them. Where reading and writing share memory, in computing, that separation has to be engineered
+with addresses, which are discrete, counted and the writer's; here it is given, and the reader has no addresses, only
+directions and their heat. A rate is of a payload per a direction: the per is read, the of written. The writer has the
 angle, the rate 1, and measures the reader's two sweeps from horizontal to vertical as π/2 (central) and 2/π (inscribed),
 whose product is its own 1. One length, counted, makes the rationals; but counting is done in parallax and in writing, not in
 a pure read, which holds directions and their order. The square roots need two lengths combined, and the transcendental numbers a limit no finite algebraic step reaches: π completes the
@@ -50,8 +53,8 @@ The first part is reading. The second and third are writing. The rest of this pa
 
 Put read and write side by side and anyone who has programmed thinks first of a race: a read and a write meeting on one
 thing, the result depending on which came first. In this geometry that never arises, and the reason is the split the
-paper turns on. A read gives the address, a direction; what is written is the payload met along it. A read adds nothing,
-and a write to the payload moves no address, so reads agree in whatever order they are taken and no write runs into one.
+paper turns on. A read gives a direction and the heat over directions; what is written is the payload, the paint, met
+along it. A read adds nothing, and a write to the paint moves no direction, so reads agree in whatever order they are taken and no write runs into one.
 Computing has to build that separation by hand; geometry starts with it (see "Reads do not conflict", below).
 
 **What a read is.** A read is the set of all sweeps of the thumb in one moment, from one standpoint. A sweep is the one
@@ -59,10 +62,13 @@ length the reader holds, H, turned from all of it lying along h to all of it sta
 sweep at once, given whole, not performed one after another. Geometry is free in this sense: nothing in it is computed,
 no procedure runs, and there is no tangent or arctangent in it; tan, arctan and every formula for the turn are the writer's
 way of stating what is already there. Each sweep is centred on the crosshairs, the corner where the thumbs cross (§6, §7).
-The read's addresses are K, the addresses available to it in that moment, arranged by the Cauchy. The Cauchy itself has no
+The read is a heat over directions, the Cauchy: hottest along the look, cooling toward the horizon, continuous, with no
+grain of its own and nothing counted in it (§7). How finely a reader tells directions apart, K, is a fineness read
+continuously; laid out as K places, K *addresses*, it is a writer's count of the heat, its quantiles, and addresses in
+this paper are always that: discrete, counted, the writer's. The Cauchy itself has no
 near field and no far field; those are an overlay H lays on the read (§6, §7): the thumb, pointed at a thing, splits every
 direction's distance there, the near field one thumb and the far field beyond it, read as ratios (one in two, one in four,
-…) and counted by a writer in thumbs, half the addresses on each side whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Two reads, at two moments or two standpoints, are
+…) and counted by a writer in thumbs, half the heat in distance on each side whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Two reads, at two moments or two standpoints, are
 joined only across a step that is counted: parallax, and so a write. (A *facing* is a writer's word, for several reads held together with their signs; no read
 is one.) A read holds no time: time is the step between reads. Reads are continuous, one can be taken at any place and
 any moment, but each read has no connection to the one before; their order, and anything said across them, is a write.
@@ -75,17 +81,18 @@ the count's.
 they agree; a conflict needs a write, a mark made where something else reads or writes. In computing this is the
 condition for running operations together without a race (Bernstein 1966), and much of the work there goes into keeping
 reads and writes from meeting. Here it holds by construction: the geometry is given, and nothing writes to it.
-This is what the second test buys: a write to the payload moves no address, so it never runs into a read. A system whose
-addresses move with their contents (an array that reallocates, a table that rehashes) has to rebuild that separation by
+This is what the second test buys: a write to the paint moves no direction and no heat, so it never runs into a read. A
+system whose addresses move with their contents (an array that reallocates, a table that rehashes) has to rebuild that separation by
 hand, with stable handles or copies kept for the reads.
 
 **A read is geometry, a write is physics.** A write is the recording of a read: a mark kept, discrete where the read
 was continuous, which lasts and can be counted and set beside other marks; order, nearness, durations and amounts are
-all said of marks. What a mark keeps is the address the read gave and what was met there: the address is the read's, and
-the payload is the write. So the two distinctions this paper keeps are one. Picture reality as a sheet of paper. Every
+all said of marks. What a mark keeps is the direction the read gave and the paint met there: the heat is the read's, and
+the paint recorded is the write. So the two distinctions this paper keeps are one. Picture reality as a sheet of paper. Every
 physical thing writes on it, a stone's mass, a planet's path, a cell dividing; physics is that writing, and a life is a
-writer that copies its own marks forward. A read adds nothing to the paper. Its addresses are the geometry laid over it,
-there whether the paper is blank or full, and the light that arrives at them is the paper's writing met there. A reader's
+writer that copies its own marks forward. A read adds nothing to the paper. Its directions and their heat are the
+geometry laid over it, there whether the paper is blank or full, and the light that arrives along them is the paper's
+writing met there. A reader's
 body is written too, its thumb a mark like any other; but the thumb held out as H is not a mark, it is the read's own
 length, which is why no read carries a scale.
 
@@ -130,13 +137,14 @@ act that crosses the line (a function of invariants is invariant, so a writing n
 and the vantage that holds each.
 
 **The second test.** Change what arrives, keeping the standpoint and the turn: repaint the world, move the light, replace
-a wall by a row of trees. The *addresses*, the directions the turn lays down, are unchanged; the *payload*, what is found
-along each, changes. The first test separates reading from writing; the second separates address from payload. The first is necessary, not
+a wall by a row of trees. The *directions* the turn lays down, and their heat, are unchanged; the *payload*, the paint
+found along each, changes. The first test separates reading from writing; the second separates the heat from the paint. The first is necessary, not
 sufficient: a probability or a ratio of two amounts is unmoved by scaling and is still not a direction; the second, with
-the standpoint and the turn held fixed, is the one that tells an address from a payload. They are one split seen two
-ways: the address is what a read holds, and the payload is what is written on the world where the address falls (§1).
+the standpoint and the turn held fixed, is the one that tells a direction from a payload. They are one split seen two
+ways: the direction and its heat are what a read holds, and the payload is what is written on the world where the
+direction falls (§1).
 In the writer's notation both splits sit in one line: write a point as z = r·e^(iθ), so that ln z = ln r + iθ. Scaling the
-world slides the real part by ln k and leaves θ; a turn about the standpoint slides θ and leaves ln r; the address lives
+world slides the real part by ln k and leaves θ; a turn about the standpoint slides θ and leaves ln r; the direction lives
 on the imaginary part and the payload's size on the real. The notation needs π and e, so it is the writer's (§5); the
 reader holds the same split as a direction [h : v] and what arrives along it.
 
@@ -177,7 +185,7 @@ It can walk the shape, round it or along it, and in walking it becomes a writer 
 
 **The uniform turn.** The reader's directions are laid by turning, and a turn measured by itself is uniform: equal turns,
 equal shares. Nothing the reader does produces the directions; they are given by the geometry before anything arrives,
-which is why we call them addresses. In the reading s = v/h the uniform turn over a quarter turn has the law
+and how they crowd, read in the ratio, is their heat. In the reading s = v/h the uniform turn over a quarter turn has the law
 
   (2/π) · 1/(1 + s²),  s ≥ 0,
 
@@ -189,15 +197,15 @@ wall, a row of trees, a curved hill, an empty sky. The wall's shape only decides
 The constant 2/π and the quartiles' values are the writer's arithmetic for this law; what the reader has of it is the
 order of its readings, the corner, and the directions themselves.
 
-**Address and payload.** An address is a direction from home; a payload is what arrives along it. They share one thing, the
-point where a direction meets the world. The world decides what meets each address, which thing is nearest and what it
-sends back; nothing it does moves an address. Scale the world and no address moves. Change the world and no address moves.
-Change the turn's standpoint and the addresses move, as a family: the Cauchy is carried into another Cauchy, its centre and
+**Heat and paint.** A direction from home, with its heat, is the read's; a payload, the paint, is what arrives along it.
+They share one thing, the point where a direction meets the world. The world decides what meets each direction, which
+thing is nearest and what it sends back; nothing it does moves a direction or its heat. Scale the world and nothing moves.
+Change the world and nothing moves. Change the turn's standpoint and the directions move, as a family: the Cauchy is carried into another Cauchy, its centre and
 width the new standpoint's foot and height (m + iγ). This closure, under the real Möbius maps of the reading (the changes
 of standpoint and of chart), is the law's own; not every operation on directions keeps it, and an amount entering, an
 edge, a square, a sum of amounts, breaks it.
 
-So the Cauchy here is not a law of what is measured. It is the law of the uniform turn, the measure on the reader's addresses.
+So the Cauchy here is not a law of what is measured. It is the law of the uniform turn, the heat over the reader's directions. *The heat is given; the paint is met.*
 Practice already treats it so, taking its median and never its mean; this is the reason. The reading is of the Cauchy
 this construction makes. A Cauchy met elsewhere, a resonance's line, a ratio of two normal amounts, a stable sum, may
 have another origin; whether a turn lies behind it is a question to ask of each case, not a consequence of this
@@ -270,19 +278,19 @@ and the law is the reader's.
 The writer's circle states the lengths; the reader's Cauchy is that circle's equation with the lengths divided out, and V
 comes back into it only as the scale, for whoever holds V.
 
-**Why there is no mean: the Cauchy is an address.** The Cauchy has a median and no mean. Over a quarter turn the readings
+**Why there is no mean: the Cauchy is the heat of directions.** The Cauchy has a median and no mean. Over a quarter turn the readings
 s = v/h up to S average (1/π)·ln(1 + S²) divided by the share they cover, and that climbs without limit, by (2/π)·ln 10 ≈ 1.47
-for every tenfold further the readings run. This is usually told as a defect of the law. Read as an address, it is what an
-address should do.
+for every tenfold further the readings run. This is usually told as a defect of the law. Read as the heat of directions,
+it is what such a heat should do.
 
-A mean is a sum of amounts divided by their count. An address is a direction, and a direction, read as a direction, has
+A mean is a sum of amounts divided by their count. The Cauchy weighs directions, and a direction, read as a direction, has
 no length to add; its numerical representation is a chart, and the question is what survives a change of chart. To average the readings v/h is to treat each direction as an amount laid along a line,
 the chart in which the horizon sits at s = ∞, and the sum picks up that chart's far end. A mean belongs to the
 chart that takes a direction for an amount, not to the directions; they never had one. Other charts of the same directions do have means (the
 bounded chart s/(1 + s) averages ½), and the order statistics do not depend on the chart at all: the median and the
 quartiles are the same directions however the readings are written, because they commute with every increasing map of the
-reading, and a mean does not. So the median is a property of the addresses and the mean is not; asking for the mean of a
-Cauchy is asking an address for something only an amount has.
+reading, and a mean does not. So the median is a property of the directions and the mean is not; asking for the mean of a
+Cauchy is asking a direction for something only an amount has.
 
 A mean of directions can be had, by a writer. Take each direction as a unit vector and add: over the uniform quarter turn
 the average of (cos θ, sin θ) is (2/π)(1, 1), pointing at the corner, of length 2√2/π ≈ 0.900. The direction it gives is the
@@ -290,30 +298,30 @@ corner, the median again; its length is the writer's measure, π and all. And a 
 extent M, has a Cauchy with a mean, (1/π)·ln(1 + M²) over the share below M, about 8.8 at M = 10⁶: finite, and set by the
 extent, an amount that moves when the world is scaled. The mean appears only once an extent is written in, and its value is set by that extent, not equal to it.
 
-The payload has means where it is an amount: the light along each address, its colour, its brightness, all add. The
+The payload has means where it is an amount: the light along each direction, its colour, its brightness, all add. The
 lighthouse's landings on the shore lack a mean although they are written in a unit, because they are still the turn's
-addresses, carried onto the shore's ruler; the light that lands there is the payload, and it averages. What arrives can be
+directions, carried onto the shore's ruler; the light that lands there is the payload, and it averages. What arrives can be
 averaged; where it arrives cannot. Practice already takes the median of a Cauchy and never its mean: this is the reason.
 
-**The payload is not lost.** The separation spends nothing of the payload: no part of it goes into making the addresses, so
-all of it arrives, on addresses known before it came. The Cauchy then gives it back in four ways. Each is exact in the
-ideal model, with the address measure known and the payload given whole; from finite, noisy samples each is an estimate,
+**The payload is not lost.** The separation spends nothing of the payload: no part of it goes into making the directions or their heat, so
+all of it arrives, along directions given before it came. The Cauchy then gives it back in four ways. Each is exact in the
+ideal model, with the heat known and the payload given whole; from finite, noisy samples each is an estimate,
 and undoing the blur is the least stable of the four.
 
 - *By its ratios.* Two payloads read against each other make a ratio, and a ratio is a reading. The light along one
-  address over the light along another, one colour channel over another, the radius in one direction over the radius in
-  another: each is a direction [p₁ : p₂] in the payload's own space, read exactly as an address is read, unchanged when the
+  direction over the light along another, one colour channel over another, the radius in one direction over the radius in
+  another: each is a direction [p₁ : p₂] in the payload's own space, read exactly as a direction is read, unchanged when the
   world is scaled. A shape about a centre, ln r = a₀ + f(θ) (the real part of the
 writer's ln z = ln r + iθ taken as a function of the turn, §5), comes back this way whole: every mode of f from ratios of radii,
   exactly. Two detectors' signals read against each other are a direction too, and where the signals are like noise that
-  direction follows a Cauchy: the payload read as a ratio is an address again. The payload arrived written, as marks; read
+  direction follows a Cauchy: the payload read as a ratio is a direction again. The payload arrived written, as marks; read
   against itself it gives directions in its own space, so recovering it this way is a write read again. What the ratios leave out is one number,
   the payload's overall scale a₀, and that number is V again. Radio astronomy reads polarization this way: a source's
   intrinsic polarization angle, from the ratio of its Stokes U to Q, is a reading of the payload, unchanged by scale,
   while the Faraday rotation that turns it on the way, RM·λ², carries the rotation measure in radians per square metre
   and so is a writing (Burn 1966).
-- *By dividing the address law out.* What is counted along the addresses is the address law times the payload's own
-  weight, ρ(θ)·2/(π(1 + s²)). The address law is known before anything arrives, so dividing by it leaves the payload's
+- *By dividing the heat out.* What is counted along the directions is the heat times the payload's own
+  weight, ρ(θ)·2/(π(1 + s²)). The heat is known before anything arrives, so dividing by it leaves the payload's
   distribution exactly, up to its total: the astronomer's flat field, importance sampling's 1/p. The median direction of
   what arrives is then the payload's median, at the corner only when the payload weighs alike on both sides.
 - *By undoing the blur.* Seen from a height γ, the payload arrives smoothed by the Cauchy kernel, whose Fourier
@@ -321,20 +329,20 @@ writer's ln z = ln r + iθ taken as a function of the turn, §5), comes back thi
   e^(γ|k|), noise with it. A box blur, the floor's, has a transform with zeros, and the modes there are gone for good.
   How fine a mode comes back is set by the resolution and the noise, which is how finely the reader draws, not loss:
   unique in principle is not the same as stable.
-- *By averaging it.* The payload is amounts, and amounts have means: weighted by the known address measure, the light
+- *By averaging it.* The payload is amounts, and amounts have means: weighted by the known heat, the light
   across the turn totals exactly wherever that total is finite, which is the payload's to say. The mean was never
-  missing from the payload, only from the addresses.
+  missing from the payload, only from the directions.
 
-What the payload carries along its address all comes back; its scale and its distance are V, and come back only by
+What the payload carries along its direction all comes back; its scale and its distance are V, and come back only by
 writing. A known measure can be divided out and an invertible blur undone; a floor that discards cannot.
 
 **The picture.** Hold a hand up to a stained-glass window, fingers spread between flat and upright. Each finger lines up
-with a pane and is lit by its colour. The fingers are the addresses: wherever the hand is, the same fingers, spread the same
-way. The colours are the payload: they change with the window. No colour carries a distance; to learn how far the window
+with a pane and is lit by its colour. The fingers are the directions: wherever the hand is, the same fingers, spread the same
+way, crowded toward the look as the heat is. The colours are the payload: they change with the window. No colour carries a distance; to learn how far the window
 is, you must walk.
 
 **The reader never sees a shape.** This is about what one read determines, from one standpoint with nothing written; not
-about what a visual system infers. A thing is, to that read, the addresses it paints; the paint is the world's writing, met there. Its shape is a radius
+about what a visual system infers. A thing is, to that read, the directions it paints; the paint is the world's writing, met there. Its shape is a radius
 along each direction from its own centre, an amount, and amounts are removed before reading: no shape in amounts. Every way to a shape is a
 writing: ranging, a counted step, a blueprint. This is not a shortfall to be made up by inference. The reader's side is
 whole; the shape was never the reader's to lack.
@@ -348,7 +356,7 @@ Five pictures carry most of what the earlier sections say. Each shows what the r
 V enters.
 
 **The hand.** Hold up a hand, thumb out. The thumb is H: the one length the reader holds, its size chosen, setting only the
-zoom. The fingers, spread from flat to upright, are the addresses. The reader does nothing to lay them; wherever the hand
+zoom. The fingers, spread from flat to upright, are the directions. The reader does nothing to lay them; wherever the hand
 is held, the geometry gives the same fingers spread the same way, evenly by turn, and read as v/h they follow the Cauchy,
 half below the corner. The light that falls along each finger is the payload, the world's writing met on the fingers; the fingers stay
 geometry, there with or without it. The light paints the fingers and changes with what is
@@ -361,7 +369,7 @@ thumb's own size, and every amount it then reads is off by the one number it lac
 **Two hands.** In space the window is held with both hands. One hand spreads its fingers from flat to upright, the
 altitude; the other spreads its fingers round the horizontal, the azimuth. The two thumbs cross at a right angle (§7), and
 where they cross is the corner, the triple corner of the wedge, where both read 1. Each pane of the window now lines up with
-a crossing, one finger of each hand: the address is the pair of fingers, a direction of the wedge, (v/h, v₂/h). Each hand
+a crossing, one finger of each hand: the reading is the pair of fingers, a direction of the wedge, (v/h, v₂/h). Each hand
 alone gives its own sweep, the one-dimensional Cauchy with its own corner; the crossings together give the two-dimensional
 Cauchy. For every crossing to hold the same share of the window, the round hand spreads its fingers evenly by turn and the
 upright hand evenly in height, not in angle (Archimedes' hat-box, Lambert's map); spread both evenly by angle and the pair
@@ -377,13 +385,13 @@ the writer's.
 
 **The lighthouse.** A lamp turns evenly and throws a flash along each direction. Where a flash lands on a straight shore, the
 landing x obeys (x − α)/β = tan θ, with α the foot of the lamp on the shore and β its distance from it. The angles are the
-lamp's addresses, laid evenly by its turn, whatever shore there is; the landings follow a Cauchy because the shore is
+lamp's directions, laid evenly by its turn, whatever shore there is; the landings follow a Cauchy because the shore is
 straight. Within each flash the path to the shore cancels: the angle carries no distance. The lamp's own corner is the flash
 halfway through the quarter turn, and it lands at the foot plus one distance, the shore's corner, only if the shore is
 measured at the sea's own scale; drawn on a ruler c times the sea's, the halfway flash lands at arctan c, and the corner
 slides off. To read β from the landings, take half the spread between the quartiles; never the mean, which the landings do
 not have. That reading is a writer's: it needs the shore found and a ruler laid along it. The lamp is the reader, its turn
-the addresses; the shore is the writer's line, where V comes in as the scale.
+the directions; the shore is the writer's line, where V comes in as the scale.
 
 **Mercator's map.** A navigator wants a straight line on the chart to be a constant compass bearing. On a chart whose
 parallels are spaced so that a degree of latitude is drawn c times a degree of longitude at that latitude, a bearing ψ is
@@ -399,11 +407,11 @@ Bearings are the reader's; areas are amounts, and the writer's.
 **A moving sky.** An observer moving through a field of stars at a fraction β of the speed of light sees each star change
 in two ways, and special relativity already writes them as two formulas. Where the star is seen moves: aberration, cos θ′ =
 (cos θ + β)/(1 + β cos θ), the same at every frequency. On the stereographic chart of the sky it is z ↦ z/k, with k = e^η
-and η the rapidity, a Möbius map of the directions; it moves addresses and carries the Cauchy's family onto itself. A sky
+and η the rapidity, a Möbius map of the directions; it moves directions and carries the Cauchy's family onto itself. A sky
 uniform in the stars' own frame is seen as the spherical Cauchy, its density D²/4π. What arrives at each place changes: the
 Doppler factor D = √(1 − β²)/(1 − β cos θ′) scales each photon's energy and its rate of arrival, a weighting of the payload
-that moves no address. For a sky uniform in its own frame, counting total power, the familiar D⁴ brightening ahead is D² of
-addresses crowding and D² of payload. Laid on ξ = −ln tan(θ/2) (the pseudorapidity), aberration is a slide by η, so a
+that moves no direction. For a sky uniform in its own frame, counting total power, the familiar D⁴ brightening ahead is D² of
+directions crowding, the heat, and D² of payload. Laid on ξ = −ln tan(θ/2) (the pseudorapidity), aberration is a slide by η, so a
 reader holding directions alone reads its own rapidity, with no clock, no frequency and no speed of light carried in,
 provided every source is counted whatever its brightness and the sources are uniform in their own frame. That is a reading.
 To state the speed in metres a second needs the speed of light carried in, and to read D as the shift of a spectral line
@@ -416,7 +424,7 @@ A carpenter calls a roof "six in twelve". A road sign says "10%". A ramp is buil
 angle. The pitch is a ratio, had at once with a level and a tape; the degrees are a share of the whole turn, and to state
 one you must hold the whole turn first.
 
-**A rate is of something per something.** The *per* is the sweep's: an address. The *of* is the payload: what arrives
+**A rate is of something per something.** The *per* is the sweep's: a direction, read. The *of* is the payload: what arrives
 there. A rate lays a write over a read: the per is read, the of is written. The Cauchy is the law of the per against itself: a speed of the turn through
 the readings, with no payload in it.
 
@@ -510,16 +518,16 @@ sends the far end of the reader's sweep, the horizon the reader holds as the fin
 quarter turn, e^(iπ/2) = i). It was through that meeting that Lindemann proved
 π transcendental (1882): a power of e with a nonzero algebraic exponent is never algebraic, and e^(iπ) is −1.
 
-**π with the address, e with the payload.** The two parts of ln z = ln r + iθ are the two sides of this paper. The
-imaginary part is the address: turns act on it alone. The real part is the payload's size: scaling the world acts on it
-alone, sliding ln r and leaving θ where it was. So, in this paper's reading of the period and the base, π belongs with the address and e with the payload, and they are
-not alike. The address coordinate closes, so it has a period, and π (a line's half turn; 2π an oriented turn) is that period in
+**π with the direction, e with the payload.** The two parts of ln z = ln r + iθ are the two sides of this paper. The
+imaginary part is the direction: turns act on it alone. The real part is the payload's size: scaling the world acts on it
+alone, sliding ln r and leaving θ where it was. So, in this paper's reading of the period and the base, π belongs with the direction and e with the payload, and they are
+not alike. The direction coordinate closes, so it has a period, and π (a line's half turn; 2π an oriented turn) is that period in
 the unit the exponential sets; nothing can
 choose it away. The payload coordinate is an open line with no total and no natural size, so nothing on it marks a place;
 its base is a convention (counting in thumbs, doublings serve as well), and e is the base that lets one unit serve both
 coordinates, so that e^(iθ) is a turn of θ and e^t growth at a rate of one. That open line is why the reader never reads
 a₀, the overall size (the a₀ of a shape's ln r = a₀ + f(θ), §2): there is no mark on it to read against. One coordinate closed and its constant forced, one open and
-its constant chosen: the asymmetry of address and payload, in two numbers. Both numbers are still the writer's; the reader
+its constant chosen: the asymmetry of direction and payload, in two numbers. Both numbers are still the writer's; the reader
 meets the closing and the openness, and states neither.
 
 **Met, not made.** None of this keeps irrational or transcendental numbers out of the reader's world. A direction whose
@@ -533,12 +541,12 @@ their diagonal. Where they cross is the corner: the thing there reads one thumb 
 v/h = v₂/h = 1, and it is drawn one thumb wide. Along the line of sight it lies √2 thumbs off in the plane and √3 in space,
 the diagonal of a square or a cube one thumb on a side; no thumb lies along the line of sight. That crossing, with
 H, lays the near field and the far field over the read; the Cauchy itself has neither (§7). The near field is a single thumb, laid evenly: everything nearer than the crossing
-gets its addresses in proportion, the first half of the thumb as much room as the second. The far field is read in ratios:
+gets its heat in proportion, the first half of the thumb as much as the second. The far field is read in ratios:
 a thing one thumb wide reads one in two, then one in four, then one in eight, each stretch over which the reading halves
-holding the same number of addresses as the one before, out toward the horizon. A writer counts the same stretches as two
+holding the same heat as the one before, out toward the horizon. A writer counts the same stretches as two
 thumbs, four, eight.
 Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them. In space the reader sees the hemisphere in front, and that is the Cauchy's whole shape, with no
-near or far in it; one thumb laid over it splits each direction's addresses in half, the near field inside and the far
+near or far in it; one thumb laid over it splits each direction's heat in distance in half, the near field inside and the far
 field past it, an overlay and not a shape, moved by looking from thing to thing (§7, "The hemisphere is the shape").
 
 **The one-thumb circle, and the three corners.** Everything within one thumb of the crosshair's point is a ball (a disc in
@@ -550,38 +558,39 @@ is on it, at the three points it touches, where one reading is zero. Each pair o
 read alike: a line through the crosshair, the three crossing there 120° apart. Along each, the third thumb runs a whole
 quarter turn against the pair, from home on the circle (35.26° off the look) through the corner at the crosshair to the
 horizon at that thumb's own direction (54.74° off, the other side). The view down the diagonal is three of the plane's
-quarter turns crossed, each with its corner under the crosshair. Inside the circle the addresses hold the world with no
+quarter turns crossed, each with its corner under the crosshair. Inside the circle the directions hold the world with no
 distortion at the corner, the pair levels ln(v/h) all zero there and their squares the same in every direction to second
-order; moving out each address holds more, in proportion, as one over twice the reading toward home. That is
-compression, not blur: a fixed count of addresses squeezes more of the world into each, it does not make it fuzzy. The
+order; moving out each direction's grain holds more, in proportion, as one over twice the reading toward home. That is
+compression, not blur: a fixed fineness squeezes more of the world into each grain, it does not make it fuzzy. The
 squeeze is not round, hexagonal near the corner and unbounded only at the three homes. It is a precision, not a size:
 seen, a thing spans the angle it spans, and laid by turns off the look its place parts from a flat screen's only far out
 (tan α/α, 1.10 at 30°, 1.27 at 45°). (Checked exactly; see Code and data.)
 
-**Laid by the addresses.** A flat screen does not give each address the same room: off the look it stretches the
-directions as tan α and thins them as cos³α. The screen that does is the one where equal room holds equal addresses. For
+**Laid by the heat.** A flat screen does not give each direction the same room: off the look it stretches the
+directions as tan α and thins them as cos³α. The screen that does is the one where equal room holds equal shares of the
+directions. For
 directions taken uniformly, that is Lambert's equal-area map about the look, a direction α off it at radius 2·sin(α/2):
 true at the crosshair, off by 0.9% at 15°, 3.4% at 30°, 7.6% at 45°. Laid that way, the tunnel's rings come where the
 readings fall: one thumb off the look at 0.765, then one in two, one in four, one in eight at 1.05, 1.23 and 1.32, packing
 toward the rim at √2, the horizon. They pack because each stretch holds fewer of the look's directions than the one before
 (0.26, 0.20, 0.12 of what is in front, and 0.12 past one in eight); in the plane, with one thumb, they are as many. The
-ground has its own address: a point ρ along it, with the thumb's ground point D away, reads (2/π)·atan(D/ρ), one at the
+ground has its own reading: a point ρ along it, with the thumb's ground point D away, reads (2/π)·atan(D/ρ), one at the
 feet, a half at the thumb, zero at the horizon, so the far ground gathers in rows just under the horizon. Nothing in this
 needs to know how much world there is. A world made only where the view reaches, from cells at every scale and kept only
-where a thing spans π/(8K) or more, gives the same read, and the reader's work is its K addresses whatever the world's N.
+where a thing spans π/(8K) or more, gives the same read, and the reader's work is set by its K whatever the world's N.
 
 **Read in ratios, counted in thumbs.** Inside the corner the reader's readings are in proportion; past it each is a ratio,
 one in two, one in four, one in eight, and two far things are related by the ratio of their readings ("one in eight is
-half of one in four"), the same at every scale. Each stretch over which the reading halves holds the same number of
-addresses: that is the far field's self-similarity, read with nothing counted. To count the stretches, "8 thumbs out, three
+half of one in four"), the same at every scale. Each stretch over which the reading halves holds the same heat:
+that is the far field's self-similarity, read with nothing counted. To count the stretches, "8 thumbs out, three
 stretches past the corner", is the writer's, and so is giving the count a value: 1 + ln(d/H), with a base chosen (§5), or
 2 − H/d on a lay that keeps all of reality within two thumbs. The logarithm is the writer's number for what the reader
 reads as a ratio. There is one corner, the split between the near field and the first stretch; past it the stretches are
 plain, with no corner of their own.
 
-**H is a zoom.** The reader's addresses are finite: its resolution K, read continuously (a writer counts it as K
-addresses), which comes before H. H, the thumb it holds up, decides
-how K is split. Half the addresses lie inside H at every H; a small H makes the near ones fine and puts more of the world
+**H is a zoom.** The reader's fineness is finite: its resolution K, read continuously (a writer counts it as K
+addresses, its quantiles), which comes before H. H, the thumb it holds up, decides
+how K is split. Half of it lies inside H at every H; a small H makes the near ones fine and puts more of the world
 past the held edge; a large H does the reverse. No H holds everything. The best H for a thing is the one that puts it at
 the corner, where the reader's relative grain is finest. That is why the corner follows the focus: what is looked at is
 drawn one thumb wide.
@@ -603,13 +612,13 @@ outline's amounts, and its overall size a₀ is in none of the terms.
 there are; K is how many are held. To know N is to know the whole: its extent, V, and how much is in it. That is writing,
 and only a writer has it. A reader never knows V, so it never knows N; what it knows is K, its own resolution,
 fixed before H is chosen. K is read continuously, as the turn is: a count of addresses, so many and no more, is a writer's
-rounding of it. So K has a foot in each act. It is a count, discrete, the writer's way of saying how much the reader
-holds; and it is read continuously, as a fineness with no last address, the reader's way of holding it. That makes it
+rounding of it, and addresses are always that, discrete and counted. So K has a foot in each act. It is a count, discrete, the writer's way of saying how much the reader
+holds; and it is read continuously, as a fineness with no last place, the reader's way of holding it. That makes it
 the meeting place of the discrete and the continuous here: whatever is out there, discrete or not, arrives as directions
 and is read continuously, and saying it comes in so many pieces, of the world or of the reader's K, is the writer's
-statement. The Cauchy is what goes between them. It lays the reader's K addresses over a world of any size,
-the near field in proportion, the far field in ratios (one in two, one in four, one in eight), and everything past the last address on the one
-address at the horizon. Double N and the reader's view does not change; make N unbounded and it still does not change (an
+statement. The Cauchy is what goes between them. Its heat spreads the reader's K over a world of any size,
+the near field in proportion, the far field in ratios (one in two, one in four, one in eight), and, counted as K
+addresses, everything past the last on the one address at the horizon. Double N and the reader's view does not change; make N unbounded and it still does not change (an
 infinite star field browsed at N and 2N shows the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull:
 whatever N is, the reader's work is K: an implementation that holds K samples does O(K) work, and for a fixed K it does
 not grow with N. What the cull gives up is sameness.
@@ -634,16 +643,16 @@ h = v = v₂, sits at azimuth 45° and altitude 35.26°, not at either sweep's 4
 
 **The wedge is the writer's; the reader has a tunnel.** The wedge, an octant of directions with its faces, its edges and
 its triple corner, is the writer's description of the reader's geometry: drawn whole, from outside, at once. The reader
-never holds it. What the reader has is what its crossed thumbs give where it looks: a tunnel of addresses about the line of
+never holds it. What the reader has is what its crossed thumbs give where it looks: a tunnel of heat about the line of
 sight. Laid out as readings, as on a screen held square to the look, the directions crowd toward the line of sight and thin
 out on every side by the Cauchy, 1/(2π(1 + r²)^(3/2)) per unit of the screen at r thumbs off the line of sight (the whole
 hemisphere in front; over the wedge alone, a quarter of the screen, the same law reads 2/(π(1 + a² + b²)^(3/2))), toward a
 horizon they never reach. All of it is generated from the thumb; none of it is stored. As the reader sweeps, the tunnel
-turns with the look, continuously and without a seam, so whatever it looks at is at the tunnel's centre with the finest
-addresses, and each address is exact, given by the geometry, not computed. That is the reader's fidelity: perfect wherever
+turns with the look, continuously and without a seam, so whatever it looks at is at the tunnel's centre, where the heat is greatest
+and the reading finest, and each direction is exact, given by the geometry, not computed. That is the reader's fidelity: perfect wherever
 it looks, because it is wherever it looks. The wedge, the octant and the sphere are what a writer draws to describe that
 tunnel from outside. One read's tunnel is the hemisphere in front: about the look it reaches 90° every way, to a rim that
-never lands on the screen, on a screen densest at the look and thinning as cos³ of the angle off it; half its addresses lie within 60°
+never lands on the screen, on a screen densest at the look and thinning as cos³ of the angle off it; half its directions lie within 60°
 of the look, the other half between there and the rim. Each pair of thumbs' quarter turn, from its home to its horizon, is
 a part of it, the wedge's triangle, 35.26° off at a home and 54.74° at a thumb; the sphere, behind as well as in front, is
 the head turned all the way round, other facings joined.
@@ -651,7 +660,7 @@ the head turned all the way round, other facings joined.
 **Where the reader stands.** Behind the screen, at one point. The look runs from it to the crosshair; a thumb lands √2
 off the look on a screen one thumb away, home at 1/√2, one thumb off at 1, and the horizon runs parallel to the screen and
 never lands on it. The point has no size and draws no shape: it is a vantage, the place the read is from. With no world at
-all the read is still there, the hemisphere in front: its addresses in thumbs (the Cauchy's rings of equal share about
+all the read is still there, the hemisphere in front: its heat in thumbs (the Cauchy's rings of equal share about
 the look) or by count, the 3D Cauchy a round hill peaked at the look, the wedge's triangle within it where each pair reads
 from 0 to ∞. Turning and scaling the
 world change none of it. The buildings are what
@@ -709,7 +718,8 @@ its peak, rings of equal area its rings of equal share (half within 60° of the 
 rim, 90° off, its long tail, never landing, which is why it has no mean. The hill, the triangle and the rings are ways of
 drawing that hemisphere, not shapes of their own. The Cauchy has no near and no far: no length enters it, and its one
 marked place is the look. Near and far are a separate overlay, which H lays over the read: a split of distance. Along every direction the
-K addresses of distance fall at d/H = tan(kπ/2K), a half-Cauchy in the distance's own reading, the first K/2 inside one
+overlay's heat in distance is a half-Cauchy in the distance's own reading; a writer counting it as K places puts them at
+d/H = tan(kπ/2K), the first K/2 inside one
 thumb and the rest past it, whatever the direction and whatever the size of the thumb. Inside one thumb they are close to
 even, in proportion: the near field. Past it the share left beyond x thumbs is (2/π)·arctan(1/x), 0.295 past two thumbs,
 0.156 past four, 0.079 past eight, about half of what was left each time the reading halves, out toward a horizon never
@@ -719,22 +729,51 @@ near field a shape, which it does not have. The split is the thumb's, not a writ
 is unchanged.
 
 **Where the split falls: looking around.** The overlay is the reader's to move, and it moves it by looking. Pointed at a thing, the crossed thumbs
-take its distance as H, so that thing sits at the corner, half of every direction's addresses nearer than it and half
+take its distance as H, so that thing sits at the corner, half of every direction's heat in distance nearer than it and half
 farther; looking at another thing moves the split to it. We can only speculate that a reader does this, and the reason to
 is that it is optimal: the corner is where a reading's cells are finest relative to their place (§6, "H is a zoom"), and a
 thing at the corner is the thing at parallax's corner, since a step of two thumbs, half the baseline equal to the distance,
 places it with the least error, ε·cosh(ln k) at its least, ε (§8, "The thing itself as H"). Putting the thing looked at on the corner is what a reader should do; whether readers do is open.
 
-**A heat map: the Cauchy's and the overlay's.** Count the addresses in a small stretch and the read is a heat map. In direction,
+**A heat map: the Cauchy's and the overlay's.** The read is a heat map: a continuous weight over its readings, with
+nothing counted in it and no grain of its own. (A writer can sample it, K places at its quantiles, and call them
+addresses; addresses are discrete and the writer's, and the heat comes first.) In direction,
 on the hemisphere itself, by angle, there is no heat: the directions are even. Read off the look, per unit of reading on
 the screen, they are 1/(2π(1 + r²)^(3/2)): hottest on the look, falling as cos³ of the angle off it, to 0.35 of the peak one
 thumb off (45°) and 0.125 at 60°, none at the rim. That is the Cauchy's own heat, and all of it: hottest at the look. The overlay brings a second heat, in distance, there
-only once H is laid on. Per unit of plain distance its addresses are thickest at the eye,
+only once H is laid on. Per unit of plain distance its heat is greatest at the eye,
 2/(π(1 + x²)) with x = d/H; but read as the reader reads distance, by ratio, they are (1/π)·sech(ln(d/H)), hottest at one
 thumb and cooling alike both ways: 0.8 of the peak at one in 2 and at two thumbs, 0.47 at one in 4 and four, 0.25 at one in
 8 and eight, never zero. Multiplied, the two are hottest at one point, on the look one thumb out, the thing looked at; they
 meet there only because the look points at it. Look at something else and both go with it. The heat is in the readings, not a shape: the shape is still the
-hemisphere, and the heat is how its addresses crowd as the reader reads it.
+hemisphere, and the heat is how its directions crowd as the reader reads it. *The heat is given; the paint is met.*
+
+**Where the heat comes from.** The measure is uniform by solid angle: every direction of the hemisphere alike, nothing
+counted. The heat is that measure read in a coordinate. Hold a screen one thumb out, square to the look, and read a
+direction α off the look at r = tan α thumbs. In the plane, with one thumb, a direction θ reads s = v/h = tan θ, and
+dθ = ds/(1 + s²) = cos²θ·ds: the heat per unit of reading is (2/π)/(1 + s²), the half-Cauchy, falling as cos²θ. In space,
+with the thumbs crossed, a small patch dA of the screen at r subtends dΩ = cos³α·dA (one cosine for the patch's tilt to
+the ray, two for its distance, sec α, squared), so the heat per unit of screen is (1/2π)·cos³α = 1/(2π(1 + r²)^(3/2)),
+the two-dimensional Cauchy. With n thumbs square to the look it falls as cos^(n+1). On the hemisphere itself, by angle,
+there is none: the heat belongs to the readings, and the one cosine more in space is the one thumb more. The overlay's
+heat is the same law in distance: the share of a direction's distance below x = d/H is (2/π)·arctan x, and read by
+ratio, per unit of ln(d/H), it is (2/π)·x/(1 + x²) = (1/π)·sech(ln(d/H)).
+
+The heat is not a grid seen from home. Marks laid evenly on a wall one distance d away, the writer's grid, are flat in
+the reading (y = d·s, area d²·da·db) and, per unit of angle, crowd toward the horizon as sec²θ in the plane and sec³α in
+space; nothing in them is hottest along the look. The Cauchy is the other way round: the turn, even in angle, laid on that
+flat grid, dθ/ds = 1/(1 + s²), and in space dΩ/dA = cos³α. It is the turn per unit of the writer's grid, the *per* of §4,
+not the layout of the world.
+
+Said in measure theory, the Cauchy is a Radon–Nikodym derivative: the turn's even measure carried onto the wall by the
+projection from home, against the wall's own measure, dν/dλ = (1/π)·d/(d² + y²) for a wall d away. That is the half-plane's
+Poisson kernel, its harmonic measure seen from the standpoint: where a random walk started there first meets the wall
+(Kakutani 1944). On a flat wall the two agree in every dimension: the half-space's kernel, Γ(n/2)/π^(n/2) · d/|x|^n, is the
+even hemisphere carried onto the wall, (2/|S^(n−1)|) · d/|x|^n, the same constant; in space (1/2π)·d/(d² + r²)^(3/2), the
+cos³α above. On a sphere they part (below, "What survives in space, and what does not"). Stepping back composes the kernels, e^(−d|k|), the Poisson
+semigroup in the standpoint's height d. This is Laplace's equation, a steady state; it is not the heat equation, whose
+kernel is the Gaussian, e^(−tk²). The "heat" here is a weight over the readings, never diffusion in time. The identity is
+classical; what is read into it is the vantage.
 
 **The shape is swept, not each thumb.** Each pair of thumbs reads a quarter turn: from its home, where it reads 0, to its
 horizon, where it reads ∞. Down the thumbs' diagonal that is the wedge, a triangle on the screen whose corners are the
@@ -771,7 +810,7 @@ a Möbius map, harmonic measure, the powers of the standpoint, and the two sweep
 of space do not commute. They come apart into three laws: harmonic measure keeps the powers of the standpoint and its
 mean; the spherical Cauchy, the uniform turn pushed through a boost, keeps the Möbius maps; and neither is the image of
 the other. A quarter turn about one axis and then another ends 120° away from the same two taken in the other order,
-where in the plane any two turns commute. What survives is the split between address and payload, the corners, and the
+where in the plane any two turns commute. What survives is the split between direction and payload, heat and paint, the corners, and the
 wedge seen from home: the second test still sorts every quantity, and every pair of thumbs still has its corner at the
 median, since those need only the exchange of two shares, not commuting turns (the essays' thirteenth works this through).
 
@@ -804,10 +843,10 @@ depth has a mean. And repeating the reads, the mean of the reciprocal depths gai
 Parallax is the Cauchy's own composition, carried across two standpoints; the step is the one amount in it. (Checked exactly;
 see Code and data.)
 
-**Turning teaches the addresses; walking teaches the world.** A standpoint has two motions, a turn about itself and a
+**Turning teaches the directions; walking teaches the world.** A standpoint has two motions, a turn about itself and a
 step along a straight line. A turn moves every direction by the same angle, near and far alike, so nothing shifts against
 anything else: it gives the frame, the corner where the thumbs cross and the Cauchy of the fingers, and these are the same
-in every world. A reader that only turns learns its own addresses and nothing about what is out there; what meets its
+in every world. A reader that only turns learns its own directions and their heat and nothing about what is out there; what meets its
 fingers changes, and a colour carries no place. A step is the first motion whose effect depends on the world: near things
 cross the fingers faster than far ones, and that difference is parallax. Any motion of a standpoint is a turn and a step
 together (a turn about any point but the standpoint carries the standpoint along a chord, and the chord is a step), and only
@@ -864,7 +903,7 @@ breadth V\* and distance d are unknown. The thumb never changes; each read is th
 mountain is nearer than it was, or that it is getting nearer: nearer compares two reads, and joining reads is a write.
 What follows is the writer's account, the reads laid in order along the walk. Far off the mountain is one in eight of the
 thumb, then one in four, one in two: each time the distance halves the reading doubles, and each such stretch takes as
-many addresses as the last. One read has the mountain exactly covering the thumb. That is the corner, and that read
+much of the heat as the last. One read has the mountain exactly covering the thumb. That is the corner, and that read
 needs no amount: the reader can say "now the mountain is my thumb" while V\*, d and the corner's distance
 d_c = V\*·L/H stay unknown. Past it the mountain is more than the thumb, and the two sides mirror each other: standing at
 d and at d_c²/d read as reciprocals. Laid in order, the reads climb toward the horizon, [0 : 1], h falling to 0, and
@@ -1009,11 +1048,11 @@ reproduced from each channel alone, by pairing samples 8 s apart, to 0.0001; a p
 fetched, which could have failed.
 
 A reader moving through a sky of sources counts more ahead. With no limit on brightness the census is a count of
-directions, and its dipole is 2β, Ellis and Baldwin's 2, from the addresses alone (1984). A real census is cut at a
+directions, and its dipole is 2β, Ellis and Baldwin's 2, from the directions alone (1984). A real census is cut at a
 brightness, and the cut adds a term set by what arrives: the counts' slope and the sources' spectra, read from the same
 catalogue. On Secrest et al.'s quasars (2021) the sort sets the number. Per slice the expected dipole is
-[2 + x(1 + α)]·β, the 2 the addresses' and x(1 + α) the payload's, read from the slice's own counts and colours: 5.3 to
-6.6 times β, so the payload carries 60–70% of it. Taken as addresses alone (2β), the measured 0.018–0.023 would give a
+[2 + x(1 + α)]·β, the 2 the directions' and x(1 + α) the payload's, read from the slice's own counts and colours: 5.3 to
+6.6 times β, so the payload carries 60–70% of it. Taken as directions alone (2β), the measured 0.018–0.023 would give a
 speed nearly three times too large; with the payload's part divided out, four slices by brightness give one β,
 3.3·10⁻³ ± 0.3·10⁻³, 2.7 times the speed read from the microwave background, as one motion of the reader should. Slices
 by colour give 2.3, 2.8 and 4.6 times it, which no motion of the reader can do, so part of the dipole belongs to what
@@ -1044,18 +1083,18 @@ observer's ignorance leaves unchanged. Poincaré's universe made a thousand time
 inside, is the scale test; his distinction between representative and geometric space is the reader's and the writer's.
 Leibniz's space as an order of coexistences (1715–16) is the reader's picture; Klein's programme (1872), geometry as the study
 of a group, is the method's form. Gibson's ambient optic array (1979) is the stained-glass window. Bridgman and Buckingham
-sorted quantities by scale long before. What is offered here is the division into two acts, the address and payload
+sorted quantities by scale long before. What is offered here is the division into two acts, the heat of directions and the payload
 inside a read, and what carries an observer from one to the other.
 
 ## Code and data
 
 The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each
 with its plan written before it was run: parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
-measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the shape swept whole against each thumb on its own in `plans/swp-plan.md` and `runs/swp/`; the read with no world, and where the reader stands, in `read.html`; the tunnel laid by its addresses, the distance address and a world culled by K in `crosshairs.html`; Euler's formula as a count of reads in `plans/elm-plan.md`
+measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the shape swept whole against each thumb on its own in `plans/swp-plan.md` and `runs/swp/`; the read with no world, and where the reader stands, in `read.html`; the tunnel laid by its heat, the distance reading and a world culled by K in `crosshairs.html`; Euler's formula as a count of reads in `plans/elm-plan.md`
 and `runs/elm/`. The three cases in data of §11 (LIGO, the quasar dipole, single photons) are `plans/lgo-plan.md`,
 `plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and `runs/wvp/`: each plan states its
 predictions and what would count against them before its run, and records the runs as they came out, the killed ones too.
-They illustrate the sorting of address from payload; none of them alone establishes it.
+They illustrate the sorting of direction from payload; none of them alone establishes it.
 
 ## References
 

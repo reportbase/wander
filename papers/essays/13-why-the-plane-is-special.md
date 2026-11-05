@@ -157,8 +157,8 @@ and it comes back turned, by exactly the solid angle the loop encloses (Gauss an
 unturned, whatever the loop: the plane's turns commute, and there is nothing left over. The quarter turns of the book are
 that leftover in its largest form. Physics meets it as Berry's geometric phase (1984): a spin carried slowly round a loop
 of field directions comes back with a phase of half the loop's solid angle, set by the directions visited and by nothing
-else, not the field's strength, not the speed, not the size of the apparatus (the third essay, section 10). It is an
-address quantity in the strict sense, and it exists only because space, unlike the plane, does not let its turns be
+else, not the field's strength, not the speed, not the size of the apparatus (the third essay, section 10). It is a
+quantity of directions alone in the strict sense, heat and not paint, and it exists only because space, unlike the plane, does not let its turns be
 taken in either order.
 
 ---

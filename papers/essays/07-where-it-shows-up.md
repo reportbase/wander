@@ -13,7 +13,7 @@ show one requirement and one freedom. The requirement is that whatever is drawn 
 one length, or the turn is lost. The freedom is the size, which every one of them leaves to be fixed some other way.
 
 The third essay already took three cases from data: LIGO's two detectors, the quasar dipole, and photons arriving one at a
-time. Those sorted the address from the payload. The cases here are older and more familiar, and they sort something else:
+time. Those sorted heat from paint. The cases here are older and more familiar, and they sort something else:
 what the one-length circle, the writer's drawing of the reader's pointing, looks like once it is drawn on a page, a shore
 or a chart, where a second axis exists and can be stretched.
 
@@ -84,8 +84,8 @@ lamp, the reading tan θ is the standard half-Cauchy of one length turned: scale
 drawing with two axes it is a Cauchy of scale c, the ratio of the shore's drawn length to the sea's. On the beach the marks
 follow C(α, β), a location and a scale, both amounts, both moved by scaling the world. So V, the shore playing the mountain
 in the distance, comes in only as the scale, and only when someone finds the shore and lays a ruler along it: the walker's
-paces are the writing. And the marks have no mean for the reason the third essay gave: they are the lamp's addresses
-carried onto the sand, directions written as places, and directions have no sum. The flashes' light, which is payload,
+paces are the writing. And the marks have no mean for the reason the third essay gave: they are the lamp's directions
+carried onto the sand and written as places, and directions have no sum. The flashes' light, which is payload,
 averages as any amount does.
 
 ---
@@ -161,7 +161,7 @@ two-thirds its size, when Africa is in fact about fourteen times larger. The com
 say what it is a complaint about.
 
 Mercator's chart keeps local angles. A course at constant bearing is a straight line, and a small shape is drawn with its
-proportions. That keeps what these essays call the addresses: the relation that matters to a navigator is a direction,
+proportions. That keeps what these essays call the directions: the relation that matters to a navigator is a direction,
 the ratio of a step east to a step north. It does so by the area scale sec²φ, which is a zoom, and areas are amounts. A
 country's size is payload.
 
@@ -273,22 +273,22 @@ Given both, the payload's law is the isotropic normal. It is the only law of two
 leaves unchanged, which John Herschel argued in 1850 for errors in astronomical position and James Clerk Maxwell in 1860 for
 the velocities of a gas's molecules (Herschel 1850; Maxwell 1860). Three things follow, each classical.
 - **Its direction is uniform over the turn.** So its reading is the half-Cauchy, P(|Y|/|X| ≤ r) = (2/π)·arctan r, with the
-  median at the corner. The normal payload's ratio has the addresses' law.
+  median at the corner. The normal payload's ratio has the law of the directions' heat.
 - **Its size is independent of its direction.** The length √(X² + Y²) and the angle separate exactly. What arrives and
-  where it is addressed come apart, which is the third essay's main theorem seen from the payload's side.
+  the direction it arrives along come apart, which is the third essay's main theorem seen from the payload's side.
 - **With unequal spreads**, σ_v ≠ σ_h, the reading is still a half-Cauchy, now of scale σ_v/σ_h, its median there. That
   is c = σ_v/σ_h, the uncalibrated case of section 5. Equal spreads are c = 1. With the payload's centre off the origin
   the reading is no longer a Cauchy at all, and its median leaves the corner. With the centre one spread out along v,
   at (0, σ), the median moves to about 1.515.
 
-The two routes to the Cauchy should be kept apart. The address law is the sweep's own: it needs only the uniform turn,
+The two routes to the Cauchy should be kept apart. The heat of directions is the sweep's own: it needs only the uniform turn,
 and it holds whatever the payload is, Gaussian or not. The normal payload is a second route that arrives at the same law,
-a model consistent with the addresses, not their cause. These essays make no claim that payloads are Gaussian. They say
+a model consistent with that heat, not its cause. These essays make no claim that payloads are Gaussian. They say
 only that if a payload's law is taken to be unchanged by turns, with independent components, it is the normal, and its
-ratio is then the Cauchy the addresses already were.
+ratio is then the Cauchy the directions' heat already was. *The heat is given; the paint is met.*
 
 The mean tells the routes apart. The payload has a mean: each component's size averages √(2/π)·σ. Its ratio, which has
-the addresses' law, has none. The part of its mean contributed by readings up to s is (1/π)·ln(1 + s²), growing without
+the directions' heat for its law, has none. The part of its mean contributed by readings up to s is (1/π)·ln(1 + s²), growing without
 limit as s grows. The
 central limit theorem is a third matter again: it makes a sum of many independent contributions normal, and it says
 nothing about a single payload's direction.
@@ -319,22 +319,22 @@ be seen in a photograph (Penrose 1959; Terrell 1959).
 
 which scales each photon's energy and the rate at which photons arrive.
 
-The first is a map of addresses. The third essay showed that Möbius maps carry the Cauchy's family onto itself, moving
+The first is a map of directions, carrying their heat. The third essay showed that Möbius maps carry the Cauchy's family onto itself, moving
 only its point, and here they do.
 - A sky uniform in the stars' own frame is seen from the moving frame as the spherical Cauchy, with density
   (1 − β²)/(4π(1 − β cos θ′)²) (Kato and McCullagh 2020). Its parameter is ρ = tanh(η/2). With one dimension fewer it is
   the wrapped Cauchy with the same ρ. On the circle that law is also where a random walk from the standpoint lands, its
   mean ρ; on the sphere those two come apart, and the boosted sky is the Möbius law alone, its mean cosine
   coth η − η/sinh² η (the second essay, section 9).
-- That density is D²/4π. The Doppler factor squared is the crowding of addresses toward the motion.
+- That density is D²/4π. The Doppler factor squared is the crowding of directions, their heat, toward the motion.
 - It keeps the cross ratio of any four stars' places, read as complex numbers in that chart. Three stars seen in both
   frames fix the whole boost and turn, because the Möbius maps of the sphere are the Lorentz group, and a Möbius map is
   fixed by three points (Penrose and Rindler 1984).
 
-The second is a weighting of the payload at each address, and it moves no address.
-- An isotropic sky's intensity brightens ahead by D⁴ (Rybicki and Lightman 1979). Of that, D² is the addresses'
+The second is a weighting of the payload along each direction, and it moves no direction.
+- An isotropic sky's intensity brightens ahead by D⁴ (Rybicki and Lightman 1979). Of that, D² is the directions'
   crowding, and D² is the payload: energy and arrival rate, D each. The D⁴ is standard. The split into two squares, one
-  for addresses and one for payload, is these essays' reading.
+  for the heat of directions and one for payload, is these essays' reading.
 
 **Reading one's own speed from directions alone.** Lay each direction on the axis ξ = −ln tan(θ/2), the quantity particle
 physicists call pseudorapidity. On that axis aberration is a shift by η exactly: every star slides the same distance. A sky
@@ -344,7 +344,7 @@ frame it lies as ½·sech²(ξ′ − η), the same bell with its median moved t
 So a reader holding directions alone can read its own rapidity, a reading, with no clock, no frequency and no speed of
 light carried in. It needs two things of the sky: that every source is counted whatever its brightness, and that the
 sources are uniform in their own frame. The third essay's quasar dipole showed what happens when the first fails. A
-census cut by brightness adds a weighting of the addresses, D raised to a power read from the census's own counts and
+census cut by brightness adds a weighting of the directions, D raised to a power read from the census's own counts and
 colours. That is still a reading, needing no rest frequency, but no longer of directions alone. And to read the Doppler
 factor as a frequency, a shift of a spectral line, needs the line's rest frequency carried in, a known kind of atom: a
 writing.
@@ -359,9 +359,9 @@ sin χ and the Lorentz factor γ = sec χ. Rapidities add along a line, as hyper
 uniform in η, not in χ, so its corner, γβ = 1 (β = 1/√2), is where its two regimes hand over, slow to fast, and not a
 median of anything.
 
-**What the theory already had.** None of this is new physics, and these essays claim none. The split between addresses
+**What the theory already had.** None of this is new physics, and these essays claim none. The split between directions
 and payload is already in the formulas: aberration on one line, Doppler shift and beaming on another. What the formulas do
-not do is name the two as a transformation of addresses and a weighting of payload, and so they do not say why the first
+not do is name the two as a transformation of directions and a weighting of payload, and so they do not say why the first
 is a Möbius map carrying the Cauchy and the second is not. The identities are exact. The reading is ours.
 
 ---
