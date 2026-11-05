@@ -759,6 +759,12 @@ there is none: the heat belongs to the readings, and the one cosine more in spac
 heat is the same law in distance: the share of a direction's distance below x = d/H is (2/π)·arctan x, and read by
 ratio, per unit of ln(d/H), it is (2/π)·x/(1 + x²) = (1/π)·sech(ln(d/H)).
 
+The heat is not a grid seen from home. Marks laid evenly on a wall one distance d away, the writer's grid, are flat in
+the reading (y = d·s, area d²·da·db) and, per unit of angle, crowd toward the horizon as sec²θ in the plane and sec³α in
+space; nothing in them is hottest along the look. The Cauchy is the other way round: the turn, even in angle, laid on that
+flat grid, dθ/ds = 1/(1 + s²), and in space dΩ/dA = cos³α. It is the turn per unit of the writer's grid, the *per* of §4,
+not the layout of the world.
+
 **The shape is swept, not each thumb.** Each pair of thumbs reads a quarter turn: from its home, where it reads 0, to its
 horizon, where it reads ∞. Down the thumbs' diagonal that is the wedge, a triangle on the screen whose corners are the
 thumbs and whose edges are where a reading is 0 or ∞, inside the hemisphere the read holds; the sphere behind is other

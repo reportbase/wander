@@ -7366,7 +7366,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   stands). "Address" stays where text speaks as a computer or a writer counting (essay 16, the computing note, the
   archived OFS's title). *Reads and Writes* rewritten throughout (abstract; §1 "What a read is", the second test; §2
   "Heat and paint", "Why there is no mean: the Cauchy is the heat of directions"; §3; §5 "π with the direction"; §6;
-  §7 "Where the heat comes from"). The essays wait for a second pass.
+  §7 "Where the heat comes from"). Then (Gemini, pasted by Tom, and its "Yes" to the correction): a pasted derivation
+  had the Jacobian reversed, a uniform Cartesian grid on a wall seen from home as the Cauchy (dA written where dΩ
+  belongs). Corrected: the grid is flat in the reading (dA = d²·da·db) and, per unit of angle, crowds toward the horizon
+  (sec²θ, sec³α); the Cauchy is the even turn laid on the flat grid, dθ/ds = 1/(1 + s²), dΩ/dA = cos³α, the turn per
+  unit of the writer's grid (R584's per). Its volume case stands: r²·dr along a ray is payload. A closing paragraph in
+  §7 "Where the heat comes from". The essays wait for a second pass.
 - **R705** (5 Nov; a comparison from Gemini, pasted by Tom; Tom: "Yes", to adding it corrected): "the projection is the
   dereference": in memory an address and its value share one representation and need a step between them; for the
   reader the address is a direction and what reaches it paint, two kinds, pointing already being met. Corrected: the
