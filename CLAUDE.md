@@ -1643,7 +1643,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   then "Yes"): **the Cauchy is a heat map; addresses are discrete, counted, the writer's.** The reader has directions and
   their heat (cos²θ in the plane, cos³α in space, cos^(n+1) with n thumbs; the overlay's sech(ln(d/H)) in distance); K
   is a fineness, counted as K addresses only by a writer. "The heat is given; the paint is met." Say heat and paint for
-  the reader, address only where a writer or a computer counts. *Reads and Writes* rewritten; the essays next.
+  the reader, address only where a writer or a computer counts. *Reads and Writes*, the essays, their README and `essays.html` rewritten (essay 3 keeps its title).
   R705 (5 Nov; Gemini's comparison, Tom: "Yes"): "the projection is the dereference", corrected, in essay 16 §1 and
   `plans/rw-computing-note.md`, not the paper.
   R704 (5 Nov; Tom: "update the essays"): R700–R703 in essay 5 §6 and §10 and essay 4 §4, §11 and §13.

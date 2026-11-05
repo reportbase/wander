@@ -111,7 +111,7 @@ Laid by distance address (K places along distance, a writer's layout of the read
 as the reader holds it: a point on the ground ρ away goes on the row
 (2/π)·atan(D/ρ), D the thumb's own ground distance, so that the thumb sits at ½ and the bands one in 2, 4 and 8 pack ever
 thinner under the horizon. The world is never counted for it: drawn only where the view reaches and culled to what spans one
-of those places, it needs K and no N (the fifth essay, "Laid by the addresses").
+of those places, it needs K and no N (the fifth essay, "Laid by the heat").
 
 ### Reality in 2H
 
