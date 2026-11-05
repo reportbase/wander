@@ -7353,7 +7353,7 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
 - **R716** (5 Nov; Tom: "1", to a tightening pass of *Reads and Writes*, then "Yes" to `plans/rw-tighten.md`): repeats
-  folded into one home each, nothing dropped: the abstract 578 → 420 words in three paragraphs; §1's two definitions of a
+  folded into one home each, nothing dropped: the abstract 578 → 352 words in three paragraphs; §1's two definitions of a
   read one, time and flags their own paragraph ("Reads are unconnected"), the race said once ("Reads do not conflict"),
   "Words" at the head; ln z one clause in §1, home §5; §2's second "practice takes the median", its stained-glass window
   (§3's) and its second two-axis paragraph cut; §6's crosshairs and "Read in ratios" one passage, K and addresses (with
