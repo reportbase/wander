@@ -1626,9 +1626,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   cone of one read", with the table sphere / Cauchy plane / cone.
   R698 (5 Nov; Tom: "Yes"): `crosshairs.html`'s tunnel the quarter turn, the round an option; *Reads and Writes* §7's tunnel
   paragraph says one read's tunnel is a quarter turn.
-  R699 (5 Nov; Tom: "so the shape must be some kind of a 1/2 wedge.", then "yes"): the read is a half wedge: H cuts every
-  direction's addresses in half; the near half closed, capped by the one-thumb cube, the read's one shape; the far half open,
-  no shape. Refines R643. *Reads and Writes* §7 "Half the read closed"; `read.html`'s side view draws the cap.
+  R699 (5 Nov; Tom: "so the shape must be some kind of a 1/2 wedge.", "wouldn't the shape be more of a hemisphere.", "the
+  long tail is the far field", "yes"): the read is a half wedge: H cuts every direction's addresses in half; the near half
+  the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
+  hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
+  body and the tail"; `read.html`'s side view draws the dome and the tail.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions
