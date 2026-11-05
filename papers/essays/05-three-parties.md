@@ -191,7 +191,9 @@ There is a familiar device that records exactly this law without anyone dividing
 A direction (1, s, s₂) through a pinhole lands at the point (s, s₂) on a flat screen one unit behind it. So if directions
 arrive evenly over the octant, the screen records the two-dimensional half-Cauchy. Measured by the angle α off the
 camera's axis, its density is (2/π)·cos³α. That is the solid angle a flat screen receives per unit of its area. It is the
-geometric part of the classical cos⁴ falloff that darkens the corners of every photograph.
+geometric part of the classical cos⁴ falloff that darkens the corners of every photograph: three of its four cosines
+are the heat of the directions, there before any light arrives, and the fourth is the aperture seen at a slant (0.35 of
+the middle at 45° against the photograph's 0.25; essay 17, "The Cauchy map").
 
 The one-party sweep's density is (2/π)·cos²θ. With n other parties it is the same constant form times cos to the power
 n + 1: one more power of the cosine for each party added.

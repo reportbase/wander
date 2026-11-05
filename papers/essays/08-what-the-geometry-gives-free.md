@@ -172,7 +172,8 @@ fewer. Equal pixels therefore over-weight the directions off the axis by sec³α
 view covers a smaller piece of the sky than a pixel at the centre, and there are more of them per degree. Along one line
 of a screen of finite edge, the median of the directions put through its pixels falls at half the edge, not at the corner.
 The weighting is the design's, added to the geometry, and it is usually unnamed. It is the geometric part of the familiar
-cos⁴ fall-off of brightness toward a photograph's corners.
+cos⁴ fall-off of brightness toward a photograph's corners: three of its four cosines, the fourth the aperture's
+(essay 17).
 
 There is an alternative already in use. A cube map, which stores everything visible in all directions as six square
 images on the faces of a cube, can lay each face by turn instead of by length, an arctangent on each coordinate. That is

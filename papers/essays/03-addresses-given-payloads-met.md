@@ -213,8 +213,9 @@ the Faraday rotation that turns it on the way carries a rotation measure in radi
 By dividing the heat out: what is counted is the heat of the directions
 times the payload's weight, and the heat is known in advance, so dividing by it leaves the payload's distribution,
 as an astronomer flat-fields an image. By undoing the blur: seen from a height, the payload arrives smoothed by the Cauchy
-kernel, whose transform e^(−γ|k|) is never zero, so every mode comes back, as far as the resolution allows; the floor's box
-blur has zeros, and what it drops is gone. And by averaging it: the payload is amounts, and amounts have means. What
+kernel, whose transform e^(−γ|k|) is never zero, so every mode comes back, as far as the resolution allows; a Gaussian
+blur keeps every mode too, damping the fine ones by k² rather than |k|, but the floor's box blur has zeros, and what it
+drops is gone. And by averaging it: the payload is amounts, and amounts have means. What
 arrives can be averaged; where it arrives cannot.
 
 *Demo: Theorem 6 at a glance: scale, reshape, reshuffle or thin what arrives, and no direction moves.*
