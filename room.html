@@ -54,7 +54,7 @@
 <body>
 <main>
     <h1>The room</h1>
-    <p class="lede">A reader stands at home, the room's corner. Its addresses are given there, before anything arrives:
+    <p class="lede">A reader stands at home, the room's corner. Its directions and their heat are given there, before anything arrives:
     the inscribed sweep, every direction from one wall to the other, gives where things are: directions, no amounts. A
     thing's shape about its own centre is a radius per direction, an amount, had only by ranging (a writing) or from
     further standpoints: its shape, not its size. Holding a thing and the wall at once gives its size in the room's
@@ -282,11 +282,11 @@
 
     const NOTES = {
         1: 'Home is the room\'s floor corner, so the whole room is one wedge: every direction in it has h, v and v₂ at or above 0.',
-        2: 'Choose a direction (altitude and azimuth). Its address is two ratios, v₂/h and v/√(h² + v₂²), given before anything arrives; what arrives along it is paint. No length arrives.',
+        2: 'Choose a direction (altitude and azimuth). Its reading is two ratios, v₂/h and v/√(h² + v₂²), given before anything arrives; what arrives along it is paint. The heat is given; the paint is met. No length arrives.',
         3: 'The inscribed sweep: every direction from along the first wall (all h) to along the second (all v₂), given at once; "show the order" steps through them in the order of the turn. Each thing lies where its directions are. That is the layout, and it holds no amount.',
         4: 'A thing\'s shape about its own centre: given directions from the centre, a radius along each. A radius is an amount, had only by ranging (a writing: a pulse carries the speed) or from further standpoints. The radii give the shape; their common factor, the size, is not read.',
         5: 'Holding: the thing and the room\'s width read at once, at one distance. Their ratio is the thing\'s size in the room\'s units, and the distance cancels.',
-        6: 'To put a thing at a place in metres, the reader must write: take a known step and read again. One step writes the room. Then move the thing; its address changes, its shape does not.'
+        6: 'To put a thing at a place in metres, the reader must write: take a known step and read again. One step writes the room. Then move the thing; its direction changes, its shape does not.'
     };
     function hud() {
         const lines = [], k = kOf(), a = address(st.thing);
@@ -307,7 +307,7 @@
                 lines.push(`one known step of 1 m and two readings write the room: ${wr.W.toFixed(3)} m by ${wr.D.toFixed(3)} m`);
                 lines.push(`the ${st.thing} is at ${pl.x.toFixed(3)} m, ${pl.z.toFixed(3)} m from home`); }
         }
-        lines.push(`address of the ${st.thing}: v₂/h ${a.v2h.toFixed(4)}, v/√(h² + v₂²) ${a.valt.toFixed(4)}   (scale k = ${k.toPrecision(3)}: no reading moves)`);
+        lines.push(`direction of the ${st.thing}: v₂/h ${a.v2h.toFixed(4)}, v/√(h² + v₂²) ${a.valt.toFixed(4)}   (scale k = ${k.toPrecision(3)}: no reading moves)`);
         $('hud').textContent = lines.join('\n'); $('note').textContent = NOTES[st.step];
     }
     function draw() { draw3(); drawPlan(); drawStrip(); hud();

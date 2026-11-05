@@ -107,8 +107,9 @@ memory, not to the geometry, which is given before anything arrives.
 The words in this essay are the programmer's, and a programmer's addresses are discrete: places counted in a layout, the
 writer's. The reader has none. What it has is a heat over its directions, the Cauchy: continuous, hottest along the look
 and cooling toward the horizon, with nothing counted in it (*Reads and Writes* §7, "Where the heat comes from"). Where this
-essay says "the reader's addresses" or "K addresses", read: K places a writer lays at the heat's quantiles. The heat is
-given; the paint is met.
+essay says "the reader's addresses" or "K addresses", it uses the word as a metaphor, the one that connects the Cauchy to
+computing: read it as K places a writer lays at the heat's quantiles, the heat under them. The heat is given; the paint is
+met.
 
 This is not a claim that geometry proves anything new about concurrency. It is the other way: a principle computing
 already holds, applied to geometry, says why the reader's world has no races to manage. It does not make a computer

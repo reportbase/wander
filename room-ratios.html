@@ -61,7 +61,7 @@
 <main>
     <h1>The room in ratios</h1>
     <p class="lede">The reader's inscribed sweep is two sweeps: <span class="g">left–right</span> (the azimuth) and
-    <span class="g">up–down</span> (the altitude), both the geometry's, given before anything arrives. Each gives a ratio, so every point in view is an address:
+    <span class="g">up–down</span> (the altitude), both the geometry's, given before anything arrives. Each gives a ratio, so every point in view is a direction, two ratios:
     how far across against how far ahead, and how far up against how far out. From one place that is a picture, every
     direction and every angle, but no distance. One step, its length never measured, makes it a map: every place and size
     as so many steps. One counted stride writes it in metres.</p>
@@ -73,8 +73,8 @@
         <div id="say"></div>
         <div class="grid">
             <div><canvas id="room" height="430"></canvas><p class="cap" id="roomcap">The room. Drag to look round it.</p></div>
-            <div><canvas id="chart" height="250"></canvas><p class="cap">The reader's addresses from A: the two sweeps,
-            left–right across, up–down up the side (even in height), given whole; what arrives paints them. "Show the
+            <div><canvas id="chart" height="250"></canvas><p class="cap">The reader's directions from A: the two sweeps,
+            left–right across, up–down up the side (even in height), their heat given whole; what arrives paints them. "Show the
             order" steps through them in the order of the turn. The dashed lines are each sweep's corner, 45°, where
             the ratio is 1.</p>
             <canvas id="plan" height="200"></canvas><p class="cap" id="plancap">The reader's own map.</p></div>
@@ -331,7 +331,7 @@
             const ang = (a, b) => { const u = rayOf(readThing(a, A).centre), v = rayOf(readThing(b, A).centre); return Math.acos(Math.max(-1, Math.min(1, dot(u, v)))) * DEG; };
             note = 'From A alone every number is a ratio of the view: across over ahead, up over out, and the angles they make. ' +
                 'The table and the cube are ' + ang('table', 'cube').toFixed(2) + '° apart; the ball sits ' + ang('ball', 'table').toFixed(2) +
-                '° from the table\'s middle. The dashed ghosts, the ' + st.thing + ' at half and twice its size and distance, give exactly the same addresses: nothing here says how far.';
+                '° from the table\'s middle. The dashed ghosts, the ' + st.thing + ' at half and twice its size and distance, give exactly the same directions: nothing here says how far.';
         } else {
             note = 'Between things, unitless, the same in steps or in metres: ' + ratios().map(r => r[0] + ' ' + r[1].toFixed(3) + ' ' + r[2]).join('; ') + '. ' +
                 (st.step === 2 ? 'Every number in the table is so many steps, and the step was never measured: it is the reader\'s own one, its H.'
@@ -339,11 +339,11 @@
         }
         $('note').innerHTML = note;
         $('say').innerHTML = [
-            '<span class="g">One place.</span> The two sweeps give every corner as an address, a pair of ratios: a picture. Distance is not among them.',
+            '<span class="g">One place.</span> The two sweeps give every corner as a direction, a pair of ratios: a picture. Distance is not among them.',
             '<span class="w">One step.</span> From B, a step to the right, every corner is read again. Its two rays cross: each place, distance and size comes out in steps.',
             '<span class="r">Count the step.</span> One counted stride, an amount carried in, turns the map of steps into metres. Nothing else changes.'][st.step - 1];
         $('roomcap').textContent = st.step === 1
-            ? 'The room. Gold rays: A\'s addresses of the chosen thing, run past it; the dashed ghosts lie on the same rays. Drag to look round.'
+            ? 'The room. Gold rays: A\'s directions to the chosen thing, run past it; the dashed ghosts lie on the same rays. Drag to look round.'
             : 'The room. Gold rays from A, violet from B; teal: where the map puts each corner, from the readings alone. Drag to look round.';
         $('kv').textContent = 'k = ' + kOf().toFixed(3);
     }

@@ -55,9 +55,9 @@
 <body>
 <main>
     <h1>One moon</h1>
-    <p class="lede">A single moon crossing the sky, nothing else. The reader's addresses, the <span class="teal">inscribed
-    sweep</span>, cover the whole wedge, given before anything arrives; each tick the moon's light paints a few of them: a
-    small patch, moving over addresses that stay put. From the patch alone come the moon's track, its turn per tick, its
+    <p class="lede">A single moon crossing the sky, nothing else. The reader's directions, the <span class="teal">inscribed
+    sweep</span>, cover the whole wedge, their heat given before anything arrives; each tick the moon's light paints a few of them: a
+    small patch, moving over directions that stay put (drawn as cells, a writer's count of places). From the patch alone come the moon's track, its turn per tick, its
     time to contact and its path's angle, all ratios and ticks. Its <span class="violet">shape about its own centre</span>
     is a radius along each direction from that centre, an amount in a unit nothing reads, had only by ranging (a writing)
     or from further standpoints; shown here over the face it turns toward you. One amount carried in writes its distance
@@ -74,8 +74,8 @@
         <div class="grid" style="margin-top:10px">
             <div><canvas id="map" width="512" height="512"></canvas><p class="cap">The inscribed sweep: the whole wedge, Lambert's
             equal-area map (azimuth across from h to v₂, height up to v), every cell an equal share, given. Gold: the corners.
-            White: the addresses the moon paints this tick; teal: its track.</p></div>
-            <div><canvas id="near" width="512" height="512"></canvas><p class="cap">The same addresses near the moon, one pixel a
+            White: the cells the moon paints this tick; teal: its track.</p></div>
+            <div><canvas id="near" width="512" height="512"></canvas><p class="cap">The same cells near the moon, one pixel a
             cell. Nothing here is a size: the patch is its share of the turn.</p></div>
             <div><canvas id="face" width="512" height="512"></canvas><p class="cap">The shape about the moon's centre (radii, a writing,
             over their geometric mean) along the directions seen from home (bright), and all seen so far (dim), viewed from
@@ -192,7 +192,7 @@ function drawNear(){
     const span = Math.max(i1 - i0, j1 - j0) + 1, px = W / span; g.fillStyle = '#060609'; g.fillRect(0, 0, W, W);
     g.fillStyle = 'rgba(255,255,255,0.06)'; if (px >= 4) for (let a = 0; a <= span; a++){ g.fillRect(a * px, 0, 1, W); g.fillRect(0, a * px, W, 1); }
     g.fillStyle = '#f0eef6'; for (const id of D.det){ const i = id % NG, j = (id - i) / NG; g.fillRect((i - i0) * px, W - (j - j0 + 1) * px, Math.ceil(px), Math.ceil(px)); }
-    g.fillStyle = '#8a8a96'; g.font = '13px DM Mono, monospace'; g.fillText(`${D.det.length} of ${N.toLocaleString()} addresses`, 8, 18);
+    g.fillStyle = '#8a8a96'; g.font = '13px DM Mono, monospace'; g.fillText(`${D.det.length} of ${N.toLocaleString()} cells`, 8, 18);
 }
 // the face: orthographic, seen from home's direction at the first tick (a fixed frame on the moon), so the painting
 // collects in one picture as the moon crosses
@@ -215,7 +215,7 @@ function hud(){
     const r = readout(S.t, S.smooth), k = 10 ** S.lgk, D1 = detect(S.t, 1, S.smooth), Dk = detect(S.t, k, S.smooth);
     const a = new Set(D1.det); let diff = 0; for (const x of Dk.det) if (!a.has(x)) diff++; diff += D1.det.length - (Dk.det.length - diff);
     const f = (x, p = 3) => x.toFixed(p), deg = x => (x / RAD).toFixed(2) + '°', L = [];
-    L.push(`tick ${S.t}: the moon paints ${D1.det.length} of the inscribed sweep's addresses, a share ${D1.share.toExponential(3)} of the octant's π/2 (a solid angle)`);
+    L.push(`tick ${S.t}: the moon paints ${D1.det.length} of the inscribed sweep's cells, a share ${D1.share.toExponential(3)} of the octant's π/2 (a solid angle)`);
     L.push(`from the detections alone: turning ω ${r.om.toExponential(3)} a tick, time to contact τ ${f(r.tau, 1)} ticks, the path ${deg(r.beta)} off the line of sight`);
     if (S.truth) L.push(`the referee: ω ${r.truth.om.toExponential(3)}, τ ${f(r.truth.tau, 1)}, the path ${deg(r.truth.beta)}; distance ${f(r.truth.d, 2)} (no reading gives it)`);
     L.push(`scale the world ×${k >= 100 || k < 0.01 ? k.toExponential(0) : k.toPrecision(3)}: ${diff} detections changed; the shape the same, its radii ×k`);

@@ -52,12 +52,12 @@
 <body>
 <main>
     <h1>Theorem 6 at a glance</h1>
-    <p class="lede">The separation of address and payload. The Cauchy is the addresses, the uniform turn's own, not what
-    arrives on them. The addresses are given, complete, before anything arrives; whatever arrives along each, near or far,
-    changes none of them. What survives a change of
-    payload is order, so the median; what does not is the mean. And the addresses themselves have no mean at all.</p>
+    <p class="lede">Heat and paint. The Cauchy is a heat map over the reader's directions, the uniform turn's own, not what
+    arrives along them. The directions and their heat are given, complete, before anything arrives; whatever arrives along each, near or far,
+    changes none of them. The heat is given; the paint is met. What survives a change of
+    payload is order, so the median; what does not is the mean. And the readings themselves have no mean at all.</p>
     <div class="panel">
-        <h2>(a) Nothing that arrives moves an address</h2>
+        <h2>(a) Nothing that arrives moves a direction</h2>
         <div class="row"><label for="op">do to what arrives</label>
             <select id="op">
                 <option value="none">nothing</option>
@@ -69,8 +69,8 @@
             <label for="n">directions N</label>
             <select id="n"><option>9</option><option selected>25</option><option>101</option></select></div>
         <div class="grid">
-            <div><canvas id="cv1" height="400"></canvas><p class="cap">From home: the addresses (gold rays, given by the
-            uniform turn) and what arrives along each (teal, at its reach ℓ, drawn by level). The reading is (ℓ·v)/(ℓ·h) = v/h.</p></div>
+            <div><canvas id="cv1" height="400"></canvas><p class="cap">From home: N directions (gold rays, a writer's sample of the
+            uniform turn's heat) and what arrives along each (teal, at its reach ℓ, drawn by level). The reading is (ℓ·v)/(ℓ·h) = v/h.</p></div>
             <div><div class="read" id="a"></div>
                 <h2>(b), (c) Order survives, the mean does not</h2>
                 <div class="row"><label for="f">apply a strictly increasing f</label>
@@ -85,7 +85,7 @@
         </div>
     </div>
     <div class="panel">
-        <h2>(d), (e) The addresses have a median and no mean</h2>
+        <h2>(d), (e) The readings have a median and no mean</h2>
         <div class="row"><label for="path">the sweep</label>
             <select id="path">
                 <option value="circle">the circle, a uniform turn (the Cauchy)</option>
@@ -187,11 +187,11 @@
     function drawA() {
         const s = stats(), names = { none: 'Nothing done', scale: 'Every reach × 3', reshape: 'Every reach cubed', shuffle: 'The reaches reshuffled', thin: 'Every other one gone' };
         $('a').innerHTML = `${names[st.op]}: ${s.kept} of ${s.n} readings, each recomputed as (ℓ·v)/(ℓ·h).\n`
-            + `Largest change in any address: <span class="g">${s.moved.toExponential(1)}</span> (rounding).\n`
+            + `Largest change in any direction: <span class="g">${s.moved.toExponential(1)}</span> (rounding).\n`
             + `Median reading <span class="g">${s.medianAfter.toFixed(6)}</span>${st.op === 'thin' ? ' (the remaining directions, still placed by the sweep)' : ', the corner'}.`;
         const X = readingsWith('none'), Lp = payload(), f = st.f;
         const rows = [['', 'median f(X)', 'f(median X)', 'mean f(X)', 'f(mean X)']];
-        for (const [name, set] of [['the addresses v/h', X], ['the amounts ℓ', Lp]]) {
+        for (const [name, set] of [['the readings v/h', X], ['the amounts ℓ', Lp]]) {
             const c = commute(set, f), e = (a, b) => Math.abs(a - b) <= 1e-9 * Math.max(1, Math.abs(b));
             rows.push([name, `<span class="g">${c.medianFX.toPrecision(6)}</span>`, `<span class="g">${c.fMedianX.toPrecision(6)}</span>`,
                 `<span class="${e(c.meanFX, c.fMeanX) ? 'g' : 'x'}">${c.meanFX.toPrecision(6)}</span>`, `<span class="${e(c.meanFX, c.fMeanX) ? 'g' : 'x'}">${c.fMeanX.toPrecision(6)}</span>`]);

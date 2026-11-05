@@ -104,13 +104,13 @@
         "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
 </head>
 <body>
-<canvas id="stage" aria-label="The writer's box, and a reader's wedge inside it whose addresses point at the box's faces"></canvas>
+<canvas id="stage" aria-label="The writer's box, and a reader's wedge inside it whose directions point at the box's faces"></canvas>
 <div id="panel" class="glass">
     <button id="fold" aria-label="fold the panel">▾</button>
     <h1>The writer's box</h1>
     <p class="sub">The <b class="blue">writer</b> is a box: one number line on each axis, both signs, every extent an amount.
         A <b class="gold">reader</b> stands inside it with a vantage, not a shape: one point, drawn here as the writer draws it,
-        a sphere and one octant of it, the wedge, its addresses. Each address is a direction, two numbers; it points at a point of the box, three numbers. The one
+        a sphere and one octant of it, the wedge, its directions and their heat. Each direction is two numbers; it points at a point of the box, three numbers. The one
         between is the distance, the writer's, never read. Two vantages, the writer's and the reader's; the third view is
         ranging, a writing.</p>
     <div class="vant" id="vant"><button data-v="writer">the writer</button><button data-v="address">the reader, from home</button><button data-v="payload">ranges, a writing</button></div>
@@ -131,16 +131,16 @@
         <div class="ctl"><label for="by">Y</label><input id="by" type="range" min="2" max="24" step="0.5"><output id="byo"></output></div>
         <div class="ctl"><label for="bz">Z</label><input id="bz" type="range" min="2" max="24" step="0.5"><output id="bzo"></output></div>
         <div class="ctl"><label for="lk">scale the world</label><input id="lk" type="range" min="-3" max="3" step="0.01"><output id="lko"></output></div>
-        <div class="row"><button id="bN">addresses 16 × 16</button><button id="bRays" class="on">rays</button><button id="bSphere" class="on">whole sphere</button><button id="bReset">reset</button></div>
+        <div class="row"><button id="bN">directions 16 × 16</button><button id="bRays" class="on">rays</button><button id="bSphere" class="on">whole sphere</button><button id="bReset">reset</button></div>
         <p class="dim" style="font-size:11.5px;margin:10px 0 0">Other demos: <a href="blueprint-3d.html">one blueprint in 3D</a>,
             <a href="wedge.html">the wedge</a>, <a href="sphere-cube.html">the sphere in the cube</a>, <a href="demos.html">all demos</a>.</p>
     </div>
 </div>
 <div id="hud" class="glass"></div>
-<div id="inset" class="glass"><p class="t"><b>The addresses, fixed</b>, Lambert's map of the wedge (azimuth across, height
-    up), each painted by the face it meets: <span id="faceKey"></span></p><canvas id="map" width="512" height="512"></canvas></div>
+<div id="inset" class="glass"><p class="t"><b>The directions, fixed</b>, Lambert's map of the wedge (azimuth across, height
+    up; its cells a writer's count), each painted by the face it meets: <span id="faceKey"></span></p><canvas id="map" width="512" height="512"></canvas></div>
 <div id="hint" class="glass">Drag the gold ball to move the wedge (arrows, page up/down too). Drag elsewhere to turn the
-    view, scroll to zoom. Point at a dot for its address and where it lands.</div>
+    view, scroll to zoom. Point at a dot for its direction and where it lands.</div>
 <div id="nogl"><div>This page needs WebGL to draw the box.<br>The arithmetic still runs: see the test hook.</div></div>
 
 <script>
@@ -371,20 +371,20 @@ function applyView() { const v = S.view, P = S.P, Hr = H();
     $('vcap').innerHTML = VCAP[v]; $('hint').innerHTML = HINT[v]; }
 const VCAP = {
     writer: `<b class="blue">The writer</b>, both hemispheres: the box whole, front and back of everything, drawn with parallel rays from no standpoint. Every point is three amounts on three number lines; the distance along each ray is one of them.`,
-    address: `<b class="gold">The reader</b>, from its standpoint (home), looking out down the wedge: its addresses, the inscribed sweep, given before anything arrives. It holds directions only, [h : v : v₂], each painted by what arrives (here the colour of the face its ray meets). No distance arrives, and no box.`,
+    address: `<b class="gold">The reader</b>, from its standpoint (home), looking out down the wedge: its directions and their heat, the inscribed sweep, given before anything arrives. The heat is given; the paint is met. It holds directions only, [h : v : v₂], each painted by what arrives (here the colour of the face its ray meets). No distance arrives, and no box.`,
     payload: `<b class="teal">Ranges, a writing</b>: a pulse sent along each given direction brings back an amount, in a unit the pulse carries in (the signal's speed and a clock), so ranging is writing, not reading. Over their geometric mean the ranges give the shape of the box's corner seen from here, not its size.` };
 const HINT = {
-    writer: 'Drag the gold ball to move the wedge (arrows, page up/down too). Drag elsewhere to turn the view, scroll to zoom. Point at a dot for its address and where it lands.',
-    address: 'You stand where the reader stands. Move it with the arrows or the sliders, turn it, scale the world: the addresses stay; only the paint changes. Point at a dot for its address.',
+    writer: 'Drag the gold ball to move the wedge (arrows, page up/down too). Drag elsewhere to turn the view, scroll to zoom. Point at a dot for its direction and where it lands.',
+    address: 'You stand where the reader stands. Move it with the arrows or the sliders, turn it, scale the world: the directions and their heat stay; only the paint changes. Point at a dot for its direction.',
     payload: 'Drag to turn round the standpoint, scroll to zoom. Scale the world: every amount moves by k, the shell not at all. Point at a dot for its amount.' };
 
 // ── the readout ───────────────────────────────────────────────────────────────────────────────────────────────────────
 const pct = x => (100 * x).toFixed(1) + '%';
 function hud() { const k = K(), a = G.anglesOfRot(S.R), c = CN, n = L.length, hv = S.hover != null ? L[S.hover] : null;
-    if (S.view === 'address') { let s = `from home the reader holds ${n.toLocaleString('en')} addresses [h : v : v₂], two numbers each, given, and the paint that arrives along them\n` +
+    if (S.view === 'address') { let s = `from home the reader holds directions [h : v : v₂], two numbers each, and their heat, given (${n.toLocaleString('en')} of them here, a writer's count), and the paint that arrives along them\n` +
             `v ≤ h ${pct(c.vh)}, v₂ ≤ h ${pct(c.v2h)}, v₂ ≤ v ${pct(c.v2v)}, the near field ${pct(c.near)}: the same wherever it stands or turns, whatever the box, H and k\n` +
             `the paint (what arrives, the world's): ` + c.faces.map((x, i) => x > 0 ? `${G.FACES[i]} ${pct(x)}` : null).filter(Boolean).join(', ') + `\nno distance arrives: a near wall and a far one paint alike`;
-        if (hv) { const m = Math.max(hv.h, hv.v, hv.v2); s += `\n\naddress [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}], painted ${G.FACES[hv.face]}; how far, never`; }
+        if (hv) { const m = Math.max(hv.h, hv.v, hv.v2); s += `\n\ndirection [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}], painted ${G.FACES[hv.face]}; how far, never`; }
         $('hud').textContent = s; return; }
     if (S.view === 'payload') { const rel = SH.rel, mx = Math.max(...rel), mn = Math.min(...rel);
         let s = `ranging (a writing) gives ${n.toLocaleString('en')} amounts, one along each given direction, in the unit the pulse carries in\n` +
@@ -394,11 +394,11 @@ function hud() { const k = K(), a = G.anglesOfRot(S.R), c = CN, n = L.length, hv
         $('hud').textContent = s; return; }
     let s = `the writer holds the box, ${S.E.map(x => fmt(x * k)).join(' × ')}, and the reader's standpoint in it, (${S.P.map(x => fmt(x * k)).join(', ')}), from its middle: amounts\n` +
         `its triple corner points at longitude ${a.lon.toFixed(1)}°, latitude ${a.lat.toFixed(1)}°, turned ${a.roll.toFixed(1)}°; H = ${fmt(H())}, the zoom\n` +
-        `${n.toLocaleString('en')} addresses (the reader's): v ≤ h ${pct(c.vh)}, v₂ ≤ h ${pct(c.v2h)}, v₂ ≤ v ${pct(c.v2v)}, the near field ${pct(c.near)},\n` +
+        `${n.toLocaleString('en')} directions (the reader's, counted by a writer): v ≤ h ${pct(c.vh)}, v₂ ≤ h ${pct(c.v2h)}, v₂ ≤ v ${pct(c.v2v)}, the near field ${pct(c.near)},\n` +
         `  the same wherever the wedge stands or turns, whatever the box, H and k\n` +
         `where they land (the box's faces, the writer's): ` + c.faces.map((x, i) => x > 0 ? `${G.FACES[i]} ${pct(x)}` : null).filter(Boolean).join(', ');
     if (hv) { const m = Math.max(hv.h, hv.v, hv.v2), r = [hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3));
-        s += `\n\naddress [h : v : v₂] = [${r.join(' : ')}], two numbers (the reader's; [h : v : v₂] holds no size)\n` +
+        s += `\n\ndirection [h : v : v₂] = [${r.join(' : ')}], two numbers (the reader's; [h : v : v₂] holds no size)\n` +
             `→ the point (${hv.p.map(fmt).join(', ')}) on face ${G.FACES[hv.face]}, three numbers (the writer's)\n` +
             `the one between: ${fmt(hv.t)} along the ray, an amount; no reading gives it`; }
     $('hud').textContent = s; }
@@ -426,7 +426,7 @@ function syncCtl() { const k = K(), a = G.anglesOfRot(S.R);
     if (document.activeElement !== $('lgH')) $('lgH').value = S.lgH; out('lgHo', fmt(H()));
     ['bx', 'by', 'bz'].forEach((id, i) => { if (document.activeElement !== $(id)) $(id).value = S.E[i]; out(id + 'o', fmt(S.E[i] * k)); });
     if (document.activeElement !== $('lk')) $('lk').value = S.lk; out('lko', 'k = ' + (k >= 100 || k < 0.01 ? k.toExponential(1) : k.toFixed(2)));
-    $('bN').textContent = `addresses ${S.n} × ${S.n}`; $('bRays').classList.toggle('on', S.rays); $('bSphere').classList.toggle('on', S.sphere);
+    $('bN').textContent = `directions ${S.n} × ${S.n}`; $('bRays').classList.toggle('on', S.rays); $('bSphere').classList.toggle('on', S.sphere);
     $('bSpin').classList.toggle('on', S.spin); $('bWander').classList.toggle('on', S.wander); }
 ['px', 'py', 'pz'].forEach((id, i) => $(id).addEventListener('input', e => { S.P[i] = +e.target.value; dirty = true; }));
 const turnFromSliders = () => { S.R = G.rotOf(+$('lon').value, +$('lat').value, +$('roll').value); dirty = true; };

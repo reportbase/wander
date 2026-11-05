@@ -65,7 +65,9 @@ way of stating what is already there. Each sweep is centred on the crosshairs, t
 The read is a heat over directions, the Cauchy: hottest along the look, cooling toward the horizon, continuous, with no
 grain of its own and nothing counted in it (§7). How finely a reader tells directions apart, K, is a fineness read
 continuously; laid out as K places, K *addresses*, it is a writer's count of the heat, its quantiles, and addresses in
-this paper are always that: discrete, counted, the writer's. The Cauchy itself has no
+this paper are always that: discrete, counted, the writer's. As a metaphor they still serve, and the paper uses them
+where they connect the Cauchy to computer science: a direction looked along is like an address looked up, with the heat
+under it. The Cauchy itself has no
 near field and no far field; those are an overlay H lays on the read (§6, §7): the thumb, pointed at a thing, splits every
 direction's distance there, the near field one thumb and the far field beyond it, read as ratios (one in two, one in four,
 …) and counted by a writer in thumbs, half the heat in distance on each side whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Two reads, at two moments or two standpoints, are

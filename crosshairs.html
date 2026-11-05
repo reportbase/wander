@@ -135,7 +135,7 @@
     <button id="zin">zoom in <span>× 1</span></button>
     <button id="zout">zoom out</button>
     <button id="zfit">zoom to what is pointed at</button>
-    <label>K, the addresses <select id="K"><option>16</option><option selected>32</option><option>64</option></select></label>
+    <label>K, the fineness <select id="K"><option>16</option><option selected>32</option><option>64</option></select></label>
     <button id="kup">scale the world × 10</button>
     <button id="kdown">scale the world ÷ 10</button>
     <button id="home">back home</button>
@@ -176,8 +176,8 @@
     <li><b>It looks the same at every H.</b> Seen from its own corner a cube of any size looks the same, so the gold
     lines round the crosshair never change as H changes: H changes what lies inside it, never how it looks.</li>
     <li><b>The Cauchy is centred on the crosshair.</b> Directions laid evenly by turning thin out from the look as cos³ of
-    the angle off it, the two-dimensional Cauchy (menu: the Cauchy's shading). It is densest at the crosshair and spreads
-    out from there; it is laid by the look, not on the ground.</li>
+    the angle off it, the two-dimensional Cauchy (menu: the Cauchy's shading). It is a heat map, hottest at the crosshair and
+    cooling toward the horizon, nothing counted in it; it is laid by the look, not on the ground. The heat is given; the paint is met.</li>
     </ol>
     <h2>What every thing gets from H</h2>
     <ol start="8">
@@ -194,7 +194,7 @@
     </ol>
     <h2>What H shares out</h2>
     <ol start="12">
-    <li><b>The K addresses.</b> Half are always inside one thumb, whatever H is; on the line they are the ticks, the same
+    <li><b>K, the fineness.</b> Read continuously; a writer counts it as K places at the heat's quantiles, and half of them are always inside one thumb, whatever H is; on the line they are the ticks, the same
     marks at every H, and the things slide under them as you point.</li>
     <li><b>The counts</b> of near, far and another wedge (menu: the readout) are only how H falls among the things.</li>
     <li><b>The walking pace.</b> A third of the way to what is pointed at each second, faster while held, and a wheel notch
@@ -209,13 +209,13 @@
     </ol>
     <h2>Fidelity, finest at the crosshair</h2>
     <ol start="17">
-    <li><b>Each thing's grain.</b> The K addresses are laid evenly by turning, so at a reading q one address is a relative
+    <li><b>Each thing's grain.</b> The fineness K is spread evenly by turning, so at a reading q one of a writer's K places is a relative
     cell of (π/K)·cosh(ln q): least at one, the corner. A thing's grain is the worst of its three readings. The thing at the
     crosshair, one in all three, is held finest; a thing off the look, or nearer or farther than the corner, coarser, as
     cosh of how far its ratio is from one. At K = 32 about 10% at the corner, 12% at one in 2, 40% at one in 8, over 300%
     at one in 64.</li>
-    <li><b>Laid by turns</b> (menu: view). The grain is a precision, how finely an address holds a thing, not its size:
-    a fixed count of addresses squeezes more of the world into each toward home, the direction's grain times the
+    <li><b>Laid by turns</b> (menu: view). The grain is a precision, how finely the fineness K holds a thing, not its size:
+    a fixed fineness squeezes more of the world into each of its places toward home, the direction's grain times the
     distance's (in the three thumbs' levels the two are at right angles). Seen, a thing spans the angle it spans, which
     already falls by half each time its distance doubles. The view is laid by equal turns off the look rather than on a
     flat screen: the two agree near the crosshair and part only far out, the flat screen stretching by tan α/α, 1.10 at
@@ -238,18 +238,18 @@
     far off or an airplane high up can be seen and pointed at; it changes how large things look, never a reading. H still
     comes from what the crosshairs pass through: zoom onto an airplane and H is its distance, onto a stone at your feet and
     H is a step. Held on an airplane, the look follows it as it flies.</li>
-    <li><b>The views</b> (menu: view). By distance address, the default: across, the direction; up, the distance
-    address, your feet at the bottom, the thumb at the crosshair, the horizon at the top of the ground, never reached.
-    Heights are laid in the same addresses as depths, so past the thumb everything is flattened more and more: one in 2,
+    <li><b>The views</b> (menu: view). By the heat in distance, the default: across, the direction; up, the share of the
+    distance's heat, (2/π)·atan, your feet at the bottom, the thumb at the crosshair, the horizon at the top of the ground, never reached.
+    Heights are laid in the same shares as depths, so past the thumb everything is flattened more and more: one in 2,
     one in 4, one in 8, each band thinner, the whole far world bunched under the horizon. The world has no count: things
-    are made from their place as you look, at every size, and only those that cover part of one of your K addresses are
+    are made from their place as you look, at every size, and only those coarse enough to be held at your fineness K are
     made at all. The Cauchy tunnel, the default: what the crossed thumbs give where you look.
-    Each direction's reading off the line of sight, in thumbs, is laid by its addresses: every ring of the screen holds as
-    many addresses as its room, so the Cauchy's thinning becomes the rings bunching. The rings are the tunnel's walls: the
+    Each direction's reading off the line of sight, in thumbs, is laid by its heat: every ring of the screen holds as
+    much of the heat as its room, so the Cauchy's thinning becomes the rings bunching. The rings are the tunnel's walls: the
     corner one thumb off, then one in 2, one in 4, one in 8, each closer to the last, toward the horizon's rim, which no
     reading reaches. Nothing is behind it. A read is the quarter turn, so by default the tunnel is drawn in the wedge only,
     every pair of thumbs from its home (0) to its horizon (∞), out to 35.26° at a home and 54.74° at a thumb; the full
-    round about the look is the head turned all the way round (menu: tunnel turned all the way round). Equal area, the default: the reader's addresses are the directions laid evenly by
+    round about the look is the head turned all the way round (menu: tunnel turned all the way round). Equal area: the reader's directions, every one alike by
     area, and this is the screen that gives each the same room (Lambert's equal-area projection about the crosshair,
     radius 2·sin(α/2)). True at the crosshair, squeezed along the radius by cos(α/2) and widened across by as much, so the
     distortion is nothing at first and grows: under 1% at 15°, 3% at 30°, 8% at 45°. The shading, the directions per bit
@@ -587,9 +587,9 @@ const ADDR_ACROSS = 75 * DEG;
 const wedgeEdge = b => { let a = Math.PI / 2;
     for (const t of THUMBS) { const c = Math.cos(b - PHI[t]); if (c < 0) a = Math.min(a, Math.atan(1 / (Math.SQRT2 * -c))); } return a; };
 const VIEWS = {
-    addr: { R: a => a, inv: r => r, name: 'by distance address (the bunching)' },
+    addr: { R: a => a, inv: r => r, name: 'by the heat in distance (the bunching)' },
     tunnel: { R: a => 2 * Math.sin(Math.min(a, Math.PI / 2) / 2), inv: r => 2 * Math.asin(Math.min(Math.SQRT1_2, r / 2)), name: 'the Cauchy tunnel' },
-    area: { R: a => 2 * Math.sin(a / 2), inv: r => 2 * Math.asin(Math.min(1, r / 2)), name: 'equal area (the addresses)' },
+    area: { R: a => 2 * Math.sin(a / 2), inv: r => 2 * Math.asin(Math.min(1, r / 2)), name: 'equal area (the directions)' },
     compress: { R: a => a, inv: r => r, name: 'by turns' },
     round: { R: a => focusLay(a), inv: r => focusUnlay(r), name: 'silver ball (approximate)' },
     off: { R: a => Math.tan(Math.min(a, 1.5)), inv: r => Math.atan(r), name: 'flat screen' },
@@ -890,7 +890,7 @@ function readout() {
     s += `<span class="r">near field</span>  ${c.near} things, inside one thumb in all three\n`;
     s += `<span class="w">far field</span>   ${c.far} things, one in 2 and beyond\n`;
     s += `<span class="d">another wedge</span>  ${c.other} things, behind a thumb\n`;
-    s += `K = ${S.K} addresses: ${half} inside the corner, ${S.K - 1 - half} past it\n`;
+    s += `K = ${S.K}, a writer's K places: ${half} inside the corner, ${S.K - 1 - half} past it\n`;
     s += `world scale k = ${fmt(S.k)}: every reading the same at any k`;
     $('readBox').innerHTML = s;
 }

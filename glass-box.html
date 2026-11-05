@@ -91,15 +91,15 @@
         "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
 </head>
 <body>
-<canvas id="stage" aria-label="A box with pictures on its faces, and inside it a reader's wedge whose addresses are painted by the light from the pictures"></canvas>
+<canvas id="stage" aria-label="A box with pictures on its faces, and inside it a reader's wedge whose directions are painted by the light from the pictures"></canvas>
 <div id="panel" class="glass">
     <button id="fold" aria-label="fold the panel">▾</button>
     <h1>The stained-glass box</h1>
     <p class="sub">The <b class="blue">writer</b> holds a box with a picture on every face. A <b class="gold">reader</b>
         stands inside it with a vantage, not a shape: one point, drawn here as the writer draws it, a sphere of radius H and
-        one octant of it, the wedge, its addresses. Light from
-        each pixel travels in along one direction, through the wedge, to the reader, and paints the address it arrives
-        along. The addresses are given; the colours are the world's. No colour says how far it came.</p>
+        one octant of it, the wedge, its directions and their heat. Light from
+        each pixel travels in along one direction, through the wedge, to the reader, and paints the direction it arrives
+        along. The heat is given; the paint is met: the colours are the world's. No colour says how far it came.</p>
     <div class="vant" id="vant"><button data-v="writer">the writer</button><button data-v="reader">the reader, from home</button></div>
     <p id="vcap"></p>
     <div class="more">
@@ -124,14 +124,14 @@
         <div class="ctl"><label for="by">Y</label><input id="by" type="range" min="2" max="24" step="0.5"><output id="byo"></output></div>
         <div class="ctl"><label for="bz">Z</label><input id="bz" type="range" min="2" max="24" step="0.5"><output id="bzo"></output></div>
         <div class="ctl"><label for="lk">scale the world</label><input id="lk" type="range" min="-3" max="3" step="0.01"><output id="lko"></output></div>
-        <div class="row"><button id="bN">addresses 64 × 64</button><button id="bRays" class="on">rays</button><button id="bLight" class="on">light</button><button id="bReset">reset</button></div>
+        <div class="row"><button id="bN">directions 64 × 64</button><button id="bRays" class="on">rays</button><button id="bLight" class="on">light</button><button id="bReset">reset</button></div>
         <p class="dim" style="font-size:11.5px;margin:10px 0 0">Other demos: <a href="writer-box.html">the writer's box</a>,
             <a href="payload-free-3d.html">the payload doesn't matter, in 3D</a>, <a href="wedge.html">the wedge</a>, <a href="demos.html">all demos</a>.</p>
     </div>
 </div>
 <div id="hud" class="glass"></div>
-<div id="inset" class="glass"><p class="t"><b>The addresses, painted</b>: Lambert's map of the wedge (azimuth across, height
-    up), each cell the colour that arrived along it; the pairs' corners dashed.</p><canvas id="map" width="512" height="512"></canvas></div>
+<div id="inset" class="glass"><p class="t"><b>The directions, painted</b>: Lambert's map of the wedge (azimuth across, height
+    up; its cells a writer's count), each cell the colour that arrived along it; the pairs' corners dashed.</p><canvas id="map" width="512" height="512"></canvas></div>
 <div id="hint" class="glass"></div>
 <div id="nogl"><div>This page needs WebGL to draw the box.<br>The arithmetic still runs: see the test hook.</div></div>
 
@@ -389,29 +389,29 @@ function applyView() { const v = S.view, P = S.P;
 function cutAway() { if (S.view !== 'writer') return; const d = camW.getWorldDirection(new THREE.Vector3());
     for (let f = 0; f < 6; f++) { const n = G.FACE_BASIS[f].n; faceMesh[f].visible = n[0] * d.x + n[1] * d.y + n[2] * d.z > 0.02; } }
 const VCAP = {
-    writer: `<b class="blue">The writer</b>: the box whole, its pictures, the reader's place in it, every point three amounts. The faces turned toward you are cut away. Light leaves each pixel and travels in, through the wedge, to the reader; it paints the address it arrives along.`,
-    reader: `<b class="gold">The reader</b>, from its standpoint, looking out down the wedge: the triangle h + v + v₂ = 1, its medians the pairs' corners. Each address holds the colour that arrived along it. No box, no number line, no distance: the same picture from a box g times as large.` };
+    writer: `<b class="blue">The writer</b>: the box whole, its pictures, the reader's place in it, every point three amounts. The faces turned toward you are cut away. Light leaves each pixel and travels in, through the wedge, to the reader; it paints the direction it arrives along.`,
+    reader: `<b class="gold">The reader</b>, from its standpoint, looking out down the wedge: the triangle h + v + v₂ = 1, its medians the pairs' corners. Each direction holds the colour that arrived along it. No box, no number line, no distance: the same picture from a box g times as large.` };
 const HINT = {
-    writer: 'Drag the gold ball to move the reader (arrows, page up/down too). Drag elsewhere to turn the view, scroll to zoom. Point at the wedge for an address, where its light came from and how far.',
-    reader: 'You stand where the reader stands. Move it with the arrows or the sliders, turn the wedge, scale the world, show the ghost: the addresses stay, only the colours change, and the ghost changes none.' };
+    writer: 'Drag the gold ball to move the reader (arrows, page up/down too). Drag elsewhere to turn the view, scroll to zoom. Point at the wedge for a direction, where its light came from and how far.',
+    reader: 'You stand where the reader stands. Move it with the arrows or the sliders, turn the wedge, scale the world, show the ghost: the directions and their heat stay, only the colours change, and the ghost changes none.' };
 
 // ── the readout ───────────────────────────────────────────────────────────────────────────────────────────────────────
 const pct = x => (100 * x).toFixed(1) + '%';
 const rgbTxt = c => `rgb(${c.join(', ')})`;
 function hud() { const k = K(), c = CN, n = L.length, hv = S.hover != null ? L[S.hover] : null, g = GG();
     const shares = `v ≤ h ${pct(c.vh)}, v₂ ≤ h ${pct(c.v2h)}, v₂ ≤ v ${pct(c.v2v)}, the near field ${pct(c.near)}`;
-    const gh = GH ? `\nthe ghost, ${fmt(g)} times the box about the reader, its pictures with it: ${(GH.n - GH.differ).toLocaleString('en')} of ${GH.n.toLocaleString('en')} addresses painted alike` : '';
-    if (S.view === 'reader') { let s = `from home the reader holds ${n.toLocaleString('en')} addresses [h : v : v₂], given, and a colour arriving along each\n` +
+    const gh = GH ? `\nthe ghost, ${fmt(g)} times the box about the reader, its pictures with it: ${(GH.n - GH.differ).toLocaleString('en')} of ${GH.n.toLocaleString('en')} directions painted alike` : '';
+    if (S.view === 'reader') { let s = `from home the reader holds directions [h : v : v₂] and their heat, given (${n.toLocaleString('en')} of them here, a writer's count), and a colour arriving along each\n` +
             `${shares}: the same wherever it stands or faces, whatever the box, H and k\n` +
-            `no distance arrives: the light of ${pct(c.within)} of the addresses started within H of the reader, painted like the rest${gh}`;
-        if (hv) { const m = Math.max(hv.h, hv.v, hv.v2); s += `\n\naddress [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}], painted ${rgbTxt(hv.rgb)}; from how far, never`; }
+            `no distance arrives: the light of ${pct(c.within)} of the directions started within H of the reader, painted like the rest${gh}`;
+        if (hv) { const m = Math.max(hv.h, hv.v, hv.v2); s += `\n\ndirection [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}], painted ${rgbTxt(hv.rgb)}; from how far, never`; }
         $('hud').textContent = s; return; }
     let s = `the writer holds the box, ${S.E.map(x => fmt(x * k)).join(' × ')}, its pictures, and the reader at (${S.P.map(x => fmt(x * k)).join(', ')}): amounts and pixels\n` +
-        `the reader holds ${n.toLocaleString('en')} addresses (given): ${shares}\n` +
+        `the reader holds ${n.toLocaleString('en')} directions (given, counted by a writer): ${shares}\n` +
         `each painted by the pixel its ray meets: ` + c.faces.map((x, i) => x > 0 ? `${G.FACES[i]} ${pct(x)}` : null).filter(Boolean).join(', ') + '\n' +
         `the light of ${pct(c.within)} of them started within H = ${fmt(H())} of the reader, painted the same way${gh}`;
     if (hv) { const m = Math.max(hv.h, hv.v, hv.v2);
-        s += `\n\naddress [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}] (the reader's), painted ${rgbTxt(hv.rgb)}\n` +
+        s += `\n\ndirection [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}] (the reader's), painted ${rgbTxt(hv.rgb)}\n` +
             `its light left face ${G.FACES[hv.face]} at (${hv.p.map(fmt).join(', ')}), pixel (${hv.uv.map(x => x.toFixed(3)).join(', ')}) of its picture\n` +
             `and came ${fmt(hv.t)} to the reader: the writer's amount; no colour carries it`; }
     $('hud').textContent = s; }
@@ -438,7 +438,7 @@ function syncCtl() { const k = K(), a = G.anglesOfRot(S.R);
     if (document.activeElement !== $('lg')) $('lg').value = S.lg; out('lgo', fmt(GG()) + '×');
     ['bx', 'by', 'bz'].forEach((id, i) => { if (document.activeElement !== $(id)) $(id).value = S.E[i]; out(id + 'o', fmt(S.E[i] * k)); });
     if (document.activeElement !== $('lk')) $('lk').value = S.lk; out('lko', 'k = ' + (k >= 100 || k < 0.01 ? k.toExponential(1) : k.toFixed(2)));
-    $('bN').textContent = `addresses ${S.n} × ${S.n}`; $('bRays').classList.toggle('on', S.rays); $('bLight').classList.toggle('on', S.light);
+    $('bN').textContent = `directions ${S.n} × ${S.n}`; $('bRays').classList.toggle('on', S.rays); $('bLight').classList.toggle('on', S.light);
     $('bGhost').classList.toggle('on', S.ghost); $('bSpin').classList.toggle('on', S.spin); $('bWander').classList.toggle('on', S.wander); }
 ['px', 'py', 'pz'].forEach((id, i) => $(id).addEventListener('input', e => { S.P[i] = +e.target.value; dirty = true; }));
 const turnFromSliders = () => { S.R = G.rotOf(+$('lon').value, +$('lat').value, +$('roll').value); dirty = true; };
