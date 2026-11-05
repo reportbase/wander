@@ -97,7 +97,10 @@
         <div style="margin-top:10px"><canvas id="skyFall" height="200"></canvas><p class="cap">The dark corners (essay 17,
         "The Cauchy map"). The share of the looking per unit of screen against the angle off the axis: cos³α (teal), the map,
         there before any light arrives; and cos⁴α (gold), a photograph's natural vignetting, the map times one more cosine for
-        the aperture seen at a slant. Three of the four cosines are geometry. The heat is given; the paint is met.</p></div>
+        the aperture seen at a slant. Three of the four cosines are geometry. The heat is given; the paint is met. Violet: the same
+        looking per unit of another chart, the stereographic one, cos⁴(α/2) (0.73 at 45°). The share of directions within α is
+        1 − cos α on either; the curves differ only by the chart. The two-dimensional Cauchy is the flat screen's; the
+        stereographic chart's is (1/π)/(1 + |z|²)², a Cauchy only for the circle.</p></div>
     </div>
     <p class="note">The pinhole forms the image point x/z by itself; no one computes it from x and z. The reach cancels
     between the two legs of each reading before it arrives. Behind it: <i>Observation from Somewhere</i> §9, "The inscribed
@@ -202,8 +205,11 @@
         const exact = q => 1 - 1 / Math.sqrt(1 + q * q), share = q => pts.filter(([a, b]) => a * a + b * b <= q * q).length / n;
         return { pts, share, exact, density: (s1, s2) => (2 / Math.PI) / Math.pow(1 + s1 * s1 + s2 * s2, 1.5),
             cos3: (s1, s2) => (2 / Math.PI) * Math.pow(1 / Math.sqrt(1 + s1 * s1 + s2 * s2), 3),
-            // the dark corners: the map's share per unit of screen at α off the axis, against the middle's, and a lens's
-            falloff: deg => { const c = Math.cos(deg * Math.PI / 180); return { map: c ** 3, lens: c ** 4 }; } };
+            // the dark corners: the map's share per unit of screen at α off the axis, against the middle's, and a lens's;
+        // and (5 Nov 2026, R715) the same looking per unit of the stereographic chart, cos⁴(α/2), (1/π)/(1 + |z|²)²
+        // with |z| = tan(α/2): another chart of the same sky, not the two-dimensional Cauchy
+            falloff: deg => { const c = Math.cos(deg * Math.PI / 180), c2 = Math.cos(deg * Math.PI / 360);
+                return { map: c ** 3, lens: c ** 4, stereo: c2 ** 4 }; } };
     }
     let skyShown = null;
     function drawSky() {
@@ -229,7 +235,7 @@
         const AX = a => 34 + (W - 50) * a / 90, AY = f => H - 22 - (H - 40) * f;
         g.strokeStyle = 'rgba(255,255,255,0.3)'; g.lineWidth = 1; g.beginPath();
         g.moveTo(34, AY(0)); g.lineTo(W - 16, AY(0)); g.moveTo(34, AY(0)); g.lineTo(34, AY(1)); g.stroke();
-        for (const [key, col] of [['map', '#8ce6cd'], ['lens', '#d4a052']]) {
+        for (const [key, col] of [['map', '#8ce6cd'], ['lens', '#d4a052'], ['stereo', '#b59cf0']]) {
             g.strokeStyle = col; g.lineWidth = 2; g.beginPath();
             for (let i = 0; i <= 180; i++) { const a = 90 * i / 180, pt = [AX(a), AY(skyShown.falloff(a)[key])]; i ? g.lineTo(...pt) : g.moveTo(...pt); }
             g.stroke();
@@ -238,6 +244,7 @@
         for (const a of [30, 45, 60]) { const f = skyShown.falloff(a); g.beginPath(); g.arc(AX(a), AY(f.map), 3, 0, 2 * Math.PI); g.fill();
             txt(g, `${a}°: ${f.map.toFixed(2)} · ${f.lens.toFixed(2)}`, AX(a) + 5, AY(f.map) - 6, '#e6e4ee', 10); }
         txt(g, 'cos³α the map, cos⁴α a lens: the middle 1, at 45° 0.35 and 0.25 (two stops)', 10, 14, '#e6e4ee', 11);
+        txt(g, `stereographic chart cos⁴(α/2): 45° ${skyShown.falloff(45).stereo.toFixed(2)}`, AX(62), AY(skyShown.falloff(62).stereo) - 8, '#b59cf0', 10);
         txt(g, 'angle off the axis →', W - 120, H - 6, '#8a8a96', 10);
     }
     $('skyBtn').addEventListener('click', () => { skyShown = skyShown ? null : sky(); $('skyBtn').classList.toggle('on', !!skyShown);
