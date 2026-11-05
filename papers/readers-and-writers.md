@@ -536,7 +536,8 @@ gets its addresses in proportion, the first half of the thumb as much room as th
 a thing one thumb wide reads one in two, then one in four, then one in eight, each stretch over which the reading halves
 holding the same number of addresses as the one before, out toward the horizon. A writer counts the same stretches as two
 thumbs, four, eight.
-Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them.
+Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them. In space the near field is the one-thumb cube from the eye to the crosshair, half of every
+direction's addresses, closed; the far field the other half, open (§7, "Half the read closed").
 
 **The one-thumb circle, and the three corners.** Everything within one thumb of the crosshair's point is a ball (a disc in
 the plane) that touches each face of the wedge, at the cube's corners one thumb back from the crosshair along each thumb.
@@ -694,6 +695,17 @@ short:
 
 The cone is the writer's name for what one read holds; the reader has no shape, only a vantage, and what it can say of
 distance comes only through H, never V.
+
+**Half the read closed: the thumb's cap.** H does give the cone one thing: a cut. Along every direction of the read the K
+addresses of distance fall at H·tan(kπ/2K), the first K/2 inside one thumb and the rest past it, so in every direction half
+the read is near and half is far, whatever the direction and whatever the size of the thumb. The near half is closed: it
+ends where the reach along the farthest thumb is one thumb, the one-thumb cube (the square in the plane), its far vertex
+the triple corner √3 thumbs down the look, its addresses laid in proportion. It is the one part of the read with a shape,
+and H is all that sets it. The far half is the same number of addresses again, open, read as one in two, one in four, one
+in eight toward a horizon never reached: the cone with its near half taken out, with no cap and no shape. So the read is a
+half wedge, half closed by the thumb and half open, and a larger thumb moves the cut out without changing the half. The
+cap is a cube and not a ball: the ball is a cap at one distance from the eye, an amount; the cube is the thumbs' own
+reach, one thumb along each, and holds only H.
 
 **The shape is swept, not each thumb.** The read is a quarter turn: every pair of thumbs from its home, where it reads
 0, to its horizon, where it reads ∞. Down the thumbs' diagonal that is the wedge, a triangle on the screen whose corners are

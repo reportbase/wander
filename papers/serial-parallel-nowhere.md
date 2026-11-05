@@ -7352,6 +7352,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R699** (5 Nov; Tom: "think of H as defining the nearfield of the sweep. so in this case, the near field has a shape, but
+  the far field acceleates logritimicallly. has the far field, and this does not have a closed shape."; "so the shape must
+  be some kind of a 1/2 wedge."; then "yes"): the read is a half wedge. Along every direction the K distance addresses
+  H·tan(kπ/2K) fall half inside one thumb and half past it, whatever the direction and the thumb. The near half is closed,
+  its cap the one-thumb cube (the square in the plane; its far vertex the triple corner √3 thumbs down the look), in
+  proportion, the read's one shape, set by H alone; the far half is open, one in 2, 4, 8 to the horizon, no cap and no
+  shape. Refines R643: the reader has no circle, sphere or ball, but its near field has the thumbs' own shape. *Reads and
+  Writes* §7 "Half the read closed: the thumb's cap", a sentence in §6; `read.html`'s side view draws the cap.
 - **R698** (5 Nov; Tom: "Yes", to the tunnel as the quarter turn): `crosshairs.html`'s Cauchy tunnel drawn in the wedge only by
   default, its outline the edge where a thumb's share falls to 0, tan α = 1/(√2·(−cos(β − φ))) at bearing β, 35.26° at a
   home and 54.74° at a thumb; the full round about the look the menu's "tunnel turned all the way round" (`?round=1`).
