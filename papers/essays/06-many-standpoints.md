@@ -258,10 +258,9 @@ and with it the face, the thing's distance and its speed.
 From one place, then, the directions, their heat, their paint and the outline come free. The face needs an amount along each
 direction, written, or further standpoints.
 
-Say it plainly: **the reader never sees a shape.** It sees the sweep, the same directions with the same heat for every world, and
-the paint on them. *The heat is given; the paint is met.* A thing is to it the directions it paints and what it paints them
-with: a patch of directions, what is in front
-of what, a colour. How far the surface lies along each direction is an amount, and the geometry has removed every amount
+Say it plainly: **the reader never sees a shape.** It sees the sweep, the same directions with the
+same heat for every world, and the paint on them. *The heat is given; the paint is met.* A thing is to it the directions
+it paints and what it paints them with: a patch of directions, what is in front of what, a colour. How far the surface lies along each direction is an amount, and the geometry has removed every amount
 before anything is read. Every way to the shape is a writing: ranging, a counted step between standpoints, a blueprint
 handed over. Shape is the writer's. The reader has the Cauchy sweep and its paint.
 

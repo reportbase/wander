@@ -158,7 +158,7 @@ it is worth stating before going on.
 
 The essays have kept apart two vantages.
 - **The reader** stands somewhere. It holds one length, its H, the thumb, and turns it. What it reads are ratios:
-  directions, addresses, the order of things, the corner where two of its relations are equal. It holds no total and no
+  directions and their heat, the order of things, the corner where two of its relations are equal. It holds no total and no
   count of what there is, and it meets a horizon.
 - **The writer** holds the whole. It has every amount in a unit, both hemispheres, the count, the sum. It is the
   blueprint, the equation on the page, the globe. It has no standpoint, no corner and no horizon.
@@ -174,7 +174,7 @@ a reader's ratio quoted as a writer's amount. The two tests find which:
 - **Scale the world.** Multiply every amount by k. If a claim does not move, it is a reading. If it moves, it is a writing,
   and it needed something carried in.
 - **Change what arrives.** Keep the standpoint and the turn, and change what reaches the reader. If a claim does not move,
-  it is about the addresses. If it moves, it is about the payload.
+  it is about the directions and their heat. If it moves, it is about the payload, the paint.
 
 The rest of the essay goes through the catalogue by kind.
 
@@ -186,7 +186,7 @@ The rest of the essay goes through the catalogue by kind.
 runner never arrives. The writer holds the whole series and sums it: ½ + ¼ + ⅛ + … = 1. The reader counts the steps, and
 each halving is one more step, without end. The fourth essay showed both on one lay. Drawn by length, on the in-place lay,
 the stretches past the corner, one thumb to two, two to four, four to eight, all fit into one more H, one more thumb, so
-infinitely many fit in a finite length. Counted, each takes the same number of addresses, so the count never ends. Finite
+infinitely many fit in a finite length. Counted, each takes the same share of the reader's fineness, so the count never ends. Finite
 by length and endless by count: both true, from different vantages. The standard resolutions, the convergent series and
 Aristotle's distinction between potential and actual infinity, are the two vantages named.
 
@@ -258,13 +258,13 @@ amounts instead of a reader's ratios.
 ## 6. Sums and the median
 
 **The Cauchy has a median and no mean.** A well-shaped, symmetric law whose average does not exist, and which more samples
-do not help. The third essay is all about this one. The mean is a sum over amounts, a writer's total. The Cauchy is the law
-of a reader's addresses, which are directions. What survives from a standpoint is what the reader can find from home: the
+do not help. The third essay is all about this one. The mean is a sum over amounts, a writer's total. The Cauchy is the heat
+of a reader's directions. What survives from a standpoint is what the reader can find from home: the
 median, at the corner, and the symmetry under the reciprocal.
 
 **The median survives; the mean does not.** Statistics of order, ranks, the median, the corner, are unchanged by any
 increasing change of what arrives. Statistics of amount, the mean and every sum, are not. Re-timing the arrivals of a
-five-lobed star moved the mean over arrivals by 27% while the address statistics stayed fixed. Order is what the reader
+five-lobed star moved the mean over arrivals by 27% while the statistics of the directions stayed fixed. Order is what the reader
 holds; sums need the writer's amounts. This is the third essay's second test applied to statistics: change what arrives,
 and only the order stands.
 
@@ -275,10 +275,10 @@ signals have come. The standard answer, the universe's finite age and the finite
 vantage reading restates it and adds nothing to it.
 
 **A star dims, but its surface does not.** Light falls as the inverse square of distance, yet a resolved surface looks
-equally bright at any distance. The total light caught is a sum over the source, an amount. Brightness per address is what
-the reader holds. Per address nothing changes with distance; distance changes only how many addresses the source fills,
-until it fills less than one, and then that one dims. This is the radiance theorem, conservation of brightness along a ray,
-said as address and payload.
+equally bright at any distance. The total light caught is a sum over the source, an amount. Brightness per direction is what
+the reader holds. Per direction nothing changes with distance; distance changes only how many directions the source fills,
+until it fills less than the finest the reader tells apart, and then that one dims. This is the radiance theorem,
+conservation of brightness along a ray, said as directions and paint.
 
 ---
 
@@ -347,13 +347,14 @@ standpoint, and it does not move when the world is scaled. A writing is an amoun
 paradox in the denominator family is a reading quoted as a writing, its private denominator dropped. Zeno, Galileo, the
 coastline, the growing list and the many points are a writer's whole asked of a reader's count. Benford, the envelopes,
 St Petersburg and Weber–Fechner are a writer's flat measure laid where a reader has no scale. Olbers and the dimming star
-are a writer's sum asked of a reader's addresses. Gibbs and the heap are a writer's labels or sharp line asked of a
+are a writer's sum asked of a reader's directions. Gibbs and the heap are a writer's labels or sharp line asked of a
 reader's resolution.
 
 **The Cauchy.** It appears in the catalogue twice, as an entry and as the pattern. As an entry, it is the law with a median
 and no mean, which the third essay explained. As the pattern, it is the reason the reader's side of each paradox has what
-it has: order and not sums, a median and not a mean, a corner and a horizon and not a total. The reader's addresses carry
-the Cauchy, and the Cauchy keeps exactly the statistics a reader can use.
+it has: order and not sums, a median and not a mean, a corner and a horizon and not a total. The reader's directions carry
+the Cauchy as their heat, continuous and with nothing counted in it, and the Cauchy keeps exactly the statistics a reader
+can use: a sum needs things counted, and a heat has none. *The heat is given; the paint is met.*
 
 Nothing here is a new resolution. Perspective needed no new fact; the twins needed nothing relativity did not already say;
 the kidney-stone data were correct all along; Hill had proved Benford; Olbers' answer was known. Each was resolved by
