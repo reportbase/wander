@@ -7352,6 +7352,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R720** (5 Nov; Tom: "update the essays and demos"): R718–R719 carried out.
+  - `cauchy-map.html` gains a panel, "Where no turn can be found: seeds". It draws the 35 fitted wind kernels at their own
+    scales against the turn's p = ½, with their fitted p against the band predicted beforehand. Hook `seeds()`.
+  - The essays README, the cards for essays 3 and 17 on `essays.html`, and the Cauchy map's card on `demos.html` name the
+    failed test.
+  - Essays 3, 16 and 17 already carried R719.
 - **R719** (5 Nov; Tom: "narrow it", after TCF run 1, R718): the rule is narrowed. A Cauchy-type quantity is a turn's
   heat only where the turn can be named apart from the law's shape; a fat tail alone is no evidence of one, since a
   mixture of amounts makes one too.
