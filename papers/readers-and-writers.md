@@ -195,6 +195,26 @@ directions. The reading is of the Cauchy this construction makes. A Cauchy met e
 two normal amounts, a stable sum, may have another origin; whether a turn lies behind it is a question to ask of each
 case, not a consequence of this derivation.
 
+**The Cauchy's routes.** Every Cauchy is one measure: the Poisson kernel of the upper half-plane seen from a point
+z = m + iγ, p(x) = (1/π)·Im 1/(x − z). In other words, the harmonic measure of a line seen from a point off it. Many
+mechanisms put a point at z and reach the line from it:
+- **a uniform turn read on the line**: the lighthouse, the ratio of any rotation-invariant pair, a circle seen from a
+  point of it;
+- **a random walk** leaving the half-plane from z (Kakutani 1944), and its twin, a normal mixed over the walk's hitting
+  time;
+- **a pole** a height γ off the line, whose response squared is the kernel and whose Fourier pair is the damped
+  oscillation e^(imt − γ|t|);
+- **a sum** of Cauchys, whose points add;
+- **a real Möbius map**, which carries one point to another.
+
+In the plane these are one measure, because a turn about z preserves harmonic measure. On a flat boundary they agree in
+every dimension. On a curved one they part: inside a ball, the straight turn and the walk land differently. One sample
+never tells the routes apart. Only what γ tracks can (a distance for the turn and the walk, a rate for a pole, a sum for
+a sum), and the boundary's shape. So the turn does not own the Cauchy. It is the reader's route to it, the one that makes
+the heat over the reader's directions. "Find the turn" is, more generally, "find the z": what puts a point off the line,
+and how the line is reached from it. A fat tail with no z, as in the seed kernels of §11, is not harmonic measure by any
+route.
+
 **The Cauchy, derived from H and from V.** The Cauchy is usually met as a family with two parameters, a location m and a
 scale γ. Derived from what an observer holds, it comes in three forms, and the parameters arrive with V.
 
@@ -1072,7 +1092,7 @@ acts, the heat of directions and the payload inside a read, and what carries an 
 ## Code and data
 
 The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each with
-its plan written before it was run: parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
+its plan written before it was run: the Cauchy's routes in `plans/cauchy-routes.md` and `runs/crt/`; parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
 measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three
 thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the shape
 swept whole against each thumb on its own in `plans/swp-plan.md` and `runs/swp/`; the read with no world, and where the

@@ -150,6 +150,19 @@ boost are different laws; in the run behind essay 13 the boosted sky never came 
 at ρ = ½ the nearest was 3.84% off. The plane is special, and a
 flat wall is the plane's gift in every dimension: there the look and the walk agree.
 
+The look and the walk are two of several ways in. The map is the harmonic measure of the wall seen from a point off it,
+and that point can be put there in different ways:
+- a standpoint, with a uniform turn;
+- a starting place, with a random walk;
+- a pole a height off the line, as in a resonance whose response squared is this kernel;
+- a sum of such maps, whose points add.
+
+All land on the same law, checked side by side at thirty digits (`plans/cauchy-routes.md`). They are told apart only by
+what the height tracks, a distance or a decay rate or a sum, and by the wall's shape. Curve the wall into a ball, and from
+halfway out to the rim the share landing within 45° of straight ahead is 0.482 for the walker and 0.359 for the straight
+turn. So the map is not the turn's alone. The turn is the reader's way of seeing it, the one that makes the heat over its
+directions.
+
 ## 5. Stepping back
 
 What happens to the map as you step back from the wall?

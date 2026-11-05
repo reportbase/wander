@@ -201,6 +201,13 @@ stand.
 - that the two sweeps' rates combine into either of them (in space into neither);
 - that turns compose by adding (in space only within one sweep).
 
+The boundary decides it, not the dimension alone. From a height above a *flat* wall, in any number of dimensions, the
+uniform turn and the walker land alike: the hemisphere's landing is the half-space's Poisson kernel in three, four and
+five dimensions alike, checked at thirty digits. What breaks the agreement is a boundary that curves back round the
+standpoint. Inside a ball, from halfway out, the share landing within 45° of straight ahead is 0.482 for the walker and
+0.359 for the straight turn. The Cauchy has other routes besides these two: a pole off the line, a sum, a Möbius map. All
+reach the same measure on a flat boundary, and only what their height tracks tells them apart (`plans/cauchy-routes.md`).
+
 ---
 
 ## 6. Which law a statement means
