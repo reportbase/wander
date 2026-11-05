@@ -42,6 +42,9 @@ that 60°. That heat map is the two-dimensional Cauchy,
 
   1/(2π(1 + r²)^(3/2)) per unit of glass, falling as cos³α.
 
+That is the map on the flat screen. Drawn on another chart the same looking makes another curve: the stereographic
+chart of the whole sky gives (1/π)/(1 + |z|²)², which is not this one. The cos³ belongs to the screen square to the look.
+
 In the plane, with one thumb instead of two crossed, the same construction gives the familiar Cauchy, (2/π)/(1 + s²) per
 unit of the reading s = v/h, falling as cos²θ.
 
@@ -176,7 +179,7 @@ standpoint, its width the new height, together the point m + iγ (McCullagh 1996
 stretches, and the new map is again a map of where some standpoint is looking.
 
 Special relativity does this to the sky. An observer moving at speed sees every star's direction crowd forward,
-aberration, a Möbius map of the directions; a sky even in its own frame becomes the spherical Cauchy, its heat
+aberration, a Möbius map of the directions; no law on the sky stays unchanged by a boost, and a sky even in its own frame becomes the spherical Cauchy, its heat
 proportional to D², D the Doppler factor (Kato and McCullagh 2020). The familiar D⁴ brightening ahead is that D² of heat,
 the directions crowding, times D² of payload, each photon's energy and rate. The heat moves; the paint is reweighted;
 they multiply.

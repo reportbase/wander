@@ -7352,6 +7352,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R714** (5 Nov; Tom: "update the essays"): R713 in the essays. Essay 1's stereographic sentence marked as the circle's
+  case; essay 7 a bullet (no law on the sky boost-invariant; the even sky on the stereographic chart (1/π)·dA/(1 + |z|²)²,
+  not the 2D Cauchy); essay 13 a paragraph after its two powers (the charts part on the sphere: within |z| ≤ 1/√3 a quarter
+  of the sky against 0.134 for the 2D Cauchy; no law unchanged by every Möbius map); essay 17 the cos³ named the flat
+  screen's, and the boost sentence.
 - **R713** (5 Nov; a Grok paste on the celestial sphere, then Tom: "only if you agree"): *Reads and Writes* §3's moving
   sky gains one parenthesis: the uniform sky on the stereographic chart is (1/π)·dA/(1 + |z|²)² (a bivariate t with two
   degrees of freedom, P(|z| ≤ r) = r²/(1 + r²)), not the two-dimensional Cauchy, which is the gnomonic chart of a

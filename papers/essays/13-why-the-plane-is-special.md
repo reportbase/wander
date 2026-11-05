@@ -100,6 +100,14 @@ stand where one stood in the plane.
 
 In the plane the two powers are the same, 1 and 1; on the sphere they are 3/2 and 2. EUL measured what that costs.
 
+The charts part too. On the circle, projecting from one of its points (the stereographic chart) carries the even turn to
+the Cauchy. On the sphere the same chart carries the even sky to (1/π)·dA/(1 + |z|²)², which is not the plane's
+two-dimensional Cauchy: a quarter of the sky lies within |z| ≤ 1/√3 against 1 − √3/2 = 0.134 for that Cauchy within the
+same radius. The two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)), is the other chart, half the sky from its centre onto a
+flat screen (essays 5 and 17). One chart serves both on the circle; on the sphere they are two. And no law on the sphere
+is unchanged by every Möbius map: the even one is unchanged by turns, and the boosts carry it within the spherical
+Cauchy's family.
+
 **Harmonic measure keeps the powers.** Its averages of the Legendre polynomials are r, r², r³, … to 2·10⁻⁴⁴: one
 number, raised. So its mean direction (the average of t) is r, the standpoint's own distance from the centre. The
 standpoint is still the mean.

@@ -319,7 +319,8 @@ Every piece of the mathematics here is classical. A circle needs one length: it 
 centre, and one length turned about its end traces it. The tangent of an angle turned uniformly is Cauchy; that is the
 lighthouse problem of the Bayesian textbooks (Gull 1988; Sivia and Skilling 2006). Projecting the circle from one of its
 own points onto a line, the stereographic projection, carries its uniform measure to the Cauchy, and the family is closed
-under the Möbius maps of the line (Knight 1976; McCullagh 1996). Its median, its symmetry under the reciprocal and its
+under the Möbius maps of the line (Knight 1976; McCullagh 1996). (That is the circle's case. The sphere's even measure,
+projected the same way, is not the plane's two-dimensional Cauchy; essay 13 says why.) Its median, its symmetry under the reciprocal and its
 missing mean are textbook facts.
 
 None of these mentions a second breadth, and none needs one. The slope v/h is already a ratio of two shares of one
