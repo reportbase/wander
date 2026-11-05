@@ -58,10 +58,11 @@ Computing has to build that separation by hand; geometry starts with it (see "Re
 length the reader holds, H, turned from all of it lying along h to all of it standing along v; the read is every such
 sweep at once, given whole, not performed one after another. Geometry is free in this sense: nothing in it is computed,
 no procedure runs, and there is no tangent or arctangent in it; tan, arctan and every formula for the turn are the writer's
-way of stating what is already there. Each sweep is centred on the crosshairs, the corner where the thumbs cross (§6, §7), which separates the near field,
-one thumb, from the far field beyond it, read as ratios (one in two, one in four, …) and counted by a writer in thumbs.
-The read's addresses are K, the addresses available to it in that moment, arranged by the Cauchy: half of them before the corner and half
-after, whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Two reads, at two moments or two standpoints, are
+way of stating what is already there. Each sweep is centred on the crosshairs, the corner where the thumbs cross (§6, §7).
+The read's addresses are K, the addresses available to it in that moment, arranged by the Cauchy. The Cauchy itself has no
+near field and no far field; those are an overlay H lays on the read (§6, §7): the thumb, pointed at a thing, splits every
+direction's distance there, the near field one thumb and the far field beyond it, read as ratios (one in two, one in four,
+…) and counted by a writer in thumbs, half the addresses on each side whatever H is. A reading is one direction met in the sweep, [h : v], a share of the one thumb. Two reads, at two moments or two standpoints, are
 joined only across a step that is counted: parallax, and so a write. (A *facing* is a writer's word, for several reads held together with their signs; no read
 is one.) A read holds no time: time is the step between reads. Reads are continuous, one can be taken at any place and
 any moment, but each read has no connection to the one before; their order, and anything said across them, is a write.
@@ -530,15 +531,15 @@ decimal 1.5574… is the writer's account of where it is. The reader meets these
 **The crosshairs.** (The read as §1 defines it.) Cross the thumbs (§7) over whatever is looked at, the look running down
 their diagonal. Where they cross is the corner: the thing there reads one thumb along each thumb, every pair alike,
 v/h = v₂/h = 1, and it is drawn one thumb wide. Along the line of sight it lies √2 thumbs off in the plane and √3 in space,
-the diagonal of a square or a cube one thumb on a side; no thumb lies along the line of sight. That crossing
-sets the near field and the far field. The near field is a single thumb, laid evenly: everything nearer than the crossing
+the diagonal of a square or a cube one thumb on a side; no thumb lies along the line of sight. That crossing, with
+H, lays the near field and the far field over the read; the Cauchy itself has neither (§7). The near field is a single thumb, laid evenly: everything nearer than the crossing
 gets its addresses in proportion, the first half of the thumb as much room as the second. The far field is read in ratios:
 a thing one thumb wide reads one in two, then one in four, then one in eight, each stretch over which the reading halves
 holding the same number of addresses as the one before, out toward the horizon. A writer counts the same stretches as two
 thumbs, four, eight.
-Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them. In space the reader sees the hemisphere in front, and that is the Cauchy's whole shape; one
-thumb splits each direction's addresses in half, the near field inside and the far field past it, a split and not a shape,
-moved by looking from thing to thing (§7, "The hemisphere is the shape").
+Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them. In space the reader sees the hemisphere in front, and that is the Cauchy's whole shape, with no
+near or far in it; one thumb laid over it splits each direction's addresses in half, the near field inside and the far
+field past it, an overlay and not a shape, moved by looking from thing to thing (§7, "The hemisphere is the shape").
 
 **The one-thumb circle, and the three corners.** Everything within one thumb of the crosshair's point is a ball (a disc in
 the plane) that touches each face of the wedge, at the cube's corners one thumb back from the crosshair along each thumb.
@@ -701,35 +702,38 @@ distance comes only through H, never V. The read's whole cone is the half-space 
 Cauchy's one shape, with no cap, scaled about the eye onto itself; the wedge's cone is the part of it where no pair of
 thumbs reads below zero.
 
-**The hemisphere is the shape; one thumb splits every direction.** The Cauchy is not a shape inside what the reader sees:
+**The hemisphere is the shape; near and far are an overlay.** The Cauchy is not a shape inside what the reader sees:
 its shape is the hemisphere itself, everything in front. Projected from the eye onto a screen square to the look, the
 directions spread evenly over the hemisphere land as the two-dimensional Cauchy, one point for one direction; the look is
 its peak, rings of equal area its rings of equal share (half within 60° of the look, √3 thumbs out on the screen), and the
 rim, 90° off, its long tail, never landing, which is why it has no mean. The hill, the triangle and the rings are ways of
-drawing that hemisphere, not shapes of their own. H gives each direction one thing more: a split. Along every direction the
+drawing that hemisphere, not shapes of their own. The Cauchy has no near and no far: no length enters it, and its one
+marked place is the look. Near and far are a separate overlay, which H lays over the read: a split of distance. Along every direction the
 K addresses of distance fall at d/H = tan(kπ/2K), a half-Cauchy in the distance's own reading, the first K/2 inside one
 thumb and the rest past it, whatever the direction and whatever the size of the thumb. Inside one thumb they are close to
 even, in proportion: the near field. Past it the share left beyond x thumbs is (2/π)·arctan(1/x), 0.295 past two thumbs,
 0.156 past four, 0.079 past eight, about half of what was left each time the reading halves, out toward a horizon never
 reached: the far field, heavy, so no mean of distances. The split is a mark at one thumb on every direction, each one's
 median, not a body: a first version drew it as a closed dome, over the wedge and then over the hemisphere, and gave the
-near field a shape, which it does not have. The split is the thumb's, not a writer's: it stands one thumb out, never at V.
+near field a shape, which it does not have. The split is the thumb's, not a writer's: it stands one thumb out, never at V. Take the overlay away and the Cauchy
+is unchanged.
 
-**Where the split falls: looking around.** The reader moves the split by looking. Pointed at a thing, the crossed thumbs
+**Where the split falls: looking around.** The overlay is the reader's to move, and it moves it by looking. Pointed at a thing, the crossed thumbs
 take its distance as H, so that thing sits at the corner, half of every direction's addresses nearer than it and half
 farther; looking at another thing moves the split to it. We can only speculate that a reader does this, and the reason to
 is that it is optimal: the corner is where a reading's cells are finest relative to their place (§6, "H is a zoom"), and a
 thing at the corner is the thing at parallax's corner, since a step of two thumbs, half the baseline equal to the distance,
 places it with the least error, ε·cosh(ln k) at its least, ε (§8, "The thing itself as H"). Putting the thing looked at on the corner is what a reader should do; whether readers do is open.
 
-**A heat map, hottest at the corner.** Count the addresses in a small stretch and the read is a heat map. In direction,
+**A heat map: the Cauchy's and the overlay's.** Count the addresses in a small stretch and the read is a heat map. In direction,
 on the hemisphere itself, by angle, there is no heat: the directions are even. Read off the look, per unit of reading on
 the screen, they are 1/(2π(1 + r²)^(3/2)): hottest on the look, falling as cos³ of the angle off it, to 0.35 of the peak one
-thumb off (45°) and 0.125 at 60°, none at the rim. In distance, per unit of plain distance they are thickest at the eye,
+thumb off (45°) and 0.125 at 60°, none at the rim. That is the Cauchy's own heat, and all of it: hottest at the look. The overlay brings a second heat, in distance, there
+only once H is laid on. Per unit of plain distance its addresses are thickest at the eye,
 2/(π(1 + x²)) with x = d/H; but read as the reader reads distance, by ratio, they are (1/π)·sech(ln(d/H)), hottest at one
 thumb and cooling alike both ways: 0.8 of the peak at one in 2 and at two thumbs, 0.47 at one in 4 and four, 0.25 at one in
-8 and eight, never zero. The two together are hottest at one point, on the look one thumb out: the corner, the thing looked
-at. Look at something else and the hot spot goes with it. The heat is in the readings, not a shape: the shape is still the
+8 and eight, never zero. Multiplied, the two are hottest at one point, on the look one thumb out, the thing looked at; they
+meet there only because the look points at it. Look at something else and both go with it. The heat is in the readings, not a shape: the shape is still the
 hemisphere, and the heat is how its addresses crowd as the reader reads it.
 
 **The shape is swept, not each thumb.** Each pair of thumbs reads a quarter turn: from its home, where it reads 0, to its

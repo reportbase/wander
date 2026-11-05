@@ -7352,6 +7352,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R703** (5 Nov; Tom: "the cauchy does not have concept of the near and far fields. that seems to be a seperate overlay.";
+  then "the demo has served its purpose … no more changes are needed", and "yes" to the papers): the Cauchy is the
+  hemisphere of directions and their crowding about the look (cos³), no length in it, its one marked place the look; it
+  has no near and no far. Near and far are an overlay H lays on the read: the thumb pointed at a thing splits every
+  direction's distance there, half the addresses each side, with its own heat, sech(ln(d/H)); taken away, the Cauchy is
+  unchanged. Refines R648 ("the corner separates the near field"), R619, R699, R701 (the split inside the read) and R702
+  (one heat map: the Cauchy's own heat is cos³ about the look; the hot spot at the thing is the two meeting because the
+  look points at it). *Reads and Writes* §1 "What a read is", §6 "The crosshairs", §7 ("The hemisphere is the shape; near
+  and far are an overlay", "Where the split falls", "A heat map: the Cauchy's and the overlay's"). `read.html` left as it
+  is (Tom: the demo has served its purpose), so it still draws the two layers together.
 - **R702** (5 Nov; Tom: "seems like the cauchy creates a kind of heat map, hottest at the corner."; "yes, and add it to the
   paper"): counted per stretch the read is a heat map. In direction, per unit of reading on the screen, cos³ of the angle
   off the look (0.35 at 45°, 0.125 at 60°, 0 at the rim); by angle on the hemisphere, even, no heat. In distance, per ratio,

@@ -1639,6 +1639,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R703 (5 Nov; Tom: "the cauchy does not have concept of the near and far fields. that seems to be a seperate overlay."):
+  **the Cauchy has no near or far; near and far are an overlay H lays on the read** (the split and its sech heat), the
+  Cauchy's own heat cos³ about the look. *Reads and Writes* §1, §6, §7. `read.html` not changed (Tom: "the demo has served
+  its purpose … no more changes are needed"); it still draws both layers together.
   R702 (5 Nov; Tom: "seems like the cauchy creates a kind of heat map, hottest at the corner.", then "yes, and add it to the
   paper"): the read as a heat map, cos³α off the look (per unit of reading) times sech(ln(d/H)) (per ratio), hottest at
   the thing looked at; heat, not a shape. *Reads and Writes* §7; `read.html` painted by it (hook `heat`).
