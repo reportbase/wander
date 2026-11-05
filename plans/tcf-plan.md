@@ -92,4 +92,95 @@ written below before any p is read.
 
 ## Runs
 
-(none yet)
+### Before run 1: the data and the counting rule (5 Nov, written before any kernel value was read)
+
+**The data.** Bullock, J.M. et al. (2017) "A synthesis of empirical plant dispersal kernels", *J. Ecol.* 105, 6–19.
+- Data: Dryad doi:10.5061/dryad.mq2ff, version of 25 Aug 2017, licence CC0. Supplied by Tom as Dryad's zip, since Dryad
+  refuses scripted downloads. Not committed.
+- `Plantdispersaldata.csv`: md5 0f59aca7616794b1ca6623f2f29960bf (matches Dryad's), sha256
+  c9fd5500370346725f401be2634f9368af4d17b35b3c63c5fc6cfffbf6af7a8b.
+- `README_for_Plantdispersaldata.rtf`: md5 963352249ede1a6f5d056995d87c8057, sha256
+  61b825e378ba0545c2d2fd59108c1da0f9658b864d55cc579cdb32cdff689617.
+- The zip: sha256 5578989a0f60a0c75abd8a34c4fc05d49912ed46429c6293fdd850349a771a44.
+
+**What the file is, and what it changes in the plan.** The plan expected fitted 2Dt parameters with species traits. The
+file instead holds the raw kernels: for each of 169 datasets, the species, the source, and rows of distance (m), seed
+density (m⁻²) and, where given, the replicate. Bullock's 2Dt fits are not in it. Nor is any dispersal vector or plant
+height. So:
+- p is fitted here, by the rule below.
+- The wind-dispersed kernels are picked from labels alone (below).
+- **T2, T3 and T4 cannot be tested from this file and are left untested.** They would need release or plant heights,
+  which it does not have. I do not substitute other tests for them after the fact.
+- T1 and T5 stand as written.
+
+**Which kernels count.** A fresh agent sorts the 169 datasets by vector: wind, ballistic, gravity, animal, water,
+human/machine or unsure, with a confidence. It sees only each dataset's number, species name and source reference, never
+the CSV's values, and it may read a paper's title or abstract but no distances or fits. **The primary set is the kernels
+classed wind with high or medium confidence.** T1 and T5 are decided on it alone. The other classes are reported beside
+it and decide nothing.
+
+**The fit, per kernel.**
+- Points with density > 0 only (the number of zeros dropped is reported). Replicates are pooled into one fit, as Bullock
+  analysed them. A kernel needs at least 4 distinct distances with positive density.
+- Model: log ρ(r) = log A − (p + 1)·log(1 + r²/u). Unweighted least squares on log ρ, over (log A, log u, log p).
+- Bounds: p in [0.02, 50]; u in [10⁻⁶·r_max², 10⁴·r_max²]. Started from a grid of p and u, the best kept.
+- Fits that end on a bound are kept and counted, and reported as on a bound.
+- A is free, since densities come as absolute counts or as proportions; the shape p and the scale u do not depend on it.
+
+**T5's slope, per kernel.** The least-squares slope of log ρ on log r over the points with r ≥ 2·√u (the fitted u),
+where there are at least 3 such points. The prediction (p = ½) is −3. T5 is decided on the median slope over the primary
+set: kill if outside [−3.6, −2.4].
+
+**A caution written now.** Many kernels stop at a few metres, inside or near their own scale. There p and u trade off,
+and p is poorly fixed. The spread of p, and how many fits sit on a bound, will be reported. The kill conditions are not
+changed for it.
+
+### Run 1 (5 Nov; `runs/tcf/tcf.py`, output `runs/tcf/run1.txt`, classification `runs/tcf/vectors.tsv`)
+
+**The classification.** A fresh agent, shown only labels, sorted the 168 datasets (the file has 168, not the README's
+169):
+- animal 87, wind 40, ballistic 13, water 1, unsure 27;
+- wind with high or medium confidence: 38, the primary set;
+- two low-confidence wind calls, Gentianella and Mirabilis (release trials on seeds with no adaptation), left out of it.
+
+It did no web searches.
+
+**Parsing.** The order of a dataset's rows varies through the file: Distance then Density, Density then Distance, or
+with a Replicate row first. Rows are therefore taken by label, a rule set from the labels alone before any fit. Five
+datasets have two rows labelled Distance and none labelled Density (98, 113, 128, 143, 158), and are not fitted. Two of
+them are in the primary set: 113 *Pinus sylvestris* and 143 *Tachigalia versicolor*. Dataset 77 has under 4 positive
+densities. Overall 471 zero densities were dropped and 162 of the 168 datasets fitted.
+
+**Result, primary set** (38 kernels, 35 fitted, 21 of them on a bound):
+- **T1 killed.** The median p is 0.104 (quartiles 0.020 and 0.533), against [0.3, 0.8]. The share of fits outside
+  [0.15, 1.5] is 0.686, against under ⅓. Most of the bound fits sit at p = 0.02, the floor: a tail fatter than the 2Dt
+  allows inside its range, or a kernel that flattens.
+- **T5 killed.** Over the 26 kernels with 3 or more points past 2√u, the median tail slope is −2.02, against [−3.6, −2.4].
+- **T2, T3, T4 untested:** no heights in the file.
+
+**Beside it, deciding nothing:**
+
+| class | median p | median tail slope |
+|---|---|---|
+| ballistic | 0.78 | −2.20 |
+| animal | 0.16 | −2.42 |
+| unsure | 0.49 | −2.94 |
+
+The wind kernels are no nearer p = ½ than the others; the animal ones are about as fat.
+
+**After the run (post hoc, deciding nothing).**
+- The 14 primary fits not on a bound have median p 0.61 and median slope −2.23. But 5 of the 14 are outside
+  [0.15, 1.5], which still fails T1 as written.
+- The tails are fatter than r⁻³. On a log scale their median slope, about −2, is the 2Dt at p → 0. Clark et al. 1999
+  found fat-tailed fits (small p) for tree seeds too. That was known in print, and I did not weigh it when I set p = ½.
+- Many kernels end within a few multiples of their own fitted scale. There p and u trade off, as the plan warned.
+
+**What it says.** The turn reading of this case, as stated (seeds travelling straight from a release point, directions
+uniform over the downward hemisphere), is killed by these data. Wind-dispersed seed kernels are not the hemisphere's
+Cauchy: their tails are fatter, about r⁻², and their shape varies widely. A mixture over wind speeds, the reading in print,
+fits that, since mixing scales makes the tail fatter than any one member. Whether a turn with a different measure on
+directions (uniform in angle, not area) or a turn per gust would survive is a new prediction, and a new run, not a rescue
+of this one.
+
+The kill is about one named case. It does not by itself withdraw *Reads and Writes*' rule that a Cauchy is a turn's heat
+(the plan's "What a kill means"). It does mean the rule has now failed once where it could fail. That is Tom's to rule.

@@ -7352,6 +7352,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R718** (5 Nov; Tom: "1", to the test that can fail, then "yes" to the plan and its run): TCF
+  (`plans/tcf-plan.md`, `runs/tcf/`). The case is REA's H54, seed-dispersal kernels. The turn named beforehand: a seed
+  goes straight from its release point, directions uniform over the downward hemisphere, giving Clark's 2Dt with p = ½
+  and a tail of r⁻³.
+  - Data: Bullock et al. 2017's 168 raw kernels (Dryad, CC0). The wind-dispersed ones were picked blind from their
+    labels: 38 kernels, 35 fitted.
+  - **T1 killed:** median p 0.104, and 0.686 of fits outside [0.15, 1.5]. **T5 killed:** median tail slope −2.02.
+  - T2–T4 untested; the file has no heights.
+  - Wind kernels are no nearer p = ½ than animal ones, and their tails are fatter, as a mixture over wind speeds gives.
+  - The rule that a Cauchy is a turn's heat has now failed once where it could fail. Whether that withdraws or narrows
+    it waits on Tom; *Reads and Writes* is not changed yet.
 - **R717** (5 Nov; Tom: "PI/2 and 2/PI are writers.", then "one length circle is writers."): flags 1–3 of
   `plans/flags-r584-r592.md` settled. π/2 and 2/π are the writer's measure of the reader's sweep, never the reader's
   readings; R329's "readers read 1 as 2/π or π/2" and R450's "thats where the numbers PI/2 and 2/PI come from" are kept as
