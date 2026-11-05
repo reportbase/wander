@@ -96,6 +96,7 @@
     <button id="stripB">drag the thumb (H) <span>on</span></button>
     <button id="sweepB">swept <span>the shape whole</span></button>
     <button id="roundB">turned all the way round <span>off</span></button>
+    <button id="depthB">right panel <span>the read in depth</span></button>
     <button id="playB">read again</button>
     <div class="sec">nothing changes</div>
     <button id="turnB">turn the look 30° <span>0</span></button>
@@ -208,7 +209,7 @@ const byCountW = r => Math.sqrt(shareW(r));
 const S = { view: Q.get('view') === 'count' ? 'count' : 'thumbs', R: [8, 16, 32].includes(num('R', 16)) ? num('R', 16) : 16,
     words: Q.get('words') === '1', side: Q.get('side') !== '0', nums: false, about: Q.get('about') === '1',
     az: num('az', 35) * DEG, el: num('el', 30) * DEG, t: Q.get('play') === '0' ? 1 : 0, turns: 0, scale: 1, zoom: 1,
-    round: Q.get('round') === '1',
+    round: Q.get('round') === '1', depth: Q.get('depth') !== '0',
     strip: Q.get('strip') !== '0', lgH: Math.max(-2, Math.min(3, num('H', 0.5))),
     sweep: ['pantilt', 'tiltpan'].includes(Q.get('sweep')) ? Q.get('sweep') : 'whole' };
 
@@ -391,6 +392,71 @@ function drawSide() {
 }
 
 // ---- the hill: the 3D Cauchy as a height over the screen ----
+// ---- the read in depth (R699; Tom: "there are two shapes, the near field shape and the long tail."): the eye at home, the
+// three thumbs out of it, every direction of the wedge; along each ray the K distance addresses at d/H = tan(kπ/2K),
+// drawn by their address (4/π)·atan(d/H), so the body (d ≤ one thumb) and the tail (past it) get the same room. The body
+// is a closed shape: the wedge's three faces out to one thumb and the dome there, a piece of the sphere one thumb about the
+// eye. The tail is the rest of the cone, its shells at 2, 4 and 8 thumbs bunching toward the horizon at 2, never reached:
+// open, no cap. Turned by the same drag as the hill.
+const addrR = d => (4 / Math.PI) * Math.atan(d);
+function drawDepth() {
+    const dpr = fit(hc), W = hc.width, H = hc.height, m = Math.min(W, H);
+    const ca = Math.cos(S.az), sa = Math.sin(S.az), ce = Math.cos(S.el), se = Math.sin(S.el);
+    // the look (1,1,1)/√3 drawn upward; the thumbs about it as on the screen
+    const E = [[1, 0, 0], [0, 1, 0], [0, 0, 1]], k3 = 1 / Math.sqrt(3);
+    const u1 = [1 / Math.SQRT2, -1 / Math.SQRT2, 0], u2 = [1 / Math.sqrt(6), 1 / Math.sqrt(6), -2 / Math.sqrt(6)];
+    const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+    const sc = 0.22 * m;
+    const P = v => { const x = dot(v, u1), y = dot(v, u2), z = dot(v, [k3, k3, k3]);
+        const X = x * ca - y * sa, Y = x * sa + y * ca;
+        return [W / 2 + sc * X, H * 0.7 - (sc * z * ce - sc * Y * se)]; };
+    const dirOf = (i, j, t) => { const a = Math.cos(t), b = Math.sin(t); return [0, 1, 2].map(c => a * E[i][c] + b * E[j][c]); };
+    const at = (n, d) => { const r = addrR(d); return P(n.map(c => c * r)); };
+    hx.fillStyle = '#04040a'; hx.fillRect(0, 0, W, H);
+    const pairs = [[0, 1], [1, 2], [2, 0]], N = 40;
+    // the tail: the cone past one thumb, its three faces faint violet out to the horizon's rim
+    hx.fillStyle = rgba('violet', 0.07);
+    for (const [i, j] of pairs) { hx.beginPath();
+        for (let s2 = 0; s2 <= N; s2++) hx.lineTo(...at(dirOf(i, j, s2 / N * Math.PI / 2), 1));
+        for (let s2 = N; s2 >= 0; s2--) hx.lineTo(...at(dirOf(i, j, s2 / N * Math.PI / 2), 1e9));
+        hx.closePath(); hx.fill(); }
+    // its shells at 2, 4, 8 thumbs, dashed, and the horizon's rim
+    const shell = (d, col, w, dash) => { hx.setLineDash(dash); hx.strokeStyle = col; hx.lineWidth = w * dpr; hx.beginPath();
+        for (const [i, j] of pairs) for (let s2 = 0; s2 <= N; s2++) { const p = at(dirOf(i, j, s2 / N * Math.PI / 2), d);
+            s2 ? hx.lineTo(...p) : hx.moveTo(...p); }
+        hx.stroke(); hx.setLineDash([]); };
+    [2, 4, 8].forEach((d, i) => shell(d, rgba('violet', 0.6 - 0.12 * i), 1, [4 * dpr, 4 * dpr]));
+    shell(1e9, rgba('ink', 0.35), 1, [2 * dpr, 5 * dpr]);
+    // the body: the three faces out to one thumb, and the dome over them
+    hx.fillStyle = rgba('teal', 0.2);
+    for (const [i, j] of pairs) { hx.beginPath(); hx.moveTo(...P([0, 0, 0]));
+        for (let s2 = 0; s2 <= N; s2++) hx.lineTo(...at(dirOf(i, j, s2 / N * Math.PI / 2), 1)); hx.closePath(); hx.fill(); }
+    // the dome's own surface: arcs from the corner direction out to each edge
+    hx.strokeStyle = rgba('teal', 0.35); hx.lineWidth = 0.8 * dpr;
+    const cn = [k3, k3, k3];
+    for (const [i, j] of pairs) for (let q = 1; q < 6; q++) { const t = q / 6 * Math.PI / 2, e = dirOf(i, j, t);
+        hx.beginPath(); for (let s2 = 0; s2 <= N; s2++) { const f = s2 / N, v = [0, 1, 2].map(c => cn[c] * (1 - f) + e[c] * f),
+            L = Math.hypot(...v), p = at(v.map(c => c / L), 1); s2 ? hx.lineTo(...p) : hx.moveTo(...p); } hx.stroke(); }
+    shell(1, rgba('teal', 0.95), 1.8, []);
+    // the thumbs, from the eye through the body and the tail
+    for (const [i] of pairs) { hx.strokeStyle = rgba('teal', 0.7); hx.lineWidth = 1.2 * dpr; hx.beginPath();
+        hx.moveTo(...P([0, 0, 0])); hx.lineTo(...at(E[i], 1e9)); hx.stroke(); }
+    // the look, to the dome and on to the horizon
+    hx.strokeStyle = rgba('gold', 0.9); hx.lineWidth = 1.6 * dpr; hx.beginPath(); hx.moveTo(...P([0, 0, 0])); hx.lineTo(...at(cn, 1)); hx.stroke();
+    hx.setLineDash([3 * dpr, 4 * dpr]); hx.strokeStyle = rgba('gold', 0.5); hx.beginPath(); hx.moveTo(...at(cn, 1)); hx.lineTo(...at(cn, 1e9)); hx.stroke(); hx.setLineDash([]);
+    hx.fillStyle = '#fff'; hx.beginPath(); hx.arc(...P([0, 0, 0]), 4 * dpr, 0, 2 * Math.PI); hx.fill();
+    hx.fillStyle = rgba('gold', 1); hx.beginPath(); hx.arc(...at(cn, 1), 3.5 * dpr, 0, 2 * Math.PI); hx.fill();
+    if (S.words) { hx.font = `${10 * dpr}px DM Mono, monospace`; hx.textAlign = 'left';
+        const lb = (p, t, c, dx, dy) => { hx.fillStyle = c; hx.fillText(t, p[0] + dx * dpr, p[1] + dy * dpr); };
+        lb(P([0, 0, 0]), 'the reader', 'rgba(255,255,255,0.9)', 8, 14);
+        lb(at(cn, 0.55), 'near: the body, closed (half the addresses)', rgba('teal', 1), 10, 4);
+        lb(at(cn, 1), 'the dome, one thumb out', rgba('gold', 1), 10, 0);
+        lb(at(cn, 3), 'far: the long tail, open (the other half)', rgba('violet', 1), 10, 4);
+        lb(at(cn, 1e9), 'the horizon, never reached', rgba('ink', 0.7), 10, -4); }
+    else { hx.font = `${10 * dpr}px DM Mono, monospace`; hx.textAlign = 'left'; hx.fillStyle = rgba('ink', 0.55);
+        hx.fillText('the read in depth: the body (teal) and the long tail (violet)', 12 * dpr, 18 * dpr); }
+}
+
 function drawHill() {
     const dpr = fit(hc), W = hc.width, H = hc.height, m = Math.min(W, H);
     const ca = Math.cos(S.az), sa = Math.sin(S.az), ce = Math.cos(S.el), se = Math.sin(S.el);
@@ -566,7 +632,7 @@ function sync() {
     on('viewB', S.view === 'count', S.view === 'count' ? 'by count' : 'in thumbs'); on('RB', false, String(S.R));
     on('sideB', S.side, S.side ? 'on' : 'off'); $('side').classList.toggle('open', S.side);
     on('stripB', S.strip, S.strip ? 'on' : 'off'); $('strip').classList.toggle('open', S.strip);
-    on('sweepB', S.sweep !== 'whole', SWEEP_NAME[S.sweep]); on('roundB', S.round, S.round ? 'on' : 'off');
+    on('sweepB', S.sweep !== 'whole', SWEEP_NAME[S.sweep]); on('roundB', S.round, S.round ? 'on' : 'off'); on('depthB', S.depth, S.depth ? 'the read in depth' : 'the hill');
     on('turnB', false, String(S.turns)); on('scaleB', false, '× ' + S.scale.toLocaleString());
     $('numbers').classList.toggle('open', S.nums); $('about').classList.toggle('open', S.about);
     if (S.nums) numbers();
@@ -581,6 +647,7 @@ $('RB').onclick = () => { S.R = S.R === 8 ? 16 : S.R === 16 ? 32 : 8; sync(); };
 $('sideB').onclick = () => { S.side = !S.side; sync(); };
 $('stripB').onclick = () => { S.strip = !S.strip; sync(); };
 $('roundB').onclick = () => { S.round = !S.round; sync(); };
+$('depthB').onclick = () => { S.depth = !S.depth; sync(); };
 $('sweepB').onclick = () => { S.sweep = S.sweep === 'whole' ? 'pantilt' : S.sweep === 'pantilt' ? 'tiltpan' : 'whole'; sync(); };
 $('playB').onclick = () => { S.t = 0; $('menu').classList.remove('open'); };
 // turning the look turns the thumbs with it, and scaling the world reaches no reading: the geometry is drawn again unchanged
@@ -592,7 +659,7 @@ sc.addEventListener('pointerdown', () => $('menu').classList.remove('open'));
 let last = performance.now();
 function frame(now) { const dt = Math.min(0.1, (now - last) / 1000); last = now;
     if (S.t < 1) S.t = Math.min(1, S.t + dt / 2.4);           // a read drawn out over 2.4 s, from the crosshair to the horizon
-    drawScreen(); drawHill(); drawSide(); drawStrip(); requestAnimationFrame(frame); }
+    drawScreen(); (S.depth ? drawDepth : drawHill)(); drawSide(); drawStrip(); requestAnimationFrame(frame); }
 sync(); requestAnimationFrame(frame);
 
 window.__read = {
@@ -603,9 +670,10 @@ window.__read = {
         cap: { kind: 'dome', radius: 1, from: SIDE.home / DEG, to: SIDE.thumb / DEG, far: [2, 4, 8] } } : null,
     strip: () => ({ ...stripCounts(), lgH: S.lgH, open: S.strip, addrOf: d => addrOf(d * S.scale, Hnow()), distAddresses: () => distAddresses(Hnow()),
         things: () => THINGS.map(d => d * S.scale), lay: () => Array.from({ length: KD() - 1 }, (_, k) => (k + 1) / KD()) }),
+    depth: () => ({ on: S.depth, addr: addrR, body: addrR(1), shells: [2, 4, 8].map(addrR), horizon: 2 }),
     quarter: () => ({ round: S.round, inWedge, shareW, ringW, total: WT.total }),
     sweep: () => ({ mode: S.sweep, name: SWEEP_NAME[S.sweep], heightAt: (x, y) => heightAt(x, y, S.sweep), relOf: u => relOf(u, S.sweep), unscreen }),
-    set: o => { if ('sweep' in o) S.sweep = o.sweep; if ('round' in o) S.round = !!o.round; if ('H' in o) S.lgH = Math.max(-2, Math.min(3, o.H)); if ('strip' in o) S.strip = !!o.strip; if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t; if ('side' in o) S.side = !!o.side;
+    set: o => { if ('sweep' in o) S.sweep = o.sweep; if ('round' in o) S.round = !!o.round; if ('depth' in o) S.depth = !!o.depth; if ('H' in o) S.lgH = Math.max(-2, Math.min(3, o.H)); if ('strip' in o) S.strip = !!o.strip; if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t; if ('side' in o) S.side = !!o.side;
         if ('az' in o) S.az = o.az * DEG; if ('el' in o) S.el = o.el * DEG; sync(); },
     state: () => ({ round: S.round, sweep: S.sweep, lgH: S.lgH, strip: S.strip, view: S.view, R: S.R, cells: S.R * RAYS, t: S.t, turns: S.turns, scale: S.scale, az: S.az / DEG, el: S.el / DEG }),
 };
