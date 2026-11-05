@@ -64,11 +64,11 @@
 <main>
     <h1>The central sweep</h1>
     <p class="lede">One reader, one standpoint, two sweeps. Hold your hand up to a stained-glass window: each finger is
-    lit by the pane it lines up with. Wherever the reader holds the hand, its fingers are there: the uniform turn's directions, the Cauchy, given before anything arrives (the
-    inscribed sweep, the addresses). It sends nothing, turns through nothing and computes nothing. The
+    lit by the pane it lines up with. Wherever the reader holds the hand, its fingers are there: the uniform turn's directions, the Cauchy's heat over them, given before anything arrives (the
+    inscribed sweep: the heat is given; the paint is met). It sends nothing, turns through nothing and computes nothing. The
     <span class="gold">payload</span> is the coloured light the world sends along each finger, and it carries no
     distance: a finger lit red does not say how far off its pane is (step 1). The central sweep is the same directions counted from the centre of the circle they land on, where
-    each address's colour lands (step 6). Steps 2–5 are the classical pieces from a shape's own centre: an amount along each
+    each direction's colour lands (step 6). Steps 2–5 are the classical pieces from a shape's own centre: an amount along each
     direction is had only by ranging (a writing) or from more standpoints, and its size is never read.</p>
     <div class="panel">
         <div class="row" id="steps"></div>
@@ -240,12 +240,12 @@
     const dot = (g, x, y, r, c) => { g.fillStyle = c; g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill(); };
     const GOLD = '#d4a052', TEAL = '#8ce6cd', VIOLET = '#b59cf0', BRIGHT = '#e6e4ee', RED = '#d96e5b';
     const STEPS = [
-        ['the hand', 'The reader at home, its hand held up to the world as to a stained-glass window, each thing a pane of its own colour. Its fingers are the uniform turn from flat (h) to upright (v), read v/h: the Cauchy, given, before anything arrives. Move the hand: the fingers, their readings and their median at the corner (v/h = 1) do not change. What changes is the colours. Each finger is lit by the first pane on its line; the reader sends nothing, turns through nothing and computes nothing. To read the payload is to read the colours on the fingers; no distance comes with them. To learn how far off a pane is, walk.'],
+        ['the hand', 'The reader at home, its hand held up to the world as to a stained-glass window, each thing a pane of its own colour. Its fingers are the uniform turn from flat (h) to upright (v), read v/h: the Cauchy, a heat over them, hottest along the look, given before anything arrives. Move the hand: the fingers, their readings and their median at the corner (v/h = 1) do not change. What changes is the colours. Each finger is lit by the first pane on its line; the reader sends nothing, turns through nothing and computes nothing. To read the payload is to read the colours on the fingers; no distance comes with them. To learn how far off a pane is, walk.'],
         ['the baseline', 'A circle seen from its own centre. From there the directions (gold) are given evenly, equal turns cutting equal arcs. Suppose an amount is had along each, by ranging (a writing: the signal\'s speed carried in) or from more standpoints: on the circle it is the same along every one. That constant is its baseline: it says the outline is round, and nothing about how big it is.'],
         ['a shape', 'Now a shape, its radius r(θ) from its centre, ln r = a₀ + f(θ). With an amount along each given direction (written, or from more standpoints), each is a point: the direction it already had, and how far. Two numbers in the plane, where a direction from home is one. Scale the world: every amount moves by k together, and the shape, each amount over their geometric mean, does not move at all. The shape is had in full; its size a₀ never.'],
         ['the modes', 'What it can recover is the shape\'s departure from its baseline circle: the modes of ln r, read from ratios of its radii. The size, the common term a₀ = ln k, is never among them. Keep the modes in order of n and the outline comes back broad form first: its level of detail.'],
         ['off the centre', 'Move the standpoint off the centre of a circle. Its directions are still uniform by turn, but they land unevenly (gold, dashed). The circle\'s own law seen from there is the Poisson kernel (violet), the wrapped Cauchy: harmonic measure. It gives an arc the measure (2α − arc)/2π, α the angle the arc spans at the standpoint, and its mean is the standpoint\'s place, z. A mean exists because the circle closes: there is no horizon.'],
-        ['one read', 'The two sweeps, on a chord of 1. From home (the inscribed sweep) the ray at θ is the address, a ratio, v/h, which runs off to ∞. From the middle (the central sweep) the radius at 2θ reaches the point where its paint lands, (h², hv), which stays on its circle. Ray and radius end at the same point every moment (Euclid III.20). The arc carved over the chord to it is θ/sin θ: π/2 at the end, as a writer measures the sweep, π being the completed turn. There the ray is tangent, a horizon; the radius has made its half turn to home. As complex numbers the point is the direction squared, ½e^(2iθ) from the middle, so that half turn is e^(iπ) = −1.']
+        ['one read', 'The two sweeps, on a chord of 1. From home (the inscribed sweep) the ray at θ is the direction, a ratio, v/h, which runs off to ∞. From the middle (the central sweep) the radius at 2θ reaches the point where its paint lands, (h², hv), which stays on its circle. Ray and radius end at the same point every moment (Euclid III.20). The arc carved over the chord to it is θ/sin θ: π/2 at the end, as a writer measures the sweep, π being the completed turn. There the ray is tangent, a horizon; the radius has made its half turn to home. As complex numbers the point is the direction squared, ½e^(2iθ) from the middle, so that half turn is e^(iπ) = −1.']
     ];
     let dragging = false;
     function drawHand() {
@@ -417,7 +417,7 @@
             dot(g, ...P([0, 0]), 5, TEAL); txt(g, 'home', P([0, 0])[0] - 18, P([0, 0])[1] + 20, TEAL);
             dot(g, ...P([0.5, 0]), 5, GOLD); txt(g, 'middle', P([0.5, 0])[0] - 22, P([0.5, 0])[1] + 20, GOLD);
             txt(g, 'B', P([1, 0])[0] + 6, P([1, 0])[1] + 16);
-            txt(g, 'from home, the address at θ (teal); from the middle, the radius at 2θ (gold)', 10, 18);
+            txt(g, 'from home, the direction at θ (teal); from the middle, the radius at 2θ (gold)', 10, 18);
             [g, W, H] = fit($('side'));
             const x0 = 40, x1 = W - 14, y0 = H - 40, y1 = 30, X = d => x0 + (x1 - x0) * d / 90;
             g.strokeStyle = 'rgba(255,255,255,0.25)'; g.beginPath(); g.moveTo(x0, y1); g.lineTo(x0, y0); g.lineTo(x1, y0); g.stroke();
@@ -430,18 +430,18 @@
             g.strokeStyle = 'rgba(212,160,82,0.4)'; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(x0, Y(Math.PI / 2)); g.lineTo(x1, Y(Math.PI / 2)); g.stroke(); g.setLineDash([]);
             txt(g, 'π/2', x0 - 34, Y(Math.PI / 2) + 4, GOLD, 11);
             g.strokeStyle = 'rgba(255,255,255,0.6)'; g.beginPath(); g.moveTo(X(p.t), y1); g.lineTo(X(p.t), y0); g.stroke();
-            txt(g, 'v/h, the address: runs off', x0 + 8, y1 + 4, TEAL, 11);
+            txt(g, 'v/h, the direction: runs off', x0 + 8, y1 + 4, TEAL, 11);
             txt(g, 'arc over chord: θ/sin θ → π/2', x0 + 8, y1 + 20, GOLD, 11);
             txt(g, 'the point stays on its circle (2|OP| = 1)', x0 + 8, y1 + 36, 'rgba(255,255,255,0.7)', 11);
             txt(g, '0°', x0 - 6, y0 + 18); txt(g, '90°', x1 - 22, y0 + 18); txt(g, 'θ', (x0 + x1) / 2, y0 + 18);
             lines.push(`θ = ${p.t.toFixed(1)}°: the inscribed sweep's ray from home, the central sweep's radius from the middle at 2θ = ${(2 * p.t).toFixed(1)}°`);
             lines.push(`they meet: |ray end − radius end| = ${r.meet.toExponential(1)}   (Euclid III.20)`);
-            lines.push(`address: v/h = ${isFinite(r.address) && r.address < 1e9 ? r.address.toFixed(4) : '∞'}   (one number, unbounded)`);
+            lines.push(`direction: v/h = ${isFinite(r.address) && r.address < 1e9 ? r.address.toFixed(4) : '∞'}   (one number, unbounded)`);
             lines.push(`payload: the point (foot h², height hv) = (${r.point.foot.toFixed(4)}, ${r.point.height.toFixed(4)})   (two numbers, bounded)`);
             lines.push(`arc carved from B ${r.arc.toFixed(4)}, chord to it ${r.chord.toFixed(4)}: arc/chord ${r.arcOverChord.toFixed(4)}, chord/arc ${r.chordOverArc.toFixed(4)}, product 1`);
             lines.push(p.t >= 89.95 ? 'at the end: the ray lies along the tangent at home, a horizon; the radius simply points at home, a place' : 'at 90° the ray becomes tangent (the horizon) and the radius ends at home');
-            $('cap1').textContent = 'The circle on a chord of 1. Teal: the ray from home at θ (the address). Gold: the radius from the middle at 2θ (where the paint lands) and the arc it has carved from B.';
-            $('cap2').textContent = 'Against θ: the address v/h runs off to ∞; the arc over the chord, as a writer measures it, settles at π/2; the radius stays on its circle the whole way.';
+            $('cap1').textContent = 'The circle on a chord of 1. Teal: the ray from home at θ (the direction). Gold: the radius from the middle at 2θ (where the paint lands) and the arc it has carved from B.';
+            $('cap2').textContent = 'Against θ: the direction's reading v/h runs off to ∞; the arc over the chord, as a writer measures it, settles at π/2; the radius stays on its circle the whole way.';
         }
         $('hud').textContent = lines.join('\n');
     }

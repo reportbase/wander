@@ -74,9 +74,9 @@
 <main>
     <h1>An infinite star field</h1>
     <p class="lede">The writer sees the stars where they are: give the world more and its far field fills. The reader sees
-        each star only as a direction, one of its own addresses at equal angles, and holds the share of what it reads at
-        each. However many stars there are, N or 2N or infinitely many, that view is the same: the unit circle, in
-        proportion on both sides of the corner. N is invisible to the reader. Its count of addresses, K, is
+        each star only as a direction, read at its fineness K (equal angles; a writer counts them as K places), and holds
+        the share of what it reads in each. However many stars there are, N or 2N or infinitely many, that view is the same: the unit circle, in
+        proportion on both sides of the corner. N is invisible to the reader. Its fineness, K, is
         fixed and comes first: choosing H, its zoom, only splits K in two, half inside H and half past it.</p>
 
     <div class="panel">
@@ -84,19 +84,19 @@
             <button id="half">÷ 2</button><button id="dbl">× 2</button><span id="Nval" style="min-width:16ch"></span><button id="inf">N = ∞</button></div>
         <div class="row"><label for="H">H, the zoom</label><input id="H" type="range" min="-4" max="12" step="1" value="0">
             <span id="Hval" style="min-width:12ch"></span></div>
-        <div class="row"><label>K, the reader's addresses</label><span id="ns"></span><button id="fit">whole field</button>
+        <div class="row"><label>K, the reader's fineness</label><span id="ns"></span><button id="fit">whole field</button>
             <label for="goto">go to star</label><input id="goto" type="text" placeholder="an index" inputmode="numeric"><button id="go">go</button></div>
         <p id="say"></p>
     </div>
 
     <div class="panel">
-        <h2>The reader's addresses in distance, and H</h2>
+        <h2>The reader's K places in distance, and H</h2>
         <canvas id="ruler" width="1100" height="170"></canvas>
-        <p class="cap">The reader's addresses laid along distance by its turn, d = H·tan θ at equal angles θ, on a scale of
+        <p class="cap">The reader's fineness K laid along distance by its turn, as a writer's K places, d = H·tan θ at equal angles θ, on a scale of
             doublings of u (the world's own unit). Half of them always lie inside H (teal, v/h ≤ 1, in proportion) and half
             past it (violet, h/v ≤ 1, wider and wider to the horizon). The count K is fixed and comes first; H is the zoom that splits it. A small H packs the
-            near half into a small stretch of the world, each address proportionally smaller; a large H spreads it out and
-            reaches farther. Whatever N is, the reader holds it at these addresses, never more of them.</p>
+            near half into a small stretch of the world, each place proportionally smaller; a large H spreads it out and
+            reaches farther. Whatever N is, the reader holds it at this fineness, never finer.</p>
         <div id="rulerNote" class="note"></div>
     </div>
 
@@ -105,13 +105,13 @@
         <div class="grid">
             <canvas id="kgrid" width="900" height="900"></canvas>
             <div>
-                <p class="cap">The reader's addresses say which of its K directions a star lies in (the rays, at equal angles,
+                <p class="cap">Read at fineness K, a star's direction says which of K equal angles it lies in (the rays, at equal angles,
                     given; half either side of the corner, v = h, gold dashed). Which of its K distances along that direction
                     it lies at needs the star's distance, an amount, had only by ranging (a writing) or from further
                     standpoints (the rings, at d = H·tan(kπ/2K), drawn on the in-place lay: d/H inside H, 2 − H/d past it, so the
                     whole field is 2H across, the far rings mirroring the near ones about H and the horizon the outer edge).
                     Every star falls in one cell of the K × K, whatever N is. Move H: no ray moves, so no star changes its
-                    direction address; the rings slide, so stars change their distance address. The reader interacts with K;
+                    direction; the rings slide, so stars change their place in distance. The reader interacts with K;
                     the writer, who needs every star's distance, interacts with N. (Lines drawn are thinned to at most 64 a
                     side; the cells counted are all K.)</p>
                 <div id="kgridNote" class="note"></div>
@@ -132,18 +132,18 @@
         <div class="panel">
             <h2>The reader's view</h2>
             <canvas id="reader" width="900" height="1240"></canvas>
-            <p class="cap">Each star read as a direction only, counted at the reader's own addresses (equal angles, h to v). Each
-                address is a ray as long as its share of what is read, times K, the number of addresses: an even share reaches
+            <p class="cap">Each star read as a direction only, counted at the reader's fineness, K equal angles from h to v (a writer's
+                K places). Each is a ray as long as its share of what is read, times K: an even share reaches
                 the unit circle (gold), whatever N is. Inside the corner the reading is v/h, past it h/v, both in proportion:
                 for the reader there is no far field to fill. Above at N, below at 2N. With
-                fewer stars than addresses the reader sees single stars, spikes and gaps; once N is well past its addresses,
+                fewer stars than K the reader sees single stars, spikes and gaps; once N is well past K,
                 N and 2N are the same circle.</p>
             <div id="check" class="note"></div>
         </div>
     </div>
 
     <p class="note">The writer needs N: to place a star it needs its distance, and the far field's count grows with N. The
-        reader needs none of it: its addresses are fixed by its turn, and its view is the share of what it reads at each, the
+        reader needs none of it: its directions and their heat are given by its turn, and its view is the share of what it reads at each, the
         same at N, 2N and ∞ (<a href="payload-free.html">the payload doesn't matter</a>). <a href="star-field-3d.html">The same
         in 3D</a>. <a href="demos.html">All demos</a>.</p>
 </main>
@@ -267,11 +267,11 @@ const fmt = I => I.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 const sci = x => x < 1e4 ? x.toPrecision(4) : x.toExponential(3);
 function describe(s) { const vh = Math.tan(s.th), k = Math.min(S.n - 1, Math.floor(s.th / Q * S.n));
     return `star #${fmt(indexOf(s))}\nthe writer: distance d = ${sci(s.r)} u = ${sci(s.r / Hof())} H, level ${s.j}, row ${s.ir.toLocaleString()} out, place ${s.ia.toLocaleString()} across\n` +
-        `the reader: address ${k + 1} of ${S.n}, ${vh <= 1 ? 'v/h = ' + sci(vh) : 'h/v = ' + sci(1 / vh)} (${vh <= 1 ? 'inside' : 'past'} the corner), no distance`; }
+        `the reader: direction ${k + 1} of ${S.n}, ${vh <= 1 ? 'v/h = ' + sci(vh) : 'h/v = ' + sci(1 / vh)} (${vh <= 1 ? 'inside' : 'past'} the corner), no distance`; }
 function showInfo() { const s = hover || pinned;
     if (hoverAddr >= 0) { const a = readerView(curN(), S.n), b = readerView(S.inf ? Infinity : 2n * curN(), S.n), t0 = hoverAddr / S.n * Q, t1 = (hoverAddr + 1) / S.n * Q;
-        $('info').textContent = `the reader's address ${hoverAddr + 1} of ${S.n}, ${(t0 / Q * 90).toFixed(2)}°–${(t1 / Q * 90).toFixed(2)}°\n` +
-            `its share × K: ${a.share[hoverAddr].toFixed(6)} at N, ${b.share[hoverAddr].toFixed(6)} at 2N (1 is even)\nit reads no distance: every star in that wedge, near or far, is one address`; return; }
+        $('info').textContent = `the reader's direction ${hoverAddr + 1} of ${S.n}, ${(t0 / Q * 90).toFixed(2)}°–${(t1 / Q * 90).toFixed(2)}°\n` +
+            `its share × K: ${a.share[hoverAddr].toFixed(6)} at N, ${b.share[hoverAddr].toFixed(6)} at 2N (1 is even)\nit reads no distance: every star in that wedge, near or far, is one direction`; return; }
     $('info').textContent = s ? (s === pinned && !hover ? '(pinned) ' : '') + describe(s) : 'Point at a star for its index.'; }
 
 // ── the reader's view: its unit circle, each address a ray as long as its share × K, at N and at 2N ───────────────────────
@@ -310,11 +310,11 @@ function drawRuler() { const cv = $('ruler'), g = cv.getContext('2d'), Wr = cv.w
     g.fillStyle = '#8a8a96'; g.font = '12px DM Mono, monospace';
     for (let e = L0 + 2; e <= L1; e += 4) { g.fillRect(X(2 ** e), y1 + 2, 1, 6); g.fillText('2^' + e, X(2 ** e) - 10, y1 + 22); }
     g.fillText('home', P - 4, y1 + 40); g.fillText('d in u, doublings →', Wr - P - 150, y1 + 40);
-    g.fillStyle = 'rgba(140,230,205,0.95)'; g.fillText(`${n / 2} addresses inside H`, Math.max(P, X(H) - 190), y0 + 40);
+    g.fillStyle = 'rgba(140,230,205,0.95)'; g.fillText(`${n / 2} places inside H`, Math.max(P, X(H) - 190), y0 + 40);
     g.fillStyle = 'rgba(181,156,240,0.95)'; g.fillText(`${n / 2} past it`, X(H) + 12, y0 + 40);
     const w1 = b[1], wn = H - b[n / 2 - 1];
-    $('rulerNote').textContent = `With H = 2^${S.k} u: ${n / 2} addresses inside it, the first ${sci(w1)} u wide and the one at the corner ${sci(wn)} u; ` +
-        `${n / 2} past it, the last but one ending at ${sci(b[n - 1])} u and the last reaching the horizon. Halve H and every near address halves; ` +
+    $('rulerNote').textContent = `With H = 2^${S.k} u: ${n / 2} places inside it, the first ${sci(w1)} u wide and the one at the corner ${sci(wn)} u; ` +
+        `${n / 2} past it, the last but one ending at ${sci(b[n - 1])} u and the last reaching the horizon. Halve H and every near place halves; ` +
         `the counts stay ${n / 2} and ${n / 2}, at every N.`; }
 
 // ── both readers, one K: the K × K polar grid on the in-place lay (radius d/H inside H, 2 − H/d past it; 2 the horizon) ──
@@ -341,7 +341,7 @@ function drawGrid() { const cv = $('kgrid'), g = cv.getContext('2d'), Wg = cv.wi
     for (const st of sampleWorld(curN())) { const [x, y] = P(inPlace(st.r), st.th); g.fillStyle = css(colOf(st.c), 0.8); g.fillRect(x - 1, y - 1, 2, 2); }
     const sel = hover || pinned; let msg = '';
     if (sel) { const [x, y] = P(inPlace(sel.r), sel.th), c = gridCell(sel); g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath(); g.arc(x, y, 9, 0, 2 * Math.PI); g.stroke();
-        msg = `Star #${fmt(indexOf(sel))}: direction address ${c.i + 1} of ${K} (the reader's; no H in it), distance address ${c.j + 1} of ${K} (its distance written against H = 2^${S.k} u). `; }
+        msg = `Star #${fmt(indexOf(sel))}: direction ${c.i + 1} of ${K} (the reader's; no H in it), distance place ${c.j + 1} of ${K} (its distance written against H = 2^${S.k} u). `; }
     g.fillStyle = '#8a8a96'; g.font = '14px DM Mono, monospace';
     g.fillText('H', ox + Rp + 6, oy - 6); g.fillText('2H, the horizon', ox + 2 * Rp - 150, oy - 6); g.fillText('home', ox - 40, oy + 30); g.fillText('the corner', ...P(1.55, Q / 2 + 0.03));
     $('kgridNote').textContent = msg + `K = ${K}: ${K / 2} directions either side of the corner and ${K / 2} distances either side of H, ${(K * K).toLocaleString()} cells, at every N` +
@@ -358,9 +358,9 @@ function render() {
     $('Hval').textContent = `H = 2^${S.k} u` + (S.k < 0 ? ` = ${Hof()} u` : ` = ${Hof().toLocaleString()} u`);
     $('say').innerHTML = `The writer: ${S.inf ? 'infinitely many stars' : fmt(Ne) + ' stars'}, ` +
         `${S.inf ? 'every level filled' : `out to level ${w.jN} (d ≤ 2^${w.jN} u)`}; at H = 2^${S.k} u, ${fmt(near)} inside the corner and ` +
-        `${far === null ? 'infinitely many' : fmt(far)} past it. The reader: ${S.n} addresses, ${S.n / 2} inside H and ${S.n / 2} past it, the same at every N and every H.`;
-    $('check').innerHTML = `<span class="ok">The reader's view at N and at 2N differ by at most ${last.diff.toExponential(2)} in any address's share × K;</span> ` +
-        `each, drawn as a writer draws it, is the unit circle to within ${Math.max(a.maxDev, b.maxDev).toExponential(2)}, half its reading past the corner${N !== Infinity && N < 16n * BigInt(S.n) ? ` (only ${fmt(N)} stars for ${S.n} addresses: the reader sees single stars; raise N)` : ''}. The writer meanwhile ` +
+        `${far === null ? 'infinitely many' : fmt(far)} past it. The reader: fineness K = ${S.n}, ${S.n / 2} places inside H and ${S.n / 2} past it, the same at every N and every H.`;
+    $('check').innerHTML = `<span class="ok">The reader's view at N and at 2N differ by at most ${last.diff.toExponential(2)} in any direction's share × K;</span> ` +
+        `each, drawn as a writer draws it, is the unit circle to within ${Math.max(a.maxDev, b.maxDev).toExponential(2)}, half its reading past the corner${N !== Infinity && N < 16n * BigInt(S.n) ? ` (only ${fmt(N)} stars for K = ${S.n}: the reader sees single stars; raise N)` : ''}. The writer meanwhile ` +
         `${S.inf ? 'has no end to its count' : `counts ${fmt(Ne)} stars, then ${fmt(worldOf(2n * N).N)}`}. `;
     document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
     $('inf').classList.toggle('on', S.inf); $('m').value = S.m; $('m').disabled = S.inf; $('half').disabled = S.inf; $('dbl').disabled = S.inf; $('H').value = S.k;

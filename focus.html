@@ -61,13 +61,13 @@
         <div class="row"><label>tap a thing to</label>
             <button data-mode="look">look at it (the corner goes there)</button>
             <button data-mode="past">look past it (the corner stays)</button></div>
-        <div class="row"><label>K addresses</label>
+        <div class="row"><label>K, the fineness</label>
             <button data-K="8">8</button><button data-K="16">16</button><button data-K="32">32</button>
             <span class="cap" style="margin:0">(the things: </span><span id="names" class="cap" style="margin:0"></span><span class="cap" style="margin:0">)</span></div>
         <div class="grid">
             <div><canvas id="cv1" height="460"></canvas><p class="cap">From above, home at the bottom. The frame's quarter
-            turn from <span class="b">h</span> to <span class="b">v</span>, its K equal-angle addresses (gold) and its corner
-            (the dashed bisector, v = h); the K distance addresses at H·tan(kπ/2K) (teal rings), drawn on the reader's lay:
+            turn from <span class="b">h</span> to <span class="b">v</span>, its fineness K as equal angles (gold; a writer counts them as K places) and its corner
+            (the dashed bisector, v = h); the K places in distance at H·tan(kπ/2K) (teal rings), drawn on the reader's lay:
             in proportion inside the corner circle (radius H), then 1 + ln(d/H). Things outside the quarter turn belong to
             another facing and are dim.</p></div>
             <div>
@@ -264,8 +264,8 @@
                 : `  direction: outside this quarter turn, ${(rd.psi - 45).toFixed(1)}° off the corner; another facing\n`;
             s += `  distance: d/H = ${rd.sDist.toPrecision(4)} (${Math.log2(rd.sDist).toFixed(2)} levels off the corner); its cell ×${rd.distCell.toFixed(2)} the finest\n`;
             s += st.mode === 'look'
-                ? '  At the corner in both: the finest grain the K addresses give, on what is looked at.\n  Its true distance is still unread: d/H = 1 is the drawing, not a measurement.'
-                : '  Off the corner: the same K addresses, coarser here. Tap "look at it" and tap again.';
+                ? '  At the corner in both: the finest grain fineness K gives, on what is looked at.\n  Its true distance is still unread: d/H = 1 is the drawing, not a measurement.'
+                : '  Off the corner: the same fineness K, coarser here. Tap "look at it" and tap again.';
         }
         $('r1').innerHTML = s;
         const m = curves.median, lv = Math.log2(m);

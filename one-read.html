@@ -56,12 +56,12 @@
 <main>
     <h1>One turn, one read</h1>
     <p class="lede">One direction from home, given before anything arrives, meets one point, and that one read breaks down
-    two ways. Counted as a <span class="g">direction</span> from where you stand, it is the address, the inscribed sweep;
+    two ways. Counted as a <span class="g">direction</span> from where you stand, it is the direction with its heat, the inscribed sweep;
     counted from the centre of the circle on the chord, it is the <span class="r">point</span> where the paint lands, the
-    central sweep. Both end at the same point: the address points at the payload. Over the whole quarter turn the two
+    central sweep. Both end at the same point: the direction meets its paint there. The heat is given; the paint is met. Over the whole quarter turn the two
     sweeps, as a writer measures them, take the line as π/2 and 2/π (numbers with π in them, the writer's); their product
     is the 1 that only the writer holds. In complex form the point
-    is the direction squared, ½e^(2iθ) from the centre: where the address runs off to ∞ at the horizon, the radius has made
+    is the direction squared, ½e^(2iθ) from the centre: where the direction's reading runs off to ∞ at the horizon, the radius has made
     its half turn to home, e^(iπ) = −1.</p>
     <div class="panel">
         <div class="row"><label for="t">the direction θ</label><input id="t" type="range" min="0" max="90" step="0.1" value="30">
@@ -70,7 +70,7 @@
             <span id="cv" class="b"></span><button id="one">c = 1, one length</button></div>
         <div class="grid">
             <div><canvas id="cv1" height="440"></canvas><p class="cap">The chord from home A to B, and the circle drawn on it.
-            Gold: the address, A's ray at θ. Teal: where the paint lands, the radius from the centre at 2θ. Violet: the arc from B
+            Gold: the direction, A's ray at θ. Teal: where the paint lands, the radius from the centre at 2θ. Violet: the arc from B
             already turned through, over its chord.</p></div>
             <div>
                 <div class="read" id="addr"></div>
@@ -170,7 +170,7 @@
         if (Math.abs(cc - 1) < 1e-9) { g.strokeStyle = 'rgba(140,230,205,0.6)'; g.beginPath(); g.arc(O[0], O[1], 22, -2 * t, 0); g.stroke(); g.fillStyle = '#8ce6cd'; g.fillText('2θ', O[0] + 26, O[1] - 14); }
         const gp = gap(st.t);
         if (gp > 1e-9) { g.fillStyle = '#d96e5b'; g.fillText(`the two breakdowns miss by ${gp.toFixed(3)}`, 12, 20); }
-        else { g.fillStyle = '#8ce6cd'; g.fillText('one point: the address points at the payload', 12, 20); }
+        else { g.fillStyle = '#8ce6cd'; g.fillText('one point: the direction meets its paint', 12, 20); }
     }
     function draw2() {
         const { g, w, h } = fit($('cv2')); g.clearRect(0, 0, w, h);
@@ -212,7 +212,7 @@
         const r = read(st.t), cc = c();
         $('tv').textContent = st.t.toFixed(1) + '°';
         $('cv').textContent = cc.toFixed(3);
-        $('addr').innerHTML = `<span class="g">The address</span> (the inscribed sweep, from home): a direction, no amount.\n`
+        $('addr').innerHTML = `<span class="g">The direction</span> (the inscribed sweep, from home): a reading, no amount.\n`
             + `  [h : v] = [${f4(r.h)} : ${f4(r.v)}], so v/h = ${f4(r.ratio)}\n  the sweep's share so far, g = ${f4(r.g)}${Math.abs(st.t - 45) < 0.05 ? '  (the corner: the arms read alike)' : ''}`;
         $('pay').innerHTML = `<span class="r">Where the paint lands</span> (the central sweep, from the centre): a point of the circle, bounded, no distance to anything.\n`
             + `  the radius at 2θ = ${(2 * st.t).toFixed(1)}°; the point's foot h² = ${f4(r.foot)}, height hv = ${f4(r.height)}\n`

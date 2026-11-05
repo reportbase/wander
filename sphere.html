@@ -70,7 +70,7 @@
     <h1>The sphere</h1>
     <p class="lede">Three unit relations, each from 0 to 1, <span class="teal">v</span>, <span class="gold">h</span> and <span class="violet">f</span>.
     Each triple is a ray into the wedge between three axes, and the sphere's first octant is one drawing of that wedge.
-    Divide out their scale and two relations are left: an address on the octant. The address points back
+    Divide out their scale and two relations are left: a direction on the octant. The direction points back
     to the shape, but only as a relation; the scale is lost for good. Change <span class="bright">k</span> and nothing
     on the octant moves.</p>
 
@@ -102,7 +102,7 @@
             <h2>Octant and unit cube</h2>
             <canvas id="space" height="380"></canvas>
             <p class="note">Drag to turn. The octant of the unit sphere, its three corner arcs meeting at v = h = f; the unit
-            cube's three faces at (1, 1, 1). The ray carries the unit relations (k times them, the open dot) through the address
+            cube's three faces at (1, 1, 1). The ray carries the unit relations (k times them, the open dot) through the direction
             on the sphere (white) to the face of the largest (square).</p>
         </div>
     </div>
@@ -121,7 +121,7 @@
             <canvas id="body" height="300"></canvas>
             <p class="note">A body: ball plus relief in three bands (broad, middle, fine), as the bodies in <code>res/</code>.
             Depth is the relief, r − 1. Its diameter in the reader's pixels sets which bands show (2 to 5 pixels a
-            feature, as <code>bandW</code> on the flying page): far off it is a plain ball. The cross is the address,
+            feature, as <code>bandW</code> on the flying page): far off it is a plain ball. The cross is the direction,
             pointing back to the body.</p>
         </div>
     </div>
@@ -340,7 +340,7 @@
         }
         g.fillStyle = C.dim; g.font = '11px DM Mono, monospace';
         g.fillText(`bands shown: broad ${w[0].toFixed(2)}, middle ${w[1].toFixed(2)}, fine ${w[2].toFixed(2)}`, 8, H - 8);
-        if (v[2] >= 0) { g.textAlign = 'right'; g.fillText('address on the far side', W - 8, 16); g.textAlign = 'left'; }
+        if (v[2] >= 0) { g.textAlign = 'right'; g.fillText('direction on the far side', W - 8, 16); g.textAlign = 'left'; }
     }
 
     // ── the readout ──
@@ -353,13 +353,13 @@
         const lines = [
             `amounts    k·(v, h, f) = (${pp.map(x => fmt(x * st.k)).join(', ')})`,
             `relations  v/h = ${st.h ? fmt(sv) : '∞'}, f/h = ${st.h ? fmt(sf) : '∞'}   (the same for every k)`,
-            `address    (${ad.map(fmt).join(', ')}), ${lat.toFixed(1)}° from f, ${lon.toFixed(1)}° from v toward h`,
+            `direction  (${ad.map(fmt).join(', ')}), ${lat.toFixed(1)}° from f, ${lon.toFixed(1)}° from v toward h`,
             `chamber    ${chamber(pp)}`,
             `cube face  ${face(pp)} = 1, at (${cu.map(fmt).join(', ')})`,
             st.mode === 'reader' || st.mode === 'chambers' || st.mode === 'faces'
                 ? `holding H  ${r}:\n           ${st.h ? side(sv, 'v') : 'h = 0: nothing held'}\n           ${st.h ? side(sf, 'f') : ''}`
                 : `held whole near field throughout: the chambers are mirrors, not squeezes`,
-            `the shape  r = ${rFull.toFixed(4)} at this address, depth ${(rFull - 1 >= 0 ? '+' : '') + (rFull - 1).toFixed(4)};`,
+            `the shape  r = ${rFull.toFixed(4)} along this direction, depth ${(rFull - 1 >= 0 ? '+' : '') + (rFull - 1).toFixed(4)};`,
             `           at ${st.P} pixels across the reader sees ${(rSeen - 1 >= 0 ? '+' : '') + (rSeen - 1).toFixed(4)}`,
             `           the point is r × (the whole's size), and that size is lost`,
         ];

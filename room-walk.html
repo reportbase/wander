@@ -77,7 +77,7 @@
 <body>
 <main>
     <h1>Walking the room</h1>
-    <p class="lede">A reader walks round a room. Wherever it stands its addresses are given, the <span class="g">inscribed
+    <p class="lede">A reader walks round a room. Wherever it stands its directions and their heat are given, the <span class="g">inscribed
     sweep</span>, every direction once round, before anything arrives: where each thing is from here, the layout, no
     amount. A thing's <span class="r">shape about its own centre</span> is a radius toward each standpoint, an amount in a
     unit nothing fixes, had only by ranging (a writing: a pulse carries the speed); walking round a thing collects it.
@@ -434,7 +434,7 @@
         const n = ro.standpoints, have = ro.placed.length;
         const lines = [];
         lines.push(`Standpoints taken: ${n}${n ? ` · legs walked: ${ro.legs}, each along the zero it faced (the way the last leg came in), its length not read` : ''}`);
-        lines.push(`The inscribed sweep, the addresses (directions, given; what arrives paints them; no amount): ${n ? `${NAMES.length} things, ${n * NAMES.length} directions so far` : '—'}`);
+        lines.push(`The inscribed sweep, the directions (their heat given; what arrives paints them; no amount): ${n ? `${NAMES.length} things, ${n * NAMES.length} directions so far` : '—'}`);
         const cov = NAMES.map(nm => `${nm} ${centralOf(nm).covered}/${NC}`).join(', ');
         lines.push(`Shapes about each thing's centre (radii along given directions: amounts, by ranging, a writing, in a unit no reading fixes): ${n ? cov : '—'}`);
         lines.push(`Placed (from two standpoints, the walk's first leg as H): ${have ? `${have} of ${NAMES.length}${ro.legsH && ro.legsH.length > 1 ? `; later legs found from the things: ${ro.legsH.slice(1).map(f3).join(', ')} H` : ''}` : (ro.why || '—')}`);
