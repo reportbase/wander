@@ -757,7 +757,10 @@ dθ = ds/(1 + s²) = cos²θ·ds: the heat per unit of reading is (2/π)/(1 + s�
 with the thumbs crossed, a small patch dA of the screen at r subtends dΩ = cos³α·dA (one cosine for the patch's tilt to
 the ray, two for its distance, sec α, squared), so the heat per unit of screen is (1/2π)·cos³α = 1/(2π(1 + r²)^(3/2)),
 the two-dimensional Cauchy. With n thumbs square to the look it falls as cos^(n+1). On the hemisphere itself, by angle,
-there is none: the heat belongs to the readings, and the one cosine more in space is the one thumb more. The overlay's
+there is none: the heat belongs to the readings, and the one cosine more in space is the one thumb more. A camera shows
+it: the natural vignetting of a wide lens, the cos⁴α by which a photograph's corners darken, is this cos³α and one more
+cosine for the aperture seen at a slant, so three of its four cosines are the heat, there before any light arrives
+(0.35 of the middle at 45°, against the photograph's 0.25). The overlay's
 heat is the same law in distance: the share of a direction's distance below x = d/H is (2/π)·arctan x, and read by
 ratio, per unit of ln(d/H), it is (2/π)·x/(1 + x²) = (1/π)·sech(ln(d/H)).
 
@@ -765,7 +768,8 @@ The heat is not a grid seen from home. Marks laid evenly on a wall one distance 
 the reading (y = d·s, area d²·da·db) and, per unit of angle, crowd toward the horizon as sec²θ in the plane and sec³α in
 space; nothing in them is hottest along the look. The Cauchy is the other way round: the turn, even in angle, laid on that
 flat grid, dθ/ds = 1/(1 + s²), and in space dΩ/dA = cos³α. It is the turn per unit of the writer's grid, the *per* of §4,
-not the layout of the world.
+not the layout of the world: it belongs neither to the wall alone nor to the eye alone, but is the rate at which a turn
+consumes the world.
 
 Said in measure theory, the Cauchy is a Radon–Nikodym derivative: the turn's even measure carried onto the wall by the
 projection from home, against the wall's own measure, dν/dλ = (1/π)·d/(d² + y²) for a wall d away. That is the half-plane's
@@ -774,7 +778,9 @@ Poisson kernel, its harmonic measure seen from the standpoint: where a random wa
 even hemisphere carried onto the wall, (2/|S^(n−1)|) · d/|x|^n, the same constant; in space (1/2π)·d/(d² + r²)^(3/2), the
 cos³α above. On a sphere they part (below, "What survives in space, and what does not"). Stepping back composes the kernels, e^(−d|k|), the Poisson
 semigroup in the standpoint's height d. This is Laplace's equation, a steady state; it is not the heat equation, whose
-kernel is the Gaussian, e^(−tk²). The "heat" here is a weight over the readings, never diffusion in time. The identity is
+kernel is the Gaussian, e^(−tk²). The Gaussian too keeps every frequency; it damps the fine ones by k² where the Cauchy
+damps by |k|, and it has a variance where the Cauchy has only a scale. The kernel that loses frequencies outright is the
+floor's box blur, whose transform has zeros. The "heat" here is a weight over the readings, never diffusion in time. The identity is
 classical; what is read into it is the vantage.
 
 **The shape is swept, not each thumb.** Each pair of thumbs reads a quarter turn: from its home, where it reads 0, to its
@@ -1092,7 +1098,7 @@ inside a read, and what carries an observer from one to the other.
 
 The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each
 with its plan written before it was run: parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
-measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the shape swept whole against each thumb on its own in `plans/swp-plan.md` and `runs/swp/`; the read with no world, and where the reader stands, in `read.html`; the tunnel laid by its heat, the distance reading and a world culled by K in `crosshairs.html`; Euler's formula as a count of reads in `plans/elm-plan.md`
+measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the shape swept whole against each thumb on its own in `plans/swp-plan.md` and `runs/swp/`; the read with no world, and where the reader stands, in `read.html`; the heat on a flat screen and a lens's cos⁴ against it in `pinhole.html` (its uniform sky); the tunnel laid by its heat, the distance reading and a world culled by K in `crosshairs.html`; Euler's formula as a count of reads in `plans/elm-plan.md`
 and `runs/elm/`. The three cases in data of §11 (LIGO, the quasar dipole, single photons) are `plans/lgo-plan.md`,
 `plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and `runs/wvp/`: each plan states its
 predictions and what would count against them before its run, and records the runs as they came out, the killed ones too.
