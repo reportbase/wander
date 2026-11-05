@@ -216,6 +216,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   draw the wedge alone (the triangle, every pair from home to its horizon), the rings of equal share of the wedge (`WT`,
   `shareW`, `ringW`; within home 0.734, THM U4), cut at its edges; the round of the look is the menu's "turned all the way
   round" (`?round=1`). Hook `quarter()`, `set({round})`.
+  The read in depth (5 Nov; Tom: "there are two shapes, the near field shape and the long tail."; R699): the right panel
+  now shows by default the eye, the three thumbs and the wedge's cone drawn by distance address ((4/π)·atan(d/H)), the
+  body a closed teal shape (the faces to one thumb and the dome there), the tail violet past it, shells at 2, 4, 8 thumbs
+  bunching to the horizon's rim at 2, open; dragged to turn like the hill. The hill is the menu's "right panel"
+  (`?depth=0`). Hook `depth()`, `set({depth})`.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
