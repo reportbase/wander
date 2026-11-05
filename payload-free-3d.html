@@ -75,9 +75,9 @@
 <main>
     <h1>The payload doesn't matter, in 3D</h1>
     <p class="lede">One reader stands at home. Its directions are given, uniformly over a whole octant: up from h toward v,
-        round from h toward v₂, before anything arrives. Where each ray points is its address, [h : v : v₂], fixed by the
-        standpoint alone. Put anything behind it, at any size, or nothing at
-        all: the addresses do not move. Only what each ray finds, the payload, changes. <a href="payload-free.html">The same
+        round from h toward v₂, before anything arrives. Where each ray points is its direction, [h : v : v₂], fixed by the
+        standpoint alone, with the turn's heat over them. Put anything behind it, at any size, or nothing at
+        all: the directions do not move. Only what each ray finds, the payload, the paint, changes. The heat is given; the paint is met. <a href="payload-free.html">The same
         in 2D</a>.</p>
 
     <div class="panel">
@@ -85,7 +85,7 @@
         <div class="row"><label for="size">world size S</label><input id="size" type="range" min="0" max="12" step="0.5" value="0">
             <span id="sizeVal" style="min-width:9ch"></span><button id="unknown">unknown</button></div>
         <div class="row"><label>rays</label><span id="ns"></span><button id="play">play</button></div>
-        <div class="row"><button id="sweep" title="run a marker over the given addresses in order, revealing the paint">reveal in order</button><label for="swept">revealed</label><input id="swept" type="range" min="0" max="1" step="0.0005" value="1">
+        <div class="row"><button id="sweep" title="run a marker over the given directions in order, revealing the paint">reveal in order</button><label for="swept">revealed</label><input id="swept" type="range" min="0" max="1" step="0.0005" value="1">
             <span id="sweptVal" style="min-width:12ch"></span></div>
         <p id="say"></p>
     </div>
@@ -101,7 +101,7 @@
         </div>
         <div class="panel">
             <canvas id="home" width="600" height="540"></canvas>
-            <p class="cap">From home: the wedge is the triangle h + v + v₂ = 1, every address at its shares. The dashed
+            <p class="cap">From home: the wedge is the triangle h + v + v₂ = 1, every direction at its shares. The dashed
                 medians are the three pairs' corners (v = h, v₂ = h, v₂ = v); the middle triangle, the near field in both
                 readings, holds a third. The dots never move; their colours are the payload.</p>
         </div>
@@ -111,22 +111,22 @@
         <div class="panel">
             <canvas id="map" width="560" height="560"></canvas>
             <p class="cap">Lambert's equal-area map of the wedge: azimuth across (h on the left, v₂ on the right), height v
-                up. The addresses' grid is even here, one cell per address, the corners dashed. Painted, it is a picture of
+                up. The directions' grid is even here (a writer's count of cells, one per direction), the corners dashed. Painted, it is a picture of
                 whatever the rays met; the cells themselves are the same in every world.</p>
             <div id="check" class="note"></div>
         </div>
         <div class="panel">
             <canvas id="metres" width="560" height="504"></canvas>
-            <p class="cap">For contrast, equal-metres addresses (a writer's layout): a flat screen one H away along h, its pixels spaced evenly
-                out to the world's size, shown from home. It needs that size. Every S moves its addresses, and with an
+            <p class="cap">For contrast, equal-metres places (a writer's layout): a flat screen one H away along h, its pixels spaced evenly
+                out to the world's size, shown from home. It needs that size. Every S moves its places, and with an
                 unknown or empty world it has none.</p>
             <div id="compare" class="note"></div>
         </div>
     </div>
 
-    <p class="note">The address is the standpoint's, given by the uniform turn; whatever arrives can be swapped at every address and no address moves
-        (Observation from Somewhere, Theorem 6(a), Proposition 5(e)). So nothing the addresses say is about the payload,
-        and the world's size never enters them: equal angles are free, equal metres cost N. <a href="demos.html">All demos</a>.</p>
+    <p class="note">The direction and its heat are the standpoint's, given by the uniform turn; whatever arrives can be swapped along every direction and no direction moves
+        (Observation from Somewhere, Theorem 6(a), Proposition 5(e)). So nothing the directions say is about the payload,
+        and the world's size never enters them: the heat is given, equal angles are free, equal metres cost N. <a href="demos.html">All demos</a>.</p>
 </main>
 
 <script>
@@ -255,15 +255,15 @@ function render() {
     if (draw3d) draw3d(R, shown);
     $('sizeVal').textContent = S.unknown ? 'unknown' : 'S = 10^' + S.s;
     $('say').textContent = `${WORLDS.find(w => w[0] === S.world)[1]}, ${S.unknown ? 'of unknown size' : 'size 10^' + S.s}: ` +
-        (shown < N ? `revealed ${shown} of ${N} addresses in order, ${seen} with paint. All ${N} addresses were given before anything arrived.`
+        (shown < N ? `revealed ${shown} of ${N} directions in order, ${seen} with paint. All ${N} directions were given before anything arrived.`
         : `${met} of ${N} rays meet something, ${N - met} run to the horizon. The rays have not moved.`);
     $('swept').value = S.sweep; $('sweptVal').textContent = `${shown} of ${N}`; $('sweep').classList.toggle('on', !!sweeping);
     const pc = x => (100 * x).toFixed(1) + '%';
     $('check').innerHTML = `<span class="ok">Every reading [h : v : v₂], taken back from where its ray landed, against the grid's own: ` +
         `largest relative difference ${worst.toExponential(1)}.</span> So in every world v ≤ h for ${pc(C.vLeH)}, v₂ ≤ h for ${pc(C.v2LeH)}, ` +
-        `v₂ ≤ v for ${pc(C.v2LeV)} of the addresses (a half each, on this grid), and the near field in both holds ${pc(C.near)} (a third).`;
-    $('compare').innerHTML = M ? `Equal-metres screen, told the size: ${pc(nearM)} of its pixels in the near field, against the given addresses' ${pc(C.near)}. Change S and they move.`
-        : `<span class="bad">Equal-metres screen: no size to space against.</span> The given addresses keep all ${N}.`;
+        `v₂ ≤ v for ${pc(C.v2LeV)} of the directions (a half each, on this grid), and the near field in both holds ${pc(C.near)} (a third).`;
+    $('compare').innerHTML = M ? `Equal-metres screen, told the size: ${pc(nearM)} of its pixels in the near field, against the given directions' ${pc(C.near)}. Change S and they move.`
+        : `<span class="bad">Equal-metres screen: no size to space against.</span> The given directions keep all ${N}.`;
     document.querySelectorAll('[data-w]').forEach(b => b.classList.toggle('on', b.dataset.w === S.world));
     document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
     $('unknown').classList.toggle('on', S.unknown); $('play').classList.toggle('on', S.play);

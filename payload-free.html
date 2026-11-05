@@ -61,15 +61,15 @@
 <main>
     <h1>The payload doesn't matter</h1>
     <p class="lede">One reader stands at home. Its directions are given, uniformly by turn over a quarter turn, before
-        anything arrives; where each ray points is its address, fixed by the standpoint alone. Change the world behind it to anything, any size, or nothing at all, and the
-        addresses do not move. Only what each ray finds there, the payload, changes.</p>
+        anything arrives; where each ray points is its direction, fixed by the standpoint alone, and the directions carry the turn's heat. Change the world behind it to anything, any size, or nothing at all, and the
+        directions do not move. Only what each ray finds there, the payload, the paint, changes. The heat is given; the paint is met.</p>
 
     <div class="panel">
         <div class="row" id="worlds"></div>
         <div class="row"><label for="size">world size S</label><input id="size" type="range" min="0" max="12" step="0.5" value="0">
             <span id="sizeVal" style="min-width:9ch"></span><button id="unknown">unknown</button></div>
         <div class="row"><label>rays</label><span id="ns"></span><button id="play">play</button></div>
-        <div class="row"><button id="sweep" title="run a marker over the given addresses in the turn's order, revealing the paint">reveal in order</button><label for="swept">revealed</label><input id="swept" type="range" min="0" max="1" step="0.001" value="1">
+        <div class="row"><button id="sweep" title="run a marker over the given directions in the turn's order, revealing the paint">reveal in order</button><label for="swept">revealed</label><input id="swept" type="range" min="0" max="1" step="0.001" value="1">
             <span id="sweptVal" style="min-width:9ch"></span></div>
         <p id="say"></p>
     </div>
@@ -84,7 +84,7 @@
         </div>
         <div class="panel">
             <canvas id="metres" width="450" height="450"></canvas>
-            <p class="cap">For contrast, equal-metres addresses: the same number spaced evenly up a line one H away, out
+            <p class="cap">For contrast, equal-metres places: the same number spaced evenly up a line one H away, out
                 to the world's size, a writer's layout. It needs that size. Its rays move with every S, and with an unknown or
                 empty world it has none.</p>
             <div id="compare" class="note"></div>
@@ -93,15 +93,15 @@
 
     <div class="panel">
         <canvas id="strip" width="1100" height="230"></canvas>
-        <p class="cap">Top row: the addresses, one tick per ray (v/h on a log scale), the same in every world. Below: the
+        <p class="cap">Top row: the directions, one tick per ray (v/h on a log scale), the same in every world. Below: the
             payload, each ray's colour, and how far away it met something (higher is farther, in tenfolds). This is all that
             changes from world to world.</p>
         <div id="check" class="note"></div>
     </div>
 
-    <p class="note">The address is the turn's; whatever arrives can be swapped at every address and no address moves
-        (Observation from Somewhere, Theorem 6(a), §7.2). So nothing the addresses say is about the payload, and the
-        world's size never enters them: equal angles are free, equal metres cost N. <a href="payload-free-3d.html">The same in 3D</a>. <a href="demos.html">All demos</a>.</p>
+    <p class="note">The direction and its heat are the turn's; whatever arrives can be swapped along every direction and no direction moves
+        (Observation from Somewhere, Theorem 6(a), §7.2). So nothing the directions say is about the payload, and the
+        world's size never enters them: the heat is given, equal angles are free, equal metres cost N. <a href="payload-free-3d.html">The same in 3D</a>. <a href="demos.html">All demos</a>.</p>
 </main>
 <script>
 'use strict';
@@ -205,7 +205,7 @@ function drawStrip(R, shown) {
         const hgt = Math.max(3, (Math.log10(Math.max(r.d, 1e-3)) + 3) / (dmax + 3) * (base - top));
         g.fillStyle = r.col; g.fillRect(x, base - hgt, Math.max(1, w - 1), hgt); });
     if (shown < n) { g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.moveTo(P + shown * w, top - 4); g.lineTo(P + shown * w, base); g.stroke(); }
-    g.fillStyle = '#6a6a76'; g.font = '12px DM Mono, monospace'; g.fillText('addresses (fixed)', P, 46); g.fillText('payload: colour and distance (changes)', P + 190, 46);
+    g.fillStyle = '#6a6a76'; g.font = '12px DM Mono, monospace'; g.fillText('directions (fixed)', P, 46); g.fillText('payload: colour and distance (changes)', P + 190, 46);
 }
 
 function render() {
@@ -221,13 +221,13 @@ function render() {
     last = { worst, med, below, above, met, nearMetres: nearM, metres: M, shown, seen };
     $('sizeVal').textContent = S.unknown ? 'unknown' : 'S = 10^' + S.s;
     $('say').textContent = `${WORLDS.find(w => w[0] === S.world)[1]}, ${S.unknown ? 'of unknown size' : 'size 10^' + S.s}: ` +
-        (shown < S.n ? `revealed ${shown} of ${S.n} addresses in the turn's order, ${seen} with paint. All ${S.n} addresses were given before anything arrived.`
+        (shown < S.n ? `revealed ${shown} of ${S.n} directions in the turn's order, ${seen} with paint. All ${S.n} directions were given before anything arrived.`
         : `${met} of ${S.n} rays meet something, ${S.n - met} run to the horizon. The rays have not moved.`);
     $('swept').value = S.sweep; $('sweptVal').textContent = `${shown} of ${S.n}`; $('sweep').classList.toggle('on', !!sweeping);
     $('check').innerHTML = `<span class="ok">Every reading, taken back from where its ray landed, against the turn's own (tan of its angle, no world at all): largest relative difference ${worst.toExponential(1)}.</span> ` +
         `Median v/h = ${med.toPrecision(12)} (the corner, 1); ${below} rays below it, ${above} above.`;
-    $('compare').innerHTML = M ? `Equal-metres addresses, told the size: ${nearM} of ${S.n} addresses inside the corner (v ≤ h), against the turn's ${below + 1}. Change S and its rays move.`
-        : `<span class="bad">Equal-metres addresses: no size to space against.</span> The turn's addresses keep all ${S.n}.`;
+    $('compare').innerHTML = M ? `Equal-metres places, told the size: ${nearM} of ${S.n} places inside the corner (v ≤ h), against the turn's ${below + 1}. Change S and its rays move.`
+        : `<span class="bad">Equal-metres places: no size to space against.</span> The turn's directions keep all ${S.n}.`;
     document.querySelectorAll('[data-w]').forEach(b => b.classList.toggle('on', b.dataset.w === S.world));
     document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
     $('unknown').classList.toggle('on', S.unknown);

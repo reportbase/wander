@@ -69,7 +69,7 @@
         metres, the whole of it. The <span class="p">reader</span> stands at one point, and its directions are given
         there, a circle round it: nothing on the lot sends, so the light the lot scatters paints each direction with the
         first thing on its line, and no distance arrives. Stood at a <span class="a">corner</span> (home), the reader's
-        addresses are the quarter turn, each [h : v]: where things are, never how far. Scale the world and only the
+        directions are the quarter turn, each [h : v], with the turn's heat over them: where things are, never how far. The heat is given; the paint is met. Scale the world and only the
         writer's numbers change. Write: one counted stride turns two looks from home into the writer's metres.</p>
     <div class="panel" style="margin-bottom:12px">
         <div class="row"><label for="k">scale the world, k</label><input id="k" type="range" min="-2" max="2" step="0.05" value="0"><span id="kv" style="min-width:9ch"></span>
@@ -87,7 +87,7 @@
                 is the number line, the same at every length, no corner. The metres need a unit measured beforehand: the scale
                 bar. Its circle (faint blue) is round the whole lot, looking in, its radius an amount. Tap anywhere to stand the
                 <span class="p">reader</span> there; its home, for the
-                <span class="a">addresses</span>, is the gold corner.</p>
+                <span class="a">directions from a corner</span>, is the gold corner.</p>
             <p class="read" id="readW"></p>
         </div>
         <div class="stack">
@@ -101,11 +101,11 @@
                 <p class="read" id="readP"></p>
             </div>
             <div class="panel">
-                <p class="tag a">the reader at home: its addresses</p><h2>Directions alone, from home</h2>
+                <p class="tag a">the reader at home: its directions and their heat</p><h2>Directions alone, from home</h2>
                 <canvas id="addr"></canvas>
                 <p class="cap">At home, a corner, the quarter turn from one wall (h) to the other (v): 256 directions given
                     (the inscribed sweep), each painted by the first thing met: the fan, then the same laid straight, g = (2/π)·arctan(v/h). No distance
-                    arrives; the turn's middle, v = h, has half the addresses either side, whatever is there.</p>
+                    arrives; the turn's middle, v = h, has half the turn's heat either side, whatever is there.</p>
                 <p class="read" id="readA"></p>
             </div>
         </div>
@@ -307,7 +307,7 @@ function drawAddr() {
     g.strokeStyle = '#d4a052'; g.setLineDash([5, 4]); g.lineWidth = 1.5; g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox + R * 1.04 * Math.SQRT1_2, oy - R * 1.04 * Math.SQRT1_2); g.stroke(); g.setLineDash([]);
     g.font = '11px "DM Mono", monospace'; g.fillStyle = '#d4a052'; g.fillText('v = h', ox + R * 0.76, oy - R * 0.80);
     g.fillStyle = '#c8c8d0'; g.fillText('h', ox + R + 4, oy + 4); g.fillText('v', ox - 4, oy - R - 6); g.fillText('home', ox - 8, oy + 16);
-    g.fillStyle = '#8a8a96'; g.fillText('no distance: every address at one radius', ox + R * 0.2, oy + 30);
+    g.fillStyle = '#8a8a96'; g.fillText('no distance: every direction at one radius', ox + R * 0.2, oy + 30);
     // what was met: each thing's share of the addresses (a stretch of the turn, not a size)
     const met = shareOf(A); let ly = 22; g.textAlign = 'left';
     for (const [t, n] of Object.entries(met).sort((a, b) => b[1] - a[1])) { const lx = ox + R + 24; g.fillStyle = lit(t) ? '#ffffff' : colOf(t); g.fillRect(lx, ly - 9, 10, 10);
@@ -327,7 +327,7 @@ function render() {
     $('kv').textContent = 'k = ' + (k >= 1 ? k.toPrecision(3) : k.toFixed(k < 0.1 ? 4 : 3)); $('home').value = S.home;
     const below = A.filter(o => o.ratio < 1).length;
     $('say').textContent = `The writer states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}. Its circle round the whole is ${fmtM(Math.hypot(24, 16) * k)} in radius. ` +
-        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The reader's vantage is the same at every k: its directions and what paints them, no distance (the circle drawn round it is the writer's picture).`) + ` From home the reader holds ${NA} addresses: ${below} below v = h and ${NA - below} above, at every k.`;
+        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The reader's vantage is the same at every k: its directions and what paints them, no distance (the circle drawn round it is the writer's picture).`) + ` From home the reader holds ${NA} directions (a writer's count): ${below} below v = h and ${NA - below} above, at every k.`;
     describe();
 }
 function describe() {
@@ -341,8 +341,8 @@ function describe() {
         : S.pulse ? `A pulse sent: ${NP} ranges back, the shape from ${Math.min(...P.rays.map(o => o.shape)).toFixed(3)} to ${Math.max(...P.rays.map(o => o.shape)).toFixed(3)} of their mean, in the unit the pulse carried in (its speed and a clock).`
             : `${new Set(P.rays.map(o => o.what)).size} things paint its directions; no distance in them. Send a pulse for ranges, and the reader writes.`;
     const ar = t ? A.filter(o => o.what === t) : [];
-    $('readA').textContent = t ? (ar.length ? `${THINGS[t].name}: addresses from [1 : ${ar[0].ratio.toPrecision(3)}] to [1 : ${ar[ar.length - 1].ratio.toPrecision(3)}], ${ar.length} of ${NA} (g ${ar[0].g.toFixed(3)} to ${ar[ar.length - 1].g.toFixed(3)}); how far, never` : `${THINGS[t].name}: not seen from ${HOMES[S.home].name}`)
-        : `From ${HOMES[S.home].name}: ${Object.keys(shareOf(A)).length} things met, each a stretch of addresses; half the turn either side of v = h.`;
+    $('readA').textContent = t ? (ar.length ? `${THINGS[t].name}: directions from [1 : ${ar[0].ratio.toPrecision(3)}] to [1 : ${ar[ar.length - 1].ratio.toPrecision(3)}], ${ar.length} of ${NA} (g ${ar[0].g.toFixed(3)} to ${ar[ar.length - 1].g.toFixed(3)}); how far, never` : `${THINGS[t].name}: not seen from ${HOMES[S.home].name}`)
+        : `From ${HOMES[S.home].name}: ${Object.keys(shareOf(A)).length} things met, each a stretch of directions; half the turn either side of v = h.`;
 }
 // ── input ──────────────────────────────────────────────────────────────────────────────────────────────────────────
 const planAt = e => { const r = $('plan').getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top, M = planMap; return [24 + (x - M.cx) / M.s, 16 - (y - M.cy) / M.s]; };
