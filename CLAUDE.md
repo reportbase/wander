@@ -1648,6 +1648,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R713 (5 Nov; Tom: "only if you agree", of a Grok paste): *Reads and Writes* §3 notes the uniform sky on the stereographic
+  chart is (1/π)·dA/(1 + |z|²)², not the 2D Cauchy (that is the flat screen's cos³); no law on the sky is boost-invariant,
+  boosts carry the uniform one within its family. Never call it "the unique Lorentz-invariant measure".
   R712 (5 Nov; Tom: "1,2"): `cauchy-map.html` (the look and the walker on one wall; stepping back; the second map); the
   explainer for essay 17 is draw's `explained.html?x=cauchymap`.
   R711 (5 Nov; Tom: "update the essays"): R710 in essays 3, 5 and 8; essay 13's "the heat equation" corrected to Laplace's.

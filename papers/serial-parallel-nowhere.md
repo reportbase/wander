@@ -7352,6 +7352,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R713** (5 Nov; a Grok paste on the celestial sphere, then Tom: "only if you agree"): *Reads and Writes* §3's moving
+  sky gains one parenthesis: the uniform sky on the stereographic chart is (1/π)·dA/(1 + |z|²)² (a bivariate t with two
+  degrees of freedom, P(|z| ≤ r) = r²/(1 + r²)), not the two-dimensional Cauchy, which is the gnomonic chart of a
+  hemisphere, (1/2π)(1 + r²)^(−3/2), the cos³ of §7; the stereographic image is a Cauchy only for the circle. No law on the
+  sky is Lorentz-invariant (a null direction's stabiliser is not compact); the uniform one is rotation-invariant and boosts
+  carry it within the spherical Cauchy family. Not taken from the paste: an invariant measure, parallax as a Möbius
+  translation (a displacement does not act on directions), the twistor spectrum, its readings of π and e.
 - **R712** (5 Nov; Tom: "1,2", to a demo page for the Cauchy map and an explainer for essay 17): `cauchy-map.html`, the
   look and the walker on one wall (equal turns crowding at the foot against seeded walk-on-spheres landings, the plane
   and a flat wall in space; the tiles flat; the Poisson and hemisphere constants equal for n = 2–5), stepping back
