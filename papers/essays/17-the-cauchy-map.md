@@ -268,7 +268,8 @@ three of its four cosines are the map showing through.
 And it changes the word. A reader has no addresses. It has a map, given whole wherever it looks, and the world's paint
 landing on it. *The heat is given; the paint is met.*
 
-**Demos.** `read.html` (the read with no world: the hemisphere in front, the 3D Cauchy as a hill, painted by both maps),
+**Demos.** `cauchy-map.html` (the look and the walker on one wall, in the plane and in space; stepping back; the
+second map in distance), `read.html` (the read with no world: the hemisphere in front, the 3D Cauchy as a hill, painted by both maps),
 `crosshairs.html` (the map in a field of things: the tunnel, equal area, the overlay's rings), `pinhole.html` with
 `?sky=1` (a uniform sky on a flat screen, cos³α), `central-reader.html` (harmonic measure from a point inside a circle),
 `plane-sphere.html` (the plane's one law and the sphere's three), `epicycles.html` (stepping back as the Poisson blur),

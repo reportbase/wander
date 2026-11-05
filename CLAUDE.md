@@ -224,6 +224,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   The hemisphere (5 Nov; R700): by default the screen and the hill show the hemisphere about the look (the round), the
   wedge alone at `?round=0` (the menu's "the hemisphere" off); the side view and depth panel draw the hemisphere as the one
   shape and one thumb as a split on every direction (R701), the halving shells past it as marks. `side().cap.kind` and `depth().shape` 'hemisphere'.
+- `cauchy-map.html`: **the Cauchy map** (5 Nov 2026, SPN R712; Tom: "1,2"; essay 17), a standalone page, plain canvas.
+  A standpoint d from a wall, in the plane or (a flat wall) in space: 24 equal turns of the look crossing it crowded at
+  the foot, the writer's tiles evenly spaced, seeded walkers (walk-on-spheres) landing on it; along the wall the turn's
+  heat (1/π)·d/(d² + y²) or (1/2π)·d/(d² + r²)^(3/2) with the walkers' histogram on it (median d, or √3·d in space), the
+  Poisson and hemisphere constants for n = 2–5. Stepping back: e^(−d|k|) against a Gaussian of the same half-width and
+  the box blur; the Cauchy from d convolved with itself against the Cauchy from 2d. The second map in distance,
+  (1/π)·sech(ln(d/H)), under a thumb slider. `?dim=2|3&d=&walkers=&H=<log2 H>`; hook `window.__cauchyMap` (`heat`,
+  `heat3`, `walk`, `landings`, `poissonConst`, `hemiConst`, `damp`, `gauss`, `box`, `sechMap`, `median`, `set`, `state`).
+  Not in the flying page.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1639,6 +1648,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R712 (5 Nov; Tom: "1,2"): `cauchy-map.html` (the look and the walker on one wall; stepping back; the second map); the
+  explainer for essay 17 is draw's `explained.html?x=cauchymap`.
   R711 (5 Nov; Tom: "update the essays"): R710 in essays 3, 5 and 8; essay 13's "the heat equation" corrected to Laplace's.
   R710 (5 Nov; Tom: "update the reads and writes paper"): *Reads and Writes* §7 gains the lens's cos⁴ (three cosines the
   heat), the rate a turn consumes the world, and the Gaussian keeping every frequency (k² against |k|).
