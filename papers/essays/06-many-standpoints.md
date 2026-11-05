@@ -196,8 +196,8 @@ the chain ends at the essays' geometry.
    That is the one amount carried in, and its history is the first essay's distinction between reading and writing
    played out over two hundred years.
 3. **The relative distance error equals the relative parallax error.** That rule is the far-field limit of an exact
-   ratio, γ/sin γ, which is the second essay's π/2 reading of the turn γ. It is exactly 1 far off, π/2 on Thales' circle,
-   and grows without bound toward the baseline. Its reciprocal is the 2/π reading, and their product is 1.
+   ratio, γ/sin γ, which is the second essay's π/2, the writer's measure of the turn γ. It is exactly 1 far off, π/2 on Thales' circle,
+   and grows without bound toward the baseline. Its reciprocal is the 2/π measure, and their product is 1.
 4. **An intersection is best when its rays cross square.** That is the corner.
 5. **Do not invert a noisy parallax.** Astronomers learned, from Thomas Lutz and Douglas Kelker in 1973 and many since,
    that once a parallax's error is more than about a fifth of the parallax, a distance must be inferred with care, not

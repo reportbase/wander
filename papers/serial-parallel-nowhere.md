@@ -7352,6 +7352,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R717** (5 Nov; Tom: "PI/2 and 2/PI are writers.", then "one length circle is writers."): flags 1–3 of
+  `plans/flags-r584-r592.md` settled. π/2 and 2/π are the writer's measure of the reader's sweep, never the reader's
+  readings; R329's "readers read 1 as 2/π or π/2" and R450's "thats where the numbers PI/2 and 2/PI come from" are kept as
+  Tom's words and read as the writer's account. The one-length circle is the writer's (the flags' option (a)): the writer's
+  picture of what the reader's one length does; the reader has the open quarter's readings, the Cauchy, and holds no circle
+  (R643), nor a sphere (R591). *Reads and Writes* already said both; one sentence there ("a writer measures the sweep …"),
+  and essays 2, 6, 12, 14 and the README worded to match. The demos already say it in what they show.
 - **R716** (5 Nov; Tom: "1", to a tightening pass of *Reads and Writes*, then "Yes" to `plans/rw-tighten.md`): repeats
   folded into one home each, nothing dropped: the abstract 578 → 352 words in three paragraphs; §1's two definitions of a
   read one, time and flags their own paragraph ("Reads are unconnected"), the race said once ("Reads do not conflict"),

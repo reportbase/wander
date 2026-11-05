@@ -415,7 +415,7 @@ the centre of the circle on the chord (the *central* sweep), the hand turns twic
 chord θ/sin θ runs from 1 to π/2 as the sweep reaches the far end. From home on the circle (the *inscribed* sweep), the
 ratio chord over arc sin θ/θ runs from 1 to 2/π, approached at the horizon and never reached. Their product is 1 at
 every θ. These are the only two standpoints from which equal turns cut equal arcs (Euclid III.20: the inscribed angle is
-half the central). So the sweep from horizontal to vertical comes at π/2 or 2/π, never at 1; 1 is had only by joining
+half the central). So a writer measures the sweep from horizontal to vertical at π/2 or 2/π, never at 1; 1 is had only by joining
 both, which is the writer's join. Euclid's theorem, the two reciprocal ratios and the writer's rate of 1 in radians are
 three things that correspond here, not one theorem. And π/2 and 2/π are the writer's measure of the reader's sweeps, not
 numbers the reader holds: π is the total of a completed half turn, the period of a line's direction (2π that of an

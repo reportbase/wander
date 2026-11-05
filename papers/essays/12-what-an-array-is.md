@@ -174,9 +174,9 @@ The horizon tells the two ends apart. The radius, its half turn done, lands back
 bounded chart around it. π/2 is attained there. The ray, as v/h runs without bound, goes tangent to the circle: the
 horizon. 2/π is approached and never reached. It is the horizon's number.
 
-So the three vantages have three numbers for the one chord:
+So the writer has three numbers for the one chord, one held and two measured:
 
-| vantage | how it has the chord | its number | at the end |
+| vantage | how it has the chord | the writer's number | at the end |
 |---|---|---|---|
 | the writer | walks it | 1 | an amount, held |
 | the central sweep | faces the arc from the centre | π/2 | attained, at a point |
@@ -382,8 +382,8 @@ thumb. It reads a sweep, not the array. A writer can lay any array on the quarte
 tangent and arctangent, but that drawing needs N; the reader has only its turn, the share passed and no end. Where an N
 exists it reads N only as N/H. Where none does, or none could, the sweep runs to a horizon, and at a horizon there is no
 inside, no outside and no half of anything, only the two ends 0 and ∞ of the projective line, the reciprocal that swaps
-them, and the corner it fixes. The central sweep's π/2 is reached at a point; the inscribed sweep's 2/π only at the
-horizon; and their product is the writer's 1.
+them, and the corner it fixes. A writer measures the central sweep's π/2 as reached at a point and the inscribed sweep's 2/π only at the
+horizon; all three numbers, their product 1 too, are the writer's.
 
 Holding is how a reader becomes the writer of a thing: the hand holds the back and knows the turn. What cannot be held
 (a street, the sky, a list too long to iterate) can only be swept, and a program can hold such a sweep faithfully: keep
