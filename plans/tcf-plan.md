@@ -134,3 +134,53 @@ set: kill if outside [−3.6, −2.4].
 **A caution written now.** Many kernels stop at a few metres, inside or near their own scale. There p and u trade off,
 and p is poorly fixed. The spread of p, and how many fits sit on a bound, will be reported. The kill conditions are not
 changed for it.
+
+### Run 1 (5 Nov; `runs/tcf/tcf.py`, output `runs/tcf/run1.txt`, classification `runs/tcf/vectors.tsv`)
+
+**The classification.** A fresh agent, shown only labels, sorted the 168 datasets (the file has 168, not the README's
+169):
+- animal 87, wind 40, ballistic 13, water 1, unsure 27;
+- wind with high or medium confidence: 38, the primary set;
+- two low-confidence wind calls, Gentianella and Mirabilis (release trials on seeds with no adaptation), left out of it.
+
+It did no web searches.
+
+**Parsing.** The order of a dataset's rows varies through the file: Distance then Density, Density then Distance, or
+with a Replicate row first. Rows are therefore taken by label, a rule set from the labels alone before any fit. Five
+datasets have two rows labelled Distance and none labelled Density (98, 113, 128, 143, 158), and are not fitted. Two of
+them are in the primary set: 113 *Pinus sylvestris* and 143 *Tachigalia versicolor*. Dataset 77 has under 4 positive
+densities. Overall 471 zero densities were dropped and 162 of the 168 datasets fitted.
+
+**Result, primary set** (38 kernels, 35 fitted, 21 of them on a bound):
+- **T1 killed.** The median p is 0.104 (quartiles 0.020 and 0.533), against [0.3, 0.8]. The share of fits outside
+  [0.15, 1.5] is 0.686, against under ⅓. Most of the bound fits sit at p = 0.02, the floor: a tail fatter than the 2Dt
+  allows inside its range, or a kernel that flattens.
+- **T5 killed.** Over the 26 kernels with 3 or more points past 2√u, the median tail slope is −2.02, against [−3.6, −2.4].
+- **T2, T3, T4 untested:** no heights in the file.
+
+**Beside it, deciding nothing:**
+
+| class | median p | median tail slope |
+|---|---|---|
+| ballistic | 0.78 | −2.20 |
+| animal | 0.16 | −2.42 |
+| unsure | 0.49 | −2.94 |
+
+The wind kernels are no nearer p = ½ than the others; the animal ones are about as fat.
+
+**After the run (post hoc, deciding nothing).**
+- The 14 primary fits not on a bound have median p 0.61 and median slope −2.23. But 5 of the 14 are outside
+  [0.15, 1.5], which still fails T1 as written.
+- The tails are fatter than r⁻³. On a log scale their median slope, about −2, is the 2Dt at p → 0. Clark et al. 1999
+  found fat-tailed fits (small p) for tree seeds too. That was known in print, and I did not weigh it when I set p = ½.
+- Many kernels end within a few multiples of their own fitted scale. There p and u trade off, as the plan warned.
+
+**What it says.** The turn reading of this case, as stated (seeds travelling straight from a release point, directions
+uniform over the downward hemisphere), is killed by these data. Wind-dispersed seed kernels are not the hemisphere's
+Cauchy: their tails are fatter, about r⁻², and their shape varies widely. A mixture over wind speeds, the reading in print,
+fits that, since mixing scales makes the tail fatter than any one member. Whether a turn with a different measure on
+directions (uniform in angle, not area) or a turn per gust would survive is a new prediction, and a new run, not a rescue
+of this one.
+
+The kill is about one named case. It does not by itself withdraw *Reads and Writes*' rule that a Cauchy is a turn's heat
+(the plan's "What a kill means"). It does mean the rule has now failed once where it could fail. That is Tom's to rule.

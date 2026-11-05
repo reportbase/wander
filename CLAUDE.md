@@ -1648,6 +1648,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R718 (5 Nov; Tom: "1", "yes"): TCF (`plans/tcf-plan.md` + `runs/tcf/`), the test that can fail, on Bullock et al.
+  2017's seed-dispersal kernels (Dryad doi:10.5061/dryad.mq2ff, CC0, supplied by Tom; not committed). The prediction p = ½
+  (a straight flight from the release point, uniform over the hemisphere) is killed: T1 (median p 0.104) and T5 (median
+  tail slope −2.02). T2–T4 untested. The paper's rule waits on Tom's ruling.
   R717 (5 Nov; Tom: "PI/2 and 2/PI are writers."; "one length circle is writers."): flags 1–3 settled: **π/2 and 2/π
   are the writer's measure of the reader's sweep, and the one-length circle (and sphere) the writer's picture**; never
   give either to the reader. *Reads and Writes* one sentence; essays 2, 6, 12, 14, README.

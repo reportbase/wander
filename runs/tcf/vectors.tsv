@@ -1,0 +1,169 @@
+dataset	species	vector	confidence	reason
+1	Acacia elata	unsure	low	title names no vector; aril seed (ants/birds) but study measured seed rain round trees
+2	Acacia holosericea	animal	high	title: dispersal by ants
+3	Acacia holosericea	animal	high	title: myrmecochory
+4	Acacia suaveolens	animal	high	title: myrmecochory
+5	Acacia terminalis	animal	high	title: seeds adapted for ant dispersal
+6	Acer opalus	wind	high	title: wind-dispersed tree (samaras)
+7	Adriana quadripartita	unsure	low	title names ballistic and ant dispersal; label does not say which this dataset is
+8	Adriana quadripartita	unsure	low	title names ballistic and ant dispersal; label does not say which this dataset is
+9	Aesculus turbinata	animal	high	secondary dispersal of large seeds by rodents (directed dispersal test)
+10	Aglaia flavida	animal	high	title: dwarf cassowary
+11	Ailanthus altissima	wind	high	samaras of Ailanthus, primary wind dispersal
+12	Ailanthus altissima	wind	high	samaras of Ailanthus, primary wind dispersal
+13	Ailanthus altissima	wind	high	samaras of Ailanthus, primary wind dispersal
+14	Ailanthus altissima	wind	high	title: secondary wind dispersal
+15	Amphicarpaea bracteata	ballistic	medium	aerial seeds of heteromorphic Amphicarpaea are explosively discharged from pods
+16	Amyema quandang	animal	high	mistletoe seed dispersal by a bird's movements
+17	Andira inermis	animal	high	title: bat-generated seed shadows
+18	Annona glabra	animal	high	title: cassowary dispersal
+19	Annona muricata	animal	high	title: Amazonian frugivore (fish, tambaqui)
+20	Apocynum sibiricum	wind	high	plumed seeds; Platt & Weiss wind release of fugitive prairie plants
+21	Artemisia herba-alba	unsure	low	title names no vector; small achenes, wind or gravity
+22	Asarum canadense	animal	high	Asarum is ant-dispersed; Cain et al. measured ant dispersal
+23	Asclepias syriaca	wind	high	plumed milkweed seeds
+24	Asclepias syriaca	wind	high	plumed milkweed seeds, Platt & Weiss
+25	Astrocaryum standleyanum	animal	high	title: thieving rodents
+26	Banksia hookeriana	wind	medium	winged Banksia seeds released post-fire; genetic study
+27	Bertholletia excelsa	animal	high	Brazil nut dispersed by agoutis (scatterhoarding)
+28	Betula uber	wind	high	birch samaras
+29	Bromus tectorum	wind	medium	downy brome seeds moved by wind over burned ground
+30	Bursera graveolens	animal	high	title: seed dispersal by animals
+31	Calathea micans	animal	high	title: ant-dispersed herb
+32	Calathea micans	animal	high	title: ant-dispersed herb
+33	Calathea ovandensis	animal	medium	title: dispersers (ants) of Calathea
+34	Calluna vulgaris	wind	high	title: seed dispersal by wind
+35	Capsicum annuum	animal	high	bird-dispersed chili, N-15 tracking of seed dispersal
+36	Carex pilulifera	animal	high	title: ant-seed mutualism
+37	Castanopsis fargesii	animal	high	title: rodent-dispersed Fagaceae
+38	Castanopsis sempervirens	animal	high	title: scatterhoarding rodents
+39	Cayaponia cruegeri	animal	high	title: frugivore (fish)
+40	Cayaponia tubulosa	animal	high	title: frugivore (fish)
+41	Cecropia latiloba	animal	high	title: frugivore (fish)
+42	Cecropia obtusifolia	animal	medium	Cecropia seed rain is from bats/birds
+43	Centaurea corymbosa	animal	high	title: dispersal by ants
+44	Chaenorhinum minus	unsure	low	title names no vector; railroad ballast (wind from trains?)
+45	Chaenorhinum minus	unsure	low	title names no vector; railroad ballast (wind from trains?)
+46	Cirsium undulatum	wind	high	plumed thistle, Platt & Weiss
+47	Cleistopholis glauca	animal	high	Clark et al.: Cleistopholis glauca bird-dispersed
+48	Cleistopholis patens	animal	high	title: hornbills
+49	Conyza canadensis	wind	high	plumed Conyza, long-distance wind dispersal
+50	Cornus controversa	animal	medium	bird-dispersed drupes, seed-trap study
+51	Cortaderia selloana	wind	high	title: wind effects
+52	Crataegus monogyna	animal	high	title: avian seed dispersal
+53	Cryptantha flava	unsure	low	title names no vector; nutlets falling near parent
+54	Cyclobalanopsis glauca	animal	high	title: rodent-dispersed Fagaceae
+55	Dendromecon rigida	unsure	low	Dendromecon: explosive capsule then ants (Berg); one dataset
+56	Duroia duckei	animal	high	title: frugivore (fish)
+57	Entada polystachya	wind	medium	wind-dispersed loment segments; inverse modelling of wind dispersal
+58	Erica cinerea	wind	high	title: seed dispersal by wind
+59	Erythronium dens-canis	animal	high	title: myrmecochorous plant
+60	Erythronium grandiflorum	unsure	low	title names no vector; primary fall versus ant removal
+61	Erythronium japonicum	animal	medium	title: myrmecochory (ants), also seed-fall patterns
+62	Euphorbia boetica	ballistic	high	title: explosive seed dispersal
+63	Euphorbia characias	animal	high	title: myrmecochore, ants
+64	Euphorbia nicaeensis	ballistic	high	title: explosive seed dispersal
+65	Fagus sylvatica	animal	high	title: rodents as seed dispersers
+66	Ficus exasperata	animal	high	title: hornbills
+67	Ficus stupenda	animal	medium	fig seed shadows from frugivores (birds/bats)
+68	Ficus subtecta	animal	medium	fig seed shadows from frugivores (birds/bats)
+69	Funtumia elastica	wind	high	Clark et al.: Funtumia plumed, wind-dispersed
+70	Gambeya boukokoensis	animal	high	Clark et al.: monkey-dispersed
+71	Garcinia smeathmanni	animal	high	Clark et al.: monkey-dispersed
+72	Gentianella germanica	wind	low	Verkaar et al. wind release; small unadapted seeds
+73	Geranium carolinianum	ballistic	high	title: explosive seed dispersal
+74	Geranium maculatum	ballistic	high	title: explosive seed dispersal
+75	Geranium molle	ballistic	high	title: explosive seed dispersal
+76	Geranium purpureum	ballistic	medium	Geranium explosive discharge; title silent
+77	Heracleum mantegazzianum	wind	medium	winged mericarps of giant hogweed; title silent
+78	Heterotheca subaxillaris subsp. latifolia	wind	medium	achene dimorphism; disc achenes plumed
+79	Hieracium aurantiacum	wind	medium	plumed achenes
+80	Himatanthus drasticus	wind	medium	winged/plumed Apocynaceae seeds; genetic study
+81	Hura crepitans	ballistic	high	title: explosive seed dispersal
+82	Ilex aquifolium	animal	high	title: avian seed dispersal
+83	Impatiens capensis	ballistic	high	jewelweed explosive capsules
+84	Impatiens capensis	ballistic	high	title: explosive seed dispersal
+85	Jacaranda copaia	wind	high	winged Jacaranda seeds
+86	Juniperus virginiana	animal	high	bird-dispersed red cedar along fenceline
+87	Lannea welwitschii	animal	high	title: hornbills
+88	Liatris aspera	wind	medium	plumed Liatris achenes
+89	Litchi chinensis	animal	high	title: trumpeter hornbills
+90	Lithocarpus harlandii	animal	high	title: rodent-dispersed Fagaceae
+91	Lithospermum caroliniense	unsure	low	title names no vector; dune nutlets
+92	Lonchocarpus heptaphyllus	wind	high	title: wind dispersal
+93	Macrozamia communis	unsure	low	title names no vector; large cycad seeds
+94	Macrozamia miquelii	unsure	low	title asks about megafauna; result may be gravity/small animals
+95	Maesopsis eminii	animal	high	title: hornbills
+96	Maesopsis eminii	animal	high	Clark et al.: bird-dispersed Maesopsis
+97	Melampyrum lineare	animal	high	title: mutualism with ants
+98	Mercurialis annua	unsure	low	explosive capsule plus caruncle (ants); title silent
+99	Microstegium vimineum	water	high	title: water dispersal
+100	Mimulus guttatus	unsure	low	title names wind and deer
+101	Mirabilis hirsuta	wind	low	Platt release trials; unadapted anthocarps
+102	Miscanthus sinensis	wind	high	plumed Miscanthus caryopses
+103	Miscanthus x gigantus	wind	high	plumed Miscanthus caryopses
+104	Oenothera biennis	wind	medium	Platt & Weiss wind release; no plume
+105	Parkia panurensis	animal	high	tamarin dispersal, observational curves
+106	Philenoptera sutherlandii	ballistic	high	title: ballistically dispersed
+107	Phlox drummondii	ballistic	high	title: explosive seed dispersal
+108	Phytolacca rivinoides	animal	high	title: avian seed dispersal
+109	Phytolacca rivinoides	animal	high	title: avian seed dispersal
+110	Phytolacca rivinoides	animal	high	title: avian seed dispersal
+111	Pinus jeffreyi	animal	high	title: cache site selection by chipmunks
+112	Pinus nigra	wind	medium	winged pine seeds; effective dispersal
+113	Pinus sylvestris	wind	medium	winged pine seeds; effective dispersal
+114	Platypodium elegans	wind	high	winged Platypodium seeds
+115	Prunus jamasakura	animal	high	title: Asiatic black bear
+116	Prunus mahaleb	animal	high	title: frugivores
+117	Prunus serotina	animal	medium	bird-dispersed black cherry; microsatellites
+118	Pteleopsis hylodendron	wind	high	Clark et al.: winged Pteleopsis, wind-dispersed
+119	Quercus ilex	animal	high	acorn radio-tracking (rodents/jays)
+120	Quercus ilex	animal	high	title: jays
+121	Quercus robur	animal	high	title: rodents as seed dispersers
+122	Quercus serrata	animal	high	title: acorn transport by rodents
+123	Quercus variabilis	animal	high	title: rodent-dispersed Fagaceae
+124	Rauwolfia macrophylla	animal	high	title: hornbills
+125	Rhamnus alaternus	animal	high	title: Argentine ant
+126	Rhinanthus minor	unsure	low	title names mechanisms in general (wind and hay-cutting machinery)
+127	Rhinanthus minor	unsure	low	title names mechanisms in general (wind and hay-cutting machinery)
+128	Rubus spectabilis	animal	high	title: marten as disperser
+129	Sanguinaria canadensis	animal	high	title: ant-dispersed plant
+130	Scabiosa columbaria	wind	medium	Verkaar et al. wind release; calyx-winged achenes
+131	Senecio jacobaea	wind	high	title: wind dispersal
+132	Setaria verticillata	unsure	low	title names no vector; bristly spikelets (epizoochory?) or wind
+133	Simarouba amara	animal	high	title: vertebrate-dispersed tree
+134	Solanum americanum	animal	high	bird-dispersed nightshade, N-15 tracking
+135	Sorghum halepense	unsure	low	crop field study; natural shedding or combine harvester
+136	Sorghum halepense	unsure	low	crop field study; natural shedding or combine harvester
+137	Spergularia salina	unsure	low	title names wind and water
+138	Spergularia salina	unsure	low	title names wind and water
+139	Staudtia kamerunensis	animal	high	title: hornbills
+140	Staudtia kamerunensis	animal	high	Clark et al.: bird-dispersed Staudtia
+141	Strombosia scheffleri	animal	high	title: hornbills
+142	Symplocarpus renifolius	animal	high	title: dispersal by small rodents
+143	Tachigalia versicolor	wind	high	winged Tachigali fruits
+144	Terminalia superba	wind	high	Clark et al.: winged Terminalia, wind-dispersed
+145	Trillium grandiflorum	animal	high	title: dispersal by deer
+146	Trillium ovatum	animal	medium	Trillium elaiosome seeds, ant dispersal; title silent
+147	Uapaca paludosa	animal	high	Clark et al.: monkey-dispersed Uapaca
+148	Vaccinium alaskaense	animal	high	title: marten as disperser
+149	Verbena stricta	wind	medium	Platt & Weiss wind release; no plume
+150	Vincetoxicum rossicum	wind	high	plumed seeds, dispersability
+151	Viola blanda	unsure	low	title: diplochory (ballistic then ants)
+152	Viola fimbriatula	unsure	low	title: diplochory (ballistic then ants)
+153	Viola lanceolata	unsure	low	title: diplochory (ballistic then ants)
+154	Viola striata	ballistic	high	title: explosive seed dispersal
+155	Virola surinamensis	animal	high	bird-dispersed nutmeg
+156	Vulpia ciliata	unsure	low	title names no vector; grass seeds falling near parent
+157	Vulpia fasciculata	unsure	low	title names no vector; dune grass seeds
+158	Vulpia fasciculata	unsure	low	title names no vector; dune grass seeds
+159	Witheringia coccoloboides	animal	high	title: avian seed dispersal
+160	Witheringia coccoloboides	animal	high	title: avian seed dispersal
+161	Witheringia coccoloboides	animal	high	title: avian seed dispersal
+162	Witheringia solanacea	animal	high	title: avian seed dispersal
+163	Witheringia solanacea	animal	high	title: avian seed dispersal
+164	Witheringia solanacea	animal	high	title: avian seed dispersal
+165	Xylopia hypolampra	animal	high	title: hornbills
+166	Xymalos monospora	animal	high	title: avian frugivores
+167	Xymalos monospora	animal	high	title: avian frugivores
+168	Xymalos monospora	animal	high	title: avian frugivores

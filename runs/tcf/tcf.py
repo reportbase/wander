@@ -61,34 +61,40 @@ def tail_slope(r, rho, u):
 
 
 def read_kernels(path):
-    """{dataset: {'species', 'source', 'r': [...], 'rho': [...], 'zeros': n, 'kind'}} from Dryad's wide CSV."""
+    """{dataset: {'species', 'r', 'rho', 'zeros', 'kind'}} from Dryad's wide CSV.
+
+    A dataset is the block of rows from the one carrying its number to the next. The order of its rows varies through the
+    file (Distance then Density in some stretches, Density then Distance in others, with a Replicate row first in a few),
+    so rows are taken by label. A block without exactly one Distance row and one Density row is 'ambiguous layout' and is
+    not fitted (a rule set from the labels alone, before any fit, run 1)."""
     rows = list(csv.reader(open(path, encoding='latin-1')))[1:]
-    out, cur, pending = {}, None, None
+    blocks, cur = {}, None
     for row in rows:
         if row[0].strip():
             cur = row[0].strip()
-            out[cur] = {'species': row[1].strip(), 'source': row[2].strip(), 'r': [], 'rho': [], 'zeros': 0,
-                        'dist_rows': 0, 'dens_rows': 0}
-            pending = None
-        label = row[3].strip()
-        vals = row[4:]
-        if label.startswith('Distance'):
-            out[cur]['dist_rows'] += 1
-            pending = vals
-        elif label.startswith('Density'):
-            out[cur]['dens_rows'] += 1
-            for d, x in zip(pending, vals):
-                d, x = d.strip(), x.strip()
-                if not d or not x:
-                    continue
-                d, x = float(d), float(x)
-                if x > 0:
-                    out[cur]['r'].append(d)
-                    out[cur]['rho'].append(x)
-                else:
-                    out[cur]['zeros'] += 1
-    for k in out.values():
-        k['kind'] = 'individual distances' if k['dens_rows'] == 0 else 'density'
+            blocks[cur] = {'species': row[1].strip(), 'source': row[2].strip(), 'rows': []}
+        blocks[cur]['rows'].append((row[3].strip(), row[4:]))
+    out = {}
+    for ds, b in blocks.items():
+        k = {'species': b['species'], 'source': b['source'], 'r': [], 'rho': [], 'zeros': 0}
+        dist = [v for l, v in b['rows'] if l.startswith('Distance')]
+        dens = [v for l, v in b['rows'] if l.startswith('Density')]
+        if len(dist) != 1 or len(dens) != 1:
+            k['kind'] = f'ambiguous layout ({len(dist)} Distance, {len(dens)} Density rows)'
+            out[ds] = k
+            continue
+        k['kind'] = 'density'
+        for d, x in zip(dist[0], dens[0]):
+            d, x = d.strip(), x.strip()
+            if not d or not x:
+                continue
+            d, x = float(d), float(x)
+            if x > 0:
+                k['r'].append(d)
+                k['rho'].append(x)
+            else:
+                k['zeros'] += 1
+        out[ds] = k
     return out
 
 
@@ -127,7 +133,7 @@ def main(csv_path, vec_path):
         vec, conf = V.get(ds, ('missing', ''))
         rec = {'ds': ds, 'species': k['species'], 'vector': vec, 'conf': conf, 'zeros': k['zeros'], 'kind': k['kind']}
         if k['kind'] != 'density' or len(set(k['r'])) < 4:
-            rec['why'] = 'no density rows' if k['kind'] != 'density' else 'fewer than 4 distances with density > 0'
+            rec['why'] = k['kind'] if k['kind'] != 'density' else 'fewer than 4 distances with density > 0'
             rows.append(rec)
             continue
         f = fit2dt(k['r'], k['rho'])
