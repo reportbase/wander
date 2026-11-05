@@ -1639,6 +1639,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R707 (5 Nov; Tom: "address are a useful metaphore, so they can be used as needed to connect cauchy to computer
+  science as needed."): **"address" may be used as a metaphor where it connects the Cauchy to computer science**; the heat
+  stays the primary reading (R706), and no sweep removing the word is needed.
   R706 (5 Nov; Tom: "I doubt there is actually addresses, like computer science. its much more basic and fundemental.";
   then "Yes"): **the Cauchy is a heat map; addresses are discrete, counted, the writer's.** The reader has directions and
   their heat (cos²θ in the plane, cos³α in space, cos^(n+1) with n thumbs; the overlay's sech(ln(d/H)) in distance); K

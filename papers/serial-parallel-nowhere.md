@@ -7352,6 +7352,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R707** (5 Nov; Tom: "address are a useful metaphore, so they can be used as needed to connect cauchy to computer
+  science as needed."): R706 stands (the reader's geometry is a heat over directions; an address, discrete and counted, is
+  the writer's), and "address" may be used as a metaphor wherever it helps connect the Cauchy to computer science: a
+  direction looked along is like an address looked up, the heat under it. Not to be swept from the corpus; used as needed,
+  with the heat as the primary reading. *Reads and Writes* §1 and essay 16's "Heat, not addresses" say so.
 - **R706** (5 Nov; Tom: "I think the insight that the cauchy is a heat map is very important. I doubt there is actually
   addresses, like computer science. its much more basic and fundemental."; ChatGPT, pasted by Tom: addresses are by
   definition discrete, a writer's concept; then "Yes"): **the Cauchy is a heat map, and addresses are the writer's.** A
