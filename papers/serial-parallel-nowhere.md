@@ -7352,6 +7352,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R719** (5 Nov; Tom: "narrow it", after TCF run 1, R718): the rule is narrowed. A Cauchy-type quantity is a turn's
+  heat only where the turn can be named apart from the law's shape; a fat tail alone is no evidence of one, since a
+  mixture of amounts makes one too.
+  - *Reads and Writes* §11: the bullet narrowed, and "And one where it failed" (the seed kernels) added after the three
+    cases in data.
+  - Essays 3 §7, 16 and 17 §11 likewise.
+  - §2's "whether a turn lies behind it is a question to ask of each case" already said it, and stays.
 - **R718** (5 Nov; Tom: "1", to the test that can fail, then "yes" to the plan and its run): TCF
   (`plans/tcf-plan.md`, `runs/tcf/`). The case is REA's H54, seed-dispersal kernels. The turn named beforehand: a seed
   goes straight from its release point, directions uniform over the downward hemisphere, giving Clark's 2Dt with p = ½

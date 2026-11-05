@@ -1003,8 +1003,9 @@ It changes no mathematics. It sorts.
 
 - **Every reading is the reader's, every amount the writer's.** A result stated as a ratio, unchanged by scaling the
   world, is a reading; a result that moves with the world's scale is a writing, and needs an amount carried in. A
-  Cauchy-type quantity is a direction; find the turn that lays it, and the amount that the payload carries is found
-  separately.
+  Cauchy-type quantity is a direction where a turn that lays it can be named, apart from the law's shape; there the
+  amount the payload carries is found separately. A fat tail alone is no evidence of a turn: a mixture of amounts makes
+  one too.
 - **The constants have owners.** π, e, π/2, 2/π, the hemisphere's 2 and ½, the Cauchy's normalizing constant, the
   logarithm's nats and the angle's degrees are the writer's measures of the reader's things. The reader's own versions
   are finite: an order, a ratio (one in two, one in four), a corner, a composition by tangent addition.
@@ -1040,6 +1041,14 @@ On Aspden, Padgett and Spalding's frames (2016) the slits' counts, 9,026 : 10,46
 measured contrast, 0.69 and 0.56, lies under that bound, short by the source. The bound is the shares', the geometry's;
 how far below it a pattern falls is what arrives. None of the three is new physics. What the reading adds is where each
 part lives.
+
+**And one where it failed.** Seeds falling from a plant also spread with a fat tail, and the turn can be named beforehand:
+a seed leaving its release point straight, every downward direction alike, lands as the hemisphere's Cauchy, Clark's 2Dt
+with shape p = ½ and a tail falling as r⁻³. On Bullock et al.'s compiled kernels (2017), the 35 that could be fitted of
+38 picked as wind-dispersed from their labels alone say otherwise: median p 0.10, a tail falling about as r⁻², shapes
+spread widely, and no nearer the turn's than kernels carried by animals. The fat tail there is a mixture over wind
+speeds, as the literature reads it: amounts, not a turn. So the reading is not a rule that every Cauchy-like law is a
+turn's heat. It holds where the turn is there to be named, and a test written before the data can show where it is not.
 
 One classical case, not run here, shows the sort as cleanly as any. A spin carried slowly round a closed loop of field
 directions comes back with two phases (Berry 1984). The geometric one is half the solid angle the loop of directions

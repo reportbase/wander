@@ -292,6 +292,13 @@ So for any Cauchy met in practice there is a test: **find the turn, and find the
 
 Practice got there first. The reading says why it got it right.
 
+The test can fail, and it has. Seeds falling from a plant spread with a fat tail, and a turn can be named for them: a
+seed leaving its release point straight, every downward direction alike, would land as the hemisphere's Cauchy, its tail
+falling as the cube of the distance. Written down before any data were read and checked on 35 measured wind-dispersed
+kernels, it was wrong: the tails fall about as the square, and the shapes vary as a mixture over wind speeds would make
+them. There the fat tail is amounts, not a turn. So the test is a test: a Cauchy-like law is a turn's heat only where the
+turn can be found, and a fat tail alone does not find it.
+
 ---
 
 ## 8. What the reading changes
