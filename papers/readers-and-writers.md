@@ -725,7 +725,10 @@ facings, is the sphere; set H, and a writer who names the others at it (V = V₂
 choosing the thumb is choosing the near field as a sphere: the ball of radius H about the standpoint, every facing joined,
 nearer than one thumb inside it and farther past it. That is the writer's account. The reader has the same choice as a
 split on every direction it reads, nearer than one thumb or past it, one read at a time: no surface, no V, no facings
-joined. One choice of H; two accounts of what it set.
+joined. One choice of H; two accounts of what it set. One facing of it is the wedge with its cap at H: an octant of
+the ball, three flat faces through the eye and the cap one thumb out. The far field is everything else, so near and far
+together are the writer's whole; inversion in the sphere at H carries the far field point for point onto the near field,
+infinity to the eye, which is why each holds half of every direction's heat.
 
 **Where the split falls: looking around.** The overlay is the reader's to move, and it moves it by looking. Pointed at a
 thing, the crossed thumbs take its distance as H, so that thing sits at the corner, half of every direction's heat in

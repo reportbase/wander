@@ -7358,6 +7358,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   sphere."): setting H sets the near-field sphere, the ball of radius H about the standpoint, every facing joined at
   V = V₂ = H: the writer's account of the choice. The reader has it as a split on every direction it reads (R701), with no
   surface, no V and no facings joined (R533, R643, R700). *Reads and Writes* §7, after the sphere without V.
+  Then (Tom: "so the near field is a perfect wedge of the shere."; "the far field is everyting not in the near field.
+  near field + far field = universe."; "yes, add both"): one facing of it is the wedge with its cap at H; near and far
+  together the writer's whole, inversion in the sphere at H (d ↦ H²/d) carrying the far field onto the near, infinity to
+  the eye, why each holds half of every direction's heat. The same paragraph.
 - **R722** (5 Nov; Tom: "all three"): R721 carried out.
   - *Reads and Writes* §2: "The Cauchy's routes" after the derivation (one measure from z; the routes; one in the plane,
     agreeing on flat boundaries, parting on curved ones; told apart only by what γ tracks; the turn the reader's route;
