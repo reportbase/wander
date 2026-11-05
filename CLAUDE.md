@@ -208,6 +208,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   menu "swept" cycles the shape whole (the round hill), each thumb on its own pan then tilt (the law painted over the
   wedge, (2/π)/cos a times the even one, piling toward the up thumb; the hill a capped mesh, 0.78 of the round peak at the
   crosshair) and tilt then pan (the pile on the depth thumb). `?sweep=pantilt|tiltpan`; hook `sweep()`, `set({sweep})`.
+  The quarter turn (5 Nov; Tom: "the sweep is the quarter turn, not the semi-circle, sphere or circle."; "the demo shows
+  what the cauchy would look like if reader rotated his head 360 degrees."; SPN R696): by default the screen and the hill
+  draw the wedge alone (the triangle, every pair from home to its horizon), the rings of equal share of the wedge (`WT`,
+  `shareW`, `ringW`; within home 0.734, THM U4), cut at its edges; the round of the look is the menu's "turned all the way
+  round" (`?round=1`). Hook `quarter()`, `set({round})`.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1604,6 +1609,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   no order (Euler, Haar); written per thumb that is even in azimuth and in height; any linear map of the thumbs' space
   keeps the elliptical Cauchy family (the shape can be swept, its standpoint five numbers); same-shape hills stack.
   *Reads and Writes* §7 "The shape is swept, not each thumb"; essay 5 §6; `read.html`'s "swept".
+  R696 (5 Nov; Tom: "the sweep is the quarter turn, not the semi-circle, sphere or circle."; "the demo shows what the cauchy
+  would look like if reader rotated his head 360 degrees."): **the read is the quarter turn**, every pair from home to its
+  horizon; in 3D the wedge, never the round, the hemisphere or the sphere (those are facings joined, the writer's). Haar and
+  Euler over all turns of space are the writer's account; within the quarter turn nothing composes past a horizon.
+  *Reads and Writes* §7 (the shape paragraph, "Where the reader stands"), essay 5 §6 and §10, a note under SWP's runs;
+  `read.html` draws the wedge by default, the round "turned all the way round".
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

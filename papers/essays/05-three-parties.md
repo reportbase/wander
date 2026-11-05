@@ -164,14 +164,17 @@ its height. So sweeping evenly in azimuth and evenly in *height*, rather than in
 That is Johann Lambert's equal-area map of 1772. Swept that way, every pair keeps its corner and the near field is a
 third.
 
-Put another way: the even sweep is not two sweeps, one per thumb. It is the three thumbs turned together, a single rigid
-shape, every turn of it weighed alike. Every pose the two angle sweeps reach is also a turn of the whole shape; what they
-get wrong is the weight on the poses. Swept one after the other, round and then up, the directions pile toward the up
-thumb, where a turn round it shrinks to nothing; swept up and then round, they pile toward another thumb, and the pair that
-leaves its corner changes with the order. Turned whole there is no order at all: any turns of a rigid shape add up to one
-turn about one axis, Euler's theorem of 1776, and Haar's even law is the one that composing turns leaves alone. The thumbs
-ride the shape as marks, landing at the same places on the screen whatever turn it is given. With one thumb, in the plane,
-the two ways are one, which is why the difference waits for the third.
+Put another way: the even sweep is not two sweeps, one per thumb. It is the three thumbs swept together through the
+quarter turn, every pair from its home to its horizon, which down the thumbs' diagonal is the wedge and nothing past it.
+The two angle sweeps reach the same directions; what they get wrong is the weight. Swept one after the other, round and
+then up, the directions pile toward the up thumb, where a turn round it shrinks to nothing; swept up and then round, they
+pile toward another thumb, and the pair that leaves its corner changes with the order. Swept together there is no order,
+since no pair is taken past its horizon. A writer holding every turn of space finds the same law from outside, the one
+Haar's theorem of 1933 leaves alone, with any turns of a rigid shape adding up to one turn about one axis, Euler's theorem
+of 1776; that is the writer's account from the whole sphere, and the round of the look past the wedge is what a head
+turned all the way round would see, other facings joined. The thumbs ride the shape as marks, landing at the same places
+on the screen however it is pointed. With one thumb, in the plane, the two ways are one, which is why the difference waits
+for the third.
 
 This even-in-height sweep is special to three parties. With two, the even sweep is the turn itself. With four, the
 height's density on the even sweep is (4/π)·√(1 − t²), not flat.
@@ -352,9 +355,10 @@ lands on it. The reader has no shape here: a point, a vantage. The rings and the
 that point holds.
 
 Strip away the world and that drawing is the read itself: the addresses in thumbs, thinning off the crosshair as the
-two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)); or laid by count, each ring holding the same share, which turns the whole
-half of the directions in front into a disc whose rim is the horizon. Shown as a height, the same law is a hill whose peak
-is the corner and whose tails never reach zero. Nothing in it changes when the look turns or the world is scaled, because
+two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)), out to the wedge's triangle, where each pair of thumbs meets its home or its
+horizon; or laid by count, each ring holding the same share of the wedge. That triangle is the quarter turn, the read. Drawn
+as a full round about the crosshair, rings to a horizon on every side, it would be the head turned all the way round, other
+facings joined: the writer's picture. Shown as a height, the same law is a hill over the triangle, its peak the corner. Nothing in it changes when the look turns or the world is scaled, because
 there is no world in it: no payload, only the geometry the payload would paint.
 
 Nor does it change when the thumb is dragged. Put a row of things along the look and drag H: the things slide along the

@@ -644,8 +644,10 @@ tunnel from outside.
 **Where the reader stands.** Behind the screen, at one point. The look runs from it to the crosshair; a thumb lands √2
 off the look on a screen one thumb away, home at 1/√2, one thumb off at 1, and the horizon runs parallel to the screen and
 never lands on it. The point has no size and draws no shape: it is a vantage, the place the read is from. With no world at
-all the read is still there, the addresses in thumbs (the Cauchy's rings of equal share) or by count (a disc whose rim is
-the horizon), the 3D Cauchy a hill about the look; turning and scaling the world change none of it. The buildings are what
+all the read is still there, a quarter turn: the wedge's triangle, its addresses in thumbs (the Cauchy's rings of equal
+share, cut at the wedge's edges, where each pair reads 0 or ∞) or by count, the 3D Cauchy a hill over the triangle; the
+round of rings about the look past it is the head turned all the way round, other facings joined. Turning and scaling the
+world change none of it. The buildings are what
 paints it.
 
 **One thumb, two thumbs, three.** In the plane the reader holds one thumb at arm's length: H, square to the line of sight,
@@ -666,21 +668,24 @@ puts the crosshair at the corner of all three (the Cauchy's thinning, centred on
 it). They are the same one length either way: the thumbs counted across the look are the dimension, and the thumbs counted
 at the corner are the parties, one more.
 
-**The shape is swept, not each thumb.** The even read in space does not come from sweeping each thumb through its own
-angle. Sweep them that way, evenly and one after the other, round about the up thumb and then up toward it, and every pose
-reached is still a turn of the whole frame, but the poses are weighed otherwise: the directions pile toward the thumb the
-first sweep turns about, where the second sweep shrinks to a point; the hill in the readings is not round; v falls below h
-for 0.343 of the readings, not a half, and the near field is 0.233, not a third. Taken in the other order, the pile goes
-to another thumb and another pair leaves its corner. The three thumbs turned together, one rigid frame with every turn
-weighed alike, give the round hill, every pair at its corner and the near field a third, and there is no order to it: any
-turns of a rigid frame compose to one turn about one axis (Euler), and only one law is unchanged by composing them (Haar).
-Written in the thumbs' own angles, that sweep is even round the horizontal and even in height, not in angle; the weight on
-the second angle comes from the frame turning as one, not from either thumb (Archimedes' hat-box, as above, seen from the
-turns). So the thumbs are marks the shape carries: a thumb lands √2 off the look and a home 1/√2 at every turn of it. In
-the plane there is one thumb, its turns commute, and the two ways are the same. The shape can be swept further than turns:
-any linear map of the thumbs' space, a projective map of the screen, carries the even read to an elliptical Cauchy, the
-same family, its standpoint five numbers in space against the plane's m + iγ; only the turns keep it round, and a stretch
-is a drawing with two lengths, a writer's.
+**The shape is swept, not each thumb.** The read is a quarter turn: every pair of thumbs from its home, where it reads
+0, to its horizon, where it reads ∞. Down the thumbs' diagonal that is the wedge, a triangle on the screen whose corners are
+the thumbs and whose edges are where a reading is 0 or ∞; the round of the tunnel past it is other facings, what the head
+would give turned all the way round, and joining facings is the writer's. Within the quarter turn the even read does not
+come from sweeping each thumb through its own angle. Sweep them that way, evenly and one after the other, round about the
+up thumb and then up toward it, and the directions pile toward the thumb the first sweep turns about, where the second
+sweep shrinks to a point; the hill in the readings is not round; v falls below h for 0.343 of the readings, not a half,
+and the near field is 0.233, not a third. Taken in the other order, the pile goes to another thumb and another pair leaves
+its corner. Swept together, the three thumbs fill the wedge evenly by area: every pair at its corner, the near field a
+third, and no order, since no pair is taken past its horizon. Written in the thumbs' own angles that sweep is even round
+the horizontal and even in height, not in angle (Archimedes' hat-box, as above); the weight on the second angle comes from
+the thumbs moving as one, not from either thumb. The thumbs are marks the shape carries, a thumb √2 off the look and a home
+1/√2 however it is pointed. A writer, holding every turn of space, finds the same law on the octant as the one measure
+left alone by turns (Haar), any turns composing to one turn about one axis (Euler); that is the writer's account from the
+whole sphere, not the read. In the plane there is one thumb and one quarter turn, and the two ways are the same. The shape
+can be swept further than turns: any linear map of the thumbs' space, a projective map of the screen, carries the even
+read to an elliptical Cauchy, the same family, its standpoint five numbers in space against the plane's m + iγ; only the
+turns keep it round, and a stretch is a drawing with two lengths, a writer's.
 
 **The writer's cube.** The writer's frame with three parties is Descartes's: X, Y, Z, three number lines, every point three
 amounts. It reaches the reader's directions only with H and the angles: X = H·cos a·cos ψ, and so on.
