@@ -946,7 +946,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   for explainers"), the same style: a card an explainer (draw's scrolling explainers, `gallery/explained.html?x=…` in
   reportbase/draw: reading and writing for essay 1, one length turned for essay 2, addresses for essay 3, near and far
   for essay 4, many standpoints for essay 6, where it shows up for essay 7 (since 1 Nov, SPN R610: the lighthouse,
-  Mercator's chart and the moving sky), rates, not angles for essay 14 (since 2 Nov, SPN R611), the Tangent Bridge and how leaves become a curve for essay 10), the essay it
+  Mercator's chart and the moving sky), rates, not angles for essay 14 (since 2 Nov, SPN R611), the Cauchy map for essay 17 (since 5 Nov, SPN R712), the Tangent Bridge and how leaves become a curve for essay 10), the essay it
   explains, its steps (the scene's beats), and links to the explainer, the essay's card, the essay and the scene's tile;
   then the essays with none yet. Linked from `essays.html` and `demos.html`. Add a card when an explainer is made.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
@@ -1648,6 +1648,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R713 (5 Nov; Tom: "only if you agree", of a Grok paste): *Reads and Writes* §3 notes the uniform sky on the stereographic
+  chart is (1/π)·dA/(1 + |z|²)², not the 2D Cauchy (that is the flat screen's cos³); no law on the sky is boost-invariant,
+  boosts carry the uniform one within its family. Never call it "the unique Lorentz-invariant measure".
   R712 (5 Nov; Tom: "1,2"): `cauchy-map.html` (the look and the walker on one wall; stepping back; the second map); the
   explainer for essay 17 is draw's `explained.html?x=cauchymap`.
   R711 (5 Nov; Tom: "update the essays"): R710 in essays 3, 5 and 8; essay 13's "the heat equation" corrected to Laplace's.

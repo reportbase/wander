@@ -410,7 +410,11 @@ Bearings are the reader's; areas are amounts, and the writer's.
 in two ways, and special relativity already writes them as two formulas. Where the star is seen moves: aberration, cos θ′ =
 (cos θ + β)/(1 + β cos θ), the same at every frequency. On the stereographic chart of the sky it is z ↦ z/k, with k = e^η
 and η the rapidity, a Möbius map of the directions; it moves directions and carries the Cauchy's family onto itself. A sky
-uniform in the stars' own frame is seen as the spherical Cauchy, its density D²/4π. What arrives at each place changes: the
+uniform in the stars' own frame is seen as the spherical Cauchy, its density D²/4π. (The sky's own uniform heat, on the
+stereographic chart, is (1/π)·dA/(1 + |z|²)², which is not the plane's two-dimensional Cauchy: that one,
+(1/2π)(1 + r²)^(−3/2), is half the sky on a flat screen square to the look, the cos³ of §7. Only the circle's stereographic
+image is a Cauchy. No law on the sky is unchanged by boosts; the uniform one is unchanged by turns, and boosts carry it
+within its family.) What arrives at each place changes: the
 Doppler factor D = √(1 − β²)/(1 − β cos θ′) scales each photon's energy and its rate of arrival, a weighting of the payload
 that moves no direction. For a sky uniform in its own frame, counting total power, the familiar D⁴ brightening ahead is D² of
 directions crowding, the heat, and D² of payload. Laid on ξ = −ln tan(θ/2) (the pseudorapidity), aberration is a slide by η, so a
