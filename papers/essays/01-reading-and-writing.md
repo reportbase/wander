@@ -14,8 +14,8 @@ fit.
 
 One consequence belongs up front, because the words invite it. Put *read* and *write* side by side and anyone who has
 programmed thinks of a race: a read and a write meeting on one thing, the answer depending on which came first. Here that
-never arises. A read adds nothing, so reads taken in any order, or all at once, agree. What a read gives is an address, a
-direction; what a write states is the payload met along it, and writing the payload moves no address, so no write runs
+never arises. A read adds nothing, so reads taken in any order, or all at once, agree. What a read gives is a direction and
+its heat; what a write states is the payload met along it, and writing the payload moves no direction, so no write runs
 into a read. Computing has to engineer that separation; the geometry starts with it.
 
 ---
@@ -88,10 +88,12 @@ breadth given in every direction.
 
 If V is not known, you have a standpoint, and you are the **reader**. You are somewhere, looking out, and what you have
 is what arrives at that place. It comes in two parts. One part is the directions themselves, the places on your view
-where something can be: each one a ratio of v to h and nothing more. These are the *addresses*. The other part is what
-arrives along each direction, its colour, brightness and texture, laid onto those addresses: the *paint*. The paint
-never comes without its address, because whatever arrives arrives along some direction. The addresses can come without
-the paint: a direction along which nothing arrives is still a direction. Addresses and paint are not two kinds of reader.
+where something can be: each one a ratio of v to h and nothing more. These are the *directions*, and the read weighs
+them as a *heat*: hottest along the look, cooling toward the horizon, continuous, with nothing counted in it. The other
+part is what arrives along each direction, its colour, brightness and texture, laid onto those directions: the *paint*.
+The paint never comes without its direction, because whatever arrives arrives along some direction. The directions can
+come without the paint: a direction along which nothing arrives is still a direction, with its heat. *The heat is given;
+the paint is met.* Heat and paint are not two kinds of reader.
 They are one reader's one read, and the geometry gives two ways of reading where the paint sits, which later essays call
 the inscribed and the central sweeps.
 
@@ -122,7 +124,7 @@ People sometimes think of a case the two leave out. Each turns out to be one of 
   comes to in section 6.
 - **A system that changes over time.** At any one reading it is the reader's or the writer's. It can move between them,
   as the reader in the room moved to the writer's side the moment the stride was measured.
-- **Directions along which nothing arrives.** These are still addresses, with nothing painted on them. That is a fact
+- **Directions along which nothing arrives.** These are still directions, with their heat and nothing painted on them. That is a fact
   about what arrives, not about the vantage.
 - **Your own length changes between readings.** This changes no reading. Every reading is a ratio, and your unit
   cancels from every ratio. Each reading is then a reader of its own, and joining them is the business of several
@@ -146,7 +148,7 @@ could stand nowhere and see everything. Its natural frame is a box, one number l
 extent an amount. Nothing in it is round, because roundness, as we will see, belongs to turning from a point, and the
 blueprint has no point to turn from.
 
-**The addresses and their paint are reading alone.** They are what a standpoint has: directions, and what arrives along
+**The directions, their heat and their paint are reading alone.** They are what a standpoint has: directions, and what arrives along
 them. No second breadth is known, and none is needed to read.
 
 **The circle is the writer's, and the reader's geometry looks just like it, which is why the whole distinction is so easy
@@ -165,7 +167,7 @@ So the map is simple:
 | nothing related | no one's: nothing to read |
 | the circle | the writer's: V = H, the thumb equal to the mountain; the reader's pointing gives its features, not the circle |
 | any other shape, in amounts | the writer's alone |
-| the addresses and their paint | the reader's alone |
+| the directions, their heat and their paint | the reader's alone |
 
 ### What writing needs
 
@@ -326,7 +328,7 @@ is, with no V in it to leave anything behind.
 A writer, holding V, has its far end as an amount: no horizon, and the corner only a point. We did not find this
 assembly in print; the pieces are classical.
 
-The Cauchy's own story is long, and it has its own essay, the third: how its addresses are kept apart from what arrives,
+The Cauchy's own story is long, and it has its own essay, the third: how its directions and their heat are kept apart from what arrives,
 why it is the law a reasoner ignorant of scale must assign, and a second test to go with the one below. For now the point
 is only this. The deepest piece of the reader's side, the law of its directions, is the circle's geometry without the
 circle: what one thumb, pointed, generates.
@@ -362,7 +364,7 @@ Scale by a hundred, so the range is two thousand miles wide, a thousand miles aw
 large. The view is still the same. The mountain's width in miles changed every time. Its width against your thumb never
 did.
 
-Try it on the two vantages. The reader's paint and addresses never move: they are what a standpoint has, and a standpoint
+Try it on the two vantages. The reader's directions, their heat and their paint never move: they are what a standpoint has, and a standpoint
 has only directions. The writer's blueprint moves by k in every number it states. The circle is the writer's, and it moves
 with the amounts; the reader's pointing, read as directions, does not.
 
@@ -562,10 +564,10 @@ the readings.
 **It keeps reads from racing.** In computing, two operations can run together without a race when neither writes what
 the other reads or writes (Bernstein's conditions, 1966): reads with reads are always safe, and the trouble is a read
 and a write meeting on one place. The split here is that condition built in. Reads add nothing, so they never conflict
-with one another; a write states the payload, and the payload is not where the addresses are kept, so it moves none of
+with one another; a write states the payload, and the payload is not where the directions are kept, so it moves none of
 them. A system whose addresses move with their contents, an array that reallocates or a table that rehashes, has to
-rebuild the separation by hand, with stable handles or copies kept for its readers. Geometry never had to: its addresses
-are given, and nothing writes to them. This is argued from a principle computing already holds, not proved anew.
+rebuild the separation by hand, with stable handles or copies kept for its readers. Geometry never had to: its directions and
+their heat are given, and nothing writes to them. This is argued from a principle computing already holds, not proved anew.
 
 **It explains how much a lone reader can do.** This is perhaps the most surprising lesson. With no unit at all, a reader
 can map a room, size every object against every other, build a tower of units, check it by closing loops, and have the full
