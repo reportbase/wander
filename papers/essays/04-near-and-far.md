@@ -96,8 +96,8 @@ each. They have no corners of their own and nothing nested inside them.
 
 **The crosshairs.** Picture H as a thumb held out at arm's length; in space, two thumbs crossed at a right angle across the
 line of sight, one reading up and one across, both the same H (the fifth essay). Where they cross is the corner: the thing
-there reads one thumb up for one thumb along, v equal to h, and it is drawn one thumb wide. That crossing sets the near
-field and the far field. The near field is a single thumb, laid evenly: everything nearer than the crossing gets its places
+there reads one thumb up for one thumb along, v equal to h, and it is drawn one thumb wide. That crossing, with H, lays
+the near field and the far field over the read; the Cauchy of directions has neither (the fifth essay, section 10). The near field is a single thumb, laid evenly: everything nearer than the crossing gets its places
 in proportion. The far field is read in ratios: a thing one thumb wide reads one in two, then one in four, then one in
 eight, each stretch with as many places as the one before, out toward the horizon. Counted by a writer, the same stretches
 are two thumbs, four, eight.
@@ -325,7 +325,8 @@ inside the thumb and half past it, at every H; laid as the reader lays them, eac
 middle, they do not move at all. Drag the thumb out and the things in the world slide along those fixed addresses, more of
 them into the near field, each with less room; drag it in and they slide out past the corner, the near ones held finer.
 The addresses stay; the world slides along them. Nothing is written: no amount is carried in, only which things land
-where changes.
+where changes. Near and far, then, are an overlay the thumb lays over the read, a split on every direction one thumb out,
+not part of the read's Cauchy, and not a shape.
 
 *Demos: H is a zoom; what is H; the read (drag the thumb).*
 
@@ -380,6 +381,14 @@ The rest of the field is not lost. Every direction is still held, coarser away f
 that something is there and where to look next. Moving the corner there is a new zero.
 
 This says where a focus *should* go, and why. It is not a claim about what any eye does.
+
+So a reader separates the near field from the far field by looking around at things: whatever the crossed thumbs point at
+is taken as H, half of every direction's addresses nearer than it and half farther, and looking at something else moves
+the split there. Parallax gives one more reason to think it should. A thing at the corner is a thing at parallax's corner:
+a step of two thumbs, half the baseline equal to the distance, places it with the least error, ε·cosh(ln k) at its least,
+just ε (the sixth essay). The finest grain and the best baseline fall on the same thing, the one looked at. Counted per
+stretch, the split is a heat map in distance, (1/π)·sech(ln(d/H)), hottest at the thing looked at and cooling alike nearer
+and farther (the fifth essay, section 10).
 
 The same holds when the thing read is a shape. Epicycles draw an outline from one standpoint at the centre; terms read from
 standpoints stepped toward a dent draw it in about an eighth as many, and every one of them stands at the dent (the tenth essay,

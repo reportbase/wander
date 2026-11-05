@@ -164,15 +164,16 @@ its height. So sweeping evenly in azimuth and evenly in *height*, rather than in
 That is Johann Lambert's equal-area map of 1772. Swept that way, every pair keeps its corner and the near field is a
 third.
 
-Put another way: the even sweep is not two sweeps, one per thumb. It is the three thumbs swept together through the
-quarter turn, every pair from its home to its horizon, which down the thumbs' diagonal is the wedge and nothing past it.
+Put another way: the even sweep is not two sweeps, one per thumb. It is the three thumbs swept together, every pair
+through its quarter turn from its home to its horizon, which down the thumbs' diagonal is the wedge, one part of the
+hemisphere the reader sees (section 10).
 The two angle sweeps reach the same directions; what they get wrong is the weight. Swept one after the other, round and
 then up, the directions pile toward the up thumb, where a turn round it shrinks to nothing; swept up and then round, they
 pile toward another thumb, and the pair that leaves its corner changes with the order. Swept together there is no order,
 since no pair is taken past its horizon. A writer holding every turn of space finds the same law from outside, the one
 Haar's theorem of 1933 leaves alone, with any turns of a rigid shape adding up to one turn about one axis, Euler's theorem
-of 1776; that is the writer's account from the whole sphere, and the round of the look past the wedge is what a head
-turned all the way round would see, other facings joined. The thumbs ride the shape as marks, landing at the same places
+of 1776; that is the writer's account from the whole sphere, and the half of it behind the reader is what a head turned
+all the way round would see, other facings joined. The thumbs ride the shape as marks, landing at the same places
 on the screen however it is pointed. With one thumb, in the plane, the two ways are one, which is why the difference waits
 for the third.
 
@@ -355,15 +356,32 @@ lands on it. The reader has no shape here: a point, a vantage. The rings and the
 that point holds.
 
 Strip away the world and that drawing is the read itself: the addresses in thumbs, thinning off the crosshair as the
-two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)), out to the wedge's triangle, where each pair of thumbs meets its home or its
-horizon; or laid by count, each ring holding the same share of the wedge. That triangle is the quarter turn, the read. Drawn
-as a full round about the crosshair, rings to a horizon on every side, it would be the head turned all the way round, other
-facings joined: the writer's picture. Shown as a height, the same law is a hill over the triangle, its peak the corner. Nothing in it changes when the look turns or the world is scaled, because
+two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)), in rings about the look out toward a horizon on every side; or laid by count,
+each ring holding the same share. The whole screen is the hemisphere in front: every direction ahead lands on it once,
+tan α from the crosshair, and only the rim, 90° off, never lands. A reader sees that hemisphere, with the most fidelity
+where it looks, and the Cauchy is nothing smaller: its shape is the hemisphere itself, everything the reader sees. Spread
+evenly over the hemisphere, the directions are the Cauchy on the screen, point for point; its peak is the look, half of it
+lies within 60° of the look, and its long tail is the rim, which is why it has no mean. The wedge's triangle is a part of
+it, where each pair of thumbs runs from its home to its horizon; the sphere behind is the head turned all the way round,
+other facings joined, the writer's. Shown as a height, the same law is a hill about the crosshair, its peak the look. Nothing in it changes when the look turns or the world is scaled, because
 there is no world in it: no payload, only the geometry the payload would paint.
 
 Nor does it change when the thumb is dragged. Put a row of things along the look and drag H: the things slide along the
 distance addresses, in or out of the near field, half the addresses inside the thumb at every H, and the screen and the hill
 stay exactly as they were. The Cauchy is the same at every H; the thumb decides only where the things land.
+
+So the Cauchy has no near field and no far field. No length enters it. Near and far are a separate overlay, which H lays
+over the read: along every direction one thumb out, half that direction's addresses nearer and half farther. The overlay
+is a split, a mark on every direction, not a body or a dome; take it away and the Cauchy is unchanged. The reader moves it
+by looking: the thing the crossed thumbs point at is taken as H, so it sits at the corner. That a reader does so is a
+speculation, and the reason to is that it is optimal (the fourth essay, section 13).
+
+Counted per stretch, the two layers are two heat maps. The Cauchy's own is in direction: per unit of reading on the screen,
+hottest at the look and falling as cos³ of the angle off it, to 0.35 of the peak one thumb off (45°) and 0.125 at 60°, none
+at the rim (by angle on the hemisphere itself the directions are even, with no heat at all). The overlay's is in distance:
+read by ratio, (1/π)·sech(ln(d/H)), hottest at one thumb and cooling alike both ways, 0.8 of the peak at one in 2 and at two
+thumbs, 0.47 at four, 0.25 at eight. Multiplied, they are hottest at one point, the thing looked at, on the look one thumb
+out, and they meet there only because the look points at it.
 
 *Demo: the read (the addresses in thumbs and by count, the hill, from the side where the reader stands, the thumb
 dragged, and the shape swept whole against each thumb on its own).*
