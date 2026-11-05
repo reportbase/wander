@@ -94,6 +94,10 @@
             counted (dots) against the two-dimensional Cauchy, 1 − 1/√(1 + q²): a density (2/π)·cos³α, the solid angle per
             unit of flat screen.</p></div>
         </div>
+        <div style="margin-top:10px"><canvas id="skyFall" height="200"></canvas><p class="cap">The dark corners (essay 17,
+        "The Cauchy map"). The share of the looking per unit of screen against the angle off the axis: cos³α (teal), the map,
+        there before any light arrives; and cos⁴α (gold), a photograph's natural vignetting, the map times one more cosine for
+        the aperture seen at a slant. Three of the four cosines are geometry. The heat is given; the paint is met.</p></div>
     </div>
     <p class="note">The pinhole forms the image point x/z by itself; no one computes it from x and z. The reach cancels
     between the two legs of each reading before it arrives. Behind it: <i>Observation from Somewhere</i> §9, "The inscribed
@@ -197,7 +201,9 @@
         for (let i = 0; i < n; i++) { const h = Math.abs(gauss()), v = Math.abs(gauss()), v2 = Math.abs(gauss()); pts.push([v / h, v2 / h]); }
         const exact = q => 1 - 1 / Math.sqrt(1 + q * q), share = q => pts.filter(([a, b]) => a * a + b * b <= q * q).length / n;
         return { pts, share, exact, density: (s1, s2) => (2 / Math.PI) / Math.pow(1 + s1 * s1 + s2 * s2, 1.5),
-            cos3: (s1, s2) => (2 / Math.PI) * Math.pow(1 / Math.sqrt(1 + s1 * s1 + s2 * s2), 3) };
+            cos3: (s1, s2) => (2 / Math.PI) * Math.pow(1 / Math.sqrt(1 + s1 * s1 + s2 * s2), 3),
+            // the dark corners: the map's share per unit of screen at α off the axis, against the middle's, and a lens's
+            falloff: deg => { const c = Math.cos(deg * Math.PI / 180); return { map: c ** 3, lens: c ** 4 }; } };
     }
     let skyShown = null;
     function drawSky() {
@@ -219,9 +225,23 @@
         for (let i = 1; i <= 16; i++) { const q = qmax * i / 16; g.beginPath(); g.arc(X(q), Y(skyShown.share(q)), 3, 0, 2 * Math.PI); g.fill(); }
         txt(g, `within 1: counted ${skyShown.share(1).toFixed(3)}, exact 1 − 1/√2 = ${skyShown.exact(1).toFixed(3)}`, 10, 16, '#e6e4ee', 11);
         txt(g, 'q →', W - 34, H - 6, '#8a8a96', 10);
+        [g, W, H] = fit($('skyFall'));
+        const AX = a => 34 + (W - 50) * a / 90, AY = f => H - 22 - (H - 40) * f;
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.lineWidth = 1; g.beginPath();
+        g.moveTo(34, AY(0)); g.lineTo(W - 16, AY(0)); g.moveTo(34, AY(0)); g.lineTo(34, AY(1)); g.stroke();
+        for (const [key, col] of [['map', '#8ce6cd'], ['lens', '#d4a052']]) {
+            g.strokeStyle = col; g.lineWidth = 2; g.beginPath();
+            for (let i = 0; i <= 180; i++) { const a = 90 * i / 180, pt = [AX(a), AY(skyShown.falloff(a)[key])]; i ? g.lineTo(...pt) : g.moveTo(...pt); }
+            g.stroke();
+        }
+        g.fillStyle = '#e6e4ee';
+        for (const a of [30, 45, 60]) { const f = skyShown.falloff(a); g.beginPath(); g.arc(AX(a), AY(f.map), 3, 0, 2 * Math.PI); g.fill();
+            txt(g, `${a}°: ${f.map.toFixed(2)} · ${f.lens.toFixed(2)}`, AX(a) + 5, AY(f.map) - 6, '#e6e4ee', 10); }
+        txt(g, 'cos³α the map, cos⁴α a lens: the middle 1, at 45° 0.35 and 0.25 (two stops)', 10, 14, '#e6e4ee', 11);
+        txt(g, 'angle off the axis →', W - 120, H - 6, '#8a8a96', 10);
     }
     $('skyBtn').addEventListener('click', () => { skyShown = skyShown ? null : sky(); $('skyBtn').classList.toggle('on', !!skyShown);
-        if (!skyShown) { for (const id of ['sky', 'skyLaw']) fit($(id)); } else drawSky(); });
+        if (!skyShown) { for (const id of ['sky', 'skyLaw', 'skyFall']) fit($(id)); } else drawSky(); });
     window.addEventListener('resize', drawSky);
     if (q.get('sky') === '1') { skyShown = sky(); $('skyBtn').classList.add('on'); drawSky(); }
     window.__pinhole = { reading, ruler, set, state, sky };

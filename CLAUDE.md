@@ -1639,6 +1639,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R709 (5 Nov; Tom: "update the demos"): `pinhole.html`'s sky adds the dark corners (cos³α the map, cos⁴α a lens; hook
+  `sky().falloff(deg)`); `demos.html`'s pinhole, plane-sphere and epicycles cards point to essay 17.
   R708 (5 Nov; Tom: "lets create a new essay to explore the cauchy map."): essay 17, `papers/essays/17-the-cauchy-map.md`,
   *The Cauchy map: heat given, paint met* (a photograph's dark corners; R700–R707 as one essay); card, README row,
   explainers' not-yet list; the smoke test counts seventeen essays.

@@ -7352,6 +7352,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R709** (5 Nov; Tom: "update the demos"): essay 17 in the demos. `pinhole.html`'s uniform sky gains "the dark
+  corners", cos³α (the map) against cos⁴α (a lens's vignetting) by the angle off the axis, 0.35 and 0.25 at 45°
+  (hook `sky().falloff(deg)`); `demos.html`'s pinhole, plane-sphere and epicycles cards point to essay 17.
 - **R708** (5 Nov; Tom: "lets create a new essay to explore the cauchy map."): essay 17,
   `papers/essays/17-the-cauchy-map.md`, *The Cauchy map: heat given, paint met*, opening on a photograph's dark corners
   (cos⁴ vignetting, three cosines the map's): R700–R707 gathered as one essay; the derivation (dθ = ds/(1 + s²),
