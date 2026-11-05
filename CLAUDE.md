@@ -946,7 +946,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   for explainers"), the same style: a card an explainer (draw's scrolling explainers, `gallery/explained.html?x=…` in
   reportbase/draw: reading and writing for essay 1, one length turned for essay 2, addresses for essay 3, near and far
   for essay 4, many standpoints for essay 6, where it shows up for essay 7 (since 1 Nov, SPN R610: the lighthouse,
-  Mercator's chart and the moving sky), rates, not angles for essay 14 (since 2 Nov, SPN R611), the Tangent Bridge and how leaves become a curve for essay 10), the essay it
+  Mercator's chart and the moving sky), rates, not angles for essay 14 (since 2 Nov, SPN R611), the Cauchy map for essay 17 (since 5 Nov, SPN R712), the Tangent Bridge and how leaves become a curve for essay 10), the essay it
   explains, its steps (the scene's beats), and links to the explainer, the essay's card, the essay and the scene's tile;
   then the essays with none yet. Linked from `essays.html` and `demos.html`. Add a card when an explainer is made.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on

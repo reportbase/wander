@@ -7357,7 +7357,8 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   and a flat wall in space; the tiles flat; the Poisson and hemisphere constants equal for n = 2–5), stepping back
   (e^(−d|k|) against a Gaussian of the same half-width and a box blur; the Cauchy from d convolved with itself on the
   Cauchy from 2d), and the second map in distance under a thumb slider. Cards on `demos.html` and essay 17's; essay 17's
-  demos. The explainer is draw's (`explained.html?x=cauchymap`).
+  demos. The explainer is draw's (`explained.html?x=cauchymap`, reportbase/draw#61, six beats); its card on
+  `explainers.html` and a link on essay 17's card.
 - **R711** (5 Nov; Tom: "update the essays"): R710 in the essays. Essay 5's and essay 8's cos⁴ falloff: three of its four
   cosines the heat, the fourth the aperture's (0.35 against 0.25 at 45°; essay 17). Essay 3's recovery by undoing the
   blur: a Gaussian keeps every mode too, damping by k², the box blur alone loses them. Essay 13 corrected: the inversion
