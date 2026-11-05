@@ -7352,6 +7352,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R710** (5 Nov; Tom: "update the reads and writes paper"): essay 17's additions carried into *Reads and Writes* §7
+  "Where the heat comes from": a lens's cos⁴α vignetting, three of its cosines the heat (0.35 against 0.25 at 45°); the
+  Cauchy neither the wall's nor the eye's alone, the rate at which a turn consumes the world; the Gaussian too keeps every
+  frequency (k² against |k|, a variance against a scale), the box blur alone loses them. Code and data names `pinhole.html`.
 - **R709** (5 Nov; Tom: "update the demos"): essay 17 in the demos. `pinhole.html`'s uniform sky gains "the dark
   corners", cos³α (the map) against cos⁴α (a lens's vignetting) by the angle off the axis, 0.35 and 0.25 at 45°
   (hook `sky().falloff(deg)`); `demos.html`'s pinhole, plane-sphere and epicycles cards point to essay 17.
