@@ -7352,6 +7352,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R716** (5 Nov; Tom: "1", to a tightening pass of *Reads and Writes*, then "Yes" to `plans/rw-tighten.md`): repeats
+  folded into one home each, nothing dropped: the abstract 578 → 352 words in three paragraphs; §1's two definitions of a
+  read one, time and flags their own paragraph ("Reads are unconnected"), the race said once ("Reads do not conflict"),
+  "Words" at the head; ln z one clause in §1, home §5; §2's second "practice takes the median", its stained-glass window
+  (§3's) and its second two-axis paragraph cut; §6's crosshairs and "Read in ratios" one passage, K and addresses (with
+  R707's metaphor) home in "K and N", "The far field in proportion" cut (§9 item 7); §7's tunnel and hemisphere one
+  passage each, "Where the reader stands" three sentences, "A heat map" folded into "Where the heat comes from", the
+  writer's cube and sphere one; §8's Euler bullet and §10's mountain as H pointers. Long lines rewrapped. 20,371 → 19,161
+  words (the plan's 15,500 was too high: most repeats were a sentence or two, not paragraphs). The epicycles passage left
+  in §6. Essay 17 and `cauchy-map.html` now cite "Where the heat comes from" for the folded "A heat map".
 - **R715** (5 Nov; Tom: "update the demos"): R713 in the demos. `pinhole.html`'s dark-corners panel adds the same looking
   per unit of the stereographic chart, cos⁴(α/2) (0.73 at 45°; hook `sky().falloff(deg).stereo`), the share within α
   1 − cos α on either chart; `boost-sky.html`'s closing note says no law on the sky is unchanged by a boost.
