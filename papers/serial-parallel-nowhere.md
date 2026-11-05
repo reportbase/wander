@@ -7352,6 +7352,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R722** (5 Nov; Tom: "all three"): R721 carried out.
+  - *Reads and Writes* §2: "The Cauchy's routes" after the derivation (one measure from z; the routes; one in the plane,
+    agreeing on flat boundaries, parting on curved ones; told apart only by what γ tracks; the turn the reader's route;
+    "find the z"; the seeds no z). Code and data names the note.
+  - Essay 17 §4: the look and the walk as two routes of several, with the ball's 0.482 against 0.359.
+  - Essay 13 §5: the boundary decides, not the dimension alone.
 - **R721** (5 Nov; Tom: "lets work on the math. I know cauchy shows up for a variety of reasons, not just ours.", then
   "ok"): a working note, `plans/cauchy-routes.md`, checked in `runs/crt/` at 30 digits. Run 1 had two misses from my
   quadrature, fixed in run 2.
