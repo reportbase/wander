@@ -104,7 +104,7 @@ past it, thinning as 1/i².
 
 `sizeof` is not among them. The reader's breadth is its own, never the array's.
 
-So the reader reads a sweep of the array, not the array. It holds the part of the turn it has passed, the addresses
+So the reader reads a sweep of the array, not the array. It holds the part of the turn it has passed, the directions
 from the foot up to where it is now, each with whatever it found there. With the foot at slot 0 and γ = 1, half of its
 turn is spent on the first slot, and the other half on everything from there on. With γ = 10, half its turn lands on the
 first ten slots.
@@ -239,7 +239,7 @@ Run with K = 32 and H = 10, on a world whose slots are numbered positions 0, 1, 
   reader's slots are unchanged.
 - *H is a zoom.* Change H alone, the size of the thumb, and different elements land in the slots; the slots themselves do
   not move.
-- *The payload is not the address.* Repaint every element and every slot keeps its place. Six of the 32 near home stay
+- *The payload is not the slot.* Repaint every element and every slot keeps its place. Six of the 32 near home stay
   unpainted, because no element of a world laid in whole steps lies in their narrow cones: directions with nothing on
   them, as real as the painted ones.
 
@@ -247,8 +247,8 @@ And where the world does end, the paint stops. A world of 100 elements leaves th
 reads N/H, the world's length in thumbs, as between 6.7 and 10.2 (the truth, 99/10, inside). The reader reads N/H to its
 slot's width, never N. The script is `runs/arr/reader.mjs`.
 
-**What the program does not have: the Cauchy itself.** The program recreates the reader's K addresses, a finite picture
-of the Cauchy cut into K quantiles. It does not recreate the Cauchy, because the Cauchy handles a true infinity and a
+**What the program does not have: the Cauchy itself.** The program recreates the reader's heat as K addresses, a writer's
+count of it: a finite picture of the Cauchy cut into K quantiles. It does not recreate the Cauchy, because the Cauchy handles a true infinity and a
 computer cannot. In the program the whole tail past the last boundary is one slot, and the code stops there by fiat: it
 never holds the tail as a tail, only a token for it. The arithmetic shows the same edge. The largest double is about
 1.8·10³⁰⁸, and past it there is only the symbol +∞; `Math.atan(Infinity)` returns π/2, but no element ever sits there,
@@ -256,7 +256,7 @@ and `Math.tan(Math.PI/2)` returns about 1.6·10¹⁶, not infinity, because π/2
 usual way, tan(π(U − ½)) with U a uniform double, never exceeds about 2·10¹⁵, so a computer's "Cauchy" is truncated, and
 a truncated Cauchy has a mean: its readings' sizes average about 23. The true Cauchy has none. Its missing mean is the
 trace of a horizon that is never reached, and a machine that must stop somewhere has a horizon it reaches. So a program
-can recreate where a reader's addresses fall and what paints them, never the horizon. That the geometry gives the
+can recreate the reader's heat cut into K slots and what paints them, never the horizon. That the geometry gives the
 Cauchy free is not a figure of speech: it gives what no computation can.
 
 ---
@@ -265,15 +265,18 @@ Cauchy free is not a figure of speech: it gives what no computation can.
 
 Back to `int a[10]`. Read from a standpoint, it splits along the same two sweeps.
 
-**Inscribed: the index as addresses.** Give the reader K addresses, equal steps of turn over its quarter turn. They land
-at
+**Inscribed: the index as directions.** Give the reader a fineness K, equal steps of turn over its quarter turn; counted
+out, as a writer counts them, they are K places, and they land at
 
   i = m + γ·tan((k + ½)·π/2K),  k = 0, 1, …, K − 1.
 
 For K = 10, in units of γ from the foot, that is 0.079, 0.240, 0.414, 0.613, 0.854, 1.171, 1.632, 2.414, 4.165 and
 12.71. Five of the ten fall inside the corner, whatever the array holds and however long it is. These are the half-Cauchy's
 quantiles. They are where the reader can look, laid before anything is stored, and the same for every array. Far slots
-share addresses; near slots each get several. That is not a fault of the reader's resolution. It is what a sweep is.
+share a place; near slots each get several. That is not a fault of the reader's resolution. It is what a sweep is.
+To the reader there are no K places at all, only a heat: a continuous weight over its directions, the Cauchy, hottest
+at the foot and cooling toward the horizon, which these ten quantiles cut into equal shares. The heat is given; the paint
+is met.
 
 **Central: the values as payload.** Lay the slots round a circle instead, one per equal step of turn, and stand at its
 centre. Now the directions are given, one per slot, and what each slot holds arrives along its direction as an amount:
@@ -284,12 +287,12 @@ reaches.
 
 **`a[i]` holds both as one.** In code, `a[i]` is one expression, the place and what is at the place. From a standpoint
 they are two things that meet. Euclid's III.20 says where: the ray from home at θ and the radius from the centre at 2θ
-end at the same point of the circle. The address is the ray; the payload is what the radius finds; they share that
-point and nothing else. Change what is stored and no address moves. That is the third essay's theorem, met in the most
+end at the same point of the circle. The direction is the ray; the payload is what the radius finds; they share that
+point and nothing else. Change what is stored and no direction moves. That is the third essay's theorem, met in the most
 ordinary data structure there is. The papers' first intuition for the Cauchy came from arrays, and this is why.
 
-**The floor is the writer's index.** `Math.floor(N·x)` turns a share into a slot, and it needs N. The reader's address is
-continuous. What the floor throws away, the fraction below the slot, is not noise: its binary digits are the address halved
+**The floor is the writer's index.** `Math.floor(N·x)` turns a share into a slot, and it needs N. The reader's direction is
+continuous. What the floor throws away, the fraction below the slot, is not noise: its binary digits are the direction halved
 again and again, toward the end at 0 of section 4. The eighth essay gives it its full room.
 
 ---
@@ -326,7 +329,7 @@ because it was never an amount.
 
 **Compute with order, not sums.** Medians, quartiles, ranks and comparisons are exact and finite on directions, and none
 of them needs to know how far the tail goes. Means are the operations that need the true infinity, and they are the ones
-a truncated Cauchy gets wrong. A program that keeps to order on its addresses is therefore faithful to the true Cauchy
+a truncated Cauchy gets wrong. A program that keeps to order on its directions is therefore faithful to the true Cauchy
 even though it cannot draw from its tail: the median of its readings is the true median, the quartiles the true
 quartiles. The third essay's theorem, that order survives every change of what arrives and sums do not, becomes a rule
 for code.
