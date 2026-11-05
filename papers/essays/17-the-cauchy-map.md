@@ -257,10 +257,12 @@ places a computer counts on it are a writer's sampling, useful and not the thing
 
 ## 11. What it changes
 
-It changes where to look for the Cauchy. If the Cauchy is a map of looking, then wherever it turns up there should be a
+It changes where to look for the Cauchy. If the Cauchy is a map of looking, then where it turns up, look for a
 standpoint and a turn behind it: a lamp turning over a shore, a phase turning over a resonance, a walker leaving a point.
 Find the turn, and the amounts are the paint. Where no turn can be found, the reading does not apply, and that is the test
-that could fail.
+that could fail. It has failed once: seeds falling from a plant, read as a straight flight from the release point, should
+land as the hemisphere's Cauchy with a tail falling as the cube of the distance; on 35 measured wind-dispersed kernels the
+tails fall about as the square, a mixture over wind speeds. A fat tail is not, by itself, a map of looking.
 
 It changes what to expect of an average. The map's middle is a median, and the median is the statistic that survives
 every change of chart. Practice already takes the median of a Cauchy and never its mean; the map says why.

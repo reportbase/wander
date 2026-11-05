@@ -269,7 +269,9 @@ It can be computed from a sort. A *value statistic* depends on sizes: the mean, 
 In computing terms: order statistics are index statistics and sums are value statistics, and that is a theorem, not a
 convention. Finding a Cauchy in data is, by itself, no evidence that anything in the world is spread that way. The test
 for any Cauchy met in practice is to find the turn and find the amount: a spectral line is a strength, an amount whose
-values add, times a profile laid by the uniform turn of a phase.
+values add, times a profile laid by the uniform turn of a phase. Where no turn can be found, the fat tail is the
+payload's: seed-dispersal kernels, tested against the turn a falling seed would make, turned out to be a mixture of
+amounts.
 
 The median needs less than the uniform turn. Any sweep from all of h to all of v that treats the two parties alike puts
 its median at the corner; if its weight also stays above zero near the horizon, it has no mean. Only the uniform turn

@@ -1648,6 +1648,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R719 (5 Nov; Tom: "narrow it"): **a Cauchy-type law is a turn's heat only where the turn can be named apart from its
+  shape; a fat tail alone is no evidence** (TCF's seed kernels a mixture of amounts). *Reads and Writes* §11 (a bullet and
+  "And one where it failed"); essays 3 §7, 16, 17 §11. Never say every Cauchy met in the world is a turn.
   R718 (5 Nov; Tom: "1", "yes"): TCF (`plans/tcf-plan.md` + `runs/tcf/`), the test that can fail, on Bullock et al.
   2017's seed-dispersal kernels (Dryad doi:10.5061/dryad.mq2ff, CC0, supplied by Tom; not committed). The prediction p = ½
   (a straight flight from the release point, uniform over the hemisphere) is killed: T1 (median p 0.104) and T5 (median
