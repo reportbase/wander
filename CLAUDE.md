@@ -1639,6 +1639,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R702 (5 Nov; Tom: "seems like the cauchy creates a kind of heat map, hottest at the corner.", then "yes, and add it to the
+  paper"): the read as a heat map, cos³α off the look (per unit of reading) times sech(ln(d/H)) (per ratio), hottest at
+  the thing looked at; heat, not a shape. *Reads and Writes* §7; `read.html` painted by it (hook `heat`).
   R701 (5 Nov; Tom: "trying to give the cauchy a shape is problematic. its shape is simply the hemisphere itself, everything
   the reader sees."; then "reader seperates the near filed from the far field by looking around at objects … setting the
   object at the corner is best for parallax."): **the Cauchy's shape is the hemisphere, nothing smaller**; one thumb is a

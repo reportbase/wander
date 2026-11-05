@@ -7352,6 +7352,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R702** (5 Nov; Tom: "seems like the cauchy creates a kind of heat map, hottest at the corner."; "yes, and add it to the
+  paper"): counted per stretch the read is a heat map. In direction, per unit of reading on the screen, cos³ of the angle
+  off the look (0.35 at 45°, 0.125 at 60°, 0 at the rim); by angle on the hemisphere, even, no heat. In distance, per ratio,
+  (1/π)·sech(ln(d/H)): 0.8, 0.47, 0.25 of the peak at one in 2, 4, 8 and at two, four, eight thumbs (per plain distance
+  thickest at the eye). The product peaks at the corner, on the look one thumb out, the thing looked at, and moves with
+  the look. Heat in the readings, not a shape (R701). *Reads and Writes* §7 "A heat map, hottest at the corner";
+  `read.html`'s depth panel (the section through the look) and side view painted by it, hook `heat(α, d/H)`.
 - **R701** (5 Nov; Tom: "seems to me the cauchy is the hemispere"; "trying to give the cauchy a shape is problematic. its
   shape is simply the hemisphere itself, everything the reader sees."; "yes. reader seperates the near filed from the far
   field by looking around at objects. the reason we can speculate that is because its optimal, setting the object at the

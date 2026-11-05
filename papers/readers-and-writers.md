@@ -722,6 +722,16 @@ is that it is optimal: the corner is where a reading's cells are finest relative
 thing at the corner is the thing at parallax's corner, since a step of two thumbs, half the baseline equal to the distance,
 places it with the least error, ε·cosh(ln k) at its least, ε (§8, "The thing itself as H"). Putting the thing looked at on the corner is what a reader should do; whether readers do is open.
 
+**A heat map, hottest at the corner.** Count the addresses in a small stretch and the read is a heat map. In direction,
+on the hemisphere itself, by angle, there is no heat: the directions are even. Read off the look, per unit of reading on
+the screen, they are 1/(2π(1 + r²)^(3/2)): hottest on the look, falling as cos³ of the angle off it, to 0.35 of the peak one
+thumb off (45°) and 0.125 at 60°, none at the rim. In distance, per unit of plain distance they are thickest at the eye,
+2/(π(1 + x²)) with x = d/H; but read as the reader reads distance, by ratio, they are (1/π)·sech(ln(d/H)), hottest at one
+thumb and cooling alike both ways: 0.8 of the peak at one in 2 and at two thumbs, 0.47 at one in 4 and four, 0.25 at one in
+8 and eight, never zero. The two together are hottest at one point, on the look one thumb out: the corner, the thing looked
+at. Look at something else and the hot spot goes with it. The heat is in the readings, not a shape: the shape is still the
+hemisphere, and the heat is how its addresses crowd as the reader reads it.
+
 **The shape is swept, not each thumb.** Each pair of thumbs reads a quarter turn: from its home, where it reads 0, to its
 horizon, where it reads ∞. Down the thumbs' diagonal that is the wedge, a triangle on the screen whose corners are the
 thumbs and whose edges are where a reading is 0 or ∞, inside the hemisphere the read holds; the sphere behind is other
