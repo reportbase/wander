@@ -187,6 +187,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `fid=addr`, by distance address: across equal angles (±75°), up the row (2/π)·atan(D/ρ) with heights at the rate
   (2/π)·D/(ρ² + D²), the thumb at the crosshair, rows one in 2, 4, 8 bunching under the horizon (labelled with words on).
   The toggle: by distance address / tunnel / equal area / by turns / silver ball / flat screen. Hook adds `addr()`, `cull()`.
+  Since R698 (Tom: "Yes", to the tunnel as the quarter turn, after R696): the tunnel is drawn in the wedge only (`wedgeEdge`,
+  35.26° at a home, 54.74° at a thumb, its rings clipped to it), the full round the menu's "tunnel turned all the way round"
+  (`?round=1`); `tunnel()` adds `quarter` and `edge(β)`, `set` takes `round`.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
@@ -1621,6 +1624,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   one read with V is the ball's octant, without V the cone (three faces at the eye, no cap), unmoved by scaling about its
   apex, cut by the thumb's screen as the quadrant or the triangle. *Reads and Writes* §7 "The sphere without V, and the
   cone of one read", with the table sphere / Cauchy plane / cone.
+  R698 (5 Nov; Tom: "Yes"): `crosshairs.html`'s tunnel the quarter turn, the round an option; *Reads and Writes* §7's tunnel
+  paragraph says one read's tunnel is a quarter turn.
+  R699 (5 Nov; Tom: "so the shape must be some kind of a 1/2 wedge.", "wouldn't the shape be more of a hemisphere.", "the
+  long tail is the far field", "yes"): the read is a half wedge: H cuts every direction's addresses in half; the near half
+  the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
+  hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
+  body and the tail"; `read.html`'s side view draws the dome and the tail.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

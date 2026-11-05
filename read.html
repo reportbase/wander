@@ -31,7 +31,9 @@
     Where the reader stands (5 Nov, Tom: "where is the reader standing?", then "yes" to a side view): an inset, the
     section through the look and one thumb; the reader a point (R643), the screen square to the look one length out, the
     look to the crosshair, one thumb off at 45°, the thumb at 54.74° landing at √2, the home at 35.26° at 1/√2, the
-    horizon parallel to the screen; the read's sweep turning off the look as it is drawn out.
+    horizon parallel to the screen; the read's sweep turning off the look as it is drawn out. Since R699 (Tom: "so the
+    shape must be some kind of a 1/2 wedge.", then "yes"): the near half the Cauchy's body, a dome one thumb about the eye (an arc
+    through the crosshair, home's ray to the thumb's) shaded teal; the far half its long tail, the arc at 2, 4, 8 dashed.
     -->
     <style>
     :root { color-scheme: dark; --ground: #04040a; --panel: rgba(18,18,26,0.94); --line: rgba(255,255,255,0.10); --ink: #c8c8d0;
@@ -126,7 +128,9 @@
     <li><b>Where the reader stands.</b> Bottom left, from the side: the reader is a point behind the screen, the look
     running from it through the crosshair. Every mark on the screen is a direction from that point, landing tan α off the
     crosshair; the thumb leaves at 54.74° and lands at √2, its home at 35.26° the other side; the horizon, 90° off the
-    look, runs parallel to the screen and never lands.</li>
+    look, runs parallel to the screen and never lands. Shaded, the near half of the read, the Cauchy's body: a dome one
+    thumb about the reader over the wedge, here an arc from the home's ray to the thumb's, closed, holding half of every
+    direction's addresses. Dashed, the far half, the long tail: the arc at 2, 4, 8 thumbs, opening out and never closed.</li>
     <li><b class="t">Drag the thumb.</b> Bottom right, a row of things at their distances. Above, the writer's line in
     units, H the gold mark, the reader's distance addresses H·tan(kπ/2K) as ticks: drag along it to make H larger or
     smaller. Below, the reader's lay: the same addresses, each the same room, half before the corner and half after. Drag
@@ -350,6 +354,16 @@ function drawSide() {
         sdx.lineTo(x, yc); sdx.stroke(); sdx.setLineDash([]); return [x, yc, y === yc]; };
     sdx.setLineDash([3 * dpr, 4 * dpr]); sdx.strokeStyle = rgba('ink', 0.35); sdx.lineWidth = 1 * dpr; sdx.beginPath();
     sdx.moveTo(ex, ey); sdx.lineTo(ex, top); sdx.moveTo(ex, ey); sdx.lineTo(ex, bot); sdx.stroke(); sdx.setLineDash([]);
+    // the near half closed (R699): the Cauchy's body, a dome one thumb about the eye over the wedge, cut here through the
+    // look and this thumb (an arc from the home's ray to the thumb's, drawn through the crosshair on the screen); past it
+    // the long tail, the same arc at 2, 4, 8 thumbs, dashed, never closing.
+    const domeArc = R => { sdx.beginPath(); sdx.arc(ex, ey, R, -SIDE.thumb, -SIDE.home, false); };
+    sdx.save(); sdx.beginPath(); sdx.rect(0, top, W, bot - top); sdx.clip();
+    for (const k of [2, 4, 8]) { domeArc(k * u); sdx.setLineDash([3 * dpr, 4 * dpr]); sdx.strokeStyle = rgba('violet', 0.45 - 0.08 * Math.log2(k));
+        sdx.lineWidth = 1 * dpr; sdx.stroke(); }
+    sdx.setLineDash([]); sdx.restore();
+    sdx.beginPath(); sdx.moveTo(ex, ey); sdx.arc(ex, ey, u, -SIDE.thumb, -SIDE.home, false); sdx.closePath();
+    sdx.fillStyle = rgba('teal', 0.14); sdx.fill(); domeArc(u); sdx.strokeStyle = rgba('teal', 0.75); sdx.lineWidth = 1.3 * dpr; sdx.stroke();
     ray(SIDE.one, rgba('gold', 0.5), 1);
     const th = ray(SIDE.thumb, rgba('teal', 0.85), 1.4), ho = ray(SIDE.home, rgba('gold', 0.7), 1.2);
     // the read sweeping: a ray turning off the look as the read is drawn out (share passed → its angle)
@@ -369,7 +383,11 @@ function drawSide() {
         sdx.fillStyle = rgba('gold', 1); sdx.fillText('the corner', sxp + 6 * dpr, ey + 3 * dpr);
         sdx.fillStyle = rgba('teal', 0.9); if (th[2]) sdx.fillText('a thumb', sxp + 6 * dpr, yOf(SQ2) + 3 * dpr);
         sdx.fillStyle = rgba('gold', 0.85); sdx.fillText('home', sxp + 6 * dpr, yOf(-1 / SQ2) + 3 * dpr);
-        sdx.fillStyle = rgba('ink', 0.55); sdx.textAlign = 'center'; sdx.fillText('horizon', ex, top + 9 * dpr); }
+        sdx.fillStyle = rgba('ink', 0.55); sdx.textAlign = 'center'; sdx.fillText('horizon', ex, top + 9 * dpr);
+        const at = (R, a) => [ex + R * Math.cos(a), ey - R * Math.sin(a)];
+        const nc = at(0.62 * u, SIDE.thumb * 0.55); sdx.fillStyle = rgba('teal', 0.95); sdx.textAlign = 'left'; sdx.fillText('near: the body', nc[0], nc[1]);
+        const fc = at(1.6 * u, SIDE.home * 0.45); sdx.fillStyle = rgba('violet', 0.85); sdx.textAlign = 'left';
+        if (fc[0] < W - 60 * dpr) sdx.fillText('far: the tail →', fc[0], fc[1]); }
 }
 
 // ---- the hill: the 3D Cauchy as a height over the screen ----
@@ -581,7 +599,8 @@ window.__read = {
     share, ringR, density, byCount, screenOf, thumbs: () => THUMBS, homes: () => HOMES, wedgeShare: () => wedgeShare,
     cells: () => S.R * RAYS,
     side: () => S.side ? { reader: [0, 0], screen: 1, thumb: Math.tan(SIDE.thumb), home: Math.tan(SIDE.home), one: Math.tan(SIDE.one),
-        thumbDeg: SIDE.thumb / DEG, homeDeg: SIDE.home / DEG } : null,
+        thumbDeg: SIDE.thumb / DEG, homeDeg: SIDE.home / DEG,
+        cap: { kind: 'dome', radius: 1, from: SIDE.home / DEG, to: SIDE.thumb / DEG, far: [2, 4, 8] } } : null,
     strip: () => ({ ...stripCounts(), lgH: S.lgH, open: S.strip, addrOf: d => addrOf(d * S.scale, Hnow()), distAddresses: () => distAddresses(Hnow()),
         things: () => THINGS.map(d => d * S.scale), lay: () => Array.from({ length: KD() - 1 }, (_, k) => (k + 1) / KD()) }),
     quarter: () => ({ round: S.round, inWedge, shareW, ringW, total: WT.total }),

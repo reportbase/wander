@@ -536,7 +536,8 @@ gets its addresses in proportion, the first half of the thumb as much room as th
 a thing one thumb wide reads one in two, then one in four, then one in eight, each stretch over which the reading halves
 holding the same number of addresses as the one before, out toward the horizon. A writer counts the same stretches as two
 thumbs, four, eight.
-Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them.
+Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them. In space the near field is the Cauchy's body, a dome one thumb about the eye, half of
+every direction's addresses, closed; the far field its long tail, the other half, open (§7, "Half the read closed").
 
 **The one-thumb circle, and the three corners.** Everything within one thumb of the crosshair's point is a ball (a disc in
 the plane) that touches each face of the wedge, at the cube's corners one thumb back from the crosshair along each thumb.
@@ -639,7 +640,9 @@ horizon they never reach. All of it is generated from the thumb; none of it is s
 turns with the look, continuously and without a seam, so whatever it looks at is at the tunnel's centre with the finest
 addresses, and each address is exact, given by the geometry, not computed. That is the reader's fidelity: perfect wherever
 it looks, because it is wherever it looks. The wedge, the octant and the sphere are what a writer draws to describe that
-tunnel from outside.
+tunnel from outside. One read's tunnel is a quarter turn, not a full round: about the look it reaches to where a thumb's
+share falls to nothing, 35.26° off at a home and 54.74° at a thumb, every pair from its home to its horizon in it; the full
+round about the line of sight is the head turned all the way round, other facings joined.
 
 **Where the reader stands.** Behind the screen, at one point. The look runs from it to the crosshair; a thumb lands √2
 off the look on a screen one thumb away, home at 1/√2, one thumb off at 1, and the horizon runs parallel to the screen and
@@ -692,6 +695,21 @@ short:
 
 The cone is the writer's name for what one read holds; the reader has no shape, only a vantage, and what it can say of
 distance comes only through H, never V.
+
+**Half the read closed: the body and the tail.** H does give the cone one thing: a cut. Along every direction of the read
+the K addresses of distance fall at d/H = tan(kπ/2K), a half-Cauchy in the distance's own reading, the first K/2 inside one
+thumb and the rest past it, whatever the direction and whatever the size of the thumb. The cut is the same on every ray,
+one thumb out, so it is a piece of the sphere one thumb about the eye; over the quarter turn it is a dome over the wedge,
+an eighth of the ball one thumb in radius (in the plane a quarter of the disc). Inside it is the Cauchy's body: the
+addresses close to even, in proportion, and closed by the dome, the one part of the read with a shape, which H alone sets.
+Past it is the Cauchy's long tail: the share left beyond x thumbs is (2/π)·arctan(1/x), 0.295 past two thumbs, 0.156 past
+four, 0.079 past eight, about half of what was left each time the reading halves, out toward a horizon never reached. The
+tail has no end, so the far field has no cap and no shape; and it is heavy, so no mean, which is where a mean of distances
+would fail. The dome is the median on every ray. So the read is a half wedge: the near field the body, closed; the far
+field the tail, open. The cap is the thumb's, not a writer's: it stands one thumb out, never at V, and a larger thumb
+moves it out without changing the half. It is not a hemisphere: the dome covers only the quarter turn the read holds, the
+hemisphere being the head turned all the way round. Nor is it the one-thumb cube: along the look the cube's far corner
+is √3 thumbs out, and two thirds of that ray's addresses lie inside it.
 
 **The shape is swept, not each thumb.** The read is a quarter turn: every pair of thumbs from its home, where it reads
 0, to its horizon, where it reads ∞. Down the thumbs' diagonal that is the wedge, a triangle on the screen whose corners are

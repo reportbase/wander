@@ -129,6 +129,7 @@
     <button data-show="density">the Cauchy's shading <span>on</span></button>
     <button id="fid">view <span>by turns</span></button>
     <button id="sky">the whole sky (the writer's sphere) <span>off</span></button>
+    <button id="round">tunnel turned all the way round <span>off</span></button>
     <div class="sec">H and the world</div>
     <button id="hold">hold H <span>off</span></button>
     <button id="zin">zoom in <span>× 1</span></button>
@@ -246,7 +247,9 @@
     Each direction's reading off the line of sight, in thumbs, is laid by its addresses: every ring of the screen holds as
     many addresses as its room, so the Cauchy's thinning becomes the rings bunching. The rings are the tunnel's walls: the
     corner one thumb off, then one in 2, one in 4, one in 8, each closer to the last, toward the horizon's rim, which no
-    reading reaches. Nothing is behind it. Equal area, the default: the reader's addresses are the directions laid evenly by
+    reading reaches. Nothing is behind it. A read is the quarter turn, so by default the tunnel is drawn in the wedge only,
+    every pair of thumbs from its home (0) to its horizon (∞), out to 35.26° at a home and 54.74° at a thumb; the full
+    round about the look is the head turned all the way round (menu: tunnel turned all the way round). Equal area, the default: the reader's addresses are the directions laid evenly by
     area, and this is the screen that gives each the same room (Lambert's equal-area projection about the crosshair,
     radius 2·sin(α/2)). True at the crosshair, squeezed along the radius by cos(α/2) and widened across by as much, so the
     distortion is nothing at first and grows: under 1% at 15°, 3% at 30°, 8% at 45°. The shading, the directions per bit
@@ -409,6 +412,10 @@ const S = {
     // the whole sky (5 Nov 2026, Tom: "do the whole sky"): every direction at once, behind included, on the equal-area
     // view; at zoom 1 the sphere is a disc, the look its centre and straight behind its rim
     sky: Q.get('sky') === '1',
+    // the quarter turn (5 Nov 2026, SPN R696, R698; Tom: "the sweep is the quarter turn, not the semi-circle, sphere or
+    // circle"; "the demo shows what the cauchy would look like if reader rotated his head 360 degrees"): the tunnel drawn
+    // in the wedge only, every pair from home (0) to its horizon (∞); the full round about the look an option
+    round: Q.get('round') === '1',
     a0: 0, a0show: 0,                       // the pointed thing's angular radius, the region kept true
 };
 $('K').value = String(S.K);
@@ -572,6 +579,13 @@ function focusUnlay(r, a0 = S.a0show) { if (r <= a0) return r; const y = (r - a0
 // 8, each band thinner. The K is the look's: point at something else and D moves, and every look has its own fine
 // band and its own bunch. (A first try laid the dip angle by the Cauchy; heights then came out κ times taller, spikes.)
 const ADDR_ACROSS = 75 * DEG;
+// The quarter turn's outline about the look (R698). Down the thumbs' diagonal each thumb is (√(2/3)·cos φ, √(2/3)·sin φ,
+// 1/√3) in the view's own frame (right, up, ahead). A direction α off the look at bearing β on the screen leaves the wedge
+// where a thumb's share falls to 0: √(2/3)·sin α·cos(β − φ) + cos α/√3 = 0, so the edge is at
+// tan α = 1/(√2·(−cos(β − φ))), the least over the thumbs behind that bearing: 35.26° at a home (opposite a thumb),
+// 54.74° at a thumb. Inside it every pair reads from 0 to ∞; outside, other facings.
+const wedgeEdge = b => { let a = Math.PI / 2;
+    for (const t of THUMBS) { const c = Math.cos(b - PHI[t]); if (c < 0) a = Math.min(a, Math.atan(1 / (Math.SQRT2 * -c))); } return a; };
 const VIEWS = {
     addr: { R: a => a, inv: r => r, name: 'by distance address (the bunching)' },
     tunnel: { R: a => 2 * Math.sin(Math.min(a, Math.PI / 2) / 2), inv: r => 2 * Math.asin(Math.min(Math.SQRT1_2, r / 2)), name: 'the Cauchy tunnel' },
@@ -635,7 +649,11 @@ function drawView() {
     }
     // The 3D Cauchy, centred on the crosshair: the directions, laid evenly by area, per unit of this view's screen,
     // sin α/(R·R′) (R685): cos³α on the flat screen, sin α/α by turns, flat on the equal-area view. Shaded faintly.
-    if (S.show.density && (sky || tunnel)) { // flat when laid by the addresses: every address alike, the disc evenly
+    const quarter = tunnel && !S.round;      // the tunnel as the quarter turn: the wedge only
+    const wedgePath = () => { vc.beginPath(); for (let i = 0; i <= 360; i++) { const b = i / 360 * 2 * Math.PI, R = fa * VW.R(wedgeEdge(b));
+        const x = cx + R * Math.cos(b), y = cy - R * Math.sin(b); if (i) vc.lineTo(x, y); else vc.moveTo(x, y); } vc.closePath(); };
+    if (S.show.density && quarter) { vc.fillStyle = 'rgba(212,160,82,0.11)'; wedgePath(); vc.fill(); }
+    else if (S.show.density && (sky || tunnel)) { // flat when laid by the addresses: every address alike, the disc evenly
         vc.fillStyle = 'rgba(212,160,82,0.11)'; vc.beginPath(); vc.arc(cx, cy, (sky ? 2 : Math.SQRT2) * fa, 0, 2 * Math.PI); vc.fill();
     } else if (S.show.density && !addr) {
         const R = Math.hypot(W, Hh) / 2, gr = vc.createRadialGradient(cx, cy, 0, cx, cy, R);
@@ -668,6 +686,7 @@ function drawView() {
         vc.lineWidth = 1 * dpr; vc.font = `${10 * dpr}px DM Mono, monospace`; vc.textAlign = 'center';
         const rings = [], rim = Math.SQRT2 * fa;
         let lastLab = -1e9;
+        if (quarter) { vc.save(); wedgePath(); vc.clip(); }
         for (let r = 1, n = 0, prev = 0; n < 40; r *= 2, n++) {
             const Rr = fa * VW.R(Math.atan(r)); if (Rr - prev < 1.5 * dpr || rim - Rr < 1.5 * dpr) break; prev = Rr; rings.push([r, Rr]);
             vc.strokeStyle = r === 1 ? 'rgba(212,160,82,0.4)' : `rgba(200,200,220,${0.22 * Math.pow(0.88, n)})`;
@@ -677,9 +696,13 @@ function drawView() {
                 vc.fillText(r === 1 ? 'the corner, one thumb off' : 'one in ' + r, cx, cy + Rr + 11 * dpr); }
         }
         vc.setLineDash([]);
-        vc.strokeStyle = 'rgba(200,200,220,0.3)'; vc.beginPath(); vc.arc(cx, cy, rim, 0, 2 * Math.PI); vc.stroke();
-        if (S.words > 0) { vc.fillStyle = 'rgba(200,200,220,0.55)'; vc.fillText('the horizon, never reached', cx, cy - rim - 6 * dpr); }
-        S.lastTunnel = { cx, cy, scale: fa, rim, rings };
+        if (quarter) { vc.restore(); vc.strokeStyle = 'rgba(45,212,191,0.5)'; vc.lineWidth = 1.2 * dpr; wedgePath(); vc.stroke();
+            if (S.words > 0) { vc.fillStyle = 'rgba(200,200,220,0.55)'; vc.textAlign = 'center';
+                vc.fillText('the quarter turn: every pair from its home (0) to its horizon (∞), the wedge\'s edges', cx, cy - fa * VW.R(wedgeEdge(Math.PI / 2)) - 26 * dpr);
+                vc.fillText('outside: other facings, the head turned all the way round', cx, cy + fa * VW.R(wedgeEdge(-Math.PI / 2)) + 16 * dpr); } }
+        else { vc.strokeStyle = 'rgba(200,200,220,0.3)'; vc.beginPath(); vc.arc(cx, cy, rim, 0, 2 * Math.PI); vc.stroke();
+            if (S.words > 0) { vc.fillStyle = 'rgba(200,200,220,0.55)'; vc.fillText('turned all the way round: the horizon, never reached', cx, cy - rim - 6 * dpr); } }
+        S.lastTunnel = { cx, cy, scale: fa, rim, rings, quarter, edge: quarter ? b => fa * VW.R(wedgeEdge(b)) : null };
     } else S.lastTunnel = null;
     const F = frameOf(), RD = new Map(FIELD.map(o => [o.i, read(o, F)]));
     const e = eye(), cyw = Math.cos(S.yaw), syw = Math.sin(S.yaw), cp = Math.cos(S.pitch), sp = Math.sin(S.pitch);
@@ -920,6 +943,7 @@ const FIDS = ['addr', 'tunnel', 'area', 'compress', 'round', 'off'], FIDNAME = O
 $('fid').onclick = () => { S.fid = FIDS[(FIDS.indexOf(S.fid) + 1) % FIDS.length]; S.Z = Math.max(zmin(), S.Z); syncMenu(); };
 function toggleSky() { S.sky = !S.sky; S.Z = Math.max(zmin(), S.Z); syncMenu(); }
 $('sky').onclick = toggleSky; $('zs').onclick = toggleSky;
+$('round').onclick = () => { S.round = !S.round; syncMenu(); };
 $('K').onchange = () => { S.K = +$('K').value; };
 $('kup').onclick = () => { S.k *= 10; S.H *= 10; S.Hshow *= 10; };
 $('kdown').onclick = () => { S.k /= 10; S.H /= 10; S.Hshow /= 10; };
@@ -938,6 +962,7 @@ function syncMenu() {
     $('hold').classList.toggle('on', S.hold); $('hold').querySelector('span').textContent = S.hold ? 'on' : 'off';
     $('words').classList.toggle('on', S.words > 0); $('words').querySelector('span').textContent = WORDS[S.words];
     $('fid').classList.toggle('on', S.fid !== 'off'); $('fid').querySelector('span').textContent = FIDNAME[S.fid];
+    $('round').classList.toggle('on', S.round); $('round').querySelector('span').textContent = S.round ? 'on' : 'off';
     $('sky').classList.toggle('on', S.sky); $('sky').querySelector('span').textContent = S.sky ? 'on' : 'off'; $('zs').classList.toggle('on', S.sky);
     $('about').classList.toggle('open', S.show.about); $('readBox').classList.toggle('open', S.show.read);
     $('mapBox').classList.toggle('open', S.show.map); $('stripBox').classList.toggle('open', S.show.strip);
@@ -1021,7 +1046,7 @@ window.__crosshairs = {
     grain: i => grainOf(read(FIELD[i])), shrink: i => shrinkOf(FIELD[i]), distGrain: i => distGrain(FIELD[i]), dirGrain: d => dirGrain(d), homes: () => S.lastHomes, corners: () => S.lastCorners, read: i => read(FIELD[i]), readings: i => readings(FIELD[i]), frame: () => frameOf(), lay, addresses, counts, pick,
     set(o = {}) { if ('yaw' in o) S.yaw = o.yaw * DEG; if ('pitch' in o) S.pitch = o.pitch * DEG; if ('x' in o) S.x = o.x; if ('z' in o) S.z = o.z;
         if ('k' in o) { const r = o.k / S.k; S.k = o.k; S.H *= r; S.Hshow *= r; } if ('hold' in o) S.hold = !!o.hold; if ('K' in o) S.K = o.K;
-        if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); if ('fid' in o) S.fid = o.fid; if ('sky' in o) S.sky = !!o.sky; syncMenu();
+        if ('words' in o) S.words = o.words; if (o.show) Object.assign(S.show, o.show); if ('fid' in o) S.fid = o.fid; if ('sky' in o) S.sky = !!o.sky; if ('round' in o) S.round = !!o.round; syncMenu();
         update(0); S.Hshow = S.H; S.a0show = S.a0; return this.state(); },
     show: k => showIt(k), menu: () => ({ open: $('menu').classList.contains('open'), words: S.words, show: { ...S.show } }),
     aim: i => { const c = centre(FIELD[i]), e = eye(); S.yaw = Math.atan2(c[0] - e[0], c[2] - e[2]);
