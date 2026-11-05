@@ -7382,6 +7382,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   steady state, not the heat equation (whose kernel is the Gaussian, e^(−tk²)); stepping back the Poisson semigroup in d,
   not diffusion time; u a temperature, not a flux; its uniqueness theorem two classical ones stacked (Haar invariance
   alone forces it). R706's "heat" stays a weight over readings. A closing paragraph in §7 "Where the heat comes from".
+  Then (Tom: "update the demos"): the visible wording of 37 pages (`demos.html` and the standalone demos) says directions
+  and their heat, K the reader's fineness counted by a writer as K places; "address" kept for a machine's or a writer's
+  layout (pixels, a depth buffer, an array's index, the cascade's cells, equal-metres places) and in ids, hooks, params
+  and comments. Not touched: `read.html` (frozen), the flying page `index.html` (its addresses are pixels) and
+  `labs.html` (the labs' record).
 - **R705** (5 Nov; a comparison from Gemini, pasted by Tom; Tom: "Yes", to adding it corrected): "the projection is the
   dereference": in memory an address and its value share one representation and need a step between them; for the
   reader the address is a direction and what reaches it paint, two kinds, pointing already being met. Corrected: the
