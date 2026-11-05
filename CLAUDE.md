@@ -1615,6 +1615,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Euler over all turns of space are the writer's account; within the quarter turn nothing composes past a horizon.
   *Reads and Writes* §7 (the shape paragraph, "Where the reader stands"), essay 5 §6 and §10, a note under SWP's runs;
   `read.html` draws the wedge by default, the round "turned all the way round".
+  R697 (5 Nov; Tom: "the sphere is the shape of every possible way three intersecting thumbs can be related to each other,
+  when H and V are known. the cauchy is the same, except V is not known."; "What is the shape of a single read, when V is
+  not known"; "yes"): the sphere without V folds (antipodes one), its closing the horizon, its even measure the 2D Cauchy;
+  one read with V is the ball's octant, without V the cone (three faces at the eye, no cap), unmoved by scaling about its
+  apex, cut by the thumb's screen as the quadrant or the triangle. *Reads and Writes* §7 "The sphere without V, and the
+  cone of one read", with the table sphere / Cauchy plane / cone.
   `observation-from-somewhere.md` (11 Oct 2026, Tom: "bring the key ideas from these papers together into a single paper
   for external review") is the one self-contained paper for outside reviewers. **A normal paper a human would read**
   (Tom, 11 Oct, SPN R202: "create a normal paper that a human would read"): abstract, introduction, setting, propositions

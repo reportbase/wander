@@ -668,6 +668,31 @@ puts the crosshair at the corner of all three (the Cauchy's thinning, centred on
 it). They are the same one length either way: the thumbs counted across the look are the dimension, and the thumbs counted
 at the corner are the parties, one more.
 
+**The sphere without V, and the cone of one read.** Every way three crossed thumbs can stand to one another, with H and V
+known, is a point of the sphere: three amounts at a known radius, every sign kept, closed and finite. That is the
+writer's. The same relations with V unknown keep only their ratios (v/h, v₂/h), and two things go with the length: the
+sign (a point and the point opposite it through the centre give the same ratios, so the sphere folds onto itself, the
+projective plane, a screen its chart) and the closing (the great circle square to the look lands at infinity, the
+horizon: where the sphere would have closed, the missing V's trace). The sphere's even measure lands on the screen as the
+two-dimensional Cauchy, each reading twice. In the same way a single read with H and V known is the wedge, an octant of
+the ball: three flat faces through the eye and a curved cap at a known radius, the cap the only part carrying an amount.
+With V unknown the cap goes, and what is left is the cone: three flat faces meeting at the eye along the thumbs, open,
+with no far side. A cone is the one kind of shape that scaling about its apex carries onto itself, so the read is
+unmoved when the world is scaled; the cap was where the scale lived. Cut by a screen one thumb out, the cone shows its
+law: the quadrant of readings with the half-Cauchy 2/(π(1 + s² + s₂²)^(3/2)) square to h, the triangle with the corner at
+its middle down the thumbs' diagonal; cut elsewhere, the same law at another size, which is why H only zooms. In the
+plane the same: a quarter of a disc with its arc when V is known, a right angle, two rays and no arc, when it is not. In
+short:
+
+| Shape | What is kept | Whose |
+|---|---|---|
+| The sphere | H and V, every sign: all relations, closed | the writer's |
+| The Cauchy plane (the full round of the look) | V dropped: opposite points one, the horizon at infinity | the relations without V |
+| The cone of one read (the quarter turn) | V dropped and no relation negative: every pair from home (0) to its horizon (∞) | the read |
+
+The cone is the writer's name for what one read holds; the reader has no shape, only a vantage, and what it can say of
+distance comes only through H, never V.
+
 **The shape is swept, not each thumb.** The read is a quarter turn: every pair of thumbs from its home, where it reads
 0, to its horizon, where it reads ∞. Down the thumbs' diagonal that is the wedge, a triangle on the screen whose corners are
 the thumbs and whose edges are where a reading is 0 or ∞; the round of the tunnel past it is other facings, what the head
