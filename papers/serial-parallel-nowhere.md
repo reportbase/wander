@@ -7352,6 +7352,21 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R706** (5 Nov; Tom: "I think the insight that the cauchy is a heat map is very important. I doubt there is actually
+  addresses, like computer science. its much more basic and fundemental."; ChatGPT, pasted by Tom: addresses are by
+  definition discrete, a writer's concept; then "Yes"): **the Cauchy is a heat map, and addresses are the writer's.** A
+  read is a continuous heat over its readings, hottest along the look and cooling toward the horizon, with no grain and
+  nothing counted; an address is discrete and counted, a place in a layout, so it belongs to the writer (K places at the
+  heat's quantiles, H·tan(kπ/2K) along distance, a computer's memory). The heat is the uniform measure on directions read
+  in a coordinate: in the plane, one thumb, (2/π)/(1 + s²), falling as cos²θ; in space, crossed thumbs, dΩ = cos³α·dA on a
+  screen one thumb out, 1/(2π(1 + r²)^(3/2)); with n thumbs cos^(n+1); on the hemisphere by angle, none. The overlay's heat
+  in distance (1/π)·sech(ln(d/H)). Motto: "The heat is given; the paint is met." Restated: R653's "a read is the address,
+  the write the payload" is now "a read is the heat, a write the paint recorded"; R614's and R648's "the reader's K
+  addresses" are the reader's heat, K a fineness read continuously and counted as addresses only by a writer (R645
+  stands). "Address" stays where text speaks as a computer or a writer counting (essay 16, the computing note, the
+  archived OFS's title). *Reads and Writes* rewritten throughout (abstract; §1 "What a read is", the second test; §2
+  "Heat and paint", "Why there is no mean: the Cauchy is the heat of directions"; §3; §5 "π with the direction"; §6;
+  §7 "Where the heat comes from"). The essays wait for a second pass.
 - **R705** (5 Nov; a comparison from Gemini, pasted by Tom; Tom: "Yes", to adding it corrected): "the projection is the
   dereference": in memory an address and its value share one representation and need a step between them; for the
   reader the address is a direction and what reaches it paint, two kinds, pointing already being met. Corrected: the
