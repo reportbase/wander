@@ -1639,6 +1639,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R711 (5 Nov; Tom: "update the essays"): R710 in essays 3, 5 and 8; essay 13's "the heat equation" corrected to Laplace's.
   R710 (5 Nov; Tom: "update the reads and writes paper"): *Reads and Writes* §7 gains the lens's cos⁴ (three cosines the
   heat), the rate a turn consumes the world, and the Gaussian keeping every frequency (k² against |k|).
   R709 (5 Nov; Tom: "update the demos"): `pinhole.html`'s sky adds the dark corners (cos³α the map, cos⁴α a lens; hook

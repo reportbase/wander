@@ -7352,6 +7352,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R711** (5 Nov; Tom: "update the essays"): R710 in the essays. Essay 5's and essay 8's cos⁴ falloff: three of its four
+  cosines the heat, the fourth the aperture's (0.35 against 0.25 at 45°; essay 17). Essay 3's recovery by undoing the
+  blur: a Gaussian keeps every mode too, damping by k², the box blur alone loses them. Essay 13 corrected: the inversion
+  keeps Laplace's equation only after a factor (it said "the heat equation", the very slip essay 17 warns against).
 - **R710** (5 Nov; Tom: "update the reads and writes paper"): essay 17's additions carried into *Reads and Writes* §7
   "Where the heat comes from": a lens's cos⁴α vignetting, three of its cosines the heat (0.35 against 0.25 at 45°); the
   Cauchy neither the wall's nor the eye's alone, the rate at which a turn consumes the world; the Gaussian too keeps every

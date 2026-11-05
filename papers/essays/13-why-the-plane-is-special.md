@@ -79,7 +79,7 @@ they keep harmonic functions harmonic, and that turning is multiplication by a c
 
 In space all three fail. Liouville proved in 1850 that in three or more dimensions the only maps that keep angles are
 the Möbius maps (turns, scalings, translations and inversions in spheres). There is no stock of other conformal maps.
-And the heat equation is no longer kept by them: an inversion in a sphere carries a harmonic function to a harmonic
+And Laplace's equation is no longer kept by them: an inversion in a sphere carries a harmonic function to a harmonic
 function only after it is multiplied by a power of the distance. So harmonic measure and the Möbius maps are no longer
 tied. Each has its own law, and the two laws differ.
 
