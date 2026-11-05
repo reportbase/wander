@@ -17,7 +17,9 @@ practice already has, and says when the habit stops being right.
 not as addresses. An address is discrete and counted, a place in a layout, and so a writer's word: a writer can lay K
 places at the heat's quantiles and call them addresses, as a computer lays out its memory. The reader counts nothing. Its
 directions come with a heat that has no grain of its own, and what arrives along them is paint. The title keeps the old
-word; the essay uses the new ones. In short: *the heat is given; the paint is met.*
+word, and it is still a good one where the essay meets computing (R707): a direction looked along is like an address
+looked up, the heat under it. As geometry, the essay says directions and their heat. In short: *the heat is given; the
+paint is met.*
 
 ---
 

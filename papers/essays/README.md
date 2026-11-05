@@ -12,7 +12,7 @@ Two ideas run through all of them:
 - **The Cauchy.** The heat of a reader's directions, a continuous weight hottest along the look and cooling toward the
   horizon, what its thumbs, pointed at the mountain, give, the circle's geometry
   with no circle held and no second breadth: its median the corner, its far end the horizon, no mean, since directions have
-  none and no V was ever in them.
+  none and no V was ever in them. Where the essays meet computing, a direction is an address, the heat under it (R707).
 
 Two tests sort any quantity: **scale the world** (reading or writing?) and **change what arrives** (direction or payload, heat or paint?).
 Each is an invariance. By the first, reading and writing are the scale-invariant and the scale-variant, the old

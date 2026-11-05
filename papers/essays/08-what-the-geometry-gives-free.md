@@ -422,7 +422,8 @@ nothing, what a sampler uses to drop its table, and what `Math.floor` throws awa
 and drops the rest. The horizon is the price: a turn's directions never run out, and they never reach the end.
 Said in the reader's own words, the Cauchy is a heat over directions, hottest along the look and cooling toward the horizon,
 with nothing counted in it; what a machine counts, a hash's slots, a table's cells, an array's index, are addresses, and
-they are the writer's. *The heat is given; the paint is met.*
+they are the writer's. As a metaphor the word still serves, and this essay uses it where it meets computing: a direction
+looked along is like an address looked up, with the heat under it. *The heat is given; the paint is met.*
 
 Back to the scrollbar. Its bar shrinks as the list grows because it is laid on the writer's line, which has no corner and
 no horizon. A dial laid on the reader's turn keeps the whole list on one quarter turn, reaches any place in time

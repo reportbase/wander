@@ -7356,7 +7356,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   science as needed."): R706 stands (the reader's geometry is a heat over directions; an address, discrete and counted, is
   the writer's), and "address" may be used as a metaphor wherever it helps connect the Cauchy to computer science: a
   direction looked along is like an address looked up, the heat under it. Not to be swept from the corpus; used as needed,
-  with the heat as the primary reading. *Reads and Writes* §1 and essay 16's "Heat, not addresses" say so.
+  with the heat as the primary reading. *Reads and Writes* §1 and essay 16's "Heat, not addresses" say so. Then (Tom:
+  "update the essays"): the metaphor in essay 1's opening, essay 3's title note, essay 8's Cauchy paragraph, the essays
+  README and `essays.html`'s Cauchy line.
 - **R706** (5 Nov; Tom: "I think the insight that the cauchy is a heat map is very important. I doubt there is actually
   addresses, like computer science. its much more basic and fundemental."; ChatGPT, pasted by Tom: addresses are by
   definition discrete, a writer's concept; then "Yes"): **the Cauchy is a heat map, and addresses are the writer's.** A
