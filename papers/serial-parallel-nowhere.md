@@ -7352,6 +7352,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R723** (5 Nov; Tom: "a sphere is every possible way H and V and V2 stand relative to each other with 8 possible
+  facings. … if you set H, you are implictly setting V and V2. so could it be said that setting h, you are defining the
+  near field to be a 3d spere.", then "yes, thats an importan realization. setting H means setting the near field
+  sphere."): setting H sets the near-field sphere, the ball of radius H about the standpoint, every facing joined at
+  V = V₂ = H: the writer's account of the choice. The reader has it as a split on every direction it reads (R701), with no
+  surface, no V and no facings joined (R533, R643, R700). *Reads and Writes* §7, after the sphere without V.
 - **R722** (5 Nov; Tom: "all three"): R721 carried out.
   - *Reads and Writes* §2: "The Cauchy's routes" after the derivation (one measure from z; the routes; one in the plane,
     agreeing on flat boundaries, parting on curved ones; told apart only by what γ tracks; the turn the reader's route;

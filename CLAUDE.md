@@ -1648,6 +1648,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R723 (5 Nov; Tom: "setting H means setting the near field sphere."): **setting H sets the near-field sphere** (radius H,
+  every facing joined at V = V₂ = H), the writer's account; the reader has it as a split on every direction it reads, no
+  surface, no V. *Reads and Writes* §7.
   R722 (5 Nov; Tom: "all three"): the routes in *Reads and Writes* §2 ("The Cauchy's routes"), essay 17 §4 and essay 13 §5;
   the turn the reader's route to harmonic measure, "find the z".
   R721 (5 Nov; Tom: "lets work on the math …"): `plans/cauchy-routes.md` + `runs/crt/crt.py`: the routes into the Cauchy
