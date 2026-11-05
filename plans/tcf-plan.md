@@ -92,4 +92,45 @@ written below before any p is read.
 
 ## Runs
 
-(none yet)
+### Before run 1: the data and the counting rule (5 Nov, written before any kernel value was read)
+
+**The data.** Bullock, J.M. et al. (2017) "A synthesis of empirical plant dispersal kernels", *J. Ecol.* 105, 6–19.
+- Data: Dryad doi:10.5061/dryad.mq2ff, version of 25 Aug 2017, licence CC0. Supplied by Tom as Dryad's zip, since Dryad
+  refuses scripted downloads. Not committed.
+- `Plantdispersaldata.csv`: md5 0f59aca7616794b1ca6623f2f29960bf (matches Dryad's), sha256
+  c9fd5500370346725f401be2634f9368af4d17b35b3c63c5fc6cfffbf6af7a8b.
+- `README_for_Plantdispersaldata.rtf`: md5 963352249ede1a6f5d056995d87c8057, sha256
+  61b825e378ba0545c2d2fd59108c1da0f9658b864d55cc579cdb32cdff689617.
+- The zip: sha256 5578989a0f60a0c75abd8a34c4fc05d49912ed46429c6293fdd850349a771a44.
+
+**What the file is, and what it changes in the plan.** The plan expected fitted 2Dt parameters with species traits. The
+file instead holds the raw kernels: for each of 169 datasets, the species, the source, and rows of distance (m), seed
+density (m⁻²) and, where given, the replicate. Bullock's 2Dt fits are not in it. Nor is any dispersal vector or plant
+height. So:
+- p is fitted here, by the rule below.
+- The wind-dispersed kernels are picked from labels alone (below).
+- **T2, T3 and T4 cannot be tested from this file and are left untested.** They would need release or plant heights,
+  which it does not have. I do not substitute other tests for them after the fact.
+- T1 and T5 stand as written.
+
+**Which kernels count.** A fresh agent sorts the 169 datasets by vector: wind, ballistic, gravity, animal, water,
+human/machine or unsure, with a confidence. It sees only each dataset's number, species name and source reference, never
+the CSV's values, and it may read a paper's title or abstract but no distances or fits. **The primary set is the kernels
+classed wind with high or medium confidence.** T1 and T5 are decided on it alone. The other classes are reported beside
+it and decide nothing.
+
+**The fit, per kernel.**
+- Points with density > 0 only (the number of zeros dropped is reported). Replicates are pooled into one fit, as Bullock
+  analysed them. A kernel needs at least 4 distinct distances with positive density.
+- Model: log ρ(r) = log A − (p + 1)·log(1 + r²/u). Unweighted least squares on log ρ, over (log A, log u, log p).
+- Bounds: p in [0.02, 50]; u in [10⁻⁶·r_max², 10⁴·r_max²]. Started from a grid of p and u, the best kept.
+- Fits that end on a bound are kept and counted, and reported as on a bound.
+- A is free, since densities come as absolute counts or as proportions; the shape p and the scale u do not depend on it.
+
+**T5's slope, per kernel.** The least-squares slope of log ρ on log r over the points with r ≥ 2·√u (the fitted u),
+where there are at least 3 such points. The prediction (p = ½) is −3. T5 is decided on the median slope over the primary
+set: kill if outside [−3.6, −2.4].
+
+**A caution written now.** Many kernels stop at a few metres, inside or near their own scale. There p and u trade off,
+and p is poorly fixed. The spread of p, and how many fits sit on a bound, will be reported. The kill conditions are not
+changed for it.
