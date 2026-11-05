@@ -327,6 +327,10 @@ only its point, and here they do.
   mean ρ; on the sphere those two come apart, and the boosted sky is the Möbius law alone, its mean cosine
   coth η − η/sinh² η (the second essay, section 9).
 - That density is D²/4π. The Doppler factor squared is the crowding of directions, their heat, toward the motion.
+- No law on the sky is unchanged by a boost: the even sky is the one unchanged by turns, and a boost carries it to
+  another member of its family. On the stereographic chart the even sky itself is (1/π)·dA/(1 + |z|²)², not the plane's
+  two-dimensional Cauchy (that one is half the sky on a flat screen, the cos³ of essay 17); the chart is a Cauchy only for
+  the circle.
 - It keeps the cross ratio of any four stars' places, read as complex numbers in that chart. Three stars seen in both
   frames fix the whole boost and turn, because the Möbius maps of the sphere are the Lorentz group, and a Möbius map is
   fixed by three points (Penrose and Rindler 1984).
