@@ -10,8 +10,8 @@ list without end laid on that line has no end that fits on a screen.
 
 This essay is about what changes when such things are built on the reader's geometry instead. Once a reader holds one
 length H, the thumb it holds up at arm's length, and turns it, some structures follow with no further choice: a zoom, a
-split between near and far, readings no change of size can move, and addresses for any number of things with no table and
-no count. Engineers have arrived at most of them already, by design, under other names: depth buffers, log depth, floating
+split between near and far, readings no change of size can move, and a heat over directions that serves any number of things with no
+table and no count. Engineers have arrived at most of them already, by design, under other names: depth buffers, log depth, floating
 point, detail chosen by distance, hashing on a circle, a filter's steady state. The geometry does not do any of these jobs
 better. What it offers is a baseline. It says where each structure comes from, so that what a design adds, and what that
 costs, can be named.
@@ -72,7 +72,7 @@ two dimensions this way, each made from its own address by a binomial cascade an
 largest-on-screen first and every drawn total adding exactly to the whole at every zoom. The `star-dial.html` demo does the
 same with a star field without end, eight times as many stars in each shell out to twice the distance, where the stars
 drawn and the totals of the cells not opened add exactly to the stars held at every H. The payload, in the third essay's
-sense, is a function on the addresses, and here the function is the program.
+sense, its paint, is here a function on the addresses, and the function is the program.
 
 **In two dimensions.** The same control works over two sweeps. The thumb points in a direction from the centre and adds
 to a two-dimensional push at a rate set by how far it is tilted. The hand sits at sinh of the push inside the triangle of
@@ -102,7 +102,8 @@ Once the reader chooses H, its one length, the thumb it holds up, these follow w
 - **a split between near and far**, the corner v = h, at 45°, where the crossed thumbs cross.
 - **readings that no change of the world's size can move**, since every reading is a ratio. That is the first essay's test,
   scale the world.
-- **addresses for any number of things, with no table and no count**, given that the sweep is uniform: the turn's Cauchy.
+- **a heat over directions for any number of things, with no table and no count**, given that the sweep is uniform: the
+  turn's Cauchy.
   This is the one the dial leans on hardest.
 
 Two more need one stated premise each, and are free once it is granted:
@@ -237,8 +238,9 @@ lengths are measured with ds² = (dx² + dy²)/y².
   standpoint. From its cell's own point that law puts exactly half its weight in the cell. The cell is that law's
   interquartile range.
 
-So the plane the floor's remainder lives in is the space of the address law's own parameters. A dyadic cell is not merely
-like a Cauchy. It is one, read from its own point. The array's grid and the reader's law live in the same plane.
+So the plane the floor's remainder lives in is the space of the Cauchy's own parameters, each point one heat over the line. A dyadic cell is not merely
+like a Cauchy. It is one, read from its own point. The array's grid and the reader's heat live in the same plane: the cells
+counted, the writer's, and the heat from each cell's point continuous, nothing counted in it.
 
 **A tree keeps the depths and loses the plane.** The usual way to keep the finer digits is a tree: a quadtree, an image
 pyramid, a chain of mipmaps, each cell linked to its parent and its children. A tree keeps the depth and measures it
@@ -274,8 +276,8 @@ the same at every depth. The floor's row is a wall. The `depth.html` demo draws 
 
 **Who sets the depth.** The floor sets one depth for everything, the cell's, chosen by the store before anything is read,
 the same for a mountain and a grain of sand. The geometry sets each thing's depth by its span: a thing that spans n
-addresses can be halved about log₂ n times before its halves are single addresses, and a thing between two addresses is
-held at the coarser one, not rounded to either. The floor imposes a depth; the reader reads one off what it meets.
+of the finest directions the reader tells apart can be halved about log₂ n times before its halves are single ones, and a
+thing between two of them is held at the coarser, not rounded to either. The floor imposes a depth; the reader reads one off what it meets.
 
 The first essay's test finds a second difference at once. Where the floor is taken of an amount, `Math.floor(x / w)`, the
 cell width w is an amount too, and scaling every amount in the world by k moves the key unless w is scaled with it. The key
@@ -290,9 +292,9 @@ is then a writing: its grain had to be carried in. A floor taken of a share of t
 - **The hierarchy is a geometry, not a convenience.** It is the hyperbolic plane: every depth alike, every cell of one
   room, distances fixed by the depths. That is why "zoom in by two" is the same operation everywhere, and why a structure
   that links only up and down gets its distances wrong.
-- **The separation of address and payload reaches into the depth.** The floor discards address, never payload. From a
-  height, the window 2γ is the address's, fixed before anything arrives; what survives inside it, and whether two things in
-  it read as two, is the payload's.
+- **The separation of heat and paint reaches into the depth.** The floor discards address, never payload. From a
+  height, the window 2γ is the heat's, fixed before anything arrives; what survives inside it, and whether two things in
+  it read as two, is the paint's.
 
 What is not shown: that the world stores anything this way, or that any reader's detail is a dyadic depth rather than a
 continuous height. The mathematics is classical, Böröczky's tiling, the Poisson kernel, the sinc of a box. The reading is
@@ -302,7 +304,7 @@ ours.
 
 ## 6. Addresses on a turn, not by a count
 
-A count of addresses fixed beforehand runs out where the world's count grows. The turn's addresses do not, and they pay
+A count of addresses fixed beforehand runs out where the world's count grows. The turn's directions do not, and they pay
 with a horizon instead. Computer science has met both sides.
 
 **Consistent hashing.** A distributed cache has to say which of n machines holds each key. The obvious answer,
@@ -330,23 +332,23 @@ is the arithmetic face of the steps that never close.
 
 ---
 
-## 7. Tables fixed in advance, and addresses that need none
+## 7. Tables fixed in advance, and directions that need none
 
 A sampling table or a grid of cells fixed in advance has to know beforehand the extent it covers and the resolution it
-needs, and it is rebuilt when either changes. The uniform turn's addresses need neither. A direction is given whatever
-the count of things and whatever their size, and the fourth essay's K addresses at H·tan(kπ/2K) (the writer's formula for where they fall) hold half inside H at
-every H and every N.
+needs, and it is rebuilt when either changes. The uniform turn's heat needs neither. A direction is given whatever
+the count of things and whatever their size, and the fourth essay's K places at H·tan(kπ/2K), a writer's count of the heat in
+distance (K addresses, in the writer's word), hold half inside H at every H and every N.
 
 Rendering meets this in importance sampling. To light a scene by a sky, a renderer draws directions in proportion to how
 much light comes from each, using a table built from the sky. When the view changes in a way that moves every direction,
 as a fast-moving camera's sky is boosted, the table has to be rebuilt. The seventh essay showed that a boost is a Möbius
-map of the addresses and carries the Cauchy onto itself. So the directions can be drawn by pushing uniform ones through the
+map of the directions and carries the Cauchy onto itself. So the directions can be drawn by pushing uniform ones through the
 boost, with no table at all, and only the payload, the sky's own light in its own frame, needs tabling, once. The
-`boost-sky.html` demo compares the samplers. What needs a table is the payload or the writer, never the addresses.
+`boost-sky.html` demo compares the samplers. What needs a table is the payload or the writer, never the directions or their heat.
 
 That is also the fourth essay's point that the Cauchy does not need to know N. Whatever is tied to a count, a table's size,
 a grid's resolution, a far plane, is the payload's or the writer's. A method that ties with a classical one has shown it is
-correct; where the classical one needed N and the turn's addresses did not, the tie comes free.
+correct; where the classical one needed N and the turn's heat did not, the tie comes free.
 
 ---
 
@@ -367,7 +369,7 @@ geometric mean is the geometry's: the fourth essay's corner, met by a recursion 
 
 ## 9. The centre of directions
 
-Where the readings themselves fall as the uniform turn's law, as the addresses of a sweep do, their tangent chart has no
+Where the readings themselves fall as the uniform turn's law, as the directions of a sweep do, their tangent chart has no
 mean, and the median is the law's own centre. A fit that averages them on that chart has nothing to settle on. That is
 the third essay's theorem applied to engineering: least squares is a mean, and a mean of a law that has none stalls.
 
@@ -375,11 +377,11 @@ The working notes tested this on bearings, the directions in which features are 
 errors of the Cauchy's kind, as the number of standpoints grew from 4 to 16, least squares improved by a factor of only
 1.39, where the median of pairwise crossings improved by 3.95. Real bearing errors, measured on a standard image benchmark,
 turned out not to be Cauchy: a narrow core plus a share of wrong matches. So in practice the cost shows where wrong matches
-do. The geometry does not fix the law of measurement errors, which is another matter. It fixes the law of the addresses.
+do. The geometry does not fix the law of measurement errors, which is another matter. It fixes the heat of the directions.
 
-The same addresses are known in numerical analysis. Boyd's rational Chebyshev collocation points for problems on the whole
-line, L·cot((2j − 1)π/2N), are the midpoints of N equal shares of the Cauchy of scale L: the reader's K addresses with L in
-the place of H (Boyd 1982, 1987). Boyd's rule for choosing L, the scale of the feature to be resolved, is the fourth
+The same law is known in numerical analysis. Boyd's rational Chebyshev collocation points for problems on the whole
+line, L·cot((2j − 1)π/2N), are the midpoints of N equal shares of the Cauchy of scale L: the K places a writer counts at the heat's
+quantiles, with L in the place of H (Boyd 1982, 1987). Boyd's rule for choosing L, the scale of the feature to be resolved, is the fourth
 essay's best H, at the corner of what is read. The same equal angles read by their cosine are Chebyshev's nodes, crowded
 at the ends of a chord; by their tangent, the Cauchy's, spread out to the horizon.
 
@@ -414,10 +416,13 @@ carried in: the near plane's distance, the cell width of a floor taken of an amo
 Engineering keeps rediscovering which numbers it must carry in, often one at a time and by trouble. The geometry says in
 advance: one length H, the thumb, for the zoom, a count K if one is wanted, and an amount for each thing to be written.
 
-**The Cauchy.** The property this essay has leaned on most is the one the fourth essay found: its addresses need no count.
+**The Cauchy.** The property this essay has leaned on most is the one the fourth essay found: its heat needs no count.
 That is what the dial uses to cross a list of any length, what consistent hashing uses to add a machine and move almost
 nothing, what a sampler uses to drop its table, and what `Math.floor` throws away when it keeps one depth of the address
-and drops the rest. The horizon is the price: a turn's addresses never run out, and they never reach the end.
+and drops the rest. The horizon is the price: a turn's directions never run out, and they never reach the end.
+Said in the reader's own words, the Cauchy is a heat over directions, hottest along the look and cooling toward the horizon,
+with nothing counted in it; what a machine counts, a hash's slots, a table's cells, an array's index, are addresses, and
+they are the writer's. *The heat is given; the paint is met.*
 
 Back to the scrollbar. Its bar shrinks as the list grows because it is laid on the writer's line, which has no corner and
 no horizon. A dial laid on the reader's turn keeps the whole list on one quarter turn, reaches any place in time

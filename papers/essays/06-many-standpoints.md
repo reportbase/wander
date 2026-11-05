@@ -36,14 +36,14 @@ That much the earlier essays established. Three more things are worth saying abo
 
 **Turning in place gives no parallax.** Turn about the point you see from, and every direction turns by the same
 angle, near and far alike. Nothing shifts against anything else. Turning gives the directions, the frame and the corner,
-and no distance, and it gives them the same in every world: a reader that only turns learns its own addresses, and
-nothing about what is out there. What meets the fingers changes as it turns, but a colour carries no place.
+and no distance, and it gives them the same in every world: a reader that only turns learns its own directions and
+their heat, and nothing about what is out there. What meets the fingers changes as it turns, but a colour carries no place.
 
 A step along a straight line is the other motion a standpoint has, and the first whose effect depends on the world: near
 things cross the fingers faster than far ones. Any motion of a standpoint is a turn and a step together. A turn about any
 point other than the standpoint carries the standpoint along a short arc, and that arc is a step; whatever it places, it
-places by the step, not by the turn. So the two motions divide the work: turning teaches the reader its addresses, and
-walking teaches it the world.
+places by the step, not by the turn. So the two motions divide the work: turning teaches the reader its directions and
+their heat, and walking teaches it the world.
 
 **One stream is one relation.** Read over time from one place, a reading is a ratio of two amounts, a over b. Multiply
 both by any changing factor and the reading does not change. So a thing coming nearer and a thing at rest growing at the
@@ -255,11 +255,12 @@ A range gives it, the time for a signal to go out and come back, times the signa
 measured beforehand and carried in. So ranging is writing. With the ranges, every point met is held in the speed's unit,
 and with it the face, the thing's distance and its speed.
 
-From one place, then, the addresses, their paint and the outline come free. The face needs an amount along each
+From one place, then, the directions, their heat, their paint and the outline come free. The face needs an amount along each
 direction, written, or further standpoints.
 
-Say it plainly: **the reader never sees a shape.** It sees the sweep, the same addresses for every world, and the paint
-on them. A thing is to it the addresses it paints and what it paints them with: a patch of directions, what is in front
+Say it plainly: **the reader never sees a shape.** It sees the sweep, the same directions with the same heat for every world, and
+the paint on them. *The heat is given; the paint is met.* A thing is to it the directions it paints and what it paints them
+with: a patch of directions, what is in front
 of what, a colour. How far the surface lies along each direction is an amount, and the geometry has removed every amount
 before anything is read. Every way to the shape is a writing: ranging, a counted step between standpoints, a blueprint
 handed over. Shape is the writer's. The reader has the Cauchy sweep and its paint.
@@ -278,7 +279,7 @@ support function plays the same part, and the areas carried by its outward norma
 Minkowski problem, 1903; in vision, Horn's extended Gaussian image, 1984). Planets and asteroids are described by series
 of spherical harmonics in the radius.
 
-What the reading adds is where each part of that function comes from. The directions are the addresses, the same for every
+What the reading adds is where each part of that function comes from. The directions, with their heat, are the same for every
 shape. The radius along each is an amount, the payload, had only by ranging, which is writing, or from further standpoints.
 Write the outline as ln r = a₀ + f(θ): the constant a₀ is the one term no ratio of radii reads, so the normalisation the
 descriptors make by choice is here what reading leaves out. The terms of f, taken in order, are detail, the broad form
@@ -322,7 +323,7 @@ second order. It is exact only in the total and the centroid.
 
 So there are two centres, and they must not be confused.
 
-- **The addresses' centre is the median,** an order statistic, which a mean cannot replace, and which a reader has only by
+- **The directions' centre is the median,** an order statistic, which a mean cannot replace, and which a reader has only by
   holding its readings together.
 - **The unresolved payload's centre is the centroid,** a weighted mean. It arrives first and exactly.
 
@@ -393,7 +394,7 @@ reading is reading; joining them, and agreeing the unit, is writing.
 **The Cauchy.** It appears twice here. Parallax has the corner and the bell of the steady turn, for the same reason: the
 pair's facing turns fastest at the corner. And on the far side of the reciprocal, inverted parallaxes behave exactly as
 the third essay said directions do. Their median survives the inversion and their mean does not exist. Astronomy's hard-won
-practice of never averaging inverted parallaxes is the address rule, met by experience.
+practice of never averaging inverted parallaxes is the rule that a Cauchy is a direction, met by experience.
 
 Back to the finger at arm's length. One eye gives a line. Two eyes give a place. The gap between your eyes, never measured,
 is the length every place is found in.
