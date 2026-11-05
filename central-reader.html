@@ -441,7 +441,7 @@
             lines.push(`arc carved from B ${r.arc.toFixed(4)}, chord to it ${r.chord.toFixed(4)}: arc/chord ${r.arcOverChord.toFixed(4)}, chord/arc ${r.chordOverArc.toFixed(4)}, product 1`);
             lines.push(p.t >= 89.95 ? 'at the end: the ray lies along the tangent at home, a horizon; the radius simply points at home, a place' : 'at 90° the ray becomes tangent (the horizon) and the radius ends at home');
             $('cap1').textContent = 'The circle on a chord of 1. Teal: the ray from home at θ (the direction). Gold: the radius from the middle at 2θ (where the paint lands) and the arc it has carved from B.';
-            $('cap2').textContent = 'Against θ: the direction's reading v/h runs off to ∞; the arc over the chord, as a writer measures it, settles at π/2; the radius stays on its circle the whole way.';
+            $('cap2').textContent = 'Against θ: the direction\'s reading v/h runs off to ∞; the arc over the chord, as a writer measures it, settles at π/2; the radius stays on its circle the whole way.';
         }
         $('hud').textContent = lines.join('\n');
     }
