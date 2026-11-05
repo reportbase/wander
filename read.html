@@ -368,8 +368,9 @@ function drawSide() {
     for (const k of [2, 4, 8]) { domeArc(k * u); sdx.setLineDash([3 * dpr, 4 * dpr]); sdx.strokeStyle = rgba('violet', 0.45 - 0.08 * Math.log2(k));
         sdx.lineWidth = 1 * dpr; sdx.stroke(); }
     sdx.setLineDash([]); sdx.restore();
-    sdx.beginPath(); sdx.moveTo(ex, ey); sdx.arc(ex, ey, u, -Math.PI / 2, Math.PI / 2, false); sdx.closePath();
-    sdx.fillStyle = rgba('teal', 0.14); sdx.fill(); domeArc(u); sdx.strokeStyle = rgba('teal', 0.75); sdx.lineWidth = 1.3 * dpr; sdx.stroke();
+    // R701: the shape is the half plane in front (the hemisphere's section), lightly shaded; one thumb is a split, a mark
+    sdx.fillStyle = rgba('gold', 0.05); sdx.fillRect(ex, top, W - ex, bot - top);
+    domeArc(u); sdx.strokeStyle = rgba('teal', 0.75); sdx.lineWidth = 1.3 * dpr; sdx.stroke();
     ray(SIDE.one, rgba('gold', 0.5), 1);
     const th = ray(SIDE.thumb, rgba('teal', 0.85), 1.4), ho = ray(SIDE.home, rgba('gold', 0.7), 1.2);
     // the read sweeping: a ray turning off the look as the read is drawn out (share passed → its angle)
@@ -391,9 +392,9 @@ function drawSide() {
         sdx.fillStyle = rgba('gold', 0.85); sdx.fillText('home', sxp + 6 * dpr, yOf(-1 / SQ2) + 3 * dpr);
         sdx.fillStyle = rgba('ink', 0.55); sdx.textAlign = 'center'; sdx.fillText('horizon', ex, top + 9 * dpr);
         const at = (R, a) => [ex + R * Math.cos(a), ey - R * Math.sin(a)];
-        const nc = at(0.62 * u, SIDE.thumb * 0.55); sdx.fillStyle = rgba('teal', 0.95); sdx.textAlign = 'left'; sdx.fillText('near: the body', nc[0], nc[1]);
+        const nc = at(0.62 * u, SIDE.thumb * 0.55); sdx.fillStyle = rgba('teal', 0.95); sdx.textAlign = 'left'; sdx.fillText('near field', nc[0], nc[1]);
         const fc = at(1.6 * u, SIDE.home * 0.45); sdx.fillStyle = rgba('violet', 0.85); sdx.textAlign = 'left';
-        if (fc[0] < W - 60 * dpr) sdx.fillText('far: the tail →', fc[0], fc[1]); }
+        if (fc[0] < W - 60 * dpr) sdx.fillText('far field →', fc[0], fc[1]); }
 }
 
 // ---- the hill: the 3D Cauchy as a height over the screen ----
@@ -432,8 +433,10 @@ function drawDepth() {
     const fillPoly = (ps, col) => { hx.fillStyle = col; hx.beginPath(); ps.forEach((p, i) => i ? hx.lineTo(...p) : hx.moveTo(...p)); hx.closePath(); hx.fill(); };
     const curve = (f, col, w, dash) => { hx.setLineDash(dash || []); hx.strokeStyle = col; hx.lineWidth = w * dpr; hx.beginPath();
         for (let s2 = 0; s2 <= N; s2++) { const p = f(s2 / N); s2 ? hx.lineTo(...p) : hx.moveTo(...p); } hx.stroke(); hx.setLineDash([]); };
-    // the tail: the half-space in front past one thumb, faint violet out to the horizon's rim (address 2)
-    fillPoly(hemi(1e9), rgba('violet', 0.07));
+    // R701 (Tom: "trying to give the cauchy a shape is problematic. its shape is simply the hemisphere itself, everything the
+    // reader sees."): the one shape is the hemisphere, every direction in front, drawn out to the horizon's rim (address 2).
+    // One thumb is a split on every direction, a mark and not a body; the shells past it are marks too.
+    fillPoly(hemi(1e9), rgba('gold', 0.06));
     // its shells at 2, 4, 8 thumbs (their rims, square to the look, and a meridian across), and the horizon's rim
     const rim = (d, col, w, dash) => curve(t => at(hd(Math.PI / 2, t * 2 * Math.PI), d), col, w, dash);
     const shell = (d, col, w, dash) => { rim(d, col, w, dash);
@@ -444,10 +447,8 @@ function drawDepth() {
     hx.fillStyle = rgba('teal', 0.05);
     for (const [i, j] of pairs) { hx.beginPath(); hx.moveTo(...P([0, 0, 0]));
         for (let s2 = 0; s2 <= N; s2++) hx.lineTo(...at(dirOf(i, j, s2 / N * Math.PI / 2), 1e9)); hx.closePath(); hx.fill(); }
-    // the body: the hemisphere one thumb about the eye, its flat face square to the look through the eye
-    fillPoly(hemi(1), rgba('teal', 0.2));
-    hx.strokeStyle = rgba('teal', 0.3); hx.lineWidth = 0.8 * dpr;
-    for (let q = 0; q < 12; q++) curve(t => at(hd(t * Math.PI / 2, q / 12 * 2 * Math.PI), 1), rgba('teal', 0.3), 0.8);
+    // the split: one thumb out on every direction, half of each one's addresses nearer, half farther (a mark, not a body)
+    for (let q = 0; q < 12; q++) curve(t => at(hd(t * Math.PI / 2, q / 12 * 2 * Math.PI), 1), rgba('teal', 0.22), 0.8, [2 * dpr, 3 * dpr]);
     for (const al of [30, 60]) curve(t => at(hd(al * DEG, t * 2 * Math.PI), 1), rgba('gold', al === 60 ? 0.45 : 0.25), 0.9, al === 60 ? [] : [2 * dpr, 3 * dpr]);
     rim(1, rgba('teal', 0.95), 1.8);
     // the thumbs, from the eye through the body and the tail
@@ -461,13 +462,13 @@ function drawDepth() {
     if (S.words) { hx.font = `${10 * dpr}px DM Mono, monospace`; hx.textAlign = 'left';
         const lb = (p, t, c, dx, dy) => { hx.fillStyle = c; hx.fillText(t, p[0] + dx * dpr, p[1] + dy * dpr); };
         lb(P([0, 0, 0]), 'the reader', 'rgba(255,255,255,0.9)', 8, 14);
-        lb(at(cn, 0.55), 'near: the body, a hemisphere one thumb about the eye (half the addresses)', rgba('teal', 1), 10, 4);
+        lb(at(cn, 0.5), 'near field: half of each direction\'s addresses', rgba('teal', 1), 10, 4);
         lb(at(hd(60 * DEG, S.az + Math.PI / 2), 1), 'half the directions within 60° of the look', rgba('gold', 0.8), 6, -4);
-        lb(at(cn, 1), 'the look, one thumb out', rgba('gold', 1), 10, 0);
-        lb(at(cn, 3), 'far: the long tail, open (the other half)', rgba('violet', 1), 10, 4);
-        lb(at(cn, 1e9), 'the horizon, never reached', rgba('ink', 0.7), 10, -4); }
+        lb(at(cn, 1), 'the thing looked at: H, the split', rgba('gold', 1), 10, 0);
+        lb(at(cn, 3), 'far field: the other half, out to the rim', rgba('violet', 1), 10, 4);
+        lb(at(cn, 1e9), 'the hemisphere: the one shape', rgba('ink', 0.75), 10, -4); }
     else { hx.font = `${10 * dpr}px DM Mono, monospace`; hx.textAlign = 'left'; hx.fillStyle = rgba('ink', 0.55);
-        hx.fillText('the read in depth: the hemisphere, its body (teal) and its long tail (violet)', 12 * dpr, 18 * dpr); }
+        hx.fillText('the read in depth: the hemisphere, split one thumb out on every direction', 12 * dpr, 18 * dpr); }
 }
 
 function drawHill() {
@@ -680,10 +681,10 @@ window.__read = {
     cells: () => S.R * RAYS,
     side: () => S.side ? { reader: [0, 0], screen: 1, thumb: Math.tan(SIDE.thumb), home: Math.tan(SIDE.home), one: Math.tan(SIDE.one),
         thumbDeg: SIDE.thumb / DEG, homeDeg: SIDE.home / DEG,
-        cap: { kind: 'hemisphere', radius: 1, from: -90, to: 90, far: [2, 4, 8] } } : null,
+        cap: { kind: 'split', shape: 'hemisphere', radius: 1, from: -90, to: 90, far: [2, 4, 8] } } : null,
     strip: () => ({ ...stripCounts(), lgH: S.lgH, open: S.strip, addrOf: d => addrOf(d * S.scale, Hnow()), distAddresses: () => distAddresses(Hnow()),
         things: () => THINGS.map(d => d * S.scale), lay: () => Array.from({ length: KD() - 1 }, (_, k) => (k + 1) / KD()) }),
-    depth: () => ({ on: S.depth, shape: 'hemisphere', addr: addrR, body: addrR(1), shells: [2, 4, 8].map(addrR), horizon: 2 }),
+    depth: () => ({ on: S.depth, shape: 'hemisphere', split: 'one thumb, a mark on every direction', addr: addrR, body: addrR(1), shells: [2, 4, 8].map(addrR), horizon: 2 }),
     quarter: () => ({ round: S.round, inWedge, shareW, ringW, total: WT.total }),
     sweep: () => ({ mode: S.sweep, name: SWEEP_NAME[S.sweep], heightAt: (x, y) => heightAt(x, y, S.sweep), relOf: u => relOf(u, S.sweep), unscreen }),
     set: o => { if ('sweep' in o) S.sweep = o.sweep; if ('round' in o) S.round = !!o.round; if ('depth' in o) S.depth = !!o.depth; if ('H' in o) S.lgH = Math.max(-2, Math.min(3, o.H)); if ('strip' in o) S.strip = !!o.strip; if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t; if ('side' in o) S.side = !!o.side;

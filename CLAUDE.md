@@ -222,8 +222,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   bunching to the horizon's rim at 2, open; dragged to turn like the hill. The hill is the menu's "right panel"
   (`?depth=0`). Hook `depth()`, `set({depth})`.
   The hemisphere (5 Nov; R700): by default the screen and the hill show the hemisphere about the look (the round), the
-  wedge alone at `?round=0` (the menu's "the hemisphere" off); the side view's body a half disc one thumb about the eye,
-  the depth panel's a hemisphere with the tail's shells past it. `side().cap.kind` and `depth().shape` 'hemisphere'.
+  wedge alone at `?round=0` (the menu's "the hemisphere" off); the side view and depth panel draw the hemisphere as the one
+  shape and one thumb as a split on every direction (R701), the halving shells past it as marks. `side().cap.kind` and `depth().shape` 'hemisphere'.
 - `plane-thumbs.html`: **two thumbs in the plane** (5 Nov 2026, Tom: "1 2 3"; SPN R678; THM runs 2–4), a standalone page,
   plain canvas, like `focus.html`. The writer's plane round the corner, true to scale (the eye, the square one thumb on a
   side, the corner, the one-thumb disc touching the thumbs at home and the horizon) and the reader's view from home to the
@@ -1639,6 +1639,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R701 (5 Nov; Tom: "trying to give the cauchy a shape is problematic. its shape is simply the hemisphere itself, everything
+  the reader sees."; then "reader seperates the near filed from the far field by looking around at objects … setting the
+  object at the corner is best for parallax."): **the Cauchy's shape is the hemisphere, nothing smaller**; one thumb is a
+  split on every direction, not a body (never call the near field a shape, body or dome); the split moves with what is
+  looked at, a "should" justified by optimality (finest grain, parallax's corner). *Reads and Writes* §6, §7; `read.html`.
   R700 (5 Nov; Tom: "readers can see a hemisphere, with most fidelity where they are looking. this shape is inconsistent
   with that.", then "yes"): **the read is the hemisphere in front**, its addresses the 2D Cauchy centred on the look (half
   within 60°); the body a hemisphere one thumb about the eye, the tail the half-space past it; each pair's quarter turn

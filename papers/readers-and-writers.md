@@ -536,8 +536,9 @@ gets its addresses in proportion, the first half of the thumb as much room as th
 a thing one thumb wide reads one in two, then one in four, then one in eight, each stretch over which the reading halves
 holding the same number of addresses as the one before, out toward the horizon. A writer counts the same stretches as two
 thumbs, four, eight.
-Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them. In space the near field is the Cauchy's body, a hemisphere one thumb about the eye, half of
-every direction's addresses, closed; the far field its long tail, the other half, open (§7, "Half the read closed").
+Move the crosshairs onto something else and the corner, and with it the split between near and far, goes with them. In space the reader sees the hemisphere in front, and that is the Cauchy's whole shape; one
+thumb splits each direction's addresses in half, the near field inside and the far field past it, a split and not a shape,
+moved by looking from thing to thing (§7, "The hemisphere is the shape").
 
 **The one-thumb circle, and the three corners.** Everything within one thumb of the crosshair's point is a ball (a disc in
 the plane) that touches each face of the wedge, at the cube's corners one thumb back from the crosshair along each thumb.
@@ -696,26 +697,30 @@ short:
 | The cone of one read (the quarter turn) | V dropped and no relation negative: every pair from home (0) to its horizon (∞) | the read |
 
 The cone is the writer's name for what one read holds; the reader has no shape, only a vantage, and what it can say of
-distance comes only through H, never V. The read's whole cone is the half-space in front, the hemisphere of directions
-with no cap, scaled about the eye onto itself like the wedge's; the wedge's cone is the part of it where no pair of
+distance comes only through H, never V. The read's whole cone is the half-space in front: the hemisphere of directions, the
+Cauchy's one shape, with no cap, scaled about the eye onto itself; the wedge's cone is the part of it where no pair of
 thumbs reads below zero.
 
-**Half the read closed: the body and the tail.** H does give the cone one thing: a cut. Along every direction of the read
-the K addresses of distance fall at d/H = tan(kπ/2K), a half-Cauchy in the distance's own reading, the first K/2 inside one
-thumb and the rest past it, whatever the direction and whatever the size of the thumb. The cut is the same on every ray,
-one thumb out, so it is a piece of the sphere one thumb about the eye; over the hemisphere the read holds, it is a
-hemisphere one thumb in radius, its flat face square to the look through the eye (in the plane a half disc). Inside it is
-the Cauchy's body: the addresses close to even, in proportion, and closed by the dome, the one part of the read with a
-shape, which H alone sets.
-Past it is the Cauchy's long tail: the share left beyond x thumbs is (2/π)·arctan(1/x), 0.295 past two thumbs, 0.156 past
-four, 0.079 past eight, about half of what was left each time the reading halves, out toward a horizon never reached. The
-tail has no end, so the far field has no cap and no shape; and it is heavy, so no mean, which is where a mean of distances
-would fail. The dome is the median on every ray. So the read is cut in half: the near field the body, closed; the far
-field the tail, open. The cap is the thumb's, not a writer's: it stands one thumb out, never at V, and a larger thumb
-moves it out without changing the half. It is a hemisphere, because a reader sees the whole hemisphere in front, with the
-most fidelity where it looks; a dome over the wedge alone, an eighth of the ball, was a first version and too small, the
-wedge being only the part where each pair runs from home to horizon. Nor is it the one-thumb cube: along the look the
-cube's far corner is √3 thumbs out, and two thirds of that ray's addresses lie inside it.
+**The hemisphere is the shape; one thumb splits every direction.** The Cauchy is not a shape inside what the reader sees:
+its shape is the hemisphere itself, everything in front. Projected from the eye onto a screen square to the look, the
+directions spread evenly over the hemisphere land as the two-dimensional Cauchy, one point for one direction; the look is
+its peak, rings of equal area its rings of equal share (half within 60° of the look, √3 thumbs out on the screen), and the
+rim, 90° off, its long tail, never landing, which is why it has no mean. The hill, the triangle and the rings are ways of
+drawing that hemisphere, not shapes of their own. H gives each direction one thing more: a split. Along every direction the
+K addresses of distance fall at d/H = tan(kπ/2K), a half-Cauchy in the distance's own reading, the first K/2 inside one
+thumb and the rest past it, whatever the direction and whatever the size of the thumb. Inside one thumb they are close to
+even, in proportion: the near field. Past it the share left beyond x thumbs is (2/π)·arctan(1/x), 0.295 past two thumbs,
+0.156 past four, 0.079 past eight, about half of what was left each time the reading halves, out toward a horizon never
+reached: the far field, heavy, so no mean of distances. The split is a mark at one thumb on every direction, each one's
+median, not a body: a first version drew it as a closed dome, over the wedge and then over the hemisphere, and gave the
+near field a shape, which it does not have. The split is the thumb's, not a writer's: it stands one thumb out, never at V.
+
+**Where the split falls: looking around.** The reader moves the split by looking. Pointed at a thing, the crossed thumbs
+take its distance as H, so that thing sits at the corner, half of every direction's addresses nearer than it and half
+farther; looking at another thing moves the split to it. We can only speculate that a reader does this, and the reason to
+is that it is optimal: the corner is where a reading's cells are finest relative to their place (§6, "H is a zoom"), and a
+thing at the corner is the thing at parallax's corner, since a step of two thumbs, half the baseline equal to the distance,
+places it with the least error, ε·cosh(ln k) at its least, ε (§8, "The thing itself as H"). Putting the thing looked at on the corner is what a reader should do; whether readers do is open.
 
 **The shape is swept, not each thumb.** Each pair of thumbs reads a quarter turn: from its home, where it reads 0, to its
 horizon, where it reads ∞. Down the thumbs' diagonal that is the wedge, a triangle on the screen whose corners are the

@@ -7352,6 +7352,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R701** (5 Nov; Tom: "seems to me the cauchy is the hemispere"; "trying to give the cauchy a shape is problematic. its
+  shape is simply the hemisphere itself, everything the reader sees."; "yes. reader seperates the near filed from the far
+  field by looking around at objects. the reason we can speculate that is because its optimal, setting the object at the
+  corner is best for parallax."): the Cauchy's shape is the hemisphere itself; projected from the eye onto the screen
+  square to the look, even directions over it are the 2D Cauchy point for point, the rim its long tail (no mean). The hill,
+  the triangle and the rings draw it; they are not shapes of their own. One thumb splits each direction's addresses in half,
+  a mark and not a body: withdraws R699's "the near field has a shape" and its dome, and R700's one-thumb hemisphere as a
+  body. The split is moved by looking: the thing pointed at is taken as H and sits at the corner. A speculation, justified
+  as optimal (a "should", R499): the corner is the finest relative grain, and a thing there is at parallax's corner with a
+  step of two thumbs, error ε·cosh(ln k) least, ε. *Reads and Writes* §6, §7 ("The hemisphere is the shape; one thumb
+  splits every direction", "Where the split falls: looking around"); `read.html`'s depth panel and side view.
 - **R700** (5 Nov; Tom: "readers can see a hemisphere, with most fidelity where they are looking. this shape is
   inconsistent with that."; then "yes", to the look as home): the read is the hemisphere in front. Read off the look, every
   direction lands tan α from the crosshair, out to the rim at 90°; laid evenly, its addresses are the 2D Cauchy centred on
