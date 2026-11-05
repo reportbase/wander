@@ -16,7 +16,9 @@ One consequence belongs up front, because the words invite it. Put *read* and *w
 programmed thinks of a race: a read and a write meeting on one thing, the answer depending on which came first. Here that
 never arises. A read adds nothing, so reads taken in any order, or all at once, agree. What a read gives is a direction and
 its heat; what a write states is the payload met along it, and writing the payload moves no direction, so no write runs
-into a read. Computing has to engineer that separation; the geometry starts with it.
+into a read. Computing has to engineer that separation; the geometry starts with it. In a programmer's words a direction is
+an address and the payload the value stored there; the metaphor serves, so long as the heat under the address is
+remembered.
 
 ---
 
