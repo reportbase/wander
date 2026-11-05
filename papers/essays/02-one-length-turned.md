@@ -376,7 +376,7 @@ No length is left: r/x is a ratio of two amounts and not an amount. Two things f
 the share squared, 1/(1 + s²) = (x/r)² = h², the reader's own share of H, squared. And the even turn becomes the Cauchy:
 ds = sec²θ·dθ, so dθ = ds/(1 + s²). The Cauchy is the circle's equation used to carry an even turn into readings. Its scale
 is 1 because every amount has been divided out, not because anyone set V equal to H. Read as the reader has it, that
-density is a heat: a continuous weight over the readings, hottest along the look at s = 0 and cooling as cos²θ toward the
+density is a heat: a continuous weight over the readings, hottest at s = 0 (on a screen held square to the look, the look itself) and cooling as cos²θ toward the
 horizon, with nothing counted in it, the turn per unit of the writer's grid.
 
 Divide the two-axis curve the same way and one thing survives: s = (V/H)·tan θ, a Cauchy of scale c = V/H. The amounts go;
