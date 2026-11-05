@@ -7352,6 +7352,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R698** (5 Nov; Tom: "Yes", to the tunnel as the quarter turn): `crosshairs.html`'s Cauchy tunnel drawn in the wedge only by
+  default, its outline the edge where a thumb's share falls to 0, tan α = 1/(√2·(−cos(β − φ))) at bearing β, 35.26° at a
+  home and 54.74° at a thumb; the full round about the look the menu's "tunnel turned all the way round" (`?round=1`).
+  *Reads and Writes* §7's tunnel paragraph says one read's tunnel is a quarter turn.
 - **R697** (5 Nov; Tom: "think about it this way, the sphere is the shape of every possible way three intersecting thumbs can
   be related to each other, when H and V are known. the cauchy is the same, except V is not known."; then "the shape of a
   single read if H and V is known is the wedge. What is the shape of a single read, when V is not known"; then "yes"): the

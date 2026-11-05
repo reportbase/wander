@@ -639,7 +639,9 @@ horizon they never reach. All of it is generated from the thumb; none of it is s
 turns with the look, continuously and without a seam, so whatever it looks at is at the tunnel's centre with the finest
 addresses, and each address is exact, given by the geometry, not computed. That is the reader's fidelity: perfect wherever
 it looks, because it is wherever it looks. The wedge, the octant and the sphere are what a writer draws to describe that
-tunnel from outside.
+tunnel from outside. One read's tunnel is a quarter turn, not a full round: about the look it reaches to where a thumb's
+share falls to nothing, 35.26° off at a home and 54.74° at a thumb, every pair from its home to its horizon in it; the full
+round about the line of sight is the head turned all the way round, other facings joined.
 
 **Where the reader stands.** Behind the screen, at one point. The look runs from it to the crosshair; a thumb lands √2
 off the look on a screen one thumb away, home at 1/√2, one thumb off at 1, and the horizon runs parallel to the screen and
