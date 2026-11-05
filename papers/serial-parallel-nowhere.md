@@ -7352,6 +7352,35 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R702** (5 Nov; Tom: "seems like the cauchy creates a kind of heat map, hottest at the corner."; "yes, and add it to the
+  paper"): counted per stretch the read is a heat map. In direction, per unit of reading on the screen, cos³ of the angle
+  off the look (0.35 at 45°, 0.125 at 60°, 0 at the rim); by angle on the hemisphere, even, no heat. In distance, per ratio,
+  (1/π)·sech(ln(d/H)): 0.8, 0.47, 0.25 of the peak at one in 2, 4, 8 and at two, four, eight thumbs (per plain distance
+  thickest at the eye). The product peaks at the corner, on the look one thumb out, the thing looked at, and moves with
+  the look. Heat in the readings, not a shape (R701). *Reads and Writes* §7 "A heat map, hottest at the corner";
+  `read.html`'s depth panel (the section through the look) and side view painted by it, hook `heat(α, d/H)`.
+- **R701** (5 Nov; Tom: "seems to me the cauchy is the hemispere"; "trying to give the cauchy a shape is problematic. its
+  shape is simply the hemisphere itself, everything the reader sees."; "yes. reader seperates the near filed from the far
+  field by looking around at objects. the reason we can speculate that is because its optimal, setting the object at the
+  corner is best for parallax."): the Cauchy's shape is the hemisphere itself; projected from the eye onto the screen
+  square to the look, even directions over it are the 2D Cauchy point for point, the rim its long tail (no mean). The hill,
+  the triangle and the rings draw it; they are not shapes of their own. One thumb splits each direction's addresses in half,
+  a mark and not a body: withdraws R699's "the near field has a shape" and its dome, and R700's one-thumb hemisphere as a
+  body. The split is moved by looking: the thing pointed at is taken as H and sits at the corner. A speculation, justified
+  as optimal (a "should", R499): the corner is the finest relative grain, and a thing there is at parallax's corner with a
+  step of two thumbs, error ε·cosh(ln k) least, ε. *Reads and Writes* §6, §7 ("The hemisphere is the shape; one thumb
+  splits every direction", "Where the split falls: looking around"); `read.html`'s depth panel and side view.
+- **R700** (5 Nov; Tom: "readers can see a hemisphere, with most fidelity where they are looking. this shape is
+  inconsistent with that."; then "yes", to the look as home): the read is the hemisphere in front. Read off the look, every
+  direction lands tan α from the crosshair, out to the rim at 90°; laid evenly, its addresses are the 2D Cauchy centred on
+  the look, 1/(2π(1 + r²)^(3/2)), densest at the look, cos³α on a screen; within α of the look 1 − cos α of them: 0.13 at
+  30°, 0.29 at 45° (one thumb off), half at 60°. The near field's body is a hemisphere one thumb about the eye (in the plane
+  a half disc), the tail the half-space past it. Each pair of thumbs' quarter turn, home to horizon, is a part of it (the
+  wedge); the sphere behind is the head turned all the way round. Corrects R696's reading that the read is the wedge alone
+  and R699's dome over the wedge (the shape "not a hemisphere"); R696's "the quarter turn" stands for each pair. The other
+  candidate, the look as the corner (finest relative grain there, cosh away), reaches only the wedge and was not taken.
+  *Reads and Writes* §6 and §7 (the tunnel, where the reader stands, the cone, "Half the read closed", the shape swept);
+  `read.html` opens on the hemisphere (`?round=0` the wedge alone), its side view and depth panel drawing the hemisphere.
 - **R699** (5 Nov; Tom: "think of H as defining the nearfield of the sweep. so in this case, the near field has a shape, but
   the far field acceleates logritimicallly. has the far field, and this does not have a closed shape."; "so the shape must
   be some kind of a 1/2 wedge."; "yes"; then "wouldn't the shape be more of a hemisphere."; "the long tail is the far
