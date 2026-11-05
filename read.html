@@ -95,7 +95,7 @@
     <button id="sideB">where the reader stands <span>on</span></button>
     <button id="stripB">drag the thumb (H) <span>on</span></button>
     <button id="sweepB">swept <span>the shape whole</span></button>
-    <button id="roundB">turned all the way round <span>off</span></button>
+    <button id="roundB">the hemisphere <span>on</span></button>
     <button id="depthB">right panel <span>the read in depth</span></button>
     <button id="playB">read again</button>
     <div class="sec">nothing changes</div>
@@ -114,10 +114,11 @@
     <ol>
     <li><b class="g">The crosshair.</b> Three thumbs, each one thumb long, square to each other, with the look down their
     diagonal. Where they cross, every reading is one: the corner. It is the middle of the screen and the top of the hill.</li>
-    <li><b class="t">The quarter turn.</b> A read is a quarter turn: every pair of thumbs from its home (reading 0) to its
-    horizon (reading ∞). Down the diagonal that is the wedge, the triangle whose corners are the thumbs and whose edges are
-    where a reading is 0 or ∞. Outside it are other facings; the full round of rings about the crosshair is what the head
-    turned all the way round would give, the writer's join ("turned all the way round" in the menu shows it).</li>
+    <li><b class="t">The hemisphere.</b> A reader sees the hemisphere in front, with the most fidelity where it looks. Read
+    off the look, every direction lands tan α from the crosshair, out to the rim at 90°, which never lands: the whole screen
+    is the hemisphere, and its addresses are the Cauchy centred on the look, thickest there. Half of them lie within 60° of
+    the look. Each pair of thumbs' quarter turn is a part of it: the triangle between the thumbs, where no reading is below
+    zero ("the hemisphere off" in the menu shows that wedge alone).</li>
     <li><b class="t">The addresses.</b> The directions, taken evenly, land on the screen square to the look as the 3D
     Cauchy, thick at the crosshair and thinning outward to the wedge's edges. The reader's K addresses are equal shares of them:
     rings, each holding the same share, cut by rays. On the left in thumbs, as they fall on the screen: the cells grow,
@@ -182,7 +183,11 @@ const THUMBS = [[1, 0, 0], [0, 1, 0], [0, 0, 1]].map(screenOf);       // r = √
 const HOMES = [[0, 1, 1], [1, 0, 1], [1, 1, 0]].map(screenOf);        // r = 1/√2, 35.26°, home of the pair opposite each thumb
 const RAYS = 12;
 
-// ---- the quarter turn: the wedge, not the round of the look ----
+// ---- the hemisphere, and the wedge inside it ----
+// Since R700 (Tom, 5 Nov: "readers can see a hemisphere, with most fidelity where they are looking. this shape is
+// inconsistent with that.", then "yes"): the read is the hemisphere about the look, its addresses the Cauchy centred on
+// the look (thickest there), the round of rings the default; the wedge below is one pair-set's quarter turns inside it,
+// shown with "the hemisphere off". The paragraph that follows is R696's, kept as the record.
 // A read is the quarter turn (Tom, 5 Nov: "the sweep is the quarter turn, not the semi-circle, sphere or circle"; "the demo
 // shows what the cauchy would look like if reader rotated his head 360 degrees"). Down the thumbs' diagonal every pair's
 // quarter turn, from its home (reading 0) to its horizon (reading ∞), lies in the wedge: on the screen the triangle whose
@@ -209,7 +214,7 @@ const byCountW = r => Math.sqrt(shareW(r));
 const S = { view: Q.get('view') === 'count' ? 'count' : 'thumbs', R: [8, 16, 32].includes(num('R', 16)) ? num('R', 16) : 16,
     words: Q.get('words') === '1', side: Q.get('side') !== '0', nums: false, about: Q.get('about') === '1',
     az: num('az', 35) * DEG, el: num('el', 30) * DEG, t: Q.get('play') === '0' ? 1 : 0, turns: 0, scale: 1, zoom: 1,
-    round: Q.get('round') === '1', depth: Q.get('depth') !== '0',
+    round: Q.get('round') !== '0', depth: Q.get('depth') !== '0',
     strip: Q.get('strip') !== '0', lgH: Math.max(-2, Math.min(3, num('H', 0.5))),
     sweep: ['pantilt', 'tiltpan'].includes(Q.get('sweep')) ? Q.get('sweep') : 'whole' };
 
@@ -278,9 +283,9 @@ function drawScreen() {
     for (const [c, name, y] of labels) { sx.fillStyle = c; sx.textAlign = 'left'; sx.fillText(name, cx + 4 * dpr, y); }
     if (q && S.words && sweep >= 1) { sx.fillStyle = rgba('ink', 0.55); sx.textAlign = 'left';
             sx.fillText('the quarter turn: every pair from its home (0) to its horizon (∞), the triangle\'s edges', 12 * dpr, 22 * dpr);
-            sx.fillText('outside it, other facings: the head turned all the way round', 12 * dpr, 36 * dpr); }
+            sx.fillText('the wedge alone; the read is the whole hemisphere (the menu)', 12 * dpr, 36 * dpr); }
     else if (byC) { sx.strokeStyle = rgba('ink', 0.4); sx.lineWidth = 1.2 * dpr; sx.beginPath(); sx.arc(cx, cy, k, 0, 2 * Math.PI); sx.stroke();
-        if (S.words && sweep >= 1) { sx.fillStyle = rgba('ink', 0.6); sx.textAlign = 'center'; sx.fillText('turned all the way round: the horizon of the look, never reached', cx, cy - k - 6 * dpr); } }
+        if (S.words && sweep >= 1) { sx.fillStyle = rgba('ink', 0.6); sx.textAlign = 'center'; sx.fillText('the hemisphere: its rim the horizon of the look, 90° off, never reached', cx, cy - k - 6 * dpr); } }
     drawMarks(dpr, place, sweep);
 }
 // the wedge's outline on the screen, in pieces so it bends by count
@@ -355,15 +360,15 @@ function drawSide() {
         sdx.lineTo(x, yc); sdx.stroke(); sdx.setLineDash([]); return [x, yc, y === yc]; };
     sdx.setLineDash([3 * dpr, 4 * dpr]); sdx.strokeStyle = rgba('ink', 0.35); sdx.lineWidth = 1 * dpr; sdx.beginPath();
     sdx.moveTo(ex, ey); sdx.lineTo(ex, top); sdx.moveTo(ex, ey); sdx.lineTo(ex, bot); sdx.stroke(); sdx.setLineDash([]);
-    // the near half closed (R699): the Cauchy's body, a dome one thumb about the eye over the wedge, cut here through the
-    // look and this thumb (an arc from the home's ray to the thumb's, drawn through the crosshair on the screen); past it
-    // the long tail, the same arc at 2, 4, 8 thumbs, dashed, never closing.
-    const domeArc = R => { sdx.beginPath(); sdx.arc(ex, ey, R, -SIDE.thumb, -SIDE.home, false); };
+    // the near half closed (R699, R700): the Cauchy's body, a hemisphere one thumb about the eye, cut here through the look
+    // (a half circle from straight up to straight down, through the crosshair's direction); past it the long tail, the same
+    // half circle at 2, 4, 8 thumbs, dashed, never closing. (Until R700 the dome covered the wedge only, home to thumb.)
+    const domeArc = R => { sdx.beginPath(); sdx.arc(ex, ey, R, -Math.PI / 2, Math.PI / 2, false); };
     sdx.save(); sdx.beginPath(); sdx.rect(0, top, W, bot - top); sdx.clip();
     for (const k of [2, 4, 8]) { domeArc(k * u); sdx.setLineDash([3 * dpr, 4 * dpr]); sdx.strokeStyle = rgba('violet', 0.45 - 0.08 * Math.log2(k));
         sdx.lineWidth = 1 * dpr; sdx.stroke(); }
     sdx.setLineDash([]); sdx.restore();
-    sdx.beginPath(); sdx.moveTo(ex, ey); sdx.arc(ex, ey, u, -SIDE.thumb, -SIDE.home, false); sdx.closePath();
+    sdx.beginPath(); sdx.moveTo(ex, ey); sdx.arc(ex, ey, u, -Math.PI / 2, Math.PI / 2, false); sdx.closePath();
     sdx.fillStyle = rgba('teal', 0.14); sdx.fill(); domeArc(u); sdx.strokeStyle = rgba('teal', 0.75); sdx.lineWidth = 1.3 * dpr; sdx.stroke();
     ray(SIDE.one, rgba('gold', 0.5), 1);
     const th = ray(SIDE.thumb, rgba('teal', 0.85), 1.4), ho = ray(SIDE.home, rgba('gold', 0.7), 1.2);
@@ -392,13 +397,19 @@ function drawSide() {
 }
 
 // ---- the hill: the 3D Cauchy as a height over the screen ----
-// ---- the read in depth (R699; Tom: "there are two shapes, the near field shape and the long tail."): the eye at home, the
+// ---- the read in depth (since R700 the body is a hemisphere one thumb about the eye and the tail the half-space past it;
+// below, R699 as first written;  Tom: "there are two shapes, the near field shape and the long tail."): the eye at home, the
 // three thumbs out of it, every direction of the wedge; along each ray the K distance addresses at d/H = tan(kπ/2K),
 // drawn by their address (4/π)·atan(d/H), so the body (d ≤ one thumb) and the tail (past it) get the same room. The body
 // is a closed shape: the wedge's three faces out to one thumb and the dome there, a piece of the sphere one thumb about the
 // eye. The tail is the rest of the cone, its shells at 2, 4 and 8 thumbs bunching toward the horizon at 2, never reached:
 // open, no cap. Turned by the same drag as the hill.
 const addrR = d => (4 / Math.PI) * Math.atan(d);
+// the outline of a set of points on the panel (Andrew's monotone chain): an orthographic view of a convex body is convex
+function hull(ps) { const p = ps.slice().sort((a, b) => a[0] - b[0] || a[1] - b[1]), cr = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+    const lo = [], up = []; for (const q of p) { while (lo.length > 1 && cr(lo[lo.length - 2], lo[lo.length - 1], q) <= 0) lo.pop(); lo.push(q); }
+    for (const q of p.reverse()) { while (up.length > 1 && cr(up[up.length - 2], up[up.length - 1], q) <= 0) up.pop(); up.push(q); }
+    return lo.slice(0, -1).concat(up.slice(0, -1)); }
 function drawDepth() {
     const dpr = fit(hc), W = hc.width, H = hc.height, m = Math.min(W, H);
     const ca = Math.cos(S.az), sa = Math.sin(S.az), ce = Math.cos(S.el), se = Math.sin(S.el);
@@ -413,31 +424,32 @@ function drawDepth() {
     const dirOf = (i, j, t) => { const a = Math.cos(t), b = Math.sin(t); return [0, 1, 2].map(c => a * E[i][c] + b * E[j][c]); };
     const at = (n, d) => { const r = addrR(d); return P(n.map(c => c * r)); };
     hx.fillStyle = '#04040a'; hx.fillRect(0, 0, W, H);
-    const pairs = [[0, 1], [1, 2], [2, 0]], N = 40;
-    // the tail: the cone past one thumb, its three faces faint violet out to the horizon's rim
-    hx.fillStyle = rgba('violet', 0.07);
-    for (const [i, j] of pairs) { hx.beginPath();
-        for (let s2 = 0; s2 <= N; s2++) hx.lineTo(...at(dirOf(i, j, s2 / N * Math.PI / 2), 1));
-        for (let s2 = N; s2 >= 0; s2--) hx.lineTo(...at(dirOf(i, j, s2 / N * Math.PI / 2), 1e9));
-        hx.closePath(); hx.fill(); }
-    // its shells at 2, 4, 8 thumbs, dashed, and the horizon's rim
-    const shell = (d, col, w, dash) => { hx.setLineDash(dash); hx.strokeStyle = col; hx.lineWidth = w * dpr; hx.beginPath();
-        for (const [i, j] of pairs) for (let s2 = 0; s2 <= N; s2++) { const p = at(dirOf(i, j, s2 / N * Math.PI / 2), d);
-            s2 ? hx.lineTo(...p) : hx.moveTo(...p); }
-        hx.stroke(); hx.setLineDash([]); };
+    const pairs = [[0, 1], [1, 2], [2, 0]], N = 48, cn = [k3, k3, k3];
+    // R700: the hemisphere about the look. A direction α off the look and β round it; drawn at its address radius.
+    const hd = (al, be) => [0, 1, 2].map(c => Math.cos(al) * cn[c] + Math.sin(al) * (Math.cos(be) * u1[c] + Math.sin(be) * u2[c]));
+    const hemi = d => { const pts = []; for (let i = 0; i <= 12; i++) for (let j = 0; j < 36; j++) pts.push(at(hd(i / 12 * Math.PI / 2, j / 36 * 2 * Math.PI), d));
+        pts.push(P([0, 0, 0])); return hull(pts); };
+    const fillPoly = (ps, col) => { hx.fillStyle = col; hx.beginPath(); ps.forEach((p, i) => i ? hx.lineTo(...p) : hx.moveTo(...p)); hx.closePath(); hx.fill(); };
+    const curve = (f, col, w, dash) => { hx.setLineDash(dash || []); hx.strokeStyle = col; hx.lineWidth = w * dpr; hx.beginPath();
+        for (let s2 = 0; s2 <= N; s2++) { const p = f(s2 / N); s2 ? hx.lineTo(...p) : hx.moveTo(...p); } hx.stroke(); hx.setLineDash([]); };
+    // the tail: the half-space in front past one thumb, faint violet out to the horizon's rim (address 2)
+    fillPoly(hemi(1e9), rgba('violet', 0.07));
+    // its shells at 2, 4, 8 thumbs (their rims, square to the look, and a meridian across), and the horizon's rim
+    const rim = (d, col, w, dash) => curve(t => at(hd(Math.PI / 2, t * 2 * Math.PI), d), col, w, dash);
+    const shell = (d, col, w, dash) => { rim(d, col, w, dash);
+        for (const be of [S.az + Math.PI / 2, S.az - Math.PI / 2]) curve(t => at(hd(t * Math.PI / 2, be), d), col, w * 0.8, dash); };
     [2, 4, 8].forEach((d, i) => shell(d, rgba('violet', 0.6 - 0.12 * i), 1, [4 * dpr, 4 * dpr]));
-    shell(1e9, rgba('ink', 0.35), 1, [2 * dpr, 5 * dpr]);
-    // the body: the three faces out to one thumb, and the dome over them
-    hx.fillStyle = rgba('teal', 0.2);
+    rim(1e9, rgba('ink', 0.35), 1, [2 * dpr, 5 * dpr]);
+    // one read's wedge inside it, faint: the three faces between the thumbs
+    hx.fillStyle = rgba('teal', 0.05);
     for (const [i, j] of pairs) { hx.beginPath(); hx.moveTo(...P([0, 0, 0]));
-        for (let s2 = 0; s2 <= N; s2++) hx.lineTo(...at(dirOf(i, j, s2 / N * Math.PI / 2), 1)); hx.closePath(); hx.fill(); }
-    // the dome's own surface: arcs from the corner direction out to each edge
-    hx.strokeStyle = rgba('teal', 0.35); hx.lineWidth = 0.8 * dpr;
-    const cn = [k3, k3, k3];
-    for (const [i, j] of pairs) for (let q = 1; q < 6; q++) { const t = q / 6 * Math.PI / 2, e = dirOf(i, j, t);
-        hx.beginPath(); for (let s2 = 0; s2 <= N; s2++) { const f = s2 / N, v = [0, 1, 2].map(c => cn[c] * (1 - f) + e[c] * f),
-            L = Math.hypot(...v), p = at(v.map(c => c / L), 1); s2 ? hx.lineTo(...p) : hx.moveTo(...p); } hx.stroke(); }
-    shell(1, rgba('teal', 0.95), 1.8, []);
+        for (let s2 = 0; s2 <= N; s2++) hx.lineTo(...at(dirOf(i, j, s2 / N * Math.PI / 2), 1e9)); hx.closePath(); hx.fill(); }
+    // the body: the hemisphere one thumb about the eye, its flat face square to the look through the eye
+    fillPoly(hemi(1), rgba('teal', 0.2));
+    hx.strokeStyle = rgba('teal', 0.3); hx.lineWidth = 0.8 * dpr;
+    for (let q = 0; q < 12; q++) curve(t => at(hd(t * Math.PI / 2, q / 12 * 2 * Math.PI), 1), rgba('teal', 0.3), 0.8);
+    for (const al of [30, 60]) curve(t => at(hd(al * DEG, t * 2 * Math.PI), 1), rgba('gold', al === 60 ? 0.45 : 0.25), 0.9, al === 60 ? [] : [2 * dpr, 3 * dpr]);
+    rim(1, rgba('teal', 0.95), 1.8);
     // the thumbs, from the eye through the body and the tail
     for (const [i] of pairs) { hx.strokeStyle = rgba('teal', 0.7); hx.lineWidth = 1.2 * dpr; hx.beginPath();
         hx.moveTo(...P([0, 0, 0])); hx.lineTo(...at(E[i], 1e9)); hx.stroke(); }
@@ -449,12 +461,13 @@ function drawDepth() {
     if (S.words) { hx.font = `${10 * dpr}px DM Mono, monospace`; hx.textAlign = 'left';
         const lb = (p, t, c, dx, dy) => { hx.fillStyle = c; hx.fillText(t, p[0] + dx * dpr, p[1] + dy * dpr); };
         lb(P([0, 0, 0]), 'the reader', 'rgba(255,255,255,0.9)', 8, 14);
-        lb(at(cn, 0.55), 'near: the body, closed (half the addresses)', rgba('teal', 1), 10, 4);
-        lb(at(cn, 1), 'the dome, one thumb out', rgba('gold', 1), 10, 0);
+        lb(at(cn, 0.55), 'near: the body, a hemisphere one thumb about the eye (half the addresses)', rgba('teal', 1), 10, 4);
+        lb(at(hd(60 * DEG, S.az + Math.PI / 2), 1), 'half the directions within 60° of the look', rgba('gold', 0.8), 6, -4);
+        lb(at(cn, 1), 'the look, one thumb out', rgba('gold', 1), 10, 0);
         lb(at(cn, 3), 'far: the long tail, open (the other half)', rgba('violet', 1), 10, 4);
         lb(at(cn, 1e9), 'the horizon, never reached', rgba('ink', 0.7), 10, -4); }
     else { hx.font = `${10 * dpr}px DM Mono, monospace`; hx.textAlign = 'left'; hx.fillStyle = rgba('ink', 0.55);
-        hx.fillText('the read in depth: the body (teal) and the long tail (violet)', 12 * dpr, 18 * dpr); }
+        hx.fillText('the read in depth: the hemisphere, its body (teal) and its long tail (violet)', 12 * dpr, 18 * dpr); }
 }
 
 function drawHill() {
@@ -507,7 +520,7 @@ function drawHill() {
     if (S.words) { hx.font = `${10 * dpr}px DM Mono, monospace`; hx.textAlign = 'left'; hx.fillStyle = rgba('gold', 0.9);
         hx.fillText('the corner, at the peak', top[0] + 8 * dpr, top[1] - 4 * dpr);
         hx.fillStyle = rgba('ink', 0.55); hx.fillText(q ? 'the quarter turn: each contour the same share of the wedge, cut at its edges'
-            : 'turned all the way round: each contour the same share; the tails never reach zero', 10 * dpr, 22 * dpr); }
+            : 'the hemisphere: the Cauchy centred on the look, each contour the same share; the tails never reach zero', 10 * dpr, 22 * dpr); }
 }
 
 // the thumb-by-thumb law as a surface over the wedge: lines of the triangle's grid, capped where it piles up
@@ -597,7 +610,7 @@ function numbers() {
     const f = x => x.toFixed(4);
     $('numbers').innerHTML =
         `<span class="g">the corner</span>   the crosshair, every reading 1, the top of the hill\n` +
-        (S.round ? `<span class="v">turned all the way round</span>: the round of the look, four facings joined (the writer's)\n` +
+        (S.round ? `<span class="v">the hemisphere</span>: every direction in front, the Cauchy centred on the look\n` +
         `<span class="t">addresses</span>    ${S.R} rings × ${RAYS} rays = ${S.R * RAYS} cells, each 1/${S.R * RAYS} of the directions in front\n` +
         `within one thumb off (45°)   ${f(share(1))}\n` +
         `within home (35.26°)         ${f(share(1 / SQ2))}\n` +
@@ -667,10 +680,10 @@ window.__read = {
     cells: () => S.R * RAYS,
     side: () => S.side ? { reader: [0, 0], screen: 1, thumb: Math.tan(SIDE.thumb), home: Math.tan(SIDE.home), one: Math.tan(SIDE.one),
         thumbDeg: SIDE.thumb / DEG, homeDeg: SIDE.home / DEG,
-        cap: { kind: 'dome', radius: 1, from: SIDE.home / DEG, to: SIDE.thumb / DEG, far: [2, 4, 8] } } : null,
+        cap: { kind: 'hemisphere', radius: 1, from: -90, to: 90, far: [2, 4, 8] } } : null,
     strip: () => ({ ...stripCounts(), lgH: S.lgH, open: S.strip, addrOf: d => addrOf(d * S.scale, Hnow()), distAddresses: () => distAddresses(Hnow()),
         things: () => THINGS.map(d => d * S.scale), lay: () => Array.from({ length: KD() - 1 }, (_, k) => (k + 1) / KD()) }),
-    depth: () => ({ on: S.depth, addr: addrR, body: addrR(1), shells: [2, 4, 8].map(addrR), horizon: 2 }),
+    depth: () => ({ on: S.depth, shape: 'hemisphere', addr: addrR, body: addrR(1), shells: [2, 4, 8].map(addrR), horizon: 2 }),
     quarter: () => ({ round: S.round, inWedge, shareW, ringW, total: WT.total }),
     sweep: () => ({ mode: S.sweep, name: SWEEP_NAME[S.sweep], heightAt: (x, y) => heightAt(x, y, S.sweep), relOf: u => relOf(u, S.sweep), unscreen }),
     set: o => { if ('sweep' in o) S.sweep = o.sweep; if ('round' in o) S.round = !!o.round; if ('depth' in o) S.depth = !!o.depth; if ('H' in o) S.lgH = Math.max(-2, Math.min(3, o.H)); if ('strip' in o) S.strip = !!o.strip; if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t; if ('side' in o) S.side = !!o.side;

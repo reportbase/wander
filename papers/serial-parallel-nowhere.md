@@ -7352,6 +7352,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R700** (5 Nov; Tom: "readers can see a hemisphere, with most fidelity where they are looking. this shape is
+  inconsistent with that."; then "yes", to the look as home): the read is the hemisphere in front. Read off the look, every
+  direction lands tan α from the crosshair, out to the rim at 90°; laid evenly, its addresses are the 2D Cauchy centred on
+  the look, 1/(2π(1 + r²)^(3/2)), densest at the look, cos³α on a screen; within α of the look 1 − cos α of them: 0.13 at
+  30°, 0.29 at 45° (one thumb off), half at 60°. The near field's body is a hemisphere one thumb about the eye (in the plane
+  a half disc), the tail the half-space past it. Each pair of thumbs' quarter turn, home to horizon, is a part of it (the
+  wedge); the sphere behind is the head turned all the way round. Corrects R696's reading that the read is the wedge alone
+  and R699's dome over the wedge (the shape "not a hemisphere"); R696's "the quarter turn" stands for each pair. The other
+  candidate, the look as the corner (finest relative grain there, cosh away), reaches only the wedge and was not taken.
+  *Reads and Writes* §6 and §7 (the tunnel, where the reader stands, the cone, "Half the read closed", the shape swept);
+  `read.html` opens on the hemisphere (`?round=0` the wedge alone), its side view and depth panel drawing the hemisphere.
 - **R699** (5 Nov; Tom: "think of H as defining the nearfield of the sweep. so in this case, the near field has a shape, but
   the far field acceleates logritimicallly. has the far field, and this does not have a closed shape."; "so the shape must
   be some kind of a 1/2 wedge."; "yes"; then "wouldn't the shape be more of a hemisphere."; "the long tail is the far
