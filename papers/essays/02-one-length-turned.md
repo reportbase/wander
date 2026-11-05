@@ -283,15 +283,15 @@ gives back the 1:
 
 > π/2 × 2/π = 1.
 
-This is not a coincidence of numbers. It says that the reader, facing the arc from where it stands, never has the chord's
-length directly. It has it twice over, once from each pivot, and the two readings together return exactly what the writer
-holds in one. What they return is the reader's own length measured in itself, H in H: one thumb, in thumbs. They do not
+This is not a coincidence of numbers. It says that the sweep, faced from where the reader stands, never gives the chord's
+length directly. A writer measuring it has it twice over, once from each pivot, and the two measures together return
+exactly what the writer holds in one. What they return is the reader's own length measured in itself, H in H: one thumb, in thumbs. They do not
 return the size of anything else.
 
 **They are rates, not angles, and they are the writer's.** Raise the hand from horizontal to vertical, and a writer holding
 the straight line from start to end measures the sweep at one of two rates against it: π/2 from the middle of the chord,
 2/π from a point of the circle. Never 1: the 1 is the writer's own rate, the angle, arc per radius read against the
-completed turn, which the reader has only by joining the two sweeps. Writers have angles, readers have sweeps. And because
+completed turn, had only by joining the two sweeps, which is the writer's join. Writers have angles, readers have sweeps. And because
 each of these numbers has π in it, the count of a completed turn, they are the writer's account of the sweep, not the
 reader's own: the writer is transcendental, the reader is not. The reader holds one length, and one length makes only
 rationals; square roots need two lengths combined, and π a limit, the whole turn. The reader holds the same sweep as the
@@ -333,8 +333,8 @@ circle held.
 
 ## 9. The circle, written by a writer
 
-Everything so far has been from the reader's side. The writer has a circle too, and it is worth seeing how the writer
-describes the reader's.
+Everything so far has been from the reader's side, where there is no circle. The circle is the writer's, and it is worth
+seeing how the writer uses it to describe the reader's pointing.
 
 A writer holds both lengths, the reader's H (its thumb) and the other party's V (the mountain in the distance), and can
 draw them on a page with two axes. Watching the reader point its one length and turn it, the writer draws the circle the

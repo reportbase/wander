@@ -75,7 +75,7 @@ is: arc per radius, read against the completed turn.
 
 The reader has no such measure. It has the sweep, from where it stands, and only two places to stand where a sweep is
 even (the second essay): the middle of the chord, where the radius turns, and a point of the circle, where the ray turns.
-From each, the same sweep from horizontal to vertical comes at its own rate against the straight line the writer holds:
+From each, a writer measures the same sweep from horizontal to vertical at its own rate against the straight line it holds:
 
 - **π/2, the central sweep.** From the middle, the sweep runs π/2 of arc for the chord's 1. Along the way the running
   value is arc over chord, θ/sin θ, from 1 at the start through 1.1107 at the corner, and it is attained when the radius,
@@ -504,7 +504,7 @@ zero, before any sweeping; that is the start, not a sixth thing.
 **Writers have angles; readers have sweeps.** An angle is a share of the whole turn, measured at rate 1, arc per radius,
 against a turn held complete. A sweep is what one length does from where it stands; measured by the writer from either
 even pivot it comes at its own rate: π/2 from the middle, 2/π from a point of the circle. Never 1. The 1 is the writer's,
-and the reader has it only by joining the two sweeps.
+had only by joining the two sweeps, which is the writer's join.
 
 **The writer is transcendental; the reader is not.** π, and every number with π in it, is the writer's: the count of a
 completed turn. The reader holds one variable, H, its thumb, and one variable makes only rationals; the irrationals need

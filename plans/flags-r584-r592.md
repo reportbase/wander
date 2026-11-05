@@ -22,6 +22,8 @@ Applied so far: essay 14, essay 2 §7's new paragraph, OFS §4 "Rates, not angle
 
 ## 1. π/2 and 2/π called the reader's
 
+*Settled 5 Nov (R717; Tom: "PI/2 and 2/PI are writers."): the writer's. R329 and R450 kept, read as the writer's account.*
+
 R591 makes both the writer's account of the reader's sweep. Older text gives them to the reader, or to "the two
 vantages", as the reader's own readings.
 
@@ -57,6 +59,8 @@ the record either way.
 
 ## 2. The circle as the reader's
 
+*Settled 5 Nov (R717; Tom: "one length circle is writers."): option (a).*
+
 R533 says the reader's one length, turned, traces the circle, and that "V = H is the writer's name for the reader's
 circle". R591 makes the sphere the writer's picture of the reader. Does the circle go with it? Some text already pointed
 that way:
@@ -82,6 +86,8 @@ Where the circle is called the reader's:
 R591's wording suggests (a). R533 and essay 2 are built on something like (b).
 
 ## 3. "The reader's sphere", after Gibson
+
+*Settled with entry 2 (R717): the writer's. OFS is archived and keeps its wording; the demos say it in what they show.*
 
 The same question in three dimensions.
 - **OFS:** §3.7's sphere paragraph (R426–R428; one sentence added on 30 Oct says it is the writer's picture), and line

@@ -1648,6 +1648,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R717 (5 Nov; Tom: "PI/2 and 2/PI are writers."; "one length circle is writers."): flags 1–3 settled: **π/2 and 2/π
+  are the writer's measure of the reader's sweep, and the one-length circle (and sphere) the writer's picture**; never
+  give either to the reader. *Reads and Writes* one sentence; essays 2, 6, 12, 14, README.
   R716 (5 Nov; Tom: "Yes", to `plans/rw-tighten.md`): *Reads and Writes* tightened, repeats folded into one home each
   (abstract three paragraphs; §1 "What a read is", "Reads are unconnected", "Reads do not conflict"; §6 one crosshairs
   passage, "K and N" the home of addresses; §7 "A heat map" folded into "Where the heat comes from"), 20,371 → 19,161 words.
