@@ -93,6 +93,7 @@
     <button id="sideB">where the reader stands <span>on</span></button>
     <button id="stripB">drag the thumb (H) <span>on</span></button>
     <button id="sweepB">swept <span>the shape whole</span></button>
+    <button id="roundB">turned all the way round <span>off</span></button>
     <button id="playB">read again</button>
     <div class="sec">nothing changes</div>
     <button id="turnB">turn the look 30° <span>0</span></button>
@@ -110,8 +111,12 @@
     <ol>
     <li><b class="g">The crosshair.</b> Three thumbs, each one thumb long, square to each other, with the look down their
     diagonal. Where they cross, every reading is one: the corner. It is the middle of the screen and the top of the hill.</li>
+    <li><b class="t">The quarter turn.</b> A read is a quarter turn: every pair of thumbs from its home (reading 0) to its
+    horizon (reading ∞). Down the diagonal that is the wedge, the triangle whose corners are the thumbs and whose edges are
+    where a reading is 0 or ∞. Outside it are other facings; the full round of rings about the crosshair is what the head
+    turned all the way round would give, the writer's join ("turned all the way round" in the menu shows it).</li>
     <li><b class="t">The addresses.</b> The directions, taken evenly, land on the screen square to the look as the 3D
-    Cauchy, thick at the crosshair and thinning outward without end. The reader's K addresses are equal shares of them:
+    Cauchy, thick at the crosshair and thinning outward to the wedge's edges. The reader's K addresses are equal shares of them:
     rings, each holding the same share, cut by rays. On the left in thumbs, as they fall on the screen: the cells grow,
     one thumb off, one in 2, one in 4, one in 8, toward a horizon no ring reaches. Switch the view to "by count" and every
     cell gets the same room: the same rings now bunch toward the rim.</li>
@@ -133,8 +138,8 @@
     the other (pan, then tilt; or tilt, then pan). Every pose is still a turn of the frame, but the poses are weighed
     otherwise: the directions pile toward one thumb, where the other sweep shrinks to a point, the hill is no longer round
     and no longer peaks at the crosshair, and one pair of thumbs leaves its corner (0.343 below it, not a half). The pile
-    goes to a different thumb when the order is changed. Turned whole, there is no order: any turns compose to one turn
-    about one axis, and the hill is round about the crosshair.</li>
+    goes to a different thumb when the order is changed. Swept together through the quarter turn the wedge fills evenly by
+    area, every pair at its corner, with no order, since no pair is taken past its horizon.</li>
     <li><b>The hill.</b> On the right the same law as a height. Its contours are the rings, each enclosing the same share;
     its tails go on and never reach zero. Drag it to turn it.</li>
     <li><b>A read is every sweep at once.</b> "Read again" draws the sweeps out from the crosshair to the horizon. The
@@ -172,10 +177,34 @@ const THUMBS = [[1, 0, 0], [0, 1, 0], [0, 0, 1]].map(screenOf);       // r = √
 const HOMES = [[0, 1, 1], [1, 0, 1], [1, 1, 0]].map(screenOf);        // r = 1/√2, 35.26°, home of the pair opposite each thumb
 const RAYS = 12;
 
+// ---- the quarter turn: the wedge, not the round of the look ----
+// A read is the quarter turn (Tom, 5 Nov: "the sweep is the quarter turn, not the semi-circle, sphere or circle"; "the demo
+// shows what the cauchy would look like if reader rotated his head 360 degrees"). Down the thumbs' diagonal every pair's
+// quarter turn, from its home (reading 0) to its horizon (reading ∞), lies in the wedge: on the screen the triangle whose
+// corners are the thumbs (r = √2) and whose edges are the faces where a reading is 0 or ∞. The round of rings about the
+// crosshair, out past the triangle, is the other facings joined: the head turned all the way round, the writer's join.
+// By default the read is drawn in the triangle only; "turned all the way round" shows the whole round, as before.
+const inWedge = (x, y) => { for (let i = 0; i < 3; i++) if (LOOK[i] + x * E1[i] + y * E2[i] < -1e-12) return false; return true; };
+// the share of the wedge's directions within r of the crosshair: 4·∫₀ʳ f(ρ)·ρ(1 + ρ²)^(−3/2) dρ, f the part of the circle
+// of radius ρ inside the triangle (1 out to the homes at 1/√2, 0 past the thumbs at √2); tabled once
+const WT = (() => { const n = 3000, A = 720, top = SQ2 * 1.0001, rs = [], sh = [0];
+    let acc = 0, prev = 0;
+    for (let i = 0; i <= n; i++) { const r = top * i / n; let inn = 0;
+        for (let a = 0; a < A; a++) { const t = (a + 0.5) / A * 2 * Math.PI; if (inWedge(r * Math.cos(t), r * Math.sin(t))) inn++; }
+        const g = (inn / A) * r * Math.pow(1 + r * r, -1.5);
+        if (i) { acc += 0.5 * (g + prev) * (top / n); sh.push(4 * acc); } prev = g; rs.push(r); }
+    return { rs, sh, total: sh[sh.length - 1] }; })();
+const shareW = r => { if (r >= WT.rs[WT.rs.length - 1]) return 1; const i = Math.floor(r / WT.rs[WT.rs.length - 1] * (WT.rs.length - 1));
+    const f = (r - WT.rs[i]) / (WT.rs[i + 1] - WT.rs[i]); return (WT.sh[i] + f * (WT.sh[i + 1] - WT.sh[i])) / WT.total; };
+const ringW = s => { if (s >= 1) return WT.rs[WT.rs.length - 1]; let lo = 0, hi = WT.rs[WT.rs.length - 1];
+    for (let k = 0; k < 50; k++) { const mid = (lo + hi) / 2; if (shareW(mid) < s) lo = mid; else hi = mid; } return (lo + hi) / 2; };
+const byCountW = r => Math.sqrt(shareW(r));
+
 // ---- state ----
 const S = { view: Q.get('view') === 'count' ? 'count' : 'thumbs', R: [8, 16, 32].includes(num('R', 16)) ? num('R', 16) : 16,
     words: Q.get('words') === '1', side: Q.get('side') !== '0', nums: false, about: Q.get('about') === '1',
     az: num('az', 35) * DEG, el: num('el', 30) * DEG, t: Q.get('play') === '0' ? 1 : 0, turns: 0, scale: 1, zoom: 1,
+    round: Q.get('round') === '1',
     strip: Q.get('strip') !== '0', lgH: Math.max(-2, Math.min(3, num('H', 0.5))),
     sweep: ['pantilt', 'tiltpan'].includes(Q.get('sweep')) ? Q.get('sweep') : 'whole' };
 
@@ -207,12 +236,15 @@ function drawScreen() {
     const sweep = Math.min(1, S.t);                         // the read drawn out: the share of addresses passed so far
     const byC = S.view === 'count';
     // in thumbs: one thumb (45°) at a third of the half-side, times the zoom; by count: the hemisphere fills 0.92 of it
-    const k = byC ? 0.92 * m : S.zoom * m / 3;
+    const q = !S.round && S.sweep === 'whole';               // the quarter turn: drawn in the wedge only
+    const k = byC ? 0.92 * m : S.zoom * m / (q ? 1.75 : 3);  // the wedge reaches √2 thumbs: drawn larger
+    const bc = q ? byCountW : byCount, shr = q ? shareW : share, ring = q ? ringW : ringR;
     const place = (x, y) => { const r = Math.hypot(x, y); if (!byC) return [cx + k * x, cy - k * y];
-        const R = byCount(r), f = r > 0 ? R / r : 0; return [cx + k * f * x, cy - k * f * y]; };
-    const radOf = r => byC ? k * byCount(r) : k * r;
+        const R = bc(r), f = r > 0 ? R / r : 0; return [cx + k * f * x, cy - k * f * y]; };
+    const radOf = r => byC ? k * bc(r) : k * r;
     sx.fillStyle = '#04040a'; sx.fillRect(0, 0, W, H);
     if (S.sweep !== 'whole') { paintThumbs(W, H, cx, cy, k, byC); drawMarks(dpr, place, sweep); return; }
+    if (q) { sx.save(); sx.beginPath(); triPath(sx, place); sx.clip(); }
     // the density: thick at the crosshair, thinning outward (by count it is flat: every cell the same share)
     const far = Math.hypot(W, H) / 2;
     if (byC) { sx.fillStyle = 'rgba(212,160,82,0.10)'; sx.beginPath(); sx.arc(cx, cy, k, 0, 2 * Math.PI); sx.fill(); }
@@ -223,24 +255,33 @@ function drawScreen() {
     sx.lineWidth = 1 * dpr;
     for (let j = 1; j < S.R; j++) {
         const s = j / S.R; if (s > sweep) break;
-        const rr = radOf(ringR(s)); if (rr > far * 1.5) continue;
+        const rr = radOf(ring(s)); if (rr > far * 1.5) continue;
         sx.strokeStyle = rgba('ink', 0.16); sx.beginPath(); sx.arc(cx, cy, rr, 0, 2 * Math.PI); sx.stroke();
     }
-    const reach = byC ? k : far * 1.5, rayTo = Math.min(reach, radOf(ringR(Math.min(sweep, 0.9999))));
+    const reach = byC ? k : far * 1.5, rayTo = Math.min(reach, radOf(ring(Math.min(sweep, 0.9999))));
     sx.strokeStyle = rgba('ink', 0.12);
     for (let i = 0; i < RAYS; i++) { const a = (i + 0.5) / RAYS * 2 * Math.PI + Math.PI / 2;
         sx.beginPath(); sx.moveTo(cx, cy); sx.lineTo(cx + rayTo * Math.cos(a), cy - rayTo * Math.sin(a)); sx.stroke(); }
     // the rings named: one thumb off (45°), then one in 2, 4, 8
     const named = [[1, 'one thumb off'], [2, 'one in 2'], [4, 'one in 4'], [8, 'one in 8']];
-    sx.font = `${10 * dpr}px DM Mono, monospace`; sx.textAlign = 'left';
-    for (const [r, name] of named) { if (share(r) > sweep) break; const rr = radOf(r); if (rr > far) continue;
+    sx.font = `${10 * dpr}px DM Mono, monospace`; sx.textAlign = 'left'; const labels = [];
+    for (const [r, name] of named) { if (shr(r) > sweep || (q && r > SQ2)) break; const rr = radOf(r); if (rr > far) continue;
         sx.setLineDash(r === 1 ? [] : [3 * dpr, 5 * dpr]); sx.strokeStyle = r === 1 ? rgba('gold', 0.55) : rgba('violet', 0.45);
         sx.lineWidth = 1.2 * dpr; sx.beginPath(); sx.arc(cx, cy, rr, 0, 2 * Math.PI); sx.stroke(); sx.setLineDash([]);
-        if (S.words) { sx.fillStyle = r === 1 ? rgba('gold', 0.85) : rgba('violet', 0.75); sx.fillText(name, cx + 4 * dpr, cy - rr - 4 * dpr); } }
-    if (byC) { sx.strokeStyle = rgba('ink', 0.4); sx.lineWidth = 1.2 * dpr; sx.beginPath(); sx.arc(cx, cy, k, 0, 2 * Math.PI); sx.stroke();
-        if (S.words && sweep >= 1) { sx.fillStyle = rgba('ink', 0.6); sx.textAlign = 'center'; sx.fillText('the horizon of the look, never reached', cx, cy - k - 6 * dpr); } }
+        if (S.words) labels.push([r === 1 ? rgba('gold', 0.85) : rgba('violet', 0.75), name, q ? cy - rr + 14 * dpr : cy - rr - 4 * dpr]); }
+    if (q) sx.restore();
+    for (const [c, name, y] of labels) { sx.fillStyle = c; sx.textAlign = 'left'; sx.fillText(name, cx + 4 * dpr, y); }
+    if (q && S.words && sweep >= 1) { sx.fillStyle = rgba('ink', 0.55); sx.textAlign = 'left';
+            sx.fillText('the quarter turn: every pair from its home (0) to its horizon (∞), the triangle\'s edges', 12 * dpr, 22 * dpr);
+            sx.fillText('outside it, other facings: the head turned all the way round', 12 * dpr, 36 * dpr); }
+    else if (byC) { sx.strokeStyle = rgba('ink', 0.4); sx.lineWidth = 1.2 * dpr; sx.beginPath(); sx.arc(cx, cy, k, 0, 2 * Math.PI); sx.stroke();
+        if (S.words && sweep >= 1) { sx.fillStyle = rgba('ink', 0.6); sx.textAlign = 'center'; sx.fillText('turned all the way round: the horizon of the look, never reached', cx, cy - k - 6 * dpr); } }
     drawMarks(dpr, place, sweep);
 }
+// the wedge's outline on the screen, in pieces so it bends by count
+function triPath(c, place) { for (let i = 0; i < 3; i++) { const p = THUMBS[i], qq = THUMBS[(i + 1) % 3];
+    for (let n = 0; n <= 40; n++) { const t = n / 40, [x, y] = place(p[0] + t * (qq[0] - p[0]), p[1] + t * (qq[1] - p[1]));
+        if (i || n) c.lineTo(x, y); else c.moveTo(x, y); } } c.closePath(); }
 // the wedge's triangle, the three corners, the homes and the crosshair (drawn in pieces, so they bend by count)
 function drawMarks(dpr, place, sweep) {
     const W = sc.width, H = sc.height, cx = W / 2, cy = H / 2;
@@ -335,7 +376,8 @@ function drawSide() {
 function drawHill() {
     const dpr = fit(hc), W = hc.width, H = hc.height, m = Math.min(W, H);
     const ca = Math.cos(S.az), sa = Math.sin(S.az), ce = Math.cos(S.el), se = Math.sin(S.el);
-    const RMAX = 4.5, sXY = 0.42 * m / RMAX, sZ = 0.42 * m, p0 = density(0);
+    const q = !S.round && S.sweep === 'whole', ring = q ? ringW : ringR, shr = q ? shareW : share;
+    const RMAX = q ? 2 : 4.5, sXY = 0.42 * m / RMAX, sZ = 0.42 * m, p0 = density(0);
     // orthographic: turn by az about the upright, tip by el
     const P = (x, y, z) => { const X = x * ca - y * sa, Y = x * sa + y * ca;
         return [W / 2 + sXY * X, H * 0.62 - (sZ * z * ce - sXY * Y * se)]; };
@@ -345,7 +387,8 @@ function drawHill() {
     hx.lineWidth = 1 * dpr;
     // the base: the screen square to the look, to RMAX thumbs
     hx.strokeStyle = rgba('ink', 0.07); hx.beginPath();
-    for (let g = -4; g <= 4; g++) { let a = P(g, -RMAX, 0), b = P(g, RMAX, 0); hx.moveTo(...a); hx.lineTo(...b);
+    const G = Math.round(RMAX);
+    for (let g = -G; g <= G; g++) { let a = P(g, -RMAX, 0), b = P(g, RMAX, 0); hx.moveTo(...a); hx.lineTo(...b);
         a = P(-RMAX, g, 0); b = P(RMAX, g, 0); hx.moveTo(...a); hx.lineTo(...b); }
     hx.stroke();
     // the wedge's triangle and the corners on the base
@@ -358,27 +401,29 @@ function drawHill() {
     }
     if (S.sweep !== 'whole') { hillThumbs(P, dpr, sweep); return; }
     // the contours: the rings of equal share, each at its own height
-    for (let j = 1; j < S.R; j++) { const s = j / S.R; if (s > sweep) break; const r = ringR(s); if (r > RMAX) break;
-        const z = zOf(r); hx.strokeStyle = rgba('ink', 0.35); hx.beginPath();
-        for (let i = 0; i <= 96; i++) { const a = i / 96 * 2 * Math.PI, q = P(r * Math.cos(a), r * Math.sin(a), z); if (i) hx.lineTo(...q); else hx.moveTo(...q); }
-        hx.stroke(); }
+    // in the quarter turn each line is drawn only inside the wedge (broken where it leaves it)
+    const arc = (r, z) => { let on = false;
+        for (let i = 0; i <= 192; i++) { const a = i / 192 * 2 * Math.PI, x = r * Math.cos(a), y = r * Math.sin(a);
+            if (q && !inWedge(x, y)) { on = false; continue; } const pt = P(x, y, z); if (on) hx.lineTo(...pt); else { hx.moveTo(...pt); on = true; } } };
+    for (let j = 1; j < S.R; j++) { const s = j / S.R; if (s > sweep) break; const r = ring(s); if (r > RMAX) break;
+        hx.strokeStyle = rgba('ink', 0.35); hx.beginPath(); arc(r, zOf(r)); hx.stroke(); }
     // the rays down its sides, to the edge of what is drawn (the tails go on, never zero)
-    const rEnd = Math.min(RMAX, ringR(Math.min(sweep, 0.9999)));
+    const rEnd = Math.min(RMAX, ring(Math.min(sweep, 0.9999)));
     for (let i = 0; i < RAYS; i++) { const a = (i + 0.5) / RAYS * 2 * Math.PI + Math.PI / 2, c = Math.cos(a), s = Math.sin(a);
         hx.strokeStyle = rgba('ink', 0.3); hx.beginPath();
-        for (let n = 0; n <= 60; n++) { const r = rEnd * n / 60, q = P(r * c, r * s, zOf(r)); if (n) hx.lineTo(...q); else hx.moveTo(...q); }
+        for (let n = 0; n <= 60; n++) { const r = rEnd * n / 60; if (q && !inWedge(r * c, r * s)) break;
+            const pt = P(r * c, r * s, zOf(r)); if (n) hx.lineTo(...pt); else hx.moveTo(...pt); }
         hx.stroke(); }
     // the named rings on the hill: one thumb off gold, one in 2 and 4 violet
-    for (const [r, col] of [[1, 'gold'], [2, 'violet'], [4, 'violet']]) { if (share(r) > sweep) break; const z = zOf(r);
-        hx.strokeStyle = rgba(col, 0.75); hx.lineWidth = 1.4 * dpr; hx.beginPath();
-        for (let i = 0; i <= 96; i++) { const a = i / 96 * 2 * Math.PI, q = P(r * Math.cos(a), r * Math.sin(a), z); if (i) hx.lineTo(...q); else hx.moveTo(...q); }
-        hx.stroke(); }
+    for (const [r, col] of [[1, 'gold'], [2, 'violet'], [4, 'violet']]) { if (shr(r) > sweep || (q && r > SQ2)) break;
+        hx.strokeStyle = rgba(col, 0.75); hx.lineWidth = 1.4 * dpr; hx.beginPath(); arc(r, zOf(r)); hx.stroke(); }
     // the peak: the crosshair, the corner
     const top = P(0, 0, 1); hx.fillStyle = rgba('gold', 0.95); hx.beginPath(); hx.arc(top[0], top[1], 4 * dpr, 0, 2 * Math.PI); hx.fill();
     hx.strokeStyle = rgba('gold', 0.5); hx.setLineDash([3 * dpr, 4 * dpr]); hx.beginPath(); hx.moveTo(...top); hx.lineTo(...P(0, 0, 0)); hx.stroke(); hx.setLineDash([]);
     if (S.words) { hx.font = `${10 * dpr}px DM Mono, monospace`; hx.textAlign = 'left'; hx.fillStyle = rgba('gold', 0.9);
         hx.fillText('the corner, at the peak', top[0] + 8 * dpr, top[1] - 4 * dpr);
-        hx.fillStyle = rgba('ink', 0.55); hx.fillText('each contour holds the same share; the tails never reach zero', 10 * dpr, 22 * dpr); }
+        hx.fillStyle = rgba('ink', 0.55); hx.fillText(q ? 'the quarter turn: each contour the same share of the wedge, cut at its edges'
+            : 'turned all the way round: each contour the same share; the tails never reach zero', 10 * dpr, 22 * dpr); }
 }
 
 // the thumb-by-thumb law as a surface over the wedge: lines of the triangle's grid, capped where it piles up
@@ -468,12 +513,19 @@ function numbers() {
     const f = x => x.toFixed(4);
     $('numbers').innerHTML =
         `<span class="g">the corner</span>   the crosshair, every reading 1, the top of the hill\n` +
+        (S.round ? `<span class="v">turned all the way round</span>: the round of the look, four facings joined (the writer's)\n` +
         `<span class="t">addresses</span>    ${S.R} rings × ${RAYS} rays = ${S.R * RAYS} cells, each 1/${S.R * RAYS} of the directions in front\n` +
         `within one thumb off (45°)   ${f(share(1))}\n` +
         `within home (35.26°)         ${f(share(1 / SQ2))}\n` +
         `within the thumbs (54.74°)   ${f(share(SQ2))}\n` +
         `half the addresses within     ${f(ringR(0.5))} thumbs (60°)\n` +
-        `<span class="v">one in 2, 4, 8</span>  hold ${f(share(2) - share(1))}, ${f(share(4) - share(2))}, ${f(share(8) - share(4))} of them\n` +
+        `<span class="v">one in 2, 4, 8</span>  hold ${f(share(2) - share(1))}, ${f(share(4) - share(2))}, ${f(share(8) - share(4))} of them\n`
+        : `<span class="t">the quarter turn</span>  the wedge only: every pair from home (0) to its horizon (∞), the triangle's edges\n` +
+        `<span class="t">addresses</span>    ${S.R} rings of equal share of the wedge, cut at its edges\n` +
+        `within home (35.26°)         ${f(shareW(1 / SQ2))} of the wedge (the circle inside it)\n` +
+        `within one thumb off (45°)   ${f(shareW(1))}\n` +
+        `within the thumbs (54.74°)   ${f(shareW(SQ2))}\n` +
+        `half the wedge within         ${f(ringW(0.5))} thumbs (${(Math.atan(ringW(0.5)) / DEG).toFixed(2)}°)\n`) +
         `the wedge      ${wedgeShare} of what is in front, each pair's corner halving it\n` +
         `<span class="v">swept</span>          ${SWEEP_NAME[S.sweep]}: ` + (S.sweep === 'whole' ? `every pair ½, the near field ⅓, no order\n`
             : `one pair 0.3426 below its corner (not ½), the near field 0.2326 (not ⅓), the pile at ${S.sweep === 'pantilt' ? 'the up thumb' : 'the depth thumb'}\n`) +
@@ -496,7 +548,7 @@ function sync() {
     on('viewB', S.view === 'count', S.view === 'count' ? 'by count' : 'in thumbs'); on('RB', false, String(S.R));
     on('sideB', S.side, S.side ? 'on' : 'off'); $('side').classList.toggle('open', S.side);
     on('stripB', S.strip, S.strip ? 'on' : 'off'); $('strip').classList.toggle('open', S.strip);
-    on('sweepB', S.sweep !== 'whole', SWEEP_NAME[S.sweep]);
+    on('sweepB', S.sweep !== 'whole', SWEEP_NAME[S.sweep]); on('roundB', S.round, S.round ? 'on' : 'off');
     on('turnB', false, String(S.turns)); on('scaleB', false, '× ' + S.scale.toLocaleString());
     $('numbers').classList.toggle('open', S.nums); $('about').classList.toggle('open', S.about);
     if (S.nums) numbers();
@@ -510,6 +562,7 @@ $('viewB').onclick = () => { S.view = S.view === 'count' ? 'thumbs' : 'count'; s
 $('RB').onclick = () => { S.R = S.R === 8 ? 16 : S.R === 16 ? 32 : 8; sync(); };
 $('sideB').onclick = () => { S.side = !S.side; sync(); };
 $('stripB').onclick = () => { S.strip = !S.strip; sync(); };
+$('roundB').onclick = () => { S.round = !S.round; sync(); };
 $('sweepB').onclick = () => { S.sweep = S.sweep === 'whole' ? 'pantilt' : S.sweep === 'pantilt' ? 'tiltpan' : 'whole'; sync(); };
 $('playB').onclick = () => { S.t = 0; $('menu').classList.remove('open'); };
 // turning the look turns the thumbs with it, and scaling the world reaches no reading: the geometry is drawn again unchanged
@@ -531,10 +584,11 @@ window.__read = {
         thumbDeg: SIDE.thumb / DEG, homeDeg: SIDE.home / DEG } : null,
     strip: () => ({ ...stripCounts(), lgH: S.lgH, open: S.strip, addrOf: d => addrOf(d * S.scale, Hnow()), distAddresses: () => distAddresses(Hnow()),
         things: () => THINGS.map(d => d * S.scale), lay: () => Array.from({ length: KD() - 1 }, (_, k) => (k + 1) / KD()) }),
+    quarter: () => ({ round: S.round, inWedge, shareW, ringW, total: WT.total }),
     sweep: () => ({ mode: S.sweep, name: SWEEP_NAME[S.sweep], heightAt: (x, y) => heightAt(x, y, S.sweep), relOf: u => relOf(u, S.sweep), unscreen }),
-    set: o => { if ('sweep' in o) S.sweep = o.sweep; if ('H' in o) S.lgH = Math.max(-2, Math.min(3, o.H)); if ('strip' in o) S.strip = !!o.strip; if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t; if ('side' in o) S.side = !!o.side;
+    set: o => { if ('sweep' in o) S.sweep = o.sweep; if ('round' in o) S.round = !!o.round; if ('H' in o) S.lgH = Math.max(-2, Math.min(3, o.H)); if ('strip' in o) S.strip = !!o.strip; if ('view' in o) S.view = o.view; if ('R' in o) S.R = o.R; if ('words' in o) S.words = !!o.words; if ('t' in o) S.t = o.t; if ('side' in o) S.side = !!o.side;
         if ('az' in o) S.az = o.az * DEG; if ('el' in o) S.el = o.el * DEG; sync(); },
-    state: () => ({ sweep: S.sweep, lgH: S.lgH, strip: S.strip, view: S.view, R: S.R, cells: S.R * RAYS, t: S.t, turns: S.turns, scale: S.scale, az: S.az / DEG, el: S.el / DEG }),
+    state: () => ({ round: S.round, sweep: S.sweep, lgH: S.lgH, strip: S.strip, view: S.view, R: S.R, cells: S.R * RAYS, t: S.t, turns: S.turns, scale: S.scale, az: S.az / DEG, el: S.el / DEG }),
 };
 })();
 </script>

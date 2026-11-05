@@ -7352,6 +7352,25 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R697** (5 Nov; Tom: "think about it this way, the sphere is the shape of every possible way three intersecting thumbs can
+  be related to each other, when H and V are known. the cauchy is the same, except V is not known."; then "the shape of a
+  single read if H and V is known is the wedge. What is the shape of a single read, when V is not known"; then "yes"): the
+  sphere is the writer's (H and V, every sign, closed); dropping V keeps the ratios and loses the sign and the closing: the
+  sphere folds onto itself (antipodes one, the projective plane, a screen its chart), its great circle square to the look
+  goes to the horizon at infinity, its even measure lands as the 2D Cauchy, each reading twice. One read with V known is the
+  wedge, the ball's octant, its cap the only part carrying an amount; without V the cap goes and the read is the cone, three
+  flat faces at the eye along the thumbs, open, unmoved by scaling about its apex. A screen one thumb out cuts it as the
+  quadrant (half-Cauchy) or the triangle (down the diagonal); elsewhere the same law at another size: H only zooms. In the
+  plane a quarter disc with its arc, and a right angle without. A table: sphere, Cauchy plane, cone. *Reads and Writes* §7.
+- **R696** (5 Nov; Tom: "the sweep is the quarter turn, not the semi-circle, sphere or circle."; then "the demo shows what
+  the cauchy would look like if reader rotated his head 360 degrees."): the read is the quarter turn, every pair of thumbs
+  from its home (reading 0) to its horizon (reading ∞); in three dimensions the wedge, down the thumbs' diagonal a
+  triangle on the screen. The full round about the look (the tunnel's rings on every side, the hemisphere in front), the
+  circle and the sphere are facings joined, the head turned all the way round: the writer's. R695's appeal to Haar's
+  measure on every turn of space and Euler's composition is the writer's account from the whole sphere; within the quarter
+  turn the thumbs swept together fill the wedge evenly by area and nothing composes past a horizon. SWP's predictions and
+  run stand (its sphere sample a writer's check, noted). `read.html` draws the wedge alone by default (rings of equal share
+  of the wedge, within home 0.734, THM U4), the round an option; *Reads and Writes* §7 and essay 5 §6, §10 say so.
 - **R695** (5 Nov; Tom: "the shape of the 3d cauchy shows why two cauchys combine into another cauchy. seems like we have
   the sweep of three thumbs and that geometric structure that is created also sweeps as a shape."; "the larger point is that
   this capability means the shape itself can be swept."; "so I think must actually happen is not the sweep of each thumb

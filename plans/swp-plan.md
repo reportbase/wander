@@ -115,3 +115,13 @@ turns, every linear map of the thumbs' space carries the even read to an ellipti
 belongs to can itself be swept, its standpoint five numbers in space against the plane's m + iγ; stacking two hills gives
 one only when they have one shape (W10). Classical throughout (Haar 1933, Euler's rotation theorem, Archimedes, the
 multivariate Cauchy's closure); the reading, the three thumbs as marks of one shape swept, is ours.
+
+### A note after run 1 (5 Nov 2026; SPN R696)
+
+Tom: "the sweep is the quarter turn, not the semi-circle, sphere or circle."; "the demo shows what the cauchy would look
+like if reader rotated his head 360 degrees." The predictions and the run stand as written. Two things in them are the
+writer's, not the read: W2's sample drew uniform turns of the whole sphere and folded them into the octant, and the
+reading's appeal to Haar's measure on every turn of space and to Euler's composition of turns. The read is the quarter
+turn, the wedge, every pair from home to its horizon; within it the thumbs swept together fill the wedge evenly by area,
+and nothing composes past a horizon. `read.html` now draws the wedge alone by default, the round of the look ("turned all
+the way round") an option.
