@@ -2,8 +2,8 @@
 
 *The seventeenth of a series of essays on what can be known from where one stands. Draft, 5 November 2026. It gathers the
 rulings of 5 November (R700–R707) on the read as a hemisphere, the Cauchy as a heat map, near and far as an overlay, and
-addresses as the writer's word, and follows* Reads and Writes *§7, "A heat map: the Cauchy's and the overlay's" and "Where
-the heat comes from".*
+addresses as the writer's word, and follows* Reads and Writes *§7, "Where the heat comes
+from".*
 
 Take any photograph with a wide lens and look at its corners. They are darker than the middle, even of a white wall evenly
 lit. Photographers call it natural vignetting and give it a law: the light falls off as the fourth power of the cosine of
@@ -296,7 +296,7 @@ The references are carried over from the essays before this one and *Reads and W
 
 The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`): §2 ("Heat and paint", "Why there is
 no mean"), §6 ("The crosshairs", "H is a zoom") and §7 ("The hemisphere is the shape; near and far are an overlay",
-"Where the split falls", "A heat map: the Cauchy's and the overlay's", "Where the heat comes from"). The rulings are SPN
+"Where the split falls", "Where the heat comes from"). The rulings are SPN
 R700–R707. The comparison of harmonic measure and the boosted sky on the sphere is EUL (`../../plans/eul-plan.md`), the
 relay of standpoints SUM (`../../plans/sum-plan.md`), the aimed terms EPI (`../../plans/epi-plan.md`). The essays before
 this one: 2 (the turn), 3 (heat and paint, no mean), 4 (near and far), 5 (the wedge and the tunnel), 6 (parallax's

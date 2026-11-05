@@ -70,3 +70,9 @@ once.
 
 No ruling, result, number, reference or section number. Pointers into the paper from the essays (by section) keep
 working, since every section keeps its number and its headings' homes; a moved passage keeps its heading.
+
+## Done (5 Nov, Tom: "Yes")
+
+A–D made as listed; the epicycles passage left in §6 (no ruling either way). 20,371 → 19,161 words, not 15,500: the
+estimates above counted whole paragraphs where most repeats were a sentence or two. Essay 17 and `cauchy-map.html` cited
+§7's "A heat map", now folded; they cite "Where the heat comes from".
