@@ -1639,6 +1639,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R708 (5 Nov; Tom: "lets create a new essay to explore the cauchy map."): essay 17, `papers/essays/17-the-cauchy-map.md`,
+  *The Cauchy map: heat given, paint met* (a photograph's dark corners; R700–R707 as one essay); card, README row,
+  explainers' not-yet list; the smoke test counts seventeen essays.
   R707 (5 Nov; Tom: "address are a useful metaphore, so they can be used as needed to connect cauchy to computer
   science as needed."): **"address" may be used as a metaphor where it connects the Cauchy to computer science**; the heat
   stays the primary reading (R706), and no sweep removing the word is needed.
@@ -3464,7 +3467,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     sixteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     seventeen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.

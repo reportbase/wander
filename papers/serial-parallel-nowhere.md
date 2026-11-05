@@ -7352,6 +7352,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R708** (5 Nov; Tom: "lets create a new essay to explore the cauchy map."): essay 17,
+  `papers/essays/17-the-cauchy-map.md`, *The Cauchy map: heat given, paint met*, opening on a photograph's dark corners
+  (cos⁴ vignetting, three cosines the map's): R700–R707 gathered as one essay; the derivation (dθ = ds/(1 + s²),
+  dΩ = cos³α·dA), not a grid seen from home, harmonic measure and the Poisson kernel on a flat wall in every dimension
+  (Laplace, not the heat equation; parting on a sphere, EUL), the Poisson semigroup, Möbius moves and the boosted sky, the
+  overlay's sech(ln(d/H)), a middle and no mean, addresses the writer's word and a metaphor (R707). No new results or
+  citations. A card on `essays.html`, a README row, the explainers' not-yet list; the smoke test counts seventeen essays.
 - **R707** (5 Nov; Tom: "address are a useful metaphore, so they can be used as needed to connect cauchy to computer
   science as needed."): R706 stands (the reader's geometry is a heat over directions; an address, discrete and counted, is
   the writer's), and "address" may be used as a metaphor wherever it helps connect the Cauchy to computer science: a
