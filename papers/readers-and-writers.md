@@ -728,7 +728,9 @@ split on every direction it reads, nearer than one thumb or past it, one read at
 joined. One choice of H; two accounts of what it set. One facing of it is the wedge with its cap at H: an octant of
 the ball, three flat faces through the eye and the cap one thumb out. The far field is everything else, so near and far
 together are the writer's whole; inversion in the sphere at H carries the far field point for point onto the near field,
-infinity to the eye, which is why each holds half of every direction's heat.
+infinity to the eye, which is why each holds half of every direction's heat. Its filling is the reader's heat, not an
+even one: along each ray the half-Cauchy in distance, 2H/(π(H² + d²)), hottest at the eye and half passed at one thumb;
+across directions cos³α off the look; so the near-field sphere is the writer's outline round the reader's Cauchy.
 
 **Where the split falls: looking around.** The overlay is the reader's to move, and it moves it by looking. Pointed at a
 thing, the crossed thumbs take its distance as H, so that thing sits at the corner, half of every direction's heat in

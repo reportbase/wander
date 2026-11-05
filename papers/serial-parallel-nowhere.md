@@ -7362,6 +7362,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   near field + far field = universe."; "yes, add both"): one facing of it is the wedge with its cap at H; near and far
   together the writer's whole, inversion in the sphere at H (d ↦ H²/d) carrying the far field onto the near, infinity to
   the eye, why each holds half of every direction's heat. The same paragraph.
+  Then (Tom: "so its a weird kind of sphere, not uniform."; "so its the near field sphere."; "yes, add it."): its
+  filling is the reader's heat, the half-Cauchy in distance 2H/(π(H² + d²)) (hottest at the eye, half passed at one
+  thumb) times cos³α off the look; the near-field sphere is the writer's outline round the reader's Cauchy.
 - **R722** (5 Nov; Tom: "all three"): R721 carried out.
   - *Reads and Writes* §2: "The Cauchy's routes" after the derivation (one measure from z; the routes; one in the plane,
     agreeing on flat boundaries, parting on curved ones; told apart only by what γ tracks; the turn the reader's route;
