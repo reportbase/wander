@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The Cauchy map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    cauchy-map.html: the Cauchy map (5 November 2026; Tom: "1,2", the first "a demo page for the Cauchy map"; SPN R712;
+    essay 17, `papers/essays/17-the-cauchy-map.md`; *Reads and Writes* §7, "Where the heat comes from").
+    A standalone page, plain canvas, no libraries. Three panels:
+      1. The look and the walker. A standpoint d from a straight wall (the plane) or a flat wall (space). Equal turns of the
+         look cross the wall crowded at the foot (the turn's heat, (1/π)·d/(d² + y²), or (1/2π)·d/(d² + r²)^(3/2) per unit
+         of wall in space); the writer's tiles, evenly spaced, are flat on the wall. Seeded walkers released at the
+         standpoint (walk-on-spheres) land on the wall by harmonic measure; their histogram lies on the turn's heat.
+      2. Stepping back. What a wall pattern of wavenumber k keeps when seen from a height: the Cauchy's e^(−d|k|) (the
+         Poisson semigroup, heights adding), a Gaussian of the same half-width, e^(−σ²k²/2), never zero either but falling
+         by k², and the floor's box blur of the same width, sin(kw)/(kw), with zeros.
+      3. The second map, in distance: (1/π)·sech(ln(d/H)) against distance on a log axis, the thumb H a slider, hottest at
+         one thumb, 0.8, 0.47, 0.25 of the peak at one in 2, 4, 8 and 2, 4, 8 thumbs.
+    `?dim=2|3&d=&walkers=&H=<log2 H>`; hook `window.__cauchyMap` (`heat`, `heat3`, `walk`, `landings`, `poissonConst`,
+    `hemiConst`, `damp`, `gauss`, `box`, `sechMap`, `median`, `set`, `state`).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 20px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 80ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    label { color: var(--dim) }
+    input[type=range] { flex: 1 1 160px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid > * { min-width: 0 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr } }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 8px }
+    .read { font-size: 13px; white-space: pre-wrap; margin: 0 0 10px; padding: 8px 10px; border-radius: 6px; background: #0f0f15;
+        overflow-x: auto }
+    .g { color: var(--gold) } .r { color: var(--teal) } .w { color: var(--violet) } .x { color: var(--red) } .b { color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px; margin: 6px 0 0 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>The Cauchy map</h1>
+    <p class="lede">Stand a distance <span class="b">d</span> from a wall and turn evenly. Equal turns of the look cross the
+    wall crowded at its foot and thinning toward the horizon: that crowding is the <span class="r">heat of the
+    directions</span>, the Cauchy, there before any light arrives. Release random walkers from the same point and they land
+    on the wall <span class="g">by the same law</span>. The writer's tiles, evenly spaced, are flat. The heat is given; the
+    paint is met.</p>
+
+    <div class="panel">
+        <div class="row"><button id="dim2" class="on">the plane</button><button id="dim3">space (a flat wall)</button>
+            <label for="d">distance to the wall, d</label><input id="d" type="range" min="-2" max="2" step="0.01" value="0">
+            <span id="dv" class="b"></span>
+            <button id="walk">release 4,000 walkers</button></div>
+    </div>
+
+    <div class="panel">
+        <h2>The look and the walker</h2>
+        <div class="grid">
+            <div><canvas id="cv1" height="380"></canvas><p class="cap">From above. The standpoint (gold) and the wall (the
+            vertical line). <span class="r">Teal</span> rays: 24 equal turns of the look, crossing the wall crowded at its
+            foot. <span class="w">Violet</span> ticks: the writer's tiles, evenly spaced along the wall. <span class="g">Gold
+            paths</span>: a few walkers released at the standpoint, each stopping where it first meets the wall.</p></div>
+            <div><canvas id="cv2" height="380"></canvas><p class="cap">Along the wall, per unit of wall (in space, per unit of
+            area at radius r from the foot). <span class="r">Teal</span>: the turn's heat, (1/π)·d/(d² + y²), or
+            (1/2π)·d/(d² + r²)^(3/2), the cos³ of a flat screen. <span class="g">Gold</span> dots: where the walkers landed.
+            <span class="w">Violet</span>: the tiles, flat. Half the turn and half the walkers land within d of the foot
+            in the plane.</p></div>
+        </div>
+        <div id="read1" class="read"></div>
+    </div>
+
+    <div class="panel">
+        <h2>Stepping back</h2>
+        <div class="grid">
+            <div><canvas id="cv3" height="300"></canvas><p class="cap">What a pattern on the wall keeps when seen from the
+            height d, against its wavenumber k (one stripe every 2π/k). <span class="r">Teal</span>: the Cauchy,
+            e^(−d|k|). <span class="g">Gold</span>: a Gaussian blur of the same half-width, e^(−σ²k²/2): never zero either,
+            but falling by k². <span class="x">Red</span>: the floor's box blur of the same width, sin(kw)/(kw), with zeros
+            where a pattern is lost outright.</p></div>
+            <div><canvas id="cv4" height="300"></canvas><p class="cap">Heights add. The view from d₁ seen again from d₂ is
+            the view from d₁ + d₂: the Cauchy from d (teal) convolved with itself (gold dots, computed here by summing) lies
+            on the Cauchy from 2d (violet). The Poisson semigroup: Laplace's steady state, not the heat equation, whose
+            kernel is the Gaussian.</p></div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>The second map, in distance</h2>
+        <div class="row"><label for="H">the thumb, H</label><input id="H" type="range" min="-3" max="6" step="0.01" value="1">
+            <span id="Hv" class="b"></span></div>
+        <canvas id="cv5" height="240"></canvas>
+        <p class="cap">Along any direction, against distance on a log axis: the weight of the distances read by ratio,
+        (1/π)·sech(ln(d/H)), hottest at one thumb, 0.8 of the peak at one in 2 and at 2 thumbs, 0.47 at one in 4 and 4,
+        0.25 at one in 8 and 8. Move the thumb and the map slides along distance; its shape never changes. Multiplied by
+        the first map, the heat is greatest at one point: on the look, one thumb out, the thing looked at.</p>
+    </div>
+
+    <p class="note">Essay 17, "The Cauchy map: heat given, paint met"; <i>Reads and Writes</i> §7, "A heat map" and "Where
+    the heat comes from". Harmonic measure as a walker's landing: Kakutani (1944). Other demos: <a
+    href="plane-sphere.html">why the plane is special</a> (where the walker and the turn part, on a sphere), <a
+    href="pinhole.html?sky=1">the pinhole's uniform sky</a> (the dark corners), <a href="epicycles.html">circles and
+    standpoints</a> (stepping back as the Poisson blur), <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), q = new URLSearchParams(location.search);
+    const S = { dim: q.get('dim') === '3' ? 3 : 2, d: +(q.get('d') || 1), n: +(q.get('walkers') || 4000), H: 2 ** +(q.get('H') ?? 1), land: null };
+    function fit(c) { const r = devicePixelRatio || 1, W = c.clientWidth, H = +c.getAttribute('height');
+        c.width = W * r; c.height = H * r; c.style.height = H + 'px'; const g = c.getContext('2d'); g.setTransform(r, 0, 0, r, 0, 0);
+        g.clearRect(0, 0, W, H); return [g, W, H]; }
+    function txt(g, s, x, y, col = '#c8c8d0', size = 11) { g.fillStyle = col; g.font = `${size}px 'DM Mono', monospace`; g.fillText(s, x, y); }
+    function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+
+    // the turn's heat on the wall, per unit of wall (plane) or of area (space)
+    const heat = (y, d) => d / (Math.PI * (d * d + y * y));
+    const heat3 = (r, d) => d / (2 * Math.PI * Math.pow(d * d + r * r, 1.5));
+    // the half-space's Poisson kernel constant and the even hemisphere's, in n dimensions
+    const lgam = x => { // Lanczos
+        const g = 7, c = [0.99999999999980993, 676.5203681218851, -1259.1392167224028, 771.32342877765313, -176.61502916214059,
+            12.507343278686905, -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7];
+        if (x < 0.5) return Math.log(Math.PI / Math.sin(Math.PI * x)) - lgam(1 - x);
+        x -= 1; let a = c[0]; const t = x + g + 0.5; for (let i = 1; i < 9; i++) a += c[i] / (x + i);
+        return 0.5 * Math.log(2 * Math.PI) + (x + 0.5) * Math.log(t) - t + Math.log(a); };
+    const poissonConst = n => Math.exp(lgam(n / 2)) / Math.pow(Math.PI, n / 2);
+    const hemiConst = n => 2 / (2 * Math.pow(Math.PI, n / 2) / Math.exp(lgam(n / 2)));
+
+    // walk-on-spheres from the standpoint (d, 0[, 0]) to the wall x = 0: jump to a uniform point on the largest
+    // circle (sphere) about the walker that stays off the wall, until within a hair of it
+    function walk(n, d, dim, seed = 7, keepPaths = 0) {
+        const R = rng(seed), out = [], paths = [], eps = 1e-4 * d;
+        for (let i = 0; i < n; i++) {
+            let x = d, y = 0, z = 0; const path = i < keepPaths ? [[x, y]] : null;
+            for (let s = 0; s < 4000 && x > eps; s++) {
+                if (dim === 2) { const a = 2 * Math.PI * R(); y += x * Math.sin(a); x += x * Math.cos(a); }
+                else { const u = 2 * R() - 1, a = 2 * Math.PI * R(), w = Math.sqrt(1 - u * u);
+                    y += x * w * Math.cos(a); z += x * w * Math.sin(a); x += x * u; }
+                if (path) path.push([x, y]);
+            }
+            out.push(dim === 2 ? y : Math.hypot(y, z)); if (path) paths.push(path);
+        }
+        return { land: out, paths };
+    }
+    const median = a => { const b = [...a].map(Math.abs).sort((p, r) => p - r); return b[b.length >> 1]; };
+    const damp = (k, d) => Math.exp(-d * Math.abs(k));
+    const gauss = (k, s) => Math.exp(-s * s * k * k / 2);
+    const box = (k, w) => k === 0 ? 1 : Math.sin(k * w) / (k * w);
+    const sechMap = x => 1 / (Math.PI * Math.cosh(Math.log(x)));
+
+    function runWalk() { const W = walk(S.n, S.d, S.dim, 7, 6); S.land = W.land; S.paths = W.paths; draw(); }
+
+    function draw() {
+        $('dv').textContent = S.d.toFixed(2);
+        // panel 1, left: from above
+        let [g, W, Hh] = fit($('cv1'));
+        const span = 6 * S.d, wx = 40, sx = (W - 60) / (1.6 * S.d), sy = (Hh - 30) / (2 * span), cy = Hh / 2;
+        const P = (x, y) => [wx + x * sx, cy - y * sy];
+        g.strokeStyle = 'rgba(255,255,255,0.5)'; g.beginPath(); g.moveTo(wx, 10); g.lineTo(wx, Hh - 10); g.stroke();
+        const eye = P(S.d, 0);
+        g.strokeStyle = 'rgba(140,230,205,0.55)';
+        for (let i = 0; i < 24; i++) { const th = -Math.PI / 2 + Math.PI * (i + 0.5) / 24, y = -S.d * Math.tan(th);
+            const yy = Math.max(-span * 1.2, Math.min(span * 1.2, y)), xx = Math.abs(y) > span * 1.2 ? S.d * (1 - span * 1.2 / Math.abs(y)) : 0;
+            g.beginPath(); g.moveTo(...eye); g.lineTo(...P(xx, yy)); g.stroke(); }
+        g.strokeStyle = '#b59cf0';
+        for (let k = -12; k <= 12; k++) { const [x, y] = P(0, k * span / 12); g.beginPath(); g.moveTo(x - 6, y); g.lineTo(x, y); g.stroke(); }
+        if (S.paths) { g.save(); g.beginPath(); g.rect(wx, 8, W - wx - 8, Hh - 16); g.clip();
+            g.strokeStyle = 'rgba(212,160,82,0.75)'; for (const p of S.paths) { g.beginPath();
+            p.forEach(([x, y], i) => { const pt = P(x, y); i ? g.lineTo(...pt) : g.moveTo(...pt); }); g.stroke(); } g.restore(); }
+        g.fillStyle = '#d4a052'; g.beginPath(); g.arc(...eye, 5, 0, 2 * Math.PI); g.fill();
+        txt(g, 'wall', wx + 4, 18, '#8a8a96', 10); txt(g, `d = ${S.d.toFixed(2)}`, eye[0] - 20, eye[1] - 10, '#d4a052', 11);
+        // panel 1, right: along the wall
+        [g, W, Hh] = fit($('cv2'));
+        const Y = S.dim === 2 ? 4 * S.d : 3 * S.d, f = S.dim === 2 ? (y => heat(y, S.d)) : (r => heat3(r, S.d));
+        const peak = S.dim === 2 ? heat(0, S.d) : heat3(0, S.d), x0 = S.dim === 2 ? -Y : 0;
+        const X = y => 30 + (W - 45) * (y - x0) / (Y - x0), V = v => Hh - 24 - (Hh - 50) * v / (1.15 * peak);
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(30, V(0)); g.lineTo(W - 15, V(0)); g.stroke();
+        g.strokeStyle = '#b59cf0'; g.setLineDash([4, 4]); // the tiles: flat in the wall's own measure (drawn at a nominal height)
+        g.beginPath(); g.moveTo(X(x0), V(peak * 0.25)); g.lineTo(X(Y), V(peak * 0.25)); g.stroke(); g.setLineDash([]);
+        txt(g, 'tiles: flat', X(Y) - 80, V(peak * 0.25) - 6, '#b59cf0', 10);
+        g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath();
+        for (let i = 0; i <= 300; i++) { const y = x0 + (Y - x0) * i / 300, pt = [X(y), V(f(y))]; i ? g.lineTo(...pt) : g.moveTo(...pt); } g.stroke(); g.lineWidth = 1;
+        const out = [];
+        if (S.land) {
+            const nb = 40, w = (Y - x0) / nb, cnt = new Array(nb).fill(0);
+            for (const v of S.land) { const b = Math.floor((v - x0) / w); if (b >= 0 && b < nb) cnt[b]++; }
+            g.fillStyle = '#d4a052';
+            for (let b = 0; b < nb; b++) { const lo = x0 + b * w, mid = lo + w / 2;
+                const dens = S.dim === 2 ? cnt[b] / (S.land.length * w) : cnt[b] / (S.land.length * Math.PI * ((lo + w) ** 2 - lo ** 2));
+                g.beginPath(); g.arc(X(mid), V(dens), 3, 0, 2 * Math.PI); g.fill(); }
+            const m = median(S.land), exact = S.dim === 2 ? S.d : S.d * Math.sqrt(3);
+            out.push(`${S.land.length} walkers: median distance from the foot ${m.toFixed(3)} (the turn's: ${exact.toFixed(3)}, ${S.dim === 2 ? 'd' : '√3·d, 60° off the look'})`);
+        }
+        txt(g, S.dim === 2 ? 'y along the wall →' : 'r from the foot →', W - 130, Hh - 6, '#8a8a96', 10);
+        out.unshift(`the turn's heat at the foot ${peak.toFixed(4)}; ${S.dim === 2 ? 'half of it within d of the foot' : 'cos³: 0.354 of the peak at r = d (45°), 0.125 at r = √3·d (60°), half the hemisphere inside 60°'}`,
+            `the half-space's Poisson kernel and the even hemisphere carried onto the wall, constants for n = 2…5: ` +
+            [2, 3, 4, 5].map(n => `${poissonConst(n).toFixed(5)} = ${hemiConst(n).toFixed(5)}`).join(', '));
+        $('read1').textContent = out.join('\n');
+
+        // stepping back: transfer functions
+        [g, W, Hh] = fit($('cv3'));
+        const kmax = 8 / S.d, KX = k => 30 + (W - 45) * k / kmax, KY = v => Hh - 30 - (Hh - 50) * (v + 0.25) / 1.25;
+        const sigma = S.d / Math.sqrt(2 * Math.log(2)), wbox = S.d; // same half-width at half-maximum as the Cauchy
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(30, KY(0)); g.lineTo(W - 15, KY(0)); g.stroke();
+        for (const [fn, col] of [[k => damp(k, S.d), '#8ce6cd'], [k => gauss(k, sigma), '#d4a052'], [k => box(k, wbox), '#d96e5b']]) {
+            g.strokeStyle = col; g.lineWidth = 2; g.beginPath();
+            for (let i = 0; i <= 300; i++) { const k = kmax * i / 300, pt = [KX(k), KY(fn(k))]; i ? g.lineTo(...pt) : g.moveTo(...pt); } g.stroke(); }
+        g.lineWidth = 1; txt(g, 'k →', W - 30, Hh - 8, '#8a8a96', 10);
+        const k3 = 3 / S.d; txt(g, `at k = 3/d: Cauchy ${damp(k3, S.d).toFixed(3)}, Gaussian ${gauss(k3, sigma).toFixed(4)}, box ${box(k3, wbox).toFixed(3)}`, 36, 16, '#e6e4ee', 11);
+        // heights add
+        [g, W, Hh] = fit($('cv4'));
+        const L = 8 * S.d, NX = 801, dx = 2 * L / (NX - 1), xs = Array.from({ length: NX }, (_, i) => -L + i * dx);
+        const one = xs.map(x => heat(x, S.d)), conv = xs.map(x => { let s = 0; for (let j = 0; j < NX; j++) s += one[j] * heat(x - xs[j], S.d); return s * dx; });
+        const pk = heat(0, S.d), CX = x => 30 + (W - 45) * (x + L / 2) / L, CY = v => Hh - 24 - (Hh - 44) * v / (1.1 * pk);
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(30, CY(0)); g.lineTo(W - 15, CY(0)); g.stroke();
+        for (const [fn, col] of [[x => heat(x, S.d), '#8ce6cd'], [x => heat(x, 2 * S.d), '#b59cf0']]) {
+            g.strokeStyle = col; g.lineWidth = 2; g.beginPath();
+            for (let i = 0; i <= 300; i++) { const x = -L / 2 + L * i / 300, pt = [CX(x), CY(fn(x))]; i ? g.lineTo(...pt) : g.moveTo(...pt); } g.stroke(); }
+        g.fillStyle = '#d4a052';
+        for (let i = 0; i < NX; i += 20) { const x = xs[i]; if (Math.abs(x) <= L / 2) { g.beginPath(); g.arc(CX(x), CY(conv[i]), 3, 0, 2 * Math.PI); g.fill(); } }
+        const mid = conv[(NX - 1) / 2]; txt(g, `at the foot: from d twice ${mid.toFixed(4)}, from 2d ${heat(0, 2 * S.d).toFixed(4)}`, 36, 16, '#e6e4ee', 11);
+
+        // the second map in distance
+        $('Hv').textContent = `${S.H < 1 ? '1/' + (1 / S.H).toFixed(2) : S.H.toFixed(2)} u`;
+        [g, W, Hh] = fit($('cv5'));
+        const lo = -6, hi = 10, LX = l => 30 + (W - 45) * (l - lo) / (hi - lo), LY = v => Hh - 30 - (Hh - 50) * v / (1.1 / Math.PI);
+        g.strokeStyle = 'rgba(255,255,255,0.3)'; g.beginPath(); g.moveTo(30, LY(0)); g.lineTo(W - 15, LY(0)); g.stroke();
+        for (let l = lo; l <= hi; l += 2) { txt(g, `2^${l}`, LX(l) - 10, Hh - 12, '#8a8a96', 10); }
+        g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath();
+        for (let i = 0; i <= 400; i++) { const l = lo + (hi - lo) * i / 400, x = 2 ** l / S.H, pt = [LX(l), LY(sechMap(x))]; i ? g.lineTo(...pt) : g.moveTo(...pt); } g.stroke(); g.lineWidth = 1;
+        const lH = Math.log2(S.H);
+        g.strokeStyle = '#d4a052'; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(LX(lH), LY(0)); g.lineTo(LX(lH), LY(1 / Math.PI)); g.stroke(); g.setLineDash([]);
+        txt(g, 'one thumb', LX(lH) + 4, LY(1 / Math.PI) + 2, '#d4a052', 10);
+        g.fillStyle = '#e6e4ee';
+        for (const m of [2, 4, 8]) for (const s of [1, -1]) { const l = lH + s * Math.log2(m), v = sechMap(2 ** l / S.H);
+            g.beginPath(); g.arc(LX(l), LY(v), 3, 0, 2 * Math.PI); g.fill();
+            if (s > 0) txt(g, `${m}: ${(v * Math.PI).toFixed(2)}`, LX(l) + 4, LY(v) - 6, '#e6e4ee', 10);
+            else txt(g, `one in ${m}`, LX(l) - 40, LY(v) - 6, '#e6e4ee', 10); }
+        txt(g, 'distance (log axis) →', W - 150, Hh - 26, '#8a8a96', 10);
+    }
+
+    function set(o = {}) { if (o.dim) S.dim = o.dim; if (o.d) S.d = o.d; if (o.H) S.H = o.H; if (o.n) S.n = o.n; if (o.walk === false) S.land = null;
+        $('dim2').classList.toggle('on', S.dim === 2); $('dim3').classList.toggle('on', S.dim === 3);
+        $('d').value = Math.log2(S.d); $('H').value = Math.log2(S.H); if (S.land && (o.dim || o.d)) runWalk(); else draw(); return state(); }
+    function state() { return { dim: S.dim, d: S.d, H: S.H, walkers: S.land ? S.land.length : 0, median: S.land ? median(S.land) : null }; }
+    $('dim2').onclick = () => set({ dim: 2 }); $('dim3').onclick = () => set({ dim: 3 });
+    $('d').oninput = e => set({ d: 2 ** +e.target.value }); $('H').oninput = e => set({ H: 2 ** +e.target.value });
+    $('walk').onclick = runWalk; addEventListener('resize', draw);
+    set({}); if (q.get('walkers')) runWalk();
+    window.__cauchyMap = { heat, heat3, walk, landings: () => S.land, poissonConst, hemiConst, damp, gauss, box, sechMap, median, set, state };
+})();
+</script>
+</body>
+</html>
