@@ -765,6 +765,16 @@ space; nothing in them is hottest along the look. The Cauchy is the other way ro
 flat grid, dθ/ds = 1/(1 + s²), and in space dΩ/dA = cos³α. It is the turn per unit of the writer's grid, the *per* of §4,
 not the layout of the world.
 
+Said in measure theory, the Cauchy is a Radon–Nikodym derivative: the turn's even measure carried onto the wall by the
+projection from home, against the wall's own measure, dν/dλ = (1/π)·d/(d² + y²) for a wall d away. That is the half-plane's
+Poisson kernel, its harmonic measure seen from the standpoint: where a random walk started there first meets the wall
+(Kakutani 1944). On a flat wall the two agree in every dimension: the half-space's kernel, Γ(n/2)/π^(n/2) · d/|x|^n, is the
+even hemisphere carried onto the wall, (2/|S^(n−1)|) · d/|x|^n, the same constant; in space (1/2π)·d/(d² + r²)^(3/2), the
+cos³α above. On a sphere they part (below, "What survives in space, and what does not"). Stepping back composes the kernels, e^(−d|k|), the Poisson
+semigroup in the standpoint's height d. This is Laplace's equation, a steady state; it is not the heat equation, whose
+kernel is the Gaussian, e^(−tk²). The "heat" here is a weight over the readings, never diffusion in time. The identity is
+classical; what is read into it is the vantage.
+
 **The shape is swept, not each thumb.** Each pair of thumbs reads a quarter turn: from its home, where it reads 0, to its
 horizon, where it reads ∞. Down the thumbs' diagonal that is the wedge, a triangle on the screen whose corners are the
 thumbs and whose edges are where a reading is 0 or ∞, inside the hemisphere the read holds; the sphere behind is other

@@ -7376,6 +7376,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   labels and titles (essay 3 keeps "Addresses given, payloads met", with a note under it). Essay 5's "Laid by the
   addresses" is now "Laid by the heat", essay 4's "Two address spaces, one corner" "In proportion, then in ratios: one
   corner", essay 16 gains "Heat, not addresses". `explainers.html` keeps the draw explainer's beat "no address moves".
+  Then (Gemini, pasted by Tom, then its "Yes"): the Cauchy as the Radon–Nikodym derivative of the turn's measure against
+  the wall's, and so the half-plane's Poisson kernel (harmonic measure, Kakutani 1944); on a flat wall the two agree in
+  every dimension, Γ(n/2)/π^(n/2) = 2/|S^(n−1)| (checked n = 2–5), parting only on a sphere (EUL). Corrected: Laplace's
+  steady state, not the heat equation (whose kernel is the Gaussian, e^(−tk²)); stepping back the Poisson semigroup in d,
+  not diffusion time; u a temperature, not a flux; its uniqueness theorem two classical ones stacked (Haar invariance
+  alone forces it). R706's "heat" stays a weight over readings. A closing paragraph in §7 "Where the heat comes from".
 - **R705** (5 Nov; a comparison from Gemini, pasted by Tom; Tom: "Yes", to adding it corrected): "the projection is the
   dereference": in memory an address and its value share one representation and need a step between them; for the
   reader the address is a direction and what reaches it paint, two kinds, pointing already being met. Corrected: the
