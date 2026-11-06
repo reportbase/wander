@@ -7352,6 +7352,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R727** (6 Nov; Tom, of a ChatGPT note pasting "Breathing: The Asymmetry of Reading and Writing": "Just a small
+  note, i like the basic metapore, just record it so we dont forget it."): recorded, not placed in any paper. Breathing in
+  is reading, breathing out is writing: one cycle, two acts not alike (read continuous, write discrete, R640; read, write,
+  read again, R644). Motion hides the asymmetry, rest reveals it: a step is counted, a write (R627), so a moving reader
+  writes as it goes and the two look like one; standing still, only the turn is left, and one standpoint writes nothing
+  (no parallax; RWT's nullity). Caveats if it is ever used: "an ongoing encounter" gives the read a duration, which is the
+  writer's account (R649, R651, R652); and breathing is near symmetric, so the sheet of paper (R653) shows the asymmetry
+  better.
 - **R726** (6 Nov; Tom: "update the essays"): R723–R725 in the essays. Essay 2 §9, after "The circle's equation, divided
   by its own length": the sphere kept and divided by the thumb, the writer's and the reader's, the scale test their
   difference and the paint left out; H, V, V₂ against H, H, H; and in its Euler subsection 1 + is = sec θ·e^(iθ),
