@@ -7359,6 +7359,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   is cos³α × sech(ln(d/H)), behind the eye none. Checked: the dot looked at heat 1 and the hottest; scaling the world by
   10^2.5 moves no colour (10⁻¹⁵); dots at d and H²/d on one direction one colour (10⁻¹⁶); from the middle 720 of 1,727 dots
   in front. A demo of R728, nothing claimed.
+  Then (Tom: "now show the cauchy compression in an adjacent visual"): a panel beside the cube draws the same dots as the
+  read lays them, no dot moved in the cube: across the look, a disc of radius √(1 − cos α) (equal room, equal share; rings
+  at 37.5°, 45°, 60°; from a corner the cube is the wedge's curved triangle); along the look, x = (2/π)·atan(d/H) (the eye
+  0, one thumb ½, the horizon 1) against the share. Checked: the dot looked at at g = ½, share 0; scaling moves none.
 - **R728** (6 Nov; Tom: "what if its more like the heat map of the full hemisphere. the tunnel is just where its
   hotest."; "hotter means higher density of addresses in this metaphore."; "yes, I prefer the idea is that the cauchy is the
   horizon's heat map. giving the cauchy a shape is a bit confusing."): **the Cauchy is the horizon's heat map, not a
