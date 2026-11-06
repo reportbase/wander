@@ -7356,7 +7356,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   radius is the writer's sphere; divided by the thumb's share x², 1 + s² + s₂² = (r/x)², the reader's Cauchy (its
   denominator), the corner s = 1, the horizon s = ∞. The scale test is the difference between the two readings; the
   second test (the paint) is what the equation leaves out. *Reads and Writes* §1 "The paper in one equation", a sentence
-  in the abstract.
+  in the abstract. Then (Tom: "How does this connect to euhlers.", then "Yes"): in the plane x + iy = r·e^(iθ) over the
+  thumb is 1 + is = sec θ·e^(iθ), the equation its size, e^(iθ) the turn it does not show; (1 + is)/(1 − is) = e^(2iθ),
+  no length left, the horizon at e^(iπ) = −1. One sentence closing the passage.
 - **R724** (6 Nov; Tom: "H V and V2 combine into a sphere. H H and H combine into the cauchy", then "Yes"): R697 in
   its simplest form. Three lengths held as amounts, every sign, are the writer's sphere (an ellipsoid unless written
   equal; unequal drawn, the elliptical Cauchy of R695); one thumb crossed with itself three times, no second length, is

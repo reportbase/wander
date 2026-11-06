@@ -167,7 +167,11 @@ have met itself, s runs to infinity, the horizon. The left side is the denominat
 horizon s = ∞, and it has a median and no mean. One equation, read two ways: with the radius kept, the writer's sphere;
 divided by the thumb, the reader's Cauchy (§2, "The circle's equation, divided by its own length", is the same in the
 plane). The scale test is the difference between the two readings. What the equation leaves out is the second test:
-the paint met along each direction. The equation is the heat, given; the paint arrives on it from the world.
+the paint met along each direction. The equation is the heat, given; the paint arrives on it from the world. In the plane
+Euler's formula says the same with the turn kept: the writer's point x + iy = r·e^(iθ), divided by the thumb, is the
+reading 1 + is = sec θ·e^(iθ), a size whose square is the equation's left side times a pure turn; divided once more by
+its mirror, (1 + is)/(1 − is) = e^(2iθ), every length is gone, and the horizon lands at e^(iπ) = −1 (§5, "Euler's
+formula as a count of reads").
 
 ## 2. What the reader has for free
 
