@@ -7352,6 +7352,36 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R728** (6 Nov; Tom: "what if its more like the heat map of the full hemisphere. the tunnel is just where its
+  hotest."; "hotter means higher density of addresses in this metaphore."; "yes, I prefer the idea is that the cauchy is the
+  horizon's heat map. giving the cauchy a shape is a bit confusing."): **the Cauchy is the horizon's heat map, not a
+  shape**: a heat over every direction in front, out to the horizon, its heat the density of addresses per unit of reading
+  (address the metaphor, R707), hottest at the look and cooling as cos³α. A tunnel, where drawn, is only its hottest core:
+  half the peak heat at 37.5° off the look, a fifth of the directions inside (the share within α is 1 − cos α), half within
+  60°. Refines R624, R687 and R701's "shape is the hemisphere". *Reads and Writes* §7 ("the reader has the horizon's heat
+  map"; "The heat map reaches the horizon"); essay 5 §4, §5, §10 (now "The wedge and the heat map"), §12; "the reader's
+  tunnel" in essays 2, 10, 13, 14, 17 and the README now "the reader's heat map". Demos keep "tunnel" for the view laid so.
+  Then (Tom: "the sphere has a shape, the cauchy acually does not have a shape, it long tail continues with out
+  completing.", then "yes, and the papers and essays."): a shape needs a size and a boundary that closes; the sphere holds
+  both; divided by the thumb (R725) it opens along the rim, x = 0, into the horizon never reached, so the Cauchy's tail never
+  completes: no shape, no edge, no mean. *Reads and Writes* §1 ("The paper in one equation") and §7; essay 2 §9; essay 5 §4.
+- **R727** (6 Nov; Tom, of a ChatGPT note pasting "Breathing: The Asymmetry of Reading and Writing": "Just a small
+  note, i like the basic metapore, just record it so we dont forget it."): recorded, not placed in any paper. Breathing in
+  is reading, breathing out is writing: one cycle, two acts not alike (read continuous, write discrete, R640; read, write,
+  read again, R644). Motion hides the asymmetry, rest reveals it: a step is counted, a write (R627), so a moving reader
+  writes as it goes and the two look like one; standing still, only the turn is left, and one standpoint writes nothing
+  (no parallax; RWT's nullity). Caveats if it is ever used: "an ongoing encounter" gives the read a duration, which is the
+  writer's account (R649, R651, R652); and breathing is near symmetric, so the sheet of paper (R653) shows the asymmetry
+  better. Then (Tom: "everyting has cylcles, why would observation be any different.", then "yes"): observation as a
+  whole cycles, a single read does not. The cycles are joins, the writer's: read, write, read again (R644); the turn
+  closing, π its period (R656, R717); a loop of steps closing ("Closing a loop"). A single read is the quarter turn from
+  home to a horizon never reached (R696), the far field's ratios never repeat, and reads are unconnected (R652); that
+  open end is where the horizon, the Cauchy's long tail and the missing mean come from.
+- **R726** (6 Nov; Tom: "update the essays"): R723–R725 in the essays. Essay 2 §9, after "The circle's equation, divided
+  by its own length": the sphere kept and divided by the thumb, the writer's and the reader's, the scale test their
+  difference and the paint left out; H, V, V₂ against H, H, H; and in its Euler subsection 1 + is = sec θ·e^(iθ),
+  (1 + is)/(1 − is) = e^(2iθ), the horizon at −1. Essay 4 §4, "The near-field sphere, the writer's account" (inversion
+  d ↦ H²/d, the half-Cauchy filling, cos³ across; the reader a split). Essay 5 §11 opens with H, V, V₂ against H, H, H.
 - **R725** (6 Nov; Tom: "Yes, that is the whole paper in one equation.", then "Yes"): x² + y² + z² = r² kept with its
   radius is the writer's sphere; divided by the thumb's share x², 1 + s² + s₂² = (r/x)², the reader's Cauchy (its
   denominator), the corner s = 1, the horizon s = ∞. The scale test is the difference between the two readings; the

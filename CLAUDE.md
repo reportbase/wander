@@ -1648,6 +1648,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R728 (6 Nov; Tom: "the cauchy is the horizon's heat map. giving the cauchy a shape is a bit confusing."): **the Cauchy
+  is the horizon's heat map, not a shape**; heat the density of addresses per unit of reading; a tunnel only its hottest
+  core (half heat at 37.5°, a fifth of the directions). *Reads and Writes* §7, essays 2, 5, 10, 13, 14, 17, README.
+  Then: the sphere has a shape (a size, a closing surface); divided by the thumb it opens at the rim into the horizon, so the
+  Cauchy's tail never completes (*Reads and Writes* §1, §7; essays 2 §9, 5 §4).
+  R727 (6 Nov; Tom: "just record it so we dont forget it."): breathing as a metaphor, in SPN only: in reading, out
+  writing; motion (a counted step) hides the asymmetry, rest (one standpoint, no parallax) reveals it. Then (Tom: "everyting has cylcles"): observation as a whole
+  cycles (joins, the writer's); a single read does not (home to a horizon never reached).
+  R726 (6 Nov; Tom: "update the essays"): R723–R725 in essay 2 §9 (the sphere kept and divided; Euler's 1 + is =
+  sec θ·e^(iθ)), essay 4 §4 ("The near-field sphere, the writer's account") and essay 5 §11.
   R725 (6 Nov; Tom: "that is the whole paper in one equation."): **x² + y² + z² = r² kept is the writer's sphere; divided
   by the thumb, 1 + s² + s₂² = (r/x)², the reader's Cauchy**; the paint the one thing it leaves out. *Reads and Writes* §1
   "The paper in one equation", the abstract.
