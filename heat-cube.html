@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>A cube of heat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    heat-cube.html: a cube of heat (6 November 2026; Tom: "if we created a cube of dots, could we color those dots based on
+    the cauchy based on the touch of one of the dots?", then "right, you would need to touch a dot and set a facing.", then
+    "yes"; SPN R729, after R728: the Cauchy is the horizon's heat map, not a shape).
+
+    The cube of dots is the writer's box: n × n × n dots one unit apart, each a place in amounts. Nothing round in it.
+    A reader stands at one dot (the eye: a point, no size, no colour of its own) and looks one way (the look). H, the
+    thumb, is the distance to the dot looked at, times 2^h (h the slider, 0 by default), so the thing looked at sits at the
+    corner. Every other dot is coloured by the read's heat at its direction and distance:
+
+        heat = cos³α × sech(ln(d/H))      (peak 1, at the dot looked at when h = 0)
+
+    α the dot's angle off the look, d its distance from the eye. cos³α is the Cauchy's heat per unit of reading on a screen
+    square to the look; sech(ln(d/H)) the overlay's heat in distance, read by ratio (π times (1/π)·sech). A dot behind the
+    eye (α ≥ 90°) is not in this read: drawn dark. Scale the world (k) and every d and H move together: no colour moves.
+    d and H²/d along one direction take one colour (the swap of d/H for H/d). Near field (d < H) and far (d > H) each
+    hold half of every direction's heat.
+
+    Tap a dot: by default the first tap stands there and every later tap looks at the dot tapped ("tap to" switches).
+    Drag to orbit the view; the look's sliders turn the look by yaw and pitch.
+    ?n=8|12|16&eye=i,j,k&look=i,j,k&h=<log2>&k=<log10 k>&color=heat|fields
+    Hook window.__heatCube: heat(i), heats(), front(), stand(i), lookAt(i), set({…}), state(), pairs(), frames, webgl.
+    -->
+    <style>
+    :root { --bg: #07090f; --ink: #e6e9f2; --dim: #8a91a8; --gold: #f2c14e; --teal: #4fd1c5; --violet: #a78bfa }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 13px/1.45 'DM Mono', ui-monospace, monospace; overflow: hidden }
+    canvas#stage { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; touch-action: none }
+    .glass { background: rgba(14, 18, 30, .82); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; backdrop-filter: blur(6px) }
+    #panel { position: fixed; top: 14px; left: 14px; width: 330px; padding: 12px 14px; max-height: calc(100vh - 28px); overflow: auto }
+    h1 { font: 25px/1.1 'DM Serif Display', serif; margin: 0 0 4px }
+    .sub { color: var(--dim); margin: 0 0 8px }
+    .ctl { display: grid; grid-template-columns: 7.5em 1fr 4.5em; gap: 6px; align-items: center; margin: 6px 0 }
+    .ctl output { text-align: right; color: var(--gold) }
+    .row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 }
+    button { background: #1b2236; color: var(--ink); border: 1px solid #2c3550; border-radius: 8px; padding: 5px 9px; font: inherit; cursor: pointer; min-height: 30px }
+    button.on { background: #2b3554; border-color: var(--gold); color: var(--gold) }
+    #hud { position: fixed; right: 14px; bottom: 14px; padding: 10px 12px; max-width: 360px; white-space: pre-wrap }
+    #hud b { color: var(--gold); font-weight: 500 }
+    #scale { position: fixed; right: 14px; top: 14px; padding: 8px 10px; display: flex; gap: 8px; align-items: center }
+    .bar { width: 160px; height: 10px; border-radius: 5px; background: linear-gradient(90deg, #141826, #3b2a6e, #2b7fa0, #4fd1c5, #f2c14e, #fff6d8) }
+    a { color: var(--teal) }
+    #nogl { position: fixed; inset: 0; display: none; place-items: center; text-align: center; color: var(--dim) }
+    @media (max-width: 760px) {
+        #panel { top: auto; bottom: 10px; left: 10px; width: calc(100vw - 44px); max-height: 46vh }
+        #hud { top: 10px; bottom: auto; right: 10px; max-width: calc(100vw - 40px); font-size: 11px }
+        #scale { display: none }
+    }
+    </style>
+    <script type="importmap">{ "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body>
+<canvas id="stage" aria-label="A cube of dots coloured by one read's heat"></canvas>
+<div id="panel" class="glass">
+    <h1>A cube of heat</h1>
+    <p class="sub">The cube is the writer's: dots at places. Stand at one dot, look one way, and every dot in front takes the
+    read's heat: hottest at the dot looked at, cooling every way without end. Behind the eye, nothing: one read is half the
+    cube. The heat has no edge and no shape.</p>
+    <div class="row"><span style="align-self:center">tap to</span><button id="tStand">stand</button><button id="tLook" class="on">look at</button></div>
+    <div class="ctl"><label for="yaw">look, across</label><input id="yaw" type="range" min="-180" max="180" step="0.5"><output id="yawo"></output></div>
+    <div class="ctl"><label for="pitch">look, up</label><input id="pitch" type="range" min="-89" max="89" step="0.5"><output id="pitcho"></output></div>
+    <div class="ctl"><label for="hH">H, the thumb</label><input id="hH" type="range" min="-3" max="3" step="0.05" value="0"><output id="hHo"></output></div>
+    <div class="ctl"><label for="kK">scale the world</label><input id="kK" type="range" min="-3" max="3" step="0.05" value="0"><output id="kKo"></output></div>
+    <div class="row">
+        <button id="bCorner">stand at a corner</button><button id="bMiddle">stand in the middle</button>
+        <button id="bColor">colour: heat</button><button id="bN">12 a side</button><button id="bBehind" class="on">show behind</button>
+    </div>
+    <p class="sub" style="margin:8px 0 0">H is drawn against the dot looked at: at 0 that dot is the corner, the hot spot.
+    Drag to turn the view. Other demos: <a href="read.html">the read</a>, <a href="crosshairs.html">crosshairs in a field</a>,
+    <a href="wedge.html">the wedge</a>, <a href="demos.html">all demos</a>.</p>
+</div>
+<div id="scale" class="glass"><span>0</span><div class="bar"></div><span>1</span><span style="color:var(--dim)">heat</span></div>
+<div id="hud" class="glass"></div>
+<div id="nogl"><div>This page needs WebGL to draw the cube.<br>The arithmetic still runs: see the test hook.</div></div>
+
+<script>
+// ── the geometry and the heat, a plain script so the hook works without WebGL ───────────────────────────────────────
+(function () {
+    const RAD = Math.PI / 180;
+    const qs = new URLSearchParams(location.search);
+    const S = {
+        n: [8, 12, 16].includes(+qs.get('n')) ? +qs.get('n') : 12,
+        eye: 0, look: null,               // indices; look the dot looked at (null when the look was turned by hand)
+        yaw: 45, pitch: 35.26,            // the look's direction, degrees (yaw round from +x toward +z, pitch up toward +y)
+        h: +qs.get('h') || 0,             // log2 of H against the distance to the dot looked at
+        lk: +qs.get('k') || 0,            // log10 of the world's scale
+        color: qs.get('color') === 'fields' ? 'fields' : 'heat',
+        tap: 'look', behind: true, version: 0,
+    };
+    const idx = (i, j, k) => (k * S.n + j) * S.n + i;
+    const ijk = q => [q % S.n, Math.floor(q / S.n) % S.n, Math.floor(q / (S.n * S.n))];
+    const K = () => Math.pow(10, S.lk);
+    // a dot's place in the writer's box, in amounts (unit spacing times the world's scale), centred on the box
+    const place = q => { const [i, j, k] = ijk(q), c = (S.n - 1) / 2, s = K(); return [(i - c) * s, (j - c) * s, (k - c) * s]; };
+    const lookDir = () => { const y = S.yaw * RAD, p = S.pitch * RAD; return [Math.cos(p) * Math.cos(y), Math.sin(p), Math.cos(p) * Math.sin(y)]; };
+    const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+    const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+    const len = a => Math.hypot(a[0], a[1], a[2]);
+    // the dot the look passes nearest (largest cos α, then nearest): the thing looked at when the look was turned by hand
+    function targetOf() {
+        if (S.look != null && S.look !== S.eye) return S.look;
+        const e = place(S.eye), L = lookDir(); let best = -1, bc = -2, bd = 1e300;
+        for (let q = 0; q < S.n ** 3; q++) { if (q === S.eye) continue;
+            const r = sub(place(q), e), d = len(r), c = dot(r, L) / d;
+            if (c > bc + 1e-12 || (Math.abs(c - bc) <= 1e-12 && d < bd)) { bc = c; bd = d; best = q; } }
+        return best;
+    }
+    // H, the thumb: the distance to the thing looked at, times 2^h
+    const Hof = () => len(sub(place(targetOf()), place(S.eye))) * Math.pow(2, S.h);
+    // one dot's heat: cos³α (the Cauchy, per unit of reading off the look) × sech(ln(d/H)) (the overlay, per ratio)
+    function heatOf(q, H, e, L) {
+        if (q === S.eye) return null;
+        const r = sub(place(q), e), d = len(r), c = dot(r, L) / d;
+        if (c <= 0) return 0;                                   // behind the eye: not in this read
+        const x = Math.log(d / H);
+        return c * c * c * (2 / (Math.exp(x) + Math.exp(-x)));
+    }
+    function heats() {
+        const e = place(S.eye), L = lookDir(), H = Hof(), out = new Array(S.n ** 3);
+        for (let q = 0; q < out.length; q++) out[q] = heatOf(q, H, e, L);
+        return out;
+    }
+    function lookAt(q) {
+        if (q === S.eye) return;
+        const r = sub(place(q), place(S.eye)), d = len(r);
+        S.yaw = Math.atan2(r[2], r[0]) / RAD; S.pitch = Math.asin(r[1] / d) / RAD; S.look = q; S.version++;
+    }
+    function stand(q) {
+        const keep = S.look != null && S.look !== q ? S.look : null; S.eye = q;
+        if (keep != null) lookAt(keep); else { S.look = null; S.version++; }
+    }
+    // the share of the cube's dots in front of the eye, and the near/far split of the heat among them
+    function front() {
+        const hs = heats(), e = place(S.eye), H = Hof(); let nf = 0, all = 0, hn = 0, hf = 0;
+        for (let q = 0; q < hs.length; q++) { if (hs[q] == null) continue; all++;
+            if (hs[q] > 0) { nf++; const d = len(sub(place(q), e)); if (d < H) hn += hs[q]; else hf += hs[q]; } }
+        return { inFront: nf, dots: all, share: nf / all, heatNear: hn, heatFar: hf };
+    }
+    // pairs at d and H²/d on one direction take one colour: every dot whose mirror lands on another dot
+    function pairs() {
+        const e = place(S.eye), L = lookDir(), H = Hof(), out = [];
+        for (let q = 0; q < S.n ** 3 && out.length < 50; q++) { if (q === S.eye) continue;
+            const r = sub(place(q), e), d = len(r), m = H * H / d, f = m / d;
+            const p = [e[0] + r[0] * f, e[1] + r[1] * f, e[2] + r[2] * f], s = K(), c = (S.n - 1) / 2;
+            const g = p.map(v => v / s + c), gi = g.map(Math.round);
+            if (gi.every(v => v >= 0 && v < S.n) && g.every((v, a) => Math.abs(v - gi[a]) < 1e-9)) {
+                const q2 = idx(gi[0], gi[1], gi[2]); if (q2 !== q && q2 !== S.eye)
+                    out.push({ a: q, b: q2, ha: heatOf(q, H, e, L), hb: heatOf(q2, H, e, L) }); } }
+        return out;
+    }
+    function set(o) {
+        if (o.n && [8, 12, 16].includes(o.n) && o.n !== S.n) { S.n = o.n; S.eye = 0; S.look = null; }
+        if (o.eye != null) stand(Array.isArray(o.eye) ? idx(...o.eye) : o.eye);
+        if (o.look != null) lookAt(Array.isArray(o.look) ? idx(...o.look) : o.look);
+        if (o.yaw != null) { S.yaw = o.yaw; S.look = null; }
+        if (o.pitch != null) { S.pitch = o.pitch; S.look = null; }
+        if (o.h != null) S.h = o.h;
+        if (o.k != null) S.lk = o.k;
+        if (o.color) S.color = o.color;
+        if (o.tap) S.tap = o.tap;
+        if (o.behind != null) S.behind = !!o.behind;
+        S.version++; window.dispatchEvent(new Event('heatcube'));
+    }
+    // opening: eye at a corner, looking down the diagonal at the middle (the thumbs' crossing)
+    const parse = s => s ? s.split(',').map(Number) : null;
+    const pe = parse(qs.get('eye')), pl = parse(qs.get('look'));
+    S.eye = pe ? idx(...pe) : 0;
+    lookAt(pl ? idx(...pl) : idx(S.n / 2 - 1 | 0, S.n / 2 - 1 | 0, S.n / 2 - 1 | 0));
+    window.__heatCore = { S, idx, ijk, place, lookDir, targetOf, Hof, heatOf, heats, lookAt, stand, front, pairs, set };
+    window.__heatCube = {
+        heat: q => heatOf(q, Hof(), place(S.eye), lookDir()), heats, front, pairs, stand: q => set({ eye: q }),
+        lookAt: q => set({ look: q }), set, idx, place,
+        state: () => ({ n: S.n, eye: S.eye, look: S.look, target: targetOf(), yaw: S.yaw, pitch: S.pitch, H: Hof(), h: S.h,
+            k: K(), color: S.color, tap: S.tap }),
+        frames: 0, webgl: false,
+    };
+})();
+setTimeout(() => { if (!window.__heatCube.webgl) { const n = document.getElementById('nogl');
+    n.firstElementChild.innerHTML = 'three.js could not be loaded from cdn.jsdelivr.net, or WebGL is off.<br>The arithmetic still runs: see the test hook.';
+    n.style.display = 'grid'; } }, 12000);
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+const C = window.__heatCore, S = C.S, hook = window.__heatCube;
+const canvas = document.getElementById('stage');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); } catch (e) { renderer = null; }
+if (renderer) {
+hook.webgl = true;
+renderer.setPixelRatio(Math.min(2, devicePixelRatio));
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x07090f);
+const camera = new THREE.PerspectiveCamera(45, 1, 0.01, 1e7);
+const controls = new OrbitControls(camera, canvas); controls.enableDamping = true;
+scene.add(new THREE.AmbientLight(0xffffff, 1.0));
+
+// the heat's colours: dark, violet, blue, teal, gold, white
+const STOPS = [[0, 0x141826], [0.12, 0x3b2a6e], [0.3, 0x2b7fa0], [0.55, 0x4fd1c5], [0.8, 0xf2c14e], [1, 0xfff6d8]].map(([t, c]) => [t, new THREE.Color(c)]);
+function ramp(t, out) { t = Math.max(0, Math.min(1, t));
+    for (let i = 1; i < STOPS.length; i++) if (t <= STOPS[i][0]) { const [a, ca] = STOPS[i - 1], [b, cb] = STOPS[i];
+        return out.copy(ca).lerp(cb, (t - a) / (b - a)); } return out.copy(STOPS[STOPS.length - 1][1]); }
+const TEAL = new THREE.Color(0x4fd1c5), VIOLET = new THREE.Color(0xa78bfa), DARK = new THREE.Color(0x141826), BEHIND = new THREE.Color(0x232a3c);
+
+let mesh = null, built = -1, eyeMark, lookLine, ringT;
+const sphere = new THREE.SphereGeometry(1, 12, 8);
+function build() {
+    if (mesh) { scene.remove(mesh); mesh.dispose(); }
+    const N = S.n ** 3;
+    mesh = new THREE.InstancedMesh(sphere, new THREE.MeshBasicMaterial({ color: 0xffffff }), N);
+    mesh.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(N * 3), 3);
+    scene.add(mesh); built = S.n;
+}
+eyeMark = new THREE.Mesh(new THREE.TorusGeometry(1, 0.12, 8, 32), new THREE.MeshBasicMaterial({ color: 0xffffff }));
+ringT = new THREE.Mesh(new THREE.TorusGeometry(1, 0.1, 8, 32), new THREE.MeshBasicMaterial({ color: 0xf2c14e }));
+lookLine = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3()]),
+    new THREE.LineBasicMaterial({ color: 0xf2c14e, transparent: true, opacity: .7 }));
+const box = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1, 1, 1)), new THREE.LineBasicMaterial({ color: 0x3a4466 }));
+scene.add(eyeMark, ringT, lookLine, box);
+
+const m4 = new THREE.Matrix4(), col = new THREE.Color(), q4 = new THREE.Quaternion(), v3 = new THREE.Vector3(), one = new THREE.Vector3();
+let drawnV = -1, lastScale = null;
+function paint() {
+    if (built !== S.n) build();
+    const hs = C.heats(), s = Math.pow(10, S.lk), H = C.Hof(), e = C.place(S.eye), base = 0.07 * s;
+    for (let q = 0; q < hs.length; q++) {
+        const p = C.place(q), h = hs[q];
+        let r = base;
+        if (h == null) r = 0;                                                    // the eye: drawn as a ring instead
+        else if (h > 0) {
+            r = base * (0.55 + 1.6 * h);
+            if (S.color === 'fields') { const d = Math.hypot(p[0] - e[0], p[1] - e[1], p[2] - e[2]);
+                col.copy(DARK).lerp(d < H ? TEAL : VIOLET, Math.min(1, 0.12 + 0.88 * h)); }
+            else ramp(h, col);
+        } else { if (!S.behind) r = 0; col.copy(BEHIND); }
+        m4.compose(v3.set(p[0], p[1], p[2]), q4.identity(), one.set(r, r, r));
+        mesh.setMatrixAt(q, m4); mesh.setColorAt(q, col);
+    }
+    mesh.instanceMatrix.needsUpdate = true; mesh.instanceColor.needsUpdate = true;
+    eyeMark.position.set(e[0], e[1], e[2]); eyeMark.scale.setScalar(0.32 * s); eyeMark.lookAt(camera.position);
+    const t = C.place(C.targetOf()); ringT.position.set(t[0], t[1], t[2]); ringT.scale.setScalar(0.32 * s); ringT.lookAt(camera.position);
+    const L = C.lookDir(), far = S.n * 2 * s;
+    lookLine.geometry.setFromPoints([new THREE.Vector3(...e), new THREE.Vector3(e[0] + L[0] * far, e[1] + L[1] * far, e[2] + L[2] * far)]);
+    box.scale.setScalar((S.n - 1) * s);
+    if (lastScale !== s) { // the view follows the world's scale, so scaling shows as nothing changing on the screen
+        const f = lastScale == null ? 1 : s / lastScale;
+        if (lastScale == null) camera.position.set(1.35 * S.n * s, 0.95 * S.n * s, 1.75 * S.n * s);
+        else { camera.position.multiplyScalar(f); controls.target.multiplyScalar(f); }
+        camera.near = 0.002 * s; camera.far = 100 * S.n * s; camera.updateProjectionMatrix(); lastScale = s;
+    }
+    drawnV = S.version; hud();
+}
+function hud() {
+    const st = hook.state(), fr = C.front(), t = C.ijk(st.target), eye = C.ijk(st.eye);
+    const dT = Math.hypot(...C.place(st.target).map((v, a) => v - C.place(st.eye)[a]));
+    const tot = fr.heatNear + fr.heatFar;
+    document.getElementById('hud').innerHTML =
+        `<b>eye</b> at dot (${eye.join(', ')})   <b>looking at</b> (${t.join(', ')})\n` +
+        `H, the thumb: ${st.H.toPrecision(3)} = ${Math.pow(2, S.h).toPrecision(3)} × the distance looked at (${dT.toPrecision(3)})\n` +
+        `in front of the eye: ${fr.inFront} of ${fr.dots} dots (${(100 * fr.share).toFixed(0)}%)\n` +
+        `summed over these dots, ${(100 * fr.heatNear / (tot || 1)).toFixed(0)}% nearer than one thumb (the dots are the writer's spacing; along each direction the read's heat is half and half)\n` +
+        `scale the world ×${st.k.toPrecision(3)}: no colour moves`;
+    yawEl.value = S.yaw; yawO.textContent = S.yaw.toFixed(1) + '°';
+    pitchEl.value = S.pitch; pitchO.textContent = S.pitch.toFixed(1) + '°';
+    hEl.value = S.h; hO.textContent = '×' + Math.pow(2, S.h).toPrecision(3);
+    kEl.value = S.lk; kO.textContent = '×' + Math.pow(10, S.lk).toPrecision(2);
+    tStand.classList.toggle('on', S.tap === 'stand'); tLook.classList.toggle('on', S.tap === 'look');
+    bColor.textContent = 'colour: ' + (S.color === 'heat' ? 'heat' : 'near / far'); bN.textContent = S.n + ' a side';
+    bBehind.classList.toggle('on', S.behind);
+}
+const $ = id => document.getElementById(id);
+const yawEl = $('yaw'), yawO = $('yawo'), pitchEl = $('pitch'), pitchO = $('pitcho'), hEl = $('hH'), hO = $('hHo'), kEl = $('kK'), kO = $('kKo');
+const tStand = $('tStand'), tLook = $('tLook'), bColor = $('bColor'), bN = $('bN'), bBehind = $('bBehind');
+yawEl.oninput = () => C.set({ yaw: +yawEl.value }); pitchEl.oninput = () => C.set({ pitch: +pitchEl.value });
+hEl.oninput = () => C.set({ h: +hEl.value }); kEl.oninput = () => C.set({ k: +kEl.value });
+tStand.onclick = () => C.set({ tap: 'stand' }); tLook.onclick = () => C.set({ tap: 'look' });
+bColor.onclick = () => C.set({ color: S.color === 'heat' ? 'fields' : 'heat' });
+bN.onclick = () => { const n = S.n === 8 ? 12 : S.n === 12 ? 16 : 8, c = n / 2 - 1 | 0; lastScale = null; C.set({ n }); C.set({ look: [c, c, c] }); };
+bBehind.onclick = () => C.set({ behind: !S.behind });
+$('bCorner').onclick = () => { const c = S.n / 2 - 1 | 0; C.set({ eye: 0 }); C.set({ look: [c, c, c] }); };
+$('bMiddle').onclick = () => { const c = S.n / 2 | 0; C.set({ eye: [c, c, c] }); C.set({ look: [S.n - 1, c, c] }); };
+
+// a tap (not a drag) picks the dot under it: stand there, or look at it
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(); let down = null;
+canvas.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY]; });
+canvas.addEventListener('pointerup', e => {
+    if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 6) { down = null; return; } down = null;
+    const r = canvas.getBoundingClientRect(); ndc.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
+    ray.setFromCamera(ndc, camera);
+    // nearest dot to the ray, within a fixed share of its distance (dots are small)
+    const o = ray.ray.origin, dvec = ray.ray.direction; let best = -1, bs = Infinity;
+    for (let q = 0; q < S.n ** 3; q++) { const p = C.place(q), w = [p[0] - o.x, p[1] - o.y, p[2] - o.z];
+        const t = w[0] * dvec.x + w[1] * dvec.y + w[2] * dvec.z; if (t <= 0) continue;
+        const px = w[0] - t * dvec.x, py = w[1] - t * dvec.y, pz = w[2] - t * dvec.z, dd = Math.hypot(px, py, pz) / t;
+        if (dd < 0.012 && dd + t * 1e-9 < bs) { bs = dd + t * 1e-9; best = q; } }
+    if (best < 0) return;
+    if (S.tap === 'stand') { C.set({ eye: best }); C.set({ tap: 'look' }); } else C.set({ look: best });
+});
+window.addEventListener('heatcube', () => {});
+function resize() { const w = innerWidth, h = innerHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+addEventListener('resize', resize); resize();
+function frame() { requestAnimationFrame(frame); controls.update();
+    if (drawnV !== S.version) paint(); else { eyeMark.lookAt(camera.position); ringT.lookAt(camera.position); }
+    renderer.render(scene, camera); hook.frames++; }
+paint(); frame();
+}
+</script>
+</body>
+</html>

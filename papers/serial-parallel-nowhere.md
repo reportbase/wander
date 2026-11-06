@@ -7352,6 +7352,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R729** (6 Nov; Tom: "if we created a cube of dots, could we color those dots based on the cauchy based on the touch of
+  one of the dots?", "right, you would need to touch a dot and set a facing.", then "yes"): `heat-cube.html`. The cube of
+  dots is the writer's box; a reader stands at a tapped dot and looks one way (called "the look" on the page, R648's
+  "facing" being the writer's term for reads joined); H is the distance to the dot looked at (times 2^h); each dot's colour
+  is cos³α × sech(ln(d/H)), behind the eye none. Checked: the dot looked at heat 1 and the hottest; scaling the world by
+  10^2.5 moves no colour (10⁻¹⁵); dots at d and H²/d on one direction one colour (10⁻¹⁶); from the middle 720 of 1,727 dots
+  in front. A demo of R728, nothing claimed.
 - **R728** (6 Nov; Tom: "what if its more like the heat map of the full hemisphere. the tunnel is just where its
   hotest."; "hotter means higher density of addresses in this metaphore."; "yes, I prefer the idea is that the cauchy is the
   horizon's heat map. giving the cauchy a shape is a bit confusing."): **the Cauchy is the horizon's heat map, not a

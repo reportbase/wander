@@ -190,6 +190,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Since R698 (Tom: "Yes", to the tunnel as the quarter turn, after R696): the tunnel is drawn in the wedge only (`wedgeEdge`,
   35.26° at a home, 54.74° at a thumb, its rings clipped to it), the full round the menu's "tunnel turned all the way round"
   (`?round=1`); `tunnel()` adds `quarter` and `edge(β)`, `set` takes `round`.
+- `heat-cube.html`: **a cube of heat** (6 Nov 2026, SPN R729; Tom: "if we created a cube of dots, could we color those dots
+  based on the cauchy based on the touch of one of the dots?", "right, you would need to touch a dot and set a facing.",
+  "yes"), full screen, three.js like `wedge.html` for the drawing only (the heat and the hook a plain script). n³ dots
+  (8, 12, 16 a side), the writer's box; tap a dot to stand there, then taps look at a dot (or turn the look by sliders); H
+  the distance to the dot looked at × 2^h; each dot coloured cos³α × sech(ln(d/H)) (heat, or near teal / far violet),
+  behind the eye dark. Scale the world moves no colour; d and H²/d one colour. `?n=&eye=i,j,k&look=i,j,k&h=&k=<log10 k>&color=heat|fields`;
+  hook `window.__heatCube` (`heat`, `heats`, `front`, `pairs`, `stand`, `lookAt`, `set`, `state`, `frames`, `webgl`).
+  Not in the flying page.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
@@ -1648,6 +1656,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R729 (6 Nov; Tom: "touch a dot and set a facing", "yes"): `heat-cube.html`, R728's heat on a cube of dots.
   R728 (6 Nov; Tom: "the cauchy is the horizon's heat map. giving the cauchy a shape is a bit confusing."): **the Cauchy
   is the horizon's heat map, not a shape**; heat the density of addresses per unit of reading; a tunnel only its hottest
   core (half heat at 37.5°, a fifth of the directions). *Reads and Writes* §7, essays 2, 5, 10, 13, 14, 17, README.
