@@ -703,6 +703,21 @@ reached: the far field, heavy, so no mean of distances. The split is a mark at o
 median, not a body: a first version drew it as a closed dome and gave the near field a shape, which it does not have. It
 stands one thumb out, never at V. Take the overlay away and the Cauchy is unchanged.
 
+**The hot spot, and the fields either side of it.** Put the two layers together and the read has two centres. The eye is
+where every direction starts, a point with no size, and not where the heat is greatest. The hot spot is one thumb out
+along the look: looked down the thumbs' diagonal, it is where they cross. It is the corner twice over, in direction the
+triple corner [1 : 1 : 1], in distance d/H = 1, the point fixed when every distance ratio is turned over; and it is the
+median as well as the peak, half the heat within 60° of it on the screen and half on either side of it along the look.
+The two corners meet there only because the reader makes them meet, pointing its crossed thumbs at a thing and taking
+that thing as its thumb; pointed elsewhere, the heat moves and no direction does. From the hot spot the heat thins every
+way without end: across the look as cos³α, in readings, rings out toward the rim; along it as sech(ln(d/H)), in ratios,
+toward the eye and out toward the horizon. The split between near and far passes through it. The near field runs from
+the eye to the hot spot, distance in proportion; the far field from the hot spot to the horizon, distance in ratios (one
+in two, one in four, one in eight); each holds half the heat, so neither is hotter, they differ only in how distance is
+read. Off the look every direction is cooler, by cos³α, and cut at the same thumb; a writer joining those cuts draws the
+near-field sphere of radius H, cut to one read the hemisphere in front. The reader holds only the mark one thumb out on
+each direction it reads.
+
 **Heat maps combine without reconciling.** Two shapes combine only by working out their boundaries: where they meet,
 which edge wins, what overlaps. A heat map has no boundary, so nothing needs working out, and the heat adds. Two senses
 of combining stay apart. Readings added give one Cauchy again, the standpoints added, z₁ + z₂ (a relay of standpoints,

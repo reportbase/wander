@@ -406,6 +406,11 @@ just ε (the sixth essay). The finest grain and the best baseline fall on the sa
 stretch, the split is a heat map in distance, (1/π)·sech(ln(d/H)), hottest at the thing looked at and cooling alike nearer
 and farther (the fifth essay, section 10).
 
+Lay the whole read out along the look and it runs: the eye; the near field, distance in proportion, half the heat; the
+thing looked at, one thumb out, the corner, where the heat is greatest; the far field, distance in ratios, the other half
+of the heat, without end; the horizon. The near field is not hotter than the far. They are equal halves of one heat,
+split at the thing the reader chose to look at.
+
 The same holds when the thing read is a shape. Epicycles draw an outline from one standpoint at the centre; terms read from
 standpoints stepped toward a dent draw it in about an eighth as many, and every one of them stands at the dent (the tenth essay,
 §3).

@@ -7378,6 +7378,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   diagonal (R670, R671) that is their crossing, [1 : 1 : 1], every share equal and every pair at its corner (balanced, not
   any thumb at its largest); on a screen square to h (the wedge's law in v/h, v₂/h) the same directions are hottest at
   home. *Reads and Writes* §7; essay 5 §4.
+  Then (Tom: "a heat map that extends radially outwards from a central point.", "is that center spot the corner?", "where
+  is the far an near field in this picture", then "yes, add it to the paper and essays"): two centres, the eye (where
+  directions start, no size, not hottest) and the hot spot one thumb out on the look, the thumbs' crossing; the hot spot
+  is the corner in direction (triple corner) and in distance (d/H = 1), median and peak, by the reader's choice of look
+  and H; the heat thins from it without end, across as cos³α in readings, along as sech(ln(d/H)) in ratios. The near
+  field runs from the eye to the hot spot (proportion), the far from it to the horizon (ratios), half the heat each,
+  neither hotter. *Reads and Writes* §7 ("The hot spot, and the fields either side of it"); essay 5 §10; essay 4 §13.
 - **R727** (6 Nov; Tom, of a ChatGPT note pasting "Breathing: The Asymmetry of Reading and Writing": "Just a small
   note, i like the basic metapore, just record it so we dont forget it."): recorded, not placed in any paper. Breathing in
   is reading, breathing out is writing: one cycle, two acts not alike (read continuous, write discrete, R640; read, write,

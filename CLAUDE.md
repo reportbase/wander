@@ -1656,6 +1656,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   complicated, combining cauchy's is trivial."): no boundary, so heat adds; readings added give one Cauchy (z added),
   heat maps overlaid a heat map but not one Cauchy (R359). In *Reads and Writes* §7, essays 3 and 17. Then: the heat is
   the look's; down the thumbs' diagonal hottest at their crossing (all shares equal), on a screen square to h at home.
+  Then: the hot spot (one thumb out, the corner in direction and distance) splits near (proportion) from far (ratios),
+  half the heat each (*Reads and Writes* §7, essays 4 §13, 5 §10).
   R727 (6 Nov; Tom: "just record it so we dont forget it."): breathing as a metaphor, in SPN only: in reading, out
   writing; motion (a counted step) hides the asymmetry, rest (one standpoint, no parallax) reveals it. Then (Tom: "everyting has cylcles"): observation as a whole
   cycles (joins, the writer's); a single read does not (home to a horizon never reached).

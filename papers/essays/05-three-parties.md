@@ -394,6 +394,14 @@ read by ratio, (1/π)·sech(ln(d/H)), hottest at one thumb and cooling alike bot
 thumbs, 0.47 at four, 0.25 at eight. Multiplied, they are hottest at one point, the thing looked at, on the look one thumb
 out, and they meet there only because the look points at it.
 
+Put together, the read has two centres. The eye is where every direction starts; the hot spot, one thumb out along the
+look and, looked down the diagonal, where the three thumbs cross, is where the heat is greatest. It is the corner twice
+over, the triple corner in direction and one thumb in distance, the median as well as the peak, and it is the corner only
+because the reader points there and takes the thing there as its thumb. From it the heat thins every way without end:
+across the look in readings, along it in ratios. The near field runs from the eye to the hot spot, distance in
+proportion; the far field from the hot spot to the horizon, distance in ratios; each holds half the heat. Neither is
+hotter. They differ only in how distance is read.
+
 *Demo: the read (the directions in thumbs and by count, the hill, from the side where the reader stands, the thumb
 dragged, and the shape swept whole against each thumb on its own).*
 
