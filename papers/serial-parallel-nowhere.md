@@ -7352,6 +7352,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R728** (6 Nov; Tom: "what if its more like the heat map of the full hemisphere. the tunnel is just where its
+  hotest."; "hotter means higher density of addresses in this metaphore."; "yes, I prefer the idea is that the cauchy is the
+  horizon's heat map. giving the cauchy a shape is a bit confusing."): **the Cauchy is the horizon's heat map, not a
+  shape**: a heat over every direction in front, out to the horizon, its heat the density of addresses per unit of reading
+  (address the metaphor, R707), hottest at the look and cooling as cos³α. A tunnel, where drawn, is only its hottest core:
+  half the peak heat at 37.5° off the look, a fifth of the directions inside (the share within α is 1 − cos α), half within
+  60°. Refines R624, R687 and R701's "shape is the hemisphere". *Reads and Writes* §7 ("the reader has the horizon's heat
+  map"; "The heat map reaches the horizon"); essay 5 §4, §5, §10 (now "The wedge and the heat map"), §12; "the reader's
+  tunnel" in essays 2, 10, 13, 14, 17 and the README now "the reader's heat map". Demos keep "tunnel" for the view laid so.
 - **R727** (6 Nov; Tom, of a ChatGPT note pasting "Breathing: The Asymmetry of Reading and Writing": "Just a small
   note, i like the basic metapore, just record it so we dont forget it."): recorded, not placed in any paper. Breathing in
   is reading, breathing out is writing: one cycle, two acts not alike (read continuous, write discrete, R640; read, write,

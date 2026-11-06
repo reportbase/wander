@@ -485,7 +485,7 @@ across the world's directions, and choosing H, the size of the thumb, slides the
 away. That is why the two corners can be set independently: they sit on different axes.
 
 **Where it stops.** Euler's formula is a tool for the flat case, one other party and turns in a plane. With three parties
-(the fifth essay's wedge, which is the writer's description of the reader's tunnel), only half of it survives. The split
+(the fifth essay's wedge, which is the writer's description of the reader's heat map), only half of it survives. The split
 survives: a point of space is still an amount times a direction, scaling the world still moves only the amount, and the
 scale test still asks the same question. What fails is composition as addition. Turns in a plane commute, so their angles
 add. Turns in space do not: a quarter turn about one axis and then another ends somewhere different from the same two turns

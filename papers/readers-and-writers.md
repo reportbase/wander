@@ -602,7 +602,7 @@ seen, a thing spans the angle it spans, and laid by turns off the look its place
 directions as tan α and thins them as cos³α. The screen that does is the one where equal room holds equal shares of the
 directions. For
 directions taken uniformly, that is Lambert's equal-area map about the look, a direction α off it at radius 2·sin(α/2):
-true at the crosshair, off by 0.9% at 15°, 3.4% at 30°, 7.6% at 45°. Laid that way, the tunnel's rings come where the
+true at the crosshair, off by 0.9% at 15°, 3.4% at 30°, 7.6% at 45°. Laid that way, the heat map's rings come where the
 readings fall: one thumb off the look at 0.765, then one in two, one in four, one in eight at 1.05, 1.23 and 1.32, packing
 toward the rim at √2, the horizon. They pack because each stretch holds fewer of the look's directions than the one before
 (0.26, 0.20, 0.12 of what is in front, and 0.12 past one in eight); in the plane, with one thumb, they are as many. The
@@ -664,17 +664,20 @@ look (not the altitude and the azimuth themselves), is the two-dimensional Cauch
 of parties is at its own corner, half its readings on each side; the near field in both readings is a third. The triple
 corner, h = v = v₂, sits at azimuth 45° and altitude 35.26°, not at either sweep's 45°.
 
-**The wedge is the writer's; the reader has a tunnel.** The wedge, an octant of directions with its faces, its edges and
-its triple corner, is the writer's description of the reader's geometry: drawn whole, from outside, at once. The reader
-never holds it. What the reader has is what its crossed thumbs give where it looks: a tunnel of heat about the line of
-sight. All of it is generated from the thumb; none of it is stored. As the reader sweeps, the tunnel turns with the look,
-continuously and without a seam, so whatever it looks at is at the tunnel's centre, where the heat is greatest and the
-reading finest, and each direction is exact, given by the geometry, not computed. That is the reader's fidelity: perfect
-wherever it looks, because it is wherever it looks. The wedge, the octant and the sphere are what a writer draws to
-describe that tunnel from outside.
+**The wedge is the writer's; the reader has the horizon's heat map.** The wedge, an octant of directions with its faces,
+its edges and its triple corner, is the writer's description of the reader's geometry: drawn whole, from outside, at once.
+The reader never holds it. What the reader has is what its crossed thumbs give where it looks: a heat map over every
+direction in front, out to the horizon. The Cauchy is that heat map, not a shape. Its heat is the density of addresses per
+unit of reading (address the metaphor, §6): hottest at the look and cooling as cos³α off it. A tunnel, where one is drawn,
+is only its hottest core: half the peak heat at 37.5° off the look, with a fifth of the directions inside (the share within
+α is 1 − cos α), half within 60°, the rest stretching to the rim. All of it is generated from the thumb; none of it is
+stored. As the reader sweeps, the heat map turns with the look, continuously and without a seam, so whatever it looks at is
+where the heat is greatest and the reading finest, and each direction is exact, given by the geometry, not computed. That
+is the reader's fidelity: perfect wherever it looks, because it is wherever it looks. The wedge, the octant and the sphere
+are what a writer draws to describe that heat map from outside.
 
-**The hemisphere is the shape; near and far are an overlay.** One read's tunnel is the hemisphere in front, and that is
-the Cauchy's whole shape, nothing smaller. Projected from the eye onto a screen square to the look, the directions spread
+**The heat map reaches the horizon; near and far are an overlay.** One read's heat map covers the hemisphere in front,
+nothing smaller; the Cauchy has no shape of its own, only the heat over everything out to the horizon. Projected from the eye onto a screen square to the look, the directions spread
 evenly over the hemisphere land as the two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)) per unit of the screen at r thumbs
 off the look: one point for one direction, the look its peak, rings of equal area its rings of equal share (half within
 60° of the look, √3 thumbs out on the screen), and the rim, 90° off, its long tail, never landing, which is why it has no

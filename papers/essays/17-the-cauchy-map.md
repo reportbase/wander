@@ -314,5 +314,5 @@ no mean"), §6 ("The crosshairs", "H is a zoom") and §7 ("The hemisphere is the
 "Where the split falls", "Where the heat comes from"). The rulings are SPN
 R700–R707. The comparison of harmonic measure and the boosted sky on the sphere is EUL (`../../plans/eul-plan.md`), the
 relay of standpoints SUM (`../../plans/sum-plan.md`), the aimed terms EPI (`../../plans/epi-plan.md`). The essays before
-this one: 2 (the turn), 3 (heat and paint, no mean), 4 (near and far), 5 (the wedge and the tunnel), 6 (parallax's
+this one: 2 (the turn), 3 (heat and paint, no mean), 4 (near and far), 5 (the wedge and the heat map), 6 (parallax's
 corner), 13 (where the plane's one law parts), 14 (rates, the per), 16 (addresses in computing).

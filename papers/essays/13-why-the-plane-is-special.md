@@ -191,7 +191,7 @@ fifth essay assumed a standpoint off the centre, so nothing there depends on the
 only the exchange of two shares, never two turns taken in order, which is why they survive what the turns lose.
 
 **The Cauchy wedge survives.** The two-dimensional Cauchy of the wedge's readings, (v/h, v₂/h), is the uniform law on the
-octant seen through a flat screen: the writer's description of the reader's tunnel, cut to a quarter of its screen. It is
+octant seen through a flat screen: the writer's description of the reader's heat map, cut to a quarter of its screen. It is
 the image of the uniform directions, with no standpoint moved. It holds in every dimension, and the fifth essay's numbers
 stand.
 

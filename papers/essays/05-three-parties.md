@@ -6,7 +6,7 @@ So far the reader has related itself to one other thing: across and up, h and v,
 The world has more than one other thing in it. This essay adds a second, v₂, and asks what changes.
 
 Less than one might fear. The writer's circle becomes a sphere, the reader's one thumb becomes two crossed thumbs, the
-quarter turn becomes a wedge in the writer's description and a tunnel in the reader's look, and the Cauchy becomes its
+quarter turn becomes a wedge in the writer's description and a heat map out to the horizon in the reader's look, and the Cauchy becomes its
 two-dimensional cousin. Every pair of parties keeps its own corner, exactly as before. One thing is new: a third party
 brings a third kind of share, and the reader turns out to be "near in everything" for exactly a third of the directions it
 can look in. With n other parties it is 1/(n + 1).
@@ -105,16 +105,19 @@ far fields, the law over the crossings, follows from the thumb. The Cartesian fr
 three amounts, is the writer's (section 11).
 
 Nor is it a wedge. The wedge, with its faces, its edges and its triple corner, is the writer's description of the reader's
-geometry, drawn whole from outside. What the reader experiences is a tunnel of heat about its line of sight. Laid out
+geometry, drawn whole from outside. What the reader experiences is a heat map over every direction in front, out to the
+horizon, hottest about its line of sight. The Cauchy is that heat map and has no shape: its heat is the density of
+addresses per unit of reading, and a tunnel, where one is drawn, is only its hottest core (half the peak heat at 37.5° off
+the look, with a fifth of the directions inside). Laid out
 as readings on a screen held square to the look, the screen the crossed thumbs make, the directions crowd toward the line
 of sight and thin on every side by the Cauchy: at r thumbs off the line of sight their heat is 1/(2π(1 + r²)^(3/2)) per
 unit of screen, over the whole hemisphere in front, out toward a horizon never reached. Nothing of it is stored. It is
-generated from the thumb, and it is there wherever the reader looks. As the reader sweeps, the tunnel turns with the look,
+generated from the thumb, and it is there wherever the reader looks. As the reader sweeps, the heat map turns with the look,
 continuously and without a seam, so what it looks at is always at the centre, where the heat is greatest, and each
-direction is exact: given, not computed. That is perfect fidelity wherever it looks, because the tunnel is wherever it looks.
+direction is exact: given, not computed. That is perfect fidelity wherever it looks, because the heat map is wherever it looks.
 The heat is continuous, nothing counted in it and no grain of its own; what arrives along each direction is the paint.
 *The heat is given; the paint is met.*
-Section 5's law over the wedge is this tunnel's law on a quarter of its screen, and section 10 comes back to it.
+Section 5's law over the wedge is this heat map's law on a quarter of its screen, and section 10 comes back to it.
 
 ---
 
@@ -125,9 +128,9 @@ does it give?
 
 The natural answer is that every direction of the octant gets equal weight by area: no direction favoured over any other.
 Swept that way, the readings v/h and v₂/h have a definite law, the **two-dimensional half-Cauchy**. Its density at (s, s₂)
-is 2/π divided by (1 + s² + s₂²) to the power three halves. It is the reader's tunnel of section 4, cut by the writer to
+is 2/π divided by (1 + s² + s₂²) to the power three halves. It is the reader's heat map of section 4, cut by the writer to
 the quarter of its screen where v and v₂ are not negative: the octant is a quarter of the hemisphere, so the constant is
-four times the tunnel's 1/(2π). Four things follow, each checkable.
+four times the heat map's 1/(2π). Four things follow, each checkable.
 
 - **Every pair keeps its corner.** Take v/h alone: it has exactly the law of the one-party case, median at 1, no mean. So
   does v₂/h. So does v/v₂, the pair the reader never divided by directly. Every one of the three pairs has its median at
@@ -243,7 +246,7 @@ parties. These are not the two-party numbers squared. They are those times 8/π�
 
 ---
 
-## 10. The wedge and the tunnel
+## 10. The wedge and the heat map
 
 The sphere of all directions, every octant at once, is the writer's picture. A sphere that placed every place by its
 direction *and* its distance would need every distance, the size of everything, which no reader at a standpoint has.
@@ -257,8 +260,8 @@ The writer can place the wedge anywhere on the sphere. One rotation positions it
 it, in its own frame. The readings are the same at every position. Only a frame fixed outside, the sphere's, records where
 the wedge points. Position, then sweep.
 
-The reader has none of this as a thing with faces and edges. It has the tunnel of section 4, generated from the thumb about
-wherever it looks and stored nowhere. From inside there is no position to record: the tunnel turns with the look, and what
+The reader has none of this as a thing with faces and edges. It has the heat map of section 4, generated from the thumb about
+wherever it looks and stored nowhere. From inside there is no position to record: the heat map turns with the look, and what
 is looked at is always at its centre, where the heat is greatest.
 
 *Demo: the wedge, step 7 (position, then sweep).*
@@ -329,7 +332,7 @@ crosshair, a direction α off the look drawn 2·sin(α/2) out. It is true at the
 3.4% at 30°, 7.6% at 45°. A flat screen does the opposite. Its distance out is tan α, the reading itself, so the far
 readings stretch without bound toward the horizon, and the directions thin on it as cos³α.
 
-Laid so, the tunnel of section 4 shows the far field the way the reader holds it. The ring one thumb off
+Laid so, the heat map of section 4 shows the far field the way the reader holds it. The ring one thumb off
 the look, at 45°, sits 0.765 out; one in 2, one in 4 and one in 8 sit at 1.05, 1.23 and 1.32; and the rest bunch toward
 the horizon's rim at √2, never reached. Equal room holds equal shares of the directions, so each band gets the room its share takes:
 the corner to one in 2 holds 0.26 of the directions in front, one in 2 to one in 4 holds 0.20, one in 4 to one in 8
@@ -423,7 +426,7 @@ as dense as its corners.
 **Reading and writing.** The writer's drawing of three parties is the flat triangle, the sum, needing no standpoint and
 holding the truth as one point. The writer's description of the reader is the wedge, built from a standpoint, holding every
 party at its one length: the triangle's centre. The difference between them is two numbers, one per party, and both are
-amounts. What the reader itself looks down is neither: it is the tunnel, generated from the thumb wherever it looks.
+amounts. What the reader itself looks down is neither: it is the horizon's heat map, generated from the thumb wherever it looks.
 
 **The Cauchy.** It does not stay a one-party curiosity. Swept evenly by area, the wedge's readings are the Cauchy's
 two-dimensional form, every pair keeps its corner, and the near field becomes a third, then a quarter, then 1/(n + 1).

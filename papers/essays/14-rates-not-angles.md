@@ -362,7 +362,7 @@ gets π/2 and 2/π. On a sphere it compares the hemisphere with the flat disc un
 once, ½ one direction at a time (the mean of a direction's projection onto the axis, over the hemisphere by area). The
 product is still 1, and the writer's 1 is still their geometric mean, the corner between them. Archimedes' equal slices are
 why the up-down sweep is the even one: a sweep uniform in height is uniform over the sphere, which is how the fifth essay's
-wedge, the writer's description of the reader's tunnel, is laid.
+wedge, the writer's description of the reader's heat map, is laid.
 
 **Altitude and azimuth were always the reader's.** Ptolemy's two systems are this series' two vantages. Altitude and
 azimuth are measured from a standpoint, against one's own horizon: a reader's sweeps. The equatorial frame is fixed to
