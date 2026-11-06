@@ -196,8 +196,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (8, 12, 16 a side), the writer's box; tap a dot to stand there, then taps look at a dot (or turn the look by sliders); H
   the distance to the dot looked at × 2^h; each dot coloured cos³α × sech(ln(d/H)) (heat, or near teal / far violet),
   behind the eye dark. Scale the world moves no colour; d and H²/d one colour. Beside the cube, the same dots as the read lays
-  them ("show the cauchy compression"): across the look a disc of radius √(1 − cos α), along it (2/π)·atan(d/H) against the share. `?n=&eye=i,j,k&look=i,j,k&h=&k=<log10 k>&color=heat|fields`;
-  hook `window.__heatCube` (`heat`, `heats`, `compressed`, `front`, `pairs`, `stand`, `lookAt`, `set`, `state`, `frames`, `webgl`).
+  them ("show the cauchy compression"): across the look a disc of radius √(1 − cos α), along it (2/π)·atan(d/H) against the share. The reader's view (`?view=reader`, V; Tom: "can you show the readers view"): the eye's own
+  view, every dot in front by its direction (Lambert's equal-area about the look), one size (no distance read), the heat
+  painted about the crosshair; drag turns the look, a tap looks at a dot. `?n=&eye=i,j,k&look=i,j,k&h=&k=<log10 k>&color=heat|fields&view=reader`;
+  hook `window.__heatCube` (`heat`, `heats`, `compressed`, `readerView`, `front`, `pairs`, `stand`, `lookAt`, `set`, `state`, `frames`, `webgl`).
   Not in the flying page.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the

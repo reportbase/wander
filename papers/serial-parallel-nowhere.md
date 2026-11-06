@@ -7363,6 +7363,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   read lays them, no dot moved in the cube: across the look, a disc of radius √(1 − cos α) (equal room, equal share; rings
   at 37.5°, 45°, 60°; from a corner the cube is the wedge's curved triangle); along the look, x = (2/π)·atan(d/H) (the eye
   0, one thumb ½, the horizon 1) against the share. Checked: the dot looked at at g = ½, share 0; scaling moves none.
+  Then (Tom: "can you show the readers view"): the reader's view, full screen (`?view=reader`, V): the eye's own view,
+  every dot in front at its direction about the look by Lambert's equal-area map (R685), all one size, since the reader
+  reads no distance (a far dot and a near one on a line look alike, the nearer drawn over); the heat painted on the screen
+  about the crosshair (cos³α), each dot its own sech(ln(d/H)); drag turns the look and the dots stream through a heat that
+  stays put (the heat is the look's); a tap brings a dot to the crosshair, H its distance. Checked: the dot looked at on
+  the crosshair, heat 1; scaling moves no dot on the screen (4·10⁻¹⁵); a real drag turns the look, a real tap looks at
+  the dot tapped. From a corner the cube is the wedge's curved triangle with its three thumbs' lines.
 - **R728** (6 Nov; Tom: "what if its more like the heat map of the full hemisphere. the tunnel is just where its
   hotest."; "hotter means higher density of addresses in this metaphore."; "yes, I prefer the idea is that the cauchy is the
   horizon's heat map. giving the cauchy a shape is a bit confusing."): **the Cauchy is the horizon's heat map, not a
