@@ -1652,7 +1652,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   is the horizon's heat map, not a shape**; heat the density of addresses per unit of reading; a tunnel only its hottest
   core (half heat at 37.5°, a fifth of the directions). *Reads and Writes* §7, essays 2, 5, 10, 13, 14, 17, README.
   Then: the sphere has a shape (a size, a closing surface); divided by the thumb it opens at the rim into the horizon, so the
-  Cauchy's tail never completes (*Reads and Writes* §1, §7; essays 2 §9, 5 §4).
+  Cauchy's tail never completes (*Reads and Writes* §1, §7; essays 2 §9, 5 §4). Then (Tom: "combining spheres is
+  complicated, combining cauchy's is trivial."): no boundary, so heat adds; readings added give one Cauchy (z added),
+  heat maps overlaid a heat map but not one Cauchy (R359). Recorded in SPN only.
   R727 (6 Nov; Tom: "just record it so we dont forget it."): breathing as a metaphor, in SPN only: in reading, out
   writing; motion (a counted step) hides the asymmetry, rest (one standpoint, no parallax) reveals it. Then (Tom: "everyting has cylcles"): observation as a whole
   cycles (joins, the writer's); a single read does not (home to a horizon never reached).

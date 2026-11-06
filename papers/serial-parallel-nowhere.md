@@ -7365,6 +7365,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   completing.", then "yes, and the papers and essays."): a shape needs a size and a boundary that closes; the sphere holds
   both; divided by the thumb (R725) it opens along the rim, x = 0, into the horizon never reached, so the Cauchy's tail never
   completes: no shape, no edge, no mean. *Reads and Writes* §1 ("The paper in one equation") and §7; essay 2 §9; essay 5 §4.
+  Then (Tom: "that must be why cauchy's merge so cleanly, combining cauchys's just adjusts the heat map to represent both.";
+  "yes, it is logical. combining spheres is complicated, combining cauchy's is trivial."): with no boundary there is nothing
+  to reconcile, so heat simply adds. Two senses kept apart: readings added give one Cauchy, the standpoints added
+  (z₁ + z₂, SUM's relay; e^(iz₁t)·e^(iz₂t)); heat maps overlaid add too, but the sum is a heat map, not one Cauchy (pooled
+  standpoints, R359; the row of readers' plateau). Averaging n readings gives the same Cauchy, no narrower; the median
+  gains (about πγ/(2√n)), the mean nothing. Shapes combine only by reconciling boundaries (where they meet, which edge
+  wins). Recorded only, in no paper yet.
 - **R727** (6 Nov; Tom, of a ChatGPT note pasting "Breathing: The Asymmetry of Reading and Writing": "Just a small
   note, i like the basic metapore, just record it so we dont forget it."): recorded, not placed in any paper. Breathing in
   is reading, breathing out is writing: one cycle, two acts not alike (read continuous, write discrete, R640; read, write,
