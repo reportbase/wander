@@ -399,6 +399,11 @@ Put a sphere, free to turn, at the centre of a cube of half-width e. From the ce
 its ray to exactly one point of the cube's surface, on the face of its largest component. Every point of the surface is
 reached once, at every size of cube and after any turn of the sphere.
 
+H, V and V₂ held as amounts combine into the writer's sphere, round only where they are written equal and an
+ellipsoid otherwise (drawn unequal, the readings from inside are still a Cauchy, stretched, the same family). H, H and H, one
+thumb crossed with itself, combine into the reader's Cauchy. The sphere in this section is the first; the faces' heat is
+the second.
+
 Every point inside the cube, except the centre, is some fraction t of the way out to its surface point, for exactly one t
 between 0 and 1. So the pair (direction on the sphere, fraction t) reaches every point of the cube, and it is the same
 pair whatever size the cube is. The point itself, in amounts, is e times it.

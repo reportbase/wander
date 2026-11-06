@@ -1648,6 +1648,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R726 (6 Nov; Tom: "update the essays"): R723–R725 in essay 2 §9 (the sphere kept and divided; Euler's 1 + is =
+  sec θ·e^(iθ)), essay 4 §4 ("The near-field sphere, the writer's account") and essay 5 §11.
   R725 (6 Nov; Tom: "that is the whole paper in one equation."): **x² + y² + z² = r² kept is the writer's sphere; divided
   by the thumb, 1 + s² + s₂² = (r/x)², the reader's Cauchy**; the paint the one thing it leaves out. *Reads and Writes* §1
   "The paper in one equation", the abstract.

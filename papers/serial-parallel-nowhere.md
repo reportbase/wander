@@ -7352,6 +7352,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R726** (6 Nov; Tom: "update the essays"): R723–R725 in the essays. Essay 2 §9, after "The circle's equation, divided
+  by its own length": the sphere kept and divided by the thumb, the writer's and the reader's, the scale test their
+  difference and the paint left out; H, V, V₂ against H, H, H; and in its Euler subsection 1 + is = sec θ·e^(iθ),
+  (1 + is)/(1 − is) = e^(2iθ), the horizon at −1. Essay 4 §4, "The near-field sphere, the writer's account" (inversion
+  d ↦ H²/d, the half-Cauchy filling, cos³ across; the reader a split). Essay 5 §11 opens with H, V, V₂ against H, H, H.
 - **R725** (6 Nov; Tom: "Yes, that is the whole paper in one equation.", then "Yes"): x² + y² + z² = r² kept with its
   radius is the writer's sphere; divided by the thumb's share x², 1 + s² + s₂² = (r/x)², the reader's Cauchy (its
   denominator), the corner s = 1, the horizon s = ∞. The scale test is the difference between the two readings; the

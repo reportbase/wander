@@ -385,6 +385,15 @@ A third form puts the law on a line in the world, the lighthouse's shore: the la
 a scale that are both amounts, the foot of the lamp and its distance, and they are had only by finding the shore and
 measuring along it. The reader has the law's shape; the writer adds its parameters.
 
+In space the same division is the whole of these essays in one line. The writer's sphere, x² + y² + z² = r², holds three
+amounts and a radius; kept as written, it is the writer's. Divide it by x², the length along the look taken as the thumb,
+and it becomes 1 + s² + s₂² = (r/x)², two readings and no length: the denominator of the reader's law in space, the
+two-dimensional Cauchy 1/(2π(1 + s² + s₂²)^(3/2)), hottest at the look, a median at the corner, no mean, its horizon where
+the readings run off. The same sphere, kept and divided: the writer's and the reader's. Scaling the world moves r and every
+x and leaves every s where it was, so the first test of the first essay is the difference between the two forms. What the
+equation leaves out is the paint, which is the second test. Said in parts: H, V and V₂ held as amounts make the writer's
+sphere (an ellipsoid, unless written equal); H, H and H, one thumb crossed with itself, make the reader's Cauchy.
+
 ### Circular mathematics without V
 
 That raises a fair question. The circle's equation seems to need V. On a page it reads (x/H)² + (y/V)² = 1, and it is a
@@ -460,6 +469,11 @@ become the powers of one point w inside the circle: the average of Wⁿ is wⁿ.
 on the circle, and that mean is where the reader stands, carried across. This is section 6's "the missing mean is the
 chart's", said in Euler's notation. For the reader's own quarter turn the mean direction of the landing point is
 (2/π)·i: it points at the corner, and its length is 2/π.
+
+The division of the last subsection is here too, with the turn kept. The writer's point x + iy = r·e^(iθ), divided by the
+thumb, is the reading 1 + is = sec θ·e^(iθ): the turn whole, carrying a length. Divide once more, by the mirror reading
+1 − is, and the length goes as well: (1 + is)/(1 − is) = e^(2iθ), the central sweep's landing point, with home at +1, the
+corner at i and the horizon at e^(iπ) = −1.
 
 **The two corners are two mirrors.** The plane of the logarithm also shows the corners plainly. Swap a reading for its
 reciprocal, v/h for h/v, and the angle θ becomes 90° − θ: a reflection of the imaginary part, and the line it leaves in

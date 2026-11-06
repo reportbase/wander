@@ -130,6 +130,18 @@ apart at the end of its own range in either case.
 | the in-place lay | length | yes, out to 2H | H, halfway |
 | the logarithmic lay | number of places | no | at one thumb, where the equal stretches start |
 
+### The near-field sphere, the writer's account
+
+A writer watching the reader choose its thumb can say what was set in one more way. Every facing joined with every other
+party at the one length, V = V₂ = H, fills a ball one thumb in radius about the eye: setting H sets that ball, the
+near-field sphere. One facing of it is the wedge with its cap at H; the far field is everything outside it, and near and
+far together are the writer's whole. Inversion in that sphere, d ↦ H²/d, carries the far field point for point onto the
+near field, infinity onto the eye: the swap of d/H for H/d, which leaves one thumb where it is, drawn in space, and
+why each field holds half of every direction's heat. The sphere is not filled evenly. Along each ray its filling is the reader's heat in distance, the
+half-Cauchy 2H/(π(H² + d²)), hottest at the eye and half of it passed at one thumb; across directions it cools as cos³ of
+the angle off the look. So the near-field sphere is the writer's outline round the reader's Cauchy. The reader itself holds
+no sphere: it has a split on every direction it reads, one thumb out, and nothing round.
+
 *Demos: levels (the reader's lay, and the in-place lay at* `?lay=inplace`*); H is a zoom; crosshairs in a field (by distance address).*
 
 ---
