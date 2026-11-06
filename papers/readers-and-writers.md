@@ -31,7 +31,8 @@ comes by degrees. Underneath is an older line: a read is continuous and a write 
 hold a turn, π and e appear.
 
 None of the mathematics is new. What is offered is a division of it: which parts a standpoint has, which parts need the
-whole, and what carries an observer from one to the other.
+whole, and what carries an observer from one to the other. The first split fits in one equation: the sphere's, kept
+with its radius, is the writer's; divided by the thumb, it is the reader's Cauchy (§1, "The paper in one equation").
 
 ## 1. Two acts
 
@@ -150,6 +151,27 @@ so no reading carries it. It is not missing from a read; it was never there. To 
 baseline, counted a step, timed a pulse, or agreed a unit. A reader that comes to know V has not read better; it has
 written. This is not a shortcoming of the reader. Its geometry is a read of directions with no breadth in it: the
 horizon, the corner as a median and the absence of any mean are what such a read is.
+
+**The paper in one equation.** Write the sphere's equation, three lengths held as amounts about a centre:
+
+  x² + y² + z² = r².
+
+Kept as written it is the writer's: lengths held, a radius, a closed surface, every sign; scale the world and every
+term moves. Now divide it by the thumb's own share, x², the one length the reader holds:
+
+  1 + s² + s₂² = (r/x)²,  s = y/x, s₂ = z/x.
+
+What is left is the reader's: two ratios, no length in them, unmoved by scaling. Nothing closes: where the sphere would
+have met itself, s runs to infinity, the horizon. The left side is the denominator of the two-dimensional Cauchy,
+1/(2π(1 + s² + s₂²)^(3/2)), the even turn's heat laid on a screen held square to the look; its corner is s = 1, its
+horizon s = ∞, and it has a median and no mean. One equation, read two ways: with the radius kept, the writer's sphere;
+divided by the thumb, the reader's Cauchy (§2, "The circle's equation, divided by its own length", is the same in the
+plane). The scale test is the difference between the two readings. What the equation leaves out is the second test:
+the paint met along each direction. The equation is the heat, given; the paint arrives on it from the world. In the plane
+Euler's formula says the same with the turn kept: the writer's point x + iy = r·e^(iθ), divided by the thumb, is the
+reading 1 + is = sec θ·e^(iθ), a size whose square is the equation's left side times a pure turn; divided once more by
+its mirror, (1 + is)/(1 − is) = e^(2iθ), every length is gone, and the horizon lands at e^(iπ) = −1 (§5, "Euler's
+formula as a count of reads").
 
 ## 2. What the reader has for free
 
@@ -694,7 +716,8 @@ one that puts the crosshair at the corner of all three (the Cauchy's thinning, c
 not choose it). They are the same one length either way: the thumbs counted across the look are the dimension, and the
 thumbs counted at the corner are the parties, one more.
 
-**The sphere without V, and the cone of one read.** Every way three crossed thumbs can stand to one another, with H and V
+**The sphere without V, and the cone of one read.** H, V and V₂ held as amounts combine into the writer's sphere (an
+ellipsoid unless written equal); H, H and H, one thumb crossed with itself, combine into the reader's Cauchy. Every way three crossed thumbs can stand to one another, with H and V
 known, is a point of the sphere: three amounts at a known radius, every sign kept, closed and finite. That is the
 writer's. The same relations with V unknown keep only their ratios (v/h, v₂/h), and two things go with the length: the
 sign (a point and the point opposite it through the centre give the same ratios, so the sphere folds onto itself, the
@@ -728,7 +751,9 @@ split on every direction it reads, nearer than one thumb or past it, one read at
 joined. One choice of H; two accounts of what it set. One facing of it is the wedge with its cap at H: an octant of
 the ball, three flat faces through the eye and the cap one thumb out. The far field is everything else, so near and far
 together are the writer's whole; inversion in the sphere at H carries the far field point for point onto the near field,
-infinity to the eye, which is why each holds half of every direction's heat.
+infinity to the eye, which is why each holds half of every direction's heat. Its filling is the reader's heat, not an
+even one: along each ray the half-Cauchy in distance, 2H/(π(H² + d²)), hottest at the eye and half passed at one thumb;
+across directions cos³α off the look; so the near-field sphere is the writer's outline round the reader's Cauchy.
 
 **Where the split falls: looking around.** The overlay is the reader's to move, and it moves it by looking. Pointed at a
 thing, the crossed thumbs take its distance as H, so that thing sits at the corner, half of every direction's heat in

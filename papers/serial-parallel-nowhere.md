@@ -7352,6 +7352,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R725** (6 Nov; Tom: "Yes, that is the whole paper in one equation.", then "Yes"): x² + y² + z² = r² kept with its
+  radius is the writer's sphere; divided by the thumb's share x², 1 + s² + s₂² = (r/x)², the reader's Cauchy (its
+  denominator), the corner s = 1, the horizon s = ∞. The scale test is the difference between the two readings; the
+  second test (the paint) is what the equation leaves out. *Reads and Writes* §1 "The paper in one equation", a sentence
+  in the abstract. Then (Tom: "How does this connect to euhlers.", then "Yes"): in the plane x + iy = r·e^(iθ) over the
+  thumb is 1 + is = sec θ·e^(iθ), the equation its size, e^(iθ) the turn it does not show; (1 + is)/(1 − is) = e^(2iθ),
+  no length left, the horizon at e^(iπ) = −1. One sentence closing the passage.
+- **R724** (6 Nov; Tom: "H V and V2 combine into a sphere. H H and H combine into the cauchy", then "Yes"): R697 in
+  its simplest form. Three lengths held as amounts, every sign, are the writer's sphere (an ellipsoid unless written
+  equal; unequal drawn, the elliptical Cauchy of R695); one thumb crossed with itself three times, no second length, is
+  the reader's two-dimensional Cauchy. *Reads and Writes* §7, at the head of "The sphere without V".
 - **R723** (5 Nov; Tom: "a sphere is every possible way H and V and V2 stand relative to each other with 8 possible
   facings. … if you set H, you are implictly setting V and V2. so could it be said that setting h, you are defining the
   near field to be a 3d spere.", then "yes, thats an importan realization. setting H means setting the near field
@@ -7362,6 +7373,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   near field + far field = universe."; "yes, add both"): one facing of it is the wedge with its cap at H; near and far
   together the writer's whole, inversion in the sphere at H (d ↦ H²/d) carrying the far field onto the near, infinity to
   the eye, why each holds half of every direction's heat. The same paragraph.
+  Then (Tom: "so its a weird kind of sphere, not uniform."; "so its the near field sphere."; "yes, add it."): its
+  filling is the reader's heat, the half-Cauchy in distance 2H/(π(H² + d²)) (hottest at the eye, half passed at one
+  thumb) times cos³α off the look; the near-field sphere is the writer's outline round the reader's Cauchy.
 - **R722** (5 Nov; Tom: "all three"): R721 carried out.
   - *Reads and Writes* §2: "The Cauchy's routes" after the derivation (one measure from z; the routes; one in the plane,
     agreeing on flat boundaries, parting on curved ones; told apart only by what γ tracks; the turn the reader's route;
