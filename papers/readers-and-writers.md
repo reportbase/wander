@@ -699,6 +699,13 @@ reached: the far field, heavy, so no mean of distances. The split is a mark at o
 median, not a body: a first version drew it as a closed dome and gave the near field a shape, which it does not have. It
 stands one thumb out, never at V. Take the overlay away and the Cauchy is unchanged.
 
+**Heat maps combine without reconciling.** Two shapes combine only by working out their boundaries: where they meet,
+which edge wins, what overlaps. A heat map has no boundary, so nothing needs working out, and the heat adds. Two senses
+of combining stay apart. Readings added give one Cauchy again, the standpoints added, z₁ + z₂ (a relay of standpoints,
+§8; in Euler's notation e^(iz₁t)·e^(iz₂t)). Heat maps laid over each other add too, but their sum is a heat map, not one
+Cauchy: two peaks stay two, a mixture of standpoints and not one of them. Averaging n readings gives back the same
+Cauchy, no narrower; the median gains, the mean nothing.
+
 **Where the reader stands.** Behind the screen, at one point. The look runs from it to the crosshair; a thumb lands √2
 off the look on a screen one thumb away, home at 1/√2, one thumb off at 1, and the horizon runs parallel to the screen and
 never lands on it. The point has no size and draws no shape: it is a vantage, the place the read is from, and the read is

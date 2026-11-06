@@ -7371,7 +7371,8 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   (z₁ + z₂, SUM's relay; e^(iz₁t)·e^(iz₂t)); heat maps overlaid add too, but the sum is a heat map, not one Cauchy (pooled
   standpoints, R359; the row of readers' plateau). Averaging n readings gives the same Cauchy, no narrower; the median
   gains (about πγ/(2√n)), the mean nothing. Shapes combine only by reconciling boundaries (where they meet, which edge
-  wins). Recorded only, in no paper yet.
+  wins). Recorded, then (Tom: "update the essays and papers") in *Reads and Writes* §7 ("Heat maps combine without
+  reconciling"), essay 3 §6 after the relay, essay 17 §5.
 - **R727** (6 Nov; Tom, of a ChatGPT note pasting "Breathing: The Asymmetry of Reading and Writing": "Just a small
   note, i like the basic metapore, just record it so we dont forget it."): recorded, not placed in any paper. Breathing in
   is reading, breathing out is writing: one cycle, two acts not alike (read continuous, write discrete, R640; read, write,
