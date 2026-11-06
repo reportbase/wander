@@ -109,7 +109,9 @@ geometry, drawn whole from outside. What the reader experiences is a heat map ov
 horizon, hottest about its line of sight. The Cauchy is that heat map and has no shape: the sphere closes because it holds a radius, and the reader holds none, so
 the heat runs out to the rim in a long tail that never completes (the second essay, section 9). Its heat is the density of
 addresses per unit of reading, and a tunnel, where one is drawn, is only its hottest core (half the peak heat at 37.5° off
-the look, with a fifth of the directions inside). Laid out
+the look, with a fifth of the directions inside). The heat is the look's, not the thumbs': looked down their diagonal,
+the hottest place is where the three thumbs cross, every share equal and every pair at its corner; section 5's law, laid
+on a screen square to h, is hottest at home instead, the same directions on another screen. Laid out
 as readings on a screen held square to the look, the screen the crossed thumbs make, the directions crowd toward the line
 of sight and thin on every side by the Cauchy: at r thumbs off the line of sight their heat is 1/(2π(1 + r²)^(3/2)) per
 unit of screen, over the whole hemisphere in front, out toward a horizon never reached. Nothing of it is stored. It is

@@ -678,7 +678,11 @@ is only its hottest core (the heat map itself has no shape: its tail never compl
 stored. As the reader sweeps, the heat map turns with the look, continuously and without a seam, so whatever it looks at is
 where the heat is greatest and the reading finest, and each direction is exact, given by the geometry, not computed. That
 is the reader's fidelity: perfect wherever it looks, because it is wherever it looks. The wedge, the octant and the sphere
-are what a writer draws to describe that heat map from outside.
+are what a writer draws to describe that heat map from outside. The heat is the look's, not the thumbs': it is hottest
+wherever the look points. Looked down their diagonal, that is where the three thumbs cross, [1 : 1 : 1], all three
+shares equal and every pair at its corner, balanced rather than any one thumb at its largest. Laid on a screen square to
+one thumb instead, as the wedge's law 2/(π(1 + s² + s₂²)^(3/2)) is in v/h and v₂/h, the same directions are hottest along
+that thumb, at home; nothing moved but the screen.
 
 **The heat map reaches the horizon; near and far are an overlay.** One read's heat map covers the hemisphere in front,
 nothing smaller; the Cauchy has no shape of its own, only the heat over everything out to the horizon. Projected from the eye onto a screen square to the look, the directions spread

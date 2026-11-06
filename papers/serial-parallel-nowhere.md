@@ -7373,6 +7373,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   gains (about πγ/(2√n)), the mean nothing. Shapes combine only by reconciling boundaries (where they meet, which edge
   wins). Recorded, then (Tom: "update the essays and papers") in *Reads and Writes* §7 ("Heat maps combine without
   reconciling"), essay 3 §6 after the relay, essay 17 §5.
+  Then (Tom: "so the heat map would be hottest where the three thumbs cross, where they are maximally expressed relative
+  to each other.", then "yes, add it"): the heat is the look's, hottest wherever the look points; looked down the thumbs'
+  diagonal (R670, R671) that is their crossing, [1 : 1 : 1], every share equal and every pair at its corner (balanced, not
+  any thumb at its largest); on a screen square to h (the wedge's law in v/h, v₂/h) the same directions are hottest at
+  home. *Reads and Writes* §7; essay 5 §4.
 - **R727** (6 Nov; Tom, of a ChatGPT note pasting "Breathing: The Asymmetry of Reading and Writing": "Just a small
   note, i like the basic metapore, just record it so we dont forget it."): recorded, not placed in any paper. Breathing in
   is reading, breathing out is writing: one cycle, two acts not alike (read continuous, write discrete, R640; read, write,
