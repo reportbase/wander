@@ -31,7 +31,8 @@ comes by degrees. Underneath is an older line: a read is continuous and a write 
 hold a turn, π and e appear.
 
 None of the mathematics is new. What is offered is a division of it: which parts a standpoint has, which parts need the
-whole, and what carries an observer from one to the other.
+whole, and what carries an observer from one to the other. The first split fits in one equation: the sphere's, kept
+with its radius, is the writer's; divided by the thumb, it is the reader's Cauchy (§1, "The paper in one equation").
 
 ## 1. Two acts
 
@@ -150,6 +151,23 @@ so no reading carries it. It is not missing from a read; it was never there. To 
 baseline, counted a step, timed a pulse, or agreed a unit. A reader that comes to know V has not read better; it has
 written. This is not a shortcoming of the reader. Its geometry is a read of directions with no breadth in it: the
 horizon, the corner as a median and the absence of any mean are what such a read is.
+
+**The paper in one equation.** Write the sphere's equation, three lengths held as amounts about a centre:
+
+  x² + y² + z² = r².
+
+Kept as written it is the writer's: lengths held, a radius, a closed surface, every sign; scale the world and every
+term moves. Now divide it by the thumb's own share, x², the one length the reader holds:
+
+  1 + s² + s₂² = (r/x)²,  s = y/x, s₂ = z/x.
+
+What is left is the reader's: two ratios, no length in them, unmoved by scaling. Nothing closes: where the sphere would
+have met itself, s runs to infinity, the horizon. The left side is the denominator of the two-dimensional Cauchy,
+1/(2π(1 + s² + s₂²)^(3/2)), the even turn's heat laid on a screen held square to the look; its corner is s = 1, its
+horizon s = ∞, and it has a median and no mean. One equation, read two ways: with the radius kept, the writer's sphere;
+divided by the thumb, the reader's Cauchy (§2, "The circle's equation, divided by its own length", is the same in the
+plane). The scale test is the difference between the two readings. What the equation leaves out is the second test:
+the paint met along each direction. The equation is the heat, given; the paint arrives on it from the world.
 
 ## 2. What the reader has for free
 

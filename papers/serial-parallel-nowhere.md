@@ -7352,6 +7352,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R725** (6 Nov; Tom: "Yes, that is the whole paper in one equation.", then "Yes"): x² + y² + z² = r² kept with its
+  radius is the writer's sphere; divided by the thumb's share x², 1 + s² + s₂² = (r/x)², the reader's Cauchy (its
+  denominator), the corner s = 1, the horizon s = ∞. The scale test is the difference between the two readings; the
+  second test (the paint) is what the equation leaves out. *Reads and Writes* §1 "The paper in one equation", a sentence
+  in the abstract.
 - **R724** (6 Nov; Tom: "H V and V2 combine into a sphere. H H and H combine into the cauchy", then "Yes"): R697 in
   its simplest form. Three lengths held as amounts, every sign, are the writer's sphere (an ellipsoid unless written
   equal; unequal drawn, the elliptical Cauchy of R695); one thumb crossed with itself three times, no second length, is
