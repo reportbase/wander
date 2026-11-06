@@ -390,7 +390,10 @@ amounts and a radius; kept as written, it is the writer's. Divide it by x², the
 and it becomes 1 + s² + s₂² = (r/x)², two readings and no length: the denominator of the reader's law in space, the
 two-dimensional Cauchy 1/(2π(1 + s² + s₂²)^(3/2)), hottest at the look, a median at the corner, no mean, its horizon where
 the readings run off. The same sphere, kept and divided: the writer's and the reader's. Scaling the world moves r and every
-x and leaves every s where it was, so the first test of the first essay is the difference between the two forms. What the
+x and leaves every s where it was, so the first test of the first essay is the difference between the two forms. And
+the sphere has a shape where the Cauchy has none: a shape needs a size and a surface that closes on itself, and dividing
+by the thumb removes the size and opens the surface along the rim, 90° off the look, where x is zero and the readings run
+off to the horizon. The Cauchy's long tail never completes, which is why it has no edge and no mean. What the
 equation leaves out is the paint, which is the second test. Said in parts: H, V and V₂ held as amounts make the writer's
 sphere (an ellipsoid, unless written equal); H, H and H, one thumb crossed with itself, make the reader's Cauchy.
 

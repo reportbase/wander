@@ -7361,6 +7361,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   60°. Refines R624, R687 and R701's "shape is the hemisphere". *Reads and Writes* §7 ("the reader has the horizon's heat
   map"; "The heat map reaches the horizon"); essay 5 §4, §5, §10 (now "The wedge and the heat map"), §12; "the reader's
   tunnel" in essays 2, 10, 13, 14, 17 and the README now "the reader's heat map". Demos keep "tunnel" for the view laid so.
+  Then (Tom: "the sphere has a shape, the cauchy acually does not have a shape, it long tail continues with out
+  completing.", then "yes, and the papers and essays."): a shape needs a size and a boundary that closes; the sphere holds
+  both; divided by the thumb (R725) it opens along the rim, x = 0, into the horizon never reached, so the Cauchy's tail never
+  completes: no shape, no edge, no mean. *Reads and Writes* §1 ("The paper in one equation") and §7; essay 2 §9; essay 5 §4.
 - **R727** (6 Nov; Tom, of a ChatGPT note pasting "Breathing: The Asymmetry of Reading and Writing": "Just a small
   note, i like the basic metapore, just record it so we dont forget it."): recorded, not placed in any paper. Breathing in
   is reading, breathing out is writing: one cycle, two acts not alike (read continuous, write discrete, R640; read, write,

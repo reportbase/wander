@@ -164,7 +164,11 @@ term moves. Now divide it by the thumb's own share, x², the one length the read
 What is left is the reader's: two ratios, no length in them, unmoved by scaling. Nothing closes: where the sphere would
 have met itself, s runs to infinity, the horizon. The left side is the denominator of the two-dimensional Cauchy,
 1/(2π(1 + s² + s₂²)^(3/2)), the even turn's heat laid on a screen held square to the look; its corner is s = 1, its
-horizon s = ∞, and it has a median and no mean. One equation, read two ways: with the radius kept, the writer's sphere;
+horizon s = ∞, and it has a median and no mean. So the sphere has a shape and the Cauchy has none. A shape needs a size
+and a boundary that closes on itself; the sphere holds both, its radius and its surface coming back round. Dividing by the
+thumb takes the size away and opens the surface along the rim, 90° off the look, where x = 0: the closing line goes to
+the horizon, which is never reached. What is left has no edge and no extent, only heat thinning outward, a long tail that
+never completes, and a mean would need it to complete. One equation, read two ways: with the radius kept, the writer's sphere;
 divided by the thumb, the reader's Cauchy (§2, "The circle's equation, divided by its own length", is the same in the
 plane). The scale test is the difference between the two readings. What the equation leaves out is the second test:
 the paint met along each direction. The equation is the heat, given; the paint arrives on it from the world. In the plane
@@ -669,7 +673,7 @@ its edges and its triple corner, is the writer's description of the reader's geo
 The reader never holds it. What the reader has is what its crossed thumbs give where it looks: a heat map over every
 direction in front, out to the horizon. The Cauchy is that heat map, not a shape. Its heat is the density of addresses per
 unit of reading (address the metaphor, §6): hottest at the look and cooling as cos³α off it. A tunnel, where one is drawn,
-is only its hottest core: half the peak heat at 37.5° off the look, with a fifth of the directions inside (the share within
+is only its hottest core (the heat map itself has no shape: its tail never completes, §1): half the peak heat at 37.5° off the look, with a fifth of the directions inside (the share within
 α is 1 − cos α), half within 60°, the rest stretching to the rim. All of it is generated from the thumb; none of it is
 stored. As the reader sweeps, the heat map turns with the look, continuously and without a seam, so whatever it looks at is
 where the heat is greatest and the reading finest, and each direction is exact, given by the geometry, not computed. That

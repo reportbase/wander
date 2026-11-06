@@ -106,7 +106,8 @@ three amounts, is the writer's (section 11).
 
 Nor is it a wedge. The wedge, with its faces, its edges and its triple corner, is the writer's description of the reader's
 geometry, drawn whole from outside. What the reader experiences is a heat map over every direction in front, out to the
-horizon, hottest about its line of sight. The Cauchy is that heat map and has no shape: its heat is the density of
+horizon, hottest about its line of sight. The Cauchy is that heat map and has no shape: the sphere closes because it holds a radius, and the reader holds none, so
+the heat runs out to the rim in a long tail that never completes (the second essay, section 9). Its heat is the density of
 addresses per unit of reading, and a tunnel, where one is drawn, is only its hottest core (half the peak heat at 37.5° off
 the look, with a fifth of the directions inside). Laid out
 as readings on a screen held square to the look, the screen the crossed thumbs make, the directions crowd toward the line
