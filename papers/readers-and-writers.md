@@ -694,7 +694,8 @@ one that puts the crosshair at the corner of all three (the Cauchy's thinning, c
 not choose it). They are the same one length either way: the thumbs counted across the look are the dimension, and the
 thumbs counted at the corner are the parties, one more.
 
-**The sphere without V, and the cone of one read.** Every way three crossed thumbs can stand to one another, with H and V
+**The sphere without V, and the cone of one read.** H, V and V₂ held as amounts combine into the writer's sphere (an
+ellipsoid unless written equal); H, H and H, one thumb crossed with itself, combine into the reader's Cauchy. Every way three crossed thumbs can stand to one another, with H and V
 known, is a point of the sphere: three amounts at a known radius, every sign kept, closed and finite. That is the
 writer's. The same relations with V unknown keep only their ratios (v/h, v₂/h), and two things go with the length: the
 sign (a point and the point opposite it through the centre give the same ratios, so the sphere folds onto itself, the

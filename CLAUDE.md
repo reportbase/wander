@@ -1648,6 +1648,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R724 (6 Nov; Tom: "H V and V2 combine into a sphere. H H and H combine into the cauchy"): **H, V, V₂ as amounts the
+  writer's sphere (an ellipsoid unless written equal); H, H, H, one thumb crossed with itself, the reader's Cauchy.**
+  *Reads and Writes* §7. (R723 since: the near-field sphere's filling the reader's heat, half-Cauchy in distance × cos³.)
   R723 (5 Nov; Tom: "setting H means setting the near field sphere."): **setting H sets the near-field sphere** (radius H,
   every facing joined at V = V₂ = H), the writer's account; the reader has it as a split on every direction it reads, no
   surface, no V. *Reads and Writes* §7.

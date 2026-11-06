@@ -7352,6 +7352,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R724** (6 Nov; Tom: "H V and V2 combine into a sphere. H H and H combine into the cauchy", then "Yes"): R697 in
+  its simplest form. Three lengths held as amounts, every sign, are the writer's sphere (an ellipsoid unless written
+  equal; unequal drawn, the elliptical Cauchy of R695); one thumb crossed with itself three times, no second length, is
+  the reader's two-dimensional Cauchy. *Reads and Writes* §7, at the head of "The sphere without V".
 - **R723** (5 Nov; Tom: "a sphere is every possible way H and V and V2 stand relative to each other with 8 possible
   facings. … if you set H, you are implictly setting V and V2. so could it be said that setting h, you are defining the
   near field to be a 3d spere.", then "yes, thats an importan realization. setting H means setting the near field
