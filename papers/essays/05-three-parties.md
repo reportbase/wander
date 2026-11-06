@@ -402,6 +402,36 @@ across the look in readings, along it in ratios. The near field runs from the ey
 proportion; the far field from the hot spot to the horizon, distance in ratios; each holds half the heat. Neither is
 hotter. They differ only in how distance is read.
 
+### A cube of dots
+
+The plainest way to see all this is a cube of dots, a writer's box, one unit apart. Stand at one dot, look at another,
+and colour every dot in front by the read's heat: cos³ of its angle off the look, times sech(ln(d/H)), the thumb set on
+the dot looked at. Behind the eye, nothing; one read is half the cube.
+
+The cube never moves. Only its colours change, and only when the look does: turn to another dot and the hot spot goes
+with you. The heat belongs to the look, not to the box. Choosing which dot to look at is choosing the thumb. Look at a
+near dot and nearly the whole cube is far field; look at a far one and most of it comes near. Make the world a thousand
+times larger and not one colour changes.
+
+Count the dots either side of the hot spot and they are uneven. From a corner of a box twelve dots a side, looking at
+the middle, 436 are nearer than one thumb and 1,291 farther. The writer's even spacing makes that so: there is more box
+far off than near. Lay the same dots as the read lays distance, each share the same room, and the dot looked at sits in
+the middle with half the room on each side, the far dots crowding toward the horizon. The fields are equal in room and
+not in count, whatever the count.
+
+The hot core is small. The heat halves at 37.5° off the look, and only about a fifth of the directions in front lie
+inside that. Most of what is in front is warm, or cool; the heat is a gradient over the whole hemisphere, not a tunnel.
+And the box ends. Its last dot stops short of the horizon, and the gap between them is the difference between a shape
+and the heat: the box closes, the heat goes on.
+
+Now stand at the eye and draw what the reader has. Every dot goes where its direction falls, laid so equal shares of
+the directions take equal room, and every dot is one size, since no distance is read: a far dot and a near one on the
+same line look alike. Seen from a corner, the cube becomes the wedge's curved triangle, the three thumbs bright lines out
+from the middle. Turn the look and the dots stream across a heat that stays put about the crosshair. That is the read:
+directions and their heat, given; the dots met, wherever they happen to be.
+
+*Demo: a cube of heat (the cube from outside, the same dots as the read lays them, and the reader's view from the eye).*
+
 *Demo: the read (the directions in thumbs and by count, the hill, from the side where the reader stands, the thumb
 dragged, and the shape swept whole against each thumb on its own).*
 

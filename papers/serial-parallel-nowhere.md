@@ -7352,6 +7352,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R730** (6 Nov; Tom: "what did you learn from this demo", then "add this to the papers and essays. you can mention
+  this demo in the papers."): what `heat-cube.html` shows, carried in as a demo of R728, nothing new claimed. The cube
+  never changes, only its colours, and only with the look (the heat is the look's); choosing the dot looked at is choosing
+  the thumb; the fields are equal in room and not in count (from a corner of a 12-a-side box looking at the middle, 436
+  dots nearer than one thumb, 1,291 farther; laid by (2/π)·arctan(d/H) each field half the room: the count the writer's
+  spacing, the room the read's); the hot core small (half heat at 37.5°, a fifth of the directions in front inside it);
+  the box's last dot short of the horizon (the box closes, the heat runs on); from the eye every dot one size, the cube
+  from a corner the wedge's curved triangle, the dots streaming across a heat fixed about the crosshair. *Reads and Writes*
+  §7 ("A cube of dots, read from one of them") and Code and data, which name the demo; essay 5 §10 ("A cube of dots"),
+  essay 4 §11 (after "Dragging the thumb"); `essays.html`'s demo links for essays 4 and 5.
 - **R729** (6 Nov; Tom: "if we created a cube of dots, could we color those dots based on the cauchy based on the touch of
   one of the dots?", "right, you would need to touch a dot and set a facing.", then "yes"): `heat-cube.html`. The cube of
   dots is the writer's box; a reader stands at a tapped dot and looks one way (called "the look" on the page, R648's

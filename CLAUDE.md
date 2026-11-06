@@ -1659,6 +1659,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R730 (6 Nov; Tom: "add this to the papers and essays. you can mention this demo in the papers."): what `heat-cube.html`
+  shows (the heat the look's; the fields equal in room, not count; the core small; the box closes, the heat runs on; from
+  the eye one size) in *Reads and Writes* §7 naming the demo, essays 4 §11 and 5 §10, `essays.html`.
   R729 (6 Nov; Tom: "touch a dot and set a facing", "yes"): `heat-cube.html`, R728's heat on a cube of dots.
   R728 (6 Nov; Tom: "the cauchy is the horizon's heat map. giving the cauchy a shape is a bit confusing."): **the Cauchy
   is the horizon's heat map, not a shape**; heat the density of addresses per unit of reading; a tunnel only its hottest
