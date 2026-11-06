@@ -7359,7 +7359,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   writes as it goes and the two look like one; standing still, only the turn is left, and one standpoint writes nothing
   (no parallax; RWT's nullity). Caveats if it is ever used: "an ongoing encounter" gives the read a duration, which is the
   writer's account (R649, R651, R652); and breathing is near symmetric, so the sheet of paper (R653) shows the asymmetry
-  better.
+  better. Then (Tom: "everyting has cylcles, why would observation be any different.", then "yes"): observation as a
+  whole cycles, a single read does not. The cycles are joins, the writer's: read, write, read again (R644); the turn
+  closing, π its period (R656, R717); a loop of steps closing ("Closing a loop"). A single read is the quarter turn from
+  home to a horizon never reached (R696), the far field's ratios never repeat, and reads are unconnected (R652); that
+  open end is where the horizon, the Cauchy's long tail and the missing mean come from.
 - **R726** (6 Nov; Tom: "update the essays"): R723–R725 in the essays. Essay 2 §9, after "The circle's equation, divided
   by its own length": the sphere kept and divided by the thumb, the writer's and the reader's, the scale test their
   difference and the paint left out; H, V, V₂ against H, H, H; and in its Euler subsection 1 + is = sec θ·e^(iθ),
