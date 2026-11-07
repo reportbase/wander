@@ -222,18 +222,18 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `?reach=6|12|24&H=<log2 H>&yaw=&pitch=&lines=all|slice|none&lay=cells|depth&grid=turns|area&k=<log10 k>`; hook
   `window.__atmos` (`g`, `placeOf`, `dots`, `cells`, `cellDir`, `ringShare`, `counts`, `edgeG`, `set`, `state`, `frames`, `webgl`).
   Not in the flying page.
-- `uncompressed.html`: **the Cauchy, uncompressed** (7 Nov 2026, SPN R734; Tom: "maybe we don't need the cube. maybe we could
-  just uncompress the cauchy.", then "yes. put all readouts and dials into a menu. the visual should be full screen without
-  readouts."), full screen, three.js like `cube-atmosphere.html` for the drawing only, no words on the picture: every
-  readout and dial behind the menu (☰). Below, the hemisphere: R rings at equal shares (1 − cos α = (i + ½)/R) × 2R equal
-  turns × G steps of g = (j + ½)/G, each point at g along its direction (a regular grid, nothing random). Above, the same
-  points uncompressed, d = H·tan(πg/2) (half within one thumb at every H, per ratio ½·sech(ln(d/H)), the shells 0.205,
-  0.139, 0.077, per volume ∝ H/(d²(H² + d²))); lines join a slice (or all, or none); shells at 1, 2, 4, 8 thumbs; the flat
-  screen one thumb out (cos³α per unit of screen); colour the heat cos³α·sech(ln(d/H)). H moves the cloud and nothing in
-  the hemisphere. "In place" draws both from one eye, the hemisphere at radius 2H, each point sliding along its ray on its
-  log distance as u goes 0 → 1 (the near field barely moves, one thumb stays, the far field streams out; "uncompress and
-  back" plays it). `?H=<log2 H>&R=8|12|16&G=8|16|32&lines=slice|all|none&shells=0&flat=1&place=1&u=&labels=1&numbers=1&about=1`;
-  hook `window.__uncompressed` (`g`, `dOf`, `heat`, `points`, `counts`, `bands`, `flatScreen`, `set`, `state`, `menu`,
+- `uncompressed.html`: **the Cauchy, uncompressed** (7 Nov 2026, SPN R734, R735; Tom: "maybe we could just uncompress the
+  cauchy.", "put all readouts and dials into a menu. the visual should be full screen without readouts.", then "this is
+  just doing a russian nesting doll kind of thing", "i was thinking that uncompressed meant 3d cartidian"), full screen,
+  three.js for the drawing only, no words on the picture: every readout and dial behind the menu (☰). Uncompressed is the
+  writer's 3D Cartesian grid (points at the cells' middles, x and z −R to R, y 0 to R in front of the eye, grid lines every
+  1, 2 or 4); compressed is the Cauchy hemisphere, each point on its own direction at A·(2/π)·atan(d/H), the grid lines
+  mapped point by point (straight through the eye, bent elsewhere, far ends on the rim). Side by side with a slice joined
+  (or all, or none), or in place (the hemisphere at 2H, each point and line sliding along its ray on its log distance as u
+  goes 0 → 1; "uncompress and back" plays it). Shells at 1, 2, 4, 8 thumbs in both; colour the heat cos³α·sech(ln(d/H)).
+  (R734's first build, rings × steps of g undone along each ray, was concentric shells moved apart, "a russian nesting
+  doll", and was replaced.) `?R=6|8|12&H=<log2 H>&grid=0|1|2|4&lines=slice|all|none&shells=0&place=1&u=&labels=1&numbers=1&about=1`;
+  hook `window.__uncompressed` (`g`, `dOf`, `heat`, `compress`, `points`, `lines`, `counts`, `set`, `state`, `menu`,
   `frames`, `webgl`). Keep new text on this page behind the menu. Not in the flying page.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
