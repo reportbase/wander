@@ -1,0 +1,21 @@
+F1 worst |g r^2 - I| over 1000 points: 7.25e-23
+F1: not killed
+F2 worst difference, slide/turn in either order: 1.44e-15
+F2: not killed  (doubles; tolerance 1e-14 per unit of |u|, ln k up to 13.8)
+F3 Lambert: |dOmega/dA - 1| worst over 500 points: 3.4e-26  (g: dg = sech(u) du / pi by definition)
+F3 draws: 4096 cells of equal chart volume, mean 488.3, worst 3.52 standard errors
+F3: not killed
+F4 phi=15: |det-1| worst 1.52e-18; stretch at old look 1.0086289606 vs 1/cos(phi/2) 1.00862896058; at the square direction 1.21278025223 vs formula 1.21278025223
+F4 phi=30: |det-1| worst 6.91e-18; stretch at old look 1.03527618043 vs 1/cos(phi/2) 1.03527618041; at the square direction 1.44300046816 vs formula 1.44300046816
+F4 phi=45: |det-1| worst 1.86e-18; stretch at old look 1.08239220031 vs 1/cos(phi/2) 1.08239220029; at the square direction 1.66225322816 vs formula 1.66225322816
+F4 phi=60: |det-1| worst 5.91e-18; stretch at old look 1.1547005384 vs 1/cos(phi/2) 1.15470053838; at the square direction 1.84194305461 vs formula 1.84194305461
+F4 phi=75: |det-1| worst 2.33e-18; stretch at old look 1.26047241403 vs 1/cos(phi/2) 1.26047241401; at the square direction 1.9592802474 vs formula 1.9592802474
+F4 phi=90: |det-1| worst 2.53e-18; stretch at old look 1.4142135624 vs 1/cos(phi/2) 1.41421356237; at the square direction 2.0 vs formula 2.0
+F4 grid (400 x 400, both hemispheres): largest stretch 15 deg 1.21063, 30 deg 1.43792, 45 deg 1.65475, 60 deg 1.83132, 75 deg 1.94502, 90 deg 1.98758
+F4: not killed  (the 90-degree grid maximum short of 2 only by the grid missing the exact direction)
+F5 stereographic: worst |sigma_max/sigma_min - 1| over 1000 points and 10 turns 8.78e-16; rim/centre density 0.25
+F5: not killed
+F6 plane: (theta, g) cells worst 4.28 standard errors; a turn's Jacobian [[1.0, 0.0], [0.0, 1.0]] (stretch 1)
+F6: not killed
+F7: 2000 seeded charts, flat and rigid under a 30-degree turn: 0
+F7: not killed

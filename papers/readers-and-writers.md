@@ -62,7 +62,9 @@ projection from home divides. Each sweep is centred on the crosshairs, the corne
 read is a heat over directions, the Cauchy: hottest along the look, cooling toward the horizon, continuous, with nothing
 counted in it (§7). Geometry is free in this sense: nothing in it is computed, no procedure runs, and there is no
 tangent or arctangent in it; tan, arctan and every formula for the turn are the writer's way of stating what is already
-there. How finely a reader tells directions apart, and the near and far fields the thumb lays over the read, are §6's.
+there. Trigonometry as a whole is the writer's tool: it counts the places read and closes the turn, both of its signs
+held at once, to describe a reader that does neither. The Tangent Bridge shows the split in practice, proved in the angle
+chart and run in the slope chart with no trigonometric call (§5). How finely a reader tells directions apart, and the near and far fields the thumb lays over the read, are §6's.
 
 **Reads are unconnected.** A read holds no time: time is the step between reads. Reads are continuous, one can be taken
 at any place and any moment, but each has no connection to the one before; their order, and anything said across them,
@@ -190,6 +192,15 @@ the reader holds [h : v] and composes by tangent addition. It holds only the fir
 every point, so heat against paint is still the second test's to sort. And it is the plane's: in space the split survives
 but turns stop being slides (§7, "What survives in space, and what does not"). The essays' eighteenth, *Read and write on
 one plane*, draws it in full.
+
+In space the one plane parts. Writing keeps its slide: the logarithm of the distance in thumbs beside the direction lays
+space out as a line times the sphere of directions, and scaling the world or the thumb moves only the line's coordinate and
+commutes with every turn. The read's heat can still be laid flat, on Lambert's equal-area map about the look crossed with
+the thumb's lay, and every turn of the look keeps it flat. What no flat chart can do is keep the turns rigid: turned by φ,
+Lambert's chart is stretched by 1/cos(φ/2) at the old look and by up to 2 at a quarter turn, at the directions square to
+both looks, while the stereographic chart keeps the angles and loses the heat, a quarter as hot at its rim. No chart of a
+sphere keeps both (Gauss 1828; Euler 1777); the plane's one chart does both because a line times a circle is flat (checked
+exactly; see Code and data).
 
 ## 2. What the reader has for free
 
@@ -1050,8 +1061,8 @@ do this whenever we walk toward something: the corner is free, the approach and 
   thumbs and V is written as V*/H. Only a step counted in an agreed unit gives an amount, and that is the one rung
   scaling the world moves.
 - *How well.* The place's error per unit of angular error is least when the thing sits at the pair's corner, the circle on
-  the baseline, half the baseline equal to the distance. With k = d/(B/2) and ε the smallest angle the reader can tell
-  apart, the fractional error in the distance, and so in V, is ε·cosh(ln k) = ε·(k + 1/k)/2: ε at the corner, about
+  the baseline, half the baseline equal to the distance. With k = d/(B/2) and ε the smallest step in direction the reader can
+  tell apart (an angle, in the writer's units), the fractional error in the distance, and so in V, is ε·cosh(ln k) = ε·(k + 1/k)/2: ε at the corner, about
   ε·d/B far off, the same at k and 1/k. It reaches 1, and the thing is a direction alone, near d = B/ε. In the worked
   example (§10) one thumb walked toward a range ten thumbs off puts it at k = 20, an error 10.025 times the step's ε; a
   baseline of twenty thumbs would put it at the corner, with ε alone.
@@ -1064,13 +1075,13 @@ and not one of them.
 
 **The thing itself as H.** The thumb can be set to the very thing whose size is wanted, in two senses. *As the unit*:
 the thing is drawn at one length, its V is 1 by choice, and nothing about it is found; what is found is everything else
-in its units. Its own two ends become the baseline and the reader is the point placed: an angle α across it, centred,
-puts the reader 1/(2·tan(α/2)) of its breadth away, from one look. *As the focus*: the reader keeps its thumb and
+in its units. Its own two ends become the baseline and the reader is the point placed: its two ends are read from one look, and the
+writer's sum for where that puts the reader, centred, is 1/(2·tan(α/2)) of its breadth away, α the turn between the ends. *As the focus*: the reader keeps its thumb and
 chooses a baseline that puts the thing at parallax's corner, half the baseline equal to the distance, where the error is
 least. That needs the distance roughly first, so it is done in passes, each baseline set from the last rough reading.
 
-**A survey.** Snellius (1617) and Roy (1784–85) wrote whole countries this way: thousands of angles read, one base
-walked and counted. The angles are readings; the base is the one writing; every side of every triangle is then in the
+**A survey.** Snellius (1617) and Roy (1784–85) wrote whole countries this way: thousands of directions read, each
+written down in degrees by the instrument, one base walked and counted. The directions are readings; the base is the one writing; every side of every triangle is then in the
 base's unit. A second base checks the first and adds no scale.
 
 **Recovered, by writing.** A reader can recover a thing exactly, its shape, its places, even its size, and still
@@ -1233,7 +1244,7 @@ reader stands, in `read.html`; the heat on a flat screen and a lens's cos⁴ aga
 sky); the tunnel laid by its heat, the distance reading and a world culled by K in `crosshairs.html`; a cube of dots coloured
 by one read's heat, laid as the read lays it and seen from the eye, in `heat-cube.html`; Euler's formula as
 a count of reads in `plans/elm-plan.md` and `runs/elm/`; Euler's plane, the thumb's lay as a turn, the writer's sphere
-behind both, the heat counted per chart and two turns of space in `euler.html`. The three cases in data of §11 (LIGO, the quasar dipole, single
+behind both, the heat counted per chart and two turns of space in `euler.html`. A flat chart for the read in space, and what it keeps and bends, is `plans/flc-plan.md` with `runs/flc/`. The three cases in data of §11 (LIGO, the quasar dipole, single
 photons) are `plans/lgo-plan.md`, `plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and
 `runs/wvp/`: each plan states its predictions and what would count against them before its run, and records the runs as
 they came out, the killed ones too. They illustrate the sorting of direction from payload; none of them alone
@@ -1267,6 +1278,10 @@ establishes it.
 - Euler, L. (1748). *Introductio in analysin infinitorum.* Lausanne.
 - Euler, L. (1776). Formulae generales pro translatione quacunque corporum rigidorum. *Novi Commentarii Academiae
   Scientiarum Petropolitanae* 20, 189–207.
+- Euler, L. (1778). De repraesentatione superficiei sphaericae super plano. *Acta Academiae Scientiarum Imperialis
+  Petropolitanae* 1777, I, 107–132.
+- Gauss, C. F. (1828). Disquisitiones generales circa superficies curvas. *Commentationes Societatis Regiae Scientiarum
+  Gottingensis Recentiores* 6, 99–146.
 - Gibbs, J. W. (1899). Fourier's series. *Nature* 59, 606.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.

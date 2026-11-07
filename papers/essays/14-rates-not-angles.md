@@ -244,7 +244,8 @@ addition alone, value for value, the halving's one square root the only step pas
 The one place a π showed up in its numbers was the worst-case growth of reconstruction error, (2/π)·ln N. Read in the
 slope chart, its 2 is the reader's, an algebraic integral, and its π is the normalization: "what share of the whole
 turn", the whole turn being the thing the reader declines. The π was the writer's count of the arc, not anything the
-reader computed.
+reader computed. Put generally: trigonometry is the writer's tool, not a reader's activity. The writer counts the places
+read and holds both hemispheres of the turn, and with them describes a reader that uses neither.
 
 Computer science learned the same lesson by accident. `atan2(v, h)` keeps the pair, so it returns the horizon and the quadrant
 without dividing; `atan(v / h)` divides first, loses which way the pair pointed, and has nothing left when both are zero. The safe call is the one that does not

@@ -269,7 +269,7 @@ near and far fields are halves, mirror images under the swap, and a steady turn 
 else given. The two unbounded rulers have no even spread until someone fixes a range in advance, and then the range, an
 amount, decides where the middle falls.
 
-The hyperbolic angle is the reader's logarithmic lay made smooth. It is nearly x inside the corner and nearly the
+The hyperbolic angle is the writer's smooth formula for the reader's lay of ratios. It is nearly x inside the corner and nearly the
 logarithm of 2x past it. The lay of section 3, x then 1 plus the logarithm of x, never differs from it by more than
 1 − ln 2, about 0.31.
 

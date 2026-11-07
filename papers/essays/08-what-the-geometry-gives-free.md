@@ -146,7 +146,7 @@ The common remedies are the other lays.
 - **Logarithmic depth** in its plain form, ln(d/n)/ln(f/n), is the reader's lay past the corner, 1 + ln s, with its corner
   at the near plane. Each stretch from a distance to twice it gets equal room.
 - The form ln(Cd + 1)/ln(Cf + 1), proportional below d ≈ 1/C and logarithmic above, is a smooth form of the whole lay, near
-  field and far, turning at d ≈ 1/C. It is the hyperbolic angle of section 1 smoothing the reader's lay, with its corner
+  field and far, turning at d ≈ 1/C. It is the hyperbolic angle of section 1, the writer's smooth formula for the reader's lay of ratios, with its corner
   moved from the near plane out to 1/C.
 - **Reversed-Z**, the remedy most engines now use, stores the in-place lay turned round, in a floating-point number. The
   fourth essay showed that a float is itself a reader's lay in base 2: an exponent counting powers of two and a mantissa

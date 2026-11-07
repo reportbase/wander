@@ -70,8 +70,8 @@ point of it onto the plane. The grid is straight; what it becomes is not, and ho
 - **A logarithmic spiral is a straight line.** A spiral whose distance grows by the same factor for every equal turn is a
   slanted straight line on the plane, its slope the spiral's growth per turn. It crosses every ray at one angle. Anything
   that keeps a fixed angle to something it is closing on, a moth to a lamp, a hawk to its prey held at one place in its
-  view, travels a log spiral, and on this plane flies straight. (That raptors do so is Tucker's 2000 finding, cited here
-  from memory.)
+  view, travels a log spiral, and on this plane flies straight. (Tucker (2000) proposed it for raptors, whose sharpest
+  vision looks sideways; the same issue's field study found wild peregrines flying curved paths that resemble it.)
 - **The grid's points pile up on the far side.** Per unit of the plane's area the even grid holds e^(2u) points, so most of
   the writer's grid lies far across, toward the horizon. The writer's evenness is the far side's crowd.
 
@@ -192,6 +192,19 @@ about the other and both back, it comes home turned about nearly the third thumb
 1.741° for 10° and 10°, against α·β = 1.745°. On the plane the same loop leaves nothing. `euler.html`'s "in space" sets the
 two side by side; the thirteenth essay takes the reason apart (Frobenius, Gauss and Bonnet, Berry's phase).
 
+Could another chart do in space what Euler's plane does in the plane? It was put to arithmetic (the plan FLC; `euler.html`'s "a flat chart in space" draws it), and the
+answer is mostly an old one. Writing keeps its slide: the same logarithm of the distance in thumbs, set beside the
+direction, lays space out as a straight line times the sphere of directions, and scaling the world or the thumb moves the
+line's coordinate alone, commuting with every turn of space, to rounding. The heat can be laid flat too: Lambert's
+equal-area map about the look, crossed with the thumb's lay g, carries the read's heat at one constant density, and every
+turn of the look keeps that map's areas, so the heat stays flat wherever the look goes. What no flat chart can do is make
+the turns rigid. The turn that keeps Lambert's areas bends its shapes: turn the look by φ and, in the writer's sums, the old
+look's direction is stretched by 1/cos(φ/2), √2 at a quarter turn, and the directions square to both looks by up to 2; over
+every direction in front of both looks the stretch never passes 2. The stereographic chart keeps every turn's angles instead and loses the heat, a
+quarter as hot at its rim as at its middle. Gauss's theorem says no flat chart of a piece of a sphere keeps its distances,
+and Euler (1777) that none keeps both angles and areas. The plane gets both from one chart because a line times a circle is
+flat: the circle unrolls into the line of θ, and the sphere of directions does not unroll.
+
 So the opening picture is exact in the plane and half of it holds in space. The half that holds is reading against
 writing. The half that goes is the arithmetic of turning.
 
@@ -202,8 +215,10 @@ Almost all of it is old.
 - **The plane.** Euler's formula (1748) and the complex logarithm; polar form splitting a number into a direction and an
   amount. That the phone's two-finger gesture is one complex quotient is how every map on a phone already works.
 - **The grid on it.** Lines as one curve moved and log spirals as straight lines are the log-polar map's, used in image
-  registration and in the primate visual cortex's map of the visual field (Schwartz 1977). Halley (1696) noticed that a
-  rhumb line, stereographically projected, is a logarithmic spiral.
+  registration and in the primate visual cortex's map of the visual field (Schwartz 1977). Halley (1696) showed that a
+  rhumb line, stereographically projected, is a logarithmic spiral ("Proportional Spirals about the Pole Point", his Lemma
+  III), from a lemma of de Moivre's that the projection keeps angles, and set its distances from the pole by Euclid III.20,
+  the same theorem as essay 2's one read.
 - **The lay.** The Gudermannian is Mercator's (1569) function, named for Gudermann (1830s). The sphere behind the three
   charts is Riemann's, stereographic projection from Ptolemy and Hipparchus; Mercator, plate carrée and azimuthal
   equidistant are its old charts.
@@ -234,15 +249,19 @@ behind. What survives everywhere is the part the series cares most about: the re
 amounts, and scaling the world moves only the second.
 
 **Demos.** `euler.html` (the three charts side by side or one sliding into the next; the writer's sphere and the thumb
-as a boost; the heat at each point and per chart; a line and a spiral with their mirrors; two turns in space; n reads),
+as a boost; the heat at each point and per chart; a line and a spiral with their mirrors; two turns in space; a flat chart in space, Lambert's and the stereographic, turned; n reads),
 `plane-sphere.html` (the plane's one law and the sphere's three), `levels.html` (the reader's lay of distance),
 `boost-sky.html` (a boost on the sky's chart), `uncompressed.html` (a writer's grid in space, compressed into the read).
 
 ## Sources
 
 - Euler, L. (1748). *Introductio in analysin infinitorum.* Lausanne.
+- Euler, L. (1778). De repraesentatione superficiei sphaericae super plano. *Acta Academiae Scientiarum Imperialis
+  Petropolitanae* 1777, I, 107–132.
+- Gauss, C. F. (1828). Disquisitiones generales circa superficies curvas. *Commentationes Societatis Regiae Scientiarum
+  Gottingensis Recentiores* 6, 99–146.
 - Halley, E. (1696). An easie demonstration of the analogy of the logarithmick tangents to the meridian line or sum of the
-  secants. *Philosophical Transactions* 19, 202–214. (Cited from memory; to check.)
+  secants. *Philosophical Transactions* 19, 202–214.
 - Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 - Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata.* Duisburg.
 - Penrose, R. (1959). The apparent shape of a relativistically moving sphere. *Proceedings of the Cambridge Philosophical
@@ -253,11 +272,13 @@ as a boost; the heat at each point and per chart; a line and a spiral with their
 - Trotter, H. F. (1959). On the product of semi-groups of operators. *Proceedings of the American Mathematical Society*
   10, 545–551.
 - Tucker, V. A. (2000). The deep fovea, sideways vision and spiral flight paths in raptors. *Journal of Experimental
-  Biology* 203, 3745–3754. (Cited from memory; to check.)
+  Biology* 203, 3745–3754.
+- Tucker, V. A., Tucker, A. E., Akers, K. and Enderson, J. H. (2000). Curved flight paths and sideways vision in peregrine
+  falcons (*Falco peregrinus*). *Journal of Experimental Biology* 203, 3755–3763.
 
 The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`): §1 ("One plane"), §5 ("Euler's formula
 as a count of reads", "π with the direction, e with the payload"), §6 ("Euler's plane, and the thumb's lay as a turn") and
 §7 ("The heat depends on what it is counted per", "What survives in space, and what does not"). The rulings are SPN
-R580, R647 and R736–R740; the checks are `runs/elm/` (n reads) and the page's own hook, `window.__euler`. The essays before
+R580, R647, R736–R740 and R743; the checks are `runs/elm/` (n reads), `plans/flc-plan.md` with `runs/flc/` (a flat chart for the read in space) and the page's own hook, `window.__euler`. The essays before
 this one: 2 (Euler's formula, the writer's notation), 4 (near and far, the three rulers), 7 (the moving sky), 13 (where
 the plane's one law parts), 15 (π and e as the writer's), 17 (the heat map).

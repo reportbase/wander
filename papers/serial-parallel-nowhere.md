@@ -7352,6 +7352,74 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R746** (7 Nov; Tom: "proceed", after "what did you learn"): essay 18's explainer, draw's
+  `explained.html?x=plane` (reportbase/draw#62, the animated gallery's `plane` tile), six beats: a map under two fingers
+  (k·e^(iα), ln k + iα); a writer's grid carried onto Euler's plane; a thing turned then scaled and scaled then turned,
+  landing alike; a point's two mirrors crossing at the hot spot; the plane laid by the thumb, ½ + gd(x)/π; and the flat
+  chart in space (R745's two charts, the look turned 60°). A card on `explainers.html` (essay 18 off the not-yet list),
+  a link on `essays.html`'s essay 18 card.
+- **R745** (7 Nov; Tom: "proceed", to a Lambert-chart turn demo after R744): `euler.html`'s sixth view, "a flat chart in
+  space" (`view=flat`, `phi=`): Lambert's azimuthal equal-area map and the stereographic map of the directions about the
+  look, side by side, a checkerboard laid on each about the old look, the look turned by φ about h (drag, a dial, "play
+  the turn"). Lambert's keeps every cell's area (the heat painted under it flat) and bends the cells; the stereographic
+  keeps every cell's angles and changes their size (the heat a quarter at its rim). The hook's `flat(φ)` gives FLC F4's
+  numbers over the directions in front of both looks (1/cos(φ/2) at the old look, 2 at h at a quarter turn; 1.0353 and
+  1.4430 at 30°). Essay 18 §9's "never passes 2" scoped to the directions in front of both looks, as FLC measured it.
+- **R744** (7 Nov; Tom: "whats next", then "proceed", to carrying FLC into the texts and the five trig flags through):
+  (1) FLC in essay 18 §9 ("Where it stops") and *Reads and Writes* §1 ("One plane"), one paragraph each: in space
+  writing keeps its slide on the log-polar line times the sphere of directions, commuting with every turn; the read's
+  heat lies flat on Lambert's equal-area map about the look crossed with the thumb's lay, and every turn keeps it flat;
+  no flat chart keeps the turns rigid (1/cos(φ/2) at the old look, up to 2 at a quarter turn at the directions square to
+  both looks; the stereographic chart keeps the angles and loses the heat, a quarter at its rim); Gauss (1828) and Euler
+  (1777) say no chart of a sphere does both; the plane does because a line times a circle is flat. Both cite Gauss and
+  Euler 1777; *Reads and Writes*' Code and data names FLC. (2) `plans/flags-r742.md` applied as proposed: ε "the smallest
+  step in direction the reader can tell apart (an angle, in the writer's units)" (*Reads and Writes* §8; essay 6 §5 and
+  its table's "step (as an angle)"); surveys read directions, written down in degrees by the instrument (*Reads and
+  Writes* §8 "A survey", essays 1 and 6); the thing itself as H, its two ends read from one look and 1/(2·tan(α/2)) the
+  writer's sum (§8); the count and turn indices both the writer's (essay 10 §2); the hyperbolic angle the writer's smooth
+  formula for the reader's lay of ratios (essays 4, 8). No number changed.
+- **R743** (7 Nov; Tom: "whats next", then "proceed", to a check of trigonometry in the papers after R742 and the space
+  counterpart of the flat chart): (1) `plans/flags-r742.md` lists, unchanged, the places *Reads and Writes* and the essays
+  still give the reader an angle or an arctangent: the step ε named an angle (*Reads and Writes* §8, essay 6 §5), a
+  survey's "angles read" (§11, essays 1 and 6), the thing itself as H by 1/(2·tan(α/2)) (§8), the turn index
+  ⌊K·(2/π)·arctan(v/h)⌋ as the reader's (essay 10 §2), the hyperbolic angle as the reader's lay (essays 4, 8); proposed
+  wording for each, none changing a number; Tom to rule. (2) FLC (`plans/flc-plan.md` + `runs/flc/flc.py`), predictions
+  first, run 1 exact or seeded, nothing killed: the log-polar map is conformal onto the cylinder ℝ × S² (7·10⁻²³);
+  scaling a slide in u commuting with every turn of space (1.4·10⁻¹⁵); Lambert's azimuthal equal-area map about the look
+  crossed with the thumb's lay carries the read's measure flat (density 1/(2π); 4,096 cells, worst 3.52 standard
+  errors), and every turn keeps that area (det 1 to 10⁻¹⁷); but no turn off the look is rigid there: a turn of the look
+  by φ stretches the old look by 1/cos(φ/2) and the directions square to both looks by the largest singular value of
+  [[cos φ, −½ sin φ], [2 sin φ, cos φ]], 2 at a quarter turn, never more over both hemispheres; the stereographic chart
+  keeps turns' angles but not the heat (¼ at the rim); no chart both (Gauss; Euler 1777; 0 of 2,000 seeded charts). So
+  in space R740's "writing across" survives whole and the measure lies flat, but reading has no straight "up": the
+  plane's one chart splits because ℝ × S¹ is flat and ℝ × S² is not. Classical pieces; the reading ours. Not yet in the
+  papers or essays (essay 18 §9 "Where it stops" and *Reads and Writes* §1 "One plane" are where it would go).
+- **R742** (7 Nov; Tom: "I think the tb_algebra paper makes a useful point, trig is a writers tool or reader activity.
+  writer uses N and both hemispheres to describe the reader that uses neither.", then "ok"): **trigonometry is the
+  writer's tool, not a reader's activity**: the writer counts the places read (the Tangent Bridge's N leaves, wander's K
+  counted; not the world's N) and holds both hemispheres of the turn (the 2π period, every sign of s) to describe a reader
+  that uses neither, one facing held open from home toward a horizon never reached. From draw's *The Tangent Bridge*
+  (`papers/tb_algebra.md`): the reconstruction proved in the angle chart (Fourier modes, Lebesgue and Jackson, the
+  completed circle) and run in the slope chart (ratios, the reciprocal, tangent addition, halving; no trigonometric
+  call); its 2/π an algebraic 2 over π, the writer's "share of the whole turn" (§7.5). Generalizes R584, R658, R717 from
+  tan, arctan, π/2 and 2/π to trigonometry as a whole. The slope chart's one square root, √(1 + s²), was asked about and
+  is already ruled (R592, R596; essay 10): the halving of a turn, two lengths combined, the writer's, which lays the
+  lattice; the reader's kernel at the leaves rational. *Reads and Writes* §1 (after "the writer's way of stating"),
+  essay 10's "Two charts, one circle", essay 14 §7 "It has been done".
+- **R741** (7 Nov; Tom: "proceed", to checking essay 18's two citations from memory and giving `euler.html` the phone's
+  gesture): both citations checked. Halley 1696 (*Phil. Trans.* 19, 202–214, read in a transcription of the Royal
+  Society's scan) proves the meridian line a scale of logarithmic tangents from four lemmas: Lemma I the stereographic
+  distances from the pole are tangents of half the colatitudes, "evident from Eucl. 3.20" (essay 2's one read); Lemma II
+  the projection keeps angles (de Moivre's, Hooke's before); Lemma III the rhumb lines are therefore "Proportional Spirals
+  about the Pole Point"; Lemma IV the spiral's angles are logarithms of the ratios of its radii. So essay 18's sentence stands
+  and is sharpened. Tucker 2000 (*J. Exp. Biol.* 203, 3745–3754) proposes the logarithmic spiral for raptors (the deep
+  fovea looks sideways, so a straight dive needs the head turned and costs drag); the field evidence is the companion paper
+  in the same issue (Tucker, Tucker, Akers and Enderson 2000, 3755–3763: wild peregrines fly curved paths resembling
+  spirals). Essay 18 says so and cites both; the "from memory" marks are gone (R737's own mention stays as the record).
+  `euler.html`: two fingers anywhere are the gesture as one complex number, the second finger's place over the first's,
+  k·e^(iα), read on Euler's plane as ln k + iα: the spread moves every ln(d/H) by ln k (the thumb ÷ k), the twist turns
+  every direction by α; on the sphere the same pair is the boost and the spin; in space (turns that do not commute) two
+  fingers do nothing. Probed with real touches: a spread ×2 with a 30° twist halves the thumb and turns the world 30°.
 - **R740** (7 Nov; Tom: "Seems like ehulers is perfect for read and write", then "Yes"): Euler's plane as the picture of the
   two acts. ln(z/H) = ln(d/H) + iθ drawn with the direction up and distance across: reading is up and down, writing is
   across, the scale test is which part moved, the two slides commute (the pinch and the twist of a phone's two-finger

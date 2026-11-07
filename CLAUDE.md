@@ -255,7 +255,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   land alike in either order, beside the sphere of directions (x = h, y = v, z = v₂, drag to turn), where a thing at the
   triple corner with a frame on it, turned about h and about v (`al`, `be`), lands 120° apart by order for quarter turns,
   and a loop (`loop=1`: h, v, back, back) comes home turned by about α·β; "play the turns" draws the paths.
-  `?view=three|slide|sphere|space|reads&t=&H=<log2 H>&k=<log2 k>&turn=&R=8|16|32&lay=square|disc
+  `?view=three|slide|sphere|space|flat|reads&t=&H=<log2 H>&k=<log2 k>&turn=&R=8|16|32&lay=square|disc
   &heat=0|chart&lines=0&dots=0&over=line|spiral&p=<log2>&f=&a=&yaw=&pitch=&boost=1&al=&be=&loop=1&syaw=&spitch=&th=&n=
   &labels=1&numbers=1&about=1`; hook `window.__euler` (`toEuler`, `toLay`, `heat`, `chartHeat`, `sphere`, `overlay`, `mirror`,
   `points`, `lines`, `reads`, `space`, `set`, `state`, `menu`, `frames`). Keep new text on this page behind the menu. Not in the flying page.
@@ -265,7 +265,28 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "Seems like ehulers is perfect for read and write", then "Yes"): *Reads and Writes* §1 "One plane" (reading up and down,
   writing across, the pinch and the twist; the writer's notation, the first test only, the plane's), and essay 18,
   `papers/essays/18-read-and-write-on-one-plane.md`, *Read and write on one plane*; a card on `essays.html`, a README row,
-  the explainers' not-yet list; the smoke test counts eighteen essays.
+  the explainers' not-yet list; the smoke test counts eighteen essays. R741 (7 Nov; Tom: "proceed"): essay 18's Halley 1696
+  (Lemma III: rhumb lines stereographically "Proportional Spirals about the Pole Point") and Tucker 2000 (the spiral
+  proposed; the peregrines' curved paths in Tucker et al. 2000, the same issue) checked and cited; on `euler.html` two
+  fingers anywhere are k·e^(iα), ln k + iα on the plane: the spread the thumb ÷ k, the twist a turn by α (the sphere's boost
+  and spin; nothing in space). R742 (7 Nov; Tom: "trig is a writers tool or reader activity. writer uses N and both
+  hemispheres to describe the reader that uses neither."): **trigonometry is the writer's tool, not a reader's activity**
+  (the places read counted, both hemispheres of the turn held), after draw's *The Tangent Bridge* (proved in the angle
+  chart, run in the slope chart); *Reads and Writes* §1, essays 10 and 14. Generalizes R584, R658, R717. R743 (7 Nov):
+  `plans/flags-r742.md` (the papers' remaining reader angles, listed, unchanged) and FLC (`plans/flc-plan.md` +
+  `runs/flc/flc.py`, nothing killed): in space the log-polar cylinder ℝ × S² keeps scaling a slide commuting with every
+  turn, Lambert × the lay keeps the read's measure flat under every turn, but no flat chart makes turns rigid (stretch
+  1/cos(φ/2) at the old look, up to 2 at a quarter turn); the plane's one chart splits. R744 (7 Nov; Tom:
+  "proceed"): FLC carried into essay 18 §9 and *Reads and Writes* §1 "One plane" (Gauss 1828 and Euler 1777 cited), and
+  the five trig flags applied as proposed (ε a step in direction, an angle in the writer's units; surveys read
+  directions written down in degrees; 1/(2·tan(α/2)) the writer's sum; both indices the writer's; the hyperbolic angle
+  the writer's smooth formula for the reader's lay of ratios). R745 (7 Nov; Tom: "proceed"): a sixth view, "a flat chart in
+  space" (`view=flat&phi=`): Lambert's equal-area map and the stereographic map about the look, a checkerboard laid about
+  the old look, the look turned by φ; Lambert's keeps the cells' areas (the heat flat) and bends them, the stereographic
+  keeps their angles and changes their size (the heat ¼ at the rim); drag up and down turns the look; hook adds `chartOf`,
+  `dirOf`, `turnChart`, `flat(φ)` (FLC F4's stretches over the directions in front of both looks). R746 (7 Nov; Tom:
+  "proceed"): essay 18's explainer, draw's `explained.html?x=plane` (two fingers, one plane, two slides, two mirrors, the
+  lay, and these two charts turned), on `explainers.html` and essay 18's card.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
@@ -1022,7 +1043,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   for explainers"), the same style: a card an explainer (draw's scrolling explainers, `gallery/explained.html?x=…` in
   reportbase/draw: reading and writing for essay 1, one length turned for essay 2, addresses for essay 3, near and far
   for essay 4, many standpoints for essay 6, where it shows up for essay 7 (since 1 Nov, SPN R610: the lighthouse,
-  Mercator's chart and the moving sky), rates, not angles for essay 14 (since 2 Nov, SPN R611), the Cauchy map for essay 17 (since 5 Nov, SPN R712), the Tangent Bridge and how leaves become a curve for essay 10), the essay it
+  Mercator's chart and the moving sky), rates, not angles for essay 14 (since 2 Nov, SPN R611), the Cauchy map for essay 17 (since 5 Nov, SPN R712), one plane for essay 18 (since 7 Nov, SPN R746), the Tangent Bridge and how leaves become a curve for essay 10), the essay it
   explains, its steps (the scene's beats), and links to the explainer, the essay's card, the essay and the scene's tile;
   then the essays with none yet. Linked from `essays.html` and `demos.html`. Add a card when an explainer is made.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on
