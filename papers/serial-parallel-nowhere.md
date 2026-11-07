@@ -7352,6 +7352,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R735** (7 Nov; Tom: "this is just doing a russian nesting doll kind of thing", "where is the cartesian reaity grid?",
+  then "i was thinking that uncompressed meant 3d cartidian"): `uncompressed.html` rebuilt. R734's page laid every
+  direction × every step of g and undid g along each ray, so it moved concentric shells apart and could show nothing but
+  nesting: the distance overlay is one lay applied to every ray. Uncompressed is now the writer's 3D Cartesian space, a
+  lattice of points one unit apart on straight grid lines, the eye in the middle of a cell; compressed is the Cauchy
+  hemisphere, each point kept on its own direction and laid at A·(2/π)·atan(d/H). The grid lines go through the same
+  map: a line through the eye stays straight, every other line bends toward the rim, its far end landing on the rim at
+  one point; the endless rest of the lattice past the window lands between g(window) and the rim. "In place" slides
+  each point and line along its own ray between the two (the hemisphere drawn at 2H, one thumb fixed). Not nesting,
+  because the grid is not laid round the eye. The hemisphere stays the writer's drawing of the read.
 - **R734** (7 Nov; Tom: "lets think about this differently. maybe we don't need the cube. maybe we could just uncompress
   the cauchy.", then "yes. put all readouts and dials into a menu. the visual should be full screen without readouts."):
   `uncompressed.html`. The read laid evenly as a hemisphere, points even in the share of directions and in the thumb's lay
