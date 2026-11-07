@@ -7352,6 +7352,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R748** (7 Nov; Tom: "proceed", the next explainer): essay 5's explainer, draw's `explained.html?x=parties`
+  (reportbase/draw#63, the animated gallery's `parties` tile), six beats: the octant a direction crosses, cut by its sum
+  into the flat triangle; the triple corner at its centre and a true point (2/9, 2/3, 1/9) off it; six orderings a sixth
+  each, the pairs' corners medians, the near field a third; Lambert's map, even in the two angles (v ≤ h 0.343, near field
+  0.233) against even in height (½, ⅓), checked on a 2000² grid; rings of a sixth of the hemisphere on a flat screen
+  against the equal-area screen, cos³α half at 37.47°, a fifth of the directions inside; the near field 1/(n + 1), and a
+  sphere in a cube of any size. A card on `explainers.html` (essay 5 off the not-yet list), a link on essay 5's card.
 - **R747** (7 Nov; Tom: "proceed", to the essay 13 explainer, the first of the options offered after R746): essay 13's
   explainer, draw's `explained.html?x=special` (reportbase/draw#63, the animated gallery's `special` tile), six beats: a
   standpoint above a line, an even turn and released walkers landing alike, carried together by a new zero and thumb; a
