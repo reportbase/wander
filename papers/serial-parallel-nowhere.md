@@ -7352,6 +7352,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R740** (7 Nov; Tom: "Seems like ehulers is perfect for read and write", then "Yes"): Euler's plane as the picture of the
+  two acts. ln(z/H) = ln(d/H) + iθ drawn with the direction up and distance across: reading is up and down, writing is
+  across, the scale test is which part moved, the two slides commute (the pinch and the twist of a phone's two-finger
+  gesture, one complex quotient k·e^(iα)). Kept honest three ways: it is the writer's notation (e^(iθ) states the turn and
+  carries π; the reader holds [h : v] and tangent addition); it holds only the first test (the paint sits on the plane at
+  every point; heat against paint is the second test's); it is the plane's (in space the split survives, turns stop being
+  slides). *Reads and Writes* §1 "One plane"; essay 18, *Read and write on one plane*.
 - **R739** (7 Nov; Tom: "update the essays and papers"): R736–R738 in *Reads and Writes* §6 ("Euler's plane, and the
   thumb's lay as a turn": the plane drawn, the lay the Gudermannian, the writer's sphere with one thumb on its equator and
   the three charts its maps, the thumb a boost, the two motions commuting and Jaynes's measure its area, the read's

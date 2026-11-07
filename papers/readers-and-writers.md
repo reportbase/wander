@@ -177,6 +177,20 @@ reading 1 + is = sec θ·e^(iθ), a size whose square is the equation's left sid
 its mirror, (1 + is)/(1 − is) = e^(2iθ), every length is gone, and the horizon lands at e^(iπ) = −1 (§5, "Euler's
 formula as a count of reads").
 
+**One plane.** The writer's notation draws the two acts as the two directions of one page. Divide a point by the thumb and
+take the logarithm: ln(z/H) = ln(d/H) + iθ. Drawn with the direction up and the distance across, read as a ratio of
+thumbs, it is Euler's plane. Turning the world slides every point up or down; scaling the world, or the thumb, slides
+every point across; the two slides commute, and nothing else moves. So the first test is which part moved: up and down is
+reading, across is writing, and the one number no read fixes is where the across-axis has its zero. Anyone who has pinched
+and twisted a map on a phone has done both: the phone takes the line between the fingers after over the same line before,
+k·e^(iα), and its logarithm's real part is the pinch and its imaginary part the twist. The two corners are the plane's two
+mirrors, the horizontal line at 45° and the upright line at one thumb (§6, "Euler's plane, and the thumb's lay as a turn").
+Three things keep the picture honest. It is the writer's notation: e^(iθ) states the turn as a number and carries π, where
+the reader holds [h : v] and composes by tangent addition. It holds only the first test: the paint sits on the plane at
+every point, so heat against paint is still the second test's to sort. And it is the plane's: in space the split survives
+but turns stop being slides (§7, "What survives in space, and what does not"). The essays' eighteenth, *Read and write on
+one plane*, draws it in full.
+
 ## 2. What the reader has for free
 
 **The thumbs pointed.** The reader has no circle. It points its crossed thumbs at the mountain, and that pointing
