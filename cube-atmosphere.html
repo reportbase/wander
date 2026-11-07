@@ -35,9 +35,9 @@
     under the rim. A line joins each dot in the cube to its place (all, a slice through the eye, or none); each dot and
     its place take the read's heat, cos³α · sech(ln(d/H)), as on heat-cube.html.
 
-    "Direction only" lays every dot on the hemisphere's surface (g = 1 for all): every dot on one line of sight then
-    lands on one point, the read's paint, with no distance in it. The hemisphere is the writer's drawing of the read
-    (Reads and Writes §7): the reader has the directions and their heat, never the dome.
+    The hemisphere is the writer's drawing of the read (Reads and Writes §7): the reader has the directions and their
+    heat, never the dome. All the cube's dots on one line of sight point to one hemisphere dot: one direction, no
+    distance in it.
 
     Scale the world (k) moves every d and H together: no place in the atmosphere moves. Turning the look turns the
     hemisphere with it.
@@ -66,8 +66,10 @@
     #labels span { position: fixed; transform: translate(-50%, -50%); color: var(--dim); font-size: 12px; pointer-events: none; white-space: nowrap; z-index: 1 }
     #nogl { position: fixed; inset: 0; display: none; place-items: center; text-align: center; color: var(--dim) }
     @media (max-width: 760px) {
-        #panel { top: auto; bottom: 10px; left: 10px; width: calc(100vw - 44px); max-height: 44vh }
-        #hud { top: 10px; bottom: auto; right: 10px; max-width: calc(100vw - 40px); font-size: 11px }
+        #panel { top: auto; bottom: 10px; left: 10px; width: calc(100vw - 44px); max-height: 40vh }
+        #panel .sub { display: none }
+        #labels { display: none }
+        #hud { top: 10px; bottom: auto; right: 10px; max-width: calc(100vw - 40px); font-size: 10.5px; white-space: pre-wrap }
     }
     </style>
     <script type="importmap">{ "imports": {
@@ -81,9 +83,11 @@
     <h1>The payload cube and the hemisphere</h1>
     <p class="sub">Left, the payload: a cube of dots one unit apart, without end in every direction, uniform. The eye
     stands at one dot and looks one way. Right, the Cauchy hemisphere in front of the look: 16 rings of 32 dots, the rings
-    at equal turns off the look. Every dot of the cube in front points to the one hemisphere dot whose turns it falls in.
-    The cells shrink toward the middle, so most of the cube piles up on the sides and the fewest reach the middle: the
-    rim ring takes about twenty times the centre's.</p>
+    at equal turns off the look. Every dot of the cube in front points to the one hemisphere dot whose turns it falls in
+    (joined and counted: the dots within the window's reach of the eye, inside the dashed circles, since the endless cube
+    is the same every way; the grey ones past it are the window's corners). The cells shrink toward the middle, so most
+    of the cube piles up on the sides and the fewest reach the middle: the rim ring takes about twenty times the
+    centre's. Look along a row of the cube and its rows show in the counts.</p>
     <div class="ctl"><label for="hH">H, the thumb</label><input id="hH" type="range" min="-1" max="4" step="0.05"><output id="hHo"></output></div>
     <div class="ctl"><label for="yaw">look, across</label><input id="yaw" type="range" min="-180" max="180" step="0.5"><output id="yawo"></output></div>
     <div class="ctl"><label for="pitch">look, up</label><input id="pitch" type="range" min="-90" max="90" step="0.5"><output id="pitcho"></output></div>
@@ -124,9 +128,8 @@
         const cy = Math.cos(S.yaw * RAD), sy = Math.sin(S.yaw * RAD), cp = Math.cos(S.pitch * RAD), sp = Math.sin(S.pitch * RAD);
         const L = [cp * cy, sp, cp * sy];
         // X across the look: square to it and to a reference axis (x, or z when the look runs along x)
-        const ref = Math.abs(L[0]) < 0.95 ? [1, 0, 0] : [0, 0, 1];
-        let X = [L[1] * ref[2] - L[2] * ref[1], L[2] * ref[0] - L[0] * ref[2], L[0] * ref[1] - L[1] * ref[0]];
-        const nx = Math.hypot(...X) || 1; X = X.map(v => v / nx);
+        // (from the yaw alone, so it turns with "look, across" even looking straight up)
+        const X = [-sy, 0, cy];
         const U = [X[1] * L[2] - X[2] * L[1], X[2] * L[0] - X[0] * L[2], X[0] * L[1] - X[1] * L[0]];
         return { L, X, U };
     }
@@ -258,7 +261,7 @@ function line(G, pts, color, opacity = 1, dashed = false) {
 function build() {
     const { s, A, ax } = layout(), { L, X, U } = C.frame(), H = C.Hof();
     list = C.dots();
-    const n = list.length, cpos = new Float32Array(n * 3), ccol = new Float32Array(n * 3);
+    const n = list.length, cposA = [], ccolA = [];
     const apos = [], acol = [], lpos = [], lcol = [], col = new THREE.Color();
     const cellsMode = S.lay === 'cells', cs = cellsMode ? C.cells() : null, maxN = cs ? Math.max(...cs.n) : 1;
     // the hemisphere's dots: each cell's middle on the dome, at radius A
@@ -268,11 +271,10 @@ function build() {
     const toDome = (u, r) => { const x = u[0] * X[0] + u[1] * X[1] + u[2] * X[2], l = u[0] * L[0] + u[1] * L[1] + u[2] * L[2], w = u[0] * U[0] + u[1] * U[1] + u[2] * U[2];
         return [ax[0] + r * x, ax[1] + r * l, ax[2] + r * w]; };
     for (let q = 0; q < n; q++) { const o = list[q];
-        cpos.set(o.p, 3 * q);
+        if (!o.front && !S.behind) continue;                                     // hidden: left out, not drawn black
         if (o.front) ramp(0.1 + 0.9 * o.heat, col); else col.copy(BEHIND);   // lifted a tenth so the far dots show on black
         if (cellsMode && o.front && !o.inBall) col.copy(OUTSIDE);              // past the ball counted: drawn, not counted
-        if (!o.front && !S.behind) col.setRGB(0, 0, 0);
-        ccol.set([col.r, col.g, col.b], 3 * q);
+        cposA.push(...o.p); ccolA.push(col.r, col.g, col.b);
         if (!o.front) continue;
         let a;
         if (cellsMode) { if (!o.inBall) continue; a = cellAt[o.cell]; }
@@ -281,7 +283,7 @@ function build() {
         if (S.lines === 'all' || (S.lines === 'slice' && o.slice)) { lpos.push(...o.p, ...a); lcol.push(col.r, col.g, col.b, col.r, col.g, col.b); }
     }
     for (const o of [cubePts, atmoPts, lines]) if (o) { group.remove(o); o.geometry.dispose(); o.material.dispose(); }
-    const gc = new THREE.BufferGeometry(); gc.setAttribute('position', new THREE.BufferAttribute(cpos, 3)); gc.setAttribute('color', new THREE.BufferAttribute(ccol, 3));
+    const gc = new THREE.BufferGeometry(); gc.setAttribute('position', new THREE.Float32BufferAttribute(cposA, 3)); gc.setAttribute('color', new THREE.Float32BufferAttribute(ccolA, 3));
     cubePts = new THREE.Points(gc, ptMat(0.32 * s)); cubePts.material.opacity = 1;
     const ga = new THREE.BufferGeometry(); ga.setAttribute('position', new THREE.Float32BufferAttribute(apos, 3)); ga.setAttribute('color', new THREE.Float32BufferAttribute(acol, 3));
     if (cellsMode) {
@@ -358,16 +360,16 @@ const key = () => [S.reach, S.h, S.yaw, S.pitch, S.lk, S.lines, S.lay, S.grid, S
 function hud() {
     const c = C.counts(), st = hook.state(), f = v => (100 * v).toFixed(1) + '%';
     document.getElementById('hud').innerHTML =
-        `<b>H, the thumb</b> ${(st.H / st.k).toPrecision(3)} units; window ${S.reach} each way, ${c.front.toLocaleString()} dots in front\n` +
+        `<b>H, the thumb</b> ${st.H.toPrecision(3)} units; dots ${st.k.toPrecision(2)} apart; window ${(S.reach * st.k).toPrecision(3)} each way\n` +
         (S.lay === 'cells'
             ? (cs => `counted: the ${cs.N.toLocaleString()} dots in front within ${S.reach} of the eye\n` +
                 `cube dots per hemisphere dot: rim ring ${cs.ring[cs.RINGS - 1].perDot.toFixed(1)}, centre ring ${cs.ring[0].perDot.toFixed(1)}\n` +
                 (cs.grid === 'turns' ? `the rim ×${cs.rimOverCentre.toFixed(1)} the centre (the endless cube: ×${cs.expectedRimOverCentre.toFixed(1)})\n`
                     : `the rim ×${cs.rimOverCentre.toFixed(2)} the centre (the endless cube: ×1)\n`))(C.cells())
             : `one thumb lands at 0.500 of the radius; 2, 4, 8 thumbs at ${c.thumbs[2].toFixed(3)}, ${c.thumbs[4].toFixed(3)}, ${c.thumbs[8].toFixed(3)}\n` +
-              `the window's nearest face lands at ${c.edgeG.toFixed(3)} of the radius: the rest of the endless cube fills the last ${f(1 - c.edgeG)} to the rim\n` +
-              `half the window's dots in front land beyond ${c.medianG.toFixed(3)}; inside one thumb: ${c.inThumb} dots (${f(c.nearShare)})\n`) +
-        `scale the world ×${st.k.toPrecision(2)}: nothing on the hemisphere moves`;
+              `the window's dots reach ${c.maxG.toFixed(3)} at its corners; the rest of the endless cube lands from ${C.g((S.reach + 1) * st.k).toFixed(3)} to the rim\n` +
+              `half the window's ${c.front.toLocaleString()} dots in front land beyond ${c.medianG.toFixed(3)}; inside one thumb: ${c.inThumb} (${f(c.nearShare)})\n`) +
+        `scale the world ×${st.k.toPrecision(2)}: the writer's amounts above move, nothing on the hemisphere does`;
     $('hH').value = S.h; $('hHo').textContent = (Math.pow(2, S.h)).toPrecision(3);
     $('yaw').value = S.yaw; $('yawo').textContent = S.yaw.toFixed(1) + '°';
     $('pitch').value = S.pitch; $('pitcho').textContent = S.pitch.toFixed(1) + '°';
@@ -390,8 +392,8 @@ $('bBehind').onclick = () => C.set({ behind: !S.behind });
 // the view frames both, and follows the world's scale (so scaling shows as nothing moving on the screen)
 let lastS = null;
 function frameView() { const { A, ax } = layout(), mid = ax[0] / 2, narrow = innerWidth < 760;
-    controls.target.set(mid - (narrow ? 0 : 1.0 * A), -0.25 * A, 0);
-    camera.position.set(mid - (narrow ? 0 : 1.0 * A), 3.4 * A, (narrow ? 8.5 : 5.0) * A); camera.near = 0.002 * A; camera.far = 200 * A; camera.updateProjectionMatrix(); lastS = C.k(); }
+    controls.target.set(mid - (narrow ? 0 : 1.25 * A), narrow ? -2.6 * A : -0.25 * A, 0);
+    camera.position.set(mid - (narrow ? 0 : 1.25 * A), narrow ? 2.4 * A : 3.4 * A, (narrow ? 11.5 : 5.0) * A); camera.near = 0.002 * A; camera.far = 200 * A; camera.updateProjectionMatrix(); lastS = C.k(); }
 
 // point at a dot, in the cube or the atmosphere: its line and its numbers
 const tip = $('tip'); let hover = null, hoverLine = null;
@@ -409,7 +411,7 @@ canvas.addEventListener('pointermove', e => {
         new THREE.LineBasicMaterial({ color: 0xffffff, depthTest: false })); hoverLine.renderOrder = 10; scene.add(hoverLine);
     const H = C.Hof(), x = best.d / H;
     tip.style.display = 'block'; tip.style.left = (e.clientX + 14) + 'px'; tip.style.top = (e.clientY + 10) + 'px';
-    tip.textContent = `dot (${best.ijk.join(', ')})\n${best.alpha.toFixed(1)}° off the look\n` +
+    tip.textContent = `dot (${best.ijk.join(', ')}), ${best.d.toPrecision(3)} units off\n${best.alpha.toFixed(1)}° off the look\n` +
         (x < 1 ? `${x.toFixed(2)} of a thumb out` : `${x.toFixed(2)} thumbs out (one in ${x.toFixed(1)})`) +
         (S.lay === 'cells' ? `\npoints to hemisphere dot ring ${best.ring + 1}, spoke ${best.spoke + 1}` : `\nlaid at ${best.g.toFixed(3)} of the radius`) + `\nheat ${best.heat.toFixed(3)}`;
 });

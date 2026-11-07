@@ -7352,6 +7352,23 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R733** (7 Nov; Tom: "lets say the cube is infinite in all directions. the dots are uniform within it. put it next to a
+  hemisphere. connect each dot in the cube to a dot on the cauchy atmosphere.", then "the payload cube and cauchy hemisphere.
+  every dot from the cube should point to a dot on the hemisphere. most of the dots from the cube will pile up on the sides of
+  the atmosphere with the fewest dots in the center of the atmosphere."): `cube-atmosphere.html`. An endless uniform cube gives
+  every direction the same share of dots by solid angle, so a hemisphere dot receives the cube in proportion to its cell's
+  solid angle. Which cells the hemisphere has decides the picture. With its dots at equal turns (rings every 90°/16, each
+  the same 32 dots) the cells shrink toward the middle and the cube piles up on the sides: the rim ring
+  cos(84.375°) = 0.0980 of the directions against the centre ring's 1 − cos(5.625°) = 0.00482, 20.4 times as many a dot
+  (counted on the lattice within 12 of the eye, 19.5; within 24, 20.9). With its dots at equal shares (1 − cos α = i/16, the
+  regular heat map of R731) every hemisphere dot receives the same count (1.01). So Tom's pile-up is the equal-turn
+  hemisphere's; the equal-share one spreads the cube evenly; which is the Cauchy's hemisphere is Tom's to rule. Counting
+  over a ball, not the window's cube, so its corners do not weigh in; looking along a lattice row puts the rows into the
+  counts (straight up, the equal-share rim ring got none within 12). Kept alongside: each dot laid by its distance too,
+  A·(2/π)·atan(d/H), the endless cube inside a bounded hemisphere, the window's dots reaching 0.879 of the radius at its
+  corners and the rest landing from 0.810 to the rim (H = 4, window 12). Reviewed by four readers and a skeptic each; eleven
+  findings taken (the HUD's partition of the window and the rest, the phone layout, which dots are joined, the across axis
+  at the pole, the writer's amounts under scaling, hidden dots drawn black, a stale paragraph).
 - **R732** (7 Nov; Tom: "what happend to the cube.   we could show the cauchy in the non-compressed cube form."): the
   reader's view of `heat-cube.html` had shown the cube only compressed (Lambert's equal-area map about the look), where the
   box's edges bend and its rim closes at √2. It now opens on a flat screen square to the look, the pinhole's F·tan α: the

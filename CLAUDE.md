@@ -207,6 +207,21 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   screen; S or `?lay=area` the equal-area (compressed) screen, the edges bent. `?n=&eye=i,j,k&look=i,j,k&h=&k=<log10 k>&color=heat|fields&view=reader&lay=flat|area&dots=0`;
   hook `window.__heatCube` (`heat`, `heats`, `compressed`, `readerView`, `front`, `pairs`, `stand`, `lookAt`, `set`, `state`, `frames`, `webgl`).
   Not in the flying page.
+- `cube-atmosphere.html`: **the payload cube and the hemisphere** (7 Nov 2026, SPN R733; Tom: "lets say the cube is infinite
+  in all directions. the dots are uniform within it. put it next to a hemisphere. connect each dot in the cube to a dot on the
+  cauchy atmosphere.", then "the payload cube and cauchy hemisphere. every dot from the cube should point to a dot on the
+  hemisphere. most of the dots from the cube will pile up on the sides of the atmosphere with the fewest dots in the center"),
+  full screen, three.js like `heat-cube.html` for the drawing only. A lattice of dots without end (a window drawn, 6, 12 or 24
+  each way) and the hemisphere in front of the look, standing in the look's own frame: 16 rings × 32 dots. Every cube dot in
+  front within the window's reach of the eye (a ball, drawn as three dashed circles, so the window's corners do not weigh in)
+  points to the hemisphere dot whose cell holds its direction; each hemisphere dot's area in proportion to its count. Rings at
+  equal turns (default): a cell takes its solid angle, the rim ring 20.4 times the centre's for the endless cube (19.5 within
+  12, 20.9 within 24); rings at equal shares (`grid=area`): every dot the same. The look slanted by default (30° across, 55°
+  up) since looking along a lattice row puts the rows into the counts (looking straight up the equal-share rim ring got
+  none). `lay=depth` keeps distance, A·(2/π)·atan(d/H) along the direction: the endless cube inside a bounded hemisphere.
+  `?reach=6|12|24&H=<log2 H>&yaw=&pitch=&lines=all|slice|none&lay=cells|depth&grid=turns|area&k=<log10 k>`; hook
+  `window.__atmos` (`g`, `placeOf`, `dots`, `cells`, `cellDir`, `ringShare`, `counts`, `edgeG`, `set`, `state`, `frames`, `webgl`).
+  Not in the flying page.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
