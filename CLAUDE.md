@@ -201,7 +201,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   painted about the crosshair; drag turns the look, a tap looks at a dot. Since R731 (Tom: "The border looks artificial";
   "this is geometry … there woulld not be any randommess or scatter. the heat map would be regular") the reader's view
   paints the heat as a regular map (16 bands of equal share × 32 equal turns, cos³α) under the grid's dots, D or `?dots=0`
-  taking the dots away; it opens from the middle. No scatter (tried and withdrawn). `?n=&eye=i,j,k&look=i,j,k&h=&k=<log10 k>&color=heat|fields&view=reader&dots=0`;
+  taking the dots away; it opens from the middle. No scatter (tried and withdrawn). Since R732 (Tom: "what happend to the cube. we
+  could show the cauchy in the non-compressed cube form.") the reader's view opens on a flat screen square to the look (F·tan α):
+  the cube's edges drawn straight, the equal-share bands at tan α out to the rim at infinity, cos³α exactly the heat per unit of
+  screen; S or `?lay=area` the equal-area (compressed) screen, the edges bent. `?n=&eye=i,j,k&look=i,j,k&h=&k=<log10 k>&color=heat|fields&view=reader&lay=flat|area&dots=0`;
   hook `window.__heatCube` (`heat`, `heats`, `compressed`, `readerView`, `front`, `pairs`, `stand`, `lookAt`, `set`, `state`, `frames`, `webgl`).
   Not in the flying page.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are

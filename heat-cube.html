@@ -29,6 +29,11 @@
     ?n=8|12|16&eye=i,j,k&look=i,j,k&h=<log2>&k=<log10 k>&color=heat|fields&view=outside|reader
     The reader's view (V, or "view: the reader's", ?view=reader): the eye's own view, every dot in front by its direction,
     laid about the look by Lambert's equal-area map, all one size (no distance read), the heat painted on the screen.
+    Since 7 Nov (Tom: "what happend to the cube. we could show the cauchy in the non-compressed cube form.") it opens on a
+    flat screen square to the look (the pinhole's, F·tan α): the cube keeps its straight edges and faces (drawn), the heat's
+    equal-share bands land at tan α, crowding to the middle and widening without end toward the rim at infinity, and cos³α
+    is exactly the heat per unit of that screen (the 2D Cauchy). S, the "screen" button or ?lay=area for the equal-area
+    (compressed) screen, where the same edges bend and the rim is at √2.
     Hook window.__heatCube: heat(i), heats(), front(), stand(i), lookAt(i), set({…}), state(), pairs(), compressed(),
     readerView(), frames, webgl.
     -->
@@ -83,7 +88,7 @@
     <div class="ctl"><label for="kK">scale the world</label><input id="kK" type="range" min="-3" max="3" step="0.05" value="0"><output id="kKo"></output></div>
     <div class="row">
         <button id="bCorner">stand at a corner</button><button id="bMiddle">stand in the middle</button>
-        <button id="bColor">colour: heat</button><button id="bN">12 a side</button><button id="bBehind" class="on">show behind</button><button id="bView">view: from outside</button>
+        <button id="bColor">colour: heat</button><button id="bN">12 a side</button><button id="bBehind" class="on">show behind</button><button id="bView">view: from outside</button><button id="bLay" style="display:none">screen: flat</button>
     </div>
     <p class="sub" style="margin:8px 0 0">H is drawn against the dot looked at: at 0 that dot is the corner, the hot spot.
     Drag to turn the view. Other demos: <a href="read.html">the read</a>, <a href="crosshairs.html">crosshairs in a field</a>,
@@ -116,7 +121,7 @@
         h: +qs.get('h') || 0,             // log2 of H against the distance to the dot looked at
         lk: +qs.get('k') || 0,            // log10 of the world's scale
         color: qs.get('color') === 'fields' ? 'fields' : 'heat',
-        tap: 'look', behind: true, version: 0, dotsOn: qs.get('dots') !== '0',
+        tap: 'look', behind: true, version: 0, dotsOn: qs.get('dots') !== '0', lay: qs.get('lay') === 'area' ? 'area' : 'flat',
         view: qs.get('view') === 'reader' ? 'reader' : 'outside',
     };
     const idx = (i, j, k) => (k * S.n + j) * S.n + i;
@@ -192,6 +197,7 @@
         if (o.tap) S.tap = o.tap;
         if (o.behind != null) S.behind = !!o.behind;
         if (o.view === 'reader' || o.view === 'outside') S.view = o.view;
+        if (o.lay === 'flat' || o.lay === 'area') S.lay = o.lay;
         S.version++; window.dispatchEvent(new Event('heatcube'));
     }
     // opening: eye at a corner, looking down the diagonal at the middle (the thumbs' crossing)
@@ -223,7 +229,7 @@
         heat: q => heatOf(q, Hof(), place(S.eye), lookDir()), heats, front, pairs, stand: q => set({ eye: q }),
         lookAt: q => set({ look: q }), set, idx, place,
         state: () => ({ n: S.n, eye: S.eye, look: S.look, target: targetOf(), yaw: S.yaw, pitch: S.pitch, H: Hof(), h: S.h,
-            k: K(), color: S.color, tap: S.tap, view: S.view }),
+            k: K(), color: S.color, tap: S.tap, view: S.view, lay: S.lay }),
         frames: 0, webgl: false,
     };
 })();
@@ -283,9 +289,17 @@
     const ramp = t => { t = Math.max(0, Math.min(1, t)); for (let i = 1; i < STOPS.length; i++) if (t <= STOPS[i][0]) {
         const [a, ca] = STOPS[i - 1], [b, cb] = STOPS[i], f = (t - a) / (b - a);
         return `rgb(${ca.map((v, k) => Math.round(v + (cb[k] - v) * f)).join(',')})`; } return 'rgb(255,246,216)'; };
-    let W = 0, H = 0, dpr = 1, R = 1, cx = 0, cy = 0, drawnV = -1, pts = [];
+    let W = 0, H = 0, dpr = 1, R = 1, F = 1, cx = 0, cy = 0, drawnV = -1, pts = [];
     function size() { dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight;
-        cv.width = W * dpr; cv.height = H * dpr; R = Math.min(W, H) * 0.46 / Math.SQRT2; cx = W / 2; cy = H / 2; drawnV = -1; }
+        cv.width = W * dpr; cv.height = H * dpr; R = Math.min(W, H) * 0.46 / Math.SQRT2; F = R / 1.25; cx = W / 2; cy = H / 2; drawnV = -1; }
+    // a direction r (from the eye) on the screen, in pixels from the middle: the flat screen's (F·tan α, the pinhole's,
+    // the cube as it is) or the equal-area one's (R·2 sin(α/2)); null behind the eye
+    function proj(r, L, X, U) { const z = r[0] * L[0] + r[1] * L[1] + r[2] * L[2], rx = r[0] * X[0] + r[1] * X[1] + r[2] * X[2],
+            ru = r[0] * U[0] + r[1] * U[1] + r[2] * U[2], d = Math.hypot(z, rx, ru);
+        if (S.lay === 'flat') return z > 1e-3 * d ? [F * rx / z, F * ru / z] : null;
+        if (z <= 0) return null; const m = Math.hypot(rx, ru) || 1, rho = 2 * Math.sin(Math.acos(Math.min(1, z / d)) / 2);
+        return [R * rho * rx / m, R * rho * ru / m]; }
+    const scr = p => S.lay === 'flat' ? [cx + F * p.fu, cy - F * p.fv] : [cx + R * p.u, cy - R * p.v];
     // the screen's frame: X to the right, U up, both square to the look
     function frame() {
         const L = C.lookDir(), up = Math.abs(L[1]) < 0.95 ? [0, 1, 0] : [1, 0, 0];
@@ -301,8 +315,8 @@
             const p = C.place(q), r = [p[0] - e[0], p[1] - e[1], p[2] - e[2]], d = Math.hypot(...r);
             const c = (r[0] * L[0] + r[1] * L[1] + r[2] * L[2]) / d; if (c <= 0) continue;
             const a = Math.acos(Math.min(1, c)), rx = r[0] * X[0] + r[1] * X[1] + r[2] * X[2], ru = r[0] * U[0] + r[1] * U[1] + r[2] * U[2];
-            const m = Math.hypot(rx, ru) || 1, rho = 2 * Math.sin(a / 2), lx = Math.log(d / Hh);
-            out.push({ q, alpha: a / RAD, d, u: rho * rx / m, v: rho * ru / m, near: d < Hh,
+            const m = Math.hypot(rx, ru) || 1, rho = 2 * Math.sin(a / 2), lx = Math.log(d / Hh), rz = c * d;
+            out.push({ q, alpha: a / RAD, d, u: rho * rx / m, v: rho * ru / m, fu: rx / rz, fv: ru / rz, near: d < Hh,
                 heat: c * c * c * (2 / (Math.exp(lx) + Math.exp(-lx))) });
         }
         return out;
@@ -316,9 +330,15 @@
         // physics, so there woulld not be any randommess or scatter. the heat map would be regular"): RINGS bands of equal
         // share of the directions in front (each 1/RINGS of the hemisphere, so on this equal-area screen each the same
         // room), cut by SPOKES equal turns about the look, each cell coloured by cos³α at its middle. No dot enters it.
-        const RINGS = 16, SPOKES = 32;
+        // On the flat screen (the default since 7 Nov; Tom: "what happend to the cube. we could show the cauchy in the
+        // non-compressed cube form."), the same bands land at radius tan α (cos α = 1 − share), crowding to the middle
+        // and widening without end toward the rim, which lies at infinity: the cube keeps its straight edges, and cos³α
+        // is then exactly the heat per unit of the screen (the 2D Cauchy, 1/(2π(1 + r²)^(3/2))).
+        const RINGS = 16, SPOKES = 32, FAR = Math.hypot(W, H);
+        const bandR = sh => { if (S.lay !== 'flat') return R * Math.SQRT2 * Math.sqrt(sh);
+            const c = 1 - sh; return c <= 1e-9 ? FAR : Math.min(FAR, F * Math.sqrt(1 - c * c) / c); };
         for (let i = 0; i < RINGS; i++) {
-            const r0 = R * Math.SQRT2 * Math.sqrt(i / RINGS), r1 = R * Math.SQRT2 * Math.sqrt((i + 1) / RINGS);
+            const r0 = bandR(i / RINGS), r1 = bandR((i + 1) / RINGS);
             const c = 1 - (i + 0.5) / RINGS, hc = c * c * c;          // cos α at the band's middle share
             for (let j = 0; j < SPOKES; j++) {
                 const a0 = 2 * Math.PI * j / SPOKES, a1 = 2 * Math.PI * (j + 1) / SPOKES;
@@ -329,48 +349,65 @@
         }
         // rings: half heat (37.5°), one thumb off the look (45°), half the directions (60°), the horizon of the look (90°)
         x.font = '12px DM Mono, monospace'; x.textAlign = 'center';
-        const ring = (deg, c, lab, dash) => { const r = R * 2 * Math.sin(deg * RAD / 2); x.setLineDash(dash); x.strokeStyle = c; x.lineWidth = 1.2;
-            x.beginPath(); x.arc(cx, cy, r, 0, 2 * Math.PI); x.stroke(); x.setLineDash([]); x.fillStyle = c; x.fillText(lab, cx, deg > 80 ? cy - r - 8 : cy + r + 15); };
+        const ring = (deg, c, lab, dash) => { const r = S.lay === 'flat' ? F * Math.tan(deg * RAD) : R * 2 * Math.sin(deg * RAD / 2);
+            if (!(r < FAR)) return; x.setLineDash(dash); x.strokeStyle = c; x.lineWidth = 1.2;
+            x.beginPath(); x.arc(cx, cy, r, 0, 2 * Math.PI); x.stroke(); x.setLineDash([]); x.fillStyle = c; x.fillText(lab, cx, deg > 80 || (S.lay === 'flat' && deg > 50) ? cy - r - 8 : cy + r + 15); };
         ring(37.47, 'rgba(242,193,78,.75)', '½ heat, 37.5°', [5, 6]); ring(60, 'rgba(79,209,197,.7)', 'half the directions, 60°', [5, 6]);
         ring(90, 'rgba(195,200,214,.55)', 'square to the look: the rim of what is in front', []);
+        if (S.lay === 'flat') ring(45, 'rgba(195,200,214,.45)', 'one thumb off the look, 45°', [2, 5]);
+        // the cube's own edges, seen from the eye: straight on the flat screen, bent on the equal-area one
+        { const c = -C.place(0)[0], e = C.place(S.eye), { L, X, U } = frame(), V = [];
+          for (let i = 0; i < 8; i++) V.push([(i & 1 ? c : -c), (i & 2 ? c : -c), (i & 4 ? c : -c)]);
+          x.strokeStyle = 'rgba(195,200,214,.5)'; x.lineWidth = 1.2;
+          for (let i = 0; i < 8; i++) for (const b of [1, 2, 4]) { const j = i | b; if (j === i) continue;
+            x.beginPath(); let on = false;
+            for (let t = 0; t <= 96; t++) { const p = V[i].map((v, k) => v + (V[j][k] - v) * t / 96), s2 = proj([p[0] - e[0], p[1] - e[1], p[2] - e[2]], L, X, U);
+                if (!s2) { on = false; continue; } const sx = cx + s2[0], sy = cy - s2[1];
+                if (on) x.lineTo(sx, sy); else x.moveTo(sx, sy); on = true; }
+            x.stroke(); } }
         // the dots: farthest first, so the nearer on a line is drawn over (what the line meets first paints it)
         pts = points().sort((a, b) => b.d - a.d);
         if (S.dotsOn === false) pts = [];
         const dr = Math.max(2.2, Math.min(5, 110 / S.n));
         for (const p of pts) {
             x.fillStyle = S.color === 'fields' ? (p.near ? `rgba(79,209,197,${0.2 + 0.8 * p.heat})` : `rgba(167,139,250,${0.2 + 0.8 * p.heat})`) : ramp(p.heat);
-            x.beginPath(); x.arc(cx + R * p.u, cy - R * p.v, dr, 0, 2 * Math.PI); x.fill();
+            const [sx, sy] = scr(p); if (sx < -20 || sy < -20 || sx > W + 20 || sy > H + 20) continue;
+            x.beginPath(); x.arc(sx, sy, dr, 0, 2 * Math.PI); x.fill();
         }
         // the crosshair, and the thing looked at ringed in gold
         x.strokeStyle = 'rgba(255,255,255,.85)'; x.lineWidth = 1.5; x.beginPath();
         x.moveTo(cx - 14, cy); x.lineTo(cx - 5, cy); x.moveTo(cx + 5, cy); x.lineTo(cx + 14, cy);
         x.moveTo(cx, cy - 14); x.lineTo(cx, cy - 5); x.moveTo(cx, cy + 5); x.lineTo(cx, cy + 14); x.stroke();
         const t = pts.find(p => p.q === C.targetOf());
-        if (t) { x.strokeStyle = '#f2c14e'; x.lineWidth = 2; x.beginPath(); x.arc(cx + R * t.u, cy - R * t.v, dr + 5, 0, 2 * Math.PI); x.stroke(); }
+        if (t) { const [sx, sy] = scr(t); x.strokeStyle = '#f2c14e'; x.lineWidth = 2; x.beginPath(); x.arc(sx, sy, dr + 5, 0, 2 * Math.PI); x.stroke(); }
         x.textAlign = 'left'; x.fillStyle = '#8a91a8'; x.font = '12px DM Mono, monospace';
-        x.fillText(`the reader's view: ${pts.length} dots in front, each one size (no distance is read)`, 14, H - 14);
-        x.fillText('drag to turn the look · tap a dot to look at it · D the cube\'s dots on or off · V for the cube from outside', 14, H - 32);
+        x.fillText(`the reader's view, ${S.lay === 'flat' ? 'a flat screen square to the look (the cube as it is; the rim at infinity)' : 'equal area about the look (compressed; the rim at √2)'}: ${pts.length} dots in front, each one size`, 14, H - 14);
+        x.fillText('drag to turn the look · tap a dot to look at it · S flat or equal area · D the dots on or off · V the cube from outside', 14, H - 32);
     }
     // drag turns the look (the world dragged with the finger), a tap looks at the dot under it
     let down = null;
     cv.addEventListener('pointerdown', e => { down = { x: e.clientX, y: e.clientY, yaw: S.yaw, pitch: S.pitch, moved: false }; cv.setPointerCapture(e.pointerId); });
     cv.addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - down.x, dy = e.clientY - down.y;
         if (!down.moved && Math.hypot(dx, dy) < 6) return; down.moved = true;
-        const k = 90 / (R * Math.SQRT2);
+        const k = S.lay === 'flat' ? 1 / (F * RAD) : 90 / (R * Math.SQRT2);
         C.set({ yaw: down.yaw + dx * k, pitch: Math.max(-89, Math.min(89, down.pitch - dy * k)) }); });
     cv.addEventListener('pointerup', e => { const d = down; down = null; if (!d || d.moved) return;
-        let best = null, bd = 22; for (const p of pts) { const dd = Math.hypot(cx + R * p.u - e.clientX, cy - R * p.v - e.clientY);
+        let best = null, bd = 22; for (const p of pts) { const [sx, sy] = scr(p), dd = Math.hypot(sx - e.clientX, sy - e.clientY);
             if (dd < bd || (best && Math.abs(dd - bd) < 1e-9 && p.d < best.d)) { bd = dd; best = p; } }
         if (best) C.set({ look: best.q }); });
     addEventListener('resize', size); size();
     addEventListener('keydown', e => { if (e.target.closest('input')) return;
         if (e.key === 'v' || e.key === 'V') C.set({ view: S.view === 'reader' ? 'outside' : 'reader' });
-        if ((e.key === 'd' || e.key === 'D') && S.view === 'reader') { S.dotsOn = S.dotsOn === false; S.version++; } });
+        if ((e.key === 'd' || e.key === 'D') && S.view === 'reader') { S.dotsOn = S.dotsOn === false; S.version++; }
+        if ((e.key === 's' || e.key === 'S') && S.view === 'reader') C.set({ lay: S.lay === 'flat' ? 'area' : 'flat' }); });
     const tick = () => { draw(); const b = document.getElementById('bView');
         if (b) { b.textContent = S.view === 'reader' ? "view: the reader's" : 'view: from outside'; b.classList.toggle('on', S.view === 'reader'); }
+        const bl = document.getElementById('bLay');
+        if (bl) { bl.style.display = S.view === 'reader' ? '' : 'none'; bl.textContent = S.lay === 'flat' ? 'screen: flat (the cube as it is)' : 'screen: equal area (compressed)'; }
         requestAnimationFrame(tick); };
     document.getElementById('bView').onclick = () => C.set({ view: S.view === 'reader' ? 'outside' : 'reader' });
-    window.__heatReader = { points, frame, toScreen: p => [cx + R * p.u, cy - R * p.v] };
+    document.getElementById('bLay').onclick = () => C.set({ lay: S.lay === 'flat' ? 'area' : 'flat' });
+    window.__heatReader = { points, frame, toScreen: scr };
     requestAnimationFrame(tick);
 })();
 setTimeout(() => { if (!window.__heatCube.webgl) { const n = document.getElementById('nogl');

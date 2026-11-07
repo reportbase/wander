@@ -7352,6 +7352,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R732** (7 Nov; Tom: "what happend to the cube.   we could show the cauchy in the non-compressed cube form."): the
+  reader's view of `heat-cube.html` had shown the cube only compressed (Lambert's equal-area map about the look), where the
+  box's edges bend and its rim closes at √2. It now opens on a flat screen square to the look, the pinhole's F·tan α: the
+  cube keeps its straight edges (drawn), from a corner its three faces a straight triangle, and the same equal-share bands
+  land at radius tan α (cos α = 1 − share), crowding toward the look and widening without end toward the rim, which is at
+  infinity. On this screen cos³α is not a colour chosen to stand for the heat but exactly the density of directions per unit
+  of screen, the 2D Cauchy 1/(2π(1 + r²)^(3/2)) (R312). The compressed screen stays a toggle (S, `?lay=area`). Nothing in the
+  papers changes: the page shows the same heat on the writer's undistorted box.
 - **R731** (7 Nov; Tom: "What are the lines on the border, that implies a shape.", then "The border looks artificial", then
   "this is geometry, not physics, so there woulld not be any randommess or scatter. the heat map would be regular"): the
   reader's view on the grid drew the writer's lattice: every row or plane of dots through the eye lands on one line (from
