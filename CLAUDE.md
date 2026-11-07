@@ -293,6 +293,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R748 (7 Nov; Tom: "proceed"): essay 5's explainer, draw's `explained.html?x=parties` (the octant cut by its sum, the
   triple corner, a sixth, a half and a third, by area not by angle, the heat about the look, more parties at any size),
   on `explainers.html` and essay 5's card.
+  R749 (7 Nov; Tom: "1,2"): essays 12's and 16's explainers, draw's `explained.html?x=array` (ten slots the writer's, the
+  reader's sweep, the horizon, laid on the quarter turn by a writer, the reader in code, a[i] read twice) and
+  `explained.html?x=kn` (read and write, K places whatever N, a direction a pair, the corner a register, index and value
+  statistics, the cull), on `explainers.html` and both essays' cards.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
@@ -1049,7 +1053,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   for explainers"), the same style: a card an explainer (draw's scrolling explainers, `gallery/explained.html?x=…` in
   reportbase/draw: reading and writing for essay 1, one length turned for essay 2, addresses for essay 3, near and far
   for essay 4, many standpoints for essay 6, where it shows up for essay 7 (since 1 Nov, SPN R610: the lighthouse,
-  Mercator's chart and the moving sky), rates, not angles for essay 14 (since 2 Nov, SPN R611), the Cauchy map for essay 17 (since 5 Nov, SPN R712), one plane for essay 18 (since 7 Nov, SPN R746), why the plane is special for essay 13 (since 7 Nov, SPN R747), three parties for essay 5 (since 7 Nov, SPN R748), the Tangent Bridge and how leaves become a curve for essay 10), the essay it
+  Mercator's chart and the moving sky), rates, not angles for essay 14 (since 2 Nov, SPN R611), the Cauchy map for essay 17 (since 5 Nov, SPN R712), one plane for essay 18 (since 7 Nov, SPN R746), why the plane is special for essay 13 (since 7 Nov, SPN R747), three parties for essay 5 (since 7 Nov, SPN R748), what an array is for essay 12 and K, not N for essay 16 (since 7 Nov, SPN R749), the Tangent Bridge and how leaves become a curve for essay 10), the essay it
   explains, its steps (the scene's beats), and links to the explainer, the essay's card, the essay and the scene's tile;
   then the essays with none yet. Linked from `essays.html` and `demos.html`. Add a card when an explainer is made.
 - `papers/`: **the master copies of the owner's papers**, edited here from now on

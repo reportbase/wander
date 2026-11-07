@@ -7352,6 +7352,19 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R749** (7 Nov; Tom: "1,2", to explainers for essays 12 and 16): two more of draw's scrolling explainers
+  (reportbase/draw#64). Essay 12's, `explained.html?x=array` (the animated gallery's `array` tile), six beats: ten slots,
+  the writer's, each a share of the way that moves when the array grows; a reader two slots out from the foot, equal
+  turns landing thick near it, half the quarter turn within two slots; the paint stopping at 0.874 of the turn (0.937 at
+  twenty), the horizon where no length could be found; the slots laid on the quarter turn by a writer, crossing a post
+  one thumb away at the half-Cauchy's quantiles (0.158 … 6.314); the reader recreated in code, K = 32 slots, a world of
+  100 stopping its paint at slot 29 (as `runs/arr/reader.mjs`); a[i] read twice, ray at θ and radius at 2θ (III.20).
+  Essay 16's, `explained.html?x=kn` (the `kn` tile), six beats: memory's read and write, a reallocation leaving the pointer
+  on nothing; eight equal turns, eight places at the thumb times tan(kπ/16), the world's things doubled and every new one in
+  the last place; a direction kept as a pair, post (v/h) and lintel (h/v); the corner as a register switch, bounded by 1
+  only there; a running median of v/h settling at 1 while the mean wanders (a seeded stream); the cull, sixteen places at
+  H·tan(kπ/32) sliding with the thumb, half inside it at every H. Cards on `explainers.html` (essays 12 and 16 off the
+  not-yet list), links on both essays' cards.
 - **R748** (7 Nov; Tom: "proceed", the next explainer): essay 5's explainer, draw's `explained.html?x=parties`
   (reportbase/draw#63, the animated gallery's `parties` tile), six beats: the octant a direction crosses, cut by its sum
   into the flat triangle; the triple corner at its centre and a true point (2/9, 2/3, 1/9) off it; six orderings a sixth
