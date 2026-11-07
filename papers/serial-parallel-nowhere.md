@@ -7352,6 +7352,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R738** (7 Nov; Tom: "Proceed", to R737's open step, "in space the picture becomes the sphere of directions × ln d"):
+  `euler.html`'s "in space" view, essay 13 drawn. Beside Euler's plane, where a turn and a scaling are two slides and land
+  alike in either order, the sphere of directions (the writer's drawing; x = h, y = v, z = v₂) carries a thing at the
+  triple corner with a small frame on it through a turn about h and a turn about v, in both orders. Two quarter turns
+  land 120° apart; the direction itself comes home under v then h (the composite is the 120° turn about the triple corner)
+  while its frame does not. A loop (h, v, back, back) comes home turned about nearly the third thumb, by about α·β for
+  small turns (1.741° at 10° and 10°, against αβ = 1.745°; 15.36° at 30° and 30°): the area the loop encloses, the
+  leftover essay 13 and Berry's phase (R666) name. Scaling stays a slide in ln(d/H), since every turn keeps d. So of
+  Euler's plane what survives in space is the split and the scale test; what is lost is turns as slides. Classical (the
+  rotation group's commutator, holonomy); the page draws it.
 - **R737** (7 Nov; Tom: "lets push, see what else there is to learn about this.", then "Yes"): what Euler's plane
   (R736) shows past itself, each checked to 30 digits. (1) Put the plane on the Riemann sphere stereographically with one
   thumb on the equator: the eye is the south pole, the horizon the north, and the thumb's lay (2/π)·atan(d/H) is the

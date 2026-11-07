@@ -235,7 +235,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   doll", and was replaced.) `?R=6|8|12&H=<log2 H>&grid=0|1|2|4&lines=slice|all|none&shells=0&place=1&u=&labels=1&numbers=1&about=1`;
   hook `window.__uncompressed` (`g`, `dOf`, `heat`, `compress`, `points`, `lines`, `counts`, `set`, `state`, `menu`,
   `frames`, `webgl`). Keep new text on this page behind the menu. Not in the flying page.
-- `euler.html`: **Euler's plane** (7 Nov 2026, SPN R736, R737; Tom: "lets move on. maybe eulers gives a better visualizstion
+- `euler.html`: **Euler's plane** (7 Nov 2026, SPN R736–R738; Tom: "lets move on. maybe eulers gives a better visualizstion
   opportuity.", then "yes"), full screen, plain canvas, every word behind the menu (☰). One Cartesian grid in the quadrant
   (R × R points in the cells' middles, 8, 16 or 32, and the grid lines through them), the eye at the corner, drawn three
   ways: Cartesian (the writer's); Euler's plane ln(z/H) = ln(d/H) + iθ (u from −4 to 4 across, θ up; a turn slides up or
@@ -251,10 +251,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   boost (latitudes sliding toward a pole). The heat at each point (R702's) or per unit of each chart (`heat=chart`: the
   read's measure over the chart's area, flat on the lay). A straight line or a log spiral (`over=line|spiral`, its
   distance, facing and slope in the menu) with its mirror in one thumb dashed: on Euler's plane every line one curve
-  moved, a spiral straight. `?view=three|slide|sphere|reads&t=&H=<log2 H>&k=<log2 k>&turn=&R=8|16|32&lay=square|disc
-  &heat=0|chart&lines=0&dots=0&over=line|spiral&p=<log2>&f=&a=&yaw=&pitch=&boost=1&th=&n=&labels=1&numbers=1&about=1`;
-  hook `window.__euler` (`toEuler`, `toLay`, `heat`, `chartHeat`, `sphere`, `overlay`, `mirror`, `points`, `lines`,
-  `reads`, `set`, `state`, `menu`, `frames`). Keep new text on this page behind the menu. Not in the flying page.
+  moved, a spiral straight. Since R738 ("Proceed"): "in space" (`view=space`): Euler's plane, where a turn and a scaling
+  land alike in either order, beside the sphere of directions (x = h, y = v, z = v₂, drag to turn), where a thing at the
+  triple corner with a frame on it, turned about h and about v (`al`, `be`), lands 120° apart by order for quarter turns,
+  and a loop (`loop=1`: h, v, back, back) comes home turned by about α·β; "play the turns" draws the paths.
+  `?view=three|slide|sphere|space|reads&t=&H=<log2 H>&k=<log2 k>&turn=&R=8|16|32&lay=square|disc
+  &heat=0|chart&lines=0&dots=0&over=line|spiral&p=<log2>&f=&a=&yaw=&pitch=&boost=1&al=&be=&loop=1&syaw=&spitch=&th=&n=
+  &labels=1&numbers=1&about=1`; hook `window.__euler` (`toEuler`, `toLay`, `heat`, `chartHeat`, `sphere`, `overlay`, `mirror`,
+  `points`, `lines`, `reads`, `space`, `set`, `state`, `menu`, `frames`). Keep new text on this page behind the menu. Not in the flying page.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
