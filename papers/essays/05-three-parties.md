@@ -428,8 +428,9 @@ Now stand at the eye and draw what the reader has. Every dot goes where its dire
 the directions take equal room, and every dot is one size, since no distance is read: a far dot and a near one on the
 same line look alike. Laid on a grid, the dots draw lines in this view: every row of dots through the eye lands on one
 line, and from a corner of the box its three faces make a hard curved border. That border looks artificial because it
-is: it is the writer's spacing and the writer's walls. Scatter each dot a little within its own cell and the lines go;
-stand in the middle and there is no border at all. Turn the look and the dots stream across a heat that stays put about the crosshair. That is the read:
+is: it is the writer's spacing and the writer's walls. The heat underneath is regular: rings of equal share of the
+directions about the look, each taking the same room, each as hot as cos³ of its angle, the same whatever dots happen to
+be there. Take the dots away and the regular heat map is all that is left, with no border. Turn the look and the dots stream across a heat that stays put about the crosshair. That is the read:
 directions and their heat, given; the dots met, wherever they happen to be.
 
 *Demo: a cube of heat (the cube from outside, the same dots as the read lays them, and the reader's view from the eye).*

@@ -735,8 +735,9 @@ direction falls (equal room for equal shares of the directions) and all are one 
 dot and a near one on a line look alike. Turned, the dots stream across a heat that stays where it is, about the
 crosshair. On the grid, rows and planes of dots that pass through the eye land on lines, and from a corner of the box
 its three faces through the eye make a hard curved triangle: the writer's spacing and the box's walls, not the read's.
-Each dot moved at random within its own cell, the lines go; from the middle of the box there is no edge at all, and
-from a corner only a soft one where the box ends. The heat has none. None of this is new; the demo shows the
+The read's own heat map is regular: bands of equal share of the directions about the look, each the same room on the
+screen, each as hot as cos³α, the same whatever dots are there or none. Take the dots away and it is all that is left,
+with no edge; the triangle's border was the box's. None of this is new; the demo shows the
 paragraphs above on one box of dots.
 
 **Heat maps combine without reconciling.** Two shapes combine only by working out their boundaries: where they meet,

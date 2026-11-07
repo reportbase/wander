@@ -83,7 +83,7 @@
     <div class="ctl"><label for="kK">scale the world</label><input id="kK" type="range" min="-3" max="3" step="0.05" value="0"><output id="kKo"></output></div>
     <div class="row">
         <button id="bCorner">stand at a corner</button><button id="bMiddle">stand in the middle</button>
-        <button id="bColor">colour: heat</button><button id="bN">12 a side</button><button id="bBehind" class="on">show behind</button><button id="bView">view: from outside</button><button id="bDots">dots: scattered</button>
+        <button id="bColor">colour: heat</button><button id="bN">12 a side</button><button id="bBehind" class="on">show behind</button><button id="bView">view: from outside</button>
     </div>
     <p class="sub" style="margin:8px 0 0">H is drawn against the dot looked at: at 0 that dot is the corner, the hot spot.
     Drag to turn the view. Other demos: <a href="read.html">the read</a>, <a href="crosshairs.html">crosshairs in a field</a>,
@@ -116,25 +116,14 @@
         h: +qs.get('h') || 0,             // log2 of H against the distance to the dot looked at
         lk: +qs.get('k') || 0,            // log10 of the world's scale
         color: qs.get('color') === 'fields' ? 'fields' : 'heat',
-        tap: 'look', behind: true, version: 0,
-        dots: qs.get('dots') === 'grid' ? 'grid' : 'scatter',
+        tap: 'look', behind: true, version: 0, dotsOn: qs.get('dots') !== '0',
         view: qs.get('view') === 'reader' ? 'reader' : 'outside',
     };
     const idx = (i, j, k) => (k * S.n + j) * S.n + i;
     const ijk = q => [q % S.n, Math.floor(q / S.n) % S.n, Math.floor(q / (S.n * S.n))];
     const K = () => Math.pow(10, S.lk);
     // a dot's place in the writer's box, in amounts (unit spacing times the world's scale), centred on the box
-    // "scatter" (the default since 7 Nov; Tom: "The border looks artificial"): each dot moved within its own cell by a
-    // seeded jitter of up to 0.45 of the spacing on each axis, the same every time. On the grid every row and plane of
-    // dots through the eye lands on one line from the eye, so the reader's view drew the grid's rows as hard lines and
-    // the box's faces through the eye as a bright border; scattered, no rows line up and the box's end is a soft edge.
-    // "grid" keeps the lattice (and pairs() its mirror pairs). The jitter scales with the world, so nothing moves with k.
-    const JIT = 0.45;
-    const jit = (q, a) => { let x = Math.imul(q * 3 + a + 1, 0x9E3779B1) >>> 0; x ^= x >>> 15; x = Math.imul(x, 0x85EBCA77) >>> 0;
-        x ^= x >>> 13; x = Math.imul(x, 0xC2B2AE3D) >>> 0; x ^= x >>> 16; return (x / 4294967296 * 2 - 1) * JIT; };
-    const place = q => { const [i, j, k] = ijk(q), c = (S.n - 1) / 2, s = K();
-        if (S.dots !== 'scatter') return [(i - c) * s, (j - c) * s, (k - c) * s];
-        return [(i - c + jit(q, 0)) * s, (j - c + jit(q, 1)) * s, (k - c + jit(q, 2)) * s]; };
+    const place = q => { const [i, j, k] = ijk(q), c = (S.n - 1) / 2, s = K(); return [(i - c) * s, (j - c) * s, (k - c) * s]; };
     const lookDir = () => { const y = S.yaw * RAD, p = S.pitch * RAD; return [Math.cos(p) * Math.cos(y), Math.sin(p), Math.cos(p) * Math.sin(y)]; };
     const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
     const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
@@ -202,7 +191,6 @@
         if (o.color) S.color = o.color;
         if (o.tap) S.tap = o.tap;
         if (o.behind != null) S.behind = !!o.behind;
-        if (o.dots === 'grid' || o.dots === 'scatter') S.dots = o.dots;
         if (o.view === 'reader' || o.view === 'outside') S.view = o.view;
         S.version++; window.dispatchEvent(new Event('heatcube'));
     }
@@ -235,7 +223,7 @@
         heat: q => heatOf(q, Hof(), place(S.eye), lookDir()), heats, front, pairs, stand: q => set({ eye: q }),
         lookAt: q => set({ look: q }), set, idx, place,
         state: () => ({ n: S.n, eye: S.eye, look: S.look, target: targetOf(), yaw: S.yaw, pitch: S.pitch, H: Hof(), h: S.h,
-            k: K(), color: S.color, tap: S.tap, view: S.view, dots: S.dots }),
+            k: K(), color: S.color, tap: S.tap, view: S.view }),
         frames: 0, webgl: false,
     };
 })();
@@ -324,11 +312,21 @@
         cv.style.display = 'block';
         if (drawnV === S.version) return; drawnV = S.version;
         x.setTransform(dpr, 0, 0, dpr, 0, 0); x.fillStyle = '#05070c'; x.fillRect(0, 0, W, H);
-        // the heat across the look, painted on the screen itself: cos³α, the Cauchy's heat about the crosshair
-        const g = x.createRadialGradient(cx, cy, 0, cx, cy, R * Math.SQRT2);
-        for (let i = 0; i <= 24; i++) { const rho = Math.SQRT2 * i / 24, a = 2 * Math.asin(rho / 2), c = Math.cos(a);
-            g.addColorStop(i / 24, `rgba(242,193,78,${(0.22 * c * c * c).toFixed(4)})`); }
-        x.fillStyle = g; x.beginPath(); x.arc(cx, cy, R * Math.SQRT2, 0, 2 * Math.PI); x.fill();
+        // the heat across the look, painted on the screen itself as a regular map (7 Nov; Tom: "this is geometry, not
+        // physics, so there woulld not be any randommess or scatter. the heat map would be regular"): RINGS bands of equal
+        // share of the directions in front (each 1/RINGS of the hemisphere, so on this equal-area screen each the same
+        // room), cut by SPOKES equal turns about the look, each cell coloured by cos³α at its middle. No dot enters it.
+        const RINGS = 16, SPOKES = 32;
+        for (let i = 0; i < RINGS; i++) {
+            const r0 = R * Math.SQRT2 * Math.sqrt(i / RINGS), r1 = R * Math.SQRT2 * Math.sqrt((i + 1) / RINGS);
+            const c = 1 - (i + 0.5) / RINGS, hc = c * c * c;          // cos α at the band's middle share
+            for (let j = 0; j < SPOKES; j++) {
+                const a0 = 2 * Math.PI * j / SPOKES, a1 = 2 * Math.PI * (j + 1) / SPOKES;
+                x.beginPath(); x.arc(cx, cy, r1, a0, a1); x.arc(cx, cy, r0, a1, a0, true); x.closePath();
+                x.fillStyle = ramp(hc); x.globalAlpha = S.dotsOn === false ? 1 : 0.45; x.fill();
+                x.globalAlpha = 1; x.strokeStyle = 'rgba(5,7,12,.55)'; x.lineWidth = 0.6; x.stroke();
+            }
+        }
         // rings: half heat (37.5°), one thumb off the look (45°), half the directions (60°), the horizon of the look (90°)
         x.font = '12px DM Mono, monospace'; x.textAlign = 'center';
         const ring = (deg, c, lab, dash) => { const r = R * 2 * Math.sin(deg * RAD / 2); x.setLineDash(dash); x.strokeStyle = c; x.lineWidth = 1.2;
@@ -337,6 +335,7 @@
         ring(90, 'rgba(195,200,214,.55)', 'square to the look: the rim of what is in front', []);
         // the dots: farthest first, so the nearer on a line is drawn over (what the line meets first paints it)
         pts = points().sort((a, b) => b.d - a.d);
+        if (S.dotsOn === false) pts = [];
         const dr = Math.max(2.2, Math.min(5, 110 / S.n));
         for (const p of pts) {
             x.fillStyle = S.color === 'fields' ? (p.near ? `rgba(79,209,197,${0.2 + 0.8 * p.heat})` : `rgba(167,139,250,${0.2 + 0.8 * p.heat})`) : ramp(p.heat);
@@ -350,7 +349,7 @@
         if (t) { x.strokeStyle = '#f2c14e'; x.lineWidth = 2; x.beginPath(); x.arc(cx + R * t.u, cy - R * t.v, dr + 5, 0, 2 * Math.PI); x.stroke(); }
         x.textAlign = 'left'; x.fillStyle = '#8a91a8'; x.font = '12px DM Mono, monospace';
         x.fillText(`the reader's view: ${pts.length} dots in front, each one size (no distance is read)`, 14, H - 14);
-        x.fillText('drag to turn the look · tap a dot to look at it · V for the cube from outside', 14, H - 32);
+        x.fillText('drag to turn the look · tap a dot to look at it · D the cube\'s dots on or off · V for the cube from outside', 14, H - 32);
     }
     // drag turns the look (the world dragged with the finger), a tap looks at the dot under it
     let down = null;
@@ -364,7 +363,9 @@
             if (dd < bd || (best && Math.abs(dd - bd) < 1e-9 && p.d < best.d)) { bd = dd; best = p; } }
         if (best) C.set({ look: best.q }); });
     addEventListener('resize', size); size();
-    addEventListener('keydown', e => { if ((e.key === 'v' || e.key === 'V') && !e.target.closest('input')) C.set({ view: S.view === 'reader' ? 'outside' : 'reader' }); });
+    addEventListener('keydown', e => { if (e.target.closest('input')) return;
+        if (e.key === 'v' || e.key === 'V') C.set({ view: S.view === 'reader' ? 'outside' : 'reader' });
+        if ((e.key === 'd' || e.key === 'D') && S.view === 'reader') { S.dotsOn = S.dotsOn === false; S.version++; } });
     const tick = () => { draw(); const b = document.getElementById('bView');
         if (b) { b.textContent = S.view === 'reader' ? "view: the reader's" : 'view: from outside'; b.classList.toggle('on', S.view === 'reader'); }
         requestAnimationFrame(tick); };
@@ -438,7 +439,7 @@ function paint() {
     const t = C.place(C.targetOf()); ringT.position.set(t[0], t[1], t[2]); ringT.scale.setScalar(0.32 * s); ringT.lookAt(camera.position);
     const L = C.lookDir(), far = S.n * 2 * s;
     lookLine.geometry.setFromPoints([new THREE.Vector3(...e), new THREE.Vector3(e[0] + L[0] * far, e[1] + L[1] * far, e[2] + L[2] * far)]);
-    box.scale.setScalar((S.n - 1 + (S.dots === 'scatter' ? 2 * 0.45 : 0)) * s);
+    box.scale.setScalar((S.n - 1) * s);
     if (lastScale !== s) { // the view follows the world's scale, so scaling shows as nothing changing on the screen
         const f = lastScale == null ? 1 : s / lastScale;
         if (lastScale == null) camera.position.set(1.35 * S.n * s, 0.95 * S.n * s, 1.75 * S.n * s);
@@ -464,7 +465,6 @@ function hud() {
     tStand.classList.toggle('on', S.tap === 'stand'); tLook.classList.toggle('on', S.tap === 'look');
     bColor.textContent = 'colour: ' + (S.color === 'heat' ? 'heat' : 'near / far'); bN.textContent = S.n + ' a side';
     bBehind.classList.toggle('on', S.behind);
-    $('bDots').textContent = 'dots: ' + (S.dots === 'scatter' ? 'scattered' : 'a grid');
 }
 const $ = id => document.getElementById(id);
 const yawEl = $('yaw'), yawO = $('yawo'), pitchEl = $('pitch'), pitchO = $('pitcho'), hEl = $('hH'), hO = $('hHo'), kEl = $('kK'), kO = $('kKo');
@@ -475,7 +475,6 @@ tStand.onclick = () => C.set({ tap: 'stand' }); tLook.onclick = () => C.set({ ta
 bColor.onclick = () => C.set({ color: S.color === 'heat' ? 'fields' : 'heat' });
 bN.onclick = () => { const n = S.n === 8 ? 12 : S.n === 12 ? 16 : 8, c = n / 2 - 1 | 0; lastScale = null; C.set({ n }); C.set({ look: [c, c, c] }); };
 bBehind.onclick = () => C.set({ behind: !S.behind });
-$('bDots').onclick = () => C.set({ dots: S.dots === 'scatter' ? 'grid' : 'scatter' });
 $('bCorner').onclick = () => { const c = S.n / 2 - 1 | 0; C.set({ eye: 0 }); C.set({ look: [c, c, c] }); };
 $('bMiddle').onclick = () => { const c = S.n / 2 | 0; C.set({ eye: [c, c, c] }); C.set({ look: [S.n - 1, c, c] }); };
 
