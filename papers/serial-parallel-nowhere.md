@@ -7352,6 +7352,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R736** (7 Nov; Tom: "lets move on. maybe eulers gives a better visualizstion opportuity.", then "yes"): `euler.html`,
+  Euler's plane. One Cartesian grid in the quadrant, the eye at its corner, drawn three ways: as written (z = x + iy); on
+  Euler's plane, ln(z/H) = ln(d/H) + iθ, where a turn of the world slides every point up or down and scaling the world (or
+  moving the thumb) slides it sideways, rays are horizontal lines and the shells at one, two, four, eight thumbs vertical
+  lines ln 2 apart, the reading's reciprocal the mirror in θ = 45° and the distance's (d → H²/d) the mirror in one thumb;
+  and on the thumb's lay, g = (2/π)·atan(e^x) = ½ + gd(x)/π, the Gudermannian (Mercator's function), so the distance laid
+  by the thumb is itself a turn, bounded, the far field bunching on the horizon's edge. Side by side, or one panel sliding
+  between them; coloured by the heat cos²(θ − 45°)·sech(ln(d/H)). A fourth view draws n reads, (1 + iθ/n)ⁿ by tangent
+  addition, against e^(iθ): short in angle by about θ³/(3n²), longer by about θ²/(2n), a length no read sees (ELM); the
+  limit the writer's (R580, R647). Classical throughout; the page lays R580's split (the scale test on the real part,
+  turns on the imaginary) out as a picture. Full screen, the words behind the menu.
 - **R735** (7 Nov; Tom: "this is just doing a russian nesting doll kind of thing", "where is the cartesian reaity grid?",
   then "i was thinking that uncompressed meant 3d cartidian"): `uncompressed.html` rebuilt. R734's page laid every
   direction × every step of g and undid g along each ray, so it moved concentric shells apart and could show nothing but

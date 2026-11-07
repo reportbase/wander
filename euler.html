@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Euler's plane</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    euler.html: Euler's plane (7 Nov 2026; Tom: "lets move on. maybe eulers gives a better visualizstion opportuity.",
+    then "yes"; SPN R736, after uncompressed.html R734–R735; R580, R647, ELM).
+
+    One Cartesian grid in the plane, the eye at the corner of the quadrant (h along x, v along y), points in the cells'
+    middles and the grid lines through them, seen three ways:
+      1. Cartesian, the writer's: z = x + iy, straight lines.
+      2. Euler's plane: ln(z/H) = ln(d/H) + iθ (z = d·e^(iθ)). Directions and sizes on separate axes: a turn of the look
+         slides everything up or down, scaling the world (or moving H, the thumb) slides it sideways. Rays become
+         horizontal lines, circles vertical ones; the shells at one, two, four, eight thumbs are vertical lines ln 2 apart,
+         an even grid. The reciprocal of a reading (θ → 90° − θ) is the mirror in θ = 45°, the corner; the reciprocal of a
+         distance (d → H²/d) the mirror in ln(d/H) = 0, one thumb. The Cartesian lines are curves running off without end.
+      3. The thumb's lay: the distance axis squeezed by g = (2/π)·atan(d/H) = (2/π)·atan(e^x), x = ln(d/H): the
+         Gudermannian (g = ½ + gd(x)/π), Mercator's function, so the distance laid by the thumb is itself a turn. Bounded:
+         the near field in proportion, the far bunching on the horizon's edge (g = 1). As a square (g across, θ up) or as
+         the quarter disc (radius g, angle θ: the hemisphere's slice).
+    Shown side by side, or one at a time sliding between them (each a unit box, positions blended). Colour: the heat,
+    cos²(θ − 45°)·sech(ln(d/H)) (the plane's cos² about the look at the corner, times the thumb's sech).
+    A fourth view, n reads: (1 + iθ/n)ⁿ, each read one step of reading θ/n composed by tangent addition. The polygon
+    closes on e^(iθ); its angle n·atan(θ/n) falls short by about θ³/(3n²), its length (1 + θ²/n²)^(n/2) grows by about
+    θ²/(2n), a length no read sees (ELM, runs/elm/elm.py). The limit e^(iθ) is the writer's.
+
+    Full screen, no words on the picture: everything with words or numbers is behind the menu (☰).
+    ?view=three|slide|reads&t=0..2&H=<log2 H>&k=<log2 k>&turn=<degrees>&R=8|16|32&lay=square|disc&heat=0&lines=0&dots=0
+     &th=<radians>&n=&labels=1&numbers=1&about=1
+    Hook window.__euler: toEuler(p), toLay(p), heat(d, θ), mirror(p), points(), lines(), reads(θ, n), set({…}),
+    state(), menu(), frames.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #05060b; --panel: rgba(16,18,28,0.94); --line: rgba(255,255,255,0.10); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e8e6f0; --gold: #f2c14e; --teal: #4fd1c5; --violet: #a78bfa }
+    * { box-sizing: border-box }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground); color: var(--ink);
+        font: 0.875rem/1.5 'DM Mono', ui-monospace, monospace }
+    #stage { position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100dvh; display: block; touch-action: none }
+    button, select { font: inherit; color: var(--bright); background: #1b1e2b; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    #menuBtn { position: fixed; top: max(10px, env(safe-area-inset-top)); right: max(10px, env(safe-area-inset-right)); z-index: 5;
+        width: 44px; height: 44px; padding: 0; font-size: 1.3rem; background: rgba(20,20,28,0.7); border-radius: 22px }
+    #menu { position: fixed; top: calc(max(10px, env(safe-area-inset-top)) + 52px); right: max(10px, env(safe-area-inset-right)); z-index: 5;
+        width: min(310px, calc(100vw - 20px)); max-height: calc(100dvh - 80px); overflow: auto; background: var(--panel);
+        border: 1px solid var(--line); border-radius: 10px; padding: 8px; display: none }
+    #menu.open { display: block }
+    #menu .sec { color: var(--dim); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; margin: 8px 6px 4px }
+    #menu button { display: flex; width: 100%; justify-content: space-between; align-items: center; margin: 0 0 4px; text-align: left; gap: 8px }
+    #menu .dial { display: grid; grid-template-columns: 1fr 4.6em; gap: 4px 8px; align-items: center; padding: 4px 10px 8px }
+    #menu .dial label { grid-column: 1 / 3; color: var(--ink) }
+    #menu .dial input { width: 100% }
+    #menu .dial output { color: var(--gold); text-align: right }
+    #menu a { color: var(--teal); display: block; padding: 6px 10px }
+    .over { position: fixed; z-index: 4; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: none }
+    .over.open { display: block }
+    #numbers { left: max(10px, env(safe-area-inset-left)); top: max(10px, env(safe-area-inset-top)); padding: 10px 14px;
+        font-size: 0.8rem; white-space: pre-wrap; max-width: min(470px, calc(100vw - 80px)); max-height: calc(100dvh - 20px); overflow: auto }
+    #numbers b { color: var(--gold); font-weight: 500 }
+    #about { left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(640px, calc(100vw - 20px)); max-height: calc(100dvh - 40px);
+        overflow: auto; padding: 16px 20px; z-index: 6 }
+    #about h1 { font: 400 1.6rem/1.15 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    #about p { margin: 0 0 10px } #about .x { float: right }
+    .g { color: var(--gold) }
+    </style>
+</head>
+<body>
+<canvas id="stage" aria-label="a Cartesian grid, its complex logarithm, and the thumb's lay of it"></canvas>
+<button id="menuBtn" title="menu" aria-label="menu">☰</button>
+<div id="menu" role="menu">
+    <div class="sec">the view</div>
+    <button id="bView">show <span>the three</span></button>
+    <div class="dial" id="tDial"><label for="tT">Cartesian → Euler's plane → the thumb's lay</label><input id="tT" type="range" min="0" max="2" step="0.005"><output id="tTo"></output></div>
+    <button id="bPlay">slide through and back <span>off</span></button>
+    <button id="bLay">the thumb's lay <span>a square</span></button>
+    <div class="sec">the thumb and the world</div>
+    <div class="dial"><label for="hH">H, the thumb (grid units)</label><input id="hH" type="range" min="-3" max="4" step="0.05"><output id="hHo"></output></div>
+    <div class="dial"><label for="kK">scale the world</label><input id="kK" type="range" min="-3" max="3" step="0.05"><output id="kKo"></output></div>
+    <div class="dial"><label for="rR">turn the world (degrees)</label><input id="rR" type="range" min="-45" max="45" step="0.5"><output id="rRo"></output></div>
+    <div class="sec">n reads</div>
+    <div class="dial"><label for="thT">θ, the whole turn (radians)</label><input id="thT" type="range" min="0.05" max="3.1416" step="0.005"><output id="thTo"></output></div>
+    <div class="dial"><label for="nN">n, the reads</label><input id="nN" type="range" min="1" max="64" step="1"><output id="nNo"></output></div>
+    <div class="sec">the grid</div>
+    <button id="bDots">points <span>on</span></button>
+    <button id="bLines">grid lines <span>on</span></button>
+    <button id="bHeat">the heat <span>on</span></button>
+    <button id="bR">grid <span>16 × 16</span></button>
+    <div class="sec">words and numbers</div>
+    <button data-show="numbers">the numbers <span>off</span></button>
+    <button data-show="labels">words on the picture <span>off</span></button>
+    <button data-show="about">what this shows</button>
+    <button id="full">full screen</button>
+    <div class="sec">more</div>
+    <a href="uncompressed.html">the Cauchy, uncompressed</a>
+    <a href="one-read.html">one turn and one read</a>
+    <a href="plane-sphere.html">why the plane is special</a>
+    <a href="demos.html">all demos</a>
+</div>
+<div id="numbers" class="over"></div>
+<div id="about" class="over">
+    <button class="x" id="aboutX" aria-label="close">✕</button>
+    <h1>Euler's plane</h1>
+    <p>Write a point as z = d·e^(iθ): its direction θ (where it is) times its size d. Take the logarithm and the two come
+    apart onto two axes: ln(z/H) = ln(d/H) + iθ, H the thumb. One Cartesian grid, the writer's, is drawn three ways.</p>
+    <p><b>Cartesian</b>: straight lines, every cell alike. <b>Euler's plane</b>: rays become horizontal lines, circles
+    vertical ones. Turning the world slides everything up or down; scaling the world, or moving the thumb, slides it
+    sideways and changes nothing else. The shells at one, two, four, eight thumbs are vertical lines ln 2 apart: no
+    nesting, an even grid. The two corners are mirror lines: θ = 45° (a reading and its reciprocal) and one thumb out
+    (a distance d and H²/d). The Cartesian grid lines become curves running off without end both ways.</p>
+    <p><b>The thumb's lay</b>: the distance axis squeezed by (2/π)·atan(d/H), which is (2/π)·atan of e^x: Mercator's own
+    function, so the distance laid by the thumb is a turn too. The near field in proportion, the far bunched on the
+    horizon's edge, never reached. As a quarter disc it is the hemisphere's slice.</p>
+    <p><b>n reads</b>: (1 + iθ/n)ⁿ, θ turned in n reads composed. The polygon closes on e^(iθ), the writer's limit; its
+    angle falls short by about θ³/(3n²), and its length grows by about θ²/(2n), a length no read sees.</p>
+    <p class="g" style="margin:0">Drag on Euler's plane: sideways moves the thumb, up and down turns the world. Everything
+    with words is in the menu (☰).</p>
+</div>
+
+<script>
+// ── the maps, the heat and the reads, a plain script ──────────────────────────────────────────────────────────────────
+(function () {
+    const qs = new URLSearchParams(location.search);
+    const num = (k, d) => { const v = parseFloat(qs.get(k)); return isFinite(v) ? v : d; };
+    const Q = Math.PI / 2;
+    const S = {
+        view: ['three', 'slide', 'reads'].includes(qs.get('view')) ? qs.get('view') : 'three',
+        t: Math.max(0, Math.min(2, num('t', 1))), play: false,
+        h: Math.max(-3, Math.min(4, num('H', 1))),              // H = 2^h grid units
+        k: Math.max(-3, Math.min(3, num('k', 0))),              // scale the world by 2^k
+        turn: Math.max(-45, Math.min(45, num('turn', 0))),     // turn the world, degrees
+        R: [8, 16, 32].includes(+qs.get('R')) ? +qs.get('R') : 16,
+        lay: qs.get('lay') === 'disc' ? 'disc' : 'square',
+        heat: qs.get('heat') !== '0', lines: qs.get('lines') !== '0', dots: qs.get('dots') !== '0',
+        th: Math.max(0.05, Math.min(Math.PI, num('th', 1))), n: Math.max(1, Math.min(64, Math.round(num('n', 4)))),
+        U: [-4, 4],                                             // Euler's plane: ln(d/H) from −4 to 4 (1/55 to 55 thumbs)
+        show: { numbers: qs.get('numbers') === '1', labels: qs.get('labels') === '1', about: qs.get('about') === '1' },
+        version: 0,
+    };
+    const Hof = () => Math.pow(2, S.h), kof = () => Math.pow(2, S.k);
+    const sech = x => 2 / (Math.exp(x) + Math.exp(-x));
+    const heat = (d, th, H = Hof()) => { const c = Math.cos(th - Q / 2); return c * c * sech(Math.log(d / H)); };
+    // a grid point p = [x, y] (writer's units) as it stands after the world is scaled and turned: its z, d and θ
+    function place(p) {
+        const a = S.turn * Math.PI / 180, s = kof(), x = s * (p[0] * Math.cos(a) - p[1] * Math.sin(a)), y = s * (p[0] * Math.sin(a) + p[1] * Math.cos(a));
+        const d = Math.hypot(x, y), th = Math.atan2(y, x);
+        return { x, y, d, th, inRead: th >= -1e-12 && th <= Q + 1e-12 && d > 0 };
+    }
+    const toEuler = (p, H = Hof()) => { const o = place(p); return { u: Math.log(o.d / H), th: o.th }; };
+    const toLay = (p, H = Hof()) => { const o = place(p); return { g: (2 / Math.PI) * Math.atan(o.d / H), th: o.th }; };
+    // the two mirrors: a reading's reciprocal (θ → 90° − θ) and a distance's (d → H²/d), on the placed point
+    function mirror(p, H = Hof()) { const o = place(p), e = { u: Math.log(o.d / H), th: o.th };
+        const dm = H * H / o.d; return { reading: { u: e.u, th: Q - e.th }, distance: { u: Math.log(dm / H), th: e.th } }; }
+    function points() { const R = S.R, out = [];
+        for (let i = 0; i < R; i++) for (let j = 0; j < R; j++) { const p = [i + 0.5, j + 0.5], o = place(p);
+            out.push({ p, ...o, u: Math.log(o.d / Hof()), g: (2 / Math.PI) * Math.atan(o.d / Hof()), heat: heat(o.d, o.th) }); }
+        return out; }
+    function lines() { const R = S.R, out = [];
+        for (let i = 0; i < R; i++) { const c = i + 0.5, a = [], b = [];
+            for (let s = 0; s <= R + 1e-9; s += 1 / 16) { a.push([c, s]); b.push([s, c]); }
+            out.push({ axis: 'x = ' + c, pts: a }, { axis: 'y = ' + c, pts: b }); }
+        return out; }
+    // n reads: (1 + iθ/n)ⁿ as the polygon, each step a read of θ/n composed by tangent addition
+    function reads(th = S.th, n = S.n) {
+        const s = th / n, poly = [[1, 0]]; let re = 1, im = 0, acc = 0;
+        for (let j = 0; j < n; j++) { [re, im] = [re - im * s, im + re * s]; poly.push([re, im]);
+            acc = (j === 0) ? s : (acc + s) / (1 - acc * s); }      // the reading tan, by tangent addition (no angle taken)
+        const ang = n * Math.atan(s), len = Math.pow(1 + s * s, n / 2);
+        return { th, n, poly, end: [re, im], angle: ang, short: th - ang, shortApprox: th ** 3 / (3 * n * n),
+            length: len, grown: len - 1, grownApprox: th * th / (2 * n), tanSum: acc, tanSumCheck: im / re };
+    }
+    function set(o) {
+        if (o.view && ['three', 'slide', 'reads'].includes(o.view)) S.view = o.view;
+        if (o.t != null) S.t = Math.max(0, Math.min(2, o.t));
+        if (o.play != null) S.play = !!o.play;
+        if (o.h != null) S.h = Math.max(-3, Math.min(4, o.h));
+        if (o.k != null) S.k = Math.max(-3, Math.min(3, o.k));
+        if (o.turn != null) S.turn = Math.max(-45, Math.min(45, o.turn));
+        if (o.R && [8, 16, 32].includes(o.R)) S.R = o.R;
+        if (o.lay === 'square' || o.lay === 'disc') S.lay = o.lay;
+        for (const key of ['heat', 'lines', 'dots']) if (o[key] != null) S[key] = !!o[key];
+        if (o.th != null) S.th = Math.max(0.05, Math.min(Math.PI, o.th));
+        if (o.n != null) S.n = Math.max(1, Math.min(64, Math.round(o.n)));
+        if (o.show) Object.assign(S.show, o.show);
+        S.version++;
+    }
+    window.__eulerCore = { S, Q, Hof, kof, heat, place, toEuler, toLay, mirror, points, lines, reads, set };
+    window.__euler = { toEuler, toLay, heat, mirror, points, lines, reads, set,
+        state: () => ({ view: S.view, t: S.t, H: Hof(), k: kof(), turn: S.turn, R: S.R, lay: S.lay, heat: S.heat, lines: S.lines,
+            dots: S.dots, th: S.th, n: S.n, show: { ...S.show } }),
+        menu: () => ({ open: document.getElementById('menu').classList.contains('open') }), frames: 0 };
+})();
+</script>
+<script>
+(function () {
+const C = window.__eulerCore, S = C.S, Q = C.Q, hook = window.__euler, $ = id => document.getElementById(id);
+const cv = $('stage'), ctx = cv.getContext('2d');
+let W = 0, Hh = 0, dpr = 1;
+const COL = { ground: '#05060b', grid: 'rgba(120,135,180,0.55)', dim: '#8a8a96', gold: '#f2c14e', teal: '#4fd1c5', violet: '#a78bfa', ink: '#c8c8d0', frame: 'rgba(255,255,255,0.10)' };
+const STOPS = [[0, [20, 24, 38]], [0.12, [59, 42, 110]], [0.3, [43, 127, 160]], [0.55, [79, 209, 197]], [0.8, [242, 193, 78]], [1, [255, 246, 216]]];
+function ramp(t) { t = Math.max(0, Math.min(1, t));
+    for (let i = 1; i < STOPS.length; i++) if (t <= STOPS[i][0]) { const [a, ca] = STOPS[i - 1], [b, cb] = STOPS[i], f = (t - a) / (b - a);
+        return ca.map((v, j) => Math.round(v + (cb[j] - v) * f)); } return STOPS[STOPS.length - 1][1]; }
+
+// ── the three maps, each into a unit box (0..1 across, 0..1 up) ──────────────────────────────────────────────────────
+// o = a placed point {x, y, d, th}
+const MAPS = [
+    o => [o.x / S.R, o.y / S.R],                                                           // Cartesian (the writer's frame at k = 1)
+    o => [(Math.log(o.d / C.Hof()) - S.U[0]) / (S.U[1] - S.U[0]), o.th / Q],               // Euler's plane
+    o => { const g = (2 / Math.PI) * Math.atan(o.d / C.Hof());                             // the thumb's lay
+        return S.lay === 'disc' ? [g * Math.cos(o.th), g * Math.sin(o.th)] : [g, o.th / Q]; },
+];
+const inBox = q => q[0] >= -1e-9 && q[0] <= 1 + 1e-9 && q[1] >= -1e-9 && q[1] <= 1 + 1e-9;
+// where a placed point is drawn for a slide t (0 Cartesian, 1 Euler's plane, 2 the lay), blended between neighbours
+function at(o, t) { const i = Math.min(1, Math.floor(t)), f = t - i, a = MAPS[i](o), b = MAPS[i + 1](o);
+    const e = f * f * (3 - 2 * f); return [a[0] + (b[0] - a[0]) * e, a[1] + (b[1] - a[1]) * e]; }
+// is a placed point shown in view t? (Cartesian: inside its frame; the read's views: in the quarter turn, in the box)
+function shown(o, t) { if (t < 0.5) return inBox(MAPS[0](o)); if (!o.inRead) return false; return t < 1.5 ? inBox(MAPS[1](o)) : true; }
+
+// ── layout: the panels on the screen ─────────────────────────────────────────────────────────────────────────────
+function panels() {
+    const pad = Math.max(14, Math.min(W, Hh) * 0.04), top = 64;
+    if (S.view !== 'three') { const s = Math.min(W - 2 * pad, Hh - top - pad - 20);
+        return [{ x: (W - s) / 2, y: top + (Hh - top - pad - s) / 2, w: s, h: s }]; }
+    if (W >= Hh) { const s = Math.min((W - 4 * pad) / 3, Hh - top - 2 * pad), y = top + (Hh - top - pad - s) / 2, gap = (W - 3 * s) / 4;
+        return [0, 1, 2].map(i => ({ x: gap + i * (s + gap), y, w: s, h: s })); }
+    const s = Math.min(W - 2 * pad, (Hh - top - 4 * pad) / 3), gap = (Hh - top - 3 * s) / 4;
+    return [0, 1, 2].map(i => ({ x: (W - s) / 2, y: top + gap + i * (s + gap) - gap / 2, w: s, h: s }));
+}
+const scr = (P, q) => [P.x + q[0] * P.w, P.y + (1 - q[1]) * P.h];
+
+// ── the heat painted under a panel, from each pixel's own place (inverse maps) ───────────────────────────────────────
+const heatCache = new Map();
+function heatImage(view, P) {
+    const key = [view, Math.round(P.w), S.h, S.U.join(), S.lay].join('|'); if (heatCache.has(key)) return heatCache.get(key);
+    const N = Math.max(32, Math.min(160, Math.round(P.w / 4))), c = document.createElement('canvas'); c.width = c.height = N;
+    const x = c.getContext('2d'), img = x.createImageData(N, N), H = C.Hof();
+    for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
+        const X = (i + 0.5) / N, Y = 1 - (j + 0.5) / N; let d, th;
+        if (view === 0) { const wx = X * S.R, wy = Y * S.R; d = Math.hypot(wx, wy); th = Math.atan2(wy, wx); }
+        else if (view === 1) { d = H * Math.exp(S.U[0] + X * (S.U[1] - S.U[0])); th = Y * Q; }
+        else if (S.lay === 'disc') { const g = Math.hypot(X, Y); if (g >= 1) { img.data.set([5, 6, 11, 255], (j * N + i) * 4); continue; }
+            d = H * Math.tan(g * Math.PI / 2); th = Math.atan2(Y, X); }
+        else { d = H * Math.tan(Math.min(0.9999, X) * Math.PI / 2); th = Y * Q; }
+        const [r, g, b] = ramp(0.04 + 0.9 * C.heat(d, th)); img.data.set([r * 0.55, g * 0.55, b * 0.55, 255], (j * N + i) * 4);
+    }
+    x.putImageData(img, 0, 0); if (heatCache.size > 24) heatCache.clear(); heatCache.set(key, c); return c;
+}
+
+// ── the furniture of each view: the thumb, the shells, the corner ───────────────────────────────────────────────────
+function guides(P, t) {
+    const H = C.Hof(), mark = (pts, col, w, dash) => { ctx.strokeStyle = col; ctx.lineWidth = w; ctx.setLineDash(dash || []); ctx.beginPath();
+        let pen = false; for (const q of pts) { if (!q || !inBoxLoose(q)) { pen = false; continue; } const s = scr(P, q); if (!pen) ctx.moveTo(s[0], s[1]); else ctx.lineTo(s[0], s[1]); pen = true; }
+        ctx.stroke(); ctx.setLineDash([]); };
+    // a shell at m thumbs and the corner ray, as point lists placed through the slide (so they slide with the picture)
+    const asPlaced = (d, th) => ({ x: d * Math.cos(th), y: d * Math.sin(th), d, th, inRead: true });
+    for (const m of [1 / 8, 1 / 4, 1 / 2, 1, 2, 4, 8]) {
+        const pts = []; for (let a = 0; a <= 90; a += 1.5) pts.push(at(asPlaced(m * H, a * Math.PI / 180), t));
+        mark(pts, m === 1 ? COL.gold : COL.violet, m === 1 ? 1.6 : 1, m === 1 ? [] : [5, 5]);
+    }
+    const ray = []; for (let e = -8; e <= 8; e += 0.05) ray.push(at(asPlaced(H * Math.exp(e), Math.PI / 4), t));
+    mark(ray, COL.gold, 1.2, [2, 4]);
+}
+const inBoxLoose = q => q[0] >= -0.02 && q[0] <= 1.02 && q[1] >= -0.02 && q[1] <= 1.02;
+
+function drawGrid(P, t) {
+    ctx.save(); ctx.beginPath(); ctx.rect(P.x, P.y, P.w, P.h); ctx.clip();
+    if (S.lay === 'disc' && t > 1.5) { ctx.fillStyle = '#05060b'; }
+    if (S.heat && Math.abs(t - Math.round(t)) < 1e-6) ctx.drawImage(heatImage(Math.round(t), P), P.x, P.y, P.w, P.h);
+    if (S.lines) { ctx.strokeStyle = COL.grid; ctx.lineWidth = 1; ctx.beginPath();
+        for (const ln of C.lines()) { let pen = false;
+            for (const p of ln.pts) { const o = C.place(p); if (!shown(o, t)) { pen = false; continue; }
+                const s = scr(P, at(o, t)); if (!pen) ctx.moveTo(s[0], s[1]); else ctx.lineTo(s[0], s[1]); pen = true; } }
+        ctx.stroke(); }
+    guides(P, t);
+    if (S.dots) { const r = Math.max(1.6, Math.min(4, P.w / S.R / 6));
+        for (const p of C.points()) { const o = p; if (!shown(o, t)) continue; const s = scr(P, at(o, t)), [cr, cg, cb] = ramp(0.15 + 0.85 * o.heat);
+            ctx.fillStyle = `rgb(${cr},${cg},${cb})`; ctx.beginPath(); ctx.arc(s[0], s[1], r, 0, 2 * Math.PI); ctx.fill(); } }
+    ctx.restore();
+    ctx.strokeStyle = COL.frame; ctx.lineWidth = 1; ctx.strokeRect(P.x + 0.5, P.y + 0.5, P.w - 1, P.h - 1);
+    if (S.lay === 'disc' && t > 1.99) { ctx.strokeStyle = 'rgba(195,200,214,0.6)'; ctx.beginPath(); ctx.arc(P.x, P.y + P.h, P.w, -Math.PI / 2, 0); ctx.stroke(); }
+    if (S.show.labels) { const names = ['Cartesian: the writer\'s grid', 'Euler\'s plane: ln(z/H) = ln(d/H) + iθ', 'the thumb\'s lay: (2/π)·atan(d/H)'];
+        ctx.fillStyle = COL.dim; ctx.font = '12px "DM Mono", monospace'; ctx.textAlign = 'left';
+        const i = Math.round(t), f = Math.abs(t - i); ctx.fillText(f < 0.02 ? names[i] : 'sliding …', P.x, P.y - 8);
+        if (Math.abs(t - 1) < 0.02) { ctx.fillStyle = COL.gold; ctx.fillText('one thumb', scr(P, [(0 - S.U[0]) / (S.U[1] - S.U[0]), 0])[0] + 4, P.y + P.h - 6);
+            ctx.fillText('the corner, 45°', P.x + 6, scr(P, [0, 0.5])[1] - 6); } }
+}
+
+function drawReads(P) {
+    const r = C.reads(), cx = P.x + P.w * 0.32, cy = P.y + P.h * 0.62, R0 = Math.min(P.w, P.h) * 0.42 / Math.max(1, r.length * 0.9);
+    const toS = q => [cx + q[0] * R0, cy - q[1] * R0];
+    ctx.strokeStyle = COL.frame; ctx.beginPath(); ctx.moveTo(P.x, cy); ctx.lineTo(P.x + P.w, cy); ctx.moveTo(cx, P.y); ctx.lineTo(cx, P.y + P.h); ctx.stroke();
+    ctx.strokeStyle = 'rgba(195,200,214,0.5)'; ctx.beginPath(); ctx.arc(cx, cy, R0, 0, 2 * Math.PI); ctx.stroke();      // the writer's circle
+    ctx.strokeStyle = COL.gold; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(cx, cy, R0, 0, -r.th, true); ctx.stroke();  // e^(iθ) over θ
+    ctx.lineWidth = 1;
+    const e = toS([Math.cos(r.th), Math.sin(r.th)]); ctx.fillStyle = COL.gold; ctx.beginPath(); ctx.arc(e[0], e[1], 5, 0, 2 * Math.PI); ctx.fill();
+    // the polygon of n reads, each step at right angles to the radius, θ/n of it
+    ctx.strokeStyle = COL.teal; ctx.lineWidth = 2; ctx.beginPath(); r.poly.forEach((q, i) => { const s = toS(q); i ? ctx.lineTo(s[0], s[1]) : ctx.moveTo(s[0], s[1]); }); ctx.stroke();
+    ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(79,209,197,0.35)'; ctx.beginPath(); for (const q of r.poly) { const s = toS(q); ctx.moveTo(cx, cy); ctx.lineTo(s[0], s[1]); } ctx.stroke();
+    for (const q of r.poly) { const s = toS(q); ctx.fillStyle = COL.teal; ctx.beginPath(); ctx.arc(s[0], s[1], 2.6, 0, 2 * Math.PI); ctx.fill(); }
+    // the reads' own direction, on the circle (no length): n·atan(θ/n), short of θ
+    const d = toS([Math.cos(r.angle), Math.sin(r.angle)]); ctx.strokeStyle = COL.violet; ctx.setLineDash([4, 4]);
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(d[0], d[1]); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = COL.violet; ctx.beginPath(); ctx.arc(d[0], d[1], 4, 0, 2 * Math.PI); ctx.fill();
+    ctx.strokeStyle = COL.frame; ctx.strokeRect(P.x + 0.5, P.y + 0.5, P.w - 1, P.h - 1);
+    if (S.show.labels) { ctx.font = '12px "DM Mono", monospace'; ctx.fillStyle = COL.dim; ctx.fillText(`(1 + iθ/n)ⁿ, n = ${r.n}`, P.x, P.y - 8);
+        ctx.fillStyle = COL.gold; ctx.fillText('e^(iθ), the writer\'s', e[0] + 8, e[1] - 6);
+        ctx.fillStyle = COL.violet; ctx.fillText('the reads\' direction', d[0] + 8, d[1] + 14); }
+}
+
+function draw() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.fillStyle = COL.ground; ctx.fillRect(0, 0, W, Hh);
+    const Ps = panels();
+    if (S.view === 'three') Ps.forEach((P, i) => drawGrid(P, i));
+    else if (S.view === 'slide') drawGrid(Ps[0], S.t);
+    else drawReads(Ps[0]);
+    hook.frames++;
+}
+
+// ── the menu ───────────────────────────────────────────────────────────────────────────────────────────────────────
+function syncMenu() {
+    for (const b of document.querySelectorAll('#menu [data-show]')) { const k = b.dataset.show, on = S.show[k];
+        b.classList.toggle('on', !!on); const sp = b.querySelector('span'); if (sp) sp.textContent = on ? 'on' : 'off'; }
+    $('about').classList.toggle('open', S.show.about); $('numbers').classList.toggle('open', S.show.numbers);
+    const tag = (id, t, on) => { $(id).querySelector('span').textContent = t; $(id).classList.toggle('on', on); };
+    tag('bView', { three: 'the three', slide: 'one, sliding', reads: 'n reads' }[S.view], false);
+    tag('bPlay', S.play ? 'on' : 'off', S.play); tag('bLay', S.lay === 'disc' ? 'a quarter disc' : 'a square', false);
+    tag('bDots', S.dots ? 'on' : 'off', S.dots); tag('bLines', S.lines ? 'on' : 'off', S.lines); tag('bHeat', S.heat ? 'on' : 'off', S.heat);
+    tag('bR', `${S.R} × ${S.R}`, false);
+    $('tDial').style.display = S.view === 'slide' ? '' : 'none'; $('bPlay').style.display = S.view === 'slide' ? '' : 'none';
+    $('tT').value = S.t; $('tTo').textContent = S.t.toFixed(2);
+    $('hH').value = S.h; $('hHo').textContent = C.Hof().toPrecision(3);
+    $('kK').value = S.k; $('kKo').textContent = '×' + C.kof().toPrecision(3);
+    $('rR').value = S.turn; $('rRo').textContent = S.turn.toFixed(1) + '°';
+    $('thT').value = S.th; $('thTo').textContent = S.th.toFixed(3); $('nN').value = S.n; $('nNo').textContent = String(S.n);
+    $('full').textContent = document.fullscreenElement ? 'leave full screen' : 'full screen';
+    numbers(); draw();
+}
+function numbers() {
+    if (!S.show.numbers) return;
+    const H = C.Hof(), r = C.reads(), f = (v, p = 4) => Number(v).toPrecision(p), pts = C.points(), inR = pts.filter(o => o.inRead);
+    const g = x => (2 / Math.PI) * Math.atan(Math.exp(x)), gd = x => 2 * Math.atan(Math.exp(x)) - Math.PI / 2;
+    $('numbers').innerHTML =
+        `<b>H, the thumb</b> ${f(H, 3)} grid units; world ×${f(C.kof(), 3)}, turned ${S.turn.toFixed(1)}°\n` +
+        `${pts.length} grid points, ${inR.length} in the quarter turn\n\n` +
+        `<b>Euler's plane</b> ln(z/H) = ln(d/H) + iθ\n` +
+        `  the world ×2 or the thumb ÷2: every point ln 2 = 0.693 to the right, nothing else moves\n` +
+        `  a turn of ${S.turn.toFixed(1)}°: every point ${f(Math.abs(S.turn) * Math.PI / 180, 3)} up or down\n` +
+        `  shells at 1, 2, 4, 8 thumbs: vertical lines at 0, 0.693, 1.386, 2.079\n` +
+        `  the mirrors: θ → 90° − θ about 45° (a reading's reciprocal), d → H²/d about one thumb\n\n` +
+        `<b>the thumb's lay</b> g = (2/π)·atan(e^x), x = ln(d/H) = ½ + gd(x)/π (gd Mercator's)\n` +
+        `  x = 0, ln 2, ln 4, ln 8: g = ${[0, 1, 2, 3].map(j => f(g(j * Math.LN2), 4)).join(', ')}\n` +
+        `  check ½ + gd(ln 2)/π = ${f(0.5 + gd(Math.LN2) / Math.PI, 4)}\n\n` +
+        `<b>n reads</b>, θ = ${f(r.th, 4)}, n = ${r.n}\n` +
+        `  the reads' angle n·atan(θ/n) = ${f(r.angle, 6)}, short by ${f(r.short, 4)} (θ³/3n² ≈ ${f(r.shortApprox, 4)})\n` +
+        `  the polygon's length (1 + θ²/n²)^(n/2) = ${f(r.length, 6)}, grown by ${f(r.grown, 4)} (θ²/2n ≈ ${f(r.grownApprox, 4)})\n` +
+        `  the reading by tangent addition ${f(r.tanSum, 8)} = Im/Re of the end ${f(r.tanSumCheck, 8)}\n` +
+        `  the limit e^(iθ), on the circle, is the writer's\n\n` +
+        `<b>the heat</b> (each point's colour): cos²(θ − 45°)·sech(ln(d/H))`;
+}
+function showIt(k, on = !S.show[k]) { S.show[k] = on; if (k === 'about' && on) $('menu').classList.remove('open'); syncMenu(); }
+for (const b of document.querySelectorAll('#menu [data-show]')) b.onclick = () => showIt(b.dataset.show);
+$('menuBtn').onclick = () => $('menu').classList.toggle('open');
+$('aboutX').onclick = () => showIt('about', false);
+$('full').onclick = () => { const d = document; if (d.fullscreenElement) d.exitFullscreen(); else d.documentElement.requestFullscreen?.().catch(() => {}); };
+if (!document.documentElement.requestFullscreen) $('full').style.display = 'none';
+document.addEventListener('fullscreenchange', syncMenu);
+addEventListener('keydown', ev => { if (ev.key === 'Escape') { if (S.show.about) showIt('about', false); else $('menu').classList.remove('open'); } });
+const on = (id, f) => $(id).addEventListener('input', e => { f(+e.target.value); syncMenu(); });
+on('tT', v => C.set({ t: v, play: false })); on('hH', v => C.set({ h: v })); on('kK', v => C.set({ k: v })); on('rR', v => C.set({ turn: v }));
+on('thT', v => C.set({ th: v })); on('nN', v => C.set({ n: v }));
+$('bView').onclick = () => { C.set({ view: S.view === 'three' ? 'slide' : S.view === 'slide' ? 'reads' : 'three' }); syncMenu(); };
+$('bPlay').onclick = () => { C.set({ play: !S.play }); syncMenu(); };
+$('bLay').onclick = () => { C.set({ lay: S.lay === 'square' ? 'disc' : 'square' }); syncMenu(); };
+$('bDots').onclick = () => { C.set({ dots: !S.dots }); syncMenu(); };
+$('bLines').onclick = () => { C.set({ lines: !S.lines }); syncMenu(); };
+$('bHeat').onclick = () => { C.set({ heat: !S.heat }); syncMenu(); };
+$('bR').onclick = () => { C.set({ R: S.R === 8 ? 16 : S.R === 16 ? 32 : 8 }); syncMenu(); };
+
+// drag on Euler's plane (or the one panel at t near 1): sideways moves the thumb, up and down turns the world
+let drag = null;
+cv.addEventListener('pointerdown', e => { $('menu').classList.remove('open');
+    const Ps = panels(), P = S.view === 'three' ? Ps[1] : (S.view === 'slide' && Math.abs(S.t - 1) < 0.25 ? Ps[0] : null);
+    if (!P || e.clientX < P.x || e.clientX > P.x + P.w || e.clientY < P.y || e.clientY > P.y + P.h) return;
+    drag = { x: e.clientX, y: e.clientY, h: S.h, turn: S.turn, P }; cv.setPointerCapture(e.pointerId); });
+cv.addEventListener('pointermove', e => { if (!drag) return; const P = drag.P;
+    const du = (e.clientX - drag.x) / P.w * (S.U[1] - S.U[0]), dth = -(e.clientY - drag.y) / P.h * 90;
+    C.set({ h: drag.h + du / Math.LN2, turn: drag.turn + dth }); syncMenu(); });
+cv.addEventListener('pointerup', () => { drag = null; });
+cv.addEventListener('pointercancel', () => { drag = null; });
+
+function resize() { dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; Hh = innerHeight; cv.width = W * dpr; cv.height = Hh * dpr; draw(); }
+addEventListener('resize', resize);
+let last = performance.now(), dir = 1;
+function tick(now) { requestAnimationFrame(tick); const dt = Math.min(0.1, (now - last) / 1000); last = now;
+    if (S.play && S.view === 'slide') { let t = S.t + dir * dt / 3; if (t >= 2) { t = 2; dir = -1; } if (t <= 0) { t = 0; dir = 1; }
+        S.t = t; $('tT').value = t; $('tTo').textContent = t.toFixed(2); draw(); } }
+resize(); syncMenu(); requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
