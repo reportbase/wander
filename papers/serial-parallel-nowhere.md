@@ -7352,6 +7352,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R745** (7 Nov; Tom: "proceed", to a Lambert-chart turn demo after R744): `euler.html`'s sixth view, "a flat chart in
+  space" (`view=flat`, `phi=`): Lambert's azimuthal equal-area map and the stereographic map of the directions about the
+  look, side by side, a checkerboard laid on each about the old look, the look turned by φ about h (drag, a dial, "play
+  the turn"). Lambert's keeps every cell's area (the heat painted under it flat) and bends the cells; the stereographic
+  keeps every cell's angles and changes their size (the heat a quarter at its rim). The hook's `flat(φ)` gives FLC F4's
+  numbers over the directions in front of both looks (1/cos(φ/2) at the old look, 2 at h at a quarter turn; 1.0353 and
+  1.4430 at 30°). Essay 18 §9's "never passes 2" scoped to the directions in front of both looks, as FLC measured it.
 - **R744** (7 Nov; Tom: "whats next", then "proceed", to carrying FLC into the texts and the five trig flags through):
   (1) FLC in essay 18 §9 ("Where it stops") and *Reads and Writes* §1 ("One plane"), one paragraph each: in space
   writing keeps its slide on the log-polar line times the sphere of directions, commuting with every turn; the read's

@@ -37,16 +37,21 @@
     In space (`view=space`): the plane's two slides (a turn and a scaling) in either order land alike; on the sphere of
     directions two turns about two thumbs (`al`, `be`, degrees, about h then v) land apart, 120° for two quarter turns; a
     loop (`loop=1`: h, v, back, back) comes home turned, about α·β for small turns. Scaling stays a slide in ln(d/H).
+    A flat chart in space (`view=flat`, `phi=`; R745, FLC): Lambert's equal-area map and the stereographic map of the
+    directions about the look, a checkerboard laid on each about the old look, the look then turned by φ about h. On
+    Lambert's every cell keeps its area (the read's heat stays flat) and bends (the old look stretched 1/cos(φ/2), h by up
+    to 2 at a quarter turn); on the stereographic every cell keeps its angles and changes size (the heat a quarter at the
+    rim). No flat chart does both; the plane's lay square does. Drag up and down to turn the look.
     A fourth view, n reads: (1 + iθ/n)ⁿ, each read one step of reading θ/n composed by tangent addition. The polygon
     closes on e^(iθ); its angle n·atan(θ/n) falls short by about θ³/(3n²), its length (1 + θ²/n²)^(n/2) grows by about
     θ²/(2n), a length no read sees (ELM, runs/elm/elm.py). The limit e^(iθ) is the writer's.
 
     Full screen, no words on the picture: everything with words or numbers is behind the menu (☰).
-    ?view=three|slide|sphere|reads&t=0..2&H=<log2 H>&k=<log2 k>&turn=<degrees>&R=8|16|32&lay=square|disc&heat=0|chart&lines=0
+    ?view=three|slide|sphere|space|flat|reads&phi=<degrees>&t=0..2&H=<log2 H>&k=<log2 k>&turn=<degrees>&R=8|16|32&lay=square|disc&heat=0|chart&lines=0
      &dots=0&over=line|spiral&p=<log2 grid units>&f=<degrees>&a=<slope>&yaw=&pitch=&boost=1&al=&be=&loop=1&syaw=&spitch=
      &th=<radians>&n=&labels=1&numbers=1&about=1
     Hook window.__euler: toEuler(p), toLay(p), heat(d, θ), chartHeat(chart, d, θ), sphere(p), overlay(), mirror(p),
-    points(), lines(), reads(θ, n), space(α, β), set({…}),
+    points(), lines(), reads(θ, n), space(α, β), chartOf(kind, v), dirOf(kind, p), turnChart(kind, p, φ), flat(φ°), set({…}),
     state(), menu(), frames.
     -->
     <style>
@@ -109,6 +114,9 @@
     <div class="dial"><label for="beB">a turn about v (degrees)</label><input id="beB" type="range" min="0" max="180" step="1"><output id="beBo"></output></div>
     <button id="bLoop">the order <span>both orders</span></button>
     <button id="bTurns">play the turns</button>
+    <div class="sec">in space: a flat chart</div>
+    <div class="dial"><label for="phF">turn the look (degrees)</label><input id="phF" type="range" min="0" max="90" step="0.5"><output id="phFo"></output></div>
+    <button id="bFlat">play the turn <span>off</span></button>
     <div class="sec">n reads</div>
     <div class="dial"><label for="thT">θ, the whole turn (radians)</label><input id="thT" type="range" min="0.05" max="3.1416" step="0.005"><output id="thTo"></output></div>
     <div class="dial"><label for="nN">n, the reads</label><input id="nN" type="range" min="1" max="64" step="1"><output id="nNo"></output></div>
@@ -155,6 +163,12 @@
     still a slide in ln(d/H). But turns about two different thumbs no longer commute: a quarter turn about h then about v
     leaves a thing 120° from v then h, and going round a loop (h, v, back, back) leaves it turned by about the area the loop
     encloses. In the plane there is one axis, every turn a slide up Euler's plane, and nothing is left over.</p>
+    <p><b>A flat chart in space</b>: lay the directions about the look flat, and turn the look. Lambert's equal-area map
+    keeps every cell's area through the turn, so the read's heat stays flat, but the cells bend: the old look's place is
+    stretched 1/cos(φ/2), and the directions square to both looks by up to 2 at a quarter turn. The stereographic map keeps
+    every cell's angles instead, but the cells grow and shrink, and the heat at its rim is a quarter of the middle's. No
+    flat chart of a sphere does both (Gauss; Euler 1777). The plane's lay square does, because a line times a circle is
+    flat. Scaling stays a slide in ln(d/H) either way. Drag up and down to turn the look.</p>
     <p><b>n reads</b>: (1 + iθ/n)ⁿ, θ turned in n reads composed. The polygon closes on e^(iθ), the writer's limit; its
     angle falls short by about θ³/(3n²), and its length grows by about θ²/(2n), a length no read sees.</p>
     <p class="g" style="margin:0">Drag on Euler's plane: sideways moves the thumb, up and down turns the world. Two fingers anywhere: spread them and the thumb shrinks (pinch, it grows), twist them and the world turns; the gesture is one complex number, k·e^(iα), the plane's ln k + iα. Drag the sphere to turn it. Everything
@@ -168,7 +182,7 @@
     const num = (k, d) => { const v = parseFloat(qs.get(k)); return isFinite(v) ? v : d; };
     const Q = Math.PI / 2;
     const S = {
-        view: ['three', 'slide', 'sphere', 'space', 'reads'].includes(qs.get('view')) ? qs.get('view') : 'three',
+        view: ['three', 'slide', 'sphere', 'space', 'flat', 'reads'].includes(qs.get('view')) ? qs.get('view') : 'three',
         t: Math.max(0, Math.min(2, num('t', 1))), play: false,
         h: Math.max(-3, Math.min(4, num('H', 1))),              // H = 2^h grid units
         k: Math.max(-3, Math.min(3, num('k', 0))),              // scale the world by 2^k
@@ -184,6 +198,7 @@
         yaw: num('yaw', 0), pitch: Math.max(-80, Math.min(80, num('pitch', -18))), boost: qs.get('boost') === '1',
         al: Math.max(0, Math.min(180, num('al', 90))), be: Math.max(0, Math.min(180, num('be', 90))),   // the two turns in space, degrees
         loop: qs.get('loop') === '1', st: 1, syaw: num('syaw', 28), spitch: Math.max(-80, Math.min(80, num('spitch', 22))),
+        phi: Math.max(0, Math.min(90, num('phi', 60))), flatPlay: false,      // a flat chart in space: the look turned by φ, degrees
         th: Math.max(0.05, Math.min(Math.PI, num('th', 1))), n: Math.max(1, Math.min(64, Math.round(num('n', 4)))),
         U: [-4, 4],                                             // Euler's plane: ln(d/H) from −4 to 4 (1/55 to 55 thumbs)
         show: { numbers: qs.get('numbers') === '1', labels: qs.get('labels') === '1', about: qs.get('about') === '1' },
@@ -265,8 +280,45 @@
             endXY: app(XY, v0), endYX: app(YX, v0), loopEnd: app(loop, v0), v0,
             planeGap: 0, Rx, Ry, mul, app };
     }
+    // ── a flat chart for the read in space (R745, FLC, plans/flc-plan.md). Two charts of the directions about the look, the
+    // writer's: Lambert's azimuthal equal-area map, (x, y)·√(2/(1 + z)), the hemisphere a disc of radius √2 and the whole
+    // sphere of 2; and the stereographic map, (x, y)·2/(1 + z), the hemisphere a disc of radius 2. A pattern of square cells
+    // is laid on each chart about the old look; the look is turned by φ about h (the old look moves up), and each cell's
+    // directions are drawn in the chart about the new look. On Lambert's map every cell keeps its area (the read's heat stays
+    // flat) and bends; on the stereographic map every cell keeps its angles and grows or shrinks (the heat a quarter at the
+    // rim). No flat chart does both (Gauss; Euler 1777); in the plane the lay square does, since a line times a circle is flat.
+    const flatK = (kind, z) => kind === 'lambert' ? Math.sqrt(2 / Math.max(1e-12, 1 + z)) : 2 / Math.max(1e-3, 1 + z);
+    const RIM = { lambert: Math.SQRT2, stereo: 2 };
+    function chartOf(kind, v) { const k = flatK(kind, v[2]); return [k * v[0], k * v[1]]; }
+    function dirOf(kind, p) { const r2 = p[0] * p[0] + p[1] * p[1];
+        if (kind === 'lambert') { const k = Math.sqrt(Math.max(0, 1 - r2 / 4)); return [p[0] * k, p[1] * k, 1 - r2 / 2]; }
+        const s = r2 / 4; return [p[0] / (1 + s), p[1] / (1 + s), (1 - s) / (1 + s)]; }
+    // a chart point laid about the old look, carried to the chart about the look turned by φ (radians) about h
+    function turnChart(kind, p, phi = S.phi * Math.PI / 180) { const v = dirOf(kind, p), c = Math.cos(phi), s = Math.sin(phi);
+        return chartOf(kind, [v[0], c * v[1] + s * v[2], -s * v[1] + c * v[2]]); }
+    // the turn's local map on the chart at p: its area factor and its largest and least stretch (central differences)
+    function turnJac(kind, p, phi) { const e = 1e-5, f = q => turnChart(kind, q, phi);
+        const a = f([p[0] + e, p[1]]), b = f([p[0] - e, p[1]]), c = f([p[0], p[1] + e]), d = f([p[0], p[1] - e]);
+        const J = [[(a[0] - b[0]) / (2 * e), (c[0] - d[0]) / (2 * e)], [(a[1] - b[1]) / (2 * e), (c[1] - d[1]) / (2 * e)]];
+        const det = J[0][0] * J[1][1] - J[0][1] * J[1][0], fr = J[0][0] ** 2 + J[0][1] ** 2 + J[1][0] ** 2 + J[1][1] ** 2;
+        const q = Math.sqrt(Math.max(0, fr * fr / 4 - det * det)), s1 = Math.sqrt(fr / 2 + q), s2 = Math.sqrt(Math.max(0, fr / 2 - q));
+        return { det, s1, s2 }; }
+    // over the directions in front of both looks: the area factor's range, the largest stretch, and the stretch at the old look and at
+    // the direction square to both looks (h itself); and the read's heat per unit of each chart, centre against rim
+    function flat(phiDeg = S.phi, n = 48) { const phi = phiDeg * Math.PI / 180, out = {};
+        for (const kind of ['lambert', 'stereo']) { const rim = RIM[kind] * 0.999; let aMin = Infinity, aMax = -Infinity, sMax = 0, anis = 1;
+            for (let i = 0; i <= n; i++) for (let j = 0; j <= n; j++) { const p = [(2 * i / n - 1) * rim, (2 * j / n - 1) * rim];
+                if (Math.hypot(p[0], p[1]) > rim) continue;
+                const v = dirOf(kind, p); if (-Math.sin(phi) * v[1] + Math.cos(phi) * v[2] <= 1e-3) continue;   // in front of both looks (FLC F4)
+                const J = turnJac(kind, p, phi);
+                aMin = Math.min(aMin, J.det); aMax = Math.max(aMax, J.det); sMax = Math.max(sMax, J.s1, 1 / J.s2); anis = Math.max(anis, J.s1 / J.s2); }
+            const at0 = turnJac(kind, [0, 0], phi), atH = turnJac(kind, chartOf(kind, [1, 0, 1e-9]), phi);
+            out[kind] = { areaMin: aMin, areaMax: aMax, stretchMax: sMax, aniso: anis, atOldLook: Math.max(at0.s1, 1 / at0.s2),
+                atSquare: Math.max(atH.s1, 1 / atH.s2), oldLook: turnChart(kind, [0, 0], phi) }; }
+        out.lambert.heatRim = 1; out.stereo.heatRim = 1 / Math.pow(1 + 4 / 4, 2);      // per unit of chart area, rim over centre
+        out.oldLookStretch = 1 / Math.cos(phi / 2); return out; }
     function set(o) {
-        if (o.view && ['three', 'slide', 'sphere', 'space', 'reads'].includes(o.view)) S.view = o.view;
+        if (o.view && ['three', 'slide', 'sphere', 'space', 'flat', 'reads'].includes(o.view)) S.view = o.view;
         if (o.t != null) S.t = Math.max(0, Math.min(2, o.t));
         if (o.play != null) S.play = !!o.play;
         if (o.h != null) S.h = Math.max(-3, Math.min(4, o.h));
@@ -288,16 +340,18 @@
         if (o.st != null) S.st = Math.max(0, Math.min(1, o.st));
         if (o.syaw != null) S.syaw = o.syaw;
         if (o.spitch != null) S.spitch = Math.max(-80, Math.min(80, o.spitch));
+        if (o.phi != null) S.phi = Math.max(0, Math.min(90, o.phi));
+        if (o.flatPlay != null) S.flatPlay = !!o.flatPlay;
         if (o.th != null) S.th = Math.max(0.05, Math.min(Math.PI, o.th));
         if (o.n != null) S.n = Math.max(1, Math.min(64, Math.round(o.n)));
         if (o.show) Object.assign(S.show, o.show);
         S.version++;
     }
-    window.__eulerCore = { S, Q, Hof, kof, heat, chartHeat, place, toEuler, toLay, sphere, overlay, mirror, points, lines, reads, space, set };
-    window.__euler = { toEuler, toLay, heat, chartHeat, sphere, overlay, mirror, points, lines, reads, space, set,
+    window.__eulerCore = { S, Q, Hof, kof, heat, chartHeat, place, toEuler, toLay, sphere, overlay, mirror, points, lines, reads, space, chartOf, dirOf, turnChart, turnJac, flat, RIM, set };
+    window.__euler = { toEuler, toLay, heat, chartHeat, sphere, overlay, mirror, points, lines, reads, space, chartOf, dirOf, turnChart, flat, set,
         state: () => ({ view: S.view, t: S.t, H: Hof(), k: kof(), turn: S.turn, R: S.R, lay: S.lay, heat: S.heat, lines: S.lines,
             dots: S.dots, th: S.th, n: S.n, over: S.over, p: Math.pow(2, S.p), f: S.f, a: S.a, yaw: S.yaw, pitch: S.pitch,
-            boost: S.boost, al: S.al, be: S.be, loop: S.loop, syaw: S.syaw, spitch: S.spitch, show: { ...S.show } }),
+            boost: S.boost, al: S.al, be: S.be, loop: S.loop, syaw: S.syaw, spitch: S.spitch, phi: S.phi, flatPlay: S.flatPlay, show: { ...S.show } }),
         menu: () => ({ open: document.getElementById('menu').classList.contains('open') }), frames: 0 };
 })();
 </script>
@@ -330,7 +384,7 @@ function shown(o, t) { if (t < 0.5) return inBox(MAPS[0](o)); if (!o.inRead) ret
 // ── layout: the panels on the screen ─────────────────────────────────────────────────────────────────────────────
 function panels() {
     const pad = Math.max(14, Math.min(W, Hh) * 0.04), top = 64;
-    if (S.view === 'space') { if (W >= Hh) { const s = Math.min((W - 3 * pad) / 2, Hh - top - 2 * pad), y = top + (Hh - top - pad - s) / 2, gap = (W - 2 * s) / 3;
+    if (S.view === 'space' || S.view === 'flat') { if (W >= Hh) { const s = Math.min((W - 3 * pad) / 2, Hh - top - 2 * pad), y = top + (Hh - top - pad - s) / 2, gap = (W - 2 * s) / 3;
             return [0, 1].map(i => ({ x: gap + i * (s + gap), y, w: s, h: s })); }
         const s = Math.min(W - 2 * pad, (Hh - top - 3 * pad) / 2), gap = (Hh - top - 2 * s) / 3;
         return [0, 1].map(i => ({ x: (W - s) / 2, y: top + gap + i * (s + gap) - gap / 2, w: s, h: s })); }
@@ -530,6 +584,58 @@ function drawSpaceTurns(P) {
             : `in space: h then v ≠ v then h, ${(sp.gap * 180 / Math.PI).toFixed(1)}° apart`, P.x, P.y - 8); }
 }
 
+// ── a flat chart in space: Lambert's equal-area map and the stereographic map about the look, the look turned by φ ──────
+const flatCache = new Map();
+function flatHeat(kind, P, sc) {
+    const key = kind + '|' + Math.round(P.w); if (flatCache.has(key)) return flatCache.get(key);
+    const N = Math.max(48, Math.min(200, Math.round(P.w / 3))), c = document.createElement('canvas'); c.width = c.height = N;
+    const x = c.getContext('2d'), img = x.createImageData(N, N), rim = C.RIM[kind];
+    for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
+        const q = [((i + 0.5) / N - 0.5) * P.w / sc, (0.5 - (j + 0.5) / N) * P.h / sc], r = Math.hypot(q[0], q[1]);
+        let col;
+        if (r <= rim) { const h = kind === 'lambert' ? 1 : 1 / Math.pow(1 + r * r / 4, 2); col = ramp(0.1 + 0.5 * h).map(v => v * 0.55); }
+        else if (kind === 'lambert' && r <= 2) col = [14, 16, 28]; else if (kind === 'stereo') col = [14, 16, 28]; else col = [5, 6, 11];
+        img.data.set([col[0], col[1], col[2], 255], (j * N + i) * 4); }
+    x.putImageData(img, 0, 0); if (flatCache.size > 8) flatCache.clear(); flatCache.set(key, c); return c;
+}
+function drawFlat(P, kind) {
+    const rim = C.RIM[kind], sc = 0.33 * P.w / rim, cx = P.x + P.w / 2, cy = P.y + P.h / 2, toS = q => [cx + q[0] * sc, cy - q[1] * sc];
+    const phi = S.phi * Math.PI / 180;
+    ctx.save(); ctx.beginPath(); ctx.rect(P.x, P.y, P.w, P.h); ctx.clip();
+    ctx.drawImage(flatHeat(kind, P, sc), P.x, P.y, P.w, P.h);
+    // the cells: a checkerboard of squares laid on the chart about the old look, eight across its hemisphere, each edge
+    // carried through the turn point by point
+    const n = 4, st = rim / n;
+    for (let i = -n; i < n; i++) for (let j = -n; j < n; j++) {
+        const x0 = i * st, y0 = j * st; if (Math.hypot(x0 + st / 2, y0 + st / 2) > rim) continue;
+        const ring = [], m = 10;
+        for (let k = 0; k < m; k++) ring.push([x0 + st * k / m, y0]);
+        for (let k = 0; k < m; k++) ring.push([x0 + st, y0 + st * k / m]);
+        for (let k = 0; k < m; k++) ring.push([x0 + st - st * k / m, y0 + st]);
+        for (let k = 0; k < m; k++) ring.push([x0, y0 + st - st * k / m]);
+        // each cell kept to the old look's hemisphere (just inside its rim, so the far rim's one direction stays a direction)
+        const inRim = q => { const r = Math.hypot(q[0], q[1]), m = rim * 0.995; return r > m ? [q[0] * m / r, q[1] * m / r] : q; };
+        ctx.beginPath(); ring.forEach((q, k) => { const s = toS(C.turnChart(kind, inRim(q), phi)); k ? ctx.lineTo(s[0], s[1]) : ctx.moveTo(s[0], s[1]); }); ctx.closePath();
+        ctx.fillStyle = (i + j) & 1 ? 'rgba(79,209,197,0.30)' : 'rgba(167,139,250,0.30)'; ctx.fill();
+        ctx.strokeStyle = 'rgba(200,205,220,0.55)'; ctx.lineWidth = 1; ctx.stroke(); }
+    // the old hemisphere's rim, carried; the new look's hemisphere rim (dashed) and, on Lambert's map, the whole sphere's
+    ctx.strokeStyle = COL.gold; ctx.lineWidth = 1.6; ctx.beginPath();
+    for (let a = 0; a <= 360; a += 2) { const q = [0.995 * rim * Math.cos(a * Math.PI / 180), 0.995 * rim * Math.sin(a * Math.PI / 180)], s = toS(C.turnChart(kind, q, phi));
+        if (a) ctx.lineTo(s[0], s[1]); else ctx.moveTo(s[0], s[1]); } ctx.stroke();
+    ctx.strokeStyle = 'rgba(195,200,214,0.7)'; ctx.lineWidth = 1; ctx.setLineDash([5, 5]); ctx.beginPath(); ctx.arc(cx, cy, rim * sc, 0, 2 * Math.PI); ctx.stroke();
+    if (kind === 'lambert') { ctx.setLineDash([2, 4]); ctx.beginPath(); ctx.arc(cx, cy, 2 * sc, 0, 2 * Math.PI); ctx.stroke(); }
+    ctx.setLineDash([]);
+    // the new look at the middle, the old look where the turn has taken it
+    const o = toS(C.turnChart(kind, [0, 0], phi));
+    ctx.strokeStyle = COL.teal; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(cx - 7, cy); ctx.lineTo(cx + 7, cy); ctx.moveTo(cx, cy - 7); ctx.lineTo(cx, cy + 7); ctx.stroke();
+    ctx.fillStyle = COL.gold; ctx.beginPath(); ctx.arc(o[0], o[1], 5, 0, 2 * Math.PI); ctx.fill();
+    ctx.restore();
+    ctx.strokeStyle = COL.frame; ctx.strokeRect(P.x + 0.5, P.y + 0.5, P.w - 1, P.h - 1);
+    if (S.show.labels) { ctx.font = '12px "DM Mono", monospace'; ctx.textAlign = 'left'; ctx.fillStyle = COL.dim;
+        ctx.fillText(kind === 'lambert' ? 'Lambert\'s equal-area map: every cell keeps its area' : 'the stereographic map: every cell keeps its angles', P.x, P.y - 8);
+        ctx.fillStyle = COL.gold; ctx.fillText('the old look', o[0] + 8, o[1] - 6); ctx.fillStyle = COL.teal; ctx.fillText('the look', cx + 9, cy + 16); }
+}
+
 function drawReads(P) {
     const r = C.reads(), cx = P.x + P.w * 0.32, cy = P.y + P.h * 0.62, R0 = Math.min(P.w, P.h) * 0.42 / Math.max(1, r.length * 0.9);
     const toS = q => [cx + q[0] * R0, cy - q[1] * R0];
@@ -559,6 +665,7 @@ function draw() {
     else if (S.view === 'slide') drawGrid(Ps[0], S.t);
     else if (S.view === 'sphere') drawSphere(Ps[0]);
     else if (S.view === 'space') { drawPlaneCommute(Ps[0]); drawSpaceTurns(Ps[1]); }
+    else if (S.view === 'flat') { drawFlat(Ps[0], 'lambert'); drawFlat(Ps[1], 'stereo'); }
     else drawReads(Ps[0]);
     hook.frames++;
 }
@@ -569,7 +676,8 @@ function syncMenu() {
         b.classList.toggle('on', !!on); const sp = b.querySelector('span'); if (sp) sp.textContent = on ? 'on' : 'off'; }
     $('about').classList.toggle('open', S.show.about); $('numbers').classList.toggle('open', S.show.numbers);
     const tag = (id, t, on) => { $(id).querySelector('span').textContent = t; $(id).classList.toggle('on', on); };
-    tag('bView', { three: 'the three', slide: 'one, sliding', sphere: 'the writer\'s sphere', space: 'in space', reads: 'n reads' }[S.view], false);
+    tag('bView', { three: 'the three', slide: 'one, sliding', sphere: 'the writer\'s sphere', space: 'in space', flat: 'a flat chart in space', reads: 'n reads' }[S.view], false);
+    $('phF').value = S.phi; $('phFo').textContent = S.phi.toFixed(1) + '°'; tag('bFlat', S.flatPlay ? 'on' : 'off', S.flatPlay);
     tag('bLoop', S.loop ? 'a loop: h, v, back, back' : 'both orders', S.loop);
     $('alA').value = S.al; $('alAo').textContent = S.al.toFixed(0) + '°'; $('beB').value = S.be; $('beBo').textContent = S.be.toFixed(0) + '°';
     tag('bBoost', S.boost ? 'on' : 'off', S.boost); tag('bOver', { none: 'nothing', line: 'a straight line', spiral: 'a spiral' }[S.over], S.over !== 'none');
@@ -621,6 +729,14 @@ function numbers() {
             `  in space, h then v against v then h: ${dg(sp.gap)}° apart (two quarter turns: 120°)\n` +
             `  h, v, then back, back: the thing comes home turned ${dg(sp.loop)}° about (${sp.loopAxis.map(x => f(x, 3)).join(', ')}); αβ = ${dg(sp.areaApprox)}° (the leftover is the area for small turns)\n` +
             `  scaling the world is still a slide in ln(d/H), whatever the order: every turn keeps d\n\n`; })() +
+        (() => { const F = C.flat(), L = F.lambert, T = F.stereo;
+            return `<b>a flat chart in space</b> (the writer's charts of the directions about the look; the look turned ${S.phi.toFixed(1)}° about h)\n` +
+            `  Lambert's equal-area map, √(2/(1 + z))·(x, y): every cell's area ×${f(L.areaMin, 6)} to ×${f(L.areaMax, 6)}, so the read's heat stays flat\n` +
+            `    but the cells bend: the old look stretched ${f(L.atOldLook, 5)} (1/cos(φ/2) = ${f(F.oldLookStretch, 5)}), h ${f(L.atSquare, 5)}, at most ${f(L.stretchMax, 5)} in front of both looks (2 at a quarter turn)\n` +
+            `  the stereographic map, 2/(1 + z)·(x, y): every cell keeps its angles (stretch one way over the other at most ${f(T.aniso, 5)}; size ×${f(T.areaMin, 3)} to ×${f(T.areaMax, 3)} in front of both looks)\n` +
+            `    but not its size: the read's heat per unit of the chart is ${f(T.heatRim, 3)} of the middle's at the rim\n` +
+            `  no flat chart keeps both (Gauss; Euler 1777). In the plane the lay square does both: a line times a circle is flat\n` +
+            `  scaling the world or the thumb is still a slide in ln(d/H), and commutes with every turn\n\n`; })() +
         (S.over !== 'none' ? (S.over === 'line'
             ? `<b>a straight line</b> ${f(Math.pow(2, S.p), 3)} grid units from the eye (${f(Math.pow(2, S.p) * C.kof() / H, 3)} thumbs), facing ${S.f.toFixed(1)}°\n` +
               `  on Euler's plane u = ln(p/H) − ln cos(θ − φ₀): every line one curve, moved; nearest at u = ${f(Math.log(Math.pow(2, S.p) * C.kof() / H), 4)}, half a turn wide\n` +
@@ -646,7 +762,9 @@ addEventListener('keydown', ev => { if (ev.key === 'Escape') { if (S.show.about)
 const on = (id, f) => $(id).addEventListener('input', e => { f(+e.target.value); syncMenu(); });
 on('tT', v => C.set({ t: v, play: false })); on('hH', v => C.set({ h: v })); on('kK', v => C.set({ k: v })); on('rR', v => C.set({ turn: v }));
 on('thT', v => C.set({ th: v })); on('nN', v => C.set({ n: v }));
-$('bView').onclick = () => { C.set({ view: { three: 'slide', slide: 'sphere', sphere: 'space', space: 'reads', reads: 'three' }[S.view] }); syncMenu(); };
+$('bView').onclick = () => { C.set({ view: { three: 'slide', slide: 'sphere', sphere: 'space', space: 'flat', flat: 'reads', reads: 'three' }[S.view] }); syncMenu(); };
+on('phF', v => C.set({ phi: v, flatPlay: false }));
+$('bFlat').onclick = () => { C.set({ flatPlay: !S.flatPlay }); if (S.flatPlay && S.view !== 'flat') C.set({ view: 'flat' }); syncMenu(); };
 on('alA', v => C.set({ al: v, st: 1 })); on('beB', v => C.set({ be: v, st: 1 }));
 $('bLoop').onclick = () => { C.set({ loop: !S.loop }); syncMenu(); };
 $('bTurns').onclick = () => { C.set({ st: 0 }); turnsT0 = performance.now(); if (S.view !== 'space') C.set({ view: 'space' }); $('menu').classList.remove('open'); syncMenu(); };
@@ -672,21 +790,22 @@ let drag = null, pinch = null;
 function pinchNow() { const [a, b] = [...fingers.values()]; return { d: Math.hypot(b.x - a.x, b.y - a.y), a: Math.atan2(-(b.y - a.y), b.x - a.x) }; }
 cv.addEventListener('pointerdown', e => { $('menu').classList.remove('open');
     fingers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-    if (fingers.size === 2 && S.view !== 'space' && S.view !== 'reads') {
+    if (fingers.size === 2 && S.view !== 'space' && S.view !== 'flat' && S.view !== 'reads') {
         const g = pinchNow(); if (g.d < 8) return;
         drag = null; pinch = { d0: g.d, a0: g.a, h: S.h, turn: S.turn };
         for (const id of fingers.keys()) { try { cv.setPointerCapture(id); } catch (_) {} }
         return; }
     if (fingers.size > 1) return;
-    const Ps = panels(), P = S.view === 'three' ? Ps[1] : S.view === 'sphere' ? Ps[0] : S.view === 'space' ? Ps[1] : (S.view === 'slide' && Math.abs(S.t - 1) < 0.25 ? Ps[0] : null);
+    const Ps = panels(), P = S.view === 'three' ? Ps[1] : S.view === 'sphere' ? Ps[0] : S.view === 'space' ? Ps[1] : S.view === 'flat' ? Ps.find(q => e.clientX >= q.x && e.clientX <= q.x + q.w && e.clientY >= q.y && e.clientY <= q.y + q.h) : (S.view === 'slide' && Math.abs(S.t - 1) < 0.25 ? Ps[0] : null);
     if (!P || e.clientX < P.x || e.clientX > P.x + P.w || e.clientY < P.y || e.clientY > P.y + P.h) return;
-    drag = { x: e.clientX, y: e.clientY, h: S.h, turn: S.turn, yaw: S.yaw, pitch: S.pitch, syaw: S.syaw, spitch: S.spitch, P }; cv.setPointerCapture(e.pointerId); });
+    drag = { x: e.clientX, y: e.clientY, phi: S.phi, h: S.h, turn: S.turn, yaw: S.yaw, pitch: S.pitch, syaw: S.syaw, spitch: S.spitch, P }; cv.setPointerCapture(e.pointerId); });
 cv.addEventListener('pointermove', e => {
     if (fingers.has(e.pointerId)) fingers.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (pinch) { if (fingers.size < 2) return; const g = pinchNow();
         let da = g.a - pinch.a0; da -= 2 * Math.PI * Math.round(da / (2 * Math.PI));
         C.set({ h: pinch.h - Math.log2(g.d / pinch.d0), turn: pinch.turn + da * 180 / Math.PI }); syncMenu(); return; }
     if (!drag) return; const P = drag.P;
+    if (S.view === 'flat') { C.set({ phi: drag.phi - (e.clientY - drag.y) / P.h * 90, flatPlay: false }); syncMenu(); return; }
     if (S.view === 'space') { C.set({ syaw: drag.syaw - (e.clientX - drag.x) / P.w * 180, spitch: drag.spitch + (e.clientY - drag.y) / P.h * 180 }); syncMenu(); return; }
     if (S.view === 'sphere') { C.set({ yaw: drag.yaw + (e.clientX - drag.x) / P.w * 180, pitch: drag.pitch + (e.clientY - drag.y) / P.h * 180 }); syncMenu(); return; }
     // the points follow the finger: to the right is a smaller thumb (every ln(d/H) larger)
@@ -703,6 +822,7 @@ function tick(now) { requestAnimationFrame(tick); const dt = Math.min(0.1, (now 
     if (turnsT0 != null) { const st = Math.min(1, (now - turnsT0) / 3500); S.st = st; draw(); if (st >= 1) turnsT0 = null; }
     if (S.boost) { if (boostT0 == null) { boostT0 = now; boostH0 = S.h; }
         S.h = Math.max(-3, Math.min(4, boostH0 + 2 * Math.sin((now - boostT0) / 1000 * 2 * Math.PI / 8))); syncMenu(); }
+    if (S.flatPlay && S.view === 'flat') { S.phi = 45 - 45 * Math.cos(now / 1000 * 2 * Math.PI / 7); syncMenu(); }
     if (S.play && S.view === 'slide') { let t = S.t + dir * dt / 3; if (t >= 2) { t = 2; dir = -1; } if (t <= 0) { t = 0; dir = 1; }
         S.t = t; $('tT').value = t; $('tTo').textContent = t.toFixed(2); draw(); } }
 resize(); syncMenu(); requestAnimationFrame(tick);

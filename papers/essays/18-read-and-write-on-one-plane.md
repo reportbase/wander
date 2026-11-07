@@ -192,7 +192,7 @@ about the other and both back, it comes home turned about nearly the third thumb
 1.741° for 10° and 10°, against α·β = 1.745°. On the plane the same loop leaves nothing. `euler.html`'s "in space" sets the
 two side by side; the thirteenth essay takes the reason apart (Frobenius, Gauss and Bonnet, Berry's phase).
 
-Could another chart do in space what Euler's plane does in the plane? It was put to arithmetic (the plan FLC), and the
+Could another chart do in space what Euler's plane does in the plane? It was put to arithmetic (the plan FLC; `euler.html`'s "a flat chart in space" draws it), and the
 answer is mostly an old one. Writing keeps its slide: the same logarithm of the distance in thumbs, set beside the
 direction, lays space out as a straight line times the sphere of directions, and scaling the world or the thumb moves the
 line's coordinate alone, commuting with every turn of space, to rounding. The heat can be laid flat too: Lambert's
@@ -200,7 +200,7 @@ equal-area map about the look, crossed with the thumb's lay g, carries the read'
 turn of the look keeps that map's areas, so the heat stays flat wherever the look goes. What no flat chart can do is make
 the turns rigid. The turn that keeps Lambert's areas bends its shapes: turn the look by φ and, in the writer's sums, the old
 look's direction is stretched by 1/cos(φ/2), √2 at a quarter turn, and the directions square to both looks by up to 2; over
-every direction the stretch never passes 2. The stereographic chart keeps every turn's angles instead and loses the heat, a
+every direction in front of both looks the stretch never passes 2. The stereographic chart keeps every turn's angles instead and loses the heat, a
 quarter as hot at its rim as at its middle. Gauss's theorem says no flat chart of a piece of a sphere keeps its distances,
 and Euler (1777) that none keeps both angles and areas. The plane gets both from one chart because a line times a circle is
 flat: the circle unrolls into the line of θ, and the sphere of directions does not unroll.
@@ -249,7 +249,7 @@ behind. What survives everywhere is the part the series cares most about: the re
 amounts, and scaling the world moves only the second.
 
 **Demos.** `euler.html` (the three charts side by side or one sliding into the next; the writer's sphere and the thumb
-as a boost; the heat at each point and per chart; a line and a spiral with their mirrors; two turns in space; n reads),
+as a boost; the heat at each point and per chart; a line and a spiral with their mirrors; two turns in space; a flat chart in space, Lambert's and the stereographic, turned; n reads),
 `plane-sphere.html` (the plane's one law and the sphere's three), `levels.html` (the reader's lay of distance),
 `boost-sky.html` (a boost on the sky's chart), `uncompressed.html` (a writer's grid in space, compressed into the read).
 

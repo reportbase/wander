@@ -255,7 +255,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   land alike in either order, beside the sphere of directions (x = h, y = v, z = v₂, drag to turn), where a thing at the
   triple corner with a frame on it, turned about h and about v (`al`, `be`), lands 120° apart by order for quarter turns,
   and a loop (`loop=1`: h, v, back, back) comes home turned by about α·β; "play the turns" draws the paths.
-  `?view=three|slide|sphere|space|reads&t=&H=<log2 H>&k=<log2 k>&turn=&R=8|16|32&lay=square|disc
+  `?view=three|slide|sphere|space|flat|reads&t=&H=<log2 H>&k=<log2 k>&turn=&R=8|16|32&lay=square|disc
   &heat=0|chart&lines=0&dots=0&over=line|spiral&p=<log2>&f=&a=&yaw=&pitch=&boost=1&al=&be=&loop=1&syaw=&spitch=&th=&n=
   &labels=1&numbers=1&about=1`; hook `window.__euler` (`toEuler`, `toLay`, `heat`, `chartHeat`, `sphere`, `overlay`, `mirror`,
   `points`, `lines`, `reads`, `space`, `set`, `state`, `menu`, `frames`). Keep new text on this page behind the menu. Not in the flying page.
@@ -280,7 +280,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "proceed"): FLC carried into essay 18 §9 and *Reads and Writes* §1 "One plane" (Gauss 1828 and Euler 1777 cited), and
   the five trig flags applied as proposed (ε a step in direction, an angle in the writer's units; surveys read
   directions written down in degrees; 1/(2·tan(α/2)) the writer's sum; both indices the writer's; the hyperbolic angle
-  the writer's smooth formula for the reader's lay of ratios).
+  the writer's smooth formula for the reader's lay of ratios). R745 (7 Nov; Tom: "proceed"): a sixth view, "a flat chart in
+  space" (`view=flat&phi=`): Lambert's equal-area map and the stereographic map about the look, a checkerboard laid about
+  the old look, the look turned by φ; Lambert's keeps the cells' areas (the heat flat) and bends them, the stereographic
+  keeps their angles and changes their size (the heat ¼ at the rim); drag up and down turns the look; hook adds `chartOf`,
+  `dirOf`, `turnChart`, `flat(φ)` (FLC F4's stretches over the directions in front of both looks).
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
