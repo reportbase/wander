@@ -7352,6 +7352,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R734** (7 Nov; Tom: "lets think about this differently. maybe we don't need the cube. maybe we could just uncompress
+  the cauchy.", then "yes. put all readouts and dials into a menu. the visual should be full screen without readouts."):
+  `uncompressed.html`. The read laid evenly as a hemisphere, points even in the share of directions and in the thumb's lay
+  of distance g = (2/π)·atan(d/H), then undone, d = H·tan(πg/2) along each direction. What the cloud holds, exact for the
+  even law: half the points within one thumb at every H; per ratio of distance ½·sech(ln(d/H)), most at one thumb, alike at
+  d and H²/d; so the shells from one to two thumbs, two to four, four to eight hold 0.205, 0.139, 0.077 (past eight
+  0.079), not equal; per unit of volume ∝ H/(d²(H² + d²)), 1/d² near the eye and H/d⁴ far; the directions on a flat screen
+  one thumb out fall cos³α per unit of screen (the grid's rings 0.877, 0.667, 0.493 against 0.880, 0.670, 0.496). A uniform
+  cube's density over the cloud's grows as d²(H² + d²)/H, which is R733's pile-up seen from the other side: against
+  the read, the payload gains ground with every thumb out. The cloud is the writer's (distances written in units of H), as the
+  hemisphere is the writer's drawing of the read. Full screen with no words; every readout and dial behind the menu.
 - **R733** (7 Nov; Tom: "lets say the cube is infinite in all directions. the dots are uniform within it. put it next to a
   hemisphere. connect each dot in the cube to a dot on the cauchy atmosphere.", then "the payload cube and cauchy hemisphere.
   every dot from the cube should point to a dot on the hemisphere. most of the dots from the cube will pile up on the sides of

@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>The Cauchy, uncompressed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    uncompressed.html: the Cauchy, uncompressed (7 Nov 2026; Tom: "lets think about this differently. maybe we don't
+    need the cube. maybe we could just uncompress the cauchy.", then "yes. put all readouts and dials into a menu. the
+    visual should be full screen without readouts."; SPN R734, after cube-atmosphere.html, R733).
+
+    The read laid evenly, then undone. Below, the hemisphere: points even in the share of directions (RINGS rings at
+    1 − cos α = (i + ½)/RINGS off the look, 2·RINGS spokes at equal turns round it) and even in the thumb's lay of
+    distance (STEPS steps at g = (j + ½)/STEPS), each at A·g along its direction. Nothing random: a regular grid.
+    Above, the same points uncompressed: g = (2/π)·atan(d/H) undone, d = H·tan(πg/2) along the same direction, H the
+    thumb. A line joins each point to its other place (a slice through the look, every point, or none).
+
+    What the cloud shows (exact for the even law; the grid counts it to its steps):
+      half the points within one thumb (g < ½), whatever H;
+      per ratio of distance, ½·sech(ln(d/H)), most at one thumb, the same at d and H²/d;
+      the shells one to two thumbs 0.205, two to four 0.139, four to eight 0.077, past eight 0.079 (not equal);
+      per unit of volume ∝ H/(d²(H² + d²)): 1/d² near, H/d⁴ far;
+      the directions on a flat screen square to the look (at one thumb) fall cos³α per unit of screen.
+    Each point's colour is the read's heat, cos³α · sech(ln(d/H)), the same in both places.
+    Moving H (the thumb) rescales the cloud and nothing in the hemisphere. "In place" puts both at one eye, the
+    hemisphere drawn at radius 2H (so one thumb is one radius in both) and slides every point along its own ray as it
+    is uncompressed: the near field barely moves, one thumb stays, the far field streams out toward a horizon never
+    reached.
+
+    The hemisphere is the writer's drawing of the read (Reads and Writes §7); the reader has the directions and their
+    heat. The cloud is the writer's too, with distances written in units of H.
+
+    Full screen, no words on it: everything with words or numbers is behind the menu (☰).
+    ?H=<log2 H>&R=8|12|16&G=8|16|32&lines=slice|all|none&shells=0&flat=1&place=1&u=<0..1>&labels=1&numbers=1&about=1
+    Hook window.__uncompressed: g(d), dOf(g), heat(cos, d), points(), counts(), bands(), flatScreen(), set({…}),
+    state(), menu(), frames, webgl.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #05060b; --panel: rgba(16,18,28,0.94); --line: rgba(255,255,255,0.10); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e8e6f0; --gold: #f2c14e; --teal: #4fd1c5; --violet: #a78bfa }
+    * { box-sizing: border-box }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: var(--ground); color: var(--ink);
+        font: 0.875rem/1.5 'DM Mono', ui-monospace, monospace }
+    #stage { position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100dvh; display: block; touch-action: none }
+    button, select { font: inherit; color: var(--bright); background: #1b1e2b; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    #menuBtn { position: fixed; top: max(10px, env(safe-area-inset-top)); right: max(10px, env(safe-area-inset-right)); z-index: 5;
+        width: 44px; height: 44px; padding: 0; font-size: 1.3rem; background: rgba(20,20,28,0.7); border-radius: 22px }
+    #menu { position: fixed; top: calc(max(10px, env(safe-area-inset-top)) + 52px); right: max(10px, env(safe-area-inset-right)); z-index: 5;
+        width: min(310px, calc(100vw - 20px)); max-height: calc(100dvh - 80px); overflow: auto; background: var(--panel);
+        border: 1px solid var(--line); border-radius: 10px; padding: 8px; display: none }
+    #menu.open { display: block }
+    #menu .sec { color: var(--dim); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; margin: 8px 6px 4px }
+    #menu button { display: flex; width: 100%; justify-content: space-between; align-items: center; margin: 0 0 4px; text-align: left; gap: 8px }
+    #menu .dial { display: grid; grid-template-columns: 1fr 4.2em; gap: 4px 8px; align-items: center; padding: 4px 10px 8px }
+    #menu .dial label { grid-column: 1 / 3; color: var(--ink) }
+    #menu .dial input { width: 100% }
+    #menu .dial output { color: var(--gold); text-align: right }
+    #menu a { color: var(--teal); display: block; padding: 6px 10px }
+    .over { position: fixed; z-index: 4; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: none }
+    .over.open { display: block }
+    #numbers { left: max(10px, env(safe-area-inset-left)); top: max(10px, env(safe-area-inset-top)); padding: 10px 14px;
+        font-size: 0.8rem; white-space: pre-wrap; max-width: min(460px, calc(100vw - 80px)); max-height: calc(100dvh - 20px); overflow: auto }
+    #numbers b { color: var(--gold); font-weight: 500 }
+    #about { left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(640px, calc(100vw - 20px)); max-height: calc(100dvh - 40px);
+        overflow: auto; padding: 16px 20px; z-index: 6 }
+    #about h1 { font: 400 1.6rem/1.15 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    #about p { margin: 0 0 10px } #about .x { float: right }
+    #tip { position: fixed; pointer-events: none; padding: 6px 9px; font-size: 0.75rem; white-space: pre; display: none; z-index: 3 }
+    #labels span { position: fixed; transform: translate(-50%, -50%); color: var(--dim); font-size: 0.75rem; pointer-events: none; white-space: nowrap; z-index: 1 }
+    #nogl { position: fixed; inset: 0; display: none; place-items: center; text-align: center; color: var(--dim) }
+    .g { color: var(--gold) } .t { color: var(--teal) } .v { color: var(--violet) }
+    </style>
+    <script type="importmap">{ "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body>
+<canvas id="stage" aria-label="the Cauchy hemisphere of evenly laid points, and the same points uncompressed into open space"></canvas>
+<div id="labels"></div>
+<button id="menuBtn" title="menu" aria-label="menu">☰</button>
+<div id="menu" role="menu">
+    <div class="sec">the thumb</div>
+    <div class="dial"><label for="hH">H, the thumb</label><input id="hH" type="range" min="-3" max="0.5" step="0.05"><output id="hHo"></output></div>
+    <div class="sec">the picture</div>
+    <button id="bPlace">the two <span>side by side</span></button>
+    <div class="dial" id="uDial"><label for="uU">uncompressed</label><input id="uU" type="range" min="0" max="1" step="0.005"><output id="uUo"></output></div>
+    <button id="bPlay">uncompress and back <span>off</span></button>
+    <button id="bLines">lines <span>a slice</span></button>
+    <button id="bShells">shells at 1, 2, 4, 8 thumbs <span>on</span></button>
+    <button id="bFlat">a flat screen at one thumb <span>off</span></button>
+    <button id="bDirs">directions <span>12 × 24</span></button>
+    <button id="bSteps">steps in distance <span>16</span></button>
+    <button id="bFrame">frame the view</button>
+    <div class="sec">words and numbers</div>
+    <button data-show="numbers">the numbers <span>off</span></button>
+    <button data-show="labels">words on the picture <span>off</span></button>
+    <button data-show="tip">point at a point for its numbers <span>off</span></button>
+    <button data-show="about">what this shows</button>
+    <button id="full">full screen</button>
+    <div class="sec">more</div>
+    <a href="cube-atmosphere.html">the payload cube and the hemisphere</a>
+    <a href="heat-cube.html">a cube of heat</a>
+    <a href="read.html">the read</a>
+    <a href="demos.html">all demos</a>
+</div>
+<div id="numbers" class="over"></div>
+<div id="about" class="over">
+    <button class="x" id="aboutX" aria-label="close">✕</button>
+    <h1>The Cauchy, uncompressed</h1>
+    <p>Below, the read as a hemisphere: points laid evenly, the same share of directions for every point and the same
+    step of the thumb's lay of distance, g = (2/π)·atan(d/H), from the eye (0) through one thumb (half way) to the
+    horizon (the rim, never reached). Nothing random: a regular grid. Its colour is the read's heat, cos³α off the look
+    times sech(ln(d/H)), hottest one thumb straight ahead.</p>
+    <p>Above, the same points uncompressed: each slides out along its own direction to d = H·tan(πg/2). Half of them are
+    within one thumb, at any H. Past it, each ratio of distance holds ½·sech(ln(d/H)) of them, the same at d and at
+    H²/d: the shells from one to two thumbs, two to four, four to eight hold less and less (0.205, 0.139, 0.077), and the
+    far field thins as 1/d⁴ toward a horizon the cloud never reaches. Near the eye the points crowd as 1/d².</p>
+    <p>Move H, the thumb: the cloud grows or shrinks and nothing in the hemisphere moves. "In place" draws both from one
+    eye and slides each point along its ray: the near field barely moves, one thumb stays where it is, the far field
+    streams out. The flat screen at one thumb shows where the directions cross it: cos³α of them per unit of screen.</p>
+    <p class="g" style="margin:0">Drag to turn the view, wheel or pinch to come closer. Everything with words is in the
+    menu (☰).</p>
+</div>
+<div id="tip" class="over"></div>
+<div id="nogl"><div>This page needs WebGL to draw the points.<br>The arithmetic still runs: see the test hook.</div></div>
+
+<script>
+// ── the grid, the lay and the heat, a plain script so the hook works without WebGL ───────────────────────────────────
+(function () {
+    const qs = new URLSearchParams(location.search);
+    const num = (k, d) => { const v = parseFloat(qs.get(k)); return isFinite(v) ? v : d; };
+    const S = {
+        h: Math.max(-3, Math.min(0.5, num('H', -1))),          // H = 2^h, in units of the hemisphere's radius A = 1
+        R: [8, 12, 16].includes(+qs.get('R')) ? +qs.get('R') : 12,
+        G: [8, 16, 32].includes(+qs.get('G')) ? +qs.get('G') : 16,
+        lines: ['slice', 'all', 'none'].includes(qs.get('lines')) ? qs.get('lines') : 'slice',
+        shells: qs.get('shells') !== '0', flat: qs.get('flat') === '1',
+        place: qs.get('place') === '1',                          // in place: both from one eye
+        u: Math.max(0, Math.min(1, num('u', 1))), play: false,
+        show: { numbers: qs.get('numbers') === '1', labels: qs.get('labels') === '1', tip: false, about: qs.get('about') === '1' },
+        version: 0,
+    };
+    const Hof = () => Math.pow(2, S.h);
+    const g = (d, H = Hof()) => (2 / Math.PI) * Math.atan(d / H);          // the thumb's lay: 0, ½ at one thumb, → 1
+    const dOf = (gg, H = Hof()) => H * Math.tan(gg * Math.PI / 2);         // undone
+    const sech = x => 2 / (Math.exp(x) + Math.exp(-x));
+    const heat = (c, d, H = Hof()) => c > 0 ? c * c * c * sech(Math.log(d / H)) : 0;
+    const spokes = () => 2 * S.R;
+    // every point: its ring, spoke and step; its direction u (the look +y, across x and z); its g, its d, its heat
+    function points() {
+        const out = [], R = S.R, P = spokes(), G = S.G, H = Hof();
+        for (let i = 0; i < R; i++) {
+            const c = 1 - (i + 0.5) / R, s = Math.sqrt(1 - c * c), alpha = Math.acos(c) * 180 / Math.PI;
+            for (let j = 0; j < P; j++) {
+                const ph = (j + 0.5) * 2 * Math.PI / P, u = [s * Math.cos(ph), c, s * Math.sin(ph)];
+                for (let q = 0; q < G; q++) {
+                    const gg = (q + 0.5) / G, d = dOf(gg, H);
+                    out.push({ ring: i, spoke: j, step: q, u, cos: c, alpha, g: gg, d, thumbs: d / H,
+                        heat: heat(c, d, H), slice: j === 0 || j === P / 2 });
+                }
+            }
+        }
+        return out;
+    }
+    // the shares between shells, counted on the grid and exact for the even law
+    const SHELLS = [[0, 1], [1, 2], [2, 4], [4, 8], [8, Infinity]];
+    function bands() {
+        const G = S.G;
+        return SHELLS.map(([a, b]) => {
+            const ga = (2 / Math.PI) * Math.atan(a), gb = b === Infinity ? 1 : (2 / Math.PI) * Math.atan(b);
+            let n = 0; for (let q = 0; q < G; q++) { const gg = (q + 0.5) / G; if (gg >= ga && gg < gb) n++; }
+            return { from: a, to: b, counted: n / G, exact: gb - ga };
+        });
+    }
+    function counts() {
+        const pts = points(), N = pts.length, H = Hof();
+        const inThumb = pts.filter(p => p.d < H).length, far = pts.reduce((m, p) => Math.max(m, p.thumbs), 0);
+        return { N, directions: S.R * spokes(), steps: S.G, inThumb, nearShare: inThumb / N, farthestThumbs: far,
+            farthestG: (S.G - 0.5) / S.G, H, bands: bands() };
+    }
+    // the directions on a flat screen square to the look at one thumb out: where each crosses it, and the count per unit
+    // of screen against cos³α (rings of the screen at the cells' own edges, so the count is exact cell by cell)
+    function flatScreen(maxT = 3) {
+        const H = Hof(), R = S.R, P = spokes(), hits = [], rings = [];
+        for (let i = 0; i < R; i++) { const c = 1 - (i + 0.5) / R, t = Math.sqrt(1 - c * c) / c;
+            if (t > maxT) continue;
+            for (let j = 0; j < P; j++) { const ph = (j + 0.5) * 2 * Math.PI / P; hits.push([H * t * Math.cos(ph), H, H * t * Math.sin(ph), c]); } }
+        // per unit of screen in each ring of directions, against cos³α at the ring's middle (share over screen area)
+        for (let i = 0; i < R; i++) { const c0 = 1 - i / R, c1 = 1 - (i + 1) / R; if (c1 <= 0) break;
+            const r0 = Math.sqrt(1 - c0 * c0) / c0, r1 = Math.sqrt(1 - c1 * c1) / c1;
+            const perArea = (1 / R) / (Math.PI * (r1 * r1 - r0 * r0)), cm = 1 - (i + 0.5) / R;
+            rings.push({ ring: i, perArea: perArea * 2 * Math.PI, cos3: cm * cm * cm }); }   // ×2π: the even law is 1/(2π) a steradian, so per unit of screen it is cos³α/(2π)
+        return { hits, rings };
+    }
+    function set(o) {
+        if (o.h != null) S.h = Math.max(-3, Math.min(0.5, o.h));
+        if (o.R && [8, 12, 16].includes(o.R)) S.R = o.R;
+        if (o.G && [8, 16, 32].includes(o.G)) S.G = o.G;
+        if (o.lines && ['slice', 'all', 'none'].includes(o.lines)) S.lines = o.lines;
+        if (o.shells != null) S.shells = !!o.shells;
+        if (o.flat != null) S.flat = !!o.flat;
+        if (o.place != null) S.place = !!o.place;
+        if (o.u != null) S.u = Math.max(0, Math.min(1, o.u));
+        if (o.play != null) S.play = !!o.play;
+        if (o.show) Object.assign(S.show, o.show);
+        S.version++;
+    }
+    window.__uncCore = { S, Hof, g, dOf, heat, points, counts, bands, flatScreen, set, spokes };
+    window.__uncompressed = { g: d => g(d), dOf: gg => dOf(gg), heat: (c, d) => heat(c, d), points, counts, bands, flatScreen, set,
+        state: () => ({ H: Hof(), h: S.h, R: S.R, spokes: spokes(), G: S.G, lines: S.lines, shells: S.shells, flat: S.flat,
+            place: S.place, u: S.u, play: S.play, show: { ...S.show } }),
+        menu: () => ({ open: document.getElementById('menu').classList.contains('open') }),
+        frames: 0, webgl: false };
+})();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+const C = window.__uncCore, S = C.S, hook = window.__uncompressed, $ = id => document.getElementById(id);
+
+// ── the menu: every word and number lives behind it (works without WebGL too) ─────────────────────────────────────────
+function syncMenu() {
+    for (const b of document.querySelectorAll('#menu [data-show]')) { const k = b.dataset.show, on = S.show[k];
+        b.classList.toggle('on', !!on); const sp = b.querySelector('span'); if (sp) sp.textContent = on ? 'on' : 'off'; }
+    $('about').classList.toggle('open', S.show.about); $('numbers').classList.toggle('open', S.show.numbers);
+    $('labels').style.display = S.show.labels ? '' : 'none'; if (!S.show.tip) $('tip').classList.remove('open');
+    const tag = (id, t, on) => { $(id).querySelector('span').textContent = t; $(id).classList.toggle('on', on); };
+    tag('bPlace', S.place ? 'in place' : 'side by side', S.place);
+    tag('bPlay', S.play ? 'on' : 'off', S.play);
+    tag('bLines', S.lines === 'slice' ? 'a slice' : S.lines === 'all' ? 'every point' : 'none', S.lines !== 'none');
+    tag('bShells', S.shells ? 'on' : 'off', S.shells);
+    tag('bFlat', S.flat ? 'on' : 'off', S.flat);
+    tag('bDirs', `${S.R} × ${2 * S.R}`, false); tag('bSteps', String(S.G), false);
+    $('uDial').style.display = S.place ? '' : 'none'; $('bPlay').style.display = S.place ? '' : 'none'; $('bLines').style.display = S.place ? 'none' : '';
+    $('hH').value = S.h; $('hHo').textContent = Math.pow(2, S.h).toPrecision(3);
+    $('uU').value = S.u; $('uUo').textContent = S.u.toFixed(2);
+    $('full').textContent = document.fullscreenElement ? 'leave full screen' : 'full screen';
+    numbers();
+}
+function numbers() {
+    if (!S.show.numbers) return;
+    const c = C.counts(), f = v => v.toFixed(3);
+    const b = c.bands.map(x => `  ${x.to === Infinity ? `past ${x.from} thumbs` : x.from === 0 ? 'within one thumb' : `${x.from} to ${x.to} thumbs`}`.padEnd(19) +
+        ` ${f(x.counted)} counted, ${f(x.exact)} exact`).join('\n');
+    $('numbers').innerHTML =
+        `<b>H, the thumb</b> ${c.H.toPrecision(3)} (the hemisphere's radius 1)\n` +
+        `${c.directions} directions (${S.R} rings of equal share × ${2 * S.R} equal turns) × ${c.steps} steps = ${c.N.toLocaleString()} points\n\n` +
+        `<b>half within one thumb</b>: ${c.inThumb.toLocaleString()} of ${c.N.toLocaleString()} (${(100 * c.nearShare).toFixed(1)}%), at every H\n` +
+        `<b>the shells</b>, shares of the points:\n${b}\n` +
+        `  (counted on ${c.steps} steps of g; exact: (2/π)·atan, the even law)\n\n` +
+        `<b>per ratio of distance</b>: ½·sech(ln(d/H)), most at one thumb, alike at d and H²/d\n` +
+        `<b>per unit of volume</b>: ∝ H/(d²(H² + d²)): 1/d² near the eye, H/d⁴ far\n` +
+        `the farthest point drawn: ${c.farthestThumbs.toFixed(1)} thumbs out (g = ${f(c.farthestG)}); the horizon, g = 1, never\n\n` +
+        `<b>the heat</b> (each point's colour): cos³α · sech(ln(d/H))\n` +
+        (S.flat ? `<b>the flat screen</b> at one thumb: directions per unit of screen, ring by ring, against cos³α:\n` +
+            C.flatScreen().rings.slice(0, 6).map(r => `  ${r.perArea.toFixed(3)} against ${r.cos3.toFixed(3)}`).join('\n') + '\n' : '') +
+        `\nmove H: the cloud ${S.place ? 'and the drawn hemisphere grow' : 'grows'} with it; the hemisphere's points ${S.place ? 'keep their places in thumbs' : 'stay put'}`;
+}
+function showIt(k, on = !S.show[k]) { S.show[k] = on; if (k === 'about' && on) $('menu').classList.remove('open'); syncMenu(); }
+for (const b of document.querySelectorAll('#menu [data-show]')) b.onclick = () => showIt(b.dataset.show);
+$('menuBtn').onclick = () => $('menu').classList.toggle('open');
+$('aboutX').onclick = () => showIt('about', false);
+$('full').onclick = () => { const d = document; if (d.fullscreenElement) d.exitFullscreen(); else d.documentElement.requestFullscreen?.().catch(() => {}); };
+if (!document.documentElement.requestFullscreen) $('full').style.display = 'none';
+document.addEventListener('fullscreenchange', syncMenu);
+addEventListener('keydown', ev => { if (ev.key === 'Escape') { if (S.show.about) showIt('about', false); else $('menu').classList.remove('open'); } });
+$('hH').oninput = e => { C.set({ h: +e.target.value }); syncMenu(); };
+$('uU').oninput = e => { C.set({ u: +e.target.value, play: false }); syncMenu(); };
+$('bPlace').onclick = () => { C.set({ place: !S.place }); syncMenu(); };   // the frame loop reframes on the change
+$('bPlay').onclick = () => { C.set({ play: !S.play }); syncMenu(); };
+$('bLines').onclick = () => { C.set({ lines: S.lines === 'slice' ? 'all' : S.lines === 'all' ? 'none' : 'slice' }); syncMenu(); };
+$('bShells').onclick = () => { C.set({ shells: !S.shells }); syncMenu(); };
+$('bFlat').onclick = () => { C.set({ flat: !S.flat }); syncMenu(); };
+$('bDirs').onclick = () => { C.set({ R: S.R === 8 ? 12 : S.R === 12 ? 16 : 8 }); syncMenu(); };
+$('bSteps').onclick = () => { C.set({ G: S.G === 8 ? 16 : S.G === 16 ? 32 : 8 }); syncMenu(); };
+syncMenu();
+
+const canvas = $('stage');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); } catch (e) { renderer = null; }
+if (!renderer) $('nogl').style.display = 'grid';
+else {
+hook.webgl = true;
+renderer.setPixelRatio(Math.min(2, devicePixelRatio));
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x05060b);
+const camera = new THREE.PerspectiveCamera(42, 1, 0.005, 2000);
+const controls = new OrbitControls(camera, canvas); controls.enableDamping = true;
+canvas.addEventListener('pointerdown', () => $('menu').classList.remove('open'));
+$('bFrame').onclick = () => frameView();
+
+const STOPS = [[0, 0x141826], [0.12, 0x3b2a6e], [0.3, 0x2b7fa0], [0.55, 0x4fd1c5], [0.8, 0xf2c14e], [1, 0xfff6d8]].map(([t, c]) => [t, new THREE.Color(c)]);
+function ramp(t, out) { t = Math.max(0, Math.min(1, t));
+    for (let i = 1; i < STOPS.length; i++) if (t <= STOPS[i][0]) { const [a, ca] = STOPS[i - 1], [b, cb] = STOPS[i];
+        return out.copy(ca).lerp(cb, (t - a) / (b - a)); } return out.copy(STOPS[STOPS.length - 1][1]); }
+const dotTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 64; const x = c.getContext('2d');
+    const gr = x.createRadialGradient(32, 32, 0, 32, 32, 30); gr.addColorStop(0, '#fff'); gr.addColorStop(0.7, '#fff'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+    x.fillStyle = gr; x.beginPath(); x.arc(32, 32, 30, 0, 2 * Math.PI); x.fill(); return new THREE.CanvasTexture(c); })();
+
+// The layout. Side by side: the hemisphere (radius 1) below, its centre HC, looking up; the cloud's eye at the origin,
+// looking up, above it. In place: both from the origin, the hemisphere drawn at radius 2H (one thumb one radius in both),
+// and every point slides along its ray from A·g to H·tan(πg/2), on the logarithm of its distance, as u goes 0 → 1.
+const HC = new THREE.Vector3(0, -1.75, 0);
+let pts = [], P = null, Q = null, L = null, furn = new THREE.Group(); scene.add(furn);
+let builtKey = '', labelList = [];
+const labels = $('labels');
+
+function clearGroup(G) { for (const o of [...G.children]) { G.remove(o); o.geometry && o.geometry.dispose(); o.material && o.material.dispose(); } }
+function wire(G, pts, color, opacity, dashed) {
+    const geo = new THREE.BufferGeometry().setFromPoints(pts);
+    const mat = dashed ? new THREE.LineDashedMaterial({ color, transparent: true, opacity, dashSize: 0.06, gapSize: 0.05 })
+        : new THREE.LineBasicMaterial({ color, transparent: true, opacity });
+    const l = new THREE.Line(geo, mat); if (dashed) l.computeLineDistances(); G.add(l); return l;
+}
+// a shell: two half great circles through the look and its rim circle, centred at O, radius r
+function shell(G, O, r, color, op, dashed) {
+    const on = (th, ph) => new THREE.Vector3(O.x + r * Math.sin(th) * Math.cos(ph), O.y + r * Math.cos(th), O.z + r * Math.sin(th) * Math.sin(ph));
+    for (const ph of [0, Math.PI / 2]) { const a = []; for (let t = -90; t <= 90; t += 3) a.push(on(t * Math.PI / 180, ph)); wire(G, a, color, op, dashed); }
+    const rim = []; for (let t = 0; t <= 360; t += 4) rim.push(on(Math.PI / 2, t * Math.PI / 180)); wire(G, rim, color, op * 0.8, dashed);
+}
+const ease = t => t < 0.5 ? 2 * t * t : 1 - 2 * (1 - t) * (1 - t);
+// where a point is drawn: its hemisphere place and its cloud place
+function places(p) {
+    const H = C.Hof();
+    if (!S.place) {
+        return { a: [HC.x + p.g * p.u[0], HC.y + p.g * p.u[1], HC.z + p.g * p.u[2]], b: p.u.map(v => v * p.d) };
+    }
+    const A = 2 * H, r0 = A * p.g, r1 = p.d, t = ease(S.u), r = Math.exp((1 - t) * Math.log(r0) + t * Math.log(r1));
+    return { a: p.u.map(v => v * r0), b: p.u.map(v => v * r), r0 };
+}
+
+function build() {
+    pts = C.points(); const H = C.Hof(), col = new THREE.Color();
+    const ap = [], bp = [], cl = [], lp = [], lc = [];
+    for (const p of pts) {
+        ramp(0.12 + 0.88 * p.heat, col); p.col = col.clone();
+        const { a, b } = places(p); p.a = a; p.b = b;
+        ap.push(...a); bp.push(...b); cl.push(col.r, col.g, col.b);
+        if (!S.place && (S.lines === 'all' || (S.lines === 'slice' && p.slice))) {
+            // a line to a far point fades with its distance past four thumbs, so the horizon's streaks do not fill the screen
+            const f = Math.min(1, 4 / p.thumbs); lp.push(...a, ...b); lc.push(col.r, col.g, col.b, col.r * f, col.g * f, col.b * f); }
+    }
+    for (const o of [P, Q, L]) if (o) { scene.remove(o); o.geometry.dispose(); o.material.dispose(); }
+    const mk = (pos, size) => { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+        g.setAttribute('color', new THREE.Float32BufferAttribute(cl, 3));
+        return new THREE.Points(g, new THREE.PointsMaterial({ size, map: dotTex, vertexColors: true, transparent: true, alphaTest: 0.2, sizeAttenuation: true })); };
+    const n = pts.length, sz = 0.045 * Math.sqrt(4608 / n);
+    P = mk(ap, sz); Q = mk(bp, sz * (S.place ? Math.max(0.5, 2 * H) : 1));
+    P.visible = !S.place;            // in place the cloud's points are the moving ones; the hemisphere stays as furniture
+    const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(lp, 3)); lg.setAttribute('color', new THREE.Float32BufferAttribute(lc, 3));
+    L = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: S.lines === 'all' ? 0.07 : 0.28, depthWrite: false }));
+    scene.add(L, P, Q);
+
+    clearGroup(furn); labelList = [];
+    const O = new THREE.Vector3(0, 0, 0), A = S.place ? 2 * H : 1, HO = S.place ? O : HC;
+    shell(furn, HO, A, 0xc3c8d6, S.place ? 0.25 : 0.5, false);                       // the hemisphere's rim: the horizon
+    wire(furn, [HO.clone(), HO.clone().add(new THREE.Vector3(0, 1.08 * A, 0))], 0xf2c14e, 0.6);   // the look
+    if (!S.place) wire(furn, [O.clone(), new THREE.Vector3(0, 1.0, 0)], 0xf2c14e, 0.6);
+    if (S.shells) {
+        if (!S.place) { shell(furn, HC, 0.5, 0xf2c14e, 0.7, true); for (const m of [2, 4, 8]) shell(furn, HC, C.g(m * H), 0xa78bfa, 0.4, true); }
+        shell(furn, O, H, 0xf2c14e, 0.8, true);
+        for (const m of [2, 4, 8]) shell(furn, O, m * H, 0xa78bfa, 0.45, true);
+    }
+    if (S.flat) {
+        // a flat screen square to the look one thumb out, each direction's crossing marked
+        const fs = C.flatScreen(), w = 3 * H, sq = [[-w, -w], [w, -w], [w, w], [-w, w], [-w, -w]].map(([x, z]) => new THREE.Vector3(x, H, z));
+        wire(furn, sq, 0x4fd1c5, 0.6, false);
+        const fp = []; for (const h of fs.hits) fp.push(h[0], h[1], h[2]);
+        const fg = new THREE.BufferGeometry(); fg.setAttribute('position', new THREE.Float32BufferAttribute(fp, 3));
+        furn.add(new THREE.Points(fg, new THREE.PointsMaterial({ size: 0.6 * sz * Math.max(0.5, 2 * H), map: dotTex, color: 0x4fd1c5, transparent: true, alphaTest: 0.2 })));
+        labelList.push({ text: 'a flat screen one thumb out', p: new THREE.Vector3(w, H, w) });
+    }
+    const e = new THREE.Mesh(new THREE.SphereGeometry(0.03, 16, 12), new THREE.MeshBasicMaterial({ color: 0xffffff }));
+    furn.add(e); if (!S.place) { const e2 = e.clone(); e2.position.copy(HC); furn.add(e2); }
+    if (!S.place) {
+        labelList.push({ text: 'the read, laid evenly: the hemisphere', p: HC.clone().add(new THREE.Vector3(0, -0.22, 1.05)) });
+        labelList.push({ text: 'the same points, uncompressed', p: new THREE.Vector3(0, 8.4 * H, 0) });
+    } else labelList.push({ text: S.u < 0.02 ? 'compressed: the hemisphere' : S.u > 0.98 ? 'uncompressed' : 'uncompressing', p: new THREE.Vector3(0, -0.15 * A, 1.1 * A) });
+    if (S.shells) { labelList.push({ text: 'one thumb', p: new THREE.Vector3(H * 0.75, H * 0.75, 0) });
+        labelList.push({ text: '2, 4, 8 thumbs', p: new THREE.Vector3(8 * H * 0.72, 8 * H * 0.72, 0) }); }
+    builtKey = key(); numbers();
+}
+const key = () => [S.h, S.R, S.G, S.lines, S.shells, S.flat, S.place, S.place ? S.u.toFixed(4) : 0].join(',');
+
+// the view frames both (side by side) or the one eye (in place), and follows the thumb in place
+function frameView() {
+    const H = C.Hof(), narrow = innerWidth < innerHeight;
+    if (!S.place) { const top = Math.min(9 * H, 6), mid = (top + HC.y - 1) / 2, span = top - HC.y + 1.3;
+        const dist = span / (2 * Math.tan(21 * Math.PI / 180)) * (narrow ? 1.5 : 1.05);
+        controls.target.set(0, mid, 0); camera.position.set(dist * 0.3, mid + dist * 0.22, dist * 0.93); }
+    else { const R = 9 * H, dist = R / Math.tan(21 * Math.PI / 180) * (narrow ? 1.25 : 0.95);
+        controls.target.set(0, 2.5 * H, 0); camera.position.set(dist * 0.35, 2.5 * H + dist * 0.4, dist * 0.85); }
+    camera.near = 0.002; camera.far = 4000; camera.updateProjectionMatrix();
+}
+
+// point at a point (when the menu says so): its line and its numbers
+const tip = $('tip'); let hoverLine = null;
+canvas.addEventListener('pointermove', ev => {
+    if (hoverLine) { scene.remove(hoverLine); hoverLine.geometry.dispose(); hoverLine.material.dispose(); hoverLine = null; }
+    if (!S.show.tip) { tip.classList.remove('open'); return; }
+    const r = canvas.getBoundingClientRect(), mx = ev.clientX - r.left, my = ev.clientY - r.top, v = new THREE.Vector3();
+    let best = null, bd = 10;
+    for (const p of pts) for (const pos of S.place ? [p.b] : [p.a, p.b]) { v.set(...pos).project(camera); if (v.z > 1) continue;
+        const dd = Math.hypot((v.x + 1) / 2 * r.width - mx, (1 - v.y) / 2 * r.height - my); if (dd < bd) { bd = dd; best = p; } }
+    if (!best) { tip.classList.remove('open'); return; }
+    hoverLine = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(...best.a), new THREE.Vector3(...best.b)]),
+        new THREE.LineBasicMaterial({ color: 0xffffff, depthTest: false })); hoverLine.renderOrder = 10; scene.add(hoverLine);
+    const x = best.thumbs;
+    tip.classList.add('open'); tip.style.left = (ev.clientX + 14) + 'px'; tip.style.top = (ev.clientY + 10) + 'px';
+    tip.textContent = `${best.alpha.toFixed(1)}° off the look\nlaid at g = ${best.g.toFixed(3)}\n` +
+        (x < 1 ? `uncompressed: ${x.toFixed(2)} of a thumb out` : `uncompressed: ${x.toFixed(2)} thumbs out (one in ${x.toFixed(1)})`) +
+        `\nheat ${best.heat.toFixed(3)}`;
+});
+canvas.addEventListener('pointerleave', () => tip.classList.remove('open'));
+
+function placeLabels() {
+    labels.innerHTML = ''; if (!S.show.labels) return;
+    camera.updateMatrixWorld(); const r = canvas.getBoundingClientRect(), v = new THREE.Vector3();
+    for (const l of labelList) { v.copy(l.p).project(camera); if (v.z > 1) continue;
+        const sp = document.createElement('span'); sp.textContent = l.text;
+        sp.style.left = ((v.x + 1) / 2 * r.width) + 'px'; sp.style.top = ((1 - v.y) / 2 * r.height) + 'px'; labels.appendChild(sp); }
+}
+function resize() { const w = innerWidth, h = innerHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+addEventListener('resize', resize); resize();
+let lastCam = '', labelsKey = '', lastT = performance.now(), lastH = S.h, lastPlace = S.place;
+function frame(now) { requestAnimationFrame(frame);
+    const dt = Math.min(0.1, (now - lastT) / 1000); lastT = now;
+    if (S.play && S.place) { S.dir = S.dir || 1; let u = S.u + S.dir * dt / 3; if (u >= 1) { u = 1; S.dir = -1; } if (u <= 0) { u = 0; S.dir = 1; }
+        S.u = u; $('uU').value = u; $('uUo').textContent = u.toFixed(2); }
+    if (S.place && S.h !== lastH) { const f = Math.pow(2, S.h - lastH); camera.position.multiplyScalar(f); controls.target.multiplyScalar(f); }
+    if (S.place !== lastPlace) frameView();
+    lastH = S.h; lastPlace = S.place;
+    controls.update();
+    if (key() !== builtKey) build();
+    const cam = camera.position.toArray().map(v => v.toFixed(4)).join() + S.show.labels + builtKey;
+    if (cam !== lastCam) { placeLabels(); lastCam = cam; }
+    renderer.render(scene, camera); hook.frames++; }
+frameView(); build(); requestAnimationFrame(frame);
+}
+</script>
+</body>
+</html>
