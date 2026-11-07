@@ -7366,9 +7366,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   over a ball, not the window's cube, so its corners do not weigh in; looking along a lattice row puts the rows into the
   counts (straight up, the equal-share rim ring got none within 12). Kept alongside: each dot laid by its distance too,
   A·(2/π)·atan(d/H), the endless cube inside a bounded hemisphere, the window's dots reaching 0.879 of the radius at its
-  corners and the rest landing from 0.810 to the rim (H = 4, window 12). Reviewed by four readers and a skeptic each; eleven
-  findings taken (the HUD's partition of the window and the rest, the phone layout, which dots are joined, the across axis
-  at the pole, the writer's amounts under scaling, hidden dots drawn black, a stale paragraph).
+  corners and the rest landing from 0.810 to the rim (H = 4, window 12). Reviewed by four readers and a skeptic each; of eleven
+  findings confirmed, ten taken (the HUD's partition of the window and the rest, the phone layout, which dots are joined,
+  the lattice's rows, the across axis at the pole, the writer's amounts under scaling, hidden dots drawn black, a stale
+  paragraph, the desktop framing, the records); the eleventh, dots exactly on the look all in one spoke, is avoided by the
+  slanted default, not fixed.
 - **R732** (7 Nov; Tom: "what happend to the cube.   we could show the cauchy in the non-compressed cube form."): the
   reader's view of `heat-cube.html` had shown the cube only compressed (Lambert's equal-area map about the look), where the
   box's edges bend and its rim closes at √2. It now opens on a flat screen square to the look, the pinhole's F·tan α: the
