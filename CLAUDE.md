@@ -259,6 +259,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   &heat=0|chart&lines=0&dots=0&over=line|spiral&p=<log2>&f=&a=&yaw=&pitch=&boost=1&al=&be=&loop=1&syaw=&spitch=&th=&n=
   &labels=1&numbers=1&about=1`; hook `window.__euler` (`toEuler`, `toLay`, `heat`, `chartHeat`, `sphere`, `overlay`, `mirror`,
   `points`, `lines`, `reads`, `space`, `set`, `state`, `menu`, `frames`). Keep new text on this page behind the menu. Not in the flying page.
+  R739 (7 Nov; Tom: "update the essays and papers"): R736–R738 in *Reads and Writes* §6 ("Euler's plane, and the thumb's
+  lay as a turn"), §7 ("The heat depends on what it is counted per"; the small loop α·β) and Code and data, and in essays
+  2 §9, 4 §9, 7 §7, 13 §4 and 17 §7, with `euler.html` among those essays' demos on `essays.html`.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

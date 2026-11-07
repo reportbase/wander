@@ -621,6 +621,24 @@ puts more of the world past the held edge; a large H does the reverse. No H hold
 the one that puts it at the corner, where the reader's relative grain is finest. That is why the corner follows the
 focus: what is looked at is drawn one thumb wide.
 
+**Euler's plane, and the thumb's lay as a turn.** The writer's notation ln(z/H) = ln(d/H) + iθ (§5) can be drawn as one
+plane, the direction up and the distance across, the distance read as a ratio of thumbs. On it a turn of the world
+slides every point up or down, and scaling the world, or the thumb, slides every point across; nothing else moves. The
+writer's shells at one, two, four and eight thumbs are evenly spaced lines. The two corners are the two mirrors, θ = 45°
+and one thumb out. Every straight line of the writer's is the same curve, u = ln(p/H) − ln cos(θ − φ₀), moved, and half
+a turn wide; a logarithmic spiral is a straight line. The overlay's own lay of distance, g = (2/π)·arctan(d/H), is on that
+plane ½ + gd(ln(d/H))/π, gd the Gudermannian, Mercator's function: distance laid by the thumb is itself a turn. A
+writer can draw why. Put the plane on a sphere stereographically, scaled so that one thumb lands on its equator. The eye
+is one pole and the horizon the other; the near field is the eye's half and the far field the other half; g is the angle
+from the eye's pole over π. Euler's plane is that sphere's Mercator chart, the lay drawn square its chart of plain
+latitude and longitude, and the lay drawn as a quarter disc its map out from the eye; d → H²/d is the reflection in the
+equator, and sech(ln(d/H)) is the cosine of the latitude. Turning the world turns the sphere about its axis. Taking the
+thumb k times larger slides every latitude toward the eye's pole, tan(χ′/2) = tan(χ/2)/k: the boost of rapidity ln k that
+§3's moving sky applies to directions, here applied to distance. The two motions commute, which is why both are slides on
+Euler's plane, and Jaynes's dθ·dκ/κ, the measure that suits the reader's two ignorances, is that plane's area. The sphere
+is the writer's drawing: its own even measure, area, is not the read's, which per unit of the sphere's area runs as
+1/sin χ, χ the angle from the eye's pole. (Checked to thirty digits; `euler.html` draws all of it.)
+
 **Drawing a shape: the circles, a height, a step toward the detail.** A closed outline about a centre can be written as
 circles on circles, epicycles: its Fourier series, each term a circle turning a whole number of times a lap. Those are
 the turns of one standpoint at the centre, evenly. The Cauchy draws with the same circles two ways. Seen from a height
@@ -840,6 +858,15 @@ there only because the look points at it. Look at something else and both go wit
 shape: the shape is still the hemisphere, and the heat is how its directions crowd as the reader reads it. (A writer can
 sample it, K places at its quantiles, §6.) *The heat is given; the paint is met.*
 
+**The heat depends on what it is counted per.** Neither heat is the read's alone; each is the read's even measure counted
+per unit of some coordinate. Per unit of turn the direction has no heat; per unit of the reading s = v/h it falls as
+cos²θ, and per unit of a flat screen in space as cos³α. Per unit of the thumb's lay g the distance has no heat either; per
+unit of ln(d/H) it is the sech above, and per unit of the writer's plane it runs without bound at the eye. The lay drawn
+square, g across and the turn up, is the one chart on which the read is flat both ways, every place the same room (§6,
+"Euler's plane, and the thumb's lay as a turn"). The product above counts direction per unit of reading and distance per
+unit of ratio: a definition, the one that puts the hot spot on the thing looked at, not a heat that any chart gives of
+itself.
+
 The heat is not a grid seen from home. Marks laid evenly on a wall one distance d away, the writer's grid, are flat in
 the reading (y = d·s, area d²·da·db) and, per unit of angle, crowd toward the horizon as sec²θ in the plane and sec³α in
 space; nothing in them is hottest along the look. The Cauchy is the other way round: the turn, even in angle, laid on that
@@ -894,7 +921,9 @@ under a Möbius map, harmonic measure, the powers of the standpoint, and the two
 and turns of space do not commute. They come apart into three laws: harmonic measure keeps the powers of the standpoint
 and its mean; the spherical Cauchy, the uniform turn pushed through a boost, keeps the Möbius maps; and neither is the
 image of the other. A quarter turn about one axis and then another ends 120° away from the same two taken in the other
-order, where in the plane any two turns commute. What survives is the split between direction and payload, heat and
+order, where in the plane any two turns commute. Round a small loop, a turn α about one thumb, β about the other and both
+back, a thing comes home turned about nearly the third thumb by about α·β, the area the loop encloses (1.741° at 10° and
+10°, against α·β = 1.745°); in the plane the same loop leaves nothing. What survives is the split between direction and payload, heat and
 paint, the corners, and the wedge seen from home: the second test still sorts every quantity, and every pair of thumbs
 still has its corner at the median, since those need only the exchange of two shares, not commuting turns (the essays'
 thirteenth works this through).
@@ -1189,7 +1218,8 @@ swept whole against each thumb on its own in `plans/swp-plan.md` and `runs/swp/`
 reader stands, in `read.html`; the heat on a flat screen and a lens's cos⁴ against it in `pinhole.html` (its uniform
 sky); the tunnel laid by its heat, the distance reading and a world culled by K in `crosshairs.html`; a cube of dots coloured
 by one read's heat, laid as the read lays it and seen from the eye, in `heat-cube.html`; Euler's formula as
-a count of reads in `plans/elm-plan.md` and `runs/elm/`. The three cases in data of §11 (LIGO, the quasar dipole, single
+a count of reads in `plans/elm-plan.md` and `runs/elm/`; Euler's plane, the thumb's lay as a turn, the writer's sphere
+behind both, the heat counted per chart and two turns of space in `euler.html`. The three cases in data of §11 (LIGO, the quasar dipole, single
 photons) are `plans/lgo-plan.md`, `plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and
 `runs/wvp/`: each plan states its predictions and what would count against them before its run, and records the runs as
 they came out, the killed ones too. They illustrate the sorting of direction from payload; none of them alone

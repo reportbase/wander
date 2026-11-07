@@ -217,6 +217,14 @@ hottest at one thumb and cooling alike both ways: 0.8 of the peak at one in two 
 and four, 0.25 at one in eight and eight. It never reaches zero, and it is the same law as the first map, the half-Cauchy,
 read along distance instead of across directions.
 
+Both bells are counts per unit of something, and change with it. Per unit of turn the first map is flat; it is cos²θ
+only per unit of the reading. Per unit of the thumb's lay, (2/π)·arctan(d/H), the second is flat too; it is sech only per
+unit of ln(d/H). A writer who wraps the plane onto a sphere with one thumb on its equator sees why: the lay is the
+latitude drawn evenly, sech(ln(d/H)) is the cosine of the latitude, and the logarithm is Mercator's chart of the same
+sphere, which stretches it (`euler.html`). No chart gives the heat of itself; the lay drawn square, turn against lay, is
+where the read is flat both ways, and the product below is a choice of counts, the one that puts the hot spot on the thing
+looked at.
+
 Multiply the two maps and the result is hottest at one point: on the look, one thumb out, the thing looked at. They meet
 there only because the look points at it. Look at something else and both go with it.
 

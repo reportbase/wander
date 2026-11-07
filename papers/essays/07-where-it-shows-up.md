@@ -353,6 +353,13 @@ colours. That is still a reading, needing no rest frequency, but no longer of di
 factor as a frequency, a shift of a spectral line, needs the line's rest frequency carried in, a known kind of atom: a
 writing.
 
+**The thumb moved is the same slide.** The near and far fields slide the same way. Wrap the reader's plane of
+distances onto a sphere so that one thumb lands on its equator (a writer's drawing): the eye is one pole, the horizon the
+other. Then taking the thumb k times larger is z ↦ z/k again, a boost of rapidity ln k along that sphere's axis, every
+latitude sliding toward the eye's pole, and the logarithm of the distance in thumbs slides by ln k exactly. Turning the
+world turns the same sphere about its axis. The split of near from far moves under the thumb as the moving sky's
+directions move under a boost (`euler.html`, "the writer's sphere").
+
 The `boost-sky.html` demo shows the slide. A sky drawn on the axis ξ moves bodily by η as the boost grows, and the
 directions sampled from it follow the slide with no table rebuilt.
 

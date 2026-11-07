@@ -158,12 +158,15 @@ thumb up to the mountain) and azimuth (round from H to V₂), are each the turn 
 adding angles, still has its corner at 45°, still lays a half-Cauchy over its quarter turn. What fails is putting them
 together: a sweep in altitude then a sweep in azimuth is not the same motion as the two in the other order, and the wedge's
 demo makes the point by its own design. `wedge.html` step 7 places the wedge first and sweeps second ("position, then
-sweep"), because the other order would give another wedge.
+sweep"), because the other order would give another wedge. `euler.html`'s "in space" sets the two side by side: on the
+logarithm's plane a turn and a scaling, in either order, land on one point; on the sphere a thing with a small frame on it,
+turned a quarter about one thumb and a quarter about another, lands 120° away from the same two in the other order.
 
 The leftover has a size. Carry a direction round a closed loop on a sphere, keeping it as straight as the surface allows,
 and it comes back turned, by exactly the solid angle the loop encloses (Gauss and Bonnet). In the plane it comes back
 unturned, whatever the loop: the plane's turns commute, and there is nothing left over. The quarter turns of the book are
-that leftover in its largest form. Physics meets it as Berry's geometric phase (1984): a spin carried slowly round a loop
+that leftover in its largest form. For small turns it is the area itself: a turn α about one axis, β about another and
+both back leaves a turn of about α·β about the third (1.741° for 10° and 10°, against α·β = 1.745°). Physics meets it as Berry's geometric phase (1984): a spin carried slowly round a loop
 of field directions comes back with a phase of half the loop's solid angle, set by the directions visited and by nothing
 else, not the field's strength, not the speed, not the size of the apparatus (the third essay, section 10). It is a
 quantity of directions alone in the strict sense, heat and not paint, and it exists only because space, unlike the plane, does not let its turns be
