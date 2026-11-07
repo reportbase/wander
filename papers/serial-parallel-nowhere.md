@@ -7352,6 +7352,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R747** (7 Nov; Tom: "proceed", to the essay 13 explainer, the first of the options offered after R746): essay 13's
+  explainer, draw's `explained.html?x=special` (reportbase/draw#63, the animated gallery's `special` tile), six beats: a
+  standpoint above a line, an even turn and released walkers landing alike, carried together by a new zero and thumb; a
+  reader at half the radius in a circle, 2L less the uniform carried onto harmonic measure, its mean the standpoint; one
+  curve in the plane, three on the sphere at r = ½ (harmonic measure 6, 2L − U 7, the Möbius law 9 times the uniform at
+  the axis; the nearest Möbius law 5.2% of the peak off); two books given the same quarter turns in the two orders, 120°
+  apart; an arrow carried round the octant's loop, home turned 90°; and what survives (a flat wall where the turn and the
+  walker agree, a ball where they part, 0.482 against 0.359 within 45°, the wedge's corners and third). Every number
+  checked before drawing. A card on `explainers.html` (essay 13 off the not-yet list), a link on essay 13's card.
 - **R746** (7 Nov; Tom: "proceed", after "what did you learn"): essay 18's explainer, draw's
   `explained.html?x=plane` (reportbase/draw#62, the animated gallery's `plane` tile), six beats: a map under two fingers
   (k·e^(iα), ln k + iα); a writer's grid carried onto Euler's plane; a thing turned then scaled and scaled then turned,
