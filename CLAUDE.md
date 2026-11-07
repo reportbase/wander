@@ -272,7 +272,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and spin; nothing in space). R742 (7 Nov; Tom: "trig is a writers tool or reader activity. writer uses N and both
   hemispheres to describe the reader that uses neither."): **trigonometry is the writer's tool, not a reader's activity**
   (the places read counted, both hemispheres of the turn held), after draw's *The Tangent Bridge* (proved in the angle
-  chart, run in the slope chart); *Reads and Writes* §1, essays 10 and 14. Generalizes R584, R658, R717.
+  chart, run in the slope chart); *Reads and Writes* §1, essays 10 and 14. Generalizes R584, R658, R717. R743 (7 Nov):
+  `plans/flags-r742.md` (the papers' remaining reader angles, listed, unchanged) and FLC (`plans/flc-plan.md` +
+  `runs/flc/flc.py`, nothing killed): in space the log-polar cylinder ℝ × S² keeps scaling a slide commuting with every
+  turn, Lambert × the lay keeps the read's measure flat under every turn, but no flat chart makes turns rigid (stretch
+  1/cos(φ/2) at the old look, up to 2 at a quarter turn); the plane's one chart splits.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

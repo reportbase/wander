@@ -7352,6 +7352,22 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R743** (7 Nov; Tom: "whats next", then "proceed", to a check of trigonometry in the papers after R742 and the space
+  counterpart of the flat chart): (1) `plans/flags-r742.md` lists, unchanged, the places *Reads and Writes* and the essays
+  still give the reader an angle or an arctangent: the step ε named an angle (*Reads and Writes* §8, essay 6 §5), a
+  survey's "angles read" (§11, essays 1 and 6), the thing itself as H by 1/(2·tan(α/2)) (§8), the turn index
+  ⌊K·(2/π)·arctan(v/h)⌋ as the reader's (essay 10 §2), the hyperbolic angle as the reader's lay (essays 4, 8); proposed
+  wording for each, none changing a number; Tom to rule. (2) FLC (`plans/flc-plan.md` + `runs/flc/flc.py`), predictions
+  first, run 1 exact or seeded, nothing killed: the log-polar map is conformal onto the cylinder ℝ × S² (7·10⁻²³);
+  scaling a slide in u commuting with every turn of space (1.4·10⁻¹⁵); Lambert's azimuthal equal-area map about the look
+  crossed with the thumb's lay carries the read's measure flat (density 1/(2π); 4,096 cells, worst 3.52 standard
+  errors), and every turn keeps that area (det 1 to 10⁻¹⁷); but no turn off the look is rigid there: a turn of the look
+  by φ stretches the old look by 1/cos(φ/2) and the directions square to both looks by the largest singular value of
+  [[cos φ, −½ sin φ], [2 sin φ, cos φ]], 2 at a quarter turn, never more over both hemispheres; the stereographic chart
+  keeps turns' angles but not the heat (¼ at the rim); no chart both (Gauss; Euler 1777; 0 of 2,000 seeded charts). So
+  in space R740's "writing across" survives whole and the measure lies flat, but reading has no straight "up": the
+  plane's one chart splits because ℝ × S¹ is flat and ℝ × S² is not. Classical pieces; the reading ours. Not yet in the
+  papers or essays (essay 18 §9 "Where it stops" and *Reads and Writes* §1 "One plane" are where it would go).
 - **R742** (7 Nov; Tom: "I think the tb_algebra paper makes a useful point, trig is a writers tool or reader activity.
   writer uses N and both hemispheres to describe the reader that uses neither.", then "ok"): **trigonometry is the
   writer's tool, not a reader's activity**: the writer counts the places read (the Tangent Bridge's N leaves, wander's K
