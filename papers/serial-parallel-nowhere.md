@@ -7352,6 +7352,25 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R750** (7 Nov; Tom: "1,2,3,4", to explainers for essays 15, 8, 11 and 9): four more of draw's scrolling explainers,
+  so every essay now has one. Essay 15's, `explained.html?x=writer`: Bernoulli's bank, (1 + 1/n)ⁿ climbing toward e, every
+  stage a fraction; Machin's rays, 1/5 composed four times by tangent addition less 1/239 landing exactly on the corner,
+  Madhava's sums zigzagging about π/4; the turn coming home against a scale that never does; (1 + iπ/n)ⁿ toward −1; ratios
+  met and not made; Math.PI = 884279719003555/2⁴⁸, π 0.276 of a gap past it. Essay 8's, `?x=free`: a dial pushed in ζ
+  against a scrollbar; sixteen depth steps three ways (the standard buffer, log depth, the turn about a focus); a flat
+  screen's equal pixels against the grid laid by turn (a corner cell 1/5.2 against √2); Math.floor's cell against the soft
+  cut (DYH run 2); a hash's circle against restacking (4 keys move against 21 of 24); the Kalman pair about √(qr). Essay
+  11's, `?x=order`: a stream through an unknown gain; one slot and its corner; the unit rule seeking (13 moves in 80
+  looks); a median settling near 10 while the mean wanders past 40; a tide of two sines made for the picture (not NOAA's
+  record), the unit rule's turns at highs and lows, a trend rule's at inflections; the turns unmoved by feet, datum and
+  cube. The essay's own figures are quoted, not recomputed (its streams are not in the runs). Essay 9's, `?x=paradox`:
+  each sees the other smaller (1/8 and 1/2); the exchange (½ and ¼); Simpson's paradox on Charig et al. 1986; the in-place
+  lay finite by length, endless by count; leading digits under no preferred scale (30.1% … 4.6%); the field scaled, the
+  readings unmoved and the metres moving. Cards on `explainers.html` (the not-yet list gone), links on the four essays'
+  cards (essay 11's "No demo yet." now the explainer). **Flagged, not changed:** essay 9 §4's "More points, less seen"
+  has the reader at the circle's centre seeing every point apart when N is small, but its formula (N/π)·arccos(εN/2π) is
+  CEI's side-on count of the visible half (`plans/cei-plan.md`), N/2 for small N; the explainer leaves it out. A fix
+  (the reader outside, side-on; every point of the half it faces seen apart) is Tom's to rule.
 - **R749** (7 Nov; Tom: "1,2", to explainers for essays 12 and 16): two more of draw's scrolling explainers
   (reportbase/draw#64). Essay 12's, `explained.html?x=array` (the animated gallery's `array` tile), six beats: ten slots,
   the writer's, each a share of the way that moves when the array grows; a reader two slots out from the foot, equal
