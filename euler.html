@@ -24,14 +24,25 @@
          the quarter disc (radius g, angle θ: the hemisphere's slice).
     Shown side by side, or one at a time sliding between them (each a unit box, positions blended). Colour: the heat,
     cos²(θ − 45°)·sech(ln(d/H)) (the plane's cos² about the look at the corner, times the thumb's sech).
+    The writer's sphere (`view=sphere`): the plane put on the Riemann sphere by the thumb, stereographically, one thumb its
+    equator, the eye the south pole, the horizon the north. The three charts are its maps: Euler's plane its Mercator chart,
+    the lay square its plate carrée, the quarter disc its azimuthal equidistant map from the eye; d → H²/d the reflection in
+    the equator; a turn of the world a turn about the axis, the thumb ×k a boost of rapidity ln k. The sphere is the
+    writer's drawing (R643, R717). Drag it to turn it.
+    The heat at each point (R702's, per unit of v/h in direction and of ln(d/H) in distance), or per unit of each chart
+    (`heat=chart`): the read's own measure, even by turn and even in 2·atan(d/H), over the chart's area; flat on the lay.
+    A straight line or a logarithmic spiral (`over=line|spiral`): on Euler's plane every line is one curve,
+    u = ln(p/H) − ln cos(θ − φ₀), moved; a spiral a straight line; each with its mirror in one thumb (a circle through
+    the eye, the spiral of opposite slope).
     A fourth view, n reads: (1 + iθ/n)ⁿ, each read one step of reading θ/n composed by tangent addition. The polygon
     closes on e^(iθ); its angle n·atan(θ/n) falls short by about θ³/(3n²), its length (1 + θ²/n²)^(n/2) grows by about
     θ²/(2n), a length no read sees (ELM, runs/elm/elm.py). The limit e^(iθ) is the writer's.
 
     Full screen, no words on the picture: everything with words or numbers is behind the menu (☰).
-    ?view=three|slide|reads&t=0..2&H=<log2 H>&k=<log2 k>&turn=<degrees>&R=8|16|32&lay=square|disc&heat=0&lines=0&dots=0
-     &th=<radians>&n=&labels=1&numbers=1&about=1
-    Hook window.__euler: toEuler(p), toLay(p), heat(d, θ), mirror(p), points(), lines(), reads(θ, n), set({…}),
+    ?view=three|slide|sphere|reads&t=0..2&H=<log2 H>&k=<log2 k>&turn=<degrees>&R=8|16|32&lay=square|disc&heat=0|chart&lines=0
+     &dots=0&over=line|spiral&p=<log2 grid units>&f=<degrees>&a=<slope>&yaw=&pitch=&boost=1&th=<radians>&n=&labels=1&numbers=1&about=1
+    Hook window.__euler: toEuler(p), toLay(p), heat(d, θ), chartHeat(chart, d, θ), sphere(p), overlay(), mirror(p),
+    points(), lines(), reads(θ, n), set({…}),
     state(), menu(), frames.
     -->
     <style>
@@ -78,17 +89,23 @@
     <div class="dial" id="tDial"><label for="tT">Cartesian → Euler's plane → the thumb's lay</label><input id="tT" type="range" min="0" max="2" step="0.005"><output id="tTo"></output></div>
     <button id="bPlay">slide through and back <span>off</span></button>
     <button id="bLay">the thumb's lay <span>a square</span></button>
+    <button id="bHeat">the heat <span>at each point</span></button>
     <div class="sec">the thumb and the world</div>
     <div class="dial"><label for="hH">H, the thumb (grid units)</label><input id="hH" type="range" min="-3" max="4" step="0.05"><output id="hHo"></output></div>
     <div class="dial"><label for="kK">scale the world</label><input id="kK" type="range" min="-3" max="3" step="0.05"><output id="kKo"></output></div>
     <div class="dial"><label for="rR">turn the world (degrees)</label><input id="rR" type="range" min="-45" max="45" step="0.5"><output id="rRo"></output></div>
+    <button id="bBoost">move the thumb in and out (a boost) <span>off</span></button>
+    <div class="sec">a line or a spiral</div>
+    <button id="bOver">draw <span>nothing</span></button>
+    <div class="dial ov"><label for="pP">its distance from the eye (grid units)</label><input id="pP" type="range" min="-2" max="4" step="0.05"><output id="pPo"></output></div>
+    <div class="dial ov"><label for="fF">it faces (degrees)</label><input id="fF" type="range" min="0" max="90" step="0.5"><output id="fFo"></output></div>
+    <div class="dial ov" id="aDial"><label for="aA">the spiral's slope on Euler's plane</label><input id="aA" type="range" min="-3" max="3" step="0.02"><output id="aAo"></output></div>
     <div class="sec">n reads</div>
     <div class="dial"><label for="thT">θ, the whole turn (radians)</label><input id="thT" type="range" min="0.05" max="3.1416" step="0.005"><output id="thTo"></output></div>
     <div class="dial"><label for="nN">n, the reads</label><input id="nN" type="range" min="1" max="64" step="1"><output id="nNo"></output></div>
     <div class="sec">the grid</div>
     <button id="bDots">points <span>on</span></button>
     <button id="bLines">grid lines <span>on</span></button>
-    <button id="bHeat">the heat <span>on</span></button>
     <button id="bR">grid <span>16 × 16</span></button>
     <div class="sec">words and numbers</div>
     <button data-show="numbers">the numbers <span>off</span></button>
@@ -115,9 +132,19 @@
     <p><b>The thumb's lay</b>: the distance axis squeezed by (2/π)·atan(d/H), which is (2/π)·atan of e^x: Mercator's own
     function, so the distance laid by the thumb is a turn too. The near field in proportion, the far bunched on the
     horizon's edge, never reached. As a quarter disc it is the hemisphere's slice.</p>
+    <p><b>The writer's sphere</b>: put the plane on a sphere so that one thumb is its equator (stereographically). The eye
+    is the south pole and the horizon the north. The three charts are its maps: Euler's plane is its Mercator chart, the
+    lay square its plain latitude and longitude, the quarter disc a map out from the eye. One thumb in or out is the
+    reflection in the equator. Turning the world turns the sphere about its axis; moving the thumb is a boost along it,
+    every latitude sliding toward a pole. The two commute, which is why both are slides on Euler's plane. The sphere is the
+    writer's drawing; the reader has the lay.</p>
+    <p><b>The heat depends on the chart</b>. Counted per unit of each chart's own area, the read is flat on the lay,
+    sech(ln(d/H)) on Euler's plane, endless at the eye on the Cartesian grid.</p>
+    <p><b>A line, a spiral</b>: on Euler's plane every straight line is the same curve moved, and a logarithmic spiral is a
+    straight line. Each is drawn with its mirror in one thumb: a line's is a circle through the eye.</p>
     <p><b>n reads</b>: (1 + iθ/n)ⁿ, θ turned in n reads composed. The polygon closes on e^(iθ), the writer's limit; its
     angle falls short by about θ³/(3n²), and its length grows by about θ²/(2n), a length no read sees.</p>
-    <p class="g" style="margin:0">Drag on Euler's plane: sideways moves the thumb, up and down turns the world. Everything
+    <p class="g" style="margin:0">Drag on Euler's plane: sideways moves the thumb, up and down turns the world. Drag the sphere to turn it. Everything
     with words is in the menu (☰).</p>
 </div>
 
@@ -128,14 +155,20 @@
     const num = (k, d) => { const v = parseFloat(qs.get(k)); return isFinite(v) ? v : d; };
     const Q = Math.PI / 2;
     const S = {
-        view: ['three', 'slide', 'reads'].includes(qs.get('view')) ? qs.get('view') : 'three',
+        view: ['three', 'slide', 'sphere', 'reads'].includes(qs.get('view')) ? qs.get('view') : 'three',
         t: Math.max(0, Math.min(2, num('t', 1))), play: false,
         h: Math.max(-3, Math.min(4, num('H', 1))),              // H = 2^h grid units
         k: Math.max(-3, Math.min(3, num('k', 0))),              // scale the world by 2^k
         turn: Math.max(-45, Math.min(45, num('turn', 0))),     // turn the world, degrees
         R: [8, 16, 32].includes(+qs.get('R')) ? +qs.get('R') : 16,
         lay: qs.get('lay') === 'disc' ? 'disc' : 'square',
-        heat: qs.get('heat') !== '0', lines: qs.get('lines') !== '0', dots: qs.get('dots') !== '0',
+        heat: qs.get('heat') === '0' ? 'off' : qs.get('heat') === 'chart' ? 'chart' : 'point',
+        lines: qs.get('lines') !== '0', dots: qs.get('dots') !== '0',
+        over: ['line', 'spiral'].includes(qs.get('over')) ? qs.get('over') : 'none',
+        p: Math.max(-2, Math.min(4, num('p', 2))),              // the overlay's distance, 2^p grid units
+        f: Math.max(0, Math.min(90, num('f', 45))),             // the way it faces (line) or passes (spiral), degrees
+        a: Math.max(-3, Math.min(3, num('a', 0.6))),            // the spiral's slope du/dθ
+        yaw: num('yaw', 0), pitch: Math.max(-80, Math.min(80, num('pitch', -18))), boost: qs.get('boost') === '1',
         th: Math.max(0.05, Math.min(Math.PI, num('th', 1))), n: Math.max(1, Math.min(64, Math.round(num('n', 4)))),
         U: [-4, 4],                                             // Euler's plane: ln(d/H) from −4 to 4 (1/55 to 55 thumbs)
         show: { numbers: qs.get('numbers') === '1', labels: qs.get('labels') === '1', about: qs.get('about') === '1' },
@@ -173,8 +206,32 @@
         return { th, n, poly, end: [re, im], angle: ang, short: th - ang, shortApprox: th ** 3 / (3 * n * n),
             length: len, grown: len - 1, grownApprox: th * th / (2 * n), tanSum: acc, tanSumCheck: im / re };
     }
+    // the heat per unit of a chart: the read's own measure (even by turn in direction; even in 2·atan(d/H), the thumb's
+    // half-Cauchy, in distance) carried to the chart's own area. Relative to its value at the corner, one thumb out.
+    // chart: 'cart' (x, y), 'euler' (u, θ), 'lay' (g, θ), 'disc' (radius g, angle θ), 'sphere' (area on the sphere)
+    function chartHeat(chart, d, th, H = Hof()) {
+        const r = d / H, dchi = (2 / H) / (1 + r * r);            // dχ/dd, χ = 2·atan(d/H)
+        if (chart === 'lay') return 1;
+        if (chart === 'euler') return sech(Math.log(r));
+        if (chart === 'cart') return (dchi / d) / ((1 / H) / H);    // dθ·dχ / (dx·dy), over its value at d = H
+        const g = (2 / Math.PI) * Math.atan(r);
+        if (chart === 'disc') return 0.5 / g;                      // dθ·dg / (g·dg·dθ)
+        return 1 / Math.sin(2 * Math.atan(r));                     // the sphere: dθ·dχ / (sin χ·dχ·dθ)
+    }
+    // the writer's sphere: stereographic, scaled so one thumb is the equator; the eye the south pole, the horizon the north
+    function sphere(p, H = Hof()) { const o = place(p), chi = 2 * Math.atan(o.d / H);
+        return { v: [Math.sin(chi) * Math.cos(o.th), Math.sin(chi) * Math.sin(o.th), -Math.cos(chi)], chi, lat: chi - Q, th: o.th }; }
+    // the overlay, in the writer's own coordinates (placed like the grid): a straight line, or a logarithmic spiral
+    function overlay(kind = S.over) {
+        const P = Math.pow(2, S.p), f = S.f * Math.PI / 180, out = [];
+        if (kind === 'line') for (let b = -89.5; b <= 89.5; b += 0.25) { const s = P * Math.tan(b * Math.PI / 180);
+            out.push([P * Math.cos(f) - s * Math.sin(f), P * Math.sin(f) + s * Math.cos(f)]); }
+        else if (kind === 'spiral') for (let w = -2 * Math.PI; w <= 2 * Math.PI; w += 0.01) { const d = P * Math.exp(S.a * w);
+            out.push([d * Math.cos(f + w), d * Math.sin(f + w)]); }
+        return out;
+    }
     function set(o) {
-        if (o.view && ['three', 'slide', 'reads'].includes(o.view)) S.view = o.view;
+        if (o.view && ['three', 'slide', 'sphere', 'reads'].includes(o.view)) S.view = o.view;
         if (o.t != null) S.t = Math.max(0, Math.min(2, o.t));
         if (o.play != null) S.play = !!o.play;
         if (o.h != null) S.h = Math.max(-3, Math.min(4, o.h));
@@ -182,16 +239,24 @@
         if (o.turn != null) S.turn = Math.max(-45, Math.min(45, o.turn));
         if (o.R && [8, 16, 32].includes(o.R)) S.R = o.R;
         if (o.lay === 'square' || o.lay === 'disc') S.lay = o.lay;
-        for (const key of ['heat', 'lines', 'dots']) if (o[key] != null) S[key] = !!o[key];
+        for (const key of ['lines', 'dots', 'boost']) if (o[key] != null) S[key] = !!o[key];
+        if (o.heat != null) S.heat = o.heat === true ? 'point' : o.heat === false ? 'off' : ['off', 'point', 'chart'].includes(o.heat) ? o.heat : S.heat;
+        if (o.over && ['none', 'line', 'spiral'].includes(o.over)) S.over = o.over;
+        if (o.p != null) S.p = Math.max(-2, Math.min(4, o.p));
+        if (o.f != null) S.f = Math.max(0, Math.min(90, o.f));
+        if (o.a != null) S.a = Math.max(-3, Math.min(3, o.a));
+        if (o.yaw != null) S.yaw = o.yaw;
+        if (o.pitch != null) S.pitch = Math.max(-80, Math.min(80, o.pitch));
         if (o.th != null) S.th = Math.max(0.05, Math.min(Math.PI, o.th));
         if (o.n != null) S.n = Math.max(1, Math.min(64, Math.round(o.n)));
         if (o.show) Object.assign(S.show, o.show);
         S.version++;
     }
-    window.__eulerCore = { S, Q, Hof, kof, heat, place, toEuler, toLay, mirror, points, lines, reads, set };
-    window.__euler = { toEuler, toLay, heat, mirror, points, lines, reads, set,
+    window.__eulerCore = { S, Q, Hof, kof, heat, chartHeat, place, toEuler, toLay, sphere, overlay, mirror, points, lines, reads, set };
+    window.__euler = { toEuler, toLay, heat, chartHeat, sphere, overlay, mirror, points, lines, reads, set,
         state: () => ({ view: S.view, t: S.t, H: Hof(), k: kof(), turn: S.turn, R: S.R, lay: S.lay, heat: S.heat, lines: S.lines,
-            dots: S.dots, th: S.th, n: S.n, show: { ...S.show } }),
+            dots: S.dots, th: S.th, n: S.n, over: S.over, p: Math.pow(2, S.p), f: S.f, a: S.a, yaw: S.yaw, pitch: S.pitch,
+            boost: S.boost, show: { ...S.show } }),
         menu: () => ({ open: document.getElementById('menu').classList.contains('open') }), frames: 0 };
 })();
 </script>
@@ -236,7 +301,8 @@ const scr = (P, q) => [P.x + q[0] * P.w, P.y + (1 - q[1]) * P.h];
 // ── the heat painted under a panel, from each pixel's own place (inverse maps) ───────────────────────────────────────
 const heatCache = new Map();
 function heatImage(view, P) {
-    const key = [view, Math.round(P.w), S.h, S.U.join(), S.lay].join('|'); if (heatCache.has(key)) return heatCache.get(key);
+    const key = [view, Math.round(P.w), S.h, S.U.join(), S.lay, S.heat].join('|'); if (heatCache.has(key)) return heatCache.get(key);
+    const chart = ['cart', 'euler', S.lay === 'disc' ? 'disc' : 'lay'][view];
     const N = Math.max(32, Math.min(160, Math.round(P.w / 4))), c = document.createElement('canvas'); c.width = c.height = N;
     const x = c.getContext('2d'), img = x.createImageData(N, N), H = C.Hof();
     for (let j = 0; j < N; j++) for (let i = 0; i < N; i++) {
@@ -246,7 +312,8 @@ function heatImage(view, P) {
         else if (S.lay === 'disc') { const g = Math.hypot(X, Y); if (g >= 1) { img.data.set([5, 6, 11, 255], (j * N + i) * 4); continue; }
             d = H * Math.tan(g * Math.PI / 2); th = Math.atan2(Y, X); }
         else { d = H * Math.tan(Math.min(0.9999, X) * Math.PI / 2); th = Y * Q; }
-        const [r, g, b] = ramp(0.04 + 0.9 * C.heat(d, th)); img.data.set([r * 0.55, g * 0.55, b * 0.55, 255], (j * N + i) * 4);
+        const v = S.heat === 'chart' ? 0.5 + 0.22 * Math.log2(C.chartHeat(chart, d, th)) : 0.04 + 0.9 * C.heat(d, th);
+        const [r, g, b] = ramp(v); img.data.set([r * 0.55, g * 0.55, b * 0.55, 255], (j * N + i) * 4);
     }
     x.putImageData(img, 0, 0); if (heatCache.size > 24) heatCache.clear(); heatCache.set(key, c); return c;
 }
@@ -270,13 +337,14 @@ const inBoxLoose = q => q[0] >= -0.02 && q[0] <= 1.02 && q[1] >= -0.02 && q[1] <
 function drawGrid(P, t) {
     ctx.save(); ctx.beginPath(); ctx.rect(P.x, P.y, P.w, P.h); ctx.clip();
     if (S.lay === 'disc' && t > 1.5) { ctx.fillStyle = '#05060b'; }
-    if (S.heat && Math.abs(t - Math.round(t)) < 1e-6) ctx.drawImage(heatImage(Math.round(t), P), P.x, P.y, P.w, P.h);
+    if (S.heat !== 'off' && Math.abs(t - Math.round(t)) < 1e-6) ctx.drawImage(heatImage(Math.round(t), P), P.x, P.y, P.w, P.h);
     if (S.lines) { ctx.strokeStyle = COL.grid; ctx.lineWidth = 1; ctx.beginPath();
         for (const ln of C.lines()) { let pen = false;
             for (const p of ln.pts) { const o = C.place(p); if (!shown(o, t)) { pen = false; continue; }
                 const s = scr(P, at(o, t)); if (!pen) ctx.moveTo(s[0], s[1]); else ctx.lineTo(s[0], s[1]); pen = true; } }
         ctx.stroke(); }
     guides(P, t);
+    drawOverlay(P, t);
     if (S.dots) { const r = Math.max(1.6, Math.min(4, P.w / S.R / 6));
         for (const p of C.points()) { const o = p; if (!shown(o, t)) continue; const s = scr(P, at(o, t)), [cr, cg, cb] = ramp(0.15 + 0.85 * o.heat);
             ctx.fillStyle = `rgb(${cr},${cg},${cb})`; ctx.beginPath(); ctx.arc(s[0], s[1], r, 0, 2 * Math.PI); ctx.fill(); } }
@@ -288,6 +356,70 @@ function drawGrid(P, t) {
         const i = Math.round(t), f = Math.abs(t - i); ctx.fillText(f < 0.02 ? names[i] : 'sliding …', P.x, P.y - 8);
         if (Math.abs(t - 1) < 0.02) { ctx.fillStyle = COL.gold; ctx.fillText('one thumb', scr(P, [(0 - S.U[0]) / (S.U[1] - S.U[0]), 0])[0] + 4, P.y + P.h - 6);
             ctx.fillText('the corner, 45°', P.x + 6, scr(P, [0, 0.5])[1] - 6); } }
+}
+
+// the overlay through the slide: the writer's line (or spiral) solid, its mirror in one thumb (d → H²/d) dashed
+function overlayPlaced() {
+    if (S.over === 'none') return null; const H = C.Hof(), pts = C.overlay().map(C.place);
+    const inv = pts.map(o => { const d = H * H / o.d; return { x: d * Math.cos(o.th), y: d * Math.sin(o.th), d, th: o.th, inRead: o.inRead }; });
+    return [pts, inv];
+}
+function strokePath(list, proj, col, w, dash) { ctx.strokeStyle = col; ctx.lineWidth = w; ctx.setLineDash(dash || []); ctx.beginPath(); let pen = false;
+    for (const o of list) { const s = proj(o); if (!s) { pen = false; continue; } if (!pen) ctx.moveTo(s[0], s[1]); else ctx.lineTo(s[0], s[1]); pen = true; }
+    ctx.stroke(); ctx.setLineDash([]); }
+function drawOverlay(P, t) {
+    const L = overlayPlaced(); if (!L) return;
+    const proj = o => (shown(o, t) ? scr(P, at(o, t)) : null);
+    strokePath(L[1], proj, 'rgba(255,140,170,0.75)', 1.6, [6, 5]);
+    strokePath(L[0], proj, '#ff8caa', 2.4);
+}
+
+// ── the writer's sphere: the plane put on it by the thumb (stereographic), drawn turnable, orthographic ───────────────
+function sphereProj(P) {
+    const cx = P.x + P.w / 2, cy = P.y + P.h / 2, R0 = P.w * 0.42, a = -3 * Math.PI / 4 + S.yaw * Math.PI / 180, b = S.pitch * Math.PI / 180;
+    const ca = Math.cos(a), sa = Math.sin(a), cb = Math.cos(b), sb = Math.sin(b);
+    return v => { const X = v[0] * ca - v[1] * sa, Y = v[0] * sa + v[1] * ca, Z = v[2];
+        const Y2 = Y * cb - Z * sb, Z2 = Y * sb + Z * cb; return { s: [cx + X * R0, cy - Z2 * R0], front: Y2 <= 0.001 }; };
+}
+const onSphere = (chi, th) => [Math.sin(chi) * Math.cos(th), Math.sin(chi) * Math.sin(th), -Math.cos(chi)];
+function drawSphere(P) {
+    const pr = sphereProj(P), H = C.Hof(), cx = P.x + P.w / 2, cy = P.y + P.h / 2, R0 = P.w * 0.42;
+    ctx.strokeStyle = 'rgba(195,200,214,0.45)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(cx, cy, R0, 0, 2 * Math.PI); ctx.stroke();
+    // a curve on the sphere, the front solid, the back faint
+    const curve = (vs, col, w, dash) => { for (const front of [false, true]) {
+        ctx.strokeStyle = front ? col : 'rgba(140,150,180,0.16)'; ctx.lineWidth = front ? w : 1; ctx.setLineDash(dash || []); ctx.beginPath(); let pen = false;
+        for (const v of vs) { const q = pr(v); if (q.front !== front) { pen = false; continue; } if (!pen) ctx.moveTo(q.s[0], q.s[1]); else ctx.lineTo(q.s[0], q.s[1]); pen = true; }
+        ctx.stroke(); } ctx.setLineDash([]); };
+    // the whole sphere faint: meridians every 30°, the shells' parallels all the way round
+    for (let m = 0; m < 360; m += 30) { const vs = []; for (let c = 0; c <= 180; c += 3) vs.push(onSphere(c * Math.PI / 180, m * Math.PI / 180)); curve(vs, 'rgba(140,150,180,0.22)', 1); }
+    for (const m of [1 / 8, 1 / 4, 1 / 2, 1, 2, 4, 8]) { const chi = 2 * Math.atan(m), all = [], lune = [];
+        for (let a = 0; a <= 360; a += 3) all.push(onSphere(chi, a * Math.PI / 180));
+        for (let a = 0; a <= 90; a += 1.5) lune.push(onSphere(chi, a * Math.PI / 180));
+        curve(all, 'rgba(167,139,250,0.22)', 1, [4, 4]); curve(lune, m === 1 ? COL.gold : COL.violet, m === 1 ? 2 : 1.2, m === 1 ? [] : [5, 5]); }
+    // the quarter turn: its two edges and the 45° corner
+    for (const a of [0, 45, 90]) { const vs = []; for (let c = 0; c <= 180; c += 2) vs.push(onSphere(c * Math.PI / 180, a * Math.PI / 180));
+        curve(vs, a === 45 ? COL.gold : 'rgba(200,205,220,0.6)', a === 45 ? 1.2 : 1.2, a === 45 ? [2, 4] : []); }
+    // the grid's lines and points, each where the thumb puts it
+    if (S.lines) for (const ln of C.lines()) { const vs = []; for (const p of ln.pts) { const o = C.place(p); vs.push(o.inRead ? C.sphere(p).v : null); }
+        for (const front of [true]) { ctx.strokeStyle = COL.grid; ctx.lineWidth = 1; ctx.beginPath(); let pen = false;
+            for (const v of vs) { if (!v) { pen = false; continue; } const q = pr(v); if (!q.front) { pen = false; continue; } if (!pen) ctx.moveTo(q.s[0], q.s[1]); else ctx.lineTo(q.s[0], q.s[1]); pen = true; }
+            ctx.stroke(); } }
+    const L = overlayPlaced();
+    if (L) { const pj = o => { if (!o.inRead) return null; const chi = 2 * Math.atan(o.d / H), q = pr(onSphere(chi, o.th)); return q.front ? q.s : null; };
+        strokePath(L[1], pj, 'rgba(255,140,170,0.75)', 1.6, [6, 5]); strokePath(L[0], pj, '#ff8caa', 2.4); }
+    if (S.dots) { const r = Math.max(1.6, Math.min(3.5, P.w / S.R / 9));
+        for (const p of C.points()) { if (!p.inRead) continue; const q = pr(C.sphere(p.p).v); const [cr, cg, cb] = ramp(0.15 + 0.85 * p.heat);
+            ctx.globalAlpha = q.front ? 1 : 0.25; ctx.fillStyle = `rgb(${cr},${cg},${cb})`; ctx.beginPath(); ctx.arc(q.s[0], q.s[1], r, 0, 2 * Math.PI); ctx.fill(); }
+        ctx.globalAlpha = 1; }
+    // the poles: the eye and the horizon
+    for (const [v, col] of [[[0, 0, -1], COL.teal], [[0, 0, 1], COL.violet]]) { const q = pr(v); ctx.globalAlpha = q.front ? 1 : 0.35;
+        ctx.fillStyle = col; ctx.beginPath(); ctx.arc(q.s[0], q.s[1], 5, 0, 2 * Math.PI); ctx.fill(); }
+    ctx.globalAlpha = 1;
+    if (S.show.labels) { ctx.font = '12px "DM Mono", monospace'; ctx.fillStyle = COL.dim; ctx.textAlign = 'left';
+        ctx.fillText('the writer\'s sphere: one thumb its equator', P.x, P.y - 8);
+        const e = pr([0, 0, -1]).s, n = pr([0, 0, 1]).s, q = pr(onSphere(Math.PI / 2, Math.PI / 4)).s;
+        ctx.fillStyle = COL.teal; ctx.fillText('the eye', e[0] + 8, e[1] + 4); ctx.fillStyle = COL.violet; ctx.fillText('the horizon', n[0] + 8, n[1] + 4);
+        ctx.fillStyle = COL.gold; ctx.fillText('one thumb', q[0] + 8, q[1] - 6); }
 }
 
 function drawReads(P) {
@@ -317,6 +449,7 @@ function draw() {
     const Ps = panels();
     if (S.view === 'three') Ps.forEach((P, i) => drawGrid(P, i));
     else if (S.view === 'slide') drawGrid(Ps[0], S.t);
+    else if (S.view === 'sphere') drawSphere(Ps[0]);
     else drawReads(Ps[0]);
     hook.frames++;
 }
@@ -327,9 +460,14 @@ function syncMenu() {
         b.classList.toggle('on', !!on); const sp = b.querySelector('span'); if (sp) sp.textContent = on ? 'on' : 'off'; }
     $('about').classList.toggle('open', S.show.about); $('numbers').classList.toggle('open', S.show.numbers);
     const tag = (id, t, on) => { $(id).querySelector('span').textContent = t; $(id).classList.toggle('on', on); };
-    tag('bView', { three: 'the three', slide: 'one, sliding', reads: 'n reads' }[S.view], false);
+    tag('bView', { three: 'the three', slide: 'one, sliding', sphere: 'the writer\'s sphere', reads: 'n reads' }[S.view], false);
+    tag('bBoost', S.boost ? 'on' : 'off', S.boost); tag('bOver', { none: 'nothing', line: 'a straight line', spiral: 'a spiral' }[S.over], S.over !== 'none');
+    for (const el of document.querySelectorAll('#menu .ov')) el.style.display = S.over === 'none' ? 'none' : '';
+    $('aDial').style.display = S.over === 'spiral' ? '' : 'none'; $('fF').previousElementSibling.textContent = S.over === 'spiral' ? 'it passes at (degrees)' : 'it faces (degrees)';
+    $('pP').value = S.p; $('pPo').textContent = Math.pow(2, S.p).toPrecision(3); $('fF').value = S.f; $('fFo').textContent = S.f.toFixed(1) + '°';
+    $('aA').value = S.a; $('aAo').textContent = S.a.toFixed(2);
     tag('bPlay', S.play ? 'on' : 'off', S.play); tag('bLay', S.lay === 'disc' ? 'a quarter disc' : 'a square', false);
-    tag('bDots', S.dots ? 'on' : 'off', S.dots); tag('bLines', S.lines ? 'on' : 'off', S.lines); tag('bHeat', S.heat ? 'on' : 'off', S.heat);
+    tag('bDots', S.dots ? 'on' : 'off', S.dots); tag('bLines', S.lines ? 'on' : 'off', S.lines); tag('bHeat', { off: 'off', point: 'at each point', chart: 'per unit of the chart' }[S.heat], S.heat !== 'off');
     tag('bR', `${S.R} × ${S.R}`, false);
     $('tDial').style.display = S.view === 'slide' ? '' : 'none'; $('bPlay').style.display = S.view === 'slide' ? '' : 'none';
     $('tT').value = S.t; $('tTo').textContent = S.t.toFixed(2);
@@ -360,7 +498,25 @@ function numbers() {
         `  the polygon's length (1 + θ²/n²)^(n/2) = ${f(r.length, 6)}, grown by ${f(r.grown, 4)} (θ²/2n ≈ ${f(r.grownApprox, 4)})\n` +
         `  the reading by tangent addition ${f(r.tanSum, 8)} = Im/Re of the end ${f(r.tanSumCheck, 8)}\n` +
         `  the limit e^(iθ), on the circle, is the writer's\n\n` +
-        `<b>the heat</b> (each point's colour): cos²(θ − 45°)·sech(ln(d/H))`;
+        `<b>the writer's sphere</b> (the plane put on it by the thumb, stereographically; one thumb its equator)\n` +
+        `  the eye the south pole, the horizon the north; latitude = gd(ln(d/H)), the lay = colatitude / π\n` +
+        `  so Euler's plane is its Mercator chart, the lay square its plate carrée, the quarter disc its azimuthal map from the eye\n` +
+        `  d → H²/d the reflection in the equator; sech(ln(d/H)) = cos(latitude) = ${f(Math.cos(gd(Math.LN2)), 4)} at two thumbs\n` +
+        `  a turn of the world turns the sphere about its axis; the thumb ×k a boost of rapidity ln k: tan(χ'/2) = tan(χ/2)/k\n` +
+        `  turns and boosts along one axis commute: on Euler's plane both are slides, and Jaynes's dθ·dκ/κ is its area\n\n` +
+        (S.over !== 'none' ? (S.over === 'line'
+            ? `<b>a straight line</b> ${f(Math.pow(2, S.p), 3)} grid units from the eye (${f(Math.pow(2, S.p) * C.kof() / H, 3)} thumbs), facing ${S.f.toFixed(1)}°\n` +
+              `  on Euler's plane u = ln(p/H) − ln cos(θ − φ₀): every line one curve, moved; nearest at u = ${f(Math.log(Math.pow(2, S.p) * C.kof() / H), 4)}, half a turn wide\n` +
+              `  dashed, its mirror in one thumb (d → H²/d): a circle through the eye, the same curve turned over\n` +
+              `  on the writer's sphere the line is a circle through the north pole (the horizon), its mirror one through the eye\n\n`
+            : `<b>a logarithmic spiral</b> d = p·e^(a(θ − φ₀)), slope a = ${f(S.a, 3)}\n` +
+              `  on Euler's plane a straight line of slope ${f(S.a, 3)}; it crosses every ray at ${f(90 - Math.atan(S.a) * 180 / Math.PI, 4)}° (a rhumb line on the sphere)\n` +
+              `  dashed, its mirror in one thumb: the spiral of slope ${f(-S.a, 3)}\n\n`) : '') +
+        (S.heat === 'chart'
+            ? `<b>the heat per unit of each chart</b>: the read's own measure (even by turn, even in 2·atan(d/H)) per unit of the chart's area\n` +
+              `  the lay square: flat. Euler's plane: sech(ln(d/H)). Cartesian: 2/(d(1 + (d/H)²)), endless at the eye. The quarter disc: 1/g\n` +
+              `  no chart gives a heat of its own: it is the measure over the chart's area (colour: its doublings about the corner's)`
+            : `<b>the heat</b> (each point's colour): cos²(θ − 45°)·sech(ln(d/H)): per unit of v/h in direction, per unit of ln(d/H) in distance`);
 }
 function showIt(k, on = !S.show[k]) { S.show[k] = on; if (k === 'about' && on) $('menu').classList.remove('open'); syncMenu(); }
 for (const b of document.querySelectorAll('#menu [data-show]')) b.onclick = () => showIt(b.dataset.show);
@@ -373,30 +529,37 @@ addEventListener('keydown', ev => { if (ev.key === 'Escape') { if (S.show.about)
 const on = (id, f) => $(id).addEventListener('input', e => { f(+e.target.value); syncMenu(); });
 on('tT', v => C.set({ t: v, play: false })); on('hH', v => C.set({ h: v })); on('kK', v => C.set({ k: v })); on('rR', v => C.set({ turn: v }));
 on('thT', v => C.set({ th: v })); on('nN', v => C.set({ n: v }));
-$('bView').onclick = () => { C.set({ view: S.view === 'three' ? 'slide' : S.view === 'slide' ? 'reads' : 'three' }); syncMenu(); };
+$('bView').onclick = () => { C.set({ view: { three: 'slide', slide: 'sphere', sphere: 'reads', reads: 'three' }[S.view] }); syncMenu(); };
+$('bBoost').onclick = () => { C.set({ boost: !S.boost }); boostT0 = null; syncMenu(); };
+$('bOver').onclick = () => { C.set({ over: { none: 'line', line: 'spiral', spiral: 'none' }[S.over] }); syncMenu(); };
+on('pP', v => C.set({ p: v })); on('fF', v => C.set({ f: v })); on('aA', v => C.set({ a: v }));
 $('bPlay').onclick = () => { C.set({ play: !S.play }); syncMenu(); };
 $('bLay').onclick = () => { C.set({ lay: S.lay === 'square' ? 'disc' : 'square' }); syncMenu(); };
 $('bDots').onclick = () => { C.set({ dots: !S.dots }); syncMenu(); };
 $('bLines').onclick = () => { C.set({ lines: !S.lines }); syncMenu(); };
-$('bHeat').onclick = () => { C.set({ heat: !S.heat }); syncMenu(); };
+$('bHeat').onclick = () => { C.set({ heat: { point: 'chart', chart: 'off', off: 'point' }[S.heat] }); syncMenu(); };
 $('bR').onclick = () => { C.set({ R: S.R === 8 ? 16 : S.R === 16 ? 32 : 8 }); syncMenu(); };
 
 // drag on Euler's plane (or the one panel at t near 1): sideways moves the thumb, up and down turns the world
 let drag = null;
 cv.addEventListener('pointerdown', e => { $('menu').classList.remove('open');
-    const Ps = panels(), P = S.view === 'three' ? Ps[1] : (S.view === 'slide' && Math.abs(S.t - 1) < 0.25 ? Ps[0] : null);
+    const Ps = panels(), P = S.view === 'three' ? Ps[1] : S.view === 'sphere' ? Ps[0] : (S.view === 'slide' && Math.abs(S.t - 1) < 0.25 ? Ps[0] : null);
     if (!P || e.clientX < P.x || e.clientX > P.x + P.w || e.clientY < P.y || e.clientY > P.y + P.h) return;
-    drag = { x: e.clientX, y: e.clientY, h: S.h, turn: S.turn, P }; cv.setPointerCapture(e.pointerId); });
+    drag = { x: e.clientX, y: e.clientY, h: S.h, turn: S.turn, yaw: S.yaw, pitch: S.pitch, P }; cv.setPointerCapture(e.pointerId); });
 cv.addEventListener('pointermove', e => { if (!drag) return; const P = drag.P;
+    if (S.view === 'sphere') { C.set({ yaw: drag.yaw + (e.clientX - drag.x) / P.w * 180, pitch: drag.pitch + (e.clientY - drag.y) / P.h * 180 }); syncMenu(); return; }
+    // the points follow the finger: to the right is a smaller thumb (every ln(d/H) larger)
     const du = (e.clientX - drag.x) / P.w * (S.U[1] - S.U[0]), dth = -(e.clientY - drag.y) / P.h * 90;
-    C.set({ h: drag.h + du / Math.LN2, turn: drag.turn + dth }); syncMenu(); });
+    C.set({ h: drag.h - du / Math.LN2, turn: drag.turn + dth }); syncMenu(); });
 cv.addEventListener('pointerup', () => { drag = null; });
 cv.addEventListener('pointercancel', () => { drag = null; });
 
 function resize() { dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; Hh = innerHeight; cv.width = W * dpr; cv.height = Hh * dpr; draw(); }
 addEventListener('resize', resize);
-let last = performance.now(), dir = 1;
+let last = performance.now(), dir = 1, boostT0 = null, boostH0 = S.h;
 function tick(now) { requestAnimationFrame(tick); const dt = Math.min(0.1, (now - last) / 1000); last = now;
+    if (S.boost) { if (boostT0 == null) { boostT0 = now; boostH0 = S.h; }
+        S.h = Math.max(-3, Math.min(4, boostH0 + 2 * Math.sin((now - boostT0) / 1000 * 2 * Math.PI / 8))); syncMenu(); }
     if (S.play && S.view === 'slide') { let t = S.t + dir * dt / 3; if (t >= 2) { t = 2; dir = -1; } if (t <= 0) { t = 0; dir = 1; }
         S.t = t; $('tT').value = t; $('tTo').textContent = t.toFixed(2); draw(); } }
 resize(); syncMenu(); requestAnimationFrame(tick);

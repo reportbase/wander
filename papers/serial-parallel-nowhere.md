@@ -7352,6 +7352,27 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R737** (7 Nov; Tom: "lets push, see what else there is to learn about this.", then "Yes"): what Euler's plane
+  (R736) shows past itself, each checked to 30 digits. (1) Put the plane on the Riemann sphere stereographically with one
+  thumb on the equator: the eye is the south pole, the horizon the north, and the thumb's lay (2/π)·atan(d/H) is the
+  colatitude over π. Euler's plane is that sphere's Mercator chart, the lay square its plate carrée, the quarter disc its
+  azimuthal equidistant map from the eye; d → H²/d is the reflection in the equator and sech(ln(d/H)) the cosine of the
+  latitude. The sphere is the writer's drawing (R643, R717); the reader has the lay. (2) The heat depends on the chart.
+  The read's own measure, even by turn in direction and even in 2·atan(d/H) in distance (the K distance addresses
+  H·tan(kπ/2K) are equal steps of latitude), is flat per unit of the lay square, sech(ln(d/H)) per unit of Euler's plane,
+  2/(d(1 + (d/H)²)) per unit of the Cartesian plane; R702's cos²(θ − 45°)·sech(ln(d/H)) counts direction per unit of v/h
+  and distance per unit of ln(d/H), a definition, not a heat any chart gives of itself. (3) Turning the world turns the
+  sphere about its axis; the thumb × k is a boost of rapidity ln k along it, tan(χ′/2) = tan(χ/2)/k, the moving sky's
+  aberration (essay 7) done to distance. The two commute, which is why both are slides on Euler's plane, and Jaynes's
+  dθ·dκ/κ (R243, R244) is its area; in space the turns stop commuting (essay 13). (4) On Euler's plane every straight line
+  is one curve, u = ln(p/H) − ln cos(θ − φ₀), moved, half a turn wide; its mirror in one thumb is a circle through the
+  eye; on the sphere a line is a circle through the horizon. Logarithmic spirals are straight lines there (rhumb lines,
+  Halley), so an approach at a constant angle (a moth to a lamp; raptors, Tucker 2000, from memory) is straight. (5) The
+  lay square's right edge is the line at infinity, a family of parallels meeting it at one point; its left edge is the
+  eye drawn as a side. (6) An even world holds e^(2u) points per unit of Euler's plane (e^(3u) in space), π·H²·e^(2u)·cosh u
+  per address. Classical throughout, the reading ours. `euler.html` gains the writer's sphere (`view=sphere`, turnable,
+  the thumb moved in and out as a boost), heat per unit of the chart (`heat=chart`) and a line or spiral with its mirror
+  (`over=line|spiral`).
 - **R736** (7 Nov; Tom: "lets move on. maybe eulers gives a better visualizstion opportuity.", then "yes"): `euler.html`,
   Euler's plane. One Cartesian grid in the quadrant, the eye at its corner, drawn three ways: as written (z = x + iy); on
   Euler's plane, ln(z/H) = ln(d/H) + iθ, where a turn of the world slides every point up or down and scaling the world (or

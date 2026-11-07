@@ -235,7 +235,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   doll", and was replaced.) `?R=6|8|12&H=<log2 H>&grid=0|1|2|4&lines=slice|all|none&shells=0&place=1&u=&labels=1&numbers=1&about=1`;
   hook `window.__uncompressed` (`g`, `dOf`, `heat`, `compress`, `points`, `lines`, `counts`, `set`, `state`, `menu`,
   `frames`, `webgl`). Keep new text on this page behind the menu. Not in the flying page.
-- `euler.html`: **Euler's plane** (7 Nov 2026, SPN R736; Tom: "lets move on. maybe eulers gives a better visualizstion
+- `euler.html`: **Euler's plane** (7 Nov 2026, SPN R736, R737; Tom: "lets move on. maybe eulers gives a better visualizstion
   opportuity.", then "yes"), full screen, plain canvas, every word behind the menu (☰). One Cartesian grid in the quadrant
   (R × R points in the cells' middles, 8, 16 or 32, and the grid lines through them), the eye at the corner, drawn three
   ways: Cartesian (the writer's); Euler's plane ln(z/H) = ln(d/H) + iθ (u from −4 to 4 across, θ up; a turn slides up or
@@ -244,10 +244,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   quarter disc, `lay=disc`). Side by side (stacked on a phone), or one panel sliding between them (`view=slide`, t 0 → 2,
   ▶ plays it). Colour the heat cos²(θ − 45°)·sech(ln(d/H)). A fourth view, n reads (`view=reads`): (1 + iθ/n)ⁿ by tangent
   addition against e^(iθ), the angle short by about θ³/(3n²), the length grown by about θ²/(2n) (ELM). Dragging the Euler
-  panel moves H sideways and turns the world up and down. `?view=three|slide|reads&t=&H=<log2 H>&k=<log2 k>&turn=&R=8|16|32
-  &lay=square|disc&heat=0&lines=0&dots=0&th=&n=&labels=1&numbers=1&about=1`; hook `window.__euler` (`toEuler`, `toLay`,
-  `heat`, `mirror`, `points`, `lines`, `reads`, `set`, `state`, `menu`, `frames`). Keep new text on this page behind the
-  menu. Not in the flying page.
+  panel moves the points with the finger (H sideways) and turns the world up and down. Since R737 (Tom: "lets push, see
+  what else there is to learn about this.", then "Yes"): the writer's sphere (`view=sphere`, drag to turn): the plane put
+  on the Riemann sphere by the thumb, one thumb the equator, the eye the south pole, the horizon the north; the three
+  charts are its Mercator chart, plate carrée and azimuthal equidistant map; "move the thumb in and out" plays H as a
+  boost (latitudes sliding toward a pole). The heat at each point (R702's) or per unit of each chart (`heat=chart`: the
+  read's measure over the chart's area, flat on the lay). A straight line or a log spiral (`over=line|spiral`, its
+  distance, facing and slope in the menu) with its mirror in one thumb dashed: on Euler's plane every line one curve
+  moved, a spiral straight. `?view=three|slide|sphere|reads&t=&H=<log2 H>&k=<log2 k>&turn=&R=8|16|32&lay=square|disc
+  &heat=0|chart&lines=0&dots=0&over=line|spiral&p=<log2>&f=&a=&yaw=&pitch=&boost=1&th=&n=&labels=1&numbers=1&about=1`;
+  hook `window.__euler` (`toEuler`, `toLay`, `heat`, `chartHeat`, `sphere`, `overlay`, `mirror`, `points`, `lines`,
+  `reads`, `set`, `state`, `menu`, `frames`). Keep new text on this page behind the menu. Not in the flying page.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
