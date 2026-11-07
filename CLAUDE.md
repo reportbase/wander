@@ -265,7 +265,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   "Seems like ehulers is perfect for read and write", then "Yes"): *Reads and Writes* §1 "One plane" (reading up and down,
   writing across, the pinch and the twist; the writer's notation, the first test only, the plane's), and essay 18,
   `papers/essays/18-read-and-write-on-one-plane.md`, *Read and write on one plane*; a card on `essays.html`, a README row,
-  the explainers' not-yet list; the smoke test counts eighteen essays.
+  the explainers' not-yet list; the smoke test counts eighteen essays. R741 (7 Nov; Tom: "proceed"): essay 18's Halley 1696
+  (Lemma III: rhumb lines stereographically "Proportional Spirals about the Pole Point") and Tucker 2000 (the spiral
+  proposed; the peregrines' curved paths in Tucker et al. 2000, the same issue) checked and cited; on `euler.html` two
+  fingers anywhere are k·e^(iα), ln k + iα on the plane: the spread the thumb ÷ k, the twist a turn by α (the sphere's boost
+  and spin; nothing in space).
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

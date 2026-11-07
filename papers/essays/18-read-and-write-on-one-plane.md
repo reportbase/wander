@@ -70,8 +70,8 @@ point of it onto the plane. The grid is straight; what it becomes is not, and ho
 - **A logarithmic spiral is a straight line.** A spiral whose distance grows by the same factor for every equal turn is a
   slanted straight line on the plane, its slope the spiral's growth per turn. It crosses every ray at one angle. Anything
   that keeps a fixed angle to something it is closing on, a moth to a lamp, a hawk to its prey held at one place in its
-  view, travels a log spiral, and on this plane flies straight. (That raptors do so is Tucker's 2000 finding, cited here
-  from memory.)
+  view, travels a log spiral, and on this plane flies straight. (Tucker (2000) proposed it for raptors, whose sharpest
+  vision looks sideways; the same issue's field study found wild peregrines flying curved paths that resemble it.)
 - **The grid's points pile up on the far side.** Per unit of the plane's area the even grid holds e^(2u) points, so most of
   the writer's grid lies far across, toward the horizon. The writer's evenness is the far side's crowd.
 
@@ -202,8 +202,10 @@ Almost all of it is old.
 - **The plane.** Euler's formula (1748) and the complex logarithm; polar form splitting a number into a direction and an
   amount. That the phone's two-finger gesture is one complex quotient is how every map on a phone already works.
 - **The grid on it.** Lines as one curve moved and log spirals as straight lines are the log-polar map's, used in image
-  registration and in the primate visual cortex's map of the visual field (Schwartz 1977). Halley (1696) noticed that a
-  rhumb line, stereographically projected, is a logarithmic spiral.
+  registration and in the primate visual cortex's map of the visual field (Schwartz 1977). Halley (1696) showed that a
+  rhumb line, stereographically projected, is a logarithmic spiral ("Proportional Spirals about the Pole Point", his Lemma
+  III), from a lemma of de Moivre's that the projection keeps angles, and set its distances from the pole by Euclid III.20,
+  the same theorem as essay 2's one read.
 - **The lay.** The Gudermannian is Mercator's (1569) function, named for Gudermann (1830s). The sphere behind the three
   charts is Riemann's, stereographic projection from Ptolemy and Hipparchus; Mercator, plate carrée and azimuthal
   equidistant are its old charts.
@@ -242,7 +244,7 @@ as a boost; the heat at each point and per chart; a line and a spiral with their
 
 - Euler, L. (1748). *Introductio in analysin infinitorum.* Lausanne.
 - Halley, E. (1696). An easie demonstration of the analogy of the logarithmick tangents to the meridian line or sum of the
-  secants. *Philosophical Transactions* 19, 202–214. (Cited from memory; to check.)
+  secants. *Philosophical Transactions* 19, 202–214.
 - Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 - Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata.* Duisburg.
 - Penrose, R. (1959). The apparent shape of a relativistically moving sphere. *Proceedings of the Cambridge Philosophical
@@ -253,7 +255,9 @@ as a boost; the heat at each point and per chart; a line and a spiral with their
 - Trotter, H. F. (1959). On the product of semi-groups of operators. *Proceedings of the American Mathematical Society*
   10, 545–551.
 - Tucker, V. A. (2000). The deep fovea, sideways vision and spiral flight paths in raptors. *Journal of Experimental
-  Biology* 203, 3745–3754. (Cited from memory; to check.)
+  Biology* 203, 3745–3754.
+- Tucker, V. A., Tucker, A. E., Akers, K. and Enderson, J. H. (2000). Curved flight paths and sideways vision in peregrine
+  falcons (*Falco peregrinus*). *Journal of Experimental Biology* 203, 3755–3763.
 
 The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`): §1 ("One plane"), §5 ("Euler's formula
 as a count of reads", "π with the direction, e with the payload"), §6 ("Euler's plane, and the thumb's lay as a turn") and

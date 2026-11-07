@@ -157,7 +157,7 @@
     encloses. In the plane there is one axis, every turn a slide up Euler's plane, and nothing is left over.</p>
     <p><b>n reads</b>: (1 + iθ/n)ⁿ, θ turned in n reads composed. The polygon closes on e^(iθ), the writer's limit; its
     angle falls short by about θ³/(3n²), and its length grows by about θ²/(2n), a length no read sees.</p>
-    <p class="g" style="margin:0">Drag on Euler's plane: sideways moves the thumb, up and down turns the world. Drag the sphere to turn it. Everything
+    <p class="g" style="margin:0">Drag on Euler's plane: sideways moves the thumb, up and down turns the world. Two fingers anywhere: spread them and the thumb shrinks (pinch, it grows), twist them and the world turns; the gesture is one complex number, k·e^(iα), the plane's ln k + iα. Drag the sphere to turn it. Everything
     with words is in the menu (☰).</p>
 </div>
 
@@ -661,19 +661,40 @@ $('bHeat').onclick = () => { C.set({ heat: { point: 'chart', chart: 'off', off: 
 $('bR').onclick = () => { C.set({ R: S.R === 8 ? 16 : S.R === 16 ? 32 : 8 }); syncMenu(); };
 
 // drag on Euler's plane (or the one panel at t near 1): sideways moves the thumb, up and down turns the world
-let drag = null;
+// Two fingers anywhere (R741; Tom, of essay 18's opening: the phone's gesture is one complex quotient): the second finger's
+// place over the first's, k·e^(iα), is the gesture, read on Euler's plane as ln k + iα. The spread is the real part, every
+// ln(d/H) larger by ln k, so the thumb ÷ k (spread out, the points move across with the fingers); the twist is the
+// imaginary part, every direction turned by α (counter-clockwise on the screen turns the world up). On the sphere the
+// same two numbers are the boost and the spin about its axis. Space has no such pair (its turns do not commute): there
+// two fingers do nothing.
+const fingers = new Map();
+let drag = null, pinch = null;
+function pinchNow() { const [a, b] = [...fingers.values()]; return { d: Math.hypot(b.x - a.x, b.y - a.y), a: Math.atan2(-(b.y - a.y), b.x - a.x) }; }
 cv.addEventListener('pointerdown', e => { $('menu').classList.remove('open');
+    fingers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (fingers.size === 2 && S.view !== 'space' && S.view !== 'reads') {
+        const g = pinchNow(); if (g.d < 8) return;
+        drag = null; pinch = { d0: g.d, a0: g.a, h: S.h, turn: S.turn };
+        for (const id of fingers.keys()) { try { cv.setPointerCapture(id); } catch (_) {} }
+        return; }
+    if (fingers.size > 1) return;
     const Ps = panels(), P = S.view === 'three' ? Ps[1] : S.view === 'sphere' ? Ps[0] : S.view === 'space' ? Ps[1] : (S.view === 'slide' && Math.abs(S.t - 1) < 0.25 ? Ps[0] : null);
     if (!P || e.clientX < P.x || e.clientX > P.x + P.w || e.clientY < P.y || e.clientY > P.y + P.h) return;
     drag = { x: e.clientX, y: e.clientY, h: S.h, turn: S.turn, yaw: S.yaw, pitch: S.pitch, syaw: S.syaw, spitch: S.spitch, P }; cv.setPointerCapture(e.pointerId); });
-cv.addEventListener('pointermove', e => { if (!drag) return; const P = drag.P;
+cv.addEventListener('pointermove', e => {
+    if (fingers.has(e.pointerId)) fingers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pinch) { if (fingers.size < 2) return; const g = pinchNow();
+        let da = g.a - pinch.a0; da -= 2 * Math.PI * Math.round(da / (2 * Math.PI));
+        C.set({ h: pinch.h - Math.log2(g.d / pinch.d0), turn: pinch.turn + da * 180 / Math.PI }); syncMenu(); return; }
+    if (!drag) return; const P = drag.P;
     if (S.view === 'space') { C.set({ syaw: drag.syaw - (e.clientX - drag.x) / P.w * 180, spitch: drag.spitch + (e.clientY - drag.y) / P.h * 180 }); syncMenu(); return; }
     if (S.view === 'sphere') { C.set({ yaw: drag.yaw + (e.clientX - drag.x) / P.w * 180, pitch: drag.pitch + (e.clientY - drag.y) / P.h * 180 }); syncMenu(); return; }
     // the points follow the finger: to the right is a smaller thumb (every ln(d/H) larger)
     const du = (e.clientX - drag.x) / P.w * (S.U[1] - S.U[0]), dth = -(e.clientY - drag.y) / P.h * 90;
     C.set({ h: drag.h - du / Math.LN2, turn: drag.turn + dth }); syncMenu(); });
-cv.addEventListener('pointerup', () => { drag = null; });
-cv.addEventListener('pointercancel', () => { drag = null; });
+const lift = e => { fingers.delete(e.pointerId); if (fingers.size < 2) pinch = null; drag = null; };
+cv.addEventListener('pointerup', lift);
+cv.addEventListener('pointercancel', lift);
 
 function resize() { dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; Hh = innerHeight; cv.width = W * dpr; cv.height = Hh * dpr; draw(); }
 addEventListener('resize', resize);

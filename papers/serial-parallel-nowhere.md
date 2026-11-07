@@ -7352,6 +7352,20 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R741** (7 Nov; Tom: "proceed", to checking essay 18's two citations from memory and giving `euler.html` the phone's
+  gesture): both citations checked. Halley 1696 (*Phil. Trans.* 19, 202–214, read in a transcription of the Royal
+  Society's scan) proves the meridian line a scale of logarithmic tangents from four lemmas: Lemma I the stereographic
+  distances from the pole are tangents of half the colatitudes, "evident from Eucl. 3.20" (essay 2's one read); Lemma II
+  the projection keeps angles (de Moivre's, Hooke's before); Lemma III the rhumb lines are therefore "Proportional Spirals
+  about the Pole Point"; Lemma IV the spiral's angles are logarithms of the ratios of its radii. So essay 18's sentence stands
+  and is sharpened. Tucker 2000 (*J. Exp. Biol.* 203, 3745–3754) proposes the logarithmic spiral for raptors (the deep
+  fovea looks sideways, so a straight dive needs the head turned and costs drag); the field evidence is the companion paper
+  in the same issue (Tucker, Tucker, Akers and Enderson 2000, 3755–3763: wild peregrines fly curved paths resembling
+  spirals). Essay 18 says so and cites both; the "from memory" marks are gone (R737's own mention stays as the record).
+  `euler.html`: two fingers anywhere are the gesture as one complex number, the second finger's place over the first's,
+  k·e^(iα), read on Euler's plane as ln k + iα: the spread moves every ln(d/H) by ln k (the thumb ÷ k), the twist turns
+  every direction by α; on the sphere the same pair is the boost and the spin; in space (turns that do not commute) two
+  fingers do nothing. Probed with real touches: a spread ×2 with a 30° twist halves the thumb and turns the world 30°.
 - **R740** (7 Nov; Tom: "Seems like ehulers is perfect for read and write", then "Yes"): Euler's plane as the picture of the
   two acts. ln(z/H) = ln(d/H) + iθ drawn with the direction up and distance across: reading is up and down, writing is
   across, the scale test is which part moved, the two slides commute (the pinch and the twist of a phone's two-finger
