@@ -7352,6 +7352,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R746** (7 Nov; Tom: "proceed", after "what did you learn"): essay 18's explainer, draw's
+  `explained.html?x=plane` (reportbase/draw#62, the animated gallery's `plane` tile), six beats: a map under two fingers
+  (k·e^(iα), ln k + iα); a writer's grid carried onto Euler's plane; a thing turned then scaled and scaled then turned,
+  landing alike; a point's two mirrors crossing at the hot spot; the plane laid by the thumb, ½ + gd(x)/π; and the flat
+  chart in space (R745's two charts, the look turned 60°). A card on `explainers.html` (essay 18 off the not-yet list),
+  a link on `essays.html`'s essay 18 card.
 - **R745** (7 Nov; Tom: "proceed", to a Lambert-chart turn demo after R744): `euler.html`'s sixth view, "a flat chart in
   space" (`view=flat`, `phi=`): Lambert's azimuthal equal-area map and the stereographic map of the directions about the
   look, side by side, a checkerboard laid on each about the old look, the look turned by φ about h (drag, a dial, "play
