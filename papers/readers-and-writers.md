@@ -62,7 +62,9 @@ projection from home divides. Each sweep is centred on the crosshairs, the corne
 read is a heat over directions, the Cauchy: hottest along the look, cooling toward the horizon, continuous, with nothing
 counted in it (§7). Geometry is free in this sense: nothing in it is computed, no procedure runs, and there is no
 tangent or arctangent in it; tan, arctan and every formula for the turn are the writer's way of stating what is already
-there. How finely a reader tells directions apart, and the near and far fields the thumb lays over the read, are §6's.
+there. Trigonometry as a whole is the writer's tool: it counts the places read and closes the turn, both of its signs
+held at once, to describe a reader that does neither. The Tangent Bridge shows the split in practice, proved in the angle
+chart and run in the slope chart with no trigonometric call (§5). How finely a reader tells directions apart, and the near and far fields the thumb lays over the read, are §6's.
 
 **Reads are unconnected.** A read holds no time: time is the step between reads. Reads are continuous, one can be taken
 at any place and any moment, but each has no connection to the one before; their order, and anything said across them,

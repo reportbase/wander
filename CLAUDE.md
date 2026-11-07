@@ -269,7 +269,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (Lemma III: rhumb lines stereographically "Proportional Spirals about the Pole Point") and Tucker 2000 (the spiral
   proposed; the peregrines' curved paths in Tucker et al. 2000, the same issue) checked and cited; on `euler.html` two
   fingers anywhere are k·e^(iα), ln k + iα on the plane: the spread the thumb ÷ k, the twist a turn by α (the sphere's boost
-  and spin; nothing in space).
+  and spin; nothing in space). R742 (7 Nov; Tom: "trig is a writers tool or reader activity. writer uses N and both
+  hemispheres to describe the reader that uses neither."): **trigonometry is the writer's tool, not a reader's activity**
+  (the places read counted, both hemispheres of the turn held), after draw's *The Tangent Bridge* (proved in the angle
+  chart, run in the slope chart); *Reads and Writes* §1, essays 10 and 14. Generalizes R584, R658, R717.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

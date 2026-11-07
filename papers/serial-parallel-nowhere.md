@@ -7352,6 +7352,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R742** (7 Nov; Tom: "I think the tb_algebra paper makes a useful point, trig is a writers tool or reader activity.
+  writer uses N and both hemispheres to describe the reader that uses neither.", then "ok"): **trigonometry is the
+  writer's tool, not a reader's activity**: the writer counts the places read (the Tangent Bridge's N leaves, wander's K
+  counted; not the world's N) and holds both hemispheres of the turn (the 2π period, every sign of s) to describe a reader
+  that uses neither, one facing held open from home toward a horizon never reached. From draw's *The Tangent Bridge*
+  (`papers/tb_algebra.md`): the reconstruction proved in the angle chart (Fourier modes, Lebesgue and Jackson, the
+  completed circle) and run in the slope chart (ratios, the reciprocal, tangent addition, halving; no trigonometric
+  call); its 2/π an algebraic 2 over π, the writer's "share of the whole turn" (§7.5). Generalizes R584, R658, R717 from
+  tan, arctan, π/2 and 2/π to trigonometry as a whole. The slope chart's one square root, √(1 + s²), was asked about and
+  is already ruled (R592, R596; essay 10): the halving of a turn, two lengths combined, the writer's, which lays the
+  lattice; the reader's kernel at the leaves rational. *Reads and Writes* §1 (after "the writer's way of stating"),
+  essay 10's "Two charts, one circle", essay 14 §7 "It has been done".
 - **R741** (7 Nov; Tom: "proceed", to checking essay 18's two citations from memory and giving `euler.html` the phone's
   gesture): both citations checked. Halley 1696 (*Phil. Trans.* 19, 202–214, read in a transcription of the Royal
   Society's scan) proves the meridian line a scale of logarithmic tangents from four lemmas: Lemma I the stereographic

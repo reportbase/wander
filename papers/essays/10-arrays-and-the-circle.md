@@ -233,6 +233,9 @@ speaks. The operation uses the slope: ratios, the reciprocal, tangent addition, 
 same closed line, the third essay's projective line of directions, read through s = tan(φ/2). The angle chart needs the
 whole circle at once, every period and every closed identity defined on a finished turn, and the proof is right to use
 it. The slope chart is the chart of one reading at a time, and the operation, which reads one point, never needs more.
+Trigonometry is the writer's tool here, not anything the reader does: the writer counts the leaves and holds both
+hemispheres of the turn to describe a reader that does neither. The proof's one square root, √(1 + s²), belongs with
+it, since it is the halving of a turn, which lays the lattice; the reader's kernel at the leaves is rational.
 
 **Three things the construction shows.** *The arithmetic has its own craft.* The textbook half-angle, (√(1 + s²) − 1)/s,
 is the same number as s/(1 + √(1 + s²)), but it subtracts nearly equal numbers once s is small: built that way the
