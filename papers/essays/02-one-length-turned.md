@@ -487,12 +487,26 @@ one plane, each a mirror line. Each is moved by sliding the plane along its own 
 across the world's directions, and choosing H, the size of the thumb, slides the second along the distances, so many thumbs
 away. That is why the two corners can be set independently: they sit on different axes.
 
+**Drawn.** The logarithm's plane can be drawn, and `euler.html` draws it with a writer's grid on it. The grid's circles
+about the eye at one, two, four and eight thumbs come out as evenly spaced upright lines; its rays as level lines; every
+straight line of the grid as one and the same curve, slid sideways by how far off the line is and up or down by which way
+it faces; a logarithmic spiral as a straight line. Squeeze the distance axis by the thumb, (2/π)·arctan(d/H), and it
+becomes ½ + gd(x)/π, x = ln(d/H), with gd Mercator's own function: distance laid by the thumb is a turn too. A writer can
+say why. Wrap the plane onto a sphere so that one thumb lands on its equator: the eye is one pole, the horizon the other,
+the near field one half and the far field the other. The logarithm's plane is then that sphere's Mercator chart, the
+thumb's lay its chart of plain latitude and longitude, and the swap of a distance for its reciprocal its reflection in the
+equator. Turning the world turns the sphere about its axis; making the thumb larger slides every latitude toward the eye,
+a boost of rapidity ln k, the moving sky of the seventh essay done to distance. Both are slides on the logarithm's plane
+because the two motions commute. The sphere is the writer's: the reader has the lay.
+
 **Where it stops.** Euler's formula is a tool for the flat case, one other party and turns in a plane. With three parties
 (the fifth essay's wedge, which is the writer's description of the reader's heat map), only half of it survives. The split
 survives: a point of space is still an amount times a direction, scaling the world still moves only the amount, and the
 scale test still asks the same question. What fails is composition as addition. Turns in a plane commute, so their angles
 add. Turns in space do not: a quarter turn about one axis and then another ends somewhere different from the same two turns
-in the other order. With no fixed order there is no single angle to add, and no logarithm turns combining them into a sum.
+in the other order. With no fixed order there is no single angle to add, and no logarithm turns combining them into a sum. Two quarter
+turns land 120° apart by order, and a small loop of turns (one way about one axis, then the other, then both back) comes
+home turned by about the area it encloses, 1.741° for turns of 10°, where the plane's loop leaves nothing.
 Quaternions compose turns of space, but they do not commute, and no number system of more than two dimensions does both.
 Each sweep on its own, altitude or azimuth, is still a plane's turn and still adds; it is putting the two together that
 does not. It can look strange that so tidy a tool stops at two dimensions, but the reason is that space has more than one

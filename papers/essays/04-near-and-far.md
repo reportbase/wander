@@ -273,7 +273,18 @@ The hyperbolic angle is the reader's logarithmic lay made smooth. It is nearly x
 logarithm of 2x past it. The lay of section 3, x then 1 plus the logarithm of x, never differs from it by more than
 1 − ln 2, about 0.31.
 
-*Demo: one sweep, three paths; what is H.*
+**The same figure in distance.** The thumb's own lay of distance, (2/π)·arctan(d/H), is the turn ruler applied to d/H,
+and written against the ratio x = ln(d/H) it is ½ + gd(x)/π, gd the function Mercator's chart is built on. So distance
+laid by the thumb is a turn, bounded, with its corner at one thumb. A writer can draw the reason. Wrap the plane onto a
+sphere so that one thumb lands on its equator: the eye is one pole and the horizon the other, the near field is the half
+on the eye's side and the far field the half on the horizon's, and the swap of d for H²/d is the reflection in the
+equator. The thumb's lay is then the sphere's latitude drawn evenly; the reader's ratios of thumbs, the logarithm, are
+the same sphere's Mercator chart, where each stretch of the far field takes the same room. The K places a writer counts
+along distance, H·tan(kπ/2K), are the meridian cut into equal steps, half of them in each half of the sphere. Making the
+thumb larger slides every latitude toward the eye: a boost along the sphere's axis, the moving sky of the seventh essay
+done to distance. The sphere is the writer's drawing; the reader has the lay.
+
+*Demo: one sweep, three paths; what is H; Euler's plane.*
 
 ---
 

@@ -259,6 +259,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   &heat=0|chart&lines=0&dots=0&over=line|spiral&p=<log2>&f=&a=&yaw=&pitch=&boost=1&al=&be=&loop=1&syaw=&spitch=&th=&n=
   &labels=1&numbers=1&about=1`; hook `window.__euler` (`toEuler`, `toLay`, `heat`, `chartHeat`, `sphere`, `overlay`, `mirror`,
   `points`, `lines`, `reads`, `space`, `set`, `state`, `menu`, `frames`). Keep new text on this page behind the menu. Not in the flying page.
+  R739 (7 Nov; Tom: "update the essays and papers"): R736–R738 in *Reads and Writes* §6 ("Euler's plane, and the thumb's
+  lay as a turn"), §7 ("The heat depends on what it is counted per"; the small loop α·β) and Code and data, and in essays
+  2 §9, 4 §9, 7 §7, 13 §4 and 17 §7, with `euler.html` among those essays' demos on `essays.html`. R740 (7 Nov; Tom:
+  "Seems like ehulers is perfect for read and write", then "Yes"): *Reads and Writes* §1 "One plane" (reading up and down,
+  writing across, the pinch and the twist; the writer's notation, the first test only, the plane's), and essay 18,
+  `papers/essays/18-read-and-write-on-one-plane.md`, *Read and write on one plane*; a card on `essays.html`, a README row,
+  the explainers' not-yet list; the smoke test counts eighteen essays.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
@@ -3607,7 +3614,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     seventeen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     eighteen essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
