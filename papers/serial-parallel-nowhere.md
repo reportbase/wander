@@ -7352,6 +7352,81 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R734** (7 Nov; Tom: "lets think about this differently. maybe we don't need the cube. maybe we could just uncompress
+  the cauchy.", then "yes. put all readouts and dials into a menu. the visual should be full screen without readouts."):
+  `uncompressed.html`. The read laid evenly as a hemisphere, points even in the share of directions and in the thumb's lay
+  of distance g = (2/π)·atan(d/H), then undone, d = H·tan(πg/2) along each direction. What the cloud holds, exact for the
+  even law: half the points within one thumb at every H; per ratio of distance ½·sech(ln(d/H)), most at one thumb, alike at
+  d and H²/d; so the shells from one to two thumbs, two to four, four to eight hold 0.205, 0.139, 0.077 (past eight
+  0.079), not equal; per unit of volume ∝ H/(d²(H² + d²)), 1/d² near the eye and H/d⁴ far; the directions on a flat screen
+  one thumb out fall cos³α per unit of screen (the grid's rings 0.877, 0.667, 0.493 against 0.880, 0.670, 0.496). A uniform
+  cube's density over the cloud's grows as d²(H² + d²)/H, which is R733's pile-up seen from the other side: against
+  the read, the payload gains ground with every thumb out. The cloud is the writer's (distances written in units of H), as the
+  hemisphere is the writer's drawing of the read. Full screen with no words; every readout and dial behind the menu.
+- **R733** (7 Nov; Tom: "lets say the cube is infinite in all directions. the dots are uniform within it. put it next to a
+  hemisphere. connect each dot in the cube to a dot on the cauchy atmosphere.", then "the payload cube and cauchy hemisphere.
+  every dot from the cube should point to a dot on the hemisphere. most of the dots from the cube will pile up on the sides of
+  the atmosphere with the fewest dots in the center of the atmosphere."): `cube-atmosphere.html`. An endless uniform cube gives
+  every direction the same share of dots by solid angle, so a hemisphere dot receives the cube in proportion to its cell's
+  solid angle. Which cells the hemisphere has decides the picture. With its dots at equal turns (rings every 90°/16, each
+  the same 32 dots) the cells shrink toward the middle and the cube piles up on the sides: the rim ring
+  cos(84.375°) = 0.0980 of the directions against the centre ring's 1 − cos(5.625°) = 0.00482, 20.4 times as many a dot
+  (counted on the lattice within 12 of the eye, 19.5; within 24, 20.9). With its dots at equal shares (1 − cos α = i/16, the
+  regular heat map of R731) every hemisphere dot receives the same count (1.01). So Tom's pile-up is the equal-turn
+  hemisphere's; the equal-share one spreads the cube evenly; which is the Cauchy's hemisphere is Tom's to rule. Counting
+  over a ball, not the window's cube, so its corners do not weigh in; looking along a lattice row puts the rows into the
+  counts (straight up, the equal-share rim ring got none within 12). Kept alongside: each dot laid by its distance too,
+  A·(2/π)·atan(d/H), the endless cube inside a bounded hemisphere, the window's dots reaching 0.879 of the radius at its
+  corners and the rest landing from 0.810 to the rim (H = 4, window 12). Reviewed by four readers and a skeptic each; of eleven
+  findings confirmed, ten taken (the HUD's partition of the window and the rest, the phone layout, which dots are joined,
+  the lattice's rows, the across axis at the pole, the writer's amounts under scaling, hidden dots drawn black, a stale
+  paragraph, the desktop framing, the records); the eleventh, dots exactly on the look all in one spoke, is avoided by the
+  slanted default, not fixed.
+- **R732** (7 Nov; Tom: "what happend to the cube.   we could show the cauchy in the non-compressed cube form."): the
+  reader's view of `heat-cube.html` had shown the cube only compressed (Lambert's equal-area map about the look), where the
+  box's edges bend and its rim closes at √2. It now opens on a flat screen square to the look, the pinhole's F·tan α: the
+  cube keeps its straight edges (drawn), from a corner its three faces a straight triangle, and the same equal-share bands
+  land at radius tan α (cos α = 1 − share), crowding toward the look and widening without end toward the rim, which is at
+  infinity. On this screen cos³α is not a colour chosen to stand for the heat but exactly the density of directions per unit
+  of screen, the 2D Cauchy 1/(2π(1 + r²)^(3/2)) (R312). The compressed screen stays a toggle (S, `?lay=area`). Nothing in the
+  papers changes: the page shows the same heat on the writer's undistorted box.
+- **R731** (7 Nov; Tom: "What are the lines on the border, that implies a shape.", then "The border looks artificial", then
+  "this is geometry, not physics, so there woulld not be any randommess or scatter. the heat map would be regular"): the
+  reader's view on the grid drew the writer's lattice: every row or plane of dots through the eye lands on one line (from
+  a corner eye the three faces the triangle's edges, the diagonal planes x = y, y = z, z = x the six spokes). A seeded
+  scatter of the dots was tried and withdrawn the same day: the geometry has no randomness. `heat-cube.html` keeps the
+  grid; its reader's view paints the heat as a regular map, 16 bands of equal share of the directions in front (equal
+  room on the equal-area screen) by 32 equal turns, each cell cos³α at its middle, under the dots; D (or `?dots=0`) takes
+  the dots away and leaves the regular heat map alone, with no edge. `?view=reader` opens from the middle. R730's "the
+  three thumbs its bright lines" withdrawn in *Reads and Writes* §7 and essay 5 §10: those lines were the grid's.
+- **R730** (6 Nov; Tom: "what did you learn from this demo", then "add this to the papers and essays. you can mention
+  this demo in the papers."): what `heat-cube.html` shows, carried in as a demo of R728, nothing new claimed. The cube
+  never changes, only its colours, and only with the look (the heat is the look's); choosing the dot looked at is choosing
+  the thumb; the fields are equal in room and not in count (from a corner of a 12-a-side box looking at the middle, 436
+  dots nearer than one thumb, 1,291 farther; laid by (2/π)·arctan(d/H) each field half the room: the count the writer's
+  spacing, the room the read's); the hot core small (half heat at 37.5°, a fifth of the directions in front inside it);
+  the box's last dot short of the horizon (the box closes, the heat runs on); from the eye every dot one size, the cube
+  from a corner the wedge's curved triangle, the dots streaming across a heat fixed about the crosshair. *Reads and Writes*
+  §7 ("A cube of dots, read from one of them") and Code and data, which name the demo; essay 5 §10 ("A cube of dots"),
+  essay 4 §11 (after "Dragging the thumb"); `essays.html`'s demo links for essays 4 and 5.
+- **R729** (6 Nov; Tom: "if we created a cube of dots, could we color those dots based on the cauchy based on the touch of
+  one of the dots?", "right, you would need to touch a dot and set a facing.", then "yes"): `heat-cube.html`. The cube of
+  dots is the writer's box; a reader stands at a tapped dot and looks one way (called "the look" on the page, R648's
+  "facing" being the writer's term for reads joined); H is the distance to the dot looked at (times 2^h); each dot's colour
+  is cos³α × sech(ln(d/H)), behind the eye none. Checked: the dot looked at heat 1 and the hottest; scaling the world by
+  10^2.5 moves no colour (10⁻¹⁵); dots at d and H²/d on one direction one colour (10⁻¹⁶); from the middle 720 of 1,727 dots
+  in front. A demo of R728, nothing claimed.
+  Then (Tom: "now show the cauchy compression in an adjacent visual"): a panel beside the cube draws the same dots as the
+  read lays them, no dot moved in the cube: across the look, a disc of radius √(1 − cos α) (equal room, equal share; rings
+  at 37.5°, 45°, 60°; from a corner the cube is the wedge's curved triangle); along the look, x = (2/π)·atan(d/H) (the eye
+  0, one thumb ½, the horizon 1) against the share. Checked: the dot looked at at g = ½, share 0; scaling moves none.
+  Then (Tom: "can you show the readers view"): the reader's view, full screen (`?view=reader`, V): the eye's own view,
+  every dot in front at its direction about the look by Lambert's equal-area map (R685), all one size, since the reader
+  reads no distance (a far dot and a near one on a line look alike, the nearer drawn over); the heat painted on the screen
+  about the crosshair (cos³α), each dot its own sech(ln(d/H)); drag turns the look and the dots stream through a heat that
+  stays put (the heat is the look's); a tap brings a dot to the crosshair, H its distance. Checked: the dot looked at on
+  the crosshair, heat 1; scaling moves no dot on the screen (4·10⁻¹⁵); a real drag turns the look, a real tap looks at
+  the dot tapped. From a corner the cube is the wedge's curved triangle with its three thumbs' lines.
 - **R728** (6 Nov; Tom: "what if its more like the heat map of the full hemisphere. the tunnel is just where its
   hotest."; "hotter means higher density of addresses in this metaphore."; "yes, I prefer the idea is that the cauchy is the
   horizon's heat map. giving the cauchy a shape is a bit confusing."): **the Cauchy is the horizon's heat map, not a
@@ -7371,7 +7446,20 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   (z₁ + z₂, SUM's relay; e^(iz₁t)·e^(iz₂t)); heat maps overlaid add too, but the sum is a heat map, not one Cauchy (pooled
   standpoints, R359; the row of readers' plateau). Averaging n readings gives the same Cauchy, no narrower; the median
   gains (about πγ/(2√n)), the mean nothing. Shapes combine only by reconciling boundaries (where they meet, which edge
-  wins). Recorded only, in no paper yet.
+  wins). Recorded, then (Tom: "update the essays and papers") in *Reads and Writes* §7 ("Heat maps combine without
+  reconciling"), essay 3 §6 after the relay, essay 17 §5.
+  Then (Tom: "so the heat map would be hottest where the three thumbs cross, where they are maximally expressed relative
+  to each other.", then "yes, add it"): the heat is the look's, hottest wherever the look points; looked down the thumbs'
+  diagonal (R670, R671) that is their crossing, [1 : 1 : 1], every share equal and every pair at its corner (balanced, not
+  any thumb at its largest); on a screen square to h (the wedge's law in v/h, v₂/h) the same directions are hottest at
+  home. *Reads and Writes* §7; essay 5 §4.
+  Then (Tom: "a heat map that extends radially outwards from a central point.", "is that center spot the corner?", "where
+  is the far an near field in this picture", then "yes, add it to the paper and essays"): two centres, the eye (where
+  directions start, no size, not hottest) and the hot spot one thumb out on the look, the thumbs' crossing; the hot spot
+  is the corner in direction (triple corner) and in distance (d/H = 1), median and peak, by the reader's choice of look
+  and H; the heat thins from it without end, across as cos³α in readings, along as sech(ln(d/H)) in ratios. The near
+  field runs from the eye to the hot spot (proportion), the far from it to the horizon (ratios), half the heat each,
+  neither hotter. *Reads and Writes* §7 ("The hot spot, and the fields either side of it"); essay 5 §10; essay 4 §13.
 - **R727** (6 Nov; Tom, of a ChatGPT note pasting "Breathing: The Asymmetry of Reading and Writing": "Just a small
   note, i like the basic metapore, just record it so we dont forget it."): recorded, not placed in any paper. Breathing in
   is reading, breathing out is writing: one cycle, two acts not alike (read continuous, write discrete, R640; read, write,

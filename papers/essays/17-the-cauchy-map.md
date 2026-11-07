@@ -179,7 +179,9 @@ Writes* §2, "The payload is not lost"). A floor, a box blur, cuts some patterns
 dims them.
 
 It is also why a sum of Cauchys is a Cauchy: a relay of standpoints, each one height above the last, lands as one turn from
-the total height (the SUM run). The heights add, and the map stays a map of directions.
+the total height (the SUM run). The heights add, and the map stays a map of directions. Nothing has to be reconciled,
+because a heat map has no boundary: combining shapes means working out where their edges meet, combining heat maps means
+adding heat. Two maps laid over each other add too, but their sum is two peaks, a heat map and not one Cauchy.
 
 And it is how the epicycles of essay 4 and the demo `epicycles.html` blur: seen from a height γ, circle k of an outline
 shrinks by e^(−γ|k|), and no circle moves.

@@ -678,7 +678,11 @@ is only its hottest core (the heat map itself has no shape: its tail never compl
 stored. As the reader sweeps, the heat map turns with the look, continuously and without a seam, so whatever it looks at is
 where the heat is greatest and the reading finest, and each direction is exact, given by the geometry, not computed. That
 is the reader's fidelity: perfect wherever it looks, because it is wherever it looks. The wedge, the octant and the sphere
-are what a writer draws to describe that heat map from outside.
+are what a writer draws to describe that heat map from outside. The heat is the look's, not the thumbs': it is hottest
+wherever the look points. Looked down their diagonal, that is where the three thumbs cross, [1 : 1 : 1], all three
+shares equal and every pair at its corner, balanced rather than any one thumb at its largest. Laid on a screen square to
+one thumb instead, as the wedge's law 2/(π(1 + s² + s₂²)^(3/2)) is in v/h and v₂/h, the same directions are hottest along
+that thumb, at home; nothing moved but the screen.
 
 **The heat map reaches the horizon; near and far are an overlay.** One read's heat map covers the hemisphere in front,
 nothing smaller; the Cauchy has no shape of its own, only the heat over everything out to the horizon. Projected from the eye onto a screen square to the look, the directions spread
@@ -698,6 +702,50 @@ past four, 0.079 past eight, about half of what was left each time the reading h
 reached: the far field, heavy, so no mean of distances. The split is a mark at one thumb on every direction, each one's
 median, not a body: a first version drew it as a closed dome and gave the near field a shape, which it does not have. It
 stands one thumb out, never at V. Take the overlay away and the Cauchy is unchanged.
+
+**The hot spot, and the fields either side of it.** Put the two layers together and the read has two centres. The eye is
+where every direction starts, a point with no size, and not where the heat is greatest. The hot spot is one thumb out
+along the look: looked down the thumbs' diagonal, it is where they cross. It is the corner twice over, in direction the
+triple corner [1 : 1 : 1], in distance d/H = 1, the point fixed when every distance ratio is turned over; and it is the
+median as well as the peak, half the heat within 60° of it on the screen and half on either side of it along the look.
+The two corners meet there only because the reader makes them meet, pointing its crossed thumbs at a thing and taking
+that thing as its thumb; pointed elsewhere, the heat moves and no direction does. From the hot spot the heat thins every
+way without end: across the look as cos³α, in readings, rings out toward the rim; along it as sech(ln(d/H)), in ratios,
+toward the eye and out toward the horizon. The split between near and far passes through it. The near field runs from
+the eye to the hot spot, distance in proportion; the far field from the hot spot to the horizon, distance in ratios (one
+in two, one in four, one in eight); each holds half the heat, so neither is hotter, they differ only in how distance is
+read. Off the look every direction is cooler, by cos³α, and cut at the same thumb; a writer joining those cuts draws the
+near-field sphere of radius H, cut to one read the hemisphere in front. The reader holds only the mark one thumb out on
+each direction it reads.
+
+**A cube of dots, read from one of them.** Lay a writer's box of dots one unit apart, 12 a side, stand at one dot and
+look at another, and colour every dot by the read's heat, cos³α × sech(ln(d/H)), the thumb set on the dot looked at
+(`heat-cube.html`). Five things show. First, the cube never changes; only its colours do, and only when the look does:
+turn the look and the hot spot goes with it, so the heat is the look's and not the cube's. Second, choosing what to look
+at is choosing the thumb: look at a near dot and almost the whole cube falls in the far field, look at a far one and most
+of it comes near. Scaling the world changes no colour. Third, the two fields are equal in room and not in count. From
+the corner of the box, looking at its middle, 436 dots are nearer than one thumb and 1,291 farther; laid as the read
+lays distance, (2/π)·arctan(d/H), the dot looked at sits at ½ and each field has half the room, the far dots crowding
+toward the horizon. The uneven count is the writer's even spacing; the equal room is the read's, whatever the number of
+dots. Fourth, the hot core is small: the heat halves 37.5° off the look, and inside that lies about a fifth of the
+directions in front; most of what is in front is warm to cool. Fifth, the box has a last dot, so along the look the dots
+stop short of the horizon. The gap between the farthest dot and the horizon is the difference between a shape and the
+heat: the box closes, the heat runs on. Drawn from the eye, as the reader would have it, each dot is put where its
+direction falls (equal room for equal shares of the directions) and all are one size, since no distance is read: a far
+dot and a near one on a line look alike. Turned, the dots stream across a heat that stays where it is, about the
+crosshair. On the grid, rows and planes of dots that pass through the eye land on lines, and from a corner of the box
+its three faces through the eye make a hard curved triangle: the writer's spacing and the box's walls, not the read's.
+The read's own heat map is regular: bands of equal share of the directions about the look, each the same room on the
+screen, each as hot as cos³α, the same whatever dots are there or none. Take the dots away and it is all that is left,
+with no edge; the triangle's border was the box's. None of this is new; the demo shows the
+paragraphs above on one box of dots.
+
+**Heat maps combine without reconciling.** Two shapes combine only by working out their boundaries: where they meet,
+which edge wins, what overlaps. A heat map has no boundary, so nothing needs working out, and the heat adds. Two senses
+of combining stay apart. Readings added give one Cauchy again, the standpoints added, z₁ + z₂ (a relay of standpoints,
+§8; in Euler's notation e^(iz₁t)·e^(iz₂t)). Heat maps laid over each other add too, but their sum is a heat map, not one
+Cauchy: two peaks stay two, a mixture of standpoints and not one of them. Averaging n readings gives back the same
+Cauchy, no narrower; the median gains, the mean nothing.
 
 **Where the reader stands.** Behind the screen, at one point. The look runs from it to the crosshair; a thumb lands √2
 off the look on a screen one thumb away, home at 1/√2, one thumb off at 1, and the horizon runs parallel to the screen and
@@ -1139,7 +1187,8 @@ measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumb
 thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the shape
 swept whole against each thumb on its own in `plans/swp-plan.md` and `runs/swp/`; the read with no world, and where the
 reader stands, in `read.html`; the heat on a flat screen and a lens's cos⁴ against it in `pinhole.html` (its uniform
-sky); the tunnel laid by its heat, the distance reading and a world culled by K in `crosshairs.html`; Euler's formula as
+sky); the tunnel laid by its heat, the distance reading and a world culled by K in `crosshairs.html`; a cube of dots coloured
+by one read's heat, laid as the read lays it and seen from the eye, in `heat-cube.html`; Euler's formula as
 a count of reads in `plans/elm-plan.md` and `runs/elm/`. The three cases in data of §11 (LIGO, the quasar dipole, single
 photons) are `plans/lgo-plan.md`, `plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and
 `runs/wvp/`: each plan states its predictions and what would count against them before its run, and records the runs as

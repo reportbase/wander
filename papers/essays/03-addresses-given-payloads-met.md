@@ -247,6 +247,11 @@ direction from the combined standpoint, with no mean. A sum of Cauchys is a rela
 sum carried across two standpoints a step apart: the sixth essay shows the triangulated depth is exactly a Cauchy, its
 point the triangulation of the two reads' points.
 
+That is also why Cauchys combine so easily. Two shapes combine only by working out their boundaries, where they meet and
+which edge wins. The Cauchy is a heat map with no boundary (the fifth essay), so there is nothing to work out: readings
+added relay their standpoints into one Cauchy, and heat maps laid over each other simply add their heat. The second sum is
+a heat map but not one Cauchy, which is the pooling the next list names.
+
 The normal distribution is the Cauchy's counterpart among amounts. It is closed under sums and rescalings, the
 operations on amounts, and not under ratios or turns. Take the ratio of two independent centred normals and you get a
 Cauchy. Taking a ratio carries the one law into the other.

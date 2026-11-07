@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>A cube of heat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    heat-cube.html: a cube of heat (6 November 2026; Tom: "if we created a cube of dots, could we color those dots based on
+    the cauchy based on the touch of one of the dots?", then "right, you would need to touch a dot and set a facing.", then
+    "yes"; SPN R729, after R728: the Cauchy is the horizon's heat map, not a shape).
+
+    The cube of dots is the writer's box: n × n × n dots one unit apart, each a place in amounts. Nothing round in it.
+    A reader stands at one dot (the eye: a point, no size, no colour of its own) and looks one way (the look). H, the
+    thumb, is the distance to the dot looked at, times 2^h (h the slider, 0 by default), so the thing looked at sits at the
+    corner. Every other dot is coloured by the read's heat at its direction and distance:
+
+        heat = cos³α × sech(ln(d/H))      (peak 1, at the dot looked at when h = 0)
+
+    α the dot's angle off the look, d its distance from the eye. cos³α is the Cauchy's heat per unit of reading on a screen
+    square to the look; sech(ln(d/H)) the overlay's heat in distance, read by ratio (π times (1/π)·sech). A dot behind the
+    eye (α ≥ 90°) is not in this read: drawn dark. Scale the world (k) and every d and H move together: no colour moves.
+    d and H²/d along one direction take one colour (the swap of d/H for H/d). Near field (d < H) and far (d > H) each
+    hold half of every direction's heat.
+
+    Tap a dot: by default the first tap stands there and every later tap looks at the dot tapped ("tap to" switches).
+    Drag to orbit the view; the look's sliders turn the look by yaw and pitch.
+    ?n=8|12|16&eye=i,j,k&look=i,j,k&h=<log2>&k=<log10 k>&color=heat|fields&view=outside|reader
+    The reader's view (V, or "view: the reader's", ?view=reader): the eye's own view, every dot in front by its direction,
+    laid about the look by Lambert's equal-area map, all one size (no distance read), the heat painted on the screen.
+    Since 7 Nov (Tom: "what happend to the cube. we could show the cauchy in the non-compressed cube form.") it opens on a
+    flat screen square to the look (the pinhole's, F·tan α): the cube keeps its straight edges and faces (drawn), the heat's
+    equal-share bands land at tan α, crowding to the middle and widening without end toward the rim at infinity, and cos³α
+    is exactly the heat per unit of that screen (the 2D Cauchy). S, the "screen" button or ?lay=area for the equal-area
+    (compressed) screen, where the same edges bend and the rim is at √2.
+    Hook window.__heatCube: heat(i), heats(), front(), stand(i), lookAt(i), set({…}), state(), pairs(), compressed(),
+    readerView(), frames, webgl.
+    -->
+    <style>
+    :root { --bg: #07090f; --ink: #e6e9f2; --dim: #8a91a8; --gold: #f2c14e; --teal: #4fd1c5; --violet: #a78bfa }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 13px/1.45 'DM Mono', ui-monospace, monospace; overflow: hidden }
+    canvas#stage { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; touch-action: none }
+    .glass { background: rgba(14, 18, 30, .82); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; backdrop-filter: blur(6px) }
+    #panel { position: fixed; top: 14px; left: 14px; width: 330px; padding: 12px 14px; max-height: calc(100vh - 28px); overflow: auto }
+    h1 { font: 25px/1.1 'DM Serif Display', serif; margin: 0 0 4px }
+    .sub { color: var(--dim); margin: 0 0 8px }
+    .ctl { display: grid; grid-template-columns: 7.5em 1fr 4.5em; gap: 6px; align-items: center; margin: 6px 0 }
+    .ctl output { text-align: right; color: var(--gold) }
+    .row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 }
+    button { background: #1b2236; color: var(--ink); border: 1px solid #2c3550; border-radius: 8px; padding: 5px 9px; font: inherit; cursor: pointer; min-height: 30px }
+    button.on { background: #2b3554; border-color: var(--gold); color: var(--gold) }
+    #hud { position: fixed; right: 14px; bottom: 14px; padding: 10px 12px; max-width: 360px; white-space: pre-wrap }
+    #hud b { color: var(--gold); font-weight: 500 }
+    #scale { position: fixed; right: 14px; top: 14px; padding: 8px 10px; display: flex; gap: 8px; align-items: center }
+    .bar { width: 160px; height: 10px; border-radius: 5px; background: linear-gradient(90deg, #141826, #3b2a6e, #2b7fa0, #4fd1c5, #f2c14e, #fff6d8) }
+    a { color: var(--teal) }
+    canvas#reader { position: fixed; inset: 0; width: 100vw; height: 100vh; display: none; background: #05070c; touch-action: none; z-index: 5; cursor: grab }
+    #panel, #hud, #scale, #comp { z-index: 6 }
+    #nogl { position: fixed; inset: 0; display: none; place-items: center; text-align: center; color: var(--dim) }
+    #comp { position: fixed; right: 14px; top: 58px; width: 300px; padding: 8px 10px; max-height: calc(100vh - 230px); overflow: auto }
+    #comp canvas { display: block; width: 280px; background: #05070c; border-radius: 8px; margin: 4px 0 6px }
+    #comp .t { color: var(--dim); font-size: 11.5px; line-height: 1.35 }
+    #comp .t b { color: var(--ink); font-weight: 500 }
+    @media (max-width: 760px) {
+        #panel { top: auto; bottom: 10px; left: 10px; width: calc(100vw - 44px); max-height: 46vh }
+        #hud { top: 10px; bottom: auto; right: 10px; max-width: calc(100vw - 40px); font-size: 11px }
+        #scale { display: none }
+        #comp { display: none }
+    }
+    </style>
+    <script type="importmap">{ "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body>
+<canvas id="stage" aria-label="A cube of dots coloured by one read's heat"></canvas>
+<canvas id="reader" aria-label="the reader's view: every dot in front by its direction from the eye"></canvas>
+<div id="panel" class="glass">
+    <h1>A cube of heat</h1>
+    <p class="sub">The cube is the writer's: dots at places. Stand at one dot, look one way, and every dot in front takes the
+    read's heat: hottest at the dot looked at, cooling every way without end. Behind the eye, nothing: one read is half the
+    cube. The heat has no edge and no shape.</p>
+    <div class="row"><span style="align-self:center">tap to</span><button id="tStand">stand</button><button id="tLook" class="on">look at</button></div>
+    <div class="ctl"><label for="yaw">look, across</label><input id="yaw" type="range" min="-180" max="180" step="0.5"><output id="yawo"></output></div>
+    <div class="ctl"><label for="pitch">look, up</label><input id="pitch" type="range" min="-89" max="89" step="0.5"><output id="pitcho"></output></div>
+    <div class="ctl"><label for="hH">H, the thumb</label><input id="hH" type="range" min="-3" max="3" step="0.05" value="0"><output id="hHo"></output></div>
+    <div class="ctl"><label for="kK">scale the world</label><input id="kK" type="range" min="-3" max="3" step="0.05" value="0"><output id="kKo"></output></div>
+    <div class="row">
+        <button id="bCorner">stand at a corner</button><button id="bMiddle">stand in the middle</button>
+        <button id="bColor">colour: heat</button><button id="bN">12 a side</button><button id="bBehind" class="on">show behind</button><button id="bView">view: from outside</button><button id="bLay" style="display:none">screen: flat</button>
+    </div>
+    <p class="sub" style="margin:8px 0 0">H is drawn against the dot looked at: at 0 that dot is the corner, the hot spot.
+    Drag to turn the view. Other demos: <a href="read.html">the read</a>, <a href="crosshairs.html">crosshairs in a field</a>,
+    <a href="wedge.html">the wedge</a>, <a href="demos.html">all demos</a>.</p>
+</div>
+<div id="scale" class="glass"><span>0</span><div class="bar"></div><span>1</span><span style="color:var(--dim)">heat</span></div>
+<div id="comp" class="glass">
+    <div class="t"><b>The same dots, as the read lays them</b>. No dot moves in the cube; here each is laid by its heat.</div>
+    <canvas id="cLook" width="560" height="560" aria-label="the look: directions laid by their share"></canvas>
+    <div class="t"><b>Across the look.</b> Each dot at its direction about the look, laid so equal room holds equal shares
+    (radius √(1 − cos α)): rings at 37.5° (half heat), 45° (one thumb off) and 60° (half the directions); the rim, 90°,
+    never reached.</div>
+    <canvas id="cDepth" width="560" height="360" aria-label="along the look: distance laid by the read"></canvas>
+    <div class="t"><b>Along the look.</b> Across: distance laid as (2/π)·atan(d/H), the eye at 0, one thumb at ½, the
+    horizon at 1; down: the share off the look. The cube's evenly spaced dots crowd toward the far side: the near field in
+    proportion, the far in ratios (2, 4 and 8 thumbs marked), the horizon never reached however large the cube.</div>
+</div>
+<div id="hud" class="glass"></div>
+<div id="nogl"><div>This page needs WebGL to draw the cube.<br>The arithmetic still runs: see the test hook.</div></div>
+
+<script>
+// ── the geometry and the heat, a plain script so the hook works without WebGL ───────────────────────────────────────
+(function () {
+    const RAD = Math.PI / 180;
+    const qs = new URLSearchParams(location.search);
+    const S = {
+        n: [8, 12, 16].includes(+qs.get('n')) ? +qs.get('n') : 12,
+        eye: 0, look: null,               // indices; look the dot looked at (null when the look was turned by hand)
+        yaw: 45, pitch: 35.26,            // the look's direction, degrees (yaw round from +x toward +z, pitch up toward +y)
+        h: +qs.get('h') || 0,             // log2 of H against the distance to the dot looked at
+        lk: +qs.get('k') || 0,            // log10 of the world's scale
+        color: qs.get('color') === 'fields' ? 'fields' : 'heat',
+        tap: 'look', behind: true, version: 0, dotsOn: qs.get('dots') !== '0', lay: qs.get('lay') === 'area' ? 'area' : 'flat',
+        view: qs.get('view') === 'reader' ? 'reader' : 'outside',
+    };
+    const idx = (i, j, k) => (k * S.n + j) * S.n + i;
+    const ijk = q => [q % S.n, Math.floor(q / S.n) % S.n, Math.floor(q / (S.n * S.n))];
+    const K = () => Math.pow(10, S.lk);
+    // a dot's place in the writer's box, in amounts (unit spacing times the world's scale), centred on the box
+    const place = q => { const [i, j, k] = ijk(q), c = (S.n - 1) / 2, s = K(); return [(i - c) * s, (j - c) * s, (k - c) * s]; };
+    const lookDir = () => { const y = S.yaw * RAD, p = S.pitch * RAD; return [Math.cos(p) * Math.cos(y), Math.sin(p), Math.cos(p) * Math.sin(y)]; };
+    const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
+    const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+    const len = a => Math.hypot(a[0], a[1], a[2]);
+    // the dot the look passes nearest (largest cos α, then nearest): the thing looked at when the look was turned by hand
+    function targetOf() {
+        if (S.look != null && S.look !== S.eye) return S.look;
+        const e = place(S.eye), L = lookDir(); let best = -1, bc = -2, bd = 1e300;
+        for (let q = 0; q < S.n ** 3; q++) { if (q === S.eye) continue;
+            const r = sub(place(q), e), d = len(r), c = dot(r, L) / d;
+            if (c > bc + 1e-12 || (Math.abs(c - bc) <= 1e-12 && d < bd)) { bc = c; bd = d; best = q; } }
+        return best;
+    }
+    // H, the thumb: the distance to the thing looked at, times 2^h
+    const Hof = () => len(sub(place(targetOf()), place(S.eye))) * Math.pow(2, S.h);
+    // one dot's heat: cos³α (the Cauchy, per unit of reading off the look) × sech(ln(d/H)) (the overlay, per ratio)
+    function heatOf(q, H, e, L) {
+        if (q === S.eye) return null;
+        const r = sub(place(q), e), d = len(r), c = dot(r, L) / d;
+        if (c <= 0) return 0;                                   // behind the eye: not in this read
+        const x = Math.log(d / H);
+        return c * c * c * (2 / (Math.exp(x) + Math.exp(-x)));
+    }
+    function heats() {
+        const e = place(S.eye), L = lookDir(), H = Hof(), out = new Array(S.n ** 3);
+        for (let q = 0; q < out.length; q++) out[q] = heatOf(q, H, e, L);
+        return out;
+    }
+    function lookAt(q) {
+        if (q === S.eye) return;
+        const r = sub(place(q), place(S.eye)), d = len(r);
+        S.yaw = Math.atan2(r[2], r[0]) / RAD; S.pitch = Math.asin(r[1] / d) / RAD; S.look = q; S.version++;
+    }
+    function stand(q) {
+        const keep = S.look != null && S.look !== q ? S.look : null; S.eye = q;
+        if (keep != null) lookAt(keep); else { S.look = null; S.version++; }
+    }
+    // the share of the cube's dots in front of the eye, and the near/far split of the heat among them
+    function front() {
+        const hs = heats(), e = place(S.eye), H = Hof(); let nf = 0, all = 0, hn = 0, hf = 0;
+        for (let q = 0; q < hs.length; q++) { if (hs[q] == null) continue; all++;
+            if (hs[q] > 0) { nf++; const d = len(sub(place(q), e)); if (d < H) hn += hs[q]; else hf += hs[q]; } }
+        return { inFront: nf, dots: all, share: nf / all, heatNear: hn, heatFar: hf };
+    }
+    // pairs at d and H²/d on one direction take one colour: every dot whose mirror lands on another dot
+    function pairs() {
+        const e = place(S.eye), L = lookDir(), H = Hof(), out = [];
+        for (let q = 0; q < S.n ** 3 && out.length < 50; q++) { if (q === S.eye) continue;
+            const r = sub(place(q), e), d = len(r), m = H * H / d, f = m / d;
+            const p = [e[0] + r[0] * f, e[1] + r[1] * f, e[2] + r[2] * f], s = K(), c = (S.n - 1) / 2;
+            const g = p.map(v => v / s + c), gi = g.map(Math.round);
+            if (gi.every(v => v >= 0 && v < S.n) && g.every((v, a) => Math.abs(v - gi[a]) < 1e-9)) {
+                const q2 = idx(gi[0], gi[1], gi[2]); if (q2 !== q && q2 !== S.eye)
+                    out.push({ a: q, b: q2, ha: heatOf(q, H, e, L), hb: heatOf(q2, H, e, L) }); } }
+        return out;
+    }
+    function set(o) {
+        if (o.n && [8, 12, 16].includes(o.n) && o.n !== S.n) { S.n = o.n; S.eye = 0; S.look = null; }
+        if (o.eye != null) stand(Array.isArray(o.eye) ? idx(...o.eye) : o.eye);
+        if (o.look != null) lookAt(Array.isArray(o.look) ? idx(...o.look) : o.look);
+        if (o.yaw != null) { S.yaw = o.yaw; S.look = null; }
+        if (o.pitch != null) { S.pitch = o.pitch; S.look = null; }
+        if (o.h != null) S.h = o.h;
+        if (o.k != null) S.lk = o.k;
+        if (o.color) S.color = o.color;
+        if (o.tap) S.tap = o.tap;
+        if (o.behind != null) S.behind = !!o.behind;
+        if (o.view === 'reader' || o.view === 'outside') S.view = o.view;
+        if (o.lay === 'flat' || o.lay === 'area') S.lay = o.lay;
+        S.version++; window.dispatchEvent(new Event('heatcube'));
+    }
+    // opening: eye at a corner, looking down the diagonal at the middle (the thumbs' crossing)
+    const parse = s => s ? s.split(',').map(Number) : null;
+    const pe = parse(qs.get('eye')), pl = parse(qs.get('look'));
+    // the reader's view opens from the middle (7 Nov): from a corner the box's walls through the eye bound the view
+    if (!pe && S.view === 'reader') { const c = S.n / 2 | 0; S.eye = idx(c, c, c); lookAt(pl ? idx(...pl) : idx(S.n - 1, c, c)); }
+    else { S.eye = pe ? idx(...pe) : 0;
+        lookAt(pl ? idx(...pl) : idx(S.n / 2 - 1 | 0, S.n / 2 - 1 | 0, S.n / 2 - 1 | 0)); }
+    window.__heatCore = { S, idx, ijk, place, lookDir, targetOf, Hof, heatOf, heats, lookAt, stand, front, pairs, set };
+    // the compression: every dot in front laid as the read holds it, its share off the look (1 − cos α, 0 at the look,
+    // 1 at the rim), its azimuth about the look and its distance address g = (2/π)·atan(d/H) (½ at one thumb)
+    function compressed() {
+        const e = place(S.eye), L = lookDir(), H = Hof(), out = [];
+        // a frame square to the look, for each dot's azimuth about it
+        const up = Math.abs(L[1]) < 0.95 ? [0, 1, 0] : [1, 0, 0];
+        const ux = [L[1] * up[2] - L[2] * up[1], L[2] * up[0] - L[0] * up[2], L[0] * up[1] - L[1] * up[0]], nx = len(ux);
+        const X = ux.map(v => v / nx), Y = [X[1] * L[2] - X[2] * L[1], X[2] * L[0] - X[0] * L[2], X[0] * L[1] - X[1] * L[0]];
+        for (let q = 0; q < S.n ** 3; q++) { if (q === S.eye) continue;
+            const r = sub(place(q), e), d = len(r), c = dot(r, L) / d; if (c <= 0) continue;
+            const x = Math.log(d / H);
+            out.push({ q, share: 1 - c, az: Math.atan2(dot(r, Y), dot(r, X)), g: (2 / Math.PI) * Math.atan(d / H),
+                heat: c * c * c * (2 / (Math.exp(x) + Math.exp(-x))) });
+        }
+        return out;
+    }
+    window.__heatCube = {
+        compressed, readerView: () => window.__heatReader ? window.__heatReader.points() : [],
+        heat: q => heatOf(q, Hof(), place(S.eye), lookDir()), heats, front, pairs, stand: q => set({ eye: q }),
+        lookAt: q => set({ look: q }), set, idx, place,
+        state: () => ({ n: S.n, eye: S.eye, look: S.look, target: targetOf(), yaw: S.yaw, pitch: S.pitch, H: Hof(), h: S.h,
+            k: K(), color: S.color, tap: S.tap, view: S.view, lay: S.lay }),
+        frames: 0, webgl: false,
+    };
+})();
+// the adjacent panel, drawn from the hook alone (no WebGL needed)
+(function () {
+    const C = window.__heatCore, S = C.S;
+    const STOPS = [[0, [20, 24, 38]], [0.12, [59, 42, 110]], [0.3, [43, 127, 160]], [0.55, [79, 209, 197]], [0.8, [242, 193, 78]], [1, [255, 246, 216]]];
+    const ramp = t => { t = Math.max(0, Math.min(1, t)); for (let i = 1; i < STOPS.length; i++) if (t <= STOPS[i][0]) {
+        const [a, ca] = STOPS[i - 1], [b, cb] = STOPS[i], f = (t - a) / (b - a);
+        return `rgb(${ca.map((v, k) => Math.round(v + (cb[k] - v) * f)).join(',')})`; } return 'rgb(255,246,216)'; };
+    const fields = (h, g) => g < 0.5 ? `rgba(79,209,197,${0.15 + 0.85 * h})` : `rgba(167,139,250,${0.15 + 0.85 * h})`;
+    let drawnV = -1;
+    function draw() {
+        if (drawnV === S.version) return; drawnV = S.version;
+        const pts = window.__heatCube.compressed().sort((a, b) => a.heat - b.heat);
+        const col = p => S.color === 'fields' ? fields(p.heat, p.g) : ramp(p.heat);
+        // across the look: a disc, radius √share (equal room, equal share), the rim the horizon of the look
+        const a = document.getElementById('cLook'); if (!a) return; const x = a.getContext('2d'), W = a.width, R = W / 2 - 18, cx = W / 2, cy = W / 2;
+        x.clearRect(0, 0, W, W);
+        x.strokeStyle = '#2c3550'; x.lineWidth = 2; x.beginPath(); x.arc(cx, cy, R, 0, 2 * Math.PI); x.stroke();
+        const ring = (deg, c, lab, at) => { const r = R * Math.sqrt(1 - Math.cos(deg * Math.PI / 180));
+            x.setLineDash([6, 6]); x.strokeStyle = c; x.beginPath(); x.arc(cx, cy, r, 0, 2 * Math.PI); x.stroke(); x.setLineDash([]);
+            x.fillStyle = c; x.font = '20px DM Mono, monospace'; x.textAlign = 'center';
+            x.fillText(lab, cx + r * Math.cos(at), cy + r * Math.sin(at) + 7); x.textAlign = 'left'; };
+        ring(37.47, '#f2c14e', '½ heat', Math.PI / 2); ring(45, '#c3c8d6', '1 thumb', -Math.PI / 2); ring(60, '#4fd1c5', '½ share', Math.PI / 2);
+        for (const p of pts) { const r = R * Math.sqrt(p.share);
+            x.fillStyle = col(p); x.beginPath(); x.arc(cx + r * Math.cos(p.az), cy - r * Math.sin(p.az), 2.2 + 4 * p.heat, 0, 2 * Math.PI); x.fill(); }
+        x.fillStyle = '#fff'; x.beginPath(); x.arc(cx, cy, 3, 0, 2 * Math.PI); x.fill();
+        // along the look: x the distance address, y the share off the look
+        const b = document.getElementById('cDepth'), y = b.getContext('2d'), BW = b.width, BH = b.height, L0 = 30, R0 = BW - 16, T0 = 14, B0 = BH - 40;
+        y.clearRect(0, 0, BW, BH);
+        y.strokeStyle = '#2c3550'; y.lineWidth = 2; y.strokeRect(L0, T0, R0 - L0, B0 - T0);
+        const gx = g => L0 + g * (R0 - L0);
+        y.font = '19px DM Mono, monospace';
+        const mark = (g, c, lab, dash) => { y.setLineDash(dash || []); y.strokeStyle = c; y.beginPath(); y.moveTo(gx(g), T0); y.lineTo(gx(g), B0); y.stroke();
+            y.setLineDash([]); y.fillStyle = c; y.textAlign = 'center'; y.fillText(lab, gx(g), BH - 14); };
+        for (const [k, lab] of [[2, '2'], [4, '4'], [8, '8']]) mark((2 / Math.PI) * Math.atan(k), '#4a3f7a', lab, [4, 6]);
+        mark(0.5, '#f2c14e', 'one thumb'); y.textAlign = 'left'; y.fillStyle = '#8a91a8'; y.fillText('eye', L0, BH - 14);
+        y.textAlign = 'right'; y.fillText('horizon', R0, BH - 14); y.textAlign = 'left';
+        for (const p of pts) { y.fillStyle = col(p); y.beginPath(); y.arc(gx(p.g), T0 + p.share * (B0 - T0), 2 + 3.5 * p.heat, 0, 2 * Math.PI); y.fill(); }
+    }
+    addEventListener('heatcube', draw);
+    const tick = () => { draw(); requestAnimationFrame(tick); }; requestAnimationFrame(tick);
+})();
+// ── the reader's view (6 Nov 2026; Tom: "can you show the readers view"), a plain canvas, no WebGL needed ──────────────
+// The eye stands at its dot and looks; every dot in front is drawn where its direction falls, laid about the look by
+// Lambert's equal-area map (radius ∝ 2·sin(α/2): the look at the middle, square to the look on the rim, equal room for
+// equal shares of the directions; crosshairs.html's equal area, R685). Every dot is drawn one size: the reader holds a
+// direction and its heat, no distance and no size, so a far dot and a near one on one line look alike (the nearer drawn
+// over). The heat is painted on the screen, not on the cube: hottest at the crosshair, cos³α across, and each dot's own
+// sech(ln(d/H)) along. Drag to turn the look (the dots stream through a heat map that stays where it is: the heat is the
+// look's), tap a dot to look at it (it comes to the crosshair and H, the thumb, becomes its distance).
+(function () {
+    const C = window.__heatCore, S = C.S, RAD = Math.PI / 180;
+    const cv = document.getElementById('reader'), x = cv.getContext('2d');
+    const STOPS = [[0, [20, 24, 38]], [0.12, [59, 42, 110]], [0.3, [43, 127, 160]], [0.55, [79, 209, 197]], [0.8, [242, 193, 78]], [1, [255, 246, 216]]];
+    const ramp = t => { t = Math.max(0, Math.min(1, t)); for (let i = 1; i < STOPS.length; i++) if (t <= STOPS[i][0]) {
+        const [a, ca] = STOPS[i - 1], [b, cb] = STOPS[i], f = (t - a) / (b - a);
+        return `rgb(${ca.map((v, k) => Math.round(v + (cb[k] - v) * f)).join(',')})`; } return 'rgb(255,246,216)'; };
+    let W = 0, H = 0, dpr = 1, R = 1, F = 1, cx = 0, cy = 0, drawnV = -1, pts = [];
+    function size() { dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight;
+        cv.width = W * dpr; cv.height = H * dpr; R = Math.min(W, H) * 0.46 / Math.SQRT2; F = R / 1.25; cx = W / 2; cy = H / 2; drawnV = -1; }
+    // a direction r (from the eye) on the screen, in pixels from the middle: the flat screen's (F·tan α, the pinhole's,
+    // the cube as it is) or the equal-area one's (R·2 sin(α/2)); null behind the eye
+    function proj(r, L, X, U) { const z = r[0] * L[0] + r[1] * L[1] + r[2] * L[2], rx = r[0] * X[0] + r[1] * X[1] + r[2] * X[2],
+            ru = r[0] * U[0] + r[1] * U[1] + r[2] * U[2], d = Math.hypot(z, rx, ru);
+        if (S.lay === 'flat') return z > 1e-3 * d ? [F * rx / z, F * ru / z] : null;
+        if (z <= 0) return null; const m = Math.hypot(rx, ru) || 1, rho = 2 * Math.sin(Math.acos(Math.min(1, z / d)) / 2);
+        return [R * rho * rx / m, R * rho * ru / m]; }
+    const scr = p => S.lay === 'flat' ? [cx + F * p.fu, cy - F * p.fv] : [cx + R * p.u, cy - R * p.v];
+    // the screen's frame: X to the right, U up, both square to the look
+    function frame() {
+        const L = C.lookDir(), up = Math.abs(L[1]) < 0.95 ? [0, 1, 0] : [1, 0, 0];
+        let X = [L[1] * up[2] - L[2] * up[1], L[2] * up[0] - L[0] * up[2], L[0] * up[1] - L[1] * up[0]];
+        const nx = Math.hypot(...X); X = X.map(v => v / nx);
+        const U = [X[1] * L[2] - X[2] * L[1], X[2] * L[0] - X[0] * L[2], X[0] * L[1] - X[1] * L[0]];
+        return { L, X, U };
+    }
+    // every dot in front: where it lands on the screen (in R units, the rim at √2), its angle, distance and heat
+    function points() {
+        const { L, X, U } = frame(), e = C.place(S.eye), Hh = C.Hof(), out = [];
+        for (let q = 0; q < S.n ** 3; q++) { if (q === S.eye) continue;
+            const p = C.place(q), r = [p[0] - e[0], p[1] - e[1], p[2] - e[2]], d = Math.hypot(...r);
+            const c = (r[0] * L[0] + r[1] * L[1] + r[2] * L[2]) / d; if (c <= 0) continue;
+            const a = Math.acos(Math.min(1, c)), rx = r[0] * X[0] + r[1] * X[1] + r[2] * X[2], ru = r[0] * U[0] + r[1] * U[1] + r[2] * U[2];
+            const m = Math.hypot(rx, ru) || 1, rho = 2 * Math.sin(a / 2), lx = Math.log(d / Hh), rz = c * d;
+            out.push({ q, alpha: a / RAD, d, u: rho * rx / m, v: rho * ru / m, fu: rx / rz, fv: ru / rz, near: d < Hh,
+                heat: c * c * c * (2 / (Math.exp(lx) + Math.exp(-lx))) });
+        }
+        return out;
+    }
+    function draw() {
+        if (S.view !== 'reader') { cv.style.display = 'none'; return; }
+        cv.style.display = 'block';
+        if (drawnV === S.version) return; drawnV = S.version;
+        x.setTransform(dpr, 0, 0, dpr, 0, 0); x.fillStyle = '#05070c'; x.fillRect(0, 0, W, H);
+        // the heat across the look, painted on the screen itself as a regular map (7 Nov; Tom: "this is geometry, not
+        // physics, so there woulld not be any randommess or scatter. the heat map would be regular"): RINGS bands of equal
+        // share of the directions in front (each 1/RINGS of the hemisphere, so on this equal-area screen each the same
+        // room), cut by SPOKES equal turns about the look, each cell coloured by cos³α at its middle. No dot enters it.
+        // On the flat screen (the default since 7 Nov; Tom: "what happend to the cube. we could show the cauchy in the
+        // non-compressed cube form."), the same bands land at radius tan α (cos α = 1 − share), crowding to the middle
+        // and widening without end toward the rim, which lies at infinity: the cube keeps its straight edges, and cos³α
+        // is then exactly the heat per unit of the screen (the 2D Cauchy, 1/(2π(1 + r²)^(3/2))).
+        const RINGS = 16, SPOKES = 32, FAR = Math.hypot(W, H);
+        const bandR = sh => { if (S.lay !== 'flat') return R * Math.SQRT2 * Math.sqrt(sh);
+            const c = 1 - sh; return c <= 1e-9 ? FAR : Math.min(FAR, F * Math.sqrt(1 - c * c) / c); };
+        for (let i = 0; i < RINGS; i++) {
+            const r0 = bandR(i / RINGS), r1 = bandR((i + 1) / RINGS);
+            const c = 1 - (i + 0.5) / RINGS, hc = c * c * c;          // cos α at the band's middle share
+            for (let j = 0; j < SPOKES; j++) {
+                const a0 = 2 * Math.PI * j / SPOKES, a1 = 2 * Math.PI * (j + 1) / SPOKES;
+                x.beginPath(); x.arc(cx, cy, r1, a0, a1); x.arc(cx, cy, r0, a1, a0, true); x.closePath();
+                x.fillStyle = ramp(hc); x.globalAlpha = S.dotsOn === false ? 1 : 0.45; x.fill();
+                x.globalAlpha = 1; x.strokeStyle = 'rgba(5,7,12,.55)'; x.lineWidth = 0.6; x.stroke();
+            }
+        }
+        // rings: half heat (37.5°), one thumb off the look (45°), half the directions (60°), the horizon of the look (90°)
+        x.font = '12px DM Mono, monospace'; x.textAlign = 'center';
+        const ring = (deg, c, lab, dash) => { const r = S.lay === 'flat' ? F * Math.tan(deg * RAD) : R * 2 * Math.sin(deg * RAD / 2);
+            if (!(r < FAR)) return; x.setLineDash(dash); x.strokeStyle = c; x.lineWidth = 1.2;
+            x.beginPath(); x.arc(cx, cy, r, 0, 2 * Math.PI); x.stroke(); x.setLineDash([]); x.fillStyle = c; x.fillText(lab, cx, deg > 80 || (S.lay === 'flat' && deg > 50) ? cy - r - 8 : cy + r + 15); };
+        ring(37.47, 'rgba(242,193,78,.75)', '½ heat, 37.5°', [5, 6]); ring(60, 'rgba(79,209,197,.7)', 'half the directions, 60°', [5, 6]);
+        ring(90, 'rgba(195,200,214,.55)', 'square to the look: the rim of what is in front', []);
+        if (S.lay === 'flat') ring(45, 'rgba(195,200,214,.45)', 'one thumb off the look, 45°', [2, 5]);
+        // the cube's own edges, seen from the eye: straight on the flat screen, bent on the equal-area one
+        { const c = -C.place(0)[0], e = C.place(S.eye), { L, X, U } = frame(), V = [];
+          for (let i = 0; i < 8; i++) V.push([(i & 1 ? c : -c), (i & 2 ? c : -c), (i & 4 ? c : -c)]);
+          x.strokeStyle = 'rgba(195,200,214,.5)'; x.lineWidth = 1.2;
+          for (let i = 0; i < 8; i++) for (const b of [1, 2, 4]) { const j = i | b; if (j === i) continue;
+            x.beginPath(); let on = false;
+            for (let t = 0; t <= 96; t++) { const p = V[i].map((v, k) => v + (V[j][k] - v) * t / 96), s2 = proj([p[0] - e[0], p[1] - e[1], p[2] - e[2]], L, X, U);
+                if (!s2) { on = false; continue; } const sx = cx + s2[0], sy = cy - s2[1];
+                if (on) x.lineTo(sx, sy); else x.moveTo(sx, sy); on = true; }
+            x.stroke(); } }
+        // the dots: farthest first, so the nearer on a line is drawn over (what the line meets first paints it)
+        pts = points().sort((a, b) => b.d - a.d);
+        if (S.dotsOn === false) pts = [];
+        const dr = Math.max(2.2, Math.min(5, 110 / S.n));
+        for (const p of pts) {
+            x.fillStyle = S.color === 'fields' ? (p.near ? `rgba(79,209,197,${0.2 + 0.8 * p.heat})` : `rgba(167,139,250,${0.2 + 0.8 * p.heat})`) : ramp(p.heat);
+            const [sx, sy] = scr(p); if (sx < -20 || sy < -20 || sx > W + 20 || sy > H + 20) continue;
+            x.beginPath(); x.arc(sx, sy, dr, 0, 2 * Math.PI); x.fill();
+        }
+        // the crosshair, and the thing looked at ringed in gold
+        x.strokeStyle = 'rgba(255,255,255,.85)'; x.lineWidth = 1.5; x.beginPath();
+        x.moveTo(cx - 14, cy); x.lineTo(cx - 5, cy); x.moveTo(cx + 5, cy); x.lineTo(cx + 14, cy);
+        x.moveTo(cx, cy - 14); x.lineTo(cx, cy - 5); x.moveTo(cx, cy + 5); x.lineTo(cx, cy + 14); x.stroke();
+        const t = pts.find(p => p.q === C.targetOf());
+        if (t) { const [sx, sy] = scr(t); x.strokeStyle = '#f2c14e'; x.lineWidth = 2; x.beginPath(); x.arc(sx, sy, dr + 5, 0, 2 * Math.PI); x.stroke(); }
+        x.textAlign = 'left'; x.fillStyle = '#8a91a8'; x.font = '12px DM Mono, monospace';
+        x.fillText(`the reader's view, ${S.lay === 'flat' ? 'a flat screen square to the look (the cube as it is; the rim at infinity)' : 'equal area about the look (compressed; the rim at √2)'}: ${pts.length} dots in front, each one size`, 14, H - 14);
+        x.fillText('drag to turn the look · tap a dot to look at it · S flat or equal area · D the dots on or off · V the cube from outside', 14, H - 32);
+    }
+    // drag turns the look (the world dragged with the finger), a tap looks at the dot under it
+    let down = null;
+    cv.addEventListener('pointerdown', e => { down = { x: e.clientX, y: e.clientY, yaw: S.yaw, pitch: S.pitch, moved: false }; cv.setPointerCapture(e.pointerId); });
+    cv.addEventListener('pointermove', e => { if (!down) return; const dx = e.clientX - down.x, dy = e.clientY - down.y;
+        if (!down.moved && Math.hypot(dx, dy) < 6) return; down.moved = true;
+        const k = S.lay === 'flat' ? 1 / (F * RAD) : 90 / (R * Math.SQRT2);
+        C.set({ yaw: down.yaw + dx * k, pitch: Math.max(-89, Math.min(89, down.pitch - dy * k)) }); });
+    cv.addEventListener('pointerup', e => { const d = down; down = null; if (!d || d.moved) return;
+        let best = null, bd = 22; for (const p of pts) { const [sx, sy] = scr(p), dd = Math.hypot(sx - e.clientX, sy - e.clientY);
+            if (dd < bd || (best && Math.abs(dd - bd) < 1e-9 && p.d < best.d)) { bd = dd; best = p; } }
+        if (best) C.set({ look: best.q }); });
+    addEventListener('resize', size); size();
+    addEventListener('keydown', e => { if (e.target.closest('input')) return;
+        if (e.key === 'v' || e.key === 'V') C.set({ view: S.view === 'reader' ? 'outside' : 'reader' });
+        if ((e.key === 'd' || e.key === 'D') && S.view === 'reader') { S.dotsOn = S.dotsOn === false; S.version++; }
+        if ((e.key === 's' || e.key === 'S') && S.view === 'reader') C.set({ lay: S.lay === 'flat' ? 'area' : 'flat' }); });
+    const tick = () => { draw(); const b = document.getElementById('bView');
+        if (b) { b.textContent = S.view === 'reader' ? "view: the reader's" : 'view: from outside'; b.classList.toggle('on', S.view === 'reader'); }
+        const bl = document.getElementById('bLay');
+        if (bl) { bl.style.display = S.view === 'reader' ? '' : 'none'; bl.textContent = S.lay === 'flat' ? 'screen: flat (the cube as it is)' : 'screen: equal area (compressed)'; }
+        requestAnimationFrame(tick); };
+    document.getElementById('bView').onclick = () => C.set({ view: S.view === 'reader' ? 'outside' : 'reader' });
+    document.getElementById('bLay').onclick = () => C.set({ lay: S.lay === 'flat' ? 'area' : 'flat' });
+    window.__heatReader = { points, frame, toScreen: scr };
+    requestAnimationFrame(tick);
+})();
+setTimeout(() => { if (!window.__heatCube.webgl) { const n = document.getElementById('nogl');
+    n.firstElementChild.innerHTML = 'three.js could not be loaded from cdn.jsdelivr.net, or WebGL is off.<br>The arithmetic still runs: see the test hook.';
+    n.style.display = 'grid'; } }, 12000);
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+const C = window.__heatCore, S = C.S, hook = window.__heatCube;
+const canvas = document.getElementById('stage');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); } catch (e) { renderer = null; }
+if (renderer) {
+hook.webgl = true;
+renderer.setPixelRatio(Math.min(2, devicePixelRatio));
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x07090f);
+const camera = new THREE.PerspectiveCamera(45, 1, 0.01, 1e7);
+const controls = new OrbitControls(camera, canvas); controls.enableDamping = true;
+scene.add(new THREE.AmbientLight(0xffffff, 1.0));
+
+// the heat's colours: dark, violet, blue, teal, gold, white
+const STOPS = [[0, 0x141826], [0.12, 0x3b2a6e], [0.3, 0x2b7fa0], [0.55, 0x4fd1c5], [0.8, 0xf2c14e], [1, 0xfff6d8]].map(([t, c]) => [t, new THREE.Color(c)]);
+function ramp(t, out) { t = Math.max(0, Math.min(1, t));
+    for (let i = 1; i < STOPS.length; i++) if (t <= STOPS[i][0]) { const [a, ca] = STOPS[i - 1], [b, cb] = STOPS[i];
+        return out.copy(ca).lerp(cb, (t - a) / (b - a)); } return out.copy(STOPS[STOPS.length - 1][1]); }
+const TEAL = new THREE.Color(0x4fd1c5), VIOLET = new THREE.Color(0xa78bfa), DARK = new THREE.Color(0x141826), BEHIND = new THREE.Color(0x232a3c);
+
+let mesh = null, built = -1, eyeMark, lookLine, ringT;
+const sphere = new THREE.SphereGeometry(1, 12, 8);
+function build() {
+    if (mesh) { scene.remove(mesh); mesh.dispose(); }
+    const N = S.n ** 3;
+    mesh = new THREE.InstancedMesh(sphere, new THREE.MeshBasicMaterial({ color: 0xffffff }), N);
+    mesh.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(N * 3), 3);
+    scene.add(mesh); built = S.n;
+}
+eyeMark = new THREE.Mesh(new THREE.TorusGeometry(1, 0.12, 8, 32), new THREE.MeshBasicMaterial({ color: 0xffffff }));
+ringT = new THREE.Mesh(new THREE.TorusGeometry(1, 0.1, 8, 32), new THREE.MeshBasicMaterial({ color: 0xf2c14e }));
+lookLine = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3()]),
+    new THREE.LineBasicMaterial({ color: 0xf2c14e, transparent: true, opacity: .7 }));
+const box = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1, 1, 1)), new THREE.LineBasicMaterial({ color: 0x3a4466 }));
+scene.add(eyeMark, ringT, lookLine, box);
+
+const m4 = new THREE.Matrix4(), col = new THREE.Color(), q4 = new THREE.Quaternion(), v3 = new THREE.Vector3(), one = new THREE.Vector3();
+let drawnV = -1, lastScale = null;
+function paint() {
+    if (built !== S.n) build();
+    const hs = C.heats(), s = Math.pow(10, S.lk), H = C.Hof(), e = C.place(S.eye), base = 0.07 * s;
+    for (let q = 0; q < hs.length; q++) {
+        const p = C.place(q), h = hs[q];
+        let r = base;
+        if (h == null) r = 0;                                                    // the eye: drawn as a ring instead
+        else if (h > 0) {
+            r = base * (0.55 + 1.6 * h);
+            if (S.color === 'fields') { const d = Math.hypot(p[0] - e[0], p[1] - e[1], p[2] - e[2]);
+                col.copy(DARK).lerp(d < H ? TEAL : VIOLET, Math.min(1, 0.12 + 0.88 * h)); }
+            else ramp(h, col);
+        } else { if (!S.behind) r = 0; col.copy(BEHIND); }
+        m4.compose(v3.set(p[0], p[1], p[2]), q4.identity(), one.set(r, r, r));
+        mesh.setMatrixAt(q, m4); mesh.setColorAt(q, col);
+    }
+    mesh.instanceMatrix.needsUpdate = true; mesh.instanceColor.needsUpdate = true;
+    eyeMark.position.set(e[0], e[1], e[2]); eyeMark.scale.setScalar(0.32 * s); eyeMark.lookAt(camera.position);
+    const t = C.place(C.targetOf()); ringT.position.set(t[0], t[1], t[2]); ringT.scale.setScalar(0.32 * s); ringT.lookAt(camera.position);
+    const L = C.lookDir(), far = S.n * 2 * s;
+    lookLine.geometry.setFromPoints([new THREE.Vector3(...e), new THREE.Vector3(e[0] + L[0] * far, e[1] + L[1] * far, e[2] + L[2] * far)]);
+    box.scale.setScalar((S.n - 1) * s);
+    if (lastScale !== s) { // the view follows the world's scale, so scaling shows as nothing changing on the screen
+        const f = lastScale == null ? 1 : s / lastScale;
+        if (lastScale == null) camera.position.set(1.35 * S.n * s, 0.95 * S.n * s, 1.75 * S.n * s);
+        else { camera.position.multiplyScalar(f); controls.target.multiplyScalar(f); }
+        camera.near = 0.002 * s; camera.far = 100 * S.n * s; camera.updateProjectionMatrix(); lastScale = s;
+    }
+    drawnV = S.version; hud();
+}
+function hud() {
+    const st = hook.state(), fr = C.front(), t = C.ijk(st.target), eye = C.ijk(st.eye);
+    const dT = Math.hypot(...C.place(st.target).map((v, a) => v - C.place(st.eye)[a]));
+    const tot = fr.heatNear + fr.heatFar;
+    document.getElementById('hud').innerHTML =
+        `<b>eye</b> at dot (${eye.join(', ')})   <b>looking at</b> (${t.join(', ')})\n` +
+        `H, the thumb: ${st.H.toPrecision(3)} = ${Math.pow(2, S.h).toPrecision(3)} × the distance looked at (${dT.toPrecision(3)})\n` +
+        `in front of the eye: ${fr.inFront} of ${fr.dots} dots (${(100 * fr.share).toFixed(0)}%)\n` +
+        `dots nearer than one thumb hold ${(100 * fr.heatNear / (tot || 1)).toFixed(0)}% of the dots' heat (the writer's spacing)\n` +
+        `scale the world ×${st.k.toPrecision(3)}: no colour moves`;
+    yawEl.value = S.yaw; yawO.textContent = S.yaw.toFixed(1) + '°';
+    pitchEl.value = S.pitch; pitchO.textContent = S.pitch.toFixed(1) + '°';
+    hEl.value = S.h; hO.textContent = '×' + Math.pow(2, S.h).toPrecision(3);
+    kEl.value = S.lk; kO.textContent = '×' + Math.pow(10, S.lk).toPrecision(2);
+    tStand.classList.toggle('on', S.tap === 'stand'); tLook.classList.toggle('on', S.tap === 'look');
+    bColor.textContent = 'colour: ' + (S.color === 'heat' ? 'heat' : 'near / far'); bN.textContent = S.n + ' a side';
+    bBehind.classList.toggle('on', S.behind);
+}
+const $ = id => document.getElementById(id);
+const yawEl = $('yaw'), yawO = $('yawo'), pitchEl = $('pitch'), pitchO = $('pitcho'), hEl = $('hH'), hO = $('hHo'), kEl = $('kK'), kO = $('kKo');
+const tStand = $('tStand'), tLook = $('tLook'), bColor = $('bColor'), bN = $('bN'), bBehind = $('bBehind');
+yawEl.oninput = () => C.set({ yaw: +yawEl.value }); pitchEl.oninput = () => C.set({ pitch: +pitchEl.value });
+hEl.oninput = () => C.set({ h: +hEl.value }); kEl.oninput = () => C.set({ k: +kEl.value });
+tStand.onclick = () => C.set({ tap: 'stand' }); tLook.onclick = () => C.set({ tap: 'look' });
+bColor.onclick = () => C.set({ color: S.color === 'heat' ? 'fields' : 'heat' });
+bN.onclick = () => { const n = S.n === 8 ? 12 : S.n === 12 ? 16 : 8, c = n / 2 - 1 | 0; lastScale = null; C.set({ n }); C.set({ look: [c, c, c] }); };
+bBehind.onclick = () => C.set({ behind: !S.behind });
+$('bCorner').onclick = () => { const c = S.n / 2 - 1 | 0; C.set({ eye: 0 }); C.set({ look: [c, c, c] }); };
+$('bMiddle').onclick = () => { const c = S.n / 2 | 0; C.set({ eye: [c, c, c] }); C.set({ look: [S.n - 1, c, c] }); };
+
+// a tap (not a drag) picks the dot under it: stand there, or look at it
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(); let down = null;
+canvas.addEventListener('pointerdown', e => { down = [e.clientX, e.clientY]; });
+canvas.addEventListener('pointerup', e => {
+    if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 6) { down = null; return; } down = null;
+    const r = canvas.getBoundingClientRect(); ndc.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1);
+    ray.setFromCamera(ndc, camera);
+    // nearest dot to the ray, within a fixed share of its distance (dots are small)
+    const o = ray.ray.origin, dvec = ray.ray.direction; let best = -1, bs = Infinity;
+    for (let q = 0; q < S.n ** 3; q++) { const p = C.place(q), w = [p[0] - o.x, p[1] - o.y, p[2] - o.z];
+        const t = w[0] * dvec.x + w[1] * dvec.y + w[2] * dvec.z; if (t <= 0) continue;
+        const px = w[0] - t * dvec.x, py = w[1] - t * dvec.y, pz = w[2] - t * dvec.z, dd = Math.hypot(px, py, pz) / t;
+        if (dd < 0.012 && dd + t * 1e-9 < bs) { bs = dd + t * 1e-9; best = q; } }
+    if (best < 0) return;
+    if (S.tap === 'stand') { C.set({ eye: best }); C.set({ tap: 'look' }); } else C.set({ look: best });
+});
+window.addEventListener('heatcube', () => {});
+function resize() { const w = innerWidth, h = innerHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+addEventListener('resize', resize); resize();
+function frame() { requestAnimationFrame(frame); controls.update();
+    if (drawnV !== S.version) paint(); else { eyeMark.lookAt(camera.position); ringT.lookAt(camera.position); }
+    renderer.render(scene, camera); hook.frames++; }
+paint(); frame();
+}
+</script>
+</body>
+</html>

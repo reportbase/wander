@@ -190,6 +190,51 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Since R698 (Tom: "Yes", to the tunnel as the quarter turn, after R696): the tunnel is drawn in the wedge only (`wedgeEdge`,
   35.26° at a home, 54.74° at a thumb, its rings clipped to it), the full round the menu's "tunnel turned all the way round"
   (`?round=1`); `tunnel()` adds `quarter` and `edge(β)`, `set` takes `round`.
+- `heat-cube.html`: **a cube of heat** (6 Nov 2026, SPN R729; Tom: "if we created a cube of dots, could we color those dots
+  based on the cauchy based on the touch of one of the dots?", "right, you would need to touch a dot and set a facing.",
+  "yes"), full screen, three.js like `wedge.html` for the drawing only (the heat and the hook a plain script). n³ dots
+  (8, 12, 16 a side), the writer's box; tap a dot to stand there, then taps look at a dot (or turn the look by sliders); H
+  the distance to the dot looked at × 2^h; each dot coloured cos³α × sech(ln(d/H)) (heat, or near teal / far violet),
+  behind the eye dark. Scale the world moves no colour; d and H²/d one colour. Beside the cube, the same dots as the read lays
+  them ("show the cauchy compression"): across the look a disc of radius √(1 − cos α), along it (2/π)·atan(d/H) against the share. The reader's view (`?view=reader`, V; Tom: "can you show the readers view"): the eye's own
+  view, every dot in front by its direction (Lambert's equal-area about the look), one size (no distance read), the heat
+  painted about the crosshair; drag turns the look, a tap looks at a dot. Since R731 (Tom: "The border looks artificial";
+  "this is geometry … there woulld not be any randommess or scatter. the heat map would be regular") the reader's view
+  paints the heat as a regular map (16 bands of equal share × 32 equal turns, cos³α) under the grid's dots, D or `?dots=0`
+  taking the dots away; it opens from the middle. No scatter (tried and withdrawn). Since R732 (Tom: "what happend to the cube. we
+  could show the cauchy in the non-compressed cube form.") the reader's view opens on a flat screen square to the look (F·tan α):
+  the cube's edges drawn straight, the equal-share bands at tan α out to the rim at infinity, cos³α exactly the heat per unit of
+  screen; S or `?lay=area` the equal-area (compressed) screen, the edges bent. `?n=&eye=i,j,k&look=i,j,k&h=&k=<log10 k>&color=heat|fields&view=reader&lay=flat|area&dots=0`;
+  hook `window.__heatCube` (`heat`, `heats`, `compressed`, `readerView`, `front`, `pairs`, `stand`, `lookAt`, `set`, `state`, `frames`, `webgl`).
+  Not in the flying page.
+- `cube-atmosphere.html`: **the payload cube and the hemisphere** (7 Nov 2026, SPN R733; Tom: "lets say the cube is infinite
+  in all directions. the dots are uniform within it. put it next to a hemisphere. connect each dot in the cube to a dot on the
+  cauchy atmosphere.", then "the payload cube and cauchy hemisphere. every dot from the cube should point to a dot on the
+  hemisphere. most of the dots from the cube will pile up on the sides of the atmosphere with the fewest dots in the center"),
+  full screen, three.js like `heat-cube.html` for the drawing only. A lattice of dots without end (a window drawn, 6, 12 or 24
+  each way) and the hemisphere in front of the look, standing in the look's own frame: 16 rings × 32 dots. Every cube dot in
+  front within the window's reach of the eye (a ball, drawn as three dashed circles, so the window's corners do not weigh in)
+  points to the hemisphere dot whose cell holds its direction; each hemisphere dot's area in proportion to its count. Rings at
+  equal turns (default): a cell takes its solid angle, the rim ring 20.4 times the centre's for the endless cube (19.5 within
+  12, 20.9 within 24); rings at equal shares (`grid=area`): every dot the same. The look slanted by default (30° across, 55°
+  up) since looking along a lattice row puts the rows into the counts (looking straight up the equal-share rim ring got
+  none). `lay=depth` keeps distance, A·(2/π)·atan(d/H) along the direction: the endless cube inside a bounded hemisphere.
+  `?reach=6|12|24&H=<log2 H>&yaw=&pitch=&lines=all|slice|none&lay=cells|depth&grid=turns|area&k=<log10 k>`; hook
+  `window.__atmos` (`g`, `placeOf`, `dots`, `cells`, `cellDir`, `ringShare`, `counts`, `edgeG`, `set`, `state`, `frames`, `webgl`).
+  Not in the flying page.
+- `uncompressed.html`: **the Cauchy, uncompressed** (7 Nov 2026, SPN R734; Tom: "maybe we don't need the cube. maybe we could
+  just uncompress the cauchy.", then "yes. put all readouts and dials into a menu. the visual should be full screen without
+  readouts."), full screen, three.js like `cube-atmosphere.html` for the drawing only, no words on the picture: every
+  readout and dial behind the menu (☰). Below, the hemisphere: R rings at equal shares (1 − cos α = (i + ½)/R) × 2R equal
+  turns × G steps of g = (j + ½)/G, each point at g along its direction (a regular grid, nothing random). Above, the same
+  points uncompressed, d = H·tan(πg/2) (half within one thumb at every H, per ratio ½·sech(ln(d/H)), the shells 0.205,
+  0.139, 0.077, per volume ∝ H/(d²(H² + d²))); lines join a slice (or all, or none); shells at 1, 2, 4, 8 thumbs; the flat
+  screen one thumb out (cos³α per unit of screen); colour the heat cos³α·sech(ln(d/H)). H moves the cloud and nothing in
+  the hemisphere. "In place" draws both from one eye, the hemisphere at radius 2H, each point sliding along its ray on its
+  log distance as u goes 0 → 1 (the near field barely moves, one thumb stays, the far field streams out; "uncompress and
+  back" plays it). `?H=<log2 H>&R=8|12|16&G=8|16|32&lines=slice|all|none&shells=0&flat=1&place=1&u=&labels=1&numbers=1&about=1`;
+  hook `window.__uncompressed` (`g`, `dOf`, `heat`, `points`, `counts`, `bands`, `flatScreen`, `set`, `state`, `menu`,
+  `frames`, `webgl`). Keep new text on this page behind the menu. Not in the flying page.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
@@ -1648,13 +1693,20 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy's body, closed by a dome one thumb about the eye over the wedge (not the cube, as first written; not a
   hemisphere); the far half its long tail, open, no shape. Refines R643. *Reads and Writes* §7 "Half the read closed: the
   body and the tail"; `read.html`'s side view draws the dome and the tail.
+  R730 (6 Nov; Tom: "add this to the papers and essays. you can mention this demo in the papers."): what `heat-cube.html`
+  shows (the heat the look's; the fields equal in room, not count; the core small; the box closes, the heat runs on; from
+  the eye one size) in *Reads and Writes* §7 naming the demo, essays 4 §11 and 5 §10, `essays.html`.
+  R729 (6 Nov; Tom: "touch a dot and set a facing", "yes"): `heat-cube.html`, R728's heat on a cube of dots.
   R728 (6 Nov; Tom: "the cauchy is the horizon's heat map. giving the cauchy a shape is a bit confusing."): **the Cauchy
   is the horizon's heat map, not a shape**; heat the density of addresses per unit of reading; a tunnel only its hottest
   core (half heat at 37.5°, a fifth of the directions). *Reads and Writes* §7, essays 2, 5, 10, 13, 14, 17, README.
   Then: the sphere has a shape (a size, a closing surface); divided by the thumb it opens at the rim into the horizon, so the
   Cauchy's tail never completes (*Reads and Writes* §1, §7; essays 2 §9, 5 §4). Then (Tom: "combining spheres is
   complicated, combining cauchy's is trivial."): no boundary, so heat adds; readings added give one Cauchy (z added),
-  heat maps overlaid a heat map but not one Cauchy (R359). Recorded in SPN only.
+  heat maps overlaid a heat map but not one Cauchy (R359). In *Reads and Writes* §7, essays 3 and 17. Then: the heat is
+  the look's; down the thumbs' diagonal hottest at their crossing (all shares equal), on a screen square to h at home.
+  Then: the hot spot (one thumb out, the corner in direction and distance) splits near (proportion) from far (ratios),
+  half the heat each (*Reads and Writes* §7, essays 4 §13, 5 §10).
   R727 (6 Nov; Tom: "just record it so we dont forget it."): breathing as a metaphor, in SPN only: in reading, out
   writing; motion (a counted step) hides the asymmetry, rest (one standpoint, no parallax) reveals it. Then (Tom: "everyting has cylcles"): observation as a whole
   cycles (joins, the writer's); a single read does not (home to a horizon never reached).

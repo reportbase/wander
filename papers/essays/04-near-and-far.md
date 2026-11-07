@@ -344,7 +344,12 @@ lands. *The heat is given; the paint is met.* Nothing is written: no amount is c
 where changes. Near and far, then, are an overlay the thumb lays over the read, a split on every direction one thumb out,
 not part of the read's Cauchy, and not a shape.
 
-*Demos: H is a zoom; what is H; the read (drag the thumb).*
+A cube of dots makes the split concrete. Twelve dots a side, seen from a corner and looking at the middle, put 436 dots
+nearer than one thumb and 1,291 farther; the writer's even spacing puts more of the box far off. Laid as the read lays
+distance, the dot looked at sits in the middle, and each field has half the room. The count belongs to the writer; the
+room to the read. Look at another dot and the split goes with it; scale the box and nothing changes colour.
+
+*Demos: H is a zoom; what is H; the read (drag the thumb); a cube of heat.*
 
 ---
 
@@ -405,6 +410,11 @@ a step of two thumbs, half the baseline equal to the distance, places it with th
 just ε (the sixth essay). The finest grain and the best baseline fall on the same thing, the one looked at. Counted per
 stretch, the split is a heat map in distance, (1/π)·sech(ln(d/H)), hottest at the thing looked at and cooling alike nearer
 and farther (the fifth essay, section 10).
+
+Lay the whole read out along the look and it runs: the eye; the near field, distance in proportion, half the heat; the
+thing looked at, one thumb out, the corner, where the heat is greatest; the far field, distance in ratios, the other half
+of the heat, without end; the horizon. The near field is not hotter than the far. They are equal halves of one heat,
+split at the thing the reader chose to look at.
 
 The same holds when the thing read is a shape. Epicycles draw an outline from one standpoint at the centre; terms read from
 standpoints stepped toward a dent draw it in about an eighth as many, and every one of them stands at the dent (the tenth essay,

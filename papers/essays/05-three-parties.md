@@ -109,7 +109,9 @@ geometry, drawn whole from outside. What the reader experiences is a heat map ov
 horizon, hottest about its line of sight. The Cauchy is that heat map and has no shape: the sphere closes because it holds a radius, and the reader holds none, so
 the heat runs out to the rim in a long tail that never completes (the second essay, section 9). Its heat is the density of
 addresses per unit of reading, and a tunnel, where one is drawn, is only its hottest core (half the peak heat at 37.5° off
-the look, with a fifth of the directions inside). Laid out
+the look, with a fifth of the directions inside). The heat is the look's, not the thumbs': looked down their diagonal,
+the hottest place is where the three thumbs cross, every share equal and every pair at its corner; section 5's law, laid
+on a screen square to h, is hottest at home instead, the same directions on another screen. Laid out
 as readings on a screen held square to the look, the screen the crossed thumbs make, the directions crowd toward the line
 of sight and thin on every side by the Cauchy: at r thumbs off the line of sight their heat is 1/(2π(1 + r²)^(3/2)) per
 unit of screen, over the whole hemisphere in front, out toward a horizon never reached. Nothing of it is stored. It is
@@ -391,6 +393,47 @@ at the rim (by angle on the hemisphere itself the directions are even, with no h
 read by ratio, (1/π)·sech(ln(d/H)), hottest at one thumb and cooling alike both ways, 0.8 of the peak at one in 2 and at two
 thumbs, 0.47 at four, 0.25 at eight. Multiplied, they are hottest at one point, the thing looked at, on the look one thumb
 out, and they meet there only because the look points at it.
+
+Put together, the read has two centres. The eye is where every direction starts; the hot spot, one thumb out along the
+look and, looked down the diagonal, where the three thumbs cross, is where the heat is greatest. It is the corner twice
+over, the triple corner in direction and one thumb in distance, the median as well as the peak, and it is the corner only
+because the reader points there and takes the thing there as its thumb. From it the heat thins every way without end:
+across the look in readings, along it in ratios. The near field runs from the eye to the hot spot, distance in
+proportion; the far field from the hot spot to the horizon, distance in ratios; each holds half the heat. Neither is
+hotter. They differ only in how distance is read.
+
+### A cube of dots
+
+The plainest way to see all this is a cube of dots, a writer's box, one unit apart. Stand at one dot, look at another,
+and colour every dot in front by the read's heat: cos³ of its angle off the look, times sech(ln(d/H)), the thumb set on
+the dot looked at. Behind the eye, nothing; one read is half the cube.
+
+The cube never moves. Only its colours change, and only when the look does: turn to another dot and the hot spot goes
+with you. The heat belongs to the look, not to the box. Choosing which dot to look at is choosing the thumb. Look at a
+near dot and nearly the whole cube is far field; look at a far one and most of it comes near. Make the world a thousand
+times larger and not one colour changes.
+
+Count the dots either side of the hot spot and they are uneven. From a corner of a box twelve dots a side, looking at
+the middle, 436 are nearer than one thumb and 1,291 farther. The writer's even spacing makes that so: there is more box
+far off than near. Lay the same dots as the read lays distance, each share the same room, and the dot looked at sits in
+the middle with half the room on each side, the far dots crowding toward the horizon. The fields are equal in room and
+not in count, whatever the count.
+
+The hot core is small. The heat halves at 37.5° off the look, and only about a fifth of the directions in front lie
+inside that. Most of what is in front is warm, or cool; the heat is a gradient over the whole hemisphere, not a tunnel.
+And the box ends. Its last dot stops short of the horizon, and the gap between them is the difference between a shape
+and the heat: the box closes, the heat goes on.
+
+Now stand at the eye and draw what the reader has. Every dot goes where its direction falls, laid so equal shares of
+the directions take equal room, and every dot is one size, since no distance is read: a far dot and a near one on the
+same line look alike. Laid on a grid, the dots draw lines in this view: every row of dots through the eye lands on one
+line, and from a corner of the box its three faces make a hard curved border. That border looks artificial because it
+is: it is the writer's spacing and the writer's walls. The heat underneath is regular: rings of equal share of the
+directions about the look, each taking the same room, each as hot as cos³ of its angle, the same whatever dots happen to
+be there. Take the dots away and the regular heat map is all that is left, with no border. Turn the look and the dots stream across a heat that stays put about the crosshair. That is the read:
+directions and their heat, given; the dots met, wherever they happen to be.
+
+*Demo: a cube of heat (the cube from outside, the same dots as the read lays them, and the reader's view from the eye).*
 
 *Demo: the read (the directions in thumbs and by count, the hill, from the side where the reader stands, the thumb
 dragged, and the shape swept whole against each thumb on its own).*
