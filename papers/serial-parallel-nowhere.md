@@ -7352,6 +7352,19 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R744** (7 Nov; Tom: "whats next", then "proceed", to carrying FLC into the texts and the five trig flags through):
+  (1) FLC in essay 18 §9 ("Where it stops") and *Reads and Writes* §1 ("One plane"), one paragraph each: in space
+  writing keeps its slide on the log-polar line times the sphere of directions, commuting with every turn; the read's
+  heat lies flat on Lambert's equal-area map about the look crossed with the thumb's lay, and every turn keeps it flat;
+  no flat chart keeps the turns rigid (1/cos(φ/2) at the old look, up to 2 at a quarter turn at the directions square to
+  both looks; the stereographic chart keeps the angles and loses the heat, a quarter at its rim); Gauss (1828) and Euler
+  (1777) say no chart of a sphere does both; the plane does because a line times a circle is flat. Both cite Gauss and
+  Euler 1777; *Reads and Writes*' Code and data names FLC. (2) `plans/flags-r742.md` applied as proposed: ε "the smallest
+  step in direction the reader can tell apart (an angle, in the writer's units)" (*Reads and Writes* §8; essay 6 §5 and
+  its table's "step (as an angle)"); surveys read directions, written down in degrees by the instrument (*Reads and
+  Writes* §8 "A survey", essays 1 and 6); the thing itself as H, its two ends read from one look and 1/(2·tan(α/2)) the
+  writer's sum (§8); the count and turn indices both the writer's (essay 10 §2); the hyperbolic angle the writer's smooth
+  formula for the reader's lay of ratios (essays 4, 8). No number changed.
 - **R743** (7 Nov; Tom: "whats next", then "proceed", to a check of trigonometry in the papers after R742 and the space
   counterpart of the flat chart): (1) `plans/flags-r742.md` lists, unchanged, the places *Reads and Writes* and the essays
   still give the reader an angle or an arctangent: the step ε named an angle (*Reads and Writes* §8, essay 6 §5), a

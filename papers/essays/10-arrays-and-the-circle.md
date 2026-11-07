@@ -116,8 +116,9 @@ half turn and lands on the same place, place for place. One index serves both sw
 
 Against that, a writer places an amount x on [0, X] at ⌊N·x/X⌋, which needs X. With N = 8 and X = 100, the amounts 10, 50
 and 99 go to places 0, 4 and 7. Read from home at a distance laid by H, ⌊8·(2/π)·arctan(x/H)⌋, they go to places 4, 6 and 7
-with H = 10, and to 1, 4 and 5 with H = 50. H moves them, as a zoom, the size of the thumb, and X never enters. The count
-index needs the extent; the turn index needs only the zoom.
+with H = 10, and to 1, 4 and 5 with H = 50. H moves them, as a zoom, the size of the thumb, and X never enters. Both are the writer's
+indices: the count index of a world written to its end, the turn index the writer's bookkeeping of what the reader's
+turn holds. The count index needs the extent; the turn index needs only the zoom.
 
 ---
 

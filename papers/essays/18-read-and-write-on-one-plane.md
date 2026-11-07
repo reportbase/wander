@@ -192,6 +192,19 @@ about the other and both back, it comes home turned about nearly the third thumb
 1.741° for 10° and 10°, against α·β = 1.745°. On the plane the same loop leaves nothing. `euler.html`'s "in space" sets the
 two side by side; the thirteenth essay takes the reason apart (Frobenius, Gauss and Bonnet, Berry's phase).
 
+Could another chart do in space what Euler's plane does in the plane? It was put to arithmetic (the plan FLC), and the
+answer is mostly an old one. Writing keeps its slide: the same logarithm of the distance in thumbs, set beside the
+direction, lays space out as a straight line times the sphere of directions, and scaling the world or the thumb moves the
+line's coordinate alone, commuting with every turn of space, to rounding. The heat can be laid flat too: Lambert's
+equal-area map about the look, crossed with the thumb's lay g, carries the read's heat at one constant density, and every
+turn of the look keeps that map's areas, so the heat stays flat wherever the look goes. What no flat chart can do is make
+the turns rigid. The turn that keeps Lambert's areas bends its shapes: turn the look by φ and, in the writer's sums, the old
+look's direction is stretched by 1/cos(φ/2), √2 at a quarter turn, and the directions square to both looks by up to 2; over
+every direction the stretch never passes 2. The stereographic chart keeps every turn's angles instead and loses the heat, a
+quarter as hot at its rim as at its middle. Gauss's theorem says no flat chart of a piece of a sphere keeps its distances,
+and Euler (1777) that none keeps both angles and areas. The plane gets both from one chart because a line times a circle is
+flat: the circle unrolls into the line of θ, and the sphere of directions does not unroll.
+
 So the opening picture is exact in the plane and half of it holds in space. The half that holds is reading against
 writing. The half that goes is the arithmetic of turning.
 
@@ -243,6 +256,10 @@ as a boost; the heat at each point and per chart; a line and a spiral with their
 ## Sources
 
 - Euler, L. (1748). *Introductio in analysin infinitorum.* Lausanne.
+- Euler, L. (1778). De repraesentatione superficiei sphaericae super plano. *Acta Academiae Scientiarum Imperialis
+  Petropolitanae* 1777, I, 107–132.
+- Gauss, C. F. (1828). Disquisitiones generales circa superficies curvas. *Commentationes Societatis Regiae Scientiarum
+  Gottingensis Recentiores* 6, 99–146.
 - Halley, E. (1696). An easie demonstration of the analogy of the logarithmick tangents to the meridian line or sum of the
   secants. *Philosophical Transactions* 19, 202–214.
 - Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
@@ -262,6 +279,6 @@ as a boost; the heat at each point and per chart; a line and a spiral with their
 The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`): §1 ("One plane"), §5 ("Euler's formula
 as a count of reads", "π with the direction, e with the payload"), §6 ("Euler's plane, and the thumb's lay as a turn") and
 §7 ("The heat depends on what it is counted per", "What survives in space, and what does not"). The rulings are SPN
-R580, R647 and R736–R740; the checks are `runs/elm/` (n reads) and the page's own hook, `window.__euler`. The essays before
+R580, R647, R736–R740 and R743; the checks are `runs/elm/` (n reads), `plans/flc-plan.md` with `runs/flc/` (a flat chart for the read in space) and the page's own hook, `window.__euler`. The essays before
 this one: 2 (Euler's formula, the writer's notation), 4 (near and far, the three rulers), 7 (the moving sky), 13 (where
 the plane's one law parts), 15 (π and e as the writer's), 17 (the heat map).

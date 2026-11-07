@@ -2,8 +2,8 @@
 
 7 November 2026. R742 (Tom: "trig is a writers tool or reader activity. writer uses N and both hemispheres to describe
 the reader that uses neither.") makes trigonometry as a whole the writer's tool. This note lists the places in *Reads and
-Writes* and the essays that still give the reader an angle, an arctangent or a trigonometric step. **Nothing here is
-changed yet**: it is a list for Tom to rule on, as `plans/flags-r584-r592.md` was.
+Writes* and the essays that still give the reader an angle, an arctangent or a trigonometric step. It was a list for Tom to rule
+on, as `plans/flags-r584-r592.md` was. **Applied as proposed** (R744, 7 Nov; Tom: "proceed"), items 1–5 below.
 
 The search covered `papers/readers-and-writers.md` and `papers/essays/*.md`, looking for "angle", "arctan", "tan", "sin"
 and "cos" within a sentence of "reader", "read" or "reads", leaving out sentences that already name the writer.

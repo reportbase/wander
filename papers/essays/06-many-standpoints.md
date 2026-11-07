@@ -158,7 +158,7 @@ standpoints, and the baseline is the one amount in it.
 
 ## 5. The band, and its far edge
 
-Read the angle to a step ε, the smallest change the pair can tell. The relative depth error stays below 1 for a band
+Read the direction to a step ε, the smallest change the pair can tell (an angle, in the writer's units). The relative depth error stays below 1 for a band
 reaching a factor of about 2/ε on each side of the corner, out to 2/ε half-baselines and in to ε/2 of one. At ε = 10⁻³,
 that is a factor of 2,000 each side (2 to the power 10.97).
 
@@ -172,7 +172,7 @@ reader's thumb, slides its window in the fourth essay. The band's width, as a fa
 
 At published precisions:
 
-| reader | baseline | step in angle | corner | far edge |
+| reader | baseline | step (as an angle) | corner | far edge |
 |---|---|---|---|---|
 | two eyes | 6.5 cm | about 20 arcseconds | 3.25 cm | about 650 m |
 | Earth's orbit, Hipparcos | 2 AU | 2 milliarcseconds | 1 AU | about 1 kiloparsec |
@@ -358,8 +358,8 @@ So parallax is how a reader reconstructs the writer's cube, and while it does, i
 standpoints and is holding what no one standpoint holds. When it stops and looks again, it reads. Reader and writer are
 not two kinds of observer; they are what one observer is doing. The labels move with the act.
 
-The first essay's survey says the same thing in its own words: the many angles are read, and the one base walked and
-counted is written; a surveyor does both in one morning.
+The first essay's survey says the same thing in its own words: the many directions are read (the instrument writes each
+down in degrees), and the one base walked and counted is written; a surveyor does both in one morning.
 
 And the passage has degrees. Knowing V, the mountain in the distance, is not a switch thrown by the second standpoint; it
 comes in amounts, three ways. *In what:* in the step taken, in H if the step was H (one thumb, and places come out in

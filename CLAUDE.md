@@ -276,7 +276,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `plans/flags-r742.md` (the papers' remaining reader angles, listed, unchanged) and FLC (`plans/flc-plan.md` +
   `runs/flc/flc.py`, nothing killed): in space the log-polar cylinder ℝ × S² keeps scaling a slide commuting with every
   turn, Lambert × the lay keeps the read's measure flat under every turn, but no flat chart makes turns rigid (stretch
-  1/cos(φ/2) at the old look, up to 2 at a quarter turn); the plane's one chart splits.
+  1/cos(φ/2) at the old look, up to 2 at a quarter turn); the plane's one chart splits. R744 (7 Nov; Tom:
+  "proceed"): FLC carried into essay 18 §9 and *Reads and Writes* §1 "One plane" (Gauss 1828 and Euler 1777 cited), and
+  the five trig flags applied as proposed (ε a step in direction, an angle in the writer's units; surveys read
+  directions written down in degrees; 1/(2·tan(α/2)) the writer's sum; both indices the writer's; the hyperbolic angle
+  the writer's smooth formula for the reader's lay of ratios).
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

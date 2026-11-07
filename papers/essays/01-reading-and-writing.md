@@ -440,13 +440,13 @@ The division of labour between reading and writing is old, and it was worked out
 described it.
 
 When the Dutch mathematician Willebrord Snellius set out in 1615 to measure the size of the Earth, he did not measure
-the hundred-odd kilometres from Alkmaar to Bergen op Zoom with a rod. He read angles from church towers, building a
-chain of triangles whose shape the angles fixed entirely, and then he measured one short base near Leiden. The base was
+the hundred-odd kilometres from Alkmaar to Bergen op Zoom with a rod. He read the directions between church towers, which
+his instrument wrote down in degrees, building a chain of triangles whose shape they fixed entirely, and then he measured one short base near Leiden. The base was
 the one amount. It scaled the whole chain.
 
 In the summer of 1784 the military engineer William Roy laid out a base on Hounslow Heath, west of London, about 8.4
 kilometres long, and measured it with rods: first deal rods, which swelled in the damp, then glass tubes. It
-took him most of the summer. From that one line, and thousands of angles read from hilltop to hilltop with a theodolite,
+took him most of the summer. From that one line, and thousands of directions read from hilltop to hilltop, each written down in degrees by a theodolite,
 came the triangulation that joined Greenwich to Paris and began the Ordnance Survey. A second base, on Romney Marsh, was
 measured later. It added nothing to the scale. It checked the angles that had carried the first base's length across
 the country.
