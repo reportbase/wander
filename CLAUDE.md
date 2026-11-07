@@ -198,7 +198,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   behind the eye dark. Scale the world moves no colour; d and H²/d one colour. Beside the cube, the same dots as the read lays
   them ("show the cauchy compression"): across the look a disc of radius √(1 − cos α), along it (2/π)·atan(d/H) against the share. The reader's view (`?view=reader`, V; Tom: "can you show the readers view"): the eye's own
   view, every dot in front by its direction (Lambert's equal-area about the look), one size (no distance read), the heat
-  painted about the crosshair; drag turns the look, a tap looks at a dot. `?n=&eye=i,j,k&look=i,j,k&h=&k=<log10 k>&color=heat|fields&view=reader`;
+  painted about the crosshair; drag turns the look, a tap looks at a dot. Since R731 (Tom: "The border looks artificial")
+  the dots are scattered within their cells by default (`?dots=grid` the lattice, whose rows through the eye drew hard lines)
+  and the reader's view opens from the middle. `?n=&eye=i,j,k&look=i,j,k&h=&k=<log10 k>&color=heat|fields&view=reader&dots=grid`;
   hook `window.__heatCube` (`heat`, `heats`, `compressed`, `readerView`, `front`, `pairs`, `stand`, `lookAt`, `set`, `state`, `frames`, `webgl`).
   Not in the flying page.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are

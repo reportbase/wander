@@ -733,8 +733,11 @@ stop short of the horizon. The gap between the farthest dot and the horizon is t
 heat: the box closes, the heat runs on. Drawn from the eye, as the reader would have it, each dot is put where its
 direction falls (equal room for equal shares of the directions) and all are one size, since no distance is read: a far
 dot and a near one on a line look alike. Turned, the dots stream across a heat that stays where it is, about the
-crosshair; from a corner of the box the cube is the wedge's curved triangle, the three thumbs its bright lines out from
-the middle. None of this is new; the demo shows the paragraphs above on one grid.
+crosshair. On the grid, rows and planes of dots that pass through the eye land on lines, and from a corner of the box
+its three faces through the eye make a hard curved triangle: the writer's spacing and the box's walls, not the read's.
+Each dot moved at random within its own cell, the lines go; from the middle of the box there is no edge at all, and
+from a corner only a soft one where the box ends. The heat has none. None of this is new; the demo shows the
+paragraphs above on one box of dots.
 
 **Heat maps combine without reconciling.** Two shapes combine only by working out their boundaries: where they meet,
 which edge wins, what overlaps. A heat map has no boundary, so nothing needs working out, and the heat adds. Two senses

@@ -83,7 +83,7 @@
     <div class="ctl"><label for="kK">scale the world</label><input id="kK" type="range" min="-3" max="3" step="0.05" value="0"><output id="kKo"></output></div>
     <div class="row">
         <button id="bCorner">stand at a corner</button><button id="bMiddle">stand in the middle</button>
-        <button id="bColor">colour: heat</button><button id="bN">12 a side</button><button id="bBehind" class="on">show behind</button><button id="bView">view: from outside</button>
+        <button id="bColor">colour: heat</button><button id="bN">12 a side</button><button id="bBehind" class="on">show behind</button><button id="bView">view: from outside</button><button id="bDots">dots: scattered</button>
     </div>
     <p class="sub" style="margin:8px 0 0">H is drawn against the dot looked at: at 0 that dot is the corner, the hot spot.
     Drag to turn the view. Other demos: <a href="read.html">the read</a>, <a href="crosshairs.html">crosshairs in a field</a>,
@@ -117,13 +117,24 @@
         lk: +qs.get('k') || 0,            // log10 of the world's scale
         color: qs.get('color') === 'fields' ? 'fields' : 'heat',
         tap: 'look', behind: true, version: 0,
+        dots: qs.get('dots') === 'grid' ? 'grid' : 'scatter',
         view: qs.get('view') === 'reader' ? 'reader' : 'outside',
     };
     const idx = (i, j, k) => (k * S.n + j) * S.n + i;
     const ijk = q => [q % S.n, Math.floor(q / S.n) % S.n, Math.floor(q / (S.n * S.n))];
     const K = () => Math.pow(10, S.lk);
     // a dot's place in the writer's box, in amounts (unit spacing times the world's scale), centred on the box
-    const place = q => { const [i, j, k] = ijk(q), c = (S.n - 1) / 2, s = K(); return [(i - c) * s, (j - c) * s, (k - c) * s]; };
+    // "scatter" (the default since 7 Nov; Tom: "The border looks artificial"): each dot moved within its own cell by a
+    // seeded jitter of up to 0.45 of the spacing on each axis, the same every time. On the grid every row and plane of
+    // dots through the eye lands on one line from the eye, so the reader's view drew the grid's rows as hard lines and
+    // the box's faces through the eye as a bright border; scattered, no rows line up and the box's end is a soft edge.
+    // "grid" keeps the lattice (and pairs() its mirror pairs). The jitter scales with the world, so nothing moves with k.
+    const JIT = 0.45;
+    const jit = (q, a) => { let x = Math.imul(q * 3 + a + 1, 0x9E3779B1) >>> 0; x ^= x >>> 15; x = Math.imul(x, 0x85EBCA77) >>> 0;
+        x ^= x >>> 13; x = Math.imul(x, 0xC2B2AE3D) >>> 0; x ^= x >>> 16; return (x / 4294967296 * 2 - 1) * JIT; };
+    const place = q => { const [i, j, k] = ijk(q), c = (S.n - 1) / 2, s = K();
+        if (S.dots !== 'scatter') return [(i - c) * s, (j - c) * s, (k - c) * s];
+        return [(i - c + jit(q, 0)) * s, (j - c + jit(q, 1)) * s, (k - c + jit(q, 2)) * s]; };
     const lookDir = () => { const y = S.yaw * RAD, p = S.pitch * RAD; return [Math.cos(p) * Math.cos(y), Math.sin(p), Math.cos(p) * Math.sin(y)]; };
     const sub = (a, b) => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
     const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
@@ -191,14 +202,17 @@
         if (o.color) S.color = o.color;
         if (o.tap) S.tap = o.tap;
         if (o.behind != null) S.behind = !!o.behind;
+        if (o.dots === 'grid' || o.dots === 'scatter') S.dots = o.dots;
         if (o.view === 'reader' || o.view === 'outside') S.view = o.view;
         S.version++; window.dispatchEvent(new Event('heatcube'));
     }
     // opening: eye at a corner, looking down the diagonal at the middle (the thumbs' crossing)
     const parse = s => s ? s.split(',').map(Number) : null;
     const pe = parse(qs.get('eye')), pl = parse(qs.get('look'));
-    S.eye = pe ? idx(...pe) : 0;
-    lookAt(pl ? idx(...pl) : idx(S.n / 2 - 1 | 0, S.n / 2 - 1 | 0, S.n / 2 - 1 | 0));
+    // the reader's view opens from the middle (7 Nov): from a corner the box's walls through the eye bound the view
+    if (!pe && S.view === 'reader') { const c = S.n / 2 | 0; S.eye = idx(c, c, c); lookAt(pl ? idx(...pl) : idx(S.n - 1, c, c)); }
+    else { S.eye = pe ? idx(...pe) : 0;
+        lookAt(pl ? idx(...pl) : idx(S.n / 2 - 1 | 0, S.n / 2 - 1 | 0, S.n / 2 - 1 | 0)); }
     window.__heatCore = { S, idx, ijk, place, lookDir, targetOf, Hof, heatOf, heats, lookAt, stand, front, pairs, set };
     // the compression: every dot in front laid as the read holds it, its share off the look (1 − cos α, 0 at the look,
     // 1 at the rim), its azimuth about the look and its distance address g = (2/π)·atan(d/H) (½ at one thumb)
@@ -221,7 +235,7 @@
         heat: q => heatOf(q, Hof(), place(S.eye), lookDir()), heats, front, pairs, stand: q => set({ eye: q }),
         lookAt: q => set({ look: q }), set, idx, place,
         state: () => ({ n: S.n, eye: S.eye, look: S.look, target: targetOf(), yaw: S.yaw, pitch: S.pitch, H: Hof(), h: S.h,
-            k: K(), color: S.color, tap: S.tap, view: S.view }),
+            k: K(), color: S.color, tap: S.tap, view: S.view, dots: S.dots }),
         frames: 0, webgl: false,
     };
 })();
@@ -424,7 +438,7 @@ function paint() {
     const t = C.place(C.targetOf()); ringT.position.set(t[0], t[1], t[2]); ringT.scale.setScalar(0.32 * s); ringT.lookAt(camera.position);
     const L = C.lookDir(), far = S.n * 2 * s;
     lookLine.geometry.setFromPoints([new THREE.Vector3(...e), new THREE.Vector3(e[0] + L[0] * far, e[1] + L[1] * far, e[2] + L[2] * far)]);
-    box.scale.setScalar((S.n - 1) * s);
+    box.scale.setScalar((S.n - 1 + (S.dots === 'scatter' ? 2 * 0.45 : 0)) * s);
     if (lastScale !== s) { // the view follows the world's scale, so scaling shows as nothing changing on the screen
         const f = lastScale == null ? 1 : s / lastScale;
         if (lastScale == null) camera.position.set(1.35 * S.n * s, 0.95 * S.n * s, 1.75 * S.n * s);
@@ -450,6 +464,7 @@ function hud() {
     tStand.classList.toggle('on', S.tap === 'stand'); tLook.classList.toggle('on', S.tap === 'look');
     bColor.textContent = 'colour: ' + (S.color === 'heat' ? 'heat' : 'near / far'); bN.textContent = S.n + ' a side';
     bBehind.classList.toggle('on', S.behind);
+    $('bDots').textContent = 'dots: ' + (S.dots === 'scatter' ? 'scattered' : 'a grid');
 }
 const $ = id => document.getElementById(id);
 const yawEl = $('yaw'), yawO = $('yawo'), pitchEl = $('pitch'), pitchO = $('pitcho'), hEl = $('hH'), hO = $('hHo'), kEl = $('kK'), kO = $('kKo');
@@ -460,6 +475,7 @@ tStand.onclick = () => C.set({ tap: 'stand' }); tLook.onclick = () => C.set({ ta
 bColor.onclick = () => C.set({ color: S.color === 'heat' ? 'fields' : 'heat' });
 bN.onclick = () => { const n = S.n === 8 ? 12 : S.n === 12 ? 16 : 8, c = n / 2 - 1 | 0; lastScale = null; C.set({ n }); C.set({ look: [c, c, c] }); };
 bBehind.onclick = () => C.set({ behind: !S.behind });
+$('bDots').onclick = () => C.set({ dots: S.dots === 'scatter' ? 'grid' : 'scatter' });
 $('bCorner').onclick = () => { const c = S.n / 2 - 1 | 0; C.set({ eye: 0 }); C.set({ look: [c, c, c] }); };
 $('bMiddle').onclick = () => { const c = S.n / 2 | 0; C.set({ eye: [c, c, c] }); C.set({ look: [S.n - 1, c, c] }); };
 

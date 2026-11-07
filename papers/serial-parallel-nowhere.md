@@ -7352,6 +7352,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   that screen the Cauchy, 1/(2π(1 + r²)^(3/2)), toward a horizon (r = ∞) never reached; the rings at the corner (one thumb
   off) and one in 2, 4, 8 its walls. Straight lines stay straight (it is the gnomonic map, the flat screen widened and
   read in thumbs), and zooming out shows more of the tunnel without end. `crosshairs.html`'s default (`fid=tunnel`).
+- **R731** (7 Nov; Tom: "What are the lines on the border, that implies a shape.", then "The border looks artificial"):
+  the reader's view on the grid drew the writer's lattice: every row or plane of dots through the eye lands on one line
+  (the three faces through a corner eye the triangle's edges, the diagonal planes x = y, y = z, z = x the six spokes, a
+  pair's corner each). `heat-cube.html` now scatters each dot within its own cell by a seeded jitter (up to 0.45 of the
+  spacing an axis; `?dots=grid` keeps the lattice), and `?view=reader` opens from the middle: no border there, from a
+  corner only a soft one where the box ends. The heat has no edge. Checked: the dot looked at on the crosshair, heat 1;
+  scaling moves no dot (10⁻⁸). R730's "the three thumbs its bright lines" withdrawn in *Reads and Writes* §7 and essay 5
+  §10: those lines were the grid's.
 - **R730** (6 Nov; Tom: "what did you learn from this demo", then "add this to the papers and essays. you can mention
   this demo in the papers."): what `heat-cube.html` shows, carried in as a demo of R728, nothing new claimed. The cube
   never changes, only its colours, and only with the look (the heat is the look's); choosing the dot looked at is choosing
