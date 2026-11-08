@@ -27,7 +27,11 @@
     The Cauchy's constant (8 Nov 2026, Tom: "proceed with the one-read.html panel"; SPN R752): a fourth panel, w = (1 + is)/(1 − is)
     = e^(2iθ) going round from +1 with the arc it has gathered, beside the kernel 1/(1 + s²) with its area from 0 to s
     shaded (θ) and a bar filling to π/2 as w reaches −1 = e^(iπ); the rational form of w shown at the reading.
-    Links: ?t=<θ in degrees>&c=<V/H>&play=1. Test hook: window.__oneRead (at, read, gap, landing, cayley, constant, set, state).
+    One pole (8 Nov, Tom: "proceed with the t-slider"; SPN R753): a fifth panel, a standpoint z = m + iγ above the line with
+    its equal turns and kernel, and e^(izt) spiralling in from 1 as t grows, beside the same total taken directly (the phasor
+    averaged over 20,000 equal turns from z).
+    Links: ?t=<θ in degrees>&c=<V/H>&play=1&pt=&pm=&pg=. Test hook: window.__oneRead (at, read, gap, landing, cayley, constant,
+    phasor, set, state).
     -->
     <style>
     :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
@@ -94,6 +98,20 @@
         one over it. The constant comes from the three together: the endpoint, what the logarithm gathered, the change from
         angle to reading. That each finite read stays rational and π enters only with the total is our reading, not a theorem.</p>
     </div>
+    <div class="panel">
+        <div class="row"><label for="pt">the turn t</label><input id="pt" type="range" min="0" max="8" step="0.01" value="1.3">
+            <span id="ptv" class="b"></span><button id="pplay">play t</button></div>
+        <div class="row"><label for="pm">the foot m</label><input id="pm" type="range" min="-2" max="2" step="0.01" value="0.7">
+            <span id="pmv" class="b"></span><label for="pg">the height γ</label><input id="pg" type="range" min="0.05" max="2" step="0.01" value="0.4">
+            <span id="pgv" class="b"></span><button id="pi">z = i</button></div>
+        <canvas id="cv5" height="480"></canvas><p class="cap">One pole, the constant and the phasor. Left: a standpoint
+        z = m + iγ above the line, equal turns from it landing on the line, and the Cauchy kernel they make,
+        (1/π)·γ/((s − m)² + γ²), its one pole at z. Right: weight that kernel by a turn e^(its) and total it: the result is
+        e^(izt) = e^(imt − γt) (gold), a spiral in from 1, the foot turning it and the height damping it; the ring is the
+        same total taken directly, the phasor averaged over 20,000 equal turns from z. At t = 0 both are 1: the total, the
+        constant of the panel above. One residue, at the pole, gives both. Classical (the Poisson kernel and its Fourier
+        transform); that the pole is where the standpoint is drawn is our reading.</p>
+    </div>
     <p class="note">Related: <a href="facing.html">the facing</a>, <a href="paths.html">one sweep, three paths</a>,
     <a href="two-readers.html">the angle and the radius</a>. <a href="demos.html">All the demos</a>.</p>
 </main>
@@ -138,7 +156,7 @@
 
     function fit(cv) {
         const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth,
-            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * (cv.id === 'cv1' ? 0.9 : cv.id === 'cv3' ? 0.62 : cv.id === 'cv4' ? 0.7 : 0.5)));
+            hh = Math.min(+(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height'))), Math.round(w * (cv.id === 'cv1' ? 0.9 : cv.id === 'cv3' ? 0.62 : cv.id === 'cv4' ? 0.7 : cv.id === 'cv5' ? (w < 560 ? 1.3 : 0.27) : 0.5)));
         cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr);
         const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return { g, w, h: hh };
     }
@@ -279,7 +297,59 @@
             + `  their product: <span class="b">${f4(r.product)}</span>, the writer's 1` + (st.t >= 89.95 ? '\n  at the end of the turn: π/2 and 2/π' : '')
             + (Math.abs(cc - 1) > 1e-9 ? `\n<span class="x">Drawn at V = ${cc.toFixed(2)}H: the ray at θ and the radius at 2θ part, by ${gap(st.t).toFixed(4)}.</span>` : '');
     }
-    function draw() { draw1(); draw2(); draw3(); draw4(); hud(); $('t').value = st.t; $('c').value = st.lc; }
+    // one pole, the constant and the phasor (SPN R753): from z = m + iγ the kernel's total weighted by e^(its) is e^(izt);
+    // taken directly as the phasor averaged over N equal turns from z, each landing at s = m + γ·tan φ
+    const ph = { t: 1.3, m: 0.7, g: 0.4, anim: null };
+    function phasor(t, m, g, N) {
+        N = N || 20000; let re = 0, im = 0;
+        for (let k = 0; k < N; k++) { const f = -Math.PI / 2 + Math.PI * (k + 0.5) / N, sv = m + g * Math.tan(f); re += Math.cos(t * sv); im += Math.sin(t * sv); }
+        const e = Math.exp(-g * t);
+        return { exact: [e * Math.cos(m * t), e * Math.sin(m * t)], avg: [re / N, im / N] };
+    }
+    function draw5() {
+        const { g, w, h } = fit($('cv5')); g.clearRect(0, 0, w, h);
+        const narrow = w < 560, dot = (p, col, r) => { g.fillStyle = col; g.beginPath(); g.arc(p[0], p[1], r, 0, 2 * Math.PI); g.fill(); };
+        g.font = '11px DM Mono, monospace';
+        // left: the line, the standpoint, equal turns, the kernel
+        const lw = narrow ? w : w * 0.55, SL = 4, base = h - 34, top = narrow ? h * 0.5 : 40, sc = (lw - 30) / (2 * SL), X = x => 15 + (x + SL) * sc;
+        const Yz = y => base - y * sc * 0.9, kmax = 1 / (Math.PI * ph.g), Yk = y => base - (base - top) * Math.min(1, y / Math.max(kmax, 0.8));
+        g.strokeStyle = 'rgba(230,228,238,0.5)'; g.lineWidth = 1; g.beginPath(); g.moveTo(X(-SL), base); g.lineTo(X(SL), base); g.stroke();
+        g.fillStyle = '#8a8a96'; for (const x of [-4, -2, 0, 2, 4]) g.fillText(String(x), X(x) - 4, base + 14);
+        const Z = [X(ph.m), Yz(ph.g)];
+        g.strokeStyle = 'rgba(140,230,205,0.35)';
+        for (let k = 0; k < 13; k++) { const f = -Math.PI / 2 + Math.PI * (k + 0.5) / 13, sv = ph.m + ph.g * Math.tan(f);
+            if (Math.abs(sv) > SL) continue; g.beginPath(); g.moveTo(...Z); g.lineTo(X(sv), base); g.stroke(); dot([X(sv), base], '#8ce6cd', 2); }
+        g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath();
+        for (let i = 0; i <= 300; i++) { const x = -SL + 2 * SL * i / 300, y = ph.g / (Math.PI * ((x - ph.m) ** 2 + ph.g ** 2)); i ? g.lineTo(X(x), Yk(y)) : g.moveTo(X(x), Yk(y)); }
+        g.stroke();
+        dot(Z, '#e6e4ee', 5); g.fillStyle = '#e6e4ee';
+        const zl = `z = ${ph.m.toFixed(2)} ${ph.g < 0 ? '−' : '+'} ${ph.g.toFixed(2)}i, the pole`; g.textAlign = Z[0] > lw - 170 ? 'right' : 'left';
+        g.fillText(zl, Z[0] + (g.textAlign === 'right' ? -8 : 8), Z[1] - 6); g.textAlign = 'left';
+        // right (or below): the phasor plane
+        const r = phasor(ph.t, ph.m, ph.g);
+        const R0 = narrow ? Math.min(w * 0.3, h * 0.17) : Math.min(w * 0.18, (h - 50) / 2), cx = w - R0 - 26, cy = narrow ? 56 + R0 : h / 2;
+        {
+            const D = q => [cx + R0 * q[0], cy - R0 * q[1]];
+            g.strokeStyle = 'rgba(230,228,238,0.3)'; g.lineWidth = 1; g.beginPath(); g.arc(cx, cy, R0, 0, 2 * Math.PI); g.stroke();
+            g.beginPath(); g.moveTo(cx - R0, cy); g.lineTo(cx + R0, cy); g.moveTo(cx, cy - R0); g.lineTo(cx, cy + R0); g.stroke();
+            g.strokeStyle = 'rgba(212,160,82,0.5)'; g.lineWidth = 1.5; g.beginPath();
+            for (let i = 0; i <= 400; i++) { const tt = 8 * i / 400, e = Math.exp(-ph.g * tt), q = D([e * Math.cos(ph.m * tt), e * Math.sin(ph.m * tt)]); i ? g.lineTo(...q) : g.moveTo(...q); }
+            g.stroke();
+            g.strokeStyle = '#d4a052'; g.lineWidth = 3; g.beginPath();
+            for (let i = 0; i <= 200; i++) { const tt = ph.t * i / 200, e = Math.exp(-ph.g * tt), q = D([e * Math.cos(ph.m * tt), e * Math.sin(ph.m * tt)]); i ? g.lineTo(...q) : g.moveTo(...q); }
+            g.stroke();
+            dot(D(r.exact), '#d4a052', 5);
+            g.strokeStyle = '#8ce6cd'; g.lineWidth = 1.5; g.beginPath(); g.arc(...D(r.avg), 8, 0, 2 * Math.PI); g.stroke();
+            g.fillStyle = '#8a8a96'; g.fillText('1', D([1, 0])[0] + 4, cy - 4);
+        }
+        const tx = narrow ? 8 : lw + 10, f3 = x => (x < 0 ? '−' : '+') + Math.abs(x).toFixed(4);
+        g.fillStyle = '#d4a052'; g.fillText(`e^(izt) = ${r.exact[0].toFixed(4)} ${f3(r.exact[1])}i`, tx, 16);
+        g.fillStyle = '#8ce6cd'; g.fillText(`averaged over turns: ${r.avg[0].toFixed(4)} ${f3(r.avg[1])}i`, tx, 30);
+        g.fillStyle = '#8a8a96'; g.fillText(`|e^(izt)| = e^(−γt) = ${Math.exp(-ph.g * ph.t).toFixed(4)}, turned mt = ${(ph.m * ph.t).toFixed(3)}`, tx, 44);
+        $('ptv').textContent = ph.t.toFixed(2); $('pmv').textContent = ph.m.toFixed(2); $('pgv').textContent = ph.g.toFixed(2);
+        $('pt').value = ph.t; $('pm').value = ph.m; $('pg').value = ph.g;
+    }
+    function draw() { draw1(); draw2(); draw3(); draw4(); draw5(); hud(); $('t').value = st.t; $('c').value = st.lc; }
     function play() {
         if (st.anim) { cancelAnimationFrame(st.anim); st.anim = null; return; }
         const t0 = performance.now(), from = st.t >= 89.9 ? 0 : st.t;
@@ -290,13 +360,26 @@
     $('c').oninput = e => { st.lc = +e.target.value; draw(); };
     $('play').onclick = play;
     $('one').onclick = () => { st.lc = 0; draw(); };
+    $('pt').oninput = e => { ph.t = +e.target.value; draw5(); };
+    $('pm').oninput = e => { ph.m = +e.target.value; draw5(); };
+    $('pg').oninput = e => { ph.g = +e.target.value; draw5(); };
+    $('pi').onclick = () => { ph.m = 0; ph.g = 1; draw5(); };
+    $('pplay').onclick = () => {
+        if (ph.anim) { cancelAnimationFrame(ph.anim); ph.anim = null; return; }
+        const t0 = performance.now(), from = ph.t >= 7.99 ? 0 : ph.t;
+        const step = now => { ph.t = Math.min(8, from + (now - t0) / 1000 * 1.2); draw5(); ph.anim = ph.t < 8 ? requestAnimationFrame(step) : null; };
+        ph.anim = requestAnimationFrame(step);
+    };
     window.addEventListener('resize', draw);
     function set(o) { if ('t' in o) st.t = +o.t; if ('c' in o) st.lc = Math.log10(+o.c); draw(); return read(st.t); }
     if (P.has('t')) st.t = Math.max(0, Math.min(90, +P.get('t')));
+    if (P.has('pt')) ph.t = Math.max(0, Math.min(8, +P.get('pt')));
+    if (P.has('pm')) ph.m = Math.max(-2, Math.min(2, +P.get('pm')));
+    if (P.has('pg')) ph.g = Math.max(0.05, Math.min(2, +P.get('pg')));
     if (P.has('c')) st.lc = Math.log10(Math.max(0.1, Math.min(10, +P.get('c'))));
     draw();
     if (P.get('play') === '1') play();
-    window.__oneRead = { at, read, gap, landing, cayley, constant, set, state: () => ({ t: st.t, c: c() }) };
+    window.__oneRead = { at, read, gap, landing, cayley, constant, phasor, set, state: () => ({ t: st.t, c: c() }) };
 })();
 </script>
 </body>
