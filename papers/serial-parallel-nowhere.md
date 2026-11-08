@@ -7410,6 +7410,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R759** (8 Nov; ChatGPT, pasted: "make non-collinear boost composition the next calculation … If it does not, we will
+  have learned exactly where the correspondence ends."): TWG (`plans/twg-plan.md` + `runs/twg/twg.py`, exact). Run 1: W3
+  killed by my measure (an angle as 2·acos of a number within 10⁻⁶⁰ of 1 keeps half the digits); run 2, W3′, nothing
+  killed. The Thomas–Wigner rotation is read from three stars' directions before and after (no frequency, no distance),
+  the same from any three, equal to the half-rapidity formula and the velocity triangle's hyperbolic area to 10⁻⁵⁸; one
+  boost leaves none; collinear boosts slide one level of direction and their rapidities add; a small loop of boosts
+  leaves ε²·sin φ about the axis opposite the turn loop's (curvature −1 against +1). Known beforehand: the archived
+  *Bounded Observer in Motion* §6 (holonomy, 10⁻¹⁴). Ours: the rotation an address quantity made by joining reads. Not
+  derived: the Lorentz group, which enters as the premise that motion's map of the sky is conformal (Liouville); that is
+  where the correspondence ends. *Reads and Writes* §3 "Two boosts joined", Code and data; essays 7 §7, 9, 13.
 - **R758** (8 Nov; ChatGPT's manuscript comparison, pasted: "make two precise improvements"): *Reads and Writes* §2's
   routes gain the bridge from the circle to the point off the line (u = (x − m)/γ, the Cayley map, dθ/dx = γ/((x − m)² +
   γ²), p = (1/π)·dθ/dx, the same measure's response e^(imt − γ|t|)); the pole bullet says p = (γ/π)·|1/(x − z)|², not

@@ -353,6 +353,11 @@ colours. That is still a reading, needing no rest frequency, but no longer of di
 factor as a frequency, a shift of a spectral line, needs the line's rest frequency carried in, a known kind of atom: a
 writing.
 
+The slide also says why rapidities add. Two boosts along one axis are two slides of the same ξ, and slides add; the
+velocity law (β₁ + β₂)/(1 + β₁β₂) is tanh of the sum. Two boosts along different axes are slides of different ξ's, and
+the join leaves a turn of the sky, the Thomas–Wigner rotation. Three stars seen before and after give it exactly, with
+no frequency and no distance (essay 9, "Thomas precession").
+
 **The thumb moved is the same slide.** The near and far fields slide the same way. Wrap the reader's plane of
 distances onto a sphere so that one thumb lands on its equator (a writer's drawing): the eye is one pole, the horizon the
 other. Then taking the thumb k times larger is z ↦ z/k again, a boost of rapidity ln k along that sphere's axis, every
@@ -436,6 +441,9 @@ paces supply the only amount.
   transformations. *Bernoulli* 26(4), 3224–3248.
 - Penrose, R. and Rindler, W. (1984). *Spinors and Space-Time*, Vol. 1. Cambridge University Press.
 - Rybicki, G. B. and Lightman, A. P. (1979). *Radiative Processes in Astrophysics*. Wiley, New York.
+- Thomas, L. H. (1926). The motion of the spinning electron. *Nature* 117, 514.
+- Wigner, E. (1939). On unitary representations of the inhomogeneous Lorentz group. *Annals of Mathematics* 40(1),
+  149–204.
 
 The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, whose §3 has the lighthouse, Mercator's map and the moving sky beside the hand): Proposition 5(f) and (g), "Two charts" and "What the
 two pictures show" in §7.1; "Already drawn, under other names" and "Where c ≠ 1 comes from" in §5; "Special relativity's
