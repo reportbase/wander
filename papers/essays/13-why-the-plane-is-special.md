@@ -173,7 +173,10 @@ both back leaves a turn of about α·β about the third (1.741° for 10° and 10
 of field directions comes back with a phase of half the loop's solid angle, set by the directions visited and by nothing
 else, not the field's strength, not the speed, not the size of the apparatus (the third essay, section 10). It is a
 quantity of directions alone in the strict sense, heat and not paint, and it exists only because space, unlike the plane, does not let its turns be
-taken in either order.
+taken in either order. Boosts have the same leftover with the opposite sign. A small loop of boosts along two axes leaves
+a turn of the same size, ε²·sin φ, about the opposite axis: the Thomas–Wigner rotation, the area of the loop in the
+hyperbolic space of velocities (curvature −1 where the sphere's is +1). It too is read from the sky's directions alone
+(the TWG run, exact).
 
 ---
 
@@ -275,6 +278,9 @@ jobs. A reader in space does the same reading; it only has to say which job it m
   transformations. *Bernoulli* 26(4), 3224–3248. (The spherical Cauchy.)
 - Doyle, P. G. and Snell, J. L. (1984). *Random Walks and Electric Networks*. Carus Mathematical Monographs 22.
   Mathematical Association of America, Washington.
+- Thomas, L. H. (1926). The motion of the spinning electron. *Nature* 117, 514.
+- Wigner, E. (1939). On unitary representations of the inhomogeneous Lorentz group. *Annals of Mathematics* 40(1),
+  149–204.
 
 Named as history in the text and not cited in *Observation from Somewhere*: Hamilton's quaternions (1843), Liouville's
 theorem on conformal maps in space (1850), Frobenius's theorem on division algebras (1878), Riemann's mapping theorem.

@@ -59,3 +59,33 @@ the premise that a change of standpoint by motion is conformal on the sky; given
 where the correspondence ends.
 
 ## Runs
+
+### Run 1 (8 Nov 2026), `runs/twg/twg.py`, output `runs/twg/twg-run1.txt`; W3 killed by my measure
+
+- W1 held: ζ read from three stars' directions to 6·10⁻⁶⁰, collinear boosts summing to 3·10⁻⁶⁰, the velocity law to
+  8·10⁻⁶², every other star predicted to 4·10⁻⁵⁹; on the chart centred on the boost the map is z ↦ k·z with ln k = ζ.
+- W2 held: twelve cases (φ 30°–135°), the rotation read from directions alone equal to the half-rapidity formula to
+  1.2·10⁻⁵⁸ and at 90° to the γ formula to 2·10⁻⁵⁹; 20 more stars predicted to 1.4·10⁻⁵⁸.
+- W3 killed in its letter: one read's rotation 6.7·10⁻³⁰ against my 10⁻⁴⁰. My measure: the angle taken as 2·acos of a
+  number within 10⁻⁶⁰ of 1 keeps only half the digits (the collinear composition's 4.5·10⁻³⁰ is the same artefact).
+- W4 held: five triples agree to 3.7·10⁻⁵⁸. W5 held: Ω is the velocity triangle's defect to 1.2·10⁻⁵⁸.
+- W6 held: both loops leave ε²·sin φ (ratios within 5·10⁻⁵ at ε = 10⁻², 5·10⁻⁹ at 10⁻⁴), axes antiparallel (dot product
+  −0.99996 and −0.999999998, the departures of order ε²).
+
+W3′ (written before run 2): the rotation of one read, measured as 2·asin of the norm of U's part along the Pauli matrices
+(|tr(σₖU)|/2), is below 10⁻⁵⁰ for every boost of W3, and so is a collinear pair's. Kill: either above it.
+
+### Run 2 (8 Nov 2026), the same script with the angle from U's Pauli part, output `runs/twg/twg-run2.txt`; nothing killed
+
+- W3′ held: one read's rotation at most 1.5·10⁻⁵⁹ (nine boosts, three sizes, three directions); a collinear pair's
+  9·10⁻⁶⁰. Every other check as in run 1, now to 10⁻⁵⁸ or better (the half-rapidity formula to 5·10⁻⁶⁰).
+
+Reading: the Thomas–Wigner rotation is recovered from three stars' directions before and after, with no frequency and no
+distance, the same from any three, and equal to the velocity triangle's hyperbolic area. One read (one boost) carries
+none; collinear boosts share their fixed points and slide one level of direction, so their rapidities add and no turn is
+left; boosts along two axes cannot be one slide, and the joining leaves a turn. For a small loop it is ε²·sin φ, the turn
+loop's size about the opposite axis: the same leftover of joining in space, with curvature −1 against +1. All classical
+(Thomas 1926; Wigner 1939; Penrose and Rindler 1984; the archived *Bounded Observer in Motion* §6). What is ours: the
+rotation is an address quantity, read from directions, and belongs to the joining of reads, never to one. The Lorentz
+group itself is not derived from the read/write split; it enters as the premise that a change of standpoint by motion is
+conformal on the sky (Liouville), which is where the correspondence ends.

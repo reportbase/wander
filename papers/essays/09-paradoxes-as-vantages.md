@@ -113,7 +113,11 @@ frames, where it does not hold.
 
 **Thomas precession.** Carry a gyroscope round a closed loop of velocity changes and it comes back turned, though every
 leg looked free of rotation (Thomas 1926). The eighth essay met this in the dial built from true boosts. The residue
-belongs to the loop, not to any leg: the closing of a loop that the first essay used to find a misread link.
+belongs to the loop, not to any leg: the closing of a loop that the first essay used to find a misread link. It is
+read from directions alone. Three stars seen before and after two boosts fix the map of the sky, and its turn is the
+Thomas–Wigner angle, the same from any three stars, with no frequency and no distance used. One boost alone leaves no
+turn. Joined along one axis, rapidities add; joined along two, the join leaves a turn the size of the velocity triangle's
+hyperbolic area (the TWG run, exact).
 
 **Simpson's paradox.** In a much-taught study of kidney-stone treatments (Charig et al. 1986), treatment A succeeded more
 often than B for small stones, 93% against 87%, and for large stones, 73% against 69%. Pooled, A succeeded 78% of the time
@@ -374,6 +378,8 @@ ratio of their sizes and their distance apart, both exact, and still no unit.
   879–882.
 - Fisher, I. (1922). *The Making of Index Numbers*. Houghton Mifflin, Boston.
 - Thomas, L. H. (1926). The motion of the spinning electron. *Nature* 117, 514.
+- Wigner, E. (1939). On unitary representations of the inhomogeneous Lorentz group. *Annals of Mathematics* 40(1),
+  149–204.
 - Galilei, G. (1638). *Discorsi e dimostrazioni matematiche intorno a due nuove scienze*. Leiden.
 - Richardson, L. F. (1961). The problem of contiguity. *General Systems Yearbook* 6, 139–187.
 - Mandelbrot, B. (1967). How long is the coast of Britain? *Science* 156, 636–638.

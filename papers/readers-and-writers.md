@@ -474,6 +474,19 @@ the speed in metres a second needs the speed of light carried in, and to read D 
 the line's rest frequency, a known kind of atom: both are writings. The theory makes the split in its formulas without
 naming it; the reader's part is the directions, the writer's the amounts.
 
+**Two boosts joined.** Along one axis two boosts share their fixed points, the two stars straight ahead and behind, and
+each is a slide of the same level of direction ξ, so their rapidities add and the velocity law, (β₁ + β₂)/(1 + β₁β₂), is
+the writer's tanh of the sum. Along two axes no single level carries both slides, and the join leaves a turn: the
+Thomas–Wigner rotation, tan(Ω/2) = ab·sin φ/(1 + ab·cos φ) with a, b the tangents of the half rapidities and φ the angle
+between them, which is the area of the velocity triangle in hyperbolic space. It is read from directions alone. Three
+stars before and after fix the map of the sky, and its turn is the rotation, the same from any three stars, with no
+frequency and no distance used. No single boost has any: the turn belongs to the join of reads, never to one. For a small
+loop it is ε²·sin φ, the size of the leftover that a loop of turns in space leaves (§7), about the opposite axis:
+curvature −1 against +1. (Checked to 10⁻⁵⁸; see Code and data. Classical: Thomas 1926, Wigner 1939.) The read/write split
+does not derive the Lorentz group. The group enters with the premise that a change of standpoint by motion keeps the
+angles between nearby stars, since every such map of the sky is a Möbius map (Liouville). Given that premise, the
+rotation's place is the paper's: an address quantity, made by joining reads.
+
 ## 4. Rates, not angles
 
 A carpenter calls a roof "six in twelve". A road sign says "10%". A ramp is built "one in twelve". None of them says an
@@ -1310,7 +1323,7 @@ acts, the heat of directions and the payload inside a read, and what carries an 
 ## Code and data
 
 The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each with
-its plan written before it was run: the one pole, the constant and the phasor against five other kernels in `plans/opl-plan.md` and `runs/opl/`; time and the Cauchy's point in `plans/tim-plan.md` and `runs/tim/`; the floor's cells as points m + iγ in `plans/dyh-plan.md` and `runs/dyh/`; the Cauchy's routes in `plans/cauchy-routes.md` and `runs/crt/`; parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
+its plan written before it was run: the one pole, the constant and the phasor against five other kernels in `plans/opl-plan.md` and `runs/opl/`; two boosts joined, the Thomas–Wigner rotation read from directions alone, in `plans/twg-plan.md` and `runs/twg/`; time and the Cauchy's point in `plans/tim-plan.md` and `runs/tim/`; the floor's cells as points m + iγ in `plans/dyh-plan.md` and `runs/dyh/`; the Cauchy's routes in `plans/cauchy-routes.md` and `runs/crt/`; parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
 measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three
 thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the shape
 swept whole against each thumb on its own in `plans/swp-plan.md` and `runs/swp/`; the read with no world, and where the
@@ -1391,6 +1404,7 @@ establishes it.
 - Staudt, K. G. C. von (1847). *Geometrie der Lage.* Nürnberg: Bauer und Raspe.
 - Takenaka, S. (1925). On the orthogonal functions and a new formula of interpolation. *Japanese Journal of
   Mathematics* 2, 129–145.
+- Thomas, L. H. (1926). The motion of the spinning electron. *Nature* 117, 514.
 - Tomita, A. and Chiao, R. Y. (1986). Observation of Berry's topological phase by use of an optical fiber. *Physical
   Review Letters* 57, 937–940.
 - Trotter, H. F. (1959). On the product of semi-groups of operators. *Proceedings of the American Mathematical Society*
@@ -1398,6 +1412,8 @@ establishes it.
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII.* Tours.
 - Wantzel, P. L. (1837). Recherches sur les moyens de reconnaître si un problème de géométrie peut se résoudre avec la
   règle et le compas. *Journal de Mathématiques Pures et Appliquées* 2, 366–372.
+- Wigner, E. (1939). On unitary representations of the inhomogeneous Lorentz group. *Annals of Mathematics* 40(1),
+  149–204.
 - Wilbraham, H. (1848). On a certain periodic function. *Cambridge and Dublin Mathematical Journal* 3, 198–201.
 
 The entries were checked against Crossref and library catalogues on 3 November 2026; Malmquist (1926) is given as it is
