@@ -78,3 +78,13 @@ Code and data; references.
    numbers and leaving the derivations to the plans.
 5. **The order.** Motion and the moving sky first (the cleanest sorts, and TWG new), or light first (the oldest
    calibration case).
+
+## Tom's answers (8 Nov), and the draft
+
+Tom: "1. Good 2. Leave out, but there might be good ideas to mine. 3. Include for now. 4. Ok 5. Ok" (SPN R764). The title
+stands; Wander's world is left out, its ideas mined where they can be put to real data (§12.2's test for convention, from
+the built world's seven conventions; still to mine: Rømer's speed from the reader's own flight, the elevator, readers in
+company joined by the rhythm of clicks); D6 is in §12.2 as a registered prediction; about 12,000 words; motion and the
+moving sky first. The first full draft, §2–§12 with Code and data and references, came to about 9,700 words. Wording
+follows the vocabulary rules above: the far field's figures stated as powers and ratios (light as d^(−2.02), counts as
+S^(−1.23), the parallax band a factor of about 1/ε each side of the corner), never in levels.
