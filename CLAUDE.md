@@ -336,6 +336,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   at every angle; the boost loop c_B = 1/3 + cos φ/4. R761: run 3 in essays 13 and 9.
   R762 (8 Nov; a Gemini review pasted): *Reads and Writes*' missing references (Kakutani, Bullock, Clark, Liouville) added,
   the Tangent Bridge and the essays named on first mention, §7's (a, b) and §11's α defined; no claim changed.
+  `reads-and-writes-physics.md` (8 Nov; SPN R763; Tom: "Let's start our physics paper, that builds on these ideas"):
+  *Reads and Writes in Physics*, known physics sorted by the two tests; geometry from *Reads and Writes* (which stands
+  where they differ), physics from `physics.md` and the plans (a new result goes there first); no new physics; Wander's
+  world not used. Abstract and §1 drafted; the rest outlined in `plans/phy-outline.md`, five decisions put to Tom.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

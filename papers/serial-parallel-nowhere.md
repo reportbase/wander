@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R763** (8 Nov; Tom: "Let's start our physics paper, that builds on these ideas"): a physics paper built on *Reads
+  and Writes*, `papers/reads-and-writes-physics.md`, *Reads and Writes in Physics: known physics, sorted by what a
+  standpoint can read*. Its geometry is *Reads and Writes*'s (that paper stands where they differ), its physics from
+  `physics.md` and the plans; no new physics (R441); standings [exact], [data], [simulation], [classical], Wander's world
+  not used. Abstract and §1 drafted (the two tests as physics uses them, the bridges); §2–§12 outlined in
+  `plans/phy-outline.md`, with five decisions put to Tom before the rest is written.
 - **R762** (8 Nov; a Gemini review of *Reads and Writes*, pasted): its editorial items checked and made. Kakutani (1944),
   Bullock et al. (2017), Clark et al. (1999) and Liouville (1850, Note VI in Monge's *Application de l'analyse*) were
   cited without reference entries; added. "The Tangent Bridge" in §1 named as a companion paper in reportbase/draw; the
