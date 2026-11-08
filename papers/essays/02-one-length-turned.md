@@ -487,6 +487,10 @@ gathered; the change from angle to reading makes it the kernel. Each finite read
 and composing reads multiplies the w's, which is tangent addition); π enters only when the sweep is totalled, the writer's
 act. That last sentence, and the reader standing at i where the kernel has its pole, are our reading of the arithmetic,
 not something the arithmetic proves (*Reads and Writes* §5, "The Cauchy's constant, from the same turn").
+The same pole gives the Cauchy's characteristic function. From a standpoint z = m + iγ, weight the kernel by a turn
+e^(its) and close the line above it: the one residue, at z, is e^(izt) = e^(imt − γt). At t = 0 it is the total, the
+constant above; past it the foot turns the phasor and the height damps it. One pole carries both (*Reads and Writes* §5,
+"One pole, the constant and the phasor").
 
 **The two corners are two mirrors.** The plane of the logarithm also shows the corners plainly. Swap a reading for its
 reciprocal, v/h for h/v, and the angle θ becomes 90° − θ: a reflection of the imaginary part, and the line it leaves in
