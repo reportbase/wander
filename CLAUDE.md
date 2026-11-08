@@ -548,8 +548,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   product 1, π/2 and 2/π at the end; at V = cH the ellipse parts them. Since 28 Oct (Tom: "update the
   demos", after OFS review 32; SPN R545): the landing point as ½e^(2iθ), +1, i and e^(iπ) = −1 (home) at zero, the corner
   and the horizon, and a Cayley-disc panel, −e^(2iθ): zero at −1, the corner at −i, the horizon at +1; `central-reader.html`'s
-  one-read step names the half turn e^(iπ) = −1. `?t=&c=&play=1`; hook `window.__oneRead` (`at`, `read`, `landing`, `cayley`,
-  `gap`, `set`, `state`). `sweep-zero.html` (R327, R331, R334): the sweep only forward from zero; N = 201 counts at the law's
+  one-read step names the half turn e^(iπ) = −1. Since 8 Nov (R752; Tom: "proceed with the one-read.html panel") a fourth
+  panel: w = (1 + is)/(1 − is) = e^(2iθ) going round from +1 with the arc ln w has gathered, beside 1/(1 + s²) with its area
+  to s shaded, filling to π/2 as w reaches −1. `?t=&c=&play=1`; hook `window.__oneRead` (`at`, `read`, `landing`, `cayley`,
+  `constant`, `gap`, `set`, `state`). `sweep-zero.html` (R327, R331, R334): the sweep only forward from zero; N = 201 counts at the law's
   quantiles; counted against the turn itself (the Cauchy, median 1), a clock alike on both sides (median 1), a lopsided clock
   (median moved), a flat screen of equal pixels to v/h = 4 (median 2), what arrives (its median direction); "stop" a new zero,
   the legs composed by tangent addition, once round to no turn; a turn carries the Cauchy onto itself.
