@@ -482,7 +482,8 @@ between them, which is the area of the velocity triangle in hyperbolic space. It
 stars before and after fix the map of the sky, and its turn is the rotation, the same from any three stars, with no
 frequency and no distance used. No single boost has any: the turn belongs to the join of reads, never to one. For a small
 loop it is ε²·sin φ, the size of the leftover that a loop of turns in space leaves (§7), about the opposite axis:
-curvature −1 against +1. (Checked to 10⁻⁵⁸; see Code and data. Classical: Thomas 1926, Wigner 1939.) The read/write split
+curvature −1 against +1. At the next order they part: the turn loop's correction is −ε²/12 at every angle, the boost
+loop's (1/3 + cos φ/4)·ε², depending on it. (Checked to 10⁻⁵⁸; see Code and data. Classical: Thomas 1926, Wigner 1939.) The read/write split
 does not derive the Lorentz group. The group enters with the premise that a change of standpoint by motion keeps the
 angles between nearby stars, since every such map of the sky is a Möbius map (Liouville). Given that premise, the
 rotation's place is the paper's: an address quantity, made by joining reads.

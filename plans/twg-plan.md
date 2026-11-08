@@ -106,3 +106,14 @@ g₁g₂g₁⁻¹g₂⁻¹, the residual the polar decomposition's turn). Known 
 Reading if nothing is killed: the two loops share their leading term and part at the next, the turn loop's correction the
 same at every angle, the boost loop's depending on it. The boost construction assumes the Lorentz group, so this compares
 two geometries; it derives nothing.
+
+### Run 3 (8 Nov 2026), `runs/twg/twg3.py` (90 digits), output `runs/twg/twg-run3.txt`; nothing killed
+
+- W7 held: the turn loop's residual equals 4·arcsin(sin²(ε/2)·|sin φ|) to 4·10⁻⁹⁵ at six angles and three ε; c_T = −1/12
+  to 1.3·10⁻¹⁰ at ε = 10⁻⁴, the same at every angle.
+- W8 held: c_B within 10⁻⁹ of 1/3 + cos φ/4 at ε = 10⁻⁴ at the four fresh angles (30°: 0.5498397, 45°: 0.5101100,
+  120°: 0.2083333, 150°: 0.1168270) and at 60° and 90°; the departure falls by 100.0 from ε = 10⁻³ to 10⁻⁴, as ε².
+- W9 follows: the boost loop's correction depends on the angle, the turn loop's does not.
+
+The coefficients were derived by ChatGPT and checked here, not derived here. The loops share ε²·sin φ (opposite axes) and
+part at the next order; a comparison of two geometries, the Lorentz group assumed in the boost one.
