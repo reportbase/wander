@@ -254,7 +254,8 @@ mechanisms put a point at z and reach the line from it:
 - **a random walk** leaving the half-plane from z (Kakutani 1944), and its twin, a normal mixed over the walk's hitting
   time;
 - **a pole** a height γ off the line, whose response squared is the kernel and whose Fourier pair is the damped
-  oscillation e^(imt − γ|t|);
+  oscillation e^(imt − γ|t|), that one residue (§5, "One pole, the constant and the phasor"; among the familiar kernels
+  only the Cauchy's transform is a pure phasor);
 - **a sum** of Cauchys, whose points add;
 - **a real Möbius map**, which carries one point to another.
 
@@ -970,7 +971,8 @@ half-plane's Poisson kernel, its harmonic measure seen from the standpoint: wher
 meets the wall (Kakutani 1944). On a flat wall the two agree in every dimension: the half-space's kernel, Γ(n/2)/π^(n/2)
 · d/|x|^n, is the even hemisphere carried onto the wall, (2/|S^(n−1)|) · d/|x|^n, the same constant; in space
 (1/2π)·d/(d² + r²)^(3/2), the cos³α above. On a sphere they part (below, "What survives in space, and what does not").
-Stepping back composes the kernels, e^(−d|k|), the Poisson semigroup in the standpoint's height d. This is Laplace's
+Stepping back composes the kernels, e^(−d|k|), the Poisson semigroup in the standpoint's height d: the one pole's
+phasor e^(izk) at z = id, the heights adding as the phasors multiply (§5). This is Laplace's
 equation, a steady state; it is not the heat equation, whose kernel is the Gaussian, e^(−tk²). The Gaussian too keeps
 every frequency; it damps the fine ones by k² where the Cauchy damps by |k|, and it has a variance where the Cauchy has
 only a scale. The kernel that loses frequencies outright is the floor's box blur, whose transform has zeros. The "heat"

@@ -163,6 +163,12 @@ something the reader holds in finite terms: the central sweep's landing point at
 (h + iv)² at twice the angle reaching −1 when the inscribed reading reaches the horizon). The reader holds that
 direction as a pair, [0 : 1], with nothing infinite in it. The writer writes the same thing with both its constants.
 
+The Cauchy's own constant comes from the same place. Write the reading s as the point w = (1 + is)/(1 − is), which is
+e^(2iθ). From home to the horizon w goes from 1 to −1, and its logarithm gathers iπ on the way; the rate at which it
+gathers, (1/2i)·d(ln w)/ds, is 1/(1 + s²). So the half-Cauchy's 2/π is the identity, the logarithm and the change of
+variable together (essay 2 §9). Each step the reader can follow in finite terms (w at the horizon is −1, a pair); the
+total iπ is the turn completed, the writer's.
+
 It is also where the history of the two numbers met. Euler showed e irrational in 1737; Lambert showed π irrational in
 1761. Liouville (1844) built the first numbers proved transcendental, made to order by an infinite series whose terms
 shrink too fast for any polynomial to catch. Hermite (1873) proved e transcendental. Lindemann (1882) proved π
