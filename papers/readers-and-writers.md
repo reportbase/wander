@@ -646,6 +646,20 @@ puts more of the world past the held edge; a large H does the reverse. No H hold
 the one that puts it at the corner, where the reader's relative grain is finest. That is why the corner follows the
 focus: what is looked at is drawn one thumb wide.
 
+**The read as a control.** The same split can be held in the hand, as a dial. A held push adds to the hyperbolic angle
+ζ at a steady rate; the place it reaches is one thumb times sinh ζ from home, and the needle is drawn at the turn
+gd ζ, so it never leaves the quarter turn. Near home sinh ζ is about ζ, so the place moves in proportion; one thumb out
+it reaches the corner (ζ = 0.881, the needle at 45°); far out a steady push reads a steady ratio, one in two each ln 2 of
+ζ (2.31 from the corner itself, 2.0037 ten thumbs out, 2 to within 4·10⁻⁵ at a hundred). The needle turns per unit of
+place as cos²θ, the heat of the plane, half at the corner; the horizon is never reached. With one more degree of
+freedom the push is a direction as well as a size, and the control is a dome looking down on a floor without end: home
+straight down, the rim the horizon all round, the heat per unit of floor cos³α. Each place on such a dome is painted by
+what its one direction meets, so a far place is a sample of the floor, not a picture of it: laid over a map, each place
+reads the map at the detail its own footprint earns, streets under the thumb and coarser toward the rim, a few dozen
+tiles for the whole world. Laid as sound, the far field's ratio is the octave, one in two an octave down, and a tone
+built of octaves that rises for ever without arriving (Shepard 1964) is the horizon heard. None of it needs a count of
+what is out there: the control holds the thumb and the push, and the list, the floor or the map supplies the paint.
+
 **Euler's plane, and the thumb's lay as a turn.** The writer's notation ln(z/H) = ln(d/H) + iθ (§5) can be drawn as one
 plane, the direction up and the distance across, the distance read as a ratio of thumbs. On it a turn of the world
 slides every point up or down, and scaling the world, or the thumb, slides every point across; nothing else moves. The
@@ -1244,7 +1258,7 @@ reader stands, in `read.html`; the heat on a flat screen and a lens's cos⁴ aga
 sky); the tunnel laid by its heat, the distance reading and a world culled by K in `crosshairs.html`; a cube of dots coloured
 by one read's heat, laid as the read lays it and seen from the eye, in `heat-cube.html`; Euler's formula as
 a count of reads in `plans/elm-plan.md` and `runs/elm/`; Euler's plane, the thumb's lay as a turn, the writer's sphere
-behind both, the heat counted per chart and two turns of space in `euler.html`. A flat chart for the read in space, and what it keeps and bends, is `plans/flc-plan.md` with `runs/flc/`. The three cases in data of §11 (LIGO, the quasar dipole, single
+behind both, the heat counted per chart and two turns of space in `euler.html`. A flat chart for the read in space, and what it keeps and bends, is `plans/flc-plan.md` with `runs/flc/`. The read as a control, a dial, a dome, a dome over a map and a dome played as sound, is in the calendar repository (reportbase/calendar): `dial.js` and `dome.js`, with `horizon.html`, `dome.html`, `dome-map.html` and `dome-instrument.html`. The three cases in data of §11 (LIGO, the quasar dipole, single
 photons) are `plans/lgo-plan.md`, `plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and
 `runs/wvp/`: each plan states its predictions and what would count against them before its run, and records the runs as
 they came out, the killed ones too. They illustrate the sorting of direction from payload; none of them alone
@@ -1309,6 +1323,8 @@ establishes it.
 - Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions* 75, 385–480.
 - Secrest, N. J. et al. (2021). A test of the cosmological principle with quasars. *Astrophysical Journal Letters* 908,
   L51.
+- Shepard, R. N. (1964). Circularity in judgments of relative pitch. *Journal of the Acoustical Society of America*
+  36(12), 2346–2353.
 - Snellius, W. (1617). *Eratosthenes Batavus.* Leiden.
 - Staudt, K. G. C. von (1847). *Geometrie der Lage.* Nürnberg: Bauer und Raspe.
 - Takenaka, S. (1925). On the orthogonal functions and a new formula of interpolation. *Japanese Journal of
