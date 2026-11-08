@@ -89,3 +89,31 @@ loop's size about the opposite axis: the same leftover of joining in space, with
 rotation is an address quantity, read from directions, and belongs to the joining of reads, never to one. The Lorentz
 group itself is not derived from the read/write split; it enters as the premise that a change of standpoint by motion is
 conformal on the sky (Liouville), which is where the correspondence ends.
+
+## Run 3 predictions (8 Nov 2026, written before the run; the next order of the small loops)
+
+ChatGPT, pasted ("TWG run 3, analytic prediction"), from W6's conventions (turn exp(−iθ n·σ/2), boost exp(ζ n·σ/2), loop
+g₁g₂g₁⁻¹g₂⁻¹, the residual the polar decomposition's turn). Known beforehand and not counted as tests: run 2's ratios at
+φ = 60° and 90° (c_B ≈ 0.458 and 0.333, c_T ≈ −0.083), from which these coefficients could have been fitted.
+
+- W7. Turn loop, exact: cos(Ω_T/2) = 1 − 2·sin⁴(ε/2)·sin²φ, so Ω_T = 4·arcsin(sin²(ε/2)·|sin φ|), to 10⁻⁵⁰ at every φ
+  and ε tried. Hence Ω_T = ε²·sin φ·(1 − ε²/12 + O(ε⁴)): c_T = −1/12 whatever φ.
+- W8. Boost loop: Ω_B = ε²·sin φ·(1 + c_B·ε² + O(ε⁴)) with c_B(φ) = 1/3 + cos φ/4. Tested at angles not seen before,
+  φ = 30°, 45°, 120°, 150° (and 60°, 90° as checks): (Ω_B/(ε² sin φ) − 1)/ε² within 10⁻⁶ of c_B at ε = 10⁻⁴, and its
+  departure from c_B shrinking as ε² (ratio of departures at ε = 10⁻³ and 10⁻⁴ near 100). Kill: either fails.
+- W9. The difference c_B − c_T = 5/12 + cos φ/4, angle-dependent for boosts, constant for turns. Follows from W7, W8.
+
+Reading if nothing is killed: the two loops share their leading term and part at the next, the turn loop's correction the
+same at every angle, the boost loop's depending on it. The boost construction assumes the Lorentz group, so this compares
+two geometries; it derives nothing.
+
+### Run 3 (8 Nov 2026), `runs/twg/twg3.py` (90 digits), output `runs/twg/twg-run3.txt`; nothing killed
+
+- W7 held: the turn loop's residual equals 4·arcsin(sin²(ε/2)·|sin φ|) to 4·10⁻⁹⁵ at six angles and three ε; c_T = −1/12
+  to 1.3·10⁻¹⁰ at ε = 10⁻⁴, the same at every angle.
+- W8 held: c_B within 10⁻⁹ of 1/3 + cos φ/4 at ε = 10⁻⁴ at the four fresh angles (30°: 0.5498397, 45°: 0.5101100,
+  120°: 0.2083333, 150°: 0.1168270) and at 60° and 90°; the departure falls by 100.0 from ε = 10⁻³ to 10⁻⁴, as ε².
+- W9 follows: the boost loop's correction depends on the angle, the turn loop's does not.
+
+The coefficients were derived by ChatGPT and checked here, not derived here. The loops share ε²·sin φ (opposite axes) and
+part at the next order; a comparison of two geometries, the Lorentz group assumed in the boost one.

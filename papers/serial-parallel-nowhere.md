@@ -7410,6 +7410,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R760** (8 Nov; ChatGPT, pasted: "TWG run 3, analytic prediction"): TWG run 3 (`runs/twg/twg3.py`, 90 digits), the
+  predictions committed first, nothing killed. The turn loop's residual is exactly 4·arcsin(sin²(ε/2)·|sin φ|), so its
+  next-order coefficient is −1/12 at every angle; the boost loop's is 1/3 + cos φ/4 (to 10⁻⁹ at four angles not seen
+  before, the departure falling as ε²). The loops share ε²·sin φ and part at the next order. The coefficients were
+  ChatGPT's derivation, checked here. *Reads and Writes* §3 "Two boosts joined", one sentence.
 - **R759** (8 Nov; ChatGPT, pasted: "make non-collinear boost composition the next calculation … If it does not, we will
   have learned exactly where the correspondence ends."): TWG (`plans/twg-plan.md` + `runs/twg/twg.py`, exact). Run 1: W3
   killed by my measure (an angle as 2·acos of a number within 10⁻⁶⁰ of 1 keeps half the digits); run 2, W3′, nothing
