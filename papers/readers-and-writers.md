@@ -63,7 +63,7 @@ read is a heat over directions, the Cauchy: hottest along the look, cooling towa
 counted in it (§7). Geometry is free in this sense: nothing in it is computed, no procedure runs, and there is no
 tangent or arctangent in it; tan, arctan and every formula for the turn are the writer's way of stating what is already
 there. Trigonometry as a whole is the writer's tool: it counts the places read and closes the turn, both of its signs
-held at once, to describe a reader that does neither. The Tangent Bridge shows the split in practice, proved in the angle
+held at once, to describe a reader that does neither. A companion paper, *The Tangent Bridge* (in the reportbase/draw repository), shows the split in practice, proved in the angle
 chart and run in the slope chart with no trigonometric call (§5). How finely a reader tells directions apart, and the near and far fields the thumb lays over the read, are §6's.
 
 **Reads are unconnected.** A read holds no time: time is the step between reads. Reads are continuous, one can be taken
@@ -190,7 +190,7 @@ mirrors, the horizontal line at 45° and the upright line at one thumb (§6, "Eu
 Three things keep the picture honest. It is the writer's notation: e^(iθ) states the turn as a number and carries π, where
 the reader holds [h : v] and composes by tangent addition. It holds only the first test: the paint sits on the plane at
 every point, so heat against paint is still the second test's to sort. And it is the plane's: in space the split survives
-but turns stop being slides (§7, "What survives in space, and what does not"). The essays' eighteenth, *Read and write on
+but turns stop being slides (§7, "What survives in space, and what does not"). The eighteenth of the essays that accompany this paper (Code and data), *Read and write on
 one plane*, draws it in full.
 
 In space the one plane parts. Writing keeps its slide: the logarithm of the distance in thumbs beside the direction lays
@@ -819,7 +819,8 @@ nothing smaller; the Cauchy has no shape of its own, only the heat over everythi
 evenly over the hemisphere land as the two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)) per unit of the screen at r thumbs
 off the look: one point for one direction, the look its peak, rings of equal area its rings of equal share (half within
 60° of the look, √3 thumbs out on the screen), and the rim, 90° off, its long tail, never landing, which is why it has no
-mean. Over the wedge alone, a quarter of the screen, the same law reads 2/(π(1 + a² + b²)^(3/2)): each pair of thumbs'
+mean. Over the wedge alone, a quarter of the screen, the same law reads 2/(π(1 + a² + b²)^(3/2)), with (a, b) the readings
+(v/h, v₂/h) measured from h, not the r measured from the look: each pair of thumbs'
 quarter turn, from its home to its horizon, is a part of the hemisphere, the wedge's triangle, 35.26° off at a home and
 54.74° at a thumb; the sphere, behind as well as in front, is the head turned all the way round, other facings joined. The
 hill, the triangle and the rings are ways of drawing the hemisphere, not shapes of their own. The Cauchy has no near and
@@ -1038,8 +1039,8 @@ order, where in the plane any two turns commute. Round a small loop, a turn α a
 back, a thing comes home turned about nearly the third thumb by about α·β, the area the loop encloses (1.741° at 10° and
 10°, against α·β = 1.745°); in the plane the same loop leaves nothing. What survives is the split between direction and payload, heat and
 paint, the corners, and the wedge seen from home: the second test still sorts every quantity, and every pair of thumbs
-still has its corner at the median, since those need only the exchange of two shares, not commuting turns (the essays'
-thirteenth works this through).
+still has its corner at the median, since those need only the exchange of two shares, not commuting turns (the thirteenth of the accompanying
+essays works this through).
 
 ## 8. From reading to writing
 
@@ -1278,7 +1279,7 @@ A reader moving through a sky of sources counts more ahead. With no limit on bri
 directions, and its dipole is 2β, Ellis and Baldwin's 2, from the directions alone (1984). A real census is cut at a
 brightness, and the cut adds a term set by what arrives: the counts' slope and the sources' spectra, read from the same
 catalogue. On Secrest et al.'s quasars (2021) the sort sets the number. Per slice the expected dipole is
-[2 + x(1 + α)]·β, the 2 the directions' and x(1 + α) the payload's, read from the slice's own counts and colours: 5.3 to
+[2 + x(1 + α)]·β, α the sources' spectral index, the 2 the directions' and x(1 + α) the payload's, read from the slice's own counts and colours: 5.3 to
 6.6 times β, so the payload carries 60–70% of it. Taken as directions alone (2β), the measured 0.018–0.023 would give a
 speed nearly three times too large; with the payload's part divided out, four slices by brightness give one β,
 3.3·10⁻³ ± 0.3·10⁻³, 2.7 times the speed read from the microwave background, as one motion of the reader should. Slices
@@ -1324,7 +1325,7 @@ acts, the heat of directions and the payload inside a read, and what carries an 
 ## Code and data
 
 The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each with
-its plan written before it was run: the one pole, the constant and the phasor against five other kernels in `plans/opl-plan.md` and `runs/opl/`; two boosts joined, the Thomas–Wigner rotation read from directions alone, in `plans/twg-plan.md` and `runs/twg/`; time and the Cauchy's point in `plans/tim-plan.md` and `runs/tim/`; the floor's cells as points m + iγ in `plans/dyh-plan.md` and `runs/dyh/`; the Cauchy's routes in `plans/cauchy-routes.md` and `runs/crt/`; parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
+its plan written before it was run, and the essays that accompany it are in its `papers/essays/`: the one pole, the constant and the phasor against five other kernels in `plans/opl-plan.md` and `runs/opl/`; two boosts joined, the Thomas–Wigner rotation read from directions alone, in `plans/twg-plan.md` and `runs/twg/`; time and the Cauchy's point in `plans/tim-plan.md` and `runs/tim/`; the floor's cells as points m + iγ in `plans/dyh-plan.md` and `runs/dyh/`; the Cauchy's routes in `plans/cauchy-routes.md` and `runs/crt/`; parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
 measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three
 thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the shape
 swept whole against each thumb on its own in `plans/swp-plan.md` and `runs/swp/`; the read with no world, and where the
@@ -1354,10 +1355,14 @@ establishes it.
   Letters* 59, 251–254.
 - Bridgman, P. W. (1922). *Dimensional Analysis.* Yale University Press.
 - Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met.* Working paper, archived.
+- Bullock, J. M., Mallada González, L., Tamme, R., Götzenberger, L., White, S. M., Pärtel, M. and Hooftman, D. A. P.
+  (2017). A synthesis of empirical plant dispersal kernels. *Journal of Ecology* 105(1), 6–19.
 - Burn, B. J. (1966). On the depolarization of discrete radio sources by Faraday dispersion. *Monthly Notices of the Royal
   Astronomical Society* 133, 67–83.
 - Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
   Review* 4, 345–376.
+- Clark, J. S., Silman, M., Kern, R., Macklin, E. and HilleRisLambers, J. (1999). Seed dispersal near and far:
+  patterns across temperate and tropical forests. *Ecology* 80(5), 1475–1494.
 - Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal für die reine und angewandte
   Mathematik* 32, 119–123.
 - Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
@@ -1380,6 +1385,8 @@ establishes it.
 - Hölder, O. (1889). Ueber einen Mittelwerthssatz. *Göttinger Nachrichten*, 38–47.
 - Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 - Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3, 477–492.
+- Kakutani, S. (1944). Two-dimensional Brownian motion and harmonic functions. *Proceedings of the Imperial Academy
+  (Tokyo)* 20(10), 706–714.
 - Klein, F. (1872). *Vergleichende Betrachtungen über neuere geometrische Forschungen.* Erlangen.
 - Lambert, J. H. (1772). *Anmerkungen und Zusätze zur Entwerfung der Land- und Himmelscharten.* In *Beyträge zum
   Gebrauche der Mathematik*, Theil III. Berlin.
@@ -1388,6 +1395,8 @@ establishes it.
 - Leibniz, G. W., and Clarke, S. (1717). *A Collection of Papers … Relating to the Principles of Natural Philosophy and
   Religion.* London.
 - Lindemann, F. (1882). Ueber die Zahl π. *Mathematische Annalen* 20, 213–225.
+- Liouville, J. (1850). Extension au cas des trois dimensions de la question du tracé géographique. Note VI in
+  G. Monge, *Application de l'analyse à la géométrie*, 5th ed., Paris, 609–616.
 - Machin, J. (1706), in W. Jones, *Synopsis palmariorum matheseos.* London.
 - Malmquist, F. (1926). Sur la détermination d'une classe de fonctions analytiques par leurs valeurs dans un ensemble
   donné de points. *Comptes Rendus du Sixième Congrès des Mathématiciens Scandinaves* (Copenhagen, 1925), 253–259.
