@@ -314,6 +314,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the identity, the logarithm and the change of variable together; the rational/π split and the pole at i kept as readings.
   R753 (8 Nov; ChatGPT's next step): one residue at the standpoint z gives the total (t = 0) and the characteristic
   function e^(izt) (t > 0); *Reads and Writes* §5 "One pole, the constant and the phasor", essay 2 §9.
+  R754 (8 Nov; ChatGPT's review): the normalized total 1 kept apart from the unnormalized π; t < 0 closes below (z̄), the
+  whole e^(imt − γ|t|); in *Reads and Writes* §5, essay 2 §9 and `one-read.html`'s caption.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
