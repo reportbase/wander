@@ -7410,6 +7410,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R761** (8 Nov; Tom: "update the essays and merge"): TWG run 3 (R760) in essay 13 (the two leftovers agree only to
+  leading order; the turn loop short by ε²/12 at every angle, the boost loop over by (1/3 + cos φ/4)·ε²) and essay 9's
+  Thomas precession (the small loop's size and its parting at the next order).
 - **R760** (8 Nov; ChatGPT, pasted: "TWG run 3, analytic prediction"): TWG run 3 (`runs/twg/twg3.py`, 90 digits), the
   predictions committed first, nothing killed. The turn loop's residual is exactly 4·arcsin(sin²(ε/2)·|sin φ|), so its
   next-order coefficient is −1/12 at every angle; the boost loop's is 1/3 + cos φ/4 (to 10⁻⁹ at four angles not seen
