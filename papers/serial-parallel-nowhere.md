@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R758** (8 Nov; ChatGPT's manuscript comparison, pasted: "make two precise improvements"): *Reads and Writes* §2's
+  routes gain the bridge from the circle to the point off the line (u = (x − m)/γ, the Cayley map, dθ/dx = γ/((x − m)² +
+  γ²), p = (1/π)·dθ/dx, the same measure's response e^(imt − γ|t|)); the pole bullet says p = (γ/π)·|1/(x − z)|², not
+  "response squared"; §5's Euler paragraph says e^(izt) is the response of §2's measure, not a second construction. The
+  rest of the proposed insertion was already in §5 (R752–R756) and not repeated. Standing: a unifying result for the
+  paper, classical in its mathematics, not yet independent evidence; the next test is a distinction the separation
+  predicts that the classical Cauchy–Poisson account does not already carry.
 - **R757** (8 Nov; Tom: "update the papers, essays and merge"): R752–R756 carried where the corpus already touched them.
   *Reads and Writes* §2's routes (the pole's damped oscillation is that one residue; only the Cauchy's transform a pure
   phasor) and §7's stepping back (e^(−d|k|) the one pole's phasor at z = id, heights adding as phasors multiply); essay 13
