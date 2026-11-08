@@ -247,13 +247,18 @@ two normal amounts, a stable sum, may have another origin; whether a turn lies b
 case, not a consequence of this derivation.
 
 **The Cauchy's routes.** Every Cauchy is one measure: the Poisson kernel of the upper half-plane seen from a point
-z = m + iγ, p(x) = (1/π)·Im 1/(x − z). In other words, the harmonic measure of a line seen from a point off it. Many
-mechanisms put a point at z and reach the line from it:
+z = m + iγ, p(x) = (1/π)·Im 1/(x − z). In other words, the harmonic measure of a line seen from a point off it. The
+circle and the point off the line are one construction in two coordinates: centre the line at the foot and scale it by
+the height, u = (x − m)/γ; the Cayley map w = (1 + iu)/(1 − iu) = e^(2iθ), θ = arctan u, takes the line to the circle,
+and the circle's even angle, returned to the line, is dθ/dx = γ/((x − m)² + γ²). Divided by π, that is p: the kernel is
+the turn's measure from z, written on the line. The same measure gives the response, e^(imt − γ|t|) (§5, where the
+constant and the transform are worked from it). Many mechanisms put a point at z and reach the line from it:
 - **a uniform turn read on the line**: the lighthouse, the ratio of any rotation-invariant pair, a circle seen from a
   point of it;
 - **a random walk** leaving the half-plane from z (Kakutani 1944), and its twin, a normal mixed over the walk's hitting
   time;
-- **a pole** a height γ off the line, whose response squared is the kernel and whose Fourier pair is the damped
+- **a pole** a height γ off the line, p(x) = (γ/π)·|1/(x − z)|², the response's squared modulus scaled, whose Fourier
+  pair is the damped
   oscillation e^(imt − γ|t|), that one residue (§5, "One pole, the constant and the phasor"; among the familiar kernels
   only the Cauchy's transform is a pure phasor);
 - **a sum** of Cauchys, whose points add;
@@ -556,7 +561,9 @@ stretches the length by (1 + θ²/n²)^(n/2), θ²/(2n) to leading order, which 
 length out at every step. The limit, the writer's, repairs the angle and returns the length to 1; a thousand reads of
 π/1000 land at −1.005, on their way to e^(iπ) = −1. From a standpoint z = m + iγ the same limit, (1 + izt/n)ⁿ, lands on
 e^(izt) = e^(imt − γt) for t ≥ 0, the Cauchy's own characteristic function: the foot m turns, and the height γ damps
-along the real axis, an amount rather than a read. And the construction is the plane's. In space, where turns do not
+along the real axis, an amount rather than a read. It is not a second construction: the same standpoint already gave the
+kernel in §2, its foot setting the phase and its height the damping, neither changing the normalized total; the
+exponential is that measure's response. And the construction is the plane's. In space, where turns do not
 commute, alternating small steps about the two thumbs leaves a turn of order 1/n, (θ₁θ₂/2)·sin(φ/2)/(φ/2) for a whole
 turn φ; in the plane it leaves none. All of this is classical (Euler 1748; the Lie–Trotter product formula, Trotter
 1959); what is ours is the reading: each finite count a read, the limit a write, exact only where the turns commute. So

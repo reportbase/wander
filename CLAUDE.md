@@ -324,6 +324,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   kernels in general); essay 2 §9.
   R757 (8 Nov; Tom: "update the papers, essays and merge"): R752–R756 carried into *Reads and Writes* §2's routes and §7's
   stepping back, essay 13 §1, essay 15 §5 and essay 17 §4–§5, and the README rows; no new claim.
+  R758 (8 Nov; ChatGPT's manuscript comparison): *Reads and Writes* §2's routes gain the circle-to-off-line bridge
+  (u = (x − m)/γ, p = (1/π)·dθ/dx) and the pole bullet's (γ/π)·|1/(x − z)|²; §5's Euler paragraph names e^(izt) as §2's
+  measure's response.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
