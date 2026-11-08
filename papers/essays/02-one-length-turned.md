@@ -494,6 +494,10 @@ and together they give e^(imt − γ|t|)). At t = 0 it is the total: 1 for the n
 "One pole, the constant and the phasor").
 No other familiar kernel does this: a double pole gives (1 + t)·e^(−t), two poles beat, the hyperbolic secant's
 endless poles cannot total term by term, and the Gaussian has no point off the line to read from at all.
+The structure was in use before it was named: the reader standing at i, a relay of standpoints adding z, parallax's
+Cauchy depth, time turning e^(izt), the floor's cells at their own m + iγ. One pole is why each could carry z and nothing
+else. That is a unity shown for the Cauchy, not a law for every kernel (*Reads and Writes* §5, "What the one pole already
+carried").
 
 **The two corners are two mirrors.** The plane of the logarithm also shows the corners plainly. Swap a reading for its
 reciprocal, v/h for h/v, and the angle θ becomes 90° − θ: a reflection of the imaginary part, and the line it leaves in

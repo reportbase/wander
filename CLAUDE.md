@@ -319,6 +319,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `opl-plan.md` (+ `runs/opl/opl.py`, 8 Nov; SPN R755; Tom: "proceed"): is one pole, the constant and the phasor the
   Cauchy's alone? Exact, nothing killed: against the Gaussian, sech, Laplace, Student t₃ and a two-pole mixture, only the
   Cauchy's transform is a pure phasor; one pole of higher order, several poles, endless poles or none each fail.
+  R756 (8 Nov; ChatGPT's cross-check): *Reads and Writes* §5 "What the one pole already carried" (the reader at i, the relay,
+  parallax, time, the floor's cells, each from its own question; three levels apart; the Cauchy's unity, not a law for
+  kernels in general); essay 2 §9.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
