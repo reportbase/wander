@@ -7398,6 +7398,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   normalized kernel's total is 1, the unnormalized γ/((s − m)² + γ²)'s is π; at t < 0 the line closes below, round z̄, and
   the two halves give e^(imt − γ|t|); the classical result and our reading kept apart as before. *Reads and Writes* §5, essay 2
   §9, `one-read.html`'s fifth caption. No new material.
+- **R755** (8 Nov; Tom: "proceed", to testing whether R753's unity is the Cauchy's alone): OPL (`plans/opl-plan.md` +
+  `runs/opl/opl.py`, exact, nothing killed). Against the Gaussian, hyperbolic secant, Laplace, Student t₃ and a two-pole
+  mixture: only the Cauchy's transform is a pure phasor; t₃'s one double pole gives the total but (1 + t)e^(−t); two poles
+  beat; the secant's pole series does not total at t = 0 (0, 2, 0, 2; Abel 1); the Gaussian and Laplace have no poles to
+  read from; among even rational kernels with one simple pole above the line only the Cauchy. Classical by uniqueness of
+  the transform; the standpoint reading ours. *Reads and Writes* §5 and Code and data, essay 2 §9.
 - **R749** (7 Nov; Tom: "1,2", to explainers for essays 12 and 16): two more of draw's scrolling explainers
   (reportbase/draw#64). Essay 12's, `explained.html?x=array` (the animated gallery's `array` tile), six beats: ten slots,
   the writer's, each a share of the way that moves when the array grows; a reader two slots out from the foot, equal

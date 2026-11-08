@@ -1,0 +1,32 @@
+O1: quadrature against closed form
+  C   worst |diff| = 9.86e-32
+  G   worst |diff| = 9.86e-32
+  S   worst |diff| = 9.86e-32
+  L   worst |diff| = 0.0
+  T3  worst |diff| = 9.86e-32
+  R2  worst |diff| = 9.86e-32
+  O1 held
+O2: pure phasor test on t in [0.25, 5] (closed forms, checked in O1)
+  C   ln|phi| resid   3.94e-31  arg resid        0.0  pure phasor: True
+  G   ln|phi| resid       1.83  arg resid        0.0  pure phasor: False
+  S   ln|phi| resid      0.275  arg resid        0.0  pure phasor: False
+  L   ln|phi| resid      0.269  arg resid        0.0  pure phasor: False
+  T3  ln|phi| resid      0.247  arg resid        0.0  pure phasor: False
+  R2  ln|phi| resid       3.54  arg resid       3.27  pure phasor: False
+  O2 held ['C']
+O3: residue sums above the line
+  C   poles [I] worst 0.00e+00
+  T3  poles [I] worst 0.00e+00
+  R2  poles [1 + I, -1 + I] worst 2.31e-39
+  S   poles i(2k+1), 200 terms, worst 9.86e-32
+  O3 held
+O4: the total at t = 0 as residues
+  S partial sums at t = 0 (10, 11, 100, 101 terms): ['0.0', '2.0', '0.0', '2.0']
+  S Abel sum: 1.0
+  C   total from one residue at i: 1.000000000000
+  T3  total from one residue at i: 1.000000000000
+  O4 held
+O5: real, positive, even rational kernels with one simple pole above the line
+  evenness forces: [{b: 0, m: 0}]
+  with b = 0 the kernel is a/((s - m)^2 + g^2): the Cauchy (positivity a > 0, decay as 1/s^2 forbids deg P >= 1)
+  O5 held

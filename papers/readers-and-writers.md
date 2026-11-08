@@ -594,6 +594,11 @@ it. (Checked to 25 digits
 at z = 0.7 + 0.4i, t = 1.3, and for the standard kernel at t = 0, ½, 2.) Classical, the Poisson kernel and its Fourier
 transform; what we read in it is that one pole, where the standpoint is drawn, carries the reader's total and its whole
 response to a turn, and that Euler's exponential is evaluated there, at a point off the line, not on it.
+This unity is the Cauchy's alone among familiar kernels. A double pole (Student's t with three degrees of freedom) still
+gives the total from one point, but its response to a turn is (1 + t)·e^(−t), not a phasor; two simple poles beat; the
+hyperbolic secant's infinitely many poles give its transform as a series that does not total term by term at t = 0; the
+Gaussian and the Laplace kernel have no point off the line to read from at all. (Checked exactly; see Code and data.
+Classical, by uniqueness of the Fourier transform; that the one pole is the standpoint is our reading.)
 
 The reader's two ignorances, after Jaynes (1968), are which way it faces and how large things are: turns and rescalings.
 Each is a one-parameter group with an exponential map. Turns close, so their map has a period: 2π for an oriented turn,
@@ -1283,7 +1288,7 @@ acts, the heat of directions and the payload inside a read, and what carries an 
 ## Code and data
 
 The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each with
-its plan written before it was run: the Cauchy's routes in `plans/cauchy-routes.md` and `runs/crt/`; parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
+its plan written before it was run: the one pole, the constant and the phasor against five other kernels in `plans/opl-plan.md` and `runs/opl/`; the Cauchy's routes in `plans/cauchy-routes.md` and `runs/crt/`; parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
 measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three
 thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the shape
 swept whole against each thumb on its own in `plans/swp-plan.md` and `runs/swp/`; the read with no world, and where the
