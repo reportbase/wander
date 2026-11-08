@@ -492,6 +492,8 @@ e^(its) and close the line above it: the one residue, at z, is e^(izt) = e^(imt 
 and together they give e^(imt − γ|t|)). At t = 0 it is the total: 1 for the normalized kernel, π for the unnormalized
 1/(1 + s²) whose π the paragraph above traced to the arc; past it the foot turns the phasor and the height damps it. One pole carries both (*Reads and Writes* §5,
 "One pole, the constant and the phasor").
+No other familiar kernel does this: a double pole gives (1 + t)·e^(−t), two poles beat, the hyperbolic secant's
+endless poles cannot total term by term, and the Gaussian has no point off the line to read from at all.
 
 **The two corners are two mirrors.** The plane of the logarithm also shows the corners plainly. Swap a reading for its
 reciprocal, v/h for h/v, and the angle θ becomes 90° − θ: a reflection of the imaginary part, and the line it leaves in

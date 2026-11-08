@@ -55,3 +55,21 @@ characterization of the Cauchy among these kernels, which is classical by unique
 would be ours is only the reading of that one point as the standpoint.
 
 ## Runs
+
+### Run 1 (8 Nov 2026), `runs/opl/opl.py`, output `runs/opl/opl-run1.txt`; nothing killed
+
+- O1 held: every kernel's transform by quadrature matches its closed form to 10⁻³¹.
+- O2 held: only C is a pure phasor on [0.25, 5] (ln|φ| and arg φ straight to 4·10⁻³¹); the rest miss by 0.25 to 3.5
+  (G's ln|φ| a parabola, S, L and T3 bent, R2's beat with arg jumping by π).
+- O3 held: C, T3 and R2 equal their residues above the line to 10⁻³⁹; S equals its alternating pole series (200 terms)
+  to 10⁻³¹ for t ≥ 0.5.
+- O4 held: S's partial sums at t = 0 alternate 0, 2, 0, 2 (only the Abel sum is 1); C and T3 get their total, 1, from
+  the one residue at i.
+- O5 held: for P(s)/((s − m)² + γ²) with deg P ≤ 1, evenness forces the linear term and m to 0, so P constant: the
+  Cauchy. (deg P ≥ 2 does not decay; the check is narrow, rational kernels with one simple pole above the line.)
+
+Reading: one simple pole above the line, one phasor, the total from that pole at t = 0, is the Cauchy's alone among
+these kernels. A double pole (T3) still gives the total from one point but its response to a turn is (1 + t)e^(−t), not
+a phasor; two poles (R2) beat; the secant's infinitely many poles cannot total term by term at t = 0; the Gaussian and
+the Laplace kernel have no point to read from. Classical (uniqueness of the Fourier transform, the residue theorem);
+what is ours is reading the one pole as the standpoint.
