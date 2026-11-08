@@ -81,6 +81,28 @@ two directions commute. A dial built from true two-dimensional boosts would not.
 rest, its frame would come home turned by the area the loop enclosed, as special relativity's frames do (Thomas 1926). For
 a list in two dimensions that turn is a design choice, to show or to cancel.
 
+**Without a count.** Give the dial a thumb in place of a list's length and it has no end at all: the place is the thumb
+times tan θ from home, and the far end is the horizon itself, not a last record. Within one thumb the places read in
+proportion; past it a steady push reads a steady ratio, one in two each ln 2 of ζ, 2.0037 ten thumbs out. The needle turns
+per unit of place as cos²θ: that is the heat of the seventeenth essay, held in the hand. Dividing the quarter turn into 256
+cells and painting each by the first thing it meets, the last cell covers everything from about 163 thumbs out, without
+end; a writer's count of what each cell covers grows without bound toward the horizon, and the dial never needs it.
+
+**On a dome.** With the push a direction as well as a size, the dial becomes a dome looking down on a floor without end:
+straight down is home, the rim the horizon all round, and the heat per unit of floor cos³α, the flat screen's own law (section 4).
+Each place on the dome is painted by what its one direction meets, so a far place is a sample of the floor, not a picture
+of it. Laid over a street map, that settles how much map to fetch: each place reads the tile its own footprint earns,
+streets under you and continents near the rim, a few dozen tiles for the whole world on one screen. One thumb of map fills
+the middle half of the dome undistorted; each stretch past it gets half the room of the one before.
+
+**Heard.** The far field's ratio is the octave. Laid round the dome as a spiral of pitch (the note by the heading, the
+octave by the distance), each finger a voice, the thumb's own ring is the tonic and each stretch past it an octave. Built
+of octaves, as Shepard's tones are (Shepard 1964), a voice going round rises for ever and never arrives: the horizon,
+heard.
+
+These four are in the calendar repository (reportbase/calendar): `horizon.html`, `dome.html`, `dome-map.html` and
+`dome-instrument.html`, with the dial and the dome as two classes, `dial.js` and `dome.js`, that any page can use.
+
 **What is the design's and what is the geometry's.** The place, the corner, the stretches past it (two windows, four,
 eight) and the horizon are the geometry's: the three rulers and their one figure. The design adds two numbers, the rate and
 the window. Zooming interfaces have arrived at relatives of this. Igarashi and Hinckley coupled scrolling speed to zoom, so
@@ -440,6 +462,8 @@ logarithmic in its distance, and never asks how long the list is.
   CHI '95*, 234–241.
 - van Wijk, J. J. and Nuij, W. A. A. (2003). Smooth and efficient zooming and panning. *Proceedings of IEEE InfoVis
   2003*, 15–23.
+- Shepard, R. N. (1964). Circularity in judgments of relative pitch. *Journal of the Acoustical Society of America*
+  36(12), 2346–2353.
 - Thomas, L. H. (1926). The motion of the spinning electron. *Nature* 117, 514.
 - Böröczky, K. (1974). Gömbkitöltések állandó görbületű terekben I. *Matematikai Lapok* 25, 265–306.
 - Karger, D., Lehman, E., Leighton, T., Panigrahy, R., Levine, M. and Lewin, D. (1997). Consistent hashing and random

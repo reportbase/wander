@@ -303,6 +303,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   slot, seeking, the side bit, where each rule's corner falls, order alone) and `?x=paradox` (each sees the other smaller,
   the exchange, Simpson's, finite by length, no scale preferred, read or written); every essay now has an explainer, the
   not-yet list gone. Essay 9's "More points, less seen" flagged (its formula counts N/2 for small N, CEI's side-on half).
+  R751 (8 Nov; Tom: "proceed"): what the calendar repository's dials showed, in *Reads and Writes* §6 ("The read as a
+  control": the push ζ, the place the thumb times sinh ζ, one in two each ln 2 of ζ far out, the needle's heat cos²θ;
+  the dome's cos³α, each place a sample of the floor, a map read at each footprint's detail; the octave as the far field's
+  ratio, Shepard's tones the horizon heard) and essay 8 §1 ("Without a count", "On a dome", "Heard"); the calendar
+  pages on essay 8's card.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

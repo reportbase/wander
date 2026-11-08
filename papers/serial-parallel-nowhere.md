@@ -7371,6 +7371,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   has the reader at the circle's centre seeing every point apart when N is small, but its formula (N/π)·arccos(εN/2π) is
   CEI's side-on count of the visible half (`plans/cei-plan.md`), N/2 for small N; the explainer leaves it out. A fix
   (the reader outside, side-on; every point of the half it faces seen apart) is Tom's to rule.
+- **R751** (8 Nov; Tom: "proceed", to the recommended catch-up after the calendar repository's dials): what the dials
+  showed, recorded. A held push adds to ζ, the place is the thumb times sinh ζ, the needle drawn at gd ζ: in proportion
+  near home, the corner at ζ = 0.881, and far out a steady ratio, one in two each ln 2 of ζ (2.31 from the corner, 2.0037
+  ten thumbs out); the needle's turn per unit of place cos²θ, the plane's heat. The dome adds a heading: the heat per
+  unit of floor cos³α, each place a sample of the floor, so over a map each place reads the tile its footprint earns.
+  As sound the far field's ratio is the octave, and Shepard's tones round the dome are the horizon heard. *Reads and
+  Writes* §6 ("The read as a control") and Code and data, essay 8 §1 ("Without a count", "On a dome", "Heard"), Shepard
+  1964 cited in both; the calendar pages on essay 8's card. Classical pieces; the reading ours.
 - **R749** (7 Nov; Tom: "1,2", to explainers for essays 12 and 16): two more of draw's scrolling explainers
   (reportbase/draw#64). Essay 12's, `explained.html?x=array` (the animated gallery's `array` tile), six beats: ten slots,
   the writer's, each a share of the way that moves when the array grows; a reader two slots out from the foot, equal
