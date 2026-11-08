@@ -582,6 +582,16 @@ chart stands at i (§2); that the pole and the standpoint coincide is our readin
 pieces are classical (the Cayley transform, Cayley 1846; the residue theorem); what is ours is where the constant is said
 to enter: in no single read, only in the completed total of them.
 
+**One pole, the constant and the phasor.** The same computation gives the Cauchy's characteristic function, so the
+constant and the phasor are not two facts. Put the standpoint anywhere, z = m + iγ with γ > 0; its kernel is
+(1/π)·Im 1/(s − z) = (1/π)·γ/((s − m)² + γ²), with one pole above the line, at z. Weight it by a turn e^(its), t ≥ 0, close
+the line through the upper half-plane, and the residue at z is all that is left: ∫ e^(its)·(1/π)·γ/((s − m)² + γ²) ds =
+e^(izt) = e^(imt − γt). At t = 0 the phasor is 1 and the same residue is the total, which for the standard standpoint z = i
+is the π of the last paragraph; at t > 0 the foot m turns the phasor and the height γ damps it. (Checked to 25 digits
+at z = 0.7 + 0.4i, t = 1.3, and for the standard kernel at t = 0, ½, 2.) Classical, the Poisson kernel and its Fourier
+transform; what we read in it is that one pole, where the standpoint is drawn, carries the reader's total and its whole
+response to a turn, and that Euler's exponential is evaluated there, at a point off the line, not on it.
+
 The reader's two ignorances, after Jaynes (1968), are which way it faces and how large things are: turns and rescalings.
 Each is a one-parameter group with an exponential map. Turns close, so their map has a period: 2π for an oriented turn,
 π for the direction of a line, which comes back to itself after a half turn (the projective line the reader's readings

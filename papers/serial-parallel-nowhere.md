@@ -7387,6 +7387,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   gathered) and the change of variable together, not the identity alone; invariance makes the even arc natural, the map
   makes the kernel; "finite reads rational, π the writer's total" and "the pole at i is the reader's standpoint" are
   readings, not theorems. *Reads and Writes* §5 "The Cauchy's constant, from the same turn" (Cayley 1846 cited); essay 2 §9.
+- **R753** (8 Nov; ChatGPT's next step, pasted: "derive both the ratio-space Cauchy kernel and the exponential
+  characteristic function from one underlying circle/complex construction"): one residue does it. The kernel from z = m + iγ is
+  (1/π)·Im 1/(s − z), one pole above the line; ∫ e^(its)·kernel ds closed above is the residue at z, e^(izt); at t = 0 the
+  total (π for z = i), past it the foot turns and the height damps. Checked to 25 digits. Classical (Poisson kernel, its
+  Fourier transform); the reading ours: one pole, where the standpoint is drawn, carries the total and the response to a
+  turn. *Reads and Writes* §5 "One pole, the constant and the phasor"; essay 2 §9.
 - **R749** (7 Nov; Tom: "1,2", to explainers for essays 12 and 16): two more of draw's scrolling explainers
   (reportbase/draw#64). Essay 12's, `explained.html?x=array` (the animated gallery's `array` tile), six beats: ten slots,
   the writer's, each a share of the way that moves when the array grows; a reader two slots out from the foot, equal

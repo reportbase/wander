@@ -312,6 +312,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   *Reads and Writes* §5 "The Cauchy's constant, from the same turn" and essay 2 §9: w = (1 + is)/(1 − is) = e^(2iθ),
   (1/2i)·d(ln w)/ds = 1/(1 + s²), home to horizon the logarithm gathers iπ, so the half-Cauchy's 2/π; the constant from
   the identity, the logarithm and the change of variable together; the rational/π split and the pole at i kept as readings.
+  R753 (8 Nov; ChatGPT's next step): one residue at the standpoint z gives the total (t = 0) and the characteristic
+  function e^(izt) (t > 0); *Reads and Writes* §5 "One pole, the constant and the phasor", essay 2 §9.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
