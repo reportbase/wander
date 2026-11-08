@@ -7410,6 +7410,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R762** (8 Nov; a Gemini review of *Reads and Writes*, pasted): its editorial items checked and made. Kakutani (1944),
+  Bullock et al. (2017), Clark et al. (1999) and Liouville (1850, Note VI in Monge's *Application de l'analyse*) were
+  cited without reference entries; added. "The Tangent Bridge" in §1 named as a companion paper in reportbase/draw; the
+  essays named on first mention as those accompanying the paper, and Code and data says where they are; §7's (a, b) said
+  to be the readings measured from h, not the look's r; §11's α named the sources' spectral index. No claim changed.
 - **R761** (8 Nov; Tom: "update the essays and merge"): TWG run 3 (R760) in essay 13 (the two leftovers agree only to
   leading order; the turn loop short by ε²/12 at every angle, the boost loop over by (1/3 + cos φ/4)·ε²) and essay 9's
   Thomas precession (the small loop's size and its parting at the next order).
