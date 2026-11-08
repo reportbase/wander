@@ -7404,6 +7404,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   beat; the secant's pole series does not total at t = 0 (0, 2, 0, 2; Abel 1); the Gaussian and Laplace have no poles to
   read from; among even rational kernels with one simple pole above the line only the Cauchy. Classical by uniqueness of
   the transform; the standpoint reading ours. *Reads and Writes* §5 and Code and data, essay 2 §9.
+- **R756** (8 Nov; ChatGPT's cross-check, pasted: "one focused addition … then add a short boundary statement"): *Reads and
+  Writes* §5 "What the one pole already carried": the structure used before it was named (the reader at i, R602; the relay
+  of standpoints, SUM; parallax's Cauchy depth, PXS; time's e^(izt), TIM; the floor's cells at m + iγ, DYH), each from its
+  own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
+  unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
+  the Cauchy and is not claimed.
 - **R749** (7 Nov; Tom: "1,2", to explainers for essays 12 and 16): two more of draw's scrolling explainers
   (reportbase/draw#64). Essay 12's, `explained.html?x=array` (the animated gallery's `array` tile), six beats: ten slots,
   the writer's, each a share of the way that moves when the array grows; a reader two slots out from the foot, equal

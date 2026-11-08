@@ -600,6 +600,19 @@ hyperbolic secant's infinitely many poles give its transform as a series that do
 Gaussian and the Laplace kernel have no point off the line to read from at all. (Checked exactly; see Code and data.
 Classical, by uniqueness of the Fourier transform; that the one pole is the standpoint is our reading.)
 
+**What the one pole already carried.** The structure was in use before it was named. The reader in its own chart stands
+at i and holds the standard Cauchy; moving the standpoint moves z (§2). Readings added give one Cauchy with the
+standpoints added, a relay, z₁ + z₂ (§7), which is the phasors multiplying, e^(iz₁t)·e^(iz₂t) = e^(i(z₁ + z₂)t). Parallax
+is a sum of reads whose depth is exactly Cauchy, its point the triangulation of the two reads' points m + iγ (§8). The
+same point carries time, e^(izt) turning by the foot and damping by the height, with the turning rate itself never read;
+and a cell of the floor's discarded fraction sits at its own m + iγ, half its Cauchy in the cell, the height a level of
+detail (Code and data). Each was reached from its own question; the residue is why each could carry z and nothing else.
+The three levels stay apart: that the Cauchy centred on z has transform e^(imt − γ|t|) is classical; that one contour
+gives both the total and the response is an exact consequence of it; that this is one standpoint read two ways is our
+interpretation, consistent with the rest of this paper. It is a demonstrated unity for the Cauchy and its Poisson kernel,
+not a principle for kernels in general: a broader statement would need a stated class of kernels and a definition of
+what counts as a standpoint, and the comparison above shows that most familiar kernels fall outside it.
+
 The reader's two ignorances, after Jaynes (1968), are which way it faces and how large things are: turns and rescalings.
 Each is a one-parameter group with an exponential map. Turns close, so their map has a period: 2π for an oriented turn,
 π for the direction of a line, which comes back to itself after a half turn (the projective line the reader's readings
@@ -1288,7 +1301,7 @@ acts, the heat of directions and the payload inside a read, and what carries an 
 ## Code and data
 
 The checks and measurements cited in the text are in the repository that holds this paper (reportbase/wander), each with
-its plan written before it was run: the one pole, the constant and the phasor against five other kernels in `plans/opl-plan.md` and `runs/opl/`; the Cauchy's routes in `plans/cauchy-routes.md` and `runs/crt/`; parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
+its plan written before it was run: the one pole, the constant and the phasor against five other kernels in `plans/opl-plan.md` and `runs/opl/`; time and the Cauchy's point in `plans/tim-plan.md` and `runs/tim/`; the floor's cells as points m + iγ in `plans/dyh-plan.md` and `runs/dyh/`; the Cauchy's routes in `plans/cauchy-routes.md` and `runs/crt/`; parallax as a sum of reads in `plans/pxs-plan.md` and `runs/pxs/`; the formats
 measured as text in `plans/txt-plan.md` and `runs/txt/`; the tower and two thumbs in `runs/two/two_thumbs.py`; the three
 thumbs at the crosshair, the one-thumb circle and the three corners in `plans/thm-plan.md` and `runs/thm/`; the shape
 swept whole against each thumb on its own in `plans/swp-plan.md` and `runs/swp/`; the read with no world, and where the
