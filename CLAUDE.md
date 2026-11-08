@@ -333,7 +333,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   turn loop's. Run 1's W3 killed by my measure (acos near 1), run 2 not. The Lorentz group is not derived: it enters as
   conformality on the sky. *Reads and Writes* §3 "Two boosts joined"; essays 7, 9, 13. Run 3 (`runs/twg/twg3.py`, SPN
   R760): the next order, predicted first, nothing killed: the turn loop exactly 4·arcsin(sin²(ε/2)·|sin φ|), c_T = −1/12
-  at every angle; the boost loop c_B = 1/3 + cos φ/4.
+  at every angle; the boost loop c_B = 1/3 + cos φ/4. R761: run 3 in essays 13 and 9.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

@@ -117,7 +117,9 @@ belongs to the loop, not to any leg: the closing of a loop that the first essay 
 read from directions alone. Three stars seen before and after two boosts fix the map of the sky, and its turn is the
 Thomas–Wigner angle, the same from any three stars, with no frequency and no distance used. One boost alone leaves no
 turn. Joined along one axis, rapidities add; joined along two, the join leaves a turn the size of the velocity triangle's
-hyperbolic area (the TWG run, exact).
+hyperbolic area (the TWG run, exact). For a small closed loop of boosts the turn is ε²·sin φ, the same size as a loop of
+turns on the sphere leaves, about the opposite axis; the two part at the next order, where only the boosts' correction
+depends on the angle (essay 13).
 
 **Simpson's paradox.** In a much-taught study of kidney-stone treatments (Charig et al. 1986), treatment A succeeded more
 often than B for small stones, 93% against 87%, and for large stones, 73% against 69%. Pooled, A succeeded 78% of the time

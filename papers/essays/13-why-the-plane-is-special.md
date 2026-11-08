@@ -176,7 +176,10 @@ quantity of directions alone in the strict sense, heat and not paint, and it exi
 taken in either order. Boosts have the same leftover with the opposite sign. A small loop of boosts along two axes leaves
 a turn of the same size, ε²·sin φ, about the opposite axis: the Thomas–Wigner rotation, the area of the loop in the
 hyperbolic space of velocities (curvature −1 where the sphere's is +1). It too is read from the sky's directions alone
-(the TWG run, exact).
+(the TWG run, exact). The two leftovers agree only to leading order. At the next order the loop of turns falls short by
+ε²/12 of its size whatever the angle between the axes, while the loop of boosts runs over by (1/3 + cos φ/4)·ε², which
+depends on the angle (TWG run 3, the coefficients predicted before the run). The sphere and the space of velocities share
+the first term of their curvature's signature and part after it.
 
 ---
 
