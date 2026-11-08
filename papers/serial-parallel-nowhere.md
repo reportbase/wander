@@ -7379,6 +7379,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   As sound the far field's ratio is the octave, and Shepard's tones round the dome are the horizon heard. *Reads and
   Writes* §6 ("The read as a control") and Code and data, essay 8 §1 ("Without a count", "On a dome", "Heard"), Shepard
   1964 cited in both; the calendar pages on essay 8's card. Classical pieces; the reading ours.
+- **R752** (8 Nov; Tom: "i think there might be a stronger connection between the circle, cauchy and euhlers identity.",
+  then ChatGPT's review of Claude's answer, pasted): w = (1 + is)/(1 − is) is on the unit circle, rational in s; w = e^(2iθ);
+  (1/2i)·d(ln w)/ds = 1/(1 + s²), the kernel the arc's turn per unit of reading; home to horizon the logarithm, followed
+  continuously along the upper semicircle, gathers iπ, so ∫₀^∞ ds/(1 + s²) = π/2 (the whole line π). Checked to 30
+  digits. As ChatGPT tightened it: the constant comes from Euler's identity (the endpoint), the logarithm (what is
+  gathered) and the change of variable together, not the identity alone; invariance makes the even arc natural, the map
+  makes the kernel; "finite reads rational, π the writer's total" and "the pole at i is the reader's standpoint" are
+  readings, not theorems. *Reads and Writes* §5 "The Cauchy's constant, from the same turn" (Cayley 1846 cited); essay 2 §9.
 - **R749** (7 Nov; Tom: "1,2", to explainers for essays 12 and 16): two more of draw's scrolling explainers
   (reportbase/draw#64). Essay 12's, `explained.html?x=array` (the animated gallery's `array` tile), six beats: ten slots,
   the writer's, each a share of the way that moves when the array grows; a reader two slots out from the foot, equal

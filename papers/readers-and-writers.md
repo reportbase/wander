@@ -562,6 +562,26 @@ turn φ; in the plane it leaves none. All of this is classical (Euler 1748; the 
 Euler's formula sorts like everything else here: the turn it describes is read, and the number it is written in is a
 count completed.
 
+**The Cauchy's constant, from the same turn.** The quotient that took the length away, w = (1 + is)/(1 − is), does more,
+in three exact steps. First, for every real reading s, |w| = 1: the point on the circle is built from s by arithmetic
+alone, w = (1 − s² + 2is)/(1 + s²), and for a rational s both its parts are rational. Second, with s = tan θ, w = e^(2iθ):
+Euler's formula, the circle measured by its arc. Third, following the logarithm continuously as s runs on from 0,
+(1/2i)·d(ln w)/ds = 1/(1 + s²): the Cauchy's kernel is the rate at which the arc turns per unit of reading. From home to the
+horizon the logarithm follows w along the upper half of the circle, from +1 to −1, and gathers iπ, so
+∫₀^∞ ds/(1 + s²) = π/2, and the half-Cauchy's 2/π is one over that gathered arc. Over the whole line, from −∞ through home
+to +∞, w goes once round and the total is π, the standard Cauchy's 1/π: one kernel, two domains swept. Euler's identity,
+e^(iπ) = −1, marks where the quarter turn's sweep ends; the logarithm records what was gathered along the way; the change
+from angle to reading turns that into the kernel. The constant comes from the three together, not from the identity alone.
+Why this kernel and no other: the turn's own measure is even in the arc, and a further turn multiplies w by a fixed point
+of the circle, which leaves an even measure even; the invariance is why the even arc is the natural measure, and the map
+carries it into the reading as the Cauchy. What we read in it is a separate matter. Each finite read has its circle point
+by rational arithmetic, and composing reads multiplies their w's, (1 + ia)(1 + ib) = (1 − ab) + i(a + b), tangent
+addition, closed among complex numbers with rational parts when the readings are rational; π enters only when the sweep is
+totalled, the arc gathered whole, which is the writer's. The kernel's two poles sit at s = ±i, and the reader in its own
+chart stands at i (§2); that the pole and the standpoint coincide is our reading, not something the pole proves. The
+pieces are classical (the Cayley transform, Cayley 1846; the residue theorem); what is ours is where the constant is said
+to enter: in no single read, only in the completed total of them.
+
 The reader's two ignorances, after Jaynes (1968), are which way it faces and how large things are: turns and rescalings.
 Each is a one-parameter group with an exponential map. Turns close, so their map has a period: 2π for an oriented turn,
 π for the direction of a line, which comes back to itself after a half turn (the projective line the reader's readings
@@ -1284,6 +1304,8 @@ establishes it.
   Astronomical Society* 133, 67–83.
 - Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
   Review* 4, 345–376.
+- Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal für die reine und angewandte
+  Mathematik* 32, 119–123.
 - Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
   Royal Astronomical Society* 206, 377.
 - Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77,
