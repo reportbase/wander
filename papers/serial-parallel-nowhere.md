@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R757** (8 Nov; Tom: "update the papers, essays and merge"): R752–R756 carried where the corpus already touched them.
+  *Reads and Writes* §2's routes (the pole's damped oscillation is that one residue; only the Cauchy's transform a pure
+  phasor) and §7's stepping back (e^(−d|k|) the one pole's phasor at z = id, heights adding as phasors multiply); essay 13
+  §1 (e^(izt) one residue at the standpoint, a characterization uniqueness already gives); essay 15 §5 (the half-Cauchy's
+  2/π from w gathering iπ, each step finite, the total the writer's); essay 17 §4–§5 (the pole route's e^(izt); the
+  Poisson semigroup as the pole moved up, the Cauchy's alone among the familiar kernels, OPL). No new claim.
 - **R749** (7 Nov; Tom: "1,2", to explainers for essays 12 and 16): two more of draw's scrolling explainers
   (reportbase/draw#64). Essay 12's, `explained.html?x=array` (the animated gallery's `array` tile), six beats: ten slots,
   the writer's, each a share of the way that moves when the array grows; a reader two slots out from the foot, equal

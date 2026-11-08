@@ -49,7 +49,10 @@ coincidence, and the plane is where it happens.
 map W = (X − i)/(X + i). The standpoint z goes to a point w = (z − i)/(z + i) inside the circle, and the averages of the
 law become the powers of w: the average of W is w, of W² is w², and so on. A law with no mean on the line has one on the
 circle, and the mean is the standpoint itself, carried across. The second essay's Euler section said this in Euler's
-notation: the Fourier transform of the Cauchy is e^(izt), the exponential of the standpoint.
+notation: the Fourier transform of the Cauchy is e^(izt), the exponential of the standpoint. It is one residue, at the
+one pole above the line, and that pole is the standpoint; at t = 0 the same residue is the total. Among the familiar
+kernels only the Cauchy's transform is one pure phasor (essay 2 §9; the OPL run): a characterization that uniqueness of
+the Fourier transform already gives, the reading of the pole as the standpoint ours.
 
 **It is the two sweeps' rates, combined.** Put a reader inside a circle, off its centre, and let it turn uniformly. Its
 directions land on the circle unevenly: bunched on the near side, spread on the far side. Call the landing density L.

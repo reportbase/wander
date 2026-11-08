@@ -154,7 +154,8 @@ The look and the walk are two of several ways in. The map is the harmonic measur
 and that point can be put there in different ways:
 - a standpoint, with a uniform turn;
 - a starting place, with a random walk;
-- a pole a height off the line, as in a resonance whose response squared is this kernel;
+- a pole a height off the line, as in a resonance whose response squared is this kernel, its transform that one pole's
+  e^(izt), turned by the foot and damped by the height (essay 2 §9);
 - a sum of such maps, whose points add.
 
 All land on the same law, checked side by side at thirty digits (`plans/cauchy-routes.md`). They are told apart only by
@@ -173,7 +174,11 @@ multiplies by e^(−d|k|), and the exponents add:
 
   e^(−d₁|k|) · e^(−d₂|k|) = e^(−(d₁ + d₂)|k|).
 
-This is the Poisson semigroup, and it is the cleanest level of detail there is. Every pattern on the wall survives the
+This is the Poisson semigroup, and it is the cleanest level of detail there is. Each factor is the one pole of essay 2 §9
+read at its standpoint, e^(izk) with z = id: stepping back is moving the pole up, and the heights add because the phasors
+multiply. Among the familiar kernels this is the Cauchy's alone. A Gaussian blur also keeps every pattern, but its
+transform is no single phasor and it has no point off the wall to read from; two poles beat; a pole of higher order
+multiplies the phasor by a polynomial (the OPL run, exact). Every pattern on the wall survives the
 step back, damped and never destroyed: the fine ones fade first, the broad ones last, and none is ever zero (*Reads and
 Writes* §2, "The payload is not lost"). A floor, a box blur, cuts some patterns to zero and they are gone; the Cauchy only
 dims them.
