@@ -478,6 +478,16 @@ thumb, is the reading 1 + is = sec θ·e^(iθ): the turn whole, carrying a lengt
 1 − is, and the length goes as well: (1 + is)/(1 − is) = e^(2iθ), the central sweep's landing point, with home at +1, the
 corner at i and the horizon at e^(iπ) = −1.
 
+**The Cauchy's constant comes from the same turn.** Take the logarithm of that landing point, following it continuously
+from home: ln w = 2iθ, and (1/2i)·d(ln w)/ds = 1/(1 + s²). The Cauchy's kernel is how fast the arc turns per unit of
+reading. Sweep from home to the horizon and w runs along the upper half of the circle from +1 to −1, gathering iπ: so
+∫₀^∞ ds/(1 + s²) = π/2, and the half-Cauchy's 2/π is one over the arc gathered. Over the whole line w goes once round and
+the total is π, the standard Cauchy's. Euler's identity marks where the sweep ends; the logarithm records what was
+gathered; the change from angle to reading makes it the kernel. Each finite read stays rational (w = (1 − s² + 2is)/(1 + s²),
+and composing reads multiplies the w's, which is tangent addition); π enters only when the sweep is totalled, the writer's
+act. That last sentence, and the reader standing at i where the kernel has its pole, are our reading of the arithmetic,
+not something the arithmetic proves (*Reads and Writes* §5, "The Cauchy's constant, from the same turn").
+
 **The two corners are two mirrors.** The plane of the logarithm also shows the corners plainly. Swap a reading for its
 reciprocal, v/h for h/v, and the angle θ becomes 90° − θ: a reflection of the imaginary part, and the line it leaves in
 place is θ = 45°, the corner in direction. Swap a distance for its reciprocal about the reader's length, d/H (the distance
