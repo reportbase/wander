@@ -552,8 +552,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and the horizon, and a Cayley-disc panel, −e^(2iθ): zero at −1, the corner at −i, the horizon at +1; `central-reader.html`'s
   one-read step names the half turn e^(iπ) = −1. Since 8 Nov (R752; Tom: "proceed with the one-read.html panel") a fourth
   panel: w = (1 + is)/(1 − is) = e^(2iθ) going round from +1 with the arc ln w has gathered, beside 1/(1 + s²) with its area
-  to s shaded, filling to π/2 as w reaches −1. `?t=&c=&play=1`; hook `window.__oneRead` (`at`, `read`, `landing`, `cayley`,
-  `constant`, `gap`, `set`, `state`). `sweep-zero.html` (R327, R331, R334): the sweep only forward from zero; N = 201 counts at the law's
+  to s shaded, filling to π/2 as w reaches −1. A fifth (R753; Tom: "proceed with the t-slider"): a standpoint z = m + iγ
+  (sliders) with its equal turns and kernel, and e^(izt) spiralling in from 1 as t grows, beside the phasor averaged over
+  20,000 equal turns from z. `?t=&c=&play=1&pt=&pm=&pg=`; hook `window.__oneRead` (`at`, `read`, `landing`, `cayley`,
+  `constant`, `phasor`, `gap`, `set`, `state`). `sweep-zero.html` (R327, R331, R334): the sweep only forward from zero; N = 201 counts at the law's
   quantiles; counted against the turn itself (the Cauchy, median 1), a clock alike on both sides (median 1), a lopsided clock
   (median moved), a flat screen of equal pixels to v/h = 4 (median 2), what arrives (its median direction); "stop" a new zero,
   the legs composed by tangent addition, once round to no turn; a turn carries the Cauchy onto itself.
