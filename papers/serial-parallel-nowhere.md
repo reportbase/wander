@@ -7393,6 +7393,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   total (π for z = i), past it the foot turns and the height damps. Checked to 25 digits. Classical (Poisson kernel, its
   Fourier transform); the reading ours: one pole, where the standpoint is drawn, carries the total and the response to a
   turn. *Reads and Writes* §5 "One pole, the constant and the phasor"; essay 2 §9.
+- **R754** (8 Nov; ChatGPT's review of R753, pasted: "make sure the three papers use the same distinctions consistently"):
+  R753's "the total, … the π of the last paragraph" ran the normalized and unnormalized kernels together. Now said apart: the
+  normalized kernel's total is 1, the unnormalized γ/((s − m)² + γ²)'s is π; at t < 0 the line closes below, round z̄, and
+  the two halves give e^(imt − γ|t|); the classical result and our reading kept apart as before. *Reads and Writes* §5, essay 2
+  §9, `one-read.html`'s fifth caption. No new material.
 - **R749** (7 Nov; Tom: "1,2", to explainers for essays 12 and 16): two more of draw's scrolling explainers
   (reportbase/draw#64). Essay 12's, `explained.html?x=array` (the animated gallery's `array` tile), six beats: ten slots,
   the writer's, each a share of the way that moves when the array grows; a reader two slots out from the foot, equal

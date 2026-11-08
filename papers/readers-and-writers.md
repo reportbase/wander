@@ -586,8 +586,11 @@ to enter: in no single read, only in the completed total of them.
 constant and the phasor are not two facts. Put the standpoint anywhere, z = m + iγ with γ > 0; its kernel is
 (1/π)·Im 1/(s − z) = (1/π)·γ/((s − m)² + γ²), with one pole above the line, at z. Weight it by a turn e^(its), t ≥ 0, close
 the line through the upper half-plane, and the residue at z is all that is left: ∫ e^(its)·(1/π)·γ/((s − m)² + γ²) ds =
-e^(izt) = e^(imt − γt). At t = 0 the phasor is 1 and the same residue is the total, which for the standard standpoint z = i
-is the π of the last paragraph; at t > 0 the foot m turns the phasor and the height γ damps it. (Checked to 25 digits
+e^(izt) = e^(imt − γt). For t < 0 the line closes below instead, round the mirror pole at z̄, and together the two
+give the whole of it, e^(imt − γ|t|). At t = 0 the phasor is 1, and the same residue is the total: 1 for the normalized
+kernel, and π for the unnormalized γ/((s − m)² + γ²), which at the standard standpoint z = i is the 1/(1 + s²) of the last
+paragraph, whose total π that paragraph traced to the arc; at t ≠ 0 the foot m turns the phasor and the height γ damps
+it. (Checked to 25 digits
 at z = 0.7 + 0.4i, t = 1.3, and for the standard kernel at t = 0, ½, 2.) Classical, the Poisson kernel and its Fourier
 transform; what we read in it is that one pole, where the standpoint is drawn, carries the reader's total and its whole
 response to a turn, and that Euler's exponential is evaluated there, at a point off the line, not on it.
