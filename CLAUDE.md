@@ -346,6 +346,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   new result entered there first), *Reads and Writes*' Code and data and the essays README (now "eighteen essays").
   R766 (9 Nov; Tom: "update the essays with physics"): an "In physics" paragraph before the closing section of essays 1–7,
   9, 11, 13, 14, 15, 17 and 18 (8, 10, 12, 16 are computing and have none), each from the physics paper's sections, no new claim.
+  R767 (9 Nov; Tom: "update the demos"): `demos.html` names the physics paper in its lede and the physics correspondence's,
+  and fifteen cards carry an "In physics" line (`.phys`) pointing to its section (pinhole, boost-sky, one-read,
+  cauchy-map (now `id="cauchy-map"`), plane-sphere, euler, moon, from-home, approach, parallax, pool, pool-infinite, thin,
+  ladder, sky); the parallax card's "doubling per level" reworded; `essays.html`'s lede names the paper. Pages unchanged.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
