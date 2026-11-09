@@ -1337,7 +1337,9 @@ behind both, the heat counted per chart and two turns of space in `euler.html`. 
 photons) are `plans/lgo-plan.md`, `plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and
 `runs/wvp/`: each plan states its predictions and what would count against them before its run, and records the runs as
 they came out, the killed ones too. They illustrate the sorting of direction from payload; none of them alone
-establishes it.
+establishes it. The known physics sorted by this paper's two tests, case by case with its bridges and its failures, is
+the companion paper *Reads and Writes in Physics* (`papers/reads-and-writes-physics.md`), drawn from the working record
+`papers/physics.md`; where the two differ, this paper stands.
 
 ## References
 

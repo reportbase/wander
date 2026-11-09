@@ -29,6 +29,13 @@ runs show the mix in place; that a misplaced boundary is what causes a known dif
 Kelker's case, and is otherwise open. And recovered physics can be exact and still partial: no recovery establishes
 its own completeness, and only a second route that disagrees shows a gap (SPN R442; OFS §9, "Recovered, not written").
 
+**The paper drawn from this record** (8 November; SPN R763–R765): *Reads and Writes in Physics*
+(`papers/reads-and-writes-physics.md`), a normal paper that sorts the known physics gathered here by the two tests of
+*Reads and Writes*, with the standings [exact], [data], [simulation] and [classical] and Wander's world left out. This
+record stays the working copy: a new physics result is planned, run and entered here first, then carried out to that paper.
+Where its wording differs from this record's older entries (levels, situations, the reader's circle), the paper's is the
+current one.
+
 **Iterations**
 
 - 10 October, first: the paper started, from the four tests of the day (ISQ, HZN, REF, MAG) and the physics labs before

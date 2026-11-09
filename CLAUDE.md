@@ -342,6 +342,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   world not used. Abstract and §1 drafted; the rest outlined in `plans/phy-outline.md`, five decisions put to Tom. R764
   (Tom: "1. Good 2. Leave out, but there might be good ideas to mine. 3. Include for now. 4. Ok 5. Ok"): drafted whole,
   §2–§12, about 9,700 words; D6 in §12.2 as a registered prediction; the built world's test for convention stated for real data.
+  R765 (9 Nov; Tom: "proceed with updates"): the paper pointed to from `physics.md` (which stays the working record, a
+  new result entered there first), *Reads and Writes*' Code and data and the essays README (now "eighteen essays").
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
