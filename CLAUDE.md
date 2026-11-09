@@ -363,7 +363,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (1.76·10⁻³; x taken from the cut sample, my code, corrected post hoc in `rdd2-posthoc.py` to 1.38·10⁻³). Post hoc β̂
   4.9 × the CMB's, flux slices one β, axis 26° from CatWISE's, 1.9 σ from its β. Power needs NVSS's declination stripes
   modelled or a southern survey joined. Run 3 (`runs/rdd/rdd3.py`, R771): the configurations' step at dec −10° modelled
-  (+0.23%), still unpowered (1.63·10⁻³), β̂ 4.8 × CMB, 1.5 σ from CatWISE; the limit is large-scale scatter. Parked.
+  (+0.23%), still unpowered (1.63·10⁻³), β̂ 4.8 × CMB, 1.5 σ from CatWISE; the limit is large-scale scatter. Parked. Run 4 (R772) planned, not run: NVSS + RACS-mid (CASDA's TAP) forecast unpowered (1.45–1.6·10⁻³), and the sort
+  predicts nothing Ellis and Baldwin's formula does not; the sources and the forecast (`runs/rdd/rdd4-forecast.py`) are in the plan.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

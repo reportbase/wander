@@ -7410,6 +7410,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R772** (9 Nov; Tom: "lets find data sources to make it robust.", "yes", "is it still a useful test?", "yes"): RDD
+  run 4 planned and not run.
+  - **Data.** Sources found: RACS-low, RACS-mid and RACS-high on CASDA's TAP; NVSS, SUMSS, WENSS and GLEAM on
+    HEASARC's; LoTSS-DR2 as a file.
+  - **Design.** NVSS north of −10° and RACS-mid south of it, joined on one flux scale by the overlap.
+  - **Forecast** (from NVSS counts alone): unpowered at the 10⁻³ bar, 1.45–1.6·10⁻³, about 0.97·10⁻³ at the very best.
+  - **Why it stops.** The run could not tell CatWISE's β from the CMB's. Its other checks were already passed, and the
+    read/write sort predicts nothing Ellis and Baldwin's formula does not.
+  - **What would test the sort.** D in proportion to 2 + x(1 + α) across samples, which needs a lever arm these surveys
+    lack.
+  - The dipole is parked. Wagenveld et al. 2023 and Oayda et al. 2024 were read and are quoted in the plan.
 - **R771** (9 Nov; Tom: "proceed"): RDD run 3. NVSS's change of array configuration at dec −10° was modelled as one
   step, its form taken from the survey's design. The step is +0.23%, and the run is still unpowered (1.63·10⁻³ against
   10⁻³; the step shares shape with the polar component, as foreseen). Reported, not counted: β̂ 4.8 times the CMB's,

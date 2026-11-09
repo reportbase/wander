@@ -379,3 +379,16 @@ anything is fetched, so that the choice is not made after seeing data:
 The 1.45 jackknife ratio is the deciding number in every row. If it belongs to the sky (clustering, Oayda et al.'s local
 dipole), no radio census at these depths reaches 1.0·10⁻³, and the papers that quote errors near 0.2·10⁻² in D give
 Poisson errors only.
+
+**Not run (9 Nov; Tom asked "is it still a useful test?", then "yes" to parking it).** Run 4 was not run and no RACS data
+was fetched.
+- **It cannot decide the open question.** At about 1.5·10⁻³ the joined sky cannot tell CatWISE's β from the CMB's.
+- **It barely improves the checks it can make.** Runs 1–3 already passed one β over flux, and the radio β sits 1.5σ from
+  CatWISE's.
+- **It does not test the read/write sort.** The sort's reading (the 2 the directions', x(1 + α) the payload's) makes
+  the same predictions as Ellis and Baldwin's formula, so no outcome tells them apart.
+- **What would test the split, and why not here.** D ∝ 2 + x(1 + α) across samples: motion gives β from both the slope
+  and the intercept, while a dipole of clustering stays flat. Over these surveys 2 + x(1 + α) spans only about 3.3–4.4,
+  against 30–40% errors per slice, so the lever arm is too short.
+
+The data sources and the forecast stay above for whoever returns to it. The dipole is parked.
