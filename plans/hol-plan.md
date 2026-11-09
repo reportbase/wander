@@ -75,4 +75,49 @@ legs are held together and counted. The reading:
 
 ## Runs
 
-(Nothing yet.)
+### Run 1 (9 Nov; `runs/hol/hol.py`, output `runs/hol/hol-run1.txt`; `runs/hol/hol2.py`, output `runs/hol/hol-run1-data.txt`)
+
+The exact run was started once at 32 digits, then stopped before it reported anything: the plan's 10⁻⁴⁰ for H2 and H4
+was finer than that precision. It was restarted at 50 digits with the predictions unchanged, and its polygons spread over
+four cores. It took 47 minutes.
+
+**Exact: nothing killed.**
+- **H1 (the sphere).**
+  - 12 latitude circles turn by their cap's area to 2.7·10⁻⁵⁰.
+  - 200 random geodesic triangles and quadrilaterals turn by their signed area to 1.0·10⁻⁴⁹.
+  - Transport was integrated as an ODE; the area was computed separately.
+- **H2 (the plane).** None of 50 loops turns. This was guaranteed in advance: flat transport is v′ = 0.
+- **H3 (velocity space).** For 200 loops of boosts with rapidities 0.01 to 3, the Wigner turn equals minus the
+  hyperbolic area to 1.5·10⁻⁴⁷, sign included. TWG's small loops carry to large ones.
+- **H4 (scale).**
+  - The turn is the same on spheres of radius 10⁻³, 7 and 10⁶, to 9·10⁻⁵⁰.
+  - Loops out and back along one line turn nothing: 4.5·10⁻⁵¹ on the sphere, 2.5·10⁻⁴⁹ in velocity space.
+
+**Data.**
+- **H5 untested.** One site met the plan's rules: Schumacher and Tarbet 2009 (arXiv:0902.1829, sha256
+  `e228c2d8eb1d78d79766176ee526a1f77cac39bdb542236cc46103ba5b2991ea`).
+  - Their pendulum is driven so as to be free of ellipsoidal precession, decided from their text before their number
+    was read.
+  - Their weighted mean, −9.69 ± 0.09°/h at Pittsburgh (40°26′26″), is 357.6 ± 3.3° per sidereal day over sin φ: 0.74σ
+    from 360°. Their simple mean, 363.5 ± 5.5°, is 0.63σ from 360°.
+  - The plan asks for three sites, so this is reported, not counted.
+  - Not counted:
+    - an ASEE student study at York and San Nicolás (peer.asee.org; no ellipse correction, no error on the rate);
+    - Foucault's 1851 Paris value and Kamerlingh Onnes's 1879 thesis, reached only as secondary accounts without the
+      paper's own numbers;
+    - arXiv:2502.12230 (a model of a pendulum, its measured rate given without an error).
+- **H6 untested.** Tomita and Chiao 1986 could not be reached. The APS page refuses, and the reviews read (arXiv:1008.5331;
+  Chiao and Wu's companion paper from the Utah repository) give no data.
+- **H7 (reported, not counted).**
+  - The Dirac value (Thomas's half included) of hydrogen's 2P₃/₂–2P₁/₂ is 10,949.648 MHz.
+  - The measured interval, 10,969.045 MHz, is taken as 2S₁/₂–2P₃/₂ (Hagley and Pipkin 1994) plus the Lamb shift; both
+    values are from memory, to check.
+  - Measured over Dirac is 1.0018; the rest is QED (the electron's anomalous moment and the Lamb shifts). Measured over
+    the interval without Thomas's half is 0.501.
+
+**What the run says.**
+- Joined reads come home turned by the area their loop encloses. This holds on the sphere of directions and, as the
+  Wigner rotation, in velocity space; in the plane they come home unturned.
+- The turn carries no amount: scaling the sphere moves nothing, and a loop with no area turns nothing.
+- All of it is classical (Gauss–Bonnet, Wigner, Thomas). The data part could not be tested, for want of reachable
+  measurements.

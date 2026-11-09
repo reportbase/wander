@@ -368,6 +368,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `lwl-plan.md` (+ `runs/lwl/lwl.py`, 9 Nov; SPN R773; Tom: "yes", to the line-width test): a natural width read in
   frequency against a lifetime read in time, five independent pairs (Na D2, π⁰ Primakoff against Atherton 1985, Cd ¹P₁,
   the Kr 3d hole, Dy 421 nm), 10⁻¹⁷ s to 10⁻⁸ s: every Γτ within 3σ of 1 (π⁰ 2.05σ), χ² 8.43 on 5, nothing killed.
+  `hol-plan.md` (+ `runs/hol/hol.py`, `hol2.py`, 9 Nov; SPN R775; Tom: "yes", to loops that come back turned): exact at 50
+  digits, nothing killed: transport round loops on S² turns by the enclosed area (10⁻⁴⁹), the plane's by none, boost loops by
+  minus the hyperbolic area (Wigner, 10⁻⁴⁷), unmoved by scale; the data untested (Foucault one site, Schumacher and Tarbet
+  2009, 0.74σ; Tomita–Chiao not reachable); H7 reported, hydrogen's 2P interval 0.501 of the value without Thomas's half.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

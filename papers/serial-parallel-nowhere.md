@@ -7410,6 +7410,21 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R775** (9 Nov; Tom: "yes", to a section on loops that come back turned): HOL (`plans/hol-plan.md`, `runs/hol/`),
+  predictions first.
+  - **Exact, nothing killed** (at 50 digits; transport integrated as an ODE, the area computed apart from it):
+    - parallel transport round 12 latitude circles and 200 random geodesic polygons on S² turns by the enclosed area,
+      to 10⁻⁴⁹;
+    - the plane's loops turn by nothing;
+    - 200 loops of boosts (rapidities to 3) turn by minus the hyperbolic area (Wigner), to 10⁻⁴⁷;
+    - the turn is unmoved by the sphere's radius, and zero for loops that enclose no area.
+  - **Data untested.**
+    - Foucault (H5): one qualifying site, Schumacher and Tarbet 2009, 0.74σ from 360° per sidereal day; the plan asked
+      for three.
+    - Tomita and Chiao (H6): not reachable.
+    - Hydrogen (H7, reported): measured over the Dirac value 1.0018, over the value without Thomas's half 0.501.
+  - Classical throughout. The reading: joined reads, a write, come home turned by the area they enclose; a single read
+    has none.
 - **R774** (9 Nov; Tom: "Yes", to opening a PR and carrying LWL into the papers): LWL run 1 in `physics.md` §2.1 (the five
   pairs, a table) and in *Reads and Writes in Physics* §4.3, after sodium (the pion, Cd, Kr and Dy, χ² 8.43 on 5, the
   width and the lifetime agreeing over nine orders of magnitude of time), with seven references added. No new claim.
