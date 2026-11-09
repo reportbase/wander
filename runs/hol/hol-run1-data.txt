@@ -1,0 +1,5 @@
+H5 Pittsburgh (weighted mean): 357.55 +- 3.3 deg per sidereal day over sin(lat); -0.737 sigma from 360
+H5 Pittsburgh (simple mean): 363.46 +- 5.5 deg per sidereal day over sin(lat); 0.625 sigma from 360
+H5: one site qualifies; the plan asks for three -> untested
+H7 Dirac 2P3/2 - 2P1/2 (infinite nuclear mass): 10949.648 MHz; without Thomas the interval doubles: 21899.296 MHz
+H7 measured (from memory, to check): 10969.045 MHz; measured / Dirac 1.00177; measured / no-Thomas 0.500886

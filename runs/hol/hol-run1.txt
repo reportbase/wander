@@ -1,0 +1,6 @@
+H1a latitude circles (12): worst |turn - cap area| = 2.67e-50
+H1b random geodesic triangles and quadrilaterals (200): worst |turn - signed area| = 1.02e-49
+H1: not killed (tolerance 1e-20)   [2170 s]
+H2 the plane (50 loops): worst turn = 0 -> not killed (trivially: the flat transport equation is v' = 0)
+H3 velocity space (200 triangles, rapidities 0.01-3): worst |Wigner turn + hyperbolic area| = 1.51e-47; magnitudes alone 1.51e-47 -> not killed
+H4 sphere radius 1e-3, 7, 1e6: worst turn change 9.09e-50; two-leg loop on the sphere 4.54e-51, out and back in velocity 2.54e-49 -> not killed (tolerance 1e-40)   [2834 s]

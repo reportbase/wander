@@ -640,6 +640,20 @@ Then (SPN R440; Tom: "proceed with recommended changes") a real-data test of the
 
   All standard: looming's ambiguity, astrometric binaries, the Sparrow limit, multipoles, Kelvin's inversion.
 
+- **Loops come home turned by the area they enclose** (HOL run 1, `plans/hol-plan.md`, `runs/hol/`, exact at 50
+  digits; *Reads and Writes in Physics* §5.4). Joined reads are a write, and what the write leaves over when the loop
+  closes depends on where the joining is done:
+  - the plane: no turn, for any loop (guaranteed, flat transport is v′ = 0);
+  - the sphere of directions: the enclosed solid angle (Gauss–Bonnet), 12 latitude circles to 3 × 10⁻⁵⁰ and 200 random
+    geodesic polygons to 10⁻⁴⁹, transport integrated and area computed apart;
+  - velocity space: the Wigner rotation equals minus the hyperbolic area, 200 loops of rapidity 0.01–3 to 1.5 × 10⁻⁴⁷,
+    TWG's small loops carried to large ones;
+  - no amount enters: radius 10⁻³, 7 and 10⁶ give one turn; out and back along a line gives none.
+  The data part is untested: one Foucault site met the rules (Schumacher and Tarbet 2009, 357.6 ± 3.3° a sidereal day
+  over sin φ, 0.74σ from 360°; three were asked for), and Tomita–Chiao's numbers were not reachable. Reported, not
+  counted: hydrogen's 2P interval over Dirac 1.0018, over the value without Thomas's half 0.501 (measured value from
+  memory, to check). Classical throughout.
+
 ### 2.3 In Wander's world (illustration, not evidence)
 
 These labs ran inside Wander's world before 10 October. They show what a reader could recover; they do not show that
