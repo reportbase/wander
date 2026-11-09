@@ -175,3 +175,21 @@ Read plainly:
   which carries the survey's large-scale variations, sets them. Getting under 10⁻³ needs either the declination stripes
   modelled (as the NVSS dipole papers do) or more sky (a southern survey joined, such as SUMSS or RACS).
 - No colour test was made: no second band here is free of TGSS.
+
+### Run 3: NVSS with its configurations modelled (written 9 Nov, before the run)
+
+Tom: "proceed", to modelling NVSS's declination stripes. The NVSS data are run 2's (in hand, and run 2's results seen),
+so only the estimator changes, and its form is taken from how the survey was made, not from the counts:
+- **The template.** NVSS was observed in the VLA's D configuration for −10° < dec < +78° and in DnC outside that range
+  (Condon et al. 1998). Inside run 2's mask that leaves one boundary, dec = −10°. The counts in a kept pixel are modelled
+  as N_p = a₀ + a₁·[dec_p < −10°] + d·n̂_p, fitted by ordinary least squares over the kept pixels. The amplitude is
+  |d|/a₀ (relative to the D configuration's monopole), the axis d's direction. No other declination term is fitted:
+  a term in sin(dec) would be the dipole's polar part itself.
+- **Everything else as run 2**, with x taken from the counts before the 20 mJy cut (the correction run 2 needed): the
+  sample, the mask, the slices, α = 0.75 as an input, and errors as the larger of the Poisson bootstrap (400) and the
+  jackknife over nside-2 regions.
+- **R6″ (power).** β̂'s error under 1.0·10⁻³, or the run is declared unpowered and the rest not counted.
+- **R1″** one β over the four flux slices (p > 0.01); **R3″** β̂ within 2.58 combined errors of CatWISE's
+  (3.31 ± 0.46)·10⁻³; **R4″** the axis within the combined 99% radius of CatWISE's.
+- **What could go wrong, said now:** a step at −10° shares part of its shape with the dipole's polar component, so the
+  fit's errors may grow rather than shrink. If they do, the run is unpowered and says so.
