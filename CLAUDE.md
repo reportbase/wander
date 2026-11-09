@@ -362,7 +362,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Run 2 (`runs/rdd/rdd2.py`, R770; Tom: "proceed"): the full NVSS, power stated first (β̂'s error under 10⁻³): unpowered
   (1.76·10⁻³; x taken from the cut sample, my code, corrected post hoc in `rdd2-posthoc.py` to 1.38·10⁻³). Post hoc β̂
   4.9 × the CMB's, flux slices one β, axis 26° from CatWISE's, 1.9 σ from its β. Power needs NVSS's declination stripes
-  modelled or a southern survey joined.
+  modelled or a southern survey joined. Run 3 (`runs/rdd/rdd3.py`, R771): the configurations' step at dec −10° modelled
+  (+0.23%), still unpowered (1.63·10⁻³), β̂ 4.8 × CMB, 1.5 σ from CatWISE; the limit is large-scale scatter. Parked.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

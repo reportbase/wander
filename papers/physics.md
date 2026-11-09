@@ -339,7 +339,10 @@ Then (SPN R440; Tom: "proceed with recommended changes") a real-data test of the
   TGSS's flux scale; CatWISE's colour result stands alone until then. Run 2 (R770) took the full NVSS (VIII/65), its
   power stated first: unpowered (β̂'s error 1.4–1.8·10⁻³ against the 10⁻³ fixed), so nothing counted. Post hoc, x taken
   correctly: β̂ about 4.9 times the CMB's, four flux slices one β (p = 0.87), the axis 26° from CatWISE's and 30° from
-  the CMB's, β 1.9 σ from CatWISE's. Consistent with one motion, not yet a test of it.
+  the CMB's, β 1.9 σ from CatWISE's. Consistent with one motion, not yet a test of it. Run 3 (R771) modelled NVSS's
+  change of configuration at dec −10° (a step of +0.23%, barely there): still unpowered (1.63·10⁻³), β̂ 4.8 times the
+  CMB's, 1.5 σ from CatWISE's, the axis 22° from CatWISE's. The limit is the survey's large-scale scatter, not its
+  configurations; the dipole is parked until more sky can be joined.
 
 ## 2. Results, by standing
 
