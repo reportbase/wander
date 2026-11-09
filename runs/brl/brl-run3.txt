@@ -1,0 +1,13 @@
+B7 trace vs 2+4 sin^2a sinh^2(l/2): max diff 1.24e-60; |det-1| 1.56e-61 -> held
+B8 closes at c=1: 1.6e-62; at alpha=pi: 2.09e-60; open at every other draw: True -> held
+B10 zeta the same at 1/c, the stretch turned, a scaling put in: max diff 2.1e-59 -> held
+B9 small loops, alpha = lambda = eps: zeta/(alpha*lambda)
+   eps=1e-1: 0.99874604002032
+   eps=1e-2: 0.999987499602446
+   eps=1e-3: 0.99999987499996
+   eps=1e-4: 0.99999999875
+   eps=1e-5: 0.9999999999875
+   eps=1e-6: 0.999999999999875
+   -> held
+B11 growth per loop ln sigma_max(M^400)/400 vs zeta, 11 draws: max diff 0.000356 -> held
+B12 space: 0 failures over 60 cases -> held

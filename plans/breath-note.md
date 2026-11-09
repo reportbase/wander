@@ -160,9 +160,11 @@ they meet at e^(iπ) = −1 because that is where the up axis's half turn sits o
 2. Ask whether a breath has a natural size: a loop whose up side is the whole quarter turn (home to horizon) and whose
    across side is one thumb (ln 2 for one in two, or 1). Probably not: H is chosen, and "one breath" would be the writer's
    unit.
-3. Ask what an *unsteady* breath is: a loop that does not close in the plane needs the up and across moves not to commute,
-   which in the plane they always do; so an unclosed breath in the plane is a write that changed what the next read turns
-   through (the paint, not the address?). To be thought through, not assumed.
+3. *Done 9 Nov (BRL run 3):* an unsteady breath is one whose write is in two unequal lengths, V = cH with c ≠ 1. The
+   loop (turn, stretch, back, back) leaves a squeeze, not a turn: cosh ζ = 1 + 2·sin²α·sinh²(½ ln c), ζ ≈ |α·ln c|, the
+   same at c and 1/c, and it accumulates breath after breath; it closes only at c = 1 (or a half turn). In space it closes
+   when the two lengths square to the turn's axis are written equal. So "a breath closes" and "V = H" say the same thing.
+   (The guess in this item, a write that changed what the next read turns through, was not what came out.)
 4. A breathing view on `euler.html` (the loop drawn as it is breathed, in the plane and in space) only once 1 is checked.
 5. §5 (c) on `approach.html` or `euler.html`: the walk drawn as its gd curve on Euler's plane, the read climbing by sech per
    thumb and by the Cauchy per metre, both corners marked (the thumb's far out, the span's at Z = i) and the foot as the
