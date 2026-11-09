@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R786** (9 Nov; Tom: "1,2,3,4"): the three loops in essay 18 §9 (a breath closes in the plane and in space; two reads come
+  home turned, bounded; a read with an unequal write squeezed, growing; steady exactly at one length), a pointer in essay
+  13 §4 and the essays README. UWR (`plans/uwr-plan.md` + `runs/uwr/`, exact, nothing killed): the unequal write has a
+  passive instance, rotator α, partial polarizer along x, rotator −α, the same polarizer along y; its Jones matrix is
+  BRL's M times a scalar, the squeeze its net diattenuation D = √(F² − 4)/F (0.7307 at 40°, c = 2), D ≥ tanh 2ζ, n stacks
+  driving ln(1 − D) down by 4ζ a stack; zero at c = 1. No bench data looked for. LWL run 2: ⁵⁷Fe untested, every
+  "natural width" reached being ħ/τ computed from the lifetime. The breath's explainer for draw (`explained.html?x=breath`).
 - **R785** (9 Nov; Tom: "1,2,3,4"): BRL into *Reads and Writes* §1, after "One plane": "A loop of a read and a write"
   (closes in the plane and in space; two reads come home turned, bounded; a read with a write in two unequal lengths comes
   home squeezed, growing; closed exactly when the write is in one length), and BRL in Code and data. `euler.html`'s seventh
