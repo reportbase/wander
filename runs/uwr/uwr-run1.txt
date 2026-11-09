@@ -1,0 +1,9 @@
+U1 diag(1,c) = R(90)S(c)R(-90): 5.87e-61; stack (det-normalised) = M up to sign: 1.24e-60 -> held
+U2 D = sqrt(F^2-4)/F against the stack's own singular values: 1.23e-60 -> held
+   at 40 deg, c = 2: D = 0.7307208464, zeta = 0.4506952792, tanh 2zeta = 0.716974283
+   D at c = 1: 1.12e-30; at alpha = pi: 7.89e-31
+U3 D >= tanh 2zeta at every draw: True -> held
+U4 draw a=-20.01 deg c=11.28: slope of ln(1-D_n) at n=8 -4.0179767 vs -4 zeta -4.017975
+U4 draw a=-55.65 deg c=3.231: slope of ln(1-D_n) at n=8 -3.9380149 vs -4 zeta -3.9380146
+U4 draw a=108.4 deg c=9.109: slope of ln(1-D_n) at n=8 -8.5026168 vs -4 zeta -8.5026168
+   -> held

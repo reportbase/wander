@@ -390,6 +390,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R785 (Tom: "1,2,3,4"): in *Reads and Writes* §1 ("A loop of a read and a write"); `euler.html`'s breaths view
   (`view=breath&c=`, hook `breath`); `approach.html`'s two paces (hook `paces(d)`: per halving sech x, per half-breadth the
   Cauchy, the thing's own corner at d = V*/2, Z = i); the note's item 2 answered by argument (no natural size for a breath).
+  R786 (Tom: "1,2,3,4"): the three loops in essay 18 §9 and essay 13 §4; UWR (`plans/uwr-plan.md` + `runs/uwr/uwr.py`,
+  exact, nothing killed): the unequal write as a passive polarizer stack (rotator α, partial polarizer x, rotator −α,
+  partial polarizer y), its Jones matrix BRL's M times a scalar, the squeeze its diattenuation D = √(F² − 4)/F ≥ tanh 2ζ,
+  n stacks 4ζ a stack in ln(1 − D); LWL run 2 (⁵⁷Fe untested: no energy-domain natural width reachable); draw's
+  `explained.html?x=breath`.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

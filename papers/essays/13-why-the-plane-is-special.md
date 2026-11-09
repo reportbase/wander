@@ -181,6 +181,11 @@ hyperbolic space of velocities (curvature −1 where the sphere's is +1). It too
 depends on the angle (TWG run 3, the coefficients predicted before the run). The sphere and the space of velocities share
 the first term of their curvature's signature and part after it.
 
+The loop that leaves this turn is a loop of two reads. A loop of a read and a write, a turn and the thumb scaled, comes home
+with nothing left in space as in the plane, because scaling by one factor commutes with every turn; a write in two unequal
+lengths, a stretch, leaves a squeeze instead of a turn, and the squeeze grows with each loop (the BRL run, exact; the
+eighteenth essay, section 9).
+
 ---
 
 ## 5. What survives in space
