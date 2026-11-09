@@ -329,6 +329,14 @@ Then (SPN R440; Tom: "proceed with recommended changes") a real-data test of the
   from the CMB's (P3 killed). My estimator missed Secrest's amplitude by 22% (P4 killed by my set-up: pixels kept by their
   centres, the ecliptic term fitted jointly); their recipe, run after, gives 0.0156, 2.1 times the expected, to 0.3°.
   The plan was written before the data were downloaded but first committed with run 1's output.
+- **A second census, radio** (9 Nov, SPN R769; RDD, `plans/rdd-plan.md` + `runs/rdd/`, de Gasperin et al. 2018's
+  TGSS × NVSS spectral-index catalogue, the plan committed before the download): the same sort on the radio sky, the
+  spectral index as the colour, and two new predictions, one β and one axis across the two censuses. Nothing killed and
+  nothing tested hard: the symmetric mask keeps half the sky and the jackknife's errors are twice the bootstrap's (whole
+  sample D = 0.0174 ± 0.0088, 3.75 times the CMB's β; flux slices one β at p = 0.55; α terciles p = 0.044, leaning apart
+  as CatWISE's colours did; β 2.1 σ from CatWISE's; the axes 88° apart within a 98° radius). Post hoc the amplitude
+  doubles between 20 and 40 mJy with the one-sided mask. A powered run needs the full NVSS and a colour not resting on
+  TGSS's flux scale; CatWISE's colour result stands alone until then.
 
 ## 2. Results, by standing
 

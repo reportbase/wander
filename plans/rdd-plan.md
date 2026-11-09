@@ -75,3 +75,42 @@ colour. Written before any data were downloaded: only the column list and three 
 ## Runs
 
 (Nothing above this line is edited after a run.)
+
+The plan was committed (d006796) before the download.
+
+**Data.** Downloaded 9 November from the CfA mirror,
+`https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J/MNRAS/474/5008/spidxcat&-out.max=unlimited&-out=RAJ2000,DEJ2000,FtotNVSS,SpIndex,Scode`,
+67,035,071 bytes, sha256 713a07c5b845d16733af120db9afe0809107487d575cf52cf7154509b9c0fe94; 1,396,515 rows (S 439,488,
+M 35,202, C 28,957, I 41,023, L 845,459, U 6,386). VizieR's licence (CDS). Stored in /tmp/rdd_data; not committed.
+
+### Run 1 (9 Nov; `runs/rdd/rdd.py`, output `runs/rdd/rdd-run1.txt`, 18 s)
+
+One attempt, as fixed. The mask keeps 48.8% of the sky; 264,478 sources at ≥ 0.02 Jy, mean α 0.586, x 1.11 at the cut.
+
+- **Whole sample.** D = 0.0174 ± 0.0088 (bootstrap 0.0047, jackknife 0.0088, the verdicts' error the larger),
+  expectation at the CMB's β 0.0046, so β̂ 3.75 times the CMB's. Axis (322°, −0°), 70° from the CMB's, 88° from
+  CatWISE's; its 99% radius 93°.
+- **R1 not killed**: four flux slices, one β at p = 0.55, (1.00 ± 0.32)·10⁻², 8.1 times the CMB's. Each slice's error is
+  as large as its signal (D 0.009, 0.032, 0.067, 0.052, each ± 0.019 to 0.029).
+- **R2 not killed**: three α terciles at p = 0.044 (flattest 18.6, middle 8.9, steepest 30.9 times the CMB's β, each
+  ± 7 to 8; the steepest third's axis 34° from the CMB's, the other two 141° and 145°).
+- **R3 not killed**: radio 1.00·10⁻² ± 0.32·10⁻² against CatWISE 3.31·10⁻³ ± 0.46·10⁻³, 2.06 σ.
+- **R4 not killed**: 88° apart against a combined 99% radius of 98°.
+
+Read plainly: nothing was killed, and nothing was tested hard. The fixed mask (symmetric under the antipode, so |dec| < 39°)
+keeps half the sky, and the jackknife's error is twice the bootstrap's on every fit, a sign of large-scale variations in
+the counts that a Poisson model does not hold. With errors as large as the signals, R1–R4 could pass whatever the sky
+did. R2's p of 0.044 is the nearest to a kill, and leans the way CatWISE's colours did (the terciles apart), but does not
+reach the line.
+
+Post hoc (`runs/rdd/rdd1-posthoc.py`, `rdd1-posthoc.txt`; not a verdict): with the one-sided mask most NVSS papers use
+(|b| > 16°, dec > −39°), the whole sample gives D = 0.0091 (bootstrap 0.0031, jackknife 0.0072) at (330°, 31°), and at
+≥ 0.04 Jy 0.0219 at (321°, 7°): the amplitude doubles between two thresholds and the axis moves 24°, and the jackknife
+stays two to three times the bootstrap. This catalogue's counts are not stable enough at these scales for the test to
+have power.
+
+What a second run would need (not taken; Tom's call): the full NVSS catalogue (VizieR VIII/65, fluxes in mJy rather than
+this catalogue's 10 mJy grid, the declination stripes from NVSS's two configurations handled as published), the colour
+from a spectral index that does not rest on TGSS's direction-dependent flux scale (NVSS against WENSS or SUMSS, or VLASS
+at 3 GHz), and the mask fixed with the power to resolve 3·10⁻³ in β written down before the data. Until then CatWISE's
+colour result stands alone.

@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R769** (9 Nov; Tom: "what did you learn, any new ideas?", then "proceed per your recommendations"): RDD
+  (`plans/rdd-plan.md` + `runs/rdd/`), the second test put to a second census: the radio sky (TGSS × NVSS, de Gasperin et
+  al. 2018), the spectral index as the colour, with one β and one axis across CatWISE and the radio as new predictions. Run
+  1: nothing killed, nothing tested hard (the errors as large as the signals, the jackknife twice the bootstrap; the α
+  terciles at p = 0.044, leaning apart as CatWISE's did). Recorded in `physics.md` §1½; not carried into *Reads and Writes
+  in Physics*, which reports only what was tested. A powered run (full NVSS, a colour not resting on TGSS) waits on Tom.
 - **R768** (9 Nov; Tom: "yes, add the notes to the demos"): the "In physics" notes carried onto the demo pages themselves:
   a paragraph at the foot of pinhole, boost-sky, one-read, cauchy-map, plane-sphere, moon, from-home, approach, parallax,
   pool, thin, ladder and sky, and in the About of `euler.html`'s menu, each naming the known physics the page shows and
