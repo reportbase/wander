@@ -192,6 +192,17 @@ about the other and both back, it comes home turned about nearly the third thumb
 1.741° for 10° and 10°, against α·β = 1.745°. On the plane the same loop leaves nothing. `euler.html`'s "in space" sets the
 two side by side; the thirteenth essay takes the reason apart (Frobenius, Gauss and Bonnet, Berry's phase).
 
+That loop is two reads, not a read and a write, and the difference matters. Take a breath instead: a read up by α, a write
+across by λ (the thumb scaled), and both undone. On the plane it closes because the two slides commute. In space it closes
+too, since scaling by one factor commutes with every turn of space; a write put anywhere into a loop of acts changes only
+the loop's overall size (checked to 10⁻⁶¹, the plan BRL). So three loops part. A breath closes, in the plane and in space.
+Two reads in different directions come home turned, by Ω with cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ for axes φ apart,
+the same turn every time the loop is repeated, so the thing goes round and never grows. A read with a write in two
+unequal lengths, a stretch by c along one axis (the writer's two axes drawn at V = cH), comes home squeezed by a rapidity
+ζ, cosh ζ = 1 + 2·sin²α·sinh²(½ ln c), about |α·ln c| when small, and the squeeze grows by ζ with every breath: 0.4507 a
+breath at α = 40° and c = 2. It closes only at c = 1. A breath is steady exactly when its write is in one length, which is
+the one-length circle said of a loop. `euler.html`'s "breaths" breathes the three side by side.
+
 Could another chart do in space what Euler's plane does in the plane? It was put to arithmetic (the plan FLC; `euler.html`'s "a flat chart in space" draws it), and the
 answer is mostly an old one. Writing keeps its slide: the same logarithm of the distance in thumbs, set beside the
 direction, lays space out as a straight line times the sphere of directions, and scaling the world or the thumb moves the
@@ -256,7 +267,7 @@ behind. What survives everywhere is the part the series cares most about: the re
 amounts, and scaling the world moves only the second.
 
 **Demos.** `euler.html` (the three charts side by side or one sliding into the next; the writer's sphere and the thumb
-as a boost; the heat at each point and per chart; a line and a spiral with their mirrors; two turns in space; a flat chart in space, Lambert's and the stereographic, turned; n reads),
+as a boost; the heat at each point and per chart; a line and a spiral with their mirrors; two turns in space; a flat chart in space, Lambert's and the stereographic, turned; breaths, three loops side by side; n reads),
 `plane-sphere.html` (the plane's one law and the sphere's three), `levels.html` (the reader's lay of distance),
 `boost-sky.html` (a boost on the sky's chart), `uncompressed.html` (a writer's grid in space, compressed into the read).
 

@@ -138,3 +138,15 @@ cadmium, the 2022 width sits under every time-domain value, and its authors call
 - What differs between the two reads is the standard each needs, a frequency or a clock. The product needs neither.
 - That is the reading of *Reads and Writes in Physics* §4.3, and it survived a test that could have failed. It is still
   classical physics.
+
+## Run 2 predictions (9 Nov 2026, Tom: "1,2,3,4", the fourth "⁵⁷Fe for the line-width test"; written before the search)
+
+The rules above stand (independent width and lifetime, the most precise of each kind by its quoted error, every value read
+from a reachable source with its sha256). Run 2 looks for ⁵⁷Fe's 14.4 keV level, and records any further pair met on the way.
+
+- **L5.** ⁵⁷Fe: a natural width extracted in the energy domain (a Mössbauer line extrapolated to zero absorber thickness,
+  a synchrotron Mössbauer source's line, or an interferometric or γ-resonance width), against a lifetime measured in time
+  (delayed coincidence, or nuclear forward scattering's decay): Γτ within 3 combined errors of 1.
+- **L6.** All pairs of runs 1 and 2 together: χ² of (Γτ − 1)/σ with p above 0.001.
+- **Untested**, said plainly, if no energy-domain natural width for ⁵⁷Fe is reachable. A width computed from the lifetime
+  (as compilations give it) does not count; nor does a measured line width with no extraction of the natural part.
