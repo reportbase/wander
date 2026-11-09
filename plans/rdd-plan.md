@@ -217,3 +217,64 @@ Read plainly, over the three runs:
   CMB's. Settling it needs more sky (a southern survey joined on one flux scale), or a census where the payload's
   weighting is smaller.
 - The dipole is parked here, with nothing killed and nothing tested at the power fixed.
+
+### Data sources for a powered run (9 Nov; Tom: "lets find data sources to make it robust.")
+
+Looked for, nothing downloaded and nothing run. Reachability was checked from this environment on 9 Nov. The CDS hosts
+and every VizieR mirror tried (CDS, NAO, INASAN, IUCAA, China-VO) did not answer. The CfA mirror answered, but its
+database was down that morning. These did answer:
+
+- **CASDA's TAP service** (`casda.csiro.au/casda_vo_tools/tap`, ADQL, CSV out), the ASKAP surveys' own archive, schema
+  `AS110` (RACS):
+
+  | Table | Survey | Frequency | Sources | Declination |
+  |---|---|---|---|---|
+  | `racs_dr1_sources_galacticcut_v2021_08_v02` | RACS-low DR1 (Hale et al. 2021) | 887.5 MHz | 2,123,638 | −84.7° to +29.1° |
+  | `racs_low2_v02` | RACS-low, second epoch | 887.5 MHz | 5,324,477 (Gaussian components, not sources) | −89.9° to +47.9° |
+  | `racs_mid_sources_v01` | RACS-mid (Duchesne et al. 2024) | 1367.5 MHz | 3,105,668 | −90° to +49.4° |
+  | `racs_mid_25arcsec_sources_v01` | RACS-mid at 25″ | 1367.5 MHz | 2,154,585 | −90° to +30° |
+  | `racs_high_sources_v01` | RACS-high (Duchesne et al. 2025) | 1655.5 MHz | 2,677,509 | −90° to +48° |
+
+  Each table carries total and peak flux with their errors, the local noise, Galactic coordinates, a source code and
+  flags. RACS-mid also carries a per-source flux-scale error (`e_flux_scale`), the scan time and the SBID, so the
+  patching across tiles can be modelled.
+- **HEASARC's TAP service** (`heasarc.gsfc.nasa.gov/xamin/vo/tap`):
+
+  | Table | Sources | Declination | Use |
+  |---|---|---|---|
+  | `nvss` | 1,773,484 | −40.4° to +89.8° | the same rows as runs 2–3 |
+  | `sumss` | 211,050 | −89.9° to −26.0° | 843 MHz, the old southern survey; shallow (about 6–10 mJy) |
+  | `wenss` | 229,420 | +28.6° to +89.8° | 325 MHz, northern |
+  | `gleamegcat` | 307,455 | −89.7° to +30.0° | 72–231 MHz |
+  | `vlass821p4` | 17,969 | a strip at ±1.4° | not the full VLASS: of no use here |
+
+- **LoTSS-DR2** (Shimwell et al. 2022), from `lofar-surveys.org`: the masked source list,
+  `LoTSS_DR2_v110_masked.srl.fits`, 950 MB, 144 MHz, about 27% of the northern sky.
+- **Not reached:** the full VLASS catalogue (CIRADA, Gordon et al. 2021; about 3.4 million components, 3 GHz,
+  dec > −40°). It is on VizieR as J/ApJS/255/30 and could be fetched once VizieR's database answers.
+
+What each would do for the two weak points of runs 1–3:
+
+1. **More sky, on one flux scale.** RACS-mid is at 1367.5 MHz, within 2.5% of NVSS's 1400 MHz.
+   - It covers −90° to +49°; NVSS covers −40° to +90°. Joined, they cover the whole sky outside the plane, with a
+     shared band from −40° to +49° to tie the flux scales (a ratio fitted on the overlap, per declination band, before
+     the dipole is looked at).
+   - The jackknife's large-scale scatter is what limited runs 2–3. With the whole sky the dipole no longer leans on a
+     polar component the mask leaves undetermined. RACS-mid also brings a second instrument, so a scatter that belongs
+     to one survey would show as a disagreement between hemispheres.
+   - The published route (Wagenveld, Klöckner and Schwarz 2023, RACS-low with NVSS; Oayda et al. on RACS) is known
+     beforehand. Their numbers are to be read and stated in the next plan before anything is fitted.
+2. **A colour not resting on TGSS.** RACS-low (887.5 MHz) against RACS-mid (1367.5 MHz) gives each source's α from one
+   telescope over the same sky, in the same beam family. RACS-high (1655.5 MHz) gives a third point. That replaces run
+   1's TGSS × NVSS colours, which covered half the sky. The prediction to test again is R2's: one β over α terciles.
+3. **A second check on the payload's part.** LoTSS-DR2 at 144 MHz is deep, with x and α of its own. It covers only the
+   north, so it is a check on β across frequency, not a route to power.
+
+Before any of it is run, the next plan (run 4) writes down:
+- the joined sample's cuts (flux, the Galactic plane, the flags);
+- how the overlap fixes the flux ratio;
+- the power condition, again 1.0·10⁻³, with a forecast of the error from the joined sky's counts;
+- the predictions, again one β across slices and agreement with CatWISE;
+- the numbers from the published joined analyses, quoted as known beforehand.
+
+Each table's sha256 goes in that plan when it is fetched; no large data is committed.
