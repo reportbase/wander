@@ -78,4 +78,5 @@ Nothing killed. ChatGPT's mathematics holds as stated: the metric, the curvature
   reads allow (F6; seeded 0.803): to know more than the median gives, the reads must be joined by a likelihood, a write.
 
 Proposed, not made: one sentence in *Reads and Writes* §2 (the standpoints' plane carries the Fisher metric, half the
-Poincaré; distinguishability is invariant yet joins two reads); Tom's call.
+Poincaré; distinguishability is invariant yet joins two reads); Tom's call. Made (Tom: "yes"): §2, "How far
+apart two standpoints are".

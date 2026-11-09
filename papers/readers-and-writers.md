@@ -284,6 +284,14 @@ the heat over the reader's directions. "Find the turn" is, more generally, "find
 and how the line is reached from it. A fat tail with no z, as in the seed kernels of §11, is not harmonic measure by any
 route.
 
+**How far apart two standpoints are.** The standpoints z = m + iγ form the hyperbolic plane, and the family carries it as
+its own measure of distinguishability: the Fisher metric of C(m, γ) is (dm² + dγ²)/(2γ²), half the Poincaré metric, and
+the divergence between two members is 2·ln cosh(d/2), d their hyperbolic distance (Chyzak and Nielsen give the closed
+form). Every real Möbius map leaves it as it was, scaling the world among them, so it passes the first test; yet it is a
+quantity of two standpoints, two reads joined, and so a write: one more case where being unmoved by scaling is necessary
+for a reading and not enough. At one foot the distance is |ln r| for heights in the ratio r, the writer's count ln(d/H)
+of §1's plane, and standing higher on both sides only makes them harder to tell apart.
+
 **The Cauchy, derived from H and from V.** The Cauchy is usually met as a family with two parameters, a location m and a
 scale γ. Derived from what an observer holds, it comes in three forms, and the parameters arrive with V.
 
@@ -1384,7 +1392,7 @@ reader stands, in `read.html`; the heat on a flat screen and a lens's cos⁴ aga
 sky); the tunnel laid by its heat, the distance reading and a world culled by K in `crosshairs.html`; a cube of dots coloured
 by one read's heat, laid as the read lays it and seen from the eye, in `heat-cube.html`; Euler's formula as
 a count of reads in `plans/elm-plan.md` and `runs/elm/`; Euler's plane, the thumb's lay as a turn, the writer's sphere
-behind both, the heat counted per chart and two turns of space in `euler.html`. Loops of a read and a write, of two reads and of a read with a write in two unequal lengths are `plans/brl-plan.md` and `runs/brl/`. A flat chart for the read in space, and what it keeps and bends, is `plans/flc-plan.md` with `runs/flc/`. The read as a control, a dial, a dome, a dome over a map and a dome played as sound, is in the calendar repository (reportbase/calendar): `dial.js` and `dome.js`, with `horizon.html`, `dome.html`, `dome-map.html` and `dome-instrument.html`. The three cases in data of §11 (LIGO, the quasar dipole, single
+behind both, the heat counted per chart and two turns of space in `euler.html`. Loops of a read and a write, of two reads and of a read with a write in two unequal lengths are `plans/brl-plan.md` and `runs/brl/`. The distance between standpoints, the Fisher metric and the divergence, is `plans/frg-plan.md` with `runs/frg/frg.py`. A flat chart for the read in space, and what it keeps and bends, is `plans/flc-plan.md` with `runs/flc/`. The read as a control, a dial, a dome, a dome over a map and a dome played as sound, is in the calendar repository (reportbase/calendar): `dial.js` and `dome.js`, with `horizon.html`, `dome.html`, `dome-map.html` and `dome-instrument.html`. The three cases in data of §11 (LIGO, the quasar dipole, single
 photons) are `plans/lgo-plan.md`, `plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and
 `runs/wvp/`: each plan states its predictions and what would count against them before its run, and records the runs as
 they came out, the killed ones too. They illustrate the sorting of direction from payload; none of them alone
@@ -1414,6 +1422,8 @@ the companion paper *Reads and Writes in Physics* (`papers/reads-and-writes-phys
   Astronomical Society* 133, 67–83.
 - Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
   Review* 4, 345–376.
+- Chyzak, F. and Nielsen, F. (2019). A closed-form formula for the Kullback–Leibler divergence between Cauchy
+  distributions. arXiv:1905.10965.
 - Clark, J. S., Silman, M., Kern, R., Macklin, E. and HilleRisLambers, J. (1999). Seed dispersal near and far:
   patterns across temperate and tropical forests. *Ecology* 80(5), 1475–1494.
 - Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal für die reine und angewandte
