@@ -1,0 +1,3 @@
+B3' scalar part vs form: max diff 3.89e-61 over 230 draws x 4 sign choices (13 with Omega > pi)
+B3' quaternion image vs run 1's matrix M: max diff 8.56e-61
+-> held

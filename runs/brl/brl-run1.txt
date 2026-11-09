@@ -1,0 +1,14 @@
+B1 plane breath: max |M-1| = 1.66e-61  -> held
+B2 space breath: max |M-I| = 1.56e-61  -> held
+B3 two reads: residual a turn (orth/det err 6.22e-61); max |Omega - form| = 2.86  -> KILLED
+B6 equal angles = W7: max diff 9.35e-60  -> held
+B4 small loop, first about x, then y (phi = 90 deg), alpha = beta = eps:
+   eps=1e-1: Omega/(eps^2) = 0.9991679834633, axis = (0.0499, -0.0499, -0.99750519)
+   eps=1e-2: Omega/(eps^2) = 0.999991666798608, axis = (0.005, -0.005, -0.999975)
+   eps=1e-3: Omega/(eps^2) = 0.99999991666668, axis = (0.0005, -0.0005, -0.99999975)
+   eps=1e-4: Omega/(eps^2) = 0.999999999166667, axis = (5.0e-5, -5.0e-5, -1.0)
+   eps=1e-5: Omega/(eps^2) = 0.999999999991667, axis = (5.0e-6, -5.0e-6, -1.0)
+   eps=1e-6: Omega/(eps^2) = 0.999999999999917, axis = (5.0e-7, -5.0e-7, -1.0)
+   -> held (axis -z)
+   alpha=2e-5, beta=3e-5, phi=60: Omega/(alpha beta sin phi) = 0.999999999945833, axis z -1.0
+B5 a write inserted: matched max |M - two-read M| = 1.56e-61; unmatched max |M - k*M| = 1.24e-60  -> held

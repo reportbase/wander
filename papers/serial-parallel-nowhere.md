@@ -7410,6 +7410,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R783** (9 Nov; Tom: "yes", to checking the breath note's loop exactly): BRL (`plans/brl-plan.md` + `runs/brl/`,
+  60 digits). A breath, a read (a turn) and a write (a scaling), closes in the plane and in space alike, to 10⁻⁶¹: a uniform
+  scaling commutes with every turn of space, and a write put anywhere into a loop changes only its overall size. The note's
+  "each breath in space comes home turned" (R778) was wrong: that loop was two turns about two axes, two reads joined, with
+  no write in it. Its leftover is exact, cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ about n₂ × n₁, Ω ≈ αβ·sin φ (TWG W7
+  the equal-angle case), the reads' sphere's holonomy (HOL), not breathing's. Run 1's B3 killed by my measure (an angle
+  read from a rotation matrix folds Ω above π), run 2 in quaternions not. Classical; nothing in the papers changes, since
+  §8's breath names no leftover.
 - **R782** (9 Nov; a ChatGPT read of version 15 against 14, pasted): three corrections to §8's mountain, each checked.
   The scale test miscounted (R780's "the count of strides moves, by k"): with the stride scaled by k as well, the number
   of strides is unchanged; the length in fixed metres moves by k, the pace per metre by 1/k, and the walk written in
