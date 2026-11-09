@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R779** (9 Nov; Tom: "yes", to drafting the breath note's mountain walk into *Reads and Writes*): §8, after "Walking to
+  the mountain", "The mountain's own corner": each edge's read s = (V*/2)/d gives Z = (1 + is)/(1 − is) with no angle;
+  far off home (Z = 1), the mountain's own corner at half a breadth (Z = i), the foot the horizon (Z → −1, e^(iπ) = −1 its
+  name, never a read); the thumb's corner thirty breadths off, sixty times farther; the turn paced by sech per ratio and by
+  the Cauchy per metre, π/2 from the corner either way, neither the breadth; the breadth written by counting strides. From
+  `plans/breath-note.md` §5; breathing itself not in the paper.
 - **R778** (9 Nov; Tom: "the most intersting idea is that unexplored idea is that observation is like breathing, the
   read/write being the inhale/exhale. Eulers best captures that idea.", then "yes"): R727's metaphor taken up in a working
   note, `plans/breath-note.md`, not in any paper. On Euler's plane ln(z/H) = ln(d/H) + iθ the read is the up axis (a turn,

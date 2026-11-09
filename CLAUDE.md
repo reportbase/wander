@@ -379,7 +379,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   best captures that idea.", then "yes"): a working note, no paper. On Euler's plane the read is the up axis (iθ, a turn,
   wrapping only when joined) and the write the across axis (ln(d/H), scale, counted in thumbs); a breath is a loop, closing
   in the plane and leaving about α·β in space (holonomy, HOL); the read's law from z = m + iγ heard as e^(imt − γ|t|), a
-  breath fading. Open: the leftover checked exactly first.
+  breath fading. Open: the leftover checked exactly first. R779 (Tom: "yes"): its §5, the mountain walk, in *Reads and Writes* §8 "The mountain's own corner"
+  (no breathing in the paper).
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
