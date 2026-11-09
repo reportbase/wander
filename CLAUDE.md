@@ -385,6 +385,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   turn and a scaling) closes in the plane and in space alike (scaling is central); the note's leftover in space belonged to
   a loop of two reads (two turns about two axes), cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ, TWG W7 its equal-angle case.
   Run 1's B3 killed by my measure (Ω folded into [0, π]), run 2 in quaternions not. The note's §2 corrected.
+  Run 3 (R784, nothing killed): the unsteady breath, a turn and a stretch (V = cH): the loop leaves a squeeze,
+  cosh ζ = 1 + 2·sin²α·sinh²(½ ln c), ζ ≈ |α·ln c|, accumulating, closed only at c = 1; a breath is steady exactly at V = H.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

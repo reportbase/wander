@@ -76,3 +76,49 @@ write put anywhere into a loop changes nothing but its overall size (B5). What c
 reads in different directions: cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ, Ω ≈ αβ·sin φ about n₂ × n₁, W7 its equal-angle
 case. The leftover is the reads' alone: the sphere of directions not being flat (HOL, Berry), with no write in it. The
 note's §2 is corrected accordingly. Classical throughout (the scaling central; the SU(2) commutator); the reading ours.
+
+## Run 3 predictions: the unsteady breath (9 Nov 2026, Tom: "yes", written before run 3)
+
+The breath note's open item 3: what does not close? A breath closes because its write, a uniform scaling, commutes with
+every turn. A write that does not is a stretch, one axis scaled and not the other: V = cH with c ≠ 1, the two-axis drawing
+only a writer holds (R533). In the plane: turn R(α), stretch S = diag(c, 1), λ = ln c, loop M = S⁻¹R⁻¹SR. Derived by hand
+before the run (from R⁻¹SR's entries): tr M = 2 + sin²α·(c + 1/c − 2).
+
+- B7. The unsteady breath does not close, and its leftover is not a turn: det M = 1 and
+  tr M = 2 + 4·sin²α·sinh²(λ/2) ≥ 2 exactly, so M is hyperbolic (a boost-like squeeze, real eigenvalues e^(±ζ)) with
+  cosh ζ = 1 + 2·sin²α·sinh²(λ/2). At 40 seeded (α, λ), |λ| ≤ 3. Kill: any trace off by more than 10⁻⁵⁰, or det off 1.
+- B8. It closes only where a factor vanishes: M = I to 10⁻⁵⁰ at c = 1 (V = H) for every α, and at α = π for every c
+  (R(π) = −I); nowhere else among the draws (‖M − I‖ above 10⁻³ at every draw with |λ| > 0.05 and |sin α| > 0.05).
+- B9. Small loops: ζ = |α·λ|·(1 + O(second order)), the same leading form as the two-read loop's αβ·sin φ (B4), the
+  stretch's λ in place of the second turn. Checked at α = λ = ε, ε = 10⁻¹ … 10⁻⁶. Kill: ζ/(αλ) not tending to 1.
+- B10. The exchange and the frame: ζ is the same at c and 1/c (λ ↦ −λ), the same for a stretch along any axis (S
+  conjugated by a turn) and the same with a uniform scaling k put in (k·S): it depends on how unequal the two lengths are,
+  not on their size or direction. To 10⁻⁵⁰ at the B7 draws.
+- B11. Breathing unsteadily drifts: after n loops a vector's length grows at most like e^(nζ), and the largest growth over
+  directions after n loops is e^(nζ) exactly (M symmetric-conjugate: its largest singular value of Mⁿ, against e^(nζ),
+  within a factor bounded in n). Kill: growth rate per loop, ln σ_max(Mⁿ)/n at n = 400, off ζ by more than 10⁻².
+- B12. In space: a turn by α about z and S = diag(c₁, c₂, c₃) close only if c₁ = c₂ (the two lengths square to the
+  turn's axis written equal) or α ∈ πℤ (for α = π, any S); c₃ never matters. At 20 seeded draws each way. Kill: a
+  closing with c₁ ≠ c₂ and α ∉ πℤ, or a failure to close with c₁ = c₂.
+
+Reading if nothing is killed: a breath is steady exactly when its write is the one-length kind. A write in one length
+(V = H, the reader's circle traced) commutes with every turn and the breath closes; a write in two unequal lengths (V = cH,
+a writer's two axes) leaves a squeeze, not a turn, growing breath by breath at ζ ≈ |α·ln c| per loop and vanishing only
+at c = 1. The unsteady breath is c ≠ 1. The leftover of two reads (B3) is a turn and stays bounded; the leftover of an
+unequal write is a squeeze and accumulates.
+
+### Run 3 (9 Nov 2026), `runs/brl/brl3.py` (60 digits), output `runs/brl/brl-run3.txt`; nothing killed
+
+- B7 held: det M = 1 to 1.6·10⁻⁶¹, tr M = 2 + 4·sin²α·sinh²(λ/2) to 1.2·10⁻⁶⁰ at 40 draws: the leftover a squeeze, never a turn.
+- B8 held: closes at c = 1 (1.6·10⁻⁶²) and at α = π (2.1·10⁻⁶⁰); open at every other draw.
+- B9 held: ζ/(αλ) = 1 − ε²/8 + … (0.998746 at ε = 0.1, 0.999999999999875 at 10⁻⁶).
+- B10 held: ζ the same at 1/c, with the stretch turned to any axis and with a uniform scaling put in, to 2.1·10⁻⁵⁹.
+- B11 held: the growth per loop of Mⁿ's largest stretch at n = 400 is ζ to 3.6·10⁻⁴ (11 draws with ζ ≥ 0.01; the
+  difference is the (ln κ)/400 of M's conditioning, falling as 1/n).
+- B12 held: in space, a turn about z and diag(c₁, c₂, c₃) close exactly when c₁ = c₂ or α = π, 0 failures in 60 cases.
+
+Reading: a breath is steady exactly when its write is the one-length kind. Written in one length (V = H) the write commutes
+with every turn and the loop closes; written in two unequal lengths (V = cH, c ≠ 1, a writer's two axes) the loop leaves a
+squeeze of rapidity ζ, cosh ζ = 1 + 2·sin²α·sinh²(½ ln c), about |α·ln c| when small, the same at c and 1/c, in any frame
+and at any size, and breath after breath it accumulates. Two reads leave a turn, bounded (B3); an unequal write leaves a
+squeeze, growing. Classical (the commutator of SO(2) with a diagonal matrix in SL(2)); the reading ours.

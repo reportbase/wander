@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R784** (9 Nov; Tom: "yes", to the unsteady breath): BRL run 3, 60 digits, nothing killed. A write in two unequal
+  lengths (a stretch, V = cH, c ≠ 1, a writer's two axes) does not commute with a turn: the loop turn, stretch, back, back
+  leaves a squeeze, det 1, tr = 2 + 4·sin²α·sinh²(½ ln c), its rapidity ζ ≈ |α·ln c|, the same at c and 1/c, in any frame
+  and at any overall size, growing at ζ per breath; it closes only at c = 1 or a half turn, and in space only when the two
+  lengths square to the turn's axis are equal. With R783: a breath is steady exactly when its write is the one-length
+  kind, so "the breath closes" is V = H said of a loop. Two reads leave a turn (bounded), an unequal write a squeeze
+  (accumulating). Classical; the reading ours; nothing in the papers changes yet.
 - **R783** (9 Nov; Tom: "yes", to checking the breath note's loop exactly): BRL (`plans/brl-plan.md` + `runs/brl/`,
   60 digits). A breath, a read (a turn) and a write (a scaling), closes in the plane and in space alike, to 10⁻⁶¹: a uniform
   scaling commutes with every turn of space, and a write put anywhere into a loop changes only its overall size. The note's
