@@ -1,0 +1,14 @@
+rows 1773484
+kept pixels 29168 (0.593 of the sky)
+kept pixels 29168, of them below dec -10: 8575
+
+Whole: N 232767 D 0.0210 +- 0.0058 (boot 0.0040, jk 0.0058) axis (247.9, 23.4) 99% 71.3; step below -10: +0.0023 of the monopole
+  x 0.889, 2 + x(1.75) 3.556, beta-hat 5.899e-03 +- 1.629e-03 (4.78 x CMB); axis 27.9 from CMB, 21.7 from CatWISE
+R6'': 1.63e-03 vs 1.0e-3 -> UNPOWERED: the rest reported, not counted
+  20-40: N 112370 x_eff 0.759 D 0.0201 +- 0.0063 beta/CMB 4.88 +- 1.54 axis (235, 34)
+  40-80: N 63845 x_eff 0.870 D 0.0324 +- 0.0124 beta/CMB 7.46 +- 2.84 axis (266, -9)
+  80-160: N 32779 x_eff 1.041 D 0.0267 +- 0.0195 beta/CMB 5.66 +- 4.13 axis (296, 4)
+  160-up: N 23773 x_eff 1.346 D 0.0547 +- 0.0232 beta/CMB 10.18 +- 4.33 axis (166, 46)
+R1'': one beta 5.87 x CMB, chi2 1.72 on 3, p = 0.633 -> not killed
+R3'': 1.53 sigma from CatWISE -> not killed; (reported) 2.86 sigma from the CMB's
+R4'': 21.7 deg from CatWISE, radius 77.9 -> not killed

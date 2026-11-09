@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R771** (9 Nov; Tom: "proceed"): RDD run 3. NVSS's change of array configuration at dec −10° was modelled as one
+  step, its form taken from the survey's design. The step is +0.23%, and the run is still unpowered (1.63·10⁻³ against
+  10⁻³; the step shares shape with the polar component, as foreseen). Reported, not counted: β̂ 4.8 times the CMB's,
+  1.5 σ from CatWISE's, flux slices one β, the axis 22° from CatWISE's. Over three runs the radio β is stable near five
+  times the CMB's and nothing was killed. The limit is the survey's large-scale scatter. Parked until a southern survey
+  can be joined on one flux scale.
 - **R770** (9 Nov; Tom: "proceed"): RDD run 2 on the full NVSS, its power fixed first (β̂'s error under 10⁻³).
   Unpowered (1.76·10⁻³ as run; the count slope taken from the cut sample, my code; 1.38·10⁻³ post hoc with it
   corrected), so R1′, R3′, R4′ were reported and not counted; none would have killed. Post hoc: β̂ about 4.9 times the

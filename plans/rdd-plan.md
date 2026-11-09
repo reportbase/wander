@@ -193,3 +193,27 @@ so only the estimator changes, and its form is taken from how the survey was mad
   (3.31 ± 0.46)·10⁻³; **R4″** the axis within the combined 99% radius of CatWISE's.
 - **What could go wrong, said now:** a step at −10° shares part of its shape with the dipole's polar component, so the
   fit's errors may grow rather than shrink. If they do, the run is unpowered and says so.
+
+#### Run 3 (9 Nov; `runs/rdd/rdd3.py`, output `runs/rdd/rdd-run3.txt`)
+
+One attempt, as fixed. Of 29,168 kept pixels, 8,575 lie south of −10°.
+- The fitted step there is +0.23% of the monopole: at 20 mJy and above, the change of configuration barely shows in the
+  counts.
+- **Whole sample.** D = 0.0210 ± 0.0058 (bootstrap 0.0040, jackknife 0.0058) toward (247.9°, 23.4°): 27.9° from the
+  CMB's axis and 21.7° from CatWISE's. β̂ is (5.90 ± 1.63)·10⁻³, 4.8 times the CMB's.
+- **R6″: unpowered** (1.63·10⁻³ against 1.0·10⁻³). As said beforehand might happen, the step shares part of its shape
+  with the polar component and the errors grew (run 2's corrected 1.38·10⁻³ became 1.63·10⁻³).
+- Reported, not counted:
+  - R1″ one β over the flux slices (p = 0.63; 4.9, 7.5, 5.7, 10.2 times the CMB's);
+  - R3″ 1.53 σ from CatWISE's β (2.86 σ from the CMB's);
+  - R4″ 21.7° from CatWISE's axis, within a 78° radius.
+
+Read plainly, over the three runs:
+- The radio dipole is stable at about five times the CMB's β.
+- Every flux slice agrees on one β, and the axis lies within 20–30° of both CatWISE's and the CMB's.
+- The step that NVSS's configurations would leave is not what limits it. The jackknife's large-scale scatter is, and it
+  sits at 1.4–1.6·10⁻³ in β whatever the estimator.
+- One survey covering 60% of the sky cannot settle whether radio and infrared read one motion at 2.7 or at 5 times the
+  CMB's. Settling it needs more sky (a southern survey joined on one flux scale), or a census where the payload's
+  weighting is smaller.
+- The dipole is parked here, with nothing killed and nothing tested at the power fixed.
