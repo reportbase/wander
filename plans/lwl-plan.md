@@ -150,3 +150,17 @@ from a reachable source with its sha256). Run 2 looks for ⁵⁷Fe's 14.4 keV le
 - **L6.** All pairs of runs 1 and 2 together: χ² of (Γτ − 1)/σ with p above 0.001.
 - **Untested**, said plainly, if no energy-domain natural width for ⁵⁷Fe is reachable. A width computed from the lifetime
   (as compilations give it) does not count; nor does a measured line width with no extraction of the natural part.
+
+### Run 2 (9 Nov 2026), web search only; L5 untested
+
+Two extended web searches for an energy-domain natural width of ⁵⁷Fe's 14.4 keV level. What came back:
+- 0.097 mm/s (half width) and 4.66 neV as "the natural width": each, where its derivation shows, is ħ/τ from the lifetime
+  (141.8 ns in the ELTE lab notes), so by the rules it does not count.
+- 15 neV, the ESRF synchrotron Mössbauer source's bandwidth: an instrument's, not the line's.
+- Student reports (MIT) that extrapolate absorber widths to zero thickness: the intercept includes the source's width, its
+  units were not recoverable from the snippets, and the Wisconsin copy was blocked by this session's network
+  (moessbauer.chem.wisc.edu not allowed). Not a primary measurement with an error.
+
+**L5 untested**: no energy-domain extraction of ⁵⁷Fe's natural width, with its own error, was reachable here. **L6** is
+unchanged from run 1 (five pairs, χ² 8.43 on 5). A run 3 would need a primary paper that fits the thickness series with
+the source's width as a free parameter (or a synchrotron line with known instrument function), read in full.
