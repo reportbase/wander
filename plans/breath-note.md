@@ -125,6 +125,24 @@ leaves it open until `approach.html`'s rule is read. Read, the rule is not an ar
 So the open question closes this way: the stride count is a length walked (a write), the areas are turns (named by the
 writer, the read's own being Z); they meet only at the corner, where the ratio is 1 and a length walked and a reading agree.
 
+**(e) One turn, two rates, and a count** (9 Nov, a ChatGPT note on (d)). Its summary, checked: with H = V*/2 and
+x = ln(H/d),
+
+  dα = sech x·dx = −2H/(H² + d²)·dd,
+
+one turn under two measures (thumbs and metres), the minus because d falls as one walks; the stride count a third quantity,
+written, equal to neither area. It proposes this as *Reads and Writes*' central mountain example: the rational read gives Z,
+the two heats pace the one turn, the walk is the record, Euler names the end. Two corrections:
+
+- **Which end is the horizon.** It says "from the far horizon to the foot". On this walk far off is *home*: s = 0, Z = 1, the
+  edges together. The *foot* is the horizon: s → ∞, Z → −1, never reached by a read. Walking toward the mountain is walking
+  from home toward the horizon; the half turn sits at the end one arrives at by counting, not at the end one leaves.
+- **Not a test.** It calls the example "testable". The identities are classical and cannot fail; what could fail is a claim
+  about readers (that a walker's sense of the mountain's growth goes by sech per halving rather than by metres), which is
+  not made here and would need its own plan.
+
+Whether it goes into *Reads and Writes* is Tom's to rule; until then it stays here.
+
 Corrections to the note as pasted: "as you approach … the mountain occupies a larger angle" is the writer's account of
 reads joined (R651); each read is one present s, with no "approaching" in it. And π and e are given the corpus's roles
 already (R626, R597): π with the turn closing (the address), e with the open scale (the payload's and the write's axis);
