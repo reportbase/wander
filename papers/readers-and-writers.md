@@ -1165,19 +1165,23 @@ The areas are turns; the breadth is written by a count. Strides from the mountai
 walker's stride, since the read there is 1; strides from the thumb's corner, times the thumb's H/L, write V\* in strides. The count is
 discrete and ends; the turn is never completed by any number of halvings. They agree only at a corner, where a read is 1
 and a length walked and a ratio held say the same. The first test sorts them on this walk (§1): scale the world, the
-mountain, the walk and the walker's stride by k, and every s, every Z and the pace per halving stay as they were;
-what moves is what is counted in metres, the pace per metre (by 1/k) and the count of strides (by k).
+mountain, the walk and the walker's stride by k, and every s, every Z and the pace per halving stay as they were. The
+length written in fixed metres moves by k and the pace per metre by 1/k; the number of strides, the stride scaling with
+the walk, stays as it was: written in one's own stride, the walk is unmoved, and only the metre carried in moves.
 
 Only then does Euler's formula enter, and as a name. The writer, holding the reads joined, names each point Z =
 e^(iα), α the angle the mountain spans, and calls the end the walk heads for e^(iπ) = −1 (§5). The formula describes
 that end; it does not drive the walk, and no read along the way holds it: each holds one s, now, and the Z it gives.
 Joined, the reads telescope: the product of Z_(j+1)/Z_j along the walk is Z_N/Z_0, the first and last reads alone.
+For every finite walk the product ends at its last read; only in the limiting completion, the writer's, does it tend
+to −1.
 The joining is the write (reads are unconnected, §1); naming the angles turns that product into e^(iΣΔα), a sum of
 turns, one composition written two ways.
 
 This is the walk's breath. The read is the inhale: a present ratio, held at every standpoint, unmoved by the world's
-scale. Each stride is an exhale: a counted step, discrete, ending. Walking, they come together and look like one act;
-standing still, only the inhale is left, and one standpoint writes nothing.
+scale. Each stride is an exhale: a counted step, discrete, ending. Walking, they come together and look like one act.
+At rest the asymmetry is plain: the read is still there at every moment, but no succession of standpoints is being
+written, and one standpoint places nothing. A read alone does not write its own history.
 
 **Knowing V comes by degrees.** The crossing is not a switch thrown. It has three counts.
 

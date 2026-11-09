@@ -7410,6 +7410,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R782** (9 Nov; a ChatGPT read of version 15 against 14, pasted): three corrections to §8's mountain, each checked.
+  The scale test miscounted (R780's "the count of strides moves, by k"): with the stride scaled by k as well, the number
+  of strides is unchanged; the length in fixed metres moves by k, the pace per metre by 1/k, and the walk written in
+  one's own stride is unmoved (as RWT's one known move writes in the reader's own H). The breath's last clause, "one
+  standpoint writes nothing", was too absolute (a reader at rest can still count ticks or agree a unit, R649): now no
+  succession of standpoints is written and one standpoint places nothing (RWT's nullity), and "A read alone does not
+  write its own history" (R652). The telescoped product: every finite walk ends at its last read, −1 only in the
+  writer's limiting completion.
 - **R781** (9 Nov; Tom: a ChatGPT diff of §8, "chatgpt suggested changes"): taken, checked: in "Walking to the mountain",
   "each such stretch takes as much of the heat as the last" was false of the turn (per halving of the distance the gain
   in the thumb's turn is greatest at its corner and falls off both ways, 7°, 12.5°, 18.4°, 18.4°, … about it, as §7's
