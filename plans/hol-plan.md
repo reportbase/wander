@@ -163,3 +163,21 @@ which is the whole solid angle (the two spin states' phases differ by Ω).
 
 **Bridges named.** None for the turn against Ω (two directions). For neutrons, the field strength and speed enter only
 the adiabaticity condition and the dynamical phase, which the experiments separate; both amounts, both carried in.
+
+**Sources found, before any number is read (9 Nov).**
+- Tomita and Chiao 1986 and Bitter and Dubbers 1987: abstracts only (OpenAlex); the papers are not open here.
+- **Leek et al. 2007** (Science 318, 1889; arXiv:0711.0218, source sha256
+  `4a197a155bddf982c60b9394e1b8dac211335dc90f2ede79381106d73ea8abc6`): Berry's phase of a superconducting qubit, the
+  field direction taken round cones of half-angle θ, Θ = 2π(1 − cos θ). From the text, before the figure was looked at:
+  - every experiment adiabatic (A ≤ 0.04), so every point counts;
+  - the sequence (loop, spin-echo π pulse, loop reversed) cancels the dynamical phase and leaves φ = 2γ_C, where γ_C is
+    the relative phase of the two states over n loops, nΘ (each state ±Θ/2 a loop); so the turn compared is φ against
+    the total solid angle 2nΘ, signed by the direction of the paths, with C₊₊ predicted zero. The text says "slope 2n";
+    the caption's "slope n = ±1, ±1.5" disagrees, and the text's reading is the one fixed here;
+  - the numbers are only in Fig. 3A, a raster image (fig3.eps holds a JPEG), so they are read by hand from it, each
+    reading's error half the smallest tick on its axis unless the figure's own error bars are larger;
+  - the paper's own summary: an r.m.s. deviation of 0.14 rad from the predicted lines across all sets.
+  - H10 can be tried only with T: the text says the phase was independent of T, without numbers; reported, not counted.
+- arXiv:2407.19425 (a 2024 theory paper on helical fibres, sha256 `8823785dbf80f4af954af2428333d26ab4118f77c4f4293743ea904927ec1b3b`)
+  quotes no data; it names measurements in Ross 1984, Tomita and Chiao 1986, Hannonen 2020 and Ferrer-Garcia 2023, to be
+  sought.
