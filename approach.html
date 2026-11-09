@@ -29,6 +29,8 @@
     and in metres once the stride is carried in. Scaling the world (k on V* and the start) moves no reading along the walk,
     only the count.
     Links: ?thing=house|tower|mountain&k=<log10 k>&pace=steady|ease&count=1&ground=0&u=<0..1>&play=1.
+    The two paces (R785): the angle the thing spans per halving of d (sech x, x = ln(V*/2d)) and per metre walked
+    (the Cauchy in d, half-width V*/2), its own corner at d = V*/2, Z = i (hook paces(d)).
     Test hook: window.__approach.
     -->
     <style>
@@ -93,6 +95,12 @@
             own ticks (a count, a write), against ticks walked. Its slope τ̇ is scale-free and a write too: −1 at a steady pace,
             past Lee's −½ (you arrive at speed); held at −½ you stop at the foot.</p></div>
         </div>
+        <canvas id="paces" height="250" style="margin-top:10px"></canvas>
+        <p class="cap">The turn the thing spans, taken in at two paces (<i>Reads and Writes</i> §8, "The mountain's own corner").
+        Its own corner is where the distance is half its breadth: it spans a right angle there, Z = i, sixty times nearer than
+        where it covers the thumb. Left, per halving of the distance: sech x, x = ln(V*/2d), peaked at its corner, the same on
+        both sides. Right, per unit of distance walked, counted in its half-breadths: the Cauchy, highest at the foot, half
+        there at its corner. One turn, two measures.</p>
         <canvas id="ground" height="110" style="margin-top:10px"></canvas>
         <p class="cap" id="groundCap">The writer's ground, which the reader never sees: you, the thing, the distance, the corner's
         place. Strides counted from the corner are marked.</p>
@@ -133,6 +141,12 @@
         const du = 1 / TICKS; return tauRead(Math.min(u, 1 - 3 * du), pace, thing, k) - tauRead(Math.min(u, 1 - 3 * du) - du, pace, thing, k);
     };
     // strides from the corner to the foot, and the thing written from them
+    // the thing's own corner (R779–R781): s = (V*/2)/d, Z = (1 + is)/(1 − is) = e^(iα), α = 2·atan(s) the angle it spans;
+    // x = ln(V*/2d); per halving dα/dx = sech x; per metre walked dα/dℓ = V*/((V*/2)² + d²). Its corner at d = V*/2.
+    function paces(d = dOf(S.u), thing = S.thing, k = S.k) { const b = Vstar(thing, k) / 2, s = d <= 0 ? Infinity : b / d;
+        const x = Math.log(s), al = 2 * Math.atan(s), Z = isFinite(s) ? [(1 - s * s) / (1 + s * s), 2 * s / (1 + s * s)] : [-1, 0];
+        return { s, x, alpha: al, Z, perHalving: 1 / Math.cosh(x), perMetre: 2 * b / (b * b + d * d), ownCorner: b,
+            thumbCorner: cornerD(thing, k), thumbX: Math.log(HL / 2) }; }
     const stridesFromCorner = (thing = S.thing, k = S.k) => cornerD(thing, k) / STRIDE;
     const writeV = (strides) => ({ inStrides: strides * HL, inMetres: strides * HL * STRIDE });
     function words(x) {
@@ -209,6 +223,30 @@
         g.fillStyle = 'rgba(217,110,91,0.9)'; g.fillText('steady: τ̇ = −1', X(TICKS * 0.55), Y(TICKS * 0.5) - 6);
         g.fillStyle = 'rgba(140,230,205,0.9)'; g.fillText('eased: τ̇ = −½', X(TICKS * 0.5), Y(TICKS * 0.25) + 18);
         if (!arrived) { const tk = S.u * TICKS; g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(X(tk), Y(tauRead(S.u)), 4, 0, 2 * Math.PI); g.fill(); }
+        // ── the two paces ──
+        { [g, W, H] = fit($('paces')); g.fillStyle = '#000'; g.fillRect(0, 0, W, H); g.font = '11px DM Mono, monospace';
+          const pc = paces(d), half = (W - 36) / 2, top = 20, bot = H - 30;
+          // left: per halving, sech x against x from −7 to 4
+          const X0 = -7, X1 = 4, lx = xx => 14 + (xx - X0) / (X1 - X0) * (half - 14), ly = v => bot - v * (bot - top);
+          g.strokeStyle = 'rgba(255,255,255,0.15)'; g.lineWidth = 1; g.beginPath(); g.moveTo(14, top); g.lineTo(14, bot); g.lineTo(half, bot); g.stroke();
+          g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath();
+          for (let i = 0; i <= 220; i++) { const xx = X0 + (X1 - X0) * i / 220, q = [lx(xx), ly(1 / Math.cosh(xx))]; i ? g.lineTo(...q) : g.moveTo(...q); } g.stroke();
+          g.strokeStyle = '#b59cf0'; g.setLineDash([3, 4]); g.beginPath(); g.moveTo(lx(0), top); g.lineTo(lx(0), bot); g.stroke();
+          g.strokeStyle = '#d4a052'; g.beginPath(); g.moveTo(lx(pc.thumbX), top); g.lineTo(lx(pc.thumbX), bot); g.stroke(); g.setLineDash([]);
+          g.fillStyle = '#b59cf0'; g.fillText('its corner', lx(0) + 4, top + 10); g.fillStyle = '#d4a052'; g.fillText('the thumb\'s', lx(pc.thumbX) + 4, top + 10);
+          g.fillStyle = '#8a8a96'; g.fillText('per halving, sech x', 18, H - 10); g.fillText('far ← x → foot', half - 100, bot + 14);
+          if (isFinite(pc.x)) { const xx = Math.max(X0, Math.min(X1, pc.x)); g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(lx(xx), ly(1 / Math.cosh(xx)), 4, 0, 2 * Math.PI); g.fill(); }
+          // right: per metre, in half-breadths: 1/(1 + (d/b)²) against d/b from 6 to 0 (the foot at the right)
+          const o = half + 36, D1 = 6, rx = q => o + (1 - q / D1) * (W - 14 - o), ry = v => bot - v * (bot - top);
+          g.strokeStyle = 'rgba(255,255,255,0.15)'; g.beginPath(); g.moveTo(o, top); g.lineTo(o, bot); g.lineTo(W - 14, bot); g.stroke();
+          g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath();
+          for (let i = 0; i <= 200; i++) { const q = D1 * i / 200, pt = [rx(q), ry(1 / (1 + q * q))]; i ? g.lineTo(...pt) : g.moveTo(...pt); } g.stroke();
+          g.strokeStyle = '#b59cf0'; g.setLineDash([3, 4]); g.beginPath(); g.moveTo(rx(1), top); g.lineTo(rx(1), bot); g.stroke(); g.setLineDash([]);
+          g.fillStyle = '#b59cf0'; g.fillText('its corner (half)', rx(1) - 110, top + 10);
+          g.fillStyle = '#8a8a96'; g.fillText('per metre, the Cauchy', o + 4, H - 10); g.fillText('half-breadths off → foot', W - 170, bot + 14);
+          const q = d / pc.ownCorner;
+          if (q <= D1) { g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(rx(q), ry(1 / (1 + q * q)), 4, 0, 2 * Math.PI); g.fill(); }
+          else { g.fillStyle = '#e6e4ee'; g.fillText(`you: ${q < 1e4 ? q.toFixed(0) : q.toExponential(1)} half-breadths off ←`, o + 4, top + 26); } }
         // ── the writer's ground ──
         $('ground').style.display = $('groundCap').style.display = S.ground ? '' : 'none';
         if (S.ground) {
@@ -283,7 +321,7 @@
     if (q.get('play') === '1') setPlaying(true);
 
     window.__approach = { THINGS, HL, STRIDE, START, TICKS, Vstar, cornerD, startD, dOf, reading, mirror, tauRead, tauExact,
-        tauDotRead, stridesFromCorner, writeV, words, set, state };
+        tauDotRead, stridesFromCorner, writeV, words, paces, set, state };
 })();
 </script>
 </body>

@@ -202,6 +202,18 @@ both looks, while the stereographic chart keeps the angles and loses the heat, a
 sphere keeps both (Gauss 1828; Euler 1777); the plane's one chart does both because a line times a circle is flat (checked
 exactly; see Code and data).
 
+**A loop of a read and a write.** Read, write, then undo each: up by a turn, across by a scaling of the thumb, down, back.
+On the plane the loop closes, since the two slides commute; and it closes in space too, since a scaling by one factor
+commutes with every turn of space. A write anywhere in a loop of acts changes only the loop's overall size. Two other loops
+do not close, and they part in kind. Two reads in different directions, a turn about one axis and a turn about another,
+each undone in turn, come home turned: by Ω with cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ, about αβ·sin φ when small,
+the sphere of directions' own leftover (§7), bounded however often the loop is repeated. And a read with a write in two
+unequal lengths, a stretch that scales one axis by c and leaves the other (the writer's two axes drawn at V = cH), comes
+home squeezed: by a rapidity ζ with cosh ζ = 1 + 2·sin²α·sinh²(½ ln c), about |α·ln c| when small, the same at c and 1/c,
+and growing by ζ every time the loop is repeated. It closes only at c = 1. So a loop of a read and a write comes home
+unchanged exactly when the write is in one length; the one-length circle (§2) is what a closed loop looks like to the
+writer (checked exactly; see Code and data).
+
 ## 2. What the reader has for free
 
 **The thumbs pointed.** The reader has no circle. It points its crossed thumbs at the mountain, and that pointing
@@ -1372,7 +1384,7 @@ reader stands, in `read.html`; the heat on a flat screen and a lens's cos⁴ aga
 sky); the tunnel laid by its heat, the distance reading and a world culled by K in `crosshairs.html`; a cube of dots coloured
 by one read's heat, laid as the read lays it and seen from the eye, in `heat-cube.html`; Euler's formula as
 a count of reads in `plans/elm-plan.md` and `runs/elm/`; Euler's plane, the thumb's lay as a turn, the writer's sphere
-behind both, the heat counted per chart and two turns of space in `euler.html`. A flat chart for the read in space, and what it keeps and bends, is `plans/flc-plan.md` with `runs/flc/`. The read as a control, a dial, a dome, a dome over a map and a dome played as sound, is in the calendar repository (reportbase/calendar): `dial.js` and `dome.js`, with `horizon.html`, `dome.html`, `dome-map.html` and `dome-instrument.html`. The three cases in data of §11 (LIGO, the quasar dipole, single
+behind both, the heat counted per chart and two turns of space in `euler.html`. Loops of a read and a write, of two reads and of a read with a write in two unequal lengths are `plans/brl-plan.md` and `runs/brl/`. A flat chart for the read in space, and what it keeps and bends, is `plans/flc-plan.md` with `runs/flc/`. The read as a control, a dial, a dome, a dome over a map and a dome played as sound, is in the calendar repository (reportbase/calendar): `dial.js` and `dome.js`, with `horizon.html`, `dome.html`, `dome-map.html` and `dome-instrument.html`. The three cases in data of §11 (LIGO, the quasar dipole, single
 photons) are `plans/lgo-plan.md`, `plans/ebd-plan.md` and `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/` and
 `runs/wvp/`: each plan states its predictions and what would count against them before its run, and records the runs as
 they came out, the killed ones too. They illustrate the sorting of direction from payload; none of them alone

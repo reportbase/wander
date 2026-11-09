@@ -157,9 +157,17 @@ they meet at e^(iπ) = −1 because that is where the up axis's half turn sits o
 1. *Done 9 Nov (BRL, `plans/brl-plan.md`):* the plane's breath closes to 10⁻⁶¹, and so does space's (a turn and a scaling
    commute there too); the leftover in space is a loop of two reads, cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ exactly,
    W7 its equal-angle case. §2 corrected. Item 4's "in space" view should show that a breath closes and a loop of reads does not.
-2. Ask whether a breath has a natural size: a loop whose up side is the whole quarter turn (home to horizon) and whose
-   across side is one thumb (ln 2 for one in two, or 1). Probably not: H is chosen, and "one breath" would be the writer's
-   unit.
+2. *Answered 9 Nov (an argument, no run):* no, not for a breath. A breath's sides are a turn α up and a scaling λ across.
+   - **Across** there is no size: shifting ln(d/H) by λ is the same at every λ, and the thumb that sets the zero is chosen
+     (R226); any across side looks like any other, so nothing the reader holds can call one λ "one breath".
+   - **Up** there is a period, 2π for a turn joined whole, but joining a turn whole is the writer's (R696, R717); a single
+     read runs from home toward a horizon it never reaches, so the quarter turn is the read's extent, not a unit of loops.
+   - **The loop itself** leaves nothing (BRL B1, B2), so no reading after it can measure how big it was: a closed breath is
+     invisible from inside, which is the first test said of loops.
+   - **Where a size does appear** is in the loops that do not close: two reads leave Ω ≈ αβ·sin φ, an area on the sphere of
+     directions, whose curvature gives it a natural unit (the whole sphere 4π, a writer's total); an unequal write leaves
+     ζ ≈ |α·ln c|, measured by c, a writer's ratio. So a natural size for a loop is always a writer's quantity, and the
+     breath, which closes, has none.
 3. *Done 9 Nov (BRL run 3):* an unsteady breath is one whose write is in two unequal lengths, V = cH with c ≠ 1. The
    loop (turn, stretch, back, back) leaves a squeeze, not a turn: cosh ζ = 1 + 2·sin²α·sinh²(½ ln c), ζ ≈ |α·ln c|, the
    same at c and 1/c, and it accumulates breath after breath; it closes only at c = 1 (or a half turn). In space it closes
