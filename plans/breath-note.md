@@ -34,12 +34,16 @@ Read, write, read back, write back: a rectangle on the plane, θ up by α, ln d 
 - **In the plane it closes.** A turn and a scaling commute (e^(iα)·e^(λ) = e^(λ)·e^(iα)), so the loop comes home with
   nothing left over, whatever α and λ (R738; essay 18 §7). A cycle that leaves nothing can repeat without drifting: steady
   breathing.
-- **In space it does not.** Two turns about two axes, taken and undone in turn (h, v, back, back), leave a turn of about
-  α·β about the third axis, to second order (R738's loop, `euler.html` `?loop=1`) *(check: sign and the next order;
-  TWG run 3 has the round loop exactly, 4·arcsin(sin²(ε/2)·|sin φ|))*. Each breath in space comes home turned.
+- **In space it closes too** *(corrected 9 Nov, BRL)*. A turn about any axis and a uniform scaling commute in space as in
+  the plane (the scaling is central), so a breath comes home with nothing left over in space as well, to 10⁻⁶¹ (BRL B2);
+  a write put anywhere into a loop changes nothing but the loop's overall size (B5). This section first said "each breath
+  in space comes home turned"; that was wrong. The loop it described, two turns about two axes taken and undone in turn
+  (h, v, back, back; R738's `?loop=1`), is **two reads in different directions joined**, with no write in it. That loop does
+  not close: it leaves a turn Ω about n₂ × n₁ with cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ exactly (BRL B3′, to 10⁻⁶¹;
+  TWG W7 its equal-angle case), Ω = αβ·sin φ to second order.
 - **That leftover is holonomy** (HOL, R775–R777): transport round a loop on the sphere of directions turns by the enclosed
-  solid angle, in the plane by none; Leek et al. 2007's qubit read it as a phase (slope 1.013 ± 0.003 against 2Θ). So
-  today's test is, in this note's words, a measurement of what one breath in space leaves behind.
+  solid angle, in the plane by none; Leek et al. 2007's qubit read it as a phase (slope 1.013 ± 0.003 against 2Θ). It
+  belongs to the reads' sphere, not to breathing: what comes home turned is a loop of reads, and the write never enters.
 
 ## 3. The read's law, heard as a breath that fades
 
@@ -150,8 +154,9 @@ they meet at e^(iπ) = −1 because that is where the up axis's half turn sits o
 
 ## 6. Open, in order
 
-1. Check §2's leftover exactly: the plane's loop closes to rounding; the space loop's leftover against α·β and TWG's exact
-   form; and the qubit's phase as the same leftover (nothing new, a link).
+1. *Done 9 Nov (BRL, `plans/brl-plan.md`):* the plane's breath closes to 10⁻⁶¹, and so does space's (a turn and a scaling
+   commute there too); the leftover in space is a loop of two reads, cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ exactly,
+   W7 its equal-angle case. §2 corrected. Item 4's "in space" view should show that a breath closes and a loop of reads does not.
 2. Ask whether a breath has a natural size: a loop whose up side is the whole quarter turn (home to horizon) and whose
    across side is one thumb (ln 2 for one in two, or 1). Probably not: H is chosen, and "one breath" would be the writer's
    unit.

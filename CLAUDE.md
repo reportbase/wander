@@ -381,6 +381,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   in the plane and leaving about α·β in space (holonomy, HOL); the read's law from z = m + iγ heard as e^(imt − γ|t|), a
   breath fading. Open: the leftover checked exactly first. R779 (Tom: "yes"): its §5, the mountain walk, in *Reads and Writes* §8 "The mountain's own corner"
   (no breathing in the paper).
+  `brl-plan.md` (+ `runs/brl/`, 9 Nov; SPN R783; Tom: "yes"): the breath note's loop checked exactly, 60 digits. A breath (a
+  turn and a scaling) closes in the plane and in space alike (scaling is central); the note's leftover in space belonged to
+  a loop of two reads (two turns about two axes), cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ, TWG W7 its equal-angle case.
+  Run 1's B3 killed by my measure (Ω folded into [0, π]), run 2 in quaternions not. The note's §2 corrected.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
