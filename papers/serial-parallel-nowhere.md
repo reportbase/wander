@@ -7410,6 +7410,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R765** (9 Nov; Tom: "proceed with updates"): *Reads and Writes in Physics* carried into the corpus: `physics.md`
+  names it as the paper drawn from the record (the record stays the working copy, a new physics result entered there
+  first; where the record's older wording differs, the paper's is current); *Reads and Writes*' Code and data names it as
+  the companion (that paper stands where they differ); the essays README points to it and now counts eighteen essays.
+  No claim changed.
 - **R764** (8 Nov; Tom, to R763's five decisions: "1. Good 2. Leave out, but there might be good ideas to mine. 3.
   Include for now. 4. Ok 5. Ok"): *Reads and Writes in Physics* drafted whole, §2–§12 (the geometry in brief, the
   dictionary, motion and time with Γτ on Na D2, the moving sky with the quasar dipole and two boosts joined, light,
