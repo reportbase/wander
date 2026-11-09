@@ -375,6 +375,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   §5.4 and `physics.md` §2.2 (R776). Run 2 (`runs/hol/hol3.py`, R777): H7's numbers checked;
   Leek et al. 2007's qubit read from its figure, 192 points, phase = twice the cone's solid angle (slope 1.013 ± 0.003 by
   the paper's scatter), nothing killed by the plan's tick errors, which were too loose to bite.
+  `breath-note.md` (9 Nov; SPN R778; Tom: "observation is like breathing, the read/write being the inhale/exhale. Eulers
+  best captures that idea.", then "yes"): a working note, no paper. On Euler's plane the read is the up axis (iθ, a turn,
+  wrapping only when joined) and the write the across axis (ln(d/H), scale, counted in thumbs); a breath is a loop, closing
+  in the plane and leaving about α·β in space (holonomy, HOL); the read's law from z = m + iγ heard as e^(imt − γ|t|), a
+  breath fading. Open: the leftover checked exactly first.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

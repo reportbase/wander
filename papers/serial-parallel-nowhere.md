@@ -7410,6 +7410,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R778** (9 Nov; Tom: "the most intersting idea is that unexplored idea is that observation is like breathing, the
+  read/write being the inhale/exhale. Eulers best captures that idea.", then "yes"): R727's metaphor taken up in a working
+  note, `plans/breath-note.md`, not in any paper. On Euler's plane ln(z/H) = ln(d/H) + iθ the read is the up axis (a turn,
+  bounded, wrapping only when the writer joins turns) and the write the across axis (scale, open, counted in thumbs): the
+  asymmetry is the plane's. A breath is a loop, read and write and both undone: in the plane it closes (a turn and a
+  scaling commute, R738), in space it comes home turned by about α·β, which is holonomy (HOL, R775–R777). The read's law
+  from z = m + iγ has the characteristic function e^(imt − γ|t|), a breath at rate m fading at rate γ (R753). A single read
+  still does not cycle; cycles are joins (R727). Classical mathematics, our reading; no new physics. Next: §2's leftover
+  checked exactly.
 - **R777** (9 Nov; Tom: "1,2", to checking H7's numbers and giving HOL's data part a real test): H7's measured interval
   checked against both abstracts (9,911.200(12) + 1,057.845(9) = 10,969.045 ± 0.015 MHz, as used). HOL run 2, its plan
   committed before any data: Leek et al. 2007's qubit (Science 318, 1889), 192 points read by template matching from
