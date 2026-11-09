@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R767** (9 Nov; Tom: "update the demos"): `demos.html` points to *Reads and Writes in Physics* in its lede and above
+  the physics correspondence, and fifteen demo cards gain an "In physics" line naming the known physics each shows and
+  the paper's section (the cos³ law, the boosted sky, the Lorentzian and Na D2, Thomas–Wigner, rapidities as slides,
+  ranging as writing, Lee's τ, Lutz–Kelker, contact h + v = 1, holding a world by distance, the law in the count, the
+  ladder's rungs, counts by light, the seeds); `essays.html` names the paper. The pages themselves are unchanged. No new
+  claim.
 - **R766** (9 Nov; Tom: "update the essays with physics"): each essay whose geometry known physics carries ends its body
   with a paragraph, "In physics", drawn from *Reads and Writes in Physics*: 1 the two tests as dimensional analysis and the
   bridges; 2 E² = (pc)² + (mc²)² as one circle, the qubit, the duality bound; 3 the Lorentzian and Na D2, Berry, the seeds;
