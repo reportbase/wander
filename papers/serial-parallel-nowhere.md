@@ -7410,6 +7410,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R780** (9 Nov; a ChatGPT note pasted: integrate the walk in four steps, Euler last, H kept for the thumb, then a
+  referee's question, does the reader now see why reading and writing differ or is it still asserted): *Reads and
+  Writes* §8 "The mountain's own corner" reordered (the read and its ends, the two paces and the count, then Euler's
+  formula as the writer's name for the end, describing it and driving nothing); "sixteen half-breadths" corrected to
+  eight (the 14° span is at s = 1/8); one sentence added so the walk shows the distinction by §1's first test rather than
+  stating it (scaling the world, the walk and the stride moves no s, no Z and not the pace per halving; the pace per metre and the count of strides, counted in metres, move).
+  The paper already wrote the half-breadth as V*/2, not H; the breath note's b = V*/2 replaces the H it had used.
+  Then ChatGPT's full redraft of the passage was declined as a replacement: it wrote H for the half-breadth (the thumb's
+  letter, the slip its own note had withdrawn), put breathing into the paper (R727, R779: the note only) and had "the
+  reader composes the ratios" (joining reads is a write, R652). One piece taken: the joined reads telescope,
+  ∏ Z_(j+1)/Z_j = Z_N/Z_0, the joining the write, e^(iΣΔα) the same written as a sum of turns. Its last check, the stride
+  rules against `approach.html`, was done in the note's §5 (d).
 - **R779** (9 Nov; Tom: "yes", to drafting the breath note's mountain walk into *Reads and Writes*): §8, after "Walking to
   the mountain", "The mountain's own corner": each edge's read s = (V*/2)/d gives Z = (1 + is)/(1 − is) with no angle;
   far off home (Z = 1), the mountain's own corner at half a breadth (Z = i), the foot the horizon (Z → −1, e^(iπ) = −1 its

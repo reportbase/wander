@@ -92,21 +92,21 @@ its first and last reads, each a ratio. Writing it as e^(iΣΔα) is the writer'
 logarithm are the writer's formulas for the reader's things). The reader's own composition of the steps is tangent addition
 on s (R327), which needs no angle either.
 
-**(c) The walk is a curve on Euler's plane, and it is Mercator's.** Put x = ln(V*/2d), the distance in thumbs with the
-mountain's half-breadth as H (R599, "the thing itself as H"). Then
+**(c) The walk is a curve on Euler's plane, and it is Mercator's.** Put x = ln(V*/2d), the distance counted with the
+mountain's half-breadth as the thumb (R599, "the thing itself as H"). Then
 
   α = π/2 + gd(x),  dα/dx = sech x,
 
 gd the Gudermannian (checked to 10⁻¹⁶). Each stride is a step across the plane (the exhale, counted); the read climbs up it
 (the inhale) by sech x per thumb: most at the corner (x = 0, α = π/2, Z = i), dying away both far off and close in, never
 reaching π in any number of strides. That sech is the read's heat in distance, sech(ln(d/H)) (R702, R703's overlay), here
-with H = V*/2. So the breath in this walk is uneven in exactly the way the near and far fields are: the turn taken in per
+with the thumb's place taken by b = V*/2 (H stays the thumb; b is the mountain's half-breadth, an amount). So the breath in this walk is uneven in exactly the way the near and far fields are: the turn taken in per
 thumb walked is largest where the mountain fills the thumb's own share, and the half turn is a horizon, not an arrival
 (R651: "getting closer" and arriving are the writer's).
 
 **(d) The stride count is not an area; the turn per metre is the Cauchy.** 9 Nov, later (a ChatGPT note on the open
-question): with H = V*/2 and x = ln(H/d), the area under sech x in x from the corner to the foot is π/2 (the turn still to
-come), and under sech(ln(H/d)) = 2Hd/(H² + d²) in d it is H·ln 2, neither of them V*. Both checked at 30 digits. The note
+question): with b = V*/2 and x = ln(b/d), the area under sech x in x from the corner to the foot is π/2 (the turn still to
+come), and under sech(ln(b/d)) = 2bd/(b² + d²) in d it is b·ln 2, neither of them V*. Both checked at 30 digits. The note
 leaves it open until `approach.html`'s rule is read. Read, the rule is not an area:
 
 - `approach.html` writes V* = (strides from its corner to the foot) × stride × H/L (`cornerD`, `stridesFromCorner`,
@@ -116,8 +116,8 @@ leaves it open until `approach.html`'s rule is read. Read, the rule is not an ar
   it (the mountain as its own H, R599). Its count of strides from that corner to the foot writes V*/2 directly (the ratio
   there is 1). Two corners on one walk, the thumb's far out and the span's close in, 60 thumb-widths' worth apart for this
   thumb; the note should not run them together.
-- ChatGPT's H·ln 2 integrates a rate per thumb (sech) against metres, two measures mixed, which is why it means nothing.
-  The rate per metre is dα/dd = 2H/(H² + d²): **the turn taken in per metre walked is the Cauchy in distance**, scale H
+- ChatGPT's b·ln 2 integrates a rate per thumb (sech) against metres, two measures mixed, which is why it means nothing.
+  The rate per metre is dα/dd = 2b/(b² + d²): **the turn taken in per metre walked is the Cauchy in distance**, scale b
   (twice the density). From far off to the foot it gathers π, from the corner π/2. So the same walk takes in the turn at
   the sech rate counted in thumbs and at the Cauchy rate counted in metres: the read's two heats (R702, R706: the Cauchy
   per unit of reading, sech per ratio) as two ways of pacing one breath. Checked at 30 digits.
@@ -125,10 +125,10 @@ leaves it open until `approach.html`'s rule is read. Read, the rule is not an ar
 So the open question closes this way: the stride count is a length walked (a write), the areas are turns (named by the
 writer, the read's own being Z); they meet only at the corner, where the ratio is 1 and a length walked and a reading agree.
 
-**(e) One turn, two rates, and a count** (9 Nov, a ChatGPT note on (d)). Its summary, checked: with H = V*/2 and
-x = ln(H/d),
+**(e) One turn, two rates, and a count** (9 Nov, a ChatGPT note on (d)). Its summary, checked: with b = V*/2 and
+x = ln(b/d) (its first draft wrote H for b; a later note withdrew that, H being the thumb),
 
-  dα = sech x·dx = −2H/(H² + d²)·dd,
+  dα = sech x·dx = −2b/(b² + d²)·dd,
 
 one turn under two measures (thumbs and metres), the minus because d falls as one walks; the stride count a third quantity,
 written, equal to neither area. It proposes this as *Reads and Writes*' central mountain example: the rational read gives Z,
