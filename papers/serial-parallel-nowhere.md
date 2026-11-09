@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R770** (9 Nov; Tom: "proceed"): RDD run 2 on the full NVSS, its power fixed first (β̂'s error under 10⁻³).
+  Unpowered (1.76·10⁻³ as run; the count slope taken from the cut sample, my code; 1.38·10⁻³ post hoc with it
+  corrected), so R1′, R3′, R4′ were reported and not counted; none would have killed. Post hoc: β̂ about 4.9 times the
+  CMB's, the flux slices one β (p = 0.87), the axis 26° from CatWISE's, its β 1.9 σ from CatWISE's 2.7. Consistent with
+  one motion read by two censuses; not yet a test of it. What would give the power: NVSS's declination stripes modelled,
+  or a southern survey joined.
 - **R769** (9 Nov; Tom: "what did you learn, any new ideas?", then "proceed per your recommendations"): RDD
   (`plans/rdd-plan.md` + `runs/rdd/`), the second test put to a second census: the radio sky (TGSS × NVSS, de Gasperin et
   al. 2018), the spectral index as the colour, with one β and one axis across CatWISE and the radio as new predictions. Run

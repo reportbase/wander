@@ -1,0 +1,23 @@
+rows 1773484
+kept pixels 29168 (0.593 of the sky)
+sample >= 20 mJy in the mask: 232767
+
+Whole sample: N 232767  D 0.0216 +- 0.0049 (bootstrap 0.0035, jackknife 0.0049)  axis (251.7, 20.4)  99% radius 50.4
+  x 0.459; 2 + x(1+a) = 2.735, 2.804, 2.873 at a = 0.6, 0.75, 0.9
+  beta-hat 7.692e-03 +- 1.755e-03 (6.24 x CMB; at a = 0.6 / 0.9: 6.39 / 6.09)
+  axis 29.6 deg from CMB, 26.1 from CatWISE
+
+R6 (power): error 1.76e-03 against 1.0e-3 -> UNPOWERED: R1-R4 reported, not counted
+
+R1: flux slices
+  20-40 mJy: N 112370 x_eff -0.131 D 0.0206 +- 0.0062 (boot 0.0048, jk 0.0062) beta/CMB 9.41 +- 2.86 axis (220, 41) 32 from CMB
+  40-80 mJy: N 63845 x_eff 0.870 D 0.0305 +- 0.0086 (boot 0.0086, jk 0.0079) beta/CMB 7.01 +- 1.97 axis (263, -7) 55 from CMB
+  80-160 mJy: N 32779 x_eff 1.041 D 0.0255 +- 0.0171 (boot 0.0100, jk 0.0171) beta/CMB 5.42 +- 3.63 axis (296, 6) 50 from CMB
+  160-up mJy: N 23773 x_eff 1.346 D 0.0346 +- 0.0155 (boot 0.0109, jk 0.0155) beta/CMB 6.45 +- 2.88 axis (248, 27) 24 from CMB
+  one beta 8.875e-03 +- 1.625e-03; chi2 0.92 on 3, p = 0.821 -> R1': not killed
+
+R3': radio 7.692e-03 +- 1.755e-03 vs CatWISE 3.310e-03 +- 4.590e-04: 2.42 sigma -> not killed
+  (reported, not scored) radio vs the CMB's beta: 3.68 sigma
+R4': axis 26.1 deg from CatWISE, combined 99% radius 59.3 -> not killed
+
+186 s

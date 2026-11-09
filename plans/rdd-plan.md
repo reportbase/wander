@@ -141,3 +141,37 @@ VIII/65/nvss was looked at: RAJ2000 and DEJ2000 as sexagesimal strings, S1.4 in 
 - **Known beforehand** (from memory, not used in a verdict): NVSS count dipoles at ≥ 15–25 mJy have been reported at
   0.01–0.02, two to five times the kinematic expectation, and its counts carry declination stripes from the survey's
   configurations, which several authors correct and this run does not.
+
+**Data (run 2).** Downloaded 9 November from the CfA mirror,
+`https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=VIII/65/nvss&-out.max=unlimited&-out=RAJ2000,DEJ2000,S1.4`,
+58,526,794 bytes, sha256 f23fd0d85905ab6df85dd46e99e0217bdc588e31d417872f16baf62e61bff200, 1,773,484 rows. Stored in
+/tmp/rdd_data; not committed. The run-2 plan was committed (ad333b1) before the download.
+
+#### Run 2 (9 Nov; `runs/rdd/rdd2.py`, output `runs/rdd/rdd-run2.txt`, 186 s)
+
+One attempt, as fixed. The mask keeps 59.3% of the sky; 232,767 sources ≥ 20 mJy.
+
+- **Whole sample.** D = 0.0216 ± 0.0049 (bootstrap 0.0035, jackknife 0.0049) toward (251.7°, 20.4°): 29.6° from the
+  CMB's axis and 26.1° from CatWISE's.
+- **x was computed wrongly, by my code.** I took the count slope from the sample already cut at 20 mJy, which flattens it
+  at and below the cut (x 0.459 at 20 mJy, and x_eff −0.13 in the lowest slice). As run: β̂ (7.69 ± 1.76)·10⁻³,
+  6.2 times the CMB's.
+- **R6: unpowered** (error 1.76·10⁻³ against 1.0·10⁻³). So R1′ (p = 0.82), R3′ (2.42 σ from CatWISE) and R4′ (26° within
+  a 59° radius) are reported and not counted. None would have killed.
+
+Post hoc (`runs/rdd/rdd2-posthoc.py`, `rdd2-posthoc.txt`; not a verdict), with x taken from the counts before the cut as
+the plan meant: x = 0.889 at 20 mJy.
+- β̂ = (6.06 ± 1.38)·10⁻³, 4.9 times the CMB's (4.7 to 5.1 for α 0.9 to 0.6).
+- Still unpowered: 1.38·10⁻³ against 1.0·10⁻³.
+- 1.9 σ from CatWISE's β, 3.5 σ from the CMB's.
+- The flux slices give one β at p = 0.87 (5.0, 7.0, 5.4, 6.5 times the CMB's).
+
+Read plainly:
+- With the full NVSS the radio dipole is better measured than run 1's. It points within 26° of CatWISE's and within 30°
+  of the CMB's.
+- Its β is about five times the CMB's. That is larger than CatWISE's 2.7, but the two differ at under 2 σ.
+- Every flux slice agrees on one β, which a boost needs.
+- The errors are still too large for the run to count as a test of "one motion across two wavelengths". The jackknife,
+  which carries the survey's large-scale variations, sets them. Getting under 10⁻³ needs either the declination stripes
+  modelled (as the NVSS dipole papers do) or more sky (a southern survey joined, such as SUMSS or RACS).
+- No colour test was made: no second band here is free of TGSS.

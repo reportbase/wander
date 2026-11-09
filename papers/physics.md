@@ -336,7 +336,10 @@ Then (SPN R440; Tom: "proceed with recommended changes") a real-data test of the
   sample D = 0.0174 ± 0.0088, 3.75 times the CMB's β; flux slices one β at p = 0.55; α terciles p = 0.044, leaning apart
   as CatWISE's colours did; β 2.1 σ from CatWISE's; the axes 88° apart within a 98° radius). Post hoc the amplitude
   doubles between 20 and 40 mJy with the one-sided mask. A powered run needs the full NVSS and a colour not resting on
-  TGSS's flux scale; CatWISE's colour result stands alone until then.
+  TGSS's flux scale; CatWISE's colour result stands alone until then. Run 2 (R770) took the full NVSS (VIII/65), its
+  power stated first: unpowered (β̂'s error 1.4–1.8·10⁻³ against the 10⁻³ fixed), so nothing counted. Post hoc, x taken
+  correctly: β̂ about 4.9 times the CMB's, four flux slices one β (p = 0.87), the axis 26° from CatWISE's and 30° from
+  the CMB's, β 1.9 σ from CatWISE's. Consistent with one motion, not yet a test of it.
 
 ## 2. Results, by standing
 
