@@ -1170,6 +1170,9 @@ what moves is what is counted in metres, the pace per metre (by 1/k) and the cou
 Only then does Euler's formula enter, and as a name. The writer, holding the reads joined, names each point Z =
 e^(iα), α the angle the mountain spans, and calls the end the walk heads for e^(iπ) = −1 (§5). The formula describes
 that end; it does not drive the walk, and no read along the way holds it: each holds one s, now, and the Z it gives.
+Joined, the reads telescope: the product of Z_(j+1)/Z_j along the walk is Z_N/Z_0, the first and last reads alone.
+The joining is the write (reads are unconnected, §1); naming the angles turns that product into e^(iΣΔα), a sum of
+turns, one composition written two ways.
 
 **Knowing V comes by degrees.** The crossing is not a switch thrown. It has three counts.
 
