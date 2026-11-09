@@ -436,6 +436,14 @@ spin's direction at θ has its point on the sphere of states at 2θ, so a loop c
 
 None of these is new physics. Each is classical. What the reading supplies is the sort.
 
+**In physics.** *Reads and Writes in Physics* (`../reads-and-writes-physics.md`) adds cases where the split was made
+long ago without its name. A spectral line's Lorentzian is the heat of a phase's turn: the Cauchy in frequency from a
+standpoint whose height is the fading rate. Its width and the excited state's lifetime are that one height read two
+ways, and for the sodium D2 line, measured independently by spectroscopy and by decay in flight, their product is 1.0010
+± 0.0025. Berry's geometric phase belongs to the directions visited (half their solid angle), the dynamical phase is an
+amount. And the test that can fail has failed once, in the open: wind-dispersed seeds have fat tails but not the turn's
+shape, a mixture of amounts (§4.3, §8.4, §11).
+
 ---
 
 ## 11. Why practice is right, and when it stops being right

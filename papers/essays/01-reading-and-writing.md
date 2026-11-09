@@ -537,6 +537,15 @@ stood, which loops it closed, what it was handed. That is not a lesser achieveme
 
 *Demo: the reader is a slide rule: chains, loops and a misread link.*
 
+**In physics.** Physics already runs both tests. Scaling the world is dimensional analysis (Bridgman's and
+Buckingham's): a ratio unmoved by it is a read, and anything that moves had an amount carried in. Changing what arrives
+splits one formula into its directions and its paint: aberration from Doppler, the quasar dipole's 2 from its x(1 + α).
+What crosses between is a bridge, and there are few: a speed, a rest frequency, a baseline, a kind of star, a clock.
+Sorted this way a parallax is an angle read and a distance written through the astronomical unit, and inverting noisy
+parallaxes as if they were distances is Lutz and Kelker's bias, a read taken for a write. *Reads and Writes in Physics*
+(`../reads-and-writes-physics.md`) goes through the known cases one by one, the failures with them. It claims no new
+physics, only where each part of a known result lives.
+
 ---
 
 ## 9. Why the distinction is worth having

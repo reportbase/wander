@@ -364,6 +364,13 @@ Four questions are left.
 4. Is the unit rule's ±1 band the same reader as the first-person view's band of 0.4 nats? A test would race them on one
    trace.
 
+**In physics.** Two looks a tick apart give time to contact exactly, in the reader's own ticks: x₁/(x₂ − x₁) at the
+second look, x₂/(x₂ − x₁) one tick earlier (Lee 1976). Seconds need a clock carried in; what is scale-free is τ̇, and
+under steady braking Lee's τ̇ = −½ is stopping distance equal to distance, the pair at its corner. A count can hold
+where a clock fails: a cooling granular gas loses (1 − e²)/3 of its temperature per contact per sphere, density and size
+gone from the count, while the clock needs them all (Haff 1983) (*Reads and Writes in Physics*
+(`../reads-and-writes-physics.md`), §4.1, §10).
+
 ---
 
 ## 14. What it comes to

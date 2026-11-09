@@ -7410,6 +7410,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R766** (9 Nov; Tom: "update the essays with physics"): each essay whose geometry known physics carries ends its body
+  with a paragraph, "In physics", drawn from *Reads and Writes in Physics*: 1 the two tests as dimensional analysis and the
+  bridges; 2 E² = (pc)² + (mc²)² as one circle, the qubit, the duality bound; 3 the Lorentzian and Na D2, Berry, the seeds;
+  4 the inverse square in the count, the near field's corner, the stars; 5 the cos³ law and Lambert's cosine; 6 parallax
+  worked back, the ladder, STC; 7 the quasar dipole, Thomas–Wigner, Liouville; 9 Lutz–Kelker, the joining, the dipole
+  read as directions; 11 Lee's τ in ticks, Haff's count; 13 the boost loop against the turn loop, Berry; 14 β and 1/γ,
+  γ and γβ, τ̇; 15 the bridges, what the sort does not give, D6 as a registered prediction; 17 the Lorentzian, the dark
+  corners, the seeds; 18 boosts as slides, the rapidity from three stars. Essays 8, 10, 12 and 16 (computing) have none.
+  No new claim.
 - **R765** (9 Nov; Tom: "proceed with updates"): *Reads and Writes in Physics* carried into the corpus: `physics.md`
   names it as the paper drawn from the record (the record stays the working copy, a new physics result entered there
   first; where the record's older wording differs, the paper's is current); *Reads and Writes*' Code and data names it as

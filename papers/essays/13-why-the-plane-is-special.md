@@ -247,6 +247,14 @@ essay, was a check that each of its own three-dimensional claims means the right
 measure in the corpus turned out to be in the plane; every three-dimensional claim about the Cauchy was either made
 from the centre, where the laws agree, or about the boosted sky, where the Möbius law is the right one. None was wrong.
 
+**In physics.** A moving sky has this essay's two orders with curvature −1 for +1. Two boosts along different axes,
+joined, leave the Thomas–Wigner rotation, the velocity triangle's area, read from three stars' directions alone and
+absent from any single boost. A small loop of boosts leaves ε²·sin φ, the same leftover as the loop of turns about the
+opposite axis; at the next order they part, the turn loop's correction −ε²/12 at every angle, the boost loop's (1/3 +
+cos φ/4)·ε², depending on it. Berry's geometric phase is a loop on the sphere of states coming home turned by half its
+solid angle, the half because a state's point sits at twice its angle (*Reads and Writes in Physics*
+(`../reads-and-writes-physics.md`), §5.3, §8.4).
+
 ---
 
 ## 7. What it comes to

@@ -3,7 +3,8 @@
 A series of eighteen essays, read in order, drafted from 28 October 2026. Each opens on something familiar, shows the geometry in
 full, says which older work saw which piece, and ends with what it changes. *Reads and Writes* (`../readers-and-writers.md`)
 is the source of truth; where an essay and it differ, the essay is the one to fix. Its physics, known physics sorted by
-the two tests, is gathered in *Reads and Writes in Physics* (`../reads-and-writes-physics.md`). *Observation from Somewhere* and its companions
+the two tests, is gathered in *Reads and Writes in Physics* (`../reads-and-writes-physics.md`), and fourteen of the essays (all but 8, 10,
+12 and 16) end their body with a paragraph, "In physics", on the known physics that carries their geometry. *Observation from Somewhere* and its companions
 are archived (`../archive/ofs/`), kept unchanged for reference: their proofs stand, and where their wording differs from the
 later rulings, the later rulings stand.
 
