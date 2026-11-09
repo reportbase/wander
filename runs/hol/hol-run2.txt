@@ -1,0 +1,9 @@
+H8 per series, phi = slope * Omega + intercept
+  C++        36 points, Omega = 0: mean phi -0.192 (sd 0.092, se 0.015); rule error 0.262: 0.73 sigma; by its own scatter 12.6 se
+  n=1 C+-    38 points, Omega to 5.28: slope 1.0136 +- 0.2026 (+0.07 sigma), intercept +0.1928 +- 0.6791 (+0.28 sigma) [rule]; with 0.14 rad: slope +0.8 sigma, intercept +3.6 sigma
+  n=1 C-+    38 points, Omega to 5.28: slope 1.0281 +- 0.2026 (+0.14 sigma), intercept +0.0082 +- 0.6791 (+0.01 sigma) [rule]; with 0.14 rad: slope +1.7 sigma, intercept +0.2 sigma
+  n=1.5 C+-  40 points, Omega to 7.92: slope 1.0016 +- 0.1495 (+0.01 sigma), intercept -0.0312 +- 0.7588 (-0.04 sigma) [rule]; with 0.14 rad: slope +0.2 sigma, intercept -0.6 sigma
+  n=1.5 C-+  40 points, Omega to 7.92: slope 1.0313 +- 0.1495 (+0.21 sigma), intercept +0.0142 +- 0.7588 (+0.02 sigma) [rule]; with 0.14 rad: slope +2.9 sigma, intercept +0.3 sigma
+H9 all 192 points: chi2 3.3 on 192 (rule errors), p = 1
+   reported: with the paper's 0.14 rad, chi2 587.9 on 192, p = 9.7e-42; r.m.s. of phi - Omega 0.245 rad
+   one line through all points: slope 1.0133 +- 0.0026, intercept +0.0376 +- 0.0101

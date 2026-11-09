@@ -19,6 +19,6 @@ mc2_over_h = 2*cR/alpha**2                  # m c^2 / h in kHz, since R_inf c = 
 d = (dirac(2, mpf(3)/2) - dirac(2, mpf(1)/2)) * mc2_over_h / 1000   # MHz
 print(f'H7 Dirac 2P3/2 - 2P1/2 (infinite nuclear mass): {mp.nstr(d, 8)} MHz; without Thomas the interval doubles: '
       f'{mp.nstr(2*d, 8)} MHz')
-meas = mpf('9911.200') + mpf('1057.845')  # 2S1/2-2P3/2 (Hagley and Pipkin 1994) + Lamb shift 2S1/2-2P1/2; from memory
-print(f'H7 measured (from memory, to check): {mp.nstr(meas, 8)} MHz; measured / Dirac {mp.nstr(meas/d, 6)}; '
+meas = mpf('9911.200') + mpf('1057.845')  # 2S1/2-2P3/2 9911.200(12) (Hagley and Pipkin 1994) + Lamb shift 1057.845(9) (Lundeen and Pipkin 1981), checked 9 Nov from both abstracts
+print(f'H7 measured (+- 0.015, sources checked): {mp.nstr(meas, 8)} MHz; measured / Dirac {mp.nstr(meas/d, 6)}; '
       f'measured / no-Thomas {mp.nstr(meas/(2*d), 6)}')
