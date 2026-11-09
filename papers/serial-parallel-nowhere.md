@@ -7415,7 +7415,7 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   Writes* §8 "The mountain's own corner" reordered (the read and its ends, the two paces and the count, then Euler's
   formula as the writer's name for the end, describing it and driving nothing); "sixteen half-breadths" corrected to
   eight (the 14° span is at s = 1/8); one sentence added so the walk shows the distinction by §1's first test rather than
-  stating it (scaling the world, the walk and the stride moves no s, no Z and neither pace, only the count of strides).
+  stating it (scaling the world, the walk and the stride moves no s, no Z and not the pace per halving; the pace per metre and the count of strides, counted in metres, move).
   The paper already wrote the half-breadth as V*/2, not H; the breath note's b = V*/2 replaces the H it had used.
 - **R779** (9 Nov; Tom: "yes", to drafting the breath note's mountain walk into *Reads and Writes*): §8, after "Walking to
   the mountain", "The mountain's own corner": each edge's read s = (V*/2)/d gives Z = (1 + is)/(1 − is) with no angle;

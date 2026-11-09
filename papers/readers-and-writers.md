@@ -1164,8 +1164,8 @@ The areas are turns; the breadth is written by a count. Strides from the mountai
 walker's stride, since the read there is 1, and strides from the thumb's corner are V\* in thumbs. The count is
 discrete and ends; the turn is never completed by any number of halvings. They agree only at a corner, where a read is 1
 and a length walked and a ratio held say the same. The first test sorts them on this walk (§1): scale the world, the
-mountain, the walk and the walker's stride by k, and every s, every Z and both paces stay as they were; only the
-count of strides moves, by k.
+mountain, the walk and the walker's stride by k, and every s, every Z and the pace per halving stay as they were;
+what moves is what is counted in metres, the pace per metre (by 1/k) and the count of strides (by k).
 
 Only then does Euler's formula enter, and as a name. The writer, holding the reads joined, names each point Z =
 e^(iα), α the angle the mountain spans, and calls the end the walk heads for e^(iπ) = −1 (§5). The formula describes
