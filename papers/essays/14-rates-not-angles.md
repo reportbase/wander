@@ -492,6 +492,12 @@ crossings give places, and joining them is writing (the sixth essay, "Becoming t
 they name what the observer is doing. And a sweep even in azimuth and even in height, by Archimedes' equal slices, is even over the whole
 sphere, which is why the writer's numbers for the reader's sweep there are 2 and ½.
 
+**In physics.** Relativity's numbers are rates of this kind. β and 1/γ are the two shares of one circle in the unit E,
+the clock's rate the rest share of its energy. γ and γβ are the parts of the Doppler factor k that k ↦ 1/k keeps and
+reverses, so 1/γ = 2k/(1 + k²), the form of a launch's range, longest at 45°. And Lee's τ̇, a rate of a rate, is
+scale-free: −½ under steady braking is stopping distance equal to distance (*Reads and Writes in Physics*
+(`../reads-and-writes-physics.md`), §4).
+
 ---
 
 ## 11. What it comes to

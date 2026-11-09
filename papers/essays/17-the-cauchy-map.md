@@ -283,6 +283,12 @@ arrives, centred wherever it looks, continuous, and not the law of anything meas
 writing, met there. The map has a middle and no mean; near and far are a second map laid on it by a length; and the
 places a computer counts on it are a writer's sampling, useful and not the thing itself.
 
+**In physics.** A spectral line's Lorentzian is the Cauchy map in frequency: a phase turning at a steady rate and fading
+is a standpoint z = m + iγ, the line's centre the rate, its half-width the fading. A photograph's dark corners are the
+cos³ law of illumination and a lens's cos⁴. And seeds are this essay's caution met in data: wind-dispersed seed kernels
+have fat tails but not the turn's shape (median p 0.10 against the turn's ½), a mixture over wind speeds (*Reads and
+Writes in Physics* (`../reads-and-writes-physics.md`), §4.3, §6.1, §11).
+
 ## 11. What it changes
 
 It changes where to look for the Cauchy. If the Cauchy is a map of looking, then where it turns up, look for a

@@ -380,6 +380,13 @@ H"). Or keep your H and make the thing the focus: choose the baseline so that ha
 the thing at parallax's corner, where its error is least. You need the distance roughly first, so it goes in passes, a
 short step, then a longer baseline set from what the short one gave.
 
+**In physics.** What astronomy does with parallax is this essay's chain run backwards: d = a/tan p with the astronomical
+unit carried in, σ_d/d = σ_p/p the far limit of γ/sin γ, and Lutz and Kelker's bias a read inverted as if it were a
+write. A distance ladder is a tower of reads joined by writes, each rung one factor only where it is flat against an
+independent distance; on Cosmicflows-4, Hubble's 1929 rungs are not. And in a simulation of many standpoints with one
+length carried in at 1% error, the shape improved as N^(−0.49) while the scale never left the 1%: the reads averaged
+down, the one write did not (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §7).
+
 ---
 
 ## 13. What it comes to

@@ -433,6 +433,13 @@ standpoints stepped toward a dent draw it in about an eighth as many, and every 
 
 *Demos: the focus is the corner; the crosshair is the corner; friend or foe; circles and standpoints.*
 
+**In physics.** The inverse square is near and far in physics. Along each direction a source covers its paint is the
+same at every distance; distance changes how many directions it covers, so the law lives in the count, never in the
+paint. A disc's light turns from the near field's flat to the far field's inverse square exactly where the distance
+equals the radius, symmetrically about it, σ(s) + σ(1/s) = −2, but only when the light counted is a share of directions;
+counted as an angle, the switch moves off the corner. On real stars one kind falls in light as d^(−2.02), while counts
+by light, needing no distance, grow as S^(−1.23) (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §6).
+
 ---
 
 ## 14. What it comes to

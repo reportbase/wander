@@ -542,6 +542,15 @@ cosine is coth η − η/sinh² η, where the plane's would be tanh(η/2). The r
 keep angles also keep the harmonic functions. So in three dimensions "the law seen from a standpoint" has to say which
 of the two it means. The thirteenth essay, *Why the plane is special*, takes this apart in full.
 
+**In physics.** The one-length circle sits in relativity in plain sight. Divide E² = (pc)² + (mc²)² by E² and it is the
+unit circle of (pc, mc²) in the one unit E, c the bridge: its shares are β and 1/γ, the moving clock's rate, and v/h is
+the celerity γβ. Home is E = mc², the horizon E = pc, light, and the corner pc = mc², β = 1/√2, where Newton's form and
+the massless form are each other's reciprocal, both 6.07% high. A qubit is the two sweeps: its state a direction at θ,
+its Bloch point at 2θ, the central sweep's point, Born's rule that point's foot h². And interference has the arc's two
+numbers as a bound: visibility at most 2hv, predictability |h² − v²|, V² + P² ≤ 1, full visibility only at the corner.
+All textbook; what the sort adds is where each part sits (*Reads and Writes in Physics*
+(`../reads-and-writes-physics.md`), §4.2, §8.1, §8.2).
+
 ---
 
 ## 10. What it comes to

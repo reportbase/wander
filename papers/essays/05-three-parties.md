@@ -463,6 +463,13 @@ as dense as its corners.
 
 *Demo: the sphere in the cube (any size, the direction unchanged; the extent unknown, off by e/H).*
 
+**In physics.** The flat screen's cos³ is the cos³ law of illumination. A source sending alike in every direction, laid
+on a flat receiver at distance d, gives a power per area that is P/2 times the two-dimensional Cauchy of scale d, the
+wedge's law; on the axis that is 1/d², the inverse square as the Cauchy's height, and the receiver catches exactly half.
+A lens adds one cosine more, cos⁴: three cosines the heat, the fourth the lens's. Three dimensions are singled out not
+by the turn, whose one-axis marginal is the Cauchy in any dimension, but by Lambert's cosine (*Reads and Writes in
+Physics* (`../reads-and-writes-physics.md`), §6.1).
+
 ---
 
 ## 12. What it comes to

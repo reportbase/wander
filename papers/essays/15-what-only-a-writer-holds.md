@@ -218,6 +218,14 @@ the writer's statement, not the writer's number. That is the same move essay 12 
 pair [0 : 1] instead of the infinite chart value. Where the infinity is a horizon or a completion, a machine is faithful
 by naming it and computing with order and finite steps; it is never faithful by pretending to have finished.
 
+**In physics.** Every bridge in physics is a write of this kind: the speed of light, a rest frequency, the astronomical
+unit, a kind of star, a clock. The sort gives a law's form and leaves its values to them, and some things it does not
+give at all: c's value, or why a change of frame is a hyperbolic turn and not a circular one. One open number sits here:
+the proposal that the matter fraction Ω_m is 1/π. Its derivation is not accepted, since it multiplies 2/π and ½, both
+the writer's, as if they were filters; but it was written down before the next surveys report, so it stands as a
+registered prediction, 0.4σ from Planck and 2.4σ from DESI's second release, to be dropped if the 2027–2028 surveys put
+it past 3σ (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §4.2, §12.2).
+
 ## 8. What it changes
 
 It changes nothing about π or e or how to compute them. It sorts.

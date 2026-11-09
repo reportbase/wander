@@ -380,6 +380,14 @@ and payload is already in the formulas: aberration on one line, Doppler shift an
 not do is name the two as a transformation of directions and a weighting of payload, and so they do not say why the first
 is a Möbius map carrying the Cauchy and the second is not. The identities are exact. The reading is ours.
 
+**In physics.** The moving sky is worked through on real data in *Reads and Writes in Physics*
+(`../reads-and-writes-physics.md`), §5. A census of CatWISE quasars cut at a flux expects a dipole of [2 + x(1 + α)]·β,
+the paint carrying 60–70% of it; four slices by brightness give one β, 2.7 times the microwave background's, but slices
+by colour disagree and the direction lies 21–28° off, so part of the dipole is not the reader's motion. Two boosts
+joined leave the Thomas–Wigner rotation, read from three stars' directions alone and absent from any single boost. And
+the correspondence ends at one premise, that motion is conformal on the sky, from which Liouville gives Möbius and the
+Möbius group of the sphere is the Lorentz group.
+
 ---
 
 ## 8. What it comes to

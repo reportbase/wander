@@ -232,6 +232,13 @@ corners as its two mirrors, the thumb's lay as a turn in distance, the sphere as
 agree, the heat as a count per chart, and the place where it stops as the place where reading and writing stay apart but
 turning stops being simple.
 
+**In physics.** A boost along one axis is a slide on this plane: in the stereographic chart about that axis it
+multiplies z by the Doppler factor k, sliding ln z by the rapidity, so collinear rapidities add as slides do, and the
+velocity law (β₁ + β₂)/(1 + β₁β₂) is the writer's tanh of the reader's sum. The rapidity is read from three stars'
+directions alone, as the trace of a Möbius map, 2·cosh(ζ/2), with no frequency and no distance. Two boosts along
+different axes cannot be one slide, and leave a turn, the plane's limit met in space (*Reads and Writes in Physics*
+(`../reads-and-writes-physics.md`), §5.3).
+
 ## 11. What it changes
 
 It gives the series one picture. Reading against writing has been argued in words, in tests and in demos; on this plane it
