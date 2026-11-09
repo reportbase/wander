@@ -262,7 +262,7 @@ What each would do for the two weak points of runs 1–3:
    - The jackknife's large-scale scatter is what limited runs 2–3. With the whole sky the dipole no longer leans on a
      polar component the mask leaves undetermined. RACS-mid also brings a second instrument, so a scatter that belongs
      to one survey would show as a disagreement between hemispheres.
-   - The published route (Wagenveld, Klöckner and Schwarz 2023, RACS-low with NVSS; Oayda et al. on RACS) is known
+   - The published route (Wagenveld, Klöckner and Schwarz 2023, RACS-low with NVSS, cited from memory, to check) is known
      beforehand. Their numbers are to be read and stated in the next plan before anything is fitted.
 2. **A colour not resting on TGSS.** RACS-low (887.5 MHz) against RACS-mid (1367.5 MHz) gives each source's α from one
    telescope over the same sky, in the same beam family. RACS-high (1655.5 MHz) gives a third point. That replaces run
