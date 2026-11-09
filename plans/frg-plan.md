@@ -48,3 +48,34 @@ Along the height it is ln of a ratio of thumbs: the across axis of Euler's plane
 hyperbolic distance. The median, the reader's statistic, is 8/π² as efficient as the best the joined reads allow.
 
 ## Runs
+
+### Run 1 (9 Nov, `python3 runs/frg/frg.py`, 16 s; output `runs/frg/frg-run1.txt`)
+
+```
+F1: not killed. I = diag(1/2γ², 1/2γ²), off-diagonal 0, worst 1.71e-51
+F2: not killed. KL closed form, symmetric, = 2 ln cosh(d/2), six pairs, worst 1.27e-49
+F3: not killed. KL unmoved by 7 real Möbius maps (scale the world among them), worst 5.67e-51
+F4: not killed. one foot: d = |ln r|, KL = ln((1+r)²/4r) = −2 ln sech(½ ln r), r ↔ 1/r, worst 2.67e-51
+F5: not killed. stepping back lowers KL and d at every step; KL at s = 10⁶ at most 4.21e-10; quadrature check 2.46e-50
+F6: not killed. efficiency 8/π² = 0.810569; n·var(median) 2.4893 (π²/4 = 2.4674), n·var(MLE) 1.9982 (2), ratio 0.8027
+F7: not killed. every dyadic cell's Fisher area ½, j = −3 … 10, worst 0.0
+```
+
+Nothing killed. ChatGPT's mathematics holds as stated: the metric, the curvature −2, the closed KL, its symmetry and
+2·ln cosh(d/2). All of it is classical; what it adds here, read against *Reads and Writes*:
+
+- **Known in another language.** The hyperbolic plane of standpoints was already the corpus's (ADR's distance, DYH's
+  tiling, JAY's Fisher–Rao length of the facing, the Möbius closure). Fisher–Rao supplies a statistical name for that
+  distance, not a new structure.
+- **One distinction it sharpens.** Distinguishability is unmoved by every real Möbius map (F3), so it passes the scale
+  test, yet it is a quantity of two standpoints: it joins reads, so it is a write (R651). It is an example for R657's
+  "the scale test is necessary, not sufficient", with a number attached.
+- **The writer's count is the distance.** At one foot the distance is |ln r| (F4): Euler's plane's across axis, ln(d/H),
+  is the hyperbolic distance between the standpoints, and e^(−KL/2) = sech(½ ln r), the overlay's sech, at half the ratio.
+- **The relay forgets.** Stepping back (a relay of heights, SUM) lowers the distance at every step (F5): standing higher
+  makes standpoints harder to tell apart, the data processing inequality on the plane of standpoints.
+- **What the median costs.** The median, the reader's order statistic, has 8/π² = 0.811 of the efficiency the joined
+  reads allow (F6; seeded 0.803): to know more than the median gives, the reads must be joined by a likelihood, a write.
+
+Proposed, not made: one sentence in *Reads and Writes* §2 (the standpoints' plane carries the Fisher metric, half the
+Poincaré; distinguishability is invariant yet joins two reads); Tom's call.
