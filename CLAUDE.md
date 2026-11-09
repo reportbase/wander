@@ -350,6 +350,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   and fifteen cards carry an "In physics" line (`.phys`) pointing to its section (pinhole, boost-sky, one-read,
   cauchy-map (now `id="cauchy-map"`), plane-sphere, euler, moon, from-home, approach, parallax, pool, pool-infinite, thin,
   ladder, sky); the parallax card's "doubling per level" reworded; `essays.html`'s lede names the paper. Pages unchanged.
+  R768 (9 Nov; Tom: "yes, add the notes to the demos"): fourteen of those pages carry the same "In physics" note at the
+  foot of their main (`.note`, or `.cap` on `moon.html` and `from-home.html`), `euler.html` in its menu's About;
+  `pool-infinite.html` (full screen, no text) left without one. Nothing else on the pages changed.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

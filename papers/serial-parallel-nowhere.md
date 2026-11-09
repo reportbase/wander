@@ -7410,6 +7410,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R768** (9 Nov; Tom: "yes, add the notes to the demos"): the "In physics" notes carried onto the demo pages themselves:
+  a paragraph at the foot of pinhole, boost-sky, one-read, cauchy-map, plane-sphere, moon, from-home, approach, parallax,
+  pool, thin, ladder and sky, and in the About of `euler.html`'s menu, each naming the known physics the page shows and
+  its section of *Reads and Writes in Physics*. `pool-infinite.html` keeps no text and has none. No new claim.
 - **R767** (9 Nov; Tom: "update the demos"): `demos.html` points to *Reads and Writes in Physics* in its lede and above
   the physics correspondence, and fifteen demo cards gain an "In physics" line naming the known physics each shows and
   the paper's section (the cos³ law, the boosted sky, the Lorentzian and Na D2, Thomas–Wigner, rapidities as slides,
