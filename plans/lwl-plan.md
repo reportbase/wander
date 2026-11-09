@@ -71,4 +71,70 @@ For each one the plan records the source, how it was measured, and the sha256 of
 
 ## Runs
 
-(Nothing yet.)
+### Run 1 (9 Nov; `runs/lwl/lwl.py`, output `runs/lwl/lwl-run1.txt`)
+
+The search was made after this plan was committed. OpenAlex's free daily budget was spent and Semantic Scholar refused,
+so abstracts and texts came from arXiv's export, PDG, Crossref, and pages found by web search.
+
+**Pairs found: five, lifetimes from 10⁻¹⁷ s to 10⁻⁸ s.**
+
+| Pair | Width, in frequency or energy | Lifetime, in time | Γτ | from 1 |
+|---|---|---|---|---|
+| Na 3p ²P₃/₂ | Oates, Vogel and Hall 1996, line shape: 16.237(35) ns | Volz et al. 1996, decay in flight: 16.254(22) ns | 1.0010 ± 0.0025 | +0.41σ |
+| π⁰ | Larin et al. 2020 (PrimEx-II), Primakoff: Γ(γγ) = 7.802 ± 0.052 ± 0.105 eV, over B(γγ) = 98.823 ± 0.034% | Atherton et al. 1985, direct: (8.97 ± 0.22 ± 0.17)·10⁻¹⁷ s | 1.076 ± 0.037 | +2.05σ |
+| Cd 5s5p ¹P₁ | arXiv:2210.11425 (2022), line shape: 1.60(5) ns | beam-foil 1973, the most precise time-domain value in that paper's table: 1.90(15) ns | 1.19 ± 0.10 | +1.86σ |
+| Kr 3d hole | 88 ± 4 meV | Drescher et al. 2002, attosecond pump–probe: 7.9 (+1.0/−0.9) fs | 1.06 ± 0.14 | +0.41σ |
+| Dy, 421 nm level | arXiv:1009.2962, line shape at zero intensity: 31.9(8) MHz | Curry, Den Hartog and Lawler 1997, as that paper quotes it: 33.1(17) MHz equivalent | 0.964 ± 0.055 | −0.66σ |
+
+Notes on the pairs:
+- **Kr's width** is read secondhand from publications.aob.rs/99/pdf/047-050.pdf. Its primary measurement was not read.
+  The lifetime's two sides are averaged into one error, 0.95 fs.
+- **Dy's lifetime** is the time-resolved laser-induced fluorescence of Lawler's group. That method is from memory: the
+  1997 paper itself was not reachable.
+- **The pion's two methods** are named by PDG 2024. PDG says Atherton 1985 is "the only direct measurement of the π⁰
+  lifetime".
+
+**Sources read** (sha256 of what was read, not committed):
+- PDG 2024 π⁰ listing: `1d738eed1677e11d929fe59c23eec64b2f8ba039a10510b132dc2d6d94340821`
+- arXiv:2210.11425 (Cd): `eb672663df38da1fa594da9f7030958fa61fd9fe6777db3625e9232f2c0bd8a7`
+- arXiv:2309.03669 (Zn): `bf54a552f0b0f7875046b131f84ae93404d35ca57283619a377e783f2d4bc7a3`
+- arXiv:1009.2962 (Dy): `4794135c6b227c1ddc4b89536295a82024d4ab0f9c45a40d1b69f6cb83f3c4ff`
+- aob.rs Kr paper: `937476be87f094f10a29c9fe6420cfe6f8665feabfea519047dec719f3a0b11e`
+- RePEc's record of Drescher et al. 2002, with its abstract: `981ecc2a1ac77b9ceec14ec4aaef8f66a6b4983dd4f30ce9d7589e9b96c5c014`
+- Na: the OpenAlex responses recorded in TIM.
+
+**Not pairs:**
+- **Zn ¹P₁.** arXiv:2309.03669's width, 1.440(18) ns, is compared there only with a compiled average of five methods.
+  No time-domain value was found.
+- **Dy 741 nm.** Two time-domain methods, no width.
+- **⁸⁷Sr ³P₀.** The cavity width is a ratio to ³P₁'s.
+- **⁴⁵Sc.** No natural width measured.
+- **Ar¹³⁺.** A lifetime only.
+- **⁵⁷Fe Mössbauer.** No paper extracting the natural width was reached.
+
+**Verdicts:**
+- **L1 not killed.** Every pair lies within 3σ; the largest is the pion's, 2.05σ.
+- **L2 not killed.** χ² 8.43 on 5, p = 0.134.
+- **L3 not killed.** The pion is 2.05σ from 1. Without the branching ratio it would be 1.063, so the ratio matters at
+  this precision.
+
+The ties and choices the rules left, reported, not counted:
+- Cd with the Hanle width 1.66(5) ns (1964, 1969) in place of the line shape: +1.49σ.
+- Cd with the 2004 time-resolved fluorescence, 1.75(20) ns, in place of beam-foil: +0.72σ.
+
+**Read after the run, not tested.**
+- Four of the five lie above 1, each because the lifetime measured in time is the longer.
+- For Cd, the beam-foil value is the culprit beam-foil is known for: cascades from higher levels refill the level and
+  lengthen the decay.
+- The pion's tension is the one in the literature (PDG's average uses both methods, scale factor 1.2).
+- Nothing here asks for more than Weisskopf and Wigner.
+
+**L4 (history, not counted).** On sodium the time-domain values moved toward the width in 1996, as TIM recorded. On
+cadmium, the 2022 width sits under every time-domain value, and its authors call it the one less open to systematics.
+
+**What the run says.**
+- One quantity read two ways agrees over nine orders of magnitude of lifetime: from 10⁻¹⁷ s (the pion) through 10⁻¹⁴ s
+  (an inner-shell hole) to 10⁻⁸ s (sodium).
+- What differs between the two reads is the standard each needs, a frequency or a clock. The product needs neither.
+- That is the reading of *Reads and Writes in Physics* §4.3, and it survived a test that could have failed. It is still
+  classical physics.

@@ -1,0 +1,13 @@
+pair            Gamma*tau    error  sigma from 1  L1
+Na 3p 2P3/2        1.0010   0.0025          0.41  not killed
+pi0                1.0759   0.0371          2.05  not killed
+Cd 1P1             1.1875   0.1008          1.86  not killed
+Kr 3d              1.0562   0.1358          0.41  not killed
+Dy 421 nm          0.9637   0.0551         -0.66  not killed
+L2: chi2 8.43 on 5, p = 0.134 -> not killed
+L3: the pion -> not killed
+
+Reported, not counted:
+  Cd, width by Hanle 1964/1969 1.66(5) against beam-foil 1.90(15): 1.1446 +- 0.0967 (+1.49 sigma)
+  Cd, width by line shape against time-resolved fluorescence 2004, 1.75(20): 1.0938 +- 0.1296 (+0.72 sigma)
+  pi0 with the gamma-gamma width alone (no branching ratio): 1.0632

@@ -7410,6 +7410,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R773** (9 Nov; Tom: "yes", to the line-width test next): LWL (`plans/lwl-plan.md`, `runs/lwl/lwl.py`), predictions
+  first. One quantity read two ways: a natural width in frequency against a lifetime in time.
+  - **Pairs.** Five independent pairs: Na D2, the neutral pion (Primakoff against decay in flight), Cd ¹P₁, the Kr 3d
+    hole (attosecond pump–probe) and Dy's 421 nm level. Lifetimes run from 10⁻¹⁷ s to 10⁻⁸ s.
+  - **Verdicts.** Every Γτ is within 3σ of 1 (the pion 1.076 ± 0.037, 2.05σ, the largest), and χ² is 8.43 on 5
+    (p = 0.13). Nothing killed.
+  - **Read after the run.** Four of five lie above 1, the clock's read the longer (beam-foil's cascades on Cd).
+  - **Standing.** Classical, Weisskopf and Wigner; the reading of *Reads and Writes in Physics* §4.3 survived a test that
+    could fail.
 - **R772** (9 Nov; Tom: "lets find data sources to make it robust.", "yes", "is it still a useful test?", "yes"): RDD
   run 4 planned and not run.
   - **Data.** Sources found: RACS-low, RACS-mid and RACS-high on CASDA's TAP; NVSS, SUMSS, WENSS and GLEAM on
