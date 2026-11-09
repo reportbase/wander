@@ -1128,8 +1128,8 @@ edge touches, [h : v]. The writer's account of which finger that is, v/h = (V\*/
 never holds. A read is one place, now: "one in eight of the thumb", or "four thumbs". It does not hold that the mountain
 is nearer than it was, or that it is getting nearer: nearer compares two reads, and joining reads is a write. What
 follows is the writer's account, the reads laid in order along the walk. Far off the mountain is one in eight of the
-thumb, then one in four, one in two: each time the distance halves the reading doubles, and each such stretch takes as
-much of the heat as the last. One read has the mountain exactly covering the thumb. That is the corner, and that read
+thumb, then one in four, one in two: each time the distance halves the reading doubles, but the turn taken in does not
+stay equal; per halving of the distance it is greatest where the mountain fills the thumb and fades on either side. One read has the mountain exactly covering the thumb. That is the corner, and that read
 needs no amount: the reader can say "now the mountain is my thumb" while V\*, d and the corner's distance d_c = V\*·L/H
 stay unknown. Past it the mountain is more than the thumb, and the two sides mirror each other: standing at d and at
 d_c²/d read as reciprocals. Laid in order, the reads climb toward the horizon, [0 : 1], h falling to 0, and halvings
@@ -1157,11 +1157,12 @@ of 2 cm at 60 cm), the mountain's own at half a breadth, sixty times nearer.
 Laid in order, the reads take in the turn at two paces, by what the walk is counted in. Counted in ratios, every halving
 of the distance, the span grows most about the mountain's corner and alike on either side of it: from eight
 half-breadths off to an eighth of one, 14°, 28°, 53°, 90°, 127°, 152°, 166°, the gains 14°, 25°, 37°, 37°, 25°, 14°. Per
-unit of ln d the turn taken in is sech(ln(V\*/2d)), the heat in distance of §7 with the half-breadth as the thumb.
-Counted in metres it is dα/dd = V\*/((V\*/2)² + d²), the Cauchy in distance, least far off and most at the foot. One turn,
+unit of x = ln(V\*/2d), which grows as the walk nears the foot, the turn taken in is sech x, the heat in distance of §7
+with the half-breadth as the thumb. Counted in metres walked, ℓ, with dℓ = −dd, it is dα/dℓ = V\*/((V\*/2)² + d²), the
+Cauchy in distance, least far off and most at the foot. One turn,
 two measures: from the corner to the foot either gathers π/2, from home to the foot π. Neither is the mountain's breadth.
 The areas are turns; the breadth is written by a count. Strides from the mountain's corner to the foot are V\*/2 in the
-walker's stride, since the read there is 1, and strides from the thumb's corner are V\* in thumbs. The count is
+walker's stride, since the read there is 1; strides from the thumb's corner, times the thumb's H/L, write V\* in strides. The count is
 discrete and ends; the turn is never completed by any number of halvings. They agree only at a corner, where a read is 1
 and a length walked and a ratio held say the same. The first test sorts them on this walk (§1): scale the world, the
 mountain, the walk and the walker's stride by k, and every s, every Z and the pace per halving stay as they were;

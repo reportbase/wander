@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R781** (9 Nov; Tom: a ChatGPT diff of §8, "chatgpt suggested changes"): taken, checked: in "Walking to the mountain",
+  "each such stretch takes as much of the heat as the last" was false of the turn (per halving of the distance the gain
+  in the thumb's turn is greatest at its corner and falls off both ways, 7°, 12.5°, 18.4°, 18.4°, … about it, as §7's
+  sech says); x = ln(V*/2d) named, growing toward the foot; the per-metre rate written dα/dℓ with ℓ the distance walked
+  (dα/dd, as printed, was negative); strides from the thumb's corner times H/L write V* in strides (it said "in thumbs").
+  Its list from sixteen half-breadths with a 7° first span agrees with the paper's from eight; left as it was. Its closing
+  paragraph, the breath of the walk in the paper, not taken pending Tom's ruling (R727, R779 keep breathing in the note).
 - **R780** (9 Nov; a ChatGPT note pasted: integrate the walk in four steps, Euler last, H kept for the thumb, then a
   referee's question, does the reader now see why reading and writing differ or is it still asserted): *Reads and
   Writes* §8 "The mountain's own corner" reordered (the read and its ends, the two paces and the count, then Euler's
