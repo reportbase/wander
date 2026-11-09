@@ -395,6 +395,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   partial polarizer y), its Jones matrix BRL's M times a scalar, the squeeze its diattenuation D = √(F² − 4)/F ≥ tanh 2ζ,
   n stacks 4ζ a stack in ln(1 − D); LWL run 2 (⁵⁷Fe untested: no energy-domain natural width reachable); draw's
   `explained.html?x=breath`.
+  `frg-plan.md` (+ `runs/frg/frg.py`, 9 Nov; SPN R787; Tom: "proceed", to ChatGPT's Fisher–Rao suggestion): exact, nothing
+  killed: the Cauchy family's Fisher metric half the Poincaré, KL = 2·ln cosh(d/2) and Möbius-invariant, d = |ln r| at
+  one foot, stepping back lowering it, the median 8/π² efficient. Largely the corpus's already (ADR, DYH, JAY); a write
+  that passes the scale test. Then (Tom: "yes") *Reads and Writes* §2 "How far apart two standpoints are".
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

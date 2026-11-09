@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R787** (9 Nov; Tom: "proceed", to ChatGPT's suggestion to investigate the Fisher–Rao geometry of the Cauchy family
+  first, without editing *Reads and Writes*): FRG (`plans/frg-plan.md` + `runs/frg/frg.py`, exact, nothing killed): the
+  Fisher metric of C(m, γ) is (dm² + dγ²)/(2γ²), half the Poincaré; KL = ln(((m₁ − m₂)² + (γ₁ + γ₂)²)/(4γ₁γ₂)) =
+  2·ln cosh(d/2), symmetric, unmoved by every real Möbius map; at one foot d = |ln r|, e^(−KL/2) = sech(½ ln r); stepping
+  back lowers it at every height; the median's efficiency 8/π². Classical, and largely the corpus's already (ADR, DYH,
+  JAY); read: distinguishability passes the scale test yet joins two reads, a write (R651, R657). Then (Tom: "yes"):
+  *Reads and Writes* §2 "How far apart two standpoints are", Chyzak and Nielsen cited, and Code and data.
 - **R786** (9 Nov; Tom: "1,2,3,4"): the three loops in essay 18 §9 (a breath closes in the plane and in space; two reads come
   home turned, bounded; a read with an unequal write squeezed, growing; steady exactly at one length), a pointer in essay
   13 §4 and the essays README. UWR (`plans/uwr-plan.md` + `runs/uwr/`, exact, nothing killed): the unequal write has a

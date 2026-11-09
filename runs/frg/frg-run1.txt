@@ -1,0 +1,7 @@
+F1: not killed. I = diag(1/2γ², 1/2γ²), off-diagonal 0, worst 1.71e-51
+F2: not killed. KL closed form, symmetric, = 2 ln cosh(d/2), six pairs, worst 1.27e-49
+F3: not killed. KL unmoved by 7 real Möbius maps (scale the world among them), worst 5.67e-51
+F4: not killed. one foot: d = |ln r|, KL = ln((1+r)²/4r) = −2 ln sech(½ ln r), r ↔ 1/r, worst 2.67e-51
+F5: not killed. stepping back lowers KL and d at every step; KL at s = 10⁶ at most 4.21e-10; quadrature check 2.46e-50
+F6: not killed. efficiency 8/π² = 0.810569; n·var(median) 2.4893 (π²/4 = 2.4674), n·var(MLE) 1.9982 (2), ratio 0.8027
+F7: not killed. every dyadic cell's Fisher area ½, j = −3 … 10, worst 0.0
