@@ -1,0 +1,6 @@
+rows read 1396515; codes {'S': 439488, 'M': 35202, 'C': 28957, 'I': 41023, 'L': 845459, 'U': 6386}
+kept pixels 23970 of 49152 (0.488 of the sky)
+
+sample >= 0.02 Jy in the mask: 264478; alpha mean 0.586; TGSS limits (L) 37464
+one-sided mask, >= 0.02 Jy: N 329064 D 0.0091 (bootstrap 0.0031, jackknife 0.0072) axis (330, 31), 52 from CMB, 73 from CatWISE; beta/CMB 1.97
+one-sided mask, >= 0.04 Jy: N 151872 D 0.0219 (bootstrap 0.0053, jackknife 0.0078) axis (321, 7), 63 from CMB, 83 from CatWISE; beta/CMB 5.70

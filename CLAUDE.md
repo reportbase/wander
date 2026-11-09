@@ -353,6 +353,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R768 (9 Nov; Tom: "yes, add the notes to the demos"): fourteen of those pages carry the same "In physics" note at the
   foot of their main (`.note`, or `.cap` on `moon.html` and `from-home.html`), `euler.html` in its menu's About;
   `pool-infinite.html` (full screen, no text) left without one. Nothing else on the pages changed.
+  RDD (`plans/rdd-plan.md` + `runs/rdd/rdd.py`, 9 Nov; SPN R769; Tom: "proceed per your recommendations"): EBD's sort on
+  the radio sky, de Gasperin et al. 2018's TGSS × NVSS spectral-index catalogue (VizieR J/MNRAS/474/5008, reached through
+  the CfA mirror vizier.cfa.harvard.edu, since the CDS hosts do not answer here; sha256 in the plan; fluxes on a 10 mJy
+  grid). Predictions committed before the download: one β over flux slices (R1) and over α terciles (R2), one β and one
+  axis shared with CatWISE (R3, R4). Nothing killed, nothing tested hard (half the sky by the symmetric mask, jackknife
+  errors twice the bootstrap's; R2 p = 0.044). A powered run needs the full NVSS (VIII/65) and a colour not resting on TGSS.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
