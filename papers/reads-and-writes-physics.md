@@ -333,6 +333,45 @@ every conformal map of the sphere is Möbius, and the Möbius group of the spher
 1984). Given that premise, the rest is classical. That is where the correspondence ends, and it is said here so that it
 is not mistaken for more.
 
+### 5.4 Loops that come home turned [exact]
+
+§5.3's leftover is one case of a wider fact. A read is one standpoint at one moment; reads joined end to end round a loop
+are a write, and what the write leaves over when the loop closes depends on where the joining happens.
+
+- **In the plane, nothing.** Turns of the plane commute, so carrying a direction round any closed loop brings it home
+  unturned. Fifty loops laid flat turned by 0, which was guaranteed: flat transport does not change a direction at all.
+- **On the sphere of directions, the area.** Turns of space do not commute, and a direction carried round a closed loop
+  on the sphere (parallel transport, each step as straight as the sphere allows) comes home turned by the solid angle the
+  loop encloses (Gauss 1828; the Gauss–Bonnet theorem). The transport was integrated as a differential equation at 50
+  digits, and the area worked out separately (by the triangle formula of Van Oosterom and Strackee 1983): twelve circles
+  of latitude agreed to 3 × 10⁻⁵⁰, two hundred random geodesic triangles and quadrilaterals to 10⁻⁴⁹. Essay 13's quarter
+  turns about h, then v, then back about each, coming home turned 90°, are the octant's loop: its area is π/2.
+- **In velocity space, minus the area.** Boosts joined round a closed loop of velocities leave the Wigner rotation, and it
+  equals minus the loop's hyperbolic area (rapidity space has curvature −1 where the sphere has +1). For two hundred
+  loops with rapidities from 0.01 to 3 the two agreed to 1.5 × 10⁻⁴⁷, sign included. §5.3's small-loop coefficients are
+  this at the leading order; it holds for large loops too.
+- **No amount enters.** The turn is a direction. On spheres of radius 10⁻³, 7 and 10⁶ it is the same (to 10⁻⁴⁹): the
+  radius cancels against the lengths of the loop, as the scale test asks of a reading. A loop out and back along one line
+  encloses nothing and turns nothing (5 × 10⁻⁵¹ on the sphere, 2.5 × 10⁻⁴⁹ in velocity space).
+
+So the leftover of joining is a reading of the write: the area the joined reads enclose, with no unit and no clock. A rate
+of turning is another matter. Foucault's pendulum (1851) turns, against the ground, by 360°·sin φ a sidereal day at
+latitude φ: the area the latitude's circle leaves out of the hemisphere, read per turn of the Earth. The degree a day
+carries the sidereal day in, a clock, so it is a write. Measured rates were sought before any was read; one site met the
+rules fixed beforehand (a pendulum free of the ellipse's precession, decided from its text): Schumacher and Tarbet (2009)
+at Pittsburgh, −9.69 ± 0.09° an hour, which is 357.6 ± 3.3° a sidereal day over sin φ, 0.74 standard errors from 360°.
+One site is too few to count; the test asked for three. Berry's phase in a coiled fibre (§8.4; Tomita and Chiao 1986),
+the same leftover on the sphere of a light ray's directions, could not be reached as numbers, so it is untested here.
+
+In a spectrum the leftover shows as Thomas's half (Thomas 1926). An electron's frame, carried round its orbit, comes home
+turned, and that precession halves the spin–orbit splitting a magnet alone would give. Hydrogen's 2P₃/₂–2P₁/₂ interval is
+10,949.6 MHz on Dirac's value, which contains the half; the measured interval, taken here from memory and still to be
+checked against its source (2S₁/₂–2P₃/₂ from Hagley and Pipkin 1994, plus the Lamb shift), is 10,969.0 MHz. Measured over
+Dirac is 1.0018, the rest QED; measured over the interval without the half is 0.501. This is reported, not counted.
+
+None of it is new physics: Gauss, Thomas, Wigner, Foucault and Berry hold every piece. What the sorting adds is where each
+piece falls. The turn is read from the loop alone; the loop is joined, a write; a rate of turning needs a clock.
+
 ## 6. Light
 
 ### 6.1 The inverse square, as heat and paint [exact]
@@ -612,7 +651,8 @@ written before it was run and its runs recorded as they came out, the killed one
 - §4: motion from reads and special relativity in shares, `plans/mot-plan.md`, `runs/mot/`; E² = (pc)² + (mc²)²,
   `plans/emc-plan.md`, `runs/emc/`; time and the standpoint, `plans/tim-plan.md`, `runs/tim/`.
 - §5: the moving sky, `plans/sra-plan.md`, `plans/srr-plan.md`, `runs/sra/`, `runs/srr/`; the quasar dipole,
-  `plans/ebd-plan.md`, `runs/ebd/`; two boosts joined, `plans/twg-plan.md`, `runs/twg/`.
+  `plans/ebd-plan.md`, `runs/ebd/`; two boosts joined, `plans/twg-plan.md`, `runs/twg/`; loops that come home turned, `plans/hol-plan.md`,
+  `runs/hol/`.
 - §6: the inverse square, `plans/isr-plan.md`, `runs/isr/`; the near field, `plans/nrf-plan.md`; light and number on the
   stars, `plans/mag-plan.md`, `plans/cnt-plan.md`, `plans/gcn-plan.md`.
 - §7: parallax as a sum of reads, `plans/pxs-plan.md`, `runs/pxs/`, after `plans/tri-plan.md`; parallax from the corner,
@@ -684,13 +724,22 @@ Englert, B.-G. (1996). Fringe visibility and which-way information: an inequalit
 
 ESA (1997). *The Hipparcos and Tycho Catalogues*. ESA SP-1200.
 
+Foucault, L. (1851). Démonstration physique du mouvement de rotation de la Terre au moyen du pendule. *Comptes rendus
+de l'Académie des sciences* 32, 135–138.
+
 Gaia Collaboration, Smart, R. L. et al. (2021). Gaia Early Data Release 3: the Gaia Catalogue of Nearby Stars.
 *Astronomy and Astrophysics* 649, A6.
+
+Gauss, C. F. (1828). Disquisitiones generales circa superficies curvas. *Commentationes Societatis Regiae Scientiarum
+Gottingensis Recentiores* 6, 99–146.
 
 Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer. *Physics
 Letters A* 128, 391–394.
 
 Haff, P. K. (1983). Grain flow as a fluid-mechanical phenomenon. *Journal of Fluid Mechanics* 134, 401.
+
+Hagley, E. W. and Pipkin, F. M. (1994). Separated oscillatory field measurement of hydrogen 2S₁/₂–2P₃/₂ fine structure
+interval. *Physical Review Letters* 72, 1172–1175.
 
 Henderson, D. (1975). A simple equation of state for hard discs. *Molecular Physics* 30, 971.
 
@@ -732,6 +781,8 @@ Penrose, R. and Rindler, W. (1984). *Spinors and Space-Time*, Volume 1. Cambridg
 
 Planck Collaboration (2020). Planck 2018 results VI: cosmological parameters. *Astronomy and Astrophysics* 641, A6.
 
+Schumacher, R. A. and Tarbet, B. (2009). A short Foucault pendulum free of ellipsoidal precession. arXiv:0902.1829.
+
 Secrest, N. J. et al. (2021). A test of the cosmological principle with quasars. *Astrophysical Journal Letters* 908,
 L51.
 
@@ -746,6 +797,9 @@ Tomita, A. and Chiao, R. Y. (1986). Observation of Berry's topological phase by 
 Review Letters* 57, 937–940.
 
 Tully, R. B. et al. (2023). Cosmicflows-4. *Astrophysical Journal* 944, 94.
+
+Van Oosterom, A. and Strackee, J. (1983). The solid angle of a plane triangle. *IEEE Transactions on Biomedical
+Engineering* BME-30, 125–126.
 
 Volz, U., Majerus, M., Liebel, H., Schmitt, A. and Schmoranzer, H. (1996). Precision lifetime measurements on NaI
 3p ²P₁/₂ and 3p ²P₃/₂ by beam-gas-laser spectroscopy. *Physical Review Letters* 76, 2862.

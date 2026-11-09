@@ -7410,6 +7410,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R776** (9 Nov; Tom: "1", to writing the section and opening a PR): HOL run 1 carried into *Reads and Writes in
+  Physics* §5.4, "Loops that come home turned" (the plane none, the sphere of directions the area, velocity space minus
+  the hyperbolic area, no amount entering; Foucault's rate a write by its clock; Thomas's half in hydrogen, its measured
+  value marked from memory) and `physics.md` §2.2; five references added (Foucault 1851, Gauss 1828, Hagley and Pipkin
+  1994, Schumacher and Tarbet 2009, Van Oosterom and Strackee 1983). No new claim.
 - **R775** (9 Nov; Tom: "yes", to a section on loops that come back turned): HOL (`plans/hol-plan.md`, `runs/hol/`),
   predictions first.
   - **Exact, nothing killed** (at 50 digits; transport integrated as an ODE, the area computed apart from it):

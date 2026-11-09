@@ -371,7 +371,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `hol-plan.md` (+ `runs/hol/hol.py`, `hol2.py`, 9 Nov; SPN R775; Tom: "yes", to loops that come back turned): exact at 50
   digits, nothing killed: transport round loops on S² turns by the enclosed area (10⁻⁴⁹), the plane's by none, boost loops by
   minus the hyperbolic area (Wigner, 10⁻⁴⁷), unmoved by scale; the data untested (Foucault one site, Schumacher and Tarbet
-  2009, 0.74σ; Tomita–Chiao not reachable); H7 reported, hydrogen's 2P interval 0.501 of the value without Thomas's half.
+  2009, 0.74σ; Tomita–Chiao not reachable); H7 reported, hydrogen's 2P interval 0.501 of the value without Thomas's half. Carried into *Reads and Writes in Physics*
+  §5.4 and `physics.md` §2.2 (R776).
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
