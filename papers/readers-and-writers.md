@@ -1175,6 +1175,10 @@ Joined, the reads telescope: the product of Z_(j+1)/Z_j along the walk is Z_N/Z_
 The joining is the write (reads are unconnected, §1); naming the angles turns that product into e^(iΣΔα), a sum of
 turns, one composition written two ways.
 
+This is the walk's breath. The read is the inhale: a present ratio, held at every standpoint, unmoved by the world's
+scale. Each stride is an exhale: a counted step, discrete, ending. Walking, they come together and look like one act;
+standing still, only the inhale is left, and one standpoint writes nothing.
+
 **Knowing V comes by degrees.** The crossing is not a switch thrown. It has three counts.
 
 - *In what.* Two standpoints a step apart give every place in that step. If the step was H, one thumb, places are in

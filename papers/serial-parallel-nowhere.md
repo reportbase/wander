@@ -7417,6 +7417,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   (dα/dd, as printed, was negative); strides from the thumb's corner times H/L write V* in strides (it said "in thumbs").
   Its list from sixteen half-breadths with a 7° first span agrees with the paper's from eight; left as it was. Its closing
   paragraph, the breath of the walk in the paper, not taken pending Tom's ruling (R727, R779 keep breathing in the note).
+  Then (Tom: "what do you think?", then "yes"): taken in a short form, closing the mountain's passage: the read the
+  inhale (a present ratio, unmoved by scale), the stride the exhale (counted, discrete, ending), together in motion,
+  only the inhale at rest (one standpoint writes nothing). The first breathing in a paper; the loop on Euler's plane and
+  its leftover in space stay in `plans/breath-note.md` until checked exactly.
 - **R780** (9 Nov; a ChatGPT note pasted: integrate the walk in four steps, Euler last, H kept for the thumb, then a
   referee's question, does the reader now see why reading and writing differ or is it still asserted): *Reads and
   Writes* §8 "The mountain's own corner" reordered (the read and its ends, the two paces and the count, then Euler's
