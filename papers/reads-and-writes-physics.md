@@ -361,7 +361,12 @@ carries the sidereal day in, a clock, so it is a write. Measured rates were soug
 rules fixed beforehand (a pendulum free of the ellipse's precession, decided from its text): Schumacher and Tarbet (2009)
 at Pittsburgh, −9.69 ± 0.09° an hour, which is 357.6 ± 3.3° a sidereal day over sin φ, 0.74 standard errors from 360°.
 One site is too few to count; the test asked for three. Berry's phase in a coiled fibre (§8.4; Tomita and Chiao 1986),
-the same leftover on the sphere of a light ray's directions, could not be reached as numbers, so it is untested here.
+the same leftover on the sphere of a light ray's directions, could not be reached as numbers. A qubit's could (Leek et
+al. 2007): a superconducting two-level system whose field direction is taken round cones, the phase left after a spin
+echo read against the cone's solid angle. Read from the paper's figure, 192 points over cones from 0.3 to 2.6 sr, both
+directions and one or one and a half loops, follow twice the solid angle (the echo's two loops) with slope 1.013 ± 0.003;
+the loop that undoes itself leaves no turn but an offset of 0.2 rad. The strength of the field and the length of the
+sequence enter nowhere in the comparison.
 
 In a spectrum the leftover shows as Thomas's half (Thomas 1926). An electron's frame, carried round its orbit, comes home
 turned, and that precession halves the spin–orbit splitting a magnet alone would give. Hydrogen's 2P₃/₂–2P₁/₂ interval is
@@ -759,6 +764,9 @@ Analysis and Machine Intelligence* 16, 150.
 
 Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception* 5,
 437–459.
+
+Leek, P. J., Fink, J. M., Blais, A., Bianchetti, R., Göppl, M., Gambetta, J. M., Schuster, D. I., Frunzio, L.,
+Schoelkopf, R. J. and Wallraff, A. (2007). Observation of Berry's phase in a solid-state qubit. *Science* 318, 1889–1892.
 
 Liouville, J. (1850). Extension au cas des trois dimensions de la question du tracé géographique. Note VI in G. Monge,
 *Application de l'analyse à la géométrie*, 5th ed., Paris, 609–616.

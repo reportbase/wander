@@ -650,7 +650,10 @@ Then (SPN R440; Tom: "proceed with recommended changes") a real-data test of the
     TWG's small loops carried to large ones;
   - no amount enters: radius 10⁻³, 7 and 10⁶ give one turn; out and back along a line gives none.
   The data part is untested: one Foucault site met the rules (Schumacher and Tarbet 2009, 357.6 ± 3.3° a sidereal day
-  over sin φ, 0.74σ from 360°; three were asked for), and Tomita–Chiao's numbers were not reachable. Reported, not
+  over sin φ, 0.74σ from 360°; three were asked for), and Tomita–Chiao's numbers were not reachable. Run 2 (`runs/hol/hol3.py`):
+  Leek et al. 2007's qubit, 192 points read from their Fig. 3A, the phase against twice the cone's solid angle (the
+  echo's two loops), slope 1.013 ± 0.003 by the paper's own scatter, 1.00–1.03 per series; nothing killed by the plan's
+  tick errors, which were too loose to bite (χ² 3.3 on 192). The loop that undoes itself leaves an offset of 0.19 rad. Reported, not
   counted: hydrogen's 2P interval over Dirac 1.0018, over the value without Thomas's half 0.501 (measured 10,969.045 ± 0.015
   MHz, Hagley and Pipkin 1994 plus Lundeen and Pipkin 1981, checked on 9 Nov). Classical throughout.
 

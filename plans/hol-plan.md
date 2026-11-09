@@ -181,3 +181,40 @@ the adiabaticity condition and the dynamical phase, which the experiments separa
 - arXiv:2407.19425 (a 2024 theory paper on helical fibres, sha256 `8823785dbf80f4af954af2428333d26ab4118f77c4f4293743ea904927ec1b3b`)
   quotes no data; it names measurements in Ross 1984, Tomita and Chiao 1986, Hannonen 2020 and Ferrer-Garcia 2023, to be
   sought.
+
+### Run 2 (9 Nov; `runs/hol/hol3.py`, output `runs/hol/hol-run2.txt`, points `runs/hol/leek2007-fig3a-points.json`)
+
+**How it was read.** Leek et al.'s Fig. 3A was read by template matching on its raster (the JPEG inside fig3.eps,
+sha256 `757794301c182c63904824477ddd693e6bde2b7557f5c8a224396e0542d5ed1c`): 89 filled and 137 open markers found, an
+overlay checked by eye, label areas dropped, points with Θ < 0.3 dropped (there the five series meet and marker and sign
+cannot tell them apart). The axes are the figure's own ticks. The paper's red lines, read the same way, have slope 2n in
+Θ (2.01 and 3.01 at the right edge), which settles the text-against-caption question as the plan fixed it.
+
+**The first execution read wrong (my code).** The phase scale was put through `np.interp` over the ticks at π, 0 and
+−2π, which holds every point above π at π. Its output had two series' slopes 2.3σ and 5.1σ off and would have killed
+H8; it was the reading, not the data. Recorded here; the reading was corrected (a line through the three ticks) and run
+again with nothing else changed.
+
+**Counted, by the plan's errors (half the smallest tick: π/2 in φ, π/8 in Θ).** Nothing killed; 192 points.
+- **H8.** Slopes against Ω = 2nΘ: 1.014 ± 0.20 and 1.028 ± 0.20 (n = 1, the two directions), 1.002 ± 0.15 and
+  1.031 ± 0.15 (n = 1.5); intercepts within 0.3σ. C₊₊ (Ω = 0): mean φ −0.19 rad, 0.7σ.
+- **H9.** χ² 3.3 on 192.
+- **H10.** Not tried: the paper says the phase did not move with the sequence time T, without numbers.
+- **The test is weak as counted.** The tick rule, written for reading by eye, gives errors ten times the points'
+  scatter; χ² 3.3 on 192 says so. It is kept because it was fixed first.
+
+**Reported, not counted, with the paper's own scatter (0.14 rad a point).** One line through all 192: slope
+1.013 ± 0.003, intercept +0.04 ± 0.01. Per series the slopes are within 1–3% of 1 (+0.8, +1.7, +0.2, +2.9 of these
+errors). The r.m.s. of φ − Ω is 0.245 rad against the paper's 0.14, most of it two things: C₊₊ sits 0.19 rad below zero
+throughout (12 of its own standard errors; visible in the figure), and n = 1 C₊₋ starts 0.19 rad above its line. A 1%
+slope is within what reading a raster's axes can give (a pixel in 676). So the turn is the cone's solid angle, doubled
+by the echo, at 1% on a qubit, with an offset of about 0.2 rad the paper does not discuss.
+
+**Still untested.** H5 (Foucault): no further site found with an error and a stated ellipse correction. Tomita and Chiao,
+Bitter and Dubbers: abstracts only. Ross 1984, Hannonen 2020 and Ferrer-Garcia 2023 (named by arXiv:2407.19425) were not
+found on arXiv. One experiment counted, which the plan allows (H8 asks three points, H9 all counted points).
+
+**What run 2 says.** On real data the loop's leftover is its solid angle: a qubit's phase follows 2nΘ over 192 points,
+cones from 0.3 to 2.6 sr, both directions, one and one-and-a-half loops, and the loop that cancels itself (C₊₊) leaves
+nothing but a small offset. The amounts (the field's strength, the time) enter nowhere in the comparison. Classical:
+Berry 1984, measured by Leek et al.

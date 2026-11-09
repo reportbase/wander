@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R777** (9 Nov; Tom: "1,2", to checking H7's numbers and giving HOL's data part a real test): H7's measured interval
+  checked against both abstracts (9,911.200(12) + 1,057.845(9) = 10,969.045 ± 0.015 MHz, as used). HOL run 2, its plan
+  committed before any data: Leek et al. 2007's qubit (Science 318, 1889), 192 points read by template matching from
+  their Fig. 3A, the phase against twice the cone's solid angle. Counted by the plan's tick errors, nothing killed but the
+  test too loose to bite (χ² 3.3 on 192); reported with the paper's 0.14 rad, slope 1.013 ± 0.003, an offset of 0.19
+  rad on the loop that undoes itself. A first execution read every point above π as π (`np.interp` clamps), my code,
+  recorded. In *Reads and Writes in Physics* §5.4 and `physics.md` §2.2. Foucault and the fibres still untested.
 - **R776** (9 Nov; Tom: "1", to writing the section and opening a PR): HOL run 1 carried into *Reads and Writes in
   Physics* §5.4, "Loops that come home turned" (the plane none, the sphere of directions the area, velocity space minus
   the hyperbolic area, no amount entering; Foucault's rate a write by its clock; Thomas's half in hydrogen, its measured
