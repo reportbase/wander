@@ -7410,6 +7410,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R785** (9 Nov; Tom: "1,2,3,4"): BRL into *Reads and Writes* §1, after "One plane": "A loop of a read and a write"
+  (closes in the plane and in space; two reads come home turned, bounded; a read with a write in two unequal lengths comes
+  home squeezed, growing; closed exactly when the write is in one length), and BRL in Code and data. `euler.html`'s seventh
+  view, breaths (`view=breath`, `c=`; hook `breath(α, β, log2 c)`): the three loops breathed side by side, the numbers worked
+  from the forms and from the matrices. `approach.html`'s two paces (hook `paces(d)`): the turn the thing spans per halving
+  (sech x) and per half-breadth walked (the Cauchy), both corners marked. The breath note's item 2 answered by argument: no
+  natural size for a breath (across none, the thumb chosen; up a period only for a turn joined whole, the writer's; a closed
+  loop leaves nothing to measure it by); a size appears only in the loops that do not close, and is a writer's (the sphere's
+  4π, the ratio c).
 - **R784** (9 Nov; Tom: "yes", to the unsteady breath): BRL run 3, 60 digits, nothing killed. A write in two unequal
   lengths (a stretch, V = cH, c ≠ 1, a writer's two axes) does not commute with a turn: the loop turn, stretch, back, back
   leaves a squeeze, det 1, tr = 2 + 4·sin²α·sinh²(½ ln c), its rapidity ζ ≈ |α·ln c|, the same at c and 1/c, in any frame

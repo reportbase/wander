@@ -42,16 +42,18 @@
     Lambert's every cell keeps its area (the read's heat stays flat) and bends (the old look stretched 1/cos(φ/2), h by up
     to 2 at a quarter turn); on the stereographic every cell keeps its angles and changes size (the heat a quarter at the
     rim). No flat chart does both; the plane's lay square does. Drag up and down to turn the look.
+    Breaths (`view=breath`, `c=<log2 c>`; R785, BRL): three loops breathed over and over, side by side: a read and a write
+    (closes), two reads (turned by Ω a breath, bounded), a read and an unequal write (a stretch c, squeezed by e^ζ a breath).
     A fourth view, n reads: (1 + iθ/n)ⁿ, each read one step of reading θ/n composed by tangent addition. The polygon
     closes on e^(iθ); its angle n·atan(θ/n) falls short by about θ³/(3n²), its length (1 + θ²/n²)^(n/2) grows by about
     θ²/(2n), a length no read sees (ELM, runs/elm/elm.py). The limit e^(iθ) is the writer's.
 
     Full screen, no words on the picture: everything with words or numbers is behind the menu (☰).
-    ?view=three|slide|sphere|space|flat|reads&phi=<degrees>&t=0..2&H=<log2 H>&k=<log2 k>&turn=<degrees>&R=8|16|32&lay=square|disc&heat=0|chart&lines=0
+    ?view=three|slide|sphere|space|breath|flat|reads&c=<log2 c>&phi=<degrees>&t=0..2&H=<log2 H>&k=<log2 k>&turn=<degrees>&R=8|16|32&lay=square|disc&heat=0|chart&lines=0
      &dots=0&over=line|spiral&p=<log2 grid units>&f=<degrees>&a=<slope>&yaw=&pitch=&boost=1&al=&be=&loop=1&syaw=&spitch=
      &th=<radians>&n=&labels=1&numbers=1&about=1
     Hook window.__euler: toEuler(p), toLay(p), heat(d, θ), chartHeat(chart, d, θ), sphere(p), overlay(), mirror(p),
-    points(), lines(), reads(θ, n), space(α, β), chartOf(kind, v), dirOf(kind, p), turnChart(kind, p, φ), flat(φ°), set({…}),
+    points(), lines(), reads(θ, n), space(α, β), chartOf(kind, v), dirOf(kind, p), turnChart(kind, p, φ), flat(φ°), breath(α, β, log2 c), set({…}),
     state(), menu(), frames.
     -->
     <style>
@@ -114,6 +116,9 @@
     <div class="dial"><label for="beB">a turn about v (degrees)</label><input id="beB" type="range" min="0" max="180" step="1"><output id="beBo"></output></div>
     <button id="bLoop">the order <span>both orders</span></button>
     <button id="bTurns">play the turns</button>
+    <div class="sec">breaths</div>
+    <div class="dial"><label for="cC">the unequal write: c, its two lengths' ratio</label><input id="cC" type="range" min="-2" max="2" step="0.05"><output id="cCo"></output></div>
+    <button id="bBreath">breathe <span>off</span></button>
     <div class="sec">in space: a flat chart</div>
     <div class="dial"><label for="phF">turn the look (degrees)</label><input id="phF" type="range" min="0" max="90" step="0.5"><output id="phFo"></output></div>
     <button id="bFlat">play the turn <span>off</span></button>
@@ -163,6 +168,11 @@
     still a slide in ln(d/H). But turns about two different thumbs no longer commute: a quarter turn about h then about v
     leaves a thing 120° from v then h, and going round a loop (h, v, back, back) leaves it turned by about the area the loop
     encloses. In the plane there is one axis, every turn a slide up Euler's plane, and nothing is left over.</p>
+    <p><b>Breaths</b>: three loops, each taken and undone, over and over. A read and a write (a turn and a scaling of the
+    thumb) close every time, in the plane and in space. Two reads in different directions come home turned, by the same
+    angle every breath, so the thing goes round and never grows. A read with a write in two unequal lengths (a stretch, the
+    writer's two axes drawn at V = cH) comes home squeezed, and the squeeze grows breath after breath; it closes only when
+    c = 1. A breath is steady exactly when its write is the one-length kind.</p>
     <p><b>A flat chart in space</b>: lay the directions about the look flat, and turn the look. Lambert's equal-area map
     keeps every cell's area through the turn, so the read's heat stays flat, but the cells bend: the old look's place is
     stretched 1/cos(φ/2), and the directions square to both looks by up to 2 at a quarter turn. The stereographic map keeps
@@ -185,7 +195,7 @@
     const num = (k, d) => { const v = parseFloat(qs.get(k)); return isFinite(v) ? v : d; };
     const Q = Math.PI / 2;
     const S = {
-        view: ['three', 'slide', 'sphere', 'space', 'flat', 'reads'].includes(qs.get('view')) ? qs.get('view') : 'three',
+        view: ['three', 'slide', 'sphere', 'space', 'breath', 'flat', 'reads'].includes(qs.get('view')) ? qs.get('view') : 'three',
         t: Math.max(0, Math.min(2, num('t', 1))), play: false,
         h: Math.max(-3, Math.min(4, num('H', 1))),              // H = 2^h grid units
         k: Math.max(-3, Math.min(3, num('k', 0))),              // scale the world by 2^k
@@ -201,6 +211,7 @@
         yaw: num('yaw', 0), pitch: Math.max(-80, Math.min(80, num('pitch', -18))), boost: qs.get('boost') === '1',
         al: Math.max(0, Math.min(180, num('al', 90))), be: Math.max(0, Math.min(180, num('be', 90))),   // the two turns in space, degrees
         loop: qs.get('loop') === '1', st: 1, syaw: num('syaw', 28), spitch: Math.max(-80, Math.min(80, num('spitch', 22))),
+        c: Math.max(-2, Math.min(2, num('c', 1))), bt: 0,      // breaths (R785, BRL): the unequal write's c = 2^this; bt the breaths played
         phi: Math.max(0, Math.min(90, num('phi', 60))), flatPlay: false,      // a flat chart in space: the look turned by φ, degrees
         th: Math.max(0.05, Math.min(Math.PI, num('th', 1))), n: Math.max(1, Math.min(64, Math.round(num('n', 4)))),
         U: [-4, 4],                                             // Euler's plane: ln(d/H) from −4 to 4 (1/55 to 55 thumbs)
@@ -320,8 +331,33 @@
                 atSquare: Math.max(atH.s1, 1 / atH.s2), oldLook: turnChart(kind, [0, 0], phi) }; }
         out.lambert.heatRim = 1; out.stereo.heatRim = 1 / Math.pow(1 + 4 / 4, 2);      // per unit of chart area, rim over centre
         out.oldLookStretch = 1 / Math.cos(phi / 2); return out; }
+    // ── breaths (R785; BRL, plans/brl-plan.md). Three loops of acts, each taken and undone: a read (a turn by α) and a
+    // write (a scaling of the thumb by e^λ), which closes in the plane and in space; two reads (α about h, β about v),
+    // which comes home turned, cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2) (φ = 90° here), bounded however often it is breathed;
+    // and a read with a write in two unequal lengths (a stretch by c = 2^S.c along h, the writer's V = cH), which comes home
+    // squeezed, cosh ζ = 1 + 2·sin²α·sinh²(½ ln c), growing by ζ every breath. Exact forms from BRL runs 1–3 (60 digits);
+    // here in doubles, each also worked from its matrices so the page shows the same numbers two ways.
+    function breath(al = S.al, be = S.be, lc = S.c) {
+        const a = al * Math.PI / 180, b = be * Math.PI / 180, c = Math.pow(2, lc), lam = Math.log(c);
+        // a read and a write, in the plane: e^(iα), e^λ, back, back (complex numbers) and in space (a turn and λ·I)
+        const re = Math.cos(a), im = Math.sin(a), z = [re * Math.exp(lam), im * Math.exp(lam)];      // turn, then scale
+        const back = [z[0] * Math.cos(-a) - z[1] * Math.sin(-a), z[0] * Math.sin(-a) + z[1] * Math.cos(-a)].map(x => x * Math.exp(-lam));
+        const planeGap = Math.hypot(back[0] - 1, back[1]);
+        // two reads: the loop's turn, exact form and from its matrices (folded into [0, π] by the trace, so compare cos)
+        const omega = 2 * Math.acos(Math.max(-1, Math.min(1, 1 - 2 * Math.sin(a / 2) ** 2 * Math.sin(b / 2) ** 2)));
+        const sp = space(al, be), omegaTrace = sp.loop;
+        // a read and an unequal write: M = S⁻¹R⁻¹SR, S = diag(c, 1)
+        const C2 = Math.cos(a), S2 = Math.sin(a);
+        const RSR = [[c * C2 * C2 + S2 * S2, S2 * C2 * (1 - c)], [S2 * C2 * (1 - c), c * S2 * S2 + C2 * C2]];
+        const M = [[RSR[0][0] / c, RSR[0][1] / c], [RSR[1][0], RSR[1][1]]];
+        const trM = M[0][0] + M[1][1], zeta = Math.acosh(Math.max(1, trM / 2)), zetaForm = Math.acosh(1 + 2 * S2 * S2 * Math.sinh(lam / 2) ** 2);
+        return { alpha: a, beta: b, c, lambda: lam, planeGap, spaceGap: 0, omega, omegaTrace, omegaSmall: a * b, M, trM, zeta, zetaForm,
+            zetaSmall: Math.abs(a * lam), growth: n => Math.exp(n * zeta),
+            powM(n) { let P = [[1, 0], [0, 1]]; for (let i = 0; i < n; i++) P = [[M[0][0] * P[0][0] + M[0][1] * P[1][0], M[0][0] * P[0][1] + M[0][1] * P[1][1]],
+                [M[1][0] * P[0][0] + M[1][1] * P[1][0], M[1][0] * P[0][1] + M[1][1] * P[1][1]]]; return P; } };
+    }
     function set(o) {
-        if (o.view && ['three', 'slide', 'sphere', 'space', 'flat', 'reads'].includes(o.view)) S.view = o.view;
+        if (o.view && ['three', 'slide', 'sphere', 'space', 'breath', 'flat', 'reads'].includes(o.view)) S.view = o.view;
         if (o.t != null) S.t = Math.max(0, Math.min(2, o.t));
         if (o.play != null) S.play = !!o.play;
         if (o.h != null) S.h = Math.max(-3, Math.min(4, o.h));
@@ -343,6 +379,8 @@
         if (o.st != null) S.st = Math.max(0, Math.min(1, o.st));
         if (o.syaw != null) S.syaw = o.syaw;
         if (o.spitch != null) S.spitch = Math.max(-80, Math.min(80, o.spitch));
+        if (o.c != null) S.c = Math.max(-2, Math.min(2, o.c));
+        if (o.bt != null) S.bt = Math.max(0, o.bt);
         if (o.phi != null) S.phi = Math.max(0, Math.min(90, o.phi));
         if (o.flatPlay != null) S.flatPlay = !!o.flatPlay;
         if (o.th != null) S.th = Math.max(0.05, Math.min(Math.PI, o.th));
@@ -350,11 +388,11 @@
         if (o.show) Object.assign(S.show, o.show);
         S.version++;
     }
-    window.__eulerCore = { S, Q, Hof, kof, heat, chartHeat, place, toEuler, toLay, sphere, overlay, mirror, points, lines, reads, space, chartOf, dirOf, turnChart, turnJac, flat, RIM, set };
-    window.__euler = { toEuler, toLay, heat, chartHeat, sphere, overlay, mirror, points, lines, reads, space, chartOf, dirOf, turnChart, flat, set,
+    window.__eulerCore = { S, Q, Hof, kof, heat, chartHeat, place, toEuler, toLay, sphere, overlay, mirror, points, lines, reads, space, chartOf, dirOf, turnChart, turnJac, flat, RIM, breath, set };
+    window.__euler = { toEuler, toLay, heat, chartHeat, sphere, overlay, mirror, points, lines, reads, space, chartOf, dirOf, turnChart, flat, breath, set,
         state: () => ({ view: S.view, t: S.t, H: Hof(), k: kof(), turn: S.turn, R: S.R, lay: S.lay, heat: S.heat, lines: S.lines,
             dots: S.dots, th: S.th, n: S.n, over: S.over, p: Math.pow(2, S.p), f: S.f, a: S.a, yaw: S.yaw, pitch: S.pitch,
-            boost: S.boost, al: S.al, be: S.be, loop: S.loop, syaw: S.syaw, spitch: S.spitch, phi: S.phi, flatPlay: S.flatPlay, show: { ...S.show } }),
+            boost: S.boost, al: S.al, be: S.be, loop: S.loop, syaw: S.syaw, spitch: S.spitch, phi: S.phi, flatPlay: S.flatPlay, c: Math.pow(2, S.c), bt: S.bt, show: { ...S.show } }),
         menu: () => ({ open: document.getElementById('menu').classList.contains('open') }), frames: 0 };
 })();
 </script>
@@ -391,7 +429,7 @@ function panels() {
             return [0, 1].map(i => ({ x: gap + i * (s + gap), y, w: s, h: s })); }
         const s = Math.min(W - 2 * pad, (Hh - top - 3 * pad) / 2), gap = (Hh - top - 2 * s) / 3;
         return [0, 1].map(i => ({ x: (W - s) / 2, y: top + gap + i * (s + gap) - gap / 2, w: s, h: s })); }
-    if (S.view !== 'three') { const s = Math.min(W - 2 * pad, Hh - top - pad - 20);
+    if (S.view !== 'three' && S.view !== 'breath') { const s = Math.min(W - 2 * pad, Hh - top - pad - 20);
         return [{ x: (W - s) / 2, y: top + (Hh - top - pad - s) / 2, w: s, h: s }]; }
     if (W >= Hh) { const s = Math.min((W - 4 * pad) / 3, Hh - top - 2 * pad), y = top + (Hh - top - pad - s) / 2, gap = (W - 3 * s) / 4;
         return [0, 1, 2].map(i => ({ x: gap + i * (s + gap), y, w: s, h: s })); }
@@ -661,6 +699,59 @@ function drawReads(P) {
         ctx.fillStyle = COL.violet; ctx.fillText('the reads\' direction', d[0] + 8, d[1] + 14); }
 }
 
+// ── breaths (R785): three loops, breathed over and over. S.bt counts the breaths played (a breath every 2.4 s); each panel
+// shows where the loop's last breath has left its thing, and how that leftover stands after every breath so far.
+const BREATH_S = 2.4;
+function breathPart() { const n = Math.floor(S.bt), f = S.bt - n; return { n, f, leg: Math.min(3, Math.floor(f * 4)), lf: (f * 4) % 1 }; }
+function frameLabel(P, t, sub) { ctx.strokeStyle = COL.frame; ctx.strokeRect(P.x + 0.5, P.y + 0.5, P.w - 1, P.h - 1);
+    if (S.show.labels) { ctx.font = '12px "DM Mono", monospace'; ctx.textAlign = 'left'; ctx.fillStyle = COL.dim; ctx.fillText(t, P.x, P.y - 8);
+        if (sub) { ctx.fillStyle = COL.ink; ctx.fillText(sub, P.x + 8, P.y + P.h - 10); } } }
+function drawBreathPlane(P) {
+    // Euler's plane: u = ln(d/H) across (−2 to 2), θ up (0 to 135°); the loop up α, across λ = ln 2 (one thumb doubled), down, back
+    const U0 = -2, U1 = 2, T1 = 135, toS = (u, th) => [P.x + (u - U0) / (U1 - U0) * P.w, P.y + (1 - th / T1) * P.h];
+    ctx.strokeStyle = 'rgba(120,135,180,0.25)'; ctx.lineWidth = 1; ctx.beginPath();
+    for (let u = -2; u <= 2.001; u += Math.LN2) { const a = toS(u, 0), b = toS(u, T1); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); }
+    for (let t = 0; t <= T1; t += 45) { const a = toS(U0, t), b = toS(U1, t); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); }
+    ctx.stroke();
+    const al = Math.min(S.al, 110), lam = Math.LN2 * 1.5, u0 = -lam / 2, t0 = 12;
+    const corners = [[u0, t0], [u0, t0 + al], [u0 + lam, t0 + al], [u0 + lam, t0], [u0, t0]], { n, leg, lf } = breathPart();
+    ctx.setLineDash([5, 5]); ctx.strokeStyle = 'rgba(242,193,78,0.35)'; ctx.lineWidth = 1.5; ctx.beginPath();
+    corners.forEach((c, i) => { const q = toS(c[0], c[1]); if (i) ctx.lineTo(q[0], q[1]); else ctx.moveTo(q[0], q[1]); }); ctx.stroke(); ctx.setLineDash([]);
+    const cols = [COL.teal, COL.violet, COL.teal, COL.violet];
+    for (let i = 0; i <= leg; i++) { const a = corners[i], b = corners[i + 1], f = i < leg ? 1 : lf;
+        arrow(toS(a[0], a[1]), toS(a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f), cols[i], 2.2); }
+    const home = toS(u0, t0); ctx.fillStyle = COL.gold; ctx.beginPath(); ctx.arc(home[0], home[1], 6, 0, 2 * Math.PI); ctx.fill();
+    frameLabel(P, 'a breath: read up, write across, back, back', `breath ${n + 1}: home again, nothing left (0 to rounding)`);
+}
+function drawBreathReads(P) {
+    // a thing with a pointer at the middle; each breath of two reads (α about h, β about v, back, back) turns it by Ω about the
+    // third axis (seen face on here, as a turn in the picture): bounded, it goes round and round, never growing
+    const B = C.breath(), cx = P.x + P.w / 2, cy = P.y + P.h / 2, R0 = P.w * 0.36, { n, f } = breathPart();
+    ctx.strokeStyle = 'rgba(195,200,214,0.35)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(cx, cy, R0, 0, 2 * Math.PI); ctx.stroke();
+    const shown = Math.min(n, 60);
+    for (let k = 0; k <= shown; k++) { const ang = Math.PI / 2 - k * B.omega, a = 0.15 + 0.6 * (k / Math.max(1, shown));
+        ctx.strokeStyle = `rgba(79,209,197,${a.toFixed(3)})`; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.moveTo(cx, cy);
+        ctx.lineTo(cx + R0 * Math.cos(ang), cy - R0 * Math.sin(ang)); ctx.stroke(); }
+    const ang = Math.PI / 2 - (n + Math.min(1, f * 1.1)) * B.omega;
+    arrow([cx, cy], [cx + R0 * Math.cos(ang), cy - R0 * Math.sin(ang)], COL.gold, 2.6);
+    frameLabel(P, `two reads: ${S.al.toFixed(0)}° about h, ${S.be.toFixed(0)}° about v, back, back`,
+        `turned ${(B.omega * 180 / Math.PI).toFixed(1)}° a breath; after ${n + 1}, same size`);
+}
+function drawBreathStretch(P) {
+    // a circle of directions, pushed through the loop with an unequal write (a stretch by c along h, then back) n times:
+    // each breath squeezes it into a longer, thinner ellipse, by e^ζ along one way and e^(−ζ) across
+    const B = C.breath(), cx = P.x + P.w / 2, cy = P.y + P.h / 2, R0 = P.w * 0.12, { n } = breathPart(), m = Math.min(n + 1, 12);
+    ctx.save(); ctx.beginPath(); ctx.rect(P.x, P.y, P.w, P.h); ctx.clip();
+    for (let k = 0; k <= m; k++) { const Pk = B.powM(k), a = k === m ? 1 : 0.15 + 0.5 * k / m;
+        ctx.strokeStyle = k === m ? COL.gold : `rgba(167,139,250,${a.toFixed(3)})`; ctx.lineWidth = k === m ? 2.4 : 1.2; ctx.beginPath();
+        for (let i = 0; i <= 96; i++) { const t = i / 96 * 2 * Math.PI, x = Math.cos(t), y = Math.sin(t);
+            const X = Pk[0][0] * x + Pk[0][1] * y, Y = Pk[1][0] * x + Pk[1][1] * y, q = [cx + R0 * X, cy - R0 * Y];
+            if (i) ctx.lineTo(q[0], q[1]); else ctx.moveTo(q[0], q[1]); } ctx.stroke(); }
+    ctx.restore();
+    frameLabel(P, `a read, an unequal write (c = ${B.c.toPrecision(3)}), back, back`,
+        B.c === 1 ? 'c = 1: one length, every breath closes' : `breath ${m}: squeezed e^${(m * B.zeta).toFixed(2)} = ${B.growth(m).toPrecision(3)} times along`);
+}
+
 function draw() {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.fillStyle = COL.ground; ctx.fillRect(0, 0, W, Hh);
     const Ps = panels();
@@ -668,6 +759,7 @@ function draw() {
     else if (S.view === 'slide') drawGrid(Ps[0], S.t);
     else if (S.view === 'sphere') drawSphere(Ps[0]);
     else if (S.view === 'space') { drawPlaneCommute(Ps[0]); drawSpaceTurns(Ps[1]); }
+    else if (S.view === 'breath') { drawBreathPlane(Ps[0]); drawBreathReads(Ps[1]); drawBreathStretch(Ps[2]); }
     else if (S.view === 'flat') { drawFlat(Ps[0], 'lambert'); drawFlat(Ps[1], 'stereo'); }
     else drawReads(Ps[0]);
     hook.frames++;
@@ -679,7 +771,8 @@ function syncMenu() {
         b.classList.toggle('on', !!on); const sp = b.querySelector('span'); if (sp) sp.textContent = on ? 'on' : 'off'; }
     $('about').classList.toggle('open', S.show.about); $('numbers').classList.toggle('open', S.show.numbers);
     const tag = (id, t, on) => { $(id).querySelector('span').textContent = t; $(id).classList.toggle('on', on); };
-    tag('bView', { three: 'the three', slide: 'one, sliding', sphere: 'the writer\'s sphere', space: 'in space', flat: 'a flat chart in space', reads: 'n reads' }[S.view], false);
+    tag('bView', { three: 'the three', slide: 'one, sliding', sphere: 'the writer\'s sphere', space: 'in space', breath: 'breaths', flat: 'a flat chart in space', reads: 'n reads' }[S.view], false);
+    $('cC').value = S.c; $('cCo').textContent = Math.pow(2, S.c).toPrecision(3); tag('bBreath', breathing ? 'on' : 'off', breathing);
     $('phF').value = S.phi; $('phFo').textContent = S.phi.toFixed(1) + '°'; tag('bFlat', S.flatPlay ? 'on' : 'off', S.flatPlay);
     tag('bLoop', S.loop ? 'a loop: h, v, back, back' : 'both orders', S.loop);
     $('alA').value = S.al; $('alAo').textContent = S.al.toFixed(0) + '°'; $('beB').value = S.be; $('beBo').textContent = S.be.toFixed(0) + '°';
@@ -732,6 +825,12 @@ function numbers() {
             `  in space, h then v against v then h: ${dg(sp.gap)}° apart (two quarter turns: 120°)\n` +
             `  h, v, then back, back: the thing comes home turned ${dg(sp.loop)}° about (${sp.loopAxis.map(x => f(x, 3)).join(', ')}); αβ = ${dg(sp.areaApprox)}° (the leftover is the area for small turns)\n` +
             `  scaling the world is still a slide in ln(d/H), whatever the order: every turn keeps d\n\n`; })() +
+        (() => { const B = C.breath(), dg = x => f(x * 180 / Math.PI, 4);
+            return `<b>breaths</b> (BRL, plans/brl-plan.md; each loop taken and undone)\n` +
+            `  a read and a write (a turn by ${S.al.toFixed(0)}° and the thumb doubled): home to ${f(B.planeGap, 2)}, in the plane and in space alike\n` +
+            `  two reads (${S.al.toFixed(0)}° about h, ${S.be.toFixed(0)}° about v): turned ${dg(B.omega)}° a breath, cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2); from the matrices ${dg(B.omegaTrace)}° (folded into 0–180°); αβ = ${dg(B.omegaSmall)}°\n` +
+            `  a read and an unequal write (c = ${f(B.c, 3)}): squeezed by ζ = ${f(B.zeta, 5)} a breath (form ${f(B.zetaForm, 5)}; |α·ln c| = ${f(B.zetaSmall, 4)}), so e^(nζ) after n; closes only at c = 1\n` +
+            `  a breath closes exactly when its write is in one length: V = H, said of a loop\n\n`; })() +
         (() => { const F = C.flat(), L = F.lambert, T = F.stereo;
             return `<b>a flat chart in space</b> (the writer's charts of the directions about the look; the look turned ${S.phi.toFixed(1)}° about h)\n` +
             `  Lambert's equal-area map, √(2/(1 + z))·(x, y): every cell's area ×${f(L.areaMin, 6)} to ×${f(L.areaMax, 6)}, so the read's heat stays flat\n` +
@@ -765,8 +864,10 @@ addEventListener('keydown', ev => { if (ev.key === 'Escape') { if (S.show.about)
 const on = (id, f) => $(id).addEventListener('input', e => { f(+e.target.value); syncMenu(); });
 on('tT', v => C.set({ t: v, play: false })); on('hH', v => C.set({ h: v })); on('kK', v => C.set({ k: v })); on('rR', v => C.set({ turn: v }));
 on('thT', v => C.set({ th: v })); on('nN', v => C.set({ n: v }));
-$('bView').onclick = () => { C.set({ view: { three: 'slide', slide: 'sphere', sphere: 'space', space: 'flat', flat: 'reads', reads: 'three' }[S.view] }); syncMenu(); };
+$('bView').onclick = () => { C.set({ view: { three: 'slide', slide: 'sphere', sphere: 'space', space: 'breath', breath: 'flat', flat: 'reads', reads: 'three' }[S.view] }); syncMenu(); };
 on('phF', v => C.set({ phi: v, flatPlay: false }));
+on('cC', v => C.set({ c: v }));
+$('bBreath').onclick = () => { breathing = !breathing; if (breathing && S.view !== 'breath') C.set({ view: 'breath' }); syncMenu(); };
 $('bFlat').onclick = () => { C.set({ flatPlay: !S.flatPlay }); if (S.flatPlay && S.view !== 'flat') C.set({ view: 'flat' }); syncMenu(); };
 on('alA', v => C.set({ al: v, st: 1 })); on('beB', v => C.set({ be: v, st: 1 }));
 $('bLoop').onclick = () => { C.set({ loop: !S.loop }); syncMenu(); };
@@ -820,11 +921,13 @@ cv.addEventListener('pointercancel', lift);
 
 function resize() { dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; Hh = innerHeight; cv.width = W * dpr; cv.height = Hh * dpr; draw(); }
 addEventListener('resize', resize);
+let breathing = new URLSearchParams(location.search).get('view') === 'breath';
 let last = performance.now(), dir = 1, boostT0 = null, boostH0 = S.h, turnsT0 = null;
 function tick(now) { requestAnimationFrame(tick); const dt = Math.min(0.1, (now - last) / 1000); last = now;
     if (turnsT0 != null) { const st = Math.min(1, (now - turnsT0) / 3500); S.st = st; draw(); if (st >= 1) turnsT0 = null; }
     if (S.boost) { if (boostT0 == null) { boostT0 = now; boostH0 = S.h; }
         S.h = Math.max(-3, Math.min(4, boostH0 + 2 * Math.sin((now - boostT0) / 1000 * 2 * Math.PI / 8))); syncMenu(); }
+    if (breathing && S.view === 'breath') { S.bt += dt / BREATH_S; draw(); }
     if (S.flatPlay && S.view === 'flat') { S.phi = 45 - 45 * Math.cos(now / 1000 * 2 * Math.PI / 7); syncMenu(); }
     if (S.play && S.view === 'slide') { let t = S.t + dir * dt / 3; if (t >= 2) { t = 2; dir = -1; } if (t <= 0) { t = 0; dir = 1; }
         S.t = t; $('tT').value = t; $('tTo').textContent = t.toFixed(2); draw(); } }

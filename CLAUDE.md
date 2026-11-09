@@ -97,7 +97,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   eased −½), the writer's ground (toggle). Count strides from the corner: at the foot V* = strides × H/L, 3.0 km with the
   0.7 m stride. Scale the world moves no reading. `?thing=&k=<log10 k>&pace=steady|ease&count=1&ground=0&u=&play=1`; hook
   `window.__approach` (`reading`, `cornerD`, `mirror`, `dOf`, `tauRead`, `tauExact`, `tauDotRead`, `stridesFromCorner`,
-  `writeV`, `set`, `state`). Not in the flying page.
+  `writeV`, `paces`, `set`, `state`). Not in the flying page.
 - `crosshairs.html`: **crosshairs in a field** (4 Nov 2026, SPN R667; Tom: "The way to understand reader geometry is with fpv.
   Create a field full of objects with wire frame and let the user point at the objects with H cross hairs and change the near
   and far field accordingly."), a standalone page, plain canvas, wireframe only. A first-person view of 140 seeded things
@@ -387,6 +387,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Run 1's B3 killed by my measure (Ω folded into [0, π]), run 2 in quaternions not. The note's §2 corrected.
   Run 3 (R784, nothing killed): the unsteady breath, a turn and a stretch (V = cH): the loop leaves a squeeze,
   cosh ζ = 1 + 2·sin²α·sinh²(½ ln c), ζ ≈ |α·ln c|, accumulating, closed only at c = 1; a breath is steady exactly at V = H.
+  R785 (Tom: "1,2,3,4"): in *Reads and Writes* §1 ("A loop of a read and a write"); `euler.html`'s breaths view
+  (`view=breath&c=`, hook `breath`); `approach.html`'s two paces (hook `paces(d)`: per halving sech x, per half-breadth the
+  Cauchy, the thing's own corner at d = V*/2, Z = i); the note's item 2 answered by argument (no natural size for a breath).
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
