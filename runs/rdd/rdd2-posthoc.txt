@@ -1,0 +1,12 @@
+rows 1773484
+kept pixels 29168 (0.593 of the sky)
+whole: x 0.889, a 0.6: 2 + x(1+a) 3.423, beta-hat 6.301e-03 +- 1.438e-03 (5.11 x CMB)
+whole: x 0.889, a 0.75: 2 + x(1+a) 3.556, beta-hat 6.064e-03 +- 1.384e-03 (4.92 x CMB)
+whole: x 0.889, a 0.9: 2 + x(1+a) 3.690, beta-hat 5.845e-03 +- 1.334e-03 (4.74 x CMB)
+power: 1.38e-03 against 1.0e-3 -> still unpowered
+vs CatWISE 1.89 sigma; vs CMB 3.49 sigma
+  20-40: x_eff 0.759 beta/CMB 5.01 +- 1.52
+  40-80: x_eff 0.870 beta/CMB 7.01 +- 1.97
+  80-160: x_eff 1.041 beta/CMB 5.42 +- 3.63
+  160-up: x_eff 1.346 beta/CMB 6.45 +- 2.88
+  one beta 5.82 x CMB; chi2 0.71 on 3, p = 0.87

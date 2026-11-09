@@ -114,3 +114,64 @@ this catalogue's 10 mJy grid, the declination stripes from NVSS's two configurat
 from a spectral index that does not rest on TGSS's direction-dependent flux scale (NVSS against WENSS or SUMSS, or VLASS
 at 3 GHz), and the mask fixed with the power to resolve 3·10⁻³ in β written down before the data. Until then CatWISE's
 colour result stands alone.
+
+### Run 2: the full NVSS, its power stated first (predictions written 9 Nov, before the download)
+
+Tom: "proceed", to a powered second run. Fixed now, before any NVSS data were fetched (only the column list of VizieR
+VIII/65/nvss was looked at: RAJ2000 and DEJ2000 as sexagesimal strings, S1.4 in mJy to 0.1).
+
+- **Data**: Condon et al. 1998, NVSS (VizieR VIII/65/nvss, CfA mirror): RAJ2000, DEJ2000, S1.4, all rows, to
+  /tmp/rdd_data; sha256 recorded below; not committed.
+- **Sample**: S1.4 ≥ 20 mJy (the usual floor, above which NVSS's counts are held complete), |b| > 15°,
+  −40° < dec < 78° (inside the two array configurations' join at +78° is excluded with the cap).
+- **Mask**: one-sided, as most NVSS dipole papers use: keep an nside-64 pixel if its centre has |b| > 16° and
+  −39° < dec < 77°. The estimator, errors and β̂ as in run 1 (fit_dipole; the larger of the Poisson bootstrap and the
+  jackknife over nside-2 regions). x: the least-squares slope of −ln N(≥s) against ln s over [S/1.25, 1.25·S]. α: no
+  spectral index is taken from TGSS in this run; the expectation uses α = 0.75, the value the NVSS dipole literature uses
+  (stated as an input, not read), and the sensitivity is reported at α = 0.6 and 0.9.
+- **R6 (power, the condition for the rest to count).** The whole sample's β̂ has an error (the larger of the two) under
+  1.0·10⁻³, so that CatWISE's 3.31·10⁻³ and the CMB's 1.23·10⁻³ lie more than 2 errors apart. If not, the run is
+  declared unpowered and R1′, R3′, R4′ are reported without counting.
+- **R1′ (one β from every flux slice).** Slices [20, 40), [40, 80), [80, 160), [160, ∞) mJy agree at p > 0.01.
+- **R3′ (one motion, two wavelengths).** The whole sample's β̂ agrees with CatWISE's (3.31 ± 0.46)·10⁻³ within 2.58
+  combined errors.
+- **R4′ (one axis).** The whole sample's axis lies within the combined 99% radius of CatWISE's (234.7°, 42.2°).
+- **Not in this run**: R2 (the colours). No second band here is free of TGSS's direction-dependent flux scale; a colour
+  run waits on one (VLASS at 3 GHz, or WENSS over its northern cap).
+- **Known beforehand** (from memory, not used in a verdict): NVSS count dipoles at ≥ 15–25 mJy have been reported at
+  0.01–0.02, two to five times the kinematic expectation, and its counts carry declination stripes from the survey's
+  configurations, which several authors correct and this run does not.
+
+**Data (run 2).** Downloaded 9 November from the CfA mirror,
+`https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=VIII/65/nvss&-out.max=unlimited&-out=RAJ2000,DEJ2000,S1.4`,
+58,526,794 bytes, sha256 f23fd0d85905ab6df85dd46e99e0217bdc588e31d417872f16baf62e61bff200, 1,773,484 rows. Stored in
+/tmp/rdd_data; not committed. The run-2 plan was committed (ad333b1) before the download.
+
+#### Run 2 (9 Nov; `runs/rdd/rdd2.py`, output `runs/rdd/rdd-run2.txt`, 186 s)
+
+One attempt, as fixed. The mask keeps 59.3% of the sky; 232,767 sources ≥ 20 mJy.
+
+- **Whole sample.** D = 0.0216 ± 0.0049 (bootstrap 0.0035, jackknife 0.0049) toward (251.7°, 20.4°): 29.6° from the
+  CMB's axis and 26.1° from CatWISE's.
+- **x was computed wrongly, by my code.** I took the count slope from the sample already cut at 20 mJy, which flattens it
+  at and below the cut (x 0.459 at 20 mJy, and x_eff −0.13 in the lowest slice). As run: β̂ (7.69 ± 1.76)·10⁻³,
+  6.2 times the CMB's.
+- **R6: unpowered** (error 1.76·10⁻³ against 1.0·10⁻³). So R1′ (p = 0.82), R3′ (2.42 σ from CatWISE) and R4′ (26° within
+  a 59° radius) are reported and not counted. None would have killed.
+
+Post hoc (`runs/rdd/rdd2-posthoc.py`, `rdd2-posthoc.txt`; not a verdict), with x taken from the counts before the cut as
+the plan meant: x = 0.889 at 20 mJy.
+- β̂ = (6.06 ± 1.38)·10⁻³, 4.9 times the CMB's (4.7 to 5.1 for α 0.9 to 0.6).
+- Still unpowered: 1.38·10⁻³ against 1.0·10⁻³.
+- 1.9 σ from CatWISE's β, 3.5 σ from the CMB's.
+- The flux slices give one β at p = 0.87 (5.0, 7.0, 5.4, 6.5 times the CMB's).
+
+Read plainly:
+- With the full NVSS the radio dipole is better measured than run 1's. It points within 26° of CatWISE's and within 30°
+  of the CMB's.
+- Its β is about five times the CMB's. That is larger than CatWISE's 2.7, but the two differ at under 2 σ.
+- Every flux slice agrees on one β, which a boost needs.
+- The errors are still too large for the run to count as a test of "one motion across two wavelengths". The jackknife,
+  which carries the survey's large-scale variations, sets them. Getting under 10⁻³ needs either the declination stripes
+  modelled (as the NVSS dipole papers do) or more sky (a southern survey joined, such as SUMSS or RACS).
+- No colour test was made: no second band here is free of TGSS.
