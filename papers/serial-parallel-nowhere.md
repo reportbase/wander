@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R780** (9 Nov; a ChatGPT note pasted: integrate the walk in four steps, Euler last, H kept for the thumb, then a
+  referee's question, does the reader now see why reading and writing differ or is it still asserted): *Reads and
+  Writes* §8 "The mountain's own corner" reordered (the read and its ends, the two paces and the count, then Euler's
+  formula as the writer's name for the end, describing it and driving nothing); "sixteen half-breadths" corrected to
+  eight (the 14° span is at s = 1/8); one sentence added so the walk shows the distinction by §1's first test rather than
+  stating it (scaling the world, the walk and the stride moves no s, no Z and neither pace, only the count of strides).
+  The paper already wrote the half-breadth as V*/2, not H; the breath note's b = V*/2 replaces the H it had used.
 - **R779** (9 Nov; Tom: "yes", to drafting the breath note's mountain walk into *Reads and Writes*): §8, after "Walking to
   the mountain", "The mountain's own corner": each edge's read s = (V*/2)/d gives Z = (1 + is)/(1 − is) with no angle;
   far off home (Z = 1), the mountain's own corner at half a breadth (Z = i), the foot the horizon (Z → −1, e^(iπ) = −1 its

@@ -1147,16 +1147,15 @@ do this whenever we walk toward something: the corner is free, the approach and 
 **The mountain's own corner.** The same walk has a second corner, with no thumb in it. Stand on the mountain's centreline
 and read each edge against the line to its middle: half the breadth over the distance, s = (V\*/2)/d, a ratio the
 writer states and the read holds as the edge's finger. Squared and divided by its own length it is the point of §1
-and §5, Z = (1 + is)/(1 − is), rational in the read: no angle, no π and no e are needed to have it. Far off the edges are together, s near 0 and Z near
-1: that end of the walk is home. Where the half-breadth equals the distance, s = 1 and Z = i: the edges a quarter turn
-apart, the mountain's own corner. At the foot s grows without end and Z goes to −1: that end is the horizon. The writer
-names the point Z = e^(iα), α the angle the mountain spans, and e^(iπ) = −1 is the name of the end the walk heads for,
-never a read (§5). So walking to a mountain is walking from home toward the horizon, and the two corners on the walk
-are far apart: the thumb's at d_c = V\*·L/H, where the mountain fills the thumb (thirty breadths off for a thumb of
-2 cm at 60 cm), the mountain's own at half a breadth, sixty times nearer.
+and §5, Z = (1 + is)/(1 − is), rational in the read: no angle, no π and no e are needed to have it. Far off the edges
+are together, s near 0 and Z near 1: that end of the walk is home. Where the half-breadth equals the distance, s = 1
+and Z = i: the edges a quarter turn apart, the mountain's own corner. At the foot s grows without end and Z goes to −1:
+that end is the horizon. So walking to a mountain is walking from home toward the horizon, and the two corners on the
+walk are far apart: the thumb's at d_c = V\*·L/H, where the mountain fills the thumb (thirty breadths off for a thumb
+of 2 cm at 60 cm), the mountain's own at half a breadth, sixty times nearer.
 
 Laid in order, the reads take in the turn at two paces, by what the walk is counted in. Counted in ratios, every halving
-of the distance, the span grows most about the mountain's corner and alike on either side of it: from sixteen
+of the distance, the span grows most about the mountain's corner and alike on either side of it: from eight
 half-breadths off to an eighth of one, 14°, 28°, 53°, 90°, 127°, 152°, 166°, the gains 14°, 25°, 37°, 37°, 25°, 14°. Per
 unit of ln d the turn taken in is sech(ln(V\*/2d)), the heat in distance of §7 with the half-breadth as the thumb.
 Counted in metres it is dα/dd = V\*/((V\*/2)² + d²), the Cauchy in distance, least far off and most at the foot. One turn,
@@ -1164,7 +1163,13 @@ two measures: from the corner to the foot either gathers π/2, from home to the 
 The areas are turns; the breadth is written by a count. Strides from the mountain's corner to the foot are V\*/2 in the
 walker's stride, since the read there is 1, and strides from the thumb's corner are V\* in thumbs. The count is
 discrete and ends; the turn is never completed by any number of halvings. They agree only at a corner, where a read is 1
-and a length walked and a ratio held say the same.
+and a length walked and a ratio held say the same. The first test sorts them on this walk (§1): scale the world, the
+mountain, the walk and the walker's stride by k, and every s, every Z and both paces stay as they were; only the
+count of strides moves, by k.
+
+Only then does Euler's formula enter, and as a name. The writer, holding the reads joined, names each point Z =
+e^(iα), α the angle the mountain spans, and calls the end the walk heads for e^(iπ) = −1 (§5). The formula describes
+that end; it does not drive the walk, and no read along the way holds it: each holds one s, now, and the Z it gives.
 
 **Knowing V comes by degrees.** The crossing is not a switch thrown. It has three counts.
 
