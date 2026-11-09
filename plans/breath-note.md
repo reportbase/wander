@@ -104,6 +104,27 @@ with H = V*/2. So the breath in this walk is uneven in exactly the way the near 
 thumb walked is largest where the mountain fills the thumb's own share, and the half turn is a horizon, not an arrival
 (R651: "getting closer" and arriving are the writer's).
 
+**(d) The stride count is not an area; the turn per metre is the Cauchy.** 9 Nov, later (a ChatGPT note on the open
+question): with H = V*/2 and x = ln(H/d), the area under sech x in x from the corner to the foot is π/2 (the turn still to
+come), and under sech(ln(H/d)) = 2Hd/(H² + d²) in d it is H·ln 2, neither of them V*. Both checked at 30 digits. The note
+leaves it open until `approach.html`'s rule is read. Read, the rule is not an area:
+
+- `approach.html` writes V* = (strides from its corner to the foot) × stride × H/L (`cornerD`, `stridesFromCorner`,
+  `writeV`): a length walked, counted, times the thumb's ratio. Its corner is the thumb's, where the whole breadth fills the
+  thumb (d_c = V*·L/H, 30 V* for the 2 cm thumb at 60 cm). Each stride counts 1, unweighted.
+- §5's corner is another one: the edges' own pair (half-breadth over distance = 1, α = π/2), at d = V*/2, with no thumb in
+  it (the mountain as its own H, R599). Its count of strides from that corner to the foot writes V*/2 directly (the ratio
+  there is 1). Two corners on one walk, the thumb's far out and the span's close in, 60 thumb-widths' worth apart for this
+  thumb; the note should not run them together.
+- ChatGPT's H·ln 2 integrates a rate per thumb (sech) against metres, two measures mixed, which is why it means nothing.
+  The rate per metre is dα/dd = 2H/(H² + d²): **the turn taken in per metre walked is the Cauchy in distance**, scale H
+  (twice the density). From far off to the foot it gathers π, from the corner π/2. So the same walk takes in the turn at
+  the sech rate counted in thumbs and at the Cauchy rate counted in metres: the read's two heats (R702, R706: the Cauchy
+  per unit of reading, sech per ratio) as two ways of pacing one breath. Checked at 30 digits.
+
+So the open question closes this way: the stride count is a length walked (a write), the areas are turns (named by the
+writer, the read's own being Z); they meet only at the corner, where the ratio is 1 and a length walked and a reading agree.
+
 Corrections to the note as pasted: "as you approach … the mountain occupies a larger angle" is the writer's account of
 reads joined (R651); each read is one present s, with no "approaching" in it. And π and e are given the corpus's roles
 already (R626, R597): π with the turn closing (the address), e with the open scale (the payload's and the write's axis);
@@ -121,8 +142,8 @@ they meet at e^(iπ) = −1 because that is where the up axis's half turn sits o
    through (the paint, not the address?). To be thought through, not assumed.
 4. A breathing view on `euler.html` (the loop drawn as it is breathed, in the plane and in space) only once 1 is checked.
 5. §5 (c) on `approach.html` or `euler.html`: the walk drawn as its gd curve on Euler's plane, the read climbing by sech per
-   thumb, the corner at Z = i and the foot as the horizon Z = −1. Whether a stride's count (strides from the corner to the
-   foot write V*, R650) is the area under that curve, or something else, to be worked out before drawing.
+   thumb and by the Cauchy per metre, both corners marked (the thumb's far out, the span's at Z = i) and the foot as the
+   horizon Z = −1. The stride count settled in §5 (d): a length walked, not an area.
 
 ## Classical anchors (from memory, to check)
 
