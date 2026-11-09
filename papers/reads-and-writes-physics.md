@@ -365,8 +365,9 @@ the same leftover on the sphere of a light ray's directions, could not be reache
 
 In a spectrum the leftover shows as Thomas's half (Thomas 1926). An electron's frame, carried round its orbit, comes home
 turned, and that precession halves the spin–orbit splitting a magnet alone would give. Hydrogen's 2P₃/₂–2P₁/₂ interval is
-10,949.6 MHz on Dirac's value, which contains the half; the measured interval, taken here from memory and still to be
-checked against its source (2S₁/₂–2P₃/₂ from Hagley and Pipkin 1994, plus the Lamb shift), is 10,969.0 MHz. Measured over
+10,949.6 MHz on Dirac's value, which contains the half. The measured interval is 10,969.045 ± 0.015 MHz: the 2S₁/₂–2P₃/₂
+interval, 9,911.200(12) MHz (Hagley and Pipkin 1994), plus the Lamb shift, 1,057.845(9) MHz (Lundeen and Pipkin 1981),
+each read from its paper's abstract. Measured over
 Dirac is 1.0018, the rest QED; measured over the interval without the half is 0.501. This is reported, not counted.
 
 None of it is new physics: Gauss, Thomas, Wigner, Foucault and Berry hold every piece. What the sorting adds is where each
@@ -763,6 +764,9 @@ Liouville, J. (1850). Extension au cas des trois dimensions de la question du tr
 *Application de l'analyse à la géométrie*, 5th ed., Paris, 609–616.
 
 Lu, M., Youn, S. H. and Lev, B. L. (2011). Spectroscopy of a narrow-line laser-cooling transition in atomic dysprosium. *Physical Review A* 83, 012510.
+
+Lundeen, S. R. and Pipkin, F. M. (1981). Measurement of the Lamb shift in hydrogen, n = 2. *Physical Review Letters* 46,
+232–235.
 
 Lutz, T. E. and Kelker, D. H. (1973). On the use of trigonometric parallaxes for the calibration of luminosity systems.
 *Publications of the Astronomical Society of the Pacific* 85, 573.

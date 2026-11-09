@@ -121,3 +121,45 @@ four cores. It took 47 minutes.
 - The turn carries no amount: scaling the sphere moves nothing, and a loop with no area turns nothing.
 - All of it is classical (Gauss–Bonnet, Wigner, Thomas). The data part could not be tested, for want of reachable
   measurements.
+
+**Checked after the run (9 Nov; Tom: "1,2").** H7's two numbers, recorded above as from memory, were read from the
+papers' abstracts (through OpenAlex; sha256 of the responses `81089927e757877a348ca83f74fa32bda997d153a6d561ddaf1a276b3b2039e7`
+for Hagley and Pipkin 1994, PRL 72, 1172, and `359d111de2c7bfbd56fa2f68d3c2e80b3779ac5a3e83e203c86d528f2d37eddf` for
+Lundeen and Pipkin 1981, PRL 46, 232): 2S₁/₂–2P₃/₂ = 9,911.200(12) MHz and the Lamb shift 1,057.845(9) MHz, both as used.
+The measured interval is 10,969.045 ± 0.015 MHz; the ratios stand (1.00177, 0.500886). Hagley and Pipkin's own Lamb
+shift implied by theirs is 1,057.839(12) MHz; the sum uses Lundeen and Pipkin's, measured apart. Still reported, not counted.
+
+### Run 2 plan: the sphere's leftover in other data (9 Nov; Tom: "1,2"; written before any data is looked for)
+
+Run 1's data part rested on one Foucault site. Run 2 looks for the same leftover (a turn equal to the solid angle a loop
+of directions encloses, no amount entering) in measurements that report it against the solid angle.
+
+**Known beforehand, from memory, to be checked against the papers:**
+- Tomita and Chiao 1986 (PRL 57, 937): linearly polarized light in a helically wound fibre; the polarization turns by the
+  solid angle the wave vector's direction encloses on its sphere, Ω = 2π(1 − cos θ), θ the helix's pitch angle; uniform
+  and non-uniform coils; agreement said to be good. The numbers were not reached in run 1.
+- Bitter and Dubbers 1987 (PRL 59, 251): polarized neutrons through a field whose direction is turned round a cone; the
+  spin's extra turn equals the cone's solid angle, in the adiabatic limit, and departs from it as the passage gets fast.
+- Later repeats likely exist (photons in a non-planar Mach–Zehnder, Chiao et al. 1988; spin-½ in NMR, Suter et al. 1987;
+  neutron interferometry). Which give numbers with errors is not known.
+
+**What counts.** A measurement counts if it reports, with errors, a turn (a polarization rotation or a spin's extra
+precession angle) and the solid angle of its loop, or the loop's geometry from which the solid angle follows
+(pitch angle, cone angle). The point's error is the paper's; a value read from a figure by hand is marked so, with a
+reading error of half the smallest tick stated before it is read. Points the paper marks non-adiabatic (or that lie on
+the fast side of its stated adiabaticity condition) are listed, not counted, decided from the text before the numbers
+are read. A spin-½ state's phase is half the solid angle; what is compared is the rotation of the observed direction,
+which is the whole solid angle (the two spin states' phases differ by Ω).
+
+**Predictions.**
+- **H8 (each experiment).** A straight-line fit of the measured turn against Ω has slope 1 and intercept 0, each within
+  3 combined standard errors. Killed if either fails on an experiment with three or more counted points.
+- **H9 (all together).** χ² of (turn − Ω)/σ over every counted point, p > 0.001. Killed if not.
+- **H10 (no amount).** Where an experiment varies something that is an amount (fibre length at fixed pitch, field
+  strength, neutron speed within the adiabatic range), the turn at fixed Ω does not move with it beyond 3 errors.
+  Killed if it does.
+- **H5 again (Foucault).** Any further site found under run 1's rules joins it; tested once three sites qualify.
+- **Untested**, said plainly, if no experiment with three counted points can be read here.
+
+**Bridges named.** None for the turn against Ω (two directions). For neutrons, the field strength and speed enter only
+the adiabaticity condition and the dynamical phase, which the experiments separate; both amounts, both carried in.
