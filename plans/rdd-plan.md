@@ -217,3 +217,178 @@ Read plainly, over the three runs:
   CMB's. Settling it needs more sky (a southern survey joined on one flux scale), or a census where the payload's
   weighting is smaller.
 - The dipole is parked here, with nothing killed and nothing tested at the power fixed.
+
+### Data sources for a powered run (9 Nov; Tom: "lets find data sources to make it robust.")
+
+Looked for, nothing downloaded and nothing run. Reachability was checked from this environment on 9 Nov. The CDS hosts
+and every VizieR mirror tried (CDS, NAO, INASAN, IUCAA, China-VO) did not answer. The CfA mirror answered, but its
+database was down that morning. These did answer:
+
+- **CASDA's TAP service** (`casda.csiro.au/casda_vo_tools/tap`, ADQL, CSV out), the ASKAP surveys' own archive, schema
+  `AS110` (RACS):
+
+  | Table | Survey | Frequency | Sources | Declination |
+  |---|---|---|---|---|
+  | `racs_dr1_sources_galacticcut_v2021_08_v02` | RACS-low DR1 (Hale et al. 2021) | 887.5 MHz | 2,123,638 | −84.7° to +29.1° |
+  | `racs_low2_v02` | RACS-low, second epoch | 887.5 MHz | 5,324,477 (Gaussian components, not sources) | −89.9° to +47.9° |
+  | `racs_mid_sources_v01` | RACS-mid (Duchesne et al. 2024) | 1367.5 MHz | 3,105,668 | −90° to +49.4° |
+  | `racs_mid_25arcsec_sources_v01` | RACS-mid at 25″ | 1367.5 MHz | 2,154,585 | −90° to +30° |
+  | `racs_high_sources_v01` | RACS-high (Duchesne et al. 2025) | 1655.5 MHz | 2,677,509 | −90° to +48° |
+
+  Each table carries total and peak flux with their errors, the local noise, Galactic coordinates, a source code and
+  flags. RACS-mid also carries a per-source flux-scale error (`e_flux_scale`), the scan time and the SBID, so the
+  patching across tiles can be modelled.
+- **HEASARC's TAP service** (`heasarc.gsfc.nasa.gov/xamin/vo/tap`):
+
+  | Table | Sources | Declination | Use |
+  |---|---|---|---|
+  | `nvss` | 1,773,484 | −40.4° to +89.8° | the same rows as runs 2–3 |
+  | `sumss` | 211,050 | −89.9° to −26.0° | 843 MHz, the old southern survey; shallow (about 6–10 mJy) |
+  | `wenss` | 229,420 | +28.6° to +89.8° | 325 MHz, northern |
+  | `gleamegcat` | 307,455 | −89.7° to +30.0° | 72–231 MHz |
+  | `vlass821p4` | 17,969 | a strip at ±1.4° | not the full VLASS: of no use here |
+
+- **LoTSS-DR2** (Shimwell et al. 2022), from `lofar-surveys.org`: the masked source list,
+  `LoTSS_DR2_v110_masked.srl.fits`, 950 MB, 144 MHz, about 27% of the northern sky.
+- **Not reached:** the full VLASS catalogue (CIRADA, Gordon et al. 2021; about 3.4 million components, 3 GHz,
+  dec > −40°). It is on VizieR as J/ApJS/255/30 and could be fetched once VizieR's database answers.
+
+What each would do for the two weak points of runs 1–3:
+
+1. **More sky, on one flux scale.** RACS-mid is at 1367.5 MHz, within 2.5% of NVSS's 1400 MHz.
+   - It covers −90° to +49°; NVSS covers −40° to +90°. Joined, they cover the whole sky outside the plane, with a
+     shared band from −40° to +49° to tie the flux scales (a ratio fitted on the overlap, per declination band, before
+     the dipole is looked at).
+   - The jackknife's large-scale scatter is what limited runs 2–3. With the whole sky the dipole no longer leans on a
+     polar component the mask leaves undetermined. RACS-mid also brings a second instrument, so a scatter that belongs
+     to one survey would show as a disagreement between hemispheres.
+   - The published route (Wagenveld, Klöckner and Schwarz 2023, RACS-low with NVSS, cited from memory, to check) is known
+     beforehand. Their numbers are to be read and stated in the next plan before anything is fitted.
+2. **A colour not resting on TGSS.** RACS-low (887.5 MHz) against RACS-mid (1367.5 MHz) gives each source's α from one
+   telescope over the same sky, in the same beam family. RACS-high (1655.5 MHz) gives a third point. That replaces run
+   1's TGSS × NVSS colours, which covered half the sky. The prediction to test again is R2's: one β over α terciles.
+3. **A second check on the payload's part.** LoTSS-DR2 at 144 MHz is deep, with x and α of its own. It covers only the
+   north, so it is a check on β across frequency, not a route to power.
+
+Before any of it is run, the next plan (run 4) writes down:
+- the joined sample's cuts (flux, the Galactic plane, the flags);
+- how the overlap fixes the flux ratio;
+- the power condition, again 1.0·10⁻³, with a forecast of the error from the joined sky's counts;
+- the predictions, again one β across slices and agreement with CatWISE;
+- the numbers from the published joined analyses, quoted as known beforehand.
+
+Each table's sha256 goes in that plan when it is fetched; no large data is committed.
+
+### Run 4 plan: NVSS joined with RACS-mid on one flux scale (9 Nov; Tom: "yes", to writing it before any RACS data)
+
+Written before any RACS row is fetched. The power forecast below uses only the NVSS counts already in hand
+(`runs/rdd/rdd4-forecast.py`, output `runs/rdd/rdd4-forecast.txt`).
+
+**Known beforehand.** Both published joint analyses were read, from the arXiv versions, before this plan was written.
+- **Wagenveld, Klöckner and Schwarz 2023** (A&A 675, A72; arXiv:2305.15335), their Table 3, at 15 mJy, nside 64:
+  - NVSS + RACS-low (Multi-Poisson): 811,014 sources, D = (1.29 ± 0.18)·10⁻² toward (RA, Dec) = (175° ± 8°, −2° ± 11°).
+  - NVSS alone: D = (1.38 ± 0.29)·10⁻². RACS-low alone: (1.42 ± 0.24)·10⁻².
+  - "Three times" the CMB's amplitude, at 4.8σ.
+  - The two catalogues are taken as independent tracers, each with its own monopole, not joined on one flux scale.
+  - Their errors are Poisson; no jackknife.
+- **Oayda, Mittal, Lewis and Murphy 2024** (MNRAS 531, 4545; arXiv:2406.01871), NVSS and RACS-low at 15 mJy (338,222
+  and 459,276 sources after removing local ones):
+  - Free-dipole amplitudes about (9–13 ± 5)·10⁻³ per catalogue (their 2σ intervals).
+  - Removing about 0.9% of sources matched to the 2MRS local galaxies lowers the amplitude by 10–15%.
+  - The local sources' "clustering dipole" points near the CMB's direction.
+- **Runs 1–3 here:** NVSS at 20 mJy, D = 0.0210 ± 0.0058 (jackknife), β̂ about 4.8 times the CMB's, unpowered.
+
+**What is new here, and what is not.** The joining of the southern sky is not new. What is new:
+- RACS-mid (1367.5 MHz) in place of RACS-low (887.5 MHz). Within 2.5% of NVSS's frequency, so one flux scale is
+  reasonable with a ratio fitted on the overlap.
+- The jackknife as the error that decides.
+- The read/write sort's own prediction, one β across flux slices and across colour, with the colour from RACS-low against
+  RACS-mid rather than from TGSS.
+
+**Data.** From CASDA's TAP (`AS110.racs_mid_25arcsec_sources_v01`, the 25″ common-resolution catalogue, −90° to +30°)
+and `AS110.racs_dr1_sources_galacticcut_v2021_08_v02` (RACS-low DR1), and the NVSS file of runs 2–3. Columns: ra, dec,
+total flux and its error, noise, s_code, flag, gal_lat. Each table's row count and sha256 are recorded when fetched.
+
+**The joined map.**
+- **Seam at dec −10°.** NVSS north of it (its D configuration only, so run 3's step disappears from NVSS), RACS-mid
+  south of it. Sky kept: |b| > 16° and dec < +77°, as runs 2–3 kept for NVSS; 0.712 of the sky.
+- **One flux scale.** In the overlap −10° < dec < +30°, NVSS and RACS-mid sources within 10″ of each other, both
+  between 50 mJy and 1 Jy, unresolved in RACS-mid (`s_code` S). The median of S_NVSS / S_RACS-mid in each 10° band of
+  declination is the ratio r(δ). RACS-mid fluxes south of −10° are multiplied by r of the −10° to 0° band. Expected,
+  said now: about (1400/1367.5)^(−0.75) = 0.983, if both scales are right.
+- **Cuts.** 15 mJy ≤ S ≤ 1 Jy on the common scale. Pixels nside 64. In RACS-mid, sources flagged by the catalogue are
+  dropped, and pixels where the catalogue's noise is above 2 mJy/beam.
+- **Fit.** Ordinary least squares on [1, step(dec < −10°), x, y, z], as run 3. The seam step is always fitted.
+- **Errors.** Bootstrap (400) and a jackknife over nside-2 regions, as runs 1–3. The larger decides.
+- **x** is taken from the joined sample's own counts, uncut, between S and 1.5 S (run 2's corrected way). α = 0.75.
+
+**Forecast (from NVSS counts only).** See `runs/rdd/rdd4-forecast.txt`.
+- Method: the Poisson scatter of the fit on the joined mask, simulated, times runs 2–3's jackknife-over-bootstrap ratio
+  on NVSS (1.45), over 2 + x(1 + α). RACS-mid is taken to have NVSS's density above 15 mJy.
+- With the design above (the seam step fitted, |b| > 16°, 0.712 of the sky): σ(β̂) ≈ 1.45·10⁻³ at 10 mJy, 1.59·10⁻³
+  at 15 mJy, 1.76·10⁻³ at 20 mJy. **Over the bar at every cut.** Poisson alone, without the 1.45, it would be
+  1.0–1.2·10⁻³.
+- Variants, the same way (`runs/rdd/rdd4-forecast.txt`'s second table):
+
+  | Sky | Seam step | 10 mJy | 15 mJy |
+  |---|---|---|---|
+  | \|b\| > 16°, dec < +77° | fitted | 1.39·10⁻³ | 1.68·10⁻³ |
+  | \|b\| > 16°, dec < +77° | fixed by the flux tie | 1.08·10⁻³ | 1.23·10⁻³ |
+  | \|b\| > 10°, whole sky | fixed by the flux tie | 0.97·10⁻³ | 1.06·10⁻³ |
+  | NVSS alone (runs 2–3's mask) | fitted | 1.63·10⁻³ | 1.82·10⁻³ |
+
+- Fitting the seam step costs about a third of the power. Leaving it out needs the flux tie to be trusted, which R5‴
+  checks on the overlap. Even then the best case sits on the bar.
+- Said now: the 1.45 ratio is a guess for a joined sky. If the large-scale scatter belongs to the sky (clustering), it
+  will not shrink with more sources, and the run may be unpowered again.
+
+**Predictions** (the same theory as runs 1–3: the 2 in D is the directions' part, the same for every slice; x(1 + α) is
+the payload's weighting; so one β whatever is sliced):
+- **R6‴ (power).** β̂'s error under 1.0·10⁻³, or the run is declared unpowered and the rest reported, not counted.
+- **R1‴** one β over four flux slices (15–30, 30–60, 60–120, 120–1000 mJy, x_eff per slice as run 2's), χ² p > 0.01.
+- **R2‴ (colour, the RACS sky alone).** Sources south of +29° in both RACS-low and RACS-mid (10″), α = ln(S_low/S_mid) /
+  ln(1367.5/887.5) taken positive for falling spectra; terciles in α; each tercile's own x_eff and mean α in
+  2 + x(1 + α); one β over the three, p > 0.01. Its own power: the terciles' errors are reported and R2‴ counts only if
+  each is under 3·10⁻³.
+- **R3‴** β̂ within 2.58 combined errors of CatWISE's (3.31 ± 0.46)·10⁻³.
+- **R4‴** the axis within the combined 99% radius of CatWISE's (234.7°, 42.2°) Galactic.
+- **R5‴ (one scale).** The fitted overlap ratio r within 3% of 0.983 in every band; and the seam step under 1% of the
+  monopole. If either fails, the joined map is not on one flux scale, and the run says so before any dipole is read.
+- **Reported, not predicted:**
+  - Wagenveld's way: each survey its own monopole, no flux tie.
+  - With local sources removed: RACS-mid and NVSS sources within 1′ of a 2MRS galaxy dropped, if 2MRS is reachable.
+  - β̂ against the CMB's, and the axis's distance from the CMB's.
+
+**What could go wrong, said now:**
+- RACS-mid's tiles have flux-scale errors of their own (`e_flux_scale`). A patchwork of tiles is a pattern at small
+  scales, but a declination trend in it would leak into the dipole. r(δ) by band shows a trend in the overlap only.
+- The seam lies on a line of declination, so the step it fits shares shape with the dipole's polar part, as in run 3.
+
+**Held before fetching (9 Nov).** The forecast says the joined sky, as designed, would be unpowered at the bar runs 2–3
+used. The bar is the error at which CatWISE's β and the CMB's lie 2 errors apart. Three ways on, for Tom to choose before
+anything is fetched, so that the choice is not made after seeing data:
+
+1. **Keep the bar, tighten the design.** Fix the seam step by the flux tie instead of fitting it; keep |b| > 10° over the
+   whole sky; cut at 10 mJy. Forecast 0.97·10⁻³: on the bar, so the run may still come out unpowered. R5‴ must pass
+   first, or the tie cannot carry the step.
+2. **Keep the design, change what is asked.** The bar of 1.0·10⁻³ asks the radio sky to tell CatWISE's β from the CMB's.
+   At about 1.5·10⁻³ it can still ask whether radio and CatWISE read one β (R3‴), and whether one β holds over flux and
+   colour (R1‴, R2‴). These are the read/write sort's own predictions. The CMB question is left open and said so.
+3. **Both.** Option 1's design, judged by option 2's questions, with R6‴ kept as a report rather than a gate.
+
+The 1.45 jackknife ratio is the deciding number in every row. If it belongs to the sky (clustering, Oayda et al.'s local
+dipole), no radio census at these depths reaches 1.0·10⁻³, and the papers that quote errors near 0.2·10⁻² in D give
+Poisson errors only.
+
+**Not run (9 Nov; Tom asked "is it still a useful test?", then "yes" to parking it).** Run 4 was not run and no RACS data
+was fetched.
+- **It cannot decide the open question.** At about 1.5·10⁻³ the joined sky cannot tell CatWISE's β from the CMB's.
+- **It barely improves the checks it can make.** Runs 1–3 already passed one β over flux, and the radio β sits 1.5σ from
+  CatWISE's.
+- **It does not test the read/write sort.** The sort's reading (the 2 the directions', x(1 + α) the payload's) makes
+  the same predictions as Ellis and Baldwin's formula, so no outcome tells them apart.
+- **What would test the split, and why not here.** D ∝ 2 + x(1 + α) across samples: motion gives β from both the slope
+  and the intercept, while a dipole of clustering stays flat. Over these surveys 2 + x(1 + α) spans only about 3.3–4.4,
+  against 30–40% errors per slice, so the lever arm is too short.
+
+The data sources and the forecast stay above for whoever returns to it. The dipole is parked.

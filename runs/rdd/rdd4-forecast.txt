@@ -1,0 +1,14 @@
+NVSS kept area 24481 deg2; joined sky 0.712 of the sky
+cut 10 mJy: NVSS density 16.96/deg2, x 0.813, joined N ~ 497,991, Poisson sigma(D) 0.0034, forecast sigma(beta) 1.45e-03 (over 1.0e-3)
+cut 15 mJy: NVSS density 12.20/deg2, x 0.876, joined N ~ 358,110, Poisson sigma(D) 0.0039, forecast sigma(beta) 1.59e-03 (over 1.0e-3)
+cut 20 mJy: NVSS density 9.51/deg2, x 0.929, joined N ~ 279,209, Poisson sigma(D) 0.0044, forecast sigma(beta) 1.76e-03 (over 1.0e-3)
+
+Variants (the same simulation, 300 Poisson skies each; sigma(beta) with the 1.45 jackknife ratio, then Poisson alone):
+joined |b|>16 dec<77   step fitted  10 mJy: N 497,849  1.39e-03  (Poisson 9.56e-04)
+joined |b|>16 dec<77   step fitted  15 mJy: N 358,122  1.68e-03  (Poisson 1.16e-03)
+joined |b|>16 dec<77   no step      10 mJy: N 497,849  1.08e-03  (Poisson 7.44e-04)
+joined |b|>16 dec<77   no step      15 mJy: N 358,122  1.23e-03  (Poisson 8.51e-04)
+all |b|>10             no step      10 mJy: N 579,398  9.74e-04  (Poisson 6.72e-04)
+all |b|>10             no step      15 mJy: N 416,784  1.06e-03  (Poisson 7.34e-04)
+NVSS mask              step fitted  10 mJy: N 415,190  1.63e-03  (Poisson 1.12e-03)
+NVSS mask              step fitted  15 mJy: N 298,662  1.82e-03  (Poisson 1.26e-03)

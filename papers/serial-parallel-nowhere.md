@@ -7410,6 +7410,29 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R774** (9 Nov; Tom: "Yes", to opening a PR and carrying LWL into the papers): LWL run 1 in `physics.md` §2.1 (the five
+  pairs, a table) and in *Reads and Writes in Physics* §4.3, after sodium (the pion, Cd, Kr and Dy, χ² 8.43 on 5, the
+  width and the lifetime agreeing over nine orders of magnitude of time), with seven references added. No new claim.
+- **R773** (9 Nov; Tom: "yes", to the line-width test next): LWL (`plans/lwl-plan.md`, `runs/lwl/lwl.py`), predictions
+  first. One quantity read two ways: a natural width in frequency against a lifetime in time.
+  - **Pairs.** Five independent pairs: Na D2, the neutral pion (Primakoff against decay in flight), Cd ¹P₁, the Kr 3d
+    hole (attosecond pump–probe) and Dy's 421 nm level. Lifetimes run from 10⁻¹⁷ s to 10⁻⁸ s.
+  - **Verdicts.** Every Γτ is within 3σ of 1 (the pion 1.076 ± 0.037, 2.05σ, the largest), and χ² is 8.43 on 5
+    (p = 0.13). Nothing killed.
+  - **Read after the run.** Four of five lie above 1, the clock's read the longer (beam-foil's cascades on Cd).
+  - **Standing.** Classical, Weisskopf and Wigner; the reading of *Reads and Writes in Physics* §4.3 survived a test that
+    could fail.
+- **R772** (9 Nov; Tom: "lets find data sources to make it robust.", "yes", "is it still a useful test?", "yes"): RDD
+  run 4 planned and not run.
+  - **Data.** Sources found: RACS-low, RACS-mid and RACS-high on CASDA's TAP; NVSS, SUMSS, WENSS and GLEAM on
+    HEASARC's; LoTSS-DR2 as a file.
+  - **Design.** NVSS north of −10° and RACS-mid south of it, joined on one flux scale by the overlap.
+  - **Forecast** (from NVSS counts alone): unpowered at the 10⁻³ bar, 1.45–1.6·10⁻³, about 0.97·10⁻³ at the very best.
+  - **Why it stops.** The run could not tell CatWISE's β from the CMB's. Its other checks were already passed, and the
+    read/write sort predicts nothing Ellis and Baldwin's formula does not.
+  - **What would test the sort.** D in proportion to 2 + x(1 + α) across samples, which needs a lever arm these surveys
+    lack.
+  - The dipole is parked. Wagenveld et al. 2023 and Oayda et al. 2024 were read and are quoted in the plan.
 - **R771** (9 Nov; Tom: "proceed"): RDD run 3. NVSS's change of array configuration at dec −10° was modelled as one
   step, its form taken from the survey's design. The step is +0.23%, and the run is still unpowered (1.63·10⁻³ against
   10⁻³; the step shares shape with the polar component, as foreseen). Reported, not counted: β̂ 4.8 times the CMB's,
