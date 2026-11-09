@@ -1146,8 +1146,8 @@ do this whenever we walk toward something: the corner is free, the approach and 
 
 **The mountain's own corner.** The same walk has a second corner, with no thumb in it. Stand on the mountain's centreline
 and read each edge against the line to its middle: half the breadth over the distance, s = (V\*/2)/d, a ratio the
-writer states and the read holds as the edge's finger. Squared and divided by its own length it is the point of §1 and §5, Z = (1 + is)/(1 − is),
-rational in the read: no angle, no π and no e are needed to have it. Far off the edges are together, s near 0 and Z near
+writer states and the read holds as the edge's finger. Squared and divided by its own length it is the point of §1
+and §5, Z = (1 + is)/(1 − is), rational in the read: no angle, no π and no e are needed to have it. Far off the edges are together, s near 0 and Z near
 1: that end of the walk is home. Where the half-breadth equals the distance, s = 1 and Z = i: the edges a quarter turn
 apart, the mountain's own corner. At the foot s grows without end and Z goes to −1: that end is the horizon. The writer
 names the point Z = e^(iα), α the angle the mountain spans, and e^(iπ) = −1 is the name of the end the walk heads for,
