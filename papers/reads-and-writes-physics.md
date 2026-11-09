@@ -242,6 +242,20 @@ the natural width by spectroscopy on cold atoms, Γ/2π = 9.802 MHz, equivalent 
 width and the lifetime are amounts, each needing its own standard, a frequency or a clock. Neither is read from a
 standpoint; that they agree is the one standpoint seen twice.
 
+The same was then tested on four more transitions, with the prediction fixed before the search [data]. Each pair is a
+width measured in frequency or energy against a lifetime measured in time, and the lifetimes run from 10⁻¹⁷ s to 10⁻⁸ s:
+- **The neutral pion.** Its two-photon width from the Primakoff effect (Larin et al. 2020), over its branching ratio,
+  against its decay length (Atherton et al. 1985): Γτ = 1.076 ± 0.037.
+- **Cadmium's ¹P₁ level.** Its line shape (Hofsäss et al. 2023) against beam-foil (Andersen and Sørensen 1973):
+  1.19 ± 0.10.
+- **Krypton's 3d core hole.** Its width, 88 ± 4 meV, against an attosecond pump–probe measurement (Drescher et al.
+  2002): 1.06 ± 0.14.
+- **Dysprosium's 421 nm level.** Its line shape (Lu, Youn and Lev 2011) against time-resolved fluorescence (Curry,
+  Den Hartog and Lawler 1997): 0.964 ± 0.055.
+
+With sodium, χ² is 8.43 on five degrees of freedom (p = 0.13). The pion's 2σ is a tension known in the particle data. The
+width and the lifetime agree across nine orders of magnitude of time, and only the standard each needs differs.
+
 The clock itself is hidden in the same way [exact]. A Brownian walker from height h lands on a line as the Cauchy of
 scale h whatever its diffusion constant D; speed the walk up a hundredfold and every passage time shrinks a hundredfold
 while not one landing moves, and the passage times have no mean to settle on (the median of a batch's mean grows in
@@ -623,8 +637,12 @@ KAGRA and GEO. *Astrophysical Journal Supplement Series* 267, 29.
 Aharonov, Y., Albert, D. Z. and Vaidman, L. (1988). How the result of a measurement of a component of the spin of a
 spin-½ particle can turn out to be 100. *Physical Review Letters* 60, 1351.
 
+Andersen, T. and Sørensen, G. (1973). *Journal of Quantitative Spectroscopy and Radiative Transfer* 13, 369.
+
 Aspden, R. S., Padgett, M. J. and Spalding, G. C. (2016). Video recording true single-photon double-slit interference.
 *American Journal of Physics* 84, 671. Data: University of Glasgow Enlighten, doi:10.5525/gla.researchdata.281.
+
+Atherton, H. W. et al. (1985). Direct measurement of the lifetime of the neutral pion. *Physics Letters B* 158, 81–84.
 
 Bailer-Jones, C. A. L. (2015). Estimating distances from parallaxes. *Publications of the Astronomical Society of the
 Pacific* 127, 994.
@@ -654,6 +672,10 @@ Bullock, J. M., Mallada González, L., Tamme, R., Götzenberger, L., White, S. M
 Clark, J. S., Silman, M., Kern, R., Macklin, E. and HilleRisLambers, J. (1999). Seed dispersal near and far: patterns
 across temperate and tropical forests. *Ecology* 80(5), 1475–1494.
 
+Curry, J. J., Den Hartog, E. A. and Lawler, J. E. (1997). Radiative lifetimes of Dy I and Dy II. *Journal of the Optical Society of America B* 14, 2788.
+
+Drescher, M. et al. (2002). Time-resolved atomic inner-shell spectroscopy. *Nature* 419, 803–807.
+
 Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
 Royal Astronomical Society* 206, 377.
 
@@ -672,11 +694,15 @@ Haff, P. K. (1983). Grain flow as a fluid-mechanical phenomenon. *Journal of Flu
 
 Henderson, D. (1975). A simple equation of state for hard discs. *Molecular Physics* 30, 971.
 
+Hofsäss, S., Padilla-Castillo, J. E., Wright, S. C., Kray, S., Thomas, R., Sartakov, B. G., Ohayon, B., Meijer, G. and Truppe, S. (2023). High-resolution isotope-shift spectroscopy of Cd I. arXiv:2210.11425.
+
 Hubble, E. (1929). A relation between distance and radial velocity among extra-galactic nebulae. *Proceedings of the
 National Academy of Sciences* 15, 168.
 
 Kato, S. and McCullagh, P. (2020). Some properties of a Cauchy family on the sphere derived from the Möbius
 transformations. *Bernoulli* 26(4), 3224–3248.
+
+Larin, I. et al. (PrimEx-II Collaboration) (2020). Precision measurement of the neutral pion lifetime. *Science* 368, 506–509.
 
 Laurentini, A. (1994). The visual hull concept for silhouette-based image understanding. *IEEE Transactions on Pattern
 Analysis and Machine Intelligence* 16, 150.
@@ -686,6 +712,8 @@ Lee, D. N. (1976). A theory of visual control of braking based on information ab
 
 Liouville, J. (1850). Extension au cas des trois dimensions de la question du tracé géographique. Note VI in G. Monge,
 *Application de l'analyse à la géométrie*, 5th ed., Paris, 609–616.
+
+Lu, M., Youn, S. H. and Lev, B. L. (2011). Spectroscopy of a narrow-line laser-cooling transition in atomic dysprosium. *Physical Review A* 83, 012510.
 
 Lutz, T. E. and Kelker, D. H. (1973). On the use of trigonometric parallaxes for the calibration of luminosity systems.
 *Publications of the Astronomical Society of the Pacific* 85, 573.

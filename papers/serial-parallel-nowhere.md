@@ -7410,6 +7410,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R774** (9 Nov; Tom: "Yes", to opening a PR and carrying LWL into the papers): LWL run 1 in `physics.md` §2.1 (the five
+  pairs, a table) and in *Reads and Writes in Physics* §4.3, after sodium (the pion, Cd, Kr and Dy, χ² 8.43 on 5, the
+  width and the lifetime agreeing over nine orders of magnitude of time), with seven references added. No new claim.
 - **R773** (9 Nov; Tom: "yes", to the line-width test next): LWL (`plans/lwl-plan.md`, `runs/lwl/lwl.py`), predictions
   first. One quantity read two ways: a natural width in frequency against a lifetime in time.
   - **Pairs.** Five independent pairs: Na D2, the neutral pion (Primakoff against decay in flight), Cd ¹P₁, the Kr 3d

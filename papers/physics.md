@@ -429,6 +429,25 @@ Then (SPN R440; Tom: "proceed with recommended changes") a real-data test of the
   The bridge is the Born rule, and the transmission is measured. On the duality circle: the foil is on it (V² + P² = 1),
   the chopper inside it (same P, lower V). Classical, and the sech form is in print (§1); this records the data.
 
+- **A line's width and its lifetime are one quantity read in two units** (TIM T5, `plans/tim-plan.md`; LWL run 1,
+  `plans/lwl-plan.md`; 9 November, SPN R773). The reading: a phase turning steadily and fading has the Lorentzian for
+  its spectrum, the width Γ the fading rate, so the width read in frequency and the lifetime read in time are one height,
+  and Γτ = 1 needs neither a frequency standard nor a clock, while each factor alone needs one. The prediction was fixed
+  before the search, on five pairs measured independently, the lifetimes running from 10⁻¹⁷ s to 10⁻⁸ s:
+
+  | Pair | Γτ | from 1 |
+  |---|---|---|
+  | Na D2 (line shape 1996; decay in flight 1996) | 1.0010 ± 0.0025 | +0.41σ |
+  | π⁰ (Primakoff width, PrimEx-II 2020, over B(γγ); direct decay, Atherton 1985) | 1.076 ± 0.037 | +2.05σ |
+  | Cd ¹P₁ (line shape 2022; beam-foil 1973) | 1.19 ± 0.10 | +1.86σ |
+  | Kr 3d hole (88 ± 4 meV; attosecond pump–probe 2002) | 1.06 ± 0.14 | +0.41σ |
+  | Dy 421 nm level (line shape 2010; time-resolved fluorescence 1997) | 0.964 ± 0.055 | −0.66σ |
+
+  χ² is 8.43 on 5 degrees of freedom (p = 0.13), and nothing was killed. The pion's 2σ is a tension already in the
+  literature, and it lands that close only with the branching ratio carried in. Four of the five lie above 1, the time
+  measurement the longer, which fits beam-foil's cascades on cadmium. This is classical (Weisskopf and Wigner 1930); the
+  reading adds only that the product is free.
+
 ### 2.2 Exact arithmetic
 
 - **Where 2/π shows up** (TPI, `plans/tpi-plan.md`). Sixty-five occurrences across about forty fields, from Buffon's
