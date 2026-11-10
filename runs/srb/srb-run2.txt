@@ -1,0 +1,6 @@
+R1: Galilean composition, best single beta 0.55522869, max residual 0.046247 rad
+    Lorentz composition at (b1+b2)/(1+b1 b2), max residual 7.32e-49
+    Galilean velocities (speed carried), two steps against one of b1+b2: 0.0
+R2: n.X_a on sphere: z*(a*x**2*z**2 + a*y**2*z**2 + a*z**4 - a*z**2 + x**2 + y**2 + z**2 - 1) ; [L_z, X_a]: [0, 0, 0] ; mirror x: [0, 0, 0] ; anti z: [0, 0, 0]
+    X_a = sin(th)(1 + a cos^2 th) e_theta, > 0 on (0, pi) for a > -1; f' - f cot th = -2*a*sin(theta)**2*cos(theta)
+R3: a = 0, dimension at depth 0..3: [6, 6, 6, 6]  (18 s)
