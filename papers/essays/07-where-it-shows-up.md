@@ -84,7 +84,7 @@ lamp, the reading tan θ is the standard half-Cauchy of one length turned: scale
 drawing with two axes it is a Cauchy of scale c, the ratio of the shore's drawn length to the sea's. On the beach the marks
 follow C(α, β), a location and a scale, both amounts, both moved by scaling the world. So V, the shore playing the mountain
 in the distance, comes in only as the scale, and only when someone finds the shore and lays a ruler along it: the walker's
-paces are the writing. And the marks have no mean for the reason the third essay gave: they are the lamp's directions
+paces place the marks, and the pace counted in metres is the writing. And the marks have no mean for the reason the third essay gave: they are the lamp's directions
 carried onto the sand and written as places, and directions have no sum. The flashes' light, which is payload,
 averages as any amount does.
 
@@ -453,6 +453,7 @@ paces supply the only amount.
 - Wigner, E. (1939). On unitary representations of the inhomogeneous Lorentz group. *Annals of Mathematics* 40(1),
   149–204.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, whose §3 has the lighthouse, Mercator's map and the moving sky beside the hand): Proposition 5(f) and (g), "Two charts" and "What the
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November with read, place and write, R788, whose §4 has the
+lighthouse, Mercator's map and the moving sky): Proposition 5(f) and (g), "Two charts" and "What the
 two pictures show" in §7.1; "Already drawn, under other names" and "Where c ≠ 1 comes from" in §5; "Special relativity's
 sky" in §11; Appendix A, "V = H under other names" and "Why the payload is Gaussian".

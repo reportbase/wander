@@ -55,10 +55,10 @@ and found a rule on it: brake so that the time to contact shrinks no faster than
 a standpoint is given motion before it is given an object.
 
 Three limits keep this honest. A read holds no time and holds only where the standpoint is now, so a stream, and
-everything said along it, is reads joined: a write. The time to contact is a count of the standpoint's own ticks between
-reads, a write in its own tick as places after a counted step are written in its own thumbs; the braking rule, ticks per
-tick, is unmoved by any clock, which makes it scale-free, and it is still a write, since no single read holds a rate of
-change. Seconds are a writer's unit, carried in from a clock. The rate at which the standpoint turns cancels from every reading,
+everything said along it, is reads joined: a place, not a read. The time to contact is a count of the standpoint's own
+ticks between reads, a place in its own tick, as distances after a counted step are places in its own thumbs; the braking
+rule, ticks per tick, is unmoved by any clock and by scaling the world, and it is still a place, not a read, since no
+single read holds a rate of change. Only seconds make it a write: a unit carried in from a clock. The rate at which the standpoint turns cancels from every reading,
 as the thumb's length does. And a speed in metres a second is a writing twice over: a metre and a second, both carried in.
 
 **A shared denominator gives relative payloads.** Two readings taken at the same moment against the same thing, say two
@@ -261,8 +261,8 @@ direction, written, or further standpoints.
 Say it plainly: **the reader never sees a shape.** It sees the sweep, the same directions with the
 same heat for every world, and the paint on them. *The heat is given; the paint is met.* A thing is to it the directions
 it paints and what it paints them with: a patch of directions, what is in front of what, a colour. How far the surface lies along each direction is an amount, and the geometry has removed every amount
-before anything is read. Every way to the shape is a writing: ranging, a counted step between standpoints, a blueprint
-handed over. Shape is the writer's. The reader has the Cauchy sweep and its paint.
+before anything is read. Every way to the shape needs more than one read: further standpoints give it as places, in the
+step's length; ranging and a blueprint handed over give it in a unit, as writes. Shape is never the read's. The reader has the Cauchy sweep and its paint.
 
 That an image does not settle the shape that made it is an old observation: Helmholtz's perception as unconscious
 inference, inverse optics as an ill-posed problem (Poggio, Torre and Koch 1985), Gibson's optic array. Those accounts
@@ -297,14 +297,15 @@ by the thing it meets. Moving a thing changes its direction and not its shape; r
 direction. Its size in the room's own units comes from neither, but from a shared denominator: the thing and the wall side
 by side at one distance give the one against the other, and the distance cancels.
 
-Take one step and the room becomes a map, every corner placed and every thing sized, in steps. That was the first essay's
-opening scene. Walk round a thing and its shape fills in, direction by direction from its centre.
+Take one step and the room becomes a map, every corner placed and every thing sized, in steps: places, unmoved when the
+room and the step are scaled together. That was the first essay's opening scene. Walk round a thing and its shape fills in, direction by direction from its centre.
 
 Then the first essay's distinction returns in a practical form. **To move the furniture is to write.** A reader that wants
 a chair a metre from the wall, or a picture at eye level, wants a thing to be at an amount, and no reading holds that. It
 must become a writer, and writing needs what reading never does: the reader must move and engage with the room
 physically. A known step, a hand laid flat against the wall, a tape measure. One amount carried in writes every length of
-the room in its unit, and only then can the place wanted be named. Reading the room again afterwards is free.
+the room in its unit, and only then can the place wanted be named. (Placing the chair three strides from the wall needs
+no unit: that is a place. The metre is what makes it a write.) Reading the room again afterwards is free.
 
 *Demos: the room; walking the room; the room in ratios; one blueprint (write the room).*
 
@@ -344,26 +345,28 @@ stand, and the one amount it is handed.
 
 ---
 
-## 12. Becoming the writer
+## 12. From reads to places to writes
 
 Climb the ladder of this essay once more, and count the variables. From one standpoint there is one length, H, the thumb,
 and a direction; nothing in it is a place, nothing is counted, and the reader has a vantage, not a shape (counting comes
-with parallax and writing, and one length counted makes the rationals: the fourteenth essay). A
+with parallax, and one length counted makes the rationals: the fourteenth essay). A
 second standpoint adds a second variable, the step between the two. Now each point, matched in both looks, is two rays
 crossing, and its place comes out of the crossing's lengths and angles, sines and square roots, numbers no single length
 makes. More standpoints give every place seen, in the step's length: the writer's box, its three number lines, up to its
 size. Count the step in an agreed unit and the box is in that unit.
 
-So parallax is how a reader reconstructs the writer's cube, and while it does, it is the writer. It has moved, joined its
-standpoints and is holding what no one standpoint holds. When it stops and looks again, it reads. Reader and writer are
-not two kinds of observer; they are what one observer is doing. The labels move with the act.
+So parallax is how a reader reconstructs the writer's cube, up to its size: the passage from a read to a place. It has
+moved, joined its standpoints and is holding what no one standpoint holds, every place in its own stride, and scaling the
+world with the stride moves none of it. Only when the stride is counted in an agreed unit does it write. When it stops and
+looks again, it reads. Reads, places and writes are not three kinds of observer; they are what one observer is doing.
 
 The first essay's survey says the same thing in its own words: the many directions are read (the instrument writes each
-down in degrees), and the one base walked and counted is written; a surveyor does both in one morning.
+down in degrees), with the base as the thumb every side is a place, and the one base counted in a unit is the write; a
+surveyor does all three in one morning.
 
 And the passage has degrees. Knowing V, the mountain in the distance, is not a switch thrown by the second standpoint; it
 comes in amounts, three ways. *In what:* in the step taken, in H if the step was H (one thumb, and places come out in
-thumbs), in metres only if the step was counted. *How well:* the fractional error in the distance, and so in V, is ε·cosh(ln k) with k = d/(B/2), ε at the
+thumbs, V placed as V\*/H), in metres only if the step was counted in metres, the one write. *How well:* the fractional error in the distance, and so in V, is ε·cosh(ln k) with k = d/(B/2), ε at the
 pair's corner, about ε·d/B far off, and past about B/ε nothing but a ray (the fourth and fifth sections). In the mountain
 example, one thumb walked toward a range ten thumbs off puts it at k = 20, an error about ten times the step's ε; a
 baseline of twenty thumbs would put it at the corner. *Of which things:* the
@@ -371,7 +374,7 @@ same two standpoints give V for the near things and leave it unknown for the far
 narrow the band; nothing closes it. The writer who holds V exactly, the one the papers call the writer, is the limit of
 this, never a stage of it. That is the fifteenth essay's shape again: every stage of learning V is a finite approximant, as
 every partial sum of π is, and holding V exactly, like holding π, would need the infinite process finished. A reader
-becoming a writer holds V to so many digits, for so many things, out to so far.
+placing V holds it to so many digits, for so many things, out to so far.
 
 One way to speed the passage is to aim it. Set H, the thumb, to the thing itself and there are two senses. Make the thing
 the unit, and its V is 1 by choice; its own two ends become the baseline, and you are the point placed: ninety degrees
@@ -382,7 +385,7 @@ short step, then a longer baseline set from what the short one gave.
 
 **In physics.** What astronomy does with parallax is this essay's chain run backwards: d = a/tan p with the astronomical
 unit carried in, σ_d/d = σ_p/p the far limit of γ/sin γ, and Lutz and Kelker's bias a read inverted as if it were a
-write. A distance ladder is a tower of reads joined by writes, each rung one factor only where it is flat against an
+write. A distance ladder is a tower of places, reads joined across baselines and one unit at the top, each rung one factor only where it is flat against an
 independent distance; on Cosmicflows-4, Hubble's 1929 rungs are not. And in a simulation of many standpoints with one
 length carried in at 1% error, the shape improved as N^(−0.49) while the scale never left the 1%: the reads averaged
 down, the one write did not (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §7).
@@ -391,11 +394,11 @@ down, the one write did not (*Reads and Writes in Physics* (`../reads-and-writes
 
 ## 13. What it comes to
 
-**Reading and writing.** Standpoints are how a reader climbs from directions to places, and the climb is where reading
-turns into writing. One gives lines, two give the figure, exact, in the length of the step between them; the observer
-that joined them has written the figure. The last rung is the agreed length that fixes the scale. Astronomy's history of
+**Reading, placing and writing.** Standpoints are how a reader climbs from directions to places. One gives lines, two
+give the figure, exact, in the length of the step between them; the observer that joined them has placed the figure. The
+last rung is the agreed length that fixes the scale, the write. Astronomy's history of
 the astronomical unit is that rung, measured from outside for two centuries and finally agreed. Each standpoint's
-reading is reading; joining them, and agreeing the unit, is writing.
+reading is reading; joining them is placing; agreeing the unit is writing.
 
 **The Cauchy.** It appears twice here. Parallax has the corner and the bell of the steady turn, for the same reason: the
 pair's facing turns fastest at the corner. And on the far side of the reciprocal, inverted parallaxes behave exactly as
@@ -434,7 +437,8 @@ is the length every place is found in.
 - Triggs, B., McLauchlan, P. F., Hartley, R. I. and Fitzgibbon, A. W. (2000). Bundle adjustment — a modern synthesis. In
   *Vision Algorithms: Theory and Practice*, LNCS 1883, 298–372.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*), §9 (Propositions 9–12, "Inside a room", "To move the
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November
+with read, place and write, R788), §9 (Propositions 9–12, "Inside a room", "To move the
 furniture is to write", "Far off", "One standpoint gives no parallax", "From one place"; the classical side of a shape in Appendix A, "A shape as a
 function on the circle"), and the parallax results in the
 working paper `parallax.md` (§3–§6).

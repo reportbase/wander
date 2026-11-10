@@ -364,7 +364,17 @@ clock, two amounts, so its ranges are writes.
 ## 4. The paint
 
 **Heat and paint.** A direction from home, with its heat, is the read's; a payload, the paint, is what arrives along it.
-They share one thing, the point where a direction meets the world. The world decides what meets each direction, which
+They share one thing, the point where a direction meets the world.
+
+**The hand.** Hold up a hand, thumb out, to a stained-glass window. The thumb is H: the one length held, its size
+chosen, setting only the zoom. The fingers, spread from flat to upright, are the directions; the reader does nothing to
+lay them, and wherever the hand is held the geometry gives the same fingers spread the same way, evenly by turn, half
+below the corner. Each finger is lit by the pane it lines up with: the coloured light is the paint, the world's, met on
+the fingers, and it changes with what is in front of them. No colour carries how far the light came; walking is the way
+to distance (§6). Hold the thumb against a mountain range and the range spans so many fingers; drawn at the thumb's own
+size, every amount read from it would be off by V\*/H, a place had only by walking (§10). The fingers are coloured,
+never colour: painting on them would be writing. In space the window is held with both hands (§8). **Reading**; after
+Gibson's ambient optic array (1979). The world decides what meets each direction, which
 thing is nearest and what it sends back; nothing it does moves a direction or its heat. Scale the world and nothing moves;
 change the world and nothing moves. A rate is a payload per direction: the *of* is the paint, the *per* the read (§9).
 
@@ -424,8 +434,9 @@ changes: the Doppler factor D = √(1 − β²)/(1 − β cos θ′) scales each
 payload that moves no direction. For a sky uniform in its frame, counting total power, the D⁴ brightening ahead is D² of
 directions crowding (the heat) and D² of payload. On ξ = −ln tan(θ/2), the pseudorapidity, aberration is a slide by η,
 so directions alone give the rapidity, with no clock, no frequency and no speed of light, provided every source is counted
-whatever its brightness and the sources are uniform in their frame. The rapidity is unmoved by scaling and needs the sky
-joined before and after: a place. The speed in metres a second needs c carried in, and D read as a line's shift needs the
+whatever its brightness and the sources are uniform in their frame. Taken so, from one look, the rapidity is a read: the
+slide of one read's median against where the premise puts it, unmoved by scaling, with no second standpoint. Taken as
+the sky's median before a boost against after, it joins two looks: a place. The speed in metres a second needs c carried in, and D read as a line's shift needs the
 line's rest frequency: both writes. **Classical**; the sorting is a reading.
 
 ## 5. Near and far

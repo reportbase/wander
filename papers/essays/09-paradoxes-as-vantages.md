@@ -75,8 +75,8 @@ So a paradox of this kind has a two-part resolution:
 
 The two tests of the first and third essays sort it at once. Scale the world, every length in the field multiplied by k:
 r_A and r_B do not move, so they are readings. The sizes S_A and S_B move, so "who is bigger, in metres" is a writing.
-And the readings' ratio and product, which do not move either, are readings again: the exchange turns two private
-readings into two shared ones, without writing anything.
+And the readings' ratio and product, which do not move either, are places: they join two standpoints' readings, and the
+exchange turns two private readings into two shared ones, without writing anything.
 
 ---
 
@@ -177,8 +177,8 @@ observation.
 A paradox, in this account, is a question asked from one vantage and answered from the other. Usually it is a writer's
 question, a total, a sum, a single length, the whole, put to a reader who holds none of them. Sometimes it is the other way:
 a reader's ratio quoted as a writer's amount. The two tests find which:
-- **Scale the world.** Multiply every amount by k. If a claim does not move, it is a reading. If it moves, it is a writing,
-  and it needed something carried in.
+- **Scale the world.** Multiply every amount by k. If a claim does not move, it is a reading, or a place if it joins two
+  standpoints. If it moves, it is a writing, and it needed something carried in.
 - **Change what arrives.** Keep the standpoint and the turn, and change what reaches the reader. If a claim does not move,
   it is about the directions and their heat. If it moves, it is about the payload, the paint.
 
@@ -347,7 +347,7 @@ honest.
 **In physics.** Physics has paradoxes of this kind, each a read and a write run together. A parallax with a Gaussian
 error has an inverse with no mean, and averaging those inverses as distances is Lutz and Kelker's bias (1973). The
 rotation two boosts leave, Thomas and Wigner's, looks strange only until it is seen to belong to the joining: no single
-boost has it, and joining is a write. And a quasar dipole read as the directions' alone gives a speed nearly three times
+boost has it, and joining is a place, not a read. And a quasar dipole read as the directions' alone gives a speed nearly three times
 too large, since the paint carries most of it (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §5,
 §7.2).
 
@@ -356,7 +356,8 @@ too large, since the paint carries most of it (*Reads and Writes in Physics* (`.
 ## 10. What it comes to
 
 **Reading and writing.** The catalogue sorts by one question: was the claim read or written? A reading is a ratio from a
-standpoint, and it does not move when the world is scaled. A writing is an amount, and it needed something carried in. Every
+standpoint, and it does not move when the world is scaled; a ratio joining two standpoints, a place, does not move either.
+A writing is an amount, and it needed something carried in. Every
 paradox in the denominator family is a reading quoted as a writing, its private denominator dropped. Zeno, Galileo, the
 coastline, the growing list and the many points are a writer's whole asked of a reader's count. Benford, the envelopes,
 St Petersburg and Weber–Fechner are a writer's flat measure laid where a reader has no scale. Olbers and the dimming star
@@ -376,7 +377,7 @@ essays add is that the assumption has one form, and two tests find it.
 
 Back to the field. A sees B small and B sees A small, and both are right. Each was reading. The contradiction came from
 writing their readings on one line as if they had agreed a unit, which they had not. One phone call later, they have the
-ratio of their sizes and their distance apart, both exact, and still no unit.
+ratio of their sizes and their distance apart, both exact, both places, and still no unit.
 
 ---
 

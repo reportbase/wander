@@ -284,8 +284,9 @@ A moving observer's sky is the clearest place in physics where a read and a writ
   (Kato and McCullagh 2020): the Möbius family carries the uniform law within itself. No law on the sky is
   boost-invariant; boosts carry the uniform one within its family. On the logarithm of the stereographic coordinate,
   −ln tan(θ/2) (the pseudorapidity), a uniform sky lies as ½·sech² and a boost slides it by the rapidity η. So the
-  rapidity is had from directions alone, the sky's median before against after (a place, joining two looks): no clock,
-  no frequency, no c.
+  rapidity is had from directions alone: from one look, with the sources taken as uniform in their own frame, the slide
+  of one read's median (a read); against a look before the boost, the two medians joined (a place). No clock, no
+  frequency, no c.
 - **Doppler shift and beaming weight the paint**, moving no direction. Of the D⁴ by which an isotropic sky brightens
   ahead, D² is the crowding of directions and D² the paint. To state the shift as a speed needs a rest frequency, a write.
 - **Two more readings of one sky.** A thermal sky, each direction a blackbody at T₀·D: the hottest over the coldest is

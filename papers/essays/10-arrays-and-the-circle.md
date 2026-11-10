@@ -225,7 +225,7 @@ anywhere, exact to 10⁻¹⁶ at N up to 64; the algebraic paper carries the lat
 tangent construction, with every trigonometric function replaced by a counter that stays at zero. That it can be done at
 all rests on one fact: halving a turn needs one square root and nothing more. On these essays' rulings that square root
 is where the writer comes in: halving a length is the reader's, halving a turn takes two lengths combined, the
-hypotenuse √(1 + s²) (the fifteenth essay, and *Reads and Writes* §5). So the lattice is built by a writer, and what a
+hypotenuse √(1 + s²) (the fifteenth essay, and *Reads and Writes* §9). So the lattice is built by a writer, and what a
 reader holds are its leaves, each one a ratio.
 
 **Two charts, one circle.** So the reconstruction theorem is proved in one coordinate and run in another. The proof uses
@@ -357,5 +357,6 @@ summation and the Cooley–Tukey factorization, as presented there. The aimed te
 Qian and Wang's adaptive Fourier decomposition (2011); Poisson's kernel and Abel's summation are classical.
 
 The array picture, its four facings, readers' and writers' arrays and the worked example with K = 8 are set out in
-*Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*), §7.3 ("In the picture of an array", "Laid on the sweeps"), and for programmers in the
+*Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10
+November with read, place and write, R788), §7.3 ("In the picture of an array", "Laid on the sweeps"), and for programmers in the
 computer-science companion, §6 ("The array").
