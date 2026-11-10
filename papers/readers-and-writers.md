@@ -131,7 +131,7 @@ payload's:
 A write is found in both columns; a read and a place are the geometry's alone; a ratio of payloads is the payload's
 counterpart of a read, unmoved by scaling and not a direction of the geometry. Being unmoved by scaling therefore never
 shows that a quantity is a read. One thing can supply several variables of different kinds: a pixel's value in the
-sensor's unit is a payload's write, its ratio to its neighbour a ratio of payloads, the pixel's place in the grid a
+sensor's unit is a payload's write, its ratio to its neighbour a ratio of payloads, the pixel's position in the grid a
 writer's count of directions.
 
 **The writer, as a vantage.** *The writer* names the vantage that holds everything at once: both signs of every axis,

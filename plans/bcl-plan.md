@@ -202,3 +202,47 @@ Predictions (Claude's, before the run):
 - E3. It still does not place the ratio f′/f in read, place or write, and says the definitions lack a name for it.
   Killed if it classes the ratio as a place, a read, or without reservation as a ratio of payloads.
 - E4. It again names the grid's geometry column as having no room for such a quantity, or the heat as having no kind.
+
+### Run 3 (10 Nov 2026)
+
+The agent's answers, verbatim: `runs/bcl/responses-run3.md`; what it was given: `runs/bcl/definitions-run3.txt`. It
+read that one file and nothing else.
+
+A leak, found afterwards: O9 was withheld, but D6's new last sentence, which the agent did have, says "How a relation
+between two standpoints is to be classed when it is not a distance is open (§12, O9)". The agent quoted it in case 12.
+So E3 was partly handed over; it shows the sentence is understood, not that the agent reached the gap unaided. Run 2
+is the unaided evidence for the gap.
+
+Its classifications: 1 read (high), the pairing unnamed; 2 read, the writer's coordinate on one read (medium);
+3 place (high on the name); 4 not settled, a ratio of payloads if of what arrives; 5 ratio of payloads (high); 6 the
+variable a read (high), the law its heat (medium); 7 not settled, "must not be classed with case 6"; 8 read (high);
+9 frequency and Δf in hertz writes (high), the ratio to a rest frequency a ratio of payloads (medium-high); 10 values
+writes, ratios ratios of payloads, the grid index a writer's count, unsorted; 11 ratio of payloads (high); 12 Δf in
+hertz a write (high), the speed in m/s a write, the factor f′/f and the speed as a fraction of light's not settled.
+
+- E1 not killed: cases 1–11 as in run 2, none against the intended answers.
+- E2 not killed: it took the boost as a change of standpoint, said D6 could not be run on the stated change ("the
+  reverse of D6's set-up"), and ran it with the boost held and the emission varied.
+- E3 not killed, with the leak above: f′/f "cannot be settled".
+- E4 not killed: the grid's payload column "changes with what arrives" does not cover a change of standpoint; the heat
+  has no kind.
+
+What run 3 found (to weigh; only the first acted on, a slip in R821's own sentence):
+
+1. "Place" was used in two senses, D3's and "the pixel's place in the grid". Now "position".
+2. D3 already classes one relation that is not a distance: "a time to contact counted in the reader's own ticks" is a
+   place, and D7 says joining two moments gives places. A boost factor or a relative speed is left open. The boundary
+   between the two is not stated. This bears directly on O9.
+3. D2 fixes a read to one standpoint "at one moment"; a state of motion is not given by one moment at one position.
+4. The grid's columns are defined by a change of what arrives. Under a boost a payload's amount changes with nothing
+   arriving differently, and f′/f, formed from payloads, does not change with what arrives.
+5. A place "stays when what arrives changes" only if the things the distances run to stay put; D6's own examples move
+   and replace things. Raised in all three runs.
+6. A function of two directions within one read (an angular separation) is nowhere said to be a read. Raised in all
+   three runs.
+7. The heat has no kind and no definition within D1–D7. Raised in all three runs.
+8. A constant of compound dimension (the speed of light) under a one-dimension scaling is not covered by D5.
+
+Across the three runs: no case of the first eleven has come back against the intended answers; the D6 limitation
+(run 1) is now stated in D6; the fourth box is used by name (runs 2, 3); the Doppler factor is the one case the
+definitions do not place, and they now say so.
