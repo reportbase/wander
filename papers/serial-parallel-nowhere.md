@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R801** (10 Nov; Tom: "lets look for connections between the four equations and the reader/writer framing.", then
+  "yes"): **four identities, one exchange.** Each of R798–R800's four has a form the reader holds, rational in the slope
+  and without π, and each is a fact about the exchange s ↔ 1/s and its corner: 1/(1 + s²) + s²/(1 + s²) = 1 (the two
+  charts' heats share one whole); w(s)·w(1/s) = −1, w = (1 + is)/(1 − is) (at the corner i·i = −1); s·(1/s) = 1; and
+  ∫₀¹ ds/(1 + s²) = ∫₁^∞ ds/(1 + s²) (equal halves, no π/4). The writer's four are that fact with the horizon reached
+  and the total stated. Squares the reader's, roots the writer's (w = (h + iv)²). Classical algebra; the assignment a
+  reading. *Reads and Writes* §9 "Four identities, one exchange", O3's R798–R800 text moved there.
 - **R800** (10 Nov; Tom: "those four equations are very similar. what falls out when we refactor them togeether?", then
   "yes and merge"): **one equation read four ways**: the writer's circle divided by the thumb, 1 + s² = 1/h²; its
   reciprocal the reader's heat h² = 1/(1 + s²); gathered to the horizon (w = −1 = e^(iπ)) π/2; closed by 2/π to 1. The

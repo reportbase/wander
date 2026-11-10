@@ -989,6 +989,40 @@ that does not total term by term; the Gaussian and Laplace kernels have no point
 transform's variable, dual to position on the line, not time. **Checked** (OPL, to 25 digits at z = 0.7 + 0.4i,
 t = 1.3); classical by uniqueness of the transform; that the one pole is the standpoint is our reading.
 
+**Four identities, one exchange.** Four equations state the completed joins: h² + v² = 1, e^(iπ) = −1, π/2 · 2/π = 1
+and (2/π)·∫₀^∞ ds/(1 + s²) = 1. Each is the writer's completion of something the reader holds without π, rational in the
+slope, and each of those is a fact about the exchange s ↔ 1/s, whose fixed point is the corner.
+
+| | the writer's form | the reader's form, rational in s | what it says of the exchange |
+|---|---|---|---|
+| the circle | h² + v² = 1 | 1/(1 + s²) + s²/(1 + s²) = 1 | the heat in the v/h chart and the heat in the h/v chart share one whole |
+| the half turn | e^(iπ) = −1 | w(s)·w(1/s) = −1, w = (1 + is)/(1 − is) | a direction and its reciprocal compose to the half turn |
+| the two facings | π/2 · 2/π = 1 | s · (1/s) = 1 | the exchange undoes itself; the corner is its fixed point |
+| the total | (2/π)·∫₀^∞ ds/(1 + s²) = 1 | ∫₀¹ ds/(1 + s²) = ∫₁^∞ ds/(1 + s²) | the corner splits the heat in equal halves |
+
+*The circle.* The heat per unit of s is h² = 1/(1 + s²); in the turned-over chart t = 1/s it is 1/(1 + t²) = s²/(1 + s²)
+= v². So Pythagoras, in squares, is the two charts' heats adding to one at every direction, with no root in it; the root
+enters only for h itself. *The half turn.* w(1/s) = (s + i)/(s − i) = −1/w(s), so the product is −1 at every s; at the
+corner it is i·i = −1, the corner composed with itself the horizon. *The total.* Putting s = 1/t carries the heat below
+the corner onto the heat above it: the reader has "half and half" without "π/4 and π/4". *The two facings* is the plain
+one, as its writer's form is: its content is which facing each factor belongs to (above, "The writer's measures of the
+sweep").
+
+So the reader holds one fact four ways, the exchange and its corner, and the writer's four equations are what that fact
+becomes once the horizon is reached and the total stated: π is the price of turning "equal halves" into "how much". The
+first holds at every direction, so one read has it, in squares; the other three need the horizon reached, which no read
+does. They are also one chain: divide the writer's circle by the thumb, 1 + s² = 1/h²; its reciprocal is the heat; the
+heat gathered to the horizon is (1/2i)·ln w with w reaching −1, the arc π/2; closed by 2/π it is 1. And squares are the
+reader's where roots are the writer's: w = (h + iv)² = (h² − v²) + 2i·hv is rational in s and h + iv is not, the doubling
+and the halving of §1; h² − v² and 2hv are the double slit's predictability and visibility (§11), |w| = 1 their bound met.
+
+The Gaussian shows the same split from the writer's side. In polar form (1/2π)·e^(−r²/2) dx dy =
+(dθ/2π)·(e^(−r²/2) r dr): the uniform turn, whose slope is the Cauchy, times a law for the length, an amount, the payload.
+Two independent zero-mean Gaussian amounts of one spread, divided, give the standard Cauchy; of spreads in a ratio c, a
+Cauchy of scale c. Dividing by the thumb integrates the length away, taking e with it and leaving π. So the Cauchy is a
+law of directions, a heat made a probability only when the writer closes it, and the Gaussian a law of amounts.
+**Classical**; the reader's forms checked by hand; the assignment is a reading.
+
 **What the one pole already carried.** The reader at i holds the standard Cauchy (§3). Readings added give one Cauchy
 with the standpoints added, z₁ + z₂, the phasors multiplying. Parallax is a sum of reads whose depth is exactly Cauchy,
 its point the triangulation of the two reads' points (§6). A cell of the floor's discarded fraction sits at its own
@@ -1102,22 +1136,8 @@ before the data can show where it is not. **Checked** (TCF; killed).
   and the turn completed as well (π, a limit): an arc over the radius, counted against the whole. Neither stage needs a
   true breadth V* or a unit, so neither is a write; both are completed joins, the circle first and π second. *And (R797):* the exact V is a third, the limit of parallax:
   unknowable against the universe, knowable across one hemisphere, known only held or written (§1, "Four things").
-  *And (R798):* the completed joins are the paper's, both hemispheres at once with no facing. Three identities say it:
-  h² + v² = 1 (the length held at one, the circle), e^(iπ) = −1 (the half turn closed at a named point, π) and
-  π/2 · 2/π = 1 (the two facings held together, both). A read has one facing at a time and holds none of them whole.
-  *And (R799):* a fourth, the Cauchy, (2/π)·∫₀^∞ ds/(1 + s²) = 1: the reader's heat, 1/(1 + s²) = h², rational in s,
-  closed to 1 only by the writer's 2/π. The Cauchy is the reader's distribution, a law of directions; the Gaussian
-  (e^(−x²/2)/√(2π) on each axis) is the writer's, a law of amounts, needing both e and π. They are joined by the
-  thumb's division: two independent Gaussian amounts of one spread, divided one by the other, give the standard Cauchy;
-  of spreads in a ratio c, a Cauchy of scale c (the median of |y/x| at c, checked by draws). The equal spread is V = H.
-  *And (R800):* the four are one equation read four ways. Divide the writer's circle x² + y² = r² by the thumb: 1 + s² =
-  1/h² (the circle); its reciprocal h² = 1/(1 + s²) (the Cauchy's heat, the reader's one piece); that heat gathered to the
-  horizon, (1/2i)·ln w with w = (1 + is)/(1 − is) reaching −1 = e^(iπ), totals π/2 (Euler); closed, (2/π)·(π/2) = 1. In
-  one line, (2/π)·∫₀^∞ h² ds = (2/π)·(1/2i)·ln(−1) = 1. The reader holds the heat; the horizon reached, π and 2/π are the
-  paper's, so the reader's distribution is a heat, made a probability only when the writer closes it. The Gaussian
-  factors in polar form, (1/2π)·e^(−r²/2) dx dy = (dθ/2π)·(e^(−r²/2) r dr): the uniform turn (the reader's directions,
-  their slope the Cauchy) times a law for the length (an amount, the payload). The writer's distribution is the reader's
-  times the payload's; dividing by the thumb integrates the length away, taking e with it and leaving π (R626, R597).
+  *And (R798–R801):* the completed joins are the paper's, both hemispheres at once with no facing; four identities
+  state them, and each has a reader's form about the exchange and the corner (§9, "Four identities, one exchange").
 - **O4. Orders.** *Closed (R792):* an order of reads is its own kind, a joining with no gap in it, not a place; D7 lists
   places and orders side by side.
 - **O5. Do readers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.

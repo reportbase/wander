@@ -438,6 +438,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R800 (10 Nov; Tom: "what falls out when we refactor them togeether?", "yes and merge"): the four one equation, the
   circle divided by the thumb, its heat h², gathered to −1, closed to 1; the reader the heat, the paper the total; the
   Gaussian (dθ/2π)·(e^(−r²/2) r dr), turn times payload, the division taking e and leaving π. O3; essay 15 §5.
+  R801 (10 Nov; Tom: "lets look for connections between the four equations and the reader/writer framing.", "yes"):
+  **four identities, one exchange**: each of the four has a reader's form rational in s about s ↔ 1/s and the corner
+  (1/(1 + s²) + s²/(1 + s²) = 1; w(s)·w(1/s) = −1; s·(1/s) = 1; the heat below the corner equals the heat above); π the
+  price of turning "equal halves" into "how much". *Reads and Writes* §9 "Four identities, one exchange"; O3's R798–R800
+  text moved there. The same PR: the ratio of normals' location from correlation, the crossing's distance, V in the hand.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
