@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R813** (10 Nov; Tom: "lets apply this idea to cauchy"; "add it and merge"): the Cauchy hardly needed π. Free: the
+  heat 1/(1 + s²), heat ratios, the corner as median (equal halves), no mean, order. π only in the constant 2/π. The
+  reader: heat and equal halves, no total. The writer at work: shares by count k/K; exact at the corner only among
+  rational slopes (Niven: rational share at a rational slope only 0, ½, 1), the quartiles at √2 ∓ 1 by one square root;
+  Gregory–Leibniz 1 − 1/3 + 1/5 − … = π/4 the heat below the corner, partial sums fractions. The paper: the total and
+  2/π. A share is a turn over a turn. With R809 and R811: free facts s·(1/s) = 1, i·i = −1, equal halves; the paper's π,
+  e and π, 2/π. Extends R799–R801. *Reads and Writes* §9 "What is free, and what π costs"; essays 2 §9, 15 §5.
 - **R812** (10 Nov; Tom: "update the essays and merge"): R811 carried into the essays, no new claim: essay 2 §9 ("The −1
   never needed e or π", with the three-row table), essay 18 §7 (the count never lands, the corner the one finite door)
   and a sentence in essay 14 §3; essay 15 §5 already had it.
