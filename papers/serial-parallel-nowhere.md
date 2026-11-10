@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R795** (10 Nov; Tom: "What does the math say?", then "Proceed with your recommendations"): **halving a turn needs the
+  circle.** From the ratio s alone, t = s/(1 + √(1 + s²)) is out of the rational operations' reach (from the corner they
+  reach only the quarter turns); holding the shares with h² + v² = 1 it is rational, t = v/(1 + h). √(1 + s²) = 1/h is the
+  circle's measure entering, so doubling a turn is the reader's and halving one the writer's (R592, R596 stand; draw's TB
+  lattice the writer's construction). SLP's "rational in s" holds in the plane; in space the screen's heat h³ needs the
+  root. *Reads and Writes* §1 corrected; SLP plan, a note after run 2.
 - **R794** (10 Nov; Tom: "The hope is that using slopes not trig, the math simplifies. Or gives new insights.", then
   "Yes, trig is an abstraction layer. Readers don't use it. So to study readers we need to use the math they do."):
   **trigonometry is an abstraction layer, the writer's; readers are studied in their own math, slopes.** SLP
