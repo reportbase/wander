@@ -388,6 +388,28 @@ joined leave the Thomas–Wigner rotation, read from three stars' directions alo
 the correspondence ends at one premise, that motion is conformal on the sky, from which Liouville gives Möbius and the
 Möbius group of the sphere is the Lorentz group.
 
+**Why the sky keeps its angles.** That one premise can be traded for four plainer ones, each said of reads (SRB,
+`../../plans/srb-plan.md`):
+- what a motion does to the sky depends on directions alone, and so does what two motions do in a row;
+- a change of standpoint is fixed by finitely many numbers, as a place is;
+- the turns are among the changes;
+- a motion carries the stars from behind toward ahead, and a mirror turns it into motion backward.
+
+Newton's aberration, tan θ′ = sin θ/(cos θ + β), fails the first. Two of its steps of 0.3 are not one step of any size
+once only directions are kept: the best single step misses by 0.046 radians. Carry the light's speed along and the steps
+add exactly, so what breaks is the dropped speed, which no read holds. Plenty of other motions pass the first, third and
+fourth, a whole family of sky flows along one axis. Only one member keeps angles, and only that member, joined with
+the turns, closes into a group fixed by six numbers. The others need 15, then 42, then more than the check could count, still growing. With the classical
+list of the finite groups that can act on a surface (the plan names it), the four leave the Möbius maps alone, and so the
+Lorentz group.
+
+This does not derive relativity from looking. Two of the four premises carry the physics. The first, said of the
+world and not just of the reader's rules, is that what no read can hold makes no difference to what is read: the light
+postulate, stated for reads. A moving medium breaks it (light in flowing water is dragged along), and then the medium is a
+writing carried in. The second, that a change of standpoint is fixed by finitely many numbers, is a premise. Routes known for a
+century reach the same group from the principle of relativity; this one reaches it from the sky. What it
+adds is a sharp statement of where relativity enters an observer's account: at the speed a read cannot hold.
+
 ---
 
 ## 8. What it comes to
