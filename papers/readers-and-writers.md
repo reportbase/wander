@@ -50,12 +50,14 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   which turns add; the reader holds the direction itself, [h : v], or its slope s = v/h, and uses no trigonometry (§1,
   "The reader uses no trigonometry").
 - **D2. A read** is the direction: [h : v] in the plane, [h : v : v₂] in space, up on the plane. It is every sweep of the
-  thumb at once, from one standpoint, *home*, at one moment, given whole (§3). It comes with its heat, given, and the
-  paint met along it (§4). One read holds no distance.
+  thumb at once, from one standpoint, *home*, at one moment, given whole (§3). A relation among the directions
+  of one read, the separation of two of them, is of the read. The heat is the read's own measure on its directions,
+  given with them and part of the read, not a further kind (§3). The paint met along a direction accompanies the read
+  and is no part of it (§4). One read holds no distance.
 - **D3. A place** is a gap across: a distance in thumbs, d/H, or one distance against another, d₁/d₂. Scaling the world
   leaves it unchanged, as it leaves a read; but no single read holds it. It needs a second standpoint and the step
-  between them: parallax (§6). V\*/H, a party's true breadth in thumbs, is a place; so is a time to contact counted in
-  the reader's own ticks.
+  between them: parallax (§6). V\*/H, a party's true breadth in thumbs, is a place. A place is a relation
+  between standpoints and named things in space; not every number had from two reads is one (§12, O9).
 - **D4. A write** is an amount in a unit carried in from outside the world: a metre, a second, a hertz, an agreed
   notch. For the geometry it is the across axis's zero tied to a unit, a distance in metres, and one such amount serves
   every place hung from the same thumb (§7). A payload has writes too: a frequency in hertz, a brightness in watts.
@@ -90,7 +92,12 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   and a distance in thumbs handed over by another observer is still a place. The kind attaches to the variable, not to
   its law: a Cauchy law on a direction's slope and a Cauchy law on the quotient of two amounts are two variables with
   one law, and the law alone does not say which is which. And a read is a direction, not a pairing of a direction with
-  a source: which thing paints a direction is part of what arrives.
+  a source: which thing paints a direction is part of what arrives. Likewise a place is a gap to a named thing, not to
+  whatever is met along a direction. What is classified, throughout, is a variable: a quantity said of something named,
+  this direction, that gap, this light's frequency. A relation between two variables is another variable and is put to
+  the same tests; it does not inherit the kind of what it relates. A representation of a variable, its number in a
+  coordinate, a count, a mark kept, has the variable's kind: an angle in degrees and a pixel's index are reads in the
+  writer's coordinate and count. Only a unit carried in makes a write.
 
 **The reader uses no trigonometry.** Readers hold v/h; writers hold angles. Sin, cos, tan and arctan are the writer's: they are defined on the completed turn,
 whose period is π (§2), and evaluating one is a pass over that whole turn. The reader holds the turn open, and works in the
@@ -679,8 +686,11 @@ distance, the reading v/h of the line to its edge. One read holds one x; that x 
 its rate of growth, x/ẋ, is the time until the thing arrives if it keeps coming as it comes: the breadth, the distance
 and the speed all drop out. Lee (1976) proposed that a driver braking uses exactly this: brake so that the time to
 contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car stops at the thing, since at τ̇ = −½ the distance
-it needs to stop is the distance it has. Sorted: τ counted in the reader's own ticks, and τ̇, ticks per tick, are places,
-unmoved by scaling or by any change of clock, and held by no single read; τ in seconds is a write. One stream cannot tell
+it needs to stop is the distance it has. Sorted: from two reads a tick apart the number is x₂/(x₂ − x₁) = d₁/B, the thing's distance over the step between
+the two reads. That is a ratio of two distances, unmoved by scaling and held by no single read, and so far it is D3's
+gap across with nothing temporal in it. Read as a time, the ticks still to come, it adds a premise no read holds: that
+the steps go on alike. Whether a count of ticks to a prospective event is a place is left open (§12, O9); τ in seconds
+is a write. One stream cannot tell
 a thing coming nearer from a thing growing where it stands; a neighbour at the same depth, read at once, tells them apart,
 approach moving both readings and growth one. A speed in metres a second is a write twice over. **Classical** (Lee);
 the sorting is ours.
@@ -1399,6 +1409,15 @@ before the data can show where it is not. **Checked** (TCF; killed).
   the factor is no distance, so it is not put there. Whether relations between standpoints need a name of their own,
   beside places and orders (O4), is open; D3 stands as it is until that is settled. Found by a blind classification
   (BCL, run 2).
+  *What makes a spatial gap a place, and two cases tried against it (R823).* A candidate, not adopted: a place is a
+  ratio of two distances between points in space, standpoints and named things, at least one of them a step between
+  standpoints. A time to contact had from two reads a tick apart is exactly d₁/B, the distance over the step, so the
+  number meets the candidate as it stands; what does not is its reading as a time, which needs the further premise that
+  the steps go on alike, a statement about reads not yet made. The rapidity does not meet it: it is had from two reads
+  at one position, by the directions alone (§4), with no step in space, and what it relates the two reads by is a map
+  on directions, as a turn does. To call it a place would change what "a gap across" means. So the time to contact is
+  taken out of D3's list until its temporal reading has a stated reason, and the rapidity and the Doppler factor stay
+  unclassed.
 
 ## Where the ideas come from
 

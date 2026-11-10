@@ -7410,6 +7410,20 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R823** (10 Nov; a ruling pasted by Tom: "I would move the time-to-contact case out of place, alongside the unresolved
+  Doppler factor"; "a place is a relation between standpoints, not simply any result that uses two observations";
+  "state whether the classification applies to a quantity, a relation between quantities, or a representation of
+  either"; "check angular separation and heat under that same rule"; "keep both PRs as drafts"): one pass through
+  D1–D7. D2: a relation among directions of one read is of the read; the heat is the read's own measure, part of it,
+  not a further kind; the paint accompanies and is no part. D3: the time to contact taken out of its list (supersedes
+  that clause of R788); a place a relation between standpoints and named things in space. D7: what is classified is a
+  variable; a relation between variables another variable, put to the same tests; a representation has its variable's
+  kind; a place a gap to a named thing. §6 "Motion, from reads": τ from two reads is exactly d₁/B (checked in exact
+  fractions), a ratio of two distances; its reading as a time adds the premise that the steps go on alike. §12 O9: a
+  candidate criterion for a place (a ratio of two distances between points in space, one a step between standpoints),
+  not adopted; the number τ meets it, the rapidity does not (no step in space; a map on directions, as a turn).
+  Claude's finding, for Tom's ruling: so τ's number is a place by the strict reading and only its name as a time is
+  not. Both PRs stay drafts.
 - **R822** (10 Nov; ChatGPT's ruling on BCL run 2's open case, pasted by Tom: "yes, the observer's motion is part of
   the standpoint, but the Doppler factor should not simply be classified as a join of two reads"; "leave D3 unchanged
   for the moment"; "rerun the revised grid before merging either PR"): D6 says the standpoint includes its state of

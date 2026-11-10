@@ -472,6 +472,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R823 (10 Nov; a ruling pasted by Tom): **what is classified is a variable; a relation between variables is another
+  variable; a representation has its variable's kind.** The heat is part of the read, not a kind; a separation of two
+  directions of one read is of the read. The time to contact is out of D3's list (its number is d₁/B, a ratio of two
+  distances; its reading as a time adds a premise); the rapidity and the Doppler factor stay unclassed (§12 O9).
   R822 (10 Nov; ChatGPT's ruling, pasted by Tom): the standpoint includes its state of motion (a boost a change of
   standpoint, not of what arrives); the Doppler factor an unresolved case, *Reads and Writes* §12 O9 (read, relation
   between standpoints, relation between payloads kept apart; not a place); D3 unchanged. **Do not widen "place" to any

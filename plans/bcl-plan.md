@@ -246,3 +246,25 @@ What run 3 found (to weigh; only the first acted on, a slip in R821's own senten
 Across the three runs: no case of the first eleven has come back against the intended answers; the D6 limitation
 (run 1) is now stated in D6; the fourth box is used by name (runs 2, 3); the Doppler factor is the one case the
 definitions do not place, and they now say so.
+
+### A counterexample pass, no fourth classifier (10 Nov 2026; SPN R823)
+
+Asked: define what makes a spatial gap a place, then try the time to contact and the rapidity against it without
+changing its meaning.
+
+Candidate (not adopted): a place is a ratio of two distances between points in space, standpoints and named things, at
+least one of them a step between standpoints.
+
+- Time to contact. A thing of breadth S on a straight approach, read as x = S/d at d₁ and, one step B on, at d₁ − B.
+  Then x₂/(x₂ − x₁) = d₁/B and x₁/(x₂ − x₁) = (d₁ − B)/B, exactly (three cases in exact fractions). So the number is the
+  distance over the step: it meets the candidate with nothing temporal in it, and is D7's count of strides, d/stride.
+  What is added by calling it a time is that as many steps again will be taken, alike: a premise about reads not yet
+  made, which no read holds. The number is a place by the strict reading; the name is not yet earned.
+- Rapidity. Had from two reads at one position, from the directions alone (the sky's map under a boost), with no step
+  in space. It relates the two reads as a turn does, by a map on directions. It does not meet the candidate.
+- Doppler factor. Fixed by the rapidity and the direction of arrival; measured as a ratio of two payloads. Not a
+  distance, not changed by what arrives. Unclassed.
+- Angular separation and the heat, under "what is classified is a variable": each is unmoved by scaling, held by one
+  standpoint and unchanged by what arrives, so each is of the read; neither needs a kind of its own.
+
+Not tried: whether "a map between two reads" (a turn, a boost) should be a named kind beside places and orders.
