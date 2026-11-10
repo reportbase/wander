@@ -7410,6 +7410,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R815** (10 Nov; Tom: "update the essays and demos"): R804–R814 carried out, no new claim. Essays: 17 §8 (the map
+  hardly needs π), 10 §4 (on the circle the corner is the point no fraction reaches); essays 2, 14, 15 and 18 already
+  had theirs. Demos, a note each, nothing else on the pages changed: `paths.html` (read and walk, the 1 on every path),
+  `one-read.html` (what needs π and what does not), `mountain.html` (short by reading, long by walking),
+  `writer-readers.html`; `demos.html`'s paths and one-read cards.
 - **R814** (10 Nov; Tom: "lets apply this idea to the circle"; "add it and merge"): h² + v² = 1 has no π; the reader's
   form holds at every direction, one read has it, nothing owed. Cost elsewhere, in two grades: the shares are roots
   (h = 1/√(1 + s²)); how much circle (2π, π) only with the four facings joined. The writer at work: exact at the

@@ -248,7 +248,11 @@ from the corner reaches N = 2^m, and with the seeds 1/√3 and tan(π/10) also 3
 The halving that the levels use is the one radix under which every place stays reachable. *The corner seeds the lattice
 and holds no leaf of it.* The lattice has a leaf at s = 1 only when N leaves a remainder of 2 on division by 4, and
 among N = 2^(d+1) only N = 2 does. At every finer depth the corner, the reciprocal's fixed point, is where the
-construction starts and a place the reconstruction passes through, never one of the places held.
+construction starts and a place the reconstruction passes through, never one of the places held. *And on the circle the
+corner is the point no fraction reaches.* The circle's equation needs no π, 1/(1 + s²) + s²/(1 + s²) = 1 at every
+slope, and its exact points in fractions are the Pythagorean triples, as near together as one likes; but at the corner
+h = v = 1/√2. The corner is exact in squares, ½ and ½, and as a construction, the diagonal; it is the one landmark that
+is not a count (essay 2 §9).
 
 ---
 

@@ -252,6 +252,12 @@ average climbs without end, (2/π)·ln 10 for every tenfold further the readings
 the Cauchy. Read as a map of directions it is what such a map should do: a direction has no length to add (essay 3). The
 average belongs to the chart that took a direction for an amount; the map never had one.
 
+The map hardly needs π either. Its heat at each slope, 1/(1 + s²), is rational; so is the ratio of the heat at any two
+directions; and the corner is the middle because the heat below it equals the heat above. π enters at one place, the
+constant 2/π that closes the heat to a total of 1, and that total is the completed sum: a writer at work has shares by
+count, k of K equal turns, and the fractions of Gregory's and Leibniz's series, 1 − 1/3 + 1/5 − … for the half below the
+corner, never its limit π/4 (essay 2 §9).
+
 The paint does. Light adds; colours average; the payload has every mean it ought to have. *What arrives can be averaged;
 where it arrives cannot.*
 
