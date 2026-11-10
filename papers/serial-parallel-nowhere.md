@@ -7410,6 +7410,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R797** (10 Nov; Tom: "You can write without knowing V. That is parallax."; "V is knowable at the limit."; "V is
+  knowable not known … this is the breathing/exhale idea. It is ehulers identity. Writer has pi/2 vantage"; "Consider four
+  things, universe, Apple, human and paper …"; "if human holds apple, he can rotate the apple in his hand to create the
+  cauchy."): **V unknowable, knowable, known.** Apple and human read the universe by the inscribed sweep (a horizon, 2/π a
+  limit, V unknowable); each other by the central sweep across one hemisphere (the rim reached at e^(iπ) = −1, π/2, V
+  knowable, the back unseen); the apple held and turned gives the Cauchy and both hemispheres in hand (V known); the circle
+  on paper is the dual view made, not seen. Parallax places V*/H without V and never closes the band; the exact V a
+  completed join, the limit. *Reads and Writes* §1 "Four things", §6, §12 O3. The breath stays in the note (R779).
 - **R796** (10 Nov; Tom: "What is needed for angles, V and H", then "Yes"): **an angle is a completed join in two
   stages, never a write.** The ratio s = v/h needs nothing (the read); the shares h, v with h² + v² = 1 need V and H at
   one length, the one-length circle (cos and sin, 1/h = √(1 + s²), halving a turn, t = v/(1 + h)); the angle θ needs the

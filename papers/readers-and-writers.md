@@ -113,6 +113,27 @@ ratio of the thumb's own shares; V was never in it, and it does not "cancel" fro
 V in metres is a write, had by walking and a unit. Neither is a shortcoming of the read: the horizon, the corner as a
 median and the absence of any mean are what a read with no breadth in it is.
 
+**Four things: the universe, an apple, a human and a sheet of paper.** The three vantages, and where V stands in each.
+- *The apple and the human read the universe by the inscribed sweep.* From home to a horizon: directions only, a turn
+  that never ends, the writer's measure of it 2/π, a limit never reached. The universe has no far side to face, so its V
+  is **unknowable**: no size could be had, and with none there is no inside or outside, only home and the horizon.
+- *The apple and the human read each other by the central sweep, across one hemisphere.* Each is a bounded thing in the
+  other's view, its rim reached at a point: the central sweep's end, e^(iπ) = −1, the writer's measure π/2 reached there.
+  So the other's V is **knowable**: the end exists and is met. It is not known, since the far hemisphere stays turned
+  away; each holds the other's front only. Neither stands at the other's centre; the sweep about the centre is the
+  geometry of a bounded thing faced.
+- *The human holds the apple and turns it.* The turn makes the Cauchy: a uniform turn, read as the slope v/h against the
+  line of sight, is the Cauchy whatever the apple's shape, the shape only the paint. The hand holds the back as the eye
+  holds the front, so both hemispheres are in reach and the turn is known; holding is the writer's, and in the hand
+  the apple's V is **known**.
+- *The human draws a circle on the paper.* The dual hemisphere view is made, not seen: a mark holding both halves at once,
+  V = H at one length, π held whole, π/2 · 2/π = 1. The apple reads and is read; only the human makes the paper.
+
+V is knowable, not known. The inscribed sweep approaches its end, the central sweep reaches it at a point, and only a
+write holds it whole; parallax narrows the band toward it and never closes it (§6). Euler's identity is the hinge: the
+turn's end, endless in the reader's chart (s → ∞), is one named point, −1, in the central one, and a named point is what
+can be carried onto the paper.
+
 **Reads do not conflict.** A read adds nothing, so reads of one geometry can be taken in any order, or all at once, and
 they agree; a conflict needs something written where something else reads. In computing this is the condition for
 running operations together without a race (Bernstein 1966). Here it holds by construction: nothing writes to the
@@ -663,7 +684,8 @@ end and drives nothing. **Checked** (the breath note's §5, at 30 digits; `appro
   a thing at its distance, not to the observer.
 
 More standpoints and longer baselines narrow the band; nothing closes it. The writer who holds every amount exactly is the
-limit of the passage, not a stage of it, as π is the limit of its approximants. **Classical.**
+limit of the passage, not a stage of it, as π is the limit of its approximants: V is knowable, and known only at
+the limit (§1, "Four things"). **Classical.**
 
 **The thing itself as H.** The thumb can be set to the very thing whose size is wanted. *As the unit*: the thing is drawn
 at one length, its V is 1 by choice, and everything else is placed in its units; its two ends become the baseline and the
@@ -1063,7 +1085,8 @@ before the data can show where it is not. **Checked** (TCF; killed).
   with h² + v² = 1 need the other party held at the reader's one length (V = H, the one-length circle): with them come
   cos and sin as the shares themselves, √(1 + s²) = 1/h, and halving a turn, t = v/(1 + h). The angle θ needs the circle
   and the turn completed as well (π, a limit): an arc over the radius, counted against the whole. Neither stage needs a
-  true breadth V* or a unit, so neither is a write; both are completed joins, the circle first and π second.
+  true breadth V* or a unit, so neither is a write; both are completed joins, the circle first and π second. *And (R797):* the exact V is a third, the limit of parallax:
+  unknowable against the universe, knowable across one hemisphere, known only held or written (§1, "Four things").
 - **O4. Orders.** *Closed (R792):* an order of reads is its own kind, a joining with no gap in it, not a place; D7 lists
   places and orders side by side.
 - **O5. Do readers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.
