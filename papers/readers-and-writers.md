@@ -73,7 +73,7 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   A quantity's kind is what it is, not how it was had: a place is a scale-invariant gap across, usually had by parallax,
   and a distance in thumbs handed over by another observer is still a place.
 
-**The reader uses no trigonometry.** Sin, cos, tan and arctan are the writer's: they are defined on the completed turn,
+**The reader uses no trigonometry.** Readers hold v/h; writers hold angles. Sin, cos, tan and arctan are the writer's: they are defined on the completed turn,
 whose period is π (§2), and evaluating one is a pass over that whole turn. The reader holds the turn open, and works in the
 slope s = v/h: a direction is [h : v]; two turns compose by tangent addition, (s₁ + s₂)/(1 − s₁s₂); the reciprocal is
 s ↦ 1/s and the corner s = 1; the heat is 1/(1 + s²) per unit of reading, 1/(2π(1 + r²)^(3/2)) per unit of a screen
