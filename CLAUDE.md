@@ -406,6 +406,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (never edited); a rewrite outlined in `plans/rw-rewrite-outline.md`, awaiting Tom's approval; until the new draft is
   whole, `papers/readers-and-writers.md` stands as it is. Entries above that call places in thumbs, τ or parallax writes
   describe text before R788.
+  SRB (`plans/srb-plan.md` + `runs/srb/`, 10 Nov; SPN R790; Tom: "test the bridge from observer geometry to special
+  relativity—not to revise Reads and Writes again"): exact, nothing killed. Conformality on the sky (C) gives the Lorentz
+  aberration, composition and D as the sky map's stretch; null directions (N) lift it to the boost matrix; the frequency
+  identification is a further premise (P). The rapidity is the Poincaré distance between the skies' standpoints; the
+  Cauchy height is e^(−η), not γ. No discriminating prediction found (expected): an interpretation, not new physics.
+  Kept out of *Reads and Writes* (Tom). Run 2 (`runs/srb/srb2*.py`, R791): (C) from four premises (directions alone,
+  chains included; finitely many numbers; the turns; a motion), given Lie's classification (to check): Galilean fails the
+  first, a family of axial flows closes only when angle-keeping (6 against 15, 42, ≥ 80), the projective group has no
+  motion. Reconstruction, not explanation: the first premise is the light postulate as a read, the second a place's
+  finiteness. Open: whether a bounded reader must have them.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
