@@ -472,6 +472,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R818 (10 Nov; Tom: "lets apply the idea to parallax"): the place never needed π: two slopes a counted step apart give
+  1/(d/B) = 1/s₁ + 1/s₂, rational, the writer at work's and exact; the corner circle s₁·s₂ = 1; π only where a slope is
+  made an angle (γ, the parsec's 648000/π). Not a reader's identity (two reads joined). *Reads and Writes* §9 "What is
+  free, and what π costs".
   R817 (10 Nov; Tom: "update the essays and demos"): R816 in essay 2 §6 and essay 17 §8, and as a note on
   `cauchy-map.html` and `theorem6.html`; no new claim, no script changed.
   R816 (10 Nov; Tom: "lets apply this idea to the gaussian"): the Gaussian's π is the turn's (2π, the four facings), its
