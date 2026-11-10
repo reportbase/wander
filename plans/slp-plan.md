@@ -46,3 +46,17 @@ sky in motion needs the oriented slope t; the half-angle is the passage from the
 circle. Stated only as a reading of S3–S4.
 
 ## Runs
+
+**Run 1** (`runs/slp/slp.py`, output `runs/slp/slp-run1.txt`; 10 Nov). S1 killed by my set-up; S2, S3, S4 not killed.
+- S1: nine of ten identities hold symbolically and no slope form has π or arctan. (b), cos³α = 1/(1 + tan²α)^(3/2), was
+  reported false: sympy does not reduce √(cos²α) to cos α without knowing α < π/2 (I declared α only positive). It holds
+  to 3·10⁻⁵¹ at 156 angles in (0, π/2). My check, not the identity; the kill stands as recorded.
+- S2: the share passed and arc over chord, written in s, carry arctan; the share reaches 1 at the horizon. That arctan is
+  transcendental is classical (not shown here).
+- S3: θ and θ + π have one s, and after a boost their s differ by
+  2kt(k²t² + k² − t² − 1)/((k² − t²)(k²t² − 1)), −72/35 at t = ⅓, k = 2: **a boost is not a map of s.**
+- S4: turns are t ↦ (t + a)/(1 − at) and boosts t ↦ t/k on the half-angle slope, their compositions Möbius, and t ↦ t·√((1 −
+  β)/(1 + β)) is exactly the aberration cos θ′ = (cos θ + β)/(1 + β cos θ).
+
+**Before run 2: S1′.** S1(b) checked with c = cos α declared positive and tan²α = (1 − c²)/c², so the root reduces
+honestly; every other item of S1 as in run 1. *Killed* if any identity fails.
