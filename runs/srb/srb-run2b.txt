@@ -1,0 +1,5 @@
+   a=0 depth 1: 6 (2 s)
+   a=0 depth 2: 6 (2 s)
+   a=0 depth 3: 6 (2 s)
+R3: a = 0, dimension at depth 0..3: [6, 6, 6, 6]
+   a=1 depth 1: 15 (5 s)
