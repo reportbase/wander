@@ -5,7 +5,9 @@
 *Tom Brinkman. Draft, begun 8 November 2026. Written with AI assistance (Claude).*
 
 *A first full draft (8 November 2026), from the outline in `plans/phy-outline.md`. Its geometry is* Reads and Writes*'s
-(`papers/readers-and-writers.md`), and where the two differ that paper stands. Its physics comes from the working
+(`papers/readers-and-writers.md`), and where the two differ that paper stands. Since 10 November 2026 it follows that
+paper as rewritten on SPN R788: what scaling leaves unmoved is a read if one standpoint holds it and a place if it needs
+two, and only an amount in a unit carried in is a write. Its physics comes from the working
 record, `papers/physics.md`, and from the plans and runs it names; a new physics result goes into the record first and
 is carried out to this paper.*
 
@@ -15,19 +17,20 @@ Physics is written. Its laws are stated in amounts, a mass in kilograms, a dista
 every amount needs a unit carried in from outside. But a great deal of what physics knows was read before it was
 written: taken from one standpoint as directions, ratios and orders, with no amount in it, and only afterwards given a
 size by something carried in. A *read* is taken from a standpoint, turning there, with one length H (a thumb held out at
-arm's length); every reading is a direction [h : v], a ratio, and no amount survives into it. A *write* holds the
-whole, the extents, the unit, the completed turn. This paper sorts known physics into the two.
+arm's length); every reading is a direction [h : v], a ratio, and no amount survives into it. A *place* joins reads,
+two standpoints or two moments, into a ratio of distances or durations, still with no unit in it. A *write* is an
+amount, the place given a size by a unit carried in. This paper sorts known physics into the three.
 
 Two tests do the sorting, and both are tests physics already uses. Scale the world, every length multiplied by one
-factor: a reading is unchanged and a writing moves (the test of dimensional analysis, Bridgman's and Buckingham's).
+factor: a read or a place is unchanged and a write moves (the test of dimensional analysis, Bridgman's and Buckingham's).
 Change what arrives, keeping the standpoint and the turn: the directions stay, and what changes is the *payload*, the
 paint met along them. A law's form often comes from the first half and its values from the second, joined by a
 *bridge*: the speed of light, a rest frequency, the astronomical unit, a kind of star, a clock.
 
 Sorted this way, several familiar results come apart cleanly. A moving observer's sky is a Möbius map of directions
 (aberration, a read) carrying a payload weighting (Doppler, read from what arrives, its frequency a write); the
-rotation left by two boosts joined, Thomas and Wigner's, is read from three stars' directions alone and belongs to the
-joining, never to one boost. A line's Lorentzian is the heat of a phase's turn, and its width and the decay time it
+rotation left by two boosts joined, Thomas and Wigner's, is had from three stars' directions alone and belongs to the
+joining, never to one boost: a place. A line's Lorentzian is the heat of a phase's turn, and its width and the decay time it
 answers to are one quantity read two ways. The quasar dipole's expected size is 2β from directions plus a payload term
 read from the catalogue, the payload carrying 60–70% of it. Interference's visibility is bounded by 2hv, the two paths'
 shares, at most 1 at their corner. Each case is checked on published data or in exact arithmetic, with its prediction
@@ -43,14 +46,15 @@ between.
 
 Reading and writing are a division of the observer's acts, worked out in *Reads and Writes* as geometry. A read is the
 geometry of one standpoint: directions, the shares of one thumb, the corner where they are equal, the horizon never
-reached, and the Cauchy, the heat the uniform turn lays over the readings before anything arrives. A write is the
-recording of a read, a mark that lasts and can be counted, and it is where amounts live. That paper says it in one
-line: a read is geometry, a write is physics.
+reached, and the Cauchy, the heat the uniform turn lays over the readings before anything arrives. A place joins reads
+across a step, two standpoints or two moments, and gives distances and durations as ratios, with no unit. A write is an
+amount: a place tied to a unit carried in. Reads and places are geometry; physics enters with the unit.
 
 This paper takes the line at its word and turns to physics. If physics is the writing, two questions follow. Which
-parts of a known physical result could have been read, from a standpoint, before any amount was carried in? And for the
+parts of a known physical result could have been read, from a standpoint, or placed, from several, before any amount
+was carried in? And for the
 rest, what exactly was carried in, and where does it enter? The answers sort known physics; they add nothing to it.
-That is the claim and its limit: physics is already a mix of reading and writing, often within one formula, and the
+That is the claim and its limit: physics is already a mix of reading, placing and writing, often within one formula, and the
 boundary between the two is not marked. The two tests mark it, quantity by quantity.
 
 The point of marking it is practical. A quantity read as a direction and handled as an amount is misplaced, and a
@@ -61,12 +65,14 @@ boundary is what causes other known difficulties is a question this paper raises
 ### 1.2 Two tests, as physics uses them
 
 **Scale the world.** Multiply every length in a situation by one factor k, the observer's included, and keep every
-standpoint where it stands relative to the rest. A quantity unchanged by k is a reading. A quantity that changes with k
-is a writing, and somewhere an amount was carried in to give it its size. Physics has used this test for a century as
+standpoint where it stands relative to the rest; the units stay outside. A quantity unchanged by k is a read if one
+standpoint holds it, a place if it joins standpoints or moments. A quantity that changes with k is a write, and
+somewhere an amount was carried in to give it its size. (Until 10 November this paper, with *Reads and Writes*, called
+every joining a write; R788 keeps "write" for what scaling moves.) Physics has used this test for a century as
 dimensional analysis: Bridgman (1922) and Buckingham (1914) sort quantities into dimensionless groups and the scale
-that sets them. The groups are the reader's (with one base unit they are exactly the directions of a read; Buckingham's
-π groups, checked in `plans/bpi-plan.md`); the scale is the writer's. The test is necessary for a reading and not
-sufficient: a number unmoved by scaling can still have been made by writing, as π is made by closing the turn.
+that sets them. The groups are reads or places (with one base unit they are exactly the directions of a read; Buckingham's
+π groups, checked in `plans/bpi-plan.md`); the scale is the write. The test is necessary for a reading and not
+sufficient: a number unmoved by scaling can still have been made by joining, as π is made by closing the turn.
 
 **Change what arrives.** Keep the standpoint and the turn, and change the world that paints the directions: another
 source, another spectrum, another brightness, another medium. What stays is the read's own: the directions and their
@@ -82,13 +88,14 @@ cases in this paper are few and named each time:
 - **a speed**, of light or sound, turning a direction's change into a time, or a delay into a range (a ranging reader
   is writing: it carries in the signal's speed and a clock);
 - **a rest frequency**, turning a received frequency into a speed;
-- **a baseline**, the step between two standpoints counted, turning crossed directions into places (parallax; for the
-  stars, the astronomical unit, now fixed by agreement);
+- **a baseline**, the step between two standpoints, turning crossed directions into places in the step's length
+  (parallax), and into amounts once the step is in a unit (for the stars, the astronomical unit, now fixed by agreement);
 - **a kind**, a thing of known size or brightness, turning an angle or a flux into a distance (a standard candle or
   ruler);
 - **a clock**, turning an order of reads into durations.
 
-Each is a write. None is in the geometry, and none is found by reading harder.
+Each carries in an amount, and so makes a write; a baseline left in its own length makes only places. None is found by
+reading harder.
 
 ### 1.4 Standings
 
@@ -126,7 +133,7 @@ look, given whole before anything arrives.
 
 **The paint.** What arrives along each direction is the *payload*, the paint met there: a colour, a flux, a spectrum, a
 count. Changing it moves no direction and no heat. That is the second test of §1.2, and the reason reads never conflict:
-a read adds nothing, and a write to the paint moves nothing a read holds.
+a read adds nothing, and a change to the paint moves nothing a read holds.
 
 **The standpoint z = m + iγ.** A reader at height γ above a line, over the point m, turning uniformly, lands on the line
 as the Cauchy law of location m and scale γ, density (γ/π)·|1/(x − z)|², z = m + iγ. The whole law has one pole, at the
@@ -141,11 +148,13 @@ one read whose points add: z₁ + z₂. A real Möbius map of the chart (a turn,
 the Cauchy family into itself and moves only its point. So sums of reads and reciprocals of reads stay reads.
 
 **Joining reads.** A read holds no time, and two reads are joined only across a step that is counted: in space, the
-baseline between two standpoints (parallax); in time, the ticks between two moments. Each such join is a write. So is
-everything said across reads: their order, a rate, a distance, a duration.
+baseline between two standpoints (parallax); in time, the ticks between two moments. Each such join is a place, unmoved
+by scaling and held by no single read: an order, a rate in one's own ticks, a distance in the step, a duration in ticks.
+It becomes a write only when the step or the tick is given in a unit carried in.
 
 **Two geometries.** *Reader geometry* has no V: directions from one standpoint, shares of one thumb, the corner, the
-horizon, the heat, order. Scaling the world moves nothing in it. *Physical geometry* has V: lengths and extents, the
+horizon, the heat, order; joined, it gives places, still unitless. Scaling the world moves nothing in it. *Physical
+geometry* has V in a unit: lengths and extents, the
 box with a number line on each axis, the circle stated as x² + y² = r². Every figure in it has a size, and scaling the
 world moves it. Physics is written in the second. The bridge between them is a share of the thumb times a breadth
 carried in.
@@ -185,9 +194,9 @@ clock, in ticks.
 - **Time to contact is the reading over its rate**, x/ẋ = d/u, at every distance, before and past the corner, with none
   of S, d or u known (Lee 1976). Read from the angle arctan x instead, the same ratio gives d/u times
   arctan(x)(1 + x²)/x: right far off, too long by π/2 at the corner, and worse past it. So the exact carrier is the ratio.
-- **A rate joins reads, so τ is a write**, in the reader's own ticks. Two looks a tick apart give it exactly:
+- **A rate joins reads, so τ is a place**, in the reader's own ticks. Two looks a tick apart give it exactly:
   x₁/(x₂ − x₁) is the time to contact at the second look, x₂/(x₂ − x₁) one tick earlier. Seconds are carried in with a
-  clock. What is scale-free is τ̇, the rate at which τ itself changes: under steady braking τ̇ + 1 = d/(2s), s the
+  clock, a write. Scale-free too is τ̇, the rate at which τ itself changes: under steady braking τ̇ + 1 = d/(2s), s the
   stopping distance, so Lee's critical τ̇ = −½ is stopping distance equal to distance, the pair (s, d) at its corner.
 - **How close it will pass.** With ω the bearing's rate, the closest approach as a share of the present distance is
   ωτ/√(1 + (ωτ)²). The clock enters ω and τ oppositely and leaves ωτ, so this needs nothing carried in; a bearing that
@@ -275,14 +284,15 @@ A moving observer's sky is the clearest place in physics where a read and a writ
   (Kato and McCullagh 2020): the Möbius family carries the uniform law within itself. No law on the sky is
   boost-invariant; boosts carry the uniform one within its family. On the logarithm of the stereographic coordinate,
   −ln tan(θ/2) (the pseudorapidity), a uniform sky lies as ½·sech² and a boost slides it by the rapidity η. So the
-  rapidity is read from directions alone, as the shift of the sky's median: no clock, no frequency, no c.
+  rapidity is had from directions alone, the sky's median before against after (a place, joining two looks): no clock,
+  no frequency, no c.
 - **Doppler shift and beaming weight the paint**, moving no direction. Of the D⁴ by which an isotropic sky brightens
   ahead, D² is the crowding of directions and D² the paint. To state the shift as a speed needs a rest frequency, a write.
 - **Two more readings of one sky.** A thermal sky, each direction a blackbody at T₀·D: the hottest over the coldest is
   exactly (1 + β)/(1 − β) = k² at every speed, a ratio; a linear dipole fit reads β = 0.6 as 0.67 (Peebles and Wilkinson
   1968). Radar: two echo times give the Doppler factor as their ratio, t₂/t₁ = k², and the interval as their product,
   t₁t₂ = τ² (Bondi 1964). A common rescale of both stamps leaves the ratio and moves the product: one pair of stamps, a
-  reading and a writing.
+  place and a write.
 
 ### 5.2 The quasar dipole [data]
 
@@ -320,7 +330,7 @@ a reading in the paper's sense, and it is:
   equals the half-rapidity formula to 10⁻⁵⁹, the triangle's area to 10⁻⁵⁸.
 - **The same from any stars.** Five different seeded triples agree to 4 × 10⁻⁵⁸.
 - **Absent from any single read.** One boost's fitted map has no rotation (below 2 × 10⁻⁵⁹ for nine boosts of three sizes
-  and directions), nor has a collinear pair. The rotation belongs to the joining, which is a write.
+  and directions), nor has a collinear pair. The rotation belongs to the joining, a place.
 - **The small loop.** A loop of boosts by ε along n₁, n₂, back and back leaves a rotation of ε²·sin φ to leading order;
   so does the same loop of turns, about the opposite axis: the same leftover of joining, with curvature −1 against +1.
   At the next order they part. The turn loop's leftover is exactly 4·arcsin(sin²(ε/2)·|sin φ|), so ε²·sin φ·(1 − ε²/12),
@@ -336,7 +346,7 @@ is not mistaken for more.
 ### 5.4 Loops that come home turned [exact]
 
 §5.3's leftover is one case of a wider fact. A read is one standpoint at one moment; reads joined end to end round a loop
-are a write, and what the write leaves over when the loop closes depends on where the joining happens.
+are a place, and what the joining leaves over when the loop closes depends on where it happens.
 
 - **In the plane, nothing.** Turns of the plane commute, so carrying a direction round any closed loop brings it home
   unturned. Fifty loops laid flat turned by 0, which was guaranteed: flat transport does not change a direction at all.
@@ -354,7 +364,7 @@ are a write, and what the write leaves over when the loop closes depends on wher
   radius cancels against the lengths of the loop, as the scale test asks of a reading. A loop out and back along one line
   encloses nothing and turns nothing (5 × 10⁻⁵¹ on the sphere, 2.5 × 10⁻⁴⁹ in velocity space).
 
-So the leftover of joining is a reading of the write: the area the joined reads enclose, with no unit and no clock. A rate
+So the leftover of joining is a place: the area the joined reads enclose, with no unit and no clock. A rate
 of turning is another matter. Foucault's pendulum (1851) turns, against the ground, by 360°·sin φ a sidereal day at
 latitude φ: the area the latitude's circle leaves out of the hemisphere, read per turn of the Earth. The degree a day
 carries the sidereal day in, a clock, so it is a write. Measured rates were sought before any was read; one site met the
@@ -376,7 +386,8 @@ each read from its paper's abstract. Measured over
 Dirac is 1.0018, the rest QED; measured over the interval without the half is 0.501. This is reported, not counted.
 
 None of it is new physics: Gauss, Thomas, Wigner, Foucault and Berry hold every piece. What the sorting adds is where each
-piece falls. The turn is read from the loop alone; the loop is joined, a write; a rate of turning needs a clock.
+piece falls. The turn comes from the loop alone; the loop is joined, a place; a rate of turning in degrees a day needs a
+clock, a write.
 
 ## 6. Light
 
@@ -400,9 +411,9 @@ precision; it is not this paper's to test. What the sort says is where it lives.
   b = d. Its slope on logarithmic axes at b = d is −1.637: −1 from the paint and −2/π from the directions.
 - **The dimension.** The cosine-weighted share sin^(D−1)θ is symmetric under the reciprocal only in three dimensions:
   D = 3 is singled out by Lambert's cosine, not by the turn, whose one-axis marginal is the Cauchy in every dimension.
-- **1/d² is a write; counts by flux are a read.** Scale every length by k with the paint fixed, and every solid angle,
+- **1/d² needs distance; counts by flux are a read.** Scale every length by k with the paint fixed, and every solid angle,
   irradiance and flux is unchanged. So 1/d² compares standpoints with the source's size held fixed, and needs d as an
-  amount: a baseline walked or a kind carried in, a standard candle. The count of sources brighter than a flux needs no
+  ratio at least, a place, from a baseline walked or a kind carried in (a standard candle), and as an amount a write. The count of sources brighter than a flux needs no
   distance at all: for any population spread evenly, N(> S) falls as S^(−3/2) at every S, unmoved by scaling.
 
 All checked to 10⁻⁵⁰ in exact arithmetic; one prediction (the cosine-weighted per-axis median) was killed by my
@@ -430,7 +441,8 @@ share of the directions.
   the 1.2 reads the world's shape, between a sphere's 1.5 and a slab's 1.0. Most of those stars lie past 100 pc in a
   thin layer of luminous kinds seen through dust; which of the layer and the dust does how much is open.
 
-The distance-based results are writes, through parallax and a kind; the counts by light are reads.
+The distance-based results are places, through parallax and a kind, and writes once the parsec is in metres; the counts
+by light are reads.
 
 ## 7. Distance
 
@@ -460,16 +472,16 @@ reaching a factor of about 1/ε to either side of the corner; its far edge is ab
 needs a standpoint's read and returns to one.
 
 Working back from practice: d = a/tan p, with the astronomical unit a measured outside the parallaxes and now fixed by
-agreement. σ_d/d = σ_p/p is the far limit of the exact ratio γ/sin γ. Not inverting noisy parallaxes (Bailer-Jones 2015)
+agreement: the parallax p is a read, d in astronomical units a place, d in metres a write. σ_d/d = σ_p/p is the far limit of the exact ratio γ/sin γ. Not inverting noisy parallaxes (Bailer-Jones 2015)
 is the reciprocal's missing mean with the median kept: a parallax with a Gaussian error has an inverse with no mean, and
 at the band's edge 16% of the readings are at or below zero. Inverting them as if they were distances is Lutz and
-Kelker's bias (1973): a read taken for a write. Of the misplaced boundaries in this paper, it is the one shown to cause a
+Kelker's bias (1973): a read taken for a place. Of the misplaced boundaries in this paper, it is the one shown to cause a
 known difficulty.
 
 ### 7.3 The distance ladder as a tower [data, simulation]
 
-A ladder's rungs are reads joined by writes: the angles, the flux ratios of one kind and the ratios between rungs are
-reads; the astronomical unit, the anchors, every megaparsec and H₀ are writes. A rung's error is one factor only if it is
+A ladder's rungs are reads joined into places, with writes at the anchors: the angles and the flux ratios of one kind are
+reads; the ratios between rungs, places; the astronomical unit, the anchors, every megaparsec and H₀, writes. A rung's error is one factor only if it is
 flat against an independent distance. On Cosmicflows-4 (Tully et al. 2023), Hubble's rungs (Hubble 1929) are not
 (slopes 0.79 and 0.16 against 1): his brightest-star rung was a stretch, a ruler of another kind, not a factor. An
 apparent drift between the fundamental plane and type Ia supernovae belongs to the 58 galaxies the two share, not to the
@@ -479,7 +491,8 @@ different objects locates a misread link; a single comparison cannot.
 In a simulation of our own, a figure of 20 landmarks read by 16 to 4,096 standpoints with one outside length carried in
 at 1% error: the shape improved as N^(−0.49), the scale never moved from the outside length's 1%, and by 4,096
 standpoints the landmarks' errors were 99% correlated, one shift shared by all. Statistical error, which more reads
-average down, against a calibration's error, which they do not: in the sort's terms, the reads against the one write.
+average down, against a calibration's error, which they do not: in the sort's terms, the reads and places against the
+one write.
 
 ## 8. Waves and the qubit
 
@@ -562,7 +575,7 @@ Each simulation here is checked against a referee that computes the known physic
 - **Cooling counted in contacts.** Five hundred smooth inelastic spheres, contact found where h + v = 1. Per contact per
   sphere the temperature falls by (1 − e²)/3 of itself to 0.8% wherever the gas stays even (Haff 1983). Density,
   diameter and pair correlation leave the count; the clock needs them all, and near the clustering instability goes
-  wrong about twice as far as the count does. The count is a read, the clock a write.
+  wrong about twice as far as the count does. The count is a place (contacts joined, no unit), the clock a write.
 - **Holding a world by distance.** A hard-disc gas held as a window of discs round the reader and, beyond it, totals in
   cells growing with distance, against a referee computing every disc (Enskog's contact rate to 0.1%, Henderson's
   equation of state, Henderson 1975): the view's density, warmth and contacts within 0.3%, for the work of the window,
@@ -612,7 +625,8 @@ stays recorded beside the run that replaced it.
 
 It changes no physics. It sorts, and the sort gives four working rules.
 
-- **A ratio unmoved by scaling is a read; anything that moves is a write, and something was carried in.** Name the
+- **A ratio unmoved by scaling is a read if one standpoint holds it, a place if it joins several; anything that moves
+  is a write, and something was carried in.** Name the
   bridge each time: a speed, a rest frequency, a baseline, a kind, a clock.
 - **Read the median where a turn is named; average only amounts.** A Cauchy-type quantity is a direction where a turn
   that lays it can be named apart from the law's shape. There the median and quartiles are its statistics, and averaging
@@ -620,8 +634,9 @@ It changes no physics. It sorts, and the sort gives four working rules.
 - **Separate what the observer brings from what arrives.** The second test splits a formula into the directions' part
   and the paint's (aberration from Doppler; the dipole's 2 from x(1 + α); Berry's geometric phase from the dynamical).
   The directions' part must be the same whatever is counted; where it is not, part of the effect belongs to what arrives.
-- **Joining is a write.** What no single read carries and the joining of reads does, a rotation left by two boosts, a
-  depth from two standpoints, a duration from two moments, belongs to the join.
+- **Joining is a place.** What no single read carries and the joining of reads does, a rotation left by two boosts, a
+  depth from two standpoints, a duration from two moments, belongs to the join; it is a write only once a unit is
+  carried in.
 
 ### 12.2 Open
 
@@ -629,7 +644,7 @@ It changes no physics. It sorts, and the sort gives four working rules.
   Ω_m = 1/π = 0.3183, with Ω_Λ = 1 − 1/π and w = −1, and through Friedmann's equations z_eq = (π − 1)^(1/3) − 1 = 0.2890
   and z_acc = (2(π − 1))^(1/3) − 1 = 0.6240. Its derivation is not accepted here: it multiplies 2/π and ½, the mean
   projection of a uniform direction in two dimensions and in three, as if they were filters in sequence, and the sort
-  above would place both on the writer's side. But the numbers were written down before the next surveys report, so they
+  above would place both with the writer's vantage. But the numbers were written down before the next surveys report, so they
   are a fair test whatever their origin. Planck 2018 gives Ω_m = 0.3153 ± 0.0073 (Planck Collaboration 2020), 0.4σ from
   1/π; DESI's second data release's BAO alone gives 0.2975 ± 0.0086, 2.4σ below. Against DESI's five-year BAO with Euclid
   (2027) and Roman's and Rubin's supernovae and growth (2027–2028): if the best combination sits more than 3σ from 1/π,
