@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R822** (10 Nov; ChatGPT's ruling on BCL run 2's open case, pasted by Tom: "yes, the observer's motion is part of
+  the standpoint, but the Doppler factor should not simply be classified as a join of two reads"; "leave D3 unchanged
+  for the moment"; "rerun the revised grid before merging either PR"): D6 says the standpoint includes its state of
+  motion, a boost a change of standpoint, not a change of what arrives. The Doppler factor recorded as an unresolved
+  case, *Reads and Writes* §12 O9: the read (direction of arrival), the relation between standpoints (the rapidity) and
+  the relation between payloads (the measured frequency ratio) kept apart; the factor not a place, since no distance;
+  whether relations between standpoints need their own name open. D3 unchanged. BCL run 3 on the revised text.
 - **R821** (10 Nov; ChatGPT's reply to BCL run 1, pasted by Tom; Claude's drafts; Tom: "yes, second brach"): the
   definitions made one classification. D4: a write is an amount in a unit carried in (a metre, a second, a hertz); for
   the geometry the across zero tied to a unit; a payload has writes too. D5: the geometric test scales lengths; in

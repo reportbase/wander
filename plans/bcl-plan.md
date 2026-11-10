@@ -183,3 +183,22 @@ times, the sensor record is split into its variables, and the law is kept apart 
 difficulty: the open place is now the geometry column (findings 3, 4, 6), not the payload's.
 
 Limits as in run 1: one agent, one run.
+
+### Run 3: after the motion sentence (planned 10 Nov 2026, before the run)
+
+ChatGPT's ruling on run 2 (SPN R822): the standpoint includes its state of motion; the Doppler factor is recorded as
+unresolved (§12 O9), D3 unchanged; rerun before merging. A third fresh agent is given D1–D7 and the passage with both
+tables as revised, O9 not included (it would hand over the answer to case 12), and the same twelve cases.
+
+Intended answers as run 2, except case 12: Δf in hertz and the stated speed writes; the ratio of the two received
+frequencies a relation between payloads that what arrives does not move; the definitions name no kind for it, and
+"cannot be settled" is the answer the paper now gives.
+
+Predictions (Claude's, before the run):
+
+- E1. Cases 1–11 as in run 2, none against the intended answers.
+- E2. In case 12 it treats the boost as a change of standpoint (it no longer says the file does not say), and applies
+  D6 with the boost held as part of the standpoint.
+- E3. It still does not place the ratio f′/f in read, place or write, and says the definitions lack a name for it.
+  Killed if it classes the ratio as a place, a read, or without reservation as a ratio of payloads.
+- E4. It again names the grid's geometry column as having no room for such a quantity, or the heat as having no kind.

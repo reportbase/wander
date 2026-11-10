@@ -472,6 +472,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R822 (10 Nov; ChatGPT's ruling, pasted by Tom): the standpoint includes its state of motion (a boost a change of
+  standpoint, not of what arrives); the Doppler factor an unresolved case, *Reads and Writes* §12 O9 (read, relation
+  between standpoints, relation between payloads kept apart; not a place); D3 unchanged. **Do not widen "place" to any
+  relation between two reads.**
   R821 (10 Nov; Tom: "yes, second brach"): **read, place and write are the named outcomes of two crossed tests**,
   geometry or payload (D6) by unmoved or an amount in a unit (D5, D4); the fourth box is "a ratio of payloads"; a write
   is any amount in a unit carried in (a payload has writes too); D5 a named scaling, one dimension at a time; a kind

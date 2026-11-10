@@ -80,7 +80,9 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   arrival at the standpoint: light bent on the way, by a lens or by refraction, changes which source paints a
   direction and moves no direction, and where that source lies is a further inference, the writer's. And the test
   sorts quantities, not causes: one cause can move both, as a boost moves where a star appears and the colour of what
-  arrives from it (§4, "A moving sky").
+  arrives from it (§4, "A moving sky"). The standpoint includes its state of motion where motion bears on what is
+  read: a boost is a change of standpoint, so it is not among the changes of what arrives, and it moves the read. How
+  a relation between two standpoints is to be classed when it is not a distance is open (§12, O9).
 - **D7. Joining and recording.** Joining reads, two standpoints or two moments, gives places and orders, not writes. A
   count, or a mark kept, is how a write is recorded; being an amount in a unit is what makes it a write. A count of
   strides is a whole-number record of a ratio d/stride, a place; the same count with the stride in metres is a write.
@@ -1388,6 +1390,15 @@ before the data can show where it is not. **Checked** (TCF; killed).
   first, since two of its steps are no single step once the speed is dropped. Two of the four carry the physics: that what
   no read can hold makes no difference to what is read (the light postulate stated for reads), and that a place is a
   finite list of numbers. Neither is shown to follow from reading. A reconstruction, not an explanation.
+- **O9. The Doppler factor, and relations between standpoints.** Three things are to be kept apart. The read is the
+  direction of arrival from a standpoint, its state of motion included. The relation between two standpoints, their
+  relative motion among it, is described by the rapidity (§4). The ratio of the frequencies received at the two is a
+  relation between payloads, and it is what is measured. The Doppler factor is fixed by the second and the direction of
+  arrival; the measured ratio equals it and is still a relation between payloads. So a quantity can be unmoved by
+  scaling, unmoved by a change of what arrives, and neither a direction nor a distance: D3's place is a gap across, and
+  the factor is no distance, so it is not put there. Whether relations between standpoints need a name of their own,
+  beside places and orders (O4), is open; D3 stands as it is until that is settled. Found by a blind classification
+  (BCL, run 2).
 
 ## Where the ideas come from
 

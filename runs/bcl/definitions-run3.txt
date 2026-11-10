@@ -1,0 +1,73 @@
+- **D1. One point, two parts.** A point seen from a standpoint is, in the writer's notation, ln(z/H) = ln(d/H) + iθ, H
+  the thumb held out at arm's length: up the direction θ, across the distance in thumbs. In space the point is d·u, u a
+  direction, and the across part ln(d/H) is unchanged (§2). θ is the writer's coordinate on the direction, the one in
+  which turns add; the reader holds the direction itself, [h : v], or its slope s = v/h, and uses no trigonometry (§1,
+  "The reader uses no trigonometry").
+- **D2. A read** is the direction: [h : v] in the plane, [h : v : v₂] in space, up on the plane. It is every sweep of the
+  thumb at once, from one standpoint, *home*, at one moment, given whole (§3). It comes with its heat, given, and the
+  paint met along it (§4). One read holds no distance.
+- **D3. A place** is a gap across: a distance in thumbs, d/H, or one distance against another, d₁/d₂. Scaling the world
+  leaves it unchanged, as it leaves a read; but no single read holds it. It needs a second standpoint and the step
+  between them: parallax (§6). V\*/H, a party's true breadth in thumbs, is a place; so is a time to contact counted in
+  the reader's own ticks.
+- **D4. A write** is an amount in a unit carried in from outside the world: a metre, a second, a hertz, an agreed
+  notch. For the geometry it is the across axis's zero tied to a unit, a distance in metres, and one such amount serves
+  every place hung from the same thumb (§7). A payload has writes too: a frequency in hertz, a brightness in watts.
+  Scaling the world in a write's own dimension moves it (D5). A change of units is a different operation from scaling
+  the world: it moves every write's number and no place, no read as the reader holds it (an angle in degrees is the
+  writer's coordinate on a read, and its number follows the writer's choice of degree or radian).
+- **D5. The first test.** Multiply every length in the world by k, the reader's thumb and stride included; the units
+  stay outside the world. What moves is a write. Among the geometry's quantities, what stays is a read or a place.
+  This is the geometric test, and it
+  sorts the geometry. In general the test is a named scaling, one dimension at a time: multiply every amount of that
+  dimension in the world by k, the world's constants of that dimension included, the unit staying outside. A quantity
+  in another unit is tested by that unit's scaling: a frequency in hertz moves when every time is scaled, and its ratio
+  to a rest frequency does not. Nothing here makes times follow lengths; a test that scales both says so. This is the old line of dimensional
+  analysis between the scale-variant and the scale-invariant (Bridgman 1922; Buckingham 1914), a sorting by invariance
+  under the scaling group, as Klein (1872) sorts geometries by their groups. **Classical**; the names are ours.
+- **D6. The second test.** Change what arrives, keeping the standpoint and the turn: repaint the world, move the light,
+  replace a wall by a row of trees. The directions and their heat stay; the paint changes. The first test does not do
+  this work: a probability, or a ratio of two amounts, is unmoved by scaling and is still not a direction. The second
+  test tells a direction from a ratio of payloads. It tests a candidate once its standpoint and its turn have been
+  named, as D2 names them before anything arrives; it does not find a read in a bare number, and where no standpoint
+  and turn can be named it cannot be run and nothing is concluded (§11). The direction it keeps is the direction of
+  arrival at the standpoint: light bent on the way, by a lens or by refraction, changes which source paints a
+  direction and moves no direction, and where that source lies is a further inference, the writer's. And the test
+  sorts quantities, not causes: one cause can move both, as a boost moves where a star appears and the colour of what
+  arrives from it (§4, "A moving sky"). The standpoint includes its state of motion where motion bears on what is
+  read: a boost is a change of standpoint, so it is not among the changes of what arrives, and it moves the read. How
+  a relation between two standpoints is to be classed when it is not a distance is open (§12, O9).
+- **D7. Joining and recording.** Joining reads, two standpoints or two moments, gives places and orders, not writes. A
+  count, or a mark kept, is how a write is recorded; being an amount in a unit is what makes it a write. A count of
+  strides is a whole-number record of a ratio d/stride, a place; the same count with the stride in metres is a write.
+  A quantity's kind is what it is, not how it was had: a place is a scale-invariant gap across, usually had by parallax,
+  and a distance in thumbs handed over by another observer is still a place. The kind attaches to the variable, not to
+  its law: a Cauchy law on a direction's slope and a Cauchy law on the quotient of two amounts are two variables with
+  one law, and the law alone does not say which is which. And a read is a direction, not a pairing of a direction with
+  a source: which thing paints a direction is part of what arrives.
+
+Two independent questions sort the geometric quantities, those about directions and distances from standpoints: does
+scaling the world move it (D5), and does one standpoint hold it (Proposition 8 of the archived paper: no read holds a
+distance). The table is for those. A ratio of two payloads at one standpoint, one colour channel over another, is unmoved
+by scaling and needs no second standpoint, yet it is not a direction of the geometry: it is a direction in the payload's
+own space (§4), and D6, not this table, sorts it.
+
+| | moved by scaling? | held by one standpoint? | kind |
+|---|---|---|---|
+| a direction [h : v] (up) | no | yes | read |
+| a gap across: d/H, d₁/d₂, V\*/H | no | no: two standpoints and the step | place |
+| the across zero tied to a unit | yes | no | write |
+
+Read, place and write are so the named outcomes of two tests that cross, and the crossing has a fourth box, the
+payload's:
+
+| | the geometry: stays when what arrives changes (D6) | the payload: changes with what arrives (D6) |
+|---|---|---|
+| unmoved by scaling (D5) | a read (one standpoint), with its heat; a place (two) | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
+| an amount in a unit (D4), moved by its own dimension's scaling | a write: a distance in metres | a write: a frequency in hertz, a brightness in watts |
+
+A write is found in both columns; a read and a place are the geometry's alone; a ratio of payloads is the payload's
+counterpart of a read, unmoved by scaling and not a direction of the geometry. Being unmoved by scaling therefore never
+shows that a quantity is a read. One thing can supply several variables of different kinds: a pixel's value in the
+sensor's unit is a payload's write, its ratio to its neighbour a ratio of payloads, the pixel's place in the grid a
+writer's count of directions.
