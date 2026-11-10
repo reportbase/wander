@@ -10,7 +10,8 @@ assistance (Claude).*
 publication. So it is written as a specification. The definitions come first and are numbered (D1–D7); every later
 section is checked against them. Claims are marked: **classical** (standard mathematics or physics), **checked** (exact
 arithmetic or a measurement made here, listed under Code and data), or **reading** (ours: a way of dividing what is
-known, not a result). Each idea has one home; other sections point to it. Open questions are in §12. The propositions and
+known, not a result). "Checked" means the calculation is right under its stated assumptions and the code reproduces
+it; whether those assumptions fit a physical system is a further claim, made case by case (§11). Each idea has one home; other sections point to it. Open questions are in §12. The propositions and
 proofs this paper draws on are in *Observation from Somewhere*, archived (`papers/archive/ofs/`); where its wording differs
 from this paper, this paper stands.
 
@@ -55,6 +56,7 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   the reader's own ticks.
 - **D4. A write** is an amount: the across axis's zero tied to a unit carried in from outside the world, a metre, a
   second, an agreed notch. Scaling the world moves it. One amount serves every place hung from the same thumb (§7).
+  A change of units is a different operation from scaling the world: it moves every write's number and no place, no read.
 - **D5. The first test.** Multiply every length in the world by k, the reader's thumb and stride included; the units
   stay outside the world. What moves is a write. What stays is a read or a place. This is the old line of dimensional
   analysis between the scale-variant and the scale-invariant (Bridgman 1922; Buckingham 1914), a sorting by invariance
@@ -66,9 +68,14 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
 - **D7. Joining and recording.** Joining reads, two standpoints or two moments, gives places and orders, not writes. A
   count, or a mark kept, is how a write is recorded; being an amount in a unit is what makes it a write. A count of
   strides is a whole-number record of a ratio d/stride, a place; the same count with the stride in metres is a write.
+  A quantity's kind is what it is, not how it was had: a place is a scale-invariant gap across, usually had by parallax,
+  and a distance in thumbs handed over by another observer is still a place.
 
-So two independent questions sort everything: does scaling the world move it (D5), and does one standpoint hold it
-(Proposition 8 of the archived paper: no read holds a distance).
+Two independent questions sort the geometric quantities, those about directions and distances from standpoints: does
+scaling the world move it (D5), and does one standpoint hold it (Proposition 8 of the archived paper: no read holds a
+distance). The table is for those. A ratio of two payloads at one standpoint, one colour channel over another, is unmoved
+by scaling and needs no second standpoint, yet it is not a direction of the geometry: it is a direction in the payload's
+own space (§4), and D6, not this table, sorts it.
 
 | | moved by scaling? | held by one standpoint? | kind |
 |---|---|---|---|
@@ -234,7 +241,8 @@ no length to add; its number is a chart, and the question is what survives a cha
 each direction as an amount on a line, the chart in which the horizon sits at s = ∞, and the sum picks up that chart's
 far end. Other charts of the same directions have means (the bounded chart s/(1 + s) averages ½), and the order
 statistics do not depend on the chart: the median and quartiles commute with every increasing map of the reading, a mean
-does not. So the median is the directions' and the mean the chart's. A writer can have a mean of directions: unit vectors
+does not. So the median is the directions' and the mean the chart's. A mean of directions is well defined once an embedding is
+chosen, and choosing one is the writer's step: unit vectors
 over the uniform quarter turn average (2/π)(1, 1), pointing at the corner, of length 2√2/π ≈ 0.900. And a world capped at
 an extent M has a Cauchy with a mean, (1/π)·ln(1 + M²) over the share below M, about 8.8 at M = 10⁶: set by the extent, an
 amount written in. The payload, where it is an amount, averages (§4). Practice already takes the median of a Cauchy and
@@ -315,7 +323,8 @@ more generally, "find the z". A fat tail with no z is not harmonic measure by an
 
 **How far apart two standpoints are: a place.** The standpoints z = m + iγ form the hyperbolic plane, and the family
 carries it as its measure of distinguishability: the Fisher metric of C(m, γ) is (dm² + dγ²)/(2γ²), half the Poincaré
-metric, and the divergence between two members is 2·ln cosh(d/2), d their hyperbolic distance (Chyzak and Nielsen give
+metric, and the divergence between two members is 2·ln cosh(d/2), d their Poincaré distance in the upper half-plane, the one with
+ds² = (dm² + dγ²)/γ² (Chyzak and Nielsen give
 the closed form). Every real Möbius map leaves it as it was, scaling among them; it joins two standpoints. So it is a
 place (D3): unmoved by scaling, held by no single read. At one foot the distance is |ln r| for heights in the ratio r,
 the gap across of §2; standing higher on both sides only makes them harder to tell apart. **Checked** (FRG); classical.
@@ -355,7 +364,9 @@ nothing. **Classical.**
 
 **The reader never sees a shape.** This is about what one read determines, not about what a visual system infers. A
 thing is, to one read, the directions it paints. Its shape is a radius along each direction from its own centre, and no
-radius is in a read. From two standpoints the shape comes back as places, in the stride; with a unit, in metres. The
+radius is in a read: a single read determines no distance along any direction, and so no shape. A shape comes back only
+from more than the bare read: from structure in the paint (ratios of radii carried by what arrives, §4), or from further
+standpoints as places, in the stride; with a unit, in metres. The
 reader's side is whole; the shape was never the read's to lack.
 
 **Passive.** The reader sends nothing. It is not a radar. A ranging instrument carries in the signal's speed and a
@@ -992,7 +1003,9 @@ times β, so the payload carries 60–70% of it. Taken as directions alone, the 
 three times too large; with the payload's part divided out, four slices by brightness give one β,
 3.3·10⁻³ ± 0.3·10⁻³, 2.7 times the speed from the microwave background, as one motion should. Slices by colour give 2.3,
 2.8 and 4.6 times it, which no motion can do, so part of the dipole belongs to what arrives. The sort says which part could
-be the reader's, not where the dipole comes from. **Checked** (EBD).
+be the reader's, not where the dipole comes from. **Checked** (EBD), and provisional: the residual of 2.7 times the
+microwave background's speed rests on the catalogue's selection, the flux cut and the spectral indices, and has not been
+reproduced independently; it is a decomposition, not yet an explanation of the discrepancy.
 
 **One photon at a time.** In a double slit the fringes' visibility is at most 2hv, h and v the two paths' shares, and the
 which-path predictability |h² − v²| (Greenberger and Yasin 1988; Englert 1996): full visibility only at the corner. On
