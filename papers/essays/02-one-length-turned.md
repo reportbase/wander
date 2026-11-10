@@ -247,7 +247,8 @@ point, the very same turn is spread evenly along the half circle, and it has a m
 Neither is a bell curve. The bell, the Gaussian, belongs to what arrives, and only as a model: if the light's strengths
 along two axes vary independently and look the same however the axes are turned, together they make a round bell, and
 the direction of that bell's samples is an even turn, which is why its ratio is a Cauchy. That is a fact about one kind
-of paint, not about either sweep.
+of paint, not about either sweep. The Cauchy is the reader's distribution, a law of directions; the Gaussian is the
+writer's, a law of amounts.
 
 ### Direction, landing, payload
 
@@ -298,6 +299,14 @@ rationals; square roots need two lengths combined, and π a limit, the whole tur
 Cauchy, its readings and their corner at 1, where v fills exactly as fast as h empties. A rate a reader reads is always of
 something per something, the payload per direction: the per is read, the of is the paint, met. The fourteenth essay, "Rates, not angles", takes this up, and with it why
 the tangent and arctangent, which convert a direction into a share of the whole turn and back, are the writer's tools.
+
+**Two facings and the paper.** The two numbers sit in two facings. The central one, facing across to a rim, reaches its
+end at a point: π/2 is had there. The inscribed one, facing from home toward a horizon, only approaches its end: 2/π is a
+limit. Neither is the writer's. The writer's vantage is the paper, both hemispheres at once, with no facing at all, and
+what the paper has is their product, the 1. A person is all three at the same time: it reads the far world from home,
+faces the thing in front of it across one hemisphere, and holds as paper whatever it holds in the hand or draws. So
+π/2 × 2/π = 1 is not two parties meeting; it is one observer's two facings held together, and the 1 it gives back is its
+own thumb.
 
 *Demo: the mountain and the thumb, "the two vantages": π/2 and 2/π on the thumb's circle, their product 1.*
 
@@ -553,6 +562,18 @@ its Bloch point at 2θ, the central sweep's point, Born's rule that point's foot
 numbers as a bound: visibility at most 2hv, predictability |h² − v²|, V² + P² ≤ 1, full visibility only at the corner.
 All textbook; what the sort adds is where each part sits (*Reads and Writes in Physics*
 (`../reads-and-writes-physics.md`), §4.2, §8.1, §8.2).
+
+**Four equations, one.** The circle h² + v² = 1, Euler's e^(iπ) = −1, the two sweeps' π/2 × 2/π = 1 and the Cauchy's
+total (2/π)·∫₀^∞ ds/(1 + s²) = 1 look alike because they are one equation read four ways. Divide the writer's circle,
+x² + y² = r², by the thumb: 1 + s² = 1/h², the circle in the reader's slope. Its reciprocal, h² = 1/(1 + s²), is the
+reader's heat, rational in s, with no π and no root in it. Gather that heat from home toward the horizon and it is the
+logarithm of w = (1 + is)/(1 − is) over 2i; at the horizon w is −1, e^(iπ), and the heat has totalled π/2. Close it with
+2/π and it is 1. In one line:
+
+> (2/π)·∫₀^∞ h² ds = (2/π)·(1/2i)·ln(−1) = 1, with h² = 1/(1 + s²) from h² + v² = 1.
+
+The reader holds one piece of it, the heat. The horizon reached, π, and the 2/π that makes the heat a probability are the
+paper's. A reader's distribution is a heat; it becomes a total only when a writer closes it.
 
 ---
 

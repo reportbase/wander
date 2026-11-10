@@ -288,6 +288,16 @@ a model consistent with that heat, not its cause. These essays make no claim tha
 only that if a payload's law is taken to be unchanged by turns, with independent components, it is the normal, and its
 ratio is then the Cauchy the directions' heat already was. *The heat is given; the paint is met.*
 
+So the Cauchy is the reader's distribution and the Gaussian the writer's, and the bell factors into the two. Written round
+its centre, the isotropic normal is
+
+> (1/2π)·e^(−r²/2) dx dy = (dθ/2π)·(e^(−r²/2) r dr):
+
+a uniform turn, the reader's directions, whose slope is the Cauchy, times a law for the length, an amount, the payload.
+The writer's distribution is the reader's times the payload's. Dividing one component by the other integrates the length
+away, and the e of the bell goes with it; π stays, in the Cauchy's closing constant. Equal spreads are what make the
+turn uniform, V = H; spreads in a ratio c leave a Cauchy of scale c.
+
 The mean tells the routes apart. The payload has a mean: each component's size averages √(2/π)·σ. Its ratio, which has
 the directions' heat for its law, has none. The part of its mean contributed by readings up to s is (1/π)·ln(1 + s²), growing without
 limit as s grows. The
