@@ -86,9 +86,11 @@ a point of the upper half-plane. This is the degree of freedom the reader adds: 
 and the reader is not on it.
 
 From there the reader turns, steadily. Each step of the turn is a direction, and each direction meets the array at some
-slot. The turn's angle θ, counted from the foot, lands at
+slot. The direction whose slope from the foot is s lands at
 
-  i = m + γ·tan θ.
+  i = m + γ·s
+
+(in the writer's angle θ, counted from the foot, s = tan θ).
 
 Two things come with the standpoint, and only two.
 
@@ -116,13 +118,15 @@ first ten slots.
 What happens at the far end of the sweep depends on whether there is an N to reach.
 
 If there is one, and the reader simply does not hold it, the paint stops. Past the last slot the directions meet
-nothing. With the foot at 0 and γ = 1, an array of 10 slots fills the turn up to the share
+nothing. With the foot at 0 and γ = 1, an array of 10 slots fills the turn up to the share (the writer's formula)
 
   g = (2/π)·arctan(10/1) ≈ 0.937,
 
-and the last 6% of the turn runs past the end. The reader can see where the paint stops, and that is a reading:
+and the last 6% of the turn runs past the end. The reader can see where the paint stops, and that is a reading: the slope of the last direction painted,
 
-  tan(πg/2) = N/γ.
+  s = N/γ
+
+(the writer's tan(πg/2)).
 
 It reads N/γ, never N. Double the array to 20 slots and the paint stops at 0.968 instead. Nothing else in the reader's
 view moves. The reader knows the array's length only as a ratio to its own breadth, as it knows a mountain only in

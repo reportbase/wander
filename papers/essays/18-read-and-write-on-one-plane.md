@@ -36,6 +36,9 @@ Divide by it and take the logarithm:
 
   ln(z/H) = ln(d/H) + iθ.
 
+The angle θ is the writer's coordinate on the direction, the one in which turns add. The reader holds the direction as
+the pair [h : v], its slope s = v/h, and composes turns by tangent addition, (s₁ + s₂)/(1 − s₁s₂), with no angle (§8).
+
 Draw that as a plane: the direction up, the distance across, the distance read as a ratio of thumbs, one in two, one in
 four, or two thumbs, four, eight, each the same step across. That is Euler's plane, and `euler.html` draws it with a
 writer's grid on it.
@@ -84,8 +87,8 @@ point of it onto the plane. The grid is straight; what it becomes is not, and ho
 
 The series has two corners, and on this plane each is a mirror.
 
-Swap a reading for its reciprocal, v/h for h/v, and θ becomes 90° − θ: a reflection top to bottom about the horizontal line at
-45°. That line, left in place, is the corner in direction.
+Swap a reading for its reciprocal, v/h for h/v, s for 1/s (the writer's θ for 90° − θ): a reflection top to bottom about
+the horizontal line s = 1, the writer's 45°. That line, left in place, is the corner in direction.
 
 Swap a distance for its reciprocal about the thumb, d/H for H/d, and ln(d/H) changes sign: a reflection left to right
 about the upright line at one thumb. That line is the corner in distance, where near meets far.
@@ -148,12 +151,13 @@ different law. The sphere has a size and a surface that closes; the reader has t
 The series calls the read a heat map: hottest where it looks, cooling outward. On this plane it turns out that heat is
 always heat per unit of something.
 
-Per unit of turn, the directions have no heat; per unit of the reading v/h they fall off as cos²θ, the half-Cauchy; per
-unit of a flat screen in space as cos³α. Per unit of the thumb's lay, distance has no heat either; per unit of ln(d/H) it
+Per unit of turn, the directions have no heat; per unit of the reading s = v/h they fall off as 1/(1 + s²), the half-Cauchy
+(the writer's cos²θ); per unit of a flat screen in space as 1/(1 + r²)^(3/2) (cos³α). Per unit of the thumb's lay, distance has no heat either; per unit of ln(d/H) it
 is (1/π)·sech(ln(d/H)), the bell centred on one thumb; per unit of the writer's plane it runs without bound at the eye.
 The lay square, the turn against g, is the one chart on which the read is flat both ways, every place the same room.
 
-So the series' heat, cos²(θ − 45°)·sech(ln(d/H)) in the plane, counts direction per unit of reading and distance per unit of
+So the series' heat in the plane, (1 + s)²/(2(1 + s²)) · 2x/(1 + x²) with x = d/H (the writer's
+cos²(θ − 45°)·sech(ln(d/H))), counts direction per unit of reading and distance per unit of
 ratio. It is a good choice, the one that puts the hot spot on the thing looked at, and it is a choice: no chart gives a
 heat of itself. `euler.html` paints both, the heat at each point and the heat per unit of each chart, and on the lay the
 second is one flat colour.

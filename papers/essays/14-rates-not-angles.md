@@ -473,8 +473,8 @@ own length, √2, is the writer's too, two variables combined.
 **Two sweeps, three axes.** The hand can be swept two ways, both out from the horizontal: horizontal to vertical, the
 altitude, and horizontal to depth, the azimuth. From the writer's side these
 are three number lines, h, v and v₂, independent, a point three amounts: the cube, which is Descartes' grid, X, Y and Z.
-From the reader's side they are two sweeps of one length: the altitude a, with tan a = v/√(h² + v₂²), and the azimuth ψ,
-with tan ψ = v₂/h. Every direction is two numbers and no distance, and the two sweeps together reach all of them: the
+From the reader's side they are two sweeps of one length: the altitude, read as v/√(h² + v₂²), and the azimuth, read as
+v₂/h (a writer names their angles a and ψ, tan a and tan ψ those readings). Every direction is two numbers and no distance, and the two sweeps together reach all of them: the
 sphere, in the horizon coordinates Ptolemy's astronomers used.
 
 Going from the reader's two to the writer's three is the writer's work, and it is where the trigonometry is:
