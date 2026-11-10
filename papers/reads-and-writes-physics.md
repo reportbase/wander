@@ -5,7 +5,9 @@
 *Tom Brinkman. Draft, begun 8 November 2026. Written with AI assistance (Claude).*
 
 *A first full draft (8 November 2026), from the outline in `plans/phy-outline.md`. Its geometry is* Reads and Writes*'s
-(`papers/readers-and-writers.md`), and where the two differ that paper stands. Since 10 November 2026 it follows that
+(`papers/readers-and-writers.md`), and where the two differ that paper stands. The reader uses no trigonometry (*Reads
+and Writes* §1): where this paper writes an angle or a trigonometric function it speaks as the writer; the reader's own
+results are rational in the slope s = v/h. Since 10 November 2026 it follows that
 paper as rewritten on SPN R788: what scaling leaves unmoved is a read if one standpoint holds it and a place if it needs
 two, and only an amount in a unit carried in is a write. Its physics comes from the working
 record, `papers/physics.md`, and from the plans and runs it names; a new physics result goes into the record first and
@@ -127,8 +129,8 @@ a ratio of the thumb's own shares.
 **The heat.** Turned uniformly, the thumb's readings follow the Cauchy law: on the quarter turn the density in v/h is
 (2/π)/(1 + (v/h)²), its median at the corner, its quartiles √2 − 1 and √2 + 1, and no mean, since the horizon carries a
 tail no average can settle. With a second thumb crossed with the first, square to the look, the readings (v/h, v₂/h) on a
-screen square to the look follow the two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)), which is cos³α per unit of screen,
-α the angle off the look. The Cauchy is best read as a *heat*: a continuous weight over the directions, hottest along the
+screen square to the look follow the two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)) per unit of screen, r thumbs off the
+look (the writer's cos³α, α the angle off the look, r = tan α). The Cauchy is best read as a *heat*: a continuous weight over the directions, hottest along the
 look, given whole before anything arrives.
 
 **The paint.** What arrives along each direction is the *payload*, the paint met there: a colour, a flux, a spectrum, a
@@ -192,7 +194,7 @@ A thing of half-size S at distance d closes at speed u. The reader reads x = S/d
 clock, in ticks.
 
 - **Time to contact is the reading over its rate**, x/ẋ = d/u, at every distance, before and past the corner, with none
-  of S, d or u known (Lee 1976). Read from the angle arctan x instead, the same ratio gives d/u times
+  of S, d or u known (Lee 1976). Read from the angle arctan x instead (the writer's chart), the same ratio gives d/u times
   arctan(x)(1 + x²)/x: right far off, too long by π/2 at the corner, and worse past it. So the exact carrier is the ratio.
 - **A rate joins reads, so τ is a place**, in the reader's own ticks. Two looks a tick apart give it exactly:
   x₁/(x₂ − x₁) is the time to contact at the second look, x₂/(x₂ − x₁) one tick earlier. Seconds are carried in with a
@@ -282,8 +284,9 @@ A moving observer's sky is the clearest place in physics where a read and a writ
   between nearby stars are kept, and nothing arriving is consulted.
 - **A uniform sky, seen moving, is the spherical Cauchy**, density D²/4π with D the Doppler factor of each direction
   (Kato and McCullagh 2020): the Möbius family carries the uniform law within itself. No law on the sky is
-  boost-invariant; boosts carry the uniform one within its family. On the logarithm of the stereographic coordinate,
-  −ln tan(θ/2) (the pseudorapidity), a uniform sky lies as ½·sech² and a boost slides it by the rapidity η. So the
+  boost-invariant; boosts carry the uniform one within its family. In the reader's half-angle slope t (the writer's
+  tan(θ/2), the stereographic coordinate) a boost is t ↦ t/k, k = e^η; on −ln t (the pseudorapidity) a uniform sky lies
+  as ½·sech² and a boost slides it by the rapidity η. So the
   rapidity is had from directions alone: from one look, with the sources taken as uniform in their own frame, the slide
   of one read's median (a read); against a look before the boost, the two medians joined (a place). No clock, no
   frequency, no c.
@@ -513,15 +516,16 @@ one write.
 
 ### 8.1 The qubit is the two sweeps [exact, classical]
 
-A qubit's state is a ray with real amplitudes h and v, a direction at θ: the inscribed read. Its Bloch point is at 2θ,
-(2hv, 0, h² − v²): the central sweep's point, at twice the angle (Euclid III.20). Born's rule is the point's foot, h².
+A qubit's state is a ray with real amplitudes h and v, a direction [h : v] (at θ in the writer's angle): the inscribed
+read. Its Bloch point is at 2θ, (2hv, 0, h² − v²): the central sweep's point, at twice the angle (Euclid III.20), in the
+reader's slope s = v/h the doubled turn (1 + is)/(1 − is). Born's rule is the point's foot, h².
 Orthogonal states are antipodal on the sphere; a turn of the state by 2π gives −ψ, so 720° returns it; the complex ratio
 ψ₁/ψ₀ is the Bloch sphere's stereographic chart; a pure state lies on the sphere and a mixture inside. All textbook; the
 reading is the sort's. Entanglement, Bell's theorem and measurement are not touched.
 
 ### 8.2 The duality relation [exact, data]
 
-On the unit circle sin 2θ = 2hv and cos 2θ = h² − v². With h and v two paths' amplitudes, the fringe visibility is at
+In the writer's angle, sin 2θ = 2hv and cos 2θ = h² − v²; the reader has 2hv and h² − v² themselves. With h and v two paths' amplitudes, the fringe visibility is at
 most 2hv and the which-path predictability is |h² − v²|, so V² + P² ≤ 1, with equality for a pure state (Greenberger and
 Yasin 1988; Englert 1996). Full visibility comes only at the corner, and 2hv is sech of the logarithm of the amplitudes'
 ratio, already in print as V = sech θ, P = tanh θ (Bramon, Garbarino and Hiesmayr 2004). The bridge is Born's rule: an
@@ -540,7 +544,8 @@ amplitude is the square root of a share of the counts.
 ### 8.3 Weak values and a missing frame [exact]
 
 A state pre-selected at θ_i and post-selected at θ_f has the weak value of σz equal to ⟨σz⟩ − V·tan(θ_f − θ_i), with
-⟨σz⟩ = h² − v² and V = 2hv (Aharonov, Albert and Vaidman 1988). Under a uniform turn of the post-selection it follows
+⟨σz⟩ = h² − v² and V = 2hv (Aharonov, Albert and Vaidman 1988); in the reader's slopes the tangent is
+(s_f − s_i)/(1 + s_i·s_f). Under a uniform turn of the post-selection it follows
 the Cauchy at ⟨σz⟩ + iV: a read laid by the turn, its point the state's central point. A party without a shared phase
 reference averages over what it cannot fix (Bartlett, Rudolph and Spekkens 2007): the twirl, an operation on the
 payload. It lowers the ensemble's visibility and changes no member's overlap: amounts are lost, readings kept. Two
