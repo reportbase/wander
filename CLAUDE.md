@@ -472,6 +472,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R814 (10 Nov; Tom: "lets apply this idea to the circle"): h² + v² = 1 needs no π, one read has it; the writer at work
+  exact at the Pythagorean triples; the corner flips (1/√2, no fraction; the reader's in squares, the writer's as the
+  diagonal); the paper the circle whole, 2π and π. Three grades of cost: free (rational in s), a square root (the
+  writer's construction), a limit (π, e). *Reads and Writes* §9 "What is free, and what π costs"; essay 2 §9.
   R813 (10 Nov; Tom: "lets apply this idea to cauchy"): the Cauchy hardly needed π: heat 1/(1 + s²), heat ratios, the
   corner as median, no mean are free; π only in 2/π. Writer at work: shares k/K, ½ exact at the corner (Niven), quartiles
   at √2 ∓ 1, Gregory–Leibniz partial sums; the paper the total. Free facts across the three: s·(1/s) = 1, i·i = −1,

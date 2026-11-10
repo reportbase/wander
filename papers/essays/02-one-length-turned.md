@@ -677,6 +677,24 @@ the heat below the corner, 1 − 1/3 + 1/5 − 1/7 + … = π/4: every partial s
 reader's equal halves say the whole is twice it without summing it. Across the three identities the free facts are
 s × (1/s) = 1, i × i = −1 and equal halves at the corner; what only the paper holds is π, e and π, and 2/π.
 
+**The circle needed no π, and its corner flips.** The first row is different. h² + v² = 1 has no π in it: in the
+reader's form, 1/(1 + s²) + s²/(1 + s²) = 1, it is rational in the slope and holds at every direction, so one read has
+it and nothing is owed for it. The cost lies elsewhere, in two grades: the shares themselves are roots,
+h = 1/√(1 + s²); and how much circle there is, 2π round and π in area, appears only when the four facings are joined and
+the whole measured.
+
+| who | what it holds of h² + v² = 1 |
+|---|---|
+| the reader | the squares, 1/(1 + s²) + s²/(1 + s²) = 1, at every direction |
+| the writer at work | exact points wherever 1 + s² is the square of a fraction: the Pythagorean triples, s = 3/4 giving h = 4/5, v = 3/5 |
+| the paper | the circle whole: every point, its length 2π, its area π |
+
+In the other three the corner was the working writer's one exact door. On the circle it is the landmark a fraction
+cannot reach: home and the horizon are exact, the triples give exact points as near together as one likes, and at the
+corner h = v = 1/√2. The reader has it exactly in squares, ½ and ½; the writer has it as the diagonal of the square, a
+construction and not a count. So there are three grades of cost: nothing, for what is rational in the slope; a square
+root, a finite construction, for the shares and for halving a turn; and a limit, for how much the whole is, π and e.
+
 ---
 
 ## 10. What it comes to

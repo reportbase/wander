@@ -1155,6 +1155,33 @@ halves say the whole is twice that sum without summing it. So across the three:
 | e^(iπ) = −1 | i × i = −1 | e and π |
 | the Cauchy's total | equal halves at the corner | 2/π |
 
+The circle, the first of the four, comes out differently, and the difference completes the set. h² + v² = 1 has no π in
+it. In the reader's form, 1/(1 + s²) + s²/(1 + s²) = 1, it is rational in the slope and holds at every direction, so one
+read has it and no horizon need be reached: for the identity itself there is nothing to pay. The cost comes elsewhere,
+and in two grades. The shares themselves are roots, h = 1/√(1 + s²), usually irrational; and how much circle there is,
+the length 2π and the area π, appears only when the four facings are joined and the whole measured.
+
+| who | what it holds of h² + v² = 1 |
+|---|---|
+| the reader | the squares, 1/(1 + s²) + s²/(1 + s²) = 1, at every direction |
+| the writer at work | exact points wherever 1 + s² is the square of a fraction: the Pythagorean triples, s = 3/4 giving h = 4/5, v = 3/5 |
+| the paper | the circle whole: every point, its length 2π, its area π |
+
+Here the corner flips. In the other three it was the working writer's one exact door; on the circle it is the landmark
+a fraction cannot reach. Home and the horizon are exact points, and the triples give exact points as near together as
+one likes, but at the corner h = v = 1/√2. The reader has the corner exactly in squares, ½ and ½; the writer has it as a
+construction, the diagonal of the square, and not as a count. So the four together show three grades of cost, the
+sorting this section began with:
+
+| the grade | what it buys | an example |
+|---|---|---|
+| free, rational in s | the four reader's forms | ½ + ½ = 1 at the corner |
+| a square root, a finite construction | the shares themselves; halving a turn | 1/√2, √2 − 1 |
+| a limit | how much the whole is | π, e |
+
+A square root is not a limit as π is: it is exact as a length made in one step from two lengths, so it is the writer's
+and not only the paper's.
+
 **Classical**; the assignment is a reading. Physics enters
 separately and later, with the first write: a walk made and counted, a thumb given a unit. **A reading**, resting on this
 section's account of the transcendentals.
