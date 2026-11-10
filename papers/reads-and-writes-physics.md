@@ -31,8 +31,8 @@ paint met along them. A law's form often comes from the first half and its value
 
 Sorted this way, several familiar results come apart cleanly. A moving observer's sky is a Möbius map of directions
 (aberration, a read) carrying a payload weighting (Doppler, read from what arrives, its frequency a write); the
-rotation left by two boosts joined, Thomas and Wigner's, is had from three stars' directions alone and belongs to the
-joining, never to one boost: a place. A line's Lorentzian is the heat of a phase's turn, and its width and the decay time it
+rotation left by two boosts joined, Thomas and Wigner's, is inferred from three stars' directions alone and belongs to the
+joining, never to one boost: a map between the looks, not a place. A line's Lorentzian is the heat of a phase's turn, and its width and the decay time it
 answers to are one quantity read two ways. The quasar dipole's expected size is 2β from directions plus a payload term
 read from the catalogue, the payload carrying 60–70% of it. Interference's visibility is bounded by 2hv, the two paths'
 shares, at most 1 at their corner. Each case is checked on published data or in exact arithmetic, with its prediction
@@ -300,7 +300,7 @@ A moving observer's sky is the clearest place in physics where a read and a writ
 
 ### 5.2 The quasar dipole [data]
 
-The boost is read from directions alone only for a census taken whatever the brightness, and every real census is cut at
+The boost is inferred from directions alone only for a census taken whatever the brightness, and every real census is cut at
 a flux. With no cut a moving reader's census is D²/4π, and its dipole is 2β plus terms in β³: Ellis and Baldwin's 2
 (1984) is the directions'. Cut at a flux limit, it is D^(2 + x(1 + α)), with x the counts' slope at the limit and α the
 sources' spectral index, both read from the same catalogue: still ratios, with no rest frequency and no distance in them,
@@ -320,8 +320,9 @@ settle where the dipole comes from. It says which part could be the reader's.
 Collinear boosts add their rapidities. Read on the sky the reason is plain: a boost along one axis is, in the
 stereographic chart centred on that axis, a multiplication z ↦ k·z, a slide of ln z by the rapidity, and slides along one
 line add. A Möbius map fitted to three stars' apparent directions before and after a boost along n by ζ has trace
-2·cosh(ζ/2): the rapidity is read from three directions, with no frequency and no distance. Two boosts along n read
-ζ₁ + ζ₂, and tanh of it is (β₁ + β₂)/(1 + β₁β₂), the velocity law, which is the writer's tanh of the reader's sum.
+2·cosh(ζ/2): the three directions are the evidence, the map is what they fix, and the rapidity is the map's coordinate,
+inferred from its trace with no frequency and no distance (a coordinate of a map between reads, not itself a read).
+Two boosts along n give ζ₁ + ζ₂, and tanh of it is (β₁ + β₂)/(1 + β₁β₂), the velocity law, which is the writer's tanh of the reader's sum.
 
 Boosts along two axes cannot be one slide. Joined, they leave a turn, the Thomas–Wigner rotation (Thomas 1926; Wigner
 1939). Its angle Ω satisfies tan(Ω/2) = ab·sin φ/(1 + ab·cos φ), a = tanh(ζ₁/2), b = tanh(ζ₂/2), φ the angle between the
@@ -334,7 +335,7 @@ a reading in the paper's sense, and it is:
   equals the half-rapidity formula to 10⁻⁵⁹, the triangle's area to 10⁻⁵⁸.
 - **The same from any stars.** Five different seeded triples agree to 4 × 10⁻⁵⁸.
 - **Absent from any single read.** One boost's fitted map has no rotation (below 2 × 10⁻⁵⁹ for nine boosts of three sizes
-  and directions), nor has a collinear pair. The rotation belongs to the joining, a place.
+  and directions), nor has a collinear pair. The rotation belongs to the joining: a map between the looks, with no gap in space, so not a place.
 - **The small loop.** A loop of boosts by ε along n₁, n₂, back and back leaves a rotation of ε²·sin φ to leading order;
   so does the same loop of turns, about the opposite axis: the same leftover of joining, with curvature −1 against +1.
   At the next order they part. The turn loop's leftover is exactly 4·arcsin(sin²(ε/2)·|sin φ|), so ε²·sin φ·(1 − ε²/12),
@@ -654,9 +655,10 @@ It changes no physics. It sorts, and the sort gives four working rules.
 - **Separate what the observer brings from what arrives.** The second test splits a formula into the directions' part
   and the paint's (aberration from Doppler; the dipole's 2 from x(1 + α); Berry's geometric phase from the dynamical).
   The directions' part must be the same whatever is counted; where it is not, part of the effect belongs to what arrives.
-- **Joining is a place.** What no single read carries and the joining of reads does, a rotation left by two boosts, a
-  depth from two standpoints, a duration from two moments, belongs to the join; it is a write only once a unit is
-  carried in.
+- **Joining gives places, orders or maps.** What no single read carries and the joining of reads does belongs to the
+  join: a depth from two standpoints is a place (a gap in space); which read came first is an order; a rotation left by
+  two boosts is a map between the looks, with no gap. None is a write until a unit is carried in. (*Reads and Writes*
+  §1, D7; how a duration from two moments is to be classed is left open there.)
 
 ### 12.2 Open
 

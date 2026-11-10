@@ -50,28 +50,59 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   which turns add; the reader holds the direction itself, [h : v], or its slope s = v/h, and uses no trigonometry (§1,
   "The reader uses no trigonometry").
 - **D2. A read** is the direction: [h : v] in the plane, [h : v : v₂] in space, up on the plane. It is every sweep of the
-  thumb at once, from one standpoint, *home*, at one moment, given whole (§3). It comes with its heat, given, and the
-  paint met along it (§4). One read holds no distance.
+  thumb at once, from one standpoint, *home*, at one moment, given whole (§3). A relation among the directions
+  of one read, the separation of two of them, is of the read. The heat is the read's own measure on its directions,
+  given with them and part of the read, not a further kind (§3). The paint met along a direction accompanies the read
+  and is no part of it (§4). One read holds no distance.
 - **D3. A place** is a gap across: a distance in thumbs, d/H, or one distance against another, d₁/d₂. Scaling the world
   leaves it unchanged, as it leaves a read; but no single read holds it. It needs a second standpoint and the step
-  between them: parallax (§6). V\*/H, a party's true breadth in thumbs, is a place; so is a time to contact counted in
-  the reader's own ticks.
-- **D4. A write** is an amount: the across axis's zero tied to a unit carried in from outside the world, a metre, a
-  second, an agreed notch. Scaling the world moves it. One amount serves every place hung from the same thumb (§7).
-  A change of units is a different operation from scaling the world: it moves every write's number and no place, no read.
+  between them: parallax (§6). V\*/H, a party's true breadth in thumbs, is a place. A place is a relation
+  between standpoints and named things in space; not every number had from two reads is one (§12, O9).
+- **D4. A write** is an amount in a unit carried in from outside the world: a metre, a second, a hertz, an agreed
+  notch. For the geometry it is the across axis's zero tied to a unit, a distance in metres, and one such amount serves
+  every place hung from the same thumb (§7). A payload has writes too: a frequency in hertz, a brightness in watts.
+  Scaling the world in a write's own dimension moves it (D5). A change of units is a different operation from scaling
+  the world: it moves every write's number and no place, no read as the reader holds it (an angle in degrees is the
+  writer's coordinate on a read, and its number follows the writer's choice of degree or radian).
 - **D5. The first test.** Multiply every length in the world by k, the reader's thumb and stride included; the units
-  stay outside the world. What moves is a write. What stays is a read or a place. This is the old line of dimensional
+  stay outside the world. What moves is a write. Among the geometry's quantities, what stays is a read or a place.
+  This is the geometric test, and it
+  sorts the geometry. In general the test is a named scaling, one dimension at a time: multiply every amount of that
+  dimension in the world by k, the world's constants of that dimension included, the unit staying outside. A quantity
+  in another unit is tested by that unit's scaling: a frequency in hertz moves when every time is scaled, and its ratio
+  to a rest frequency does not. Nothing here makes times follow lengths; a test that scales both says so. This is the old line of dimensional
   analysis between the scale-variant and the scale-invariant (Bridgman 1922; Buckingham 1914), a sorting by invariance
   under the scaling group, as Klein (1872) sorts geometries by their groups. **Classical**; the names are ours.
 - **D6. The second test.** Change what arrives, keeping the standpoint and the turn: repaint the world, move the light,
   replace a wall by a row of trees. The directions and their heat stay; the paint changes. The first test does not do
   this work: a probability, or a ratio of two amounts, is unmoved by scaling and is still not a direction. The second
-  test tells a direction from a ratio of payloads.
-- **D7. Joining and recording.** Joining reads, two standpoints or two moments, gives places and orders, not writes. A
+  test tells a direction from a ratio of payloads. It tests a candidate once its standpoint and its turn have been
+  named, as D2 names them before anything arrives; it does not find a read in a bare number, and where no standpoint
+  and turn can be named it cannot be run and nothing is concluded (§11). The direction it keeps is the direction of
+  arrival at the standpoint: light bent on the way, by a lens or by refraction, changes which source paints a
+  direction and moves no direction, and where that source lies is a further inference, the writer's. And the test
+  sorts quantities, not causes: one cause can move both, as a boost moves where a star appears and the colour of what
+  arrives from it (§4, "A moving sky"). The standpoint includes its state of motion where motion bears on what is
+  read: a boost is a change of standpoint, so it is not among the changes of what arrives, and it moves the read. How
+  a relation between two standpoints is to be classed when it is not a distance is open (§12, O9).
+- **D7. Joining and recording.** Joining reads, two standpoints or two moments, can give places, orders or maps, not
+  writes. These are distinct relations, told apart by what each is. A place involves a gap in space (D3). An order is a
+  relation with no cycle: which read is before which. A map carries one read's directions to another's, as a turn of
+  the look or a change of motion does; it has an inverse, and maps compose. An order and a map hold no gap. A map's
+  coordinate, a turn's angle or a boost's rapidity, is a representation of the map, not a further relation. This names
+  the relation being formed; it does not say every relation between reads is one of the three (§12, O4, O9). A
   count, or a mark kept, is how a write is recorded; being an amount in a unit is what makes it a write. A count of
   strides is a whole-number record of a ratio d/stride, a place; the same count with the stride in metres is a write.
   A quantity's kind is what it is, not how it was had: a place is a scale-invariant gap across, usually had by parallax,
-  and a distance in thumbs handed over by another observer is still a place.
+  and a distance in thumbs handed over by another observer is still a place. The kind attaches to the variable, not to
+  its law: a Cauchy law on a direction's slope and a Cauchy law on the quotient of two amounts are two variables with
+  one law, and the law alone does not say which is which. And a read is a direction, not a pairing of a direction with
+  a source: which thing paints a direction is part of what arrives. Likewise a place is a gap to a named thing, not to
+  whatever is met along a direction. What is classified, throughout, is a variable: a quantity said of something named,
+  this direction, that gap, this light's frequency. A relation between two variables is another variable and is put to
+  the same tests; it does not inherit the kind of what it relates. A representation of a variable, its number in a
+  coordinate, a count, a mark kept, has the variable's kind: an angle in degrees and a pixel's index are reads in the
+  writer's coordinate and count. Only a unit carried in makes a write.
 
 **The reader uses no trigonometry.** Readers hold v/h; writers hold angles. Sin, cos, tan and arctan are the writer's: they are defined on the completed turn,
 whose period is π (§2), and evaluating one is a pass over that whole turn. The reader holds the turn open, and works in the
@@ -100,6 +131,20 @@ own space (§4), and D6, not this table, sorts it.
 | a direction [h : v] (up) | no | yes | read |
 | a gap across: d/H, d₁/d₂, V\*/H | no | no: two standpoints and the step | place |
 | the across zero tied to a unit | yes | no | write |
+
+Read, place and write are so the named outcomes of two tests that cross, and the crossing has a fourth box, the
+payload's:
+
+| | the geometry: stays when what arrives changes (D6) | the payload: changes with what arrives (D6) |
+|---|---|---|
+| unmoved by scaling (D5) | a read (one standpoint), with its heat; a place (two, a gap); an order or a map (two, no gap) | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
+| an amount in a unit (D4), moved by its own dimension's scaling | a write: a distance in metres | a write: a frequency in hertz, a brightness in watts |
+
+A write is found in both columns; a read and a place are the geometry's alone; a ratio of payloads is the payload's
+counterpart of a read, unmoved by scaling and not a direction of the geometry. Being unmoved by scaling therefore never
+shows that a quantity is a read. One thing can supply several variables of different kinds: a pixel's value in the
+sensor's unit is a payload's write, its ratio to its neighbour a ratio of payloads, the pixel's position in the grid a
+writer's count of directions.
 
 **The writer, as a vantage.** *The writer* names the vantage that holds everything at once: both signs of every axis,
 the turn completed, the extents in amounts, the unit. Much of what it holds is places and completed joins (the circle
@@ -377,13 +422,16 @@ never tells the routes apart; only what γ tracks can (a distance for the turn a
 a sum), and the boundary's shape. So the turn does not own the Cauchy; it is the reader's route to it. "Find the turn" is,
 more generally, "find the z". A fat tail with no z is not harmonic measure by any route. **Checked** (CRT); classical.
 
-**How far apart two standpoints are: a place.** The standpoints z = m + iγ form the hyperbolic plane, and the family
+**How far apart two standpoints are.** The standpoints z = m + iγ form the hyperbolic plane, and the family
 carries it as its measure of distinguishability: the Fisher metric of C(m, γ) is (dm² + dγ²)/(2γ²), half the Poincaré
 metric, and the divergence between two members is 2·ln cosh(d/2), d their Poincaré distance in the upper half-plane, the one with
 ds² = (dm² + dγ²)/γ² (Chyzak and Nielsen give
-the closed form). Every real Möbius map leaves it as it was, scaling among them; it joins two standpoints. So it is a
-place (D3): unmoved by scaling, held by no single read. At one foot the distance is |ln r| for heights in the ratio r,
-the gap across of §2; standing higher on both sides only makes them harder to tell apart. **Checked** (FRG); classical.
+the closed form). Every real Möbius map leaves it as it was, scaling among them; it joins two standpoints. Where the two
+differ in position, a foot and a height over one line, it is a place (D3): unmoved by scaling, held by no single read,
+a gap in space. At one foot the distance is |ln r| for heights in the ratio r, the gap across of §2; standing higher on
+both sides only makes them harder to tell apart. The same distance between two standpoints at one position that differ
+by a boost is the rapidity (§4), and there it is no place: no gap in space lies between them, and the number is the
+coordinate of a map (D7). The formula is one; what it is said of decides the kind. **Checked** (FRG); classical.
 
 **Where the heat comes from.** The read is a heat map: a continuous weight over its readings, with nothing counted in it.
 The measure is uniform by solid angle, every direction of the hemisphere alike, so by angle there is no heat; the heat is
@@ -501,10 +549,15 @@ is unchanged by boosts; the uniform one is unchanged by turns, and boosts carry 
 changes: the Doppler factor D = √(1 − β²)/(1 − β cos θ′) scales each photon's energy and rate, a weighting of the
 payload that moves no direction. For a sky uniform in its frame, counting total power, the D⁴ brightening ahead is D² of
 directions crowding (the heat) and D² of payload. On ξ = −ln tan(θ/2), the pseudorapidity, aberration is a slide by η,
-so directions alone give the rapidity, with no clock, no frequency and no speed of light, provided every source is counted
-whatever its brightness and the sources are uniform in their frame. Taken so, from one look, the rapidity is a read: the
-slide of one read's median against where the premise puts it, unmoved by scaling, with no second standpoint. Taken as
-the sky's median before a boost against after, it joins two looks: a place. The speed in metres a second needs c carried in, and D read as a line's shift needs the
+so one look can give evidence of the observer's boost, with no clock, no frequency and no speed of light, provided every
+source is counted whatever its brightness and the sky is assumed uniform in its own frame. The rapidity inferred so is
+not itself a read. The read is the sky's directions as they arrive; the premise is about where the sources lie, which
+is part of what arrives; the inference compares the two, and what it yields is the coordinate of a map between the
+observer's standpoint and the sky's assumed rest frame (D7; §12, O4). That it was had from one look does not change
+the kind of thing it is, and the paint that served as evidence is not the map. The inference is conditional on the
+premise: directions alone do not give the sky's rest frame, nor show that such a frame is the only one. Taken as the
+sky's median before a boost against after, the same coordinate is had by joining two looks at one position, with no gap
+in space: a map again, not a place. The speed in metres a second needs c carried in, and D read as a line's shift needs the
 line's rest frequency: both writes. **Classical**; the sorting is a reading.
 
 ## 5. Near and far
@@ -646,8 +699,11 @@ distance, the reading v/h of the line to its edge. One read holds one x; that x 
 its rate of growth, x/ẋ, is the time until the thing arrives if it keeps coming as it comes: the breadth, the distance
 and the speed all drop out. Lee (1976) proposed that a driver braking uses exactly this: brake so that the time to
 contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car stops at the thing, since at τ̇ = −½ the distance
-it needs to stop is the distance it has. Sorted: τ counted in the reader's own ticks, and τ̇, ticks per tick, are places,
-unmoved by scaling or by any change of clock, and held by no single read; τ in seconds is a write. One stream cannot tell
+it needs to stop is the distance it has. Sorted: from two reads a tick apart the number is x₂/(x₂ − x₁) = d₁/B, the thing's distance over the step between
+the two reads. That is a ratio of two distances, unmoved by scaling and held by no single read, and so far it is D3's
+gap across with nothing temporal in it. Read as a time, the ticks still to come, it adds a premise no read holds: that
+the steps go on alike. Whether a count of ticks to a prospective event is a place is left open (§12, O9); τ in seconds
+is a write. One stream cannot tell
 a thing coming nearer from a thing growing where it stands; a neighbour at the same depth, read at once, tells them apart,
 approach moving both readings and growth one. A speed in metres a second is a write twice over. **Classical** (Lee);
 the sorting is ours.
@@ -899,9 +955,9 @@ what a closed loop looks like to the writer. **Checked** (BRL; the trace reading
 is a slide of the same pseudorapidity ξ, so their rapidities add and the velocity law, (β₁ + β₂)/(1 + β₁β₂), is the
 writer's tanh of the sum. Along two axes no single coordinate carries both slides, and the join leaves a turn: the
 Thomas–Wigner rotation, tan(Ω/2) = ab·sin φ/(1 + ab·cos φ), a and b the tangents of the half rapidities and φ the angle
-between them, the area of the velocity triangle in hyperbolic space. It is read from directions alone: three stars before
-and after fix the map of the sky, and its turn is the rotation, from any three stars, with no frequency and no distance.
-No single boost has any; the turn belongs to the join, a place. For a small loop it is ε²·sin φ, the size of the two-turn
+between them, the area of the velocity triangle in hyperbolic space. It is inferred from directions alone: three stars before
+and after are the evidence, they fix the map of the sky, and its turn is the rotation, from any three stars, with no frequency and no distance.
+No single boost has any; the turn belongs to the join, a map between the two looks (D7), not a place. For a small loop it is ε²·sin φ, the size of the two-turn
 loop's leftover, about the opposite axis: curvature −1 against +1. At the next order they part: the turn loop's
 correction is −ε²/12 at every angle, the boost loop's (1/3 + cos φ/4)·ε². The split does not derive the Lorentz group:
 it enters with the premise that a change of standpoint by motion keeps the angles between nearby stars, so that every such
@@ -1343,8 +1399,21 @@ before the data can show where it is not. **Checked** (TCF; killed).
   unknowable against the universe, knowable across one hemisphere, known only held or written (§1, "Four things").
   *And (R798–R801):* the completed joins are the paper's, both hemispheres at once with no facing; four identities
   state them, and each has a reader's form about the exchange and the corner (§9, "Four identities, one exchange").
-- **O4. Orders.** *Closed (R792):* an order of reads is its own kind, a joining with no gap in it, not a place; D7 lists
-  places and orders side by side.
+- **O4. Joinings with no gap.** *Orders (R792):* an order of reads is a joining with no gap in it, not a place.
+  *Widened, and open (R825, R826):* there are at least two such joinings, and they are different structures. An order is
+  a relation with no cycle. A map carries one read's directions to another's; it has an inverse and can cycle (a turn
+  by the corner's slope returns after four), so it is no order, and the order of reads is something a composition of
+  maps takes, not the composition (two quarter turns of space joined in the two orders land 120° apart, §7). Keeping
+  order neither makes a map nor is needed for one: s ↦ s³ keeps order and is only a change of chart of one read; the
+  exchange s ↦ 1/s reverses it. Not every function on directions is a map between reads. A change of chart is a
+  representation (D7); a lens or the air changes what arrives (D6); a map between reads is induced by a change of
+  standpoint that is not a step. That such maps are the Möbius maps is conditional: it follows from the premises of O8
+  (given Lie's classification), not from reading alone. Möbius maps keep every cross ratio, and classically a map
+  keeping the cross ratio of every four distinct directions is Möbius; the cases checked (ORD: nine maps, six slopes)
+  illustrate that and prove nothing. The heat under a map: each read has its own heat, the same at every standpoint,
+  and no map changes it; a map's stretch at a direction is the first read's heat carried by the map against the second
+  read's own there, 1 everywhere for a turn, not for a boost. Open: whether orders and maps exhaust the joinings with
+  no gap, and whether places, orders and maps exhaust the relations between reads. Neither is claimed.
 - **O5. Do readers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.
 - **O6. A second test that can fail.** "Find the z" has passed once in data (LIGO) and failed once (the seeds). A second
   domain, where the turn can be named before the data, would show whether the rule sorts.
@@ -1357,6 +1426,33 @@ before the data can show where it is not. **Checked** (TCF; killed).
   first, since two of its steps are no single step once the speed is dropped. Two of the four carry the physics: that what
   no read can hold makes no difference to what is read (the light postulate stated for reads), and that a place is a
   finite list of numbers. Neither is shown to follow from reading. A reconstruction, not an explanation.
+- **O9. The Doppler factor, and relations between standpoints.** Three things are to be kept apart. The read is the
+  direction of arrival from a standpoint, its state of motion included. The relation between two standpoints, their
+  relative motion among it, is described by the rapidity (§4). The ratio of the frequencies received at the two is a
+  relation between payloads, and it is what is measured. The Doppler factor is fixed by the second and the direction of
+  arrival; the measured ratio equals it and is still a relation between payloads. So a quantity can be unmoved by
+  scaling, unmoved by a change of what arrives, and neither a direction nor a distance: D3's place is a gap across, and
+  the factor is no distance, so it is not put there. Whether relations between standpoints need a name of their own,
+  beside places and orders (O4), is open; D3 stands as it is until that is settled. Found by a blind classification
+  (BCL, run 2).
+  *What makes a spatial gap a place, and two cases tried against it (R823).* A candidate, not adopted: a place is a
+  ratio of two distances between points in space, standpoints and named things, at least one of them a step between
+  standpoints. A time to contact had from two reads a tick apart is exactly d₁/B, the distance over the step, so the
+  number meets the candidate as it stands; what does not is its reading as a time, which needs the further premise that
+  the steps go on alike, a statement about reads not yet made. The rapidity does not meet it: it is had from two reads
+  at one position, by the directions alone (§4), with no step in space, and what it relates the two reads by is a map
+  on directions, as a turn does. To call it a place would change what "a gap across" means. So the time to contact is
+  taken out of D3's list until its temporal reading has a stated reason, and the rapidity and the Doppler factor stay
+  unclassed.
+  *Since (R824–R826).* The relation between two standpoints at one position is a map (D7, O4), and the rapidity is the
+  writer's coordinate on it, as an angle is on a turn. The Doppler factor is two variables with one value: the map's
+  stretch at a direction, which is the map's and unmoved by what arrives, and the ratio of the frequencies received,
+  a ratio of payloads. That they are equal is a premise of physics, not read (MBR). *Closed (R827):* §4 had said
+  that from one look, given a sky uniform in its own frame, the rapidity is a read. It is not: what can be inferred
+  from a read is one thing, and what kind of thing the inferred quantity is, another. The look is a read, the
+  uniformity a premise about what arrives, and the rapidity inferred the coordinate of a map; §4 now says so. Not
+  settled by this: whether the rapidity is always recoverable from one sky, or the assumed rest frame unique. The time
+  to contact stays out of D3.
 
 ## Where the ideas come from
 

@@ -7410,6 +7410,104 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R828** (10 Nov; Tom: "proceed with your recommendations."): the two items left by R827. (1) The physics paper's
+  closing list stands as changed ("Joining gives places, orders or maps"; a duration from two moments left open).
+  (2) *Reads and Writes* §2 "How far apart two standpoints are" no longer carries ": a place" in its heading: the
+  Poincaré distance between standpoints is a place where the two differ in position (a foot and a height over one
+  line, a gap in space), and the same distance between two standpoints at one position that differ by a boost is the
+  rapidity, a map's coordinate and no place; one formula, the kind decided by what it is said of (R823). O4 open.
+- **R827** (10 Nov; Tom: "the sentence "from one look, the rapidity is a read" should be revised. Rapidity is a
+  coordinate representing a map between reads, not itself a read."; "an important distinction here between what can be
+  inferred from a read and what kind of thing the inferred quantity represents."): *Reads and Writes* §4 "A moving sky"
+  now says one look, with the sky assumed uniform in its own frame, gives evidence of the boost; the rapidity inferred
+  is the coordinate of a map between the observer's standpoint and the sky's assumed rest frame, not a read and not
+  the payload (the paint is evidence, not the map); the inference conditional on the premise. O9's flag closed. Not
+  established: that the rapidity is always recoverable from one sky, or the rest frame unique. D1–D7 unchanged; O4
+  stays open on exhaustiveness. Older entries that say "the rapidity read from directions alone" (R437, R438, R609)
+  describe text before this.
+  *Then* (Tom: "bring all three passages under R827 on the same branch"; "Directions can provide evidence for a map
+  without making the map's coordinate a read."; "Do not weaken the test's result; correct the description of what the
+  result establishes."): the same correction across the project. Essay 7 (the one-look rapidity inferred, the map's
+  coordinate; the Thomas–Wigner rotation fixed by three stars' directions), essay 18 and *Reads and Writes in Physics*
+  §5.3 (three directions the evidence, the Möbius map what they fix, the rapidity its coordinate from the trace) and
+  §5.2 ("inferred"), essays 9 and 13, `physics.md`'s dictionary row, and the notes on `boost-sky.html`,
+  `plane-sphere.html` and two `demos.html` cards. *Reads and Writes* §7: the Thomas–Wigner turn "inferred from
+  directions alone", and "the turn belongs to the join, a place" corrected to a map (it had been missed by R826's
+  check). *Reads and Writes in Physics* said the rotation "belongs to the joining, a place" in three
+  passages (abstract, §5.3, the closing list's "Joining is a place"); each now says a map, and the list "Joining gives
+  places, orders or maps", a duration from two moments left open as in the paper. TWG's results unchanged. Not touched: SPN's own older entries, `v-and-h.md` and the archive, as records.
+- **R826** (10 Nov; a ruling pasted by Tom: "yes to the broader family of "joinings with no gap," but not yet to the
+  proposed D7 sentence exactly as written"; "Joining reads can give places, orders, or maps."; "I would not mark O4
+  closed"; "proceed with the D7/O4 revision as a draft."): *Reads and Writes* D7 now says joining reads can give places,
+  orders or maps, distinct relations told apart by what each is (a gap in space; a relation with no cycle; a function
+  carrying one read's directions to another's), a map's coordinate (angle, rapidity) a representation, and that not
+  every relation between reads need be one of the three. §12 O4 is "Joinings with no gap", widened and open: orders
+  and maps distinct; the Möbius form conditional on O8's premises; the cross-ratio cases an illustration; each read's
+  own heat unchanged by any map, the stretch one read's heat carried against the other's. O9 gains the map, the
+  rapidity as its coordinate and the Doppler factor as two variables equal by a premise. The consistency check
+  (`plans/ord-plan.md`) changed one passage: §4's "it joins two looks: a place" is now a map. Flagged, not changed:
+  §4's "from one look the rapidity is a read" rests on where the sources lie, which is what arrives. No fourth kind;
+  exhaustiveness not claimed.
+- **R825** (10 Nov; a ruling pasted by Tom: "treat "a map between reads" as the clearer name for the existing kind of
+  orders, not as a fourth kind—provisionally"; "test orders against three cases"; "The third case is decisive."): ORD
+  (`plans/ord-plan.md` + `runs/ord/ord.py`, exact, predictions N1–N6 first, none killed; one side check outside the
+  plan failed by my choice of numbers). A turn and a boost are not orders: an order is a relation with no cycle, a map
+  has an inverse (a turn by slope 1 returns in four, a boost k is undone by 1/k). Order and map are two variables: the
+  same two quarter turns of space joined in the two orders land 120° apart, so the order is what a composition takes.
+  Keeping order is neither needed nor enough (s ↦ s³ keeps order and moves the cross ratio; the exchange keeps the
+  cross ratio and reverses order). A general function on directions is a change of chart (a representation), a change
+  of what arrives (D6), or a map between reads, induced by a change of standpoint that is not a step; by SRB's
+  premises those are Möbius, their trace the cross ratio. So no fourth kind, but maps are not orders renamed: both are
+  members of O4's "a joining with no gap in it". Proposed, not made: D7 "places, orders and maps". Heat: each read's
+  own heat is unchanged by any map; the stretch is one read's heat carried by the map against the other's own
+  (corrects MBR's "the heat is moved"). D1–D7 unchanged.
+- **R824** (10 Nov; a ruling pasted by Tom: "keep the time-to-contact number out of D3 for now, and proceed with the
+  counterexample pass on maps between reads"; "the objective is to discover whether the framework needs a fourth
+  kind"): MBR (`plans/mbr-plan.md` + `runs/mbr/mbr.py`), predictions first, exact in Gaussian rationals, nothing
+  killed. On the axis no direction moves and the stretch is k, so the relation is the map, not a displacement; one
+  ratio comes from several maps; a turn's stretch is 1 everywhere, a boost's runs k to 1/k; a step is no map on
+  directions (one direction becomes two by distance), which is why it places; stretches compose only through the map,
+  D_{g∘h}(z) = D_g(h z)·D_h(z); η is to a boost what an angle is to a turn. The criterion found: a relation between two
+  reads is a map between reads when it is a function on directions that is the same in every world. The Doppler
+  factor is two variables with one value, the map's stretch and a ratio of payloads, equal by SRB's premise (P).
+  Whether that is a fourth kind, or D7's "orders" under a better name, is left to Tom. D1–D7 unchanged; the time to
+  contact stays out of D3.
+- **R823** (10 Nov; a ruling pasted by Tom: "I would move the time-to-contact case out of place, alongside the unresolved
+  Doppler factor"; "a place is a relation between standpoints, not simply any result that uses two observations";
+  "state whether the classification applies to a quantity, a relation between quantities, or a representation of
+  either"; "check angular separation and heat under that same rule"; "keep both PRs as drafts"): one pass through
+  D1–D7. D2: a relation among directions of one read is of the read; the heat is the read's own measure, part of it,
+  not a further kind; the paint accompanies and is no part. D3: the time to contact taken out of its list (supersedes
+  that clause of R788); a place a relation between standpoints and named things in space. D7: what is classified is a
+  variable; a relation between variables another variable, put to the same tests; a representation has its variable's
+  kind; a place a gap to a named thing. §6 "Motion, from reads": τ from two reads is exactly d₁/B (checked in exact
+  fractions), a ratio of two distances; its reading as a time adds the premise that the steps go on alike. §12 O9: a
+  candidate criterion for a place (a ratio of two distances between points in space, one a step between standpoints),
+  not adopted; the number τ meets it, the rapidity does not (no step in space; a map on directions, as a turn).
+  Claude's finding, for Tom's ruling: so τ's number is a place by the strict reading and only its name as a time is
+  not. Both PRs stay drafts.
+- **R822** (10 Nov; ChatGPT's ruling on BCL run 2's open case, pasted by Tom: "yes, the observer's motion is part of
+  the standpoint, but the Doppler factor should not simply be classified as a join of two reads"; "leave D3 unchanged
+  for the moment"; "rerun the revised grid before merging either PR"): D6 says the standpoint includes its state of
+  motion, a boost a change of standpoint, not a change of what arrives. The Doppler factor recorded as an unresolved
+  case, *Reads and Writes* §12 O9: the read (direction of arrival), the relation between standpoints (the rapidity) and
+  the relation between payloads (the measured frequency ratio) kept apart; the factor not a place, since no distance;
+  whether relations between standpoints need their own name open. D3 unchanged. BCL run 3 on the revised text.
+- **R821** (10 Nov; ChatGPT's reply to BCL run 1, pasted by Tom; Claude's drafts; Tom: "yes, second brach"): the
+  definitions made one classification. D4: a write is an amount in a unit carried in (a metre, a second, a hertz); for
+  the geometry the across zero tied to a unit; a payload has writes too. D5: the geometric test scales lengths; in
+  general a named scaling, one dimension at a time, constants included, the unit outside; nothing makes times follow
+  lengths. D7: the kind attaches to the variable, not its law; a read is a direction, not a pairing with a source.
+  After the table, the two tests crossed: geometry or payload (D6) by unmoved or an amount in a unit (D5, D4); read and
+  place the geometry's, a write in both columns, the fourth box "a ratio of payloads". So read, place and write are
+  named outcomes of two crossed tests, not three fundamental kinds; being unmoved by scaling never shows a read. The
+  work is on a second branch, `claude/rw-classification` (Tom's permission), apart from PR #340.
+- **R820** (10 Nov; ChatGPT's first classification stress test of *Reads and Writes*, pasted by Tom; "Yes—make the three
+  small edits and run the blind classification exercise"): D6 scoped in three sentences. It tests a candidate once its
+  standpoint and turn are named (D2's order); it does not find a read in a bare number. The direction it keeps is the
+  direction of arrival; bending changes which source paints it, and the source's position is a further inference. It
+  sorts quantities, not causes (a boost moves both). The camera paragraph and the angular-size note not taken. BCL
+  (`plans/bcl-plan.md`, `runs/bcl/`): a fresh agent given only D1–D7 and ten cases, predictions first.
 - **R819** (10 Nov; Tom: "update the essays and demos"): R818 carried out, no new claim: essay 6 §4 ("The place never
   needed π"), essay 15 §5 (parallax beside the Gaussian). Demos, no script changed: a note on `parallax.html` (what
   needs π) and a sentence on its `demos.html` card.
