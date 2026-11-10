@@ -82,7 +82,11 @@ other's breadth, stands.
   line of sight, is the Cauchy whatever the apple's shape, which is only the paint. And the hand holds the back while the
   eye holds the front, so in the hand the apple's V is **known**. This is the writing above.
 - *The human draws a circle on the paper.* The view of both hemispheres is made, not seen: a mark holding both halves at
-  once. The apple reads and is read; only the human makes the paper.
+  once, with no facing. The two facings have the writer's numbers 2/π (inscribed, approached) and π/2 (central, reached);
+  the paper has their product, 1. The apple reads and is read; only the human makes the paper.
+
+The human is all four at the same time, not by turns: it reads the universe, faces the apple, and holds as paper what it
+holds in the hand or draws.
 
 V is knowable, not known: the inscribed sweep approaches its end, the central sweep reaches it at a point, and only a
 hand or a mark holds it whole.
