@@ -7410,6 +7410,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R819** (10 Nov; Tom: "update the essays and demos"): R818 carried out, no new claim: essay 6 §4 ("The place never
+  needed π"), essay 15 §5 (parallax beside the Gaussian). Demos, no script changed: a note on `parallax.html` (what
+  needs π) and a sentence on its `demos.html` card.
 - **R818** (10 Nov; Tom: "lets apply the idea to parallax"; "add and merge"): parallax in the three tiers. Two slopes
   read a counted step B apart, measured inward off the line between: 1/(d/B) = 1/s₁ + 1/s₂, no angle, no π (3 and 6
   give 2 steps). The reader: one slope a read, nothing of parallax. The writer at work: the place in steps, rational,

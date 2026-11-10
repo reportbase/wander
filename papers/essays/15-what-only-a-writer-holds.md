@@ -214,6 +214,11 @@ enters it through Wallis's product, π/2 = (2·2)/(1·3) × (4·4)/(3·5) × …
 holds only the direction of a pair of such amounts, which is the Cauchy. So the Cauchy is kept by order, its exact facts
 the median and the equal halves; the Gaussian is kept by sums, its exact facts the mean and the variance.
 
+Parallax is the case that runs the other way: the writer at work is exact, and the limit adds only units. Two slopes
+read a counted step B apart give the depth by 1/(d/B) = 1/s₁ + 1/s₂, a fraction from fractions, and the corner circle
+is s₁·s₂ = 1. π enters only where a slope is made an angle, which is why the parsec, 648000/π astronomical units,
+carries a π and the place in steps carries none (essay 6 §4).
+
 It is also where the history of the two numbers met. Euler showed e irrational in 1737; Lambert showed π irrational in
 1761. Liouville (1844) built the first numbers proved transcendental, made to order by an infinite series whose terms
 shrink too fast for any polynomial to catch. Hermite (1873) proved e transcendental. Lindemann (1882) proved π

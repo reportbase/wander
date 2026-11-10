@@ -152,6 +152,17 @@ Repeating the reads shows the order again. Averaging the reciprocal depths gains
 Cauchy of the same scale; the median of the depths narrows. Parallax is the Cauchy's own composition carried across two
 standpoints, and the baseline is the one amount in it.
 
+**The place never needed π.** State parallax in slopes and no angle is left in it. Two standpoints a counted step B
+apart each read the target's slope off the line between them, s₁ and s₂, measured inward; the depth d off that line is
+given by 1/(d/B) = 1/s₁ + 1/s₂. Slopes 3 and 6 put the target exactly 2 steps off. A writer at work, who counts the step
+and joins the two reads, has the place in steps exactly, in fractions; neither read alone holds any of it. The corner
+circle is the two slopes reciprocal, s₁·s₂ = 1, known without counting the step: above 1 the target is inside, below 1
+outside. On it d/B = s/(1 + s²): slopes 2 and ½ give the point (1/5, 2/5), a 3-4-5 triangle. The error's curve is
+rational as well, (k + 1/k)/2, the same at k and 1/k; cosh(ln k) is the writer's smooth name for it. π comes in only
+where a slope is turned into an angle: the parallax angle in arcseconds, the two angles that sum to π, the π/2 at the
+corner, the parsec's 648000/π astronomical units. The depth is rational, the range along a ray a square root, the
+angle a limit. What never needed π is the place in steps; the step in metres is still the one amount carried in.
+
 *Demo: parallax from the corner (the bell; round at the corner, stretched elsewhere).*
 
 ---
