@@ -472,6 +472,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  ORD (`plans/ord-plan.md` + `runs/ord/ord.py`, 10 Nov; SPN R825; a ruling pasted by Tom: "test orders against three
+  cases"): exact, N1–N6 not killed. A turn and a boost are maps, not orders (an order has no cycle; a map has an
+  inverse); order and map are two variables (two quarter turns of space in two orders, 120° apart); a general function
+  on directions is a change of chart, a change of what arrives, or a map between reads (a change of standpoint that
+  is not a step; Möbius by SRB, its trace the cross ratio). No fourth kind; orders and maps both "a joining with no
+  gap" (O4). Proposed, not made: D7 "places, orders and maps". Each read's own heat is unchanged by any map. D1–D7
+  unchanged.
   MBR (`plans/mbr-plan.md` + `runs/mbr/mbr.py`, 10 Nov; SPN R824; a ruling pasted by Tom: "proceed with the
   counterexample pass on maps between reads"): exact, nothing killed. A turn and a boost are maps on directions, the
   same in every world; a step is not (it places). The stretch belongs to the map and composes through it; the Doppler

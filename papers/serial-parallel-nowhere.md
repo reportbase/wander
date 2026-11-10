@@ -7410,6 +7410,19 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R825** (10 Nov; a ruling pasted by Tom: "treat "a map between reads" as the clearer name for the existing kind of
+  orders, not as a fourth kind—provisionally"; "test orders against three cases"; "The third case is decisive."): ORD
+  (`plans/ord-plan.md` + `runs/ord/ord.py`, exact, predictions N1–N6 first, none killed; one side check outside the
+  plan failed by my choice of numbers). A turn and a boost are not orders: an order is a relation with no cycle, a map
+  has an inverse (a turn by slope 1 returns in four, a boost k is undone by 1/k). Order and map are two variables: the
+  same two quarter turns of space joined in the two orders land 120° apart, so the order is what a composition takes.
+  Keeping order is neither needed nor enough (s ↦ s³ keeps order and moves the cross ratio; the exchange keeps the
+  cross ratio and reverses order). A general function on directions is a change of chart (a representation), a change
+  of what arrives (D6), or a map between reads, induced by a change of standpoint that is not a step; by SRB's
+  premises those are Möbius, their trace the cross ratio. So no fourth kind, but maps are not orders renamed: both are
+  members of O4's "a joining with no gap in it". Proposed, not made: D7 "places, orders and maps". Heat: each read's
+  own heat is unchanged by any map; the stretch is one read's heat carried by the map against the other's own
+  (corrects MBR's "the heat is moved"). D1–D7 unchanged.
 - **R824** (10 Nov; a ruling pasted by Tom: "keep the time-to-contact number out of D3 for now, and proceed with the
   counterexample pass on maps between reads"; "the objective is to discover whether the framework needs a fourth
   kind"): MBR (`plans/mbr-plan.md` + `runs/mbr/mbr.py`), predictions first, exact in Gaussian rationals, nothing
