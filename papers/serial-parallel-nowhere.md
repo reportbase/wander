@@ -7410,6 +7410,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R789** (10 Nov; a ChatGPT referee read of the R788 rewrite, 8.4/10 as an internal synthesis, pasted; Tom: "yes", to
+  the narrow pass proposed): eight small edits to *Reads and Writes*, no ruling changed: "checked" means right under its
+  assumptions, not that they fit a physical system; D4 a change of units moves every write's number and no place; D7 a
+  quantity's kind is what it is, not how it was had (a place handed over is still a place); the §1 table sorts the
+  geometric quantities, a ratio of payloads at one standpoint a direction in the payload's space, sorted by D6; a vector
+  mean of directions well defined once an embedding is chosen, the writer's step; "the reader never sees a shape" scoped
+  to a single read, shape from structure in the paint or further standpoints; d in the Fisher–Rao divergence the Poincaré
+  distance; the quasar dipole's residual marked provisional. Not taken: a second layer of claim marks (the classical /
+  checked / reading marks and §12 do it) and moving the race point higher (already in the abstract and §1). Its "half-turn
+  reading s = tan θ" is the quarter turn's. Response in `plans/rw-review-3.md`.
 - **R788** (10 Nov; Tom, after an evaluation of *Reads and Writes* version 17 and its breath: "the write is the scale
   variant companion to the read."; "seems to me that ehule'rs captures this idea nicely. lets build out from that equation,
   to settle on definitions."; "option 1"; then "proceed with 1 and 2", to archiving the paper and outlining a rewrite):
