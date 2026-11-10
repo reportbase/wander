@@ -438,6 +438,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R800 (10 Nov; Tom: "what falls out when we refactor them togeether?", "yes and merge"): the four one equation, the
   circle divided by the thumb, its heat h², gathered to −1, closed to 1; the reader the heat, the paper the total; the
   Gaussian (dθ/2π)·(e^(−r²/2) r dr), turn times payload, the division taking e and leaving π. O3; essay 15 §5.
+  R801 (10 Nov; Tom: "lets look for connections between the four equations and the reader/writer framing.", "yes"):
+  **four identities, one exchange**: each of the four has a reader's form rational in s about s ↔ 1/s and the corner
+  (1/(1 + s²) + s²/(1 + s²) = 1; w(s)·w(1/s) = −1; s·(1/s) = 1; the heat below the corner equals the heat above); π the
+  price of turning "equal halves" into "how much". *Reads and Writes* §9 "Four identities, one exchange"; O3's R798–R800
+  text moved there. The same PR: the ratio of normals' location from correlation, the crossing's distance, V in the hand.
+  R802 (10 Nov; Tom: "reading = 2/PI   writing = PI/2", then "yes, go with your recommendations and merge"): **2/π
+  measures the read, π/2 the walk**: 2/π the thumb's mean share over the quarter turn, what turning sees, approached; π/2
+  the quarter arc in thumbs, what walking counts, reached at −1: a place (D3), a write once the thumb has a unit (D4);
+  their product 1 the paper, the two held together. Both stay the writer's arithmetic (R717); what is sorted is the act
+  each measures. Refines R798's table (both were the facings', the writer's number 1). *Reads and Writes* §9 "Reading is
+  2/π; walking is π/2", §1's "Four things" table (a column for the act) and "Words used throughout".
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

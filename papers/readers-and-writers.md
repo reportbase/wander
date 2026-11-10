@@ -125,23 +125,24 @@ median and the absence of any mean are what a read with no breadth in it is.
 - *The human holds the apple and turns it.* The turn makes the Cauchy: a uniform turn, read as the slope v/h against the
   line of sight, is the Cauchy whatever the apple's shape, the shape only the paint. The hand holds the back as the eye
   holds the front, so both hemispheres are in reach and the turn is known; holding is the writer's, and in the hand
-  the apple's V is **known**.
+  the apple's V is **known**: held whole. Its exact amount in a unit is still a write, the limit of §6.
 - *The human draws a circle on the paper.* The paper is both hemispheres at once, with no facing: the writer's vantage
   itself, made, not seen, a mark holding both halves together, V = H at one length, π held whole. It has neither sweep's
   number. π/2 and 2/π belong to the two facings, the central reached at a point and the inscribed approached; the paper
   has their product, 1, the thumb in thumbs, what the facings give when held together without a facing.
 
-| | hemispheres | facing | V | the writer's number for it |
-|---|---|---|---|---|
-| inscribed, toward the universe | one | home to a horizon | unknowable | 2/π, approached |
-| central, toward the apple | one | across, to a rim | knowable | π/2, reached |
-| the paper | both at once | none | known | 1 |
+| | hemispheres | facing | V | the writer's number for it | the act it measures |
+|---|---|---|---|---|---|
+| inscribed, toward the universe | one | home to a horizon | unknowable | 2/π, approached | reading: what turning sees |
+| central, toward the apple | one | across, to a rim | knowable | π/2, reached | walking: the arc counted in thumbs, a place; a write with a unit |
+| the apple held and turned | both, in reach | turned, the turn known | known, held | the turn's Cauchy | holding |
+| the paper | both at once | none | known | 1 | the read and the walk held together |
 
 The human is all of these at the same time, not by turns: it reads the universe, faces the apple and is faced by it, and
 what it holds in the hand or draws it holds as paper. The apple has the facings and never the paper. So π/2 · 2/π = 1 is
 not two parties meeting but one observer's two facings held at once, and the 1 is its own thumb given back.
 
-V is knowable, not known. The inscribed sweep approaches its end, the central sweep reaches it at a point, and only a
+Faced, V is knowable, not known. The inscribed sweep approaches its end, the central sweep reaches it at a point, and only a
 write holds it whole; parallax narrows the band toward it and never closes it (§6). Euler's identity is the hinge: the
 turn's end, endless in the reader's chart (s → ∞), is one named point, −1, in the central one, and a named point is what
 can be carried onto the paper.
@@ -160,7 +161,8 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
 - A reader has a vantage, never a shape: no circle, no sphere, no body.
 - *Heat* and *paint* for what the read has and what it meets; *address* only as a computing metaphor or for a count of K
   places at the heat's quantiles (§5).
-- π/2, 2/π, π and the one-length circle are the writer's measures of the reader's sweep (§9).
+- π/2, 2/π, π and the one-length circle are the writer's measures of the reader's sweep; 2/π measures the read, π/2 the
+  arc walked (§9, "Reading is 2/π; walking is π/2").
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
 
 **Continuous and discrete.** A read is continuous: a turn passes through every direction between two, and nothing in it
@@ -314,8 +316,9 @@ Derived from what is held, it comes in three forms.
   C(m, d), quartiles m ± d. In metres both parameters are writes. The angles follow the uniform turn whatever d is; the
   scale appears only when the landings are laid on a ruler along the shore.
 
-The ratio of two normal amounts gives the same three: equal spreads (the first), spreads σ₁ and σ₂ (scale σ₁/σ₂), means
-away from zero (a location).
+The ratio of two zero-mean normal amounts gives the same three: equal spreads (the first), spreads σ₁ and σ₂ (scale
+σ₁/σ₂), and the two correlated by ρ (a location, ρσ₁/σ₂, the scale then (σ₁/σ₂)·√(1 − ρ²)). With means away from zero
+the ratio is no Cauchy at all.
 
 | form | what is held | scale | location | kind |
 |---|---|---|---|---|
@@ -474,8 +477,8 @@ sorting is a reading.
 obeys (x − α)/β = tan θ, α the lamp's foot on the shore and β its distance. The angles are the lamp's directions, laid
 evenly whatever shore there is; the landings follow a Cauchy because the shore is straight; within each flash the path
 to the shore cancels. The lamp's own corner, the flash halfway through the quarter turn, lands at the foot plus one
-distance only if the shore is measured at the sea's own scale; drawn on a ruler c times the sea's, the halfway flash lands
-at arctan c. To read β from the landings, take half the spread between the quartiles, never the mean. In metres β is a
+distance only if the shore is measured at the sea's own scale; read on a ruler whose unit is c times the lamp's distance, the landing
+that reads 1 is the flash at the writer's arctan c, not the halfway one. To read β from the landings, take half the spread between the quartiles, never the mean. In metres β is a
 write: it needs the shore found and a ruler laid along it. The lamp is the read, the shore the line where V comes in as
 the scale. **Classical.**
 
@@ -508,8 +511,9 @@ line's rest frequency: both writes. **Classical**; the sorting is a reading.
 
 **The crosshairs.** Cross the thumbs (§8) over whatever is looked at, the look running down their diagonal. Where they
 cross is the corner: the thing there reads one thumb along each thumb, every pair alike, v/h = v₂/h = 1, and it is drawn
-one thumb wide. Along the line of sight it lies √2 thumbs off in the plane and √3 in space, the diagonal of a square or a
-cube one thumb on a side. That crossing, with H, lays the near field and the far field over the read, as an overlay: the
+one thumb wide. Along the line of sight it lies √2 of the crossed thumbs' lengths off in the plane and √3 in space, the diagonal of a
+square or a cube one thumb on a side. The distance overlay counts along the look, and takes that whole distance as its one
+thumb: d/H = 1 at the crossing, the crossed thumbs each that over √2 or √3. That crossing, with H, lays the near field and the far field over the read, as an overlay: the
 Cauchy itself has neither. Along every direction one thumb splits the heat in distance in half, whatever H is.
 
 **Near and far.** The near field is a single thumb, laid evenly: everything nearer than the crossing gets its heat in
@@ -600,7 +604,7 @@ needs a count of what is out there. **Checked** (reportbase/calendar's dials).
 **Drawing a shape: circles, a height, a step toward the detail.** A closed outline about a centre can be written as
 circles on circles, its Fourier series: the turns of one standpoint at the centre, evenly. Seen from a height γ, the
 outline is smoothed by the circle's own Cauchy, the wrapped Cauchy, shrinking circle k by e^(−γ|k|) and moving none: the
-broad form stays, the fine circles fade first, the height as level of detail. Or each term can be the circle seen from a
+broad form stays, the fine circles fade first, the height setting how much detail is kept. Or each term can be the circle seen from a
 standpoint stepped toward where the detail is: the Takenaka–Malmquist terms, chosen one at a time to take the most of what
 is left (adaptive Fourier decomposition; Qian and Wang 2011). On an outline with one dent, the best 85 circles draw it to
 a part in a thousand; eleven such terms do, every one standing at the dent. On a broad outline the even circles win, ten
@@ -696,8 +700,8 @@ end and drives nothing. **Checked** (the breath note's §5, at 30 digits; `appro
   a thing at its distance, not to the observer.
 
 More standpoints and longer baselines narrow the band; nothing closes it. The writer who holds every amount exactly is the
-limit of the passage, not a stage of it, as π is the limit of its approximants: V is knowable, and known only at
-the limit (§1, "Four things"). **Classical.**
+limit of the passage, not a stage of it, as π is the limit of its approximants: V faced is knowable, and known as an exact amount
+only at the limit (§1, "Four things"). **Classical.**
 
 **The thing itself as H.** The thumb can be set to the very thing whose size is wanted. *As the unit*: the thing is drawn
 at one length, its V is 1 by choice, and everything else is placed in its units; its two ends become the baseline and the
@@ -986,6 +990,52 @@ that does not total term by term; the Gaussian and Laplace kernels have no point
 transform's variable, dual to position on the line, not time. **Checked** (OPL, to 25 digits at z = 0.7 + 0.4i,
 t = 1.3); classical by uniqueness of the transform; that the one pole is the standpoint is our reading.
 
+**Four identities, one exchange.** Four equations state the completed joins: h² + v² = 1, e^(iπ) = −1, π/2 · 2/π = 1
+and (2/π)·∫₀^∞ ds/(1 + s²) = 1. Each is the writer's completion of something the reader holds without π, rational in the
+slope, and each of those is a fact about the exchange s ↔ 1/s, whose fixed point is the corner.
+
+| | the writer's form | the reader's form, rational in s | what it says of the exchange |
+|---|---|---|---|
+| the circle | h² + v² = 1 | 1/(1 + s²) + s²/(1 + s²) = 1 | the heat in the v/h chart and the heat in the h/v chart share one whole |
+| the half turn | e^(iπ) = −1 | w(s)·w(1/s) = −1, w = (1 + is)/(1 − is) | a direction and its reciprocal compose to the half turn |
+| the two facings | π/2 · 2/π = 1 | s · (1/s) = 1 | the exchange undoes itself; the corner is its fixed point |
+| the total | (2/π)·∫₀^∞ ds/(1 + s²) = 1 | ∫₀¹ ds/(1 + s²) = ∫₁^∞ ds/(1 + s²) | the corner splits the heat in equal halves |
+
+*The circle.* The heat per unit of s is h² = 1/(1 + s²); in the turned-over chart t = 1/s it is 1/(1 + t²) = s²/(1 + s²)
+= v². So Pythagoras, in squares, is the two charts' heats adding to one at every direction, with no root in it; the root
+enters only for h itself. *The half turn.* w(1/s) = (s + i)/(s − i) = −1/w(s), so the product is −1 at every s; at the
+corner it is i·i = −1, the corner composed with itself the horizon. *The total.* Putting s = 1/t carries the heat below
+the corner onto the heat above it: the reader has "half and half" without "π/4 and π/4". *The two facings* is the plain
+one, as its writer's form is: its content is which facing each factor belongs to (above, "The writer's measures of the
+sweep").
+
+So the reader holds one fact four ways, the exchange and its corner, and the writer's four equations are what that fact
+becomes once the horizon is reached and the total stated: π is the price of turning "equal halves" into "how much". The
+first holds at every direction, so one read has it, in squares; the other three need the horizon reached, which no read
+does. They are also one chain: divide the writer's circle by the thumb, 1 + s² = 1/h²; its reciprocal is the heat; the
+heat gathered to the horizon is (1/2i)·ln w with w reaching −1, the arc π/2; closed by 2/π it is 1. And squares are the
+reader's where roots are the writer's: w = (h + iv)² = (h² − v²) + 2i·hv is rational in s and h + iv is not, the doubling
+and the halving of §1; h² − v² and 2hv are the double slit's predictability and visibility (§11), |w| = 1 their bound met.
+
+The Gaussian shows the same split from the writer's side. In polar form (1/2π)·e^(−r²/2) dx dy =
+(dθ/2π)·(e^(−r²/2) r dr): the uniform turn, whose slope is the Cauchy, times a law for the length, an amount, the payload.
+Two independent zero-mean Gaussian amounts of one spread, divided, give the standard Cauchy; of spreads in a ratio c, a
+Cauchy of scale c. Dividing by the thumb integrates the length away, taking e with it and leaving π. So the Cauchy is a
+law of directions, a heat made a probability only when the writer closes it, and the Gaussian a law of amounts.
+**Classical**; the reader's forms checked by hand; the assignment is a reading.
+
+**Reading is 2/π; walking is π/2.** The two numbers sort by act. *2/π is what turning sees*: over the quarter turn the
+thumb's share h averages 2/π, the mean of what is seen of one thumb from a standpoint that never moves; it is the constant
+that closes the heat, and it is approached at the horizon, never reached. *π/2 is what walking counts*: the quarter arc
+from all of h to all of v is π/2 thumbs long, the heat gathered to the horizon, ∫₀^∞ ds/(1 + s²), reached at a named
+point, −1. An arc in thumbs is a length against the thumb, unmoved by scaling and held by no single read: of the kind D3
+calls a place, had by walking and counting; with the thumb in a unit it is a write (D4). So, in short, reading is 2/π and
+writing is π/2, the write reached through its place. Their product is 1, the paper: the thumb given back when the read and
+the walk are held together. The exchange swaps the two, and they agree only at the corner, where a length walked and a
+ratio held say the same (§6). Both numbers stay the writer's arithmetic, since the reader holds no π; what is sorted is
+which act each one measures. In the table above the total's 2/π is the reading's factor and its π/2 the walk's, and "the
+two facings" is the read against the walk. **Classical** (the mean share and the arc); the assignment is a reading.
+
 **What the one pole already carried.** The reader at i holds the standard Cauchy (§3). Readings added give one Cauchy
 with the standpoints added, z₁ + z₂, the phasors multiplying. Parallax is a sum of reads whose depth is exactly Cauchy,
 its point the triangulation of the two reads' points (§6). A cell of the floor's discarded fraction sits at its own
@@ -1099,22 +1149,8 @@ before the data can show where it is not. **Checked** (TCF; killed).
   and the turn completed as well (π, a limit): an arc over the radius, counted against the whole. Neither stage needs a
   true breadth V* or a unit, so neither is a write; both are completed joins, the circle first and π second. *And (R797):* the exact V is a third, the limit of parallax:
   unknowable against the universe, knowable across one hemisphere, known only held or written (§1, "Four things").
-  *And (R798):* the completed joins are the paper's, both hemispheres at once with no facing. Three identities say it:
-  h² + v² = 1 (the length held at one, the circle), e^(iπ) = −1 (the half turn closed at a named point, π) and
-  π/2 · 2/π = 1 (the two facings held together, both). A read has one facing at a time and holds none of them whole.
-  *And (R799):* a fourth, the Cauchy, (2/π)·∫₀^∞ ds/(1 + s²) = 1: the reader's heat, 1/(1 + s²) = h², rational in s,
-  closed to 1 only by the writer's 2/π. The Cauchy is the reader's distribution, a law of directions; the Gaussian
-  (e^(−x²/2)/√(2π) on each axis) is the writer's, a law of amounts, needing both e and π. They are joined by the
-  thumb's division: two independent Gaussian amounts of one spread, divided one by the other, give the standard Cauchy;
-  of spreads in a ratio c, a Cauchy of scale c (the median of |y/x| at c, checked by draws). The equal spread is V = H.
-  *And (R800):* the four are one equation read four ways. Divide the writer's circle x² + y² = r² by the thumb: 1 + s² =
-  1/h² (the circle); its reciprocal h² = 1/(1 + s²) (the Cauchy's heat, the reader's one piece); that heat gathered to the
-  horizon, (1/2i)·ln w with w = (1 + is)/(1 − is) reaching −1 = e^(iπ), totals π/2 (Euler); closed, (2/π)·(π/2) = 1. In
-  one line, (2/π)·∫₀^∞ h² ds = (2/π)·(1/2i)·ln(−1) = 1. The reader holds the heat; the horizon reached, π and 2/π are the
-  paper's, so the reader's distribution is a heat, made a probability only when the writer closes it. The Gaussian
-  factors in polar form, (1/2π)·e^(−r²/2) dx dy = (dθ/2π)·(e^(−r²/2) r dr): the uniform turn (the reader's directions,
-  their slope the Cauchy) times a law for the length (an amount, the payload). The writer's distribution is the reader's
-  times the payload's; dividing by the thumb integrates the length away, taking e with it and leaving π (R626, R597).
+  *And (R798–R801):* the completed joins are the paper's, both hemispheres at once with no facing; four identities
+  state them, and each has a reader's form about the exchange and the corner (§9, "Four identities, one exchange").
 - **O4. Orders.** *Closed (R792):* an order of reads is its own kind, a joining with no gap in it, not a place; D7 lists
   places and orders side by side.
 - **O5. Do readers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.
@@ -1125,7 +1161,7 @@ before the data can show where it is not. **Checked** (TCF; killed).
 - **O8. Why the sky is conformal.** The moving sky's Möbius map rests on motion keeping angles on the sky. SRB (runs 1–2)
   replaces that premise by four: a change of standpoint acts on directions alone, chains included; it is fixed by finitely
   many numbers; the turns are among the changes; a motion carries directions from the back toward the front. With Lie's
-  classification of the finite groups on a surface, these leave the Möbius maps alone; Newton's aberration fails the
+  classification of the finite groups on a surface (Lie 1880), these leave the Möbius maps alone; Newton's aberration fails the
   first, since two of its steps are no single step once the speed is dropped. Two of the four carry the physics: that what
   no read can hold makes no difference to what is read (the light postulate stated for reads), and that a place is a
   finite list of numbers. Neither is shown to follow from reading. A reconstruction, not an explanation.
@@ -1146,7 +1182,7 @@ The checks and measurements cited are in this repository (reportbase/wander), ea
 run; plan codes in the text name them. The one pole, the constant and the phasor: `plans/opl-plan.md`, `runs/opl/`. Two
 boosts joined: `plans/twg-plan.md`, `runs/twg/`. Why the sky is conformal: `plans/srb-plan.md`, `runs/srb/`. Time and the Cauchy's point: `plans/tim-plan.md`, `runs/tim/`. The floor's
 cells: `plans/dyh-plan.md`, `runs/dyh/`. The Cauchy's routes: `plans/cauchy-routes.md`, `runs/crt/`. Parallax as a sum of
-reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `runs/txt/`. The tower and two thumbs:
+reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `runs/txt/`. The reader's math in slopes: `plans/slp-plan.md`, `runs/slp/`. The tower and two thumbs:
 `runs/two/two_thumbs.py`. Three thumbs at the crosshair: `plans/thm-plan.md`, `runs/thm/`. The shape swept:
 `plans/swp-plan.md`, `runs/swp/`. Three laws on the sphere: `plans/eul-plan.md`, `runs/eul/`. Euler's formula as a count of
 reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. The distance between
@@ -1158,7 +1194,7 @@ runs as they came out, the killed ones too, and none alone establishes the sort.
 control: reportbase/calendar (`dial.js`, `dome.js`, `horizon.html`, `dome.html`, `dome-map.html`, `dome-instrument.html`).
 The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewrite's map from the record and its checklist:
 `plans/rw-rewrite-outline.md`. The known physics sorted by the two tests is the companion *Reads and Writes in Physics*
-(`papers/reads-and-writes-physics.md`), drawn from the record and not yet brought to R788.
+(`papers/reads-and-writes-physics.md`), brought to R788's kinds (§12, O7).
 
 ## References
 
@@ -1217,6 +1253,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
   5, 437–459.
 - Leibniz, G. W., and Clarke, S. (1717). *A Collection of Papers … Relating to the Principles of Natural Philosophy and
   Religion.* London.
+- Lie, S. (1880). Theorie der Transformationsgruppen I. *Mathematische Annalen* 16, 441–528.
 - Lindemann, F. (1882). Ueber die Zahl π. *Mathematische Annalen* 20, 213–225.
 - Liouville, J. (1850). Extension au cas des trois dimensions de la question du tracé géographique. Note VI in
   G. Monge, *Application de l'analyse à la géométrie*, 5th ed., Paris, 609–616.
@@ -1250,4 +1287,4 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
 - Wilbraham, H. (1848). On a certain periodic function. *Cambridge and Dublin Mathematical Journal* 3, 198–201.
 
 The entries were checked against Crossref and library catalogues on 3 November 2026; Malmquist (1926) is given as it is
-usually cited.
+usually cited, and Lie (1880), added 10 November, as `plans/srb-plan.md` cites it.
