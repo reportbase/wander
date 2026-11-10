@@ -54,9 +54,10 @@
 <body>
 <main>
     <h1>Writing, step by step</h1>
-    <p class="lede">Reading is free: from one standpoint every direction is given, a ratio, with its heat, before anything arrives. Writing a breadth costs one amount carried in
-    from outside the readings, and each step costs exactly one: a move of known length writes in the reader's own H, one
-    number exchanged writes for another reader, one agreed notch writes in a public unit. The counter is what is still
+    <p class="lede">Reading is free: from one standpoint every direction is given, a ratio, with its heat, before anything arrives. Placing a breadth costs one known move, and
+    each step costs exactly one: a move of known length places every breadth in the reader's own H, one number exchanged
+    places them for another reader, and one agreed notch writes them in a public unit, the one write (R788: places are
+    unmoved by scaling, as readings are; only an amount in a unit moves). The counter is what is still
     free, counted exactly.</p>
     <div class="panel">
         <div class="row" id="steps"></div>
@@ -80,11 +81,11 @@
 (() => {
     const $ = id => document.getElementById(id), K = 4, HA = 0.7, HB = 1.9, QA = 0.4, QB = 2.0, BX = 15, BY = -8;
     const STEPS = [
-        ['one standpoint', 'Every reading is a ratio. Each target\'s size and distance trade freely: nothing is written.'],
+        ['one standpoint', 'Every reading is a ratio. Each target\'s size and distance trade freely: nothing is placed.'],
         ['a move, length unknown', 'Two standpoints, but the baseline\'s length unknown: one common scale is free.'],
-        ['the move\'s length known', 'One displacement of known length, H: every breadth written in A\'s own H.'],
+        ['the move\'s length known', 'One displacement of known length, H: every breadth placed in A\'s own H.'],
         ['a second known move', 'A second move adds nothing to the scale: the same breadths.'],
-        ['a second reader, B', 'B writes in its own H. The two differ by H_B/H_A, which neither alone fixes.'],
+        ['a second reader, B', 'B places in its own H. The two differ by H_B/H_A, which neither alone fixes.'],
         ['B sends one number', 'One number exchanged (B\'s first breadth): all four agree.'],
         ['in metres', 'Everything so far is in A\'s own H. In metres one scale is free again.'],
         ['one notch agreed', 'H_A = 0.7 m agreed: every breadth written in a public unit.']

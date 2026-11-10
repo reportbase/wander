@@ -27,8 +27,8 @@ the law of that per, the reader's sweep rate counted in readings; the payload is
 **The writer is transcendental; the reader is not.** π is not a reader's number. It is the total of a completed half turn (a line's period; 2π an oriented turn's), and
 every number with π in it, π/2 and 2/π among them, is the writer's: the reader's sweep as measured by someone holding the
 whole turn. The reader holds one length, H, the thumb, and reads every far thing as a ratio of it, one in two, one in four.
-Counting thumbs, two thumbs, four, half a thumb, is a count, and a count is done in parallax and in writing, not in a
-pure read; what one length counted makes is rational. On its readings the reader composes by tangent addition, turns
+Counting thumbs, two thumbs, four, half a thumb, is a count, and a count is done in parallax, where it gives places, and
+in writing, not in a pure read; what one length counted makes is rational. On its readings the reader composes by tangent addition, turns
 them over and orders them, and that keeps a rational reading rational. An irrational number needs two variables
 combined (√2 is the diagonal of h and v), and that is the writer's; a transcendental one, π, needs the whole turn, and that
 is the writer's again (the sixth section). So the reader reads with the Cauchy and not with the circle: the readings from
@@ -275,9 +275,9 @@ in hand.
 One caution keeps the claim exact. A rate must say what it is per. Per direction, against the sweep's own spacing, a rate
 is a ratio of payloads and scale-free. Per second, it carries the clock's unit (radians per second, photons per second),
 and moving between the two needs the clock carried in. That is a writing. Motion says the same (the sixth essay, §2): the
-time until a thing arrives, from its growing edge, comes out as a count of the reader's own ticks (a write in its own
-tick; ticks per tick is scale-free, and a write too, since a rate of change joins reads), and a speed in metres a second
-carries two units in.
+time until a thing arrives, from its growing edge, comes out as a count of the reader's own ticks (a place, unmoved by
+scaling or by any change of clock, yet held by no single read, since a rate of change joins reads; so is ticks per tick),
+and in seconds it is a write, and a speed in metres a second carries two units in.
 
 ---
 
@@ -488,8 +488,8 @@ Each sweep has its own corner at 45°: for the azimuth the plane v₂ = h, for t
 cube's corner is a third place. The triple corner [1 : 1 : 1] lands on the cube's vertex (1, 1, 1) at azimuth 45° but
 altitude atan(1/√2) ≈ 35.26°, inside the altitude's corner cone, not on it. The three axes meet there, and neither sweep's
 own corner does. The reader reaches the writer's cube by parallax: a second standpoint adds the second variable, the
-crossings give places, and joining them is writing (the sixth essay, "Becoming the writer"). The labels are not fixed;
-they name what the observer is doing. And a sweep even in azimuth and even in height, by Archimedes' equal slices, is even over the whole
+crossings give places, in the step's own length, and only the step counted in an agreed unit writes (the sixth essay,
+"From reads to places to writes"). The labels are not fixed; they name what the observer is doing. And a sweep even in azimuth and even in height, by Archimedes' equal slices, is even over the whole
 sphere, which is why the writer's numbers for the reader's sweep there are 2 and ½.
 
 **In physics.** Relativity's numbers are rates of this kind. β and 1/γ are the two shares of one circle in the unit E,
@@ -563,6 +563,6 @@ algebraic form (`papers/tb_algebra.md`: the two charts and their exchange rate, 
 its π is the normalization") and the format's specification (`papers/tvf.md`, "The kernel is rational, and the decoder
 can be trig-free").
 
-The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): §2, "Zero, and a new zero" (the turn met, not computed; tangent
+The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten 10 November on R788 with read, place and write): §2, "Zero, and a new zero" (the turn met, not computed; tangent
 addition); §4, "Why the corner sits at 45°", "Why there are two sweeps, and only two" and "Rates, not angles" (the two
 sweeps' rates, the writer's 1, and payload per direction); §7.1 (the uniform turn and the Cauchy).

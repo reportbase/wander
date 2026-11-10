@@ -23,10 +23,11 @@
     Now, not nearer (R651; Tom: "getting closer and closer to V is a writer concept. All you know is where you are now,
     getting closer is not something you can know as a reader."): a read is one place, now. The walk laid in order, the
     climb toward the horizon (a limit) and arrival are the writer's account of many reads. So is time: τ = x/ẋ needs two
-    reads joined, a count of the reader's own ticks; τ̇, ticks per tick, is scale-free and still a write. A steady pace
+    reads joined, a count of the reader's own ticks; τ̇, ticks per tick, is scale-free. Since R788 both are places (unmoved
+    by scaling, held by no single read); τ in seconds would be a write. A steady pace
     makes τ̇ = −1, past Lee's −½: you arrive at speed. Easing so τ̇ holds at −½ stops exactly at the foot.
-    Counting strides from the corner to the foot writes the thing:  V* = (strides from the corner) × (H/L), in strides,
-    and in metres once the stride is carried in. Scaling the world (k on V* and the start) moves no reading along the walk,
+    Counting strides from the corner to the foot places the thing:  V* = (strides from the corner) × (H/L), in strides (a
+    place, R788), and written in metres once the stride is carried in. Scaling the world (k on V* and the start) moves no reading along the walk,
     only the count.
     Links: ?thing=house|tower|mountain&k=<log10 k>&pace=steady|ease&count=1&ground=0&u=<0..1>&play=1.
     The two paces (R785): the angle the thing spans per halving of d (sech x, x = ln(V*/2d)) and per metre walked
@@ -92,7 +93,7 @@
             horizon, far off) to the horizon (at its foot). The corner at 45°, where it covers the thumb. Ticks at one in 8, 4, 2
             and 2, 4, 8 thumbs; the faint ray is the reading's mirror about the corner.</p></div>
             <div><canvas id="time" height="300"></canvas><p class="cap">Time to contact, τ = x/ẋ from two looks joined, in your
-            own ticks (a count, a write), against ticks walked. Its slope τ̇ is scale-free and a write too: −1 at a steady pace,
+            own ticks (a count, a place), against ticks walked. Its slope τ̇ is scale-free and a place too: −1 at a steady pace,
             past Lee's −½ (you arrive at speed); held at −½ you stop at the foot.</p></div>
         </div>
         <canvas id="paces" height="250" style="margin-top:10px"></canvas>
@@ -270,9 +271,9 @@
         $('hud').textContent =
             `reading v/h = ${isFinite(x) ? x.toPrecision(4) : '∞'}   ${words(x)}\n` +
             (arrived ? `arrived: the ${THINGS[S.thing].name}'s foot is straight down, at your feet; touching it is a write\n`
-                : `time to contact τ ≈ ${tr.toFixed(1)} ticks (two looks joined, a write)   τ̇ ≈ ${tdot.toFixed(3)} (scale-free, a write)   ${S.pace === 'steady' ? 'you will arrive at speed' : 'you will stop at the foot'}\n`) +
-            (S.count ? (crossed ? `strides counted from the corner: ${sc.toFixed(0)}   written: the ${THINGS[S.thing].name} is ${wv.inStrides.toFixed(2)} strides wide` +
-                `${arrived ? ` = ${wv.inMetres.toFixed(1)} m with the stride (0.7 m) carried in` : ' so far'}\n` : 'counting starts at the corner\n') : 'not counting: no amount is written\n') +
+                : `time to contact τ ≈ ${tr.toFixed(1)} ticks (two looks joined, a place)   τ̇ ≈ ${tdot.toFixed(3)} (scale-free, a place)   ${S.pace === 'steady' ? 'you will arrive at speed' : 'you will stop at the foot'}\n`) +
+            (S.count ? (crossed ? `strides counted from the corner: ${sc.toFixed(0)}   placed: the ${THINGS[S.thing].name} is ${wv.inStrides.toFixed(2)} strides wide` +
+                `${arrived ? ` = ${wv.inMetres.toFixed(1)} m written, with the stride (0.7 m) carried in` : ' so far'}\n` : 'counting starts at the corner\n') : 'not counting: no amount is written\n') +
             (S.ground ? `the writer's account: d = ${fmtM(Math.max(d, 0))}, the corner at ${fmtM(dc)}, its mirror partner at ${fmtM(isFinite(x) && d > 0 ? mirror(d) : 0)}, true width ${fmtM(Vstar())}` : '');
     }
     const fmtM = m => m >= 1000 ? `${(m / 1000).toFixed(m >= 1e5 ? 0 : 2)} km` : `${m.toFixed(m >= 100 ? 0 : 1)} m`;

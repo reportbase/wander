@@ -2,7 +2,7 @@
 
 *The seventeenth of a series of essays on what can be known from where one stands. Draft, 5 November 2026. It gathers the
 rulings of 5 November (R700–R707) on the read as a hemisphere, the Cauchy as a heat map, near and far as an overlay, and
-addresses as the writer's word, and follows* Reads and Writes *§7, "Where the heat comes
+addresses as the writer's word, and follows* Reads and Writes *§3, "Where the heat comes
 from".*
 
 Take any photograph with a wide lens and look at its corners. They are darker than the middle, even of a white wall evenly
@@ -54,7 +54,7 @@ It is continuous. There is no grain in it, no smallest cell, nothing counted. It
 at every reading.
 
 It is given. Nothing has arrived yet. The map is the same in a desert and a cathedral, in fog and in sunlight, near a wall
-or under the open sky. It belongs to the standpoint and the turn, not to the world (*Reads and Writes* §2, "Heat and
+or under the open sky. It belongs to the standpoint and the turn, not to the world (*Reads and Writes* §4, "Heat and
 paint").
 
 It moves with the look. Turn and the map turns with you: whatever you look at sits at its hottest point. A reader's
@@ -180,7 +180,7 @@ multiply. Among the familiar kernels this is the Cauchy's alone. A Gaussian blur
 transform is no single phasor and it has no point off the wall to read from; two poles beat; a pole of higher order
 multiplies the phasor by a polynomial (the OPL run, exact). Every pattern on the wall survives the
 step back, damped and never destroyed: the fine ones fade first, the broad ones last, and none is ever zero (*Reads and
-Writes* §2, "The payload is not lost"). A floor, a box blur, cuts some patterns to zero and they are gone; the Cauchy only
+Writes* §4, "The payload is not lost"). A floor, a box blur, cuts some patterns to zero and they are gone; the Cauchy only
 dims them.
 
 It is also why a sum of Cauchys is a Cauchy: a relay of standpoints, each one height above the last, lands as one turn from
@@ -210,7 +210,7 @@ map's tails go last: they are the horizon, and only an edge or a power takes the
 ## 7. The second map, in distance
 
 The Cauchy map has a middle, the look, and no near or far. No length enters it. Near and far are a second map laid over
-the first, and it takes one length, H, the thumb held out (*Reads and Writes* §6, §7).
+the first, and it takes one length, H, the thumb held out (*Reads and Writes* §5, §8).
 
 Along every direction, the thumb marks one distance: the thing it is pointed at, one thumb's worth out. Nearer than that
 is the near field, held in proportion; past it is the far field, read in ratios, a thing one in two, one in four, one in
@@ -330,9 +330,10 @@ second map in distance), `read.html` (the read with no world: the hemisphere in 
 
 The references are carried over from the essays before this one and *Reads and Writes*, where they were checked.
 
-The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`): §2 ("Heat and paint", "Why there is
-no mean"), §6 ("The crosshairs", "H is a zoom") and §7 ("The hemisphere is the shape; near and far are an overlay",
-"Where the split falls", "Where the heat comes from"). The rulings are SPN
+The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`, rewritten 10 November on R788 with
+read, place and write): §3 ("Why there is no mean", "Where the heat comes from"), §4 ("Heat and paint"), §5 ("The
+crosshairs", "The overlay's heat in distance", "H is a zoom; K comes first", "Where the split falls") and §8 ("The read's
+heat covers the hemisphere"). The rulings are SPN
 R700–R707. The comparison of harmonic measure and the boosted sky on the sphere is EUL (`../../plans/eul-plan.md`), the
 relay of standpoints SUM (`../../plans/sum-plan.md`), the aimed terms EPI (`../../plans/epi-plan.md`). The essays before
 this one: 2 (the turn), 3 (heat and paint, no mean), 4 (near and far), 5 (the wedge and the heat map), 6 (parallax's

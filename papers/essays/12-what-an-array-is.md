@@ -402,7 +402,7 @@ writes them as one. The reader, standing somewhere, never could.
 - Koenderink, J. J. (1984). What does the occluding contour tell us about solid shape? *Perception* 13(3), 321–330. (The
   rim as the edge of what is seen.)
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): the reading and the scale test in §9, the one number
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten 10 November on R788 with read, place and write): the reading and the scale test in §9, the one number
 a blueprint adds and the reader that never knows V in §3.8, the corner and the two sweeps in §4 ("Why the corner sits at
 45°", with π/2 attained at a point and 2/π a limit at the horizon), the readings as the projective line in §4, the array
 picture in §7.3, and what the floor discards in §8. For programmers, the computer-science companion's §6 ("The array")

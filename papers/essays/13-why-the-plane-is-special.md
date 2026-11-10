@@ -181,9 +181,9 @@ hyperbolic space of velocities (curvature −1 where the sphere's is +1). It too
 depends on the angle (TWG run 3, the coefficients predicted before the run). The sphere and the space of velocities share
 the first term of their curvature's signature and part after it.
 
-The loop that leaves this turn is a loop of two reads. A loop of a read and a write, a turn and the thumb scaled, comes home
-with nothing left in space as in the plane, because scaling by one factor commutes with every turn; a write in two unequal
-lengths, a stretch, leaves a squeeze instead of a turn, and the squeeze grows with each loop (the BRL run, exact; the
+The loop that leaves this turn is a loop of two turns. A loop of a turn and the thumb scaled, the first test's own
+motion, comes home with nothing left in space as in the plane, because scaling by one factor commutes with every turn; a
+scaling in two unequal lengths, a stretch, leaves a squeeze instead of a turn, and the squeeze grows with each loop (the BRL run, exact; the
 eighteenth essay, section 9).
 
 ---
@@ -302,6 +302,6 @@ Named as history in the text and not cited in *Observation from Somewhere*: Hami
 theorem on conformal maps in space (1850), Frobenius's theorem on division algebras (1878), Riemann's mapping theorem.
 
 The computations are in `../../plans/eul-plan.md` and `../../runs/eul/eul.py` (run 1, forty digits). The geometry is in
-*Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): Appendix A, "Polar form and the complex logarithm" (the notation, its limit in three
+*Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten 10 November on R788 with read, place and write): Appendix A, "Polar form and the complex logarithm" (the notation, its limit in three
 dimensions, the four parts and how they split) and "Cauchy's functional equation, twice"; Proposition 5(e) and "More
 parties" for the wedge; §11 for the boosted sky.

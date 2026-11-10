@@ -64,7 +64,8 @@ Then the two pairs part, in five places.
 - **What stays the same.** A computer's read is repeatable: read one address twice with no write between and the value
   is the same. A read here has a stronger sameness, across worlds: scale the world and no reading moves.
 - **Where caching falls.** In a computer, keeping a value read, in a cache or a variable, is a write into another place.
-  Here too: to keep a reading as a number, a length in a unit, an entry in a table of known size, is to write it.
+  Here too: to keep a length in a unit, or an entry in a table of known size, is to write it; a direction kept as a
+  direction stays a read.
 
 So the computing words are the writer's frame applied to both acts. Memory is a written world, and a computer's read is
 an address looked up in it. The read of this series comes before any such layout. It is what a reader has when no one
@@ -106,7 +107,7 @@ memory, not to the geometry, which is given before anything arrives.
 
 The words in this essay are the programmer's, and a programmer's addresses are discrete: places counted in a layout, the
 writer's. The reader has none. What it has is a heat over its directions, the Cauchy: continuous, hottest along the look
-and cooling toward the horizon, with nothing counted in it (*Reads and Writes* §7, "Where the heat comes from"). Where this
+and cooling toward the horizon, with nothing counted in it (*Reads and Writes* §3, "Where the heat comes from"). Where this
 essay says "the reader's addresses" or "K addresses", it uses the word as a metaphor, the one that connects the Cauchy to
 computing: read it as K places a writer lays at the heat's quantiles, the heat under them. The heat is given; the paint is
 met.
@@ -669,7 +670,8 @@ geometry of a reader is K, not N.
 
 The references are carried over from the archived companion, where they were checked when it was written.
 
-The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`): §6 ("K and N"); its passages on
+The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`, rewritten 10 November on R788 with
+read, place and write): §5 ("K and N"); its passages on
 computing are now a note, `plans/rw-computing-note.md` (a machine is built to do both acts, R641). The proofs are in the archived *Observation from Somewhere* and its computer-science companion
 (`../archive/ofs/observation-from-somewhere-cs.md`), kept for reference: the corner and the registers in §3, the
 separation in §5, the array in §6, the floor in §7, the two layouts in §8, detail and the fixed count in §9, the

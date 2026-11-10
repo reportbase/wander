@@ -89,8 +89,8 @@ Rescalings give e.
 
 The reader reads sizes as ratios of its thumb: a thing one thumb wide reads one in two, then one in four, one in eight.
 Past the corner a writer laying out its fineness gives as many places to each stretch over which the reading halves (essay 4), and a thing that reads
-one in eight is three such stretches out, which a writer counts as 8 thumbs, past 2, 4 and 8. Counting is done in
-parallax and in writing, not in a pure read; what one length counted makes is finite and rational. A thing 3H away reads
+one in eight is three such stretches out, which counted is 8 thumbs, past 2, 4 and 8, a place. Counting is done in
+parallax, where it gives places, and in writing, not in a pure read; what one length counted makes is finite and rational. A thing 3H away reads
 one in three, between one in two and one in four, and the reader holds it there by its order among the readings (essay
 4, "the count is the detail").
 
@@ -194,11 +194,11 @@ in four. The reader holds it; it does not hold "e times".
 
 This is essay 14's "met, not made" one rung higher. The reader meets irrational directions and does not make √2; it meets
 transcendental directions and sizes and does not make π or e. It makes no numbers by reading: it composes, turns over,
-orders and finds the corner, and the rationals are made where a count comes in, in parallax and in writing.
+orders and finds the corner, and the rationals are made where a count comes in, in parallax (places) and in writing.
 
-V, the mountain in the distance, is learned the same way. A reader becoming a writer by parallax (the sixth essay,
-"Becoming the writer") knows V by degrees: in the step it took, to within a band set by its baseline and its resolution,
-for the things near enough. Each standpoint more is one more finite step; holding V exactly, like holding π, is the end of
+V, the mountain in the distance, is learned the same way. An observer taking standpoints (the sixth essay, "Becoming the
+writer") places V by degrees: as V\*/H in the step it took, to within a band set by its baseline and its resolution,
+for the things near enough; only the step counted in an agreed unit makes it an amount, a write. Each standpoint more is one more finite step; holding V exactly, like holding π, is the end of
 a process that does not end.
 
 ## 7. A machine is a reader here
@@ -235,10 +235,10 @@ It changes nothing about π or e or how to compute them. It sorts.
   of something, and the reader's own version of it is a finite statement: an order, a count, a corner.
 - **e is a writer's number** because it states a scale completed, and giving a size as an amount is knowing V*. Wherever e
   or the natural logarithm appears (the lay's 1 + ln x, a decay's e^(−t/τ), the Gaussian's e^(−x²/2)), the reader's version
-  is a ratio and an order: one in two, one in four, one in eight. Counting them, two thumbs, four, eight, is the writer's.
-- **The rationals are the first count's arithmetic**, made from one length counted in finite steps, in parallax and in
-  writing; a pure read needs only directions and their order. Square roots need a second length, the transcendentals a
-  limit; all three are where the reader becomes a writer (essay 6, "Becoming the writer").
+  is a ratio and an order: one in two, one in four, one in eight. Counting them, two thumbs, four, eight, gives places.
+- **The rationals are the first count's arithmetic**, made from one length counted in finite steps, in parallax, as
+  places, and in writing; a pure read needs only directions and their order. Square roots need a second length, the
+  transcendentals a limit; all three are where the observer goes past a read (essay 6, "From reads to places to writes").
 
 Essay 14 ended on five things called 1. This one ends on two numbers that are not 1 and are not the reader's, and on why:
 the turn comes back, and the scale goes on, and to say either in a number you have to have held all of it.
@@ -279,7 +279,7 @@ the turn comes back, and the scale goes on, and to say either in a number you ha
 The dates and titles above are given from memory and are to be checked against the texts.
 
 The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is
-*Reads and Writes*): §2 (the reader's ignorance as turns and rescalings; zero and a new zero; tangent addition), §3.8 (the
+*Reads and Writes*, rewritten 10 November on R788 with read, place and write): §2 (the reader's ignorance as turns and rescalings; zero and a new zero; tangent addition), §3.8 (the
 reader never knows V), §4 ("Rates, not angles"; the landing point), §5 ("Why halving", "Circular mathematics without V"),
 §7.4 (a shape as ln r = a₀ + f(θ)), Appendix A ("Polar form and the complex logarithm", "What square roots reach") and
 Appendix B ("Machine arithmetic and the infinite"). The essays before this one: 2 (§9, Euler's formula), 4 (thumbs past the

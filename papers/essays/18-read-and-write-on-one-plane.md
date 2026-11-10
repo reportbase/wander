@@ -2,7 +2,8 @@
 
 *The eighteenth of a series of essays on what can be known from where one stands. Draft, 7 November 2026. It gathers
 the rulings of 7 November (R736–R740) on Euler's plane, the thumb's lay, the writer's sphere behind them and two turns in
-space, and follows* Reads and Writes *§1 ("One plane"), §5 and §6.*
+space, and follows* Reads and Writes *§2 ("The plane") and §9. Brought to R788 on 10 November: up is the read, gaps across are
+places, and only the across axis's zero, tied to a unit, is a write.*
 
 Put two fingers on a map on a phone and move them. Spread them and the map grows; twist them and it turns; do both at
 once and it does both, and neither gets in the other's way. The phone works out what the fingers did from one number:
@@ -17,7 +18,8 @@ twist then a pinch does.
 
 That logarithm is the subject of this essay. The series has two ideas, reading against writing and the Cauchy, and two
 tests, scale the world and change what arrives. On the logarithm's plane the first idea and the first test are not an
-argument but a picture: reading runs one way across it and writing the other. This essay draws the picture, says what it
+argument but a picture: reading runs one way across it, placing the other, and writing is where the across axis has its
+zero. This essay draws the picture, says what it
 shows past itself, and says where it stops.
 
 The order: one plane (§1), the writer's grid on it (§2), two corners as two mirrors (§3), the thumb's lay, distance as a
@@ -41,10 +43,12 @@ writer's grid on it.
 On it the two tests of the series become the two directions of the page.
 
 **Scaling the world slides across.** Make everything k times larger, or hold up a thumb k times smaller, and every point
-moves sideways by ln k. Nothing moves up or down. So the first test, scale the world, comes down to which part moved: what
-stays where it was is a reading, what slides is a writing. The direction up is what the reader holds. The distance across
-is the writer's: it is an amount in thumbs, and where its zero falls, the size of anything, is the one number no reading
-fixes.
+moves sideways by ln k. Nothing moves up or down. A slide keeps every gap across, so what scaling moves is only where
+the across axis's zero sits against a unit outside the world. So the first test, scale the world, comes down to which part
+moved: what stays is a reading (up) or a place (a gap across, a distance in thumbs, one distance against another); what
+moves is the zero tied to a metre, a writing. The direction up is what one read holds. The distance across is a place:
+unmoved by scaling, but held by no single read, needing a second standpoint and the step between. Where its zero falls
+against a unit, the size of anything in metres, is the one number no reading or place fixes.
 
 **Turning the world slides up or down.** Turn, and every point moves up by the same amount, and nothing moves across. A
 reader's two ignorances, after Jaynes, are which way it faces and how large things are. On this plane they are two slides
@@ -52,7 +56,8 @@ along two axes, and they commute: turn then scale ends where scale then turn doe
 dθ·dκ/κ, is nothing more than area on this plane. Jaynes found it by asking what the reader's ignorance leaves unchanged.
 The plane shows it.
 
-That is the picture. Reading is up and down; writing is across. The phone's two gestures are the two acts.
+That is the picture. Reading is up and down; places are across; a write ties the across axis's zero to a unit. The
+phone's two gestures are the two slides.
 
 ## 2. The writer's grid on it
 
@@ -174,7 +179,8 @@ completed, is the writer's (the fifteenth essay). The reader holds a direction a
 addition, and states no angle. The plane is the best map of the read, not the read.
 
 It does not hold the second test. The paint, whatever arrives along each direction, sits on top of the plane at every
-point, the same on both axes. Euler's plane separates reading from writing; it does not separate the heat from the paint.
+point, the same on both axes. Euler's plane separates reading from placing and writing; it does not separate the heat
+from the paint.
 That split stays where the third essay put it: change what arrives, holding the standpoint and the turn, and ask what moved.
 
 And the sphere behind it is a picture, not a claim about the world. It says why the three charts agree; it is drawn
@@ -192,19 +198,21 @@ about the other and both back, it comes home turned about nearly the third thumb
 1.741° for 10° and 10°, against α·β = 1.745°. On the plane the same loop leaves nothing. `euler.html`'s "in space" sets the
 two side by side; the thirteenth essay takes the reason apart (Frobenius, Gauss and Bonnet, Berry's phase).
 
-That loop is two reads, not a read and a write, and the difference matters. Take a breath instead: a read up by α, a write
-across by λ (the thumb scaled), and both undone. On the plane it closes because the two slides commute. In space it closes
-too, since scaling by one factor commutes with every turn of space; a write put anywhere into a loop of acts changes only
-the loop's overall size (checked to 10⁻⁶¹, the plan BRL). So three loops part. A breath closes, in the plane and in space.
+That loop is two turns about two axes. Take a turn and a scaling instead: up by α, across by λ (the thumb scaled, the
+first test's own motion), and both undone. On the plane it closes because the two slides commute. In space it closes
+too, since scaling by one factor commutes with every turn of space; a scaling put anywhere into a loop changes only the
+loop's overall size (checked to 10⁻⁶¹, the plan BRL). The loops are compositions of motions, the writer's account, not
+reads. So three loops part. A turn and a scaling close, in the plane and in space.
 Two reads in different directions come home turned, by Ω with cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ for axes φ apart,
-the same turn every time the loop is repeated, so the thing goes round and never grows. A read with a write in two
-unequal lengths, a stretch by c along one axis (the writer's two axes drawn at V = cH), comes home squeezed by a rapidity
-ζ, cosh ζ = 1 + 2·sin²α·sinh²(½ ln c), about |α·ln c| when small, and the squeeze grows by ζ with every breath: 0.4507 a
-breath at α = 40° and c = 2. It closes only at c = 1. A breath is steady exactly when its write is in one length, which is
-the one-length circle said of a loop. `euler.html`'s "breaths" breathes the three side by side.
+the same turn every time the loop is repeated, so the thing goes round and never grows. A turn with a scaling in two
+unequal lengths, a stretch by c along one axis (the writer's two axes drawn at V = cH), comes home squeezed: its net
+map has eigenvalues e^(±ζ), cosh ζ = 1 + 2·sin²α·sinh²(½ ln c), about |α·ln c| when small, a squeeze of rapidity ζ up to a
+turn, and it grows by ζ with every loop: 0.4507 a loop at α = 40° and c = 2. It closes only at c = 1. A loop of a turn and
+a scaling is steady exactly when the scaling is in one length, which is the one-length circle said of a loop.
+`euler.html`'s "breaths" view draws the three side by side.
 
 Could another chart do in space what Euler's plane does in the plane? It was put to arithmetic (the plan FLC; `euler.html`'s "a flat chart in space" draws it), and the
-answer is mostly an old one. Writing keeps its slide: the same logarithm of the distance in thumbs, set beside the
+answer is mostly an old one. The distance keeps its slide: the same logarithm of the distance in thumbs, set beside the
 direction, lays space out as a straight line times the sphere of directions, and scaling the world or the thumb moves the
 line's coordinate alone, commuting with every turn of space, to rounding. The heat can be laid flat too: Lambert's
 equal-area map about the look, crossed with the thumb's lay g, carries the read's heat at one constant density, and every
@@ -217,7 +225,7 @@ and Euler (1777) that none keeps both angles and areas. The plane gets both from
 flat: the circle unrolls into the line of θ, and the sphere of directions does not unroll.
 
 So the opening picture is exact in the plane and half of it holds in space. The half that holds is reading against
-writing. The half that goes is the arithmetic of turning.
+placing and writing. The half that goes is the arithmetic of turning.
 
 ## 10. Who saw which piece
 
@@ -238,9 +246,10 @@ Almost all of it is old.
 - **The limit.** (1 + iθ/n)ⁿ is Euler's own route; the leftover of non-commuting steps in space is the Lie–Trotter
   formula (Trotter 1959).
 
-What is the series' own is the reading: the plane's two axes as the two acts, the scale test as which part moved, the two
+What is the series' own is the reading: up as the read, gaps across as places and the across zero as the write, the scale
+test as which part moved, the two
 corners as its two mirrors, the thumb's lay as a turn in distance, the sphere as the writer's picture of why the charts
-agree, the heat as a count per chart, and the place where it stops as the place where reading and writing stay apart but
+agree, the heat as a count per chart, and the place where it stops as the place where reading and placing stay apart but
 turning stops being simple.
 
 **In physics.** A boost along one axis is a slide on this plane: in the stereographic chart about that axis it
@@ -253,7 +262,8 @@ different axes cannot be one slide, and leave a turn, the plane's limit met in s
 ## 11. What it changes
 
 It gives the series one picture. Reading against writing has been argued in words, in tests and in demos; on this plane it
-is the difference between up and across, and anyone who has pinched and twisted a map has already done both.
+is the difference between up, gaps across and the across axis's zero, and anyone who has pinched and twisted a map has
+already done the two slides.
 
 It says what the thumb is. Choosing H slides the whole plane across and moves nothing up or down: the thumb is a zoom on
 distance and nothing else. On the writer's sphere it is a boost along the axis, the same act that a moving observer
@@ -263,8 +273,8 @@ It settles what the heat is. The heat is the read's measure counted per unit of 
 flat. A heat map is a good picture of the read, and the picture depends on the chart.
 
 And it marks where the clean arithmetic ends. In the plane, turns add; in space they do not, and a loop leaves a turn
-behind. What survives everywhere is the part the series cares most about: the read holds directions, the write holds
-amounts, and scaling the world moves only the second.
+behind. What survives everywhere is the part the series cares most about: the read holds directions, places hold gaps
+across, the write holds amounts, and scaling the world moves only the third.
 
 **Demos.** `euler.html` (the three charts side by side or one sliding into the next; the writer's sphere and the thumb
 as a boost; the heat at each point and per chart; a line and a spiral with their mirrors; two turns in space; a flat chart in space, Lambert's and the stereographic, turned; breaths, three loops side by side; n reads),
@@ -294,9 +304,9 @@ as a boost; the heat at each point and per chart; a line and a spiral with their
 - Tucker, V. A., Tucker, A. E., Akers, K. and Enderson, J. H. (2000). Curved flight paths and sideways vision in peregrine
   falcons (*Falco peregrinus*). *Journal of Experimental Biology* 203, 3755–3763.
 
-The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`): §1 ("One plane"), §5 ("Euler's formula
-as a count of reads", "π with the direction, e with the payload"), §6 ("Euler's plane, and the thumb's lay as a turn") and
-§7 ("The heat depends on what it is counted per", "What survives in space, and what does not"). The rulings are SPN
-R580, R647, R736–R740 and R743; the checks are `runs/elm/` (n reads), `plans/flc-plan.md` with `runs/flc/` (a flat chart for the read in space) and the page's own hook, `window.__euler`. The essays before
+The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`, rewritten 10 November on R788 with
+read, place and write): §2 ("The plane", "The thumb's lay is itself a turn", "π with the direction, e with the
+distance"), §3 ("The heat depends on what it is counted per"), §8 ("What survives in space, and what does not", "Three
+loops") and §9 ("Euler's formula as a count of reads"). The rulings are SPN R580, R647, R736–R740, R743 and R788; the checks are `runs/elm/` (n reads), `plans/flc-plan.md` with `runs/flc/` (a flat chart for the read in space) and the page's own hook, `window.__euler`. The essays before
 this one: 2 (Euler's formula, the writer's notation), 4 (near and far, the three rulers), 7 (the moving sky), 13 (where
 the plane's one law parts), 15 (π and e as the writer's), 17 (the heat map).

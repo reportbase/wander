@@ -504,5 +504,5 @@ heat is given before anything arrives, and what arrives is met along it. The hea
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
   *Physics Letters A* 128, 391–394.
 
-The theorem and its proof are in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, whose §3 has the hand beside the lighthouse and Mercator's map), §7.2 (Theorem 6), with the closure table, what breaks
+The theorem and its proof are in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read, place and write, whose §4 has the lighthouse and Mercator's map), §7.2 (Theorem 6), with the closure table, what breaks
 it, the four cases and the three cases in data; the background in §1.

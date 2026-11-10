@@ -296,7 +296,7 @@ each of these numbers has π in it, the count of a completed turn, they are the 
 reader's own: the writer is transcendental, the reader is not. The reader holds one length, and one length makes only
 rationals; square roots need two lengths combined, and π a limit, the whole turn. The reader holds the same sweep as the
 Cauchy, its readings and their corner at 1, where v fills exactly as fast as h empties. A rate a reader reads is always of
-something per something, the payload per direction: the per is read, the of is written. The fourteenth essay, "Rates, not angles", takes this up, and with it why
+something per something, the payload per direction: the per is read, the of is the paint, met. The fourteenth essay, "Rates, not angles", takes this up, and with it why
 the tangent and arctangent, which convert a direction into a share of the whole turn and back, are the writer's tools.
 
 *Demo: the mountain and the thumb, "the two vantages": π/2 and 2/π on the thumb's circle, their product 1.*
@@ -414,8 +414,8 @@ And circular mathematics was always ratio mathematics. Sine, cosine and tangent 
 is arc over radius. π is circumference over diameter, a ratio. e^(iθ) is the unit circle, any circle divided by its own
 radius. The corner, π/2 and 2/π, and the Cauchy are ratios too. None of them moves when the world is scaled. But being
 unmoved by scaling is needed for a reading and is not enough. √2 combines two lengths, and π, with every number that
-carries it, needs the whole turn; both are made only by an observer combining lengths or holding the turn complete, and
-that is writing (the fourteenth essay). So the reader has the corner, its readings and the Cauchy's shape; sine and
+carries it, needs the whole turn; both are made only by an observer combining lengths or holding the turn complete, which is
+the writer's vantage, not a read (the fourteenth essay). So the reader has the corner, its readings and the Cauchy's shape; sine and
 cosine as numbers, the radian, π, π/2 and 2/π are the writer's, scale-free as they are. Trigonometry is the writer's
 record of the reader's turn.
 
@@ -444,8 +444,9 @@ the reader's and the writer's.
 > ln z = ln r + iθ.
 
 Scale the world by k and only the real part moves, by ln k. Turn, and only the imaginary part moves. So the first test of
-the series, scale the world, comes down to which part of the logarithm changed: the imaginary part is a reading, the real
-part a writing. The real part's starting point, the one amount that sets every size, is exactly what no reading fixes. And
+the series, scale the world, comes down to which part of the logarithm changed: the imaginary part is a reading;
+differences of the real part are places, unmoved, had by walking; the real part's starting point, tied to a unit, the one
+amount that sets every size, is the writing, and no reading fixes it. And
 the reader's ignorance, which turn it faces and how large anything is, is nothing more than sliding this plane up and down
 and left and right. Sliding keeps area, so the measure that suits that ignorance is plain area on the logarithm's plane:
 uniform in direction, and uniform in distance read as a ratio, as much room from one in two to one in four as from one in
@@ -459,9 +460,10 @@ and the same turn plus a half turn give the same reading; the reader's line clos
 squaring of section 6 turns that half turn into one whole turn of the central sweep.
 
 All of this is classical: polar form, the complex logarithm, the area that multiplication keeps, the double cover. What is
-the series' own is the reading: e^(iθ) as the direction, r as the payload, the logarithm's two parts as reading and
-writing. It is the right notation for a reader because it keeps the two apart. The reader holds the imaginary part; the
-writer needs the real one.
+the series' own is the reading: e^(iθ) as the direction, r as the payload, the logarithm's imaginary part the reading and
+its real part the places, with the writing at its zero (*Reads and Writes* §2). It is the right notation for a reader
+because it keeps them apart. The reader holds the imaginary part; places are gaps in the real one, had by walking; the
+writer needs its zero.
 
 **The Cauchy in Euler's notation.** The Cauchy itself fits this notation twice over. Write where the reader stands, the
 foot and the height above the line that the third essay (section 6) gives every Cauchy, as one complex number z = m +
@@ -486,17 +488,17 @@ the total is π, the standard Cauchy's. Euler's identity marks where the sweep e
 gathered; the change from angle to reading makes it the kernel. Each finite read stays rational (w = (1 − s² + 2is)/(1 + s²),
 and composing reads multiplies the w's, which is tangent addition); π enters only when the sweep is totalled, the writer's
 act. That last sentence, and the reader standing at i where the kernel has its pole, are our reading of the arithmetic,
-not something the arithmetic proves (*Reads and Writes* §5, "The Cauchy's constant, from the same turn").
+not something the arithmetic proves (*Reads and Writes* §9, "The Cauchy's constant, from the same turn").
 The same pole gives the Cauchy's characteristic function. From a standpoint z = m + iγ, weight the kernel by a turn
 e^(its) and close the line above it: the one residue, at z, is e^(izt) = e^(imt − γt) (for t < 0 the line closes below,
 and together they give e^(imt − γ|t|)). At t = 0 it is the total: 1 for the normalized kernel, π for the unnormalized
-1/(1 + s²) whose π the paragraph above traced to the arc; past it the foot turns the phasor and the height damps it. One pole carries both (*Reads and Writes* §5,
+1/(1 + s²) whose π the paragraph above traced to the arc; past it the foot turns the phasor and the height damps it. One pole carries both (*Reads and Writes* §9,
 "One pole, the constant and the phasor").
 No other familiar kernel does this: a double pole gives (1 + t)·e^(−t), two poles beat, the hyperbolic secant's
 endless poles cannot total term by term, and the Gaussian has no point off the line to read from at all.
 The structure was in use before it was named: the reader standing at i, a relay of standpoints adding z, parallax's
 Cauchy depth, time turning e^(izt), the floor's cells at their own m + iγ. One pole is why each could carry z and nothing
-else. That is a unity shown for the Cauchy, not a law for every kernel (*Reads and Writes* §5, "What the one pole already
+else. That is a unity shown for the Cauchy, not a law for every kernel (*Reads and Writes* §9, "What the one pole already
 carried").
 
 **The two corners are two mirrors.** The plane of the logarithm also shows the corners plainly. Swap a reading for its
@@ -561,8 +563,8 @@ been about how.
 **The circle is one length's before it is two lengths'.** A writer starts with the circle as an equation in two lengths and
 turns it. A reader starts with one length, points it at the mountain and turns it, and holds no circle: the circle is what
 a writer draws of the turning. From one place the reader has the open quarter's directions, its readings; the circle
-closed, with its π, is held by an observer that has joined its facings, which is writing, and the same observer reads again
-when it stands still (the sixth essay, "Becoming the writer"; the fourteenth). The writer's equation describes, in two
+closed, with its π, is held by an observer that has joined its facings, the writer's vantage, and the same observer reads again
+when it stands still (the sixth essay, "From reads to places to writes"; the fourteenth). The writer's equation describes, in two
 lengths, a thing one length made.
 
 **Everything special about the circle is available from one length pointed, with no circle held.** That includes the corner
@@ -587,6 +589,6 @@ their median.
   31 (the angle in a semicircle is right); Book VI, propositions 8 and 13 (the mean proportional).
 - Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Berlin.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): the corner in §4 (Propositions 1 and 2), the arc from
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read, place and write): the corner in §4 (Propositions 1 and 2), the arc from
 the chord, the two sweeps and what each reads in §4, the one-length circle in §5 (Proposition 3, with the derivation of the
 circle from a uniform returning sweep as part (g)), and the three paths in §12.2.
