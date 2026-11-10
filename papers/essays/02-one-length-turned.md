@@ -641,6 +641,24 @@ first holds at every direction, so one read has it, in squares; the other three 
 does. Squares are the reader's where roots are the writer's: w = (h + iv)² is rational in s and h + iv is not, the same
 split as doubling a turn against halving one.
 
+**The −1 never needed e or π.** The second row can be read as §7 read the third. The corner is the quarter turn,
+exactly and with no root in it: w(1) = (1 + i)/(1 − i) = i. Two corners composed are the half turn, i × i = −1, a
+finite and rational statement. Euler's identity is that fact with the arc given a length, π, and the composing written
+as an exponential, base e:
+
+| who | what it holds of e^(iπ) = −1 |
+|---|---|
+| the reader | w(s) × w(1/s) = −1; at the corner i × i = −1: the exchange, no numbers |
+| the writer at work | two corner steps land on −1 exactly; finer equal steps, (1 + iθ/n)ⁿ with fractions for θ, land near it and never on it |
+| the paper | e^(iπ) = −1: the limit of the finer steps, the arc named π and the base named e |
+
+One thing differs from π/2 × 2/π = 1, where any fraction gave the 1 exactly. Here the working writer is exact only at
+the corner: the only turns with a rational slope that are a rational part of the whole turn are the corner's multiples
+(Niven), so equal rational steps finer than the corner never land on −1. The corner is the one finite door to it, and
+everything finer is an approach. So e and π are the two parts of the identity only the paper holds, and the two parts
+the fact does not depend on: π the price of saying how long the arc to −1 is, e the price of saying it as one smooth
+turn where the reader has two corner steps.
+
 ---
 
 ## 10. What it comes to

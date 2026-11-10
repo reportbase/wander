@@ -176,6 +176,13 @@ at every step. As n grows the count becomes e^(iθ), with its length 1: the limi
 limit along the real axis, (1 + 1/n)ⁿ, is Bernoulli's e. One limit, two axes: e compounds along the thumb, e^(iθ) square to
 it. `euler.html`'s "n reads" draws the polygon closing on the circle.
 
+The count never lands on −1, at any n, with fractions for θ: the direction is always a little short and the length a
+little long. Yet −1 is reached in two steps, exactly, by another road: the corner is the quarter turn,
+(1 + i)/(1 − i) = i, and i × i = −1. That is the one finite door, since no finer equal step with a rational slope is a
+rational part of the turn (Niven). So e^(iπ) = −1 holds three ways: the reader has the exchange, w(s) × w(1/s) = −1; a
+writer at work has the two corner steps, and approximations for anything finer; only the paper, the writer at the
+limit, has it with the arc named π and the base named e, neither of which the fact depends on (the second essay, §9).
+
 ## 8. What the plane is not
 
 It is the writer's notation for the read. e^(iθ) states the turn as a number and carries π with it, and π, the turn
