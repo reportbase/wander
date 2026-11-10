@@ -308,6 +308,14 @@ faces the thing in front of it across one hemisphere, and holds as paper whateve
 π/2 × 2/π = 1 is not two parties meeting; it is one observer's two facings held together, and the 1 it gives back is its
 own thumb.
 
+**Which act each number measures.** The two numbers also sort by act. 2/π is what turning sees: over the quarter turn the
+thumb's share h averages 2/π, the mean of what is seen of one thumb from a standpoint that never moves, and it is
+approached at the horizon, never reached. π/2 is what walking counts: the quarter arc from all of h to all of v is π/2
+thumbs long, and it is reached, at a point. An arc counted in thumbs is a place, had by walking and counting; with the
+thumb in metres it is a write. So, in short, reading is 2/π and writing is π/2, the write reached through its place, and
+their product, 1, is the read and the walk held together. Both stay the writer's arithmetic, since the reader holds no π;
+what is sorted is the act each one measures.
+
 *Demo: the mountain and the thumb, "the two vantages": π/2 and 2/π on the thumb's circle, their product 1.*
 
 ---
@@ -574,6 +582,28 @@ logarithm of w = (1 + is)/(1 − is) over 2i; at the horizon w is −1, e^(iπ),
 
 The reader holds one piece of it, the heat. The horizon reached, π, and the 2/π that makes the heat a probability are the
 paper's. A reader's distribution is a heat; it becomes a total only when a writer closes it.
+
+**Four identities, one exchange.** Each of the four also has a form the reader holds: rational in the slope, with no π,
+and each one a fact about the exchange s ↔ 1/s, whose fixed point is the corner.
+
+| | the writer's form | the reader's form | what it says of the exchange |
+|---|---|---|---|
+| the circle | h² + v² = 1 | 1/(1 + s²) + s²/(1 + s²) = 1 | the heat in the v/h chart and the heat in the h/v chart share one whole |
+| the half turn | e^(iπ) = −1 | w(s)·w(1/s) = −1, w = (1 + is)/(1 − is) | a direction and its reciprocal compose to the half turn |
+| the two facings | π/2 × 2/π = 1 | s × (1/s) = 1 | the exchange undoes itself; the corner is its fixed point |
+| the total | (2/π)·∫₀^∞ ds/(1 + s²) = 1 | ∫₀¹ ds/(1 + s²) = ∫₁^∞ ds/(1 + s²) | the corner splits the heat in equal halves |
+
+The heat per unit of s is h²; turn the reading over, t = 1/s, and the heat per unit of t is 1/(1 + t²) = v². So
+Pythagoras, in squares, is the two charts' heats adding to one at every direction, with no root in it; the root comes in
+only for h itself. Turn s over inside w and it becomes −1/w, so the product is −1 at every s; at the corner it is
+i × i = −1, the corner composed with itself the horizon, Euler's identity with no e and no π. And putting s = 1/t carries
+the heat below the corner onto the heat above it: the reader has "half and half" without ever having "π/4 and π/4".
+
+So the reader holds one fact four ways, the exchange and its corner, and the writer's four equations are what that fact
+becomes once the horizon is reached and the total stated. π is the price of turning "equal halves" into "how much". The
+first holds at every direction, so one read has it, in squares; the other three need the horizon reached, which no read
+does. Squares are the reader's where roots are the writer's: w = (h + iv)² is rational in s and h + iv is not, the same
+split as doubling a turn against halving one.
 
 ---
 

@@ -449,6 +449,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   their product 1 the paper, the two held together. Both stay the writer's arithmetic (R717); what is sorted is the act
   each measures. Refines R798's table (both were the facings', the writer's number 1). *Reads and Writes* §9 "Reading is
   2/π; walking is π/2", §1's "Four things" table (a column for the act) and "Words used throughout".
+  R803 (10 Nov; Tom: "update the essays."): R801 and R802 in essay 2 §7 ("Which act each number measures") and §9 ("Four
+  identities, one exchange", with the table), essay 14 §3 and essay 15 §5; no new claim.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

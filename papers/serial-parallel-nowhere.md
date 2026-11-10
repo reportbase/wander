@@ -7410,6 +7410,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R803** (10 Nov; Tom: "update the essays."): R801 and R802 carried into the essays, no new claim: essay 2 §7 "Which act
+  each number measures" and §9 "Four identities, one exchange" (the table of writer's and reader's forms), essay 14 §3
+  (each of the two rates measures an act), essay 15 §5 (what the reader holds of each identity).
 - **R802** (10 Nov; Tom: "reading = 2/PI   writing = PI/2", then "yes, go with your recommendations and merge"):
   **2/π measures the read, π/2 the walk.** 2/π is the thumb's mean share over the quarter turn, what turning sees from a
   standpoint that never moves, the constant closing the heat, approached at the horizon. π/2 is the quarter arc in
