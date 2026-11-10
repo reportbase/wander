@@ -66,7 +66,13 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
 - **D6. The second test.** Change what arrives, keeping the standpoint and the turn: repaint the world, move the light,
   replace a wall by a row of trees. The directions and their heat stay; the paint changes. The first test does not do
   this work: a probability, or a ratio of two amounts, is unmoved by scaling and is still not a direction. The second
-  test tells a direction from a ratio of payloads.
+  test tells a direction from a ratio of payloads. It tests a candidate once its standpoint and its turn have been
+  named, as D2 names them before anything arrives; it does not find a read in a bare number, and where no standpoint
+  and turn can be named it cannot be run and nothing is concluded (§11). The direction it keeps is the direction of
+  arrival at the standpoint: light bent on the way, by a lens or by refraction, changes which source paints a
+  direction and moves no direction, and where that source lies is a further inference, the writer's. And the test
+  sorts quantities, not causes: one cause can move both, as a boost moves where a star appears and the colour of what
+  arrives from it (§4, "A moving sky").
 - **D7. Joining and recording.** Joining reads, two standpoints or two moments, gives places and orders, not writes. A
   count, or a mark kept, is how a write is recorded; being an amount in a unit is what makes it a write. A count of
   strides is a whole-number record of a ratio d/stride, a place; the same count with the stride in metres is a write.

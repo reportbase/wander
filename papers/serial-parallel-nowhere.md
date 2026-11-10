@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R820** (10 Nov; ChatGPT's first classification stress test of *Reads and Writes*, pasted by Tom; "Yes—make the three
+  small edits and run the blind classification exercise"): D6 scoped in three sentences. It tests a candidate once its
+  standpoint and turn are named (D2's order); it does not find a read in a bare number. The direction it keeps is the
+  direction of arrival; bending changes which source paints it, and the source's position is a further inference. It
+  sorts quantities, not causes (a boost moves both). The camera paragraph and the angular-size note not taken. BCL
+  (`plans/bcl-plan.md`, `runs/bcl/`): a fresh agent given only D1–D7 and ten cases, predictions first.
 - **R818** (10 Nov; Tom: "lets apply the idea to parallax"; "add and merge"): parallax in the three tiers. Two slopes
   read a counted step B apart, measured inward off the line between: 1/(d/B) = 1/s₁ + 1/s₂, no angle, no π (3 and 6
   give 2 steps). The reader: one slope a read, nothing of parallax. The writer at work: the place in steps, rational,
