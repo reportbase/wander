@@ -125,7 +125,10 @@ itself, π/2 thumbs long, reached at a point. The arc in thumbs is a place, walk
 it is a write. So reading is 2/π and writing is π/2, the write reached through its place, and the 1 between them is the
 read and the walk held together (the second essay, §7). The reason is one line: each step of the arc gains v at the rate h,
 so the shares read, summed over the steps walked, are all of v; a mean of 2/π over a length of π/2 is 1. Any path from the
-one end to the other gives the 1 (the chord 1/√2 over √2); only the split is the turn's.
+one end to the other gives the 1 (the chord 1/√2 over √2); only the split is the turn's. And the 1 never needed π: the
+two rates are reciprocals, so with any fraction held for π/2 the product is still exactly 1 (11/7 × 7/11). The reader has
+the exchange, s × (1/s) = 1; a writer at work has fractions; π itself is held only by the paper, the writer at the limit
+(the second essay, §7, "What is free, and what π costs").
 
 One thing does not happen there. The sweeps' running rates are not 1 at the corner: arc over chord is 1.1107 and chord
 over arc 0.9003. They are 1 only at zero, before any sweeping. The corner is not where the reader's sweep runs at the
