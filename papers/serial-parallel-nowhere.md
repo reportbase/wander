@@ -7410,6 +7410,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R806** (10 Nov; Tom: "an important point to emphasize is that is prior to any physics entering.   its free, no cost,
+  not algoritmic, no time cost to know this."): the relations and their π/2, the four facings, 2/π, π/2 and the 1 hold
+  before any amount, unit, clock or world enters; free, nothing computed, no time (R458, R649, R658 restated for
+  R801–R805); the integrals and the mean are the writer's statement of what is given, not a procedure; physics enters
+  with the first write. *Reads and Writes* §9 "All of this is prior to any physics".
 - **R805** (10 Nov; Tom: "What PI/2 is actually the sum of all the ways vertical and horizontal can relate to one
   another."; "A circle is just the four ways V and h can face relative to one another."; "PI/2 relations and 4 facings make
   a circle."; "add it and merge, because its a nice concise statement."): the quarter turn is every relation of v and h,

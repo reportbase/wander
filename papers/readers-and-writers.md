@@ -1074,6 +1074,16 @@ space the count is the same one step up: the wedge holds π/2 of directions, the
 and π/2 × 8 = 4π, the sphere. The π/2 is the turn's weighing; summed along the chord the same ways come to √2, along the
 square's edges to 2. **Classical**; the wording is a reading.
 
+**All of this is prior to any physics.** The relations and their π/2, the four facings, the short side and the long side
+and the 1 between them hold before any amount, unit, clock or world enters: nothing in them moves when the world is
+scaled or when what arrives is changed, and nothing in them was measured. They are free. They cost nothing to have, since
+no step is taken and no algorithm run to produce them; they take no time, since a read holds none; the turn is given
+whole, not performed one after another (§3, "What a read is"). The integrals and the mean written above are the
+writer's way of stating what is given, not a procedure anyone carries out to get it. Physics enters only afterwards, with
+the first write: a walk actually made and counted, a thumb given a unit, a thing met and painted. So the order is fixed:
+first the geometry, whole and at no cost; then physics, which assigns its values and changes none of it. **A reading**,
+resting on the two tests.
+
 **What the one pole already carried.** The reader at i holds the standard Cauchy (§3). Readings added give one Cauchy
 with the standpoints added, z₁ + z₂, the phasors multiplying. Parallax is a sum of reads whose depth is exactly Cauchy,
 its point the triangulation of the two reads' points (§6). A cell of the floor's discarded fraction sits at its own
