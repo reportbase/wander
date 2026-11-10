@@ -422,6 +422,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   half-angle s = tan(φ/2). After draw's `tb_classical.md` and `tb_algebra.md`. *Reads and Writes* §1 "The reader uses no
   trigonometry"; the essays and the physics companion brought to it. **A standing rule for new writing: never give the
   reader an angle or a trigonometric function; state its results in s, the trig form marked the writer's.** In short (Tom): "Readers - v/h. Writers - angles."
+  R796 (10 Nov; Tom: "What is needed for angles, V and H", "Yes"): an angle is a completed join in two stages, not a
+  write: s needs nothing; the shares h² + v² = 1 need V = H (the one-length circle; halving t = v/(1 + h)); θ needs that
+  and π. No V*, no unit. *Reads and Writes* §12 O3.
+  R797 (10 Nov; Tom: "V is knowable not known"; "Consider four things, universe, Apple, human and paper"): the universe
+  read by the inscribed sweep (V unknowable), apple and human each other by the central sweep across one hemisphere (V
+  knowable), the apple held and turned (the Cauchy; V known), the circle on paper the dual view made. *Reads and Writes*
+  §1 "Four things".
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
