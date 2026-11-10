@@ -472,6 +472,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R828 (10 Nov; Tom: "proceed with your recommendations."): *Reads and Writes* §2's distance between standpoints is a
+  place only where they differ in position; between standpoints that differ by a boost it is the rapidity, a map's
+  coordinate. The physics paper's "Joining gives places, orders or maps" stands.
   R827 (10 Nov; Tom: "Rapidity is a coordinate representing a map between reads, not itself a read."): **what can be
   inferred from a read is not thereby a read**; §4's one-look rapidity is the coordinate of a map, inferred under a
   premise about the sky; O9's flag closed. Never call the rapidity a read, a place or a payload.

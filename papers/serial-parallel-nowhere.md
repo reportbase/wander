@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R828** (10 Nov; Tom: "proceed with your recommendations."): the two items left by R827. (1) The physics paper's
+  closing list stands as changed ("Joining gives places, orders or maps"; a duration from two moments left open).
+  (2) *Reads and Writes* §2 "How far apart two standpoints are" no longer carries ": a place" in its heading: the
+  Poincaré distance between standpoints is a place where the two differ in position (a foot and a height over one
+  line, a gap in space), and the same distance between two standpoints at one position that differ by a boost is the
+  rapidity, a map's coordinate and no place; one formula, the kind decided by what it is said of (R823). O4 open.
 - **R827** (10 Nov; Tom: "the sentence "from one look, the rapidity is a read" should be revised. Rapidity is a
   coordinate representing a map between reads, not itself a read."; "an important distinction here between what can be
   inferred from a read and what kind of thing the inferred quantity represents."): *Reads and Writes* §4 "A moving sky"

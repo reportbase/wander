@@ -422,13 +422,16 @@ never tells the routes apart; only what γ tracks can (a distance for the turn a
 a sum), and the boundary's shape. So the turn does not own the Cauchy; it is the reader's route to it. "Find the turn" is,
 more generally, "find the z". A fat tail with no z is not harmonic measure by any route. **Checked** (CRT); classical.
 
-**How far apart two standpoints are: a place.** The standpoints z = m + iγ form the hyperbolic plane, and the family
+**How far apart two standpoints are.** The standpoints z = m + iγ form the hyperbolic plane, and the family
 carries it as its measure of distinguishability: the Fisher metric of C(m, γ) is (dm² + dγ²)/(2γ²), half the Poincaré
 metric, and the divergence between two members is 2·ln cosh(d/2), d their Poincaré distance in the upper half-plane, the one with
 ds² = (dm² + dγ²)/γ² (Chyzak and Nielsen give
-the closed form). Every real Möbius map leaves it as it was, scaling among them; it joins two standpoints. So it is a
-place (D3): unmoved by scaling, held by no single read. At one foot the distance is |ln r| for heights in the ratio r,
-the gap across of §2; standing higher on both sides only makes them harder to tell apart. **Checked** (FRG); classical.
+the closed form). Every real Möbius map leaves it as it was, scaling among them; it joins two standpoints. Where the two
+differ in position, a foot and a height over one line, it is a place (D3): unmoved by scaling, held by no single read,
+a gap in space. At one foot the distance is |ln r| for heights in the ratio r, the gap across of §2; standing higher on
+both sides only makes them harder to tell apart. The same distance between two standpoints at one position that differ
+by a boost is the rapidity (§4), and there it is no place: no gap in space lies between them, and the number is the
+coordinate of a map (D7). The formula is one; what it is said of decides the kind. **Checked** (FRG); classical.
 
 **Where the heat comes from.** The read is a heat map: a continuous weight over its readings, with nothing counted in it.
 The measure is uniform by solid angle, every direction of the hemisphere alike, so by angle there is no heat; the heat is
