@@ -256,8 +256,8 @@ direction *and* its distance would need every distance, the size of everything, 
 
 The wedge is the writer's too: the writer's description of the reader's geometry, given afresh at each standpoint from the
 relations there and drawn whole from outside. It needs no size: its readings are ratios, laid by the two-dimensional
-Cauchy. What a blueprint would add is what it added in the plane, once per party: the true size of each against H, in
-thumbs.
+Cauchy. What further standpoints would add is what they added in the plane, once per party: the true size of each against
+H, in thumbs, a place; a blueprint adds it in a unit, a write.
 
 The writer can place the wedge anywhere on the sphere. One rotation positions it; the reader's two sweeps then work inside
 it, in its own frame. The readings are the same at every position. Only a frame fixed outside, the sphere's, records where
@@ -505,7 +505,7 @@ third of where you can look.
 - Cacoullos, T. (2014). Polar angle tangent vectors follow Cauchy distributions under spherical symmetry. *Journal of
   Multivariate Analysis* 128, 147–153.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*): the cuts, the sum and the two angles in §2, readers
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read, place and write): the cuts, the sum and the two angles in §2, readers
 and writers with two parties in §3.1, the one-length sphere in §5 (Proposition 3(f)), the Cauchy wedge in §7.1
 (Proposition 5(e), "Why uniformly by area", "Swept by altitude and azimuth", "More parties"), and the sphere in a cube in
 §9. "Three thumbs at the crosshair" is checked exactly in THM runs 1–3 (`plans/thm-plan.md`, `runs/thm/`).

@@ -46,14 +46,16 @@ one number: how long a step is. If someone tells you that your stride is seventy
 metres at once, every length multiplied by the same 0.7. But the map was finished before anyone told you, and it would
 still be finished if no one ever did.
 
-This is the whole essay in miniature. There are two acts here, and they are very different.
+This is the whole essay in miniature. There are two acts here, and they are very different, with a step between them.
 
-The first act is **reading**. You read directions from where you stand, and from two standpoints you read the room's
-shape and every ratio in it. Reading needed no unit, and it gave you everything except one number.
+The first act is **reading**. You read directions from where you stand. From two standpoints, joined across the step,
+you have the room's shape and every ratio in it, in steps: what *Reads and Writes* calls a **place**, unmoved when the
+world is scaled, like a reading, but held by no single standpoint. Reading and placing needed no unit, and they gave you
+everything except one number.
 
 The second act is **writing**. To say how many metres the table is, you must be given an amount from outside your
 readings: the stride measured once against a rule. Writing cost that one number, and nothing your eyes could do would
-have supplied it.
+have supplied it. A write is exactly what scaling the world moves; the map in steps does not move, so it is not yet one.
 
 The rest of the essay takes these two acts apart. They have a structure, and the structure has two sides.
 
@@ -219,9 +221,10 @@ two breadths. To write h² + v² = 1, and to mean it as a statement about length
 equals H. Two amounts, and a claim about how they compare.
 
 The reader has no V. More than that, it never knows V. Every reading is a ratio of the thumb's own shares, and V was
-never in it: not missing, never there. So no reading, however many, carries it. V is known only by writing: by walking a baseline, counting a step,
-timing a signal of known speed, or being handed an agreed unit, each an amount carried in from outside. A reader that comes
-to know V has not read better. It has written, and taken the writer's vantage. Yet the reader has the circle's geometry,
+never in it: not missing, never there. So no reading, however many, carries it. V against the thumb, V\*/H, is placed by
+walking a baseline or counting a step; V as an amount is known only by writing: a step counted in an agreed unit, a
+signal of known speed timed, or an agreed unit handed over, each an amount carried in from outside. A reader that comes
+to know V has not read better. It has placed it by walking, or, with a unit, written it, and taken the writer's vantage. Yet the reader has the circle's geometry,
 without the circle. Where does it come from?
 
 It comes from pointing. Hold your one length, H, your thumb, up at the mountain, and turn it about one end, steadily, like
@@ -349,8 +352,9 @@ Imagine every length in the world multiplied by the same factor k, your own leng
 larger, and so are you, your stride, your rulers and the gap between your eyes. Then look at any quantity you recorded
 before, and ask what happened to it.
 
-- If it did not change, it is a **reading**. A direction, an angle, the ratio of two lengths, a shape held up against
-  its own average size, the place of the corner: all of these come through untouched.
+- If it did not change, it is a **reading** or a **place**. A direction, an angle, the place of the corner, held from
+  one standpoint, are readings; the ratio of two lengths, a shape held up against its own average size, the map in
+  steps, which need a second standpoint and the step between, are places. All of these come through untouched.
 - If it changed by the factor k, it is a **writing**. A length in metres, a distance on a map's scale bar, the size of
   the table in centimetres: all of these move, and each moved because somewhere an amount was carried in to state it.
 
@@ -358,8 +362,8 @@ Nothing length-like can do anything else. It is either fixed or it moves by k.
 
 Try it on the room. The map in steps does not move: everything grew by k, your step grew by k, and every length in steps
 is the same number as before. The map in metres moves: the stride was measured against a rule, the rule did not grow
-with the world, and every length in metres is k times larger. One test, and it puts the map in steps on the reading
-side and the map in metres on the writing side.
+with the world, and every length in metres is k times larger. One test, and it puts the map in steps with the readings,
+unmoved (a place, since it needed the step), and the map in metres on the writing side.
 
 Try it on a mountain. A range of mountains twenty miles wide, ten miles away, seen against your thumb. Scale the world
 by a tenth, so the range is two miles wide, one mile away, and your thumb is a tenth of its size. The view is the same.
@@ -373,7 +377,8 @@ with the amounts; the reader's pointing, read as directions, does not.
 
 In Euler's notation the test has a picture. Write a thing as a direction times an amount, r·e^(iθ), and take the
 logarithm, ln r + iθ. Scaling the world by k slides the real part by ln k and leaves the imaginary part alone: the
-imaginary part is the reading, the real part the writing (the second essay, section 9).
+imaginary part is the reading, differences of the real part are places, and the real part's zero, tied to a unit, is
+the writing (the second essay, section 9; *Reads and Writes* §2).
 
 This test is not new, and the essay claims no credit for it. Henri Poincaré imagined, more than a century ago, all the
 dimensions of the universe becoming a thousand times larger overnight, and observed that "I shall not notice anything
@@ -396,9 +401,10 @@ it would have to be handed.
 
 ---
 
-## 6. What writing costs: a count
+## 6. What placing and writing cost: a count
 
-If writing costs amounts carried in, it is natural to ask how many. The answer can be counted exactly, and it is small.
+If writing costs amounts carried in, it is natural to ask how many, and what placing costs on the way. The answer can be
+counted exactly, and it is small.
 
 Set up a simple scene: four objects, each with a size and a distance, and a reader who reads only directions, how wide
 each object looks and which way it lies. Then ask, at each stage, how many numbers in the scene are still free: how many
@@ -407,8 +413,8 @@ could be changed without changing anything the reader has read.
 - **One standpoint.** Each object's size and distance can trade freely: twice as big and twice as far reads exactly the
   same. With four objects there are four free numbers. From one place, nothing is written.
 - **One step of known length,** known in the reader's own unit, say "one stride". Now every size and every distance is
-  fixed, all of them, in strides. No free numbers are left. The step wrote everything at once, in the reader's own
-  length.
+  fixed, all of them, in strides. No free numbers are left. The step placed everything at once, in the reader's own
+  length: places, unmoved by scaling, not yet writes.
 - **One step of unknown length.** One free number remains: the length of the step. Everything is fixed relative to the
   step and nothing in strides, which is the room of section 1 before the stride was counted.
 - **A second known step.** It adds nothing to the scale, which the first already fixed. It checks the first.
@@ -418,9 +424,9 @@ could be changed without changing anything the reader has read.
 - **A public unit,** metres. One free number remains, the size of a stride in metres, until **one notch is agreed**:
   someone, once, measures a stride against the standard metre.
 
-So the cost of writing is one amount for a lone reader, and one more for each further reader who must agree, plus one
-to tie them all to a public standard. Each of these amounts comes from moving or from exchanging; none comes from looking
-harder.
+So placing costs one step for a lone reader, and one number exchanged for each further reader who must agree (a ratio
+of two strides, itself unmoved by scaling); writing costs one amount more, the notch that ties them all to a public
+standard. Each comes from moving or from exchanging; none comes from looking harder.
 
 This kind of count has relatives. Buckingham's theorem in dimensional analysis counts how many dimensionless
 combinations a physical law can depend on: the number of quantities less the number of independent units. Engineers
@@ -430,7 +436,8 @@ supply. Physicists argue, sometimes heatedly, over how many fundamental units na
 the amounts for a theory, a law or a reconstruction. The count here is per reader. It says what each observer must be
 handed, and it says the answer is almost nothing.
 
-*Demo: writing, step by step: the free numbers computed on the page as each step is taken.*
+*Demo: writing, step by step: the free numbers computed on the page as each step is taken: places in the
+reader's own H, then one agreed notch, the write.*
 
 ---
 
@@ -465,7 +472,8 @@ than you crosses it. An object exactly as tall as your eyes has its top resting 
 H. A. Sedgwick worked out the relation in 1973: from the angle to an object's foot below the horizon and to its top
 above it, its height over your eye height is fixed. It is a ratio of readings and needs no unit. As he put it later, without
 the eye height "the vertical extents of all those objects relative to each other are still visible even though their
-vertical extents relative to the observer are not." Supply the eye height and every object is written in it.
+vertical extents relative to the observer are not." Take the eye height as the unit and every object is placed in eye
+heights; supply it in metres and every object is written.
 
 The body supplies such bases all the time. In a well-known experiment of 1984, William Warren asked short and tall
 people to judge which stairs they could climb without using their hands. The boundary fell at the same proportion for
@@ -474,7 +482,8 @@ and agreed exactly about it as a ratio. Each was reading the stair against their
 carries.
 
 So the carried-in amount does not have to be a metre rod. In perception it is the body: eye height, leg length, the gap
-between the eyes, the length of a step. The reader reads everything against it and writes everything in it.
+between the eyes, the length of a step. The reader reads everything against it and places everything in it; one amount
+for it, in a public unit, writes everything.
 
 *Demos: one's own height; walking the room.*
 
@@ -531,7 +540,7 @@ position: the length it starts from, and the places it chooses to stand.
 **Completeness is never a reading.** A loop that closes shows that the routes taken agree. It cannot show that no
 route remains untaken. So a reader can find out that its account is incomplete, when two routes disagree, but it can
 never prove that its account is complete. And even when a reader recovers something exactly, its shape, its places,
-even its size once a stride is counted, recovering it does not make the reader a writer. The writer holds the whole by
+even its size in strides once a stride is counted, recovering it does not make the reader a writer. The writer holds the whole by
 walking it or carrying in its measure. A reader that arrives at the writer's answer got there by cleverness: where it
 stood, which loops it closed, what it was handed. That is not a lesser achievement. It is a different one.
 
@@ -569,8 +578,8 @@ A record that scaling the world would leave unchanged cannot contain the world's
 Measured data sorts the same way: the third essay's three cases (two gravitational-wave detectors, the quasar dipole,
 photons arriving one at a time) each split into a part read as a direction and a part that is the payload's.
 
-**It counts what must be brought in.** One amount for a lone observer, one more for each observer who must agree, one
-more for a public standard. When a measurement fails, the count says where to look: at the amounts carried in, not at
+**It counts what must be brought in.** One step for a lone observer's places, one number exchanged for each observer
+who must agree, one amount for a public standard. When a measurement fails, the count says where to look: at the amounts carried in, not at
 the readings.
 
 **It keeps reads from racing.** In computing, two operations can run together without a race when neither writes what
@@ -626,6 +635,7 @@ The essay draws on these; each is cited for something it uses.
 - Warren, W. H. (1984). Perceiving affordances: visual guidance of stair climbing. *Journal of Experimental
   Psychology: Human Perception and Performance* 10(5), 683–703.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*), in the same collection: readers and writers in
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November
+(R788) with read, place and write), in the same collection: readers and writers in
 §3.1, the one-length circle in §5, the Cauchy as the law of the uniform turn in §7, reading and writing in §9, and the
 classical pieces in Appendix A ("The Cauchy from one length").
