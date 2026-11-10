@@ -200,7 +200,10 @@ orders and finds the corner, and the rationals are made where a count comes in, 
 V, the mountain in the distance, is learned the same way. An observer taking standpoints (the sixth essay, "Becoming the
 writer") places V by degrees: as V\*/H in the step it took, to within a band set by its baseline and its resolution,
 for the things near enough; only the step counted in an agreed unit makes it an amount, a write. Each standpoint more is one more finite step; holding V exactly, like holding π, is the end of
-a process that does not end.
+a process that does not end. So V is knowable, not known, and the exact V is a completed join of π's kind: the same as
+the one-length circle and the completed turn, held whole from the writer's vantage, none of them moved by scaling the
+world. Euler's identity is the hinge (the fifth section): the turn's end, endless in the reader's slope, is one named
+point, −1, from the centre, and a named point is what can be carried onto paper (the twelfth essay's four things).
 
 ## 7. A machine is a reader here
 

@@ -70,6 +70,23 @@ the same. Completeness is never a reading. The hand knows because the hand did t
 Keep the apple in mind as the writer's world made tangible: a thing with an N you can get, with edges, halves, an
 inside and an outside.
 
+**Four things.** Put the apple beside three others: the universe, a human and a sheet of paper. They sort where V, the
+other's breadth, stands.
+
+- *The apple and the human each read the universe by the inscribed sweep*, from home to a horizon. The universe has no
+  far side to face; no size could be had, so its V is **unknowable** (the fourth section's horizon).
+- *The apple and the human read each other by the central sweep, across one hemisphere.* Each is a bounded thing in the
+  other's view, its rim reached at a point. So the other's V is **knowable**: the end exists and is met. It is not
+  known, for the far hemisphere stays turned away; each holds only the other's front.
+- *The human holds the apple and turns it.* The turn makes the Cauchy: a uniform turn, read as the slope v/h against the
+  line of sight, is the Cauchy whatever the apple's shape, which is only the paint. And the hand holds the back while the
+  eye holds the front, so in the hand the apple's V is **known**. This is the writing above.
+- *The human draws a circle on the paper.* The view of both hemispheres is made, not seen: a mark holding both halves at
+  once. The apple reads and is read; only the human makes the paper.
+
+V is knowable, not known: the inscribed sweep approaches its end, the central sweep reaches it at a point, and only a
+hand or a mark holds it whole.
+
 ---
 
 ## 3. The reader's sweep

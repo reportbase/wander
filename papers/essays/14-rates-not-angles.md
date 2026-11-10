@@ -226,6 +226,14 @@ transcendental only in the limit. It is the writer's ladder from the corner to 2
 π is not a reader's number, and neither is √2 made. And the writer's 1, the angle, the reader has only by joining both
 sweeps.
 
+**What an angle needs.** The same ladder says what each step toward an angle takes. The slope s = v/h needs nothing:
+it is the read. The shares h and v with h² + v² = 1 need the other party held at the thumb's one length, the one-length
+circle; with them come cos and sin as the shares themselves, √(1 + s²) = 1/h, and the halving, t = v/(1 + h), rational
+once the circle is held. The angle θ needs that circle and the turn completed as well, π: an arc over the radius, counted
+against the whole. Neither step needs a true breadth or a unit, so neither is a write; both are completed joins, the
+circle first and π second, held from the writer's vantage. So doubling a turn is the reader's, (1 + is)/(1 − is), and
+halving one the writer's.
+
 **Met, not made.** A reader still meets irrational directions. A star can lie at v/h = √2, and the Cauchy's own
 quartiles are √2 − 1 and √2 + 1. The turn hands every direction to the reader, with its heat, the irrational ones
 included; it does not make them. Constructing one, or naming it as a number, is the writer's work.
