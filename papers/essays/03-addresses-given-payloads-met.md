@@ -205,8 +205,8 @@ value is set by that extent, not equal to it. A computer's Cauchy has one for th
 **The payload is not lost.** None of the payload goes into making the heat, so all of it arrives, along directions whose heat
 was known before it came, and the Cauchy gives it back four ways. By its ratios: two payloads read against each other, one light over
 another, one colour channel over another, one radius over another, make a direction in the payload's own space, read
-exactly as a direction is and unchanged when the world is scaled (the payload arrived written, and read against itself it
-is a write read again); a shape about a centre comes back whole this way, every
+exactly as a direction is and unchanged when the world is scaled (a ratio of two payloads carries no unit; scaling the world
+leaves it, and it is read as a direction is); a shape about a centre comes back whole this way, every
 mode but its overall size, and that size is V again. (Radio astronomers read polarization so: a source's own
 polarization angle, from the ratio of two of its Stokes parameters, is a reading of the payload, unchanged by scale, while
 the Faraday rotation that turns it on the way carries a rotation measure in radians per square metre, and is a writing.)

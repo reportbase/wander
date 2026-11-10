@@ -7410,6 +7410,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R792** (10 Nov; Tom: "proceed", to proposed rulings on three essay passages and O1–O6 of *Reads and Writes*, after a
+  pasted review): essay 15 §8, π a completed join, not "knowing V"; essay 4, two thumbs, four, eight are places (D7: a
+  count records, the thumb scales with the world), not "counted by a writer"; essay 3, a ratio of two payloads is read,
+  not "arrived written". O1 closed (keep "place"), O2 closed (the thumb the across axis's chosen zero), O3 open with
+  "a completed join" as the interim term (unmoved by scaling, so not a write), O4 closed (an order its own kind), O5 and
+  O6 open. Then (Tom: "1"): the demos pass, O7 closed: only `demos.html`'s card for `write.html` still called
+  the move a write. Two of the review's suggested wordings ("the count is written", "writing records what is retained") were not
+  taken: they contradict D7.
 - **R791** (10 Nov; Tom: "proceed", then a pasted note: "Can angle-keeping be derived from the conditions of reading
   itself, without assuming Lorentz invariance or importing the Lorentz transformation?"): SRB run 2, nothing killed.
   (C) replaced by four premises: changes of standpoint act on directions alone, chains included (G1); are fixed by

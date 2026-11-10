@@ -230,7 +230,8 @@ it past 3σ (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), �
 
 It changes nothing about π or e or how to compute them. It sorts.
 
-- **π is a writer's number** because it states a turn closed, and closing the turn is knowing V (OFS §3.8). Wherever π
+- **π is a writer's number** because it states a turn closed, every facing joined and held whole: a completed join, not an amount,
+  and unmoved when the world is scaled. Wherever π
   appears in a result (π/2 and 2/π, the Cauchy's normalizing 1/π, a circle's area), the result is the writer's measure
   of something, and the reader's own version of it is a finite statement: an order, a count, a corner.
 - **e is a writer's number** because it states a scale completed, and giving a size as an amount is knowing V*. Wherever e

@@ -1030,18 +1030,20 @@ before the data can show where it is not. **Checked** (TCF; killed).
 
 ## 12. Open questions
 
-- **O1. The name "place".** The working name for D3. It may be renamed; nothing in the definitions depends on the word.
-- **O2. The thumb.** The thumb scales with the world (D5), so it is the across axis's chosen zero, as home is the up
-  axis's. Whether anything is lost by treating it so (the record held it "not a mark, the read's own length") is open.
+- **O1. The name "place".** *Closed (R792):* "place" stays, its scope fixed by D3 (a gap across, unmoved by scaling,
+  needing two standpoints).
+- **O2. The thumb.** *Closed (R792):* the thumb is the across axis's chosen zero, as home is the up axis's, as D5
+  already requires; the record's "the read's own length" describes how it is chosen, not a different kind.
 - **O3. "The writer's" for joins.** The writer as a vantage holds completed joins (π, the one-length circle, the facings
-  joined) as well as amounts. Whether completed joins deserve their own word, apart from both places and writes, is open.
-- **O4. Orders.** The order of reads is a joining, like a place (D7), but has no gap in it. Whether an order is a place or
-  its own kind is open.
+  joined) as well as amounts. A completed join is unmoved by scaling, so it is not a write; "the writer's" here names a
+  vantage. Until a word is chosen, say "a completed join". Whether it deserves its own kind is open.
+- **O4. Orders.** *Closed (R792):* an order of reads is its own kind, a joining with no gap in it, not a place; D7 lists
+  places and orders side by side.
 - **O5. Do readers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.
 - **O6. A second test that can fail.** "Find the z" has passed once in data (LIGO) and failed once (the seeds). A second
   domain, where the turn can be named before the data, would show whether the rule sorts.
-- **O7. The essays, the demos and *Reads and Writes in Physics*** use the record's vocabulary, which calls places writes.
-  They wait for a pass.
+- **O7. The essays, the demos and *Reads and Writes in Physics*.** *Closed (R792):* all three brought to R788's kinds;
+  the last place still calling a place a write, the demos page's card for `write.html`, now says the move places.
 - **O8. Why the sky is conformal.** The moving sky's Möbius map rests on motion keeping angles on the sky. SRB (runs 1–2)
   replaces that premise by four: a change of standpoint acts on directions alone, chains included; it is fixed by finitely
   many numbers; the turns are among the changes; a motion carries directions from the back toward the front. With Lie's
