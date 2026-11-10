@@ -7410,6 +7410,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R809** (10 Nov; Tom: "its interesting that we say,   pI/2 * 2/PI = 1.   reader * writer = 1.    yet neither reader or
+  writer knows or uses pI."; "yes, add it and merge"): the 1 never needed π. The factors are reciprocals, x × (1/x) = 1,
+  π leaving the product; the reader holds s × (1/s) = 1, the writer at work (p/q) × (q/p) = 1 exactly with any fraction
+  (11/7 × 7/11), the paper π/2 × 2/π = 1; the 1 exact at every stage of approximation. π is the one part only the paper
+  holds and the one part the equation does not depend on. *Reads and Writes* §9 "What is free, and what π costs".
 - **R808** (10 Nov; Tom: "so that means neither the reader or the writer knows or uses PI, only the paper knows PI.";
   "yes, add it and merge"): three, not two. The reader: slopes, the corner, equal halves, neither knows nor uses π. The
   writer at work: finite counts, so fractions (22/7, 355/113, a series stopped), using π's name and approximants, never

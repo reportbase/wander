@@ -466,6 +466,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   reader neither knows nor uses π; the writer at work counts, so holds fractions, using π's name and approximants, never
   its value; only the paper holds π itself, and **the paper is the writer at the limit**, never a writer anyone is
   (refines R798). *Reads and Writes* §9, §1 "Four things".
+  R809 (10 Nov; Tom: "pI/2 * 2/PI = 1.   reader * writer = 1.    yet neither reader or writer knows or uses pI."): the 1
+  never needed π: reciprocals, x × (1/x) = 1; reader s × (1/s), writer at work (p/q) × (q/p) exactly with any fraction,
+  paper π/2 × 2/π; π the one part only the paper holds and the one the equation does not depend on. §9, same passage.
   R806 (10 Nov; Tom: "that is prior to any physics entering.   its free, no cost, not algoritmic, no time cost to know
   this."): R801–R805's relations, facings and numbers hold before any amount, unit, clock or world; given, not computed,
   no time; the integrals the writer's statement, not a procedure; physics enters with the first write. *Reads and

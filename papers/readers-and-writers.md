@@ -1095,7 +1095,23 @@ stopped at some term, each nearer π and none of them π. The writer uses π's n
 value. Only the paper holds π itself: the completed whole, every facing at once, the total of a sum no one finishes. The
 paper is therefore the writer at the limit, as the exact V is (§6, "Places come by degrees"), and never a writer anyone
 is. "The paper knows π" is a picture; what is exact is that π is defined there, as the whole turn, and reached nowhere
-short of it. Physics enters separately and later, with the first write: a walk made and counted, a thumb given a unit. **A reading**, resting on this
+short of it.
+
+The equation π/2 × 2/π = 1 is then worth a second look, since it names the read and the walk and neither the reader nor
+the working writer has π. It does not need π. The two factors are reciprocals, and x × (1/x) = 1 for every x: π is in
+both and leaves the product. The proof above says the same, since the 1 is the whole gain, fixed first, and the chord
+and the square's edges split it with no π in them. Each of the three holds the equation in its own form:
+
+| who | what it holds of π/2 × 2/π = 1 |
+|---|---|
+| the reader | s × (1/s) = 1: the exchange undoing itself, no numbers |
+| the writer at work | (p/q) × (q/p) = 1: exact with any fraction held for π/2, 11/7 × 7/11 as well as a better one |
+| the paper | π/2 × 2/π = 1: the same fact with the turn's split named at its true value |
+
+A better fraction changes both factors and leaves the 1 untouched, so the 1 is exact at every stage of approximation and
+never waited on the limit. π is the one part of the equation only the paper holds, and the one part the equation does
+not depend on: it is the price of saying how the turn splits the 1, and no one pays it to have the 1. Physics enters
+separately and later, with the first write: a walk made and counted, a thumb given a unit. **A reading**, resting on this
 section's account of the transcendentals.
 
 **What the one pole already carried.** The reader at i holds the standard Cauchy (§3). Readings added give one Cauchy
