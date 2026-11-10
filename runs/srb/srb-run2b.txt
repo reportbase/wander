@@ -4,3 +4,11 @@
 R3: a = 0, dimension at depth 0..3: [6, 6, 6, 6]
    a=1 depth 1: 15 (5 s)
    a=1 depth 2: 42 (43 s)
+   a=1 depth 3: 80 (649 s)
+R3: a = 1, dimension at depth 0..3: [6, 15, 42, 80]
+   a=1/2 depth 1: 15 (653 s)
+   a=1/2 depth 2: 42 (692 s)
+   a=1/2 depth 3: 80 (1285 s)
+R3: a = 1/2, dimension at depth 0..3: [6, 15, 42, 80]
+   a=-1/2 depth 1: 15 (1289 s)
+   a=-1/2 depth 2: 42 (1326 s)
