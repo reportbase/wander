@@ -453,8 +453,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the long side of pi/2.    the compete breath/exhale cycle results in the true size of 1."; "i've never heard this
   stated so simply."): the thumb is 1; along the sweep dv/dℓ = h, so the mean read 2/π times the arc walked π/2 is 1, on
   every path (chord 1/√2 × √2, square ½ × 2), only the split the turn's; in space ½ and 2 (so "π is the price" is the
-  plane's). The 1 is H in H, not V*. Classical (Cauchy 1841, Crofton, Buffon; unchecked citations); the assignment ours.
-  *Reads and Writes* §9 "The thumb, short by reading, long by walking, and whole"; essay 2 §7.
+  plane's). The 1 is H in H, not V*. Classical (Cauchy 1841, Crofton 1868, Buffon 1777); the assignment ours.
+  *Reads and Writes* §9 "The thumb, short by reading, long by walking, and whole"; essay 2 §7, essays 14 §3 and 15 §5.
   R803 (10 Nov; Tom: "update the essays."): R801 and R802 in essay 2 §7 ("Which act each number measures") and §9 ("Four
   identities, one exchange", with the table), essay 14 §3 and essay 15 §5; no new claim.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are

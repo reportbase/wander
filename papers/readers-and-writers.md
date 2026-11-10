@@ -1246,7 +1246,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
 - Burn, B. J. (1966). On the depolarization of discrete radio sources by Faraday dispersion. *Monthly Notices of the Royal
   Astronomical Society* 133, 67–83.
 - Buffon, G.-L. Leclerc, comte de (1777). Essai d'arithmétique morale. *Histoire naturelle, générale et particulière*,
-  Supplément 4, 46–148.
+  Supplément, tome 4. Imprimerie Royale, Paris.
 - Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
   Review* 4, 345–376.
 - Chyzak, F. and Nielsen, F. (2019). A closed-form formula for the Kullback–Leibler divergence between Cauchy
@@ -1254,7 +1254,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
 - Clark, J. S., Silman, M., Kern, R., Macklin, E. and HilleRisLambers, J. (1999). Seed dispersal near and far:
   patterns across temperate and tropical forests. *Ecology* 80(5), 1475–1494.
 - Cauchy, A.-L. (1841). Note sur divers théorèmes relatifs à la rectification des courbes et à la quadrature des
-  surfaces. *Comptes rendus de l'Académie des Sciences* 13, 1060–1065.
+  surfaces. *Comptes rendus de l'Académie des Sciences* 13, 1060–1063.
 - Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal für die reine und angewandte
   Mathematik* 32, 119–123.
 - Crofton, M. W. (1868). On the theory of local probability. *Philosophical Transactions of the Royal Society* 158,
@@ -1323,4 +1323,5 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
 
 The entries were checked against Crossref and library catalogues on 3 November 2026; Malmquist (1926) is given as it is
 usually cited, Lie (1880), added 10 November, as `plans/srb-plan.md` cites it, and Buffon (1777), Cauchy (1841) and Crofton (1868),
-added 10 November, as they are usually cited, not yet checked.
+added 10 November: Crofton checked against the Royal Society's catalogue, Cauchy against a later reference list, and
+Buffon to the volume only.

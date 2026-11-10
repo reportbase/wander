@@ -123,7 +123,9 @@ writer's rate is the fixed point of the reciprocal that pairs the two sweeps: th
 standpoint that never moves, approached at the horizon and never reached. π/2 is what walking counts: the quarter arc
 itself, π/2 thumbs long, reached at a point. The arc in thumbs is a place, walked and counted; with the thumb in metres
 it is a write. So reading is 2/π and writing is π/2, the write reached through its place, and the 1 between them is the
-read and the walk held together (the second essay, §7).
+read and the walk held together (the second essay, §7). The reason is one line: each step of the arc gains v at the rate h,
+so the shares read, summed over the steps walked, are all of v; a mean of 2/π over a length of π/2 is 1. Any path from the
+one end to the other gives the 1 (the chord 1/√2 over √2); only the split is the turn's.
 
 One thing does not happen there. The sweeps' running rates are not 1 at the corner: arc over chord is 1.1107 and chord
 over arc 0.9003. They are 1 only at zero, before any sweeping. The corner is not where the reader's sweep runs at the

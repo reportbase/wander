@@ -7417,7 +7417,8 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   π/2, is the thumb, 1. The 1 holds on every path (chord 1/√2 × √2, square's edges ½ × 2); only the split is the path's,
   π the turn's; in space ½ and 2, so R801's "π is the price" is the plane's. Cautions: the 1 is H in H, not V*; 2/π is an
   average, the writer's (R717); the walk in thumbs is a place (R802). Classical (Cauchy 1841, Crofton 1868, Buffon 1777,
-  cited as usually given, unchecked); the assignment ours. Written without waiting for Tom's go-ahead, on the draft PR.
+  Crofton and Cauchy's pages since checked, Buffon to the volume); the assignment ours. Written before Tom's go-ahead
+  (then, Tom: "proceed with your suggested next steps."); essays 14 §3 and 15 §5 carry it, "π is the price" the plane's.
   *Reads and Writes* §9 "The thumb, short by reading, long by walking, and whole"; essay 2 §7.
 - **R803** (10 Nov; Tom: "update the essays."): R801 and R802 carried into the essays, no new claim: essay 2 §7 "Which act
   each number measures" and §9 "Four identities, one exchange" (the table of writer's and reader's forms), essay 14 §3

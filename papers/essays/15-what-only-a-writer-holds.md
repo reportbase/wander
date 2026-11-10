@@ -180,8 +180,8 @@ probability only by the 2/π that closes it.
 What the reader holds of each identity is finite, and it is one fact: the exchange s ↔ 1/s and its corner. Of the circle,
 that the heat in the v/h chart and the heat in the h/v chart, 1/(1 + s²) and s²/(1 + s²), add to one. Of Euler's
 identity, that w(s)·w(1/s) = −1 for w = (1 + is)/(1 − is), at the corner i × i = −1. Of the total, that the heat below
-the corner equals the heat above it: equal halves, with no π/4 in them. π is the price of turning "equal halves" into
-"how much" (essay 2 §9, "Four identities, one exchange"). And the two numbers the writer puts on the sweep measure two
+the corner equals the heat above it: equal halves, with no π/4 in them. In the plane, π is the price of turning "equal halves" into
+"how much" (essay 2 §9, "Four identities, one exchange"); in space the same price is 2, with no π in it. And the two numbers the writer puts on the sweep measure two
 acts: 2/π what turning sees, the thumb's mean share, approached; π/2 what walking counts, the arc in thumbs, reached.
 
 It is also where the history of the two numbers met. Euler showed e irrational in 1737; Lambert showed π irrational in

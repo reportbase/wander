@@ -610,7 +610,7 @@ i × i = −1, the corner composed with itself the horizon, Euler's identity wit
 the heat below the corner onto the heat above it: the reader has "half and half" without ever having "π/4 and π/4".
 
 So the reader holds one fact four ways, the exchange and its corner, and the writer's four equations are what that fact
-becomes once the horizon is reached and the total stated. π is the price of turning "equal halves" into "how much". The
+becomes once the horizon is reached and the total stated. In the plane, π is the price of turning "equal halves" into "how much" (in space the same price is 2, §7). The
 first holds at every direction, so one read has it, in squares; the other three need the horizon reached, which no read
 does. Squares are the reader's where roots are the writer's: w = (h + iv)² is rational in s and h + iv is not, the same
 split as doubling a turn against halving one.
