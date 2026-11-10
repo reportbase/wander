@@ -60,3 +60,17 @@ circle. Stated only as a reading of S3–S4.
 
 **Before run 2: S1′.** S1(b) checked with c = cos α declared positive and tan²α = (1 − c²)/c², so the root reduces
 honestly; every other item of S1 as in run 1. *Killed* if any identity fails.
+
+**Run 2** (`runs/slp/slp2.py`, output `runs/slp/slp-run2.txt`; 10 Nov). Nothing killed: S1′ holds, every item of S1
+identically, no slope form with π or arctan; S2–S4 as in run 1.
+
+**What SLP shows.** In the reader's own math the reader's results are rational, and the simplifications are real, not
+relabelling: the heat is the share along the look raised to the number of thumbs plus one (h², h³, h^(n+1)); the
+overlay's far-field heat is 2x/(1 + x²), the same form as the facing's height 2hv; composition, the doubled turn and the
+depth error are rational. π and arctan appear only where the turn is summed whole (the share passed, the constant, arc
+over chord): a writer's total. And one thing the angle chart hid: **a boost is not a map of the reader's slope s.** A read
+holds a line's direction, [h : v], so θ and θ + π are one reading, and a motion distinguishes forward from back; on the
+oriented half-angle slope t, turns and boosts are both Möbius and the sky's motions are rational. So the half-angle is
+not a convention: it is the step from a read of directions as lines (s, period π) to directions with a front and a back
+(t, period 2π), and a moving sky needs the second (S5, a reading). Open: what in the reader's situation supplies the
+orientation (a front), since one quarter turn has none to choose.
