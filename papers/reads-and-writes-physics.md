@@ -344,6 +344,20 @@ every conformal map of the sphere is Möbius, and the Möbius group of the spher
 1984). Given that premise, the rest is classical. That is where the correspondence ends, and it is said here so that it
 is not mistaken for more.
 
+The premise can be traded for plainer ones, but not removed (SRB, `../plans/srb-plan.md`, runs 1–2, exact). Assume that a
+change of standpoint acts on directions alone, chains of them included; that it is fixed by finitely many numbers; that
+the turns are among the changes; and that a motion carries directions from behind toward ahead, a mirror turning it into
+motion backward. The Galilean aberration fails the first: two of its steps of β = 0.3 are no single step once only
+directions are kept (the best one misses by 0.046 rad), though on velocities, the speed carried, they add exactly. A whole
+family of axial sky flows passes the other three, and only its angle-keeping member closes with the turns into a group of
+finite dimension (6, against 15, 42 and more for the rest). By the classification of finite-dimensional Lie algebras of
+vector fields on a surface (González-López, Kamran and Olver 1992), the algebras containing the turns are so(3), so(3, 1)
+and sl(3, ℝ); the last has no motion. So the four premises give conformality on the sky, and with it the Lorentz group.
+Two of them carry the physics: that what no read can hold makes no difference to what is read (the light postulate stated
+for reads; a moving medium breaks it), and that a place is a finite list of numbers. Neither follows from reading. It is a
+reconstruction from premises about reads and places, of the kind Ignatowski (1910) and Frank and Rothe (1911) made from
+the relativity principle, and no new physics.
+
 ### 5.4 Loops that come home turned [exact]
 
 §5.3's leftover is one case of a wider fact. A read is one standpoint at one moment; reads joined end to end round a loop
@@ -749,11 +763,17 @@ ESA (1997). *The Hipparcos and Tycho Catalogues*. ESA SP-1200.
 Foucault, L. (1851). Démonstration physique du mouvement de rotation de la Terre au moyen du pendule. *Comptes rendus
 de l'Académie des sciences* 32, 135–138.
 
+Frank, P. and Rothe, H. (1911). Über die Transformation der Raum-Zeitkoordinaten von ruhenden auf bewegte Systeme.
+*Annalen der Physik* 339(5), 825–855.
+
 Gaia Collaboration, Smart, R. L. et al. (2021). Gaia Early Data Release 3: the Gaia Catalogue of Nearby Stars.
 *Astronomy and Astrophysics* 649, A6.
 
 Gauss, C. F. (1828). Disquisitiones generales circa superficies curvas. *Commentationes Societatis Regiae Scientiarum
 Gottingensis Recentiores* 6, 99–146.
+
+González-López, A., Kamran, N. and Olver, P. J. (1992). Lie algebras of vector fields in the real plane. *Proceedings of
+the London Mathematical Society* s3-64(2), 339–368.
 
 Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer. *Physics
 Letters A* 128, 391–394.
@@ -769,6 +789,9 @@ Hofsäss, S., Padilla-Castillo, J. E., Wright, S. C., Kray, S., Thomas, R., Sart
 
 Hubble, E. (1929). A relation between distance and radial velocity among extra-galactic nebulae. *Proceedings of the
 National Academy of Sciences* 15, 168.
+
+Ignatowski, W. von (1910). Einige allgemeine Bemerkungen zum Relativitätsprinzip. *Physikalische Zeitschrift* 11,
+972–976.
 
 Kato, S. and McCullagh, P. (2020). Some properties of a Cauchy family on the sphere derived from the Möbius
 transformations. *Bernoulli* 26(4), 3224–3248.
@@ -802,10 +825,10 @@ lifetime discrepancy.
 Peebles, P. J. E. and Wilkinson, D. T. (1968). Comment on the anisotropy of the primeval fireball. *Physical Review* 174,
 2168.
 
+Penrose, R. and Rindler, W. (1984). *Spinors and Space-Time*, Volume 1. Cambridge University Press.
+
 Penrose, R. (1959). The apparent shape of a relativistically moving sphere. *Proceedings of the Cambridge Philosophical
 Society* 55, 137.
-
-Penrose, R. and Rindler, W. (1984). *Spinors and Space-Time*, Volume 1. Cambridge University Press.
 
 Planck Collaboration (2020). Planck 2018 results VI: cosmological parameters. *Astronomy and Astrophysics* 641, A6.
 
