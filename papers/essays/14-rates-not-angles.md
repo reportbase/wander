@@ -128,7 +128,8 @@ so the shares read, summed over the steps walked, are all of v; a mean of 2/π o
 one end to the other gives the 1 (the chord 1/√2 over √2); only the split is the turn's. And the 1 never needed π: the
 two rates are reciprocals, so with any fraction held for π/2 the product is still exactly 1 (11/7 × 7/11). The reader has
 the exchange, s × (1/s) = 1; a writer at work has fractions; π itself is held only by the paper, the writer at the limit
-(the second essay, §7, "What is free, and what π costs").
+(the second essay, §7, "What is free, and what π costs"). The half turn is had the same way with no e or π: the corner is
+the quarter turn, i, and two corners are i × i = −1 (the second essay, §9).
 
 One thing does not happen there. The sweeps' running rates are not 1 at the corner: arc over chord is 1.1107 and chord
 over arc 0.9003. They are 1 only at zero, before any sweeping. The corner is not where the reader's sweep runs at the

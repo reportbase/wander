@@ -7410,6 +7410,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R812** (10 Nov; Tom: "update the essays and merge"): R811 carried into the essays, no new claim: essay 2 §9 ("The −1
+  never needed e or π", with the three-row table), essay 18 §7 (the count never lands, the corner the one finite door)
+  and a sentence in essay 14 §3; essay 15 §5 already had it.
 - **R811** (10 Nov; Tom: "lets apply this idea to euhlers"; "yes, add it and merge"): the −1 never needed e or π. The
   corner is w(1) = (1 + i)/(1 − i) = i, two corners i × i = −1, finite and rational. The reader: w(s)·w(1/s) = −1. The
   writer at work: exact at two corner steps only (Niven: a rational slope and a rational part of the turn only at the
