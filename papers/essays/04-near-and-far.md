@@ -234,8 +234,8 @@ v/h to twice it the same room. It favours no place; it has no focus.
 
 A reader looking out from a standpoint is laid the other way, on two counts.
 
-- **Its picture is the turn.** Stand with your eye one height H above level ground. The ground at distance 2H appears 26.6°
-  below the horizon, at 4H 14.0°, at 8H 7.1°. Each stretch past the corner, one thumb to two, two to four, takes half the
+- **Its picture is the turn.** Stand with your eye one height H above level ground. The ground at distance 2H reads one in 2
+  below the horizon, at 4H one in 4, at 8H one in 8 (the writer's 26.6°, 14.0° and 7.1°). Each stretch past the corner, one thumb to two, two to four, takes half the
   room of the last. The far field is in proportion to the reciprocal of distance, not to its logarithm.
 - **Its turn has a focus.** The turn's room over each stretch where the reading halves is greatest at the corner and falls off
   alike toward home and toward the horizon. Turning your head carries the corner, and the most room, to whatever you look

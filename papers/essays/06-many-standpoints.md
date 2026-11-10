@@ -137,8 +137,8 @@ about the true direction, and the two reads' errors are independent. In the cot 
 its point at w = (c + iγ)/(1 − iγc), c being the true value. The depth is then exactly a Cauchy, at every γ and not only
 for small errors, and its point is the same triangulation done on the two points instead of the two values:
 D = B/conj(w_a + w_b). The rays that fail to meet ahead are part of the same law, as negative depths. At the corner the
-depth's point stays at the true distance, turned by twice the read's error angle: D = d·e^(2i·atan γ). Its median falls
-a little short, at d·cos(2·atan γ).
+depth's point stays at the true distance, turned by twice the read's error: D = d·(1 + iγ)/(1 − iγ) (the writer's d·e^(2i·atan γ)). Its median
+falls a little short, at d·(1 − γ²)/(1 + γ²) (the writer's d·cos(2·atan γ)).
 
 Two things leave the family, and each can be seen in a line. The place across the line of sight is a ratio of two sums,
 a Cauchy only for small errors: its density right over each standpoint is infinite, because it multiplies a read's

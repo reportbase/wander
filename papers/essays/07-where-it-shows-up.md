@@ -73,14 +73,15 @@ fixes.
 The two mistakes are different in kind. A stretch, c ≠ 1, breaks the turn and moves the median off the corner. A wrong
 size, H ≠ β, breaks nothing that can be read. The first is a stretch, the second a zoom.
 
-**Standing at the lamp.** A reader standing at the lamp, reading each flash by its direction, holds tan θ itself. It has
+**Standing at the lamp.** A reader standing at the lamp, reading each flash by its direction, holds the reading itself, the slope a writer
+writes tan θ. It has
 no β at all and no second length. Its one length gives the turn, so the requirement that c = 1 is met before it can
 arise. The requirement only appears once someone draws the scene with two axes, a sea axis and a shore axis, and then has
 to choose how long to make each. The uniformity in this picture is the lamp's, a fact about the world. Find the turn,
 find the amount: here the lamp turns and the flash is the amount, and the beach records only where each flash landed.
 
 **The lamp, the shore and V.** The picture holds the Cauchy in each of the three forms the second essay derived. At the
-lamp, the reading tan θ is the standard half-Cauchy of one length turned: scale 1, no V, the corner at its median. On a
+lamp, the reading (the writer's tan θ) is the standard half-Cauchy of one length turned: scale 1, no V, the corner at its median. On a
 drawing with two axes it is a Cauchy of scale c, the ratio of the shore's drawn length to the sea's. On the beach the marks
 follow C(α, β), a location and a scale, both amounts, both moved by scaling the world. So V, the shore playing the mountain
 in the distance, comes in only as the scale, and only when someone finds the shore and lays a ruler along it: the walker's

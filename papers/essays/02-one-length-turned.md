@@ -405,8 +405,8 @@ circle only when V equals H. If the reader never knows V, how can it do circular
 The answer is that the circle is the writer's either way. The equation on the page describes a drawing with two axes, each
 with its own extent, and that drawing needs two lengths. The circle's classical definition, everything at one distance from
 a centre, needs only one, and a writer watching a length turned sees its tip trace it, as section 2 showed. The reader
-holds no circle; it points its thumb, and its readings need only that one length. The turn's two parts are h = cos θ and v
-= sin θ, the across and up shares of the same length. So h² + v² = 1 is a fact about the shares of one length. The v in it
+holds no circle; it points its thumb, and its readings need only that one length. The turn's two parts are h and v (the
+writer's cos θ and sin θ), the across and up shares of the same length. So h² + v² = 1 is a fact about the shares of one length. The v in it
 is the turned length's own up share, not a share of some second party's breadth. Reading it as the second is where the
 confusion comes from.
 
@@ -453,9 +453,10 @@ uniform in direction, and uniform in distance read as a ratio, as much room from
 four to one in eight (a writer counts the same stretches as one thumb to two, four to eight).
 
 **Composition becomes addition.** In the reader's own chart, readings taken from two zeros combine by tangent addition,
-(s₁ + s₂)/(1 − s₁s₂). That is awkward, and it blows up when the two turns together reach the vertical. In Euler's form
-the same combination is e^(iα)·e^(iβ) = e^(i(α + β)): the angles just add, and nothing is special at the vertical. The
-reader's awkward arithmetic is the turn's plain arithmetic, seen through the tangent. A reading has no sign, so a turn
+(s₁ + s₂)/(1 − s₁s₂). That is awkward, and it blows up when the two turns together reach the vertical. In Euler's form,
+the writer's, the same combination is e^(iα)·e^(iβ) = e^(i(α + β)): the angles just add, and nothing is special at the vertical. The
+reader's awkward arithmetic is the turn's plain arithmetic, seen through the tangent. The reader uses no trigonometry: its turns compose in the slope, and every sine, tangent and arctangent
+in these essays is the writer's (*Reads and Writes* §1, "The reader uses no trigonometry"). A reading has no sign, so a turn
 and the same turn plus a half turn give the same reading; the reader's line closes after half a turn of its ray, and the
 squaring of section 6 turns that half turn into one whole turn of the central sweep.
 
@@ -503,7 +504,7 @@ carried").
 
 **The two corners are two mirrors.** The plane of the logarithm also shows the corners plainly. Swap a reading for its
 reciprocal, v/h for h/v, and the angle θ becomes 90° − θ: a reflection of the imaginary part, and the line it leaves in
-place is θ = 45°, the corner in direction. Swap a distance for its reciprocal about the reader's length, d/H (the distance
+place is θ = 45°, the reading 1, the corner in direction. Swap a distance for its reciprocal about the reader's length, d/H (the distance
 in thumbs) for H/d, and ln d becomes 2 ln H − ln d: a reflection of the real part, and the line it leaves in place is d =
 H, the corner in distance (the fourth essay's corner of near and far). So the reader has two corners, one on each axis of
 one plane, each a mirror line. Each is moved by sliding the plane along its own axis: turning the head slides the first
