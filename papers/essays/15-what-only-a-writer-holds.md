@@ -192,6 +192,15 @@ anyone is. So π only seems free. What the sweep gives at no cost is the relatio
 facings (π/2 of relations, four times, is the circle) and the 1 that the two numbers multiply to; and that 1 needs no π,
 since the two are reciprocals and any fraction held for π/2 gives it exactly, 11/7 × 7/11 = 1 (essay 2 §7).
 
+The identity this section is about goes the same way: the −1 never needed e or π. The corner is the quarter turn,
+exactly and with no root in it, (1 + i)/(1 − i) = i, and two corners composed are the half turn, i × i = −1. That is the
+reader's whole holding of e^(iπ) = −1: the exchange and its corner, no numbers. A writer at work reaches −1 exactly by
+those two corner steps and by no finer equal ones, since the only turns with a rational slope that are a rational part
+of the whole turn are the corner's multiples (Niven); its (1 + iθ/n)ⁿ, with fractions for θ, lands near −1 and never on
+it. The paper holds the limit, with the arc named π and the base named e. So e and π are the two parts of the identity
+only the paper holds, and the two parts the fact does not depend on: π is the price of saying how long the arc to −1
+is, e the price of saying it as one smooth turn where the reader has two corner steps.
+
 It is also where the history of the two numbers met. Euler showed e irrational in 1737; Lambert showed π irrational in
 1761. Liouville (1844) built the first numbers proved transcendental, made to order by an infinite series whose terms
 shrink too fast for any polynomial to catch. Hermite (1873) proved e transcendental. Lindemann (1882) proved π

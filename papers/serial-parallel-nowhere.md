@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R811** (10 Nov; Tom: "lets apply this idea to euhlers"; "yes, add it and merge"): the −1 never needed e or π. The
+  corner is w(1) = (1 + i)/(1 − i) = i, two corners i × i = −1, finite and rational. The reader: w(s)·w(1/s) = −1. The
+  writer at work: exact at two corner steps only (Niven: a rational slope and a rational part of the turn only at the
+  corner's multiples); (1 + iθ/n)ⁿ near −1, never on it (ELM's θ³/(3n²), θ²/(2n)). The paper: e^(iπ) = −1, the limit,
+  the arc named π, the base e. Unlike R809's product, where any fraction is exact. *Reads and Writes* §9 "What is free,
+  and what π costs"; essay 15 §5. Niven (1956) cited as usually given.
 - **R810** (10 Nov; Tom: "update the essays and merge"): R805–R809 carried into the essays, no new claim: essay 2 §7
   ("π/2 of relations and four facings make a circle", "What is free, and what π costs", the three-row table), essay 14 §3
   and essay 15 §5 (the writer at work holds fractions; only the paper holds π; the 1 needs no π).

@@ -469,6 +469,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R809 (10 Nov; Tom: "pI/2 * 2/PI = 1.   reader * writer = 1.    yet neither reader or writer knows or uses pI."): the 1
   never needed π: reciprocals, x × (1/x) = 1; reader s × (1/s), writer at work (p/q) × (q/p) exactly with any fraction,
   paper π/2 × 2/π; π the one part only the paper holds and the one the equation does not depend on. §9, same passage.
+  R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
+  i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
+  never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
   R810 (10 Nov; Tom: "update the essays and merge"): R805–R809 in essay 2 §7, essay 14 §3 and essay 15 §5; no new claim.
   R806 (10 Nov; Tom: "that is prior to any physics entering.   its free, no cost, not algoritmic, no time cost to know
   this."): R801–R805's relations, facings and numbers hold before any amount, unit, clock or world; given, not computed,

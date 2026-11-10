@@ -1110,7 +1110,25 @@ and the square's edges split it with no π in them. Each of the three holds the 
 
 A better fraction changes both factors and leaves the 1 untouched, so the 1 is exact at every stage of approximation and
 never waited on the limit. π is the one part of the equation only the paper holds, and the one part the equation does
-not depend on: it is the price of saying how the turn splits the 1, and no one pays it to have the 1. Physics enters
+not depend on: it is the price of saying how the turn splits the 1, and no one pays it to have the 1.
+
+Euler's identity goes the same way: the −1 never needed e or π. The corner is the quarter turn, exactly and with no root
+in it: w(1) = (1 + i)/(1 − i) = i. Two corners composed are the half turn, i × i = −1, a finite and rational statement.
+e^(iπ) = −1 is that fact with the arc given a length, π, and the composing written as an exponential, base e:
+
+| who | what it holds of e^(iπ) = −1 |
+|---|---|
+| the reader | w(s) × w(1/s) = −1; at the corner i × i = −1: the exchange, no numbers |
+| the writer at work | two corner steps land on −1 exactly; finer equal steps, (1 + iθ/n)ⁿ with fractions for θ, land near it and never on it |
+| the paper | e^(iπ) = −1: the limit of the finer steps, the arc named π and the base named e |
+
+Here the working writer is exact only at the corner, where with the product any fraction would do. The only turns whose
+slope is rational and which are a rational part of the whole turn are the multiples of the corner's (Niven 1956), so
+equal rational steps finer than the corner never land on −1; and (1 + iθ/n)ⁿ misses as "Euler's formula as a count of reads" says, above, the
+turn short by about θ³/(3n²) and the length over by about θ²/(2n). The corner is the one finite door to −1, and
+everything finer is an approach. So e and π are the two parts of the identity only the paper holds, and the two parts
+the fact does not depend on: π the price of saying how long the arc to −1 is, e the price of saying it as one smooth
+turn where the reader has two corner steps. **Classical**; the assignment is a reading. Physics enters
 separately and later, with the first write: a walk made and counted, a thumb given a unit. **A reading**, resting on this
 section's account of the transcendentals.
 
@@ -1346,6 +1364,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
   donné de points. *Comptes Rendus du Sixième Congrès des Mathématiciens Scandinaves* (Copenhagen, 1925), 253–259.
 - McCullagh, P. (1992). Conditional inference and Cauchy models. *Biometrika* 79, 247–259.
 - Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata.* Duisburg.
+- Niven, I. (1956). *Irrational Numbers.* Carus Mathematical Monographs 11. Mathematical Association of America.
 - Poincaré, H. (1902). *La Science et l'hypothèse.* Paris. (1908). *Science et méthode.* Paris.
 - Qian, T. and Wang, Y.-B. (2011). Adaptive Fourier series, a variation of greedy algorithm. *Advances in
   Computational Mathematics* 34, 279–293.
@@ -1373,4 +1392,4 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
 The entries were checked against Crossref and library catalogues on 3 November 2026; Malmquist (1926) is given as it is
 usually cited, Lie (1880), added 10 November, as `plans/srb-plan.md` cites it, and Buffon (1777), Cauchy (1841) and Crofton (1868),
 added 10 November: Crofton checked against the Royal Society's catalogue, Cauchy against a later reference list, and
-Buffon to the volume only.
+Buffon to the volume only; Niven (1956) as it is usually cited.
