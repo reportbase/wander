@@ -316,6 +316,16 @@ thumb in metres it is a write. So, in short, reading is 2/π and writing is π/2
 their product, 1, is the read and the walk held together. Both stay the writer's arithmetic, since the reader holds no π;
 what is sorted is the act each one measures.
 
+**Short by reading, long by walking, and whole.** Said most simply: the true size is 1, the thumb in thumbs. Reading gives
+the short side of it, 2/π; walking gives the long side, π/2; together they give back the 1. The proof is one line, the
+writer's. Along the sweep each step of the arc gains v at the rate h: what is read at a place is the rate at which the
+thumb is gained per step walked there. Summed over the walk the gain is all of v, 1; and a sum is a mean times a length,
+(2/π) × (π/2) = 1. The 1 is no property of the circle: straight across the chord the mean gain is 1/√2 over a length √2,
+along the square's two edges ½ over a length 2. Only the split is the path's, and π is what the split costs when the path
+is the turn; in space the same split is ½ and 2, with no π. The 1 is the thumb, not the mountain. The mathematics is old
+(Cauchy's mean projection, 1841; Crofton; Buffon's needle, 1777); the assignment of the short factor to the read and the
+long one to the walk is ours.
+
 *Demo: the mountain and the thumb, "the two vantages": π/2 and 2/π on the thumb's circle, their product 1.*
 
 ---

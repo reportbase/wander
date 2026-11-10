@@ -1036,6 +1036,35 @@ ratio held say the same (§6). Both numbers stay the writer's arithmetic, since 
 which act each one measures. In the table above the total's 2/π is the reading's factor and its π/2 the walk's, and "the
 two facings" is the read against the walk. **Classical** (the mean share and the arc); the assignment is a reading.
 
+**The thumb, short by reading, long by walking, and whole.** Said most simply: the true size is 1, the thumb in thumbs.
+Reading gives the short side of it, 2/π; walking gives the long side, π/2; the two together give back the 1. The proof is
+one line, in the writer's terms. Along the sweep, from all of h to all of v, each step dℓ of the arc gains v at the rate
+dv/dℓ = h: what is read at a place, the thumb's share h, is the rate at which the thumb is gained per step walked there.
+Summed over the walk the gain is all of v,
+
+∫ h dℓ = 1,
+
+and a sum is a mean times a length: (mean of what is read) × (length walked) = (2/π) × (π/2) = 1. The 1 owes nothing to the
+circle. On any path from the one end to the other the gain per step, summed over the steps, is the whole of v, so the mean
+rate times the length is 1 on every path; only the split between the two factors is the path's:
+
+| the path | mean gain per step | length walked | product |
+|---|---|---|---|
+| the chord, straight across | 1/√2 | √2 | 1 |
+| the quarter arc, the one length turned | 2/π | π/2 | 1 |
+| the square's two edges | ½ | 2 | 1 |
+
+The arc is the one path on which the gain per step is the share itself, h, the same thumb turned and never stretched; so
+π is what the split costs when the path is the turn. In space the split has no π in it: one thumb seen from every
+direction of space averages ½, and the correction is 2 (the wedge's numbers, §7). So "π is the price", above, is the
+plane's price. Three cautions keep the statement exact. The 1 is the thumb, H in H, not V*: nothing here gives the
+mountain's size (D4). One read is one share h; 2/π is their average over the turn, a sum, so the writer's. And the walk
+here is counted in thumbs, a place; it is a write only once the thumb has a unit. The mathematics is old: the mean
+projection of a segment over all directions is 2/π of its length (Cauchy 1841), a curve's length is π/2 times its mean
+projection (Cauchy 1841; Crofton 1868), and Buffon's needle (1777) is the same 2/π met as a chance. What is ours is the
+assignment: the short factor to the read, the long one to the walk, their product to the two held together.
+**Classical**; the assignment is a reading.
+
 **What the one pole already carried.** The reader at i holds the standard Cauchy (§3). Readings added give one Cauchy
 with the standpoints added, z₁ + z₂, the phasors multiplying. Parallax is a sum of reads whose depth is exactly Cauchy,
 its point the triangulation of the two reads' points (§6). A cell of the floor's discarded fraction sits at its own
@@ -1216,14 +1245,20 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
   (2017). A synthesis of empirical plant dispersal kernels. *Journal of Ecology* 105(1), 6–19.
 - Burn, B. J. (1966). On the depolarization of discrete radio sources by Faraday dispersion. *Monthly Notices of the Royal
   Astronomical Society* 133, 67–83.
+- Buffon, G.-L. Leclerc, comte de (1777). Essai d'arithmétique morale. *Histoire naturelle, générale et particulière*,
+  Supplément 4, 46–148.
 - Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
   Review* 4, 345–376.
 - Chyzak, F. and Nielsen, F. (2019). A closed-form formula for the Kullback–Leibler divergence between Cauchy
   distributions. arXiv:1905.10965.
 - Clark, J. S., Silman, M., Kern, R., Macklin, E. and HilleRisLambers, J. (1999). Seed dispersal near and far:
   patterns across temperate and tropical forests. *Ecology* 80(5), 1475–1494.
+- Cauchy, A.-L. (1841). Note sur divers théorèmes relatifs à la rectification des courbes et à la quadrature des
+  surfaces. *Comptes rendus de l'Académie des Sciences* 13, 1060–1065.
 - Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal für die reine und angewandte
   Mathematik* 32, 119–123.
+- Crofton, M. W. (1868). On the theory of local probability. *Philosophical Transactions of the Royal Society* 158,
+  181–199.
 - Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
   Royal Astronomical Society* 206, 377.
 - Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77,
@@ -1287,4 +1322,5 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
 - Wilbraham, H. (1848). On a certain periodic function. *Cambridge and Dublin Mathematical Journal* 3, 198–201.
 
 The entries were checked against Crossref and library catalogues on 3 November 2026; Malmquist (1926) is given as it is
-usually cited, and Lie (1880), added 10 November, as `plans/srb-plan.md` cites it.
+usually cited, Lie (1880), added 10 November, as `plans/srb-plan.md` cites it, and Buffon (1777), Cauchy (1841) and Crofton (1868),
+added 10 November, as they are usually cited, not yet checked.

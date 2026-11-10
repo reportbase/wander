@@ -7410,6 +7410,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R804** (10 Nov; Tom: "the true size is 1.    reading gives you hte short side of 2/pi.   writing corrects by saving
+  to the long side of pi/2.    the compete breath/exhale cycle results in the true size of 1."; "How can we prove that
+  framing?"; "the ideas are all there, but i've never heard this stated so simply."): the simple statement and its proof.
+  Along the sweep dv/dℓ = h, so ∫ h dℓ = 1 over an arc π/2 long: the mean of what is read, 2/π, times the length walked,
+  π/2, is the thumb, 1. The 1 holds on every path (chord 1/√2 × √2, square's edges ½ × 2); only the split is the path's,
+  π the turn's; in space ½ and 2, so R801's "π is the price" is the plane's. Cautions: the 1 is H in H, not V*; 2/π is an
+  average, the writer's (R717); the walk in thumbs is a place (R802). Classical (Cauchy 1841, Crofton 1868, Buffon 1777,
+  cited as usually given, unchecked); the assignment ours. Written without waiting for Tom's go-ahead, on the draft PR.
+  *Reads and Writes* §9 "The thumb, short by reading, long by walking, and whole"; essay 2 §7.
 - **R803** (10 Nov; Tom: "update the essays."): R801 and R802 carried into the essays, no new claim: essay 2 §7 "Which act
   each number measures" and §9 "Four identities, one exchange" (the table of writer's and reader's forms), essay 14 §3
   (each of the two rates measures an act), essay 15 §5 (what the reader holds of each identity).
