@@ -399,6 +399,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   killed: the Cauchy family's Fisher metric half the Poincaré, KL = 2·ln cosh(d/2) and Möbius-invariant, d = |ln r| at
   one foot, stepping back lowering it, the median 8/π² efficient. Largely the corpus's already (ADR, DYH, JAY); a write
   that passes the scale test. Then (Tom: "yes") *Reads and Writes* §2 "How far apart two standpoints are".
+  R788 (10 Nov; Tom: "the write is the scale variant companion to the read.", then "option 1"): **a write is only what
+  scaling the world moves** (an amount in a unit carried in); on Euler's plane the up part is the read, gaps across (a
+  distance in thumbs, V\*/H, τ in own ticks) are **places** (working name: unmoved, but needing two standpoints), the across
+  zero tied to a unit is the write. *Reads and Writes* v17 frozen as `papers/archive/rw/reads-and-writes-record.md`
+  (never edited); a rewrite outlined in `plans/rw-rewrite-outline.md`, awaiting Tom's approval; until the new draft is
+  whole, `papers/readers-and-writers.md` stands as it is. Entries above that call places in thumbs, τ or parallax writes
+  describe text before R788.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
