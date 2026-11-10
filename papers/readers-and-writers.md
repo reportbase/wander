@@ -1203,6 +1203,27 @@ sums. The Cauchy is kept by order and the Gaussian by sums, a law of directions 
 reader's identity: the reader holds nothing of one Gaussian amount, only the direction of a pair, which is the Cauchy it
 already had.
 
+Parallax (§6) is the case where the working writer is exact and the paper adds only units. Two standpoints a counted
+step B apart each read the target's slope off the line between them, s₁ and s₂, measured inward. The target's depth d
+off that line is then given by 1/(d/B) = 1/s₁ + 1/s₂, so d/B = s₁s₂/(s₁ + s₂): slopes 3 and 6 put it exactly 2 steps
+off. No angle, no trigonometry and no π is in it.
+
+| who | what it holds of parallax |
+|---|---|
+| the reader | one slope at each read, and nothing of parallax: a read is one standpoint |
+| the writer at work | the two slopes joined across the counted step: the place in steps, a rational function of the slopes, exact |
+| the paper | the parallax angle γ in radians or arcseconds; γ(d) + γ(a²/d) = π about the half-step a; the error's γ/sin γ, π/2 at the corner; the parsec, 648000/π astronomical units |
+
+The corner is the exchange again. The corner circle, the circle on the step as diameter (Thales), is exactly
+s₁·s₂ = 1, the two slopes reciprocal; a product above 1 is inside it and below 1 outside, and that needs no count of
+the step. On the circle d/B = s/(1 + s²), the circle's hv: slopes 2 and ½ give the point (1/5, 2/5), the 3-4-5 triple
+once more. The error is rational too: with k = d/a, a step in direction moves the depth in proportion to
+(k + 1/k)/2, the same at k and 1/k and least at the corner; cosh(ln k) (§6) is the writer's smooth name for it. And the
+three grades sort the rest: the depth is rational, the range along a ray is a square root, the angle is a limit. π
+enters only where a slope is turned into an angle, which is why the parsec carries a π and the place in steps carries
+none. This is no fifth reader's identity either: parallax joins two reads, so its π-free form is the working writer's,
+and what never needed π is the place in steps; the step in metres is still the one amount carried in.
+
 **Classical**; the assignment is a reading. Physics enters
 separately and later, with the first write: a walk made and counted, a thumb given a unit. **A reading**, resting on this
 section's account of the transcendentals.
@@ -1420,6 +1441,8 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
   *Physics Letters A* 128, 391–394.
 - Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *Annals of Mathematics* 34, 147–169.
 - Hölder, O. (1889). Ueber einen Mittelwerthssatz. *Göttinger Nachrichten*, 38–47.
+- IAU (2015). Resolution B2, on recommended zero points for the absolute and apparent bolometric magnitude scales
+  (the parsec as 648000/π au). XXIXth General Assembly, Honolulu.
 - Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 - Jaynes, E. T. (1973). The well-posed problem. *Foundations of Physics* 3, 477–492.
 - Kakutani, S. (1944). Two-dimensional Brownian motion and harmonic functions. *Proceedings of the Imperial Academy
@@ -1469,4 +1492,4 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
 The entries were checked against Crossref and library catalogues on 3 November 2026; Malmquist (1926) is given as it is
 usually cited, Lie (1880), added 10 November, as `plans/srb-plan.md` cites it, and Buffon (1777), Cauchy (1841) and Crofton (1868),
 added 10 November: Crofton checked against the Royal Society's catalogue, Cauchy against a later reference list, and
-Buffon to the volume only; Niven (1956), de Moivre (1733) and Wallis (1656) as they are usually cited.
+Buffon to the volume only; Niven (1956), de Moivre (1733), Wallis (1656) and the IAU's resolution (2015) as they are usually cited.

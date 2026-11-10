@@ -7410,6 +7410,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R818** (10 Nov; Tom: "lets apply the idea to parallax"; "add and merge"): parallax in the three tiers. Two slopes
+  read a counted step B apart, measured inward off the line between: 1/(d/B) = 1/s₁ + 1/s₂, no angle, no π (3 and 6
+  give 2 steps). The reader: one slope a read, nothing of parallax. The writer at work: the place in steps, rational,
+  exact (the one case so far where it is exact throughout). The paper: γ in radians or arcseconds, γ(d) + γ(a²/d) = π,
+  γ/sin γ = π/2 at the corner, the parsec 648000/π au (IAU 2015, from memory). The corner circle is s₁·s₂ = 1 (Thales),
+  needing no count; on it d/B = s/(1 + s²) = hv; the error (k + 1/k)/2, rational. Depth rational, range a square root,
+  angle a limit. Claude's corrections, accepted: not a fifth reader's identity (parallax joins two reads); only the
+  place in steps never needed π, the step in metres still carried in. *Reads and Writes* §9 "What is free, and what π
+  costs".
 - **R817** (10 Nov; Tom: "update the essays and demos"): R816 carried out, no new claim: essay 2 §6 (the bell's two
   constants, the binomial, order against sums), essay 17 §8 (the bell beside the map); essay 15 §5 already had it. Demos,
   a note each, no script changed: `cauchy-map.html` (what needs π), `theorem6.html` (order and sums).
