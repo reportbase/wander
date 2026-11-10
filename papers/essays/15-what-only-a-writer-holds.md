@@ -170,6 +170,13 @@ gathers, (1/2i)·d(ln w)/ds, is 1/(1 + s²). So the half-Cauchy's 2/π is the id
 variable together (essay 2 §9). Each step the reader can follow in finite terms (w at the horizon is −1, a pair); the
 total iπ is the turn completed, the writer's.
 
+The two constants also part at one division. The Gaussian, the writer's law of amounts, written round a point is
+(1/2π)·e^(−r²/2) dx dy = (dθ/2π)·(e^(−r²/2) r dr): a uniform turn times a law for the length. Divide by the thumb, one
+amount over another, and the length is integrated away: the e goes with it, and what is left is the turn, whose slope is
+the Cauchy, the reader's law of directions, with π alone in its closing constant. The scale's constant lives in the
+amount; the turn's in the direction. The reader's part of the Cauchy, the heat 1/(1 + s²), has neither; it is made a
+probability only by the 2/π that closes it.
+
 It is also where the history of the two numbers met. Euler showed e irrational in 1737; Lambert showed π irrational in
 1761. Liouville (1844) built the first numbers proved transcendental, made to order by an infinite series whose terms
 shrink too fast for any polynomial to catch. Hermite (1873) proved e transcendental. Lindemann (1882) proved π
@@ -200,7 +207,10 @@ orders and finds the corner, and the rationals are made where a count comes in, 
 V, the mountain in the distance, is learned the same way. An observer taking standpoints (the sixth essay, "Becoming the
 writer") places V by degrees: as V\*/H in the step it took, to within a band set by its baseline and its resolution,
 for the things near enough; only the step counted in an agreed unit makes it an amount, a write. Each standpoint more is one more finite step; holding V exactly, like holding π, is the end of
-a process that does not end.
+a process that does not end. So V is knowable, not known, and the exact V is a completed join of π's kind: the same as
+the one-length circle and the completed turn, held whole from the writer's vantage, none of them moved by scaling the
+world. Euler's identity is the hinge (the fifth section): the turn's end, endless in the reader's slope, is one named
+point, −1, from the centre, and a named point is what can be carried onto paper (the twelfth essay's four things).
 
 ## 7. A machine is a reader here
 

@@ -374,7 +374,10 @@ same two standpoints give V for the near things and leave it unknown for the far
 narrow the band; nothing closes it. The writer who holds V exactly, the one the papers call the writer, is the limit of
 this, never a stage of it. That is the fifteenth essay's shape again: every stage of learning V is a finite approximant, as
 every partial sum of π is, and holding V exactly, like holding π, would need the infinite process finished. A reader
-placing V holds it to so many digits, for so many things, out to so far.
+placing V holds it to so many digits, for so many things, out to so far. V is knowable, not known: parallax places it
+without V ever being known first, and holds it exactly only at the limit. The twelfth essay's four things (the universe,
+an apple, a human, a sheet of paper) put the three cases side by side: V unknowable against the universe, knowable
+across one hemisphere of a thing faced, known in the hand or on the paper.
 
 One way to speed the passage is to aim it. Set H, the thumb, to the thing itself and there are two senses. Make the thing
 the unit, and its V is 1 by choice; its own two ends become the baseline, and you are the point placed: ninety degrees

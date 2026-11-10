@@ -7410,6 +7410,27 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R800** (10 Nov; Tom: "those four equations are very similar. what falls out when we refactor them togeether?", then
+  "yes and merge"): **one equation read four ways**: the writer's circle divided by the thumb, 1 + s² = 1/h²; its
+  reciprocal the reader's heat h² = 1/(1 + s²); gathered to the horizon (w = −1 = e^(iπ)) π/2; closed by 2/π to 1. The
+  reader holds the heat only; the total is the paper's. The Gaussian factors as (dθ/2π)·(e^(−r²/2) r dr), the reader's
+  turn times the payload's law for the length; the thumb's division takes e with the length and leaves π. *Reads and
+  Writes* §12 O3; essay 15 §5.
+- **R799** (10 Nov; Tom: "the cauchy is readers distribution. gaussian is the writers distribution. add cachy formula to
+  12."): **the Cauchy is the reader's distribution, the Gaussian the writer's.** The Cauchy a law of directions, its heat
+  1/(1 + s²) = h² rational in s, closed to 1 by the writer's 2/π; the Gaussian a law of amounts on both axes, needing e
+  and π. Two Gaussian amounts of one spread divided give the standard Cauchy, of spreads in ratio c a Cauchy of scale c
+  (Herschel–Maxwell's isotropic normal and its ratio, R276); the equal spread is V = H. Consistent with R579 (the
+  Gaussian a payload model) and R653 (the write is the payload). (2/π)∫₀^∞ ds/(1 + s²) = 1 added to *Reads and Writes*
+  §12 O3 as the fourth identity.
+- **R798** (10 Nov; Tom: "notice that writer does not have a piece of paper to write circles … is writer*reader=1? this
+  seems very similar in principle to the euler's identity and the circle equation."; "my point is human is all those
+  things at the same time."; "the paper is both hemispheres at the same time. no facing."; "yes"): **the paper is both
+  hemispheres at once, with no facing; π/2 and 2/π are the two facings' (central reached, inscribed approached), the
+  paper's the 1, their product.** The writer has no π/2 (R329, R450 stand: the writer knows the line as 1 and faces
+  nothing). One observer is all of them at the same time: the human reads the universe, faces the apple, and holds as
+  paper what it holds in hand or draws; the apple never the paper. h² + v² = 1, e^(iπ) = −1 and π/2 · 2/π = 1 are the
+  paper's three completed joins (the circle, π, both). *Reads and Writes* §1 "Four things" (a table), §12 O3.
 - **R797** (10 Nov; Tom: "You can write without knowing V. That is parallax."; "V is knowable at the limit."; "V is
   knowable not known … this is the breathing/exhale idea. It is ehulers identity. Writer has pi/2 vantage"; "Consider four
   things, universe, Apple, human and paper …"; "if human holds apple, he can rotate the apple in his hand to create the
