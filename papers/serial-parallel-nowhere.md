@@ -7410,6 +7410,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R827** (10 Nov; Tom: "the sentence "from one look, the rapidity is a read" should be revised. Rapidity is a
+  coordinate representing a map between reads, not itself a read."; "an important distinction here between what can be
+  inferred from a read and what kind of thing the inferred quantity represents."): *Reads and Writes* §4 "A moving sky"
+  now says one look, with the sky assumed uniform in its own frame, gives evidence of the boost; the rapidity inferred
+  is the coordinate of a map between the observer's standpoint and the sky's assumed rest frame, not a read and not
+  the payload (the paint is evidence, not the map); the inference conditional on the premise. O9's flag closed. Not
+  established: that the rapidity is always recoverable from one sky, or the rest frame unique. D1–D7 unchanged; O4
+  stays open on exhaustiveness. Older entries that say "the rapidity read from directions alone" (R437, R438, R609)
+  describe text before this.
 - **R826** (10 Nov; a ruling pasted by Tom: "yes to the broader family of "joinings with no gap," but not yet to the
   proposed D7 sentence exactly as written"; "Joining reads can give places, orders, or maps."; "I would not mark O4
   closed"; "proceed with the D7/O4 revision as a draft."): *Reads and Writes* D7 now says joining reads can give places,

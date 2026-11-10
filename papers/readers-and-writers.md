@@ -546,11 +546,15 @@ is unchanged by boosts; the uniform one is unchanged by turns, and boosts carry 
 changes: the Doppler factor D = √(1 − β²)/(1 − β cos θ′) scales each photon's energy and rate, a weighting of the
 payload that moves no direction. For a sky uniform in its frame, counting total power, the D⁴ brightening ahead is D² of
 directions crowding (the heat) and D² of payload. On ξ = −ln tan(θ/2), the pseudorapidity, aberration is a slide by η,
-so directions alone give the rapidity, with no clock, no frequency and no speed of light, provided every source is counted
-whatever its brightness and the sources are uniform in their frame. Taken so, from one look, the rapidity is a read: the
-slide of one read's median against where the premise puts it, unmoved by scaling, with no second standpoint. Taken as
-the sky's median before a boost against after, it joins two looks at one position, with no gap in space: the joining is a
-map, the boost, and the rapidity is the writer's coordinate on it, not a place (D7; §12, O4). The speed in metres a second needs c carried in, and D read as a line's shift needs the
+so one look can give evidence of the observer's boost, with no clock, no frequency and no speed of light, provided every
+source is counted whatever its brightness and the sky is assumed uniform in its own frame. The rapidity inferred so is
+not itself a read. The read is the sky's directions as they arrive; the premise is about where the sources lie, which
+is part of what arrives; the inference compares the two, and what it yields is the coordinate of a map between the
+observer's standpoint and the sky's assumed rest frame (D7; §12, O4). That it was had from one look does not change
+the kind of thing it is, and the paint that served as evidence is not the map. The inference is conditional on the
+premise: directions alone do not give the sky's rest frame, nor show that such a frame is the only one. Taken as the
+sky's median before a boost against after, the same coordinate is had by joining two looks at one position, with no gap
+in space: a map again, not a place. The speed in metres a second needs c carried in, and D read as a line's shift needs the
 line's rest frequency: both writes. **Classical**; the sorting is a reading.
 
 ## 5. Near and far
@@ -1440,10 +1444,12 @@ before the data can show where it is not. **Checked** (TCF; killed).
   *Since (R824–R826).* The relation between two standpoints at one position is a map (D7, O4), and the rapidity is the
   writer's coordinate on it, as an angle is on a turn. The Doppler factor is two variables with one value: the map's
   stretch at a direction, which is the map's and unmoved by what arrives, and the ratio of the frequencies received,
-  a ratio of payloads. That they are equal is a premise of physics, not read (MBR). Still open: §4 says that from one
-  look, given a sky uniform in its own frame, the rapidity is a read; but where the sources lie is part of what
-  arrives, so what one look holds is a feature of the paint under a premise, and how that is to be classed is not
-  settled. The time to contact stays out of D3.
+  a ratio of payloads. That they are equal is a premise of physics, not read (MBR). *Closed (R827):* §4 had said
+  that from one look, given a sky uniform in its own frame, the rapidity is a read. It is not: what can be inferred
+  from a read is one thing, and what kind of thing the inferred quantity is, another. The look is a read, the
+  uniformity a premise about what arrives, and the rapidity inferred the coordinate of a map; §4 now says so. Not
+  settled by this: whether the rapidity is always recoverable from one sky, or the assumed rest frame unique. The time
+  to contact stays out of D3.
 
 ## Where the ideas come from
 
