@@ -201,6 +201,11 @@ it. The paper holds the limit, with the arc named π and the base named e. So e 
 only the paper holds, and the two parts the fact does not depend on: π is the price of saying how long the arc to −1
 is, e the price of saying it as one smooth turn where the reader has two corner steps.
 
+The Cauchy's total goes the same way, and more easily. Its heat 1/(1 + s²) is rational, the corner is its median because
+the two halves are equal, and it has no mean; π enters only in the constant 2/π that closes it to 1. A writer at work
+has shares by count, k of K equal turns, and Gregory's and Leibniz's series for the half below the corner,
+1 − 1/3 + 1/5 − 1/7 + … = π/4, each partial sum a fraction; the limit is the paper's (essay 2 §9).
+
 It is also where the history of the two numbers met. Euler showed e irrational in 1737; Lambert showed π irrational in
 1761. Liouville (1844) built the first numbers proved transcendental, made to order by an infinite series whose terms
 shrink too fast for any polynomial to catch. Hermite (1873) proved e transcendental. Lindemann (1882) proved π

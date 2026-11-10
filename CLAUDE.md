@@ -472,6 +472,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R813 (10 Nov; Tom: "lets apply this idea to cauchy"): the Cauchy hardly needed π: heat 1/(1 + s²), heat ratios, the
+  corner as median, no mean are free; π only in 2/π. Writer at work: shares k/K, ½ exact at the corner (Niven), quartiles
+  at √2 ∓ 1, Gregory–Leibniz partial sums; the paper the total. Free facts across the three: s·(1/s) = 1, i·i = −1,
+  equal halves. *Reads and Writes* §9 "What is free, and what π costs"; essays 2 §9, 15 §5.
   R812 (10 Nov; Tom: "update the essays and merge"): R811 in essay 2 §9, essay 18 §7 and essay 14 §3; no new claim.
   R810 (10 Nov; Tom: "update the essays and merge"): R805–R809 in essay 2 §7, essay 14 §3 and essay 15 §5; no new claim.
   R806 (10 Nov; Tom: "that is prior to any physics entering.   its free, no cost, not algoritmic, no time cost to know

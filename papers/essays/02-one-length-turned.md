@@ -659,6 +659,24 @@ everything finer is an approach. So e and π are the two parts of the identity o
 the fact does not depend on: π the price of saying how long the arc to −1 is, e the price of saying it as one smooth
 turn where the reader has two corner steps.
 
+**The Cauchy hardly needed π at all.** The fourth row is the cleanest case. The heat at each slope, 1/(1 + s²), is
+rational; so is the ratio of the heat at any two directions; the corner is the median because the heat below it equals
+the heat above; there is no mean. π comes in at one place, the constant 2/π that makes the heat a probability per unit of
+slope:
+
+| who | what it holds of (2/π)·∫₀^∞ ds/(1 + s²) = 1 |
+|---|---|
+| the reader | the heat 1/(1 + s²), and equal halves either side of the corner; no total |
+| the writer at work | shares by count: of K equal turns, k below a slope, k/K; fractions near 2/π for the constant |
+| the paper | the total closed to 1, the constant 2/π named |
+
+A share is a turn over a turn, so counted in turns it needs no π to be defined. The corner is again the one exact door:
+the only rational slopes with a rational share are 0, 1 and the horizon, with shares 0, ½ and 1 (Niven); the quartiles
+are exact too, at √2 − 1 and √2 + 1, by one square root. The working writer's sum is Gregory's and Leibniz's series for
+the heat below the corner, 1 − 1/3 + 1/5 − 1/7 + … = π/4: every partial sum a fraction, only the limit π/4, and the
+reader's equal halves say the whole is twice it without summing it. Across the three identities the free facts are
+s × (1/s) = 1, i × i = −1 and equal halves at the corner; what only the paper holds is π, e and π, and 2/π.
+
 ---
 
 ## 10. What it comes to

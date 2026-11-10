@@ -1128,7 +1128,34 @@ equal rational steps finer than the corner never land on −1; and (1 + iθ/n)�
 turn short by about θ³/(3n²) and the length over by about θ²/(2n). The corner is the one finite door to −1, and
 everything finer is an approach. So e and π are the two parts of the identity only the paper holds, and the two parts
 the fact does not depend on: π the price of saying how long the arc to −1 is, e the price of saying it as one smooth
-turn where the reader has two corner steps. **Classical**; the assignment is a reading. Physics enters
+turn where the reader has two corner steps. **Classical**; the assignment is a reading.
+
+The Cauchy's total is the cleanest of the three, since most of what the Cauchy is never touched π. The heat at each
+slope, 1/(1 + s²) = h², is rational in s; so is the ratio of the heat at any two directions, (1 + s₂²)/(1 + s₁²); the
+corner is the median because the heat below it equals the heat above it; there is no mean; and every statement of order
+stands as it is. π comes in at one place only, the constant 2/π that makes the heat a probability per unit of slope:
+
+| who | what it holds of (2/π)·∫₀^∞ ds/(1 + s²) = 1 |
+|---|---|
+| the reader | the heat 1/(1 + s²), and equal halves either side of the corner; no total |
+| the writer at work | shares by count: of K equal turns, k below a slope, k/K; fractions near 2/π for the constant |
+| the paper | the total closed to 1, the constant 2/π named |
+
+A share is a turn over a turn: the share of the heat below a slope is the part of the quarter turn below it, and counted
+in turns it needs no π to be defined. π enters when the turn is laid out as a length per unit of slope. The corner is
+again the one exact door. The only rational slopes whose share is a rational number are 0, 1 and the horizon, with
+shares 0, ½ and 1 (Niven 1956); the quartiles are exact as well, but at √2 − 1 and √2 + 1, by one square root, the
+halving of a turn (above). And the working writer's sum is on the page: the heat below the corner is Gregory's and
+Leibniz's series, 1 − 1/3 + 1/5 − 1/7 + … = π/4, each partial sum a fraction, only the limit π/4. The reader's equal
+halves say the whole is twice that sum without summing it. So across the three:
+
+| the identity | the free fact | only the paper's |
+|---|---|---|
+| π/2 × 2/π = 1 | s × (1/s) = 1 | π |
+| e^(iπ) = −1 | i × i = −1 | e and π |
+| the Cauchy's total | equal halves at the corner | 2/π |
+
+**Classical**; the assignment is a reading. Physics enters
 separately and later, with the first write: a walk made and counted, a thumb given a unit. **A reading**, resting on this
 section's account of the transcendentals.
 
