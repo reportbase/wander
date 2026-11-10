@@ -9,6 +9,13 @@ archiving the paper and outlining a clean rewrite.
 cited before 10 Nov are the record's. Until the new paper's first draft is whole, `papers/readers-and-writers.md` stays
 as it is and stands.
 
+**Step 3, done 10 Nov** (Tom: "proceed", taking the outline and the open points as proposed, "place" kept): the new
+paper written into `papers/readers-and-writers.md`, 18,500 words against the record's 25,980 (the target of half was
+not met: every result was kept, and the cut came from repeats). Every checklist number below was found in the new text by
+a scripted search (one paragraph, the thumb's lay as a turn on Euler's plane, was missing on the first pass and added to
+§2). The open points stand in the new paper's §12 as O1–O7, renumbered there. Boxes below are left as the plan wrote them;
+the search is the tick.
+
 **Step 2, this note.** The new paper's definitions, its structure, a map from every section of the record to its place in
 the new paper (or why it is dropped), a checklist of results and checked numbers that must survive, and the points still
 open. Tom approves this before any prose is written. Then step 3: the new paper written into
