@@ -7410,6 +7410,24 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R808** (10 Nov; Tom: "so that means neither the reader or the writer knows or uses PI, only the paper knows PI.";
+  "yes, add it and merge"): three, not two. The reader: slopes, the corner, equal halves, neither knows nor uses π. The
+  writer at work: finite counts, so fractions (22/7, 355/113, a series stopped), using π's name and approximants, never
+  its value (Claude's change to "uses", accepted). The paper: π itself, the completed whole; the paper is the writer at
+  the limit (as R598's exact V), never a writer anyone is. Refines R798's "the paper (the writer's vantage)". "The paper
+  knows π" a picture. *Reads and Writes* §9 "What is free, and what π costs"; §1 "Four things".
+- **R807** (10 Nov; Tom: "I'm having second thoughts.    PI is a limit, its transcendental.   Its value is not actually
+  known, to know PI would would take an infinite amount of time.     PI just seems cost free, it is not actually."):
+  corrects R806. Free and prior to physics: the relation, the exchange and its corner, the equal halves, the four
+  facings and the 1 (the reader's forms of R801, rational in s). Not free: the values π/2 and 2/π, the writer's completed
+  sum, a limit no finite count reaches (R597, R625); the name exact, the value at infinite cost. "π is the price" (R801)
+  meant literally. *Reads and Writes* §9 "What is free, and what π costs" replaces R806's "All of this is prior to any
+  physics" before it was merged.
+- **R806** (10 Nov; Tom: "an important point to emphasize is that is prior to any physics entering.   its free, no cost,
+  not algoritmic, no time cost to know this."): the relations and their π/2, the four facings, 2/π, π/2 and the 1 hold
+  before any amount, unit, clock or world enters; free, nothing computed, no time (R458, R649, R658 restated for
+  R801–R805); the integrals and the mean are the writer's statement of what is given, not a procedure; physics enters
+  with the first write. *Reads and Writes* §9 "All of this is prior to any physics".
 - **R805** (10 Nov; Tom: "What PI/2 is actually the sum of all the ways vertical and horizontal can relate to one
   another."; "A circle is just the four ways V and h can face relative to one another."; "PI/2 relations and 4 facings make
   a circle."; "add it and merge, because its a nice concise statement."): the quarter turn is every relation of v and h,

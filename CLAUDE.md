@@ -458,6 +458,18 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R805 (10 Nov; Tom: "PI/2 relations and 4 facings make a circle."): the quarter turn is every way v and h relate, π/2
   by the turn's heat; four facings (signs, the writer's join, not a second dimension) make the circle, π/2 × 4 = 2π; in
   space π/2 × 8 = 4π. *Reads and Writes* §9. Not taken: π as a flow rate ("don't include").
+  R807 (10 Nov; Tom: "PI is a limit, its transcendental. … PI just seems cost free, it is not actually."): corrects
+  R806: free and prior to physics are the relation, the exchange and corner, the equal halves, the four facings and the 1;
+  the values π/2 and 2/π are the writer's limit, at infinite cost, never the reader's to pay. **Never call π, π/2 or 2/π
+  free or costless.** *Reads and Writes* §9 "What is free, and what π costs" (replaces R806's passage).
+  R808 (10 Nov; Tom: "neither the reader or the writer knows or uses PI, only the paper knows PI."): three, not two: the
+  reader neither knows nor uses π; the writer at work counts, so holds fractions, using π's name and approximants, never
+  its value; only the paper holds π itself, and **the paper is the writer at the limit**, never a writer anyone is
+  (refines R798). *Reads and Writes* §9, §1 "Four things".
+  R806 (10 Nov; Tom: "that is prior to any physics entering.   its free, no cost, not algoritmic, no time cost to know
+  this."): R801–R805's relations, facings and numbers hold before any amount, unit, clock or world; given, not computed,
+  no time; the integrals the writer's statement, not a procedure; physics enters with the first write. *Reads and
+  Writes* §9 "All of this is prior to any physics".
   R803 (10 Nov; Tom: "update the essays."): R801 and R802 in essay 2 §7 ("Which act each number measures") and §9 ("Four
   identities, one exchange", with the table), essay 14 §3 and essay 15 §5; no new claim.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
