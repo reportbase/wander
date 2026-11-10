@@ -85,7 +85,12 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   arrives from it (§4, "A moving sky"). The standpoint includes its state of motion where motion bears on what is
   read: a boost is a change of standpoint, so it is not among the changes of what arrives, and it moves the read. How
   a relation between two standpoints is to be classed when it is not a distance is open (§12, O9).
-- **D7. Joining and recording.** Joining reads, two standpoints or two moments, gives places and orders, not writes. A
+- **D7. Joining and recording.** Joining reads, two standpoints or two moments, can give places, orders or maps, not
+  writes. These are distinct relations, told apart by what each is. A place involves a gap in space (D3). An order is a
+  relation with no cycle: which read is before which. A map carries one read's directions to another's, as a turn of
+  the look or a change of motion does; it has an inverse, and maps compose. An order and a map hold no gap. A map's
+  coordinate, a turn's angle or a boost's rapidity, is a representation of the map, not a further relation. This names
+  the relation being formed; it does not say every relation between reads is one of the three (§12, O4, O9). A
   count, or a mark kept, is how a write is recorded; being an amount in a unit is what makes it a write. A count of
   strides is a whole-number record of a ratio d/stride, a place; the same count with the stride in metres is a write.
   A quantity's kind is what it is, not how it was had: a place is a scale-invariant gap across, usually had by parallax,
@@ -132,7 +137,7 @@ payload's:
 
 | | the geometry: stays when what arrives changes (D6) | the payload: changes with what arrives (D6) |
 |---|---|---|
-| unmoved by scaling (D5) | a read (one standpoint), with its heat; a place (two) | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
+| unmoved by scaling (D5) | a read (one standpoint), with its heat; a place (two, a gap); an order or a map (two, no gap) | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
 | an amount in a unit (D4), moved by its own dimension's scaling | a write: a distance in metres | a write: a frequency in hertz, a brightness in watts |
 
 A write is found in both columns; a read and a place are the geometry's alone; a ratio of payloads is the payload's
@@ -544,7 +549,8 @@ directions crowding (the heat) and D² of payload. On ξ = −ln tan(θ/2), the 
 so directions alone give the rapidity, with no clock, no frequency and no speed of light, provided every source is counted
 whatever its brightness and the sources are uniform in their frame. Taken so, from one look, the rapidity is a read: the
 slide of one read's median against where the premise puts it, unmoved by scaling, with no second standpoint. Taken as
-the sky's median before a boost against after, it joins two looks: a place. The speed in metres a second needs c carried in, and D read as a line's shift needs the
+the sky's median before a boost against after, it joins two looks at one position, with no gap in space: the joining is a
+map, the boost, and the rapidity is the writer's coordinate on it, not a place (D7; §12, O4). The speed in metres a second needs c carried in, and D read as a line's shift needs the
 line's rest frequency: both writes. **Classical**; the sorting is a reading.
 
 ## 5. Near and far
@@ -1386,8 +1392,21 @@ before the data can show where it is not. **Checked** (TCF; killed).
   unknowable against the universe, knowable across one hemisphere, known only held or written (§1, "Four things").
   *And (R798–R801):* the completed joins are the paper's, both hemispheres at once with no facing; four identities
   state them, and each has a reader's form about the exchange and the corner (§9, "Four identities, one exchange").
-- **O4. Orders.** *Closed (R792):* an order of reads is its own kind, a joining with no gap in it, not a place; D7 lists
-  places and orders side by side.
+- **O4. Joinings with no gap.** *Orders (R792):* an order of reads is a joining with no gap in it, not a place.
+  *Widened, and open (R825, R826):* there are at least two such joinings, and they are different structures. An order is
+  a relation with no cycle. A map carries one read's directions to another's; it has an inverse and can cycle (a turn
+  by the corner's slope returns after four), so it is no order, and the order of reads is something a composition of
+  maps takes, not the composition (two quarter turns of space joined in the two orders land 120° apart, §7). Keeping
+  order neither makes a map nor is needed for one: s ↦ s³ keeps order and is only a change of chart of one read; the
+  exchange s ↦ 1/s reverses it. Not every function on directions is a map between reads. A change of chart is a
+  representation (D7); a lens or the air changes what arrives (D6); a map between reads is induced by a change of
+  standpoint that is not a step. That such maps are the Möbius maps is conditional: it follows from the premises of O8
+  (given Lie's classification), not from reading alone. Möbius maps keep every cross ratio, and classically a map
+  keeping the cross ratio of every four distinct directions is Möbius; the cases checked (ORD: nine maps, six slopes)
+  illustrate that and prove nothing. The heat under a map: each read has its own heat, the same at every standpoint,
+  and no map changes it; a map's stretch at a direction is the first read's heat carried by the map against the second
+  read's own there, 1 everywhere for a turn, not for a boost. Open: whether orders and maps exhaust the joinings with
+  no gap, and whether places, orders and maps exhaust the relations between reads. Neither is claimed.
 - **O5. Do readers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.
 - **O6. A second test that can fail.** "Find the z" has passed once in data (LIGO) and failed once (the seeds). A second
   domain, where the turn can be named before the data, would show whether the rule sorts.
@@ -1418,6 +1437,13 @@ before the data can show where it is not. **Checked** (TCF; killed).
   on directions, as a turn does. To call it a place would change what "a gap across" means. So the time to contact is
   taken out of D3's list until its temporal reading has a stated reason, and the rapidity and the Doppler factor stay
   unclassed.
+  *Since (R824–R826).* The relation between two standpoints at one position is a map (D7, O4), and the rapidity is the
+  writer's coordinate on it, as an angle is on a turn. The Doppler factor is two variables with one value: the map's
+  stretch at a direction, which is the map's and unmoved by what arrives, and the ratio of the frequencies received,
+  a ratio of payloads. That they are equal is a premise of physics, not read (MBR). Still open: §4 says that from one
+  look, given a sky uniform in its own frame, the rapidity is a read; but where the sources lie is part of what
+  arrives, so what one look holds is a feature of the paint under a premise, and how that is to be classed is not
+  settled. The time to contact stays out of D3.
 
 ## Where the ideas come from
 

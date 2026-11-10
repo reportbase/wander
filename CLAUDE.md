@@ -472,6 +472,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R826 (10 Nov; a ruling pasted by Tom: "Joining reads can give places, orders, or maps."; "I would not mark O4
+  closed"): **joining reads can give places (a gap in space), orders (a relation with no cycle) or maps (one read's
+  directions carried to another's)**; a map's coordinate (angle, rapidity) is a representation; *Reads and Writes* D7,
+  §12 O4 "Joinings with no gap" (open), O9. The Möbius form of a map stays conditional on O8's premises; cross-ratio
+  cases illustrate only. §4's rapidity "a place" is now a map. **Do not claim the three exhaust relations between
+  reads, or that there is a fourth kind.**
   ORD (`plans/ord-plan.md` + `runs/ord/ord.py`, 10 Nov; SPN R825; a ruling pasted by Tom: "test orders against three
   cases"): exact, N1–N6 not killed. A turn and a boost are maps, not orders (an order has no cycle; a map has an
   inverse); order and map are two variables (two quarter turns of space in two orders, 120° apart); a general function

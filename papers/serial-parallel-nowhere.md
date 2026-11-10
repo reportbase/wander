@@ -7410,6 +7410,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R826** (10 Nov; a ruling pasted by Tom: "yes to the broader family of "joinings with no gap," but not yet to the
+  proposed D7 sentence exactly as written"; "Joining reads can give places, orders, or maps."; "I would not mark O4
+  closed"; "proceed with the D7/O4 revision as a draft."): *Reads and Writes* D7 now says joining reads can give places,
+  orders or maps, distinct relations told apart by what each is (a gap in space; a relation with no cycle; a function
+  carrying one read's directions to another's), a map's coordinate (angle, rapidity) a representation, and that not
+  every relation between reads need be one of the three. §12 O4 is "Joinings with no gap", widened and open: orders
+  and maps distinct; the Möbius form conditional on O8's premises; the cross-ratio cases an illustration; each read's
+  own heat unchanged by any map, the stretch one read's heat carried against the other's. O9 gains the map, the
+  rapidity as its coordinate and the Doppler factor as two variables equal by a premise. The consistency check
+  (`plans/ord-plan.md`) changed one passage: §4's "it joins two looks: a place" is now a map. Flagged, not changed:
+  §4's "from one look the rapidity is a read" rests on where the sources lie, which is what arrives. No fourth kind;
+  exhaustiveness not claimed.
 - **R825** (10 Nov; a ruling pasted by Tom: "treat "a map between reads" as the clearer name for the existing kind of
   orders, not as a fourth kind—provisionally"; "test orders against three cases"; "The third case is decisive."): ORD
   (`plans/ord-plan.md` + `runs/ord/ord.py`, exact, predictions N1–N6 first, none killed; one side check outside the

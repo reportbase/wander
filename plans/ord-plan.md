@@ -124,3 +124,22 @@ against the second read's own heat there. A turn carries heat onto heat (stretch
 other's. Whether the paint's colour follows the stretch is premise (P), physics. In coordinates: the stretch is
 stated on the sphere of directions with its uniform measure; on the slope chart the same fact appears with the
 chart's own factor, and the number at a direction is the same.
+
+**A consistency check after the D7/O4 revision** (10 Nov, SPN R826; the four questions of the ruling, read against
+*Reads and Writes* D1–D7, the two tables, §4 "A moving sky" and §12 O4, O9; a reading, not a run).
+
+1. Does every example name the relation classified? D3's (d/H, d₁/d₂, V\*/H), D7's and the tables' do. One did not
+   agree with the rest: §4 said the sky's median before a boost against after "joins two looks: a place", against R822
+   (a boost is no gap in space). Changed: the joining is a map, the rapidity its coordinate.
+2. Are places, orders and maps told apart by definitions? After the edit, yes in D7: a gap in space; a relation with
+   no cycle; a function carrying one read's directions to another's, with an inverse. The grid's geometry box now lists
+   all three joinings.
+3. Are representations kept apart from relations? An angle in degrees, a pixel's index, a turn's angle and a boost's
+   rapidity are each named as representations. One passage is left and flagged, not changed: §4's "from one look the
+   rapidity is a read". It rests on a premise about where the sources lie, which is part of what arrives; recorded as
+   open in O9.
+4. Are the Möbius conclusions conditional? D7 does not say "Möbius". O4 says the Möbius form follows from O8's premises
+   given Lie's classification, and that the cross-ratio cases illustrate and do not prove. §4 states aberration as
+   special relativity's formula, which is the physics as given, not a derivation from reading.
+
+Not claimed: that orders and maps exhaust the joinings with no gap, or that the three exhaust relations between reads.
