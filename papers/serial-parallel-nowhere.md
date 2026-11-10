@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R799** (10 Nov; Tom: "the cauchy is readers distribution. gaussian is the writers distribution. add cachy formula to
+  12."): **the Cauchy is the reader's distribution, the Gaussian the writer's.** The Cauchy a law of directions, its heat
+  1/(1 + s²) = h² rational in s, closed to 1 by the writer's 2/π; the Gaussian a law of amounts on both axes, needing e
+  and π. Two Gaussian amounts of one spread divided give the standard Cauchy, of spreads in ratio c a Cauchy of scale c
+  (Herschel–Maxwell's isotropic normal and its ratio, R276); the equal spread is V = H. Consistent with R579 (the
+  Gaussian a payload model) and R653 (the write is the payload). (2/π)∫₀^∞ ds/(1 + s²) = 1 added to *Reads and Writes*
+  §12 O3 as the fourth identity.
 - **R798** (10 Nov; Tom: "notice that writer does not have a piece of paper to write circles … is writer*reader=1? this
   seems very similar in principle to the euler's identity and the circle equation."; "my point is human is all those
   things at the same time."; "the paper is both hemispheres at the same time. no facing."; "yes"): **the paper is both

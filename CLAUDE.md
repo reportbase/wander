@@ -432,6 +432,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R798 (10 Nov; Tom: "the paper is both hemispheres at the same time. no facing."; "yes"): the paper (the writer's
   vantage) both hemispheres at once, no facing, its number 1; π/2 (central, reached) and 2/π (inscribed, approached) the
   facings'; the human all of them at once. h² + v² = 1, e^(iπ) = −1, π/2 · 2/π = 1 the paper's. *Reads and Writes* §1, O3.
+  R799 (10 Nov; Tom: "the cauchy is readers distribution. gaussian is the writers distribution."): the Cauchy a law of
+  directions (heat h² rational, closed by 2/π), the Gaussian a law of amounts (e and π); two equal-spread Gaussians
+  divided give the Cauchy (V = H). The Cauchy's total, (2/π)∫ ds/(1 + s²) = 1, the fourth identity in O3.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

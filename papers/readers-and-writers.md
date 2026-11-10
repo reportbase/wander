@@ -1102,6 +1102,11 @@ before the data can show where it is not. **Checked** (TCF; killed).
   *And (R798):* the completed joins are the paper's, both hemispheres at once with no facing. Three identities say it:
   h² + v² = 1 (the length held at one, the circle), e^(iπ) = −1 (the half turn closed at a named point, π) and
   π/2 · 2/π = 1 (the two facings held together, both). A read has one facing at a time and holds none of them whole.
+  *And (R799):* a fourth, the Cauchy, (2/π)·∫₀^∞ ds/(1 + s²) = 1: the reader's heat, 1/(1 + s²) = h², rational in s,
+  closed to 1 only by the writer's 2/π. The Cauchy is the reader's distribution, a law of directions; the Gaussian
+  (e^(−x²/2)/√(2π) on each axis) is the writer's, a law of amounts, needing both e and π. They are joined by the
+  thumb's division: two independent Gaussian amounts of one spread, divided one by the other, give the standard Cauchy;
+  of spreads in a ratio c, a Cauchy of scale c (the median of |y/x| at c, checked by draws). The equal spread is V = H.
 - **O4. Orders.** *Closed (R792):* an order of reads is its own kind, a joining with no gap in it, not a place; D7 lists
   places and orders side by side.
 - **O5. Do readers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.
