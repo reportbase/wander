@@ -243,3 +243,25 @@ finiteness of a place, a premise, not shown to follow from reading. (G3), (G4) a
 Whether a bounded reader must have (G1) and (G2), rather than happen to, is open; I do not see a proof of either. No new
 physics, as expected: Ignatowski's and Frank and Rothe's route reaches the same group from the relativity principle,
 this one from the sky.
+
+**After run 2 (10 Nov): the classification checked.** Against the reproduction of González-López, Kamran and Olver's
+table in arXiv 1508.00726 (Appendix 1, Table 1; the paper itself not opened), the eight primitive real Lie algebras of
+vector fields on a surface, up to local analytic change of coordinates: P1 ℝ ⋉ ℝ², P2 sl(2), P3 so(3), P4 ℝ² ⋉ ℝ²,
+P5 sl(2) ⋉ ℝ², P6 gl(2) ⋉ ℝ², P7 so(3, 1), P8 sl(3). An algebra containing the turns is primitive (the turns already
+leave no line field invariant: the isotropy turns every tangent direction), and of the eight only P3, P7 and P8 contain
+so(3) (the others' semisimple parts are sl(2, ℝ) or none, which holds no compact so(3)). So the list used in run 2 is
+right, with one qualification: GKO's classification is local, so (G1)–(G4) give (C) locally on the sky, the global
+Möbius group then being the one the local algebra integrates to on the whole sphere.
+
+**After run 2: can (G1) be had from what a read is?** An argument, not a run. A read holds directions and no amount
+(R788). So any rule a reader can state for its next sky, from its present one and the motion, is a map of directions:
+the reader cannot represent a map that depends on a source's speed, because no read carries one. That is (G1) for the
+reader's account. It is not (G1) for the world: the world's map could depend on something no read holds, and the
+reader would then find its rule failing, as the Galilean reader would, two steps not making one. To close the gap one
+more premise is needed, of a different kind: **what no read can hold makes no difference to what is read** (the sky
+after a motion is fixed by the sky before it and the motion). That is a principle about the world, a sort of
+relativity principle stated for reads; it is not derivable from reading, and it is where a test could bite: a case
+where the next sky depends on something unread (a medium's flow, a source's speed) is a case where (G1) fails, and
+Fizeau's drag and the dispersion of light in a medium are such cases, each read as a medium, a writing. So the honest
+standing: (G1) follows from reads for the reader's rules; for the world it is one principle, assumed, as the light
+postulate is. (G2) has no argument yet beyond a place being a finite list.

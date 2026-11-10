@@ -7418,6 +7418,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   (G3), (G4) and is angle-keeping only at a = 0, the one that closes at 6 dimensions (others 15, 42, ≥ 80); the linear
   maps of space on directions have no motion. With Lie's classification (to check), (G1)–(G4) give (C). Reconstruction,
   not explanation: (G1) is the light postulate said as a read, (G2) the finiteness of a place, neither shown forced.
+  Then (Tom: "proceed"): the classification checked against GKO's table as reproduced in arXiv 1508.00726 (P3 so(3),
+  P7 so(3, 1), P8 sl(3) the only primitive algebras with the turns; local); (G1) follows from reads for the reader's
+  rules, and for the world needs one principle, that what no read holds makes no difference to what is read, assumed.
   Kept out of *Reads and Writes*.
 - **R790** (10 Nov; Tom, pasting a recommendation: "test the bridge from observer geometry to special relativity—not to
   revise Reads and Writes again"; derive the boost and Doppler law, find the invariant, demand a discriminating
