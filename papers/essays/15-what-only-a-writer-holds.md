@@ -121,7 +121,8 @@ writing. The constant that turns a size into a number of nats belongs to the sam
 
 Put the two side by side and they are one fact about two groups.
 
-Each of the reader's two groups is a one-parameter family of transformations: turning by θ, rescaling by κ. Each has an
+Each of the reader's two groups is a one-parameter family of transformations: turning by θ, rescaling by κ (θ and the
+logarithm of κ are the writer's parameters, the ones that add). Each has an
 exponential map, the function that turns a parameter that adds into a transformation that composes. For rescalings the
 map is κ = e^t: two rescalings compose by multiplying, their parameters add. For turns it is e^(iθ): two turns compose,
 their angles add. The constants live in those two maps.

@@ -39,7 +39,8 @@ reader's side of the same split is a direction and its heat, continuous and with
 arrives along it. Why the reader's heat follows the uniform turn is the second essay's result, not the array's.
 
 **The index is the address.** The places are fixed by the index before any value is stored, at equal steps of turn.
-Read each place as the slope of the inscribed angle, s_k = tan(θ_k/2), the reading v/h of the second essay. For even N
+Read each place as its slope, the reading v/h of the second essay (in the writer's angle, the half-angle
+s_k = tan(θ_k/2)). For even N
 those slopes are exactly the N evenly spaced quantiles of the standard Cauchy. At N = 8, for instance, they are
 
   ±0.199, ±0.668, ±1.497, ±5.027,

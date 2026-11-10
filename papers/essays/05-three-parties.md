@@ -331,8 +331,8 @@ doubles.
 
 Which screen, then, shows the reader's own directions as it holds them? They are uniform by area about the look, so the
 screen that gives each the same room is the one that keeps area: Lambert's azimuthal equal-area projection about the
-crosshair, a direction α off the look drawn 2·sin(α/2) out. It is true at the crosshair and departs gently: 0.9% at 15°,
-3.4% at 30°, 7.6% at 45°. A flat screen does the opposite. Its distance out is tan α, the reading itself, so the far
+crosshair, a direction α off the look drawn 2·sin(α/2) out (the writer's angle and formula). It is true at the crosshair and departs gently: 0.9% at 15°,
+3.4% at 30°, 7.6% at 45°. A flat screen does the opposite. Its distance out is the reading itself, r (the writer's tan α), so the far
 readings stretch without bound toward the horizon, and the directions thin on it as cos³α.
 
 Laid so, the heat map of section 4 shows the far field the way the reader holds it. The ring one thumb off
@@ -361,7 +361,7 @@ one-thumb circle, the three corners and their homes and horizons); two thumbs in
 
 Every picture above is drawn on a screen, and the reader is not on it. The reader stands at the point the screen is
 projected from, where the three thumbs meet, behind the screen with the look running out through the crosshair. Every mark
-on the screen is a direction from that point, set tan α off the crosshair. The crosshair is the look itself. The thumbs
+on the screen is a direction from that point, set at its reading r off the crosshair (the writer's tan α). The crosshair is the look itself. The thumbs
 are at √2, 54.74° off; the homes are at 1/√2, 35.26° off. The horizon, 90° off, runs parallel to the screen and never
 lands on it. The reader has no shape here: a point, a vantage. The rings and the screen are the writer's drawing of what
 that point holds.
@@ -369,7 +369,7 @@ that point holds.
 Strip away the world and that drawing is the read itself: the heat of directions in thumbs, cooling off the crosshair as the
 two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)), in rings about the look out toward a horizon on every side; or laid by count,
 each ring holding the same share. The whole screen is the hemisphere in front: every direction ahead lands on it once,
-tan α from the crosshair, and only the rim, 90° off, never lands. A reader sees that hemisphere, with the most fidelity
+its reading r from the crosshair, and only the rim, 90° off, never lands. A reader sees that hemisphere, with the most fidelity
 where it looks, and the Cauchy is nothing smaller: its shape is the hemisphere itself, everything the reader sees. Spread
 evenly over the hemisphere, the directions are the Cauchy on the screen, point for point; its peak is the look, half of it
 lies within 60° of the look, and its long tail is the rim, which is why it has no mean. The wedge's triangle is a part of

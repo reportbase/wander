@@ -416,6 +416,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   first, a family of axial flows closes only when angle-keeping (6 against 15, 42, ≥ 80), the projective group has no
   motion. Reconstruction, not explanation: the first premise is the light postulate as a read, the second a place's
   finiteness. Open: whether a bounded reader must have them.
+  R793 (10 Nov; Tom: "the reader does not use trig, only writers use trig. Update the old papers as needed."): **the
+  reader uses no trigonometry**; sin, cos, tan, arctan and the angle θ are the writer's (the completed turn's chart, where
+  turns add); the reader works in the slope s = v/h, rational with √(1 + s²) the one exception, joined to the angle by the
+  half-angle s = tan(φ/2). After draw's `tb_classical.md` and `tb_algebra.md`. *Reads and Writes* §1 "The reader uses no
+  trigonometry"; the essays and the physics companion brought to it. **A standing rule for new writing: never give the
+  reader an angle or a trigonometric function; state its results in s, the trig form marked the writer's.** In short (Tom): "Readers - v/h. Writers - angles."
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

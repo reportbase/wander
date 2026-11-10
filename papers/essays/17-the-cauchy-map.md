@@ -40,13 +40,15 @@ Lay those numbers over the glass and you have a heat map. It is hottest where th
 reaches nothing at the rim: 0.35 of the peak one thumb off the middle (45°), 0.125 at 60°, half the hemisphere inside
 that 60°. That heat map is the two-dimensional Cauchy,
 
-  1/(2π(1 + r²)^(3/2)) per unit of glass, falling as cos³α.
+  1/(2π(1 + r²)^(3/2)) per unit of glass,
+
+falling, in the writer's angle α off the look, as cos³α.
 
 That is the map on the flat screen. Drawn on another chart the same looking makes another curve: the stereographic
 chart of the whole sky gives (1/π)/(1 + |z|²)², which is not this one. The cos³ belongs to the screen square to the look.
 
 In the plane, with one thumb instead of two crossed, the same construction gives the familiar Cauchy, (2/π)/(1 + s²) per
-unit of the reading s = v/h, falling as cos²θ.
+unit of the reading s = v/h (falling as cos²θ, in the writer's angle).
 
 Three things are worth saying about this map at once.
 
@@ -72,8 +74,8 @@ Start with the measure that treats every direction alike: uniform by angle in th
 That is the turn's own measure, the one the hand sweeps with no clock and no ruler (essays 2 and 14). It has no heat: on
 the hemisphere, by angle, every direction weighs the same.
 
-The heat appears when the directions are read in a coordinate. In the plane, a direction θ off home reads s = v/h = tan θ,
-and
+The heat appears when the directions are read in a coordinate. The derivation is the writer's, in angles. In the plane, a
+direction θ off home reads s = v/h = tan θ, and
 
   dθ = ds/(1 + s²) = cos²θ · ds.
 
@@ -87,7 +89,8 @@ In space, a small patch dA of the glass at r = tan α subtends a solid angle
 one cosine because the patch is tilted to the ray, two because it is sec α away and solid angle falls with distance
 squared. So an even spread over the hemisphere, (1/2π) per unit of solid angle, read on the glass, has weight
 (1/2π)·cos³α = 1/(2π(1 + r²)^(3/2)). With n thumbs square to the look, the same count gives cos^(n+1): one cosine more for
-each thumb.
+each thumb. What the reader holds is the result, rational in its reading and with no angle in it: 1/(1 + s²) in the plane,
+1/(2π(1 + r²)^(3/2)) on the glass.
 
 The photographer's cos⁴ is this cos³ and one more for the aperture, which a ray reaching the corner of the frame sees
 foreshortened. The three geometric cosines would be there for a pinhole with no light at all; they are where the looking
