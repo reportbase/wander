@@ -7427,7 +7427,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   §5.2 ("inferred"), essays 9 and 13, `physics.md`'s dictionary row, and the notes on `boost-sky.html`,
   `plane-sphere.html` and two `demos.html` cards. *Reads and Writes* §7: the Thomas–Wigner turn "inferred from
   directions alone", and "the turn belongs to the join, a place" corrected to a map (it had been missed by R826's
-  check). TWG's results unchanged. Not touched: SPN's own older entries, `v-and-h.md` and the archive, as records.
+  check). *Reads and Writes in Physics* said the rotation "belongs to the joining, a place" in three
+  passages (abstract, §5.3, the closing list's "Joining is a place"); each now says a map, and the list "Joining gives
+  places, orders or maps", a duration from two moments left open as in the paper. TWG's results unchanged. Not touched: SPN's own older entries, `v-and-h.md` and the archive, as records.
 - **R826** (10 Nov; a ruling pasted by Tom: "yes to the broader family of "joinings with no gap," but not yet to the
   proposed D7 sentence exactly as written"; "Joining reads can give places, orders, or maps."; "I would not mark O4
   closed"; "proceed with the D7/O4 revision as a draft."): *Reads and Writes* D7 now says joining reads can give places,
