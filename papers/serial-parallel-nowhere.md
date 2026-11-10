@@ -7410,6 +7410,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R805** (10 Nov; Tom: "What PI/2 is actually the sum of all the ways vertical and horizontal can relate to one
+  another."; "A circle is just the four ways V and h can face relative to one another."; "PI/2 relations and 4 facings make
+  a circle."; "add it and merge, because its a nice concise statement."): the quarter turn is every relation of v and h,
+  its total under the turn's heat π/2; the circle that quarter turn in four facings (the signs of h and v), joined by the
+  writer, π/2 × 4 = 2π; in space the wedge's π/2 × 8 facings = 4π. The relation continuous, the reader's; the facing
+  discrete signs, the writer's, not a second dimension (Tom first said "the second dimension"; Claude's clarification
+  accepted). R368 in one line. Not taken (Tom: "don't include. just thinking out loud."): π as a flow rate at which
+  reality paints. *Reads and Writes* §9 "π/2 of relations and four facings make a circle".
 - **R804** (10 Nov; Tom: "the true size is 1.    reading gives you hte short side of 2/pi.   writing corrects by saving
   to the long side of pi/2.    the compete breath/exhale cycle results in the true size of 1."; "How can we prove that
   framing?"; "the ideas are all there, but i've never heard this stated so simply."): the simple statement and its proof.

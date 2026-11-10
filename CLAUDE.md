@@ -455,6 +455,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   every path (chord 1/√2 × √2, square ½ × 2), only the split the turn's; in space ½ and 2 (so "π is the price" is the
   plane's). The 1 is H in H, not V*. Classical (Cauchy 1841, Crofton 1868, Buffon 1777); the assignment ours.
   *Reads and Writes* §9 "The thumb, short by reading, long by walking, and whole"; essay 2 §7, essays 14 §3 and 15 §5.
+  R805 (10 Nov; Tom: "PI/2 relations and 4 facings make a circle."): the quarter turn is every way v and h relate, π/2
+  by the turn's heat; four facings (signs, the writer's join, not a second dimension) make the circle, π/2 × 4 = 2π; in
+  space π/2 × 8 = 4π. *Reads and Writes* §9. Not taken: π as a flow rate ("don't include").
   R803 (10 Nov; Tom: "update the essays."): R801 and R802 in essay 2 §7 ("Which act each number measures") and §9 ("Four
   identities, one exchange", with the table), essay 14 §3 and essay 15 §5; no new claim.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are

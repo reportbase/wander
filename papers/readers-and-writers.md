@@ -1065,6 +1065,15 @@ projection (Cauchy 1841; Crofton 1868), and Buffon's needle (1777) is the same 2
 assignment: the short factor to the read, the long one to the walk, their product to the two held together.
 **Classical**; the assignment is a reading.
 
+**π/2 of relations and four facings make a circle.** The quarter turn is every way the vertical and the horizontal can
+relate, one slope s from all of h to all of v; weighed by the turn's heat and summed, those ways come to π/2. A relation
+is never negative, so that is all of them. The circle is the same quarter turn four times, once for each choice of sign
+for h and v, joined by the writer: π/2 × 4 = 2π. The relation is continuous and the reader's; the facing is a choice of
+signs, discrete, the writer's join (§7's arrays, one per facing), a second kind of thing and not a second dimension. In
+space the count is the same one step up: the wedge holds π/2 of directions, the signs of h, v and v₂ give eight facings,
+and π/2 × 8 = 4π, the sphere. The π/2 is the turn's weighing; summed along the chord the same ways come to √2, along the
+square's edges to 2. **Classical**; the wording is a reading.
+
 **What the one pole already carried.** The reader at i holds the standard Cauchy (§3). Readings added give one Cauchy
 with the standpoints added, z₁ + z₂, the phasors multiplying. Parallax is a sum of reads whose depth is exactly Cauchy,
 its point the triangulation of the two reads' points (§6). A cell of the floor's discarded fraction sits at its own
