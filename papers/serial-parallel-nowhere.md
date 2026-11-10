@@ -7410,6 +7410,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R791** (10 Nov; Tom: "proceed", then a pasted note: "Can angle-keeping be derived from the conditions of reading
+  itself, without assuming Lorentz invariance or importing the Lorentz transformation?"): SRB run 2, nothing killed.
+  (C) replaced by four premises: changes of standpoint act on directions alone, chains included (G1); are fixed by
+  finitely many numbers (G2); include the turns (G3); a motion carries the back pole toward the front, mirrored backward
+  (G4). Galilean aberration fails (G1) (two steps of 0.3 no single step, 0.046 rad); a family of axial flows meets (G1),
+  (G3), (G4) and is angle-keeping only at a = 0, the one that closes at 6 dimensions (others 15, 42, ≥ 80); the linear
+  maps of space on directions have no motion. With Lie's classification (to check), (G1)–(G4) give (C). Reconstruction,
+  not explanation: (G1) is the light postulate said as a read, (G2) the finiteness of a place, neither shown forced.
+  Kept out of *Reads and Writes*.
 - **R790** (10 Nov; Tom, pasting a recommendation: "test the bridge from observer geometry to special relativity—not to
   revise Reads and Writes again"; derive the boost and Doppler law, find the invariant, demand a discriminating
   prediction): SRB (`plans/srb-plan.md` + `runs/srb/`), predictions committed first, exact, nothing killed. Given only

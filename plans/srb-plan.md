@@ -210,3 +210,36 @@ and the only one anti-commuting with z ↦ −z is 0. Symbolic.
 sky of directions, mapped as directions: light's speed carried by no read), plus finiteness (G2); not a derivation of
 relativity from reads, and no new physics.
 - *Killed* if R1–R4 fail as stated; R5 cannot be killed, only judged.
+
+**Run 2** (`runs/srb/srb2.py` R1–R2, output `srb-run2.txt`; `srb2b.py` and `srb2c.py` R3–R4, outputs `srb-run2b.txt`,
+`srb-run2c.txt`; 10 Nov). Nothing killed.
+- R1: two Galilean steps of 0.3 are no single Galilean step on directions: the best single β (0.5552) leaves 0.0462 rad.
+  The Lorentz composition at (β₁ + β₂)/(1 + β₁β₂) to 7·10⁻⁴⁹; the Galilean steps on velocities, speed carried, exactly.
+- R2: X_a commutes with the turns about z and the mirror x ↦ −x and anti-commutes with z ↦ −z, identically; it is
+  sin θ·(1 + a cos²θ) e_θ, and f′ − f·cot θ = −2a·sin²θ·cos θ, zero only at a = 0. The script's tangency flag printed an
+  unreduced z·(1 + a z²)(x² + y² + z² − 1), zero on the sphere: my reduction (it replaced z² but not z⁴), not the field.
+- R3: the dimension at depth 0…3: a = 0, 6, 6, 6, 6; a = 1, ½ and −½ each 6, 15, 42, 80. The first script (exact ranks
+  over every pair) was stopped as too slow; srb2b brackets each generator with the newest elements (spanning the generated
+  algebra, by Jacobi) and ranks by 50-digit values, as the prediction said; it was stopped by its time limit at a = −½,
+  depth 3, which srb2c reran alone. 80 is the most 40 directions can show (two numbers a direction), so depth 3 is a lower
+  bound: the growth is shown, its end is not.
+- R4: sl(3, ℝ)'s fields rank 8, the turns among them; those commuting with the turns about z rank 2 (the stretch
+  diag(0, 0, 1) and the turn); none anti-commutes with z ↦ −z.
+
+**What run 2 shows.** Within what was tested: a motion along an axis that keeps the sky a sky of directions (G1, G4) is
+not thereby angle-keeping (R2: a whole family of flows); what picks angle-keeping out of that family is that the changes
+of standpoint, joined with the turns, be fixed by finitely many numbers (G2, R3: only a = 0 closes, at 6, the Lorentz
+group's dimension). The linear maps of ℝ³ acting on directions, the other finite group containing the turns, have no
+motion in them (R4: their only axial fields are a stretch and a turn). So, given Lie's classification (cited, not
+proved here, still to check against González-López, Kamran and Olver's tables), (G1)–(G4) leave the Möbius maps alone,
+and (C) follows from them. R3 checks one family, a ↦ (1 + a z²), not every axial flow; the classification is what covers
+the rest.
+
+**The verdict (R5, a judgment).** In the three levels Tom's pasted note names (re-description, reconstruction,
+explanation), this is reconstruction, one step lower in the premises: (C) is replaced by (G1)–(G4). It is not
+explanation. (G1) is the light postulate said as a read (each standpoint's sky a whole sky of directions, a chain of
+changes still a map of directions, no speed carried; R1 shows that is exactly what the Galilean map lacks). (G2) is the
+finiteness of a place, a premise, not shown to follow from reading. (G3), (G4) are what "a turn" and "a motion" mean.
+Whether a bounded reader must have (G1) and (G2), rather than happen to, is open; I do not see a proof of either. No new
+physics, as expected: Ignatowski's and Frank and Rothe's route reaches the same group from the relativity principle,
+this one from the sky.

@@ -1,1 +1,6 @@
    a=-1/2 depth 1: 15 (4 s)
+   a=-1/2 depth 2: 42 (41 s)
+   a=-1/2 depth 3: 80 (650 s)
+R3: a = -1/2, dimension at depth 0..3: [6, 15, 42, 80]
+R4: rank of the sl(3,R) fields 8; the turn about z among them: True; commuting with turns about z: rank 2; also anti-commuting with z -> -z: rank 0
+SUMMARY: {'R3 (a=-1/2)': True, 'R4': True}
