@@ -7410,6 +7410,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R824** (10 Nov; a ruling pasted by Tom: "keep the time-to-contact number out of D3 for now, and proceed with the
+  counterexample pass on maps between reads"; "the objective is to discover whether the framework needs a fourth
+  kind"): MBR (`plans/mbr-plan.md` + `runs/mbr/mbr.py`), predictions first, exact in Gaussian rationals, nothing
+  killed. On the axis no direction moves and the stretch is k, so the relation is the map, not a displacement; one
+  ratio comes from several maps; a turn's stretch is 1 everywhere, a boost's runs k to 1/k; a step is no map on
+  directions (one direction becomes two by distance), which is why it places; stretches compose only through the map,
+  D_{g∘h}(z) = D_g(h z)·D_h(z); η is to a boost what an angle is to a turn. The criterion found: a relation between two
+  reads is a map between reads when it is a function on directions that is the same in every world. The Doppler
+  factor is two variables with one value, the map's stretch and a ratio of payloads, equal by SRB's premise (P).
+  Whether that is a fourth kind, or D7's "orders" under a better name, is left to Tom. D1–D7 unchanged; the time to
+  contact stays out of D3.
 - **R823** (10 Nov; a ruling pasted by Tom: "I would move the time-to-contact case out of place, alongside the unresolved
   Doppler factor"; "a place is a relation between standpoints, not simply any result that uses two observations";
   "state whether the classification applies to a quantity, a relation between quantities, or a representation of

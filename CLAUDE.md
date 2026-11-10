@@ -472,6 +472,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  MBR (`plans/mbr-plan.md` + `runs/mbr/mbr.py`, 10 Nov; SPN R824; a ruling pasted by Tom: "proceed with the
+  counterexample pass on maps between reads"): exact, nothing killed. A turn and a boost are maps on directions, the
+  same in every world; a step is not (it places). The stretch belongs to the map and composes through it; the Doppler
+  factor is the stretch and a payload ratio, two variables equal by premise (P); η is a boost's angle. Whether "a map
+  between reads" is a fourth kind is open; D1–D7 unchanged.
   R823 (10 Nov; a ruling pasted by Tom): **what is classified is a variable; a relation between variables is another
   variable; a representation has its variable's kind.** The heat is part of the read, not a kind; a separation of two
   directions of one read is of the read. The time to contact is out of D3's list (its number is d₁/B, a ratio of two
