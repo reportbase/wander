@@ -131,12 +131,12 @@ median and the absence of any mean are what a read with no breadth in it is.
   number. π/2 and 2/π belong to the two facings, the central reached at a point and the inscribed approached; the paper
   has their product, 1, the thumb in thumbs, what the facings give when held together without a facing.
 
-| | hemispheres | facing | V | the writer's number for it |
-|---|---|---|---|---|
-| inscribed, toward the universe | one | home to a horizon | unknowable | 2/π, approached |
-| central, toward the apple | one | across, to a rim | knowable | π/2, reached |
-| the apple held and turned | both, in reach | turned, the turn known | known, held | the turn's Cauchy |
-| the paper | both at once | none | known | 1 |
+| | hemispheres | facing | V | the writer's number for it | the act it measures |
+|---|---|---|---|---|---|
+| inscribed, toward the universe | one | home to a horizon | unknowable | 2/π, approached | reading: what turning sees |
+| central, toward the apple | one | across, to a rim | knowable | π/2, reached | walking: the arc counted in thumbs, a place; a write with a unit |
+| the apple held and turned | both, in reach | turned, the turn known | known, held | the turn's Cauchy | holding |
+| the paper | both at once | none | known | 1 | the read and the walk held together |
 
 The human is all of these at the same time, not by turns: it reads the universe, faces the apple and is faced by it, and
 what it holds in the hand or draws it holds as paper. The apple has the facings and never the paper. So π/2 · 2/π = 1 is
@@ -161,7 +161,8 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
 - A reader has a vantage, never a shape: no circle, no sphere, no body.
 - *Heat* and *paint* for what the read has and what it meets; *address* only as a computing metaphor or for a count of K
   places at the heat's quantiles (§5).
-- π/2, 2/π, π and the one-length circle are the writer's measures of the reader's sweep (§9).
+- π/2, 2/π, π and the one-length circle are the writer's measures of the reader's sweep; 2/π measures the read, π/2 the
+  arc walked (§9, "Reading is 2/π; walking is π/2").
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
 
 **Continuous and discrete.** A read is continuous: a turn passes through every direction between two, and nothing in it
@@ -1022,6 +1023,18 @@ Two independent zero-mean Gaussian amounts of one spread, divided, give the stan
 Cauchy of scale c. Dividing by the thumb integrates the length away, taking e with it and leaving π. So the Cauchy is a
 law of directions, a heat made a probability only when the writer closes it, and the Gaussian a law of amounts.
 **Classical**; the reader's forms checked by hand; the assignment is a reading.
+
+**Reading is 2/π; walking is π/2.** The two numbers sort by act. *2/π is what turning sees*: over the quarter turn the
+thumb's share h averages 2/π, the mean of what is seen of one thumb from a standpoint that never moves; it is the constant
+that closes the heat, and it is approached at the horizon, never reached. *π/2 is what walking counts*: the quarter arc
+from all of h to all of v is π/2 thumbs long, the heat gathered to the horizon, ∫₀^∞ ds/(1 + s²), reached at a named
+point, −1. An arc in thumbs is a length against the thumb, unmoved by scaling and held by no single read: of the kind D3
+calls a place, had by walking and counting; with the thumb in a unit it is a write (D4). So, in short, reading is 2/π and
+writing is π/2, the write reached through its place. Their product is 1, the paper: the thumb given back when the read and
+the walk are held together. The exchange swaps the two, and they agree only at the corner, where a length walked and a
+ratio held say the same (§6). Both numbers stay the writer's arithmetic, since the reader holds no π; what is sorted is
+which act each one measures. In the table above the total's 2/π is the reading's factor and its π/2 the walk's, and "the
+two facings" is the read against the walk. **Classical** (the mean share and the arc); the assignment is a reading.
 
 **What the one pole already carried.** The reader at i holds the standard Cauchy (§3). Readings added give one Cauchy
 with the standpoints added, z₁ + z₂, the phasors multiplying. Parallax is a sum of reads whose depth is exactly Cauchy,

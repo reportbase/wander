@@ -7410,6 +7410,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R802** (10 Nov; Tom: "reading = 2/PI   writing = PI/2", then "yes, go with your recommendations and merge"):
+  **2/π measures the read, π/2 the walk.** 2/π is the thumb's mean share over the quarter turn, what turning sees from a
+  standpoint that never moves, the constant closing the heat, approached at the horizon. π/2 is the quarter arc in
+  thumbs, what walking counts, the heat gathered, reached at the named point −1. Claude's adjustment, taken: under D4 a
+  write is what scaling moves, and π/2 thumbs is not moved, so it is a place (walked and counted), a write once the
+  thumb has a unit; "writing = π/2" is the short form, the write reached through its place, and R653's sense (the write
+  the payload, the central sweep). Their product, 1, is the paper. Both numbers stay the writer's arithmetic (R717).
+  Refines R798, whose table gave both numbers to facings and the writer 1. *Reads and Writes* §9, §1.
 - **R801** (10 Nov; Tom: "lets look for connections between the four equations and the reader/writer framing.", then
   "yes"): **four identities, one exchange.** Each of R798–R800's four has a form the reader holds, rational in the slope
   and without π, and each is a fact about the exchange s ↔ 1/s and its corner: 1/(1 + s²) + s²/(1 + s²) = 1 (the two
