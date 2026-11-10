@@ -514,6 +514,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R820 (10 Nov; ChatGPT's classification stress test; Tom: "Yes"): D6 tests a candidate once its standpoint and turn
   are named, never a bare number; its direction is the direction of arrival (refraction changes which source paints
   it); it sorts quantities, not causes. BCL (`plans/bcl-plan.md` + `runs/bcl/`): a blind classification by D1–D7.
+  R819 (10 Nov; Tom: "update the essays and demos"): R818 in essay 6 §4 and essay 15 §5, and as a note on
+  `parallax.html` and its `demos.html` card; no new claim, no script changed.
   R818 (10 Nov; Tom: "lets apply the idea to parallax"): the place never needed π: two slopes a counted step apart give
   1/(d/B) = 1/s₁ + 1/s₂, rational, the writer at work's and exact; the corner circle s₁·s₂ = 1; π only where a slope is
   made an angle (γ, the parsec's 648000/π). Not a reader's identity (two reads joined). *Reads and Writes* §9 "What is
