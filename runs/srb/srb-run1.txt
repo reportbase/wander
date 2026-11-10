@@ -1,0 +1,22 @@
+B1(a'): conj-commuting forces Im(lam)=0: [{li: 0}]
+B1(b): aberration identity residual: 0 ; beta=tanh(ln k): 0
+B1(c): velocity composition residual: 0
+B1(d): Galilean max |merid/trans - 1| = 0.199997 ; Lorentz = 8.05e-47
+B2: max |stretch*D - 1| over 3000 points = 1.4e-44
+B3: boost residuals (t, z, x, y, det): [0, 0, 0, 0, 0]
+B4(a): max cross-ratio change = 1.91e-50
+B4(b): max |d_P - eta| = 1.39e-49 (an identity once rho = tanh(eta/2), SRA A2)
+B4(c): pushforward residual 0 ; cosh(d_P) - gamma = 0
+       heights e^-eta ['0.740818', '0.367879', '0.0497871'] against gamma ['1.04534', '1.54308', '10.0677']
+       eta 0.3 KL 0.022416127817163618795 pred 0.022416127817163618795
+       eta 1.0 KL 0.24022901391655504926 pred 0.24022901391655504926
+       eta 3.0 KL 1.7108803420275934987 pred 1.7108803420275934987
+B4(d): max rel. err = 9.49e-50
+B5: KL(uniform sphere || spherical Cauchy rho = tanh(eta/2))
+       eta 0.1 KL 0.00666222645079792 KL/eta^2 0.6662226451 4 ln cosh(eta/2) 0.00499791805450234
+       eta 0.3 KL 0.059643058193045 KL/eta^2 0.6627006466 4 ln cosh(eta/2) 0.0448322556343272
+       eta 1.0 KL 0.626070570998663 KL/eta^2 0.626070571 4 ln cosh(eta/2) 0.48045802783311
+       eta 3.0 KL 4.02981893988214 KL/eta^2 0.44775766 4 ln cosh(eta/2) 3.42176068405519
+B6.4: Fisher info 1.33333333333333 median var 1.0 efficiency 0.75
+
+SUMMARY {'B1a_prime': True, 'B1b': True, 'B1c': True, 'B1d': True, 'B2': True, 'B3': True, 'B4a': True, 'B4b': True, 'B4c': True, 'B4d': True, 'B6_4_eff': True}

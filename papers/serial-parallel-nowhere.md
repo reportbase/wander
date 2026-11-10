@@ -7410,6 +7410,20 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R790** (10 Nov; Tom, pasting a recommendation: "test the bridge from observer geometry to special relativity—not to
+  revise Reads and Writes again"; derive the boost and Doppler law, find the invariant, demand a discriminating
+  prediction): SRB (`plans/srb-plan.md` + `runs/srb/`), predictions committed first, exact, nothing killed. Given only
+  (C), that a change of standpoint by motion keeps angles between nearby stars, and no handedness about the axis, the
+  axial sky maps are z ↦ z/k and give exactly the Lorentz aberration and the velocity composition; the Galilean map is not
+  conformal (stretch ratio up to 1.2 at β = 0.6); the map's own stretch is 1/D everywhere, so D is fixed by directions
+  alone, its being the frequency ratio a further premise (P); given (N), null directions in a Lorentzian space, the sky
+  map lifts to the boost matrix exactly, dimensionless, its action on events in metres a write. What survives: cross
+  ratios; the rapidity as the Poincaré distance between the two skies' standpoints; Λ and D as places. The boosted sky's
+  Cauchy height is e^(−η), not γ = cosh(d_P). KL between the rest and boosted skies 2·ln cosh(η/2) on the circle; on the
+  sphere a closed form found post hoc, Fisher information 4/3 per direction. One prediction (B1(a)) was false as written
+  and found before the run. Step 3: no candidate is discriminating (each a consequence of special relativity, a premise or
+  statistics), as predicted: the bridge is an interpretation that names where the Lorentz group enters ((C)) and where
+  units do, not a source of new predictions. Open: whether (C) can be had from the reads. Not in *Reads and Writes*.
 - **R789** (10 Nov; a ChatGPT referee read of the R788 rewrite, 8.4/10 as an internal synthesis, pasted; Tom: "yes", to
   the narrow pass proposed): eight small edits to *Reads and Writes*, no ruling changed: "checked" means right under its
   assumptions, not that they fit a physical system; D4 a change of units moves every write's number and no place; D7 a

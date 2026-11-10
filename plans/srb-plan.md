@@ -120,3 +120,52 @@ reported. No closed form predicted, so nothing here can be killed but the axis-i
 
 ## Runs
 
+**Before run 1 (10 Nov): B1(a) is false as written, found before any script ran.** A Möbius map fixing 0 and ∞ is z ↦ λz
+with λ complex, and every such map commutes with the turns z ↦ e^{iα}z; so commuting with turns does not make λ real.
+λ = k·e^{iψ} is a boost along the axis followed by a turn ψ about it (a loxodromic map). B1(a) stays recorded as written.
+**B1(a′):** adding that the map commutes with the reflection in every plane through the axis (z ↦ z̄: no handedness
+about the axis) makes λ real, and continuity from the identity makes it positive. Shown symbolically. (b)–(d) unchanged.
+
+**Run 1** (`runs/srb/srb.py`, output `runs/srb/srb-run1.txt`; 10 Nov). Nothing killed.
+- B1(a′): commuting with z ↦ z̄ forces Im λ = 0 (symbolic). B1(b): cos θ′ − (cos θ + β)/(1 + β cos θ) ≡ 0 with
+  β = (k² − 1)/(k² + 1) = tanh(ln k). B1(c): the composition residual ≡ 0. B1(d): at β = 0.6 the Galilean aberration's
+  meridional stretch over its transverse stretch departs from 1 by up to 0.200; the Lorentz aberration's by 8·10⁻⁴⁷.
+- B2: the stretch times D is 1 to 1.4·10⁻⁴⁴ over 3,000 points at β = 0.1, 0.6, 0.99, along and across alike.
+- B3: diag(√k, 1/√k) acting on Hermitian X gives t′ = cosh η·t + sinh η·z, z′ = sinh η·t + cosh η·z, x, y unchanged,
+  det X kept, cosh η = (k + 1/k)/2: every residual ≡ 0.
+- B4(a): cross ratios unchanged to 1.9·10⁻⁵⁰ over 100 maps. B4(b): an identity once SRA A2's ρ = tanh(η/2) is granted.
+  B4(c): C(0, 1) pushed through t ↦ t/k is C(0, 1/k) exactly; the height is e^(−η) (0.741, 0.368, 0.0498 at η = 0.3, 1,
+  3) against γ = 1.045, 1.543, 10.07; cosh of the Poincaré distance ≡ γ. B4(d): KL = 2·ln cosh(η/2) to 10⁻⁴⁹ at all three η.
+- B5 (exploratory): KL 0.006662, 0.05964, 0.6261, 4.030 at η = 0.1, 0.3, 1, 3; KL/η² → 2/3 as η → 0, so the Fisher
+  information about η per direction is 4/3 on the sphere against 1/2 on the circle. The axis-independence clause was not
+  tested: it holds by the integral's symmetry and the run assumed it. Post hoc (`runs/srb/srb-b5-posthoc.py`, derived after
+  seeing the numbers): KL = −2·ln(1 − ρ²) + [(1 + ρ)²·ln(1 + ρ) − (1 − ρ)²·ln(1 − ρ)]/ρ − 2, to 10⁻⁴⁸.
+- B6, candidate 4: the uniform sky's pseudorapidity is logistic with scale ½ (density ½·sech² ξ); Fisher information
+  4/3, the median's asymptotic variance 1, efficiency exactly ¾.
+
+**B6, the sort (a judgment, made after run 1).**
+
+| candidate | sort | why |
+|---|---|---|
+| 1. D fixed by the directions alone | (A), and (B) for the frequency | the conformal factor of the sky's Möbius map is special relativity's D; that it is the frequency ratio is (P) |
+| 2. the whole Lorentz transformation from three stars, no clock | (A) | Penrose 1959; TWG; given (N) it is B3, classical |
+| 3. a census's dipole 2β from directions alone | (A) | Ellis and Baldwin 1984 |
+| 4. rapidity from N directions, median ¾ efficient | (C) | a fact about estimating a logistic location; relativity is silent and nothing physical is at stake |
+| 5. what has no unit: rapidity, axis, Thomas–Wigner, ratios of proper times by signals; never m/s | (A) | special relativity with dimensional analysis |
+
+None lands in (D). **The expectation is not killed.** On special relativity's own ground the bridge is an interpretation:
+it says exactly which premise carries the Lorentz group, (C) alone for everything on the sky (aberration, the composition
+of rapidities, the Doppler factor as the map's stretch, cross ratios), and where more than the observer's geometry
+enters: (N) to lift the sky map to events, c to put those events in metres and seconds, (P) to make the stretch a
+frequency. That sorting is the result. It is not a new relativistic prediction, and none was found.
+
+**What survives between standpoints** (step 2): the cross ratios of stars (reads joined); the rapidity, which is the
+Poincaré distance between the two skies' standpoints (a place); the Lorentz matrix Λ, dimensionless (a place); the
+Doppler factor as the map's stretch at each direction (a place). The Cauchy height of the boosted sky in the motion's
+half-plane chart is e^(−η), the reciprocal of the forward Doppler factor, not γ; γ is the cosine of the hyperbolic distance.
+
+**What this does not settle.** Whether (C) itself can be had from the reads (why a change of standpoint by motion should
+keep angles between nearby stars) is not addressed: it is assumed, as TWG assumed it. A route would be to show that a
+non-conformal sky map breaks something a read holds (the corner of every pair, say, or the Cauchy family of the uniform
+sky); the Galilean map's stretch ratio 1.2 at β = 0.6 shows it is not conformal, not that a reader could tell. That is
+the next question if this line goes on (SRB run 2, not planned yet).
