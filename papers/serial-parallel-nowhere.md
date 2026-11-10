@@ -7410,6 +7410,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R798** (10 Nov; Tom: "notice that writer does not have a piece of paper to write circles … is writer*reader=1? this
+  seems very similar in principle to the euler's identity and the circle equation."; "my point is human is all those
+  things at the same time."; "the paper is both hemispheres at the same time. no facing."; "yes"): **the paper is both
+  hemispheres at once, with no facing; π/2 and 2/π are the two facings' (central reached, inscribed approached), the
+  paper's the 1, their product.** The writer has no π/2 (R329, R450 stand: the writer knows the line as 1 and faces
+  nothing). One observer is all of them at the same time: the human reads the universe, faces the apple, and holds as
+  paper what it holds in hand or draws; the apple never the paper. h² + v² = 1, e^(iπ) = −1 and π/2 · 2/π = 1 are the
+  paper's three completed joins (the circle, π, both). *Reads and Writes* §1 "Four things" (a table), §12 O3.
 - **R797** (10 Nov; Tom: "You can write without knowing V. That is parallax."; "V is knowable at the limit."; "V is
   knowable not known … this is the breathing/exhale idea. It is ehulers identity. Writer has pi/2 vantage"; "Consider four
   things, universe, Apple, human and paper …"; "if human holds apple, he can rotate the apple in his hand to create the

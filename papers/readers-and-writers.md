@@ -126,8 +126,20 @@ median and the absence of any mean are what a read with no breadth in it is.
   line of sight, is the Cauchy whatever the apple's shape, the shape only the paint. The hand holds the back as the eye
   holds the front, so both hemispheres are in reach and the turn is known; holding is the writer's, and in the hand
   the apple's V is **known**.
-- *The human draws a circle on the paper.* The dual hemisphere view is made, not seen: a mark holding both halves at once,
-  V = H at one length, π held whole, π/2 · 2/π = 1. The apple reads and is read; only the human makes the paper.
+- *The human draws a circle on the paper.* The paper is both hemispheres at once, with no facing: the writer's vantage
+  itself, made, not seen, a mark holding both halves together, V = H at one length, π held whole. It has neither sweep's
+  number. π/2 and 2/π belong to the two facings, the central reached at a point and the inscribed approached; the paper
+  has their product, 1, the thumb in thumbs, what the facings give when held together without a facing.
+
+| | hemispheres | facing | V | the writer's number for it |
+|---|---|---|---|---|
+| inscribed, toward the universe | one | home to a horizon | unknowable | 2/π, approached |
+| central, toward the apple | one | across, to a rim | knowable | π/2, reached |
+| the paper | both at once | none | known | 1 |
+
+The human is all of these at the same time, not by turns: it reads the universe, faces the apple and is faced by it, and
+what it holds in the hand or draws it holds as paper. The apple has the facings and never the paper. So π/2 · 2/π = 1 is
+not two parties meeting but one observer's two facings held at once, and the 1 is its own thumb given back.
 
 V is knowable, not known. The inscribed sweep approaches its end, the central sweep reaches it at a point, and only a
 write holds it whole; parallax narrows the band toward it and never closes it (§6). Euler's identity is the hinge: the
@@ -1087,6 +1099,9 @@ before the data can show where it is not. **Checked** (TCF; killed).
   and the turn completed as well (π, a limit): an arc over the radius, counted against the whole. Neither stage needs a
   true breadth V* or a unit, so neither is a write; both are completed joins, the circle first and π second. *And (R797):* the exact V is a third, the limit of parallax:
   unknowable against the universe, knowable across one hemisphere, known only held or written (§1, "Four things").
+  *And (R798):* the completed joins are the paper's, both hemispheres at once with no facing. Three identities say it:
+  h² + v² = 1 (the length held at one, the circle), e^(iπ) = −1 (the half turn closed at a named point, π) and
+  π/2 · 2/π = 1 (the two facings held together, both). A read has one facing at a time and holds none of them whole.
 - **O4. Orders.** *Closed (R792):* an order of reads is its own kind, a joining with no gap in it, not a place; D7 lists
   places and orders side by side.
 - **O5. Do readers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.
