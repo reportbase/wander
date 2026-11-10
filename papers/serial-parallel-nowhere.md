@@ -7410,6 +7410,22 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R788** (10 Nov; Tom, after an evaluation of *Reads and Writes* version 17 and its breath: "the write is the scale
+  variant companion to the read."; "seems to me that ehule'rs captures this idea nicely. lets build out from that equation,
+  to settle on definitions."; "option 1"; then "proceed with 1 and 2", to archiving the paper and outlining a rewrite):
+  **a write is what scaling the world moves, and nothing else.** On Euler's plane ln(z/H) = ln(d/H) + iθ, scaling the
+  world (the reader's thumb and stride included, units outside, R782) slides every point across by ln k: the up part is
+  unmoved (a **read**, held by one standpoint), gaps across are unmoved (a distance in thumbs, V\*/H, τ in one's own ticks:
+  a **place**, the working name, needing a second standpoint, parallax), and only the across axis's zero tied to a unit
+  carried in moves (an amount in metres or seconds: a **write**). Chosen over keeping every count a write (option 2):
+  the sort is by invariance under the scaling group, and a count is how a write is recorded, not what makes it one.
+  Supersedes the record's "parallax is the passage from reading to writing", "joining reads is a write" (R652), "a write
+  is the recording of a read" (R653) and "a write is a count" (R640) as definitions; R651's and R787's "a write" for τ̇ and
+  the distance between standpoints become places. *Reads and Writes* version 17 frozen as
+  `papers/archive/rw/reads-and-writes-record.md` (**a frozen record, never edited**); the rewrite's definitions, structure,
+  map from the record, checklist and open points in `plans/rw-rewrite-outline.md`, for Tom's approval before any prose.
+  The breath of the walk (R781) leaves the paper for `plans/breath-note.md`. Also found: the unequal loop's ζ (R784) is
+  read from the trace (eigenvalues e^(±ζ)), not the loop's largest stretch.
 - **R787** (9 Nov; Tom: "proceed", to ChatGPT's suggestion to investigate the Fisher–Rao geometry of the Cauchy family
   first, without editing *Reads and Writes*): FRG (`plans/frg-plan.md` + `runs/frg/frg.py`, exact, nothing killed): the
   Fisher metric of C(m, γ) is (dm² + dγ²)/(2γ²), half the Poincaré; KL = ln(((m₁ − m₂)² + (γ₁ + γ₂)²)/(4γ₁γ₂)) =
