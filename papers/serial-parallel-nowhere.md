@@ -7410,6 +7410,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R817** (10 Nov; Tom: "update the essays and demos"): R816 carried out, no new claim: essay 2 §6 (the bell's two
+  constants, the binomial, order against sums), essay 17 §8 (the bell beside the map); essay 15 §5 already had it. Demos,
+  a note each, no script changed: `cauchy-map.html` (what needs π), `theorem6.html` (order and sums).
 - **R816** (10 Nov; Tom: "lets apply this idea to the gaussian"; "add it and merge"): the Gaussian in the three tiers.
   Polar form (dθ/2π) × (e^(−r²/2) r dr): the turn's part carries all the π (2π the circle whole, four facings, an amount
   having both signs), the length's part the e and a total of 1; (∫e^(−x²)dx)² = 2π × ½. The reader: only the direction

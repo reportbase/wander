@@ -250,6 +250,14 @@ the direction of that bell's samples is an even turn, which is why its ratio is 
 of paint, not about either sweep. The Cauchy is the reader's distribution, a law of directions; the Gaussian is the
 writer's, a law of amounts.
 
+The bell also shows where its two constants come from. In polar form it is a turn times a length,
+(dθ/2π) × (e^(−r²/2)·r dr). The turn's part carries all the π, the 2π of the circle whole; the length's part carries the e
+and totals a plain 1. A writer at work holds neither constant: it holds the binomial, counts of tosses, C(n, k)/2ⁿ, with
+the mean n/2 and the variance n/4 exact, and the bell is the limit of those counts (de Moivre), π entering through
+Wallis's product, every partial product a fraction. The reader holds only the direction of a pair of such amounts, the
+Cauchy. So the two laws are kept differently: the Cauchy by order, its exact facts the median and the equal halves; the
+Gaussian by sums, its exact facts the mean and the variance.
+
 ### Direction, landing, payload
 
 Three things meet at that one point of the arc, and the series keeps them apart.
