@@ -1042,8 +1042,8 @@ before the data can show where it is not. **Checked** (TCF; killed).
 - **O5. Do readers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.
 - **O6. A second test that can fail.** "Find the z" has passed once in data (LIGO) and failed once (the seeds). A second
   domain, where the turn can be named before the data, would show whether the rule sorts.
-- **O7. The essays, the demos and *Reads and Writes in Physics*** use the record's vocabulary, which calls places writes.
-  They wait for a pass.
+- **O7. The essays, the demos and *Reads and Writes in Physics*.** *Closed (R792):* all three brought to R788's kinds;
+  the last place still calling a place a write, the demos page's card for `write.html`, now says the move places.
 - **O8. Why the sky is conformal.** The moving sky's Möbius map rests on motion keeping angles on the sky. SRB (runs 1–2)
   replaces that premise by four: a change of standpoint acts on directions alone, chains included; it is fixed by finitely
   many numbers; the turns are among the changes; a motion carries directions from the back toward the front. With Lie's
