@@ -472,6 +472,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R816 (10 Nov; Tom: "lets apply this idea to the gaussian"): the Gaussian's π is the turn's (2π, the four facings), its
+  e the length's (total 1); the reader holds only a pair's direction (the Cauchy); the writer at work the binomial, mean
+  and variance exact, π by Wallis's product; the paper the bell. The Cauchy kept by order, the Gaussian by sums. *Reads
+  and Writes* §9 "What is free, and what π costs"; essay 15 §5.
   R815 (10 Nov; Tom: "update the essays and demos"): R804–R814 in essays 17 §8 and 10 §4, and as a note on `paths.html`,
   `one-read.html`, `mountain.html`, `writer-readers.html` and two `demos.html` cards; no new claim, no script changed.
   R814 (10 Nov; Tom: "lets apply this idea to the circle"): h² + v² = 1 needs no π, one read has it; the writer at work

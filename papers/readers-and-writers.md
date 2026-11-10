@@ -1182,6 +1182,27 @@ sorting this section began with:
 A square root is not a limit as π is: it is exact as a length made in one step from two lengths, so it is the writer's
 and not only the paper's.
 
+The Gaussian, the writer's law (above), shows where its π and its e each come from. In polar form it is a turn times a
+length, (1/2π)·e^(−r²/2) dx dy = (dθ/2π) × (e^(−r²/2)·r dr). The turn's part carries all the π: the 2π is the circle
+whole, π/2 of relations in four facings, and an amount, having both signs, needs all four. The length's part carries
+the e and totals a plain 1, ∫₀^∞ e^(−r²/2)·r dr = 1, with no π in it. So the Gaussian's π is the circle's and nothing
+else; the same split is why the square of ∫ e^(−x²) dx is π, a full turn 2π times a half.
+
+| who | what it holds of the Gaussian |
+|---|---|
+| the reader | only the direction of a pair of equal-spread amounts: uniform by turn, the Cauchy, its median the corner; nothing of the length |
+| the writer at work | counts: the binomial, C(n, k)/2ⁿ, every value a fraction, its mean n/2 and its variance n/4 exact |
+| the paper | the bell itself, e^(−x²/2)/√(2π): the limit of the binomial, with e and π both |
+
+The working writer's tier is de Moivre's (1733): tossing and counting is what a writer at work does, and the Gaussian is
+what the counts tend to. π arrives in that limit through Wallis's product (1656),
+π/2 = (2·2)/(1·3) × (4·4)/(3·5) × (6·6)/(5·7) × …, every partial product a fraction: the walk's π/2, reached by
+counting. And what is exact flips once more. For the Cauchy the exact facts were the median and the equal halves, and
+there was no mean; for the Gaussian the exact facts a working writer holds are the mean and the variance, which are
+sums. The Cauchy is kept by order and the Gaussian by sums, a law of directions and a law of amounts. This is no fifth
+reader's identity: the reader holds nothing of one Gaussian amount, only the direction of a pair, which is the Cauchy it
+already had.
+
 **Classical**; the assignment is a reading. Physics enters
 separately and later, with the first write: a walk made and counted, a thumb given a unit. **A reading**, resting on this
 section's account of the transcendentals.
@@ -1380,6 +1401,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
   Mathematik* 32, 119–123.
 - Crofton, M. W. (1868). On the theory of local probability. *Philosophical Transactions of the Royal Society* 158,
   181–199.
+- de Moivre, A. (1733). *Approximatio ad summam terminorum binomii (a + b)ⁿ in seriem expansi.* London.
 - Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
   Royal Astronomical Society* 206, 377.
 - Englert, B.-G. (1996). Fringe visibility and which-way information: an inequality. *Physical Review Letters* 77,
@@ -1437,6 +1459,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
 - Trotter, H. F. (1959). On the product of semi-groups of operators. *Proceedings of the American Mathematical Society*
   10, 545–551.
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII.* Tours.
+- Wallis, J. (1656). *Arithmetica infinitorum.* Oxford.
 - Wantzel, P. L. (1837). Recherches sur les moyens de reconnaître si un problème de géométrie peut se résoudre avec la
   règle et le compas. *Journal de Mathématiques Pures et Appliquées* 2, 366–372.
 - Wigner, E. (1939). On unitary representations of the inhomogeneous Lorentz group. *Annals of Mathematics* 40(1),
@@ -1446,4 +1469,4 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewri
 The entries were checked against Crossref and library catalogues on 3 November 2026; Malmquist (1926) is given as it is
 usually cited, Lie (1880), added 10 November, as `plans/srb-plan.md` cites it, and Buffon (1777), Cauchy (1841) and Crofton (1868),
 added 10 November: Crofton checked against the Royal Society's catalogue, Cauchy against a later reference list, and
-Buffon to the volume only; Niven (1956) as it is usually cited.
+Buffon to the volume only; Niven (1956), de Moivre (1733) and Wallis (1656) as they are usually cited.
