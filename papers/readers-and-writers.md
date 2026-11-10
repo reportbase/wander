@@ -1074,15 +1074,22 @@ space the count is the same one step up: the wedge holds π/2 of directions, the
 and π/2 × 8 = 4π, the sphere. The π/2 is the turn's weighing; summed along the chord the same ways come to √2, along the
 square's edges to 2. **Classical**; the wording is a reading.
 
-**All of this is prior to any physics.** The relations and their π/2, the four facings, the short side and the long side
-and the 1 between them hold before any amount, unit, clock or world enters: nothing in them moves when the world is
-scaled or when what arrives is changed, and nothing in them was measured. They are free. They cost nothing to have, since
-no step is taken and no algorithm run to produce them; they take no time, since a read holds none; the turn is given
-whole, not performed one after another (§3, "What a read is"). The integrals and the mean written above are the
-writer's way of stating what is given, not a procedure anyone carries out to get it. Physics enters only afterwards, with
-the first write: a walk actually made and counted, a thumb given a unit, a thing met and painted. So the order is fixed:
-first the geometry, whole and at no cost; then physics, which assigns its values and changes none of it. **A reading**,
-resting on the two tests.
+**What is free, and what π costs.** Two things have to be kept apart here. The geometry is prior to any physics and
+free: the relation of the vertical to the horizontal, every slope from all of h to all of v; the exchange s ↔ 1/s and its
+corner; the heat's equal halves either side of the corner; the four facings; and the 1, the thumb in thumbs, which the
+short side and the long side give back whatever they are. None of these moves when the world is scaled or when what
+arrives is changed, none was measured, no step is taken and no algorithm run to have them, and they take no time, since a
+read holds none (§3, "What a read is"). They are the reader's forms of "Four identities, one exchange", rational in s.
+
+The numbers π/2 and 2/π are not free. π is a limit, transcendental ("A limit makes the transcendental numbers", above): no finite count of steps gives its value, only
+ever a fraction near it, each further digit at a further cost, the whole of it at an infinite one. The writer can name it
+exactly, as the total of the turn, and can use the name; what cannot be had in finite time is the value. So the sweep
+only seems to hand over π at no cost. What it hands over free is that there is a whole, split in equal halves at the
+corner, and that the read and the walk multiply to 1; how much the whole is, and so how short the short side and how long
+the long side, is the writer's completed sum. That is the exact sense of "π is the price", above: the price is an
+infinity, paid only at the limit, and the reader never pays it because the reader never needs the value. Physics enters
+separately and later, with the first write: a walk made and counted, a thumb given a unit. **A reading**, resting on this
+section's account of the transcendentals.
 
 **What the one pole already carried.** The reader at i holds the standard Cauchy (§3). Readings added give one Cauchy
 with the standpoints added, z₁ + z₂, the phasors multiplying. Parallax is a sum of reads whose depth is exactly Cauchy,

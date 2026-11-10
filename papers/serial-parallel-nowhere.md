@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R807** (10 Nov; Tom: "I'm having second thoughts.    PI is a limit, its transcendental.   Its value is not actually
+  known, to know PI would would take an infinite amount of time.     PI just seems cost free, it is not actually."):
+  corrects R806. Free and prior to physics: the relation, the exchange and its corner, the equal halves, the four
+  facings and the 1 (the reader's forms of R801, rational in s). Not free: the values π/2 and 2/π, the writer's completed
+  sum, a limit no finite count reaches (R597, R625); the name exact, the value at infinite cost. "π is the price" (R801)
+  meant literally. *Reads and Writes* §9 "What is free, and what π costs" replaces R806's "All of this is prior to any
+  physics" before it was merged.
 - **R806** (10 Nov; Tom: "an important point to emphasize is that is prior to any physics entering.   its free, no cost,
   not algoritmic, no time cost to know this."): the relations and their π/2, the four facings, 2/π, π/2 and the 1 hold
   before any amount, unit, clock or world enters; free, nothing computed, no time (R458, R649, R658 restated for
