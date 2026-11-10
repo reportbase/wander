@@ -51,3 +51,53 @@ and no instrument is a pure read.
 - Killed outright (the definitions unclear) if two or more of cases 1–5 come back against the intended answers.
 
 ## Runs
+
+### Run 1 (10 Nov 2026)
+
+The agent's answers, verbatim: `runs/bcl/responses.md`. Its only tool call was the one handing the report back.
+
+Its classifications: 1 read (high); 2 read, a relation within one read, the angle the writer's notation (medium);
+3 place (high); 4 none of these (medium); 5 none of these, a ratio of payloads (medium-high); 6 read, as the heat that
+comes with it (medium); 7 none of these on the plain reading, turning on what the two normals are (medium-low); 8 read
+as the direction of arrival (medium-high), the pairing with the source and the straight-line direction not settled;
+9 the frequency in a unit a write (medium), the shift as a ratio none of these (low), the phrase as a whole not
+settled; 10 not settled as one thing, counted directions carrying amounts in a unit, a write if forced (low).
+
+Against the intended answers: all ten agree in substance. No case of 1–5 came back against them.
+
+- B1 not killed. B2 not killed (weak, as stated).
+- B3 not killed. Asked whether D6 could be applied from D1–D7 alone, it answered "No. It applied cleanly only in cases
+  5 and 6", and of case 7: "cannot be applied without more information, because the case names no standpoint, no turn
+  and no direction"; "D6 assumes the observation comes already divided." It also said no test looks at a distribution
+  alone and tells its kind: "D6 has to be applied to the situation, not to the law."
+- B4 killed. It split arrival from the source's position in case 8 as predicted, but case 8 was not where it was least
+  sure: those were 9 and 10, then 7.
+
+What it found that the predictions did not name (its findings, to weigh, none yet acted on):
+
+1. Four boxes, three names. The two tests sort into moved by scaling; unmoved and a direction; unmoved and a gap
+   across; unmoved and neither. D1–D7 name three; the fourth (a probability, a ratio of payloads) is acknowledged in
+   D6 and named only in the paragraph after D7, which the agent did not have.
+2. D4 and D7 give different criteria for a write. D4: "the across axis's zero tied to a unit" (a distance). D7: "being
+   an amount in a unit is what makes it a write" (anything). A frequency in hertz or a pixel value is a write by D7 and
+   not by D4, though D4 itself lists "a second".
+3. D5 is stated for lengths only. What scaling does to times, speeds and the speed of light is not said, so the first
+   test does not settle a Doppler shift; nor wavelengths against a sensor's passbands, nor brightness.
+4. "The direction to a thing" is a pairing of a direction with what is met along it. D6 keeps the directions, not the
+   pairing: replace or move the thing, or bend its light, and the pairing changes though no direction has.
+5. D6 does not say a place stays. "Replace a wall by a row of trees" changes the distances met; only D3's "gap across"
+   tells a place from paint.
+6. D7's "what it is, not how it was had" sits awkwardly beside cases 6 and 7, which differ only in how one law was
+   obtained. Its way out: the kind attaches to the variable (a direction's slope against a quotient of amounts), not
+   to the law the two share.
+7. D4's "a change of units … moves no read" is not true of a read stated as an angle in degrees, the writer's
+   coordinate.
+8. "Heat", "paint", "payload" and "the turn" are undefined within D1–D7. Partly the test's own doing: the paper
+   defines them in §3 and §4, which the agent was not given.
+
+Reading. The vulnerability the test was aimed at is real and is the one R820's first sentence states: D6 tests a
+candidate once its standpoint and turn are named. R820's second sentence (the direction of arrival) answers finding 4
+for refraction. Findings 2 and 3 are gaps in the definitions the edits do not touch.
+
+Limits: one agent, one run, and a model that knows the classical material. Cases 4 and 5 are named in D6's own text, so
+agreement there shows little.
