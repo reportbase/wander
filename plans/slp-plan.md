@@ -74,3 +74,15 @@ oriented half-angle slope t, turns and boosts are both Möbius and the sky's mot
 not a convention: it is the step from a read of directions as lines (s, period π) to directions with a front and a back
 (t, period 2π), and a moving sky needs the second (S5, a reading). Open: what in the reader's situation supplies the
 orientation (a front), since one quarter turn has none to choose.
+
+**After run 2 (10 Nov): an over-claim corrected, and halving.** Tom: "What does the math say?", of whether the reader may
+halve a turn (draw's *Tangent Bridge* builds its lattice with √(1 + s²); R592, R596 call halving a turn the writer's);
+then "Proceed with your recommendations". Exact (sympy):
+- From the ratio s alone, halving solves s = 2t/(1 − t²): t = s/(1 + √(1 + s²)), outside the rational operations (tangent
+  addition, the reciprocal): from s = 1 they reach only 0, ±1, ∞, and tan(π/8) = √2 − 1 needs √2. Holding the shares h, v
+  with h² + v² = 1, halving is rational, t = v/(1 + h) (doubling it gives back v/h, checked). That condition is the
+  one-length circle, the writer's (R717), and √(1 + s²) = 1/h its measure. So doubling a turn is the reader's, halving one
+  the writer's (R596 stands); TB's lattice is the writer's construction, met by the reader, not built.
+- S1's summary above said the reader's results are rational in s "with √(1 + s²) the only irrational step". In the plane
+  they are rational; in space the screen's heat h³ = (1 + s² + s₂²)^(−3/2) is not: it needs the root, the circle's measure,
+  in the heat itself. S1's identities stand; the summary's "rational" holds in the plane only.

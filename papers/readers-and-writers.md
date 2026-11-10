@@ -77,8 +77,12 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
 whose period is π (§2), and evaluating one is a pass over that whole turn. The reader holds the turn open, and works in the
 slope s = v/h: a direction is [h : v]; two turns compose by tangent addition, (s₁ + s₂)/(1 − s₁s₂); the reciprocal is
 s ↦ 1/s and the corner s = 1; the heat is 1/(1 + s²) per unit of reading, 1/(2π(1 + r²)^(3/2)) per unit of a screen
-square to the look; a turn of twice the angle is (1 + is)/(1 − is). All of it is rational in s, with √(1 + s²) the one
-step that is not, where a length is asked for. Where this paper writes θ, an angle, or a trigonometric function, it speaks
+square to the look; a turn of twice the angle is (1 + is)/(1 − is). In the plane all of it is rational in s. The one step
+that is not, √(1 + s²) = 1/h, is the circle entering, its measure h² + v² = 1: with it a turn can be halved,
+t = s/(1 + √(1 + s²)) = v/(1 + h); without it it cannot (from the corner, rational steps reach only the quarter turns, and
+the next place, √2 − 1, needs the root). So doubling a turn is the reader's and halving one the writer's, as halving a
+ratio, s ↦ s/2, is the reader's (SLP). In space the root comes in even for the heat: per unit of a screen it is
+h³ = (1 + s² + s₂²)^(−3/2), the circle's measure in the heat itself. Where this paper writes θ, an angle, or a trigonometric function, it speaks
 as the writer: the angle is the chart in which turns add and theorems about the whole turn are already proved, the slope
 the chart in which the reader's operations run. The two are one projective line in two coordinates, joined by the
 half-angle, s = tan(φ/2) for a writer's angle φ of total 2π (or s = tan θ for θ of total π); putting s = tan φ in its place
