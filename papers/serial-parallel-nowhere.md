@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R814** (10 Nov; Tom: "lets apply this idea to the circle"; "add it and merge"): h² + v² = 1 has no π; the reader's
+  form holds at every direction, one read has it, nothing owed. Cost elsewhere, in two grades: the shares are roots
+  (h = 1/√(1 + s²)); how much circle (2π, π) only with the four facings joined. The writer at work: exact at the
+  Pythagorean triples (s = 3/4: 4/5, 3/5), dense. The corner flips: the working writer's one exact door in R809, R811,
+  R813, here the landmark a fraction cannot reach (1/√2), the reader's in squares, the writer's as the diagonal. Three
+  grades: free (rational in s), a square root (a construction, the writer's, not a limit), a limit (π, e, the paper's).
+  *Reads and Writes* §9 "What is free, and what π costs"; essay 2 §9.
 - **R813** (10 Nov; Tom: "lets apply this idea to cauchy"; "add it and merge"): the Cauchy hardly needed π. Free: the
   heat 1/(1 + s²), heat ratios, the corner as median (equal halves), no mean, order. π only in the constant 2/π. The
   reader: heat and equal halves, no total. The writer at work: shares by count k/K; exact at the corner only among
