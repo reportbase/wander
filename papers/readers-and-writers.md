@@ -1042,6 +1042,13 @@ before the data can show where it is not. **Checked** (TCF; killed).
   domain, where the turn can be named before the data, would show whether the rule sorts.
 - **O7. The essays, the demos and *Reads and Writes in Physics*** use the record's vocabulary, which calls places writes.
   They wait for a pass.
+- **O8. Why the sky is conformal.** The moving sky's Möbius map rests on motion keeping angles on the sky. SRB (runs 1–2)
+  replaces that premise by four: a change of standpoint acts on directions alone, chains included; it is fixed by finitely
+  many numbers; the turns are among the changes; a motion carries directions from the back toward the front. With Lie's
+  classification of the finite groups on a surface, these leave the Möbius maps alone; Newton's aberration fails the
+  first, since two of its steps are no single step once the speed is dropped. Two of the four carry the physics: that what
+  no read can hold makes no difference to what is read (the light postulate stated for reads), and that a place is a
+  finite list of numbers. Neither is shown to follow from reading. A reconstruction, not an explanation.
 
 ## Where the ideas come from
 
@@ -1057,7 +1064,7 @@ read, and what carries an observer from one kind to the next.
 
 The checks and measurements cited are in this repository (reportbase/wander), each with its plan written before it was
 run; plan codes in the text name them. The one pole, the constant and the phasor: `plans/opl-plan.md`, `runs/opl/`. Two
-boosts joined: `plans/twg-plan.md`, `runs/twg/`. Time and the Cauchy's point: `plans/tim-plan.md`, `runs/tim/`. The floor's
+boosts joined: `plans/twg-plan.md`, `runs/twg/`. Why the sky is conformal: `plans/srb-plan.md`, `runs/srb/`. Time and the Cauchy's point: `plans/tim-plan.md`, `runs/tim/`. The floor's
 cells: `plans/dyh-plan.md`, `runs/dyh/`. The Cauchy's routes: `plans/cauchy-routes.md`, `runs/crt/`. Parallax as a sum of
 reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `runs/txt/`. The tower and two thumbs:
 `runs/two/two_thumbs.py`. Three thumbs at the crosshair: `plans/thm-plan.md`, `runs/thm/`. The shape swept:
