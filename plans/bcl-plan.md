@@ -128,3 +128,58 @@ Predictions (Claude's, before the run):
 - C5. It will still name at least one thing the definitions do not supply. My guess at which: what a scaling of times
   does to the speed of light and so to the boost in case 12.
 - Killed outright if a case that agreed in run 1 now comes back against the intended answer.
+
+### Run 2 (10 Nov 2026)
+
+The agent's answers, verbatim: `runs/bcl/responses-run2.md`; what it was given: `runs/bcl/definitions-run2.txt`. It
+read that one file and nothing else.
+
+Its classifications: 1 read (high), the pairing with the point part of what arrives; 2 read, a relation inside one
+read (medium-high), the angle's number the writer's coordinate, unsorted; 3 place (high); 4 not settled as stated, a
+ratio of payloads if of what arrives, the read's heat if the turn's weight; 5 ratio of payloads (high); 6 the variable
+a read (high), the law its heat (medium); 7 not settled as stated, "they positively say it must not be settled from the
+law", a ratio of payloads if the amounts arrive; 8 read (high), the source's true direction unclassified; 9 the
+frequency and Δf in hertz writes, payload column, the ratio to a rest frequency a ratio of payloads (high), the
+inferred speed unnamed; 10 no single kind: values writes, ratios ratios of payloads, the grid index "a writer's count",
+unsorted; 11 ratio of payloads (medium-high); 12 Δf in hertz and the stated speed writes (high), the ratio f′/f of the
+two received frequencies not settled (low).
+
+- C1 not killed. C2 not killed (4 and 7 conditional, as predicted; 4 also offered the heat).
+- C3 killed in its case-12 clause. Case 9 was settled where run 1 could not settle it, D5 applied as a scaling of
+  times. In case 12 the amounts were settled, but not the ratio: by its form the second table calls it a ratio of
+  payloads, yet it depends only on the boost and the direction of arrival, so it does not change with what arrives and
+  by D6's own criterion sits in the geometry column, where it is neither a direction nor a gap across.
+- C4 not killed (three variables, from the passage's last sentence).
+- C5 not killed. My guess at the gap was half right: it did have to assume the light's speed is a constant that scales
+  along; the larger gap was one I did not foresee, whether a boost keeps "the standpoint and the turn".
+- No case that agreed in run 1 came back against the intended answers.
+
+My intended answer for 12 was itself loose: it named the ratio of received to emitted frequency, and the case's ratio
+is of the two received frequencies, before and after the boost, which is the Doppler factor. The agent's objection is
+right: that factor is fixed by the boost and the direction, as the sky map's stretch (SRB), and is not paint.
+
+What run 2 found (to weigh; only the first two acted on, as plain inconsistencies in R821's own text):
+
+1. D5's "What stays is a read or a place" contradicted the fourth box. Now "Among the geometry's quantities, what
+   stays is a read or a place."
+2. The grid's rows, "unmoved by scaling" and "an amount in a unit", were not exact complements. The second row now
+   reads "an amount in a unit (D4), moved by its own dimension's scaling". An angle in degrees, a pixel index and a
+   count of strides are numbers in a unit that no scaling moves; D4 and D7 treat them as exceptions (the writer's
+   coordinate on a read; a whole-number record of a place) with no general rule.
+3. A boost and D6. Whether the observer's motion is part of the standpoint is not said. If it is, the Doppler factor
+   between two frames joins two reads (D7: a place or an order), a gap between standpoints that is not a distance.
+4. The geometry column has no room for a quantity that stays under D6, is unmoved by scaling, and is neither a
+   direction nor a gap across: the Doppler factor, and the heat itself, which "comes with" a read and has no kind.
+5. "A ratio of payloads" is narrower than its box: a probability of what arrives is not literally a ratio of two
+   payloads, and a rest frequency does not arrive.
+6. D3 and the first table sort a place by needing two standpoints, a how-it-was-had criterion, against D7's "what it
+   is, not how it was had". Case 11 with like sources gives (d₂/d₁)² from one standpoint and an assumption carried in.
+7. D3 calls a place a gap across, a distance, yet counts a time to contact in the reader's ticks as one.
+8. D2's "comes with its heat … and the paint" must mean accompanied by, not includes; D1's distance part is the
+   writer's description of what one read does not give. Neither is said.
+
+Reading. The revision did what it was for: the fourth box is used by name, the Doppler shift is sorted by a scaling of
+times, the sensor record is split into its variables, and the law is kept apart from the variable. It also moved the
+difficulty: the open place is now the geometry column (findings 3, 4, 6), not the payload's.
+
+Limits as in run 1: one agent, one run.

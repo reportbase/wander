@@ -63,7 +63,8 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   the world: it moves every write's number and no place, no read as the reader holds it (an angle in degrees is the
   writer's coordinate on a read, and its number follows the writer's choice of degree or radian).
 - **D5. The first test.** Multiply every length in the world by k, the reader's thumb and stride included; the units
-  stay outside the world. What moves is a write. What stays is a read or a place. This is the geometric test, and it
+  stay outside the world. What moves is a write. Among the geometry's quantities, what stays is a read or a place.
+  This is the geometric test, and it
   sorts the geometry. In general the test is a named scaling, one dimension at a time: multiply every amount of that
   dimension in the world by k, the world's constants of that dimension included, the unit staying outside. A quantity
   in another unit is tested by that unit's scaling: a frequency in hertz moves when every time is scaled, and its ratio
@@ -123,7 +124,7 @@ payload's:
 | | the geometry: stays when what arrives changes (D6) | the payload: changes with what arrives (D6) |
 |---|---|---|
 | unmoved by scaling (D5) | a read (one standpoint), with its heat; a place (two) | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
-| an amount in a unit (D4) | a write: a distance in metres | a write: a frequency in hertz, a brightness in watts |
+| an amount in a unit (D4), moved by its own dimension's scaling | a write: a distance in metres | a write: a frequency in hertz, a brightness in watts |
 
 A write is found in both columns; a read and a place are the geometry's alone; a ratio of payloads is the payload's
 counterpart of a read, unmoved by scaling and not a direction of the geometry. Being unmoved by scaling therefore never
