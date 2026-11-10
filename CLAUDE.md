@@ -462,6 +462,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R806: free and prior to physics are the relation, the exchange and corner, the equal halves, the four facings and the 1;
   the values π/2 and 2/π are the writer's limit, at infinite cost, never the reader's to pay. **Never call π, π/2 or 2/π
   free or costless.** *Reads and Writes* §9 "What is free, and what π costs" (replaces R806's passage).
+  R808 (10 Nov; Tom: "neither the reader or the writer knows or uses PI, only the paper knows PI."): three, not two: the
+  reader neither knows nor uses π; the writer at work counts, so holds fractions, using π's name and approximants, never
+  its value; only the paper holds π itself, and **the paper is the writer at the limit**, never a writer anyone is
+  (refines R798). *Reads and Writes* §9, §1 "Four things".
   R806 (10 Nov; Tom: "that is prior to any physics entering.   its free, no cost, not algoritmic, no time cost to know
   this."): R801–R805's relations, facings and numbers hold before any amount, unit, clock or world; given, not computed,
   no time; the integrals the writer's statement, not a procedure; physics enters with the first write. *Reads and

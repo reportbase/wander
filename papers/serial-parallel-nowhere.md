@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R808** (10 Nov; Tom: "so that means neither the reader or the writer knows or uses PI, only the paper knows PI.";
+  "yes, add it and merge"): three, not two. The reader: slopes, the corner, equal halves, neither knows nor uses π. The
+  writer at work: finite counts, so fractions (22/7, 355/113, a series stopped), using π's name and approximants, never
+  its value (Claude's change to "uses", accepted). The paper: π itself, the completed whole; the paper is the writer at
+  the limit (as R598's exact V), never a writer anyone is. Refines R798's "the paper (the writer's vantage)". "The paper
+  knows π" a picture. *Reads and Writes* §9 "What is free, and what π costs"; §1 "Four things".
 - **R807** (10 Nov; Tom: "I'm having second thoughts.    PI is a limit, its transcendental.   Its value is not actually
   known, to know PI would would take an infinite amount of time.     PI just seems cost free, it is not actually."):
   corrects R806. Free and prior to physics: the relation, the exchange and its corner, the equal halves, the four

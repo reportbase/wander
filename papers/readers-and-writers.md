@@ -127,7 +127,7 @@ median and the absence of any mean are what a read with no breadth in it is.
   holds the front, so both hemispheres are in reach and the turn is known; holding is the writer's, and in the hand
   the apple's V is **known**: held whole. Its exact amount in a unit is still a write, the limit of §6.
 - *The human draws a circle on the paper.* The paper is both hemispheres at once, with no facing: the writer's vantage
-  itself, made, not seen, a mark holding both halves together, V = H at one length, π held whole. It has neither sweep's
+  at its limit (§9, "What is free, and what π costs"), made, not seen, a mark holding both halves together, V = H at one length, π held whole. It has neither sweep's
   number. π/2 and 2/π belong to the two facings, the central reached at a point and the inscribed approached; the paper
   has their product, 1, the thumb in thumbs, what the facings give when held together without a facing.
 
@@ -1087,8 +1087,15 @@ exactly, as the total of the turn, and can use the name; what cannot be had in f
 only seems to hand over π at no cost. What it hands over free is that there is a whole, split in equal halves at the
 corner, and that the read and the walk multiply to 1; how much the whole is, and so how short the short side and how long
 the long side, is the writer's completed sum. That is the exact sense of "π is the price", above: the price is an
-infinity, paid only at the limit, and the reader never pays it because the reader never needs the value. Physics enters
-separately and later, with the first write: a walk made and counted, a thumb given a unit. **A reading**, resting on this
+infinity, paid only at the limit, and the reader never pays it because the reader never needs the value.
+
+So there are three, not two. The reader has slopes, the corner and equal halves, and neither knows nor uses π. The writer
+at work walks and counts, and any walk actually made is a finite count, so it holds fractions: 22/7, 355/113, a series
+stopped at some term, each nearer π and none of them π. The writer uses π's name and its approximants, and never has its
+value. Only the paper holds π itself: the completed whole, every facing at once, the total of a sum no one finishes. The
+paper is therefore the writer at the limit, as the exact V is (§6, "Places come by degrees"), and never a writer anyone
+is. "The paper knows π" is a picture; what is exact is that π is defined there, as the whole turn, and reached nowhere
+short of it. Physics enters separately and later, with the first write: a walk made and counted, a thumb given a unit. **A reading**, resting on this
 section's account of the transcendentals.
 
 **What the one pole already carried.** The reader at i holds the standard Cauchy (§3). Readings added give one Cauchy
