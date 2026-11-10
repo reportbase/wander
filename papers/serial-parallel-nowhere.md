@@ -7410,6 +7410,27 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R805** (10 Nov; Tom: "What PI/2 is actually the sum of all the ways vertical and horizontal can relate to one
+  another."; "A circle is just the four ways V and h can face relative to one another."; "PI/2 relations and 4 facings make
+  a circle."; "add it and merge, because its a nice concise statement."): the quarter turn is every relation of v and h,
+  its total under the turn's heat π/2; the circle that quarter turn in four facings (the signs of h and v), joined by the
+  writer, π/2 × 4 = 2π; in space the wedge's π/2 × 8 facings = 4π. The relation continuous, the reader's; the facing
+  discrete signs, the writer's, not a second dimension (Tom first said "the second dimension"; Claude's clarification
+  accepted). R368 in one line. Not taken (Tom: "don't include. just thinking out loud."): π as a flow rate at which
+  reality paints. *Reads and Writes* §9 "π/2 of relations and four facings make a circle".
+- **R804** (10 Nov; Tom: "the true size is 1.    reading gives you hte short side of 2/pi.   writing corrects by saving
+  to the long side of pi/2.    the compete breath/exhale cycle results in the true size of 1."; "How can we prove that
+  framing?"; "the ideas are all there, but i've never heard this stated so simply."): the simple statement and its proof.
+  Along the sweep dv/dℓ = h, so ∫ h dℓ = 1 over an arc π/2 long: the mean of what is read, 2/π, times the length walked,
+  π/2, is the thumb, 1. The 1 holds on every path (chord 1/√2 × √2, square's edges ½ × 2); only the split is the path's,
+  π the turn's; in space ½ and 2, so R801's "π is the price" is the plane's. Cautions: the 1 is H in H, not V*; 2/π is an
+  average, the writer's (R717); the walk in thumbs is a place (R802). Classical (Cauchy 1841, Crofton 1868, Buffon 1777,
+  Crofton and Cauchy's pages since checked, Buffon to the volume); the assignment ours. Written before Tom's go-ahead
+  (then, Tom: "proceed with your suggested next steps."); essays 14 §3 and 15 §5 carry it, "π is the price" the plane's.
+  *Reads and Writes* §9 "The thumb, short by reading, long by walking, and whole"; essay 2 §7.
+- **R803** (10 Nov; Tom: "update the essays."): R801 and R802 carried into the essays, no new claim: essay 2 §7 "Which act
+  each number measures" and §9 "Four identities, one exchange" (the table of writer's and reader's forms), essay 14 §3
+  (each of the two rates measures an act), essay 15 §5 (what the reader holds of each identity).
 - **R802** (10 Nov; Tom: "reading = 2/PI   writing = PI/2", then "yes, go with your recommendations and merge"):
   **2/π measures the read, π/2 the walk.** 2/π is the thumb's mean share over the quarter turn, what turning sees from a
   standpoint that never moves, the constant closing the heat, approached at the horizon. π/2 is the quarter arc in

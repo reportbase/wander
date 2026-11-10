@@ -119,6 +119,14 @@ reading differs from 1; here, and only here, it agrees with the writer's rate.
 √(π/2 · 2/π). On the logarithm they sit either side of it, ln(π/2) = 0.4516 above and ln(2/π) = −0.4516 below. So the
 writer's rate is the fixed point of the reciprocal that pairs the two sweeps: the corner between them.
 
+**Each of the two measures an act.** 2/π is what turning sees: the thumb's share h, averaged over the quarter turn from a
+standpoint that never moves, approached at the horizon and never reached. π/2 is what walking counts: the quarter arc
+itself, π/2 thumbs long, reached at a point. The arc in thumbs is a place, walked and counted; with the thumb in metres
+it is a write. So reading is 2/π and writing is π/2, the write reached through its place, and the 1 between them is the
+read and the walk held together (the second essay, §7). The reason is one line: each step of the arc gains v at the rate h,
+so the shares read, summed over the steps walked, are all of v; a mean of 2/π over a length of π/2 is 1. Any path from the
+one end to the other gives the 1 (the chord 1/√2 over √2); only the split is the turn's.
+
 One thing does not happen there. The sweeps' running rates are not 1 at the corner: arc over chord is 1.1107 and chord
 over arc 0.9003. They are 1 only at zero, before any sweeping. The corner is not where the reader's sweep runs at the
 writer's rate. It is where the horizontal and vertical balance, their ratio is the writer's 1, and the writer's 1 sits
