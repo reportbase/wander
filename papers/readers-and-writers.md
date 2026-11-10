@@ -56,11 +56,18 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   leaves it unchanged, as it leaves a read; but no single read holds it. It needs a second standpoint and the step
   between them: parallax (§6). V\*/H, a party's true breadth in thumbs, is a place; so is a time to contact counted in
   the reader's own ticks.
-- **D4. A write** is an amount: the across axis's zero tied to a unit carried in from outside the world, a metre, a
-  second, an agreed notch. Scaling the world moves it. One amount serves every place hung from the same thumb (§7).
-  A change of units is a different operation from scaling the world: it moves every write's number and no place, no read.
+- **D4. A write** is an amount in a unit carried in from outside the world: a metre, a second, a hertz, an agreed
+  notch. For the geometry it is the across axis's zero tied to a unit, a distance in metres, and one such amount serves
+  every place hung from the same thumb (§7). A payload has writes too: a frequency in hertz, a brightness in watts.
+  Scaling the world in a write's own dimension moves it (D5). A change of units is a different operation from scaling
+  the world: it moves every write's number and no place, no read as the reader holds it (an angle in degrees is the
+  writer's coordinate on a read, and its number follows the writer's choice of degree or radian).
 - **D5. The first test.** Multiply every length in the world by k, the reader's thumb and stride included; the units
-  stay outside the world. What moves is a write. What stays is a read or a place. This is the old line of dimensional
+  stay outside the world. What moves is a write. What stays is a read or a place. This is the geometric test, and it
+  sorts the geometry. In general the test is a named scaling, one dimension at a time: multiply every amount of that
+  dimension in the world by k, the world's constants of that dimension included, the unit staying outside. A quantity
+  in another unit is tested by that unit's scaling: a frequency in hertz moves when every time is scaled, and its ratio
+  to a rest frequency does not. Nothing here makes times follow lengths; a test that scales both says so. This is the old line of dimensional
   analysis between the scale-variant and the scale-invariant (Bridgman 1922; Buckingham 1914), a sorting by invariance
   under the scaling group, as Klein (1872) sorts geometries by their groups. **Classical**; the names are ours.
 - **D6. The second test.** Change what arrives, keeping the standpoint and the turn: repaint the world, move the light,
@@ -77,7 +84,10 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   count, or a mark kept, is how a write is recorded; being an amount in a unit is what makes it a write. A count of
   strides is a whole-number record of a ratio d/stride, a place; the same count with the stride in metres is a write.
   A quantity's kind is what it is, not how it was had: a place is a scale-invariant gap across, usually had by parallax,
-  and a distance in thumbs handed over by another observer is still a place.
+  and a distance in thumbs handed over by another observer is still a place. The kind attaches to the variable, not to
+  its law: a Cauchy law on a direction's slope and a Cauchy law on the quotient of two amounts are two variables with
+  one law, and the law alone does not say which is which. And a read is a direction, not a pairing of a direction with
+  a source: which thing paints a direction is part of what arrives.
 
 **The reader uses no trigonometry.** Readers hold v/h; writers hold angles. Sin, cos, tan and arctan are the writer's: they are defined on the completed turn,
 whose period is π (§2), and evaluating one is a pass over that whole turn. The reader holds the turn open, and works in the
@@ -106,6 +116,20 @@ own space (§4), and D6, not this table, sorts it.
 | a direction [h : v] (up) | no | yes | read |
 | a gap across: d/H, d₁/d₂, V\*/H | no | no: two standpoints and the step | place |
 | the across zero tied to a unit | yes | no | write |
+
+Read, place and write are so the named outcomes of two tests that cross, and the crossing has a fourth box, the
+payload's:
+
+| | the geometry: stays when what arrives changes (D6) | the payload: changes with what arrives (D6) |
+|---|---|---|
+| unmoved by scaling (D5) | a read (one standpoint), with its heat; a place (two) | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
+| an amount in a unit (D4) | a write: a distance in metres | a write: a frequency in hertz, a brightness in watts |
+
+A write is found in both columns; a read and a place are the geometry's alone; a ratio of payloads is the payload's
+counterpart of a read, unmoved by scaling and not a direction of the geometry. Being unmoved by scaling therefore never
+shows that a quantity is a read. One thing can supply several variables of different kinds: a pixel's value in the
+sensor's unit is a payload's write, its ratio to its neighbour a ratio of payloads, the pixel's place in the grid a
+writer's count of directions.
 
 **The writer, as a vantage.** *The writer* names the vantage that holds everything at once: both signs of every axis,
 the turn completed, the extents in amounts, the unit. Much of what it holds is places and completed joins (the circle

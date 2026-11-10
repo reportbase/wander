@@ -7410,6 +7410,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R821** (10 Nov; ChatGPT's reply to BCL run 1, pasted by Tom; Claude's drafts; Tom: "yes, second brach"): the
+  definitions made one classification. D4: a write is an amount in a unit carried in (a metre, a second, a hertz); for
+  the geometry the across zero tied to a unit; a payload has writes too. D5: the geometric test scales lengths; in
+  general a named scaling, one dimension at a time, constants included, the unit outside; nothing makes times follow
+  lengths. D7: the kind attaches to the variable, not its law; a read is a direction, not a pairing with a source.
+  After the table, the two tests crossed: geometry or payload (D6) by unmoved or an amount in a unit (D5, D4); read and
+  place the geometry's, a write in both columns, the fourth box "a ratio of payloads". So read, place and write are
+  named outcomes of two crossed tests, not three fundamental kinds; being unmoved by scaling never shows a read. The
+  work is on a second branch, `claude/rw-classification` (Tom's permission), apart from PR #340.
 - **R820** (10 Nov; ChatGPT's first classification stress test of *Reads and Writes*, pasted by Tom; "Yes—make the three
   small edits and run the blind classification exercise"): D6 scoped in three sentences. It tests a candidate once its
   standpoint and turn are named (D2's order); it does not find a read in a bare number. The direction it keeps is the

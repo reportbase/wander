@@ -472,6 +472,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R821 (10 Nov; Tom: "yes, second brach"): **read, place and write are the named outcomes of two crossed tests**,
+  geometry or payload (D6) by unmoved or an amount in a unit (D5, D4); the fourth box is "a ratio of payloads"; a write
+  is any amount in a unit carried in (a payload has writes too); D5 a named scaling, one dimension at a time; a kind
+  attaches to the variable, not its law; a read is a direction, not a pairing with a source. *Reads and Writes* §1.
   R820 (10 Nov; ChatGPT's classification stress test; Tom: "Yes"): D6 tests a candidate once its standpoint and turn
   are named, never a bare number; its direction is the direction of arrival (refraction changes which source paints
   it); it sorts quantities, not causes. BCL (`plans/bcl-plan.md` + `runs/bcl/`): a blind classification by D1–D7.

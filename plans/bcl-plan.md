@@ -101,3 +101,30 @@ for refraction. Findings 2 and 3 are gaps in the definitions the edits do not to
 
 Limits: one agent, one run, and a model that knows the classical material. Cases 4 and 5 are named in D6's own text, so
 agreement there shows little.
+
+### Run 2: the revised definitions (planned 10 Nov 2026, before the run)
+
+After ChatGPT's reply to run 1 and Tom's "yes, second brach": D4, D5, D6 and D7 revised (SPN R820, R821), and the
+paragraph and grid after D7 given to the agent as well, since they now carry the fourth box's name. A second fresh
+agent, the same four questions, the same ten cases and two new ones:
+
+11. The ratio of the brightness of two sources seen along two different directions from one standpoint.
+12. The change in the received frequency of a source's light when the observer is boosted to a stated speed toward it,
+    the source's own emission unchanged.
+
+Intended answers: 1–10 as before, with 4, 5 and 7 now named ratios of payloads (4 and 7 only once said to be of what
+arrives), 9's frequency in hertz a payload's write and its ratio a ratio of payloads, 10 several variables of several
+kinds. 11: a ratio of payloads (the two directions are reads). 12: the received frequency in hertz a payload's write,
+moved by a scaling of times; the ratio of received to emitted frequency a ratio of payloads; the same boost also moves
+the direction of arrival, a read, and the test sorts the quantities, not the cause.
+
+Predictions (Claude's, before the run):
+
+- C1. Cases 1–3 read, read, place again.
+- C2. Cases 4, 5, 7, 11 placed in the fourth box by name, 4 and 7 with the condition that they are of what arrives.
+- C3. Case 9 and case 12 settled where run 1 could not settle 9: the frequency in a unit a write, the ratio a ratio of
+  payloads, with D5 applied as a scaling of times. Killed if it again says D5 cannot be applied.
+- C4. Case 10 answered as several variables, not "cannot be settled as one thing".
+- C5. It will still name at least one thing the definitions do not supply. My guess at which: what a scaling of times
+  does to the speed of light and so to the boost in case 12.
+- Killed outright if a case that agreed in run 1 now comes back against the intended answer.
