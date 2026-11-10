@@ -7410,6 +7410,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R794** (10 Nov; Tom: "The hope is that using slopes not trig, the math simplifies. Or gives new insights.", then
+  "Yes, trig is an abstraction layer. Readers don't use it. So to study readers we need to use the math they do."):
+  **trigonometry is an abstraction layer, the writer's; readers are studied in their own math, slopes.** SLP
+  (`plans/slp-plan.md`, `runs/slp/`) tests the first claims: the reader's results rational in s, π only at totals, a
+  boost not a map of s, turns and boosts Möbius in the half-angle slope t.
 - **R793** (10 Nov; Tom: "We found removing trig as very useful. I notice this new paper is now full of trig again.
   Why?", "We have also the classical trig version of that paper.", then "Yes, the reader does not use trig, only writers
   use trig. Update the old papers as needed."): **the reader uses no trigonometry; sin, cos, tan and arctan are the
