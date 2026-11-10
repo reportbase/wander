@@ -206,6 +206,14 @@ the two halves are equal, and it has no mean; π enters only in the constant 2/�
 has shares by count, k of K equal turns, and Gregory's and Leibniz's series for the half below the corner,
 1 − 1/3 + 1/5 − 1/7 + … = π/4, each partial sum a fraction; the limit is the paper's (essay 2 §9).
 
+The Gaussian is where both constants sit in one law, and it shows which part each comes from. In polar form it is a turn
+times a length, (dθ/2π) × (e^(−r²/2)·r dr). The turn's part carries all the π, the 2π of the circle whole; the length's
+part carries the e and totals a plain 1. A writer at work holds neither constant: it holds the binomial, C(n, k)/2ⁿ,
+counts of tosses, with the mean n/2 and the variance n/4 exact. De Moivre's limit of those counts is the bell, and π
+enters it through Wallis's product, π/2 = (2·2)/(1·3) × (4·4)/(3·5) × …, every partial product a fraction. The reader
+holds only the direction of a pair of such amounts, which is the Cauchy. So the Cauchy is kept by order, its exact facts
+the median and the equal halves; the Gaussian is kept by sums, its exact facts the mean and the variance.
+
 It is also where the history of the two numbers met. Euler showed e irrational in 1737; Lambert showed π irrational in
 1761. Liouville (1844) built the first numbers proved transcendental, made to order by an infinite series whose terms
 shrink too fast for any polynomial to catch. Hermite (1873) proved e transcendental. Lindemann (1882) proved π

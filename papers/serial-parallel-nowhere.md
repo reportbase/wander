@@ -7410,6 +7410,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R816** (10 Nov; Tom: "lets apply this idea to the gaussian"; "add it and merge"): the Gaussian in the three tiers.
+  Polar form (dθ/2π) × (e^(−r²/2) r dr): the turn's part carries all the π (2π the circle whole, four facings, an amount
+  having both signs), the length's part the e and a total of 1; (∫e^(−x²)dx)² = 2π × ½. The reader: only the direction
+  of a pair, the Cauchy. The writer at work: the binomial C(n, k)/2ⁿ, mean n/2 and variance n/4 exact (de Moivre 1733);
+  π through Wallis's product, partial products fractions. The paper: the bell, e and π. The exact facts flip: the
+  Cauchy's the median and equal halves (order), the Gaussian's the mean and variance (sums). Not a fifth reader's
+  identity. Extends R799, R800. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5. De Moivre and Wallis
+  cited as usually given.
 - **R815** (10 Nov; Tom: "update the essays and demos"): R804–R814 carried out, no new claim. Essays: 17 §8 (the map
   hardly needs π), 10 §4 (on the circle the corner is the point no fraction reaches); essays 2, 14, 15 and 18 already
   had theirs. Demos, a note each, nothing else on the pages changed: `paths.html` (read and walk, the 1 on every path),
