@@ -1058,7 +1058,12 @@ before the data can show where it is not. **Checked** (TCF; killed).
   already requires; the record's "the read's own length" describes how it is chosen, not a different kind.
 - **O3. "The writer's" for joins.** The writer as a vantage holds completed joins (π, the one-length circle, the facings
   joined) as well as amounts. A completed join is unmoved by scaling, so it is not a write; "the writer's" here names a
-  vantage. Until a word is chosen, say "a completed join". Whether it deserves its own kind is open.
+  vantage. Until a word is chosen, say "a completed join". Whether it deserves its own kind is open. *Sharpened
+  (R796):* what an angle needs comes in two stages. The ratio s = v/h needs nothing; it is the read. The shares h and v
+  with h² + v² = 1 need the other party held at the reader's one length (V = H, the one-length circle): with them come
+  cos and sin as the shares themselves, √(1 + s²) = 1/h, and halving a turn, t = v/(1 + h). The angle θ needs the circle
+  and the turn completed as well (π, a limit): an arc over the radius, counted against the whole. Neither stage needs a
+  true breadth V* or a unit, so neither is a write; both are completed joins, the circle first and π second.
 - **O4. Orders.** *Closed (R792):* an order of reads is its own kind, a joining with no gap in it, not a place; D7 lists
   places and orders side by side.
 - **O5. Do readers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.

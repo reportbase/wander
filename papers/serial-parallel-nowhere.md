@@ -7410,6 +7410,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R796** (10 Nov; Tom: "What is needed for angles, V and H", then "Yes"): **an angle is a completed join in two
+  stages, never a write.** The ratio s = v/h needs nothing (the read); the shares h, v with h² + v² = 1 need V and H at
+  one length, the one-length circle (cos and sin, 1/h = √(1 + s²), halving a turn, t = v/(1 + h)); the angle θ needs the
+  circle and the completed turn, π, besides. No V* and no unit enter, so neither stage is moved by scaling the world.
+  *Reads and Writes* §12 O3 (sharpened; the word still open).
 - **R795** (10 Nov; Tom: "What does the math say?", then "Proceed with your recommendations"): **halving a turn needs the
   circle.** From the ratio s alone, t = s/(1 + √(1 + s²)) is out of the rational operations' reach (from the corner they
   reach only the quarter turns); holding the shares with h² + v² = 1 it is rational, t = v/(1 + h). √(1 + s²) = 1/h is the
