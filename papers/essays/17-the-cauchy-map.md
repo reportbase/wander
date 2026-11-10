@@ -258,6 +258,12 @@ constant 2/π that closes the heat to a total of 1, and that total is the comple
 count, k of K equal turns, and the fractions of Gregory's and Leibniz's series, 1 − 1/3 + 1/5 − … for the half below the
 corner, never its limit π/4 (essay 2 §9).
 
+The bell sits beside the map as its opposite. A Gaussian is a law of amounts, and its exact facts are sums: a writer at
+work holds it as the binomial, counts of tosses, with the mean and the variance exact, where the map's exact facts are
+its middle and its equal halves. In polar form the bell is a turn times a length; its π is all in the turn, the circle
+whole, and its e all in the length. Divide two such amounts and the length goes, taking the e with it; what is left is
+the turn, and that is the map.
+
 The paint does. Light adds; colours average; the payload has every mean it ought to have. *What arrives can be averaged;
 where it arrives cannot.*
 
