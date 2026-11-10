@@ -435,6 +435,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R799 (10 Nov; Tom: "the cauchy is readers distribution. gaussian is the writers distribution."): the Cauchy a law of
   directions (heat h² rational, closed by 2/π), the Gaussian a law of amounts (e and π); two equal-spread Gaussians
   divided give the Cauchy (V = H). The Cauchy's total, (2/π)∫ ds/(1 + s²) = 1, the fourth identity in O3.
+  R800 (10 Nov; Tom: "what falls out when we refactor them togeether?", "yes and merge"): the four one equation, the
+  circle divided by the thumb, its heat h², gathered to −1, closed to 1; the reader the heat, the paper the total; the
+  Gaussian (dθ/2π)·(e^(−r²/2) r dr), turn times payload, the division taking e and leaving π. O3; essay 15 §5.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the

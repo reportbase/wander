@@ -7410,6 +7410,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R800** (10 Nov; Tom: "those four equations are very similar. what falls out when we refactor them togeether?", then
+  "yes and merge"): **one equation read four ways**: the writer's circle divided by the thumb, 1 + s² = 1/h²; its
+  reciprocal the reader's heat h² = 1/(1 + s²); gathered to the horizon (w = −1 = e^(iπ)) π/2; closed by 2/π to 1. The
+  reader holds the heat only; the total is the paper's. The Gaussian factors as (dθ/2π)·(e^(−r²/2) r dr), the reader's
+  turn times the payload's law for the length; the thumb's division takes e with the length and leaves π. *Reads and
+  Writes* §12 O3; essay 15 §5.
 - **R799** (10 Nov; Tom: "the cauchy is readers distribution. gaussian is the writers distribution. add cachy formula to
   12."): **the Cauchy is the reader's distribution, the Gaussian the writer's.** The Cauchy a law of directions, its heat
   1/(1 + s²) = h² rational in s, closed to 1 by the writer's 2/π; the Gaussian a law of amounts on both axes, needing e

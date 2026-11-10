@@ -1107,6 +1107,14 @@ before the data can show where it is not. **Checked** (TCF; killed).
   (e^(−x²/2)/√(2π) on each axis) is the writer's, a law of amounts, needing both e and π. They are joined by the
   thumb's division: two independent Gaussian amounts of one spread, divided one by the other, give the standard Cauchy;
   of spreads in a ratio c, a Cauchy of scale c (the median of |y/x| at c, checked by draws). The equal spread is V = H.
+  *And (R800):* the four are one equation read four ways. Divide the writer's circle x² + y² = r² by the thumb: 1 + s² =
+  1/h² (the circle); its reciprocal h² = 1/(1 + s²) (the Cauchy's heat, the reader's one piece); that heat gathered to the
+  horizon, (1/2i)·ln w with w = (1 + is)/(1 − is) reaching −1 = e^(iπ), totals π/2 (Euler); closed, (2/π)·(π/2) = 1. In
+  one line, (2/π)·∫₀^∞ h² ds = (2/π)·(1/2i)·ln(−1) = 1. The reader holds the heat; the horizon reached, π and 2/π are the
+  paper's, so the reader's distribution is a heat, made a probability only when the writer closes it. The Gaussian
+  factors in polar form, (1/2π)·e^(−r²/2) dx dy = (dθ/2π)·(e^(−r²/2) r dr): the uniform turn (the reader's directions,
+  their slope the Cauchy) times a law for the length (an amount, the payload). The writer's distribution is the reader's
+  times the payload's; dividing by the thumb integrates the length away, taking e with it and leaving π (R626, R597).
 - **O4. Orders.** *Closed (R792):* an order of reads is its own kind, a joining with no gap in it, not a place; D7 lists
   places and orders side by side.
 - **O5. Do readers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.

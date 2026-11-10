@@ -170,6 +170,13 @@ gathers, (1/2i)·d(ln w)/ds, is 1/(1 + s²). So the half-Cauchy's 2/π is the id
 variable together (essay 2 §9). Each step the reader can follow in finite terms (w at the horizon is −1, a pair); the
 total iπ is the turn completed, the writer's.
 
+The two constants also part at one division. The Gaussian, the writer's law of amounts, written round a point is
+(1/2π)·e^(−r²/2) dx dy = (dθ/2π)·(e^(−r²/2) r dr): a uniform turn times a law for the length. Divide by the thumb, one
+amount over another, and the length is integrated away: the e goes with it, and what is left is the turn, whose slope is
+the Cauchy, the reader's law of directions, with π alone in its closing constant. The scale's constant lives in the
+amount; the turn's in the direction. The reader's part of the Cauchy, the heat 1/(1 + s²), has neither; it is made a
+probability only by the 2/π that closes it.
+
 It is also where the history of the two numbers met. Euler showed e irrational in 1737; Lambert showed π irrational in
 1761. Liouville (1844) built the first numbers proved transcendental, made to order by an infinite series whose terms
 shrink too fast for any polynomial to catch. Hermite (1873) proved e transcendental. Lindemann (1882) proved π
