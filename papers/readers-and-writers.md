@@ -17,8 +17,8 @@ from this paper, this paper stands.
 
 ## Abstract
 
-A point seen from a standpoint can be written ln(z/H) = ln(d/H) + iθ, with H the thumb held out at arm's length. Up is
-the direction; across is the distance, counted in thumbs. Scaling the world, every length multiplied by one factor (the
+A point seen from a standpoint can be written, in a writer's notation, ln(z/H) = ln(d/H) + iθ, with H the thumb held out
+at arm's length. Up is the direction; across is the distance, counted in thumbs. Scaling the world, every length multiplied by one factor (the
 reader's own thumb and stride with it), slides every point across by the same amount and moves nothing up. That one
 motion sorts everything an observer can hold into three kinds. A **read** is the direction, [h : v]: one standpoint has
 it, and scaling moves it not at all. A **place** is a gap across, a distance in thumbs or one distance against another:
@@ -46,7 +46,9 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
 
 - **D1. One point, two parts.** A point seen from a standpoint is, in the writer's notation, ln(z/H) = ln(d/H) + iθ, H
   the thumb held out at arm's length: up the direction θ, across the distance in thumbs. In space the point is d·u, u a
-  direction, and the across part ln(d/H) is unchanged (§2).
+  direction, and the across part ln(d/H) is unchanged (§2). θ is the writer's coordinate on the direction, the one in
+  which turns add; the reader holds the direction itself, [h : v], or its slope s = v/h, and uses no trigonometry (§1,
+  "The reader uses no trigonometry").
 - **D2. A read** is the direction: [h : v] in the plane, [h : v : v₂] in space, up on the plane. It is every sweep of the
   thumb at once, from one standpoint, *home*, at one moment, given whole (§3). It comes with its heat, given, and the
   paint met along it (§4). One read holds no distance.
@@ -70,6 +72,18 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   strides is a whole-number record of a ratio d/stride, a place; the same count with the stride in metres is a write.
   A quantity's kind is what it is, not how it was had: a place is a scale-invariant gap across, usually had by parallax,
   and a distance in thumbs handed over by another observer is still a place.
+
+**The reader uses no trigonometry.** Sin, cos, tan and arctan are the writer's: they are defined on the completed turn,
+whose period is π (§2), and evaluating one is a pass over that whole turn. The reader holds the turn open, and works in the
+slope s = v/h: a direction is [h : v]; two turns compose by tangent addition, (s₁ + s₂)/(1 − s₁s₂); the reciprocal is
+s ↦ 1/s and the corner s = 1; the heat is 1/(1 + s²) per unit of reading, 1/(2π(1 + r²)^(3/2)) per unit of a screen
+square to the look; a turn of twice the angle is (1 + is)/(1 − is). All of it is rational in s, with √(1 + s²) the one
+step that is not, where a length is asked for. Where this paper writes θ, an angle, or a trigonometric function, it speaks
+as the writer: the angle is the chart in which turns add and theorems about the whole turn are already proved, the slope
+the chart in which the reader's operations run. The two are one projective line in two coordinates, joined by the
+half-angle, s = tan(φ/2) for a writer's angle φ of total 2π (or s = tan θ for θ of total π); putting s = tan φ in its place
+moves every result. This is draw's *Tangent Bridge* (its classical presentation, `tb_classical.md`, and its algebraic one,
+`tb_algebra.md`): the reconstruction proved in the angle chart and run in the slope chart, with no trigonometric call.
 
 Two independent questions sort the geometric quantities, those about directions and distances from standpoints: does
 scaling the world move it (D5), and does one standpoint hold it (Proposition 8 of the archived paper: no read holds a
@@ -126,7 +140,9 @@ counts and corners").
 up and the distance across, it is Euler's plane. A turn of the world slides every point up or down; scaling the world
 slides every point across by ln k; the two slides commute, and nothing else moves. So:
 
-- **Up is the read.** θ, the direction, and every difference of directions.
+- **Up is the read.** The direction [h : v], and every difference of directions. The writer draws it at θ, where turns
+  add; the reader holds its slope s = v/h, and two turns compose as s₁ ⊕ s₂ = (s₁ + s₂)/(1 − s₁s₂), the angles'
+  addition with no angle in it.
 - **Gaps across are places.** ln(d₁/H) − ln(d₂/H) = ln(d₁/d₂), and ln(d/H) itself, a distance against the thumb, since
   the thumb scales with the world. A slide across keeps every gap.
 - **The across axis's zero, tied to an outside unit, is the write.** ln(H/metre) is the one number scaling moves.
@@ -135,14 +151,14 @@ Anyone who has pinched and twisted a map on a phone has done both slides: the ph
 after over the same line before, k·e^(iα); the real part of its logarithm is the pinch, the imaginary part the twist.
 **Classical**; the reading of the parts is ours.
 
-**Each axis has a zero, and the two are not alike.** Up, the zero is home, θ = 0, where the direction lies along h.
+**Each axis has a zero, and the two are not alike.** Up, the zero is home, s = 0 (the writer's θ = 0), where the direction lies along h.
 Across, the zero is the thumb, d = H. Both are the reader's: home is where it faces, the thumb what it holds out. The
 axes differ in how they end. Up closes: within one read it runs from home to a horizon a quarter turn off, never reached,
 and it wraps (θ and θ + 2π one place) only when turns are joined. Across is open both ways: no total, no natural size,
 nothing on it marking a place but the thumb. That is why no read and no place gives the overall size: there is no mark on
 the open axis to read it against, until a unit is carried in.
 
-**The two corners are the plane's two mirrors.** The horizontal line θ = 45° is fixed by the reading's reciprocal,
+**The two corners are the plane's two mirrors.** The horizontal line s = 1 (the writer's θ = 45°) is fixed by the reading's reciprocal,
 s ↦ 1/s; the upright line d = H by the distance's, d ↦ H²/d. Turning moves the first, choosing the thumb moves the
 second, along different axes. On the writer's plane every straight line of the world is one curve moved,
 u = ln(p/H) − ln cos(θ − φ₀), half a turn wide, and a logarithmic spiral is a straight line. **Classical.**
@@ -331,10 +347,11 @@ the gap across of §2; standing higher on both sides only makes them harder to t
 
 **Where the heat comes from.** The read is a heat map: a continuous weight over its readings, with nothing counted in it.
 The measure is uniform by solid angle, every direction of the hemisphere alike, so by angle there is no heat; the heat is
-that measure read in a coordinate. In the plane, with one thumb, a direction θ reads s = tan θ and dθ = ds/(1 + s²) =
-cos²θ·ds: the heat per unit of reading is the half-Cauchy, falling as cos²θ. In space, a small patch dA of a screen one
-thumb out, square to the look, at r = tan α thumbs, subtends dΩ = cos³α·dA (one cosine for the patch's tilt, two for its
-distance squared), so the heat per unit of screen is (1/2π)·cos³α = 1/(2π(1 + r²)^(3/2)), the two-dimensional Cauchy:
+that measure read in a coordinate. In the plane, with one thumb, the heat per unit of reading s is 1/(1 + s²) = h², the
+half-Cauchy (in the writer's angle, dθ = ds/(1 + s²) = cos²θ·ds). In space, a small patch dA of a screen one thumb out,
+square to the look, r thumbs off it, subtends dA/(1 + r²)^(3/2) of the directions (the writer's cos³α·dA, r = tan α: one
+cosine for the patch's tilt, two for its distance squared), so the heat per unit of screen is 1/(2π(1 + r²)^(3/2)), the
+two-dimensional Cauchy:
 0.35 of the peak at 45°, 0.125 at 60°, none at the rim. With n thumbs square to the look it falls as cos^(n+1). Half the
 peak heat is at 37.5° off the look, with a fifth of the directions inside (the share within α is 1 − cos α); half the
 directions lie within 60°, √3 thumbs out on the screen. A camera shows it: a wide lens's natural vignetting, the cos⁴α by
@@ -570,7 +587,7 @@ point w = (c + iγ)/(1 − iγc) in that chart, c its true value (a law written 
 scale, as McCullagh 1992 does), and the depth is exactly a Cauchy whose point is the same triangulation done on the two
 points: D = B/conj(w_a + w_b), at every γ, not only for small errors; rays that do not meet ahead are part of the law, as
 negative depths. At the pair's corner, the circle on the step, the depth's point stays at the true distance d, turned by
-twice the read's error angle: D = d·e^(2i·atan γ). Two things leave the family. The place across the line of sight,
+twice the read's error: D = d·(1 + iγ)/(1 − iγ) (the writer's d·e^(2i·atan γ)). Two things leave the family. The place across the line of sight,
 −1 + 2·cot a/(cot a + cot b) in half-steps, has a density over each standpoint that is infinite, where a Cauchy's never
 is. And when each standpoint reads only a quarter turn, the sum of two half-Cauchys has density (4/π²)·s near zero, so
 the depth's tail falls as 1/d³, not 1/d², and that depth has a mean. Repeating the reads, the mean of the reciprocal
@@ -646,7 +663,8 @@ limit of the passage, not a stage of it, as π is the limit of its approximants.
 
 **The thing itself as H.** The thumb can be set to the very thing whose size is wanted. *As the unit*: the thing is drawn
 at one length, its V is 1 by choice, and everything else is placed in its units; its two ends become the baseline and the
-reader is the point placed, at 1/(2·tan(α/2)) of its breadth from its middle, α the turn between its ends, from one look.
+reader is the point placed, at 1/(2t) of its breadth from its middle, t the slope of half the turn between its ends (the writer's tan(α/2)), from
+one look.
 *As the focus*: the reader keeps its thumb and chooses a baseline that puts the thing at parallax's corner, half the
 baseline equal to the distance, where the error is least; that needs the distance roughly first, so it is done in passes.
 
@@ -788,8 +806,8 @@ directions cos³α off the look.
 look at another, and colour every dot by the read's heat, cos³α × sech(ln(d/H)), the thumb set on the dot looked at
 (`heat-cube.html`). The cube never changes, only its colours, and only when the look does. Choosing what to look at is
 choosing the thumb. The two fields are equal in room, not in count: from a corner of the box looking at its middle, 436
-dots are nearer than one thumb and 1,291 farther, but laid as the read lays distance, (2/π)·arctan(d/H), each field has
-half the room. The hot core is small: inside 37.5° lies about a fifth of the directions in front. The box has a last dot,
+dots are nearer than one thumb and 1,291 farther, but laid as the read lays distance (the share passed, the writer's (2/π)·arctan(d/H)),
+each field has half the room. The hot core is small: inside 37.5° lies about a fifth of the directions in front. The box has a last dot,
 so along the look the dots stop short of the horizon: the box closes, the heat runs on.
 
 **The shape is swept, not each thumb.** Within the quarter turn the even read does not come from sweeping each thumb

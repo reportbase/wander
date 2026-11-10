@@ -7410,6 +7410,19 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R793** (10 Nov; Tom: "We found removing trig as very useful. I notice this new paper is now full of trig again.
+  Why?", "We have also the classical trig version of that paper.", then "Yes, the reader does not use trig, only writers
+  use trig. Update the old papers as needed."): **the reader uses no trigonometry; sin, cos, tan and arctan are the
+  writer's**, defined on the completed turn. The reader works in the slope s = v/h (directions [h : v], composition by
+  tangent addition, the corner s = 1, the heat 1/(1 + s²) and 1/(2π(1 + r²)^(3/2)), the doubled turn (1 + is)/(1 − is)),
+  rational in s with √(1 + s²) the one exception; the angle is the writer's chart where turns add. The two joined by the
+  half-angle (s = tan(φ/2), φ of total 2π). After draw's *Tangent Bridge* in two presentations, `tb_classical.md` (angle
+  chart, the proofs) and `tb_algebra.md` (slope chart, no trigonometric call). The trig in *Reads and Writes* had come
+  back with Euler's plane (R736–R740; 51 trig-function uses against v17's 55), D1's iθ the angle chart taken as the read.
+  *Reads and Writes* §1 "The reader uses no trigonometry", D1, §2's up axis, home and the corner in s, §3's heat in s,
+  §6's depth point (1 + iγ)/(1 − iγ), §7's thing as H at 1/(2t); the essays and *Reads and Writes in Physics* likewise.
+  Supersedes R742's wording (trig the writer's tool) by making it a definition. Draw's `tb_classical.md` still has the
+  slope as tan φ and the exponent N/2, both corrected in `tb_algebra.md`; not editable from this session.
 - **R792** (10 Nov; Tom: "proceed", to proposed rulings on three essay passages and O1–O6 of *Reads and Writes*, after a
   pasted review): essay 15 §8, π a completed join, not "knowing V"; essay 4, two thumbs, four, eight are places (D7: a
   count records, the thumb scales with the world), not "counted by a writer"; essay 3, a ratio of two payloads is read,
