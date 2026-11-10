@@ -952,9 +952,9 @@ what a closed loop looks like to the writer. **Checked** (BRL; the trace reading
 is a slide of the same pseudorapidity ξ, so their rapidities add and the velocity law, (β₁ + β₂)/(1 + β₁β₂), is the
 writer's tanh of the sum. Along two axes no single coordinate carries both slides, and the join leaves a turn: the
 Thomas–Wigner rotation, tan(Ω/2) = ab·sin φ/(1 + ab·cos φ), a and b the tangents of the half rapidities and φ the angle
-between them, the area of the velocity triangle in hyperbolic space. It is read from directions alone: three stars before
-and after fix the map of the sky, and its turn is the rotation, from any three stars, with no frequency and no distance.
-No single boost has any; the turn belongs to the join, a place. For a small loop it is ε²·sin φ, the size of the two-turn
+between them, the area of the velocity triangle in hyperbolic space. It is inferred from directions alone: three stars before
+and after are the evidence, they fix the map of the sky, and its turn is the rotation, from any three stars, with no frequency and no distance.
+No single boost has any; the turn belongs to the join, a map between the two looks (D7), not a place. For a small loop it is ε²·sin φ, the size of the two-turn
 loop's leftover, about the opposite axis: curvature −1 against +1. At the next order they part: the turn loop's
 correction is −ε²/12 at every angle, the boost loop's (1/3 + cos φ/4)·ε². The split does not derive the Lorentz group:
 it enters with the premise that a change of standpoint by motion keeps the angles between nearby stars, so that every such

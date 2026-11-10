@@ -475,6 +475,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R827 (10 Nov; Tom: "Rapidity is a coordinate representing a map between reads, not itself a read."): **what can be
   inferred from a read is not thereby a read**; §4's one-look rapidity is the coordinate of a map, inferred under a
   premise about the sky; O9's flag closed. Never call the rapidity a read, a place or a payload.
+  Carried across the project the same day (essays 7, 9, 13, 18, the physics paper §5.2–§5.3, `physics.md`, three
+  pages' notes; *Reads and Writes* §7's Thomas–Wigner turn a map, not "a place"): **directions are evidence, the map is
+  what they fix, a rapidity or a turn's angle its coordinate; say "inferred from" or "fixed by", never "read from".**
   R826 (10 Nov; a ruling pasted by Tom: "Joining reads can give places, orders, or maps."; "I would not mark O4
   closed"): **joining reads can give places (a gap in space), orders (a relation with no cycle) or maps (one read's
   directions carried to another's)**; a map's coordinate (angle, rapidity) is a representation; *Reads and Writes* D7,

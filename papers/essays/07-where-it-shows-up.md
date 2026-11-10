@@ -356,8 +356,10 @@ physicists call pseudorapidity. On that axis aberration is a shift by η exactly
 uniform in the stars' frame lies as ½·sech²ξ, a bell whose median is the plane square to the motion. Seen from the moving
 frame it lies as ½·sech²(ξ′ − η), the same bell with its median moved to η.
 
-So a reader holding directions alone can read its own rapidity, a reading, with no clock, no frequency and no speed of
-light carried in. It needs two things of the sky: that every source is counted whatever its brightness, and that the
+So from directions alone the rapidity of its own motion can be inferred, with no clock, no frequency and no speed of
+light carried in. The look is the read; the rapidity is not. It is the coordinate of a map, the boost between the
+observer's standpoint and the sky's assumed rest frame, and the directions are the evidence for it. The inference
+needs two things of the sky: that every source is counted whatever its brightness, and that the
 sources are uniform in their own frame. The third essay's quasar dipole showed what happens when the first fails. A
 census cut by brightness adds a weighting of the directions, D raised to a power read from the census's own counts and
 colours. That is still a reading, needing no rest frequency, but no longer of directions alone. And to read the Doppler
@@ -395,7 +397,7 @@ is a Möbius map carrying the Cauchy and the second is not. The identities are e
 (`../reads-and-writes-physics.md`), §5. A census of CatWISE quasars cut at a flux expects a dipole of [2 + x(1 + α)]·β,
 the paint carrying 60–70% of it; four slices by brightness give one β, 2.7 times the microwave background's, but slices
 by colour disagree and the direction lies 21–28° off, so part of the dipole is not the reader's motion. Two boosts
-joined leave the Thomas–Wigner rotation, read from three stars' directions alone and absent from any single boost. And
+joined leave the Thomas–Wigner rotation, fixed by three stars' directions before and after and absent from any single boost. And
 the correspondence ends at one premise, that motion is conformal on the sky, from which Liouville gives Möbius and the
 Möbius group of the sphere is the Lorentz group.
 

@@ -7419,6 +7419,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   established: that the rapidity is always recoverable from one sky, or the rest frame unique. D1–D7 unchanged; O4
   stays open on exhaustiveness. Older entries that say "the rapidity read from directions alone" (R437, R438, R609)
   describe text before this.
+  *Then* (Tom: "bring all three passages under R827 on the same branch"; "Directions can provide evidence for a map
+  without making the map's coordinate a read."; "Do not weaken the test's result; correct the description of what the
+  result establishes."): the same correction across the project. Essay 7 (the one-look rapidity inferred, the map's
+  coordinate; the Thomas–Wigner rotation fixed by three stars' directions), essay 18 and *Reads and Writes in Physics*
+  §5.3 (three directions the evidence, the Möbius map what they fix, the rapidity its coordinate from the trace) and
+  §5.2 ("inferred"), essays 9 and 13, `physics.md`'s dictionary row, and the notes on `boost-sky.html`,
+  `plane-sphere.html` and two `demos.html` cards. *Reads and Writes* §7: the Thomas–Wigner turn "inferred from
+  directions alone", and "the turn belongs to the join, a place" corrected to a map (it had been missed by R826's
+  check). TWG's results unchanged. Not touched: SPN's own older entries, `v-and-h.md` and the archive, as records.
 - **R826** (10 Nov; a ruling pasted by Tom: "yes to the broader family of "joinings with no gap," but not yet to the
   proposed D7 sentence exactly as written"; "Joining reads can give places, orders, or maps."; "I would not mark O4
   closed"; "proceed with the D7/O4 revision as a draft."): *Reads and Writes* D7 now says joining reads can give places,

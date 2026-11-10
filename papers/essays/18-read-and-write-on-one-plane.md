@@ -265,8 +265,9 @@ turning stops being simple.
 
 **In physics.** A boost along one axis is a slide on this plane: in the stereographic chart about that axis it
 multiplies z by the Doppler factor k, sliding ln z by the rapidity, so collinear rapidities add as slides do, and the
-velocity law (β₁ + β₂)/(1 + β₁β₂) is the writer's tanh of the reader's sum. The rapidity is read from three stars'
-directions alone, as the trace of a Möbius map, 2·cosh(ζ/2), with no frequency and no distance. Two boosts along
+velocity law (β₁ + β₂)/(1 + β₁β₂) is the writer's tanh of the reader's sum. Three stars'
+directions before and after fix the Möbius map between the two looks, with no frequency and no distance; the rapidity
+is that map's coordinate, inferred from its trace, 2·cosh(ζ/2), not itself a read. Two boosts along
 different axes cannot be one slide, and leave a turn, the plane's limit met in space (*Reads and Writes in Physics*
 (`../reads-and-writes-physics.md`), §5.3).
 

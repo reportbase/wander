@@ -175,7 +175,7 @@ else, not the field's strength, not the speed, not the size of the apparatus (th
 quantity of directions alone in the strict sense, heat and not paint, and it exists only because space, unlike the plane, does not let its turns be
 taken in either order. Boosts have the same leftover with the opposite sign. A small loop of boosts along two axes leaves
 a turn of the same size, ε²·sin φ, about the opposite axis: the Thomas–Wigner rotation, the area of the loop in the
-hyperbolic space of velocities (curvature −1 where the sphere's is +1). It too is read from the sky's directions alone
+hyperbolic space of velocities (curvature −1 where the sphere's is +1). It too is inferred from the sky's directions alone, as the turn of the map they fix
 (the TWG run, exact). The two leftovers agree only to leading order. At the next order the loop of turns falls short by
 ε²/12 of its size whatever the angle between the axes, while the loop of boosts runs over by (1/3 + cos φ/4)·ε², which
 depends on the angle (TWG run 3, the coefficients predicted before the run). The sphere and the space of velocities share
@@ -253,7 +253,7 @@ measure in the corpus turned out to be in the plane; every three-dimensional cla
 from the centre, where the laws agree, or about the boosted sky, where the Möbius law is the right one. None was wrong.
 
 **In physics.** A moving sky has this essay's two orders with curvature −1 for +1. Two boosts along different axes,
-joined, leave the Thomas–Wigner rotation, the velocity triangle's area, read from three stars' directions alone and
+joined, leave the Thomas–Wigner rotation, the velocity triangle's area, fixed by three stars' directions before and after and
 absent from any single boost. A small loop of boosts leaves ε²·sin φ, the same leftover as the loop of turns about the
 opposite axis; at the next order they part, the turn loop's correction −ε²/12 at every angle, the boost loop's (1/3 +
 cos φ/4)·ε², depending on it. Berry's geometric phase is a loop on the sphere of states coming home turned by half its

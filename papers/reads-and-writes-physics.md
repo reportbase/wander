@@ -300,7 +300,7 @@ A moving observer's sky is the clearest place in physics where a read and a writ
 
 ### 5.2 The quasar dipole [data]
 
-The boost is read from directions alone only for a census taken whatever the brightness, and every real census is cut at
+The boost is inferred from directions alone only for a census taken whatever the brightness, and every real census is cut at
 a flux. With no cut a moving reader's census is D²/4π, and its dipole is 2β plus terms in β³: Ellis and Baldwin's 2
 (1984) is the directions'. Cut at a flux limit, it is D^(2 + x(1 + α)), with x the counts' slope at the limit and α the
 sources' spectral index, both read from the same catalogue: still ratios, with no rest frequency and no distance in them,
@@ -320,8 +320,9 @@ settle where the dipole comes from. It says which part could be the reader's.
 Collinear boosts add their rapidities. Read on the sky the reason is plain: a boost along one axis is, in the
 stereographic chart centred on that axis, a multiplication z ↦ k·z, a slide of ln z by the rapidity, and slides along one
 line add. A Möbius map fitted to three stars' apparent directions before and after a boost along n by ζ has trace
-2·cosh(ζ/2): the rapidity is read from three directions, with no frequency and no distance. Two boosts along n read
-ζ₁ + ζ₂, and tanh of it is (β₁ + β₂)/(1 + β₁β₂), the velocity law, which is the writer's tanh of the reader's sum.
+2·cosh(ζ/2): the three directions are the evidence, the map is what they fix, and the rapidity is the map's coordinate,
+inferred from its trace with no frequency and no distance (a coordinate of a map between reads, not itself a read).
+Two boosts along n give ζ₁ + ζ₂, and tanh of it is (β₁ + β₂)/(1 + β₁β₂), the velocity law, which is the writer's tanh of the reader's sum.
 
 Boosts along two axes cannot be one slide. Joined, they leave a turn, the Thomas–Wigner rotation (Thomas 1926; Wigner
 1939). Its angle Ω satisfies tan(Ω/2) = ab·sin φ/(1 + ab·cos φ), a = tanh(ζ₁/2), b = tanh(ζ₂/2), φ the angle between the
