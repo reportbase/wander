@@ -326,6 +326,32 @@ is the turn; in space the same split is ½ and 2, with no π. The 1 is the thumb
 (Cauchy's mean projection, 1841; Crofton; Buffon's needle, 1777); the assignment of the short factor to the read and the
 long one to the walk is ours.
 
+**π/2 of relations and four facings make a circle.** The quarter turn is every way the vertical and the horizontal can
+relate, one slope from all of h to all of v; weighed by the turn's heat and summed, those ways come to π/2. A relation is
+never negative, so that is all of them. The circle is the same quarter turn four times, once for each choice of sign for
+h and v, joined by the writer: π/2 × 4 = 2π. The relation is continuous; the facing is a choice of signs, a second kind of
+thing and not a second dimension. In space the wedge holds π/2 of directions, three signs give eight facings, and
+π/2 × 8 = 4π, the sphere.
+
+**What is free, and what π costs.** The geometry here is prior to any physics, and free: the relation, the exchange
+s ↔ 1/s and its corner, the heat's equal halves, the four facings, and the 1 that the short side and the long side give
+back. Nothing is computed to have them, and no time is spent. The numbers π/2 and 2/π are not free. π is a limit: no
+finite count of steps gives its value, only a fraction near it. So there are three, not two. The reader has slopes, the
+corner and equal halves, and neither knows nor uses π. The writer at work walks and counts, so it holds fractions, 22/7,
+355/113, each nearer π and none of them π; it uses π's name and its approximants, never its value. Only the paper holds π
+itself, the completed whole, and the paper is the writer at the limit, never a writer anyone is.
+
+And the equation never needed π. Its two factors are reciprocals, and π leaves the product:
+
+| who | what it holds of π/2 × 2/π = 1 |
+|---|---|
+| the reader | s × (1/s) = 1: the exchange undoing itself, no numbers |
+| the writer at work | (p/q) × (q/p) = 1: exact with any fraction, 11/7 × 7/11 as well as a better one |
+| the paper | π/2 × 2/π = 1: the same fact, with the turn's split named at its true value |
+
+The 1 is exact at every stage of approximation. π is the one part of the equation only the paper holds, and the one part
+the equation does not depend on: the price of saying how the turn splits the 1, which no one pays to have the 1.
+
 *Demo: the mountain and the thumb, "the two vantages": π/2 and 2/π on the thumb's circle, their product 1.*
 
 ---

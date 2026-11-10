@@ -7410,6 +7410,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R810** (10 Nov; Tom: "update the essays and merge"): R805–R809 carried into the essays, no new claim: essay 2 §7
+  ("π/2 of relations and four facings make a circle", "What is free, and what π costs", the three-row table), essay 14 §3
+  and essay 15 §5 (the writer at work holds fractions; only the paper holds π; the 1 needs no π).
 - **R809** (10 Nov; Tom: "its interesting that we say,   pI/2 * 2/PI = 1.   reader * writer = 1.    yet neither reader or
   writer knows or uses pI."; "yes, add it and merge"): the 1 never needed π. The factors are reciprocals, x × (1/x) = 1,
   π leaving the product; the reader holds s × (1/s) = 1, the writer at work (p/q) × (q/p) = 1 exactly with any fraction

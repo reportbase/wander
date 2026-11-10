@@ -184,6 +184,14 @@ the corner equals the heat above it: equal halves, with no π/4 in them. In the 
 "how much" (essay 2 §9, "Four identities, one exchange"); in space the same price is 2, with no π in it. And the two numbers the writer puts on the sweep measure two
 acts: 2/π what turning sees, the thumb's mean share, approached; π/2 what walking counts, the arc in thumbs, reached.
 
+"The writer holds π" needs one more distinction, which the ladder of §1 already drew. A writer at work walks and counts,
+and every walk actually made is a finite count, so what it holds is a fraction: 22/7, 355/113, a series stopped at some
+term. It uses π's name and its approximants; it never has the value, which would take a count without end. Only the
+paper holds π itself, the completed whole, every facing at once; the paper is the writer at the limit, never a writer
+anyone is. So π only seems free. What the sweep gives at no cost is the relation, the corner, the equal halves, the four
+facings (π/2 of relations, four times, is the circle) and the 1 that the two numbers multiply to; and that 1 needs no π,
+since the two are reciprocals and any fraction held for π/2 gives it exactly, 11/7 × 7/11 = 1 (essay 2 §7).
+
 It is also where the history of the two numbers met. Euler showed e irrational in 1737; Lambert showed π irrational in
 1761. Liouville (1844) built the first numbers proved transcendental, made to order by an infinite series whose terms
 shrink too fast for any polynomial to catch. Hermite (1873) proved e transcendental. Lindemann (1882) proved π
