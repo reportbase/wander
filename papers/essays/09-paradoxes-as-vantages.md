@@ -347,7 +347,7 @@ honest.
 **In physics.** Physics has paradoxes of this kind, each a read and a write run together. A parallax with a Gaussian
 error has an inverse with no mean, and averaging those inverses as distances is Lutz and Kelker's bias (1973). The
 rotation two boosts leave, Thomas and Wigner's, looks strange only until it is seen to belong to the joining: no single
-boost has it, and joining is a place, not a read. And a quasar dipole read as the directions' alone gives a speed nearly three times
+boost has it. It is a map between the two looks, with no gap in space, so neither a read nor a place. And a quasar dipole read as the directions' alone gives a speed nearly three times
 too large, since the paint carries most of it (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §5,
 §7.2).
 

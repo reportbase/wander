@@ -472,6 +472,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R829 (10 Nov; Tom: "update the essays and demos"): R820–R828 in essay 1 (three cautions on the scale test), essay 3
+  (the second test's scope), essay 6 §2 (the time to contact d₁/B, not a place), essay 9 (the Thomas–Wigner rotation a
+  map) and `approach.html`'s wording (τ, τ̇ no longer "a place"); no new claim, no hook changed.
   R828 (10 Nov; Tom: "proceed with your recommendations."): *Reads and Writes* §2's distance between standpoints is a
   place only where they differ in position; between standpoints that differ by a boost it is the rapidity, a map's
   coordinate. The physics paper's "Joining gives places, orders or maps" stands.

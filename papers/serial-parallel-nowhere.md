@@ -7410,6 +7410,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R829** (10 Nov; Tom: "update the essays and demos"): R820–R828 carried out, no new claim. Essay 1 §"scale the
+  world": three cautions (what is sorted is a variable; the two tests cross, four boxes, a writing on either side, a
+  ratio of payloads the payload's unmoved box; joining reads gives a place, an order or a map, a rapidity or an angle
+  of turn a map's coordinate; exhaustiveness not claimed). Essay 3 "The second test": put to a candidate with its
+  standpoint and turn named, the direction of arrival, refraction a change of what arrives, a boost a change of
+  standpoint, quantities not causes. Essay 6 §2: the time to contact's number is the distance over the step, d₁/B; as
+  a time it adds a premise; no longer called a place. Essay 9: the Thomas–Wigner rotation a map between looks, not "a
+  place". `approach.html`: its header, caption and readout no longer call τ and τ̇ places. The rapidity wording in
+  essays 7, 9, 13, 18 and the demos' notes was already carried under R827.
 - **R828** (10 Nov; Tom: "proceed with your recommendations."): the two items left by R827. (1) The physics paper's
   closing list stands as changed ("Joining gives places, orders or maps"; a duration from two moments left open).
   (2) *Reads and Writes* §2 "How far apart two standpoints are" no longer carries ": a place" in its heading: the

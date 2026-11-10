@@ -372,6 +372,12 @@ heat against paint.
 **Change what arrives, and keep the directions.** Replace what arrives along each direction with something else. A
 quantity that does not change belongs to the directions and their heat. A quantity that changes belongs to the payload.
 
+The test is put to a candidate, not to a bare number: name the standpoint and the turn first, then ask. The direction
+it keeps is the direction of arrival. Air that bends the light leaves every direction where it was and changes which
+star paints it, so refraction is a change of what arrives. The standpoint includes its state of motion, so setting the
+observer moving is a change of standpoint, not of what arrives, and it does move the read. And the test sorts
+quantities, not causes: one cause can move both, as a boost moves where a star is seen and the colour of its light.
+
 Together the two tests sort any fact four ways: readings of the directions (the corner, the quartiles of directions),
 readings of what arrives (a colour, a ratio of intensities), and writings of either (a range in metres, a flux in a
 unit). Neither test needs this essay's vocabulary to run.
