@@ -607,6 +607,13 @@ list without end. What the geometry adds is the reason they fit together.
 
 ---
 
+**A pure function and its state.** The geometry is a pure function: tangent addition takes two slopes and returns a
+third, the same every time, with no state behind it. That is why it needs no memory and why reads never race. State
+enters only with keeping: which steps this observer took. And state comes in two kinds here. A count of steps kept is
+state with no unit, a write of the relation; scale the world and it is unchanged. An amount in a unit is a write of the
+scale, and that is where physics, and everything a machine calls a measurement, comes in. A law needs no memory; a
+history does.
+
 **An iterator, not an index.** One more contrast belongs in this list. Random access, `mem[a]`, needs an address
 space laid out beforehand with a fixed origin: a writer's. The read of this essay is sequential and relative. It
 sweeps forward from where it stands, and where it stops is the next start; it holds a step, never a position. It can

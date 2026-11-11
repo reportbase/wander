@@ -606,6 +606,13 @@ cosine is coth η − η/sinh² η, where the plane's would be tanh(η/2). The r
 keep angles also keep the harmonic functions. So in three dimensions "the law seen from a standpoint" has to say which
 of the two it means. The thirteenth essay, *Why the plane is special*, takes this apart in full.
 
+**A law needs no memory.** Euler's formula looks as though it accumulates, a turn built up step by step round a
+circle. That is the classical telling, a journey. The function holds no journey. It is a rule: what any turn does to
+any direction, given for every pair at once, with nothing in it having happened. So the geometry, which keeps nothing,
+can still say what a thousand turns would do. What needs keeping is only which turns a particular observer made. In
+the reader's form the rule is plainer still: w(s) × w(1/s) = −1 at every slope, a pair of directions of one read, of
+which the famous identity is the one member that needs the horizon and i × i = −1 the one at the corner.
+
 **No dial, and the quarter turn's two numbers.** The circle of this essay is the writer's in a stronger sense than
 its shape. A read is one sweep from h to v on the thumb H, with no V in it; it stops at its horizon and closes nothing,
 and each read stands by itself. The circle is the kept steps laid end to end. So the numbers that belong to one sweep

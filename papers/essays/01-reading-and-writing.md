@@ -20,6 +20,13 @@ into a read. Computing has to engineer that separation; the geometry starts with
 an address and the payload the value stored there; the metaphor serves, so long as the heat under the address is
 remembered.
 
+A second consequence belongs up front too. The geometry has no memory, and its laws need none. A law says what any
+two directions give together: join this slope to that one and get a third. It holds for every pair at once, and
+nothing in it happened. That is how the geometry can hold a function like Euler's, which describes the composing of
+any number of turns, without remembering a single turn. Memory is needed only for something else: which steps a
+particular observer took, and so where it has come from. So there are three things, not two. The geometry, complete
+with no memory and no unit. Keeping, which holds a history and still no unit. And the unit, where physics enters.
+
 ---
 
 ## 1. Mapping a room with no ruler
@@ -560,6 +567,15 @@ walking it or carrying in its measure. A reader that arrives at the writer's ans
 stood, which loops it closed, what it was handed. That is not a lesser achievement. It is a different one.
 
 *Demo: the reader is a slide rule: chains, loops and a misread link.*
+
+**Two writes, and where physics enters.** "Write" has been doing two jobs in this essay, and they are worth telling
+apart. One is the write of the scale: an amount in a unit carried in, the stride given in metres. Scale the world and
+it moves. The other is the write of the relation: something kept, with no unit in it, a count of strides, a mark left
+where one started, the room's shape put down in strides. Scale the world and it does not move. The first test of
+section 5 tells the two apart; what tells a write of the relation from a read is only that it was kept, since a read
+keeps nothing. Reading and the write of the relation are both prior to physics. Physics enters with the unit, and it
+is orthogonal to the geometry: the geometry is complete without it, and physics, when it comes, assigns amounts and
+moves no read and no relation.
 
 **Steps, never positions.** One more thing separates the two acts, and it is the plainest. A sweep goes one way, from
 home toward the horizon, and where it stops is the next sweep's home: every sweep resets. A tenth of a sweep, then a
