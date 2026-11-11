@@ -611,7 +611,11 @@ circle. That is the classical telling, a journey. The function holds no journey.
 any direction, given for every pair at once, with nothing in it having happened. So the geometry, which keeps nothing,
 can still say what a thousand turns would do. What needs keeping is only which turns a particular observer made. In
 the reader's form the rule is plainer still: w(s) × w(1/s) = −1 at every slope, a pair of directions of one read, of
-which the famous identity is the one member that needs the horizon and i × i = −1 the one at the corner.
+which the famous identity is the one member that needs the horizon and i × i = −1 the one at the corner. That is the
+same relation held two ways. The algebra joining the two forms is ordinary, and they are equivalent; which one a read
+holds is this series' reading. The home and horizon member is the writer's, since no read holds the horizon, and it is
+the one that carries π. "Law" here means a geometric law, a relation among one read's directions; laws in general are
+many things and are not a third kind beside reading and writing.
 
 **No dial, and the quarter turn's two numbers.** The circle of this essay is the writer's in a stronger sense than
 its shape. A read is one sweep from h to v on the thumb H, with no V in it; it stops at its horizon and closes nothing,

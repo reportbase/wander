@@ -26,6 +26,16 @@ nothing in it happened. That is how the geometry can hold a function like Euler'
 any number of turns, without remembering a single turn. Memory is needed only for something else: which steps a
 particular observer took, and so where it has come from. So there are three things, not two. The geometry, complete
 with no memory and no unit. Keeping, which holds a history and still no unit. And the unit, where physics enters.
+"Law" here means a geometric law, a relation among the directions of one read. Laws in general are many things, and
+a physical law carries units; they are not a third kind beside reading and writing. That the geometry's laws are of
+this kind may be why it needs no memory.
+
+The plainest example is Euler's identity. The writer states it as e^(iπ) = −1, with an exponential, the number e and a
+half turn measured by π. The same relation is there in a form that uses none of them: write a direction of slope s as
+w(s) = (1 + is)/(1 − is), and w(s)·w(1/s) = −1 for every slope, a direction and its reciprocal; at the corner, i·i = −1.
+The algebra is ordinary and the two forms are equivalent. The simpler one exists because it relates directions of one
+read; a position, a total or a closing has no simpler reader's form, because a read does not hold them at all. And the
+writer's form holds something the reader's does not, the join completed (the second essay, section 9).
 
 ---
 
@@ -398,7 +408,8 @@ has only directions. The writer's blueprint moves by k in every number it states
 with the amounts; the reader's pointing, read as directions, does not.
 
 In Euler's notation the test has a picture. Write a thing as a direction times an amount, r·e^(iθ), and take the
-logarithm, ln r + iθ. Scaling the world by k slides the real part by ln k and leaves the imaginary part alone: the
+logarithm, ln r + iθ. With r in an outside unit, scaling the world by k slides the real part by ln k and leaves the imaginary part alone
+(with r in thumbs, and the thumb scaled too, no point moves; only the thumb in metres does): the
 imaginary part is the reading, differences of the real part are places, and the real part's zero, tied to a unit, is
 the writing (the second essay, section 9; *Reads and Writes* §2).
 
