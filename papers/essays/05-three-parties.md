@@ -96,7 +96,7 @@ of sight only when the look runs down the thumbs' diagonal, section 10). Each pa
 crossing, one finger of each hand, and that pair of fingers is the reading: a direction, (v/h, v₂/h). The colour at each
 crossing is the payload, and still no colour carries a distance. Two hands add no second length: both thumbs are the one H,
 and the right angle between them is a quarter turn, no amount. (For every crossing to hold the same share of the window,
-the round hand spreads its fingers evenly by turn and the upright hand evenly in height, not in angle; section 6 says why.)
+the round hand spreads its fingers evenly by turn and the upright hand evenly in height, not in angle, that is, in equal steps of the up share v; section 6 says why, by Archimedes' hat-box.)
 
 No one holds a window that way; the picture is not about hands. What it shows is that the reader's space in three
 dimensions is not Cartesian. There are no three axes of amounts, no X, Y and Z counted out from an origin: there is one
