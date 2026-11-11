@@ -180,3 +180,8 @@ Item 10's candidate (the write of the relation as the count n) is not in the pap
 **Carried out** (11 Nov, R879; Tom: "update the papers, essays and merge"): item 13 is in *Reads and Writes* section 6
 ("Read times count") and section 9 ("The same 1 on the road"), essay 19 section 8, essay 2 section 7 and essay 6
 section 2. Item 10's candidate still waits on Tom.
+
+**Item 10 carried out in part** (11 Nov, R880; Tom: "add it to the papers if you agree."): the count as the write of
+the relation is in *Reads and Writes* section 1 and essay 19 section 8, as what holds in the worked cases, with its
+limits (whole only in part; the step assumed to repeat; where it is held open; orders not counts). Not claimed: that
+every keeping is a count.
