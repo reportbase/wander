@@ -82,3 +82,15 @@ its band was mine and wrong.
   outside.
 - **C7′.** As C7 with C6′ in place of C6: the reading fails if a rational slope cycles (C5) or C6′ is killed.
 
+### Run 2 (11 Nov 2026; `python3 runs/chs/chs2.py`, output `runs/chs/chs-run2.txt`)
+
+- C6′ not killed: first steps apart p = 24: 23–25; p = 53: 52–59; p = 113: 112–117; p = 200: 199–203; every orbit in
+  [p − 4, p + 8]; the medians' slope against p 1.0098.
+- C7′ not killed.
+
+### Reading
+
+The turn added to itself is one map in three charts, each a textbook chaotic map keeping that chart's law of the
+uniform turn, ln 2 a step in all. The rule is rational in s. A writer in fractions keeps the orbit at a cost that
+doubles a step and never meets a cycle; a writer in p digits keeps it about p steps; the cycles are at rational parts
+of π. All classical but the sorting by tiers, which is this paper's reading.

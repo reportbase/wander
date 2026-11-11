@@ -1,0 +1,7 @@
+  p = 24: first steps apart [23, 24, 23, 23, 25], median 23, band 20..32: ok
+  p = 53: first steps apart [57, 52, 52, 54, 59], median 54, band 49..61: ok
+  p = 113: first steps apart [116, 112, 114, 116, 117], median 116, band 109..121: ok
+  p = 200: first steps apart [203, 199, 202, 200, 201], median 201, band 196..208: ok
+  slope of the medians against p: 1.0098
+C6': not killed
+C7': not killed (C5 not killed in run 1)

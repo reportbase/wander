@@ -1283,6 +1283,27 @@ slope as s = e^ξ, the writer's logarithm, and the Cauchy reads (1/π)·sech ξ 
 logistic curve. Neither law gained anything; the chart supplied the e, and the reader's forms, 1/(1 + s²) and the
 equal halves, have none.
 
+The same three charts hold the standard examples of chaos, as one map. Add a turn to itself. In the slope that is
+tangent addition of s with itself, s ↦ 2s/(1 − s²), rational, with no π and no trigonometry: one step of it is the
+reader's own. In the reciprocal slope it is Boole's map, c ↦ ½(c − 1/c) (1857), which is also Newton's step for
+c² + 1 = 0, a search for the standpoint i that no slope on the line reaches. In the share v² it is the logistic map,
+y ↦ 4y(1 − y) (Ulam and von Neumann 1947). In the turn's own share it is the tent map. Each keeps the uniform turn's
+law in its chart: the Cauchy, the Cauchy, the arcsine, the uniform. Each spreads nearby starts by a factor of two a
+step, ln 2 in the writer's number, the same in every chart. All of this is classical; what the three tiers add is who
+can follow the orbit (the CHS plan, Code and data, exact).
+
+| who | what it holds of the orbit |
+|---|---|
+| the reader | one step: a slope added to itself, exact and rational |
+| the writer at work, in fractions | every step exactly, at a cost that doubles each step (from 3/7 the twelfth slope's denominator has 9,950 binary digits); no cycle ever, since no rational slope but 0 and 1 belongs to one (Niven) |
+| the writer at work, in p digits | about p steps (24, 53, 113 and 200 digits part from the true orbit at step p − 1 to p + 6); at a fixed fineness K each step uses up one more binary digit of the start |
+| the paper | the direction whole: every step, and the cycles, which sit at turns that are rational parts of π |
+
+So the rule is fixed and free, and the orbit is determined; what gives out is the count. Unpredictability here is a
+statement about what a writer at work can hold, one binary digit a step, not about the rule or the law. And the
+Cauchy is seen a second way: it is the heat of one sweep, and it is also the one law a turn added to itself, again
+and again, leaves as it was.
+
 Parallax (§6) is the case where the working writer is exact and the paper adds only units. Two standpoints a counted
 step B apart each read the target's slope off the line between them, s₁ and s₂, measured inward. The target's depth d
 off that line is then given by 1/(d/B) = 1/s₁ + 1/s₂, so d/B = s₁s₂/(s₁ + s₂): slopes 3 and 6 put it exactly 2 steps
@@ -1497,7 +1518,7 @@ cells: `plans/dyh-plan.md`, `runs/dyh/`. The Cauchy's routes: `plans/cauchy-rout
 reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `runs/txt/`. The reader's math in slopes: `plans/slp-plan.md`, `runs/slp/`. The tower and two thumbs:
 `runs/two/two_thumbs.py`. Three thumbs at the crosshair: `plans/thm-plan.md`, `runs/thm/`. The shape swept:
 `plans/swp-plan.md`, `runs/swp/`. Three laws on the sphere: `plans/eul-plan.md`, `runs/eul/`. Euler's formula as a count of
-reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. The distance between
+reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The distance between
 standpoints: `plans/frg-plan.md`, `runs/frg/frg.py`. A flat chart in space: `plans/flc-plan.md`, `runs/flc/`. Epicycles and
 aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The data cases:
 `plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`; each records its
