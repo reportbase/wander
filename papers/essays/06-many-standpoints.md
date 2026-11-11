@@ -91,6 +91,14 @@ ever; a turn of the look moves every reading and arrives nowhere. These are the 
 has, and they are classical. What each thing that approaches does with them is its own affair; the readings they stand on
 are the same for all, and cost nothing (WLK, exact; `approach.html`).
 
+One more thing the walk shows, about where the infinite is. Parallax is the link: two looks and one counted stride. Chain
+the links and the middle cancels; the whole walk comes down to its first look and its last, however many strides lay
+between, and nothing needs the stride to be small. From the corner to the foot the looks gather exactly a quarter of the
+writer's circle, in seven strides or a thousand. The half circle, Euler's −1 reached from 1, belongs only to a walk that
+began without end: start thirty corners out and you are short of it by about one part in fifteen, a million corners out
+by two parts in a million. The infinite in Euler's identity is the horizon behind you, not a vanishing step. A step has to
+shrink only when slopes are added as if they were angles, which is the writer's sum and the writer's limit.
+
 ## 3. The ladder
 
 Suppose each reader reads only directions: for each place on some figure, the direction in which it stands. Then there is

@@ -106,6 +106,8 @@ and a steady slide never runs out of plane: the foot is its limit. A steady stri
 writer's line instead, where thumb over mountain falls by the same amount each stride, and it reaches the foot in a
 finite count. On the writer's circle, Z = (1 + is)/(1 − is), both run from 1 far off, through i at the corner, toward
 −1 at the foot: one arrives by counting, the other approaches by ratio, and a turn of the look does neither (WLK, exact).
+Look by look the walk's points join exactly, at any stride: from the corner to the foot a quarter of the circle, and the
+half circle only for a walk begun without end. The infinite in e^(iπ) = −1 is the far start.
 
 ## 4. The thumb's lay: distance as a turn
 

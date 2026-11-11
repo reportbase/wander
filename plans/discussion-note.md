@@ -145,3 +145,7 @@ not used (unchecked).
    - The stride must shrink only if slopes are added as though they were angles: the excess falls as the stride
      squared. Composing is the geometry's and exact; adding is the writer's and needs the limit.
    **Next:** Tom's call whether "the infinite is the far start" goes beside "Two ways to arrive" in section 6.
+
+**Carried out** (11 Nov, R874; Tom: "update the papers, essays and merge"): items 11 and 12 are in *Reads and Writes*
+section 1 ("A law in place of memory") and section 6 ("Two ways to arrive"), essay 6 section 2 and essay 18 section 3.
+Item 10's candidate (the write of the relation as the count n) is not in the papers; it waits on Tom.
