@@ -147,3 +147,21 @@ in the discussion (item 12 said "as the stride shrinks").
 - **C6, the strides are on the circle; Euler's factors are not.** Every Z_(j+1)/Z_j has modulus exactly 1 and the
   arcs are unequal (largest at the foot); each factor 1 + iθ/n of (1 + iθ/n)ⁿ has modulus above 1. *Killed* if a
   stride factor's modulus is not 1, or the strides' arcs are equal.
+
+**Run 3** (11 Nov, `runs/wlk/wlk3.py`, output `runs/wlk/wlk3-run.txt`). **Nothing killed**, C1–C6.
+- C1: the stride factors multiply to Z_N/Z_0 exactly, equal strides and 200 uneven walks.
+- C2: strides left from two looks exact at every stride size, 1/2 down to 10⁻⁹. No shrinking needed.
+- C3: the half-arcs' slopes compose by tangent addition to (x₀ − x_N)/(1 + x₀·x_N) exactly; from the corner to the
+  foot the composed slope is exactly 1 at 7, 100 and 1,000 strides.
+- C4: the writer's sum of arcs is 2·arctan(x₀) to 10⁻⁴⁹ at 10, 1,000 and 100,000 strides: a quarter of the circle from
+  the corner (x₀ = 1), short of the half circle by 0.0666 from thirty corners out and by 2.0·10⁻⁶ from a million; the
+  shortfall 2/x₀.
+- C5: the slopes added, not composed, exceed arctan(x₀) by (δ²/3)·∫ dx/(1 + x²)³, falling by 4.0000 per halving.
+- C6: every stride factor has modulus 1; the arcs are unequal, the largest at the foot; 1 + iθ/n has modulus² 101/100
+  at θ = 1, n = 10.
+
+What it corrects: in the discussion (note item 12) I said the half circle is gathered "as the stride shrinks". It is
+not: the arc gathered and the strides left are exact at any stride. The half circle needs the start to be without end
+(x₀ → ∞); the stride must shrink only when slopes are added as though they were angles (C5), which is the writer's
+sum. So: composing is exact and finite; "infinite" enters as the far start (the horizon behind the walker) and as the
+writer's addition, in two different places.

@@ -135,5 +135,13 @@ not used (unchecked).
    - Cautions: two different collapses (ends only, free; the total, a limit); and the strides are not Euler's
      (1 + i.theta/n)^n, which is n equal small turns: a stride is a slide on the writer's line, uneven arcs on the
      circle, largest at the foot. Both end at -1 by different routes.
-   **Next:** an exact check, offered to Tom, not run: stride-by-stride parallax as the stride shrinks gives the time to
-   contact and gathers exactly the half circle (the Cauchy's total again).
+   **Checked** (WLK run 3, C1-C6, nothing killed; R873; Tom: "Yes, run the test"). It corrects what I said above:
+   - Nothing needs the stride to shrink. Two looks one stride apart give the strides left exactly at any stride size,
+     and the arcs compose by tangent addition exactly: from x0 to the foot the half-arc's slope is exactly x0.
+   - From the corner to the foot that slope is exactly 1: a quarter of Euler's circle, in any number of strides.
+   - The half circle (the identity whole, -1 from +1) needs the walk to have started without end: short by 2/x0 from
+     x0 corners out (0.067 from thirty, 2 millionths from a million). The infinite is the far start, the horizon
+     behind the walker.
+   - The stride must shrink only if slopes are added as though they were angles: the excess falls as the stride
+     squared. Composing is the geometry's and exact; adding is the writer's and needs the limit.
+   **Next:** Tom's call whether "the infinite is the far start" goes beside "Two ways to arrive" in section 6.
