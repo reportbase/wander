@@ -110,9 +110,10 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
 sweep's home: every sweep resets. A tenth of a sweep, then a fifth of a fresh one, then three tenths of another, is
 three steps, each from its own start. Nothing in any of them says how far the three have come together. A position,
 "three fifths of the way round", is a total of steps from a starting mark that was kept, and a read keeps no mark.
-So a read by itself can only sweep forward. To return to where the sequence began, the steps must have been kept
-and totalled, or a mark left at the start: something recorded (D7). And the return is not a sweep run backwards; it
-is a forward sweep in the opposite facing, and a facing is a join. This is why an angle, the turn's whole measure and
+Going back is open to the reader: it faces the other way and sweeps, and that too is a forward sweep, in the
+opposite facing. What it cannot do by reading alone is go back exactly to where it was. For that the steps must
+have been kept and totalled, or a mark left at the start: something recorded (D7). Without it the reader goes back
+some way and has no means of telling when it has arrived. This is why an angle, the turn's whole measure and
 the arctangent sit together on the writer's side: each is a position, a total from a kept mark, where the reader
 has only the step it is in and the heat along it. There is no circle anywhere in this. A circle is one fixed dial on
 which every sweep has its place and going back is going the other way round; the reader has no such dial, only a
