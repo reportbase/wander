@@ -108,7 +108,9 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   a write of a second kind, a write of the relation: a count of steps kept, a mark left at a start, a place put on
   paper in thumbs. It holds no unit and no scaling of the world moves it, and it is not a read either, since a read
   keeps nothing. The first test tells the two writes apart; what tells a write of the relation from a read is only
-  that it was kept. Where this paper says "a write" without more, it means the write of the scale.
+  that it was kept. Reading and the write of the relation are both prior to physics: neither holds a unit, and a
+  count of steps kept is as free of the world's size as the steps were. Physics enters with the write of the scale and
+  not before. Where this paper says "a write" without more, it means the write of the scale.
 
 **Steps, never positions.** A sweep goes one way, from home toward the horizon, and where it stops is the next
 sweep's home: every sweep resets. A tenth of a sweep, then a fifth of a fresh one, then three tenths of another, is
@@ -1380,7 +1382,8 @@ none. This is no fifth reader's identity either: parallax joins two reads, so it
 and what never needed π is the place in steps; the step in metres is still the one amount carried in.
 
 **Classical**; the assignment is a reading. Physics enters
-separately and later, with the first write: a walk made and counted, a thumb given a unit. **A reading**, resting on this
+separately and later, with the first write of the scale: a thumb given a unit. A walk made and counted in steps is
+a write of the relation and still before it. **A reading**, resting on this
 section's account of the transcendentals.
 
 **What the one pole already carried.** The reader at i holds the standard Cauchy (§3). Readings added give one Cauchy
