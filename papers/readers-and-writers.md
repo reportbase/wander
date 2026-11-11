@@ -1212,6 +1212,19 @@ everything finer is an approach. So e and π are the two parts of the identity o
 the fact does not depend on: π the price of saying how long the arc to −1 is, e the price of saying it as one smooth
 turn where the reader has two corner steps. **Classical**; the assignment is a reading.
 
+The reader's form shows three things the classical statement does not. First, Euler's identity is one member of a
+family, and the extreme one. w(s) × w(1/s) = −1 holds at every slope, pairing each direction with its exchange. Put
+s = 0: home lands at +1 and its exchange, the horizon, at −1. So e^(iπ) = −1 says that home and the horizon are an
+exchanged pair, and it is the only pair of the family that needs the horizon, which no read reaches; every pair
+between is finite and exact, and the classical statement does not mention them. Second, the corner's member is
+i × i = −1. The corner is its own exchange and lands at i, so the equation that defines i is this identity taken at
+the corner: i is the corner. Third, with the complex notation taken away almost nothing is left. Exchanging h and v
+swaps the two shares, so their difference h² − v² changes sign while their product is kept. At home the difference is
++1, all h; at the horizon −1, all v. That is the whole content of the −1: the shares swapped. The classical statement
+reads it as a position, half way round a dial; for the reader there is no travel in it and no dial, only a pair of
+directions of one read. And it is the exchange's one fact in a second chart: on the slope it reads s × (1/s) = 1, on
+the landing point w × w′ = −1, the 1 and the −1 of "Four identities, one exchange".
+
 The Cauchy's total is the cleanest of the three, since most of what the Cauchy is never touched π. The heat at each
 slope, 1/(1 + s²) = h², is rational in s; so is the ratio of the heat at any two directions, (1 + s₂²)/(1 + s₁²); the
 corner is the median because the heat below it equals the heat above it; there is no mean; and every statement of order
