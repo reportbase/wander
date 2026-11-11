@@ -38,7 +38,9 @@ The geometry has no memory, and its laws need none. A law, tangent addition or t
 says what any two directions give together; it holds for every pair at once, and nothing in it happened. Memory is
 needed only for which steps were taken, never for what steps do. So three things stand apart: the geometry, complete
 with no memory and no unit; keeping, a write of the relation, which holds a history and still no unit; and the unit, a
-write of the scale, where physics enters.
+write of the scale, where physics enters. The writer's completed equations each have a reader's form that is rational in
+the slope and needs no limit: for e^(iπ) = −1 it is w(s)·w(1/s) = −1 with w(s) = (1 + is)/(1 − is), a direction and its
+reciprocal, and at the corner i·i = −1 (§1, "The same relation, held two ways").
 
 None of the mathematics is new. What is offered is a division of it: which parts one standpoint has, which need two, and
 which need a unit, with the plane as the frame that holds the division in one line.
@@ -143,6 +145,25 @@ particular sequence has got to. The laws are **classical**; that keeping is a se
 | the geometry: reads, and the laws relating them | none | none |
 | keeping: a write of the relation, which steps were taken | yes | none |
 | physics: a write of the scale, amounts | yes | yes |
+
+**The same relation, held two ways.** The central example of this paper is Euler's identity. The writer states it as
+e^(iπ) = −1: an exponential, the number e, and a half turn measured by π, each of them a limit (marked the writer's, §9).
+The relation it states is already present in a form that uses none of the three. Write a direction of slope s = v/h as
+w(s) = (1 + is)/(1 − is). Then for every slope
+
+  w(s)·w(1/s) = −1,
+
+by ordinary algebra: a direction and its reciprocal compose to the half turn. At the corner the direction is its own
+reciprocal, w(1) = i, and the relation is i·i = −1, two corner steps, exact. Every member with 0 < s < ∞ is a pair of
+directions of one read. The one member that is not is the pair home and horizon, s = 0 and 1/s = ∞: no read holds the
+horizon, so that member is the writer's, and it is the one the classical equation names, which is why it is the one
+that carries π. The circle, the quarter turn's two numbers and the Cauchy's total go the same way, each with a form
+rational in s about the exchange s ↔ 1/s and the corner (§9, "Four identities, one exchange"; parallax and the Gaussian
+beside them in "What is free, and what π costs"). Three limits on what is claimed. The algebra is **classical** and the
+two forms are equivalent; saying which form a read holds is a **reading**. The simpler form exists for relations among
+the directions of one read; positions, closures and totals are not done more simply by the reader, they are not done
+("Steps, never positions", next). And nothing here says the classical statement carries anything it should not: the
+writer's form holds the join completed, which the reader's form does not have.
 
 **Steps, never positions.** A sweep goes one way, from home toward the horizon, and where it stops is the next
 sweep's home: every sweep resets. A tenth of a sweep, then a fifth of a fresh one, then three tenths of another, is
