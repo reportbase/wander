@@ -32,6 +32,12 @@ along the look and given before anything arrives. What arrives along a direction
 is given; the paint is met.* A second test sorts them: change what arrives, and the directions and their heat stay
 while the paint changes. Because the read adds nothing and a change to the paint moves no direction, reads never race.
 
+The geometry has no memory, and its laws need none. A law, tangent addition or the exchange behind Euler's identity,
+says what any two directions give together; it holds for every pair at once, and nothing in it happened. Memory is
+needed only for which steps were taken, never for what steps do. So three things stand apart: the geometry, complete
+with no memory and no unit; keeping, a write of the relation, which holds a history and still no unit; and the unit, a
+write of the scale, where physics enters.
+
 None of the mathematics is new. What is offered is a division of it: which parts one standpoint has, which need two, and
 which need a unit, with the plane as the frame that holds the division in one line.
 
@@ -110,9 +116,23 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   keeps nothing. The first test tells the two writes apart; what tells a write of the relation from a read is only
   that it was kept. Reading and the write of the relation are both prior to physics: neither holds a unit, and a
   count of steps kept is as free of the world's size as the steps were. Physics enters with the write of the scale and
-  not before. The geometry itself keeps nothing. It holds every relation at once, which is how a law such as
-  w(s) × w(1/s) = −1, or tangent addition, exists with no memory: it says what any two directions give together, and
-  nothing in it happened. Keeping is needed for which steps were taken, never for what steps do. Where this paper says "a write" without more, it means the write of the scale.
+  not before. The geometry itself keeps nothing ("A law needs no memory", below). Where this paper says "a write" without more, it means the write of the scale.
+
+**A law needs no memory.** The geometry keeps nothing, and yet it holds functions that describe the composing of any
+number of steps: tangent addition, w(s) × w(1/s) = −1, Euler's formula. There is no conflict, because two things that
+sound alike are different. *What steps do* is a law: any slope joined to any other gives a definite third, any slope
+times its exchange gives −1. It holds for every pair at once. It is the whole table, given and not performed, and
+nothing in it happened. *Which steps were taken* is a history: a tenth of a sweep, then a fifth, then three tenths. Only
+the history needs keeping. Euler's formula looks as though it accumulates because the classical reading tells it as a
+journey round a circle; the function holds no journey, only the rule, available everywhere at once. So the geometry can
+say what a thousand steps would do without remembering one of them, and memory enters only when someone asks where a
+particular sequence has got to.
+
+| | memory | unit |
+|---|---|---|
+| the geometry: reads, and the laws relating them | none | none |
+| keeping: a write of the relation, which steps were taken | yes | none |
+| physics: a write of the scale, amounts | yes | yes |
 
 **Steps, never positions.** A sweep goes one way, from home toward the horizon, and where it stops is the next
 sweep's home: every sweep resets. A tenth of a sweep, then a fifth of a fresh one, then three tenths of another, is
