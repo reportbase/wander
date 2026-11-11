@@ -992,7 +992,11 @@ the sweeps. The running rates there are 1.1107 and 0.9003, not 1. **Classical**;
 **Tangent addition is the reader's; tan and arctan the writer's.** Evaluating tan or arctan converts between a direction
 and an angle, a share of the whole turn. The reader composes directions by tangent addition, (a ⊕ b) = (a + b)/(1 − ab),
 ratios to ratios; turns a reading over, s to 1/s; and orders readings. That is enough. Trigonometry as a whole is the
-writer's tool: it counts the places read and closes the turn, both of its signs held at once.
+writer's tool: it counts the places read and closes the turn, both of its signs held at once. The arctangent does one
+thing more, and worse: it eliminates the sweep. It names a single place on the turn, a third of the way to the horizon
+say, as though that place could be gone to directly. It cannot. A direction is had only within its sweep, with every
+direction between it and home had before it; the sweep starts at home and there is no other way in. So the arctangent
+is kept for the writer's formulas and avoided elsewhere.
 
 **Two 1's.** On the axes the three ways to measure a direction of the square agree: the largest component (the cube's),
 the sum h + v (the diamond's) and the length √(h² + v²) (the circle's) all give 1. At the corner they part: 1, 2 and √2.
