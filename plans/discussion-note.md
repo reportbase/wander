@@ -149,3 +149,21 @@ not used (unchecked).
 **Carried out** (11 Nov, R874; Tom: "update the papers, essays and merge"): items 11 and 12 are in *Reads and Writes*
 section 1 ("A law in place of memory") and section 6 ("Two ways to arrive"), essay 6 section 2 and essay 18 section 3.
 Item 10's candidate (the write of the relation as the count n) is not in the papers; it waits on Tom.
+
+13. **Read × count is the size in strides.** **Whose:** Tom's question, 11 Nov ("what does this say about read * write =
+   1"); Claude's reply. **Standing:** discussion; arithmetic from WLK run 1, no new run; not in the papers.
+   - On the walk the read is s = d_c/d (the mountain against the thumb) and the write of the relation is the count n of
+     strides left, n = d/S. Their product s.n = d_c/S is the same at every place: the corner distance in strides; times
+     H/L it is V* in strides. Neither a look nor a count has it alone.
+   - "= 1" is that constant in its own unit: with the road counted in corners, x = d/d_c = 1/s and s.x = 1 everywhere,
+     both 1 at the corner. This is R809's s.(1/s) = 1 with the 1/s given a meaning: the writer's line, even in strides.
+     The identity alone is trivial; what WLK adds is that 1/s falls by the same amount each stride, so it can be counted.
+   - Two looks and one stride give the product without finishing the walk: the smallest case, two reads and a count of one.
+   - The lander (fixed share) holds a ratio of reads and counts nothing: it has s and no n, so no product and no size.
+     The 1 is closed by a count, not by a ratio.
+   - On Euler's circle the same exchange is Z(s).Z(1/s) = -1; the corner is where the factors are equal (1.1, i.i).
+   - **Open:** this is not R804's pi/2 x 2/pi = 1 (the mean read over a sweep times the arc walked); both are x.(1/x),
+     but one has not been shown from the other.
+   **Next:** an exact check that joins the two (the walk's product along the line of sight and R804's over the sweep),
+   or a statement of why they are separate; then Tom's call whether it goes beside "Two ways to arrive". Bears on item
+   10 (the write of the relation as the count n): here the count is exactly what turns the read into a size.
