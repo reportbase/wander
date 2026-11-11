@@ -7410,6 +7410,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R830** (11 Nov; an explanation from ChatGPT pasted by Tom, then Tom: "add them and merge"): two points added to
+  R827's passage. *Reads and Writes* §4 "A moving sky": the ruling is one of classification, not measurability (the
+  rapidity can be observed and measured; a quantity does not become a read because a read lets it be inferred), and
+  the boost is no fiction fitted afterwards but a physical change of standpoint, seeing a pattern and naming the change
+  responsible being two steps. Essay 7 the same, with the mountain's height that is not a photograph. Not taken: the
+  paste's address/package analogy for evidence against the inferred map, since address and payload already name the
+  two parts of what arrives along one direction.
 - **R829** (10 Nov; Tom: "update the essays and demos"): R820–R828 carried out, no new claim. Essay 1 §"scale the
   world": three cautions (what is sorted is a variable; the two tests cross, four boxes, a writing on either side, a
   ratio of payloads the payload's unmoved box; joining reads gives a place, an order or a map, a rapidity or an angle
