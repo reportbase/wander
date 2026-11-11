@@ -122,3 +122,18 @@ not used (unchecked).
    never fills: a read fills it (which slope, now) or a write of the relation (how many, so far). The law is the
    expression; the read and the write are its arguments. **Next:** with item 10, a candidate wording for section 1's
    "A law in place of memory", for Tom, not yet in the paper.
+
+12. **Parallax as the link the law collapses; an infinite parallax collapsing into Euler's.** **Whose:** Tom, 11 Nov
+   ("Seems like parallax is the best candidate for the collapse. Maybe an infinite parallax collapses into ehulers"; R872). **Standing:** discussion; partly in *Reads and Writes* section 6 already ("the reads telescope").
+   Claude's reply:
+   - Parallax is the smallest unit with both halves: two reads and one counted step. A walk is that unit repeated.
+   - The finite collapse, exact and free: the ratios Z_(j+1)/Z_j along the walk multiply to Z_N/Z_0, the two end reads
+     alone, for any number of strides. No limit.
+   - The infinite collapse, the writer's: as the stride shrinks the parallax between neighbouring looks becomes a rate
+     (time to contact along the line of sight, motion parallax across it), and the turn gathered from far off to the
+     foot is the half circle +1 to -1, the writer's pi, e^(i.pi) = -1.
+   - Cautions: two different collapses (ends only, free; the total, a limit); and the strides are not Euler's
+     (1 + i.theta/n)^n, which is n equal small turns: a stride is a slide on the writer's line, uneven arcs on the
+     circle, largest at the foot. Both end at -1 by different routes.
+   **Next:** an exact check, offered to Tom, not run: stride-by-stride parallax as the stride shrinks gives the time to
+   contact and gathers exactly the half circle (the Cauchy's total again).
