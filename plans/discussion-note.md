@@ -94,3 +94,8 @@ a reading, a conjecture, a question); **next** (the test, or the place in the co
      The value pi is still only the writer's (R807, R808); every check here was rational.
    **Next:** if Tom wants it in the paper, a short passage in section 8 beside "Walking to the mountain"; and a view
    on `approach.html` or `euler.html` drawing w for both paces.
+
+**Carried out** (11 Nov, R869; Tom: "yes, update the papers, essays and demos."): items 7–9 are now in *Reads and
+Writes* §6 ("Two ways to arrive"), essay 6 §2, essay 18 §3, and notes on `approach.html` and its `demos.html` card.
+The proposed new paper is outlined in `plans/arrival-paper-outline.md`, awaiting Tom. The bee-landing references were
+not used (unchecked).

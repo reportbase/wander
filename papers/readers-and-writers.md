@@ -847,6 +847,24 @@ Z_N/Z_0, the first and last reads alone; every finite walk ends at its last read
 tends to −1. The writer names each point Z = e^(iα), α the span, and the end e^(iπ) = −1 (§9): the formula describes the
 end and drives nothing. **Checked** (the breath note's §5, at 30 digits; `approach.html`).
 
+**Two ways to arrive.** The thumb's corner has the same form. With s the mountain against the thumb, s = d_c/d,
+Z = (1 + is)/(1 − is) is near 1 far off, i where the mountain covers the thumb, and −1 at the foot; a place and its mirror
+d_c²/d have Z·Z′ = −1, §9's exchange. So the writer's e^(iπ) = −1 names the arrival, and i·i = −1 says the corner taken
+twice is the arrival. Three motions act on these reads, and they are the three kinds of map a line of slopes has (the
+classical elliptic, hyperbolic and parabolic maps of the projective line). A turn of the look leaves no read where it
+was. A pace that covers a fixed share of the distance left multiplies 1/s by the same factor each step; it leaves two
+reads where they were, home and the horizon, and carries every other from the first toward the second without reaching it.
+The foot is its limit, and it needs no count and no size: one reading held steady. A steady stride takes the same amount
+from 1/s each step, the stride over d_c; it leaves only home where it was, so nothing holds it off the horizon, and it
+passes Z = −1 in a finite count. Along it 1/s falls evenly, before the corner and after it alike: 1/s is the writer's
+line in units of d_c, and the corner is not marked on it; the corner belongs to the reads, the even steps to the count.
+Even in 1/s and even in ratio are different paces: a pace that is both takes no step. So the one −1 is reached by a
+count and approached by a ratio. Nor must the foot be walked to: two reads one counted stride apart, x₁ and x₂ in 1/s,
+give the strides left, x₂/(x₁ − x₂), and the breadth in strides, (H/L)/(x₁ − x₂), at any distance: places, in the
+walker's stride. Which pace a thing that approaches takes is not this paper's question; both stand on the same reads,
+which are there for anything that looks. **Checked** (WLK, exact: house, tower and mountain 3600/7, 18000/7 and 900000/7
+strides from the thumb's corner to the foot, each returning V\*).
+
 **Places come by degrees.** The crossing from reads to places, and from places to writes, is not a switch thrown.
 - *In what.* Two standpoints a step apart give every place in that step. If the step was one thumb, places are in thumbs
   and V is placed as V\*/H. Only a step counted in an agreed unit gives an amount, a write, the one rung scaling the world
@@ -1658,7 +1676,7 @@ aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan
 runs as they came out, the killed ones too, and none alone establishes the sort. Pages: `read.html`, `pinhole.html`,
 `crosshairs.html`, `heat-cube.html`, `euler.html`, `approach.html`, `slide-rule.html`, `star-field.html`. The read as a
 control: reportbase/calendar (`dial.js`, `dome.js`, `horizon.html`, `dome.html`, `dome-map.html`, `dome-instrument.html`).
-The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewrite's map from the record and its checklist:
+The mountain walk's two corners and paces: `plans/breath-note.md` §5. The stride and the fixed share: `plans/wlk-plan.md`, `runs/wlk/`. The rewrite's map from the record and its checklist:
 `plans/rw-rewrite-outline.md`. The known physics sorted by the two tests is the companion *Reads and Writes in Physics*
 (`papers/reads-and-writes-physics.md`), brought to R788's kinds (§12, O7).
 

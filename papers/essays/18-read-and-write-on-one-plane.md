@@ -100,6 +100,13 @@ directions, and choosing the thumb moves the second across the distances. They s
 independently, and they cross at one point: one thumb out along the look at 45°, which is where the series' heat is
 hottest, the thing looked at.
 
+**A walk on the plane.** Walk toward a mountain with the thumb held out and watch the point for the mountain's edge.
+Covering a fixed share of the distance left with every step is a steady slide across the plane, the same slide each step,
+and a steady slide never runs out of plane: the foot is its limit. A steady stride is not a slide here. It is even on the
+writer's line instead, where thumb over mountain falls by the same amount each stride, and it reaches the foot in a
+finite count. On the writer's circle, Z = (1 + is)/(1 − is), both run from 1 far off, through i at the corner, toward
+−1 at the foot: one arrives by counting, the other approaches by ratio, and a turn of the look does neither (WLK, exact).
+
 ## 4. The thumb's lay: distance as a turn
 
 The plane runs without end both ways across. The eye itself is infinitely far to the left, the horizon infinitely far to

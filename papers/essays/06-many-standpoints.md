@@ -72,6 +72,25 @@ growth. Reading at once recovers payloads relative to each other, never their sc
 
 ---
 
+**Two ways to arrive.** Hold your thumb out and walk toward the mountain. Take the reading upside down, thumb over
+mountain, and something plain appears: with a steady stride it falls by the same amount every stride, far off, at the
+corner where the mountain covers the thumb, and all the way to the foot. Nothing in that even ladder marks the corner; the
+corner is found by looking, the ladder by counting. For a house 12 m across and a thumb of 2 cm at 60 cm, the corner is
+360 m off and the ladder has 514 and two sevenths rungs of 0.7 m from there to the door; times the thumb's one in thirty,
+times the stride, that is 12 m. And you need not walk it: two looks one counted stride apart already give the strides
+left and the house's breadth in strides.
+
+There is a second way to arrive, and it counts nothing. Cover the same share of what remains with every step, a tenth,
+say. Then the reading grows by the same ratio each step, the approach slows as the thing nears, and in the ideal it never
+quite touches: the foot is a limit, met at no speed. A landing has this form; a walk has the first. The two are different
+paces, and no pace is both.
+
+The writer has one picture for both. Put each reading s on Z = (1 + is)/(1 − is): far off Z is 1, at the corner i, at
+the foot −1, the writer's e^(iπ) = −1. The steady stride reaches −1 in a finite count; the fixed share approaches it for
+ever; a turn of the look moves every reading and arrives nowhere. These are the three kinds of map the line of slopes
+has, and they are classical. What each thing that approaches does with them is its own affair; the readings they stand on
+are the same for all, and cost nothing (WLK, exact; `approach.html`).
+
 ## 3. The ladder
 
 Suppose each reader reads only directions: for each place on some figure, the direction in which it stands. Then there is
