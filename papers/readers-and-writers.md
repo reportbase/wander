@@ -1304,6 +1304,21 @@ statement about what a writer at work can hold, one binary digit a step, not abo
 Cauchy is seen a second way: it is the heat of one sweep, and it is also the one law a turn added to itself, again
 and again, leaves as it was.
 
+The quarter turn also reaches counts that show no turn at all. The sum of 1/n² over the odd numbers is exactly half
+the square of the quarter turn, 1 + 1/9 + 1/25 + … = ½·(π/2)², and the next ones are (π/2)⁴/6 and (π/2)⁶/15. The
+reason is the slope. One read runs from home to its horizon, a quarter turn in the writer's measure, and stops. The
+writer, joining facings, carries the slope on, and it meets a horizon at every odd multiple of the quarter turn. Euler's
+expansion (1748) writes the slope as the sum of those horizons' pulls: at a turn x, the slope is the sum over the odd
+numbers m of 2x/((m·π/2)² − x²). Close to home the slope is the turn itself, so the pulls must total 1 there, and that
+is the sum above. The even numbers add nothing new, the same sum over again at a quarter of the size, so the sum over
+all whole numbers is ⅔·(π/2)², the π²/6 of Basel. This is why the turn's constant appears in the share of whole
+numbers with no repeated prime factor, (3/2)·(2/π)², and in the total of a thermal spectrum: each passes through that
+sum. The sorting is as before. A read holds none of it, having one horizon and never passing it. A writer at work
+holds the partial sums, each a fraction. The value is the paper's, a count over all the odd numbers landing on the
+quarter turn squared. It was found by looking back from the answers, not predicted from the constructions: a rule
+that π appears exactly where a turn is taken whole failed a blind test on these very cases (the TWC plan, Code and
+data), and what is said here is where their π comes from, not a way to foresee it.
+
 Parallax (§6) is the case where the working writer is exact and the paper adds only units. Two standpoints a counted
 step B apart each read the target's slope off the line between them, s₁ and s₂, measured inward. The target's depth d
 off that line is then given by 1/(d/B) = 1/s₁ + 1/s₂, so d/B = s₁s₂/(s₁ + s₂): slopes 3 and 6 put it exactly 2 steps
@@ -1518,7 +1533,7 @@ cells: `plans/dyh-plan.md`, `runs/dyh/`. The Cauchy's routes: `plans/cauchy-rout
 reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `runs/txt/`. The reader's math in slopes: `plans/slp-plan.md`, `runs/slp/`. The tower and two thumbs:
 `runs/two/two_thumbs.py`. Three thumbs at the crosshair: `plans/thm-plan.md`, `runs/thm/`. The shape swept:
 `plans/swp-plan.md`, `runs/swp/`. Three laws on the sphere: `plans/eul-plan.md`, `runs/eul/`. Euler's formula as a count of
-reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The distance between
+reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The two completions tested blind, and the odd sums: `plans/twc-plan.md`, `runs/twc/`. The distance between
 standpoints: `plans/frg-plan.md`, `runs/frg/frg.py`. A flat chart in space: `plans/flc-plan.md`, `runs/flc/`. Epicycles and
 aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The data cases:
 `plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`; each records its
