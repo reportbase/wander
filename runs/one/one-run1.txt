@@ -1,0 +1,42 @@
+J1 the twin: |dh| and dv each sum to 1 on the three paths
+  J1 ok     chord: sum dv 1, sum |dh| 1, length 1.41421356237, mean 0.707106781187
+  J1 ok     square: sum dv 1, sum |dh| 1, length 2.0, mean 0.5
+  J1 ok     circle: sum dv 1.0, sum |dh| 1.0, length pi/2, mean 2/pi = 0.636619772368
+J2 corner to foot: the square's far edge, evenly
+  J2 ok     house: delta 7/3600, count 3600/7, delta x count 1, whole steps all delta, part stride 2/7 of one, sum |dh| 1
+  J2 ok     tower: delta 7/18000, count 18000/7, delta x count 1, whole steps all delta, part stride 3/7 of one, sum |dh| 1
+  J2 ok     mountain: delta 7/900000, count 900000/7, delta x count 1, whole steps all delta, part stride 3/7 of one, sum |dh| 1
+J3 pointwise = summed over what is left
+  J3 ok     house: s x strides-left x delta = 1 at 1,000 places (x from 1e-7 to 1e9)
+  J3 ok     tower: s x strides-left x delta = 1 at 1,000 places (x from 1e-7 to 1e9)
+  J3 ok     mountain: s x strides-left x delta = 1 at 1,000 places (x from 1e-7 to 1e9)
+J4 far start to the corner: the near edge, uneven, short by 1/x0
+  J4 ok     house, x0 2: first 514 steps uneven, each delta/(x(x-delta)); sum to the corner 1/2 = 1 - 1/x0
+  J4 ok     house, x0 30: first 14914 steps uneven, each delta/(x(x-delta)); sum to the corner 29/30 = 1 - 1/x0
+  J4 ok     house, x0 1000000: first 20000 steps uneven, each delta/(x(x-delta)); sum to the corner 999999/1000000 = 1 - 1/x0
+  J4 ok     tower, x0 2: first 2571 steps uneven, each delta/(x(x-delta)); sum to the corner 1/2 = 1 - 1/x0
+  J4 ok     tower, x0 30: first 20000 steps uneven, each delta/(x(x-delta)); sum to the corner 29/30 = 1 - 1/x0
+  J4 ok     tower, x0 1000000: first 20000 steps uneven, each delta/(x(x-delta)); sum to the corner 999999/1000000 = 1 - 1/x0
+  J4 ok     mountain, x0 2: first 20000 steps uneven, each delta/(x(x-delta)); sum to the corner 1/2 = 1 - 1/x0
+  J4 ok     mountain, x0 30: first 20000 steps uneven, each delta/(x(x-delta)); sum to the corner 29/30 = 1 - 1/x0
+  J4 ok     mountain, x0 1000000: first 20000 steps uneven, each delta/(x(x-delta)); sum to the corner 999999/1000000 = 1 - 1/x0
+   whole walk on the capped chart: near edge 1 (x0 -> infinity) + far edge 1 = length 2, dv 1 then -dh 1: 1/2 x 2
+J5 the walk's split is not the turn's
+  J5 ok     house: first arc / last arc 0.50048775; stride-weighted mean h 0.414325757, mean v 0.8812536439; 2/pi 0.6366197724
+  J5 ok     tower: first arc / last arc 0.50009731; stride-weighted mean h 0.4142590082, mean v 0.8813429993; 2/pi 0.6366197724
+  J5 ok     mountain: first arc / last arc 0.50000194; stride-weighted mean h 0.4142144713, mean v 0.8813729752; 2/pi 0.6366197724
+   limits: mean h -> sqrt2 - 1 = 0.414213562373, mean v -> asinh 1 = 0.88137358702
+   round chart corner to foot: dv = 1 - 1/sqrt2 = 0.292893218813, -dh = 1/sqrt2 = 0.707106781187, sum 1, arc pi/4
+   from 10 corners out to the foot: stride-weighted mean v = asinh(X)/X = 0.2998223; times length X = 2.998223 (not 1: v is not the walk's coordinate)
+   from 1000 corners out to the foot: stride-weighted mean v = asinh(X)/X = 0.0076009027; times length X = 7.6009027 (not 1: v is not the walk's coordinate)
+   from 1000000 corners out to the foot: stride-weighted mean v = asinh(X)/X = 1.4508658e-5; times length X = 14.508658 (not 1: v is not the walk's coordinate)
+J6 the fixed share never closes the 1
+  J6 ok     share 1/10: after 500 steps sum |dh| = 1 - (1-r)^500, short of 1 by 1.322e-23; mean step 2.000e-03
+  J6 ok     share 1/2: after 500 steps sum |dh| = 1 - (1-r)^500, short of 1 by 3.055e-151; mean step 2.000e-03
+
+J1 not killed
+J2 not killed
+J3 not killed
+J4 not killed
+J5 not killed
+J6 not killed

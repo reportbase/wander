@@ -889,6 +889,16 @@ lies on the circle exactly, where the factors of (1 + iθ/n)ⁿ (§9) do not: th
 at −1. **Checked** (WLK, exact: house, tower and mountain 3600/7, 18000/7 and 900000/7
 strides from the thumb's corner to the foot, each returning V\*).
 
+**Read times count.** On this walk the read is s and the write of the relation is the count n of strides left. Their
+product is the same at every place: s·n = d_c/S, the corner's distance in strides, and that times the thumb over the arm
+is the mountain in strides. Neither factor has it alone: a look gives s with no size in it, a count gives n with no
+mountain in it. Counted in corners in place of strides the product is 1 everywhere, s × (1/s), and both factors are 1 at
+the corner; what the walk adds to that identity is that 1/s is something counted, strides left times one stride's step.
+Two reads and a count of one already give the product, by the formulas above. The fixed share never does: it holds a
+ratio of reads and counts nothing, so it has s at every moment and no n, and its sum of steps falls short of the whole
+by (1 − r)^m after m steps, at every m. The 1 is closed by a count and only approached by a ratio. How this 1 stands to
+§9's 2/π × π/2 is said there. **Checked** (ONE, exact).
+
 **Places come by degrees.** The crossing from reads to places, and from places to writes, is not a switch thrown.
 - *In what.* Two standpoints a step apart give every place in that step. If the step was one thumb, places are in thumbs
   and V is placed as V\*/H. Only a step counted in an agreed unit gives an amount, a write, the one rung scaling the world
@@ -1270,6 +1280,19 @@ projection of a segment over all directions is 2/π of its length (Cauchy 1841),
 projection (Cauchy 1841; Crofton 1868), and Buffon's needle (1777) is the same 2/π met as a chance. What is ours is the
 assignment: the short factor to the read, the long one to the walk, their product to the two held together.
 **Classical**; the assignment is a reading.
+
+**The same 1 on the road.** §6's walk to the mountain has a 1 of this kind, and it is the square's row of the table, not
+the arc's. Take the reading as shares with the larger one full. Far off the thumb's share is full and the mountain's
+fills: from x₀ corners out to the corner it gains 1 − 1/x₀, all of it only for a walk begun without end. From the corner
+to the foot the mountain's share is full and the thumb's empties, by the same amount at every stride: one stride's step
+times the count of strides is exactly 1. Whole, that is ½ × 2. So the two 1's are one statement in form, a mean step
+times a count of steps is the whole crossed, measured in itself (the thumb in thumbs here, the corner's distance in
+corners there); and two in content, since the walker's steps are even in strides and the turn's are even in turn. The
+walk never has the arc's split: weighed by strides, the thumb's mean share from the corner to the foot is √2 − 1, not
+2/π. π comes with the turn's measure and with nothing else. The table has a twin as well: on every path the thumb's
+share empties by exactly 1 as the other fills by 1. One caution: each of these sums is a sum of differences and equals
+the difference of its ends whatever the steps, so the 1 itself cannot fail; what the check could have failed on is which
+path the walk is, that its steps there are even, and that its split is not the turn's. **Checked** (ONE, exact).
 
 **π/2 of relations and four facings make a circle.** The quarter turn is every way the vertical and the horizontal can
 relate, one slope s from all of h to all of v; weighed by the turn's heat and summed, those ways come to π/2. A relation
@@ -1700,7 +1723,7 @@ aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan
 runs as they came out, the killed ones too, and none alone establishes the sort. Pages: `read.html`, `pinhole.html`,
 `crosshairs.html`, `heat-cube.html`, `euler.html`, `approach.html`, `slide-rule.html`, `star-field.html`. The read as a
 control: reportbase/calendar (`dial.js`, `dome.js`, `horizon.html`, `dome.html`, `dome-map.html`, `dome-instrument.html`).
-The mountain walk's two corners and paces: `plans/breath-note.md` §5. The stride and the fixed share: `plans/wlk-plan.md`, `runs/wlk/`. The rewrite's map from the record and its checklist:
+The mountain walk's two corners and paces: `plans/breath-note.md` §5. The stride and the fixed share: `plans/wlk-plan.md`, `plans/one-plan.md`, `runs/wlk/`. The rewrite's map from the record and its checklist:
 `plans/rw-rewrite-outline.md`. The known physics sorted by the two tests is the companion *Reads and Writes in Physics*
 (`papers/reads-and-writes-physics.md`), brought to R788's kinds (§12, O7).
 

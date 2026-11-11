@@ -332,7 +332,9 @@ thumb is gained per step walked there. Summed over the walk the gain is all of v
 along the square's two edges ½ over a length 2. Only the split is the path's, and π is what the split costs when the path
 is the turn; in space the same split is ½ and 2, with no π. The 1 is the thumb, not the mountain. The mathematics is old
 (Cauchy's mean projection, 1841; Crofton; Buffon's needle, 1777); the assignment of the short factor to the read and the
-long one to the walk is ours.
+long one to the walk is ours. A walk straight toward a thing is the square's row: far off the thing's share fills, from
+the corner in the thumb's share empties by the same step each stride, and the step times the count is 1 with no π in it
+(essay 19, section 8).
 
 **π/2 of relations and four facings make a circle.** The quarter turn is every way the vertical and the horizontal can
 relate, one slope from all of h to all of v; weighed by the turn's heat and summed, those ways come to π/2. A relation is

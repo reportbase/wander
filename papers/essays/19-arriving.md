@@ -199,6 +199,20 @@ does not move it.
 **Carried in.** The stride in metres. Everything on the road stands without it. With it, the house is twelve metres;
 without it, the house is 17 and a seventh strides, and both statements are complete.
 
+The look and the count multiply to something neither has. House over thumb times strides left is the same number at
+every place on the road: the corner's distance in strides, which times the thumb over the arm is the house in strides. A
+look has no size in it and a count has no house in it; their product is the size. Count the road in corners in place of
+strides and the product is 1 everywhere, a reading times its own reciprocal, with both equal to 1 at the corner. That
+would be an empty identity if the reciprocal were only a number. On the road it is a count: strides left, times one
+stride's step. The lander holds a ratio of looks and counts nothing, so it has the reading at every moment and never the
+product; after any number of its steps something is left over. The 1 is closed by a count and only approached by a ratio.
+
+The series has another 1 of this kind: a thumb turned through its sweep is seen, on average, at 2/π of itself, the arc
+it sweeps is π/2 of itself, and the two multiply to 1 (essay 2). The road's 1 is the same statement, a mean step times a
+count of steps is the whole that was crossed, on a different path. Far off the house's share fills while the thumb's
+stays full; from the corner in, the thumb's share empties by the same step every stride. That is two straight edges, a
+half times two. The turn's edge is round, and π belongs to it alone. The walker never meets π.
+
 What is still not understood sits in the middle one. Something has to hold the count, and a look holds nothing. And a
 count assumes that a stride is the same stride each time, which the geometry does not supply: on the ladder one rung is
 exactly like the next, and a walker's strides are only roughly so. The read is solid. The write, even this smallest

@@ -164,6 +164,19 @@ Item 10's candidate (the write of the relation as the count n) is not in the pap
    - On Euler's circle the same exchange is Z(s).Z(1/s) = -1; the corner is where the factors are equal (1.1, i.i).
    - **Open:** this is not R804's pi/2 x 2/pi = 1 (the mean read over a sweep times the arc walked); both are x.(1/x),
      but one has not been shown from the other.
-   **Next:** an exact check that joins the two (the walk's product along the line of sight and R804's over the sweep),
-   or a statement of why they are separate; then Tom's call whether it goes beside "Two ways to arrive". Bears on item
+   **Checked** (ONE, `plans/one-plan.md` + `runs/one/`, 11 Nov; Tom: "merge. then 1."; J1-J6 not killed; R878). One
+   statement in form, two in content:
+   - The form: a mean step times a count of steps is the whole crossed, 1 because it is measured in itself.
+   - s.(1/s) = 1 is that sum applied to what is left: 1/s = strides left x the stride's step.
+   - The walk is R804 on the square path, counted in strides: far start to corner the near edge (short by 1/x0 from x0
+     corners out), corner to foot the far edge, evenly, step x count = 1. Whole, 1/2 x 2.
+   - R804's pi/2 x 2/pi is the same sum on the circle, counted in turn; the walk never has that split (its strides are
+     not even in turn; stride-weighted mean of h corner to foot is sqrt2 - 1, not 2/pi). pi comes only with the turn.
+   - R804 has a twin: h empties by 1 as v fills by 1 on every path.
+   - The fixed share has the mean and no finite count: its 1 is a limit.
+   **Next:** Tom's call whether it goes beside "Two ways to arrive" and R804's passage in section 9. Bears on item
    10 (the write of the relation as the count n): here the count is exactly what turns the read into a size.
+
+**Carried out** (11 Nov, R879; Tom: "update the papers, essays and merge"): item 13 is in *Reads and Writes* section 6
+("Read times count") and section 9 ("The same 1 on the road"), essay 19 section 8, essay 2 section 7 and essay 6
+section 2. Item 10's candidate still waits on Tom.
