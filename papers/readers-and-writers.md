@@ -53,7 +53,9 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   thumb at once, from one standpoint, *home*, at one moment, given whole (§3). A relation among the directions
   of one read, the separation of two of them, is of the read. The heat is the read's own measure on its directions,
   given with them and part of the read, not a further kind (§3). The paint met along a direction accompanies the read
-  and is no part of it (§4). One read holds no distance.
+  and is no part of it (§4). One read holds no distance. Its sweep runs from h to v on the thumb H alone, with no V in
+  it, and stops at its horizon: a read closes nothing. Each read is orthogonal to every other, standing by itself and
+  sharing nothing with them; closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
 - **D3. A place** is a gap across: a distance in thumbs, d/H, or one distance against another, d₁/d₂. Scaling the world
   leaves it unchanged, as it leaves a read; but no single read holds it. It needs a second standpoint and the step
   between them: parallax (§6). V\*/H, a party's true breadth in thumbs, is a place. A place is a relation
