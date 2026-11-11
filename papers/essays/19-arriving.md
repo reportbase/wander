@@ -213,6 +213,11 @@ count of steps is the whole that was crossed, on a different path. Far off the h
 stays full; from the corner in, the thumb's share empties by the same step every stride. That is two straight edges, a
 half times two. The turn's edge is round, and π belongs to it alone. The walker never meets π.
 
+So the smallest write has a plain description: it is a count of a repeated step from a kept mark. The mark is the
+count's zero; a distance put down in thumbs is a count of thumbs. And it is whole only in part. The house's corner is
+514 and two sevenths strides from the door; the two sevenths is not counted, it is seen, as the last part against a
+stride. A write of this kind is a whole count and one more look.
+
 What is still not understood sits in the middle one. Something has to hold the count, and a look holds nothing. And a
 count assumes that a stride is the same stride each time, which the geometry does not supply: on the ladder one rung is
 exactly like the next, and a walker's strides are only roughly so. The read is solid. The write, even this smallest

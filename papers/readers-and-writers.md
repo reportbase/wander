@@ -164,6 +164,18 @@ exactly, turns compose exactly by tangent addition. And the expression leaves a 
 gives the expression and never fills that place; a read fills it (which slope, now) or a write of the relation (how many,
 so far).
 
+**The write of the relation is a count.** In every case this paper works, what is kept comes to one thing: a count of a
+repeated step, from a kept mark. A count of strides is that plainly. A mark left at a start is the count's zero. A place
+put down in thumbs is a count of thumbs. So the n in the law's empty place is the write of the relation, and it is what
+turns a read into a size: on the walk the read times the count is the mountain in strides (§6, "Read times count"),
+which neither has alone. Three limits keep this honest. The count is whole only in part: the house's corner is 514 and
+two sevenths strides from its door, and the two sevenths is not counted but read, as the last part's ratio to a stride;
+a write of the relation is a whole count and one more read. A count takes its step to be the same step each time, and
+the geometry does not supply that: the law's rungs are exactly alike, a walker's strides only roughly. And where the
+count is held is not said here (the table's middle row, still open). Nor is it claimed that every keeping is a count: an
+order kept, which of two reads came first, is kept without a step being repeated (D7's orders; O4). **A reading**, resting
+on WLK and ONE.
+
 | | memory | unit |
 |---|---|---|
 | the geometry: reads, and the laws relating them | none | none |
