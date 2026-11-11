@@ -50,8 +50,8 @@ point moves sideways by ln k. Nothing moves up or down, and a slide keeps every 
 larger with the thumb, and no point of the page moves at all: a distance in thumbs is what it was. What that scaling
 moves is only where the across axis's zero sits against a unit outside the world, the thumb in metres, since
 ln(d/metre) = ln(d/H) + ln(H/metre) and only the last term changes. So the first test, scale the world, comes down to which part
-moved: what stays is a reading (up) or a place (a gap across, a distance in thumbs, one distance against another); what
-moves is the zero tied to a metre, a writing. The direction up is what one read holds. The distance across is a place:
+moved: what stays is a reading (up) or an extent (a gap across, a distance in thumbs, one distance against another); what
+moves is the zero tied to a metre, a writing. The direction up is what one read holds. The distance across is an extent:
 unmoved by scaling, but held by no single read, needing a second standpoint and the step between. Where its zero falls
 against a unit, the size of anything in metres, is the one number no reading or place fixes.
 
@@ -268,7 +268,7 @@ Almost all of it is old.
 - **The limit.** (1 + iθ/n)ⁿ is Euler's own route; the leftover of non-commuting steps in space is the Lie–Trotter
   formula (Trotter 1959).
 
-What is the series' own is the reading: up as the read, gaps across as places and the across zero as the write, the scale
+What is the series' own is the reading: up as the read, gaps across as extents and the across zero as the write, the scale
 test as which part moved, the two
 corners as its two mirrors, the thumb's lay as a turn in distance, the sphere as the writer's picture of why the charts
 agree, the heat as a count per chart, and the place where it stops as the place where reading and placing stay apart but
@@ -329,7 +329,7 @@ as a boost; the heat at each point and per chart; a line and a spiral with their
   falcons (*Falco peregrinus*). *Journal of Experimental Biology* 203, 3755–3763.
 
 The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`, rewritten 10 November on R788 with
-read, place and write): §2 ("The plane", "The thumb's lay is itself a turn", "π with the direction, e with the
+read, extent and write): §2 ("The plane", "The thumb's lay is itself a turn", "π with the direction, e with the
 distance"), §3 ("The heat depends on what it is counted per"), §8 ("What survives in space, and what does not", "Three
 loops") and §9 ("Euler's formula as a count of reads"). The rulings are SPN R580, R647, R736–R740, R743 and R788; the checks are `runs/elm/` (n reads), `plans/flc-plan.md` with `runs/flc/` (a flat chart for the read in space) and the page's own hook, `window.__euler`. The essays before
 this one: 2 (Euler's formula, the writer's notation), 4 (near and far, the three rulers), 7 (the moving sky), 13 (where

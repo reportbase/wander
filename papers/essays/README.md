@@ -12,7 +12,7 @@ Two ideas run through all of them:
 - **Reading and writing.** A reading is a ratio from a standpoint, free and unchanged when the world is scaled. A writing
   states amounts, and costs an amount carried in. Between them (since 10 November, R788) a *place*: a gap across Euler's
   plane, a distance in thumbs or V\*/H, unchanged when the world is scaled but held by no single read, given by
-  parallax. *Reads and Writes* was rewritten that day on read, place and write; essays that call a place a writing are
+  parallax. *Reads and Writes* was rewritten that day on read, extent and write; essays that call an extent a writing are
   to be read, and fixed, by it.
 - **The Cauchy.** The heat of a reader's directions, a continuous weight hottest along the look and cooling toward the
   horizon, what its thumbs, pointed at the mountain, give, the circle's geometry

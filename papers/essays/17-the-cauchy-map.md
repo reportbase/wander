@@ -346,7 +346,7 @@ second map in distance), `read.html` (the read with no world: the hemisphere in 
 The references are carried over from the essays before this one and *Reads and Writes*, where they were checked.
 
 The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`, rewritten 10 November on R788 with
-read, place and write): §3 ("Why there is no mean", "Where the heat comes from"), §4 ("Heat and paint"), §5 ("The
+read, extent and write): §3 ("Why there is no mean", "Where the heat comes from"), §4 ("Heat and paint"), §5 ("The
 crosshairs", "The overlay's heat in distance", "H is a zoom; K comes first", "Where the split falls") and §8 ("The read's
 heat covers the hemisphere"). The rulings are SPN
 R700–R707. The comparison of harmonic measure and the boosted sky on the sphere is EUL (`../../plans/eul-plan.md`), the

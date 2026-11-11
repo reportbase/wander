@@ -198,9 +198,9 @@ chart's far end: the running average climbs by about 1.47 for every tenfold furt
 belongs to that chart, not to the directions; the bounded chart s/(1 + s) of the same directions averages ½. The median and
 the quartiles name the same directions on every chart, because they commute with every order-keeping change, so they belong
 to the directions; the mean does not. A mean can be had, by a writer. Add the directions as unit vectors and the average
-points at the corner, at length 2√2/π, a writer's measure with π in it. Cap the world at some extent and the Cauchy has a
+points at the corner, at length 2√2/π, a writer's measure with π in it. Cap the world at some bound and the Cauchy has a
 mean, set by the extent (about 8.8 at a cap of a million): the mean appears only once an extent is written in, and its
-value is set by that extent, not equal to it. A computer's Cauchy has one for the same reason.
+value is set by that bound, not equal to it. A computer's Cauchy has one for the same reason.
 
 **The payload is not lost.** None of the payload goes into making the heat, so all of it arrives, along directions whose heat
 was known before it came, and the Cauchy gives it back four ways. By its ratios: two payloads read against each other, one light over
@@ -510,5 +510,5 @@ heat is given before anything arrives, and what arrives is met along it. The hea
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
   *Physics Letters A* 128, 391–394.
 
-The theorem and its proof are in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read, place and write, whose §4 has the lighthouse and Mercator's map), §7.2 (Theorem 6), with the closure table, what breaks
+The theorem and its proof are in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read, extent and write, whose §4 has the lighthouse and Mercator's map), §7.2 (Theorem 6), with the closure table, what breaks
 it, the four cases and the three cases in data; the background in §1.

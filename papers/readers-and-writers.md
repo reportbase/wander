@@ -23,7 +23,7 @@ across part has one more term, ln(d/metre) = ln(d/H) + ln(H/metre). Scaling the 
 factor (the reader's own thumb and stride with it), leaves the direction and the distance in thumbs where they were
 and moves only that last term, the thumb in metres, by the same amount for every point. That one motion sorts
 everything an observer can hold into three kinds. A **read** is the direction, [h : v]: one standpoint has
-it, and scaling moves it not at all. A **place** is a gap across, a distance in thumbs or one distance against another:
+it, and scaling moves it not at all. A **parallax extent**, an *extent* for short, is a gap across, a distance in thumbs or one distance against another:
 scaling leaves it unchanged too, but no single read holds it; it needs a second standpoint and the step between
 (parallax). A **write** is an amount, the across axis's zero tied to a unit carried in from outside, a metre or a second:
 it is exactly what scaling the world moves. The write is the scale-variant companion of the read.
@@ -50,8 +50,8 @@ which need a unit, with the plane as the frame that holds the division in one li
 **The room, without a ruler.** Stand in a corner of a room, look at each thing, and note where it is: so far round, so
 far up. You have every thing's direction and nothing's distance; a room twice as large, seen from the same corner, gives
 the same notes. That is a read. Take one stride along the wall and look again. Each thing's two directions cross, and
-where they cross is its place, in strides: the room now has a shape and a size in your stride, and a room twice as large,
-walked with a stride twice as long, gives the same places. That is a place. Count the stride in metres, and the room is
+where they cross gives how far off it is, in strides: the room now has a shape and a size in your stride, and a room twice as large,
+walked with a stride twice as long, gives the same extents. That is an extent. Count the stride in metres, and the room is
 in metres; a room twice as large now gives numbers twice as large. That is a write.
 
 - **D1. One point, two parts.** A point seen from a standpoint is, in the writer's notation, ln(z/H) = ln(d/H) + iθ, H
@@ -66,19 +66,24 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   and is no part of it (§4). One read holds no distance. Its sweep runs from h to v on the thumb H alone, with no V in
   it, and stops at its horizon: a read closes nothing. Each read is orthogonal to every other, in the plain sense of
   independent: it stands by itself and shares nothing with them. No inner product is meant, and two reads can still
-  be related from outside, by a place, an order or a map (D7); closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
-- **D3. A place** is a gap across: a distance in thumbs, d/H, or one distance against another, d₁/d₂. Scaling the world
+  be related from outside, by an extent, an order or a map (D7); closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
+- **D3. A parallax extent**, an **extent** for short, is a gap across: a distance in thumbs, d/H, or one distance
+  against another, d₁/d₂. Scaling the world
   leaves it unchanged, as it leaves a read; but no single read holds it. It needs a second standpoint and the step
-  between them: parallax (§6). V\*/H, a party's true breadth in thumbs, is a place. A place is a relation
+  between them: parallax (§6), which is why it carries that name. It has two named cases: a *parallax distance*, d/H,
+  along the line of sight, and a *parallax breadth*, V\*/H, across it. The word says how far or how large, not where: a
+  read has no position (below, "Steps, never positions"), and an extent is not one either. In this paper "extent"
+  without more is always in thumbs or steps; a size in a unit is a write (D4). The verb stays "to place": a step places
+  a thing, and what it gives is an extent. V\*/H, a party's true breadth in thumbs, is an extent. An extent is a relation
   between standpoints and named things in space; not every number had from two reads is one (§12, O9).
 - **D4. A write** is an amount in a unit carried in from outside the world: a metre, a second, a hertz, an agreed
   notch. For the geometry it is the across axis's zero tied to a unit, a distance in metres, and one such amount serves
-  every place hung from the same thumb (§7). A payload has writes too: a frequency in hertz, a brightness in watts.
+  every extent hung from the same thumb (§7). A payload has writes too: a frequency in hertz, a brightness in watts.
   Scaling the world in a write's own dimension moves it (D5). A change of units is a different operation from scaling
-  the world: it moves every write's number and no place, no read as the reader holds it (an angle in degrees is the
+  the world: it moves every write's number and no extent, no read as the reader holds it (an angle in degrees is the
   writer's coordinate on a read, and its number follows the writer's choice of degree or radian).
 - **D5. The first test.** Multiply every length in the world by k, the reader's thumb and stride included; the units
-  stay outside the world. What moves is a write. Among the geometry's quantities, what stays is a read or a place.
+  stay outside the world. What moves is a write. Among the geometry's quantities, what stays is a read or an extent.
   This is the geometric test, and it
   sorts the geometry. In general the test is a named scaling, one dimension at a time: multiply every amount of that
   dimension in the world by k, the world's constants of that dimension included, the unit staying outside. A quantity
@@ -99,32 +104,32 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   read: a boost is a change of standpoint, so it is not among the changes of what arrives, and it moves the read. A
   relation between two standpoints that is not a distance is, where it carries one read's directions to the other's,
   a map (D7), and a number such as the rapidity is that map's coordinate, not a read (§4). Whether every such relation
-  is a place, an order or a map is not claimed and stays open (§12, O4, O9). A worked case, with
+  is an extent, an order or a map is not claimed and stays open (§12, O4, O9). A worked case, with
   everything named. The standpoint is a floor corner, the look along one wall; a red wall stands 3 m off, and one
   point of it lies at slope ½. Three candidates: that point's slope; its share h² = 4/5; and the brightness arriving
   from it over the brightness arriving from a second point at slope 2. Held fixed: the standpoint and the look.
   Changed: the wall is repainted blue, then taken away for a row of trees 10 m off. The slope is ½ and the share 4/5
   before and after; they are of the read. The ratio of brightnesses changes at each step; it is a ratio of payloads,
   though scaling the world never moved it.
-- **D7. Joining and recording.** Joining reads, two standpoints or two moments, can give places, orders or maps, not
-  writes. These are distinct relations, told apart by what each is. A place involves a gap in space (D3). An order is a
+- **D7. Joining and recording.** Joining reads, two standpoints or two moments, can give extents, orders or maps, not
+  writes. These are distinct relations, told apart by what each is. An extent involves a gap in space (D3). An order is a
   relation with no cycle: which read is before which. A map carries one read's directions to another's, as a turn of
   the look or a change of motion does; it has an inverse, and maps compose. An order and a map hold no gap. A map's
   coordinate, a turn's angle or a boost's rapidity, is a representation of the map, not a further relation. This names
   the relation being formed; it does not say every relation between reads is one of the three (§12, O4, O9). A
   count, or a mark kept, is how a write is recorded; being an amount in a unit is what makes it a write. A count of
-  strides is a whole-number record of a ratio d/stride, a place; the same count with the stride in metres is a write.
-  A quantity's kind is what it is, not how it was had: a place is a scale-invariant gap across, usually had by parallax,
-  and a distance in thumbs handed over by another observer is still a place. The kind attaches to the variable, not to
+  strides is a whole-number record of a ratio d/stride, an extent; the same count with the stride in metres is a write.
+  A quantity's kind is what it is, not how it was had: an extent is a scale-invariant gap across, usually had by parallax,
+  and a distance in thumbs handed over by another observer is still an extent. The kind attaches to the variable, not to
   its law: a Cauchy law on a direction's slope and a Cauchy law on the quotient of two amounts are two variables with
   one law, and the law alone does not say which is which. And a read is a direction, not a pairing of a direction with
-  a source: which thing paints a direction is part of what arrives. Likewise a place is a gap to a named thing, not to
+  a source: which thing paints a direction is part of what arrives. Likewise an extent is a gap to a named thing, not to
   whatever is met along a direction. What is classified, throughout, is a variable: a quantity said of something named,
   this direction, that gap, this light's frequency. A relation between two variables is another variable and is put to
   the same tests; it does not inherit the kind of what it relates. A representation of a variable, its number in a
   coordinate, a count, a mark kept, has the variable's kind: an angle in degrees and a pixel's index are reads in the
   writer's coordinate and count. Only a unit carried in makes a write in D4's sense, a write of the scale. Keeping is
-  a write of a second kind, a write of the relation: a count of steps kept, a mark left at a start, a place put on
+  a write of a second kind, a write of the relation: a count of steps kept, a mark left at a start, an extent put on
   paper in thumbs. It holds no unit and no scaling of the world moves it, and it is not a read either, since a read
   keeps nothing. The first test tells the two writes apart; what tells a write of the relation from a read is only
   that it was kept. Reading and the write of the relation are both prior to physics: neither holds a unit, and a
@@ -165,7 +170,7 @@ gives the expression and never fills that place; a read fills it (which slope, n
 so far).
 
 **The write of the relation is a count.** In every case this paper works, what is kept comes to one thing: a count of a
-repeated step, from a kept mark. A count of strides is that plainly. A mark left at a start is the count's zero. A place
+repeated step, from a kept mark. A count of strides is that plainly. A mark left at a start is the count's zero. An extent
 put down in thumbs is a count of thumbs. So the n in the law's empty place is the write of the relation, and it is what
 turns a read into a size: on the walk the read times the count is the mountain in strides (§6, "Read times count"),
 which neither has alone. Three limits keep this honest. The count is whole only in part: the house's corner is 514 and
@@ -251,32 +256,32 @@ own space (§4), and D6, not this table, sorts it.
 | | moved by scaling? | held by one standpoint? | kind |
 |---|---|---|---|
 | a direction [h : v] (up) | no | yes | read |
-| a gap across: d/H, d₁/d₂, V\*/H | no | no: two standpoints and the step | place |
+| a gap across: d/H, d₁/d₂, V\*/H | no | no: two standpoints and the step | extent |
 | the across zero tied to a unit | yes | no | write |
 
-Read, place and write are so the named outcomes of two tests that cross, and the crossing has a fourth box, the
+Read, extent and write are so the named outcomes of two tests that cross, and the crossing has a fourth box, the
 payload's:
 
 | | the geometry: stays when what arrives changes (D6) | the payload: changes with what arrives (D6) |
 |---|---|---|
-| unmoved by scaling (D5) | a read (one standpoint), with its heat; a place (two, a gap); an order or a map (two, no gap) | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
+| unmoved by scaling (D5) | a read (one standpoint), with its heat; an extent (two, a gap); an order or a map (two, no gap) | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
 | an amount in a unit (D4), moved by its own dimension's scaling | a write: a distance in metres | a write: a frequency in hertz, a brightness in watts |
 
-A write is found in both columns; a read and a place are the geometry's alone; a ratio of payloads is the payload's
+A write is found in both columns; a read and an extent are the geometry's alone; a ratio of payloads is the payload's
 counterpart of a read, unmoved by scaling and not a direction of the geometry. Being unmoved by scaling therefore never
 shows that a quantity is a read. One thing can supply several variables of different kinds: a pixel's value in the
 sensor's unit is a payload's write, its ratio to its neighbour a ratio of payloads, the pixel's position in the grid a
 writer's count of directions.
 
 **The writer, as a vantage.** *The writer* names the vantage that holds everything at once: both signs of every axis,
-the turn completed, the extents in amounts, the unit. Much of what it holds is places and completed joins (the circle
+the turn completed, the sizes in amounts, the unit. Much of what it holds is extents and completed joins (the circle
 held whole, the facings joined, π); what only it holds is the amount, the write. So "the writer's" for π, for the
 one-length circle or for trigonometry means held from that vantage, joined and completed, not that it is a write. An
 observer reads while it stands and turns, places while it walks and counts, and writes when it agrees a unit; the words
 name acts, not kinds of observer.
 
 **V.** V is the other party's breadth, the mountain in the distance that the thumb is held up against. A reading is a
-ratio of the thumb's own shares; V was never in it, and it does not "cancel" from it. V\*/H is a place, had by walking;
+ratio of the thumb's own shares; V was never in it, and it does not "cancel" from it. V\*/H is an extent, had by walking;
 V in metres is a write, had by walking and a unit. Neither is a shortcoming of the read: the horizon, the corner as a
 median and the absence of any mean are what a read with no breadth in it is.
 
@@ -301,7 +306,7 @@ median and the absence of any mean are what a read with no breadth in it is.
 | | hemispheres | facing | V | the writer's number for it | the act it measures |
 |---|---|---|---|---|---|
 | inscribed, toward the universe | one | home to a horizon | unknowable | 2/π, approached | reading: what turning sees |
-| central, toward the apple | one | across, to a rim | knowable | π/2, reached | walking: the arc counted in thumbs, a place; a write with a unit |
+| central, toward the apple | one | across, to a rim | knowable | π/2, reached | walking: the arc counted in thumbs, an extent; a write with a unit |
 | the apple held and turned | both, in reach | turned, the turn known | known, held | the turn's Cauchy | holding |
 | the paper | both at once | none | known | 1 | the read and the walk held together |
 
@@ -324,7 +329,7 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
 **Words used throughout.** These carry over from the rulings and hold in every section.
 - When H comes up, name the thumb.
 - A reader's far field is said in ratios: a thing one thumb wide reads one in two, one in four, one in eight. Counted in
-  thumbs, two, four, eight thumbs out, it is a place. Never "doubling" or "level".
+  thumbs, two, four, eight thumbs out, it is an extent. Never "doubling" or "level".
 - A reader has a vantage, never a shape: no circle, no sphere, no body.
 - *Heat* and *paint* for what the read has and what it meets; *address* only as a computing metaphor or for a count of K
   places at the heat's quantiles (§5).
@@ -334,7 +339,7 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
 
 **Continuous and discrete.** A read is continuous: a turn passes through every direction between two, and nothing in it
 is counted. A count, of strides, of units on a ruler, of digits, is discrete, with a next and, if finite, a last. Counts
-are how places and writes are kept. The writer's continuous things, the real line, the circle held whole, π and e, are
+are how extents and writes are kept. The writer's continuous things, the real line, the circle held whole, π and e, are
 counts carried to their limit and held as finished, so there are two continuities: the reader's, never counted, and the
 writer's, a count completed. These are the acts idealized: a sensor that samples has already counted, and no real
 instrument is a pure read; what the paper offers real instruments is the two tests, quantity by quantity (§6, "Turns,
@@ -351,7 +356,7 @@ ln(H/metre), and scaling adds ln k to the last term only. So:
 - **Up is the read.** The direction [h : v], and every difference of directions. The writer draws it at θ, where turns
   add; the reader holds its slope s = v/h, and two turns compose as s₁ ⊕ s₂ = (s₁ + s₂)/(1 − s₁s₂), the angles'
   addition with no angle in it.
-- **Gaps across are places.** ln(d₁/H) − ln(d₂/H) = ln(d₁/d₂), and ln(d/H) itself, a distance against the thumb, since
+- **Gaps across are extents.** ln(d₁/H) − ln(d₂/H) = ln(d₁/d₂), and ln(d/H) itself, a distance against the thumb, since
   the thumb scales with the world. A slide across keeps every gap.
 - **The across axis's zero, tied to an outside unit, is the write.** ln(H/metre) is the one number scaling the world
   moves.
@@ -364,7 +369,7 @@ after over the same line before, k·e^(iα); the real part of its logarithm is t
 Across, the zero is the thumb, d = H. Both are the reader's: home is where it faces, the thumb what it holds out. The
 axes differ in how they end. Up closes: within one read it runs from home to a horizon a quarter turn off, never reached,
 and it wraps (θ and θ + 2π one place) only when turns are joined. Across is open both ways: no total, no natural size,
-nothing on it marking a place but the thumb. That is why no read and no place gives the overall size: there is no mark on
+nothing on it marking a place but the thumb. That is why no read and no extent gives the overall size: there is no mark on
 the open axis to read it against, until a unit is carried in.
 
 **The two corners are the plane's two mirrors.** The horizontal line s = 1 (the writer's θ = 45°) is fixed by the reading's reciprocal,
@@ -423,8 +428,8 @@ shares of one thumb, the corner, the horizon, the Cauchy, order. Classically it 
 through one point, projective geometry seen from a standpoint (incidence, order, cross ratio, no length), with a home and
 a corner of its own (Klein 1872). It can be reached two ways: as lines through the origin of a plane with the scale
 divided out, the writer's route; or from incidence and order alone, with no length to set aside (von Staudt 1847), the
-reader's. Places add gaps across, still with no unit: the shape and size of a room in strides. *Physical geometry* has
-the unit: lengths and extents in amounts, the writer's cube with a number line on each axis, x² + y² = r² with r in
+reader's. Extents add gaps across, still with no unit: the shape and size of a room in strides. *Physical geometry* has
+the unit: lengths and sizes in amounts, the writer's cube with a number line on each axis, x² + y² = r² with r in
 metres. Physics enters there, with the unit: a unit injects physics into a relation. The two are orthogonal. The
 geometry is complete without physics: every read, and every relation kept, stands with no unit anywhere; and
 physics, when it enters, assigns amounts and moves none of them. Picture reality as a sheet of paper
@@ -450,7 +455,7 @@ gives its geometry: the corner where the thumbs cross, the fingers spread from i
 thumb. A writer watching would say that a length held and turned about one end traces a circle, and would call it
 V = H, the thumb equal to the mountain: the *one-length circle*, held whole, with a circumference and an area. The reader
 does not draw it. Circles and spheres are a line's whole turn held at once, the writer's. A reader has a standpoint and
-the turn from it; walking round a shape, it gets places, and with a unit it writes (§6, §7).
+the turn from it; walking round a shape, it gets extents, and with a unit it writes (§6, §7).
 
 **The uniform turn.** A turn measured by itself is uniform: equal turns, equal shares. In the reading s = v/h the
 uniform turn over a quarter turn has the law
@@ -472,7 +477,7 @@ statistics do not depend on the chart: the median and quartiles commute with eve
 does not. So the median is the directions' and the mean the chart's. A mean of directions is well defined once an embedding is
 chosen, and choosing one is the writer's step: unit vectors
 over the uniform quarter turn average (2/π)(1, 1), pointing at the corner, of length 2√2/π ≈ 0.900. And a world capped at
-an extent M has a Cauchy with a mean, (1/π)·ln(1 + M²) over the share below M, about 8.8 at M = 10⁶: set by the extent, an
+a bound M has a Cauchy with a mean, (1/π)·ln(1 + M²) over the share below M, about 8.8 at M = 10⁶: set by the bound, an
 amount written in. The payload, where it is an amount, averages (§4). Practice already takes the median of a Cauchy and
 never its mean; this is the reason. **Classical**; the reason is a reading.
 
@@ -483,7 +488,7 @@ Derived from what is held, it comes in three forms.
   The share passed before the reading reaches s is, in the writer's account, (2/π)·arctan s: the standard half-Cauchy,
   scale 1, median at the corner. The scale is 1 because a reading is a ratio, and a ratio carries no scale.
 - *Two axes drawn.* Draw the second axis at a length V of its own: the point (H cos θ, V sin θ), the reading
-  (V/H)·tan θ, a Cauchy of scale c = V/H, its median at c. Scaling leaves c unchanged, so c is a place, not a write; but
+  (V/H)·tan θ, a Cauchy of scale c = V/H, its median at c. Scaling leaves c unchanged, so c is an extent, not a write; but
   it needs two lengths held against each other, as √2 needs the square's two sides.
 - *A line in the world.* A lamp turning uniformly lights a shore at distance d; its landings x = m + d·tan θ follow
   C(m, d), quartiles m ± d. In metres both parameters are writes. The angles follow the uniform turn whatever d is; the
@@ -496,7 +501,7 @@ the ratio is no Cauchy at all.
 | form | what is held | scale | location | kind |
 |---|---|---|---|---|
 | one length turned | H | 1 | 0 (the corner) | read |
-| two axes drawn | H and V | V/H | 0 | a place (two lengths held) |
+| two axes drawn | H and V | V/H | 0 | an extent (two lengths held) |
 | a line in the world | the line's place | d | m | writes, in a unit |
 
 So V enters the Cauchy as its scale, and only there. The point m + iγ that indexes the family is the standpoint's place
@@ -555,10 +560,10 @@ carries it as its measure of distinguishability: the Fisher metric of C(m, γ) i
 metric, and the divergence between two members is 2·ln cosh(d/2), d their Poincaré distance in the upper half-plane, the one with
 ds² = (dm² + dγ²)/γ² (Chyzak and Nielsen give
 the closed form). Every real Möbius map leaves it as it was, scaling among them; it joins two standpoints. Where the two
-differ in position, a foot and a height over one line, it is a place (D3): unmoved by scaling, held by no single read,
+differ in position, a foot and a height over one line, it is an extent (D3): unmoved by scaling, held by no single read,
 a gap in space. At one foot the distance is |ln r| for heights in the ratio r, the gap across of §2; standing higher on
 both sides only makes them harder to tell apart. The same distance between two standpoints at one position that differ
-by a boost is the rapidity (§4), and there it is no place: no gap in space lies between them, and the number is the
+by a boost is the rapidity (§4), and there it is no extent: no gap in space lies between them, and the number is the
 coordinate of a map (D7). The formula is one; what it is said of decides the kind. **Checked** (FRG); classical.
 
 **Where the heat comes from.** The read is a heat map: a continuous weight over its readings, with nothing counted in it.
@@ -599,7 +604,7 @@ nothing. **Classical.**
 thing is, to one read, the directions it paints. Its shape is a radius along each direction from its own centre, and no
 radius is in a read: a single read determines no distance along any direction, and so no shape. A shape comes back only
 from more than the bare read: from structure in the paint (ratios of radii carried by what arrives, §4), or from further
-standpoints as places, in the stride; with a unit, in metres. The
+standpoints as extents, in the stride; with a unit, in metres. The
 reader's side is whole; the shape was never the read's to lack.
 
 **Passive.** The reader sends nothing. It is not a radar. A ranging instrument carries in the signal's speed and a
@@ -616,7 +621,7 @@ lay them, and wherever the hand is held the geometry gives the same fingers spre
 below the corner. Each finger is lit by the pane it lines up with: the coloured light is the paint, the world's, met on
 the fingers, and it changes with what is in front of them. No colour carries how far the light came; walking is the way
 to distance (§6). Hold the thumb against a mountain range and the range spans so many fingers; drawn at the thumb's own
-size, every amount read from it would be off by V\*/H, a place had only by walking (§10). The fingers are coloured,
+size, every amount read from it would be off by V\*/H, an extent had only by walking (§10). The fingers are coloured,
 never colour: painting on them would be writing. In space the window is held with both hands (§8). **Reading**; after
 Gibson's ambient optic array (1979). The world decides what meets each direction, which
 thing is nearest and what it sends back; nothing it does moves a direction or its heat. Scale the world and nothing moves;
@@ -630,7 +635,7 @@ stable.
 - *By its ratios.* Two payloads read against each other make a direction [p₁ : p₂] in the payload's own space, unmoved
   by scaling: the light along one direction over the light along another, one colour channel over another, the radius in
   one direction over the radius in another. A shape about a centre, ln r = a₀ + f(θ) (the real part of ln z as a function
-  of the turn), comes back this way: every mode of f from ratios of radii, exactly. The modes are places (gaps across,
+  of the turn), comes back this way: every mode of f from ratios of radii, exactly. The modes are extents (gaps across,
   D3); a₀, the overall size, is the across value against a unit, a write, and no ratio gives it. Radio astronomy reads
   polarization this way: a source's intrinsic polarization angle, from the ratio of its Stokes U to Q, is unmoved by
   scale, while the Faraday rotation that turns it, RM·λ², carries the rotation measure in radians per square metre, a
@@ -689,7 +694,7 @@ afterwards: it is a physical change of standpoint, and seeing a pattern and nami
 two steps. The inference is conditional on the
 premise: directions alone do not give the sky's rest frame, nor show that such a frame is the only one. Taken as the
 sky's median before a boost against after, the same coordinate is had by joining two looks at one position, with no gap
-in space: a map again, not a place. The speed in metres a second needs c carried in, and D read as a line's shift needs the
+in space: a map again, not an extent. The speed in metres a second needs c carried in, and D read as a line's shift needs the
 line's rest frequency: both writes. **Classical**; the sorting is a reading.
 
 ## 5. Near and far
@@ -705,7 +710,7 @@ Cauchy itself has neither. Along every direction one thumb splits the heat in di
 proportion, the first half of the thumb as much as the second. The far field is read in ratios: a thing one thumb wide
 reads one in two, one in four, one in eight, and two far things are related by the ratio of their readings ("one in eight
 is half of one in four"), the same at every scale. Each stretch over which the reading halves holds the same heat as the
-one before, out toward the horizon. Counted, "8 thumbs out, three stretches past the corner", it is a place; given a
+one before, out toward the horizon. Counted, "8 thumbs out, three stretches past the corner", it is an extent; given a
 value, 1 + ln(d/H) with a base chosen (§2), or 2 − H/d on a lay that keeps all of reality within two thumbs, it is the
 writer's number for what the read holds as a ratio. There is one corner, the split between the near field and the first
 stretch; past it the stretches are plain. Move the crosshairs and the split goes with them.
@@ -764,7 +769,7 @@ optimal: the corner is where a reading's cells are finest relative to their plac
 parallax's corner, where a step of two thumbs places it with the least error (§6). Putting the thing looked at on the
 corner is what a reader should do; whether readers do is open (§12).
 
-**K and N.** N is how many items there are; K how many are held. To know N is to know the whole, its extent in amounts
+**K and N.** N is how many items there are; K how many are held. To know N is to know the whole, its size in amounts
 and how much is in it: a write. A reader never knows N; it knows K, read continuously as the turn is, a fineness with no
 last place. Laid out as K places at the heat's quantiles, K *addresses*, it is a count, and addresses here are always
 that; as a metaphor they serve where they connect the Cauchy to computing (a direction looked along is like an address
@@ -794,15 +799,15 @@ broad form stays, the fine circles fade first, the height setting how much detai
 standpoint stepped toward where the detail is: the Takenaka–Malmquist terms, chosen one at a time to take the most of what
 is left (adaptive Fourier decomposition; Qian and Wang 2011). On an outline with one dent, the best 85 circles draw it to
 a part in a thousand; eleven such terms do, every one standing at the dent. On a broad outline the even circles win, ten
-against nineteen. The radii drawn are places about the centre; the overall size a₀ is in none of the terms. **Checked**
+against nineteen. The radii drawn are extents about the centre; the overall size a₀ is in none of the terms. **Checked**
 (EPI).
 
-## 6. Across: places
+## 6. Across: extents
 
-**Parallax is the passage from a read to a place.** One standpoint gives directions and a frame, and no size: every
+**Parallax is the passage from a read to an extent.** One standpoint gives directions and a frame, and no size: every
 ghost of the room, twice as far and twice as large, gives the same readings. A second standpoint adds the step between
-the two. Each point, matched in both looks, is two rays crossing, and its place comes out of the crossing, in the step's
-length. More standpoints give every place seen. This is how an observer reconstructs the shape of the writer's cube,
+the two. Each point, matched in both looks, is two rays crossing, and its distance comes out of the crossing, in the step's
+length. More standpoints give every extent seen. This is how an observer reconstructs the shape of the writer's cube,
 in its own stride; the cube in metres needs the stride counted in metres, a write (§7).
 
 **Parallax is a sum of reads.** Put two standpoints a step B apart and let each read a point in its h/v chart along the
@@ -816,12 +821,12 @@ point w = (c + iγ)/(1 − iγc) in that chart, c its true value (a law written 
 scale, as McCullagh 1992 does), and the depth is exactly a Cauchy whose point is the same triangulation done on the two
 points: D = B/conj(w_a + w_b), at every γ, not only for small errors; rays that do not meet ahead are part of the law, as
 negative depths. At the pair's corner, the circle on the step, the depth's point stays at the true distance d, turned by
-twice the read's error: D = d·(1 + iγ)/(1 − iγ) (the writer's d·e^(2i·atan γ)). Two things leave the family. The place across the line of sight,
+twice the read's error: D = d·(1 + iγ)/(1 − iγ) (the writer's d·e^(2i·atan γ)). Two things leave the family. The extent across the line of sight,
 −1 + 2·cot a/(cot a + cot b) in half-steps, has a density over each standpoint that is infinite, where a Cauchy's never
 is. And when each standpoint reads only a quarter turn, the sum of two half-Cauchys has density (4/π²)·s near zero, so
 the depth's tail falls as 1/d³, not 1/d², and that depth has a mean. Repeating the reads, the mean of the reciprocal
 depths gains nothing, while their median narrows. The step is the one length in it, and in thumbs or strides the depth
-is a place. **Checked** (PXS).
+is an extent. **Checked** (PXS).
 
 **Turning teaches the directions; walking teaches the world.** A standpoint has two motions, a turn about itself and a
 step along a line. A turn moves every direction by the same angle, near and far alike: it gives the frame, the corner and
@@ -837,7 +842,7 @@ contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car s
 it needs to stop is the distance it has. Sorted: from two reads a tick apart the number is x₂/(x₂ − x₁) = d₁/B, the thing's distance over the step between
 the two reads. That is a ratio of two distances, unmoved by scaling and held by no single read, and so far it is D3's
 gap across with nothing temporal in it. Read as a time, the ticks still to come, it adds a premise no read holds: that
-the steps go on alike. Whether a count of ticks to a prospective event is a place is left open (§12, O9); τ in seconds
+the steps go on alike. Whether a count of ticks to a prospective event is an extent is left open (§12, O9); τ in seconds
 is a write. One stream cannot tell
 a thing coming nearer from a thing growing where it stands; a neighbour at the same depth, read at once, tells them apart,
 approach moving both readings and growth one. A speed in metres a second is a write twice over. **Classical** (Lee);
@@ -846,7 +851,7 @@ the sorting is ours.
 **Walking to the mountain.** Hold the thumb out at arm's length, H against the arm L, and walk toward a mountain whose
 breadth V\* and distance d are unknown. The thumb never changes; each read is the finger the mountain's edge touches,
 [h : v]. The writer's account of which finger, v/h = (V\*/d)/(H/L), uses amounts no read holds. A read is one place, now:
-"one in eight of the thumb". Nearer compares two reads, so "getting nearer" is a place, not a read. Laid in order: far off
+"one in eight of the thumb". Nearer compares two reads, so "getting nearer" is an extent, not a read. Laid in order: far off
 the mountain is one in eight of the thumb, then one in four, one in two; per halving of the distance the turn taken in is
 greatest where the mountain fills the thumb and fades on either side. One read has the mountain exactly covering the
 thumb: the corner, which needs nothing walked: "now the mountain is my thumb", while V\*, d and the corner's distance
@@ -854,7 +859,7 @@ d_c = V\*·L/H stay unknown. Past it the two sides mirror each other: d and d_c�
 reads climb toward the horizon, [0 : 1], and no read meets it; the walk arrives because the walk is a count of strides and
 ends, and at the foot the reader has one more read, its feet. A steady pace makes τ̇ = −1, past Lee's −½, arriving at
 speed; easing so that it holds at −½ stops at the foot. The strides from the corner to the foot are d_c, so counting them
-gives V\* = (strides from the corner) × H/L: a place, in the walker's stride; in metres once the stride is carried in, a
+gives V\* = (strides from the corner) × H/L: an extent, in the walker's stride; in metres once the stride is carried in, a
 write. Scale the world, the walker's stride with it, and nothing along the walk moves: no read, no count of strides; only
 the metre carried in.
 
@@ -891,7 +896,7 @@ passes Z = −1 in a finite count. Along it 1/s falls evenly, before the corner 
 line in units of d_c, and the corner is not marked on it; the corner belongs to the reads, the even steps to the count.
 Even in 1/s and even in ratio are different paces: a pace that is both takes no step. So the one −1 is reached by a
 count and approached by a ratio. Nor must the foot be walked to: two reads one counted stride apart, x₁ and x₂ in 1/s,
-give the strides left, x₂/(x₁ − x₂), and the breadth in strides, (H/L)/(x₁ − x₂), at any distance: places, in the
+give the strides left, x₂/(x₁ − x₂), and the breadth in strides, (H/L)/(x₁ − x₂), at any distance: extents, in the
 walker's stride. The fixed share has been observed: landing honeybees hold the image's rate of expansion steady, their
 speed in proportion to the distance left and near zero at contact (Srinivasan et al. 2000; Baird et al. 2013); and the
 corner found by looking with the size paced from it is the forester's stick method. Those findings are their authors';
@@ -922,11 +927,11 @@ ratio of reads and counts nothing, so it has s at every moment and no n, and its
 by (1 − r)^m after m steps, at every m. The 1 is closed by a count and only approached by a ratio. How this 1 stands to
 §9's 2/π × π/2 is said there. **Checked** (ONE, exact).
 
-**Places come by degrees.** The crossing from reads to places, and from places to writes, is not a switch thrown.
-- *In what.* Two standpoints a step apart give every place in that step. If the step was one thumb, places are in thumbs
+**Extents come by degrees.** The crossing from reads to extents, and from extents to writes, is not a switch thrown.
+- *In what.* Two standpoints a step apart give every extent in that step. If the step was one thumb, extents are in thumbs
   and V is placed as V\*/H. Only a step counted in an agreed unit gives an amount, a write, the one rung scaling the world
   moves.
-- *How well.* The place's error per unit of angular error is least when the thing sits at the pair's corner, half the
+- *How well.* The extent's error per unit of angular error is least when the thing sits at the pair's corner, half the
   baseline equal to the distance. With k = d/(B/2) and ε the smallest step in direction the reader tells apart, the
   fractional error in the distance, and so in V\*/H, is ε·cosh(ln k) = ε·(k + 1/k)/2: ε at the corner, about ε·d/B far
   off, the same at k and 1/k. It reaches 1, and the thing is a direction alone, near d = B/ε. In the worked example (§10)
@@ -945,10 +950,10 @@ one look.
 *As the focus*: the reader keeps its thumb and chooses a baseline that puts the thing at parallax's corner, half the
 baseline equal to the distance, where the error is least; that needs the distance roughly first, so it is done in passes.
 
-**A tower of places.** Ratios suffice for a great deal. A tower of places, each storey placed against the next, holds a
+**A tower of extents.** Ratios suffice for a great deal. A tower of extents, each storey placed against the next, holds a
 building, its rooms and their things, with one amount at the top if metres are wanted. Along a chain the gaps add, so the
 middle lengths drop out and the ends survive; a loop's gaps sum to zero, and what does not is the error, which a loop shows
-and cannot place. Laid across the plane, places are gaps, and composing them is adding gaps: N places hold all
+and cannot place. Laid across the plane, extents are gaps, and composing them is adding gaps: N extents hold all
 N(N − 1)/2 ratios between them, a slide rule, straight across and circular up, with nothing computed. **Reading**;
 `slide-rule.html` shows it.
 
@@ -971,18 +976,18 @@ there, a count.
 ## 7. The zero: writes
 
 **The unit carried in.** A write ties the across axis's zero to something outside the world: a metre bar, a second, an
-agreed notch. Every place hung from the same thumb is then an amount, all at once, by one number: the thumb in metres.
-Scaling the world moves that number and every amount with it, and moves no place. The foot, the cubit and at last the
+agreed notch. Every extent hung from the same thumb is then an amount, all at once, by one number: the thumb in metres.
+Scaling the world moves that number and every amount with it, and moves no extent. The foot, the cubit and at last the
 metre were each one observer's body or object made into a public notch. Two observers that see one thing in common need
-no unit between them: the ratio of their thumbs is a place, read off what they share. A unit is needed between observers
+no unit between them: the ratio of their thumbs is an extent, read off what they share. A unit is needed between observers
 who share nothing in view. **Reading.**
 
 **A survey.** Snellius (1617) and Roy (1784–85) wrote whole countries this way: thousands of directions read, each
 written down in degrees by the instrument, one base walked and counted. The directions are reads; with the base as the
-thumb, every side of every triangle is a place; the base counted in a unit is the one write, and every side is then in
+thumb, every side of every triangle is an extent; the base counted in a unit is the one write, and every side is then in
 the base's unit. A second base checks the first and adds no scale. **Classical.**
 
-**What a blueprint adds.** A reader builds with reads and places and never needs a unit, until one of these is wanted:
+**What a blueprint adds.** A reader builds with reads and extents and never needs a unit, until one of these is wanted:
 1. the size, an amount;
 2. meeting out of view, with another observer with nothing in view in common;
 3. sums of amounts, which no ratio supplies;
@@ -999,10 +1004,10 @@ hold what no standpoint holds.
 drawn. To be used it must be read: someone stands somewhere and looks at it, at marks on a page in their directions and
 ratios, as at anything else that arrives. A blueprint in a drawer does nothing until it is looked at; a survey's base,
 once counted, is read against by every angle that follows; a drawing of a known room, rendered from a standpoint, is a
-write turned back into a read. So the passage runs both ways: reads become places through standpoints, places become
+write turned back into a read. So the passage runs both ways: reads become extents through standpoints, extents become
 writes through a unit, and every write, once made, joins what is read.
 
-**Recovered, by placing.** An observer can recover a thing exactly, its shape, its places, even its size in its stride,
+**Recovered, by placing.** An observer can recover a thing exactly, its shape, its extents, even its size in its stride,
 and still partially. A loop that closes shows that the routes taken agree; it cannot show that no route remains untaken.
 Completeness is never a read. What recovers the thing is not reading harder but the passage through standpoints.
 
@@ -1136,7 +1141,7 @@ writer's tanh of the sum. Along two axes no single coordinate carries both slide
 Thomas–Wigner rotation, tan(Ω/2) = ab·sin φ/(1 + ab·cos φ), a and b the tangents of the half rapidities and φ the angle
 between them, the area of the velocity triangle in hyperbolic space. It is inferred from directions alone: three stars before
 and after are the evidence, they fix the map of the sky, and its turn is the rotation, from any three stars, with no frequency and no distance.
-No single boost has any; the turn belongs to the join, a map between the two looks (D7), not a place. For a small loop it is ε²·sin φ, the size of the two-turn
+No single boost has any; the turn belongs to the join, a map between the two looks (D7), not an extent. For a small loop it is ε²·sin φ, the size of the two-turn
 loop's leftover, about the opposite axis: curvature −1 against +1. At the next order they part: the turn loop's
 correction is −ε²/12 at every angle, the boost loop's (1/3 + cos φ/4)·ε². The split does not derive the Lorentz group:
 it enters with the premise that a change of standpoint by motion keeps the angles between nearby stars, so that every such
@@ -1175,7 +1180,7 @@ A 1 needs a measure; the turn picks the round one, and √2 is the geometric mea
 ‖x‖₂² ≤ ‖x‖₁‖x‖∞, with equality on the axes and the corner's diagonals). **Classical.**
 
 **One length, counted, makes the rationals.** From H alone, counting thumbs, taking twice a thumb or half a thumb and
-ratios of thumbs to thumbs give rational multiples of H: places. A pure read holds directions and their order; its
+ratios of thumbs to thumbs give rational multiples of H: extents. A pure read holds directions and their order; its
 operations (the reciprocal, tangent addition, the order) take directions to directions and keep a rational direction
 rational. The corner is 1, met whole.
 
@@ -1195,7 +1200,7 @@ direction tan 1 whole; only stating it as a number needs the limit.
   ((a − b)/(1 + ab)) is exactly 1, the corner: finite, rational and the reader's. π comes next, from the arctangent's
   series. Viète's product shows it from the other side: 2/π a product of nested square roots, the whole only in the limit.
 - *e completes the scale.* The reader reads a far thing as a ratio, one in eight; counted in thumbs, 8 thumbs out, past
-  two, four and eight, it is a place. That count as a continuous quantity is the logarithm, and to give it a value is to
+  two, four and eight, it is an extent. That count as a continuous quantity is the logarithm, and to give it a value is to
   choose a unit and finish a series: one stretch where the reading halves is ln 2 = 1 − 1/2 + 1/3 − … nats. e itself is
   Bernoulli's limit, (1 + 1/n)ⁿ, or 1 + 1 + 1/2! + 1/3! + …, every term a fraction.
 
@@ -1268,8 +1273,8 @@ thumb's share h averages 2/π, the mean of what is seen of one thumb from a stan
 that closes the heat, and it is approached at the horizon, never reached. *π/2 is what walking counts*: the quarter arc
 from all of h to all of v is π/2 thumbs long, the heat gathered to the horizon, ∫₀^∞ ds/(1 + s²), reached at a named
 point, −1. An arc in thumbs is a length against the thumb, unmoved by scaling and held by no single read: of the kind D3
-calls a place, had by walking and counting; with the thumb in a unit it is a write (D4). So, in short, reading is 2/π and
-writing is π/2, the write reached through its place. Their product is 1, the paper: the thumb given back when the read and
+calls an extent, had by walking and counting; with the thumb in a unit it is a write (D4). So, in short, reading is 2/π and
+writing is π/2, the write reached through its extent. Their product is 1, the paper: the thumb given back when the read and
 the walk are held together. The exchange swaps the two, and they agree only at the corner, where a length walked and a
 ratio held say the same (§6). Both numbers stay the writer's arithmetic, since the reader holds no π; what is sorted is
 which act each one measures. In the table above the total's 2/π is the reading's factor and its π/2 the walk's, and "the
@@ -1298,7 +1303,7 @@ The arc is the one path on which the gain per step is the share itself, h, the s
 direction of space averages ½, and the correction is 2 (the wedge's numbers, §7). So "π is the price", above, is the
 plane's price. Three cautions keep the statement exact. The 1 is the thumb, H in H, not V*: nothing here gives the
 mountain's size (D4). One read is one share h; 2/π is their average over the turn, a sum, so the writer's. And the walk
-here is counted in thumbs, a place; it is a write only once the thumb has a unit. The mathematics is old: the mean
+here is counted in thumbs, an extent; it is a write only once the thumb has a unit. The mathematics is old: the mean
 projection of a segment over all directions is 2/π of its length (Cauchy 1841), a curve's length is π/2 times its mean
 projection (Cauchy 1841; Crofton 1868), and Buffon's needle (1777) is the same 2/π met as a chance. What is ours is the
 assignment: the short factor to the read, the long one to the walk, their product to the two held together.
@@ -1345,7 +1350,7 @@ So there are three, not two. The reader has slopes, the corner and equal halves,
 at work walks and counts, and any walk actually made is a finite count, so it holds fractions: 22/7, 355/113, a series
 stopped at some term, each nearer π and none of them π. The writer uses π's name and its approximants, and never has its
 value. Only the paper holds π itself: the completed whole, every facing at once, the total of a sum no one finishes. The
-paper is therefore the writer at the limit, as the exact V is (§6, "Places come by degrees"), and never a writer anyone
+paper is therefore the writer at the limit, as the exact V is (§6, "Extents come by degrees"), and never a writer anyone
 is. "The paper knows π" is a picture; what is exact is that π is defined there, as the whole turn, and reached nowhere
 short of it.
 
@@ -1532,7 +1537,7 @@ off. No angle, no trigonometry and no π is in it.
 | who | what it holds of parallax |
 |---|---|
 | the reader | one slope at each read, and nothing of parallax: a read is one standpoint |
-| the writer at work | the two slopes joined across the counted step: the place in steps, a rational function of the slopes, exact |
+| the writer at work | the two slopes joined across the counted step: the extent in steps, a rational function of the slopes, exact |
 | the paper | the parallax angle γ in radians or arcseconds; γ(d) + γ(a²/d) = π about the half-step a; the error's γ/sin γ, π/2 at the corner; the parsec, 648000/π astronomical units |
 
 The corner is the exchange again. The corner circle, the circle on the step as diameter (Thales), is exactly
@@ -1541,9 +1546,9 @@ the step. On the circle d/B = s/(1 + s²), the circle's hv: slopes 2 and ½ give
 once more. The error is rational too: with k = d/a, a step in direction moves the depth in proportion to
 (k + 1/k)/2, the same at k and 1/k and least at the corner; cosh(ln k) (§6) is the writer's smooth name for it. And the
 three grades sort the rest: the depth is rational, the range along a ray is a square root, the angle is a limit. π
-enters only where a slope is turned into an angle, which is why the parsec carries a π and the place in steps carries
+enters only where a slope is turned into an angle, which is why the parsec carries a π and the extent in steps carries
 none. This is no fifth reader's identity either: parallax joins two reads, so its π-free form is the working writer's,
-and what never needed π is the place in steps; the step in metres is still the one amount carried in.
+and what never needed π is the extent in steps; the step in metres is still the one amount carried in.
 
 **Classical**; the assignment is a reading. Physics enters
 separately and later, with the first write of the scale: a thumb given a unit. A walk made and counted in steps is
@@ -1576,7 +1581,7 @@ inscribed at 2/π; to the range's ends, 1.1107 and 0.9003. Their product is 1, t
 mountain never enters.
 
 **Walk one thumb.** Step one thumb toward the range and read again. The half-angle's reading goes from s = 1 to
-s′ = 10/9. The distance is d = H·s′/(s′ − s) = 10 thumbs and the range V = 2·s·d = 20 thumbs: places, exactly. Count the
+s′ = 10/9. The distance is d = H·s′/(s′ − s) = 10 thumbs and the range V = 2·s·d = 20 thumbs: extents, exactly. Count the
 thumb in miles and they are 10 miles and 20 miles: writes.
 
 **The mountain as H** (§6, "The thing itself as H"). As the unit, its ends 90° across put the reader half a range-width
@@ -1588,18 +1593,18 @@ look along h, so the middle of the cross reads (0, 0) as a camera's screen does,
 top reads (¼, ⅓), its foot (0, ⅓). From one place that is all: two directions, no distance, and a tower twice as large
 twice as far off reads the same. Step one thumb across and read again: the top reads (¼, ¼), the foot (0, ¼). Only the
 across thumb moved, by 1/12, so the distance along the look is 12 thumbs; the top is 12·⅓ = 4 thumbs across and 12·¼ = 3
-up; the tower is 3 thumbs tall, 12 off and 4 to the side: places, exactly. The up thumb did not move, and that is the gain
+up; the tower is 3 thumbs tall, 12 off and 4 to the side: extents, exactly. The up thumb did not move, and that is the gain
 of the second thumb: in space each step gives two changes for one unknown, so one is spare and must agree (the epipolar
 condition of stereo vision). Take the step for diagonal when it was across, and the up thumb says the step had no up in
 it: the misreading is caught. Step one thumb forward instead and both readings grow by the same factor, the top to
-(3/11, 4/11), either thumb giving 12. Scale the world, the step with it, and no place changes. Count the thumb as 5 metres
+(3/11, 4/11), either thumb giving 12. Scale the world, the step with it, and no extent changes. Count the thumb as 5 metres
 and the tower is 15 metres tall and 60 away: the one write. **Checked** (`runs/two/two_thumbs.py`).
 
 ## 11. Cases in data, and what this changes
 
 **What it changes.** No mathematics. It sorts.
-- **Every reading is a read, every gap across a place, every amount a write.** A result unmoved by scaling and held by
-  one standpoint is a read; unmoved and needing two, a place; moved, a write, which needs an amount carried in.
+- **Every reading is a read, every gap across an extent, every amount a write.** A result unmoved by scaling and held by
+  one standpoint is a read; unmoved and needing two, an extent; moved, a write, which needs an amount carried in.
 - **A Cauchy-type quantity is a direction where a turn that lays it can be named, apart from the law's shape.** A fat
   tail alone is no evidence of a turn: a mixture of amounts makes one too.
 - **The constants have owners.** π, e, π/2, 2/π, the hemisphere's 2 and ½, the Cauchy's normalizing constant, the
@@ -1650,8 +1655,9 @@ before the data can show where it is not. **Checked** (TCF; killed).
 
 ## 12. Open questions
 
-- **O1. The name "place".** *Closed (R792):* "place" stays, its scope fixed by D3 (a gap across, unmoved by scaling,
-  needing two standpoints).
+- **O1. The name of D3's kind.** *Closed:* it is a parallax extent, "extent" for short (it was "place" until
+  11 November, a working name that said position where the paper says a read has none). Its scope is fixed by D3 (a gap
+  across, unmoved by scaling, needing two standpoints).
 - **O2. The thumb.** *Closed (R792):* the thumb is the across axis's chosen zero, as home is the up axis's, as D5
   already requires; the record's "the read's own length" describes how it is chosen, not a different kind.
 - **O3. "The writer's" for joins.** The writer as a vantage holds completed joins (π, the one-length circle, the facings
@@ -1665,7 +1671,7 @@ before the data can show where it is not. **Checked** (TCF; killed).
   unknowable against the universe, knowable across one hemisphere, known only held or written (§1, "Four things").
   *And (R798–R801):* the completed joins are the paper's, both hemispheres at once with no facing; four identities
   state them, and each has a reader's form about the exchange and the corner (§9, "Four identities, one exchange").
-- **O4. Joinings with no gap.** *Orders (R792):* an order of reads is a joining with no gap in it, not a place.
+- **O4. Joinings with no gap.** *Orders (R792):* an order of reads is a joining with no gap in it, not an extent.
   *Widened, and open (R825, R826):* there are at least two such joinings, and they are different structures. An order is
   a relation with no cycle. A map carries one read's directions to another's; it has an inverse and can cycle (a turn
   by the corner's slope returns after four), so it is no order, and the order of reads is something a composition of
@@ -1679,35 +1685,35 @@ before the data can show where it is not. **Checked** (TCF; killed).
   illustrate that and prove nothing. The heat under a map: each read has its own heat, the same at every standpoint,
   and no map changes it; a map's stretch at a direction is the first read's heat carried by the map against the second
   read's own there, 1 everywhere for a turn, not for a boost. Open: whether orders and maps exhaust the joinings with
-  no gap, and whether places, orders and maps exhaust the relations between reads. Neither is claimed.
+  no gap, and whether extents, orders and maps exhaust the relations between reads. Neither is claimed.
 - **O5. Do readers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.
 - **O6. A second test that can fail.** "Find the z" has passed once in data (LIGO) and failed once (the seeds). A second
   domain, where the turn can be named before the data, would show whether the rule sorts.
 - **O7. The essays, the demos and *Reads and Writes in Physics*.** *Closed (R792):* all three brought to R788's kinds;
-  the last place still calling a place a write, the demos page's card for `write.html`, now says the move places.
+  the last place still calling an extent a write, the demos page's card for `write.html`, now says the move places.
 - **O8. Why the sky is conformal.** The moving sky's Möbius map rests on motion keeping angles on the sky. SRB (runs 1–2)
   replaces that premise by four: a change of standpoint acts on directions alone, chains included; it is fixed by finitely
   many numbers; the turns are among the changes; a motion carries directions from the back toward the front. With Lie's
   classification of the finite groups on a surface (Lie 1880), these leave the Möbius maps alone; Newton's aberration fails the
   first, since two of its steps are no single step once the speed is dropped. Two of the four carry the physics: that what
-  no read can hold makes no difference to what is read (the light postulate stated for reads), and that a place is a
+  no read can hold makes no difference to what is read (the light postulate stated for reads), and that an extent is a
   finite list of numbers. Neither is shown to follow from reading. A reconstruction, not an explanation.
 - **O9. The Doppler factor, and relations between standpoints.** Three things are to be kept apart. The read is the
   direction of arrival from a standpoint, its state of motion included. The relation between two standpoints, their
   relative motion among it, is described by the rapidity (§4). The ratio of the frequencies received at the two is a
   relation between payloads, and it is what is measured. The Doppler factor is fixed by the second and the direction of
   arrival; the measured ratio equals it and is still a relation between payloads. So a quantity can be unmoved by
-  scaling, unmoved by a change of what arrives, and neither a direction nor a distance: D3's place is a gap across, and
+  scaling, unmoved by a change of what arrives, and neither a direction nor a distance: D3's extent is a gap across, and
   the factor is no distance, so it is not put there. Whether relations between standpoints need a name of their own,
-  beside places and orders (O4), is open; D3 stands as it is until that is settled. Found by a blind classification
+  beside extents and orders (O4), is open; D3 stands as it is until that is settled. Found by a blind classification
   (BCL, run 2).
-  *What makes a spatial gap a place, and two cases tried against it (R823).* A candidate, not adopted: a place is a
+  *What makes a spatial gap an extent, and two cases tried against it (R823).* A candidate, not adopted: an extent is a
   ratio of two distances between points in space, standpoints and named things, at least one of them a step between
   standpoints. A time to contact had from two reads a tick apart is exactly d₁/B, the distance over the step, so the
   number meets the candidate as it stands; what does not is its reading as a time, which needs the further premise that
   the steps go on alike, a statement about reads not yet made. The rapidity does not meet it: it is had from two reads
   at one position, by the directions alone (§4), with no step in space, and what it relates the two reads by is a map
-  on directions, as a turn does. To call it a place would change what "a gap across" means. So the time to contact is
+  on directions, as a turn does. To call it an extent would change what "a gap across" means. So the time to contact is
   taken out of D3's list until its temporal reading has a stated reason, and the rapidity and the Doppler factor stay
   unclassed.
   *Since (R824–R826).* The relation between two standpoints at one position is a map (D7, O4), and the rapidity is the

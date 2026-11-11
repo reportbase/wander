@@ -99,7 +99,7 @@ line of sight, one reading up and one across, both the same H (the fifth essay).
 there reads one thumb up for one thumb along, v equal to h, and it is drawn one thumb wide. That crossing, with H, lays
 the near field and the far field over the read; the Cauchy of directions has neither (the fifth essay, section 10). The near field is a single thumb, laid evenly: everything nearer than the crossing is read
 in proportion. The far field is read in ratios: a thing one thumb wide reads one in two, then one in four, then one in
-eight, each stretch with as much of the heat as the one before, out toward the horizon. Counted across, as places, the same stretches
+eight, each stretch with as much of the heat as the one before, out toward the horizon. Counted across, as extents, the same stretches
 are two thumbs, four, eight.
 
 For the crosshair to be the corner of every pair at once, the look has to run down the diagonal of three thumbs,
@@ -291,7 +291,7 @@ done to distance. The sphere is the writer's drawing; the reader has the lay.
 ## 10. The count is the detail
 
 The forms of the near and far fields are fixed by the geometry: proportion, then ratios, one in two, one in four, one in
-eight (as places, two thumbs, four, eight). Their *counts* are not. How many places the near field is divided into, and how
+eight (as extents, two thumbs, four, eight). Their *counts* are not. How many places the near field is divided into, and how
 many each stretch where the reading halves gets, is the **detail**, how finely things are drawn. The geometry gives the forms. The detail gives the count. The reader reads that
 fineness, K, continuously; laid out as K places it is a writer's count, K addresses.
 
@@ -471,6 +471,6 @@ post you are looking at, and you can move it.
   large hierarchies. *Proceedings of CHI '95*, 401–408.
 - Williams, L. (1983). Pyramidal parametrics. *Computer Graphics (SIGGRAPH '83)* 17(3), 1–11.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read, place and write): the proportional and logarithmic lays in §6 (Proposition 4, the
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read, extent and write): the proportional and logarithmic lays in §6 (Proposition 4, the
 in-place lay, why halving, floating point, Mercator's map, one figure and three rulers) and detail and the
 choice of H in §8 (H is a zoom, a fixed count aimed by H, the corner follows the focus, Corollary 6.1).

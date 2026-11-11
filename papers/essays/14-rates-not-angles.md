@@ -121,7 +121,7 @@ writer's rate is the fixed point of the reciprocal that pairs the two sweeps: th
 
 **Each of the two measures an act.** 2/π is what turning sees: the thumb's share h, averaged over the quarter turn from a
 standpoint that never moves, approached at the horizon and never reached. π/2 is what walking counts: the quarter arc
-itself, π/2 thumbs long, reached at a point. The arc in thumbs is a place, walked and counted; with the thumb in metres
+itself, π/2 thumbs long, reached at a point. The arc in thumbs is an extent, walked and counted; with the thumb in metres
 it is a write. So reading is 2/π and writing is π/2, the write reached through its place, and the 1 between them is the
 read and the walk held together (the second essay, §7). The reason is one line: each step of the arc gains v at the rate h,
 so the shares read, summed over the steps walked, are all of v; a mean of 2/π over a length of π/2 is 1. Any path from the
@@ -303,7 +303,7 @@ in hand.
 One caution keeps the claim exact. A rate must say what it is per. Per direction, against the sweep's own spacing, a rate
 is a ratio of payloads and scale-free. Per second, it carries the clock's unit (radians per second, photons per second),
 and moving between the two needs the clock carried in. That is a writing. Motion says the same (the sixth essay, §2): the
-time until a thing arrives, from its growing edge, comes out as a count of the reader's own ticks (a place, unmoved by
+time until a thing arrives, from its growing edge, comes out as a count of the reader's own ticks (an extent, unmoved by
 scaling or by any change of clock, yet held by no single read, since a rate of change joins reads; so is ticks per tick),
 and in seconds it is a write, and a speed in metres a second carries two units in.
 
@@ -591,6 +591,6 @@ algebraic form (`papers/tb_algebra.md`: the two charts and their exchange rate, 
 its π is the normalization") and the format's specification (`papers/tvf.md`, "The kernel is rational, and the decoder
 can be trig-free").
 
-The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten 10 November on R788 with read, place and write): §2, "Zero, and a new zero" (the turn met, not computed; tangent
+The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten 10 November on R788 with read, extent and write): §2, "Zero, and a new zero" (the turn met, not computed; tangent
 addition); §4, "Why the corner sits at 45°", "Why there are two sweeps, and only two" and "Rates, not angles" (the two
 sweeps' rates, the writer's 1, and payload per direction); §7.1 (the uniform turn and the Cauchy).

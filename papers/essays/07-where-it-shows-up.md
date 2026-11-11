@@ -407,7 +407,7 @@ Möbius group of the sphere is the Lorentz group.
 **Why the sky keeps its angles.** That one premise can be traded for four plainer ones, each said of reads (SRB,
 `../../plans/srb-plan.md`):
 - what a motion does to the sky depends on directions alone, and so does what two motions do in a row;
-- a change of standpoint is fixed by finitely many numbers, as a place is;
+- a change of standpoint is fixed by finitely many numbers, as an extent is;
 - the turns are among the changes;
 - a motion carries the stars from behind toward ahead, and a mirror turns it into motion backward.
 
@@ -491,7 +491,7 @@ paces supply the only amount.
 - Wigner, E. (1939). On unitary representations of the inhomogeneous Lorentz group. *Annals of Mathematics* 40(1),
   149–204.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November with read, place and write, R788, whose §4 has the
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November with read, extent and write, R788, whose §4 has the
 lighthouse, Mercator's map and the moving sky): Proposition 5(f) and (g), "Two charts" and "What the
 two pictures show" in §7.1; "Already drawn, under other names" and "Where c ≠ 1 comes from" in §5; "Special relativity's
 sky" in §11; Appendix A, "V = H under other names" and "Why the payload is Gaussian".

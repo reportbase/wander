@@ -319,7 +319,7 @@ own thumb.
 **Which act each number measures.** The two numbers also sort by act. 2/π is what turning sees: over the quarter turn the
 thumb's share h averages 2/π, the mean of what is seen of one thumb from a standpoint that never moves, and it is
 approached at the horizon, never reached. π/2 is what walking counts: the quarter arc from all of h to all of v is π/2
-thumbs long, and it is reached, at a point. An arc counted in thumbs is a place, had by walking and counting; with the
+thumbs long, and it is reached, at a point. An arc counted in thumbs is an extent, had by walking and counting; with the
 thumb in metres it is a write. So, in short, reading is 2/π and writing is π/2, the write reached through its place, and
 their product, 1, is the read and the walk held together. Both stay the writer's arithmetic, since the reader holds no π;
 what is sorted is the act each one measures.
@@ -466,7 +466,7 @@ That raises a fair question. The circle's equation seems to need V. On a page it
 circle only when V equals H. If the reader never knows V, how can it do circular mathematics at all?
 
 The answer is that the circle is the writer's either way. The equation on the page describes a drawing with two axes, each
-with its own extent, and that drawing needs two lengths. The circle's classical definition, everything at one distance from
+with its own size, and that drawing needs two lengths. The circle's classical definition, everything at one distance from
 a centre, needs only one, and a writer watching a length turned sees its tip trace it, as section 2 showed. The reader
 holds no circle; it points its thumb, and its readings need only that one length. The turn's two parts are h and v (the
 writer's cos θ and sin θ), the across and up shares of the same length. So h² + v² = 1 is a fact about the shares of one length. The v in it
@@ -762,6 +762,6 @@ their median.
   31 (the angle in a semicircle is right); Book VI, propositions 8 and 13 (the mean proportional).
 - Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Berlin.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read, place and write): the corner in §4 (Propositions 1 and 2), the arc from
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read, extent and write): the corner in §4 (Propositions 1 and 2), the arc from
 the chord, the two sweeps and what each reads in §4, the one-length circle in §5 (Proposition 3, with the derivation of the
 circle from a uniform returning sweep as part (g)), and the three paths in §12.2.

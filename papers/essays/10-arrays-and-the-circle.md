@@ -73,7 +73,7 @@ round the whole.
 
 **The reader reads the arrays; the writer joins them.** A reading carries no sign, and turns composed by tangent
 addition repeat after a half turn. So from a standpoint every facing is the same array, and a reader reads within one.
-To join two arrays, their values must meet at the shared end in one unit, and that needs each array's size, its extent
+To join two arrays, their values must meet at the shared end in one unit, and that needs each array's size, its length
 in amounts. The reader holds each array only up to its own factor, the size no reading fixes, so it cannot tell whether
 two ends meet. The writer knows the sizes, and which facing each array is, and so it can join the four into the closed
 circle or the eight into the sphere.
@@ -119,7 +119,7 @@ Against that, a writer places an amount x on [0, X] at ⌊N·x/X⌋, which needs
 and 99 go to places 0, 4 and 7. Read from home at a distance laid by H, ⌊8·(2/π)·arctan(x/H)⌋, they go to places 4, 6 and 7
 with H = 10, and to 1, 4 and 5 with H = 50. H moves them, as a zoom, the size of the thumb, and X never enters. Both are the writer's
 indices: the count index of a world written to its end, the turn index the writer's bookkeeping of what the reader's
-turn holds. The count index needs the extent; the turn index needs only the zoom.
+turn holds. The count index needs the size; the turn index needs only the zoom.
 
 ---
 
@@ -363,5 +363,5 @@ Qian and Wang's adaptive Fourier decomposition (2011); Poisson's kernel and Abel
 
 The array picture, its four facings, readers' and writers' arrays and the worked example with K = 8 are set out in
 *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10
-November with read, place and write, R788), §7.3 ("In the picture of an array", "Laid on the sweeps"), and for programmers in the
+November with read, extent and write, R788), §7.3 ("In the picture of an array", "Laid on the sweeps"), and for programmers in the
 computer-science companion, §6 ("The array").

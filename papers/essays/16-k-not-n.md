@@ -126,7 +126,7 @@ with N, and the most valuable algorithms are the ones whose cost does not.
 
 Read the two letters as vantages:
 
-- **N is the writer's.** To know N is to know the whole: how many there are, which is to know the extent, V, and how much
+- **N is the writer's.** To know N is to know the whole: how many there are, which is to know the size, V, and how much
   is in it. That is writing. The first essay's test sorts it at once: double the world and N doubles.
 - **K is the reader's.** A reader never knows V, the mountain in the distance (it holds one length, its own H, the thumb it
   holds up, and V was never in a reading), so it never knows N. What it knows is K, its own fineness, read continuously (a writer counts it as K addresses), fixed before
@@ -328,7 +328,7 @@ turn passes the places in order, and the share passed is met, not computed. A pr
 by a boundary: the world a generator with no length across, the reader K slots of its own, and the writer's arithmetic
 between them (essay 12, §6).
 
-Against it, an array of known length: `Math.floor(N * x / X)` needs the extent X. With N = 8 and X = 100 the amounts 10,
+Against it, an array of known length: `Math.floor(N * x / X)` needs the size X. With N = 8 and X = 100 the amounts 10,
 50 and 99 go to places 0, 4 and 7. `turnIndex(x, H, 8)` needs only H, the zoom: places 4, 6 and 7 at H = 10, and 1, 4 and 5
 at H = 50.
 
@@ -465,7 +465,7 @@ them, are the writer's.
 For a programmer this is the useful part. The addresses are a closed form in k, H and K: no table is built, nothing is
 precomputed for N, and nothing is rebuilt when N changes. The last address runs to the horizon, so a finite K covers an
 unbounded world. Tables fixed in advance (a sampling grid, a histogram's bins, a lookup of known range) must know the
-extent they cover and the resolution they need, and are rebuilt when either changes. The turn's addresses need neither;
+range they cover and the resolution they need, and are rebuilt when either changes. The turn's addresses need neither;
 what needs them is the payload or the writer.
 
 **A world made where the view reaches.** A program that recreates the reader's view need not store a world at all. Make
@@ -485,7 +485,7 @@ mipmaps (Williams 1983) and map tiles whose key gains a digit a halving all make
 at s = 1. The corner is the addresses' median, their finest relative grain and the reciprocal's fixed point, the roles a
 focus wants; it is also where the expected travel to the next look is least, whenever the next look is as likely on either
 side. So what is looked at is drawn at H, one thumb wide. Near and far are then nearer and farther than the focus, held
-alike; their job is to show where to look next. The fewest addresses for a focus of extent F at grain δ, with a field to X
+alike; their job is to show where to look next. The fewest addresses for a focus of size F at grain δ, with a field to X
 whose cells stay within a factor ρ of each other, are ⌈F/δ⌉ + ⌈log_ρ(X/F)⌉: proportion on the focus, the logarithm past its
 edge. At X/F = 64 and ρ = 2 the field costs six addresses, whatever K is. `fpv.html` lays a first-person view's depth this
 way.
@@ -686,7 +686,7 @@ geometry of a reader is K, not N.
 The references are carried over from the archived companion, where they were checked when it was written.
 
 The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`, rewritten 10 November on R788 with
-read, place and write): §5 ("K and N"); its passages on
+read, extent and write): §5 ("K and N"); its passages on
 computing are now a note, `plans/rw-computing-note.md` (a machine is built to do both acts, R641). The proofs are in the archived *Observation from Somewhere* and its computer-science companion
 (`../archive/ofs/observation-from-somewhere-cs.md`), kept for reference: the corner and the registers in §3, the
 separation in §5, the array in §6, the floor in §7, the two layouts in §8, detail and the fixed count in §9, the

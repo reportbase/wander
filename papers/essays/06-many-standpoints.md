@@ -308,7 +308,7 @@ direction, written, or further standpoints.
 Say it plainly: **the reader never sees a shape.** It sees the sweep, the same directions with the
 same heat for every world, and the paint on them. *The heat is given; the paint is met.* A thing is to it the directions
 it paints and what it paints them with: a patch of directions, what is in front of what, a colour. How far the surface lies along each direction is an amount, and the geometry has removed every amount
-before anything is read. Every way to the shape needs more than one read: further standpoints give it as places, in the
+before anything is read. Every way to the shape needs more than one read: further standpoints give it as extents, in the
 step's length; ranging and a blueprint handed over give it in a unit, as writes. Shape is never the read's. The reader has the Cauchy sweep and its paint.
 
 That an image does not settle the shape that made it is an old observation: Helmholtz's perception as unconscious
@@ -352,7 +352,7 @@ a chair a metre from the wall, or a picture at eye level, wants a thing to be at
 must become a writer, and writing needs what reading never does: the reader must move and engage with the room
 physically. A known step, a hand laid flat against the wall, a tape measure. One amount carried in writes every length of
 the room in its unit, and only then can the place wanted be named. (Placing the chair three strides from the wall needs
-no unit: that is a place. The metre is what makes it a write.) Reading the room again afterwards is free.
+no unit: that is an extent. The metre is what makes it a write.) Reading the room again afterwards is free.
 
 *Demos: the room; walking the room; the room in ratios; one blueprint (write the room).*
 
@@ -402,17 +402,17 @@ crossing, and its place comes out of the crossing's lengths and angles, sines an
 makes. More standpoints give every place seen, in the step's length: the writer's box, its three number lines, up to its
 size. Count the step in an agreed unit and the box is in that unit.
 
-So parallax is how a reader reconstructs the writer's cube, up to its size: the passage from a read to a place. It has
+So parallax is how a reader reconstructs the writer's cube, up to its size: the passage from a read to an extent. It has
 moved, joined its standpoints and is holding what no one standpoint holds, every place in its own stride, and scaling the
 world with the stride moves none of it. Only when the stride is counted in an agreed unit does it write. When it stops and
-looks again, it reads. Reads, places and writes are not three kinds of observer; they are what one observer is doing.
+looks again, it reads. Reads, extents and writes are not three kinds of observer; they are what one observer is doing.
 
 The first essay's survey says the same thing in its own words: the many directions are read (the instrument writes each
-down in degrees), with the base as the thumb every side is a place, and the one base counted in a unit is the write; a
+down in degrees), with the base as the thumb every side is an extent, and the one base counted in a unit is the write; a
 surveyor does all three in one morning.
 
 And the passage has degrees. Knowing V, the mountain in the distance, is not a switch thrown by the second standpoint; it
-comes in amounts, three ways. *In what:* in the step taken, in H if the step was H (one thumb, and places come out in
+comes in amounts, three ways. *In what:* in the step taken, in H if the step was H (one thumb, and extents come out in
 thumbs, V placed as V\*/H), in metres only if the step was counted in metres, the one write. *How well:* the fractional error in the distance, and so in V, is ε·cosh(ln k) with k = d/(B/2), ε at the
 pair's corner, about ε·d/B far off, and past about B/ε nothing but a ray (the fourth and fifth sections). In the mountain
 example, one thumb walked toward a range ten thumbs off puts it at k = 20, an error about ten times the step's ε; a
@@ -435,7 +435,7 @@ short step, then a longer baseline set from what the short one gave.
 
 **In physics.** What astronomy does with parallax is this essay's chain run backwards: d = a/tan p with the astronomical
 unit carried in, σ_d/d = σ_p/p the far limit of γ/sin γ, and Lutz and Kelker's bias a read inverted as if it were a
-write. A distance ladder is a tower of places, reads joined across baselines and one unit at the top, each rung one factor only where it is flat against an
+write. A distance ladder is a tower of extents, reads joined across baselines and one unit at the top, each rung one factor only where it is flat against an
 independent distance; on Cosmicflows-4, Hubble's 1929 rungs are not. And in a simulation of many standpoints with one
 length carried in at 1% error, the shape improved as N^(−0.49) while the scale never left the 1%: the reads averaged
 down, the one write did not (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §7).
@@ -488,7 +488,7 @@ is the length every place is found in.
   *Vision Algorithms: Theory and Practice*, LNCS 1883, 298–372.
 
 The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November
-with read, place and write, R788), §9 (Propositions 9–12, "Inside a room", "To move the
+with read, extent and write, R788), §9 (Propositions 9–12, "Inside a room", "To move the
 furniture is to write", "Far off", "One standpoint gives no parallax", "From one place"; the classical side of a shape in Appendix A, "A shape as a
 function on the circle"), and the parallax results in the
 working paper `parallax.md` (§3–§6).

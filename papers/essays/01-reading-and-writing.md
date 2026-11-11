@@ -66,7 +66,7 @@ still be finished if no one ever did.
 This is the whole essay in miniature. There are two acts here, and they are very different, with a step between them.
 
 The first act is **reading**. You read directions from where you stand. From two standpoints, joined across the step,
-you have the room's shape and every ratio in it, in steps: what *Reads and Writes* calls a **place**, unmoved when the
+you have the room's shape and every ratio in it, in steps: what *Reads and Writes* calls an **extent**, unmoved when the
 world is scaled, like a reading, but held by no single standpoint. Reading and placing needed no unit, and they gave you
 everything except one number.
 
@@ -166,7 +166,7 @@ The two vantages divide cleanly between the two acts of the first section.
 centimetres. To make one, you must hold every breadth, and holding every breadth means holding the whole, front and
 back, from no standpoint at all. An architect's drawing is not a view from anywhere. It is what you would have if you
 could stand nowhere and see everything. Its natural frame is a box, one number line along each axis, both signs, every
-extent an amount. Nothing in it is round, because roundness, as we will see, belongs to turning from a point, and the
+side an amount. Nothing in it is round, because roundness, as we will see, belongs to turning from a point, and the
 blueprint has no point to turn from.
 
 **The directions, their heat and their paint are reading alone.** They are what a standpoint has: directions, and what arrives along
@@ -369,7 +369,7 @@ Imagine every length in the world multiplied by the same factor k, your own leng
 larger, and so are you, your stride, your rulers and the gap between your eyes. Then look at any quantity you recorded
 before, and ask what happened to it.
 
-- If it did not change, it is a **reading** or a **place**. A direction, an angle, the place of the corner, held from
+- If it did not change, it is a **reading** or an **extent**. A direction, an angle, the place of the corner, held from
   one standpoint, are readings; the ratio of two lengths, a shape held up against its own average size, the map in
   steps, which need a second standpoint and the step between, are places. All of these come through untouched. (Reads
   joined can also give an order, as in essay 11, or a map carrying one look's directions to another's, as a turn or a
@@ -382,16 +382,16 @@ Nothing length-like can do anything else. It is either fixed or it moves by k.
 Try it on the room. The map in steps does not move: everything grew by k, your step grew by k, and every length in steps
 is the same number as before. The map in metres moves: the stride was measured against a rule, the rule did not grow
 with the world, and every length in metres is k times larger. One test, and it puts the map in steps with the readings,
-unmoved (a place, since it needed the step), and the map in metres on the writing side.
+unmoved (an extent, since it needed the step), and the map in metres on the writing side.
 
 Three cautions keep the test honest. What it sorts is a variable, a quantity said of something named: this direction,
 that gap, this light's frequency. A bare number is not yet sorted, and one thing can supply several variables of
 different kinds. Second, the test crosses with a partner the third essay gives, change what arrives and keep the
-directions, and the crossing has four boxes. On the geometry's side, unmoved is a reading or a place and moved is a
+directions, and the crossing has four boxes. On the geometry's side, unmoved is a reading or an extent and moved is a
 writing, a distance in metres. On the payload's side, unmoved is a ratio of payloads, one colour channel over another,
 and moved is again a writing, a frequency in hertz. So a writing is any amount in a unit carried in, whichever side it
 is on, and being unmoved by scaling never shows by itself that a thing is a reading. Third, joining two reads does not
-always give a place. A place has a gap in space in it. Which read came before which is an order, with no gap. And
+always give an extent. An extent has a gap in space in it. Which read came before which is an order, with no gap. And
 turning the look, or changing one's motion, joins two reads by a map, one read's directions carried to the other's,
 again with no gap; an angle of turn, or a rapidity, is a coordinate on such a map, inferred from the directions and
 not itself a reading. Whether those three are all the ways reads can be joined is not claimed (*Reads and Writes* §1,
@@ -469,7 +469,7 @@ supply. Physicists argue, sometimes heatedly, over how many fundamental units na
 the amounts for a theory, a law or a reconstruction. The count here is per reader. It says what each observer must be
 handed, and it says the answer is almost nothing.
 
-*Demo: writing, step by step: the free numbers computed on the page as each step is taken: places in the
+*Demo: writing, step by step: the free numbers computed on the page as each step is taken: extents in the
 reader's own H, then one agreed notch, the write.*
 
 ---
@@ -688,6 +688,6 @@ The essay draws on these; each is cited for something it uses.
   Psychology: Human Perception and Performance* 10(5), 683–703.
 
 The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November
-(R788) with read, place and write), in the same collection: readers and writers in
+(R788) with read, extent and write), in the same collection: readers and writers in
 §3.1, the one-length circle in §5, the Cauchy as the law of the uniform turn in §7, reading and writing in §9, and the
 classical pieces in Appendix A ("The Cauchy from one length").

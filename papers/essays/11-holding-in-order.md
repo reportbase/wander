@@ -211,7 +211,7 @@ The question where the rule wins by much more than 1.2 is not "what was the read
 turn is the sign of the reading changing: the arrival stops exceeding the hold and starts falling short. Two readers with
 different steps and gains agree that it happened. A count of looks between two turns is a duration in the stream's own
 terms, so the reader carries a reference it was never handed. That is designating, not sizing: the turn is a mark in
-the stream's order, not a size of anything. (Reads joined can give a place, a gap in space; an order, which has no gap;
+the stream's order, not a size of anything. (Reads joined can give an extent, a gap in space; an order, which has no gap;
 or a map from one read's directions to another's. The turn is of the second kind.)
 
 **The race in the gaps.** The rules differ only across missing looks, so looks were dropped, singly and in bursts, with

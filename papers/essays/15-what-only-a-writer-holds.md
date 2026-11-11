@@ -89,7 +89,7 @@ Rescalings give e.
 
 The reader reads sizes as ratios of its thumb: a thing one thumb wide reads one in two, then one in four, one in eight.
 Past the corner a writer laying out its fineness gives as many places to each stretch over which the reading halves (essay 4), and a thing that reads
-one in eight is three such stretches out, which counted is 8 thumbs, past 2, 4 and 8, a place. Counting is done in
+one in eight is three such stretches out, which counted is 8 thumbs, past 2, 4 and 8, an extent. Counting is done in
 parallax, where it gives places, and in writing, not in a pure read; what one length counted makes is finite and rational. A thing 3H away reads
 one in three, between one in two and one in four, and the reader holds it there by its order among the readings (essay
 4, "the count is the detail").
@@ -358,7 +358,7 @@ the turn comes back, and the scale goes on, and to say either in a number you ha
 The dates and titles above are given from memory and are to be checked against the texts.
 
 The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is
-*Reads and Writes*, rewritten 10 November on R788 with read, place and write): §2 (the reader's ignorance as turns and rescalings; zero and a new zero; tangent addition), §3.8 (the
+*Reads and Writes*, rewritten 10 November on R788 with read, extent and write): §2 (the reader's ignorance as turns and rescalings; zero and a new zero; tangent addition), §3.8 (the
 reader never knows V), §4 ("Rates, not angles"; the landing point), §5 ("Why halving", "Circular mathematics without V"),
 §7.4 (a shape as ln r = a₀ + f(θ)), Appendix A ("Polar form and the complex logarithm", "What square roots reach") and
 Appendix B ("Machine arithmetic and the infinite"). The essays before this one: 2 (§9, Euler's formula), 4 (thumbs past the

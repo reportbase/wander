@@ -357,7 +357,7 @@ is the arithmetic face of the steps that never close.
 
 ## 7. Tables fixed in advance, and directions that need none
 
-A sampling table or a grid of cells fixed in advance has to know beforehand the extent it covers and the resolution it
+A sampling table or a grid of cells fixed in advance has to know beforehand the range it covers and the resolution it
 needs, and it is rebuilt when either changes. The uniform turn's heat needs neither. A direction is given whatever
 the count of things and whatever their size, and the fourth essay's K places at H·tan(kπ/2K), a writer's count of the heat in
 distance (K addresses, in the writer's word), hold half inside H at every H and every N.
@@ -483,7 +483,7 @@ logarithmic in its distance, and never asks how long the list is.
   Physics* 69, 112–142.
 
 The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10
-November with read, place and write, R788), §8 ("What the floor discards", "What the height
+November with read, extent and write, R788), §8 ("What the floor discards", "What the height
 fixes"), §12.4 and Appendix B, and for programmers in the computer-science companion, §7 ("What Math.floor throws away"),
 §11 ("A dial: scrolling without end") and §12. The tests behind section 9 and section 10's verdicts are in the working
 paper `mapping.md`, §9½.
