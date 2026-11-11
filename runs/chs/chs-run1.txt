@@ -1,0 +1,41 @@
+C1  three charts, one map (exact rationals)
+  C1 ok   40 rational slopes: share -> 4v2(1-v2), reciprocal slope -> (c - 1/c)/2, Newton's step: 40 of 40 exact
+C2  each chart's law is kept
+  C2 ok   half-Cauchy, T(s) <= 0.2: a = 0.099019514, diff 2.53e-61
+  C2 ok   half-Cauchy, T(s) <= 0.5: a = 0.23606798, diff 7.78e-62
+  C2 ok   half-Cauchy, T(s) <= 1.0: a = 0.41421356, diff 0.0
+  C2 ok   half-Cauchy, T(s) <= 2.0: a = 0.61803399, diff 7.78e-62
+  C2 ok   half-Cauchy, T(s) <= 7.0: a = 0.8672954, diff 0.0
+  C2 ok   arcsine, 4y(1-y) <= 0.1: diff 1.56e-61
+  C2 ok   arcsine, 4y(1-y) <= 0.5: diff 7.78e-62
+  C2 ok   arcsine, 4y(1-y) <= 0.9: diff 0.0
+  C2 ok   Cauchy, (c - 1/c)/2 <= -3.0: diff 1.17e-61
+  C2 ok   Cauchy, (c - 1/c)/2 <= -0.4: diff 3.89e-62
+  C2 ok   Cauchy, (c - 1/c)/2 <= 0.0: diff 0.0
+  C2 ok   Cauchy, (c - 1/c)/2 <= 0.9: diff 0.0
+  C2 ok   Cauchy, (c - 1/c)/2 <= 5.0: diff 0.0
+C3  ln 2 a step in every chart
+  C3 ok   tent: 0.6931471805599453094172321, off ln 2 by 0.0
+  C3 ok   T on the half-Cauchy: 0.6931471805599453094172321, off ln 2 by 1.07e-59
+  C3 ok   (x - 1/x)/2 on the Cauchy: 0.6931471805599453094172321, off ln 2 by 7.78e-62
+  C3 ok   4y(1-y) on the arcsine: 0.6931471805599453094172321, off ln 2 by 7.78e-62
+C4  one digit a step at fixed K (exact)
+  C4 ok   K = 8: n = 1..6, fixed by the cell among 2^(m+n), not among 2^(m+n-1)
+  C4 ok   K = 16: n = 1..6, fixed by the cell among 2^(m+n), not among 2^(m+n-1)
+  C4 ok   K = 32: n = 1..6, fixed by the cell among 2^(m+n), not among 2^(m+n-1)
+C5  no rational slope cycles; the orbit's cost doubles
+  C5 ok   200 rational slopes, 12 steps: repeats 0, corners reached 0
+  C5 ok   denominator bits, step 12 over step 11: min 1.9971, max 2.0027; last denominators about (median bits at step 12: see below)
+       from 3/7, step 12: a denominator of 9950 bits
+C6  a count of p digits holds the orbit about p steps
+  C6 ok   p = 24: first steps apart [23, 24, 23, 23, 25], median 23 (band 12..26)
+  C6 ok   p = 53: first steps apart [57, 52, 52, 54, 59], median 54 (band 41..55)
+  C6 FAIL p = 113: first steps apart [116, 112, 114, 116, 117], median 116 (band 101..115)
+
+C1: not killed
+C2: not killed
+C3: not killed
+C4: not killed
+C5: not killed
+C6: KILLED
+C7: KILLED

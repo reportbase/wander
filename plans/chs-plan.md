@@ -57,3 +57,28 @@ g = (2/π)·arctan s (the writer's), on which T is the tent map 1 − |1 − 2g|
 
 ## Runs
 
+### Run 1 (11 Nov 2026; `python3 runs/chs/chs.py`, output `runs/chs/chs-run1.txt`)
+
+- C1 not killed: 40 of 40 rational slopes, all three identities exact.
+- C2 not killed: the half-Cauchy under T, the arcsine under 4y(1 − y) and the Cauchy under ½(c − 1/c), to 10⁻⁶⁰.
+- C3 not killed: ln 2 in all four, to 10⁻⁵⁹.
+- C4 not killed: K = 8, 16, 32, n = 1 … 6, exhaustively.
+- C5 not killed: no repeat and no corner in 200 orbits; the denominator's bits, step 12 over step 11, between 1.9971
+  and 2.0027 (from 3/7 the twelfth denominator has 9,950 bits).
+- C6 killed, by my band: first steps apart, p = 24: 23, 24, 23, 23, 25 (median 23); p = 53: 57, 52, 52, 54, 59
+  (median 54); p = 113: 116, 112, 114, 116, 117 (median 116, one past the band's p + 2 = 115).
+- C7 killed in its letter, through C6's clause ("a p-digit orbit outlasts p + 2 steps"): six of the fifteen orbits
+  did, by 1 to 6 steps.
+
+Post hoc: the orbits part at p − 1 to p + 6 steps, about p as predicted, but my band was lopsided the wrong way
+(p − 12 to p + 2). I had reasoned that 0.1 in g is reached about three doublings early; the rounding errors are
+often smaller than one unit in the last place, which delays it instead. The claim that survives is "about p steps";
+its band was mine and wrong.
+
+### Run 2: prediction (committed before the run)
+
+- **C6′.** Same starts, same threshold, p = 24, 53, 113, 200: every orbit's first step apart lies in [p − 4, p + 8],
+  and a line fitted to the medians against p has slope within 2% of 1. Kill: any orbit outside its band, or the slope
+  outside.
+- **C7′.** As C7 with C6′ in place of C6: the reading fails if a rational slope cycles (C5) or C6′ is killed.
+
