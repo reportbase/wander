@@ -219,6 +219,10 @@ is spared this only because it keeps to one line.
   in essay 6. The lander's pace, holding the rate of growth steady, is the same quantity held constant.
 - **Parallax.** Two looks a known step apart placing a thing is as old as surveying; along the line of sight it is the
   same triangle, flattened.
+- **The corner and the count.** Foresters have long measured a tree this way: hold a stick as long as your arm upright
+  at arm's length, walk back until it just covers the tree, then pace to the trunk; the paces are the height. That is the
+  corner found by looking and the size counted from it, for a stick equal to the arm. The thumb's one in thirty is the
+  same method at another ratio.
 - **The circle.** Z = (1 + is)/(1 − is) is Cayley's transform (1846), carrying a line to a circle. The three kinds of
   motion, with none, one or two fixed points on the circle, are the classical elliptic, parabolic and hyperbolic maps
   of the line of slopes.
