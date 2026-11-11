@@ -18,9 +18,11 @@ from this paper, this paper stands.
 ## Abstract
 
 A point seen from a standpoint can be written, in a writer's notation, ln(z/H) = ln(d/H) + iθ, with H the thumb held out
-at arm's length. Up is the direction; across is the distance, counted in thumbs. Scaling the world, every length multiplied by one factor (the
-reader's own thumb and stride with it), slides every point across by the same amount and moves nothing up. That one
-motion sorts everything an observer can hold into three kinds. A **read** is the direction, [h : v]: one standpoint has
+at arm's length. Up is the direction; across is the distance, counted in thumbs. Against a unit outside the world the
+across part has one more term, ln(d/metre) = ln(d/H) + ln(H/metre). Scaling the world, every length multiplied by one
+factor (the reader's own thumb and stride with it), leaves the direction and the distance in thumbs where they were
+and moves only that last term, the thumb in metres, by the same amount for every point. That one motion sorts
+everything an observer can hold into three kinds. A **read** is the direction, [h : v]: one standpoint has
 it, and scaling moves it not at all. A **place** is a gap across, a distance in thumbs or one distance against another:
 scaling leaves it unchanged too, but no single read holds it; it needs a second standpoint and the step between
 (parallax). A **write** is an amount, the across axis's zero tied to a unit carried in from outside, a metre or a second:
@@ -60,8 +62,9 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   of one read, the separation of two of them, is of the read. The heat is the read's own measure on its directions,
   given with them and part of the read, not a further kind (§3). The paint met along a direction accompanies the read
   and is no part of it (§4). One read holds no distance. Its sweep runs from h to v on the thumb H alone, with no V in
-  it, and stops at its horizon: a read closes nothing. Each read is orthogonal to every other, standing by itself and
-  sharing nothing with them; closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
+  it, and stops at its horizon: a read closes nothing. Each read is orthogonal to every other, in the plain sense of
+  independent: it stands by itself and shares nothing with them. No inner product is meant, and two reads can still
+  be related from outside, by a place, an order or a map (D7); closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
 - **D3. A place** is a gap across: a distance in thumbs, d/H, or one distance against another, d₁/d₂. Scaling the world
   leaves it unchanged, as it leaves a read; but no single read holds it. It needs a second standpoint and the step
   between them: parallax (§6). V\*/H, a party's true breadth in thumbs, is a place. A place is a relation
@@ -92,7 +95,13 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   sorts quantities, not causes: one cause can move both, as a boost moves where a star appears and the colour of what
   arrives from it (§4, "A moving sky"). The standpoint includes its state of motion where motion bears on what is
   read: a boost is a change of standpoint, so it is not among the changes of what arrives, and it moves the read. How
-  a relation between two standpoints is to be classed when it is not a distance is open (§12, O9).
+  a relation between two standpoints is to be classed when it is not a distance is open (§12, O9). A worked case, with
+  everything named. The standpoint is a floor corner, the look along one wall; a red wall stands 3 m off, and one
+  point of it lies at slope ½. Three candidates: that point's slope; its share h² = 4/5; and the brightness arriving
+  from it over the brightness arriving from a second point at slope 2. Held fixed: the standpoint and the look.
+  Changed: the wall is repainted blue, then taken away for a row of trees 10 m off. The slope is ½ and the share 4/5
+  before and after; they are of the read. The ratio of brightnesses changes at each step; it is a ratio of payloads,
+  though scaling the world never moved it.
 - **D7. Joining and recording.** Joining reads, two standpoints or two moments, can give places, orders or maps, not
   writes. These are distinct relations, told apart by what each is. A place involves a gap in space (D3). An order is a
   relation with no cycle: which read is before which. A map carries one read's directions to another's, as a turn of
@@ -126,7 +135,8 @@ nothing in it happened. *Which steps were taken* is a history: a tenth of a swee
 the history needs keeping. Euler's formula looks as though it accumulates because the classical reading tells it as a
 journey round a circle; the function holds no journey, only the rule, available everywhere at once. So the geometry can
 say what a thousand steps would do without remembering one of them, and memory enters only when someone asks where a
-particular sequence has got to.
+particular sequence has got to. The laws are **classical**; that keeping is a separate act, prior to physics, is a
+**reading**.
 
 | | memory | unit |
 |---|---|---|
@@ -265,15 +275,18 @@ counts and corners").
 ## 2. The plane
 
 **The equation.** Divide a point by the thumb and take the logarithm: ln(z/H) = ln(d/H) + iθ. Drawn with the direction
-up and the distance across, it is Euler's plane. A turn of the world slides every point up or down; scaling the world
-slides every point across by ln k; the two slides commute, and nothing else moves. So:
+up and the distance across, it is Euler's plane. A turn of the world slides every point up or down. Changing the thumb
+alone by k slides every point across by ln k; the two slides commute. Scaling the world, the thumb with it, moves no
+point of this plane at all. What it moves is the plane's place against an outside unit: ln(d/metre) = ln(d/H) +
+ln(H/metre), and scaling adds ln k to the last term only. So:
 
 - **Up is the read.** The direction [h : v], and every difference of directions. The writer draws it at θ, where turns
   add; the reader holds its slope s = v/h, and two turns compose as s₁ ⊕ s₂ = (s₁ + s₂)/(1 − s₁s₂), the angles'
   addition with no angle in it.
 - **Gaps across are places.** ln(d₁/H) − ln(d₂/H) = ln(d₁/d₂), and ln(d/H) itself, a distance against the thumb, since
   the thumb scales with the world. A slide across keeps every gap.
-- **The across axis's zero, tied to an outside unit, is the write.** ln(H/metre) is the one number scaling moves.
+- **The across axis's zero, tied to an outside unit, is the write.** ln(H/metre) is the one number scaling the world
+  moves.
 
 Anyone who has pinched and twisted a map on a phone has done both slides: the phone takes the line between the fingers
 after over the same line before, k·e^(iα); the real part of its logarithm is the pinch, the imaginary part the twist.
