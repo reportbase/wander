@@ -1263,6 +1263,26 @@ sums. The Cauchy is kept by order and the Gaussian by sums, a law of directions 
 reader's identity: the reader holds nothing of one Gaussian amount, only the direction of a pair, which is the Cauchy it
 already had.
 
+Between the two laws lies a whole family, Student's t (Gosset 1908). One Gaussian amount z is divided by the root mean
+square of ν others, t = z/√((w₁² + … + w_ν²)/ν). At ν = 1 it is the Cauchy; as ν grows it becomes the Gaussian. Three
+things about it sort cleanly (exact checks in the STT plan, Code and data). First, t is unmoved by scaling at every ν:
+t/√ν is one share against the length of the others, the slope of one direction among ν + 1 equal parties, and the
+direction is uniform. So nothing is written anywhere along the family, and ν is not how well a divisor is known; it is
+a count of parties, the writer's. Second, no finite ν has an e. The density's shape is (1 + t²/ν)^(−(ν+1)/2), rational
+in t or the square root of a rational, and e arrives only as Bernoulli's limit (1 + x/n)ⁿ, the gap from e^(−t²/2)
+falling as 1/ν. The Gaussian is then the paper's in a second sense: one party's share among endlessly many, a
+classical limit (Maxwell; Borel 1914). Third, the π comes and goes with the parity of ν: the height at t = 0 is 1/π,
+2/(π√3), 8/(3π√5) for ν = 1, 3, 5 and 1/(2√2), 3/8 for ν = 2, 4, with no π at all. The turn's constant belongs to the
+plane's pair; among more parties the constant is a ratio of two spheres' measures, and it holds π only when the
+count of parties, ν + 1, is even.
+
+So e reaches these equations in two ways, and they should be kept apart. It can be in the law: the Gaussian's length
+(with u = r²/2 the length's part is the plain exponential e^(−u), the Gaussian's other half as the Cauchy is its
+direction), where it is forced by squares that add and chances that multiply. Or it can be in the chart only: write the
+slope as s = e^ξ, the writer's logarithm, and the Cauchy reads (1/π)·sech ξ and the share h² = 1/(1 + e^(2ξ)), a
+logistic curve. Neither law gained anything; the chart supplied the e, and the reader's forms, 1/(1 + s²) and the
+equal halves, have none.
+
 Parallax (§6) is the case where the working writer is exact and the paper adds only units. Two standpoints a counted
 step B apart each read the target's slope off the line between them, s₁ and s₂, measured inward. The target's depth d
 off that line is then given by 1/(d/B) = 1/s₁ + 1/s₂, so d/B = s₁s₂/(s₁ + s₂): slopes 3 and 6 put it exactly 2 steps
@@ -1477,7 +1497,7 @@ cells: `plans/dyh-plan.md`, `runs/dyh/`. The Cauchy's routes: `plans/cauchy-rout
 reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `runs/txt/`. The reader's math in slopes: `plans/slp-plan.md`, `runs/slp/`. The tower and two thumbs:
 `runs/two/two_thumbs.py`. Three thumbs at the crosshair: `plans/thm-plan.md`, `runs/thm/`. The shape swept:
 `plans/swp-plan.md`, `runs/swp/`. Three laws on the sphere: `plans/eul-plan.md`, `runs/eul/`. Euler's formula as a count of
-reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. The distance between
+reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. The distance between
 standpoints: `plans/frg-plan.md`, `runs/frg/frg.py`. A flat chart in space: `plans/flc-plan.md`, `runs/flc/`. Epicycles and
 aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The data cases:
 `plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`; each records its

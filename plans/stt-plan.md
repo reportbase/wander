@@ -53,3 +53,23 @@ mpmath at 50 digits, and exact rationals where the claim is rational (`runs/stt/
 
 ## Runs
 
+### Run 1 (11 Nov 2026; `python3 runs/stt/stt.py`, output `runs/stt/stt-run1.txt`)
+
+- S1 not killed: ν = 1 equals 1/(π(1 + t²)) at all five t, to 10⁻⁵⁰.
+- S2 not killed: f(t)/f(0) exact rationals for ν = 1, 3, 5 (4/5, 144/169, 8000/9261 at t = ½ …), its square for
+  ν = 2, 4; the gap from −t²/2, times ν, −0.2421, −0.2492, −0.2499, −0.25000 at t = 1 (limit −¼) and 1.494, 1.935,
+  1.993, 1.9993 at t = 2 (limit 2).
+- S3 not killed: 1,000 seeded draws scaled by 10⁻³, 7, 10³ move t by at most 4·10⁻¹⁶ (rounding);
+  P(|t| ≤ √ν) = the cap share to 10⁻⁵⁰ for ν = 1 … 6: ½, 0.70711 (1/√2), 0.81831 (½ + 1/π), 0.88388, 0.92441, 0.95017.
+- S4 not killed: f(0) = 1/π, 1/(2√2), 2/(π√3), 3/8, 8/(3π√5) for ν = 1 … 5, to 10⁻⁵⁰.
+- S5 not killed: the limit 0.13617; sup|f − φ|·ν = 0.13174, 0.13572, 0.13613 at ν = 10, 100, 1,000 (3.3%, 0.33%,
+  0.034% under).
+- S6 killed, as expected: t is unmoved by scaling at every ν.
+
+### Reading
+
+The reading I offered Tom before the plan (ν as how well the divisor is known, V by degrees) is wrong. Student's t
+is the law of one direction among ν + 1 equal parties, read as one share against the others' length; nothing is
+written at any ν. What ν counts is parties. The e is absent at every finite ν and arrives as Bernoulli's limit; the
+π is present only for odd ν. The Gaussian as the limit of such a direction is classical (Maxwell; Borel 1914). The
+closed forms 1/√2 and ½ + 1/π in S3 were not predicted; they were noticed in the output.
