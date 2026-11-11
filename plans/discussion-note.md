@@ -99,3 +99,17 @@ a reading, a conjecture, a question); **next** (the test, or the place in the co
 Writes* §6 ("Two ways to arrive"), essay 6 §2, essay 18 §3, and notes on `approach.html` and its `demos.html` card.
 The proposed new paper is outlined in `plans/arrival-paper-outline.md`, awaiting Tom. The bee-landing references were
 not used (unchecked).
+
+10. **The write is not yet understood; a candidate: the write of the relation is the count n in g^n.** **Whose:** Tom,
+   11 Nov ("The read seems solid, the write seems poetic. Write is not fully understood. Geometry has laws that collapse the sequence into a limit, but the human actually walks to the mountain with discrete steps. The law just says if you collapse those steps to be infinitely small, and repeat the continuously, this is the result."; R870). **Standing:** discussion, nothing in the papers.
+   Claude's reply:
+   - A correction from WLK: on the walk the law needs no shrinking steps. Strides compose exactly (n slides of one rung
+     are one slide of n), fixed shares compose exactly, turns compose exactly by tangent addition. Discrete steps are
+     exact members of the family the law describes. The limit enters only for a mixed step (Euler's (1 + i.theta/n)^n,
+     a small turn with a small stretch) and where the writer wants one number for every member (the angle, the logarithm).
+   - The candidate: the geometry gives the step g and what steps do together; what it does not give is how many were
+     taken. The write of the relation is n. Fits R853 (memory for which steps were taken, never for what steps do).
+   - Still not understood: where n is kept (item 1); the count does not finish the walk (514 2/7 strides: the last part
+     is settled by a read, not the count); why a stride repeats (sameness of the step is carried in by the body, not
+     given by the geometry); the unit (separate, physics).
+   **Next:** if Tom takes the candidate, try D3-D7 rebuilt on it (item 2) as a draft for him, not in the paper.
