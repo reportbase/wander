@@ -53,3 +53,31 @@ and the reciprocal reading is the chart in which that writing is even. The breat
 counted stride; the corner belongs to the looks, not to the strides.
 
 ## Runs
+
+**Run 1** (11 Nov, `runs/wlk/wlk.py`, output `runs/wlk/wlk-run1.txt`; exact fractions, constants read from
+`approach.html`: H/L = 1/30, stride 7/10 m). **Nothing killed.**
+
+| thing | d_c | rung δ in h/v | strides, corner to foot | V* back |
+|---|---|---|---|---|
+| house | 360 m | 7/3600 | 3600/7 = 514.29 | 12 m |
+| tower | 1,800 m | 7/18000 | 18000/7 = 2,571.43 | 60 m |
+| mountain | 90 km | 7/900000 | 900000/7 = 128,571.43 | 3,000 m |
+
+- W1 not killed: every step in h/v is exactly δ, at 1,000 starts a thing, out to 16 corners.
+- W2 not killed: the count is d_c/S, the page's `stridesFromCorner` (its body is `cornerD(thing, k) / STRIDE`), and
+  count × H/L × stride returns V* exactly. No count is a whole number here; the last rung is 2/7 or 3/7 of a stride.
+- W3 not killed: the steps in v/h are 1/(δ·n·(n − 1)), growing at every stride toward the foot.
+- W4 not killed: all scaled, same rung and count; the stride kept, the count moves by k.
+- W5 not killed: strides left = x₂/(x₁ − x₂) and the breadth in strides = (H/L)/(x₁ − x₂), from any two looks.
+- W6 not killed: the steps before, across and after x = 1 are equal.
+- W7 not killed: (x − a)² − x(x − 2a) = a², so a pace even in x and in ln x is no pace; the fixed-share pace is still
+  short of the foot after 2,000 steps (x ≈ 3·10⁻⁹²).
+
+A fault of my set-up, recorded: the first execution stopped at W7 on `import sympy` (not installed here), after
+printing W1–W6; W7's algebra was then checked in fractions instead and the script rerun whole. No prediction changed.
+
+Read after the run (as stated beforehand): the ladder is real and exactly even, and it is the writer's number line in
+units of d_c. What the test adds to the note: (1) the ladder has no corner, so the corner belongs to the looks and not
+to the strides; (2) the foot does not have to be walked to: any two looks a counted stride apart give the strides left
+and the breadth in strides (W5), which is parallax along the line of sight, `mountain.html`'s walk; (3) the even
+stride and the even breath are equal steps on two rulers and cannot be the same pace (W7). All classical.

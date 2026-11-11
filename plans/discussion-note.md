@@ -46,5 +46,16 @@ a reading, a conjecture, a question); **next** (the test, or the place in the co
      "cycle" here means the alternation, not a closing. A stride is a translation, not a slide, on Euler's plane; only a
      pace that covers a fixed share of what remains is a steady slide across, and that pace never arrives. And the
      sequence exists only for whoever keeps it (R651, R652): a read has no "nearer".
-   **Next:** an exact check of the even ladder in h/v; then decide whether the breath belongs in the paper at all
-   (R779 kept it out: "no breathing in the paper").
+   **Checked** (WLK, `plans/wlk-plan.md`, run 1, exact, nothing killed; R866): the ladder is exactly even, the rung
+   S·(H/L)/V* in h/v (the note's "h/v = d/V*" was a slip: it is d/d_c), 514 2/7, 2,571 3/7 and 128,571 3/7 strides
+   from the corner to the foot for the house, tower and mountain, each returning V* exactly. What the test adds:
+   - The even ladder is the writer's number line in units of d_c (R338). It has no corner: the steps before, across
+     and after h/v = 1 are equal. The corner belongs to the looks, the ladder to the strides.
+   - The foot need not be walked to. Any two looks a counted stride apart give the strides left, x₂/(x₁ − x₂), and
+     the breadth in strides, (H/L)/(x₁ − x₂). One breath (look, stride, look) already holds the whole walk.
+   - The even stride and the even breath are equal steps on two rulers (h/v and its logarithm); a pace even on both
+     is no pace. So Euler's plane holds the breath as a steady slide only for the pace that never arrives; the walk
+     that arrives is even on the writer's line.
+   - All scaled, no rung or count moves (a write of the relation); the stride kept, the count moves by k.
+   **Next:** decide whether the breath belongs in the paper at all (R779 kept it out: "no breathing in the paper").
+   Open, Claude's: whether "one breath holds the whole walk" is the better statement of Tom's idea than the cycle.
