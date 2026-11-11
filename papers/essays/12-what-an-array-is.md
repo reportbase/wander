@@ -286,6 +286,13 @@ Cauchy free is not a figure of speech: it gives what no computation can.
 
 ---
 
+**An iterator, not an index.** This is the reader's situation in a programmer's words. `a[30]` goes straight to slot
+30; it needs the slots laid out in advance and counted from a fixed origin, which is what the writer holds. The reader
+has only "next": a sweep forward from where it stands, and where it stops is the new start. It can turn round and
+sweep the other way, a second iterator pointed back, but to land exactly on the slot it left it must have kept a
+count or left a mark. The writer's arctangent is the index operator, the function that turns a reading straight into a
+slot; that is why this section gives it to the writer and why it should be used with care. It eliminates the sweep.
+
 ## 7. The array, read twice
 
 Back to `int a[10]`. Read from a standpoint, it splits along the same two sweeps.

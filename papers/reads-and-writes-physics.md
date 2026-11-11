@@ -426,7 +426,7 @@ precision; it is not this paper's to test. What the sort says is where it lives.
   dimensions. The receiver catches exactly half. This is the cos³ law of illumination, by a change of variable. A lens
   adds one cosine more, cos⁴, for the aperture seen obliquely: three cosines are the heat, the fourth the lens's.
 - **The corner lives in the count.** An even line of half-length b at distance d gives (λ/4πd)·2·arctan(b/d): paint
-  falling as 1/d on every direction it covers, and the share of directions (2/π)·arctan(b/d), whose median is exactly at
+  falling as 1/d on every direction it covers, and the share of directions it covers (in the writer's formula (2/π)·arctan(b/d)), whose median is exactly at
   b = d. Its slope on logarithmic axes at b = d is −1.637: −1 from the paint and −2/π from the directions.
 - **The dimension.** The cosine-weighted share sin^(D−1)θ is symmetric under the reciprocal only in three dimensions:
   D = 3 is singled out by Lambert's cosine, not by the turn, whose one-axis marginal is the Cauchy in every dimension.

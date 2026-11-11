@@ -561,6 +561,16 @@ stood, which loops it closed, what it was handed. That is not a lesser achieveme
 
 *Demo: the reader is a slide rule: chains, loops and a misread link.*
 
+**Steps, never positions.** One more thing separates the two acts, and it is the plainest. A sweep goes one way, from
+home toward the horizon, and where it stops is the next sweep's home: every sweep resets. A tenth of a sweep, then a
+fifth of a fresh one, then three tenths of another, is three steps, each from its own start, and nothing in any of them
+says how far the three have come together. A position, "three fifths of the way round", is a total of steps from a
+starting mark that was kept, and a read keeps no mark. The reader can go back: it faces the other way and sweeps, and
+that too is a forward sweep. What it cannot do by reading alone is go back exactly to where it was; for that the steps
+must have been kept, or a mark left at the start. So there is no circle anywhere in reading. A circle is one fixed dial
+on which every sweep has its place; the reader has a sweep, a reset and another sweep, and the dial appears only when
+someone keeps the steps and lays them end to end.
+
 **In physics.** Physics already runs both tests. Scaling the world is dimensional analysis (Bridgman's and
 Buckingham's): a ratio unmoved by it is a read, and anything that moves had an amount carried in. Changing what arrives
 splits one formula into its directions and its paint: aberration from Doppler, the quasar dipole's 2 from its x(1 + α).
