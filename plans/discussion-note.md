@@ -30,4 +30,21 @@ a reading, a conjecture, a question); **next** (the test, or the place in the co
 
 ## From discussion
 
-(none yet)
+7. **The walk to the mountain is the breath: read, step, read, step.** **Whose:** Tom, 11 Nov ("the walk to the mountain
+   I think reveals the breath/exhale cycle. which is just read/write/read/write … as you approach the mountain. Euler's
+   captures this idea I think."). **Standing:** a reading, building on `plans/breath-note.md`, R644, R785 and R804.
+   Claude's additions, unchecked:
+   - Under the two writes (R850) every exhale on the walk is a write of the relation (one more stride counted), so the
+     whole walk, corner to foot, is prior to physics; the write of the scale comes once, at the end, if a stride is given
+     in metres.
+   - In the reciprocal reading the walk is a count: with steady strides h/v falls by the same amount each stride
+     (h/v = d/V*), from 1 at the corner to 0 at the foot. So the reads form an even ladder in h/v and the count of
+     rungs is V* in strides. To check exactly against `approach.html`'s `stridesFromCorner`.
+   - Euler's formula holds it as law and steps (R864): e^(iθ) is the law given whole; (1 + iθ/n)ⁿ is the same thing
+     taken apart into n steps (ELM), and each factor is one breath, a small turn with a small stretch.
+   - Cautions. The walk is not a loop: a breath that is a turn and a scaling closes (BRL), a walk goes one way, so
+     "cycle" here means the alternation, not a closing. A stride is a translation, not a slide, on Euler's plane; only a
+     pace that covers a fixed share of what remains is a steady slide across, and that pace never arrives. And the
+     sequence exists only for whoever keeps it (R651, R652): a read has no "nearer".
+   **Next:** an exact check of the even ladder in h/v; then decide whether the breath belongs in the paper at all
+   (R779 kept it out: "no breathing in the paper").
