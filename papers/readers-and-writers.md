@@ -869,8 +869,12 @@ line in units of d_c, and the corner is not marked on it; the corner belongs to 
 Even in 1/s and even in ratio are different paces: a pace that is both takes no step. So the one −1 is reached by a
 count and approached by a ratio. Nor must the foot be walked to: two reads one counted stride apart, x₁ and x₂ in 1/s,
 give the strides left, x₂/(x₁ − x₂), and the breadth in strides, (H/L)/(x₁ − x₂), at any distance: places, in the
-walker's stride. Which pace a thing that approaches takes is not this paper's question; both stand on the same reads,
-which are there for anything that looks.
+walker's stride. The fixed share has been observed: landing honeybees hold the image's rate of expansion steady, their
+speed in proportion to the distance left and near zero at contact (Srinivasan et al. 2000; Baird et al. 2013); and the
+corner found by looking with the size paced from it is the forester's stick method. Those findings are their authors';
+what this section adds is the one circle on which the two paces are the maps with two fixed points and with one, which
+is why the first never arrives and the second does in a finite count. Which pace a thing that approaches takes is not
+this paper's question; both stand on the same reads, which are there for anything that looks.
 
 Parallax is the link in this chain: two reads and one counted step. A chain of such links collapses to its ends, exactly:
 the ratios Z_(j+1)/Z_j along the walk multiply to Z_N/Z_0 for any strides, equal or not. Nothing here needs the stride to
@@ -1707,6 +1711,8 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
 - Archimedes. *On the Sphere and Cylinder*, Book I.
 - Aspden, R. S., Padgett, M. J. and Spalding, G. C. (2016). Video recording true single-photon double-slit interference.
   *American Journal of Physics* 84, 671.
+- Baird, E., Boeddeker, N., Ibbotson, M. R. and Srinivasan, M. V. (2013). A universal strategy for visually guided
+  landing. *Proceedings of the National Academy of Sciences* 110(46), 18686–18691.
 - Bernoulli, J. (1690). *Quæstiones nonnullæ de usuris.* Acta Eruditorum.
 - Bernstein, A. J. (1966). Analysis of programs for parallel processing. *IEEE Transactions on Electronic Computers*
   EC-15(5), 757–763.
@@ -1785,6 +1791,8 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
 - Shepard, R. N. (1964). Circularity in judgments of relative pitch. *Journal of the Acoustical Society of America*
   36(12), 2346–2353.
 - Snellius, W. (1617). *Eratosthenes Batavus.* Leiden.
+- Srinivasan, M. V., Zhang, S. W., Chahl, J. S., Barth, E. and Venkatesh, S. (2000). How honeybees make grazing
+  landings on flat surfaces. *Biological Cybernetics* 83(3), 171–183.
 - Staudt, K. G. C. von (1847). *Geometrie der Lage.* Nürnberg: Bauer und Raspe.
 - Takenaka, S. (1925). On the orthogonal functions and a new formula of interpolation. *Japanese Journal of
   Mathematics* 2, 129–145.
