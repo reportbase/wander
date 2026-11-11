@@ -117,3 +117,33 @@ x = 1/√(1 − q) = 1.054 for q = 1/10, just outside the corner (E4); the house
 (514 2/7 from the corner) and walking on returns toward +1 through the lower half, the fixed share after 5,000 steps
 is still short of −1 by an imaginary part of 3·10⁻²²⁹ (E5); the fixed share is a constant slide of ln x, the stride
 is not (E6). Classical (the Cayley transform; the three kinds of Möbius map). The reading is ours.
+
+### Run 3, predictions (committed before the run): the shrinking stride
+
+11 Nov. Tom: "Seems like parallax is the best candidate for the collapse. Maybe an infinite parallax collapses into
+ehulers", then "Yes, run the test". x = h/v as before, Z(x) = (x + i)/(x − i), the walk from x₀ to x_N by strides
+δ₁ … δ_N (equal or not). Fractions for the exact parts, mpmath at 50 digits where the writer's angle is summed.
+Stated before running, from working it through: I now expect the "infinite" to sit in a different place than I said
+in the discussion (item 12 said "as the stride shrinks").
+
+- **C1, the finite collapse.** The product of Z_(j+1)/Z_j over any walk is Z_N/Z_0 exactly, for equal strides and
+  for 200 random uneven walks. *Killed* if any product differs.
+- **C2, parallax needs no shrinking.** From two looks a stride apart, x₂/(x₁ − x₂) is exactly the strides left from
+  the later look and x₁/(x₁ − x₂) from the earlier, at every stride size (δ from 1/2 down to 10⁻⁹): the stride-by-stride
+  parallax is already the time to contact in strides; the limit changes nothing. *Killed* if either is inexact at
+  any δ.
+- **C3, the arc composes exactly.** With t_j = δ_j/(1 + x_j·x_(j+1)) the slope of half the arc of stride j, composing
+  all t_j by tangent addition gives exactly (x₀ − x_N)/(1 + x₀·x_N), for any strides. To the foot (x_N = 0) that is
+  x₀: from the corner the half-arc's slope is exactly 1 (a quarter of the circle gathered, at any stride size), and
+  the half circle is gathered only as the start goes off without end (x₀ → ∞). So the infinite in "an infinite
+  parallax" is the far start, not the small stride. *Killed* if the composition differs, or depends on the strides.
+- **C4, the writer's sum agrees at every stride count.** Σ 2·arctan(t_j) = 2·arctan(x₀) to 45 digits for N = 10,
+  1,000 and 100,000 equal strides from x₀ = 1, 30 and 10⁶; and π − 2·arctan(x₀) falls as 2/x₀. *Killed* if the sum
+  moves with N beyond 10⁻⁴⁵, or the shortfall is not 2/x₀ to leading order.
+- **C5, where the stride must shrink.** Adding the slopes instead of composing them, Σ t_j, is not arctan(x₀) at any
+  finite stride; the excess is (δ²/3)·∫₀^(x₀) dx/(1 + x²)³ to leading order, falling fourfold when the stride halves.
+  So composing (tangent addition) is exact at any stride; adding (the angle as a sum) needs the limit. *Killed* if the
+  excess is zero at a finite stride, or does not fall as δ² (ratio outside 3.9–4.1 per halving at N ≥ 1,000).
+- **C6, the strides are on the circle; Euler's factors are not.** Every Z_(j+1)/Z_j has modulus exactly 1 and the
+  arcs are unequal (largest at the foot); each factor 1 + iθ/n of (1 + iθ/n)ⁿ has modulus above 1. *Killed* if a
+  stride factor's modulus is not 1, or the strides' arcs are equal.
