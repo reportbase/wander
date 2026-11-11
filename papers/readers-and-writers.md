@@ -554,7 +554,11 @@ source is counted whatever its brightness and the sky is assumed uniform in its 
 not itself a read. The read is the sky's directions as they arrive; the premise is about where the sources lie, which
 is part of what arrives; the inference compares the two, and what it yields is the coordinate of a map between the
 observer's standpoint and the sky's assumed rest frame (D7; §12, O4). That it was had from one look does not change
-the kind of thing it is, and the paint that served as evidence is not the map. The inference is conditional on the
+the kind of thing it is, and the paint that served as evidence is not the map. This is a statement of classification,
+not of measurability: the rapidity can be observed and measured as well as any quantity in physics; what is said is
+only that a quantity does not become a read because a read lets it be inferred. Nor is the boost a fiction fitted
+afterwards: it is a physical change of standpoint, and seeing a pattern and naming the change responsible for it are
+two steps. The inference is conditional on the
 premise: directions alone do not give the sky's rest frame, nor show that such a frame is the only one. Taken as the
 sky's median before a boost against after, the same coordinate is had by joining two looks at one position, with no gap
 in space: a map again, not a place. The speed in metres a second needs c carried in, and D read as a line's shift needs the

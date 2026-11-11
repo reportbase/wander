@@ -365,6 +365,19 @@ is the same number as before. The map in metres moves: the stride was measured a
 with the world, and every length in metres is k times larger. One test, and it puts the map in steps with the readings,
 unmoved (a place, since it needed the step), and the map in metres on the writing side.
 
+Three cautions keep the test honest. What it sorts is a variable, a quantity said of something named: this direction,
+that gap, this light's frequency. A bare number is not yet sorted, and one thing can supply several variables of
+different kinds. Second, the test crosses with a partner the third essay gives, change what arrives and keep the
+directions, and the crossing has four boxes. On the geometry's side, unmoved is a reading or a place and moved is a
+writing, a distance in metres. On the payload's side, unmoved is a ratio of payloads, one colour channel over another,
+and moved is again a writing, a frequency in hertz. So a writing is any amount in a unit carried in, whichever side it
+is on, and being unmoved by scaling never shows by itself that a thing is a reading. Third, joining two reads does not
+always give a place. A place has a gap in space in it. Which read came before which is an order, with no gap. And
+turning the look, or changing one's motion, joins two reads by a map, one read's directions carried to the other's,
+again with no gap; an angle of turn, or a rapidity, is a coordinate on such a map, inferred from the directions and
+not itself a reading. Whether those three are all the ways reads can be joined is not claimed (*Reads and Writes* §1,
+D4–D7; §12).
+
 Try it on a mountain. A range of mountains twenty miles wide, ten miles away, seen against your thumb. Scale the world
 by a tenth, so the range is two miles wide, one mile away, and your thumb is a tenth of its size. The view is the same.
 Scale by a hundred, so the range is two thousand miles wide, a thousand miles away, and your thumb a hundred times as

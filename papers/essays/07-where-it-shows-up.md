@@ -358,7 +358,10 @@ frame it lies as ½·sech²(ξ′ − η), the same bell with its median moved t
 
 So from directions alone the rapidity of its own motion can be inferred, with no clock, no frequency and no speed of
 light carried in. The look is the read; the rapidity is not. It is the coordinate of a map, the boost between the
-observer's standpoint and the sky's assumed rest frame, and the directions are the evidence for it. The inference
+observer's standpoint and the sky's assumed rest frame, and the directions are the evidence for it. That is
+a matter of what kind of thing the rapidity is, not of whether it can be measured: it can, and the boost is real; a
+quantity does not become a reading because a reading lets it be inferred, as a mountain's height is not a photograph
+though photographs give it. The inference
 needs two things of the sky: that every source is counted whatever its brightness, and that the
 sources are uniform in their own frame. The third essay's quasar dipole showed what happens when the first fails. A
 census cut by brightness adds a weighting of the directions, D raised to a power read from the census's own counts and

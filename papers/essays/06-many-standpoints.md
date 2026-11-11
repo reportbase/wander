@@ -55,10 +55,12 @@ and found a rule on it: brake so that the time to contact shrinks no faster than
 a standpoint is given motion before it is given an object.
 
 Three limits keep this honest. A read holds no time and holds only where the standpoint is now, so a stream, and
-everything said along it, is reads joined: a place, not a read. The time to contact is a count of the standpoint's own
-ticks between reads, a place in its own tick, as distances after a counted step are places in its own thumbs; the braking
-rule, ticks per tick, is unmoved by any clock and by scaling the world, and it is still a place, not a read, since no
-single read holds a rate of change. Only seconds make it a write: a unit carried in from a clock. The rate at which the standpoint turns cancels from every reading,
+everything said along it, is reads joined, not a read. What the joining gives has to be named before it is classed.
+The number had from two reads a tick apart is exactly the distance over the step between them, d₁/B: a ratio of two
+distances, as a distance in thumbs is. Calling that number a time adds a premise no read supplies, that the steps to
+come go on like the one taken; so the time to contact is not listed among the places, and its kind as a time is left
+open. The braking rule, ticks per tick, is unmoved by any clock and by scaling the world, and it is no read either,
+since no single read holds a rate of change. Only seconds make a write: a unit carried in from a clock. The rate at which the standpoint turns cancels from every reading,
 as the thumb's length does. And a speed in metres a second is a writing twice over: a metre and a second, both carried in.
 
 **A shared denominator gives relative payloads.** Two readings taken at the same moment against the same thing, say two
