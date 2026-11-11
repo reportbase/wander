@@ -45,9 +45,11 @@ writer's grid on it.
 
 On it the two tests of the series become the two directions of the page.
 
-**Scaling the world slides across.** Make everything k times larger, or hold up a thumb k times smaller, and every point
-moves sideways by ln k. Nothing moves up or down. A slide keeps every gap across, so what scaling moves is only where
-the across axis's zero sits against a unit outside the world. So the first test, scale the world, comes down to which part
+**Scaling slides across.** Hold up a thumb k times smaller, or make everything but the thumb k times larger, and every
+point moves sideways by ln k. Nothing moves up or down, and a slide keeps every gap across. Make everything k times
+larger with the thumb, and no point of the page moves at all: a distance in thumbs is what it was. What that scaling
+moves is only where the across axis's zero sits against a unit outside the world, the thumb in metres, since
+ln(d/metre) = ln(d/H) + ln(H/metre) and only the last term changes. So the first test, scale the world, comes down to which part
 moved: what stays is a reading (up) or a place (a gap across, a distance in thumbs, one distance against another); what
 moves is the zero tied to a metre, a writing. The direction up is what one read holds. The distance across is a place:
 unmoved by scaling, but held by no single read, needing a second standpoint and the step between. Where its zero falls

@@ -612,7 +612,8 @@ third, the same every time, with no state behind it. That is why it needs no mem
 enters only with keeping: which steps this observer took. And state comes in two kinds here. A count of steps kept is
 state with no unit, a write of the relation; scale the world and it is unchanged. An amount in a unit is a write of the
 scale, and that is where physics, and everything a machine calls a measurement, comes in. A law needs no memory; a
-history does.
+history does. ("Law" in the geometric sense only, a relation among one read's directions: the sorting stays read and
+write, with no third kind.)
 
 **An iterator, not an index.** One more contrast belongs in this list. Random access, `mem[a]`, needs an address
 space laid out beforehand with a fixed origin: a writer's. The read of this essay is sequential and relative. It

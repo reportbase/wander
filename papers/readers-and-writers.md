@@ -18,9 +18,11 @@ from this paper, this paper stands.
 ## Abstract
 
 A point seen from a standpoint can be written, in a writer's notation, ln(z/H) = ln(d/H) + iθ, with H the thumb held out
-at arm's length. Up is the direction; across is the distance, counted in thumbs. Scaling the world, every length multiplied by one factor (the
-reader's own thumb and stride with it), slides every point across by the same amount and moves nothing up. That one
-motion sorts everything an observer can hold into three kinds. A **read** is the direction, [h : v]: one standpoint has
+at arm's length. Up is the direction; across is the distance, counted in thumbs. Against a unit outside the world the
+across part has one more term, ln(d/metre) = ln(d/H) + ln(H/metre). Scaling the world, every length multiplied by one
+factor (the reader's own thumb and stride with it), leaves the direction and the distance in thumbs where they were
+and moves only that last term, the thumb in metres, by the same amount for every point. That one motion sorts
+everything an observer can hold into three kinds. A **read** is the direction, [h : v]: one standpoint has
 it, and scaling moves it not at all. A **place** is a gap across, a distance in thumbs or one distance against another:
 scaling leaves it unchanged too, but no single read holds it; it needs a second standpoint and the step between
 (parallax). A **write** is an amount, the across axis's zero tied to a unit carried in from outside, a metre or a second:
@@ -36,7 +38,9 @@ The geometry has no memory, and its laws need none. A law, tangent addition or t
 says what any two directions give together; it holds for every pair at once, and nothing in it happened. Memory is
 needed only for which steps were taken, never for what steps do. So three things stand apart: the geometry, complete
 with no memory and no unit; keeping, a write of the relation, which holds a history and still no unit; and the unit, a
-write of the scale, where physics enters.
+write of the scale, where physics enters. The writer's completed equations each have a reader's form that is rational in
+the slope and needs no limit: for e^(iπ) = −1 it is w(s)·w(1/s) = −1 with w(s) = (1 + is)/(1 − is), a direction and its
+reciprocal, and at the corner i·i = −1 (§1, "The same relation, held two ways").
 
 None of the mathematics is new. What is offered is a division of it: which parts one standpoint has, which need two, and
 which need a unit, with the plane as the frame that holds the division in one line.
@@ -60,8 +64,9 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   of one read, the separation of two of them, is of the read. The heat is the read's own measure on its directions,
   given with them and part of the read, not a further kind (§3). The paint met along a direction accompanies the read
   and is no part of it (§4). One read holds no distance. Its sweep runs from h to v on the thumb H alone, with no V in
-  it, and stops at its horizon: a read closes nothing. Each read is orthogonal to every other, standing by itself and
-  sharing nothing with them; closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
+  it, and stops at its horizon: a read closes nothing. Each read is orthogonal to every other, in the plain sense of
+  independent: it stands by itself and shares nothing with them. No inner product is meant, and two reads can still
+  be related from outside, by a place, an order or a map (D7); closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
 - **D3. A place** is a gap across: a distance in thumbs, d/H, or one distance against another, d₁/d₂. Scaling the world
   leaves it unchanged, as it leaves a read; but no single read holds it. It needs a second standpoint and the step
   between them: parallax (§6). V\*/H, a party's true breadth in thumbs, is a place. A place is a relation
@@ -92,7 +97,13 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   sorts quantities, not causes: one cause can move both, as a boost moves where a star appears and the colour of what
   arrives from it (§4, "A moving sky"). The standpoint includes its state of motion where motion bears on what is
   read: a boost is a change of standpoint, so it is not among the changes of what arrives, and it moves the read. How
-  a relation between two standpoints is to be classed when it is not a distance is open (§12, O9).
+  a relation between two standpoints is to be classed when it is not a distance is open (§12, O9). A worked case, with
+  everything named. The standpoint is a floor corner, the look along one wall; a red wall stands 3 m off, and one
+  point of it lies at slope ½. Three candidates: that point's slope; its share h² = 4/5; and the brightness arriving
+  from it over the brightness arriving from a second point at slope 2. Held fixed: the standpoint and the look.
+  Changed: the wall is repainted blue, then taken away for a row of trees 10 m off. The slope is ½ and the share 4/5
+  before and after; they are of the read. The ratio of brightnesses changes at each step; it is a ratio of payloads,
+  though scaling the world never moved it.
 - **D7. Joining and recording.** Joining reads, two standpoints or two moments, can give places, orders or maps, not
   writes. These are distinct relations, told apart by what each is. A place involves a gap in space (D3). An order is a
   relation with no cycle: which read is before which. A map carries one read's directions to another's, as a turn of
@@ -126,13 +137,36 @@ nothing in it happened. *Which steps were taken* is a history: a tenth of a swee
 the history needs keeping. Euler's formula looks as though it accumulates because the classical reading tells it as a
 journey round a circle; the function holds no journey, only the rule, available everywhere at once. So the geometry can
 say what a thousand steps would do without remembering one of them, and memory enters only when someone asks where a
-particular sequence has got to.
+particular sequence has got to. The laws are **classical**; that keeping is a separate act, prior to physics, is a
+**reading**. "Law" here means a geometric law only, a relation among the directions of one read. Laws in general
+are many things (a physical law carries units and constants) and are not a third kind beside the read and the write;
+the sorting stays the read and the two writes. That the geometry's laws are of this kind may be why the geometry needs
+no memory: offered as a likely reason, not shown.
 
 | | memory | unit |
 |---|---|---|
 | the geometry: reads, and the laws relating them | none | none |
 | keeping: a write of the relation, which steps were taken | yes | none |
 | physics: a write of the scale, amounts | yes | yes |
+
+**The same relation, held two ways.** The central example of this paper is Euler's identity. The writer states it as
+e^(iπ) = −1: an exponential, the number e, and a half turn measured by π, each of them a limit (marked the writer's, §9).
+The relation it states is already present in a form that uses none of the three. Write a direction of slope s = v/h as
+w(s) = (1 + is)/(1 − is). Then for every slope
+
+  w(s)·w(1/s) = −1,
+
+by ordinary algebra: a direction and its reciprocal compose to the half turn. At the corner the direction is its own
+reciprocal, w(1) = i, and the relation is i·i = −1, two corner steps, exact. Every member with 0 < s < ∞ is a pair of
+directions of one read. The one member that is not is the pair home and horizon, s = 0 and 1/s = ∞: no read holds the
+horizon, so that member is the writer's, and it is the one the classical equation names, which is why it is the one
+that carries π. The circle, the quarter turn's two numbers and the Cauchy's total go the same way, each with a form
+rational in s about the exchange s ↔ 1/s and the corner (§9, "Four identities, one exchange"; parallax and the Gaussian
+beside them in "What is free, and what π costs"). Three limits on what is claimed. The algebra is **classical** and the
+two forms are equivalent; saying which form a read holds is a **reading**. The simpler form exists for relations among
+the directions of one read; positions, closures and totals are not done more simply by the reader, they are not done
+("Steps, never positions", next). And nothing here says the classical statement carries anything it should not: the
+writer's form holds the join completed, which the reader's form does not have.
 
 **Steps, never positions.** A sweep goes one way, from home toward the horizon, and where it stops is the next
 sweep's home: every sweep resets. A tenth of a sweep, then a fifth of a fresh one, then three tenths of another, is
@@ -265,15 +299,18 @@ counts and corners").
 ## 2. The plane
 
 **The equation.** Divide a point by the thumb and take the logarithm: ln(z/H) = ln(d/H) + iθ. Drawn with the direction
-up and the distance across, it is Euler's plane. A turn of the world slides every point up or down; scaling the world
-slides every point across by ln k; the two slides commute, and nothing else moves. So:
+up and the distance across, it is Euler's plane. A turn of the world slides every point up or down. Changing the thumb
+alone by k slides every point across by ln k; the two slides commute. Scaling the world, the thumb with it, moves no
+point of this plane at all. What it moves is the plane's place against an outside unit: ln(d/metre) = ln(d/H) +
+ln(H/metre), and scaling adds ln k to the last term only. So:
 
 - **Up is the read.** The direction [h : v], and every difference of directions. The writer draws it at θ, where turns
   add; the reader holds its slope s = v/h, and two turns compose as s₁ ⊕ s₂ = (s₁ + s₂)/(1 − s₁s₂), the angles'
   addition with no angle in it.
 - **Gaps across are places.** ln(d₁/H) − ln(d₂/H) = ln(d₁/d₂), and ln(d/H) itself, a distance against the thumb, since
   the thumb scales with the world. A slide across keeps every gap.
-- **The across axis's zero, tied to an outside unit, is the write.** ln(H/metre) is the one number scaling moves.
+- **The across axis's zero, tied to an outside unit, is the write.** ln(H/metre) is the one number scaling the world
+  moves.
 
 Anyone who has pinched and twisted a map on a phone has done both slides: the phone takes the line between the fingers
 after over the same line before, k·e^(iα); the real part of its logarithm is the pinch, the imaginary part the twist.
