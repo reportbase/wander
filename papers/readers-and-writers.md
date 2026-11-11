@@ -138,7 +138,10 @@ the history needs keeping. Euler's formula looks as though it accumulates becaus
 journey round a circle; the function holds no journey, only the rule, available everywhere at once. So the geometry can
 say what a thousand steps would do without remembering one of them, and memory enters only when someone asks where a
 particular sequence has got to. The laws are **classical**; that keeping is a separate act, prior to physics, is a
-**reading**.
+**reading**. "Law" here means a geometric law only, a relation among the directions of one read. Laws in general
+are many things (a physical law carries units and constants) and are not a third kind beside the read and the write;
+the sorting stays the read and the two writes. That the geometry's laws are of this kind may be why the geometry needs
+no memory: offered as a likely reason, not shown.
 
 | | memory | unit |
 |---|---|---|
