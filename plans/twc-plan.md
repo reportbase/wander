@@ -85,3 +85,19 @@ missed), so the score is the rule's, but an unrecognised subset does not exist t
   One direction of each rule holds on this list; "exactly when" does not.
 - So the two-completions table is a relabelling of the cases it was built from, plus a one-way rule. It is not put
   into *Reads and Writes* as an organising principle.
+
+### After the run (11 Nov; R835; Tom: "one thing to keep in mind is that PI/2 and 2/PI are the primitives, not PI. A read is about the quarter turn.")
+
+The run's rule and its constants were stated in π. Restated in the quarter turn q = π/2, noted after the fact and
+not a rescue of W1 (the rule still could not have predicted these from the constructions):
+
+- The four misses are ζ(2) and ζ(4). Their π lies in the sums over the odd numbers, and those are rational multiples
+  of powers of the quarter turn: Σ 1/(2k+1)² = ½·q², Σ 1/(2k+1)⁴ = q⁴/6, Σ 1/(2k+1)⁶ = q⁶/15 (checked to 20 digits).
+  The sums over all whole numbers are these times 1/(1 − 2^(−s)), a rational.
+- The reason is classical (Euler): the slope tan x has its poles at the odd multiples of the quarter turn, the
+  horizons of the successive facings, and tan x = Σ 2x/(((2k+1)q)² − x²) (checked at x = 0.7 to 40 digits). So the odd
+  sums are the slope's own expansion about home in terms of its horizons, and ½·q² is also ∫₀^q θ dθ.
+- Other answers in the quarter turn: 4 is e^(−q) exactly; 12 is 2q/e; 3 is (64/45)·(1/q); 9 is (3/2)·(1/q)².
+
+A reading, unchecked beyond the identities above: any constant in π can be rewritten in q, so simpler coefficients
+alone show nothing. What is specific is that the odd sums, not the full ones, carry the plain coefficients.
