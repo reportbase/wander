@@ -59,3 +59,21 @@ a reading, a conjecture, a question); **next** (the test, or the place in the co
    - All scaled, no rung or count moves (a write of the relation); the stride kept, the count moves by k.
    **Next:** decide whether the breath belongs in the paper at all (R779 kept it out: "no breathing in the paper").
    Open, Claude's: whether "one breath holds the whole walk" is the better statement of Tom's idea than the cycle.
+
+8. **Walking to the mountain and the butterfly landing on a leaf are one idea; the geometry is the free baseline.**
+   **Whose:** Tom, 11 Nov ("seems like walking towards the mountain and the butterfly landing precisely on a leaf is
+   the same idea. no doubt different creatures solve this problem differently, but geometry is the baseline they all
+   build on, the geometry part is free and available to all creatures to build on."; R867). **Standing:** a reading;
+   Claude agrees, with a sharpening from WLK W7 and two cautions.
+   - The same: an approach to a thing whose size is never read; the reading grows, the corner is met by looking, two
+     looks give the time to contact in the creature's own ticks.
+   - Two paces, not one (WLK W7): the walker's equal strides (even on the writer's line, arrives in a finite count,
+     the count a write of the relation that gives V* in strides) and the lander's fixed share of what remains (even on
+     the logarithm, the steady slide on Euler's plane, never arrives in the ideal, so touches at almost no speed). The
+     lander holds one reading steady and counts nothing: a strategy of reads alone.
+   - Known, from memory, to check: honeybees landing hold the image's rate of expansion constant (Srinivasan et al.
+     c. 2000; Baird et al. c. 2013); Lee's tau-dot >= -1/2 (in the paper, section 8).
+   - Cautions: the paper says should, not does (R261, R262, R455), so what creatures do stays out of it; and the last
+     moment of a landing is not the geometry's (the ideal fixed-share pace never touches; the ending is the creature's).
+   **Next:** check the two landing references; if Tom wants it in, one paragraph beside "Walking to the mountain"
+   naming the two paces, no claim about any creature.
