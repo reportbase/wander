@@ -185,3 +185,29 @@ section 2. Item 10's candidate still waits on Tom.
 the relation is in *Reads and Writes* section 1 and essay 19 section 8, as what holds in the worked cases, with its
 limits (whole only in part; the step assumed to repeat; where it is held open; orders not counts). Not claimed: that
 every keeping is a count.
+
+14. **The scaffold, revisited** (11 Nov; Tom: "Let's revisit the idea. It's related to centering. We also used it for
+   basic geometry."). Where it is: the archive's *Degrees of Freedom* section 3.1 "The centring" and its 19 Sep note
+   ("the term underneath may be better called the scaffold"); *The Cauchy, Inside and Out* and *The Order of Limits*
+   ("the indexes are the scaffolding, the values the stones"; section 6a.4 "Two frames"); `papers/v-and-h.md` items
+   66-74 (the basic geometry) and 45c (the arch demoted, 24 Sep). *The Centring* itself (17-18 Sep) is cited there and
+   is not in this repository.
+   - What it said: a frame is put up so that two readings can bear on each other; the result must not depend on which
+     frame (holds 1, 7, 1000, 0.004 all give 0.75); only its magnitude comes down, its presence stays (set it to zero
+     and the reading diverges: "the horizon is the scaffold gone").
+   - The basic geometry built on it: every figure is a centring; the residues r(t2)/r(t1) across directions are the
+     shape, they compose, and give the figure "one number short" (the size); the circle is the figure whose residue is
+     1 everywhere; a lap multiplies to one (a check on the reader, not the figure); v^2 + h^2 = 1 "a receipt" that two
+     readings were taken against one denominator.
+   - Why it was demoted: "readers don't build arches"; building is not a reader's act; the arch is a thing in amounts,
+     not an address; which span is the arch was never ruled.
+   - Claude's reading, in today's terms (not ruled): the demotion's objection is answered by R594 and R850. Building
+     is writing, and a scaffold is a **write of the relation**: something kept, with no unit that matters, so that
+     reads can be joined. Two things carried the name and should be kept apart: (a) the thumb, present in every read,
+     any size, never zero; (b) the kept step between reads (parallax), whose size drops out of d1/d2 and stays in d/H.
+     R881's "the least is not zero" is the old rider "the scaffold is never struck". The basic-geometry part survives
+     in *Reads and Writes* section 2 ("by its ratios", a0 the one number short) without the picture of building.
+   - Not agreed: bringing the arch back (the two objections above still hold), and "dividing strikes the frame" for
+     the thumb (R654: nothing is removed from a read; the thumb's size was never in it).
+   **Next:** Tom's call. Candidate: "scaffold" as the plain word for a write of the relation (put up, any size, never
+   absent, not in the result), and the residues' lap as an exact check if it is to carry weight.
