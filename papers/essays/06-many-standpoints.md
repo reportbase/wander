@@ -72,6 +72,33 @@ growth. Reading at once recovers payloads relative to each other, never their sc
 
 ---
 
+**Two ways to arrive.** Hold your thumb out and walk toward the mountain. Take the reading upside down, thumb over
+mountain, and something plain appears: with a steady stride it falls by the same amount every stride, far off, at the
+corner where the mountain covers the thumb, and all the way to the foot. Nothing in that even ladder marks the corner; the
+corner is found by looking, the ladder by counting. For a house 12 m across and a thumb of 2 cm at 60 cm, the corner is
+360 m off and the ladder has 514 and two sevenths rungs of 0.7 m from there to the door; times the thumb's one in thirty,
+times the stride, that is 12 m. And you need not walk it: two looks one counted stride apart already give the strides
+left and the house's breadth in strides.
+
+There is a second way to arrive, and it counts nothing. Cover the same share of what remains with every step, a tenth,
+say. Then the reading grows by the same ratio each step, the approach slows as the thing nears, and in the ideal it never
+quite touches: the foot is a limit, met at no speed. A landing has this form; a walk has the first. The two are different
+paces, and no pace is both.
+
+The writer has one picture for both. Put each reading s on Z = (1 + is)/(1 − is): far off Z is 1, at the corner i, at
+the foot −1, the writer's e^(iπ) = −1. The steady stride reaches −1 in a finite count; the fixed share approaches it for
+ever; a turn of the look moves every reading and arrives nowhere. These are the three kinds of map the line of slopes
+has, and they are classical. What each thing that approaches does with them is its own affair; the readings they stand on
+are the same for all, and cost nothing (WLK, exact; `approach.html`).
+
+One more thing the walk shows, about where the infinite is. Parallax is the link: two looks and one counted stride. Chain
+the links and the middle cancels; the whole walk comes down to its first look and its last, however many strides lay
+between, and nothing needs the stride to be small. From the corner to the foot the looks gather exactly a quarter of the
+writer's circle, in seven strides or a thousand. The half circle, Euler's −1 reached from 1, belongs only to a walk that
+began without end: start thirty corners out and you are short of it by about one part in fifteen, a million corners out
+by two parts in a million. The infinite in Euler's identity is the horizon behind you, not a vanishing step. A step has to
+shrink only when slopes are added as if they were angles, which is the writer's sum and the writer's limit.
+
 ## 3. The ladder
 
 Suppose each reader reads only directions: for each place on some figure, the direction in which it stands. Then there is

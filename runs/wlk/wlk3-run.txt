@@ -1,0 +1,13 @@
+C1, C2, C3, C6 (exact): True True True True
+  x0=1: arc gathered 2·arctan(x0) = 1.570796327, short of pi by 1.571e+00 (2/x0 = 2.000e+00), spread over N: 2.4e-49
+  x0=30: arc gathered 2·arctan(x0) = 3.074950662, short of pi by 6.664e-02 (2/x0 = 6.667e-02), spread over N: 1.9e-49
+  x0=1000000: arc gathered 2·arctan(x0) = 3.141590654, short of pi by 2.000e-06 (2/x0 = 2.000e-06), spread over N: 0.0e+00
+C4: True
+  N=250: sum of slopes - arctan = 2.904140e-06, leading term 2.904130e-06
+  N=500: sum of slopes - arctan = 7.260330e-07, leading term 7.260324e-07, ratio to previous 4.0000
+  N=1000: sum of slopes - arctan = 1.815081e-07, leading term 1.815081e-07, ratio to previous 4.0000
+  N=2000: sum of slopes - arctan = 4.537703e-08, leading term 4.537703e-08, ratio to previous 4.0000
+  N=4000: sum of slopes - arctan = 1.134426e-08, leading term 1.134426e-08, ratio to previous 4.0000
+C5: True
+Euler factor modulus^2 (theta=1, n=10): 101/100 > 1 : True
+ALL: True

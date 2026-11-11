@@ -145,6 +145,25 @@ are many things (a physical law carries units and constants) and are not a third
 the sorting stays the read and the two writes. That the geometry's laws are of this kind may be why the geometry needs
 no memory: offered as a likely reason, not shown.
 
+**A law in place of memory.** A geometric law is what the geometry has where an observer would need memory. An
+observer who wants to know what a set of steps gives together must keep the steps and total them. The law holds the
+answer for every such set at once, with none of them taken: it collapses the set into one relation. In that it does for
+the geometry what a limit does for the writer, with one difference. The writer's limit is approached step by step and
+its value (π, e) is had only at the end of a count without end (§9, "What is free, and what π costs"); the law is not
+approached, it is given whole. So a geometric law is free in the same sense the geometry is: not an algorithm, not
+computed, with no time in it. It can still be taken apart into intermediate steps, a slope joined to a slope, then to
+another, or (1 + iθ/n)ⁿ step by step (§9), and that is how a law is understood and checked. The steps are the writer's
+account of the law, a journey told afterwards; they are not the law, and the law does not wait on them. That the law
+stands in for memory is a **reading**; what is free is the relation, never the value of π or e.
+
+One expression does this for sequences without number. "n strides are one slide of n rungs" holds for every n;
+w(s)·w(1/s) = −1 holds for every slope. What is collapsed is every sequence, of any length, at once, by an expression
+that is finite and rational: not one endless sequence carried to its end, which is the writer's limit. Steps taken one at
+a time are exact members of what the law describes, not approximations to it: strides compose exactly, ratios compose
+exactly, turns compose exactly by tangent addition. And the expression leaves a place empty, the n or the s. The geometry
+gives the expression and never fills that place; a read fills it (which slope, now) or a write of the relation (how many,
+so far).
+
 | | memory | unit |
 |---|---|---|
 | the geometry: reads, and the laws relating them | none | none |
@@ -835,6 +854,36 @@ a length walked and a ratio held say the same. Joined, the reads telescope: the 
 Z_N/Z_0, the first and last reads alone; every finite walk ends at its last read, and only the writer's limiting completion
 tends to −1. The writer names each point Z = e^(iα), α the span, and the end e^(iπ) = −1 (§9): the formula describes the
 end and drives nothing. **Checked** (the breath note's §5, at 30 digits; `approach.html`).
+
+**Two ways to arrive.** The thumb's corner has the same form. With s the mountain against the thumb, s = d_c/d,
+Z = (1 + is)/(1 − is) is near 1 far off, i where the mountain covers the thumb, and −1 at the foot; a place and its mirror
+d_c²/d have Z·Z′ = −1, §9's exchange. So the writer's e^(iπ) = −1 names the arrival, and i·i = −1 says the corner taken
+twice is the arrival. Three motions act on these reads, and they are the three kinds of map a line of slopes has (the
+classical elliptic, hyperbolic and parabolic maps of the projective line). A turn of the look leaves no read where it
+was. A pace that covers a fixed share of the distance left multiplies 1/s by the same factor each step; it leaves two
+reads where they were, home and the horizon, and carries every other from the first toward the second without reaching it.
+The foot is its limit, and it needs no count and no size: one reading held steady. A steady stride takes the same amount
+from 1/s each step, the stride over d_c; it leaves only home where it was, so nothing holds it off the horizon, and it
+passes Z = −1 in a finite count. Along it 1/s falls evenly, before the corner and after it alike: 1/s is the writer's
+line in units of d_c, and the corner is not marked on it; the corner belongs to the reads, the even steps to the count.
+Even in 1/s and even in ratio are different paces: a pace that is both takes no step. So the one −1 is reached by a
+count and approached by a ratio. Nor must the foot be walked to: two reads one counted stride apart, x₁ and x₂ in 1/s,
+give the strides left, x₂/(x₁ − x₂), and the breadth in strides, (H/L)/(x₁ − x₂), at any distance: places, in the
+walker's stride. Which pace a thing that approaches takes is not this paper's question; both stand on the same reads,
+which are there for anything that looks.
+
+Parallax is the link in this chain: two reads and one counted step. A chain of such links collapses to its ends, exactly:
+the ratios Z_(j+1)/Z_j along the walk multiply to Z_N/Z_0 for any strides, equal or not. Nothing here needs the stride to
+shrink. The strides left come exact from two reads at any stride size, and the arcs join by tangent addition: from a
+start at x₀ = d/d_c to the foot the half-arc's slope is exactly x₀, so from the corner to the foot it is exactly 1, a
+quarter of the writer's circle, in seven strides or a thousand. The half circle, from 1 to −1, belongs only to a walk
+begun without end; from x₀ corners out it falls short by about 2/x₀ in the writer's measure. So the infinite in
+e^(iπ) = −1 is the far start, the horizon behind the walker, not a small stride. The stride must shrink in one place only:
+where slopes are added as though they were angles, the sum runs over by about the stride squared, and the writer's angle
+is that sum's limit. Joining is the geometry's, exact at any stride; adding is the writer's. Each stride's Z_(j+1)/Z_j
+lies on the circle exactly, where the factors of (1 + iθ/n)ⁿ (§9) do not: the walk is not that product, though both end
+at −1. **Checked** (WLK, exact: house, tower and mountain 3600/7, 18000/7 and 900000/7
+strides from the thumb's corner to the foot, each returning V\*).
 
 **Places come by degrees.** The crossing from reads to places, and from places to writes, is not a switch thrown.
 - *In what.* Two standpoints a step apart give every place in that step. If the step was one thumb, places are in thumbs
@@ -1647,7 +1696,7 @@ aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan
 runs as they came out, the killed ones too, and none alone establishes the sort. Pages: `read.html`, `pinhole.html`,
 `crosshairs.html`, `heat-cube.html`, `euler.html`, `approach.html`, `slide-rule.html`, `star-field.html`. The read as a
 control: reportbase/calendar (`dial.js`, `dome.js`, `horizon.html`, `dome.html`, `dome-map.html`, `dome-instrument.html`).
-The mountain walk's two corners and paces: `plans/breath-note.md` §5. The rewrite's map from the record and its checklist:
+The mountain walk's two corners and paces: `plans/breath-note.md` §5. The stride and the fixed share: `plans/wlk-plan.md`, `runs/wlk/`. The rewrite's map from the record and its checklist:
 `plans/rw-rewrite-outline.md`. The known physics sorted by the two tests is the companion *Reads and Writes in Physics*
 (`papers/reads-and-writes-physics.md`), brought to R788's kinds (§12, O7).
 

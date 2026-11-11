@@ -1,0 +1,11 @@
+constants from approach.html: H/L = 1/30  stride = 7/10  things = {'house': '12', 'tower': '60', 'mountain': '3000'}
+house: V*=12 d_c=360 delta=7/3600 count corner->foot=3600/7 (= 514.2857)  V* back = 12
+   W1..W6: (True, True, True, True, True, True)
+tower: V*=60 d_c=1800 delta=7/18000 count corner->foot=18000/7 (= 2571.4286)  V* back = 60
+   W1..W6: (True, True, True, True, True, True)
+mountain: V*=3000 d_c=90000 delta=7/900000 count corner->foot=900000/7 (= 128571.4286)  V* back = 3000
+   W1..W6: (True, True, True, True, True, True)
+approach.html stridesFromCorner body: cornerD(thing, k) / STRIDE
+W7: (x-a)^2 - x(x-2a) = a^2 at 1000 random fractions: True  -> even in x and in ln x only at a = 0
+W7: fixed share q=1/10, 2000 steps, x still > 0: True  x ~ 3.055e-92
+ALL: True
