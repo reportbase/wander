@@ -130,7 +130,9 @@ chart, the cotangent of its angle: cot a from one end, cot b from the other. The
 
   cot a + cot b = B / d.
 
-The depth is the reciprocal of a sum of two reads. Those are exactly the operations the third essay found the Cauchy
+Each read is taken inward, toward the other standpoint, so both are positive for a target between the two feet; in
+slopes off the baseline they are 1/s₁ and 1/s₂, and the angles a and b are only the writer's names for the two
+directions. The depth is the reciprocal of a sum of two reads. Those are exactly the operations the third essay found the Cauchy
 closed under: a sum, which is a relay of standpoints, and a reciprocal, which is the exchange. So parallax never takes a
 read out of the family.
 

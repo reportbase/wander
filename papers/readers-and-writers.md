@@ -96,8 +96,10 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   direction and moves no direction, and where that source lies is a further inference, the writer's. And the test
   sorts quantities, not causes: one cause can move both, as a boost moves where a star appears and the colour of what
   arrives from it (§4, "A moving sky"). The standpoint includes its state of motion where motion bears on what is
-  read: a boost is a change of standpoint, so it is not among the changes of what arrives, and it moves the read. How
-  a relation between two standpoints is to be classed when it is not a distance is open (§12, O9). A worked case, with
+  read: a boost is a change of standpoint, so it is not among the changes of what arrives, and it moves the read. A
+  relation between two standpoints that is not a distance is, where it carries one read's directions to the other's,
+  a map (D7), and a number such as the rapidity is that map's coordinate, not a read (§4). Whether every such relation
+  is a place, an order or a map is not claimed and stays open (§12, O4, O9). A worked case, with
   everything named. The standpoint is a floor corner, the look along one wall; a red wall stands 3 m off, and one
   point of it lies at slope ½. Three candidates: that point's slope; its share h² = 4/5; and the brightness arriving
   from it over the brightness arriving from a second point at slope 2. Held fixed: the standpoint and the look.
@@ -762,7 +764,9 @@ length. More standpoints give every place seen. This is how an observer reconstr
 in its own stride; the cube in metres needs the stride counted in metres, a write (§7).
 
 **Parallax is a sum of reads.** Put two standpoints a step B apart and let each read a point in its h/v chart along the
-step, cot a from one end and cot b from the other. Then cot a + cot b is the step over the point's distance from the
+step, cot a from one end and cot b from the other (a and b the writer's names for the two directions; each read is
+taken inward, toward the other standpoint, so both are positive for a point between the two feet, and they are §9's
+1/s₁ and 1/s₂). Then cot a + cot b is the step over the point's distance from the
 step's line: the depth is the reciprocal of a sum of two reads. Those are the two operations the Cauchy is closed under,
 the sum (a relay, points m + iγ adding) and the reciprocal (the exchange), so parallax never takes a read out of the
 family. If each read is uncertain as a read from a height γ is, and the two errors are independent, each is a Cauchy
@@ -931,7 +935,7 @@ the other round the horizontal, the azimuth. The thumbs cross at a right angle, 
 corner. Each pane lines up with a crossing, one finger of each hand: the reading is the pair, a direction of the wedge.
 Each hand alone gives the one-dimensional Cauchy with its own corner; the crossings together give the two-dimensional
 Cauchy. For every crossing to hold the same share, the round hand spreads its fingers evenly by turn and the upright hand
-evenly in height, not in angle; spread both evenly by angle and the pair neither hand reads leaves its corner. Two hands
+evenly in height, not in angle (in the writer's terms, equal steps of the up share v, dv = h·da for altitude a, with h the level share: Archimedes' hat-box again); spread both evenly by angle and the pair neither hand reads leaves its corner. Two hands
 add no second length. The picture is not about hands: it shows that the reader's three dimensions are not Cartesian, no
 three axes of amounts, but one thumb crossed with itself and two sweeps from where it is held. The Cartesian frame is
 the writer's cube.
