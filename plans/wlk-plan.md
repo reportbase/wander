@@ -81,3 +81,30 @@ units of d_c. What the test adds to the note: (1) the ladder has no corner, so t
 to the strides; (2) the foot does not have to be walked to: any two looks a counted stride apart give the strides left
 and the breadth in strides (W5), which is parallax along the line of sight, `mountain.html`'s walk; (3) the even
 stride and the even breath are equal steps on two rulers and cannot be the same pace (W7). All classical.
+
+### Run 2, predictions (committed before the run): the walk on Euler's circle
+
+11 Nov. Tom: "It would be rigorous and persuasive if this idea could be explained via the euhler's identiy."
+Put the approach on the unit circle by the paper's w(s) = (1 + is)/(1 − is), s = v/h; with x = h/v = 1/s,
+w = (x + i)/(x − i). Exact (fractions, complex numbers as pairs). The writer's angle φ (w = e^(iφ)) is used only to
+name things; every check is rational.
+
+- **E1, the approach is Euler's half circle.** |w| = 1 at every x; far off (x → ∞) w → +1; at the corner (x = 1)
+  w = i; at the foot (x = 0) w = −1. So e^(iπ) = −1 is the arrival, and i·i = −1 is "the corner, twice".
+  *Killed* if any of the four fails.
+- **E2, the mirror.** The places d and d_c²/d (x and 1/x) have w(x)·w(1/x) = −1, at every x. *Killed* if not.
+- **E3, three motions, three kinds.** As maps of the circle, in the x chart: the walker's stride x ↦ x − δ has
+  exactly one fixed point, w = +1 (parabolic, trace² = 4); the lander's step x ↦ (1 − q)x has exactly two, w = +1 and
+  w = −1 (hyperbolic, trace² > 4); a turn of the look has none on the circle (elliptic, trace² < 4, fixed x = ±i).
+  *Killed* if any count of fixed points on the circle differs.
+- **E4, where each pace is fastest round the circle.** The arc moved in one step, as the slope of its half,
+  is δ/(1 + x(x − δ)) for the stride (largest at the foot, and → 0 far off) and qx/(1 + (1 − q)x²) for the fixed
+  share (largest near the corner, at x = 1/√(1 − q), and → 0 at both ends). *Killed* if either formula fails at
+  1,000 random x, or the maxima are elsewhere.
+- **E5, arriving.** The stride reaches or crosses w = −1 after a finite count (1/δ strides from the corner), and
+  walking on past the foot carries w round the lower half back toward +1: the whole circle is the whole line. The
+  fixed share never reaches −1: w ≠ −1 after any n steps, and w stays in the upper half. *Killed* if the stride fails
+  to cross or the fixed share reaches −1 within 5,000 steps.
+- **E6, the two paces as the two parts of ln.** On Euler's plane the lander's step is a slide of ln x by ln(1 − q),
+  the same every step (real axis); the walker's is not a slide: its change in ln x, ln(1 − δ/x), is different at
+  every x. *Killed* if (x − δ)/x is the same at two different x.
