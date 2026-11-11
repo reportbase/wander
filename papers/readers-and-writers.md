@@ -110,7 +110,9 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   keeps nothing. The first test tells the two writes apart; what tells a write of the relation from a read is only
   that it was kept. Reading and the write of the relation are both prior to physics: neither holds a unit, and a
   count of steps kept is as free of the world's size as the steps were. Physics enters with the write of the scale and
-  not before. Where this paper says "a write" without more, it means the write of the scale.
+  not before. The geometry itself keeps nothing. It holds every relation at once, which is how a law such as
+  w(s) × w(1/s) = −1, or tangent addition, exists with no memory: it says what any two directions give together, and
+  nothing in it happened. Keeping is needed for which steps were taken, never for what steps do. Where this paper says "a write" without more, it means the write of the scale.
 
 **Steps, never positions.** A sweep goes one way, from home toward the horizon, and where it stops is the next
 sweep's home: every sweep resets. A tenth of a sweep, then a fifth of a fresh one, then three tenths of another, is
