@@ -218,6 +218,10 @@ count's zero; a distance put down in thumbs is a count of thumbs. And it is whol
 514 and two sevenths strides from the door; the two sevenths is not counted, it is seen, as the last part against a
 stride. A write of this kind is a whole count and one more look.
 
+The rules shorten the counting and never end it. The 514 strides need not be walked: two looks and one counted stride
+give them. But the one cannot be given up. A single look has no size in it, and the lander, which counts nothing, never
+gets one. A law brings the chain of writes down to its least, and the least is one.
+
 What is still not understood sits in the middle one. Something has to hold the count, and a look holds nothing. And a
 count assumes that a stride is the same stride each time, which the geometry does not supply: on the ladder one rung is
 exactly like the next, and a walker's strides are only roughly so. The read is solid. The write, even this smallest
