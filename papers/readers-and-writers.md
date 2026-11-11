@@ -106,6 +106,16 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   coordinate, a count, a mark kept, has the variable's kind: an angle in degrees and a pixel's index are reads in the
   writer's coordinate and count. Only a unit carried in makes a write.
 
+**Steps, never positions.** A sweep goes one way, from home toward the horizon, and where it stops is the next
+sweep's home: every sweep resets. A tenth of a sweep, then a fifth of a fresh one, then three tenths of another, is
+three steps, each from its own start. Nothing in any of them says how far the three have come together. A position,
+"three fifths of the way round", is a total of steps from a starting mark that was kept, and a read keeps no mark.
+So a read by itself can only sweep forward. To return to where the sequence began, the steps must have been kept
+and totalled, or a mark left at the start: something recorded (D7). And the return is not a sweep run backwards; it
+is a forward sweep in the opposite facing, and a facing is a join. This is why an angle, the turn's whole measure and
+the arctangent sit together on the writer's side: each is a position, a total from a kept mark, where the reader
+has only the step it is in and the heat along it.
+
 **The reader uses no trigonometry.** Readers hold v/h; writers hold angles. Sin, cos, tan and arctan are the writer's: they are defined on the completed turn,
 whose period is π (§2), and evaluating one is a pass over that whole turn. The reader holds the turn open, and works in the
 slope s = v/h: a direction is [h : v]; two turns compose by tangent addition, (s₁ + s₂)/(1 − s₁s₂); the reciprocal is
