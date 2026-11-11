@@ -104,7 +104,11 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   this direction, that gap, this light's frequency. A relation between two variables is another variable and is put to
   the same tests; it does not inherit the kind of what it relates. A representation of a variable, its number in a
   coordinate, a count, a mark kept, has the variable's kind: an angle in degrees and a pixel's index are reads in the
-  writer's coordinate and count. Only a unit carried in makes a write.
+  writer's coordinate and count. Only a unit carried in makes a write in D4's sense, a write of the scale. Keeping is
+  a write of a second kind, a write of the relation: a count of steps kept, a mark left at a start, a place put on
+  paper in thumbs. It holds no unit and no scaling of the world moves it, and it is not a read either, since a read
+  keeps nothing. The first test tells the two writes apart; what tells a write of the relation from a read is only
+  that it was kept. Where this paper says "a write" without more, it means the write of the scale.
 
 **Steps, never positions.** A sweep goes one way, from home toward the horizon, and where it stops is the next
 sweep's home: every sweep resets. A tenth of a sweep, then a fifth of a fresh one, then three tenths of another, is
@@ -112,7 +116,7 @@ three steps, each from its own start. Nothing in any of them says how far the th
 "three fifths of the way round", is a total of steps from a starting mark that was kept, and a read keeps no mark.
 Going back is open to the reader: it faces the other way and sweeps, and that too is a forward sweep, in the
 opposite facing. What it cannot do by reading alone is go back exactly to where it was. For that the steps must
-have been kept and totalled, or a mark left at the start: something recorded (D7). Without it the reader goes back
+have been kept and totalled, or a mark left at the start: a write of the relation (D7). Without it the reader goes back
 some way and has no means of telling when it has arrived. This is why an angle, the turn's whole measure and
 the arctangent sit together on the writer's side: each is a position, a total from a kept mark, where the reader
 has only the step it is in and the heat along it. There is no circle anywhere in this. A circle is one fixed dial on
