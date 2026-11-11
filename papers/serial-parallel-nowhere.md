@@ -7410,6 +7410,7 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   own question; three levels kept apart (classical transform, exact consequence, our interpretation); a demonstrated
   unity for the Cauchy/Poisson kernel, not a principle for kernels in general. Essay 2 §9 a pointer. BOMA's K_N is not
   the Cauchy and is not claimed.
+- **R831** (11 Nov; Tom: "update the essays and demos"): R826 and R830 in essay 1 (joined reads also give orders and maps), essay 11 §8 (a stream's turn a mark in its order, not "a place"), essays 9, 13 and 18 (the rapidity and the Thomas–Wigner angle sorted, not doubted as measurable) and the notes on `boost-sky.html` and its `demos.html` card; no new claim, no script changed.
 - **R830** (11 Nov; an explanation from ChatGPT pasted by Tom, then Tom: "add them and merge"): two points added to
   R827's passage. *Reads and Writes* §4 "A moving sky": the ruling is one of classification, not measurability (the
   rapidity can be observed and measured; a quantity does not become a read because a read lets it be inferred), and

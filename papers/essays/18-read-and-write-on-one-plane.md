@@ -267,7 +267,8 @@ turning stops being simple.
 multiplies z by the Doppler factor k, sliding ln z by the rapidity, so collinear rapidities add as slides do, and the
 velocity law (β₁ + β₂)/(1 + β₁β₂) is the writer's tanh of the reader's sum. Three stars'
 directions before and after fix the Möbius map between the two looks, with no frequency and no distance; the rapidity
-is that map's coordinate, inferred from its trace, 2·cosh(ζ/2), not itself a read. Two boosts along
+is that map's coordinate, inferred from its trace, 2·cosh(ζ/2), not itself a read. That is how it is sorted, not a doubt that it can be
+measured: the boost is a physical change of standpoint, and the stars are the evidence for it. Two boosts along
 different axes cannot be one slide, and leave a turn, the plane's limit met in space (*Reads and Writes in Physics*
 (`../reads-and-writes-physics.md`), §5.3).
 

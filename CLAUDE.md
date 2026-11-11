@@ -472,6 +472,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R831 (11 Nov; Tom: "update the essays and demos"): R826 and R830 in essay 1 (joined reads also give orders and maps), essay 11 §8 (a stream's turn a mark in its order, not "a place"), essays 9, 13 and 18 (the rapidity and the Thomas–Wigner angle sorted, not doubted as measurable) and the notes on `boost-sky.html` and its `demos.html` card; no new claim, no script changed.
   R830 (11 Nov; Tom: "add them and merge"): §4 and essay 7 say R827 is classification, not measurability (the rapidity
   is measurable; the boost a physical change of standpoint). Do not use address/payload for evidence against the
   inferred map.

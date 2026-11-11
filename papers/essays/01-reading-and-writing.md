@@ -354,7 +354,9 @@ before, and ask what happened to it.
 
 - If it did not change, it is a **reading** or a **place**. A direction, an angle, the place of the corner, held from
   one standpoint, are readings; the ratio of two lengths, a shape held up against its own average size, the map in
-  steps, which need a second standpoint and the step between, are places. All of these come through untouched.
+  steps, which need a second standpoint and the step between, are places. All of these come through untouched. (Reads
+  joined can also give an order, as in essay 11, or a map carrying one look's directions to another's, as a turn or a
+  boost does in essay 7; neither has a gap in space, and neither moves.)
 - If it changed by the factor k, it is a **writing**. A length in metres, a distance on a map's scale bar, the size of
   the table in centimetres: all of these move, and each moved because somewhere an amount was carried in to state it.
 
