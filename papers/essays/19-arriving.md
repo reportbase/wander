@@ -121,8 +121,11 @@ The walk is the first pace and a landing is the second. They can be told apart e
 house. The fixed share is even in the ratio. A pace that is even in both takes no step at all. So these are not two
 descriptions of one motion: they are two motions, and what they share is only the reads they stand on.
 
-Nothing here says which pace any creature takes. The claim is the smaller one: both paces are built from the same looks,
-and the looks cost nothing.
+The second pace has been measured. Honeybees landing on a flat surface were found to hold the image's rate of motion
+steady, so that their speed falls in proportion to their height and is near zero at touchdown (Srinivasan et al. 2000);
+bees landing on a wall or a flower were found to hold the image's rate of expansion steady, their speed in proportion to
+the distance left (Baird et al. 2013). Those are findings about bees, and theirs. The claim here is the smaller one,
+and it is about the geometry: both paces are built from the same looks, and the looks cost nothing.
 
 ## 6. The writer's circle
 
@@ -217,6 +220,11 @@ is spared this only because it keeps to one line.
 - **Time to contact.** That the strides left come from the reading and its change, with no distance and no speed, is
   Lee's (1976), for braking; his rule that a controlled approach keeps the rate of change of that time at or above −½ is
   in essay 6. The lander's pace, holding the rate of growth steady, is the same quantity held constant.
+- **The landing.** That a flier which holds the image's rate of expansion steady slows in proportion to the distance
+  left, and touches down at almost no speed without ever knowing the distance, was shown in honeybees by Srinivasan,
+  Zhang, Chahl, Barth and Venkatesh (2000) for grazing landings and by Baird, Boeddeker, Ibbotson and Srinivasan (2013)
+  for landings on surfaces at any tilt; the second paper calls it a universal strategy. That is section 5's fixed share,
+  observed.
 - **Parallax.** Two looks a known step apart placing a thing is as old as surveying; along the line of sight it is the
   same triangle, flattened.
 - **The corner and the count.** Foresters have long measured a tree this way: hold a stick as long as your arm upright
@@ -225,7 +233,7 @@ is spared this only because it keeps to one line.
   same method at another ratio.
 - **The circle.** Z = (1 + is)/(1 − is) is Cayley's transform (1846), carrying a line to a circle. The three kinds of
   motion, with none, one or two fixed points on the circle, are the classical elliptic, parabolic and hyperbolic maps
-  of the line of slopes.
+  of the line of slopes; the names are Klein's.
 - **The identity.** e^(iπ) = −1 is Euler's (1748).
 - **The collapse.** A product whose middle cancels is a telescoping product; that slopes join by tangent addition is
   the tangent's addition law.
@@ -233,6 +241,14 @@ is spared this only because it keeps to one line.
 What is the series' own is the sorting: the look as the read, the counted stride as a write with no unit, the two paces
 as two ways of adding to the same reads, the corner as the looks' and the ladder as the strides', and the infinite in
 Euler's identity placed at the far start of the walk.
+
+So the pieces were in print, each in its own field: the landing in the study of insects, the time to contact in the
+study of vision, the stick in forestry. What was not found in print is the one picture that holds them together. On
+Euler's circle the forester's walk and the bee's landing are two motions of the same points, the stride with one fixed
+point and the fixed share with two, and that difference is exactly why one arrives in a finite count and the other does
+not; the door they both aim at is the −1 of e^(iπ) = −1. Each statement in that picture is an identity among slopes,
+checked exactly (section 7), which is what the circle adds to what was observed. A search of this kind shows what was
+found, not what exists.
 
 **In physics.** Nothing here is new physics. The quantity the walk reads, reading over its change per look, is the time
 to contact in the walker's own ticks (Lee 1976), unmoved by scaling the world; seconds and metres enter only when a
@@ -260,11 +276,15 @@ on Euler's plane; n reads).
 
 ## Sources
 
+- Baird, E., Boeddeker, N., Ibbotson, M. R. and Srinivasan, M. V. (2013). A universal strategy for visually guided
+  landing. *Proceedings of the National Academy of Sciences* 110(46), 18686–18691.
 - Cayley, A. (1846). Sur quelques propriétés des déterminants gauches. *Journal für die reine und angewandte
   Mathematik* 32, 119–123.
 - Euler, L. (1748). *Introductio in analysin infinitorum.* Lausanne.
 - Lee, D. N. (1976). A theory of visual control of braking based on information about time-to-collision. *Perception*
   5(4), 437–459.
+- Srinivasan, M. V., Zhang, S. W., Chahl, J. S., Barth, E. and Venkatesh, S. (2000). How honeybees make grazing
+  landings on flat surfaces. *Biological Cybernetics* 83(3), 171–183.
 - *Reads and Writes* (`../readers-and-writers.md`), §1 "A law in place of memory" and §6 "Walking to the mountain", "The
   mountain's own corner", "Two ways to arrive": the current account. The checks are `../../plans/wlk-plan.md` with
   `../../runs/wlk/` (runs 1–3, exact, nothing killed).

@@ -42,3 +42,9 @@ What it does and does not show. One agent's search, mostly at snippet depth: "no
 and A6 were not found, so essay 19's "what is the series' own" paragraph stands for now. A5 turned up a real
 predecessor for the corner-and-pacing step, which the essay now names. A2's absence surprised me (I expected it in
 print); it is so close to tau that I would not call it new without a deeper look in the tau literature.
+
+**Cited** (11 Nov, SPN R877; Tom: "add the bee reference. add other cites as needed."): Srinivasan et al. (2000) and Baird
+et al. (2013), both checked against Crossref (titles, authors, volume, pages), in essay 19 §5, §10 and Sources and in
+*Reads and Writes* §6 and its references; the forester's stick method named in both without a source entry (seen only
+as snippets); Klein named for the three kinds of map, no entry (not opened). Lee (1976) was already cited; its τ̇
+inequality still to check in the original.
