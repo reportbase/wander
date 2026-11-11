@@ -249,7 +249,8 @@ s ↦ 1/s; the upright line d = H by the distance's, d ↦ H²/d. Turning moves 
 second, along different axes. On the writer's plane every straight line of the world is one curve moved,
 u = ln(p/H) − ln cos(θ − φ₀), half a turn wide, and a logarithmic spiral is a straight line. **Classical.**
 
-**The thumb's lay is itself a turn.** The overlay's lay of distance (§5), g = (2/π)·arctan(d/H), is on the plane
+**The thumb's lay is itself a turn.** The overlay's lay of distance (§5), the share g of the heat 1/(1 + x²) lying below x = d/H (the writer's formula for it
+is (2/π)·arctan(d/H)), is on the plane
 ½ + gd(ln(d/H))/π, gd the Gudermannian, Mercator's function. A writer can draw why. Put the plane on a sphere
 stereographically, scaled so that one thumb lands on its equator: the eye is one pole and the horizon the other, the near
 field the eye's half and the far field the other; g is the angle from the eye's pole over π. Euler's plane is that
@@ -584,11 +585,12 @@ value, 1 + ln(d/H) with a base chosen (§2), or 2 − H/d on a lay that keeps al
 writer's number for what the read holds as a ratio. There is one corner, the split between the near field and the first
 stretch; past it the stretches are plain. Move the crosshairs and the split goes with them.
 
-**The overlay's heat in distance.** Along every direction the share of distance below x = d/H is (2/π)·arctan x. Per
+**The overlay's heat in distance.** Along every direction the share of distance below x = d/H is the heat 1/(1 + x²) totalled from home to x, over its
+whole total: a half at x = 1, whatever the thumb (the writer's formula for the share is (2/π)·arctan x). Per
 unit of plain distance it is greatest at the eye, 2/(π(1 + x²)); per unit of ln(d/H), by ratio, it is
 (2/π)·x/(1 + x²) = (1/π)·sech(ln(d/H)), hottest at one thumb and cooling alike both ways: 0.8 of the peak at one in 2 and
 at two thumbs, 0.47 at one in 4 and four, 0.25 at one in 8 and eight, never zero. A writer counting it as K places puts
-them at d/H = tan(kπ/2K), the first K/2 inside one thumb. Past it the share left beyond x thumbs is (2/π)·arctan(1/x),
+them at d/H = tan(kπ/2K), the first K/2 inside one thumb. Past it the share left beyond x thumbs is, by the exchange, the share below 1/x (the writer's (2/π)·arctan(1/x)),
 0.295 past two thumbs, 0.156 past four, 0.079 past eight: a heavy tail, so no mean of distances. The split is a mark at
 one thumb on every direction, each one's median, not a body. Take the overlay away and the Cauchy is unchanged.
 **Classical.**
@@ -621,7 +623,7 @@ at 30°, 7.6% at 45°. Laid that way the rings of the distance overlay come wher
 at 0.765, then one in two, one in four, one in eight at 1.05, 1.23 and 1.32, packing toward the rim at √2, because each
 stretch holds fewer of the look's directions than the one before (0.26, 0.20, 0.12 of what is in front, and 0.12 past one
 in eight). The ground has its own reading: a point ρ along it, with the thumb's ground point D away, reads
-(2/π)·atan(D/ρ), one at the feet, a half at the thumb, zero at the horizon, so the far ground gathers in rows just under
+the share below D/ρ (the writer's (2/π)·arctan(D/ρ)), one at the feet, a half at the thumb, zero at the horizon, so the far ground gathers in rows just under
 the horizon. A world made only where the view reaches, from cells at every scale kept only where a thing spans π/(8K) or
 more, gives the same read. **Checked** (`crosshairs.html`).
 
