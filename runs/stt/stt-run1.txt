@@ -1,0 +1,51 @@
+S1  nu = 1 against 1/(pi(1+t^2))
+  S1 ok   t = 0: diff 6.68e-52
+  S1 ok   t = 0.5: diff 6.68e-52
+  S1 ok   t = 1: diff 3.34e-52
+  S1 ok   t = 3: diff 8.35e-53
+  S1 ok   t = 10: diff 1.04e-53
+S2  no e at finite nu; e as the limit
+  S2 ok   nu = 1, t = 1/2: f/f(0) = 4/5, diff 1.34e-51
+  S2 ok   nu = 1, t = 2: f/f(0) = 1/5, diff 3.34e-52
+  S2 ok   nu = 1, t = 7/3: f/f(0) = 9/58, diff 0.0
+  S2 ok   nu = 3, t = 1/2: f/f(0) = 144/169, diff 1.34e-51
+  S2 ok   nu = 3, t = 2: f/f(0) = 9/49, diff 1.0e-51
+  S2 ok   nu = 3, t = 7/3: f/f(0) = 729/5776, diff 0.0
+  S2 ok   nu = 5, t = 1/2: f/f(0) = 8000/9261, diff 1.34e-51
+  S2 ok   nu = 5, t = 2: f/f(0) = 125/729, diff 0.0
+  S2 ok   nu = 5, t = 7/3: f/f(0) = 91125/830584, diff 0.0
+  S2 ok   nu = 2, t = 1/2: (f/f(0))^2 = 512/729, diff 1.34e-51
+  S2 ok   nu = 2, t = 2: (f/f(0))^2 = 1/27, diff 0.0
+  S2 ok   nu = 4, t = 1/2: (f/f(0))^2 = 1048576/1419857, diff 1.34e-51
+  S2 ok   nu = 4, t = 2: (f/f(0))^2 = 1/32, diff 4.18e-53
+  S2 ok   t = 1: gap*nu at 10, 100, 1e3, 1e4 = ['-0.24206', '-0.249171', '-0.249917', '-0.249992'] -> -0.25
+  S2 ok   t = 2: gap*nu at 10, 100, 1e3, 1e4 = ['1.49403', '1.9354', '1.99335', '1.99933'] -> 2.0
+S3  t is a direction in nu + 1 dimensions
+  S3 ok   1,000 draws scaled by 1e-3, 7, 1e3: largest relative change in t 4.06e-16
+  S3 ok   nu = 1: P(|t| <= sqrt(nu)) = 0.5, cap share 0.5, diff 0.0
+  S3 ok   nu = 2: P(|t| <= sqrt(nu)) = 0.707106781187, cap share 0.707106781187, diff 1.34e-51
+  S3 ok   nu = 3: P(|t| <= sqrt(nu)) = 0.818309886184, cap share 0.818309886184, diff 1.34e-51
+  S3 ok   nu = 4: P(|t| <= sqrt(nu)) = 0.883883476483, cap share 0.883883476483, diff 1.34e-51
+  S3 ok   nu = 5: P(|t| <= sqrt(nu)) = 0.924413181578, cap share 0.924413181578, diff 1.34e-51
+  S3 ok   nu = 6: P(|t| <= sqrt(nu)) = 0.950174737219, cap share 0.950174737219, diff 1.34e-51
+  S3 ok   nu = 1: P(|t| <= 1) = 1/2
+S4  pi by the parity of nu
+  S4 ok   nu = 1: f(0) = 0.318309886183791, diff 6.68e-52
+  S4 ok   nu = 2: f(0) = 0.353553390593274, diff 6.68e-52
+  S4 ok   nu = 3: f(0) = 0.367552596947861, diff 6.68e-52
+  S4 ok   nu = 4: f(0) = 0.375, diff 6.68e-52
+  S4 ok   nu = 5: f(0) = 0.379606689822494, diff 1.34e-51
+S5  the Gaussian approached at 1/nu
+  limit max|t^4 - 2t^2 - 1| phi/4 at t^2 = 3 - sqrt6: 0.13617208
+  S5 ok   nu = 10: sup|f - phi| * nu = 0.13173924, off -3.255% (band 30%)
+  S5 ok   nu = 100: sup|f - phi| * nu = 0.13572162, off -0.3308% (band 5%)
+  S5 ok   nu = 1000: sup|f - phi| * nu = 0.1361263, off -0.03362% (band 1%)
+S6  the reading offered (divisor known by degrees): killed if S3 holds
+  S6 killed: t is unmoved by scaling at every nu tried
+
+S1: not killed
+S2: not killed
+S3: not killed
+S4: not killed
+S5: not killed
+S6: killed

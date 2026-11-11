@@ -115,7 +115,8 @@ frames, where it does not hold.
 leg looked free of rotation (Thomas 1926). The eighth essay met this in the dial built from true boosts. The residue
 belongs to the loop, not to any leg: the closing of a loop that the first essay used to find a misread link. It is
 inferred from directions alone. Three stars seen before and after two boosts fix the map of the sky, and its turn is the
-Thomas–Wigner angle, the same from any three stars, with no frequency and no distance used. One boost alone leaves no
+Thomas–Wigner angle, the same from any three stars, with no frequency and no distance used. (That sorts the angle, as a map's coordinate and not a read; it does not
+say the angle cannot be measured, and the boosts are physical changes of standpoint.) One boost alone leaves no
 turn. Joined along one axis, rapidities add; joined along two, the join leaves a turn the size of the velocity triangle's
 hyperbolic area (the TWG run, exact). For a small closed loop of boosts the turn is ε²·sin φ, the same size as a loop of
 turns on the sphere leaves, about the opposite axis; the two part at the next order, where only the boosts' correction

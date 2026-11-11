@@ -607,6 +607,13 @@ list without end. What the geometry adds is the reason they fit together.
 
 ---
 
+**An iterator, not an index.** One more contrast belongs in this list. Random access, `mem[a]`, needs an address
+space laid out beforehand with a fixed origin: a writer's. The read of this essay is sequential and relative. It
+sweeps forward from where it stands, and where it stops is the next start; it holds a step, never a position. It can
+turn round and sweep back, but landing exactly where it began takes a count kept or a mark left, which is state the
+read itself does not carry. The arctangent, which turns a reading straight into a slot number, is the index operator;
+used on the reader's side it eliminates the sweep.
+
 ## 14. What it changes
 
 Computing already reads and writes, and its read and write already keep the address apart from what is found there. That

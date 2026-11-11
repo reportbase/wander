@@ -53,7 +53,9 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   thumb at once, from one standpoint, *home*, at one moment, given whole (§3). A relation among the directions
   of one read, the separation of two of them, is of the read. The heat is the read's own measure on its directions,
   given with them and part of the read, not a further kind (§3). The paint met along a direction accompanies the read
-  and is no part of it (§4). One read holds no distance.
+  and is no part of it (§4). One read holds no distance. Its sweep runs from h to v on the thumb H alone, with no V in
+  it, and stops at its horizon: a read closes nothing. Each read is orthogonal to every other, standing by itself and
+  sharing nothing with them; closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
 - **D3. A place** is a gap across: a distance in thumbs, d/H, or one distance against another, d₁/d₂. Scaling the world
   leaves it unchanged, as it leaves a read; but no single read holds it. It needs a second standpoint and the step
   between them: parallax (§6). V\*/H, a party's true breadth in thumbs, is a place. A place is a relation
@@ -103,6 +105,20 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   the same tests; it does not inherit the kind of what it relates. A representation of a variable, its number in a
   coordinate, a count, a mark kept, has the variable's kind: an angle in degrees and a pixel's index are reads in the
   writer's coordinate and count. Only a unit carried in makes a write.
+
+**Steps, never positions.** A sweep goes one way, from home toward the horizon, and where it stops is the next
+sweep's home: every sweep resets. A tenth of a sweep, then a fifth of a fresh one, then three tenths of another, is
+three steps, each from its own start. Nothing in any of them says how far the three have come together. A position,
+"three fifths of the way round", is a total of steps from a starting mark that was kept, and a read keeps no mark.
+Going back is open to the reader: it faces the other way and sweeps, and that too is a forward sweep, in the
+opposite facing. What it cannot do by reading alone is go back exactly to where it was. For that the steps must
+have been kept and totalled, or a mark left at the start: something recorded (D7). Without it the reader goes back
+some way and has no means of telling when it has arrived. This is why an angle, the turn's whole measure and
+the arctangent sit together on the writer's side: each is a position, a total from a kept mark, where the reader
+has only the step it is in and the heat along it. There is no circle anywhere in this. A circle is one fixed dial on
+which every sweep has its place and going back is going the other way round; the reader has no such dial, only a
+sweep forward, a reset, and another sweep forward. The circle appears when someone keeps the steps and lays them end
+to end, and that someone is the writer.
 
 **The reader uses no trigonometry.** Readers hold v/h; writers hold angles. Sin, cos, tan and arctan are the writer's: they are defined on the completed turn,
 whose period is π (§2), and evaluating one is a pass over that whole turn. The reader holds the turn open, and works in the
@@ -247,7 +263,8 @@ s ↦ 1/s; the upright line d = H by the distance's, d ↦ H²/d. Turning moves 
 second, along different axes. On the writer's plane every straight line of the world is one curve moved,
 u = ln(p/H) − ln cos(θ − φ₀), half a turn wide, and a logarithmic spiral is a straight line. **Classical.**
 
-**The thumb's lay is itself a turn.** The overlay's lay of distance (§5), g = (2/π)·arctan(d/H), is on the plane
+**The thumb's lay is itself a turn.** The overlay's lay of distance (§5), the share g of the heat 1/(1 + x²) lying below x = d/H (the writer's formula for it
+is (2/π)·arctan(d/H)), is on the plane
 ½ + gd(ln(d/H))/π, gd the Gudermannian, Mercator's function. A writer can draw why. Put the plane on a sphere
 stereographically, scaled so that one thumb lands on its equator: the eye is one pole and the horizon the other, the near
 field the eye's half and the far field the other; g is the angle from the eye's pole over π. Euler's plane is that
@@ -582,11 +599,12 @@ value, 1 + ln(d/H) with a base chosen (§2), or 2 − H/d on a lay that keeps al
 writer's number for what the read holds as a ratio. There is one corner, the split between the near field and the first
 stretch; past it the stretches are plain. Move the crosshairs and the split goes with them.
 
-**The overlay's heat in distance.** Along every direction the share of distance below x = d/H is (2/π)·arctan x. Per
+**The overlay's heat in distance.** Along every direction the share of distance below x = d/H is the heat 1/(1 + x²) totalled from home to x, over its
+whole total: a half at x = 1, whatever the thumb (the writer's formula for the share is (2/π)·arctan x). Per
 unit of plain distance it is greatest at the eye, 2/(π(1 + x²)); per unit of ln(d/H), by ratio, it is
 (2/π)·x/(1 + x²) = (1/π)·sech(ln(d/H)), hottest at one thumb and cooling alike both ways: 0.8 of the peak at one in 2 and
 at two thumbs, 0.47 at one in 4 and four, 0.25 at one in 8 and eight, never zero. A writer counting it as K places puts
-them at d/H = tan(kπ/2K), the first K/2 inside one thumb. Past it the share left beyond x thumbs is (2/π)·arctan(1/x),
+them at d/H = tan(kπ/2K), the first K/2 inside one thumb. Past it the share left beyond x thumbs is, by the exchange, the share below 1/x (the writer's (2/π)·arctan(1/x)),
 0.295 past two thumbs, 0.156 past four, 0.079 past eight: a heavy tail, so no mean of distances. The split is a mark at
 one thumb on every direction, each one's median, not a body. Take the overlay away and the Cauchy is unchanged.
 **Classical.**
@@ -619,7 +637,7 @@ at 30°, 7.6% at 45°. Laid that way the rings of the distance overlay come wher
 at 0.765, then one in two, one in four, one in eight at 1.05, 1.23 and 1.32, packing toward the rim at √2, because each
 stretch holds fewer of the look's directions than the one before (0.26, 0.20, 0.12 of what is in front, and 0.12 past one
 in eight). The ground has its own reading: a point ρ along it, with the thumb's ground point D away, reads
-(2/π)·atan(D/ρ), one at the feet, a half at the thumb, zero at the horizon, so the far ground gathers in rows just under
+the share below D/ρ (the writer's (2/π)·arctan(D/ρ)), one at the feet, a half at the thumb, zero at the horizon, so the far ground gathers in rows just under
 the horizon. A world made only where the view reaches, from cells at every scale kept only where a thing spans π/(8K) or
 more, gives the same read. **Checked** (`crosshairs.html`).
 
@@ -988,7 +1006,11 @@ the sweeps. The running rates there are 1.1107 and 0.9003, not 1. **Classical**;
 **Tangent addition is the reader's; tan and arctan the writer's.** Evaluating tan or arctan converts between a direction
 and an angle, a share of the whole turn. The reader composes directions by tangent addition, (a ⊕ b) = (a + b)/(1 − ab),
 ratios to ratios; turns a reading over, s to 1/s; and orders readings. That is enough. Trigonometry as a whole is the
-writer's tool: it counts the places read and closes the turn, both of its signs held at once.
+writer's tool: it counts the places read and closes the turn, both of its signs held at once. The arctangent does one
+thing more, and worse: it eliminates the sweep. It names a single place on the turn, a third of the way to the horizon
+say, as though that place could be gone to directly. It cannot. A direction is had only within its sweep, with every
+direction between it and home had before it; the sweep starts at home and there is no other way in. So the arctangent
+is kept for the writer's formulas and avoided elsewhere.
 
 **Two 1's.** On the axes the three ways to measure a direction of the square agree: the largest component (the cube's),
 the sum h + v (the diamond's) and the length √(h² + v²) (the circle's) all give 1. At the corner they part: 1, 2 and √2.
@@ -1190,6 +1212,19 @@ everything finer is an approach. So e and π are the two parts of the identity o
 the fact does not depend on: π the price of saying how long the arc to −1 is, e the price of saying it as one smooth
 turn where the reader has two corner steps. **Classical**; the assignment is a reading.
 
+The reader's form shows three things the classical statement does not. First, Euler's identity is one member of a
+family, and the extreme one. w(s) × w(1/s) = −1 holds at every slope, pairing each direction with its exchange. Put
+s = 0: home lands at +1 and its exchange, the horizon, at −1. So e^(iπ) = −1 says that home and the horizon are an
+exchanged pair, and it is the only pair of the family that needs the horizon, which no read reaches; every pair
+between is finite and exact, and the classical statement does not mention them. Second, the corner's member is
+i × i = −1. The corner is its own exchange and lands at i, so the equation that defines i is this identity taken at
+the corner: i is the corner. Third, with the complex notation taken away almost nothing is left. Exchanging h and v
+swaps the two shares, so their difference h² − v² changes sign while their product is kept. At home the difference is
++1, all h; at the horizon −1, all v. That is the whole content of the −1: the shares swapped. The classical statement
+reads it as a position, half way round a dial; for the reader there is no travel in it and no dial, only a pair of
+directions of one read. And it is the exchange's one fact in a second chart: on the slope it reads s × (1/s) = 1, on
+the landing point w × w′ = −1, the 1 and the −1 of "Four identities, one exchange".
+
 The Cauchy's total is the cleanest of the three, since most of what the Cauchy is never touched π. The heat at each
 slope, 1/(1 + s²) = h², is rational in s; so is the ratio of the heat at any two directions, (1 + s₂²)/(1 + s₁²); the
 corner is the median because the heat below it equals the heat above it; there is no mean; and every statement of order
@@ -1262,6 +1297,62 @@ there was no mean; for the Gaussian the exact facts a working writer holds are t
 sums. The Cauchy is kept by order and the Gaussian by sums, a law of directions and a law of amounts. This is no fifth
 reader's identity: the reader holds nothing of one Gaussian amount, only the direction of a pair, which is the Cauchy it
 already had.
+
+Between the two laws lies a whole family, Student's t (Gosset 1908). One Gaussian amount z is divided by the root mean
+square of ν others, t = z/√((w₁² + … + w_ν²)/ν). At ν = 1 it is the Cauchy; as ν grows it becomes the Gaussian. Three
+things about it sort cleanly (exact checks in the STT plan, Code and data). First, t is unmoved by scaling at every ν:
+t/√ν is one share against the length of the others, the slope of one direction among ν + 1 equal parties, and the
+direction is uniform. So nothing is written anywhere along the family, and ν is not how well a divisor is known; it is
+a count of parties, the writer's. Second, no finite ν has an e. The density's shape is (1 + t²/ν)^(−(ν+1)/2), rational
+in t or the square root of a rational, and e arrives only as Bernoulli's limit (1 + x/n)ⁿ, the gap from e^(−t²/2)
+falling as 1/ν. The Gaussian is then the paper's in a second sense: one party's share among endlessly many, a
+classical limit (Maxwell; Borel 1914). Third, the π comes and goes with the parity of ν: the height at t = 0 is 1/π,
+2/(π√3), 8/(3π√5) for ν = 1, 3, 5 and 1/(2√2), 3/8 for ν = 2, 4, with no π at all. The turn's constant belongs to the
+plane's pair; among more parties the constant is a ratio of two spheres' measures, and it holds π only when the
+count of parties, ν + 1, is even.
+
+So e reaches these equations in two ways, and they should be kept apart. It can be in the law: the Gaussian's length
+(with u = r²/2 the length's part is the plain exponential e^(−u), the Gaussian's other half as the Cauchy is its
+direction), where it is forced by squares that add and chances that multiply. Or it can be in the chart only: write the
+slope as s = e^ξ, the writer's logarithm, and the Cauchy reads (1/π)·sech ξ and the share h² = 1/(1 + e^(2ξ)), a
+logistic curve. Neither law gained anything; the chart supplied the e, and the reader's forms, 1/(1 + s²) and the
+equal halves, have none.
+
+The same three charts hold the standard examples of chaos, as one map. Add a turn to itself. In the slope that is
+tangent addition of s with itself, s ↦ 2s/(1 − s²), rational, with no π and no trigonometry: one step of it is the
+reader's own. In the reciprocal slope it is Boole's map, c ↦ ½(c − 1/c) (1857), which is also Newton's step for
+c² + 1 = 0, a search for the standpoint i that no slope on the line reaches. In the share v² it is the logistic map,
+y ↦ 4y(1 − y) (Ulam and von Neumann 1947). In the turn's own share it is the tent map. Each keeps the uniform turn's
+law in its chart: the Cauchy, the Cauchy, the arcsine, the uniform. Each spreads nearby starts by a factor of two a
+step, ln 2 in the writer's number, the same in every chart. All of this is classical; what the three tiers add is who
+can follow the orbit (the CHS plan, Code and data, exact).
+
+| who | what it holds of the orbit |
+|---|---|
+| the reader | one step: a slope added to itself, exact and rational |
+| the writer at work, in fractions | every step exactly, at a cost that doubles each step (from 3/7 the twelfth slope's denominator has 9,950 binary digits); no cycle ever, since no rational slope but 0 and 1 belongs to one (Niven) |
+| the writer at work, in p digits | about p steps (24, 53, 113 and 200 digits part from the true orbit at step p − 1 to p + 6); at a fixed fineness K each step uses up one more binary digit of the start |
+| the paper | the direction whole: every step, and the cycles, which sit at turns that are rational parts of π |
+
+So the rule is fixed and free, and the orbit is determined; what gives out is the count. Unpredictability here is a
+statement about what a writer at work can hold, one binary digit a step, not about the rule or the law. And the
+Cauchy is seen a second way: it is the heat of one sweep, and it is also the one law a turn added to itself, again
+and again, leaves as it was.
+
+The quarter turn also reaches counts that show no turn at all. The sum of 1/n² over the odd numbers is exactly half
+the square of the quarter turn, 1 + 1/9 + 1/25 + … = ½·(π/2)², and the next ones are (π/2)⁴/6 and (π/2)⁶/15. The
+reason is the slope. One read runs from home to its horizon, a quarter turn in the writer's measure, and stops. The
+writer, joining facings, carries the slope on, and it meets a horizon at every odd multiple of the quarter turn. Euler's
+expansion (1748) writes the slope as the sum of those horizons' pulls: at a turn x, the slope is the sum over the odd
+numbers m of 2x/((m·π/2)² − x²). Close to home the slope is the turn itself, so the pulls must total 1 there, and that
+is the sum above. The even numbers add nothing new, the same sum over again at a quarter of the size, so the sum over
+all whole numbers is ⅔·(π/2)², the π²/6 of Basel. This is why the turn's constant appears in the share of whole
+numbers with no repeated prime factor, (3/2)·(2/π)², and in the total of a thermal spectrum: each passes through that
+sum. The sorting is as before. A read holds none of it, having one horizon and never passing it. A writer at work
+holds the partial sums, each a fraction. The value is the paper's, a count over all the odd numbers landing on the
+quarter turn squared. It was found by looking back from the answers, not predicted from the constructions: a rule
+that π appears exactly where a turn is taken whole failed a blind test on these very cases (the TWC plan, Code and
+data), and what is said here is where their π comes from, not a way to foresee it.
 
 Parallax (§6) is the case where the working writer is exact and the paper adds only units. Two standpoints a counted
 step B apart each read the target's slope off the line between them, s₁ and s₂, measured inward. The target's depth d
@@ -1477,7 +1568,7 @@ cells: `plans/dyh-plan.md`, `runs/dyh/`. The Cauchy's routes: `plans/cauchy-rout
 reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `runs/txt/`. The reader's math in slopes: `plans/slp-plan.md`, `runs/slp/`. The tower and two thumbs:
 `runs/two/two_thumbs.py`. Three thumbs at the crosshair: `plans/thm-plan.md`, `runs/thm/`. The shape swept:
 `plans/swp-plan.md`, `runs/swp/`. Three laws on the sphere: `plans/eul-plan.md`, `runs/eul/`. Euler's formula as a count of
-reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. The distance between
+reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The two completions tested blind, and the odd sums: `plans/twc-plan.md`, `runs/twc/`. The distance between
 standpoints: `plans/frg-plan.md`, `runs/frg/frg.py`. A flat chart in space: `plans/flc-plan.md`, `runs/flc/`. Epicycles and
 aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The data cases:
 `plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`; each records its

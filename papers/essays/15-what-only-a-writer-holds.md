@@ -271,6 +271,31 @@ the writer's statement, not the writer's number. That is the same move essay 12 
 pair [0 : 1] instead of the infinite chart value. Where the infinity is a horizon or a completion, a machine is faithful
 by naming it and computing with order and finite steps; it is never faithful by pretending to have finished.
 
+**Between the two laws, and two ways e arrives.** Student's t (Gosset 1908) lies between the Cauchy and the Gaussian:
+one Gaussian amount over the root mean square of ν others. At ν = 1 it is the Cauchy, as ν grows the Gaussian. Checked
+exactly: it is unmoved by scaling at every ν, the slope of one direction among ν + 1 equal parties, so ν counts
+parties and nothing is written along the way; no finite ν has an e, the shape being (1 + t²/ν)^(−(ν+1)/2), and e
+arrives only as the ladder's limit of section 1; and the π in its height comes and goes, there for odd ν (1/π,
+2/(π√3)) and absent for even (1/(2√2), 3/8). So e reaches an equation in two ways that should be kept apart. In the
+law: the Gaussian's length, where squares add and chances multiply. Or in the chart only: write the slope on the
+writer's logarithmic scale and the Cauchy reads (1/π)·sech ξ, the share a logistic curve, though neither gained
+anything.
+
+**A turn added to itself.** The standard examples of chaos are one map in three charts: on the slope,
+s ↦ 2s/(1 − s²), tangent addition of a slope with itself, rational; on the share, the logistic map 4y(1 − y); on the
+turn's own share, the tent map (Boole 1857; Ulam and von Neumann 1947). Each keeps its chart's law of the uniform
+turn, and each spreads nearby starts by two a step. Who can follow the orbit sorts by this essay's tiers. A writer in
+fractions keeps every step exactly, at a cost that doubles each step, and never meets a cycle, since no rational
+slope but 0 and 1 belongs to one. A writer in p digits keeps about p steps. The cycles sit at turns that are rational
+parts of π, the paper's. The rule is fixed and the orbit determined; what gives out is the count.
+
+**What was tested and failed.** A tidy rule suggests itself here: π appears exactly where a turn is taken whole, e
+exactly where a length is completed. Put to a blind test on fifteen results chosen by someone not shown the rule, it
+failed for π (11 of 15, below the mark set beforehand) and passed for e (13 of 15). The four misses were all sums
+over the whole numbers, 1 + 1/4 + 1/9 + …, with no turn in sight. Looking back, their π is the quarter turn's: the
+slope, carried past one read, meets a horizon at every odd multiple of the quarter turn, and the sum over the odd
+numbers of 1/n² is exactly ½·(π/2)². That says where their π comes from; it is not a way to have foreseen it.
+
 **In physics.** Every bridge in physics is a write of this kind: the speed of light, a rest frequency, the astronomical
 unit, a kind of star, a clock. The sort gives a law's form and leaves its values to them, and some things it does not
 give at all: c's value, or why a change of frame is a hyperbolic turn and not a circular one. One open number sits here:

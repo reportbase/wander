@@ -606,6 +606,16 @@ cosine is coth η − η/sinh² η, where the plane's would be tanh(η/2). The r
 keep angles also keep the harmonic functions. So in three dimensions "the law seen from a standpoint" has to say which
 of the two it means. The thirteenth essay, *Why the plane is special*, takes this apart in full.
 
+**No dial, and the quarter turn's two numbers.** The circle of this essay is the writer's in a stronger sense than
+its shape. A read is one sweep from h to v on the thumb H, with no V in it; it stops at its horizon and closes nothing,
+and each read stands by itself. The circle is the kept steps laid end to end. So the numbers that belong to one sweep
+are the quarter turn's, π/2 and 2/π, and they are the ones to state first; π and 2π belong to the join of several. The
+arctangent is the worst of the writer's tools to lend the reader, because it eliminates the sweep: it names one place
+on the turn as though it could be gone to directly, where a direction is had only within its sweep, with everything
+between it and home before it. The quarter turn even reaches sums that show no turn. Carried past one read by the
+writer's join, the slope meets a horizon at every odd multiple of the quarter turn, and Euler's expansion of the slope
+over those horizons gives 1 + 1/9 + 1/25 + … = ½·(π/2)², from which Basel's π²/6 follows as ⅔·(π/2)².
+
 **In physics.** The one-length circle sits in relativity in plain sight. Divide E² = (pc)² + (mc²)² by E² and it is the
 unit circle of (pc, mc²) in the one unit E, c the bridge: its shares are β and 1/γ, the moving clock's rate, and v/h is
 the celerity γβ. Home is E = mc², the horizon E = pc, light, and the corner pc = mc², β = 1/√2, where Newton's form and

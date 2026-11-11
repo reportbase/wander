@@ -252,6 +252,14 @@ included; it does not make them. Constructing one, or naming it as a number, is 
 
 ---
 
+**The arctangent eliminates the sweep.** Of the writer's tools the arctangent is the one to avoid, and the reason is
+this essay's subject. A rate is had along the sweep, at the step the reader is in. An angle is a position: a total of
+the turn from a starting mark. The arctangent hands over that total as though the place could be gone to directly, a
+third of the way to the horizon say, with nothing swept to get there. It cannot be: a direction is had only within its
+sweep, with everything between it and home before it. The reader has steps, never positions; every sweep resets, and
+there is no dial for a position to sit on. So where a constant must be named, name the one sweep's, π/2 or 2/π, before
+π, and keep the arctangent for the writer's formulas.
+
 ## 7. It has been done
 
 This is not only a way of talking. The draw project's Tangent Bridge, the theorem behind its curve format, was proved in

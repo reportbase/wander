@@ -354,7 +354,9 @@ before, and ask what happened to it.
 
 - If it did not change, it is a **reading** or a **place**. A direction, an angle, the place of the corner, held from
   one standpoint, are readings; the ratio of two lengths, a shape held up against its own average size, the map in
-  steps, which need a second standpoint and the step between, are places. All of these come through untouched.
+  steps, which need a second standpoint and the step between, are places. All of these come through untouched. (Reads
+  joined can also give an order, as in essay 11, or a map carrying one look's directions to another's, as a turn or a
+  boost does in essay 7; neither has a gap in space, and neither moves.)
 - If it changed by the factor k, it is a **writing**. A length in metres, a distance on a map's scale bar, the size of
   the table in centimetres: all of these move, and each moved because somewhere an amount was carried in to state it.
 
@@ -558,6 +560,16 @@ walking it or carrying in its measure. A reader that arrives at the writer's ans
 stood, which loops it closed, what it was handed. That is not a lesser achievement. It is a different one.
 
 *Demo: the reader is a slide rule: chains, loops and a misread link.*
+
+**Steps, never positions.** One more thing separates the two acts, and it is the plainest. A sweep goes one way, from
+home toward the horizon, and where it stops is the next sweep's home: every sweep resets. A tenth of a sweep, then a
+fifth of a fresh one, then three tenths of another, is three steps, each from its own start, and nothing in any of them
+says how far the three have come together. A position, "three fifths of the way round", is a total of steps from a
+starting mark that was kept, and a read keeps no mark. The reader can go back: it faces the other way and sweeps, and
+that too is a forward sweep. What it cannot do by reading alone is go back exactly to where it was; for that the steps
+must have been kept, or a mark left at the start. So there is no circle anywhere in reading. A circle is one fixed dial
+on which every sweep has its place; the reader has a sweep, a reset and another sweep, and the dial appears only when
+someone keeps the steps and lays them end to end.
 
 **In physics.** Physics already runs both tests. Scaling the world is dimensional analysis (Bridgman's and
 Buckingham's): a ratio unmoved by it is a read, and anything that moves had an amount carried in. Changing what arrives
