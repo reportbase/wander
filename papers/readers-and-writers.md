@@ -176,6 +176,17 @@ count is held is not said here (the table's middle row, still open). Nor is it c
 order kept, which of two reads came first, is kept without a step being repeated (D7's orders; O4). **A reading**, resting
 on WLK and ONE.
 
+**A law shortens the chain of writes to its least, and the least is not zero.** A result can be built: read, keep, read,
+keep, to the end. Or the law can be used, and most of the keeping is then not needed. On the walk the strides from the
+corner to the foot, 514 of them for the house, need not be walked or counted: two reads one counted stride apart give
+the strides left and the size (§6). The chain of reads between collapses to its two ends. What the law cannot do is
+remove the last write. One standpoint holds no distance and no size (no read holds a distance, D3); a pace that counts nothing, the
+fixed share, has the read at every moment and never the size (§6, "Read times count"). The least is one counted step.
+So writing is not what establishes a relation, the relation holds unkept; and writing is not made unnecessary by the
+law either. The law gives the expression; one write fills its empty place. This is said of finite chains. A law is not a
+limit and reaches none: it covers every finite chain at once, and a limiting value such as π is the writer's at the
+limit, never had by shortening. **A reading**, resting on WLK and ONE.
+
 | | memory | unit |
 |---|---|---|
 | the geometry: reads, and the laws relating them | none | none |
