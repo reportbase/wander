@@ -114,7 +114,10 @@ So a read by itself can only sweep forward. To return to where the sequence bega
 and totalled, or a mark left at the start: something recorded (D7). And the return is not a sweep run backwards; it
 is a forward sweep in the opposite facing, and a facing is a join. This is why an angle, the turn's whole measure and
 the arctangent sit together on the writer's side: each is a position, a total from a kept mark, where the reader
-has only the step it is in and the heat along it.
+has only the step it is in and the heat along it. There is no circle anywhere in this. A circle is one fixed dial on
+which every sweep has its place and going back is going the other way round; the reader has no such dial, only a
+sweep forward, a reset, and another sweep forward. The circle appears when someone keeps the steps and lays them end
+to end, and that someone is the writer.
 
 **The reader uses no trigonometry.** Readers hold v/h; writers hold angles. Sin, cos, tan and arctan are the writer's: they are defined on the completed turn,
 whose period is π (§2), and evaluating one is a pass over that whole turn. The reader holds the turn open, and works in the
