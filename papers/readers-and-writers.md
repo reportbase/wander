@@ -322,7 +322,9 @@ a corner of its own (Klein 1872). It can be reached two ways: as lines through t
 divided out, the writer's route; or from incidence and order alone, with no length to set aside (von Staudt 1847), the
 reader's. Places add gaps across, still with no unit: the shape and size of a room in strides. *Physical geometry* has
 the unit: lengths and extents in amounts, the writer's cube with a number line on each axis, x² + y² = r² with r in
-metres. Physics enters there, with the unit: a unit injects physics into a relation. Picture reality as a sheet of paper
+metres. Physics enters there, with the unit: a unit injects physics into a relation. The two are orthogonal. The
+geometry is complete without physics: every read, and every relation kept, stands with no unit anywhere; and
+physics, when it enters, assigns amounts and moves none of them. Picture reality as a sheet of paper
 every physical thing writes on, a stone's mass, a planet's path, a cell dividing, each in amounts. A read adds nothing to
 the paper; its directions and their heat are laid over it, blank or full, and the light that arrives along them is the
 paper's writing met there. This says where physics sits in this frame and tells physics nothing it does not know.
