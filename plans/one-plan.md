@@ -57,3 +57,34 @@ root or π is needed.
   turn's measure. Not a prediction with a kill of its own; it stands or falls with J2, J4 and J5.
 
 ## Runs
+
+**Run 1** (11 Nov; `runs/one/one.py`, output `runs/one/one-run1.txt`; fractions, mpmath at 50 digits). J1–J6 not killed.
+
+- J1: Σ Δv = Σ|Δh| = 1 on the chord, the square's edges and the circle; lengths √2, 2, π/2; means 1/√2, ½, 2/π.
+- J2: house, tower, mountain: δ = 7/3600, 7/18000, 7/900000; counts 3600/7, 18000/7, 900000/7; δ × count = 1; every
+  whole stride takes exactly δ from h on the edge v = 1; the last is a part stride (2/7, 3/7, 3/7 of one).
+- J3: s × strides left × δ = 1 at 1,000 places per thing, x from 10⁻⁷ to 10⁹.
+- J4: before the corner the steps in v are δ/(x(x − δ)), no two equal; from x₀ = 2, 30, 10⁶ the edge is crossed to
+  1 − 1/x₀ = 1/2, 29/30, 999999/1000000.
+- J5: first arc over last arc 0.50049, 0.50010, 0.5000019; stride-weighted mean of h corner to foot 0.41433, 0.41426,
+  0.414214 (→ √2 − 1), of v 0.88125, 0.88134, 0.881373 (→ asinh 1); neither is 2/π = 0.63662. In the round chart corner
+  to foot Δv = 1 − 1/√2, −Δh = 1/√2, arc π/4.
+- J6: shares 1/10 and 1/2, 500 steps: Σ|Δh| = 1 − (1 − r)^m at every m, short of 1 by 1.3·10⁻²³ and 3·10⁻¹⁵¹.
+
+What was weak in my own checks. These are sums of differences, so each equals the difference of its ends whatever the
+steps: J1, J2's total and J4's total cannot fail as arithmetic (J4's total was computed from the two ends, and only the
+first 20,000 steps were formed for the long walks). What could have failed and did not: that the strides are even on
+the far edge and uneven on the near one (J2, J4), the split not being the turn's (J5), and the fixed share's sum
+staying under 1 (J6). J5's clause "the mean of v per corner walked tends to 0" is true (asinh(X)/X) but loosely put:
+that mean times the length is asinh X, which grows without bound; v is not the coordinate the strides are even in, so
+it has no 1 of this kind.
+
+**Reading** (J7). One statement in form, two in content.
+- The form: a mean step times a count of steps is the whole crossed, and the whole is 1 because it is measured in
+  itself (the thumb in thumbs, R804; the corner distance in corners, here).
+- The pointwise s·(1/s) = 1 is that sum applied to what is left: 1/s is strides left × δ (J3).
+- The walk is R804 on the square path, counted in strides: far start to corner is the near edge (v fills, 1 − 1/x₀ of
+  it from x₀ out), corner to foot the far edge (h empties, evenly, δ × N = 1). Whole, ½ × 2.
+- R804's π/2 × 2/π is the same sum on the circle, counted in turn. The walk never has that split: its strides are not
+  even in turn. π comes with the turn's measure and with nothing else here.
+- The fixed share has the mean and no finite count: its 1 is a limit.
