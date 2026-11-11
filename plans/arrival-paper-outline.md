@@ -48,3 +48,8 @@ Working title: *Arriving: one approach, two paces, and Euler's −1*. (Alternati
   and Lee only, unless the references check out.
 - **D4. A drawn view.** `approach.html` could gain a small panel drawing Z for both paces. Not built; say if wanted.
 - **D5. Length.** About 4,000–5,000 words as an essay.
+
+## Status
+
+11 Nov (R875; Tom: "yes, write essay 19"): written as essay 19, `papers/essays/19-arriving.md`, with D1–D3 and D5 as
+recommended; D4 (a drawn view of both paces) not built. A short paper is pulled from it only if Tom asks.
