@@ -32,6 +32,12 @@ along the look and given before anything arrives. What arrives along a direction
 is given; the paint is met.* A second test sorts them: change what arrives, and the directions and their heat stay
 while the paint changes. Because the read adds nothing and a change to the paint moves no direction, reads never race.
 
+The geometry has no memory, and its laws need none. A law, tangent addition or the exchange behind Euler's identity,
+says what any two directions give together; it holds for every pair at once, and nothing in it happened. Memory is
+needed only for which steps were taken, never for what steps do. So three things stand apart: the geometry, complete
+with no memory and no unit; keeping, a write of the relation, which holds a history and still no unit; and the unit, a
+write of the scale, where physics enters.
+
 None of the mathematics is new. What is offered is a division of it: which parts one standpoint has, which need two, and
 which need a unit, with the plane as the frame that holds the division in one line.
 
@@ -104,7 +110,29 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   this direction, that gap, this light's frequency. A relation between two variables is another variable and is put to
   the same tests; it does not inherit the kind of what it relates. A representation of a variable, its number in a
   coordinate, a count, a mark kept, has the variable's kind: an angle in degrees and a pixel's index are reads in the
-  writer's coordinate and count. Only a unit carried in makes a write.
+  writer's coordinate and count. Only a unit carried in makes a write in D4's sense, a write of the scale. Keeping is
+  a write of a second kind, a write of the relation: a count of steps kept, a mark left at a start, a place put on
+  paper in thumbs. It holds no unit and no scaling of the world moves it, and it is not a read either, since a read
+  keeps nothing. The first test tells the two writes apart; what tells a write of the relation from a read is only
+  that it was kept. Reading and the write of the relation are both prior to physics: neither holds a unit, and a
+  count of steps kept is as free of the world's size as the steps were. Physics enters with the write of the scale and
+  not before. The geometry itself keeps nothing ("A law needs no memory", below). Where this paper says "a write" without more, it means the write of the scale.
+
+**A law needs no memory.** The geometry keeps nothing, and yet it holds functions that describe the composing of any
+number of steps: tangent addition, w(s) × w(1/s) = −1, Euler's formula. There is no conflict, because two things that
+sound alike are different. *What steps do* is a law: any slope joined to any other gives a definite third, any slope
+times its exchange gives −1. It holds for every pair at once. It is the whole table, given and not performed, and
+nothing in it happened. *Which steps were taken* is a history: a tenth of a sweep, then a fifth, then three tenths. Only
+the history needs keeping. Euler's formula looks as though it accumulates because the classical reading tells it as a
+journey round a circle; the function holds no journey, only the rule, available everywhere at once. So the geometry can
+say what a thousand steps would do without remembering one of them, and memory enters only when someone asks where a
+particular sequence has got to.
+
+| | memory | unit |
+|---|---|---|
+| the geometry: reads, and the laws relating them | none | none |
+| keeping: a write of the relation, which steps were taken | yes | none |
+| physics: a write of the scale, amounts | yes | yes |
 
 **Steps, never positions.** A sweep goes one way, from home toward the horizon, and where it stops is the next
 sweep's home: every sweep resets. A tenth of a sweep, then a fifth of a fresh one, then three tenths of another, is
@@ -112,7 +140,7 @@ three steps, each from its own start. Nothing in any of them says how far the th
 "three fifths of the way round", is a total of steps from a starting mark that was kept, and a read keeps no mark.
 Going back is open to the reader: it faces the other way and sweeps, and that too is a forward sweep, in the
 opposite facing. What it cannot do by reading alone is go back exactly to where it was. For that the steps must
-have been kept and totalled, or a mark left at the start: something recorded (D7). Without it the reader goes back
+have been kept and totalled, or a mark left at the start: a write of the relation (D7). Without it the reader goes back
 some way and has no means of telling when it has arrived. This is why an angle, the turn's whole measure and
 the arctangent sit together on the writer's side: each is a position, a total from a kept mark, where the reader
 has only the step it is in and the heat along it. There is no circle anywhere in this. A circle is one fixed dial on
@@ -316,7 +344,9 @@ a corner of its own (Klein 1872). It can be reached two ways: as lines through t
 divided out, the writer's route; or from incidence and order alone, with no length to set aside (von Staudt 1847), the
 reader's. Places add gaps across, still with no unit: the shape and size of a room in strides. *Physical geometry* has
 the unit: lengths and extents in amounts, the writer's cube with a number line on each axis, x² + y² = r² with r in
-metres. Physics enters there, with the unit: a unit injects physics into a relation. Picture reality as a sheet of paper
+metres. Physics enters there, with the unit: a unit injects physics into a relation. The two are orthogonal. The
+geometry is complete without physics: every read, and every relation kept, stands with no unit anywhere; and
+physics, when it enters, assigns amounts and moves none of them. Picture reality as a sheet of paper
 every physical thing writes on, a stone's mass, a planet's path, a cell dividing, each in amounts. A read adds nothing to
 the paper; its directions and their heat are laid over it, blank or full, and the light that arrives along them is the
 paper's writing met there. This says where physics sits in this frame and tells physics nothing it does not know.
@@ -1376,7 +1406,8 @@ none. This is no fifth reader's identity either: parallax joins two reads, so it
 and what never needed π is the place in steps; the step in metres is still the one amount carried in.
 
 **Classical**; the assignment is a reading. Physics enters
-separately and later, with the first write: a walk made and counted, a thumb given a unit. **A reading**, resting on this
+separately and later, with the first write of the scale: a thumb given a unit. A walk made and counted in steps is
+a write of the relation and still before it. **A reading**, resting on this
 section's account of the transcendentals.
 
 **What the one pole already carried.** The reader at i holds the standard Cauchy (§3). Readings added give one Cauchy
