@@ -145,6 +145,17 @@ are many things (a physical law carries units and constants) and are not a third
 the sorting stays the read and the two writes. That the geometry's laws are of this kind may be why the geometry needs
 no memory: offered as a likely reason, not shown.
 
+**A law in place of memory.** A geometric law is what the geometry has where an observer would need memory. An
+observer who wants to know what a set of steps gives together must keep the steps and total them. The law holds the
+answer for every such set at once, with none of them taken: it collapses the set into one relation. In that it does for
+the geometry what a limit does for the writer, with one difference. The writer's limit is approached step by step and
+its value (π, e) is had only at the end of a count without end (§9, "What is free, and what π costs"); the law is not
+approached, it is given whole. So a geometric law is free in the same sense the geometry is: not an algorithm, not
+computed, with no time in it. It can still be taken apart into intermediate steps, a slope joined to a slope, then to
+another, or (1 + iθ/n)ⁿ step by step (§9), and that is how a law is understood and checked. The steps are the writer's
+account of the law, a journey told afterwards; they are not the law, and the law does not wait on them. That the law
+stands in for memory is a **reading**; what is free is the relation, never the value of π or e.
+
 | | memory | unit |
 |---|---|---|
 | the geometry: reads, and the laws relating them | none | none |
