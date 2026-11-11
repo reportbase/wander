@@ -1,0 +1,3 @@
+E1..E6: True True True True True True
+stride crosses the foot at stride 515 (1/delta = 3600/7 = 514.29); best x for the share step 1.054 vs 1/sqrt(1-q) = 1.0540925533894598 ; best x for the stride 0.001
+after 5000 fixed-share steps w = (-1.0, 3.2627003706852517e-229)

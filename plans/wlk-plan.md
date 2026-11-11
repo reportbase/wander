@@ -108,3 +108,12 @@ name things; every check is rational.
 - **E6, the two paces as the two parts of ln.** On Euler's plane the lander's step is a slide of ln x by ln(1 − q),
   the same every step (real axis); the walker's is not a slide: its change in ln x, ln(1 − δ/x), is different at
   every x. *Killed* if (x − δ)/x is the same at two different x.
+
+**Run 2** (11 Nov, `runs/wlk/wlk2.py`, output `runs/wlk/wlk2-run.txt`; exact). **Nothing killed**, E1–E6.
+The approach is the upper half of Euler's circle: far off +1, the corner i, the foot −1 (E1); a place and its mirror
+multiply to −1 (E2); the stride is parabolic (one fixed point, +1), the fixed share hyperbolic (two, +1 and −1), a
+turn elliptic (none on the circle) (E3); the stride moves fastest round the circle at the foot, the fixed share at
+x = 1/√(1 − q) = 1.054 for q = 1/10, just outside the corner (E4); the house's stride crosses −1 at stride 515
+(514 2/7 from the corner) and walking on returns toward +1 through the lower half, the fixed share after 5,000 steps
+is still short of −1 by an imaginary part of 3·10⁻²²⁹ (E5); the fixed share is a constant slide of ln x, the stride
+is not (E6). Classical (the Cayley transform; the three kinds of Möbius map). The reading is ours.

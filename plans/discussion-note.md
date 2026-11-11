@@ -77,3 +77,20 @@ a reading, a conjecture, a question); **next** (the test, or the place in the co
      moment of a landing is not the geometry's (the ideal fixed-share pace never touches; the ending is the creature's).
    **Next:** check the two landing references; if Tom wants it in, one paragraph beside "Walking to the mountain"
    naming the two paces, no claim about any creature.
+
+9. **The walk and the landing on Euler's circle.** **Whose:** Tom, 11 Nov ("It would be rigorous and persuasive if
+   this idea could be explained via the euhler's identiy."; R868). **Standing:** checked exactly (WLK run 2, E1-E6,
+   nothing killed); classical mathematics (the Cayley transform, the three kinds of Mobius map), the reading ours.
+   - With x = h/v, w = (x + i)/(x - i) puts the whole approach on the upper half of the unit circle: far off w = +1,
+     the corner w = i, the foot w = -1. Euler's identity is the arrival; i.i = -1 is the corner taken twice; a place
+     and its mirror (d and d_c^2/d) multiply to -1, the paper's w(s).w(1/s) = -1.
+   - The three motions are the three kinds of map of that circle: a turn of the look fixes no point of it (elliptic),
+     the lander's fixed share fixes two, +1 and -1 (hyperbolic), the walker's stride fixes one, +1 (parabolic).
+   - So the lander flows from one fixed point toward the other and never reaches it: -1 is its limit. The walker has
+     no fixed point at the foot, so it passes through -1 in a finite count (and, walking on past the mountain, comes
+     round the lower half toward +1: the whole circle is the whole line).
+   - On Euler's plane (the logarithm) the lander is a constant slide and the walker is not.
+   - Caution: the identity names the arrival; what explains the two paces is the circle and its three kinds of map.
+     The value pi is still only the writer's (R807, R808); every check here was rational.
+   **Next:** if Tom wants it in the paper, a short passage in section 8 beside "Walking to the mountain"; and a view
+   on `approach.html` or `euler.html` drawing w for both paces.
