@@ -113,3 +113,12 @@ not used (unchecked).
      is settled by a read, not the count); why a stride repeats (sameness of the step is carried in by the body, not
      given by the geometry); the unit (separate, physics).
    **Next:** if Tom takes the candidate, try D3-D7 rebuilt on it (item 2) as a draft for him, not in the paper.
+
+11. **A geometric law collapses the infinite sequence with a single expression.** **Whose:** Tom, 11 Nov ("A geometric law collapses the infinite sequence with a single expression."; R871).
+   **Standing:** discussion; sharpens R864. Claude agrees, with one precision: the infinity collapsed is "every
+   sequence, of any length" (n strides are one slide of n rungs, for every n; w(s).w(1/s) = -1 for every s), covered at
+   once by a finite, rational expression at no cost; it is not one endless sequence carried to its limit, which is the
+   writer's and where pi and e enter (R807). And the expression has an empty slot (the n or the s) that the geometry
+   never fills: a read fills it (which slope, now) or a write of the relation (how many, so far). The law is the
+   expression; the read and the write are its arguments. **Next:** with item 10, a candidate wording for section 1's
+   "A law in place of memory", for Tom, not yet in the paper.
