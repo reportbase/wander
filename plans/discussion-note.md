@@ -176,3 +176,7 @@ Item 10's candidate (the write of the relation as the count n) is not in the pap
    - The fixed share has the mean and no finite count: its 1 is a limit.
    **Next:** Tom's call whether it goes beside "Two ways to arrive" and R804's passage in section 9. Bears on item
    10 (the write of the relation as the count n): here the count is exactly what turns the read into a size.
+
+**Carried out** (11 Nov, R879; Tom: "update the papers, essays and merge"): item 13 is in *Reads and Writes* section 6
+("Read times count") and section 9 ("The same 1 on the road"), essay 19 section 8, essay 2 section 7 and essay 6
+section 2. Item 10's candidate still waits on Tom.

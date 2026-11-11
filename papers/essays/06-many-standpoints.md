@@ -99,6 +99,11 @@ began without end: start thirty corners out and you gather all of it but about a
 less than a millionth. The infinite in Euler's identity is the horizon behind you, not a vanishing step. A step has to
 shrink only when slopes are added as if they were angles, which is the writer's sum and the writer's limit.
 
+And the look and the count multiply. The reading times the strides left is the same at every place, the corner's
+distance in strides; with the thumb over the arm it is the thing's size in strides. Counted in corners it is 1: a
+reading times its reciprocal, where the reciprocal is something walked. A fixed share has the reading and no count, so
+it never has the product (essay 19, section 8).
+
 ## 3. The ladder
 
 Suppose each reader reads only directions: for each place on some figure, the direction in which it stands. Then there is
