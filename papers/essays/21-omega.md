@@ -20,7 +20,7 @@ gets simpler in Ω, the formula was about one sweep. Where it gets worse, it was
 several sweeps joined into a whole.
 
 The order: the operation (§1), its measure and its total (§2), Ω times its reciprocal (§3), the Cauchy's coefficient
-(§4), the corner (§5), two charts and one horizon (§6), three thumbs (§7), facings and Euler (§8), what gets plainer and
+(§4), the corner (§5), two charts and one horizon (§6), three thumbs (§7), facings, Euler and composing (§8), what gets plainer and
 what does not (§9), what Ω does not do (§10), who saw which piece (§11), and what it changes (§12).
 
 ---
@@ -149,7 +149,13 @@ and its number Ω is reached there; the first is described by 1/Ω, a mean that 
 
 In space the thumb is crossed with itself: three thumbs square to each other, three pairs, and so three sweeps, each
 with total Ω. How do they combine? Three guesses offer themselves: add them (3Ω), compose them, or find one sweep that
-stands for all. None is right as stated, and the answer has two parts.
+stands for all. None is right as stated, and the answer has four parts.
+
+*As readings.* The three sweeps are not independent. Call the shares along, up and across h, v and v₂. The three pairs
+have slopes s = v/h, s₂ = v₂/h and v₂/v, and the third is the second over the first, s₂/s. Going round the three pairs
+multiplies to 1: (v/h) × (v₂/v) × (h/v₂) = 1. So the joint reading is two free slopes and one closure. That is what the
+three sweeps keep and what they combine: each pair keeps the plane's law, with coefficient 1/Ω and its own corner as
+its median, and together they hold only two numbers.
 
 *As a measure.* The three sweeps bound one octant of directions. Its area is given by Girard's theorem: the three
 corner angles added, less a half turn. Each corner is Ω and a half turn is 2Ω, so
@@ -165,6 +171,20 @@ with the same coefficient 1/Ω as in the plane. In classical form this is the pa
 and in space, with no stated reason. In Ω the reason is on the page: each is a density divided by its total, and the
 totals are the same number.
 
+The coefficient normalises the octant and nothing larger: over all four facings round the look the same shape has
+coefficient 1/(4Ω).
+
+*What needs Ω and what does not.* Split the joint reading into how far a direction lies off the look, r with
+r² = s² + s₂², and where it lies round the look. The sweep round the look has total Ω, and it cancels the 1/Ω in
+front. What is left is the law of r alone:
+
+share within r of the look = 1 − 1/√(1 + r²).
+
+There is no Ω in it and no limit: a square root of a fraction. Half the directions lie within r = √3. The other joint
+counts are plainer still. The share of directions with both slopes below 1 is ⅓, and each of the six orders of the
+three shares has ⅙. So in space the constant belongs to one thing only, the sweep round the look. Written with 2/π the
+density hides this; written with 1/Ω it shows which statements carry the constant and which never had it.
+
 It does not go on for ever. With a fourth thumb the total of the corresponding region is Ω²/2, so the agreement between
 the plane and space is theirs and not a rule for every number of thumbs.
 
@@ -173,7 +193,7 @@ thing 120° apart. And sweeping each thumb evenly by itself is not the same as t
 puts 0.3426 of the weight below a pair's corner, the second a half. So in space the measure combines simply and the
 operation does not, which is the reverse of what one might expect.
 
-## 8. Facings and Euler
+## 8. Facings, Euler and composing
 
 A sweep runs within one facing: both shares positive. Signs are a join of reads, the blueprint's, and they count the
 facings: four in the plane, eight in space. The totals are then
@@ -192,8 +212,18 @@ through i at the corner, to −1 at the horizon. In the blueprint's notation:
 - two: e^(2iΩ) = −1, which is Euler's identity;
 - four: e^(4iΩ) = 1.
 
-The identity is "two sweeps' worth", and i is one. The form with no limit in it stands as before: w(s) × w(1/s) = −1 at
-every slope, and at the corner i × i = −1.
+The identity is "two sweeps' worth", and i is one.
+
+The form with no limit in it can now be read as a law of composing sweeps, with no circle assumed. Three lines:
+
+- the landing point turns composition into multiplication: w(s) × w(a) = w(s ⊕ a), which is one line of algebra,
+  (1 + is)(1 + ia) = (1 − sa) + i(s + a);
+- a slope composed with its reciprocal is the horizon: s ⊕ (1/s) has 1 − 1 = 0 below the line;
+- the horizon's landing point is −1.
+
+So w(s) × w(1/s) = −1, at every slope. In words: a sweep and its exchange together make the whole sweep. At the corner
+the sweep is its own exchange, and the statement is i × i = −1. Euler's identity is the same statement with the whole
+sweep's length named, e^(2iΩ) = −1, and the naming is the only part that needs a limit.
 
 ## 9. What gets plainer, and what does not
 
@@ -263,6 +293,11 @@ about one sweep or about a whole.
 keeping the measure.
 
 *Plane and space share a coefficient for a reason.* One quarter sweep and one octant have the same total, by Girard.
+
+*In space the constant belongs to the sweep round the look.* How far off the look, the near third and the six orders
+have no Ω in them.
+
+*Euler's −1 is a law of composing.* A sweep and its exchange make the whole sweep.
 
 *A stray 2 is a sign.* Where a formula with π in it carries a 2 that comes and goes, π/2 or 2/π or π/4, it is likely a
 statement about one sweep written in the unit of the whole.
