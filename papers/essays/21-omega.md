@@ -274,6 +274,27 @@ that average has to be taken: the stretch differs from place to place. In the we
 everywhere, so the rate is ln 2 a step, read off the rule with no run and no average. The number is the same in every
 chart. Only one chart shows it without a sum.
 
+That ease has a price, and Ω is the price. The slope chart and the share chart are joined by a fraction,
+y = s²/(1 + s²), with no limit anywhere. The weight chart is joined to both of them only through Ω. So the chart in
+which the rule looks simplest, a doubling and a fold with no constant in sight, is the one chart that cannot be reached
+by fractions. The rule itself was rational all along, in slopes.
+
+What makes this rule part nearby starts, where others do not, is one property of the rule and none of the sweep. Four
+rules on slopes:
+
+| rule | kind | rate of parting, a step |
+|---|---|---|
+| s ⊕ a, a fixed sweep added | one to one; keeps the measure | 0 |
+| k·s with k below 1, a fixed share of what remains | one to one; draws everything toward home | ln k, below 0 |
+| s ⊕ s, the sweep composed with itself | two to one | ln 2 |
+| s composed with itself n times over | n to one | ln n |
+
+The first two can be undone, so nearby starts never part for good. The third uses its input twice, and two different
+slopes give one result. That two-to-one step is the fold, and it is the only source of a rate above zero. So the three
+parts separate cleanly. The sweep's are the total Ω and the measure, the same in every row. The rule's is how many
+slopes it sends to one, and that alone sets the rate. The run's are the digits of the start, used up in the last two
+rows and never in the first two.
+
 And the acts sort as they did before. The rule keeps nothing. A run of it is a kept sequence, and what is kept is
 writes. Each step uses up one binary digit of the starting slope, so a start put down to p digits holds for about p
 steps and no longer. The horizon of prediction is the length of what was written. That is how a rule of one line gives
