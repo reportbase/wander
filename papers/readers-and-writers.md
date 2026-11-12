@@ -19,8 +19,10 @@ from this paper, this paper stands.
 weight ds/(1 + s²), the one weight that composing slopes leaves unchanged, summed over every slope from 0 up. π is two
 sweeps' worth. Since the paper's subject is the single sweep, its constants are mostly π/2 and 2/π, and it is simpler to
 give that total its own letter than to keep halving π: Ω = π/2, so 2/π is 1/Ω, the turn is 4Ω and the sphere 8Ω, the
-Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω is only a name. It is still a limit, and like π
-it is the blueprint's number, held by no read and no write. From here on the paper writes Ω. Euler's e^(iπ) = −1 is
+Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω and its inverse are to reads and writes what π is to the blueprint: 1/Ω is the
+number for what turning sees, Ω the number for what walking counts (§9, "Reading is 1/Ω; walking is Ω"), and π, two
+sweeps joined, is the blueprint's own. Ω is still a limit: no read has its value and no count reaches it, so its exact
+value is stated only on the blueprint. From here on the paper writes Ω. Euler's e^(iπ) = −1 is
 e^(2iΩ) = −1, and e^(iΩ) = i is the corner. π is written only where a classical statement is quoted by name (the
 parsec, Basel's sum, Lindemann's theorem).
 
