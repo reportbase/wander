@@ -63,8 +63,8 @@ sorting on these two properties, continuous or discrete and moved by scaling or 
 
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
-| **continuous** | a read: a direction, a ratio of slopes | the number line in a unit: an exact real amount |
-| **discrete** | a count: so many photons, contacts, ticks | a write: a thing with a size, an amount put down in a unit |
+| **continuous** | reading: a direction; reads held together, a ratio of slopes (an extent) or a map | the number line in a unit: an exact real amount |
+| **discrete** | a count or an order: so many photons, contacts, ticks; which came first | a write: a thing with a size, an amount put down in a unit |
 
 Physics uses all four boxes. Its measured numbers are writes: a length to so many digits, in metres. Its counts,
 photons arrived or contacts made, are unmoved by scaling and are descriptions laid over the things counted. Its laws
