@@ -292,3 +292,11 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
     the kinds fall from three to two, with the scale test sorting paint into ratios and amounts; the size of the
     thumb in a unit, and what the corner falls on, are paint; open is where the laws among slopes and the
     blueprint sit (the same in every world, yet not the heat itself).
+
+    **Tom, continuing, not settled:** "your essentially asking is something without phsycial size paint?" (of
+    Claude's question where the laws and the blueprint sit), then "A read is continuous, a write is discrete."
+    (R640 again). Claude's notes, not ruled: sizeless things split, a count or a ratio drawn from sized things is
+    paint, a law drawn from nothing sized is not; heat has no parts, no boundary and nothing in it to count, paint
+    comes as things, each bounded, and a bounded thing is what has a size and can be counted, so discrete, sized,
+    physical and "not heat" may be one description; discrete must mean bounded and countable, not that the world
+    is grainy (R645); the blueprint read by R646 as a count carried to its limit, to square with R890.
