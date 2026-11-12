@@ -90,3 +90,5 @@ turn" as B judged it, and the quarter turn is rare in standard results (5 of 41)
 would need its Q count fixed in advance (for example by asking A for at least 12 results whose derivation runs over a
 right angle or 0 to ∞), which no longer leaves B's sort fully blind to the aim; and the post hoc reading above (half of
 a range against the whole) would need its own predictions and class definitions before it is run.
+
+**After run 1** (Tom, 12 Nov: "its just a preference, not a rule."; SPN R918): no run 2. Ω or π is a choice of writing.
