@@ -14,8 +14,8 @@ directions, the *payload*, the paint, is a different thing with a law of its own
 practice already has, and says when the habit stops being right.
 
 *A note on the title.* Since ruling R706 (5 November) the series takes the read's side as directions and their heat,
-not as addresses. An address is discrete and counted, a place in a layout, and so a word for writes: a write can lay K
-places at the heat's quantiles and call them addresses, as a computer lays out its memory. A read counts nothing. Its
+not as addresses. An address is discrete and counted, a place in a layout, and so a word for counting: the heat's
+quantiles can be counted off as K places and called addresses, as a computer lays out its memory. A read counts nothing. Its
 directions come with a heat that has no grain of its own, and what arrives along them is paint. The title keeps the old
 word, and it is still a good one where the essay meets computing (R707): a direction looked along is like an address
 looked up, the heat under it. As geometry, the essay says directions and their heat. In short: *the heat is given; the
@@ -126,8 +126,8 @@ The two are different kinds of thing.
 
 A **direction** is a point: a way one can look, a reading [h : v]. A **payload** is what is found along it: an
 amount, a colour, a strength. The heat of the directions, the Cauchy, is a measure on the points: continuous, with nothing
-counted in it. It is fixed by the standpoint and the turn alone. No payload enters it. (A write may count the directions,
-K places at the heat's quantiles, and call each one an address. The counting is a write; the heat comes first.)
+counted in it. It is fixed by the standpoint and the turn alone. No payload enters it. (The directions may be counted,
+K places at the heat's quantiles, each called an address. That is a count, a description laid over the heat; the heat comes first.)
 
 Whatever arrives can be swapped for anything else, along any direction, and the directions and their heat do not move. So
 nothing the Cauchy says, its median, its spread, its missing mean, is a statement about the payload, and nothing about the
@@ -185,7 +185,7 @@ is met.
 **The geometry creates the read.** It is tempting to picture an observer doing this work: taking two amounts and dividing
 one by the other, so that the scale cancels. It does not. The geometry removes the scale before anything is read. A
 direction arrives as a direction, with the distance along it already gone; the projection did the dividing, not the observer.
-What the light paints on a direction arrives as paint, never as so many units. The paint is the world's writing, met
+What the light paints on a direction arrives as paint, never as so many units. The paint is the world's, met
 along the direction; the read is the direction and its heat, and it is geometry, there whether the paint is or not. So a read manages no magnitudes at all,
 neither the size of the other party nor the size of what arrives. It has no unit to manage them in. Its one length, H, the
 thumb, is its own unit: measured in itself it is 1, one thumb, and what it is in metres is something only a write can say.

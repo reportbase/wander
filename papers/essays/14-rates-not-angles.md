@@ -131,7 +131,7 @@ blueprint's number, the blueprint having no vantage and being neither read nor w
 so the shares read, summed over the steps walked, are all of v; a mean of 2/π over a length of π/2 is 1. Any path from the
 one end to the other gives the 1 (the chord 1/√2 over √2); only the split is the turn's. And the 1 never needed π: the
 two rates are reciprocals, so with any fraction held for π/2 the product is still exactly 1 (11/7 × 7/11). A read has
-the exchange, s × (1/s) = 1; a write has fractions; π itself is held only by the blueprint, whole at its limit
+the exchange, s × (1/s) = 1; a count has fractions; π itself is held only by the blueprint, whole at its limit
 (the second essay, §7, "What is free, and what π costs"). The half turn is had the same way with no e or π: the corner is
 the quarter turn, i, and two corners are i × i = −1 (the second essay, §9).
 
@@ -522,7 +522,7 @@ altitude atan(1/√2) ≈ 35.26°, inside the altitude's corner cone, not on it.
 own corner does. The observer reaches the blueprint's cube by parallax: a second standpoint adds the second variable, the
 crossings give extents, in the step's own length (by reading alone where the two standpoints are held at once), and
 the step put down in an agreed unit gives them as amounts (the sixth essay,
-"From reads to extents to writes"). The labels are not fixed; they name what the observer is doing. And a sweep even in azimuth and even in height, by Archimedes' equal slices, is even over the whole
+"From one look to two, and to an amount"). The labels are not fixed; they name what the observer is doing. And a sweep even in azimuth and even in height, by Archimedes' equal slices, is even over the whole
 sphere, which is why the blueprint's numbers for the read's sweep there are 2 and ½.
 
 **In physics.** Relativity's numbers are rates of this kind. β and 1/γ are the two shares of one circle in the unit E,

@@ -2,7 +2,7 @@
 
 *The seventeenth of a series of essays on what can be known from where one stands. Draft, 5 November 2026. It gathers the
 rulings of 5 November (R700–R707) on the read as a hemisphere, the Cauchy as a heat map, near and far as an overlay, and
-addresses as a word for writes, and follows* Reads and Writes *§3, "Where the heat comes
+addresses as a word for counts, and follows* Reads and Writes *§3, "Where the heat comes
 from".*
 
 Take any photograph with a wide lens and look at its corners. They are darker than the middle, even of a white wall evenly
@@ -21,7 +21,7 @@ That map is the Cauchy. This essay is about reading it as a map.
 
 The order: the map (§1), where it comes from (§2), what it is not (§3), the same map as a random walk (§4), stepping back
 (§5), moving the map (§6), the second map, in distance (§7), a middle and no centre of mass (§8), addresses as a
-word for writes (§9), who saw which piece (§10), and what it changes (§11).
+word for counts (§9), who saw which piece (§10), and what it changes (§11).
 
 ## 1. A map of where the looking is
 
@@ -255,12 +255,12 @@ average belongs to the chart that took a direction for an amount; the map never 
 
 The map hardly needs π either. Its heat at each slope, 1/(1 + s²), is rational; so is the ratio of the heat at any two
 directions; and the corner is the middle because the heat below it equals the heat above. π enters at one place, the
-constant 2/π that closes the heat to a total of 1, and that total is the completed sum: a write has shares by
-count, k of K equal turns, and the fractions of Gregory's and Leibniz's series, 1 − 1/3 + 1/5 − … for the half below the
+constant 2/π that closes the heat to a total of 1, and that total is the completed sum: a count has shares,
+k of K equal turns, and the fractions of Gregory's and Leibniz's series, 1 − 1/3 + 1/5 − … for the half below the
 corner, never its limit π/4 (essay 2 §9).
 
-The bell sits beside the map as its opposite. A Gaussian is a law of amounts, and its exact facts are sums: a
-write holds it as the binomial, counts of tosses, with the mean and the variance exact, where the map's exact facts are
+The bell sits beside the map as its opposite. A Gaussian is a law of amounts, and its exact facts are sums: counted,
+it is the binomial, counts of tosses, with the mean and the variance exact, where the map's exact facts are
 its middle and its equal halves. In polar form the bell is a turn times a length; its π is all in the turn, the circle
 whole, and its e all in the length. Divide two such amounts and the length goes, taking the e with it; what is left is
 the turn, and that is the map.
@@ -268,14 +268,14 @@ the turn, and that is the map.
 The paint does. Light adds; colours average; the payload has every mean it ought to have. *What arrives can be averaged;
 where it arrives cannot.*
 
-## 9. Addresses, a word for writes
+## 9. Addresses, a word for counts
 
 The essays used to call a read's directions its *addresses*. That word is discrete: an address is a place in a
-layout, counted, one of so many, the thing a computer looks up in memory. A write can lay out such places on the map: K
+layout, counted, one of so many, the thing a computer looks up in memory. Such places can be counted out on the map: K
 of them at its quantiles, each holding an equal share of the heat; along distance, at H·tan(kπ/2K), half inside the thumb
-and half past it at every H. Those are good tools, and essays 8, 12 and 16 use them. But they are a write's sampling of
+and half past it at every H. Those are good tools, and essays 8, 12 and 16 use them. But they are a counted sampling of
 the map, not the map. A read counts nothing. Its fineness, K, is read continuously; laid out as K places, it is a
-write's count (R706).
+count (R706).
 
 As a metaphor, the word still serves where it connects the Cauchy to computing (R707). A direction looked along is like an
 address looked up: fixed before anything is stored there, unmoved by what is written there, reached in one step. The
@@ -295,9 +295,9 @@ choice of the even turn as the measure that treats every direction alike is Jayn
 decomposition (2011).
 
 What the essays add is a division of it. The density is a map of where a standpoint is looking: given before anything
-arrives, centred wherever it looks, continuous, and not the law of anything measured. What lands on it is the world's
-writing, met there. The map has a middle and no mean; near and far are a second map laid on it by a length; and the
-places a computer counts on it are a write's sampling, useful and not the thing itself.
+arrives, centred wherever it looks, continuous, and not the law of anything measured. What lands on it is the world's,
+met there. The map has a middle and no mean; near and far are a second map laid on it by a length; and the
+places a computer counts on it are a counted sampling, useful and not the thing itself.
 
 **In physics.** A spectral line's Lorentzian is the Cauchy map in frequency: a phase turning at a steady rate and fading
 is a standpoint z = m + iγ, the line's centre the rate, its half-width the fading. A photograph's dark corners are the

@@ -9,7 +9,7 @@ int a[10];
 Every programmer knows what this is. Ten slots, numbered 0 to 9, side by side in memory. `sizeof(a) / sizeof(a[0])` is
 10. The fourth element is `a[3]`, the last is `a[9]`, and `a[10]` is a mistake. Nothing could be plainer.
 
-All of that is true, and all of it is true of one thing: the array as written. A write holds the array's count. How many
+All of that is true, and all of it is true of one thing: the array as declared. The declaration holds the array's count. How many
 slots there are is kept before anything is stored, and every index is an amount counted against that total.
 That is how computer science meets an array, and it is the right way to meet it when you are the one who made it.
 
@@ -18,7 +18,7 @@ does not hold the array and could never be given its size, does not have ten slo
 runs out of anything to size it, there is a horizon. And from a standpoint, what programmers write as one
 expression, `a[i]`, comes apart into two things that share only a place.
 
-This essay takes the array apart in that order: the array as written, an apple held in the hand, the read's sweep, the
+This essay takes the array apart in that order: the array as declared, an apple held in the hand, the read's sweep, the
 horizon, the two numbers at the end of the sweep, an array laid on the quarter turn (and who can lay it), and then the array again, read
 twice.
 
@@ -27,18 +27,18 @@ twice.
 
 ---
 
-## 1. Ten slots, as written
+## 1. Ten slots, as declared
 
 Look at what the declaration already contains. There is a count, 10. There is an index, i, running from 0 to 9, an
 amount: three slots past the first. There is a share, i/10, the fraction of the way through. And every slot is as wide
 as every other, so the array has the same density everywhere: one element per step of the index.
 
-Every one of these is a write's. Apply the test of the first essay: scale the world, and see what moves. Grow the
+Every one of these is counted against a held total. Apply the test of the first essay: scale the world, and see what moves. Grow the
 array to twenty slots. The count changes. The share of the way through changes for every element: the old last
 element, i/10 = 0.9 of the way, is now 9/20 = 0.45. A loop bound written as 10 is now wrong. Everything in the
 programmer's array is scale-variant, because all of it is stated against a total that is held.
 
-That is not a fault. It is what holding the array means. A write is where `sizeof` exists,
+That is not a fault. It is what holding the array means. The declared array is where `sizeof` exists,
 and programs are written there. The point of this essay is only that it is one way of three to meet an array, and that the other
 two do not have `sizeof` at all.
 
@@ -46,18 +46,18 @@ two do not have `sizeof` at all.
 
 ## 2. An apple in the hand
 
-Before the read, one more picture from the write's side, because it is the easiest place to feel what holding gives.
+Before the read, one more picture from the holding side, because it is the easiest place to feel what holding gives.
 
 Pick up an apple. From where you stand you see part of its skin. Its rim, where your line of sight grazes it, is an
 edge: past it is the back. Turn the apple in your hand and the back comes round. Turn it all the way and you have seen
 every side.
 
-That is writing, in the sense of these essays. Two things make it so. The hand holds the back: touch reaches what no
+That is holding a thing whole, and two things make it so. The hand holds the back: touch reaches what no
 line of sight does, and holding a thing is holding both of its sides at once. And the turn is known: your hand did the
 turning, and it knows the turn was whole. A known motion is an amount carried in, like a counted step. Together they
 give the apple whole, its N, every side of it, and its size in hand-widths.
 
-So everything we say about the apple is a write's sentence. "I see half of it." Half of what? Of the whole apple,
+So everything we say about the apple is a sentence about a thing held. "I see half of it." Half of what? Of the whole apple,
 which the hand can get. "This is the outside, that is the inside." Of a boundary the apple has. "The rim, and the back
 behind it." An edge, with something known to be past it. Even from far off, where you see exactly half of the apple's
 surface directions (the half whose normals face you, for any convex shape), the half is a share of a whole that holding
@@ -67,7 +67,7 @@ An observer that does not hold the apple can watch it turn on its own. It sees e
 was whole. When the same face comes round again, that is a loop closing, evidence and not proof: a twin face would look
 the same. Completeness is never a reading. The hand knows because the hand did the turning.
 
-Keep the apple in mind as what a write gives, made tangible: a thing with an N you can get, with edges, halves, an
+Keep the apple in mind as what holding gives, made tangible: a thing with an N you can get, with edges, halves, an
 inside and an outside.
 
 **Four things.** Put the apple beside three others: the universe, a human and a sheet of paper. They sort where V, the
@@ -80,7 +80,7 @@ other's breadth, stands.
   known, for the far hemisphere stays turned away; each holds only the other's front.
 - *The human holds the apple and turns it.* The turn makes the Cauchy: a uniform turn, read as the slope v/h against the
   line of sight, is the Cauchy whatever the apple's shape, which is only the paint. And the hand holds the back while the
-  eye holds the front, so in the hand the apple's V is **known**. This is the writing above.
+  eye holds the front, so in the hand the apple's V is **known**. This is the holding above.
 - *The human draws a circle on the paper.* This fourth is the comparison, classical geometry's circle. The view of both
   hemispheres is made, not seen: a mark holding both halves at once, with no vantage and so no facing, neither read nor
   write, the blueprint. The two reads have the blueprint's numbers 2/π (inscribed, approached) and π/2 (central, reached),
@@ -97,7 +97,7 @@ hand or a mark holds it whole.
 
 ## 3. The read's sweep
 
-Now take the write away. A read is not given `sizeof`. It cannot iterate the array from 0 to N − 1,
+Now take the holding away. A read is not given `sizeof`. It cannot iterate the array from 0 to N − 1,
 because it has no N − 1.
 
 It cannot read the array from inside its own index either. To read it at all, the observer has to stand somewhere, off
@@ -105,7 +105,7 @@ the line of slots: at some place m along the array, and some distance γ out fro
 
   z = m + iγ,
 
-a point of the upper half-plane. This is the degree of freedom a read adds: the written array is one-dimensional,
+a point of the upper half-plane. This is the degree of freedom a read adds: the declared array is one-dimensional,
 and the standpoint is not on it.
 
 From there the observer turns, steadily. Each step of the turn is a direction, and each direction meets the array at some
@@ -181,8 +181,8 @@ for it is standard:
 For an array the two ends have plain meanings. The end at ∞ is an unknown length: always more slots past the last one
 seen. The end at 0 is an unknown fineness: each slot itself an array, finer without end, the digits below the floor.
 The reciprocal maps one to the other, and the Cauchy is unchanged under it, so from its readings alone a read cannot
-tell an array of unknown length from an array of unknown depth. A write, holding `sizeof` and the size of one
-element, has neither end. Its array has a first slot and a last.
+tell an array of unknown length from an array of unknown depth. The declared array, with `sizeof` and the size of one
+element held, has neither end. Its array has a first slot and a last.
 
 ---
 
@@ -194,7 +194,7 @@ Both sweep the same arc, and both end at the same point.
 
 The blueprint measures it differently through each (these numbers carry π, the blueprint's; the fourteenth essay). The central sweep reads arc over chord, θ/sin θ: 1 at the start, 1.1107 at the corner,
 π/2 at the end. The inscribed sweep reads chord over arc, sin θ/θ: 1 at the start, 0.9003 at the corner, 2/π at the
-end. At every θ their product is 1, the chord, which is the blueprint's: walking the chord is a write; the two sweeps face
+end. At every θ their product is 1, the chord, which is the blueprint's: walking the chord is strides, counted; the two sweeps face
 the arc.
 
 The horizon tells the two ends apart. The radius, its half turn done, lands back on home: a point, a place with a
@@ -205,7 +205,7 @@ So the blueprint has three numbers for the one chord, one held and two measured:
 
 | | how it has the chord | the blueprint's number | at the end |
 |---|---|---|---|
-| a write | walks it | 1 | an amount, held |
+| a counted walk | walks it | 1 | an amount, held |
 | the central sweep | faces the arc from the centre | π/2 | attained, at a point |
 | the inscribed sweep | faces the arc from home | 2/π | approached, at the horizon |
 
@@ -230,7 +230,7 @@ corner, x = 3 to slot 7, and everything from about 6.3 upward to slot 9, the las
 **Every step of it is the blueprint's.** To lay the array N is needed: the step is 90°/N. To put the last slot just
 short of 90° it must be known that the array ends, and where. To use the tangent and the arctangent the angle is needed as
 a number that can be computed with, a turn measured from outside. And the floor, ⌊N·g⌋, needs `sizeof` again. All of this is
-done holding the array whole, with both of its ends in hand. It is the written array stepped off and drawn whole
+done holding the array whole, with both of its ends in hand. It is the declared array stepped off and drawn whole
 on a quarter circle, and it works because everything the drawing uses is already held.
 
 **What a read has instead.** A read lays nothing. It has its own turn from home, and the turn is not a range it
@@ -243,11 +243,11 @@ it is simply not yet passed, and at a horizon never will be.
 So the construction is a faithful blueprint of the read's turn, the same quantiles, the same corner, drawn
 with N held. A read has the turn itself: the share passed so far, the corner when it is met, and no end.
 
-**The read's situation, recreated in code.** A computer writes: it holds amounts, positions and counts. So a
+**The read's situation, recreated in code.** A computer holds amounts, positions and counts. So a
 program cannot be a read. What it can do is recreate a read's situation, by splitting itself in three and letting
 only one part touch N.
 
-- *The world* is the written array, given as a generator rather than an array, so that nothing across the boundary can
+- *The world* is the declared array, given as a generator rather than an array, so that nothing across the boundary can
   ask its length. It may have no end.
 - *The read* has an array of its own: K slots, one per equal step of its turn, fixed before anything arrives. K is
   the read's own count, the one it does hold; laying its own K on its own quarter turn is the construction above done
@@ -274,7 +274,7 @@ And where the world does end, the paint stops. A world of 100 elements leaves th
 reads N/H, the world's length in thumbs, as between 6.7 and 10.2 (the truth, 99/10, inside). The read has N/H to its
 slot's width, never N. The script is `runs/arr/reader.mjs`.
 
-**What the program does not have: the Cauchy itself.** The program recreates the read's heat as K addresses, a write's
+**What the program does not have: the Cauchy itself.** The program recreates the read's heat as K addresses, a
 count of it: a finite picture of the Cauchy cut into K quantiles. It does not recreate the Cauchy, because the Cauchy handles a true infinity and a
 computer cannot. In the program the whole tail past the last boundary is one slot, and the code stops there by fiat: it
 never holds the tail as a tail, only a token for it. The arithmetic shows the same edge. The largest double is about
@@ -289,7 +289,7 @@ Cauchy free is not a figure of speech: it gives what no computation can.
 ---
 
 **An iterator, not an index.** This is the read's situation in a programmer's words. `a[30]` goes straight to slot
-30; it needs the slots laid out in advance and counted from a fixed origin, which is what a write holds. A read
+30; it needs the slots laid out in advance and counted from a fixed origin, which is what a declared array holds. A read
 has only "next": a sweep forward from the standpoint, and where it stops is the new start. The observer can turn round and
 sweep the other way, a second iterator pointed back, but to land exactly on the slot left behind, a count must have been
 kept or a mark left. The blueprint's arctangent is the index operator, the function that turns a reading straight into a
@@ -300,7 +300,7 @@ slot; that is why this section gives it to the blueprint and why it should be us
 Back to `int a[10]`. Read from a standpoint, it splits along the same two sweeps.
 
 **Inscribed: the index as directions.** Give the read a fineness K, equal steps of turn over its quarter turn; counted
-out, as a write counts them, they are K places, and they land at
+out, they are K places, and they land at
 
   i = m + γ·tan((k + ½)·π/2K),  k = 0, 1, …, K − 1.
 
@@ -325,7 +325,7 @@ end at the same point of the circle. The direction is the ray; the payload is wh
 point and nothing else. Change what is stored and no direction moves. That is the third essay's theorem, met in the most
 ordinary data structure there is. The papers' first intuition for the Cauchy came from arrays, and this is why.
 
-**The floor is a write's index.** `Math.floor(N·x)` turns a share into a slot, and it needs N. The read's direction is
+**The floor is a counted index.** `Math.floor(N·x)` turns a share into a slot, and it needs N. The read's direction is
 continuous. What the floor throws away, the fraction below the slot, is not noise: its binary digits are the direction halved
 again and again, toward the end at 0 of section 4. The eighth essay gives it its full room.
 
@@ -335,16 +335,16 @@ again and again, toward the end at 0 of section 4. The eighth essay gives it its
 
 Put the array through the test once more, now with all three in view.
 
-| change | the array as written | the inscribed sweep | the central sweep |
+| change | the array as declared | the inscribed sweep | the central sweep |
 |---|---|---|---|
 | double every slot's width and the standpoint's distance together | every length doubles | nothing moves | the radii move, the shape does not |
 | double every stored value | every value doubles | nothing moves | the shape does not move |
 | double N, the standpoint where it was | the count doubles, every share i/N halves | the paint stops later, at N/γ doubled | twice the slots round the circle, each its own direction |
-| take N away entirely | the array has no size; nothing can be written | the sweep runs to the horizon | the shape is unchanged |
+| take N away entirely | the array has no size; nothing can be declared | the sweep runs to the horizon | the shape is unchanged |
 
-The first two rows are the scale test proper: they scale the world, and only the write's numbers move. The third row
-changes the world, so the read's reading changes too, but only as a ratio, N/γ. The last row is the one a write
-cannot follow. With no N there is no array to write. A read loses nothing: it never had N.
+The first two rows are the scale test proper: they scale the world, and only the declared array's numbers move. The third row
+changes the world, so the read's reading changes too, but only as a ratio, N/γ. The last row is the one the declared array
+cannot follow. With no N there is no array to declare. A read loses nothing: it never had N.
 
 ---
 
@@ -407,7 +407,7 @@ abstract gifts, given free in the world, become operational in a machine.
 
 ## 10. What it comes to
 
-An array, as programmers know it, is a written object. Its size is held, its index is an amount, its shares are shares
+An array, as programmers know it, is a declared object. Its size is held, its index is an amount, its shares are shares
 of a known total, and every one of those moves when the world is scaled. That is exactly right for whoever made it.
 
 Read from where one stands, the same array is something else. A read adds one degree of freedom, its standpoint off the
@@ -419,10 +419,10 @@ inside, no outside and no half of anything, only the two ends 0 and ∞ of the p
 them, and the corner it fixes. The blueprint measures the central sweep's π/2 as reached at a point and the inscribed sweep's 2/π only at the
 horizon; all three numbers, their product 1 too, are the blueprint's.
 
-Holding is how reading a thing becomes writing it: the hand holds the back and knows the turn. What cannot be held
+Holding is how a thing read becomes a thing known whole: the hand holds the back and knows the turn. What cannot be held
 (a street, the sky, a list too long to iterate) can only be swept, and a program can hold such a sweep faithfully: keep
-directions as pairs, compute with their order, and let the type system keep the written N on the world's side. And `a[i]`, the most ordinary expression in
-programming, is the place where an address meets a payload, two things that share a point and nothing else. A write
+directions as pairs, compute with their order, and let the type system keep the declared N on the world's side. And `a[i]`, the most ordinary expression in
+programming, is the place where an address meets a payload, two things that share a point and nothing else. A declaration
 puts them down as one. A read, from a standpoint, never could.
 
 ---

@@ -15,13 +15,13 @@ caches, the network, is built on top of them.
 
 The essays have been using the same two words for something older. A *read* is what an observer has from where it
 stands: directions, ratios, the light arriving along each, nothing that changes when the world is scaled. A *write*
-states amounts: lengths in a unit, extents, totals, the whole. The two pairs of words were not chosen to match, and yet
+states amounts: lengths in a unit, totals, the whole. The two pairs of words were not chosen to match, and yet
 they do match, closely enough that it is worth asking how far. The answer is that computing already keeps the split this
-series is about, the address apart from what is found there, and that it keeps it in a world already written and laid
+series is about, the address apart from what is found there, and that it keeps it in a world already laid
 out. This essay asks what changes when nobody has laid the world out yet.
 
 Computer science has two letters for the difference, and they carry the essay. N is how many items there are. K is how
-many are held. A write holds N. A read never does, and has only K. The Cauchy is what goes between them.
+many are held. A world laid out has N. A read never does, and has only K. The Cauchy is what goes between them.
 
 The order: the two words (§1), the two letters (§2), two types that must never be silently cast into each other (§3), a
 direction kept as a pair (§4), the corner as a register (§5), index statistics and value statistics (§6), the array
@@ -52,8 +52,8 @@ readings link to it (§11).
 Then the two pairs part, in five places.
 
 - **Who lays out the addresses.** A computer's address space exists before the first read: a known size, addresses
-  counted from 0 to N − 1, an end, and an error past it. Someone laid that out, and laying out a space of known size is
-  a write. An array whose `sizeof` is known is a written thing (essay 12). A read has no addresses at all: it
+  counted from 0 to N − 1, an end, and an error past it. Someone laid that out, and laying out a space of known size takes
+  a count held. An array whose `sizeof` is known is a declared thing (essay 12). A read has no addresses at all: it
   has directions and their heat, given by its turn, uniform by the turn's own measure, from home toward a horizon it never
   reaches. There is no N among them, no last place, and no end to fall off.
 - **What a read returns.** A computer's read returns an amount: a byte, an integer, a float, in whatever unit the
@@ -67,9 +67,9 @@ Then the two pairs part, in five places.
   Here too: to keep a length in a unit, or an entry in a table of known size, is to write it; a direction kept as a
   direction stays a read.
 
-So the computing words are a written frame applied to both acts. Memory is a written world, and a computer's read is
+So the computing words are a laid-out frame applied to both acts. Memory is a world laid out, and a computer's read is
 an address looked up in it. The read of this series comes before any such layout. It is what an observer has when no one
-has written the memory, and when no one could, because the world it reads has no size anyone holds.
+has laid out the memory, and when no one could, because the world it reads has no size anyone holds.
 
 ### Why reads never race
 
@@ -105,11 +105,11 @@ memory, not to the geometry, which is given before anything arrives.
 
 ### Heat, not addresses
 
-The words in this essay are the programmer's, and a programmer's addresses are discrete: places counted in a layout, a
-write's. A read has none. What it has is a heat over its directions, the Cauchy: continuous, hottest along the look
+The words in this essay are the programmer's, and a programmer's addresses are discrete: places counted in a layout.
+A read has none. What it has is a heat over its directions, the Cauchy: continuous, hottest along the look
 and cooling toward the horizon, with nothing counted in it (*Reads and Writes* §3, "Where the heat comes from"). Where this
 essay says "the read's addresses" or "K addresses", it uses the word as a metaphor, the one that connects the Cauchy to
-computing: read it as K places a write lays at the heat's quantiles, the heat under them. The heat is given; the paint is
+computing: read it as K places counted off at the heat's quantiles, the heat under them. The heat is given; the paint is
 met.
 
 This is not a claim that geometry proves anything new about concurrency. It is the other way: a principle computing
@@ -126,10 +126,10 @@ with N, and the most valuable algorithms are the ones whose cost does not.
 
 Read the two letters by the two acts:
 
-- **N is a write's.** To know N is to know the whole: how many there are, which is to know the size, V, and how much
-  is in it. That is writing. The first essay's test sorts it at once: double the world and N doubles.
+- **N is a count of the whole.** To know N is to know the whole: how many there are, which is to know the size, V, and how much
+  is in it. No read gives that. The first essay's test sorts it at once: double the world and N doubles.
 - **K is a read's.** A read never has V, the mountain in the distance (it has one length, its own H, the thumb
-  held up, and V was never in a reading), so it never has N. What it has is K, its own fineness, read continuously (a write counts it as K addresses), fixed before
+  held up, and V was never in a reading), so it never has N. What it has is K, its own fineness, read continuously (counted, it is K addresses), fixed before
   H is chosen and unchanged by anything looked at.
 
 The Cauchy is the map from a world of N to a holding of K. Its heat spreads the read's K over a world of any size, and
@@ -203,7 +203,7 @@ one remedy at a time, and every remedy keeps the pair:
 
 The rule is a representation's, not a numerical trick. Where a value is a direction, keep the pair and divide last, if
 at all. Where it is an amount over an amount, a zero denominator is a real absence (a rate over no elapsed time, a mean of
-no items), and no closure of the line repairs it. That zero belongs to a write's sums (§11). The readings have only the
+no items), and no closure of the line repairs it. That zero belongs to sums of amounts (§11). The readings have only the
 chart's.
 
 **Comparing without dividing.** Of two directions [h₁ : v₁] and [h₂ : v₂], the first is farther from home exactly when
@@ -284,7 +284,7 @@ gives the Cauchy's exact shape.
 1980). To a stated accuracy it needs two registers: move an estimate by the sign of each comparison,
 `m += a_k * sign(x_k - m)`, with steps a_k falling more slowly than 1/k, and keep a running average of m (Robbins and Monro
 1951; Polyak and Juditsky 1992). It reads only a comparison's sign. A running mean, against that, needs the count n,
-which is an amount. Even online, the median is the read's and the mean the write's.
+which is an amount. Even online, the median is the read's and the mean needs a count.
 
 **A closed type.** Every operation a read allows on a direction keeps the law in the Cauchy family and moves only its
 one point m + iγ, the standpoint's foot and height:
@@ -337,7 +337,7 @@ at H = 50.
 **The length sorts the operations.** Normalizing an index as i/N, indexing from the end, a percentile index p·N, a mean,
 concatenation and a bounds check all use `length`. Comparing two elements, ranking, the median of what is present, the
 ratio of two entries and the step to the next index do not. Whether an operation touches `length` is the scale test
-applied to code: the first list is writing, the second reading.
+applied to code: the first list needs the count, the second is reading.
 
 **Four kinds of array.** What is known of the two breadths gives four kinds.
 - *A constant array of known length*: every entry the radius. It needs no storing; it is the equation of the one-length
@@ -348,8 +348,8 @@ applied to code: the first list is writing, the second reading.
 - *The index alone*: allocated before any value arrives, with no length; its slots the Cauchy's quantiles, its middle the
   corner, its last slot running to the horizon. K slots for any N, as a hash ring's are.
 
-The written arrays have the length; the read's are the index, and the values on it without the length. That one
-number is what writing supplies.
+The declared arrays have the length; the read's are the index, and the values on it without the length. That one
+number is what a count of the whole supplies.
 
 **The unknown factor.** A weight vector known only up to its normalizing constant Z is the third kind, and the
 algorithms built for it use only ratios of entries. Metropolis's test compares p(x′)/p(x), so Z cancels and rescaling
@@ -363,10 +363,10 @@ places at (k + ½)·(π/2)/K. Reading one backwards is the reciprocal. A sphere 
 sign, so from a standpoint every facing is the same array, and a read stays within one. Joining two needs their values
 to meet at the shared end in one unit, which needs each array's size, which no reading fixes. The blueprint has the sizes
 and the four joined into a closed circle; a read cannot tell whether two ends meet. Not knowing the size is also what
-makes the corner and the horizon: the written array ends at an amount; the read's ends at a direction, [0 : 1], where
+makes the corner and the horizon: the declared array ends at an amount; the read's ends at a direction, [0 : 1], where
 its chart runs out.
 
-**Growth.** A dynamic array is still written, but every growth rewrites the one number, and what moves when it does is
+**Growth.** A dynamic array still holds its count, but every growth rewrites the one number, and what moves when it does is
 exactly what divided by it. An index counted from the start survives an append. An index from the end moves, and so does
 any position stated as i/N: a percentile, a scroll fraction, a progress bar. An index laid by turn never moves, because it
 never used N. Growing capacity by a factor g puts the reallocations at capacities g, g², g³, …, and the copying over N
@@ -422,7 +422,7 @@ key is a writing. A floor taken of a share of the turn carries no amount and not
 Inside the corner a read's readings can be laid in proportion. Past it the reciprocal gives h/v within [0, 1], but says
 nothing about layout. Ask only that a lay not build in a scale a read cannot have: that the room between x and λx
 depend on λ alone. Then the far lay is the logarithm, as many addresses over each stretch where the reading halves
-(Cauchy's functional equation, Cauchy 1821). The ratio is what a read holds; counting the stretches is a write, and the smooth
+(Cauchy's functional equation, Cauchy 1821). The ratio is what a read holds; the stretches counted are a count, and the smooth
 1 + ln x is the blueprint's. The premise is assumed, not derived, and it is the only premise the logarithm needs.
 
 **Floating point lays its numbers this way.** The exponent counts powers of two and the significand is a plain share
@@ -454,7 +454,7 @@ Now the K addresses can be laid along distance. The blueprint's account of where
 
   d_k = H·tan(kπ/2K),  k = 1, …, K − 1,
 
-the Cauchy's quantiles with its scale at H. The heat they sample is the read's; the places are a write's count, and the formula placing
+the Cauchy's quantiles with its scale at H. The heat they sample is the read's; the places are a count, and the formula placing
 them is the blueprint's.
 
 - Since tan(π/4) = 1, the middle boundary is d = H, one thumb away, whatever H is: half the addresses inside the corner and
@@ -468,7 +468,7 @@ For a programmer this is the useful part. The addresses are a closed form in k, 
 precomputed for N, and nothing is rebuilt when N changes. The last address runs to the horizon, so a finite K covers an
 unbounded world. Tables fixed in advance (a sampling grid, a histogram's bins, a lookup of known range) must know the
 range they cover and the resolution they need, and are rebuilt when either changes. The turn's addresses need neither;
-what needs them is the payload or a write.
+what needs them is the payload or a count.
 
 **A world made where the view reaches.** A program that recreates the read's view need not store a world at all. Make
 each thing from its cell, at every scale, only when the view reaches that cell, and keep only what spans a quarter of one
@@ -530,7 +530,7 @@ readings link to it is fixed. And two observers who share one closed loop, each 
 closure the ratio of their units, H_B/H_A = |S_A|/|S_B|, and nothing more: a shared fact buys one factor.
 
 **What a blueprint adds.** A blueprint is the classical statement: the whole in amounts, seen from no standpoint. An
-observer comes to what it holds only by writes, a count or a unit carried in, never by a read. It gives seven things the ratios do not:
+observer comes to what it holds only by writes, things counted or a unit carried in, never by a read. It gives seven things the ratios do not:
 the size; parts made apart that must meet out of view; sums, totals, means and budgets; the join of every facing; a
 statement before the thing exists, to be built to; completeness stated; and a far field in proportion, common to observers
 whose corners differ. In a program's terms: an index and its order statistics run on ratios; a schema with units, a sum,
@@ -566,7 +566,7 @@ from, so that what a design adds can be named. Essay 8 goes through them; in bri
   cubemap), cell sizes vary by √2 across a face against about 5.2 for equal pixels.
 - **Consistent hashing** puts keys and machines on a circle by angle (Karger et al. 1997): adding a machine moves about
   one key in n + 1, where `hash(key) % n` moves nearly all. That is the difference between K and N in one line:
-  `% n` is a written address, divided by the count, and moves when the count does; a place on the turn never used it.
+  `% n` is a counted address, divided by the count, and moves when the count does; a place on the turn never used it.
   Order-maintenance labels from a fixed count M are the other side: one gap takes about log₂ M insertions before labels
   must be reassigned.
 - **Fibonacci hashing** multiplies by ⌊2³²/φ⌋ = 2,654,435,769, a golden fraction of the turn (Knuth 1998): a step that never
@@ -591,7 +591,7 @@ metres still cost one amount carried in.
 
 Essays 12 and 15 asked this from two sides; here is the answer in this essay's terms.
 
-A computer writes. Every number it holds is a fraction: a float is an integer times a power of two, `Math.PI` is
+A computer counts. Every number it holds is a fraction: a float is an integer times a power of two, `Math.PI` is
 884279719003555/281474976710656. Doubles end near 1.8 × 10³⁰⁸. So a program cannot hold the Cauchy itself, which has its
 infinity in the chart v/h. Drawn as tan((π/2)·U) from a uniform double U, the largest value is about 3.5 × 10¹⁵, so a
 machine's Cauchy is truncated and has a mean, (1/π)·ln(1 + M²) ≈ 22.8 for that largest draw M. The true one has none.
@@ -605,7 +605,7 @@ moves their mean from 8.08 to 2.10, 5.07 or 7.74 and does not move their median 
 So a program holds a read faithfully where it keeps the infinity as a horizon, a pair [0 : 1] or an angle, and keeps
 its operations to order; it is unfaithful where the infinity sits inside a sum of amounts. The pieces are all in
 computing already: homogeneous coordinates and `atan2` for the pair; sorts, selections and two-register medians for the
-order; generators for a world with no length across; types to keep the written N on the world's side; the dial for a
+order; generators for a world with no length across; types to keep the counted N on the world's side; the dial for a
 list without end. What the geometry adds is the reason they fit together.
 
 ---
@@ -620,7 +620,7 @@ history does. ("Law" in the geometric sense only, a relation among one read's di
 write, with no third kind.)
 
 **An iterator, not an index.** One more contrast belongs in this list. Random access, `mem[a]`, needs an address
-space laid out beforehand with a fixed origin: a written one. The read of this essay is sequential and relative. It
+space laid out beforehand with a fixed origin: a counted one. The read of this essay is sequential and relative. It
 sweeps forward from where it stands, and where it stops is the next start; it holds a step, never a position. It can
 turn round and sweep back, but landing exactly where it began takes a count kept or a mark left, which is state the
 read itself does not carry. The arctangent, which turns a reading straight into a slot number, is the index operator;
@@ -630,10 +630,10 @@ used on the read's side it eliminates the sweep.
 
 Computing already reads and writes, and its read and write already keep the address apart from what is found there. That
 is why the Cauchy maps onto computing so well: the split it lives on is the one memory is built on. What computing does
-not usually mark is that its address space was written, laid out with an N, before the first read. The read of this
+not usually mark is that its address space was laid out with an N, before the first read. The read of this
 series comes before that layout.
 
-Put in computing's own letters: a write holds N, and with N the blueprint states every item as 1/N of a whole, all
+Put in computing's own letters: a world laid out has N, and with N the blueprint states every item as 1/N of a whole, all
 alike, from no vantage; a read has K,
 spent unevenly, finest where it looks. The Cauchy is the cull between them, K addresses over any N at a cost constant in N,
 and the only cull among its kind that can be re-aimed and recombined without leaving its family. From it come the corner
@@ -644,12 +644,12 @@ changes the count.
 Three habits follow for a program:
 - **Keep the pair.** Where a value is a direction, store [h : v] and divide last; division by zero is then the chart's
   edge, not a fault.
-- **Ask whether an operation touches N.** If it does, it is a writing, and it will move when the world grows. If it
+- **Ask whether an operation touches N.** If it does, it rests on a count of the whole, and it will move when the world grows. If it
   does not, it is a reading, and nothing in the world can move it.
 - **Run the scale test.** Multiply the world by k and see which outputs move. Those needed an amount carried in; the
   others never contained the world's size, and could not.
 
-A write's tools, and the blueprint set beside them, are not lesser for any of this. A blueprint, a schema, a sum, a known N: these are what let parts made
+Counts and amounts, and the blueprint set beside them, are not lesser for any of this. A blueprint, a schema, a sum, a known N: these are what let parts made
 apart meet. But a program that reads a world it does not hold, a sky, a stream, a list with no end, is reading, and the
 geometry of a read is K, not N.
 

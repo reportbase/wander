@@ -19,7 +19,7 @@ The earlier essays found that π is not a read's number (essay 14): it is the to
 read, which has one length and never closes its turn, does not hold it. This essay asks the same of e, and finds
 the same answer for a reason of the same kind. Its claim:
 
-> The transcendental numbers are what a finished infinity gives. Every step toward them is a read or a write, and neither holds
+> The transcendental numbers are what a finished infinity gives. Every step toward them is a read or a count, and neither holds
 > them. π completes the turn; e completes the scale. Only the blueprint, the whole held, holds either.
 
 None of this changes a digit of either number. It says whose numbers they are. There are two acts here, a read and a
@@ -90,13 +90,13 @@ A read's other freedom is size. Essay 3 and OFS §2 named the read's ignorance a
 Rescalings give e.
 
 A read has sizes as ratios of the thumb: a thing one thumb wide reads one in two, then one in four, one in eight.
-Past the corner a write laying out its fineness gives as many places to each stretch over which the reading halves (essay 4), and a thing that reads
+Past the corner the read's fineness, laid out as counted places, gives as many to each stretch over which the reading halves (essay 4), and a thing that reads
 one in eight is three such stretches out, which counted is 8 thumbs, past 2, 4 and 8, an extent. A count is a description laid
 over things with a size, steps walked or thumbs laid end to end, each a write; it is not in a read. What one length counted makes is finite and rational. A thing 3H away reads
 one in three, between one in two and one in four, and a read holds it there by its order among the readings (essay
 4, "the count is the detail").
 
-How many times a write's thumbs go twice over to reach a thing, counted as a continuous quantity, is the logarithm, and to give
+How many times the thumbs go twice over to reach a thing, counted as a continuous quantity, is the logarithm, and to give
 it a value is to choose a unit for it and finish a series. Counted in twos, log₂ 3 = 1.58496…; in the natural unit, ln 3 =
 1.0986…; one stretch, where the reading halves, is ln 2 = 0.693147…, which is
 
@@ -190,14 +190,14 @@ approached; π/2 the central sweep's, reached, its arc in thumbs what a walk cou
 This essay's title, "what only a writer holds", needs one more distinction, which the ladder of §1 already drew. A walk counted is
 a count laid over writes, the strides, and every walk actually made is a finite count, so what it holds is a fraction: 22/7, 355/113, a series
 stopped at some term. It uses π's name and its approximants; it never has the value, which would take a count without end. Only the
-blueprint holds π itself, the completed whole, every facing at once; it has no vantage, so it is not writing carried
+blueprint holds π itself, the completed whole, every facing at once; it has no vantage, so it is not counting carried
 further, and whole, with π at its exact value, it is a limit, never a thing anyone has made. So π only seems free. What the sweep gives at no cost is the relation, the corner, the equal
 halves, the four facings (π/2 of relations, four times, is the circle) and the 1 that the two numbers multiply to; and that 1 needs no π,
 since the two are reciprocals and any fraction held for π/2 gives it exactly, 11/7 × 7/11 = 1 (essay 2 §7).
 
 The identity this section is about goes the same way: the −1 never needed e or π. The corner is the quarter turn,
 exactly and with no root in it, (1 + i)/(1 − i) = i, and two corners composed are the half turn, i × i = −1. That is the
-read's whole holding of e^(iπ) = −1: the exchange and its corner, no numbers. A write reaches −1 exactly by
+read's whole holding of e^(iπ) = −1: the exchange and its corner, no numbers. A count reaches −1 exactly by
 those two corner steps and by no finer equal ones, since the only turns with a rational slope that are a rational part
 of the whole turn are the corner's multiples (Niven); its (1 + iθ/n)ⁿ, with fractions for θ, lands near −1 and never on
 it. The blueprint holds the limit, with the arc named π and the base named e. So e and π are the two parts of the identity
@@ -205,13 +205,13 @@ only the blueprint holds, and the two parts the fact does not depend on: π is t
 is, e the price of saying it as one smooth turn where a read has two corner steps.
 
 The Cauchy's total goes the same way, and more easily. Its heat 1/(1 + s²) is rational, the corner is its median because
-the two halves are equal, and it has no mean; π enters only in the constant 2/π that closes it to 1. A write
-has shares by count, k of K equal turns, and Gregory's and Leibniz's series for the half below the corner,
+the two halves are equal, and it has no mean; π enters only in the constant 2/π that closes it to 1. A count
+has shares, k of K equal turns, and Gregory's and Leibniz's series for the half below the corner,
 1 − 1/3 + 1/5 − 1/7 + … = π/4, each partial sum a fraction; the limit is the blueprint's (essay 2 §9).
 
 The Gaussian is where both constants sit in one law, and it shows which part each comes from. In polar form it is a turn
 times a length, (dθ/2π) × (e^(−r²/2)·r dr). The turn's part carries all the π, the 2π of the circle whole; the length's
-part carries the e and totals a plain 1. A write holds neither constant: it holds the binomial, C(n, k)/2ⁿ,
+part carries the e and totals a plain 1. A count holds neither constant: it is the binomial, C(n, k)/2ⁿ,
 counts of tosses, with the mean n/2 and the variance n/4 exact. De Moivre's limit of those counts is the bell, and π
 enters it through Wallis's product, π/2 = (2·2)/(1·3) × (4·4)/(3·5) × …, every partial product a fraction. A read
 holds only the direction of a pair of such amounts, which is the Cauchy. So the Cauchy is kept by order, its exact facts
@@ -249,8 +249,8 @@ This is essay 14's "met, not made" one rung higher. A read meets irrational dire
 transcendental directions and sizes and does not make π or e. It makes no numbers by reading: it composes, turns over,
 orders and finds the corner, and the rationals are made where a count comes in, in parallax (places) and in writing.
 
-V, the mountain in the distance, is learned the same way. An observer taking standpoints (the sixth essay, "From reads to
-places to writes") places V by degrees: as V\*/H in the step it took, to within a band set by its baseline and its resolution,
+V, the mountain in the distance, is learned the same way. An observer taking standpoints (the sixth essay, "From one look
+to two, and to an amount") places V by degrees: as V\*/H in the step it took, to within a band set by its baseline and its resolution,
 for the things near enough; only the step counted in an agreed unit makes it an amount, a write. Each standpoint more is one more finite step; holding V exactly, like holding π, is the end of
 a process that does not end. So V is knowable, not known, and the exact V is a limit of π's kind: it stands with
 the one-length circle and the completed turn, stated whole on the blueprint and reached by no count of writes, none of them moved by scaling the
@@ -265,7 +265,7 @@ is the same thing from the ladder.
 Every floating-point number is rational: an integer times a power of two. The machine's π, `Math.PI` in JavaScript, is
 884279719003555/281474976710656, a fraction with 2⁴⁸ below the line, within 1.2 × 10⁻¹⁶ of π and not π. Its e is
 another such fraction. A machine computing π to a billion digits is running Madhava's or Machin's series, or one of their
-faster cousins, for longer; at every moment it holds a rational, the next approximant. It is doing what a write does,
+faster cousins, for longer; at every moment it holds a rational, the next approximant. It is counting,
 and doing it well.
 
 What the machine can do, when asked to keep the blueprint's numbers, is keep them as names: a computer algebra system holds
@@ -287,9 +287,9 @@ anything.
 **A turn added to itself.** The standard examples of chaos are one map in three charts: on the slope,
 s ↦ 2s/(1 − s²), tangent addition of a slope with itself, rational; on the share, the logistic map 4y(1 − y); on the
 turn's own share, the tent map (Boole 1857; Ulam and von Neumann 1947). Each keeps its chart's law of the uniform
-turn, and each spreads nearby starts by two a step. What can follow the orbit sorts by this essay's ladder. A write in
+turn, and each spreads nearby starts by two a step. What can follow the orbit sorts by this essay's ladder. A count in
 fractions keeps every step exactly, at a cost that doubles each step, and never meets a cycle, since no rational
-slope but 0 and 1 belongs to one. A write in p digits keeps about p steps. The cycles sit at turns that are rational
+slope but 0 and 1 belongs to one. A count in p digits keeps about p steps. The cycles sit at turns that are rational
 parts of π, the blueprint's. The rule is fixed and the orbit determined; what gives out is the count.
 
 **What was tested and failed.** A tidy rule suggests itself here: π appears exactly where a turn is taken whole, e
@@ -320,7 +320,7 @@ It changes nothing about π or e or how to compute them. It sorts.
   is a ratio and an order: one in two, one in four, one in eight. Counting them, two thumbs, four, eight, gives extents.
 - **The rationals are the first count's arithmetic**, made from one length counted in finite steps, a count laid over
   steps walked or put down, each a write; a pure read needs only directions and their order. Square roots need a second length, the
-  transcendentals a limit; all three are where the observer goes past a read (essay 6, "From reads to extents to writes").
+  transcendentals a limit; all three are where the observer goes past a read (essay 6, "From one look to two, and to an amount").
 
 Essay 14 ended on five things called 1. This one ends on two numbers that are not 1 and are not the read's, and on why:
 the turn comes back, and the scale goes on, and to say either in a number you have to have held all of it.

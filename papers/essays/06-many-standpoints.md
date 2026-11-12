@@ -308,11 +308,11 @@ and with it the face, the thing's distance and its speed.
 From one place, then, the directions, their heat, their paint and the outline come free. The face needs an amount along each
 direction, written, or further standpoints.
 
-Say it plainly: **a read never has a shape.** It has the sweep, the same directions with the
+Say it plainly: **a read never has a shape.** One look has the sweep, the same directions with the
 same heat for every world, and the paint on them. *The heat is given; the paint is met.* A thing is to it the directions
-it paints and what it paints them with: a patch of directions, what is in front of what, a colour. How far the surface lies along each direction is an amount, and the geometry has removed every amount
-before anything is read. Every way to the shape needs more than one standpoint: further standpoints give it as extents, in the
-step's length; ranging and a blueprint handed over give it in a unit, as writes. Shape is never the read's. A read has the Cauchy sweep and its paint.
+it paints and what it paints them with: a patch of directions, what is in front of what, a colour. How far the surface lies along each direction is not in one look, so one look gives no shape.
+Two looks held together give the shape up to its size, in the step between them, with no amount in it;
+ranging and a blueprint handed over give it in a unit, as amounts carried in. One look has the Cauchy sweep and its paint.
 
 That an image does not settle the shape that made it is an old observation: Helmholtz's perception as unconscious
 inference, inverse optics as an ill-posed problem (Poggio, Torre and Koch 1985), Gibson's optic array. Those accounts
@@ -395,7 +395,7 @@ stand, and the one amount it is handed.
 
 ---
 
-## 12. From reads to extents to writes
+## 12. From one look to two, and to an amount
 
 Climb the ladder of this essay once more, and count the variables. From one standpoint there is one length, H, the thumb,
 and a direction; nothing in it is a place, nothing is counted, and a read has a vantage, not a shape (counting comes

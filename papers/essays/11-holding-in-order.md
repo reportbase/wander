@@ -86,7 +86,7 @@ log_g(arrival ÷ hold). The run of those numbers is the record.
   ratio at all. That is why such steps, wherever they appear, are one ratio repeated.
 - **The count of steps is a logarithm in whole numbers.** "How many steps of g from the hold to the arrival" is log_g,
   rounded. The observer computes no logarithm. The logarithm is what its count becomes when the steps are made fine. This
-  is the fourth essay's lay past the corner, 1 + ln s as a write counts places past it, met in time.
+  is the fourth essay's lay past the corner, 1 + ln s as places are counted past it, met in time.
 - **A logarithm of one amount is not formed.** A count of steps needs two magnitudes, a hold and an arrival. "The logarithm of
   five metres" is not forbidden; it is not yet a reading.
 - **The count does not carry the world's size.** Scaling the stream shifts the hold's count and leaves every reading

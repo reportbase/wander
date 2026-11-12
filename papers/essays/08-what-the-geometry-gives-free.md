@@ -5,7 +5,7 @@
 Every scrolling interface meets the same wall. A scrollbar maps the list's length onto the screen's height, so a list of a
 billion rows leaves each pixel of the bar a million rows wide. A flick scrolls at a speed, so the far end of a long list
 takes as long to reach as the list is long. And somewhere in the code a scroll offset grows with the list. These are
-three faces of one fact. The interface was built on the write's number line, which has no corner and no horizon, and a
+three faces of one fact. The interface was built on the number line, which has no corner and no horizon, and a
 list without end laid on that line has no end that fits on a screen.
 
 This essay is about what changes when such things are built on the read's geometry instead. Once an observer holds one
@@ -23,7 +23,7 @@ The essay opens on the dial, the cleanest case, and then goes through the others
 ## 1. A dial: scrolling without end
 
 The fourth essay laid one reading x three ways in one figure:
-- as itself, on the write's number line;
+- as itself, on the number line;
 - as the turn θ = arctan x, which never leaves the quarter turn;
 - as the hyperbolic angle ζ = asinh x, which grows without end but by about ln 2 from any x to 2x far out.
 
@@ -86,7 +86,7 @@ times tan θ from home, and the far end is the horizon itself, not a last record
 proportion; past it a steady push reads a steady ratio, one in two each ln 2 of ζ, 2.0037 ten thumbs out. The needle turns
 per unit of place as cos²θ: that is the heat of the seventeenth essay, held in the hand. Dividing the quarter turn into 256
 cells and painting each by the first thing it meets, the last cell covers everything from about 163 thumbs out, without
-end; a write's count of what each cell covers grows without bound toward the horizon, and the dial never needs it.
+end; a count of what each cell covers grows without bound toward the horizon, and the dial never needs it.
 
 **On a dome.** With the push a direction as well as a size, the dial becomes a dome looking down on a floor without end:
 straight down is home, the rim the horizon all round, and the heat per unit of floor cos³α, the flat screen's own law (section 4).
@@ -132,7 +132,7 @@ Two more need one stated premise each, and are free once it is granted:
 - **precision far off**, the lay past the corner, 1 + ln s on the read's lay (the blueprint's formula for the read's
   ratios, as many places from one in two to one in four as from one in four to one in eight) or 2 − 1/s on the in-place lay. The premise is the
   fourth essay's: that no stretch past the corner, over which the reading halves, is preferred to another.
-- **detail**, how finely things are drawn, given the read's resolution K (a write counts it as K addresses). H then divides the K between the near field
+- **detail**, how finely things are drawn, given the read's resolution K (counted, it is K addresses). H then divides the K between the near field
   (one thumb, laid evenly) and the far (read in ratios, one in two, one in four, one in eight), half inside H at every H.
 
 And one thing is not on the list. What hides what, which surface is in front, is the payload's. It is set by which
@@ -263,7 +263,7 @@ lengths are measured with ds² = (dx² + dy²)/y².
 
 So the plane the floor's remainder lives in is the space of the Cauchy's own parameters, each point one heat over the line. A dyadic cell is not merely
 like a Cauchy. It is one, read from its own point. The array's grid and the read's heat live in the same plane: the cells
-counted, a write, and the heat from each cell's point continuous, nothing counted in it.
+counted, and the heat from each cell's point continuous, nothing counted in it.
 
 **A tree keeps the depths and loses the plane.** The usual way to keep the finer digits is a tree: a quadtree, an image
 pyramid, a chain of mipmaps, each cell linked to its parent and its children. A tree keeps the depth and measures it
@@ -339,7 +339,7 @@ them.
 
 **Labels from a fixed count.** The other side is an order kept with labels drawn from a fixed range of M numbers, new items
 put between old ones by giving them a label in the gap. One gap can take only about log₂ M insertions before the labels
-run out and have to be given out again (Itai, Konheim and Rodeh 1981; Dietz 1982). The labels are a write's ruler with a
+run out and have to be given out again (Itai, Konheim and Rodeh 1981; Dietz 1982). The labels are a number line with a
 fixed number of notches, and a list that grows in one place exhausts them there.
 
 **A step that never closes.** Fibonacci hashing multiplies a key by ⌊2³²/φ⌋ = 2,654,435,769, a golden fraction of the turn
@@ -359,18 +359,18 @@ is the arithmetic face of the steps that never close.
 
 A sampling table or a grid of cells fixed in advance has to know beforehand the range it covers and the resolution it
 needs, and it is rebuilt when either changes. The uniform turn's heat needs neither. A direction is given whatever
-the count of things and whatever their size, and the fourth essay's K places at H·tan(kπ/2K), a write's count of the heat in
-distance (K addresses, in a write's word), hold half inside H at every H and every N.
+the count of things and whatever their size, and the fourth essay's K places at H·tan(kπ/2K), a count of the heat in
+distance (K addresses, as counted), hold half inside H at every H and every N.
 
 Rendering meets this in importance sampling. To light a scene by a sky, a renderer draws directions in proportion to how
 much light comes from each, using a table built from the sky. When the view changes in a way that moves every direction,
 as a fast-moving camera's sky is boosted, the table has to be rebuilt. The seventh essay showed that a boost is a Möbius
 map of the directions and carries the Cauchy onto itself. So the directions can be drawn by pushing uniform ones through the
 boost, with no table at all, and only the payload, the sky's own light in its own frame, needs tabling, once. The
-`boost-sky.html` demo compares the samplers. What needs a table is the payload or a write, never the directions or their heat.
+`boost-sky.html` demo compares the samplers. What needs a table is the payload or a count, never the directions or their heat.
 
 That is also the fourth essay's point that the Cauchy does not need to know N. Whatever is tied to a count, a table's size,
-a grid's resolution, a far plane, is the payload's or a write's. A method that ties with a classical one has shown it is
+a grid's resolution, a far plane, is the payload's or a count's. A method that ties with a classical one has shown it is
 correct; where the classical one needed N and the turn's heat did not, the tie comes free.
 
 ---
@@ -403,7 +403,7 @@ turned out not to be Cauchy: a narrow core plus a share of wrong matches. So in 
 do. The geometry does not fix the law of measurement errors, which is another matter. It fixes the heat of the directions.
 
 The same law is known in numerical analysis. Boyd's rational Chebyshev collocation points for problems on the whole
-line, L·cot((2j − 1)π/2N), are the midpoints of N equal shares of the Cauchy of scale L: the K places a write counts at the heat's
+line, L·cot((2j − 1)π/2N), are the midpoints of N equal shares of the Cauchy of scale L: the K places counted at the heat's
 quantiles, with L in the place of H (Boyd 1982, 1987). Boyd's rule for choosing L, the scale of the feature to be resolved, is the fourth
 essay's best H, at the corner of what is read. The same equal angles read by their cosine are Chebyshev's nodes, crowded
 at the ends of a chord; by their tangent, the Cauchy's, spread out to the horizon.
@@ -445,10 +445,10 @@ nothing, what a sampler uses to drop its table, and what `Math.floor` throws awa
 and drops the rest. The horizon is the price: a turn's directions never run out, and they never reach the end.
 Said in the read's own words, the Cauchy is a heat over directions, hottest along the look and cooling toward the horizon,
 with nothing counted in it; what a machine counts, a hash's slots, a table's cells, an array's index, are addresses, and
-they are writes. As a metaphor the word still serves, and this essay uses it where it meets computing: a direction
+they are counted. As a metaphor the word still serves, and this essay uses it where it meets computing: a direction
 looked along is like an address looked up, with the heat under it. *The heat is given; the paint is met.*
 
-Back to the scrollbar. Its bar shrinks as the list grows because it is laid on the write's line, which has no corner and
+Back to the scrollbar. Its bar shrinks as the list grows because it is laid on the number line, which has no corner and
 no horizon. A dial laid on the read's turn keeps the whole list on one quarter turn, reaches any place in time
 logarithmic in its distance, and never asks how long the list is.
 
