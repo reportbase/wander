@@ -446,7 +446,7 @@
                 : n > 1 ? 'so far that every standpoint reads it in one direction: a ray, no place' : 'one standpoint: a direction')
             + (n ? (tr.resolved ? '; its two edges told apart' : '; narrower than ε: one point, no breadth') : ''));
         lines.push(ro.H ? `Written: the first leg counted, ${ro.steps.toFixed(2)} strides of ${STRIDE} m (carried in), so H = ${ro.H.toFixed(3)} m; every place and breadth in metres`
-            : `Written (counted, or tied to a unit): nothing. Still unknown: H in any agreed unit (one amount: count one leg), and every radius's unit`);
+            : `Written (an amount in a unit): nothing. Still unknown: H in any agreed unit (one amount: count one leg), and every radius's unit`);
         $('sit').innerHTML = lines.map((l, i) => `<span class="${['', 'g', 'r', 'w', 'w', 'g', ro.H ? 'w' : 'x'][i]}">${l}</span>`).join('\n');
         const unit = ro.H ? 'm' : 'H';
         let t = `<tr><th>thing</th><th>direction from its zero</th><th>edges</th><th>regime</th><th>about its centre: directions</th><th>shape (radii / mean)</th>`
