@@ -25,8 +25,9 @@ sweeps joined, is the blueprint's own. Both are limits, and they are the limits 
 what the thumb's share tends to as a sweep runs on toward the horizon, and Ω is what a count of the walk tends to,
 stride by stride. No finite sweep and no finite count has either value, but each is headed for its own. π is a limit
 neither encounters, since it takes both hemispheres at once. From here on the paper writes Ω. Euler's e^(iπ) = −1 is
-e^(2iΩ) = −1, and e^(iΩ) = i is the corner. π is written only where a classical statement is quoted by name (the
-parsec, Basel's sum, Lindemann's theorem).
+e^(2iΩ) = −1, and e^(iΩ) = i is the corner. π is written where the blueprint's own number is meant (both hemispheres
+at once, the turn completed) and where a classical statement is quoted by name (the parsec, Basel's sum, Lindemann's
+theorem).
 
 ## Abstract
 
@@ -109,9 +110,9 @@ for the continuous and writing the verb for the discrete, and the scale test fol
 definition. The two mixed boxes hold no act. A count and the number line are nouns, descriptions laid over what was
 read or written. The friction between continuous and discrete shows wherever one is made to hold the other: a count
 holding a read (a slope no fraction lands on, the ringing at a sharp edge, §6), a read holding a count (K, §5), and
-parallax, where a walk is cut into strides before the reads at its two ends give a size. Ω and e belong to neither box
+parallax, where a walk is cut into strides before the reads at its two ends give a size. π and e belong to neither box
 of the table's right column. Each is a pure ratio that scaling does not move, and a count reaches neither. They are how
-the blueprint's three concepts are synthesized: both hemispheres at once, completeness, and no vantage. Ω is the sweep
+the blueprint's three concepts are synthesized: both hemispheres at once, completeness, and no vantage. π is the turn
 completed, e the scale completed (§9, "What is free, and what Ω costs"). **A reading.**
 
 - **D1. One point, two parts.** A point seen from a standpoint is, in the blueprint's notation, ln(z/H) = ln(d/H) + iθ, H
@@ -220,7 +221,7 @@ no memory: offered as a likely reason, not shown.
 observer who wants to know what a set of steps gives together must keep the steps and total them. The law holds the
 answer for every such set at once, with none of them taken: it collapses the set into one relation. In that it does for
 the geometry what a limit does for the blueprint, with one difference. The blueprint's limit is approached step by step and
-its value (Ω, e) is had only at the end of a count without end (§9, "What is free, and what Ω costs"); the law is not
+its value (π, e) is had only at the end of a count without end (§9, "What is free, and what Ω costs"); the law is not
 approached, it is given whole. So a geometric law is free in the same sense the geometry is: not an algorithm, not
 computed, with no time in it. It can still be taken apart into intermediate steps, a slope joined to a slope, then to
 another, or (1 + iθ/n)ⁿ step by step (§9), and that is how a law is understood and checked. The steps are the blueprint's
@@ -257,7 +258,7 @@ remove the last write. One standpoint holds no distance and no size (no read hol
 fixed share, has the read at every moment and never the size (§6, "Read times count"). The least is one counted step.
 So writing is not what establishes a relation, the relation holds unkept; and writing is not made unnecessary by the
 law either. The law gives the expression; one write fills its empty place. This is said of finite chains. A law is not a
-limit and reaches none: it covers every finite chain at once, and a limiting value such as Ω is the blueprint's at the
+limit and reaches none: it covers every finite chain at once, and a limiting value such as π is the blueprint's at the
 limit, never had by shortening. **A reading**, resting on WLK and ONE.
 
 **A denominator is scaffolding.** Every reading is one thing in terms of another, and the other, the denominator, is
@@ -359,7 +360,7 @@ count of directions, a description.
 **Reads, writes and the blueprint.** There are reads and writes; there is no reader and no writer. Both are acts, and
 one observer does both: it reads while it stands and turns, and writes while it strides, leaves a mark or agrees a unit. A
 read has a vantage and one hemisphere, and there are two of them, the two sweeps: the inscribed, from home to a horizon
-(the blueprint's number for it 1/Ω, approached), and the central, across a bounded thing to its rim (Ω, reached). Both
+(1/Ω, the limit it approaches), and the central, across a bounded thing to its rim (Ω, the limit a count of its arc tends to, the end itself reached at a point). Both
 are reads. A write is a bounded thing with a size, a stride taken, a mark made, a unit carried in (D4); it is how a read is carried to a later
 read. Two looks held together are joined with no write. Neither a read
 nor a write holds both hemispheres. What holds both at once is the **blueprint**: the drawn shape, with both signs of every axis, the turn completed, the
@@ -368,8 +369,8 @@ with reads and writes: it is not a third act beside them, not a read of a larger
 It is classical geometry, with its eye above the figure seeing every side at once. This paper is about reads and
 writes; the blueprint is brought in as the point of comparison, the familiar statement a read's or a write's form is
 set beside (e^(2iΩ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. "Dual hemispherical" and "without a vantage" say the same thing: a vantage faces
-one way. The circle held whole, the sphere and the cube, the angle and trigonometry, Ω and e
-are the blueprint's. Whole, with Ω at its exact value, it is a limit. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
+one way. The circle held whole, the sphere and the cube, the angle and trigonometry, π and e
+are the blueprint's. Whole, with π at its exact value, it is a limit. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
 walk or count.
 
 **V.** V is the other party's breadth, the mountain in the distance that the thumb is held up against. A reading is a
@@ -379,10 +380,10 @@ median and the absence of any mean are what a read with no breadth in it is.
 
 **Four things: the universe, an apple, a human and a sheet of paper.** Two reads, a thing held and turned and, for comparison, the blueprint, and where V stands in each.
 - *The apple and the human read the universe by the inscribed sweep.* From home to a horizon: directions only, a turn
-  that never ends, the blueprint's measure of it 1/Ω, a limit never reached. The universe has no far side to face, so its V
+  that never ends, 1/Ω the limit it tends to, never reached. The universe has no far side to face, so its V
   is **unknowable**: no size could be had, and with none there is no inside or outside, only home and the horizon.
 - *The apple and the human read each other by the central sweep, across one hemisphere.* Each is a bounded thing in the
-  other's view, its rim reached at a point: the central sweep's end, e^(2iΩ) = −1, the blueprint's measure Ω reached there. It is still a read, one hemisphere from a vantage; what sets it apart from the inscribed sweep is an end that can be walked to.
+  other's view, its rim reached at a point: the central sweep's end, e^(2iΩ) = −1, Ω the limit a count of its arc tends to. It is still a read, one hemisphere from a vantage; what sets it apart from the inscribed sweep is an end that can be walked to.
   So the other's V is **knowable**: the end exists and is met. It is not known, since the far hemisphere stays turned
   away; each holds the other's front only. Neither stands at the other's centre; the sweep about the centre is the
   geometry of a bounded thing faced.
@@ -391,7 +392,7 @@ median and the absence of any mean are what a read with no breadth in it is.
   holds the front, so both hemispheres are in reach and the turn is known; the apple is a thing with a size, held, and in the hand
   the apple's V is **known**: held whole. Its amount in a unit needs a unit carried in, and its exact amount is the limit of §6.
 - *The human draws a circle on paper.* This fourth is the comparison, classical geometry's circle. The drawing is the blueprint: both hemispheres at once, with no vantage and so no facing, neither read nor write, whole
-  only at its limit (§9, "What is free, and what Ω costs"), made, not seen, a mark holding both halves together, V = H at one length, Ω held whole. It has neither sweep's
+  only at its limit (§9, "What is free, and what Ω costs"), made, not seen, a mark holding both halves together, V = H at one length, π held whole. It has neither sweep's
   number. Ω and 1/Ω belong to the two facings, the central reached at a point and the inscribed approached; the blueprint
   has the number 1, the thumb in thumbs. The product of the two reads' numbers is also 1; that is arithmetic, not a way of making the blueprint from reads.
 
@@ -429,7 +430,7 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
   unit are descriptions. Definitions are stated on those two axes.
 - *Heat* and *paint* are pictures, for the read's density and for what it meets, and are not leaned on; *address* only as a computing metaphor or for a count of K
   places at the heat's quantiles (§5).
-- Ω and 1/Ω (defined before §1; Ω = π/2) are the blueprint's numbers for the two reads, each with a vantage and one hemisphere: 1/Ω the inscribed
+- Ω and 1/Ω (defined before §1; Ω = π/2) are the limits the two reads encounter, each with a vantage and one hemisphere: 1/Ω the inscribed
   sweep's, Ω the central sweep's (its arc walked and counted is an extent; §9, "Reading is 1/Ω; walking is Ω"). Ω
   and the one-length circle are the blueprint's: both hemispheres, no vantage, nothing to do with reads and writes.
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
@@ -487,10 +488,10 @@ suits the read's two ignorances, is the plane's area. The sphere is the blueprin
 is not the read's, which per unit of the sphere's area runs as 1/sin χ, χ the angle from the eye's pole. **Checked** (to
 thirty digits; `euler.html`).
 
-**Ω with the direction, e with the distance.** The read's two ignorances, after Jaynes (1968), are which way it faces
+**π with the direction, e with the distance.** The read's two ignorances, after Jaynes (1968), are which way it faces
 and how large things are: turns and rescalings, each a one-parameter group with an exponential map. Turns close, so
 their map has a period: 4Ω for an oriented turn, 2Ω for the direction of a line (the projective line the readings live
-on). Rescalings never close, so their map has no period, only a base. Ω is what is needed to say that the turn comes
+on). Rescalings never close, so their map has no period, only a base. π is what is needed to say that the turn comes
 back, a period forced; e is the base that lets one unit serve both axes, so that e^(iθ) is a turn of θ and e^t growth
 at a rate of one, a convention (counting in thumbs serves as well). Both numbers are the blueprint's; a read meets the
 closing and the openness and states neither. They meet at e^(2iΩ) = −1, where the square (h + iv)² = e^(2iθ) sends the
@@ -1222,7 +1223,7 @@ X = H·cos a·cos ψ, and so on. Every direction about a point at radius H is a 
 the corner of the read's wedge points at the vertex of the blueprint's cube. With the cube outside the sphere, touching it
 at the ends of the axes, the picture is the inscribed sweep's; with the cube inside, its far corner on the sphere, the
 central sweep's (Thales' circle through home, the ends and the far corner). The hemisphere's 2 and ½, like Ω and 1/Ω,
-are the blueprint's measure.
+are limits, their values held by no read.
 
 **What survives in space, and what does not.** In the plane one law plays four parts: the image of the uniform turn under
 a Möbius map, harmonic measure, the powers of the standpoint, and the two sweeps' rates. On the sphere they part into
@@ -1332,7 +1333,7 @@ to e^(2iΩ) = −1. In space, alternating small steps about two thumbs leaves a 
 nothing else. To multiply the next factor on, the look so far has to be there to start from, kept in something, and what
 is kept is a write (§1, D7); the next read is taken from it. So (1 + 2iΩ/n)ⁿ is read, keep, read, keep, n times: what is
 read is then written, and what is written is then read (§7, "Write once, then read again"). The n is a count laid
-over the kept looks, not a write itself. Euler's identity is that alternation carried to its limit: Ω the turn
+over the kept looks, not a write itself. Euler's identity is that alternation carried to its limit: π the turn
 completed, e the scale completed, i the corner, where a step along the thumb becomes a step square to it, and −1 the
 opposite facing; twice over, e^(4iΩ) = 1, the cycle is home. No cycle anyone makes is the identity. At every finite n
 the product is near −1 and off it, as above; the identity is what the cycle is a cycle toward, and it is the blueprint's.
@@ -1402,7 +1403,7 @@ the central one, is itself a read: one hemisphere, from a vantage, facing a boun
 single-hemisphere reads, 1/Ω to the inscribed and Ω to the central, and the walk is how the second one's arc is
 counted. Their product is 1, which is also the blueprint's number, the thumb in thumbs; the blueprint itself has no vantage and
 is neither of them. The exchange swaps the two, and they agree only at the corner, where a length walked and a
-ratio held say the same (§6). Both numbers stay the blueprint's arithmetic, since a read holds no Ω; what is sorted is
+ratio held say the same (§6). Both numbers are limits, their values held by no read or count; what is sorted is
 which read each one measures. In the table above the total's 1/Ω is the inscribed read's factor and its Ω the central
 read's, and "the two facings" are those two reads. **Classical** (the mean share and the arc); the assignment is a reading.
 
@@ -1428,7 +1429,7 @@ The arc is the one path on which the gain per step is the share itself, h, the s
 Ω is what the split costs when the path is the turn. In space the split has no Ω in it: one thumb seen from every
 direction of space averages ½, and the correction is 2 (the wedge's numbers, §7). So "Ω is the price", above, is the
 plane's price. Three cautions keep the statement exact. The 1 is the thumb, H in H, not V*: nothing here gives the
-mountain's size (D4). One read is one share h; 1/Ω is their average over the turn, a sum, so the blueprint's. And the walk
+mountain's size (D4). One read is one share h; 1/Ω is their average over the turn, a sum, so a limit the turning tends to and no read holds. And the walk
 here is counted in thumbs, an extent as a count; it is an amount, a write, only once the thumb has a unit. The mathematics is old: the mean
 projection of a segment over all directions is 1/Ω of its length (Cauchy 1841), a curve's length is Ω times its mean
 projection (Cauchy 1841; Crofton 1868), and Buffon's needle (1777) is the same 1/Ω met as a chance. What is ours is the
@@ -1520,7 +1521,7 @@ s = 0: home lands at +1 and its exchange, the horizon, at −1. So e^(2iΩ) = �
 exchanged pair, and it is the only pair of the family that needs the horizon, which no read reaches; every pair
 between is finite and exact, and the classical statement does not mention them. Every pair between has a vantage: it
 is two directions of one read. The identity is the one member with none, the family completed, and so the one member
-that carries Ω and e, which are how completeness with no vantage is put into numbers. Second, the corner's member is
+that carries π and e, which are how completeness with no vantage is put into numbers. Second, the corner's member is
 i × i = −1. The corner is its own exchange and lands at i, so the equation that defines i is this identity taken at
 the corner: i is the corner. Third, with the complex notation taken away almost nothing is left. Exchanging h and v
 swaps the two shares, so their difference h² − v² changes sign while their product is kept. At home the difference is
@@ -1739,8 +1740,9 @@ and the tower is 15 metres tall and 60 away: the one write. **Checked** (`runs/t
   one standpoint is a read; unmoved and needing two, an extent; moved, a write, which needs an amount carried in.
 - **A Cauchy-type quantity is a direction where a turn that lays it can be named, apart from the law's shape.** A fat
   tail alone is no evidence of a turn: a mixture of amounts makes one too.
-- **The constants have owners.** e, Ω, 1/Ω, the hemisphere's 2 and ½, the Cauchy's normalizing constant, the
-  logarithm's nats and the angle's degrees are the blueprint's measures of the read's things; the read's own versions are
+- **The constants have owners.** π and e are the blueprint's; Ω, 1/Ω and the hemisphere's 2 and ½ are
+  limits the acts encounter; the Cauchy's normalizing constant, the logarithm's nats and the angle's degrees are measures
+  laid over the read's things; the read's own versions are
   finite: an order, a ratio, a corner, a composition by tangent addition.
 - **The acts move.** An observer reads while it stands and turns, places while it walks and counts, and has an amount
   when it agrees a unit.
@@ -1792,14 +1794,14 @@ before the data can show where it is not. **Checked** (TCF; killed).
   across, unmoved by scaling, needing two standpoints).
 - **O2. The thumb.** *Closed (R792):* the thumb is the across axis's chosen zero, as home is the up axis's, as D5
   already requires; the record's "the read's own length" describes how it is chosen, not a different kind.
-- **O3. Completed joins, and their name.** *Closed (12 November):* a completed join (Ω, the one-length circle, the
+- **O3. Completed joins, and their name.** *Closed (12 November):* a completed join (π, the one-length circle, the
   facings joined) is unmoved by scaling, so it is not a write; it was called "the blueprint's" until a word was chosen.
   The word is the **blueprint**: both hemispheres at once, no vantage, apart from reads and writes (§1, "Reads, writes and
   the blueprint"). What stays open is whether the blueprint is a kind beside D1–D7 or only their sum. *Sharpened
   (R796):* what an angle needs comes in two stages. The ratio s = v/h needs nothing; it is the read. The shares h and v
   with h² + v² = 1 need the other party held at the one length (V = H, the one-length circle): with them come
   cos and sin as the shares themselves, √(1 + s²) = 1/h, and halving a turn, t = v/(1 + h). The angle θ needs the circle
-  and the turn completed as well (Ω, a limit): an arc over the radius, counted against the whole. Neither stage needs a
+  and the turn completed as well (π, a limit): an arc over the radius, counted against the whole. Neither stage needs a
   true breadth V* or a unit, so neither is a write; both are completed joins, the circle first and Ω second. *And (R797):* the exact V is a third, the limit of parallax:
   unknowable against the universe, knowable across one hemisphere, known only held or written (§1, "Four things").
   *And (R798–R801):* the completed joins are the blueprint's, both hemispheres at once with no facing; four identities
