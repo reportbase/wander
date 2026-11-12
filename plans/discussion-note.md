@@ -224,3 +224,17 @@ every keeping is a count.
 **Item 14 carried out** (12 Nov, R884; Tom: "Pull this all together into a new essay. Summarize it in the papers."):
 essay 20 (`papers/essays/20-scaffolding.md`) and *Reads and Writes* section 1 ("A denominator is scaffolding", and a
 paragraph under "The paper in one equation") and section 6 (under "A tower of extents"). The arch not brought back.
+
+15. **"Writer" does two jobs** (12 Nov; Tom: "There is a problem with writer. Writer is pi/2, but onlyone hemisphere.
+   The dual hemisphere or good eye view, however, is the drawn shape or blue print."; R886).
+   - The split: the read (inscribed, one hemisphere, 2/pi, approached); the write (central, one hemisphere, pi/2, the
+     walk, reached by a count); the blueprint (both hemispheres at once, no facing, 1). The blueprint is what a read
+     and a write give together: a thing made and then read, not a vantage anyone stands at.
+   - Already half in the paper: section 1 "Four things" (its table's rows), R802, R808's "the paper".
+   - Claude's sorting of "the writer's" (not ruled): held whole (circle, sphere, cube, pi, e, trigonometry, the closed
+     turn, signs, joins) is the blueprint's; counts, fractions, steps and scaffolds are the writer's.
+   - Open: the name ("blueprint" or "the paper" or "the drawing"); the row "the apple held and turned" (both in reach,
+     by turning: a writer on the way to a blueprint?); whether read x write = 1 (R809) should now be said as
+     "read x write = blueprint".
+   **Next:** Tom's call on the name, then a sorting pass: *Reads and Writes* first (107 uses of "the writer's"), the
+   essays after (368).
