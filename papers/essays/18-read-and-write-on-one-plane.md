@@ -197,6 +197,11 @@ rational part of the turn (Niven). So e^(iπ) = −1 is held two ways, with the 
 count has the two corner steps, and approximations for anything finer; the blueprint, whole at its
 limit, has it with the arc named π and the base named e, neither of which the fact depends on (the second essay, §9).
 
+The product is the plane's two acts taken in turn. Each factor is a read; multiplying the next one on needs the look so
+far kept, and what is kept is a write, from which the next read is taken. Read, keep, read, keep, n times: the n is a
+count laid over the kept looks. Euler's identity is that alternation at its limit, and so it is the blueprint's; the
+finite product is the cycle anyone can make (essay 15 §5).
+
 ## 8. What the plane is not
 
 It is the blueprint's notation for the read. e^(iθ) states the turn as a number and carries π with it, and π, the turn
