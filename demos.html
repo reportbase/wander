@@ -191,7 +191,7 @@
             of trees, a wall, a curved wall, stars at every distance, one sun, noise, nothing at all, at any size or of
             unknown size. Each ray is painted by what it meets; the readings taken back from where they landed are the
             turn's own to rounding, the median at the corner. A marker shows the given directions in the turn's order, the
-            paint revealed behind it. Beside it addresses spaced in equal metres, a write's layout, which needs the
+            paint revealed behind it. Beside it addresses spaced in equal metres, a layout in a unit, which needs the
             world's size and has nothing to space against when it is unknown.</p>
         <p class="try">Try: <a href="payload-free.html?play=1">play through the worlds</a><a href="payload-free.html?world=stars&amp;s=unknown">stars, of unknown size</a><a href="payload-free.html?world=empty&amp;n=255">nothing at all, 255 rays</a></p>
     </section>
@@ -208,7 +208,7 @@
         <h2><a href="star-field.html">An infinite star field</a></h2>
         <p>N is invisible to a read. The blueprint's view: N stars where they are, four times as many each doubling of
             distance, made from their cells so the field can be infinite, each with an index; double N and the far field
-            fills. The read's view: each star a direction only, counted at K places at equal angles (a write's count of the read's fineness), the
+            fills. The read's view: each star a direction only, counted at K places at equal angles (a count of the read's fineness), the
             share at each drawn, as the blueprint draws it, on a unit circle, in proportion on both sides of the corner: at N and at 2N
             the same drawing.
             Zoom the blueprint's map anywhere and point at a star for its index.</p>
@@ -247,7 +247,7 @@
         <h2><a href="writer-box.html">The blueprint's box</a></h2>
         <p>Full screen, in three.js. The blueprint is a box: one number line on each axis, both signs, every length an
             amount, nothing round. An observer stands inside it, its read with a vantage, drawn as the blueprint draws it: a sphere round one point,
-            radius H, and one octant of it, the wedge, drawn with the other seven faint. Its directions, sampled as cells of Lambert's map uniform over the octant (a write's grid), are
+            radius H, and one octant of it, the wedge, drawn with the other seven faint. Its directions, sampled as cells of Lambert's map uniform over the octant (a grid of counted places), are
             two numbers each, and each points at a point of the box's faces, three numbers. The one between is
             the distance, never read. Drag the wedge anywhere, turn it, resize the box, change H or scale the world: the
             points it reaches change, the directions and their shares (every pair at its corner, the near field a third)
@@ -262,7 +262,7 @@
         <p>Full screen, in three.js. The blueprint's box with a picture on every face, and an observer inside it, its vantage drawn as
             the blueprint draws it: a sphere of radius H round one point and one octant of it, the wedge. Light leaves each pixel and travels in, through the
             wedge, to the standpoint, and paints the direction it arrives along. From home the wedge holds the pictures as
-            received, one colour per direction (a write's grid of cells), no distance. Turn the wedge or move the standpoint and the colours change, never
+            received, one colour per direction (a grid of counted cells), no distance. Turn the wedge or move the standpoint and the colours change, never
             the directions; scale the world and nothing changes. A ghost box twice as large (or half), its pictures with it,
             paints every direction exactly alike: a read cannot tell the near small box from the far large one. Light
             that starts within H paints like the rest. Stained glass, a labelled grid, or a picture of your own.</p>
@@ -374,9 +374,9 @@
         <p>K places on the quarter turn, and a direction's place is its share of the turn times K, ⌊K·(2/π)·arctan(v/h)⌋,
         with no length. The central sweep, from the circle's centre at twice the angle, gives the same place. Four kinds of
         array lie on those places: the index alone, the values on it (known up to one factor, kept as their log-shape), a
-        constant array, and a write's array of known length, whose count index needs the extent where the turn index
+        constant array, and an array of known length, whose count index needs the extent where the turn index
         needs only H.</p>
-        <p>The place formula is a write's index; a read has an iterator, a sweep from home with everything before a direction passed first.</p>
+        <p>The place formula is a counted index; a read has an iterator, a sweep from home with everything before a direction passed first.</p>
         <p class="try">Try: <a href="array-sweeps.html?K=8&amp;t=60">K = 8</a><a href="array-sweeps.html?K=9&amp;t=45">K = 9, a place on the corner</a><a href="array-sweeps.html?kind=values&amp;k=3">the values, the world ×1000</a><a href="array-sweeps.html?kind=length&amp;H=1.7">known length, H = 50</a></p>
     </section>
 
@@ -406,7 +406,7 @@
         <h2><a href="focus.html">The focus is the corner</a></h2>
         <p>Nothing in the geometry says where the corner goes; H is the observer's own choice. Tap a thing to look at it:
         turning carries the direction corner onto it and designating draws it at H, so it sits at both corners, where the
-        read's fineness K, counted by a write as K places, is finest relative to its place (π/K). Look past it and it keeps the coarser grain it had.
+        read's fineness K, counted as K places, is finest relative to its place (π/K). Look past it and it keeps the coarser grain it had.
         Below, the travel to the next look: on the angle, the levels and the in-place lay alike it is least at the next
         look's median, the corner when nothing favours a side; a lopsided law moves it, the same on every ruler.</p>
         <p class="try">Try: <a href="focus.html?focus=3">look at the tree</a><a href="focus.html?focus=7&amp;mode=past">look past the mountain</a><a href="focus.html?focus=1&amp;K=32">K = 32</a><a href="focus.html?a=0.5">a lopsided next look</a></p>
@@ -463,10 +463,10 @@
         <h2><a href="read.html">The read</a></h2>
         <p>No things, no world: only what a read is. Three thumbs crossed, the look down their diagonal, the crosshair
         the corner. On the left the directions in thumbs off the look (the Cauchy's heat, rings of equal share, one
-        thumb off, then one in 2, 4, 8 toward a horizon never reached) or by count (the same shares counted as a write's places and given equal room,
+        thumb off, then one in 2, 4, 8 toward a horizon never reached) or by count (the same shares counted as places and given equal room,
         a disc). On the right the 3D Cauchy's heat as a hill to turn, its peak at the corner. It opens with the read drawn out.
         Scaling or turning the world moves nothing here: this is the geometry, before any physics paints it. Drag the thumb (H) along the strip bottom right: a row of things
-        slides along a write's K places in distance, in or out of the near field, while the places and the Cauchy's heat stay put.
+        slides along K counted places in distance, in or out of the near field, while the places and the Cauchy's heat stay put.
         "Swept" sets the even read (the three thumbs turned together as one shape) against each thumb swept on its own: the
         directions pile toward one thumb, the hill is not round, and which thumb depends on the order.</p>
         <p class="try">Try: <a href="read.html">watch the read</a><a href="read.html?view=count">by count</a><a href="read.html?words=1">with words</a><a href="read.html?R=32">more rings</a><a href="read.html?H=2&amp;words=1">a large thumb</a><a href="read.html?sweep=pantilt&amp;words=1">each thumb on its own</a></p>
@@ -478,7 +478,7 @@
         two thumbs crossed: whatever they point at is the corner, one thumb away, and its distance is H. Nearer things are
         the near field, read in proportion; farther ones the far field, read as one in two, one in four, one in eight.
         Point somewhere else and the split moves while nothing in the field does. Beside it the field laid as a read
-        lays it, the corner a ring and a write's K places half inside it at every H; scale the world and no reading moves.
+        lays it, the corner a ring and K counted places half inside it at every H; scale the world and no reading moves.
         Full screen, with every word behind the menu, which also explains all the ways H makes the scene. Three thumbs,
         vertical, horizontal and depth, meet at the crosshair: the near field the one-thumb cube from the eye to it, the
         Cauchy's heat centred on it, hottest there. Fidelity: the view laid by turns off the look rather than on a flat screen, alike near the
@@ -502,7 +502,7 @@
         <div class="tag">a demo: the corner</div>
         <h2><a href="fpv.html">The crosshair is the corner</a></h2>
         <p>A first-person view laid as a read lays it, not drawn as a picture: across, the direction from the crosshair; up,
-        each thing's depth cell, every one of the K cells (a depth buffer's count, a write's) given the same room. Lay depth by the turn about the focus and
+        each thing's depth cell, every one of the K cells (a depth buffer's count) given the same room. Lay depth by the turn about the focus and
         the thing under the crosshair sits at the corner in a cell π/K of its own distance, whatever the scene's range,
         with nearer and farther things coarsening alike in mirror image. Against log depth and the standard buffer, side
         by side; twins 1.25 apart show what each scheme tells apart. Geometry only, from the FPV run.</p>
@@ -692,7 +692,7 @@
         <div class="tag">a demo: what setting H does</div>
         <h2><a href="zoom.html">H is a zoom</a></h2>
         <p>A read lays every size against the thumb, H: in proportion up to the corner, one equal step per doubling
-        past it, with its fineness K (a write counts it as K places), its level of detail. Setting H slides a window of held sizes whose width
+        past it, with its fineness K (counted, it is K places), its level of detail. Setting H slides a window of held sizes whose width
         never changes. Below it things fall into home; past it they leave the lay. Inside the corner detail is absolute, so
         a large H loses the small; past it detail is relative, every doubling alike. Only at the corner is a thing read at
         true scale and in full detail, so the best H puts the thing read there.</p>
@@ -748,7 +748,7 @@
         <div class="tag">a demo: browsing the wedge</div>
         <h2><a href="wedge-browse.html">Browsing the wedge</a></h2>
         <p>The situated view is over huge data. 9,007,199,254,740,991 items, each with three amounts, made from their
-        addresses (indices, a write's count) and never stored (a binomial cascade, so the mass clusters at every scale), seen from home at their shares.
+        addresses (indices, a count) and never stored (a binomial cascade, so the mass clusters at every scale), seen from home at their shares.
         The observer holds a window: near the hand the cells are opened down to their items, the rest are held as totals, and
         what is drawn always adds up to every item, exactly. It is browsed with the two needles of the calendar project's
         navigation dial: a gold thumb that is a rate and a blue hand that is a place; letting go re-centres the drawing on what

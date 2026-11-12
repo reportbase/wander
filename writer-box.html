@@ -138,7 +138,7 @@
 </div>
 <div id="hud" class="glass"></div>
 <div id="inset" class="glass"><p class="t"><b>The directions, fixed</b>, Lambert's map of the wedge (azimuth across, height
-    up; its cells counted, a write), each painted by the face it meets: <span id="faceKey"></span></p><canvas id="map" width="512" height="512"></canvas></div>
+    up; its cells counted), each painted by the face it meets: <span id="faceKey"></span></p><canvas id="map" width="512" height="512"></canvas></div>
 <div id="hint" class="glass">Drag the gold ball to move the wedge (arrows, page up/down too). Drag elsewhere to turn the
     view, scroll to zoom. Point at a dot for its direction and where it lands.</div>
 <div id="nogl"><div>This page needs WebGL to draw the box.<br>The arithmetic still runs: see the test hook.</div></div>
@@ -381,7 +381,7 @@ const HINT = {
 // ── the readout ───────────────────────────────────────────────────────────────────────────────────────────────────────
 const pct = x => (100 * x).toFixed(1) + '%';
 function hud() { const k = K(), a = G.anglesOfRot(S.R), c = CN, n = L.length, hv = S.hover != null ? L[S.hover] : null;
-    if (S.view === 'address') { let s = `from home the read holds directions [h : v : v₂], two numbers each, and their heat, given (${n.toLocaleString('en')} of them here, counted, a write), and the paint that arrives along them\n` +
+    if (S.view === 'address') { let s = `from home the read holds directions [h : v : v₂], two numbers each, and their heat, given (${n.toLocaleString('en')} of them here, counted), and the paint that arrives along them\n` +
             `v ≤ h ${pct(c.vh)}, v₂ ≤ h ${pct(c.v2h)}, v₂ ≤ v ${pct(c.v2v)}, the near field ${pct(c.near)}: the same wherever it stands or turns, whatever the box, H and k\n` +
             `the paint (what arrives, the world's): ` + c.faces.map((x, i) => x > 0 ? `${G.FACES[i]} ${pct(x)}` : null).filter(Boolean).join(', ') + `\nno distance arrives: a near wall and a far one paint alike`;
         if (hv) { const m = Math.max(hv.h, hv.v, hv.v2); s += `\n\ndirection [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}], painted ${G.FACES[hv.face]}; how far, never`; }
@@ -394,7 +394,7 @@ function hud() { const k = K(), a = G.anglesOfRot(S.R), c = CN, n = L.length, hv
         $('hud').textContent = s; return; }
     let s = `the blueprint holds the box, ${S.E.map(x => fmt(x * k)).join(' × ')}, and the read's standpoint in it, (${S.P.map(x => fmt(x * k)).join(', ')}), from its middle: amounts\n` +
         `its triple corner points at longitude ${a.lon.toFixed(1)}°, latitude ${a.lat.toFixed(1)}°, turned ${a.roll.toFixed(1)}°; H = ${fmt(H())}, the zoom\n` +
-        `${n.toLocaleString('en')} directions (the read's, counted here, a write): v ≤ h ${pct(c.vh)}, v₂ ≤ h ${pct(c.v2h)}, v₂ ≤ v ${pct(c.v2v)}, the near field ${pct(c.near)},\n` +
+        `${n.toLocaleString('en')} directions (the read's, counted here): v ≤ h ${pct(c.vh)}, v₂ ≤ h ${pct(c.v2h)}, v₂ ≤ v ${pct(c.v2v)}, the near field ${pct(c.near)},\n` +
         `  the same wherever the wedge stands or turns, whatever the box, H and k\n` +
         `where they land (the box's faces, the blueprint's): ` + c.faces.map((x, i) => x > 0 ? `${G.FACES[i]} ${pct(x)}` : null).filter(Boolean).join(', ');
     if (hv) { const m = Math.max(hv.h, hv.v, hv.v2), r = [hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3));

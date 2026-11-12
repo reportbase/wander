@@ -369,7 +369,7 @@ function render() {
     $('shellTag').textContent = S.pulse ? 'a pulse sent: a write' : 'a read'; $('shellHead').textContent = S.pulse ? 'A pulse sent: ranges, in its unit' : 'A vantage, painted by what arrives'; $('roof').classList.toggle('on', S.roof);
     drawTri(); drawMap();
     $('say').textContent = `The blueprint states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}, the rooms ${fmtM(2.7 * k)} high, its box round everything ${fmtM(48 * k)} × ${fmtM(32 * k)} × ${fmtM(TOP * k)}, one number line a side. ` +
-        `The read's vantage is the same at every k: its directions, and the colours arriving along them` + (S.pulse ? `; a pulse's ranges come back with geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in. ` : `, and no distance. `) + `From home a read holds ${NA.toLocaleString('en')} directions (a count, a write's): v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
+        `The read's vantage is the same at every k: its directions, and the colours arriving along them` + (S.pulse ? `; a pulse's ranges come back with geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in. ` : `, and no distance. `) + `From home a read holds ${NA.toLocaleString('en')} directions (a count): v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
         `v₂ ≤ h ${(100 * C.v2h).toFixed(1)}%, v₂ ≤ v ${(100 * C.v2v).toFixed(1)}%, the near field ${(100 * C.near).toFixed(1)}%, at every k and in every room.`;
     describe(); if (draw3d) draw3d();
 }

@@ -55,7 +55,7 @@
     <code>k = ⌊K·(2/π)·arctan(v/h)⌋</code>: its share of the turn times K. No length enters. The central sweep meets the
     same point from the centre of the circle, at twice the angle, and gives it the same place. Four kinds of array lie on
     those places: the <span class="g">index alone</span>, the <span class="r">values on the index</span>, a
-    <span class="w">constant array</span>, and an <span class="b">array of known length</span>, a write's.</p>
+    <span class="w">constant array</span>, and an <span class="b">array of known length</span>, whose index needs its extent.</p>
     <div class="panel">
         <div class="row"><label>K places</label>
             <button data-K="4">4</button><button data-K="8">8</button><button data-K="9">9</button><button data-K="16">16</button><button data-K="32">32</button>
@@ -232,7 +232,7 @@
                 g.fillStyle = 'rgba(230,228,238,0.85)'; g.beginPath(); g.arc(pad + (ti + 0.5) * cw, top + ch / 2 + (AMOUNTS.indexOf(a) - 1) * 18, 5, 0, 2 * Math.PI); g.fill();
                 rows.push(`${x.toPrecision(3)}: count ${ci}, turn ${ti}`);
             }
-            cap = `An array of known length: a write puts an amount x at ⌊N·x/X⌋, which needs X; read from home with distance laid by H, x goes to ⌊K·(2/π)·arctan(x/H)⌋, which needs only H (white dots in the strip). ${rows.join('; ')}. Scaling the world moves the amounts and X together, so the count index stays; the turn index moves unless H is scaled too: H is the zoom.`;
+            cap = `An array of known length: an amount x goes to ⌊N·x/X⌋, which needs X; read from home with distance laid by H, x goes to ⌊K·(2/π)·arctan(x/H)⌋, which needs only H (white dots in the strip). ${rows.join('; ')}. Scaling the world moves the amounts and X together, so the count index stays; the turn index moves unless H is scaled too: H is the zoom.`;
         }
         $('cap2').textContent = cap;
     }

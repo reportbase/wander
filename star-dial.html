@@ -386,7 +386,7 @@ function drawRuler() {
     for (let e = -10; e <= 30; e += 10) { rg.fillRect(X(e), y1 + 2, 1, 5); rg.fillText(`2^${e}`, X(e) - 8, y1 + 18); }
     rg.fillText('home', X(RU_LO) + 2, y1 + 32); rg.textAlign = 'right'; rg.fillText('past the held edge →', W - P, y1 + 32);
     const h = HELD;
-    document.getElementById('rulerNote').textContent = `held: ${N_ADDR} places (a write's count of the read's fineness) from H/32 to H in proportion, then ${L_LEVELS} doublings to 64H; ` +
+    document.getElementById('rulerNote').textContent = `held: ${N_ADDR} places (a count of the read's fineness) from H/32 to H in proportion, then ${L_LEVELS} doublings to 64H; ` +
         `the field's levels ${h.part0 ? '0 (in part) to ' + h.jB : h.jA + ' to ' + h.jB}, ${fmtB(heldTotal())} stars. Drag or tap to set H.`;
 }
 let ruDrag = false;

@@ -327,7 +327,7 @@ function render() {
     $('kv').textContent = 'k = ' + (k >= 1 ? k.toPrecision(3) : k.toFixed(k < 0.1 ? 4 : 3)); $('home').value = S.home;
     const below = A.filter(o => o.ratio < 1).length;
     $('say').textContent = `The blueprint states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}. Its circle round the whole is ${fmtM(Math.hypot(24, 16) * k)} in radius. ` +
-        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The read's vantage is the same at every k: its directions and what paints them, no distance (the circle drawn round it is the blueprint's picture).`) + ` From home a read holds ${NA} directions (a count, a write's): ${below} below v = h and ${NA - below} above, at every k.`;
+        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The read's vantage is the same at every k: its directions and what paints them, no distance (the circle drawn round it is the blueprint's picture).`) + ` From home a read holds ${NA} directions (a count): ${below} below v = h and ${NA - below} above, at every k.`;
     describe();
 }
 function describe() {

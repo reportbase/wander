@@ -78,7 +78,7 @@
 <main>
     <h1>An infinite star field, in 3D</h1>
     <p class="lede">The blueprint (classical geometry, shown for comparison) has the stars where they are: give the world more and its far field fills. A read has
-        each star only as a direction over the octant, at its fineness K (counted, a write, it is K cells), and holds
+        each star only as a direction over the octant, at its fineness K (counted, it is K cells), and holds
         the share of what it reads in each. At N, 2N or infinitely many stars, and at any H, that view is the same. N is invisible to a read; H only
         slides the blueprint's stars along their rays.</p>
 
@@ -95,7 +95,7 @@
     <div class="panel">
         <h2>The read's places in distance, and H</h2>
         <canvas id="ruler" width="1100" height="170"></canvas>
-        <p class="cap">The read's fineness laid along distance by its turn, counted as n places (a write), d = H·tan θ at equal angles θ, on a scale of
+        <p class="cap">The read's fineness laid along distance by its turn, counted as n places, d = H·tan θ at equal angles θ, on a scale of
             doublings of u (the world's own unit). Half of them always lie inside H (teal, v/h ≤ 1, in proportion) and half
             past it (violet, h/v ≤ 1, wider and wider to the horizon). The read's fineness is fixed and comes first; H
             only splits it. Move H: the count on each side never changes; a small H
@@ -122,7 +122,7 @@
                 <div><p class="t" id="tB">at 2N</p><canvas id="mapB" class="rmap" width="420" height="420"></canvas></div>
             </div>
             <p class="cap">Each star read as a direction only, counted at the read's fineness: Lambert's equal-area map
-                of the octant, azimuth across (h left, v₂ right), height v up, cut into K cells (counted, a write), the corners dashed. Each
+                of the octant, azimuth across (h left, v₂ right), height v up, cut into K cells (counted), the corners dashed. Each
                 cell shaded by its share of what is read: an even share is one flat colour, at N and at 2N alike. No cell
                 knows a distance, so there is no far field for a read to fill. With fewer stars than cells the read has
                 single stars; once N is well past them, N and 2N are the same map.</p>
