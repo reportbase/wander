@@ -222,3 +222,38 @@ from this paper or data has been seen. Run 1's values for rats Q and R (Gardner 
 **What it can and cannot add.** A blind check of run 1's √2 on four further rats, in another lab's arena and
 recording; P2 for the first time. It does not test the dimension (√2 against 2 as length or area), which GDR says
 needs a step profile over six or more modules in one animal, and it does not say why the ratio is what it is.
+
+### Run 2 (12 November; `python3 -I runs/grd/grd2.py <matlab_format dir>`, 49 seconds; output `runs/grd/run2.txt`)
+
+Read from the dataset's MATLAB files with `scipy.io.loadmat`, the same content as the python files: loading those needs
+unpickling, which this environment would not run on downloaded data. The files' `tracking_units` is a MATLAB string
+object that `loadmat` does not decode, so the plan's fallback applied (metres if the range is under 10): the tracked
+extents are 139–146 cm, read as centimetres.
+
+| rat | light: modules (cm) | kept (≤ 0.6 side) | ratios |
+|---|---|---|---|
+| 25843 | 53.7, 81.4, 99.5 (side 144) | 2 | 1.516 |
+| 26018 | 45.9, 63.4, 81.9 (side 140) | 3 | 1.382, 1.291 |
+| 26718 | 56.6, 88.7 (side 141) | 1 | none |
+| 26820 | 43.2, 58.4, 85.0 (side 139) | 2 | 1.352 |
+
+- **P1b: not killed.** Pooled 1.383 over 4 ratios from 3 rats, in the √2 band (0.031 below √2); the bootstrap interval
+  over rats, 1.336–1.516, crosses both band edges. Outside 2's band; √e (1.649), 1.7 and e far off; 3/2 is 0.117 away.
+- **P2b: killed by its count.** The 0.6 rule left only rat 26018 with three modules. For information its two steps
+  differ by 0.098 in log₂, just under 0.1.
+- **P3b: not killed.** Five animals (three Waaga, Q, R): the sd of log₂ λ₁ is 0.231 and the sd of log₂(λ₂/λ₁) is 0.064.
+  Over Waaga alone (three rats): 0.132 against 0.071. The ratio varies less than the scale.
+- **P4b: not killed.** No ratio under 1.2.
+- Reported: **both datasets**, 1.402 over 6 ratios from 5 rats (95% 1.349–1.480). **Rat 26018's second session** (light):
+  1.419 against the first session's 1.382, its third module now over the side. **The dark task**: 1.589, 1.466 and 1.090,
+  1.910, 1.380. The paper's own subject is that the dark map drifts against the room while the modules keep their
+  relation; a rate map over a whole dark trial blurs that drift into its autocorrelogram, so these spacings are not the
+  modules' own and are not read as a test.
+
+**What it shows.** In a second lab's rats, blind, the step between adjacent grid modules that the method can measure in a
+1.4 m arena is again near √2 (1.38; with run 1, 1.40 over five rats), and the scale of the smallest module varies more
+across animals than the step does (P3, tested for the first time). P2, whether every step is the same, is still
+untested: in both datasets the arena is too small to measure a third module in most rats, and every rat with three
+modules kept so far has two steps within 0.1 in log₂ of each other (R 0.075, 26018 0.098). The dimension (√2 as a
+halving of area against 2 as one of length) is untouched, as the plan said. A further run needs a larger arena or a
+method that reads the largest module from fewer peaks.
