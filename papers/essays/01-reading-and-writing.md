@@ -93,7 +93,15 @@ stride, a mark on a wall, a metre bar, or an amount put down in a unit, 0.7 m. A
 only by being read: reading is continuous, and what is read is discrete. The other two boxes are tools of description.
 A count, "three trees", "514 strides", is discrete and unmoved: the strides are writes, the count is an account laid
 over them, and what is kept of it is kept as things (marks, pebbles), each a write. A length as an exact number in a
-unit, or the circle held whole, is continuous and moved: the blueprint, set beside the two acts for comparison.
+unit, or the circle held whole at a size, is continuous and moved: the blueprint, set beside the two acts for comparison.
+
+Among acts the two properties are one. A thing that is discrete has a boundary, so it has a size, so scaling moves it;
+a direction has no boundary and no size. So reading is the verb for the continuous and writing the verb for the
+discrete, and the two mixed boxes hold no act: a count and the number line are nouns, descriptions laid over what was
+read or written. The friction between continuous and discrete shows wherever one is made to hold the other, a count
+holding a slope no fraction lands on, or a walk cut into strides so that the looks at its two ends give a size. π and e
+are not in the table. Each is a pure ratio that scaling does not move and that no count reaches; they are how both
+hemispheres at once, completeness and a view from no standpoint are put into numbers (essay 15).
 
 The rest of the essay takes these two acts apart. They have a structure, and the structure has two sides.
 

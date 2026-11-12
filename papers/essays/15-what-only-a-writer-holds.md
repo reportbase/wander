@@ -204,6 +204,15 @@ it. The blueprint holds the limit, with the arc named π and the base named e. S
 only the blueprint holds, and the two parts the fact does not depend on: π is the price of saying how long the arc to −1
 is, e the price of saying it as one smooth turn where a read has two corner steps.
 
+The count's product is also the two acts in turn. Each factor 1 + iπ/n is one read, a slope and nothing else. To
+multiply the next one on, the look so far has to be there to start from, kept in something, and what is kept is a
+write; the next read is taken from it. So (1 + iπ/n)ⁿ is read, keep, read, keep: what is read is then written, and what
+is written is then read. Euler's identity is that alternation carried to its limit, the turn completed and the scale
+completed meeting at the opposite facing. No cycle anyone makes is the identity; it is what the cycle is a cycle
+toward. And of the whole family w(s) × w(1/s) = −1 it is the one member with no vantage: every other pair is two
+directions of one read, and this one pairs home with the horizon, where nobody stands. That is what π and e are for.
+They are how three things are put into numbers together: both hemispheres at once, completeness, and no vantage.
+
 The Cauchy's total goes the same way, and more easily. Its heat 1/(1 + s²) is rational, the corner is its median because
 the two halves are equal, and it has no mean; π enters only in the constant 2/π that closes it to 1. A count
 has shares, k of K equal turns, and Gregory's and Leibniz's series for the half below the corner,

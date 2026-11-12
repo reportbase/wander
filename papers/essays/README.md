@@ -14,7 +14,9 @@ Two ideas run through all of them:
   outside. A read is continuous and unmoved: a ratio from a standpoint, a slope, free. A write is discrete and moved: a
   bounded thing with a size, a stride, a mark, a metre bar, or an amount put down in a unit carried in; it is over once
   made and is used only by being read. A count ("514 strides") is discrete and unmoved, a description laid over writes,
-  and a length as an exact number in a unit is continuous and moved, the blueprint; both are tools of description. An
+  and a length as an exact number in a unit is continuous and moved, the blueprint; both are tools of description. Among
+  acts the two properties are one, so reading is the verb for the continuous and writing the verb for the discrete; π and
+  e are how both hemispheres at once, completeness and no vantage are put into numbers. An
   *extent*, a distance in thumbs or steps (V\*/H, a gap across Euler's plane), is not a third kind: held by two looks
   together it is a read, a ratio of their slopes, and counted out it is a count. (*Reads and Writes* was rewritten on
   10 November, R788, on read, extent and write; essays that still make an extent a third kind, or a kept count a write,
