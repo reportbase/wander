@@ -88,3 +88,7 @@ tables and "Four things") and should wait for Tom's ruling on each.
 1. Is the π/2 vantage a read (item 19, 20)? If so, do the two numbers leave the two reads?
 2. What are two reads held at once to be called (item 22)?
 3. Is an extent then geometry, leaving two kinds and not three (item 24)?
+
+**Settled, 12 November (R896; Tom: "update the papers and essays and merge"):** a read is continuous and unmoved by
+scaling, a write discrete and moved by it; a count and the number line in a unit are descriptions. Carried into
+*Reads and Writes* and the essays. This file is kept as the record of how it was reached.

@@ -354,3 +354,7 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
     ds/(1 + s^2), heat and paint, this table), so the definition names two things by their properties (continuous
     and scale invariant; discrete and scale variant) and every formula for them is description, the paper's
     included.
+
+**Settled, 12 November (R896; Tom: "update the papers and essays and merge"):** a read is continuous and unmoved by
+scaling, a write discrete and moved by it; a count and the number line in a unit are descriptions. Carried into
+*Reads and Writes* and the essays. This file is kept as the record of how it was reached.

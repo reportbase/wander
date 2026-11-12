@@ -48,3 +48,7 @@ sorting descriptions of writes into ratios and amounts in a unit.
   within the density, if you agree.
 - "The natural world does not count" is given as "nothing in it is counted" and "an account laid over them", so
   the paper still says nothing about what the world is.
+
+**Settled, 12 November (R896; Tom: "update the papers and essays and merge"):** a read is continuous and unmoved by
+scaling, a write discrete and moved by it; a count and the number line in a unit are descriptions. Carried into
+*Reads and Writes* and the essays. This file is kept as the record of how it was reached.
