@@ -1472,16 +1472,17 @@ corner, and that the read and the walk multiply to 1; how much the whole is, and
 the long side, is the blueprint's completed sum. That is the exact sense of "Ω is the price", above: the price is an
 infinity, paid only at the limit, and a read never pays it because a read never needs the value.
 
-So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves, and neither knows nor uses Ω. A count
+So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves; it does not use Ω, and 1/Ω is the limit its share of the thumb tends to as the sweep runs on toward the horizon ("Reading is 1/Ω; walking is Ω", above). A count
 is of a walk actually made, and any such walk is finite, so a count holds fractions: 11/7, 355/226, a series
 stopped at some term, each nearer Ω and none of them Ω. A count uses Ω's name and its approximants, and never has its
-value. Only the blueprint holds Ω itself: the completed whole, every facing at once, the total of a sum no one
-finishes. The blueprint, whole, is therefore a limit, as the exact V is (§6, "Extents come by degrees"), and never a
-thing anyone has made. "The blueprint knows Ω" is a picture; what is exact is that Ω is defined there, as the whole
-turn, and reached nowhere short of it.
+value; Ω is the limit it tends to, stride by stride. So Ω and 1/Ω are limits the two acts actually encounter, each
+headed for its own and neither reaching it. What neither encounters is π, two sweeps joined: the blueprint's, every
+facing at once, the total of a sum no one finishes. The blueprint, whole, is therefore a limit, as the exact V is (§6,
+"Extents come by degrees"), and never a thing anyone has made. What is exact is that Ω is defined as the total of one
+sweep, and reached by no finite sweep or count.
 
 The equation Ω × 1/Ω = 1 is then worth a second look, since it names the read and the walk and neither a read nor
-a count has Ω. It does not need Ω. The two factors are reciprocals, and x × (1/x) = 1 for every x: Ω is in
+a count has Ω's value. It does not need Ω. The two factors are reciprocals, and x × (1/x) = 1 for every x: Ω is in
 both and leaves the product. The proof above says the same, since the 1 is the whole gain, fixed first, and the chord
 and the square's edges split it with no Ω in them. A read, a count and, for comparison, the blueprint each hold the equation in their own form:
 
@@ -1492,7 +1493,7 @@ and the square's edges split it with no Ω in them. A read, a count and, for com
 | the blueprint | Ω × 1/Ω = 1: the same fact with the turn's split named at its true value |
 
 A better fraction changes both factors and leaves the 1 untouched, so the 1 is exact at every stage of approximation and
-never waited on the limit. Ω is the one part of the equation only the blueprint holds, and the one part the equation does
+never waited on the limit. Ω's value is the one part of the equation no read or count reaches, and the one part the equation does
 not depend on: it is the price of saying how the turn splits the 1, and no one pays it to have the 1.
 
 Euler's identity goes the same way: the −1 never needed e or Ω. The corner is the quarter turn, exactly and with no root
@@ -1509,7 +1510,7 @@ Here a count is exact only at the corner, where with the product any fraction wo
 slope is rational and which are a rational part of the whole turn are the multiples of the corner's (Niven 1956), so
 equal rational steps finer than the corner never land on −1; and (1 + iθ/n)ⁿ misses as "Euler's formula as a count of reads" says, above, the
 turn short by about θ³/(3n²) and the length over by about θ²/(2n). The corner is the one finite door to −1, and
-everything finer is an approach. So e and Ω are the two parts of the identity only the blueprint holds, and the two parts
+everything finer is an approach. So the values of e and Ω are the two parts of the identity no read or count reaches, and the two parts
 the fact does not depend on: Ω the price of saying how long the arc to −1 is, e the price of saying it as one smooth
 turn where a read has two corner steps. **Classical**; the assignment is a reading.
 
@@ -1547,7 +1548,7 @@ halving of a turn (above). And a count's sum is on the page: the heat below the 
 Leibniz's series, 1 − 1/3 + 1/5 − 1/7 + … = Ω/2, each partial sum a fraction, only the limit Ω/2. The read's equal
 halves say the whole is twice that sum without summing it. So across the three:
 
-| the identity | the free fact | only the blueprint's |
+| the identity | the free fact | a limit, reached by no read or count |
 |---|---|---|
 | Ω × 1/Ω = 1 | s × (1/s) = 1 | Ω |
 | e^(2iΩ) = −1 | i × i = −1 | e and Ω |

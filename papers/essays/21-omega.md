@@ -15,7 +15,8 @@ representing it. So the sweep's total gets a letter of its own, Ω, and the fami
 equation changes. What changes is which constants look like accidents and which look like the same thing met again.
 
 The series keeps π where classical mathematics has it, and for a good reason: renaming it would hide what the classical
-statements say. So this is an experiment beside the paper, not a proposal for it. Its use is as a test. Where a formula
+statements say. So this began as an experiment beside the paper, not a proposal for it; since then *Reads and Writes*
+itself has been written in Ω as a trial, and the other essays keep π. Its use is as a test. Where a formula
 gets simpler in Ω, the formula was about one sweep. Where it gets worse, it was about something else, usually about
 several sweeps joined into a whole.
 
@@ -428,6 +429,7 @@ statement about one sweep written in the unit of the whole.
   2/π; walking is π/2", "The thumb, short by reading, long by walking, and whole" (the three paths), "What is free, and
   what π costs", "Four identities, one exchange", and the passage on a turn added to itself (`../../plans/chs-plan.md`); §8 (three
   thumbs, the octant, the two orders). The current account,
-  which keeps π. The exact checks behind §7's numbers are `../../plans/swp-plan.md` and `../../plans/wdg-plan.md`.
+  written in Ω since 12 November, where these headings now read "Reading is 1/Ω; walking is Ω" and "What is free, and
+  what Ω costs". The exact checks behind §7's numbers are `../../plans/swp-plan.md` and `../../plans/wdg-plan.md`.
 - Demos: `../../one-read.html` (one turn and its landing point), `../../paths.html` (one sweep, three paths),
   `../../sweep-zero.html` (composing sweeps from zero), `../../wedge.html` (the octant), `../../euler.html` (n reads).
