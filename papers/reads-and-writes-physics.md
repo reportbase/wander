@@ -61,6 +61,17 @@ put down in a unit carried in; a stride and a mark that keeps a look are writes,
 description. Reads, and extents held by two looks together, are geometry; physics enters with the first write. (The
 sorting on these two properties, continuous or discrete and moved by scaling or not, is a reading.)
 
+| | unmoved by scaling | moved by scaling |
+|---|---|---|
+| **continuous** | a read: a direction, a ratio of slopes | the number line in a unit: an exact real amount |
+| **discrete** | a count: so many photons, contacts, ticks | a write: a thing with a size, an amount put down in a unit |
+
+Physics uses all four boxes. Its measured numbers are writes: a length to so many digits, in metres. Its counts,
+photons arrived or contacts made, are unmoved by scaling and are descriptions laid over the things counted. Its laws
+are stated on the number line in a unit, exact real amounts, which is the blueprint's box: classical statement, set
+here for comparison and found nowhere among the things measured. And what an observer has before any of these is the
+read. A write changes only what arrives, never a direction, so the two do not collide (*Reads and Writes* §1).
+
 This paper takes the line at its word and turns to physics. If physics is the writing, two questions follow. Which
 parts of a known physical result could have been read, from a standpoint, or placed, from several, before any amount
 was carried in? And for the
@@ -302,15 +313,16 @@ A moving observer's sky is the clearest place in physics where a read and a writ
   tan(θ/2), the stereographic coordinate) a boost is t ↦ t/k, k = e^η; on −ln t (the pseudorapidity) a uniform sky lies
   as ½·sech² and a boost slides it by the rapidity η. So the
   rapidity is had from directions alone: from one look, with the sources taken as uniform in their own frame, the slide
-  of one read's median (a read); against a look before the boost, the two medians joined (an extent). No clock, no
+  of one read's median, inferred under that premise; against a look before the boost, the two medians joined. Either
+  way the rapidity is the coordinate of a map between the looks, not a read and not a gap in space. No clock, no
   frequency, no c.
 - **Doppler shift and beaming weight the paint**, moving no direction. Of the D⁴ by which an isotropic sky brightens
   ahead, D² is the crowding of directions and D² the paint. To state the shift as a speed needs a rest frequency, a write.
 - **Two more readings of one sky.** A thermal sky, each direction a blackbody at T₀·D: the hottest over the coldest is
   exactly (1 + β)/(1 − β) = k² at every speed, a ratio; a linear dipole fit reads β = 0.6 as 0.67 (Peebles and Wilkinson
   1968). Radar: two echo times give the Doppler factor as their ratio, t₂/t₁ = k², and the interval as their product,
-  t₁t₂ = τ² (Bondi 1964). A common rescale of both stamps leaves the ratio and moves the product: one pair of stamps, an
-  extent and a write.
+  t₁t₂ = τ² (Bondi 1964). A common rescale of both stamps leaves the ratio and moves the product: one pair of stamps, a
+  ratio unmoved by scaling and an amount in the stamps' unit, a write.
 
 ### 5.2 The quasar dipole [data]
 
@@ -379,7 +391,7 @@ the relativity principle, and no new physics.
 ### 5.4 Loops that come home turned [exact]
 
 §5.3's leftover is one case of a wider fact. A read is one standpoint at one moment; reads joined end to end round a loop
-are an extent, and what the joining leaves over when the loop closes depends on where it happens.
+are a joining, and what the joining leaves over when the loop closes depends on where it happens.
 
 - **In the plane, nothing.** Turns of the plane commute, so carrying a direction round any closed loop brings it home
   unturned. Fifty loops laid flat turned by 0, which was guaranteed: flat transport does not change a direction at all.
@@ -397,7 +409,8 @@ are an extent, and what the joining leaves over when the loop closes depends on 
   radius cancels against the lengths of the loop, as the scale test asks of a reading. A loop out and back along one line
   encloses nothing and turns nothing (5 × 10⁻⁵¹ on the sphere, 2.5 × 10⁻⁴⁹ in velocity space).
 
-So the leftover of joining is an extent: the area the joined reads enclose, with no unit and no clock. A rate
+So the leftover of joining is a map, a turn between the first look and the last, and its angle is the area the joined
+reads enclose, with no unit and no clock. A rate
 of turning is another matter. Foucault's pendulum (1851) turns, against the ground, by 360°·sin φ a sidereal day at
 latitude φ: the area the latitude's circle leaves out of the hemisphere, read per turn of the Earth. The degree a day
 carries the sidereal day in, a clock, so it is a write. Measured rates were sought before any was read; one site met the
@@ -419,7 +432,7 @@ each read from its paper's abstract. Measured over
 Dirac is 1.0018, the rest QED; measured over the interval without the half is 0.501. This is reported, not counted.
 
 None of it is new physics: Gauss, Thomas, Wigner, Foucault and Berry hold every piece. What the sorting adds is where each
-piece falls. The turn comes from the loop alone; the loop is joined, an extent; a rate of turning in degrees a day needs a
+piece falls. The turn comes from the loop alone; the loop is a joining of reads and the turn it leaves a map between looks; a rate of turning in degrees a day needs a
 clock, a write.
 
 ## 6. Light
@@ -445,8 +458,9 @@ precision; it is not this paper's to test. What the sort says is where it lives.
 - **The dimension.** The cosine-weighted share sin^(D−1)θ is symmetric under the reciprocal only in three dimensions:
   D = 3 is singled out by Lambert's cosine, not by the turn, whose one-axis marginal is the Cauchy in every dimension.
 - **1/d² needs distance; counts by flux are a read.** Scale every length by k with the paint fixed, and every solid angle,
-  irradiance and flux is unchanged. So 1/d² compares standpoints with the source's size held fixed, and needs d as an
-  ratio at least, an extent, from a baseline walked or a kind carried in (a standard candle), and as an amount a write. The count of sources brighter than a flux needs no
+  irradiance and flux is unchanged. So 1/d² compares standpoints with the source's size held fixed, and needs d as a
+  ratio at least, an extent, from two standpoints a baseline apart or a kind carried in (a standard candle), and as an
+  amount in a unit a write. The count of sources brighter than a flux needs no
   distance at all: for any population spread evenly, N(> S) falls as S^(−3/2) at every S, unmoved by scaling.
 
 All checked to 10⁻⁵⁰ in exact arithmetic; one prediction (the cosine-weighted per-axis median) was killed by my
