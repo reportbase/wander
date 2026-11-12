@@ -312,3 +312,11 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
     over any world), paint is what is read (discrete, things); a read is heat meeting paint, so read and write are
     not two bins of things but the act and what it is of; everything there to be read was written, by the world
     or an observer (R644 from the other side; R645's K, a count read continuously, the same shape).
+
+    **Tom:** "I think we are very close to a robust definition now." Still not settled. **The draft as it stands
+    (Claude's wording of the exchange, for Tom to correct):** reading is continuous and has the heat's form, given
+    before anything arrives and the same over any world; what is read is paint, discrete, things among things,
+    everything that is not heat; a write is paint put there, by the world or by an observer; the scale test sorts
+    paint into ratios and amounts in a unit; the blueprint is not in the physical world and is outside the
+    sorting. **Still to test before settling:** the laws among slopes (with the heat?); two looks held together
+    (one reading or two?); where an observer's own write differs from the world's, if it does; K.
