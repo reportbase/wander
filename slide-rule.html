@@ -57,9 +57,9 @@
     <h1>The reader is a slide rule</h1>
     <p class="lede">Every direction is already a ratio: a direction from home reads v/h, and nothing is divided to get it.
     Lay the readings on the <span class="g">levels</span> (log₂ of v/h) and every ratio between two things becomes the
-    <span class="b">gap between their places</span>. N things hold N(N − 1)/2 ratios, but the reader keeps only N places;
+    <span class="b">gap between their places</span>. N things hold N(N − 1)/2 ratios, but a read has only N places;
     the ratios are read off as distances, the way a slide rule multiplies by laying lengths end to end. A tower of links
-    telescopes for the same reason: every middle place drops out. The reader places; it does no ratio arithmetic.</p>
+    telescopes for the same reason: every middle place drops out. A read places; it does no ratio arithmetic.</p>
 
     <div class="panel">
         <h2>The things, and their places</h2>
@@ -70,8 +70,8 @@
             <span id="kv" class="b"></span></div>
         <div class="grid">
             <div><canvas id="cv1" height="380"></canvas><p class="cap">From home, the quarter turn from <span class="b">h</span>
-            to <span class="b">v</span>, the corner (v = h) dashed. Each thing sits on its own ray at the distance a writer
-            would give it, drawn on the reader's lay (in proportion to the corner circle, then 1 + ln). Scaling the world
+            to <span class="b">v</span>, the corner (v = h) dashed. Each thing sits on its own ray at its written distance
+            (an amount in a unit), drawn on the read's lay (in proportion to the corner circle, then 1 + ln). Scaling the world
             slides every thing along its ray and moves no reading.</p></div>
             <div class="read" id="r1"></div>
         </div>
@@ -108,7 +108,7 @@
         <h2>The circular rule: directions are turns</h2>
         <div class="grid">
             <div><canvas id="cv4" height="300"></canvas><p class="cap">Tap a thing to make its direction the new zero (the
-            head turned to it). Every other direction is then read off as a turn from it, on the same dial. The writer's
+            head turned to it). Every other direction is then read off as a turn from it, on the same dial. The blueprint's
             formula for the new reading is tangent subtraction, (s − t)/(1 + st); the turn gives it without the formula.</p></div>
             <div class="read" id="r4"></div>
         </div>
@@ -214,7 +214,7 @@
     function read1() {
         const c = counts(st.N), k = Math.pow(10, st.lk);
         let s = `<span class="b">${st.N} things</span>: ${c.places} places on the levels hold all ${c.ratios} ratios between them.\n\n`;
-        s += 'thing  turn     v/h (its reading)   level     distance (a writer\'s, ×k)\n';
+        s += 'thing  turn     v/h (its reading)   level     distance (a write, ×k)\n';
         st.things.forEach((T, i) => {
             s += `  ${T.name}    ${T.theta.toFixed(1).padStart(5)}°   ${reading(i).toPrecision(4).padStart(9)}        ${(level(i) >= 0 ? '+' : '') + level(i).toFixed(3)}`
                 + `    ${(T.d * k).toPrecision(3)}\n`;
@@ -379,7 +379,7 @@
             const t = turn(z, j); worst = Math.max(worst, Math.abs(t.byTurn - t.byFormula) / (1 + Math.abs(t.byFormula)));
             s += `  ${T.name}      ${((t.angle >= 0 ? '+' : '') + t.angle.toFixed(1)).padStart(6)}°      ${t.byTurn.toPrecision(5).padStart(10)}       ${t.byFormula.toPrecision(5).padStart(10)}\n`;
         });
-        s += `\nlargest difference ${worst.toExponential(1)}. The head turns; the formula is\nhow a writer would say what the turn did. Directions behind\nthe new zero read negative: the other facing.`;
+        s += `\nlargest difference ${worst.toExponential(1)}. The head turns; the formula is\nhow the blueprint states what the turn did. Directions behind\nthe new zero read negative: the other facing.`;
         $('r4').innerHTML = s;
     }
 
