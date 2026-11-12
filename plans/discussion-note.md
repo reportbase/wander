@@ -277,3 +277,11 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
     scale-invariant side then holds more than a read (counts, kept ratios, coordinated reads, and the blueprint's
     angles and π), so either "a read" widens or the side needs a name; physics as the place where scale matters
     (dimensioned constants) would keep "a read is geometry, a write is physics".
+
+    **A third candidate from Tom, the same day, not settled:** "how about writes are paint, reads are heat". It is
+    R653 in the heat-and-paint words (the read the address, the write the payload), and the second test used as
+    the definition where the previous candidate used the first. Claude's notes, not ruled: the two candidates are
+    the two crossed tests of R821 and disagree in two boxes (a ratio of brightnesses is paint yet unmoved by
+    scaling; an extent in thumbs is unmoved yet is not heat); by this one the world writes and the observer is
+    written on, which thing sits at which slope is paint, and a mark or a unit is paint met by a later read; a
+    count kept in the head, met along no direction, is still its weak case.
