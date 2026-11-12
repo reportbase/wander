@@ -320,3 +320,14 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
     paint into ratios and amounts in a unit; the blueprint is not in the physical world and is outside the
     sorting. **Still to test before settling:** the laws among slopes (with the heat?); two looks held together
     (one reading or two?); where an observer's own write differs from the world's, if it does; K.
+
+    **Tom, on the wording of the definition:** "paint and heat are imperfect metaphores, don't lean on them
+    excessivly. its the cauchy density or distribution. the definition should be in terms continus/descrete.
+    scale varient/invarient." So the definition is to be stated on those two axes, with the Cauchy density named
+    as what the continuous, scale-invariant side is; heat and paint stay as pictures, not as the terms defined.
+    **Claude's redraft, not ruled:** a read is continuous and scale invariant (the Cauchy density over slopes,
+    ds/(1 + s²) up to its total); a write is discrete and scale variant (a bounded thing with a size, an amount in
+    a unit). The axes are two, so two boxes are left: discrete and scale invariant (a count, a ratio of two
+    things, a distance in thumbs: what a read gives of written things, Tom's "the reading is of something that is
+    discrete"; the old "extent"), and continuous and scale variant (the number line in a unit, which nothing in
+    the physical world is: the blueprint's).
