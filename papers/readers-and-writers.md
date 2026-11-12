@@ -15,6 +15,15 @@ it; whether those assumptions fit a physical system is a further claim, made cas
 proofs this paper draws on are in *Observation from Somewhere*, archived (`papers/archive/ofs/`); where its wording differs
 from this paper, this paper stands.
 
+**One letter, Ω = π/2.** A read is one sweep, from home to the horizon, and the total of one sweep is π/2: the
+weight ds/(1 + s²), the one weight that composing slopes leaves unchanged, summed over every slope from 0 up. π is two
+sweeps' worth. Since the paper's subject is the single sweep, its constants are mostly π/2 and 2/π, and it is simpler to
+give that total its own letter than to keep halving π: Ω = π/2, so 2/π is 1/Ω, the turn is 4Ω and the sphere 8Ω, the
+Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω is only a name. It is still a limit, and like π
+it is the blueprint's number, held by no read and no write. From here on the paper writes Ω. Euler's e^(iπ) = −1 is
+e^(2iΩ) = −1, and e^(iΩ) = i is the corner. π is written only where a classical statement is quoted by name (the
+parsec, Basel's sum, Lindemann's theorem).
+
 ## Abstract
 
 A point seen from a standpoint can be written, in the blueprint's notation, ln(z/H) = ln(d/H) + iθ, with H the thumb held out
@@ -44,19 +53,11 @@ says what any two directions give together; it holds for every pair at once, and
 needed only for which steps were taken, never for what steps do. So two things stand apart: the geometry, complete
 with no memory and no unit; and writes, things with a size, where physics enters. A count kept of the steps taken is a
 description laid over those writes. The blueprint's completed equations each have a read's form that is rational in
-the slope and needs no limit: for e^(iπ) = −1 it is w(s)·w(1/s) = −1 with w(s) = (1 + is)/(1 − is), a direction and its
+the slope and needs no limit: for e^(2iΩ) = −1 it is w(s)·w(1/s) = −1 with w(s) = (1 + is)/(1 − is), a direction and its
 reciprocal, and at the corner i·i = −1 (§1, "The same relation, held two ways").
 
 None of the mathematics is new. What is offered is a division of it: which parts one standpoint has, which need two, and
 which need a unit, with the plane as the frame that holds the division in one line.
-
-**One letter, Ω = π/2.** A read is one sweep, from home to the horizon, and the total of one sweep is π/2: the
-weight ds/(1 + s²), the one weight that composing slopes leaves unchanged, summed over every slope from 0 up. π is two
-sweeps' worth. Since the paper's subject is the single sweep, its constants are mostly π/2 and 2/π, and it is simpler to
-give that total its own letter than to keep halving π: Ω = π/2, so 2/π is 1/Ω, the turn is 4Ω and the sphere 8Ω, the
-Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω is only a name. It is still a limit, and like π
-it is the blueprint's number, held by no read and no write. The sections below were written with π/2 and 2/π and
-keep them; read either as Ω and 1/Ω.
 
 ## 1. Definitions
 
@@ -104,10 +105,10 @@ for the continuous and writing the verb for the discrete, and the scale test fol
 definition. The two mixed boxes hold no act. A count and the number line are nouns, descriptions laid over what was
 read or written. The friction between continuous and discrete shows wherever one is made to hold the other: a count
 holding a read (a slope no fraction lands on, the ringing at a sharp edge, §6), a read holding a count (K, §5), and
-parallax, where a walk is cut into strides before the reads at its two ends give a size. π and e belong to neither box
+parallax, where a walk is cut into strides before the reads at its two ends give a size. Ω and e belong to neither box
 of the table's right column. Each is a pure ratio that scaling does not move, and a count reaches neither. They are how
-the blueprint's three concepts are synthesized: both hemispheres at once, completeness, and no vantage. π is the turn
-completed, e the scale completed (§9, "What is free, and what π costs"). **A reading.**
+the blueprint's three concepts are synthesized: both hemispheres at once, completeness, and no vantage. Ω is the sweep
+completed, e the scale completed (§9, "What is free, and what Ω costs"). **A reading.**
 
 - **D1. One point, two parts.** A point seen from a standpoint is, in the blueprint's notation, ln(z/H) = ln(d/H) + iθ, H
   the thumb held out at arm's length: up the direction θ, across the distance in thumbs. In space the point is d·u, u a
@@ -122,7 +123,7 @@ completed, e the scale completed (§9, "What is free, and what π costs"). **A r
   it, and stops at its horizon: a read closes nothing. Each read is orthogonal to every other, in the plain sense of
   independent: it stands by itself and shares nothing with them. No inner product is meant, and two reads can still
   be related from outside, by an extent, an order or a map (D7). Two looks held together at once, with nothing kept
-  between them, are still reading (D3); closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
+  between them, are still reading (D3); closing a circle, with its 2Ω and 4Ω, is a join of several (D7), and a join is not a read.
 - **D3. A parallax extent**, an **extent** for short, is a gap across: a distance in thumbs, d/H, or one distance
   against another, d₁/d₂. Scaling the world
   leaves it unchanged, as it leaves a read; but no single look holds it. Two looks held together give it, as a
@@ -213,12 +214,12 @@ no memory: offered as a likely reason, not shown.
 observer who wants to know what a set of steps gives together must keep the steps and total them. The law holds the
 answer for every such set at once, with none of them taken: it collapses the set into one relation. In that it does for
 the geometry what a limit does for the blueprint, with one difference. The blueprint's limit is approached step by step and
-its value (π, e) is had only at the end of a count without end (§9, "What is free, and what π costs"); the law is not
+its value (Ω, e) is had only at the end of a count without end (§9, "What is free, and what Ω costs"); the law is not
 approached, it is given whole. So a geometric law is free in the same sense the geometry is: not an algorithm, not
 computed, with no time in it. It can still be taken apart into intermediate steps, a slope joined to a slope, then to
 another, or (1 + iθ/n)ⁿ step by step (§9), and that is how a law is understood and checked. The steps are the blueprint's
 account of the law, a journey told afterwards; they are not the law, and the law does not wait on them. That the law
-stands in for memory is a **reading**; what is free is the relation, never the value of π or e.
+stands in for memory is a **reading**; what is free is the relation, never the value of Ω or e.
 
 One expression does this for sequences without number. "n strides are one slide of n rungs" holds for every n;
 w(s)·w(1/s) = −1 holds for every slope. What is collapsed is every sequence, of any length, at once, by an expression
@@ -250,7 +251,7 @@ remove the last write. One standpoint holds no distance and no size (no read hol
 fixed share, has the read at every moment and never the size (§6, "Read times count"). The least is one counted step.
 So writing is not what establishes a relation, the relation holds unkept; and writing is not made unnecessary by the
 law either. The law gives the expression; one write fills its empty place. This is said of finite chains. A law is not a
-limit and reaches none: it covers every finite chain at once, and a limiting value such as π is the blueprint's at the
+limit and reaches none: it covers every finite chain at once, and a limiting value such as Ω is the blueprint's at the
 limit, never had by shortening. **A reading**, resting on WLK and ONE.
 
 **A denominator is scaffolding.** Every reading is one thing in terms of another, and the other, the denominator, is
@@ -275,7 +276,7 @@ Freedom* §3.1), taken here without its Roman arch.
 | a write: a thing with a size, an amount in a unit; physics | yes | yes |
 
 **The same relation, held two ways.** The central example of this paper is Euler's identity. The blueprint states it as
-e^(iπ) = −1: an exponential, the number e, and a half turn measured by π, each of them a limit (marked the blueprint's, §9).
+e^(2iΩ) = −1: an exponential, the number e, and a half turn measured as 2Ω, each of them a limit (marked the blueprint's, §9).
 The relation it states is already present in a form that uses none of the three. Write a direction of slope s = v/h as
 w(s) = (1 + is)/(1 − is). Then for every slope
 
@@ -285,9 +286,9 @@ by ordinary algebra: a direction and its reciprocal compose to the half turn. At
 reciprocal, w(1) = i, and the relation is i·i = −1, two corner steps, exact. Every member with 0 < s < ∞ is a pair of
 directions of one read. The one member that is not is the pair home and horizon, s = 0 and 1/s = ∞: no read holds the
 horizon, so that member is the blueprint's, and it is the one the classical equation names, which is why it is the one
-that carries π. The circle, the quarter turn's two numbers and the Cauchy's total go the same way, each with a form
+that carries Ω. The circle, the quarter turn's two numbers and the Cauchy's total go the same way, each with a form
 rational in s about the exchange s ↔ 1/s and the corner (§9, "Four identities, one exchange"; parallax and the Gaussian
-beside them in "What is free, and what π costs"). Three limits on what is claimed. The algebra is **classical** and the
+beside them in "What is free, and what Ω costs"). Three limits on what is claimed. The algebra is **classical** and the
 two forms are equivalent; saying which form a read holds is a **reading**. The simpler form exists for relations among
 the directions of one read; positions, closures and totals are not done more simply by a read, they are not done
 ("Steps, never positions", next). And nothing here says the classical statement carries anything it should not: the
@@ -308,9 +309,9 @@ sweep forward, a reset, and another sweep forward. The circle appears when someo
 to end. That keeping is a write. The circle held whole, with no standpoint in it, is the blueprint's.
 
 **A read uses no trigonometry.** A read is in v/h; angles are the blueprint's. Sin, cos, tan and arctan are the blueprint's: they are defined on the completed turn,
-whose period is π (§2), and evaluating one is a pass over that whole turn. A read holds the turn open, and works in the
+whose period is 2Ω (§2), and evaluating one is a pass over that whole turn. A read holds the turn open, and works in the
 slope s = v/h: a direction is [h : v]; two turns compose by tangent addition, (s₁ + s₂)/(1 − s₁s₂); the reciprocal is
-s ↦ 1/s and the corner s = 1; the heat is 1/(1 + s²) per unit of reading, 1/(2π(1 + r²)^(3/2)) per unit of a screen
+s ↦ 1/s and the corner s = 1; the heat is 1/(1 + s²) per unit of reading, 1/(4Ω(1 + r²)^(3/2)) per unit of a screen
 square to the look; a turn of twice the angle is (1 + is)/(1 − is). In the plane all of it is rational in s. The one step
 that is not, √(1 + s²) = 1/h, is the circle entering, its measure h² + v² = 1: with it a turn can be halved,
 t = s/(1 + √(1 + s²)) = v/(1 + h); without it it cannot (from the corner, rational steps reach only the quarter turns, and
@@ -319,7 +320,7 @@ ratio, s ↦ s/2, is the read's (SLP). In space the root comes in even for the h
 h³ = (1 + s² + s₂²)^(−3/2), the circle's measure in the heat itself. Where this paper writes θ, an angle, or a trigonometric function, it speaks
 of the blueprint: the angle is the chart in which turns add and theorems about the whole turn are already proved, the slope
 the chart in which the read's operations run. The two are one projective line in two coordinates, joined by the
-half-angle, s = tan(φ/2) for the blueprint's angle φ of total 2π (or s = tan θ for θ of total π); putting s = tan φ in its place
+half-angle, s = tan(φ/2) for the blueprint's angle φ of total 4Ω (or s = tan θ for θ of total 2Ω); putting s = tan φ in its place
 moves every result. This is draw's *Tangent Bridge* (its classical presentation, `tb_classical.md`, and its algebraic one,
 `tb_algebra.md`): the reconstruction proved in the angle chart and run in the slope chart, with no trigonometric call.
 
@@ -352,7 +353,7 @@ count of directions, a description.
 **Reads, writes and the blueprint.** There are reads and writes; there is no reader and no writer. Both are acts, and
 one observer does both: it reads while it stands and turns, and writes while it strides, leaves a mark or agrees a unit. A
 read has a vantage and one hemisphere, and there are two of them, the two sweeps: the inscribed, from home to a horizon
-(the blueprint's number for it 2/π, approached), and the central, across a bounded thing to its rim (π/2, reached). Both
+(the blueprint's number for it 1/Ω, approached), and the central, across a bounded thing to its rim (Ω, reached). Both
 are reads. A write is a bounded thing with a size, a stride taken, a mark made, a unit carried in (D4); it is how a read is carried to a later
 read. Two looks held together are joined with no write. Neither a read
 nor a write holds both hemispheres. What holds both at once is the **blueprint**: the drawn shape, with both signs of every axis, the turn completed, the
@@ -360,9 +361,9 @@ facings joined. It has no vantage. Reads and writes are what is done from a vant
 with reads and writes: it is not a third act beside them, not a read of a larger kind, and not what they add up to.
 It is classical geometry, with its eye above the figure seeing every side at once. This paper is about reads and
 writes; the blueprint is brought in as the point of comparison, the familiar statement a read's or a write's form is
-set beside (e^(iπ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. "Dual hemispherical" and "without a vantage" say the same thing: a vantage faces
-one way. The circle held whole, the sphere and the cube, the angle and trigonometry, π and e
-are the blueprint's. Whole, with π at its exact value, it is a limit. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
+set beside (e^(2iΩ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. "Dual hemispherical" and "without a vantage" say the same thing: a vantage faces
+one way. The circle held whole, the sphere and the cube, the angle and trigonometry, Ω and e
+are the blueprint's. Whole, with Ω at its exact value, it is a limit. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
 walk or count.
 
 **V.** V is the other party's breadth, the mountain in the distance that the thumb is held up against. A reading is a
@@ -372,10 +373,10 @@ median and the absence of any mean are what a read with no breadth in it is.
 
 **Four things: the universe, an apple, a human and a sheet of paper.** Two reads, a thing held and turned and, for comparison, the blueprint, and where V stands in each.
 - *The apple and the human read the universe by the inscribed sweep.* From home to a horizon: directions only, a turn
-  that never ends, the blueprint's measure of it 2/π, a limit never reached. The universe has no far side to face, so its V
+  that never ends, the blueprint's measure of it 1/Ω, a limit never reached. The universe has no far side to face, so its V
   is **unknowable**: no size could be had, and with none there is no inside or outside, only home and the horizon.
 - *The apple and the human read each other by the central sweep, across one hemisphere.* Each is a bounded thing in the
-  other's view, its rim reached at a point: the central sweep's end, e^(iπ) = −1, the blueprint's measure π/2 reached there. It is still a read, one hemisphere from a vantage; what sets it apart from the inscribed sweep is an end that can be walked to.
+  other's view, its rim reached at a point: the central sweep's end, e^(2iΩ) = −1, the blueprint's measure Ω reached there. It is still a read, one hemisphere from a vantage; what sets it apart from the inscribed sweep is an end that can be walked to.
   So the other's V is **knowable**: the end exists and is met. It is not known, since the far hemisphere stays turned
   away; each holds the other's front only. Neither stands at the other's centre; the sweep about the centre is the
   geometry of a bounded thing faced.
@@ -384,19 +385,19 @@ median and the absence of any mean are what a read with no breadth in it is.
   holds the front, so both hemispheres are in reach and the turn is known; the apple is a thing with a size, held, and in the hand
   the apple's V is **known**: held whole. Its amount in a unit needs a unit carried in, and its exact amount is the limit of §6.
 - *The human draws a circle on paper.* This fourth is the comparison, classical geometry's circle. The drawing is the blueprint: both hemispheres at once, with no vantage and so no facing, neither read nor write, whole
-  only at its limit (§9, "What is free, and what π costs"), made, not seen, a mark holding both halves together, V = H at one length, π held whole. It has neither sweep's
-  number. π/2 and 2/π belong to the two facings, the central reached at a point and the inscribed approached; the blueprint
+  only at its limit (§9, "What is free, and what Ω costs"), made, not seen, a mark holding both halves together, V = H at one length, Ω held whole. It has neither sweep's
+  number. Ω and 1/Ω belong to the two facings, the central reached at a point and the inscribed approached; the blueprint
   has the number 1, the thumb in thumbs. The product of the two reads' numbers is also 1; that is arithmetic, not a way of making the blueprint from reads.
 
 | | hemispheres | vantage | V | the blueprint's number for it | what it is |
 |---|---|---|---|---|---|
-| inscribed, toward the universe | one | home, facing a horizon | unknowable | 2/π, approached | a read: what turning sees |
-| central, toward the apple | one | facing across, to a rim | knowable | π/2, reached | a read: a bounded thing faced; its arc, walked and counted in thumbs, is an extent |
+| inscribed, toward the universe | one | home, facing a horizon | unknowable | 1/Ω, approached | a read: what turning sees |
+| central, toward the apple | one | facing across, to a rim | knowable | Ω, reached | a read: a bounded thing faced; its arc, walked and counted in thumbs, is an extent |
 | the apple held and turned | both, in reach | one, the turn known | known, held | the turn's Cauchy | looks joined by a known turn, of a thing held in the hand |
 | the blueprint | both at once | none | known | 1 | neither read nor write: no vantage |
 
 The human is all of these at the same time, not by turns: it reads the universe, faces the apple and is faced by it, and
-what it holds in the hand or draws it holds as a blueprint. The apple has the facings and never the blueprint. So π/2 · 2/π = 1 is
+what it holds in the hand or draws it holds as a blueprint. The apple has the facings and never the blueprint. So Ω · 1/Ω = 1 is
 not two parties meeting but one observer's two reads held at once, and the 1 is its own thumb given back.
 
 Faced, V is knowable, not known. The inscribed sweep approaches its end, the central sweep reaches it at a point, and only a
@@ -422,14 +423,14 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
   unit are descriptions. Definitions are stated on those two axes.
 - *Heat* and *paint* are pictures, for the read's density and for what it meets, and are not leaned on; *address* only as a computing metaphor or for a count of K
   places at the heat's quantiles (§5).
-- π/2 and 2/π (Ω and 1/Ω, defined before §1) are the blueprint's numbers for the two reads, each with a vantage and one hemisphere: 2/π the inscribed
-  sweep's, π/2 the central sweep's (its arc walked and counted is an extent; §9, "Reading is 2/π; walking is π/2"). π
+- Ω and 1/Ω (defined before §1; Ω = π/2) are the blueprint's numbers for the two reads, each with a vantage and one hemisphere: 1/Ω the inscribed
+  sweep's, Ω the central sweep's (its arc walked and counted is an extent; §9, "Reading is 1/Ω; walking is Ω"). Ω
   and the one-length circle are the blueprint's: both hemispheres, no vantage, nothing to do with reads and writes.
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
 
 **Continuous and discrete.** A read is continuous: a turn passes through every direction between two, and nothing in it
 is counted. A count, of strides, of units on a ruler, of digits, is discrete, with a next and, if finite, a last. A write is
-discrete too, a bounded thing; a count is a description laid over writes, and unlike them is unmoved by scaling. The blueprint's continuous things, the real line, the circle held whole, π and e, are
+discrete too, a bounded thing; a count is a description laid over writes, and unlike them is unmoved by scaling. The blueprint's continuous things, the real line, the circle held whole, Ω and e, are
 counts carried to their limit and held as finished, so there are two continuities: the read's, never counted, and the
 blueprint's, a count completed. These are the acts idealized: a sensor that samples has already counted, and no real
 instrument is a pure read; what the paper offers real instruments is the two tests, quantity by quantity (§6, "Turns,
@@ -458,7 +459,7 @@ after over the same line before, k·e^(iα); the real part of its logarithm is t
 **Each axis has a zero, and the two are not alike.** Up, the zero is home, s = 0 (the blueprint's θ = 0), where the direction lies along h.
 Across, the zero is the thumb, d = H. Both are the read's: home is where it faces, the thumb what it holds out. The
 axes differ in how they end. Up closes: within one read it runs from home to a horizon a quarter turn off, never reached,
-and it wraps (θ and θ + 2π one place) only when turns are joined. Across is open both ways: no total, no natural size,
+and it wraps (θ and θ + 4Ω one place) only when turns are joined. Across is open both ways: no total, no natural size,
 nothing on it marking a place but the thumb. That is why no read and no extent gives the overall size: there is no mark on
 the open axis to read it against, until a unit is carried in.
 
@@ -468,10 +469,10 @@ second, along different axes. On the blueprint's plane every straight line of th
 u = ln(p/H) − ln cos(θ − φ₀), half a turn wide, and a logarithmic spiral is a straight line. **Classical.**
 
 **The thumb's lay is itself a turn.** The overlay's lay of distance (§5), the share g of the heat 1/(1 + x²) lying below x = d/H (the blueprint's formula for it
-is (2/π)·arctan(d/H)), is on the plane
-½ + gd(ln(d/H))/π, gd the Gudermannian, Mercator's function. A blueprint shows why. Put the plane on a sphere
+is (1/Ω)·arctan(d/H)), is on the plane
+½ + gd(ln(d/H))/2Ω, gd the Gudermannian, Mercator's function. A blueprint shows why. Put the plane on a sphere
 stereographically, scaled so that one thumb lands on its equator: the eye is one pole and the horizon the other, the near
-field the eye's half and the far field the other; g is the angle from the eye's pole over π. Euler's plane is that
+field the eye's half and the far field the other; g is the angle from the eye's pole over 2Ω. Euler's plane is that
 sphere's Mercator chart; d ↦ H²/d is the reflection in the equator, and sech(ln(d/H)) the cosine of the latitude.
 Turning the world turns the sphere about its axis; taking the thumb k times larger slides every latitude toward the
 eye's pole, tan(χ′/2) = tan(χ/2)/k, the boost of rapidity ln k that a moving sky applies to directions (§4), here applied
@@ -480,14 +481,14 @@ suits the read's two ignorances, is the plane's area. The sphere is the blueprin
 is not the read's, which per unit of the sphere's area runs as 1/sin χ, χ the angle from the eye's pole. **Checked** (to
 thirty digits; `euler.html`).
 
-**π with the direction, e with the distance.** The read's two ignorances, after Jaynes (1968), are which way it faces
+**Ω with the direction, e with the distance.** The read's two ignorances, after Jaynes (1968), are which way it faces
 and how large things are: turns and rescalings, each a one-parameter group with an exponential map. Turns close, so
-their map has a period: 2π for an oriented turn, π for the direction of a line (the projective line the readings live
-on). Rescalings never close, so their map has no period, only a base. π is what is needed to say that the turn comes
+their map has a period: 4Ω for an oriented turn, 2Ω for the direction of a line (the projective line the readings live
+on). Rescalings never close, so their map has no period, only a base. Ω is what is needed to say that the turn comes
 back, a period forced; e is the base that lets one unit serve both axes, so that e^(iθ) is a turn of θ and e^t growth
 at a rate of one, a convention (counting in thumbs serves as well). Both numbers are the blueprint's; a read meets the
-closing and the openness and states neither. They meet at e^(iπ) = −1, where the square (h + iv)² = e^(2iθ) sends the
-far end of the sweep, the horizon a read holds as the finite pair [0 : 1]. Through that meeting Lindemann proved π
+closing and the openness and states neither. They meet at e^(2iΩ) = −1, where the square (h + iv)² = e^(2iθ) sends the
+far end of the sweep, the horizon a read holds as the finite pair [0 : 1]. Through that meeting Lindemann proved π (and so Ω)
 transcendental (1882). **Classical**; the assignment to direction and distance is a reading.
 
 **The paper in one equation.** Write the sphere's equation, three lengths about a centre: x² + y² + z² = r². Kept as
@@ -497,7 +498,7 @@ against a fixed unit. Divide it by the thumb's own share, x²:
   1 + s² + s₂² = (r/x)²,  s = y/x, s₂ = z/x.
 
 What is left is two ratios, unmoved by scaling, and nothing closes: where the sphere would have met itself, s runs to
-infinity, the horizon. The left side is the denominator of the two-dimensional Cauchy, 1/(2π(1 + s² + s₂²)^(3/2)), the
+infinity, the horizon. The left side is the denominator of the two-dimensional Cauchy, 1/(4Ω(1 + s² + s₂²)^(3/2)), the
 even turn's heat on a screen square to the look (§3): its corner s = 1, its horizon s = ∞, a median and no mean. The
 sphere has a shape, a size and a boundary that closes; dividing by the thumb takes the size away and opens the surface
 along the rim, 90° off the look, and what is left is heat thinning outward with a tail that never completes. In the plane
@@ -558,13 +559,13 @@ the turn from it; walking round a shape, it gets extents, and with a unit it wri
 **The uniform turn.** A turn measured by itself is uniform: equal turns, equal shares. In the reading s = v/h the
 uniform turn over a quarter turn has the law
 
-  (2/π) · 1/(1 + s²),  s ≥ 0,
+  (1/Ω) · 1/(1 + s²),  s ≥ 0,
 
 the half-Cauchy. Its median is s = 1, the *corner*, where v = h; its quartiles √2 − 1 and √2 + 1; its far end, s = ∞,
 the direction [0 : 1], the *horizon*, reached by no finite reading. It has no mean: averages of readings climb without
-settling, by (2/π)·ln 10 for every tenfold further the readings run. Given the uniform turn this holds whatever is looked
+settling, by (1/Ω)·ln 10 for every tenfold further the readings run. Given the uniform turn this holds whatever is looked
 at, a straight wall, a row of trees, a curved hill, an empty sky; the wall's shape only decides where each direction
-meets it. The constant 2/π and the quartiles' values are the blueprint's arithmetic; a read has the order of its
+meets it. The constant 1/Ω and the quartiles' values are the blueprint's arithmetic; a read has the order of its
 readings, the corner and the directions. **Classical.**
 
 **Why there is no mean.** A mean is a sum of amounts over their count. The Cauchy weighs directions, and a direction has
@@ -574,8 +575,8 @@ far end. Other charts of the same directions have means (the bounded chart s/(1 
 statistics do not depend on the chart: the median and quartiles commute with every increasing map of the reading, a mean
 does not. So the median is the directions' and the mean the chart's. A mean of directions is well defined once an embedding is
 chosen, and choosing one is the blueprint's step: unit vectors
-over the uniform quarter turn average (2/π)(1, 1), pointing at the corner, of length 2√2/π ≈ 0.900. And a world capped at
-a bound M has a Cauchy with a mean, (1/π)·ln(1 + M²) over the share below M, about 8.8 at M = 10⁶: set by the bound, an
+over the uniform quarter turn average (1/Ω)(1, 1), pointing at the corner, of length √2/Ω ≈ 0.900. And a world capped at
+a bound M has a Cauchy with a mean, (1/2Ω)·ln(1 + M²) over the share below M, about 8.8 at M = 10⁶: set by the bound, an
 amount written in. The payload, where it is an amount, averages (§4). Practice already takes the median of a Cauchy and
 never its mean; this is the reason. **Classical**; the reason is a reading.
 
@@ -583,7 +584,7 @@ never its mean; this is the reason. **Classical**; the reason is a reading.
 Derived from what is held, it comes in three forms.
 
 - *One length turned.* The tip of H turned uniformly is at (H cos θ, H sin θ); the reading v/h = tan θ has no H in it.
-  The share passed before the reading reaches s is, in the blueprint's account, (2/π)·arctan s: the standard half-Cauchy,
+  The share passed before the reading reaches s is, in the blueprint's account, (1/Ω)·arctan s: the standard half-Cauchy,
   scale 1, median at the corner. The scale is 1 because a reading is a ratio, and a ratio carries no scale.
 - *Two axes drawn.* Draw the second axis at a length V of its own: the point (H cos θ, V sin θ), the reading
   (V/H)·tan θ, a Cauchy of scale c = V/H, its median at c. Scaling leaves c unchanged, so c is an extent, not a write; but
@@ -613,15 +614,15 @@ the sorting is a reading.
   1 + s² = (r/x)² = sec²θ,  s = y/x.
 
 The density is the share squared, 1/(1 + s²) = (x/r)² = h², and ds = sec²θ·dθ, so dθ = ds/(1 + s²): the uniform turn,
-read as s, is (2/π)·1/(1 + s²). The Cauchy is the circle's equation used to carry an even turn into readings. (The
+read as s, is (1/Ω)·1/(1 + s²). The Cauchy is the circle's equation used to carry an even turn into readings. (The
 division is the blueprint's account, not something the read does.)
 
 | | the blueprint's circle (with V) | the read's Cauchy (without V) |
 |---|---|---|
 | a point, a reading | (H cos θ, V sin θ), amounts | s = tan θ, a ratio |
 | the equation | (x/H)² + (y/V)² = 1 | 1 + s² = sec²θ |
-| the law | none needed: every point stated | (2/π)/(1 + s²) = (2/π)·h² |
-| what it states | the area πHV, the circumference, points | the median 1, quartiles √2 ∓ 1, the horizon, no mean |
+| the law | none needed: every point stated | (1/Ω)/(1 + s²) = (1/Ω)·h² |
+| what it states | the area 2ΩHV, the circumference, points | the median 1, quartiles √2 ∓ 1, the horizon, no mean |
 | if V ≠ H | an ellipse | a Cauchy of scale V/H |
 | the world scaled, against a fixed unit | everything moves | nothing moves |
 
@@ -634,16 +635,16 @@ line, a ratio of two normal amounts, a stable sum, may have another origin; whet
 to ask of each case (§11). **Classical**; the reading is ours.
 
 **The Cauchy's routes.** Every Cauchy is one measure: the Poisson kernel of the upper half-plane seen from a point
-z = m + iγ, p(x) = (1/π)·Im 1/(x − z), the harmonic measure of a line seen from a point off it. The circle and the point
+z = m + iγ, p(x) = (1/2Ω)·Im 1/(x − z), the harmonic measure of a line seen from a point off it. The circle and the point
 off the line are one construction in two coordinates: centre the line at the foot and scale it by the height,
 u = (x − m)/γ; the Cayley map w = (1 + iu)/(1 − iu) = e^(2iθ), θ = arctan u, takes the line to the circle, and the
-circle's even angle, returned to the line, is dθ/dx = γ/((x − m)² + γ²); divided by π, that is p. Many mechanisms put a
+circle's even angle, returned to the line, is dθ/dx = γ/((x − m)² + γ²); divided by 2Ω, that is p. Many mechanisms put a
 point at z and reach the line from it:
 - **a uniform turn read on the line**: the lighthouse, the ratio of any rotation-invariant pair, a circle seen from a
   point of it;
 - **a random walk** leaving the half-plane from z (Kakutani 1944), and its twin, a normal mixed over the walk's hitting
   time;
-- **a pole** a height γ off the line, p(x) = (γ/π)·|1/(x − z)|², whose Fourier pair is e^(imt − γ|t|) (§9);
+- **a pole** a height γ off the line, p(x) = (γ/2Ω)·|1/(x − z)|², whose Fourier pair is e^(imt − γ|t|) (§9);
 - **a sum** of Cauchys, whose points add;
 - **a real Möbius map**, carrying one point to another.
 
@@ -669,7 +670,7 @@ The measure is uniform by solid angle, every direction of the hemisphere alike, 
 that measure read in a coordinate. In the plane, with one thumb, the heat per unit of reading s is 1/(1 + s²) = h², the
 half-Cauchy (in the blueprint's angle, dθ = ds/(1 + s²) = cos²θ·ds). In space, a small patch dA of a screen one thumb out,
 square to the look, r thumbs off it, subtends dA/(1 + r²)^(3/2) of the directions (the blueprint's cos³α·dA, r = tan α: one
-cosine for the patch's tilt, two for its distance squared), so the heat per unit of screen is 1/(2π(1 + r²)^(3/2)), the
+cosine for the patch's tilt, two for its distance squared), so the heat per unit of screen is 1/(4Ω(1 + r²)^(3/2)), the
 two-dimensional Cauchy:
 0.35 of the peak at 45°, 0.125 at 60°, none at the rim. With n thumbs square to the look it falls as cos^(n+1). Half the
 peak heat is at 37.5° off the look, with a fifth of the directions inside (the share within α is 1 − cos α); half the
@@ -684,9 +685,9 @@ distance d away, the blueprint's grid, are flat in the reading and crowd toward 
 the plane and sec³α in space. The Cauchy is the other way round: the turn, even in angle, laid on that flat grid. It is
 the turn per unit of the blueprint's grid, the *per* of §9, the rate at which a turn consumes the world. In measure theory it
 is a Radon–Nikodym derivative: the turn's even measure carried onto the wall by the projection from home, against the
-wall's own measure, dν/dλ = (1/π)·d/(d² + y²) for a wall d away, the half-plane's Poisson kernel. On a flat wall the two
-agree in every dimension: the half-space's kernel, Γ(n/2)/π^(n/2)·d/|x|^n, is the even hemisphere carried onto the wall,
-(2/|S^(n−1)|)·d/|x|^n, the same constant; in space (1/2π)·d/(d² + r²)^(3/2), the cos³α above. Stepping back composes the
+wall's own measure, dν/dλ = (1/2Ω)·d/(d² + y²) for a wall d away, the half-plane's Poisson kernel. On a flat wall the two
+agree in every dimension: the half-space's kernel, Γ(n/2)/(2Ω)^(n/2)·d/|x|^n, is the even hemisphere carried onto the wall,
+(2/|S^(n−1)|)·d/|x|^n, the same constant; in space (1/4Ω)·d/(d² + r²)^(3/2), the cos³α above. Stepping back composes the
 kernels, e^(−d|k|), the Poisson semigroup in the standpoint's height. This is Laplace's equation, a steady state; it is
 not the heat equation, whose kernel is the Gaussian, e^(−tk²). The Gaussian too keeps every frequency, damping the fine
 ones by k² where the Cauchy damps by |k|; the kernel that loses frequencies outright is the floor's box blur, whose
@@ -739,7 +740,7 @@ stable.
   scale, while the Faraday rotation that turns it, RM·λ², carries the rotation measure in radians per square metre, a
   write (Burn 1966).
 - *By dividing the heat out.* What is counted along the directions is the heat times the payload's weight,
-  ρ(θ)·2/(π(1 + s²)). The heat is known before anything arrives, so dividing by it leaves the payload's distribution
+  ρ(θ)·1/(Ω(1 + s²)). The heat is known before anything arrives, so dividing by it leaves the payload's distribution
   exactly, up to its total: the astronomer's flat field, importance sampling's 1/p. The median direction of what arrives
   is the payload's median, at the corner only when the payload weighs alike on both sides.
 - *By undoing the blur.* Seen from a height γ, the payload arrives smoothed by the Cauchy kernel, whose transform
@@ -774,8 +775,8 @@ read is the turn, finest where it looks. Bearings are reads; areas in a unit are
 in two ways, and special relativity writes them as two formulas. Where the star is seen moves: aberration,
 cos θ′ = (cos θ + β)/(1 + β cos θ), the same at every frequency. On the stereographic chart of the sky it is z ↦ z/k,
 k = e^η, η the rapidity, a Möbius map of the directions, carrying the Cauchy's family onto itself; a sky uniform in the
-stars' frame is seen as the spherical Cauchy, density D²/4π. (The sky's own uniform heat on the stereographic chart is
-(1/π)·dA/(1 + |z|²)², not the plane's two-dimensional Cauchy, which is half the sky on a flat screen. No law on the sky
+stars' frame is seen as the spherical Cauchy, density D²/8Ω. (The sky's own uniform heat on the stereographic chart is
+(1/2Ω)·dA/(1 + |z|²)², not the plane's two-dimensional Cauchy, which is half the sky on a flat screen. No law on the sky
 is unchanged by boosts; the uniform one is unchanged by turns, and boosts carry it within its family.) What arrives
 changes: the Doppler factor D = √(1 − β²)/(1 − β cos θ′) scales each photon's energy and rate, a weighting of the
 payload that moves no direction. For a sky uniform in its frame, counting total power, the D⁴ brightening ahead is D² of
@@ -814,11 +815,11 @@ blueprint's number for what the read holds as a ratio. There is one corner, the 
 stretch; past it the stretches are plain. Move the crosshairs and the split goes with them.
 
 **The overlay's heat in distance.** Along every direction the share of distance below x = d/H is the heat 1/(1 + x²) totalled from home to x, over its
-whole total: a half at x = 1, whatever the thumb (the blueprint's formula for the share is (2/π)·arctan x). Per
-unit of plain distance it is greatest at the eye, 2/(π(1 + x²)); per unit of ln(d/H), by ratio, it is
-(2/π)·x/(1 + x²) = (1/π)·sech(ln(d/H)), hottest at one thumb and cooling alike both ways: 0.8 of the peak at one in 2 and
+whole total: a half at x = 1, whatever the thumb (the blueprint's formula for the share is (1/Ω)·arctan x). Per
+unit of plain distance it is greatest at the eye, 1/(Ω(1 + x²)); per unit of ln(d/H), by ratio, it is
+(1/Ω)·x/(1 + x²) = (1/2Ω)·sech(ln(d/H)), hottest at one thumb and cooling alike both ways: 0.8 of the peak at one in 2 and
 at two thumbs, 0.47 at one in 4 and four, 0.25 at one in 8 and eight, never zero. Counted as K places, they sit
-them at d/H = tan(kπ/2K), the first K/2 inside one thumb. Past it the share left beyond x thumbs is, by the exchange, the share below 1/x (the blueprint's (2/π)·arctan(1/x)),
+them at d/H = tan(kΩK), the first K/2 inside one thumb. Past it the share left beyond x thumbs is, by the exchange, the share below 1/x (the blueprint's (1/Ω)·arctan(1/x)),
 0.295 past two thumbs, 0.156 past four, 0.079 past eight: a heavy tail, so no mean of distances. The split is a mark at
 one thumb on every direction, each one's median, not a body. Take the overlay away and the Cauchy is unchanged.
 **Classical.**
@@ -851,8 +852,8 @@ at 30°, 7.6% at 45°. Laid that way the rings of the distance overlay come wher
 at 0.765, then one in two, one in four, one in eight at 1.05, 1.23 and 1.32, packing toward the rim at √2, because each
 stretch holds fewer of the look's directions than the one before (0.26, 0.20, 0.12 of what is in front, and 0.12 past one
 in eight). The ground has its own reading: a point ρ along it, with the thumb's ground point D away, reads
-the share below D/ρ (the blueprint's (2/π)·arctan(D/ρ)), one at the feet, a half at the thumb, zero at the horizon, so the far ground gathers in rows just under
-the horizon. A world made only where the view reaches, from cells at every scale kept only where a thing spans π/(8K) or
+the share below D/ρ (the blueprint's (1/Ω)·arctan(D/ρ)), one at the feet, a half at the thumb, zero at the horizon, so the far ground gathers in rows just under
+the horizon. A world made only where the view reaches, from cells at every scale kept only where a thing spans Ω/(4K) or
 more, gives the same read. **Checked** (`crosshairs.html`).
 
 **H is a zoom; K comes first.** The read's fineness is finite, its resolution K, which comes before H. H, the thumb it
@@ -922,7 +923,7 @@ points: D = B/conj(w_a + w_b), at every γ, not only for small errors; rays that
 negative depths. At the pair's corner, the circle on the step, the depth's point stays at the true distance d, turned by
 twice the read's error: D = d·(1 + iγ)/(1 − iγ) (the blueprint's d·e^(2i·atan γ)). Two things leave the family. The extent across the line of sight,
 −1 + 2·cot a/(cot a + cot b) in half-steps, has a density over each standpoint that is infinite, where a Cauchy's never
-is. And when each standpoint reads only a quarter turn, the sum of two half-Cauchys has density (4/π²)·s near zero, so
+is. And when each standpoint reads only a quarter turn, the sum of two half-Cauchys has density (1/Ω²)·s near zero, so
 the depth's tail falls as 1/d³, not 1/d², and that depth has a mean. Repeating the reads, the mean of the reciprocal
 depths gains nothing, while their median narrows. The step is the one length in it, and in thumbs or strides the depth
 is an extent. **Checked** (PXS).
@@ -964,7 +965,7 @@ the metre carried in.
 
 **The mountain's own corner.** The walk has a second corner, with no thumb in it. Stand on the mountain's centreline and
 read each edge against the line to its middle: half the breadth over the distance, s = (V\*/2)/d. Squared and divided by
-its own length it is Z = (1 + is)/(1 − is), rational in the read: no angle, no π and no e are needed to have it. Far off
+its own length it is Z = (1 + is)/(1 − is), rational in the read: no angle, no Ω and no e are needed to have it. Far off
 s ≈ 0 and Z ≈ 1: that end of the walk is home. Where the half-breadth equals the distance, s = 1 and Z = i: the edges a
 quarter turn apart, the mountain's own corner. At the foot s grows without end and Z goes to −1: the horizon. So walking to
 a mountain is walking from home toward the horizon, and the two corners are far apart: the thumb's at d_c = V\*·L/H
@@ -975,16 +976,16 @@ most about the mountain's corner and alike either side: from eight half-breadths
 90°, 127°, 152°, 166°, the gains 14°, 25°, 37°, 37°, 25°, 14°. Per unit of x = ln(V\*/2d) the turn taken in is sech x, the
 distance heat of §5 with the half-breadth as the thumb. Counted in distance walked, ℓ, with dℓ = −dd, it is
 dα/dℓ = V\*/((V\*/2)² + d²), the Cauchy in distance, least far off and most at the foot. One turn, two measures: from the
-corner to the foot either gathers π/2, from home to the foot π. Neither is the breadth. Strides from the mountain's corner
+corner to the foot either gathers Ω, from home to the foot 2Ω. Neither is the breadth. Strides from the mountain's corner
 to the foot are V\*/2 in the walker's stride, since the read there is 1. They agree only at a corner, where a read is 1 and
 a length walked and a ratio held say the same. Joined, the reads telescope: the product of Z_(j+1)/Z_j along the walk is
 Z_N/Z_0, the first and last reads alone; every finite walk ends at its last read, and only the blueprint's limiting completion
-tends to −1. The blueprint names each point Z = e^(iα), α the span, and the end e^(iπ) = −1 (§9): the formula describes the
+tends to −1. The blueprint names each point Z = e^(iα), α the span, and the end e^(2iΩ) = −1 (§9): the formula describes the
 end and drives nothing. **Checked** (the breath note's §5, at 30 digits; `approach.html`).
 
 **Two ways to arrive.** The thumb's corner has the same form. With s the mountain against the thumb, s = d_c/d,
 Z = (1 + is)/(1 − is) is near 1 far off, i where the mountain covers the thumb, and −1 at the foot; a place and its mirror
-d_c²/d have Z·Z′ = −1, §9's exchange. So the blueprint's e^(iπ) = −1 names the arrival, and i·i = −1 says the corner taken
+d_c²/d have Z·Z′ = −1, §9's exchange. So the blueprint's e^(2iΩ) = −1 names the arrival, and i·i = −1 says the corner taken
 twice is the arrival. Three motions act on these reads, and they are the three kinds of map a line of slopes has (the
 classical elliptic, hyperbolic and parabolic maps of the projective line). A turn of the look leaves no read where it
 was. A pace that covers a fixed share of the distance left multiplies 1/s by the same factor each step; it leaves two
@@ -1009,7 +1010,7 @@ shrink. The strides left come exact from two reads at any stride size, and the a
 start at x₀ = d/d_c to the foot the half-arc's slope is exactly x₀, so from the corner to the foot it is exactly 1, a
 quarter of the blueprint's circle, in seven strides or a thousand. The half circle, from 1 to −1, belongs only to a walk
 begun without end; from x₀ corners out it falls short by about 2/x₀ in the blueprint's measure. So the infinite in
-e^(iπ) = −1 is the far start, the horizon behind the walker, not a small stride. The stride must shrink in one place only:
+e^(2iΩ) = −1 is the far start, the horizon behind the walker, not a small stride. The stride must shrink in one place only:
 where slopes are added as though they were angles, the sum runs over by about the stride squared, and the blueprint's angle
 is that sum's limit. Joining is the geometry's, exact at any stride; adding is the blueprint's. Each stride's Z_(j+1)/Z_j
 lies on the circle exactly, where the factors of (1 + iθ/n)ⁿ (§9) do not: the walk is not that product, though both end
@@ -1024,7 +1025,7 @@ the corner; what the walk adds to that identity is that 1/s is something counted
 Two reads and a count of one already give the product, by the formulas above. The fixed share never does: it holds a
 ratio of reads and counts nothing, so it has s at every moment and no n, and its sum of steps falls short of the whole
 by (1 − r)^m after m steps, at every m. The 1 is closed by a count and only approached by a ratio. How this 1 stands to
-§9's 2/π × π/2 is said there. **Checked** (ONE, exact).
+§9's 1/Ω × Ω is said there. **Checked** (ONE, exact).
 
 **Extents come by degrees.** The crossing from reads to extents, and from extents to writes, is not a switch thrown.
 - *In what.* Two standpoints a step apart give every extent in that step. If the step was one thumb, extents are in thumbs
@@ -1039,7 +1040,7 @@ by (1 − r)^m after m steps, at every m. The 1 is closed by a count and only ap
   a thing at its distance, not to the observer.
 
 More standpoints and longer baselines narrow the band; nothing closes it. The blueprint with every amount exact is the
-limit of the passage, not a stage of it, as π is the limit of its approximants: V faced is knowable, and known as an exact amount
+limit of the passage, not a stage of it, as Ω is the limit of its approximants: V faced is knowable, and known as an exact amount
 only at the limit (§1, "Four things"). **Classical.**
 
 **The thing itself as H.** The thumb can be set to the very thing whose size is wanted. *As the unit*: the thing is drawn
@@ -1078,7 +1079,7 @@ there, a count.
   a Bézier path's length to between a half and three quarters of it. Across the library the even samples' length followed
   how fast the outline turns (Spearman ρ 0.85) more than how many corners it has (0.55); the Bézier path's followed its
   corners (0.59) and not its turning at all (0.00). **Checked** (TXT, with the predictions that failed recorded).
-- *π and e are where a count tries to hold a turn* (§9).
+- *Ω and e are where a count tries to hold a turn* (§9).
 
 ## 7. The zero: writes
 
@@ -1124,7 +1125,7 @@ Completeness is never a read. What recovers the thing is not reading harder but 
 (azimuth), the horizon coordinates of astronomy. Its directions fill one octant, the *wedge*: [h : v : v₂], two numbers
 a direction. The uniform measure over the octant's area is uniform in azimuth and in height (Archimedes' hat-box;
 Lambert's equal-area map), and its law in the readings (v/h, v₂/h), the two tangent readings on a screen square to h, is
-the two-dimensional Cauchy, 2/(π(1 + a² + b²)^(3/2)). Every pair of parties is at its own corner, half its readings on
+the two-dimensional Cauchy, 1/(Ω(1 + a² + b²)^(3/2)). Every pair of parties is at its own corner, half its readings on
 each side; the near field in both readings is a third. The triple corner, h = v = v₂, sits at azimuth 45° and altitude
 35.26°, not at either sweep's 45°. **Classical.**
 
@@ -1159,7 +1160,7 @@ looks, because it is wherever it looks.
 
 **The read's heat covers the hemisphere.** One read's heat covers the hemisphere in front, nothing smaller. Projected
 from the eye onto a screen square to the look, directions spread evenly over the hemisphere land as the two-dimensional
-Cauchy, 1/(2π(1 + r²)^(3/2)) per unit of screen at r thumbs off the look: the look its peak, rings of equal area its rings
+Cauchy, 1/(4Ω(1 + r²)^(3/2)) per unit of screen at r thumbs off the look: the look its peak, rings of equal area its rings
 of equal share, and the rim, 90° off, its long tail, never landing. Each pair of thumbs' quarter turn, from its home to its
 horizon, is a part of it, the wedge's triangle, 35.26° off at a home and 54.74° at a thumb. The sphere, behind as well as
 in front, is the head turned all the way round, other facings joined, the blueprint's.
@@ -1172,7 +1173,7 @@ The sphere's even measure lands on the screen as the two-dimensional Cauchy, eac
 with V known is the wedge with its cap, an octant of the ball; with V unknown the cap goes and what is left is the cone,
 three flat faces meeting at the eye, open. A cone is the one kind of shape that scaling about its apex carries onto
 itself, which is why the read is unmoved by scaling; the cap was where the scale lived. Cut by a screen one thumb out, the
-cone shows the quadrant with 2/(π(1 + s² + s₂²)^(3/2)) square to h, or the triangle with the corner at its middle down
+cone shows the quadrant with 1/(Ω(1 + s² + s₂²)^(3/2)) square to h, or the triangle with the corner at its middle down
 the diagonal; cut elsewhere, the same law at another size, which is why H only zooms. In the plane: a quarter disc with
 its arc when V is known, a right angle with no arc when it is not.
 
@@ -1188,14 +1189,14 @@ The cone is the blueprint's name for what one read holds; a read has only a vant
 field as a ball of radius H about the standpoint, every facing joined. A read has the same choice as a mark on every
 direction it reads, nearer than one thumb or past it: no surface, no facings joined. Inversion in the sphere at H carries
 the far field point for point onto the near field, infinity to the eye, which is why each holds half of every direction's
-distance heat. Its filling is the read's heat: along each ray the half-Cauchy in distance, 2H/(π(H² + d²)); across
+distance heat. Its filling is the read's heat: along each ray the half-Cauchy in distance, H/(Ω(H² + d²)); across
 directions cos³α off the look.
 
 **A cube of dots, read from one of them.** Lay a box of dots one unit apart, the blueprint's, 12 a side, stand at one dot and
 look at another, and colour every dot by the read's heat, cos³α × sech(ln(d/H)), the thumb set on the dot looked at
 (`heat-cube.html`). The cube never changes, only its colours, and only when the look does. Choosing what to look at is
 choosing the thumb. The two fields are equal in room, not in count: from a corner of the box looking at its middle, 436
-dots are nearer than one thumb and 1,291 farther, but laid as the read lays distance (the share passed, the blueprint's (2/π)·arctan(d/H)),
+dots are nearer than one thumb and 1,291 farther, but laid as the read lays distance (the share passed, the blueprint's (1/Ω)·arctan(d/H)),
 each field has half the room. The hot core is small: inside 37.5° lies about a fifth of the directions in front. The box has a last dot,
 so along the look the dots stop short of the horizon: the box closes, the heat runs on.
 
@@ -1214,7 +1215,7 @@ Y, Z, three number lines, every point three amounts. It reaches the read's direc
 X = H·cos a·cos ψ, and so on. Every direction about a point at radius H is a sphere, drawn whole. Placed together,
 the corner of the read's wedge points at the vertex of the blueprint's cube. With the cube outside the sphere, touching it
 at the ends of the axes, the picture is the inscribed sweep's; with the cube inside, its far corner on the sphere, the
-central sweep's (Thales' circle through home, the ends and the far corner). The hemisphere's 2 and ½, like π/2 and 2/π,
+central sweep's (Thales' circle through home, the ends and the far corner). The hemisphere's 2 and ½, like Ω and 1/Ω,
 are the blueprint's measure.
 
 **What survives in space, and what does not.** In the plane one law plays four parts: the image of the uniform turn under
@@ -1264,12 +1265,12 @@ no payload in it.
 
 **The blueprint's measures of the sweep.** The angle is arc per radius, measured against the completed turn: the blueprint's
 rate is 1. A hand swept from horizontal to vertical can pivot two ways. From the centre of the circle on the chord (the
-*central* sweep), it turns twice as far as its direction does, arc over chord θ/sin θ running from 1 to π/2 at the far
-end. From home on the circle (the *inscribed* sweep), chord over arc sin θ/θ runs from 1 to 2/π, approached at the
+*central* sweep), it turns twice as far as its direction does, arc over chord θ/sin θ running from 1 to Ω at the far
+end. From home on the circle (the *inscribed* sweep), chord over arc sin θ/θ runs from 1 to 1/Ω, approached at the
 horizon. Their product is 1 at every θ. These are the only two standpoints from which equal turns cut equal arcs (Euclid
-III.20). So the sweep is measured at π/2 or 2/π, never at 1; 1 is had only by joining both. π/2 and 2/π are the
+III.20). So the sweep is measured at Ω or 1/Ω, never at 1; 1 is had only by joining both. Ω and 1/Ω are the
 blueprint's measure of the read's sweeps, not numbers a read holds. At the corner three things coincide: v fills as
-fast as h empties; v/h = 1; and 1 is the geometric mean of π/2 and 2/π, the fixed point of the reciprocal that exchanges
+fast as h empties; v/h = 1; and 1 is the geometric mean of Ω and 1/Ω, the fixed point of the reciprocal that exchanges
 the sweeps. The running rates there are 1.1107 and 0.9003, not 1. **Classical**; the assignment is a reading.
 
 **Tangent addition is the read's; tan and arctan the blueprint's.** Evaluating tan or arctan converts between a direction
@@ -1299,13 +1300,13 @@ algebraic number (the cube root of 2 is beyond them; Wantzel 1837). **Classical.
 
 **A limit makes the transcendental numbers.** The algebraic numbers are closed under every finite operation, so a number
 that is not algebraic is reached as a value only through a limit, by one for whom that infinity is finished; as a
-definition it can be finite and exact, and it may have a short name (tan 1, or π = 4·arctan 1). A read meets the
+definition it can be finite and exact, and it may have a short name (tan 1, or Ω = 2·arctan 1). A read meets the
 direction tan 1 whole; only stating it as a number needs the limit.
-- *π completes the turn.* A read meets the corner as s = 1, exactly. Its angle is π/4 = 1 − 1/3 + 1/5 − … (Madhava,
+- *Ω completes the sweep.* A read meets the corner as s = 1, exactly. Its angle is Ω/2 = 1 − 1/3 + 1/5 − … (Madhava,
   Gregory, Leibniz), every partial sum a fraction. Machin's identity shows the split with no rounding: the direction 1/5
   composed with itself four times by tangent addition is 120/119, and 120/119 taken back by 1/239 by tangent subtraction
-  ((a − b)/(1 + ab)) is exactly 1, the corner: finite, rational and the read's. π comes next, from the arctangent's
-  series. Viète's product shows it from the other side: 2/π a product of nested square roots, the whole only in the limit.
+  ((a − b)/(1 + ab)) is exactly 1, the corner: finite, rational and the read's. Ω comes next, from the arctangent's
+  series. Viète's product shows it from the other side: 1/Ω a product of nested square roots, the whole only in the limit.
 - *e completes the scale.* A read reads a far thing as a ratio, one in eight; counted in thumbs, 8 thumbs out, past
   two, four and eight, it is an extent. That count as a continuous quantity is the logarithm, and to give it a value is to
   choose a unit and finish a series: one stretch where the reading halves is ln 2 = 1 − 1/2 + 1/3 − … nats. e itself is
@@ -1316,115 +1317,115 @@ each [1 : θ/n], and compose them by tangent addition: in complex numbers, (1 + 
 whenever θ/n is. As n grows it becomes e^(iθ), by the same limit that takes (1 + 1/n)ⁿ to e: one compounds along the
 thumb, the other square to it, both missing their limit by the leading term −w²/(2n), w = 1 or iθ. At every finite n the
 count falls short of the angle, exactly by θ − n·arctan(θ/n), θ³/(3n²) to leading order, and stretches the length by
-(1 + θ²/n²)^(n/2), θ²/(2n) to leading order, which no reading sees. A thousand reads of π/1000 land at −1.005, on their way
-to e^(iπ) = −1. In space, alternating small steps about two thumbs leaves a turn of order 1/n,
+(1 + θ²/n²)^(n/2), θ²/(2n) to leading order, which no reading sees. A thousand reads of 2Ω/1000 land at −1.005, on their way
+to e^(2iΩ) = −1. In space, alternating small steps about two thumbs leaves a turn of order 1/n,
 (θ₁θ₂/2)·sin(φ/2)/(φ/2) for a whole turn φ; in the plane none. **Classical** (Euler 1748; Trotter 1959); **checked**
 (ELM); the reading (each finite count a read, the limit the blueprint's) is ours.
 
 **Read, write, read, write.** The product is also the two acts in turn. Each factor 1 + iθ/n is one read, a slope and
 nothing else. To multiply the next factor on, the look so far has to be there to start from, kept in something, and what
-is kept is a write (§1, D7); the next read is taken from it. So (1 + iπ/n)ⁿ is read, keep, read, keep, n times: what is
+is kept is a write (§1, D7); the next read is taken from it. So (1 + 2iΩ/n)ⁿ is read, keep, read, keep, n times: what is
 read is then written, and what is written is then read (§7, "Write once, then read again"). The n is a count laid
-over the kept looks, not a write itself. Euler's identity is that alternation carried to its limit: π the turn
+over the kept looks, not a write itself. Euler's identity is that alternation carried to its limit: Ω the turn
 completed, e the scale completed, i the corner, where a step along the thumb becomes a step square to it, and −1 the
-opposite facing; twice over, e^(2iπ) = 1, the cycle is home. No cycle anyone makes is the identity. At every finite n
+opposite facing; twice over, e^(4iΩ) = 1, the cycle is home. No cycle anyone makes is the identity. At every finite n
 the product is near −1 and off it, as above; the identity is what the cycle is a cycle toward, and it is the blueprint's.
 The form with no limit in it is two corner steps, i × i = −1 (below). **A reading** of the classical product (ELM).
 
 **The Cauchy's constant, from the same turn.** The quotient that took the length away, w = (1 + is)/(1 − is), does more,
 in three exact steps. For every real s, |w| = 1: w = (1 − s² + 2is)/(1 + s²), both parts rational for rational s. With
 s = tan θ, w = e^(2iθ). Following the logarithm continuously as s runs on from 0, (1/2i)·d(ln w)/ds = 1/(1 + s²): the
-kernel is the rate at which the arc turns per unit of reading. From home to the horizon ln w gathers iπ, so
-∫₀^∞ ds/(1 + s²) = π/2, and the half-Cauchy's 2/π is one over that gathered arc; over the whole line w goes once round
-and the total is π, the standard Cauchy's 1/π. The constant comes from the identity, the logarithm and the change of
+kernel is the rate at which the arc turns per unit of reading. From home to the horizon ln w gathers 2iΩ, so
+∫₀^∞ ds/(1 + s²) = Ω, and the half-Cauchy's 1/Ω is one over that gathered arc; over the whole line w goes once round
+and the total is 2Ω, the standard Cauchy's 1/2Ω. The constant comes from the identity, the logarithm and the change of
 variable together, and enters in no single read, only in the completed total. Composing reads multiplies their w's,
 (1 + ia)(1 + ib) = (1 − ab) + i(a + b), tangent addition, closed among complex numbers with rational parts. **Classical**
 (Cayley 1846; the residue theorem); where the constant enters is the reading.
 
 **One pole, the constant and the phasor.** Put the standpoint anywhere, z = m + iγ, γ > 0; its kernel
-(1/π)·γ/((s − m)² + γ²) has one pole above the line, at z. Weight it by e^(its), t ≥ 0, close the line through the upper
+(1/2Ω)·γ/((s − m)² + γ²) has one pole above the line, at z. Weight it by e^(its), t ≥ 0, close the line through the upper
 half-plane, and the residue at z is all that is left: e^(izt) = e^(imt − γt). For t < 0 the line closes below, round the
-mirror pole at z̄, and together e^(imt − γ|t|). At t = 0 the phasor is 1, the normalized total (π for the unnormalized
+mirror pole at z̄, and together e^(imt − γ|t|). At t = 0 the phasor is 1, the normalized total (2Ω for the unnormalized
 kernel). This unity is the Cauchy's alone among familiar kernels: a double pole (Student's t with three degrees of
 freedom) gives (1 + t)·e^(−t), not a phasor; two simple poles beat; the hyperbolic secant's endless poles give a series
 that does not total term by term; the Gaussian and Laplace kernels have no point off the line at all. Here t is the
 transform's variable, dual to position on the line, not time. **Checked** (OPL, to 25 digits at z = 0.7 + 0.4i,
 t = 1.3); classical by uniqueness of the transform; that the one pole is the standpoint is our reading.
 
-**Four identities, one exchange.** Four equations state the completed joins: h² + v² = 1, e^(iπ) = −1, π/2 · 2/π = 1
-and (2/π)·∫₀^∞ ds/(1 + s²) = 1. Each is the blueprint's completion of something a read holds without π, rational in the
+**Four identities, one exchange.** Four equations state the completed joins: h² + v² = 1, e^(2iΩ) = −1, Ω · 1/Ω = 1
+and (1/Ω)·∫₀^∞ ds/(1 + s²) = 1. Each is the blueprint's completion of something a read holds without Ω, rational in the
 slope, and each of those is a fact about the exchange s ↔ 1/s, whose fixed point is the corner.
 
 | | the blueprint's form | the read's form, rational in s | what it says of the exchange |
 |---|---|---|---|
 | the circle | h² + v² = 1 | 1/(1 + s²) + s²/(1 + s²) = 1 | the heat in the v/h chart and the heat in the h/v chart share one whole |
-| the half turn | e^(iπ) = −1 | w(s)·w(1/s) = −1, w = (1 + is)/(1 − is) | a direction and its reciprocal compose to the half turn |
-| the two facings | π/2 · 2/π = 1 | s · (1/s) = 1 | the exchange undoes itself; the corner is its fixed point |
-| the total | (2/π)·∫₀^∞ ds/(1 + s²) = 1 | ∫₀¹ ds/(1 + s²) = ∫₁^∞ ds/(1 + s²) | the corner splits the heat in equal halves |
+| the half turn | e^(2iΩ) = −1 | w(s)·w(1/s) = −1, w = (1 + is)/(1 − is) | a direction and its reciprocal compose to the half turn |
+| the two facings | Ω · 1/Ω = 1 | s · (1/s) = 1 | the exchange undoes itself; the corner is its fixed point |
+| the total | (1/Ω)·∫₀^∞ ds/(1 + s²) = 1 | ∫₀¹ ds/(1 + s²) = ∫₁^∞ ds/(1 + s²) | the corner splits the heat in equal halves |
 
 *The circle.* The heat per unit of s is h² = 1/(1 + s²); in the turned-over chart t = 1/s it is 1/(1 + t²) = s²/(1 + s²)
 = v². So Pythagoras, in squares, is the two charts' heats adding to one at every direction, with no root in it; the root
 enters only for h itself. *The half turn.* w(1/s) = (s + i)/(s − i) = −1/w(s), so the product is −1 at every s; at the
 corner it is i·i = −1, the corner composed with itself the horizon. *The total.* Putting s = 1/t carries the heat below
-the corner onto the heat above it: a read has "half and half" without "π/4 and π/4". *The two facings* is the plain
+the corner onto the heat above it: a read has "half and half" without "Ω/2 and Ω/2". *The two facings* is the plain
 one, as its blueprint's form is: its content is which facing each factor belongs to (above, "The blueprint's measures of the
 sweep").
 
 So a read holds one fact four ways, the exchange and its corner, and the blueprint's four equations are what that fact
-becomes once the horizon is reached and the total stated: π is the price of turning "equal halves" into "how much". The
+becomes once the horizon is reached and the total stated: Ω is the price of turning "equal halves" into "how much". The
 first holds at every direction, so one read has it, in squares; the other three need the horizon reached, which no read
 does. They are also one chain: divide the blueprint's circle by the thumb, 1 + s² = 1/h²; its reciprocal is the heat; the
-heat gathered to the horizon is (1/2i)·ln w with w reaching −1, the arc π/2; closed by 2/π it is 1. And squares are the
+heat gathered to the horizon is (1/2i)·ln w with w reaching −1, the arc Ω; closed by 1/Ω it is 1. And squares are the
 read's where roots are the blueprint's: w = (h + iv)² = (h² − v²) + 2i·hv is rational in s and h + iv is not, the doubling
 and the halving of §1; h² − v² and 2hv are the double slit's predictability and visibility (§11), |w| = 1 their bound met.
 
-The Gaussian shows the same split from the blueprint's side. In polar form (1/2π)·e^(−r²/2) dx dy =
-(dθ/2π)·(e^(−r²/2) r dr): the uniform turn, whose slope is the Cauchy, times a law for the length, an amount, the payload.
+The Gaussian shows the same split from the blueprint's side. In polar form (1/4Ω)·e^(−r²/2) dx dy =
+(dθ/4Ω)·(e^(−r²/2) r dr): the uniform turn, whose slope is the Cauchy, times a law for the length, an amount, the payload.
 Two independent zero-mean Gaussian amounts of one spread, divided, give the standard Cauchy; of spreads in a ratio c, a
-Cauchy of scale c. Dividing by the thumb integrates the length away, taking e with it and leaving π. So the Cauchy is a
+Cauchy of scale c. Dividing by the thumb integrates the length away, taking e with it and leaving Ω. So the Cauchy is a
 law of directions, a heat made a probability only when it is closed, on the blueprint, and the Gaussian a law of amounts.
 **Classical**; the read's forms checked by hand; the assignment is a reading.
 
-**Reading is 2/π; walking is π/2.** The two numbers sort by act. *2/π is what turning sees*: over the quarter turn the
-thumb's share h averages 2/π, the mean of what is seen of one thumb from a standpoint that never moves; it is the constant
-that closes the heat, and it is approached at the horizon, never reached. *π/2 is what walking counts*: the quarter arc
-from all of h to all of v is π/2 thumbs long, the heat gathered to the horizon, ∫₀^∞ ds/(1 + s²), reached at a named
+**Reading is 1/Ω; walking is Ω.** The two numbers sort by act. *1/Ω is what turning sees*: over the quarter turn the
+thumb's share h averages 1/Ω, the mean of what is seen of one thumb from a standpoint that never moves; it is the constant
+that closes the heat, and it is approached at the horizon, never reached. *Ω is what walking counts*: the quarter arc
+from all of h to all of v is Ω thumbs long, the heat gathered to the horizon, ∫₀^∞ ds/(1 + s²), reached at a named
 point, −1. An arc in thumbs is a length against the thumb, unmoved by scaling and held by no single read: of the kind D3
 calls an extent, here counted out, so a count; with the thumb in a unit it is a write (D4). The sweep whose arc that is,
 the central one, is itself a read: one hemisphere, from a vantage, facing a bounded thing. So both numbers belong to
-single-hemisphere reads, 2/π to the inscribed and π/2 to the central, and the walk is how the second one's arc is
+single-hemisphere reads, 1/Ω to the inscribed and Ω to the central, and the walk is how the second one's arc is
 counted. Their product is 1, which is also the blueprint's number, the thumb in thumbs; the blueprint itself has no vantage and
 is neither of them. The exchange swaps the two, and they agree only at the corner, where a length walked and a
-ratio held say the same (§6). Both numbers stay the blueprint's arithmetic, since a read holds no π; what is sorted is
-which read each one measures. In the table above the total's 2/π is the inscribed read's factor and its π/2 the central
+ratio held say the same (§6). Both numbers stay the blueprint's arithmetic, since a read holds no Ω; what is sorted is
+which read each one measures. In the table above the total's 1/Ω is the inscribed read's factor and its Ω the central
 read's, and "the two facings" are those two reads. **Classical** (the mean share and the arc); the assignment is a reading.
 
 **The thumb, short by reading, long by walking, and whole.** Said most simply: the true size is 1, the thumb in thumbs.
-Reading gives the short side of it, 2/π; walking gives the long side, π/2; the two together give back the 1. The proof is
+Reading gives the short side of it, 1/Ω; walking gives the long side, Ω; the two together give back the 1. The proof is
 one line, in the blueprint's terms. Along the sweep, from all of h to all of v, each step dℓ of the arc gains v at the rate
 dv/dℓ = h: what is read at a place, the thumb's share h, is the rate at which the thumb is gained per step walked there.
 Summed over the walk the gain is all of v,
 
 ∫ h dℓ = 1,
 
-and a sum is a mean times a length: (mean of what is read) × (length walked) = (2/π) × (π/2) = 1. The 1 owes nothing to the
+and a sum is a mean times a length: (mean of what is read) × (length walked) = (1/Ω) × (Ω) = 1. The 1 owes nothing to the
 circle. On any path from the one end to the other the gain per step, summed over the steps, is the whole of v, so the mean
 rate times the length is 1 on every path; only the split between the two factors is the path's:
 
 | the path | mean gain per step | length walked | product |
 |---|---|---|---|
 | the chord, straight across | 1/√2 | √2 | 1 |
-| the quarter arc, the one length turned | 2/π | π/2 | 1 |
+| the quarter arc, the one length turned | 1/Ω | Ω | 1 |
 | the square's two edges | ½ | 2 | 1 |
 
 The arc is the one path on which the gain per step is the share itself, h, the same thumb turned and never stretched; so
-π is what the split costs when the path is the turn. In space the split has no π in it: one thumb seen from every
-direction of space averages ½, and the correction is 2 (the wedge's numbers, §7). So "π is the price", above, is the
+Ω is what the split costs when the path is the turn. In space the split has no Ω in it: one thumb seen from every
+direction of space averages ½, and the correction is 2 (the wedge's numbers, §7). So "Ω is the price", above, is the
 plane's price. Three cautions keep the statement exact. The 1 is the thumb, H in H, not V*: nothing here gives the
-mountain's size (D4). One read is one share h; 2/π is their average over the turn, a sum, so the blueprint's. And the walk
+mountain's size (D4). One read is one share h; 1/Ω is their average over the turn, a sum, so the blueprint's. And the walk
 here is counted in thumbs, an extent as a count; it is an amount, a write, only once the thumb has a unit. The mathematics is old: the mean
-projection of a segment over all directions is 2/π of its length (Cauchy 1841), a curve's length is π/2 times its mean
-projection (Cauchy 1841; Crofton 1868), and Buffon's needle (1777) is the same 2/π met as a chance. What is ours is the
+projection of a segment over all directions is 1/Ω of its length (Cauchy 1841), a curve's length is Ω times its mean
+projection (Cauchy 1841; Crofton 1868), and Buffon's needle (1777) is the same 1/Ω met as a chance. What is ours is the
 assignment: the short factor to the read, the long one to the walk, their product to the two held together.
 **Classical**; the assignment is a reading.
 
@@ -1436,83 +1437,83 @@ times the count of strides is exactly 1. Whole, that is ½ × 2. So the two 1's 
 times a count of steps is the whole crossed, measured in itself (the thumb in thumbs here, the corner's distance in
 corners there); and two in content, since the walker's steps are even in strides and the turn's are even in turn. The
 walk never has the arc's split: weighed by strides, the thumb's mean share from the corner to the foot is √2 − 1, not
-2/π. π comes with the turn's measure and with nothing else. The table has a twin as well: on every path the thumb's
+1/Ω. Ω comes with the turn's measure and with nothing else. The table has a twin as well: on every path the thumb's
 share empties by exactly 1 as the other fills by 1. One caution: each of these sums is a sum of differences and equals
 the difference of its ends whatever the steps, so the 1 itself cannot fail; what the check could have failed on is which
 path the walk is, that its steps there are even, and that its split is not the turn's. **Checked** (ONE, exact).
 
-**π/2 of relations and four facings make a circle.** The quarter turn is every way the vertical and the horizontal can
-relate, one slope s from all of h to all of v; weighed by the turn's heat and summed, those ways come to π/2. A relation
+**Ω of relations and four facings make a circle.** The quarter turn is every way the vertical and the horizontal can
+relate, one slope s from all of h to all of v; weighed by the turn's heat and summed, those ways come to Ω. A relation
 is never negative, so that is all of them. The circle is the same quarter turn four times, once for each choice of sign
-for h and v, joined on the blueprint: π/2 × 4 = 2π. The relation is continuous and the read's; the facing is a choice of
+for h and v, joined on the blueprint: four of them, 4Ω. The relation is continuous and the read's; the facing is a choice of
 signs, discrete, the blueprint's join (§7's arrays, one per facing), a second kind of thing and not a second dimension. In
-space the count is the same one step up: the wedge holds π/2 of directions, the signs of h, v and v₂ give eight facings,
-and π/2 × 8 = 4π, the sphere. The π/2 is the turn's weighing; summed along the chord the same ways come to √2, along the
+space the count is the same one step up: the wedge holds Ω of directions, the signs of h, v and v₂ give eight facings,
+and eight of them, 8Ω, are the sphere. The Ω is the turn's weighing; summed along the chord the same ways come to √2, along the
 square's edges to 2. **Classical**; the wording is a reading.
 
-**What is free, and what π costs.** Two things have to be kept apart here. The geometry is prior to any physics and
+**What is free, and what Ω costs.** Two things have to be kept apart here. The geometry is prior to any physics and
 free: the relation of the vertical to the horizontal, every slope from all of h to all of v; the exchange s ↔ 1/s and its
 corner; the heat's equal halves either side of the corner; the four facings; and the 1, the thumb in thumbs, which the
 short side and the long side give back whatever they are. None of these moves when the world is scaled or when what
 arrives is changed, none was measured, no step is taken and no algorithm run to have them, and they take no time, since a
 read holds none (§3, "What a read is"). They are the read's forms of "Four identities, one exchange", rational in s.
 
-The numbers π/2 and 2/π are not free. π is a limit, transcendental ("A limit makes the transcendental numbers", above): no finite count of steps gives its value, only
+The numbers Ω and 1/Ω are not free. Ω is a limit, transcendental ("A limit makes the transcendental numbers", above): no finite count of steps gives its value, only
 ever a fraction near it, each further digit at a further cost, the whole of it at an infinite one. It can be named
 exactly, as the total of the turn, and the name used; what cannot be had in finite time is the value. So the sweep
-only seems to hand over π at no cost. What it hands over free is that there is a whole, split in equal halves at the
+only seems to hand over Ω at no cost. What it hands over free is that there is a whole, split in equal halves at the
 corner, and that the read and the walk multiply to 1; how much the whole is, and so how short the short side and how long
-the long side, is the blueprint's completed sum. That is the exact sense of "π is the price", above: the price is an
+the long side, is the blueprint's completed sum. That is the exact sense of "Ω is the price", above: the price is an
 infinity, paid only at the limit, and a read never pays it because a read never needs the value.
 
-So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves, and neither knows nor uses π. A count
+So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves, and neither knows nor uses Ω. A count
 is of a walk actually made, and any such walk is finite, so a count holds fractions: 22/7, 355/113, a series
-stopped at some term, each nearer π and none of them π. A count uses π's name and its approximants, and never has its
-value. Only the blueprint holds π itself: the completed whole, every facing at once, the total of a sum no one
+stopped at some term, each nearer Ω and none of them Ω. A count uses Ω's name and its approximants, and never has its
+value. Only the blueprint holds Ω itself: the completed whole, every facing at once, the total of a sum no one
 finishes. The blueprint, whole, is therefore a limit, as the exact V is (§6, "Extents come by degrees"), and never a
-thing anyone has made. "The blueprint knows π" is a picture; what is exact is that π is defined there, as the whole
+thing anyone has made. "The blueprint knows Ω" is a picture; what is exact is that Ω is defined there, as the whole
 turn, and reached nowhere short of it.
 
-The equation π/2 × 2/π = 1 is then worth a second look, since it names the read and the walk and neither a read nor
-a count has π. It does not need π. The two factors are reciprocals, and x × (1/x) = 1 for every x: π is in
+The equation Ω × 1/Ω = 1 is then worth a second look, since it names the read and the walk and neither a read nor
+a count has Ω. It does not need Ω. The two factors are reciprocals, and x × (1/x) = 1 for every x: Ω is in
 both and leaves the product. The proof above says the same, since the 1 is the whole gain, fixed first, and the chord
-and the square's edges split it with no π in them. A read, a count and, for comparison, the blueprint each hold the equation in their own form:
+and the square's edges split it with no Ω in them. A read, a count and, for comparison, the blueprint each hold the equation in their own form:
 
-| who | what it holds of π/2 × 2/π = 1 |
+| who | what it holds of Ω × 1/Ω = 1 |
 |---|---|
 | a read | s × (1/s) = 1: the exchange undoing itself, no numbers |
-| a count | (p/q) × (q/p) = 1: exact with any fraction held for π/2, 11/7 × 7/11 as well as a better one |
-| the blueprint | π/2 × 2/π = 1: the same fact with the turn's split named at its true value |
+| a count | (p/q) × (q/p) = 1: exact with any fraction held for Ω, 11/7 × 7/11 as well as a better one |
+| the blueprint | Ω × 1/Ω = 1: the same fact with the turn's split named at its true value |
 
 A better fraction changes both factors and leaves the 1 untouched, so the 1 is exact at every stage of approximation and
-never waited on the limit. π is the one part of the equation only the blueprint holds, and the one part the equation does
+never waited on the limit. Ω is the one part of the equation only the blueprint holds, and the one part the equation does
 not depend on: it is the price of saying how the turn splits the 1, and no one pays it to have the 1.
 
-Euler's identity goes the same way: the −1 never needed e or π. The corner is the quarter turn, exactly and with no root
+Euler's identity goes the same way: the −1 never needed e or Ω. The corner is the quarter turn, exactly and with no root
 in it: w(1) = (1 + i)/(1 − i) = i. Two corners composed are the half turn, i × i = −1, a finite and rational statement.
-e^(iπ) = −1 is that fact with the arc given a length, π, and the composing written as an exponential, base e:
+e^(2iΩ) = −1 is that fact with the arc given a length, 2Ω, and the composing written as an exponential, base e:
 
-| who | what it holds of e^(iπ) = −1 |
+| who | what it holds of e^(2iΩ) = −1 |
 |---|---|
 | a read | w(s) × w(1/s) = −1; at the corner i × i = −1: the exchange, no numbers |
 | a count | two corner steps land on −1 exactly; finer equal steps, (1 + iθ/n)ⁿ with fractions for θ, land near it and never on it |
-| the blueprint | e^(iπ) = −1: the limit of the finer steps, the arc named π and the base named e |
+| the blueprint | e^(2iΩ) = −1: the limit of the finer steps, the arc named 2Ω and the base named e |
 
 Here a count is exact only at the corner, where with the product any fraction would do. The only turns whose
 slope is rational and which are a rational part of the whole turn are the multiples of the corner's (Niven 1956), so
 equal rational steps finer than the corner never land on −1; and (1 + iθ/n)ⁿ misses as "Euler's formula as a count of reads" says, above, the
 turn short by about θ³/(3n²) and the length over by about θ²/(2n). The corner is the one finite door to −1, and
-everything finer is an approach. So e and π are the two parts of the identity only the blueprint holds, and the two parts
-the fact does not depend on: π the price of saying how long the arc to −1 is, e the price of saying it as one smooth
+everything finer is an approach. So e and Ω are the two parts of the identity only the blueprint holds, and the two parts
+the fact does not depend on: Ω the price of saying how long the arc to −1 is, e the price of saying it as one smooth
 turn where a read has two corner steps. **Classical**; the assignment is a reading.
 
 The read's form shows three things the classical statement does not. First, Euler's identity is one member of a
 family, and the extreme one. w(s) × w(1/s) = −1 holds at every slope, pairing each direction with its exchange. Put
-s = 0: home lands at +1 and its exchange, the horizon, at −1. So e^(iπ) = −1 says that home and the horizon are an
+s = 0: home lands at +1 and its exchange, the horizon, at −1. So e^(2iΩ) = −1 says that home and the horizon are an
 exchanged pair, and it is the only pair of the family that needs the horizon, which no read reaches; every pair
 between is finite and exact, and the classical statement does not mention them. Every pair between has a vantage: it
 is two directions of one read. The identity is the one member with none, the family completed, and so the one member
-that carries π and e, which are how completeness with no vantage is put into numbers. Second, the corner's member is
+that carries Ω and e, which are how completeness with no vantage is put into numbers. Second, the corner's member is
 i × i = −1. The corner is its own exchange and lands at i, so the equation that defines i is this identity taken at
 the corner: i is the corner. Third, with the complex notation taken away almost nothing is left. Exchanging h and v
 swaps the two shares, so their difference h² − v² changes sign while their product is kept. At home the difference is
@@ -1521,42 +1522,42 @@ reads it as a position, half way round a dial; for a read there is no travel in 
 directions of one read. And it is the exchange's one fact in a second chart: on the slope it reads s × (1/s) = 1, on
 the landing point w × w′ = −1, the 1 and the −1 of "Four identities, one exchange".
 
-The Cauchy's total is the cleanest of the three, since most of what the Cauchy is never touched π. The heat at each
+The Cauchy's total is the cleanest of the three, since most of what the Cauchy is never touched Ω. The heat at each
 slope, 1/(1 + s²) = h², is rational in s; so is the ratio of the heat at any two directions, (1 + s₂²)/(1 + s₁²); the
 corner is the median because the heat below it equals the heat above it; there is no mean; and every statement of order
-stands as it is. π comes in at one place only, the constant 2/π that makes the heat a probability per unit of slope:
+stands as it is. Ω comes in at one place only, the constant 1/Ω that makes the heat a probability per unit of slope:
 
-| who | what it holds of (2/π)·∫₀^∞ ds/(1 + s²) = 1 |
+| who | what it holds of (1/Ω)·∫₀^∞ ds/(1 + s²) = 1 |
 |---|---|
 | a read | the heat 1/(1 + s²), and equal halves either side of the corner; no total |
-| a count | shares by count: of K equal turns, k below a slope, k/K; fractions near 2/π for the constant |
-| the blueprint | the total closed to 1, the constant 2/π named |
+| a count | shares by count: of K equal turns, k below a slope, k/K; fractions near 1/Ω for the constant |
+| the blueprint | the total closed to 1, the constant 1/Ω named |
 
 A share is a turn over a turn: the share of the heat below a slope is the part of the quarter turn below it, and counted
-in turns it needs no π to be defined. π enters when the turn is laid out as a length per unit of slope. The corner is
+in turns it needs no Ω to be defined. Ω enters when the turn is laid out as a length per unit of slope. The corner is
 again the one exact door. The only rational slopes whose share is a rational number are 0, 1 and the horizon, with
 shares 0, ½ and 1 (Niven 1956); the quartiles are exact as well, but at √2 − 1 and √2 + 1, by one square root, the
 halving of a turn (above). And a count's sum is on the page: the heat below the corner is Gregory's and
-Leibniz's series, 1 − 1/3 + 1/5 − 1/7 + … = π/4, each partial sum a fraction, only the limit π/4. The read's equal
+Leibniz's series, 1 − 1/3 + 1/5 − 1/7 + … = Ω/2, each partial sum a fraction, only the limit Ω/2. The read's equal
 halves say the whole is twice that sum without summing it. So across the three:
 
 | the identity | the free fact | only the blueprint's |
 |---|---|---|
-| π/2 × 2/π = 1 | s × (1/s) = 1 | π |
-| e^(iπ) = −1 | i × i = −1 | e and π |
-| the Cauchy's total | equal halves at the corner | 2/π |
+| Ω × 1/Ω = 1 | s × (1/s) = 1 | Ω |
+| e^(2iΩ) = −1 | i × i = −1 | e and Ω |
+| the Cauchy's total | equal halves at the corner | 1/Ω |
 
-The circle, the first of the four, comes out differently, and the difference completes the set. h² + v² = 1 has no π in
+The circle, the first of the four, comes out differently, and the difference completes the set. h² + v² = 1 has no Ω in
 it. In the read's form, 1/(1 + s²) + s²/(1 + s²) = 1, it is rational in the slope and holds at every direction, so one
 read has it and no horizon need be reached: for the identity itself there is nothing to pay. The cost comes elsewhere,
 and in two grades. The shares themselves are roots, h = 1/√(1 + s²), usually irrational; and how much circle there is,
-the length 2π and the area π, appears only when the four facings are joined and the whole measured.
+the length 4Ω and the area 2Ω, appears only when the four facings are joined and the whole measured.
 
 | who | what it holds of h² + v² = 1 |
 |---|---|
 | a read | the squares, 1/(1 + s²) + s²/(1 + s²) = 1, at every direction |
 | a count | exact points wherever 1 + s² is the square of a fraction: the Pythagorean triples, s = 3/4 giving h = 4/5, v = 3/5 |
-| the blueprint | the circle whole: every point, its length 2π, its area π |
+| the blueprint | the circle whole: every point, its length 4Ω, its area 2Ω |
 
 Here the corner flips. In the other three it was a count's one exact door; on the circle it is the landmark
 a fraction cannot reach. Home and the horizon are exact points, and the triples give exact points as near together as
@@ -1568,26 +1569,26 @@ sorting this section began with:
 |---|---|---|
 | free, rational in s | the four forms of a read | ½ + ½ = 1 at the corner |
 | a square root, a finite construction | the shares themselves; halving a turn | 1/√2, √2 − 1 |
-| a limit | how much the whole is | π, e |
+| a limit | how much the whole is | Ω, e |
 
-A square root is not a limit as π is: it is exact as a length made in one step from two lengths, so it is the blueprint's
+A square root is not a limit as Ω is: it is exact as a length made in one step from two lengths, so it is the blueprint's
 and not only the blueprint's.
 
-The Gaussian, the law of amounts (above), shows where its π and its e each come from. In polar form it is a turn times a
-length, (1/2π)·e^(−r²/2) dx dy = (dθ/2π) × (e^(−r²/2)·r dr). The turn's part carries all the π: the 2π is the circle
-whole, π/2 of relations in four facings, and an amount, having both signs, needs all four. The length's part carries
-the e and totals a plain 1, ∫₀^∞ e^(−r²/2)·r dr = 1, with no π in it. So the Gaussian's π is the circle's and nothing
-else; the same split is why the square of ∫ e^(−x²) dx is π, a full turn 2π times a half.
+The Gaussian, the law of amounts (above), shows where its Ω and its e each come from. In polar form it is a turn times a
+length, (1/4Ω)·e^(−r²/2) dx dy = (dθ/4Ω) × (e^(−r²/2)·r dr). The turn's part carries all the Ω: the 4Ω is the circle
+whole, Ω of relations in four facings, and an amount, having both signs, needs all four. The length's part carries
+the e and totals a plain 1, ∫₀^∞ e^(−r²/2)·r dr = 1, with no Ω in it. So the Gaussian's Ω is the circle's and nothing
+else; the same split is why the square of ∫ e^(−x²) dx is 2Ω, a full turn 4Ω times a half.
 
 | who | what it holds of the Gaussian |
 |---|---|
 | a read | only the direction of a pair of equal-spread amounts: uniform by turn, the Cauchy, its median the corner; nothing of the length |
 | a count | counts: the binomial, C(n, k)/2ⁿ, every value a fraction, its mean n/2 and its variance n/4 exact |
-| the blueprint | the bell itself, e^(−x²/2)/√(2π): the limit of the binomial, with e and π both |
+| the blueprint | the bell itself, e^(−x²/2)/√(4Ω): the limit of the binomial, with e and Ω both |
 
 The count's tier is de Moivre's (1733): tossing and counting is what counting does, and the Gaussian is
-what the counts tend to. π arrives in that limit through Wallis's product (1656),
-π/2 = (2·2)/(1·3) × (4·4)/(3·5) × (6·6)/(5·7) × …, every partial product a fraction: the walk's π/2, reached by
+what the counts tend to. Ω arrives in that limit through Wallis's product (1656),
+Ω = (2·2)/(1·3) × (4·4)/(3·5) × (6·6)/(5·7) × …, every partial product a fraction: the walk's Ω, reached by
 counting. And what is exact flips once more. For the Cauchy the exact facts were the median and the equal halves, and
 there was no mean; for the Gaussian the exact facts a count holds are the mean and the variance, which are
 sums. The Cauchy is kept by order and the Gaussian by sums, a law of directions and a law of amounts. This is no fifth
@@ -1602,20 +1603,20 @@ direction is uniform. So nothing is written anywhere along the family, and ν is
 a count of parties. Second, no finite ν has an e. The density's shape is (1 + t²/ν)^(−(ν+1)/2), rational
 in t or the square root of a rational, and e arrives only as Bernoulli's limit (1 + x/n)ⁿ, the gap from e^(−t²/2)
 falling as 1/ν. The Gaussian is then the blueprint's in a second sense: one party's share among endlessly many, a
-classical limit (Maxwell; Borel 1914). Third, the π comes and goes with the parity of ν: the height at t = 0 is 1/π,
-2/(π√3), 8/(3π√5) for ν = 1, 3, 5 and 1/(2√2), 3/8 for ν = 2, 4, with no π at all. The turn's constant belongs to the
-plane's pair; among more parties the constant is a ratio of two spheres' measures, and it holds π only when the
+classical limit (Maxwell; Borel 1914). Third, the Ω comes and goes with the parity of ν: the height at t = 0 is 1/2Ω,
+1/(Ω√3), 4/(3Ω√5) for ν = 1, 3, 5 and 1/(2√2), 3/8 for ν = 2, 4, with no Ω at all. The turn's constant belongs to the
+plane's pair; among more parties the constant is a ratio of two spheres' measures, and it holds Ω only when the
 count of parties, ν + 1, is even.
 
 So e reaches these equations in two ways, and they should be kept apart. It can be in the law: the Gaussian's length
 (with u = r²/2 the length's part is the plain exponential e^(−u), the Gaussian's other half as the Cauchy is its
 direction), where it is forced by squares that add and chances that multiply. Or it can be in the chart only: write the
-slope as s = e^ξ, the blueprint's logarithm, and the Cauchy reads (1/π)·sech ξ and the share h² = 1/(1 + e^(2ξ)), a
+slope as s = e^ξ, the blueprint's logarithm, and the Cauchy reads (1/2Ω)·sech ξ and the share h² = 1/(1 + e^(2ξ)), a
 logistic curve. Neither law gained anything; the chart supplied the e, and the read's forms, 1/(1 + s²) and the
 equal halves, have none.
 
 The same three charts hold the standard examples of chaos, as one map. Add a turn to itself. In the slope that is
-tangent addition of s with itself, s ↦ 2s/(1 − s²), rational, with no π and no trigonometry: one step of it is the
+tangent addition of s with itself, s ↦ 2s/(1 − s²), rational, with no Ω and no trigonometry: one step of it is the
 read's own. In the reciprocal slope it is Boole's map, c ↦ ½(c − 1/c) (1857), which is also Newton's step for
 c² + 1 = 0, a search for the standpoint i that no slope on the line reaches. In the share v² it is the logistic map,
 y ↦ 4y(1 − y) (Ulam and von Neumann 1947). In the turn's own share it is the tent map. Each keeps the uniform turn's
@@ -1628,7 +1629,7 @@ can follow the orbit (the CHS plan, Code and data, exact).
 | a read | one step: a slope added to itself, exact and rational |
 | a count, in fractions | every step exactly, at a cost that doubles each step (from 3/7 the twelfth slope's denominator has 9,950 binary digits); no cycle ever, since no rational slope but 0 and 1 belongs to one (Niven) |
 | a count, in p digits | about p steps (24, 53, 113 and 200 digits part from the true orbit at step p − 1 to p + 6); at a fixed fineness K each step uses up one more binary digit of the start |
-| the blueprint | the direction whole: every step, and the cycles, which sit at turns that are rational parts of π |
+| the blueprint | the direction whole: every step, and the cycles, which sit at turns that are rational parts of Ω |
 
 So the rule is fixed and free, and the orbit is determined; what gives out is the count. Unpredictability here is a
 statement about what a count can hold, one binary digit a step, not about the rule or the law. And the
@@ -1636,40 +1637,40 @@ Cauchy is seen a second way: it is the heat of one sweep, and it is also the one
 and again, leaves as it was.
 
 The quarter turn also reaches counts that show no turn at all. The sum of 1/n² over the odd numbers is exactly half
-the square of the quarter turn, 1 + 1/9 + 1/25 + … = ½·(π/2)², and the next ones are (π/2)⁴/6 and (π/2)⁶/15. The
+the square of the quarter turn, 1 + 1/9 + 1/25 + … = ½·Ω², and the next ones are Ω⁴/6 and Ω⁶/15. The
 reason is the slope. One read runs from home to its horizon, a quarter turn in the blueprint's measure, and stops. The
 blueprint, joining facings, carries the slope on, and it meets a horizon at every odd multiple of the quarter turn. Euler's
 expansion (1748) writes the slope as the sum of those horizons' pulls: at a turn x, the slope is the sum over the odd
-numbers m of 2x/((m·π/2)² − x²). Close to home the slope is the turn itself, so the pulls must total 1 there, and that
+numbers m of 2x/((m·Ω)² − x²). Close to home the slope is the turn itself, so the pulls must total 1 there, and that
 is the sum above. The even numbers add nothing new, the same sum over again at a quarter of the size, so the sum over
-all whole numbers is ⅔·(π/2)², the π²/6 of Basel. This is why the turn's constant appears in the share of whole
-numbers with no repeated prime factor, (3/2)·(2/π)², and in the total of a thermal spectrum: each passes through that
+all whole numbers is ⅔·Ω², Basel's π²/6. This is why the turn's constant appears in the share of whole
+numbers with no repeated prime factor, (3/2)·(1/Ω)², and in the total of a thermal spectrum: each passes through that
 sum. The sorting is as before. A read holds none of it, having one horizon and never passing it. A count
 holds the partial sums, each a fraction. The value is the blueprint's, a count over all the odd numbers landing on the
 quarter turn squared. It was found by looking back from the answers, not predicted from the constructions: a rule
-that π appears exactly where a turn is taken whole failed a blind test on these very cases (the TWC plan, Code and
-data), and what is said here is where their π comes from, not a way to foresee it.
+that Ω appears exactly where a turn is taken whole failed a blind test on these very cases (the TWC plan, Code and
+data), and what is said here is where their Ω comes from, not a way to foresee it.
 
 Parallax (§6) is the case where two looks together are exact and the blueprint adds only its angles. Two standpoints a
 step B apart each read the target's slope off the line between them, s₁ and s₂, measured inward. The target's depth d
 off that line is then given by 1/(d/B) = 1/s₁ + 1/s₂, so d/B = s₁s₂/(s₁ + s₂): slopes 3 and 6 put it exactly 2 steps
-off. No angle, no trigonometry and no π is in it.
+off. No angle, no trigonometry and no Ω is in it.
 
 | who | what it holds of parallax |
 |---|---|
 | one look | one slope, and nothing of parallax |
 | two looks held together, still a read | the extent in the step between them, a rational function of the two slopes, exact, with no count |
 | a write | the step itself, a thing with a size; the step in metres, the one amount carried in |
-| the blueprint | the parallax angle γ in radians or arcseconds; γ(d) + γ(a²/d) = π about the half-step a; the error's γ/sin γ, π/2 at the corner; the parsec, 648000/π astronomical units |
+| the blueprint | the parallax angle γ in radians or arcseconds; γ(d) + γ(a²/d) = 2Ω about the half-step a; the error's γ/sin γ, Ω at the corner; the parsec, 648000/π astronomical units |
 
 The corner is the exchange again. The corner circle, the circle on the step as diameter (Thales), is exactly
 s₁·s₂ = 1, the two slopes reciprocal; a product above 1 is inside it and below 1 outside, and that needs no count of
 the step. On the circle d/B = s/(1 + s²), the circle's hv: slopes 2 and ½ give the point (1/5, 2/5), the 3-4-5 triple
 once more. The error is rational too: with k = d/a, a step in direction moves the depth in proportion to
 (k + 1/k)/2, the same at k and 1/k and least at the corner; cosh(ln k) (§6) is the blueprint's smooth name for it. And the
-three grades sort the rest: the depth is rational, the range along a ray is a square root, the angle is a limit. π
-enters only where a slope is turned into an angle, which is why the parsec carries a π and the extent in steps carries
-none. This is no fifth identity of one look: parallax holds two looks together, and what never needed π is the extent in
+three grades sort the rest: the depth is rational, the range along a ray is a square root, the angle is a limit. Ω
+enters only where a slope is turned into an angle, which is why the parsec carries a Ω and the extent in steps carries
+none. This is no fifth identity of one look: parallax holds two looks together, and what never needed Ω is the extent in
 steps; the step in metres is still the one amount carried in.
 
 **Classical**; the assignment is a reading. Physics enters
@@ -1698,8 +1699,8 @@ view moves: still 45°, still eighteen fingers.
 **Mountain equals thumb.** With no V, drawing the range at its own H reads it one thumb wide at half a thumb away: the
 blueprint's circle, V = H. Every amount is then off by V\*/H = 20, the same on both sides of the corner.
 
-**The two sweeps, measured.** On the circle drawn about the thumb, the central sweep is measured at π/2 and the
-inscribed at 2/π; to the range's ends, 1.1107 and 0.9003. Their product is 1, the starting length returned, H in H. The
+**The two sweeps, measured.** On the circle drawn about the thumb, the central sweep is measured at Ω and the
+inscribed at 1/Ω; to the range's ends, 1.1107 and 0.9003. Their product is 1, the starting length returned, H in H. The
 mountain never enters.
 
 **Walk one thumb.** Step one thumb toward the range and read again. The half-angle's reading goes from s = 1 to
@@ -1729,7 +1730,7 @@ and the tower is 15 metres tall and 60 away: the one write. **Checked** (`runs/t
   one standpoint is a read; unmoved and needing two, an extent; moved, a write, which needs an amount carried in.
 - **A Cauchy-type quantity is a direction where a turn that lays it can be named, apart from the law's shape.** A fat
   tail alone is no evidence of a turn: a mixture of amounts makes one too.
-- **The constants have owners.** π, e, π/2, 2/π, the hemisphere's 2 and ½, the Cauchy's normalizing constant, the
+- **The constants have owners.** e, Ω, 1/Ω, the hemisphere's 2 and ½, the Cauchy's normalizing constant, the
   logarithm's nats and the angle's degrees are the blueprint's measures of the read's things; the read's own versions are
   finite: an order, a ratio, a corner, a composition by tangent addition.
 - **The acts move.** An observer reads while it stands and turns, places while it walks and counts, and has an amount
@@ -1782,15 +1783,15 @@ before the data can show where it is not. **Checked** (TCF; killed).
   across, unmoved by scaling, needing two standpoints).
 - **O2. The thumb.** *Closed (R792):* the thumb is the across axis's chosen zero, as home is the up axis's, as D5
   already requires; the record's "the read's own length" describes how it is chosen, not a different kind.
-- **O3. Completed joins, and their name.** *Closed (12 November):* a completed join (π, the one-length circle, the
+- **O3. Completed joins, and their name.** *Closed (12 November):* a completed join (Ω, the one-length circle, the
   facings joined) is unmoved by scaling, so it is not a write; it was called "the blueprint's" until a word was chosen.
   The word is the **blueprint**: both hemispheres at once, no vantage, apart from reads and writes (§1, "Reads, writes and
   the blueprint"). What stays open is whether the blueprint is a kind beside D1–D7 or only their sum. *Sharpened
   (R796):* what an angle needs comes in two stages. The ratio s = v/h needs nothing; it is the read. The shares h and v
   with h² + v² = 1 need the other party held at the one length (V = H, the one-length circle): with them come
   cos and sin as the shares themselves, √(1 + s²) = 1/h, and halving a turn, t = v/(1 + h). The angle θ needs the circle
-  and the turn completed as well (π, a limit): an arc over the radius, counted against the whole. Neither stage needs a
-  true breadth V* or a unit, so neither is a write; both are completed joins, the circle first and π second. *And (R797):* the exact V is a third, the limit of parallax:
+  and the turn completed as well (Ω, a limit): an arc over the radius, counted against the whole. Neither stage needs a
+  true breadth V* or a unit, so neither is a write; both are completed joins, the circle first and Ω second. *And (R797):* the exact V is a third, the limit of parallax:
   unknowable against the universe, knowable across one hemisphere, known only held or written (§1, "Four things").
   *And (R798–R801):* the completed joins are the blueprint's, both hemispheres at once with no facing; four identities
   state them, and each has a read's form about the exchange and the corner (§9, "Four identities, one exchange").
