@@ -7,8 +7,8 @@ circle's whole geometry with no circle held, the Cauchy, the corner, the near an
 gives is a place. It gives the line a thing lies on, never where along the line.
 
 This essay is about what a second standpoint buys, and a third, and what each loses as things recede. The answer is a
-ladder. One standpoint fixes lines. Two fix the figure up to its size. One agreed length fixes the size. Along the way the
-reader finds parallax, which turns out to have a corner of its own, a bell of precision around it, and a far edge past
+ladder. One standpoint fixes lines. Two fix the figure up to its size. One agreed length fixes the size. Along the way
+comes parallax, which turns out to have a corner of its own, a bell of precision around it, and a far edge past
 which a place becomes a ray again.
 
 ---
@@ -31,18 +31,18 @@ distance between your eyes, which you have never measured, is the length every p
 
 ## 2. What one standpoint gives
 
-A reader that does not move has the directions to everything it can see, and the steady turn lays them as the Cauchy.
+A standpoint that does not move has the directions to everything it can see, and the steady turn lays them as the Cauchy.
 That much the earlier essays established. Three more things are worth saying about one standpoint before leaving it.
 
 **Turning in place gives no parallax.** Turn about the point you see from, and every direction turns by the same
 angle, near and far alike. Nothing shifts against anything else. Turning gives the directions, the frame and the corner,
-and no distance, and it gives them the same in every world: a reader that only turns learns its own directions and
+and no distance, and it gives them the same in every world: an observer that only turns learns its own directions and
 their heat, and nothing about what is out there. What meets the fingers changes as it turns, but a colour carries no place.
 
 A step along a straight line is the other motion a standpoint has, and the first whose effect depends on the world: near
 things cross the fingers faster than far ones. Any motion of a standpoint is a turn and a step together. A turn about any
 point other than the standpoint carries the standpoint along a short arc, and that arc is a step; whatever it places, it
-places by the step, not by the turn. So the two motions divide the work: turning teaches the reader its directions and
+places by the step, not by the turn. So the two motions divide the work: turning teaches the observer its directions and
 their heat, and walking teaches it the world.
 
 **One stream is one relation.** Read over time from one place, a reading is a ratio of two amounts, a over b. Multiply
@@ -85,8 +85,8 @@ say. Then the reading grows by the same ratio each step, the approach slows as t
 quite touches: the foot is a limit, met at no speed. A landing has this form; a walk has the first. The two are different
 paces, and no pace is both.
 
-The writer has one picture for both. Put each reading s on Z = (1 + is)/(1 − is): far off Z is 1, at the corner i, at
-the foot −1, the writer's e^(iπ) = −1. The steady stride reaches −1 in a finite count; the fixed share approaches it for
+The blueprint has one picture for both. Put each reading s on Z = (1 + is)/(1 − is): far off Z is 1, at the corner i, at
+the foot −1, the blueprint's e^(iπ) = −1. The steady stride reaches −1 in a finite count; the fixed share approaches it for
 ever; a turn of the look moves every reading and arrives nowhere. These are the three kinds of map the line of slopes
 has, and they are classical. What each thing that approaches does with them is its own affair; the readings they stand on
 are the same for all, and cost nothing (WLK, exact; `approach.html`).
@@ -94,10 +94,10 @@ are the same for all, and cost nothing (WLK, exact; `approach.html`).
 One more thing the walk shows, about where the infinite is. Parallax is the link: two looks and one counted stride. Chain
 the links and the middle cancels; the whole walk comes down to its first look and its last, however many strides lay
 between, and nothing needs the stride to be small. From the corner to the foot the looks gather exactly a quarter of the
-writer's circle, in seven strides or a thousand. The half circle, Euler's −1 reached from 1, belongs only to a walk that
+blueprint's circle, in seven strides or a thousand. The half circle, Euler's −1 reached from 1, belongs only to a walk that
 began without end: start thirty corners out and you gather all of it but about a fiftieth, a million corners out all but
 less than a millionth. The infinite in Euler's identity is the horizon behind you, not a vanishing step. A step has to
-shrink only when slopes are added as if they were angles, which is the writer's sum and the writer's limit.
+shrink only when slopes are added as if they were angles, which is the blueprint's sum and the blueprint's limit.
 
 And the look and the count multiply. The reading times the strides left is the same at every place, the corner's
 distance in strides; with the thumb over the arm it is the thing's size in strides. Counted in corners it is 1: a
@@ -106,14 +106,14 @@ it never has the product (essay 19, section 8).
 
 ## 3. The ladder
 
-Suppose each reader reads only directions: for each place on some figure, the direction in which it stands. Then there is
+Suppose each standpoint reads only directions: for each place on some figure, the direction in which it stands. Then there is
 a ladder of what each rung buys.
 
-- **One reader fixes, for each place, only a line through it.** However many readings it takes, it fixes no place. Laid out
+- **One standpoint fixes, for each place, only a line through it.** However many readings it takes, it fixes no place. Laid out
   with nothing else, its readings return the second essay's directions, the Cauchy, the same for every figure.
-- **Two readers, whose placement relative to each other is known up to scale, fix every place both can see,** except
+- **Two standpoints, whose placement relative to each other is known up to scale, fix every place both can see,** except
   places in line with them both, up to one common scale. Two lines from different points meet in one point; move both
-  readers by a common shape-preserving change and every meeting point moves the same way.
+  standpoints by a common shape-preserving change and every meeting point moves the same way.
 - **One agreed length between them fixes the scale.** That is the one amount of the first essay.
 
 This is triangulation, read as a ladder of what each further standpoint buys. That two views fix a scene up to its scale
@@ -163,7 +163,7 @@ chart, the cotangent of its angle: cot a from one end, cot b from the other. The
   cot a + cot b = B / d.
 
 Each read is taken inward, toward the other standpoint, so both are positive for a target between the two feet; in
-slopes off the baseline they are 1/s₁ and 1/s₂, and the angles a and b are only the writer's names for the two
+slopes off the baseline they are 1/s₁ and 1/s₂, and the angles a and b are only the blueprint's names for the two
 directions. The depth is the reciprocal of a sum of two reads. Those are exactly the operations the third essay found the Cauchy
 closed under: a sum, which is a relay of standpoints, and a reciprocal, which is the exchange. So parallax never takes a
 read out of the family.
@@ -173,8 +173,8 @@ about the true direction, and the two reads' errors are independent. In the cot 
 its point at w = (c + iγ)/(1 − iγc), c being the true value. The depth is then exactly a Cauchy, at every γ and not only
 for small errors, and its point is the same triangulation done on the two points instead of the two values:
 D = B/conj(w_a + w_b). The rays that fail to meet ahead are part of the same law, as negative depths. At the corner the
-depth's point stays at the true distance, turned by twice the read's error: D = d·(1 + iγ)/(1 − iγ) (the writer's d·e^(2i·atan γ)). Its median
-falls a little short, at d·(1 − γ²)/(1 + γ²) (the writer's d·cos(2·atan γ)).
+depth's point stays at the true distance, turned by twice the read's error: D = d·(1 + iγ)/(1 − iγ) (the blueprint's d·e^(2i·atan γ)). Its median
+falls a little short, at d·(1 − γ²)/(1 + γ²) (the blueprint's d·cos(2·atan γ)).
 
 Two things leave the family, and each can be seen in a line. The place across the line of sight is a ratio of two sums,
 a Cauchy only for small errors: its density right over each standpoint is infinite, because it multiplies a read's
@@ -190,11 +190,11 @@ standpoints, and the baseline is the one amount in it.
 
 **The place never needed π.** State parallax in slopes and no angle is left in it. Two standpoints a counted step B
 apart each read the target's slope off the line between them, s₁ and s₂, measured inward; the depth d off that line is
-given by 1/(d/B) = 1/s₁ + 1/s₂. Slopes 3 and 6 put the target exactly 2 steps off. A writer at work, who counts the step
-and joins the two reads, has the place in steps exactly, in fractions; neither read alone holds any of it. The corner
+given by 1/(d/B) = 1/s₁ + 1/s₂. Slopes 3 and 6 put the target exactly 2 steps off. A write, the step counted
+and the two reads joined, has the place in steps exactly, in fractions; neither read alone holds any of it. The corner
 circle is the two slopes reciprocal, s₁·s₂ = 1, known without counting the step: above 1 the target is inside, below 1
 outside. On it d/B = s/(1 + s²): slopes 2 and ½ give the point (1/5, 2/5), a 3-4-5 triangle. The error's curve is
-rational as well, (k + 1/k)/2, the same at k and 1/k; cosh(ln k) is the writer's smooth name for it. π comes in only
+rational as well, (k + 1/k)/2, the same at k and 1/k; cosh(ln k) is the blueprint's smooth name for it. π comes in only
 where a slope is turned into an angle: the parallax angle in arcseconds, the two angles that sum to π, the π/2 at the
 corner, the parsec's 648000/π astronomical units. The depth is rational, the range along a ray a square root, the
 angle a limit. What never needed π is the place in steps; the step in metres is still the one amount carried in.
@@ -205,7 +205,7 @@ angle a limit. What never needed π is the place in steps; the step in metres is
 
 ## 5. The band, and its far edge
 
-Read the direction to a step ε, the smallest change the pair can tell (an angle, in the writer's units). The relative depth error stays below 1 for a band
+Read the direction to a step ε, the smallest change the pair can tell (an angle, in the blueprint's units). The relative depth error stays below 1 for a band
 reaching a factor of about 2/ε on each side of the corner, out to 2/ε half-baselines and in to ε/2 of one. At ε = 10⁻³,
 that is a factor of 2,000 each side (2 to the power 10.97).
 
@@ -215,11 +215,11 @@ that is a factor of 2,000 each side (2 to the power 10.97).
   direction, as a single standpoint does. Parallax needs situated reading, and past its band it returns to it.
 
 The baseline works like a second zoom. Choosing B slides the band along the distances, as choosing H, the size of the
-reader's thumb, slides its window in the fourth essay. The band's width, as a factor, is set by the step alone.
+observer's thumb, slides its window in the fourth essay. The band's width, as a factor, is set by the step alone.
 
 At published precisions:
 
-| reader | baseline | step (as an angle) | corner | far edge |
+| observer | baseline | step (as an angle) | corner | far edge |
 |---|---|---|---|---|
 | two eyes | 6.5 cm | about 20 arcseconds | 3.25 cm | about 650 m |
 | Earth's orbit, Hipparcos | 2 AU | 2 milliarcseconds | 1 AU | about 1 kiloparsec |
@@ -243,7 +243,7 @@ the chain ends at the essays' geometry.
    That is the one amount carried in, and its history is the first essay's distinction between reading and writing
    played out over two hundred years.
 3. **The relative distance error equals the relative parallax error.** That rule is the far-field limit of an exact
-   ratio, γ/sin γ, which is the second essay's π/2, the writer's measure of the turn γ. It is exactly 1 far off, π/2 on Thales' circle,
+   ratio, γ/sin γ, which is the second essay's π/2, the blueprint's measure of the turn γ. It is exactly 1 far off, π/2 on Thales' circle,
    and grows without bound toward the baseline. Its reciprocal is the 2/π measure, and their product is 1.
 4. **An intersection is best when its rays cross square.** That is the corner.
 5. **Do not invert a noisy parallax.** Astronomers learned, from Thomas Lutz and Douglas Kelker in 1973 and many since,
@@ -255,7 +255,7 @@ the chain ends at the essays' geometry.
 
 What the chain starts from is small. One reading, the tangent of the parallax. Two standpoints that read alike. And one
 amount from outside. The second is this pair's version of reading both parties at one length; the third is the one
-number a situated reader lacks.
+number a read lacks.
 
 ---
 
@@ -305,17 +305,17 @@ and with it the face, the thing's distance and its speed.
 From one place, then, the directions, their heat, their paint and the outline come free. The face needs an amount along each
 direction, written, or further standpoints.
 
-Say it plainly: **the reader never sees a shape.** It sees the sweep, the same directions with the
+Say it plainly: **a read never has a shape.** It has the sweep, the same directions with the
 same heat for every world, and the paint on them. *The heat is given; the paint is met.* A thing is to it the directions
 it paints and what it paints them with: a patch of directions, what is in front of what, a colour. How far the surface lies along each direction is an amount, and the geometry has removed every amount
 before anything is read. Every way to the shape needs more than one read: further standpoints give it as extents, in the
-step's length; ranging and a blueprint handed over give it in a unit, as writes. Shape is never the read's. The reader has the Cauchy sweep and its paint.
+step's length; ranging and a blueprint handed over give it in a unit, as writes. Shape is never the read's. A read has the Cauchy sweep and its paint.
 
 That an image does not settle the shape that made it is an old observation: Helmholtz's perception as unconscious
 inference, inverse optics as an ill-posed problem (Poggio, Torre and Koch 1985), Gibson's optic array. Those accounts
-treat the reader's side as a shortfall, too little information, to be made up by inference. Here the reader's side is
+treat the read's side as a shortfall, too little information, to be made up by inference. Here the read's side is
 complete on its own terms. Its geometry is fixed before anything arrives, the same whatever shape is out there, and its
-law is the Cauchy. The shape was never the reader's to lack.
+law is the Cauchy. The shape was never the read's to lack.
 
 Holding an outline as one radius per direction, r(θ) on the unit circle, is classical. It is the outline's radial
 function, its polar coordinates. So is describing it by the Fourier series of that function, or of its tangent angle along
@@ -347,9 +347,9 @@ by side at one distance give the one against the other, and the distance cancels
 Take one step and the room becomes a map, every corner placed and every thing sized, in steps: places, unmoved when the
 room and the step are scaled together. That was the first essay's opening scene. Walk round a thing and its shape fills in, direction by direction from its centre.
 
-Then the first essay's distinction returns in a practical form. **To move the furniture is to write.** A reader that wants
+Then the first essay's distinction returns in a practical form. **To move the furniture is to write.** An observer that wants
 a chair a metre from the wall, or a picture at eye level, wants a thing to be at an amount, and no reading holds that. It
-must become a writer, and writing needs what reading never does: the reader must move and engage with the room
+must write, and writing needs what reading never does: the observer must move and engage with the room
 physically. A known step, a hand laid flat against the wall, a tape measure. One amount carried in writes every length of
 the room in its unit, and only then can the place wanted be named. (Placing the chair three strides from the wall needs
 no unit: that is an extent. The metre is what makes it a write.) Reading the room again afterwards is free.
@@ -360,9 +360,9 @@ no unit: that is an extent. The metre is what makes it a write.) Reading the roo
 
 ## 10. Below the resolution: the centroid first
 
-What does a reader get from things too close together to tell apart?
+What does a read get from things too close together to tell apart?
 
-Suppose several payloads lie closer together than the reader's resolution. The blurred reading has exactly the right
+Suppose several payloads lie closer together than the read's resolution. The blurred reading has exactly the right
 total and exactly the right centroid, the weighted average position, however close the payloads are. Their arrangement is
 not lost entirely. It enters the spread, smaller than the blur's own by the square of the separation over the resolution,
 and the higher moments, fainter still. So reading a close group as one payload at its centroid is an approximation good to
@@ -370,8 +370,8 @@ second order. It is exact only in the total and the centroid.
 
 So there are two centres, and they must not be confused.
 
-- **The directions' centre is the median,** an order statistic, which a mean cannot replace, and which a reader has only by
-  holding its readings together.
+- **The directions' centre is the median,** an order statistic, which a mean cannot replace, and which is had only by
+  holding the readings together.
 - **The unresolved payload's centre is the centroid,** a weighted mean. It arrives first and exactly.
 
 Fingers order; colours add.
@@ -384,8 +384,8 @@ The first essay showed that a chain of readings cannot find its own errors and a
 that becomes the main tool. A network of triangles, each corner read from several places, closes on itself again and
 again. Each closure that fails says something is misread; where several fail together, they point to the link.
 
-None of this computes anything in the reader. The projection through each standpoint divides. That directions compose,
-and that routes close or fail to, is the geometry's. What the reader contributes is position: the places it chooses to
+None of this is computed by the observer. The projection through each standpoint divides. That directions compose,
+and that routes close or fail to, is the geometry's. What the observer contributes is position: the places it chooses to
 stand, and the one amount it is handed.
 
 *Demo: the reader is a slide rule (a misread link, a loop that will not close).*
@@ -395,14 +395,14 @@ stand, and the one amount it is handed.
 ## 12. From reads to places to writes
 
 Climb the ladder of this essay once more, and count the variables. From one standpoint there is one length, H, the thumb,
-and a direction; nothing in it is a place, nothing is counted, and the reader has a vantage, not a shape (counting comes
+and a direction; nothing in it is a place, nothing is counted, and a read has a vantage, not a shape (counting comes
 with parallax, and one length counted makes the rationals: the fourteenth essay). A
 second standpoint adds a second variable, the step between the two. Now each point, matched in both looks, is two rays
 crossing, and its place comes out of the crossing's lengths and angles, sines and square roots, numbers no single length
-makes. More standpoints give every place seen, in the step's length: the writer's box, its three number lines, up to its
+makes. More standpoints give every place seen, in the step's length: the blueprint's box, its three number lines, up to its
 size. Count the step in an agreed unit and the box is in that unit.
 
-So parallax is how a reader reconstructs the writer's cube, up to its size: the passage from a read to an extent. It has
+So parallax is how an observer reconstructs the blueprint's cube, up to its size: the passage from a read to an extent. It has
 moved, joined its standpoints and is holding what no one standpoint holds, every place in its own stride, and scaling the
 world with the stride moves none of it. Only when the stride is counted in an agreed unit does it write. When it stops and
 looks again, it reads. Reads, extents and writes are not three kinds of observer; they are what one observer is doing.
@@ -418,9 +418,9 @@ pair's corner, about ε·d/B far off, and past about B/ε nothing but a ray (the
 example, one thumb walked toward a range ten thumbs off puts it at k = 20, an error about ten times the step's ε; a
 baseline of twenty thumbs would put it at the corner. *Of which things:* the
 same two standpoints give V for the near things and leave it unknown for the far ones. More standpoints, a longer baseline,
-narrow the band; nothing closes it. The writer who holds V exactly, the one the papers call the writer, is the limit of
+narrow the band; nothing closes it. Holding V exactly, as the blueprint held whole does, is the limit of
 this, never a stage of it. That is the fifteenth essay's shape again: every stage of learning V is a finite approximant, as
-every partial sum of π is, and holding V exactly, like holding π, would need the infinite process finished. A reader
+every partial sum of π is, and holding V exactly, like holding π, would need the infinite process finished. An observer
 placing V holds it to so many digits, for so many things, out to so far. V is knowable, not known: parallax places it
 without V ever being known first, and holds it exactly only at the limit. The twelfth essay's four things (the universe,
 an apple, a human, a sheet of paper) put the three cases side by side: V unknowable against the universe, knowable
@@ -444,7 +444,7 @@ down, the one write did not (*Reads and Writes in Physics* (`../reads-and-writes
 
 ## 13. What it comes to
 
-**Reading, placing and writing.** Standpoints are how a reader climbs from directions to places. One gives lines, two
+**Reading, placing and writing.** Standpoints are how an observer climbs from directions to places. One gives lines, two
 give the figure, exact, in the length of the step between them; the observer that joined them has placed the figure. The
 last rung is the agreed length that fixes the scale, the write. Astronomy's history of
 the astronomical unit is that rung, measured from outside for two centuries and finally agreed. Each standpoint's

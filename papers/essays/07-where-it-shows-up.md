@@ -2,8 +2,8 @@
 
 *The seventh of a series of essays on what can be known from where one stands. Draft, 28 October 2026.*
 
-The first six essays built the geometry from the inside out. A reader holds one length, H, its thumb held out at arm's
-length, points it at the mountain and turns it. A writer watching draws the circle; the reader holds none, its readings are
+The first six essays built the geometry from the inside out. A read holds one length, H, the thumb held out at arm's
+length, pointed at the mountain and turned. Drawn whole, that is the circle; the read holds none, its readings are
 the Cauchy, and the corner sits at their median. Ratios are free and amounts cost something carried in.
 
 This essay goes the other way. It looks at places where people met the geometry long before anyone named it: a lamp on a
@@ -14,7 +14,7 @@ one length, or the turn is lost. The freedom is the size, which every one of the
 
 The third essay already took three cases from data: LIGO's two detectors, the quasar dipole, and photons arriving one at a
 time. Those sorted heat from paint. The cases here are older and more familiar, and they sort something else:
-what the one-length circle, the writer's drawing of the reader's pointing, looks like once it is drawn on a page, a shore
+what the one-length circle, the blueprint's drawing of the thumb's pointing, looks like once it is drawn on a page, a shore
 or a chart, where a second axis exists and can be stretched.
 
 ---
@@ -73,7 +73,7 @@ fixes.
 The two mistakes are different in kind. A stretch, c ≠ 1, breaks the turn and moves the median off the corner. A wrong
 size, H ≠ β, breaks nothing that can be read. The first is a stretch, the second a zoom.
 
-**Standing at the lamp.** A reader standing at the lamp, reading each flash by its direction, holds the reading itself, the slope a writer
+**Standing at the lamp.** A read taken at the lamp, each flash read by its direction, holds the reading itself, the slope the blueprint
 writes tan θ. It has
 no β at all and no second length. Its one length gives the turn, so the requirement that c = 1 is met before it can
 arise. The requirement only appears once someone draws the scene with two axes, a sea axis and a shore axis, and then has
@@ -81,7 +81,7 @@ to choose how long to make each. The uniformity in this picture is the lamp's, a
 find the amount: here the lamp turns and the flash is the amount, and the beach records only where each flash landed.
 
 **The lamp, the shore and V.** The picture holds the Cauchy in each of the three forms the second essay derived. At the
-lamp, the reading (the writer's tan θ) is the standard half-Cauchy of one length turned: scale 1, no V, the corner at its median. On a
+lamp, the reading (the blueprint's tan θ) is the standard half-Cauchy of one length turned: scale 1, no V, the corner at its median. On a
 drawing with two axes it is a Cauchy of scale c, the ratio of the shore's drawn length to the sea's. On the beach the marks
 follow C(α, β), a location and a scale, both amounts, both moved by scaling the world. So V, the shore playing the mountain
 in the distance, comes in only as the scale, and only when someone finds the shore and lays a ruler along it: the walker's
@@ -121,7 +121,7 @@ course is a straight line. That is why navigators have laid compass courses on i
 **The small circle.** A circle of small radius δ on the globe, its points δ·(cos t, sin t) north and east, is drawn as
 δ·(f′(φ)·cos t, sec φ·sin t): an ellipse whose axes stand in the ratio c. Cartographers call it Tissot's indicatrix (Tissot
 1881), and they use it to see at a glance what any chart does at each place. In the language of these essays, it is the
-writer's circle of one length, one thumb, traced in two units. It is a circle exactly where the chart keeps angles, and
+blueprint's circle of one length, one thumb, traced in two units. It is a circle exactly where the chart keeps angles, and
 among the charts of this kind, only Mercator's keeps it a circle everywhere.
 
 **Four charts, one course.** In v and h, with v = sin φ (the height above the equator's plane) and h = cos φ (the distance
@@ -149,8 +149,8 @@ angle. It is the same kind of freedom as the lighthouse drawn at the wrong size:
 anything, and Mercator lets the scale vary from latitude to latitude.
 
 The fourth essay made a further point, which is worth repeating here only briefly. Mercator's chart is not a picture of
-what a reader sees. It is a chart of the whole field, every far stretch, from a value to twice it, drawn alike, with no
-focus. A reader's turn is centred on what it looks at, its far field in proportion. Mercator's equal stretches belong to
+what is seen from a standpoint. It is a chart of the whole field, every far stretch, from a value to twice it, drawn alike, with no
+focus. A read's turn is centred on what is looked at, its far field in proportion. Mercator's equal stretches belong to
 distance laid by a count of places, as much room from one thumb to two as from four to eight, not to the picture.
 
 ---
@@ -177,7 +177,7 @@ and a flat sheet has none (Gauss 1828).
 So the familiar argument about which projection is "right" is an argument about which property to keep. Mercator kept the
 directions and let the sizes go. Lambert kept the sizes and let the directions go. Nothing obliges anyone to use either.
 Each chart follows from the property it keeps, and only the globe itself, the complete object, keeps every direction and
-every area at once. The globe is the writer's: it holds both hemispheres, every amount, every angle. The charts are two
+every area at once. The globe is the blueprint's: it holds both hemispheres, every amount, every angle. The charts are two
 ways of laying it on a sheet, each keeping one kind of thing.
 
 The complaint about Greenland is a complaint about the zoom, not about the drawing.
@@ -201,7 +201,7 @@ reading has and an amount lacks.
 step further: they draw every axis at one length and also at right angles, undoing the correlations as well as the
 spreads. That is the one measure of length the second essay found a returning turn leaves unchanged, every direction at one
 length and forward square to up. Whitening is unique only up to a turn,
-and that turn is exactly the part of a reader's ignorance the drawing leaves free.
+and that turn is exactly the part of an observer's ignorance the drawing leaves free.
 
 **Principal components and canonical correlations.** Harold Hotelling's principal components (Hotelling 1933) are taken
 from the correlation matrix, the standardized variables, when the variables are in different units. Taken from the raw
@@ -233,11 +233,11 @@ so it is the only one in which the sweep is a turn and the median of every pair'
 ## 5. Where c ≠ 1 comes from
 
 The cases above invite an objection: "V = H is still a choice. Someone decided to draw both axes at one length, and could
-have decided otherwise." The second essay answered it. It is a writer's objection, supposing someone who holds both axes
-and sets c, who holds the thumb up to equal the mountain; a reader whose sweep is a turn holds one length and has no c to
+have decided otherwise." The second essay answered it. It is an objection from the blueprint, supposing someone who holds both axes
+and sets c, who holds the thumb up to equal the mountain; a read, whose sweep is a turn, holds one length and has no c to
 set.
 
-But a c ≠ 1 can still appear in what a reader's readings are taken through, imposed rather than chosen. When it does, it
+But a c ≠ 1 can still appear in what the readings are taken through, imposed rather than chosen. When it does, it
 has a signature, and the cases above sort into four.
 - **It is writing, not reading.** Amounts are wanted in a shared unit, so c is the ratio of real units, measured. The
   equal-area map and the task-weighted features are of this kind: they keep amounts on purpose.
@@ -265,8 +265,8 @@ close?
 
 Take a payload with two components, X on h's side and Y on v's, both amounts. Its reading is their ratio, |Y|/|X|, which
 keeps the direction and drops the size. Two premises are needed, and the geometry does not supply them.
-- The payload's law is unchanged by every turn. That the reader cannot detect its own turns is a fact about what the
-  reader knows, not about the payload. It makes the turn-invariant law the representation an ignorant reader should
+- The payload's law is unchanged by every turn. That an observer cannot detect its own turns is a fact about what the
+  observer knows, not about the payload. It makes the turn-invariant law the representation an ignorant observer should
   choose, in Jaynes's sense, and that is all it does.
 - The two components vary independently.
 
@@ -288,13 +288,13 @@ a model consistent with that heat, not its cause. These essays make no claim tha
 only that if a payload's law is taken to be unchanged by turns, with independent components, it is the normal, and its
 ratio is then the Cauchy the directions' heat already was. *The heat is given; the paint is met.*
 
-So the Cauchy is the reader's distribution and the Gaussian the writer's, and the bell factors into the two. Written round
+So the Cauchy is the read's distribution and the Gaussian the write's, and the bell factors into the two. Written round
 its centre, the isotropic normal is
 
 > (1/2π)·e^(−r²/2) dx dy = (dθ/2π)·(e^(−r²/2) r dr):
 
-a uniform turn, the reader's directions, whose slope is the Cauchy, times a law for the length, an amount, the payload.
-The writer's distribution is the reader's times the payload's. Dividing one component by the other integrates the length
+a uniform turn, the read's directions, whose slope is the Cauchy, times a law for the length, an amount, the payload.
+The write's distribution is the read's times the payload's. Dividing one component by the other integrates the length
 away, and the e of the bell goes with it; π stays, in the Cauchy's closing constant. Equal spreads are what make the
 turn uniform, V = H; spreads in a ratio c leave a Cauchy of scale c.
 
@@ -374,8 +374,8 @@ velocity law (β₁ + β₂)/(1 + β₁β₂) is tanh of the sum. Two boosts alo
 the join leaves a turn of the sky, the Thomas–Wigner rotation. Three stars seen before and after give it exactly, with
 no frequency and no distance (essay 9, "Thomas precession").
 
-**The thumb moved is the same slide.** The near and far fields slide the same way. Wrap the reader's plane of
-distances onto a sphere so that one thumb lands on its equator (a writer's drawing): the eye is one pole, the horizon the
+**The thumb moved is the same slide.** The near and far fields slide the same way. Wrap the read's plane of
+distances onto a sphere so that one thumb lands on its equator (the blueprint's drawing): the eye is one pole, the horizon the
 other. Then taking the thumb k times larger is z ↦ z/k again, a boost of rapidity ln k along that sphere's axis, every
 latitude sliding toward the eye's pole, and the logarithm of the distance in thumbs slides by ln k exactly. Turning the
 world turns the same sphere about its axis. The split of near from far moves under the thumb as the moving sky's
@@ -384,7 +384,7 @@ directions move under a boost (`euler.html`, "the writer's sphere").
 The `boost-sky.html` demo shows the slide. A sky drawn on the axis ξ moves bodily by η as the boost grows, and the
 directions sampled from it follow the slide with no table rebuilt.
 
-**Three rulers again.** The fourth essay laid one reading x three ways: the writer's number line x, the turn θ = arctan x,
+**Three rulers again.** The fourth essay laid one reading x three ways: the write's number line x, the turn θ = arctan x,
 and the hyperbolic angle ζ = asinh x. Special relativity runs on the same three. A velocity's celerity γβ, distance per
 unit of the traveller's own time, is x. Its rapidity η is ζ. And with χ the turn ruler's angle, its speed β = tanh η =
 sin χ and the Lorentz factor γ = sec χ. Rapidities add along a line, as hyperbolic angles do. Uniform acceleration is
@@ -399,7 +399,7 @@ is a Möbius map carrying the Cauchy and the second is not. The identities are e
 **In physics.** The moving sky is worked through on real data in *Reads and Writes in Physics*
 (`../reads-and-writes-physics.md`), §5. A census of CatWISE quasars cut at a flux expects a dipole of [2 + x(1 + α)]·β,
 the paint carrying 60–70% of it; four slices by brightness give one β, 2.7 times the microwave background's, but slices
-by colour disagree and the direction lies 21–28° off, so part of the dipole is not the reader's motion. Two boosts
+by colour disagree and the direction lies 21–28° off, so part of the dipole is not the observer's motion. Two boosts
 joined leave the Thomas–Wigner rotation, fixed by three stars' directions before and after and absent from any single boost. And
 the correspondence ends at one premise, that motion is conformal on the sky, from which Liouville gives Möbius and the
 Möbius group of the sphere is the Lorentz group.
@@ -420,7 +420,7 @@ list of the finite groups that can act on a surface (the plan names it), the fou
 Lorentz group.
 
 This does not derive relativity from looking. Two of the four premises carry the physics. The first, said of the
-world and not just of the reader's rules, is that what no read can hold makes no difference to what is read: the light
+world and not just of a read's rules, is that what no read can hold makes no difference to what is read: the light
 postulate, stated for reads. A moving medium breaks it (light in flowing water is dragged along), and then the medium is a
 writing carried in. The second, that a change of standpoint is fixed by finitely many numbers, is a premise. Routes known for a
 century reach the same group from the principle of relativity; this one reaches it from the sky. What it

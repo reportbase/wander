@@ -2,7 +2,7 @@
 
 *The seventeenth of a series of essays on what can be known from where one stands. Draft, 5 November 2026. It gathers the
 rulings of 5 November (R700–R707) on the read as a hemisphere, the Cauchy as a heat map, near and far as an overlay, and
-addresses as the writer's word, and follows* Reads and Writes *§3, "Where the heat comes
+addresses as a word for writes, and follows* Reads and Writes *§3, "Where the heat comes
 from".*
 
 Take any photograph with a wide lens and look at its corners. They are darker than the middle, even of a white wall evenly
@@ -20,8 +20,8 @@ light away and the three remain, a map of where the looking is.
 That map is the Cauchy. This essay is about reading it as a map.
 
 The order: the map (§1), where it comes from (§2), what it is not (§3), the same map as a random walk (§4), stepping back
-(§5), moving the map (§6), the second map, in distance (§7), a middle and no centre of mass (§8), addresses as the
-writer's word (§9), who saw which piece (§10), and what it changes (§11).
+(§5), moving the map (§6), the second map, in distance (§7), a middle and no centre of mass (§8), addresses as a
+word for writes (§9), who saw which piece (§10), and what it changes (§11).
 
 ## 1. A map of where the looking is
 
@@ -42,13 +42,13 @@ that 60°. That heat map is the two-dimensional Cauchy,
 
   1/(2π(1 + r²)^(3/2)) per unit of glass,
 
-falling, in the writer's angle α off the look, as cos³α.
+falling, in the blueprint's angle α off the look, as cos³α.
 
 That is the map on the flat screen. Drawn on another chart the same looking makes another curve: the stereographic
 chart of the whole sky gives (1/π)/(1 + |z|²)², which is not this one. The cos³ belongs to the screen square to the look.
 
 In the plane, with one thumb instead of two crossed, the same construction gives the familiar Cauchy, (2/π)/(1 + s²) per
-unit of the reading s = v/h (falling as cos²θ, in the writer's angle).
+unit of the reading s = v/h (falling as cos²θ, in the blueprint's angle).
 
 Three things are worth saying about this map at once.
 
@@ -59,8 +59,8 @@ It is given. Nothing has arrived yet. The map is the same in a desert and a cath
 or under the open sky. It belongs to the standpoint and the turn, not to the world (*Reads and Writes* §4, "Heat and
 paint").
 
-It moves with the look. Turn and the map turns with you: whatever you look at sits at its hottest point. A reader's
-fidelity is greatest wherever it looks, because the map is centred wherever it looks (R624).
+It moves with the look. Turn and the map turns with you: whatever you look at sits at its hottest point. A read's
+fidelity is greatest wherever the look points, because the map is centred wherever the look points (R624).
 
 What arrives along each direction is something else: the colour, the light, the paint. The world decides it, and it
 changes when the world changes. The paint lands on the map; it does not move it. In a line: *the heat is given; the paint
@@ -74,7 +74,7 @@ Start with the measure that treats every direction alike: uniform by angle in th
 That is the turn's own measure, the one the hand sweeps with no clock and no ruler (essays 2 and 14). It has no heat: on
 the hemisphere, by angle, every direction weighs the same.
 
-The heat appears when the directions are read in a coordinate. The derivation is the writer's, in angles. In the plane, a
+The heat appears when the directions are read in a coordinate. The derivation is the blueprint's, in angles. In the plane, a
 direction θ off home reads s = v/h = tan θ, and
 
   dθ = ds/(1 + s²) = cos²θ · ds.
@@ -89,7 +89,7 @@ In space, a small patch dA of the glass at r = tan α subtends a solid angle
 one cosine because the patch is tilted to the ray, two because it is sec α away and solid angle falls with distance
 squared. So an even spread over the hemisphere, (1/2π) per unit of solid angle, read on the glass, has weight
 (1/2π)·cos³α = 1/(2π(1 + r²)^(3/2)). With n thumbs square to the look, the same count gives cos^(n+1): one cosine more for
-each thumb. What the reader holds is the result, rational in its reading and with no angle in it: 1/(1 + s²) in the plane,
+each thumb. What a read holds is the result, rational in its reading and with no angle in it: 1/(1 + s²) in the plane,
 1/(2π(1 + r²)^(3/2)) on the glass.
 
 The photographer's cos⁴ is this cos³ and one more for the aperture, which a ray reaching the corner of the frame sees
@@ -100,7 +100,7 @@ is.
 
 There is an easy way to get this backward, and it is worth getting it wrong once on purpose.
 
-Suppose the world in front of you is a wall of tiles, evenly spaced: a Cartesian grid, a writer's grid, so many tiles a
+Suppose the world in front of you is a wall of tiles, evenly spaced: a Cartesian grid, a blueprint's grid, so many tiles a
 metre. Is the Cauchy the way that grid looks from where you stand?
 
 No. Tiles on a wall d away sit at y = d·s, so in the reading s they are spaced evenly; on the glass they are flat. Per unit
@@ -111,8 +111,8 @@ The Cauchy is the other way round: the even turn laid on that flat grid,
 
   dθ/ds = 1/(1 + s²),  dΩ/dA = cos³α,
 
-the turn per unit of the writer's grid. It is a rate, the *per* of essay 14: how much of the looking per tile. The tiles
-are the writer's; the turn is the reader's; the Cauchy is how one sits on the other. It belongs neither to the wall alone
+the turn per unit of the blueprint's grid. It is a rate, the *per* of essay 14: how much of the looking per tile. The tiles
+are the blueprint's; the turn is the read's; the Cauchy is how one sits on the other. It belongs neither to the wall alone
 nor to the eye alone: it is the rate at which a turn consumes the world. It is not the layout of the world.
 
 ## 4. The same map, from a walker
@@ -164,7 +164,7 @@ and that point can be put there in different ways:
 All land on the same law, checked side by side at thirty digits (`plans/cauchy-routes.md`). They are told apart only by
 what the height tracks, a distance or a decay rate or a sum, and by the wall's shape. Curve the wall into a ball, and from
 halfway out to the rim the share landing within 45° of straight ahead is 0.482 for the walker and 0.359 for the straight
-turn. So the map is not the turn's alone. The turn is the reader's way of seeing it, the one that makes the heat over its
+turn. So the map is not the turn's alone. The turn is the read's way of seeing it, the one that makes the heat over its
 directions.
 
 ## 5. Stepping back
@@ -227,7 +227,7 @@ read along distance instead of across directions.
 
 Both bells are counts per unit of something, and change with it. Per unit of turn the first map is flat; it is cos²θ
 only per unit of the reading. Per unit of the thumb's lay, (2/π)·arctan(d/H), the second is flat too; it is sech only per
-unit of ln(d/H). A writer who wraps the plane onto a sphere with one thumb on its equator sees why: the lay is the
+unit of ln(d/H). A blueprint that wraps the plane onto a sphere with one thumb on its equator shows why: the lay is the
 latitude drawn evenly, sech(ln(d/H)) is the cosine of the latitude, and the logarithm is Mercator's chart of the same
 sphere, which stretches it (`euler.html`). No chart gives the heat of itself; the lay drawn square, turn against lay, is
 where the read is flat both ways, and the product below is a choice of counts, the one that puts the hot spot on the thing
@@ -236,9 +236,9 @@ looked at.
 Multiply the two maps and the result is hottest at one point: on the look, one thumb out, the thing looked at. They meet
 there only because the look points at it. Look at something else and both go with it.
 
-That is why a reader should put what it looks at on the corner (R701). The corner is where its reading is finest relative
+That is why an observer should put what it looks at on the corner (R701). The corner is where its reading is finest relative
 to its place, and the thing there is at parallax's corner too: a step of two thumbs places it with the least error,
-ε·cosh(ln k) at its least, ε (essay 6). Whether readers do this is a question about readers. That they should is a
+ε·cosh(ln k) at its least, ε (essay 6). Whether observers do this is a question about observers. That they should is a
 question about the map.
 
 ## 8. A middle and no centre of mass
@@ -254,12 +254,12 @@ average belongs to the chart that took a direction for an amount; the map never 
 
 The map hardly needs π either. Its heat at each slope, 1/(1 + s²), is rational; so is the ratio of the heat at any two
 directions; and the corner is the middle because the heat below it equals the heat above. π enters at one place, the
-constant 2/π that closes the heat to a total of 1, and that total is the completed sum: a writer at work has shares by
+constant 2/π that closes the heat to a total of 1, and that total is the completed sum: a write has shares by
 count, k of K equal turns, and the fractions of Gregory's and Leibniz's series, 1 − 1/3 + 1/5 − … for the half below the
 corner, never its limit π/4 (essay 2 §9).
 
-The bell sits beside the map as its opposite. A Gaussian is a law of amounts, and its exact facts are sums: a writer at
-work holds it as the binomial, counts of tosses, with the mean and the variance exact, where the map's exact facts are
+The bell sits beside the map as its opposite. A Gaussian is a law of amounts, and its exact facts are sums: a
+write holds it as the binomial, counts of tosses, with the mean and the variance exact, where the map's exact facts are
 its middle and its equal halves. In polar form the bell is a turn times a length; its π is all in the turn, the circle
 whole, and its e all in the length. Divide two such amounts and the length goes, taking the e with it; what is left is
 the turn, and that is the map.
@@ -267,19 +267,19 @@ the turn, and that is the map.
 The paint does. Light adds; colours average; the payload has every mean it ought to have. *What arrives can be averaged;
 where it arrives cannot.*
 
-## 9. Addresses, the writer's word
+## 9. Addresses, a word for writes
 
-The essays used to call the reader's directions its *addresses*. That word is discrete: an address is a place in a
-layout, counted, one of so many, the thing a computer looks up in memory. A writer can lay out such places on the map: K
+The essays used to call a read's directions its *addresses*. That word is discrete: an address is a place in a
+layout, counted, one of so many, the thing a computer looks up in memory. A write can lay out such places on the map: K
 of them at its quantiles, each holding an equal share of the heat; along distance, at H·tan(kπ/2K), half inside the thumb
-and half past it at every H. Those are good tools, and essays 8, 12 and 16 use them. But they are the writer's sampling of
-the map, not the map. The reader counts nothing. Its fineness, K, is read continuously; laid out as K places, it is a
-writer's count (R706).
+and half past it at every H. Those are good tools, and essays 8, 12 and 16 use them. But they are a write's sampling of
+the map, not the map. A read counts nothing. Its fineness, K, is read continuously; laid out as K places, it is a
+write's count (R706).
 
 As a metaphor, the word still serves where it connects the Cauchy to computing (R707). A direction looked along is like an
 address looked up: fixed before anything is stored there, unmoved by what is written there, reached in one step. The
-difference is that memory's addresses and values are the same kind of thing, bits in a layout of N slots, while the
-reader's direction and its paint never were: pointing is already being met (essay 16, "The projection is the
+difference is that memory's addresses and values are the same kind of thing, bits in a layout of N slots, while a
+read's direction and its paint never were: pointing is already being met (essay 16, "The projection is the
 dereference"). Keep the metaphor and remember the heat under the address.
 
 ## 10. Who saw which piece
@@ -296,7 +296,7 @@ decomposition (2011).
 What the essays add is a division of it. The density is a map of where a standpoint is looking: given before anything
 arrives, centred wherever it looks, continuous, and not the law of anything measured. What lands on it is the world's
 writing, met there. The map has a middle and no mean; near and far are a second map laid on it by a length; and the
-places a computer counts on it are a writer's sampling, useful and not the thing itself.
+places a computer counts on it are a write's sampling, useful and not the thing itself.
 
 **In physics.** A spectral line's Lorentzian is the Cauchy map in frequency: a phase turning at a steady rate and fading
 is a standpoint z = m + iγ, the line's centre the rate, its half-width the fading. A photograph's dark corners are the
@@ -319,7 +319,7 @@ every change of chart. Practice already takes the median of a Cauchy and never i
 It changes what a camera's corners mean. The darkening at the edge of a photograph is not mostly a fault of the glass;
 three of its four cosines are the map showing through.
 
-And it changes the word. A reader has no addresses. It has a map, given whole wherever it looks, and the world's paint
+And it changes the word. A read has no addresses. It has a map, given whole wherever the look points, and the world's paint
 landing on it. *The heat is given; the paint is met.*
 
 **Demos.** `cauchy-map.html` (the look and the walker on one wall, in the plane and in space; stepping back; the

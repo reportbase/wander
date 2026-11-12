@@ -33,13 +33,13 @@ Each place sits at the middle of one of N equal arcs, so no place sits on a seam
 laid end to end ever claim the same element.
 
 The array is a representation, and whoever builds it chooses its indexing. The world has no indices of its own. The
-point of the picture is not that a reader is an array. It is that an array shows, in a form a programmer already
-handles, that addresses and payloads can be held apart. An index is counted, so its addresses are the writer's; the
-reader's side of the same split is a direction and its heat, continuous and with nothing counted in it, and the paint that
-arrives along it. Why the reader's heat follows the uniform turn is the second essay's result, not the array's.
+point of the picture is not that a read is an array. It is that an array shows, in a form a programmer already
+handles, that addresses and payloads can be held apart. An index is counted, so its addresses are a write's; the
+read's side of the same split is a direction and its heat, continuous and with nothing counted in it, and the paint that
+arrives along it. Why the read's heat follows the uniform turn is the second essay's result, not the array's.
 
 **The index is the address.** The places are fixed by the index before any value is stored, at equal steps of turn.
-Read each place as its slope, the reading v/h of the second essay (in the writer's angle, the half-angle
+Read each place as its slope, the reading v/h of the second essay (in the blueprint's angle, the half-angle
 s_k = tan(θ_k/2)). For even N
 those slopes are exactly the N evenly spaced quantiles of the standard Cauchy. At N = 8, for instance, they are
 
@@ -68,37 +68,37 @@ round the whole.
   half-Cauchy, the law of one quarter turn.
 - Within an array, its middle is the corner, and reading it backwards is the reciprocal: tan θ_k · tan θ_(N−1−k) = 1.
 - A closed curve stored as 4N samples over the full turn is these four arrays laid end to end. A sphere is eight arrays,
-  one per octant, each two-dimensional, uniform in azimuth and in height, the fifth essay's wedge (the writer's
-  description; the reader has the horizon's heat map).
+  one per octant, each two-dimensional, uniform in azimuth and in height, the fifth essay's wedge (the blueprint's
+  description; a read has the horizon's heat map).
 
-**The reader reads the arrays; the writer joins them.** A reading carries no sign, and turns composed by tangent
-addition repeat after a half turn. So from a standpoint every facing is the same array, and a reader reads within one.
+**The arrays are read; the blueprint joins them.** A reading carries no sign, and turns composed by tangent
+addition repeat after a half turn. So from a standpoint every facing is the same array, and a read is within one.
 To join two arrays, their values must meet at the shared end in one unit, and that needs each array's size, its length
-in amounts. The reader holds each array only up to its own factor, the size no reading fixes, so it cannot tell whether
-two ends meet. The writer knows the sizes, and which facing each array is, and so it can join the four into the closed
+in amounts. A read holds each array only up to its own factor, the size no reading fixes, so it cannot tell whether
+two ends meet. The blueprint holds the sizes, and which facing each array is, and so it joins the four into the closed
 circle or the eight into the sphere.
 
 **Not knowing the size makes the corner and the horizon.** This is the array's way of saying what the first essay said
-about the missing V. Knowing an array's size, the writer has its far end at an amount, the other party's whole, the
+about the missing V. Knowing an array's size, a write has its far end at an amount, the other party's whole, the
 mountain in the distance. Its ruler is the number line, on which the point where the two parties are equal is simply
-computed. Not knowing it, a reader whose sweep is a turn has only its own one length, its thumb, and v = h becomes its
+computed. Not knowing it, a read whose sweep is a turn has only its own one length, its thumb, and v = h becomes its
 split of near from far and the median of its readings: the corner. With no size, the array's far end is no amount at all,
-only a direction, [0 : 1], where the chart v/h runs out: the horizon. Both are the reader's because the size is missing.
-The writer, holding the size, has neither.
+only a direction, [0 : 1], where the chart v/h runs out: the horizon. Both are the read's because the size is missing.
+A write, holding the size, has neither.
 
-**Readers' and writers' arrays.** The first essay's two vantages give four kinds of array, two each.
-- **The writer's circle** is a constant array of known length, every entry the radius. Its one value needs no storing, so the
+**The read's arrays and the blueprint's.** The first essay's two sides give four kinds of array, two each.
+- **The blueprint's circle** is a constant array of known length, every entry the radius. Its one value needs no storing, so the
   array is the equation h² + v² = 1.
-- **The writer's shape** is an ordinary array of known length, a breadth in amounts at every index, which the writer joins into
+- **The blueprint's shape** is an ordinary array of known length, a breadth in amounts at every index, which the blueprint joins into
   the closed shape.
-- **The reader's central sweep** gives the values without the length: an amount at each given index, known only up to one common factor.
+- **The read's central sweep** gives the values without the length: an amount at each given index, known only up to one common factor.
   The values can be ranked and averaged against each other, and cannot be sized.
-- **The reader's inscribed sweep** gives the index alone, laid before any value arrives and with no length: its places the Cauchy's
+- **The read's inscribed sweep** gives the index alone, laid before any value arrives and with no length: its places the Cauchy's
   quantiles, its middle the corner, its last place running to the horizon, K places for any N.
 
 With nothing related there is no array: a length H, the thumb, but no index and no relation to store.
 
-The writer's arrays are the circle and the shape, with the length known. The reader's are the payload on the index and the index
+The blueprint's arrays are the circle and the shape, with the length known. The read's are the payload on the index and the index
 itself, with the length missing. That one number is what writing supplies.
 
 **Laid on the sweeps.** Take K = 8 places on the quarter turn. A direction's share of the turn is g = (2/π)·arctan(v/h),
@@ -115,10 +115,10 @@ and 7 − k: 2 to place 5, ½ to place 2. Scaling the world by 10⁻³, 7 or 10�
 central sweep, meeting the same point at twice the angle (the second essay's III.20), indexes it by ⌊K·φ/π⌋ over its
 half turn and lands on the same place, place for place. One index serves both sweeps.
 
-Against that, a writer places an amount x on [0, X] at ⌊N·x/X⌋, which needs X. With N = 8 and X = 100, the amounts 10, 50
+Against that, a write places an amount x on [0, X] at ⌊N·x/X⌋, which needs X. With N = 8 and X = 100, the amounts 10, 50
 and 99 go to places 0, 4 and 7. Read from home at a distance laid by H, ⌊8·(2/π)·arctan(x/H)⌋, they go to places 4, 6 and 7
-with H = 10, and to 1, 4 and 5 with H = 50. H moves them, as a zoom, the size of the thumb, and X never enters. Both are the writer's
-indices: the count index of a world written to its end, the turn index the writer's bookkeeping of what the reader's
+with H = 10, and to 1, 4 and 5 with H = 50. H moves them, as a zoom, the size of the thumb, and X never enters. Both are a write's
+indices: the count index of a world written to its end, the turn index a write's bookkeeping of what the read's
 turn holds. The count index needs the size; the turn index needs only the zoom.
 
 ---
@@ -173,7 +173,7 @@ centre, and the term it reads is the Szegő kernel 1/(1 − āz), whose square o
 place. Built one after another, each from the remainder left by those before (the Takenaka–Malmquist terms, chosen greedily
 as adaptive Fourier decomposition chooses them), these terms draw a curve with local detail in far fewer terms than
 circles do. On a circle with one narrow dent, the best 85 epicycles reach a part in a thousand and eleven aimed terms do,
-every one of them standing at the dent. On a broad shape with nothing local, the even circles win. Which reader to be
+every one of them standing at the dent. On a broad shape with nothing local, the even circles win. Which standpoint to take
 depends on where the detail is (EPI, `plans/epi-plan.md`; the demo *Circles and standpoints*).
 
 **What reconstruction assumes.** The kernel fills in between the places, and filling in is a model of the payload: that
@@ -225,9 +225,9 @@ every kernel value computed only as the rational function above of these constru
 anywhere, exact to 10⁻¹⁶ at N up to 64; the algebraic paper carries the lattice alone to N = 2048, within 3·10⁻¹⁵ of the
 tangent construction, with every trigonometric function replaced by a counter that stays at zero. That it can be done at
 all rests on one fact: halving a turn needs one square root and nothing more. On these essays' rulings that square root
-is where the writer comes in: halving a length is the reader's, halving a turn takes two lengths combined, the
-hypotenuse √(1 + s²) (the fifteenth essay, and *Reads and Writes* §9). So the lattice is built by a writer, and what a
-reader holds are its leaves, each one a ratio.
+is where the blueprint comes in: halving a length is the read's, halving a turn takes two lengths combined, the
+hypotenuse √(1 + s²) (the fifteenth essay, and *Reads and Writes* §9). So the lattice is the blueprint's, and what a
+read holds are its leaves, each one a ratio.
 
 **Two charts, one circle.** So the reconstruction theorem is proved in one coordinate and run in another. The proof uses
 the angle: Fourier modes, the Lebesgue constant, Jackson's estimate, the language classical approximation theory already
@@ -235,9 +235,9 @@ speaks. The operation uses the slope: ratios, the reciprocal, tangent addition, 
 same closed line, the third essay's projective line of directions, read through s = tan(φ/2). The angle chart needs the
 whole circle at once, every period and every closed identity defined on a finished turn, and the proof is right to use
 it. The slope chart is the chart of one reading at a time, and the operation, which reads one point, never needs more.
-Trigonometry is the writer's tool here, not anything the reader does: the writer counts the leaves and holds both
-hemispheres of the turn to describe a reader that does neither. The proof's one square root, √(1 + s²), belongs with
-it, since it is the halving of a turn, which lays the lattice; the reader's kernel at the leaves is rational.
+Trigonometry is the blueprint's tool here, not anything in a read: the blueprint has the count of the leaves and both
+hemispheres of the turn and describes a read that has neither. The proof's one square root, √(1 + s²), belongs with
+it, since it is the halving of a turn, which lays the lattice; the read's kernel at the leaves is rational.
 
 **Three things the construction shows.** *The arithmetic has its own craft.* The textbook half-angle, (√(1 + s²) − 1)/s,
 is the same number as s/(1 + √(1 + s²)), but it subtracts nearly equal numbers once s is small: built that way the
@@ -315,14 +315,14 @@ these essays do. Three are worth naming, so that a reader of both is not misled.
   is the turn's is set by the standpoint. Which reading of "unique" the papers mean is still awaiting a ruling, and these
   essays do not borrow the stronger words.
 - **The observer and the spectator.** The papers speak of a bounded observer and a spectator. In these essays those are the
-  reader and the writer, and the point is the same one: the reader holds a finite count of places and never the completed
-  grid; the writer describes the completed grid and the theorems about it. The papers' K, the leaves actually drawn, and N,
+  read and the blueprint, and the point is the same one: a read holds a finite count of places and never the completed
+  grid; the blueprint is the completed grid and the theorems about it. The papers' K, the leaves actually drawn, and N,
   the completed grid, are the fourth essay's K and N.
 - **2/π.** The papers read the Lebesgue constant's 2/π as the chord over the arc. The essays have kept that number to what
   it was found to be: a ratio of two sums over the turn, the uniform turn's mean of a projection, taken by whoever adds the
   projections. The algebraic paper shows where its π sits: the sum of |sin| over the turn, written in the slope, is
   2∫₀^∞ s(1 + s²)^(−3/2) ds = 2, algebraic, and the π is the turn's own total, dividing it. The 2 is in the slope's
-  arithmetic; the π is the writer's count of the whole turn.
+  arithmetic; the π is the blueprint's count of the whole turn.
 
 None of this touches the mathematics. The kernel identities, the round trip, the slope form, the nesting and the transform
 are exact, and checked.
@@ -333,16 +333,16 @@ are exact, and checked.
 
 **Reading and writing.** An array on a circle is the clearest small instance of the whole split. Its index is the
 address, laid before anything is stored, the Cauchy's quantiles. Its values are the payload, and storing them moves no
-place. The index is a writer's count laid on the reader's heat, which counts nothing: *the heat is given; the paint is
-met.* Its length is what the writer has and the reader lacks, and the lack is what makes the corner and the horizon.
+place. The index is a write's count laid on the read's heat, which counts nothing: *the heat is given; the paint is
+met.* Its length is what a write has and a read lacks, and the lack is what makes the corner and the horizon.
 The four kinds of array, the constant, the known-length, the values without the length and the index alone, are the
-writer's two and the reader's one read, counted two ways. Joining arrays into a closed circle is a writer's act; reading within one
-is a reader's.
+blueprint's two and the one read, counted two ways. Joining arrays into a closed circle is the blueprint's; reading within one
+is a read's.
 
 **The Cauchy.** With two places on a circle, the kernel that carries each stored value round the circle is the Cauchy's
 own curve, 1/(1 + s²), which is also the foot h². Every finer kernel is that curve raised to a power. So the Cauchy is not
 only the law of where an array's places fall; it is the shape of the weights by which the places share the circle. The
-whole reconstruction runs in slopes, with no angle, because the slope is the reading and the reading is all a reader has.
+whole reconstruction runs in slopes, with no angle, because the slope is the reading and the reading is all a read has.
 
 Back to the array of N points. Its index was laid before any point was stored, at the Cauchy's quantiles. Its values can be
 anything. The kernel that turns it back into a curve is exact at the places and a model between them. And the whole of it,
@@ -361,7 +361,7 @@ Lebesgue's lemma, Jackson's estimate, Erdős and Turán's bound on the Lebesgue 
 summation and the Cooley–Tukey factorization, as presented there. The aimed terms are Takenaka's (1925) and Malmquist's (1926), chosen as in
 Qian and Wang's adaptive Fourier decomposition (2011); Poisson's kernel and Abel's summation are classical.
 
-The array picture, its four facings, readers' and writers' arrays and the worked example with K = 8 are set out in
+The array picture, its four facings, the read's and the blueprint's arrays and the worked example with K = 8 are set out in
 *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10
 November with read, extent and write, R788), §7.3 ("In the picture of an array", "Laid on the sweeps"), and for programmers in the
 computer-science companion, §6 ("The array").

@@ -14,12 +14,12 @@ this essay. Turning in the plane is a kind of multiplication that does not care 
 together a great deal of what the earlier essays found. In space it fails, and when it fails several things that were
 one thing in the plane come apart.
 
-The reader of these essays lives mostly in the plane: one other party, across and up, a quarter turn from one to the
+The read of these essays is taken mostly in the plane: one other party, across and up, a quarter turn from one to the
 other. The fifth essay added a second party and found that most of what mattered survived. This essay asks the sharper
-question. Of everything the reader has in the plane, what is a fact about readers, and what is a fact about the plane?
+question. Of everything a read has in the plane, what is a fact about reads, and what is a fact about the plane?
 
 *Demos: `plane-sphere.html` (the four parts as one curve in the plane and three on the sphere, walkers released at the
-standpoint, and a book turned two ways); `central-reader.html` (step 5, a reader off the centre of a circle: its uniform turn lands unevenly, and the
+standpoint, and a book turned two ways); `central-reader.html` (step 5, a standpoint off the centre of a circle: its uniform turn lands unevenly, and the
 landing, doubled less the uniform, is harmonic measure); `one-read.html` (the landing point ½e^(2iθ) and the Cayley
 disc); `boost-sky.html` (a sky seen under a boost: the spherical Cauchy); `wedge.html` (step 7, position, then sweep);
 `sphere-cube.html` (step 7, the two sweeps).*
@@ -28,20 +28,20 @@ disc); `boost-sky.html` (a sky seen under a boost: the spherical Cauchy); `wedge
 
 ## 1. One law, four parts
 
-Start with what the plane gives. A reader stands somewhere off a line, at a foot m along it and a height γ above it.
+Start with what the plane gives. An observer stands somewhere off a line, at a foot m along it and a height γ above it.
 Write that standpoint as one complex number, z = m + iγ. Turn uniformly and read where each direction meets the line,
 and the readings are a Cauchy law with foot m and height γ (the third essay, section 6). In the plane this one law is
 four different things at once.
 
 **It is the uniform turn carried by a Möbius map.** A Möbius map of the line, x ↦ (ax + b)/(cx + d), moves the standpoint z
 to (az + b)/(cz + d) and carries a Cauchy law to the Cauchy law of the new standpoint. Nothing else changes. Every change
-of chart the reader can make, a new zero, a new H (a thumb of another size), the reciprocal, is such a map, and so the
+of chart the observer can make, a new zero, a new H (a thumb of another size), the reciprocal, is such a map, and so the
 family of Cauchy laws is closed under all of them. The third essay called this "once a Cauchy, always a Cauchy".
 
 **It is harmonic measure.** Release a random walker at the standpoint and let it wander until it first touches the line.
 Where it lands is a Cauchy law with the same foot and height. Mathematicians call this the harmonic measure of the line
 from z, because it solves the problem of heat or voltage on the half-plane: hold the line at a temperature that varies
-along it, and the temperature at z is the average of the line's temperatures over this law. So the law a reader's turn
+along it, and the temperature at z is the average of the line's temperatures over this law. So the law a read's turn
 lays down is also the law of where a blind random path would end up. Nothing about the turn mentions walkers; it is a
 coincidence, and the plane is where it happens.
 
@@ -54,9 +54,9 @@ one pole above the line, and that pole is the standpoint; at t = 0 the same resi
 kernels only the Cauchy's transform is one pure phasor (essay 2 §9; the OPL run): a characterization that uniqueness of
 the Fourier transform already gives, the reading of the pole as the standpoint ours.
 
-**It is the two sweeps' rates, combined.** Put a reader inside a circle, off its centre, and let it turn uniformly. Its
+**It is the two sweeps' rates, combined.** Put an observer inside a circle, off its centre, and let it turn uniformly. Its
 directions land on the circle unevenly: bunched on the near side, spread on the far side. Call the landing density L.
-Then 2L less the uniform density is exactly the circle's harmonic measure from the reader's place. Twice the inscribed
+Then 2L less the uniform density is exactly the circle's harmonic measure from the observer's place. Twice the inscribed
 rate less the central rate, the second essay's two sweeps, gives the law of where a walker from the same place lands.
 This is the demo `central-reader.html`, step 5.
 
@@ -129,7 +129,7 @@ measure comes nearest. The least gap never fell below half a percent of the peak
 a boost carries harmonic measure onto no harmonic measure at all: from r = 0.3, a boost of 0.5 lands at least 2% of the
 peak from the nearest one.
 
-**The two sweeps' rates have no counterpart.** Inside a ball, a reader off the centre turning uniformly lands on the
+**The two sweeps' rates have no counterpart.** Inside a ball, a uniform turn from off the centre lands on the
 sphere with density L = (1 − rt)/(4π(1 + r² − 2rt)^(3/2)). In the plane, 2L less the uniform was harmonic measure
 exactly. In space no a·L + b/(4π), for any constants a and b, comes within 2.6% (at r = 0.3) or 5.8% (at r = 0.7) of it.
 The best a is 1.52 or 1.66, not 2.
@@ -156,7 +156,7 @@ showed in 1878 that the only number systems with division in which multiplicatio
 real and the complex numbers. The quaternions keep division and give up the order; nothing keeps both past two
 dimensions.
 
-For the reader with two other parties this has a plain meaning. The fifth essay's two sweeps, altitude (from H up to V, the
+For a read with two other parties this has a plain meaning. The fifth essay's two sweeps, altitude (from H up to V, the
 thumb up to the mountain) and azimuth (round from H to V₂), are each the turn of a plane. Each on its own still composes by
 adding angles, still has its corner at 45°, still lays a half-Cauchy over its quarter turn. What fails is putting them
 together: a sweep in altitude then a sweep in azimuth is not the same motion as the two in the other order, and the wedge's
@@ -190,7 +190,7 @@ eighteenth essay, section 9).
 
 ## 5. What survives in space
 
-It would be wrong to read this as "the plane's reader does not extend". Most of what the earlier essays found is not a
+It would be wrong to read this as "the plane's read does not extend". Most of what the earlier essays found is not a
 plane coincidence at all. Sorting it is the point of this essay.
 
 **The split survives.** A point of space is still an amount times a direction, r·u, with u a unit vector. Scaling the
@@ -208,7 +208,7 @@ fifth essay assumed a standpoint off the centre, so nothing there depends on the
 only the exchange of two shares, never two turns taken in order, which is why they survive what the turns lose.
 
 **The Cauchy wedge survives.** The two-dimensional Cauchy of the wedge's readings, (v/h, v₂/h), is the uniform law on the
-octant seen through a flat screen: the writer's description of the reader's heat map, cut to a quarter of its screen. It is
+octant seen through a flat screen: the blueprint's description of the read's heat map, cut to a quarter of its screen. It is
 the image of the uniform directions, with no standpoint moved. It holds in every dimension, and the fifth essay's numbers
 stand.
 
@@ -229,16 +229,16 @@ reach the same measure on a flat boundary, and only what their height tracks tel
 
 ## 6. Which law a statement means
 
-This gives the corpus a rule. A statement about the reader's standpoint in three dimensions has to say which law it
+This gives the corpus a rule. A statement about a read's standpoint in three dimensions has to say which law it
 means.
 
 The boosted sky is the clearest case. A uniform sky seen by an observer moving through it is the spherical Cauchy,
 with ρ = tanh(η/2) (the seventh essay, section 7). In the plane the same law would also be harmonic measure and would
 have mean ρ. On the sphere it is the Möbius law alone: its directions bunch toward the way of travel by a law that the
-reader's boosts carry, but its mean cosine is coth η − η/sinh² η, not ρ, and no random walker from any point lands
+observer's boosts carry, but its mean cosine is coth η − η/sinh² η, not ρ, and no random walker from any point lands
 that way. The sky is a Möbius fact, not a heat fact.
 
-A reader standing off the centre of a room, turning evenly, is the other case. Its directions land on the walls by the
+An observer standing off the centre of a room, turning evenly, is the other case. Its directions land on the walls by the
 landing law L, the plain geometry of a turn from a point. That is neither the Möbius law nor harmonic measure. In the
 plane it would have been half of each, plus the uniform; in space it is its own law.
 
@@ -264,11 +264,11 @@ solid angle, the half because a state's point sits at twice its angle (*Reads an
 
 ## 7. What it comes to
 
-In the plane, the reader's Cauchy wears four hats: the uniform turn under every change of chart, where a walker
+In the plane, the read's Cauchy wears four hats: the uniform turn under every change of chart, where a walker
 lands, the law whose averages are the powers of the standpoint, and the two sweeps' rates combined. It wears them
 because the plane has endless angle-keeping maps, because those maps keep heat as heat, and because turning is
 multiplication that does not care about order. Euler's formula, z = r·e^(iθ), is the notation of all three, the
-writer's notation for the reader's turn (the second essay).
+blueprint's notation for the read's turn (the second essay).
 
 In space the hats come off. Liouville leaves only the Möbius maps; the heat problem stops being kept by them; turns
 stop commuting. Harmonic measure keeps the powers and the mean. The spherical Cauchy keeps the Möbius maps and the
@@ -280,7 +280,7 @@ fifth essay's thirds. Those are facts about a standpoint and its directions, and
 dimensions. The coincidences are facts about the plane.
 
 So the plane is special, but not in the way that would undo anything. It is special because in it one law does four
-jobs. A reader in space does the same reading; it only has to say which job it means.
+jobs. A read in space is the same read; a statement about it only has to say which job it means.
 
 ---
 

@@ -56,7 +56,7 @@ free of it; the reading runs off without limit.
 
 The series has a name for that place: the horizon. In the sweep from the thumb to the thing, the thumb's share h empties
 as the up share v fills, and where h is empty the slope v/h has nothing under it. The horizon is not a place too far
-away. It is the place where the thing a reading is in terms of has gone. A reader does not arrive there, and for the
+away. It is the place where the thing a reading is in terms of has gone. A read does not arrive there, and for the
 same reason no arithmetic gets past it.
 
 So the two properties sit together. Any size: the result does not care. Never zero: there is no result without it.
@@ -86,7 +86,7 @@ wall was misread as 1/2, the loop gives 5/4. The loop shows an error. It cannot 
 ratios between pairs, as gaps, with nothing computed. Which of the twenty-four is the one read against does not matter.
 
 Joining is not a single read's doing. A read is one standpoint, one moment; a chain is several, kept and put together,
-and "the door drops out" is said by whoever keeps them. Scaffolding is the writer's word. The reader has the three
+and "the door drops out" is said by whoever keeps them. Scaffolding is a word for writes. A read has the three
 thumbs of the door and nothing has come down.
 
 ## 5. The last storey
@@ -94,7 +94,7 @@ thumbs of the door and nothing has come down.
 The scaffolding comes down in the middle of the tower. It does not come down at the bottom. The table is three tenths
 *of the wall*, and that last "in terms of" is still standing.
 
-This is the oldest statement of what a reader lacks, in a new place. A tower of ratios gives the whole building one
+This is the oldest statement of what a read lacks, in a new place. A tower of ratios gives the whole building one
 number short, and the one number is the size of whatever the bottom storey was read against. There are three places a
 tower can end.
 
@@ -132,13 +132,13 @@ was the pair's own size. The older papers called the equation a receipt: proof t
 one thing. Change the 3 and 4 to 21 and 28, or to 0.03 and 0.04, and the shares are 0.6 and 0.8 again. The 5 was needed
 to get them. It is in neither.
 
-The third row is the reader's. It needs no 5, only the one slope 4/3, and its right side turned over is the thumb's
+The third row is the read's. It needs no 5, only the one slope 4/3, and its right side turned over is the thumb's
 share squared, 9/25. That quantity, 1/(1 + s²), is the heat of essay 2: the Cauchy. So the circle and the Cauchy are
 one equation taken in terms of two different things from inside it.
 
 They do not cost the same. The slope needs nothing but the two lengths against each other. The shares need the 5,
-which is a square root of the two together, and in general no fraction: that is the writer's construction, as essay 15
-has it. And the circle held whole, closed and with every sign, is the writer's altogether. The reader has the slope and
+which is a square root of the two together, and in general no fraction: that is the blueprint's construction, as essay 15
+has it. And the circle held whole, closed and with every sign, is the blueprint's altogether. A read has the slope and
 its heat.
 
 ## 7. Every figure
@@ -175,10 +175,10 @@ number line has no place to record whose hand a reading was in terms of, so the 
 still needed.
 
 The paper's remedy is an exchange, and it is scaffolding taken down in the right order. Each reading has two things
-under it: the reader's own size, private, and the distance between them, shared. Divide one reading by the other and the
+under it: the observer's own size, private, and the distance between them, shared. Divide one reading by the other and the
 shared distance comes down, leaving the sizes against each other: 0.089/0.1125 is 0.79, whose square root is 0.889, and
 1.6/1.8 is 0.889. Multiply them and the private sizes come down, leaving the distance: 0.089 × 0.1125 is 0.01, whose
-square root is one in ten. Neither reader had either result alone. Its other cases are this essay's too: exchange rates
+square root is one in ten. Neither read had either result alone. Its other cases are this essay's too: exchange rates
 round a triangle multiply to 1, which is §4's loop, and a rate that is off shows in the loop and cannot be placed by it.
 
 The check is §4's loop and §6's receipt. Readings on one denominator close: the loop multiplies to 1, the squares of the
@@ -190,7 +190,7 @@ The idea was first put as a Roman arch, built on a wooden centring that is struc
 was tried in the older papers and withdrawn, and the reasons still hold.
 
 An arch is a thing in sizes: stones that bear weight. A reading is not; it is a direction. And an arch is built, where a
-reader builds nothing. Today's vocabulary says why the second objection was right and what to keep of it. Building is
+read builds nothing. Today's vocabulary says why the second objection was right and what to keep of it. Building is
 writing. A scaffold is something put up and kept so that reads can be joined, which is a write of the relation, not
 part of any read.
 

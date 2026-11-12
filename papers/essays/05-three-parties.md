@@ -2,13 +2,13 @@
 
 *The fifth of a series of essays on what can be known from where one stands. Draft, 28 October 2026.*
 
-So far the reader has related itself to one other thing: across and up, h and v, a quarter turn from one to the other.
+So far a read has taken in one other thing: across and up, h and v, a quarter turn from one to the other.
 The world has more than one other thing in it. This essay adds a second, v₂, and asks what changes.
 
-Less than one might fear. The writer's circle becomes a sphere, the reader's one thumb becomes two crossed thumbs, the
-quarter turn becomes a wedge in the writer's description and a heat map out to the horizon in the reader's look, and the Cauchy becomes its
+Less than one might fear. The blueprint's circle becomes a sphere, the read's one thumb becomes two crossed thumbs, the
+quarter turn becomes a wedge in the blueprint's description and a heat map out to the horizon in the look, and the Cauchy becomes its
 two-dimensional cousin. Every pair of parties keeps its own corner, exactly as before. One thing is new: a third party
-brings a third kind of share, and the reader turns out to be "near in everything" for exactly a third of the directions it
+brings a third kind of share, and the observer turns out to be "near in everything" for exactly a third of the directions it
 can look in. With n other parties it is 1/(n + 1).
 
 ---
@@ -19,14 +19,14 @@ Stand in the corner of a room, back to where two walls meet the floor. One wall 
 and the floor runs away in front of you. Every direction you can look in, from straight along one wall, through up the
 corner, to straight along the other, lies between those three edges.
 
-That is how a writer draws the reader's directions with three parties. Along the first wall is h; up is v; along the second
+That is how the blueprint draws a read's directions with three parties. Along the first wall is h; up is v; along the second
 wall is v₂. A direction is the three of them together, [h : v : v₂], and like a direction in two parties it carries no
 distance. It says how much of each, compared with the others.
 
 None of the three is ever negative. The wall to your left is not "minus the wall to your right"; it is just another wall.
-So the reader's directions, drawn whole from outside as a writer draws them, make one wedge, an eighth of the sphere of all
+So a read's directions, drawn whole from outside as the blueprint draws them, make one wedge, an eighth of the sphere of all
 directions: an *octant*. The other seven octants of a full sphere are only this wedge faced another way. The wedge is the
-writer's description of the reader's geometry. The reader never holds it whole: it has a vantage, not a shape, and section
+blueprint's description of the read's geometry. A read never holds it whole: it has a vantage, not a shape, and section
 4 says what that vantage is.
 
 *Demos: the room (home in the floor corner, the room one wedge); the wedge.*
@@ -51,28 +51,28 @@ ratios hold in every drawing. Statements about lengths, angles and areas belong 
 
 ---
 
-## 3. The sum, and where the reader stands in it
+## 3. The sum, and where a read lies in it
 
 One cut is special, because it needs no standpoint: the sum h + v + v₂ = 1. It treats every party alike and uses
 nothing but addition. Each share is a share of a whole, and only a view that holds the whole has shares. It is the
-writer's drawing: a line for two parties, a flat triangle for three.
+blueprint's drawing: a line for two parties, a flat triangle for three.
 
-The triangle shows something about the reader very clearly. It holds every way three breadths can share a whole. A
+The triangle shows something about a read very clearly. It holds every way three breadths can share a whole. A
 system's true breadths, taken as shares of their total, would be one point of it, and no common unit moves that point.
-Finding it needs the true breadths, which are amounts, and the reader does not have them.
+Finding it needs the true breadths, which are amounts, and a read does not have them.
 
-What the reader has is its one length, H, the thumb. With a third party it holds two thumbs crossed at a right angle across
+What a read has is its one length, H, the thumb. With a third party it holds two thumbs crossed at a right angle across
 the line of sight, one reading up, v against h, the other across, v₂ against h, and both are the same H: no second length.
-So it gives every party that same length; a writer would write V = V₂ = H, the thumb held to equal both mountains in the
+So it gives every party that same length; the blueprint would write V = V₂ = H, the thumb held to equal both mountains in the
 distance. On the triangle that is equal shares, the centre (⅓, ⅓, ⅓). That centre is the *triple corner*, where every pair
-of parties is at its own corner at once, where the two thumbs both read 1. The whole of the reader's geometry follows from
+of parties is at its own corner at once, where the two thumbs both read 1. The whole of the read's geometry follows from
 standing there.
 
-The truth lies off the centre by two ratios that no reading carries: how many of the reader's lengths, how many thumbs, the
-second party really is, and how many the third is. Amounts brought in from outside move the reader's amounts toward the
+The truth lies off the centre by two ratios that no reading carries: how many of the read's lengths, how many thumbs, the
+second party really is, and how many the third is. Amounts brought in from outside move the observer's amounts toward the
 true point. They do not redraw anything.
 
-*Demo: the sphere in the cube, step 7 (the triangle, the reader's drawing at the centre and a true point beside it).*
+*Demo: the sphere in the cube, step 7 (the triangle, the read's drawing at the centre and a true point beside it).*
 
 ---
 
@@ -86,7 +86,7 @@ astronomer uses for a sky seen from where they stand.
 
 Each reads its own pair and has its own corner at 45°. The azimuth reads v₂/h, whatever the altitude. The altitude reads
 v against the whole horizontal reach, whatever the azimuth. These are *horizon* coordinates: the horizon and the
-vertical are set by where the reader stands. They choose an order, a forward direction and an up. The wedge itself does
+vertical are set by where the observer stands. They choose an order, a forward direction and an up. The wedge itself does
 not.
 
 The third essay's picture, a hand held up to a stained-glass window, carries over with both hands. One hand spreads its
@@ -98,15 +98,15 @@ crossing is the payload, and still no colour carries a distance. Two hands add n
 and the right angle between them is a quarter turn, no amount. (For every crossing to hold the same share of the window,
 the round hand spreads its fingers evenly by turn and the upright hand evenly in height, not in angle, that is, in equal steps of the up share v; section 6 says why, by Archimedes' hat-box.)
 
-No one holds a window that way; the picture is not about hands. What it shows is that the reader's space in three
+No one holds a window that way; the picture is not about hands. What it shows is that the read's space in three
 dimensions is not Cartesian. There are no three axes of amounts, no X, Y and Z counted out from an origin: there is one
 thumb, crossed with itself, and two sweeps of fingers from where it is held. Everything else, the corner, the near and
 far fields, the law over the crossings, follows from the thumb. The Cartesian frame, three number lines and every point
-three amounts, is the writer's (section 11).
+three amounts, is the blueprint's (section 11).
 
-Nor is it a wedge. The wedge, with its faces, its edges and its triple corner, is the writer's description of the reader's
-geometry, drawn whole from outside. What the reader experiences is a heat map over every direction in front, out to the
-horizon, hottest about its line of sight. The Cauchy is that heat map and has no shape: the sphere closes because it holds a radius, and the reader holds none, so
+Nor is it a wedge. The wedge, with its faces, its edges and its triple corner, is the blueprint's description of the read's
+geometry, drawn whole from outside. What a read has is a heat map over every direction in front, out to the
+horizon, hottest about its line of sight. The Cauchy is that heat map and has no shape: the sphere closes because it holds a radius, and a read holds none, so
 the heat runs out to the rim in a long tail that never completes (the second essay, section 9). Its heat is the density of
 addresses per unit of reading, and a tunnel, where one is drawn, is only its hottest core (half the peak heat at 37.5° off
 the look, with a fifth of the directions inside). The heat is the look's, not the thumbs': looked down their diagonal,
@@ -115,7 +115,7 @@ on a screen square to h, is hottest at home instead, the same directions on anot
 as readings on a screen held square to the look, the screen the crossed thumbs make, the directions crowd toward the line
 of sight and thin on every side by the Cauchy: at r thumbs off the line of sight their heat is 1/(2π(1 + r²)^(3/2)) per
 unit of screen, over the whole hemisphere in front, out toward a horizon never reached. Nothing of it is stored. It is
-generated from the thumb, and it is there wherever the reader looks. As the reader sweeps, the heat map turns with the look,
+generated from the thumb, and it is there wherever the observer looks. As the observer sweeps, the heat map turns with the look,
 continuously and without a seam, so what it looks at is always at the centre, where the heat is greatest, and each
 direction is exact: given, not computed. That is perfect fidelity wherever it looks, because the heat map is wherever it looks.
 The heat is continuous, nothing counted in it and no grain of its own; what arrives along each direction is the paint.
@@ -126,24 +126,24 @@ Section 5's law over the wedge is this heat map's law on a quarter of its screen
 
 ## 5. The Cauchy wedge
 
-In two parties the reader's directions, turned steadily, gave the Cauchy. What is the steady sweep of a wedge, and what
+In two parties a read's directions, turned steadily, gave the Cauchy. What is the steady sweep of a wedge, and what
 does it give?
 
 The natural answer is that every direction of the octant gets equal weight by area: no direction favoured over any other.
 Swept that way, the readings v/h and v₂/h have a definite law, the **two-dimensional half-Cauchy**. Its density at (s, s₂)
-is 2/π divided by (1 + s² + s₂²) to the power three halves. It is the reader's heat map of section 4, cut by the writer to
+is 2/π divided by (1 + s² + s₂²) to the power three halves. It is the read's heat map of section 4, cut on the blueprint to
 the quarter of its screen where v and v₂ are not negative: the octant is a quarter of the hemisphere, so the constant is
 four times the heat map's 1/(2π). Four things follow, each checkable.
 
 - **Every pair keeps its corner.** Take v/h alone: it has exactly the law of the one-party case, median at 1, no mean. So
-  does v₂/h. So does v/v₂, the pair the reader never divided by directly. Every one of the three pairs has its median at
+  does v₂/h. So does v/v₂, the pair the read never divided by directly. Every one of the three pairs has its median at
   its own corner.
 - **The six orderings are equally likely.** Of h, v and v₂, each of the six ways to rank them takes a sixth of the
   octant.
-- **The near field is a third.** The reader is near in both readings, h the largest of the three, for exactly a third of
+- **The near field is a third.** A read is near in both readings, h the largest of the three, for exactly a third of
   its directions. It is past its corner in one reading for a third, and past in both for a third.
 - **The one length matters.** Draw the second and third parties on a page at c₁ and c₂ times H. Then the medians of v/h,
-  v₂/h and v/v₂ move to 1/c₁, 1/c₂ and c₂/c₁. Every pair keeps its corner only when both are drawn at the reader's one
+  v₂/h and v/v₂ move to 1/c₁, 1/c₂ and c₂/c₁. Every pair keeps its corner only when both are drawn at the read's one
   length, one thumb.
 
 With one other party the near and far fields were halves. With two, near in everything is a third.
@@ -156,7 +156,7 @@ With one other party the near and far fields were halves. With two, near in ever
 
 "Every direction weighted equally" sounds unambiguous, but in three dimensions it has to be said carefully.
 
-The reader's ignorance, as the essays have set it out, is that it cannot tell which way it happens to be turned. In
+The observer's ignorance, as the essays have set it out, is that it cannot tell which way it happens to be turned. In
 three dimensions the turns are all the rotations of the sphere, and only one way of spreading probability over the
 sphere is unchanged by every rotation: equal weight by area. This is a classical uniqueness result, Haar's of 1933. The
 exchanges of the three parties alone would not fix it: they are a finite group, and many laws are unchanged by them.
@@ -174,13 +174,13 @@ third.
 
 Put another way: the even sweep is not two sweeps, one per thumb. It is the three thumbs swept together, every pair
 through its quarter turn from its home to its horizon, which down the thumbs' diagonal is the wedge, one part of the
-hemisphere the reader sees (section 10).
+hemisphere a read takes in (section 10).
 The two angle sweeps reach the same directions; what they get wrong is the weight. Swept one after the other, round and
 then up, the directions pile toward the up thumb, where a turn round it shrinks to nothing; swept up and then round, they
 pile toward another thumb, and the pair that leaves its corner changes with the order. Swept together there is no order,
-since no pair is taken past its horizon. A writer holding every turn of space finds the same law from outside, the one
+since no pair is taken past its horizon. The blueprint, holding every turn of space, has the same law from outside, the one
 Haar's theorem of 1933 leaves alone, with any turns of a rigid shape adding up to one turn about one axis, Euler's theorem
-of 1776; that is the writer's account from the whole sphere, and the half of it behind the reader is what a head turned
+of 1776; that is the blueprint's account from the whole sphere, and the half of it behind the observer is what a head turned
 all the way round would see, other facings joined. The thumbs ride the shape as marks, landing at the same places
 on the screen however it is pointed. With one thumb, in the plane, the two ways are one, which is why the difference waits
 for the third.
@@ -210,9 +210,9 @@ n + 1: one more power of the cosine for each party added.
 
 ## 8. More parties
 
-Nothing in the argument depended on there being exactly two other parties. With n of them, each read on the reader's one
-length, the relation lies on the sphere in n + 1 dimensions, and the reader's directions, drawn whole by a writer, are one of its
-2^(n+1) orthants. The reader itself has the vantage, not the sphere or the orthant.
+Nothing in the argument depended on there being exactly two other parties. With n of them, each read on the same one
+length, the relation lies on the sphere in n + 1 dimensions, and a read's directions, drawn whole on the blueprint, are one of its
+2^(n+1) orthants. The read itself has the vantage, not the sphere or the orthant.
 
 - **Every reading and every pair keeps its corner.** Integrate out all but one reading and you get the one-party
   Cauchy. Integrate out all but two and you get the wedge's. Adding a party changes nothing about the pairs already held.
@@ -231,18 +231,18 @@ number of the amounts, a factor on that party's amounts alone, so many thumbs.
 
 ## 9. Reading and writing, with a second party
 
-The first essay sorted readings into the writer's and the reader's by asking about the other's breadth. With a second
+The first essay sorted readings into the written and the read by asking about the other's breadth. With a second
 other party the same question is asked of each: each party's breadth is known, and written, or not, and read.
 
-- **Both known.** The writer's view in three dimensions: the solid held whole, its corners computed, no horizon. The
+- **Both known.** The blueprint's view in three dimensions: the solid held whole, its corners computed, no horizon. The
   truth is one point of the triangle.
-- **One known, one not.** One pair is held as a writer holds it; the other is read from somewhere. With V known, the
-  corner of h and v is computed and V's amounts are exact. V₂ is read on the reader's length, its corner with h found,
+- **One known, one not.** One pair is held as the blueprint holds it; the other is read from somewhere. With V known, the
+  corner of h and v is computed and V's amounts are exact. V₂ is read on the read's length, its corner with h found,
   and its amounts known up to one missing ratio. Written in one freedom, read in the other.
 - **Both read.** Every direction of the octant is a reading [h : v : v₂], two numbers, laid evenly by area and painted
   by whatever arrives along it.
 
-The second essay's π/2 and 2/π have their counterparts here, the writer's measures too (they come from the sphere's
+The second essay's π/2 and 2/π have their counterparts here, the blueprint's measures too (they come from the sphere's
 totals, though the π cancels). Over a whole hemisphere, the measure from the centre is its
 area over its base, 2; the measure from the edge is its mean height, ½; and 2 × ½ = 1, as π/2 × 2/π = 1 for two
 parties. These are not the two-party numbers squared. They are those times 8/π² and π²/8.
@@ -251,20 +251,20 @@ parties. These are not the two-party numbers squared. They are those times 8/π�
 
 ## 10. The wedge and the heat map
 
-The sphere of all directions, every octant at once, is the writer's picture. A sphere that placed every place by its
-direction *and* its distance would need every distance, the size of everything, which no reader at a standpoint has.
+The sphere of all directions, every octant at once, is the blueprint's picture. A sphere that placed every place by its
+direction *and* its distance would need every distance, the size of everything, which no read from a standpoint has.
 
-The wedge is the writer's too: the writer's description of the reader's geometry, given afresh at each standpoint from the
+The wedge is the blueprint's too: its description of the read's geometry, given afresh at each standpoint from the
 relations there and drawn whole from outside. It needs no size: its readings are ratios, laid by the two-dimensional
 Cauchy. What further standpoints would add is what they added in the plane, once per party: the true size of each against
 H, in thumbs, an extent; a blueprint adds it in a unit, a write.
 
-The writer can place the wedge anywhere on the sphere. One rotation positions it; the reader's two sweeps then work inside
+The wedge can be placed anywhere on the sphere. One rotation positions it; the read's two sweeps then work inside
 it, in its own frame. The readings are the same at every position. Only a frame fixed outside, the sphere's, records where
 the wedge points. Position, then sweep.
 
-The reader has none of this as a thing with faces and edges. It has the heat map of section 4, generated from the thumb about
-wherever it looks and stored nowhere. From inside there is no position to record: the heat map turns with the look, and what
+A read has none of this as a thing with faces and edges. It has the heat map of section 4, generated from the thumb about
+wherever the look falls and stored nowhere. From inside there is no position to record: the heat map turns with the look, and what
 is looked at is always at its centre, where the heat is greatest.
 
 *Demo: the wedge, step 7 (position, then sweep).*
@@ -329,13 +329,13 @@ doubles.
 
 ### Laid by the heat
 
-Which screen, then, shows the reader's own directions as it holds them? They are uniform by area about the look, so the
+Which screen, then, shows a read's own directions as it holds them? They are uniform by area about the look, so the
 screen that gives each the same room is the one that keeps area: Lambert's azimuthal equal-area projection about the
-crosshair, a direction α off the look drawn 2·sin(α/2) out (the writer's angle and formula). It is true at the crosshair and departs gently: 0.9% at 15°,
-3.4% at 30°, 7.6% at 45°. A flat screen does the opposite. Its distance out is the reading itself, r (the writer's tan α), so the far
+crosshair, a direction α off the look drawn 2·sin(α/2) out (the blueprint's angle and formula). It is true at the crosshair and departs gently: 0.9% at 15°,
+3.4% at 30°, 7.6% at 45°. A flat screen does the opposite. Its distance out is the reading itself, r (the blueprint's tan α), so the far
 readings stretch without bound toward the horizon, and the directions thin on it as cos³α.
 
-Laid so, the heat map of section 4 shows the far field the way the reader holds it. The ring one thumb off
+Laid so, the heat map of section 4 shows the far field the way a read holds it. The ring one thumb off
 the look, at 45°, sits 0.765 out; one in 2, one in 4 and one in 8 sit at 1.05, 1.23 and 1.32; and the rest bunch toward
 the horizon's rim at √2, never reached. Equal room holds equal shares of the directions, so each band gets the room its share takes:
 the corner to one in 2 holds 0.26 of the directions in front, one in 2 to one in 4 holds 0.20, one in 4 to one in 8
@@ -348,33 +348,33 @@ can never show distance bunching. A view laid by the share of distance can: a po
 at zero. Then everything inside the thumb is held in proportion, and past it each band of one in 2, one in 4, one in 8 is
 thinner than the last, the far world packed under the horizon.
 
-And the reader never counts the world. A view of a world of N stored things is a writer's: N was written first. The
-reader's view has its directions and their heat, told apart to a fineness K, and nothing else. A world drawn for it can be
+And a read never counts the world. A view of a world of N stored things is a write's: N was written first. The
+read's view has its directions and their heat, told apart to a fineness K, and nothing else. A world drawn for it can be
 made where the view reaches, at every scale, and culled to what that fineness can tell, a quarter of π/2K (a program that
-does it lays K places, a writer's count of the heat); the rest is in the far field's bunched rows, held, never listed.
+does it lays K places, a write's count of the heat); the rest is in the far field's bunched rows, held, never listed.
 Look elsewhere and the same fineness falls on other things.
 
 *Demos: crosshairs in a field (the view by distance address, the tunnel, equal area, by turns, the flat screen; the
 one-thumb circle, the three corners and their homes and horizons); two thumbs in the plane.*
 
-### Where the reader stands
+### Where the observer stands
 
-Every picture above is drawn on a screen, and the reader is not on it. The reader stands at the point the screen is
+Every picture above is drawn on a screen, and the observer is not on it. The observer stands at the point the screen is
 projected from, where the three thumbs meet, behind the screen with the look running out through the crosshair. Every mark
-on the screen is a direction from that point, set at its reading r off the crosshair (the writer's tan α). The crosshair is the look itself. The thumbs
+on the screen is a direction from that point, set at its reading r off the crosshair (the blueprint's tan α). The crosshair is the look itself. The thumbs
 are at √2, 54.74° off; the homes are at 1/√2, 35.26° off. The horizon, 90° off, runs parallel to the screen and never
-lands on it. The reader has no shape here: a point, a vantage. The rings and the screen are the writer's drawing of what
+lands on it. A read has no shape here: a point, a vantage. The rings and the screen are the blueprint's drawing of what
 that point holds.
 
 Strip away the world and that drawing is the read itself: the heat of directions in thumbs, cooling off the crosshair as the
 two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)), in rings about the look out toward a horizon on every side; or laid by count,
 each ring holding the same share. The whole screen is the hemisphere in front: every direction ahead lands on it once,
-its reading r from the crosshair, and only the rim, 90° off, never lands. A reader sees that hemisphere, with the most fidelity
-where it looks, and the Cauchy is nothing smaller: its shape is the hemisphere itself, everything the reader sees. Spread
+its reading r from the crosshair, and only the rim, 90° off, never lands. An observer sees that hemisphere, with the most fidelity
+where it looks, and the Cauchy is nothing smaller: its shape is the hemisphere itself, everything the observer sees. Spread
 evenly over the hemisphere, the directions are the Cauchy on the screen, point for point; its peak is the look, half of it
 lies within 60° of the look, and its long tail is the rim, which is why it has no mean. The wedge's triangle is a part of
 it, where each pair of thumbs runs from its home to its horizon; the sphere behind is the head turned all the way round,
-other facings joined, the writer's. Shown as a height, the same law is a hill about the crosshair, its peak the look. Nothing in it changes when the look turns or the world is scaled, because
+other facings joined, the blueprint's. Shown as a height, the same law is a hill about the crosshair, its peak the look. Nothing in it changes when the look turns or the world is scaled, because
 there is no world in it: no payload, only the geometry the payload would paint.
 
 Nor does it change when the thumb is dragged. Put a row of things along the look and drag H: the things slide along the
@@ -383,8 +383,8 @@ stay exactly as they were. The Cauchy is the same at every H; the thumb decides 
 
 So the Cauchy has no near field and no far field. No length enters it. Near and far are a separate overlay, which H lays
 over the read: along every direction one thumb out, half that direction's heat in distance nearer and half farther. The overlay
-is a split, a mark on every direction, not a body or a dome; take it away and the Cauchy is unchanged. The reader moves it
-by looking: the thing the crossed thumbs point at is taken as H, so it sits at the corner. That a reader does so is a
+is a split, a mark on every direction, not a body or a dome; take it away and the Cauchy is unchanged. The observer moves it
+by looking: the thing the crossed thumbs point at is taken as H, so it sits at the corner. That an observer does so is a
 speculation, and the reason to is that it is optimal (the fourth essay, section 13).
 
 Counted per stretch, the two layers are two heat maps. The Cauchy's own is in direction: per unit of reading on the screen,
@@ -397,14 +397,14 @@ out, and they meet there only because the look points at it.
 Put together, the read has two centres. The eye is where every direction starts; the hot spot, one thumb out along the
 look and, looked down the diagonal, where the three thumbs cross, is where the heat is greatest. It is the corner twice
 over, the triple corner in direction and one thumb in distance, the median as well as the peak, and it is the corner only
-because the reader points there and takes the thing there as its thumb. From it the heat thins every way without end:
+because the observer points there and takes the thing there as its thumb. From it the heat thins every way without end:
 across the look in readings, along it in ratios. The near field runs from the eye to the hot spot, distance in
 proportion; the far field from the hot spot to the horizon, distance in ratios; each holds half the heat. Neither is
 hotter. They differ only in how distance is read.
 
 ### A cube of dots
 
-The plainest way to see all this is a cube of dots, a writer's box, one unit apart. Stand at one dot, look at another,
+The plainest way to see all this is a cube of dots, a blueprint's box, one unit apart. Stand at one dot, look at another,
 and colour every dot in front by the read's heat: cos³ of its angle off the look, times sech(ln(d/H)), the thumb set on
 the dot looked at. Behind the eye, nothing; one read is half the cube.
 
@@ -414,7 +414,7 @@ near dot and nearly the whole cube is far field; look at a far one and most of i
 times larger and not one colour changes.
 
 Count the dots either side of the hot spot and they are uneven. From a corner of a box twelve dots a side, looking at
-the middle, 436 are nearer than one thumb and 1,291 farther. The writer's even spacing makes that so: there is more box
+the middle, 436 are nearer than one thumb and 1,291 farther. The blueprint's even spacing makes that so: there is more box
 far off than near. Lay the same dots as the read lays distance, each share the same room, and the dot looked at sits in
 the middle with half the room on each side, the far dots crowding toward the horizon. The fields are equal in room and
 not in count, whatever the count.
@@ -424,18 +424,18 @@ inside that. Most of what is in front is warm, or cool; the heat is a gradient o
 And the box ends. Its last dot stops short of the horizon, and the gap between them is the difference between a shape
 and the heat: the box closes, the heat goes on.
 
-Now stand at the eye and draw what the reader has. Every dot goes where its direction falls, laid so equal shares of
+Now stand at the eye and draw what a read has. Every dot goes where its direction falls, laid so equal shares of
 the directions take equal room, and every dot is one size, since no distance is read: a far dot and a near one on the
 same line look alike. Laid on a grid, the dots draw lines in this view: every row of dots through the eye lands on one
 line, and from a corner of the box its three faces make a hard curved border. That border looks artificial because it
-is: it is the writer's spacing and the writer's walls. The heat underneath is regular: rings of equal share of the
+is: it is the blueprint's spacing and the blueprint's walls. The heat underneath is regular: rings of equal share of the
 directions about the look, each taking the same room, each as hot as cos³ of its angle, the same whatever dots happen to
 be there. Take the dots away and the regular heat map is all that is left, with no border. Turn the look and the dots stream across a heat that stays put about the crosshair. That is the read:
 directions and their heat, given; the dots met, wherever they happen to be.
 
-*Demo: a cube of heat (the cube from outside, the same dots as the read lays them, and the reader's view from the eye).*
+*Demo: a cube of heat (the cube from outside, the same dots as the read lays them, and the read's view from the eye).*
 
-*Demo: the read (the directions in thumbs and by count, the hill, from the side where the reader stands, the thumb
+*Demo: the read (the directions in thumbs and by count, the hill, from the side where the observer stands, the thumb
 dragged, and the shape swept whole against each thumb on its own).*
 
 ---
@@ -446,16 +446,16 @@ Put a sphere, free to turn, at the centre of a cube of half-width e. From the ce
 its ray to exactly one point of the cube's surface, on the face of its largest component. Every point of the surface is
 reached once, at every size of cube and after any turn of the sphere.
 
-H, V and V₂ held as amounts combine into the writer's sphere, round only where they are written equal and an
+H, V and V₂ held as amounts combine into the blueprint's sphere, round only where they are written equal and an
 ellipsoid otherwise (drawn unequal, the readings from inside are still a Cauchy, stretched, the same family). H, H and H, one
-thumb crossed with itself, combine into the reader's Cauchy. The sphere in this section is the first; the faces' heat is
+thumb crossed with itself, combine into the read's Cauchy. The sphere in this section is the first; the faces' heat is
 the second.
 
 Every point inside the cube, except the centre, is some fraction t of the way out to its surface point, for exactly one t
 between 0 and 1. So the pair (direction on the sphere, fraction t) reaches every point of the cube, and it is the same
 pair whatever size the cube is. The point itself, in amounts, is e times it.
 
-This is the essays' story in one object. A reader that holds the directions and not e has the cube up to scale. It draws the
+This is the essays' story in one object. An observer that holds the directions and not e has the cube up to scale. It draws the
 cube at its own one length, one thumb, right as directions and off as amounts by the true ratio of e to H. Each face of the
 cube is the plane of readings against one denominator, so a sphere swept evenly lays the two-dimensional Cauchy on it: a
 face's middle quarter, by area, takes 38% of that face's directions, and the centre of a face is 3^(3/2), about 5.2 times
@@ -474,10 +474,10 @@ Physics* (`../reads-and-writes-physics.md`), §6.1).
 
 ## 12. What it comes to
 
-**Reading and writing.** The writer's drawing of three parties is the flat triangle, the sum, needing no standpoint and
-holding the truth as one point. The writer's description of the reader is the wedge, built from a standpoint, holding every
+**Reading and writing.** The blueprint's drawing of three parties is the flat triangle, the sum, needing no standpoint and
+holding the truth as one point. The blueprint's description of a read is the wedge, built from a standpoint, holding every
 party at its one length: the triangle's centre. The difference between them is two numbers, one per party, and both are
-amounts. What the reader itself looks down is neither: it is the horizon's heat map, generated from the thumb wherever it looks.
+amounts. What the observer itself looks down is neither: it is the horizon's heat map, generated from the thumb wherever it looks.
 
 **The Cauchy.** It does not stay a one-party curiosity. Swept evenly by area, the wedge's readings are the Cauchy's
 two-dimensional form, every pair keeps its corner, and the near field becomes a third, then a quarter, then 1/(n + 1).

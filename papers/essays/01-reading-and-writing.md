@@ -30,12 +30,12 @@ with no memory and no unit. Keeping, which holds a history and still no unit. An
 a physical law carries units; they are not a third kind beside reading and writing. That the geometry's laws are of
 this kind may be why it needs no memory.
 
-The plainest example is Euler's identity. The writer states it as e^(iπ) = −1, with an exponential, the number e and a
+The plainest example is Euler's identity. The blueprint states it as e^(iπ) = −1, with an exponential, the number e and a
 half turn measured by π. The same relation is there in a form that uses none of them: write a direction of slope s as
 w(s) = (1 + is)/(1 − is), and w(s)·w(1/s) = −1 for every slope, a direction and its reciprocal; at the corner, i·i = −1.
 The algebra is ordinary and the two forms are equivalent. The simpler one exists because it relates directions of one
-read; a position, a total or a closing has no simpler reader's form, because a read does not hold them at all. And the
-writer's form holds something the reader's does not, the join completed (the second essay, section 9).
+read; a position, a total or a closing has no simpler read's form, because a read does not hold them at all. And the
+blueprint's form holds something the read's does not, the join completed (the second essay, section 9).
 
 ---
 
@@ -84,9 +84,9 @@ The rest of the essay takes these two acts apart. They have a structure, and the
 
 Every reading you could ever take can be sorted by asking two questions about it. Each question has two answers, and
 each answer either ends the sorting or leads to the next question. So every reading lands in exactly one place, and the
-places do not overlap. There are two of them: the writer's and the reader's.
+places do not overlap. There are two of them: the blueprint's and the read's.
 
-Before the questions, a little language. You, the reader, have a length of your own. It might be your stride, your thumb
+Before the questions, a little language. You, the observer, have a length of your own. It might be your stride, your thumb
 held at arm's length, your eye height above the floor, or the length of a rod you happen to be carrying. Call it **H**; the
 essays picture it as the thumb. You always have it, because it is yours. Anything else in the world, the mountain, the
 table, the other end of a measurement, has a breadth of its own. Call that **V**; the essays picture it as the mountains in
@@ -102,37 +102,37 @@ length, then there is nothing to read. You have your own length and nothing to h
 the same as having a reading. A ruler in a dark room measures nothing.
 
 **Second: is the other's breadth V known?** If it is, the whole thing is in your hands: both lengths, both amounts, and
-everything that follows from them. That is the **writer**. If V equals H in every direction, the whole is a circle, the
-equation h² + v² = 1, held whole: the writer's circle is the thumb held to equal the mountain. If V is known but differs
+everything that follows from them. That is the **blueprint**. If V equals H in every direction, the whole is a circle, the
+equation h² + v² = 1, held whole: the blueprint's circle is the thumb held to equal the mountain. If V is known but differs
 from H, or differs from one direction to another, the whole is some other shape, an ellipse, a coastline, a floor plan, a
 breadth given in every direction.
 
-If V is not known, you have a standpoint, and you are the **reader**. You are somewhere, looking out, and what you have
+If V is not known, you have a standpoint, and what you have from it is a **read**. You are somewhere, looking out, and what you have
 is what arrives at that place. It comes in two parts. One part is the directions themselves, the places on your view
 where something can be: each one a ratio of v to h and nothing more. These are the *directions*, and the read weighs
 them as a *heat*: hottest along the look, cooling toward the horizon, continuous, with nothing counted in it. The other
 part is what arrives along each direction, its colour, brightness and texture, laid onto those directions: the *paint*.
 The paint never comes without its direction, because whatever arrives arrives along some direction. The directions can
 come without the paint: a direction along which nothing arrives is still a direction, with its heat. *The heat is given;
-the paint is met.* Heat and paint are not two kinds of reader.
-They are one reader's one read, and the geometry gives two ways of reading where the paint sits, which later essays call
+the paint is met.* Heat and paint are not two kinds of read.
+They are two parts of the one read, and the geometry gives two ways of reading where the paint sits, which later essays call
 the inscribed and the central sweeps.
 
 | vantage | what you know | what you have | a picture of it |
 |---|---|---|---|
-| the writer | the other's breadth V, equal to H or not | the whole, as a circle or a shape | the equation h² + v² = 1; a blueprint |
-| the reader | your length H, and a standpoint; never V | the directions, and what arrives along each | a hand held up to a stained-glass window |
+| the blueprint | the other's breadth V, equal to H or not | the whole, as a circle or a shape | the equation h² + v² = 1; an architect's drawing |
+| a read | your length H, and a standpoint; never V | the directions, and what arrives along each | a hand held up to a stained-glass window |
 
 Each has a scene that fits it.
 
-The writer has the circle in a geometry book, centre, radius, the equation, every point at once; or an architect's
+The blueprint's scene is the circle in a geometry book, centre, radius, the equation, every point at once; or an architect's
 drawing, every wall drawn to scale, front and back, from no particular place, every length marked in one unit.
 
-The reader has a stained-glass window seen from inside a church, with its own hand held up against it, fingers spread.
+A read's scene is a stained-glass window seen from inside a church, with a hand held up against it, fingers spread.
 Each finger points in one direction. The fingers are there whether the light is bright or dim, red or blue, or out
 altogether. They are the places the colour can be put. They are not the colour. Each pane lights the finger it lines up
 with, and the window tells you nothing about how far away the sun is. In space it takes both hands, thumbs crossed: not
-three axes of amounts, as the writer's drawing has, but one thumb and two sweeps of fingers (the fifth essay).
+three axes of amounts, as the blueprint has, but one thumb and two sweeps of fingers (the fifth essay).
 
 ### Things that look like a third vantage
 
@@ -141,15 +141,15 @@ People sometimes think of a case the two leave out. Each turns out to be one of 
 - **You know V only roughly**, say "the mountain is somewhere between ten and thirty miles wide". This is a reading
   from a standpoint, with its one missing number known within bounds. The bounds narrow the guess; they do not change
   what was read.
-- **Several readers.** Each has a standpoint of its own. What passes between them is a separate matter, which the essay
+- **Several observers.** Each has a standpoint of its own. What passes between them is a separate matter, which the essay
   comes to in section 6.
-- **A system that changes over time.** At any one reading it is the reader's or the writer's. It can move between them,
-  as the reader in the room moved to the writer's side the moment the stride was measured.
+- **A system that changes over time.** At any one reading it is a read's or the blueprint's. It can move between them,
+  as the observer in the room moved to the blueprint's side the moment the stride was measured.
 - **Directions along which nothing arrives.** These are still directions, with their heat and nothing painted on them. That is a fact
   about what arrives, not about the vantage.
 - **Your own length changes between readings.** This changes no reading. Every reading is a ratio, and your unit
-  cancels from every ratio. Each reading is then a reader of its own, and joining them is the business of several
-  readers again.
+  cancels from every ratio. Each reading is then a read of its own, and joining them is the business of several
+  observers again.
 
 The two are exhaustive. That is a strong claim, and it matters. It means that anything you could record about the
 world can be asked: was this read or written? The answer settles what the record can and cannot contain.
@@ -162,7 +162,7 @@ world can be asked: was this read or written? The answer settles what the record
 
 The two vantages divide cleanly between the two acts of the first section.
 
-**The writer's shapes are writing alone.** A blueprint states amounts: this wall is four metres, that door is ninety
+**The blueprint's shapes are writing alone.** A blueprint states amounts: this wall is four metres, that door is ninety
 centimetres. To make one, you must hold every breadth, and holding every breadth means holding the whole, front and
 back, from no standpoint at all. An architect's drawing is not a view from anywhere. It is what you would have if you
 could stand nowhere and see everything. Its natural frame is a box, one number line along each axis, both signs, every
@@ -172,13 +172,13 @@ blueprint has no point to turn from.
 **The directions, their heat and their paint are reading alone.** They are what a standpoint has: directions, and what arrives along
 them. No second breadth is known, and none is needed to read.
 
-**The circle is the writer's, and the reader's geometry looks just like it, which is why the whole distinction is so easy
-to miss.** The circle is the most familiar object in mathematics. A writer holds it as an equation, h² + v² = 1, with V
-known to equal H: the thumb held to equal the mountain. The reader has no circle. It points its crossed thumbs (in the
+**The circle is the blueprint's, and the read's geometry looks just like it, which is why the whole distinction is so easy
+to miss.** The circle is the most familiar object in mathematics. The blueprint holds it as an equation, h² + v² = 1, with V
+known to equal H: the thumb held to equal the mountain. A read has no circle. The observer points its crossed thumbs (in the
 plane, one thumb) at the mountain, and that pointing generates a geometry of its own, which section 4 will explain: a
 corner where the thumbs cross, directions laid by turning, near and far read as ratios of the thumb. That geometry has every feature
 of the circle except the circle. Because of that, the line between reading and writing runs straight through the middle of
-the thing everyone starts from, and it is very hard to see. Classical geometry works almost entirely on the writer's side.
+the thing everyone starts from, and it is very hard to see. Classical geometry works almost entirely on the blueprint's side.
 It never needs to say so, because the circle it begins with looks, from a standpoint, like what the pointing gives.
 
 So the map is simple:
@@ -186,9 +186,9 @@ So the map is simple:
 | what | whose |
 |---|---|
 | nothing related | no one's: nothing to read |
-| the circle | the writer's: V = H, the thumb equal to the mountain; the reader's pointing gives its features, not the circle |
-| any other shape, in amounts | the writer's alone |
-| the directions, their heat and their paint | the reader's alone |
+| the circle | the blueprint's: V = H, the thumb equal to the mountain; the thumbs' pointing gives its features, not the circle |
+| any other shape, in amounts | the blueprint's alone |
+| the directions, their heat and their paint | the read's alone |
 
 ### What writing needs
 
@@ -206,23 +206,23 @@ come from outside, and there are only a few ways they come.
 The philosopher Niels Martens, writing about mass, puts the point sharply. A magnitude like mass "can only be reported
 or expressed, non-dynamically, in terms of how this magnitude relates to the magnitude of another particle having the
 same determinable property." And of the unit we use to report it: "A unit is thus merely a relation—to a standard
-reference body … in disguise." That is writing seen from the writer's side. Every amount is a reading against some
+reference body … in disguise." That is writing seen from the inside. Every amount is a reading against some
 standard, and the standard has to be carried in.
 
 ### Two rulers
 
 There is one more difference between the two sides, and it shows in the rulers each one uses.
 
-The writer's ruler is the number line. Its marks are evenly spaced, 1, 2, 3, as far as you like in both directions,
+A write's ruler is the number line. Its marks are evenly spaced, 1, 2, 3, as far as you like in both directions,
 and every unit of length is like every other. That is exactly what you want for stating amounts: an amount is a count
 of units, and counting needs equal units. The number line has no special place on it. The mark at 1 is just a mark.
 
-The reader's ruler, as later essays will show in detail, has a special place: the point where the thing you are reading
-equals your own length, one thumb, where v equals h. Near you, inside that point, the reader's ruler is proportional, like
+A read's ruler, as later essays will show in detail, has a special place: the point where the thing you are reading
+equals your own length, one thumb, where v equals h. Near you, inside that point, the read's ruler is proportional, like
 the number line: one thumb laid evenly. Past it the ruler goes by ratios: a thing one thumb wide reads one in two, then
 one in four, then one in eight, each stretch over which the reading halves holding as many places as the last. So far
-things are laid by how many times farther they are, read as a ratio, not counted in units. A writer counting the same
-stretches says two thumbs, four, eight. Neither ruler is better. They are made for different acts. The writer counts; the reader
+things are laid by how many times farther they are, read as a ratio, not counted in units. A write, counting the same
+stretches, says two thumbs, four, eight. Neither ruler is better. They are made for different acts. A write counts; a read
 sees.
 
 *Demo: one blueprint, two vantages, in two dimensions and three; the writer and the reader.*
@@ -233,25 +233,25 @@ sees.
 
 Here is the part of the story that seems to me the most surprising.
 
-Look again at the circle, the place where reader and writer meet. The writer's circle is an equation in
+Look again at the circle, the place where a read and the blueprint meet. The blueprint's circle is an equation in
 two breadths. To write h² + v² = 1, and to mean it as a statement about lengths, you must know V and know that it
 equals H. Two amounts, and a claim about how they compare.
 
-The reader has no V. More than that, it never knows V. Every reading is a ratio of the thumb's own shares, and V was
+A read has no V. More than that, it never comes to hold one. Every reading is a ratio of the thumb's own shares, and V was
 never in it: not missing, never there. So no reading, however many, carries it. V against the thumb, V\*/H, is placed by
 walking a baseline or counting a step; V as an amount is known only by writing: a step counted in an agreed unit, a
-signal of known speed timed, or an agreed unit handed over, each an amount carried in from outside. A reader that comes
-to know V has not read better. It has placed it by walking, or, with a unit, written it, and taken the writer's vantage. Yet the reader has the circle's geometry,
+signal of known speed timed, or an agreed unit handed over, each an amount carried in from outside. An observer that comes
+to know V has not read better. It has placed it by walking, or, with a unit, written it, and passed from reading to writing. Yet a read has the circle's geometry,
 without the circle. Where does it come from?
 
 It comes from pointing. Hold your one length, H, your thumb, up at the mountain, and turn it about one end, steadily, like
-the beam of a lighthouse sweeping the sea, or your gaze sweeping along a row of trees. A writer watching sees the free end
-trace a circle, for one simple reason: the length does not change as it turns. The reader does not hold that circle.
-Circles and spheres are the writer's tools; a reader has a vantage, not a shape. It holds where its thumb points, and each pointing is a reading. Its geometry is what the pointing generates.
+the beam of a lighthouse sweeping the sea, or your gaze sweeping along a row of trees. Drawn whole, the free end
+traces a circle, for one simple reason: the length does not change as it turns. A read does not hold that circle.
+Circles and spheres are the blueprint's; a read has a vantage, not a shape. It holds where the thumb points, and each pointing is a reading. Its geometry is what the pointing generates.
 
-Now ask what the reader reads as it turns. At each moment its length points in some direction. The direction has an
-across part and an up part, two shares of the same length: h across and v up. What the reader reads is how they compare,
-v against h. That is a slope, a direction, a ratio. Both of its parts are shares of the reader's own length. Nothing
+Now ask what is read as the thumb turns. At each moment the length points in some direction. The direction has an
+across part and an up part, two shares of the same length: h across and v up. What is read is how they compare,
+v against h. That is a slope, a direction, a ratio. Both of its parts are shares of the observer's own length. Nothing
 about anyone else's size enters.
 
 So far this is ordinary trigonometry. If the turn has reached an angle θ, then v/h is the tangent of θ. Here is the
@@ -267,9 +267,9 @@ there: the line's shape, the measurements' ratio, the flashes on the beach.
 Read from the standpoint, it is something else. It is the law of the directions themselves: the turn's own measure,
 there before anything arrives to be measured. And it needs no V at all.
 
-**The Cauchy is the writer's circle with the second breadth taken away.**
+**The Cauchy is the blueprint's circle with the second breadth taken away.**
 
-Consider what the writer's circle gives. On a quarter turn, from straight ahead to straight up, there is a special place in
+Consider what the blueprint's circle gives. On a quarter turn, from straight ahead to straight up, there is a special place in
 the middle: 45°, where the across and the up are equal and v equals h. The quarter turn is symmetric about it. Swap across
 for up and the near half lands on the far half, point for point. Half of the turn lies on each side.
 
@@ -285,7 +285,7 @@ Every one of those features survives in the Cauchy, and none of them needs V.
   corner, between a half and two. The rest thin out toward each end. Every equal step of turning holds equal weight;
   only the slope, read as a number, crowds and thins.
 
-The writer's circle has every one of these properties, with V known. The reader's pointing has every one of them with V
+The blueprint's circle has every one of these properties, with V known. The pointed thumb has every one of them with V
 unknown, and no circle. That is the sense in which the Cauchy is the circle without the V. It is the circle's geometry, the
 corner, the halves and the swap, generated by one thumb pointed, with no circle held.
 
@@ -293,8 +293,8 @@ corner, the halves and the swap, generated by one thumb pointed, with no circle 
 
 The second breadth is gone, but it leaves its mark, and the mark is the most famous thing about the Cauchy.
 
-The writer's circle closes. Go far enough round it and you come back to where you started, at a place you could name in
-amounts. The reader's quarter turn ends somewhere else entirely: at straight up, where h has dropped to nothing and the
+The blueprint's circle closes. Go far enough round it and you come back to where you started, at a place you could name in
+amounts. A read's quarter turn ends somewhere else entirely: at straight up, where h has dropped to nothing and the
 reading v/h has run off to infinity. That end is the **horizon**. It is a direction you can always point at, and it is
 never a place. Nothing has a distance there, because a distance would need the very breadth that is missing.
 
@@ -306,15 +306,15 @@ not there. The median, sitting at the corner, is perfectly well defined. It is w
 on the size of anything.
 
 There is a neat way to say all this. Not knowing the size of the far end is exactly what gives the corner its job and
-creates the horizon. The reader's geometry needs V unknown. A writer holding V has neither. Its corner is just a point
+creates the horizon. The read's geometry needs V unknown. The blueprint, holding V, has neither. Its corner is just a point
 on the circle, and its circle has no horizon, because it closes.
 
 ### What it means
 
 Three consequences follow, and each is a reason the distinction is worth having.
 
-**First, the Cauchy is not a law of what is out there.** It is the measure of the directions a reader has before
-anything arrives, and before it knows the size of anything. A spectral line, a lighthouse, a ratio of two measurements:
+**First, the Cauchy is not a law of what is out there.** It is the measure of the directions a read has before
+anything arrives, and before the size of anything is known. A spectral line, a lighthouse, a ratio of two measurements:
 each of these has a Cauchy in it because each has a turn in it somewhere, and the law is the turn's. What arrives, the
 brightness of the line, the strength of the flash, is painted on top.
 
@@ -328,10 +328,10 @@ usual explanation is that the mean does not exist, which is true but not a reaso
 direction read from a standpoint. Its median is the corner, a feature of the geometry. Its mean would be an amount, and
 there is no amount to be had.
 
-One more point, about a phrase that appears often in the writings this essay draws on: "V = H". A writer watching the
-reader point its thumb sees one length turned, draws the circle its tip would trace, and describes it in the writer's own
-terms: two breadths, both equal to H, the thumb equal to the mountain. The phrase is the writer's name for that circle. The
-reader never sets V equal to H. It has no V to set, and no circle.
+One more point, about a phrase that appears often in the writings this essay draws on: "V = H". When the observer
+points its thumb, one length is turned; the blueprint draws the circle its tip would trace, and describes it in its own
+terms: two breadths, both equal to H, the thumb equal to the mountain. The phrase is the blueprint's name for that circle. A
+read never sets V equal to H. It has no V to set, and no circle.
 
 ### What is old and what is new
 
@@ -344,16 +344,16 @@ projected the same way, is not the plane's two-dimensional Cauchy; essay 13 says
 missing mean are textbook facts.
 
 None of these mentions a second breadth, and none needs one. The slope v/h is already a ratio of two shares of one
-radius, so the absence of a V is never remarked. What is new is the reading of who holds what: the reader holds one
-length and never knows V, and each feature of the Cauchy is a feature of the circle that survives without V. The corner
+radius, so the absence of a V is never remarked. What is new is the reading of what holds what: a read holds one
+length and never has V, and each feature of the Cauchy is a feature of the circle that survives without V. The corner
 is the median, the near and far halves are mirrored by the reciprocal, and the lack of a mean is what a read of directions
 is, with no V in it to leave anything behind.
-A writer, holding V, has its far end as an amount: no horizon, and the corner only a point. We did not find this
+The blueprint, holding V, has its far end as an amount: no horizon, and the corner only a point. We did not find this
 assembly in print; the pieces are classical.
 
 The Cauchy's own story is long, and it has its own essay, the third: how its directions and their heat are kept apart from what arrives,
 why it is the law a reasoner ignorant of scale must assign, and a second test to go with the one below. For now the point
-is only this. The deepest piece of the reader's side, the law of its directions, is the circle's geometry without the
+is only this. The deepest piece of the read's side, the law of its directions, is the circle's geometry without the
 circle: what one thumb, pointed, generates.
 
 *Demos: one turn and one read (the ray and the radius meeting on one circle); sweeping from zero (the turn counted
@@ -403,9 +403,9 @@ Scale by a hundred, so the range is two thousand miles wide, a thousand miles aw
 large. The view is still the same. The mountain's width in miles changed every time. Its width against your thumb never
 did.
 
-Try it on the two vantages. The reader's directions, their heat and their paint never move: they are what a standpoint has, and a standpoint
-has only directions. The writer's blueprint moves by k in every number it states. The circle is the writer's, and it moves
-with the amounts; the reader's pointing, read as directions, does not.
+Try it on the two vantages. A read's directions, their heat and their paint never move: they are what a standpoint has, and a standpoint
+has only directions. The blueprint moves by k in every number it states. The circle is the blueprint's, and it moves
+with the amounts; the thumb's pointing, read as directions, does not.
 
 In Euler's notation the test has a picture. Write a thing as a direction times an amount, r·e^(iθ), and take the
 logarithm, ln r + iθ. With r in an outside unit, scaling the world by k slides the real part by ln k and leaves the imaginary part alone
@@ -426,7 +426,7 @@ already written something. The pure read is the limit. What the test offers a re
 quantity: scale the world, and see which of its numbers move.
 
 What is new is a question these accounts do not ask: **who can apply the test, and from where?** Invariance under
-rescaling has been treated as a property of statements, laws and scales. Here it is a property of standpoints. A reader
+rescaling has been treated as a property of statements, laws and scales. Here it is a property of standpoints. An observer
 standing somewhere gets every invariant quantity for free and nothing else. Everything that moves under scaling is what
 it would have to be handed.
 
@@ -439,25 +439,25 @@ it would have to be handed.
 If writing costs amounts carried in, it is natural to ask how many, and what placing costs on the way. The answer can be
 counted exactly, and it is small.
 
-Set up a simple scene: four objects, each with a size and a distance, and a reader who reads only directions, how wide
+Set up a simple scene: four objects, each with a size and a distance, and an observer who reads only directions, how wide
 each object looks and which way it lies. Then ask, at each stage, how many numbers in the scene are still free: how many
-could be changed without changing anything the reader has read.
+could be changed without changing anything the observer has read.
 
 - **One standpoint.** Each object's size and distance can trade freely: twice as big and twice as far reads exactly the
   same. With four objects there are four free numbers. From one place, nothing is written.
-- **One step of known length,** known in the reader's own unit, say "one stride". Now every size and every distance is
-  fixed, all of them, in strides. No free numbers are left. The step placed everything at once, in the reader's own
+- **One step of known length,** known in the observer's own unit, say "one stride". Now every size and every distance is
+  fixed, all of them, in strides. No free numbers are left. The step placed everything at once, in the observer's own
   length: places, unmoved by scaling, not yet writes.
 - **One step of unknown length.** One free number remains: the length of the step. Everything is fixed relative to the
   step and nothing in strides, which is the room of section 1 before the stride was counted.
 - **A second known step.** It adds nothing to the scale, which the first already fixed. It checks the first.
-- **A second reader,** who has done the same in its own strides. Each map is complete in its own unit, but the two
-  cannot be compared: one free number, the ratio of the two strides. **One number exchanged** between them, one reader
+- **A second observer,** who has done the same in its own strides. Each map is complete in its own unit, but the two
+  cannot be compared: one free number, the ratio of the two strides. **One number exchanged** between them, one observer
   telling the other the length of something both can see, removes it.
 - **A public unit,** metres. One free number remains, the size of a stride in metres, until **one notch is agreed**:
   someone, once, measures a stride against the standard metre.
 
-So placing costs one step for a lone reader, and one number exchanged for each further reader who must agree (a ratio
+So placing costs one step for a lone observer, and one number exchanged for each further observer who must agree (a ratio
 of two strides, itself unmoved by scaling); writing costs one amount more, the notch that ties them all to a public
 standard. Each comes from moving or from exchanging; none comes from looking harder.
 
@@ -466,11 +466,11 @@ combinations a physical law can depend on: the number of quantities less the num
 who reconstruct three-dimensional scenes from photographs know the result can be fixed only up to seven numbers, three
 for where it sits, three for which way it faces, and one for how big it is; the last is the one a photograph cannot
 supply. Physicists argue, sometimes heatedly, over how many fundamental units nature really needs. Each of these counts
-the amounts for a theory, a law or a reconstruction. The count here is per reader. It says what each observer must be
+the amounts for a theory, a law or a reconstruction. The count here is per observer. It says what each one must be
 handed, and it says the answer is almost nothing.
 
 *Demo: writing, step by step: the free numbers computed on the page as each step is taken: extents in the
-reader's own H, then one agreed notch, the write.*
+observer's own H, then one agreed notch, the write.*
 
 ---
 
@@ -492,8 +492,8 @@ measured later. It added nothing to the scale. It checked the angles that had ca
 the country.
 
 The costs fall exactly where the geometry puts them. Each angle needed an instrument and a place to stand. The base
-needed the ground itself, crossed rod by rod, and one was enough to write everything. The finished map is the writer's
-representation, and its scale bar is the base.
+needed the ground itself, crossed rod by rod, and one was enough to write everything. The finished map is a
+blueprint, and its scale bar is the base.
 
 ### The body as the base
 
@@ -515,7 +515,7 @@ and agreed exactly about it as a ratio. Each was reading the stair against their
 carries.
 
 So the carried-in amount does not have to be a metre rod. In perception it is the body: eye height, leg length, the gap
-between the eyes, the length of a step. The reader reads everything against it and places everything in it; one amount
+between the eyes, the length of a step. The observer reads everything against it and places everything in it; one amount
 for it, in a public unit, writes everything.
 
 *Demos: one's own height; walking the room.*
@@ -524,7 +524,7 @@ for it, in a public unit, writes everything.
 
 ## 8. Towers of ratios, and closing a loop
 
-A reader is not confined to simple maps. Ratios can carry whole hierarchies.
+Reading is not confined to simple maps. Ratios can carry whole hierarchies.
 
 Picture a building with two rooms, A and B, and two things in each room. Read each length only against the length that
 holds it: each room against the building, each thing against its room.
@@ -564,17 +564,17 @@ B. The direct reading says 27/16. The chain through the misread room says 15/8. 
 of the disagreement, 10/9, is exactly the misreading. That is a closure error, and it is why surveyors build networks of
 triangles instead of chains, and why Roy measured a second base.
 
-Two lessons follow, and both are about what a reader can and cannot know.
+Two lessons follow, and both are about what an observer can and cannot know by reading.
 
-**The reader does very little of the work.** The projection through its standpoint does the dividing; that ratios
-compose by multiplying is the geometry's; whether two routes agree is the geometry's too. What the reader contributes is
+**The observer does very little of the work.** The projection through its standpoint does the dividing; that ratios
+compose by multiplying is the geometry's; whether two routes agree is the geometry's too. What the observer contributes is
 position: the length it starts from, and the places it chooses to stand.
 
 **Completeness is never a reading.** A loop that closes shows that the routes taken agree. It cannot show that no
-route remains untaken. So a reader can find out that its account is incomplete, when two routes disagree, but it can
-never prove that its account is complete. And even when a reader recovers something exactly, its shape, its places,
-even its size in strides once a stride is counted, recovering it does not make the reader a writer. The writer holds the whole by
-walking it or carrying in its measure. A reader that arrives at the writer's answer got there by cleverness: where it
+route remains untaken. So an observer can find out that its account is incomplete, when two routes disagree, but it can
+never prove that its account is complete. And even when an observer recovers something exactly, its shape, its places,
+even its size in strides once a stride is counted, recovering it does not make its reads a blueprint. The blueprint holds the whole,
+walked or with its measure carried in. An observer that arrives at the blueprint's answer got there by cleverness: where it
 stood, which loops it closed, what it was handed. That is not a lesser achievement. It is a different one.
 
 *Demo: the reader is a slide rule: chains, loops and a misread link.*
@@ -592,10 +592,10 @@ moves no read and no relation.
 home toward the horizon, and where it stops is the next sweep's home: every sweep resets. A tenth of a sweep, then a
 fifth of a fresh one, then three tenths of another, is three steps, each from its own start, and nothing in any of them
 says how far the three have come together. A position, "three fifths of the way round", is a total of steps from a
-starting mark that was kept, and a read keeps no mark. The reader can go back: it faces the other way and sweeps, and
+starting mark that was kept, and a read keeps no mark. The observer can go back: it faces the other way and sweeps, and
 that too is a forward sweep. What it cannot do by reading alone is go back exactly to where it was; for that the steps
 must have been kept, or a mark left at the start. So there is no circle anywhere in reading. A circle is one fixed dial
-on which every sweep has its place; the reader has a sweep, a reset and another sweep, and the dial appears only when
+on which every sweep has its place; a read has a sweep, a reset and another sweep, and the dial appears only when
 someone keeps the steps and lays them end to end.
 
 **In physics.** Physics already runs both tests. Scaling the world is dimensional analysis (Bridgman's and
@@ -614,7 +614,7 @@ physics, only where each part of a known result lives.
 It would be easy to call all of this obvious. Of course angles do not depend on units; of course you need a ruler to
 get metres. But the distinction does real work, and it is worth spelling out what.
 
-**It finds mistakes.** The commonest is to take a reading for a writing. A reader with no outside amount does the only
+**It finds mistakes.** The commonest is to take a reading for a writing. An observer with no outside amount does the only
 sensible thing about the mountain's size: it takes its own length as the best guess, so that, in effect, mountain
 equals thumb. That is a fine estimate, and it is the best available when nothing says bigger or smaller. It becomes a
 mistake only when the estimate is read as a measurement, when "one thumb" is written down as "one mile". The same error
@@ -642,13 +642,13 @@ them. A system whose addresses move with their contents, an array that reallocat
 rebuild the separation by hand, with stable handles or copies kept for its readers. Geometry never had to: its directions and
 their heat are given, and nothing writes to them. This is argued from a principle computing already holds, not proved anew.
 
-**It explains how much a lone reader can do.** This is perhaps the most surprising lesson. With no unit at all, a reader
+**It explains how much a lone observer can do.** This is perhaps the most surprising lesson. With no unit at all, an observer
 can map a room, size every object against every other, build a tower of units, check it by closing loops, and have the full
 geometry of the circle, its corner, its halves and its symmetry, as the law of its own directions, with no circle held:
-only its thumbs pointed. Almost everything comes free. What it cannot have is one number per agreement. The writer's world,
+only its thumbs pointed. Almost everything comes free. What it cannot have is one number per agreement. The written world,
 the blueprint, the map in metres, the number line, is a fine and useful thing: it lets sizes be stated before anything is
-built, lets readers who never meet compare notes, and lets amounts be added up. But it rests on that handful of numbers,
-carried in from outside, and the reader's world was complete before they arrived.
+built, lets observers who never meet compare notes, and lets amounts be added up. But it rests on that handful of numbers,
+carried in from outside, and the world as read was complete before they arrived.
 
 Go back to the room. The map in steps was finished before anyone asked for metres. The metre was the one thing it had
 to be handed.
