@@ -340,3 +340,10 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
     slopes, 1/s1 + 1/s2, so a read, with no count in it; counted in thumbs it is the blueprint's account (R642's
     split). The blueprint as a count carried to its limit (R646) puts count and blueprint in one family. This
     would reverse R880 ("the write of the relation is a count").
+
+    **Tom, continuing, not settled:** "the things don't cleanly catagorize are probably human syntesis." So the
+    two off-diagonal boxes (the count; the number line in a unit, the blueprint) are things people make by putting
+    reads and writes together in thought, not things in the natural world; a failure to sort is then a sign of
+    synthesis, not a gap in the definition. Claude's notes, not ruled: "synthesis" was withdrawn as a name for the
+    blueprint under R890 ("synthetic read"), so the word here is Tom's for the class, not a claim that reads and
+    writes make the blueprint; "probably" is his, so this is a working test, not a rule.
