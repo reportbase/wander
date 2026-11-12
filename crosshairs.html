@@ -128,7 +128,7 @@
     <button data-show="cube">the one-thumb cube <span>on</span></button>
     <button data-show="density">the Cauchy's shading <span>on</span></button>
     <button id="fid">view <span>by turns</span></button>
-    <button id="sky">the whole sky (the writer's sphere) <span>off</span></button>
+    <button id="sky">the whole sky (the blueprint's sphere) <span>off</span></button>
     <button id="round">tunnel turned all the way round <span>off</span></button>
     <div class="sec">H and the world</div>
     <button id="hold">hold H <span>off</span></button>
@@ -186,15 +186,15 @@
     the <span class="g">corner</span>. The largest past one: the <span class="w">far field</span>, read as a ratio, one in
     two, one in four, one in eight. One below zero: behind a thumb, in another wedge, not this look's (faint grey).</li>
     <li><b>Its colour and words</b> (menu: words on things). Near, a fraction of the thumb; far, a ratio, dimmer for each
-    halving. A writer would count the far field in thumbs (two, four, eight); the reader reads the ratio.</li>
+    halving. Counted in thumbs (two, four, eight) the far field is an extent; a read has the ratio.</li>
     <li><b>Its place in the wedge</b> (menu: the wedge from home). Its three readings as shares of their sum lay it on the
     triangle seen down the look: the crosshair at the centre, each thumb a corner, each pair of thumbs' corner a median
-    through the centre. The line (menu) lays the largest reading as the reader lays distance: in proportion to the corner,
+    through the centre. The line (menu) lays the largest reading as the read lays distance: in proportion to the corner,
     then each halving of the ratio the same room.</li>
     </ol>
     <h2>What H shares out</h2>
     <ol start="12">
-    <li><b>K, the fineness.</b> Read continuously; a writer counts it as K places at the heat's quantiles, and half of them are always inside one thumb, whatever H is; on the line they are the ticks, the same
+    <li><b>K, the fineness.</b> Read continuously; counted, it is K places at the heat's quantiles, and half of them are always inside one thumb, whatever H is; on the line they are the ticks, the same
     marks at every H, and the things slide under them as you point.</li>
     <li><b>The counts</b> of near, far and another wedge (menu: the readout) are only how H falls among the things.</li>
     <li><b>The walking pace.</b> A third of the way to what is pointed at each second, faster while held, and a wheel notch
@@ -203,13 +203,13 @@
     <h2>What H does not change</h2>
     <ol start="15">
     <li><b>Scaling the world.</b> Scale every length by 10, the eye's place included, and H in units grows by 10, but every
-    reading, colour, word and place in the wedge is as it was. H in units is a writer's number.</li>
+    reading, colour, word and place in the wedge is as it was. H in units is a write.</li>
     <li><b>The field itself.</b> No thing moves when H moves; only the near and far fields do, because they are where the
     three thumbs meet.</li>
     </ol>
     <h2>Fidelity, finest at the crosshair</h2>
     <ol start="17">
-    <li><b>Each thing's grain.</b> The fineness K is spread evenly by turning, so at a reading q one of a writer's K places is a relative
+    <li><b>Each thing's grain.</b> The fineness K is spread evenly by turning, so at a reading q one of the K counted places is a relative
     cell of (π/K)·cosh(ln q): least at one, the corner. A thing's grain is the worst of its three readings. The thing at the
     crosshair, one in all three, is held finest; a thing off the look, or nearer or farther than the corner, coarser, as
     cosh of how far its ratio is from one. At K = 32 about 10% at the corner, 12% at one in 2, 40% at one in 8, over 300%
@@ -249,7 +249,7 @@
     corner one thumb off, then one in 2, one in 4, one in 8, each closer to the last, toward the horizon's rim, which no
     reading reaches. Nothing is behind it. A read is the quarter turn, so by default the tunnel is drawn in the wedge only,
     every pair of thumbs from its home (0) to its horizon (∞), out to 35.26° at a home and 54.74° at a thumb; the full
-    round about the look is the head turned all the way round (menu: tunnel turned all the way round). Equal area: the reader's directions, every one alike by
+    round about the look is the head turned all the way round (menu: tunnel turned all the way round). Equal area: the read's directions, every one alike by
     area, and this is the screen that gives each the same room (Lambert's equal-area projection about the crosshair,
     radius 2·sin(α/2)). True at the crosshair, squeezed along the radius by cos(α/2) and widened across by as much, so the
     distortion is nothing at first and grows: under 1% at 15°, 3% at 30°, 8% at 45°. The shading, the directions per bit
@@ -886,11 +886,11 @@ function readout() {
     if (t) { const q = read(t).q; s += `<span class="g">at the crosshairs</span>  ${NAMES[t.kind]} (#${t.i}), reading ${q.h.toFixed(2)}, ${q.v.toFixed(2)}, ${q.d.toFixed(2)} thumbs\n`; }
     else if (S.target === GROUND) s += `<span class="g">at the crosshairs</span>  the ground\n`;
     else s += `<span class="g">at the crosshairs</span>  the sky; H kept\n`;
-    s += `<span class="b">H, the thumb</span>      ${fmt(S.Hshow)} units along each thumb  <span class="d">(a writer's number)</span>\n`;
+    s += `<span class="b">H, the thumb</span>      ${fmt(S.Hshow)} units along each thumb  <span class="d">(a write)</span>\n`;
     s += `<span class="r">near field</span>  ${c.near} things, inside one thumb in all three\n`;
     s += `<span class="w">far field</span>   ${c.far} things, one in 2 and beyond\n`;
     s += `<span class="d">another wedge</span>  ${c.other} things, behind a thumb\n`;
-    s += `K = ${S.K}, a writer's K places: ${half} inside the corner, ${S.K - 1 - half} past it\n`;
+    s += `K = ${S.K}, counted as K places: ${half} inside the corner, ${S.K - 1 - half} past it\n`;
     s += `world scale k = ${fmt(S.k)}: every reading the same at any k`;
     $('readBox').innerHTML = s;
 }

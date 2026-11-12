@@ -344,7 +344,7 @@ function build() {
     const base = []; for (let t = 0; t <= 360; t += 4) base.push(onDome(A, Math.PI / 2, t * Math.PI / 180));
     line(dome, [O.clone(), O.clone().addScaledVector(Lv, A * 1.08)], 0xf2c14e, 0.7);
     line(dome, [new THREE.Vector3(0, 0, 0), new THREE.Vector3(...L).multiplyScalar(A * 1.08)], 0xf2c14e, 0.7);   // the look, in the cube
-    label('the writer\'s cube, without end (a window drawn)', new THREE.Vector3(0, -A * 1.12, A));
+    label('the blueprint\'s cube, without end (a window drawn)', new THREE.Vector3(0, -A * 1.12, A));
     label(cellsMode ? 'the Cauchy hemisphere: 16 rings × 32 dots' : 'the Cauchy atmosphere: its rim the horizon', new THREE.Vector3(ax[0], ax[1] - A * 0.12, A));
     // the window's edges in the cube
     const wb = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(2 * (S.reach + 0.5) * s, 2 * (S.reach + 0.5) * s, 2 * (S.reach + 0.5) * s)),
@@ -369,7 +369,7 @@ function hud() {
             : `one thumb lands at 0.500 of the radius; 2, 4, 8 thumbs at ${c.thumbs[2].toFixed(3)}, ${c.thumbs[4].toFixed(3)}, ${c.thumbs[8].toFixed(3)}\n` +
               `the window's dots reach ${c.maxG.toFixed(3)} at its corners; the rest of the endless cube lands from ${C.g((S.reach + 1) * st.k).toFixed(3)} to the rim\n` +
               `half the window's ${c.front.toLocaleString()} dots in front land beyond ${c.medianG.toFixed(3)}; inside one thumb: ${c.inThumb} (${f(c.nearShare)})\n`) +
-        `scale the world ×${st.k.toPrecision(2)}: the writer's amounts above move, nothing on the hemisphere does`;
+        `scale the world ×${st.k.toPrecision(2)}: the blueprint's amounts above move, nothing on the hemisphere does`;
     $('hH').value = S.h; $('hHo').textContent = (Math.pow(2, S.h)).toPrecision(3);
     $('yaw').value = S.yaw; $('yawo').textContent = S.yaw.toFixed(1) + '°';
     $('pitch').value = S.pitch; $('pitcho').textContent = S.pitch.toFixed(1) + '°';

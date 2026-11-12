@@ -49,10 +49,10 @@
 <body>
 <main>
     <h1>The pinhole</h1>
-    <p class="lede">The reader never divides. Light from the top of a thing comes through the pinhole along one ray, and
+    <p class="lede">A read never divides. Light from the top of a thing comes through the pinhole along one ray, and
     the ray is the reading: a direction, which is already a ratio. Make the thing bigger and farther together and nothing
-    the reader holds moves. Send its breadth to infinity and it arrives as one more direction, the horizon. The division
-    V*/d belongs to the description, the writer's account of the reading.</p>
+    the read holds moves. Send its breadth to infinity and it arrives as one more direction, the horizon. The division
+    V*/d belongs to the description, the blueprint's account of the reading.</p>
     <div class="panel">
         <div class="row">
             <label for="lv">breadth V*</label><input id="lv" type="range" min="-2" max="3" step="0.01" value="0.5">
@@ -63,7 +63,7 @@
         </div>
         <div class="row" style="margin-top:6px">
             <label for="lk">scale the world, k</label><input id="lk" type="range" min="-3" max="6" step="0.01" value="0">
-            <button id="account">the writer's account</button>
+            <button id="account">the blueprint's account</button>
         </div>
         <div class="grid" style="margin-top:10px">
             <div><canvas id="scene" height="300"></canvas><p class="cap">The scene, drawn to fit: the pinhole O, the thing
@@ -78,7 +78,7 @@
         </div>
     </div>
     <div class="panel">
-        <canvas id="ruler" height="120"></canvas><p class="cap">The ruler reader: it measures two amounts in its own H and
+        <canvas id="ruler" height="120"></canvas><p class="cap">An observer with a ruler: it measures two amounts in its own H and
         divides them. Its amounts move when the world is scaled; only their quotient does not. It touches breadths: it writes
         first and reads afterwards.</p>
         <div id="hud"></div>
@@ -147,9 +147,9 @@
         const hb = S.H * sc; if (hb > 0.5 && hb < W) { g.strokeStyle = '#d96e5b'; g.lineWidth = 2; g.beginPath(); g.moveTo(ox, oy + 28); g.lineTo(ox + hb, oy + 28); g.stroke(); txt(g, '1 H', ox + Math.min(hb, W - 60) + 4, oy + 32, '#d96e5b', 11); }
         else txt(g, `1 H is ${hb <= 0.5 ? 'below a pixel' : 'wider than the figure'} here`, ox, oy + 32, '#d96e5b', 11);
         if (S.account) {
-            txt(g, `the writer's account: V* = ${fmt(w.V)} H, d = ${fmt(w.d)} H`, 10, 18, '#e6e4ee');
-            txt(g, `V*/d = ${fmt(w.V)} / ${fmt(w.d)} = ${fmt(r.ratio)}  (a sum the reader never does)`, 10, 36, '#e6e4ee');
-        } else txt(g, 'the reader holds the ray, not V* or d', 10, 18);
+            txt(g, `the blueprint's account: V* = ${fmt(w.V)} H, d = ${fmt(w.d)} H`, 10, 18, '#e6e4ee');
+            txt(g, `V*/d = ${fmt(w.V)} / ${fmt(w.d)} = ${fmt(r.ratio)}  (a sum no read does)`, 10, 36, '#e6e4ee');
+        } else txt(g, 'a read holds the ray, not V* or d', 10, 18);
         // the flat screen: unbounded
         [g, W, H] = fit($('screen'));
         const sy = H / 2, smax = 4, sx = u => 20 + (W - 40) * Math.min(u, smax) / smax;
@@ -174,12 +174,12 @@
         // the ruler reader
         [g, W, H] = fit($('ruler'));
         const ru = ruler(w.V, w.d, S.H);
-        txt(g, `ruler reader, in its own H:  V*/H = ${fmt(ru.a)}   d/H = ${fmt(ru.b)}   their quotient ${fmt(ru.q)}`, 10, 24, '#e6e4ee');
+        txt(g, `with a ruler, in the observer's own H:  V*/H = ${fmt(ru.a)}   d/H = ${fmt(ru.b)}   their quotient ${fmt(ru.q)}`, 10, 24, '#e6e4ee');
         txt(g, 'its amounts move with k; the quotient does not; it held breadths to get it: it wrote first', 10, 48, '#d96e5b');
         const lg = x => isFinite(x) ? Math.log10(x) : 9, bar = (y, v, col) => { const u = Math.max(0, Math.min(1, (lg(v) + 5) / 14)); g.fillStyle = col; g.fillRect(10, y, (W - 20) * u, 12); };
         bar(62, ru.a, '#b59cf0'); bar(82, ru.b, '#b59cf0'); txt(g, 'log scale, 10⁻⁵ … 10⁹', 10, 112, '#8a8a96', 10);
         $('hud').textContent = `k = ${fmt(w.k)}: the reading [h : v] = [${r.h.toFixed(6)} : ${r.v.toFixed(6)}], ${r.theta.toFixed(4)}° above the axis` +
-            `${S.inf ? '; an infinite breadth: the horizon, at no cost to the reader' : ''}`;
+            `${S.inf ? '; an infinite breadth: the horizon, at no cost to the read' : ''}`;
     }
     function set(o = {}) {
         for (const k of ['lv', 'ld', 'lk']) if (o[k] !== undefined) { S[k] = +o[k]; $(k).value = S[k]; }

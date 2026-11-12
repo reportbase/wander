@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <title>The writer and the reader</title>
+    <title>Reads and the counted walk</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
     <!--
@@ -55,33 +55,33 @@
 </head>
 <body>
 <main>
-    <h1>The writer and the reader</h1>
-    <p class="lede">The reader stands on one side of the box; the writer walks all the way round it. From one
-    standpoint the two sweeps, inscribed and central, give the frame, the writer's 1, at no size. A second standpoint, one step away, places the box
-    and sizes it in that step. One amount carried in, the step counted in strides, writes it in metres. The writer needs no
-    reading at all: it walks the whole thing, and writes on the number line, where every stride is laid alike and
+    <h1>Reads and the counted walk</h1>
+    <p class="lede">A read is taken from one side of the box; a write walks all the way round it, counting. From one
+    standpoint the two reads, the inscribed and central sweeps, give the frame at no size: the blueprint's numbers for them, 2/π and π/2, multiply to 1. A second standpoint, one step away, places the box
+    and sizes it in that step. One amount carried in, the step counted in strides, writes it in metres. The walk counted needs no
+    reading at all: the observer walks the whole thing, and the strides go on the number line, where every stride is laid alike and
     there is no corner. Scale the world, and see what moves.</p>
     <div class="panel">
         <div class="row"><button data-s="1">1 · one standpoint</button><button data-s="2">2 · a second standpoint</button>
-            <button data-s="3">3 · count the step</button><button data-s="writer">the writer</button></div>
+            <button data-s="3">3 · count the step</button><button data-s="writer">the walk counted</button></div>
         <div class="row"><label for="k">scale the world, k</label><input id="k" type="range" min="-2" max="2" step="0.01" value="0">
             <span id="kv" class="b"></span><button id="k1">k = 1</button></div>
         <div class="grid">
-            <div><canvas id="cv" height="460"></canvas><p class="cap">The plan, drawn in the reader's own step H (so it
+            <div><canvas id="cv" height="460"></canvas><p class="cap">The plan, drawn in the observer's own step H (so it
             does not move with k); the metre bar does. Gold: rays read from the first standpoint A; teal: from the second, B.
-            Faint boxes: what one standpoint cannot tell apart. Dashed: the back of the box, turned away from the reader.</p></div>
+            Faint boxes: what one standpoint cannot tell apart. Dashed: the back of the box, turned away from the standpoint.</p></div>
             <div>
                 <div class="read" id="say"></div>
                 <div style="overflow-x:auto"><table id="tab"></table></div>
-                <canvas id="cv3" height="170"></canvas><p class="cap">The writer's ruler and a reader's. Above, the
+                <canvas id="cv3" height="170"></canvas><p class="cap">A write's ruler and a read's lay. Above, the
                 number line: every stride laid alike, in proportion on both sides of 1, no corner, so strides add. Below,
-                the reader's lay in its own H: in proportion to the corner (its step H), then 1 + ln s, the same strides
+                the read's lay in its own H: in proportion to the corner (the step H), then 1 + ln s, the same strides
                 bunching past it.</p>
             </div>
         </div>
     </div>
-    <p class="note">The frame's 1 needs no π: π/2 and 2/π are reciprocals, the reader's s × (1/s) = 1. A writer at work, who
-        walks and counts, holds fractions near π and never π itself; only the completed circle, the paper, holds it.</p>
+    <p class="note">The frame's 1 needs no π: π/2 and 2/π are reciprocals, a read's s × (1/s) = 1. A write, a walk counted,
+        holds fractions near π and never π itself; only the completed circle, the blueprint's, holds it.</p>
     <p class="note">Related: <a href="one-read.html">one turn, one read</a>, <a href="write.html">writing, step by step</a>,
     <a href="room-walk.html">walking the room</a>, <a href="mountain.html">the mountain and the thumb</a>.
     <a href="demos.html">All the demos</a>.</p>
@@ -149,8 +149,8 @@
             g.strokeStyle = 'rgba(181,156,240,0.8)'; g.beginPath(); g.moveTo(X(R.writer(x)), y1 - 6); g.lineTo(X(R.writer(x)), y1 + 6); g.stroke();
             g.strokeStyle = 'rgba(212,160,82,0.8)'; g.beginPath(); g.moveTo(X(R.reader(x)), y2 - 6); g.lineTo(X(R.reader(x)), y2 + 6); g.stroke();
         }
-        g.fillStyle = '#b59cf0'; g.fillText('the writer: the number line, strides alike', pad, 18);
-        g.fillStyle = '#d4a052'; g.fillText("a reader's lay: the corner at H, then 1 + ln s", pad, y2 + 36);
+        g.fillStyle = '#b59cf0'; g.fillText('a write: the number line, strides alike', pad, 18);
+        g.fillStyle = '#d4a052'; g.fillText("a read's lay: the corner at H, then 1 + ln s", pad, y2 + 36);
         const cx = X(R.reader(R.H)); g.strokeStyle = '#e6e4ee'; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(cx, y2 - 16); g.lineTo(cx, y2 + 10); g.stroke(); g.setLineDash([]);
         g.fillStyle = '#e6e4ee'; g.fillText('corner', cx - 18, y2 - 20);
         for (const [key, lab] of [['d', 'd'], ['V', 'V*']]) {
@@ -191,7 +191,7 @@
             // the walk round, a stride at a time
             const m = 0.35 * Hm, pts = [[T.x0 - m, T.d - m], [T.x0 + T.V + m, T.d - m], [T.x0 + T.V + m, T.d + T.D + m], [T.x0 - m, T.d + T.D + m], [T.x0 - m, T.d - m]];
             g.strokeStyle = 'rgba(181,156,240,0.7)'; g.lineWidth = 1; g.setLineDash([2, 5]); g.beginPath(); pts.forEach((p, i) => i ? g.lineTo(...X(p)) : g.moveTo(...X(p))); g.stroke(); g.setLineDash([]);
-            g.fillStyle = '#b59cf0'; const q = X([T.x0 - m, T.d + T.D + m + 0.2 * Hm]); g.fillText('the writer walks it all', q[0], q[1]);
+            g.fillStyle = '#b59cf0'; const q = X([T.x0 - m, T.d + T.D + m + 0.2 * Hm]); g.fillText('walked all round, and counted', q[0], q[1]);
         }
         const dot = (p, col) => { g.fillStyle = col; g.beginPath(); g.arc(p[0], p[1], 5, 0, 2 * Math.PI); g.fill(); };
         if (s !== 'writer') { dot(A, '#d4a052'); g.fillStyle = '#d4a052'; g.fillText('A', A[0] - 16, A[1] + 4); }
@@ -214,7 +214,7 @@
         const say = {
             '1': `<span class="g">One standpoint.</span> From A the box's edges are directions, given with their heat before anything arrives: [h : v] = `
                 + `[${f3(r1.left.h)} : ${f3(r1.left.v)}] and [${f3(r1.right.h)} : ${f3(r1.right.v)}], ${r1.across.toFixed(2)}° across.\n`
-                + `Measured by a writer, the central sweep takes its 1 as π/2, the inscribed sweep as 2/π; their product gives the 1 back: the frame.\n`
+                + `By the blueprint's measure, the central sweep takes its 1 as π/2, the inscribed sweep as 2/π; their product gives the 1 back: the frame.\n`
                 + `No size: every faint box lies along the same two rays and reads exactly alike.`,
             '2': `<span class="r">A second standpoint.</span> A steps once, the step's length H its unit (never measured); from B `
                 + `the edges are read again. The rays cross: the box is placed and sized in H.\n`
@@ -222,13 +222,13 @@
             '3': `<span class="b">One amount carried in.</span> The step counted: ${r3.strides.toFixed(2)} strides of ${STRIDE} m, `
                 + `so H = ${f3(r3.Hm)} m, and everything read in H is written in metres.\nV* = ${f3(r3.Vm)} m, d = ${f3(r3.dm)} m. `
                 + `Many readings, one amount.`,
-            writer: `<span class="w">The writer.</span> It reads nothing: it walks the whole box, front and back (both hemispheres), `
-                + `counting strides, each laid alike on its ruler, the number line, so they add: ${wr.strides.front.toFixed(2)} along the front, ${wr.strides.right.toFixed(2)} along a side.\n`
-                + `V* = ${f3(wr.Vm)} m, depth ${f3(wr.Dm)} m. The writer holds the true breadth because it walked it.`,
+            writer: `<span class="w">The walk counted, a write.</span> Nothing is read: the observer walks the whole box, front and back, `
+                + `counting strides, each laid alike on the number line, so they add: ${wr.strides.front.toFixed(2)} along the front, ${wr.strides.right.toFixed(2)} along a side.\n`
+                + `V* = ${f3(wr.Vm)} m, depth ${f3(wr.Dm)} m. The true breadth is held because it was walked and counted.`,
         }[s];
         $('say').innerHTML = say + (Math.abs(st.lk) > 1e-9 ? `\n<span class="x">The world scaled by k = ${$('kv').textContent}:</span> `
             + 'the readings and everything in H are unchanged; the metres are k times.' : '');
-        const rows = [['', 'one standpoint', 'two', 'the step counted', 'the writer'],
+        const rows = [['', 'one standpoint', 'two', 'the step counted', 'the walk counted'],
             ['the frame (product 1)', '✓', '✓', '✓', 'the 1 itself'],
             ['V*/H', '—', f3(r2.VH), f3(r2.VH), '—'],
             ['V* in metres', '—', '—', f3(r3.Vm), f3(wr.Vm)],

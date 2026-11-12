@@ -60,9 +60,9 @@
 <body>
 <main>
     <h1>H is a zoom</h1>
-    <p class="lede">A reader chooses one breadth, <span class="gold">H, its thumb</span>, and lays everything against it: in
-    proportion up to the corner, where a thing is as large as H, and one equal step per doubling past it. Its fineness is finite,
-    its level of detail; a writer counts it as n places. So setting H slides a window of held sizes whose width never changes. Below the
+    <p class="lede">An observer chooses one breadth, <span class="gold">H, the thumb</span>, and lays everything against it: in
+    proportion up to the corner, where a thing is as large as H, and one equal step per doubling past it. A read's fineness is finite,
+    its level of detail; counted, it is n places. So setting H slides a window of held sizes whose width never changes. Below the
     window things fall into the first place and become home; past it they leave the lay. Inside the corner detail is
     <span class="gold">absolute</span>; past it, <span class="teal">relative</span>, every doubling alike. Only at the corner
     is a thing read both at true scale and in full detail, so the best H puts the thing read there.</p>
@@ -71,7 +71,7 @@
             <button id="zin">zoom in (H ÷ 2)</button>
             <button id="zout">zoom out (H × 2)</button>
             <span class="sep">·</span>
-            <button id="layR" class="on">reader's lay</button>
+            <button id="layR" class="on">the read's lay</button>
             <button id="layI">in-place lay</button>
             <span class="sep">·</span>
             <button id="wN" class="on">nested clusters</button>
@@ -83,31 +83,31 @@
             <div class="c"><label for="n">level of detail</label><input id="n" type="range" min="3" max="8" step="1" value="5"><output id="no"></output></div>
             <div class="c"><label for="L">levels past the corner</label><input id="L" type="range" min="2" max="24" step="1" value="12"><output id="Lo"></output></div>
         </div>
-        <h2 style="margin-top:14px">From nowhere: every size, and the window H holds</h2>
+        <h2 style="margin-top:14px">The blueprint, for comparison: every size, and the window H holds</h2>
         <canvas id="world" height="150"></canvas>
-        <p class="cap">Sizes on a scale of doublings, as no reader holds them. <span class="gold">Gold</span>: the near field,
-        from one place (H/n) up to H. <span class="teal">Teal</span>: the far field the reader holds. Grey: into home, past the lay,
+        <p class="cap">Sizes on a scale of doublings, as no read holds them. <span class="gold">Gold</span>: the near field,
+        from one place (H/n) up to H. <span class="teal">Teal</span>: the far field the read holds. Grey: into home, past the lay,
         or all at the horizon. Click anywhere to read that size at the corner (H = that size).</p>
-        <h2>From the reader: its lay, place by place</h2>
+        <h2>From the standpoint: the read's lay, place by place</h2>
         <canvas id="lay" height="180"></canvas>
-        <p class="cap">The lay from home to its edge, cut into places of equal room (the reader's fineness, counted as a writer counts it). Each dot is a place with something in
+        <p class="cap">The lay from home to its edge, cut into places of equal room (the read's fineness, counted). Each dot is a place with something in
         it; a number is how many things share it, and so are not told apart. The corner, where a thing is one H, is the
         dashed line.</p>
         <div class="grid">
             <div><h2>Places per level</h2><canvas id="per" height="210"></canvas>
             <p class="cap">How many places each doubling of size gets. Inside the corner they halve with every level
-            inward, until a level has less than one and its things are points; past it the reader's lay gives every level the
+            inward, until a level has less than one and its things are points; past it the read's lay gives every level the
             same (n·ln 2), the in-place lay halves them outward, the flip of the inside. Zooming slides the bars, never
             reshapes them.</p></div>
             <div><h2>Detail across sizes</h2><canvas id="det" height="210"></canvas>
             <p class="cap">The finest difference told apart at each size, as a share of the size: smaller is finer.
-            Inside the corner it is one place of H, εH, so small things are coarse; past it, ε on the reader's lay and
+            Inside the corner it is one place of H, εH, so small things are coarse; past it, ε on the read's lay and
             worsening on the in-place lay. The finest relative detail that is still true scale is at the corner.</p></div>
         </div>
         <div id="hud"></div>
     </div>
-    <p class="note">Keep the case: x and H are amounts; the reader reads only s = x/H, which equals its unit relations' v/h,
-    both being shares of its one length H. The level of detail is a fineness, counted by a writer as places, which the geometry leaves open; the forms, in
+    <p class="note">Keep the case: x and H are amounts; a read has only s = x/H, which equals its unit relations' v/h,
+    both being shares of the one length H. The level of detail is a fineness, counted as places, which the geometry leaves open; the forms, in
     proportion inside the corner and one equal step per doubling past it, are fixed. Behind it: <i>Observation from
     Somewhere</i> §8, "The count is the level of detail" and "H is a zoom, not an escape". Other demos:
     <a href="levels.html">the levels</a>, <a href="mountain.html">the mountain and the thumb</a>, <a href="flight.html">the
@@ -284,11 +284,11 @@
             worldKind === 'even' ? `the evenly spaced numbers 1–100: ${R.told} places in use; neighbours told apart while one apart spans a place` :
             `scattered sizes: zoom in or out and the held window slides; every size can have its turn at the corner, and no H holds them all`;
         const lines = [
-            `H = ${fmt(H)}; level of detail n = ${n} places in the near field, one place ε = 1/${n}; ${kind === 'inplace' ? 'the in-place lay, to its horizon' : `the reader's lay, ${L} levels past the corner`}`,
+            `H = ${fmt(H)}; level of detail n = ${n} places in the near field, one place ε = 1/${n}; ${kind === 'inplace' ? 'the in-place lay, to its horizon' : `the read's lay, ${L} levels past the corner`}`,
             `held: from H/n = ${fmt(w.lo)} to ${fmt(w.hi)}: ${w.levels.toFixed(0)} levels (${w.near.toFixed(0)} inside the corner, ${w.far.toFixed(0)} past it), the same width at every H`,
             `near field, x ≤ H, in proportion (true scale): finest difference εH = ${fmt(eps * H)}, absolute`,
             kind === 'inplace' ? `far field, the in-place lay: finest difference εx²/H, worsening by a level per level; each level gets half the last`
-                : `far field, the reader's lay: finest difference εx, one ${(100 * eps).toFixed(1)}% of any size; every level gets n·ln 2 = ${(n * LN2).toFixed(1)} places`,
+                : `far field, the read's lay: finest difference εx, one ${(100 * eps).toFixed(1)}% of any size; every level gets n·ln 2 = ${(n * LN2).toFixed(1)} places`,
             `${R.total} things: ${R.near} in the near field, ${R.far} in the far field, ${R.home} fallen into home${kind === 'inplace' ? `, ${R.horizon} at the horizon` : `, ${R.past} past the edge`}; ${R.told} place${R.told === 1 ? '' : 's'} in use, ${R.merged} things sharing one`,
             cl2,
             `best H: a thing read at true scale and in full relative detail must sit at the corner; click its size above to put it there`];

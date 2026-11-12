@@ -5,10 +5,10 @@
 Every scrolling interface meets the same wall. A scrollbar maps the list's length onto the screen's height, so a list of a
 billion rows leaves each pixel of the bar a million rows wide. A flick scrolls at a speed, so the far end of a long list
 takes as long to reach as the list is long. And somewhere in the code a scroll offset grows with the list. These are
-three faces of one fact. The interface was built on the writer's number line, which has no corner and no horizon, and a
+three faces of one fact. The interface was built on the write's number line, which has no corner and no horizon, and a
 list without end laid on that line has no end that fits on a screen.
 
-This essay is about what changes when such things are built on the reader's geometry instead. Once a reader holds one
+This essay is about what changes when such things are built on the read's geometry instead. Once an observer holds one
 length H, the thumb it holds up at arm's length, and turns it, some structures follow with no further choice: a zoom, a
 split between near and far, readings no change of size can move, and a heat over directions that serves any number of things with no
 table and no count. Engineers have arrived at most of them already, by design, under other names: depth buffers, log depth, floating
@@ -23,7 +23,7 @@ The essay opens on the dial, the cleanest case, and then goes through the others
 ## 1. A dial: scrolling without end
 
 The fourth essay laid one reading x three ways in one figure:
-- as itself, on the writer's number line;
+- as itself, on the write's number line;
 - as the turn θ = arctan x, which never leaves the quarter turn;
 - as the hyperbolic angle ζ = asinh x, which grows without end but by about ln 2 from any x to 2x far out.
 
@@ -54,7 +54,7 @@ records in 7.6/r and a googol in 231/r. Nothing about the list's length was set 
 
 **The whole list on the screen.** The screen shows θ, a quarter turn, whatever the list's length. Within one window of the
 hand the records are laid in proportion, each its own row. Past it they are laid by windows counted two, four, eight, as
-the reader's far field is laid by thumbs. The far end of the list is the horizon, θ = 90°, at the edge of the screen and
+the read's far field is laid by thumbs. The far end of the list is the horizon, θ = 90°, at the edge of the screen and
 never drawn, as a road's end is its vanishing point. So the scrollbar's question, how long is the list, is never asked. The
 list's length is N. The control works with the screen's own fixed count of places, K.
 
@@ -86,7 +86,7 @@ times tan θ from home, and the far end is the horizon itself, not a last record
 proportion; past it a steady push reads a steady ratio, one in two each ln 2 of ζ, 2.0037 ten thumbs out. The needle turns
 per unit of place as cos²θ: that is the heat of the seventeenth essay, held in the hand. Dividing the quarter turn into 256
 cells and painting each by the first thing it meets, the last cell covers everything from about 163 thumbs out, without
-end; a writer's count of what each cell covers grows without bound toward the horizon, and the dial never needs it.
+end; a write's count of what each cell covers grows without bound toward the horizon, and the dial never needs it.
 
 **On a dome.** With the push a direction as well as a size, the dial becomes a dome looking down on a floor without end:
 straight down is home, the rim the horizon all round, and the heat per unit of floor cos³α, the flat screen's own law (section 4).
@@ -118,7 +118,7 @@ logarithm of the list because its push is the hyperbolic angle.
 The dial used most of what the geometry gives. It is worth listing it plainly, because "free" is a strong word and has to
 be earned.
 
-Once the reader chooses H, its one length, the thumb it holds up, these follow with no further choice:
+Once the observer chooses H, its one length, the thumb it holds up, these follow with no further choice:
 - **a zoom**, the value of H, the thumb's size. Small H is fine near and coarse far; large H the reverse. Nothing else
   changes.
 - **a split between near and far**, the corner v = h, at 45°, where the crossed thumbs cross.
@@ -129,10 +129,10 @@ Once the reader chooses H, its one length, the thumb it holds up, these follow w
   This is the one the dial leans on hardest.
 
 Two more need one stated premise each, and are free once it is granted:
-- **precision far off**, the lay past the corner, 1 + ln s on the reader's lay (the writer's formula for the reader's
+- **precision far off**, the lay past the corner, 1 + ln s on the read's lay (the blueprint's formula for the read's
   ratios, as many places from one in two to one in four as from one in four to one in eight) or 2 − 1/s on the in-place lay. The premise is the
   fourth essay's: that no stretch past the corner, over which the reading halves, is preferred to another.
-- **detail**, how finely things are drawn, given the reader's resolution K (a writer counts it as K addresses). H then divides the K between the near field
+- **detail**, how finely things are drawn, given the read's resolution K (a write counts it as K addresses). H then divides the K between the near field
   (one thumb, laid evenly) and the far (read in ratios, one in two, one in four, one in eight), half inside H at every H.
 
 And one thing is not on the list. What hides what, which surface is in front, is the payload's. It is set by which
@@ -165,20 +165,20 @@ is 2 − n/d. The depth buffer stores that, less its constant 1, rescaled to fit
   remaining addresses are squeezed into the last sliver before the horizon at 2.
 
 The common remedies are the other lays.
-- **Logarithmic depth** in its plain form, ln(d/n)/ln(f/n), is the reader's lay past the corner, 1 + ln s, with its corner
+- **Logarithmic depth** in its plain form, ln(d/n)/ln(f/n), is the read's lay past the corner, 1 + ln s, with its corner
   at the near plane. Each stretch from a distance to twice it gets equal room.
 - The form ln(Cd + 1)/ln(Cf + 1), proportional below d ≈ 1/C and logarithmic above, is a smooth form of the whole lay, near
-  field and far, turning at d ≈ 1/C. It is the hyperbolic angle of section 1, the writer's smooth formula for the reader's lay of ratios, with its corner
+  field and far, turning at d ≈ 1/C. It is the hyperbolic angle of section 1, the blueprint's smooth formula for the read's lay of ratios, with its corner
   moved from the near plane out to 1/C.
 - **Reversed-Z**, the remedy most engines now use, stores the in-place lay turned round, in a floating-point number. The
-  fourth essay showed that a float is itself a reader's lay in base 2: an exponent counting powers of two and a mantissa
+  fourth essay showed that a float is itself a read's lay in base 2: an exponent counting powers of two and a mantissa
   laid in proportion between one and the next, the subnormal numbers below the smallest power its proportional near field.
   Turning the in-place lay round and storing it in a float puts the float's powers of two where the in-place lay ran out,
   and the result is close to constant relative precision over the whole range.
 
 None of this was designed from the geometry. Each scheme was found by people solving the flicker. What the geometry adds
 is the name of what each one is doing: the depth buffer is a lay with its corner at the near plane, log depth is the
-reader's lay, reversed-Z the in-place lay turned round inside a float. And it adds the question a designer can then ask:
+read's lay, reversed-Z the in-place lay turned round inside a float. And it adds the question a designer can then ask:
 where should the corner be? The geometry's answer, from the fourth essay, is on what matters most, which in a game is
 usually what the player is looking at, not the near plane.
 
@@ -262,8 +262,8 @@ lengths are measured with ds² = (dx² + dy²)/y².
   interquartile range.
 
 So the plane the floor's remainder lives in is the space of the Cauchy's own parameters, each point one heat over the line. A dyadic cell is not merely
-like a Cauchy. It is one, read from its own point. The array's grid and the reader's heat live in the same plane: the cells
-counted, the writer's, and the heat from each cell's point continuous, nothing counted in it.
+like a Cauchy. It is one, read from its own point. The array's grid and the read's heat live in the same plane: the cells
+counted, a write, and the heat from each cell's point continuous, nothing counted in it.
 
 **A tree keeps the depths and loses the plane.** The usual way to keep the finer digits is a tree: a quadtree, an image
 pyramid, a chain of mipmaps, each cell linked to its parent and its children. A tree keeps the depth and measures it
@@ -277,30 +277,30 @@ Add sideways links, each cell joined to the cells beside it at its own depth, an
 indexed by depth and index, `cells[depth][index]`, with links across as well as up and down, is a sampled copy of the
 half-plane. A tree is not.
 
-**Two ways to lose depth.** Every reader with finite resolution loses the finer digits somewhere. The floor and a reader at
+**Two ways to lose depth.** Every read with finite resolution loses the finer digits somewhere. The floor and a read from
 a height lose them differently.
 - **The floor**, averaging over a cell, multiplies each wave of the signal by the familiar sinc. It keeps every halving
   coarser than the cell whole and none finer: a wall, with zeros and side lobes past it, so that finer detail can come back
   as coarser, which is aliasing.
-- **A reader at height γ**, looking through the Cauchy from z, multiplies the same wave by a smooth exponential: never zero,
+- **A read from height γ**, taken through the Cauchy from z, multiplies the same wave by a smooth exponential: never zero,
   and composing as heights add.
 
-No height brings the two within 0.22 of each other. For a step detail, a reader at its own cell's point keeps these shares
+No height brings the two within 0.22 of each other. For a step detail, a read from its own cell's point keeps these shares
 of each depth, the depth read against its own:
 
-| depth read, against the reader's own | −7 | −6 | −5 | −4 | −3 | −2 | −1 | 0 | +1 | +2 |
+| depth read, against the read's own | −7 | −6 | −5 | −4 | −3 | −2 | −1 | 0 | +1 | +2 |
 |---|---|---|---|---|---|---|---|---|---|---|
-| reader at a height: share of the step kept | 0.927 | 0.874 | 0.789 | 0.660 | 0.482 | 0.279 | 0.110 | 0.027 | 0.0044 | 0.0006 |
+| a read from a height: share of the step kept | 0.927 | 0.874 | 0.789 | 0.660 | 0.482 | 0.279 | 0.110 | 0.027 | 0.0044 | 0.0006 |
 | the floor at the same depth | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 0 | 0 |
 
-The reader keeps half of a step 3.09 halvings coarser than its own cell and takes 5.5 halvings to go from 90% kept to 10%.
-The share depends only on the reader's height measured in the detail's own width, so it is one soft cut over the depths,
+The read keeps half of a step 3.09 halvings coarser than its own cell and takes 5.5 halvings to go from 90% kept to 10%.
+The share depends only on the read's height measured in the detail's own width, so it is one soft cut over the depths,
 the same at every depth. The floor's row is a wall. The `depth.html` demo draws both.
 
 **Who sets the depth.** The floor sets one depth for everything, the cell's, chosen by the store before anything is read,
 the same for a mountain and a grain of sand. The geometry sets each thing's depth by its span: a thing that spans n
-of the finest directions the reader tells apart can be halved about log₂ n times before its halves are single ones, and a
-thing between two of them is held at the coarser, not rounded to either. The floor imposes a depth; the reader reads one off what it meets.
+of the finest directions a read tells apart can be halved about log₂ n times before its halves are single ones, and a
+thing between two of them is held at the coarser, not rounded to either. The floor imposes a depth; a read takes one off what it meets.
 
 The first essay's test finds a second difference at once. Where the floor is taken of an amount, `Math.floor(x / w)`, the
 cell width w is an amount too, and scaling every amount in the world by k moves the key unless w is scaled with it. The key
@@ -319,7 +319,7 @@ is then a writing: its grain had to be carried in. A floor taken of a share of t
   height, the window 2γ is the heat's, fixed before anything arrives; what survives inside it, and whether two things in
   it read as two, is the paint's.
 
-What is not shown: that the world stores anything this way, or that any reader's detail is a dyadic depth rather than a
+What is not shown: that the world stores anything this way, or that any read's detail is a dyadic depth rather than a
 continuous height. The mathematics is classical, Böröczky's tiling, the Poisson kernel, the sinc of a box. The reading is
 ours.
 
@@ -339,7 +339,7 @@ them.
 
 **Labels from a fixed count.** The other side is an order kept with labels drawn from a fixed range of M numbers, new items
 put between old ones by giving them a label in the gap. One gap can take only about log₂ M insertions before the labels
-run out and have to be given out again (Itai, Konheim and Rodeh 1981; Dietz 1982). The labels are a writer's ruler with a
+run out and have to be given out again (Itai, Konheim and Rodeh 1981; Dietz 1982). The labels are a write's ruler with a
 fixed number of notches, and a list that grows in one place exhausts them there.
 
 **A step that never closes.** Fibonacci hashing multiplies a key by ⌊2³²/φ⌋ = 2,654,435,769, a golden fraction of the turn
@@ -357,20 +357,20 @@ is the arithmetic face of the steps that never close.
 
 ## 7. Tables fixed in advance, and directions that need none
 
-A sampling table or a grid of cells fixed in advance has to know beforehand the extent it covers and the resolution it
+A sampling table or a grid of cells fixed in advance has to know beforehand the range it covers and the resolution it
 needs, and it is rebuilt when either changes. The uniform turn's heat needs neither. A direction is given whatever
-the count of things and whatever their size, and the fourth essay's K places at H·tan(kπ/2K), a writer's count of the heat in
-distance (K addresses, in the writer's word), hold half inside H at every H and every N.
+the count of things and whatever their size, and the fourth essay's K places at H·tan(kπ/2K), a write's count of the heat in
+distance (K addresses, in a write's word), hold half inside H at every H and every N.
 
 Rendering meets this in importance sampling. To light a scene by a sky, a renderer draws directions in proportion to how
 much light comes from each, using a table built from the sky. When the view changes in a way that moves every direction,
 as a fast-moving camera's sky is boosted, the table has to be rebuilt. The seventh essay showed that a boost is a Möbius
 map of the directions and carries the Cauchy onto itself. So the directions can be drawn by pushing uniform ones through the
 boost, with no table at all, and only the payload, the sky's own light in its own frame, needs tabling, once. The
-`boost-sky.html` demo compares the samplers. What needs a table is the payload or the writer, never the directions or their heat.
+`boost-sky.html` demo compares the samplers. What needs a table is the payload or a write, never the directions or their heat.
 
 That is also the fourth essay's point that the Cauchy does not need to know N. Whatever is tied to a count, a table's size,
-a grid's resolution, a far plane, is the payload's or the writer's. A method that ties with a classical one has shown it is
+a grid's resolution, a far plane, is the payload's or a write's. A method that ties with a classical one has shown it is
 correct; where the classical one needed N and the turn's heat did not, the tie comes free.
 
 ---
@@ -403,7 +403,7 @@ turned out not to be Cauchy: a narrow core plus a share of wrong matches. So in 
 do. The geometry does not fix the law of measurement errors, which is another matter. It fixes the heat of the directions.
 
 The same law is known in numerical analysis. Boyd's rational Chebyshev collocation points for problems on the whole
-line, L·cot((2j − 1)π/2N), are the midpoints of N equal shares of the Cauchy of scale L: the K places a writer counts at the heat's
+line, L·cot((2j − 1)π/2N), are the midpoints of N equal shares of the Cauchy of scale L: the K places a write counts at the heat's
 quantiles, with L in the place of H (Boyd 1982, 1987). Boyd's rule for choosing L, the scale of the feature to be resolved, is the fourth
 essay's best H, at the corner of what is read. The same equal angles read by their cosine are Chebyshev's nodes, crowded
 at the ends of a chord; by their tangent, the Cauchy's, spread out to the horizon.
@@ -413,7 +413,7 @@ at the ends of a chord; by their tangent, the Cauchy's, spread out to the horizo
 ## 10. Origin, not performance
 
 The list of correspondences is long, and it would be easy to read it as a claim that the geometry does better. It is not.
-The tests in the working notes came out as ties or trade-offs. The reader's lay with its corner at the geometric mean of the
+The tests in the working notes came out as ties or trade-offs. The read's lay with its corner at the geometric mean of the
 near and far planes beat log depth past the corner by a factor of 1.78, and inside the corner kept an absolute rather than
 a relative precision: a trade, not a win. A Cauchy sampler beats a rebuilt table in one regime and not in another. A median of
 crossings is robust and is one robust estimator among several that were already known. The verdict of the depth-precision
@@ -443,13 +443,13 @@ advance: one length H, the thumb, for the zoom, a count K if one is wanted, and 
 That is what the dial uses to cross a list of any length, what consistent hashing uses to add a machine and move almost
 nothing, what a sampler uses to drop its table, and what `Math.floor` throws away when it keeps one depth of the address
 and drops the rest. The horizon is the price: a turn's directions never run out, and they never reach the end.
-Said in the reader's own words, the Cauchy is a heat over directions, hottest along the look and cooling toward the horizon,
+Said in the read's own words, the Cauchy is a heat over directions, hottest along the look and cooling toward the horizon,
 with nothing counted in it; what a machine counts, a hash's slots, a table's cells, an array's index, are addresses, and
-they are the writer's. As a metaphor the word still serves, and this essay uses it where it meets computing: a direction
+they are writes. As a metaphor the word still serves, and this essay uses it where it meets computing: a direction
 looked along is like an address looked up, with the heat under it. *The heat is given; the paint is met.*
 
-Back to the scrollbar. Its bar shrinks as the list grows because it is laid on the writer's line, which has no corner and
-no horizon. A dial laid on the reader's turn keeps the whole list on one quarter turn, reaches any place in time
+Back to the scrollbar. Its bar shrinks as the list grows because it is laid on the write's line, which has no corner and
+no horizon. A dial laid on the read's turn keeps the whole list on one quarter turn, reaches any place in time
 logarithmic in its distance, and never asks how long the list is.
 
 ---
@@ -483,7 +483,7 @@ logarithmic in its distance, and never asks how long the list is.
   Physics* 69, 112–142.
 
 The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10
-November with read, place and write, R788), §8 ("What the floor discards", "What the height
+November with read, extent and write, R788), §8 ("What the floor discards", "What the height
 fixes"), §12.4 and Appendix B, and for programmers in the computer-science companion, §7 ("What Math.floor throws away"),
 §11 ("A dial: scrolling without end") and §12. The tests behind section 9 and section 10's verdicts are in the working
 paper `mapping.md`, §9½.

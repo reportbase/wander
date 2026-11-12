@@ -75,10 +75,10 @@
 </head>
 <body>
 <canvas id="stage" aria-label="A cube of dots coloured by one read's heat"></canvas>
-<canvas id="reader" aria-label="the reader's view: every dot in front by its direction from the eye"></canvas>
+<canvas id="reader" aria-label="the view from the eye: every dot in front by its direction from the eye"></canvas>
 <div id="panel" class="glass">
     <h1>A cube of heat</h1>
-    <p class="sub">The cube is the writer's: dots at places. Stand at one dot, look one way, and every dot in front takes the
+    <p class="sub">The cube is the blueprint's (classical geometry, shown for comparison): dots at places. Stand at one dot, look one way, and every dot in front takes the
     read's heat: hottest at the dot looked at, cooling every way without end. Behind the eye, nothing: one read is half the
     cube. The heat has no edge and no shape.</p>
     <div class="row"><span style="align-self:center">tap to</span><button id="tStand">stand</button><button id="tLook" class="on">look at</button></div>
@@ -381,7 +381,7 @@
         const t = pts.find(p => p.q === C.targetOf());
         if (t) { const [sx, sy] = scr(t); x.strokeStyle = '#f2c14e'; x.lineWidth = 2; x.beginPath(); x.arc(sx, sy, dr + 5, 0, 2 * Math.PI); x.stroke(); }
         x.textAlign = 'left'; x.fillStyle = '#8a91a8'; x.font = '12px DM Mono, monospace';
-        x.fillText(`the reader's view, ${S.lay === 'flat' ? 'a flat screen square to the look (the cube as it is; the rim at infinity)' : 'equal area about the look (compressed; the rim at √2)'}: ${pts.length} dots in front, each one size`, 14, H - 14);
+        x.fillText(`the view from the eye, ${S.lay === 'flat' ? 'a flat screen square to the look (the cube as it is; the rim at infinity)' : 'equal area about the look (compressed; the rim at √2)'}: ${pts.length} dots in front, each one size`, 14, H - 14);
         x.fillText('drag to turn the look · tap a dot to look at it · S flat or equal area · D the dots on or off · V the cube from outside', 14, H - 32);
     }
     // drag turns the look (the world dragged with the finger), a tap looks at the dot under it
@@ -401,7 +401,7 @@
         if ((e.key === 'd' || e.key === 'D') && S.view === 'reader') { S.dotsOn = S.dotsOn === false; S.version++; }
         if ((e.key === 's' || e.key === 'S') && S.view === 'reader') C.set({ lay: S.lay === 'flat' ? 'area' : 'flat' }); });
     const tick = () => { draw(); const b = document.getElementById('bView');
-        if (b) { b.textContent = S.view === 'reader' ? "view: the reader's" : 'view: from outside'; b.classList.toggle('on', S.view === 'reader'); }
+        if (b) { b.textContent = S.view === 'reader' ? 'view: from the eye' : 'view: from outside'; b.classList.toggle('on', S.view === 'reader'); }
         const bl = document.getElementById('bLay');
         if (bl) { bl.style.display = S.view === 'reader' ? '' : 'none'; bl.textContent = S.lay === 'flat' ? 'screen: flat (the cube as it is)' : 'screen: equal area (compressed)'; }
         requestAnimationFrame(tick); };
@@ -493,7 +493,7 @@ function hud() {
         `<b>eye</b> at dot (${eye.join(', ')})   <b>looking at</b> (${t.join(', ')})\n` +
         `H, the thumb: ${st.H.toPrecision(3)} = ${Math.pow(2, S.h).toPrecision(3)} × the distance looked at (${dT.toPrecision(3)})\n` +
         `in front of the eye: ${fr.inFront} of ${fr.dots} dots (${(100 * fr.share).toFixed(0)}%)\n` +
-        `dots nearer than one thumb hold ${(100 * fr.heatNear / (tot || 1)).toFixed(0)}% of the dots' heat (the writer's spacing)\n` +
+        `dots nearer than one thumb hold ${(100 * fr.heatNear / (tot || 1)).toFixed(0)}% of the dots' heat (the blueprint's spacing)\n` +
         `scale the world ×${st.k.toPrecision(3)}: no colour moves`;
     yawEl.value = S.yaw; yawO.textContent = S.yaw.toFixed(1) + '°';
     pitchEl.value = S.pitch; pitchO.textContent = S.pitch.toFixed(1) + '°';

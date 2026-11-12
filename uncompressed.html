@@ -74,7 +74,7 @@
         "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
 </head>
 <body>
-<canvas id="stage" aria-label="the writer's Cartesian grid beside the Cauchy hemisphere it compresses into"></canvas>
+<canvas id="stage" aria-label="the blueprint's Cartesian grid beside the Cauchy hemisphere it compresses into"></canvas>
 <div id="labels"></div>
 <button id="menuBtn" title="menu" aria-label="menu">☰</button>
 <div id="menu" role="menu">
@@ -105,7 +105,7 @@
 <div id="about" class="over">
     <button class="x" id="aboutX" aria-label="close">✕</button>
     <h1>The Cauchy, uncompressed</h1>
-    <p>Uncompressed is the writer's three-dimensional Cartesian space: points one unit apart on straight grid lines,
+    <p>Uncompressed is the blueprint's three-dimensional Cartesian space (classical geometry, shown for comparison): points one unit apart on straight grid lines,
     going on without end. The eye stands in the middle of a cell and looks up; the read sees the half in front.</p>
     <p>Compressed is the Cauchy hemisphere. Every point keeps its direction from the eye and is laid along it by the
     thumb, g = (2/π)·atan(d/H): one thumb out lands half way to the rim, two, four and eight thumbs closer and closer
@@ -365,7 +365,7 @@ function build() {
     const eye = new THREE.Mesh(new THREE.SphereGeometry(0.12, 16, 12), new THREE.MeshBasicMaterial({ color: 0xffffff }));
     furn.add(eye); if (!S.place) { const e2 = eye.clone(); e2.position.set(...O); furn.add(e2); }
     if (!S.place) {
-        labelList.push({ text: 'the writer\'s Cartesian grid, uncompressed (a window of it)', p: new THREE.Vector3(0, -0.9, S.R) });
+        labelList.push({ text: 'the blueprint\'s Cartesian grid, uncompressed (a window of it)', p: new THREE.Vector3(0, -0.9, S.R) });
         labelList.push({ text: 'the Cauchy hemisphere, compressed', p: new THREE.Vector3(O[0], -0.9, A) });
     } else labelList.push({ text: S.u < 0.02 ? 'compressed: the hemisphere' : S.u > 0.98 ? 'uncompressed: the Cartesian grid' : 'uncompressing', p: new THREE.Vector3(0, -0.6, 1.2 * A) });
     if (S.shells) labelList.push({ text: 'one thumb', p: new THREE.Vector3(...(S.place ? moved([H * 0.7, H * 0.7, 0]) : toHemi([H * 0.7, H * 0.7, 0]))) });

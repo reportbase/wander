@@ -60,8 +60,8 @@
 <body>
 <main>
     <h1>The H dial</h1>
-    <p class="lede">A reader with no model of what it sees, only its own pixels, H wide. The system is two points, one
-    apart. <span class="gold">s = 1/H</span> is the system against the reader's grain. Turn the dial and look: below one
+    <p class="lede">An observer with no model of what it sees, only its own pixels, H wide. The system is two points, one
+    apart. <span class="gold">s = 1/H</span> is the system against the observer's grain. Turn the dial and look: below one
     pixel across, "two" comes only by chance; past it, every time. The cheapest setting is one pixel across.</p>
 
     <div class="panel">
@@ -98,8 +98,8 @@
     </div>
 
     <p class="note">From <code>plans/grn-plan.md</code>, runs 3 to 5 (synthetic, each predicted before it ran). Runs 1 and 2
-    gave the reader the shape ("two equal stars"); such a reader reads below its grain, and the resolution limit blurs. This page is
-    the reader without a model. See also <a href="sweep.html">the sweep device</a>.</p>
+    gave the observer the shape ("two equal stars"); such an observer reads below its grain, and the resolution limit blurs. This page is
+    the observer without a model. See also <a href="sweep.html">the sweep device</a>.</p>
 </main>
 <script>
 (() => {
@@ -147,8 +147,8 @@
         g.font = '12px DM Mono, monospace'; g.textAlign = 'center';
         g.fillStyle = C.teal; g.fillText('the system: two points, 1 apart', X(0), y0 + ph + 28);
         g.fillStyle = C.gold;
-        const msg = !state.last ? 'press "look": the reader gets only its pixels'
-            : state.last.two ? `the reader sees TWO: ${state.last.lit} pixels lit` : 'the reader sees ONE: both points in one pixel';
+        const msg = !state.last ? 'press "look": the observer gets only its pixels'
+            : state.last.two ? `the observer sees TWO: ${state.last.lit} pixels lit` : 'the observer sees ONE: both points in one pixel';
         g.fillText(msg, W / 2, 26);
         g.textAlign = 'left'; g.fillStyle = C.dim; g.fillText(`pixel H = ${h < 0.1 ? h.toFixed(3) : h.toFixed(2)}`, 8, H - 8);
     }

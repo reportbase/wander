@@ -10,12 +10,12 @@ enough to say when the tide turned, and two people on the pier, one counting in 
 every five minutes and one every ten, would agree that it did.
 
 Every essay so far has read from one standpoint at one moment, or from several standpoints at once. This one is about
-reading in time: arrivals that come one after another, a reader that holds only what it has seen and has to decide what
-to keep between looks. Its source is a paper of 21 August, *The Unit Rule*, which built such a reader from almost
+reading in time: arrivals that come one after another, an observer that holds only what it has seen and has to decide what
+to keep between looks. Its source is a paper of 21 August, *The Unit Rule*, which built such an observer from almost
 nothing and raced it against cleverer ones. That paper was restated in the present frame on 26 October, and parts of it
 were tested again, exactly and on recorded tides. This essay tells both.
 
-Its one-line result: **a reader that holds one value and compares each arrival with it finds the turns of a stream
+Its one-line result: **an observer that holds one value and compares each arrival with it finds the turns of a stream
 by order alone, and order is the one thing no change of units, no gain and no unknown scale can move.**
 
 ---
@@ -24,28 +24,28 @@ by order alone, and order is the one thing no change of units, no gain and no un
 
 Make the pier into a broadcast. A screen receives a stream of amounts, one at a time, each multiplied somewhere along the
 way by a gain no one recorded. The same broadcast, sent through another chain, arrives a thousand times larger. What can
-a reader holding one slot say truthfully about such a stream?
+an observer holding one slot say truthfully about such a stream?
 
 Apply the first essay's test, scale the world. Multiply every arrival by k and see what moves.
-- **An arrival moves.** It is an amount, in a unit the reader was never given.
+- **An arrival moves.** It is an amount, in a unit the observer was never given.
 - **A difference of two arrivals moves too.** It is an amount as well.
 - **A ratio of two arrivals does not move.** It is a reading.
 
-So the first thing the reader can say about the broadcast, rather than about the chain it came through, is one arrival
-in terms of another. And the very first arrival, alone, says nothing. It fails the test. It founds what the reader will
+So the first thing the observer can say about the broadcast, rather than about the chain it came through, is one arrival
+in terms of another. And the very first arrival, alone, says nothing. It fails the test. It founds what the observer will
 hold, and that is all.
 
 The same test sorts instruments. A balance passes it: its field cancels from the equilibrium, so a balance that reads
 equal on the moon reads equal on the earth, and sweeping the field over twelve decades leaves the reading where it was.
 Bias one pan and the reading drifts at once, which shows the cancellation is doing work. A spring scale fails: it reads
-mass times field over stiffness, so it must be calibrated, and only where it was calibrated. The reader in this essay is
+mass times field over stiffness, so it must be calibrated, and only where it was calibrated. The observer in this essay is
 a balance. Whatever settles each comparison decides *that* a result occurs and contributes nothing to its value.
 
 ---
 
 ## 2. One slot
 
-To read an arrival against something, the reader must already hold something. Call it **the hold**. Each look states one
+To read an arrival against something, the observer must already hold something. Call it **the hold**. Each look states one
 reading: the arrival in terms of the hold. In the third essay's notation that is a direction,
 
   [hold : arrival],  with v/h = arrival ÷ hold.
@@ -56,7 +56,7 @@ The landmarks are the ones every essay has met.
 - **The horizon**: the hold becomes small against the arrival. A register of finite size cannot follow the reading
   there; past its last step everything reads the same, and that clip is the register's edge, not an error.
 
-*The Unit Rule* specified its reader as a short list of capabilities, each paid for in state, never in a unit.
+*The Unit Rule* specified its observer as a short list of capabilities, each paid for in state, never in a unit.
 
 | | capability | what it needs |
 |---|---|---|
@@ -68,10 +68,10 @@ The landmarks are the ones every essay has met.
 
 No row needs the stream's scale. What grows down the table is memory.
 
-**Holding is its own axis.** The earlier essays said that a reader receives either amounts along given directions or
+**Holding is its own axis.** The earlier essays said that an observer receives either amounts along given directions or
 directions alone, and that either may be held at once or in order. This essay is about one corner of that second axis:
-holding in order, with one slot. It is not a claim about how readers in general work. A camera holds a whole frame at
-once; this reader holds one value and the next arrival.
+holding in order, with one slot. It is not a claim about how observers in general work. A camera holds a whole frame at
+once; this observer holds one value and the next arrival.
 
 ---
 
@@ -79,46 +79,46 @@ once; this reader holds one value and the next arrival.
 
 The register names each reading by a whole number of steps of a ratio g greater than 1: the count n nearest
 log_g(arrival ÷ hold). The run of those numbers is the record.
-- **The step is the reader's, not the stream's.** Nothing in the broadcast recommends a g. A finer step buys resolution
+- **The step is the observer's, not the stream's.** Nothing in the broadcast recommends a g. A finer step buys resolution
   and costs more steps.
 - **One step, repeated, is the only discrete design.** Every discrete set of ratios closed under multiplication is the
   powers of one ratio. Two unrelated ratios together, 2 and 3, are dense: their products come as close as you like to any
   ratio at all. That is why such steps, wherever they appear, are one ratio repeated.
 - **The count of steps is a logarithm in whole numbers.** "How many steps of g from the hold to the arrival" is log_g,
-  rounded. The reader computes no logarithm. The logarithm is what its count becomes when the steps are made fine. This
-  is the fourth essay's lay past the corner, 1 + ln s as a writer counts places past it, met in time.
+  rounded. The observer computes no logarithm. The logarithm is what its count becomes when the steps are made fine. This
+  is the fourth essay's lay past the corner, 1 + ln s as a write counts places past it, met in time.
 - **A logarithm of one amount is not formed.** A count of steps needs two magnitudes, a hold and an arrival. "The logarithm of
   five metres" is not forbidden; it is not yet a reading.
 - **The count does not carry the world's size.** Scaling the stream shifts the hold's count and leaves every reading
-  where it was. The reader's count of steps is fixed beforehand, the fourth essay's K, apart from whatever N the stream
+  where it was. The observer's count of steps is fixed beforehand, the fourth essay's K, apart from whatever N the stream
   has.
 
 **Odd and even K.** With an even number of steps the corner, v/h = 1, falls on a boundary between two of them; with an
-odd number one step is centred on it. For this reader the choice is not a matter of taste. Show a one-slot
-reader a still scene and it is handed its own hold, look after look, with its reading sitting exactly on the corner. With
+odd number one step is centred on it. For this observer the choice is not a matter of taste. Show a one-slot
+observer a still scene and it is handed its own hold, look after look, with its reading sitting exactly on the corner. With
 31 steps it returns the hold times 1.00000. With 32 it must round half a step one way or the other, and returns the hold
-times 1.01815: a twitch on every look of a scene that is not moving. A reader that must be able to say "nothing changed"
-needs an odd K. Other readers need not.
+times 1.01815: a twitch on every look of a scene that is not moving. An observer that must be able to say "nothing changed"
+needs an odd K. Other observers need not.
 
 ---
 
 ## 4. The unit rule
 
-At the end of a look, the reader's stock is the old hold, in a slot; the arrival just read, in a slot; and the count of
+At the end of a look, the observer's stock is the old hold, in a slot; the arrival just read, in a slot; and the count of
 looks. Nowhere is there a rate, a trend or a step toward the future. "Carry the hold forward by s" needs an s, which is an
 amount. "Continue the motion" needs a motion, which is a difference, which is also an amount. The only magnitude the
-reader holds is the one that just arrived.
+observer holds is the one that just arrived.
 
 So the rule:
 
 > **Hold the arrival that filled you, until the next one says otherwise.**
 
-It assumes nothing about the stream and costs one slot. It is the rule a reader given nothing can run. The held value is
-the reader's unit for the moment, which is where the rule's name comes from.
+It assumes nothing about the stream and costs one slot. It is the rule an observer given nothing can run. The held value is
+the observer's unit for the moment, which is where the rule's name comes from.
 
 It has two outputs.
 - **A count of steps.** Each arrival is placed against the hold, which is what makes the stream readable at all.
-- **The corner, as an event.** The look at which the reading crosses 1. Two readers with different steps and different
+- **The corner, as an event.** The look at which the reading crosses 1. Two observers with different steps and different
   gains find the same look, because a crossing of 1 needs no scale. That is the pier: the turn of the tide, agreed by
   people counting in feet and in metres.
 
@@ -128,25 +128,25 @@ to beat it usually change the reference, with a forecast or a trend. A rule told
 carry. Only the carry matters in the gaps, and the gaps are where section 7 finds the rules apart.
 
 **The space of rules is open.** For every known stream, some tailored rule beats this one, and pays for its advantage
-with information about the stream. The unit rule is the one member of the space a reader given nothing can run.
+with information about the stream. The unit rule is the one member of the space an observer given nothing can run.
 
 ---
 
 ## 5. Reading is seeking
 
-A reader with a finite register has to keep its hold near the arrivals, or the arrivals run off the edge. *The Unit Rule*
+An observer with a finite register has to keep its hold near the arrivals, or the arrivals run off the edge. *The Unit Rule*
 proved that this is not optional. Its premises: the reading is the arrival's count less the hold's; the register reads
 while that difference is at most R and clips otherwise; the stream steps at most J steps a look and is told nothing
-about the reader; the reader knows no window the stream will stay in, since that would be a unit.
+about the observer; the observer knows no window the stream will stay in, since that would be a unit.
 - **A hold that never moves** is clipped after finitely many looks, for some stream.
-- **A reader reads every stream** exactly when its hold tracks the arrivals, within R. It must keep returning to the
+- **An observer reads every stream** exactly when its hold tracks the arrivals, within R. It must keep returning to the
   corner.
 - **"Hold while the reading is within one step, else move the hold to the arrival"** keeps the reading within J, with
   no model of the stream. The price of knowing nothing is a lateness of one of the stream's own steps.
 
 This is the fourth essay's "the corner follows the focus", met in time. And the band, hold until the reading leaves ±1,
 is a device found twice: a playground study of a first-person view found that re-laying the corner only when the look
-had left a band of 0.4 nats about it moved the corner on one look in twenty, for 1% more coarseness. A reader moves
+had left a band of 0.4 nats about it moved the corner on one look in twenty, for 1% more coarseness. An observer moves
 its corner only when the look has left a band about it.
 
 What the snap buys is not accuracy but **stretches of agreement**. At the look where the hold moves, the reading is
@@ -177,7 +177,7 @@ that its mean would not settle), the drift of the hold changes sign exactly at t
 median 1 the hold settles at 1.11, with the mean at 1.69.
 
 Once the hold sits at the median, the far arrivals cancel: of 50,335 arrivals past 16, 24,145 were above the hold and
-26,190 below. That says they no longer move the hold. It does not license ignoring them. A reader that clips before its
+26,190 below. That says they no longer move the hold. It does not license ignoring them. An observer that clips before its
 hold has settled strands itself: told to ignore arrivals four steps from its start, it ignored 99.8% of looks and left
 its hold at −101 on a stream of median 10.
 
@@ -187,7 +187,7 @@ its hold at −101 on a stream of median 10.
 
 *The Unit Rule* raced its rule against rules meant to beat it, on 49 recorded test signals, each of which returns to
 where it began, so an honest record should add up to zero. Those measurements were made there and not run again; they
-price the rule, and they answer a writer's question, how closely the held values track the stream's amounts.
+price the rule, and they answer a write's question, how closely the held values track the stream's amounts.
 - **The rule's own frontier.** Its median error falls as about 2 to the minus the number of bits it spends a look, with no
   knee: 0.0132 at 0.635 bits, 0.0064 at 1, 0.00020 at 4.5. Any rival has to beat that line.
 - **A tailored step,** like a camera's auto-exposure, is 2.3 times better at the median and 3 times worse at the worst
@@ -208,10 +208,10 @@ checksum.
 ## 8. The turn as a landmark
 
 The question where the rule wins by much more than 1.2 is not "what was the reading" but "where did the stream turn". A
-turn is the sign of the reading changing: the arrival stops exceeding the hold and starts falling short. Two readers with
+turn is the sign of the reading changing: the arrival stops exceeding the hold and starts falling short. Two observers with
 different steps and gains agree that it happened. A count of looks between two turns is a duration in the stream's own
-terms, so the reader carries a reference it was never handed. That is designating, not sizing: the turn is a mark in
-the stream's order, not a size of anything. (Reads joined can give a place, a gap in space; an order, which has no gap;
+terms, so the observer carries a reference it was never handed. That is designating, not sizing: the turn is a mark in
+the stream's order, not a size of anything. (Reads joined can give an extent, a gap in space; an order, which has no gap;
 or a map from one read's directions to another's. The turn is of the second kind.)
 
 **The race in the gaps.** The rules differ only across missing looks, so looks were dropped, singly and in bursts, with
@@ -234,7 +234,7 @@ and direction is all a turn needs.
 the rod's two projections are equal at 45°, falls a quarter of the way along each half turn. Four registers find it: the
 hold, the direction bit, a counter from the last low reversal, and the previous leg's count. The quarter needs no
 division: a counter that ticks every fourth look holds the count quartered. On a clean signal it finds the corner to 1.9%,
-all of it the lateness of noticing a reversal; on a noisy one, 1.9% at 0.4% noise, 3.1% at 1%, failing at 2%. A reader
+all of it the lateness of noticing a reversal; on a noisy one, 1.9% at 0.4% noise, 3.1% at 1%, failing at 2%. An observer
 that keeps every arrival and sorts them does better, 0.05%. The four-register machine is not more accurate. It is possible
 on a stream without end, with memory that does not grow.
 
@@ -304,7 +304,7 @@ That rule for the rate was fitted on tides and has not been tested on anything e
 Every rule holds something, so every rule has a look where the arrival meets what it holds. What that look is about
 depends on what is held.
 - **The unit rule** holds the last arrival. Its corner says the stream did not change: a statement about the stream.
-- **A trend rule** holds a forecast. Its corner says the forecast came true: a statement about the reader.
+- **A trend rule** holds a forecast. Its corner says the forecast came true: a statement about the observer.
 
 On a turning rod, the unit rule's corners gather at the turns (31.5% near a turn against 13.4% on a flank) and the trend
 rule's on the straight stretches (21.2% against 41.5%). The same law names the unit rule's blind spot. A stream climbing
@@ -319,7 +319,7 @@ and rounding from any point lands on the point nearest the arrival. So the held 
 the stream, the same whatever path led there. That was verified in exact integer arithmetic on every sample of 56 scenes.
 A held value grows stale within a gap; it does not decay across a run.
 
-**Continuity is the reader's.** Arrivals come one at a time; the held run is unbroken because the reader holds something
+**Continuity is the observer's.** Arrivals come one at a time; the held run is unbroken because the observer holds something
 between looks. What is forced is that there is a carry rule. Even "hold nothing" is one, and gives a strobe. Which rule is
 not forced. Continuity in a record is the carry rule, whatever it is.
 
@@ -358,14 +358,14 @@ And the frame is exact over any arrivals at all: white noise gives a crossing an
 
 Four questions are left.
 1. Does the corner found this way follow a change in the world, or only a change in the sampling?
-2. Do two readers at different rates agree, once each counts in steps from its own corner? For turns this is partly
-   answered: readers holding order alone at any rate inside a station's exact window report the same turns, one between
-   each pair of the tide's highs and lows. Counts in steps from each reader's corner were not compared.
+2. Do two observers at different rates agree, once each counts in steps from its own corner? For turns this is partly
+   answered: observers holding order alone at any rate inside a station's exact window report the same turns, one between
+   each pair of the tide's highs and lows. Counts in steps from each observer's corner were not compared.
 3. Does the frame earn anything where a unit is available anyway?
-4. Is the unit rule's ±1 band the same reader as the first-person view's band of 0.4 nats? A test would race them on one
+4. Is the unit rule's ±1 band the same observer as the first-person view's band of 0.4 nats? A test would race them on one
    trace.
 
-**In physics.** Two looks a tick apart give time to contact exactly, in the reader's own ticks: x₁/(x₂ − x₁) at the
+**In physics.** Two looks a tick apart give time to contact exactly, in the observer's own ticks: x₁/(x₂ − x₁) at the
 second look, x₂/(x₂ − x₁) one tick earlier (Lee 1976). Seconds need a clock carried in; what is scale-free is τ̇, and
 under steady braking Lee's τ̇ = −½ is stopping distance equal to distance, the pair at its corner. A count can hold
 where a clock fails: a cooling granular gas loses (1 − e²)/3 of its temperature per contact per sphere, density and size
@@ -376,14 +376,14 @@ gone from the count, while the clock needs them all (Haff 1983) (*Reads and Writ
 
 ## 14. What it comes to
 
-**Reading and writing.** A reader holding in order with one slot holds only readings: each arrival in terms of the last.
+**Reading and writing.** An observer holding in order with one slot holds only readings: each arrival in terms of the last.
 It can say when the stream turned, how many looks lay between turns, where the stream's median is, and whether its record
 closed. It cannot say how high the water was. That needs a gauge and a datum, a unit and a zero carried in: a writing.
 The races priced the difference. Rules that hold amounts track the amounts better, by about 1.2 at a fair bill, and lose
 the turns in the gaps by seven to fourteen times.
 
 **The Cauchy.** It does not appear in a stream as a law of the arrivals; the arrivals are whatever they are. It appears,
-as everywhere in these essays, in what the reader keeps: order and the median, the corner as a crossing, a statistic that
+as everywhere in these essays, in what the observer keeps: order and the median, the corner as a crossing, a statistic that
 no increasing change of what arrives can move. The tide was a test of exactly that, and it held at ten stations.
 
 Back to the pier. You glanced at the water and compared it with your last glance, and at one glance the answer changed.

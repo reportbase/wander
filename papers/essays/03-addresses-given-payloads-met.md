@@ -2,20 +2,20 @@
 
 *The third of a series of essays on what can be known from where one stands. Draft, 28 October 2026.*
 
-The first essay found that a reader with no second length has no circle, yet pointing its thumb at the mountain gives it
-the circle's geometry, and that read from where it stands that geometry is the Cauchy distribution. The second showed how
-one length pointed and turned generates it, the circle being the writer's drawing of the turn, and how two sweeps read the
+The first essay found that a read with no second length has no circle, yet the thumb pointed at the mountain gives it
+the circle's geometry, and that read from the standpoint that geometry is the Cauchy distribution. The second showed how
+one length pointed and turned generates it, the circle being the blueprint's drawing of the turn, and how two sweeps read the
 same point twice. This essay is about the Cauchy itself: what it is a law *of*.
 
 The usual answer is that it is a law of something measured: noise, a spectral line, a ratio of two measurements. The
-answer here is that it is the heat of the reader's *directions*: a continuous weight over the ways it can look, hottest
+answer here is that it is the heat of a read's *directions*: a continuous weight over the ways one can look, hottest
 along the look and cooling toward the horizon, given before anything is measured at all. What arrives along those
 directions, the *payload*, the paint, is a different thing with a law of its own. That one distinction explains a habit
 practice already has, and says when the habit stops being right.
 
-*A note on the title.* Since ruling R706 (5 November) the series reads the reader's side as directions and their heat,
-not as addresses. An address is discrete and counted, a place in a layout, and so a writer's word: a writer can lay K
-places at the heat's quantiles and call them addresses, as a computer lays out its memory. The reader counts nothing. Its
+*A note on the title.* Since ruling R706 (5 November) the series takes the read's side as directions and their heat,
+not as addresses. An address is discrete and counted, a place in a layout, and so a word for writes: a write can lay K
+places at the heat's quantiles and call them addresses, as a computer lays out its memory. A read counts nothing. Its
 directions come with a heat that has no grain of its own, and what arrives along them is paint. The title keeps the old
 word, and it is still a good one where the essay meets computing (R707): a direction looked along is like an address
 looked up, the heat under it. As geometry, the essay says directions and their heat. In short: *the heat is given; the
@@ -51,7 +51,7 @@ the thumb's own size, the thumb held to equal the mountain; every amount you the
 finger carries. The first essay walked to find it.
 
 In space the window takes both hands: one spreading its fingers upright, the other round, the two thumbs crossed, each
-pane lining up with a crossing of one finger from each. The fifth essay works it out. It shows that the reader's space is
+pane lining up with a crossing of one finger from each. The fifth essay works it out. It shows that the read's space is
 not Cartesian, no three axes of amounts, but one thumb crossed with itself and two sweeps of fingers.
 
 *Demos: the central reader, step 1 (the hand, its fingers laid by the turn, painted by the light); the read (the directions
@@ -87,7 +87,7 @@ lamp turns, flashes at random moments, and its flashes land along a straight sho
 lighthouse problem of the Bayesian textbooks. The law is carried into itself by every map that moves points of a line
 while keeping it a line, and it is where a randomly wandering particle released above a line first touches it. This
 reading is the nearest to the one here. It makes the law a fact about directions, but about the directions of a lamp or
-a wandering path, not about the places at which a reader meets what it reads.
+a wandering path, not about the places at which an observer meets what it reads.
 
 ---
 
@@ -105,9 +105,9 @@ leaves exactly one measure unchanged. Jaynes called it the *invariant measure* a
 status. It is not a belief about any outcome, and not a frequency of outcomes. It is a reference, there before any data,
 against which other distributions are measured.
 
-This essay puts the Cauchy in that place. For a reader at a standpoint, two things cannot be detected from the readings
+This essay puts the Cauchy in that place. For an observer at a standpoint, two things cannot be detected from the readings
 alone: which way it happens to face, and how large anything is. Turns and rescalings. The turns leave one measure on the
-directions, the steady turn; read as the slope v/h, that measure is the Cauchy. It is the heat of the reader's directions,
+directions, the steady turn; read as the slope v/h, that measure is the Cauchy. It is the heat of the read's directions,
 fixed by the standpoint and the turn, before anything arrives.
 
 On this reading the missing mean is not a defect of anything measured. It belongs to the scale on which the directions
@@ -124,10 +124,10 @@ directions and their heat, and which to what is met along them.
 
 The two are different kinds of thing.
 
-A **direction** is a point: a way the reader can look, a reading [h : v]. A **payload** is what is found along it: an
+A **direction** is a point: a way one can look, a reading [h : v]. A **payload** is what is found along it: an
 amount, a colour, a strength. The heat of the directions, the Cauchy, is a measure on the points: continuous, with nothing
-counted in it. It is fixed by the standpoint and the turn alone. No payload enters it. (A writer may count the directions,
-K places at the heat's quantiles, and call each one an address. The counting is the writer's; the heat comes first.)
+counted in it. It is fixed by the standpoint and the turn alone. No payload enters it. (A write may count the directions,
+K places at the heat's quantiles, and call each one an address. The counting is a write; the heat comes first.)
 
 Whatever arrives can be swapped for anything else, along any direction, and the directions and their heat do not move. So
 nothing the Cauchy says, its median, its spread, its missing mean, is a statement about the payload, and nothing about the
@@ -153,7 +153,7 @@ r is the amount (the second essay, section 9).
 The separation can be stated as a theorem. Each part is elementary; the content is in reading them together.
 
 **Nothing that arrives changes the directions.** Suppose that whatever arrives along each direction lies at some distance,
-different from direction to direction and unknown to the reader. Its two components are that distance times h and that
+different from direction to direction and unknown at the standpoint. Its two components are that distance times h and that
 distance times v, and the reading is their ratio, v/h. The distance cancels. It cancels from every single reading, not
 on average. So the readings, and their Cauchy law, are the same whatever arrives, and they are fixed before anything does.
 
@@ -182,14 +182,14 @@ That holds for every single reading and for every statistic of their order, and 
 them. The Cauchy is the heat of the directions along which things arrive, never what arrives. The heat is given; the paint
 is met.
 
-**The geometry creates the reader.** It is tempting to picture the reader doing this work: taking two amounts and dividing
+**The geometry creates the read.** It is tempting to picture an observer doing this work: taking two amounts and dividing
 one by the other, so that the scale cancels. It does not. The geometry removes the scale before anything is read. A
-direction arrives as a direction, with the distance along it already gone; the projection did the dividing, not the reader.
+direction arrives as a direction, with the distance along it already gone; the projection did the dividing, not the observer.
 What the light paints on a direction arrives as paint, never as so many units. The paint is the world's writing, met
-along the direction; the read is the direction and its heat, and it is geometry, there whether the paint is or not. So the reader manages no magnitudes at all,
+along the direction; the read is the direction and its heat, and it is geometry, there whether the paint is or not. So a read manages no magnitudes at all,
 neither the size of the other party nor the size of what arrives. It has no unit to manage them in. Its one length, H, the
-thumb, is its own unit: measured in itself it is 1, one thumb, and what it is in metres is something only a writer can say.
-The reader has no scale whatsoever. Every magnitude, and the unit it is stated in, belongs to the writer.
+thumb, is its own unit: measured in itself it is 1, one thumb, and what it is in metres is something only a write can say.
+A read has no scale whatsoever. Every magnitude, and the unit it is stated in, belongs to a write.
 
 **Why there is no mean.** The missing mean is usually told as the Cauchy's defect. Read as the heat of directions it is what such
 a heat should do. A mean is a sum of amounts divided by their count, and a direction has no length to add. To average the readings
@@ -197,10 +197,10 @@ v/h is to lay each direction out as an amount on the chart that puts the horizon
 chart's far end: the running average climbs by about 1.47 for every tenfold further the readings run. The missing mean
 belongs to that chart, not to the directions; the bounded chart s/(1 + s) of the same directions averages ½. The median and
 the quartiles name the same directions on every chart, because they commute with every order-keeping change, so they belong
-to the directions; the mean does not. A mean can be had, by a writer. Add the directions as unit vectors and the average
-points at the corner, at length 2√2/π, a writer's measure with π in it. Cap the world at some extent and the Cauchy has a
+to the directions; the mean does not. A mean can be had, on the blueprint. Add the directions as unit vectors and the average
+points at the corner, at length 2√2/π, the blueprint's measure with π in it. Cap the world at some bound and the Cauchy has a
 mean, set by the extent (about 8.8 at a cap of a million): the mean appears only once an extent is written in, and its
-value is set by that extent, not equal to it. A computer's Cauchy has one for the same reason.
+value is set by that bound, not equal to it. A computer's Cauchy has one for the same reason.
 
 **The payload is not lost.** None of the payload goes into making the heat, so all of it arrives, along directions whose heat
 was known before it came, and the Cauchy gives it back four ways. By its ratios: two payloads read against each other, one light over
@@ -224,10 +224,10 @@ arrives can be averaged; where it arrives cannot.
 
 ## 6. Once a Cauchy, always a Cauchy
 
-A law that is really the heat of the reader's directions should survive everything the reader can do to directions. It
+A law that is really the heat of a read's directions should survive everything an observer can do to directions. It
 does.
 
-| what the reader does | what the law does |
+| what the observer does | what the law does |
 |---|---|
 | starts again from a new zero (a turn) | stays Cauchy |
 | swaps the two parties (the reciprocal) | stays Cauchy |
@@ -236,8 +236,8 @@ does.
 | averages several readings | stays the same Cauchy: nothing gained, nothing lost |
 
 Each operation moves only the law's one point, written m + iγ: the foot of the standpoint and its height above the line.
-These closure properties are classical. The reading is that the family is closed because it is the heat of the reader's directions,
-and that its one parameter is where the reader stands.
+These closure properties are classical. The reading is that the family is closed because it is the heat of a read's directions,
+and that its one parameter is where the observer stands.
 
 The sum deserves a word, because it looks like amounts being added, and is not. Picture a standpoint at height γ₁ + γ₂
 above a line. Turn steadily from it and land on a line at height γ₂; take that landing as a new standpoint and turn again
@@ -270,7 +270,7 @@ a spectral line's natural half-width from the far wings of a Voigt profile. Only
 power of the reading, takes the tails.
 
 Those three properties together are what make the Cauchy usable as the heat of directions.
-- A reader can sweep with it and stay in the family.
+- An observer can sweep with it and stay in the family.
 - The payload can be changed along every direction and no direction, and no heat, moves.
 - Where an amount enters, the law gives way from the middle outward and keeps its horizon to the last.
 
@@ -322,18 +322,18 @@ chance between 1 and 2 as between 2 and 4, and the answer is ln 6 over ln 9, abo
 
 **The marginalization paradox.** In the 1970s Philip Dawid, Mervyn Stone and James Zidek showed that, under certain
 improper priors, two reasoners from the same data can disagree. One integrates an unknown scale out of the likelihood; the
-other reasons only from statistics free of the scale. Read with the reader's own measure on the unknown size, the one even
+other reasons only from statistics free of the scale. Read with the read's own measure on the unknown size, the one even
 in the logarithm of the size, they cannot disagree. The second reasoner is reading the data's direction, not its size, and
 the scale's invariant measure is exactly what makes the two routes agree, whatever the law of the data.
 
 **Bertrand from a standpoint.** Joseph Bertrand asked in 1889 for the chance that a chord drawn "at random" in a circle is
 longer than the side of the inscribed equilateral triangle. He got three answers, ⅓, ½ and ¼, from three procedures, and
 concluded that "at random" means nothing until a procedure is named. Jaynes answered ½, from the requirement that the
-answer survive turning, resizing and moving the circle; straws he tossed onto a circle agreed. A reader standing
+answer survive turning, resizing and moving the circle; straws he tossed onto a circle agreed. An observer standing
 somewhere cannot move the circle, because its lines all pass through where it stands. For a circle whose centre is a
-distance D away, D at least its radius R, the reader's share of long chords is arcsin(R/2D) divided by arcsin(R/D). Seen
-from a point on the circle it is ⅓. As the circle recedes it rises to ½. Jaynes's answer is the far reader's; one of
-Bertrand's is the near reader's. The answer depends on where the circle lies relative to the one who asks.
+distance D away, D at least its radius R, the observer's share of long chords is arcsin(R/2D) divided by arcsin(R/D). Seen
+from a point on the circle it is ⅓. As the circle recedes it rises to ½. Jaynes's answer is the far observer's; one of
+Bertrand's is the near observer's. The answer depends on where the circle lies relative to the one who asks.
 
 **Directions are read by their order.** Robust statistics treats a Cauchy tail as outliers, to be resisted. Read as
 directions, the same readings need no defence. A ratio of two amounts, a slope, the tangent of a bearing: each is a
@@ -353,7 +353,7 @@ practice, a ratio of measurements, a heavy-tailed sample, a line's profile, is t
 relates them.
 
 Counted against what arrives, the readings' law is the turn's law *weighted by how what arrives is spread over the
-directions*. It is the Cauchy exactly when what arrives is spread evenly by turn over the reader's directions, as a pair of
+directions*. It is the Cauchy exactly when what arrives is spread evenly by turn over the read's directions, as a pair of
 independent normal measurements of equal spread is. Otherwise it departs from the Cauchy, and the departure is that
 spread, which can be measured on its own.
 
@@ -461,7 +461,7 @@ methods were built to do the same wherever tails are heavy.
 The usual reasons are that the mean does not exist and that the median is robust. Both are true, and both say only that
 the median *works*. The reading says why it is the *right* summary. The quantity is a direction read from a standpoint;
 its law, on the scale it is reported in, has a median and no mean; and the median is the corner, the place where the two
-parties' readings meet. Reporting the median is reporting where the reader's own geometry puts the middle.
+parties' readings meet. Reporting the median is reporting where the read's own geometry puts the middle.
 
 The reading also says when the median stops being right.
 
@@ -510,5 +510,5 @@ heat is given before anything arrives, and what arrives is met along it. The hea
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
   *Physics Letters A* 128, 391–394.
 
-The theorem and its proof are in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read, place and write, whose §4 has the lighthouse and Mercator's map), §7.2 (Theorem 6), with the closure table, what breaks
+The theorem and its proof are in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read, extent and write, whose §4 has the lighthouse and Mercator's map), §7.2 (Theorem 6), with the closure table, what breaks
 it, the four cases and the three cases in data; the background in §1.

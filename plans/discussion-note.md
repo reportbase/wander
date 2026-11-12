@@ -185,3 +185,77 @@ section 2. Item 10's candidate still waits on Tom.
 the relation is in *Reads and Writes* section 1 and essay 19 section 8, as what holds in the worked cases, with its
 limits (whole only in part; the step assumed to repeat; where it is held open; orders not counts). Not claimed: that
 every keeping is a count.
+
+14. **The scaffold, revisited** (11 Nov; Tom: "Let's revisit the idea. It's related to centering. We also used it for
+   basic geometry."). Where it is: the archive's *Degrees of Freedom* section 3.1 "The centring" and its 19 Sep note
+   ("the term underneath may be better called the scaffold"); *The Cauchy, Inside and Out* and *The Order of Limits*
+   ("the indexes are the scaffolding, the values the stones"; section 6a.4 "Two frames"); `papers/v-and-h.md` items
+   66-74 (the basic geometry) and 45c (the arch demoted, 24 Sep). *The Centring* itself (17-18 Sep) is cited there and
+   is not in this repository.
+   - What it said: a frame is put up so that two readings can bear on each other; the result must not depend on which
+     frame (holds 1, 7, 1000, 0.004 all give 0.75); only its magnitude comes down, its presence stays (set it to zero
+     and the reading diverges: "the horizon is the scaffold gone").
+   - The basic geometry built on it: every figure is a centring; the residues r(t2)/r(t1) across directions are the
+     shape, they compose, and give the figure "one number short" (the size); the circle is the figure whose residue is
+     1 everywhere; a lap multiplies to one (a check on the reader, not the figure); v^2 + h^2 = 1 "a receipt" that two
+     readings were taken against one denominator.
+   - Why it was demoted: "readers don't build arches"; building is not a reader's act; the arch is a thing in amounts,
+     not an address; which span is the arch was never ruled.
+   - Claude's reading, in today's terms (not ruled): the demotion's objection is answered by R594 and R850. Building
+     is writing, and a scaffold is a **write of the relation**: something kept, with no unit that matters, so that
+     reads can be joined. Two things carried the name and should be kept apart: (a) the thumb, present in every read,
+     any size, never zero; (b) the kept step between reads (parallax), whose size drops out of d1/d2 and stays in d/H.
+     R881's "the least is not zero" is the old rider "the scaffold is never struck". The basic-geometry part survives
+     in *Reads and Writes* section 2 ("by its ratios", a0 the one number short) without the picture of building.
+   - Not agreed: bringing the arch back (the two objections above still hold), and "dividing strikes the frame" for
+     the thumb (R654: nothing is removed from a read; the thumb's size was never in it).
+   **Next:** Tom's call. Candidate: "scaffold" as the plain word for a write of the relation (put up, any size, never
+   absent, not in the result), and the residues' lap as an exact check if it is to carry weight.
+   **Tom, 12 Nov (R883):** "Denominators are very important to a read, they are the in terms of. But they simplify away
+   as shown by the tower idea. So they act like scaffolding." Taken as the idea's statement: the scaffold is the
+   denominator, the "in terms of". Claude's precisions: (i) within one read it does not go; only its size was never in
+   the reading, and at zero there is the horizon, no reading; (ii) what simplifies away is the middle of a chain
+   (a/b . b/c = a/c), a join of reads, the writer's account; (iii) the last "in terms of" stays, so the scaffolding
+   comes down in the middle and never at the end: R881's least, "one number short". The walk's telescoping (R873) and
+   d1/d2 against d/H are the same fact.
+   **Next:** if wanted in the paper, one paragraph in section 6 at "A tower of extents" and one sentence in section 1
+   at R881's passage; essay 1 and essay 6 after. No new test needed (the tower is exact already: TWR, `slide-rule.html`).
+
+**Item 14 carried out** (12 Nov, R884; Tom: "Pull this all together into a new essay. Summarize it in the papers."):
+essay 20 (`papers/essays/20-scaffolding.md`) and *Reads and Writes* section 1 ("A denominator is scaffolding", and a
+paragraph under "The paper in one equation") and section 6 (under "A tower of extents"). The arch not brought back.
+
+15. **"Writer" does two jobs** (12 Nov; Tom: "There is a problem with writer. Writer is pi/2, but onlyone hemisphere.
+   The dual hemisphere or good eye view, however, is the drawn shape or blue print."; R886).
+   - The split: the read (inscribed, one hemisphere, 2/pi, approached); the write (central, one hemisphere, pi/2, the
+     walk, reached by a count); the blueprint (both hemispheres at once, no facing, 1). The blueprint is what a read
+     and a write give together: a thing made and then read, not a vantage anyone stands at.
+   - Already half in the paper: section 1 "Four things" (its table's rows), R802, R808's "the paper".
+   - Claude's sorting of "the writer's" (not ruled): held whole (circle, sphere, cube, pi, e, trigonometry, the closed
+     turn, signs, joins) is the blueprint's; counts, fractions, steps and scaffolds are the writer's.
+   - Open: the name ("blueprint" or "the paper" or "the drawing"); the row "the apple held and turned" (both in reach,
+     by turning: a writer on the way to a blueprint?); whether read x write = 1 (R809) should now be said as
+     "read x write = blueprint".
+   **Next:** Tom's call on the name, then a sorting pass: *Reads and Writes* first (107 uses of "the writer's"), the
+   essays after (368).
+
+**Item 15 ruled and carried out in part** (12 Nov, R887; Tom: "1. Ok. 2. Ok 3. There are reads and writes, no such thing
+as a reader or writer"): the name is the blueprint; no reader and no writer, only the acts, with "the observer" where
+someone must stand or walk. *Reads and Writes* is done. Still to do: the essays, the physics paper, the demos' wording.
+
+**Item 15 corrected** (12 Nov, R889; Tom: "PI/2 and 2/PI have a vantage and are single hemispherical reads. The
+synthetic read is dual hemispherical without a vantage, otherwise known as a blueprint."): both sweeps are reads, each
+with a vantage and one hemisphere; the central sweep (π/2) is not "the write". The blueprint is the synthetic read: both
+hemispheres, no vantage. A write stays what is counted, kept or tied to a unit. *Reads and Writes* brought to it; the
+essays that pair π/2 with "a write" still to check.
+
+**Item 15, again** (12 Nov, R890; Tom: "the blueprint view does not have a vantage so it has nothing to do with reads
+and writes."): the blueprint is not made of reads and writes and is not a read; "synthetic read" dropped. Still to
+sweep: sentences where a write "gives" the circle or the blueprint.
+
+**Item 15, settled in its framing** (12 Nov, R891; Tom: "the paper is reads and writes. the blueprint is classical
+geometry with the gods eye, we include it here as a point of comparison."): the blueprint is the comparison, not a
+third part. Still to bring into line: §9's tier tables, "Four things", the essays' headings.
+
+**Item 15 carried through the essays and demos** (12 Nov, R893). Open for Tom: page and card names that still say
+reader or writer; essay 9's "vantages"; sentences where kept steps still read as making the circle.

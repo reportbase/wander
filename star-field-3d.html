@@ -77,27 +77,27 @@
 <body>
 <main>
     <h1>An infinite star field, in 3D</h1>
-    <p class="lede">The writer sees the stars where they are: give the world more and its far field fills. The reader sees
-        each star only as a direction over the octant, read at its fineness K (a writer counts it as K cells), and holds
-        the share of what it reads in each. At N, 2N or infinitely many stars, and at any H, that view is the same. N is invisible to the reader; H only
-        slides the writer's stars along their rays.</p>
+    <p class="lede">The blueprint (classical geometry, shown for comparison) has the stars where they are: give the world more and its far field fills. A read has
+        each star only as a direction over the octant, at its fineness K (counted, a write, it is K cells), and holds
+        the share of what it reads in each. At N, 2N or infinitely many stars, and at any H, that view is the same. N is invisible to a read; H only
+        slides the blueprint's stars along their rays.</p>
 
     <div class="panel">
         <div class="row"><label for="m">N, the stars</label><input id="m" type="range" min="3" max="60" step="1" value="24">
             <button id="half">÷ 2</button><button id="dbl">× 2</button><span id="Nval" style="min-width:16ch"></span><button id="inf">N = ∞</button></div>
         <div class="row"><label for="H">H, the zoom</label><input id="H" type="range" min="-4" max="12" step="1" value="0">
             <span id="Hval" style="min-width:12ch"></span></div>
-        <div class="row"><label>K = n × n, the reader's fineness; n =</label><span id="ns"></span><button id="fit">whole field</button>
+        <div class="row"><label>K = n × n, the read's fineness; n =</label><span id="ns"></span><button id="fit">whole field</button>
             <label for="goto">go to star</label><input id="goto" type="text" placeholder="an index" inputmode="numeric"><button id="go">go</button></div>
         <p id="say"></p>
     </div>
 
     <div class="panel">
-        <h2>The reader's places in distance, and H</h2>
+        <h2>The read's places in distance, and H</h2>
         <canvas id="ruler" width="1100" height="170"></canvas>
-        <p class="cap">The reader's fineness laid along distance by its turn, as a writer's n places, d = H·tan θ at equal angles θ, on a scale of
+        <p class="cap">The read's fineness laid along distance by its turn, counted as n places (a write), d = H·tan θ at equal angles θ, on a scale of
             doublings of u (the world's own unit). Half of them always lie inside H (teal, v/h ≤ 1, in proportion) and half
-            past it (violet, h/v ≤ 1, wider and wider to the horizon). The reader's fineness is fixed and comes first; H
+            past it (violet, h/v ≤ 1, wider and wider to the horizon). The read's fineness is fixed and comes first; H
             only splits it. Move H: the count on each side never changes; a small H
             packs its near half into a small stretch of the world, each place proportionally smaller, a large H spreads it.</p>
         <div id="rulerNote" class="note"></div>
@@ -105,7 +105,7 @@
 
     <div class="grid">
         <div class="panel">
-            <h2>The writer's view</h2>
+            <h2>The blueprint's view</h2>
             <canvas id="scene"></canvas>
             <p class="cap">Where the stars are, every distance an amount. Home where the axes meet: h, v (up) and v₂; in
                 proportion out to H (the gold sphere, the corner), then every doubling the same depth, so the infinite field
@@ -116,22 +116,22 @@
             <div id="info">Point at a star for its index.</div>
         </div>
         <div class="panel">
-            <h2>The reader's view</h2>
+            <h2>The read's view</h2>
             <div class="pair">
                 <div><p class="t" id="tA">at N</p><canvas id="mapA" class="rmap" width="420" height="420"></canvas></div>
                 <div><p class="t" id="tB">at 2N</p><canvas id="mapB" class="rmap" width="420" height="420"></canvas></div>
             </div>
-            <p class="cap">Each star read as a direction only, counted at the reader's fineness: Lambert's equal-area map
-                of the octant, azimuth across (h left, v₂ right), height v up, cut into K cells (a writer's count), the corners dashed. Each
+            <p class="cap">Each star read as a direction only, counted at the read's fineness: Lambert's equal-area map
+                of the octant, azimuth across (h left, v₂ right), height v up, cut into K cells (counted, a write), the corners dashed. Each
                 cell shaded by its share of what is read: an even share is one flat colour, at N and at 2N alike. No cell
-                knows a distance, so there is no far field for the reader to fill. With fewer stars than cells the reader sees
+                knows a distance, so there is no far field for a read to fill. With fewer stars than cells the read has
                 single stars; once N is well past them, N and 2N are the same map.</p>
             <div id="check" class="note"></div>
         </div>
     </div>
 
-    <p class="note">The writer needs N: to place a star it needs its distance, and the far field's count grows with N. The
-        reader needs none of it: its directions and their heat are given, uniform over the octant, before anything arrives (the heat is given; the paint is met), and its view is the share of what it reads at each,
+    <p class="note">The blueprint needs N: to place a star it needs its distance, and the far field's count grows with N. A
+        read needs none of it: its directions and their heat are given, uniform over the octant, before anything arrives (the heat is given; the paint is met), and its view is the share of what it reads at each,
         the same at N, 2N and ∞, and at every H. <a href="star-field.html">The same in 2D</a>,
         <a href="payload-free-3d.html">the payload doesn't matter in 3D</a>, <a href="demos.html">all demos</a>.</p>
 </main>
@@ -218,11 +218,11 @@ function drawMap(cv, v) { const g = cv.getContext('2d'), W = cv.width, P = 18, L
 const fmt = I => I.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 const sci = x => x < 1e4 && x > 1e-3 ? x.toPrecision(4) : x.toExponential(3);
 function describe(s) { const d = s.dir, H = Hof(), n = S.n, cell = Math.min(n - 1, Math.floor(s.y * n)) * n + Math.min(n - 1, Math.floor(s.psi / Q * n));
-    return `star #${fmt(indexOf(s))}\nthe writer: d = ${sci(s.r)} u = ${sci(s.r / H)} H (${s.r <= H ? 'inside' : 'past'} the corner), level ${s.j}\n` +
-        `the reader: cell ${cell + 1} of ${n * n}, [h : v : v₂] = [1 : ${sci(d[1] / d[0])} : ${sci(d[2] / d[0])}], no distance`; }
+    return `star #${fmt(indexOf(s))}\nthe blueprint: d = ${sci(s.r)} u = ${sci(s.r / H)} H (${s.r <= H ? 'inside' : 'past'} the corner), level ${s.j}\n` +
+        `the read: cell ${cell + 1} of ${n * n}, [h : v : v₂] = [1 : ${sci(d[1] / d[0])} : ${sci(d[2] / d[0])}], no distance`; }
 function showInfo() {
     if (hoverCell >= 0) { const a = readerView(curN(), S.n), b = readerView(S.inf ? Infinity : 2n * curN(), S.n);
-        $('info').textContent = `the reader's cell ${hoverCell + 1} of ${S.n * S.n}\nits share × K: ${a.share[hoverCell].toFixed(6)} at N, ${b.share[hoverCell].toFixed(6)} at 2N (1 is even)\n` +
+        $('info').textContent = `the read's cell ${hoverCell + 1} of ${S.n * S.n}\nits share × K: ${a.share[hoverCell].toFixed(6)} at N, ${b.share[hoverCell].toFixed(6)} at 2N (1 is even)\n` +
             `it reads no distance: every star along it, near or far, is one direction`; return; }
     const s = hover || pinned; $('info').textContent = s ? (s === pinned && !hover ? '(pinned) ' : '') + describe(s) : 'Point at a star for its index.'; }
 
@@ -255,13 +255,13 @@ function render() {
     $('Hval').textContent = `H = 2^${S.k} u` + (S.k < 0 ? ` = ${H} u` : ` = ${H.toLocaleString()} u`);
     $('tA').textContent = S.inf ? 'at N = ∞' : `at N = 2^${S.m}`; $('tB').textContent = S.inf ? 'at 2N = ∞' : `at 2N = 2^${S.m + 1}`;
     const Ne = N === Infinity ? null : w.N, past = Ne === null ? '∞' : fmt(Ne - near);
-    $('say').innerHTML = `The writer: ${S.inf ? 'infinitely many stars' : fmt(Ne) + ' stars'}, ${S.inf ? 'every level filled' : `out to level ${w.jN} (d ≤ 2^${w.jN} u)`}; ` +
-        `at H = 2^${S.k} u, ${fmt(near)} inside the corner and ${past} past it. The reader: fineness K = ${S.n} × ${S.n}, the same at every N and every H.`;
+    $('say').innerHTML = `The blueprint: ${S.inf ? 'infinitely many stars' : fmt(Ne) + ' stars'}, ${S.inf ? 'every level filled' : `out to level ${w.jN} (d ≤ 2^${w.jN} u)`}; ` +
+        `at H = 2^${S.k} u, ${fmt(near)} inside the corner and ${past} past it. The read: fineness K = ${S.n} × ${S.n}, the same at every N and every H.`;
     const pc = x => (100 * x).toFixed(2) + '%';
-    $('check').innerHTML = `<span class="ok">The reader's view at N and at 2N differ by at most ${diff.toExponential(2)} in any cell's share × K;</span> ` +
-        `each is even to within ${Math.max(a.maxDev, b.maxDev).toExponential(2)}${N !== Infinity && N < 16n * BigInt(S.n * S.n) ? ` (only ${fmt(N)} stars for K = ${S.n * S.n}: the reader sees single stars; raise N)` : ''}. ` +
+    $('check').innerHTML = `<span class="ok">The read's view at N and at 2N differ by at most ${diff.toExponential(2)} in any cell's share × K;</span> ` +
+        `each is even to within ${Math.max(a.maxDev, b.maxDev).toExponential(2)}${N !== Infinity && N < 16n * BigInt(S.n * S.n) ? ` (only ${fmt(N)} stars for K = ${S.n * S.n}: the read has single stars; raise N)` : ''}. ` +
         `What it reads past each corner: v > h ${pc(1 - a.vh)}, v₂ > h ${pc(1 - a.v2h)}, v₂ > v ${pc(1 - a.v2v)}; the near field in both readings ${pc(a.near)}. ` +
-        `None of it moves with H: the reader holds directions and their heat, and H lays only the writer's distances.`;
+        `None of it moves with H: the read holds directions and their heat, and H lays only the blueprint's distances.`;
     document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
     $('inf').classList.toggle('on', S.inf); $('m').value = S.m; $('m').disabled = S.inf; $('half').disabled = S.inf; $('dbl').disabled = S.inf; $('H').value = S.k;
     showInfo(); if (scene3d) scene3d.rebuild();
@@ -296,7 +296,7 @@ window.__starField3d = { h32, G, nPsi, nY, nR, star, indexOf: s => indexOf(s).to
     readerView: (N, n) => readerView(N === Infinity ? N : BigInt(N), n), nearCount: (k, N) => nearCount(k, N === undefined ? curN() : N === Infinity ? N : BigInt(N)).toString(),
     placeOf, lay, inWorld, distanceAddresses, set, goTo, state: () => ({ ...S, last }), frames: 0, webgl: false, drawn: 0, thinned: [] };
 setTimeout(() => { if (!window.__starField3d.webgl) { $('nogl').style.display = 'block';
-    $('nogl').textContent = 'The writer\'s scene needs WebGL and three.js from cdn.jsdelivr.net; the reader\'s view and the readout still work.'; } }, 12000);
+    $('nogl').textContent = 'The blueprint\'s scene needs WebGL and three.js from cdn.jsdelivr.net; the read\'s view and the readout still work.'; } }, 12000);
 const pendingStar = q.has('star') && /^\d+$/.test(q.get('star')) ? q.get('star') : null;
 </script>
 

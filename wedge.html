@@ -113,11 +113,11 @@
         "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
 </head>
 <body>
-<canvas id="stage" aria-label="The wedge: one octant of directions, the reader at its apex, a world laid along its rays"></canvas>
+<canvas id="stage" aria-label="The wedge: one octant of directions, the standpoint at its apex, a world laid along its rays"></canvas>
 <div id="panel" class="glass">
     <button id="fold" aria-label="fold the panel">▾</button>
     <h1>The wedge</h1>
-    <p class="sub">Not a sphere: the writer's drawing of one reader's directions, one octant made by one observation, three parties at its edges. The reader itself has a vantage, not a shape.</p>
+    <p class="sub">Not a sphere: the blueprint's drawing of one read's directions, one octant made by one observation, three parties at its edges. A read itself has a vantage, not a shape.</p>
     <div class="body">
         <div class="steps" id="steps"></div>
         <div id="caption"></div>
@@ -136,7 +136,7 @@
         </div>
         <div class="row">
             <button id="bWorld">world: scatter</button>
-            <button id="bLay">lay: the reader's</button>
+            <button id="bLay">lay: the read's</button>
             <button id="bRays" class="on">rays</button>
             <button id="bSweep">sweep the hand</button>
             <button id="bZoom">zoom</button>
@@ -212,7 +212,7 @@ const drawnLay = (d, H, mode) => { const ad = addressOf(d, H, mode); return ad.k
 const SIT_NUM = { known: 'written', once: 'read', serial: 'read' };   // shown in the readout (SPN R578: readers and writers, no numbered situations)
 const heldWhole = s => s !== 'serial';
 function situationName(V, V2) {
-    if (V === 'known' && V2 === 'known') return 'both written: the writer\'s solid, held whole';
+    if (V === 'known' && V2 === 'known') return 'both written: a solid held whole, as the blueprint has it';
     if (V === 'known' || V2 === 'known') return `${V === 'known' ? 'V' : 'V₂'} written, the other read from home`;
     if (V === 'once' && V2 === 'once') return 'directions in both angles, held at once: a camera\'s frame';
     if (V === 'serial' && V2 === 'serial') return 'directions in both angles, taken in order: a single-pixel scanner';
@@ -286,13 +286,13 @@ let things = makeWorld(state.world, state.seed);
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const CAPTIONS = {
-    1: ['the wedge', '<b>The wedge, not a sphere.</b> Three unit relations, h, v and v₂, each from 0 to 1, each with its breadth. The reader chooses H, its one length, and every party is a share of it (V = V₂ = H, as a writer writes it), and every [h, v, v₂] is a point of the unit cube; its directions are one octant, the wedge. A relation is never negative, so a sphere\'s other seven octants hold no other relations, only this wedge faced another way; and a sphere that places everything needs every distance, the size of the universe. Home, the apex, is where the three parties\' rays meet square. One observation makes one wedge.'],
+    1: ['the wedge', '<b>The wedge, not a sphere.</b> Three unit relations, h, v and v₂, each from 0 to 1, each with its breadth. The observer chooses H, the thumb, its one length, and every party is a share of it (V = V₂ = H, as the blueprint states it), and every [h, v, v₂] is a point of the unit cube; its directions are one octant, the wedge. A relation is never negative, so a sphere\'s other seven octants hold no other relations, only this wedge faced another way; and a sphere that places everything needs every distance, the size of the universe. Home, the apex, is where the three parties\' rays meet square. One observation makes one wedge.'],
     2: ['from home', '<b>From home.</b> Stand at the apex and look down the triple corner through a flat screen: the wedge is a triangle, the three parties at its corners, and every direction lands at its shares, (h, v, v₂)/(h + v + v₂), a point of h + v + v₂ = 1, the sum. Each pair\'s corner (v = h, v₂ = h, v₂ = v) is a median; the three meet at the centre (⅓, ⅓, ⅓), the triple corner, and cut the wedge into six chambers, a sixth each swept evenly. Where h is the largest, the near field, is two of them: a third.'],
     3: ['two sweeps', '<b>Two sweeps.</b> The hand points by <span class="teal">altitude</span>, raised from the horizontal to the vertical, the sweep from H to V, reading tan a = v/√(h² + v₂²); and by <span class="violet">azimuth</span>, turned round the horizontal from h to v₂, the sweep that brings in V₂, reading tan z = v₂/h. Each has its corner at 45°. The map is Lambert\'s, azimuth across and height up, equal-area (Archimedes\' hat-box): the corners are curves that halve it, and the six chambers are equal.'],
     4: ['a world', '<b>A world in the wedge.</b> Each thing has a direction, read with the heat of the look, and a distance d, laid along its ray: in proportion out to the corner (s = d/H up to 1), then one level, ln 2 wide, for every doubling (1 + ln s). From home only the directions show, each thing as wide as it looks across, Δ/d, a relation: narrower than a pixel, it is a point. Tap a thing to point the hand at it.'],
-    5: ['H is a zoom', '<b>H is a zoom.</b> Change H and every thing slides along its own ray, never across it: from home nothing moves. What changes is where each lands: which things are near (inside the corner), which level the rest fall in, which merge into home (nearer than H/32, the reader\'s fineness, counted by a writer as 32 places across the near field), and which lie past the held edge (beyond H·2⁶).'],
-    7: ['position, then sweep', '<b>Position, then sweep.</b> Two motions. First the wedge is placed on the sphere: one rotation, three angles (where its triple corner points, longitude and latitude, and how far it is turned about that): the head\'s turn. Then the hand sweeps inside it, altitude and azimuth in the wedge\'s own frame. The readings are made against that frame, so they are the same wherever the wedge is placed, and from home the wedge looks the same: only the lines of a frame fixed outside the reader, the sphere\'s, move, and only that frame records the position, as an observer\'s horizon is placed on the sky by where and when it stands before altitude and azimuth are read in it. Wherever it is placed the wedge covers an eighth of the sphere; the eight octants are eight of its places.'],
-    6: ['reading and holding', '<b>Read or written, held at once or in order.</b> From home every reading is a direction, the inscribed sweep\'s; a party whose breadth is known is written, the writer\'s. The buttons set how each sweep is held, at once or in order, a second choice beside reading and writing. Both at once: a camera\'s frame. The altitude at once and the azimuth in order: a slit panoramic camera. The azimuth at once and the altitude in order: a line camera tipped up step by step. Both in order: a single-pixel scanner. Every one reaches every direction of the wedge; they differ in how much is held at once. A range along each pointed direction, a lidar\'s, would be an amount, a writing (the signal\'s speed carried in); this page draws directions only. A known breadth moves the reader\'s drawing on the triangle from the centre toward the truth.']
+    5: ['H is a zoom', '<b>H is a zoom.</b> Change H and every thing slides along its own ray, never across it: from home nothing moves. What changes is where each lands: which things are near (inside the corner), which level the rest fall in, which merge into home (nearer than H/32, the read\'s fineness, counted as 32 places across the near field), and which lie past the held edge (beyond H·2⁶).'],
+    7: ['position, then sweep', '<b>Position, then sweep.</b> Two motions. First the wedge is placed on the sphere: one rotation, three angles (where its triple corner points, longitude and latitude, and how far it is turned about that): the head\'s turn. Then the hand sweeps inside it, altitude and azimuth in the wedge\'s own frame. The readings are made against that frame, so they are the same wherever the wedge is placed, and from home the wedge looks the same: only the lines of a frame fixed outside the standpoint, the sphere\'s, move, and only that frame records the position, as an observer\'s horizon is placed on the sky by where and when it stands before altitude and azimuth are read in it. Wherever it is placed the wedge covers an eighth of the sphere; the eight octants are eight of its places.'],
+    6: ['reading and holding', '<b>Read or written, held at once or in order.</b> From home every reading is a direction, the inscribed sweep\'s; a party whose breadth is known is written, a write. The buttons set how each sweep is held, at once or in order, a second choice beside reading and writing. Both at once: a camera\'s frame. The altitude at once and the azimuth in order: a slit panoramic camera. The azimuth at once and the altitude in order: a line camera tipped up step by step. Both in order: a single-pixel scanner. Every one reaches every direction of the wedge; they differ in how much is held at once. A range along each pointed direction, a lidar\'s, would be an amount, a writing (the signal\'s speed carried in); this page draws directions only. A known breadth moves the drawing on the triangle from the centre toward the truth.']
 };
 const STEP_SET = {
     1: { view: 'outside', showWorld: false, handAnim: false, zoomAnim: false, sitV: 'once', sitV2: 'once' },
@@ -729,7 +729,7 @@ function hudText() {
     L.push(`azimuth reads v₂/h = tan z = ${fmt(r.az)}${nearCorner(state.az)}; altitude reads v/√(h² + v₂²) = tan a = ${fmt(r.alt)}${nearCorner(state.alt)}; chamber ${chamberOf(d)}${rank(d)[0] === 0 ? ', the near field' : ''}`);
     if (state.showWorld && state.world !== 'none') {
         const c = counts(H), edge = state.lay === 'inplace' ? 'at the horizon' : 'past the held edge';
-        L.push(`H = ${fmtAmt(H)} (${state.lay === 'inplace' ? 'the in-place lay, 2 − 1/s' : 'the reader\'s lay, 1 + ln s'}; ${N_ADDR} places across the near field, a writer\'s count of the reader\'s fineness): ${c.near} near, ${c.far} in levels 1–${c.levels.length - 1}, ${c.home} merged into home, ${c.past} ${edge}`);
+        L.push(`H = ${fmtAmt(H)} (${state.lay === 'inplace' ? 'the in-place lay, 2 − 1/s' : 'the read\'s lay, 1 + ln s'}; ${N_ADDR} places across the near field, a count of the read\'s fineness): ${c.near} near, ${c.far} in levels 1–${c.levels.length - 1}, ${c.home} merged into home, ${c.past} ${edge}`);
         const i = handLock();
         if (i >= 0) {
             const t = things[i], ad = addressOf(t.d, H, state.lay);
@@ -810,7 +810,7 @@ function syncCtl() {
     $('vOut').classList.toggle('on', state.view === 'outside'); $('vHome').classList.toggle('on', state.view === 'home');
     for (const [id, key] of [['sitV', 'sitV'], ['sitV2', 'sitV2']]) [...$(id).querySelectorAll('button')].forEach(b => b.classList.toggle('on', b.dataset.s === state[key]));
     $('bWorld').textContent = `world: ${state.showWorld ? state.world : 'hidden'}`; document.body.classList.toggle('homeview', state.view === 'home'); $('bWorld').classList.toggle('on', state.showWorld && state.world !== 'none');
-    $('bLay').textContent = state.lay === 'inplace' ? 'lay: in place' : 'lay: the reader\'s';
+    $('bLay').textContent = state.lay === 'inplace' ? 'lay: in place' : 'lay: the read\'s';
     $('bRays').classList.toggle('on', state.rays); $('bSweep').classList.toggle('on', state.handAnim); $('bZoom').classList.toggle('on', state.zoomAnim);
     $('hint').textContent = state.view === 'home' ? 'home: h ↙ · v ↑ · v₂ ↘ · drag to point the hand' : 'h → right · v → up · v₂ → toward you · drag to look';
 }

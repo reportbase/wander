@@ -14,11 +14,12 @@ are two different paces, and no pace is both.
 
 The series has two ideas, reading against writing and the Cauchy, and two tests, scale the world and change what
 arrives. Here the first idea is taken down a single road. Look, stride, look: the look is a read, the stride counted is
-the smallest write there is, and the road from far off to the door is, in the writer's notation, half of Euler's
-circle, with −1 at the door.
+the smallest write there is, and the road from far off to the door is, in the blueprint's notation, half of Euler's
+circle, with −1 at the door. (The blueprint is classical geometry's view from no standpoint; it is here for
+comparison, and the road is all reads and writes.)
 
 The order: the scene (§1), one look (§2), two looks and a stride (§3), the even ladder (§4), the other pace (§5), the
-writer's circle (§6), a chain of looks and where the infinite is (§7), what is free, what is kept and what is carried in
+blueprint's circle (§6), a chain of looks and where the infinite is (§7), what is free, what is kept and what is carried in
 (§8), in space (§9), who saw which piece (§10), and what it changes (§11).
 
 ---
@@ -44,7 +45,7 @@ no distance, no memory of the look before. Make the whole world ten times larger
 thumb with it, and the look is the same look. That is the first test, and the read passes it.
 
 One look does hold one remarkable thing. The place where the house covers the thumb is found by looking and by nothing
-else. "Now the house is my thumb" needs no walking and no counting. The writer can say where that place is, thirty house
+else. "Now the house is my thumb" needs no walking and no counting. A write can say where that place is, thirty house
 breadths from the door, 360 metres for this house, but the walker standing there has not been told that. It has only the
 fit. This place is the corner.
 
@@ -89,7 +90,7 @@ mountain three kilometres across, 128,571 and three sevenths, from a corner nine
 
 Three things about this ladder are worth saying plainly.
 
-It is the writer's line. A ruler that is even everywhere, with no near and no far, is the number line, and that is
+It is a write's line. A ruler that is even everywhere, with no near and no far, is the number line, and that is
 what thumb over house turns out to be: the distance to the door, measured in corner-distances. Walking with a counted
 stride is writing, and the upside-down reading is the chart in which that writing is even.
 
@@ -127,9 +128,9 @@ bees landing on a wall or a flower were found to hold the image's rate of expans
 the distance left (Baird et al. 2013). Those are findings about bees, and theirs. The claim here is the smaller one,
 and it is about the geometry: both paces are built from the same looks, and the looks cost nothing.
 
-## 6. The writer's circle
+## 6. The blueprint's circle
 
-The writer has one picture for all of this, and it is Euler's.
+The blueprint has one picture for all of this, and it is Euler's.
 
 Put each reading s on the number
 
@@ -139,13 +140,13 @@ Every such Z lies on the circle of radius 1. Far off, where s is near nothing, Z
 At the door, where s grows without end, Z goes to −1. So the whole road, from far off to the door, is the upper half of
 that circle, travelled from 1 through i to −1.
 
-The writer names the point by an angle and writes the end of the road as e^(iπ) = −1. Read on the road, Euler's identity
+The blueprint names the point by an angle and gives the end of the road as e^(iπ) = −1. Read on the road, Euler's identity
 is the arrival. The corner is i, and i times i is −1: the corner, taken twice, is the arrival. And a place and its
 mirror, the place at distance d and the place at the corner's distance squared over d, have readings s and 1/s, and
 
   Z(s) · Z(1/s) = −1
 
-for every s. None of that needed the angle. It is rational in the reading. The angle, and π with it, are the writer's
+for every s. None of that needed the angle. It is rational in the reading. The angle, and π with it, are the blueprint's
 way of naming where on the circle a reading falls.
 
 On this circle the three things a walker can do are three different kinds of motion, and the kinds are classical.
@@ -179,7 +180,7 @@ vanishing step.
 
 There is one place where a step must shrink. If, instead of joining the slopes, you add them as though they were angles,
 the sum comes out too large, by an amount that falls as the square of the stride, a quarter each time the stride is
-halved. The angle is that sum's limit. Joining is exact at any stride and belongs to the geometry. Adding is the writer's,
+halved. The angle is that sum's limit. Joining is exact at any stride and belongs to the geometry. Adding is the blueprint's,
 and the limit comes with it.
 
 ## 8. What is free, what is kept, what is carried in
@@ -294,7 +295,7 @@ them is its own.
 
 **Demos.** `approach.html` (the walk with the thumb held out: the reading, the corner found by looking, the strides
 counted from the corner, the two paces), `mountain.html` ("walk one thumb": two looks and one step give the distance and
-the breadth), `one-read.html` (the reading on the writer's circle, 1, i and −1), `euler.html` (the fixed share as a slide
+the breadth), `one-read.html` (the reading on the blueprint's circle, 1, i and −1), `euler.html` (the fixed share as a slide
 on Euler's plane; n reads).
 
 ## Sources

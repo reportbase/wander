@@ -55,7 +55,7 @@
     given too, and the radius along each, how far the outline lies, is an amount, had only by ranging (a writing) or from
     more standpoints. <span class="teal">The inscribed sweep</span> gives the angle, <span class="gold">the radius from the
     centre</span> an amount. Neither gives the unit: scale the world and neither the directions nor the shape moves. Only
-    the writer, holding all three, draws the thing at its size.</p>
+    a write, holding all three, sets the thing down at its size.</p>
     <div class="panel">
         <div class="row">
             <label for="shape">shape</label>
@@ -68,7 +68,7 @@
             <button id="play">play the scale</button>
         </div>
         <div class="grid" style="margin-top:10px">
-            <div><canvas id="world" height="340"></canvas><p class="cap">The world, as only the writer sees it:
+            <div><canvas id="world" height="340"></canvas><p class="cap">The world, as the blueprint has it (classical geometry, shown for comparison):
             the outline, the centre C with its fixed directions (gold) and home A with its rays (teal).</p></div>
             <div>
                 <canvas id="insc" height="150"></canvas><p class="cap">The directions from home, the inscribed sweep, a heat over them,
@@ -81,14 +81,14 @@
     </div>
     <div class="panel">
         <div class="row">
-            <span style="color:var(--dim)">the writer holds</span>
+            <span style="color:var(--dim)">a write holds</span>
             <button id="w-addresses">the addresses</button>
             <button id="w-amounts">the amounts</button>
             <button id="w-unit">one amount carried in</button>
         </div>
         <div class="grid" style="margin-top:10px">
-            <div><canvas id="writer" height="260"></canvas><p class="cap">The writer: the outline at its true
-            size in the reader's own H, only with all three. The unit is one amount carried in from outside, the radius
+            <div><canvas id="writer" height="260"></canvas><p class="cap">A write: the outline at its true
+            size in the standpoint's own thumb H, only with all three. The unit is one amount carried in from outside, the radius
             along one direction in H, as one known move gives it.</p></div>
             <div><canvas id="stats" height="260"></canvas><p class="cap">A uniform sweep from each pivot (log of the count
             across). <span class="teal">Inscribed</span>: the median settles at the corner, 1; the mean (dashed) keeps
@@ -187,7 +187,7 @@
         for (let k = 0; k <= 360; k++) { const q = P(point(p, TAU * k / 360)); k ? g.lineTo(...q) : g.moveTo(...q); } g.stroke();
         g.fillStyle = '#d4a052'; g.beginPath(); g.arc(cx, cy, 5, 0, TAU); g.fill(); txt(g, 'C', cx + 7, cy + 14, '#d4a052');
         g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(...P(A), 5, 0, TAU); g.fill(); txt(g, 'A', P(A)[0] - 16, P(A)[1] + 4, '#8ce6cd');
-        txt(g, `the world, the writer's: V*/H = e^a₀ = ${Math.exp(p.a0).toFixed(3)}`, 10, 18);
+        txt(g, `the world, as the blueprint has it: V*/H = e^a₀ = ${Math.exp(p.a0).toFixed(3)}`, 10, 18);
 
         // the inscribed reader: directions only, laid by (2/π)·arctan(v/h)
         [g, W, H] = fit($('insc'));
@@ -246,7 +246,7 @@
             `inscribed: ${ins.length} directions from A, ${(ins[0].alpha * 180 / Math.PI).toFixed(1)}° to ${(ins[ins.length - 1].alpha * 180 / Math.PI).toFixed(1)}° from the chord${ins.some(r => r.alpha > Math.PI / 2) ? ' (some past square: this outline is not a circle through A)' : ''}; scaling the world moves none\n` +
             `central: ${NC} amounts, raw ${c.raw[0].toFixed(3)} … (each × e^a₀), held as the shape ${c.shape[0].toFixed(3)} … (unchanged by a₀)\n` +
             `central mean over a uniform turn, exactly ${ex.toFixed(4)} (shape units); the inscribed readings have no mean\n` +
-            `writer: ${w.ok ? 'written, the outline at its true size in H' : 'missing ' + w.missing.join(', ')}`;
+            `a write: ${w.ok ? 'written, the outline at its true size in H' : 'missing ' + w.missing.join(', ')}`;
     }
     const sync = () => { for (const k of ['addresses', 'amounts', 'unit']) $('w-' + k).classList.toggle('on', S.writer[k]); };
     function set(o = {}) {

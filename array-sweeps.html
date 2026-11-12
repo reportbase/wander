@@ -55,7 +55,7 @@
     <code>k = ⌊K·(2/π)·arctan(v/h)⌋</code>: its share of the turn times K. No length enters. The central sweep meets the
     same point from the centre of the circle, at twice the angle, and gives it the same place. Four kinds of array lie on
     those places: the <span class="g">index alone</span>, the <span class="r">values on the index</span>, a
-    <span class="w">constant array</span>, and an <span class="b">array of known length</span>, the writer's.</p>
+    <span class="w">constant array</span>, and an <span class="b">array of known length</span>, a write's.</p>
     <div class="panel">
         <div class="row"><label>K places</label>
             <button data-K="4">4</button><button data-K="8">8</button><button data-K="9">9</button><button data-K="16">16</button><button data-K="32">32</button>
@@ -81,8 +81,8 @@
         <canvas id="cv2" height="260"></canvas><p class="cap" id="cap2"></p>
     </div>
     <p class="note"><b>An iterator, not an index.</b> The place formula on this page, the floor of K times the share of the
-    sweep, uses the arctangent to go straight from a reading to a place. That is the writer's index operator. The reader
-    sweeps forward from where it stands and has only the next step; the formula is how a writer lays the places out.</p>
+    sweep, uses the arctangent to go straight from a reading to a place. That is the blueprint's index operator. A read
+    sweeps forward from where it stands and has only the next step; the formula is how the blueprint lays the places out.</p>
     <p class="note">Related: <a href="one-read.html">one turn, one read</a>, <a href="sweep-zero.html">counting from zero</a>,
     <a href="depth.html">the floor's depth</a>, <a href="zoom.html">H is a zoom</a>. <a href="demos.html">All the demos</a>.</p>
 </main>
@@ -216,13 +216,13 @@
             cap = `The values on the index: a shape read from its centre, one amount r a place (r at place ${rd.index}: ${sv.amounts[rd.index].toPrecision(4)}). Kept as ln r less their mean: these bars, unmoved by scaling the world. The mean of ln r is ${sv.logMean.toFixed(4)}; it moves by ln k = ${Math.log(k).toFixed(4)}, the one number no reading gives.`;
         } else if (st.kind === 'constant') {
             for (let i = 0; i < K; i++) { const x = pad + i * cw; g.fillStyle = 'rgba(181,156,240,0.7)'; g.fillRect(x + cw * 0.2, top + 10, cw * 0.6, ch - 20); }
-            cap = `A constant array: every place holds the radius, the reader's one length H, 1. Nothing is stored; the value is a function of the index alone, and the array is the equation h² + v² = 1.`;
+            cap = `A constant array: every place holds the radius, the read's one length H, 1. Nothing is stored; the value is a function of the index alone, and the array is the equation h² + v² = 1.`;
         } else {
             const X = X0 * k, H = HOf(), y0 = top + ch + 62;
             // the writer's line [0, X] in N = K cells
             g.strokeStyle = 'rgba(230,228,238,0.6)'; g.beginPath(); g.moveTo(pad, y0); g.lineTo(w - pad, y0); g.stroke();
             for (let i = 0; i <= K; i++) { const x = pad + (w - 2 * pad) * i / K; g.beginPath(); g.moveTo(x, y0 - 4); g.lineTo(x, y0 + 4); g.stroke(); }
-            g.fillStyle = '#e6e4ee'; g.fillText(`the writer's line, 0 to X = ${X.toPrecision(3)}, ${K} cells`, pad, y0 + 18);
+            g.fillStyle = '#e6e4ee'; g.fillText(`the blueprint's line, 0 to X = ${X.toPrecision(3)}, ${K} cells`, pad, y0 + 18);
             const rows = [];
             for (const a of AMOUNTS) {
                 const x = a * k, ci = countIndex(x, X, K), ti = turnIndex(x, H, K);
@@ -232,7 +232,7 @@
                 g.fillStyle = 'rgba(230,228,238,0.85)'; g.beginPath(); g.arc(pad + (ti + 0.5) * cw, top + ch / 2 + (AMOUNTS.indexOf(a) - 1) * 18, 5, 0, 2 * Math.PI); g.fill();
                 rows.push(`${x.toPrecision(3)}: count ${ci}, turn ${ti}`);
             }
-            cap = `An array of known length: the writer puts an amount x at ⌊N·x/X⌋, which needs X; read from home with distance laid by H, x goes to ⌊K·(2/π)·arctan(x/H)⌋, which needs only H (white dots in the strip). ${rows.join('; ')}. Scaling the world moves the amounts and X together, so the count index stays; the turn index moves unless H is scaled too: H is the zoom.`;
+            cap = `An array of known length: a write puts an amount x at ⌊N·x/X⌋, which needs X; read from home with distance laid by H, x goes to ⌊K·(2/π)·arctan(x/H)⌋, which needs only H (white dots in the strip). ${rows.join('; ')}. Scaling the world moves the amounts and X together, so the count index stays; the turn index moves unless H is scaled too: H is the zoom.`;
         }
         $('cap2').textContent = cap;
     }
