@@ -50,6 +50,14 @@ reciprocal, and at the corner i·i = −1 (§1, "The same relation, held two way
 None of the mathematics is new. What is offered is a division of it: which parts one standpoint has, which need two, and
 which need a unit, with the plane as the frame that holds the division in one line.
 
+**One letter, Ω = π/2.** A read is one sweep, from home to the horizon, and the total of one sweep is π/2: the
+weight ds/(1 + s²), the one weight that composing slopes leaves unchanged, summed over every slope from 0 up. π is two
+sweeps' worth. Since the paper's subject is the single sweep, its constants are mostly π/2 and 2/π, and it is simpler to
+give that total its own letter than to keep halving π: Ω = π/2, so 2/π is 1/Ω, the turn is 4Ω and the sphere 8Ω, the
+Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω is only a name. It is still a limit, and like π
+it is the blueprint's number, held by no read and no write. The sections below were written with π/2 and 2/π and
+keep them; read either as Ω and 1/Ω.
+
 ## 1. Definitions
 
 **The room, without a ruler.** Stand in a corner of a room, look at each thing, and note where it is: so far round, so
@@ -414,7 +422,7 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
   unit are descriptions. Definitions are stated on those two axes.
 - *Heat* and *paint* are pictures, for the read's density and for what it meets, and are not leaned on; *address* only as a computing metaphor or for a count of K
   places at the heat's quantiles (§5).
-- π/2 and 2/π are the blueprint's numbers for the two reads, each with a vantage and one hemisphere: 2/π the inscribed
+- π/2 and 2/π (Ω and 1/Ω, defined before §1) are the blueprint's numbers for the two reads, each with a vantage and one hemisphere: 2/π the inscribed
   sweep's, π/2 the central sweep's (its arc walked and counted is an extent; §9, "Reading is 2/π; walking is π/2"). π
   and the one-length circle are the blueprint's: both hemispheres, no vantage, nothing to do with reads and writes.
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
@@ -1223,7 +1231,7 @@ is the blueprint's account of motions, not a read.
   commuting; in space it closes too, since a scaling by one factor commutes with every turn. A scaling anywhere in a loop
   changes only the loop's overall size.
 - *Two turns about different axes.* A turn α about one axis, β about another at angle φ, each undone: the loop comes home
-  turned by Ω with cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ, about αβ·sin φ when small (1.741° at 10° and 10°, against
+  turned by Θ with cos(Θ/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ, about αβ·sin φ when small (1.741° at 10° and 10°, against
   α·β = 1.745°), about the axis square to both; bounded however often repeated. This is the sphere of directions' own
   leftover, holonomy; in the plane the same loop leaves nothing.
 - *A turn and an unequal stretch.* A turn α with a stretch that scales one axis by c and leaves the other (two axes drawn
@@ -1237,7 +1245,7 @@ what a closed loop looks like on the blueprint. **Checked** (BRL; the trace read
 **Two boosts joined.** Along one axis two boosts share their fixed points, the stars straight ahead and behind, and each
 is a slide of the same pseudorapidity ξ, so their rapidities add and the velocity law, (β₁ + β₂)/(1 + β₁β₂), is the
 blueprint's tanh of the sum. Along two axes no single coordinate carries both slides, and the join leaves a turn: the
-Thomas–Wigner rotation, tan(Ω/2) = ab·sin φ/(1 + ab·cos φ), a and b the tangents of the half rapidities and φ the angle
+Thomas–Wigner rotation, tan(Θ/2) = ab·sin φ/(1 + ab·cos φ), a and b the tangents of the half rapidities and φ the angle
 between them, the area of the velocity triangle in hyperbolic space. It is inferred from directions alone: three stars before
 and after are the evidence, they fix the map of the sky, and its turn is the rotation, from any three stars, with no frequency and no distance.
 No single boost has any; the turn belongs to the join, a map between the two looks (D7), not an extent. For a small loop it is ε²·sin φ, the size of the two-turn
