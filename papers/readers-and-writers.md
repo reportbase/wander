@@ -19,8 +19,12 @@ from this paper, this paper stands.
 weight ds/(1 + s²), the one weight that composing slopes leaves unchanged, summed over every slope from 0 up. π is two
 sweeps' worth. Since the paper's subject is the single sweep, its constants are mostly π/2 and 2/π, and it is simpler to
 give that total its own letter than to keep halving π: Ω = π/2, so 2/π is 1/Ω, the turn is 4Ω and the sphere 8Ω, the
-Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω is only a name. It is still a limit, and like π
-it is the blueprint's number, held by no read and no write. From here on the paper writes Ω. Euler's e^(iπ) = −1 is
+Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω and its inverse are to reads and writes what π is to the blueprint: 1/Ω is the
+number for what turning sees, Ω the number for what walking counts (§9, "Reading is 1/Ω; walking is Ω"), and π, two
+sweeps joined, is the blueprint's own. Both are limits, and they are the limits a read and a write actually encounter: 1/Ω is
+what the thumb's share tends to as a sweep runs on toward the horizon, and Ω is what a count of the walk tends to,
+stride by stride. No finite sweep and no finite count has either value, but each is headed for its own. π is a limit
+neither encounters, since it takes both hemispheres at once. From here on the paper writes Ω. Euler's e^(iπ) = −1 is
 e^(2iΩ) = −1, and e^(iΩ) = i is the corner. π is written only where a classical statement is quoted by name (the
 parsec, Basel's sum, Lindemann's theorem).
 
@@ -819,7 +823,7 @@ whole total: a half at x = 1, whatever the thumb (the blueprint's formula for th
 unit of plain distance it is greatest at the eye, 1/(Ω(1 + x²)); per unit of ln(d/H), by ratio, it is
 (1/Ω)·x/(1 + x²) = (1/2Ω)·sech(ln(d/H)), hottest at one thumb and cooling alike both ways: 0.8 of the peak at one in 2 and
 at two thumbs, 0.47 at one in 4 and four, 0.25 at one in 8 and eight, never zero. Counted as K places, they sit
-them at d/H = tan(kΩK), the first K/2 inside one thumb. Past it the share left beyond x thumbs is, by the exchange, the share below 1/x (the blueprint's (1/Ω)·arctan(1/x)),
+them at d/H = tan(kΩ/K), the first K/2 inside one thumb. Past it the share left beyond x thumbs is, by the exchange, the share below 1/x (the blueprint's (1/Ω)·arctan(1/x)),
 0.295 past two thumbs, 0.156 past four, 0.079 past eight: a heavy tail, so no mean of distances. The split is a mark at
 one thumb on every direction, each one's median, not a body. Take the overlay away and the Cauchy is unchanged.
 **Classical.**
@@ -1467,7 +1471,7 @@ the long side, is the blueprint's completed sum. That is the exact sense of "Ω 
 infinity, paid only at the limit, and a read never pays it because a read never needs the value.
 
 So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves, and neither knows nor uses Ω. A count
-is of a walk actually made, and any such walk is finite, so a count holds fractions: 22/7, 355/113, a series
+is of a walk actually made, and any such walk is finite, so a count holds fractions: 11/7, 355/226, a series
 stopped at some term, each nearer Ω and none of them Ω. A count uses Ω's name and its approximants, and never has its
 value. Only the blueprint holds Ω itself: the completed whole, every facing at once, the total of a sum no one
 finishes. The blueprint, whole, is therefore a limit, as the exact V is (§6, "Extents come by degrees"), and never a
@@ -1669,7 +1673,7 @@ the step. On the circle d/B = s/(1 + s²), the circle's hv: slopes 2 and ½ give
 once more. The error is rational too: with k = d/a, a step in direction moves the depth in proportion to
 (k + 1/k)/2, the same at k and 1/k and least at the corner; cosh(ln k) (§6) is the blueprint's smooth name for it. And the
 three grades sort the rest: the depth is rational, the range along a ray is a square root, the angle is a limit. Ω
-enters only where a slope is turned into an angle, which is why the parsec carries a Ω and the extent in steps carries
+enters only where a slope is turned into an angle, which is why the parsec carries a π and the extent in steps carries
 none. This is no fifth identity of one look: parallax holds two looks together, and what never needed Ω is the extent in
 steps; the step in metres is still the one amount carried in.
 
