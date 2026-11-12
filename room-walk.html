@@ -77,7 +77,7 @@
 <body>
 <main>
     <h1>Walking the room</h1>
-    <p class="lede">A reader walks round a room. Wherever it stands its directions and their heat are given, the <span class="g">inscribed
+    <p class="lede">An observer walks round a room. Wherever it stands its directions and their heat are given, the <span class="g">inscribed
     sweep</span>, every direction once round, before anything arrives: where each thing is from here, the layout, no
     amount. A thing's <span class="r">shape about its own centre</span> is a radius toward each standpoint, an amount in a
     unit nothing fixes, had only by ranging (a writing: a pulse carries the speed); walking round a thing collects it.
@@ -96,9 +96,9 @@
         <div class="row"><label for="lk">scale the world k</label><input id="lk" type="range" min="-2" max="2" step="0.01" value="0"></div>
         <div class="grid">
             <div><canvas id="plan" height="430"></canvas><p class="cap">The floor. Tap to walk there. Gold: the inscribed
-            sweep's directions from where the reader stands. Teal: the radii (ranged, a writing) from each thing's centre
+            sweep's directions from where the observer stands. Teal: the radii (ranged, a writing) from each thing's centre
             toward every standpoint taken.</p></div>
-            <div><canvas id="map" height="230"></canvas><p class="cap" id="mapcap">The reader's own map.</p>
+            <div><canvas id="map" height="230"></canvas><p class="cap" id="mapcap">The observer's own map.</p>
             <canvas id="shape" height="200"></canvas><p class="cap" id="shapecap">The chosen thing's shape about its centre.</p></div>
         </div>
         <canvas id="strip" height="92"></canvas><p class="cap">The inscribed sweep from here: every direction once round from
@@ -373,7 +373,7 @@
     function drawMap(ro) {
         const { g, w, h } = fit($('map')); g.clearRect(0, 0, w, h);
         const rec = reconstruct(); g.font = '11px DM Mono, monospace';
-        if (!rec.ok) { g.fillStyle = '#8a8a96'; g.fillText(rec.why || '', 10, 20); $('mapcap').textContent = 'The reader\'s own map: nothing placed yet.'; return; }
+        if (!rec.ok) { g.fillStyle = '#8a8a96'; g.fillText(rec.why || '', 10, 20); $('mapcap').textContent = 'The observer\'s own map: nothing placed yet.'; return; }
         const pts = [...rec.Q, ...Object.entries(rec.T).filter(([nm]) => !BASE[nm].outside).map(e => e[1])];
         let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
         for (const p of pts) { x0 = Math.min(x0, p[0]); x1 = Math.max(x1, p[0]); y0 = Math.min(y0, p[1]); y1 = Math.max(y1, p[1]); }
@@ -391,8 +391,8 @@
             g.textAlign = 'left'; }
         const q0 = X(rec.Q[0]), q1 = X(rec.Q[1]); g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.moveTo(...q0); g.lineTo(...q1); g.stroke();
         g.fillStyle = '#d4a052'; g.fillText(ro.H ? `H = ${ro.H.toFixed(3)} m` : 'H', (q0[0] + q1[0]) / 2 + 4, (q0[1] + q1[1]) / 2 - 4);
-        $('mapcap').textContent = ro.H ? 'The reader\'s map, written: the first leg counted in strides, so every place in metres.'
-            : 'The reader\'s own map, in H (gold, the first leg), in its own frame (the first zero along +x): the room\'s figure, turned and similar, its size unread.';
+        $('mapcap').textContent = ro.H ? 'The observer\'s map, written: the first leg counted in strides, so every place in metres.'
+            : 'The observer\'s own map, in H (gold, the first leg), in its own frame (the first zero along +x): the room\'s figure, turned and similar, its size unread.';
     }
     function drawShape() {
         const { g, w, h } = fit($('shape')); g.clearRect(0, 0, w, h);
@@ -412,7 +412,7 @@
             c.samples.forEach((s, i) => { const x = cx + R0 * s.shape * Math.cos(s.phi), y = cy + R0 * s.shape * Math.sin(s.phi); i ? g.lineTo(x, y) : g.moveTo(x, y); });
             g.closePath(); g.stroke(); }
         $('shapecap').textContent = `The ${st.thing}'s shape about its centre: ${c.covered} of ${NC} directions from its centre, each radius (ranged, a writing) over `
-            + `their geometric mean (dashed: the writer's one-length circle). Its shape, not its size.${st.truth ? ' Red: the referee\'s outline.' : ''}`;
+            + `their geometric mean (dashed: the blueprint's one-length circle). Its shape, not its size.${st.truth ? ' Red: the referee\'s outline.' : ''}`;
     }
     function drawStrip(ap) {
         const { g, w, h } = fit($('strip')); g.clearRect(0, 0, w, h);
@@ -446,7 +446,7 @@
                 : n > 1 ? 'so far that every standpoint reads it in one direction: a ray, no place' : 'one standpoint: a direction')
             + (n ? (tr.resolved ? '; its two edges told apart' : '; narrower than ε: one point, no breadth') : ''));
         lines.push(ro.H ? `Written: the first leg counted, ${ro.steps.toFixed(2)} strides of ${STRIDE} m (carried in), so H = ${ro.H.toFixed(3)} m; every place and breadth in metres`
-            : `Written (the writer's vantage, both hemispheres): nothing. Still unknown: H in any agreed unit (one amount: count one leg), and every radius's unit`);
+            : `Written (counted, or tied to a unit): nothing. Still unknown: H in any agreed unit (one amount: count one leg), and every radius's unit`);
         $('sit').innerHTML = lines.map((l, i) => `<span class="${['', 'g', 'r', 'w', 'w', 'g', ro.H ? 'w' : 'x'][i]}">${l}</span>`).join('\n');
         const unit = ro.H ? 'm' : 'H';
         let t = `<tr><th>thing</th><th>direction from its zero</th><th>edges</th><th>regime</th><th>about its centre: directions</th><th>shape (radii / mean)</th>`
@@ -462,7 +462,7 @@
                 + (st.truth ? `<td class="x">(${f3(r.truth.place[0])}, ${f3(r.truth.place[1])}), ${f3(r.truth.across)}</td>` : '') + '</tr>';
         }
         $('tab').innerHTML = t;
-        $('note').textContent = n < 2 ? 'From one standpoint the reader has every direction and one radius per thing: a layout, no place, no size.'
+        $('note').textContent = n < 2 ? 'From one standpoint the observer has every direction and one radius per thing: a layout, no place, no size.'
             : !ro.H ? 'Places and breadths are in H, the walk\'s first leg: the room\'s figure exactly, at a size no reading gives. Scale the world: nothing in this table moves. Count one leg and it is written.'
             : 'Written: one amount carried in (the stride) puts everything in metres. Scale the world now and the metres move with it; the directions and the shapes still do not.';
     }

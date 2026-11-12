@@ -293,14 +293,14 @@ gives back the 1:
 > π/2 × 2/π = 1.
 
 This is not a coincidence of numbers. It says that the sweep, faced from the standpoint, never gives the chord's
-length directly. Measured on the blueprint it is had twice over, once from each pivot, and the two measures together return
-exactly what the blueprint holds in one. What they return is the observer's own length measured in itself, H in H: one thumb, in thumbs. They do not
+length directly. Measured on the blueprint it is had twice over, once from each pivot, and the two measures multiply to
+exactly the 1 the blueprint holds, which is arithmetic. What they return is the observer's own length measured in itself, H in H: one thumb, in thumbs. They do not
 return the size of anything else.
 
 **They are rates, not angles, and they are the blueprint's.** Raise the hand from horizontal to vertical, and against
 the straight line from start to end, held whole, the sweep is measured at one of two rates: π/2 from the middle of the chord,
 2/π from a point of the circle. Never 1: the 1 is the blueprint's own rate, the angle, arc per radius read against the
-completed turn, had only by joining the two sweeps, a join made on the blueprint. Angles are the blueprint's; a read has sweeps. And because
+completed turn; the two sweeps' rates multiply to it, which is arithmetic and no way of making it. Angles are the blueprint's; a read has sweeps. And because
 each of these numbers has π in it, the count of a completed turn, they are the blueprint's account of the sweep, not the
 read's own: the blueprint is transcendental, a read is not. A read holds one length, and one length makes only
 rationals; square roots need two lengths combined, and π a limit, the whole turn. A read holds the same sweep as the
@@ -310,11 +310,11 @@ the tangent and arctangent, which convert a direction into a share of the whole 
 
 **Two facings and the blueprint.** The two numbers sit in two facings. The central one, facing across to a rim, reaches its
 end at a point: π/2 is had there. The inscribed one, facing from home toward a horizon, only approaches its end: 2/π is a
-limit. Neither is the blueprint's. The blueprint is both hemispheres at once, with no facing at all, and
-what the blueprint has is their product, the 1. A person is all three at the same time: it reads the far world from home,
-faces the thing in front of it across one hemisphere, and holds as a blueprint whatever it holds in the hand or draws. So
-π/2 × 2/π = 1 is not two parties meeting; it is one observer's two facings held together, and the 1 it gives back is its
-own thumb.
+limit. Both are reads, each with a vantage and one hemisphere. Neither is the blueprint's. The blueprint is both hemispheres
+at once, with no facing and no vantage, and its number is the 1, which is also their product. A person takes both reads,
+and draws besides: it reads the far world from home, faces the thing in front of it across one hemisphere, and has a
+blueprint in whatever it draws whole. So π/2 × 2/π = 1 is not two parties meeting; it is one observer's two reads
+multiplied, which is arithmetic, and the 1 is its own thumb.
 
 **Which act each number measures.** The two numbers also sort by act. 2/π is what turning sees: over the quarter turn the
 thumb's share h averages 2/π, the mean of what is seen of one thumb from a standpoint that never moves, and it is
@@ -325,14 +325,15 @@ their product, 1, is also the blueprint's number; the blueprint has no vantage a
 what is sorted is the read each one measures.
 
 **Short by reading, long by walking, and whole.** Said most simply: the true size is 1, the thumb in thumbs. Reading gives
-the short side of it, 2/π; walking gives the long side, π/2; together they give back the 1. The proof is one line, the
+the short side of it, 2/π; walking, which counts the central read's arc, gives the long side, π/2; their product is the 1.
+The proof is one line, the
 blueprint's. Along the sweep each step of the arc gains v at the rate h: what is read at a place is the rate at which the
 thumb is gained per step walked there. Summed over the walk the gain is all of v, 1; and a sum is a mean times a length,
 (2/π) × (π/2) = 1. The 1 is no property of the circle: straight across the chord the mean gain is 1/√2 over a length √2,
 along the square's two edges ½ over a length 2. Only the split is the path's, and π is what the split costs when the path
 is the turn; in space the same split is ½ and 2, with no π. The 1 is the thumb, not the mountain. The mathematics is old
-(Cauchy's mean projection, 1841; Crofton; Buffon's needle, 1777); the assignment of the short factor to the read and the
-long one to the walk is ours. A walk straight toward a thing is the square's row: far off the thing's share fills, from
+(Cauchy's mean projection, 1841; Crofton; Buffon's needle, 1777); the assignment of the short factor to the inscribed read
+and the long one to the central read's arc, which the walk counts, is ours. A walk straight toward a thing is the square's row: far off the thing's share fills, from
 the corner in the thumb's share empties by the same step each stride, and the step times the count is 1 with no π in it
 (essay 19, section 8).
 
@@ -681,7 +682,7 @@ as an exponential, base e:
 |---|---|
 | a read | w(s) × w(1/s) = −1; at the corner i × i = −1: the exchange, no numbers |
 | a write | two corner steps land on −1 exactly; finer equal steps, (1 + iθ/n)ⁿ with fractions for θ, land near it and never on it |
-| the blueprint | e^(iπ) = −1: the limit of the finer steps, the arc named π and the base named e |
+| the blueprint | e^(iπ) = −1, held whole: the arc named π and the base named e, the value the finer steps approach |
 
 One thing differs from π/2 × 2/π = 1, where any fraction gave the 1 exactly. Here a write is exact only at
 the corner: the only turns with a rational slope that are a rational part of the whole turn are the corner's multiples
@@ -736,7 +737,7 @@ been about how.
 **The circle is one length's before it is two lengths'.** The blueprint starts with the circle as an equation in two lengths and
 turns it. A read starts with one length, pointed at the mountain and turned, and holds no circle: the circle is the
 blueprint drawn of the turning. From one place a read has the open quarter's directions, its readings; the circle
-closed, with its π, is held by an observer that has joined its facings, on a blueprint, and the same observer reads again
+closed, with its π, is the blueprint's, held from no standpoint; an observer that walks and counts has writes, and reads again
 when it stands still (the sixth essay, "From reads to extents to writes"; the fourteenth). The blueprint's equation describes, in two
 lengths, a thing one length made.
 

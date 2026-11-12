@@ -13,6 +13,9 @@ difference, and its claim fits in one line:
 
 > The blueprint has angles; a read has sweeps.
 
+The blueprint here is classical geometry's view from no standpoint, the whole turn held; it is set beside the read for
+comparison, and is not something a read or a write makes.
+
 Three things follow. A rate is always a rate *of* something *per* something: the per is the sweep's, a direction, and the
 of is what arrives there, the payload. A hand swept from horizontal to vertical, measured on the blueprint against the straight
 line it holds, goes at one of two rates, π/2 or 2/π, depending on where it pivots, and never at 1, the blueprint's own rate,
@@ -85,10 +88,11 @@ From each, the blueprint measures the same sweep from horizontal to vertical at 
   approached and never arrived at.
 
 Neither is 1. Both start at 1, at zero, before any sweeping has happened, and part from it at once. Once the hand is
-moving, the blueprint's account of it is π/2 or 2/π, never its own 1. The two together, multiplied, give back 1, at every point of the
-sweep and not only at its ends; but no one sweep has it. The second essay put this as the two sweeps each reaching the
+moving, the blueprint's account of it is π/2 or 2/π, never its own 1. The two numbers, multiplied, are 1, at every point of the
+sweep and not only at its ends; but no one sweep has it. The second essay put this as the two sweeps each set against the
 blueprint's 1 through the arc, one too long and one too short. In rates it is plainer: the blueprint has the angle, a read
-has the sweep, and the angle is what the two sweeps make when they are joined.
+has the sweep. Both sweeps are reads, each with a vantage and one hemisphere; that their numbers multiply to 1 is
+arithmetic, the 1 being also the blueprint's number, and not a way of making the angle from sweeps.
 
 None of these rates changes when the world is scaled, and none of them is a rate of anything that arrives. They are the
 per, measured against the blueprint's straight line: the spacing the sweep gives its directions. They are the frame's own
@@ -235,8 +239,8 @@ transcendental. Viète's product of 1593 shows the last two rungs together:
 
 Each factor is the cosine of a halved angle, a square root of two variables combined, and the product closes on a
 transcendental only in the limit. It is the blueprint's ladder from the corner to 2/π; a read has none of its rungs.
-π is not a read's number, and neither is √2 made. And the blueprint's 1, the angle, is had only by joining both
-sweeps.
+π is not a read's number, and neither is √2 made. And the blueprint's 1, the angle, is neither sweep's: each sweep is a
+read with a vantage, and the blueprint has none.
 
 **What an angle needs.** The same ladder says what each step toward an angle takes. The slope s = v/h needs nothing:
 it is the read. The shares h and v with h² + v² = 1 need the other party held at the thumb's one length, the one-length
@@ -538,8 +542,9 @@ zero, before any sweeping; that is the start, not a sixth thing.
 
 **The blueprint has angles; a read has sweeps.** An angle is a share of the whole turn, measured at rate 1, arc per radius,
 against a turn held complete. A sweep is what one length does from its standpoint; measured on the blueprint from either
-even pivot it comes at its own rate: π/2 from the middle, 2/π from a point of the circle. Never 1. The 1 is the blueprint's,
-had only by joining the two sweeps, which is the blueprint's join.
+even pivot it comes at its own rate: π/2 from the middle, 2/π from a point of the circle. Never 1. The 1 is the blueprint's.
+Both sweeps are reads, each with a vantage and one hemisphere; their numbers multiply to 1 by arithmetic, and the
+blueprint, with no vantage, is apart from both.
 
 **The blueprint is transcendental; a read is not.** π, and every number with π in it, is the blueprint's: the count of a
 completed turn. A read holds one variable, H, the thumb, and one variable makes only rationals; the irrationals need

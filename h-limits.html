@@ -53,10 +53,10 @@
 <body>
 <main>
     <h1>What is H?</h1>
-    <p class="lede">H is not a size anyone measured. It is the one value the reader picks to start the system. Every
+    <p class="lede">H is not a size anyone measured. It is the one value the observer picks to start the system. Every
     direction is read the same whatever H is; H only decides where amounts land. Slide it from nothing to everything
     and watch a world of amounts, from a thousandth to a thousand, cross the quarter turn. Only an H among the things
-    read makes a corner. At H of 0 and H of ∞ the reader's lay becomes the two rulers that favour nothing: the
+    read makes a corner. At H of 0 and H of ∞ the read's lay becomes the two rulers that favour nothing: the
     logarithm and the number line.</p>
     <div class="panel">
         <div class="row">
@@ -67,7 +67,7 @@
         </div>
         <div class="row" style="margin-top:8px">
             <button id="mid">H at the world's corner</button>
-            <select id="lay" aria-label="lay"><option value="reader">the reader's lay: s, then 1 + ln s</option>
+            <select id="lay" aria-label="lay"><option value="reader">the read's lay: s, then 1 + ln s</option>
                 <option value="inplace">the in-place lay: s, then 2 − 1/s</option></select>
             <select id="n" aria-label="count"><option value="8">8 places across the near field</option>
                 <option value="32" selected>32 places across the near field</option><option value="128">128 places across the near field</option><option value="inf">unlimited fineness and levels</option></select>
@@ -82,12 +82,12 @@
             everything runs out to the horizon. Tap two dots to compare them below.</p></div>
         <div class="panel"><h2>Three rulers</h2><canvas id="rulers" height="330"></canvas>
             <p class="cap">The same 31 amounts on three rulers, each stretched to the world's ends. Top, the number line;
-            bottom, the logarithm (or the reciprocal, for the in-place lay); middle, the reader's lay at this H. With H
+            bottom, the logarithm (or the reciprocal, for the in-place lay); middle, the read's lay at this H. With H
             past the top of the world the middle ruler is the number line; below its bottom, the logarithm. Only an H
             inside gives a corner (gold).</p></div>
         <div class="panel"><h2>Held at a finite count</h2><canvas id="held" height="280"></canvas>
-            <p class="cap">How many places the world occupies, for every H (the reader's fineness, counted as a writer counts it, K places across the near field). At both ends it is lost
-            whole, three ways: into home's first place, past the held levels (the reader's lay keeps the world's
+            <p class="cap">How many places the world occupies, for every H (the read's fineness, counted as a write counts it, K places across the near field). At both ends it is lost
+            whole, three ways: into home's first place, past the held levels (the read's lay keeps the world's
             width in levels and only moves it out), or into the horizon's last place (the in-place lay squeezes it).</p></div>
         <div class="panel"><h2>The best H for two</h2><canvas id="pair" height="280"></canvas>
             <p class="cap">The angle between two amounts on the quarter turn, for every H. It is widest at their geometric
@@ -100,15 +100,15 @@
             <option value="0.1" selected>an object a tenth of its distance across</option>
             <option value="1">an object as wide as its distance</option></select></div>
         <canvas id="detail" height="300"></canvas>
-        <p class="cap">One object, the amount you tapped last and a stretch past it, and the detail the reader gives it
+        <p class="cap">One object, the amount you tapped last and a stretch past it, and the detail the read gives it
         (log₂ of the places it spans) for every H. Inside the corner, more H means more proportional room for the same
-        count: one level fewer per doubling. Past the corner the two lays part: the reader's lay gives the object what
+        count: one level fewer per doubling. Past the corner the two lays part: the read's lay gives the object what
         its distance allows whatever H is, and reaches it only while it is within the held levels; the in-place lay gives
         it more as H grows, most at the corner of the object's own ends, √(x(x + Δ)).</p></div>
     <p class="note">Geometry and its placing only: the amounts are given from nowhere, as physics would assign them;
-    the reader's directions never change with H. Choose unlimited fineness and the value of H stops mattering: a unit
-    is needed because a reader's fineness is finite, and choosing its value is where the scale of the world first
-    reaches the reader. The same corner, the geometric middle of what is read, is the best H
+    the read's directions never change with H. Choose unlimited fineness and the value of H stops mattering: a unit
+    is needed because a read's fineness is finite, and choosing its value is where the scale of the world first
+    reaches the read. The same corner, the geometric middle of what is read, is the best H
     for a pair here, the best half-baseline for parallax over a range, and the best estimate of a size within bounds.
     Behind it: <i>Observation from Somewhere</i> §6 (the two lays), §8 ("H is a zoom, not an escape"), Proposition 14
     (the rulers that favour no amount), Proposition 13. Other demos: <a href="h-chain.html">the chain from H</a>,
@@ -206,7 +206,7 @@
         const [g, W, Hc] = fit($('rulers')), h = H(), far = state.lay === 'reader' ? 'log' : 'recip';
         const L = 22, R = W - 22, ys = [Hc * 0.22, Hc * 0.52, Hc * 0.82];
         const rows = [['the number line: H of ∞', x => RULERS.line(x, A, B)],
-                      [`the ${state.lay === 'reader' ? "reader's" : 'in-place'} lay at H = ${fmtH(state.lg)}`, x => normLay(x, h, state.lay)],
+                      [`the ${state.lay === 'reader' ? "read's" : 'in-place'} lay at H = ${fmtH(state.lg)}`, x => normLay(x, h, state.lay)],
                       [far === 'log' ? 'the logarithm: H of 0' : 'the reciprocal: H of 0, in place', x => RULERS[far](x, A, B)]];
         rows.forEach(([name, f], i) => {
             const y = ys[i];
@@ -294,8 +294,8 @@
         const now = objectSpan(state.lay, x, D, H());
         const lvl = now >= 1 ? Math.log2(now).toFixed(2) + ' levels' : W < 520 ? '< 1 place' : 'less than one place';
         text(g, W < 520 ? `x ${fmtH(Math.log10(x))}, Δ ${fmtH(Math.log10(D))}: ${lvl}` : `x = ${fmtH(Math.log10(x))}, Δ = ${fmtH(Math.log10(D))}: at this H, ${lvl}`, L + 6, Y(yhi) + 14, '#e6e4ee', 11);
-        if (W < 520) { text(g, "reader's lay", L + 6, Y(yhi) + 29, '#d4a052', 11); text(g, 'in-place lay', L + 104, Y(yhi) + 29, '#e0826c', 11); }
-        else { text(g, "reader's lay", R, Y(yhi) + 14, '#d4a052', 11, 'right'); text(g, 'in-place lay', R, Y(yhi) + 28, '#e0826c', 11, 'right'); }
+        if (W < 520) { text(g, "read's lay", L + 6, Y(yhi) + 29, '#d4a052', 11); text(g, 'in-place lay', L + 104, Y(yhi) + 29, '#e0826c', 11); }
+        else { text(g, "read's lay", R, Y(yhi) + 14, '#d4a052', 11, 'right'); text(g, 'in-place lay', R, Y(yhi) + 28, '#e0826c', 11, 'right'); }
     }
 
     function hud() {

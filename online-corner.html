@@ -55,13 +55,13 @@
 <main>
     <h1>Online, at the corner</h1>
     <p class="lede">An online decision is made now, and a future it cannot see decides what it costs. The offline optimum
-    sees the whole future: it stands in the <span class="w">writer's</span> place. When the decision weighs what it has
+    sees the whole future: it stands in the <span class="w">blueprint's</span> place, the whole held at once. When the decision weighs what it has
     already <span class="g">spent</span> against what it is about to <span class="r">commit</span>, the worst future charges
     for the larger of the two, so the worst case depends only on their ratio, is the same at r and 1/r, and is least at
     the corner, r = 1. When the unknown is a scale, the turn points are levels, and one scale must be supplied: the
     guarantee is an amount inside it and a ratio past it.</p>
     <div class="row"><button data-p="ski">ski rental: when to buy</button><button data-p="cow">two-ray search: how far to go</button>
-        <button id="writer">show the writer's cost</button></div>
+        <button id="writer">show the blueprint's cost</button></div>
 
     <div class="panel" id="skiP">
         <h2>Ski rental</h2>
@@ -71,7 +71,7 @@
             <span id="Tv" class="b"></span><button id="Tworst">the worst future</button></div>
         <div class="grid">
             <div><canvas id="ski1" height="300"></canvas><p class="cap">Time runs right, in units of the price. Gold: the
-            rent paid until buying at s, then the price; red: the day the future stops. The dashed line is the writer's
+            rent paid until buying at s, then the price; red: the day the future stops. The dashed line is the blueprint's
             corner, T = 1: before it renting is best, after it buying on the first day.</p></div>
             <div><canvas id="ski2" height="300"></canvas><p class="cap">The worst ratio over every future against the
             levels of s (each tick a doubling). It is 1 + max(s, 1/s), the same at s and 1/s, least at the corner: 2.</p></div>
@@ -88,7 +88,7 @@
         <div class="row"><label for="x">the target, x</label><input id="x" type="range" min="-6" max="9" step="0.01" value="3.2">
             <span id="xv" class="b"></span><button data-side="0">on the right</button><button data-side="1">on the left</button>
             <button id="xworst">just past a turn</button></div>
-        <canvas id="cow1" height="320"></canvas><p class="cap">The two rays on the reader's lay of distance: in proportion
+        <canvas id="cow1" height="320"></canvas><p class="cap">The two rays on the read's lay of distance: in proportion
         inside the first leg d₀ (the circle round the start), 1 + ln(x/d₀) past it, so every turn point sits ln b further out,
         one level a turn. The path runs down the page, leg by leg, until it meets the target.</p>
         <div class="grid">
@@ -255,15 +255,15 @@
         const s = sOf(), T = TOf(), c = skiCost(s, T), wst = skiWorstScan(s);
         $('sv').textContent = fx(s); $('Tv').textContent = fx(T);
         $('skiR').innerHTML = `<span class="g">Spent</span> before buying: s = ${fx(s)} of the price; <span class="r">committed</span> on buying: the price, 1.\n`
-            + `This future (T = ${fx(T)}): you pay ${fx(c.online)}${st.writer ? `, the <span class="w">writer</span>, who knew T, pays ${fx(c.writer)}` : ''}; ratio <span class="b">${fx(c.ratio)}</span>.\n`
+            + `This future (T = ${fx(T)}): you pay ${fx(c.online)}${st.writer ? `, the <span class="w">blueprint</span>, with T known, pays ${fx(c.writer)}` : ''}; ratio <span class="b">${fx(c.ratio)}</span>.\n`
             + `The worst future, found by scanning every stop: ${fx(wst.worst, 4)}, at T = ${fx(wst.at)}, just as you buy. `
             + `1 + max(s, 1/s) = ${fx(skiWorst(s), 4)}; at 1/s = ${fx(1 / s)} it is ${fx(skiWorst(1 / s), 4)}, the same.\n`
             + (s < 1 ? 'Buying early, the risk is the spent side: you buy and the skiing stops.' : s > 1 ? 'Buying late, the risk is the committed side: you rent on past the price.' : 'At the corner neither side is the larger: the worst is 2, the least.')
-            + `\nInside the corner (T ≤ 1) the writer rents all the way; past it the writer buys on day one and every later stop costs it the same 1: the far field is flat.`;
+            + `\nInside the corner (T ≤ 1) the blueprint rents all the way; past it the blueprint buys on day one and every later stop costs it the same 1: the far field is flat.`;
         const b = st.b, d0 = d0Of(), x = xOf(), W = walk(b, d0, x, st.side), f = cowForm(b), cw = cowWorst(b, d0);
         $('bv').textContent = fx(b); $('d0v').textContent = fx(d0); $('xv').textContent = `${fx(x)} (${fx(x / d0)} d₀)`;
         const near = x < d0;
-        $('cowR').innerHTML = `Walked ${fx(W.cost)} in ${W.legs} legs to a target ${fx(x)} away${st.writer ? `; the <span class="w">writer</span>, who knew where, walks ${fx(x)}` : ''}: ratio <span class="b">${fx(W.cost / x)}</span>, extra ${fx(W.cost - x)}.\n`
+        $('cowR').innerHTML = `Walked ${fx(W.cost)} in ${W.legs} legs to a target ${fx(x)} away${st.writer ? `; the <span class="w">blueprint</span>, with the place known, walks ${fx(x)}` : ''}: ratio <span class="b">${fx(W.cost / x)}</span>, extra ${fx(W.cost - x)}.\n`
             + `r = (walked before a leg) ÷ (that leg) = 1/(b − 1) = ${fx(f.r)}; the worst ratio 1 + 2b²/(b − 1) = 5 + 2(r + 1/r) = ${fx(f.cr, 4)}`
             + `; found by walking to targets just past each turn: ${fx(cw.worst, 4)}.\n`
             + (near ? (st.side === 1 ? `Near field: the target is inside d₀ behind the start. The extra walking is exactly 2d₀ = ${fx(2 * d0)}, an amount, so the ratio grows without bound as x shrinks.`

@@ -141,8 +141,9 @@ field browsed at N and at 2N stars, counted exactly at K addresses, gives views 
 
 So the Cauchy is a *cull*. Whatever N is, the read's work is K, O(K). For a fixed K it does not grow with N; there is no N in it to grow.
 
-What the cull gives up is sameness. A write that holds N can hold every item as 1/N of the whole, all alike, on a number
-line with no corner, and no item has an advantage over another, because no standpoint is favoured: there is none. A
+What the cull gives up is sameness. With N held, every item can be stated as 1/N of the whole, all alike, on the
+blueprint's number line with no corner, and no item has an advantage over another, because no standpoint is favoured:
+the blueprint has none. A
 read's K is spent unevenly: finest at the corner, coarser each time a thing is twice as far, and that unevenness is the
 vantage. What is looked at gets the most. Knowing N buys equality; holding only K buys a standpoint, at a cost that does
 not grow with the world.
@@ -156,7 +157,8 @@ the fraction of a day gone or the share of a road behind. A relation needs two, 
 h and v, in lower case.
 
 The wholes are written in upper case. A read has one, H, the thumb, a value chosen to start from rather than a
-size measured; any H will do, and H only sets where the finest addresses fall. It has no other. The blueprint, holding both
+size measured; any H will do, and H only sets where the finest addresses fall. It has no other. The blueprint (classical
+geometry's view from no standpoint, set beside the two acts for comparison), holding both
 sides, also holds V, the other party's breadth, and V* is the other party's true size, an amount. The amounts are h·H and
 v·V*, and so
 
@@ -527,7 +529,8 @@ readings, from any number of standpoints, fixes the scale. Supply one amount L�
 readings link to it is fixed. And two observers who share one closed loop, each counting in its own unit, recover from the
 closure the ratio of their units, H_B/H_A = |S_A|/|S_B|, and nothing more: a shared fact buys one factor.
 
-**What a blueprint adds.** A blueprint is the whole stated in amounts, written and held together. It gives seven things the ratios do not:
+**What a blueprint adds.** A blueprint is the classical statement: the whole in amounts, seen from no standpoint. An
+observer comes to what it holds only by writes, a count or a unit carried in, never by a read. It gives seven things the ratios do not:
 the size; parts made apart that must meet out of view; sums, totals, means and budgets; the join of every facing; a
 statement before the thing exists, to be built to; completeness stated; and a far field in proportion, common to observers
 whose corners differ. In a program's terms: an index and its order statistics run on ratios; a schema with units, a sum,
@@ -629,7 +632,8 @@ is why the Cauchy maps onto computing so well: the split it lives on is the one 
 not usually mark is that its address space was written, laid out with an N, before the first read. The read of this
 series comes before that layout.
 
-Put in computing's own letters: a write holds N, every item 1/N of a whole, all alike, no vantage; a read has K,
+Put in computing's own letters: a write holds N, and with N the blueprint states every item as 1/N of a whole, all
+alike, from no vantage; a read has K,
 spent unevenly, finest where it looks. The Cauchy is the cull between them, K addresses over any N at a cost constant in N,
 and the only cull among its kind that can be re-aimed and recombined without leaving its family. From it come the corner
 as the one place a bounded register can switch, order statistics as the statistics that survive, the logarithm as the
@@ -644,7 +648,7 @@ Three habits follow for a program:
 - **Run the scale test.** Multiply the world by k and see which outputs move. Those needed an amount carried in; the
   others never contained the world's size, and could not.
 
-A write's tools are not lesser for any of this. A blueprint, a schema, a sum, a known N: these are what let parts made
+A write's tools, and the blueprint set beside them, are not lesser for any of this. A blueprint, a schema, a sum, a known N: these are what let parts made
 apart meet. But a program that reads a world it does not hold, a sky, a stream, a list with no end, is reading, and the
 geometry of a read is K, not N.
 

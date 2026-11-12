@@ -59,7 +59,7 @@
 <body>
 <main>
     <h1>The chain from H</h1>
-    <p class="lede">One value starts everything. Pick an H, the reader's one length, and every unit relation is a share of it; the count of other parties
+    <p class="lede">One value starts everything. Pick an H, the read's one length, and every unit relation is a share of it; the count of other parties
     sets the shape; one observation is given only the Cauchy fisheye of one facing; the shape, and any figure in it, is
     built over many observations from standpoints a baseline apart, which is parallax; and only then does physics
     assign the values. Step through it, keeping one H.</p>
@@ -91,7 +91,7 @@
     </div>
     <p class="note">Geometry first, then values. Steps 1–5 use no measured size: directions, unit relations and one
     chosen H. Step 5 is draw's <i>udv</i> lab (three standpoints give the figure up to size) at a baseline of 2H, and
-    step 3 its <i>rcc</i> (one reader's census returns the unit circle). Behind it: <i>Observation from Somewhere</i>
+    step 3 its <i>rcc</i> (one standpoint's census returns the unit circle). Behind it: <i>Observation from Somewhere</i>
     §5 ("What the geometry needs: a shape and one H"), Propositions 5 and 11, §8, §9 ("Geometry first, then values");
     <code>plans/hko-plan.md</code>. Other demos: <a href="h-limits.html">what is H?</a>, <a href="parallax.html">parallax
     from the corner</a>, <a href="sphere-cube.html">the sphere in the cube</a>, <a href="demos.html">all demos</a>.</p>
@@ -101,13 +101,13 @@
     const $ = id => document.getElementById(id), D = Math.PI / 180, BIG = 30;
     const STEPS = [
         { title: '1. Pick an H', show: ['hrow'], opts: [],
-          say: 'The reader holds one length, the H you pick, and every unit relation is a share of it, so each runs from 0 to 1 on equal axes: that square is the unit relational space, and it is the same at every H. What H decides is only where amounts land. On the right, a world of amounts from a thousandth to a thousand, placed at arctan(x/H): only an H among them spreads them over the turn. At H of 0 they all run out to the horizon; at H of ∞ they all sit at home.' },
+          say: 'A read holds one length, the H you pick, and every unit relation is a share of it, so each runs from 0 to 1 on equal axes: that square is the unit relational space, and it is the same at every H. What H decides is only where amounts land. On the right, a world of amounts from a thousandth to a thousand, placed at arctan(x/H): only an H among them spreads them over the turn. At H of 0 they all run out to the horizon; at H of ∞ they all sit at home.' },
         { title: '2. The number of V\'s sets the shape', show: [], opts: ['n'],
-          say: 'The shape is set by how many unit relations the system holds, all of them shares of the one H: the reader\'s h and one v per other party. One other party gives the circle, four facings; two give the sphere, eight; n give the sphere of n + 1 unit relations, 2^(n+1) facings, and the reader is near in all its readings for 1/(n + 1) of its directions\' heat.' },
+          say: 'The shape is set by how many unit relations the system holds, all of them shares of the one H: the read\'s h and one v per other party. One other party gives the circle, four facings; two give the sphere, eight; n give the sphere of n + 1 unit relations, 2^(n+1) facings, and a read is near in all its readings for 1/(n + 1) of its directions\' heat.' },
         { title: '3. One observation: the Cauchy fisheye', show: [], opts: ['fig', 'scale'],
           say: 'One observation is not given the shape. From a figure\'s centre the directions of one facing are given, uniform by turn, each read as v/h. Whatever the figure reaches out to cancels from every reading: v/h = tan a. So the readings are the Cauchy, bunched toward home and spreading past the corner, and laid back out they give the unit circle, the shape the count of V\'s set, for every figure and at every size. One observation returns the census, never the figure.' },
         { title: '4. The shape is built over many observations', show: [], opts: ['n', 'again', 'play'],
-          say: 'Each observation is given one facing. The whole circle has four, the sphere eight, and no single observation holds them: the shape is joined together over observations, virtually. The reader never stands where the whole is held; that is the writer\'s vantage.' },
+          say: 'Each observation is given one facing. The whole circle has four, the sphere eight, and no single observation holds them: the shape is joined together over observations, virtually. No standpoint is where the whole is held; held whole, it is the blueprint, classical geometry\'s view from no standpoint, shown here for comparison.' },
         { title: '5. Standpoints build the figure: parallax', show: ['hrow', 'best'], opts: ['fig', 'sp', 'eps'],
           say: 'The figure itself needs standpoints. Two standpoints a baseline 2H apart each give only directions; crossing them puts each point back, in units of H. The circle on which the baseline is seen square, radius H, is the corner circle, now a place in the world: points near it come back best. Make H tiny and the two standpoints merge into one, leaving rays; make it huge and every point lies along the baseline, where the rays barely cross. The best H for this figure is the geometric middle of its distances.' },
         { title: '6. Physics assigns the values', show: ['hrow'], opts: ['unit'],
@@ -256,7 +256,7 @@
         g.strokeStyle = 'rgba(255,255,255,0.7)'; g.lineWidth = 1.6; g.beginPath();
         for (let i = 0; i <= 200; i++) { const p = i / 200 * Math.PI / 2, R = state.scale * FIGS[state.fig](p), q = P(R * Math.cos(p), R * Math.sin(p)); i ? g.lineTo(...q) : g.moveTo(...q); } g.stroke();
         for (const r of fe.rays) { line(g, P(0, 0), P(...r.P), 'rgba(140,230,205,0.35)'); dot(g, ...P(...r.P), 2.4, '#8ce6cd'); }
-        dot(g, ...P(0, 0), 4, '#e6e4ee'); text(g, 'the reader', ox - 30, oy + 18, '#e6e4ee');
+        dot(g, ...P(0, 0), 4, '#e6e4ee'); text(g, 'the standpoint', ox - 30, oy + 18, '#e6e4ee');
         const art = { circle: 'a circle', egg: 'an egg', star: 'a star', astroid: 'an astroid' }[state.fig];
         text(g, `one facing of ${art}${state.scale > 1 ? `, ×${state.scale}` : ''}: 24 even steps of turn`, ox - 26, 18, '#8a8a96');
         // right: the readings on the levels axis, and what they give back

@@ -145,7 +145,7 @@
     <button class="x" id="aboutX" aria-label="close">✕</button>
     <h1>Euler's plane</h1>
     <p>Write a point as z = d·e^(iθ): its direction θ (where it is) times its size d. Take the logarithm and the two come
-    apart onto two axes: ln(z/H) = ln(d/H) + iθ, H the thumb. One Cartesian grid, the writer's, is drawn three ways.</p>
+    apart onto two axes: ln(z/H) = ln(d/H) + iθ, H the thumb. One Cartesian grid, the blueprint's (classical geometry, shown for comparison), is drawn three ways.</p>
     <p><b>Cartesian</b>: straight lines, every cell alike. <b>Euler's plane</b>: rays become horizontal lines, circles
     vertical ones. Turning the world slides everything up or down; scaling the world, or moving the thumb, slides it
     sideways and changes nothing else. The shells at one, two, four, eight thumbs are vertical lines ln 2 apart: no
@@ -154,12 +154,12 @@
     <p><b>The thumb's lay</b>: the distance axis squeezed by (2/π)·atan(d/H), which is (2/π)·atan of e^x: Mercator's own
     function, so the distance laid by the thumb is a turn too. The near field in proportion, the far bunched on the
     horizon's edge, never reached. As a quarter disc it is the hemisphere's slice.</p>
-    <p><b>The writer's sphere</b>: put the plane on a sphere so that one thumb is its equator (stereographically). The eye
+    <p><b>The blueprint's sphere</b>: put the plane on a sphere so that one thumb is its equator (stereographically). The eye
     is the south pole and the horizon the north. The three charts are its maps: Euler's plane is its Mercator chart, the
     lay square its plain latitude and longitude, the quarter disc a map out from the eye. One thumb in or out is the
     reflection in the equator. Turning the world turns the sphere about its axis; moving the thumb is a boost along it,
     every latitude sliding toward a pole. The two commute, which is why both are slides on Euler's plane. The sphere is the
-    writer's drawing; the reader has the lay.</p>
+    blueprint's drawing; a read has the lay.</p>
     <p><b>The heat depends on the chart</b>. Counted per unit of each chart's own area, the read is flat on the lay,
     sech(ln(d/H)) on Euler's plane, endless at the eye on the Cartesian grid.</p>
     <p><b>A line, a spiral</b>: on Euler's plane every straight line is the same curve moved, and a logarithmic spiral is a
@@ -171,7 +171,7 @@
     <p><b>Breaths</b>: three loops, each taken and undone, over and over. A read and a write (a turn and a scaling of the
     thumb) close every time, in the plane and in space. Two reads in different directions come home turned, by the same
     angle every breath, so the thing goes round and never grows. A read with a write in two unequal lengths (a stretch, the
-    writer's two axes drawn at V = cH) comes home squeezed, and the squeeze grows breath after breath; it closes only when
+    blueprint's two axes drawn at V = cH) comes home squeezed, and the squeeze grows breath after breath; it closes only when
     c = 1. A breath is steady exactly when its write is the one-length kind.</p>
     <p><b>A flat chart in space</b>: lay the directions about the look flat, and turn the look. Lambert's equal-area map
     keeps every cell's area through the turn, so the read's heat stays flat, but the cells bend: the old look's place is
@@ -179,11 +179,11 @@
     every cell's angles instead, but the cells grow and shrink, and the heat at its rim is a quarter of the middle's. No
     flat chart of a sphere does both (Gauss; Euler 1777). The plane's lay square does, because a line times a circle is
     flat. Scaling stays a slide in ln(d/H) either way. Drag up and down to turn the look.</p>
-    <p><b>n reads</b>: (1 + iθ/n)ⁿ, θ turned in n reads composed. The polygon closes on e^(iθ), the writer's limit; its
+    <p><b>n reads</b>: (1 + iθ/n)ⁿ, θ turned in n reads composed. The polygon closes on e^(iθ), the blueprint's limit; its
     angle falls short by about θ³/(3n²), and its length grows by about θ²/(2n), a length no read sees.</p>
     <p><b>In physics</b>: a boost along one axis is a slide on this plane, z multiplied by the Doppler factor, ln z slid
-    by the rapidity, so collinear rapidities add and the velocity law (β₁ + β₂)/(1 + β₁β₂) is the writer's tanh of the
-    reader's sum; two boosts along different axes leave a turn, the Thomas–Wigner rotation. (<a href="https://github.com/reportbase/wander/blob/main/papers/reads-and-writes-physics.md"><i>Reads and Writes in Physics</i></a>, §5.3.)</p>
+    by the rapidity, so collinear rapidities add and the velocity law (β₁ + β₂)/(1 + β₁β₂) is the blueprint's tanh of
+    that sum; two boosts along different axes leave a turn, the Thomas–Wigner rotation. (<a href="https://github.com/reportbase/wander/blob/main/papers/reads-and-writes-physics.md"><i>Reads and Writes in Physics</i></a>, §5.3.)</p>
     <p class="g" style="margin:0">Drag on Euler's plane: sideways moves the thumb, up and down turns the world. Two fingers anywhere: spread them and the thumb shrinks (pinch, it grows), twist them and the world turns; the gesture is one complex number, k·e^(iα), the plane's ln k + iα. Drag the sphere to turn it. Everything
     with words is in the menu (☰).</p>
 </div>
@@ -491,7 +491,7 @@ function drawGrid(P, t) {
     ctx.restore();
     ctx.strokeStyle = COL.frame; ctx.lineWidth = 1; ctx.strokeRect(P.x + 0.5, P.y + 0.5, P.w - 1, P.h - 1);
     if (S.lay === 'disc' && t > 1.99) { ctx.strokeStyle = 'rgba(195,200,214,0.6)'; ctx.beginPath(); ctx.arc(P.x, P.y + P.h, P.w, -Math.PI / 2, 0); ctx.stroke(); }
-    if (S.show.labels) { const names = ['Cartesian: the writer\'s grid', 'Euler\'s plane: ln(z/H) = ln(d/H) + iθ', 'the thumb\'s lay: (2/π)·atan(d/H)'];
+    if (S.show.labels) { const names = ['Cartesian: the blueprint\'s grid', 'Euler\'s plane: ln(z/H) = ln(d/H) + iθ', 'the thumb\'s lay: (2/π)·atan(d/H)'];
         ctx.fillStyle = COL.dim; ctx.font = '12px "DM Mono", monospace'; ctx.textAlign = 'left';
         const i = Math.round(t), f = Math.abs(t - i); ctx.fillText(f < 0.02 ? names[i] : 'sliding …', P.x, P.y - 8);
         if (Math.abs(t - 1) < 0.02) { ctx.fillStyle = COL.gold; ctx.fillText('one thumb', scr(P, [(0 - S.U[0]) / (S.U[1] - S.U[0]), 0])[0] + 4, P.y + P.h - 6);
@@ -556,7 +556,7 @@ function drawSphere(P) {
         ctx.fillStyle = col; ctx.beginPath(); ctx.arc(q.s[0], q.s[1], 5, 0, 2 * Math.PI); ctx.fill(); }
     ctx.globalAlpha = 1;
     if (S.show.labels) { ctx.font = '12px "DM Mono", monospace'; ctx.fillStyle = COL.dim; ctx.textAlign = 'left';
-        ctx.fillText('the writer\'s sphere: one thumb its equator', P.x, P.y - 8);
+        ctx.fillText('the blueprint\'s sphere: one thumb its equator', P.x, P.y - 8);
         const e = pr([0, 0, -1]).s, n = pr([0, 0, 1]).s, q = pr(onSphere(Math.PI / 2, Math.PI / 4)).s;
         ctx.fillStyle = COL.teal; ctx.fillText('the eye', e[0] + 8, e[1] + 4); ctx.fillStyle = COL.violet; ctx.fillText('the horizon', n[0] + 8, n[1] + 4);
         ctx.fillStyle = COL.gold; ctx.fillText('one thumb', q[0] + 8, q[1] - 6); }
@@ -695,7 +695,7 @@ function drawReads(P) {
     ctx.fillStyle = COL.violet; ctx.beginPath(); ctx.arc(d[0], d[1], 4, 0, 2 * Math.PI); ctx.fill();
     ctx.strokeStyle = COL.frame; ctx.strokeRect(P.x + 0.5, P.y + 0.5, P.w - 1, P.h - 1);
     if (S.show.labels) { ctx.font = '12px "DM Mono", monospace'; ctx.fillStyle = COL.dim; ctx.fillText(`(1 + iθ/n)ⁿ, n = ${r.n}`, P.x, P.y - 8);
-        ctx.fillStyle = COL.gold; ctx.fillText('e^(iθ), the writer\'s', e[0] + 8, e[1] - 6);
+        ctx.fillStyle = COL.gold; ctx.fillText('e^(iθ), the blueprint\'s', e[0] + 8, e[1] - 6);
         ctx.fillStyle = COL.violet; ctx.fillText('the reads\' direction', d[0] + 8, d[1] + 14); }
 }
 
@@ -771,7 +771,7 @@ function syncMenu() {
         b.classList.toggle('on', !!on); const sp = b.querySelector('span'); if (sp) sp.textContent = on ? 'on' : 'off'; }
     $('about').classList.toggle('open', S.show.about); $('numbers').classList.toggle('open', S.show.numbers);
     const tag = (id, t, on) => { $(id).querySelector('span').textContent = t; $(id).classList.toggle('on', on); };
-    tag('bView', { three: 'the three', slide: 'one, sliding', sphere: 'the writer\'s sphere', space: 'in space', breath: 'breaths', flat: 'a flat chart in space', reads: 'n reads' }[S.view], false);
+    tag('bView', { three: 'the three', slide: 'one, sliding', sphere: 'the blueprint\'s sphere', space: 'in space', breath: 'breaths', flat: 'a flat chart in space', reads: 'n reads' }[S.view], false);
     $('cC').value = S.c; $('cCo').textContent = Math.pow(2, S.c).toPrecision(3); tag('bBreath', breathing ? 'on' : 'off', breathing);
     $('phF').value = S.phi; $('phFo').textContent = S.phi.toFixed(1) + '°'; tag('bFlat', S.flatPlay ? 'on' : 'off', S.flatPlay);
     tag('bLoop', S.loop ? 'a loop: h, v, back, back' : 'both orders', S.loop);
@@ -812,8 +812,8 @@ function numbers() {
         `  the reads' angle n·atan(θ/n) = ${f(r.angle, 6)}, short by ${f(r.short, 4)} (θ³/3n² ≈ ${f(r.shortApprox, 4)})\n` +
         `  the polygon's length (1 + θ²/n²)^(n/2) = ${f(r.length, 6)}, grown by ${f(r.grown, 4)} (θ²/2n ≈ ${f(r.grownApprox, 4)})\n` +
         `  the reading by tangent addition ${f(r.tanSum, 8)} = Im/Re of the end ${f(r.tanSumCheck, 8)}\n` +
-        `  the limit e^(iθ), on the circle, is the writer's\n\n` +
-        `<b>the writer's sphere</b> (the plane put on it by the thumb, stereographically; one thumb its equator)\n` +
+        `  the limit e^(iθ), on the circle, is the blueprint's\n\n` +
+        `<b>the blueprint's sphere</b> (the plane put on it by the thumb, stereographically; one thumb its equator)\n` +
         `  the eye the south pole, the horizon the north; latitude = gd(ln(d/H)), the lay = colatitude / π\n` +
         `  so Euler's plane is its Mercator chart, the lay square its plate carrée, the quarter disc its azimuthal map from the eye\n` +
         `  d → H²/d the reflection in the equator; sech(ln(d/H)) = cos(latitude) = ${f(Math.cos(gd(Math.LN2)), 4)} at two thumbs\n` +
@@ -832,7 +832,7 @@ function numbers() {
             `  a read and an unequal write (c = ${f(B.c, 3)}): squeezed by ζ = ${f(B.zeta, 5)} a breath (form ${f(B.zetaForm, 5)}; |α·ln c| = ${f(B.zetaSmall, 4)}), so e^(nζ) after n; closes only at c = 1\n` +
             `  a breath closes exactly when its write is in one length: V = H, said of a loop\n\n`; })() +
         (() => { const F = C.flat(), L = F.lambert, T = F.stereo;
-            return `<b>a flat chart in space</b> (the writer's charts of the directions about the look; the look turned ${S.phi.toFixed(1)}° about h)\n` +
+            return `<b>a flat chart in space</b> (the blueprint's charts of the directions about the look; the look turned ${S.phi.toFixed(1)}° about h)\n` +
             `  Lambert's equal-area map, √(2/(1 + z))·(x, y): every cell's area ×${f(L.areaMin, 6)} to ×${f(L.areaMax, 6)}, so the read's heat stays flat\n` +
             `    but the cells bend: the old look stretched ${f(L.atOldLook, 5)} (1/cos(φ/2) = ${f(F.oldLookStretch, 5)}), h ${f(L.atSquare, 5)}, at most ${f(L.stretchMax, 5)} in front of both looks (2 at a quarter turn)\n` +
             `  the stereographic map, 2/(1 + z)·(x, y): every cell keeps its angles (stretch one way over the other at most ${f(T.aniso, 5)}; size ×${f(T.areaMin, 3)} to ×${f(T.areaMax, 3)} in front of both looks)\n` +
@@ -843,7 +843,7 @@ function numbers() {
             ? `<b>a straight line</b> ${f(Math.pow(2, S.p), 3)} grid units from the eye (${f(Math.pow(2, S.p) * C.kof() / H, 3)} thumbs), facing ${S.f.toFixed(1)}°\n` +
               `  on Euler's plane u = ln(p/H) − ln cos(θ − φ₀): every line one curve, moved; nearest at u = ${f(Math.log(Math.pow(2, S.p) * C.kof() / H), 4)}, half a turn wide\n` +
               `  dashed, its mirror in one thumb (d → H²/d): a circle through the eye, the same curve turned over\n` +
-              `  on the writer's sphere the line is a circle through the north pole (the horizon), its mirror one through the eye\n\n`
+              `  on the blueprint's sphere the line is a circle through the north pole (the horizon), its mirror one through the eye\n\n`
             : `<b>a logarithmic spiral</b> d = p·e^(a(θ − φ₀)), slope a = ${f(S.a, 3)}\n` +
               `  on Euler's plane a straight line of slope ${f(S.a, 3)}; it crosses every ray at ${f(90 - Math.atan(S.a) * 180 / Math.PI, 4)}° (a rhumb line on the sphere)\n` +
               `  dashed, its mirror in one thumb: the spiral of slope ${f(-S.a, 3)}\n\n`) : '') +

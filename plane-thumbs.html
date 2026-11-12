@@ -45,10 +45,10 @@
     diagonal: whatever is pointed at reads one thumb along each, the corner. One thumb round it is a disc touching both
     thumbs, at home and at the horizon: from the eye, the whole quarter turn. Tap a thing to point at it.</p>
     <div class="panel"><canvas id="plane"></canvas>
-        <p class="cap">The writer's plane round the corner, true to scale: the eye, the two thumbs (the square one thumb on a
+        <p class="cap">The blueprint's plane round the corner (classical geometry, shown for comparison), true to scale: the eye, the two thumbs (the square one thumb on a
         side), the corner (gold), the one-thumb disc touching the thumbs at home and the horizon, the quarter turn's edges.</p></div>
     <div class="panel"><canvas id="strip"></canvas>
-        <p class="cap">The reader's view, as the plane above has it: from home (right, along h) through the corner (middle)
+        <p class="cap">The read's view, as the plane above has it: from home (right, along h) through the corner (middle)
         to the horizon (left, along v): above as a flat screen draws it, below laid by turns, each thing at its angle off the
         look and as wide as the angle it spans. Near the corner the two rows agree; they part only toward home and the
         horizon, where the flat screen stretches.</p></div>
@@ -155,7 +155,7 @@ function draw() {
     const t = read(S.target, F, h), cnt = THINGS.map((_, i) => read(i, F, h));
     const near = cnt.filter(r => !r.other && r.field === 'near').length, far = cnt.filter(r => !r.other && r.field === 'far').length;
     document.getElementById('out').textContent =
-`Pointing at thing ${S.target}: one thumb along h and one along v, √2 thumbs out along the look. H = ${h.toPrecision(3)} (the writer's units).
+`Pointing at thing ${S.target}: one thumb along h and one along v, √2 thumbs out along the look. H = ${h.toPrecision(3)} (the plane's units).
 The one-thumb disc touches h at home (v/h = 0) and v at the horizon (v/h = ∞): from the eye it spans ±45°, the whole quarter turn.
 In the quarter turn: ${near} near (both readings under one thumb), ${far} far, ${THINGS.length - near - far - 0} outside it (another facing).
 By turns: each thing at its angle off the look, as wide as the angle it spans; the flat screen stretches it by tan α/α, 1.10 at 30°, 1.27 at 45°.`;

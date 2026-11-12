@@ -75,9 +75,9 @@
         <div class="grid">
             <div><canvas id="cv" height="460"></canvas>
                 <p class="cap">Tap to place x (a second tap below the middle places the second place). Rows are levels, the
-                reader's line at the bottom; <span class="g">gold</span> the cells holding x, <span class="w">violet</span>
+                read's line at the bottom; <span class="g">gold</span> the cells holding x, <span class="w">violet</span>
                 the second place's; below L the cells are merged into what is kept. Shade: the totals, a cascade made
-                from each cell's address (its place, a writer's count), never stored. <span class="r">Teal</span> on the line: the Cauchy read from the
+                from each cell's address (its place, a write's count), never stored. <span class="r">Teal</span> on the line: the Cauchy read from the
                 kept cell's point.</p></div>
             <div><div id="rd" class="read"></div></div>
         </div>
@@ -96,13 +96,13 @@
         <div id="fd" class="read"></div>
     </div>
     <div class="panel">
-        <h2>How much of each level a reader keeps</h2>
+        <h2>How much of each level a read keeps</h2>
         <div class="row"><label>the detail</label><button id="kStep" class="on">a step</button><button id="kSmooth">a smooth bump</button></div>
         <canvas id="kv" height="240"></canvas>
-        <p class="cap">A reader at its own cell's point (level L above, so γ is half that cell's width) reading the detail of
+        <p class="cap">A read from its own cell's point (level L above, so γ is half that cell's width), taking in the detail of
         every level, coarser to the left, finer to the right. <span class="r">Teal</span>: the share of that level's detail
         it keeps. <span class="g">Gold outline</span>: what the floor at level L keeps, everything coarser whole and nothing
-        else. The reader's cut is soft and the same at every depth, since only its height over the detail's width counts;
+        else. The read's cut is soft and the same at every depth, since only its height over the detail's width counts;
         its shape is the detail's. A step and a smooth bump of the same width fade differently.</p>
         <div id="kd" class="read"></div>
     </div>
@@ -126,8 +126,8 @@
         <canvas id="wv" height="200"></canvas>
         <p class="cap">The window, the middle half of the Cauchy's heat read from height γ, against γ (both on log scales).
         <span class="g">Gold</span>: on an open line, 2γ at every height. <span class="r">Teal</span>: on a closed line of length 1,
-        (2/π)·arctan(tanh πγ), the same while the reader is low, and never more than half the line however high it goes.
-        The dot is the reader at level L above. No payload enters either curve: the window is the line's.</p>
+        (2/π)·arctan(tanh πγ), the same while the standpoint is low, and never more than half the line however high it goes.
+        The dot is the standpoint at level L above. No payload enters either curve: the window is the line's.</p>
         <div id="wd" class="read"></div>
     </div>
     <p class="note">Classical: Böröczky's binary tiling, the Poisson kernel, the box's sinc. Checked exactly in DYH. Back to
@@ -320,9 +320,9 @@ the closest any γ comes: ${b.diff.toFixed(4)} at γ = ${b.g.toFixed(3)} w`;
             kx.fillStyle = d === 0 ? '#e6e4ee' : '#8a8a96'; kx.fillText(d === 0 ? 'own' : (d > 0 ? '+' + d : d), x0 + bw / 2 - 9, H - 12);
         }
         const hl = halfLevel(), other = halfLevel(S.kind === 'step' ? 'smooth' : 'step');
-        $('kd').innerHTML = `${S.kind === 'step' ? 'a step' : 'a smooth bump'}: <span class="r">half kept ${(-hl).toFixed(2)} levels coarser than the reader's own cell</span> (${S.kind === 'step' ? 'a smooth bump' : 'a step'}: ${(-other).toFixed(2)})
+        $('kd').innerHTML = `${S.kind === 'step' ? 'a step' : 'a smooth bump'}: <span class="r">half kept ${(-hl).toFixed(2)} levels coarser than the read's own cell</span> (${S.kind === 'step' ? 'a smooth bump' : 'a step'}: ${(-other).toFixed(2)})
 own level ${keep(0).toFixed(4)}, one coarser ${keep(-1).toFixed(4)}, three coarser ${keep(-3).toFixed(4)}; the floor keeps 1 for every coarser level and 0 from its own
-the reader here is at level ${S.L}; the curve is the same at every level`;
+the standpoint here is at level ${S.L}; the curve is the same at every level`;
         $('kStep').classList.toggle('on', S.kind === 'step'); $('kSmooth').classList.toggle('on', S.kind === 'smooth');
     }
     function drawTwo() {
@@ -359,7 +359,7 @@ equal sources, in half-widths: Cauchy ${(thresh('cauchy', 1) / KERN.cauchy.hw).t
         }
         const g = Math.pow(2, -(S.L + 1));
         wx.fillStyle = '#e6e4ee'; wx.beginPath(); wx.arc(X(Math.log10(g)), Y(Math.log10(windowOf(g, true))), 4, 0, 7); wx.fill();
-        $('wd').innerHTML = `the reader at level ${S.L}: γ = ${g.toExponential(3)}
+        $('wd').innerHTML = `the standpoint at level ${S.L}: γ = ${g.toExponential(3)}
 open line <span class="g">${windowOf(g, false).toExponential(4)}</span>, closed line <span class="r">${windowOf(g, true).toExponential(4)}</span>
 at γ = 0.25: open 0.5, closed ${windowOf(0.25, true).toFixed(5)}; as γ grows the closed window tends to ½`;
     }

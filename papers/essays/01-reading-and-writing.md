@@ -84,7 +84,8 @@ The rest of the essay takes these two acts apart. They have a structure, and the
 
 Every reading you could ever take can be sorted by asking two questions about it. Each question has two answers, and
 each answer either ends the sorting or leads to the next question. So every reading lands in exactly one place, and the
-places do not overlap. There are two of them: the blueprint's and the read's.
+places do not overlap. There are two of them: the blueprint's, which has no standpoint and is set here for comparison, and
+the read's.
 
 Before the questions, a little language. You, the observer, have a length of your own. It might be your stride, your thumb
 held at arm's length, your eye height above the floor, or the length of a rod you happen to be carrying. Call it **H**; the
@@ -118,7 +119,7 @@ the paint is met.* Heat and paint are not two kinds of read.
 They are two parts of the one read, and the geometry gives two ways of reading where the paint sits, which later essays call
 the inscribed and the central sweeps.
 
-| vantage | what you know | what you have | a picture of it |
+| side | what you know | what you have | a picture of it |
 |---|---|---|---|
 | the blueprint | the other's breadth V, equal to H or not | the whole, as a circle or a shape | the equation h² + v² = 1; an architect's drawing |
 | a read | your length H, and a standpoint; never V | the directions, and what arrives along each | a hand held up to a stained-glass window |
@@ -143,8 +144,9 @@ People sometimes think of a case the two leave out. Each turns out to be one of 
   what was read.
 - **Several observers.** Each has a standpoint of its own. What passes between them is a separate matter, which the essay
   comes to in section 6.
-- **A system that changes over time.** At any one reading it is a read's or the blueprint's. It can move between them,
-  as the observer in the room moved to the blueprint's side the moment the stride was measured.
+- **A system that changes over time.** At any one reading it is a read's or the blueprint's. An observer can pass from
+  reading to writing, as the observer in the room did the moment the stride was measured; that is a write, made from a
+  standpoint, and the blueprint has none.
 - **Directions along which nothing arrives.** These are still directions, with their heat and nothing painted on them. That is a fact
   about what arrives, not about the vantage.
 - **Your own length changes between readings.** This changes no reading. Every reading is a ratio, and your unit
@@ -160,10 +162,10 @@ world can be asked: was this read or written? The answer settles what the record
 
 ## 3. Reading and writing, sorted
 
-The two vantages divide cleanly between the two acts of the first section.
+Set beside the two acts of the first section, the two sides sort cleanly.
 
-**The blueprint's shapes are writing alone.** A blueprint states amounts: this wall is four metres, that door is ninety
-centimetres. To make one, you must hold every breadth, and holding every breadth means holding the whole, front and
+**The blueprint's shapes are amounts alone, the kind of thing a write states.** A blueprint states amounts: this wall is
+four metres, that door is ninety centimetres. It holds every breadth, and holding every breadth means holding the whole, front and
 back, from no standpoint at all. An architect's drawing is not a view from anywhere. It is what you would have if you
 could stand nowhere and see everything. Its natural frame is a box, one number line along each axis, both signs, every
 side an amount. Nothing in it is round, because roundness, as we will see, belongs to turning from a point, and the
@@ -403,7 +405,7 @@ Scale by a hundred, so the range is two thousand miles wide, a thousand miles aw
 large. The view is still the same. The mountain's width in miles changed every time. Its width against your thumb never
 did.
 
-Try it on the two vantages. A read's directions, their heat and their paint never move: they are what a standpoint has, and a standpoint
+Try it on the two sides. A read's directions, their heat and their paint never move: they are what a standpoint has, and a standpoint
 has only directions. The blueprint moves by k in every number it states. The circle is the blueprint's, and it moves
 with the amounts; the thumb's pointing, read as directions, does not.
 
@@ -493,7 +495,7 @@ the country.
 
 The costs fall exactly where the geometry puts them. Each angle needed an instrument and a place to stand. The base
 needed the ground itself, crossed rod by rod, and one was enough to write everything. The finished map is a
-blueprint, and its scale bar is the base.
+plan in a unit, and its scale bar is the base.
 
 ### The body as the base
 
@@ -574,7 +576,7 @@ position: the length it starts from, and the places it chooses to stand.
 route remains untaken. So an observer can find out that its account is incomplete, when two routes disagree, but it can
 never prove that its account is complete. And even when an observer recovers something exactly, its shape, its places,
 even its size in strides once a stride is counted, recovering it does not make its reads a blueprint. The blueprint holds the whole,
-walked or with its measure carried in. An observer that arrives at the blueprint's answer got there by cleverness: where it
+from no standpoint. An observer that arrives at the blueprint's answer got there by cleverness: where it
 stood, which loops it closed, what it was handed. That is not a lesser achievement. It is a different one.
 
 *Demo: the reader is a slide rule: chains, loops and a misread link.*
@@ -646,7 +648,7 @@ their heat are given, and nothing writes to them. This is argued from a principl
 can map a room, size every object against every other, build a tower of units, check it by closing loops, and have the full
 geometry of the circle, its corner, its halves and its symmetry, as the law of its own directions, with no circle held:
 only its thumbs pointed. Almost everything comes free. What it cannot have is one number per agreement. The written world,
-the blueprint, the map in metres, the number line, is a fine and useful thing: it lets sizes be stated before anything is
+the map in metres, the number line, is a fine and useful thing: it lets sizes be stated before anything is
 built, lets observers who never meet compare notes, and lets amounts be added up. But it rests on that handful of numbers,
 carried in from outside, and the world as read was complete before they arrived.
 

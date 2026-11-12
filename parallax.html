@@ -66,13 +66,13 @@
     line of sight outside the circle and along the baseline inside, until, past a band set by the step, a point is <span class="red">a ray again</span>: what one standpoint holds
     alone. Parallax needs situated observation, and returns to it.</p>
     <div class="panel">
-        <div class="row"><span class="lab">readers</span>
+        <div class="row"><span class="lab">standpoints</span>
             <button id="mA">A alone</button><button id="mB">B alone</button><button id="mBoth" class="on">A and B, with the baseline</button></div>
         <div class="row"><span class="lab">for scale</span>
             <button id="pFree" class="on">in half-baselines</button><button id="pEyes">two eyes</button>
             <button id="pHip">Earth's orbit, Hipparcos</button><button id="pGaia">Earth's orbit, Gaia</button></div>
         <div class="c"><label for="eps">step, ε (radians)</label><input id="eps" type="range" min="-10.5" max="-1" step="0.05" value="-2"><output id="epso"></output></div>
-        <h2 style="margin-top:12px">The plane, laid as the reader lays it</h2>
+        <h2 style="margin-top:12px">The plane, laid as a read lays it</h2>
         <canvas id="plan" height="430"></canvas>
         <p class="cap">By direction from the baseline's middle, and by distance in half-baselines, in proportion inside the
         <span class="gold">corner circle</span> and one equal step per doubling past it (H set to half the baseline). The
@@ -89,7 +89,7 @@
         <div id="hud"></div>
     </div>
     <p class="note">Keep the case: B, d and the step are amounts; each standpoint holds only directions, which have no scale.
-    The pair (half-baseline, distance) is named, and its corner is the Thales circle; it is not the reader's own corner
+    The pair (half-baseline, distance) is named, and its corner is the Thales circle; it is not a read's own corner
     against anything, though laying the plane with H at the half-baseline puts the two together. The exact results are
     PXC: the relative error per unit angle cosh(ln k) to 50 digits, the error round at the corner and stretched by
     d/(B/2) elsewhere, the band acosh(1/ε)/ln 2 levels each side. Behind it: <i>Observation from Somewhere</i>,
@@ -98,7 +98,7 @@
     <p class="note"><b>What needs π.</b> The place does not. With the two slopes read inward off the baseline, s₁ and s₂,
     the depth is 1/(d/B) = 1/s₁ + 1/s₂: slopes 3 and 6 put the target exactly 2 baselines off, in fractions. The corner
     circle is s₁·s₂ = 1, known without the baseline's length. The error's curve is (k + 1/k)/2, of which cosh(ln k) is
-    the writer's smooth name. π enters only where a slope is made an angle: the parallax angle in arcseconds, and the
+    the blueprint's smooth name. π enters only where a slope is made an angle: the parallax angle in arcseconds, and the
     parsec, 648000/π astronomical units.</p>
     <p class="note"><b>In physics.</b> Astronomy works the chain backwards: d = a/tan p with the astronomical unit carried in, σ_d/d =
     σ_p/p the far limit of γ/sin γ. Not inverting noisy parallaxes is the reciprocal's missing mean; inverting them as
@@ -257,9 +257,9 @@
             `the band: under 100% for ${bw.toFixed(2)} levels each side (≈ log₂(2/ε) = ${Math.log2(2 / eps).toFixed(2)}), from ${fmtD(1 / farEdge(eps))} out to ${fmtD(farEdge(eps))}, where the shift is one step`,
             mode === 'both'
                 ? `${S.length} targets: ${n.crisp} held within 5%, ${n.stretched} stretched, ${n.lost} lost to a ray; outside the corner the error stretches along the line of sight by d/(B/2), inside along the baseline`
-                : `reader ${mode} alone: ${S.length} directions and no distance; scale the world and none of them moves (OFS Proposition 8). Mountain equals thumb is all it can say of size`,
+                : `standpoint ${mode} alone: ${S.length} directions and no distance; scale the world and none of them moves (OFS Proposition 8). Mountain equals thumb is all it can say of size`,
             mode === 'both'
-                ? `both are needed: parallax is two situated readings and one amount, B; past its band a point is a ray again, what one reader holds alone, and distances go on only by ratios against a kind calibrated inside it (the ladder)`
+                ? `both are needed: parallax is two situated readings and one amount, B; past its band a point is a ray again, what one standpoint holds alone, and distances go on only by ratios against a kind calibrated inside it (the ladder)`
                 : `add the second standpoint and the baseline's length to cross the rays: A and B, with the baseline`];
         $('hud').textContent = lines.join('\n');
     }

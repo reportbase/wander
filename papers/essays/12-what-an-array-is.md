@@ -81,9 +81,11 @@ other's breadth, stands.
 - *The human holds the apple and turns it.* The turn makes the Cauchy: a uniform turn, read as the slope v/h against the
   line of sight, is the Cauchy whatever the apple's shape, which is only the paint. And the hand holds the back while the
   eye holds the front, so in the hand the apple's V is **known**. This is the writing above.
-- *The human draws a circle on the paper.* The view of both hemispheres is made, not seen: a mark holding both halves at
-  once, with no facing, the blueprint. The two facings have the blueprint's numbers 2/π (inscribed, approached) and π/2
-  (central, reached); the blueprint has their product, 1. The apple reads and is read; only the human makes the blueprint.
+- *The human draws a circle on the paper.* This fourth is the comparison, classical geometry's circle. The view of both
+  hemispheres is made, not seen: a mark holding both halves at once, with no vantage and so no facing, neither read nor
+  write, the blueprint. The two reads have the blueprint's numbers 2/π (inscribed, approached) and π/2 (central, reached),
+  each with a vantage and one hemisphere; the blueprint has the number 1. Their product is also 1; that is arithmetic,
+  not a way of making the blueprint from reads. The apple reads and is read; only the human draws a blueprint.
 
 The human is all four at the same time, not by turns: it reads the universe, faces the apple, and holds as a blueprint what it
 holds in the hand or draws.

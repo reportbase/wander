@@ -66,8 +66,8 @@
     two ways. Counted as a <span class="g">direction</span> from where you stand, it is the direction with its heat, the inscribed sweep;
     counted from the centre of the circle on the chord, it is the <span class="r">point</span> where the paint lands, the
     central sweep. Both end at the same point: the direction meets its paint there. The heat is given; the paint is met. Over the whole quarter turn the two
-    sweeps, as a writer measures them, take the line as π/2 and 2/π (numbers with π in them, the writer's); their product
-    is the 1 that only the writer holds. In complex form the point
+    sweeps, in the blueprint's measure, take the line as π/2 and 2/π (numbers with π in them, the blueprint's); their product
+    is 1, which is also the blueprint's number. In complex form the point
     is the direction squared, ½e^(2iθ) from the centre: where the direction's reading runs off to ∞ at the horizon, the radius has made
     its half turn to home, e^(iπ) = −1.</p>
     <div class="panel">
@@ -83,7 +83,7 @@
                 <div class="read" id="addr"></div>
                 <div class="read" id="pay"></div>
                 <div class="read" id="both"></div>
-                <canvas id="cv2" height="200"></canvas><p class="cap">Over the quarter turn, as a writer measures it: the central sweep's arc over chord
+                <canvas id="cv2" height="200"></canvas><p class="cap">Over the quarter turn, in the blueprint's measure: the central sweep's arc over chord
                 (teal, rising to π/2), the inscribed sweep's chord over arc (gold, falling to 2/π), and their product
                 (white), 1 throughout.</p>
                 <canvas id="cv3" height="220"></canvas><p class="cap">The same read on the Cayley disc,
@@ -114,14 +114,14 @@
         transform); that the pole is where the standpoint is drawn is our reading.</p>
     </div>
     <p class="note"><b>What needs π, and what does not.</b> The product of the two sweeps is 1 with no π in it: the two are
-        reciprocals, the reader's s × (1/s) = 1. The landing point reaches −1 with no e or π: the corner is i, and two corners
+        reciprocals, a read's s × (1/s) = 1. The landing point reaches −1 with no e or π: the corner is i, and two corners
         are i × i = −1. The heat 1/(1 + s²) is rational, and the corner halves it; π enters only when the area is closed to a
         total. And the circle's own equation, h² + v² = 1, is 1/(1 + s²) + s²/(1 + s²) = 1 at every direction. π/2, 2/π and
-        e^(iπ) are the completed circle's, the paper's: a writer at work has fractions near them, and lands exactly only
+        e^(iπ) are the completed circle's, the blueprint's: a write, counting, has fractions near them, and lands exactly only
         at the corner.</p>
-    <p class="note"><b>One relation, held two ways.</b> The fourth panel's w = (1 + is)/(1 − is) gives the reader's form of
+    <p class="note"><b>One relation, held two ways.</b> The fourth panel's w = (1 + is)/(1 − is) gives a read's form of
         Euler's identity: w(s) × w(1/s) = −1 at every slope, a direction and its reciprocal, and at the corner i × i = −1.
-        The writer's e^(iπ) = −1 is the one member of that family that pairs home with the horizon, which no read holds, and
+        The blueprint's e^(iπ) = −1 is the one member of that family that pairs home with the horizon, which no read holds, and
         so the one that carries π. The algebra joining the two forms is ordinary and they are equivalent; which form a read
         holds is a reading. The rule holds for every pair at once and nothing in it happened: a geometric law needs no
         memory, and only the turns actually taken need keeping (<i>Reads and Writes</i> §1, "The same relation, held two
@@ -313,7 +313,7 @@
             + (mark(st.t) ? `\n  ${mark(st.t)}` : '');
         $('both').innerHTML = `<span class="w">The arc turned through</span> θ = ${f4(r.arc)} over its chord sin θ = ${f4(r.chord)}:\n`
             + `  central sweep, arc over chord: <span class="r">${f4(r.payload)}</span>\n  inscribed sweep, chord over arc: <span class="g">${f4(r.address)}</span>\n`
-            + `  their product: <span class="b">${f4(r.product)}</span>, the writer's 1` + (st.t >= 89.95 ? '\n  at the end of the turn: π/2 and 2/π' : '')
+            + `  their product: <span class="b">${f4(r.product)}</span>, also the blueprint's number` + (st.t >= 89.95 ? '\n  at the end of the turn: π/2 and 2/π' : '')
             + (Math.abs(cc - 1) > 1e-9 ? `\n<span class="x">Drawn at V = ${cc.toFixed(2)}H: the ray at θ and the radius at 2θ part, by ${gap(st.t).toFixed(4)}.</span>` : '');
     }
     // one pole, the constant and the phasor (SPN R753): from z = m + iγ the kernel's total weighted by e^(its) is e^(izt);
