@@ -126,12 +126,14 @@ completed, e the scale completed (§9, "What is free, and what Ω costs"). **A r
   and is no part of it (§4). One read holds no distance. Its sweep runs from h to v on the thumb H alone, with no V in
   it, and stops at its horizon: a read closes nothing. Each read is orthogonal to every other, in the plain sense of
   independent: it stands by itself and shares nothing with them. No inner product is meant, and two reads can still
-  be related from outside, by an extent, an order or a map (D7). Two looks held together at once, with nothing kept
-  between them, are still reading (D3); closing a circle, with its 2Ω and 4Ω, is a join of several (D7), and a join is not a read.
+  be related from outside, by an extent, an order or a map (D7). Three words are kept apart. A *reading* is one direction's slope. A *read* is the whole of them from one
+  standpoint at one moment. *Reading*, the act, is anything continuous and unmoved by scaling had with nothing kept.
+  Two looks held together at once, with nothing kept
+  between them, are still reading (D3), though they are two reads and not one; closing a circle, with its 2Ω and 4Ω, is a join of several (D7), and a join is not a read.
 - **D3. A parallax extent**, an **extent** for short, is a gap across: a distance in thumbs, d/H, or one distance
   against another, d₁/d₂. Scaling the world
   leaves it unchanged, as it leaves a read; but no single look holds it. Two looks held together give it, as a
-  continuous ratio of their slopes: parallax (§6), which is why it carries that name. So had, it is a read, not a third
+  continuous ratio of their slopes: parallax (§6), which is why it carries that name. So had, it is reading (two reads held together, not one read), not a third
   kind: two eyes have it with nothing kept and nothing counted. Counted out, so many thumbs or strides, it is a count,
   a description (above). Where one standpoint moves, the earlier look has to be kept to be there for the later one, and
   what keeps it is a write. It has two named cases: a *parallax distance*, d/H,
@@ -312,7 +314,7 @@ which every sweep has its place and going back is going the other way round; a r
 sweep forward, a reset, and another sweep forward. The circle appears when someone keeps the steps and lays them end
 to end. That keeping is a write. The circle held whole, with no standpoint in it, is the blueprint's.
 
-**A read uses no trigonometry.** A read is in v/h; angles are the blueprint's. Sin, cos, tan and arctan are the blueprint's: they are defined on the completed turn,
+**A read uses no trigonometry.** A read is in v/h; angles are the blueprint's. The claim is about named operations, not every construction: composing slopes, the exchange, the corner and the equal halves are rational in s; the shares h and v and the halving of a turn take a square root; a total or an angle takes a limit (§9's three grades). Sin, cos, tan and arctan are the blueprint's: they are defined on the completed turn,
 whose period is 2Ω (§2), and evaluating one is a pass over that whole turn. A read holds the turn open, and works in the
 slope s = v/h: a direction is [h : v]; two turns compose by tangent addition, (s₁ + s₂)/(1 − s₁s₂); the reciprocal is
 s ↦ 1/s and the corner s = 1; the heat is 1/(1 + s²) per unit of reading, 1/(4Ω(1 + r²)^(3/2)) per unit of a screen
@@ -1624,8 +1626,10 @@ tangent addition of s with itself, s ↦ 2s/(1 − s²), rational, with no Ω an
 read's own. In the reciprocal slope it is Boole's map, c ↦ ½(c − 1/c) (1857), which is also Newton's step for
 c² + 1 = 0, a search for the standpoint i that no slope on the line reaches. In the share v² it is the logistic map,
 y ↦ 4y(1 − y) (Ulam and von Neumann 1947). In the turn's own share it is the tent map. Each keeps the uniform turn's
-law in its chart: the Cauchy, the Cauchy, the arcsine, the uniform. Each spreads nearby starts by a factor of two a
-step, ln 2 in the blueprint's number, the same in every chart. All of this is classical; what the sorting into a read, a count and the classical statement adds is who
+law in its chart: the Cauchy, the Cauchy, the arcsine, the uniform. In the tent map every step spreads nearby starts
+by exactly two, away from its one fold. In the other charts the stretch of a single step varies from place to place
+(the logistic map's is 4·|1 − 2y|, nothing at y = ½), and what the charts share is the average of its logarithm over
+the unchanged law, ln 2 a step, the Lyapunov rate, the same in every chart. All of this is classical; what the sorting into a read, a count and the classical statement adds is who
 can follow the orbit (the CHS plan, Code and data, exact).
 
 | who | what it holds of the orbit |
