@@ -269,3 +269,11 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
     read (stripped, the shares beside the slope); π/2 and 2/π belong to neither read; the unit is the kind of mark
     scaling moves; coordinated reads need a name; R851 is reversed. **Next step:** check D3–D7, the two tests, "What
     a blueprint adds" and §9's tier tables against it, as a list first, before any paper is changed.
+
+    **A further candidate from Tom, the same day, not settled:** "A write means doing something that is scale
+    variant. A read means doing someting that is scale invarient." It returns to R568 and R788, and makes them
+    about the act. Claude's notes on it, not ruled: it parts from "a mark made in the world" at exactly one place,
+    keeping (a count of strides, a slope remembered, are unmoved by scaling, so by this they are not writes); the
+    scale-invariant side then holds more than a read (counts, kept ratios, coordinated reads, and the blueprint's
+    angles and π), so either "a read" widens or the side needs a name; physics as the place where scale matters
+    (dimensioned constants) would keep "a read is geometry, a write is physics".
