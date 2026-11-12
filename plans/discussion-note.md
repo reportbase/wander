@@ -300,3 +300,9 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
     comes as things, each bounded, and a bounded thing is what has a size and can be counted, so discrete, sized,
     physical and "not heat" may be one description; discrete must mean bounded and countable, not that the world
     is grainy (R645); the blueprint read by R646 as a count carried to its limit, to square with R890.
+
+    **Tom, continuing, not settled:** "blueprints dont exist in the physical world, so its not suprising that they
+    are not cleanly catogorizable." So heat and paint sort what is in the world or given to a look in it, and the
+    blueprint is outside the sorting. Claude's note, not ruled: a blueprint drawn on a sheet is marks, so paint,
+    and is met by a look like any paint; what is not in the world is the thing the marks stand for (the circle
+    whole, π), which answers R890's open point about a blueprint "made" and then looked at.
