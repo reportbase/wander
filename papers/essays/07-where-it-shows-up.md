@@ -288,13 +288,13 @@ a model consistent with that heat, not its cause. These essays make no claim tha
 only that if a payload's law is taken to be unchanged by turns, with independent components, it is the normal, and its
 ratio is then the Cauchy the directions' heat already was. *The heat is given; the paint is met.*
 
-So the Cauchy is the read's distribution and the Gaussian the write's, and the bell factors into the two. Written round
+So the Cauchy is the read's distribution and the Gaussian a law of amounts, and the bell factors into the two. Written round
 its centre, the isotropic normal is
 
 > (1/2π)·e^(−r²/2) dx dy = (dθ/2π)·(e^(−r²/2) r dr):
 
 a uniform turn, the read's directions, whose slope is the Cauchy, times a law for the length, an amount, the payload.
-The write's distribution is the read's times the payload's. Dividing one component by the other integrates the length
+The law of amounts is the read's times the payload's. Dividing one component by the other integrates the length
 away, and the e of the bell goes with it; π stays, in the Cauchy's closing constant. Equal spreads are what make the
 turn uniform, V = H; spreads in a ratio c leave a Cauchy of scale c.
 
@@ -384,7 +384,7 @@ directions move under a boost (`euler.html`, "the writer's sphere").
 The `boost-sky.html` demo shows the slide. A sky drawn on the axis ξ moves bodily by η as the boost grows, and the
 directions sampled from it follow the slide with no table rebuilt.
 
-**Three rulers again.** The fourth essay laid one reading x three ways: the write's number line x, the turn θ = arctan x,
+**Three rulers again.** The fourth essay laid one reading x three ways: the number line x, the turn θ = arctan x,
 and the hyperbolic angle ζ = asinh x. Special relativity runs on the same three. A velocity's celerity γβ, distance per
 unit of the traveller's own time, is x. Its rapidity η is ζ. And with χ the turn ruler's angle, its speed β = tanh η =
 sin χ and the Lorentz factor γ = sec χ. Rapidities add along a line, as hyperbolic angles do. Uniform acceleration is

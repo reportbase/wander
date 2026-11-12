@@ -105,8 +105,8 @@ hottest, the thing looked at.
 
 **A walk on the plane.** Walk toward a mountain with the thumb held out and watch the point for the mountain's edge.
 Covering a fixed share of the distance left with every step is a steady slide across the plane, the same slide each step,
-and a steady slide never runs out of plane: the foot is its limit. A steady stride is not a slide here. It is even on a
-write's line instead, where thumb over mountain falls by the same amount each stride, and it reaches the foot in a
+and a steady slide never runs out of plane: the foot is its limit. A steady stride is not a slide here. It is even on the
+number line instead, where thumb over mountain falls by the same amount each stride, and it reaches the foot in a
 finite count. On the blueprint's circle, Z = (1 + is)/(1 − is), both run from 1 far off, through i at the corner, toward
 −1 at the foot: one arrives by counting, the other approaches by ratio, and a turn of the look does neither (WLK, exact).
 Look by look the walk's points join exactly, at any stride: from the corner to the foot a quarter of the circle, and the
@@ -147,7 +147,7 @@ swap of d for H²/d, the corner in distance, is the reflection in the equator. T
 - Euler's plane is the sphere's Mercator chart;
 - the lay drawn square is its chart of plain latitude and longitude (the plate carrée), and drawn as a quarter disc its
   map out from the eye (the azimuthal equidistant);
-- sech(ln(d/H)), the series' heat in distance, is the cosine of the latitude, and the K places a write counts along
+- sech(ln(d/H)), the series' heat in distance, is the cosine of the latitude, and the K places counted along
   distance, H·tan(kπ/2K), are the meridian cut into equal steps, half in each half of the sphere.
 
 Turning the world turns the sphere about its axis. Holding up a thumb k times larger slides every latitude toward the
@@ -194,7 +194,7 @@ The count never lands on −1, at any n, with fractions for θ: the direction is
 little long. Yet −1 is reached in two steps, exactly, by another road: the corner is the quarter turn,
 (1 + i)/(1 − i) = i, and i × i = −1. That is the one finite door, since no finer equal step with a rational slope is a
 rational part of the turn (Niven). So e^(iπ) = −1 is held two ways, with the classical statement beside them: a read has the exchange, w(s) × w(1/s) = −1; a
-write has the two corner steps, and approximations for anything finer; the blueprint, whole at its
+count has the two corner steps, and approximations for anything finer; the blueprint, whole at its
 limit, has it with the arc named π and the base named e, neither of which the fact depends on (the second essay, §9).
 
 ## 8. What the plane is not

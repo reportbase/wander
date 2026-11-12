@@ -87,8 +87,8 @@ So distance is read in two ways, and they meet at the corner.
 
 - **Inside the corner, distance is read in proportion.** Each step out is the same distance.
 - **Past the corner, it is read in ratios.** Each stretch over which the reading halves, one in two to one in four, one
-  in four to one in eight, holds the same share of the heat. A write, laying the heat out as places, puts the same
-  number in each, and counts these stretches in thumbs: one to two, two to four, four to eight.
+  in four to one in eight, holds the same share of the heat. Laid out as counted places, the heat puts the same
+  number in each, and counted in thumbs these stretches are one to two, two to four, four to eight.
 
 They join without a kink. There is only one such corner built into the relation: the one point the swap of the two parties
 leaves fixed, where v equals h. Past it the far field is plain stretches laid side by side, the reading halving across
@@ -107,7 +107,7 @@ horizontal, vertical and depth, the thing pointed at one thumb along each and �
 circle one thumb wide in space, 35° on the screen, runs from the corner out to home, the readings squeezing toward home as
 they go (the fifth essay, "Three thumbs at the crosshair").
 
-Laid by distance address (K places along distance, a write's layout of the read's heat), a view shows the far field
+Laid by distance address (K places along distance, the read's heat laid out as counted places), a view shows the far field
 as a read holds it: a point on the ground ρ away goes on the row
 (2/π)·atan(D/ρ), D the thumb's own ground distance, so that the thumb sits at ½ and the bands one in 2, 4 and 8 pack ever
 thinner under the horizon. The world is never counted for it: drawn only where the view reaches and culled to what spans one
@@ -249,7 +249,7 @@ represents the field. The observer stands somewhere within it.
 
 ## 9. One figure, three rulers
 
-The circle, the write's number line and Mercator's height fit in one figure, and the figure shows what each does with
+The circle, the number line and Mercator's height fit in one figure, and the figure shows what each does with
 the corner.
 
 Draw the unit circle, the straight line touching it at one point A, and the hyperbola that touches the same line at A. A
@@ -260,7 +260,7 @@ Saint-Vincent found in 1647. One reading, laid three ways:
 
 | ruler | near field, x up to 1 | far field, x past 1 | room from x to 2x | the corner |
 |---|---|---|---|---|
-| x itself, the write's number line | 1, in proportion | without end, in proportion | more each stretch than the last | a point |
+| x itself, the number line | 1, in proportion | without end, in proportion | more each stretch than the last | a point |
 | θ, the turn | 45° | 45° | most at the corner, falling alike on both sides | the middle |
 | ζ, the hyperbolic angle, Mercator's height | about 0.881, nearly in proportion | without end, about ln 2 from any x to 2x | rising to the same for every far stretch | a point where proportion gives way to the logarithm |
 
@@ -279,7 +279,7 @@ laid by the thumb is a turn, bounded, with its corner at one thumb. A blueprint 
 sphere so that one thumb lands on its equator: the eye is one pole and the horizon the other, the near field is the half
 on the eye's side and the far field the half on the horizon's, and the swap of d for H²/d is the reflection in the
 equator. The thumb's lay is then the sphere's latitude drawn evenly; the read's ratios of thumbs, the logarithm, are
-the same sphere's Mercator chart, where each stretch of the far field takes the same room. The K places a write counts
+the same sphere's Mercator chart, where each stretch of the far field takes the same room. The K places counted
 along distance, H·tan(kπ/2K), are the meridian cut into equal steps, half of them in each half of the sphere. Making the
 thumb larger slides every latitude toward the eye: a boost along the sphere's axis, the moving sky of the seventh essay
 done to distance. The sphere is the blueprint's drawing; the read has the lay.
@@ -293,7 +293,7 @@ done to distance. The sphere is the blueprint's drawing; the read has the lay.
 The forms of the near and far fields are fixed by the geometry: proportion, then ratios, one in two, one in four, one in
 eight (as extents, two thumbs, four, eight). Their *counts* are not. How many places the near field is divided into, and how
 many each stretch where the reading halves gets, is the **detail**, how finely things are drawn. The geometry gives the forms. The detail gives the count. A read holds that
-fineness, K, continuously; laid out as K places it is a write's count, K addresses.
+fineness, K, continuously; laid out as K places it is a count, K addresses.
 
 A thing that spans n of the read's places can be halved about log₂ n times before its halves are single places, one fewer
 each time it halves. When it spans a single place it is a point. Nothing is requested: the span sets how finely it is
@@ -347,7 +347,7 @@ corner of what is known.
 
 What moves when H moves? Not the read. The directions never held H: a reading is a ratio of the thumb's own shares, and the
 Cauchy over them is the same at every H. What H moves is distance, and with it the overlay's heat in distance, (1/π)·sech(ln(d/H)), half nearer than the thumb and
-half past it at every H. Counted by a write as K places, K addresses, it sits at H·tan(kπ/2K); laid as the read lays
+half past it at every H. Counted as K places, K addresses, it sits at H·tan(kπ/2K); laid as the read lays
 it, each share the same room and the corner in the middle, it does not move at all. Drag the thumb out and the things in
 the world slide through that fixed heat, more of them into the near field, each with less room; drag it in and they slide
 out past the corner, the near ones held finer. The heat stays; the world slides through it, its paint met wherever it
@@ -357,8 +357,8 @@ not part of the read's Cauchy, and not a shape.
 
 A cube of dots makes the split concrete. Twelve dots a side, seen from a corner and looking at the middle, put 436 dots
 nearer than one thumb and 1,291 farther; the blueprint's even spacing puts more of the box far off. Laid as the read lays
-distance, the dot looked at sits in the middle, and each field has half the room. The count belongs to a write; the
-room to the read. Look at another dot and the split goes with it; scale the box and nothing changes colour.
+distance, the dot looked at sits in the middle, and each field has half the room. The count is of the dots in the box; the
+room is the read's. Look at another dot and the split goes with it; scale the box and nothing changes colour.
 
 *Demos: H is a zoom; what is H; the read (drag the thumb); a cube of heat.*
 
@@ -379,8 +379,8 @@ K − 1. These are the Cauchy's quantiles with its scale at H.
 - **The world's own count enters nowhere.** A world of N things, of 2N, or of infinitely many, is held at the same K
   places, each holding its share. That is the third essay's separation again: how many things there are is payload.
 
-A read works with K. A write, which states every distance in amounts, works with N, placing each thing at its
-amount on its number line. The Cauchy is what keeps the two apart. Its K quantiles are fixed by the turn alone, and its
+A read works with K. A layout that states every distance in amounts works with N, placing each thing at its
+amount on the number line. The Cauchy is what keeps the two apart. Its K quantiles are fixed by the turn alone, and its
 last place runs out to the horizon, so a finite K covers an unbounded world.
 
 *Demos: an infinite star field (N doubles and the read does not change); browsing the stars.*
@@ -446,7 +446,7 @@ by light, needing no distance, grow as S^(−1.23) (*Reads and Writes in Physics
 
 The two unifying ideas of the series meet here in a practical form.
 
-**Reading and writing.** A write's ruler is the number line: proportion everywhere, no corner, every unit like every
+**Reading and writing.** The ruler for amounts is the number line: proportion everywhere, no corner, every unit like every
 other, which is what adding amounts needs. A read's layout has a corner, set by its own length, the thumb: proportion
 inside, one thumb laid evenly, and past it ratios, one in two, one in four, one in eight, so that a finite count of places covers
 everything from the cup in the hand to the horizon. Neither is better. They are made for different acts.

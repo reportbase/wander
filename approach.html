@@ -63,8 +63,8 @@
 <main>
     <h1>Walking to the mountain</h1>
     <p class="lede">Hold your thumb out at arm's length and walk toward something whose size and distance you do not know.
-    The thumb never changes; only the reading does. Each look is one place, now; that you are nearer is a write's
-    account, the looks kept and laid in order. Far off the thing is a fraction of the thumb. At one place it exactly covers the
+    The thumb never changes; only the reading does. Each look is one place, now; that you are nearer is an
+    account of the looks kept and laid in order. Far off the thing is a fraction of the thumb. At one place it exactly covers the
     thumb: the corner, found by looking. Laid in order, the readings past it climb toward the horizon, a limit no look
     meets, and at the foot you are looking down at your feet. Count your strides from the corner to the foot and you have
     its size in strides.</p>
@@ -283,7 +283,7 @@
         const tr = tauRead(S.u), tdot = tauDotRead(S.u), sc = Math.max(0, (dc - Math.max(d, 0)) / STRIDE), wv = writeV(sc);
         $('hud').textContent =
             `reading v/h = ${isFinite(x) ? x.toPrecision(4) : '∞'}   ${words(x)}\n` +
-            (arrived ? `arrived: the ${THINGS[S.thing].name}'s foot is straight down, at your feet; touching it is a write\n`
+            (arrived ? `arrived: the ${THINGS[S.thing].name}'s foot is straight down, at your feet, where it can be touched\n`
                 : `time to contact τ ≈ ${tr.toFixed(1)} ticks (two looks joined: distance over the step)   τ̇ ≈ ${tdot.toFixed(3)} (scale-free)   ${S.pace === 'steady' ? 'you will arrive at speed' : 'you will stop at the foot'}\n`) +
             (S.count ? (crossed ? `strides counted from the corner: ${sc.toFixed(0)}   placed: the ${THINGS[S.thing].name} is ${wv.inStrides.toFixed(2)} strides wide` +
                 `${arrived ? ` = ${wv.inMetres.toFixed(1)} m written, with the stride (0.7 m) carried in` : ' so far'}\n` : 'counting starts at the corner\n') : 'not counting: no amount is written\n') +

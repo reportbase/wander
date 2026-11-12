@@ -348,10 +348,10 @@ can never show distance bunching. A view laid by the share of distance can: a po
 at zero. Then everything inside the thumb is held in proportion, and past it each band of one in 2, one in 4, one in 8 is
 thinner than the last, the far world packed under the horizon.
 
-And a read never counts the world. A view of a world of N stored things is a write's: N was written first. The
+And a read never counts the world. A view of a world of N stored things starts from a count: N was put down first. The
 read's view has its directions and their heat, told apart to a fineness K, and nothing else. A world drawn for it can be
 made where the view reaches, at every scale, and culled to what that fineness can tell, a quarter of π/2K (a program that
-does it lays K places, a write's count of the heat); the rest is in the far field's bunched rows, held, never listed.
+does it lays K places, a count laid over the heat); the rest is in the far field's bunched rows, held, never listed.
 Look elsewhere and the same fineness falls on other things.
 
 *Demos: crosshairs in a field (the view by distance address, the tunnel, equal area, by turns, the flat screen; the

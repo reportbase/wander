@@ -73,7 +73,7 @@
             <div>
                 <div class="read" id="say"></div>
                 <div style="overflow-x:auto"><table id="tab"></table></div>
-                <canvas id="cv3" height="170"></canvas><p class="cap">A write's ruler and a read's lay. Above, the
+                <canvas id="cv3" height="170"></canvas><p class="cap">The number line and a read's lay. Above, the
                 number line: every stride laid alike, in proportion on both sides of 1, no corner, so strides add. Below,
                 the read's lay in its own H: in proportion to the corner (the step H), then 1 + ln s, the same strides
                 bunching past it.</p>
@@ -149,7 +149,7 @@
             g.strokeStyle = 'rgba(181,156,240,0.8)'; g.beginPath(); g.moveTo(X(R.writer(x)), y1 - 6); g.lineTo(X(R.writer(x)), y1 + 6); g.stroke();
             g.strokeStyle = 'rgba(212,160,82,0.8)'; g.beginPath(); g.moveTo(X(R.reader(x)), y2 - 6); g.lineTo(X(R.reader(x)), y2 + 6); g.stroke();
         }
-        g.fillStyle = '#b59cf0'; g.fillText('a write: the number line, strides alike', pad, 18);
+        g.fillStyle = '#b59cf0'; g.fillText('the number line: strides laid alike', pad, 18);
         g.fillStyle = '#d4a052'; g.fillText("a read's lay: the corner at H, then 1 + ln s", pad, y2 + 36);
         const cx = X(R.reader(R.H)); g.strokeStyle = '#e6e4ee'; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(cx, y2 - 16); g.lineTo(cx, y2 + 10); g.stroke(); g.setLineDash([]);
         g.fillStyle = '#e6e4ee'; g.fillText('corner', cx - 18, y2 - 20);

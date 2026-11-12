@@ -34,7 +34,7 @@ laid end to end ever claim the same element.
 
 The array is a representation, and whoever builds it chooses its indexing. The world has no indices of its own. The
 point of the picture is not that a read is an array. It is that an array shows, in a form a programmer already
-handles, that addresses and payloads can be held apart. An index is counted, so its addresses are a write's; the
+handles, that addresses and payloads can be held apart. An index is counted, so its addresses are counted places; the
 read's side of the same split is a direction and its heat, continuous and with nothing counted in it, and the paint that
 arrives along it. Why the read's heat follows the uniform turn is the second essay's result, not the array's.
 
@@ -79,12 +79,12 @@ two ends meet. The blueprint holds the sizes, and which facing each array is, an
 circle or the eight into the sphere.
 
 **Not knowing the size makes the corner and the horizon.** This is the array's way of saying what the first essay said
-about the missing V. Knowing an array's size, a write has its far end at an amount, the other party's whole, the
-mountain in the distance. Its ruler is the number line, on which the point where the two parties are equal is simply
+about the missing V. With an array's size known, its far end is at an amount, the other party's whole, the
+mountain in the distance. The ruler is then the number line, on which the point where the two parties are equal is simply
 computed. Not knowing it, a read whose sweep is a turn has only its own one length, its thumb, and v = h becomes its
 split of near from far and the median of its readings: the corner. With no size, the array's far end is no amount at all,
 only a direction, [0 : 1], where the chart v/h runs out: the horizon. Both are the read's because the size is missing.
-A write, holding the size, has neither.
+With the size held, there is neither.
 
 **The read's arrays and the blueprint's.** The first essay's two sides give four kinds of array, two each.
 - **The blueprint's circle** is a constant array of known length, every entry the radius. Its one value needs no storing, so the
@@ -115,10 +115,10 @@ and 7 − k: 2 to place 5, ½ to place 2. Scaling the world by 10⁻³, 7 or 10�
 central sweep, meeting the same point at twice the angle (the second essay's III.20), indexes it by ⌊K·φ/π⌋ over its
 half turn and lands on the same place, place for place. One index serves both sweeps.
 
-Against that, a write places an amount x on [0, X] at ⌊N·x/X⌋, which needs X. With N = 8 and X = 100, the amounts 10, 50
+Against that, a count index places an amount x on [0, X] at ⌊N·x/X⌋, which needs X. With N = 8 and X = 100, the amounts 10, 50
 and 99 go to places 0, 4 and 7. Read from home at a distance laid by H, ⌊8·(2/π)·arctan(x/H)⌋, they go to places 4, 6 and 7
-with H = 10, and to 1, 4 and 5 with H = 50. H moves them, as a zoom, the size of the thumb, and X never enters. Both are a write's
-indices: the count index of a world written to its end, the turn index a write's bookkeeping of what the read's
+with H = 10, and to 1, 4 and 5 with H = 50. H moves them, as a zoom, the size of the thumb, and X never enters. Both are counted
+indices: the count index of a world known to its end, the turn index a counted bookkeeping of what the read's
 turn holds. The count index needs the size; the turn index needs only the zoom.
 
 ---
@@ -333,8 +333,8 @@ are exact, and checked.
 
 **Reading and writing.** An array on a circle is the clearest small instance of the whole split. Its index is the
 address, laid before anything is stored, the Cauchy's quantiles. Its values are the payload, and storing them moves no
-place. The index is a write's count laid on the read's heat, which counts nothing: *the heat is given; the paint is
-met.* Its length is what a write has and a read lacks, and the lack is what makes the corner and the horizon.
+place. The index is a count laid on the read's heat, which counts nothing: *the heat is given; the paint is
+met.* Its length is what the finished array has and a read lacks, and the lack is what makes the corner and the horizon.
 The four kinds of array, the constant, the known-length, the values without the length and the index alone, are the
 blueprint's two and the one read, counted two ways. Joining arrays into a closed circle is the blueprint's; reading within one
 is a read's.

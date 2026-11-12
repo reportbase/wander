@@ -45,7 +45,7 @@ no distance, no memory of the look before. Make the whole world ten times larger
 thumb with it, and the look is the same look. That is the first test, and the read passes it.
 
 One look does hold one remarkable thing. The place where the house covers the thumb is found by looking and by nothing
-else. "Now the house is my thumb" needs no walking and no counting. A write can say where that place is, thirty house
+else. "Now the house is my thumb" needs no walking and no counting. A count or an amount can say where that place is, thirty house
 breadths from the door, 360 metres for this house, but the walker standing there has not been told that. It has only the
 fit. This place is the corner.
 
@@ -92,9 +92,9 @@ mountain three kilometres across, 128,571 and three sevenths, from a corner nine
 
 Three things about this ladder are worth saying plainly.
 
-It is a write's line. A ruler that is even everywhere, with no near and no far, is the number line, and that is
+It is the number line: a ruler that is even everywhere, with no near and no far, and that is
 what thumb over house turns out to be: the distance to the door, measured in corner-distances. Walking with a counted
-stride is writing, and the upside-down reading is the chart in which that writing is even.
+stride lays strides along it, and the upside-down reading is the chart in which those strides are even.
 
 It has no corner on it. The rung just before the corner, the rung across it and the rung after are the same size. So
 the corner is not something the count can find. The corner belongs to the looks; the ladder belongs to the strides.

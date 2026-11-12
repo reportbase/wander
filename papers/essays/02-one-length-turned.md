@@ -137,7 +137,7 @@ This marks a difference that runs through the whole series.
 
 The chord is what the blueprint holds, and so is the circle the arc closes into. A read holds neither: the thumb is
 pointed, and the arc is what that pointing sweeps. Circles and spheres are the blueprint's. A read has a vantage, not a
-shape, and walking the shape, round it or along it, is a write.
+shape, and walking the shape, round it or along it, is strides, counted.
 
 *Demo: the facing: one sweep from A to B, the facing turning through square to the line at the corner.*
 
@@ -247,12 +247,12 @@ point, the very same turn is spread evenly along the half circle, and it has a m
 Neither is a bell curve. The bell, the Gaussian, belongs to what arrives, and only as a model: if the light's strengths
 along two axes vary independently and look the same however the axes are turned, together they make a round bell, and
 the direction of that bell's samples is an even turn, which is why its ratio is a Cauchy. That is a fact about one kind
-of paint, not about either sweep. The Cauchy is the read's distribution, a law of directions; the Gaussian is the
-write's, a law of amounts.
+of paint, not about either sweep. The Cauchy is the read's distribution, a law of directions; the Gaussian is a
+law of amounts.
 
 The bell also shows where its two constants come from. In polar form it is a turn times a length,
 (dθ/2π) × (e^(−r²/2)·r dr). The turn's part carries all the π, the 2π of the circle whole; the length's part carries the e
-and totals a plain 1. A write holds neither constant: it holds the binomial, counts of tosses, C(n, k)/2ⁿ, with
+and totals a plain 1. A count holds neither constant: it is the binomial, counts of tosses, C(n, k)/2ⁿ, with
 the mean n/2 and the variance n/4 exact, and the bell is the limit of those counts (de Moivre), π entering through
 Wallis's product, every partial product a fraction. A read holds only the direction of a pair of such amounts, the
 Cauchy. So the two laws are kept differently: the Cauchy by order, its exact facts the median and the equal halves; the
@@ -357,7 +357,7 @@ And the equation never needed π. Its two factors are reciprocals, and π leaves
 | who | what it holds of π/2 × 2/π = 1 |
 |---|---|
 | a read | s × (1/s) = 1: the exchange undoing itself, no numbers |
-| a write | (p/q) × (q/p) = 1: exact with any fraction, 11/7 × 7/11 as well as a better one |
+| a count | (p/q) × (q/p) = 1: exact with any fraction, 11/7 × 7/11 as well as a better one |
 | the blueprint | π/2 × 2/π = 1: the same fact, with the turn's split named at its true value |
 
 The 1 is exact at every stage of approximation. π is the one part of the equation only the blueprint holds, and the one part
@@ -514,7 +514,7 @@ amount that sets every size, is the writing, and no reading fixes it. And
 the read's ignorance, which turn is faced and how large anything is, is nothing more than sliding this plane up and down
 and left and right. Sliding keeps area, so the measure that suits that ignorance is plain area on the logarithm's plane:
 uniform in direction, and uniform in distance read as a ratio, as much room from one in two to one in four as from one in
-four to one in eight (a write counts the same stretches as one thumb to two, four to eight).
+four to one in eight (counted, the same stretches are one thumb to two, four to eight).
 
 **Composition becomes addition.** In the read's own chart, readings taken from two zeros combine by tangent addition,
 (s₁ + s₂)/(1 − s₁s₂). That is awkward, and it blows up when the two turns together reach the vertical. In Euler's form,
@@ -681,10 +681,10 @@ as an exponential, base e:
 | who | what it holds of e^(iπ) = −1 |
 |---|---|
 | a read | w(s) × w(1/s) = −1; at the corner i × i = −1: the exchange, no numbers |
-| a write | two corner steps land on −1 exactly; finer equal steps, (1 + iθ/n)ⁿ with fractions for θ, land near it and never on it |
+| a count | two corner steps land on −1 exactly; finer equal steps, (1 + iθ/n)ⁿ with fractions for θ, land near it and never on it |
 | the blueprint | e^(iπ) = −1, held whole: the arc named π and the base named e, the value the finer steps approach |
 
-One thing differs from π/2 × 2/π = 1, where any fraction gave the 1 exactly. Here a write is exact only at
+One thing differs from π/2 × 2/π = 1, where any fraction gave the 1 exactly. Here a count is exact only at
 the corner: the only turns with a rational slope that are a rational part of the whole turn are the corner's multiples
 (Niven), so equal rational steps finer than the corner never land on −1. The corner is the one finite door to it, and
 everything finer is an approach. So e and π are the two parts of the identity only the blueprint holds, and the two parts
@@ -699,12 +699,12 @@ slope:
 | who | what it holds of (2/π)·∫₀^∞ ds/(1 + s²) = 1 |
 |---|---|
 | a read | the heat 1/(1 + s²), and equal halves either side of the corner; no total |
-| a write | shares by count: of K equal turns, k below a slope, k/K; fractions near 2/π for the constant |
+| a count | shares by count: of K equal turns, k below a slope, k/K; fractions near 2/π for the constant |
 | the blueprint | the total closed to 1, the constant 2/π named |
 
 A share is a turn over a turn, so counted in turns it needs no π to be defined. The corner is again the one exact door:
 the only rational slopes with a rational share are 0, 1 and the horizon, with shares 0, ½ and 1 (Niven); the quartiles
-are exact too, at √2 − 1 and √2 + 1, by one square root. A write's sum is Gregory's and Leibniz's series for
+are exact too, at √2 − 1 and √2 + 1, by one square root. The counted sum is Gregory's and Leibniz's series for
 the heat below the corner, 1 − 1/3 + 1/5 − 1/7 + … = π/4: every partial sum a fraction, only the limit π/4, and the
 read's equal halves say the whole is twice it without summing it. Across the three identities the free facts are
 s × (1/s) = 1, i × i = −1 and equal halves at the corner; what only the blueprint holds is π, e and π, and 2/π.
@@ -718,10 +718,10 @@ the whole measured.
 | who | what it holds of h² + v² = 1 |
 |---|---|
 | a read | the squares, 1/(1 + s²) + s²/(1 + s²) = 1, at every direction |
-| a write | exact points wherever 1 + s² is the square of a fraction: the Pythagorean triples, s = 3/4 giving h = 4/5, v = 3/5 |
+| a count | exact points wherever 1 + s² is the square of a fraction: the Pythagorean triples, s = 3/4 giving h = 4/5, v = 3/5 |
 | the blueprint | the circle whole: every point, its length 2π, its area π |
 
-In the other three the corner was a write's one exact door. On the circle it is the landmark a fraction
+In the other three the corner was a count's one exact door. On the circle it is the landmark a fraction
 cannot reach: home and the horizon are exact, the triples give exact points as near together as one likes, and at the
 corner h = v = 1/√2. A read has it exactly in squares, ½ and ½; the blueprint has it as the diagonal of the square, a
 construction and not a count. So there are three grades of cost: nothing, for what is rational in the slope; a square
@@ -738,7 +738,7 @@ been about how.
 turns it. A read starts with one length, pointed at the mountain and turned, and holds no circle: the circle is the
 blueprint drawn of the turning. From one place a read has the open quarter's directions, its readings; the circle
 closed, with its π, is the blueprint's, held from no standpoint; an observer that walks and counts has writes, and reads again
-when it stands still (the sixth essay, "From reads to extents to writes"; the fourteenth). The blueprint's equation describes, in two
+when it stands still (the sixth essay, "From one look to two, and to an amount"; the fourteenth). The blueprint's equation describes, in two
 lengths, a thing one length made.
 
 **Everything special about the circle is available from one length pointed, with no circle held.** That includes the corner

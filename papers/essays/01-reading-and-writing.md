@@ -236,7 +236,7 @@ standard, and the standard has to be carried in.
 
 There is one more difference between the two sides, and it shows in the rulers each one uses.
 
-A write's ruler is the number line. Its marks are evenly spaced, 1, 2, 3, as far as you like in both directions,
+The ruler for stating amounts is the number line. Its marks are evenly spaced, 1, 2, 3, as far as you like in both directions,
 and every unit of length is like every other. That is exactly what you want for stating amounts: an amount is a count
 of units, and counting needs equal units. The number line has no special place on it. The mark at 1 is just a mark.
 
@@ -244,8 +244,8 @@ A read's ruler, as later essays will show in detail, has a special place: the po
 equals your own length, one thumb, where v equals h. Near you, inside that point, the read's ruler is proportional, like
 the number line: one thumb laid evenly. Past it the ruler goes by ratios: a thing one thumb wide reads one in two, then
 one in four, then one in eight, each stretch over which the reading halves holding as many places as the last. So far
-things are laid by how many times farther they are, read as a ratio, not counted in units. A write, counting the same
-stretches, says two thumbs, four, eight. Neither ruler is better. They are made for different acts. A write counts; a read
+things are laid by how many times farther they are, read as a ratio, not counted in units. Counted, the same
+stretches are two thumbs, four, eight. Neither ruler is better. They are made for different acts. Amounts are counted; a read
 sees.
 
 *Demo: one blueprint, and a read beside it, in two dimensions and three; reads and the counted walk.*
@@ -468,7 +468,7 @@ each object looks and which way it lies. Then ask, at each stage, how many numbe
 could be changed without changing anything the observer has read.
 
 - **One standpoint.** Each object's size and distance can trade freely: twice as big and twice as far reads exactly the
-  same. With four objects there are four free numbers. From one place, nothing is written.
+  same. With four objects there are four free numbers. From one place, no size and no distance is fixed.
 - **One step of known length,** known in the observer's own unit, say "one stride". Now every size and every distance is
   fixed, all of them, in strides. No free numbers are left. The step placed everything at once, in the observer's own
   length: extents, unmoved by scaling. (The stride is a thing with a size, a write; the numbers in strides are ratios

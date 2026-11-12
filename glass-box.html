@@ -131,7 +131,7 @@
 </div>
 <div id="hud" class="glass"></div>
 <div id="inset" class="glass"><p class="t"><b>The directions, painted</b>: Lambert's map of the wedge (azimuth across, height
-    up; its cells a count, a write's), each cell the colour that arrived along it; the pairs' corners dashed.</p><canvas id="map" width="512" height="512"></canvas></div>
+    up; its cells a count), each cell the colour that arrived along it; the pairs' corners dashed.</p><canvas id="map" width="512" height="512"></canvas></div>
 <div id="hint" class="glass"></div>
 <div id="nogl"><div>This page needs WebGL to draw the box.<br>The arithmetic still runs: see the test hook.</div></div>
 
@@ -401,13 +401,13 @@ const rgbTxt = c => `rgb(${c.join(', ')})`;
 function hud() { const k = K(), c = CN, n = L.length, hv = S.hover != null ? L[S.hover] : null, g = GG();
     const shares = `v ≤ h ${pct(c.vh)}, v₂ ≤ h ${pct(c.v2h)}, v₂ ≤ v ${pct(c.v2v)}, the near field ${pct(c.near)}`;
     const gh = GH ? `\nthe ghost, ${fmt(g)} times the box about the standpoint, its pictures with it: ${(GH.n - GH.differ).toLocaleString('en')} of ${GH.n.toLocaleString('en')} directions painted alike` : '';
-    if (S.view === 'reader') { let s = `from home a read holds directions [h : v : v₂] and their heat, given (${n.toLocaleString('en')} of them here, a count, a write's), and a colour arriving along each\n` +
+    if (S.view === 'reader') { let s = `from home a read holds directions [h : v : v₂] and their heat, given (${n.toLocaleString('en')} of them here, a count), and a colour arriving along each\n` +
             `${shares}: the same wherever the observer stands or faces, whatever the box, H and k\n` +
             `no distance arrives: the light of ${pct(c.within)} of the directions started within H of the standpoint, painted like the rest${gh}`;
         if (hv) { const m = Math.max(hv.h, hv.v, hv.v2); s += `\n\ndirection [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}], painted ${rgbTxt(hv.rgb)}; from how far, never`; }
         $('hud').textContent = s; return; }
     let s = `the blueprint holds the box, ${S.E.map(x => fmt(x * k)).join(' × ')}, its pictures, and the standpoint at (${S.P.map(x => fmt(x * k)).join(', ')}): amounts and pixels\n` +
-        `the read holds ${n.toLocaleString('en')} directions (given; the count a write's): ${shares}\n` +
+        `the read holds ${n.toLocaleString('en')} directions (given; counted here): ${shares}\n` +
         `each painted by the pixel its ray meets: ` + c.faces.map((x, i) => x > 0 ? `${G.FACES[i]} ${pct(x)}` : null).filter(Boolean).join(', ') + '\n' +
         `the light of ${pct(c.within)} of them started within H = ${fmt(H())} of the standpoint, painted the same way${gh}`;
     if (hv) { const m = Math.max(hv.h, hv.v, hv.v2);

@@ -48,7 +48,7 @@ hand". There is no contradiction yet.
 **Where it is made.** Write the two numbers on one line, the number line, as two dots between 0 and 1. On that line every
 number is measured against the same unit, the distance from 0 to 1. So the moment both readings are written there, they
 are treated as if they had been measured against one shared length. No such length was agreed. A used A's hand, B used
-B's. The number line is a fine ruler, a write's ruler and the observers' shared unit once one has been agreed; the
+B's. The number line is a fine ruler, the ruler for amounts and the observers' shared unit once one has been agreed; the
 mistake is to write two readings on it as if the agreement had been made. Then "B looks smaller than my hand" becomes
 "B is smaller", and "A looks smaller than my hand" becomes "A is smaller", and those do contradict each other.
 
@@ -217,7 +217,7 @@ blueprint's assumption built into the mathematics.
 **More points, less seen.** An observer that resolves directions to a step ε sees N points spread evenly round a circle from
 its centre. When N is small every point is seen apart. As N grows, neighbours fall within one step of each other and merge,
 and the number told apart is (N/π)·arccos(εN/2π). That rises, peaks at about 1.1222/ε, and then falls: past a point, more
-points mean fewer told apart. N is a write's count; what one standpoint resolves is a read's. The peak is exact:
+points mean fewer told apart. N is a count; what one standpoint resolves is a read's. The peak is exact:
 x·arccos x is largest at x ≈ 0.6522, where it is 0.5611, and twice that is 1.1222.
 
 ---
@@ -226,11 +226,11 @@ x·arccos x is largest at x ≈ 0.6522, where it is 0.5611, and twice that is 1.
 
 Several famous puzzles turn on a quantity whose scale is unknown. The fourth essay showed what a read does with such a
 quantity: past its own unit it prefers no stretch to another, one thumb to two no more than four to eight, so equal ratios
-get equal room, the measure dx/x. A write holds a scale and can put a flat measure on the amounts. Running the two
+get equal room, the measure dx/x. A scale in a unit can carry a flat measure on the amounts. Running the two
 together makes the puzzle.
 
 **Benford's first digits.** In many real collections of numbers, from river lengths to tax returns, the leading digit is 1
-about 30% of the time, not the 11% an even spread of digits would give. The even spread assumes a write's scale. Numbers
+about 30% of the time, not the 11% an even spread of digits would give. The even spread assumes a scale in a unit. Numbers
 met with no preferred scale are spread as the far field is, equal room from any amount to twice it, and the measure dx/x
 gives the leading digit d the share log₁₀(1 + 1/d), which is 30.1% for a 1. Hill proved that scale invariance implies the
 law (Hill 1995). The vantage reading is his theorem said in the essays' terms.
@@ -250,15 +250,15 @@ unit, value would be in proportion, so the reading predicts near-linear valuatio
 ones. That is a prediction, and it has not been tested here.
 
 **Weber and Fechner.** A just-noticeable change in a stimulus is a fixed fraction of it, not a fixed amount, and sensation
-grows as its logarithm (Weber 1834; Fechner 1860), except near threshold. A fixed step would be a write's scale. The
+grows as its logarithm (Weber 1834; Fechner 1860), except near threshold. A fixed step would belong to a scale in a unit. The
 perceiver reads from its own unit, and past it equal ratios get equal room: the logarithm. Near threshold, inside the unit,
 the reading predicts proportion, which is where the law is known to bend.
 
 **Water and wine, and Bertrand's chord.** The third essay worked these two in full. Every fair answer to von Mises's water
 and wine puts the corner at a half, and the logarithm of the ratio gives ln 6/ln 9; Jaynes's ½ for Bertrand's chord is a
 thrower's for whom the circle may lie anywhere, and from a standpoint the share runs from ⅓ to ½ with the circle's
-distance. Both are this section's puzzle: a question about an unknown scale, answered by indifference over a write's
-amounts instead of a read's ratios.
+distance. Both are this section's puzzle: a question about an unknown scale, answered by indifference over
+amounts on a scale instead of a read's ratios.
 
 ---
 
@@ -300,7 +300,7 @@ approximations are standard, and that they are one function is known; the readin
 does.
 
 **v/h read as V/H.** A geometric result seems to predict a physical amount, and then fails by a constant factor. The
-reading v/h is a ratio of unit relations, a read's. V/H is a ratio of breadths, a write's. The bridge between them
+reading v/h is a ratio of unit relations, a read's. V/H is a ratio of breadths, each an amount. The bridge between them
 is (v·V)/(h·H) = (v/h)·(V/H). Reading one as the other assumes written breadths, V the mountain in the distance
 measured. With both drawn at one length, the thumb equal to the mountain, the two agree in number, which is why the
 confusion is easy, and why it fails by V/H when the breadths differ. These essays have kept the case of the letters because
@@ -361,7 +361,7 @@ standpoint, and it does not move when the world is scaled; a ratio joining two s
 A writing is an amount, and it needed something carried in. Every
 paradox in the denominator family is a reading quoted as a writing, its private denominator dropped. Zeno, Galileo, the
 coastline, the growing list and the many points are the blueprint's whole asked of a count from a standpoint. Benford, the envelopes,
-St Petersburg and Weber–Fechner are a write's flat measure laid where a read has no scale. Olbers and the dimming star
+St Petersburg and Weber–Fechner are a flat measure of amounts laid where a read has no scale. Olbers and the dimming star
 are the blueprint's sum asked of a read's directions. Gibbs and the heap are the blueprint's labels or sharp line asked of a
 read's resolution.
 
