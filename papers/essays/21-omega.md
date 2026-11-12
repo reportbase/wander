@@ -21,7 +21,8 @@ several sweeps joined into a whole.
 
 The order: the operation (§1), its measure and its total (§2), Ω times its reciprocal (§3), the Cauchy's coefficient
 (§4), the corner (§5), two charts and one horizon (§6), three thumbs (§7), facings, Euler and composing (§8), what gets plainer and
-what does not (§9), what Ω does not do (§10), who saw which piece (§11), and what it changes (§12).
+sweep composed with itself (§9), what gets plainer and what does not (§10), what Ω does not do (§11), who saw which
+piece (§12), and what it changes (§13).
 
 ---
 
@@ -245,7 +246,44 @@ Euler's notation lives, and the logarithm passes between the last two, which is 
 it does. The finite law, w(s) × w(1/s) = −1, gives the result; the limit (1 + iθ/n)ⁿ is needed only to say how long the
 sweep was, and has to be handed that length to begin with.
 
-## 9. What gets plainer, and what does not
+## 9. A sweep composed with itself
+
+Take one sweep and compose it with itself, again and again: s, then s ⊕ s = 2s/(1 − s²), then that with itself. Where
+the result passes the horizon it is in another facing; read it back in the first by dropping its sign. This is a rule
+of one line, rational, with nothing kept from step to step.
+
+It is a famous rule in another chart. Write y for the up share squared, y = s²/(1 + s²). Then the new y is
+4y(1 − y): the logistic map at its fullest setting, the standard first example of chaos. So that map is a sweep
+composed with itself. In the three charts of §8:
+
+| chart | the rule | what it leaves unchanged |
+|---|---|---|
+| slope | s ↦ 2s/(1 − s²), sign dropped | 1/(Ω(1 + s²)), the Cauchy |
+| weight passed | twice the weight, folded back at Ω | 1/Ω, the even spread |
+| share | y ↦ 4y(1 − y) | 1/(2Ω√(y(1 − y))), the arcsine law |
+
+Three laws that textbooks list separately are one measure in three charts, each with Ω in its coefficient for the same
+reason as before: it is the total.
+
+The three things chaos is usually said to need each have a plain source here. *Bounded:* one sweep has a total, Ω.
+*Stretched:* composing a sweep with itself doubles the weight passed. *Folded:* past the horizon the result lies in
+another facing, and reading it back folds it. The fold is a join of facings and belongs to no single read.
+
+The usual measure of chaos is the rate at which two nearby starts part, averaged along a long run. In the share chart
+that average has to be taken: the stretch differs from place to place. In the weight chart the stretch is exactly 2
+everywhere, so the rate is ln 2 a step, read off the rule with no run and no average. The number is the same in every
+chart. Only one chart shows it without a sum.
+
+And the acts sort as they did before. The rule keeps nothing. A run of it is a kept sequence, and what is kept is
+writes. Each step uses up one binary digit of the starting slope, so a start put down to p digits holds for about p
+steps and no longer. The horizon of prediction is the length of what was written. That is how a rule of one line gives
+a record nobody can extend: the rule is exact, and the start was never written out in full.
+
+Two limits. This is one map, and its close relatives; at other settings of the logistic map there is no such sweep
+behind it. And none of it is new: that the logistic map at 4 is the tent map in another chart is Ulam and von
+Neumann's, of 1947. What the letter adds is small, that the three unchanged laws share one coefficient.
+
+## 10. What gets plainer, and what does not
 
 The experiment sorts formulas. Some lose a stray factor of 2; some gain one.
 
@@ -271,7 +309,7 @@ attached. The bottom rows are about wholes: a disc, every whole number, a bell o
 That is the experiment's result, and it agrees with the series' sorting. A read is about one sweep. The whole turn, the
 disc and the completed line are the blueprint's, and π is the blueprint's letter.
 
-## 10. What Ω does not do
+## 11. What Ω does not do
 
 *It does not make the number cheaper.* Ω is the same limit π/2 always was. No count reaches it; Wallis's product and
 Leibniz's series only approach. A new letter is a name, and the series' rule stands: the value is held whole only on
@@ -289,7 +327,7 @@ places on a circle.
 *It should not go into the paper.* Classical mathematics uses π, and a reader who knows that 2/π is the Cauchy's
 coefficient should find it there. The letter is for thinking with.
 
-## 11. Who saw which piece
+## 12. Who saw which piece
 
 Every formula here is old. The composition rule is tangent addition. Its invariant measure is the Cauchy density, and
 that the Cauchy is carried to itself by such maps is classical. Girard gave the area of a spherical triangle by its
@@ -302,10 +340,10 @@ which unit makes the blueprint's formulas tidiest, and they favour the whole tur
 the whole. This essay asks a different question, which unit fits one sweep, and so lands on the quarter.
 
 What the series adds is the order of the telling: the operation first, its measure second, the total third, and the
-circle as one picture of it; and the sorting in §9, which uses the choice of unit as a test of whether a formula is
+circle as one picture of it; and the sorting in §10, which uses the choice of unit as a test of whether a formula is
 about one sweep or about a whole.
 
-## 12. What it changes
+## 13. What it changes
 
 *The Cauchy's constant is not a second fact.* It is the measure's own total, turned over.
 
@@ -333,10 +371,13 @@ statement about one sweep written in the unit of the whole.
 - Girard, A. (1629). *Invention nouvelle en l'algèbre.* Amsterdam. (The area of a spherical triangle.)
 - Hartl, M. (2010). *The Tau Manifesto.* (Not opened for this essay; cited for the proposal of τ = 2π.)
 - Palais, R. (2001). π is wrong! *The Mathematical Intelligencer* 23(3), 7–8. (Not opened for this essay.)
+- Ulam, S. M. and von Neumann, J. (1947). On combination of stochastic and deterministic processes. *Bulletin of the
+  American Mathematical Society* 53, 1120 (abstract). (Not opened for this essay.)
 - Wallis, J. (1656). *Arithmetica infinitorum.* Oxford.
 - *Reads and Writes* (`../readers-and-writers.md`): §1 "A read and a write" and "Two verbs, two nouns"; §9 "Reading is
   2/π; walking is π/2", "The thumb, short by reading, long by walking, and whole" (the three paths), "What is free, and
-  what π costs", "Four identities, one exchange"; §8 (three thumbs, the octant, the two orders). The current account,
+  what π costs", "Four identities, one exchange", and the passage on a turn added to itself (`../../plans/chs-plan.md`); §8 (three
+  thumbs, the octant, the two orders). The current account,
   which keeps π. The exact checks behind §7's numbers are `../../plans/swp-plan.md` and `../../plans/wdg-plan.md`.
 - Demos: `../../one-read.html` (one turn and its landing point), `../../paths.html` (one sweep, three paths),
   `../../sweep-zero.html` (composing sweeps from zero), `../../wedge.html` (the octant), `../../euler.html` (n reads).
