@@ -383,11 +383,14 @@ median and the absence of any mean are what a read with no breadth in it is.
 - *The apple and the human read the universe by the inscribed sweep.* From home to a horizon: directions only, a turn
   that never ends, 1/Ω the limit it tends to, never reached. The universe has no far side to face, so its V
   is **unknowable**: no size could be had, and with none there is no inside or outside, only home and the horizon.
-- *The apple and the human read each other by the central sweep, across one hemisphere.* Each is a bounded thing in the
-  other's view, its rim reached at a point: the central sweep's end, e^(iπ) = −1, Ω the limit a count of its arc tends to. It is still a read, one hemisphere from a vantage; what sets it apart from the inscribed sweep is an end that can be walked to.
-  So the other's V is **knowable**: the end exists and is met. It is not known, since the far hemisphere stays turned
-  away; each holds the other's front only. Neither stands at the other's centre; the sweep about the centre is the
-  geometry of a bounded thing faced.
+- *The apple and the human face each other as bounded things.* From a distance each one's paint stops at a finite slope
+  in the other's look: its rim, one direction inside the read like any other, not the horizon. That is what the universe
+  lacks, an end that can be walked to. The sweep that has that end is the central one, a read across one hemisphere from
+  the bounded thing's own centre (the pivot of Euclid III.20): its end is reached at a point, e^(iπ) = −1, and Ω is the
+  limit a count of its arc tends to. The observer at a distance is not at that centre. It meets the same −1 in its own
+  read only by walking to the rim, where at contact the slope runs out to the horizon (§6, "Two ways to arrive"). So the
+  other's V is **knowable**: the end exists and can be met. It is not known, since the far hemisphere stays turned away;
+  each holds the other's front only.
 - *The human holds the apple and turns it.* The turn makes the Cauchy: a uniform turn, read as the slope v/h against the
   line of sight, is the Cauchy whatever the apple's shape, the shape only the paint. The hand holds the back as the eye
   holds the front, so both hemispheres are in reach and the turn is known; the apple is a thing with a size, held, and in the hand
@@ -400,7 +403,7 @@ median and the absence of any mean are what a read with no breadth in it is.
 | | hemispheres | vantage | V | the blueprint's number for it | what it is |
 |---|---|---|---|---|---|
 | inscribed, toward the universe | one | home, facing a horizon | unknowable | 1/Ω, approached | a read: what turning sees |
-| central, toward the apple | one | facing across, to a rim | knowable | Ω, reached | a read: a bounded thing faced; its arc, walked and counted in thumbs, is an extent |
+| central, toward the apple | one | the apple's centre, across to its rim | knowable | Ω, the limit a count of its arc tends to; the end reached at a point | a read about a bounded thing; from afar its rim is one direction, met at −1 by walking; its arc, counted in thumbs, is an extent |
 | the apple held and turned | both, in reach | one, the turn known | known, held | the turn's Cauchy | looks joined by a known turn, of a thing held in the hand |
 | the blueprint | both at once | none | known | 1 | neither read nor write: no vantage |
 
@@ -408,8 +411,9 @@ The human is all of these at the same time, not by turns: it reads the universe,
 what it holds in the hand or draws it holds as a blueprint. The apple has the facings and never the blueprint. So Ω · 1/Ω = 1 is
 not two parties meeting but one observer's two reads held at once, and the 1 is its own thumb given back.
 
-Faced, V is knowable, not known. The inscribed sweep approaches its end, the central sweep reaches it at a point, and only a
-write holds it whole; parallax narrows the band toward it and never closes it (§6). Euler's identity is the hinge: the
+Faced, V is knowable, not known. The inscribed sweep approaches its horizon without end; a bounded thing puts its rim
+inside the look, one direction that the central sweep, about the thing's centre, reaches at a point and that a walk
+carries to −1 at contact. Only a write holds V whole; parallax narrows the band toward it and never closes it (§6). Euler's identity is the hinge: the
 turn's end, endless in the read's chart (s → ∞), is one named point, −1, in the central one, and a named point is what
 can be carried onto the blueprint.
 
@@ -1400,7 +1404,7 @@ that closes the heat, and it is approached at the horizon, never reached. *Ω is
 from all of h to all of v is Ω thumbs long, the heat gathered to the horizon, ∫₀^∞ ds/(1 + s²), reached at a named
 point, −1. An arc in thumbs is a length against the thumb, unmoved by scaling and held by no single read: of the kind D3
 calls an extent, here counted out, so a count; with the thumb in a unit it is a write (D4). The sweep whose arc that is,
-the central one, is itself a read: one hemisphere, from a vantage, facing a bounded thing. So both numbers belong to
+the central one, is itself a read: one hemisphere, from the bounded thing's centre, facing its rim. So both numbers belong to
 single-hemisphere reads, 1/Ω to the inscribed and Ω to the central, and the walk is how the second one's arc is
 counted. Their product is 1, which is also the blueprint's number, the thumb in thumbs; the blueprint itself has no vantage and
 is neither of them. The exchange swaps the two, and they agree only at the corner, where a length walked and a
