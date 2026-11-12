@@ -388,7 +388,7 @@ None of this is computed by the observer. The projection through each standpoint
 and that routes close or fail to, is the geometry's. What the observer contributes is position: the places it chooses to
 stand, and the one amount it is handed.
 
-*Demo: the reader is a slide rule (a misread link, a loop that will not close).*
+*Demo: a read is a slide rule (a misread link, a loop that will not close).*
 
 ---
 

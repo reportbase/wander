@@ -80,7 +80,7 @@ The rest of the essay takes these two acts apart. They have a structure, and the
 
 ---
 
-## 2. Two questions, two vantages
+## 2. Two questions, two acts
 
 Every reading you could ever take can be sorted by asking two questions about it. Each question has two answers, and
 each answer either ends the sorting or leads to the next question. So every reading lands in exactly one place, and the
@@ -135,7 +135,7 @@ altogether. They are the places the colour can be put. They are not the colour. 
 with, and the window tells you nothing about how far away the sun is. In space it takes both hands, thumbs crossed: not
 three axes of amounts, as the blueprint has, but one thumb and two sweeps of fingers (the fifth essay).
 
-### Things that look like a third vantage
+### Things that look like a third act
 
 People sometimes think of a case the two leave out. Each turns out to be one of the two.
 
@@ -156,7 +156,7 @@ People sometimes think of a case the two leave out. Each turns out to be one of 
 The two are exhaustive. That is a strong claim, and it matters. It means that anything you could record about the
 world can be asked: was this read or written? The answer settles what the record can and cannot contain.
 
-*Demo: the writer's box, its three views: the writer's, the reader's from home, and ranges.*
+*Demo: the blueprint's box, its three views: the blueprint's, a read's from home, and ranges.*
 
 ---
 
@@ -227,7 +227,7 @@ things are laid by how many times farther they are, read as a ratio, not counted
 stretches, says two thumbs, four, eight. Neither ruler is better. They are made for different acts. A write counts; a read
 sees.
 
-*Demo: one blueprint, two vantages, in two dimensions and three; the writer and the reader.*
+*Demo: one blueprint, and a read beside it, in two dimensions and three; reads and the counted walk.*
 
 ---
 
@@ -579,7 +579,7 @@ even its size in strides once a stride is counted, recovering it does not make i
 from no standpoint. An observer that arrives at the blueprint's answer got there by cleverness: where it
 stood, which loops it closed, what it was handed. That is not a lesser achievement. It is a different one.
 
-*Demo: the reader is a slide rule: chains, loops and a misread link.*
+*Demo: a read is a slide rule: chains, loops and a misread link.*
 
 **Two writes, and where physics enters.** "Write" has been doing two jobs in this essay, and they are worth telling
 apart. One is the write of the scale: an amount in a unit carried in, the stride given in metres. Scale the world and

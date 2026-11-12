@@ -289,7 +289,7 @@
             for (const p of FIB) { const q = view(p, t), on = octOf(p) < k; if (q[2] < 0 && !on) continue;
                 dot(g, cx + q[0] * r, cy - q[1] * r, on ? 2.3 : 1.5, on ? (q[2] >= 0 ? '#d4a052' : 'rgba(212,160,82,0.35)') : 'rgba(181,156,240,0.4)'); }
         }
-        text(g, `facings swept: ${k} of ${total}${k >= total ? ' — the whole shape, joined over observations' : ''}`, 12, 20, k >= total ? '#d4a052' : '#e6e4ee');
+        text(g, `facings swept: ${k} of ${total}${k >= total ? ' — every facing swept; the whole shape is the blueprint's, shown for comparison' : ''}`, 12, 20, k >= total ? '#d4a052' : '#e6e4ee');
         text(g, 'no single observation holds more than one', 12, 38, '#8a8a96');
     }
 

@@ -622,7 +622,7 @@ many things and are not a third kind beside reading and writing.
 
 **No dial, and the quarter turn's two numbers.** The circle of this essay is the blueprint's in a stronger sense than
 its shape. A read is one sweep from h to v on the thumb H, with no V in it; it stops at its horizon and closes nothing,
-and each read stands by itself. The circle is the kept steps laid end to end. So the numbers that belong to one sweep
+and each read stands by itself. Steps kept and laid end to end are a write; the circle whole, with no standpoint in it, is the blueprint's, set here for comparison. So the numbers that belong to one sweep
 are the quarter turn's, π/2 and 2/π, and they are the ones to state first; π and 2π belong to the join of several. The
 arctangent is the worst of the blueprint's tools to lend a read, because it eliminates the sweep: it names one place
 on the turn as though it could be gone to directly, where a direction is had only within its sweep, with everything

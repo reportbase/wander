@@ -252,8 +252,8 @@ orders and finds the corner, and the rationals are made where a count comes in, 
 V, the mountain in the distance, is learned the same way. An observer taking standpoints (the sixth essay, "From reads to
 places to writes") places V by degrees: as V\*/H in the step it took, to within a band set by its baseline and its resolution,
 for the things near enough; only the step counted in an agreed unit makes it an amount, a write. Each standpoint more is one more finite step; holding V exactly, like holding π, is the end of
-a process that does not end. So V is knowable, not known, and the exact V is a completed join of π's kind: the same as
-the one-length circle and the completed turn, held whole on the blueprint, none of them moved by scaling the
+a process that does not end. So V is knowable, not known, and the exact V is a limit of π's kind: it stands with
+the one-length circle and the completed turn, stated whole on the blueprint and reached by no count of writes, none of them moved by scaling the
 world. Euler's identity is the hinge (the fifth section): the turn's end, endless in the read's slope, is one named
 point, −1, from the centre, and a named point is what can be carried onto the blueprint (the twelfth essay's four things).
 
