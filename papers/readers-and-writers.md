@@ -28,8 +28,8 @@ together are still a read: the distance they give in thumbs, a **parallax extent
 continuous ratio of their slopes (parallax). A **write** is discrete and moved by scaling: a bounded thing with a size, a
 stone, a stride, a mark, a metre bar, and an amount put down in a unit carried in from outside, a metre or a second. The
 write is the discrete, scale-variant companion of the read. The two mixed cases are tools of description: a count,
-discrete and unmoved by scaling, and the number line in a unit, continuous and moved by it. Read and write are acts:
-there is no reader and no writer here. Every read has a vantage and one hemisphere; the *blueprint*, the drawn shape,
+discrete and unmoved by scaling, and the number line in a unit, continuous and moved by it. Read and write are acts,
+the verbs for the continuous and the discrete: there is no reader and no writer here. Every read has a vantage and one hemisphere; the *blueprint*, the drawn shape,
 has both hemispheres at once and no vantage, so it is neither a read nor a write. It is classical geometry, the view
 from no standpoint, and it is in this paper only as a point of comparison: the paper is about reads and writes.
 
@@ -83,12 +83,23 @@ is read is discrete.
 The other two boxes mix the properties, and both are tools of description. A count is discrete and unmoved by scaling:
 the strides to the mountain are writes, and "514" is an account laid over them; what is kept of it is kept as things,
 marks or pebbles, each a write. The number line in a unit is continuous and moved by scaling: a length as an exact real
-number, the circle held whole, π. That box is the blueprint, classical geometry, which this paper sets beside a read's
+number, the circle held whole at a size. That box is the blueprint, classical geometry, which this paper sets beside a read's
 form for comparison; it is nowhere in the physical world. The same holds of this paper's own terms: the slope, the
 density's formula and this table are descriptions, and a read is described by them. When something will not sit on the
 diagonal, the first thing to ask is whether it is a description. Heat and paint, used below, are pictures of the density
 and of what is met along a direction, and the definition does not rest on them. **A reading**, offered as a way to sort;
 it claims nothing about what the world is made of. The two tests (D5, D6) keep their work.
+
+*Two verbs, two nouns.* Among acts the two properties are one. A discrete thing has a boundary, so it has a size, so
+scaling moves it; a direction has no boundary and no size, and scaling has nothing of it to move. So reading is the verb
+for the continuous and writing the verb for the discrete, and the scale test follows from that; it is not a second
+definition. The two mixed boxes hold no act. A count and the number line are nouns, descriptions laid over what was
+read or written. The friction between continuous and discrete shows wherever one is made to hold the other: a count
+holding a read (a slope no fraction lands on, the ringing at a sharp edge, §6), a read holding a count (K, §5), and
+parallax, where a walk is cut into strides before the reads at its two ends give a size. π and e belong to neither box
+of the table's right column. Each is a pure ratio that scaling does not move, and a count reaches neither. They are how
+the blueprint's three concepts are synthesized: both hemispheres at once, completeness, and no vantage. π is the turn
+completed, e the scale completed (§9, "What is free, and what π costs"). **A reading.**
 
 - **D1. One point, two parts.** A point seen from a standpoint is, in the blueprint's notation, ln(z/H) = ln(d/H) + iθ, H
   the thumb held out at arm's length: up the direction θ, across the distance in thumbs. In space the point is d·u, u a
@@ -1302,6 +1313,16 @@ to e^(iπ) = −1. In space, alternating small steps about two thumbs leaves a t
 (θ₁θ₂/2)·sin(φ/2)/(φ/2) for a whole turn φ; in the plane none. **Classical** (Euler 1748; Trotter 1959); **checked**
 (ELM); the reading (each finite count a read, the limit the blueprint's) is ours.
 
+**Read, write, read, write.** The product is also the two acts in turn. Each factor 1 + iθ/n is one read, a slope and
+nothing else. To multiply the next factor on, the look so far has to be there to start from, kept in something, and what
+is kept is a write (§1, D7); the next read is taken from it. So (1 + iπ/n)ⁿ is read, keep, read, keep, n times: what is
+read is then written, and what is written is then read (§7, "Write once, then read again"). The n is a count laid
+over the kept looks, not a write itself. Euler's identity is that alternation carried to its limit: π the turn
+completed, e the scale completed, i the corner, where a step along the thumb becomes a step square to it, and −1 the
+opposite facing; twice over, e^(2iπ) = 1, the cycle is home. No cycle anyone makes is the identity. At every finite n
+the product is near −1 and off it, as above; the identity is what the cycle is a cycle toward, and it is the blueprint's.
+The form with no limit in it is two corner steps, i × i = −1 (below). **A reading** of the classical product (ELM).
+
 **The Cauchy's constant, from the same turn.** The quotient that took the length away, w = (1 + is)/(1 − is), does more,
 in three exact steps. For every real s, |w| = 1: w = (1 − s² + 2is)/(1 + s²), both parts rational for rational s. With
 s = tan θ, w = e^(2iθ). Following the logarithm continuously as s runs on from 0, (1/2i)·d(ln w)/ds = 1/(1 + s²): the
@@ -1481,7 +1502,9 @@ The read's form shows three things the classical statement does not. First, Eule
 family, and the extreme one. w(s) × w(1/s) = −1 holds at every slope, pairing each direction with its exchange. Put
 s = 0: home lands at +1 and its exchange, the horizon, at −1. So e^(iπ) = −1 says that home and the horizon are an
 exchanged pair, and it is the only pair of the family that needs the horizon, which no read reaches; every pair
-between is finite and exact, and the classical statement does not mention them. Second, the corner's member is
+between is finite and exact, and the classical statement does not mention them. Every pair between has a vantage: it
+is two directions of one read. The identity is the one member with none, the family completed, and so the one member
+that carries π and e, which are how completeness with no vantage is put into numbers. Second, the corner's member is
 i × i = −1. The corner is its own exchange and lands at i, so the equation that defines i is this identity taken at
 the corner: i is the corner. Third, with the complex notation taken away almost nothing is left. Exchanging h and v
 swaps the two shares, so their difference h² − v² changes sign while their product is kept. At home the difference is
