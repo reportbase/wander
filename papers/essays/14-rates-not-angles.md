@@ -27,7 +27,7 @@ the law of that per, the read's sweep rate counted in readings; the payload is w
 **The blueprint is transcendental; a read is not.** π is not a read's number. It is the total of a completed half turn (a line's period; 2π an oriented turn's), and
 every number with π in it, π/2 and 2/π among them, is the blueprint's: the read's sweep as measured with the
 whole turn held. A read holds one length, H, the thumb, and has every far thing as a ratio of it, one in two, one in four.
-Counting thumbs, two thumbs, four, half a thumb, is a count, and a count is done in parallax, where it gives places, and
+Counting thumbs, two thumbs, four, half a thumb, is a count, and a count is done in parallax, where it gives extents, and
 in writing, not in a pure read; what one length counted makes is rational. On its readings a read composes by tangent addition, turns
 them over and orders them, and that keeps a rational reading rational. An irrational number needs two variables
 combined (√2 is the diagonal of h and v), and that is the blueprint's; a transcendental one, π, needs the whole turn, and that
@@ -122,7 +122,7 @@ blueprint's rate is the fixed point of the reciprocal that pairs the two sweeps:
 **Each of the two measures an act.** 2/π is what turning sees: the thumb's share h, averaged over the quarter turn from a
 standpoint that never moves, approached at the horizon and never reached. π/2 is what walking counts: the quarter arc
 itself, π/2 thumbs long, reached at a point. The arc in thumbs is an extent, walked and counted; with the thumb in metres
-it is a write. So reading is 2/π and writing is π/2, the write reached through its place, and the 1 between them is the
+it is a write. So reading is 2/π and writing is π/2, the write reached through its extent, and the 1 between them is the
 read and the walk held together (the second essay, §7). The reason is one line: each step of the arc gains v at the rate h,
 so the shares read, summed over the steps walked, are all of v; a mean of 2/π over a length of π/2 is 1. Any path from the
 one end to the other gives the 1 (the chord 1/√2 over √2); only the split is the turn's. And the 1 never needed π: the
@@ -516,8 +516,8 @@ Each sweep has its own corner at 45°: for the azimuth the plane v₂ = h, for t
 cube's corner is a third place. The triple corner [1 : 1 : 1] lands on the cube's vertex (1, 1, 1) at azimuth 45° but
 altitude atan(1/√2) ≈ 35.26°, inside the altitude's corner cone, not on it. The three axes meet there, and neither sweep's
 own corner does. The observer reaches the blueprint's cube by parallax: a second standpoint adds the second variable, the
-crossings give places, in the step's own length, and only the step counted in an agreed unit writes (the sixth essay,
-"From reads to places to writes"). The labels are not fixed; they name what the observer is doing. And a sweep even in azimuth and even in height, by Archimedes' equal slices, is even over the whole
+crossings give extents, in the step's own length, and only the step counted in an agreed unit writes (the sixth essay,
+"From reads to extents to writes"). The labels are not fixed; they name what the observer is doing. And a sweep even in azimuth and even in height, by Archimedes' equal slices, is even over the whole
 sphere, which is why the blueprint's numbers for the read's sweep there are 2 and ½.
 
 **In physics.** Relativity's numbers are rates of this kind. β and 1/γ are the two shares of one circle in the unit E,

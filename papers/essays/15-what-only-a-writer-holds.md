@@ -90,7 +90,7 @@ Rescalings give e.
 A read has sizes as ratios of the thumb: a thing one thumb wide reads one in two, then one in four, one in eight.
 Past the corner a write laying out its fineness gives as many places to each stretch over which the reading halves (essay 4), and a thing that reads
 one in eight is three such stretches out, which counted is 8 thumbs, past 2, 4 and 8, an extent. Counting is done in
-parallax, where it gives places, and in writing, not in a pure read; what one length counted makes is finite and rational. A thing 3H away reads
+parallax, where it gives extents, and in writing, not in a pure read; what one length counted makes is finite and rational. A thing 3H away reads
 one in three, between one in two and one in four, and a read holds it there by its order among the readings (essay
 4, "the count is the detail").
 
@@ -217,7 +217,7 @@ the median and the equal halves; the Gaussian is kept by sums, its exact facts t
 Parallax is the case that runs the other way: the write is exact, and the limit adds only units. Two slopes
 read a counted step B apart give the depth by 1/(d/B) = 1/s₁ + 1/s₂, a fraction from fractions, and the corner circle
 is s₁·s₂ = 1. π enters only where a slope is made an angle, which is why the parsec, 648000/π astronomical units,
-carries a π and the place in steps carries none (essay 6 §4).
+carries a π and the extent in steps carries none (essay 6 §4).
 
 It is also where the history of the two numbers met. Euler showed e irrational in 1737; Lambert showed π irrational in
 1761. Liouville (1844) built the first numbers proved transcendental, made to order by an infinite series whose terms
@@ -314,10 +314,10 @@ It changes nothing about π or e or how to compute them. It sorts.
   of something, and the read's own version of it is a finite statement: an order, a count, a corner.
 - **e is the blueprint's number** because it states a scale completed, and giving a size as an amount is knowing V*. Wherever e
   or the natural logarithm appears (the lay's 1 + ln x, a decay's e^(−t/τ), the Gaussian's e^(−x²/2)), the read's version
-  is a ratio and an order: one in two, one in four, one in eight. Counting them, two thumbs, four, eight, gives places.
+  is a ratio and an order: one in two, one in four, one in eight. Counting them, two thumbs, four, eight, gives extents.
 - **The rationals are the first count's arithmetic**, made from one length counted in finite steps, in parallax, as
   places, and in writing; a pure read needs only directions and their order. Square roots need a second length, the
-  transcendentals a limit; all three are where the observer goes past a read (essay 6, "From reads to places to writes").
+  transcendentals a limit; all three are where the observer goes past a read (essay 6, "From reads to extents to writes").
 
 Essay 14 ended on five things called 1. This one ends on two numbers that are not 1 and are not the read's, and on why:
 the turn comes back, and the scale goes on, and to say either in a number you have to have held all of it.

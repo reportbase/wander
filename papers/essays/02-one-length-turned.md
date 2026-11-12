@@ -320,7 +320,7 @@ own thumb.
 thumb's share h averages 2/π, the mean of what is seen of one thumb from a standpoint that never moves, and it is
 approached at the horizon, never reached. π/2 is what walking counts: the quarter arc from all of h to all of v is π/2
 thumbs long, and it is reached, at a point. An arc counted in thumbs is an extent, had by walking and counting; with the
-thumb in metres it is a write. So, in short, reading is 2/π and writing is π/2, the write reached through its place, and
+thumb in metres it is a write. So, in short, reading is 2/π and writing is π/2, the write reached through its extent, and
 their product, 1, is the read and the walk held together. Both stay the blueprint's arithmetic, since a read holds no π;
 what is sorted is the act each one measures.
 
@@ -525,7 +525,7 @@ squaring of section 6 turns that half turn into one whole turn of the central sw
 
 All of this is classical: polar form, the complex logarithm, the area that multiplication keeps, the double cover. What is
 the series' own is the reading: e^(iθ) as the direction, r as the payload, the logarithm's imaginary part the reading and
-its real part the places, with the writing at its zero (*Reads and Writes* §2). It is the right notation for a read
+its real part the extents, with the writing at its zero (*Reads and Writes* §2). It is the right notation for a read
 because it keeps them apart. A read holds the imaginary part; places are gaps in the real one, had by walking; a
 write needs its zero.
 
@@ -737,7 +737,7 @@ been about how.
 turns it. A read starts with one length, pointed at the mountain and turned, and holds no circle: the circle is the
 blueprint drawn of the turning. From one place a read has the open quarter's directions, its readings; the circle
 closed, with its π, is held by an observer that has joined its facings, on a blueprint, and the same observer reads again
-when it stands still (the sixth essay, "From reads to places to writes"; the fourteenth). The blueprint's equation describes, in two
+when it stands still (the sixth essay, "From reads to extents to writes"; the fourteenth). The blueprint's equation describes, in two
 lengths, a thing one length made.
 
 **Everything special about the circle is available from one length pointed, with no circle held.** That includes the corner

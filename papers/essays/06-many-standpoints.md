@@ -58,7 +58,7 @@ Three limits keep this honest. A read holds no time and holds only where the sta
 everything said along it, is reads joined, not a read. What the joining gives has to be named before it is classed.
 The number had from two reads a tick apart is exactly the distance over the step between them, d₁/B: a ratio of two
 distances, as a distance in thumbs is. Calling that number a time adds a premise no read supplies, that the steps to
-come go on like the one taken; so the time to contact is not listed among the places, and its kind as a time is left
+come go on like the one taken; so the time to contact is not listed among the extents, and its kind as a time is left
 open. The braking rule, ticks per tick, is unmoved by any clock and by scaling the world, and it is no read either,
 since no single read holds a rate of change. Only seconds make a write: a unit carried in from a clock. The rate at which the standpoint turns cancels from every reading,
 as the thumb's length does. And a speed in metres a second is a writing twice over: a metre and a second, both carried in.
@@ -191,13 +191,13 @@ standpoints, and the baseline is the one amount in it.
 **The place never needed π.** State parallax in slopes and no angle is left in it. Two standpoints a counted step B
 apart each read the target's slope off the line between them, s₁ and s₂, measured inward; the depth d off that line is
 given by 1/(d/B) = 1/s₁ + 1/s₂. Slopes 3 and 6 put the target exactly 2 steps off. A write, the step counted
-and the two reads joined, has the place in steps exactly, in fractions; neither read alone holds any of it. The corner
+and the two reads joined, has the extent in steps exactly, in fractions; neither read alone holds any of it. The corner
 circle is the two slopes reciprocal, s₁·s₂ = 1, known without counting the step: above 1 the target is inside, below 1
 outside. On it d/B = s/(1 + s²): slopes 2 and ½ give the point (1/5, 2/5), a 3-4-5 triangle. The error's curve is
 rational as well, (k + 1/k)/2, the same at k and 1/k; cosh(ln k) is the blueprint's smooth name for it. π comes in only
 where a slope is turned into an angle: the parallax angle in arcseconds, the two angles that sum to π, the π/2 at the
 corner, the parsec's 648000/π astronomical units. The depth is rational, the range along a ray a square root, the
-angle a limit. What never needed π is the place in steps; the step in metres is still the one amount carried in.
+angle a limit. What never needed π is the extent in steps; the step in metres is still the one amount carried in.
 
 *Demo: parallax from the corner (the bell; round at the corner, stretched elsewhere).*
 
@@ -392,13 +392,13 @@ stand, and the one amount it is handed.
 
 ---
 
-## 12. From reads to places to writes
+## 12. From reads to extents to writes
 
 Climb the ladder of this essay once more, and count the variables. From one standpoint there is one length, H, the thumb,
 and a direction; nothing in it is a place, nothing is counted, and a read has a vantage, not a shape (counting comes
 with parallax, and one length counted makes the rationals: the fourteenth essay). A
 second standpoint adds a second variable, the step between the two. Now each point, matched in both looks, is two rays
-crossing, and its place comes out of the crossing's lengths and angles, sines and square roots, numbers no single length
+crossing, and its distance comes out of the crossing's lengths and angles, sines and square roots, numbers no single length
 makes. More standpoints give every place seen, in the step's length: the blueprint's box, its three number lines, up to its
 size. Count the step in an agreed unit and the box is in that unit.
 
