@@ -206,14 +206,14 @@
         const y1 = base - (base - top) / gmax; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(15, y1); g.lineTo(W - 15, y1); g.stroke(); g.setLineDash([]);
         g.fillStyle = '#d4a052';
         c.shape.forEach((s, k) => { const hgt = Math.min(base - top, (base - top) * s / gmax); g.fillRect(15 + k * bw + 1, base - hgt, bw - 2, hgt); });
-        txt(g, 'from the centre: amounts (written), no ratio', 10, 18, '#d4a052'); txt(g, 'the common factor not read', 10, 34, '#8a8a96', 11);
+        txt(g, 'from the centre: amounts, no ratio', 10, 18, '#d4a052'); txt(g, 'the common factor not read', 10, 34, '#8a8a96', 11);
         txt(g, 'geometric mean', W - 118, y1 - 4, '#8a8a96', 10);
 
         // the writer
         [g, W, H] = fit($('writer'));
         const w = writer(p, S.writer);
         if (!w.ok) {
-            txt(g, 'nothing written yet: missing', 14, 28, '#d96e5b', 13);
+            txt(g, 'nothing set down yet: missing', 14, 28, '#d96e5b', 13);
             w.missing.forEach((m, i) => txt(g, '· ' + ({ addresses: 'the addresses (where each amount lies)', amounts: 'the amounts (how far)', unit: 'one amount carried in (the unit)' })[m], 22, 52 + 20 * i, '#e6e4ee'));
         } else {
             const ccx = W / 2, ccy = H / 2, s2 = Math.min(W, H) * 0.12;
@@ -222,7 +222,7 @@
             g.strokeStyle = '#e6e4ee'; g.lineWidth = 2; g.beginPath();
             w.radii.forEach((r, k) => { const q = [ccx + r * Math.cos(w.dirs[k]) * s2, ccy - r * Math.sin(w.dirs[k]) * s2]; k ? g.lineTo(...q) : g.moveTo(...q); });
             g.closePath(); g.stroke();
-            txt(g, `written in H: radius along θ = 0 is ${w.carried.toFixed(3)} H (carried in)`, 10, 18, '#e6e4ee');
+            txt(g, `in H: radius along θ = 0 is ${w.carried.toFixed(3)} H (carried in)`, 10, 18, '#e6e4ee');
             txt(g, 'rings: 1, 2, 3, 4 H', 10, H - 10, '#8a8a96', 11);
         }
 
@@ -246,7 +246,7 @@
             `inscribed: ${ins.length} directions from A, ${(ins[0].alpha * 180 / Math.PI).toFixed(1)}° to ${(ins[ins.length - 1].alpha * 180 / Math.PI).toFixed(1)}° from the chord${ins.some(r => r.alpha > Math.PI / 2) ? ' (some past square: this outline is not a circle through A)' : ''}; scaling the world moves none\n` +
             `central: ${NC} amounts, raw ${c.raw[0].toFixed(3)} … (each × e^a₀), held as the shape ${c.shape[0].toFixed(3)} … (unchanged by a₀)\n` +
             `central mean over a uniform turn, exactly ${ex.toFixed(4)} (shape units); the inscribed readings have no mean\n` +
-            `a write: ${w.ok ? 'written, the outline at its true size in H' : 'missing ' + w.missing.join(', ')}`;
+            `set down: ${w.ok ? 'the outline at its true size in H' : 'missing ' + w.missing.join(', ')}`;
     }
     const sync = () => { for (const k of ['addresses', 'amounts', 'unit']) $('w-' + k).classList.toggle('on', S.writer[k]); };
     function set(o = {}) {

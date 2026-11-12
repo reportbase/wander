@@ -382,7 +382,7 @@ Together the two tests sort any fact four ways: readings of the directions (the 
 readings of what arrives (a colour, a ratio of intensities), and writings of either (a range in metres, a flux in a
 unit). Neither test needs this essay's vocabulary to run.
 
-The second test is also why reads never race with writes. A write states the payload; the second test says a change of
+The second test is also why reads never race with writes. A write changes the payload, being a thing among the things met; the second test says a change of
 payload moves no direction; so a write never moves what a read stands on, and reads, which add nothing, agree in any order.
 In computing that is the condition for running reads and writes together safely (Bernstein's, 1966), and much of the work
 there goes into keeping it when addresses would otherwise move with their contents. Here the directions and their heat are

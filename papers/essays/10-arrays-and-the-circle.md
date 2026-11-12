@@ -99,7 +99,7 @@ With the size held, there is neither.
 With nothing related there is no array: a length H, the thumb, but no index and no relation to store.
 
 The blueprint's arrays are the circle and the shape, with the length known. The read's are the payload on the index and the index
-itself, with the length missing. That one number is what writing supplies.
+itself, with the length missing. That one number is a count of the whole.
 
 **Laid on the sweeps.** Take K = 8 places on the quarter turn. A direction's share of the turn is g = (2/π)·arctan(v/h),
 so its index is k = ⌊8g⌋, with the horizon kept in the last place. No length enters. The places' boundaries are tan(kπ/16):

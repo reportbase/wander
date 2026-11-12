@@ -57,7 +57,7 @@ For a read the two places are filled from opposite sides. The per is the sweep's
 length gives a read its directions in order, one after the next, before anything arrives (the third essay). The of is
 the payload: the light, the colour, whatever arrives along each direction. So a rate is always payload per
 direction, and the third essay's split between the two is a fraction, the direction underneath and the payload on top: the
-per is read, and is geometry; the of is written, the world's marks met there, and is physics.
+per is read, and is geometry; the of is met, the world's things and marks, and is physics.
 
 The two places behave differently when the world is scaled. Scale everything by k and every direction stays where it was,
 since a direction has no size. So the per never moves. The of may or may not: a payload compared with another payload
@@ -554,7 +554,7 @@ it does not make them. It is taken with the Cauchy, its readings and their corne
 the read.
 
 **A rate is of something, per something.** The per is the sweep's: the directions and their heat, given before anything arrives, their
-spacing the frame's own rates. The of is the payload, met: the world's writing. A rate lays a write over a read.
+spacing the frame's own rates. The of is the payload, met: the world's things. A rate lays what is met over a read.
 
 **The corner is where two rates meet**, v filling as fast as h empties, and **the Cauchy is a speed**, turn per reading,
 the per against itself with no payload in it: which is why it is the heat of the directions and not what arrives.

@@ -80,7 +80,7 @@ write on one location. Most of the machinery of concurrency, locks, versions, co
 (multiversion concurrency control), exists to keep that meeting from happening, or to make it harmless.
 
 The split this series turns on is that condition, given rather than built. A read adds nothing, so reads of one geometry
-agree in whatever order they are taken, or all at once. A write states the payload, and the second test of the third
+agree in whatever order they are taken, or all at once. A write changes the payload, being a thing among the things met, and the second test of the third
 essay says a change of payload moves no address. So a write never moves what a read stands on, and never runs into one.
 
 The failures in computing are exactly where that breaks: places whose addresses move with their contents. A vector
