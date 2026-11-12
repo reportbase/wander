@@ -20,9 +20,9 @@ gets simpler in Ω, the formula was about one sweep. Where it gets worse, it was
 several sweeps joined into a whole.
 
 The order: the operation (§1), its measure and its total (§2), Ω times its reciprocal (§3), the Cauchy's coefficient
-(§4), the corner (§5), two charts and one horizon (§6), three thumbs (§7), facings, Euler and composing (§8), what gets plainer and
-sweep composed with itself (§9), what gets plainer and what does not (§10), what Ω does not do (§11), who saw which
-piece (§12), and what it changes (§13).
+(§4), the corner (§5), two charts and one horizon (§6), three thumbs (§7), facings, Euler and composing (§8), a sweep
+composed with itself (§9), what gets plainer and what does not (§10), what Ω does not do (§11), who saw which piece
+(§12), and what it changes (§13).
 
 ---
 
