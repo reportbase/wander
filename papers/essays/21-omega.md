@@ -225,6 +225,26 @@ So w(s) × w(1/s) = −1, at every slope. In words: a sweep and its exchange tog
 the sweep is its own exchange, and the statement is i × i = −1. Euler's identity is the same statement with the whole
 sweep's length named, e^(2iΩ) = −1, and the naming is the only part that needs a limit.
 
+The same fact can be said in weights. The exchange carries the slopes below s onto the slopes above 1/s, weight for
+weight (§5), so the weight below s and the weight below 1/s add to Ω. Classical geometry writes that as two angles
+adding to a quarter turn. And the two halves of this essay, the measure of §2 and the landing point here, are joined by
+one line: the weight of the slopes below s is the logarithm of the landing point, over 2i,
+
+μ(s) = (1/2i)·ln w(s),
+
+followed continuously from home. So there is one operation, and it has three charts:
+
+| chart | a sweep is | composing two is |
+|---|---|---|
+| slope | s | s ⊕ a |
+| weight passed | μ(s), out of Ω | adding |
+| landing point | w(s) | multiplying |
+
+The slope chart is rational and has no total in it. The weight chart is where Ω lives. The landing-point chart is where
+Euler's notation lives, and the logarithm passes between the last two, which is why it separates a turn from a size as
+it does. The finite law, w(s) × w(1/s) = −1, gives the result; the limit (1 + iθ/n)ⁿ is needed only to say how long the
+sweep was, and has to be handed that length to begin with.
+
 ## 9. What gets plainer, and what does not
 
 The experiment sorts formulas. Some lose a stray factor of 2; some gain one.
