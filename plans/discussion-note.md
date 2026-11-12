@@ -331,3 +331,12 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
     things, a distance in thumbs: what a read gives of written things, Tom's "the reading is of something that is
     discrete"; the old "extent"), and continuous and scale variant (the number line in a unit, which nothing in
     the physical world is: the blueprint's).
+
+    **Tom, continuing, not settled:** "seems like a count is like the blueprint. the natural world does not
+    count." Claude's notes, not ruled: both off-diagonal boxes are then outside the natural world (a count:
+    discrete and scale invariant; the number line in a unit: continuous and scale variant), and only the diagonal
+    is in it (a read: continuous, scale invariant; a write: discrete, scale variant). Strides are things, so
+    writes; "514" is not in the world. A distance in thumbs had by two looks together is a continuous ratio of
+    slopes, 1/s1 + 1/s2, so a read, with no count in it; counted in thumbs it is the blueprint's account (R642's
+    split). The blueprint as a count carried to its limit (R646) puts count and blueprint in one family. This
+    would reverse R880 ("the write of the relation is a count").
