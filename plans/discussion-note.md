@@ -220,3 +220,7 @@ every keeping is a count.
    d1/d2 against d/H are the same fact.
    **Next:** if wanted in the paper, one paragraph in section 6 at "A tower of extents" and one sentence in section 1
    at R881's passage; essay 1 and essay 6 after. No new test needed (the tower is exact already: TWR, `slide-rule.html`).
+
+**Item 14 carried out** (12 Nov, R884; Tom: "Pull this all together into a new essay. Summarize it in the papers."):
+essay 20 (`papers/essays/20-scaffolding.md`) and *Reads and Writes* section 1 ("A denominator is scaffolding", and a
+paragraph under "The paper in one equation") and section 6 (under "A tower of extents"). The arch not brought back.

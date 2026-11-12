@@ -192,6 +192,18 @@ law either. The law gives the expression; one write fills its empty place. This 
 limit and reaches none: it covers every finite chain at once, and a limiting value such as π is the writer's at the
 limit, never had by shortening. **A reading**, resting on WLK and ONE.
 
+**A denominator is scaffolding.** Every reading is one thing in terms of another, and the other, the denominator, is
+half of it: a reading with nothing under it is no reading. For a read the denominator is the thumb's share. Two things
+are true of it together. Any size will do: 3 and 4 read against 1, 7, 1000 or 0.004 give 3/4 every time, which is the
+first test seen from underneath. And it is never zero: where the thumb's share is empty there is no reading, only the
+horizon. Within one read nothing comes down; the thumb's size was never in it. What comes down is the middle of a chain
+of readings joined, a/b · b/c = a/c, where b was needed for both links and is in neither end (§6, "A tower of extents").
+That is said by whoever keeps the chain, so scaffolding is the writer's word, and a scaffold put up and kept, a counted
+step, is a write of the relation. The last "in terms of" never comes down: a/c is still in terms of c. Where a tower
+ends is its kind: on the thumb, a read; on a kept step, an extent; on an agreed unit, a size. A unit is scaffolding
+left up by agreement. **A reading**; the arithmetic is exact. The older statement is the archive's centring (*Degrees of
+Freedom* §3.1), taken here without its Roman arch.
+
 | | memory | unit |
 |---|---|---|
 | the geometry: reads, and the laws relating them | none | none |
@@ -414,6 +426,14 @@ along the rim, 90° off the look, and what is left is heat thinning outward with
 Euler's formula says the same: the writer's point x + iy = r·e^(iθ), divided by the thumb, is the reading
 1 + is = sec θ·e^(iθ); divided once more by its mirror, (1 + is)/(1 − is) = e^(2iθ), every length is gone and the horizon
 lands at −1. What the equation leaves out is the paint (D6). **Classical**; the reading is the paper's.
+
+The same equation shows what a denominator does. In the plane, x² + y² = r² can be taken in terms of three things. In
+terms of a unit it is the circle as a size: 9 + 16 = 25. In terms of the pair's own size r it is the circle as shares,
+h² + v² = 1: 0.36 + 0.64 = 1, and it closes exactly because both shares were read against one denominator; the equation
+is the receipt of that. In terms of the thumb x it is 1 + s² = (r/x)², one slope, and its right side turned over is the
+heat h² = 1/(1 + s²). So the circle and the Cauchy are one equation in terms of two different things from inside it. In
+each the denominator's size is in no result: (3, 4), (21, 28) and (0.03, 0.04) give the same shares and the same slope.
+They differ in cost: the slope needs only the two lengths against each other; the shares need r, a square root (§9).
 
 **In space the plane parts.** The across part survives: space laid out by ln(d/H) beside the direction is a line times
 the sphere of directions, and scaling moves only the line's coordinate and commutes with every turn. The read's heat can
@@ -956,6 +976,14 @@ middle lengths drop out and the ends survive; a loop's gaps sum to zero, and wha
 and cannot place. Laid across the plane, extents are gaps, and composing them is adding gaps: N extents hold all
 N(N − 1)/2 ratios between them, a slide rule, straight across and circular up, with nothing computed. **Reading**;
 `slide-rule.html` shows it.
+
+The middle storeys are scaffolding (§1, "A denominator is scaffolding"). A table three quarters of a door and a door two
+fifths of a wall give a table three tenths of the wall, and the door, needed for both readings, is in neither side of
+the result; with a door half as tall the readings are 3/2 and 1/5 and the result the same. The bottom storey stays:
+three tenths *of the wall*. So a tower gives the whole one number short, the size of what its last storey was read
+against. A figure read from inside is the same tower closed into a loop: radii 2, 3 and 6 leave the ratios 3/2, 2 and
+1/3, which are its shape and multiply to 1; the circle is the figure whose ratios are all 1 (§2, the payload by its
+ratios).
 
 **Turns, counts and corners.** A read's turns are continuous: between two directions it passes through every one between,
 so a read never turns sharply. A corner, a change of direction at one place, is met only by walking a line and stopping
