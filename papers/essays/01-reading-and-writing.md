@@ -15,8 +15,8 @@ fit.
 One consequence belongs up front, because the words invite it. Put *read* and *write* side by side and anyone who has
 programmed thinks of a race: a read and a write meeting on one thing, the answer depending on which came first. Here that
 never arises. A read adds nothing, so reads taken in any order, or all at once, agree. What a read gives is a direction and
-its heat; what a write states is the payload met along it, and writing the payload moves no direction, so no write runs
-into a read. Computing has to engineer that separation; the geometry starts with it. In a programmer's words a direction is
+its heat; what a write changes is the payload met along it, a thing put where things are met, and a change of payload moves no
+direction, so no write runs into a read. Computing has to engineer that separation; the geometry starts with it. In a programmer's words a direction is
 an address and the payload the value stored there; the metaphor serves, so long as the heat under the address is
 remembered.
 
@@ -663,7 +663,7 @@ the readings.
 **It keeps reads from racing.** In computing, two operations can run together without a race when neither writes what
 the other reads or writes (Bernstein's conditions, 1966): reads with reads are always safe, and the trouble is a read
 and a write meeting on one place. The split here is that condition built in. Reads add nothing, so they never conflict
-with one another; a write states the payload, and the payload is not where the directions are kept, so it moves none of
+with one another; a write changes the payload, and the payload is not where the directions are kept, so it moves none of
 them. A system whose addresses move with their contents, an array that reallocates or a table that rehashes, has to
 rebuild the separation by hand, with stable handles or copies kept for its readers. Geometry never had to: its directions and
 their heat are given, and nothing writes to them. This is argued from a principle computing already holds, not proved anew.
