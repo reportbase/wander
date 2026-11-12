@@ -55,7 +55,8 @@ and found a rule on it: brake so that the time to contact shrinks no faster than
 a standpoint is given motion before it is given an object.
 
 Three limits keep this honest. A read holds no time and holds only where the standpoint is now, so a stream, and
-everything said along it, is reads joined, not a read. What the joining gives has to be named before it is classed.
+everything said along it, is reads joined, not a read; and for one standpoint to join them over time the earlier
+read has to be kept, in some thing, which is a write. What the joining gives has to be named before it is classed.
 The number had from two reads a tick apart is exactly the distance over the step between them, d₁/B: a ratio of two
 distances, as a distance in thumbs is. Calling that number a time adds a premise no read supplies, that the steps to
 come go on like the one taken; so the time to contact is not listed among the extents, and its kind as a time is left
@@ -188,10 +189,12 @@ Repeating the reads shows the order again. Averaging the reciprocal depths gains
 Cauchy of the same scale; the median of the depths narrows. Parallax is the Cauchy's own composition carried across two
 standpoints, and the baseline is the one amount in it.
 
-**The place never needed π.** State parallax in slopes and no angle is left in it. Two standpoints a counted step B
+**The place never needed π.** State parallax in slopes and no angle is left in it. Two standpoints a step B
 apart each read the target's slope off the line between them, s₁ and s₂, measured inward; the depth d off that line is
-given by 1/(d/B) = 1/s₁ + 1/s₂. Slopes 3 and 6 put the target exactly 2 steps off. A write, the step counted
-and the two reads joined, has the extent in steps exactly, in fractions; neither read alone holds any of it. The corner
+given by 1/(d/B) = 1/s₁ + 1/s₂. Slopes 3 and 6 put the target exactly 2 steps off. The two looks held together have
+the extent in steps exactly, in fractions: a continuous ratio of their slopes, with no count in it and no write;
+neither look alone holds any of it. (Two standpoints at once, two eyes, need nothing kept. One standpoint moved needs
+its earlier look kept, in things, and the step taken, and those are writes.) The corner
 circle is the two slopes reciprocal, s₁·s₂ = 1, known without counting the step: above 1 the target is inside, below 1
 outside. On it d/B = s/(1 + s²): slopes 2 and ½ give the point (1/5, 2/5), a 3-4-5 triangle. The error's curve is
 rational as well, (k + 1/k)/2, the same at k and 1/k; cosh(ln k) is the blueprint's smooth name for it. π comes in only
@@ -308,7 +311,7 @@ direction, written, or further standpoints.
 Say it plainly: **a read never has a shape.** It has the sweep, the same directions with the
 same heat for every world, and the paint on them. *The heat is given; the paint is met.* A thing is to it the directions
 it paints and what it paints them with: a patch of directions, what is in front of what, a colour. How far the surface lies along each direction is an amount, and the geometry has removed every amount
-before anything is read. Every way to the shape needs more than one read: further standpoints give it as extents, in the
+before anything is read. Every way to the shape needs more than one standpoint: further standpoints give it as extents, in the
 step's length; ranging and a blueprint handed over give it in a unit, as writes. Shape is never the read's. A read has the Cauchy sweep and its paint.
 
 That an image does not settle the shape that made it is an old observation: Helmholtz's perception as unconscious
@@ -344,7 +347,7 @@ by the thing it meets. Moving a thing changes its direction and not its shape; r
 direction. Its size in the room's own units comes from neither, but from a shared denominator: the thing and the wall side
 by side at one distance give the one against the other, and the distance cancels.
 
-Take one step and the room becomes a map, every corner placed and every thing sized, in steps: places, unmoved when the
+Take one step and the room becomes a map, every corner placed and every thing sized, in steps: extents, unmoved when the
 room and the step are scaled together. That was the first essay's opening scene. Walk round a thing and its shape fills in, direction by direction from its centre.
 
 Then the first essay's distinction returns in a practical form. **To move the furniture is to write.** An observer that wants
@@ -352,7 +355,7 @@ a chair a metre from the wall, or a picture at eye level, wants a thing to be at
 must write, and writing needs what reading never does: the observer must move and engage with the room
 physically. A known step, a hand laid flat against the wall, a tape measure. One amount carried in writes every length of
 the room in its unit, and only then can the place wanted be named. (Placing the chair three strides from the wall needs
-no unit: that is an extent. The metre is what makes it a write.) Reading the room again afterwards is free.
+no unit: that is a count of strides, and the strides are the writes. The metre puts it down as an amount in a unit.) Reading the room again afterwards is free.
 
 *Demos: the room; walking the room; the room in ratios; one blueprint (write the room).*
 
@@ -396,20 +399,23 @@ stand, and the one amount it is handed.
 
 Climb the ladder of this essay once more, and count the variables. From one standpoint there is one length, H, the thumb,
 and a direction; nothing in it is a place, nothing is counted, and a read has a vantage, not a shape (counting comes
-with parallax, and one length counted makes the rationals: the fourteenth essay). A
+with the step walked, and one length counted makes the rationals: the fourteenth essay). A
 second standpoint adds a second variable, the step between the two. Now each point, matched in both looks, is two rays
 crossing, and its distance comes out of the crossing's lengths and angles, sines and square roots, numbers no single length
 makes. More standpoints give every place seen, in the step's length: the places a blueprint's box states on its three
 number lines, up to its size. Count the step in an agreed unit and the places are in that unit.
 
-So parallax is how an observer comes to the places the blueprint's cube states, up to its size: the passage from a read to an extent. It has
-moved, joined its standpoints and is holding what no one standpoint holds, every place in its own stride, and scaling the
-world with the stride moves none of it. Only when the stride is counted in an agreed unit does it write. When it stops and
-looks again, it reads. Reads, extents and writes are not three kinds of observer; they are what one observer is doing.
+So parallax is how an observer comes to the places the blueprint's cube states, up to its size: the passage from one look to an extent.
+Two standpoints held at once, two eyes, have the extent by reading alone, a ratio of their slopes. An observer that
+moved to its second standpoint kept its first look and took a step, and the mark that keeps and the stride taken are
+writes; what it then holds, every place in its own stride, is still unmoved when the world is scaled with the stride.
+Put down in an agreed unit, the places are amounts, writes. When it stops and looks again, it reads. Reading and
+writing are not kinds of observer; they are what one observer is doing, and an extent is not a third kind between
+them (the sorting is the series' reading).
 
 The first essay's survey says the same thing in its own words: the many directions are read (the instrument writes each
 down in degrees), with the base as the thumb every side is an extent, and the one base counted in a unit is the write; a
-surveyor does all three in one morning.
+surveyor does all of it in one morning.
 
 And the passage has degrees. Knowing V, the mountain in the distance, is not a switch thrown by the second standpoint; it
 comes in amounts, three ways. *In what:* in the step taken, in H if the step was H (one thumb, and extents come out in
@@ -448,7 +454,8 @@ down, the one write did not (*Reads and Writes in Physics* (`../reads-and-writes
 give the figure, exact, in the length of the step between them; the observer that joined them has placed the figure. The
 last rung is the agreed length that fixes the scale, the write. Astronomy's history of
 the astronomical unit is that rung, measured from outside for two centuries and finally agreed. Each standpoint's
-reading is reading; joining them is placing; agreeing the unit is writing.
+reading is reading; two held at once place by reading still, and one that moved placed by a step and a look kept,
+which are writes; agreeing the unit is writing an amount.
 
 **The Cauchy.** It appears twice here. Parallax has the corner and the bell of the steady turn, for the same reason: the
 pair's facing turns fastest at the corner. And on the far side of the reciprocal, inverted parallaxes behave exactly as

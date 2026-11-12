@@ -56,7 +56,7 @@
 <body>
 <main>
     <h1>Reads and the counted walk</h1>
-    <p class="lede">A read is taken from one side of the box; a write walks all the way round it, counting. From one
+    <p class="lede">A read is taken from one side of the box; a walk goes all the way round it, stride by stride, counted. From one
     standpoint the two reads, the inscribed and central sweeps, give the frame at no size: the blueprint's numbers for them, 2/π and π/2, multiply to 1. A second standpoint, one step away, places the box
     and sizes it in that step. One amount carried in, the step counted in strides, writes it in metres. The walk counted needs no
     reading at all: the observer walks the whole thing, and the strides go on the number line, where every stride is laid alike and
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-    <p class="note">The frame's 1 needs no π: π/2 and 2/π are reciprocals, a read's s × (1/s) = 1. A write, a walk counted,
+    <p class="note">The frame's 1 needs no π: π/2 and 2/π are reciprocals, a read's s × (1/s) = 1. A walk counted
         holds fractions near π and never π itself; only the completed circle, the blueprint's, holds it.</p>
     <p class="note">Related: <a href="one-read.html">one turn, one read</a>, <a href="write.html">writing, step by step</a>,
     <a href="room-walk.html">walking the room</a>, <a href="mountain.html">the mountain and the thumb</a>.
@@ -222,8 +222,8 @@
             '3': `<span class="b">One amount carried in.</span> The step counted: ${r3.strides.toFixed(2)} strides of ${STRIDE} m, `
                 + `so H = ${f3(r3.Hm)} m, and everything read in H is written in metres.\nV* = ${f3(r3.Vm)} m, d = ${f3(r3.dm)} m. `
                 + `Many readings, one amount.`,
-            writer: `<span class="w">The walk counted, a write.</span> Nothing is read: the observer walks the whole box, front and back, `
-                + `counting strides, each laid alike on the number line, so they add: ${wr.strides.front.toFixed(2)} along the front, ${wr.strides.right.toFixed(2)} along a side.\n`
+            writer: `<span class="w">The walk counted.</span> Nothing is read: the observer walks the whole box, front and back, `
+                + `counting strides (each stride a write, the count laid over them), each laid alike on the number line, so they add: ${wr.strides.front.toFixed(2)} along the front, ${wr.strides.right.toFixed(2)} along a side.\n`
                 + `V* = ${f3(wr.Vm)} m, depth ${f3(wr.Dm)} m. The true breadth is held because it was walked and counted.`,
         }[s];
         $('say').innerHTML = say + (Math.abs(st.lk) > 1e-9 ? `\n<span class="x">The world scaled by k = ${$('kv').textContent}:</span> `

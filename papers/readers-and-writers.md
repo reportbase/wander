@@ -21,12 +21,14 @@ A point seen from a standpoint can be written, in the blueprint's notation, ln(z
 at arm's length. Up is the direction; across is the distance, counted in thumbs. Against a unit outside the world the
 across part has one more term, ln(d/metre) = ln(d/H) + ln(H/metre). Scaling the world, every length multiplied by one
 factor (the observer's own thumb and stride with it), leaves the direction and the distance in thumbs where they were
-and moves only that last term, the thumb in metres, by the same amount for every point. That one motion sorts
-everything an observer can hold into three kinds. A **read** is the direction, [h : v]: one standpoint has
-it, and scaling moves it not at all. A **parallax extent**, an *extent* for short, is a gap across, a distance in thumbs or one distance against another:
-scaling leaves it unchanged too, but no single read holds it; it needs a second standpoint and the step between
-(parallax). A **write** is an amount, the across axis's zero tied to a unit carried in from outside, a metre or a second:
-it is exactly what scaling the world moves. The write is the scale-variant companion of the read. These are acts:
+and moves only that last term, the thumb in metres, by the same amount for every point. Two properties sort
+what an observer has: whether it is continuous or discrete, and whether that scaling moves it. A **read** is continuous
+and unmoved by scaling: the direction, [h : v], from one standpoint, its slopes spread by one density. Two looks held
+together are still a read: the distance they give in thumbs, a **parallax extent**, an *extent* for short, is a
+continuous ratio of their slopes (parallax). A **write** is discrete and moved by scaling: a bounded thing with a size, a
+stone, a stride, a mark, a metre bar, and an amount put down in a unit carried in from outside, a metre or a second. The
+write is the discrete, scale-variant companion of the read. The two mixed cases are tools of description: a count,
+discrete and unmoved by scaling, and the number line in a unit, continuous and moved by it. Read and write are acts:
 there is no reader and no writer here. Every read has a vantage and one hemisphere; the *blueprint*, the drawn shape,
 has both hemispheres at once and no vantage, so it is neither a read nor a write. It is classical geometry, the view
 from no standpoint, and it is in this paper only as a point of comparison: the paper is about reads and writes.
@@ -39,9 +41,9 @@ while the paint changes. Because the read adds nothing and a change to the paint
 
 The geometry has no memory, and its laws need none. A law, tangent addition or the exchange behind Euler's identity,
 says what any two directions give together; it holds for every pair at once, and nothing in it happened. Memory is
-needed only for which steps were taken, never for what steps do. So three things stand apart: the geometry, complete
-with no memory and no unit; keeping, a write of the relation, which holds a history and still no unit; and the unit, a
-write of the scale, where physics enters. The blueprint's completed equations each have a read's form that is rational in
+needed only for which steps were taken, never for what steps do. So two things stand apart: the geometry, complete
+with no memory and no unit; and writes, things with a size, where physics enters. A count kept of the steps taken is a
+description laid over those writes. The blueprint's completed equations each have a read's form that is rational in
 the slope and needs no limit: for e^(iπ) = −1 it is w(s)·w(1/s) = −1 with w(s) = (1 + is)/(1 − is), a direction and its
 reciprocal, and at the corner i·i = −1 (§1, "The same relation, held two ways").
 
@@ -54,8 +56,39 @@ which need a unit, with the plane as the frame that holds the division in one li
 far up. You have every thing's direction and nothing's distance; a room twice as large, seen from the same corner, gives
 the same notes. That is a read. Take one stride along the wall and look again. Each thing's two directions cross, and
 where they cross gives how far off it is, in strides: the room now has a shape and a size in your stride, and a room twice as large,
-walked with a stride twice as long, gives the same extents. That is an extent. Count the stride in metres, and the room is
+walked with a stride twice as long, gives the same extents. That is still reading, two looks held together, and nothing
+in it has a size in any unit; the stride itself is a write, a thing with a size, and the number of strides a count laid
+over it. Put the stride against a metre bar, and the room is
 in metres; a room twice as large now gives numbers twice as large. That is a write.
+
+**A read and a write.** Two properties sort everything this paper discusses. One is whether a thing is continuous or
+discrete. The other is whether scaling the world, the thumb included, moves it.
+
+*A read is continuous and unmoved by scaling.* From one standpoint, with the thumb held out as H, every direction has a
+slope s = v/h, and the slopes are spread by one density, ds/(1 + s²) up to its total: the Cauchy density. Nothing in it
+is bounded, nothing in it is counted, and it is the same over a world of any size. Two looks held together are still a
+read: the distance they give, in the step between them, is a continuous ratio of their slopes,
+1/(d/B) = 1/s₁ + 1/s₂ (§6), with no count in it.
+
+*A write is discrete and moved by scaling.* It is a bounded thing with a size: a stone, a stride, a mark on a wall, a
+metre bar. An amount put down in a unit, so many metres, is a write too: a mark, and a number of units that scaling the
+world changes. A write is over once it is made, and it is used only by being read (§7). Reading is continuous, and what
+is read is discrete.
+
+| | unmoved by scaling | moved by scaling |
+|---|---|---|
+| **continuous** | a read | the number line in a unit |
+| **discrete** | a count | a write |
+
+The other two boxes mix the properties, and both are tools of description. A count is discrete and unmoved by scaling:
+the strides to the mountain are writes, and "514" is an account laid over them; what is kept of it is kept as things,
+marks or pebbles, each a write. The number line in a unit is continuous and moved by scaling: a length as an exact real
+number, the circle held whole, π. That box is the blueprint, classical geometry, which this paper sets beside a read's
+form for comparison; it is nowhere in the physical world. The same holds of this paper's own terms: the slope, the
+density's formula and this table are descriptions, and a read is described by them. When something will not sit on the
+diagonal, the first thing to ask is whether it is a description. Heat and paint, used below, are pictures of the density
+and of what is met along a direction, and the definition does not rest on them. **A reading**, offered as a way to sort;
+it claims nothing about what the world is made of. The two tests (D5, D6) keep their work.
 
 - **D1. One point, two parts.** A point seen from a standpoint is, in the blueprint's notation, ln(z/H) = ln(d/H) + iθ, H
   the thumb held out at arm's length: up the direction θ, across the distance in thumbs. In space the point is d·u, u a
@@ -69,24 +102,31 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   and is no part of it (§4). One read holds no distance. Its sweep runs from h to v on the thumb H alone, with no V in
   it, and stops at its horizon: a read closes nothing. Each read is orthogonal to every other, in the plain sense of
   independent: it stands by itself and shares nothing with them. No inner product is meant, and two reads can still
-  be related from outside, by an extent, an order or a map (D7); closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
+  be related from outside, by an extent, an order or a map (D7). Two looks held together at once, with nothing kept
+  between them, are still reading (D3); closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
 - **D3. A parallax extent**, an **extent** for short, is a gap across: a distance in thumbs, d/H, or one distance
   against another, d₁/d₂. Scaling the world
-  leaves it unchanged, as it leaves a read; but no single read holds it. It needs a second standpoint and the step
-  between them: parallax (§6), which is why it carries that name. It has two named cases: a *parallax distance*, d/H,
+  leaves it unchanged, as it leaves a read; but no single look holds it. Two looks held together give it, as a
+  continuous ratio of their slopes: parallax (§6), which is why it carries that name. So had, it is a read, not a third
+  kind: two eyes have it with nothing kept and nothing counted. Counted out, so many thumbs or strides, it is a count,
+  a description (above). Where one standpoint moves, the earlier look has to be kept to be there for the later one, and
+  what keeps it is a write. It has two named cases: a *parallax distance*, d/H,
   along the line of sight, and a *parallax breadth*, V\*/H, across it. The word says how far or how large, not where: a
   read has no position (below, "Steps, never positions"), and an extent is not one either. In this paper "extent"
   without more is always in thumbs or steps; a size in a unit is a write (D4). The verb stays "to place": a step places
   a thing, and what it gives is an extent. V\*/H, a party's true breadth in thumbs, is an extent. An extent is a relation
   between standpoints and named things in space; not every number had from two reads is one (§12, O9).
-- **D4. A write** is an amount in a unit carried in from outside the world: a metre, a second, a hertz, an agreed
-  notch. For the geometry it is the across axis's zero tied to a unit, a distance in metres, and one such amount serves
+- **D4. A write** is discrete and moved by scaling: a bounded thing with a size. A stone, a stride, a mark on a wall
+  and a metre bar are writes. So is an amount put down in a unit carried in from outside the world: a metre, a second,
+  a hertz, an agreed notch. The exact amount, a real number with no last digit, is the number line's, the blueprint's
+  (§6, "Extents come by degrees"). For the geometry it is the across axis's zero tied to a unit, a distance in metres, and one such amount serves
   every extent hung from the same thumb (§7). A payload has writes too: a frequency in hertz, a brightness in watts.
   Scaling the world in a write's own dimension moves it (D5). A change of units is a different operation from scaling
   the world: it moves every write's number and no extent, no read as a read holds it (an angle in degrees is the
   blueprint's coordinate on a read, and its number follows the blueprint's choice of degree or radian).
 - **D5. The first test.** Multiply every length in the world by k, the observer's thumb and stride included; the units
-  stay outside the world. What moves is a write. Among the geometry's quantities, what stays is a read or an extent.
+  stay outside the world. What moves is a write. Among the geometry's quantities, what stays is a read, an extent
+  among them; a count of the observer's own strides stays too, and is a count.
   This is the geometric test, and it
   sorts the geometry. In general the test is a named scaling, one dimension at a time: multiply every amount of that
   dimension in the world by k, the world's constants of that dimension included, the unit staying outside. A quantity
@@ -119,9 +159,8 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   relation with no cycle: which read is before which. A map carries one read's directions to another's, as a turn of
   the look or a change of motion does; it has an inverse, and maps compose. An order and a map hold no gap. A map's
   coordinate, a turn's angle or a boost's rapidity, is a representation of the map, not a further relation. This names
-  the relation being formed; it does not say every relation between reads is one of the three (§12, O4, O9). A
-  count, or a mark kept, is how a write is recorded; being an amount in a unit is what makes it a write. A count of
-  strides is a whole-number record of a ratio d/stride, an extent; the same count with the stride in metres is a write.
+  the relation being formed; it does not say every relation between reads is one of the three (§12, O4, O9). A count of
+  strides is a whole-number description of a ratio d/stride, an extent; the same count with the stride in metres is a write.
   A quantity's kind is what it is, not how it was had: an extent is a scale-invariant gap across, usually had by parallax,
   and a distance in thumbs handed over by another observer is still an extent. The kind attaches to the variable, not to
   its law: a Cauchy law on a direction's slope and a Cauchy law on the quotient of two amounts are two variables with
@@ -131,13 +170,11 @@ in metres; a room twice as large now gives numbers twice as large. That is a wri
   this direction, that gap, this light's frequency. A relation between two variables is another variable and is put to
   the same tests; it does not inherit the kind of what it relates. A representation of a variable, its number in a
   coordinate, a count, a mark kept, has the variable's kind: an angle in degrees and a pixel's index are reads in the
-  blueprint's coordinate and count. Only a unit carried in makes a write in D4's sense, a write of the scale. Keeping is
-  a write of a second kind, a write of the relation: a count of steps kept, a mark left at a start, an extent put on
-  paper in thumbs. It holds no unit and no scaling of the world moves it, and it is not a read either, since a read
-  keeps nothing. The first test tells the two writes apart; what tells a write of the relation from a read is only
-  that it was kept. Reading and the write of the relation are both prior to physics: neither holds a unit, and a
-  count of steps kept is as free of the world's size as the steps were. Physics enters with the write of the scale and
-  not before. The geometry itself keeps nothing ("A law needs no memory", below). Where this paper says "a write" without more, it means the write of the scale.
+  blueprint's coordinate and count. A count is neither a read nor a write. It is discrete, and no scaling of the world
+  moves it: a count of steps taken, an extent put on paper in thumbs. The steps are writes, things with a size; the
+  count is a description laid over them, and what is kept of it is kept as things, marks or pebbles, each a write. So
+  keeping is done in writes, and physics enters with the first write, a thing with a size, not only with the unit. The
+  geometry itself keeps nothing ("A law needs no memory", below).
 
 **A law needs no memory.** The geometry keeps nothing, and yet it holds functions that describe the composing of any
 number of steps: tangent addition, w(s) × w(1/s) = −1, Euler's formula. There is no conflict, because two things that
@@ -147,10 +184,10 @@ nothing in it happened. *Which steps were taken* is a history: a tenth of a swee
 the history needs keeping. Euler's formula looks as though it accumulates because the classical reading tells it as a
 journey round a circle; the function holds no journey, only the rule, available everywhere at once. So the geometry can
 say what a thousand steps would do without remembering one of them, and memory enters only when someone asks where a
-particular sequence has got to. The laws are **classical**; that keeping is a separate act, prior to physics, is a
+particular sequence has got to. The laws are **classical**; that keeping is a separate act, done in writes, is a
 **reading**. "Law" here means a geometric law only, a relation among the directions of one read. Laws in general
 are many things (a physical law carries units and constants) and are not a third kind beside the read and the write;
-the sorting stays the read and the two writes. That the geometry's laws are of this kind may be why the geometry needs
+the sorting stays the read and the write. That the geometry's laws are of this kind may be why the geometry needs
 no memory: offered as a likely reason, not shown.
 
 **A law in place of memory.** A geometric law is what the geometry has where an observer would need memory. An
@@ -169,18 +206,20 @@ w(s)·w(1/s) = −1 holds for every slope. What is collapsed is every sequence, 
 that is finite and rational: not one endless sequence carried to its end, which is the blueprint's limit. Steps taken one at
 a time are exact members of what the law describes, not approximations to it: strides compose exactly, ratios compose
 exactly, turns compose exactly by tangent addition. And the expression leaves a place empty, the n or the s. The geometry
-gives the expression and never fills that place; a read fills it (which slope, now) or a write of the relation (how many,
+gives the expression and never fills that place; a read fills it (which slope, now) or a count (how many,
 so far).
 
-**The write of the relation is a count.** In every case this paper works, what is kept comes to one thing: a count of a
-repeated step, from a kept mark. A count of strides is that plainly. A mark left at a start is the count's zero. An extent
-put down in thumbs is a count of thumbs. So the n in the law's empty place is the write of the relation, and it is what
+**What is kept is a count laid over writes.** In every case this paper works, what is kept comes to one thing: a count of a
+repeated step, from a kept mark. A count of strides is that plainly: the strides are writes, each a bounded thing with a
+size, and the count of them is a description, discrete, unmoved by scaling and not itself a write. A mark left at a start
+is a write, and the count's zero. An extent
+put down in thumbs is a count of thumbs. So the n in the law's empty place is a count, and it is what
 turns a read into a size: on the walk the read times the count is the mountain in strides (§6, "Read times count"),
 which neither has alone. Three limits keep this honest. The count is whole only in part: the house's corner is 514 and
 two sevenths strides from its door, and the two sevenths is not counted but read, as the last part's ratio to a stride;
-a write of the relation is a whole count and one more read. A count takes its step to be the same step each time, and
-the geometry does not supply that: the law's rungs are exactly alike, a walker's strides only roughly. And where the
-count is held is not said here (the table's middle row, still open). Nor is it claimed that every keeping is a count: an
+what is kept is a whole count and one more read. A count takes its step to be the same step each time, and
+the geometry does not supply that: the law's rungs are exactly alike, a walker's strides only roughly. And a
+count is held only in things, marks or pebbles, each a write; a number with nothing holding it is nowhere in the world. Nor is it claimed that every keeping is a count: an
 order kept, which of two reads came first, is kept without a step being repeated (D7's orders; O4). **A reading**, resting
 on WLK and ONE.
 
@@ -201,8 +240,8 @@ are true of it together. Any size will do: 3 and 4 read against 1, 7, 1000 or 0.
 first test seen from underneath. And it is never zero: where the thumb's share is empty there is no reading, only the
 horizon. Within one read nothing comes down; the thumb's size was never in it. What comes down is the middle of a chain
 of readings joined, a/b · b/c = a/c, where b was needed for both links and is in neither end (§6, "A tower of extents").
-That is said by whoever keeps the chain, so scaffolding is a word for writes, and a scaffold put up and kept, a counted
-step, is a write of the relation. The last "in terms of" never comes down: a/c is still in terms of c. Where a tower
+That is said by whoever keeps the chain, so scaffolding is a word for writes, and a scaffold put up and kept, a step
+taken and counted, is a write with a count laid over it. The last "in terms of" never comes down: a/c is still in terms of c. Where a tower
 ends is its kind: on the thumb, a read; on a kept step, an extent; on an agreed unit, a size. A unit is scaffolding
 left up by agreement. A denominator leaves no mark on a number written down, so two readings on different denominators
 can be joined by mistake: each of two people sees the other smaller, in terms of its own hand. Dividing one such reading
@@ -213,8 +252,8 @@ Freedom* §3.1), taken here without its Roman arch.
 | | memory | unit |
 |---|---|---|
 | the geometry: reads, and the laws relating them | none | none |
-| keeping: a write of the relation, which steps were taken | yes | none |
-| physics: a write of the scale, amounts | yes | yes |
+| a count: which steps were taken, a description kept in writes | yes | none |
+| a write: a thing with a size, an amount in a unit; physics | yes | yes |
 
 **The same relation, held two ways.** The central example of this paper is Euler's identity. The blueprint states it as
 e^(iπ) = −1: an exponential, the number e, and a half turn measured by π, each of them a limit (marked the blueprint's, §9).
@@ -241,7 +280,7 @@ three steps, each from its own start. Nothing in any of them says how far the th
 "three fifths of the way round", is a total of steps from a starting mark that was kept, and a read keeps no mark.
 Going back is open: the observer faces the other way and sweeps, and that too is a forward sweep, in the
 opposite facing. What it cannot do by reading alone is go back exactly to where it was. For that the steps must
-have been kept and totalled, or a mark left at the start: a write of the relation (D7). Without it the observer goes back
+have been kept and totalled, or a mark left at the start: a write, with a count laid over it (D7). Without it the observer goes back
 some way and has no means of telling when it has arrived. This is why an angle, the turn's whole measure and
 the arctangent sit together on the blueprint's side: each is a position, a total from a kept mark, where a read
 has only the step it is in and the heat along it. There is no circle anywhere in this. A circle is one fixed dial on
@@ -274,10 +313,10 @@ own space (§4), and D6, not this table, sorts it.
 | | moved by scaling? | held by one standpoint? | kind |
 |---|---|---|---|
 | a direction [h : v] (up) | no | yes | read |
-| a gap across: d/H, d₁/d₂, V\*/H | no | no: two standpoints and the step | extent |
+| a gap across: d/H, d₁/d₂, V\*/H | no | no: two looks held together | a read (an extent) |
 | the across zero tied to a unit | yes | no | write |
 
-Read, extent and write are so the named outcomes of two tests that cross, and the crossing has a fourth box, the
+Read and write are so the named outcomes of two tests that cross, and the crossing has a fourth box, the
 payload's:
 
 | | the geometry: stays when what arrives changes (D6) | the payload: changes with what arrives (D6) |
@@ -289,13 +328,14 @@ A write is found in both columns; a read and an extent are the geometry's alone;
 counterpart of a read, unmoved by scaling and not a direction of the geometry. Being unmoved by scaling therefore never
 shows that a quantity is a read. One thing can supply several variables of different kinds: a pixel's value in the
 sensor's unit is a payload's write, its ratio to its neighbour a ratio of payloads, the pixel's position in the grid a
-count of directions, a write.
+count of directions, a description.
 
 **Reads, writes and the blueprint.** There are reads and writes; there is no reader and no writer. Both are acts, and
-one observer does both: it reads while it stands and turns, and writes while it walks and counts or agrees a unit. A
+one observer does both: it reads while it stands and turns, and writes while it strides, leaves a mark or agrees a unit. A
 read has a vantage and one hemisphere, and there are two of them, the two sweeps: the inscribed, from home to a horizon
 (the blueprint's number for it 2/π, approached), and the central, across a bounded thing to its rim (π/2, reached). Both
-are reads. A write is what is counted and kept, or tied to a unit (D4, D7); it is how reads are joined. Neither a read
+are reads. A write is a bounded thing with a size, a stride taken, a mark made, a unit carried in (D4); it is how a read is carried to a later
+read. Two looks held together are joined with no write. Neither a read
 nor a write holds both hemispheres. What holds both at once is the **blueprint**: the drawn shape, with both signs of every axis, the turn completed, the
 facings joined. It has no vantage. Reads and writes are what is done from a vantage, so the blueprint has nothing to do
 with reads and writes: it is not a third act beside them, not a read of a larger kind, and not what they add up to.
@@ -359,7 +399,9 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
 - A read has a vantage, never a shape: no circle, no sphere, no body.
 - There is no reader and no writer, only reads and writes; what holds both hemispheres at once is the blueprint. Where
   someone has to stand, walk or count, say "the observer".
-- *Heat* and *paint* for what the read has and what it meets; *address* only as a computing metaphor or for a count of K
+- A read is continuous and unmoved by scaling; a write is discrete and moved by it; a count and the number line in a
+  unit are descriptions. Definitions are stated on those two axes.
+- *Heat* and *paint* are pictures, for the read's density and for what it meets, and are not leaned on; *address* only as a computing metaphor or for a count of K
   places at the heat's quantiles (§5).
 - π/2 and 2/π are the blueprint's numbers for the two reads, each with a vantage and one hemisphere: 2/π the inscribed
   sweep's, π/2 the central sweep's (its arc walked and counted is an extent; §9, "Reading is 2/π; walking is π/2"). π
@@ -367,8 +409,8 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
 
 **Continuous and discrete.** A read is continuous: a turn passes through every direction between two, and nothing in it
-is counted. A count, of strides, of units on a ruler, of digits, is discrete, with a next and, if finite, a last. Counts
-are how extents and writes are kept. The blueprint's continuous things, the real line, the circle held whole, π and e, are
+is counted. A count, of strides, of units on a ruler, of digits, is discrete, with a next and, if finite, a last. A write is
+discrete too, a bounded thing; a count is a description laid over writes, and unlike them is unmoved by scaling. The blueprint's continuous things, the real line, the circle held whole, π and e, are
 counts carried to their limit and held as finished, so there are two continuities: the read's, never counted, and the
 blueprint's, a count completed. These are the acts idealized: a sensor that samples has already counted, and no real
 instrument is a pure read; what the paper offers real instruments is the two tests, quantity by quantity (§6, "Turns,
@@ -465,10 +507,10 @@ shares of one thumb, the corner, the horizon, the Cauchy, order. Classically it 
 through one point, projective geometry seen from a standpoint (incidence, order, cross ratio, no length), with a home and
 a corner of its own (Klein 1872). It can be reached two ways: as lines through the origin of a plane with the scale
 divided out, the blueprint's route; or from incidence and order alone, with no length to set aside (von Staudt 1847), the
-read's. Extents add gaps across, still with no unit: the shape and size of a room in strides. *Physical geometry* has
+read's. Extents, had by two looks together, add gaps across, still with no unit: the shape and size of a room in the step between the looks. *Physical geometry* has
 the unit: lengths and sizes in amounts, the blueprint's cube with a number line on each axis, x² + y² = r² with r in
-metres. Physics enters there, with the unit: a unit injects physics into a relation. The two are orthogonal. The
-geometry is complete without physics: every read, and every relation kept, stands with no unit anywhere; and
+metres. Physics enters with the write, a thing with a size, and a unit is a write carried in: it injects physics into a relation. The two are orthogonal. The
+geometry is complete without physics: every read, and every relation among reads, stands with no unit anywhere; and
 physics, when it enters, assigns amounts and moves none of them. Picture reality as a sheet of paper
 every physical thing writes on, a stone's mass, a planet's path, a cell dividing, each in amounts. A read adds nothing to
 the paper; its directions and their heat are laid over it, blank or full, and the light that arrives along them is the
@@ -843,7 +885,8 @@ against nineteen. The radii drawn are extents about the centre; the overall size
 
 **Parallax is the passage from a read to an extent.** One standpoint gives directions and a frame, and no size: every
 ghost of the room, twice as far and twice as large, gives the same readings. A second standpoint adds the step between
-the two. Each point, matched in both looks, is two rays crossing, and its distance comes out of the crossing, in the step's
+the two. Two standpoints held at once, as two eyes are, need nothing kept and nothing counted; one standpoint moved
+needs the earlier look kept, in a write, and the step taken, a write. Each point, matched in both looks, is two rays crossing, and its distance comes out of the crossing, in the step's
 length. More standpoints give every extent seen. This is how an observer reconstructs the shape of the blueprint's cube,
 in its own stride; the cube in metres needs the stride counted in metres, a write (§7).
 
@@ -954,7 +997,7 @@ lies on the circle exactly, where the factors of (1 + iθ/n)ⁿ (§9) do not: th
 at −1. **Checked** (WLK, exact: house, tower and mountain 3600/7, 18000/7 and 900000/7
 strides from the thumb's corner to the foot, each returning V\*).
 
-**Read times count.** On this walk the read is s and the write of the relation is the count n of strides left. Their
+**Read times count.** On this walk the read is s and what is kept is the count n of strides left, a description laid over the strides, which are the writes. Their
 product is the same at every place: s·n = d_c/S, the corner's distance in strides, and that times the thumb over the arm
 is the mountain in strides. Neither factor has it alone: a look gives s with no size in it, a count gives n with no
 mountain in it. Counted in corners in place of strides the product is 1 everywhere, s × (1/s), and both factors are 1 at
@@ -1318,7 +1361,7 @@ thumb's share h averages 2/π, the mean of what is seen of one thumb from a stan
 that closes the heat, and it is approached at the horizon, never reached. *π/2 is what walking counts*: the quarter arc
 from all of h to all of v is π/2 thumbs long, the heat gathered to the horizon, ∫₀^∞ ds/(1 + s²), reached at a named
 point, −1. An arc in thumbs is a length against the thumb, unmoved by scaling and held by no single read: of the kind D3
-calls an extent, had by walking and counting; with the thumb in a unit it is a write (D4). The sweep whose arc that is,
+calls an extent, here counted out, so a count; with the thumb in a unit it is a write (D4). The sweep whose arc that is,
 the central one, is itself a read: one hemisphere, from a vantage, facing a bounded thing. So both numbers belong to
 single-hemisphere reads, 2/π to the inscribed and π/2 to the central, and the walk is how the second one's arc is
 counted. Their product is 1, which is also the blueprint's number, the thumb in thumbs; the blueprint itself has no vantage and
@@ -1350,7 +1393,7 @@ The arc is the one path on which the gain per step is the share itself, h, the s
 direction of space averages ½, and the correction is 2 (the wedge's numbers, §7). So "π is the price", above, is the
 plane's price. Three cautions keep the statement exact. The 1 is the thumb, H in H, not V*: nothing here gives the
 mountain's size (D4). One read is one share h; 2/π is their average over the turn, a sum, so the blueprint's. And the walk
-here is counted in thumbs, an extent; it is a write only once the thumb has a unit. The mathematics is old: the mean
+here is counted in thumbs, an extent as a count; it is an amount, a write, only once the thumb has a unit. The mathematics is old: the mean
 projection of a segment over all directions is 2/π of its length (Cauchy 1841), a curve's length is π/2 times its mean
 projection (Cauchy 1841; Crofton 1868), and Buffon's needle (1777) is the same 2/π met as a chance. What is ours is the
 assignment: the short factor to the read, the long one to the walk, their product to the two held together.
@@ -1576,15 +1619,16 @@ quarter turn squared. It was found by looking back from the answers, not predict
 that π appears exactly where a turn is taken whole failed a blind test on these very cases (the TWC plan, Code and
 data), and what is said here is where their π comes from, not a way to foresee it.
 
-Parallax (§6) is the case where a write is exact and the blueprint adds only units. Two standpoints a counted
+Parallax (§6) is the case where two looks together are exact and the blueprint adds only its angles. Two standpoints a
 step B apart each read the target's slope off the line between them, s₁ and s₂, measured inward. The target's depth d
 off that line is then given by 1/(d/B) = 1/s₁ + 1/s₂, so d/B = s₁s₂/(s₁ + s₂): slopes 3 and 6 put it exactly 2 steps
 off. No angle, no trigonometry and no π is in it.
 
 | who | what it holds of parallax |
 |---|---|
-| a read | one slope at each read, and nothing of parallax: a read is one standpoint |
-| a write | the two slopes joined across the counted step: the extent in steps, a rational function of the slopes, exact |
+| one look | one slope, and nothing of parallax |
+| two looks held together, still a read | the extent in the step between them, a rational function of the two slopes, exact, with no count |
+| a write | the step itself, a thing with a size; the step in metres, the one amount carried in |
 | the blueprint | the parallax angle γ in radians or arcseconds; γ(d) + γ(a²/d) = π about the half-step a; the error's γ/sin γ, π/2 at the corner; the parsec, 648000/π astronomical units |
 
 The corner is the exchange again. The corner circle, the circle on the step as diameter (Thales), is exactly
@@ -1594,12 +1638,12 @@ once more. The error is rational too: with k = d/a, a step in direction moves th
 (k + 1/k)/2, the same at k and 1/k and least at the corner; cosh(ln k) (§6) is the blueprint's smooth name for it. And the
 three grades sort the rest: the depth is rational, the range along a ray is a square root, the angle is a limit. π
 enters only where a slope is turned into an angle, which is why the parsec carries a π and the extent in steps carries
-none. This is no fifth identity of a read either: parallax joins two reads, so its π-free form is a write's,
-and what never needed π is the extent in steps; the step in metres is still the one amount carried in.
+none. This is no fifth identity of one look: parallax holds two looks together, and what never needed π is the extent in
+steps; the step in metres is still the one amount carried in.
 
 **Classical**; the assignment is a reading. Physics enters
-separately and later, with the first write of the scale: a thumb given a unit. A walk made and counted in steps is
-a write of the relation and still before it. **A reading**, resting on this
+separately, with the first write: a stride taken, a mark made, a thumb given a unit. A walk's strides are writes; the
+count of them is a description. **A reading**, resting on this
 section's account of the transcendentals.
 
 **What the one pole already carried.** A read at i holds the standard Cauchy (§3). Readings added give one Cauchy
@@ -1781,7 +1825,7 @@ unchanged. Poincaré's universe made a thousand times larger overnight (1908), u
 his representative and geometric space are close to the read's and the blueprint's. Leibniz's space as an order of
 coexistences (1715–16) is the read's picture; Klein's programme (1872), geometry as the study of a group, is the form of
 the sort. Gibson's ambient optic array (1979) is the stained-glass window. Bridgman and Buckingham sorted quantities by
-scale long before. What is offered here is the three kinds on one plane, the heat of directions and the payload inside a
+scale long before. What is offered here is the read and the write on one plane, sorted by two properties, the heat of directions and the payload inside a
 read, and what carries an observer from one kind to the next.
 
 ## Code and data

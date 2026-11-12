@@ -53,8 +53,10 @@ moves is only where the across axis's zero sits against a unit outside the world
 ln(d/metre) = ln(d/H) + ln(H/metre) and only the last term changes. So the first test, scale the world, comes down to which part
 moved: what stays is a reading (up) or an extent (a gap across, a distance in thumbs, one distance against another); what
 moves is the zero tied to a metre, a writing. The direction up is what one read holds. The distance across is an extent:
-unmoved by scaling, but held by no single read, needing a second standpoint and the step between. Where its zero falls
-against a unit, the size of anything in metres, is the one number no reading or place fixes.
+unmoved by scaling, held by no single look, needing a second standpoint. Two looks held at once have it by reading
+alone, a ratio of their slopes; one standpoint moved needs its earlier look kept and the step taken, and those are
+writes. Where its zero falls
+against a unit, the size of anything in metres, is the one number no reading or extent fixes.
 
 **Turning the world slides up or down.** Turn, and every point moves up by the same amount, and nothing moves across. An
 observer's two ignorances, after Jaynes, are which way it faces and how large things are. On this plane they are two slides
@@ -298,7 +300,7 @@ It settles what the heat is. The heat is the read's measure counted per unit of 
 flat. A heat map is a good picture of the read, and the picture depends on the chart.
 
 And it marks where the clean arithmetic ends. In the plane, turns add; in space they do not, and a loop leaves a turn
-behind. What survives everywhere is the part the series cares most about: the read holds directions, places hold gaps
+behind. What survives everywhere is the part the series cares most about: the read holds directions, extents are gaps
 across, the write holds amounts, and scaling the world moves only the third.
 
 **Demos.** `euler.html` (the three charts side by side or one sliding into the next; the blueprint's sphere and the thumb

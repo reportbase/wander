@@ -259,3 +259,102 @@ third part. Still to bring into line: §9's tier tables, "Four things", the essa
 
 **Item 15 carried through the essays and demos** (12 Nov, R893). Open for Tom: page and card names that still say
 reader or writer; essay 9's "vantages"; sentences where kept steps still read as making the circle.
+
+16. **What a write is, stripped** (12 Nov; Tom: "we conflated the write to include tools it would never use."; "if we
+    say write is physics, it still work. to do complicated parallax, you would need to write the previous read
+    somewhere in the physical world."; R895). **Standing:** under exploration, not settled (Tom: "lets explore the idea of a write further before committing."). As first recorded: the write is physics, a mark made in
+    the world; two eyes do parallax with two coordinated reads and no write; a write is what carries a read forward
+    (one standpoint moving, a counted walk); it has no trig, no π, no circle. Tom's other candidate, the write as the
+    discretization of the continuum (R640), fits it: a mark is finite. **Claude's, not ruled:** the π/2 vantage is a
+    read (stripped, the shares beside the slope); π/2 and 2/π belong to neither read; the unit is the kind of mark
+    scaling moves; coordinated reads need a name; R851 is reversed. **Next step:** check D3–D7, the two tests, "What
+    a blueprint adds" and §9's tier tables against it, as a list first, before any paper is changed.
+
+    **A further candidate from Tom, the same day, not settled:** "A write means doing something that is scale
+    variant. A read means doing someting that is scale invarient." It returns to R568 and R788, and makes them
+    about the act. Claude's notes on it, not ruled: it parts from "a mark made in the world" at exactly one place,
+    keeping (a count of strides, a slope remembered, are unmoved by scaling, so by this they are not writes); the
+    scale-invariant side then holds more than a read (counts, kept ratios, coordinated reads, and the blueprint's
+    angles and π), so either "a read" widens or the side needs a name; physics as the place where scale matters
+    (dimensioned constants) would keep "a read is geometry, a write is physics".
+
+    **A third candidate from Tom, the same day, not settled:** "how about writes are paint, reads are heat". It is
+    R653 in the heat-and-paint words (the read the address, the write the payload), and the second test used as
+    the definition where the previous candidate used the first. Claude's notes, not ruled: the two candidates are
+    the two crossed tests of R821 and disagree in two boxes (a ratio of brightnesses is paint yet unmoved by
+    scaling; an extent in thumbs is unmoved yet is not heat); by this one the world writes and the observer is
+    written on, which thing sits at which slope is paint, and a mark or a unit is paint met by a later read; a
+    count kept in the head, met along no direction, is still its weak case.
+
+    **Tom, continuing, not settled:** "paint is everything that is not heat". The split is then exhaustive: a
+    count kept in the head, a mark, a unit, an extent, which thing sits at which slope, a colour, are all paint.
+    Claude's notes, not ruled: heat is what is the same in every world and paint what could have been otherwise;
+    the kinds fall from three to two, with the scale test sorting paint into ratios and amounts; the size of the
+    thumb in a unit, and what the corner falls on, are paint; open is where the laws among slopes and the
+    blueprint sit (the same in every world, yet not the heat itself).
+
+    **Tom, continuing, not settled:** "your essentially asking is something without phsycial size paint?" (of
+    Claude's question where the laws and the blueprint sit), then "A read is continuous, a write is discrete."
+    (R640 again). Claude's notes, not ruled: sizeless things split, a count or a ratio drawn from sized things is
+    paint, a law drawn from nothing sized is not; heat has no parts, no boundary and nothing in it to count, paint
+    comes as things, each bounded, and a bounded thing is what has a size and can be counted, so discrete, sized,
+    physical and "not heat" may be one description; discrete must mean bounded and countable, not that the world
+    is grainy (R645); the blueprint read by R646 as a count carried to its limit, to square with R890.
+
+    **Tom, continuing, not settled:** "blueprints dont exist in the physical world, so its not suprising that they
+    are not cleanly catogorizable." So heat and paint sort what is in the world or given to a look in it, and the
+    blueprint is outside the sorting. Claude's note, not ruled: a blueprint drawn on a sheet is marks, so paint,
+    and is met by a look like any paint; what is not in the world is the thing the marks stand for (the circle
+    whole, π), which answers R890's open point about a blueprint "made" and then looked at.
+
+    **Tom, continuing, not settled:** "reading is continuous, but the reading is of something that is discrete."
+    Claude's notes, not ruled: this refines "reads are heat": heat is the form of reading (continuous, the same
+    over any world), paint is what is read (discrete, things); a read is heat meeting paint, so read and write are
+    not two bins of things but the act and what it is of; everything there to be read was written, by the world
+    or an observer (R644 from the other side; R645's K, a count read continuously, the same shape).
+
+    **Tom:** "I think we are very close to a robust definition now." Still not settled. **The draft as it stands
+    (Claude's wording of the exchange, for Tom to correct):** reading is continuous and has the heat's form, given
+    before anything arrives and the same over any world; what is read is paint, discrete, things among things,
+    everything that is not heat; a write is paint put there, by the world or by an observer; the scale test sorts
+    paint into ratios and amounts in a unit; the blueprint is not in the physical world and is outside the
+    sorting. **Still to test before settling:** the laws among slopes (with the heat?); two looks held together
+    (one reading or two?); where an observer's own write differs from the world's, if it does; K.
+
+    **Tom, on the wording of the definition:** "paint and heat are imperfect metaphores, don't lean on them
+    excessivly. its the cauchy density or distribution. the definition should be in terms continus/descrete.
+    scale varient/invarient." So the definition is to be stated on those two axes, with the Cauchy density named
+    as what the continuous, scale-invariant side is; heat and paint stay as pictures, not as the terms defined.
+    **Claude's redraft, not ruled:** a read is continuous and scale invariant (the Cauchy density over slopes,
+    ds/(1 + s²) up to its total); a write is discrete and scale variant (a bounded thing with a size, an amount in
+    a unit). The axes are two, so two boxes are left: discrete and scale invariant (a count, a ratio of two
+    things, a distance in thumbs: what a read gives of written things, Tom's "the reading is of something that is
+    discrete"; the old "extent"), and continuous and scale variant (the number line in a unit, which nothing in
+    the physical world is: the blueprint's).
+
+    **Tom, continuing, not settled:** "seems like a count is like the blueprint. the natural world does not
+    count." Claude's notes, not ruled: both off-diagonal boxes are then outside the natural world (a count:
+    discrete and scale invariant; the number line in a unit: continuous and scale variant), and only the diagonal
+    is in it (a read: continuous, scale invariant; a write: discrete, scale variant). Strides are things, so
+    writes; "514" is not in the world. A distance in thumbs had by two looks together is a continuous ratio of
+    slopes, 1/s1 + 1/s2, so a read, with no count in it; counted in thumbs it is the blueprint's account (R642's
+    split). The blueprint as a count carried to its limit (R646) puts count and blueprint in one family. This
+    would reverse R880 ("the write of the relation is a count").
+
+    **Tom, continuing, not settled:** "the things don't cleanly catagorize are probably human syntesis." So the
+    two off-diagonal boxes (the count; the number line in a unit, the blueprint) are things people make by putting
+    reads and writes together in thought, not things in the natural world; a failure to sort is then a sign of
+    synthesis, not a gap in the definition. Claude's notes, not ruled: "synthesis" was withdrawn as a name for the
+    blueprint under R890 ("synthetic read"), so the word here is Tom's for the class, not a claim that reads and
+    writes make the blueprint; "probably" is his, so this is a working test, not a rule.
+
+    **Tom, continuing, not settled:** "the natural world could care less about the tools we use to describe it."
+    Claude's notes, not ruled: counts, the number line, the blueprint, trigonometry and π are tools of description,
+    which is why they sit off the diagonal; the same holds of the paper's own terms (the slope s, the formula
+    ds/(1 + s^2), heat and paint, this table), so the definition names two things by their properties (continuous
+    and scale invariant; discrete and scale variant) and every formula for them is description, the paper's
+    included.
+
+**Settled, 12 November (R896; Tom: "update the papers and essays and merge"):** a read is continuous and unmoved by
+scaling, a write discrete and moved by it; a count and the number line in a unit are descriptions. Carried into
+*Reads and Writes* and the essays. This file is kept as the record of how it was reached.

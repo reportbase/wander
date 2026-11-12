@@ -24,8 +24,10 @@ A second consequence belongs up front too. The geometry has no memory, and its l
 two directions give together: join this slope to that one and get a third. It holds for every pair at once, and
 nothing in it happened. That is how the geometry can hold a function like Euler's, which describes the composing of
 any number of turns, without remembering a single turn. Memory is needed only for something else: which steps a
-particular observer took, and so where it has come from. So there are three things, not two. The geometry, complete
-with no memory and no unit. Keeping, which holds a history and still no unit. And the unit, where physics enters.
+particular observer took, and so where it has come from. So there are two things, and a description laid over one
+of them. The geometry, complete with no memory and no unit. And writes: things with a size, a stride, a mark, a
+pebble, in which whatever is kept is kept, and where physics enters. A count of them, 514 strides, is a description
+laid over the writes, with no unit in it.
 "Law" here means a geometric law, a relation among the directions of one read. Laws in general are many things, and
 a physical law carries units; they are not a third kind beside reading and writing. That the geometry's laws are of
 this kind may be why it needs no memory.
@@ -65,14 +67,33 @@ still be finished if no one ever did.
 
 This is the whole essay in miniature. There are two acts here, and they are very different, with a step between them.
 
-The first act is **reading**. You read directions from where you stand. From two standpoints, joined across the step,
-you have the room's shape and every ratio in it, in steps: what *Reads and Writes* calls an **extent**, unmoved when the
-world is scaled, like a reading, but held by no single standpoint. Reading and placing needed no unit, and they gave you
-everything except one number.
+The first act is **reading**. You read directions from where you stand. From two standpoints you have the room's shape
+and every ratio in it, in steps: what *Reads and Writes* calls an **extent**, unmoved when the world is scaled, like a
+reading. Held by two looks at once (two eyes, the step the gap between them) it is still reading: a ratio of the two
+looks' slopes, continuous, with nothing counted in it. Taken as it was here, by one observer stepping, the first look
+has to be kept while the second is taken, and the step is a thing with a size. Reading and placing needed no unit, and
+they gave you everything except one number.
 
 The second act is **writing**. To say how many metres the table is, you must be given an amount from outside your
 readings: the stride measured once against a rule. Writing cost that one number, and nothing your eyes could do would
-have supplied it. A write is exactly what scaling the world moves; the map in steps does not move, so it is not yet one.
+have supplied it. A write is a bounded thing with a size, or an amount put down in a unit carried in; scaling the world
+moves it. The map in steps does not move, so it is not one.
+
+Two properties do the sorting, and the series reads everything by them (a reading, the series' own). Is the thing
+continuous or discrete? And does it move when the world is scaled, the thumb and the stride with it, the units left
+outside?
+
+| | unmoved by scaling | moved by scaling |
+|---|---|---|
+| continuous | a read | the number line in a unit (the blueprint) |
+| discrete | a count | a write |
+
+A read is continuous and unmoved: a direction, a slope, a ratio of slopes. A write is discrete and moved: a stone, a
+stride, a mark on a wall, a metre bar, or an amount put down in a unit, 0.7 m. A write is over once made, and it is used
+only by being read: reading is continuous, and what is read is discrete. The other two boxes are tools of description.
+A count, "three trees", "514 strides", is discrete and unmoved: the strides are writes, the count is an account laid
+over them, and what is kept of it is kept as things (marks, pebbles), each a write. A length as an exact number in a
+unit, or the circle held whole, is continuous and moved: the blueprint, set beside the two acts for comparison.
 
 The rest of the essay takes these two acts apart. They have a structure, and the structure has two sides.
 
@@ -373,7 +394,8 @@ before, and ask what happened to it.
 
 - If it did not change, it is a **reading** or an **extent**. A direction, an angle, the place of the corner, held from
   one standpoint, are readings; the ratio of two lengths, a shape held up against its own average size, the map in
-  steps, which need a second standpoint and the step between, are places. All of these come through untouched. (Reads
+  steps, which need a second standpoint, are extents: reading still where two looks hold them together, a count where
+  they are counted out in steps. All of these come through untouched. (Reads
   joined can also give an order, as in essay 11, or a map carrying one look's directions to another's, as a turn or a
   boost does in essay 7; neither has a gap in space, and neither moves.)
 - If it changed by the factor k, it is a **writing**. A length in metres, a distance on a map's scale bar, the size of
@@ -384,7 +406,7 @@ Nothing length-like can do anything else. It is either fixed or it moves by k.
 Try it on the room. The map in steps does not move: everything grew by k, your step grew by k, and every length in steps
 is the same number as before. The map in metres moves: the stride was measured against a rule, the rule did not grow
 with the world, and every length in metres is k times larger. One test, and it puts the map in steps with the readings,
-unmoved (an extent, since it needed the step), and the map in metres on the writing side.
+unmoved (an extent, in steps), and the map in metres on the writing side.
 
 Three cautions keep the test honest. What it sorts is a variable, a quantity said of something named: this direction,
 that gap, this light's frequency. A bare number is not yet sorted, and one thing can supply several variables of
@@ -412,7 +434,7 @@ with the amounts; the thumb's pointing, read as directions, does not.
 In Euler's notation the test has a picture. Write a thing as a direction times an amount, r·e^(iθ), and take the
 logarithm, ln r + iθ. With r in an outside unit, scaling the world by k slides the real part by ln k and leaves the imaginary part alone
 (with r in thumbs, and the thumb scaled too, no point moves; only the thumb in metres does): the
-imaginary part is the reading, differences of the real part are places, and the real part's zero, tied to a unit, is
+imaginary part is the reading, differences of the real part are extents, and the real part's zero, tied to a unit, is
 the writing (the second essay, section 9; *Reads and Writes* §2).
 
 This test is not new, and the essay claims no credit for it. Henri Poincaré imagined, more than a century ago, all the
@@ -449,7 +471,8 @@ could be changed without changing anything the observer has read.
   same. With four objects there are four free numbers. From one place, nothing is written.
 - **One step of known length,** known in the observer's own unit, say "one stride". Now every size and every distance is
   fixed, all of them, in strides. No free numbers are left. The step placed everything at once, in the observer's own
-  length: places, unmoved by scaling, not yet writes.
+  length: extents, unmoved by scaling. (The stride is a thing with a size, a write; the numbers in strides are ratios
+  against it, and they do not move.)
 - **One step of unknown length.** One free number remains: the length of the step. Everything is fixed relative to the
   step and nothing in strides, which is the room of section 1 before the stride was counted.
 - **A second known step.** It adds nothing to the scale, which the first already fixed. It checks the first.
@@ -472,7 +495,7 @@ the amounts for a theory, a law or a reconstruction. The count here is per obser
 handed, and it says the answer is almost nothing.
 
 *Demo: writing, step by step: the free numbers computed on the page as each step is taken: extents in the
-observer's own H, then one agreed notch, the write.*
+observer's own H, then one agreed notch, the amount in a unit.*
 
 ---
 
@@ -581,14 +604,14 @@ stood, which loops it closed, what it was handed. That is not a lesser achieveme
 
 *Demo: a read is a slide rule: chains, loops and a misread link.*
 
-**Two writes, and where physics enters.** "Write" has been doing two jobs in this essay, and they are worth telling
-apart. One is the write of the scale: an amount in a unit carried in, the stride given in metres. Scale the world and
-it moves. The other is the write of the relation: something kept, with no unit in it, a count of strides, a mark left
-where one started, the room's shape put down in strides. Scale the world and it does not move. The first test of
-section 5 tells the two apart; what tells a write of the relation from a read is only that it was kept, since a read
-keeps nothing. Reading and the write of the relation are both prior to physics. Physics enters with the unit, and it
-is orthogonal to the geometry: the geometry is complete without it, and physics, when it comes, assigns amounts and
-moves no read and no relation.
+**One write, and where physics enters.** "Write" could be asked to do two jobs in this essay, and on the two axes
+of section 1 only one of them is a write. An amount in a unit carried in, the stride given in metres, is a write:
+scale the world and it moves. So is the stride itself, and a mark left where one started: bounded things with a size.
+A count of strides is not a write. Scale the world and it does not move, and it is discrete: a count, a description
+laid over the strides. What is kept of it is kept in things, marks or pebbles, and each of those is a write; a read
+keeps nothing. So physics enters with the first write, the first thing with a size, and it is orthogonal to the
+geometry: the geometry is complete without it, and physics, when it comes, assigns amounts and moves no read. (The
+sorting is a reading, the series' own.)
 
 **Steps, never positions.** One more thing separates the two acts, and it is the plainest. A sweep goes one way, from
 home toward the horizon, and where it stops is the next sweep's home: every sweep resets. A tenth of a sweep, then a
@@ -596,7 +619,8 @@ fifth of a fresh one, then three tenths of another, is three steps, each from it
 says how far the three have come together. A position, "three fifths of the way round", is a total of steps from a
 starting mark that was kept, and a read keeps no mark. The observer can go back: it faces the other way and sweeps, and
 that too is a forward sweep. What it cannot do by reading alone is go back exactly to where it was; for that the steps
-must have been kept, or a mark left at the start. So there is no circle anywhere in reading. A circle is one fixed dial
+must have been kept, or a mark left at the start, and either is kept in things, which are writes. So there is no
+circle anywhere in reading. A circle is one fixed dial
 on which every sweep has its place; a read has a sweep, a reset and another sweep, and the dial appears only when
 someone keeps the steps and lays them end to end.
 

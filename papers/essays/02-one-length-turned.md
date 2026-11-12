@@ -319,8 +319,8 @@ multiplied, which is arithmetic, and the 1 is its own thumb.
 **Which act each number measures.** The two numbers also sort by act. 2/π is what turning sees: over the quarter turn the
 thumb's share h averages 2/π, the mean of what is seen of one thumb from a standpoint that never moves, and it is
 approached at the horizon, never reached. π/2 is what walking counts: the quarter arc from all of h to all of v is π/2
-thumbs long, and it is reached, at a point. An arc counted in thumbs is an extent, had by walking and counting; with the
-thumb in metres it is a write. So, in short, both numbers belong to reads, each with a vantage and one hemisphere: 2/π to the inscribed sweep and π/2 to the central one, whose arc the walk counts, and
+thumbs long, and it is reached, at a point. An arc in thumbs is an extent, had here by walking and counting: a count laid over
+the steps walked, each step a write. With the thumb in metres it is an amount in a unit, a write. So, in short, both numbers belong to reads, each with a vantage and one hemisphere: 2/π to the inscribed sweep and π/2 to the central one, whose arc the walk counts, and
 their product, 1, is also the blueprint's number; the blueprint has no vantage and is neither read nor write. Both stay the blueprint's arithmetic, since a read holds no π;
 what is sorted is the read each one measures.
 
@@ -348,7 +348,7 @@ thing and not a second dimension. In space the wedge holds π/2 of directions, t
 s ↔ 1/s and its corner, the heat's equal halves, the four facings, and the 1 that the short side and the long side give
 back. Nothing is computed to have them, and no time is spent. The numbers π/2 and 2/π are not free. π is a limit: no
 finite count of steps gives its value, only a fraction near it. So there are two acts, and classical geometry's statement set beside them for comparison. A read has slopes, the
-corner and equal halves, and neither knows nor uses π. A write is a walk counted, so it holds fractions, 22/7,
+corner and equal halves, and neither knows nor uses π. A walk counted is a count laid over writes, the strides, so it holds fractions, 22/7,
 355/113, each nearer π and none of them π; it uses π's name and its approximants, never its value. Only the blueprint holds π
 itself, the completed whole, and the blueprint, whole, is a limit, never a thing anyone has made.
 
@@ -527,8 +527,8 @@ squaring of section 6 turns that half turn into one whole turn of the central sw
 All of this is classical: polar form, the complex logarithm, the area that multiplication keeps, the double cover. What is
 the series' own is the reading: e^(iθ) as the direction, r as the payload, the logarithm's imaginary part the reading and
 its real part the extents, with the writing at its zero (*Reads and Writes* §2). It is the right notation for a read
-because it keeps them apart. A read holds the imaginary part; places are gaps in the real one, had by walking; a
-write needs its zero.
+because it keeps them apart. A read holds the imaginary part; extents are gaps in the real one, had by two looks held together or by walking and
+counting; a write needs its zero.
 
 **The Cauchy in Euler's notation.** The Cauchy itself fits this notation twice over. Write the standpoint, the
 foot and the height above the line that the third essay (section 6) gives every Cauchy, as one complex number z = m +
@@ -612,7 +612,7 @@ of the two it means. The thirteenth essay, *Why the plane is special*, takes thi
 **A law needs no memory.** Euler's formula looks as though it accumulates, a turn built up step by step round a
 circle. That is the classical telling, a journey. The function holds no journey. It is a rule: what any turn does to
 any direction, given for every pair at once, with nothing in it having happened. So the geometry, which keeps nothing,
-can still say what a thousand turns would do. What needs keeping is only which turns a particular observer made. In
+can still say what a thousand turns would do. What needs keeping is only which turns a particular observer made, and that is kept in things, which are writes. In
 the read's form the rule is plainer still: w(s) × w(1/s) = −1 at every slope, a pair of directions of one read, of
 which the famous identity is the one member that needs the horizon and i × i = −1 the one at the corner. That is the
 same relation held two ways. The algebra joining the two forms is ordinary, and they are equivalent; which one a read
@@ -622,7 +622,7 @@ many things and are not a third kind beside reading and writing.
 
 **No dial, and the quarter turn's two numbers.** The circle of this essay is the blueprint's in a stronger sense than
 its shape. A read is one sweep from h to v on the thumb H, with no V in it; it stops at its horizon and closes nothing,
-and each read stands by itself. Steps kept and laid end to end are a write; the circle whole, with no standpoint in it, is the blueprint's, set here for comparison. So the numbers that belong to one sweep
+and each read stands by itself. Steps kept are kept in things, which are writes, and laid end to end they are counted; the circle whole, with no standpoint in it, is the blueprint's, set here for comparison. So the numbers that belong to one sweep
 are the quarter turn's, π/2 and 2/π, and they are the ones to state first; π and 2π belong to the join of several. The
 arctangent is the worst of the blueprint's tools to lend a read, because it eliminates the sweep: it names one place
 on the turn as though it could be gone to directly, where a direction is had only within its sweep, with everything
