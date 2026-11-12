@@ -320,9 +320,9 @@ own thumb.
 thumb's share h averages 2/π, the mean of what is seen of one thumb from a standpoint that never moves, and it is
 approached at the horizon, never reached. π/2 is what walking counts: the quarter arc from all of h to all of v is π/2
 thumbs long, and it is reached, at a point. An arc counted in thumbs is an extent, had by walking and counting; with the
-thumb in metres it is a write. So, in short, reading is 2/π and writing is π/2, the write reached through its extent, and
-their product, 1, is the read and the walk held together. Both stay the blueprint's arithmetic, since a read holds no π;
-what is sorted is the act each one measures.
+thumb in metres it is a write. So, in short, both numbers belong to reads, each with a vantage and one hemisphere: 2/π to the inscribed sweep and π/2 to the central one, whose arc the walk counts, and
+their product, 1, is the blueprint, the two reads held together with no vantage. Both stay the blueprint's arithmetic, since a read holds no π;
+what is sorted is the read each one measures.
 
 **Short by reading, long by walking, and whole.** Said most simply: the true size is 1, the thumb in thumbs. Reading gives
 the short side of it, 2/π; walking gives the long side, π/2; together they give back the 1. The proof is one line, the
