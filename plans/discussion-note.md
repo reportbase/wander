@@ -259,3 +259,13 @@ third part. Still to bring into line: §9's tier tables, "Four things", the essa
 
 **Item 15 carried through the essays and demos** (12 Nov, R893). Open for Tom: page and card names that still say
 reader or writer; essay 9's "vantages"; sentences where kept steps still read as making the circle.
+
+16. **What a write is, stripped** (12 Nov; Tom: "we conflated the write to include tools it would never use."; "if we
+    say write is physics, it still work. to do complicated parallax, you would need to write the previous read
+    somewhere in the physical world."; R895). **Standing:** ruled in outline: the write is physics, a mark made in
+    the world; two eyes do parallax with two coordinated reads and no write; a write is what carries a read forward
+    (one standpoint moving, a counted walk); it has no trig, no π, no circle. Tom's other candidate, the write as the
+    discretization of the continuum (R640), fits it: a mark is finite. **Claude's, not ruled:** the π/2 vantage is a
+    read (stripped, the shares beside the slope); π/2 and 2/π belong to neither read; the unit is the kind of mark
+    scaling moves; coordinated reads need a name; R851 is reversed. **Next step:** check D3–D7, the two tests, "What
+    a blueprint adds" and §9's tier tables against it, as a list first, before any paper is changed.
