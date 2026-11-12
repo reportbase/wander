@@ -13,8 +13,8 @@ in what they add to the looking. The walker counts strides. The lander counts no
 are two different paces, and no pace is both.
 
 The series has two ideas, reading against writing and the Cauchy, and two tests, scale the world and change what
-arrives. Here the first idea is taken down a single road. Look, stride, look: the look is a read, the stride counted is
-the smallest write there is, and the road from far off to the door is, in the blueprint's notation, half of Euler's
+arrives. Here the first idea is taken down a single road. Look, stride, look: the look is a read, the stride is a write,
+the smallest there is, with the count a description laid over the strides, and the road from far off to the door is, in the blueprint's notation, half of Euler's
 circle, with −1 at the door. (The blueprint is classical geometry's view from no standpoint; it is here for
 comparison, and the road is all reads and writes.)
 
@@ -67,10 +67,12 @@ Try it 700 metres from the house with a stride of 0.7 metres. The two readings a
 difference is 7/3600. The strides left come to 999, which is right: 699.3 metres at 0.7 a stride. The breadth comes to
 17 and one seventh strides, which is twelve metres.
 
-Notice what was needed. Two reads, and a count of one. The count is a write, but of the gentlest kind: it has no unit.
-Scale the world, stride included, and the count is still one, the strides left are still 999, the breadth is still 17
-and a seventh strides. The series calls this a write of the relation. Metres come only if someone says how long a
-stride is, and that is the other write, the write of the scale, the only place physics enters the walk.
+Notice what was needed. Two looks, the first of them kept, and one stride. The stride is a write, a bounded thing
+with a size, and the smallest write on this road. The "one" is a count laid over it, a description, and a count has
+no unit. Scale the world, stride included, and the count is still one, the strides left are still 999, the breadth is
+still 17 and a seventh strides. Metres come only if someone says how long a stride is, an amount put down in a unit
+carried in, which is a write as well. Physics enters the walk with the stride, the first thing on it with a size; the
+metre only names that size.
 
 And notice what was not needed. The stride did not have to be small. The two formulas are exact for a stride of any
 length. There is no limit in them.
@@ -185,7 +187,8 @@ and the limit comes with it.
 
 ## 8. What is free, what is kept, what is carried in
 
-The road sorts the series' three things cleanly.
+The road sorts things cleanly under three headings, and the middle one needs care (the sorting is a reading, the
+series' own).
 
 **Free.** The looks, the fit at the corner, and the rules for what looks do together: two looks a stride apart give the
 strides left; n strides are one slide of n rungs; a chain collapses to its ends; a place and its mirror multiply to −1.
@@ -195,7 +198,8 @@ what steps do, for all steps, without any step being taken.
 
 **Kept.** How many strides were taken. The law has an empty place in it, the n, and the geometry never fills it. A look
 fills the other empty place, the reading, now. The count fills this one, so far. It has no unit, and scaling the world
-does not move it.
+does not move it. But a count is not kept in nothing. It is kept in things, a notch a stride or a pebble a stride, and
+each of those, like each stride, is a write; the count is a description laid over them.
 
 **Carried in.** The stride in metres. Everything on the road stands without it. With it, the house is twelve metres;
 without it, the house is 17 and a seventh strides, and both statements are complete.
@@ -214,19 +218,23 @@ count of steps is the whole that was crossed, on a different path. Far off the h
 stays full; from the corner in, the thumb's share empties by the same step every stride. That is two straight edges, a
 half times two. The turn's edge is round, and π belongs to it alone. The walker never meets π.
 
-So the smallest write has a plain description: it is a count of a repeated step from a kept mark. The mark is the
+So what is kept has a plain description: it is a count laid over writes, a repeated step counted from a kept mark.
+The strides and the mark are the writes; the count is the account given of them. The mark is the
 count's zero; a distance put down in thumbs is a count of thumbs. And it is whole only in part. The house's corner is
 514 and two sevenths strides from the door; the two sevenths is not counted, it is seen, as the last part against a
-stride. A write of this kind is a whole count and one more look.
+stride. What is kept on the road is a whole count and one more look.
 
 The rules shorten the counting and never end it. The 514 strides need not be walked: two looks and one counted stride
-give them. But the one cannot be given up. A single look has no size in it, and the lander, which counts nothing, never
-gets one. A law brings the chain of writes down to its least, and the least is one.
+give them. But for one standpoint walking the one cannot be given up. A single look has no size in it, and the lander,
+which counts nothing, never gets one. A law brings the chain of writes down to its least, and the least is one stride.
+(Two standpoints held at once, two eyes, have a distance in their own gap by reading alone, a ratio of two slopes with
+nothing counted. The walker has one standpoint, so it needs its earlier look kept and the stride taken.)
 
-What is still not understood sits in the middle one. Something has to hold the count, and a look holds nothing. And a
+What is still open sits in the middle one. A look holds nothing, so the count is held in things, and things are
+writes. And a
 count assumes that a stride is the same stride each time, which the geometry does not supply: on the ladder one rung is
-exactly like the next, and a walker's strides are only roughly so. The read is solid. The write, even this smallest
-write, is where the open questions are.
+exactly like the next, and a walker's strides are only roughly so. The read is solid. The count, a description laid
+over the writes, is where the open questions are.
 
 ## 9. In space
 
@@ -262,7 +270,7 @@ is spared this only because it keeps to one line.
 - **The collapse.** A product whose middle cancels is a telescoping product; that slopes join by tangent addition is
   the tangent's addition law.
 
-What is the series' own is the sorting: the look as the read, the counted stride as a write with no unit, the two paces
+What is the series' own is the sorting: the look as the read, the stride as a write and the count as a description laid over the strides, the two paces
 as two ways of adding to the same reads, the corner as the looks' and the ladder as the strides', and the infinite in
 Euler's identity placed at the far start of the walk.
 
@@ -282,7 +290,8 @@ reads).
 ## 11. What it changes
 
 It makes the write small enough to look at. The series has said that writing brings in amounts; on the road the first
-write is a count of one, with no amount in it, and the amount arrives separately and last.
+write is one stride, a thing with a size and no number on it; the count laid over the strides has no unit, and the
+amount in metres arrives separately and last.
 
 It separates two things that are easy to run together: finding the corner and finding the size. The corner is seen. The
 size is counted. Neither can do the other's work.

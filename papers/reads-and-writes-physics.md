@@ -10,7 +10,10 @@ and Writes* §1): where this paper writes an angle or a trigonometric function i
 from no standpoint, set beside the read for comparison); a read's own
 results are rational in the slope s = v/h. Since 10 November 2026 it follows that
 paper as rewritten on SPN R788: what scaling leaves unmoved is a read if one standpoint holds it and an extent if it needs
-two, and only an amount in a unit carried in is a write. Its physics comes from the working
+two, and only an amount in a unit carried in is a write. Since 12 November (R896) the sorting is by two properties,
+continuous or discrete, moved by scaling or not: a read is continuous and unmoved; a write is discrete and moved, a
+bounded thing with a size or an amount put down in a unit; a count is discrete and unmoved, a description laid over
+writes; and an extent is not a third kind (held by two looks together it is a read, counted out it is a count). Its physics comes from the working
 record, `papers/physics.md`, and from the plans and runs it names; a new physics result goes into the record first and
 is carried out to this paper.*
 
@@ -20,9 +23,11 @@ Physics is written. Its laws are stated in amounts, a mass in kilograms, a dista
 every amount needs a unit carried in from outside. But a great deal of what physics knows was read before it was
 written: taken from one standpoint as directions, ratios and orders, with no amount in it, and only afterwards given a
 size by something carried in. A *read* is taken from a standpoint, turning there, with one length H (a thumb held out at
-arm's length); every reading is a direction [h : v], a ratio, and no amount survives into it. An *extent* joins reads,
-two standpoints or two moments, into a ratio of distances or durations, still with no unit in it. A *write* is an
-amount, the extent given a size by a unit carried in. This paper sorts known physics into the three.
+arm's length); every reading is a direction [h : v], a ratio, and no amount survives into it. An *extent* is a distance
+in thumbs or steps, a ratio of distances with no unit in it: two looks held together have it by reading, as a ratio
+of their slopes, and counted out in steps it is a count, a description laid over the steps. A *write* is discrete and
+moved by scaling: a bounded thing with a size, a stride, a mark, a metre bar, or an amount put down in a unit carried
+in. This paper sorts known physics by the two.
 
 Two tests do the sorting, and both are tests physics already uses. Scale the world, every length multiplied by one
 factor: a read or an extent is unchanged and a write moves (the test of dimensional analysis, Bridgman's and Buckingham's).
@@ -49,9 +54,12 @@ between.
 
 Reading and writing are a division of the observer's acts, worked out in *Reads and Writes* as geometry. A read is the
 geometry of one standpoint: directions, the shares of one thumb, the corner where they are equal, the horizon never
-reached, and the Cauchy, the heat the uniform turn lays over the readings before anything arrives. An extent joins reads
-across a step, two standpoints or two moments, and gives distances and durations as ratios, with no unit. A write is an
-amount: an extent tied to a unit carried in. Reads and extents are geometry; physics enters with the unit.
+reached, and the Cauchy, the heat the uniform turn lays over the readings before anything arrives. An extent is a distance
+as a ratio, in thumbs or steps, with no unit: two standpoints held at once have it by reading, and one standpoint
+moved has it only with its earlier look kept and the step taken. A write is a bounded thing with a size, or an amount
+put down in a unit carried in; a stride and a mark that keeps a look are writes, and a count laid over them is a
+description. Reads, and extents held by two looks together, are geometry; physics enters with the first write. (The
+sorting on these two properties, continuous or discrete and moved by scaling or not, is a reading.)
 
 This paper takes the line at its word and turns to physics. If physics is the writing, two questions follow. Which
 parts of a known physical result could have been read, from a standpoint, or placed, from several, before any amount
@@ -68,10 +76,12 @@ boundary is what causes other known difficulties is a question this paper raises
 ### 1.2 Two tests, as physics uses them
 
 **Scale the world.** Multiply every length in a situation by one factor k, the observer's included, and keep every
-standpoint where it stands relative to the rest; the units stay outside. A quantity unchanged by k is a read if one
-standpoint holds it, an extent if it joins standpoints or moments. A quantity that changes with k is a write, and
-somewhere an amount was carried in to give it its size. (Until 10 November this paper, with *Reads and Writes*, called
-every joining a write; R788 keeps "write" for what scaling moves.) Physics has used this test for a century as
+standpoint where it stands relative to the rest; the units stay outside. A quantity unchanged by k is a read where it is continuous, a
+direction or a ratio of slopes, held by one standpoint or, as an extent, by two together; where it is discrete it is
+a count, a description laid over things. A quantity that changes with k is a write, and
+somewhere an amount was carried in to give it its size, or it is itself a thing with a size. (Until 10 November this paper, with *Reads and Writes*, called
+every joining a write; R788 keeps "write" for what scaling moves, and since R896 a count kept is not a write: the
+things it is kept in are.) Physics has used this test for a century as
 dimensional analysis: Bridgman (1922) and Buckingham (1914) sort quantities into dimensionless groups and the scale
 that sets them. The groups are reads or extents (with one base unit they are exactly the directions of a read; Buckingham's
 π groups, checked in `plans/bpi-plan.md`); the scale is the write. The test is necessary for a reading and not
@@ -150,10 +160,13 @@ it [exact, to 10⁻³¹].
 one read whose points add: z₁ + z₂. A real Möbius map of the chart (a turn, a change of thumb, the reciprocal) carries
 the Cauchy family into itself and moves only its point. So sums of reads and reciprocals of reads stay reads.
 
-**Joining reads.** A read holds no time, and two reads are joined only across a step that is counted: in space, the
-baseline between two standpoints (parallax); in time, the ticks between two moments. Each such join is an extent, unmoved
-by scaling and held by no single read: an order, a rate in one's own ticks, a distance in the step, a duration in ticks.
-It becomes a write only when the step or the tick is given in a unit carried in.
+**Joining reads.** A read holds no time. Two standpoints held at once, a baseline apart, need nothing kept and
+nothing counted: the distance they give in the baseline's length, an extent, is a continuous ratio of their two
+slopes, 1/(d/B) = 1/s₁ + 1/s₂, and it is reading still. One standpoint moved, or two moments joined, needs the earlier
+look kept, in things, and the step or the tick taken; those are writes, things with a size, and a count laid over them,
+so many steps or so many ticks, is a description. An order, a rate in one's own ticks, a distance in the step, a
+duration in ticks are each unmoved by scaling and held by no single look.
+Each becomes an amount when the step or the tick is given in a unit carried in.
 
 **Two geometries.** *The read's geometry* has no V: directions from one standpoint, shares of one thumb, the corner, the
 horizon, the heat, order; joined, it gives extents, still unitless. Scaling the world moves nothing in it. *Physical
@@ -197,7 +210,7 @@ clock, in ticks.
 - **Time to contact is the reading over its rate**, x/ẋ = d/u, at every distance, before and past the corner, with none
   of S, d or u known (Lee 1976). Read from the angle arctan x instead (the blueprint's chart), the same ratio gives d/u times
   arctan(x)(1 + x²)/x: right far off, too long by π/2 at the corner, and worse past it. So the exact carrier is the ratio.
-- **A rate joins reads, so τ is an extent**, in the observer's own ticks. Two looks a tick apart give it exactly:
+- **A rate joins reads, so τ is held by no single read**: it is a count of the observer's own ticks, unmoved by scaling, with the earlier look kept. Two looks a tick apart give it exactly:
   x₁/(x₂ − x₁) is the time to contact at the second look, x₂/(x₂ − x₁) one tick earlier. Seconds are carried in with a
   clock, a write. Scale-free too is τ̇, the rate at which τ itself changes: under steady braking τ̇ + 1 = d/(2s), s the
   stopping distance, so Lee's critical τ̇ = −½ is stopping distance equal to distance, the pair (s, d) at its corner.
@@ -296,7 +309,7 @@ A moving observer's sky is the clearest place in physics where a read and a writ
 - **Two more readings of one sky.** A thermal sky, each direction a blackbody at T₀·D: the hottest over the coldest is
   exactly (1 + β)/(1 − β) = k² at every speed, a ratio; a linear dipole fit reads β = 0.6 as 0.67 (Peebles and Wilkinson
   1968). Radar: two echo times give the Doppler factor as their ratio, t₂/t₁ = k², and the interval as their product,
-  t₁t₂ = τ² (Bondi 1964). A common rescale of both stamps leaves the ratio and moves the product: one pair of stamps, a
+  t₁t₂ = τ² (Bondi 1964). A common rescale of both stamps leaves the ratio and moves the product: one pair of stamps, an
   extent and a write.
 
 ### 5.2 The quasar dipole [data]
@@ -597,7 +610,7 @@ Each simulation here is checked against a referee that computes the known physic
 - **Cooling counted in contacts.** Five hundred smooth inelastic spheres, contact found where h + v = 1. Per contact per
   sphere the temperature falls by (1 − e²)/3 of itself to 0.8% wherever the gas stays even (Haff 1983). Density,
   diameter and pair correlation leave the count; the clock needs them all, and near the clustering instability goes
-  wrong about twice as far as the count does. The count is an extent (contacts joined, no unit), the clock a write.
+  wrong about twice as far as the count does. The count is unmoved by scaling (contacts counted, no unit), the clock a write.
 - **Holding a world by distance.** A hard-disc gas held as a window of discs round the standpoint and, beyond it, totals in
   cells growing with distance, against a referee computing every disc (Enskog's contact rate to 0.1%, Henderson's
   equation of state, Henderson 1975): the view's density, warmth and contacts within 0.3%, for the work of the window,
@@ -647,7 +660,8 @@ stays recorded beside the run that replaced it.
 
 It changes no physics. It sorts, and the sort gives four working rules.
 
-- **A ratio unmoved by scaling is a read if one standpoint holds it, an extent if it joins several; anything that moves
+- **A ratio unmoved by scaling is a read, held by one standpoint or, as an extent, by two together; a count unmoved
+  by scaling is a description laid over things; anything that moves
   is a write, and something was carried in.** Name the
   bridge each time: a speed, a rest frequency, a baseline, a kind, a clock.
 - **Read the median where a turn is named; average only amounts.** A Cauchy-type quantity is a direction where a turn
@@ -658,7 +672,9 @@ It changes no physics. It sorts, and the sort gives four working rules.
   The directions' part must be the same whatever is counted; where it is not, part of the effect belongs to what arrives.
 - **Joining gives extents, orders or maps.** What no single read carries and the joining of reads does belongs to the
   join: a depth from two standpoints is an extent (a gap in space); which read came first is an order; a rotation left by
-  two boosts is a map between the looks, with no gap. None is a write until a unit is carried in. (*Reads and Writes*
+  two boosts is a map between the looks, with no gap. None of these is moved by scaling. What is written in a joining
+  is the thing that kept the earlier look and the step taken, where one standpoint moved, and the amount, once a unit
+  is carried in. (*Reads and Writes*
   §1, D7; how a duration from two moments is to be classed is left open there.)
 
 ### 12.2 Open

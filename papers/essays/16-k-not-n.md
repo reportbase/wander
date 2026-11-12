@@ -612,9 +612,10 @@ list without end. What the geometry adds is the reason they fit together.
 
 **A pure function and its state.** The geometry is a pure function: tangent addition takes two slopes and returns a
 third, the same every time, with no state behind it. That is why it needs no memory and why reads never race. State
-enters only with keeping: which steps this observer took. And state comes in two kinds here. A count of steps kept is
-state with no unit, a write of the relation; scale the world and it is unchanged. An amount in a unit is a write of the
-scale, and that is where physics, and everything a machine calls a measurement, comes in. A law needs no memory; a
+enters only with keeping: which steps this observer took. And what is kept is kept in things, marks, pebbles, the
+cells of a register, each with a size and each a write. A count of steps is a description laid over them, with no
+unit; scale the world and it is unchanged. An amount in a unit is a write as well. With the first write comes physics,
+and everything a machine calls a measurement. A law needs no memory; a
 history does. ("Law" in the geometric sense only, a relation among one read's directions: the sorting stays read and
 write, with no third kind.)
 

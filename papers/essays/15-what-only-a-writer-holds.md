@@ -91,8 +91,8 @@ Rescalings give e.
 
 A read has sizes as ratios of the thumb: a thing one thumb wide reads one in two, then one in four, one in eight.
 Past the corner a write laying out its fineness gives as many places to each stretch over which the reading halves (essay 4), and a thing that reads
-one in eight is three such stretches out, which counted is 8 thumbs, past 2, 4 and 8, an extent. Counting is done in
-parallax, where it gives extents, and in writing, not in a pure read; what one length counted makes is finite and rational. A thing 3H away reads
+one in eight is three such stretches out, which counted is 8 thumbs, past 2, 4 and 8, an extent. A count is a description laid
+over things with a size, steps walked or thumbs laid end to end, each a write; it is not in a read. What one length counted makes is finite and rational. A thing 3H away reads
 one in three, between one in two and one in four, and a read holds it there by its order among the readings (essay
 4, "the count is the detail").
 
@@ -187,8 +187,8 @@ the corner equals the heat above it: equal halves, with no π/4 in them. In the 
 reads, each with a vantage and one hemisphere: 2/π the inscribed sweep's, what turning sees, the thumb's mean share,
 approached; π/2 the central sweep's, reached, its arc in thumbs what a walk counts, an extent.
 
-This essay's title, "what only a writer holds", needs one more distinction, which the ladder of §1 already drew. A write is
-a walk counted, and every walk actually made is a finite count, so what it holds is a fraction: 22/7, 355/113, a series
+This essay's title, "what only a writer holds", needs one more distinction, which the ladder of §1 already drew. A walk counted is
+a count laid over writes, the strides, and every walk actually made is a finite count, so what it holds is a fraction: 22/7, 355/113, a series
 stopped at some term. It uses π's name and its approximants; it never has the value, which would take a count without end. Only the
 blueprint holds π itself, the completed whole, every facing at once; it has no vantage, so it is not writing carried
 further, and whole, with π at its exact value, it is a limit, never a thing anyone has made. So π only seems free. What the sweep gives at no cost is the relation, the corner, the equal
@@ -217,8 +217,8 @@ enters it through Wallis's product, π/2 = (2·2)/(1·3) × (4·4)/(3·5) × …
 holds only the direction of a pair of such amounts, which is the Cauchy. So the Cauchy is kept by order, its exact facts
 the median and the equal halves; the Gaussian is kept by sums, its exact facts the mean and the variance.
 
-Parallax is the case that runs the other way: the write is exact, and the limit adds only units. Two slopes
-read a counted step B apart give the depth by 1/(d/B) = 1/s₁ + 1/s₂, a fraction from fractions, and the corner circle
+Parallax is the case that runs the other way: two looks held together are exact, and the limit adds only units. Two slopes
+read a step B apart give the depth by 1/(d/B) = 1/s₁ + 1/s₂, a fraction from fractions, and the corner circle
 is s₁·s₂ = 1. π enters only where a slope is made an angle, which is why the parsec, 648000/π astronomical units,
 carries a π and the extent in steps carries none (essay 6 §4).
 
@@ -318,8 +318,8 @@ It changes nothing about π or e or how to compute them. It sorts.
 - **e is the blueprint's number** because it states a scale completed, and giving a size as an amount is knowing V*. Wherever e
   or the natural logarithm appears (the lay's 1 + ln x, a decay's e^(−t/τ), the Gaussian's e^(−x²/2)), the read's version
   is a ratio and an order: one in two, one in four, one in eight. Counting them, two thumbs, four, eight, gives extents.
-- **The rationals are the first count's arithmetic**, made from one length counted in finite steps, in parallax, as
-  places, and in writing; a pure read needs only directions and their order. Square roots need a second length, the
+- **The rationals are the first count's arithmetic**, made from one length counted in finite steps, a count laid over
+  steps walked or put down, each a write; a pure read needs only directions and their order. Square roots need a second length, the
   transcendentals a limit; all three are where the observer goes past a read (essay 6, "From reads to extents to writes").
 
 Essay 14 ended on five things called 1. This one ends on two numbers that are not 1 and are not the read's, and on why:

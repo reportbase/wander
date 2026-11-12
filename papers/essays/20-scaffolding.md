@@ -86,7 +86,7 @@ wall was misread as 1/2, the loop gives 5/4. The loop shows an error. It cannot 
 ratios between pairs, as gaps, with nothing computed. Which of the twenty-four is the one read against does not matter.
 
 Joining is not a single read's doing. A read is one standpoint, one moment; a chain is several, kept and put together,
-and "the door drops out" is said by whoever keeps them. Scaffolding is a word for writes. A read has the three
+and "the door drops out" is said by whoever keeps them, in things, which are writes. Scaffolding is a word for writes. A read has the three
 thumbs of the door and nothing has come down.
 
 ## 5. The last storey
@@ -100,13 +100,14 @@ tower can end.
 
 - *It ends on the thumb.* Everything is in thumbs. Nothing is kept and nothing is known about size.
 - *It ends on a counted step.* Two looks a stride apart place a thing: twelve strides off, say, and another thing
-  thirty. The stride is a scaffold that was put up and kept, with no unit. Take the two against each other, 12/30 = 2/5,
+  thirty. The stride is a scaffold that was put up, a thing with a size, a write; the counts laid over it, twelve and
+  thirty, have no unit. Take the two against each other, 12/30 = 2/5,
   and the stride comes down: with a stride twice as long the counts are 6 and 15 and the ratio the same. Take one alone,
-  twelve strides, and the stride is still under it. Essay 19 called the counted stride the smallest write there is, and
+  twelve strides, and the stride is still under it. Essay 19 called the stride the smallest write there is, and
   said a law brings the chain of writes down to its least and not to zero. The least is this last storey.
 - *It ends on an agreed unit.* The stride is 0.7 metres. Now the bottom storey is a stick kept somewhere and agreed
-  on, and the result is moved by scaling the world against that stick. That is a write of the scale, where physics
-  enters (essay 1).
+  on, and the result is moved by scaling the world against that stick. That is an amount put down in a unit, the write the first
+  test finds (essay 1).
 
 A unit, on this picture, is scaffolding that everyone has agreed to leave up.
 
@@ -192,7 +193,7 @@ was tried in the older papers and withdrawn, and the reasons still hold.
 
 An arch is a thing in sizes: stones that bear weight. A reading is not; it is a direction. And an arch is built, where a
 read builds nothing. Today's vocabulary says why the second objection was right and what to keep of it. Building is
-writing. A scaffold is something put up and kept so that reads can be joined, which is a write of the relation, not
+writing. A scaffold is something put up and kept so that reads can be joined: a thing with a size, a write, not
 part of any read.
 
 So the picture is used here with three limits. Nothing is struck from a single read; the thumb's size was never in it.
@@ -216,8 +217,8 @@ is the keeper's scaffolding; the last one standing is the difference between a r
 *Importance and absence stop looking like a puzzle.* The thumb is in every reading and its size is in none. That is not
 a cancellation that happened to work out. It is the job.
 
-*The three kinds of result are three places a tower can end.* On the thumb, a read. On a kept step, an extent. On an
-agreed unit, a size. The series' two tests ask, of any number, what its last storey is.
+*There are three places a tower can end.* On the thumb, a read. On a step, an extent: a read still where two looks
+hold it together, a count where the steps are counted out. On an agreed unit, a size, a write. The series' two tests ask, of any number, what its last storey is.
 
 *The circle and the Cauchy are one equation.* The difference is what it was taken in terms of, and that choice is also
 the difference in what each costs.
