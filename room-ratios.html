@@ -60,7 +60,7 @@
 <body>
 <main>
     <h1>The room in ratios</h1>
-    <p class="lede">The reader's inscribed sweep is two sweeps: <span class="g">left–right</span> (the azimuth) and
+    <p class="lede">The inscribed read is two sweeps: <span class="g">left–right</span> (the azimuth) and
     <span class="g">up–down</span> (the altitude), both the geometry's, given before anything arrives. Each gives a ratio, so every point in view is a direction, two ratios:
     how far across against how far ahead, and how far up against how far out. From one place that is a picture, every
     direction and every angle, but no distance. One step, its length never measured, makes it a map: every place and size
@@ -73,11 +73,11 @@
         <div id="say"></div>
         <div class="grid">
             <div><canvas id="room" height="430"></canvas><p class="cap" id="roomcap">The room. Drag to look round it.</p></div>
-            <div><canvas id="chart" height="250"></canvas><p class="cap">The reader's directions from A: the two sweeps,
+            <div><canvas id="chart" height="250"></canvas><p class="cap">The read's directions from A: the two sweeps,
             left–right across, up–down up the side (even in height), their heat given whole; what arrives paints them. "Show the
             order" steps through them in the order of the turn. The dashed lines are each sweep's corner, 45°, where
             the ratio is 1.</p>
-            <canvas id="plan" height="200"></canvas><p class="cap" id="plancap">The reader's own map.</p></div>
+            <canvas id="plan" height="200"></canvas><p class="cap" id="plancap">The observer's own map.</p></div>
         </div>
     </div>
     <div class="panel">
@@ -287,7 +287,7 @@
     function drawPlan() {
         const [g, w, h] = fit(cv.plan); g.clearRect(0, 0, w, h);
         g.fillStyle = '#8a8a96'; g.font = '12px DM Mono, monospace';
-        if (st.step === 1) { $('plancap').textContent = 'The reader\'s own map: from one place, none. Each thing is only a set of directions; how far along them it lies is unread.';
+        if (st.step === 1) { $('plancap').textContent = 'The observer\'s own map: from one place, none. Each thing is only a set of directions; how far along them it lies is unread.';
             g.fillText('from one place: directions only', 12, h / 2); return; }
         const m = mapAll(), metres = st.step === 3, unit = metres ? stepLen() : 1;
         const sx = (w - 30) / 8, ox = 15 + 2.5 * sx, oy = h - 14, s = Math.min(sx, (h - 28) / 6);
@@ -301,8 +301,8 @@
         g.fillStyle = '#d4a052'; g.beginPath(); g.arc(X(0), Y(0), 4, 0, 2 * Math.PI); g.fill(); g.fillText('A', X(0) - 14, Y(0) - 4);
         g.fillStyle = '#b59cf0'; g.beginPath(); g.arc(X(1), Y(0), 4, 0, 2 * Math.PI); g.fill(); g.fillText('B', X(1) + 6, Y(0) - 4);
         $('plancap').textContent = metres
-            ? 'The reader\'s own map, now in metres: the same map, each step written as ' + stepLen().toFixed(3) + ' m. The grid is one step.'
-            : 'The reader\'s own map, from above: every corner placed by crossing its two rays, in steps (the grid is one step). Its size in metres is unread.';
+            ? 'The observer\'s own map, now in metres: the same map, each step written as ' + stepLen().toFixed(3) + ' m. The grid is one step.'
+            : 'The observer\'s own map, from above: every corner placed by crossing its two rays, in steps (the grid is one step). Its size in metres is unread.';
     }
 
     // ---- the readout ----
@@ -334,7 +334,7 @@
                 '° from the table\'s middle. The dashed ghosts, the ' + st.thing + ' at half and twice its size and distance, give exactly the same directions: nothing here says how far.';
         } else {
             note = 'Between things, unitless, the same in steps or in metres: ' + ratios().map(r => r[0] + ' ' + r[1].toFixed(3) + ' ' + r[2]).join('; ') + '. ' +
-                (st.step === 2 ? 'Every number in the table is so many steps, and the step was never measured: it is the reader\'s own one, its H.'
+                (st.step === 2 ? 'Every number in the table is so many steps, and the step was never measured: it is the observer\'s own one, its H.'
                     : 'One stride, measured once against a rule (' + unit.toFixed(3) + ' m), writes every place and size in metres. That one amount is the only thing carried in.');
         }
         $('note').innerHTML = note;

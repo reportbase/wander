@@ -70,7 +70,7 @@
                 <canvas id="cv3" height="170"></canvas><p class="cap">What the eye reads: how far each post's bearing
                 moved between the two looks, against the farthest point (or the fixated post), teal one way and gold the
                 other. With r = 0 nothing moves.</p></div>
-            <div><canvas id="cv2" height="380"></canvas><p class="cap">The world on the reader's lay (in proportion to 1 m,
+            <div><canvas id="cv2" height="380"></canvas><p class="cap">The world on the read's lay (in proportion to 1 m,
             then 1 + ln d): posts true (white), placed by the two looks (teal ring), or left as a direction (red ray) when
             their parallax is under ε. The dashed circle is the reach.</p></div>
         </div>
@@ -195,7 +195,7 @@
               + `so no pair's angle changes and the two rays from each post are one ray. Directions, the frame and the corner; no distance. Nothing placed.`
             : `<span class="w">The eye's step.</span> Chord ${(2 * st.r * Math.sin(D / 2) * 100).toFixed(2)} cm, sideways step ${(st.r * Math.sin(D) * 100).toFixed(2)} cm. `
               + `Reach r·sin Δ/ε = <span class="r">${fmt(R)} m</span>. ${n} of ${ps.length} posts placed, `
-              + (st.known ? 'written in metres (r carried in).' : 'in units of r (the reader\'s own); metres need r.')
+              + (st.known ? 'written in metres (r carried in).' : 'in units of r (the observer\'s own); metres need r.')
               + (st.t >= 179.5 ? '\nA half turn steps the eye straight back: no sideways step, nothing placed straight ahead.' : '');
         const rows = [['post', 'parallax', '> ε?', 'placed, in r', 'in metres']].concat(ps.map(p => [p.d + ' m', p.parallax.toExponential(2),
             p.parallax > eps ? '<span class="r">yes</span>' : '<span class="x">no</span>', p.placed ? fmt(p.inR) + ' r' : 'a direction', p.metres != null ? fmt(p.metres) + ' m' : '—']));

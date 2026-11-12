@@ -6,7 +6,8 @@
 
 *A first full draft (8 November 2026), from the outline in `plans/phy-outline.md`. Its geometry is* Reads and Writes*'s
 (`papers/readers-and-writers.md`), and where the two differ that paper stands. A read uses no trigonometry (*Reads
-and Writes* §1): where this paper writes an angle or a trigonometric function it speaks from the blueprint; a read's own
+and Writes* §1): where this paper writes an angle or a trigonometric function it speaks from the blueprint (classical geometry's view
+from no standpoint, set beside the read for comparison); a read's own
 results are rational in the slope s = v/h. Since 10 November 2026 it follows that
 paper as rewritten on SPN R788: what scaling leaves unmoved is a read if one standpoint holds it and an extent if it needs
 two, and only an amount in a unit carried in is a write. Its physics comes from the working
@@ -74,7 +75,7 @@ every joining a write; R788 keeps "write" for what scaling moves.) Physics has u
 dimensional analysis: Bridgman (1922) and Buckingham (1914) sort quantities into dimensionless groups and the scale
 that sets them. The groups are reads or extents (with one base unit they are exactly the directions of a read; Buckingham's
 π groups, checked in `plans/bpi-plan.md`); the scale is the write. The test is necessary for a reading and not
-sufficient: a number unmoved by scaling can still have been made by joining, as π is made by closing the turn.
+sufficient: a number unmoved by scaling can still be no read, as π is none: it is the blueprint's, the turn held closed.
 
 **Change what arrives.** Keep the standpoint and the turn, and change the world that paints the directions: another
 source, another spectrum, another brightness, another medium. What stays is the read's own: the directions and their
