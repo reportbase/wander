@@ -41,7 +41,10 @@ equations. Five things are enough:
 | e^(iπ) = −1 | s ⊕ (1/s) is the horizon |
 | π, 2π, 4π | 2Ω, 4Ω, 8Ω |
 
-Nothing in the right-hand column uses an angle, a trigonometric function, π, e or i. The sections below are these five
+Nothing in the right-hand column uses an angle, a trigonometric function, π, e or i. But Ω is π/2 under another name,
+and π is no part of reads and writes: it is the blueprint's. So the column sorts in two. The rows with no Ω in them
+(the slope, s ⊕ a, s = 1, the shares, the horizon) are what a read has. The rows with Ω (the coefficient, the weights
+adding to Ω, the counts of facings) are still the blueprint's statements, made shorter. The sections below are these five
 things worked through, and where they keep the classical notation (the landing point in §8, for one) it is to show
 what the notation was saying.
 
