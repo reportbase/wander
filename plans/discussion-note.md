@@ -238,3 +238,7 @@ paragraph under "The paper in one equation") and section 6 (under "A tower of ex
      "read x write = blueprint".
    **Next:** Tom's call on the name, then a sorting pass: *Reads and Writes* first (107 uses of "the writer's"), the
    essays after (368).
+
+**Item 15 ruled and carried out in part** (12 Nov, R887; Tom: "1. Ok. 2. Ok 3. There are reads and writes, no such thing
+as a reader or writer"): the name is the blueprint; no reader and no writer, only the acts, with "the observer" where
+someone must stand or walk. *Reads and Writes* is done. Still to do: the essays, the physics paper, the demos' wording.
