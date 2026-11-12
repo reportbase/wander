@@ -92,10 +92,10 @@ is read is discrete.
 
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
-| **continuous** | a read | the number line in a unit |
-| **discrete** | a count | a write |
+| **continuous** | reading: a read, and what reads held together give, an extent or a map | the number line in a unit |
+| **discrete** | a count or an order, descriptions kept in writes | a write |
 
-The other two boxes mix the properties, and both are tools of description. A count is discrete and unmoved by scaling:
+The top-left box is reading, not only a read: an extent (D3) and a map (D7) are had from reads held together, continuous and unmoved by scaling, and neither is a read (§4). The bottom-left box holds two different descriptions: an order, which read came first, is discrete and unmoved like a count, but is kept with no step repeated, so it is not a count (D7; O4). The other two boxes mix the properties, and both are tools of description. A count is discrete and unmoved by scaling:
 the strides to the mountain are writes, and "514" is an account laid over them; what is kept of it is kept as things,
 marks or pebbles, each a write. The number line in a unit is continuous and moved by scaling: a length as an exact real
 number, the circle held whole at a size. That box is the blueprint, classical geometry, which this paper sets beside a read's
@@ -954,7 +954,7 @@ contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car s
 it needs to stop is the distance it has. Sorted: from two reads a tick apart the number is x₂/(x₂ − x₁) = d₁/B, the thing's distance over the step between
 the two reads. That is a ratio of two distances, unmoved by scaling and held by no single read, and so far it is D3's
 gap across with nothing temporal in it. Read as a time, the ticks still to come, it adds a premise no read holds: that
-the steps go on alike. Whether a count of ticks to a prospective event is an extent is left open (§12, O9); τ in seconds
+the steps go on alike. The ticks to come are not a count in this paper's sense, since a count describes writes made and none of them is made yet, though they rest on a count's premise; what kind they are is left open (§12, O9). τ in seconds
 is a write. One stream cannot tell
 a thing coming nearer from a thing growing where it stands; a neighbour at the same depth, read at once, tells them apart,
 approach moving both readings and growth one. A speed in metres a second is a write twice over. **Classical** (Lee);
@@ -1864,7 +1864,9 @@ before the data can show where it is not. **Checked** (TCF; killed).
   from a read is one thing, and what kind of thing the inferred quantity is, another. The look is a read, the
   uniformity a premise about what arrives, and the rapidity inferred the coordinate of a map; §4 now says so. Not
   settled by this: whether the rapidity is always recoverable from one sky, or the assumed rest frame unique. The time
-  to contact stays out of D3.
+  to contact stays out of D3. *Sharpened (R921):* as d₁/B it is an extent; read as ticks still to come it is not a
+  count, since a count describes writes already made and no future tick is one, though it rests on the premise every
+  count rests on, that the steps go on alike. What kind the ticks to come are is still open.
 
 ## Where the ideas come from
 
