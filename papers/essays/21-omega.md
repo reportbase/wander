@@ -19,6 +19,32 @@ statements say. So this is an experiment beside the paper, not a proposal for it
 gets simpler in Ω, the formula was about one sweep. Where it gets worse, it was about something else, usually about
 several sweeps joined into a whole.
 
+**In short.** Ω is to one read what π is to the turn: its total. π is two reads' worth; Ω is one. The total is the
+blueprint's number for a read, not a number a read holds: a read has the slopes and the equal halves, and no count
+reaches Ω. With that said, the aim of the essay is to strip the notation down to the least that states the series'
+equations. Five things are enough:
+
+1. s, a slope: what a read holds of a direction.
+2. s ⊕ a = (s + a)/(1 − s·a): two sweeps taken as one.
+3. 1/s, the exchange. Its fixed point, s = 1, is the corner.
+4. ds/(1 + s²), the weight that composing leaves unchanged. Its total over one sweep is Ω.
+5. A count of facings. Any constant in the series is that count times Ω, or its reciprocal.
+
+| classical | stripped |
+|---|---|
+| the angle, and its tangent | the slope, and the weight below it |
+| the tangent of a sum | s ⊕ a |
+| 45° | s = 1 |
+| h² + v² = 1 | the shares 1/(1 + s²) and s²/(1 + s²) |
+| (2/π) · 1/(1 + s²) | 1/(Ω·(1 + s²)) |
+| two angles adding to a quarter turn | the weights below s and below 1/s add to Ω |
+| e^(iπ) = −1 | s ⊕ (1/s) is the horizon |
+| π, 2π, 4π | 2Ω, 4Ω, 8Ω |
+
+Nothing in the right-hand column uses an angle, a trigonometric function, π, e or i. The sections below are these five
+things worked through, and where they keep the classical notation (the landing point in §8, for one) it is to show
+what the notation was saying.
+
 The order: the operation (§1), its measure and its total (§2), Ω times its reciprocal (§3), the Cauchy's coefficient
 (§4), the corner (§5), two charts and one horizon (§6), three thumbs (§7), facings, Euler and composing (§8), a sweep
 composed with itself (§9), what gets plainer and what does not (§10), what Ω does not do (§11), who saw which piece
