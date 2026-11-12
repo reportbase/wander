@@ -347,3 +347,10 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
     synthesis, not a gap in the definition. Claude's notes, not ruled: "synthesis" was withdrawn as a name for the
     blueprint under R890 ("synthetic read"), so the word here is Tom's for the class, not a claim that reads and
     writes make the blueprint; "probably" is his, so this is a working test, not a rule.
+
+    **Tom, continuing, not settled:** "the natural world could care less about the tools we use to describe it."
+    Claude's notes, not ruled: counts, the number line, the blueprint, trigonometry and π are tools of description,
+    which is why they sit off the diagonal; the same holds of the paper's own terms (the slope s, the formula
+    ds/(1 + s^2), heat and paint, this table), so the definition names two things by their properties (continuous
+    and scale invariant; discrete and scale variant) and every formula for them is description, the paper's
+    included.
