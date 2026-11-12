@@ -42,7 +42,8 @@ that 60°. That heat map is the two-dimensional Cauchy,
 
   1/(2π(1 + r²)^(3/2)) per unit of glass,
 
-falling, in the blueprint's angle α off the look, as cos³α.
+falling, in the blueprint's angle α off the look, as cos³α. (The blueprint is classical geometry's view from no
+standpoint; it is set beside the read for comparison.)
 
 That is the map on the flat screen. Drawn on another chart the same looking makes another curve: the stereographic
 chart of the whole sky gives (1/π)/(1 + |z|²)², which is not this one. The cos³ belongs to the screen square to the look.

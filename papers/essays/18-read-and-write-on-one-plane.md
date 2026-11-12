@@ -30,7 +30,8 @@ turn (§4), the sphere behind it, the blueprint's (§5), heat counted per chart 
 
 ## 1. One plane
 
-Stand somewhere and look out. Every point of the world in front of you is, as the blueprint has it, a distance d and a
+Stand somewhere and look out. Every point of the world in front of you is, as the blueprint has it (the blueprint
+being classical geometry's view from no standpoint, set beside the read and the write for comparison), a distance d and a
 direction θ, or as one complex number z = d·e^(iθ). Hold up your thumb at arm's length: H, the one length a read has.
 Divide by it and take the logarithm:
 
@@ -190,8 +191,8 @@ it. `euler.html`'s "n reads" draws the polygon closing on the circle.
 The count never lands on −1, at any n, with fractions for θ: the direction is always a little short and the length a
 little long. Yet −1 is reached in two steps, exactly, by another road: the corner is the quarter turn,
 (1 + i)/(1 − i) = i, and i × i = −1. That is the one finite door, since no finer equal step with a rational slope is a
-rational part of the turn (Niven). So e^(iπ) = −1 holds three ways: a read has the exchange, w(s) × w(1/s) = −1; a
-write has the two corner steps, and approximations for anything finer; only the blueprint, whole at its
+rational part of the turn (Niven). So e^(iπ) = −1 is held two ways, with the classical statement beside them: a read has the exchange, w(s) × w(1/s) = −1; a
+write has the two corner steps, and approximations for anything finer; the blueprint, whole at its
 limit, has it with the arc named π and the base named e, neither of which the fact depends on (the second essay, §9).
 
 ## 8. What the plane is not

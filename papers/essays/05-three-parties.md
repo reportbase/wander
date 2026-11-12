@@ -257,7 +257,7 @@ direction *and* its distance would need every distance, the size of everything, 
 The wedge is the blueprint's too: its description of the read's geometry, given afresh at each standpoint from the
 relations there and drawn whole from outside. It needs no size: its readings are ratios, laid by the two-dimensional
 Cauchy. What further standpoints would add is what they added in the plane, once per party: the true size of each against
-H, in thumbs, an extent; a blueprint adds it in a unit, a write.
+H, in thumbs, an extent; in a unit it is a write, the amount a blueprint states.
 
 The wedge can be placed anywhere on the sphere. One rotation positions it; the read's two sweeps then work inside
 it, in its own frame. The readings are the same at every position. Only a frame fixed outside, the sphere's, records where

@@ -25,6 +25,9 @@ distinction of dimensional analysis; the names say more, since they name the act
 amount carried in, as no function of invariants can vary) and the vantage that holds each. Together they say why the two
 acts never race: a read adds nothing, and a write to the payload moves no direction. The heat is given; the paint is met.
 
+Where the essays say **the blueprint** they mean classical geometry's view from no standpoint, both hemispheres at once.
+It has no vantage, so it is neither a read nor a write and not what they add up to; it is set beside them for comparison.
+
 | # | essay | opens on | what it does |
 |---|---|---|---|
 | 1 | [Reading and writing](01-reading-and-writing.md) | mapping a room with no ruler | two questions, two vantages, the read and the write; the circle without the V, what is old and what is new; the test, scale the world; what writing costs, counted; the survey, the body as a base, towers of ratios, closing a loop; why reads never race (Bernstein's conditions built in) |

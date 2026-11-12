@@ -399,10 +399,10 @@ and a direction; nothing in it is a place, nothing is counted, and a read has a 
 with parallax, and one length counted makes the rationals: the fourteenth essay). A
 second standpoint adds a second variable, the step between the two. Now each point, matched in both looks, is two rays
 crossing, and its distance comes out of the crossing's lengths and angles, sines and square roots, numbers no single length
-makes. More standpoints give every place seen, in the step's length: the blueprint's box, its three number lines, up to its
-size. Count the step in an agreed unit and the box is in that unit.
+makes. More standpoints give every place seen, in the step's length: the places a blueprint's box states on its three
+number lines, up to its size. Count the step in an agreed unit and the places are in that unit.
 
-So parallax is how an observer reconstructs the blueprint's cube, up to its size: the passage from a read to an extent. It has
+So parallax is how an observer comes to the places the blueprint's cube states, up to its size: the passage from a read to an extent. It has
 moved, joined its standpoints and is holding what no one standpoint holds, every place in its own stride, and scaling the
 world with the stride moves none of it. Only when the stride is counted in an agreed unit does it write. When it stops and
 looks again, it reads. Reads, extents and writes are not three kinds of observer; they are what one observer is doing.
@@ -418,8 +418,8 @@ pair's corner, about ε·d/B far off, and past about B/ε nothing but a ray (the
 example, one thumb walked toward a range ten thumbs off puts it at k = 20, an error about ten times the step's ε; a
 baseline of twenty thumbs would put it at the corner. *Of which things:* the
 same two standpoints give V for the near things and leave it unknown for the far ones. More standpoints, a longer baseline,
-narrow the band; nothing closes it. Holding V exactly, as the blueprint held whole does, is the limit of
-this, never a stage of it. That is the fifteenth essay's shape again: every stage of learning V is a finite approximant, as
+narrow the band; nothing closes it. Holding V exactly, as the blueprint does, is no stage of this: the stages approach
+the value the blueprint states and do not make the blueprint, which has no vantage. That is the fifteenth essay's shape again: every stage of learning V is a finite approximant, as
 every partial sum of π is, and holding V exactly, like holding π, would need the infinite process finished. An observer
 placing V holds it to so many digits, for so many things, out to so far. V is knowable, not known: parallax places it
 without V ever being known first, and holds it exactly only at the limit. The twelfth essay's four things (the universe,

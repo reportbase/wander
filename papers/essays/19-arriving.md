@@ -15,7 +15,8 @@ are two different paces, and no pace is both.
 The series has two ideas, reading against writing and the Cauchy, and two tests, scale the world and change what
 arrives. Here the first idea is taken down a single road. Look, stride, look: the look is a read, the stride counted is
 the smallest write there is, and the road from far off to the door is, in the blueprint's notation, half of Euler's
-circle, with −1 at the door.
+circle, with −1 at the door. (The blueprint is classical geometry's view from no standpoint; it is here for
+comparison, and the road is all reads and writes.)
 
 The order: the scene (§1), one look (§2), two looks and a stride (§3), the even ladder (§4), the other pace (§5), the
 blueprint's circle (§6), a chain of looks and where the infinite is (§7), what is free, what is kept and what is carried in

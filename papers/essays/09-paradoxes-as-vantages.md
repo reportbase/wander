@@ -163,15 +163,15 @@ needed a new fact. Each needed the denominator put back.
 The field has a specific shape, two private denominators. The other paradoxes in this essay have a more general one, and
 it is worth stating before going on.
 
-The essays have kept apart two vantages.
+The essays have kept apart two sides, called vantages here for short, though only the first has a standpoint.
 - **A read** is taken from somewhere. It holds one length, its H, the thumb, turned. What it has are ratios:
   directions and their heat, the order of things, the corner where two of its relations are equal. It holds no total and no
   count of what there is, and it meets a horizon.
-- **The blueprint** holds the whole. It has every amount in a unit, both hemispheres, the count, the sum. It is the
+- **The blueprint**, classical geometry's view, set beside a read for comparison, holds the whole. It has every amount in a unit, both hemispheres, the count, the sum. It is the
   drawn shape, the equation on the page, the globe. It has no standpoint, no corner and no horizon.
 
-Neither is wrong, and each can do what the other cannot. The blueprint's statement can be built from many readings,
-by standpoints, loops closed and one amount carried in (the sixth essay). The blueprint can state what any read would have
+Neither is wrong, and each can do what the other cannot. What the blueprint states of a thing can be arrived at from many
+readings, by standpoints, loops closed and one amount carried in (the sixth essay); that gives extents and a write, not the blueprint. The blueprint can state what any read would have
 from any place (the seventh essay's lighthouse drawn at any size). What no one can do is hold both at once in one
 observation.
 
