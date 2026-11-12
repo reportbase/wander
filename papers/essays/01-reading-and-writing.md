@@ -107,8 +107,8 @@ equation h² + v² = 1, held whole: the blueprint's circle is the thumb held to 
 from H, or differs from one direction to another, the whole is some other shape, an ellipse, a coastline, a floor plan, a
 breadth given in every direction.
 
-If V is not known, you have a standpoint, and what you have from it is a **read**. You are somewhere, looking out, and what you have
-is what arrives at that place. It comes in two parts. One part is the directions themselves, the places on your view
+If V is not known, you have a standpoint, and what you have from it is a **read**. You are
+somewhere, looking out, and what you have is what arrives at that place. It comes in two parts. One part is the directions themselves, the places on your view
 where something can be: each one a ratio of v to h and nothing more. These are the *directions*, and the read weighs
 them as a *heat*: hottest along the look, cooling toward the horizon, continuous, with nothing counted in it. The other
 part is what arrives along each direction, its colour, brightness and texture, laid onto those directions: the *paint*.
