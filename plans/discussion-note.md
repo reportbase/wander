@@ -306,3 +306,9 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
     blueprint is outside the sorting. Claude's note, not ruled: a blueprint drawn on a sheet is marks, so paint,
     and is met by a look like any paint; what is not in the world is the thing the marks stand for (the circle
     whole, π), which answers R890's open point about a blueprint "made" and then looked at.
+
+    **Tom, continuing, not settled:** "reading is continuous, but the reading is of something that is discrete."
+    Claude's notes, not ruled: this refines "reads are heat": heat is the form of reading (continuous, the same
+    over any world), paint is what is read (discrete, things); a read is heat meeting paint, so read and write are
+    not two bins of things but the act and what it is of; everything there to be read was written, by the world
+    or an observer (R644 from the other side; R645's K, a count read continuously, the same shape).
