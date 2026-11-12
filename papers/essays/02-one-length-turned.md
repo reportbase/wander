@@ -346,7 +346,7 @@ thing and not a second dimension. In space the wedge holds π/2 of directions, t
 **What is free, and what π costs.** The geometry here is prior to any physics, and free: the relation, the exchange
 s ↔ 1/s and its corner, the heat's equal halves, the four facings, and the 1 that the short side and the long side give
 back. Nothing is computed to have them, and no time is spent. The numbers π/2 and 2/π are not free. π is a limit: no
-finite count of steps gives its value, only a fraction near it. So there are three, not two. A read has slopes, the
+finite count of steps gives its value, only a fraction near it. So there are two acts, and classical geometry's statement set beside them for comparison. A read has slopes, the
 corner and equal halves, and neither knows nor uses π. A write is a walk counted, so it holds fractions, 22/7,
 355/113, each nearer π and none of them π; it uses π's name and its approximants, never its value. Only the blueprint holds π
 itself, the completed whole, and the blueprint, whole, is a limit, never a thing anyone has made.

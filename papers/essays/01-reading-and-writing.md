@@ -30,7 +30,7 @@ with no memory and no unit. Keeping, which holds a history and still no unit. An
 a physical law carries units; they are not a third kind beside reading and writing. That the geometry's laws are of
 this kind may be why it needs no memory.
 
-The plainest example is Euler's identity. The blueprint states it as e^(iπ) = −1, with an exponential, the number e and a
+The plainest example is Euler's identity. The blueprint, which here means classical geometry with its view from no standpoint, brought in only for comparison, states it as e^(iπ) = −1, with an exponential, the number e and a
 half turn measured by π. The same relation is there in a form that uses none of them: write a direction of slope s as
 w(s) = (1 + is)/(1 − is), and w(s)·w(1/s) = −1 for every slope, a direction and its reciprocal; at the corner, i·i = −1.
 The algebra is ordinary and the two forms are equivalent. The simpler one exists because it relates directions of one

@@ -311,7 +311,7 @@ ratio of the thumb's own shares; V was never in it, and it does not "cancel" fro
 V in metres is a write, had by walking and a unit. Neither is a shortcoming of the read: the horizon, the corner as a
 median and the absence of any mean are what a read with no breadth in it is.
 
-**Four things: the universe, an apple, a human and a sheet of paper.** A read, a write and the blueprint, and where V stands in each.
+**Four things: the universe, an apple, a human and a sheet of paper.** Two reads, a write under way and, for comparison, the blueprint, and where V stands in each.
 - *The apple and the human read the universe by the inscribed sweep.* From home to a horizon: directions only, a turn
   that never ends, the blueprint's measure of it 2/π, a limit never reached. The universe has no far side to face, so its V
   is **unknowable**: no size could be had, and with none there is no inside or outside, only home and the horizon.
@@ -324,7 +324,7 @@ median and the absence of any mean are what a read with no breadth in it is.
   line of sight, is the Cauchy whatever the apple's shape, the shape only the paint. The hand holds the back as the eye
   holds the front, so both hemispheres are in reach and the turn is known; holding and turning is a write under way, and in the hand
   the apple's V is **known**: held whole. Its exact amount in a unit is still a write, the limit of §6.
-- *The human draws a circle on paper.* The drawing is the blueprint: both hemispheres at once, with no vantage and so no facing, neither read nor write, whole
+- *The human draws a circle on paper.* This fourth is the comparison, classical geometry's circle. The drawing is the blueprint: both hemispheres at once, with no vantage and so no facing, neither read nor write, whole
   only at its limit (§9, "What is free, and what π costs"), made, not seen, a mark holding both halves together, V = H at one length, π held whole. It has neither sweep's
   number. π/2 and 2/π belong to the two facings, the central reached at a point and the inscribed approached; the blueprint
   has the number 1, the thumb in thumbs. The product of the two reads' numbers is also 1; that is arithmetic, not a way of making the blueprint from reads.
@@ -1032,7 +1032,7 @@ written down in degrees by the instrument, one base walked and counted. The dire
 thumb, every side of every triangle is an extent; the base counted in a unit is the one write, and every side is then in
 the base's unit. A second base checks the first and adds no scale. **Classical.**
 
-**What a blueprint adds.** An observer builds with reads and extents and never needs a unit, until one of these is wanted:
+**What a blueprint adds.** A blueprint is the classical statement, the whole in amounts seen from no standpoint. An observer builds with reads and extents and never needs a unit, until one of these is wanted:
 1. the size, an amount;
 2. meeting out of view, with another observer with nothing in view in common;
 3. sums of amounts, which no ratio supplies;
@@ -1042,10 +1042,10 @@ the base's unit. A second base checks the first and adds no scale. **Classical.*
 7. a far field kept in proportion, common to standpoints whose corners differ (the number line has no corner, so standpoints
    whose thumbs differ can share it).
 
-Each is a capability, not a condition. A blueprint adds them. Nothing here is against the write or the number line: they
+Each is a capability, not a condition. A blueprint has them; an observer comes to them only by writes, a count and a unit carried in, and never by a read. Nothing here is against the write or the number line: they
 hold what no standpoint holds.
 
-**Write once, then read again.** A write is over once made: the stride counted, the number put down, the blueprint
+**Write once, then read again.** A write is over once made: the stride counted, the number put down, the plan
 drawn. To be used it must be read: someone stands somewhere and looks at it, at marks on a page in their directions and
 ratios, as at anything else that arrives. A blueprint in a drawer does nothing until it is looked at; a survey's base,
 once counted, is read against by every angle that follows; a drawing of a known room, rendered from a standpoint, is a
@@ -1393,7 +1393,7 @@ corner, and that the read and the walk multiply to 1; how much the whole is, and
 the long side, is the blueprint's completed sum. That is the exact sense of "π is the price", above: the price is an
 infinity, paid only at the limit, and a read never pays it because a read never needs the value.
 
-So there are three, not two. A read has slopes, the corner and equal halves, and neither knows nor uses π. A write
+So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves, and neither knows nor uses π. A write
 is a walk counted, and any walk actually made is a finite count, so it holds fractions: 22/7, 355/113, a series
 stopped at some term, each nearer π and none of them π. A write uses π's name and its approximants, and never has its
 value. Only the blueprint holds π itself: the completed whole, every facing at once, the total of a sum no one
@@ -1404,7 +1404,7 @@ turn, and reached nowhere short of it.
 The equation π/2 × 2/π = 1 is then worth a second look, since it names the read and the walk and neither a read nor
 a write has π. It does not need π. The two factors are reciprocals, and x × (1/x) = 1 for every x: π is in
 both and leaves the product. The proof above says the same, since the 1 is the whole gain, fixed first, and the chord
-and the square's edges split it with no π in them. Each of the three holds the equation in its own form:
+and the square's edges split it with no π in them. A read, a write and, for comparison, the blueprint each hold the equation in their own form:
 
 | who | what it holds of π/2 × 2/π = 1 |
 |---|---|
@@ -1546,7 +1546,7 @@ read's own. In the reciprocal slope it is Boole's map, c ↦ ½(c − 1/c) (1857
 c² + 1 = 0, a search for the standpoint i that no slope on the line reaches. In the share v² it is the logistic map,
 y ↦ 4y(1 − y) (Ulam and von Neumann 1947). In the turn's own share it is the tent map. Each keeps the uniform turn's
 law in its chart: the Cauchy, the Cauchy, the arcsine, the uniform. Each spreads nearby starts by a factor of two a
-step, ln 2 in the blueprint's number, the same in every chart. All of this is classical; what the three tiers add is who
+step, ln 2 in the blueprint's number, the same in every chart. All of this is classical; what the sorting into a read, a write and the classical statement adds is who
 can follow the orbit (the CHS plan, Code and data, exact).
 
 | who | what it holds of the orbit |
