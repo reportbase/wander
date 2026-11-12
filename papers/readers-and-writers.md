@@ -28,7 +28,8 @@ scaling leaves it unchanged too, but no single read holds it; it needs a second 
 (parallax). A **write** is an amount, the across axis's zero tied to a unit carried in from outside, a metre or a second:
 it is exactly what scaling the world moves. The write is the scale-variant companion of the read. These are acts:
 there is no reader and no writer here. Every read has a vantage and one hemisphere; the *blueprint*, the drawn shape,
-has both hemispheres at once and no vantage, so it is neither a read nor a write and has nothing to do with either.
+has both hemispheres at once and no vantage, so it is neither a read nor a write. It is classical geometry, the view
+from no standpoint, and it is in this paper only as a point of comparison: the paper is about reads and writes.
 
 The read's directions are laid by the uniform turn, whose law in the reading v/h is the Cauchy: its median at the corner
 v = h, its horizon never reached, no mean. It is best read as a *heat*, a continuous weight over the readings, hottest
@@ -297,11 +298,12 @@ read has a vantage and one hemisphere, and there are two of them, the two sweeps
 are reads. A write is what is counted and kept, or tied to a unit (D4, D7); it is how reads are joined. Neither a read
 nor a write holds both hemispheres. What holds both at once is the **blueprint**: the drawn shape, with both signs of every axis, the turn completed, the
 facings joined. It has no vantage. Reads and writes are what is done from a vantage, so the blueprint has nothing to do
-with reads and writes: it is not a third act beside them, not a read of a larger kind, and not what they add up to. "Dual hemispherical" and "without a vantage" say the same thing: a vantage faces
+with reads and writes: it is not a third act beside them, not a read of a larger kind, and not what they add up to.
+It is classical geometry, with its eye above the figure seeing every side at once. This paper is about reads and
+writes; the blueprint is brought in as the point of comparison, the familiar statement a read's or a write's form is
+set beside (e^(iπ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. "Dual hemispherical" and "without a vantage" say the same thing: a vantage faces
 one way. The circle held whole, the sphere and the cube, the angle and trigonometry, π and e
-are the blueprint's. A blueprint is made, not seen from anywhere, and once made it is read like anything else (§6,
-"Write once, then read again"). Whole, with π at its exact value, it is a limit; any blueprint actually made is a
-finite one. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
+are the blueprint's. Whole, with π at its exact value, it is a limit. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
 walk or count.
 
 **V.** V is the other party's breadth, the mountain in the distance that the thumb is held up against. A reading is a

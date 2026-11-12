@@ -252,3 +252,7 @@ essays that pair π/2 with "a write" still to check.
 **Item 15, again** (12 Nov, R890; Tom: "the blueprint view does not have a vantage so it has nothing to do with reads
 and writes."): the blueprint is not made of reads and writes and is not a read; "synthetic read" dropped. Still to
 sweep: sentences where a write "gives" the circle or the blueprint.
+
+**Item 15, settled in its framing** (12 Nov, R891; Tom: "the paper is reads and writes. the blueprint is classical
+geometry with the gods eye, we include it here as a point of comparison."): the blueprint is the comparison, not a
+third part. Still to bring into line: §9's tier tables, "Four things", the essays' headings.
