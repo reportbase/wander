@@ -1783,7 +1783,7 @@ aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan
 runs as they came out, the killed ones too, and none alone establishes the sort. Pages: `read.html`, `pinhole.html`,
 `crosshairs.html`, `heat-cube.html`, `euler.html`, `approach.html`, `slide-rule.html`, `star-field.html`. The read as a
 control: reportbase/calendar (`dial.js`, `dome.js`, `horizon.html`, `dome.html`, `dome-map.html`, `dome-instrument.html`).
-The mountain walk's two corners and paces: `plans/breath-note.md` §5. The stride and the fixed share: `plans/wlk-plan.md`, `plans/one-plan.md`, `runs/wlk/`. The rewrite's map from the record and its checklist: The denominator paradoxes and the exchange: `papers/denominator-paradox.md`.
+The mountain walk's two corners and paces: `plans/breath-note.md` §5. The stride and the fixed share: `plans/wlk-plan.md`, `plans/one-plan.md`, `runs/wlk/`. The denominator paradoxes and the exchange: `papers/denominator-paradox.md`. The rewrite's map from the record and its checklist:
 `plans/rw-rewrite-outline.md`. The known physics sorted by the two tests is the companion *Reads and Writes in Physics*
 (`papers/reads-and-writes-physics.md`), brought to R788's kinds (§12, O7).
 
