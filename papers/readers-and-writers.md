@@ -201,7 +201,10 @@ of readings joined, a/b · b/c = a/c, where b was needed for both links and is i
 That is said by whoever keeps the chain, so scaffolding is the writer's word, and a scaffold put up and kept, a counted
 step, is a write of the relation. The last "in terms of" never comes down: a/c is still in terms of c. Where a tower
 ends is its kind: on the thumb, a read; on a kept step, an extent; on an agreed unit, a size. A unit is scaffolding
-left up by agreement. **A reading**; the arithmetic is exact. The older statement is the archive's centring (*Degrees of
+left up by agreement. A denominator leaves no mark on a number written down, so two readings on different denominators
+can be joined by mistake: each of two people sees the other smaller, in terms of its own hand. Dividing one such reading
+by the other takes down the distance they share and leaves their sizes against each other; multiplying takes down the
+sizes and leaves the distance (*Each Sees the Other Smaller*, Code and data). **A reading**; the arithmetic is exact. The older statement is the archive's centring (*Degrees of
 Freedom* §3.1), taken here without its Roman arch.
 
 | | memory | unit |
@@ -1780,7 +1783,7 @@ aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan
 runs as they came out, the killed ones too, and none alone establishes the sort. Pages: `read.html`, `pinhole.html`,
 `crosshairs.html`, `heat-cube.html`, `euler.html`, `approach.html`, `slide-rule.html`, `star-field.html`. The read as a
 control: reportbase/calendar (`dial.js`, `dome.js`, `horizon.html`, `dome.html`, `dome-map.html`, `dome-instrument.html`).
-The mountain walk's two corners and paces: `plans/breath-note.md` §5. The stride and the fixed share: `plans/wlk-plan.md`, `plans/one-plan.md`, `runs/wlk/`. The rewrite's map from the record and its checklist:
+The mountain walk's two corners and paces: `plans/breath-note.md` §5. The stride and the fixed share: `plans/wlk-plan.md`, `plans/one-plan.md`, and the denominator paradoxes in `papers/denominator-paradox.md`, `runs/wlk/`. The rewrite's map from the record and its checklist:
 `plans/rw-rewrite-outline.md`. The known physics sorted by the two tests is the companion *Reads and Writes in Physics*
 (`papers/reads-and-writes-physics.md`), brought to R788's kinds (§12, O7).
 

@@ -167,6 +167,20 @@ terms of 100 and the second in terms of 50. Or take two lengths, 3 and 4. The lo
 and the shorter is a quarter less than the longer; a third and a quarter are the same gap read in terms of its two ends.
 Essay 9 collects paradoxes of this kind. Each is a tower built with a storey that does not rest on the one below.
 
+The fullest case is two people across a field, each seeing the other smaller (*Each Sees the Other Smaller*, the
+series' older paper on denominator paradoxes). Each reads the other in terms of its own outstretched hand, so the two
+readings stand on different scaffolds, both private. Say they are 1.8 and 1.6 tall and ten arm's lengths apart: one
+reads 0.089, the other 0.1125, and both are less than 1. Written down as bare numbers they contradict each other. The
+number line has no place to record whose hand a reading was in terms of, so the scaffold is lost exactly where it was
+still needed.
+
+The paper's remedy is an exchange, and it is scaffolding taken down in the right order. Each reading has two things
+under it: the reader's own size, private, and the distance between them, shared. Divide one reading by the other and the
+shared distance comes down, leaving the sizes against each other: 0.089/0.1125 is 0.79, whose square root is 0.889, and
+1.6/1.8 is 0.889. Multiply them and the private sizes come down, leaving the distance: 0.089 × 0.1125 is 0.01, whose
+square root is one in ten. Neither reader had either result alone. Its other cases are this essay's too: exchange rates
+round a triangle multiply to 1, which is §4's loop, and a rate that is off shows in the loop and cannot be placed by it.
+
 The check is §4's loop and §6's receipt. Readings on one denominator close: the loop multiplies to 1, the squares of the
 shares add to 1. When they do not, a denominator changed somewhere.
 
@@ -219,6 +233,8 @@ shared a denominator, and neither says how large it was.
 - Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
   Review* 4(4), 345–376.
 - Euclid. *Elements*, Book V (definition 3; proposition 22, *ex aequali*).
+- *Each Sees the Other Smaller* (`../denominator-paradox.md`): private denominators, the number line's loss of them,
+  and the exchange (the ratio and the product of two reads).
 - Möbius, A. F. (1827). *Der barycentrische Calcul.* Leipzig.
 - *Degrees of Freedom* (`../archive/degrees-of-freedom.md`), §3.1 "The centring" and §4.2: the older statement, kept as
   written. `../v-and-h.md` items 66–74 and 45c: the centring's basic geometry, and the arch withdrawn.
