@@ -211,3 +211,12 @@ every keeping is a count.
      the thumb (R654: nothing is removed from a read; the thumb's size was never in it).
    **Next:** Tom's call. Candidate: "scaffold" as the plain word for a write of the relation (put up, any size, never
    absent, not in the result), and the residues' lap as an exact check if it is to carry weight.
+   **Tom, 12 Nov (R883):** "Denominators are very important to a read, they are the in terms of. But they simplify away
+   as shown by the tower idea. So they act like scaffolding." Taken as the idea's statement: the scaffold is the
+   denominator, the "in terms of". Claude's precisions: (i) within one read it does not go; only its size was never in
+   the reading, and at zero there is the horizon, no reading; (ii) what simplifies away is the middle of a chain
+   (a/b . b/c = a/c), a join of reads, the writer's account; (iii) the last "in terms of" stays, so the scaffolding
+   comes down in the middle and never at the end: R881's least, "one number short". The walk's telescoping (R873) and
+   d1/d2 against d/H are the same fact.
+   **Next:** if wanted in the paper, one paragraph in section 6 at "A tower of extents" and one sentence in section 1
+   at R881's passage; essay 1 and essay 6 after. No new test needed (the tower is exact already: TWR, `slide-rule.html`).
