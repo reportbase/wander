@@ -5,8 +5,8 @@
 *Tom Brinkman. Draft, begun 8 November 2026. Written with AI assistance (Claude).*
 
 *A first full draft (8 November 2026), from the outline in `plans/phy-outline.md`. Its geometry is* Reads and Writes*'s
-(`papers/readers-and-writers.md`), and where the two differ that paper stands. The reader uses no trigonometry (*Reads
-and Writes* §1): where this paper writes an angle or a trigonometric function it speaks as the writer; the reader's own
+(`papers/readers-and-writers.md`), and where the two differ that paper stands. A read uses no trigonometry (*Reads
+and Writes* §1): where this paper writes an angle or a trigonometric function it speaks from the blueprint; a read's own
 results are rational in the slope s = v/h. Since 10 November 2026 it follows that
 paper as rewritten on SPN R788: what scaling leaves unmoved is a read if one standpoint holds it and an extent if it needs
 two, and only an amount in a unit carried in is a write. Its physics comes from the working
@@ -87,7 +87,7 @@ what arrives.
 A reading crosses into an amount only by a bridge, something carried in that the read did not give. The bridges of the
 cases in this paper are few and named each time:
 
-- **a speed**, of light or sound, turning a direction's change into a time, or a delay into a range (a ranging reader
+- **a speed**, of light or sound, turning a direction's change into a time, or a delay into a range (ranging
   is writing: it carries in the signal's speed and a clock);
 - **a rest frequency**, turning a received frequency into a speed;
 - **a baseline**, the step between two standpoints, turning crossed directions into extents in the step's length
@@ -119,7 +119,7 @@ sort failed and what each failure taught. §12 says what the sort changes and wh
 
 What follows is *Reads and Writes*'s, stated only as far as this paper needs it.
 
-**The read.** A read is taken from one standpoint, *home*. The reader holds one length, H, a thumb held out at arm's
+**The read.** A read is taken from one standpoint, *home*. A read holds one length, H, a thumb held out at arm's
 length, and nothing else to measure with. A reading is a direction met from home, [h : v], h and v each a share of the
 thumb between 0 and 1, charted as the ratio v/h. Neither share can pass 1, so every relation turns over at one point,
 v = h, the *corner*, the one reading the reciprocal x ↦ 1/x leaves where it is. At one end is *home*, v/h = 0; at the
@@ -130,14 +130,14 @@ a ratio of the thumb's own shares.
 (2/π)/(1 + (v/h)²), its median at the corner, its quartiles √2 − 1 and √2 + 1, and no mean, since the horizon carries a
 tail no average can settle. With a second thumb crossed with the first, square to the look, the readings (v/h, v₂/h) on a
 screen square to the look follow the two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)) per unit of screen, r thumbs off the
-look (the writer's cos³α, α the angle off the look, r = tan α). The Cauchy is best read as a *heat*: a continuous weight over the directions, hottest along the
+look (the blueprint's cos³α, α the angle off the look, r = tan α). The Cauchy is best read as a *heat*: a continuous weight over the directions, hottest along the
 look, given whole before anything arrives.
 
 **The paint.** What arrives along each direction is the *payload*, the paint met there: a colour, a flux, a spectrum, a
 count. Changing it moves no direction and no heat. That is the second test of §1.2, and the reason reads never conflict:
 a read adds nothing, and a change to the paint moves nothing a read holds.
 
-**The standpoint z = m + iγ.** A reader at height γ above a line, over the point m, turning uniformly, lands on the line
+**The standpoint z = m + iγ.** A uniform turn from height γ above a line, over the point m, lands on the line
 as the Cauchy law of location m and scale γ, density (γ/π)·|1/(x − z)|², z = m + iγ. The whole law has one pole, at the
 standpoint. One residue there gives its total (at t = 0) and its characteristic function e^(izt) (for t > 0), and below
 the line the conjugate pole gives the rest: e^(imt − γ|t|), a phasor turning at the rate m and fading at the rate γ. Of the
@@ -154,7 +154,7 @@ baseline between two standpoints (parallax); in time, the ticks between two mome
 by scaling and held by no single read: an order, a rate in one's own ticks, a distance in the step, a duration in ticks.
 It becomes a write only when the step or the tick is given in a unit carried in.
 
-**Two geometries.** *Reader geometry* has no V: directions from one standpoint, shares of one thumb, the corner, the
+**Two geometries.** *The read's geometry* has no V: directions from one standpoint, shares of one thumb, the corner, the
 horizon, the heat, order; joined, it gives extents, still unitless. Scaling the world moves nothing in it. *Physical
 geometry* has V in a unit: lengths and extents, the
 box with a number line on each axis, the circle stated as x² + y² = r². Every figure in it has a size, and scaling the
@@ -163,12 +163,12 @@ carried in.
 
 ## 3. The dictionary
 
-Each row pairs a piece of the reader's geometry with what it meets in physics, says which test sorts it, and names what
+Each row pairs a piece of the read's geometry with what it meets in physics, says which test sorts it, and names what
 must be carried in to state it in amounts. "None" means one standpoint reads it.
 
-| the reader's piece | in physics | sorted by | carried in |
+| the read's piece | in physics | sorted by | carried in |
 |---|---|---|---|
-| a reading over its own rate, x/ẋ, x = S/d | time to contact, d/u (Lee's τ) | unmoved by scaling; counted in the reader's own ticks | a clock, for seconds |
+| a reading over its own rate, x/ẋ, x = S/d | time to contact, d/u (Lee's τ) | unmoved by scaling; counted in the observer's own ticks | a clock, for seconds |
 | ωτ, a bearing's rate times τ | how close a thing will pass, as a share of its distance | unmoved by scaling and by the clock | none |
 | two shares of one circle in the unit E | E² = (pc)² + (mc²)²: β = pc/E, 1/γ = mc²/E | unmoved by scaling | c |
 | a pair's geometric mean, fixed when the pair is multiplied by k and 1/k | rest mass, from E + pc and E − pc | unmoved by a boost | c |
@@ -190,13 +190,13 @@ must be carried in to state it in amounts. "None" means one standpoint reads it.
 
 ### 4.1 Motion, from reads [exact]
 
-A thing of half-size S at distance d closes at speed u. The reader reads x = S/d, the pair's v/h; it holds its own
+A thing of half-size S at distance d closes at speed u. A read gives x = S/d, the pair's v/h; the observer holds its own
 clock, in ticks.
 
 - **Time to contact is the reading over its rate**, x/ẋ = d/u, at every distance, before and past the corner, with none
-  of S, d or u known (Lee 1976). Read from the angle arctan x instead (the writer's chart), the same ratio gives d/u times
+  of S, d or u known (Lee 1976). Read from the angle arctan x instead (the blueprint's chart), the same ratio gives d/u times
   arctan(x)(1 + x²)/x: right far off, too long by π/2 at the corner, and worse past it. So the exact carrier is the ratio.
-- **A rate joins reads, so τ is an extent**, in the reader's own ticks. Two looks a tick apart give it exactly:
+- **A rate joins reads, so τ is an extent**, in the observer's own ticks. Two looks a tick apart give it exactly:
   x₁/(x₂ − x₁) is the time to contact at the second look, x₂/(x₂ − x₁) one tick earlier. Seconds are carried in with a
   clock, a write. Scale-free too is τ̇, the rate at which τ itself changes: under steady braking τ̇ + 1 = d/(2s), s the
   stopping distance, so Lee's critical τ̇ = −½ is stopping distance equal to distance, the pair (s, d) at its corner.
@@ -229,7 +229,7 @@ its energy, and the reading v/h is the celerity γβ.
   observer, and boosts compose by multiplying k, which is why rapidities add. Mass is the least value of E over boosts.
 - **γ and γβ are the two parts of k under its reciprocal:** γ = (k + 1/k)/2 is unchanged by k ↦ 1/k and γβ = (k − 1/k)/2
   reverses, so k = γ + γβ and 1/γ = 2k/(1 + k²), the form of a launch's range. Rapidity is asinh of the celerity:
-  proportional near rest, logarithmic far out, never more than 1 − ln 2 nats from the reader's own lay of the celerity.
+  proportional near rest, logarithmic far out, never more than 1 − ln 2 nats from the read's own lay of the celerity.
   Under uniform acceleration a the Doppler factor grows as e^(aτ) in proper time.
 
 All of it is standard (Bondi's k-calculus, light-cone coordinates, the two limits). What the sort adds is organisation:
@@ -284,7 +284,7 @@ A moving observer's sky is the clearest place in physics where a read and a writ
   between nearby stars are kept, and nothing arriving is consulted.
 - **A uniform sky, seen moving, is the spherical Cauchy**, density D²/4π with D the Doppler factor of each direction
   (Kato and McCullagh 2020): the Möbius family carries the uniform law within itself. No law on the sky is
-  boost-invariant; boosts carry the uniform one within its family. In the reader's half-angle slope t (the writer's
+  boost-invariant; boosts carry the uniform one within its family. In the read's half-angle slope t (the blueprint's
   tan(θ/2), the stereographic coordinate) a boost is t ↦ t/k, k = e^η; on −ln t (the pseudorapidity) a uniform sky lies
   as ½·sech² and a boost slides it by the rapidity η. So the
   rapidity is had from directions alone: from one look, with the sources taken as uniform in their own frame, the slide
@@ -301,7 +301,7 @@ A moving observer's sky is the clearest place in physics where a read and a writ
 ### 5.2 The quasar dipole [data]
 
 The boost is inferred from directions alone only for a census taken whatever the brightness, and every real census is cut at
-a flux. With no cut a moving reader's census is D²/4π, and its dipole is 2β plus terms in β³: Ellis and Baldwin's 2
+a flux. With no cut a moving observer's census is D²/4π, and its dipole is 2β plus terms in β³: Ellis and Baldwin's 2
 (1984) is the directions'. Cut at a flux limit, it is D^(2 + x(1 + α)), with x the counts' slope at the limit and α the
 sources' spectral index, both read from the same catalogue: still ratios, with no rest frequency and no distance in them,
 but no longer directions alone. The payload has entered.
@@ -309,11 +309,11 @@ but no longer directions alone. The payload has entered.
 On Secrest et al.'s CatWISE quasars (2021) the sort sets the number. Per slice the expected dipole is [2 + x(1 + α)]·β,
 5.3 to 6.6 times β, so the paint carries 60–70% of it. Taken as directions alone, the measured 0.018–0.023 would give a
 speed nearly three times too large. With the payload's part divided out, four slices by brightness give one β,
-(3.31 ± 0.27) × 10⁻³, 2.7 times the speed read from the microwave background, as one motion of the reader should: the
+(3.31 ± 0.27) × 10⁻³, 2.7 times the speed read from the microwave background, as one motion of the observer should: the
 first test passed in a form that could have failed. Slices by colour give 2.3, 2.8 and 4.6 times it, which no motion of
-the reader can do (p = 2.6 × 10⁻⁴), and the direction lies 21–28° from the background's. So part of the dipole belongs
+the observer can do (p = 2.6 × 10⁻⁴), and the direction lies 21–28° from the background's. So part of the dipole belongs
 to what arrives, or to a selection that depends on colour: the second test failed, and says where. The sort does not
-settle where the dipole comes from. It says which part could be the reader's.
+settle where the dipole comes from. It says which part could be the observer's.
 
 ### 5.3 Two boosts joined [exact]
 
@@ -322,7 +322,7 @@ stereographic chart centred on that axis, a multiplication z ↦ k·z, a slide o
 line add. A Möbius map fitted to three stars' apparent directions before and after a boost along n by ζ has trace
 2·cosh(ζ/2): the three directions are the evidence, the map is what they fix, and the rapidity is the map's coordinate,
 inferred from its trace with no frequency and no distance (a coordinate of a map between reads, not itself a read).
-Two boosts along n give ζ₁ + ζ₂, and tanh of it is (β₁ + β₂)/(1 + β₁β₂), the velocity law, which is the writer's tanh of the reader's sum.
+Two boosts along n give ζ₁ + ζ₂, and tanh of it is (β₁ + β₂)/(1 + β₁β₂), the velocity law, which is the blueprint's tanh of the read's sum.
 
 Boosts along two axes cannot be one slide. Joined, they leave a turn, the Thomas–Wigner rotation (Thomas 1926; Wigner
 1939). Its angle Ω satisfies tan(Ω/2) = ab·sin φ/(1 + ab·cos φ), a = tanh(ζ₁/2), b = tanh(ζ₂/2), φ the angle between the
@@ -330,7 +330,7 @@ boosts, and it equals the area of the velocity triangle in hyperbolic space. The
 a reading in the paper's sense, and it is:
 
 - **From directions alone.** Twelve pairs of boosts (φ from 30° to 135°, rapidities 0.2 to 3), each applied to seeded
-  stars as photon four-momenta; the reader given only three stars' directions before and after, on the stereographic
+  stars as photon four-momenta; only three stars' directions given, before and after, on the stereographic
   chart. The fitted Möbius map predicts every other star's direction to 10⁻⁵⁸, and its polar decomposition's rotation
   equals the half-rapidity formula to 10⁻⁵⁹, the triangle's area to 10⁻⁵⁸.
 - **The same from any stars.** Five different seeded triples agree to 4 × 10⁻⁵⁸.
@@ -426,7 +426,7 @@ precision; it is not this paper's to test. What the sort says is where it lives.
   dimensions. The receiver catches exactly half. This is the cos³ law of illumination, by a change of variable. A lens
   adds one cosine more, cos⁴, for the aperture seen obliquely: three cosines are the heat, the fourth the lens's.
 - **The corner lives in the count.** An even line of half-length b at distance d gives (λ/4πd)·2·arctan(b/d): paint
-  falling as 1/d on every direction it covers, and the share of directions it covers (in the writer's formula (2/π)·arctan(b/d)), whose median is exactly at
+  falling as 1/d on every direction it covers, and the share of directions it covers (in the blueprint's formula (2/π)·arctan(b/d)), whose median is exactly at
   b = d. Its slope on logarithmic axes at b = d is −1.637: −1 from the paint and −2/π from the directions.
 - **The dimension.** The cosine-weighted share sin^(D−1)θ is symmetric under the reciprocal only in three dimensions:
   D = 3 is singled out by Lambert's cosine, not by the turn, whose one-axis marginal is the Cauchy in every dimension.
@@ -517,16 +517,16 @@ one write.
 
 ### 8.1 The qubit is the two sweeps [exact, classical]
 
-A qubit's state is a ray with real amplitudes h and v, a direction [h : v] (at θ in the writer's angle): the inscribed
+A qubit's state is a ray with real amplitudes h and v, a direction [h : v] (at θ in the blueprint's angle): the inscribed
 read. Its Bloch point is at 2θ, (2hv, 0, h² − v²): the central sweep's point, at twice the angle (Euclid III.20), in the
-reader's slope s = v/h the doubled turn (1 + is)/(1 − is). Born's rule is the point's foot, h².
+read's slope s = v/h the doubled turn (1 + is)/(1 − is). Born's rule is the point's foot, h².
 Orthogonal states are antipodal on the sphere; a turn of the state by 2π gives −ψ, so 720° returns it; the complex ratio
 ψ₁/ψ₀ is the Bloch sphere's stereographic chart; a pure state lies on the sphere and a mixture inside. All textbook; the
 reading is the sort's. Entanglement, Bell's theorem and measurement are not touched.
 
 ### 8.2 The duality relation [exact, data]
 
-In the writer's angle, sin 2θ = 2hv and cos 2θ = h² − v²; the reader has 2hv and h² − v² themselves. With h and v two paths' amplitudes, the fringe visibility is at
+In the blueprint's angle, sin 2θ = 2hv and cos 2θ = h² − v²; a read has 2hv and h² − v² themselves. With h and v two paths' amplitudes, the fringe visibility is at
 most 2hv and the which-path predictability is |h² − v²|, so V² + P² ≤ 1, with equality for a pure state (Greenberger and
 Yasin 1988; Englert 1996). Full visibility comes only at the corner, and 2hv is sech of the logarithm of the amplitudes'
 ratio, already in print as V = sech θ, P = tanh θ (Bramon, Garbarino and Hiesmayr 2004). The bridge is Born's rule: an
@@ -545,7 +545,7 @@ amplitude is the square root of a share of the counts.
 ### 8.3 Weak values and a missing frame [exact]
 
 A state pre-selected at θ_i and post-selected at θ_f has the weak value of σz equal to ⟨σz⟩ − V·tan(θ_f − θ_i), with
-⟨σz⟩ = h² − v² and V = 2hv (Aharonov, Albert and Vaidman 1988); in the reader's slopes the tangent is
+⟨σz⟩ = h² − v² and V = 2hv (Aharonov, Albert and Vaidman 1988); in the read's slopes the tangent is
 (s_f − s_i)/(1 + s_i·s_f). Under a uniform turn of the post-selection it follows
 the Cauchy at ⟨σz⟩ + iV: a read laid by the turn, its point the state's central point. A party without a shared phase
 reference averages over what it cannot fix (Bartlett, Rudolph and Spekkens 2007): the twirl, an operation on the
@@ -597,14 +597,14 @@ Each simulation here is checked against a referee that computes the known physic
   sphere the temperature falls by (1 − e²)/3 of itself to 0.8% wherever the gas stays even (Haff 1983). Density,
   diameter and pair correlation leave the count; the clock needs them all, and near the clustering instability goes
   wrong about twice as far as the count does. The count is an extent (contacts joined, no unit), the clock a write.
-- **Holding a world by distance.** A hard-disc gas held as a window of discs round the reader and, beyond it, totals in
+- **Holding a world by distance.** A hard-disc gas held as a window of discs round the standpoint and, beyond it, totals in
   cells growing with distance, against a referee computing every disc (Enskog's contact rate to 0.1%, Henderson's
   equation of state, Henderson 1975): the view's density, warmth and contacts within 0.3%, for the work of the window,
   for a world 256 times larger. It needed what open systems need, the outside's pressure, a reservoir at fixed chemical
-  potential and books kept where pushes balance; and it lost a pulse travelling toward the reader. Folding the paint
-  into cells by distance is an irreversible mean: what travels toward a reader must be held at its own size until it
+  potential and books kept where pushes balance; and it lost a pulse travelling toward the standpoint. Folding the paint
+  into cells by distance is an irreversible mean: what travels toward a standpoint must be held at its own size until it
   arrives.
-- **Ranging is writing.** A lumpy moon crossing a reader's view: with a range on each direction (the signal's round trip
+- **Ranging is writing.** A lumpy moon crossing the view from one standpoint: with a range on each direction (the signal's round trip
   times its speed, an amount carried in) the face is recovered to 4%, and distance and speed to 0.25%. With directions
   alone the outline is free, the visual hull (Laurentini 1994), tight where an edge touched the moon, keeping none of the
   face elsewhere, and unmoved when the world is scaled.
@@ -622,7 +622,7 @@ Predictions are written before the runs, so some fail. The ones that teach most:
   Cauchy-like law is a turn's heat only where the turn can be named apart from the law's shape, and a fat tail alone is
   no evidence of one.
 - **The quasar dipole's colours** (§5.2). The colour slices disagree and the direction is 21–28° off: part of the dipole
-  is not the reader's motion. One estimator of mine missed the published amplitude by 22%.
+  is not the observer's motion. One estimator of mine missed the published amplitude by 22%.
 - **Star counts.** The disc was predicted to flatten counts toward the poles more than in the plane; both give 1.23. On
   Gaia within 100 pc all four predictions failed: a quality cut on the astrometry removes more near stars than far ones
   and steepened the counts, and a fifth of the G and K colours within 50 pc are white dwarfs. Colour alone is not a kind,
@@ -666,7 +666,7 @@ It changes no physics. It sorts, and the sort gives four working rules.
   Ω_m = 1/π = 0.3183, with Ω_Λ = 1 − 1/π and w = −1, and through Friedmann's equations z_eq = (π − 1)^(1/3) − 1 = 0.2890
   and z_acc = (2(π − 1))^(1/3) − 1 = 0.6240. Its derivation is not accepted here: it multiplies 2/π and ½, the mean
   projection of a uniform direction in two dimensions and in three, as if they were filters in sequence, and the sort
-  above would place both with the writer's vantage. But the numbers were written down before the next surveys report, so they
+  above would place both with the blueprint. But the numbers were written down before the next surveys report, so they
   are a fair test whatever their origin. Planck 2018 gives Ω_m = 0.3153 ± 0.0073 (Planck Collaboration 2020), 0.4σ from
   1/π; DESI's second data release's BAO alone gives 0.2975 ± 0.0086, 2.4σ below. Against DESI's five-year BAO with Euclid
   (2027) and Roman's and Rubin's supernovae and growth (2027–2028): if the best combination sits more than 3σ from 1/π,
@@ -674,7 +674,7 @@ It changes no physics. It sorts, and the sort gives four working rules.
 - **The contrast against the slits' shares.** A double slit with one slit partly covered, recorded photon by photon with
   the shares measured, should lose contrast as sech of the logarithm of the amplitudes' ratio, the same at k and 1/k. The
   duality relation is long tested; what would be the sort's is reading it as a ratio.
-- **Ratio or angle, in a measured reader.** x/ẋ gives time to contact at every distance; θ/θ̇ overstates it by π/2 at
+- **Ratio or angle, in a measured observer.** x/ẋ gives time to contact at every distance; θ/θ̇ overstates it by π/2 at
   the corner. Responses to looming that run on to large visual angles would tell which an animal uses there.
 - **A calibration as one shift.** A published parallax zero-point should appear as one common factor across a
   catalogue's distances, not shrinking with the number of stars (§7.3).
