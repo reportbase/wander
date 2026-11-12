@@ -58,4 +58,35 @@ it from (c², k) alone.
 
 ## Runs
 
-(none yet)
+### Run 1 (12 Nov 2026)
+
+`runs/omp/list.tsv` (41 results, gathered by agent A from its own knowledge, no repository or web; every constant
+checked here against c·π^k to 10⁻¹²), `runs/omp/blind.tsv` (constants removed), `runs/omp/classes.tsv` (agent B's
+classes), `runs/omp/omp.py`, output `runs/omp/run1.txt`.
+
+B's classes: Q 5, T 27, L 9, O 0.
+
+| class | n | Ω helps | tie | hurts |
+|---|---|---|---|---|
+| Q | 5 | 3 (60%) | 0 | 2 |
+| T | 27 | 8 (30%) | 1 | 18 |
+| L | 9 | 6 (67%) | 0 | 3 |
+| T ∪ L | 36 | 14 (39%) | 1 | 21 |
+
+- **O3: void.** Q holds 5, under the 8 required. By the plan no kill and no pass on O1 and O2.
+- Scored anyway, for the record and not as a verdict: O1 would be killed (60% < 80%) and O2 would be killed (39% > 20%).
+  The two Q misses are the sinc² integral (π, over the whole line in A's derivation) and the arcsine density (1/π);
+  the T and L hits are mostly 2/π and √(2/π): averages over a half turn (Buffon, the semicircle law, the rectified
+  sine, |sin| on [0, π]) and the Gaussian's half-line moments (the median's efficiency, E|Z|, √(8/π)), plus ζ(2) and
+  ζ(4).
+- **O4**, as reported: by the metric's construction Ω helps exactly when c carries a factor 2^(−k); what the run shows
+  is that this factor of 2 does not follow B's source classes. It follows something else: whether the constant is a
+  *mean or share over half of a range* (a half turn, a half line, the odd terms of a sum) against a *total over the
+  whole* (the circle's 2π, the sphere's 4π, the Gaussian's √(2π), the standard Cauchy's 1/π). That reading was formed
+  after seeing the table and is not tested here.
+
+**Standing.** Void by its own condition. Not a pass: on this list the factor Ω removes does not track "one quarter
+turn" as B judged it, and the quarter turn is rare in standard results (5 of 41). A second list, as the plan says,
+would need its Q count fixed in advance (for example by asking A for at least 12 results whose derivation runs over a
+right angle or 0 to ∞), which no longer leaves B's sort fully blind to the aim; and the post hoc reading above (half of
+a range against the whole) would need its own predictions and class definitions before it is run.
