@@ -256,3 +256,6 @@ sweep: sentences where a write "gives" the circle or the blueprint.
 **Item 15, settled in its framing** (12 Nov, R891; Tom: "the paper is reads and writes. the blueprint is classical
 geometry with the gods eye, we include it here as a point of comparison."): the blueprint is the comparison, not a
 third part. Still to bring into line: §9's tier tables, "Four things", the essays' headings.
+
+**Item 15 carried through the essays and demos** (12 Nov, R893). Open for Tom: page and card names that still say
+reader or writer; essay 9's "vantages"; sentences where kept steps still read as making the circle.
