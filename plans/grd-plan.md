@@ -177,3 +177,48 @@ added choice. The ratio is a reading, but the autocorrelogram method carries a b
 holds only within a band of them (GDR P1 (b) killed: +0.13 at twice the scale, rat Q's small module 58 cm against 136);
 run 1 sat inside the band. Five animals is the right size (GDR P4); only the step profile across six or more modules in
 one animal tells √2, √e and the turn's layout (cosh-growing steps, flat over at most five modules) apart.
+
+### Run 2, plan (12 November; SPN R919; Tom: "proceed", to Claude's offer of GRD on more animals). Written before any value in the data was seen.
+
+Appended; nothing above is changed. Run 1's P2 and P3 fell to their own minimum counts. This run takes a second dataset
+with enough animals for P2 and, pooled with run 1's two rats, for P3.
+
+**The data.** Waaga, Agmon, Normand et al. 2022, *Neuron* 110(11), "Grid-cell modules remain coordinated when neural
+activity is dissociated from external sensory cues"; Zenodo record 6200517 (doi 10.5281/zenodo.6200517), licence CC BY
+4.0; `waaga_agmon_et_al_2022_neuron_dataset.zip`, 286,358,097 bytes, md5 6525a002f19082d58bba66df095a1357 (matches
+Zenodo's listing), sha256 bdf9e369465b86d8759b075c722dac5e7421a7f0d42ff579f04f6542b0625f7c; not committed. Chosen
+because it is the first open dataset found with per-cell module assignments in four or more rats; the CRCNS and
+2025 bioRxiv candidates the search also found were not opened. What was seen before this plan: the zip's file
+listing, the python readme (the dictionary's keys), and from the paper's page (read through a summary told to give
+no spacing, ratio or length) four rats, modules recorded at once 3, 3 (two sessions), 3 and 2, Neuropixels, a large
+circular arena, a dark trial then a light trial, modules found by UMAP and DBSCAN on autocorrelograms. No spacing
+from this paper or data has been seen. Run 1's values for rats Q and R (Gardner et al.) are known; they enter only P3.
+
+**The method**, fixed now, and run 1's in every step that applies:
+- **Session.** For each rat its first file in name order (rat 26018 has two sessions; the second, 2019-12-14, is run
+  afterwards as a repeat, not scored). The **light** task (`task[1]`), as the standard open field with its cue card;
+  the dark task is run afterwards and reported, not scored.
+- **Units.** Positions converted to centimetres from the file's `tracking_units` string; if it names neither metres nor
+  centimetres, run 1's rule (metres if the range is under 10).
+- **Cells and modules.** Each cell's spikes are those with its `unit_id` in `spike_cluster_id`; its module is the
+  authors' `module_id`. Rate map, autocorrelogram and spacing exactly as run 1 (2.5 cm bins, σ 2.5 cm, 0.1 s occupancy,
+  overlap at least 20, the median of the six nearest positive maxima). A module's spacing is the median of its cells';
+  modules ordered by spacing within a rat.
+- **The arena's limit** (from run 1's post hoc and GDR, so fixed after seeing run 1, stated as such): a module whose
+  spacing exceeds 0.6 of the smaller side of the tracked extent is reported and left out of P1, P2 and P4 (run 1's
+  third module at 0.80 of its box was not reproduced; its second, at 0.56, was). Ratios are taken only between adjacent
+  modules that are both kept.
+- **Pooling.** As run 1: the geometric mean of the adjacent ratios, a bootstrap over animals (10,000, seed 1).
+
+**Predictions** (P1–P4 restated for this run, their bands and kills unchanged):
+- **P1b.** Over the four Waaga rats alone, the pooled ratio lies within 0.07 of √2 or of 2. Killed if in neither.
+- **P2b.** Over Waaga rats with three kept modules, the step M1→M2 and M2→M3 differ by less than 0.1 in log₂ (mean of
+  the per-animal differences). Killed at 0.1 or more, or if fewer than 3 rats keep three modules.
+- **P3b.** Over the Waaga rats with two kept modules and run 1's Q and R, the sd of log₂ λ₁ exceeds the sd of
+  log₂(λ₂/λ₁). Killed if not, or if fewer than 5 animals. (Not blind for Q and R; reported also over Waaga alone.)
+- **P4b.** No more than 5% of the Waaga adjacent ratios fall under 1.2. Killed otherwise.
+- Reported, not scored: P1 pooled over both datasets (six rats); the dark task; rat 26018's second session.
+
+**What it can and cannot add.** A blind check of run 1's √2 on four further rats, in another lab's arena and
+recording; P2 for the first time. It does not test the dimension (√2 against 2 as length or area), which GDR says
+needs a step profile over six or more modules in one animal, and it does not say why the ratio is what it is.
