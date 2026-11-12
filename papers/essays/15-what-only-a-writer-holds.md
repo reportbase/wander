@@ -185,11 +185,11 @@ the corner equals the heat above it: equal halves, with no π/4 in them. In the 
 acts: 2/π what turning sees, the thumb's mean share, approached; π/2 what walking counts, the arc in thumbs, reached.
 
 This essay's title, "what only a writer holds", needs one more distinction, which the ladder of §1 already drew. A write is
-a walk counted, and every walk actually made is a finite count, so what it holds is a fraction: 22/7, 355/113, a series stopped at some
-term. It uses π's name and its approximants; it never has the value, which would take a count without end. Only the
+a walk counted, and every walk actually made is a finite count, so what it holds is a fraction: 22/7, 355/113, a series
+stopped at some term. It uses π's name and its approximants; it never has the value, which would take a count without end. Only the
 blueprint holds π itself, the completed whole, every facing at once; the blueprint is writing carried to the limit, never
-a thing anyone has made. So π only seems free. What the sweep gives at no cost is the relation, the corner, the equal halves, the four
-facings (π/2 of relations, four times, is the circle) and the 1 that the two numbers multiply to; and that 1 needs no π,
+a thing anyone has made. So π only seems free. What the sweep gives at no cost is the relation, the corner, the equal
+halves, the four facings (π/2 of relations, four times, is the circle) and the 1 that the two numbers multiply to; and that 1 needs no π,
 since the two are reciprocals and any fraction held for π/2 gives it exactly, 11/7 × 7/11 = 1 (essay 2 §7).
 
 The identity this section is about goes the same way: the −1 never needed e or π. The corner is the quarter turn,
