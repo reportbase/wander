@@ -54,11 +54,11 @@
 <body>
 <main>
     <h1>The room</h1>
-    <p class="lede">A reader stands at home, the room's corner. Its directions and their heat are given there, before anything arrives:
+    <p class="lede">An observer stands at home, the room's corner. Its directions and their heat are given there, before anything arrives:
     the inscribed sweep, every direction from one wall to the other, gives where things are: directions, no amounts. A
     thing's shape about its own centre is a radius per direction, an amount, had only by ranging (a writing) or from
     further standpoints: its shape, not its size. Holding a thing and the wall at once gives its size in the room's
-    units. To put a thing at a place in metres the reader must become a writer and move.</p>
+    units. To put a thing at a place in metres the observer must write, and move.</p>
     <div class="panel">
         <div class="row" id="steps"></div>
         <div class="row" id="things"></div>
@@ -74,7 +74,7 @@
         <div class="grid">
             <div><canvas id="v3" height="440"></canvas><p class="cap">The room (drag to turn it). Home is the corner
             marked ◆; the gold ray is the hand, one direction of the given ones.</p></div>
-            <div><canvas id="plan" height="260"></canvas><p class="cap">From above: the writer's floor plan. Lengths
+            <div><canvas id="plan" height="260"></canvas><p class="cap">From above: the blueprint's floor plan (classical geometry, shown for comparison). Lengths
             show only once written.</p><canvas id="strip" height="170"></canvas><p class="cap" id="stripcap">The
             inscribed sweep, g = (2/π)ψ.</p></div>
         </div>
@@ -82,7 +82,7 @@
         <p class="note" id="note"></p>
     </div>
     <p class="note">After OFS §9, "Inside a room: the two sweeps" and "To move the furniture is to write". Geometry only:
-    true sizes are drawn so the page can show them, and the reader never reads them. <a href="demos.html">All demos</a>.</p>
+    true sizes are drawn so the page can show them, and no read has them. <a href="demos.html">All demos</a>.</p>
 </main>
 <script>
 (() => {
@@ -286,12 +286,12 @@
         3: 'The inscribed sweep: every direction from along the first wall (all h) to along the second (all v₂), given at once; "show the order" steps through them in the order of the turn. Each thing lies where its directions are. That is the layout, and it holds no amount.',
         4: 'A thing\'s shape about its own centre: given directions from the centre, a radius along each. A radius is an amount, had only by ranging (a writing: a pulse carries the speed) or from further standpoints. The radii give the shape; their common factor, the size, is not read.',
         5: 'Holding: the thing and the room\'s width read at once, at one distance. Their ratio is the thing\'s size in the room\'s units, and the distance cancels.',
-        6: 'To put a thing at a place in metres, the reader must write: take a known step and read again. One step writes the room. Then move the thing; its direction changes, its shape does not.'
+        6: 'To put a thing at a place in metres, the observer must write: take a known step and read again. One step writes the room. Then move the thing; its direction changes, its shape does not.'
     };
     function hud() {
         const lines = [], k = kOf(), a = address(st.thing);
         const H = (st.step === 3 && st.sweep) ? sweepDir() : handDir(), hh = hit(H);
-        if (st.step === 1) lines.push(`room: ${NAMES.length} things; the reader holds one length, H, and reads every party on it (a writer would write V = V₂ = H)`);
+        if (st.step === 1) lines.push(`room: ${NAMES.length} things; a read holds one length, H, the thumb, and every party is read on it (the blueprint states it V = V₂ = H)`);
         if (st.step === 2 || st.step === 3) {
             const tp = Math.tan(currentAz() * Math.PI / 180), ta = Math.tan(st.alt * Math.PI / 180);
             lines.push(`the hand: v₂/h = tan ψ = ${tp.toFixed(3)}   v/√(h² + v₂²) = tan a = ${ta.toFixed(3)}   g = ${(currentAz() / 90).toFixed(3)}`);

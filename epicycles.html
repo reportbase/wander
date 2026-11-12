@@ -53,7 +53,7 @@
 <body>
 <main>
     <h1>Circles and standpoints</h1>
-    <p class="lede">Epicycles draw a shape with circles on circles, each turning a whole number of times a lap: the reader at
+    <p class="lede">Epicycles draw a shape with circles on circles, each turning a whole number of times a lap: an observer at
     the centre, turning evenly. The Cauchy can draw with the same circles in two ways. <span class="g">From a height</span>, it
     shrinks circle k by e<sup>−γ|k|</sup> and moves none: the fine circles fade first, which is level of detail.
     <span class="r">From standpoints stepped toward the detail</span>, each term is the circle seen from a point inside it, and
@@ -335,7 +335,7 @@
             }
             ctx.fillStyle = '#e6e4ee'; ctx.beginPath(); ctx.arc(X(cx), Y(cy), 3 * px, 0, 2 * Math.PI); ctx.fill();
             cap.innerHTML = `The <span class="g">${S.n} largest epicycles</span>, chained, and the outline they draw; faint white the
-            true outline. Every circle turns a whole number of times a lap: the reader at the centre, turning evenly.`;
+            true outline. Every circle turns a whole number of times a lap: an observer at the centre, turning evenly.`;
         } else if (S.show === 'blur') {
             const bz = blurScaled(z, S.g);
             poly(ctx, bz, X, Y, '#d4a052', 1.6 * px);

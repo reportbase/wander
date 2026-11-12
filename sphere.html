@@ -94,7 +94,7 @@
                 <button data-m="chambers">chambers</button>
                 <button data-m="faces">faces</button>
                 <button data-m="whole">held whole (1, 2)</button>
-                <button data-m="reader">reader holding H (3, 4)</button>
+                <button data-m="reader">a read, holding H (3, 4)</button>
             </div>
             <div id="readout"></div>
         </div>
@@ -120,7 +120,7 @@
             <div class="sl"><label for="P">size</label><input id="P" type="range" min="0" max="1" step="0.001"><span id="Pv"></span></div>
             <canvas id="body" height="300"></canvas>
             <p class="note">A body: ball plus relief in three bands (broad, middle, fine), as the bodies in <code>res/</code>.
-            Depth is the relief, r − 1. Its diameter in the reader's pixels sets which bands show (2 to 5 pixels a
+            Depth is the relief, r − 1. Its diameter in the eye's pixels sets which bands show (2 to 5 pixels a
             feature, as <code>bandW</code> on the flying page): far off it is a plain ball. The cross is the direction,
             pointing back to the body.</p>
         </div>
@@ -137,7 +137,7 @@
             <tr><td>fairness to the facings</td><td>one mirror, two halves</td><td>three mirrors, six chambers</td></tr>
             <tr><td>the bent unit</td><td>two arms of the unit square, length 2</td><td>three faces of the unit cube, area 3</td></tr>
             <tr><td>held whole (1, 2)</td><td>near field only, two mirrored halves</td><td>near field only, six mirrored chambers</td></tr>
-            <tr><td>reader holding H (3, 4)</td><td>near, or far</td><td>near in both, far in one, far in both</td></tr>
+            <tr><td>a read, holding H (3, 4)</td><td>near, or far</td><td>near in both, far in one, far in both</td></tr>
             <tr><td>depth</td><td>r(θ) − 1</td><td>r(θ, φ) − 1: relief</td></tr>
         </table></div>
         <p class="note">From <code>papers/number-line.md</code> §8 (a working paper: a reading, not a ruling). See also
@@ -360,7 +360,7 @@
                 ? `holding H  ${r}:\n           ${st.h ? side(sv, 'v') : 'h = 0: nothing held'}\n           ${st.h ? side(sf, 'f') : ''}`
                 : `held whole near field throughout: the chambers are mirrors, not squeezes`,
             `the shape  r = ${rFull.toFixed(4)} along this direction, depth ${(rFull - 1 >= 0 ? '+' : '') + (rFull - 1).toFixed(4)};`,
-            `           at ${st.P} pixels across the reader sees ${(rSeen - 1 >= 0 ? '+' : '') + (rSeen - 1).toFixed(4)}`,
+            `           at ${st.P} pixels across the eye sees ${(rSeen - 1 >= 0 ? '+' : '') + (rSeen - 1).toFixed(4)}`,
             `           the point is r × (the whole's size), and that size is lost`,
         ];
         $('readout').textContent = lines.join('\n');
