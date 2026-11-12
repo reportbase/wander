@@ -1047,7 +1047,7 @@ hold what no standpoint holds.
 
 **Write once, then read again.** A write is over once made: the stride counted, the number put down, the plan
 drawn. To be used it must be read: someone stands somewhere and looks at it, at marks on a page in their directions and
-ratios, as at anything else that arrives. A blueprint in a drawer does nothing until it is looked at; a survey's base,
+ratios, as at anything else that arrives. A plan in a drawer does nothing until it is looked at; a survey's base,
 once counted, is read against by every angle that follows; a drawing of a known room, rendered from a standpoint, is a
 write turned back into a read. So the passage runs both ways: reads become extents through standpoints, extents become
 writes through a unit, and every write, once made, joins what is read.
