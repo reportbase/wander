@@ -262,7 +262,7 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
 
 16. **What a write is, stripped** (12 Nov; Tom: "we conflated the write to include tools it would never use."; "if we
     say write is physics, it still work. to do complicated parallax, you would need to write the previous read
-    somewhere in the physical world."; R895). **Standing:** ruled in outline: the write is physics, a mark made in
+    somewhere in the physical world."; R895). **Standing:** under exploration, not settled (Tom: "lets explore the idea of a write further before committing."). As first recorded: the write is physics, a mark made in
     the world; two eyes do parallax with two coordinated reads and no write; a write is what carries a read forward
     (one standpoint moving, a counted walk); it has no trig, no π, no circle. Tom's other candidate, the write as the
     discretization of the continuum (R640), fits it: a mark is finite. **Claude's, not ruled:** the π/2 vantage is a

@@ -4,7 +4,10 @@
 `papers/readers-and-writers.md` would have to say differently if R895 stands, passage by passage, and marks
 which changes rest on what Tom ruled and which rest on Claude's readings from the same exchange.
 
-## What R895 rules (Tom's words)
+**Standing, 12 November, later:** R895 is under exploration, not settled (Tom: "lets explore the idea of a write
+further before committing."). This list shows what would follow if it were; nothing here is to be applied.
+
+## What R895 says (Tom's words)
 
 1. **The write is physics**: a mark made somewhere in the physical world ("if we say write is physics, it still
    work"). Restores R653; reverses R851 for the write.
