@@ -285,3 +285,10 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
     scaling; an extent in thumbs is unmoved yet is not heat); by this one the world writes and the observer is
     written on, which thing sits at which slope is paint, and a mark or a unit is paint met by a later read; a
     count kept in the head, met along no direction, is still its weak case.
+
+    **Tom, continuing, not settled:** "paint is everything that is not heat". The split is then exhaustive: a
+    count kept in the head, a mark, a unit, an extent, which thing sits at which slope, a colour, are all paint.
+    Claude's notes, not ruled: heat is what is the same in every world and paint what could have been otherwise;
+    the kinds fall from three to two, with the scale test sorting paint into ratios and amounts; the size of the
+    thumb in a unit, and what the corner falls on, are paint; open is where the laws among slopes and the
+    blueprint sit (the same in every world, yet not the heat itself).
