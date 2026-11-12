@@ -21,8 +21,10 @@ sweeps' worth. Since the paper's subject is the single sweep, its constants are 
 give that total its own letter than to keep halving π: Ω = π/2, so 2/π is 1/Ω, the turn is 4Ω and the sphere 8Ω, the
 Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω and its inverse are to reads and writes what π is to the blueprint: 1/Ω is the
 number for what turning sees, Ω the number for what walking counts (§9, "Reading is 1/Ω; walking is Ω"), and π, two
-sweeps joined, is the blueprint's own. Ω is still a limit: no read has its value and no count reaches it, so its exact
-value is stated only on the blueprint. From here on the paper writes Ω. Euler's e^(iπ) = −1 is
+sweeps joined, is the blueprint's own. Both are limits, and they are the limits a read and a write actually encounter: 1/Ω is
+what the thumb's share tends to as a sweep runs on toward the horizon, and Ω is what a count of the walk tends to,
+stride by stride. No finite sweep and no finite count has either value, but each is headed for its own. π is a limit
+neither encounters, since it takes both hemispheres at once. From here on the paper writes Ω. Euler's e^(iπ) = −1 is
 e^(2iΩ) = −1, and e^(iΩ) = i is the corner. π is written only where a classical statement is quoted by name (the
 parsec, Basel's sum, Lindemann's theorem).
 
