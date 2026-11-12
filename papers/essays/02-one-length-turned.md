@@ -20,9 +20,9 @@ Hold your arm out straight in front of you, level with the ground, and raise it 
 Your arm does not change length. To anyone watching, your hand traces a quarter of a circle.
 
 From where you stand there is no circle, only your arm pointing: one length, turning, held up at the mountains in the
-distance. The circle is what someone watching draws of it, the blueprint. You did not need to know how far away anything was. You did not
-need a second length, a radius chosen to match something else, or a centre measured out. You needed your arm and the
-ability to turn it.
+distance. The circle is what someone watching draws of it, the blueprint. You did not need to know how far away anything
+was. You did not need a second length, a radius chosen to match something else, or a centre measured out. You needed your
+arm and the ability to turn it.
 
 At each moment of the turn your arm points somewhere. Its reach has two parts: how far it reaches forward, and how far
 it reaches up. Call the forward part **h** and the upward part **v**. Both are shares of the same arm, so each lies
