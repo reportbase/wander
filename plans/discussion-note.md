@@ -242,3 +242,9 @@ paragraph under "The paper in one equation") and section 6 (under "A tower of ex
 **Item 15 ruled and carried out in part** (12 Nov, R887; Tom: "1. Ok. 2. Ok 3. There are reads and writes, no such thing
 as a reader or writer"): the name is the blueprint; no reader and no writer, only the acts, with "the observer" where
 someone must stand or walk. *Reads and Writes* is done. Still to do: the essays, the physics paper, the demos' wording.
+
+**Item 15 corrected** (12 Nov, R889; Tom: "PI/2 and 2/PI have a vantage and are single hemispherical reads. The
+synthetic read is dual hemispherical without a vantage, otherwise known as a blueprint."): both sweeps are reads, each
+with a vantage and one hemisphere; the central sweep (π/2) is not "the write". The blueprint is the synthetic read: both
+hemispheres, no vantage. A write stays what is counted, kept or tied to a unit. *Reads and Writes* brought to it; the
+essays that pair π/2 with "a write" still to check.

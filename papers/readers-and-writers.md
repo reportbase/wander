@@ -27,8 +27,8 @@ it, and scaling moves it not at all. A **parallax extent**, an *extent* for shor
 scaling leaves it unchanged too, but no single read holds it; it needs a second standpoint and the step between
 (parallax). A **write** is an amount, the across axis's zero tied to a unit carried in from outside, a metre or a second:
 it is exactly what scaling the world moves. The write is the scale-variant companion of the read. These are acts:
-there is no reader and no writer here, and what holds a read and a write together, both hemispheres at once, is the
-drawn shape, the *blueprint*.
+there is no reader and no writer here. Every read has a vantage and one hemisphere; the *blueprint*, the drawn shape,
+is the synthetic read, put together from reads and writes: both hemispheres at once, and no vantage.
 
 The read's directions are laid by the uniform turn, whose law in the reading v/h is the Cauchy: its median at the corner
 v = h, its horizon never reached, no mean. It is best read as a *heat*, a continuous weight over the readings, hottest
@@ -292,10 +292,13 @@ count of directions, a write.
 
 **Reads, writes and the blueprint.** There are reads and writes; there is no reader and no writer. Both are acts, and
 one observer does both: it reads while it stands and turns, and writes while it walks and counts or agrees a unit. A
-read is one hemisphere, taken from a standpoint: the inscribed sweep, home to a horizon. A write is one hemisphere too:
-the central sweep, the walk across, something counted and kept. Neither holds both. What holds both at once, with no
-facing, is the **blueprint**: the drawn shape that reads and writes give together, with both signs of every axis, the
-turn completed, the facings joined. The circle held whole, the sphere and the cube, the angle and trigonometry, π and e
+read has a vantage and one hemisphere, and there are two of them, the two sweeps: the inscribed, from home to a horizon
+(the blueprint's number for it 2/π, approached), and the central, across a bounded thing to its rim (π/2, reached). Both
+are reads. A write is what is counted and kept, or tied to a unit (D4, D7); it is how reads are joined. Neither a read
+nor a write holds both hemispheres. What holds both at once, with no vantage, is the **blueprint**: the *synthetic
+read*, a read put together and not taken, the drawn shape that joined reads give, with both signs of every axis, the
+turn completed, the facings joined. "Dual hemispherical" and "without a vantage" say the same thing: a vantage faces
+one way. The circle held whole, the sphere and the cube, the angle and trigonometry, π and e
 are the blueprint's. A blueprint is made, not seen from anywhere, and once made it is read like anything else (§6,
 "Write once, then read again"). Whole, with π at its exact value, it is a limit; any blueprint actually made is a
 finite one. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
@@ -311,7 +314,7 @@ median and the absence of any mean are what a read with no breadth in it is.
   that never ends, the blueprint's measure of it 2/π, a limit never reached. The universe has no far side to face, so its V
   is **unknowable**: no size could be had, and with none there is no inside or outside, only home and the horizon.
 - *The apple and the human read each other by the central sweep, across one hemisphere.* Each is a bounded thing in the
-  other's view, its rim reached at a point: the central sweep's end, e^(iπ) = −1, the blueprint's measure π/2 reached there. This is the write's side: an end that can be walked to.
+  other's view, its rim reached at a point: the central sweep's end, e^(iπ) = −1, the blueprint's measure π/2 reached there. It is still a read, one hemisphere from a vantage; what sets it apart from the inscribed sweep is an end that can be walked to.
   So the other's V is **knowable**: the end exists and is met. It is not known, since the far hemisphere stays turned
   away; each holds the other's front only. Neither stands at the other's centre; the sweep about the centre is the
   geometry of a bounded thing faced.
@@ -319,21 +322,21 @@ median and the absence of any mean are what a read with no breadth in it is.
   line of sight, is the Cauchy whatever the apple's shape, the shape only the paint. The hand holds the back as the eye
   holds the front, so both hemispheres are in reach and the turn is known; holding and turning is a write under way, and in the hand
   the apple's V is **known**: held whole. Its exact amount in a unit is still a write, the limit of §6.
-- *The human draws a circle on paper.* The drawing is the blueprint: both hemispheres at once, with no facing, whole
+- *The human draws a circle on paper.* The drawing is the blueprint, the synthetic read: both hemispheres at once, with no vantage and so no facing, whole
   only at its limit (§9, "What is free, and what π costs"), made, not seen, a mark holding both halves together, V = H at one length, π held whole. It has neither sweep's
   number. π/2 and 2/π belong to the two facings, the central reached at a point and the inscribed approached; the blueprint
   has their product, 1, the thumb in thumbs, what the facings give when held together without a facing.
 
-| | hemispheres | facing | V | the blueprint's number for it | the act it measures |
+| | hemispheres | vantage | V | the blueprint's number for it | what it is |
 |---|---|---|---|---|---|
-| inscribed, toward the universe | one | home to a horizon | unknowable | 2/π, approached | reading: what turning sees |
-| central, toward the apple | one | across, to a rim | knowable | π/2, reached | walking: the arc counted in thumbs, an extent; a write with a unit |
-| the apple held and turned | both, in reach | turned, the turn known | known, held | the turn's Cauchy | holding |
-| the blueprint | both at once | none | known | 1 | the read and the write held together |
+| inscribed, toward the universe | one | home, facing a horizon | unknowable | 2/π, approached | a read: what turning sees |
+| central, toward the apple | one | facing across, to a rim | knowable | π/2, reached | a read: a bounded thing faced; its arc, walked and counted in thumbs, is an extent |
+| the apple held and turned | both, in reach | one, the turn known | known, held | the turn's Cauchy | reads joined by a known turn: a write under way |
+| the blueprint | both at once | none | known | 1 | the synthetic read: the two reads held together |
 
 The human is all of these at the same time, not by turns: it reads the universe, faces the apple and is faced by it, and
 what it holds in the hand or draws it holds as a blueprint. The apple has the facings and never the blueprint. So π/2 · 2/π = 1 is
-not two parties meeting but one observer's two facings held at once, and the 1 is its own thumb given back.
+not two parties meeting but one observer's two reads held at once, and the 1 is its own thumb given back.
 
 Faced, V is knowable, not known. The inscribed sweep approaches its end, the central sweep reaches it at a point, and only a
 write holds it whole; parallax narrows the band toward it and never closes it (§6). Euler's identity is the hinge: the
@@ -356,8 +359,9 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
   someone has to stand, walk or count, say "the observer".
 - *Heat* and *paint* for what the read has and what it meets; *address* only as a computing metaphor or for a count of K
   places at the heat's quantiles (§5).
-- π/2, 2/π, π and the one-length circle are the blueprint's; 2/π measures the read, π/2 the write, the
-  arc walked (§9, "Reading is 2/π; walking is π/2").
+- π/2 and 2/π are the blueprint's numbers for the two reads, each with a vantage and one hemisphere: 2/π the inscribed
+  sweep's, π/2 the central sweep's (its arc walked and counted is an extent; §9, "Reading is 2/π; walking is π/2"). π
+  and the one-length circle are the blueprint's, the synthetic read: both hemispheres, no vantage.
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
 
 **Continuous and discrete.** A read is continuous: a turn passes through every direction between two, and nothing in it
@@ -1312,12 +1316,14 @@ thumb's share h averages 2/π, the mean of what is seen of one thumb from a stan
 that closes the heat, and it is approached at the horizon, never reached. *π/2 is what walking counts*: the quarter arc
 from all of h to all of v is π/2 thumbs long, the heat gathered to the horizon, ∫₀^∞ ds/(1 + s²), reached at a named
 point, −1. An arc in thumbs is a length against the thumb, unmoved by scaling and held by no single read: of the kind D3
-calls an extent, had by walking and counting; with the thumb in a unit it is a write (D4). So, in short, reading is 2/π and
-writing is π/2, the write reached through its extent. Their product is 1, the blueprint: the thumb given back when the read and
-the walk are held together. The exchange swaps the two, and they agree only at the corner, where a length walked and a
+calls an extent, had by walking and counting; with the thumb in a unit it is a write (D4). The sweep whose arc that is,
+the central one, is itself a read: one hemisphere, from a vantage, facing a bounded thing. So both numbers belong to
+single-hemisphere reads, 2/π to the inscribed and π/2 to the central, and the walk is how the second one's arc is
+counted. Their product is 1, the blueprint, the synthetic read with no vantage: the thumb given back when the two reads
+are held together. The exchange swaps the two, and they agree only at the corner, where a length walked and a
 ratio held say the same (§6). Both numbers stay the blueprint's arithmetic, since a read holds no π; what is sorted is
-which act each one measures. In the table above the total's 2/π is the reading's factor and its π/2 the walk's, and "the
-two facings" is the read against the walk. **Classical** (the mean share and the arc); the assignment is a reading.
+which read each one measures. In the table above the total's 2/π is the inscribed read's factor and its π/2 the central
+read's, and "the two facings" are those two reads. **Classical** (the mean share and the arc); the assignment is a reading.
 
 **The thumb, short by reading, long by walking, and whole.** Said most simply: the true size is 1, the thumb in thumbs.
 Reading gives the short side of it, 2/π; walking gives the long side, π/2; the two together give back the 1. The proof is
