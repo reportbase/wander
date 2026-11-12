@@ -248,3 +248,7 @@ synthetic read is dual hemispherical without a vantage, otherwise known as a blu
 with a vantage and one hemisphere; the central sweep (π/2) is not "the write". The blueprint is the synthetic read: both
 hemispheres, no vantage. A write stays what is counted, kept or tied to a unit. *Reads and Writes* brought to it; the
 essays that pair π/2 with "a write" still to check.
+
+**Item 15, again** (12 Nov, R890; Tom: "the blueprint view does not have a vantage so it has nothing to do with reads
+and writes."): the blueprint is not made of reads and writes and is not a read; "synthetic read" dropped. Still to
+sweep: sentences where a write "gives" the circle or the blueprint.

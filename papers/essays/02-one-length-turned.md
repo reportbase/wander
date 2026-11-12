@@ -321,7 +321,7 @@ thumb's share h averages 2/π, the mean of what is seen of one thumb from a stan
 approached at the horizon, never reached. π/2 is what walking counts: the quarter arc from all of h to all of v is π/2
 thumbs long, and it is reached, at a point. An arc counted in thumbs is an extent, had by walking and counting; with the
 thumb in metres it is a write. So, in short, both numbers belong to reads, each with a vantage and one hemisphere: 2/π to the inscribed sweep and π/2 to the central one, whose arc the walk counts, and
-their product, 1, is the blueprint, the two reads held together with no vantage. Both stay the blueprint's arithmetic, since a read holds no π;
+their product, 1, is also the blueprint's number; the blueprint has no vantage and is neither read nor write. Both stay the blueprint's arithmetic, since a read holds no π;
 what is sorted is the read each one measures.
 
 **Short by reading, long by walking, and whole.** Said most simply: the true size is 1, the thumb in thumbs. Reading gives

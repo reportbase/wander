@@ -28,7 +28,7 @@ scaling leaves it unchanged too, but no single read holds it; it needs a second 
 (parallax). A **write** is an amount, the across axis's zero tied to a unit carried in from outside, a metre or a second:
 it is exactly what scaling the world moves. The write is the scale-variant companion of the read. These are acts:
 there is no reader and no writer here. Every read has a vantage and one hemisphere; the *blueprint*, the drawn shape,
-is the synthetic read, put together from reads and writes: both hemispheres at once, and no vantage.
+has both hemispheres at once and no vantage, so it is neither a read nor a write and has nothing to do with either.
 
 The read's directions are laid by the uniform turn, whose law in the reading v/h is the Cauchy: its median at the corner
 v = h, its horizon never reached, no mean. It is best read as a *heat*, a continuous weight over the readings, hottest
@@ -246,7 +246,7 @@ the arctangent sit together on the blueprint's side: each is a position, a total
 has only the step it is in and the heat along it. There is no circle anywhere in this. A circle is one fixed dial on
 which every sweep has its place and going back is going the other way round; a read has no such dial, only a
 sweep forward, a reset, and another sweep forward. The circle appears when someone keeps the steps and lays them end
-to end. That keeping is a write, and the circle it gives is the blueprint.
+to end. That keeping is a write. The circle held whole, with no standpoint in it, is the blueprint's.
 
 **A read uses no trigonometry.** A read is in v/h; angles are the blueprint's. Sin, cos, tan and arctan are the blueprint's: they are defined on the completed turn,
 whose period is π (§2), and evaluating one is a pass over that whole turn. A read holds the turn open, and works in the
@@ -295,9 +295,9 @@ one observer does both: it reads while it stands and turns, and writes while it 
 read has a vantage and one hemisphere, and there are two of them, the two sweeps: the inscribed, from home to a horizon
 (the blueprint's number for it 2/π, approached), and the central, across a bounded thing to its rim (π/2, reached). Both
 are reads. A write is what is counted and kept, or tied to a unit (D4, D7); it is how reads are joined. Neither a read
-nor a write holds both hemispheres. What holds both at once, with no vantage, is the **blueprint**: the *synthetic
-read*, a read put together and not taken, the drawn shape that joined reads give, with both signs of every axis, the
-turn completed, the facings joined. "Dual hemispherical" and "without a vantage" say the same thing: a vantage faces
+nor a write holds both hemispheres. What holds both at once is the **blueprint**: the drawn shape, with both signs of every axis, the turn completed, the
+facings joined. It has no vantage. Reads and writes are what is done from a vantage, so the blueprint has nothing to do
+with reads and writes: it is not a third act beside them, not a read of a larger kind, and not what they add up to. "Dual hemispherical" and "without a vantage" say the same thing: a vantage faces
 one way. The circle held whole, the sphere and the cube, the angle and trigonometry, π and e
 are the blueprint's. A blueprint is made, not seen from anywhere, and once made it is read like anything else (§6,
 "Write once, then read again"). Whole, with π at its exact value, it is a limit; any blueprint actually made is a
@@ -322,17 +322,17 @@ median and the absence of any mean are what a read with no breadth in it is.
   line of sight, is the Cauchy whatever the apple's shape, the shape only the paint. The hand holds the back as the eye
   holds the front, so both hemispheres are in reach and the turn is known; holding and turning is a write under way, and in the hand
   the apple's V is **known**: held whole. Its exact amount in a unit is still a write, the limit of §6.
-- *The human draws a circle on paper.* The drawing is the blueprint, the synthetic read: both hemispheres at once, with no vantage and so no facing, whole
+- *The human draws a circle on paper.* The drawing is the blueprint: both hemispheres at once, with no vantage and so no facing, neither read nor write, whole
   only at its limit (§9, "What is free, and what π costs"), made, not seen, a mark holding both halves together, V = H at one length, π held whole. It has neither sweep's
   number. π/2 and 2/π belong to the two facings, the central reached at a point and the inscribed approached; the blueprint
-  has their product, 1, the thumb in thumbs, what the facings give when held together without a facing.
+  has the number 1, the thumb in thumbs. The product of the two reads' numbers is also 1; that is arithmetic, not a way of making the blueprint from reads.
 
 | | hemispheres | vantage | V | the blueprint's number for it | what it is |
 |---|---|---|---|---|---|
 | inscribed, toward the universe | one | home, facing a horizon | unknowable | 2/π, approached | a read: what turning sees |
 | central, toward the apple | one | facing across, to a rim | knowable | π/2, reached | a read: a bounded thing faced; its arc, walked and counted in thumbs, is an extent |
 | the apple held and turned | both, in reach | one, the turn known | known, held | the turn's Cauchy | reads joined by a known turn: a write under way |
-| the blueprint | both at once | none | known | 1 | the synthetic read: the two reads held together |
+| the blueprint | both at once | none | known | 1 | neither read nor write: no vantage |
 
 The human is all of these at the same time, not by turns: it reads the universe, faces the apple and is faced by it, and
 what it holds in the hand or draws it holds as a blueprint. The apple has the facings and never the blueprint. So π/2 · 2/π = 1 is
@@ -361,7 +361,7 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
   places at the heat's quantiles (§5).
 - π/2 and 2/π are the blueprint's numbers for the two reads, each with a vantage and one hemisphere: 2/π the inscribed
   sweep's, π/2 the central sweep's (its arc walked and counted is an extent; §9, "Reading is 2/π; walking is π/2"). π
-  and the one-length circle are the blueprint's, the synthetic read: both hemispheres, no vantage.
+  and the one-length circle are the blueprint's: both hemispheres, no vantage, nothing to do with reads and writes.
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
 
 **Continuous and discrete.** A read is continuous: a turn passes through every direction between two, and nothing in it
@@ -1319,8 +1319,8 @@ point, −1. An arc in thumbs is a length against the thumb, unmoved by scaling 
 calls an extent, had by walking and counting; with the thumb in a unit it is a write (D4). The sweep whose arc that is,
 the central one, is itself a read: one hemisphere, from a vantage, facing a bounded thing. So both numbers belong to
 single-hemisphere reads, 2/π to the inscribed and π/2 to the central, and the walk is how the second one's arc is
-counted. Their product is 1, the blueprint, the synthetic read with no vantage: the thumb given back when the two reads
-are held together. The exchange swaps the two, and they agree only at the corner, where a length walked and a
+counted. Their product is 1, which is also the blueprint's number, the thumb in thumbs; the blueprint itself has no vantage and
+is neither of them. The exchange swaps the two, and they agree only at the corner, where a length walked and a
 ratio held say the same (§6). Both numbers stay the blueprint's arithmetic, since a read holds no π; what is sorted is
 which read each one measures. In the table above the total's 2/π is the inscribed read's factor and its π/2 the central
 read's, and "the two facings" are those two reads. **Classical** (the mean share and the arc); the assignment is a reading.
@@ -1707,7 +1707,7 @@ before the data can show where it is not. **Checked** (TCF; killed).
   already requires; the record's "the read's own length" describes how it is chosen, not a different kind.
 - **O3. Completed joins, and their name.** *Closed (12 November):* a completed join (π, the one-length circle, the
   facings joined) is unmoved by scaling, so it is not a write; it was called "the blueprint's" until a word was chosen.
-  The word is the **blueprint**: both hemispheres at once, what reads and writes give together (§1, "Reads, writes and
+  The word is the **blueprint**: both hemispheres at once, no vantage, apart from reads and writes (§1, "Reads, writes and
   the blueprint"). What stays open is whether the blueprint is a kind beside D1–D7 or only their sum. *Sharpened
   (R796):* what an angle needs comes in two stages. The ratio s = v/h needs nothing; it is the read. The shares h and v
   with h² + v² = 1 need the other party held at the one length (V = H, the one-length circle): with them come

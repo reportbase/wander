@@ -122,8 +122,8 @@ blueprint's rate is the fixed point of the reciprocal that pairs the two sweeps:
 **Each of the two measures an act.** 2/π is what turning sees: the thumb's share h, averaged over the quarter turn from a
 standpoint that never moves, approached at the horizon and never reached. π/2 is what walking counts: the quarter arc
 itself, π/2 thumbs long, reached at a point. The arc in thumbs is an extent, walked and counted; with the thumb in metres
-it is a write. So both numbers belong to reads, each with a vantage and one hemisphere, 2/π to the inscribed sweep and π/2 to the central one, whose arc the walk counts, and the 1 between them is the
-blueprint, the two reads held together with no vantage (the second essay, §7). The reason is one line: each step of the arc gains v at the rate h,
+it is a write. So both numbers belong to reads, each with a vantage and one hemisphere, 2/π to the inscribed sweep and π/2 to the central one, whose arc the walk counts, and the 1 between them is also the
+blueprint's number, the blueprint having no vantage and being neither read nor write (the second essay, §7). The reason is one line: each step of the arc gains v at the rate h,
 so the shares read, summed over the steps walked, are all of v; a mean of 2/π over a length of π/2 is 1. Any path from the
 one end to the other gives the 1 (the chord 1/√2 over √2); only the split is the turn's. And the 1 never needed π: the
 two rates are reciprocals, so with any fraction held for π/2 the product is still exactly 1 (11/7 × 7/11). A read has
