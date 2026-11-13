@@ -1,0 +1,182 @@
+{
+ "run13": [
+  {
+   "mode": "fixed",
+   "D": 1,
+   "dens": 1,
+   "kfix": 0,
+   "gs": 1,
+   "held": 2195,
+   "scanned": 29085,
+   "examined": 12214,
+   "missing": 0,
+   "extra": 0,
+   "made": 2195,
+   "storedN": 35013
+  },
+  {
+   "mode": "fixed",
+   "D": 2,
+   "dens": 2,
+   "kfix": 0,
+   "gs": 1,
+   "held": 4264,
+   "scanned": 29085,
+   "examined": 24435,
+   "missing": 0,
+   "extra": 0,
+   "made": 4264,
+   "storedN": 70070
+  },
+  {
+   "mode": "fixed",
+   "D": 4,
+   "dens": 4,
+   "kfix": 0,
+   "gs": 1,
+   "held": 8654,
+   "scanned": 29085,
+   "examined": 49053,
+   "missing": 0,
+   "extra": 0,
+   "made": 8654,
+   "storedN": 140508
+  },
+  {
+   "mode": "fixed",
+   "D": 8,
+   "dens": 8,
+   "kfix": 0,
+   "gs": 1,
+   "held": 17309,
+   "scanned": 29085,
+   "examined": 97747,
+   "missing": 0,
+   "extra": 0,
+   "made": 17309,
+   "storedN": 280717
+  },
+  {
+   "mode": "fixed",
+   "D": 16,
+   "dens": 16,
+   "kfix": 0,
+   "gs": 1,
+   "held": 34625,
+   "scanned": 29085,
+   "examined": 195159,
+   "missing": 0,
+   "extra": 0,
+   "made": 34625,
+   "storedN": 560463
+  },
+  {
+   "mode": "kheld",
+   "D": 1,
+   "dens": 1,
+   "kfix": 2100,
+   "gs": 1.0223688645680165,
+   "held": 2107,
+   "scanned": 27461,
+   "examined": 11561,
+   "missing": 0,
+   "extra": 0,
+   "made": 2107,
+   "storedN": 35013
+  },
+  {
+   "mode": "kheld",
+   "D": 2,
+   "dens": 2,
+   "kfix": 2100,
+   "gs": 1.4249477851753694,
+   "held": 2075,
+   "scanned": 14481,
+   "examined": 12347,
+   "missing": 0,
+   "extra": 0,
+   "made": 2075,
+   "storedN": 70070
+  },
+  {
+   "mode": "kheld",
+   "D": 4,
+   "dens": 4,
+   "kfix": 2100,
+   "gs": 2.0300129016714106,
+   "held": 2071,
+   "scanned": 7765,
+   "examined": 13174,
+   "missing": 0,
+   "extra": 0,
+   "made": 2071,
+   "storedN": 140508
+  },
+  {
+   "mode": "kheld",
+   "D": 8,
+   "dens": 8,
+   "kfix": 2100,
+   "gs": 2.8709547109595706,
+   "held": 2045,
+   "scanned": 4277,
+   "examined": 14303,
+   "missing": 0,
+   "extra": 0,
+   "made": 2045,
+   "storedN": 280717
+  },
+  {
+   "mode": "kheld",
+   "D": 16,
+   "dens": 16,
+   "kfix": 2100,
+   "gs": 3.8785853137814534,
+   "held": 2108,
+   "scanned": 2489,
+   "examined": 16769,
+   "missing": 0,
+   "extra": 0,
+   "made": 2108,
+   "storedN": 560463
+  }
+ ],
+ "run14": {
+  "poses": 300,
+  "segs": 3738585,
+  "maxPx": 2.3982264690094994e-12,
+  "trig": {
+   "ours": {
+    "sin": 0,
+    "cos": 0,
+    "tan": 0,
+    "atan": 0,
+    "atan2": 0,
+    "asin": 0,
+    "acos": 0,
+    "sinh": 0,
+    "cosh": 0,
+    "tanh": 0
+   },
+   "classical": {
+    "sin": 1200,
+    "cos": 1200,
+    "tan": 0,
+    "atan": 600,
+    "atan2": 0,
+    "asin": 0,
+    "acos": 0,
+    "sinh": 0,
+    "cosh": 0,
+    "tanh": 0
+   }
+  },
+  "retrace": {
+   "pageExact": true,
+   "classicalYawLeft": -2.7755575615628914e-17,
+   "turns": 96
+  },
+  "dens": 1
+ },
+ "errors": []
+}
