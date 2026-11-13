@@ -72,3 +72,21 @@ The target was a box 6 × 4 × 10 centred at (−112, 2, 40), seen from (0, 2, �
 
 Nothing failed. K1, K2 and K5's two counts are identities, so these checks test the arithmetic and the construction (an
 exactly orthonormal rational frame, an eye that stays rational), not any claim about the world. No page errors.
+
+### Run 2, plan (13 November; Tom: "yes", to re-anchoring the eye at each change of heading; written before the change)
+
+The scaffolding reading (essay 20, R883): the frame is recomputed each pose from one current turn, so its denominators
+stay bounded (the tower's middle terms cancel). The eye is a running total of strides along every heading taken, so its
+denominator collects one factor per new heading (the scaffolding never taken down). The change: at each change of heading
+the eye is re-anchored to the nearest point of the 1/16 grid. This is a write, and it gives up only the exact path back to
+the start, which no check reads.
+
+The method: a seeded random walk of 200 legs. Each leg is a new yaw (a whole degree in ±180) and 1 to 20 strides of W, A,
+S or D, with the pitch fixed. It is run with and without the re-anchor, recording the eye's denominator digits after each
+leg and, at the end, the digits of the target's readings and K1–K8 (K5 on the final leg).
+
+- **A1.** With the re-anchor, the eye's denominator stays under 10 digits over all 200 legs. *Killed* if it ever exceeds 10.
+- **A2.** Without it, the eye's denominator grows with the number of legs, past 100 digits by leg 50. *Killed* if under
+  100 digits at leg 50.
+- **A3.** With the re-anchor, the target's slopes stay under 40 digits. K1, K2, K4, K5 and K8 hold at the end of the walk
+  in both runs. *Killed* if any of these fails.
