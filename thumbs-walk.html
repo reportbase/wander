@@ -23,8 +23,12 @@
     Re-anchoring (R931): the frame is recomputed from one current turn each pose, so its denominators stay bounded (the
     tower's middle terms cancel); the eye is a running total of strides, so at each new heading it is put down on the
     nearest point of the 1/16 grid (a write; only the exact path home is lost). ?anchor=0 keeps every heading in it.
-    ?yaw=<degrees>&pitch=<degrees>&x=&z=&menu=1&sky=1&heat=0&thumbs=0&anchor=0
-    Hook window.__thumbsWalk: Fr (fractions), exact(), checks(), set({yaw, pitch, eye}), stride(dir, n), target(),
+    No trigonometry (R932): the look is held as whole numbers (quarter turns q and half-slopes ky/128, kp/128), a drag or
+    an arrow key steps a half-slope, an eighth of a turn passes to the next quarter by tangent subtraction; the screen's
+    half-width is a slope of 6/5; the rings are drawn from rational points; the sky is uniform by a ball normalized.
+    Only the Ω shares (K3) use atan, for display and that check alone. Hook trigFree(steps) counts trig calls.
+    ?q=&ky=&kp=&x=&z=&menu=1&sky=1&heat=0&thumbs=0&anchor=0
+    Hook window.__thumbsWalk: Fr (fractions), exact(), checks(), set({q, ky, kp, eye}), trigFree(steps), stride(dir, n), target(),
     state(), sky().
     -->
     <style>
@@ -167,7 +171,8 @@ function thingsNear(ex, ez) {
 // ---------- the pose ----------
 const params = new URLSearchParams(location.search);
 const S = {
-    yaw: (+params.get('yaw') || 0) * Math.PI / 180, pitch: (+params.get('pitch') || 0) * Math.PI / 180,
+    // the look held as whole numbers: q quarter turns and two half-slopes ky/128 (across) and kp/128 (up); no angle
+    q: Math.round(+params.get('q') || 0), ky: Math.round(+params.get('ky') || 0), kp: Math.round(+params.get('kp') || 0), dragX: 0, dragY: 0,
     eye: [Fr.make(params.get('x') ? Math.round(+params.get('x')) : 0), Fr.make(2), Fr.make(params.get('z') ? Math.round(+params.get('z')) : -30)],
     H: null, holdH: false, target: null, lastPoseKey: '',
     walk: { key: null, m: [], strides: 0 },
@@ -180,15 +185,16 @@ const STRIDE = Fr.make(1, 4), GRID = 16n;
 function floorDiv(a, b) { const q = a / b; return (a % b !== 0n && ((a < 0n) !== (b < 0n))) ? q - 1n : q; }
 function snap(f) { return Fr.make(floorDiv(2n * f.n * GRID + f.d, 2n * f.d), GRID); }
 function eyeDigits() { return Math.max(...S.eye.map(Fr.digits)); }
-function poseParts() {
-    const lim = Math.PI / 4;
-    let q = Math.round(S.yaw / (Math.PI / 2)), rem = S.yaw - q * Math.PI / 2;
-    if (rem > lim) { q++; rem -= Math.PI / 2; } if (rem < -lim) { q--; rem += Math.PI / 2; }
-    const ky = Math.round(Number(QD) * Math.tan(rem / 2));
-    S.pitch = Math.max(-1.25, Math.min(1.25, S.pitch));
-    const kp = Math.round(Number(QD) * Math.tan(S.pitch / 2));
-    return { q, ky, kp };
+// turning by half-slopes, no trigonometry: past an eighth of a turn either way the half-slope u passes to the next
+// quarter turn by tangent subtraction, u' = (u − 1)/(1 + u) or (u + 1)/(1 − u), rounded to the nearest k/128
+const KMAX = 53, KPMAX = 85;
+function turnBy(dk) {
+    S.ky += dk; const Q = Number(QD);
+    while (S.ky > KMAX) { S.q++; S.ky = Math.round(Q * (S.ky - Q) / (S.ky + Q)); }
+    while (S.ky < -KMAX) { S.q--; S.ky = Math.round(Q * (S.ky + Q) / (Q - S.ky)); }
 }
+function tiltBy(dk) { S.kp = Math.max(-KPMAX, Math.min(KPMAX, S.kp + dk)); }
+function poseParts() { turnBy(0); tiltBy(0); return { q: S.q, ky: S.ky, kp: S.kp }; }
 let exactPose = null;
 function pose() {
     const { q, ky, kp } = poseParts(), key = q + '|' + ky + '|' + kp;
@@ -234,14 +240,21 @@ function exactOf(t) {
         const w = wOf(s), wi = wOf(si), prod = cmul(w, wi);
         const mod2 = Fr.add(Fr.mul(w[0], w[0]), Fr.mul(w[1], w[1]));
         const sf = Fr.num(s);
-        const share = sf > 0 ? Math.atan(sf) / OMEGA : null, shareI = sf > 0 ? Math.atan(1 / sf) / OMEGA : null;
-        return { name: p + q, s, si, w, wi, prod, mod2, sf, share, shareI,
+        return { name: p + q, s, si, w, wi, prod, mod2, sf,
                  eulerOK: Fr.eq(prod[0], Fr.make(-1)) && Fr.zero(prod[1]), modOK: Fr.eq(mod2, ONE) };
     });
     const ok = pairs.every(p => p.s);
     const closure = ok ? pairs.reduce((acc, p) => Fr.mul(acc, p.s), ONE) : null;
     const m = Fr.div(Fr.add(Fr.add(x[0], x[1]), x[2]), Fr.make(3));
     return { t, x, facing, pairs, closure, closureOK: closure ? Fr.eq(closure, ONE) : false, m };
+}
+
+// the shares of each pair's sweep out of Ω: Ω itself is a limit, so these are the one place the page uses atan (the
+// blueprint's formula, for display and check K3 only; nothing in turning, projecting, picking or walking calls it)
+function sharesOf(X) {
+    for (const p of X.pairs) { if (!p.s) continue;
+        p.share = p.sf > 0 ? Math.atan(p.sf) / OMEGA : null; p.shareI = p.sf > 0 ? Math.atan(1 / p.sf) / OMEGA : null; }
+    return X;
 }
 
 // ---------- the walk ----------
@@ -281,8 +294,9 @@ function sky() {
     let s = 930 >>> 0; const rnd = () => { s = (s + 0x6D2B79F5) | 0; let t = Math.imul(s ^ (s >>> 15), 1 | s);
         t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
     const N = 40000, d = new Float64Array(3 * N);
-    for (let i = 0; i < N; i++) { const z = 2 * rnd() - 1, ph = 2 * Math.PI * rnd(), r = Math.sqrt(1 - z * z);
-        d[3 * i] = r * Math.cos(ph); d[3 * i + 1] = z; d[3 * i + 2] = r * Math.sin(ph); }
+    for (let i = 0; i < N; i++) {   // uniform on the sphere with no angle: a point uniform in the ball, normalized
+        let x, y, z, r2; do { x = 2 * rnd() - 1; y = 2 * rnd() - 1; z = 2 * rnd() - 1; r2 = x * x + y * y + z * z; } while (r2 > 1 || r2 < 1e-12);
+        const r = Math.sqrt(r2); d[3 * i] = x / r; d[3 * i + 1] = y / r; d[3 * i + 2] = z / r; }
     SKY = { N, d }; return SKY;
 }
 function skyShares(F, rs) {
@@ -299,11 +313,11 @@ function skyShares(F, rs) {
 function heatTotal() {   // ∫ over the screen of 1/(4Ω(1 + r²)^(3/2)) dA, r = t/(1 − t)
     const n = 200000; let s = 0;
     for (let i = 0; i < n; i++) { const t = (i + 0.5) / n, r = t / (1 - t), dr = 1 / ((1 - t) * (1 - t));
-        s += 2 * Math.PI * r / (4 * OMEGA * Math.pow(1 + r * r, 1.5)) * dr / n; }
+        s += 4 * OMEGA * r / (4 * OMEGA * Math.pow(1 + r * r, 1.5)) * dr / n; }
     return s;
 }
 function checks() {
-    const P = pose(), X = exactOf(S.target), out = [];
+    const P = pose(), X0 = exactOf(S.target), X = X0 && sharesOf(X0), out = [];
     const add = (id, ok, text) => out.push({ id, ok, text });
     if (X) {
         add('K1', X.closureOK, 'the three pair slopes multiply to ' + (X.closure ? Fr.str(X.closure) : '—') + ' (exact)');
@@ -334,7 +348,7 @@ let W = 0, Hh = 0, dpr = 1, foc = 1, heatImg = null;
 function resize() {
     dpr = Math.min(2, window.devicePixelRatio || 1); W = innerWidth; Hh = innerHeight;
     cv.width = W * dpr; cv.height = Hh * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0);
-    foc = (W / 2) / Math.tan(50 * Math.PI / 180);
+    foc = (W / 2) / 1.2;   // the screen's half-width a slope of 6/5 from the look
     // the heat per unit of flat screen, cos³ off the look, painted once at a quarter of the size
     const w = Math.ceil(W / 4), h = Math.ceil(Hh / 4), c = document.createElement('canvas'); c.width = w; c.height = h;
     const cx = c.getContext('2d'), im = cx.createImageData(w, h);
@@ -384,7 +398,7 @@ function frame() {
     if (S.show.heat) {
         g.strokeStyle = 'rgba(79,209,197,0.18)'; g.lineWidth = 1;
         for (let k = 1; k < 8; k++) { const q = k / 8, r = Math.sqrt(1 / ((1 - q) * (1 - q)) - 1);
-            g.beginPath(); g.arc(W / 2, Hh / 2, foc * r, 0, 2 * Math.PI); g.stroke(); }
+            ring(W / 2, Hh / 2, foc * r); g.stroke(); }
     }
     if (S.show.sky) {
         const { N, d } = sky(); g.fillStyle = 'rgba(217,226,239,0.55)';
@@ -428,6 +442,12 @@ function frame() {
     g.strokeStyle = '#f2c14e'; g.lineWidth = 1.4; g.beginPath();
     g.moveTo(W / 2 - 9, Hh / 2); g.lineTo(W / 2 + 9, Hh / 2); g.moveTo(W / 2, Hh / 2 - 9); g.lineTo(W / 2, Hh / 2 + 9); g.stroke();
 }
+// a circle with no angle: the rational points ((1 − t²)/(1 + t²), 2t/(1 + t²)), t from 0 to 1, mirrored four ways
+const RING = (() => { const pts = []; for (let i = 0; i <= 16; i++) { const t = i / 16, d = 1 + t * t; pts.push([(1 - t * t) / d, 2 * t / d]); }
+    const all = []; for (const [sx, sy, sw] of [[1, 1, 0], [1, 1, 1], [-1, 1, 0], [-1, 1, 1], [-1, -1, 0], [-1, -1, 1], [1, -1, 0], [1, -1, 1]]) {
+        const seg = pts.map(([a, b]) => sw ? [b, a] : [a, b]); for (const [a, b] of seg) all.push([sx * a, sy * b]); }
+    return all; })();
+function ring(cx, cy, r) { g.beginPath(); RING.forEach(([a, b], i) => i ? g.lineTo(cx + r * a, cy + r * b) : g.moveTo(cx + r * a, cy + r * b)); }
 function sub(p, e) { return [p[0] - e[0], p[1] - e[1], p[2] - e[2]]; }
 
 // ---------- the panel ----------
@@ -435,7 +455,7 @@ const panel = document.getElementById('panel'), out = document.getElementById('o
 function fmt(f) { const x = Fr.num(f); return Math.abs(x) >= 1e5 || (Math.abs(x) < 1e-3 && x !== 0) ? x.toExponential(4) : x.toFixed(5); }
 let lastHtml = '';
 function panelHtml() {
-    const X = exactOf(S.target); let h = '';
+    const X0 = exactOf(S.target), X = X0 && sharesOf(X0); let h = '';
     if (S.show.read) {
         h += '<h3>the thing under the crosshair</h3>';
         if (!X) h += '<p>nothing; turn toward a thing</p>';
@@ -511,23 +531,35 @@ let drag = null;
 cv.addEventListener('mousedown', ev => { drag = [ev.clientX, ev.clientY]; });
 addEventListener('mouseup', () => { drag = null; });
 addEventListener('mousemove', ev => { if (!drag) return; const dx = ev.clientX - drag[0], dy = ev.clientY - drag[1]; drag = [ev.clientX, ev.clientY];
-    S.yaw += dx * 0.004; S.pitch -= dy * 0.004; });
+    S.dragX += dx; S.dragY += dy;   // two pixels of drag a step of 1/128 in the half-slope
+    const kx = Math.trunc(S.dragX / 2), ky = Math.trunc(S.dragY / 2); S.dragX -= 2 * kx; S.dragY -= 2 * ky; turnBy(kx); tiltBy(-ky); });
 cv.addEventListener('wheel', ev => { ev.preventDefault(); S.holdH = true; S.H = (S.H || 1) * Math.pow(2, ev.deltaY > 0 ? 0.25 : -0.25); updatePanel(true); }, { passive: false });
 function tick() {
     const n = keys.has('shift') ? 8 : 1;
     for (const k of ['w', 'a', 's', 'd']) if (keys.has(k)) stride(k, n);
-    if (keys.has('arrowleft')) S.yaw -= 0.02; if (keys.has('arrowright')) S.yaw += 0.02;
-    if (keys.has('arrowup')) S.pitch += 0.015; if (keys.has('arrowdown')) S.pitch -= 0.015;
+    if (keys.has('arrowleft')) turnBy(-1); if (keys.has('arrowright')) turnBy(1);
+    if (keys.has('arrowup')) tiltBy(1); if (keys.has('arrowdown')) tiltBy(-1);
     frame(); updatePanel(false); requestAnimationFrame(tick);
 }
 
 // ---------- hook ----------
 window.__thumbsWalk = {
-    Fr, exact: () => exactOf(S.target), checks, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors,
+    Fr, exact: () => exactOf(S.target), checks, turnBy, tiltBy, frame: () => frame(),
+    // run the pipeline with every trigonometric function replaced by a counter; nothing in turning, projecting,
+    // picking, walking or the exact checks should call one
+    trigFree(steps = 200) {
+        const names = ['sin', 'cos', 'tan', 'atan', 'atan2', 'asin', 'acos', 'sinh', 'cosh', 'tanh'], saved = {}, calls = {};
+        for (const n of names) { saved[n] = Math[n]; calls[n] = 0; Math[n] = (...a) => { calls[n]++; return saved[n](...a); }; }
+        try {
+            for (let i = 0; i < steps; i++) { turnBy(i % 7 === 0 ? 3 : 0); tiltBy(i % 11 === 0 ? (i % 2 ? 1 : -1) : 0);
+                stride('wasd'[i % 4], 1); frame(); exactOf(S.target); }
+        } finally { for (const n of names) Math[n] = saved[n]; }
+        return calls;
+    }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors,
     target: () => S.target, pose,
-    set(o) { if (o.yaw !== undefined) S.yaw = o.yaw * Math.PI / 180; if (o.pitch !== undefined) S.pitch = o.pitch * Math.PI / 180;
+    set(o) { if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
         if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.anchor !== undefined) S.anchor = !!o.anchor; if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; } frame(); return this.state(); },
-    state: () => ({ yaw: S.yaw * 180 / Math.PI, pitch: S.pitch * 180 / Math.PI, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH,
+    state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH,
         target: S.target ? { kind: S.target.kind, c: S.target.c } : null, walk: walkSummary() }),
 };
 addEventListener('resize', resize);
