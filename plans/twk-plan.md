@@ -125,3 +125,39 @@ The sky is uniform without an angle (a point uniform in the ball, normalized). P
 - Limit: the wrap rounds, so turning a whole circle in steps does not return exactly to the start. 200 steps back from
   (q 2, ky −46) ended at (q 1, ky −40). Every pose is still an exact rational frame. Only the path of turns is not kept,
   which is the same kind of write as run 2's re-anchor.
+
+### Run 4, plan (13 November; Tom: "4", to keeping things by their size on screen; written and committed before the change)
+
+Tom's point (R932) was that this way needs only what is visible, not the whole world. In run 3 the page still held every
+cell within a fixed radius (30 cells), a cut in units. The change is to make the world at every scale and keep a thing by
+its size on screen, as `crosshairs.html` does (R689).
+
+- **The world.** Level j = 0 … L has cells CELL·2^j wide. Each cell holds at most one thing, made from the cell by a seeded
+  hash as now, with every length times 2^j (whole numbers still). Level 0 is the present world. `?levels=` sets L (default 8).
+- **The cull.** A thing of breadth b (its largest of width, depth and height) at distance d from the eye is kept when
+  b ≥ g·d, with g = 1/32. It is compared in squares (b² ≥ g²·d²), so no root or angle is needed. A thing with d < b (the eye
+  inside its own breadth) is not drawn, at every level.
+- **The scan.** Since b ≤ 32·2^j at level j, a kept thing lies within 32·2^j/g = 1024·2^j units, so the same number of
+  cells (radius ⌈1024/24⌉ + 1 = 44 cells) is scanned at every level.
+
+Predictions:
+
+- **C1, one level costs the same as another.** From the start pose and five seeded poses at L = 8, the count of things
+  kept at each of levels 1 … 8 is within 30% of their mean. *Killed* if any is outside.
+- **C2, the work goes by levels, not by area.** The total kept at L = 2, 4, 8, divided by L + 1, agrees within 20%.
+  A fixed radius reaching the same far things would scan cells in proportion to 4^L, by arithmetic. *Killed* if the
+  per-level totals part by more than 20%.
+- **C3, the cull is complete.** Every thing kept has b ≥ g·d. Within one extra ring of cells past the scan, at every level,
+  no thing has b ≥ g·d (it was not missed). *Killed* if any is found.
+- **C4, the scan's cost is fixed.** The cells scanned per frame are (L + 1) times the same count at every pose, wherever
+  the eye is. *Killed* if they differ.
+- **C5, nothing else breaks.** `trigFree` counts 0. K1–K4 and K8 hold on the target at the start pose. *Killed* otherwise.
+
+What would and would not be shown:
+
+- This is classical: quadtrees, level of detail and the "distant horizons" of streamed worlds all keep far things by size.
+  The page would show the series' version on its own world: what is held is set by the grain g and the number of levels,
+  and no count N of the world appears anywhere.
+- With a world self-similar over L levels, the work is in proportion to L, the logarithm of the largest size over the
+  smallest. That is not zero: a world with sizes without end would need levels without end. What is unbounded is the
+  extent at each level, and it costs nothing.
