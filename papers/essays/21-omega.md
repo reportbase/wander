@@ -330,6 +330,19 @@ writes. Each step uses up one binary digit of the starting slope, so a start put
 steps and no longer. The horizon of prediction is the length of what was written. That is how a rule of one line gives
 a record nobody can extend: the rule is exact, and the start was never written out in full.
 
+So chaos comes apart along the same line as everything else in this series. The stretch is the rule's. Two exactly
+given starts a hair apart part at ln 2 a step whoever runs them and however carefully; scaling the world does not
+change the rate, and no measuring enters it. The unpredictability is the write's. It bites only because the start was
+put down to finitely many digits, and the rule spends them at a fixed rate. Given the start whole, the run would hold
+no surprise, since the rule adds nothing. Chaos, as the loss of prediction, is a finite record running out under an
+exact stretch. In a physical system the start can never be put down whole: below any record sit the system's own small
+motions, thermal or quantum, and the stretch lifts them into view, which is Lorenz's butterfly. And chaos leaves marks
+that need no prediction: mixing, a broad spectrum, the fine structure of an attractor. These are the stretch's, and
+they can be measured. What the sorting places is the loss of prediction, on the side of what was written; the stretch
+that causes it stays with the rule. That a run uses up its start's digits at the rule's rate holds for chaos in
+general, not only for this map: it is the classical entropy of a chaotic map (Kolmogorov and Sinai, and Pesin's
+equality with the rate of parting).
+
 Two limits. This is one map, and its close relatives; at other settings of the logistic map there is no such sweep
 behind it. And none of it is new: that the logistic map at 4 is the tent map in another chart is Ulam and von
 Neumann's, of 1947. What the letter adds is small, that the three unchanged laws share one coefficient.
