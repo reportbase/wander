@@ -34,7 +34,8 @@
     The blueprint beside it (O, ?god=1): the god's-eye view done classically, every thing at scales 0 to 8 in a square
     6000 units across, stored and counted, drawn as a map beside the view. P (TWK run 8) makes a blueprint about the eye at every scale, every cell
     out to twice the read's reach read, and sets the read beside it thing for thing. Hook blueprint(), besideBlueprint(),
-    againstStored(), againstMade(half).
+    againstStored(), againstMade(half). U takes the eye ten times farther out; the menu then gives the cells a blueprint stored
+    from the start to there would have (exact, a count, never made) beside the cells the read scans (hook toHere(), outTenfold()).
     ?q=&ky=&kp=&x=&z=&menu=1&sky=1&heat=0&thumbs=0&anchor=0
     Hook window.__thumbsWalk: Fr (fractions), exact(), checks(), set({q, ky, kp, eye}), trigFree(steps), stride(dir, n), target(),
     state(), sky().
@@ -79,7 +80,7 @@
     <label><input type="checkbox" id="optOmega" checked> the shares in Ω</label>
     <label><input type="checkbox" id="optWalk" checked> the counted walk</label>
     <label><input type="checkbox" id="optDigits" checked> a read and a write, by the digit (G half way, B back)</label>
-    <label><input type="checkbox" id="optGod"> the blueprint beside it, the god's-eye view (O)</label>
+    <label><input type="checkbox" id="optGod"> the blueprint beside it, the god's-eye view (O; U ten times farther out)</label>
     <label><input type="checkbox" id="optChecks"> the checks</label>
     <label><input type="checkbox" id="optAnchor" checked> re-anchor the eye at each new heading (take the scaffolding down)</label>
     <label><input type="checkbox" id="optAbout"> about</label>
@@ -311,8 +312,21 @@ function buildCount(R0, lo = 0, hi = 8) { let cells = 0, N = 0; const t0 = perfo
         if (cellCache.size > 400000) cellCache.clear(); }
     return { R0, lo, hi, cells, N, ms: performance.now() - t0 }; }
 function cellFormula(R0, lo = 0, hi = 8) { let c = 0n; for (let lv = lo; lv <= hi; lv++) { const n = BigInt(Math.ceil(R0 / (CELL * 2 ** lv))); c += (2n * n) ** 2n; } return c.toString(); }
+// a blueprint stored from the start out to the eye, at the scales the read holds (−BELOW to LEVELS): its cells counted
+// exactly, never made. The read at the same place scans CULL.scanned cells and stores none.
+function toHere() {
+    const ax = f => { const v = floorDiv(f.n, f.d); return v < 0n ? -v : v; }, R = (ax(S.eye[0]) > ax(S.eye[2]) ? ax(S.eye[0]) : ax(S.eye[2])) + 1n;
+    let cells = 0n; for (let lv = -BELOW; lv <= LEVELS; lv++) {
+        const num = lv >= 0 ? R : R * 2n ** BigInt(-lv), den = lv >= 0 ? BigInt(CELL) * 2n ** BigInt(lv) : BigInt(CELL);
+        const n = (num + den - 1n) / den; cells += (2n * n) ** 2n; }
+    return { R: R.toString(), cells: cells.toString(), scanned: CULL.scanned };
+}
+function sci(str) { return str.length <= 7 ? Number(str).toLocaleString() : `${str[0]}.${str.slice(1, 3)}·10^${str.length - 1}`; }
+function outTenfold() {   // U: the eye ten times as far from the start along x, exactly (at least 10⁴ out)
+    const v = floorDiv(S.eye[0].n, S.eye[0].d), a = v < 0n ? -v : v, step = a < 1000n ? 10000n : 9n * a;
+    S.eye[0] = Fr.add(S.eye[0], Fr.make(step)); S.target = null; S.lock = null; frame(); }
 function floorFr(f, w) { return floorDiv(f.n * w.d, f.d * w.n); }   // ⌊f/w⌋, a BigInt
-const CULL = { scanned: 0, perLevel: [] };
+const CULL = { scanned: 0, perLevel: [], first: null };
 function thingsNear(extra = 0, from = -1) {
     const out = []; CULL.scanned = 0; CULL.perLevel = []; const ey = Fr.num(S.eye[1]);
     for (let lv = -BELOW; lv <= LEVELS; lv++) {
@@ -330,7 +344,7 @@ function thingsNear(extra = 0, from = -1) {
         }
         CULL.perLevel.push([lv, n]);
     }
-    if (cellCache.size > 400000) cellCache.clear();
+    if (cellCache.size > 400000) cellCache.clear(); if (CULL.first === null) CULL.first = CULL.scanned;
     return out;
 }
 
@@ -714,6 +728,8 @@ function panelHtml() {
         h += `<h3>the god's-eye view, beside it</h3><p>The blueprint is the classical view: every thing at scales 0 to ${BP.top} in a square ${2 * BP.R0} units across about the start, stored once, ${Bs.cells.toLocaleString()} cells read to make it, N = ${Bs.N.toLocaleString()} things counted. It is drawn here only to set beside the read: nothing the read draws or reads comes from it.</p>`;
         h += S.godLast ? `<p>Set beside a blueprint made about the eye (P): at every scale −${BELOW} to ${LEVELS}, every cell out to twice the read's reach read, ${S.godLast.cells.toLocaleString()} cells, and every thing kept by the read's own rule from its exact centre: ${S.godLast.blueprint.toLocaleString()} things. The read, scanning ${S.godLast.scanned.toLocaleString()} cells and storing none, holds ${S.godLast.read.toLocaleString()}: <b>${S.godLast.missing} missing, ${S.godLast.extra} extra</b>. The eye's place then took ${S.godLast.digits} digit${S.godLast.digits === 1 ? '' : 's'}.</p>` : `<p>Press P to set the read beside a blueprint made about the eye, thing for thing.</p>`;
         h += `<p>The read holds K = ${Bs.K.toLocaleString()}: ${Bs.inside.toLocaleString()} of them in the blueprint, <span class="${Bs.missing ? 'bad' : 'ok'}">${Bs.missing} it lacks</span>, ${Bs.outsideBox.toLocaleString()} past its edge and ${Bs.otherScales.toLocaleString()} at scales it does not store. The other ${(Bs.N - Bs.inside).toLocaleString()} the read never needed.</p>`;
+        const T = toHere();
+        h += `<p>Out here, ${sci(T.R)} units from the start (U goes ten times farther): a blueprint stored from the start to here at the scales the read holds (−${BELOW} to ${LEVELS}) has <b>${sci(T.cells)} cells</b>, a number of ${T.cells.length} digits, four times as many for each doubling of the distance. The read here scans <b>${T.scanned.toLocaleString()} cells</b> and stores none; at the start it scanned ${CULL.first.toLocaleString()}.</p><p>With a unit of a metre, the observable universe is about 8.8·10^26 across, and at scale −${BELOW} things are ${(CELL * 2 ** -BELOW).toFixed(3)} units apart.</p>`;
         h += Bs.eyeInside ? '<p>Walk past the edge, or press G on something small: the blueprint runs out, the read does not.</p>'
                           : '<p>The eye is past the blueprint\'s edge. The blueprint has nothing here; the read has the same view it had at the start.</p>';
     }
@@ -754,6 +770,7 @@ addEventListener('keydown', ev => {
     if (k === 'g') { approach(1); updatePanel(true); return; }
     if (k === 'b') { backOff(1); updatePanel(true); return; }
     if (k === 'p') { S.godLast = { ...againstMade(2), digits: eyeDigits() }; updatePanel(true); return; }
+    if (k === 'u') { outTenfold(); updatePanel(true); return; }
     if (k === 'o') { S.show.god = !S.show.god; document.getElementById('optGod').checked = S.show.god; updatePanel(true); return; }
     keys.add(k); if (ev.key.startsWith('Arrow')) ev.preventDefault();
 });
@@ -790,7 +807,7 @@ window.__thumbsWalk = {
                 stride('wasd'[i % 4], 1); frame(); exactOf(S.target); }
         } finally { for (const n of names) Math[n] = saved[n]; }
         return calls;
-    }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff, blueprint: () => { const B = blueprint(); return { N: B.list.length, cells: B.cells, R0: B.R0, top: B.top }; }, besideBlueprint, againstStored, againstMade, walkTest, buildCount, cellFormula,
+    }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff, blueprint: () => { const B = blueprint(); return { N: B.list.length, cells: B.cells, R0: B.R0, top: B.top }; }, besideBlueprint, toHere, outTenfold, againstStored, againstMade, walkTest, buildCount, cellFormula,
     digits: () => ({ eye: eyeDigits(), slopes: slopeDigits(exactOf(S.target)), focus: S.focus, goes: S.goes }),
     target: () => S.target, pose,
     set(o) { if (o.q !== undefined || o.ky !== undefined || o.kp !== undefined || o.eye) S.lock = null; if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }

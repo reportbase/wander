@@ -526,3 +526,22 @@ drew it to 4.5·10⁻¹³ px on the screen, scanning a third of that blueprint's
 bug (B could take the eye below the ground), now fixed. A stored blueprint's cells grow with its area, 4 times for each
 doubling of its side, and 65,000 times again to hold the scales the read holds; the read scanned 29,085 cells at the
 start and 10¹⁰⁰ out.
+
+### Shown on the page (13 November 2026; R943; Tom: "we don't need to declare anything, show it. the blueprint does not scale to the universe.")
+
+No prediction, a display. U takes the eye ten times farther from the start along x, exactly. With the blueprint shown (O) the
+menu gives the cells a blueprint stored from the start out to the eye would have at the scales the read holds (−8 to 8),
+counted exactly and never made (`toHere()`), beside the cells the read scans there. Pressed 100 times from the start
+(headless Chromium, no page errors):
+
+| eye from the start | blueprint's cells | read scans | read holds |
+|---|---|---|---|
+| 10 | 10⁵ | 29,085 | 2,195 |
+| 10⁴ | 10¹⁰ | 29,053 | 2,187 |
+| 10¹³ | 10²⁸ | 29,085 | 2,176 |
+| 10²⁶ | 10⁵² | 28,709 | 2,016 |
+| 10¹⁰³ | 6.06·10²¹⁰ | 29,053 | 2,085 |
+
+(digits of the count, rounded to a power.) The blueprint's cells are four times as many for each doubling of the distance; the
+read's scan is the same within 1.2% at every distance, storing nothing. The menu also says that with a unit of a metre the
+observable universe is about 8.8·10²⁶ across.
