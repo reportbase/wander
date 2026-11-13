@@ -161,3 +161,27 @@ What would and would not be shown:
 - With a world self-similar over L levels, the work is in proportion to L, the logarithm of the largest size over the
   smallest. That is not zero: a world with sizes without end would need levels without end. What is unbounded is the
   extent at each level, and it costs nothing.
+
+### Run 4 (13 November; the page's hook `cull()` in headless Chromium, at L = 2, 4, 8, from the start pose and five seeded poses up to 10⁵ units out)
+
+| L | things kept by level (start pose) | kept in all | per level | cells scanned (every pose) | frame |
+|---|---|---|---|---|---|
+| 2 | 465, 493, 487 | 1,445 | 482 | 18,231 | 6 ms |
+| 4 | 465, 493, 487, 520, 481 | 2,446 | 489 | 30,385 | 13 ms |
+| 8 | 465, 493, 487, 520, 481, 491, 466, 472, 476 | 4,351 | 483 | 54,693 | 21 ms |
+
+- **C1 not killed.** Across all six poses at L = 8, levels 1–8 kept 455 to 520 things each, all within 30% of their mean
+  (within 7%).
+- **C2 not killed.** The total per level was 482, 489 and 483 at L = 2, 4 and 8. A fixed radius reaching level 8's far
+  things (1024·2⁸ units) would scan about 3.7·10⁸ cells of the smallest size, against 54,693.
+- **C3 not killed.** No kept thing was below the grain, and the extra ring past the scan held no thing that would qualify,
+  at any pose or level.
+- **C4 not killed.** The cells scanned were exactly 6,077·(L + 1) at every pose.
+- **C5 killed by my set-up.** `trigFree` counted 0 in all three runs. But at the start pose (looking straight north)
+  nothing is under the crosshair, so K1–K4 and K8 could not be checked there. At run 1's pose (`?q=-1&ky=34`) the target is
+  the same box as before, and K1–K4 and K8 hold.
+
+**In short.** What is held is set by the grain and the number of levels: about 480 things a level, the same at every
+level and wherever the eye is, and no count of the world enters. The cost grows with the number of levels, which is the
+logarithm of the largest size over the smallest; it does not grow with how far the world goes. This is classical (level of
+detail, quadtrees); the page shows it on its own exact world.
