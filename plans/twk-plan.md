@@ -605,3 +605,26 @@ angles and a pipeline would hold as constants (T1 not killed as to sines and cos
 pictures within 2.4·10⁻¹² px (T2 not killed). Both lay the world on a signed grid of cells and hold the eye in it (T3).
 96 turns retraced: the page exactly, the classical float yaw 2.8·10⁻¹⁷ rad off (T4 not killed). On the page: n, k, c in
 the menu's checks.
+
+## Run 15: things that move (predictions, 13 November 2026, written and committed before any change; Tom: "Proceed", to
+testing motion)
+
+What is added. Movers: things in the sky at every scale, each scale's movers sharing one velocity V_j per tick (a dyadic
+fraction, a different heading each scale, about 2^j/16 units a tick), each mover's centre exact, C(T) = C₀ + V_j·T at
+tick T (a whole number). A mover belongs to the cell of its start; the read finds the movers near the eye by scanning
+the cells about eye − V_j·T at that scale (the eye in the movers' own frame), by the same keep rule as the ground. No list
+of movers is kept, and no mover is stepped. The blueprint to set beside it is the classical one: every mover in a region
+stored at tick T₀ and stepped one tick at a time (C += V_j), its kept set worked out by the same rule at each tick.
+
+Predictions:
+- V1: at every sampled tick, the movers the read holds are, key for key, the movers the stepped blueprint keeps (0 missing,
+  0 extra), with the eye still and along a seeded walk; focus and grain held, so only motion changes what is kept.
+- V2: the read's mover cells scanned the same at every tick (to the cell) and its movers held within ±30% of their mean
+  over the run; the stepped blueprint's work N_stored × ticks.
+- V3: a mover stepped tick by tick lands exactly (fraction equality) where the read puts it by C₀ + V·T, at T = 1, 10, 10²,
+  10³, 10⁴; and at T = 10³⁰ the read still gives each held mover's exact place (the eye taken there), with the same count
+  of cells scanned.
+- V4: the ground world unmoved: with movers on, the ground things held are the same keys as with movers off; `?movers=0`
+  gives run 13's 2,195 at the start.
+- V5: for a mover under the crosshair, the exact checks (the three pair slopes multiply to 1; w(s)·w(1/s) = −1) hold at
+  every sampled tick.
