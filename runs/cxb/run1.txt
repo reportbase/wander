@@ -1,0 +1,21 @@
+chart identity at r = 4: worst |f4(sin²(πw/2)) − sin²(πT(w)/2)| over 1000 w = 5.45e-61
+r=4: λ = 0.69315 ± 0.00000   h_top = 0.69315 (N_k to k=25, last 33554432)   h_top − λ = -0.00000
+T3: λ = 1.09861 ± 0.00000   h_top = 1.09861 (N_k to k=15, last 28697814)   h_top − λ = +0.00000
+r=3.7: λ = 0.35507 ± 0.00007   h_top = 0.38161 (N_k to k=43, last 28546838)   h_top − λ = +0.02654
+r=3.8: λ = 0.43216 ± 0.00008   h_top = 0.46815 (N_k to k=35, last 20441472)   h_top − λ = +0.03599
+r=3.9: λ = 0.49602 ± 0.00008   h_top = 0.53998 (N_k to k=31, last 31015736)   h_top − λ = +0.04396
+X1: not killed (ln 2 = 0.69315, ln 3 = 1.09861)
+X2: not killed; gaps r=3.7 +0.0265, r=3.8 +0.0360, r=3.9 +0.0440; code fault (gap < −0.01): False
+  r=4 p=53: mean parting step 52.4 (sd 1.8, n 50), predicted p·ln2/λ = 53.0, off -1.1%
+  r=4 p=100: mean parting step 99.5 (sd 2.2, n 50), predicted p·ln2/λ = 100.0, off -0.5%
+  r=4 p=200: mean parting step 201.6 (sd 2.6, n 50), predicted p·ln2/λ = 200.0, off +0.8%
+  r=3.7 p=53: mean parting step 100.6 (sd 7.8, n 50), predicted p·ln2/λ = 103.5, off -2.8%
+  r=3.7 p=100: mean parting step 191.4 (sd 12.2, n 50), predicted p·ln2/λ = 195.2, off -2.0%
+  r=3.7 p=200: mean parting step 384.3 (sd 16.6, n 50), predicted p·ln2/λ = 390.4, off -1.6%
+  r=3.8 p=53: mean parting step 83.1 (sd 8.1, n 50), predicted p·ln2/λ = 85.0, off -2.2%
+  r=3.8 p=100: mean parting step 159.6 (sd 9.5, n 50), predicted p·ln2/λ = 160.4, off -0.5%
+  r=3.8 p=200: mean parting step 320.1 (sd 10.8, n 50), predicted p·ln2/λ = 320.8, off -0.2%
+  r=3.9 p=53: mean parting step 72.5 (sd 6.6, n 50), predicted p·ln2/λ = 74.1, off -2.2%
+  r=3.9 p=100: mean parting step 140.1 (sd 9.8, n 50), predicted p·ln2/λ = 139.7, off +0.2%
+  r=3.9 p=200: mean parting step 276.3 (sd 13.3, n 50), predicted p·ln2/λ = 279.5, off -1.2%
+X3: not killed; points off by more than 20%: 0 of 12
