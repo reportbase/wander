@@ -560,3 +560,24 @@ Probe (headless Chromium, no page errors): 100 seeded walks of 2,000 turns of 1 
 (0, 127) lands on (2, −128) with every check holding; `trigFree(300)` still 0 calls. PWL's copy of the rule (run 3):
 100 of 100 long walks back exactly, every walk crossing a half turn. Old links with an odd q and ky ≠ 0 now open a
 slightly different heading (the steps are not even in angle); with ky = 0 the same.
+
+## Runs 13 and 14: predictions (13 November 2026, written before any change or run; Tom: "1, 2, 3")
+
+**Run 13, the world made denser (N per area).** `?dens=D` puts D things in each cell (D = 1 the world as it is; the
+thing s > 0 its own hashes, its own key). Two ways to read it: the grain fixed (as now), or K held: the read keeps the
+grain where its own held count stays near a target, moving the grain only by what it holds (no count of the world).
+- M1 (grain fixed): held K grows about as D (×D within 30%); cells scanned unchanged (to the cell).
+- M2 (K held, target 2,100): after settling, held within 15% of 2,100 at D = 1, 2, 4, 8, 16; things examined (cells
+  scanned × D, the work) within a factor 2 of D = 1's; the grain coarsening about as √D.
+- M3: a blueprint stored over the 6,000 square at scales 0 to 8 holds about D times as many things (within 15%).
+- M4: at every D, in both ways, the read set beside a blueprint made about the eye by the same rule: 0 missing, 0 extra.
+
+**Run 14, two ways, step by step.** One seeded walk of 300 poses, drawn twice: the page's way (half-slope steps,
+rational turns, exact fractions) and a classical pipeline (yaw and pitch held as floats in radians, the frame built by
+Math.cos and Math.sin each pose, the eye a float64 sum of strides). Counted, not judged.
+- T1: the page's way makes 0 trigonometric calls; the classical way 8 a pose (4 of them the base frame, which a pipeline
+  would compute once; counted both ways).
+- T2: the two draw the same picture: every held thing's segment ends within 10⁻⁶ px (the walk stays within 10⁴ units).
+- T3: both lay the world on a signed grid of cells and hold the eye in it (the page in exact fractions, the classical
+  way in float64): stated, not scored.
+- T4: retraced, the page's turn returns exactly (TWK run 12) and the classical float yaw returns to within 10⁻¹² rad.
