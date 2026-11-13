@@ -102,3 +102,30 @@ fighting under 1%.
 - Nothing about eyes or players. Classical floating-point arithmetic; the layout is FPV's, the Cayley form ours.
 
 ## Runs
+
+### Run 1, Part A (13 November; `python3 -I runs/fdz/fdz.py`, under a second; output `runs/fdz/run1.txt`)
+
+- **F1 not killed.** RZ32's r between 6.02·10⁻⁸ and 1.19·10⁻⁷ at every d from 10⁻⁵ f to 10⁶ f.
+- **F2 killed, by my set-up.** T32's r at the focus is 1.404·10⁻⁷, not π·2^(−24) = 1.873·10⁻⁷. The focus value g = ½ is
+  a binade edge: the cell holding ½ reaches half a step below it, where steps are half as wide, so it is ¾ of 2^(−24)
+  wide, and ¾·π·2^(−24) = 1.4044·10⁻⁷ exactly (checked after the run). The other clauses held: T32 is nowhere finer than
+  2^(−24), and at d ≥ f nowhere finer than 2^(−23) (1.40·10⁻⁷ at the focus, 9.5·10⁻⁷ at 10 f, 9.4·10⁻⁵ at 1000 f,
+  against RZ32's 7·10⁻⁸ to 1.2·10⁻⁷). The turn stored in a float is coarser than reversed-Z at the focus and beyond.
+- **F3 killed, by my set-up.** C32 met its interval at every tested point with |u| < 13.6; five points from 13.6 to 14.9
+  nats fell 2–6% below it. There a cell is 2.5–8.6% wide, and where a point sits inside its cell moves r by more than the
+  1% I allowed (a first-order statement given a range where first order no longer holds). The merge into ±1 came at
+  ±18.022 nats, as predicted; a pair at f(1 ± ε) stays apart down to ε = 10⁻³⁰. Against RZ32: at |u| = 0.01, 0.1, 0.3 C32
+  is 120, 8 and 2.5 times finer; about equal at 1 nat; 3.2, 9, 68 times coarser at 1.44, 3 and 5 nats. The same both
+  sides of the focus.
+- **F4 killed, by my set-up**, in the same way: eight points at u ≥ 12.5 (x ≥ 2.7·10⁵) 1–8% below the interval, none
+  elsewhere. S32 is 17 and 8 times finer than RZ32 at 0.9 f and 1.1 f, 2.5 and 1.9 times at 0.5 f and 1.5 f, about equal
+  near the camera, 2.1 times coarser at 3 f and 67 times at 100 f.
+- **F5 not killed.** At the focus T16 4.794·10⁻⁵, L16 2.108·10⁻⁴ (4.40 times), Z16 1.525·10⁻² (318 times); the band
+  edge where T16 meets L16 at 2.161 nats, as predicted. At 0.1 f and 10 f T16 (2.42·10⁻⁴) is just past L16 (2.11·10⁻⁴);
+  at 0.01 f and 100 f it is 11 times coarser.
+
+**In short.** In 32-bit floats, the turn about the focus is worse than reversed-Z: it should not be stored as a float.
+Storing depth as the signed Cayley q = (x − 1)/(x + 1), with the focus at the float's zero, gains up to two orders near
+the focus and loses past about one nat each side; it needs signed depth, which WebGL does not allow. In 16-bit fixed
+point the turn about the focus is 4.4 times finer than log depth at the focus and 318 times finer than the standard
+buffer, within about two nats either side.
