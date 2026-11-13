@@ -1,0 +1,107 @@
+{
+ "seed1": {
+  "equal": {
+   "R1": true,
+   "R1b": true,
+   "R1c": true,
+   "R4": true,
+   "triple": false,
+   "events": 164,
+   "maxKept": 0
+  },
+  "unequal": {
+   "R2": true,
+   "R2rows": 40,
+   "firstUnequal": 5.00503524672709,
+   "keptAtFirst": 2,
+   "R3keptEnd": 16,
+   "keptPath": [
+    6,
+    12,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16
+   ],
+   "R1c": true,
+   "R4": true,
+   "triple": false,
+   "events": 173,
+   "digits": 21
+  }
+ },
+ "seed2": {
+  "equal": {
+   "R1": true,
+   "R1b": true,
+   "R1c": true,
+   "R4": true,
+   "triple": false,
+   "events": 173,
+   "maxKept": 0
+  },
+  "unequal": {
+   "R2": true,
+   "R2rows": 40,
+   "firstUnequal": 0.8977667493796526,
+   "keptAtFirst": 2,
+   "R3keptEnd": 16,
+   "keptPath": [
+    15,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16
+   ],
+   "R1c": true,
+   "R4": true,
+   "triple": false,
+   "events": 178,
+   "digits": 21
+  }
+ },
+ "seed3": {
+  "equal": {
+   "R1": true,
+   "R1b": true,
+   "R1c": true,
+   "R4": true,
+   "triple": false,
+   "events": 147,
+   "maxKept": 0
+  },
+  "unequal": {
+   "R2": true,
+   "R2rows": 40,
+   "firstUnequal": 3.494675701839303,
+   "keptAtFirst": 2,
+   "R3keptEnd": 16,
+   "keptPath": [
+    7,
+    12,
+    15,
+    15,
+    15,
+    15,
+    16,
+    16,
+    16,
+    16
+   ],
+   "R1c": true,
+   "R4": true,
+   "triple": false,
+   "events": 163,
+   "digits": 17
+  }
+ }
+}

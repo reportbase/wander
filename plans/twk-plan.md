@@ -724,3 +724,21 @@ Predictions (N = 16, L = 1000, velocities in [−5, 5], seeded, T to 400, compar
 
 What it would mean: if R1 and R1b hold and R2, R3 do too, interaction alone is not where the read stops; what stops it
 is interaction with no law in T (equal masses keep one, unequal lose it), and then the state to hold spreads by contact.
+
+**Run 17** (`runs/twk/run17.mjs`, output `runs/twk/run17-out.json`; exact fractions, event by event; three seeds, where
+the plan named one, all reported). Nothing killed.
+- R1, R1b, R1c (equal masses): at all 40 compared times in all three seeds the true places as a set equal the free places
+  mod L, every ball sits at the free place of rank W(T) + k exactly, and the ring order never changes, over 147 to 173
+  collisions. Nothing kept: no ball's (place, velocity) ever differs from a free trajectory's.
+- R2 (masses 1 and 2): after the first unequal contact (T = 5.0, 0.90, 3.5 in seeds 1–3) the true set differs from the
+  free set at every later compared time (40 of 40 in each seed).
+- R3: the balls off every free trajectory number 2 at the first unequal contact, then spread: 6, 12, 16 by T = 40, 80,
+  120 (seed 1), 15 by T = 40 (seed 2), 16 by T = 280 (seed 3); all 16 by T = 400 in all three.
+- R4: momentum and energy equal to their starting values exactly after every collision in both worlds; no three-ball
+  contact occurred.
+
+What it shows: interaction alone is not where a read from T alone stops. Equal-mass elastic contact keeps a law in T
+(Jepsen 1965, known beforehand; the rank W(T) mod N mine, derived before the run), so nothing need be kept; unequal
+masses break the law at the first unequal contact, and the state to keep spreads to every ball that touches one already
+off its law. Classical (hard-rod gases, integrable against non-integrable); the sorting is ours. One dimension, points,
+16 balls; nothing on the page yet.
