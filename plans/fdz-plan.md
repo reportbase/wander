@@ -129,3 +129,24 @@ Storing depth as the signed Cayley q = (x − 1)/(x + 1), with the focus at the 
 the focus and loses past about one nat each side; it needs signed depth, which WebGL does not allow. In 16-bit fixed
 point the turn about the focus is 4.4 times finer than log depth at the focus and 318 times finer than the standard
 buffer, within about two nats either side.
+
+### Run 1, Part B (13 November; `node runs/fdz/gpu.mjs`, then `python3 -I runs/fdz/gpu_score.py`; output `runs/fdz/gpu-run1.json`, `gpu-run1.txt`)
+
+Headless Chromium's WebGL2 (SwiftShader, renderer "WebKit WebGL"); DEPTH_COMPONENT16 and DEPTH_COMPONENT32F both
+complete; all five schemes ran at the eight distances.
+
+- **F6 killed, by my set-up.** δ* was outside [r/2, 2r] at 22 of 40 points (limit 10). δ* is how far d sits below the top
+  of its stored cell, anywhere in (0, r], not the cell's width, so a factor-2 band about r was the wrong test: δ*/r ran
+  from 0.00 to 1.54, never much past 1 (the scan's step is 2^(¼), and d is rounded to binary32 on the way in).
+- **Post hoc, not a test:** a CPU replay of the same scan (d rounded to binary32, the scheme in float64, stored as 16-bit
+  unorm or binary32) gives the GPU's δ* exactly at 35 of 40 points. The five misses are L16 at 0.01 f and 100 f and T32
+  at 1.93 f, 26.8 f and 100 f, where the shader computes log or atan in float32. There the computation's own rounding is
+  as large as the stored step, so storing the turn in a float is worse than Part A's storage-only figure: at 100 f the
+  GPU's T32 needs δ ≈ 1.1·10⁻⁵, against 1.2·10⁻⁷ from storage alone. Every 16-bit fixed-point and reversed-Z point
+  matched the arithmetic.
+
+**Overall, run 1.** The 16-bit case came out as predicted (F5), and the GPU stores what the arithmetic says. In 32-bit
+floats the turn about the focus is no gain (F2's sense), and the one float layout that gains at the focus (the signed
+Cayley, F3) cannot be held in a WebGL depth buffer. Kills: F2, F3, F4, F6, all by my set-up (a binade edge at the focus;
+a first-order tolerance applied where cells are several percent wide; a width test applied to a distance to a cell's
+edge). Not tested: the cost of writing gl_FragDepth, a real scene.

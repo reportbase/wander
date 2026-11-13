@@ -1,0 +1,85 @@
+<!doctype html><meta charset="utf-8"><title>FDZ GPU</title><canvas id="c" width="16" height="16"></canvas>
+<script>
+// FDZ Part B: two quads square to the look, far one drawn first, near one second; does the near one win?
+const gl = document.getElementById('c').getContext('webgl2');
+window.__fdz = { ok: !!gl };
+if (gl) {
+  const N = 1e-3, FAR = 1e3, N32 = 1e-6;
+  const vs = `#version 300 es
+  in vec2 p; uniform float d; uniform float n; uniform float fa; uniform int proj;
+  out float vd;
+  void main(){ vd = d;
+    if (proj == 1) { float z = -d; float A = -(fa+n)/(fa-n), B = -2.0*fa*n/(fa-n);
+      gl_Position = vec4(p*(-z), A*z + B, -z); }       // standard perspective, w = d
+    else gl_Position = vec4(p, 0.0, 1.0); }`;
+  const fsPlain = `#version 300 es
+  precision highp float; uniform vec4 col; out vec4 o; void main(){ o = col; }`;
+  const fsDepth = `#version 300 es
+  precision highp float; in float vd; uniform vec4 col; uniform int scheme; uniform float n32; uniform float n; uniform float fa; out vec4 o;
+  void main(){ float g;
+    if (scheme == 1) g = n32 / vd;                                   // reversed-Z
+    else if (scheme == 2) g = 0.63661977236758134 * atan(vd);         // the turn about the focus (f = 1)
+    else g = log(vd / n) / log(fa / n);                               // log depth
+    gl_FragDepth = g; o = col; }`;
+  function prog(fs) {
+    const p = gl.createProgram();
+    for (const [t, s] of [[gl.VERTEX_SHADER, vs], [gl.FRAGMENT_SHADER, fs]]) {
+      const sh = gl.createShader(t); gl.shaderSource(sh, s); gl.compileShader(sh);
+      if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(sh));
+      gl.attachShader(p, sh);
+    }
+    gl.bindAttribLocation(p, 0, 'p'); gl.linkProgram(p);
+    if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p));
+    return p;
+  }
+  const PP = prog(fsPlain), PD = prog(fsDepth);
+  const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(0); gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+  function fbo(fmt) {
+    const fb = gl.createFramebuffer(); gl.bindFramebuffer(gl.FRAMEBUFFER, fb);
+    const cr = gl.createRenderbuffer(); gl.bindRenderbuffer(gl.RENDERBUFFER, cr); gl.renderbufferStorage(gl.RENDERBUFFER, gl.RGBA8, 16, 16);
+    gl.framebufferRenderbuffer(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.RENDERBUFFER, cr);
+    const dr = gl.createRenderbuffer(); gl.bindRenderbuffer(gl.RENDERBUFFER, dr); gl.renderbufferStorage(gl.RENDERBUFFER, fmt, 16, 16);
+    gl.framebufferRenderbuffer(gl.FRAMEBUFFER, gl.DEPTH_ATTACHMENT, gl.RENDERBUFFER, dr);
+    return gl.checkFramebufferStatus(gl.FRAMEBUFFER) === gl.FRAMEBUFFER_COMPLETE ? fb : null;
+  }
+  const FB = { 16: fbo(gl.DEPTH_COMPONENT16), 32: fbo(gl.DEPTH_COMPONENT32F) };
+  // scheme: Z16 (projection), L16, T16 (FragDepth into 16), RZ32, T32 (FragDepth into 32F)
+  const S = {
+    Z16: { fb: 16, prog: PP, proj: 1, func: gl.LESS, clear: 1 },
+    L16: { fb: 16, prog: PD, scheme: 3, func: gl.LESS, clear: 1 },
+    T16: { fb: 16, prog: PD, scheme: 2, func: gl.LESS, clear: 1 },
+    RZ32: { fb: 32, prog: PD, scheme: 1, func: gl.GREATER, clear: 0 },
+    T32: { fb: 32, prog: PD, scheme: 2, func: gl.LESS, clear: 1 },
+  };
+  function draw(s, d, col) {
+    const p = s.prog; gl.useProgram(p);
+    gl.uniform1f(gl.getUniformLocation(p, 'd'), d); gl.uniform1f(gl.getUniformLocation(p, 'n'), N);
+    gl.uniform1f(gl.getUniformLocation(p, 'fa'), FAR); gl.uniform1i(gl.getUniformLocation(p, 'proj'), s.proj || 0);
+    gl.uniform4fv(gl.getUniformLocation(p, 'col'), col);
+    if (p === PD) { gl.uniform1i(gl.getUniformLocation(p, 'scheme'), s.scheme); gl.uniform1f(gl.getUniformLocation(p, 'n32'), N32); }
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  }
+  const px = new Uint8Array(16 * 16 * 4);
+  function nearWins(name, d, delta) {          // share of pixels showing the near (red) quad
+    const s = S[name]; gl.bindFramebuffer(gl.FRAMEBUFFER, FB[s.fb]); gl.viewport(0, 0, 16, 16);
+    gl.enable(gl.DEPTH_TEST); gl.depthFunc(s.func); gl.clearDepth(s.clear); gl.clearColor(0, 0, 0, 1);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    draw(s, d * (1 + delta), [0, 0, 1, 1]); draw(s, d, [1, 0, 0, 1]);
+    gl.readPixels(0, 0, 16, 16, gl.RGBA, gl.UNSIGNED_BYTE, px);
+    let red = 0; for (let i = 0; i < px.length; i += 4) if (px[i] > 128) red++;
+    return red / 256;
+  }
+  function deltaStar(name, d) {                // smallest δ in the scan with every larger δ also winning (fighting < 1%)
+    let best = null;
+    for (let k = 0; k <= 160; k++) {
+      const delta = Math.pow(2, -k / 4);
+      if (nearWins(name, d, delta) > 0.99) best = delta; else break;
+    }
+    return best;
+  }
+  window.__fdz = { ok: true, formats: { 16: !!FB[16], 32: !!FB[32] }, renderer: gl.getParameter(gl.RENDERER),
+    nearWins, deltaStar, S: Object.keys(S) };
+}
+</script>
