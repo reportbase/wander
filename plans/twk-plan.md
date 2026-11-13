@@ -649,3 +649,33 @@ hashed cell, so V1 checks that scanning in the movers' own frame finds every mov
 stepping puts it; it does not compare two independent worlds. All movers at a scale share one velocity, which is what
 lets one frame per scale hold them; things each with its own velocity, or turning, are not tested. On the page the
 movers draw at 42 frames a second headless with time running.
+
+## Run 16: each thing its own velocity (predictions, 13 November 2026, written and committed before any change; Tom:
+"give each thing its own velocity", then "Own loops", of three ways offered)
+
+What changes. Run 15's movers shared one velocity per scale. Now each mover flies its own closed circuit: a rectangle
+about its home cell, sides A and B of its own (4 to 24 steps of q = CELL·2^j/32), laid along the axes or the diagonals,
+either way round, at its own speed m/4 of a step a tick (m from 1 to 6), from its own phase. Its place at tick T is
+worked out from T alone: the distance gone round is ((T + phase)·m mod 8(A + B))/4 steps, a dyadic number, so the
+place is exact and also exact as a double. A mover never leaves 3 cells of its home, so the read looks at the cells
+within scan + 3 of the eye at each scale and keeps by the ground's rule. Nothing is stored or stepped. Why loops and
+not straight lines forever: with each its own velocity a straight flight's start could be anywhere within top speed
+× T, so the cells to look at would grow without end.
+
+The classical way to set beside it: every mover near the eye's path stored at T₀ (place from the formula, as its
+record), then stepped one tick at a time by its own speed round its own rectangle, turning at the corners (whole
+quarter-steps, no formula), kept by the same rule at each compared tick.
+
+Predictions:
+- V1b: at every compared tick, the movers the read holds are, key for key, the stepped list's kept movers (0 missing,
+  0 extra), and every held mover's place equals its stepped place exactly; eye still, along a seeded walk, and from
+  T₀ = 10³⁰; focus and grain held.
+- V2b: the read's mover cells the same count at every tick, at most 1.3 times run 15's 29,085; movers held within ±30%
+  of their mean over a run.
+- V3b: one mover stepped tick by tick equals the formula at T = 1, 10, 10², 10³, 10⁴, and comes back exactly to its
+  start after 8(A + B)/gcd(m, 8(A + B)) ticks.
+- V4b: the ground unchanged (2,195 at the start, with and without movers; 0 missing and 0 extra against a made
+  blueprint with movers on).
+- V5b: the exact checks (pair slopes multiply to 1, w(s)·w(1/s) = −1, |w|² = 1) on 20 held movers at T = 0, 10², 10⁴,
+  10³⁰.
+- V6: the velocities differ: among the movers held at one tick, at least 30 distinct velocity vectors.
