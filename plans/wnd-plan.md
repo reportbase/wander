@@ -69,3 +69,39 @@ direction of the wind's fluctuations keep a turn's law the way the 1–4 Hz band
 - It is classical either way. The elliptical ratio and scale mixtures are textbook; the sorting is ours.
 
 ## Runs
+
+### Run 1 (13 November; `python3 -I runs/wnd/wnd.py <dir>`, output `runs/wnd/run1.txt`)
+
+Data fetched after the plan was committed (8a53c18). sha256: BOS `5ed26335b4b6bb752953aeee88311d1ed3a5c9a614c8bfe44754a7ccb4e5bd85`,
+DEN `6b3a4229973b59e79ffb650ac9a87ef15d9d2f8c784a092a115cf5df1af73790`, DSM `9029fbfe440231bfd7645ba40e4e7fb810b2ab454645b589043cd77e0cc00e1c`,
+MSP `b5f9a9030b94cf2d788adaf22e51141058c53d206d1033bdfec5d2a74efc422e`, OKC `f84814d594ed85aeec5053a48087b7ce74c9d7dd94ff0671a80d61bc125bdb84`,
+SFO `4b00a3b2add53497fded8828a425f9b49306edcbc7adcdd7f41c4f08cc35231c`.
+
+| station | hours | z | D(y/x, Cauchy z) | ratio, quiet vs loud | \|x\|, quiet vs loud | kurtosis x, y |
+|---|---|---|---|---|---|---|
+| DSM | 482 | +0.001 + 0.995i | 0.032 | 0.101 | 0.418 | 3.0, 3.3 |
+| OKC | 506 | −0.065 + 0.983i | 0.060 | 0.113 | 0.432 | 11.6, 4.5 |
+| DEN | 514 | +0.052 + 1.029i | 0.028 | 0.061 | 0.423 | 4.7, 4.2 |
+| MSP | 437 | −0.051 + 0.932i | 0.051 | 0.099 | 0.342 | 1.4, 5.0 |
+| BOS | 526 | −0.025 + 1.005i | 0.029 | 0.088 | 0.411 | 1.1, 3.0 |
+| SFO | 352 | +0.191 + 0.906i | 0.067 | 0.099 | 0.348 | 2.4, 3.0 |
+
+- **W1: killed.** Both kurtoses were above 3 only at 3 of 6 stations (OKC, DEN, and DSM barely); x was at least 0.05 from
+  the Cauchy at all six.
+- **W2: killed.** The ratio was 0.03 or more from the Cauchy at half A's z at 4 of 6 stations (DSM 0.032, OKC 0.060, MSP
+  0.051, SFO 0.067). It was under 0.03 at DEN and BOS.
+- **W3: killed, at all six.** Loudness moves the direction's law by 0.061 to 0.113, so the condition that it moves only
+  the amounts was not met anywhere.
+
+**Post hoc, not tested** (`runs/wnd/posthoc.txt`, the same code with two lines added):
+- The quiet quarter's fluctuations have a root mean square of 0.76 to 1.14 kt, the size of the data's one-knot step.
+- The quiet quarter is the farther of the two from the Cauchy at five of six stations (0.042 to 0.104, against the loud
+  quarter's 0.028 to 0.065).
+- The ellipse is nearly round (σ_y/σ_x 0.93 to 1.03), not the 0.7 to 0.8 expected from memory for surface-layer
+  turbulence. Two-minute running means and whole-knot, whole-degree readings may account for both, but that is not shown.
+
+**In short.** On ASOS one-minute winds the turn cannot be named this way. The direction of the fluctuation does not keep
+one Cauchy law across loud and quiet hours, and the amounts are not clearly heavy-tailed. By R719 the sorting says
+nothing about the wind from these data. Unlike SMN's 1–4 Hz band, this is no third domain. Whether the cause is the wind
+or the instrument (a step as large as the quiet hours' fluctuations) is open. Fast sonic anemometer data (for example
+NEON's 20 Hz eddy covariance) would tell them apart.
