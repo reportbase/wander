@@ -16,6 +16,10 @@ kept showing the same thing from different sides: classical geometry is a view w
 everything it gives it gives by holding the whole; a read has a standpoint, holds a fixed amount, and does not need the
 whole to exist as a count anywhere it can reach.
 
+The point is not that a read has better mathematics. The god's-eye view is better: who would not want it? The point is
+that a read does not need it. A view from somewhere, with nothing but a thumb's length held out and a share that falls
+off with distance, gets around a world without end without ever being handed the whole.
+
 The order: what the blueprint is good for (§1), a view on whole numbers (§2), the tower and the scaffolding (§3), keeping
 by size on the screen (§4), each scale its share (§5), what nearness and distance cost (§6), something to read (§7), what is classical
 and what is ours (§8), and what it changes (§9).
@@ -163,13 +167,15 @@ Whether the world comes counted is the blueprint's question. A read holds K of w
 something to read is all it says about N.
 
 What scales, then, is whatever has a vantage: the read scales because it holds its share at each scale and the share is
-summable; the write pays by the digit, for each place it puts down. The blueprint does not scale in this sense, because it
-has no standpoint from which a share could fall off.
+summable; the write pays by the digit, for each place it puts down. The blueprint has no standpoint from which a share
+could fall off, and it does not need one: it holds the whole. The read needs neither the whole nor its count.
 
 ## 8. What is classical, and what is ours
 
 Tom asked, partway through, whether this is the proof that the read's mathematics has a computational advantage over the
-classical. My answer was no, and it should be said here.
+classical. My answer was no, and Tom put the point better afterwards (R938): the demo is not there to show that the read
+has superior mathematics; the god's-eye view is better, and who would not want it? It is there to show that the god's-eye
+view is not needed. The list below is why no advantage is claimed.
 
 - Keeping things by their size on screen is classical level of detail. Streaming and generating a world from a seed is
   what open-world games do. Exact rational turns from half-slopes are as old as Pythagorean triples. Tangent subtraction
@@ -188,11 +194,12 @@ arithmetic available. What it does not have is a standpoint to fall off from.
 The blueprint is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on
 it, and wants totals, joins and a map of everything at once.
 
-What the walk showed is where it stops. Its strength is that it holds every point in one frame, and that same strength is
-what ties it to the count: a frame that holds every point holds how many there are. A read is weaker: it has a standpoint,
-one thumb's length held out, a share that falls off with distance, and K of whatever is there. Being weaker in that way is
-what lets it go on. It can walk from the size of a house to a millionth of it and see the same view, read the same
-fractions, and hold the same number of things, while the only thing that grows is the record of where it has been.
+What the walk showed is that it is not needed. Its strength is that it holds every point in one frame, and that same
+strength ties it to the count: a frame that holds every point holds how many there are. A read has less: a standpoint,
+one thumb's length held out, a share that falls off with distance, and K of whatever is there. That is enough. It can
+walk from the size of a house to a millionth of it, or 10¹⁰⁰ units out, and see the same view, read the same fractions
+and hold the same number of things, while the only thing that grows is the record of where it has been. Nobody would turn
+down the god's-eye view; the walk shows it can be done without.
 
 The difference, stated once: the blueprint holds the world and states amounts; a read holds K of it from somewhere and
 states ratios; the place an observer stands is the one thing that has to be written, and it is the one thing that pays.
