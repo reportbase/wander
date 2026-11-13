@@ -476,6 +476,21 @@ address, π/8K; give each thing a key so that it is the same thing when made aga
 world holds, and there is no N anywhere to know. `crosshairs.html` draws its field that way, and lays its far field by
 distance address, the bands one in 2, 4, 8 packing ever thinner under the horizon.
 
+**Something to read, and K of it.** The read says nothing about N except that there is something to read; it only ever
+holds K of it. A program that makes the world from its cells has not found N somewhere. It has passed the count to a rule,
+a hash that would answer for any cell, and the view never asks the rule for a total. In the physical world nothing makes
+the paint for the observer; it arrives, and whether it comes counted is not the read's question.
+
+**Scales without end, at a fixed K.** Let the world have things at every scale 2^j, up and down, and give each scale the
+Cauchy's share of the view, sech(k·ln 2) at k scales from the focus (1, 0.8, 0.47, 0.25, then about half each time). On a
+ground that means a grain √cosh(k·ln 2) times the focus's at each scale, computed as (2^k + 2^−k)/2 with no trigonometry.
+The shares add to a finite total, about π/ln 2 ≈ 4.53 times the focus scale's count. `thumbs-walk.html` measures it: with
+every scale given the same share, 4,351 things held over nine scales and growing with every scale added; with the Cauchy's,
+1,337 over nine and 1,340 over forty-one, and about 2,200 with forty more below. Shrunk by 2⁻²⁰, the view is the same view
+within 4%. The readings take no more digits there, since the depth is in both terms of every slope and cancels; only the
+eye's own position takes about six more digits, because a position in a unit is a write. Culling by size on screen is
+ordinary level of detail. The share law, and a world with no N anywhere, are the reads-and-writes part.
+
 **H is a zoom, not an escape.** An observer could choose a very large H, a big thumb, and hold everything in proportion, with
 no logarithm. The cost is detail: with K addresses spread over a very large H, everything at the observer's own scale falls
 inside the first. With n addresses across the near field, a thing covering d to d + Δ spans nΔ/H of them inside the corner,

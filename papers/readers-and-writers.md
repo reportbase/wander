@@ -894,6 +894,24 @@ O(K) work, whatever N. What the cull gives up is sameness: a count that holds N 
 alike, with no standpoint favoured; a read's K is spent finest at the corner and coarser each stretch away, and that
 unevenness is the vantage. **Checked** (`star-field.html`).
 
+**Something to read, and K of it.** A read says nothing about N except that there is something to read, and it only ever
+holds K of it. It does not need the world to come counted: N is a count, and a count is a description laid over things
+(§1), so whether the world has an N, finite or not, is the blueprint's question. The read is the same in every case, even
+an empty world, where every direction reads to the horizon. A program that has to make the paint does need something in
+N's place, and the honest form is a rule: each thing made from its cell when asked, a law covering every cell at once
+rather than a list. That passes the count to the rule, and the read never asks the rule for a total.
+
+The same holds across scales. Give each scale the Cauchy's share of the read, the heat per ratio (1/2Ω)·sech(ln s) taken
+a scale at a time: sech(k·ln 2) at k scales from the focus, 1, 0.8, 0.47, 0.25, then about half each time. The total over
+every scale is finite, so scales without end, up or down, are held at a fixed K, finest at the focus. With each scale
+given the same share instead, the total is infinite. The view at any depth is the same view, and the readings take no more
+digits at depth, since the depth's factor is in both terms of every slope and cancels. Only the observer's own position
+takes more digits, about one decimal digit for every 3⅓ scales down: that is a write, and writes are moved by scaling.
+**Checked** (`thumbs-walk.html`, TWK runs 4–5: about 4.5 times the focus scale's count in all, with 8 or 40 scales above
+and down to 40 below, against π/ln 2 ≈ 4.53; the view 2⁻²⁰ deep within 4% of the start's; the slopes' digits the same).
+Keeping things by their size on screen is classical (level of detail); the share law across scales, and no N anywhere,
+are the reading here.
+
 **The read as a control.** The same split can be held in the hand as a dial. A held push adds to the hyperbolic angle
 ζ at a steady rate; the place it reaches is one thumb times sinh ζ from home, and the needle is drawn at the turn gd ζ,
 so it never leaves the quarter turn. Near home the place moves in proportion; one thumb out it reaches the corner
