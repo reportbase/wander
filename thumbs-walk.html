@@ -259,16 +259,58 @@ function againstStored() {
 }
 // a blueprint made about the eye at every scale: every cell of a square `half` scan radii from the eye's cell on each
 // side read, every thing in it listed with its exact centre, the rule applied; then set beside the read
-function againstMade(half = 1) {
-    const read = new Set(thingsNear().map(t => t.key)), scanned = CULL.scanned, bp = new Set(); let cells = 0;
+function segsOf(edges, r, P) {   // a thing's edges on the screen, through the page's own projection and near clip
+    const out = []; for (const [a, b] of edges) { const s = edge(project(add3(a, r), P), project(add3(b, r), P)); if (s) out.push(s); } return out; }
+function againstMade(half = 1, drawn = false) {
+    const held = thingsNear(), read = new Set(held.map(t => t.key)), scanned = CULL.scanned, bp = new Set(); let cells = 0;
+    const recs = drawn ? new Map() : null;
     for (let lv = -BELOW; lv <= LEVELS; lv++) {
         const Wf = Fr.mul(Fr.make(CELL), Fr.dy(2 ** lv)), ci = floorFr(S.eye[0], Wf), cj = floorFr(S.eye[2], Wf), n = Math.ceil(half * scanAt(lv));
         for (let di = -n; di <= n; di++) for (let dj = -n; dj <= n; dj++) { cells++;
-            const t = thingOf(ci + BigInt(di), cj + BigInt(dj), lv); if (t && keepExact(t, t.C)) bp.add(t.key); }
+            const t = thingOf(ci + BigInt(di), cj + BigInt(dj), lv); if (t && keepExact(t, t.C)) { bp.add(t.key);
+                // the blueprint's own record: the exact centre, the box as stored (a fresh copy of its lengths)
+                if (recs) recs.set(t.key, { C: t.C.slice(), box: { kind: t.kind, w: t.w, d: t.d, h: t.h } }); } }
         if (cellCache.size > 400000) cellCache.clear();
     }
-    return { ...compareSets(read, bp), cells, scanned, ratio: cells / scanned };
+    const res = { ...compareSets(read, bp), cells, scanned, ratio: cells / scanned };
+    if (recs) {   // TWK run 10: what each draws, segment for segment
+        const P = pose(); let segMismatch = 0, maxPx = 0, segs = 0;
+        for (const t of held) { const q = recs.get(t.key); if (!q) continue;
+            const r = [0, 1, 2].map(k => Fr.num(Fr.sub(q.C[k], S.eye[k])));
+            const A = segsOf(t.edges, t.r, P), B = segsOf(edgesOf(q.box), r, P);
+            if (A.length !== B.length) { segMismatch++; continue; } segs += A.length;
+            for (let i = 0; i < A.length; i++) for (let e = 0; e < 2; e++) for (let c = 0; c < 2; c++) {
+                const dd = Math.abs(A[i][e][c] - B[i][e][c]); if (!(dd <= maxPx)) maxPx = Number.isFinite(dd) ? Math.max(maxPx, dd) : Infinity; } }
+        Object.assign(res, { segMismatch, maxPx, segs, W, H: Hh });
+    }
+    return res;
 }
+// TWK run 9: a seeded walk, a blueprint made about the eye after every action
+function walkTest(seed = 1, n = 100, half = 1.5, drawn = true) {
+    let s = seed >>> 0; const rnd = () => ((s = (Math.imul(s, 1103515245) + 12345) >>> 0) / 4294967296);
+    const rows = [], a0 = S.anchors; let gActs = 0, bActs = 0;
+    for (let k = 0; k < n; k++) {
+        const u = rnd(), m = 1 + Math.floor(rnd() * 6), dk = (rnd() < 0.5 ? -1 : 1) * (1 + Math.floor(rnd() * 12)); let act;
+        if (u < 0.45) { act = 'wasd'[Math.floor(rnd() * 4)] + m; stride(act[0], m); }
+        else if (u < 0.65) { act = 'turn' + dk; turnBy(dk); }
+        else if (u < 0.75) { act = 'tilt' + dk; tiltBy(dk); }
+        else if (u < 0.875) { act = 'G'; gActs += approach(1); }
+        else { act = 'B'; bActs += backOff(1); }
+        frame(); frame();
+        const r = againstMade(half, drawn);
+        rows.push({ k, act, focus: S.focus, missing: r.missing, extra: r.extra, read: r.read, cells: r.cells, scanned: r.scanned,
+            segMismatch: r.segMismatch, maxPx: r.maxPx, segs: r.segs, digits: eyeDigits() });
+    }
+    return { rows, anchors: S.anchors - a0, gActs, bActs, W, H: Hh };
+}
+// TWK run 11: a blueprint built of scales lo to hi over a square 2·R0 about the start, its cells and things counted
+function buildCount(R0, lo = 0, hi = 8) { let cells = 0, N = 0; const t0 = performance.now();
+    for (let lv = lo; lv <= hi; lv++) { const w = CELL * 2 ** lv, n = Math.ceil(R0 / w);
+        for (let i = -n; i < n; i++) for (let j = -n; j < n; j++) { cells++; const t = thingOf(BigInt(i), BigInt(j), lv); if (!t) continue;
+            if (Math.abs(Fr.num(t.C[0])) <= R0 && Math.abs(Fr.num(t.C[2])) <= R0) N++; }
+        if (cellCache.size > 400000) cellCache.clear(); }
+    return { R0, lo, hi, cells, N, ms: performance.now() - t0 }; }
+function cellFormula(R0, lo = 0, hi = 8) { let c = 0n; for (let lv = lo; lv <= hi; lv++) { const n = BigInt(Math.ceil(R0 / (CELL * 2 ** lv))); c += (2n * n) ** 2n; } return c.toString(); }
 function floorFr(f, w) { return floorDiv(f.n * w.d, f.d * w.n); }   // ⌊f/w⌋, a BigInt
 const CULL = { scanned: 0, perLevel: [] };
 function thingsNear(extra = 0, from = -1) {
@@ -408,7 +450,9 @@ function towardTarget(f) {
     const C = t.C, D = [0, 1, 2].map(i => Fr.sub(S.eye[i], C[i]));
     const d2 = D.reduce((a, x) => Fr.add(a, Fr.mul(x, x)), ZERO), bb = Fr.dy(t.b), b2 = Fr.mul(bb, bb);
     if (Fr.sign(Fr.sub(Fr.mul(Fr.mul(f, f), d2), b2)) < 0) return false;   // would be nearer than its breadth
-    S.eye = [0, 1, 2].map(i => Fr.add(C[i], Fr.mul(f, D[i]))); S.walk = { key: null, m: [], strides: 0 }; S.goes++;
+    const E2 = [0, 1, 2].map(i => Fr.add(C[i], Fr.mul(f, D[i])));
+    if (Fr.sign(E2[1]) <= 0) return false;   // would go through the ground (TWK run 9 found B could)
+    S.eye = E2; S.walk = { key: null, m: [], strides: 0 }; S.goes++;
     S.lock = t;   // the thing stays the one followed, though nearer things may come between (any turn or stride lets go)
     return true;
 }
@@ -746,7 +790,7 @@ window.__thumbsWalk = {
                 stride('wasd'[i % 4], 1); frame(); exactOf(S.target); }
         } finally { for (const n of names) Math[n] = saved[n]; }
         return calls;
-    }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff, blueprint: () => { const B = blueprint(); return { N: B.list.length, cells: B.cells, R0: B.R0, top: B.top }; }, besideBlueprint, againstStored, againstMade,
+    }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff, blueprint: () => { const B = blueprint(); return { N: B.list.length, cells: B.cells, R0: B.R0, top: B.top }; }, besideBlueprint, againstStored, againstMade, walkTest, buildCount, cellFormula,
     digits: () => ({ eye: eyeDigits(), slopes: slopeDigits(exactOf(S.target)), focus: S.focus, goes: S.goes }),
     target: () => S.target, pose,
     set(o) { if (o.q !== undefined || o.ky !== undefined || o.kp !== undefined || o.eye) S.lock = null; if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }

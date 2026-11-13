@@ -451,3 +451,35 @@ the read's cells scanned with the eye at the middle of each square and at 10¹�
   *Killed* if not.
 - **C4.** By the same formula, a blueprint holding scales −8 to 8 over the R0 = 3,000 square reads more than 10⁹ cells.
   *Killed* if fewer.
+
+### Runs 9 and 10 (13 November 2026; `runs/twk/run9.mjs`, 1280 × 720, outputs `runs/twk/run9-*.json`)
+
+| walk | poses | missing | extra | segments compared | segment counts differing | largest gap, px | foci | re-anchors | G, B acted |
+|---|---|---|---|---|---|---|---|---|---|
+| from the start | 100 | 0 | 0 | 449,702 | 0 | 1.07·10⁻⁶ | −8, −3, −1, 0, 2, 3, 6 | 16 | 3, 4 |
+| 10¹⁰⁰ out | 100 | 0 | 0 | 76,512 | 0 | 2.5·10⁻⁷ | −8, 2, 3 | 15 | 0, 1 |
+| 10³⁰ out, below scale 0 | 100 | 0 | 0 | 548,771 | 0 | 1.33·10⁻⁶ | −8, −3, −1, 0, 4, 6, 8 | 11 | 3, 6 |
+
+The blueprints read 2.97 to 2.98 times the cells the read scanned. No page error.
+
+- **W1 not killed.** All 300 poses: 0 missing, 0 extra.
+- **W2 not killed** by its letter (foci 9 values, 42 re-anchors, G 6 and B 11 times). But post hoc the walks were weaker
+  than meant: at 211 of the 300 poses the read held fewer than 100 things (most held none), with the focus at −8. The
+  cause is a page bug the walks found: **B backs off along the line from the thing followed, and when that thing is above
+  the eye the eye goes below the ground** (from the start, action 37 took the eye from y = 11.06 to y = −1,002). Below the
+  ground nothing is under the crosshair, the focus falls to its floor and nothing is kept. So W1 held at 89 poses that
+  tested much and 211 that tested little.
+- **D1 not killed.** At every pose each thing gave the same number of segments both ways.
+- **D2 killed**, narrowly: two poses past my 10⁻⁶ px (1.07·10⁻⁶ and 1.33·10⁻⁶, both just after a B or a stride with the
+  focus at −3, so with things 1/8 the size close to the eye). The two routes round differently (the read's floating
+  origin against the blueprint's exact centre rounded once); my bound was the guess, and the gap is a millionth of a pixel.
+
+### Run 9b (planned 13 November 2026, after the fix)
+
+The fix: G and B stop rather than put the eye at or below the ground (y ≤ 0). The same three walks, seeds and actions.
+Predictions:
+- **W1b.** All 300 poses: 0 missing, 0 extra. *Killed* by any one.
+- **W3.** At least 250 of the 300 poses hold 1,000 things or more (the walk stays where there is something to test).
+  *Killed* if fewer.
+- **D2b.** Every segment's ends agree within 10⁻⁵ px (my bound loosened tenfold, said so, after run 10's 1.3·10⁻⁶).
+  *Killed* by any larger.
