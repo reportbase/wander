@@ -97,6 +97,16 @@ function walkOurs(steps) { let q = 0, ky = 0, cross = 0; const KMAX = 53;
     const r = walkOurs(st); if (!r.cross) { small++; if (r.back) smallBack++; } }
   OUT.B.ours = { crossWalks, crossBack, plainWalks, plainBack, noCrossWalks: small, noCrossBack: smallBack };
 }
+// run 3 (R944): the page's turning since TWK run 12, the heading one whole number N of half-slope steps
+function walkOurs2(steps) { let q = 0, ky = 0, cross = 0;
+  const turn = dk => { const N = 128 * q + ky + dk, m = Math.floor((N + 128) / 256); if (2 * m !== q) cross++; q = 2 * m; ky = N - 256 * m; };
+  for (const s of steps) turn(s); for (let i = steps.length - 1; i >= 0; i--) turn(-steps[i]);
+  return { back: q === 0 && ky === 0, cross }; }
+{ let crossWalks = 0, crossBack = 0, plainWalks = 0, plainBack = 0;
+  for (let w = 0; w < 100; w++) { const st = []; for (let i = 0; i < 1e4; i++) st.push((rnd() < 0.5 ? -1 : 1) * (1 + Math.floor(rnd() * 12)));
+    const r = walkOurs2(st); if (r.cross) { crossWalks++; if (r.back) crossBack++; } else { plainWalks++; if (r.back) plainBack++; } }
+  OUT.B.ours2 = { crossWalks, crossBack, plainWalks, plainBack };
+}
 // ---------- C. depth told apart ----------
 const NEAR = 0.1, FAR = 1e10, B24 = 2 ** 24 - 1;
 const formats = {

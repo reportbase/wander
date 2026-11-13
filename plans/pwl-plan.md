@@ -131,3 +131,11 @@ re-squaring leaves a drift that float64 makes 10⁻¹⁴ and an integer heading 
 Nothing found was due to trigonometry or the two hemispheres. `thumbs-walk.html`'s pipeline passed each wall by holding
 more digits (the eye's place k + 1 digits at 10^k), and has one wall the classical integer heading does not: its rounding
 at the eighth-turn crossing, which left 93 of 100 long walks a step off on the way back.
+
+### Run 3 (13 November 2026; R944; output `runs/pwl/pwl-out3.json`)
+
+The page's turning changed (TWK run 12): the heading one whole number N of half-slope steps, no rounding. Its copy in
+`walkOurs2`: 100 of 100 walks of 10⁴ turns back exactly, all crossing a half turn (the old rule 7 of 100). The integer
+heading (binary angle units) also returns exactly, and does it by looking up sine and cosine in a table; the page's frame is
+made from the half-slope's rational point ((1 − t²)/(1 + t²), 2t/(1 + t²)), with no table and no trigonometric call. On
+this comparison the wall the page had is gone, and the two return alike.

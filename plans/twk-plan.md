@@ -545,3 +545,18 @@ counted exactly and never made (`toHere()`), beside the cells the read scans the
 (digits of the count, rounded to a power.) The blueprint's cells are four times as many for each doubling of the distance; the
 read's scan is the same within 1.2% at every distance, storing nothing. The menu also says that with a unit of a metre the
 observable universe is about 8.8·10²⁶ across.
+
+### Run 12 (13 November 2026; R944; Tom: "yes", to making the return exact without trigonometry)
+
+Not a prediction committed beforehand: a fix, checked by construction and by a probe. Until now an eighth of a turn
+passed to the next quarter by tangent subtraction rounded to k/128, so a turn and its undoing did not always cancel
+(PWL run 1: 93 of 100 long walks a step off). Now the heading is one whole number N of half-slope steps: q = 2m half
+turns and ky = N − 256m in [−128, 127]. At ky = ±128 the half-slope is ±1, a quarter turn, so (2m, 128) and
+(2m + 2, −128) are one heading exactly, and nothing is rounded. The step is 0.90° at ky = 0 and 0.45° at the seam (it was
+0.90° to 0.77° in the old band).
+
+Probe (headless Chromium, no page errors): 100 seeded walks of 2,000 turns of 1 to 12 steps each way, then undone:
+**100 of 100 back at (0, 0) exactly** (up to three half turns out, every ky in [−128, 127] reached); the seam step from
+(0, 127) lands on (2, −128) with every check holding; `trigFree(300)` still 0 calls. PWL's copy of the rule (run 3):
+100 of 100 long walks back exactly, every walk crossing a half turn. Old links with an odd q and ky ≠ 0 now open a
+slightly different heading (the steps are not even in angle); with ky = 0 the same.

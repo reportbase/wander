@@ -24,7 +24,7 @@
     tower's middle terms cancel); the eye is a running total of strides, so at each new heading it is put down on the
     nearest point of the 1/16 grid (a write; only the exact path home is lost). ?anchor=0 keeps every heading in it.
     No trigonometry (R932): the look is held as whole numbers (quarter turns q and half-slopes ky/128, kp/128), a drag or
-    an arrow key steps a half-slope, an eighth of a turn passes to the next quarter by tangent subtraction; the screen's
+    an arrow key steps a half-slope, the heading one whole number of half-slope steps, a half turn every 256 (R944); the screen's
     half-width is a slope of 6/5; the rings are drawn from rational points; the sky is uniform by a ball normalized.
     Only the Ω shares (K3) use atan, for display and that check alone. Hook trigFree(steps) counts trig calls.
     G and B (TWK run 6): half way to the thing under the crosshair, or back to twice as far, exact along the line to its
@@ -366,13 +366,15 @@ function strideNow() { return S.focus >= 0 ? STRIDE : Fr.make(1, 4n * 2n ** BigI
 function floorDiv(a, b) { const q = a / b; return (a % b !== 0n && ((a < 0n) !== (b < 0n))) ? q - 1n : q; }
 function snap(f) { const G = GRID * 2n ** BigInt(Math.max(0, -S.focus)); return Fr.make(floorDiv(2n * f.n * G + f.d, 2n * f.d), G); }
 function eyeDigits() { return Math.max(...S.eye.map(Fr.digits)); }
-// turning by half-slopes, no trigonometry: past an eighth of a turn either way the half-slope u passes to the next
-// quarter turn by tangent subtraction, u' = (u − 1)/(1 + u) or (u + 1)/(1 − u), rounded to the nearest k/128
-const KMAX = 53, KPMAX = 85;
+// turning by half-slopes, no trigonometry (TWK run 12, R944): the heading is one whole number N of steps, q = 2m half
+// turns and the half-slope ky/128 with ky = N − 256m in [−128, 127]; at ky = ±128 the half-slope is ±1, a quarter turn,
+// so (2m, 128) and (2m + 2, −128) are the same heading exactly and no step is rounded. Turning k and back −k returns N,
+// so a walk retraced returns exactly. (Until R944 an eighth of a turn passed to the next quarter by tangent subtraction,
+// rounded to the nearest k/128, and 93 of 100 long walks came back a step off.)
+const KPMAX = 85;
 function turnBy(dk) {
-    if (dk) S.lock = null; S.ky += dk; const Q = Number(QD);
-    while (S.ky > KMAX) { S.q++; S.ky = Math.round(Q * (S.ky - Q) / (S.ky + Q)); }
-    while (S.ky < -KMAX) { S.q--; S.ky = Math.round(Q * (S.ky + Q) / (Q - S.ky)); }
+    if (dk) S.lock = null; const N = 128 * S.q + S.ky + dk, m = Math.floor((N + 128) / 256);
+    S.q = 2 * m; S.ky = N - 256 * m;
 }
 function tiltBy(dk) { if (dk) S.lock = null; S.kp = Math.max(-KPMAX, Math.min(KPMAX, S.kp + dk)); }
 function poseParts() { turnBy(0); tiltBy(0); return { q: S.q, ky: S.ky, kp: S.kp }; }
