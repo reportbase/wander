@@ -221,3 +221,40 @@ What would and would not be shown:
 - That holding scales without end costs a fixed total when each scale gets its Cauchy share, and that the view at any depth
   is the same view. The share law is ours. Culling by size on screen and per-scale budgets are classical.
 - The digits grow with depth. That is the cost exactness pays where floating point would fail (near 2⁻⁵² of a distance).
+
+### Run 5 (13 November; the hook `cull()` and `exact()` in headless Chromium, the six poses of run 4)
+
+| scales held | kept, start pose (six poses) | cells scanned |
+|---|---|---|
+| 0 … 8, flat share (run 4) | 4,351 (4,273–4,452) | 54,693 |
+| 0 … 8, Cauchy share | 1,337 (1,322–1,367) | 17,581 |
+| 0 … 16 | 1,340 | 17,753 |
+| 0 … 40 | 1,340 | 18,065 |
+| −10 … 8 | 2,195 (2,096–2,197) | 29,163 |
+| −40 … 8 | 2,195 (2,096–2,197) | 29,569 |
+| −40 … 8, eye scaled by 2⁻²⁰, focus −20 | 2,136 (2,121–2,211) | 29,637 |
+
+- **C6 not killed.** Averaged over the six poses, scales 0 … 4 kept 481, 392, 229, 119 and 66 things: 1.00, 1.02, 1.01,
+  1.00 and 1.10 of N₀·sech(k·ln 2).
+- **C7 not killed.** Raising the top scale from 8 to 40 raised the total by 0.2%.
+- **C8 killed.** Adding the scales below 0 raised the total by 858, against my bound of N₀ = 465. I expected the eye's
+  height to cut the smaller scales off near −1; it cut them off only below −6. The scales below mirror the scales above
+  (413, 248, 113, 62, 20 against 382, 242, 141, 62, 25). Going from −10 to −40 changed nothing, and the total, about
+  4.5 to 4.7 N₀, is at or just past my 4.6 N₀ at three poses (the ideal is π/ln 2 ≈ 4.53).
+- **C9 not killed.** Scaled by 2⁻²⁰ the totals were 2,121 to 2,211 against 2,096 to 2,197. The counts at −20 + k
+  (k = −4 … 4) summed to 2,053 against the start's 2,128 (3.5% off).
+- **C10 killed.** At three looks the target's pair slopes had 22 to 26 digits 2⁻²⁰ deep, against 22 to 26 at the start,
+  not 4 to 30 more. K1, K2, K4 and K8 hold there. My reasoning was wrong: a slope is a ratio of two coordinates, and the
+  depth's factor 2⁻²⁰ is in both, so it cancels (K4). The depth's cost is in the eye's own coordinates (about six more
+  digits at 2⁻²⁰), not in any reading.
+- **C11 not killed.** `trigFree` counted 0.
+
+Changed on the page during the run, after the first results:
+- The near cut of the screen and the stride now shrink with the focus's scale (at 2⁻²⁰ the old ones were a million
+  times too large).
+- With nothing under the crosshair, the focus falls back to the scale of the eye's own height.
+- `set({focus: null})` releases the focus without resetting it.
+
+**In short.** With each scale given its Cauchy share, scales without end, up or down, cost a fixed total: about 4.5 times
+the focus scale's count. The view 2⁻²⁰ deep is the same view. The readings take no more digits at depth; only the
+position does. The cull is classical. What is ours is the share law, and that no count of the world enters.
