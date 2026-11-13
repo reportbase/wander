@@ -24,7 +24,7 @@
     tower's middle terms cancel); the eye is a running total of strides, so at each new heading it is put down on the
     nearest point of the 1/16 grid (a write; only the exact path home is lost). ?anchor=0 keeps every heading in it.
     No trigonometry (R932): the look is held as whole numbers (quarter turns q and half-slopes ky/128, kp/128), a drag or
-    an arrow key steps a half-slope, an eighth of a turn passes to the next quarter by tangent subtraction; the screen's
+    an arrow key steps a half-slope, the heading one whole number of half-slope steps, a half turn every 256 (R944); the screen's
     half-width is a slope of 6/5; the rings are drawn from rational points; the sky is uniform by a ball normalized.
     Only the Ω shares (K3) use atan, for display and that check alone. Hook trigFree(steps) counts trig calls.
     G and B (TWK run 6): half way to the thing under the crosshair, or back to twice as far, exact along the line to its
@@ -34,7 +34,8 @@
     The blueprint beside it (O, ?god=1): the god's-eye view done classically, every thing at scales 0 to 8 in a square
     6000 units across, stored and counted, drawn as a map beside the view. P (TWK run 8) makes a blueprint about the eye at every scale, every cell
     out to twice the read's reach read, and sets the read beside it thing for thing. Hook blueprint(), besideBlueprint(),
-    againstStored(), againstMade(half).
+    againstStored(), againstMade(half). U takes the eye ten times farther out; the menu then gives the cells a blueprint stored
+    from the start to there would have (exact, a count, never made) beside the cells the read scans (hook toHere(), outTenfold()).
     ?q=&ky=&kp=&x=&z=&menu=1&sky=1&heat=0&thumbs=0&anchor=0
     Hook window.__thumbsWalk: Fr (fractions), exact(), checks(), set({q, ky, kp, eye}), trigFree(steps), stride(dir, n), target(),
     state(), sky().
@@ -79,7 +80,7 @@
     <label><input type="checkbox" id="optOmega" checked> the shares in Ω</label>
     <label><input type="checkbox" id="optWalk" checked> the counted walk</label>
     <label><input type="checkbox" id="optDigits" checked> a read and a write, by the digit (G half way, B back)</label>
-    <label><input type="checkbox" id="optGod"> the blueprint beside it, the god's-eye view (O)</label>
+    <label><input type="checkbox" id="optGod"> the blueprint beside it, the god's-eye view (O; U ten times farther out)</label>
     <label><input type="checkbox" id="optChecks"> the checks</label>
     <label><input type="checkbox" id="optAnchor" checked> re-anchor the eye at each new heading (take the scaffolding down)</label>
     <label><input type="checkbox" id="optAbout"> about</label>
@@ -259,18 +260,73 @@ function againstStored() {
 }
 // a blueprint made about the eye at every scale: every cell of a square `half` scan radii from the eye's cell on each
 // side read, every thing in it listed with its exact centre, the rule applied; then set beside the read
-function againstMade(half = 1) {
-    const read = new Set(thingsNear().map(t => t.key)), scanned = CULL.scanned, bp = new Set(); let cells = 0;
+function segsOf(edges, r, P) {   // a thing's edges on the screen, through the page's own projection and near clip
+    const out = []; for (const [a, b] of edges) { const s = edge(project(add3(a, r), P), project(add3(b, r), P)); if (s) out.push(s); } return out; }
+function againstMade(half = 1, drawn = false) {
+    const held = thingsNear(), read = new Set(held.map(t => t.key)), scanned = CULL.scanned, bp = new Set(); let cells = 0;
+    const recs = drawn ? new Map() : null;
     for (let lv = -BELOW; lv <= LEVELS; lv++) {
         const Wf = Fr.mul(Fr.make(CELL), Fr.dy(2 ** lv)), ci = floorFr(S.eye[0], Wf), cj = floorFr(S.eye[2], Wf), n = Math.ceil(half * scanAt(lv));
         for (let di = -n; di <= n; di++) for (let dj = -n; dj <= n; dj++) { cells++;
-            const t = thingOf(ci + BigInt(di), cj + BigInt(dj), lv); if (t && keepExact(t, t.C)) bp.add(t.key); }
+            const t = thingOf(ci + BigInt(di), cj + BigInt(dj), lv); if (t && keepExact(t, t.C)) { bp.add(t.key);
+                // the blueprint's own record: the exact centre, the box as stored (a fresh copy of its lengths)
+                if (recs) recs.set(t.key, { C: t.C.slice(), box: { kind: t.kind, w: t.w, d: t.d, h: t.h } }); } }
         if (cellCache.size > 400000) cellCache.clear();
     }
-    return { ...compareSets(read, bp), cells, scanned, ratio: cells / scanned };
+    const res = { ...compareSets(read, bp), cells, scanned, ratio: cells / scanned };
+    if (recs) {   // TWK run 10: what each draws, segment for segment
+        const P = pose(); let segMismatch = 0, maxPx = 0, maxOn = 0, segs = 0, worst = null;
+        for (const t of held) { const q = recs.get(t.key); if (!q) continue;
+            const r = [0, 1, 2].map(k => Fr.num(Fr.sub(q.C[k], S.eye[k])));
+            const A = segsOf(t.edges, t.r, P), B = segsOf(edgesOf(q.box), r, P);
+            if (A.length !== B.length) { segMismatch++; continue; } segs += A.length;
+            for (let i = 0; i < A.length; i++) for (let e = 0; e < 2; e++) for (let c = 0; c < 2; c++) {
+                const dd = Math.abs(A[i][e][c] - B[i][e][c]); if (A[i][e][0] >= 0 && A[i][e][0] <= W && A[i][e][1] >= 0 && A[i][e][1] <= Hh) maxOn = Math.max(maxOn, dd); if (!(dd <= maxPx)) { maxPx = Number.isFinite(dd) ? Math.max(maxPx, dd) : Infinity; worst = { at: A[i][e][c], dist: Math.hypot(...r), lv: t.lv, b: t.b, clipped: t.edges.some(([u, v]) => project(add3(u, t.r), P)[2] < 0.05 * 2 ** Math.min(0, S.focus) || project(add3(v, t.r), P)[2] < 0.05 * 2 ** Math.min(0, S.focus)) }; } } }
+        Object.assign(res, { segMismatch, maxPx, maxOn, segs, worst, W, H: Hh });
+    }
+    return res;
 }
+// TWK run 9: a seeded walk, a blueprint made about the eye after every action
+function walkTest(seed = 1, n = 100, half = 1.5, drawn = true) {
+    let s = seed >>> 0; const rnd = () => ((s = (Math.imul(s, 1103515245) + 12345) >>> 0) / 4294967296);
+    const rows = [], a0 = S.anchors; let gActs = 0, bActs = 0;
+    for (let k = 0; k < n; k++) {
+        const u = rnd(), m = 1 + Math.floor(rnd() * 6), dk = (rnd() < 0.5 ? -1 : 1) * (1 + Math.floor(rnd() * 12)); let act;
+        if (u < 0.45) { act = 'wasd'[Math.floor(rnd() * 4)] + m; stride(act[0], m); }
+        else if (u < 0.65) { act = 'turn' + dk; turnBy(dk); }
+        else if (u < 0.75) { act = 'tilt' + dk; tiltBy(dk); }
+        else if (u < 0.875) { act = 'G'; gActs += approach(1); }
+        else { act = 'B'; bActs += backOff(1); }
+        frame(); frame();
+        const r = againstMade(half, drawn);
+        rows.push({ k, act, focus: S.focus, missing: r.missing, extra: r.extra, read: r.read, cells: r.cells, scanned: r.scanned,
+            segMismatch: r.segMismatch, maxPx: r.maxPx, maxOn: r.maxOn, worst: r.worst, segs: r.segs, digits: eyeDigits() });
+    }
+    return { rows, anchors: S.anchors - a0, gActs, bActs, W, H: Hh };
+}
+// TWK run 11: a blueprint built of scales lo to hi over a square 2·R0 about the start, its cells and things counted
+function buildCount(R0, lo = 0, hi = 8) { let cells = 0, N = 0; const t0 = performance.now();
+    for (let lv = lo; lv <= hi; lv++) { const w = CELL * 2 ** lv, n = Math.ceil(R0 / w);
+        for (let i = -n; i < n; i++) for (let j = -n; j < n; j++) { cells++; const t = thingOf(BigInt(i), BigInt(j), lv); if (!t) continue;
+            if (Math.abs(Fr.num(t.C[0])) <= R0 && Math.abs(Fr.num(t.C[2])) <= R0) N++; }
+        if (cellCache.size > 400000) cellCache.clear(); }
+    return { R0, lo, hi, cells, N, ms: performance.now() - t0 }; }
+function cellFormula(R0, lo = 0, hi = 8) { let c = 0n; for (let lv = lo; lv <= hi; lv++) { const n = BigInt(Math.ceil(R0 / (CELL * 2 ** lv))); c += (2n * n) ** 2n; } return c.toString(); }
+// a blueprint stored from the start out to the eye, at the scales the read holds (−BELOW to LEVELS): its cells counted
+// exactly, never made. The read at the same place scans CULL.scanned cells and stores none.
+function toHere() {
+    const ax = f => { const v = floorDiv(f.n, f.d); return v < 0n ? -v : v; }, R = (ax(S.eye[0]) > ax(S.eye[2]) ? ax(S.eye[0]) : ax(S.eye[2])) + 1n;
+    let cells = 0n; for (let lv = -BELOW; lv <= LEVELS; lv++) {
+        const num = lv >= 0 ? R : R * 2n ** BigInt(-lv), den = lv >= 0 ? BigInt(CELL) * 2n ** BigInt(lv) : BigInt(CELL);
+        const n = (num + den - 1n) / den; cells += (2n * n) ** 2n; }
+    return { R: R.toString(), cells: cells.toString(), scanned: CULL.scanned };
+}
+function sci(str) { return str.length <= 7 ? Number(str).toLocaleString() : `${str[0]}.${str.slice(1, 3)}·10^${str.length - 1}`; }
+function outTenfold() {   // U: the eye ten times as far from the start along x, exactly (at least 10⁴ out)
+    const v = floorDiv(S.eye[0].n, S.eye[0].d), a = v < 0n ? -v : v, step = a < 1000n ? 10000n : 9n * a;
+    S.eye[0] = Fr.add(S.eye[0], Fr.make(step)); S.target = null; S.lock = null; frame(); }
 function floorFr(f, w) { return floorDiv(f.n * w.d, f.d * w.n); }   // ⌊f/w⌋, a BigInt
-const CULL = { scanned: 0, perLevel: [] };
+const CULL = { scanned: 0, perLevel: [], first: null };
 function thingsNear(extra = 0, from = -1) {
     const out = []; CULL.scanned = 0; CULL.perLevel = []; const ey = Fr.num(S.eye[1]);
     for (let lv = -BELOW; lv <= LEVELS; lv++) {
@@ -288,7 +344,7 @@ function thingsNear(extra = 0, from = -1) {
         }
         CULL.perLevel.push([lv, n]);
     }
-    if (cellCache.size > 400000) cellCache.clear();
+    if (cellCache.size > 400000) cellCache.clear(); if (CULL.first === null) CULL.first = CULL.scanned;
     return out;
 }
 
@@ -310,13 +366,15 @@ function strideNow() { return S.focus >= 0 ? STRIDE : Fr.make(1, 4n * 2n ** BigI
 function floorDiv(a, b) { const q = a / b; return (a % b !== 0n && ((a < 0n) !== (b < 0n))) ? q - 1n : q; }
 function snap(f) { const G = GRID * 2n ** BigInt(Math.max(0, -S.focus)); return Fr.make(floorDiv(2n * f.n * G + f.d, 2n * f.d), G); }
 function eyeDigits() { return Math.max(...S.eye.map(Fr.digits)); }
-// turning by half-slopes, no trigonometry: past an eighth of a turn either way the half-slope u passes to the next
-// quarter turn by tangent subtraction, u' = (u − 1)/(1 + u) or (u + 1)/(1 − u), rounded to the nearest k/128
-const KMAX = 53, KPMAX = 85;
+// turning by half-slopes, no trigonometry (TWK run 12, R944): the heading is one whole number N of steps, q = 2m half
+// turns and the half-slope ky/128 with ky = N − 256m in [−128, 127]; at ky = ±128 the half-slope is ±1, a quarter turn,
+// so (2m, 128) and (2m + 2, −128) are the same heading exactly and no step is rounded. Turning k and back −k returns N,
+// so a walk retraced returns exactly. (Until R944 an eighth of a turn passed to the next quarter by tangent subtraction,
+// rounded to the nearest k/128, and 93 of 100 long walks came back a step off.)
+const KPMAX = 85;
 function turnBy(dk) {
-    if (dk) S.lock = null; S.ky += dk; const Q = Number(QD);
-    while (S.ky > KMAX) { S.q++; S.ky = Math.round(Q * (S.ky - Q) / (S.ky + Q)); }
-    while (S.ky < -KMAX) { S.q--; S.ky = Math.round(Q * (S.ky + Q) / (Q - S.ky)); }
+    if (dk) S.lock = null; const N = 128 * S.q + S.ky + dk, m = Math.floor((N + 128) / 256);
+    S.q = 2 * m; S.ky = N - 256 * m;
 }
 function tiltBy(dk) { if (dk) S.lock = null; S.kp = Math.max(-KPMAX, Math.min(KPMAX, S.kp + dk)); }
 function poseParts() { turnBy(0); tiltBy(0); return { q: S.q, ky: S.ky, kp: S.kp }; }
@@ -408,7 +466,9 @@ function towardTarget(f) {
     const C = t.C, D = [0, 1, 2].map(i => Fr.sub(S.eye[i], C[i]));
     const d2 = D.reduce((a, x) => Fr.add(a, Fr.mul(x, x)), ZERO), bb = Fr.dy(t.b), b2 = Fr.mul(bb, bb);
     if (Fr.sign(Fr.sub(Fr.mul(Fr.mul(f, f), d2), b2)) < 0) return false;   // would be nearer than its breadth
-    S.eye = [0, 1, 2].map(i => Fr.add(C[i], Fr.mul(f, D[i]))); S.walk = { key: null, m: [], strides: 0 }; S.goes++;
+    const E2 = [0, 1, 2].map(i => Fr.add(C[i], Fr.mul(f, D[i])));
+    if (Fr.sign(E2[1]) <= 0) return false;   // would go through the ground (TWK run 9 found B could)
+    S.eye = E2; S.walk = { key: null, m: [], strides: 0 }; S.goes++;
     S.lock = t;   // the thing stays the one followed, though nearer things may come between (any turn or stride lets go)
     return true;
 }
@@ -670,6 +730,8 @@ function panelHtml() {
         h += `<h3>the god's-eye view, beside it</h3><p>The blueprint is the classical view: every thing at scales 0 to ${BP.top} in a square ${2 * BP.R0} units across about the start, stored once, ${Bs.cells.toLocaleString()} cells read to make it, N = ${Bs.N.toLocaleString()} things counted. It is drawn here only to set beside the read: nothing the read draws or reads comes from it.</p>`;
         h += S.godLast ? `<p>Set beside a blueprint made about the eye (P): at every scale −${BELOW} to ${LEVELS}, every cell out to twice the read's reach read, ${S.godLast.cells.toLocaleString()} cells, and every thing kept by the read's own rule from its exact centre: ${S.godLast.blueprint.toLocaleString()} things. The read, scanning ${S.godLast.scanned.toLocaleString()} cells and storing none, holds ${S.godLast.read.toLocaleString()}: <b>${S.godLast.missing} missing, ${S.godLast.extra} extra</b>. The eye's place then took ${S.godLast.digits} digit${S.godLast.digits === 1 ? '' : 's'}.</p>` : `<p>Press P to set the read beside a blueprint made about the eye, thing for thing.</p>`;
         h += `<p>The read holds K = ${Bs.K.toLocaleString()}: ${Bs.inside.toLocaleString()} of them in the blueprint, <span class="${Bs.missing ? 'bad' : 'ok'}">${Bs.missing} it lacks</span>, ${Bs.outsideBox.toLocaleString()} past its edge and ${Bs.otherScales.toLocaleString()} at scales it does not store. The other ${(Bs.N - Bs.inside).toLocaleString()} the read never needed.</p>`;
+        const T = toHere();
+        h += `<p>Out here, ${sci(T.R)} units from the start (U goes ten times farther): a blueprint stored from the start to here at the scales the read holds (−${BELOW} to ${LEVELS}) has <b>${sci(T.cells)} cells</b>, a number of ${T.cells.length} digits, four times as many for each doubling of the distance. The read here scans <b>${T.scanned.toLocaleString()} cells</b> and stores none; at the start it scanned ${CULL.first.toLocaleString()}.</p><p>With a unit of a metre, the observable universe is about 8.8·10^26 across, and at scale −${BELOW} things are ${(CELL * 2 ** -BELOW).toFixed(3)} units apart.</p>`;
         h += Bs.eyeInside ? '<p>Walk past the edge, or press G on something small: the blueprint runs out, the read does not.</p>'
                           : '<p>The eye is past the blueprint\'s edge. The blueprint has nothing here; the read has the same view it had at the start.</p>';
     }
@@ -710,6 +772,7 @@ addEventListener('keydown', ev => {
     if (k === 'g') { approach(1); updatePanel(true); return; }
     if (k === 'b') { backOff(1); updatePanel(true); return; }
     if (k === 'p') { S.godLast = { ...againstMade(2), digits: eyeDigits() }; updatePanel(true); return; }
+    if (k === 'u') { outTenfold(); updatePanel(true); return; }
     if (k === 'o') { S.show.god = !S.show.god; document.getElementById('optGod').checked = S.show.god; updatePanel(true); return; }
     keys.add(k); if (ev.key.startsWith('Arrow')) ev.preventDefault();
 });
@@ -746,7 +809,7 @@ window.__thumbsWalk = {
                 stride('wasd'[i % 4], 1); frame(); exactOf(S.target); }
         } finally { for (const n of names) Math[n] = saved[n]; }
         return calls;
-    }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff, blueprint: () => { const B = blueprint(); return { N: B.list.length, cells: B.cells, R0: B.R0, top: B.top }; }, besideBlueprint, againstStored, againstMade,
+    }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff, blueprint: () => { const B = blueprint(); return { N: B.list.length, cells: B.cells, R0: B.R0, top: B.top }; }, besideBlueprint, toHere, outTenfold, againstStored, againstMade, walkTest, buildCount, cellFormula,
     digits: () => ({ eye: eyeDigits(), slopes: slopeDigits(exactOf(S.target)), focus: S.focus, goes: S.goes }),
     target: () => S.target, pose,
     set(o) { if (o.q !== undefined || o.ky !== undefined || o.kp !== undefined || o.eye) S.lock = null; if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }

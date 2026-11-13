@@ -420,3 +420,143 @@ that the cull has none at these places; they compare nothing else a blueprint do
 **In short.** Wherever the eye stands, out to 10¹⁰⁰ units, the read holds thing for thing what a blueprint made by
 reading every cell holds for that eye under the same rule, while scanning about a fifth of the cells that blueprint reads
 and storing nothing. On the page, P runs the same check where the eye is.
+
+## Runs 9, 10 and 11: along a walk, what is drawn, and the cost (planned 13 November 2026)
+
+Tom: "1 2 then 3". Each checks the read against a blueprint by brute force, as run 8 did; each states counts, not
+judgements. Predictions, committed before the hook functions are written:
+
+**Run 9, along a walk.** A seeded walk of 100 actions from each of three starts: the start (0, 2, −30); 10¹⁰⁰ out;
+10³⁰ out with G pressed until the focus is below scale 0. Each action is one of: strides (W A S D, 1 to 6), a turn or
+tilt (±1 to ±12 half-slopes), G, B. After each action the page draws a frame (so the focus and the target are its own),
+and a blueprint is made about the eye at every scale −8 to 8, every cell out to 1.5 scan radii each side (beyond the
+read's reach), the rule applied to exact centres.
+- **W1.** At every one of the 300 poses: 0 missing, 0 extra. *Killed* by any one.
+- **W2.** The walks exercise what could break it: across the three walks the focus takes at least 4 different values,
+  the eye is re-anchored at least 10 times, G and B each act at least 5 times. *Killed* if any is short (then the walk
+  did not test what it was meant to).
+
+**Run 10, what is drawn.** At the same 300 poses, every thing the blueprint keeps is projected from the blueprint's own
+record (its exact centre less the exact eye, rounded once to doubles; its box as stored) through the page's own
+projection and near-plane clip, and set beside the read's segments as the page draws them.
+- **D1.** At every pose the two give the same number of segments, thing for thing. *Killed* if not.
+- **D2.** Every segment's ends agree to within 10⁻⁶ pixels on a 1280 × 720 screen. *Killed* by any larger difference.
+
+**Run 11, the cost.** A blueprint of scales 0 to 8 built for squares of side 2·R0, R0 = 750, 1,500, 3,000, 6,000; and
+the read's cells scanned with the eye at the middle of each square and at 10¹⁰⁰.
+- **C1.** The blueprint's cells read are exactly Σ (2⌈R0/(24·2^j)⌉)² over j = 0 to 8, and grow by 4 ± 3% for each doubling
+  of R0 past 1,500. *Killed* otherwise.
+- **C2.** Its things N are 0.42 ± 0.01 of its cells (the hash's rate) at every R0. *Killed* otherwise.
+- **C3.** At every one of those eyes, with the same pose and focus, the read scans the same number of cells, within 1.5%.
+  *Killed* if not.
+- **C4.** By the same formula, a blueprint holding scales −8 to 8 over the R0 = 3,000 square reads more than 10⁹ cells.
+  *Killed* if fewer.
+
+### Runs 9 and 10 (13 November 2026; `runs/twk/run9.mjs`, 1280 × 720, outputs `runs/twk/run9-*.json`)
+
+| walk | poses | missing | extra | segments compared | segment counts differing | largest gap, px | foci | re-anchors | G, B acted |
+|---|---|---|---|---|---|---|---|---|---|
+| from the start | 100 | 0 | 0 | 449,702 | 0 | 1.07·10⁻⁶ | −8, −3, −1, 0, 2, 3, 6 | 16 | 3, 4 |
+| 10¹⁰⁰ out | 100 | 0 | 0 | 76,512 | 0 | 2.5·10⁻⁷ | −8, 2, 3 | 15 | 0, 1 |
+| 10³⁰ out, below scale 0 | 100 | 0 | 0 | 548,771 | 0 | 1.33·10⁻⁶ | −8, −3, −1, 0, 4, 6, 8 | 11 | 3, 6 |
+
+The blueprints read 2.97 to 2.98 times the cells the read scanned. No page error.
+
+- **W1 not killed.** All 300 poses: 0 missing, 0 extra.
+- **W2 not killed** by its letter (foci 9 values, 42 re-anchors, G 6 and B 11 times). But post hoc the walks were weaker
+  than meant: at 211 of the 300 poses the read held fewer than 100 things (most held none), with the focus at −8. The
+  cause is a page bug the walks found: **B backs off along the line from the thing followed, and when that thing is above
+  the eye the eye goes below the ground** (from the start, action 37 took the eye from y = 11.06 to y = −1,002). Below the
+  ground nothing is under the crosshair, the focus falls to its floor and nothing is kept. So W1 held at 89 poses that
+  tested much and 211 that tested little.
+- **D1 not killed.** At every pose each thing gave the same number of segments both ways.
+- **D2 killed**, narrowly: two poses past my 10⁻⁶ px (1.07·10⁻⁶ and 1.33·10⁻⁶, both just after a B or a stride with the
+  focus at −3, so with things 1/8 the size close to the eye). The two routes round differently (the read's floating
+  origin against the blueprint's exact centre rounded once); my bound was the guess, and the gap is a millionth of a pixel.
+
+### Run 9b (planned 13 November 2026, after the fix)
+
+The fix: G and B stop rather than put the eye at or below the ground (y ≤ 0). The same three walks, seeds and actions.
+Predictions:
+- **W1b.** All 300 poses: 0 missing, 0 extra. *Killed* by any one.
+- **W3.** At least 250 of the 300 poses hold 1,000 things or more (the walk stays where there is something to test).
+  *Killed* if fewer.
+- **D2b.** Every segment's ends agree within 10⁻⁵ px (my bound loosened tenfold, said so, after run 10's 1.3·10⁻⁶).
+  *Killed* by any larger.
+
+### Run 9b (13 November 2026; the same script after the fix)
+
+| walk | poses | missing | extra | held | segments | largest gap on screen, px | largest gap anywhere, px | foci | re-anchors | G, B acted |
+|---|---|---|---|---|---|---|---|---|---|---|
+| from the start | 100 | 0 | 0 | 1,699–2,226 | 1,232,831 | 4.5·10⁻¹³ | 1.7·10⁻⁶ | −3 … 7 (8 values) | 16 | 4, 3 |
+| 10¹⁰⁰ out | 100 | 0 | 0 | 2,052–2,208 | 1,212,612 | 4.5·10⁻¹³ | 2.2·10⁻⁵ | −1 … 4 (6 values) | 15 | 9, 14 |
+| 10³⁰ out, below scale 0 | 100 | 0 | 0 | 1,957–2,156 | 1,223,765 | 4.5·10⁻¹³ | 4.5·10⁻⁶ | −3 … 6 (6 values) | 11 | 5, 6 |
+
+- **W1b not killed.** All 300 poses: 0 missing, 0 extra; every thing drew the same number of segments both ways.
+- **W3 not killed.** All 300 poses held 1,699 things or more.
+- **D2b killed.** At 10¹⁰⁰ one segment's end differed by 2.2·10⁻⁵ px, past my 10⁻⁵. Post hoc (the hook now reports the
+  worst point): every gap over 10⁻⁶ px is at an end clipped at the near plane and lying 3 to 17 million pixels off the
+  screen, a relative gap of about 10⁻¹², the two routes' doubles rounding apart; on the 1280 × 720 screen the largest gap
+  at any pose was 4.5·10⁻¹³ px. The bound should have been relative, or on the screen.
+
+### Run 11 (13 November 2026; `runs/twk/run11.mjs`)
+
+| R0 | blueprint cells | the formula | things N | N / cells | build time |
+|---|---|---|---|---|---|
+| 750 | 5,472 | 5,472 | 2,215 | 0.405 | 4 ms |
+| 1,500 | 21,344 | 21,344 | 8,749 | 0.410 | 28 ms |
+| 3,000 | 83,840 | 83,840 | 35,013 | 0.418 | 161 ms |
+| 6,000 | 333,836 | 333,836 | 140,043 | 0.420 | 858 ms |
+
+The read at the start and at 10¹⁰⁰ (q = 1, ky = 18, focus 0): 29,085 cells scanned at both, 2,185 and 2,199 kept.
+Scales −8 to 8 over the R0 = 3,000 square: 5,461,333,840 cells by the formula (scales 0 to 8 alone: 83,840).
+
+- **C1 not killed.** The cells read are the formula exactly; each doubling of R0 past 1,500 multiplies them by 3.93 and
+  3.98.
+- **C2 killed** at the two small squares (0.405 and 0.410 against 0.42 ± 0.01). Post hoc: at small R0 the coarse scales'
+  cells straddle the square's edge and many of their things have centres outside it, so are read but not counted; the
+  ratio climbs toward the hash's 0.42 as the square grows (0.418, 0.420).
+- **C3 not killed, and by my set-up barely a test**: the four squares share one middle (the start), so their reads are
+  one eye four times. The case that tests it, the start against 10¹⁰⁰, scanned 29,085 cells at both.
+- **C4 not killed.** 5.46·10⁹ cells, 65,000 times the same square at scales 0 to 8.
+
+**In short, runs 9 to 11.** Along 300 poses of three walks (strides, turns, G and B, re-anchoring, the focus moving
+through 12 scales, out to 10¹⁰⁰), the read held exactly what a blueprint made from every cell about the eye holds, and
+drew it to 4.5·10⁻¹³ px on the screen, scanning a third of that blueprint's cells and storing nothing. The walks found a
+bug (B could take the eye below the ground), now fixed. A stored blueprint's cells grow with its area, 4 times for each
+doubling of its side, and 65,000 times again to hold the scales the read holds; the read scanned 29,085 cells at the
+start and 10¹⁰⁰ out.
+
+### Shown on the page (13 November 2026; R943; Tom: "we don't need to declare anything, show it. the blueprint does not scale to the universe.")
+
+No prediction, a display. U takes the eye ten times farther from the start along x, exactly. With the blueprint shown (O) the
+menu gives the cells a blueprint stored from the start out to the eye would have at the scales the read holds (−8 to 8),
+counted exactly and never made (`toHere()`), beside the cells the read scans there. Pressed 100 times from the start
+(headless Chromium, no page errors):
+
+| eye from the start | blueprint's cells | read scans | read holds |
+|---|---|---|---|
+| 10 | 10⁵ | 29,085 | 2,195 |
+| 10⁴ | 10¹⁰ | 29,053 | 2,187 |
+| 10¹³ | 10²⁸ | 29,085 | 2,176 |
+| 10²⁶ | 10⁵² | 28,709 | 2,016 |
+| 10¹⁰³ | 6.06·10²¹⁰ | 29,053 | 2,085 |
+
+(digits of the count, rounded to a power.) The blueprint's cells are four times as many for each doubling of the distance; the
+read's scan is the same within 1.2% at every distance, storing nothing. The menu also says that with a unit of a metre the
+observable universe is about 8.8·10²⁶ across.
+
+### Run 12 (13 November 2026; R944; Tom: "yes", to making the return exact without trigonometry)
+
+Not a prediction committed beforehand: a fix, checked by construction and by a probe. Until now an eighth of a turn
+passed to the next quarter by tangent subtraction rounded to k/128, so a turn and its undoing did not always cancel
+(PWL run 1: 93 of 100 long walks a step off). Now the heading is one whole number N of half-slope steps: q = 2m half
+turns and ky = N − 256m in [−128, 127]. At ky = ±128 the half-slope is ±1, a quarter turn, so (2m, 128) and
+(2m + 2, −128) are one heading exactly, and nothing is rounded. The step is 0.90° at ky = 0 and 0.45° at the seam (it was
+0.90° to 0.77° in the old band).
+
+Probe (headless Chromium, no page errors): 100 seeded walks of 2,000 turns of 1 to 12 steps each way, then undone:
+**100 of 100 back at (0, 0) exactly** (up to three half turns out, every ky in [−128, 127] reached); the seam step from
+(0, 127) lands on (2, −128) with every check holding; `trigFree(300)` still 0 calls. PWL's copy of the rule (run 3):
+100 of 100 long walks back exactly, every walk crossing a half turn. Old links with an odd q and ky ≠ 0 now open a
+slightly different heading (the steps are not even in angle); with ky = 0 the same.
