@@ -697,3 +697,30 @@ What it does not show: as in run 15 both sides take a mover's loop from the same
 quarter-steps and wraps at the loop's length, so V1b checks the place from T alone against accumulation, and the scan's
 completeness, not two independent worlds. Straight flights forever are not tested (the cells to look at would grow with
 T). On the page, 51 frames a second headless with time running.
+
+## Run 17: things that interact (predictions, 13 November 2026, written and committed before any code; Tom: "Yes", to
+testing R950's guess that interacting things need their state held)
+
+R950 guessed that once things interact no formula in T gives their places, so someone must hold each one's state. A
+narrower test than boxes on the page: N balls on a ring of length L (points, one dimension), each with its own start and
+velocity, colliding elastically. Worked exactly: positions, velocities and collision times as fractions, event by event
+(the stepped truth, a full list kept). Set beside it, the read: places worked out from T alone by the free law
+x_k + v_k·T, with no collisions, nothing kept. Two worlds:
+- (b) equal masses. Known beforehand (Jepsen 1965, the hard-rod gas): equal elastic masses exchange velocities, so the
+  set of places is the free set. My derivation, written now: the sum of the balls' unwrapped places is conserved as the
+  free sum, so with W(T) = Σ_k ⌊(x_k + v_k·T)/L⌋, ball 0 sits at the free place of cyclic rank W(T) mod N, and ball k at
+  rank W(T) + k, if the balls are numbered in ring order at T = 0.
+- (c) unequal masses (1 and 2, half each, seeded): no such law is known to me.
+
+Predictions (N = 16, L = 1000, velocities in [−5, 5], seeded, T to 400, compared at 40 times):
+- R1: in (b) the true places as a set equal the free places mod L exactly at every compared T, with nothing kept.
+- R1b: in (b) every ball's place equals the free place of rank W(T) + k (mod N) exactly at every compared T.
+- R1c: in (b) the ring order of the balls never changes.
+- R2: in (c), after the first contact between unequal masses, the true places as a set differ from the free set at
+  every later compared T.
+- R3: in (c) the balls whose (place, velocity) differ from every free trajectory's grow from 0 to 2 at the first
+  unequal contact and reach all 16 by T = 400: the state to keep spreads to everything that has touched.
+- R4: momentum and energy conserved exactly in both worlds, at every event.
+
+What it would mean: if R1 and R1b hold and R2, R3 do too, interaction alone is not where the read stops; what stops it
+is interaction with no law in T (equal masses keep one, unequal lose it), and then the state to hold spreads by contact.
