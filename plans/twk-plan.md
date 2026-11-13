@@ -483,3 +483,46 @@ Predictions:
   *Killed* if fewer.
 - **D2b.** Every segment's ends agree within 10⁻⁵ px (my bound loosened tenfold, said so, after run 10's 1.3·10⁻⁶).
   *Killed* by any larger.
+
+### Run 9b (13 November 2026; the same script after the fix)
+
+| walk | poses | missing | extra | held | segments | largest gap on screen, px | largest gap anywhere, px | foci | re-anchors | G, B acted |
+|---|---|---|---|---|---|---|---|---|---|---|
+| from the start | 100 | 0 | 0 | 1,699–2,226 | 1,232,831 | 4.5·10⁻¹³ | 1.7·10⁻⁶ | −3 … 7 (8 values) | 16 | 4, 3 |
+| 10¹⁰⁰ out | 100 | 0 | 0 | 2,052–2,208 | 1,212,612 | 4.5·10⁻¹³ | 2.2·10⁻⁵ | −1 … 4 (6 values) | 15 | 9, 14 |
+| 10³⁰ out, below scale 0 | 100 | 0 | 0 | 1,957–2,156 | 1,223,765 | 4.5·10⁻¹³ | 4.5·10⁻⁶ | −3 … 6 (6 values) | 11 | 5, 6 |
+
+- **W1b not killed.** All 300 poses: 0 missing, 0 extra; every thing drew the same number of segments both ways.
+- **W3 not killed.** All 300 poses held 1,699 things or more.
+- **D2b killed.** At 10¹⁰⁰ one segment's end differed by 2.2·10⁻⁵ px, past my 10⁻⁵. Post hoc (the hook now reports the
+  worst point): every gap over 10⁻⁶ px is at an end clipped at the near plane and lying 3 to 17 million pixels off the
+  screen, a relative gap of about 10⁻¹², the two routes' doubles rounding apart; on the 1280 × 720 screen the largest gap
+  at any pose was 4.5·10⁻¹³ px. The bound should have been relative, or on the screen.
+
+### Run 11 (13 November 2026; `runs/twk/run11.mjs`)
+
+| R0 | blueprint cells | the formula | things N | N / cells | build time |
+|---|---|---|---|---|---|
+| 750 | 5,472 | 5,472 | 2,215 | 0.405 | 4 ms |
+| 1,500 | 21,344 | 21,344 | 8,749 | 0.410 | 28 ms |
+| 3,000 | 83,840 | 83,840 | 35,013 | 0.418 | 161 ms |
+| 6,000 | 333,836 | 333,836 | 140,043 | 0.420 | 858 ms |
+
+The read at the start and at 10¹⁰⁰ (q = 1, ky = 18, focus 0): 29,085 cells scanned at both, 2,185 and 2,199 kept.
+Scales −8 to 8 over the R0 = 3,000 square: 5,461,333,840 cells by the formula (scales 0 to 8 alone: 83,840).
+
+- **C1 not killed.** The cells read are the formula exactly; each doubling of R0 past 1,500 multiplies them by 3.93 and
+  3.98.
+- **C2 killed** at the two small squares (0.405 and 0.410 against 0.42 ± 0.01). Post hoc: at small R0 the coarse scales'
+  cells straddle the square's edge and many of their things have centres outside it, so are read but not counted; the
+  ratio climbs toward the hash's 0.42 as the square grows (0.418, 0.420).
+- **C3 not killed, and by my set-up barely a test**: the four squares share one middle (the start), so their reads are
+  one eye four times. The case that tests it, the start against 10¹⁰⁰, scanned 29,085 cells at both.
+- **C4 not killed.** 5.46·10⁹ cells, 65,000 times the same square at scales 0 to 8.
+
+**In short, runs 9 to 11.** Along 300 poses of three walks (strides, turns, G and B, re-anchoring, the focus moving
+through 12 scales, out to 10¹⁰⁰), the read held exactly what a blueprint made from every cell about the eye holds, and
+drew it to 4.5·10⁻¹³ px on the screen, scanning a third of that blueprint's cells and storing nothing. The walks found a
+bug (B could take the eye below the ground), now fixed. A stored blueprint's cells grow with its area, 4 times for each
+doubling of its side, and 65,000 times again to hold the scales the read holds; the read scanned 29,085 cells at the
+start and 10¹⁰⁰ out.

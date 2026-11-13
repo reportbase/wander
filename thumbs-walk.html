@@ -274,14 +274,14 @@ function againstMade(half = 1, drawn = false) {
     }
     const res = { ...compareSets(read, bp), cells, scanned, ratio: cells / scanned };
     if (recs) {   // TWK run 10: what each draws, segment for segment
-        const P = pose(); let segMismatch = 0, maxPx = 0, segs = 0;
+        const P = pose(); let segMismatch = 0, maxPx = 0, maxOn = 0, segs = 0, worst = null;
         for (const t of held) { const q = recs.get(t.key); if (!q) continue;
             const r = [0, 1, 2].map(k => Fr.num(Fr.sub(q.C[k], S.eye[k])));
             const A = segsOf(t.edges, t.r, P), B = segsOf(edgesOf(q.box), r, P);
             if (A.length !== B.length) { segMismatch++; continue; } segs += A.length;
             for (let i = 0; i < A.length; i++) for (let e = 0; e < 2; e++) for (let c = 0; c < 2; c++) {
-                const dd = Math.abs(A[i][e][c] - B[i][e][c]); if (!(dd <= maxPx)) maxPx = Number.isFinite(dd) ? Math.max(maxPx, dd) : Infinity; } }
-        Object.assign(res, { segMismatch, maxPx, segs, W, H: Hh });
+                const dd = Math.abs(A[i][e][c] - B[i][e][c]); if (A[i][e][0] >= 0 && A[i][e][0] <= W && A[i][e][1] >= 0 && A[i][e][1] <= Hh) maxOn = Math.max(maxOn, dd); if (!(dd <= maxPx)) { maxPx = Number.isFinite(dd) ? Math.max(maxPx, dd) : Infinity; worst = { at: A[i][e][c], dist: Math.hypot(...r), lv: t.lv, b: t.b, clipped: t.edges.some(([u, v]) => project(add3(u, t.r), P)[2] < 0.05 * 2 ** Math.min(0, S.focus) || project(add3(v, t.r), P)[2] < 0.05 * 2 ** Math.min(0, S.focus)) }; } } }
+        Object.assign(res, { segMismatch, maxPx, maxOn, segs, worst, W, H: Hh });
     }
     return res;
 }
@@ -299,7 +299,7 @@ function walkTest(seed = 1, n = 100, half = 1.5, drawn = true) {
         frame(); frame();
         const r = againstMade(half, drawn);
         rows.push({ k, act, focus: S.focus, missing: r.missing, extra: r.extra, read: r.read, cells: r.cells, scanned: r.scanned,
-            segMismatch: r.segMismatch, maxPx: r.maxPx, segs: r.segs, digits: eyeDigits() });
+            segMismatch: r.segMismatch, maxPx: r.maxPx, maxOn: r.maxOn, worst: r.worst, segs: r.segs, digits: eyeDigits() });
     }
     return { rows, anchors: S.anchors - a0, gActs, bActs, W, H: Hh };
 }

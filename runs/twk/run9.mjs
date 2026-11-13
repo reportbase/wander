@@ -17,7 +17,7 @@ for (const [name, X, seed, deep] of [['start', '0', 11, false], ['1e100', '1' + 
     return { startFocus, ...T.walkTest(seed, N, 1.5, true) }; }, { X, seed, deep, N });
   const rows = r.rows, foci = [...new Set(rows.map(q => q.focus))].sort((a, c) => a - c);
   out[name] = { startFocus: r.startFocus, poses: rows.length, missing: rows.reduce((a, q) => a + q.missing, 0), extra: rows.reduce((a, q) => a + q.extra, 0),
-    segMismatch: rows.reduce((a, q) => a + q.segMismatch, 0), maxPx: Math.max(...rows.map(q => q.maxPx)), segs: rows.reduce((a, q) => a + q.segs, 0),
+    segMismatch: rows.reduce((a, q) => a + q.segMismatch, 0), maxPx: Math.max(...rows.map(q => q.maxPx)), maxOn: Math.max(...rows.map(q => q.maxOn)), worstAt: Math.min(...rows.filter(q => q.maxPx > 1e-6).map(q => Math.abs(q.worst.at))), segs: rows.reduce((a, q) => a + q.segs, 0),
     held: [Math.min(...rows.map(q => q.read)), Math.max(...rows.map(q => q.read))], foci, anchors: r.anchors, gActs: r.gActs, bActs: r.bActs,
     digits: [Math.min(...rows.map(q => q.digits)), Math.max(...rows.map(q => q.digits))], cellsOverScan: Math.min(...rows.map(q => q.cells / q.scanned)), W: r.W, H: r.H, s: (Date.now() - t0) / 1000 };
   console.log(name, JSON.stringify(out[name])); fs.writeFileSync('runs/twk/run9-' + name.replace(/ /g, '-') + '.json', JSON.stringify(rows));
