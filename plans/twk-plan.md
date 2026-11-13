@@ -314,3 +314,41 @@ classical floating origin (camera-relative coordinates, as games with large worl
   the distance). *Killed* if a check fails or a slope has more than 30 digits.
 - **D4.** The eye's place takes at least as many digits as X has (a write paying by the digit). *Killed* if fewer.
 - **D5.** `trigFree` counts 0 at X = 10¹⁰⁰. *Killed* if not.
+
+### Run 7 (13 November 2026; the hook in headless Chromium, the pose `q = 1`, `ky = 18`, eye `(X, 2, X − 30)`)
+
+| X | scales | kept | cells scanned | focus | target | slope digits | eye's place, characters | `cull()` |
+|---|---|---|---|---|---|---|---|---|
+| 0 | −8 … 8 | 2,153 | 29,053 | | box at (88.5, 2, −56) | 26 | 2 | 128 ms |
+| 10⁵ | −8 … 8 | 2,140 | 29,085 | | box at (100015, 2, 99967) | 22 | | 175 ms |
+| 10¹² | −8 … 8 | 2,078 | 29,085 | | box at (1000000000112, 2, 999999999943) | 24 | | 193 ms |
+| 10¹⁵ | −8 … 8 | 1,997 | 28,709 | −3 | tower | 24 | 16 | 228 ms |
+| 10³⁰ | −8 … 8 | 2,137 | 29,053 | −1 | pyramid | 24 | 31 | 239 ms |
+| 10¹⁰⁰ | −8 … 8 | 2,038 | 28,933 | −2 | box | 24 | 101 | 318 ms |
+| 10¹⁰⁰ × 2⁻²⁰ | −8 … 8 | 1,287 | 17,753 | −8 | none | | 107 | 331 ms |
+| 10¹⁰⁰ | −40 … 8 | 2,210 | 29,569 | 0 | none | | 101 | 542 ms |
+| 10¹⁰⁰ × 2⁻²⁰ | −40 … 8 | 2,143 | 29,637 | −20 | none | | 107 | 463 ms |
+
+No thing kept was below the grain and none past the scan would have qualified, at every place.
+
+- **D1 killed**, three ways. (a) At 10¹⁵ the total kept was 1,997, three under my 2,000. (b) The cells scanned are not
+  fixed: they depend on the focus's scale, since each scale's scan is set by its grain, which is set by its distance in
+  scales from the focus (run 5). The places differ in what is under the crosshair, so in the focus; my 1% band was taken
+  from places that happened to share a focus. Across these places the scan ran 28,709 to 29,085, within 1.3%. (c) My
+  set-up: the case scaled by 2⁻²⁰ needs the scales below −8, which the page holds only with `?below=40` (as run 5 used);
+  with the default it held 1,287. Run again with `?below=40` (last two rows): 2,143 kept, 29,637 cells, the same as run 5
+  at 2⁻²⁰ near the origin (2,136 and 29,637). `cull()` returned in under 0.6 s everywhere.
+- **D2 not killed.** At 0, 10⁵ and 10¹², the counts kept by scale, the cells scanned and the target were exactly the
+  table in the plan, digit for digit.
+- **D3 not killed** where it could be tested: K1, K2, K4 and K8 held and the slopes had 22 to 26 digits wherever there was
+  a target (24 at 10¹⁵, 10³⁰ and 10¹⁰⁰). At three places nothing was under the crosshair at this pose.
+- **D4 not killed.** The eye's place took 16, 31, 101 and 107 characters.
+- **D5 not killed.** `trigFree` counted 0.
+
+Also checked, no prediction: at 10³⁰, G then B put the eye back exactly, the slopes were the same fractions after G, and
+20 strides with W were all equal and two looks gave the strides left, exactly (K5).
+
+**In short.** Before the change the page held its view only to about 10¹² units from where it began, because the cull
+read the eye as a double. Now the eye's place is used exactly and everything else is worked out from the eye (a floating
+origin, classical), so the same view, the same count held and the same exact checks hold 10¹⁰⁰ units out and a millionth
+of the size there. The only thing that grows is the place: 101 digits at 10¹⁰⁰.

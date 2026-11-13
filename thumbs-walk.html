@@ -27,6 +27,10 @@
     an arrow key steps a half-slope, an eighth of a turn passes to the next quarter by tangent subtraction; the screen's
     half-width is a slope of 6/5; the rings are drawn from rational points; the sky is uniform by a ball normalized.
     Only the Ω shares (K3) use atan, for display and that check alone. Hook trigFree(steps) counts trig calls.
+    G and B (TWK run 6): half way to the thing under the crosshair, or back to twice as far, exact along the line to its
+    centre; the eye's digits grow a bit a halving, the slopes' do not. Hook approach(n), backOff(n), digits().
+    From the exact eye (TWK run 7): cell indices are BigInts, each thing's centre an exact fraction, and everything drawn,
+    picked or culled is worked out from the eye (a floating origin), so the view holds 10^100 units out as at the start.
     ?q=&ky=&kp=&x=&z=&menu=1&sky=1&heat=0&thumbs=0&anchor=0
     Hook window.__thumbsWalk: Fr (fractions), exact(), checks(), set({q, ky, kp, eye}), trigFree(steps), stride(dir, n), target(),
     state(), sky().
@@ -142,62 +146,78 @@ const CELL = 24, LEVELS = Math.max(0, Math.min(40, Math.round(+(QS.get('levels')
 const coshL = k => (2 ** k + 2 ** -k) / 2;
 function grainAt(lv) { return SHARE === 'flat' ? GRAIN : GRAIN * Math.sqrt(coshL(lv - S.focus)); }
 function scanAt(lv) { return Math.ceil(BMAX / (grainAt(lv) * CELL)) + 1; }
+// cells are hashed from their whole index, a BigInt (since TWK run 7): the same numbers as before wherever the index is
+// under 2⁵³, extra words mixed in past it, so the world is unchanged where the page worked and goes on past it
+const I32 = x => Number(BigInt.asIntN(32, x));
 function hash(i, j, s) {
     let h;
-    if (Math.abs(i) < 1048576 && Math.abs(j) < 1048576) h = (i * 374761393 + j * 668265263 + s * 2246822519) | 0;
-    else {   // large indices (small scales far from the origin): mix the high and low words, so cells do not repeat
-        const hi = Math.floor(i / 4294967296), lo = i - hi * 4294967296, hj = Math.floor(j / 4294967296), lj = j - hj * 4294967296;
-        h = Math.imul(lo | 0, 374761393) ^ Math.imul(lj | 0, 668265263) ^ Math.imul(hi | 0, 1103515245) ^ Math.imul(hj | 0, 1664525)
-            ^ Math.imul(s | 0, 2246822519 | 0); }
+    if (i > -1048576n && i < 1048576n && j > -1048576n && j < 1048576n) h = (Number(i) * 374761393 + Number(j) * 668265263 + s * 2246822519) | 0;
+    else {   // large indices: mix the 32-bit words, low first; past 2⁶³ the further words too
+        h = Math.imul(I32(i), 374761393) ^ Math.imul(I32(j), 668265263) ^ Math.imul(I32(i >> 32n), 1103515245) ^ Math.imul(I32(j >> 32n), 1664525)
+            ^ Math.imul(s | 0, 2246822519 | 0);
+        for (let ri = i >> 64n, rj = j >> 64n, k = 1; !((ri === 0n || ri === -1n) && (rj === 0n || rj === -1n)); ri >>= 32n, rj >>= 32n, k++)
+            h = Math.imul(h ^ I32(ri) ^ Math.imul(I32(rj), 2654435761 | 0), 2246822519 | 0) ^ k;
+    }
     h = Math.imul(h ^ (h >>> 13), 1274126177); h ^= h >>> 16; return (h >>> 0) / 4294967296; }
 const cellCache = new Map();
+// a thing at cell (i, j) of scale lv: its lengths are dyadic doubles, small; its place is the cell's corner, exact
+// (i·CELL·2^lv, a fraction), plus a small offset inside the cell. Its centre C is kept exact; what is drawn, picked and
+// culled is its centre relative to the eye, r, worked out each frame from the eye's exact place (a floating origin).
 function thingOf(i, j, lv = 0) {
     const key = lv + ':' + i + ',' + j; if (cellCache.has(key)) return cellCache.get(key);
     let t = null; const L = 64 * lv, sc = 2 ** lv;
     const hash0 = hash; { const hash = (a, b, k) => hash0(a, b, k + L);
-    if (hash(i, j, 1) < 0.42 && !(lv === 0 && Math.abs(i) <= 1 && Math.abs(j) <= 1)) {
-        const r = hash(i, j, 2), x0 = i * CELL + 2 + Math.floor(hash(i, j, 3) * 10), z0 = j * CELL + 2 + Math.floor(hash(i, j, 4) * 10);
+    if (hash(i, j, 1) < 0.42 && !(lv === 0 && i >= -1n && i <= 1n && j >= -1n && j <= 1n)) {
+        const r = hash(i, j, 2), ox = 2 + Math.floor(hash(i, j, 3) * 10), oz = 2 + Math.floor(hash(i, j, 4) * 10);
         if (r < 0.45) { const w = 4 + 2 * Math.floor(hash(i, j, 5) * 4), d = 4 + 2 * Math.floor(hash(i, j, 6) * 4), h = 2 + 2 * Math.floor(hash(i, j, 7) * 4);
-            t = { kind: 'box', x0, z0, w, d, h }; }
+            t = { kind: 'box', ox, oz, w, d, h }; }
         else if (r < 0.75) { const w = 2 + 2 * Math.floor(hash(i, j, 5) * 2), h = 10 + 2 * Math.floor(hash(i, j, 7) * 12);
-            t = { kind: 'tower', x0, z0, w, d: w, h }; }
+            t = { kind: 'tower', ox, oz, w, d: w, h }; }
         else { const w = 6 + 2 * Math.floor(hash(i, j, 5) * 4), h = 4 + 2 * Math.floor(hash(i, j, 7) * 5);
-            t = { kind: 'pyramid', x0, z0, w, d: w, h }; }
-        if (sc !== 1) { t.x0 = i * CELL * sc + (t.x0 - i * CELL) * sc; t.z0 = j * CELL * sc + (t.z0 - j * CELL) * sc;
-            t.w *= sc; t.d *= sc; t.h *= sc; }
-        t.key = key; t.lv = lv; t.b = Math.max(t.w, t.d, t.h);
-        // centre, in halves: a rational point
-        t.c = [t.x0 + t.w / 2, t.h / 2, t.z0 + t.d / 2];
-        t.edges = edgesOf(t);
+            t = { kind: 'pyramid', ox, oz, w, d: w, h }; }
+        t.ox *= sc; t.oz *= sc; t.w *= sc; t.d *= sc; t.h *= sc;
+        t.key = key; t.lv = lv; t.i = i; t.j = j; t.b = Math.max(t.w, t.d, t.h);
+        // the centre inside its cell (doubles, dyadic) and in the world (exact fractions)
+        t.lc = [t.ox + t.w / 2, t.h / 2, t.oz + t.d / 2];
+        const Wc = Fr.mul(Fr.make(CELL), Fr.dy(sc));
+        t.C = [Fr.add(Fr.mul(Fr.make(i), Wc), Fr.dy(t.lc[0])), Fr.dy(t.lc[1]), Fr.add(Fr.mul(Fr.make(j), Wc), Fr.dy(t.lc[2]))];
+        t.c = t.C.map(Fr.num);   // for showing only
+        t.edges = edgesOf(t);    // relative to the centre
+        t.r = [0, 0, 0];
     } }
     cellCache.set(key, t); return t;
 }
-function edgesOf(t) {
-    const { x0, z0, w, d, h } = t, x1 = x0 + w, z1 = z0 + d, E = [];
+function edgesOf(t) {   // the edges about the thing's own centre
+    const hw = t.w / 2, hd = t.d / 2, hh = t.h / 2, x0 = -hw, x1 = hw, z0 = -hd, z1 = hd, y0 = -hh, y1 = hh, E = [];
     if (t.kind === 'pyramid') {
-        const ax = x0 + w / 2, az = z0 + d / 2, b = [[x0, 0, z0], [x1, 0, z0], [x1, 0, z1], [x0, 0, z1]];
-        for (let k = 0; k < 4; k++) { E.push([b[k], b[(k + 1) % 4]]); E.push([b[k], [ax, h, az]]); }
+        const b = [[x0, y0, z0], [x1, y0, z0], [x1, y0, z1], [x0, y0, z1]];
+        for (let k = 0; k < 4; k++) { E.push([b[k], b[(k + 1) % 4]]); E.push([b[k], [0, y1, 0]]); }
         return E;
     }
-    const v = (a, y, c) => [a, y, c];
-    const bot = [v(x0, 0, z0), v(x1, 0, z0), v(x1, 0, z1), v(x0, 0, z1)], top = bot.map(p => [p[0], h, p[2]]);
+    const bot = [[x0, y0, z0], [x1, y0, z0], [x1, y0, z1], [x0, y0, z1]], top = bot.map(p => [p[0], y1, p[2]]);
     for (let k = 0; k < 4; k++) { E.push([bot[k], bot[(k + 1) % 4]]); E.push([top[k], top[(k + 1) % 4]]); E.push([bot[k], top[k]]); }
     return E;
 }
-function keptAt(t, e, g = grainAt(t.lv)) {   // b ≥ g·d and d ≥ b, in squares: no root, no angle
-    const dx = t.c[0] - e[0], dy = t.c[1] - e[1], dz = t.c[2] - e[2], d2 = dx * dx + dy * dy + dz * dz;
+function keptAt(t, g = grainAt(t.lv)) {   // b ≥ g·d and d ≥ b, in squares: no root, no angle; t.r the centre from the eye
+    const dx = t.r[0], dy = t.r[1], dz = t.r[2], d2 = dx * dx + dy * dy + dz * dz;
     return t.b * t.b >= g * g * d2 && d2 >= t.b * t.b;
 }
+function floorFr(f, w) { return floorDiv(f.n * w.d, f.d * w.n); }   // ⌊f/w⌋, a BigInt
 const CULL = { scanned: 0, perLevel: [] };
-function thingsNear(e, extra = 0, from = -1) {
-    const out = []; CULL.scanned = 0; CULL.perLevel = [];
+function thingsNear(extra = 0, from = -1) {
+    const out = []; CULL.scanned = 0; CULL.perLevel = []; const ey = Fr.num(S.eye[1]);
     for (let lv = -BELOW; lv <= LEVELS; lv++) {
-        const w = CELL * 2 ** lv, ci = Math.floor(e[0] / w), cj = Math.floor(e[2] / w); let n = 0;
-        const scan = scanAt(lv) + extra, fr = from < 0 ? 0 : scanAt(lv) + from;
-        for (let i = ci - scan; i <= ci + scan; i++) for (let j = cj - scan; j <= cj + scan; j++) {
-            const r2 = (i - ci) * (i - ci) + (j - cj) * (j - cj);
+        const Wf = Fr.mul(Fr.make(CELL), Fr.dy(2 ** lv)), w = CELL * 2 ** lv;
+        // the eye's cell, exactly, and the eye's place inside it, a small double: the floating origin of this scale
+        const ci = floorFr(S.eye[0], Wf), cj = floorFr(S.eye[2], Wf);
+        const ex = Fr.num(Fr.sub(S.eye[0], Fr.mul(Fr.make(ci), Wf))), ez = Fr.num(Fr.sub(S.eye[2], Fr.mul(Fr.make(cj), Wf)));
+        const scan = scanAt(lv) + extra, fr = from < 0 ? 0 : scanAt(lv) + from; let n = 0;
+        for (let di = -scan; di <= scan; di++) for (let dj = -scan; dj <= scan; dj++) {
+            const r2 = di * di + dj * dj;
             if (r2 > scan * scan || r2 < fr * fr) continue;
-            CULL.scanned++; const t = thingOf(i, j, lv); if (t && keptAt(t, e)) { out.push(t); n++; }
+            CULL.scanned++; const t = thingOf(ci + BigInt(di), cj + BigInt(dj), lv); if (!t) continue;
+            t.r = [di * w + t.lc[0] - ex, t.lc[1] - ey, dj * w + t.lc[2] - ez];
+            if (keptAt(t)) { out.push(t); n++; }
         }
         CULL.perLevel.push([lv, n]);
     }
@@ -254,7 +274,7 @@ function eyeF() { return S.eye.map(Fr.num); }
 
 // ---------- readings ----------
 function thumbCoordsExact(t, E, R, k) {   // x = Rᵀ (C − E), optional world scale k (a fraction)
-    const C = t.c.map(v => Fr.dy(v));
+    const C = t.C;
     const kk = k || ONE;
     const v = [0, 1, 2].map(i => Fr.sub(Fr.mul(kk, C[i]), Fr.mul(kk, E[i])));
     return [0, 1, 2].map(j => Fr.add(Fr.add(Fr.mul(R[j], v[0]), Fr.mul(R[3 + j], v[1])), Fr.mul(R[6 + j], v[2])));
@@ -318,7 +338,7 @@ function stride(dir, n = 1) {
 // read from where it stands do not (a read pays nothing for depth). G stops before the thing is nearer than its breadth.
 function towardTarget(f) {
     const t = S.target; if (!t) return false;
-    const C = t.c.map(v => Fr.dy(v)), D = [0, 1, 2].map(i => Fr.sub(S.eye[i], C[i]));
+    const C = t.C, D = [0, 1, 2].map(i => Fr.sub(S.eye[i], C[i]));
     const d2 = D.reduce((a, x) => Fr.add(a, Fr.mul(x, x)), ZERO), bb = Fr.dy(t.b), b2 = Fr.mul(bb, bb);
     if (Fr.sign(Fr.sub(Fr.mul(Fr.mul(f, f), d2), b2)) < 0) return false;   // would be nearer than its breadth
     S.eye = [0, 1, 2].map(i => Fr.add(C[i], Fr.mul(f, D[i]))); S.walk = { key: null, m: [], strides: 0 }; S.goes++;
@@ -426,8 +446,8 @@ function edge(a, b) {   // clip at the near plane
     if (b[2] < near) { const t = (near - b[2]) / (a[2] - b[2]); b = [b[0] + t * (a[0] - b[0]), b[1] + t * (a[1] - b[1]), near]; }
     return [screenOf(a), screenOf(b)];
 }
-function rayBox(e, F, t) {   // slab test, the thing's box
-    const lo = [t.x0, 0, t.z0], hi = [t.x0 + t.w, t.h, t.z0 + t.d]; let t0 = 0, t1 = Infinity;
+function rayBox(e, F, t) {   // slab test, the thing's box, from the eye at e (relative coordinates: e = 0)
+    const lo = [t.r[0] - t.w / 2, t.r[1] - t.h / 2, t.r[2] - t.d / 2], hi = [t.r[0] + t.w / 2, t.r[1] + t.h / 2, t.r[2] + t.d / 2]; let t0 = 0, t1 = Infinity;
     for (let i = 0; i < 3; i++) {
         if (Math.abs(F[i]) < 1e-12) { if (e[i] < lo[i] || e[i] > hi[i]) return null; continue; }
         let a = (lo[i] - e[i]) / F[i], b = (hi[i] - e[i]) / F[i]; if (a > b) [a, b] = [b, a];
@@ -437,7 +457,7 @@ function rayBox(e, F, t) {   // slab test, the thing's box
 }
 function colourOf(t, P, e, isTarget) {
     if (isTarget) return '#f2c14e';
-    const x = thumbCoordsF(t.c, e, P);
+    const x = thumbCoordsF(t.r, e, P);
     if (x[0] <= 0 || x[1] <= 0 || x[2] <= 0) return '#6b7280';
     const r = ((x[0] + x[1] + x[2]) / 3) / (S.H || 1);
     if (r <= 1) return '#4fd1c5';
@@ -445,7 +465,7 @@ function colourOf(t, P, e, isTarget) {
     return `rgb(${Math.round(167 - 40 * L)},${Math.round(139 - 50 * L)},${Math.round(250 - 30 * L)})`;
 }
 function frame() {
-    const P = pose(), e = eyeF();
+    const P = pose(), e = [0, 0, 0], ey = Fr.num(S.eye[1]);   // everything drawn from the eye: a floating origin
     g.fillStyle = '#0b0f17'; g.fillRect(0, 0, W, Hh);
     if (S.show.heat && heatImg) g.drawImage(heatImg, 0, 0, W, Hh);
     // rings of equal share of the heat: 1 − 1/√(1 + r²) = q
@@ -461,26 +481,27 @@ function frame() {
     }
     // the ground grid, every 8 units round the eye
     g.strokeStyle = 'rgba(135,150,171,0.16)'; g.lineWidth = 1; g.beginPath();
-    const gx = Math.round(e[0] / 8) * 8, gz = Math.round(e[2] / 8) * 8, Rg = 160;
+    const E8 = Fr.make(8), gx = -Fr.num(Fr.sub(S.eye[0], Fr.mul(E8, Fr.make(floorFr(S.eye[0], E8))))),
+        gz = -Fr.num(Fr.sub(S.eye[2], Fr.mul(E8, Fr.make(floorFr(S.eye[2], E8))))), Rg = 160;   // the grid's lines from the eye, exactly placed
     for (let k = -Rg; k <= Rg; k += 8) {
-        for (const seg of [[[gx + k, 0, gz - Rg], [gx + k, 0, gz + Rg]], [[gx - Rg, 0, gz + k], [gx + Rg, 0, gz + k]]]) {
-            const s = edge(project(sub(seg[0], e), P), project(sub(seg[1], e), P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); }
+        for (const seg of [[[gx + k, -ey, gz - Rg], [gx + k, -ey, gz + Rg]], [[gx - Rg, -ey, gz + k], [gx + Rg, -ey, gz + k]]]) {
+            const s = edge(project(seg[0], P), project(seg[1], P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); }
         }
     }
     g.stroke();
     // the things, and the one under the crosshair
-    const things = thingsNear(e); let best = null, bt = Infinity;
+    const things = thingsNear(); let best = null, bt = Infinity;
     for (const t of things) { const hit = rayBox(e, P.F, t); if (hit !== null && hit < bt) { bt = hit; best = t; } }
     if (S.lock && things.includes(S.lock) && rayBox(e, P.F, S.lock) !== null) best = S.lock; else S.lock = null;
     // the focus is the scale of what is under the crosshair; with nothing there, the scale of the eye's own height (2 at
     // the start, scale 0), so that going down to the small scales brings them in
-    if (!S.holdFocus) S.focus = best ? best.lv : Math.max(-BELOW, Math.min(LEVELS, Math.round(Math.log2(Math.max(1e-300, e[1]) / 2))));
+    if (!S.holdFocus) S.focus = best ? best.lv : Math.max(-BELOW, Math.min(LEVELS, Math.round(Math.log2(Math.max(1e-300, ey) / 2))));
     if (best !== S.target) { S.target = best; S.walk = { key: null, m: [], strides: 0 }; }
-    if (S.target && !S.holdH) { const x = thumbCoordsF(S.target.c, e, P); S.H = Math.max(1e-6, (x[0] + x[1] + x[2]) / 3); }
+    if (S.target && !S.holdH) { const x = thumbCoordsF(S.target.r, e, P); S.H = Math.max(1e-6, (x[0] + x[1] + x[2]) / 3); }
     g.lineWidth = 1.1;
     for (const t of things) {
         const isT = t === S.target; g.strokeStyle = colourOf(t, P, e, isT); g.lineWidth = isT ? 2 : 1.1; g.beginPath();
-        for (const [a, b] of t.edges) { const s = edge(project(sub(a, e), P), project(sub(b, e), P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } }
+        for (const [a, b] of t.edges) { const s = edge(project(add3(a, t.r), P), project(add3(b, t.r), P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } }
         g.stroke();
     }
     // the three thumbs: each lands at r = √2 on the screen; the triangle between them the wedge's edge
@@ -507,9 +528,11 @@ const RING = (() => { const pts = []; for (let i = 0; i <= 16; i++) { const t = 
     return all; })();
 function ring(cx, cy, r) { g.beginPath(); RING.forEach(([a, b], i) => i ? g.lineTo(cx + r * a, cy + r * b) : g.moveTo(cx + r * a, cy + r * b)); }
 function sub(p, e) { return [p[0] - e[0], p[1] - e[1], p[2] - e[2]]; }
+function add3(p, e) { return [p[0] + e[0], p[1] + e[1], p[2] + e[2]]; }
 
 // ---------- the panel ----------
 const panel = document.getElementById('panel'), out = document.getElementById('out');
+function shortFr(f) { const s = Fr.str(f); return s.length <= 24 ? s : (Fr.sign(f) < 0 ? '−' : '') + 'about 10^' + (f.n.toString().replace('-', '').length - f.d.toString().length) + ' (' + s.length + ' characters exact)'; }
 function fmt(f) { const x = Fr.num(f); return Math.abs(x) >= 1e5 || (Math.abs(x) < 1e-3 && x !== 0) ? x.toExponential(4) : x.toFixed(5); }
 let lastHtml = '';
 function panelHtml() {
@@ -519,7 +542,7 @@ function panelHtml() {
         if (!X) h += '<p>nothing; turn toward a thing</p>';
         else {
             const t = X.t;
-            h += `<p>a ${t.kind}, ${t.w} × ${t.h} × ${t.d}, its centre (${t.c.join(', ')}), in ${X.facing}</p>`;
+            h += `<p>a ${t.kind}, ${t.w} × ${t.h} × ${t.d}, its centre (${t.C.map(shortFr).join(', ')}), in ${X.facing}</p>`;
             h += '<table><tr><td>thumb</td><td>reach</td><td>in thumbs</td></tr>' + ['a', 'b', 'c'].map((n, i) =>
                 `<tr><td>${n}</td><td class="num">${fmt(X.x[i])}</td><td class="num">${(Fr.num(X.x[i]) / S.H).toFixed(4)}</td></tr>`).join('') + '</table>';
             h += `<p>reach along the look m = ${fmt(X.m)}; the thumb H = ${S.H.toFixed(3)}${S.holdH ? ' (held)' : ' (on this thing, so it is one thumb out)'}</p>`;
@@ -550,7 +573,7 @@ function panelHtml() {
     }
     if (S.show.digits) {
         h += '<h3>a read and a write, by the digit</h3>';
-        if (X) { const t = X.t, d = Math.hypot(...[0, 1, 2].map(i => t.c[i] - Fr.num(S.eye[i])));
+        if (X) { const t = X.t, d = Math.hypot(...t.r);
             h += `<p>the thing is ${(d / t.b).toFixed(3)} of its own breadths off, at scale ${t.lv} (things there ${t.b} across${t.lv < 0 ? ', a dyadic fraction' : ''}); G goes half way, B backs off to twice as far.</p>`; }
         h += `<p>the eye's place, a write: its longest denominator ${eyeDigits()} digits, after ${S.goes} halvings or doublings and ${S.anchors} re-anchorings.</p>`;
         if (X) h += `<p>the slopes read from it: ${slopeDigits(X)} digits at most. Going half way doubles every reach along the thumbs alike, so each ratio of reaches is unmoved by the halving: the read pays nothing for being near, the place pays a binary digit a halving.</p>`;
@@ -615,9 +638,9 @@ function tick() {
 window.__thumbsWalk = {
     Fr, exact: () => exactOf(S.target), checks, turnBy, tiltBy, frame: () => frame(),
     // the cull at the eye now: cells scanned, things kept per level, and (C3) any thing past the scan that would qualify
-    cull() { const e = S.eye.map(Fr.num), kept = thingsNear(e), res = { levels: LEVELS, below: BELOW, share: SHARE, focus: S.focus, scan: SCAN, scanned: CULL.scanned,
-            perLevel: CULL.perLevel.slice(), kept: kept.length, belowGrain: kept.filter(t => !keptAt(t, e)).length };
-        res.missed = thingsNear(e, 2, 1).length; thingsNear(e); return res; },
+    cull() { const kept = thingsNear(), res = { levels: LEVELS, below: BELOW, share: SHARE, focus: S.focus, scan: SCAN, scanned: CULL.scanned,
+            perLevel: CULL.perLevel.slice(), kept: kept.length, belowGrain: kept.filter(t => !keptAt(t)).length };
+        res.missed = thingsNear(2, 1).length; thingsNear(); return res; },
     // run the pipeline with every trigonometric function replaced by a counter; nothing in turning, projecting,
     // picking, walking or the exact checks should call one
     trigFree(steps = 200) {

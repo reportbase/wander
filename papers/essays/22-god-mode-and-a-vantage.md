@@ -1,7 +1,7 @@
 # God mode and a vantage: what a walk on whole numbers showed
 
 *The twenty-second of a series of essays on what can be known from where one stands. Draft, 13 November 2026. It gathers
-what one page, `thumbs-walk.html`, showed over six runs in one day (TWK, `plans/twk-plan.md`; SPN R930–R935), about the
+what one page, `thumbs-walk.html`, showed over seven runs in one day (TWK, `plans/twk-plan.md`; SPN R930–R937), about the
 difference between classical geometry's view from nowhere and a read from somewhere.*
 
 Open a map on a phone and pinch. The streets come, then the buildings, then the house numbers; pinch the other way and
@@ -11,13 +11,13 @@ a player walk from one horizon to the next does the same: it streams the ground 
 a seed when it is needed.
 
 That is engineering, and good engineering. This essay is about the geometry under it. One page was built to see how far a
-first-person view can go on whole numbers alone, with no trigonometry and no list of things stored, and over six runs it
+first-person view can go on whole numbers alone, with no trigonometry and no list of things stored, and over seven runs it
 kept showing the same thing from different sides: classical geometry is a view with no standpoint, very powerful, and
 everything it gives it gives by holding the whole; a read has a standpoint, holds a fixed amount, and does not need the
 whole to exist as a count anywhere it can reach.
 
 The order: what the blueprint is good for (§1), a view on whole numbers (§2), the tower and the scaffolding (§3), keeping
-by size on the screen (§4), each scale its share (§5), what nearness costs (§6), something to read (§7), what is classical
+by size on the screen (§4), each scale its share (§5), what nearness and distance cost (§6), something to read (§7), what is classical
 and what is ours (§8), and what it changes (§9).
 
 *Demo: `thumbs-walk.html` (W A S D walk, G half way to the thing under the crosshair, B back, M the menu; desktop only).*
@@ -127,7 +127,7 @@ So scales without end, both ways, cost a fixed amount, set by the grain and the 
 there are. That is the Cauchy's tail doing what it does in every essay of this series: it gives each far stretch the same
 share as the last one in and the next one out, so an endless run of them has a finite total.
 
-## 6. Nearness costs the place, not the read
+## 6. Nearness and distance cost the place, not the read
 
 I expected depth to cost digits in the readings. At 2⁻²⁰ the coordinates of the eye and the things are fractions with
 twenty more binary digits, and I predicted the target's slopes would carry four to thirty more decimal digits. They
@@ -143,6 +143,13 @@ On a box 23 of its own breadths off, four halvings left the three pair slopes th
 then stopped, since a fifth would put the eye inside its breadth. Four presses of B put the eye back exactly where it began.
 The eye's fractions gained a binary digit a halving. A menu panel shows both counts side by side: the place, a write, paying
 by the digit; the read paying nothing for being near.
+
+Distance from the start is the same story. Until run 7 the page held its view only to about 10¹² units from where it
+began, because it read the eye's exact place as a double when choosing which cells to look at, and past 2⁵³ a double
+cannot count cells one by one. Now every cell is found from the eye's exact place and everything else is worked out from
+the eye, the classical floating origin done in fractions. 10¹⁰⁰ units out, and a millionth of the size there, it holds
+the same two thousand or so things, the same checks hold and the slopes have the same 22 to 26 digits. The eye's place
+takes 101 digits.
 
 ## 7. Something to read, and K of it
 
@@ -194,7 +201,7 @@ states ratios; the place an observer stands is the one thing that has to be writ
 
 ## Sources
 
-- `../../plans/twk-plan.md`: the plan and runs 1–6 (predictions, tables, kills).
+- `../../plans/twk-plan.md`: the plan and runs 1–7 (predictions, tables, kills).
 - *Reads and Writes* (`../readers-and-writers.md`): §6 "K and N" and "Something to read, and K of it" (R935); §7, the
   read's heat per ratio.
 - Essay 4 (near and far), essay 16 §10 ("A world made where the view reaches"), essay 20 (scaffolding).
