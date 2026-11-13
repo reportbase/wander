@@ -605,3 +605,47 @@ angles and a pipeline would hold as constants (T1 not killed as to sines and cos
 pictures within 2.4·10⁻¹² px (T2 not killed). Both lay the world on a signed grid of cells and hold the eye in it (T3).
 96 turns retraced: the page exactly, the classical float yaw 2.8·10⁻¹⁷ rad off (T4 not killed). On the page: n, k, c in
 the menu's checks.
+
+## Run 15: things that move (predictions, 13 November 2026, written and committed before any change; Tom: "Proceed", to
+testing motion)
+
+What is added. Movers: things in the sky at every scale, each scale's movers sharing one velocity V_j per tick (a dyadic
+fraction, a different heading each scale, about 2^j/16 units a tick), each mover's centre exact, C(T) = C₀ + V_j·T at
+tick T (a whole number). A mover belongs to the cell of its start; the read finds the movers near the eye by scanning
+the cells about eye − V_j·T at that scale (the eye in the movers' own frame), by the same keep rule as the ground. No list
+of movers is kept, and no mover is stepped. The blueprint to set beside it is the classical one: every mover in a region
+stored at tick T₀ and stepped one tick at a time (C += V_j), its kept set worked out by the same rule at each tick.
+
+Predictions:
+- V1: at every sampled tick, the movers the read holds are, key for key, the movers the stepped blueprint keeps (0 missing,
+  0 extra), with the eye still and along a seeded walk; focus and grain held, so only motion changes what is kept.
+- V2: the read's mover cells scanned the same at every tick (to the cell) and its movers held within ±30% of their mean
+  over the run; the stepped blueprint's work N_stored × ticks.
+- V3: a mover stepped tick by tick lands exactly (fraction equality) where the read puts it by C₀ + V·T, at T = 1, 10, 10²,
+  10³, 10⁴; and at T = 10³⁰ the read still gives each held mover's exact place (the eye taken there), with the same count
+  of cells scanned.
+- V4: the ground world unmoved: with movers on, the ground things held are the same keys as with movers off; `?movers=0`
+  gives run 13's 2,195 at the start.
+- V5: for a mover under the crosshair, the exact checks (the three pair slopes multiply to 1; w(s)·w(1/s) = −1) hold at
+  every sampled tick.
+
+**Run 15** (`runs/twk/run15.mjs`, output `runs/twk/run15-out.json`; headless Chromium, 1280 × 720, time paused, focus
+held). Nothing killed.
+- V1: eye still, 21 ticks compared over 200 (every 10th): 0 missing, 0 extra; along a seeded walk (a stride at about half
+  the ticks, so about 25 units), 0 and 0; from T₀ = 10³⁰, 7 ticks over 60, 0 and 0. At every compared tick each held
+  mover's read place equalled its stepped place exactly. The stepped blueprint stored 3,477, 3,622 and 3,627 movers and
+  did 695,400, 724,400 and 217,620 fraction additions; the read stored none and stepped none.
+- V2: mover cells scanned 29,085 at every tick in all three (the ground's count, the same keep rule and grain); movers held
+  163 to 167 (mean 165.1), 164 to 169 walking, 165 to 166 at 10³⁰.
+- V3: one mover stepped tick by tick from C₀ equal to C₀ + V·T at T = 1, 10, 10², 10³, 10⁴. Held at T = 0, 10³ and 10³⁰:
+  170, 168, 165, the same 29,085 cells.
+- V4: ground held 2,195 with movers on (2,362 with them), 2,195 with `?movers=0`; against a made blueprint with movers on,
+  0 missing, 0 extra.
+- V5: the first 20 held movers at T = 0, 10², 10⁴ and 10³⁰: the pair slopes multiply to 1 and w(s)·w(1/s) = −1 with
+  |w|² = 1 for all 80, exact. (Checked on held movers through the hook, not by putting each under the crosshair.)
+
+What it does not show: the read and the stepped blueprint take each mover's start, size and velocity from the same
+hashed cell, so V1 checks that scanning in the movers' own frame finds every mover the rule keeps and places it where
+stepping puts it; it does not compare two independent worlds. All movers at a scale share one velocity, which is what
+lets one frame per scale hold them; things each with its own velocity, or turning, are not tested. On the page the
+movers draw at 42 frames a second headless with time running.

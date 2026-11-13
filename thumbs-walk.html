@@ -37,6 +37,9 @@
     againstStored(), againstMade(half). N (TWK run 13): n doubles the things a cell (?dens=), k holds K near 2,100 by the read's own
     count (?kfix=); c (run 14) draws one walk the page's way and a classical way (hook density(), twoWays(seed, n)). U takes the eye ten times farther out; the menu then gives the cells a blueprint stored
     from the start to there would have (exact, a count, never made) beside the cells the read scans (hook toHere(), outTenfold()).
+    Movers (TWK run 15, R948): boxes in the sky at every scale, each scale at one rational velocity, a mover's place C₀ + V·T
+    exact at tick T (60 a second; T pauses); the read scans the cells about eye − V·T, nothing stepped or stored. Hook
+    moversNear(), moversAgainstStepped(o), moverSteps(). ?movers=0 takes them away, ?time=0 starts paused, ?tick= sets T.
     ?q=&ky=&kp=&x=&z=&menu=1&sky=1&heat=0&thumbs=0&anchor=0
     Hook window.__thumbsWalk: Fr (fractions), exact(), checks(), set({q, ky, kp, eye}), trigFree(steps), stride(dir, n), target(),
     state(), sky().
@@ -91,7 +94,7 @@
 </div>
 <div id="panel">
     <h2>Three thumbs, walking</h2>
-    <p>W A S D walk (shift: eight strides at a time), G half way to the thing under the crosshair, B back to twice as far, drag or the arrow keys turn, the wheel sets the thumb, H holds it, M the menu.</p>
+    <p>W A S D walk (shift: eight strides at a time), G half way to the thing under the crosshair, B back to twice as far, drag or the arrow keys turn, the wheel sets the thumb, H holds it, M the menu. T stops and starts time: the boxes in the sky move, each scale at its own velocity, found where they are now by scanning the cells about the eye in their own frame (nothing stepped or stored).</p>
     <p>On a touch screen: drag with one finger to look, pinch to set the thumb (fingers apart, a larger thumb), hold ▲ ◀ ▼ ▶ to walk, ×8 for eight strides at a time, G, B and H as the keys.</p>
     <p><button class="run" data-act="u">U ten times out</button> <button class="run" data-act="p">P against a made blueprint</button> <button class="run" data-act="n">n denser</button> <button class="run" data-act="k">k hold K</button> <button class="run" data-act="c">c two ways</button></p>
     <h3>show</h3>
@@ -267,7 +270,7 @@ function blueprint() {
 // the read's held things set beside the blueprint: how many lie in it, and whether the read holds any thing the blueprint
 // lacks (it should hold none where the blueprint reaches)
 function besideBlueprint() {
-    const B = blueprint(), held = thingsNear(); let inside = 0, missing = 0, outsideBox = 0, below = 0;
+    const B = blueprint(), held = thingsNear().filter(t => !t.mover); let inside = 0, missing = 0, outsideBox = 0, below = 0;
     for (const t of held) {
         if (t.lv < 0 || t.lv > B.top) { below++; continue; }
         const x = Fr.num(t.C[0]), z = Fr.num(t.C[2]);
@@ -286,7 +289,7 @@ function compareSets(read, bp) { let missing = 0, extra = 0; for (const k of bp)
     return { read: read.size, blueprint: bp.size, missing, extra }; }
 // the stored blueprint (scales 0 to 8, the square about the start) against the read at the eye now
 function againstStored() {
-    const B = blueprint(), held = thingsNear(), read = new Set(), bp = new Set();
+    const B = blueprint(), held = thingsNear().filter(t => !t.mover), read = new Set(), bp = new Set();
     for (const t of held) if (t.lv >= 0 && t.lv <= B.top && Math.abs(Fr.num(t.C[0])) <= B.R0 && Math.abs(Fr.num(t.C[2])) <= B.R0) read.add(t.key);
     for (const q of B.list) if (keepExact(q, q.C)) bp.add(q.key);
     return { ...compareSets(read, bp), N: B.list.length, K: held.length, used: bp.size / B.list.length };
@@ -296,7 +299,7 @@ function againstStored() {
 function segsOf(edges, r, P) {   // a thing's edges on the screen, through the page's own projection and near clip
     const out = []; for (const [a, b] of edges) { const s = edge(project(add3(a, r), P), project(add3(b, r), P)); if (s) out.push(s); } return out; }
 function againstMade(half = 1, drawn = false) {
-    const held = thingsNear(), read = new Set(held.map(t => t.key)), scanned = CULL.scanned, bp = new Set(); let cells = 0;
+    const held = thingsNear().filter(t => !t.mover), read = new Set(held.map(t => t.key)), scanned = CULL.scanned, bp = new Set(); let cells = 0;
     const recs = drawn ? new Map() : null;
     for (let lv = -BELOW; lv <= LEVELS; lv++) {
         const Wf = Fr.mul(Fr.make(CELL), Fr.dy(2 ** lv)), ci = floorFr(S.eye[0], Wf), cj = floorFr(S.eye[2], Wf), n = Math.ceil(half * scanAt(lv));
@@ -415,7 +418,7 @@ function levelCands(lv, R, ci, cj) {   // every thing in the cells within R of t
 }
 // what is held depends on where the eye is and on the grain, never on where it looks, so a turn reuses it (R946)
 let nearCache = { key: null, out: null, scanned: 0, examined: 0, perLevel: [] };
-function thingsNear(extra = 0, from = -1) {
+function groundNear(extra = 0, from = -1) {
     const ck = extra === 0 && from < 0 ? S.eye.map(f => f.n + '/' + f.d).join(',') + '|' + (GLIDE ? S.fg : S.focus) + '|' + GS + '|' + DENS : null;
     if (ck && nearCache.key === ck) { CULL.scanned = nearCache.scanned; CULL.examined = nearCache.examined; CULL.perLevel = nearCache.perLevel; return nearCache.out; }
     const out = []; CULL.scanned = 0; CULL.examined = 0; CULL.perLevel = []; const ey = Fr.num(S.eye[1]);
@@ -455,13 +458,108 @@ function thingsNear(extra = 0, from = -1) {
     return out;
 }
 
+// ---------- things that move (TWK run 15, R948; Tom: "Proceed") ----------
+// at every scale a second sparse set of flat boxes, lifted off the ground, each moving at its scale's velocity V_j (2^j/16
+// a tick, a direction of its own each scale, a rational). Its place at tick T is C₀ + V_j·T, exact. The read finds the movers
+// near the eye by scanning, in the movers' own frame, the cells about eye − V_j·T at that scale, the same cells and the same
+// keep rule as the ground; nothing is stepped, stored or counted. ?movers=0 takes them away; T pauses and runs time.
+const MOVERS = QS.get('movers') !== '0', MDIRS = [[3, 4], [-4, 3], [5, 0], [-3, -4], [0, 5], [4, -3], [-5, 0], [3, -4]];
+const mvVelMemo = new Map();
+function mvVel(lv) { if (!mvVelMemo.has(lv)) { const [a, b] = MDIRS[((lv % 8) + 8) % 8], s = Fr.mul(Fr.make(1, 80), Fr.dy(2 ** lv));
+    mvVelMemo.set(lv, [Fr.mul(Fr.make(a), s), Fr.mul(Fr.make(b), s)]); } return mvVelMemo.get(lv); }
+function moverAt(t, T) { const Tf = Fr.make(T); return [Fr.add(t.C0[0], Fr.mul(t.V[0], Tf)), t.C0[1], Fr.add(t.C0[2], Fr.mul(t.V[1], Tf))]; }
+function moverOf(i, j, lv) {
+    const key = 'm' + lv + ':' + i + ',' + j; if (cellCache.has(key)) return cellCache.get(key);
+    let t = null; const L = 64 * lv + 777777, sc = 2 ** lv, h = k => hash(i, j, k + L);
+    if (h(1) < 0.08) {
+        t = { kind: 'box', mover: true, ox: (2 + Math.floor(h(3) * 10)) * sc, oz: (2 + Math.floor(h(4) * 10)) * sc,
+              w: (6 + 2 * Math.floor(h(5) * 4)) * sc, d: (4 + 2 * Math.floor(h(6) * 3)) * sc, h: 2 * sc, lift: (24 + 8 * Math.floor(h(7) * 4)) * sc };
+        t.key = key; t.lv = lv; t.i = i; t.j = j; t.b = Math.max(t.w, t.d, t.h);
+        t.lc = [t.ox + t.w / 2, t.lift + t.h / 2, t.oz + t.d / 2];
+        const Wc = Fr.mul(Fr.make(CELL), Fr.dy(sc));
+        t.C0 = [Fr.add(Fr.mul(Fr.make(i), Wc), Fr.dy(t.lc[0])), Fr.dy(t.lc[1]), Fr.add(Fr.mul(Fr.make(j), Wc), Fr.dy(t.lc[2]))];
+        t.V = mvVel(lv);
+        Object.defineProperty(t, 'C', { get() { return moverAt(t, S.tick); } });   // where it is now, exact
+        Object.defineProperty(t, 'c', { get() { return t.C.map(Fr.num); } });
+        t.edges = edgesOf(t); t.r = [0, 0, 0];
+    }
+    cellCache.set(key, t); return t;
+}
+let moverCache = { key: null, out: [] }; const mvLevel = {};
+function moversNear() {
+    if (!MOVERS) { CULL.mScanned = 0; return []; }
+    const ck = S.eye.map(f => f.n + '/' + f.d).join(',') + '|' + S.tick + '|' + (GLIDE ? S.fg : S.focus) + '|' + GS;
+    if (moverCache.key === ck) { CULL.mScanned = moverCache.scanned; return moverCache.out; }
+    const out = [], ey = Fr.num(S.eye[1]), Tf = Fr.make(S.tick); let scanned = 0;
+    for (let lv = -BELOW; lv <= LEVELS; lv++) {
+        const V = mvVel(lv), Wf = Fr.mul(Fr.make(CELL), Fr.dy(2 ** lv)), w = CELL * 2 ** lv;
+        const px = Fr.sub(S.eye[0], Fr.mul(V[0], Tf)), pz = Fr.sub(S.eye[2], Fr.mul(V[1], Tf));   // the eye in the movers' frame
+        const ci = floorFr(px, Wf), cj = floorFr(pz, Wf);
+        const ex = Fr.num(Fr.sub(px, Fr.mul(Fr.make(ci), Wf))), ez = Fr.num(Fr.sub(pz, Fr.mul(Fr.make(cj), Wf)));
+        const scan = scanAt(lv), s2 = scan * scan; let L = mvLevel[lv];
+        if (!L || L.R < scan || L.ci !== ci || L.cj !== cj) {
+            const R = scan + 3, cands = [];
+            for (let di = -R; di <= R; di++) for (let dj = -R; dj <= R; dj++) { const r2 = di * di + dj * dj; if (r2 > R * R) continue;
+                const t = moverOf(ci + BigInt(di), cj + BigInt(dj), lv); if (t) cands.push({ t, r2, dx: di * w, dz: dj * w }); }
+            L = mvLevel[lv] = { R, ci, cj, cands };
+        }
+        scanned += cellsWithin(scan);
+        for (const c of L.cands) { if (c.r2 > s2) continue; const t = c.t;
+            t.r = [c.dx + t.lc[0] - ex, t.lc[1] - ey, c.dz + t.lc[2] - ez]; if (keptAt(t)) out.push(t); }
+    }
+    CULL.mScanned = scanned; moverCache = { key: ck, out, scanned }; return out;
+}
+function thingsNear(extra = 0, from = -1) {
+    const ground = groundNear(extra, from);
+    if (extra !== 0 || from >= 0 || !MOVERS) return ground;
+    const m = moversNear(); return m.length ? ground.concat(m) : ground;
+}
+// TWK run 15's test: the read's movers set beside the classical way, every mover near the eye's path stored at tick T0
+// (C₀ + V·T0, its record) and stepped one tick at a time by adding V, kept by the same rule at each compared tick. A mover
+// first needed later is stored as the full blueprint would have had it: its T0 record stepped to now, one add a tick.
+function moversAgainstStepped(o = {}) {
+    const T0 = BigInt(o.T0 ?? 0), ticks = o.ticks ?? 200, every = o.every ?? 10, walk = o.walk ?? 0;
+    let sd = (o.seed ?? 1) >>> 0; const rnd = () => ((sd = (Math.imul(sd, 1103515245) + 12345) >>> 0) / 4294967296);
+    const tick0 = S.tick, hf = S.holdFocus; S.holdFocus = true; S.fg = S.focus;
+    const store = new Map(); let adds = 0; const rows = [];
+    const cover = T => { for (let lv = -BELOW; lv <= LEVELS; lv++) {
+        const V = mvVel(lv), Wf = Fr.mul(Fr.make(CELL), Fr.dy(2 ** lv)), Tf = Fr.make(T);
+        const ci = floorFr(Fr.sub(S.eye[0], Fr.mul(V[0], Tf)), Wf), cj = floorFr(Fr.sub(S.eye[2], Fr.mul(V[1], Tf)), Wf), R = scanAt(lv) + 2;
+        for (let di = -R; di <= R; di++) for (let dj = -R; dj <= R; dj++) { const t = moverOf(ci + BigInt(di), cj + BigInt(dj), lv);
+            if (!t || store.has(t.key)) continue;
+            let C = moverAt(t, T0); for (let k = T0; k < T; k++) { C = [Fr.add(C[0], t.V[0]), C[1], Fr.add(C[2], t.V[1])]; adds++; }
+            store.set(t.key, { t, C }); } } };
+    try {
+        for (let k = 0; k <= ticks; k++) {
+            const T = T0 + BigInt(k);
+            if (k > 0) { for (const q of store.values()) { q.C = [Fr.add(q.C[0], q.t.V[0]), q.C[1], Fr.add(q.C[2], q.t.V[1])]; adds++; }
+                if (walk && rnd() < walk) stride('wasd'[Math.floor(rnd() * 4)], 1); }
+            if (k % every) continue;
+            S.tick = T; cover(T);
+            const read = new Set(moversNear().map(t => t.key)), bp = new Set(); let exact = true;
+            for (const q of store.values()) { if (keepExact(q.t, q.C)) bp.add(q.key || q.t.key);
+                if (read.has(q.t.key)) { const Cr = q.t.C; if (!(Fr.eq(Cr[0], q.C[0]) && Fr.eq(Cr[2], q.C[2]))) exact = false; } }
+            rows.push({ T: T.toString(), ...compareSets(read, bp), scanned: CULL.mScanned, stored: store.size, adds, exact });
+        }
+    } finally { S.tick = tick0; S.holdFocus = hf; }
+    return rows;
+}
+// one mover stepped tick by tick from C₀, set beside its read place C₀ + V·T at the given ticks
+function moverSteps(checks = [1, 10, 100, 1000, 10000]) {
+    let t = null; for (let i = 0n; !t; i++) t = moverOf(i, 3n, 0);
+    let C = t.C0.slice(), k = 0; const out = [];
+    for (const T of checks) { while (k < T) { C = [Fr.add(C[0], t.V[0]), C[1], Fr.add(C[2], t.V[1])]; k++; }
+        const R = moverAt(t, T); out.push({ T, same: Fr.eq(R[0], C[0]) && Fr.eq(R[2], C[2]) }); }
+    return { key: t.key, out };
+}
+
 // ---------- the pose ----------
 const params = new URLSearchParams(location.search);
 const S = {
     // the look held as whole numbers: q quarter turns and two half-slopes ky/128 (across) and kp/128 (up); no angle
     q: Math.round(+params.get('q') || 0), ky: Math.round(+params.get('ky') || 0), kp: Math.round(+params.get('kp') || 0), dragX: 0, dragY: 0,
     eye: [Fr.make(params.get('x') ? Math.round(+params.get('x')) : 0), Fr.make(2), Fr.make(params.get('z') ? Math.round(+params.get('z')) : -30)],
-    H: null, holdH: false, target: null, lastPoseKey: '', focus: 0, holdFocus: false, fg: 0, Hg: null, tLast: 0,
+    H: null, holdH: false, target: null, lastPoseKey: '', focus: 0, holdFocus: false, fg: 0, Hg: null, tLast: 0, tick: BigInt(params.get('tick') || 0), run: params.get('time') !== '0', tAcc: 0,
     walk: { key: null, m: [], strides: 0 },
     anchor: params.get('anchor') !== '0', anchors: 0, lastHeading: null, goes: 0, lock: null,
     show: { thumbs: params.get('thumbs') !== '0', heat: params.get('heat') !== '0', sky: params.get('sky') === '1',
@@ -890,6 +988,7 @@ function act(k) {   // one-shot actions, from a key or a touch button; true if k
     if (k === 'n') { DENS = DENS >= 16 ? 1 : DENS * 2; BP.list = null; updatePanel(true); return true; }
     if (k === 'k') { KFIX = KFIX ? 0 : 2100; if (!KFIX) GS = 1; updatePanel(true); return true; }
     if (k === 'c') { S.twoLast = twoWays(1, 60); updatePanel(true); return true; }
+    if (k === 't') { S.run = !S.run; updatePanel(true); return true; }
     if (k === 'o') { S.show.god = !S.show.god; document.getElementById('optGod').checked = S.show.god; updatePanel(true); return true; }
     return false;
 }
@@ -925,6 +1024,8 @@ for (const b of document.querySelectorAll('#pad button')) {
 for (const b of document.querySelectorAll('#panel [data-act]')) b.addEventListener('click', () => act(b.dataset.act));
 cv.addEventListener('wheel', ev => { ev.preventDefault(); S.holdH = true; S.H = (S.H || 1) * Math.pow(2, ev.deltaY > 0 ? 0.25 : -0.25); updatePanel(true); }, { passive: false });
 function tick() {
+    { const now = performance.now(); if (MOVERS && S.run && S.tPrev) { S.tAcc += Math.min(0.25, (now - S.tPrev) / 1000) * 60;
+        const k = Math.floor(S.tAcc); if (k > 0) { S.tick += BigInt(k); S.tAcc -= k; } } S.tPrev = now; }   // time: 60 ticks a second
     const n = keys.has('shift') ? 8 : 1;
     for (const k of ['w', 'a', 's', 'd']) if (keys.has(k)) stride(k, n);
     if (keys.has('arrowleft')) turnBy(-1); if (keys.has('arrowright')) turnBy(1);
@@ -952,10 +1053,11 @@ window.__thumbsWalk = {
     }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff, blueprint: () => { const B = blueprint(); return { N: B.list.length, cells: B.cells, R0: B.R0, top: B.top }; }, besideBlueprint, toHere, outTenfold, twoWays, density: () => ({ dens: DENS, kfix: KFIX, gs: GS, held: thingsNear().length, scanned: CULL.scanned, examined: CULL.examined }), againstStored, againstMade, walkTest, buildCount, cellFormula,
     digits: () => ({ eye: eyeDigits(), slopes: slopeDigits(exactOf(S.target)), focus: S.focus, goes: S.goes }),
     target: () => S.target, pose,
+    exactOfThing: t => exactOf(t), againstMadeNow: h => againstMade(h), moversNear, moversAgainstStepped, moverSteps, moverAt, groundNear: () => groundNear(), tick: () => S.tick.toString(),
     set(o) { if (o.q !== undefined || o.ky !== undefined || o.kp !== undefined || o.eye) S.lock = null; if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
         if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.anchor !== undefined) S.anchor = !!o.anchor; if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
         if (o.focus !== undefined) { if (o.focus !== null) S.focus = S.fg = o.focus; S.holdFocus = o.focus !== null; }
-        if (o.dens !== undefined) { DENS = Math.max(1, Math.min(64, Math.round(o.dens))); BP.list = null; } if (o.kfix !== undefined) { KFIX = o.kfix ? Math.max(100, o.kfix) : 0; if (!KFIX) GS = 1; } if (o.gs !== undefined) GS = o.gs;
+        if (o.dens !== undefined) { DENS = Math.max(1, Math.min(64, Math.round(o.dens))); BP.list = null; } if (o.kfix !== undefined) { KFIX = o.kfix ? Math.max(100, o.kfix) : 0; if (!KFIX) GS = 1; } if (o.gs !== undefined) GS = o.gs; if (o.tick !== undefined) S.tick = BigInt(o.tick); if (o.run !== undefined) S.run = !!o.run;
         frame(); return this.state(); },
     state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH,
         target: S.target ? { kind: S.target.kind, c: S.target.c } : null, walk: walkSummary() }),

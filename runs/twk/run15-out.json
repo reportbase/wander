@@ -1,0 +1,122 @@
+{
+ "V4": {
+  "groundHeld": 2195,
+  "keptWithMovers": 2362
+ },
+ "V4made": {
+  "read": 2195,
+  "blueprint": 2195,
+  "missing": 0,
+  "extra": 0,
+  "cells": 38513,
+  "scanned": 29085,
+  "ratio": 1.3241533436479285
+ },
+ "V1still": {
+  "compared": 21,
+  "missing": 0,
+  "extra": 0,
+  "exact": true,
+  "heldMin": 163,
+  "heldMax": 167,
+  "heldMean": 165.0952380952381,
+  "scanned": [
+   29085
+  ],
+  "stored": 3477,
+  "adds": 695400
+ },
+ "V1walk": {
+  "compared": 21,
+  "missing": 0,
+  "extra": 0,
+  "exact": true,
+  "heldMin": 164,
+  "heldMax": 169,
+  "heldMean": 165.9047619047619,
+  "scanned": [
+   29085
+  ],
+  "stored": 3622,
+  "adds": 724400
+ },
+ "V1far": {
+  "compared": 7,
+  "missing": 0,
+  "extra": 0,
+  "exact": true,
+  "heldMin": 165,
+  "heldMax": 166,
+  "heldMean": 165.14285714285714,
+  "scanned": [
+   29085
+  ],
+  "stored": 3627,
+  "adds": 217620
+ },
+ "V3": {
+  "key": "m0:2,3",
+  "out": [
+   {
+    "T": 1,
+    "same": true
+   },
+   {
+    "T": 10,
+    "same": true
+   },
+   {
+    "T": 100,
+    "same": true
+   },
+   {
+    "T": 1000,
+    "same": true
+   },
+   {
+    "T": 10000,
+    "same": true
+   }
+  ]
+ },
+ "V3far": [
+  {
+   "tick": "0",
+   "held": 170
+  },
+  {
+   "tick": "1000",
+   "held": 168
+  },
+  {
+   "tick": "1e30",
+   "held": 165
+  }
+ ],
+ "V5": [
+  {
+   "t": "0",
+   "checked": 20,
+   "ok": 20
+  },
+  {
+   "t": "100",
+   "checked": 20,
+   "ok": 20
+  },
+  {
+   "t": "10000",
+   "checked": 20,
+   "ok": 20
+  },
+  {
+   "t": "1e30",
+   "checked": 20,
+   "ok": 20
+  }
+ ],
+ "V4off": {
+  "held": 2195
+ }
+}
+errors []
