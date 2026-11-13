@@ -420,3 +420,34 @@ that the cull has none at these places; they compare nothing else a blueprint do
 **In short.** Wherever the eye stands, out to 10¹⁰⁰ units, the read holds thing for thing what a blueprint made by
 reading every cell holds for that eye under the same rule, while scanning about a fifth of the cells that blueprint reads
 and storing nothing. On the page, P runs the same check where the eye is.
+
+## Runs 9, 10 and 11: along a walk, what is drawn, and the cost (planned 13 November 2026)
+
+Tom: "1 2 then 3". Each checks the read against a blueprint by brute force, as run 8 did; each states counts, not
+judgements. Predictions, committed before the hook functions are written:
+
+**Run 9, along a walk.** A seeded walk of 100 actions from each of three starts: the start (0, 2, −30); 10¹⁰⁰ out;
+10³⁰ out with G pressed until the focus is below scale 0. Each action is one of: strides (W A S D, 1 to 6), a turn or
+tilt (±1 to ±12 half-slopes), G, B. After each action the page draws a frame (so the focus and the target are its own),
+and a blueprint is made about the eye at every scale −8 to 8, every cell out to 1.5 scan radii each side (beyond the
+read's reach), the rule applied to exact centres.
+- **W1.** At every one of the 300 poses: 0 missing, 0 extra. *Killed* by any one.
+- **W2.** The walks exercise what could break it: across the three walks the focus takes at least 4 different values,
+  the eye is re-anchored at least 10 times, G and B each act at least 5 times. *Killed* if any is short (then the walk
+  did not test what it was meant to).
+
+**Run 10, what is drawn.** At the same 300 poses, every thing the blueprint keeps is projected from the blueprint's own
+record (its exact centre less the exact eye, rounded once to doubles; its box as stored) through the page's own
+projection and near-plane clip, and set beside the read's segments as the page draws them.
+- **D1.** At every pose the two give the same number of segments, thing for thing. *Killed* if not.
+- **D2.** Every segment's ends agree to within 10⁻⁶ pixels on a 1280 × 720 screen. *Killed* by any larger difference.
+
+**Run 11, the cost.** A blueprint of scales 0 to 8 built for squares of side 2·R0, R0 = 750, 1,500, 3,000, 6,000; and
+the read's cells scanned with the eye at the middle of each square and at 10¹⁰⁰.
+- **C1.** The blueprint's cells read are exactly Σ (2⌈R0/(24·2^j)⌉)² over j = 0 to 8, and grow by 4 ± 3% for each doubling
+  of R0 past 1,500. *Killed* otherwise.
+- **C2.** Its things N are 0.42 ± 0.01 of its cells (the hash's rate) at every R0. *Killed* otherwise.
+- **C3.** At every one of those eyes, with the same pose and focus, the read scans the same number of cells, within 1.5%.
+  *Killed* if not.
+- **C4.** By the same formula, a blueprint holding scales −8 to 8 over the R0 = 3,000 square reads more than 10⁹ cells.
+  *Killed* if fewer.
