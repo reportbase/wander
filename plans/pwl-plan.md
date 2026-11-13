@@ -117,3 +117,17 @@ not: its rounding at the eighth-turn crossing.
 A1 again with the scene's offsets not whole (corners at x ∈ {1.3, 3.7}, y ∈ {0, 1}, z ∈ {8.1, 10.3}), so rounding begins at
 once. **A1′.** plain32 breaks between 2·10⁴ and 4·10⁵, plain64 between 10¹³ and 2·10¹⁴ (as A1). fixed and ours still do
 not break to 10¹⁰⁰. *Killed* if any falls outside.
+
+### Run 2 (13 November 2026; `FRAC=1 node runs/pwl/pwl.mjs`, output `runs/pwl/pwl-out2.json`)
+
+plain32 first breaks at X = 10^5.25 (1.8·10⁵; 0.42 px at 10⁵, 1.67 px at 10^5.5); plain64 at 10^14 (0.10 px at 10¹³,
+0.74 px at 10¹⁴); fixed holds to 10¹⁰⁰ (6·10⁻¹² px at most); ours holds to 10¹⁰⁰ (1.4·10⁻¹⁴ px, the last division's
+rounding). **A1′ not killed.**
+
+**In short.** The plain pipelines hit the walls the formats predict (float32 near 10⁵ units out, float64 near 10¹⁴, turns
+drifting, the standard depth buffer losing 1% past 2·10⁴). With the classical fixes on, none of those walls remained within
+these ranges except as choices of width: a 64-bit sector index makes the world's identity repeat every 2⁶⁴ sectors, float
+re-squaring leaves a drift that float64 makes 10⁻¹⁴ and an integer heading removes, depth formats have finite steps.
+Nothing found was due to trigonometry or the two hemispheres. `thumbs-walk.html`'s pipeline passed each wall by holding
+more digits (the eye's place k + 1 digits at 10^k), and has one wall the classical integer heading does not: its rounding
+at the eighth-turn crossing, which left 93 of 100 long walks a step off on the way back.
