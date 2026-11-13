@@ -1,0 +1,201 @@
+# God mode and a vantage: what a walk on whole numbers showed
+
+*The twenty-second of a series of essays on what can be known from where one stands. Draft, 13 November 2026. It gathers
+what one page, `thumbs-walk.html`, showed over six runs in one day (TWK, `plans/twk-plan.md`; SPN R930–R935), about the
+difference between classical geometry's view from nowhere and a read from somewhere.*
+
+Open a map on a phone and pinch. The streets come, then the buildings, then the house numbers; pinch the other way and
+the city goes, then the country, then the coast of a continent. Nobody believes the phone holds the planet. It holds what
+the screen can show, fetched as the fingers move, and whatever is too small to see is not fetched at all. A game that lets
+a player walk from one horizon to the next does the same: it streams the ground near the player and makes the rest from
+a seed when it is needed.
+
+That is engineering, and good engineering. This essay is about the geometry under it. One page was built to see how far a
+first-person view can go on whole numbers alone, with no trigonometry and no list of things stored, and over six runs it
+kept showing the same thing from different sides: classical geometry is a view with no standpoint, very powerful, and
+everything it gives it gives by holding the whole; a read has a standpoint, holds a fixed amount, and does not need the
+whole to exist as a count anywhere it can reach.
+
+The order: what the blueprint is good for (§1), a view on whole numbers (§2), the tower and the scaffolding (§3), keeping
+by size on the screen (§4), each scale its share (§5), what nearness costs (§6), something to read (§7), what is classical
+and what is ours (§8), and what it changes (§9).
+
+*Demo: `thumbs-walk.html` (W A S D walk, G half way to the thing under the crosshair, B back, M the menu; desktop only).*
+
+---
+
+## 1. God mode
+
+Classical geometry is god mode. It stands nowhere. It holds every point at once, in amounts of one unit, with both signs
+of every axis, both hemispheres of every turn, the circle closed and π its number. From there it can add: the area of a
+field, the volume of a room, the total mass of a galaxy, the sum of a series. It can join: two maps made from two places
+become one map. It can say where everything is before anyone looks.
+
+This series calls that view the blueprint, and sets it beside a read only for comparison. It is not a criticism. The
+blueprint is why bridges stand. It is used because it is so strong.
+
+What it costs is that everything it gives, it gives by holding the whole. A total needs every term. A join needs both
+pieces in one frame, which means the size of each. A map of everything needs a count of everything, or at least a bound
+on where the counting stops. In a world laid out by a person, that is no trouble: the world has an N and the blueprint
+holds it. The question the page was built for is what a view from one place needs when nobody hands it an N.
+
+## 2. A view on whole numbers
+
+The page draws a wireframe field of boxes, towers and pyramids, seen from an eye a little above the ground. Every vertex
+is a whole point (or a half), made from its ground cell by a hash; no list of things is stored anywhere. Three thumbs,
+square to each other, come out of the eye, and the look runs down their diagonal, so the crosshair is the triple corner
+where the three thumbs' sweeps meet.
+
+The thumbs are not set by angles. Each is a column of a product of turns, and each turn is given by a half-slope p/q: its
+two parts are (q² − p²)/(q² + p²) and 2pq/(q² + p²), both fractions, and their squares add to 1. The three thumbs are then
+square to each other exactly, in fractions, with no rounding. The look itself is held as whole numbers: a count of
+quarter turns and two half-slopes in 128ths. Dragging the mouse steps a half-slope. Past an eighth of a turn the
+half-slope passes to the next quarter by tangent subtraction, (u − 1)/(1 + u), rounded to the nearest 128th. The screen's
+edge is a slope of 6/5 from the look. Walking is a stride of 1/4 along a heading that is itself a rational direction.
+
+Run 3 checked this by replacing every trigonometric function in the page with a counter and walking, turning and looking
+for 300 steps. The count was 0. The only place an arctangent is called is in showing each pair's share of its sweep out
+of Ω, which is a limit and is labelled as one.
+
+What this buys is exactness. For the thing under the crosshair, its three reaches along the thumbs are fractions, and so
+every pair of them gives a slope that is a fraction. The checks run on those fractions in BigInt arithmetic: the three
+pair slopes multiply to exactly 1; for each pair, w(s)·w(1/s) = −1, with w(s) = (1 − s² + 2is)/(1 + s²), so the
+simplified Euler's identity holds digit for digit; scaling the world and the eye together by 2, 7 or 1/3 changes no slope;
+changing the thumb H, the length the observer holds out, changes no slope either. Every machine running the page gets the
+same fractions.
+
+What it does not buy is speed. Nothing here says a page without sines is faster than a page with them. Graphics hardware
+computes sines very quickly. The point is that nothing a read needs requires them.
+
+## 3. The tower comes down; the scaffolding stays up
+
+A frame built from many turns is a product, and a product of fractions grows its denominators with every factor. If the
+page multiplied the new turn onto the old frame at each step of the mouse, the frame's fractions would grow without
+bound. It does not: it recomputes the frame from the one current turn each time. However the look got where it is, the
+history cancels. This is the tower of ratios: a/b times b/c is a/c, and the middle comes down.
+
+The eye's place is different. It is a running total of strides, each along whatever heading was current, and a total
+keeps every term. Run 2 walked a seeded path of 200 legs, turning between them. With the eye left as its running total,
+its longest denominator reached 102 digits by leg 50 and 129 at its most; the target's slopes, read from that eye, reached
+136 digits. With the eye put down on the nearest point of a 1/16 grid at each new heading, its denominator never passed
+6 digits and the slopes stayed under 10. Every check held both ways.
+
+Putting the eye down on a grid is a write: a mark made, an amount stated in a unit. It gives up one thing, the exact path
+back to where the walk began. No reading from where the eye now stands uses that path. The tower's middle terms cancel by
+themselves; the place's terms have to be taken down by hand, and taking them down is a write.
+
+Essay 20 called a denominator scaffolding: needed for each reading to be made, gone from what the readings give together.
+Here the two sides are on one screen. The frame is a chain of ratios and comes down for free. The place is a sum of
+amounts and stays up until it is written over.
+
+## 4. Keeping by size on the screen
+
+A blueprint of an endless field is an endless list. Run 4 replaced the field near the eye with a field at every scale:
+scale j has cells 24·2^j wide, each holding at most one thing with every length times 2^j. A thing is kept when its
+breadth b is at least a grain g times its distance d, and when the eye is not inside it, compared in squares, b² ≥ g²d²
+and d² ≥ b², so with no root and no angle. Since b at scale j is at most 32·2^j, a kept thing lies within 1,024·2^j
+units, and the same number of cells is scanned at every scale.
+
+The run found about 480 things kept at each scale, at the start and at five seeded places up to 10⁵ units out, and
+exactly 6,077 cells scanned a scale, wherever the eye stood. No kept thing was below the grain, and no thing past the scan
+would have qualified. What is held is set by the grain and the number of scales, never by how far the world goes.
+
+This is classical level of detail. Games and maps have kept things by their size on screen for decades, and they stream
+and generate their worlds rather than load them whole. The run shows only that the page does what they do, on fractions.
+
+But it leaves a cost. Each scale held about 480 things, so nine scales held 4,351 and every scale added costs as much
+again. A world at every scale, up and down without end, would still be a sum without end.
+
+## 5. Each scale its share
+
+The read already has a law for how its attention falls off with distance, from essay 4 and *Reads and Writes* §7: per
+ratio of distance, the heat of a read is (1/π)·sech(ln(d/H)), hottest at one thumb out (d = H) and falling off as one in
+2, 4, 8 thumbs past it, and the same inside it. Run 5 gave each scale that share. At k scales from the focus (the scale of
+what is under the crosshair), the grain is widened by √cosh(k·ln 2), computed as √((2^k + 2^−k)/2), so the count kept
+there goes as sech(k·ln 2).
+
+Predicted first and then measured: scales 0 to 4 from the focus kept 1.00, 1.02, 1.01, 1.00 and 1.10 of the predicted
+counts. Raising the top scale from 8 to 40 raised the total by 0.2%. Taking the bottom from −10 down to −40 changed
+nothing. The total held was about 4.5 times the focus scale's count, against the ideal π/ln 2 ≈ 4.53, the sum of sech
+over every scale. Two of the run's own predictions were killed, one by a bound of mine that was too tight (the scales
+below 0 added more than I said), one by my reasoning (§6).
+
+Then the eye was scaled down by 2⁻²⁰, a millionth, standing among things a millionth the size, and the counts were the
+same counts to within 4%: the view a millionth deep is the same view.
+
+So scales without end, both ways, cost a fixed amount, set by the grain and the share law, and not by how many scales
+there are. That is the Cauchy's tail doing what it does in every essay of this series: it gives each far stretch the same
+share as the last one in and the next one out, so an endless run of them has a finite total.
+
+## 6. Nearness costs the place, not the read
+
+I expected depth to cost digits in the readings. At 2⁻²⁰ the coordinates of the eye and the things are fractions with
+twenty more binary digits, and I predicted the target's slopes would carry four to thirty more decimal digits. They
+carried 22 to 26 digits deep down, against 22 to 26 at the start. The prediction was killed, and the reason is plain once
+said: a slope is a ratio of two reaches, and the factor 2⁻²⁰ is in both, so it cancels. It is the scale test of the whole
+series, scaling the world moves no read, showing up in a count of digits.
+
+The depth's cost was in the eye's own coordinates, about six more digits at 2⁻²⁰. The place pays; the read does not.
+
+Run 6 made it visible on the page. G moves the eye half way to the thing under the crosshair, in exact fractions along
+the line to its centre, so its direction does not move and its breadth on the screen doubles; B goes back to twice as far.
+On a box 23 of its own breadths off, four halvings left the three pair slopes the same fractions, digit for digit, and
+then stopped, since a fifth would put the eye inside its breadth. Four presses of B put the eye back exactly where it began.
+The eye's fractions gained a binary digit a halving. A menu panel shows both counts side by side: the place, a write, paying
+by the digit; the read paying nothing for being near.
+
+## 7. Something to read, and K of it
+
+What, then, does a read assume about the world? Not that the world is finite, and not that it is infinite. Tom's words
+(R935): "reader math says nothing about N, other than there is an N, we just only ever know K of it."
+
+On the page this is literal. No count of things exists in the program. A thing exists at a cell when a hash of the cell
+says so; the hash is a rule, and a rule is not asked for a total. The program holds K things, about 2,000 to 2,200 at the
+poses tried, and K does not change whether the field is taken to end at the edge of the scan or to go on forever.
+Whether the world comes counted is the blueprint's question. A read holds K of whatever there is to read; that there is
+something to read is all it says about N.
+
+What scales, then, is whatever has a vantage: the read scales because it holds its share at each scale and the share is
+summable; the write pays by the digit, for each place it puts down. The blueprint does not scale in this sense, because it
+has no standpoint from which a share could fall off.
+
+## 8. What is classical, and what is ours
+
+Tom asked, partway through, whether this is the proof that the read's mathematics has a computational advantage over the
+classical. My answer was no, and it should be said here.
+
+- Keeping things by their size on screen is classical level of detail. Streaming and generating a world from a seed is
+  what open-world games do. Exact rational turns from half-slopes are as old as Pythagorean triples. Tangent subtraction
+  is a textbook identity. The grain test in squares is a classical trick for avoiding a root.
+- A page with sines is not slower. The page without them is exact, and gives the same fractions on every machine; that
+  is a different virtue.
+- And none of this is purely theoretical: it runs, in a browser, at a few tens of milliseconds a frame.
+
+What is ours is two things. The share law: each scale held at its Cauchy share sech(k·ln 2), so scales without end cost a
+fixed total, about π/ln 2 times one scale's count. And the sorting: no count of the world enters anything the page reads;
+the readings take no more digits at any depth; what pays is the place, which is a write. The classical view has the same
+arithmetic available. What it does not have is a standpoint to fall off from.
+
+## 9. What it changes
+
+The blueprint is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on
+it, and wants totals, joins and a map of everything at once.
+
+What the walk showed is where it stops. Its strength is that it holds every point in one frame, and that same strength is
+what ties it to the count: a frame that holds every point holds how many there are. A read is weaker: it has a standpoint,
+one thumb's length held out, a share that falls off with distance, and K of whatever is there. Being weaker in that way is
+what lets it go on. It can walk from the size of a house to a millionth of it and see the same view, read the same
+fractions, and hold the same number of things, while the only thing that grows is the record of where it has been.
+
+The difference, stated once: the blueprint holds the world and states amounts; a read holds K of it from somewhere and
+states ratios; the place an observer stands is the one thing that has to be written, and it is the one thing that pays.
+
+---
+
+## Sources
+
+- `../../plans/twk-plan.md`: the plan and runs 1–6 (predictions, tables, kills).
+- *Reads and Writes* (`../readers-and-writers.md`): §6 "K and N" and "Something to read, and K of it" (R935); §7, the
+  read's heat per ratio.
+- Essay 4 (near and far), essay 16 §10 ("A world made where the view reaches"), essay 20 (scaffolding).
+- Demo: `../../thumbs-walk.html`.

@@ -61,7 +61,7 @@
 <button id="menuBtn" title="menu (M)">☰</button>
 <div id="panel">
     <h2>Three thumbs, walking</h2>
-    <p>W A S D walk (shift: eight strides at a time), drag or the arrow keys turn, the wheel sets the thumb, H holds it, M the menu.</p>
+    <p>W A S D walk (shift: eight strides at a time), G half way to the thing under the crosshair, B back to twice as far, drag or the arrow keys turn, the wheel sets the thumb, H holds it, M the menu.</p>
     <h3>show</h3>
     <label><input type="checkbox" id="optThumbs" checked> the three thumbs and the wedge</label>
     <label><input type="checkbox" id="optHeat" checked> the heat, 1/(4Ω(1 + r²)^(3/2)), and its rings of equal share</label>
@@ -70,6 +70,7 @@
     <label><input type="checkbox" id="optEuler" checked> Euler, simplified</label>
     <label><input type="checkbox" id="optOmega" checked> the shares in Ω</label>
     <label><input type="checkbox" id="optWalk" checked> the counted walk</label>
+    <label><input type="checkbox" id="optDigits" checked> a read and a write, by the digit (G half way, B back)</label>
     <label><input type="checkbox" id="optChecks"> the checks</label>
     <label><input type="checkbox" id="optAnchor" checked> re-anchor the eye at each new heading (take the scaffolding down)</label>
     <label><input type="checkbox" id="optAbout"> about</label>
@@ -212,9 +213,9 @@ const S = {
     eye: [Fr.make(params.get('x') ? Math.round(+params.get('x')) : 0), Fr.make(2), Fr.make(params.get('z') ? Math.round(+params.get('z')) : -30)],
     H: null, holdH: false, target: null, lastPoseKey: '', focus: 0, holdFocus: false,
     walk: { key: null, m: [], strides: 0 },
-    anchor: params.get('anchor') !== '0', anchors: 0, lastHeading: null,
+    anchor: params.get('anchor') !== '0', anchors: 0, lastHeading: null, goes: 0, lock: null,
     show: { thumbs: params.get('thumbs') !== '0', heat: params.get('heat') !== '0', sky: params.get('sky') === '1',
-            read: true, euler: true, omega: true, walk: true, checks: false, about: false },
+            read: true, euler: true, omega: true, walk: true, digits: true, checks: false, about: false },
 };
 const STRIDE = Fr.make(1, 4), GRID = 16n;
 function strideNow() { return S.focus >= 0 ? STRIDE : Fr.make(1, 4n * 2n ** BigInt(-S.focus)); }   // the stride shrinks with the focus's scale
@@ -226,11 +227,11 @@ function eyeDigits() { return Math.max(...S.eye.map(Fr.digits)); }
 // quarter turn by tangent subtraction, u' = (u − 1)/(1 + u) or (u + 1)/(1 − u), rounded to the nearest k/128
 const KMAX = 53, KPMAX = 85;
 function turnBy(dk) {
-    S.ky += dk; const Q = Number(QD);
+    if (dk) S.lock = null; S.ky += dk; const Q = Number(QD);
     while (S.ky > KMAX) { S.q++; S.ky = Math.round(Q * (S.ky - Q) / (S.ky + Q)); }
     while (S.ky < -KMAX) { S.q--; S.ky = Math.round(Q * (S.ky + Q) / (Q - S.ky)); }
 }
-function tiltBy(dk) { S.kp = Math.max(-KPMAX, Math.min(KPMAX, S.kp + dk)); }
+function tiltBy(dk) { if (dk) S.lock = null; S.kp = Math.max(-KPMAX, Math.min(KPMAX, S.kp + dk)); }
 function poseParts() { turnBy(0); tiltBy(0); return { q: S.q, ky: S.ky, kp: S.kp }; }
 let exactPose = null;
 function pose() {
@@ -296,7 +297,7 @@ function sharesOf(X) {
 
 // ---------- the walk ----------
 function stride(dir, n = 1) {
-    const P = pose(), heading = P.q + '|' + P.ky;
+    const P = pose(), heading = P.q + '|' + P.ky; S.lock = null;
     if (S.lastHeading !== null && heading !== S.lastHeading && S.anchor) { S.eye = S.eye.map(snap); S.anchors++; }
     S.lastHeading = heading;
     const v = dir === 'w' ? P.fwd : dir === 's' ? P.fwd.map(Fr.neg) : dir === 'd' ? P.right : P.right.map(Fr.neg);
@@ -311,6 +312,22 @@ function stride(dir, n = 1) {
         if (S.walk.m.length > 64) S.walk.m.shift();
     }
 }
+// G and B (TWK run 6): go half way to the thing under the crosshair, or back off to twice the distance, in exact
+// fractions along the line from the eye to its centre, so the thing's direction does not move and its size on the
+// screen doubles or halves. The eye's fractions gain a binary digit a halving (a write, paid by the digit); the slopes
+// read from where it stands do not (a read pays nothing for depth). G stops before the thing is nearer than its breadth.
+function towardTarget(f) {
+    const t = S.target; if (!t) return false;
+    const C = t.c.map(v => Fr.dy(v)), D = [0, 1, 2].map(i => Fr.sub(S.eye[i], C[i]));
+    const d2 = D.reduce((a, x) => Fr.add(a, Fr.mul(x, x)), ZERO), bb = Fr.dy(t.b), b2 = Fr.mul(bb, bb);
+    if (Fr.sign(Fr.sub(Fr.mul(Fr.mul(f, f), d2), b2)) < 0) return false;   // would be nearer than its breadth
+    S.eye = [0, 1, 2].map(i => Fr.add(C[i], Fr.mul(f, D[i]))); S.walk = { key: null, m: [], strides: 0 }; S.goes++;
+    S.lock = t;   // the thing stays the one followed, though nearer things may come between (any turn or stride lets go)
+    return true;
+}
+function approach(n = 1) { let k = 0; for (; k < n; k++) if (!towardTarget(Fr.make(1, 2))) break; return k; }
+function backOff(n = 1) { let k = 0; for (; k < n; k++) if (!towardTarget(Fr.make(2))) break; return k; }
+function slopeDigits(X) { return X ? Math.max(...X.pairs.map(p => p.s ? Math.max(p.s.n.toString().replace('-', '').length, Fr.digits(p.s)) : 0)) : 0; }
 function walkSummary() {
     const W = S.walk; if (!W.key || W.m.length < 2) return null;
     const d = []; for (let i = 1; i < W.m.length; i++) d.push(Fr.sub(W.m[i - 1], W.m[i]));
@@ -454,6 +471,7 @@ function frame() {
     // the things, and the one under the crosshair
     const things = thingsNear(e); let best = null, bt = Infinity;
     for (const t of things) { const hit = rayBox(e, P.F, t); if (hit !== null && hit < bt) { bt = hit; best = t; } }
+    if (S.lock && things.includes(S.lock) && rayBox(e, P.F, S.lock) !== null) best = S.lock; else S.lock = null;
     // the focus is the scale of what is under the crosshair; with nothing there, the scale of the eye's own height (2 at
     // the start, scale 0), so that going down to the small scales brings them in
     if (!S.holdFocus) S.focus = best ? best.lv : Math.max(-BELOW, Math.min(LEVELS, Math.round(Math.log2(Math.max(1e-300, e[1]) / 2))));
@@ -530,6 +548,14 @@ function panelHtml() {
             if (Wk.nReads) h += `<p>strides left until the thing is square to the look beside you: from two looks (its apparent breadth b/m) ${Fr.num(Wk.nReads).toFixed(3)}, counted ${Fr.num(Wk.nCount).toFixed(3)}: <span class="${Wk.agree ? 'ok' : 'bad'}">${Wk.agree ? 'equal, exactly' : 'apart'}</span></p>`;
         }
     }
+    if (S.show.digits) {
+        h += '<h3>a read and a write, by the digit</h3>';
+        if (X) { const t = X.t, d = Math.hypot(...[0, 1, 2].map(i => t.c[i] - Fr.num(S.eye[i])));
+            h += `<p>the thing is ${(d / t.b).toFixed(3)} of its own breadths off, at scale ${t.lv} (things there ${t.b} across${t.lv < 0 ? ', a dyadic fraction' : ''}); G goes half way, B backs off to twice as far.</p>`; }
+        h += `<p>the eye's place, a write: its longest denominator ${eyeDigits()} digits, after ${S.goes} halvings or doublings and ${S.anchors} re-anchorings.</p>`;
+        if (X) h += `<p>the slopes read from it: ${slopeDigits(X)} digits at most. Going half way doubles every reach along the thumbs alike, so each ratio of reaches is unmoved by the halving: the read pays nothing for being near, the place pays a binary digit a halving.</p>`;
+        h += `<p>held now: ${CULL.perLevel.reduce((a, [, n]) => a + n, 0)} things over scales −${BELOW} to ${LEVELS}, the focus at scale ${S.focus}. How many things the world has never enters.</p>`;
+    }
     if (S.show.walk) h += `<p>the eye: its fractions' denominators ${eyeDigits()} digits; ${S.anchor ? 're-anchored ' + S.anchors + ' times, at each new heading' : 'not re-anchored: every heading taken is still in it'}</p>`;
     if (S.show.checks) {
         h += `<h3>what is held</h3><p>Things at every scale, levels −${BELOW} to ${LEVELS}; kept when their breadth is at least the grain times their distance, the grain 1/32 at the focus's scale (now ${S.focus})${SHARE === 'cauchy' ? ' and √cosh(k·ln 2) times that k scales away, so each scale holds its Cauchy share, sech(k·ln 2)' : ', the same at every scale'}. Kept now, by level: ${CULL.perLevel.filter(([, n]) => n).map(([l, n]) => l + ': ' + n).join(', ')} (${CULL.perLevel.reduce((a, [, n]) => a + n, 0)} in all), from ${CULL.scanned} cells. How far the world goes never enters.</p>`;
@@ -553,7 +579,7 @@ function updatePanel(force) {
     const h = panelHtml(); if (h !== lastHtml) { out.innerHTML = h; lastHtml = h; }
 }
 document.getElementById('menuBtn').onclick = () => { panel.classList.toggle('open'); updatePanel(true); };
-const opts = { optThumbs: 'thumbs', optHeat: 'heat', optSky: 'sky', optRead: 'read', optEuler: 'euler', optOmega: 'omega', optWalk: 'walk', optChecks: 'checks', optAbout: 'about' };
+const opts = { optThumbs: 'thumbs', optHeat: 'heat', optSky: 'sky', optRead: 'read', optEuler: 'euler', optOmega: 'omega', optWalk: 'walk', optDigits: 'digits', optChecks: 'checks', optAbout: 'about' };
 { const el = document.getElementById('optAnchor'); el.checked = S.anchor; el.onchange = () => { S.anchor = el.checked; updatePanel(true); }; }
 for (const [id, k] of Object.entries(opts)) { const el = document.getElementById(id); el.checked = S.show[k];
     el.onchange = () => { S.show[k] = el.checked; updatePanel(true); }; }
@@ -565,6 +591,8 @@ addEventListener('keydown', ev => {
     if (k === 'm') { panel.classList.toggle('open'); updatePanel(true); return; }
     if (k === 'escape') { panel.classList.remove('open'); return; }
     if (k === 'h') { S.holdH = !S.holdH; updatePanel(true); return; }
+    if (k === 'g') { approach(1); updatePanel(true); return; }
+    if (k === 'b') { backOff(1); updatePanel(true); return; }
     keys.add(k); if (ev.key.startsWith('Arrow')) ev.preventDefault();
 });
 addEventListener('keyup', ev => keys.delete(ev.key.toLowerCase()));
@@ -600,9 +628,10 @@ window.__thumbsWalk = {
                 stride('wasd'[i % 4], 1); frame(); exactOf(S.target); }
         } finally { for (const n of names) Math[n] = saved[n]; }
         return calls;
-    }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors,
+    }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff,
+    digits: () => ({ eye: eyeDigits(), slopes: slopeDigits(exactOf(S.target)), focus: S.focus, goes: S.goes }),
     target: () => S.target, pose,
-    set(o) { if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
+    set(o) { if (o.q !== undefined || o.ky !== undefined || o.kp !== undefined || o.eye) S.lock = null; if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
         if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.anchor !== undefined) S.anchor = !!o.anchor; if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
         if (o.focus !== undefined) { if (o.focus !== null) S.focus = o.focus; S.holdFocus = o.focus !== null; } frame(); return this.state(); },
     state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH,
