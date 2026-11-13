@@ -32,7 +32,7 @@
     From the exact eye (TWK run 7): cell indices are BigInts, each thing's centre an exact fraction, and everything drawn,
     picked or culled is worked out from the eye (a floating origin), so the view holds 10^100 units out as at the start.
     The blueprint beside it (O, ?god=1): the god's-eye view done classically, every thing at scales 0 to 8 in a square
-    6000 units across, stored and counted, drawn as a map beside the view; it is better, and the read does not need it.
+    6000 units across, stored and counted, drawn as a map beside the view; no observer has that view, and the read does not need it.
     Hook blueprint(), besideBlueprint().
     ?q=&ky=&kp=&x=&z=&menu=1&sky=1&heat=0&thumbs=0&anchor=0
     Hook window.__thumbsWalk: Fr (fractions), exact(), checks(), set({q, ky, kp, eye}), trigFree(steps), stride(dir, n), target(),
@@ -641,7 +641,7 @@ function panelHtml() {
     if (S.show.walk) h += `<p>the eye: its fractions' denominators ${eyeDigits()} digits; ${S.anchor ? 're-anchored ' + S.anchors + ' times, at each new heading' : 'not re-anchored: every heading taken is still in it'}</p>`;
     if (S.show.god) {
         const Bs = besideBlueprint();
-        h += `<h3>the god's-eye view, beside it</h3><p>The blueprint is the classical view: every thing at scales 0 to ${BP.top} in a square ${2 * BP.R0} units across about the start, stored once, ${Bs.cells.toLocaleString()} cells read to make it, N = ${Bs.N.toLocaleString()} things counted. It sees everything there at once, and it is better. It is drawn here only to set beside the read: nothing the read draws or reads comes from it.</p>`;
+        h += `<h3>the god's-eye view, beside it</h3><p>The blueprint is the classical view: every thing at scales 0 to ${BP.top} in a square ${2 * BP.R0} units across about the start, stored once, ${Bs.cells.toLocaleString()} cells read to make it, N = ${Bs.N.toLocaleString()} things counted. It sees everything there at once, from no standpoint; no observer in nature has this view. It is drawn here only to set beside the read: nothing the read draws or reads comes from it.</p>`;
         h += `<p>The read holds K = ${Bs.K.toLocaleString()}: ${Bs.inside.toLocaleString()} of them in the blueprint, <span class="${Bs.missing ? 'bad' : 'ok'}">${Bs.missing} it lacks</span>, ${Bs.outsideBox.toLocaleString()} past its edge and ${Bs.otherScales.toLocaleString()} at scales it does not store. The other ${(Bs.N - Bs.inside).toLocaleString()} the read never needed.</p>`;
         h += Bs.eyeInside ? '<p>Walk past the edge, or press G on something small: the blueprint runs out, the read does not.</p>'
                           : '<p>The eye is past the blueprint\'s edge. The blueprint has nothing here; the read has the same view it had at the start.</p>';
