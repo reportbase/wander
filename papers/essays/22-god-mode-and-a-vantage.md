@@ -183,7 +183,40 @@ fixed total, about π/ln 2 times one scale's count. And the sorting: no count of
 the readings take no more digits at any depth; what pays is the place, which is a write. The classical view has the same
 arithmetic available. What it does not have is a standpoint to fall off from.
 
-## 9. What it changes
+## 9. Set beside a blueprint, thing for thing
+
+After that answer Tom asked for results rather than statements (R940): "let others make those statements. lets actually
+prove it with undeniable results." So the page was set beside a blueprint and the two were compared, thing for thing,
+and nothing on the page says which is better (R939).
+
+- **The same things.** A blueprint was made about the eye from every cell out to twice the read's reach, each thing kept
+  by the read's own rule applied to its exact centre. The read, storing nothing, held exactly those: 0 missing, 0 extra,
+  at the start and 10¹⁰⁰ units out (run 8), and at every one of 300 poses of three seeded walks (run 9).
+- **The same picture.** Segment for segment, what the read draws and what the blueprint's own record draws differ by at
+  most 4.5·10⁻¹³ of a pixel (run 10). The walks also found a fault: the key that backs off could take the eye below the
+  ground. It now stops first.
+- **What each costs.** A blueprint stored from the start out to the eye, at the scales the read holds, has 10⁵ cells ten
+  units out, 10⁵² at 10²⁶ and 6·10²¹⁰ at 10¹⁰³, four times as many for each doubling of the distance; the read scans
+  between 28,700 and 29,100 cells at every one of those distances and stores none (run 11, and the U key on the page).
+- **A denser world.** With D things to a cell, the blueprint stored over the same square holds 35,013 × D. With its grain
+  fixed the read holds D times as many things from the same cells. Held to a count K by its own tally, moving its grain
+  only by what it holds, it holds between 2,045 and 2,108 things at every D from 1 to 16, looking at 1.45 times as many
+  things at D = 16 as at D = 1, and still 0 missing and 0 extra against a blueprint made about the eye (run 13).
+- **Two ways, the same walk.** Drawn the page's way and a classical way (yaw and pitch as floats, the frame from sines and
+  cosines), 300 poses give pictures within 2.4·10⁻¹² of a pixel; the page made no trigonometric call and the classical
+  way 2,400 sines and cosines (run 14). Both lay the world on a signed grid of cells and hold the eye in it.
+- **Where pipelines break.** Plain float pipelines break where their formats say: single precision about 1.8·10⁵ units
+  from the origin, double precision about 10¹⁴, turns drifting off square, the standard depth buffer losing a percent
+  past 2·10⁴. With the classical fixes on (a moving origin over a 64-bit sector index, re-squaring or an integer heading,
+  reversed depth) nothing broke out to 10¹⁰⁰; what was left were choices of width, none of them due to trigonometry or the
+  two hemispheres (PWL). The page passed every one of those walls by holding more digits, and had one wall of its own: its
+  rounding where a turn crossed an eighth of a full turn left 93 of 100 long walks a step off on the way back, where the
+  integer heading came back exactly. Its heading is now one whole count of steps, nothing is rounded, and 100 of 100
+  retraced walks come back exactly, still with no trigonometric call (run 12).
+
+Those are the results. What they are worth beside the classical tools is for others to say.
+
+## 10. What it changes
 
 The blueprint is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on
 it, and wants totals, joins and a map of everything at once.
@@ -201,7 +234,8 @@ states ratios; the place an observer stands is the one thing that has to be writ
 
 ## Sources
 
-- `../../plans/twk-plan.md`: the plan and runs 1–7 (predictions, tables, kills).
+- `../../plans/twk-plan.md`: the plan and runs 1–14 (predictions, tables, kills).
+- `../../plans/pwl-plan.md`: where float pipelines break, with and without the classical fixes (PWL runs 1–3).
 - *Reads and Writes* (`../readers-and-writers.md`): §6 "K and N" and "Something to read, and K of it" (R935); §7, the
   read's heat per ratio.
 - Essay 4 (near and far), essay 16 §10 ("A world made where the view reaches"), essay 20 (scaffolding).

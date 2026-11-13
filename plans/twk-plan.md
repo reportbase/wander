@@ -560,3 +560,48 @@ Probe (headless Chromium, no page errors): 100 seeded walks of 2,000 turns of 1 
 (0, 127) lands on (2, −128) with every check holding; `trigFree(300)` still 0 calls. PWL's copy of the rule (run 3):
 100 of 100 long walks back exactly, every walk crossing a half turn. Old links with an odd q and ky ≠ 0 now open a
 slightly different heading (the steps are not even in angle); with ky = 0 the same.
+
+## Runs 13 and 14: predictions (13 November 2026, written before any change or run; Tom: "1, 2, 3")
+
+**Run 13, the world made denser (N per area).** `?dens=D` puts D things in each cell (D = 1 the world as it is; the
+thing s > 0 its own hashes, its own key). Two ways to read it: the grain fixed (as now), or K held: the read keeps the
+grain where its own held count stays near a target, moving the grain only by what it holds (no count of the world).
+- M1 (grain fixed): held K grows about as D (×D within 30%); cells scanned unchanged (to the cell).
+- M2 (K held, target 2,100): after settling, held within 15% of 2,100 at D = 1, 2, 4, 8, 16; things examined (cells
+  scanned × D, the work) within a factor 2 of D = 1's; the grain coarsening about as √D.
+- M3: a blueprint stored over the 6,000 square at scales 0 to 8 holds about D times as many things (within 15%).
+- M4: at every D, in both ways, the read set beside a blueprint made about the eye by the same rule: 0 missing, 0 extra.
+
+**Run 14, two ways, step by step.** One seeded walk of 300 poses, drawn twice: the page's way (half-slope steps,
+rational turns, exact fractions) and a classical pipeline (yaw and pitch held as floats in radians, the frame built by
+Math.cos and Math.sin each pose, the eye a float64 sum of strides). Counted, not judged.
+- T1: the page's way makes 0 trigonometric calls; the classical way 8 a pose (4 of them the base frame, which a pipeline
+  would compute once; counted both ways).
+- T2: the two draw the same picture: every held thing's segment ends within 10⁻⁶ px (the walk stays within 10⁴ units).
+- T3: both lay the world on a signed grid of cells and hold the eye in it (the page in exact fractions, the classical
+  way in float64): stated, not scored.
+- T4: retraced, the page's turn returns exactly (TWK run 12) and the classical float yaw returns to within 10⁻¹² rad.
+
+### Runs 13 and 14 (13 November 2026; `runs/twk/run13.mjs`, output `runs/twk/run13-out.json`; headless Chromium, no page errors)
+
+**Run 13.** At the start, scales −8 to 8:
+
+| things a cell | grain fixed: held | cells scanned | things looked at | K held: held | grain × | cells | things looked at | stored blueprint N |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 2,195 | 29,085 | 12,214 | 2,107 | 1.02 | 27,461 | 11,561 | 35,013 |
+| 2 | 4,264 | 29,085 | 24,435 | 2,075 | 1.42 | 14,481 | 12,347 | 70,070 |
+| 4 | 8,654 | 29,085 | 49,053 | 2,071 | 2.03 | 7,765 | 13,174 | 140,508 |
+| 8 | 17,309 | 29,085 | 97,747 | 2,045 | 2.87 | 4,277 | 14,303 | 280,717 |
+| 16 | 34,625 | 29,085 | 195,159 | 2,108 | 3.88 | 2,489 | 16,769 | 560,463 |
+
+M1 not killed (held ×1.94, 3.94, 7.89, 15.8; the scan the same). M2 not killed (held 2,045 to 2,108; things looked at
+1.45 times D = 1's at D = 16; the grain 1.02, 1.42, 2.03, 2.87, 3.88 against √D 1, 1.41, 2, 2.83, 4). M3 not killed
+(×2.00, 4.01, 8.02, 16.0). M4 not killed (0 missing, 0 extra at all ten). With K held the read keeps about 2,100 things
+whatever the density, moved only by its own count; the stored blueprint's N goes as the density.
+
+**Run 14.** 300 poses, 3.74 million segments: the page 0 trigonometric calls; the classical way 1,200 sines and 1,200
+cosines (8 a pose, 4 of them the fixed base frame) and 600 arctangents, which my code used to make that base frame's
+angles and a pipeline would hold as constants (T1 not killed as to sines and cosines; the arctangents my set-up). The two
+pictures within 2.4·10⁻¹² px (T2 not killed). Both lay the world on a signed grid of cells and hold the eye in it (T3).
+96 turns retraced: the page exactly, the classical float yaw 2.8·10⁻¹⁷ rad off (T4 not killed). On the page: n, k, c in
+the menu's checks.
