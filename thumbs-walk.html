@@ -37,9 +37,10 @@
     againstStored(), againstMade(half). N (TWK run 13): n doubles the things a cell (?dens=), k holds K near 2,100 by the read's own
     count (?kfix=); c (run 14) draws one walk the page's way and a classical way (hook density(), twoWays(seed, n)). U takes the eye ten times farther out; the menu then gives the cells a blueprint stored
     from the start to there would have (exact, a count, never made) beside the cells the read scans (hook toHere(), outTenfold()).
-    Movers (TWK run 15, R948): boxes in the sky at every scale, each scale at one rational velocity, a mover's place C₀ + V·T
-    exact at tick T (60 a second; T pauses); the read scans the cells about eye − V·T, nothing stepped or stored. Hook
-    moversNear(), moversAgainstStepped(o), moverSteps(). ?movers=0 takes them away, ?time=0 starts paused, ?tick= sets T.
+    Movers (TWK runs 15-16, R948, R949): boxes in the sky at every scale, each flying its own loop (its own sides, heading,
+    speed and phase) about its home cell, its place at tick T exact from T alone (60 ticks a second; T pauses); the read
+    looks at the cells within scan + 3 of the eye, nothing stepped or stored. Hook moversNear(), moversAgainstStepped(o),
+    moverSteps(), moverVelocities(). ?movers=0 takes them away, ?time=0 starts paused, ?tick= sets T.
     ?q=&ky=&kp=&x=&z=&menu=1&sky=1&heat=0&thumbs=0&anchor=0
     Hook window.__thumbsWalk: Fr (fractions), exact(), checks(), set({q, ky, kp, eye}), trigFree(steps), stride(dir, n), target(),
     state(), sky().
@@ -94,7 +95,7 @@
 </div>
 <div id="panel">
     <h2>Three thumbs, walking</h2>
-    <p>W A S D walk (shift: eight strides at a time), G half way to the thing under the crosshair, B back to twice as far, drag or the arrow keys turn, the wheel sets the thumb, H holds it, M the menu. T stops and starts time: the boxes in the sky move, each scale at its own velocity, found where they are now by scanning the cells about the eye in their own frame (nothing stepped or stored).</p>
+    <p>W A S D walk (shift: eight strides at a time), G half way to the thing under the crosshair, B back to twice as far, drag or the arrow keys turn, the wheel sets the thumb, H holds it, M the menu. T stops and starts time: each box in the sky flies its own loop at its own speed, found where it is now from the tick alone (nothing stepped or stored).</p>
     <p>On a touch screen: drag with one finger to look, pinch to set the thumb (fingers apart, a larger thumb), hold ▲ ◀ ▼ ▶ to walk, ×8 for eight strides at a time, G, B and H as the keys.</p>
     <p><button class="run" data-act="u">U ten times out</button> <button class="run" data-act="p">P against a made blueprint</button> <button class="run" data-act="n">n denser</button> <button class="run" data-act="k">k hold K</button> <button class="run" data-act="c">c two ways</button></p>
     <h3>show</h3>
@@ -458,28 +459,45 @@ function groundNear(extra = 0, from = -1) {
     return out;
 }
 
-// ---------- things that move (TWK run 15, R948; Tom: "Proceed") ----------
-// at every scale a second sparse set of flat boxes, lifted off the ground, each moving at its scale's velocity V_j (2^j/16
-// a tick, a direction of its own each scale, a rational). Its place at tick T is C₀ + V_j·T, exact. The read finds the movers
-// near the eye by scanning, in the movers' own frame, the cells about eye − V_j·T at that scale, the same cells and the same
-// keep rule as the ground; nothing is stepped, stored or counted. ?movers=0 takes them away; T pauses and runs time.
-const MOVERS = QS.get('movers') !== '0', MDIRS = [[3, 4], [-4, 3], [5, 0], [-3, -4], [0, 5], [4, -3], [-5, 0], [3, -4]];
-const mvVelMemo = new Map();
-function mvVel(lv) { if (!mvVelMemo.has(lv)) { const [a, b] = MDIRS[((lv % 8) + 8) % 8], s = Fr.mul(Fr.make(1, 80), Fr.dy(2 ** lv));
-    mvVelMemo.set(lv, [Fr.mul(Fr.make(a), s), Fr.mul(Fr.make(b), s)]); } return mvVelMemo.get(lv); }
-function moverAt(t, T) { const Tf = Fr.make(T); return [Fr.add(t.C0[0], Fr.mul(t.V[0], Tf)), t.C0[1], Fr.add(t.C0[2], Fr.mul(t.V[1], Tf))]; }
+// ---------- things that move (TWK run 15, R948; each its own velocity since run 16, R949) ----------
+// at every scale a second sparse set of flat boxes, lifted off the ground. Since run 16 (Tom: "give each thing its own
+// velocity", then "Own loops") each flies its own closed circuit: a rectangle about its home cell, sides A and B steps of
+// q = CELL·2^j/32 of its own, laid along the axes or the diagonals, either way round, at its own speed m/4 of a step a
+// tick, from its own phase. Its place at tick T comes from T alone: ((T + phase)·m mod 8(A + B))/4 steps round, a dyadic
+// number, so exact as a fraction and as a double. A mover stays within 3 cells of home, so the read looks at the cells
+// within scan + 3 of the eye at each scale, by the ground's keep rule; nothing is stepped or stored. (A straight flight
+// forever, each its own velocity, would need the cells within top speed × T: work without end.) ?movers=0 takes them
+// away; T pauses and runs time.
+const MOVERS = QS.get('movers') !== '0', MREACH = 3;
+const E1 = [[1, 0], [0, 1], [-1, 0], [0, -1]], E1D = [[1, 1], [-1, 1], [-1, -1], [1, -1]];
+function loopOffset(t, d) {   // the offset, in steps, d steps round the loop (d a multiple of 1/4)
+    const { A, B, e1, e2 } = t, P = [0, 0];
+    if (d < A) { P[0] = e1[0] * d; P[1] = e1[1] * d; }
+    else if (d < A + B) { const u = d - A; P[0] = e1[0] * A + e2[0] * u; P[1] = e1[1] * A + e2[1] * u; }
+    else if (d < 2 * A + B) { const u = 2 * A + B - d; P[0] = e1[0] * u + e2[0] * B; P[1] = e1[1] * u + e2[1] * B; }
+    else { const u = 2 * A + 2 * B - d; P[0] = e2[0] * u; P[1] = e2[1] * u; }
+    return P;
+}
+function loopSeg(t, d) { const { A, B, e1, e2 } = t; return d < A ? e1 : d < A + B ? e2 : d < 2 * A + B ? [-e1[0], -e1[1]] : [-e2[0], -e2[1]]; }
+function quartersAt(t, T) { const M = BigInt(t.P4); let r = ((BigInt(T) + BigInt(t.ph)) * BigInt(t.m)) % M; if (r < 0n) r += M; return Number(r); }
+function lcFrom(t, d4) { const o = loopOffset(t, d4 / 4);
+    return [(t.bx + o[0]) * t.q + t.w / 2, t.lift + t.h / 2, (t.bz + o[1]) * t.q + t.d / 2]; }
+function cOf(t, lc) { return [Fr.add(t.Cx, Fr.dy(lc[0])), Fr.dy(lc[1]), Fr.add(t.Cz, Fr.dy(lc[2]))]; }
+function lcAt(t, T) { const key = String(T); if (t._T !== key) { t._T = key; t._d4 = quartersAt(t, T); t.lc = lcFrom(t, t._d4); } return t.lc; }
+function velocityOf(t, T) { lcAt(t, T); const e = loopSeg(t, t._d4 / 4), k = t.m / 4 * t.q; return [e[0] * k, e[1] * k]; }
 function moverOf(i, j, lv) {
     const key = 'm' + lv + ':' + i + ',' + j; if (cellCache.has(key)) return cellCache.get(key);
     let t = null; const L = 64 * lv + 777777, sc = 2 ** lv, h = k => hash(i, j, k + L);
     if (h(1) < 0.08) {
-        t = { kind: 'box', mover: true, ox: (2 + Math.floor(h(3) * 10)) * sc, oz: (2 + Math.floor(h(4) * 10)) * sc,
-              w: (6 + 2 * Math.floor(h(5) * 4)) * sc, d: (4 + 2 * Math.floor(h(6) * 3)) * sc, h: 2 * sc, lift: (24 + 8 * Math.floor(h(7) * 4)) * sc };
+        const o = Math.floor(h(12) * 16), e1 = (o >= 8 ? E1D : E1)[o % 4], flip = (o >> 2) & 1;
+        t = { kind: 'box', mover: true, w: (6 + 2 * Math.floor(h(5) * 4)) * sc, d: (4 + 2 * Math.floor(h(6) * 3)) * sc, h: 2 * sc,
+              lift: (24 + 8 * Math.floor(h(7) * 4)) * sc, q: CELL * sc / 32,
+              A: 4 + Math.floor(h(8) * 21), B: 4 + Math.floor(h(9) * 21), m: 1 + Math.floor(h(10) * 6),
+              bx: 4 + Math.floor(h(3) * 24), bz: 4 + Math.floor(h(4) * 24), e1, e2: flip ? [-e1[1], e1[0]] : [e1[1], -e1[0]] };
+        t.P4 = 8 * (t.A + t.B); t.ph = Math.floor(h(11) * t.P4);
         t.key = key; t.lv = lv; t.i = i; t.j = j; t.b = Math.max(t.w, t.d, t.h);
-        t.lc = [t.ox + t.w / 2, t.lift + t.h / 2, t.oz + t.d / 2];
-        const Wc = Fr.mul(Fr.make(CELL), Fr.dy(sc));
-        t.C0 = [Fr.add(Fr.mul(Fr.make(i), Wc), Fr.dy(t.lc[0])), Fr.dy(t.lc[1]), Fr.add(Fr.mul(Fr.make(j), Wc), Fr.dy(t.lc[2]))];
-        t.V = mvVel(lv);
-        Object.defineProperty(t, 'C', { get() { return moverAt(t, S.tick); } });   // where it is now, exact
+        const Wc = Fr.mul(Fr.make(CELL), Fr.dy(sc)); t.Cx = Fr.mul(Fr.make(i), Wc); t.Cz = Fr.mul(Fr.make(j), Wc);
+        Object.defineProperty(t, 'C', { get() { return cOf(t, lcAt(t, S.tick)); } });   // where it is now, exact
         Object.defineProperty(t, 'c', { get() { return t.C.map(Fr.num); } });
         t.edges = edgesOf(t); t.r = [0, 0, 0];
     }
@@ -490,22 +508,21 @@ function moversNear() {
     if (!MOVERS) { CULL.mScanned = 0; return []; }
     const ck = S.eye.map(f => f.n + '/' + f.d).join(',') + '|' + S.tick + '|' + (GLIDE ? S.fg : S.focus) + '|' + GS;
     if (moverCache.key === ck) { CULL.mScanned = moverCache.scanned; return moverCache.out; }
-    const out = [], ey = Fr.num(S.eye[1]), Tf = Fr.make(S.tick); let scanned = 0;
+    const out = [], ey = Fr.num(S.eye[1]), T = S.tick; let scanned = 0;
     for (let lv = -BELOW; lv <= LEVELS; lv++) {
-        const V = mvVel(lv), Wf = Fr.mul(Fr.make(CELL), Fr.dy(2 ** lv)), w = CELL * 2 ** lv;
-        const px = Fr.sub(S.eye[0], Fr.mul(V[0], Tf)), pz = Fr.sub(S.eye[2], Fr.mul(V[1], Tf));   // the eye in the movers' frame
-        const ci = floorFr(px, Wf), cj = floorFr(pz, Wf);
-        const ex = Fr.num(Fr.sub(px, Fr.mul(Fr.make(ci), Wf))), ez = Fr.num(Fr.sub(pz, Fr.mul(Fr.make(cj), Wf)));
-        const scan = scanAt(lv), s2 = scan * scan; let L = mvLevel[lv];
-        if (!L || L.R < scan || L.ci !== ci || L.cj !== cj) {
-            const R = scan + 3, cands = [];
-            for (let di = -R; di <= R; di++) for (let dj = -R; dj <= R; dj++) { const r2 = di * di + dj * dj; if (r2 > R * R) continue;
+        const Wf = Fr.mul(Fr.make(CELL), Fr.dy(2 ** lv)), w = CELL * 2 ** lv;
+        const ci = floorFr(S.eye[0], Wf), cj = floorFr(S.eye[2], Wf);
+        const ex = Fr.num(Fr.sub(S.eye[0], Fr.mul(Fr.make(ci), Wf))), ez = Fr.num(Fr.sub(S.eye[2], Fr.mul(Fr.make(cj), Wf)));
+        const R = scanAt(lv) + MREACH, R2 = R * R; let L = mvLevel[lv];
+        if (!L || L.R < R || L.ci !== ci || L.cj !== cj) {
+            const RR = R + 3, cands = [];
+            for (let di = -RR; di <= RR; di++) for (let dj = -RR; dj <= RR; dj++) { const r2 = di * di + dj * dj; if (r2 > RR * RR) continue;
                 const t = moverOf(ci + BigInt(di), cj + BigInt(dj), lv); if (t) cands.push({ t, r2, dx: di * w, dz: dj * w }); }
-            L = mvLevel[lv] = { R, ci, cj, cands };
+            L = mvLevel[lv] = { R: RR, ci, cj, cands };
         }
-        scanned += cellsWithin(scan);
-        for (const c of L.cands) { if (c.r2 > s2) continue; const t = c.t;
-            t.r = [c.dx + t.lc[0] - ex, t.lc[1] - ey, c.dz + t.lc[2] - ez]; if (keptAt(t)) out.push(t); }
+        scanned += cellsWithin(R);
+        for (const c of L.cands) { if (c.r2 > R2) continue; const t = c.t, lc = lcAt(t, T);
+            t.r = [c.dx + lc[0] - ex, lc[1] - ey, c.dz + lc[2] - ez]; if (keptAt(t)) out.push(t); }
     }
     CULL.mScanned = scanned; moverCache = { key: ck, out, scanned }; return out;
 }
@@ -514,44 +531,47 @@ function thingsNear(extra = 0, from = -1) {
     if (extra !== 0 || from >= 0 || !MOVERS) return ground;
     const m = moversNear(); return m.length ? ground.concat(m) : ground;
 }
-// TWK run 15's test: the read's movers set beside the classical way, every mover near the eye's path stored at tick T0
-// (C₀ + V·T0, its record) and stepped one tick at a time by adding V, kept by the same rule at each compared tick. A mover
-// first needed later is stored as the full blueprint would have had it: its T0 record stepped to now, one add a tick.
+// TWK runs 15-16's test: the read's movers set beside the classical way, every mover near the eye's path stored at T0
+// (its place from the formula, its record) and stepped one tick at a time by its own speed round its own loop (whole
+// quarter-steps added, wrapped at the loop's length), kept by the same rule at each compared tick. A mover first needed
+// later is stored as the full list would have had it: its T0 record stepped to now, one tick at a time.
 function moversAgainstStepped(o = {}) {
     const T0 = BigInt(o.T0 ?? 0), ticks = o.ticks ?? 200, every = o.every ?? 10, walk = o.walk ?? 0;
     let sd = (o.seed ?? 1) >>> 0; const rnd = () => ((sd = (Math.imul(sd, 1103515245) + 12345) >>> 0) / 4294967296);
     const tick0 = S.tick, hf = S.holdFocus; S.holdFocus = true; S.fg = S.focus;
     const store = new Map(); let adds = 0; const rows = [];
+    const step = q => { q.d4 += q.t.m; if (q.d4 >= q.t.P4) q.d4 -= q.t.P4; adds++; };
     const cover = T => { for (let lv = -BELOW; lv <= LEVELS; lv++) {
-        const V = mvVel(lv), Wf = Fr.mul(Fr.make(CELL), Fr.dy(2 ** lv)), Tf = Fr.make(T);
-        const ci = floorFr(Fr.sub(S.eye[0], Fr.mul(V[0], Tf)), Wf), cj = floorFr(Fr.sub(S.eye[2], Fr.mul(V[1], Tf)), Wf), R = scanAt(lv) + 2;
+        const Wf = Fr.mul(Fr.make(CELL), Fr.dy(2 ** lv)), ci = floorFr(S.eye[0], Wf), cj = floorFr(S.eye[2], Wf), R = scanAt(lv) + MREACH + 2;
         for (let di = -R; di <= R; di++) for (let dj = -R; dj <= R; dj++) { const t = moverOf(ci + BigInt(di), cj + BigInt(dj), lv);
             if (!t || store.has(t.key)) continue;
-            let C = moverAt(t, T0); for (let k = T0; k < T; k++) { C = [Fr.add(C[0], t.V[0]), C[1], Fr.add(C[2], t.V[1])]; adds++; }
-            store.set(t.key, { t, C }); } } };
+            const q = { t, d4: quartersAt(t, T0) }; for (let k = T0; k < T; k++) step(q); store.set(t.key, q); } } };
     try {
         for (let k = 0; k <= ticks; k++) {
             const T = T0 + BigInt(k);
-            if (k > 0) { for (const q of store.values()) { q.C = [Fr.add(q.C[0], q.t.V[0]), q.C[1], Fr.add(q.C[2], q.t.V[1])]; adds++; }
-                if (walk && rnd() < walk) stride('wasd'[Math.floor(rnd() * 4)], 1); }
+            if (k > 0) { for (const q of store.values()) step(q); if (walk && rnd() < walk) stride('wasd'[Math.floor(rnd() * 4)], 1); }
             if (k % every) continue;
             S.tick = T; cover(T);
-            const read = new Set(moversNear().map(t => t.key)), bp = new Set(); let exact = true;
-            for (const q of store.values()) { if (keepExact(q.t, q.C)) bp.add(q.key || q.t.key);
-                if (read.has(q.t.key)) { const Cr = q.t.C; if (!(Fr.eq(Cr[0], q.C[0]) && Fr.eq(Cr[2], q.C[2]))) exact = false; } }
-            rows.push({ T: T.toString(), ...compareSets(read, bp), scanned: CULL.mScanned, stored: store.size, adds, exact });
+            const held = moversNear(), read = new Set(held.map(t => t.key)), bp = new Set(); let exact = true;
+            for (const q of store.values()) { const C = cOf(q.t, lcFrom(q.t, q.d4)); if (keepExact(q.t, C)) bp.add(q.t.key);
+                if (read.has(q.t.key)) { const Cr = q.t.C; if (!(Fr.eq(Cr[0], C[0]) && Fr.eq(Cr[1], C[1]) && Fr.eq(Cr[2], C[2]))) exact = false; } }
+            const vel = new Set(held.map(t => velocityOf(t, T).join(',')));
+            rows.push({ T: T.toString(), ...compareSets(read, bp), scanned: CULL.mScanned, stored: store.size, adds, exact, velocities: vel.size });
         }
     } finally { S.tick = tick0; S.holdFocus = hf; }
     return rows;
 }
-// one mover stepped tick by tick from C₀, set beside its read place C₀ + V·T at the given ticks
+// one mover stepped tick by tick from tick 0, set beside its place from T alone, and its return to the start
 function moverSteps(checks = [1, 10, 100, 1000, 10000]) {
     let t = null; for (let i = 0n; !t; i++) t = moverOf(i, 3n, 0);
-    let C = t.C0.slice(), k = 0; const out = [];
-    for (const T of checks) { while (k < T) { C = [Fr.add(C[0], t.V[0]), C[1], Fr.add(C[2], t.V[1])]; k++; }
-        const R = moverAt(t, T); out.push({ T, same: Fr.eq(R[0], C[0]) && Fr.eq(R[2], C[2]) }); }
-    return { key: t.key, out };
+    const gcd = (a, b) => b ? gcd(b, a % b) : a, period = t.P4 / gcd(t.m, t.P4);
+    let d4 = quartersAt(t, 0), k = 0; const start = d4, out = [];
+    for (const T of checks) { while (k < T) { d4 += t.m; if (d4 >= t.P4) d4 -= t.P4; k++; } out.push({ T, same: d4 === quartersAt(t, T) &&
+        cOf(t, lcFrom(t, d4)).every((v, c) => Fr.eq(v, cOf(t, lcFrom(t, quartersAt(t, T)))[c])) }); }
+    let d = start, back = 0; for (let n = 1; n <= period; n++) { d += t.m; if (d >= t.P4) d -= t.P4; if (d === start) { back = n; break; } }
+    return { key: t.key, A: t.A, B: t.B, m: t.m, period, back, out };
 }
+function moverVelocities() { const T = S.tick, m = moversNear(); return { held: m.length, distinct: new Set(m.map(t => velocityOf(t, T).join(','))).size }; }
 
 // ---------- the pose ----------
 const params = new URLSearchParams(location.search);
@@ -1053,7 +1073,7 @@ window.__thumbsWalk = {
     }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff, blueprint: () => { const B = blueprint(); return { N: B.list.length, cells: B.cells, R0: B.R0, top: B.top }; }, besideBlueprint, toHere, outTenfold, twoWays, density: () => ({ dens: DENS, kfix: KFIX, gs: GS, held: thingsNear().length, scanned: CULL.scanned, examined: CULL.examined }), againstStored, againstMade, walkTest, buildCount, cellFormula,
     digits: () => ({ eye: eyeDigits(), slopes: slopeDigits(exactOf(S.target)), focus: S.focus, goes: S.goes }),
     target: () => S.target, pose,
-    exactOfThing: t => exactOf(t), againstMadeNow: h => againstMade(h), moversNear, moversAgainstStepped, moverSteps, moverAt, groundNear: () => groundNear(), tick: () => S.tick.toString(),
+    exactOfThing: t => exactOf(t), againstMadeNow: h => againstMade(h), moversNear, moversAgainstStepped, moverSteps, moverVelocities, groundNear: () => groundNear(), tick: () => S.tick.toString(),
     set(o) { if (o.q !== undefined || o.ky !== undefined || o.kp !== undefined || o.eye) S.lock = null; if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
         if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.anchor !== undefined) S.anchor = !!o.anchor; if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
         if (o.focus !== undefined) { if (o.focus !== null) S.focus = S.fg = o.focus; S.holdFocus = o.focus !== null; }

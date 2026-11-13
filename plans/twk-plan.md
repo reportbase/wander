@@ -649,3 +649,51 @@ hashed cell, so V1 checks that scanning in the movers' own frame finds every mov
 stepping puts it; it does not compare two independent worlds. All movers at a scale share one velocity, which is what
 lets one frame per scale hold them; things each with its own velocity, or turning, are not tested. On the page the
 movers draw at 42 frames a second headless with time running.
+
+## Run 16: each thing its own velocity (predictions, 13 November 2026, written and committed before any change; Tom:
+"give each thing its own velocity", then "Own loops", of three ways offered)
+
+What changes. Run 15's movers shared one velocity per scale. Now each mover flies its own closed circuit: a rectangle
+about its home cell, sides A and B of its own (4 to 24 steps of q = CELL·2^j/32), laid along the axes or the diagonals,
+either way round, at its own speed m/4 of a step a tick (m from 1 to 6), from its own phase. Its place at tick T is
+worked out from T alone: the distance gone round is ((T + phase)·m mod 8(A + B))/4 steps, a dyadic number, so the
+place is exact and also exact as a double. A mover never leaves 3 cells of its home, so the read looks at the cells
+within scan + 3 of the eye at each scale and keeps by the ground's rule. Nothing is stored or stepped. Why loops and
+not straight lines forever: with each its own velocity a straight flight's start could be anywhere within top speed
+× T, so the cells to look at would grow without end.
+
+The classical way to set beside it: every mover near the eye's path stored at T₀ (place from the formula, as its
+record), then stepped one tick at a time by its own speed round its own rectangle, turning at the corners (whole
+quarter-steps, no formula), kept by the same rule at each compared tick.
+
+Predictions:
+- V1b: at every compared tick, the movers the read holds are, key for key, the stepped list's kept movers (0 missing,
+  0 extra), and every held mover's place equals its stepped place exactly; eye still, along a seeded walk, and from
+  T₀ = 10³⁰; focus and grain held.
+- V2b: the read's mover cells the same count at every tick, at most 1.3 times run 15's 29,085; movers held within ±30%
+  of their mean over a run.
+- V3b: one mover stepped tick by tick equals the formula at T = 1, 10, 10², 10³, 10⁴, and comes back exactly to its
+  start after 8(A + B)/gcd(m, 8(A + B)) ticks.
+- V4b: the ground unchanged (2,195 at the start, with and without movers; 0 missing and 0 extra against a made
+  blueprint with movers on).
+- V5b: the exact checks (pair slopes multiply to 1, w(s)·w(1/s) = −1, |w|² = 1) on 20 held movers at T = 0, 10², 10⁴,
+  10³⁰.
+- V6: the velocities differ: among the movers held at one tick, at least 30 distinct velocity vectors.
+
+**Run 16** (`runs/twk/run16.mjs`, output `runs/twk/run16-out.json`; headless Chromium, 1280 × 720, time paused, focus
+held). Nothing killed.
+- V1b: eye still, 21 ticks compared over 200: 0 missing, 0 extra; along a seeded walk, 0 and 0; from T₀ = 10³⁰, 7 ticks
+  over 60, 0 and 0. Every held mover's place equalled its stepped place exactly at every compared tick. The stepped list
+  stored 4,184, 4,423 and 4,183 movers and made 836,800, 884,600 and 250,980 steps; the read stored and stepped none.
+- V2b: 35,833 mover cells at every tick in all three (1.23 times run 15's 29,085: the 3 cells of reach); movers held
+  166 to 175 (mean 168.5), 166 to 175 walking, 167 to 173 at 10³⁰.
+- V3b: one mover (A = B = 5, m = 6) stepped tick by tick equal to its place from T alone at T = 1 to 10⁴, back at its
+  start after 40 ticks, its period 8(A + B)/gcd(m, 8(A + B)) = 40.
+- V4b: ground 2,195 with and without movers; 0 missing, 0 extra against a made blueprint with movers on.
+- V5b: 20 held movers at T = 0, 10², 10⁴, 10³⁰: the three exact checks hold for all 80.
+- V6: 95 to 106 distinct velocity vectors among the 166 to 175 held (106 of 169 at the start).
+
+What it does not show: as in run 15 both sides take a mover's loop from the same hashed cell, and the stepped list adds
+quarter-steps and wraps at the loop's length, so V1b checks the place from T alone against accumulation, and the scan's
+completeness, not two independent worlds. Straight flights forever are not tested (the cells to look at would grow with
+T). On the page, 51 frames a second headless with time running.
