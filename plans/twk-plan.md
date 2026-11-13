@@ -106,3 +106,22 @@ Post hoc, not predicted: without the re-anchor the digits leveled off near 128 r
 give only about 107 distinct half-slopes k/128, so once each denominator has come into the running total, nothing new
 enters. Finer turns would keep it growing. Either way the readings were exact; the cost of keeping the scaffolding was 13
 times the digits in every slope read, with nothing on the page reading the path home it preserved.
+
+### Run 3 (13 November; Tom: "yes,remove the trig"; a check of the change, no prediction written first)
+
+The look is now held as whole numbers: q quarter turns and two half-slopes ky/128 (across) and kp/128 (up). A drag of two
+pixels or an arrow key steps a half-slope by 1/128. Past an eighth of a turn (|ky| > 53) the half-slope passes to the next
+quarter by tangent subtraction, u' = (u − 1)/(1 + u), rounded to the nearest 1/128. The screen's half-width is a slope of
+6/5 from the look, so no tangent is taken. The rings are drawn through the rational points ((1 − t²)/(1 + t²), 2t/(1 + t²)).
+The sky is uniform without an angle (a point uniform in the ball, normalized). Params are `?q=&ky=&kp=`.
+
+- The hook's `trigFree(300)` replaces sin, cos, tan, atan, atan2, asin, acos, sinh, cosh and tanh with counters. It then
+  runs 300 steps of turning, tilting, walking (re-anchoring included), drawing a frame and computing the exact readings.
+  **Every count was 0.**
+- `?q=-1&ky=34` is the old yaw −60° (half-slope tan 15° ≈ 34/128). It picks the same target as run 1 (the box at
+  (−112, 2, 40)). K1–K4, K6–K8 hold; K5 waits for a walk.
+- The one use of atan left is the Ω shares (K3 and their display), since Ω is a limit. Nothing in turning, projecting,
+  picking or walking reads them.
+- Limit: the wrap rounds, so turning a whole circle in steps does not return exactly to the start. 200 steps back from
+  (q 2, ky −46) ended at (q 1, ky −40). Every pose is still an exact rational frame. Only the path of turns is not kept,
+  which is the same kind of write as run 2's re-anchor.
