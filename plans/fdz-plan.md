@@ -150,3 +150,6 @@ floats the turn about the focus is no gain (F2's sense), and the one float layou
 Cayley, F3) cannot be held in a WebGL depth buffer. Kills: F2, F3, F4, F6, all by my set-up (a binade edge at the focus;
 a first-order tolerance applied where cells are several percent wide; a width test applied to a distance to a cell's
 edge). Not tested: the cost of writing gl_FragDepth, a real scene.
+
+**Closed** (13 November, after run 1; Tom: "from your description, it does not seem like its important."). No further
+run. The finding kept: the reframe pays only in 16-bit fixed-point depth, not in 32-bit floats.
