@@ -75,9 +75,11 @@ other's breadth, stands.
 
 - *The apple and the human each read the universe by the inscribed sweep*, from home to a horizon. The universe has no
   far side to face; no size could be had, so its V is **unknowable** (the fourth section's horizon).
-- *The apple and the human read each other by the central sweep, across one hemisphere.* Each is a bounded thing in the
-  other's view, its rim reached at a point. So the other's V is **knowable**: the end exists and is met. It is not
-  known, for the far hemisphere stays turned away; each holds only the other's front.
+- *The apple and the human face each other as bounded things.* From a distance each one's paint stops at a finite slope
+  in the other's look: its rim, one direction inside the read, not the horizon, and an end that can be walked to. The
+  sweep that has that end is the central one, read from the bounded thing's own centre, its end reached at a point; the
+  observer at a distance meets it by walking to the rim. So the other's V is **knowable**: the end exists and can be
+  met. It is not known, for the far hemisphere stays turned away; each holds only the other's front.
 - *The human holds the apple and turns it.* The turn makes the Cauchy: a uniform turn, read as the slope v/h against the
   line of sight, is the Cauchy whatever the apple's shape, which is only the paint. And the hand holds the back while the
   eye holds the front, so in the hand the apple's V is **known**. This is the holding above.

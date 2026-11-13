@@ -92,14 +92,16 @@ is read is discrete.
 
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
-| **continuous** | a read | the number line in a unit |
-| **discrete** | a count | a write |
+| **continuous** | reading: a read, and what reads held together give, an extent or a map | the number line in a unit |
+| **discrete** | a count or an order, descriptions kept in writes | a write |
 
-The other two boxes mix the properties, and both are tools of description. A count is discrete and unmoved by scaling:
+The top-left box is reading, not only a read: an extent (D3) and a map (D7) are had from reads held together, continuous and unmoved by scaling, and neither is a read (§4). The bottom-left box holds two different descriptions: an order, which read came first, is discrete and unmoved like a count, but is kept with no step repeated, so it is not a count (D7; O4). The other two boxes mix the properties, and both are tools of description. A count is discrete and unmoved by scaling:
 the strides to the mountain are writes, and "514" is an account laid over them; what is kept of it is kept as things,
 marks or pebbles, each a write. The number line in a unit is continuous and moved by scaling: a length as an exact real
 number, the circle held whole at a size. That box is the blueprint, classical geometry, which this paper sets beside a read's
-form for comparison; it is nowhere in the physical world. The same holds of this paper's own terms: the slope, the
+form for comparison; it is nowhere in the physical world. The blueprint is not one box: its amounts in a unit sit
+here, and its completed ratios, π, e and the one-length circle, which scaling does not move, sit outside the table
+(below, "Two verbs, two nouns"). The same holds of this paper's own terms: the slope, the
 density's formula and this table are descriptions, and a read is described by them. When something will not sit on the
 diagonal, the first thing to ask is whether it is a description. Heat and paint, used below, are pictures of the density
 and of what is met along a direction, and the definition does not rest on them. **A reading**, offered as a way to sort;
@@ -383,11 +385,14 @@ median and the absence of any mean are what a read with no breadth in it is.
 - *The apple and the human read the universe by the inscribed sweep.* From home to a horizon: directions only, a turn
   that never ends, 1/Ω the limit it tends to, never reached. The universe has no far side to face, so its V
   is **unknowable**: no size could be had, and with none there is no inside or outside, only home and the horizon.
-- *The apple and the human read each other by the central sweep, across one hemisphere.* Each is a bounded thing in the
-  other's view, its rim reached at a point: the central sweep's end, e^(iπ) = −1, Ω the limit a count of its arc tends to. It is still a read, one hemisphere from a vantage; what sets it apart from the inscribed sweep is an end that can be walked to.
-  So the other's V is **knowable**: the end exists and is met. It is not known, since the far hemisphere stays turned
-  away; each holds the other's front only. Neither stands at the other's centre; the sweep about the centre is the
-  geometry of a bounded thing faced.
+- *The apple and the human face each other as bounded things.* From a distance each one's paint stops at a finite slope
+  in the other's look: its rim, one direction inside the read like any other, not the horizon. That is what the universe
+  lacks, an end that can be walked to. The sweep that has that end is the central one, a read across one hemisphere from
+  the bounded thing's own centre (the pivot of Euclid III.20): its end is reached at a point, e^(iπ) = −1, and Ω is the
+  limit a count of its arc tends to. The observer at a distance is not at that centre. It meets the same −1 in its own
+  read only by walking to the rim, where at contact the slope runs out to the horizon (§6, "Two ways to arrive"). So the
+  other's V is **knowable**: the end exists and can be met. It is not known, since the far hemisphere stays turned away;
+  each holds the other's front only.
 - *The human holds the apple and turns it.* The turn makes the Cauchy: a uniform turn, read as the slope v/h against the
   line of sight, is the Cauchy whatever the apple's shape, the shape only the paint. The hand holds the back as the eye
   holds the front, so both hemispheres are in reach and the turn is known; the apple is a thing with a size, held, and in the hand
@@ -400,7 +405,7 @@ median and the absence of any mean are what a read with no breadth in it is.
 | | hemispheres | vantage | V | the blueprint's number for it | what it is |
 |---|---|---|---|---|---|
 | inscribed, toward the universe | one | home, facing a horizon | unknowable | 1/Ω, approached | a read: what turning sees |
-| central, toward the apple | one | facing across, to a rim | knowable | Ω, reached | a read: a bounded thing faced; its arc, walked and counted in thumbs, is an extent |
+| central, toward the apple | one | the apple's centre, across to its rim | knowable | Ω, the limit a count of its arc tends to; the end reached at a point | a read about a bounded thing; from afar its rim is one direction, met at −1 by walking; its arc, counted in thumbs, is an extent |
 | the apple held and turned | both, in reach | one, the turn known | known, held | the turn's Cauchy | looks joined by a known turn, of a thing held in the hand |
 | the blueprint | both at once | none | known | 1 | neither read nor write: no vantage |
 
@@ -408,8 +413,9 @@ The human is all of these at the same time, not by turns: it reads the universe,
 what it holds in the hand or draws it holds as a blueprint. The apple has the facings and never the blueprint. So Ω · 1/Ω = 1 is
 not two parties meeting but one observer's two reads held at once, and the 1 is its own thumb given back.
 
-Faced, V is knowable, not known. The inscribed sweep approaches its end, the central sweep reaches it at a point, and only a
-write holds it whole; parallax narrows the band toward it and never closes it (§6). Euler's identity is the hinge: the
+Faced, V is knowable, not known. The inscribed sweep approaches its horizon without end; a bounded thing puts its rim
+inside the look, one direction that the central sweep, about the thing's centre, reaches at a point and that a walk
+carries to −1 at contact. Only a write holds V whole; parallax narrows the band toward it and never closes it (§6). Euler's identity is the hinge: the
 turn's end, endless in the read's chart (s → ∞), is one named point, −1, in the central one, and a named point is what
 can be carried onto the blueprint.
 
@@ -950,7 +956,7 @@ contact shrinks no faster than half a tick a tick, τ̇ ≥ −½, and the car s
 it needs to stop is the distance it has. Sorted: from two reads a tick apart the number is x₂/(x₂ − x₁) = d₁/B, the thing's distance over the step between
 the two reads. That is a ratio of two distances, unmoved by scaling and held by no single read, and so far it is D3's
 gap across with nothing temporal in it. Read as a time, the ticks still to come, it adds a premise no read holds: that
-the steps go on alike. Whether a count of ticks to a prospective event is an extent is left open (§12, O9); τ in seconds
+the steps go on alike. The ticks to come are not a count in this paper's sense, since a count describes writes made and none of them is made yet, though they rest on a count's premise; what kind they are is left open (§12, O9). τ in seconds
 is a write. One stream cannot tell
 a thing coming nearer from a thing growing where it stands; a neighbour at the same depth, read at once, tells them apart,
 approach moving both readings and growth one. A speed in metres a second is a write twice over. **Classical** (Lee);
@@ -1400,7 +1406,7 @@ that closes the heat, and it is approached at the horizon, never reached. *Ω is
 from all of h to all of v is Ω thumbs long, the heat gathered to the horizon, ∫₀^∞ ds/(1 + s²), reached at a named
 point, −1. An arc in thumbs is a length against the thumb, unmoved by scaling and held by no single read: of the kind D3
 calls an extent, here counted out, so a count; with the thumb in a unit it is a write (D4). The sweep whose arc that is,
-the central one, is itself a read: one hemisphere, from a vantage, facing a bounded thing. So both numbers belong to
+the central one, is itself a read: one hemisphere, from the bounded thing's centre, facing its rim. So both numbers belong to
 single-hemisphere reads, 1/Ω to the inscribed and Ω to the central, and the walk is how the second one's arc is
 counted. Their product is 1, which is also the blueprint's number, the thumb in thumbs; the blueprint itself has no vantage and
 is neither of them. The exchange swaps the two, and they agree only at the corner, where a length walked and a
@@ -1428,7 +1434,7 @@ rate times the length is 1 on every path; only the split between the two factors
 
 The arc is the one path on which the gain per step is the share itself, h, the same thumb turned and never stretched; so
 Ω is what the split costs when the path is the turn. In space the split has no Ω in it: one thumb seen from every
-direction of space averages ½, and the correction is 2 (the wedge's numbers, §7). So "Ω is the price", above, is the
+direction of space averages ½, and the correction is 2 (the wedge's numbers, §8). So "Ω is the price", above, is the
 plane's price. Three cautions keep the statement exact. The 1 is the thumb, H in H, not V*: nothing here gives the
 mountain's size (D4). One read is one share h; 1/Ω is their average over the turn, a sum, so a limit the turning tends to and no read holds. And the walk
 here is counted in thumbs, an extent as a count; it is an amount, a write, only once the thumb has a unit. The mathematics is old: the mean
@@ -1454,7 +1460,7 @@ path the walk is, that its steps there are even, and that its split is not the t
 relate, one slope s from all of h to all of v; weighed by the turn's heat and summed, those ways come to Ω. A relation
 is never negative, so that is all of them. The circle is the same quarter turn four times, once for each choice of sign
 for h and v, joined on the blueprint: four of them, 4Ω. The relation is continuous and the read's; the facing is a choice of
-signs, discrete, the blueprint's join (§7's arrays, one per facing), a second kind of thing and not a second dimension. In
+signs, discrete, the blueprint's join (one array per facing, essay 10 §2), a second kind of thing and not a second dimension. In
 space the count is the same one step up: the wedge holds Ω of directions, the signs of h, v and v₂ give eight facings,
 and eight of them, 8Ω, are the sphere. The Ω is the turn's weighing; summed along the chord the same ways come to √2, along the
 square's edges to 2. **Classical**; the wording is a reading.
@@ -1798,12 +1804,14 @@ before the data can show where it is not. **Checked** (TCF; killed).
 - **O3. Completed joins, and their name.** *Closed (12 November):* a completed join (π, the one-length circle, the
   facings joined) is unmoved by scaling, so it is not a write; it was called "the blueprint's" until a word was chosen.
   The word is the **blueprint**: both hemispheres at once, no vantage, apart from reads and writes (§1, "Reads, writes and
-  the blueprint"). What stays open is whether the blueprint is a kind beside D1–D7 or only their sum. *Sharpened
+  the blueprint"). *Settled (R890, R891; R922):* it is neither a kind beside D1–D7 nor their sum. It has no vantage, so
+  it has nothing to do with reads and writes, and no reads or writes, finite or carried to a limit, make it; it is
+  classical geometry, set beside a read's form only for comparison. *Sharpened
   (R796):* what an angle needs comes in two stages. The ratio s = v/h needs nothing; it is the read. The shares h and v
   with h² + v² = 1 need the other party held at the one length (V = H, the one-length circle): with them come
   cos and sin as the shares themselves, √(1 + s²) = 1/h, and halving a turn, t = v/(1 + h). The angle θ needs the circle
   and the turn completed as well (π, a limit): an arc over the radius, counted against the whole. Neither stage needs a
-  true breadth V* or a unit, so neither is a write; both are completed joins, the circle first and Ω second. *And (R797):* the exact V is a third, the limit of parallax:
+  true breadth V* or a unit, so neither is a write; both are completed joins, the circle first and π second. *And (R797):* the exact V is a third, the limit of parallax:
   unknowable against the universe, knowable across one hemisphere, known only held or written (§1, "Four things").
   *And (R798–R801):* the completed joins are the blueprint's, both hemispheres at once with no facing; four identities
   state them, and each has a read's form about the exchange and the corner (§9, "Four identities, one exchange").
@@ -1811,7 +1819,7 @@ before the data can show where it is not. **Checked** (TCF; killed).
   *Widened, and open (R825, R826):* there are at least two such joinings, and they are different structures. An order is
   a relation with no cycle. A map carries one read's directions to another's; it has an inverse and can cycle (a turn
   by the corner's slope returns after four), so it is no order, and the order of reads is something a composition of
-  maps takes, not the composition (two quarter turns of space joined in the two orders land 120° apart, §7). Keeping
+  maps takes, not the composition (two quarter turns of space joined in the two orders land 120° apart, §8). Keeping
   order neither makes a map nor is needed for one: s ↦ s³ keeps order and is only a change of chart of one read; the
   exchange s ↦ 1/s reverses it. Not every function on directions is a map between reads. A change of chart is a
   representation (D7); a lens or the air changes what arrives (D6); a map between reads is induced by a change of
@@ -1860,7 +1868,9 @@ before the data can show where it is not. **Checked** (TCF; killed).
   from a read is one thing, and what kind of thing the inferred quantity is, another. The look is a read, the
   uniformity a premise about what arrives, and the rapidity inferred the coordinate of a map; §4 now says so. Not
   settled by this: whether the rapidity is always recoverable from one sky, or the assumed rest frame unique. The time
-  to contact stays out of D3.
+  to contact stays out of D3. *Sharpened (R921):* as d₁/B it is an extent; read as ticks still to come it is not a
+  count, since a count describes writes already made and no future tick is one, though it rests on the premise every
+  count rests on, that the steps go on alike. What kind the ticks to come are is still open.
 
 ## Where the ideas come from
 
@@ -1908,6 +1918,9 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
   A* 392, 45–57.
 - Bitter, T. and Dubbers, D. (1987). Manifestation of Berry's topological phase in neutron spin rotation. *Physical Review
   Letters* 59, 251–254.
+- Boole, G. (1857). On the comparison of transcendents, with certain applications to the theory of definite
+  integrals. *Philosophical Transactions of the Royal Society of London* 147, 745–803.
+- Borel, É. (1914). *Introduction géométrique à quelques théories physiques.* Gauthier-Villars, Paris.
 - Bridgman, P. W. (1922). *Dimensional Analysis.* Yale University Press.
 - Brinkman, T. (2026). *Observation from Somewhere: addresses given, payloads met.* Working paper, archived.
 - Bullock, J. M., Mallada González, L., Tamme, R., Götzenberger, L., White, S. M., Pärtel, M. and Hooftman, D. A. P.
@@ -1943,6 +1956,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
   Gottingensis Recentiores* 6, 99–146.
 - Gibbs, J. W. (1899). Fourier's series. *Nature* 59, 606.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.
+- Gosset, W. S. ("Student") (1908). The probable error of a mean. *Biometrika* 6(1), 1–25.
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
   *Physics Letters A* 128, 391–394.
 - Haar, A. (1933). Der Massbegriff in der Theorie der kontinuierlichen Gruppen. *Annals of Mathematics* 34, 147–169.
@@ -1989,6 +2003,8 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
   Review Letters* 57, 937–940.
 - Trotter, H. F. (1959). On the product of semi-groups of operators. *Proceedings of the American Mathematical Society*
   10, 545–551.
+- Ulam, S. M. and von Neumann, J. (1947). On combination of stochastic and deterministic processes (abstract).
+  *Bulletin of the American Mathematical Society* 53(11), 1120.
 - Viète, F. (1593). *Variorum de rebus mathematicis responsorum liber VIII.* Tours.
 - Wallis, J. (1656). *Arithmetica infinitorum.* Oxford.
 - Wantzel, P. L. (1837). Recherches sur les moyens de reconnaître si un problème de géométrie peut se résoudre avec la

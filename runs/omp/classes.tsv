@@ -1,0 +1,42 @@
+id	class	note
+R01	T	Polar angle integrated over 0 to 2π.
+R02	T	Through the Gaussian integral's polar angle over a full turn.
+R03	L	arctan over the whole line, −π/2 to π/2, a half turn.
+R04	L	Total of 1/(1+x²) over the whole line.
+R05	L	Zeros of sin spaced π apart (its half-period); ambiguous with Parseval on a 2π period, step named is the zeros.
+R06	T	Fourier series over a full period 2π.
+R07	L	Through ζ(2) via sin's zeros at multiples of π, as R05.
+R08	Q	Slope from 0 to 1 within the quarter turn (arctan 1 = π/4).
+R09	Q	Angle integrated from 0 to π/2.
+R10	Q	∫₀^∞ dt/(1+t²), slope 0 to ∞.
+R11	Q	Through the Dirichlet integral over a half-line, slope 0 to ∞.
+R12	T	Through the Gaussian integral's full-turn polar step.
+R13	T	Through the Gaussian integral's full-turn polar step.
+R14	T	Step named is the Gaussian integral, whose π is the full-turn polar step.
+R15	T	Gaussian integral of the Laplace expansion, full-turn polar step.
+R16	T	Polar angle over 0 to 2π.
+R17	T	One full revolution of the parametrization.
+R18	T	Area of each full cross-sectional disc.
+R19	T	Azimuth integrated over 0 to 2π.
+R20	T	Gaussian integral to the fourth power, each from a full-turn polar step.
+R21	T	Through the 3-sphere's area, i.e. Gaussian integrals (full turns).
+R22	L	Needle angle uniform over a half turn [0, π).
+R23	L	Through ζ(2), as the Basel problem (R05).
+R24	T	Normal constant 1/√(2π) from the Gaussian integral's full turn.
+R25	T	Normal density height 1/√(2π), full-turn polar step.
+R26	T	Normal density height 1/√(2π), full-turn polar step.
+R27	Q	Angle from 0 to π/2 after x = sin²θ.
+R28	L	Area of a semicircle (half the disc).
+R29	L	Direction averaged over a half turn [0, π).
+R30	L	Average over the half-period π.
+R31	T	Fourier normalization over the full period [−π, π].
+R32	T	Area of the full sphere about the charge.
+R33	T	Length of the full circular loop.
+R34	T	One cycle as a full turn of 2π radians.
+R35	T	One period is a full phase turn 2π.
+R36	T	One orbit a full turn, ω = 2π/T.
+R37	T	4π of the full sphere in Gauss's law.
+R38	T	Through ζ(4); standard textbook route is Parseval on a 2π period (as R06), ambiguous with sin's zeros.
+R39	T	Gaussian normalizations, each from a full-turn polar step.
+R40	T	Azimuth over 2π on the sphere.
+R41	T	Full solid angle 4π of the sphere.

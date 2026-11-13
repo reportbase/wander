@@ -1,0 +1,16 @@
+== CCM: 1 common segments, 7.00 days
+  B2 1-4 Hz: rho +0.001, sy/sx 1.031, z = +0.001 + 1.031i; half B n 1209600: D(r, Cauchy z) 0.0009, median -0.001 (m +0.001), quartiles -1.026 +1.030 (m-g -1.031, m+g +1.032); angle D from uniform 0.0013; quiet/loud hours (21 each): D ratio 0.0014, D |x| 0.0066; kurtosis x -0.00 y -0.00; x from Cauchy 0.0812, from Gauss 0.0005
+== RSSD: 1 common segments, 7.00 days
+  B2 1-4 Hz: rho +0.094, sy/sx 1.170, z = +0.110 + 1.164i; half B n 1209600: D(r, Cauchy z) 0.0265, median +0.166 (m +0.110), quartiles -0.885 +1.222 (m-g -1.055, m+g +1.274); angle D from uniform 0.0274; quiet/loud hours (21 each): D ratio 0.0025, D |x| 0.1350; kurtosis x 4398.59 y 11914.54; x from Cauchy 0.0728, from Gauss 0.1910
+== TUC: 1 common segments, 7.00 days
+  B2 1-4 Hz: rho -0.339, sy/sx 0.931, z = -0.316 + 0.876i; half B n 1209600: D(r, Cauchy z) 0.0247, median -0.249 (m -0.316), quartiles -1.110 +0.617 (m-g -1.192, m+g +0.560); angle D from uniform 0.0247; quiet/loud hours (21 each): D ratio 0.0203, D |x| 0.1768; kurtosis x 1062.62 y 1622.77; x from Cauchy 0.0719, from Gauss 0.0549
+== COLA: 1 common segments, 7.00 days
+  B2 1-4 Hz: rho +0.032, sy/sx 0.954, z = +0.030 + 0.953i; half B n 1209600: D(r, Cauchy z) 0.0067, median +0.015 (m +0.030), quartiles -0.957 +0.987 (m-g -0.923, m+g +0.983); angle D from uniform 0.0072; quiet/loud hours (21 each): D ratio 0.0150, D |x| 0.3368; kurtosis x 36164.31 y 62791.40; x from Cauchy 0.0533, from Gauss 0.3735
+== KIEV: 1 common segments, 3.50 days
+  B2 1-4 Hz: rho +0.229, sy/sx 0.861, z = +0.197 + 0.838i; half B n 604800: D(r, Cauchy z) 0.0375, median +0.166 (m +0.197), quartiles -0.858 +1.200 (m-g -0.641, m+g +1.034); angle D from uniform 0.0384; quiet/loud hours (21 each): D ratio 0.0483, D |x| 0.2870; kurtosis x 5867.26 y 1441.09; x from Cauchy 0.0585, from Gauss 0.0991
+== ULN: 1 common segments, 3.50 days
+  B2 1-4 Hz: rho +0.201, sy/sx 1.231, z = +0.247 + 1.206i; half B n 604800: D(r, Cauchy z) 0.0061, median +0.225 (m +0.247), quartiles -0.991 +1.430 (m-g -0.959, m+g +1.453); angle D from uniform 0.0062; quiet/loud hours (21 each): D ratio 0.0069, D |x| 0.2123; kurtosis x 1400.96 y 5881.66; x from Cauchy 0.0639, from Gauss 0.0599
+stations read: 6 of 6
+N1b: not killed. both kurtoses > 3 in 5 of 6 (needs 4)
+N2b: not killed. D(r, Cauchy z) >= 0.03 (or dropped) in 1 of 6
+N3b: not killed. ratio loud vs quiet >= 0.03 (or dropped) in 1; both parts met in 4 of 6

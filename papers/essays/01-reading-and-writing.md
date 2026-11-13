@@ -85,8 +85,8 @@ outside?
 
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
-| continuous | a read | the number line in a unit (the blueprint) |
-| discrete | a count | a write |
+| continuous | reading: a read, and what reads held together give, an extent or a map | the number line in a unit (the blueprint) |
+| discrete | a count or an order, descriptions kept in writes | a write |
 
 A read is continuous and unmoved: a direction, a slope, a ratio of slopes. A write is discrete and moved: a stone, a
 stride, a mark on a wall, a metre bar, or an amount put down in a unit, 0.7 m. A write is over once made, and it is used

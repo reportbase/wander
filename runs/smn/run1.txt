@@ -1,0 +1,17 @@
+== ANMO: 1 common segments, 7.00 days
+  B1 0.1-0.3 Hz: rho +0.038, sy/sx 1.198, z = +0.046 + 1.197i; half B n 1209600: D(r, Cauchy z) 0.0140, median +0.071 (m +0.046), quartiles -1.184 +1.346 (m-g -1.151, m+g +1.243); angle D from uniform 0.0118; quiet/loud hours (21 each): D ratio 0.0518, D |x| 0.3261; kurtosis x 5.59 y 3.70; x from Cauchy 0.0484, from Gauss 0.0609
+  B2 1-4 Hz: rho -0.073, sy/sx 1.085, z = -0.080 + 1.082i; half B n 1209600: D(r, Cauchy z) 0.0332, median -0.058 (m -0.080), quartiles -0.957 +0.840 (m-g -1.161, m+g +1.002); angle D from uniform 0.0341; quiet/loud hours (21 each): D ratio 0.0160, D |x| 0.1907; kurtosis x 24596.82 y 31035.11; x from Cauchy 0.0686, from Gauss 0.1843
+== KONO: 1 common segments, 7.00 days
+  B1 0.1-0.3 Hz: rho -0.151, sy/sx 1.205, z = -0.182 + 1.192i; half B n 1209600: D(r, Cauchy z) 0.0456, median -0.046 (m -0.182), quartiles -1.115 +1.016 (m-g -1.374, m+g +1.009); angle D from uniform 0.0478; quiet/loud hours (21 each): D ratio 0.0508, D |x| 0.3435; kurtosis x 2.01 y 2.94; x from Cauchy 0.0546, from Gauss 0.0501
+  B2 1-4 Hz: rho +0.095, sy/sx 1.068, z = +0.101 + 1.063i; half B n 1209600: D(r, Cauchy z) 0.0168, median +0.146 (m +0.101), quartiles -0.967 +1.262 (m-g -0.961, m+g +1.164); angle D from uniform 0.0165; quiet/loud hours (21 each): D ratio 0.0245, D |x| 0.2089; kurtosis x 62.77 y 2344.77; x from Cauchy 0.0708, from Gauss 0.0233
+== HRV: 1 common segments, 7.00 days
+  B1 0.1-0.3 Hz: rho -0.103, sy/sx 1.038, z = -0.107 + 1.033i; half B n 1209600: D(r, Cauchy z) 0.0278, median -0.177 (m -0.107), quartiles -1.135 +0.778 (m-g -1.140, m+g +0.926); angle D from uniform 0.0285; quiet/loud hours (21 each): D ratio 0.0326, D |x| 0.4259; kurtosis x 3.00 y 2.83; x from Cauchy 0.0411, from Gauss 0.0745
+  B2 1-4 Hz: rho -0.234, sy/sx 1.013, z = -0.237 + 0.985i; half B n 1209600: D(r, Cauchy z) 0.0250, median -0.160 (m -0.237), quartiles -1.135 +0.824 (m-g -1.222, m+g +0.748); angle D from uniform 0.0252; quiet/loud hours (21 each): D ratio 0.0070, D |x| 0.1862; kurtosis x 2630.40 y 384.21; x from Cauchy 0.0730, from Gauss 0.0293
+N1: KILLED. amounts heavy-tailed and not Cauchy in 3 of 6 (needs 4)
+N2: not killed. D(r, Cauchy) >= 0.03 in 2 of 6: ANMO B2 0.033, KONO B1 0.046
+N3: KILLED. ratio loud vs quiet D >= 0.03 in 3; ratio < 0.03 with |x| > 0.3 in 0 of 6
+N4: not killed. N2 failures with the angle within 0.03 of uniform: 0; failures in B1 1, in B2 1
+
+real	0m42.882s
+user	0m43.858s
+sys	0m9.395s

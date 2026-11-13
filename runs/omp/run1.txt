@@ -1,0 +1,46 @@
+R01	T	√π	1	2	hurts	Gaussian integral
+R02	T	1/√(2π)	2	4	hurts	Normal density normalizing constant
+R03	L	π	1	4	hurts	Total of the Cauchy kernel
+R04	L	1/π	1	4	hurts	Cauchy density coefficient
+R05	L	π²/6	36	9	helps	Basel problem
+R06	T	π⁴/90	8100	2025	helps	Zeta at 4
+R07	L	π²/8	64	4	helps	Sum over odd reciprocal squares
+R08	Q	π/4	16	4	helps	Leibniz series
+R09	Q	π/2	4	1	helps	Wallis product
+R10	Q	π/2	4	1	helps	Dirichlet integral
+R11	Q	π	1	4	hurts	Integral of sinc squared
+R12	T	√π	1	2	hurts	Gamma of one half
+R13	T	√π/4	16	8	helps	Second Gaussian moment
+R14	T	√(π/8)	8	4	helps	Fresnel integral
+R15	T	√(2π)	2	4	hurts	Stirling's formula constant
+R16	T	π	1	4	hurts	Area of the unit disc
+R17	T	2π	4	16	hurts	Circumference of the unit circle
+R18	T	4π/3	16	64	hurts	Volume of the unit ball
+R19	T	4π	16	64	hurts	Surface area of the unit sphere
+R20	T	2π²	4	64	hurts	Area of the unit 3-sphere
+R21	T	π²/2	4	4	tie	Volume of the unit 4-ball
+R22	L	2/π	4	1	helps	Buffon's needle
+R23	L	6/π²	36	9	helps	Coprime probability
+R24	T	√(2/π)	2	1	helps	Mean absolute value of a standard norm
+R25	T	2/π	4	1	helps	Asymptotic efficiency of the median
+R26	T	√(π/2)	2	1	helps	Standard error of the median
+R27	Q	1/π	1	4	hurts	Arcsine law density
+R28	L	2/π	4	1	helps	Wigner semicircle law
+R29	L	1/π	1	4	hurts	Cauchy's formula for mean width
+R30	L	2/π	4	1	helps	Full-wave rectified sine average
+R31	T	4/π	16	4	helps	Square wave fundamental
+R32	T	1/(4π)	16	64	hurts	Coulomb constant
+R33	T	1/(2π)	4	16	hurts	Field of a long straight wire
+R34	T	1/(2π)	4	16	hurts	Reduced Planck constant
+R35	T	2π	4	16	hurts	Simple pendulum period
+R36	T	4π²	16	256	hurts	Kepler's third law
+R37	T	8π	64	256	hurts	Einstein field equations coupling
+R38	T	π⁴/15	225	256	hurts	Stefan–Boltzmann integral
+R39	T	√(8/π)	8	4	helps	Maxwell–Boltzmann mean speed
+R40	T	2π/3	9	16	hurts	Hertzian dipole radiation resistance
+R41	T	1/(4π)	16	64	hurts	Effective aperture of an isotropic ant
+
+Q: n=5 helps=3 (60%) ties=0 hurts=2
+T: n=27 helps=8 (30%) ties=1 hurts=18
+L: n=9 helps=6 (67%) ties=0 hurts=3
+T+L: n=36 helps=14 (39%)
