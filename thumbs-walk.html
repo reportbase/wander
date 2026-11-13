@@ -31,6 +31,9 @@
     centre; the eye's digits grow a bit a halving, the slopes' do not. Hook approach(n), backOff(n), digits().
     From the exact eye (TWK run 7): cell indices are BigInts, each thing's centre an exact fraction, and everything drawn,
     picked or culled is worked out from the eye (a floating origin), so the view holds 10^100 units out as at the start.
+    The blueprint beside it (O, ?god=1): the god's-eye view done classically, every thing at scales 0 to 8 in a square
+    6000 units across, stored and counted, drawn as a map beside the view; it is better, and the read does not need it.
+    Hook blueprint(), besideBlueprint().
     ?q=&ky=&kp=&x=&z=&menu=1&sky=1&heat=0&thumbs=0&anchor=0
     Hook window.__thumbsWalk: Fr (fractions), exact(), checks(), set({q, ky, kp, eye}), trigFree(steps), stride(dir, n), target(),
     state(), sky().
@@ -75,6 +78,7 @@
     <label><input type="checkbox" id="optOmega" checked> the shares in Ω</label>
     <label><input type="checkbox" id="optWalk" checked> the counted walk</label>
     <label><input type="checkbox" id="optDigits" checked> a read and a write, by the digit (G half way, B back)</label>
+    <label><input type="checkbox" id="optGod"> the blueprint beside it, the god's-eye view (O)</label>
     <label><input type="checkbox" id="optChecks"> the checks</label>
     <label><input type="checkbox" id="optAnchor" checked> re-anchor the eye at each new heading (take the scaffolding down)</label>
     <label><input type="checkbox" id="optAbout"> about</label>
@@ -202,6 +206,43 @@ function keptAt(t, g = grainAt(t.lv)) {   // b ≥ g·d and d ≥ b, in squares:
     const dx = t.r[0], dy = t.r[1], dz = t.r[2], d2 = dx * dx + dy * dy + dz * dz;
     return t.b * t.b >= g * g * d2 && d2 >= t.b * t.b;
 }
+// ---------- the blueprint, for comparison ----------
+// The god's-eye view done classically: a stored list of every thing at scales 0 to 8 in a square 2·R0 on a side about
+// the start, made once, its count N known. It is used here only to set beside the read: nothing the read draws or
+// reads comes from it. Scales below 0 are left out: at scale −8 the square alone would hold about 2·10⁹ cells.
+const BP = { R0: 3000, top: 8, list: null, img: null };
+function blueprint() {
+    if (BP.list) return BP;
+    const list = []; let cells = 0;
+    for (let lv = 0; lv <= Math.min(BP.top, LEVELS); lv++) {
+        const w = CELL * 2 ** lv, n = Math.ceil(BP.R0 / w);
+        for (let i = -n; i < n; i++) for (let j = -n; j < n; j++) { cells++;
+            const t = thingOf(BigInt(i), BigInt(j), lv); if (!t) continue;
+            const x = Fr.num(t.C[0]), z = Fr.num(t.C[2]);
+            if (Math.abs(x) <= BP.R0 && Math.abs(z) <= BP.R0) list.push({ key: t.key, x, z, b: t.b, lv }); }
+    }
+    BP.list = list; BP.cells = cells; BP.keys = new Set(list.map(q => q.key));
+    // the map drawn once: every stored thing a dot
+    const M = 240, c = document.createElement('canvas'); c.width = M; c.height = M; const cx = c.getContext('2d');
+    cx.fillStyle = 'rgba(11,15,23,0.92)'; cx.fillRect(0, 0, M, M); cx.fillStyle = 'rgba(167,139,250,0.55)';
+    for (const q of list) { const u = (q.x / BP.R0 + 1) * M / 2, v = (1 - q.z / BP.R0) * M / 2, r = Math.max(0.5, q.b * M / (4 * BP.R0));
+        cx.fillRect(u - r / 2, v - r / 2, r, r); }
+    BP.img = c; BP.M = M; return BP;
+}
+// the read's held things set beside the blueprint: how many lie in it, and whether the read holds any thing the blueprint
+// lacks (it should hold none where the blueprint reaches)
+function besideBlueprint() {
+    const B = blueprint(), held = thingsNear(); let inside = 0, missing = 0, outsideBox = 0, below = 0;
+    for (const t of held) {
+        if (t.lv < 0 || t.lv > B.top) { below++; continue; }
+        const x = Fr.num(t.C[0]), z = Fr.num(t.C[2]);
+        if (!(Math.abs(x) <= B.R0 && Math.abs(z) <= B.R0)) { outsideBox++; continue; }
+        if (B.keys.has(t.key)) inside++; else missing++;
+    }
+    const ex = Fr.num(S.eye[0]), ez = Fr.num(S.eye[2]);
+    return { N: B.list.length, cells: B.cells, K: held.length, inside, missing, outsideBox, otherScales: below,
+             eyeInside: Math.abs(ex) <= B.R0 && Math.abs(ez) <= B.R0 };
+}
 function floorFr(f, w) { return floorDiv(f.n * w.d, f.d * w.n); }   // ⌊f/w⌋, a BigInt
 const CULL = { scanned: 0, perLevel: [] };
 function thingsNear(extra = 0, from = -1) {
@@ -235,7 +276,7 @@ const S = {
     walk: { key: null, m: [], strides: 0 },
     anchor: params.get('anchor') !== '0', anchors: 0, lastHeading: null, goes: 0, lock: null,
     show: { thumbs: params.get('thumbs') !== '0', heat: params.get('heat') !== '0', sky: params.get('sky') === '1',
-            read: true, euler: true, omega: true, walk: true, digits: true, checks: false, about: false },
+            read: true, euler: true, omega: true, walk: true, digits: true, god: params.get('god') === '1', checks: false, about: false },
 };
 const STRIDE = Fr.make(1, 4), GRID = 16n;
 function strideNow() { return S.focus >= 0 ? STRIDE : Fr.make(1, 4n * 2n ** BigInt(-S.focus)); }   // the stride shrinks with the focus's scale
@@ -520,6 +561,24 @@ function frame() {
     // the crosshair, the triple corner
     g.strokeStyle = '#f2c14e'; g.lineWidth = 1.4; g.beginPath();
     g.moveTo(W / 2 - 9, Hh / 2); g.lineTo(W / 2 + 9, Hh / 2); g.moveTo(W / 2, Hh / 2 - 9); g.lineTo(W / 2, Hh / 2 + 9); g.stroke();
+    if (S.show.god) drawBlueprint(things);
+}
+function drawBlueprint(things) {
+    const B = blueprint(), M = B.M, x0 = W - M - 14, y0 = Hh - M - 14, ex = Fr.num(S.eye[0]), ez = Fr.num(S.eye[2]);
+    const map = (x, z) => [x0 + (x / B.R0 + 1) * M / 2, y0 + (1 - z / B.R0) * M / 2];
+    g.drawImage(B.img, x0, y0);
+    g.strokeStyle = '#24324a'; g.lineWidth = 1; g.strokeRect(x0 + 0.5, y0 + 0.5, M, M);
+    // what the read holds now, at the blueprint's scales, in teal
+    g.fillStyle = '#4fd1c5';
+    for (const t of things) { if (t.lv < 0) continue; const [u, v] = map(ex + t.r[0], ez + t.r[2]);
+        if (u >= x0 && u <= x0 + M && v >= y0 && v <= y0 + M) g.fillRect(u - 1, v - 1, 2, 2); }
+    const inside = Math.abs(ex) <= B.R0 && Math.abs(ez) <= B.R0;
+    let [u, v] = map(ex, ez); u = Math.max(x0, Math.min(x0 + M, u)); v = Math.max(y0, Math.min(y0 + M, v));
+    g.fillStyle = '#f2c14e'; g.beginPath(); g.arc(u, v, 3.5, 0, 7); g.fill();
+    g.font = '11px "DM Mono", monospace'; g.fillStyle = '#d9e2ef';
+    g.fillText('the blueprint: N = ' + B.list.length.toLocaleString() + ' stored', x0 + 6, y0 + 14);
+    g.fillStyle = '#4fd1c5'; g.fillText('the read holds K = ' + things.length.toLocaleString(), x0 + 6, y0 + 28);
+    if (!inside) { g.fillStyle = '#f2c14e'; g.fillText('the eye is past the blueprint\'s edge', x0 + 6, y0 + M - 8); }
 }
 // a circle with no angle: the rational points ((1 − t²)/(1 + t²), 2t/(1 + t²)), t from 0 to 1, mirrored four ways
 const RING = (() => { const pts = []; for (let i = 0; i <= 16; i++) { const t = i / 16, d = 1 + t * t; pts.push([(1 - t * t) / d, 2 * t / d]); }
@@ -580,6 +639,13 @@ function panelHtml() {
         h += `<p>held now: ${CULL.perLevel.reduce((a, [, n]) => a + n, 0)} things over scales −${BELOW} to ${LEVELS}, the focus at scale ${S.focus}. How many things the world has never enters.</p>`;
     }
     if (S.show.walk) h += `<p>the eye: its fractions' denominators ${eyeDigits()} digits; ${S.anchor ? 're-anchored ' + S.anchors + ' times, at each new heading' : 'not re-anchored: every heading taken is still in it'}</p>`;
+    if (S.show.god) {
+        const Bs = besideBlueprint();
+        h += `<h3>the god's-eye view, beside it</h3><p>The blueprint is the classical view: every thing at scales 0 to ${BP.top} in a square ${2 * BP.R0} units across about the start, stored once, ${Bs.cells.toLocaleString()} cells read to make it, N = ${Bs.N.toLocaleString()} things counted. It sees everything there at once, and it is better. It is drawn here only to set beside the read: nothing the read draws or reads comes from it.</p>`;
+        h += `<p>The read holds K = ${Bs.K.toLocaleString()}: ${Bs.inside.toLocaleString()} of them in the blueprint, <span class="${Bs.missing ? 'bad' : 'ok'}">${Bs.missing} it lacks</span>, ${Bs.outsideBox.toLocaleString()} past its edge and ${Bs.otherScales.toLocaleString()} at scales it does not store. The other ${(Bs.N - Bs.inside).toLocaleString()} the read never needed.</p>`;
+        h += Bs.eyeInside ? '<p>Walk past the edge, or press G on something small: the blueprint runs out, the read does not.</p>'
+                          : '<p>The eye is past the blueprint\'s edge. The blueprint has nothing here; the read has the same view it had at the start.</p>';
+    }
     if (S.show.checks) {
         h += `<h3>what is held</h3><p>Things at every scale, levels −${BELOW} to ${LEVELS}; kept when their breadth is at least the grain times their distance, the grain 1/32 at the focus's scale (now ${S.focus})${SHARE === 'cauchy' ? ' and √cosh(k·ln 2) times that k scales away, so each scale holds its Cauchy share, sech(k·ln 2)' : ', the same at every scale'}. Kept now, by level: ${CULL.perLevel.filter(([, n]) => n).map(([l, n]) => l + ': ' + n).join(', ')} (${CULL.perLevel.reduce((a, [, n]) => a + n, 0)} in all), from ${CULL.scanned} cells. How far the world goes never enters.</p>`;
         h += '<h3>the checks (plans/twk-plan.md)</h3><table>' + checks().map(c =>
@@ -602,7 +668,7 @@ function updatePanel(force) {
     const h = panelHtml(); if (h !== lastHtml) { out.innerHTML = h; lastHtml = h; }
 }
 document.getElementById('menuBtn').onclick = () => { panel.classList.toggle('open'); updatePanel(true); };
-const opts = { optThumbs: 'thumbs', optHeat: 'heat', optSky: 'sky', optRead: 'read', optEuler: 'euler', optOmega: 'omega', optWalk: 'walk', optDigits: 'digits', optChecks: 'checks', optAbout: 'about' };
+const opts = { optThumbs: 'thumbs', optHeat: 'heat', optSky: 'sky', optRead: 'read', optEuler: 'euler', optOmega: 'omega', optWalk: 'walk', optDigits: 'digits', optGod: 'god', optChecks: 'checks', optAbout: 'about' };
 { const el = document.getElementById('optAnchor'); el.checked = S.anchor; el.onchange = () => { S.anchor = el.checked; updatePanel(true); }; }
 for (const [id, k] of Object.entries(opts)) { const el = document.getElementById(id); el.checked = S.show[k];
     el.onchange = () => { S.show[k] = el.checked; updatePanel(true); }; }
@@ -616,6 +682,7 @@ addEventListener('keydown', ev => {
     if (k === 'h') { S.holdH = !S.holdH; updatePanel(true); return; }
     if (k === 'g') { approach(1); updatePanel(true); return; }
     if (k === 'b') { backOff(1); updatePanel(true); return; }
+    if (k === 'o') { S.show.god = !S.show.god; document.getElementById('optGod').checked = S.show.god; updatePanel(true); return; }
     keys.add(k); if (ev.key.startsWith('Arrow')) ev.preventDefault();
 });
 addEventListener('keyup', ev => keys.delete(ev.key.toLowerCase()));
@@ -651,7 +718,7 @@ window.__thumbsWalk = {
                 stride('wasd'[i % 4], 1); frame(); exactOf(S.target); }
         } finally { for (const n of names) Math[n] = saved[n]; }
         return calls;
-    }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff,
+    }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff, blueprint: () => { const B = blueprint(); return { N: B.list.length, cells: B.cells, R0: B.R0, top: B.top }; }, besideBlueprint,
     digits: () => ({ eye: eyeDigits(), slopes: slopeDigits(exactOf(S.target)), focus: S.focus, goes: S.goes }),
     target: () => S.target, pose,
     set(o) { if (o.q !== undefined || o.ky !== undefined || o.kp !== undefined || o.eye) S.lock = null; if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
