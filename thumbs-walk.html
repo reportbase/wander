@@ -153,7 +153,11 @@ const CELL = 24, LEVELS = Math.max(0, Math.min(40, Math.round(+(QS.get('levels')
 const coshL = k => (2 ** k + 2 ** -k) / 2;
 // K held (TWK run 13, ?kfix=K): the grain scaled by GS, moved only by what the read holds, never by a count of the world
 let GS = 1, KFIX = QS.get('kfix') ? Math.max(100, +QS.get('kfix')) : 0;
-function grainAt(lv) { return GS * (SHARE === 'flat' ? GRAIN : GRAIN * Math.sqrt(coshL(lv - S.focus))); }
+// the focus glides (since R946; Tom: "its not smooth and jumps when i select a new object."): the grain follows S.fg, which
+// eases toward the whole-number focus over about a quarter of a second, so a new thing under the crosshair changes what is
+// held over several frames, not all at once. ?glide=0 keeps the step (as runs 1-14 had it).
+const GLIDE = QS.get('glide') !== '0';
+function grainAt(lv) { return GS * (SHARE === 'flat' ? GRAIN : GRAIN * Math.sqrt(coshL(lv - (GLIDE ? S.fg : S.focus)))); }
 function holdK(held) { if (!KFIX || !held) return; const f = Math.sqrt(held / KFIX); if (Math.abs(f - 1) > 0.02) GS = Math.max(1 / 8, Math.min(64, GS * f)); }
 function scanAt(lv) { return Math.ceil(BMAX / (grainAt(lv) * CELL)) + 1; }
 // cells are hashed from their whole index, a BigInt (since TWK run 7): the same numbers as before wherever the index is
@@ -378,8 +382,36 @@ function outTenfold() {   // U: the eye ten times as far from the start along x,
     S.eye[0] = Fr.add(S.eye[0], Fr.make(step)); S.target = null; S.lock = null; frame(); }
 function floorFr(f, w) { return floorDiv(f.n * w.d, f.d * w.n); }   // ⌊f/w⌋, a BigInt
 const CULL = { scanned: 0, examined: 0, perLevel: [], first: null };
+let levelCache = { lv: {} };
+const cellsMemo = new Map();
+function cellsWithin(R) { if (!cellsMemo.has(R)) { let c = 0; for (let i = -R; i <= R; i++) for (let j = -R; j <= R; j++) if (i * i + j * j <= R * R) c++; cellsMemo.set(R, c); } return cellsMemo.get(R); }
+function levelCands(lv, R, ci, cj) {   // every thing in the cells within R of the eye's cell (ci, cj) at scale lv
+    const w = CELL * 2 ** lv, cands = [];
+    for (let di = -R; di <= R; di++) for (let dj = -R; dj <= R; dj++) { const r2 = di * di + dj * dj; if (r2 > R * R) continue;
+        for (const t of thingsOf(ci + BigInt(di), cj + BigInt(dj), lv)) cands.push({ t, r2, dx: di * w, dz: dj * w }); }
+    return { R, dens: DENS, ci, cj, cands };
+}
+// what is held depends on where the eye is and on the grain, never on where it looks, so a turn reuses it (R946)
+let nearCache = { key: null, out: null, scanned: 0, examined: 0, perLevel: [] };
 function thingsNear(extra = 0, from = -1) {
+    const ck = extra === 0 && from < 0 ? S.eye.map(f => f.n + '/' + f.d).join(',') + '|' + (GLIDE ? S.fg : S.focus) + '|' + GS + '|' + DENS : null;
+    if (ck && nearCache.key === ck) { CULL.scanned = nearCache.scanned; CULL.examined = nearCache.examined; CULL.perLevel = nearCache.perLevel; return nearCache.out; }
     const out = []; CULL.scanned = 0; CULL.examined = 0; CULL.perLevel = []; const ey = Fr.num(S.eye[1]);
+    if (ck) {   // each scale's cells kept while the eye stays put; a new grain only filters them again (R946)
+        for (let lv = -BELOW; lv <= LEVELS; lv++) {
+            const Wf = Fr.mul(Fr.make(CELL), Fr.dy(2 ** lv)), ci = floorFr(S.eye[0], Wf), cj = floorFr(S.eye[2], Wf);
+            const ex = Fr.num(Fr.sub(S.eye[0], Fr.mul(Fr.make(ci), Wf))), ez = Fr.num(Fr.sub(S.eye[2], Fr.mul(Fr.make(cj), Wf)));
+            const scan = scanAt(lv), s2 = scan * scan; let L = levelCache.lv[lv];
+            if (!L || L.R < scan || L.dens !== DENS || L.ci !== ci || L.cj !== cj) L = levelCache.lv[lv] = levelCands(lv, scan + 3, ci, cj);
+            CULL.scanned += cellsWithin(scan); let n = 0;
+            for (const c of L.cands) { if (c.r2 > s2) continue; CULL.examined++; const t = c.t;
+                t.r = [c.dx + t.lc[0] - ex, t.lc[1] - ey, c.dz + t.lc[2] - ez]; if (keptAt(t)) { out.push(t); n++; } }
+            CULL.perLevel.push([lv, n]);
+        }
+        if (cellCache.size > 400000) cellCache.clear(); if (CULL.first === null) CULL.first = CULL.scanned;
+        holdK(out.length); nearCache = { key: ck, out, scanned: CULL.scanned, examined: CULL.examined, perLevel: CULL.perLevel };
+        return out;
+    }
     for (let lv = -BELOW; lv <= LEVELS; lv++) {
         const Wf = Fr.mul(Fr.make(CELL), Fr.dy(2 ** lv)), w = CELL * 2 ** lv;
         // the eye's cell, exactly, and the eye's place inside it, a small double: the floating origin of this scale
@@ -397,6 +429,7 @@ function thingsNear(extra = 0, from = -1) {
     }
     if (cellCache.size > 400000) cellCache.clear(); if (CULL.first === null) CULL.first = CULL.scanned;
     if (extra === 0 && from < 0) holdK(out.length);
+    if (ck) nearCache = { key: ck, out, scanned: CULL.scanned, examined: CULL.examined, perLevel: CULL.perLevel };
     return out;
 }
 
@@ -406,7 +439,7 @@ const S = {
     // the look held as whole numbers: q quarter turns and two half-slopes ky/128 (across) and kp/128 (up); no angle
     q: Math.round(+params.get('q') || 0), ky: Math.round(+params.get('ky') || 0), kp: Math.round(+params.get('kp') || 0), dragX: 0, dragY: 0,
     eye: [Fr.make(params.get('x') ? Math.round(+params.get('x')) : 0), Fr.make(2), Fr.make(params.get('z') ? Math.round(+params.get('z')) : -30)],
-    H: null, holdH: false, target: null, lastPoseKey: '', focus: 0, holdFocus: false,
+    H: null, holdH: false, target: null, lastPoseKey: '', focus: 0, holdFocus: false, fg: 0, Hg: null, tLast: 0,
     walk: { key: null, m: [], strides: 0 },
     anchor: params.get('anchor') !== '0', anchors: 0, lastHeading: null, goes: 0, lock: null,
     show: { thumbs: params.get('thumbs') !== '0', heat: params.get('heat') !== '0', sky: params.get('sky') === '1',
@@ -612,9 +645,10 @@ function resize() {
     cx.putImageData(im, 0, 0); heatImg = c;
 }
 function project(v, P) {   // v relative to the eye; returns [x, y, depth along the look]
-    const F = P.F, up = [0, 1, 0], d = up[0] * F[0] + up[1] * F[1] + up[2] * F[2];
-    let U = [up[0] - d * F[0], up[1] - d * F[1], up[2] - d * F[2]]; const n = Math.hypot(...U); U = U.map(x => x / n);
-    const Rt = [U[1] * F[2] - U[2] * F[1], U[2] * F[0] - U[0] * F[2], U[0] * F[1] - U[1] * F[0]];
+    const F = P.F; if (!P.UR) { const up = [0, 1, 0], d = up[0] * F[0] + up[1] * F[1] + up[2] * F[2];
+        let U = [up[0] - d * F[0], up[1] - d * F[1], up[2] - d * F[2]]; const n = Math.hypot(...U); U = U.map(x => x / n);
+        P.UR = [U, [U[1] * F[2] - U[2] * F[1], U[2] * F[0] - U[0] * F[2], U[0] * F[1] - U[1] * F[0]]]; }
+    const [U, Rt] = P.UR;
     const z = v[0] * F[0] + v[1] * F[1] + v[2] * F[2];
     return [v[0] * Rt[0] + v[1] * Rt[1] + v[2] * Rt[2], v[0] * U[0] + v[1] * U[1] + v[2] * U[2], z];
 }
@@ -638,7 +672,7 @@ function colourOf(t, P, e, isTarget) {
     if (isTarget) return '#f2c14e';
     const x = thumbCoordsF(t.r, e, P);
     if (x[0] <= 0 || x[1] <= 0 || x[2] <= 0) return '#6b7280';
-    const r = ((x[0] + x[1] + x[2]) / 3) / (S.H || 1);
+    const r = ((x[0] + x[1] + x[2]) / 3) / (S.Hg || S.H || 1);
     if (r <= 1) return '#4fd1c5';
     const L = Math.min(1, Math.log2(r) / 4);
     return `rgb(${Math.round(167 - 40 * L)},${Math.round(139 - 50 * L)},${Math.round(250 - 30 * L)})`;
@@ -677,6 +711,11 @@ function frame() {
     if (!S.holdFocus) S.focus = best ? best.lv : Math.max(-BELOW, Math.min(LEVELS, Math.round(Math.log2(Math.max(1e-300, ey) / 2))));
     if (best !== S.target) { S.target = best; S.walk = { key: null, m: [], strides: 0 }; }
     if (S.target && !S.holdH) { const x = thumbCoordsF(S.target.r, e, P); S.H = Math.max(1e-6, (x[0] + x[1] + x[2]) / 3); }
+    // the glide: the focus and the thumb's colouring ease toward their new values (a time constant of 0.12 s)
+    { const now = performance.now(), dt = S.tLast ? Math.min(0.1, (now - S.tLast) / 1000) : 1; S.tLast = now;
+      const a = GLIDE ? 1 - Math.exp(-dt / 0.12) : 1;
+      S.fg += (S.focus - S.fg) * a; if (Math.abs(S.focus - S.fg) < 0.01) S.fg = S.focus;
+      if (S.H) S.Hg = S.Hg ? S.Hg * Math.pow(S.H / S.Hg, a) : S.H; }
     g.lineWidth = 1.1;
     for (const t of things) {
         const isT = t === S.target; g.strokeStyle = colourOf(t, P, e, isT); g.lineWidth = isT ? 2 : 1.1; g.beginPath();
@@ -871,7 +910,7 @@ window.__thumbsWalk = {
     target: () => S.target, pose,
     set(o) { if (o.q !== undefined || o.ky !== undefined || o.kp !== undefined || o.eye) S.lock = null; if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
         if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.anchor !== undefined) S.anchor = !!o.anchor; if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
-        if (o.focus !== undefined) { if (o.focus !== null) S.focus = o.focus; S.holdFocus = o.focus !== null; }
+        if (o.focus !== undefined) { if (o.focus !== null) S.focus = S.fg = o.focus; S.holdFocus = o.focus !== null; }
         if (o.dens !== undefined) { DENS = Math.max(1, Math.min(64, Math.round(o.dens))); BP.list = null; } if (o.kfix !== undefined) { KFIX = o.kfix ? Math.max(100, o.kfix) : 0; if (!KFIX) GS = 1; } if (o.gs !== undefined) GS = o.gs;
         frame(); return this.state(); },
     state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH,
