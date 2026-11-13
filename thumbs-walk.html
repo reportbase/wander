@@ -83,9 +83,13 @@ const Fr = (() => {
     const gcd = (a, b) => { a = abs(a); b = abs(b); while (b) { [a, b] = [b, a % b]; } return a; };
     const make = (n, d = 1n) => { n = BigInt(n); d = BigInt(d); if (d === 0n) throw new Error('zero denominator');
         if (d < 0n) { n = -n; d = -d; } const g = gcd(n, d) || 1n; return { n: n / g, d: d / g }; };
+    // a double that is a dyadic fraction (every coordinate here is), made exact: no rounding
+    const dy = (x) => { if (Number.isInteger(x)) return make(x); let k = 0; while (!Number.isInteger(x * 2 ** k) && k < 1100) k++;
+        return make(BigInt(x * 2 ** k), 2n ** BigInt(k)); };
     const F = {
         make, gcd,
-        of: (x) => typeof x === 'object' ? x : make(x),
+        of: (x) => typeof x === 'object' ? x : dy(x),
+        dy: (x) => dy(x),
         add: (a, b) => make(a.n * b.d + b.n * a.d, a.d * b.d),
         sub: (a, b) => make(a.n * b.d - b.n * a.d, a.d * b.d),
         mul: (a, b) => make(a.n * b.n, a.d * b.d),
@@ -127,10 +131,24 @@ const QD = 128n;   // yaw and pitch held as half-slopes k/128
 // at every scale: level j has cells CELL·2^j wide, each holding at most one thing with every length times 2^j; a thing
 // is kept when its breadth b is at least G times its distance d (compared in squares), so what is held is set by the
 // grain and the number of levels, never by how far the world goes (TWK run 4)
-const CELL = 24, LEVELS = Math.max(0, Math.min(12, Math.round(+(new URLSearchParams(location.search).get('levels') ?? 8)))), GRAIN = 1 / 32, BMAX = 32,
-    SCAN = Math.ceil(BMAX / GRAIN / CELL) + 1;   // the same count of cells, 44, scanned at every level
-function hash(i, j, s) { let h = (i * 374761393 + j * 668265263 + s * 2246822519) | 0; h = Math.imul(h ^ (h >>> 13), 1274126177);
-    h ^= h >>> 16; return (h >>> 0) / 4294967296; }
+// Since TWK run 5: scales below 0 too (?below=), and each scale's grain set so it holds its Cauchy share (?share=cauchy,
+// the default): the heat per ratio (1/π)·sech(ln s), so scale j at k = j − j* from the focus gets the grain
+// G·√cosh(k·ln 2) (on a ground the count kept goes as 1/grain²), cosh computed as (2^k + 2^−k)/2.
+const QS = new URLSearchParams(location.search);
+const CELL = 24, LEVELS = Math.max(0, Math.min(40, Math.round(+(QS.get('levels') ?? 8)))),
+    BELOW = Math.max(0, Math.min(40, Math.round(+(QS.get('below') ?? 8)))), SHARE = QS.get('share') === 'flat' ? 'flat' : 'cauchy',
+    GRAIN = 1 / 32, BMAX = 32, SCAN = Math.ceil(BMAX / GRAIN / CELL) + 1;   // 44 cells at the focus's grain
+const coshL = k => (2 ** k + 2 ** -k) / 2;
+function grainAt(lv) { return SHARE === 'flat' ? GRAIN : GRAIN * Math.sqrt(coshL(lv - S.focus)); }
+function scanAt(lv) { return Math.ceil(BMAX / (grainAt(lv) * CELL)) + 1; }
+function hash(i, j, s) {
+    let h;
+    if (Math.abs(i) < 1048576 && Math.abs(j) < 1048576) h = (i * 374761393 + j * 668265263 + s * 2246822519) | 0;
+    else {   // large indices (small scales far from the origin): mix the high and low words, so cells do not repeat
+        const hi = Math.floor(i / 4294967296), lo = i - hi * 4294967296, hj = Math.floor(j / 4294967296), lj = j - hj * 4294967296;
+        h = Math.imul(lo | 0, 374761393) ^ Math.imul(lj | 0, 668265263) ^ Math.imul(hi | 0, 1103515245) ^ Math.imul(hj | 0, 1664525)
+            ^ Math.imul(s | 0, 2246822519 | 0); }
+    h = Math.imul(h ^ (h >>> 13), 1274126177); h ^= h >>> 16; return (h >>> 0) / 4294967296; }
 const cellCache = new Map();
 function thingOf(i, j, lv = 0) {
     const key = lv + ':' + i + ',' + j; if (cellCache.has(key)) return cellCache.get(key);
@@ -144,7 +162,7 @@ function thingOf(i, j, lv = 0) {
             t = { kind: 'tower', x0, z0, w, d: w, h }; }
         else { const w = 6 + 2 * Math.floor(hash(i, j, 5) * 4), h = 4 + 2 * Math.floor(hash(i, j, 7) * 5);
             t = { kind: 'pyramid', x0, z0, w, d: w, h }; }
-        if (sc > 1) { t.x0 = i * CELL * sc + (t.x0 - i * CELL) * sc; t.z0 = j * CELL * sc + (t.z0 - j * CELL) * sc;
+        if (sc !== 1) { t.x0 = i * CELL * sc + (t.x0 - i * CELL) * sc; t.z0 = j * CELL * sc + (t.z0 - j * CELL) * sc;
             t.w *= sc; t.d *= sc; t.h *= sc; }
         t.key = key; t.lv = lv; t.b = Math.max(t.w, t.d, t.h);
         // centre, in halves: a rational point
@@ -165,21 +183,22 @@ function edgesOf(t) {
     for (let k = 0; k < 4; k++) { E.push([bot[k], bot[(k + 1) % 4]]); E.push([top[k], top[(k + 1) % 4]]); E.push([bot[k], top[k]]); }
     return E;
 }
-function keptAt(t, e) {   // b ≥ G·d and d ≥ b, in squares: no root, no angle
+function keptAt(t, e, g = grainAt(t.lv)) {   // b ≥ g·d and d ≥ b, in squares: no root, no angle
     const dx = t.c[0] - e[0], dy = t.c[1] - e[1], dz = t.c[2] - e[2], d2 = dx * dx + dy * dy + dz * dz;
-    return t.b * t.b >= GRAIN * GRAIN * d2 && d2 >= t.b * t.b;
+    return t.b * t.b >= g * g * d2 && d2 >= t.b * t.b;
 }
 const CULL = { scanned: 0, perLevel: [] };
-function thingsNear(e, scan = SCAN, from = 0) {
+function thingsNear(e, extra = 0, from = -1) {
     const out = []; CULL.scanned = 0; CULL.perLevel = [];
-    for (let lv = 0; lv <= LEVELS; lv++) {
+    for (let lv = -BELOW; lv <= LEVELS; lv++) {
         const w = CELL * 2 ** lv, ci = Math.floor(e[0] / w), cj = Math.floor(e[2] / w); let n = 0;
+        const scan = scanAt(lv) + extra, fr = from < 0 ? 0 : scanAt(lv) + from;
         for (let i = ci - scan; i <= ci + scan; i++) for (let j = cj - scan; j <= cj + scan; j++) {
             const r2 = (i - ci) * (i - ci) + (j - cj) * (j - cj);
-            if (r2 > scan * scan || r2 < from * from) continue;
+            if (r2 > scan * scan || r2 < fr * fr) continue;
             CULL.scanned++; const t = thingOf(i, j, lv); if (t && keptAt(t, e)) { out.push(t); n++; }
         }
-        CULL.perLevel.push(n);
+        CULL.perLevel.push([lv, n]);
     }
     if (cellCache.size > 400000) cellCache.clear();
     return out;
@@ -191,16 +210,17 @@ const S = {
     // the look held as whole numbers: q quarter turns and two half-slopes ky/128 (across) and kp/128 (up); no angle
     q: Math.round(+params.get('q') || 0), ky: Math.round(+params.get('ky') || 0), kp: Math.round(+params.get('kp') || 0), dragX: 0, dragY: 0,
     eye: [Fr.make(params.get('x') ? Math.round(+params.get('x')) : 0), Fr.make(2), Fr.make(params.get('z') ? Math.round(+params.get('z')) : -30)],
-    H: null, holdH: false, target: null, lastPoseKey: '',
+    H: null, holdH: false, target: null, lastPoseKey: '', focus: 0, holdFocus: false,
     walk: { key: null, m: [], strides: 0 },
     anchor: params.get('anchor') !== '0', anchors: 0, lastHeading: null,
     show: { thumbs: params.get('thumbs') !== '0', heat: params.get('heat') !== '0', sky: params.get('sky') === '1',
             read: true, euler: true, omega: true, walk: true, checks: false, about: false },
 };
 const STRIDE = Fr.make(1, 4), GRID = 16n;
+function strideNow() { return S.focus >= 0 ? STRIDE : Fr.make(1, 4n * 2n ** BigInt(-S.focus)); }   // the stride shrinks with the focus's scale
 // re-anchoring: the eye put down at the nearest point of the 1/16 grid (a write; only the exact path home is lost)
 function floorDiv(a, b) { const q = a / b; return (a % b !== 0n && ((a < 0n) !== (b < 0n))) ? q - 1n : q; }
-function snap(f) { return Fr.make(floorDiv(2n * f.n * GRID + f.d, 2n * f.d), GRID); }
+function snap(f) { const G = GRID * 2n ** BigInt(Math.max(0, -S.focus)); return Fr.make(floorDiv(2n * f.n * G + f.d, 2n * f.d), G); }
 function eyeDigits() { return Math.max(...S.eye.map(Fr.digits)); }
 // turning by half-slopes, no trigonometry: past an eighth of a turn either way the half-slope u passes to the next
 // quarter turn by tangent subtraction, u' = (u − 1)/(1 + u) or (u + 1)/(1 − u), rounded to the nearest k/128
@@ -233,7 +253,7 @@ function eyeF() { return S.eye.map(Fr.num); }
 
 // ---------- readings ----------
 function thumbCoordsExact(t, E, R, k) {   // x = Rᵀ (C − E), optional world scale k (a fraction)
-    const C = t.c.map(v => Fr.make(Math.round(v * 2), 2));
+    const C = t.c.map(v => Fr.dy(v));
     const kk = k || ONE;
     const v = [0, 1, 2].map(i => Fr.sub(Fr.mul(kk, C[i]), Fr.mul(kk, E[i])));
     return [0, 1, 2].map(j => Fr.add(Fr.add(Fr.mul(R[j], v[0]), Fr.mul(R[3 + j], v[1])), Fr.mul(R[6 + j], v[2])));
@@ -282,7 +302,7 @@ function stride(dir, n = 1) {
     const v = dir === 'w' ? P.fwd : dir === 's' ? P.fwd.map(Fr.neg) : dir === 'd' ? P.right : P.right.map(Fr.neg);
     for (let k = 0; k < n; k++) {
         const before = S.target ? exactOf(S.target) : null;
-        S.eye = [0, 1, 2].map(i => Fr.add(S.eye[i], Fr.mul(STRIDE, v[i])));
+        S.eye = [0, 1, 2].map(i => Fr.add(S.eye[i], Fr.mul(strideNow(), v[i])));
         const after = S.target ? exactOf(S.target) : null;
         const key = (S.target ? S.target.key : '') + '|' + P.key + '|' + dir;
         if (!before || !after) { S.walk = { key: null, m: [], strides: 0 }; continue; }
@@ -384,7 +404,7 @@ function project(v, P) {   // v relative to the eye; returns [x, y, depth along 
 }
 function screenOf(p) { return [W / 2 + foc * p[0] / p[2], Hh / 2 - foc * p[1] / p[2]]; }
 function edge(a, b) {   // clip at the near plane
-    const near = 0.05; if (a[2] < near && b[2] < near) return null;
+    const near = 0.05 * 2 ** Math.min(0, S.focus); if (a[2] < near && b[2] < near) return null;
     if (a[2] < near) { const t = (near - a[2]) / (b[2] - a[2]); a = [a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1]), near]; }
     if (b[2] < near) { const t = (near - b[2]) / (a[2] - b[2]); b = [b[0] + t * (a[0] - b[0]), b[1] + t * (a[1] - b[1]), near]; }
     return [screenOf(a), screenOf(b)];
@@ -434,6 +454,9 @@ function frame() {
     // the things, and the one under the crosshair
     const things = thingsNear(e); let best = null, bt = Infinity;
     for (const t of things) { const hit = rayBox(e, P.F, t); if (hit !== null && hit < bt) { bt = hit; best = t; } }
+    // the focus is the scale of what is under the crosshair; with nothing there, the scale of the eye's own height (2 at
+    // the start, scale 0), so that going down to the small scales brings them in
+    if (!S.holdFocus) S.focus = best ? best.lv : Math.max(-BELOW, Math.min(LEVELS, Math.round(Math.log2(Math.max(1e-300, e[1]) / 2))));
     if (best !== S.target) { S.target = best; S.walk = { key: null, m: [], strides: 0 }; }
     if (S.target && !S.holdH) { const x = thumbCoordsF(S.target.c, e, P); S.H = Math.max(1e-6, (x[0] + x[1] + x[2]) / 3); }
     g.lineWidth = 1.1;
@@ -509,7 +532,7 @@ function panelHtml() {
     }
     if (S.show.walk) h += `<p>the eye: its fractions' denominators ${eyeDigits()} digits; ${S.anchor ? 're-anchored ' + S.anchors + ' times, at each new heading' : 'not re-anchored: every heading taken is still in it'}</p>`;
     if (S.show.checks) {
-        h += `<h3>what is held</h3><p>Things at every scale, levels 0 to ${LEVELS}, each ${SCAN} cells round the eye; kept when their breadth is at least 1/32 of their distance. Kept now, by level: ${CULL.perLevel.join(', ')} (${CULL.perLevel.reduce((a, b) => a + b, 0)} in all), from ${CULL.scanned} cells. How far the world goes never enters.</p>`;
+        h += `<h3>what is held</h3><p>Things at every scale, levels −${BELOW} to ${LEVELS}; kept when their breadth is at least the grain times their distance, the grain 1/32 at the focus's scale (now ${S.focus})${SHARE === 'cauchy' ? ' and √cosh(k·ln 2) times that k scales away, so each scale holds its Cauchy share, sech(k·ln 2)' : ', the same at every scale'}. Kept now, by level: ${CULL.perLevel.filter(([, n]) => n).map(([l, n]) => l + ': ' + n).join(', ')} (${CULL.perLevel.reduce((a, [, n]) => a + n, 0)} in all), from ${CULL.scanned} cells. How far the world goes never enters.</p>`;
         h += '<h3>the checks (plans/twk-plan.md)</h3><table>' + checks().map(c =>
             `<tr><td>${c.id}</td><td class="${c.ok === null ? '' : c.ok ? 'ok' : 'bad'}">${c.ok === null ? '·' : c.ok ? 'holds' : 'fails'}</td><td>${c.text}</td></tr>`).join('') + '</table>';
     }
@@ -564,9 +587,9 @@ function tick() {
 window.__thumbsWalk = {
     Fr, exact: () => exactOf(S.target), checks, turnBy, tiltBy, frame: () => frame(),
     // the cull at the eye now: cells scanned, things kept per level, and (C3) any thing past the scan that would qualify
-    cull() { const e = S.eye.map(Fr.num), kept = thingsNear(e), res = { levels: LEVELS, scan: SCAN, scanned: CULL.scanned,
+    cull() { const e = S.eye.map(Fr.num), kept = thingsNear(e), res = { levels: LEVELS, below: BELOW, share: SHARE, focus: S.focus, scan: SCAN, scanned: CULL.scanned,
             perLevel: CULL.perLevel.slice(), kept: kept.length, belowGrain: kept.filter(t => !keptAt(t, e)).length };
-        res.missed = thingsNear(e, SCAN + 2, SCAN + 1).length; thingsNear(e); return res; },
+        res.missed = thingsNear(e, 2, 1).length; thingsNear(e); return res; },
     // run the pipeline with every trigonometric function replaced by a counter; nothing in turning, projecting,
     // picking, walking or the exact checks should call one
     trigFree(steps = 200) {
@@ -580,7 +603,8 @@ window.__thumbsWalk = {
     }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors,
     target: () => S.target, pose,
     set(o) { if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
-        if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.anchor !== undefined) S.anchor = !!o.anchor; if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; } frame(); return this.state(); },
+        if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.anchor !== undefined) S.anchor = !!o.anchor; if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
+        if (o.focus !== undefined) { if (o.focus !== null) S.focus = o.focus; S.holdFocus = o.focus !== null; } frame(); return this.state(); },
     state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH,
         target: S.target ? { kind: S.target.kind, c: S.target.c } : null, walk: walkSummary() }),
 };
