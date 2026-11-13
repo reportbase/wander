@@ -185,3 +185,39 @@ What would and would not be shown:
 level and wherever the eye is, and no count of the world enters. The cost grows with the number of levels, which is the
 logarithm of the largest size over the smallest; it does not grow with how far the world goes. This is classical (level of
 detail, quadtrees); the page shows it on its own exact world.
+
+### Run 5, plan (13 November; Tom: "yes", to sharing the view across scales by the Cauchy; written and committed before the change)
+
+Run 4 gave every scale the same grain, so each scale held the same count (the flat share per ratio, total infinite over
+scales without end). The change is to give each scale its Cauchy share. The Cauchy's heat per ratio is (1/π)·sech(ln s),
+with total 1; per scale (ln 2 of ratio) the share falls as sech(k·ln 2) at k scales from the focus. On a ground the count
+kept at a grain g goes as 1/g², so scale j gets the grain g·√cosh((j − j*)·ln 2), with j* the scale of the thing under the
+crosshair. cosh is computed as (2^k + 2^−k)/2, so no Math function beyond the square root.
+
+Also:
+- Scales below 0 (`?below=`). At scale j < 0, lengths are dyadic fractions.
+- Cell keys that do not repeat for large indices.
+- Exact conversion of dyadic coordinates to fractions.
+- The re-anchor grid scaled with the focus, so a tiny scale's positions are kept.
+- `?share=flat|cauchy`, default cauchy.
+
+Predictions, at the start pose and five seeded poses unless stated:
+
+- **C6, the shape.** Averaged over the six poses, the count at scales j* + k (k = 0 … 4, upward from the focus at j* = 0)
+  is within 20% of N₀·sech(k·ln 2), with N₀ the focus scale's count.
+- **C7, scales above cost nothing.** Raising the top scale from 8 to 16 to 40 raises the total kept by under 1%.
+- **C8, scales below cost nothing.** Adding scales below 0 down to −40 raises the total by at most N₀ (the sum
+  Σ_{k≥1} sech(k ln 2) ≈ 1.77 is the ideal, but the eye's height of 2 above the ground cuts the smaller scales off). Going
+  from −10 to −40 changes it by under 1%. The total stays under 4.6·N₀ (Σ over all k of sech(k ln 2) ≈ π/ln 2 ≈ 4.53).
+- **C9, the same view at every depth.** The eye's place and height are scaled by 2⁻²⁰ (scales −40 … 8, focus j* = −20).
+  The total kept is within 10% of the start pose's, and the counts at scales −20 + k (k = −4 … 4) sum within 10% of the
+  start's at k. The hash differs per scale, so this holds statistically, not exactly.
+- **C10, what depth costs.** At the focus 2⁻²⁰, the target's pair slopes take between 4 and 30 more decimal digits than at
+  the start, and K1, K2, K4 and K8 hold there.
+- **C11.** `trigFree` still counts 0.
+
+What would and would not be shown:
+
+- That holding scales without end costs a fixed total when each scale gets its Cauchy share, and that the view at any depth
+  is the same view. The share law is ours. Culling by size on screen and per-scale budgets are classical.
+- The digits grow with depth. That is the cost exactness pays where floating point would fail (near 2⁻⁵² of a distance).
