@@ -65,3 +65,34 @@ chaos at all? And does "a run spends its start's digits at the rule's rate" hold
   essay's reading stops; it finds nothing new about chaos.
 
 ## Runs
+
+### Run 1 (13 November; `python3 -I runs/cxb/cxb.py`, 10 seconds; output `runs/cxb/run1.txt`)
+
+| map | λ (rate) | h_top (entropy) | h_top − λ |
+|---|---|---|---|
+| logistic r = 4 | 0.69315 | 0.69315 | 0.00000 |
+| Chebyshev T₃ | 1.09861 | 1.09861 | 0.00000 |
+| logistic r = 3.7 | 0.35507 ± 0.00007 | 0.38161 | +0.0265 |
+| logistic r = 3.8 | 0.43216 ± 0.00008 | 0.46815 | +0.0360 |
+| logistic r = 3.9 | 0.49602 ± 0.00008 | 0.53998 | +0.0440 |
+
+- **X1: not killed.** The chart identity at r = 4 holds to 5·10⁻⁶¹ over 1,000 points. At r = 4, λ and h_top are both ln 2;
+  for T₃, both are ln 3.
+- **X2: not killed.** At r = 3.7, 3.8 and 3.9 the rate falls short of the entropy by 0.027, 0.036 and 0.044, so no chart
+  turns these maps into a constant stretch. No gap is negative, so no fault shows in the code. The gap grows as r moves
+  away from 4 within this range. That is post hoc and not tested; r = 3.7 to 3.9 is three points.
+- **X3: not killed.** The mean parting step was within 3% of p·ln 2/λ at all twelve (r, p) points:
+  - at r = 4, 52.4, 99.5 and 201.6 against 53, 100 and 200;
+  - at r = 3.8, 83.1, 159.6 and 320.1 against 85.0, 160.4 and 320.8.
+
+  A run spends its start's digits at λ/ln 2 bits a step, whether or not the map has a sweep behind it.
+
+**In short.** The sweep picture of chaos, a chart in which the rule is a constant stretch and the rate can be read off the
+rule, belongs to the exceptional maps only, marked by λ = h_top: here the logistic map at 4 and the Chebyshev cubic.
+Ordinary chaos at r = 3.7 to 3.9 has a rate below its entropy, so there is no such chart. That a run spends what was
+written at the rule's rate holds in both cases. So essay 21 §9's sweep picture is the solvable case's, and R927's sorting
+(the stretch is the rule's, the unpredictability the write's) holds for chaos in general. All classical; nothing about
+chaos is new here.
+
+Caveats: h_top is a fitted slope of preimage counts over eight k, not a closed form, which I take as good to about 0.005
+from how flat the fits were (not measured). λ is a binary64 average over orbits, relying on shadowing, as is standard.
