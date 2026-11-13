@@ -54,3 +54,21 @@ For the thing under the crosshair, its centre C seen from the eye E has thumb co
 - Desktop only; no touch support (Tom).
 
 ## Runs
+
+### Run 1 (13 November; the page's own checks, read through its hook in headless Chromium)
+
+The target was a box 6 × 4 × 10 centred at (−112, 2, 40), seen from (0, 2, −30) at yaw −60°, in this wedge.
+
+- **K1 holds**: the three pair slopes (0.953, 0.948, 1.106, each a fraction of 11 to 12 digits) multiply to exactly 1.
+- **K2 holds**: w(s)·w(1/s) = −1 and |w|² = 1 exactly for all three pairs.
+- **K3 holds** in floating point to 10⁻¹².
+- **K4 holds**: scaling the world and the eye by 2, 7 and 1/3 leaves every pair slope exactly the same.
+- **K5 holds**: six strides each lowered the reach along the look by exactly 5299993/36719436. The strides left from two
+  looks (521.892) equal the count exactly.
+- **K6 holds**: the sky's shares within r = ½, 1, √3, 3 were 0.1057, 0.2986, 0.5003, 0.6854, against 0.1056, 0.2929,
+  0.5000, 0.6838, all within 4 standard errors (r = 1 is 1.8 off).
+- **K7 holds**: the heat totals 1.00000000.
+- **K8 holds**: changing the thumb moves no pair slope.
+
+Nothing failed. K1, K2 and K5's two counts are identities, so these checks test the arithmetic and the construction (an
+exactly orthonormal rational frame, an eye that stays rational), not any claim about the world. No page errors.

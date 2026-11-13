@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Three thumbs, walking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    thumbs-walk.html: three thumbs, walking, checked exactly (13 November 2026, SPN R930, plans/twk-plan.md; Tom: "I want
+    to see the math in action with the 3 thumbs and omega, 3d cauchy and the simplifed euhler's identity. Lets talk about
+    how we can make that rigorous, and let the user walk around looking at his environment."; "new page, use omega, flat
+    screen default, walking with w a s d. No support for mobile, desktop only.").
+    A first-person wireframe on whole numbers. Every vertex is an integer point made from its ground cell; the three thumbs
+    are the columns of a product of rational turns (half-slopes p/q), so the frame is orthonormal in fractions; the look is
+    the thumbs' diagonal, so the crosshair is the triple corner; W A S D walk by counted strides of 1/4 along a rational
+    heading. For the thing under the crosshair every reading is a fraction, and the identities are checked in exact BigInt
+    arithmetic: the three pair slopes multiply to 1; w(s)·w(1/s) = −1 for each pair; scaling the world moves no slope;
+    walking straight lowers the reach along the look by the same amount each stride, and two looks a stride apart give
+    the strides left. Where Ω itself enters (the shares of a sweep, the heat's total) the check is in floating point.
+    The flat screen square to the look: one division per point, edges straight, the heat per unit of screen
+    1/(4Ω(1 + r²)^(3/2)). Text behind the menu (☰). Desktop only.
+    ?yaw=<degrees>&pitch=<degrees>&x=&z=&menu=1&sky=1&heat=0&thumbs=0
+    Hook window.__thumbsWalk: Fr (fractions), exact(), checks(), set({yaw, pitch, eye}), stride(dir, n), target(),
+    state(), sky().
+    -->
+    <style>
+        :root { --bg: #0b0f17; --ink: #d9e2ef; --dim: #8796ab; --teal: #4fd1c5; --gold: #f2c14e; --violet: #a78bfa;
+                --grey: #6b7280; --panel: rgba(13, 19, 30, 0.93); --line: #24324a; --ok: #6ee7a0; --bad: #f87171; }
+        html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); overflow: hidden;
+                     font: 13px/1.45 "DM Mono", ui-monospace, monospace; }
+        canvas { display: block; width: 100vw; height: 100vh; cursor: crosshair; }
+        #menuBtn { position: fixed; top: 12px; left: 12px; width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line);
+                   background: var(--panel); color: var(--ink); font-size: 18px; cursor: pointer; }
+        #panel { position: fixed; top: 56px; left: 12px; width: 430px; max-height: calc(100vh - 72px); overflow: auto;
+                 background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: none; }
+        #panel.open { display: block; }
+        #panel h2 { font: 20px "DM Serif Display", serif; margin: 0 0 6px; }
+        #panel h3 { font: 500 13px "DM Mono", monospace; margin: 12px 0 4px; color: var(--gold); }
+        #panel label { display: block; margin: 2px 0; color: var(--dim); cursor: pointer; }
+        #panel p { margin: 4px 0; color: var(--dim); }
+        #panel table { border-collapse: collapse; width: 100%; }
+        #panel td { padding: 1px 4px; vertical-align: top; }
+        .ok { color: var(--ok); } .bad { color: var(--bad); } .num { color: var(--ink); }
+        .bar { height: 6px; background: #1c2638; border-radius: 3px; position: relative; margin: 2px 0 6px; }
+        .bar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--teal); border-radius: 3px; }
+        .bar b { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: var(--gold); }
+        button.run { background: #172236; color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px;
+                     font: inherit; cursor: pointer; }
+    </style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+<button id="menuBtn" title="menu (M)">☰</button>
+<div id="panel">
+    <h2>Three thumbs, walking</h2>
+    <p>W A S D walk (shift: eight strides at a time), drag or the arrow keys turn, the wheel sets the thumb, H holds it, M the menu.</p>
+    <h3>show</h3>
+    <label><input type="checkbox" id="optThumbs" checked> the three thumbs and the wedge</label>
+    <label><input type="checkbox" id="optHeat" checked> the heat, 1/(4Ω(1 + r²)^(3/2)), and its rings of equal share</label>
+    <label><input type="checkbox" id="optSky"> a seeded sky of 40,000 directions</label>
+    <label><input type="checkbox" id="optRead" checked> the readout</label>
+    <label><input type="checkbox" id="optEuler" checked> Euler, simplified</label>
+    <label><input type="checkbox" id="optOmega" checked> the shares in Ω</label>
+    <label><input type="checkbox" id="optWalk" checked> the counted walk</label>
+    <label><input type="checkbox" id="optChecks"> the checks</label>
+    <label><input type="checkbox" id="optAbout"> about</label>
+    <div id="out"></div>
+</div>
+<script>
+'use strict';
+// ---------- exact fractions (BigInt) ----------
+const Fr = (() => {
+    const abs = a => a < 0n ? -a : a;
+    const gcd = (a, b) => { a = abs(a); b = abs(b); while (b) { [a, b] = [b, a % b]; } return a; };
+    const make = (n, d = 1n) => { n = BigInt(n); d = BigInt(d); if (d === 0n) throw new Error('zero denominator');
+        if (d < 0n) { n = -n; d = -d; } const g = gcd(n, d) || 1n; return { n: n / g, d: d / g }; };
+    const F = {
+        make, gcd,
+        of: (x) => typeof x === 'object' ? x : make(x),
+        add: (a, b) => make(a.n * b.d + b.n * a.d, a.d * b.d),
+        sub: (a, b) => make(a.n * b.d - b.n * a.d, a.d * b.d),
+        mul: (a, b) => make(a.n * b.n, a.d * b.d),
+        div: (a, b) => make(a.n * b.d, a.d * b.n),
+        neg: (a) => ({ n: -a.n, d: a.d }),
+        eq: (a, b) => a.n === b.n && a.d === b.d,
+        zero: (a) => a.n === 0n,
+        sign: (a) => a.n > 0n ? 1 : a.n < 0n ? -1 : 0,
+        num: (a) => {   // to a double, safe for large parts
+            const ln = a.n.toString().length, ld = a.d.toString().length, sh = Math.max(0, Math.max(ln, ld) - 300);
+            if (!sh) return Number(a.n) / Number(a.d);
+            const p = 10n ** BigInt(sh); return Number(a.n / p) / Number(a.d / p);
+        },
+        str: (a) => a.d === 1n ? a.n.toString() : a.n.toString() + '/' + a.d.toString(),
+        digits: (a) => a.d.toString().length,
+    };
+    return F;
+})();
+const ZERO = Fr.make(0), ONE = Fr.make(1);
+
+// rational turn from the half-slope u = p/q: c = (q² − p²)/(q² + p²), s = 2pq/(q² + p²)
+function turnCS(p, q) { p = BigInt(p); q = BigInt(q); const den = q * q + p * p; return [Fr.make(q * q - p * p, den), Fr.make(2n * p * q, den)]; }
+function matMul(A, B) {   // 3×3 of fractions, row-major arrays of 9
+    const C = new Array(9);
+    for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++) {
+        let s = ZERO; for (let k = 0; k < 3; k++) s = Fr.add(s, Fr.mul(A[3 * i + k], B[3 * k + j])); C[3 * i + j] = s;
+    }
+    return C;
+}
+function Ry(c, s) { return [c, ZERO, s, ZERO, ONE, ZERO, Fr.neg(s), ZERO, c]; }       // x' = c x + s z, z' = −s x + c z
+function Rx(c, s) { return [ONE, ZERO, ZERO, ZERO, c, Fr.neg(s), ZERO, s, c]; }       // y' = c y − s z, z' = s y + c z
+function quarter(q) { q = ((q % 4) + 4) % 4; const cs = [[1, 0], [0, 1], [-1, 0], [0, -1]][q]; return Ry(Fr.make(cs[0]), Fr.make(cs[1])); }
+// the base frame: the thumbs' diagonal (1, 1, 1) turned to face north (+z), by rational turns near −45° about the up
+// axis and near 35.26° about the east axis; the look is the diagonal of whatever frame results, exactly.
+const BASE = matMul(Rx(...turnCS(7, 22)), Ry(...turnCS(-29, 70)));
+const QD = 128n;   // yaw and pitch held as half-slopes k/128
+
+// ---------- the world, made from its cells ----------
+const CELL = 24, REACH = 30;   // cells within REACH of the eye are made
+function hash(i, j, s) { let h = (i * 374761393 + j * 668265263 + s * 2246822519) | 0; h = Math.imul(h ^ (h >>> 13), 1274126177);
+    h ^= h >>> 16; return (h >>> 0) / 4294967296; }
+const cellCache = new Map();
+function thingOf(i, j) {
+    const key = i + ',' + j; if (cellCache.has(key)) return cellCache.get(key);
+    let t = null;
+    if (hash(i, j, 1) < 0.42 && !(Math.abs(i) <= 1 && Math.abs(j) <= 1)) {
+        const r = hash(i, j, 2), x0 = i * CELL + 2 + Math.floor(hash(i, j, 3) * 10), z0 = j * CELL + 2 + Math.floor(hash(i, j, 4) * 10);
+        if (r < 0.45) { const w = 4 + 2 * Math.floor(hash(i, j, 5) * 4), d = 4 + 2 * Math.floor(hash(i, j, 6) * 4), h = 2 + 2 * Math.floor(hash(i, j, 7) * 4);
+            t = { kind: 'box', x0, z0, w, d, h }; }
+        else if (r < 0.75) { const w = 2 + 2 * Math.floor(hash(i, j, 5) * 2), h = 10 + 2 * Math.floor(hash(i, j, 7) * 12);
+            t = { kind: 'tower', x0, z0, w, d: w, h }; }
+        else { const w = 6 + 2 * Math.floor(hash(i, j, 5) * 4), h = 4 + 2 * Math.floor(hash(i, j, 7) * 5);
+            t = { kind: 'pyramid', x0, z0, w, d: w, h }; }
+        t.key = key;
+        // centre, in halves: a rational point
+        t.c = [t.x0 + t.w / 2, t.h / 2, t.z0 + t.d / 2];
+        t.edges = edgesOf(t);
+    }
+    cellCache.set(key, t); return t;
+}
+function edgesOf(t) {
+    const { x0, z0, w, d, h } = t, x1 = x0 + w, z1 = z0 + d, E = [];
+    if (t.kind === 'pyramid') {
+        const ax = x0 + w / 2, az = z0 + d / 2, b = [[x0, 0, z0], [x1, 0, z0], [x1, 0, z1], [x0, 0, z1]];
+        for (let k = 0; k < 4; k++) { E.push([b[k], b[(k + 1) % 4]]); E.push([b[k], [ax, h, az]]); }
+        return E;
+    }
+    const v = (a, y, c) => [a, y, c];
+    const bot = [v(x0, 0, z0), v(x1, 0, z0), v(x1, 0, z1), v(x0, 0, z1)], top = bot.map(p => [p[0], h, p[2]]);
+    for (let k = 0; k < 4; k++) { E.push([bot[k], bot[(k + 1) % 4]]); E.push([top[k], top[(k + 1) % 4]]); E.push([bot[k], top[k]]); }
+    return E;
+}
+function thingsNear(ex, ez) {
+    const ci = Math.floor(ex / CELL), cj = Math.floor(ez / CELL), out = [];
+    for (let i = ci - REACH; i <= ci + REACH; i++) for (let j = cj - REACH; j <= cj + REACH; j++) {
+        if ((i - ci) * (i - ci) + (j - cj) * (j - cj) > REACH * REACH) continue;
+        const t = thingOf(i, j); if (t) out.push(t);
+    }
+    if (cellCache.size > 40000) cellCache.clear();
+    return out;
+}
+
+// ---------- the pose ----------
+const params = new URLSearchParams(location.search);
+const S = {
+    yaw: (+params.get('yaw') || 0) * Math.PI / 180, pitch: (+params.get('pitch') || 0) * Math.PI / 180,
+    eye: [Fr.make(params.get('x') ? Math.round(+params.get('x')) : 0), Fr.make(2), Fr.make(params.get('z') ? Math.round(+params.get('z')) : -30)],
+    H: null, holdH: false, target: null, lastPoseKey: '',
+    walk: { key: null, m: [], strides: 0 },
+    show: { thumbs: params.get('thumbs') !== '0', heat: params.get('heat') !== '0', sky: params.get('sky') === '1',
+            read: true, euler: true, omega: true, walk: true, checks: false, about: false },
+};
+const STRIDE = Fr.make(1, 4);
+function poseParts() {
+    const lim = Math.PI / 4;
+    let q = Math.round(S.yaw / (Math.PI / 2)), rem = S.yaw - q * Math.PI / 2;
+    if (rem > lim) { q++; rem -= Math.PI / 2; } if (rem < -lim) { q--; rem += Math.PI / 2; }
+    const ky = Math.round(Number(QD) * Math.tan(rem / 2));
+    S.pitch = Math.max(-1.25, Math.min(1.25, S.pitch));
+    const kp = Math.round(Number(QD) * Math.tan(S.pitch / 2));
+    return { q, ky, kp };
+}
+let exactPose = null;
+function pose() {
+    const { q, ky, kp } = poseParts(), key = q + '|' + ky + '|' + kp;
+    if (exactPose && exactPose.key === key) return exactPose;
+    const Y = matMul(quarter(q), Ry(...turnCS(ky, QD)));
+    const R = matMul(matMul(Y, Rx(...turnCS(-kp, QD))), BASE);   // drag up looks up
+    const Rf = R.map(Fr.num);
+    const col = j => [Rf[j], Rf[3 + j], Rf[6 + j]];
+    const a = col(0), b = col(1), c = col(2);
+    const dg = [a[0] + b[0] + c[0], a[1] + b[1] + c[1], a[2] + b[2] + c[2]], n = Math.hypot(...dg);
+    const F = dg.map(x => x / n);
+    // walking heading: the yaw alone applied to north, exact; right likewise
+    const Yf = Y;
+    const fwd = [Yf[2], ZERO, Yf[8]], right = [Yf[0], ZERO, Yf[6]];
+    exactPose = { key, q, ky, kp, R, Rf, a, b, c, F, fwd, right };
+    return exactPose;
+}
+function eyeF() { return S.eye.map(Fr.num); }
+
+// ---------- readings ----------
+function thumbCoordsExact(t, E, R, k) {   // x = Rᵀ (C − E), optional world scale k (a fraction)
+    const C = t.c.map(v => Fr.make(Math.round(v * 2), 2));
+    const kk = k || ONE;
+    const v = [0, 1, 2].map(i => Fr.sub(Fr.mul(kk, C[i]), Fr.mul(kk, E[i])));
+    return [0, 1, 2].map(j => Fr.add(Fr.add(Fr.mul(R[j], v[0]), Fr.mul(R[3 + j], v[1])), Fr.mul(R[6 + j], v[2])));
+}
+function thumbCoordsF(p, e, P) {
+    const v = [p[0] - e[0], p[1] - e[1], p[2] - e[2]];
+    return [v[0] * P.a[0] + v[1] * P.a[1] + v[2] * P.a[2], v[0] * P.b[0] + v[1] * P.b[1] + v[2] * P.b[2], v[0] * P.c[0] + v[1] * P.c[1] + v[2] * P.c[2]];
+}
+const OMEGA = Math.PI / 2;
+// w(s) = (1 − s² + 2is)/(1 + s²), as exact real and imaginary parts
+function wOf(s) { const s2 = Fr.mul(s, s), den = Fr.add(ONE, s2); return [Fr.div(Fr.sub(ONE, s2), den), Fr.div(Fr.mul(Fr.make(2), s), den)]; }
+function cmul(z, u) { return [Fr.sub(Fr.mul(z[0], u[0]), Fr.mul(z[1], u[1])), Fr.add(Fr.mul(z[0], u[1]), Fr.mul(z[1], u[0]))]; }
+const PAIRS = [['a', 'b', 0, 1], ['b', 'c', 1, 2], ['c', 'a', 2, 0]];
+function exactOf(t) {
+    if (!t) return null;
+    const P = pose(), x = thumbCoordsExact(t, S.eye, P.R);
+    const facing = x.every(v => Fr.sign(v) > 0) ? 'this wedge' : 'another facing';
+    const pairs = PAIRS.map(([p, q, i, j]) => {
+        if (Fr.zero(x[i]) || Fr.zero(x[j])) return { name: p + q, s: null };
+        const s = Fr.div(x[j], x[i]), si = Fr.div(x[i], x[j]);
+        const w = wOf(s), wi = wOf(si), prod = cmul(w, wi);
+        const mod2 = Fr.add(Fr.mul(w[0], w[0]), Fr.mul(w[1], w[1]));
+        const sf = Fr.num(s);
+        const share = sf > 0 ? Math.atan(sf) / OMEGA : null, shareI = sf > 0 ? Math.atan(1 / sf) / OMEGA : null;
+        return { name: p + q, s, si, w, wi, prod, mod2, sf, share, shareI,
+                 eulerOK: Fr.eq(prod[0], Fr.make(-1)) && Fr.zero(prod[1]), modOK: Fr.eq(mod2, ONE) };
+    });
+    const ok = pairs.every(p => p.s);
+    const closure = ok ? pairs.reduce((acc, p) => Fr.mul(acc, p.s), ONE) : null;
+    const m = Fr.div(Fr.add(Fr.add(x[0], x[1]), x[2]), Fr.make(3));
+    return { t, x, facing, pairs, closure, closureOK: closure ? Fr.eq(closure, ONE) : false, m };
+}
+
+// ---------- the walk ----------
+function stride(dir, n = 1) {
+    const P = pose(), v = dir === 'w' ? P.fwd : dir === 's' ? P.fwd.map(Fr.neg) : dir === 'd' ? P.right : P.right.map(Fr.neg);
+    for (let k = 0; k < n; k++) {
+        const before = S.target ? exactOf(S.target) : null;
+        S.eye = [0, 1, 2].map(i => Fr.add(S.eye[i], Fr.mul(STRIDE, v[i])));
+        const after = S.target ? exactOf(S.target) : null;
+        const key = (S.target ? S.target.key : '') + '|' + P.key + '|' + dir;
+        if (!before || !after) { S.walk = { key: null, m: [], strides: 0 }; continue; }
+        if (S.walk.key !== key) S.walk = { key, m: [before.m], strides: 0, b: S.target.w };
+        S.walk.m.push(after.m); S.walk.strides++;
+        if (S.walk.m.length > 64) S.walk.m.shift();
+    }
+}
+function walkSummary() {
+    const W = S.walk; if (!W.key || W.m.length < 2) return null;
+    const d = []; for (let i = 1; i < W.m.length; i++) d.push(Fr.sub(W.m[i - 1], W.m[i]));
+    const steady = d.every(x => Fr.eq(x, d[0]));
+    const m1 = W.m[W.m.length - 2], m2 = W.m[W.m.length - 1];
+    if (Fr.zero(Fr.sub(m1, m2))) return { strides: W.strides, steady, n: null };
+    // from two looks: the apparent breadth b/m, a ratio
+    const b = Fr.make(W.b), q1 = Fr.div(b, m1), q2 = Fr.div(b, m2);
+    const nReads = Fr.div(q1, Fr.sub(q2, q1));
+    const nCount = Fr.div(m2, d[d.length - 1]);
+    return { strides: W.strides, steady, delta: d[0], nReads, nCount, agree: Fr.eq(nReads, nCount), m2 };
+}
+
+// ---------- the sky ----------
+let SKY = null;
+function sky() {
+    if (SKY) return SKY;
+    let s = 930 >>> 0; const rnd = () => { s = (s + 0x6D2B79F5) | 0; let t = Math.imul(s ^ (s >>> 15), 1 | s);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+    const N = 40000, d = new Float64Array(3 * N);
+    for (let i = 0; i < N; i++) { const z = 2 * rnd() - 1, ph = 2 * Math.PI * rnd(), r = Math.sqrt(1 - z * z);
+        d[3 * i] = r * Math.cos(ph); d[3 * i + 1] = z; d[3 * i + 2] = r * Math.sin(ph); }
+    SKY = { N, d }; return SKY;
+}
+function skyShares(F, rs) {
+    const { N, d } = sky(); let front = 0; const within = rs.map(() => 0);
+    for (let i = 0; i < N; i++) {
+        const c = d[3 * i] * F[0] + d[3 * i + 1] * F[1] + d[3 * i + 2] * F[2]; if (c <= 0) continue; front++;
+        rs.forEach((r, k) => { if (c >= 1 / Math.sqrt(1 + r * r)) within[k]++; });
+    }
+    return rs.map((r, k) => { const p = within[k] / front, ex = 1 - 1 / Math.sqrt(1 + r * r), se = Math.sqrt(ex * (1 - ex) / front);
+        return { r, share: p, exact: ex, se, ok: Math.abs(p - ex) < 4 * se }; });
+}
+
+// ---------- the checks (plan K1–K8) ----------
+function heatTotal() {   // ∫ over the screen of 1/(4Ω(1 + r²)^(3/2)) dA, r = t/(1 − t)
+    const n = 200000; let s = 0;
+    for (let i = 0; i < n; i++) { const t = (i + 0.5) / n, r = t / (1 - t), dr = 1 / ((1 - t) * (1 - t));
+        s += 2 * Math.PI * r / (4 * OMEGA * Math.pow(1 + r * r, 1.5)) * dr / n; }
+    return s;
+}
+function checks() {
+    const P = pose(), X = exactOf(S.target), out = [];
+    const add = (id, ok, text) => out.push({ id, ok, text });
+    if (X) {
+        add('K1', X.closureOK, 'the three pair slopes multiply to ' + (X.closure ? Fr.str(X.closure) : '—') + ' (exact)');
+        add('K2', X.pairs.every(p => p.s && p.eulerOK && p.modOK), 'w(s)·w(1/s) = −1 and |w|² = 1 for every pair (exact)');
+        add('K3', X.pairs.every(p => p.share === null || Math.abs(p.share + p.shareI - 1) < 1e-12),
+            'the share below s and below 1/s add to the whole Ω (floating point, 10⁻¹²)' + (X.facing === 'this wedge' ? '' : '; another facing, slopes negative'));
+        const ks = [Fr.make(2), Fr.make(7), Fr.make(1, 3)];
+        const k4 = ks.every(k => { const y = thumbCoordsExact(X.t, S.eye, P.R, k);
+            return PAIRS.every(([, , i, j]) => Fr.zero(X.x[i]) || Fr.eq(Fr.div(y[j], y[i]), Fr.div(X.x[j], X.x[i]))); });
+        add('K4', k4, 'the world and the eye scaled by 2, 7 and 1/3: every pair slope the same (exact)');
+        const h0 = S.H, sl = X.pairs.map(p => p.s && Fr.str(p.s)).join(); S.H = (h0 || 1) * 2; const X2 = exactOf(S.target);
+        const k8 = X2.pairs.map(p => p.s && Fr.str(p.s)).join() === sl; S.H = h0;
+        add('K8', k8, 'changing the thumb moves no pair slope, only the colours (exact)');
+    } else add('K1–K4', false, 'nothing under the crosshair');
+    const W = walkSummary();
+    if (W && W.nReads) add('K5', W.steady && W.agree, W.strides + ' strides, each lowering the reach by ' + Fr.str(W.delta) +
+        (W.steady ? ' (all equal, exact)' : ' (not all equal)') + '; strides left from two looks ' + Fr.num(W.nReads).toFixed(3) + (W.agree ? ' = the count' : ' ≠ the count'));
+    else add('K5', null, 'walk straight at a thing (W, without turning) to check');
+    const sh = skyShares(P.F, [0.5, 1, Math.sqrt(3), 3]);
+    add('K6', sh.every(x => x.ok), 'sky shares within r of the look ' + sh.map(x => x.share.toFixed(4) + ' (' + x.exact.toFixed(4) + ')').join(', ') + ' at r = ½, 1, √3, 3');
+    const ht = heatTotal(); add('K7', Math.abs(ht - 1) < 1e-6, 'the heat over the whole screen totals ' + ht.toFixed(8));
+    return out;
+}
+
+// ---------- drawing ----------
+const cv = document.getElementById('cv'), g = cv.getContext('2d');
+let W = 0, Hh = 0, dpr = 1, foc = 1, heatImg = null;
+function resize() {
+    dpr = Math.min(2, window.devicePixelRatio || 1); W = innerWidth; Hh = innerHeight;
+    cv.width = W * dpr; cv.height = Hh * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    foc = (W / 2) / Math.tan(50 * Math.PI / 180);
+    // the heat per unit of flat screen, cos³ off the look, painted once at a quarter of the size
+    const w = Math.ceil(W / 4), h = Math.ceil(Hh / 4), c = document.createElement('canvas'); c.width = w; c.height = h;
+    const cx = c.getContext('2d'), im = cx.createImageData(w, h);
+    for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) {
+        const x = (i * 4 - W / 2) / foc, y = (j * 4 - Hh / 2) / foc, heat = Math.pow(1 + x * x + y * y, -1.5), k = 4 * (j * w + i);
+        im.data[k] = 11 + 30 * heat; im.data[k + 1] = 15 + 34 * heat; im.data[k + 2] = 23 + 52 * heat; im.data[k + 3] = 255;
+    }
+    cx.putImageData(im, 0, 0); heatImg = c;
+}
+function project(v, P) {   // v relative to the eye; returns [x, y, depth along the look]
+    const F = P.F, up = [0, 1, 0], d = up[0] * F[0] + up[1] * F[1] + up[2] * F[2];
+    let U = [up[0] - d * F[0], up[1] - d * F[1], up[2] - d * F[2]]; const n = Math.hypot(...U); U = U.map(x => x / n);
+    const Rt = [U[1] * F[2] - U[2] * F[1], U[2] * F[0] - U[0] * F[2], U[0] * F[1] - U[1] * F[0]];
+    const z = v[0] * F[0] + v[1] * F[1] + v[2] * F[2];
+    return [v[0] * Rt[0] + v[1] * Rt[1] + v[2] * Rt[2], v[0] * U[0] + v[1] * U[1] + v[2] * U[2], z];
+}
+function screenOf(p) { return [W / 2 + foc * p[0] / p[2], Hh / 2 - foc * p[1] / p[2]]; }
+function edge(a, b) {   // clip at the near plane
+    const near = 0.05; if (a[2] < near && b[2] < near) return null;
+    if (a[2] < near) { const t = (near - a[2]) / (b[2] - a[2]); a = [a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1]), near]; }
+    if (b[2] < near) { const t = (near - b[2]) / (a[2] - b[2]); b = [b[0] + t * (a[0] - b[0]), b[1] + t * (a[1] - b[1]), near]; }
+    return [screenOf(a), screenOf(b)];
+}
+function rayBox(e, F, t) {   // slab test, the thing's box
+    const lo = [t.x0, 0, t.z0], hi = [t.x0 + t.w, t.h, t.z0 + t.d]; let t0 = 0, t1 = Infinity;
+    for (let i = 0; i < 3; i++) {
+        if (Math.abs(F[i]) < 1e-12) { if (e[i] < lo[i] || e[i] > hi[i]) return null; continue; }
+        let a = (lo[i] - e[i]) / F[i], b = (hi[i] - e[i]) / F[i]; if (a > b) [a, b] = [b, a];
+        t0 = Math.max(t0, a); t1 = Math.min(t1, b); if (t0 > t1) return null;
+    }
+    return t0;
+}
+function colourOf(t, P, e, isTarget) {
+    if (isTarget) return '#f2c14e';
+    const x = thumbCoordsF(t.c, e, P);
+    if (x[0] <= 0 || x[1] <= 0 || x[2] <= 0) return '#6b7280';
+    const r = ((x[0] + x[1] + x[2]) / 3) / (S.H || 1);
+    if (r <= 1) return '#4fd1c5';
+    const L = Math.min(1, Math.log2(r) / 4);
+    return `rgb(${Math.round(167 - 40 * L)},${Math.round(139 - 50 * L)},${Math.round(250 - 30 * L)})`;
+}
+function frame() {
+    const P = pose(), e = eyeF();
+    g.fillStyle = '#0b0f17'; g.fillRect(0, 0, W, Hh);
+    if (S.show.heat && heatImg) g.drawImage(heatImg, 0, 0, W, Hh);
+    // rings of equal share of the heat: 1 − 1/√(1 + r²) = q
+    if (S.show.heat) {
+        g.strokeStyle = 'rgba(79,209,197,0.18)'; g.lineWidth = 1;
+        for (let k = 1; k < 8; k++) { const q = k / 8, r = Math.sqrt(1 / ((1 - q) * (1 - q)) - 1);
+            g.beginPath(); g.arc(W / 2, Hh / 2, foc * r, 0, 2 * Math.PI); g.stroke(); }
+    }
+    if (S.show.sky) {
+        const { N, d } = sky(); g.fillStyle = 'rgba(217,226,239,0.55)';
+        for (let i = 0; i < N; i++) { const p = project([d[3 * i], d[3 * i + 1], d[3 * i + 2]], P); if (p[2] <= 0) continue;
+            const s = screenOf(p); if (s[0] < 0 || s[0] > W || s[1] < 0 || s[1] > Hh) continue; g.fillRect(s[0], s[1], 1.2, 1.2); }
+    }
+    // the ground grid, every 8 units round the eye
+    g.strokeStyle = 'rgba(135,150,171,0.16)'; g.lineWidth = 1; g.beginPath();
+    const gx = Math.round(e[0] / 8) * 8, gz = Math.round(e[2] / 8) * 8, Rg = 160;
+    for (let k = -Rg; k <= Rg; k += 8) {
+        for (const seg of [[[gx + k, 0, gz - Rg], [gx + k, 0, gz + Rg]], [[gx - Rg, 0, gz + k], [gx + Rg, 0, gz + k]]]) {
+            const s = edge(project(sub(seg[0], e), P), project(sub(seg[1], e), P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); }
+        }
+    }
+    g.stroke();
+    // the things, and the one under the crosshair
+    const things = thingsNear(e[0], e[2]); let best = null, bt = Infinity;
+    for (const t of things) { const hit = rayBox(e, P.F, t); if (hit !== null && hit < bt) { bt = hit; best = t; } }
+    if (best !== S.target) { S.target = best; S.walk = { key: null, m: [], strides: 0 }; }
+    if (S.target && !S.holdH) { const x = thumbCoordsF(S.target.c, e, P); S.H = Math.max(1e-6, (x[0] + x[1] + x[2]) / 3); }
+    g.lineWidth = 1.1;
+    for (const t of things) {
+        const isT = t === S.target; g.strokeStyle = colourOf(t, P, e, isT); g.lineWidth = isT ? 2 : 1.1; g.beginPath();
+        for (const [a, b] of t.edges) { const s = edge(project(sub(a, e), P), project(sub(b, e), P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } }
+        g.stroke();
+    }
+    // the three thumbs: each lands at r = √2 on the screen; the triangle between them the wedge's edge
+    if (S.show.thumbs) {
+        const pts = [P.a, P.b, P.c].map(d => screenOf(project(d, P)));
+        g.strokeStyle = 'rgba(242,193,78,0.55)'; g.lineWidth = 1.2; g.beginPath();
+        pts.forEach(p => { g.moveTo(W / 2, Hh / 2); g.lineTo(...p); }); g.stroke();
+        g.strokeStyle = 'rgba(242,193,78,0.25)'; g.beginPath(); g.moveTo(...pts[0]); g.lineTo(...pts[1]); g.lineTo(...pts[2]); g.closePath(); g.stroke();
+        // each pair's corner, its slope 1: the line from the crosshair toward the pair's sum
+        g.setLineDash([4, 5]); g.strokeStyle = 'rgba(79,209,197,0.4)'; g.beginPath();
+        [[P.a, P.b], [P.b, P.c], [P.c, P.a]].forEach(([u, v]) => { const s = screenOf(project([u[0] + v[0], u[1] + v[1], u[2] + v[2]], P));
+            g.moveTo(W / 2, Hh / 2); g.lineTo(...s); }); g.stroke(); g.setLineDash([]);
+        g.fillStyle = '#f2c14e'; g.font = '12px "DM Mono", monospace';
+        ['a', 'b', 'c'].forEach((n, i) => g.fillText(n, pts[i][0] + 6, pts[i][1] - 6));
+    }
+    // the crosshair, the triple corner
+    g.strokeStyle = '#f2c14e'; g.lineWidth = 1.4; g.beginPath();
+    g.moveTo(W / 2 - 9, Hh / 2); g.lineTo(W / 2 + 9, Hh / 2); g.moveTo(W / 2, Hh / 2 - 9); g.lineTo(W / 2, Hh / 2 + 9); g.stroke();
+}
+function sub(p, e) { return [p[0] - e[0], p[1] - e[1], p[2] - e[2]]; }
+
+// ---------- the panel ----------
+const panel = document.getElementById('panel'), out = document.getElementById('out');
+function fmt(f) { const x = Fr.num(f); return Math.abs(x) >= 1e5 || (Math.abs(x) < 1e-3 && x !== 0) ? x.toExponential(4) : x.toFixed(5); }
+let lastHtml = '';
+function panelHtml() {
+    const X = exactOf(S.target); let h = '';
+    if (S.show.read) {
+        h += '<h3>the thing under the crosshair</h3>';
+        if (!X) h += '<p>nothing; turn toward a thing</p>';
+        else {
+            const t = X.t;
+            h += `<p>a ${t.kind}, ${t.w} × ${t.h} × ${t.d}, its centre (${t.c.join(', ')}), in ${X.facing}</p>`;
+            h += '<table><tr><td>thumb</td><td>reach</td><td>in thumbs</td></tr>' + ['a', 'b', 'c'].map((n, i) =>
+                `<tr><td>${n}</td><td class="num">${fmt(X.x[i])}</td><td class="num">${(Fr.num(X.x[i]) / S.H).toFixed(4)}</td></tr>`).join('') + '</table>';
+            h += `<p>reach along the look m = ${fmt(X.m)}; the thumb H = ${S.H.toFixed(3)}${S.holdH ? ' (held)' : ' (on this thing, so it is one thumb out)'}</p>`;
+            h += '<table><tr><td>pair</td><td>slope s</td><td>exact (digits)</td></tr>' + X.pairs.map(p => p.s ?
+                `<tr><td>${p.name}</td><td class="num">${fmt(p.s)}</td><td>${Fr.digits(p.s)}</td></tr>` : `<tr><td>${p.name}</td><td>—</td></tr>`).join('') + '</table>';
+            h += `<p>the three slopes multiply to <span class="${X.closureOK ? 'ok' : 'bad'}">${X.closure ? Fr.str(X.closure) : '—'}</span>: two are free, the third closes.</p>`;
+        }
+    }
+    if (S.show.euler && X) {
+        h += '<h3>Euler, simplified: w(s)·w(1/s) = −1</h3><p>w(s) = (1 − s² + 2is)/(1 + s²), a point of the circle in fractions; its exchange 1/s.</p>';
+        h += '<table>' + X.pairs.map(p => p.s ? `<tr><td>${p.name}</td><td class="num">w = ${Fr.num(p.w[0]).toFixed(4)} ${Fr.num(p.w[1]) < 0 ? '−' : '+'} ${Math.abs(Fr.num(p.w[1])).toFixed(4)}i</td><td>product <span class="${p.eulerOK ? 'ok' : 'bad'}">${Fr.str(p.prod[0])}${Fr.zero(p.prod[1]) ? '' : ' + …i'}</span></td><td class="${p.modOK ? 'ok' : 'bad'}">|w|² = ${Fr.str(p.mod2)}</td></tr>` : '').join('') + '</table>';
+        h += '<p>At the corner (s = 1) w = i, and i · i = −1. Home and the horizon are the one pair with no standpoint: e^(iπ) = −1.</p>';
+    }
+    if (S.show.omega && X) {
+        h += '<h3>the shares in Ω</h3><p>Each pair\'s sweep, home to its horizon, weighs Ω (the heat (1/Ω)/(1 + s²) over the slope). The corner sits at Ω/2 on each side.</p>';
+        X.pairs.forEach(p => { if (p.share === null) { h += `<p>${p.name}: another facing</p>`; return; }
+            h += `<p>${p.name}: ${(p.share).toFixed(4)} of Ω passed below s, ${(p.shareI).toFixed(4)} below 1/s, together <span class="${Math.abs(p.share + p.shareI - 1) < 1e-12 ? 'ok' : 'bad'}">${(p.share + p.shareI).toFixed(12)}</span></p>
+                  <div class="bar"><i style="width:${(100 * p.share).toFixed(2)}%"></i><b></b></div>`; });
+        h += '<p>The wedge of three thumbs is an octant, of area Ω.</p>';
+    }
+    if (S.show.walk) {
+        h += '<h3>the counted walk</h3>'; const Wk = walkSummary();
+        if (!Wk) h += '<p>hold W toward a thing without turning: each stride is 1/4, along a rational heading</p>';
+        else {
+            h += `<p>${Wk.strides} strides; each lowered the reach along the look by ${Wk.delta ? Fr.str(Wk.delta) : '—'}, <span class="${Wk.steady ? 'ok' : 'bad'}">${Wk.steady ? 'all equal, exactly' : 'not all equal'}</span></p>`;
+            if (Wk.nReads) h += `<p>strides left until the thing is square to the look beside you: from two looks (its apparent breadth b/m) ${Fr.num(Wk.nReads).toFixed(3)}, counted ${Fr.num(Wk.nCount).toFixed(3)}: <span class="${Wk.agree ? 'ok' : 'bad'}">${Wk.agree ? 'equal, exactly' : 'apart'}</span></p>`;
+        }
+    }
+    if (S.show.checks) {
+        h += '<h3>the checks (plans/twk-plan.md)</h3><table>' + checks().map(c =>
+            `<tr><td>${c.id}</td><td class="${c.ok === null ? '' : c.ok ? 'ok' : 'bad'}">${c.ok === null ? '·' : c.ok ? 'holds' : 'fails'}</td><td>${c.text}</td></tr>`).join('') + '</table>';
+    }
+    if (S.show.about) {
+        h += `<h3>about</h3>
+        <p>Every vertex is a whole point, made from its ground cell; no list of things is stored. The three thumbs are the columns of a product of rational turns, so they are square to each other exactly, and the look is their diagonal: the crosshair is the triple corner. A thing's three readings are its reaches along the thumbs, fractions; each pair of them gives a slope.</p>
+        <p>The screen is flat and square to the look, so edges stay straight and each point costs one division. The heat per unit of that screen is 1/(4Ω(1 + r²)^(3/2)), r in focal lengths, hottest at the crosshair; half of it lies within r = √3, where the thumbs land at r = √2. Ω = π/2 here only as a name for one sweep's total.</p>
+        <p>The thumb H is set on what is under the crosshair, so that thing is one thumb out and the corner is on it. Nearer things are teal (read in proportion), farther violet (read as one in 2, 4, 8), another facing grey. The wheel sets H by hand; H holds it. No pair slope moves.</p>
+        <p>W A S D take strides of 1/4 along the heading, itself a rational direction, so the eye stays a rational point and a straight walk is counted exactly.</p>`;
+    }
+    return h;
+}
+let panelTick = 0;
+function updatePanel(force) {
+    if (!panel.classList.contains('open')) return;
+    if (!force && ++panelTick % 6) return;
+    const h = panelHtml(); if (h !== lastHtml) { out.innerHTML = h; lastHtml = h; }
+}
+document.getElementById('menuBtn').onclick = () => { panel.classList.toggle('open'); updatePanel(true); };
+const opts = { optThumbs: 'thumbs', optHeat: 'heat', optSky: 'sky', optRead: 'read', optEuler: 'euler', optOmega: 'omega', optWalk: 'walk', optChecks: 'checks', optAbout: 'about' };
+for (const [id, k] of Object.entries(opts)) { const el = document.getElementById(id); el.checked = S.show[k];
+    el.onchange = () => { S.show[k] = el.checked; updatePanel(true); }; }
+
+// ---------- input (desktop) ----------
+const keys = new Set();
+addEventListener('keydown', ev => {
+    const k = ev.key.toLowerCase();
+    if (k === 'm') { panel.classList.toggle('open'); updatePanel(true); return; }
+    if (k === 'escape') { panel.classList.remove('open'); return; }
+    if (k === 'h') { S.holdH = !S.holdH; updatePanel(true); return; }
+    keys.add(k); if (ev.key.startsWith('Arrow')) ev.preventDefault();
+});
+addEventListener('keyup', ev => keys.delete(ev.key.toLowerCase()));
+let drag = null;
+cv.addEventListener('mousedown', ev => { drag = [ev.clientX, ev.clientY]; });
+addEventListener('mouseup', () => { drag = null; });
+addEventListener('mousemove', ev => { if (!drag) return; const dx = ev.clientX - drag[0], dy = ev.clientY - drag[1]; drag = [ev.clientX, ev.clientY];
+    S.yaw += dx * 0.004; S.pitch -= dy * 0.004; });
+cv.addEventListener('wheel', ev => { ev.preventDefault(); S.holdH = true; S.H = (S.H || 1) * Math.pow(2, ev.deltaY > 0 ? 0.25 : -0.25); updatePanel(true); }, { passive: false });
+function tick() {
+    const n = keys.has('shift') ? 8 : 1;
+    for (const k of ['w', 'a', 's', 'd']) if (keys.has(k)) stride(k, n);
+    if (keys.has('arrowleft')) S.yaw -= 0.02; if (keys.has('arrowright')) S.yaw += 0.02;
+    if (keys.has('arrowup')) S.pitch += 0.015; if (keys.has('arrowdown')) S.pitch -= 0.015;
+    frame(); updatePanel(false); requestAnimationFrame(tick);
+}
+
+// ---------- hook ----------
+window.__thumbsWalk = {
+    Fr, exact: () => exactOf(S.target), checks, stride, sky, skyShares,
+    target: () => S.target, pose,
+    set(o) { if (o.yaw !== undefined) S.yaw = o.yaw * Math.PI / 180; if (o.pitch !== undefined) S.pitch = o.pitch * Math.PI / 180;
+        if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; } frame(); return this.state(); },
+    state: () => ({ yaw: S.yaw * 180 / Math.PI, pitch: S.pitch * 180 / Math.PI, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH,
+        target: S.target ? { kind: S.target.kind, c: S.target.c } : null, walk: walkSummary() }),
+};
+addEventListener('resize', resize);
+resize();
+if (params.get('menu') === '1') { panel.classList.add('open'); }
+requestAnimationFrame(tick);
+</script>
+</body>
+</html>
