@@ -344,7 +344,9 @@ general, not only for this map: it is the classical entropy of a chaotic map (Ko
 equality with the rate of parting).
 
 Two limits. This is one map, and its close relatives; at other settings of the logistic map there is no such sweep
-behind it. And none of it is new: that the logistic map at 4 is the tent map in another chart is Ulam and von
+behind it. The mark is a rate below the entropy: the map at 4 and the Chebyshev cubic stretch at exactly their
+entropy (ln 2 and ln 3), while at 3.7, 3.8 and 3.9 the rate falls short by 0.027, 0.036 and 0.044, so no chart turns
+them into a constant stretch. Their runs still spend the start's digits at the rule's rate, within 3% (CXB, R928). And none of it is new: that the logistic map at 4 is the tent map in another chart is Ulam and von
 Neumann's, of 1947. What the letter adds is small, that the three unchanged laws share one coefficient.
 
 ## 10. What gets plainer, and what does not

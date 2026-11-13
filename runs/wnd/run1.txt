@@ -1,0 +1,9 @@
+== DSM: 482 hours kept, 28872 minutes (half B 17610); rho +0.001, sy/sx 0.995, z = +0.001 + 0.995i; D(r, Cauchy z) 0.0319, median r -0.049; quiet/loud (74 hours each): D ratio 0.1010, D |x| 0.4178; kurtosis x 3.03 y 3.30; x from Cauchy 0.0637
+== OKC: 506 hours kept, 30229 minutes (half B 16156); rho -0.066, sy/sx 0.985, z = -0.065 + 0.983i; D(r, Cauchy z) 0.0598, median r +0.043; quiet/loud (68 hours each): D ratio 0.1134, D |x| 0.4317; kurtosis x 11.60 y 4.53; x from Cauchy 0.0594
+== DEN: 514 hours kept, 30773 minutes (half B 15690); rho +0.050, sy/sx 1.030, z = +0.052 + 1.029i; D(r, Cauchy z) 0.0282, median r -0.028; quiet/loud (66 hours each): D ratio 0.0609, D |x| 0.4231; kurtosis x 4.65 y 4.19; x from Cauchy 0.0578
+== MSP: 437 hours kept, 26191 minutes (half B 15532); rho -0.055, sy/sx 0.933, z = -0.051 + 0.932i; D(r, Cauchy z) 0.0505, median r -0.002; quiet/loud (65 hours each): D ratio 0.0987, D |x| 0.3423; kurtosis x 1.40 y 4.96; x from Cauchy 0.0726
+== BOS: 526 hours kept, 31517 minutes (half B 18348); rho -0.024, sy/sx 1.005, z = -0.025 + 1.005i; D(r, Cauchy z) 0.0285, median r -0.008; quiet/loud (77 hours each): D ratio 0.0882, D |x| 0.4109; kurtosis x 1.08 y 2.96; x from Cauchy 0.0673
+== SFO: 352 hours kept, 21116 minutes (half B 11160); rho +0.206, sy/sx 0.926, z = +0.191 + 0.906i; D(r, Cauchy z) 0.0670, median r +0.040; quiet/loud (47 hours each): D ratio 0.0989, D |x| 0.3482; kurtosis x 2.36 y 3.03; x from Cauchy 0.0722
+W1: KILLED. heavy-tailed, not Cauchy at 3 of 6 (needs 4)
+W2: KILLED. D >= 0.03 at 4: DSM 0.032, OKC 0.060, MSP 0.051, SFO 0.067
+W3: KILLED. ratio loud vs quiet >= 0.03 at 6: DSM 0.101, OKC 0.113, DEN 0.061, MSP 0.099, BOS 0.088, SFO 0.099; both parts met at 0 of 6
