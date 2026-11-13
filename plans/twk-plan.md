@@ -628,3 +628,24 @@ Predictions:
   gives run 13's 2,195 at the start.
 - V5: for a mover under the crosshair, the exact checks (the three pair slopes multiply to 1; w(s)·w(1/s) = −1) hold at
   every sampled tick.
+
+**Run 15** (`runs/twk/run15.mjs`, output `runs/twk/run15-out.json`; headless Chromium, 1280 × 720, time paused, focus
+held). Nothing killed.
+- V1: eye still, 21 ticks compared over 200 (every 10th): 0 missing, 0 extra; along a seeded walk (a stride at about half
+  the ticks, so about 25 units), 0 and 0; from T₀ = 10³⁰, 7 ticks over 60, 0 and 0. At every compared tick each held
+  mover's read place equalled its stepped place exactly. The stepped blueprint stored 3,477, 3,622 and 3,627 movers and
+  did 695,400, 724,400 and 217,620 fraction additions; the read stored none and stepped none.
+- V2: mover cells scanned 29,085 at every tick in all three (the ground's count, the same keep rule and grain); movers held
+  163 to 167 (mean 165.1), 164 to 169 walking, 165 to 166 at 10³⁰.
+- V3: one mover stepped tick by tick from C₀ equal to C₀ + V·T at T = 1, 10, 10², 10³, 10⁴. Held at T = 0, 10³ and 10³⁰:
+  170, 168, 165, the same 29,085 cells.
+- V4: ground held 2,195 with movers on (2,362 with them), 2,195 with `?movers=0`; against a made blueprint with movers on,
+  0 missing, 0 extra.
+- V5: the first 20 held movers at T = 0, 10², 10⁴ and 10³⁰: the pair slopes multiply to 1 and w(s)·w(1/s) = −1 with
+  |w|² = 1 for all 80, exact. (Checked on held movers through the hook, not by putting each under the crosshair.)
+
+What it does not show: the read and the stepped blueprint take each mover's start, size and velocity from the same
+hashed cell, so V1 checks that scanning in the movers' own frame finds every mover the rule keeps and places it where
+stepping puts it; it does not compare two independent worlds. All movers at a scale share one velocity, which is what
+lets one frame per scale hold them; things each with its own velocity, or turning, are not tested. On the page the
+movers draw at 42 frames a second headless with time running.
