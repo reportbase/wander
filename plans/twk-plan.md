@@ -283,3 +283,34 @@ C10). Script in the scratchpad, not kept.
 
 **In short.** Going half way doubles every reach along the thumbs alike, so every slope is unmoved: the read pays nothing
 for nearness. The place pays a binary digit a halving. B undoes G exactly.
+
+### Run 7, plan (13 November 2026; Tom: "1", to holding things by their size on the screen wherever the eye stands; written and committed before the change)
+
+**What the page does now** (measured before writing this, the pose `q = 1`, `ky = 18`, eye `(X, 2, X − 30)`, scales −8 to 8):
+
+| X | kept | cells scanned | target | slope digits | K1, K2, K4, K8 |
+|---|---|---|---|---|---|
+| 0 | 2,153 | 29,053 | box at (88.5, 2, −56) | 26 | hold |
+| 10⁵ | 2,140 | 29,085 | box at (100015, 2, 99967) | 22 | hold |
+| 10¹² | 2,078 | 29,085 | box at (1000000000112, 2, 999999999943) | 24 | hold |
+| 10¹⁵ | the page hangs | | | | |
+
+At 10¹⁵ the smallest scale's cell index, 10¹⁵ ÷ (24/256) ≈ 10¹⁶, is past 2⁵³, where a double cannot count by one: the
+scan's `i++` stops moving. The eye's place is exact (fractions) but the cull reads it as a double. So "wherever the eye
+stands" holds only up to about 10¹² units.
+
+**The change.** The cull works from the exact eye: each scale's cell index is the floor of the eye's fraction over the
+cell's width, a BigInt; cells are hashed from their whole index (the same hash as now wherever the index is under 2⁵³, so
+the world is unchanged where the page worked); each thing keeps its centre as an exact fraction, and everything drawn,
+picked or culled is computed relative to the eye (the eye's fraction subtracted exactly, then made a double). This is the
+classical floating origin (camera-relative coordinates, as games with large worlds use), done here in exact arithmetic.
+
+**Predictions** (same pose):
+- **D1.** At X = 10¹⁵, 10³⁰ and 10¹⁰⁰, and at 10¹⁰⁰ with the eye and the world scaled by 2⁻²⁰, `cull()` returns in under
+  2 s; the total kept is between 2,000 and 2,250 and the cells scanned within 1% of 29,085. *Killed* if any is outside.
+- **D2.** At X = 0, 10⁵ and 10¹², the counts kept, the cells scanned and the target are exactly those in the table above.
+  *Killed* if any differs.
+- **D3.** K1, K2, K4 and K8 hold at every place, and the target's slopes have 18 to 30 digits at every X (not growing with
+  the distance). *Killed* if a check fails or a slope has more than 30 digits.
+- **D4.** The eye's place takes at least as many digits as X has (a write paying by the digit). *Killed* if fewer.
+- **D5.** `trigFree` counts 0 at X = 10¹⁰⁰. *Killed* if not.
