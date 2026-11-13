@@ -258,3 +258,28 @@ Changed on the page during the run, after the first results:
 **In short.** With each scale given its Cauchy share, scales without end, up or down, cost a fixed total: about 4.5 times
 the focus scale's count. The view 2⁻²⁰ deep is the same view. The readings take no more digits at depth; only the
 position does. The cull is classical. What is ours is the share law, and that no count of the world enters.
+
+### Run 6 (13 November 2026; a check, no prediction): going half way
+
+Tom: "lets keep improving this demo and then write an essay about what we learned about the classical / reader
+distinction." The page gains G (go half way to the thing under the crosshair) and B (back off to twice as far). Both
+move the eye in exact fractions along the line from the eye to the thing's centre, so the thing's direction does not
+move and its breadth on the screen doubles or halves. G stops before the thing would be nearer than its own breadth. The
+thing followed is kept while it stays under the crosshair, though nearer things may come between, and any turn or stride
+lets it go. A panel, "a read and a write, by the digit", shows the eye's longest denominator, the slopes' digits, the
+thing's distance in its own breadths and what is held. Hook `approach(n)`, `backOff(n)`, `digits()`.
+
+As with run 3, this is a check, not a test: I knew the answer before running it (the depth's factor cancels in a ratio,
+C10). Script in the scratchpad, not kept.
+
+- The pose with the farthest thing in its own breadths (`q = 1`, `ky = 18`, a 4 × 4 × 3 box 23 of its breadths off):
+  G four times, then stopped (a fifth would put the eye inside its breadth). The three pair slopes were the same
+  fractions, digit for digit, at all five places (13 digits at most). K1, K2 and K4 held at each.
+- B four times put the eye back where it started, exactly (its denominators back to 1 digit).
+- Before the lock, G's first halving brought a nearer, smaller thing (scale −2) under the crosshair, and the next three
+  halvings went toward it. With the lock, the thing followed stays the same.
+- The eye's denominators went from 1 digit to 2 over four halvings: one binary digit a halving, as the place is a sum
+  of halves.
+
+**In short.** Going half way doubles every reach along the thumbs alike, so every slope is unmoved: the read pays nothing
+for nearness. The place pays a binary digit a halving. B undoes G exactly.
