@@ -19,7 +19,7 @@
     walking straight lowers the reach along the look by the same amount each stride, and two looks a stride apart give
     the strides left. Where Ω itself enters (the shares of a sweep, the heat's total) the check is in floating point.
     The flat screen square to the look: one division per point, edges straight, the heat per unit of screen
-    1/(4Ω(1 + r²)^(3/2)). Text behind the menu (☰). Desktop only.
+    1/(4Ω(1 + r²)^(3/2)). Text behind the menu (☰). Touch since R947 (Tom: "Can you add touch suppprt"): one finger looks, two pinch the thumb, a pad walks.
     Re-anchoring (R931): the frame is recomputed from one current turn each pose, so its denominators stay bounded (the
     tower's middle terms cancel); the eye is a running total of strides, so at each new heading it is put down on the
     nearest point of the 1/16 grid (a write; only the exact path home is lost). ?anchor=0 keeps every heading in it.
@@ -62,6 +62,14 @@
         .bar { height: 6px; background: #1c2638; border-radius: 3px; position: relative; margin: 2px 0 6px; }
         .bar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--teal); border-radius: 3px; }
         .bar b { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: var(--gold); }
+        #pad { position: fixed; left: 14px; bottom: 14px; display: none; gap: 14px; align-items: flex-end; user-select: none; -webkit-user-select: none; }
+        #pad .walk { display: grid; grid-template-columns: repeat(3, 52px); grid-template-rows: repeat(3, 52px); gap: 6px; }
+        #pad .acts { display: grid; gap: 6px; }
+        #pad button { width: 52px; height: 52px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel);
+                      color: var(--ink); font: 500 16px "DM Mono", monospace; touch-action: none; }
+        #pad button.on { border-color: var(--gold); color: var(--gold); }
+        @media (pointer: coarse) { #pad { display: flex; } }
+        @media (max-width: 480px) { #panel { width: auto; right: 12px; } }
         button.run { background: #172236; color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px;
                      font: inherit; cursor: pointer; }
     </style>
@@ -69,9 +77,23 @@
 <body>
 <canvas id="cv"></canvas>
 <button id="menuBtn" title="menu (M)">☰</button>
+<div id="pad">
+    <div class="walk">
+        <span></span><button data-k="w" data-hold="1" title="forward (W)">▲</button><span></span>
+        <button data-k="a" data-hold="1" title="left (A)">◀</button><button data-k="shift" title="eight strides at a time (shift)">×8</button><button data-k="d" data-hold="1" title="right (D)">▶</button>
+        <span></span><button data-k="s" data-hold="1" title="back (S)">▼</button><span></span>
+    </div>
+    <div class="acts">
+        <button data-k="g" title="half way to the thing under the crosshair (G)">G</button>
+        <button data-k="b" title="back to twice as far (B)">B</button>
+        <button data-k="h" title="hold the thumb (H)">H</button>
+    </div>
+</div>
 <div id="panel">
     <h2>Three thumbs, walking</h2>
     <p>W A S D walk (shift: eight strides at a time), G half way to the thing under the crosshair, B back to twice as far, drag or the arrow keys turn, the wheel sets the thumb, H holds it, M the menu.</p>
+    <p>On a touch screen: drag with one finger to look, pinch to set the thumb (fingers apart, a larger thumb), hold ▲ ◀ ▼ ▶ to walk, ×8 for eight strides at a time, G, B and H as the keys.</p>
+    <p><button class="run" data-act="u">U ten times out</button> <button class="run" data-act="p">P against a made blueprint</button> <button class="run" data-act="n">n denser</button> <button class="run" data-act="k">k hold K</button> <button class="run" data-act="c">c two ways</button></p>
     <h3>show</h3>
     <label><input type="checkbox" id="optThumbs" checked> the three thumbs and the wedge</label>
     <label><input type="checkbox" id="optHeat" checked> the heat, 1/(4Ω(1 + r²)^(3/2)), and its rings of equal share</label>
@@ -855,30 +877,52 @@ const opts = { optThumbs: 'thumbs', optHeat: 'heat', optSky: 'sky', optRead: 're
 for (const [id, k] of Object.entries(opts)) { const el = document.getElementById(id); el.checked = S.show[k];
     el.onchange = () => { S.show[k] = el.checked; updatePanel(true); }; }
 
-// ---------- input (desktop) ----------
+// ---------- input (keys, mouse and touch; R947) ----------
 const keys = new Set();
+function act(k) {   // one-shot actions, from a key or a touch button; true if k was one
+    if (k === 'm') { panel.classList.toggle('open'); updatePanel(true); return true; }
+    if (k === 'escape') { panel.classList.remove('open'); return true; }
+    if (k === 'h') { S.holdH = !S.holdH; updatePanel(true); return true; }
+    if (k === 'g') { approach(1); updatePanel(true); return true; }
+    if (k === 'b') { backOff(1); updatePanel(true); return true; }
+    if (k === 'p') { S.godLast = { ...againstMade(2), digits: eyeDigits() }; updatePanel(true); return true; }
+    if (k === 'u') { outTenfold(); updatePanel(true); return true; }
+    if (k === 'n') { DENS = DENS >= 16 ? 1 : DENS * 2; BP.list = null; updatePanel(true); return true; }
+    if (k === 'k') { KFIX = KFIX ? 0 : 2100; if (!KFIX) GS = 1; updatePanel(true); return true; }
+    if (k === 'c') { S.twoLast = twoWays(1, 60); updatePanel(true); return true; }
+    if (k === 'o') { S.show.god = !S.show.god; document.getElementById('optGod').checked = S.show.god; updatePanel(true); return true; }
+    return false;
+}
 addEventListener('keydown', ev => {
     const k = ev.key.toLowerCase();
-    if (k === 'm') { panel.classList.toggle('open'); updatePanel(true); return; }
-    if (k === 'escape') { panel.classList.remove('open'); return; }
-    if (k === 'h') { S.holdH = !S.holdH; updatePanel(true); return; }
-    if (k === 'g') { approach(1); updatePanel(true); return; }
-    if (k === 'b') { backOff(1); updatePanel(true); return; }
-    if (k === 'p') { S.godLast = { ...againstMade(2), digits: eyeDigits() }; updatePanel(true); return; }
-    if (k === 'u') { outTenfold(); updatePanel(true); return; }
-    if (k === 'n') { DENS = DENS >= 16 ? 1 : DENS * 2; BP.list = null; updatePanel(true); return; }
-    if (k === 'k') { KFIX = KFIX ? 0 : 2100; if (!KFIX) GS = 1; updatePanel(true); return; }
-    if (k === 'c') { S.twoLast = twoWays(1, 60); updatePanel(true); return; }
-    if (k === 'o') { S.show.god = !S.show.god; document.getElementById('optGod').checked = S.show.god; updatePanel(true); return; }
+    if (act(k)) return;
     keys.add(k); if (ev.key.startsWith('Arrow')) ev.preventDefault();
 });
 addEventListener('keyup', ev => keys.delete(ev.key.toLowerCase()));
-let drag = null;
-cv.addEventListener('mousedown', ev => { drag = [ev.clientX, ev.clientY]; });
-addEventListener('mouseup', () => { drag = null; });
-addEventListener('mousemove', ev => { if (!drag) return; const dx = ev.clientX - drag[0], dy = ev.clientY - drag[1]; drag = [ev.clientX, ev.clientY];
+let drag = null; const ptrs = new Map(); let pinch = null;
+// a mouse or one finger drags the look; two fingers pinch the thumb (R947: fingers apart, a larger thumb), as the wheel does
+cv.style.touchAction = 'none';
+cv.addEventListener('pointerdown', ev => { cv.setPointerCapture(ev.pointerId); ptrs.set(ev.pointerId, [ev.clientX, ev.clientY]);
+    if (ptrs.size === 1) drag = [ev.clientX, ev.clientY];
+    else if (ptrs.size === 2) { const [p, q] = [...ptrs.values()]; pinch = { d: Math.hypot(p[0] - q[0], p[1] - q[1]) || 1, H: S.H || 1 }; drag = null; } });
+function ptrUp(ev) { ptrs.delete(ev.pointerId); if (ptrs.size < 2) pinch = null;
+    if (ptrs.size === 1) { const p = [...ptrs.values()][0]; drag = [p[0], p[1]]; } else if (!ptrs.size) drag = null; }
+cv.addEventListener('pointerup', ptrUp); cv.addEventListener('pointercancel', ptrUp);
+cv.addEventListener('pointermove', ev => { if (!ptrs.has(ev.pointerId)) return; ptrs.set(ev.pointerId, [ev.clientX, ev.clientY]);
+    if (pinch && ptrs.size >= 2) { const [p, q] = [...ptrs.values()], d = Math.hypot(p[0] - q[0], p[1] - q[1]) || 1;
+        S.holdH = true; S.H = Math.max(1e-300, pinch.H * d / pinch.d); updatePanel(true); return; }
+    if (!drag) return; const dx = ev.clientX - drag[0], dy = ev.clientY - drag[1]; drag = [ev.clientX, ev.clientY];
     S.dragX += dx; S.dragY += dy;   // two pixels of drag a step of 1/128 in the half-slope
     const kx = Math.trunc(S.dragX / 2), ky = Math.trunc(S.dragY / 2); S.dragX -= 2 * kx; S.dragY -= 2 * ky; turnBy(kx); tiltBy(-ky); });
+// the touch pad: held buttons walk as W A S D do, the others act once (shown only on a touch screen)
+for (const b of document.querySelectorAll('#pad button')) {
+    const k = b.dataset.k, hold = b.dataset.hold === '1';
+    b.addEventListener('pointerdown', ev => { ev.preventDefault(); b.setPointerCapture(ev.pointerId);
+        if (hold) { keys.add(k); b.classList.add('on'); } else if (k === 'shift') { keys.has('shift') ? keys.delete('shift') : keys.add('shift'); b.classList.toggle('on', keys.has('shift')); } else act(k); });
+    const up = () => { if (hold) { keys.delete(k); b.classList.remove('on'); } };
+    b.addEventListener('pointerup', up); b.addEventListener('pointercancel', up); b.addEventListener('lostpointercapture', up);
+}
+for (const b of document.querySelectorAll('#panel [data-act]')) b.addEventListener('click', () => act(b.dataset.act));
 cv.addEventListener('wheel', ev => { ev.preventDefault(); S.holdH = true; S.H = (S.H || 1) * Math.pow(2, ev.deltaY > 0 ? 0.25 : -0.25); updatePanel(true); }, { passive: false });
 function tick() {
     const n = keys.has('shift') ? 8 : 1;
