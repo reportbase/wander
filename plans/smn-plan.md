@@ -180,3 +180,58 @@ What it would show: N1b–N3b not killed means that at six new stations in a new
 elliptical premise. The direction carries the Cauchy at the z its second moments fix, unmoved by loudness, while the
 amounts carry a fat tail. That is a second domain for §12 O6, in the band where the turn could be named. Killed means
 that run 1's B2 result was that week's or those stations', not the band's.
+
+### Run 2 (13 November; `python3 -I runs/smn/smn2.py <dir>`, 43 seconds; output `runs/smn/run2.txt`)
+
+Data: EarthScope dataselect, as planned. All six stations had IU, location 00, BH1 and BH2 for the whole week in one
+segment, so no fallback was used and none was dropped. KIEV and ULN record at 20 samples a second, not 40, so the plan's
+"every 10th sample" kept 2 a second there (half B 604,800 samples, not 1,209,600). The script's printed "3.50 days" for
+them comes from its day count, which assumes 40 a second; the traces cover the full week. sha256 as fetched (also in
+`runs/smn/run2-sha.txt`):
+
+```
+9f20c76cabf6a55312f12132d67af28fa6675443b97ffd87e3928a791c40c489  IU.CCM.00.BH1.mseed
+4f09b39db14f48f88119a33cceb4fae0c2da62bd9d9201313da4c3ff34a104c3  IU.CCM.00.BH2.mseed
+724cff5e745b0abb37cb62ee7eb26c26b47ad5c74bb5e649df632ff746790d41  IU.COLA.00.BH1.mseed
+a511a3b97a4e4e0d2840f62b25c38b537c94cde2bd76672c82bb9e5858a2f98e  IU.COLA.00.BH2.mseed
+1877628b8979aca9d21b0203506240f046b8fb9def5f5abef8f2e1e31263e5f9  IU.KIEV.00.BH1.mseed
+444a35d5d0e8c478cc7a330f73a6f0ad553015dda7f6d65d57f72dd82eb6103a  IU.KIEV.00.BH2.mseed
+307270e9c3a0d7264a9d5fbdea65a92d8c955d883452903c0d3306cbb74a9092  IU.RSSD.00.BH1.mseed
+f20a54f4eb7474b83f461f9a4912034a808910a6211eb624f1d60d2c92c6a717  IU.RSSD.00.BH2.mseed
+2696304ef186732ce7c1c27e437cfc28e5a92d89e64b3d00f4631eadeb775941  IU.TUC.00.BH1.mseed
+a7a82f6ee41de74f09ef80cd50c4ce602c8210367e91f353bd9bd0793d79ced6  IU.TUC.00.BH2.mseed
+2030eea2a3c1b39bfe641dcc08a8ccb8d0e97d8d472bbb24afd61140c3cfe0fe  IU.ULN.00.BH1.mseed
+e1e052ee604eb8133e17847cca03827d1b0918dd62302883e3667b98f664a208  IU.ULN.00.BH2.mseed
+```
+
+| station | z from half A | D(r, Cauchy z), half B | ratio, loud vs quiet | \|x\|, loud vs quiet | kurtosis x, y |
+|---|---|---|---|---|---|
+| CCM | +0.001 + 1.031i | 0.0009 | 0.0014 | 0.0066 | −0.00, −0.00 |
+| RSSD | +0.110 + 1.164i | 0.0265 | 0.0025 | 0.135 | 4399, 11915 |
+| TUC | −0.316 + 0.876i | 0.0247 | 0.0203 | 0.177 | 1063, 1623 |
+| COLA | +0.030 + 0.953i | 0.0067 | 0.0150 | 0.337 | 36164, 62791 |
+| KIEV | +0.197 + 0.838i | 0.0375 | 0.0483 | 0.287 | 5867, 1441 |
+| ULN | +0.247 + 1.206i | 0.0061 | 0.0069 | 0.212 | 1401, 5882 |
+
+- **N1b: not killed.** Both channels' kurtosis exceed 3 at 5 of 6 stations. CCM is the exception, with Gaussian amounts
+  (kurtosis 0.00, D from the best Gaussian 0.0005).
+- **N2b: not killed.** The ratio is within 0.03 of the Cauchy at half A's z at 5 of 6 stations. KIEV is the one past it,
+  at 0.0375.
+- **N3b: not killed.** The ratio's D between the loud and quiet hours is 0.03 or more only at KIEV (0.048). Both parts are
+  met at 4 of 6 stations: RSSD, TUC, COLA and ULN, where |x|'s D is 10 to 70 times the ratio's. CCM fails the second part
+  narrowly: |x| 0.0066 against the needed 0.0070. Its amounts barely move with loudness at all.
+
+**Post hoc, not a test.**
+- CCM's 1–4 Hz band behaves like a steady Gaussian pair: no transients, the loud and quiet hours nearly alike, and the
+  ratio on the Cauchy to 0.001. That is the elliptical case with no scale mixture in it. Whether this is the site's quiet
+  or the instrument's own floor was not checked.
+- KIEV, the one failure of N2b and N3b, is the station nearest a city, and its direction moves with loudness, as the
+  microseism band did in run 1. A directional source is the plan's stated way to fail. This was not checked against any
+  record of local sources.
+
+Read together with run 1's B2 (3 of 3 within 0.034 on the ratio, 3 of 3 unmoved by loudness), the band now stands at 8 of
+9 stations, over two weeks and four continents, on both counts. The direction holds the Cauchy that its second moments
+fix, and loudness cancels from it while staying in the amounts. It is a second domain for *Reads and Writes* §12 O6 in the
+band where the turn could be named. As the plan says, this is the classical elliptical ratio. What is tested is whether
+the noise field meets its premise, and where it does not (KIEV, the microseism band), the direction has a source and the
+sort predicts no Cauchy.
