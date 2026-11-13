@@ -145,3 +145,38 @@ So the rule is not contradicted, and in its letter the run is mixed: one predict
 and one was empty (N4). A second run would fix the band (B2 alone), restate N3's contrast without the 0.3 that the
 quartile split never reached, and drop N4. Its predictions would have to be written before a new week or new stations
 are fetched, since this week's numbers are now known.
+
+### Run 2, plan (13 November, SPN R924; Tom: "Yes", to Claude's offer of a second run). Written and committed before any data for it is fetched; nothing in this section is edited after run 2.
+
+Run 1's numbers are known, so run 2 takes a new week and new stations, fixed here before fetching, and keeps only what run 1
+gave a sharp form: the 1–4 Hz band, where the amounts carried the fat tail and the direction held. The microseism band is
+left out, because run 1 found it directional. That is a reading of run 1 and is not tested again here. N4 is dropped (one
+statistic with N2). N3's 0.3 for |x| is dropped (run 1's quartile split never reached it).
+
+- **Data.** EarthScope FDSN dataselect (service.earthscope.org, the archive service.iris.edu now redirects to), network IU,
+  location 00, BH1 and BH2, with run 1's fallbacks (BHN/BHE at 00, then 10; otherwise the station is dropped and the run
+  says so, no replacement). Six GSN stations not used in run 1, chosen for being far from coasts and spread across
+  continents, and chosen before any of their data was looked at: IU.CCM (Cathedral Cave, Missouri), IU.RSSD (Black Hills,
+  South Dakota), IU.TUC (Tucson, Arizona), IU.COLA (College, Alaska), IU.KIEV (Kyiv, Ukraine), IU.ULN (Ulaanbaatar,
+  Mongolia). Week 2026-10-01T00:00 to 2026-10-08T00:00 UTC; half A the first 3.5 days, half B the rest. sha256s under the
+  run.
+- **Band and method.** B2 only, 1–4 Hz, filtered, decimated and segmented exactly as run 1 (`runs/smn/smn2.py`, run 1's
+  script with only the stations, the week and the band changed). z = m + iγ from half A's covariance. The ratio y/x on
+  half B against Cauchy(m, γ) by the KS distance D. The loudest quarter of half B's hours against the quietest. Kurtosis
+  over the week.
+
+**Predictions** (six stations; a dropped station counts as a failure of every prediction):
+
+- **N1b (the amounts carry a fat tail).** Both channels' excess kurtosis exceed 3 in at least 4 of 6. *Killed* otherwise.
+  If killed, N3b loses its teeth (no loudness to cancel), and the run says so.
+- **N2b (the turn named).** D(r, Cauchy(m, γ)) < 0.03 on half B, with z from half A, in at least 4 of 6. *Killed* if 3 or
+  more are at 0.03 or above.
+- **N3b (loudness cancels from the direction, not from the amounts).** The ratio's law, loud hours against quiet: D < 0.03
+  in at least 4 of 6, and in each of those, the same comparison for |x| (standardized by half A's σx) gives a D at least
+  five times the ratio's. *Killed* if the ratio's D is 0.03 or more in 3 or more, or if fewer than 4 stations meet both
+  parts.
+
+What it would show: N1b–N3b not killed means that at six new stations in a new week, the 1–4 Hz noise field meets the
+elliptical premise. The direction carries the Cauchy at the z its second moments fix, unmoved by loudness, while the
+amounts carry a fat tail. That is a second domain for §12 O6, in the band where the turn could be named. Killed means
+that run 1's B2 result was that week's or those stations', not the band's.
