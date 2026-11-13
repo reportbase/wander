@@ -352,3 +352,29 @@ Also checked, no prediction: at 10³⁰, G then B put the eye back exactly, the 
 read the eye as a double. Now the eye's place is used exactly and everything else is worked out from the eye (a floating
 origin, classical), so the same view, the same count held and the same exact checks hold 10¹⁰⁰ units out and a millionth
 of the size there. The only thing that grows is the place: 101 digits at 10¹⁰⁰.
+
+## Run 8: the read against a blueprint, thing for thing (planned 13 November 2026)
+
+Tom: "let others make those statements.   lets actually prove it with undeniable results." The page will say nothing
+about which view is better or what nature has; it will show results. The claim to test: **the read holds, from the eye
+alone, exactly what a blueprint holds for that eye by the same rule, nothing missing and nothing extra, at every place
+and every scale, while storing nothing.** The comparison is brute force: a blueprint reads every cell of a region and
+keeps every thing in it with its exact centre; the read scans only its own cells about the eye.
+
+What this can and cannot show. G1 and G3 set the cull against an exhaustive list under the same keep rule
+(b ≥ g·d and d ≥ b), so they can fail only through an error in the cull: its scan radius, its exact eye, its cell hash
+past 2⁵³, its floating origin. That is what they test. They do not compare totals, joins or anything else a blueprint
+does from no standpoint, and they say nothing about which is better.
+
+Predictions, committed before the hook `godTest()` is written:
+
+- **G1.** At 20 seeded poses with the eye inside the stored blueprint's square (|x|, |z| ≤ 2,500, height 2, random
+  q, ky, kp), the stored blueprint's things kept by the rule from the eye (worked out from the blueprint's own exact
+  centres) are exactly the read's held things at scales 0 to 8 whose centres lie in the square: 0 missing, 0 extra, at
+  every pose. *Killed* by any one.
+- **G2.** At those poses the read uses under 2% of the blueprint's N = 35,013 things. *Killed* if 2% or more at any pose.
+- **G3.** At the eye (X, 2, X − 30) with q = 1, ky = 18, for X = 0, 10⁵, 10¹⁵, 10³⁰, 10¹⁰⁰, a blueprint made about the
+  eye at every scale −8 to 8, each over a square of cells twice its scan radius on a side about the eye's cell (every cell
+  read, every centre exact from the cell's index, the rule applied to the exact centre less the exact eye), holds exactly
+  the read's held set: 0 missing, 0 extra. *Killed* by any one.
+- **G4.** In G3 the blueprints read at least 4 times the cells the read scans, at every place. *Killed* if fewer.
