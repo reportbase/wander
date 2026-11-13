@@ -1,0 +1,134 @@
+{
+ "V4": {
+  "groundHeld": 2195,
+  "keptWithMovers": 2362
+ },
+ "V1still": {
+  "compared": 21,
+  "missing": 0,
+  "extra": 0,
+  "exact": true,
+  "heldMin": 166,
+  "heldMax": 175,
+  "heldMean": 168.52380952380952,
+  "scanned": [
+   35833
+  ],
+  "velocitiesMin": 95,
+  "stored": 4184,
+  "adds": 836800
+ },
+ "V1walk": {
+  "compared": 21,
+  "missing": 0,
+  "extra": 0,
+  "exact": true,
+  "heldMin": 166,
+  "heldMax": 175,
+  "heldMean": 168.76190476190476,
+  "scanned": [
+   35833
+  ],
+  "velocitiesMin": 96,
+  "stored": 4423,
+  "adds": 884600
+ },
+ "V1far": {
+  "compared": 7,
+  "missing": 0,
+  "extra": 0,
+  "exact": true,
+  "heldMin": 167,
+  "heldMax": 173,
+  "heldMean": 170.57142857142858,
+  "scanned": [
+   35833
+  ],
+  "velocitiesMin": 102,
+  "stored": 4183,
+  "adds": 250980
+ },
+ "V3": {
+  "key": "m0:2,3",
+  "A": 5,
+  "B": 5,
+  "m": 6,
+  "period": 40,
+  "back": 40,
+  "out": [
+   {
+    "T": 1,
+    "same": true
+   },
+   {
+    "T": 10,
+    "same": true
+   },
+   {
+    "T": 100,
+    "same": true
+   },
+   {
+    "T": 1000,
+    "same": true
+   },
+   {
+    "T": 10000,
+    "same": true
+   }
+  ]
+ },
+ "V6": {
+  "held": 169,
+  "distinct": 106
+ },
+ "V3far": [
+  {
+   "tick": "0",
+   "held": 169
+  },
+  {
+   "tick": "1000",
+   "held": 169
+  },
+  {
+   "tick": "1e30",
+   "held": 173
+  }
+ ],
+ "V5": [
+  {
+   "t": "0",
+   "checked": 20,
+   "ok": 20
+  },
+  {
+   "t": "100",
+   "checked": 20,
+   "ok": 20
+  },
+  {
+   "t": "10000",
+   "checked": 20,
+   "ok": 20
+  },
+  {
+   "t": "1e30",
+   "checked": 20,
+   "ok": 20
+  }
+ ],
+ "V4off": {
+  "held": 2195
+ },
+ "V4made": {
+  "read": 2195,
+  "blueprint": 2195,
+  "missing": 0,
+  "extra": 0,
+  "cells": 38513,
+  "scanned": 29085,
+  "ratio": 1.3241533436479285
+ }
+}
+errors []

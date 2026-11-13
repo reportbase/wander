@@ -679,3 +679,21 @@ Predictions:
 - V5b: the exact checks (pair slopes multiply to 1, w(s)·w(1/s) = −1, |w|² = 1) on 20 held movers at T = 0, 10², 10⁴,
   10³⁰.
 - V6: the velocities differ: among the movers held at one tick, at least 30 distinct velocity vectors.
+
+**Run 16** (`runs/twk/run16.mjs`, output `runs/twk/run16-out.json`; headless Chromium, 1280 × 720, time paused, focus
+held). Nothing killed.
+- V1b: eye still, 21 ticks compared over 200: 0 missing, 0 extra; along a seeded walk, 0 and 0; from T₀ = 10³⁰, 7 ticks
+  over 60, 0 and 0. Every held mover's place equalled its stepped place exactly at every compared tick. The stepped list
+  stored 4,184, 4,423 and 4,183 movers and made 836,800, 884,600 and 250,980 steps; the read stored and stepped none.
+- V2b: 35,833 mover cells at every tick in all three (1.23 times run 15's 29,085: the 3 cells of reach); movers held
+  166 to 175 (mean 168.5), 166 to 175 walking, 167 to 173 at 10³⁰.
+- V3b: one mover (A = B = 5, m = 6) stepped tick by tick equal to its place from T alone at T = 1 to 10⁴, back at its
+  start after 40 ticks, its period 8(A + B)/gcd(m, 8(A + B)) = 40.
+- V4b: ground 2,195 with and without movers; 0 missing, 0 extra against a made blueprint with movers on.
+- V5b: 20 held movers at T = 0, 10², 10⁴, 10³⁰: the three exact checks hold for all 80.
+- V6: 95 to 106 distinct velocity vectors among the 166 to 175 held (106 of 169 at the start).
+
+What it does not show: as in run 15 both sides take a mover's loop from the same hashed cell, and the stepped list adds
+quarter-steps and wraps at the loop's length, so V1b checks the place from T alone against accumulation, and the scan's
+completeness, not two independent worlds. Straight flights forever are not tested (the cells to look at would grow with
+T). On the page, 51 frames a second headless with time running.
