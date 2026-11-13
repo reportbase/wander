@@ -90,3 +90,19 @@ leg and, at the end, the digits of the target's readings and K1–K8 (K5 on the 
   100 digits at leg 50.
 - **A3.** With the re-anchor, the target's slopes stay under 40 digits. K1, K2, K4, K5 and K8 hold at the end of the walk
   in both runs. *Killed* if any of these fails.
+
+### Run 2 (13 November; the page's hook in headless Chromium, the seeded walk of 200 legs, with and without the re-anchor)
+
+| | eye's denominator, leg 10 | leg 50 | most over 200 legs | target's slopes | K1–K8 at the end |
+|---|---|---|---|---|---|
+| re-anchored (199 times) | 6 digits | 6 | 6 | 10 digits | all hold |
+| not re-anchored | 34 | 102 | 129 | 136 digits | all hold |
+
+- **A1 not killed**: with the re-anchor the eye's denominator never went past 6 digits.
+- **A2 not killed**: without it, 102 digits by leg 50 (my bound was 100).
+- **A3 not killed**: re-anchored, the target's slopes had 10 digits, and every check held in both runs.
+
+Post hoc, not predicted: without the re-anchor the digits leveled off near 128 rather than growing on. Whole-degree yaws
+give only about 107 distinct half-slopes k/128, so once each denominator has come into the running total, nothing new
+enters. Finer turns would keep it growing. Either way the readings were exact; the cost of keeping the scaffolding was 13
+times the digits in every slope read, with nothing on the page reading the path home it preserved.

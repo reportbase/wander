@@ -20,7 +20,10 @@
     the strides left. Where Ω itself enters (the shares of a sweep, the heat's total) the check is in floating point.
     The flat screen square to the look: one division per point, edges straight, the heat per unit of screen
     1/(4Ω(1 + r²)^(3/2)). Text behind the menu (☰). Desktop only.
-    ?yaw=<degrees>&pitch=<degrees>&x=&z=&menu=1&sky=1&heat=0&thumbs=0
+    Re-anchoring (R931): the frame is recomputed from one current turn each pose, so its denominators stay bounded (the
+    tower's middle terms cancel); the eye is a running total of strides, so at each new heading it is put down on the
+    nearest point of the 1/16 grid (a write; only the exact path home is lost). ?anchor=0 keeps every heading in it.
+    ?yaw=<degrees>&pitch=<degrees>&x=&z=&menu=1&sky=1&heat=0&thumbs=0&anchor=0
     Hook window.__thumbsWalk: Fr (fractions), exact(), checks(), set({yaw, pitch, eye}), stride(dir, n), target(),
     state(), sky().
     -->
@@ -64,6 +67,7 @@
     <label><input type="checkbox" id="optOmega" checked> the shares in Ω</label>
     <label><input type="checkbox" id="optWalk" checked> the counted walk</label>
     <label><input type="checkbox" id="optChecks"> the checks</label>
+    <label><input type="checkbox" id="optAnchor" checked> re-anchor the eye at each new heading (take the scaffolding down)</label>
     <label><input type="checkbox" id="optAbout"> about</label>
     <div id="out"></div>
 </div>
@@ -167,10 +171,15 @@ const S = {
     eye: [Fr.make(params.get('x') ? Math.round(+params.get('x')) : 0), Fr.make(2), Fr.make(params.get('z') ? Math.round(+params.get('z')) : -30)],
     H: null, holdH: false, target: null, lastPoseKey: '',
     walk: { key: null, m: [], strides: 0 },
+    anchor: params.get('anchor') !== '0', anchors: 0, lastHeading: null,
     show: { thumbs: params.get('thumbs') !== '0', heat: params.get('heat') !== '0', sky: params.get('sky') === '1',
             read: true, euler: true, omega: true, walk: true, checks: false, about: false },
 };
-const STRIDE = Fr.make(1, 4);
+const STRIDE = Fr.make(1, 4), GRID = 16n;
+// re-anchoring: the eye put down at the nearest point of the 1/16 grid (a write; only the exact path home is lost)
+function floorDiv(a, b) { const q = a / b; return (a % b !== 0n && ((a < 0n) !== (b < 0n))) ? q - 1n : q; }
+function snap(f) { return Fr.make(floorDiv(2n * f.n * GRID + f.d, 2n * f.d), GRID); }
+function eyeDigits() { return Math.max(...S.eye.map(Fr.digits)); }
 function poseParts() {
     const lim = Math.PI / 4;
     let q = Math.round(S.yaw / (Math.PI / 2)), rem = S.yaw - q * Math.PI / 2;
@@ -237,7 +246,10 @@ function exactOf(t) {
 
 // ---------- the walk ----------
 function stride(dir, n = 1) {
-    const P = pose(), v = dir === 'w' ? P.fwd : dir === 's' ? P.fwd.map(Fr.neg) : dir === 'd' ? P.right : P.right.map(Fr.neg);
+    const P = pose(), heading = P.q + '|' + P.ky;
+    if (S.lastHeading !== null && heading !== S.lastHeading && S.anchor) { S.eye = S.eye.map(snap); S.anchors++; }
+    S.lastHeading = heading;
+    const v = dir === 'w' ? P.fwd : dir === 's' ? P.fwd.map(Fr.neg) : dir === 'd' ? P.right : P.right.map(Fr.neg);
     for (let k = 0; k < n; k++) {
         const before = S.target ? exactOf(S.target) : null;
         S.eye = [0, 1, 2].map(i => Fr.add(S.eye[i], Fr.mul(STRIDE, v[i])));
@@ -458,6 +470,7 @@ function panelHtml() {
             if (Wk.nReads) h += `<p>strides left until the thing is square to the look beside you: from two looks (its apparent breadth b/m) ${Fr.num(Wk.nReads).toFixed(3)}, counted ${Fr.num(Wk.nCount).toFixed(3)}: <span class="${Wk.agree ? 'ok' : 'bad'}">${Wk.agree ? 'equal, exactly' : 'apart'}</span></p>`;
         }
     }
+    if (S.show.walk) h += `<p>the eye: its fractions' denominators ${eyeDigits()} digits; ${S.anchor ? 're-anchored ' + S.anchors + ' times, at each new heading' : 'not re-anchored: every heading taken is still in it'}</p>`;
     if (S.show.checks) {
         h += '<h3>the checks (plans/twk-plan.md)</h3><table>' + checks().map(c =>
             `<tr><td>${c.id}</td><td class="${c.ok === null ? '' : c.ok ? 'ok' : 'bad'}">${c.ok === null ? '·' : c.ok ? 'holds' : 'fails'}</td><td>${c.text}</td></tr>`).join('') + '</table>';
@@ -467,7 +480,8 @@ function panelHtml() {
         <p>Every vertex is a whole point, made from its ground cell; no list of things is stored. The three thumbs are the columns of a product of rational turns, so they are square to each other exactly, and the look is their diagonal: the crosshair is the triple corner. A thing's three readings are its reaches along the thumbs, fractions; each pair of them gives a slope.</p>
         <p>The screen is flat and square to the look, so edges stay straight and each point costs one division. The heat per unit of that screen is 1/(4Ω(1 + r²)^(3/2)), r in focal lengths, hottest at the crosshair; half of it lies within r = √3, where the thumbs land at r = √2. Ω = π/2 here only as a name for one sweep's total.</p>
         <p>The thumb H is set on what is under the crosshair, so that thing is one thumb out and the corner is on it. Nearer things are teal (read in proportion), farther violet (read as one in 2, 4, 8), another facing grey. The wheel sets H by hand; H holds it. No pair slope moves.</p>
-        <p>W A S D take strides of 1/4 along the heading, itself a rational direction, so the eye stays a rational point and a straight walk is counted exactly.</p>`;
+        <p>W A S D take strides of 1/4 along the heading, itself a rational direction, so the eye stays a rational point and a straight walk is counted exactly.</p>
+        <p>The frame is recomputed from one current turn each time, so however you turned to get there the history cancels and its fractions stay short: the tower's middle terms come down. The eye's place is a running total of strides along every heading taken, so each new heading adds to its fractions: scaffolding never taken down. At each new heading the eye is put down on the nearest point of a 1/16 grid. That is a write: it gives up only the exact path back to where you started, which no reading here uses; every reading from where you now stand stays exact.</p>`;
     }
     return h;
 }
@@ -479,6 +493,7 @@ function updatePanel(force) {
 }
 document.getElementById('menuBtn').onclick = () => { panel.classList.toggle('open'); updatePanel(true); };
 const opts = { optThumbs: 'thumbs', optHeat: 'heat', optSky: 'sky', optRead: 'read', optEuler: 'euler', optOmega: 'omega', optWalk: 'walk', optChecks: 'checks', optAbout: 'about' };
+{ const el = document.getElementById('optAnchor'); el.checked = S.anchor; el.onchange = () => { S.anchor = el.checked; updatePanel(true); }; }
 for (const [id, k] of Object.entries(opts)) { const el = document.getElementById(id); el.checked = S.show[k];
     el.onchange = () => { S.show[k] = el.checked; updatePanel(true); }; }
 
@@ -508,10 +523,10 @@ function tick() {
 
 // ---------- hook ----------
 window.__thumbsWalk = {
-    Fr, exact: () => exactOf(S.target), checks, stride, sky, skyShares,
+    Fr, exact: () => exactOf(S.target), checks, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors,
     target: () => S.target, pose,
     set(o) { if (o.yaw !== undefined) S.yaw = o.yaw * Math.PI / 180; if (o.pitch !== undefined) S.pitch = o.pitch * Math.PI / 180;
-        if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; } frame(); return this.state(); },
+        if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.anchor !== undefined) S.anchor = !!o.anchor; if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; } frame(); return this.state(); },
     state: () => ({ yaw: S.yaw * 180 / Math.PI, pitch: S.pitch * 180 / Math.PI, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH,
         target: S.target ? { kind: S.target.kind, c: S.target.c } : null, walk: walkSummary() }),
 };
