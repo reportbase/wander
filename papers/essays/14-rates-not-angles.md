@@ -91,7 +91,7 @@ Neither is 1. Both start at 1, at zero, before any sweeping has happened, and pa
 moving, the blueprint's account of it is π/2 or 2/π, never its own 1. The two numbers, multiplied, are 1, at every point of the
 sweep and not only at its ends; but no one sweep has it. The second essay put this as the two sweeps each set against the
 blueprint's 1 through the arc, one too long and one too short. In rates it is plainer: the blueprint has the angle, a read
-has the sweep. Both sweeps are reads, each with a vantage and one hemisphere; that their numbers multiply to 1 is
+has the sweep. Both sweeps are reads, each a single hemispherical vantage; that their numbers multiply to 1 is
 arithmetic, the 1 being also the blueprint's number, and not a way of making the angle from sweeps.
 
 None of these rates changes when the world is scaled, and none of them is a rate of anything that arrives. They are the
@@ -126,8 +126,8 @@ blueprint's rate is the fixed point of the reciprocal that pairs the two sweeps:
 **Each of the two measures an act.** 2/π is what turning sees: the thumb's share h, averaged over the quarter turn from a
 standpoint that never moves, approached at the horizon and never reached. π/2 is what walking counts: the quarter arc
 itself, π/2 thumbs long, reached at a point. The arc in thumbs is an extent, here walked and counted: a count laid over the steps, each
-step a write. With the thumb in metres it is an amount in a unit. So both numbers belong to reads, each with a vantage and one hemisphere, 2/π to the inscribed sweep and π/2 to the central one, whose arc the walk counts, and the 1 between them is also the
-blueprint's number, the blueprint having no vantage and being neither read nor write (the second essay, §7). The reason is one line: each step of the arc gains v at the rate h,
+step a write. With the thumb in metres it is an amount in a unit. So both numbers belong to reads, each a single hemispherical vantage, 2/π to the inscribed sweep and π/2 to the central one, whose arc the walk counts, and the 1 between them is also the
+blueprint's number, the blueprint, the dual hemispherical vantage, having no standpoint and being neither read nor write (the second essay, §7). The reason is one line: each step of the arc gains v at the rate h,
 so the shares read, summed over the steps walked, are all of v; a mean of 2/π over a length of π/2 is 1. Any path from the
 one end to the other gives the 1 (the chord 1/√2 over √2); only the split is the turn's. And the 1 never needed π: the
 two rates are reciprocals, so with any fraction held for π/2 the product is still exactly 1 (11/7 × 7/11). A read has
@@ -544,8 +544,8 @@ zero, before any sweeping; that is the start, not a sixth thing.
 **The blueprint has angles; a read has sweeps.** An angle is a share of the whole turn, measured at rate 1, arc per radius,
 against a turn held complete. A sweep is what one length does from its standpoint; measured on the blueprint from either
 even pivot it comes at its own rate: π/2 from the middle, 2/π from a point of the circle. Never 1. The 1 is the blueprint's.
-Both sweeps are reads, each with a vantage and one hemisphere; their numbers multiply to 1 by arithmetic, and the
-blueprint, with no vantage, is apart from both.
+Both sweeps are reads, each a single hemispherical vantage; their numbers multiply to 1 by arithmetic, and the
+blueprint, the dual hemispherical vantage held from no standpoint, is apart from both.
 
 **The blueprint is transcendental; a read is not.** π, and every number with π in it, is the blueprint's: the count of a
 completed turn. A read holds one variable, H, the thumb, and one variable makes only rationals; the irrationals need

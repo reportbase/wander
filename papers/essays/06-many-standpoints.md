@@ -425,7 +425,7 @@ example, one thumb walked toward a range ten thumbs off puts it at k = 20, an er
 baseline of twenty thumbs would put it at the corner. *Of which things:* the
 same two standpoints give V for the near things and leave it unknown for the far ones. More standpoints, a longer baseline,
 narrow the band; nothing closes it. Holding V exactly, as the blueprint does, is no stage of this: the stages approach
-the value the blueprint states and do not make the blueprint, which has no vantage. That is the fifteenth essay's shape again: every stage of learning V is a finite approximant, as
+the value the blueprint states and do not make the blueprint, the dual hemispherical vantage, which no standpoint holds. That is the fifteenth essay's shape again: every stage of learning V is a finite approximant, as
 every partial sum of π is, and holding V exactly, like holding π, would need the infinite process finished. An observer
 placing V holds it to so many digits, for so many things, out to so far. V is knowable, not known: parallax places it
 without V ever being known first, and holds it exactly only at the limit. The twelfth essay's four things (the universe,

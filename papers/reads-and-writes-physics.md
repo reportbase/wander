@@ -74,7 +74,7 @@ read. A write changes only what arrives, never a direction, so the two do not co
 acts the two properties are one: a discrete thing has a boundary, so a size, so scaling moves it, and a direction has
 neither. Reading is the verb for the continuous and writing the verb for the discrete; a count and the number line are
 descriptions, not acts. π and e sit in no box of the table: pure ratios that scaling does not move and no count reaches,
-they are how both hemispheres at once, completeness and no vantage are put into numbers (*Reads and Writes* §1, §9).
+they are how both hemispheres at once, completeness and no standpoint are put into numbers (*Reads and Writes* §1, §9).
 
 This paper takes the line at its word and turns to physics. If physics is the writing, two questions follow. Which
 parts of a known physical result could have been read, from a standpoint, or placed, from several, before any amount

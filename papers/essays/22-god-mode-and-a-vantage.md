@@ -20,7 +20,7 @@ whole to exist as a count anywhere it can reach.
 The order: what the blueprint is good for (§1), a view on whole numbers (§2), the tower and the scaffolding (§3), keeping
 by size on the screen (§4), each scale its share (§5), what nearness and distance cost (§6), something to read (§7), what is classical
 and what is ours (§8), set beside a blueprint thing for thing (§9), things that move (§10), a view that holds still
-while the look moves (§11), and what it changes (§12).
+while the look moves (§11), a city of both kinds (§12), and what it changes (§13).
 
 *Demo: `thumbs-walk.html` (W A S D walk, G half way to the thing under the crosshair, B back, M the menu; desktop only).*
 
@@ -273,7 +273,34 @@ grain is counted from (§5).
 
 None of these changes what a read holds at a given focus. They change when the focus moves and how a crossing is drawn.
 
-## 12. What it changes
+## 12. A city of both kinds
+
+The last runs put the two kinds of motion in one scene, an original city in the sky (`sky-city.html`, CTY): towers made
+from their cells, elevators on their faces, and two kinds of car.
+
+- **Cars on their own loops.** Each rings one to three blocks by one to three at its own height, speed, direction and
+  phase, its place at tick T worked out from T alone. Set beside every elevator and loop car stored and stepped one tick
+  at a time over 200 ticks (about 7,800 stored, 1.56 million additions): the same things held at exactly the same places,
+  standing still, flying and from T = 10³⁰. Against a blueprint made from every cell within twice the read's reach, at 40
+  poses from the street to above the roofs: 0 missing, 0 extra.
+- **Cars in traffic.** 48 cars in a district eight blocks by eight, on one-way streets, each waiting for the car ahead
+  and turning only when the other lane is clear. They have no law in T. Stepped 600 steps at once and in ten pieces they
+  reach the same state exactly, but 35 of the 48 have left the path they would fly alone, the first by step 6, and no two
+  in one lane ever come nearer than the gap the rule keeps. Their state is held from when the page opened; the loops
+  would be the same at T = 10³⁰.
+- **The count, and a prediction killed.** The plan predicted that a level look along a street would hold at least 200
+  things. One held 156, so the prediction is killed. Level looks held 156 to 1,284 (a mean of 651), straight up 79 to 281,
+  straight down 629 to 1,209, and a skyline seen whole from above the roofs the most, up to 3,145. The count is roughly
+  steady, not fixed.
+- **Size on the screen.** A thing is held while its breadth is at least the grain times its distance. A car 6 across was
+  held only near the eye; made 12 across it was held twice as far, 30 cars at one pose where there had been 10. A zoom by
+  Z magnifies the screen and holds things Z times smaller, the grain 1/32 ÷ Z; it moves no H, which is set only by the
+  thing under the crosshairs. At ×1 and ×4: 0 missing, 0 extra against a blueprint made.
+
+So the city says in one scene what §10 found in pieces: what has a law in T is placed from T alone, and what reacts has
+its state stepped and held.
+
+## 13. What it changes
 
 The blueprint is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on
 it, and wants totals, joins and a map of everything at once.
