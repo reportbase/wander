@@ -377,6 +377,13 @@ a program has to supply what the world supplies by being there, and the single v
 person, an animal or an instrument, has from where it stands. The pages are useful because they show where a program
 stands in for the world and where it only reads it.
 
+**A world made as needed has no whole to compare with.** Where the world is made as needed and without end, there is no
+whole to hold, so the dual hemispherical vantage cannot be formed, and nothing compares with the read. The rule answers
+for any place from no standpoint, but only one place at a time: a lookup, not a view. Showing the whole at once would mean
+making all of it, and there is no all of it to make; as any one digit of π can be asked for, and π is never handed over
+whole. In such a world the read is the only thing that looks, set beside nothing but other reads and the writes that keep
+what has been changed.
+
 ## 14. What it changes
 
 The blueprint is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on
