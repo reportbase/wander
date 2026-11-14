@@ -482,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R983 (14 Nov; Tom: "update the papers,essays and merge"): RWX in *Reads and Writes* §7 ("The same share elsewhere: a crossover and a best point"), the physics paper §7.2, essays 4 §13 and 1 §5. No new claim.
   R982 (14 Nov; Tom: "read/write might be a nice reframe for other physical situations.", then "yes, write the plan and run the test."): RWX (`plans/rwx-plan.md`, `runs/rwx/`), nothing killed: one share 1/(1 + s²) on two charts, the ratio (RC, the disc: s ↔ 1/s a complement, a crossover) and the sinh of the level (collision, matched load, Fresnel 4k/(1 + k)² = sech²(½ ln k), series RLC: k ↔ 1/k unchanged, a stationary best point); pendulum and Kepler the bounce's move (a counted period writes a size with g or GM carried in). Sorting not blind. Not in any paper.
   R981 (14 Nov; Tom: "update the essays as well"): ISX in essays 2 §9, 4 §13 and 20 §8. No new claim.
   R980 (14 Nov; Tom: "yes.   also add it to the read/write paper."): ISX in `inverse-square.md` "From one vantage", the physics paper §7.2 and *Reads and Writes* §7 ("Near and far, one share and its exchange"). No new claim.

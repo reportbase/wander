@@ -1177,6 +1177,19 @@ The pairing is the round source's (sin²α + cos²α = 1 for its rim's cone); a 
 corner. **Checked** (ISX, `plans/isx-plan.md`, exact at 50 digits, nothing killed); the formulas classical, the sorting a
 reading.
 
+**The same share elsewhere: a crossover and a best point.** The share 1/(1 + s²) turns up in other classical situations
+on two charts. Where the pair is read as a ratio itself, s ↔ 1/s turns the share into its complement and the corner is a
+crossover: an RC divider's low-pass and high-pass shares, 1/(1 + s²) and s²/(1 + s²) with s = ωRC, half each at s = 1,
+the phase's tangent s. Where the pair is read through its level, s = sinh(½ ln k), the exchange k ↔ 1/k is s ↔ −s and
+leaves the share unchanged, so the corner is a stationary best point: an elastic collision passing energy, a load drawing
+power from its source and light crossing between two indices at normal incidence all give exactly
+4k/(1 + k)² = sech²(½ ln k) (equal masses, the matched load, the same index), and a driven series RLC gives
+P/P_max = 1/(1 + s²) with s = 2Q·sinh(ln(ω/ω₀)), unchanged by ω ↔ ω₀²/ω. In each the share is a read, unmoved when the
+pair is scaled together. A pendulum and a Kepler orbit make the bounce's move instead: T·√(g/ℓ) depends on the amplitude
+alone and T·√(GM/a³) = 2π, so a counted period writes the length or the axis once g or GM is carried in.
+**Checked** (RWX, `plans/rwx-plan.md`, each case computed from its own physics, nothing killed); the formulas classical,
+the sorting a reading, and not blind (a case chosen by someone else could need a fourth kind).
+
 **A single vantage and the blueprint, side by side.** A read is a single hemispherical vantage; the blueprint is the dual,
 drawn from no standpoint. Where the blueprint is what is wanted, the list above says so: what acts out of view with no law
 in time, whose state has to be stepped whether anyone looks; more than one standpoint, which must agree on something that

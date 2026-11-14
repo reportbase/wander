@@ -450,6 +450,12 @@ complements, E(s) + E(1/s) = πL, half each at d = a, the disc's corner. Scaled 
 with its size held fixed does 1/d² appear. The pairing is the round source's: a square plate's near and far shares
 overlap at the corner, summing to 1.108 πL (ISX, exact; `../inverse-square.md`, "From one vantage").
 
+The disc's corner is a crossover, near against far. The same share has a second kind of corner elsewhere, as MOT had
+found in motion: read through the level of a ratio, s = sinh(½ ln k), swapping the pair leaves the share unchanged and
+the corner is a best point. An elastic collision passes all its energy at equal masses, a load draws most power when
+matched, light crosses two indices whole when they are equal: each 4k/(1 + k)² = sech²(½ ln k). An RC filter's
+crossover at ωRC = 1 is the first kind, a driven RLC's resonance the second (RWX, exact; `../../plans/rwx-plan.md`).
+
 ---
 
 ## 14. What it comes to
