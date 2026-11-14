@@ -1,8 +1,9 @@
 # God mode and a vantage: what a walk on whole numbers showed
 
-*The twenty-second of a series of essays on what can be known from where one stands. Draft, 13 November 2026. It gathers
-what one page, `thumbs-walk.html`, showed over seven runs in one day (TWK, `plans/twk-plan.md`; SPN R930–R937), about the
-difference between classical geometry's view from nowhere and a read from somewhere.*
+*The twenty-second of a series of essays on what can be known from where one stands. Draft, 13 November 2026, brought up
+to date 14 November. It gathers what one page, `thumbs-walk.html`, showed over seventeen runs in two days (TWK,
+`plans/twk-plan.md`; SPN R930–R953), about the difference between classical geometry's view from nowhere and a read from
+somewhere.*
 
 Open a map on a phone and pinch. The streets come, then the buildings, then the house numbers; pinch the other way and
 the city goes, then the country, then the coast of a continent. Nobody believes the phone holds the planet. It holds what
@@ -11,14 +12,15 @@ a player walk from one horizon to the next does the same: it streams the ground 
 a seed when it is needed.
 
 That is engineering, and good engineering. This essay is about the geometry under it. One page was built to see how far a
-first-person view can go on whole numbers alone, with no trigonometry and no list of things stored, and over seven runs it
+first-person view can go on whole numbers alone, with no trigonometry and no list of things stored, and over seventeen runs it
 kept showing the same thing from different sides: classical geometry is a view with no standpoint, very powerful, and
 everything it gives it gives by holding the whole; a read has a standpoint, holds a fixed amount, and does not need the
 whole to exist as a count anywhere it can reach.
 
 The order: what the blueprint is good for (§1), a view on whole numbers (§2), the tower and the scaffolding (§3), keeping
 by size on the screen (§4), each scale its share (§5), what nearness and distance cost (§6), something to read (§7), what is classical
-and what is ours (§8), and what it changes (§9).
+and what is ours (§8), set beside a blueprint thing for thing (§9), things that move (§10), a view that holds still
+while the look moves (§11), and what it changes (§12).
 
 *Demo: `thumbs-walk.html` (W A S D walk, G half way to the thing under the crosshair, B back, M the menu; desktop only).*
 
@@ -216,7 +218,57 @@ and nothing on the page says which is better (R939).
 
 Those are the results. What they are worth beside the classical tools is for others to say.
 
-## 10. What it changes
+## 10. Things that move
+
+Everything so far stood still. The next runs put things in the sky that move, to see whether a read from somewhere still
+needs no list once places change with time.
+
+- **One velocity a scale.** Boxes at every scale, each scale moving at one rational velocity, a mover's place at tick T
+  its start plus the velocity times T, exactly. The read looks at the cells about the eye less the velocity times T and
+  steps nothing. Set beside every mover stored and stepped one tick at a time: 0 missing, 0 extra, places equal exactly,
+  standing still, walking and from T = 10³⁰. The read looked at 29,085 cells every tick and held about 165 movers; the
+  stepped list held 3,477 movers and made 695,400 additions over 200 ticks (run 15).
+- **Each thing its own loop.** Then each mover was given its own path, a rectangle about its home cell with its own sides,
+  heading, direction round, speed and phase, its place at tick T worked out from T alone. The read looks at the cells
+  within its reach plus three. Against every mover stored and stepped: 0 missing, 0 extra, places exactly equal, still,
+  walking and from T = 10³⁰; 35,833 cells every tick, 166 to 175 movers held, 95 to 106 distinct velocities among them;
+  the stepped list 4,184 movers and 836,800 steps over 200 ticks (run 16). Straight flights that never end were not done:
+  the cells to look at would grow with T.
+- **Things that touch.** A read of places from T alone needs a law in T. To see where that runs out, 16 balls on a ring
+  were let collide elastically, worked exactly contact by contact, and set beside the free law, each ball's start plus its
+  velocity times T. With equal masses the set of places is the free set, and ball k sits at the free place of rank
+  W(T) + k, counted round the ring, W the free paths' total windings: exact at all 40 compared times in three seeds,
+  nothing kept (the set is Jepsen's, 1965; the rank was derived before the run). With masses 1 and 2 the law breaks at the
+  first unequal contact; 2 balls are off every free path at first, all 16 by T = 400 (run 17).
+
+So interaction alone is not where a read from T stops. A law in T is: where there is one, the read needs no list; where
+there is none, the state to keep spreads to everything that has touched, and each thing has to carry its own. On the page
+that state would be a stored list; in the world there is no list, only the things, each carrying its own state, which the
+read meets as paint (R950, R951). Classical geometry agrees with the read wherever both apply, since they share the
+geometry; the runs matched it to the digit. The blueprint is the idealization that holds the whole at once, from no
+standpoint; a read always has one.
+
+## 11. A view that holds still while the look moves
+
+Two faults in how the view was drawn were found by using it, and both came from the focus, the scale every other scale's
+grain is counted from (§5).
+
+- **Steps.** When the thing under the crosshair changed, the focus jumped to its scale at once, and every scale's grain
+  jumped with it. The focus now glides over about a quarter of a second, and what is held is kept while the eye stays in
+  its cells. What is held did not change: 2,195, 4,264 and 8,654 things at densities 1, 2 and 4, 0 missing and 0 extra
+  against a blueprint made (R946).
+- **Flicker.** A slight pan that brushed a thing of another scale still moved the focus, and hundreds of things at the
+  keep line went and then came back. Panning one step at a time, the held set changed on 44 of 120 steps, 400 to 1,500
+  things each time. Now a new focus is taken only after it has stood under the crosshair for 0.4 s, or at once for the
+  thing being walked toward; the same pan changed nothing for its first 58 steps (R952).
+- **Dissolve.** When the focus does move, each held thing is drawn with a strength set by how far it is past the keep
+  line, nothing at the line and full at 1.3 times it. As the focus glides the line moves smoothly, so a thing crossing it
+  fades. Resting on a thing of a new scale, 966 things switched at once without the fade and 4 changed by half or more in
+  a frame with it; still 0 missing and 0 extra (R953).
+
+None of these changes what a read holds at a given focus. They change when the focus moves and how a crossing is drawn.
+
+## 12. What it changes
 
 The blueprint is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on
 it, and wants totals, joins and a map of everything at once.
@@ -234,7 +286,7 @@ states ratios; the place an observer stands is the one thing that has to be writ
 
 ## Sources
 
-- `../../plans/twk-plan.md`: the plan and runs 1–14 (predictions, tables, kills).
+- `../../plans/twk-plan.md`: the plan and runs 1–17 (predictions, tables, kills).
 - `../../plans/pwl-plan.md`: where float pipelines break, with and without the classical fixes (PWL runs 1–3).
 - *Reads and Writes* (`../readers-and-writers.md`): §6 "K and N" and "Something to read, and K of it" (R935); §7, the
   read's heat per ratio.
