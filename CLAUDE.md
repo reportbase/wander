@@ -472,6 +472,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R966 (14 Nov; Tom: "make the cars bigger"): `sky-city.html` cars 12 × 6 × 3 (were 6 × 3 × 2), held twice as far; traffic gap 16; C7, C8 and C1 hold.
   R965 (14 Nov; Tom: "dont use zoom to change H.   there are still many parts of the ity without cars."): `sky-city.html` wheel, pinch, + and − zoom (Z, grain 1/32 ÷ Z, `?zoom=`), never H; a loop car on every block; small cars held only near at ×1. Hook `set({zoom})`.
   R964 (14 Nov; Tom: "could you make the crosshairs follow the cursor?"): `sky-city.html` crosshairs at the mouse (middle without one); pick, H and the heat's centre on the ray through it; the thumbs stay the look's frame; hook `set({cur})`.
   R963 (14 Nov; Tom: "can we use two fingers to move?", then "1"): `sky-city.html` two fingers dragged together fly (up forward, across sideways), spread or closed set the thumb; the first 12 px decide.
