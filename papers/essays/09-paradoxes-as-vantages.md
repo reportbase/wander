@@ -285,7 +285,8 @@ vantage reading restates it and adds nothing to it.
 equally bright at any distance. The total light caught is a sum over the source, an amount. Brightness per direction is what
 a read holds. Per direction nothing changes with distance; distance changes only how many directions the source fills,
 until it fills less than the finest a read tells apart, and then that one dims. This is the radiance theorem,
-conservation of brightness along a ray, said as directions and paint.
+conservation of brightness along a ray, said as directions and paint. The law's 4π belongs to the source's whole
+sphere, held from no standpoint; the receiver's front hemisphere gives the same fall-off as a share set by the slope, (Δ/d)², with no π.
 
 ---
 

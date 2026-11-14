@@ -440,6 +440,10 @@ equals the radius, symmetrically about it, σ(s) + σ(1/s) = −2, but only when
 counted as an angle, the switch moves off the corner. On real stars one kind falls in light as d^(−2.02), while counts
 by light, needing no distance, grow as S^(−1.23) (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §6).
 
+The textbook form E = P/(4πd²) is stated at the source, over its whole sphere, from no standpoint; its 4π is the
+blueprint's. From the receiver's own front hemisphere the law needs no π: the paint along each direction unchanged, the
+source's share set by the slope, (Δ/d)² (`../inverse-square.md`, "From one vantage").
+
 ---
 
 ## 14. What it comes to
