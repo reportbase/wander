@@ -234,6 +234,11 @@ clock, in ticks.
   holds still is a collision, as navigators know.
 - **One stream is one relation.** A thing coming nearer and one growing at the matching rate give the same stream of
   readings. A neighbour at the same depth, read in the same moment, separates them.
+- **A bounce writes its size.** A ball bouncing to height A every P ticks under one pull has g = 8A/P². Scale the world
+  and the observer by k: its directions at the top and at the foot of the bounce are the same fractions, and so is its
+  height in its own breadths. Under the same pull the scaled ball takes √k times the ticks. The pull is an amount in a unit,
+  so a bounce's ticks, counted, write its size, A = gP²/8: Galileo's square–cube law, where the unit enters motion
+  (`sky-city.html`, the slopes unchanged and the ticks doubled at k = 4).
 
 The corners of motion come in two kinds. A quantity unchanged when its pair swaps, f(k) = f(1/k), is stationary at the
 corner: a launch's range at a fixed speed, (2U²/g)·k/(1 + k²), longest at 45° with complementary launches equal; the
