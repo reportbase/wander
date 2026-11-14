@@ -759,3 +759,14 @@ digits held shown in the menu. Hook `rings()` (each ring's places, the unequal r
   17's seed 1.
 - Q3: with the rings on, the held things are unchanged: 0 missing and 0 extra against a blueprint made about the eye; no
   page errors.
+
+**Run 18** (headless Chromium through the hook, `?time=0`, 1280 × 720; no page errors). Nothing killed.
+- Q1: at 40 times to T = 400 the equal ring's read from T alone equals the same ring stepped at every place (0
+  mismatched, 164 contacts stepped).
+- Q2: the unequal ring's off count 0 at T = 4, 4.83 and 5, 2 at T = 5.17 (the first unequal contact at T = 5.005), 6 at
+  T = 40, 12 at 80, 16 at 200 and 400; 173 contacts by T = 400, its places held to 21 digits: run 17's seed 1 exactly.
+- Q3: with the rings on, 2,195 things held at the start, 0 missing and 0 extra against a blueprint made about the eye.
+
+On the page: the left square is the equal ring, white, drawn from T alone; the right is masses 1 (small) and 2 (large),
+teal while on a free path and red once off every one; the menu's "things that touch" gives T, the contacts, the digits
+held and the count off.
