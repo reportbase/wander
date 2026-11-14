@@ -43,3 +43,24 @@ Is that so for the laws the papers use?
 ## Runs
 
 (appended below as they come out; nothing above this line edited afterwards)
+
+### Run 1 (14 Nov 2026; list `runs/lws/laws.md` by a fresh agent, 125 entries; sorting `runs/lws/sorting.md`; checks `runs/lws/lws.py`, output `runs/lws/lws-run1.txt`)
+
+- **L1 killed.** P 23 (two P*), S 10 (two S*), N 92: 33 of 125, 26%, against the 75% predicted.
+- L2 not killed, weakly: every composition of turns or slopes listed (8, 91, 98, 101, 105, 119) is P, but 8, 91, 105
+  and 119 only when read as turns between landing points, w(y)/w(x), whose chain cancels; written as a formula alone
+  they show no cancellation. That reading is mine.
+- L3 not killed: every complement (10, 19, 28, 52, 78, 79, 80, 103, 109, 123) is S.
+- L4 not killed: N is most of the list.
+- L5 not killed: 86 exact checks on the 33 P and S laws, none failed.
+
+Said plainly: the two shapes describe a small part of what the paper states, not "every geometric law". The agent
+listed broadly (densities, charts and formulas as well as identities), which inflates N, but even the identities
+split three ways. Post hoc, the 92 N fall into: densities and measures (19, a heat per something, not a relation),
+changes of chart or maps (20: tan, gd, sech, the Cayley map, Mercator, aberration; one quantity written in another's
+terms), formulas giving one quantity from reads (13: parallax, contact, the walk, a write), a loop's remainder (4: the
+holonomy laws, where a chain does not close), limits and series (8), and other (28: invariances, transforms,
+factorizations, laws among amounts). Untested reading: the chain and the shared sum are the two shapes a law takes
+when it relates reads to each other (composing them, or filling one length with them); a change of chart is a third,
+common shape (the same read in another name), where no denominator cancels or is shared because there is only one
+read; and the holonomy laws are what a chain leaves when it does not close.
