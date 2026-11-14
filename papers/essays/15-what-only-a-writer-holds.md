@@ -272,6 +272,9 @@ lose it: a projection written as a cosine, Ω·1/Ω = 1 as x·(1/x) = 1, a chart
 and the loops that come back turned, whose leftover has a rational half-slope when the loop is built from rational ones.
 None of the limits loses it. What keeps π or e is what this essay says holds it: a limit taken, a chart or a total stated
 for itself, and a whole turn counted as a period (essay 23 §8; PIE, NTN, HLX).
+On a textbook's list the share is lower, 18 of 107 (NTX): most standard formulas carry an amount, a time, an energy over
+kT, a period in seconds, and such π stays. Among laws that relate directions and take no limit, about three in five
+lose it on either list (DVA, looked at after the run).
 
 ## 7. A machine stops short of the blueprint
 

@@ -307,6 +307,12 @@ products, the totals that normalize a density, the Trotter term), where a chart 
 (the slope joined to the angle, the turn's measure dθ, pseudorapidity, the dial), in (θ/sin θ)(sin θ/θ) = 1, whose two
 measures need the arc, and in Kepler's whole turn a period. Everywhere else it is a name for a share or a slope. **A
 reading** of tests that could fail; the restatements are classical arithmetic, the sorting ours.
+The rate is this paper's, not every list's. On 107 standard formulas listed by another fresh agent, the same rule finds
+18 notation (NTX, `plans/ntx-plan.md`), and a blind tag of all 189 laws as relating directions or carrying an amount with a
+unit shows why (DVA, `plans/dva-plan.md`): relating directions is close to necessary for notation (41 of the 48) but not
+sufficient, its predicted rate killed on both lists; looked at afterwards, a law that relates directions and takes no
+limit is notation about three times in five on either list, every limit is content on both, and this paper holds many
+more laws of the first kind (43 of 82 against 24 of 107). That last sorting is post hoc and untested.
 
 | | memory | unit |
 |---|---|---|

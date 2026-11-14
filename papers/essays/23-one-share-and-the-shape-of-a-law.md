@@ -187,6 +187,13 @@ is content where a limit is taken, where a chart or a total is itself what is st
 Kepler's whole turn; elsewhere it names a share or a slope. Holonomy, the chain that does not close, closes its own
 accounts in fractions: what it leaves is a turn, and the turn's half-slope is rational.
 
+Those counts are this paper's laws, written in this framing, so the same rule was run on 107 standard formulas listed by
+a fresh agent: 18 are notation (NTX), killing three of five predictions. A blind tag of both lists, relating directions or
+carrying an amount with a unit, showed why (DVA): relating directions is nearly necessary (41 of the 48 notation laws)
+but not sufficient, the predicted rate killed on both lists. Looking afterwards, every limit is content on both lists,
+and laws that relate directions without a limit are notation about three times in five on both (27 of 43, 14 of 24);
+the paper's higher rate is that it holds more such laws. That last reading is untested.
+
 ## 9. What is classical and what is ours
 
 Classical: the disc's irradiance (Lambert, radiometry), view-factor reciprocity, the RC divider, the collision's energy

@@ -736,6 +736,8 @@ The three grades sort the paper's laws as well. Of the 125 laws *Reads and Write
 in the first two grades once restated in the slope (fractions and square roots, checked exactly), so their π is a name;
 the rest are in the third, a limit, or state a chart or a total for itself (the NTN run; *Reads and Writes* §1 "Where π and
 e are content").
+On a textbook's list the first two grades hold fewer: 18 of 107 standard formulas (NTX), since most carry an amount; laws
+that relate directions without a limit reach them about three times in five on either list (DVA, post hoc).
 
 ---
 

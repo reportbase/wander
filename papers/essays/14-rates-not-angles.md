@@ -277,6 +277,8 @@ fractions and square roots only and checked exactly, 30 of them lose it: project
 relation survives without the angle, and the loops that come back turned. None of the limits loses it. Where π or e stays,
 a limit is taken, a chart or a total is itself what is stated, or a whole turn is counted as a period (the PIE, NTN and HLX
 runs; *Reads and Writes* §1 "Where π and e are content"; the twenty-third essay, section 8).
+On 107 standard formulas the count is 18 (NTX): a textbook's laws mostly carry amounts. Laws that relate directions
+and take no limit lose π or e about three times in five on either list (DVA, looked at afterwards).
 
 ## 7. It has been done
 

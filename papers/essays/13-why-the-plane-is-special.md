@@ -189,6 +189,8 @@ leftover's cos(Θ/2) = 17/25; two boosts of half-rapidity 1/5 and 2/3 at cos φ 
 classical statement is a name for that half-slope (the HLX run, exact; the rational forms of rotations and boosts are
 classical). What the plane lacks and space has is the leftover, not a transcendental number: a loop that does not close
 closes its own accounts in fractions.
+ This holds on a textbook's list too: there the rapidity, the Doppler factor and
+aberration, laws among directions, are notation (NTX).
 
 The loop that leaves this turn is a loop of two turns. A loop of a turn and the thumb scaled, the first test's own
 motion, comes home with nothing left in space as in the plane, because scaling by one factor commutes with every turn; a
