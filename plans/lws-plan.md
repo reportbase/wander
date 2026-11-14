@@ -99,3 +99,46 @@ addition for boosts).
 
 If C1 and C3 hold, the third shape reads as a chart that turns a chain of products into a chain of sums (gaps that add,
 law 75), and "neither" shrinks by the group charts; if they fail, the third shape stands as its own kind.
+
+### Run 2 (14 Nov 2026; `runs/lws/blind-sort.md` by a fresh agent, compared in `runs/lws/lws2-run2.txt`)
+
+- B1 not killed: the two sorts agree on 109 of 125 (87.2%).
+- B2 not killed, at its edge: κ = 0.639.
+- **B3 killed**: the blind sort has P + S = 19 (P 11, S 8), under the 23 allowed.
+- Every disagreement but one goes the same way: 15 laws I sorted P or S the blind sort calls N (4, 8, 19, 28, 38, 42,
+  52, 72, 91, 98, 101, 105, 114, 119, 124), one it calls S that I called N (94), no P–S swaps. The 15 are mostly
+  composition rules (tangent addition, velocity addition, tangent subtraction, a semigroup, a turn added to itself), which
+  the blind sort reads as rules, not chains, and the corner's single product i·i = −1 and s·(1/s) taken as one factor.
+  So the categories are stable where a middle term visibly cancels, and my sort counted composition rules as chains
+  that the test as written does not. The share of chains and shared sums is 15% blind, 26% mine: smaller either way.
+
+### Run 3 (14 Nov 2026; `runs/lws/lws3.py`, output `runs/lws/lws3-run3.txt`)
+
+- C1 not killed: 16 of the 20 are bijections of one reading by the check.
+- C2 not killed: in every bijection the moved composition telescopes over five links (an identity; the code checks).
+- **C3 killed by my code**: 9 group charts, under 10. The bijection check for the square map (18, 111) used a wrong
+  function (a piecewise expression that is not the map's angle), so both were counted not bijections and dropped from
+  C3 although both carry multiplication to multiplication. Also: 45 (aberration), which I expected among the group
+  charts, composes its β by velocity addition, not plain multiplication; as stated it is not one (in k = e^η it would be).
+- C4 not killed: the additive charts are 1 (the logarithm), 13 (the angle) and 49 (pseudorapidity), all transcendental;
+  no rational chart is additive.
+
+### Run 3b: prediction (committed before the run)
+
+- **C3′** With the square map's bijection checked by its angle, arg(u²) increasing on (0, π/2), at least 10 group charts
+  among the bijections, by the same rule. Kill: fewer than 10.
+
+### Run 3b (14 Nov 2026; `python3 runs/lws/lws3.py 3b`, output `runs/lws/lws3-run3b.txt`)
+
+- C3′ not killed: 18 bijections, 11 group charts: additive 1, 13, 49; multiplicative 15, 17, 18, 20, 30, 44, 94, 111.
+- C1, C2, C4 as in run 3 (C1 now 18 of 20; the two that are not, 14 a family of curves and 21 a stretch factor).
+
+Said plainly: C2 is an identity and could not fail. What runs 3 and 3b found is a sorting of the chart laws: 11 of the 20
+carry the reads' composition to plain addition or multiplication, so they fold into chains (a chain of products, or of
+sums, whose middle cancels), and "neither" would shrink by 11 (92 to 81 in my sort). The other seven bijections (11 and
+97 the halving, which carry tangent addition to itself; 16 the lay, 53 Lambert's radius and 56 the dial, which carry it
+to nothing plain; 45 aberration, velocity addition in β; 59 a read from a height, tangent addition with iγ) and the two
+non-bijections stay a third kind. Post hoc, and a reading: the three additive charts are the logarithm and the angle,
+each transcendental, and every rational group chart multiplies; so turning a chain of products into a chain of sums is
+what the logarithm and the angle are for, and they bring e or π with them, where the rational charts (the Cayley map,
+the rational rotation, the mirror, the boosts) keep the product and need neither.
