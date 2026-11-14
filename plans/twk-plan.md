@@ -742,3 +742,20 @@ What it shows: interaction alone is not where a read from T alone stops. Equal-m
 masses break the law at the first unequal contact, and the state to keep spreads to every ball that touches one already
 off its law. Classical (hard-rod gases, integrable against non-integrable); the sorting is ours. One dimension, points,
 16 balls; nothing on the page yet.
+
+## Run 18: run 17 on the page (predictions, 14 November 2026, written and committed before any change; Tom: "1, then 3",
+to putting run 17's ring on the page and then taking it to two dimensions)
+
+`thumbs-walk.html` gets two rings of 16 balls each in the sky ahead of the start (`?rings=0` hides them), run 17's seed 1
+worlds: one of equal masses, one of masses 1 and 2, each ring of length L = 1000 laid on the outline of a square standing
+square to the start's look. Ring time T is the page's tick over 6 (exact). The equal ring is drawn from T alone (the free
+places mod L, ball k at rank W(T) + k), keeping nothing; the unequal ring is stepped event by event in exact fractions
+from its last T, its state kept, balls off every free trajectory drawn in another colour, and a count of them and of the
+digits held shown in the menu. Hook `rings()` (each ring's places, the unequal ring's off count, events and digits) and
+`ringCheck(Tend, n)` (the equal ring's read from T alone against the same ring stepped, at n times to Tend).
+
+- Q1: at 40 times to T = 400 the equal ring's read from T alone equals the stepped equal ring exactly (every place).
+- Q2: the unequal ring's off count is 0 before its first unequal contact (T = 5.0), 2 at it, and 16 at T = 400, as run
+  17's seed 1.
+- Q3: with the rings on, the held things are unchanged: 0 missing and 0 extra against a blueprint made about the eye; no
+  page errors.
