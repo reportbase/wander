@@ -43,3 +43,20 @@ All in exact arithmetic (fractions) or mpmath at 50 digits; "to 10⁻⁴⁰" mea
 ## Runs
 
 (appended below as they come out; nothing above this line edited afterwards)
+
+### Run 1 (14 Nov 2026; `runs/isx/isx.py`, output `runs/isx/isx-run1.txt`): nothing killed
+
+- X1 not killed: the direct quadrature of the disc's light equals πL·a²/(a² + d²) at all five s (worst 5·10⁻⁵¹).
+- X2, X3 not killed: E(s) + E(1/s) = πL exactly on 30 rationals; ½ at the corner; σ(s) + σ(1/s) = −2.
+- X4 not killed: at s = 10³ the far chart is off by 1/(1 + s²) = 1.0·10⁻⁶ exactly; the near chart by s²/(1 + s²).
+- X5 not killed: (ka, kd) moves nothing; with a held and d → kd the factor is (1 + s²)/(1 + k²s²), 1/k² only far off.
+- X6 not killed: A₁F₁₂ = A₂F₂₁ to 5·10⁻⁵⁰ at five geometries; the far product 0.999999375 at d = 2000·r₂. Post hoc, F₁₂
+  for (1, 1, 1) by direct triple quadrature 0.38196601125, the closed form's value (it is (3 − √5)/2).
+- X7 not killed: the square plate's E(s) + E(1/s) runs 1.0045 πL at s = 10 to 1.1083 πL at the corner, spread 0.33 πL.
+- X8 not killed: the sphere's light (a/d)² πL at every d ≥ a (worst 10⁻⁵¹).
+
+Said plainly: once X1 holds, X2, X3 and X5 are identities of the closed form and could not fail as arithmetic; the tests
+that could fail were X1, X6 (quadrature), X7 and X8. Post hoc, the reason for X7: the disc's share is sin²α, α the half-
+angle of its rim seen from the axis (tan α = a/d = 1/s), and s ↔ 1/s takes α to 90° − α, so the two shares are
+sin²α + cos²α = 1: a round cap and its complement. A square's rim is not one cone, so its near and far shares overlap
+at the corner (their sum 1.108) and are complements nowhere. The exchange of near and far is the round source's.

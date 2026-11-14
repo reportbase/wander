@@ -1,0 +1,11 @@
+X1 ok  quadrature vs pi L a^2/(a^2+d^2), worst 5.35e-51
+X2 ok  E(s)+E(1/s)=piL exactly on 30 rationals; share = h^2 of slope s
+X3 ok  share 1/2 at s=1, sigma(1)=-1, sigma(s)+sigma(1/s)=-2, d lnE/d ln s checked at s=3
+X4 ok  far: 1 - s^2 E/piL = 1.0e-6 = 1/(1+s^2); near: 1 - E/piL = s^2/(1+s^2)
+X5 ok  (ka,kd) leaves E exactly; a fixed, d->kd gives (1+s^2)/(1+k^2 s^2), 1/k^2 only far off
+X6 ok  reciprocity worst 5.08e-50; far product 0.999999375
+  post hoc: F12(1,1,1) quadrature 0.38196601125 closed form 0.38196601125
+  square closed form check at u=2: -5.35e-51
+X7 ok  square E(s)+E(1/s) over s in [1/10,10]: ['1.0044506', '1.0401993', '1.1082528', '1.0401993', '1.0044506'] (x pi L), spread 0.3261
+X8 ok  sphere E/piL = (a/d)^2 for d>=a, worst 1.34e-51
+killed: none
