@@ -793,3 +793,26 @@ equal masses and masses 1 and 2, worked event by event to T = 400 (`runs/twk/run
 
 What it would mean: if D1 and D2 hold, one dimension was special: in two, equal masses lose the law in T and the state to
 keep spreads to every thing touched, as unequal masses did in one; only the velocity components as sets survive (D3).
+
+**Run 19** (`runs/twk/run19.mjs`, output `runs/twk/run19-out.json`; exact fractions, event by event, seeds 1–3). D1 killed
+by my code: the sets of places were compared as strings of the fraction objects, every one "[object Object]", so every
+set compared equal. D2, D3, D4 as in run 19b below (that code was unchanged).
+
+**Run 19b** (`runs/twk/run19b.mjs`, output `runs/twk/run19b-out.json`; run 19 with the comparison written as n/d strings,
+nothing else changed). Nothing killed.
+- D1: with equal masses the first contact between squares whose other components differ comes at T = 3.07, 1.29, 2.34
+  (seeds 1–3); the count off every free path there is 2, and at every later compared time the set of places differs
+  from the free set.
+- D2: all 16 off every free path by T = 40, the first compared time after, and at every later one, in all three seeds;
+  576, 614 and 549 contacts by T = 400.
+- D3: with equal masses the multisets of x and of y components of velocity are unchanged exactly at all 40 compared
+  times in every seed; with masses 1 and 2 they differ at every compared time after the first unequal contact.
+- D4: momentum (both components) and energy exact after every contact; no overlap; no corner contact and no square in
+  two contacts at once.
+
+Post hoc, not predicted: with equal masses every number held stays as short as the start's (4 digits at T = 400), since
+a contact only passes components between squares; with masses 1 and 2 the places reach 25 to 32 digits by T = 400.
+
+What it shows: one dimension was special. In two, equal masses lose the law in T at the first contact that mixes two
+squares' components, and the state to keep spreads to every square within T = 40; only the velocity components as sets
+remain. Hard squares, not discs (a disc's contact time needs a square root); 16 things on a torus.

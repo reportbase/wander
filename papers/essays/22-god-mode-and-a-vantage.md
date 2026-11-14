@@ -1,8 +1,8 @@
 # God mode and a vantage: what a walk on whole numbers showed
 
 *The twenty-second of a series of essays on what can be known from where one stands. Draft, 13 November 2026, brought up
-to date 14 November. It gathers what one page, `thumbs-walk.html`, showed over seventeen runs in two days (TWK,
-`plans/twk-plan.md`; SPN R930–R953), about the difference between classical geometry's view from nowhere and a read from
+to date 14 November. It gathers what one page, `thumbs-walk.html`, showed over nineteen runs in two days (TWK,
+`plans/twk-plan.md`; SPN R930–R955), about the difference between classical geometry's view from nowhere and a read from
 somewhere.*
 
 Open a map on a phone and pinch. The streets come, then the buildings, then the house numbers; pinch the other way and
@@ -12,7 +12,7 @@ a player walk from one horizon to the next does the same: it streams the ground 
 a seed when it is needed.
 
 That is engineering, and good engineering. This essay is about the geometry under it. One page was built to see how far a
-first-person view can go on whole numbers alone, with no trigonometry and no list of things stored, and over seventeen runs it
+first-person view can go on whole numbers alone, with no trigonometry and no list of things stored, and over nineteen runs it
 kept showing the same thing from different sides: classical geometry is a view with no standpoint, very powerful, and
 everything it gives it gives by holding the whole; a read has a standpoint, holds a fixed amount, and does not need the
 whole to exist as a count anywhere it can reach.
@@ -240,6 +240,11 @@ needs no list once places change with time.
   W(T) + k, counted round the ring, W the free paths' total windings: exact at all 40 compared times in three seeds,
   nothing kept (the set is Jepsen's, 1965; the rank was derived before the run). With masses 1 and 2 the law breaks at the
   first unequal contact; 2 balls are off every free path at first, all 16 by T = 400 (run 17).
+- **On the page, and in two dimensions.** The two rings now turn in the sky of the page, the equal one drawn from T
+  alone and the other stepped, each ball red once it is off every free path; the read from T alone equals the stepped
+  ring at 40 times (run 18). Then 16 hard squares on a torus, worked exactly the same way: with equal masses the law
+  goes at the first contact that mixes two squares' other components, and all 16 are off every free path by T = 40;
+  only the sets of velocity components are kept (runs 19, 19b). One dimension was special.
 
 So interaction alone is not where a read from T stops. A law in T is: where there is one, the read needs no list; where
 there is none, the state to keep spreads to everything that has touched, and each thing has to carry its own. On the page
@@ -286,7 +291,7 @@ states ratios; the place an observer stands is the one thing that has to be writ
 
 ## Sources
 
-- `../../plans/twk-plan.md`: the plan and runs 1–17 (predictions, tables, kills).
+- `../../plans/twk-plan.md`: the plan and runs 1–19 (predictions, tables, kills).
 - `../../plans/pwl-plan.md`: where float pipelines break, with and without the classical fixes (PWL runs 1–3).
 - *Reads and Writes* (`../readers-and-writers.md`): §6 "K and N" and "Something to read, and K of it" (R935); §7, the
   read's heat per ratio.
