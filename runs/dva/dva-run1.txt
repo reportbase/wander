@@ -1,0 +1,6 @@
+NTN: 82 tagged; D 66 (27 notation, 40.9%); A 16 (3 notation, 18.8%); notation tagged A: [2, 30, 43]; untagged notation: []
+NTX: 107 tagged; D 44 (14 notation, 31.8%); A 63 (4 notation, 6.3%); notation tagged A: [13, 14, 91, 101]; untagged notation: []
+D1 (NTN D>=60%, A<=10%): KILLED
+D2 (NTX D>=60%, A<=10%): KILLED
+D3 (notation tagged D >= 85%): 41/48 = 85.4% not killed
+D4 (D share NTN - NTX >= 20 pts): 80.5% - 41.1% = 39.4% not killed
