@@ -292,6 +292,22 @@ third shape, one read under another name, and the holonomy laws what a chain lea
 are readings, untested. So chains and shared sums are how laws look that relate reads to each other, not every law.
 Essay 23.
 
+**Where π and e are content.** Of the same 125 laws, 82 carry π or e. A blind sort put 34 of them where π or e comes from
+an additive chart (the angle, the logarithm), 32 where it comes from a limit, and 16 nowhere of either kind (PIE,
+`plans/pie-plan.md`; its prediction that nearly all would be chart or limit killed). A rule was then written first: a
+law's π or e is *notation* if the same relation can be restated in slopes and shares, with fractions and square roots
+only, and agrees exactly (to 10⁻³⁰). Applied by a fresh agent and checked by script (NTN, `plans/ntn-plan.md`), 30 of the
+82 are notation: 10 of the 11 projections and identities (a share of a direction written as a cosine; Ω·1/Ω = 1 as
+x·(1/x) = 1), 20 of the 34 chart laws, none of the 32 limits. The three exact holonomy laws (a loop of two turns, a turn
+and a stretch, two boosts) failed that check only because their leftover was written as an angle; computed from the
+loops' own maps in fractions, with each turn, stretch and boost built from rational half-slopes, the leftover's half-slope
+squared comes out rational and equal to the law at every case (HLX, `plans/hlx-plan.md`, nothing killed; the rational
+forms of rotations and boosts are classical). So π or e is content in this paper only where a limit is taken (series,
+products, the totals that normalize a density, the Trotter term), where a chart or a total is itself what the law states
+(the slope joined to the angle, the turn's measure dθ, pseudorapidity, the dial), in (θ/sin θ)(sin θ/θ) = 1, whose two
+measures need the arc, and in Kepler's whole turn a period. Everywhere else it is a name for a share or a slope. **A
+reading** of tests that could fail; the restatements are classical arithmetic, the sorting ours.
+
 | | memory | unit |
 |---|---|---|
 | the geometry: reads, and the laws relating them | none | none |

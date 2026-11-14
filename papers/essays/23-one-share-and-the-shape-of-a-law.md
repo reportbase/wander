@@ -175,6 +175,18 @@ fill one length with them. A change of chart is a third common shape, one read u
 and nothing is shared because there is only one read. And holonomy is what a chain leaves when it does not close. That
 last sentence is a reading and is untested. The sort was not blind: I wrote the categories.
 
+Three more runs followed, on where π and e sit in those laws. Of the 125, 82 carry one or the other. A blind sort put 34 of
+them on an additive chart (the angle, the logarithm), 32 on a limit and 16 on neither, killing my guess that nearly all
+would be chart or limit (PIE). The sixteen looked like shares in an angle's dress, so a rule was written first: a law's π
+or e is notation if the same relation restated in slopes and shares, fractions and square roots only, agrees exactly. By
+that rule 30 of the 82 are notation: ten of the eleven projections and identities, twenty of the thirty-four chart laws,
+none of the thirty-two limits (NTN). The three exact holonomy laws failed only on their leftover, written as an angle;
+computed from the loops themselves in fractions, every turn, stretch and boost built from rational half-slopes, the
+leftover's half-slope squared came out rational and equal to its law in all fifteen cases (HLX). So in this paper π or e
+is content where a limit is taken, where a chart or a total is itself what is stated, in (θ/sin θ)(sin θ/θ) = 1 and in
+Kepler's whole turn; elsewhere it names a share or a slope. Holonomy, the chain that does not close, closes its own
+accounts in fractions: what it leaves is a turn, and the turn's half-slope is rational.
+
 ## 9. What is classical and what is ours
 
 Classical: the disc's irradiance (Lambert, radiometry), view-factor reciprocity, the RC divider, the collision's energy
@@ -184,8 +196,9 @@ telescoping products and the Cayley form of tangent addition. Every number in th
 Ours: the sorting. That the near field and the inverse square are one share read at two ends, paired by the exchange,
 and that the pairing is the round source's; that the crossover and the best point are one share on two charts; that the
 pendulum and the orbit are the bounce's move; that a law of the chain shape is what the cancellation leaves; and that
-this shape covers a quarter of the paper's laws, not three quarters. The sort of the cases into types is mine and not
-blind.
+this shape covers a quarter of the paper's laws, not three quarters; and that π or e in those laws is content only in
+limits, in charts or totals stated for themselves, one identity and Kepler's turn. The sort of the cases into types is
+mine and not blind; the notation rule was applied by a fresh agent and checked by script.
 
 ## 10. What it changes
 

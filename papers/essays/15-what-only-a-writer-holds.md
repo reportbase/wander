@@ -266,6 +266,13 @@ the one-length circle and the completed turn, stated whole on the blueprint and 
 world. Euler's identity is the hinge (the fifth section): the turn's end, endless in the read's slope, is one named
 point, −1, from the centre, and a named point is what can be carried onto the blueprint (the twelfth essay's four things).
 
+How often, then, is the π in a law the turn completed, and how often only its name? *Reads and Writes* states 125 laws, 82
+with π or e in them. Restated in slopes and shares, fractions and square roots only, and checked exactly, 30 of the 82
+lose it: a projection written as a cosine, Ω·1/Ω = 1 as x·(1/x) = 1, a chart whose relation survives without the angle,
+and the loops that come back turned, whose leftover has a rational half-slope when the loop is built from rational ones.
+None of the limits loses it. What keeps π or e is what this essay says holds it: a limit taken, a chart or a total stated
+for itself, and a whole turn counted as a period (essay 23 §8; PIE, NTN, HLX).
+
 ## 7. A machine stops short of the blueprint
 
 Essay 12 asked what a computer can hold, and found that every machine operation on numbers is monotone and finite. Here
