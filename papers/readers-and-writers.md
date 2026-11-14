@@ -279,6 +279,19 @@ by the other takes down the distance they share and leaves their sizes against e
 sizes and leaves the distance (*Each Sees the Other Smaller*, Code and data). **A reading**; the arithmetic is exact. The older statement is the archive's centring (*Degrees of
 Freedom* §3.1), taken here without its Roman arch.
 
+**The shape of a law.** Read through the tower, a geometric law of one kind is what is left of a chain when every middle
+denominator has cancelled: the ends and the last "in terms of", which is the law's empty place; it needs no memory because
+what memory would keep is what cancels. Euler's identity in its rational form is such a cancellation: w(1/s) =
+i(1 − is)/(−i(1 + is)), so in w(s)·w(1/s) each factor's denominator cancels the other's numerator and i/(−i) = −1 is left;
+tangent addition, read as turns between landing points, telescopes the same way. A second kind is a sum over one shared
+denominator that stays, the numerators filling it: the complements 1/(1 + s²) + s²/(1 + s²) = 1 and h² + v² = 1.
+**Tested, and narrowed**: of 125 laws this paper states (listed by a fresh agent), 23 are chains and 10 shared sums,
+all checked exactly; 92 are neither, a quarter against a prediction of three quarters (LWS, `plans/lws-plan.md`, its first prediction
+killed; the sort mine, not blind). Changes of chart (tan, gd, sech, the Cayley map, Mercator, aberration) are a common
+third shape, one read under another name, and the holonomy laws what a chain leaves when it does not close; those two
+are readings, untested. So chains and shared sums are how laws look that relate reads to each other, not every law.
+Essay 23.
+
 | | memory | unit |
 |---|---|---|
 | the geometry: reads, and the laws relating them | none | none |

@@ -455,6 +455,7 @@ found in motion: read through the level of a ratio, s = sinh(½ ln k), swapping 
 the corner is a best point. An elastic collision passes all its energy at equal masses, a load draws most power when
 matched, light crosses two indices whole when they are equal: each 4k/(1 + k)² = sech²(½ ln k). An RC filter's
 crossover at ωRC = 1 is the first kind, a driven RLC's resonance the second (RWX, exact; `../../plans/rwx-plan.md`).
+Essay 23 gathers the disc, the two kinds of corner and the counted periods in one place.
 
 ---
 
