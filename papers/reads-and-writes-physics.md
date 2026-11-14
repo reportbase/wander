@@ -545,6 +545,14 @@ near chart, and s ↔ 1/s makes them complements, E(s) + E(1/s) = πL, half each
 reciprocally (A₁F₁₂ = A₂F₂₁), the ratio the sizes, the product the distance. Only a round source pairs so (a square
 plate's two shares sum to 1.0045 to 1.108 πL). [exact; the formulas classical, the sorting a reading]
 
+The same share sorts other classical cases on two charts (RWX, `plans/rwx-plan.md`). Read as a ratio, s ↔ 1/s makes a
+crossover: the RC divider's low-pass and high-pass shares 1/(1 + s²) and s²/(1 + s²), s = ωRC, half each at s = 1.
+Read through the level, s = sinh(½ ln k), the exchange leaves the share unchanged and the corner is a stationary best
+point: the elastic collision, the matched load and Fresnel at normal incidence each give 4k/(1 + k)² = sech²(½ ln k),
+and the series RLC 1/(1 + s²) with s = 2Q·sinh(ln(ω/ω₀)). The pendulum (T·√(g/ℓ) a function of the amplitude) and
+Kepler (T·√(GM/a³) = 2π) are the bounce's move: a counted period writes a size once g or GM is carried in. [exact; the
+formulas classical, the sorting a reading, not blind]
+
 ### 7.3 The distance ladder as a tower [data, simulation]
 
 A ladder's rungs are reads joined into extents, with writes at the anchors: the angles and the flux ratios of one kind are

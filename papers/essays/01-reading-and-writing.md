@@ -473,6 +473,10 @@ A standard candle is the same move with light. Scale everything, the light per d
 counted writes a distance, d = √(L/4πF). The inverse square is the scale test with the luminosity held fixed
 (*Reads and Writes* §7; `inverse-square.md`, "From one vantage").
 
+A pendulum and an orbit do the same. A pendulum's period in units of √(ℓ/g) depends on its swing alone, and a Kepler
+orbit's in units of √(a³/GM) is 2π: one standpoint counting ticks reads no length. Carry in g or GM and the ticks
+counted write the length or the orbit's size (RWX, exact).
+
 *Demo: the mountain and the thumb, with "scale the world".*
 
 ---
