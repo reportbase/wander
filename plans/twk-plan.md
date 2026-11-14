@@ -816,3 +816,27 @@ a contact only passes components between squares; with masses 1 and 2 the places
 What it shows: one dimension was special. In two, equal masses lose the law in T at the first contact that mixes two
 squares' components, and the state to keep spreads to every square within T = 40; only the velocity components as sets
 remain. Hard squares, not discs (a disc's contact time needs a square root); 16 things on a torus.
+
+## Run 20: the read's own heat decides what is held (predictions, 14 November 2026, written and committed before any
+change; Tom: "yes, use cauchy, this demo should showcase the math of the paper.")
+
+Until now each scale's grain was set by its distance in whole scales from one focus, √cosh(k·ln 2), the same over the
+whole view. Run 20 sets each thing's grain by the read's heat where it stands, *Reads and Writes* §7: the heat per unit of
+reading cos³α off the look times the heat per ratio sech(ln ρ), ρ = d/(√3·H) its distance against the thumb H (the page's
+own H, set by the thing under the crosshair, the wheel or a pinch; √3 since H is a reach along each of the three thumbs).
+A thing of breadth b at distance d is kept when b ≥ g·d with g = G·√(cosh ln ρ)/cos^(3/2) α (G the grain, 1/32), so on
+a ground the count kept goes as the heat; nothing behind the look (cos α ≤ 0) is held. No whole scales, no focus switch:
+the look moves the heat with it and H moves it in distance. The old rule stays at `?heat=0`.
+
+- R1: the number held is about the same wherever the look points: over 16 looks (8 turns of an eighth, two tilts) at the
+  start, the largest within 1.5 times the smallest.
+- R2: the number held does not depend on H: with H set to 2^k times its start value, k = −6 … 6, every count within 15%
+  of the count at k = 0 (the scales without end, −8 to 8, make the sum over scales the same at every H).
+- R3: a one-step pan never switches many at once: over 120 one-step pans the largest change in any held thing's drawn
+  strength (the fade, R953) in one step is under 0.35, and no step adds or drops more than 6% of what is held.
+- R4: against a blueprint made about the eye by the same rule from exact centres, 0 missing and 0 extra at five poses
+  (the start, turned, tilted, walked, H changed).
+- R5: nothing with cos α ≤ 0 is held.
+
+If R1 and R2 hold, the read holds about K things wherever it looks and whatever the thumb, with no count of the world
+entering: §6's "K and N" on the page, from the heat alone.
