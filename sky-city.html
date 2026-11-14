@@ -19,7 +19,7 @@
     speed, direction and phase, its place at tick T exact from T alone. Traffic: 48 cars in a district of 8 by 8 blocks at
     the origin, one-way streets, each car waiting for the one ahead and turning only when the other lane is clear, its state
     stepped from the moment the page opens; each with a ghost that flies the same rules alone.
-    W A S D fly level (shift: eight strides), Space and C up and down, drag or the arrows turn, G half way to the thing
+    W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E or drag or the arrows turn, G half way to the thing
     under the crosshair, B back, the wheel sets the thumb, H holds it, T pauses time, M the menu.
     ?x=&y=&z=&q=&ky=&kp=&tick=&time=0&loops=0&traffic=0&menu=1&heat=1
     Hook window.__skyCity: Fr, set(o), state(), cull(), againstMade(half), againstStepped(o), trigFree(steps), scaleCheck(),
@@ -72,7 +72,7 @@
 </div>
 <div id="panel">
     <h2>Sky city</h2>
-    <p>W A S D fly level (shift: eight strides at a time), Space and C up and down, drag or the arrow keys turn, G half way to the thing under the crosshair, B back to twice as far, the wheel sets the thumb, H holds it, T stops and starts time, M the menu.</p>
+    <p>W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E, a drag or the arrow keys turn, G half way to the thing under the crosshair, B back to twice as far, the wheel sets the thumb, H holds it, T stops and starts time, M the menu.</p>
     <p>On a touch screen: drag to look, pinch to set the thumb, hold the arrows to fly, ↑ and ↓ up and down.</p>
     <h3>show</h3>
     <label><input type="checkbox" id="optLoops" checked> cars on their own loops (placed from the tick alone)</label>
@@ -668,9 +668,10 @@ function advance(k) {   // time: k ticks; the traffic stepped a step every two t
 function tick() {
     { const now = performance.now(); if (S.run && S.tPrev) { S.tAcc += Math.min(0.25, (now - S.tPrev) / 1000) * 60; const k = Math.floor(S.tAcc); if (k > 0) { advance(k); S.tAcc -= k; } } S.tPrev = now; }
     const n = keys.has('shift') ? 8 : 1;
-    for (const k of ['w', 'a', 's', 'd']) if (keys.has(k)) stride(k, n);
-    if (keys.has(' ')) stride('up', n); if (keys.has('c')) stride('down', n);
-    if (keys.has('arrowleft')) turnBy(-1); if (keys.has('arrowright')) turnBy(1);
+    for (const k of ['w', 's']) if (keys.has(k)) stride(k, 4 * n);   // forward and back four strides a frame
+    for (const k of ['a', 'd']) if (keys.has(k)) stride(k, n);
+    if (keys.has(' ') || keys.has('x')) stride('up', n); if (keys.has('c') || keys.has('z')) stride('down', n);
+    if (keys.has('arrowleft') || keys.has('q')) turnBy(-1); if (keys.has('arrowright') || keys.has('e')) turnBy(1);
     if (keys.has('arrowup')) tiltBy(1); if (keys.has('arrowdown')) tiltBy(-1);
     frame(); updatePanel(false); requestAnimationFrame(tick);
 }
