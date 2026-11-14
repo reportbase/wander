@@ -246,6 +246,13 @@ function keptAt(t, g = grainAt(t.lv)) {   // b ≥ g·d and d ≥ b, in squares:
     const dx = t.r[0], dy = t.r[1], dz = t.r[2], d2 = dx * dx + dy * dy + dz * dz;
     return t.b * t.b >= g * g * d2 && d2 >= t.b * t.b;
 }
+// the fade (since R953; Tom: "1", to fading rather than cutting): a thing is drawn with a strength set by how far it
+// is past the keep line, its margin b/(g·d), from 0 at the line to full at FADE past it (1.3, `?fade=`; `?fade=1` cuts
+// as before). The line moves only as the focus glides, so a thing crossing it dissolves over the glide instead of
+// switching. What is held is unchanged: the fade is how a held thing is drawn, never whether it is held.
+const FADE = QS.has('fade') ? Math.max(1, Number(QS.get('fade'))) : 1.3;
+function marginOf(t) { const d2 = t.r[0] * t.r[0] + t.r[1] * t.r[1] + t.r[2] * t.r[2]; return t.b / (grainAt(t.lv) * Math.sqrt(d2)); }
+function fadeOf(t) { if (FADE <= 1) return 1; const u = Math.max(0, Math.min(1, (marginOf(t) - 1) / (FADE - 1))); return u * u * (3 - 2 * u); }
 // ---------- the blueprint, for comparison ----------
 // The god's-eye view done classically: a stored list of every thing at scales 0 to 8 in a square 2·R0 on a side about
 // the start, made once, its count N known. It is used here only to set beside the read: nothing the read draws or
@@ -869,9 +876,11 @@ function frame() {
     g.lineWidth = 1.1;
     for (const t of things) {
         const isT = t === S.target; g.strokeStyle = colourOf(t, P, e, isT); g.lineWidth = isT ? 2 : 1.1; g.beginPath();
+        g.globalAlpha = isT ? 1 : fadeOf(t);
         for (const [a, b] of t.edges) { const s = edge(project(add3(a, t.r), P), project(add3(b, t.r), P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } }
         g.stroke();
     }
+    g.globalAlpha = 1;
     // the three thumbs: each lands at r = √2 on the screen; the triangle between them the wedge's edge
     if (S.show.thumbs) {
         const pts = [P.a, P.b, P.c].map(d => screenOf(project(d, P)));
@@ -1083,7 +1092,7 @@ window.__thumbsWalk = {
     }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff, blueprint: () => { const B = blueprint(); return { N: B.list.length, cells: B.cells, R0: B.R0, top: B.top }; }, besideBlueprint, toHere, outTenfold, twoWays, density: () => ({ dens: DENS, kfix: KFIX, gs: GS, held: thingsNear().length, scanned: CULL.scanned, examined: CULL.examined }), againstStored, againstMade, walkTest, buildCount, cellFormula,
     digits: () => ({ eye: eyeDigits(), slopes: slopeDigits(exactOf(S.target)), focus: S.focus, goes: S.goes }),
     target: () => S.target, pose,
-    exactOfThing: t => exactOf(t), againstMadeNow: h => againstMade(h), moversNear, moversAgainstStepped, moverSteps, moverVelocities, groundNear: () => groundNear(), tick: () => S.tick.toString(),
+    fadeOf: t => fadeOf(t), marginOf: t => marginOf(t), exactOfThing: t => exactOf(t), againstMadeNow: h => againstMade(h), moversNear, moversAgainstStepped, moverSteps, moverVelocities, groundNear: () => groundNear(), tick: () => S.tick.toString(),
     set(o) { if (o.q !== undefined || o.ky !== undefined || o.kp !== undefined || o.eye) S.lock = null; if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
         if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.anchor !== undefined) S.anchor = !!o.anchor; if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
         if (o.focus !== undefined) { if (o.focus !== null) S.focus = S.fg = o.focus; S.holdFocus = o.focus !== null; }
