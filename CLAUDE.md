@@ -482,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R987 (14 Nov; Tom: "write a new essay with these results and a summary in the read/write paper and essayss."): essay 23, `papers/essays/23-one-share-and-the-shape-of-a-law.md`, *One share, and the shape of a law* (ISX, RWX, R985, LWS; a reading lamp over a page); card on `essays.html`, README row ("twenty-three essays"), smoke count 23 (not run); *Reads and Writes* §1 "The shape of a law"; pointers in essays 1, 4, 20. No new claim.
   R986 (14 Nov; Tom: "yes, sort the laws."): LWS (`plans/lws-plan.md`, `runs/lws/`): 125 laws of *Reads and Writes* (a fresh agent's list), Claude's sort: chains 23, shared sums 10, neither 92 (L1 killed: 26% against 75%); compositions chains only read as turns between landing points; complements all shared sums; 86 exact checks pass. A change of chart a third common shape, holonomy a chain that does not close (untested). No paper changed.
   R985 (14 Nov; Tom: "read/write and the tower, how the denominator cancels is a nice clean result", then "yes, add it, merge. Explore the idea relative to what a geometric law is."): `plans/discussion-note.md` item 17, no paper changed: a geometric law the chain with its middle denominators cancelled (Euler's −1 a cross-cancellation, tangent addition, the walk, the discs, 4k/(1 + k)²); complements and h² + v² = 1 a second shape, a shared denominator that stays. Claude's, not ruled.
   R984 (14 Nov; Tom: "update the demos"): ISX and RWX as notes on `thin.html` and `shv.html` and their `demos.html` cards; no script changed.
@@ -4067,7 +4068,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     twenty-two essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     twenty-three essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.

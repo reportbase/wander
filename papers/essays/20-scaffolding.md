@@ -89,6 +89,10 @@ Joining is not a single read's doing. A read is one standpoint, one moment; a ch
 and "the door drops out" is said by whoever keeps them, in things, which are writes. Scaffolding is a word for writes. A read has the three
 thumbs of the door and nothing has come down.
 
+Essay 23 §6–§8 take this further: a geometric law of the chain shape is what a chain leaves once its middle has come
+down, Euler's −1 among them; but sorted, only a quarter of *Reads and Writes*' laws are chains or sums over one shared
+denominator, and changes of chart are a common third shape.
+
 ## 5. The last storey
 
 The scaffolding comes down in the middle of the tower. It does not come down at the bottom. The table is three tenths
