@@ -1352,7 +1352,8 @@ and in the heat's 3/2 power. What it buys is exactness: the three pair slopes mu
 moves none of them, a walk retraced comes back exactly, and places stay exact 10¹⁰⁰ units out. What it costs: fractions
 grow digits, so the observer's place is put down on a grid at each change of heading (a write); turns come in steps; exact
 fractions are slow beside floating point; and classical fixes (an integer heading with a sine table, a floating origin)
-reach the same ends another way. **Checked** (`thumbs-walk.html`, `sky-city.html`: 0 trigonometric calls in 300 steps;
+reach the same ends another way. For these key things the read is simpler, in the kinds of thing it needs (fractions and one
+square root, no angle, no transcendental number), and that simplicity counts for its own sake. **Checked** (`thumbs-walk.html`, `sky-city.html`: 0 trigonometric calls in 300 steps;
 100 of 100 walks retraced exactly; TWK, PWL).
 
 **Two 1's.** On the axes the three ways to measure a direction of the square agree: the largest component (the cube's),
