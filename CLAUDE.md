@@ -98,6 +98,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   0.7 m stride. Scale the world moves no reading. `?thing=&k=<log10 k>&pace=steady|ease&count=1&ground=0&u=&play=1`; hook
   `window.__approach` (`reading`, `cornerD`, `mirror`, `dOf`, `tauRead`, `tauExact`, `tauDotRead`, `stridesFromCorner`,
   `writeV`, `paces`, `set`, `state`). Not in the flying page.
+- `shv.html`: **one vantage** (14 Nov 2026, SPN R976; Tom: "can we put these SHV ideas together into a small demonstration
+  that shows them in one place?"), a standalone page like `facing.html`, plain canvas: R970–R975 in five panels. (1) What is
+  held and what is shown: a plan of 420 seeded things, the keep rule over every direction in front, the flat screen's wedge
+  (half-width slope 1.2/Z), the share Ω(a, b)/2π of a 16:9 screen (28.3% at ×1). (2) Made as needed: a blueprint out to
+  10^D units π(D/48)² cells against the 28,917 the read scans, writes kept per thing changed. (3) A law in T, or state: car A
+  placed from the tick alone (BigInt, any T), car B waiting behind it, stepped. (4) No trigonometry, no π: the half-slope 1/8,
+  (63/65, 16/65), n turns and back exact, the float cos/sin way off by about 10⁻¹⁵, the digits the cost. (5) A bounce: balls of
+  size 1 and 4 (r 3k, A 9k) seen from 20k away, slopes 3/4 and 3/20 both, ticks 60 and 120 under g = 1/50. `?Z=&D=&n=&T=`;
+  hook `window.__shv` (`screenShare`, `sorted1`, `cells2`, `placeA`, `stepB`, `state3`, `retrace`, `bounce`, `bounceCheck`,
+  `set`). Not in the flying page.
 - `crosshairs.html`: **crosshairs in a field** (4 Nov 2026, SPN R667; Tom: "The way to understand reader geometry is with fpv.
   Create a field full of objects with wire frame and let the user point at the objects with H cross hairs and change the near
   and far field accordingly."), a standalone page, plain canvas, wireframe only. A first-person view of 140 seeded things
@@ -472,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R976 (14 Nov; Tom: "can we put these SHV ideas together into a small demonstration that shows them in one place?"): `shv.html`, "One vantage", five panels (see its entry under Files); a card on `demos.html`, a link on essay 22's card.
   R975 (14 Nov; Tom: "update the essays with SHV"): R970–R974 in the essays: essay 1 §5 the bounce (the test where a unit enters motion), essay 5 §7 the held hemisphere against a flat screen's 28% and the equal-area disc read as a ball, essay 14 §6 "Run as code" (no trig, no π, simpler in the kinds of thing it needs, simplicity for its own sake, exactness and costs), essay 16 §10 "A world made as needed" (read, rule, writes; no whole to compare with). Essay 22 already had them (R972). No new claim.
   R974 (14 Nov; Tom: "I do think SHV is simpler for certain key things, and that is notable.  Simplicity is a win for its own sake.", then "merge"): *Reads and Writes* §9 "Run as code" says it: for the key things (turning, projecting, picking, walking, keeping) the read is simpler in the kinds of thing it needs, fractions and one square root, no angle, no transcendental number, and that simplicity counts for its own sake. Not "better" overall (R939, R940 stand); simpler, for those things.
   R973 (14 Nov; Tom: "update the papers with the SHV ideas"): R967–R972 carried into the papers. *Reads and Writes* §7 "A bounce writes its size" and "A single vantage and the blueprint, side by side" (what the blueprint is wanted for; a program needs the world held or made, the single vantage an option for building and the account of observing; a world made as needed without end has no whole, the dual vantage cannot be formed, the rule a lookup not a view; a read, a rule and writes for what changed); §8 the held set the whole front hemisphere, a flat screen about 28% of it, the equal-area disc read as a ball; §9 "Run as code" (no trig, no π in the loop, the one square root, exactness and its costs, classical fixes reaching the same ends). *Reads and Writes in Physics* §4.1 the bounce [exact]. No new claim; nothing called better.

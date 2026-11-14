@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>One vantage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    shv.html: one vantage (14 November 2026, SPN R976; Tom: "can we put these SHV ideas together into a small
+    demonstration that shows them in one place?"). A standalone page like facing.html: R970–R975 on one screen, five
+    panels, one idea each.
+      1. What is held, what is shown: the keep rule runs over the whole front hemisphere; a flat screen of half-width slope
+         1.2/Z on a 16:9 window shows the share Ω(a, b)/2π, Ω = 4·asin(ab/√((1 + a²)(1 + b²))) (about 28% at ×1).
+      2. Made as needed: the read scans a fixed count of cells at any reach; a blueprint stored out to the reach has
+         π(D/48)² cells; writes are kept only for what is changed.
+      3. A law in T, or state to keep: car A placed from the tick alone (exact at any T), car B waiting behind it, stepped.
+      4. No trigonometry, no π: a turn by the half-slope 1/8, rotation ((q² − p²)/(q² + p²), 2pq/(q² + p²)) in exact
+         fractions, n turns and n back return exactly; the classical way (cos and sin of the angle) drifts; the cost digits.
+      5. A bounce writes its size: two balls, one 4 times the other, drawn as one standpoint sees them (the same picture);
+         under one pull g = 8A/P² the larger takes twice the ticks.
+    Links: ?Z=&D=<log10 reach>&n=&T=. Test hook: window.__shv.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 20px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 4px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0 }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 5px 10px; cursor: pointer; touch-action: manipulation }
+    input[type=range] { flex: 1 1 220px; min-width: 0; accent-color: var(--gold) }
+    label { color: var(--dim) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .out { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 6px }
+    .cap { color: var(--dim); font-size: 12.5px; margin: 0 0 6px; max-width: 80ch }
+    .note { color: var(--dim); font-size: 12.5px }
+    a { color: var(--teal) }
+    .ok { color: #6ee7a0 } .bad { color: var(--red) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>One vantage</h1>
+    <p class="lede">A read is a single hemispherical vantage: one standpoint, everything in front of it, nothing behind.
+    The blueprint is the dual hemispherical vantage, both hemispheres at once, drawn from no standpoint. Five panels, one
+    idea each, taken from the sky city and the walk on whole numbers.</p>
+
+    <div class="panel">
+        <h2>1. What is held, and what is shown</h2>
+        <p class="cap">Seen from above. Every thing in front of the eye is weighed by the keep rule (its breadth against
+        the grain times its distance, the grain growing off the look and away from the thumb); the flat screen shows only
+        the gold wedge. Held and on the screen: teal. Held and off it: violet. Behind, or too small: grey.</p>
+        <div class="row"><label for="z">zoom</label><input id="z" type="range" min="0" max="3" step="0.01" value="0"><span id="zv"></span></div>
+        <canvas id="c1" height="300"></canvas>
+        <div class="out" id="o1"></div>
+    </div>
+
+    <div class="panel">
+        <h2>2. Made as needed</h2>
+        <p class="cap">How far the world goes. A blueprint stored out to that reach holds every cell; the read looks at
+        the same cells near the eye whatever the reach, and each thing is made from its cell when the read reaches it.
+        Only what has been changed has to be kept.</p>
+        <div class="row"><label for="d">reach 10^</label><input id="d" type="range" min="2" max="100" step="1" value="6"><span id="dv"></span>
+        <button id="w1">change a thing</button></div>
+        <canvas id="c2" height="200"></canvas>
+        <div class="out" id="o2"></div>
+    </div>
+
+    <div class="panel">
+        <h2>3. A law in time, or state to keep</h2>
+        <p class="cap">Car A (gold) goes round its ring by a law in the tick, so its place at any tick comes from the
+        tick alone. Car B (red) drives at its own pace but waits whenever A is close ahead: it has no law, so its state has
+        to be stepped from the start and held.</p>
+        <div class="row"><button id="run3">run</button><button id="jump">jump to T = 10³⁰</button><button id="reset3">back to T = 0</button></div>
+        <canvas id="c3" height="240"></canvas>
+        <div class="out" id="o3"></div>
+    </div>
+
+    <div class="panel">
+        <h2>4. No trigonometry, no π</h2>
+        <p class="cap">A turn is a half-slope, 1/8: its rotation is the pair (63/65, 16/65), whole numbers over a whole
+        number. Turned n steps and n back in exact fractions, the point comes home exactly. The classical way, cos and sin
+        of the same angle in floating point, drifts. The cost of the exact way is digits.</p>
+        <div class="row"><label for="n">n</label><input id="n" type="range" min="1" max="600" step="1" value="200"><span id="nv"></span></div>
+        <canvas id="c4" height="200"></canvas>
+        <div class="out" id="o4"></div>
+    </div>
+
+    <div class="panel">
+        <h2>5. A bounce writes its size</h2>
+        <p class="cap">Two balls, the right one four times the left in size, bounce and distance, each seen from a
+        standpoint four times as far: the same picture, the same directions at the top and the foot. Under one pull the
+        larger takes twice the ticks, so the ticks, counted, give the size.</p>
+        <canvas id="c5" height="220"></canvas>
+        <div class="out" id="o5"></div>
+    </div>
+
+    <p class="note">Behind it: <i>Reads and Writes</i> §7 "A single vantage and the blueprint, side by side" and "A bounce
+    writes its size", §8, §9 "Run as code"; essay 22 §13, "What a single vantage is for". Pages: <a href="sky-city.html">the
+    sky city</a>, <a href="thumbs-walk.html">three thumbs, walking</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+'use strict';
+const $ = id => document.getElementById(id), QS = new URLSearchParams(location.search);
+function fit(cv) {
+    const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, h = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
+    cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); cv.style.height = h + 'px';
+    const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); return { g, w, h };
+}
+const C = { gold: '#d4a052', teal: '#8ce6cd', violet: '#b59cf0', red: '#d96e5b', dim: '#8a8a96', ink: '#c8c8d0', grey: '#3b3b46' };
+
+// ---------- 1. what is held, what is shown ----------
+// the share of the directions in front a flat screen of half-slopes a (across) and b (up) takes: its solid angle over 2π
+function screenShare(a, b) { return 4 * Math.asin(a * b / Math.sqrt((1 + a * a) * (1 + b * b))) / (2 * Math.PI); }
+function rng(seed) { let s = seed >>> 0; return () => ((s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296); }
+const THINGS = (() => { const r = rng(7), out = [];
+    for (let k = 0; k < 420; k++) { const ang = r() * 2 * Math.PI, d = 3 * Math.pow(40, r()); out.push({ x: d * Math.cos(ang), y: d * Math.sin(ang), b: 0.4 + 2.4 * r() }); }
+    return out; })();
+const GRAIN = 1 / 32, H1 = 20;
+function sorted1(Z) {
+    const a = 1.2 / Z; let held = 0, shown = 0;
+    const list = THINGS.map(t => { const d = Math.hypot(t.x, t.y), c = t.y / d;   // the look is +y
+        let kind = 'drop';
+        if (c > 0) { const rho = d / H1, g = (GRAIN / Z) * Math.sqrt((rho + 1 / rho) / 2) / (c * Math.sqrt(c));
+            if (t.b >= g * d) { kind = Math.abs(t.x) <= a * t.y ? 'shown' : 'held'; held++; if (kind === 'shown') shown++; } }
+        return { ...t, kind }; });
+    return { list, held, shown, a, share: screenShare(a, a * 9 / 16) };
+}
+function draw1() {
+    const Z = Math.pow(2, +$('z').value), S = sorted1(Z), { g, w, h } = fit($('c1'));
+    g.fillStyle = '#000'; g.fillRect(0, 0, w, h);
+    const ox = w / 2, oy = h / 2 + 40, sc = (h / 2 + 30) / 120;
+    // the front half-plane and the screen's wedge
+    g.fillStyle = 'rgba(140,230,205,0.06)'; g.fillRect(0, 0, w, oy);
+    g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox - S.a * oy, 0); g.lineTo(ox + S.a * oy, 0); g.closePath(); g.fillStyle = 'rgba(212,160,82,0.14)'; g.fill();
+    g.strokeStyle = 'rgba(212,160,82,0.6)'; g.beginPath(); g.moveTo(ox, oy); g.lineTo(ox - S.a * oy, 0); g.moveTo(ox, oy); g.lineTo(ox + S.a * oy, 0); g.stroke();
+    g.strokeStyle = 'rgba(255,255,255,0.15)'; g.beginPath(); g.moveTo(0, oy); g.lineTo(w, oy); g.stroke();
+    for (const t of S.list) { const x = ox + t.x * sc, y = oy - t.y * sc; if (x < -5 || x > w + 5 || y < -5 || y > h + 5) continue;
+        g.fillStyle = t.kind === 'shown' ? C.teal : t.kind === 'held' ? C.violet : C.grey;
+        g.beginPath(); g.arc(x, y, Math.max(1.2, Math.min(5, t.b * 1.4)), 0, 2 * Math.PI); g.fill(); }
+    g.fillStyle = C.gold; g.beginPath(); g.arc(ox, oy, 4, 0, 2 * Math.PI); g.fill();
+    $('zv').textContent = '×' + Z.toFixed(2);
+    $('o1').textContent = `held (in front, by the keep rule): ${S.held} of ${THINGS.length}; on the screen: ${S.shown}, off it: ${S.held - S.shown}\n` +
+        `a flat screen of half-width slope ${S.a.toFixed(3)} on a 16:9 window takes ${(100 * S.share).toFixed(1)}% of the directions in front, and the same share of the heat`;
+    return S;
+}
+
+// ---------- 2. made as needed ----------
+const CELL = 48, READ_R = 96;   // the sky city's cell and its read's reach in cells
+const readCells = (() => { let c = 0; for (let i = -READ_R; i <= READ_R; i++) for (let j = -READ_R; j <= READ_R; j++) if (i * i + j * j <= READ_R * READ_R) c++; return c; })();
+let writes = 0;
+function cells2(logD) { return { blueprintLog10: Math.log10(Math.PI) + 2 * (logD - Math.log10(CELL)), read: readCells, writes }; }
+function draw2() {
+    const L = +$('d').value, R = cells2(L), { g, w, h } = fit($('c2'));
+    g.fillStyle = '#000'; g.fillRect(0, 0, w, h);
+    const x0 = 150, top = 14, rowH = 44, max = 210, X = v => x0 + (w - x0 - 16) * Math.min(1, v / max);
+    const rows = [['blueprint, stored', R.blueprintLog10, C.violet], ['read, scanned', Math.log10(R.read), C.teal], ['writes, kept', R.writes ? Math.log10(R.writes) : 0, C.gold]];
+    g.font = '12px "DM Mono", monospace'; g.textBaseline = 'middle';
+    rows.forEach(([name, lg, col], k) => { const y = top + k * rowH;
+        g.fillStyle = C.ink; g.fillText(name, 8, y + 14);
+        g.fillStyle = col; g.fillRect(x0, y + 4, Math.max(2, X(lg) - x0), 20); });
+    g.fillStyle = C.dim; g.fillText('log₁₀ of the count (bar scale 0 to 210)', x0, top + 3 * rowH + 4);
+    $('dv').textContent = `${L} units`;
+    $('o2').textContent = `cells a blueprint out to 10^${L} units holds: about 10^${R.blueprintLog10.toFixed(1)}\n` +
+        `cells the read looks at, at this reach or any other: ${R.read.toLocaleString()}\n` +
+        `writes kept: ${R.writes} (one for each thing changed; the rule makes everything else again when it is needed)`;
+    return R;
+}
+
+// ---------- 3. a law in T, or state to keep ----------
+const RING = 360, GAP = 30;
+// A: 2 units a tick for 60 ticks, then 6 a tick for 30, repeating: its place at tick T from T alone, exact (BigInt)
+function placeA(T) { T = BigInt(T); const cyc = 60n * 2n + 30n * 6n, n = T / 90n, r = T % 90n;
+    const p = n * cyc + (r < 60n ? 2n * r : 120n + 6n * (r - 60n)); return Number(p % BigInt(RING)); }
+const st3 = { T: 0, b: 180, steps: 0, waits: 0 };
+function stepB() { const a = placeA(st3.T + 1), ahead = ((a - st3.b) % RING + RING) % RING;
+    if (ahead > GAP + 4) st3.b = (st3.b + 4) % RING; else st3.waits++;
+    st3.T++; st3.steps++; }
+let jumped = null;
+function draw3() {
+    const { g, w, h } = fit($('c3')); g.fillStyle = '#000'; g.fillRect(0, 0, w, h);
+    const cx = w / 2, cy = h / 2, r = Math.min(cx, cy) - 24;
+    g.strokeStyle = 'rgba(255,255,255,0.18)'; g.beginPath(); g.arc(cx, cy, r, 0, 2 * Math.PI); g.stroke();
+    const dot = (p, col) => { const t = p / RING * 2 * Math.PI - Math.PI / 2; g.fillStyle = col; g.beginPath(); g.arc(cx + r * Math.cos(t), cy + r * Math.sin(t), 8, 0, 2 * Math.PI); g.fill(); };
+    if (jumped !== null) { dot(placeA(jumped), C.gold); }
+    else { dot(placeA(st3.T), C.gold); dot(st3.b, C.red); }
+    $('o3').textContent = jumped !== null
+        ? `T = ${jumped.toString()}: car A at ${placeA(jumped)} of ${RING}, from the tick alone, at once.\ncar B: to know where it is, all ${jumped.toString()} steps would have to be taken; it has no law in T.`
+        : `T = ${st3.T}: car A at ${placeA(st3.T)} (from T alone), car B at ${st3.b} (stepped ${st3.steps} times, waited ${st3.waits})`;
+}
+
+// ---------- 4. no trigonometry, no π ----------
+const P4 = 1n, Q4 = 8n, DEN = Q4 * Q4 + P4 * P4, CN = Q4 * Q4 - P4 * P4, SN = 2n * P4 * Q4;   // (63, 16)/65
+function retrace(n) {
+    // exact: numerators x, y over DEN^k; turn n forward, then n back
+    let x = 1n, y = 0n, k = 0, maxDigits = 1;
+    for (let i = 0; i < n; i++) { [x, y] = [CN * x - SN * y, SN * x + CN * y]; k++; maxDigits = Math.max(maxDigits, x.toString().length); }
+    for (let i = 0; i < n; i++) { [x, y] = [CN * x + SN * y, -SN * x + CN * y]; k++; }
+    const d = DEN ** BigInt(k), exactHome = x === d && y === 0n;
+    // classical: cos and sin of the same angle, in floating point
+    const th = 2 * Math.atan(1 / 8), c = Math.cos(th), s = Math.sin(th); let fx = 1, fy = 0;
+    for (let i = 0; i < n; i++) [fx, fy] = [c * fx - s * fy, s * fx + c * fy];
+    for (let i = 0; i < n; i++) [fx, fy] = [c * fx + s * fy, -s * fx + c * fy];
+    return { n, exactHome, floatOff: Math.hypot(fx - 1, fy), digits: maxDigits, denDigits: d.toString().length };
+}
+function draw4() {
+    const n = +$('n').value, R = retrace(n), { g, w, h } = fit($('c4'));
+    g.fillStyle = '#000'; g.fillRect(0, 0, w, h);
+    // the exact path's points (as floats, only to draw them)
+    const cx = w / 2, cy = h / 2, r = h / 2 - 14;
+    g.strokeStyle = 'rgba(255,255,255,0.15)'; g.beginPath(); g.arc(cx, cy, r, 0, 2 * Math.PI); g.stroke();
+    // the points by the same rational turn, (63/65, 16/65), as numbers only to place them
+    for (let i = 0, px = 1, py = 0; i <= Math.min(n, 400); i++) { g.fillStyle = i === 0 ? C.gold : 'rgba(140,230,205,0.6)'; g.fillRect(cx + r * px - 1.5, cy - r * py - 1.5, 3, 3);
+        [px, py] = [(63 * px - 16 * py) / 65, (16 * px + 63 * py) / 65]; }
+    $('nv').textContent = n;
+    $('o4').innerHTML = `${n} turns of (63/65, 16/65) and ${n} back, exact: <span class="${R.exactHome ? 'ok' : 'bad'}">${R.exactHome ? 'home exactly' : 'not home'}</span>; no trigonometric call, no π.\n` +
+        `the classical way, cos and sin in floating point: off home by ${R.floatOff.toExponential(2)}.\n` +
+        `the cost: the exact numbers reach ${R.digits.toLocaleString()} digits on the way out (the denominator 65^${2 * n}, ${R.denDigits.toLocaleString()} digits).`;
+    return R;
+}
+
+// ---------- 5. a bounce writes its size ----------
+// g = 1/50 a tick²; ball k, the world scaled by k: radius 3k, height A = 9k, ticks P = √(8A/g) = 60√k, seen from 20k away
+const G5 = 1 / 50;
+function bounce(k) { const r = 3 * k, A = 9 * k, P = Math.sqrt(8 * A / G5); return { k, r, A, P }; }
+let t5 = 0;
+function draw5() {
+    const { g, w, h } = fit($('c5')); g.fillStyle = '#000'; g.fillRect(0, 0, w, h);
+    const B1 = bounce(1), B4 = bounce(4), floorY = h - 20;
+    const panel = (B, x0, label) => {
+        // the standpoint k times as far: every length drawn ×1/k, so both pictures are one
+        const tau = t5 % B.P, y = 4 * B.A * tau * (B.P - tau) / (B.P * B.P);
+        const px = Math.min(11, (h - 46) / 15) / B.k, cx = x0 + w / 4;
+        g.strokeStyle = 'rgba(255,255,255,0.2)'; g.beginPath(); g.moveTo(x0 + 20, floorY); g.lineTo(x0 + w / 2 - 20, floorY); g.stroke();
+        g.fillStyle = 'rgba(212,160,82,0.25)'; g.beginPath(); g.arc(cx, floorY - (B.r + B.A) * px, B.r * px, 0, 2 * Math.PI); g.fill();
+        g.fillStyle = C.teal; g.beginPath(); g.arc(cx, floorY - (B.r + y) * px, B.r * px, 0, 2 * Math.PI); g.fill();
+        g.fillStyle = C.ink; g.font = '12px "DM Mono", monospace'; g.fillText(label, x0 + 20, 16);
+    };
+    panel(B1, 0, 'size 1'); panel(B4, w / 2, 'size 4, four times as far');
+    const S = bounceCheck(4);
+    $('o5').textContent = `the slope to the top of the bounce, from each standpoint: ${S.top1} and ${S.top4} (the same); to the foot: ${S.foot1} and ${S.foot4}\n` +
+        `ticks a bounce: ${B1.P} and ${B4.P} (×${(B4.P / B1.P).toFixed(2)} = √4); with the pull carried in, the height from the ticks A = gP²/8: ${(G5 * B1.P * B1.P / 8).toFixed(2)} and ${(G5 * B4.P * B4.P / 8).toFixed(2)}`;
+}
+// exact slopes from a standpoint 20k away, the eye at the floor: to the ball's top at the top of the bounce (2r + A)/d, to its middle at the foot r/d
+function bounceCheck(k) {
+    const frac = (n, d) => { const gcd = (a, b) => b ? gcd(b, a % b) : a, q = gcd(n, d); return (n / q) + '/' + (d / q); };
+    const B1 = bounce(1), Bk = bounce(k), d1 = 20, dk = 20 * k;
+    return { top1: frac(2 * B1.r + B1.A, d1), top4: frac(2 * Bk.r + Bk.A, dk), foot1: frac(B1.r, d1), foot4: frac(Bk.r, dk), same: frac(2 * B1.r + B1.A, d1) === frac(2 * Bk.r + Bk.A, dk) && frac(B1.r, d1) === frac(Bk.r, dk), ticks: [B1.P, Bk.P] };
+}
+
+// ---------- wiring ----------
+if (QS.has('Z')) $('z').value = Math.log2(Math.max(1, Math.min(8, +QS.get('Z'))));
+if (QS.has('D')) $('d').value = Math.max(2, Math.min(100, Math.round(+QS.get('D'))));
+if (QS.has('n')) $('n').value = Math.max(1, Math.min(600, Math.round(+QS.get('n'))));
+$('z').oninput = draw1; $('d').oninput = draw2; $('n').oninput = draw4;
+$('w1').onclick = () => { writes++; draw2(); };
+let run3 = false;
+$('run3').onclick = () => { run3 = !run3; jumped = null; $('run3').textContent = run3 ? 'pause' : 'run'; };
+$('jump').onclick = () => { run3 = false; $('run3').textContent = 'run'; jumped = 10n ** 30n; draw3(); };
+$('reset3').onclick = () => { jumped = null; Object.assign(st3, { T: 0, b: 180, steps: 0, waits: 0 }); draw3(); };
+if (QS.has('T')) { try { jumped = BigInt(QS.get('T')); } catch (e) {} }
+function drawAll() { draw1(); draw2(); draw3(); draw4(); draw5(); }
+addEventListener('resize', drawAll);
+let last = 0;
+function tick(now) {
+    const dt = Math.min(0.1, (now - (last || now)) / 1000); last = now;
+    t5 += dt * 30; draw5();
+    if (run3) { for (let i = 0; i < 2; i++) stepB(); draw3(); }
+    requestAnimationFrame(tick);
+}
+drawAll(); requestAnimationFrame(tick);
+
+window.__shv = { screenShare, sorted1, cells2, placeA, stepB, state3: () => ({ ...st3 }), retrace, bounce, bounceCheck,
+    set(o) { if (o.Z) $('z').value = Math.log2(o.Z); if (o.D) $('d').value = o.D; if (o.n) $('n').value = o.n; drawAll(); } };
+</script>
+</body>
+</html>
