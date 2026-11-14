@@ -732,6 +732,11 @@ distance d by exactly 1/(1 + s²) of the receiver's hemisphere, s = d/a: the hea
 is the same disc seen from d = a²/d, so near and far are the identity's two sides, half each at d = a; far off the share
 is the inverse square (ISX, exact; `../inverse-square.md`, "From one vantage").
 
+The three grades sort the paper's laws as well. Of the 125 laws *Reads and Writes* states, 82 carry π or e; 30 of them are
+in the first two grades once restated in the slope (fractions and square roots, checked exactly), so their π is a name;
+the rest are in the third, a limit, or state a chart or a total for itself (the NTN run; *Reads and Writes* §1 "Where π and
+e are content").
+
 ---
 
 ## 10. What it comes to

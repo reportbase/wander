@@ -181,6 +181,15 @@ hyperbolic space of velocities (curvature −1 where the sphere's is +1). It too
 depends on the angle (TWG run 3, the coefficients predicted before the run). The sphere and the space of velocities share
 the first term of their curvature's signature and part after it.
 
+None of these leftovers needs π to be stated. Build each loop from rational half-slopes (a turn by its half-slope t, so its
+cosine and sine are (1 − t²)/(1 + t²) and 2t/(1 + t²); a boost by its half-rapidity a, so β = 2a/(1 + a²)) along axes with
+rational components, and compute the loop's own map in fractions: the leftover's half-slope squared comes out a fraction,
+and equal to its law, in every case tried (two turns about axes 2/3 apart by their cosine, half-slopes 2 and ¾: the
+leftover's cos(Θ/2) = 17/25; two boosts of half-rapidity 1/5 and 2/3 at cos φ = 2/3: tan²(Θ/2) = 20/2401). The angle in the
+classical statement is a name for that half-slope (the HLX run, exact; the rational forms of rotations and boosts are
+classical). What the plane lacks and space has is the leftover, not a transcendental number: a loop that does not close
+closes its own accounts in fractions.
+
 The loop that leaves this turn is a loop of two turns. A loop of a turn and the thumb scaled, the first test's own
 motion, comes home with nothing left in space as in the plane, because scaling by one factor commutes with every turn; a
 scaling in two unequal lengths, a stretch, leaves a squeeze instead of a turn, and the squeeze grows with each loop (the BRL run, exact; the
