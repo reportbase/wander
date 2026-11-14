@@ -891,3 +891,23 @@ in front whose centre lands on the screen.
 - R3c: over 120 one-step pans, 16 ms apart, from a fresh start, the largest change in drawn strength in one step among
   things on the screen under 0.35, and no step adding or dropping more than 6% of the things on the screen.
 - R4c: 0 missing, 0 extra at the five poses.
+
+**Run 20c** (`runs/twk/run20c.mjs`, output `runs/twk/run20c-out.json`). R3c killed by my measure; R4c not killed.
+- R3c killed by my measure: a thing turning onto the screen's edge at full strength counted as a change from 0 to 1
+  (worst 1, worst step 11.8% of the 55 to 122 things on the screen), though it slid in rather than appeared.
+- R4c not killed: 0 missing, 0 extra at the five poses (405, 434, 171, 165, 73).
+
+Post hoc, not a prediction (`runs/twk/run20c-posthoc.mjs`, `runs/twk/run20c-posthoc.json`): among things on the screen in
+both frames, the worst change in drawn strength in one step is 0.50, and at most 12% of them are added or dropped in a
+step. A probe step by step: one pan step turns the look about 0.9°, which moves a thing's margin 2–3% through cos^(3/2) α,
+and H's glide adds a few percent; the fade's band is 30% of margin (R953), so about 6% of margin is about 0.35 of strength
+in one step, a fade over three or four frames at 60 a second. Whether that reads as smooth is for the eye; the band was
+left as it is.
+
+Also, from the same runs: the movers (R948, R949) are kept by the same heat, 32 to 34 held at the start, 0 missing and 0
+extra against every mover stored and stepped; `?heat=0` gives the page as before (2,195 held, movers 167).
+
+What run 20 shows: the read's heat alone decides what is held. It holds nothing behind the look and moves with the look and
+the thumb, with no whole scales and no focus to switch; the count is near the same at every level look (R1b, 425–446) but
+falls looking up at an empty sky (R1) and changes with the thumb where the world has a ground and an eye height (R2b): K is
+what the heat finds, not a number set beforehand. Exact against a blueprint made by the same rule at every pose tried.
