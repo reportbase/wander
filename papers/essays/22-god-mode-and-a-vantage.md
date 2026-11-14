@@ -367,6 +367,16 @@ the same fractions, but under the same pull the scaled ball would take twice the
 amount in a unit, so a bounce's ticks, counted, write the ball's size, A = gP²/8: Galileo's square–cube law, at the place
 in the sorting where it belongs.
 
+**Not required, and still the account of observing.** A program needs the world anyway. A computer is a writer, so
+something has to hold or make the world before any view of it exists: a stored list, a seeded rule that makes things on
+demand, state stepped for what reacts. The read does not remove that; it decides only which part is looked at and how
+finely. For building, the single vantage is an option, not a requirement. Its interest lies elsewhere: no observer in
+nature has the view from no standpoint, and every read has a vantage. The blueprint is the idealization that holds the
+whole at once; in the world there is no list, the things themselves carry their state, and a read meets them as paint. So
+a program has to supply what the world supplies by being there, and the single vantage describes what any observer, a
+person, an animal or an instrument, has from where it stands. The pages are useful because they show where a program
+stands in for the world and where it only reads it.
+
 ## 14. What it changes
 
 The blueprint is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on
