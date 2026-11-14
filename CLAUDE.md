@@ -482,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R997 (14 Nov; Tom: "Save these results in an essay.   Create a demo that explains."): essay 24, `papers/essays/24-only-a-name.md`, *Only a name* (PIE, NTN, HLX, NTX, DVA as one essay; the cross-table; what stays content; a third list the next test); `notation.html` (see its entry under Files); cards, README row ("twenty-four essays"), smoke count 24 (not run).
   R996 (14 Nov; Tom: "1 2"): DVA (`plans/dva-plan.md`, `runs/dva/`): blind D/A tags on the 189 laws; D1, D2 killed, D3, D4 not; post hoc every limit content, laws relating directions without a limit notation at about three in five on both lists. Carried into *Reads and Writes* §1 and essays 2, 13, 14, 15, 23, narrowing "30 of 82".
   R995 (14 Nov; Tom: "1"): NTX (`plans/ntx-plan.md`, `runs/ntx/`): NTN's rule on 107 standard formulas listed, classed and restated by three fresh agents: 18 notation (16 by my reading), X1, X3, X5 killed, X2 not (0 of 42 limits). Notation carries over for identities among angles and laws with a direction as input; textbook chart laws carry amounts (times, energies over kT, periods in seconds) and stay content. Post hoc, untested. No paper changed.
   R994 (14 Nov; Tom: "Merge and update"): HLX in the physics paper §5.4; PIE, NTN, HLX in essay 23's README row and card; a sentence on `shv.html` panel 4. No new claim.
@@ -726,6 +727,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Writes* §9 "All of this is prior to any physics".
   R803 (10 Nov; Tom: "update the essays."): R801 and R802 in essay 2 §7 ("Which act each number measures") and §9 ("Four
   identities, one exchange", with the table), essay 14 §3 and essay 15 §5; no new claim.
+- `notation.html`: **only a name** (14 Nov 2026, SPN R997; essay 24), a standalone page like `shv.html`, plain script: one turn by its
+  angle (cos, sin, so π) and by its half-slope in exact BigInt fractions, n turns and back; Leibniz and Wallis as limits (a fraction at every
+  step, π at none); the 189 laws of NTN and NTX as tiles, teal where the checker found π or e notation, grouped by list, DVA's tag, the blind
+  class, or all three; the cross-table. Data embedded from `runs/dva/laws.json` (`python3 runs/dva/export.py > runs/dva/laws.json`; rebuild the
+  page's JSON block if a run changes). `?s=p/q&n=&k=&group=list|tag|cls|cross&law=NTN-21`; hook `window.__notation` (`laws`, `counts`,
+  `cross`, `groupsOf`, `turns`, `back`, `leibniz`, `wallis`, `set`, `state`). Not in the flying page.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are
   the physics. cauchy is the geometry."), a standalone page, plain canvas, full screen, text behind the menu (☰). Left: the
   screen square to the look down the three thumbs' diagonal, the crosshair the triple corner, the thumbs at r = √2, the
