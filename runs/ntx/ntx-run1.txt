@@ -1,0 +1,8 @@
+FAIL 10: err 2.0e-51, text tokens ['sin'], code tokens []
+FAIL 68: err 1.34e-51, text tokens ['e'], code tokens []
+notation 18, NONE 87, failed checks 2
+listed 107: notation share 18/107 = 0.168
+PIE class A: 17 of 63 notation: [9, 11, 12, 13, 14, 15, 18, 20, 37, 38, 39, 67, 69, 91, 102, 103, 104]
+PIE class L: 0 of 42 notation: []
+PIE class X: 1 of 2 notation: [101]
+all notation: [9, 11, 12, 13, 14, 15, 18, 20, 37, 38, 39, 67, 69, 91, 101, 102, 103, 104]

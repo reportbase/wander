@@ -482,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R995 (14 Nov; Tom: "1"): NTX (`plans/ntx-plan.md`, `runs/ntx/`): NTN's rule on 107 standard formulas listed, classed and restated by three fresh agents: 18 notation (16 by my reading), X1, X3, X5 killed, X2 not (0 of 42 limits). Notation carries over for identities among angles and laws with a direction as input; textbook chart laws carry amounts (times, energies over kT, periods in seconds) and stay content. Post hoc, untested. No paper changed.
   R994 (14 Nov; Tom: "Merge and update"): HLX in the physics paper §5.4; PIE, NTN, HLX in essay 23's README row and card; a sentence on `shv.html` panel 4. No new claim.
   R993 (14 Nov; Tom: "Merge and update the essays"): PIE, NTN and HLX in essays 2 §9, 13 §4 and 14 §6 (15 and 23 had them). No new claim.
   R992 (14 Nov; Tom: "Merge and update the papers"): PIE, NTN and HLX in *Reads and Writes* §1 "Where π and e are content" (after "The shape of a law"), essay 23 §8–§9 and essay 15 §6. No new claim.
