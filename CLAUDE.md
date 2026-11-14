@@ -472,6 +472,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R964 (14 Nov; Tom: "could you make the crosshairs follow the cursor?"): `sky-city.html` crosshairs at the mouse (middle without one); pick, H and the heat's centre on the ray through it; the thumbs stay the look's frame; hook `set({cur})`.
   R963 (14 Nov; Tom: "can we use two fingers to move?", then "1"): `sky-city.html` two fingers dragged together fly (up forward, across sideways), spread or closed set the thumb; the first 12 px decide.
   R962 (14 Nov; Tom: "add support for QEZCX. moving around fowards and backwars is to slow."): `sky-city.html` W and S four strides a frame, Q and E turn, X up, Z down; places still exact.
   R961 (14 Nov; Tom: "add fills to the buildings and cars. I should not be able to set the crossed thumbs on a building behind another building."): `sky-city.html` filled (front faces, far to near), the crosshairs only on the nearest drawn thing (the followed thing no longer kept behind another); hook `hits()`; what is held unchanged.
