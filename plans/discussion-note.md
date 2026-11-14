@@ -358,3 +358,45 @@ reader or writer; essay 9's "vantages"; sentences where kept steps still read as
 **Settled, 12 November (R896; Tom: "update the papers and essays and merge"):** a read is continuous and unmoved by
 scaling, a write discrete and moved by it; a count and the number line in a unit are descriptions. Carried into
 *Reads and Writes* and the essays. This file is kept as the record of how it was reached.
+
+17. **The tower's cancellation, and what a geometric law is** (14 Nov; Tom: "read/write and the tower, how the
+    denominator cancels is a nice clean result, the kind of thing that just rings with the kind simplicity that makes
+    it all clean.", then "yes, add it, merge. Explore the idea relative to what a geometric law is.").
+    **Whose:** Tom's observation; the exploration Claude's, not ruled. **Standing:** recorded (R985); nothing in a
+    paper changed.
+
+    **The observation.** In a chain a/b · b/c = a/c the middle term is not removed by anyone: it was never part of
+    what the ends say about each other. Each denominator is one read's "in terms of" (R883), needed to make that
+    reading and absent from what the readings give together. Kept with it, from R883: within one read nothing cancels
+    (its denominator set to zero is the horizon, no reading); the last "in terms of" stays (a/c is in terms of c), so
+    a tower ends on the thumb, a kept step or an agreed unit (R881's least that is not zero); closed into a loop
+    everything cancels to 1, and a remainder is a misread link, seen and not located.
+
+    **Relative to a geometric law (Claude's exploration).** R864 called a geometric law what the geometry has in
+    place of memory, collapsing a set of steps into one relation; R871 said it covers every sequence of any length
+    at once by one finite expression with an empty place (n, or s); R881 that it shortens a chain to its least, not
+    to nothing. The cancellation says how: **a geometric law is what is left of a chain when every middle
+    denominator has cancelled**, the ends and the last "in terms of". It needs no memory because what memory would
+    keep (which middle steps were taken) is exactly what cancels; its empty place is the one denominator that never
+    does. Checked in exact Gaussian fractions (s = 1/3, 2, 5/7; a second slope 1/4):
+
+    - Euler's identity in a read's form is a cancellation. With w(s) = (1 + is)/(1 − is), w(1/s) =
+      (s + i)/(s − i) = i(1 − is)/(−i(1 + is)), so in w(s)·w(1/s) each factor's denominator cancels the other's
+      numerator, leaving i/(−i) = −1: the corner's i over its mirror. Exactly −1 at all three slopes.
+    - Tangent addition is a telescoping product: w(a)·w(b) = w((a + b)/(1 − ab)), exact (36/85 + 77i/85 at
+      s = 1/3, b = 1/4, and so on), so n turns compose to one, the middle landing points gone.
+    - The walk (WLK, ONE): the ratios Z_(j+1)/Z_j telescope to the two end reads at any stride; two looks a stride
+      apart give the strides left. The count n is the one place left open.
+    - The coaxial discs (ISX): the ratio of the two reads cancels the shared distance (sizes left), the product
+      cancels the sizes (distance left). The denominator paradox's exchange is the same, in order.
+    - RWX: 4k/(1 + k)² keeps only k = m₁/m₂ (or R_L/R_s, n₂/n₁); the common amount has cancelled, so scaling the
+      pair moves nothing.
+
+    **What does not fit, so the claim is narrower.** Not every law is a chain. The complements 1/(1 + s²) +
+    s²/(1 + s²) = 1 and h² + v² = 1 are sums over one shared denominator, not cancellations of middle ones: the
+    denominator stays (it is the one length, the last storey), and the law is that the numerators fill it. So two
+    shapes of law, at least: **products, where middle denominators cancel (composition, the tower, the walk, Euler's
+    −1), and sums over a shared denominator, where it stays (complements, the shares, the one-length circle)**.
+    Parallax, 1/(d/B) = 1/s₁ + 1/s₂, is the second shape taken inward. Whether every geometric law the papers use is
+    one of the two is open; a third shape would show up as a law whose denominator neither cancels nor is shared.
+    Classical throughout (telescoping, the Cayley form of tangent addition); the reading ours.
