@@ -444,6 +444,12 @@ The textbook form E = P/(4πd²) is stated at the source, over its whole sphere,
 blueprint's. From the receiver's own front hemisphere the law needs no π: the paint along each direction unchanged, the
 source's share set by the slope, (Δ/d)² (`../inverse-square.md`, "From one vantage").
 
+A flat, evenly bright disc shows near and far as one share. On its axis it gives exactly E/(πL) = 1/(1 + s²), s = d/a
+its distance in its own radii: flat close in, the inverse square far off, and under the exchange s ↔ 1/s the two are
+complements, E(s) + E(1/s) = πL, half each at d = a, the disc's corner. Scaled with its distance it moves no share; only
+with its size held fixed does 1/d² appear. The pairing is the round source's: a square plate's near and far shares
+overlap at the corner, summing to 1.108 πL (ISX, exact; `../inverse-square.md`, "From one vantage").
+
 ---
 
 ## 14. What it comes to
