@@ -1,0 +1,25 @@
+   1  bij True   C2 True   target add    transcendental      ln z
+  11  bij True   C2 True   target None   rational/algebraic  halving t = s/(1 + sqrt(1 + s^2))
+  13  bij True   C2 True   target add    transcendental      angle 2*arctan s
+  14  bij False  C2 None   target None   transcendental      a straight line on Euler's plane (a family of curves)
+  15  bij True   C2 True   target mult   rational/algebraic  mirror x -> 1/x
+  16  bij True   C2 True   target None   transcendental      lay (2/pi) arctan x
+  17  bij True   C2 True   target mult   rational/algebraic  boost of latitudes t -> t/k
+  18  bij True   C2 True   target mult   rational/algebraic  square (h + iv)^2
+  20  bij True   C2 True   target mult   rational/algebraic  Euler's form w = (1 + is)/(1 - is)
+  21  bij False  C2 None   target None   transcendental      Lambert's chart turned (a stretch factor)
+  30  bij True   C2 True   target mult   rational/algebraic  the Cayley map
+  44  bij True   C2 True   target mult   rational/algebraic  Mercator's bearings t -> t/c
+  45  bij True   C2 True   target None   rational/algebraic  aberration
+  49  bij True   C2 True   target add    transcendental      pseudorapidity (aberration a slide)
+  53  bij True   C2 True   target None   transcendental      Lambert's radius 2 sin(a/2)
+  56  bij True   C2 True   target None   transcendental      the dial, place sinh(zeta)
+  59  bij True   C2 True   target None   rational/algebraic  a read from a height, c (+) i*gamma
+  94  bij True   C2 True   target mult   rational/algebraic  rational rotation
+  97  bij True   C2 True   target None   rational/algebraic  bisecting (sqrt(1 + s^2) - 1)/s
+ 111  bij True   C2 True   target mult   rational/algebraic  squares rational (h^2 - v^2) + 2ihv
+
+C1 bijections: 18 of 20 (kill under 14)
+C2 chains telescope in every bijection: True
+C3 group charts (add or mult): 11 (kill under 10): [(1, 'add'), (13, 'add'), (15, 'mult'), (17, 'mult'), (18, 'mult'), (20, 'mult'), (30, 'mult'), (44, 'mult'), (49, 'add'), (94, 'mult'), (111, 'mult')]
+C4 additive charts all transcendental: True; no rational chart additive: True: [1, 13, 49]

@@ -1,0 +1,6 @@
+mine Counter({'N': 92, 'P': 23, 'S': 10}) blind Counter({'N': 106, 'P': 11, 'S': 8})
+agreement 109/125 = 0.872; kappa 0.639; blind P+S 19
+mine->blind {('N', 'N'): 91, ('P', 'P'): 11, ('P', 'N'): 12, ('S', 'S'): 7, ('S', 'N'): 3, ('N', 'S'): 1}
+P/S I had, blind N: [4, 8, 19, 28, 38, 42, 52, 72, 91, 98, 101, 105, 114, 119, 124]
+blind P/S I had N: [94]
+P<->S swaps: []
