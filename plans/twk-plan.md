@@ -742,3 +742,77 @@ What it shows: interaction alone is not where a read from T alone stops. Equal-m
 masses break the law at the first unequal contact, and the state to keep spreads to every ball that touches one already
 off its law. Classical (hard-rod gases, integrable against non-integrable); the sorting is ours. One dimension, points,
 16 balls; nothing on the page yet.
+
+## Run 18: run 17 on the page (predictions, 14 November 2026, written and committed before any change; Tom: "1, then 3",
+to putting run 17's ring on the page and then taking it to two dimensions)
+
+`thumbs-walk.html` gets two rings of 16 balls each in the sky ahead of the start (`?rings=0` hides them), run 17's seed 1
+worlds: one of equal masses, one of masses 1 and 2, each ring of length L = 1000 laid on the outline of a square standing
+square to the start's look. Ring time T is the page's tick over 6 (exact). The equal ring is drawn from T alone (the free
+places mod L, ball k at rank W(T) + k), keeping nothing; the unequal ring is stepped event by event in exact fractions
+from its last T, its state kept, balls off every free trajectory drawn in another colour, and a count of them and of the
+digits held shown in the menu. Hook `rings()` (each ring's places, the unequal ring's off count, events and digits) and
+`ringCheck(Tend, n)` (the equal ring's read from T alone against the same ring stepped, at n times to Tend).
+
+- Q1: at 40 times to T = 400 the equal ring's read from T alone equals the stepped equal ring exactly (every place).
+- Q2: the unequal ring's off count is 0 before its first unequal contact (T = 5.0), 2 at it, and 16 at T = 400, as run
+  17's seed 1.
+- Q3: with the rings on, the held things are unchanged: 0 missing and 0 extra against a blueprint made about the eye; no
+  page errors.
+
+**Run 18** (headless Chromium through the hook, `?time=0`, 1280 × 720; no page errors). Nothing killed.
+- Q1: at 40 times to T = 400 the equal ring's read from T alone equals the same ring stepped at every place (0
+  mismatched, 164 contacts stepped).
+- Q2: the unequal ring's off count 0 at T = 4, 4.83 and 5, 2 at T = 5.17 (the first unequal contact at T = 5.005), 6 at
+  T = 40, 12 at 80, 16 at 200 and 400; 173 contacts by T = 400, its places held to 21 digits: run 17's seed 1 exactly.
+- Q3: with the rings on, 2,195 things held at the start, 0 missing and 0 extra against a blueprint made about the eye.
+
+On the page: the left square is the equal ring, white, drawn from T alone; the right is masses 1 (small) and 2 (large),
+teal while on a free path and red once off every one; the menu's "things that touch" gives T, the contacts, the digits
+held and the count off.
+
+## Run 19: things that touch, in two dimensions (predictions, 14 November 2026, written and committed before any code;
+Tom: "1, then 3")
+
+Run 17 was one dimension, where equal masses keep a law in T. In two dimensions that law should go: when two things touch
+along one axis, they exchange that component of velocity and keep the other, so each leaves with a mix of the two, on
+neither's free path. Hard discs would need square roots to find their contact times, so they cannot be followed in exact
+fractions; hard squares that do not turn keep every contact time rational, so the run uses them (16 squares of side 8 on
+a torus 100 on a side, the smooth elastic rule: the component normal to the touching faces exchanged as in one dimension,
+the other kept). Seeds 1, 2 and 3, places on a jittered grid with no overlap, velocity components rational in [−5, 5],
+equal masses and masses 1 and 2, worked event by event to T = 400 (`runs/twk/run19.mjs`).
+
+- D1: with equal masses the law of run 17 does not hold: after the first contact between two squares whose other
+  components differ, the set of (place, velocity) differs from the free set, and the count off every free path is 2.
+- D2: with equal masses that count reaches all 16 by T = 400 in every seed.
+- D3: what is left of a law with equal masses: the multiset of x components and the multiset of y components of
+  velocity are each unchanged exactly at every contact (a contact swaps one component between two squares); with masses
+  1 and 2 they are not, after the first unequal contact.
+- D4: momentum and energy exact after every contact; no two squares ever overlap; corner contacts (both axes at once)
+  counted and reported.
+
+What it would mean: if D1 and D2 hold, one dimension was special: in two, equal masses lose the law in T and the state to
+keep spreads to every thing touched, as unequal masses did in one; only the velocity components as sets survive (D3).
+
+**Run 19** (`runs/twk/run19.mjs`, output `runs/twk/run19-out.json`; exact fractions, event by event, seeds 1–3). D1 killed
+by my code: the sets of places were compared as strings of the fraction objects, every one "[object Object]", so every
+set compared equal. D2, D3, D4 as in run 19b below (that code was unchanged).
+
+**Run 19b** (`runs/twk/run19b.mjs`, output `runs/twk/run19b-out.json`; run 19 with the comparison written as n/d strings,
+nothing else changed). Nothing killed.
+- D1: with equal masses the first contact between squares whose other components differ comes at T = 3.07, 1.29, 2.34
+  (seeds 1–3); the count off every free path there is 2, and at every later compared time the set of places differs
+  from the free set.
+- D2: all 16 off every free path by T = 40, the first compared time after, and at every later one, in all three seeds;
+  576, 614 and 549 contacts by T = 400.
+- D3: with equal masses the multisets of x and of y components of velocity are unchanged exactly at all 40 compared
+  times in every seed; with masses 1 and 2 they differ at every compared time after the first unequal contact.
+- D4: momentum (both components) and energy exact after every contact; no overlap; no corner contact and no square in
+  two contacts at once.
+
+Post hoc, not predicted: with equal masses every number held stays as short as the start's (4 digits at T = 400), since
+a contact only passes components between squares; with masses 1 and 2 the places reach 25 to 32 digits by T = 400.
+
+What it shows: one dimension was special. In two, equal masses lose the law in T at the first contact that mixes two
+squares' components, and the state to keep spreads to every square within T = 40; only the velocity components as sets
+remain. Hard squares, not discs (a disc's contact time needs a square root); 16 things on a torus.

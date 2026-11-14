@@ -581,6 +581,68 @@ function moverSteps(checks = [1, 10, 100, 1000, 10000]) {
 }
 function moverVelocities() { const T = S.tick, m = moversNear(); return { held: m.length, distinct: new Set(m.map(t => velocityOf(t, T).join(','))).size }; }
 
+
+// ---------- run 17 on the page: two rings of colliding balls (TWK run 18; R954; Tom: "1, then 3") ----------
+// Run 17's seed-1 worlds: 16 balls on a ring of length 1000, elastic contact. The equal-mass ring is drawn from T alone
+// (the free places mod L, ball k at rank W(T) + k mod N), keeping nothing; the ring of masses 1 and 2 is stepped event by
+// event in exact fractions, its state kept, and a ball off every free trajectory drawn red. Ring time T = tick/6. Each
+// ring is laid on the outline of a square 62.5 units on a side, standing square to the start's look. `?rings=0` hides them.
+const RINGS = QS.get('rings') !== '0', RN = 16, RL = Fr.make(1000), RQ = Fr.make(250);
+function ringWorld(seed, unequal) {   // run 17's world(), the same generator
+    let s = seed >>> 0; const rnd = () => ((s = (Math.imul(s, 1103515245) + 12345) >>> 0) / 4294967296);
+    const xs = new Set(); while (xs.size < RN) xs.add(Math.floor(rnd() * 1000 * 1000));
+    const x = [...xs].sort((a, b) => a - b).map(v => Fr.make(v, 1000));
+    const vs = new Set(); while (vs.size < RN) vs.add(Math.floor(rnd() * 10001) - 5000);
+    const v = [...vs].map(u => Fr.make(u, 1000));
+    const m = Array(RN).fill(1); if (unequal) { const idx = [...Array(RN).keys()]; for (let i = RN - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [idx[i], idx[j]] = [idx[j], idx[i]]; } idx.slice(0, RN / 2).forEach(i => m[i] = 2); }
+    return { x0: x, v0: v, m: m.map(k => Fr.make(k)), unequal, st: null };
+}
+const RW = { eq: ringWorld(1, false), un: ringWorld(1, true) };
+const rcmp = (a, b) => { const x = a.n * b.d - b.n * a.d; return x < 0n ? -1 : x > 0n ? 1 : 0; };
+const rmod = a => Fr.sub(a, Fr.mul(RL, Fr.make(floorFr(a, RL))));
+function ringRead(w, T) {   // from T alone: the free places mod L, ball k at rank W(T) + k; nothing kept
+    const fr = w.x0.map((x, k) => Fr.add(x, Fr.mul(w.v0[k], T))), fm = fr.map(rmod).sort(rcmp);
+    const W = fr.reduce((a, f) => a + floorFr(f, RL), 0n), Wm = Number(((W % BigInt(RN)) + BigInt(RN)) % BigInt(RN));
+    return fm.map((_, k) => fm[(Wm + k) % RN]);
+}
+function ringStep(w, T) {   // stepped event by event from the last T (from 0 if time went back); the state kept
+    if (!w.st || rcmp(T, w.st.t) < 0) w.st = { t: Fr.make(0), y: w.x0.slice(), v: w.v0.slice(), events: 0, firstUnequal: null };
+    const st = w.st, m = w.m;
+    for (;;) {
+        let best = null, who = [];
+        for (let i = 0; i < RN; i++) { const k = (i + 1) % RN, gap = k ? Fr.sub(st.y[k], st.y[i]) : Fr.sub(Fr.add(st.y[0], RL), st.y[i]), dv = Fr.sub(st.v[i], st.v[k]);
+            if (dv.n <= 0n) continue; const dt = Fr.div(gap, dv), c = best ? rcmp(dt, best) : -1;
+            if (c < 0) { best = dt; who = [i]; } else if (c === 0) who.push(i); }
+        if (!best || rcmp(Fr.add(st.t, best), T) > 0) { const dt = Fr.sub(T, st.t); st.y = st.y.map((y, k) => Fr.add(y, Fr.mul(st.v[k], dt))); st.t = T; break; }
+        st.y = st.y.map((y, k) => Fr.add(y, Fr.mul(st.v[k], best))); st.t = Fr.add(st.t, best);
+        for (const i of who) { const k = (i + 1) % RN, m1 = m[i], m2 = m[k], sm = Fr.add(m1, m2);
+            const v1 = Fr.div(Fr.add(Fr.mul(Fr.sub(m1, m2), st.v[i]), Fr.mul(Fr.make(2), Fr.mul(m2, st.v[k]))), sm);
+            const v2 = Fr.div(Fr.add(Fr.mul(Fr.sub(m2, m1), st.v[k]), Fr.mul(Fr.make(2), Fr.mul(m1, st.v[i]))), sm);
+            st.v[i] = v1; st.v[k] = v2; st.events++; if (!Fr.eq(m1, m2) && !st.firstUnequal) st.firstUnequal = st.t; }
+    }
+    return st;
+}
+function ringOff(w, st) {   // which balls are off every free trajectory (place mod L and velocity)
+    const fr = w.x0.map((x, k) => [rmod(Fr.add(x, Fr.mul(w.v0[k], st.t))), w.v0[k]]);
+    return st.y.map((y, k) => { const p = rmod(y); return !fr.some(([q, u]) => Fr.eq(q, p) && Fr.eq(u, st.v[k])); });
+}
+const RCEN = [[-45, 72, 140], [45, 72, 140]];   // the two squares' centres
+function ringXY(u) {   // a place on the ring (0 to 1000) to the square's outline, a quarter of a unit to the ring unit
+    const q = Math.floor(u / 250), a = (u - 250 * q) / 4, h = 31.25;
+    return q === 0 ? [-h + a, -h] : q === 1 ? [h, -h + a] : q === 2 ? [h - a, h] : [-h, h - a];
+}
+const RBOX1 = edgesOf({ kind: 'box', w: 2.5, d: 2.5, h: 2.5 }), RBOX2 = edgesOf({ kind: 'box', w: 3.6, d: 3.6, h: 3.6 });
+function ringTime() { return Fr.make(S.tick, 6n); }
+function ringsNow() {
+    const T = ringTime(), eqP = ringRead(RW.eq, T), st = ringStep(RW.un, T), off = ringOff(RW.un, st);
+    return { T, eq: eqP, un: st.y.map(rmod), off, st };
+}
+function ringCheck(Tend = 400, n = 40) {   // Q1: the equal ring's read from T alone against the same ring stepped
+    const w = ringWorld(1, false); let bad = 0, worst = 0;
+    for (let j = 1; j <= n; j++) { const T = Fr.make(Tend * j, n), r = ringRead(w, T), st = ringStep(w, T), y = st.y.map(rmod);
+        const k = r.reduce((c, p, i) => c + (Fr.eq(p, y[i]) ? 0 : 1), 0); bad += k; worst = Math.max(worst, k); }
+    return { times: n, Tend, mismatched: bad, events: w.st.events };
+}
 // ---------- the pose ----------
 const params = new URLSearchParams(location.search);
 const S = {
@@ -881,6 +943,21 @@ function frame() {
         g.stroke();
     }
     g.globalAlpha = 1;
+    if (RINGS) {   // run 17 on the page: the equal ring read from T alone, the unequal ring stepped (TWK run 18)
+        const R = ringsNow(); S.ringLast = R;
+        RCEN.forEach((c, ri) => {
+            const C = [0, 1, 2].map(k => Fr.num(Fr.sub(Fr.dy(c[k]), S.eye[k])));
+            g.strokeStyle = 'rgba(232,237,245,0.4)'; g.lineWidth = 1; g.beginPath();
+            const h = 31.25, sq = [[-h, -h], [h, -h], [h, h], [-h, h]];
+            for (let k = 0; k < 4; k++) { const a = sq[k], b = sq[(k + 1) % 4]; const s2 = edge(project([C[0] + a[0], C[1] + a[1], C[2]], P), project([C[0] + b[0], C[1] + b[1], C[2]], P)); if (s2) { g.moveTo(...s2[0]); g.lineTo(...s2[1]); } }
+            g.stroke();
+            const places = ri ? R.un : R.eq;
+            places.forEach((p, k) => { const xy = ringXY(Fr.num(p)), r = [C[0] + xy[0], C[1] + xy[1], C[2]];
+                const heavy = ri && RW.un.m[k].n === 2n; g.strokeStyle = ri ? (R.off[k] ? '#f87171' : '#4fd1c5') : '#e8edf5'; g.lineWidth = 1.3; g.beginPath();
+                for (const [a, b] of (heavy ? RBOX2 : RBOX1)) { const s2 = edge(project(add3(a, r), P), project(add3(b, r), P)); if (s2) { g.moveTo(...s2[0]); g.lineTo(...s2[1]); } }
+                g.stroke(); });
+        });
+    }
     // the three thumbs: each lands at r = √2 on the screen; the triangle between them the wedge's edge
     if (S.show.thumbs) {
         const pts = [P.a, P.b, P.c].map(d => screenOf(project(d, P)));
@@ -988,6 +1065,8 @@ function panelHtml() {
     if (S.show.checks) {
         h += `<h3>how dense the world is (N: n doubles it, k holds K)</h3><p>${DENS} thing${DENS === 1 ? '' : 's'} a cell. The read holds ${CULL.perLevel.reduce((a, [, n]) => a + n, 0).toLocaleString()}, looking at ${CULL.examined.toLocaleString()} things in ${CULL.scanned.toLocaleString()} cells${KFIX ? `; K held near ${KFIX.toLocaleString()} by its own count, the grain ×${GS.toFixed(2)}` : ''}.${S.show.god ? ` A blueprint stored over the ${2 * BP.R0} square at scales 0 to ${BP.top} would hold ${(blueprint().list.length).toLocaleString()}.` : ''}</p>`;
         h += S.twoLast ? `<h3>two ways (c)</h3><p>The same ${S.twoLast.poses} poses drawn the page's way and a classical way (yaw and pitch in radians, the frame from Math.cos and Math.sin). Trigonometric calls: the page ${Object.values(S.twoLast.trig.ours).reduce((a, b) => a + b, 0)}, the classical way ${S.twoLast.trig.classical.sin + S.twoLast.trig.classical.cos} sines and cosines (plus ${S.twoLast.trig.classical.atan} arctangents for its fixed base frame). The two pictures differ by at most ${S.twoLast.maxPx.toExponential(1)} px over ${S.twoLast.segs.toLocaleString()} segments. Turns retraced: the page back ${S.twoLast.retrace.pageExact ? 'exactly' : 'not exactly'}, the classical yaw ${Math.abs(S.twoLast.retrace.classicalYawLeft).toExponential(1)} rad off. Both lay the world on a signed grid of cells and hold the eye in it.</p>` : '<p>Press c to draw the same walk two ways.</p>';
+        if (RINGS && S.ringLast) { const R = S.ringLast, off = R.off.filter(Boolean).length;
+            h += `<h3>things that touch (TWK runs 17, 18)</h3><p>Two rings of 16 balls in the sky ahead, elastic contact, ring time T = ${Fr.num(R.T).toFixed(1)}. Left, equal masses: drawn from T alone (the free places, ball k at rank W(T) + k), nothing kept. Right, masses 1 (small) and 2 (large): stepped contact by contact, its state kept, ${R.st.events} contacts so far, its places held to ${Math.max(...R.st.y.map(Fr.digits))} digits; ${off} of 16 off every free path (red).</p>`; }
         h += `<h3>what is held</h3><p>Things at every scale, levels −${BELOW} to ${LEVELS}; kept when their breadth is at least the grain times their distance, the grain 1/32 at the focus's scale (now ${S.focus})${SHARE === 'cauchy' ? ' and √cosh(k·ln 2) times that k scales away, so each scale holds its Cauchy share, sech(k·ln 2)' : ', the same at every scale'}. Kept now, by level: ${CULL.perLevel.filter(([, n]) => n).map(([l, n]) => l + ': ' + n).join(', ')} (${CULL.perLevel.reduce((a, [, n]) => a + n, 0)} in all), from ${CULL.scanned} cells. How far the world goes never enters.</p>`;
         h += '<h3>the checks (plans/twk-plan.md)</h3><table>' + checks().map(c =>
             `<tr><td>${c.id}</td><td class="${c.ok === null ? '' : c.ok ? 'ok' : 'bad'}">${c.ok === null ? '·' : c.ok ? 'holds' : 'fails'}</td><td>${c.text}</td></tr>`).join('') + '</table>';
@@ -1092,6 +1171,7 @@ window.__thumbsWalk = {
     }, stride, sky, skyShares, eyeDigits, anchors: () => S.anchors, approach, backOff, blueprint: () => { const B = blueprint(); return { N: B.list.length, cells: B.cells, R0: B.R0, top: B.top }; }, besideBlueprint, toHere, outTenfold, twoWays, density: () => ({ dens: DENS, kfix: KFIX, gs: GS, held: thingsNear().length, scanned: CULL.scanned, examined: CULL.examined }), againstStored, againstMade, walkTest, buildCount, cellFormula,
     digits: () => ({ eye: eyeDigits(), slopes: slopeDigits(exactOf(S.target)), focus: S.focus, goes: S.goes }),
     target: () => S.target, pose,
+    rings: () => { const R = ringsNow(); return { T: Fr.str(R.T), eq: R.eq.map(Fr.str), un: R.un.map(Fr.str), off: R.off.filter(Boolean).length, events: R.st.events, firstUnequal: R.st.firstUnequal && Fr.num(R.st.firstUnequal), digits: Math.max(...R.st.y.map(Fr.digits)) }; }, ringCheck,
     fadeOf: t => fadeOf(t), marginOf: t => marginOf(t), exactOfThing: t => exactOf(t), againstMadeNow: h => againstMade(h), moversNear, moversAgainstStepped, moverSteps, moverVelocities, groundNear: () => groundNear(), tick: () => S.tick.toString(),
     set(o) { if (o.q !== undefined || o.ky !== undefined || o.kp !== undefined || o.eye) S.lock = null; if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
         if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.anchor !== undefined) S.anchor = !!o.anchor; if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
