@@ -19,7 +19,7 @@
     speed, direction and phase, its place at tick T exact from T alone. Traffic: 48 cars in a district of 8 by 8 blocks at
     the origin, one-way streets, each car waiting for the one ahead and turning only when the other lane is clear, its state
     stepped from the moment the page opens; each with a ghost that flies the same rules alone.
-    W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E or drag or the arrows turn, G half way to the thing
+    W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E or drag or the arrows turn, the crosshairs follow the mouse, G half way to the thing
     under the crosshair, B back, the wheel sets the thumb, H holds it, T pauses time, M the menu.
     ?x=&y=&z=&q=&ky=&kp=&tick=&time=0&loops=0&traffic=0&menu=1&heat=1
     Hook window.__skyCity: Fr, set(o), state(), cull(), againstMade(half), againstStepped(o), trigFree(steps), scaleCheck(),
@@ -72,7 +72,7 @@
 </div>
 <div id="panel">
     <h2>Sky city</h2>
-    <p>W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E, a drag or the arrow keys turn, G half way to the thing under the crosshair, B back to twice as far, the wheel sets the thumb, H holds it, T stops and starts time, M the menu.</p>
+    <p>W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E, a drag or the arrow keys turn, the crosshairs follow the mouse (the middle of the screen on a touch screen), G half way to the thing under the crosshair, B back to twice as far, the wheel sets the thumb, H holds it, T stops and starts time, M the menu.</p>
     <p>On a touch screen: drag to look; two fingers dragged together fly (up the screen forward, across sideways), spread or closed they set the thumb; hold the arrows to fly, ↑ and ↓ up and down.</p>
     <h3>show</h3>
     <label><input type="checkbox" id="optLoops" checked> cars on their own loops (placed from the tick alone)</label>
@@ -281,7 +281,7 @@ const TCARS = Array.from({ length: TN }, (_, k) => ({ kind: 'car', traffic: true
 const S = {
     q: Math.round(+QS.get('q') || 0), ky: Math.round(+QS.get('ky') || 0), kp: Math.round(+QS.get('kp') || 0), dragX: 0, dragY: 0,
     eye: [Fr.make(QS.has('x') ? Math.round(+QS.get('x')) : 0), Fr.make(QS.has('y') ? Math.max(1, Math.round(+QS.get('y'))) : 30), Fr.make(QS.has('z') ? Math.round(+QS.get('z')) : -60)],
-    H: null, holdH: false, target: null, lock: null, tick: BigInt(QS.get('tick') || 0), run: QS.get('time') !== '0', tAcc: 0, tPrev: 0,
+    H: null, holdH: false, target: null, lock: null, cur: null, tick: BigInt(QS.get('tick') || 0), run: QS.get('time') !== '0', tAcc: 0, tPrev: 0,
     lastHeading: null, anchors: 0, goes: 0, loops: LOOPS0, traffic: TRAFFIC0, live: 0,
     show: { heat: QS.get('heat') === '1', read: true, held: true, cars: true, checks: false, about: false },
 };
@@ -325,7 +325,7 @@ function towardTarget(f) {   // G and B: half way to, or back to twice as far fr
 
 // ---------- the read's heat, and what is held ----------
 const RD = { F: [0, 0, 1], Hp: 48 };
-function readFrame() { const P = pose(); RD.F = P.F; RD.Hp = SQ3 * Math.max(1e-6, S.H || 48); return RD; }
+function readFrame() { const P = pose(); RD.F = crossDir(P); RD.Hp = SQ3 * Math.max(1e-6, S.H || 48); return RD; }
 function grainFor(r) {
     const d = Math.hypot(r[0], r[1], r[2]), c = (r[0] * RD.F[0] + r[1] * RD.F[1] + r[2] * RD.F[2]) / d;
     if (!(c > 0)) return Infinity;
@@ -463,11 +463,26 @@ let W = 0, Hh = 0, foc = 1, heatImg = null;
 function resize() {
     const dpr = Math.min(2, window.devicePixelRatio || 1); W = innerWidth; Hh = innerHeight;
     cv.width = W * dpr; cv.height = Hh * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0); foc = (W / 2) / 1.2;
+    heatKey = null;
+}
+// the heat painted about the crosshair: cos³ of each pixel's turn off the crosshair's direction (at the screen's middle,
+// (1 + x² + y²)^(−3/2), the flat screen's own); rebuilt only when the crosshair moves and the heat is shown
+let heatKey = null;
+function heatAbout(cx0, cy0) {
+    const key = W + ',' + Hh + ',' + cx0 + ',' + cy0; if (heatKey === key) return heatImg; heatKey = key;
     const w = Math.ceil(W / 4), h = Math.ceil(Hh / 4), c = document.createElement('canvas'); c.width = w; c.height = h;
-    const cx = c.getContext('2d'), im = cx.createImageData(w, h);
-    for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) { const x = (i * 4 - W / 2) / foc, y = (j * 4 - Hh / 2) / foc, q = Math.pow(1 + x * x + y * y, -1.5), k = 4 * (j * w + i);
+    const cx = c.getContext('2d'), im = cx.createImageData(w, h), X = (cx0 - W / 2) / foc, Y = (cy0 - Hh / 2) / foc, nC = Math.sqrt(1 + X * X + Y * Y);
+    for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) { const x = (i * 4 - W / 2) / foc, y = (j * 4 - Hh / 2) / foc,
+        cb = Math.max(0, (x * X + y * Y + 1) / (Math.sqrt(1 + x * x + y * y) * nC)), q = cb * cb * cb, k = 4 * (j * w + i);
         im.data[k] = 7 + 30 * q; im.data[k + 1] = 11 + 34 * q; im.data[k + 2] = 18 + 52 * q; im.data[k + 3] = 255; }
-    cx.putImageData(im, 0, 0); heatImg = c;
+    cx.putImageData(im, 0, 0); heatImg = c; return c;
+}
+// where the crosshair is on the screen: the mouse cursor when there is one over the page, else the middle
+function crossAt() { return S.cur ? S.cur : [W / 2, Hh / 2]; }
+function crossDir(P) {   // the crosshair's direction from the eye, a unit vector
+    if (!S.cur) return P.F; project([0, 0, 1], P);
+    const [U, Rt] = P.UR, F = P.F, x = (S.cur[0] - W / 2) / foc, y = -(S.cur[1] - Hh / 2) / foc;
+    const v = [0, 1, 2].map(k => F[k] + x * Rt[k] + y * U[k]), n = Math.hypot(...v); return v.map(c => c / n);
 }
 function project(v, P) {
     const F = P.F; if (!P.UR) { const d = F[1]; let U = [-d * F[0], 1 - d * F[1], -d * F[2]]; const n = Math.hypot(...U); U = U.map(x => x / n);
@@ -553,7 +568,7 @@ function drawFilled(things, P) {
 function frame() {
     const P = pose(), ey = Fr.num(S.eye[1]);
     g.fillStyle = '#070b12'; g.fillRect(0, 0, W, Hh);
-    if (S.show.heat && heatImg) g.drawImage(heatImg, 0, 0, W, Hh);
+    if (S.show.heat) g.drawImage(heatAbout(...crossAt()), 0, 0, W, Hh);
     // the streets: each block's kerb (6 and 42 of the cell), within 24 cells of the eye
     { const ci = floorFr(S.eye[0], CELLF), cj = floorFr(S.eye[2], CELLF), ex = Fr.num(Fr.sub(S.eye[0], Fr.mul(Fr.make(ci), CELLF))), ez = Fr.num(Fr.sub(S.eye[2], Fr.mul(Fr.make(cj), CELLF))), Rg = 24 * CELL;
       g.strokeStyle = 'rgba(135,150,171,0.13)'; g.lineWidth = 1; g.beginPath();
@@ -566,13 +581,13 @@ function frame() {
         for (let k = 0; k < 4; k++) { const a = q[k], b = q[(k + 1) % 4], s = edge(project([a[0] - E[0], -E[1], a[1] - E[2]], P), project([b[0] - E[0], -E[1], b[1] - E[2]], P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } }
         g.stroke(); }
     const things = thingsNear(); let best = null, bt = Infinity;
-    for (const t of things) { const hit = rayBoxes(P.F, t); if (hit !== null && hit < bt) { bt = hit; best = t; } }
+    for (const t of things) { const hit = rayBoxes(RD.F, t); if (hit !== null && hit < bt) { bt = hit; best = t; } }
     if (S.lock !== best) S.lock = null;   // what is behind something drawn is never under the crosshair
     S.target = best;
     if (S.target && !S.holdH) { const x = [P.a, P.b, P.c].map(v => S.target.r[0] * v[0] + S.target.r[1] * v[1] + S.target.r[2] * v[2]); S.H = Math.max(1e-6, (x[0] + x[1] + x[2]) / 3); }
     drawFilled(things, P);
     g.strokeStyle = '#f2c14e'; g.lineWidth = 1.4; g.beginPath();
-    g.moveTo(W / 2 - 9, Hh / 2); g.lineTo(W / 2 + 9, Hh / 2); g.moveTo(W / 2, Hh / 2 - 9); g.lineTo(W / 2, Hh / 2 + 9); g.stroke();
+    { const [cx, cy] = crossAt(); g.moveTo(cx - 9, cy); g.lineTo(cx + 9, cy); g.moveTo(cx, cy - 9); g.lineTo(cx, cy + 9); g.stroke(); }
 }
 
 // ---------- the panel ----------
@@ -650,7 +665,8 @@ cv.addEventListener('pointerdown', ev => { cv.setPointerCapture(ev.pointerId); p
 function ptrUp(ev) { ptrs.delete(ev.pointerId); if (ptrs.size < 2) pinch = null;
     if (ptrs.size === 1) { const p = [...ptrs.values()][0]; drag = [p[0], p[1]]; } else if (!ptrs.size) drag = null; }
 cv.addEventListener('pointerup', ptrUp); cv.addEventListener('pointercancel', ptrUp);
-cv.addEventListener('pointermove', ev => { if (!ptrs.has(ev.pointerId)) return; ptrs.set(ev.pointerId, [ev.clientX, ev.clientY]);
+cv.addEventListener('pointerleave', ev => { if (ev.pointerType === 'mouse') S.cur = null; });
+cv.addEventListener('pointermove', ev => { if (ev.pointerType === 'mouse') S.cur = [ev.clientX, ev.clientY]; if (!ptrs.has(ev.pointerId)) return; ptrs.set(ev.pointerId, [ev.clientX, ev.clientY]);
     if (pinch && ptrs.size >= 2) {   // two fingers: dragged together they fly (up the screen forward, across sideways); spread or closed they set the thumb
         const [p, q] = [...ptrs.values()], d = Math.hypot(p[0] - q[0], p[1] - q[1]) || 1, m = [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2];
         const mx = m[0] - pinch.m[0], my = m[1] - pinch.m[1];
@@ -702,11 +718,11 @@ window.__skyCity = {
                check: trafficCheck, pieces: trafficPieces },
     onScreen: t => { const s = project(t.r, pose()); if (s[2] <= 0) return false; const p = screenOf(s); return p[0] >= 0 && p[0] <= W && p[1] >= 0 && p[1] <= Hh; },
     set(o) { if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
-        if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
+        if (o.cur !== undefined) S.cur = o.cur; if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
         if (o.tick !== undefined) S.tick = BigInt(o.tick); if (o.run !== undefined) S.run = !!o.run;
         if (o.loops !== undefined) S.loops = !!o.loops; if (o.traffic !== undefined) S.traffic = !!o.traffic;
         S.lock = null; frame(); return this.state(); },
-    hits() { const P = pose(); return thingsNear().map(t => ({ t, d: rayBoxes(P.F, t) })).filter(x => x.d !== null).sort((a, b) => a.d - b.d)
+    hits() { const out = thingsNear(); return out.map(t => ({ t, d: rayBoxes(RD.F, t) })).filter(x => x.d !== null).sort((a, b) => a.d - b.d)
         .map(x => ({ key: x.t.key, kind: x.t.kind, d: x.d })); },   // what the crosshair's ray meets among the things drawn, nearest first
     state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH, tick: S.tick.toString(),
         target: S.target ? { kind: S.target.kind, key: S.target.key } : null }),
