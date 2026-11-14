@@ -272,6 +272,12 @@ that simplicity counts for its own sake. It buys exactness: a walk retraced come
 no slope. It costs growing digits, turns in steps and slower arithmetic, and classical fixes reach the same ends another
 way (`thumbs-walk.html`, `sky-city.html`; *Reads and Writes* §9 "Run as code").
 
+The same holds across the laws *Reads and Writes* states. Of 125, 82 carry π or e; restated in slopes and shares, with
+fractions and square roots only and checked exactly, 30 of them lose it: projections written as a cosine, a chart whose
+relation survives without the angle, and the loops that come back turned. None of the limits loses it. Where π or e stays,
+a limit is taken, a chart or a total is itself what is stated, or a whole turn is counted as a period (the PIE, NTN and HLX
+runs; *Reads and Writes* §1 "Where π and e are content"; the twenty-third essay, section 8).
+
 ## 7. It has been done
 
 This is not only a way of talking. The draw project's Tangent Bridge, the theorem behind its curve format, was proved in
