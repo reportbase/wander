@@ -38,3 +38,23 @@ shared sum between reads written rationally.
 ## Runs
 
 (appended below as they come out; nothing above this line edited afterwards)
+
+### Run 1 (14 Nov 2026; flag `runs/pie/flag.py` → `runs/pie/flagged.md`, blind classification `runs/pie/blind-class.md`,
+### counts `runs/pie/pie-run1.txt`)
+
+Before the classification the flag's pattern missed law 75 (its formula has no colon); fixed, 82 of 125 flagged.
+
+- **T1 killed**: A 34, L 32, X 16; A or L 80.5% of the flagged, under 90%.
+- **T2 killed**: 8 of the 19 blind P or S laws are flagged (2, 75, 78, 80, 93, 108, 109, 123), over 6.
+- T3 not killed, at its edge: 8 of 82 flagged laws (9.8%) were called P or S blind.
+- T4 not killed: A 41%, the chart route not rare.
+
+Said plainly: π and e do not enter the laws only through an additive chart or a limit. Post hoc, the 16 X fall into:
+projections, a share of a direction written as the cosine or sine of an angle (21, 34, 35, 48, 53, 58, 61, 88: eight);
+the loops that do not close (89, 90, 92, 102: four, the holonomy laws); identities among angle functions (80
+sin² + cos² = 1, 93 (θ/sin θ)(sin θ/θ) = 1, 108 Ω·1/Ω = 1: three); and Kepler's 2π as one whole turn a period (83). An
+untested reading: the eleven projections and identities are the read's own shares, h = 1/√(1 + s²) and v = s/√(1 + s²),
+dressed in an angle; in the slope they carry no π, so their π is notation, not content. That would leave five laws whose
+π or e is neither a chart, a limit nor notation: the four holonomy laws and Kepler's whole turn. Checking that reading
+needs a rule written first for when a law's π "is notation" (it disappears when the law is restated in the slope),
+applied blind; not done here.

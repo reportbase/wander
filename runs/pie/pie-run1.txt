@@ -1,0 +1,23 @@
+flagged 82; A 34, L 32, X 16
+T1 A+L share 0.805 (kill under 0.90)
+T2 blind P/S 19, flagged among them 8 [2, 75, 78, 80, 93, 108, 109, 123] (kill over 6)
+T3 flagged that blind called P/S 8/82 = 0.098 (kill over 0.10)
+T4 A share 0.415 (kill under 0.20)
+X laws:
+  21 a cosine as a metric stretch of a turned chart, not a composition chart.
+  34 cos³α a projection (Jacobian) factor; the 3D polar angle off the look does not add under composition.
+  35 1 − cos α, a cap's share by projection; polar angle not an additive chart.
+  48 cos θ′ enters as a projection in the Doppler formula, no additive chart.
+  53 2 sin(α/2) is a chord length, a projection, not a composition chart.
+  58 cotangents of two inward angles as projections; no composition.
+  61 ratio of cotangents, projection geometry.
+  80 sin² + cos² = 1, the Pythagorean identity, no composition or limit.
+  83 went by Kepler, 2π as one whole turn per period; not a chart composition or a limit.
+  88 Cartesian coordinates from angles by projection.
+  89 holonomy of non-commuting turns, not an additive chart.
+  90 leftover of a non-closing loop; non-commuting composition.
+  92 Thomas–Wigner leftover of non-commuting boosts.
+  93 an identity of reciprocal ratios of θ and sin θ.
+  102 Trotter leftover of non-commuting turns in space.
+  108 products of reciprocals equal 1; no limit or chart.
+P/S flagged: [(2, 'P', 'A'), (75, 'P', 'A'), (78, 'S', 'L'), (80, 'S', 'X'), (93, 'P', 'X'), (108, 'P', 'X'), (109, 'S', 'L'), (123, 'S', 'A')]

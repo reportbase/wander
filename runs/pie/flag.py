@@ -5,7 +5,7 @@ TOK = re.compile(r"π|Ω|e\^|e\(|\bexp\b|\bln\b|\blog\b|\bsin\b|\bcos\b|\btan\b|
                  r"sinh\(|cosh\(|tanh\(|sech\(|sin θ|cos θ|tan θ|e\b(?= =)")
 out = []
 for line in open('runs/lws/laws.md', encoding='utf-8'):
-    m = re.match(r'(\d+)\. \*\*(.+?)\*\*: (.*)$', line.strip())
+    m = re.match(r'(\d+)\. \*\*(.+?)\*\*:? ?(.*)$', line.strip())
     if not m:
         continue
     n, name, rest = int(m.group(1)), m.group(2), m.group(3)
