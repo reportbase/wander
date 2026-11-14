@@ -816,3 +816,98 @@ a contact only passes components between squares; with masses 1 and 2 the places
 What it shows: one dimension was special. In two, equal masses lose the law in T at the first contact that mixes two
 squares' components, and the state to keep spreads to every square within T = 40; only the velocity components as sets
 remain. Hard squares, not discs (a disc's contact time needs a square root); 16 things on a torus.
+
+## Run 20: the read's own heat decides what is held (predictions, 14 November 2026, written and committed before any
+change; Tom: "yes, use cauchy, this demo should showcase the math of the paper.")
+
+Until now each scale's grain was set by its distance in whole scales from one focus, √cosh(k·ln 2), the same over the
+whole view. Run 20 sets each thing's grain by the read's heat where it stands, *Reads and Writes* §7: the heat per unit of
+reading cos³α off the look times the heat per ratio sech(ln ρ), ρ = d/(√3·H) its distance against the thumb H (the page's
+own H, set by the thing under the crosshair, the wheel or a pinch; √3 since H is a reach along each of the three thumbs).
+A thing of breadth b at distance d is kept when b ≥ g·d with g = G·√(cosh ln ρ)/cos^(3/2) α (G the grain, 1/32), so on
+a ground the count kept goes as the heat; nothing behind the look (cos α ≤ 0) is held. No whole scales, no focus switch:
+the look moves the heat with it and H moves it in distance. The old rule stays at `?heat=0`.
+
+- R1: the number held is about the same wherever the look points: over 16 looks (8 turns of an eighth, two tilts) at the
+  start, the largest within 1.5 times the smallest.
+- R2: the number held does not depend on H: with H set to 2^k times its start value, k = −6 … 6, every count within 15%
+  of the count at k = 0 (the scales without end, −8 to 8, make the sum over scales the same at every H).
+- R3: a one-step pan never switches many at once: over 120 one-step pans the largest change in any held thing's drawn
+  strength (the fade, R953) in one step is under 0.35, and no step adds or drops more than 6% of what is held.
+- R4: against a blueprint made about the eye by the same rule from exact centres, 0 missing and 0 extra at five poses
+  (the start, turned, tilted, walked, H changed).
+- R5: nothing with cos α ≤ 0 is held.
+
+If R1 and R2 hold, the read holds about K things wherever it looks and whatever the thumb, with no count of the world
+entering: §6's "K and N" on the page, from the heat alone.
+
+**Run 20** (`runs/twk/run20.mjs`, output `runs/twk/run20-out.json`; headless Chromium, `?time=0&movers=0&rings=0`, no
+page errors). R1, R3 killed; R2 not tested (my set-up); R4, R5 not killed.
+- R1 killed: level looks hold 425 to 482, but tilted up (kp = 40) 223 to 241, a factor 2.16 against 1.5. The heat follows
+  the look, and the world's things stand on a ground: tilted up, much of the heat falls on empty sky. The count is K only
+  where the world fills the view.
+- R2 not tested, my set-up: the page's H is unset (null) until something is under the crosshair long enough, so "H × 2^k"
+  set it to 0 and every count was the fallback's 427.
+- R3 killed: worst change in drawn strength 1 in one step, up to 39% of what is held added or dropped in a step. Post hoc
+  (`scratchpad` probe): H follows whatever is under the crosshair, and panning across things 4 to 160 units off swung H
+  on almost every step, the distance heat with it (50 to 200 things a step).
+- R4 not killed: 0 missing, 0 extra at all five poses (446, 434, 171, 165, 70 held).
+- R5 not killed: nothing behind the look held.
+
+## Run 20b: H waits as the focus does (predictions, written and committed before the change)
+
+The fix for R3, as R952 did for the focus: H takes a new thing's distance only after it has stood under the crosshair
+0.4 s (or at once for the thing followed with G, B, or a thumb set by the wheel or a pinch), and keeps following that
+thing as the eye walks; with nothing under the crosshair H stays. R1 stays killed as stated (it was a claim about any
+look); here it is restated for level looks only.
+
+- R1b: over 8 level looks (kp = 0) the largest count within 1.5 times the smallest.
+- R2b: with H set to 2^k times the page's own √3·H at the start (read from the hook), k = −6 … 6, every count within 15%
+  of the count at k = 0.
+- R3b: over 120 one-step pans, 16 ms apart, the largest change in drawn strength in one step under 0.35 and no step
+  adding or dropping more than 6% of what is held.
+- R4b, R5b: as R4, R5.
+
+**Run 20b** (`runs/twk/run20b.mjs`, output `runs/twk/run20b-out.json`; the page's H waiting as stated). R1b, R4b, R5b not
+killed; R2b, R3b killed.
+- R1b not killed: 8 level looks hold 425 to 446.
+- R2b killed: with the page's own √3·H = 27.7 at the start (H = 16), H × 2^k held 38, 76, 144, 226, 306, 374, 428, 447,
+  487, 504, 509, 494, 488 for k = −6 … 6. Post hoc: at small H the heat's peak distance is nearer than anything can stand
+  (the eye is 2 units above a ground, so nothing is nearer than 2); at large H the count rises 19%. The sum over scales is
+  the same at every H only for a world without a ground and an eye height; this one has both.
+- R3b killed: worst change in drawn strength 0.885 in one step; worst step 17% of what is held. Post hoc (a probe, step
+  by step): at the start H went from unset to the first thing's distance with no glide (the glide had no starting
+  value); held things beside the eye (cos α near 0, off the screen) change strength fastest as the look turns, since
+  cos^(3/2) α is steepest there; and when the wait commits to a thing three times nearer, H's glide (0.12 s) moves it too
+  fast for the fade.
+- R4b: 0 missing, 0 extra at the five poses (404, 434, 171, 165, 70). R5b: nothing behind the look held.
+
+## Run 20c: the glide starts where H starts, and is slower (predictions, written and committed before the run)
+
+Changes: H's glide starts from the fallback (8 times the eye's height) rather than jumping to the first thing; in the heat
+mode H glides with a time constant of 0.4 s (the focus keeps 0.12 s). R3's measure is restated for what is drawn: things
+in front whose centre lands on the screen.
+
+- R3c: over 120 one-step pans, 16 ms apart, from a fresh start, the largest change in drawn strength in one step among
+  things on the screen under 0.35, and no step adding or dropping more than 6% of the things on the screen.
+- R4c: 0 missing, 0 extra at the five poses.
+
+**Run 20c** (`runs/twk/run20c.mjs`, output `runs/twk/run20c-out.json`). R3c killed by my measure; R4c not killed.
+- R3c killed by my measure: a thing turning onto the screen's edge at full strength counted as a change from 0 to 1
+  (worst 1, worst step 11.8% of the 55 to 122 things on the screen), though it slid in rather than appeared.
+- R4c not killed: 0 missing, 0 extra at the five poses (405, 434, 171, 165, 73).
+
+Post hoc, not a prediction (`runs/twk/run20c-posthoc.mjs`, `runs/twk/run20c-posthoc.json`): among things on the screen in
+both frames, the worst change in drawn strength in one step is 0.50, and at most 12% of them are added or dropped in a
+step. A probe step by step: one pan step turns the look about 0.9°, which moves a thing's margin 2–3% through cos^(3/2) α,
+and H's glide adds a few percent; the fade's band is 30% of margin (R953), so about 6% of margin is about 0.35 of strength
+in one step, a fade over three or four frames at 60 a second. Whether that reads as smooth is for the eye; the band was
+left as it is.
+
+Also, from the same runs: the movers (R948, R949) are kept by the same heat, 32 to 34 held at the start, 0 missing and 0
+extra against every mover stored and stepped; `?heat=0` gives the page as before (2,195 held, movers 167).
+
+What run 20 shows: the read's heat alone decides what is held. It holds nothing behind the look and moves with the look and
+the thumb, with no whole scales and no focus to switch; the count is near the same at every level look (R1b, 425–446) but
+falls looking up at an empty sky (R1) and changes with the thumb where the world has a ground and an eye height (R2b): K is
+what the heat finds, not a number set beforehand. Exact against a blueprint made by the same rule at every pose tried.

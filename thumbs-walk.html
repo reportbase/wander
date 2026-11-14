@@ -183,10 +183,25 @@ let GS = 1, KFIX = QS.get('kfix') ? Math.max(100, +QS.get('kfix')) : 0;
 // eases toward the whole-number focus over about a quarter of a second, so a new thing under the crosshair changes what is
 // held over several frames, not all at once. ?glide=0 keeps the step (as runs 1-14 had it).
 const GLIDE = QS.get('glide') !== '0';
-const DWELL = QS.has('dwell') ? Number(QS.get('dwell')) : 0.4;   // seconds a new focus must stand under the crosshair (R952)
 function grainAt(lv) { return GS * (SHARE === 'flat' ? GRAIN : GRAIN * Math.sqrt(coshL(lv - (GLIDE ? S.fg : S.focus)))); }
+// TWK run 20 (R957; Tom: "yes, use cauchy, this demo should showcase the math of the paper."): the read's own heat sets
+// each thing's grain, cos³α off the look times sech(ln ρ), ρ = d/(√3·H) against the thumb H: g = G·√cosh(ln ρ)/cos^(3/2)α,
+// so on a ground the count kept goes as the heat; nothing behind the look is held. ?heat=0 keeps the per-scale focus.
+const HEAT = QS.get('heat') !== '0', SQ3 = Math.sqrt(3);
+const RD = { F: [0, 0, 1], Hp: 16 };   // the look and √3·H, refreshed by readFrame()
+function readFrame() { const P = pose(); RD.F = P.F; RD.Hp = SQ3 * Math.max(1e-300, (GLIDE ? (S.Hg || S.H) : S.H) || 8 * Fr.num(S.eye[1])); return RD; }
+function grainFor(r, lv) {   // the grain where a thing stands: by its direction and distance (heat), or by its scale (?heat=0)
+    if (!HEAT) return grainAt(lv);
+    const d = Math.hypot(r[0], r[1], r[2]), c = (r[0] * RD.F[0] + r[1] * RD.F[1] + r[2] * RD.F[2]) / d;
+    if (!(c > 0)) return Infinity;
+    const rho = d / RD.Hp; return GS * GRAIN * Math.sqrt((rho + 1 / rho) / 2) / (c * Math.sqrt(c));
+}
+function dmaxFor(bmax) {   // the farthest a thing of breadth bmax can be kept, looking straight at it: b ≥ g·d at α = 0
+    const G = GS * GRAIN, H = RD.Hp, f = d => d * Math.sqrt((d / H + H / d) / 2) * G - bmax;
+    let lo = 0, hi = H; while (f(hi) < 0) hi *= 2; for (let i = 0; i < 60; i++) { const m = (lo + hi) / 2; if (f(m) < 0) lo = m; else hi = m; } return hi;
+}
 function holdK(held) { if (!KFIX || !held) return; const f = Math.sqrt(held / KFIX); if (Math.abs(f - 1) > 0.02) GS = Math.max(1 / 8, Math.min(64, GS * f)); }
-function scanAt(lv) { return Math.ceil(BMAX / (grainAt(lv) * CELL)) + 1; }
+function scanAt(lv) { return HEAT ? Math.min(4096, Math.ceil(dmaxFor(BMAX * 2 ** lv) / (CELL * 2 ** lv)) + 1) : Math.ceil(BMAX / (grainAt(lv) * CELL)) + 1; }
 // cells are hashed from their whole index, a BigInt (since TWK run 7): the same numbers as before wherever the index is
 // under 2⁵³, extra words mixed in past it, so the world is unchanged where the page worked and goes on past it
 const I32 = x => Number(BigInt.asIntN(32, x));
@@ -242,7 +257,7 @@ function edgesOf(t) {   // the edges about the thing's own centre
     for (let k = 0; k < 4; k++) { E.push([bot[k], bot[(k + 1) % 4]]); E.push([top[k], top[(k + 1) % 4]]); E.push([bot[k], top[k]]); }
     return E;
 }
-function keptAt(t, g = grainAt(t.lv)) {   // b ≥ g·d and d ≥ b, in squares: no root, no angle; t.r the centre from the eye
+function keptAt(t, g = grainFor(t.r, t.lv)) {   // b ≥ g·d and d ≥ b, in squares: no root, no angle; t.r the centre from the eye
     const dx = t.r[0], dy = t.r[1], dz = t.r[2], d2 = dx * dx + dy * dy + dz * dz;
     return t.b * t.b >= g * g * d2 && d2 >= t.b * t.b;
 }
@@ -251,7 +266,7 @@ function keptAt(t, g = grainAt(t.lv)) {   // b ≥ g·d and d ≥ b, in squares:
 // as before). The line moves only as the focus glides, so a thing crossing it dissolves over the glide instead of
 // switching. What is held is unchanged: the fade is how a held thing is drawn, never whether it is held.
 const FADE = QS.has('fade') ? Math.max(1, Number(QS.get('fade'))) : 1.3;
-function marginOf(t) { const d2 = t.r[0] * t.r[0] + t.r[1] * t.r[1] + t.r[2] * t.r[2]; return t.b / (grainAt(t.lv) * Math.sqrt(d2)); }
+function marginOf(t) { const d2 = t.r[0] * t.r[0] + t.r[1] * t.r[1] + t.r[2] * t.r[2]; return t.b / (grainFor(t.r, t.lv) * Math.sqrt(d2)); }
 function fadeOf(t) { if (FADE <= 1) return 1; const u = Math.max(0, Math.min(1, (marginOf(t) - 1) / (FADE - 1))); return u * u * (3 - 2 * u); }
 // ---------- the blueprint, for comparison ----------
 // The god's-eye view done classically: a stored list of every thing at scales 0 to 8 in a square 2·R0 on a side about
@@ -292,7 +307,7 @@ function besideBlueprint() {
 }
 // TWK run 8: the read set beside a blueprint thing for thing. Each blueprint keeps a thing by the read's own rule
 // applied to its exact centre less the exact eye (no floating origin, no scan): the read should hold exactly those.
-function keepExact(t, C) { const r = [0, 1, 2].map(k => Fr.num(Fr.sub(C[k], S.eye[k]))), g = grainAt(t.lv),
+function keepExact(t, C) { const r = [0, 1, 2].map(k => Fr.num(Fr.sub(C[k], S.eye[k]))), g = grainFor(r, t.lv),
     d2 = r[0] * r[0] + r[1] * r[1] + r[2] * r[2]; return t.b * t.b >= g * g * d2 && d2 >= t.b * t.b; }
 function compareSets(read, bp) { let missing = 0, extra = 0; for (const k of bp) if (!read.has(k)) missing++; for (const k of read) if (!bp.has(k)) extra++;
     return { read: read.size, blueprint: bp.size, missing, extra }; }
@@ -428,7 +443,7 @@ function levelCands(lv, R, ci, cj) {   // every thing in the cells within R of t
 // what is held depends on where the eye is and on the grain, never on where it looks, so a turn reuses it (R946)
 let nearCache = { key: null, out: null, scanned: 0, examined: 0, perLevel: [] };
 function groundNear(extra = 0, from = -1) {
-    const ck = extra === 0 && from < 0 ? S.eye.map(f => f.n + '/' + f.d).join(',') + '|' + (GLIDE ? S.fg : S.focus) + '|' + GS + '|' + DENS : null;
+    readFrame(); const ck = extra === 0 && from < 0 ? S.eye.map(f => f.n + '/' + f.d).join(',') + '|' + (HEAT ? RD.F.join() + '|' + RD.Hp : (GLIDE ? S.fg : S.focus)) + '|' + GS + '|' + DENS : null;
     if (ck && nearCache.key === ck) { CULL.scanned = nearCache.scanned; CULL.examined = nearCache.examined; CULL.perLevel = nearCache.perLevel; return nearCache.out; }
     const out = []; CULL.scanned = 0; CULL.examined = 0; CULL.perLevel = []; const ey = Fr.num(S.eye[1]);
     if (ck) {   // each scale's cells kept while the eye stays put; a new grain only filters them again (R946)
@@ -514,7 +529,7 @@ function moverOf(i, j, lv) {
 let moverCache = { key: null, out: [] }; const mvLevel = {};
 function moversNear() {
     if (!MOVERS) { CULL.mScanned = 0; return []; }
-    const ck = S.eye.map(f => f.n + '/' + f.d).join(',') + '|' + S.tick + '|' + (GLIDE ? S.fg : S.focus) + '|' + GS;
+    readFrame(); const ck = S.eye.map(f => f.n + '/' + f.d).join(',') + '|' + S.tick + '|' + (HEAT ? RD.F.join() + '|' + RD.Hp : (GLIDE ? S.fg : S.focus)) + '|' + GS;
     if (moverCache.key === ck) { CULL.mScanned = moverCache.scanned; return moverCache.out; }
     const out = [], ey = Fr.num(S.eye[1]), T = S.tick; let scanned = 0;
     for (let lv = -BELOW; lv <= LEVELS; lv++) {
@@ -649,7 +664,7 @@ const S = {
     // the look held as whole numbers: q quarter turns and two half-slopes ky/128 (across) and kp/128 (up); no angle
     q: Math.round(+params.get('q') || 0), ky: Math.round(+params.get('ky') || 0), kp: Math.round(+params.get('kp') || 0), dragX: 0, dragY: 0,
     eye: [Fr.make(params.get('x') ? Math.round(+params.get('x')) : 0), Fr.make(2), Fr.make(params.get('z') ? Math.round(+params.get('z')) : -30)],
-    H: null, holdH: false, target: null, lastPoseKey: '', focus: 0, holdFocus: false, heldOnce: false, fg: 0, fCand: null, fSince: 0, Hg: null, tLast: 0, tick: BigInt(params.get('tick') || 0), run: params.get('time') !== '0', tAcc: 0,
+    H: null, holdH: false, target: null, lastPoseKey: '', focus: 0, holdFocus: false, heldOnce: false, fg: 0, Hg: null, tLast: 0, tick: BigInt(params.get('tick') || 0), run: params.get('time') !== '0', tAcc: 0,
     walk: { key: null, m: [], strides: 0 },
     anchor: params.get('anchor') !== '0', anchors: 0, lastHeading: null, goes: 0, lock: null,
     show: { thumbs: params.get('thumbs') !== '0', heat: params.get('heat') !== '0', sky: params.get('sky') === '1',
@@ -916,25 +931,14 @@ function frame() {
     const things = thingsNear(); let best = null, bt = Infinity;
     for (const t of things) { const hit = rayBox(e, P.F, t); if (hit !== null && hit < bt) { bt = hit; best = t; } }
     if (S.lock && things.includes(S.lock) && rayBox(e, P.F, S.lock) !== null) best = S.lock; else S.lock = null;
-    // the focus is the scale of what is under the crosshair; with nothing there, the scale of the eye's own height (2 at
-    // the start, scale 0), so that going down to the small scales brings them in
-    // (since R952; Tom: "Objects some times disappear when I pan slightly and then they appear again for no reason"): the
-    // focus sets every scale's grain, so a pan that brushes a thing of another scale swapped hundreds of things at the
-    // keep line and back. Now a new focus is taken only once it has stood under the crosshair for DWELL seconds (0.4 s,
-    // `?dwell=`), or at once for the thing followed (G, B); `?glide=0` keeps the old step, so older runs reproduce
+    // the focus is the scale of what is under the crosshair; with nothing there it stays (R956), the eye height's scale
+    // only before anything has been under it (R958: no delay, as the papers' math has none)
     if (!S.holdFocus) {
-        // (since R956; Tom: "I focus on an object, and a bunch of other objects become visible, then I lose focus and the all
-        // disappear again", then "yes"): the focus is sticky. With nothing under the crosshair it stays where it was, so
-        // what came in with a thing stays until a thing of another scale is held; the eye height's scale only before the
-        // first thing is held, or with `?glide=0` (the old way)
-        const eyeLv = Math.max(-BELOW, Math.min(LEVELS, Math.round(Math.log2(Math.max(1e-300, ey) / 2))));
-        const want = best ? best.lv : (GLIDE && S.heldOnce ? S.focus : eyeLv), now = performance.now();
-        if (best && S.focus === best.lv) S.heldOnce = true;
-        if (want === S.focus || !GLIDE || DWELL <= 0 || (best && best === S.lock)) { S.focus = want; S.fCand = null; }
-        else if (want !== S.fCand) { S.fCand = want; S.fSince = now; }
-        else if (now - S.fSince >= DWELL * 1000) { S.focus = want; S.fCand = null; if (best) S.heldOnce = true; }
+        if (best) { S.focus = best.lv; S.heldOnce = true; }
+        else if (!S.heldOnce) S.focus = Math.max(-BELOW, Math.min(LEVELS, Math.round(Math.log2(Math.max(1e-300, ey) / 2))));
     }
     if (best !== S.target) { S.target = best; S.walk = { key: null, m: [], strides: 0 }; }
+    // the thumb H is the reach to the thing under the crosshair; with nothing there it stays (R958)
     if (S.target && !S.holdH) { const x = thumbCoordsF(S.target.r, e, P); S.H = Math.max(1e-6, (x[0] + x[1] + x[2]) / 3); }
     // the glide: the focus and the thumb's colouring ease toward their new values (a time constant of 0.12 s)
     { const now = performance.now(), dt = S.tLast ? Math.min(0.1, (now - S.tLast) / 1000) : 1; S.tLast = now;
@@ -1073,7 +1077,8 @@ function panelHtml() {
         h += S.twoLast ? `<h3>two ways (c)</h3><p>The same ${S.twoLast.poses} poses drawn the page's way and a classical way (yaw and pitch in radians, the frame from Math.cos and Math.sin). Trigonometric calls: the page ${Object.values(S.twoLast.trig.ours).reduce((a, b) => a + b, 0)}, the classical way ${S.twoLast.trig.classical.sin + S.twoLast.trig.classical.cos} sines and cosines (plus ${S.twoLast.trig.classical.atan} arctangents for its fixed base frame). The two pictures differ by at most ${S.twoLast.maxPx.toExponential(1)} px over ${S.twoLast.segs.toLocaleString()} segments. Turns retraced: the page back ${S.twoLast.retrace.pageExact ? 'exactly' : 'not exactly'}, the classical yaw ${Math.abs(S.twoLast.retrace.classicalYawLeft).toExponential(1)} rad off. Both lay the world on a signed grid of cells and hold the eye in it.</p>` : '<p>Press c to draw the same walk two ways.</p>';
         if (RINGS && S.ringLast) { const R = S.ringLast, off = R.off.filter(Boolean).length;
             h += `<h3>things that touch (TWK runs 17, 18)</h3><p>Two rings of 16 balls in the sky ahead, elastic contact, ring time T = ${Fr.num(R.T).toFixed(1)}. Left, equal masses: drawn from T alone (the free places, ball k at rank W(T) + k), nothing kept. Right, masses 1 (small) and 2 (large): stepped contact by contact, its state kept, ${R.st.events} contacts so far, its places held to ${Math.max(...R.st.y.map(Fr.digits))} digits; ${off} of 16 off every free path (red).</p>`; }
-        h += `<h3>what is held</h3><p>Things at every scale, levels −${BELOW} to ${LEVELS}; kept when their breadth is at least the grain times their distance, the grain 1/32 at the focus's scale (now ${S.focus})${SHARE === 'cauchy' ? ' and √cosh(k·ln 2) times that k scales away, so each scale holds its Cauchy share, sech(k·ln 2)' : ', the same at every scale'}. Kept now, by level: ${CULL.perLevel.filter(([, n]) => n).map(([l, n]) => l + ': ' + n).join(', ')} (${CULL.perLevel.reduce((a, [, n]) => a + n, 0)} in all), from ${CULL.scanned} cells. How far the world goes never enters.</p>`;
+        if (HEAT) { readFrame(); h += `<h3>what is held: the read's heat (TWK run 20)</h3><p>Each thing is kept where the read's heat is enough for its size: the heat cos³α off the look times sech(ln ρ) in distance, ρ = d/(√3·H) against the thumb (now H = ${(RD.Hp / SQ3).toPrecision(3)}). A thing of breadth b at distance d is kept when b ≥ g·d, g = (1/32)·√cosh(ln ρ)/cos^(3/2) α; nothing behind the look. Held now: ${CULL.perLevel.reduce((a, [, n]) => a + n, 0)} from ${CULL.scanned} cells. The heat moves with the look and the thumb; no count of the world enters. ?heat=0 keeps the per-scale focus.</p>`; }
+        else h += `<h3>what is held</h3><p>Things at every scale, levels −${BELOW} to ${LEVELS}; kept when their breadth is at least the grain times their distance, the grain 1/32 at the focus's scale (now ${S.focus})${SHARE === 'cauchy' ? ' and √cosh(k·ln 2) times that k scales away, so each scale holds its Cauchy share, sech(k·ln 2)' : ', the same at every scale'}. Kept now, by level: ${CULL.perLevel.filter(([, n]) => n).map(([l, n]) => l + ': ' + n).join(', ')} (${CULL.perLevel.reduce((a, [, n]) => a + n, 0)} in all), from ${CULL.scanned} cells. How far the world goes never enters.</p>`;
         h += '<h3>the checks (plans/twk-plan.md)</h3><table>' + checks().map(c =>
             `<tr><td>${c.id}</td><td class="${c.ok === null ? '' : c.ok ? 'ok' : 'bad'}">${c.ok === null ? '·' : c.ok ? 'holds' : 'fails'}</td><td>${c.text}</td></tr>`).join('') + '</table>';
     }
@@ -1178,6 +1183,8 @@ window.__thumbsWalk = {
     digits: () => ({ eye: eyeDigits(), slopes: slopeDigits(exactOf(S.target)), focus: S.focus, goes: S.goes }),
     target: () => S.target, pose,
     rings: () => { const R = ringsNow(); return { T: Fr.str(R.T), eq: R.eq.map(Fr.str), un: R.un.map(Fr.str), off: R.off.filter(Boolean).length, events: R.st.events, firstUnequal: R.st.firstUnequal && Fr.num(R.st.firstUnequal), digits: Math.max(...R.st.y.map(Fr.digits)) }; }, ringCheck,
+    onScreen: t => { const P = pose(), s = project(t.r, P); return s[2] > 0 && s[0] >= 0 && s[0] <= W && s[1] >= 0 && s[1] <= Hh; },
+    behindHeld: () => { readFrame(); return thingsNear().filter(t => t.r[0] * RD.F[0] + t.r[1] * RD.F[1] + t.r[2] * RD.F[2] <= 0).length; }, heat: () => ({ on: HEAT, Hp: readFrame().Hp, F: RD.F.slice() }),
     fadeOf: t => fadeOf(t), marginOf: t => marginOf(t), exactOfThing: t => exactOf(t), againstMadeNow: h => againstMade(h), moversNear, moversAgainstStepped, moverSteps, moverVelocities, groundNear: () => groundNear(), tick: () => S.tick.toString(),
     set(o) { if (o.q !== undefined || o.ky !== undefined || o.kp !== undefined || o.eye) S.lock = null; if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
         if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.anchor !== undefined) S.anchor = !!o.anchor; if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
