@@ -770,3 +770,26 @@ digits held shown in the menu. Hook `rings()` (each ring's places, the unequal r
 On the page: the left square is the equal ring, white, drawn from T alone; the right is masses 1 (small) and 2 (large),
 teal while on a free path and red once off every one; the menu's "things that touch" gives T, the contacts, the digits
 held and the count off.
+
+## Run 19: things that touch, in two dimensions (predictions, 14 November 2026, written and committed before any code;
+Tom: "1, then 3")
+
+Run 17 was one dimension, where equal masses keep a law in T. In two dimensions that law should go: when two things touch
+along one axis, they exchange that component of velocity and keep the other, so each leaves with a mix of the two, on
+neither's free path. Hard discs would need square roots to find their contact times, so they cannot be followed in exact
+fractions; hard squares that do not turn keep every contact time rational, so the run uses them (16 squares of side 8 on
+a torus 100 on a side, the smooth elastic rule: the component normal to the touching faces exchanged as in one dimension,
+the other kept). Seeds 1, 2 and 3, places on a jittered grid with no overlap, velocity components rational in [−5, 5],
+equal masses and masses 1 and 2, worked event by event to T = 400 (`runs/twk/run19.mjs`).
+
+- D1: with equal masses the law of run 17 does not hold: after the first contact between two squares whose other
+  components differ, the set of (place, velocity) differs from the free set, and the count off every free path is 2.
+- D2: with equal masses that count reaches all 16 by T = 400 in every seed.
+- D3: what is left of a law with equal masses: the multiset of x components and the multiset of y components of
+  velocity are each unchanged exactly at every contact (a contact swaps one component between two squares); with masses
+  1 and 2 they are not, after the first unequal contact.
+- D4: momentum and energy exact after every contact; no two squares ever overlap; corner contacts (both axes at once)
+  counted and reported.
+
+What it would mean: if D1 and D2 hold, one dimension was special: in two, equal masses lose the law in T and the state to
+keep spreads to every thing touched, as unequal masses did in one; only the velocity components as sets survive (D3).
