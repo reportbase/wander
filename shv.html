@@ -86,7 +86,8 @@
         <h2>4. No trigonometry, no π</h2>
         <p class="cap">A turn is a half-slope, 1/8: its rotation is the pair (63/65, 16/65), whole numbers over a whole
         number. Turned n steps and n back in exact fractions, the point comes home exactly. The classical way, cos and sin
-        of the same angle in floating point, drifts. The cost of the exact way is digits.</p>
+        of the same angle in floating point, drifts. The cost of the exact way is digits. The same holds for a loop that comes back turned: built from rational
+        half-slopes, its leftover's half-slope is a fraction (two turns, half-slopes 2 and ¾: cos(Θ/2) = 17/25).</p>
         <div class="row"><label for="n">n</label><input id="n" type="range" min="1" max="600" step="1" value="200"><span id="nv"></span></div>
         <canvas id="c4" height="200"></canvas>
         <div class="out" id="o4"></div>
