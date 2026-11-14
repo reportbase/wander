@@ -20,9 +20,9 @@ whole to exist as a count anywhere it can reach.
 The order: what the blueprint is good for (§1), a view on whole numbers (§2), the tower and the scaffolding (§3), keeping
 by size on the screen (§4), each scale its share (§5), what nearness and distance cost (§6), something to read (§7), what is classical
 and what is ours (§8), set beside a blueprint thing for thing (§9), things that move (§10), a view that holds still
-while the look moves (§11), a city of both kinds (§12), and what it changes (§13).
+while the look moves (§11), a city of both kinds (§12), what a single vantage is for (§13), and what it changes (§14).
 
-*Demo: `thumbs-walk.html` (W A S D walk, G half way to the thing under the crosshair, B back, M the menu; desktop only).*
+*Demos: `thumbs-walk.html` (W A S D walk, G half way to the thing under the crosshair, B back, M the menu) and `sky-city.html`.*
 
 ---
 
@@ -300,7 +300,74 @@ from their cells, elevators on their faces, and two kinds of car.
 So the city says in one scene what §10 found in pieces: what has a law in T is placed from T alone, and what reacts has
 its state stepped and held.
 
-## 13. What it changes
+## 13. What a single vantage is for
+
+A read is a single hemispherical vantage: one standpoint, everything in front of it, nothing behind. The blueprint is the
+dual hemispherical vantage, both hemispheres at once, drawn from no standpoint. The city asks the practical question: who
+would build with the first, when the second is what every engine already keeps?
+
+**The held set is the whole front hemisphere; the picture is not.** Each frame the keep rule runs over every direction
+in front of the eye (cos α > 0), so what is held is one full single hemispherical vantage, many of its things off the
+edge of the screen. A flat screen shows only its middle: the page's half-width is a slope of 1.2, so on a 16:9 window
+about 1.78 of the 2π steradians in front, some 28%, and at ×4 about 3%. On a flat screen the heat per unit of screen is
+the solid angle's own measure, so the share of the heat on the screen is the same 28%. No flat screen can show the rest
+(one reaching 90° off the look would be infinitely wide), and the one chart that fits the whole hemisphere on a disc, the
+equal-area map about the look, was tried and taken off the page: its round rim and its squeeze toward the rim read as a
+ball seen from outside (R970). A walk is many single vantages joined by writes: each frame one read, each stride, the
+eye's exact place, the counted ticks and the traffic's stepped state writes.
+
+**Who keeps which.** Drawing has always been done from one standpoint: a renderer draws from one camera, drops what is
+behind it and thins what is small on the screen, and the city's keep rule is a cousin of that screen-size level of
+detail (§8). What needs the dual vantage is what no single standpoint holds:
+
+- things that act out of sight with no law in T, like the traffic, whose state has to be stepped and held whether anyone
+  looks;
+- more than one standpoint, since two players are two vantages and what they must agree on (where the car is, who hit
+  whom) has to live in a world state that belongs to neither;
+- editing, saving and planning, done in world coordinates from no standpoint.
+
+**Small worlds and galaxies.** For a small world, storing everything in world coordinates and reading it from every
+camera is what most games do, and it is enough. For a galaxy a stored blueprint is not an option: from the start out to
+10²⁶ units it is about 10⁵² cells (R943), against the 29,000 or so the read scans at every distance. Galaxy-sized games
+store none of it; each makes what is at a coordinate from a seed when asked. That rule answers for any place from no
+standpoint, so it is blueprint-like, but it holds no list and no count. The work then splits three ways:
+
+- a read from each standpoint, holding K things whatever N is;
+- a rule for everything nobody has touched, made on demand, never stored (here the cells and the tick);
+- writes only where something has changed: a mined asteroid, a moved ship, a car that waited (here the traffic).
+
+Only the last grows, and it grows with what has been done, not with how large the world is.
+
+**No trigonometry, no π, and exact.** The pages turn, project, pick and walk with no trigonometric call (0 in 300 steps,
+R932): a turn is a half-slope p/q, its rotation the rational pair ((q² − p²)/(q² + p²), 2pq/(q² + p²)). No π enters the
+loop: the keep rule needs only ratios, the heat's 1/(2π) cancels, and √cosh(ln ρ) is √((ρ + 1/ρ)/2). The three pair
+slopes multiply to exactly 1 and scaling the world moves none of them. A heading is a whole number of steps, so a walk
+retraced comes back exactly (100 of 100, R944), and positions stay exact 10¹⁰⁰ units out (R937). What it costs or does
+not avoid:
+
+- square roots stay (a direction normalized, the heat's 3/2 power), the one exception, √(1 + s²);
+- exact fractions grow digits, so the eye is put down on a 1/16 grid at each change of heading (R931), a write;
+- turns come in steps of a half-slope 1/128, not any angle;
+- BigInt fractions are slow beside a GPU's floats (19 to 37 ms a frame in headless software rendering, R946);
+- engines hold turns as quaternions or matrices and use trigonometry mainly where an angle is typed in, so leaving it
+  out saves little time;
+- classical fixes reach the same ends: an integer heading with a sine table also retraces exactly, and a floating origin
+  also reaches 10¹⁰⁰ (PWL).
+
+So the simplicity is in the kinds of thing in the loop, fractions and one square root with no angles and no
+transcendentals, not in the size or speed of the code. What it buys is exactness and reproducibility: the same inputs
+give the same world bit for bit, on any machine and at any distance. That bears on lockstep multiplayer, which floats make
+hard; on replays and procedural worlds that must regenerate identically; and on checks that can fail exactly (a closure of
+1, a scaling that moves nothing) rather than within a tolerance.
+
+**A bounce: where the unit gets in.** The balls on the city's streets (R971) each bounce to k² every 20k ticks under one
+pull, g = 1/50 a tick², their places from T alone. From one standpoint a read has a ball's directions and its height in
+its own breadths, never its size. Scale the world and the eye by 4: the slopes at the top of the bounce and at its foot are
+the same fractions, but under the same pull the scaled ball would take twice the ticks (P goes as √A). The pull is an
+amount in a unit, so a bounce's ticks, counted, write the ball's size, A = gP²/8: Galileo's square–cube law, at the place
+in the sorting where it belongs.
+
+## 14. What it changes
 
 The blueprint is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on
 it, and wants totals, joins and a map of everything at once.
@@ -323,4 +390,4 @@ states ratios; the place an observer stands is the one thing that has to be writ
 - *Reads and Writes* (`../readers-and-writers.md`): §6 "K and N" and "Something to read, and K of it" (R935); §7, the
   read's heat per ratio.
 - Essay 4 (near and far), essay 16 §10 ("A world made where the view reaches"), essay 20 (scaffolding).
-- Demo: `../../thumbs-walk.html`.
+- Demos: `../../thumbs-walk.html`, `../../sky-city.html`.
