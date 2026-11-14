@@ -482,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R981 (14 Nov; Tom: "update the essays as well"): ISX in essays 2 §9, 4 §13 and 20 §8. No new claim.
   R980 (14 Nov; Tom: "yes.   also add it to the read/write paper."): ISX in `inverse-square.md` "From one vantage", the physics paper §7.2 and *Reads and Writes* §7 ("Near and far, one share and its exchange"). No new claim.
   R979 (14 Nov; Tom: "maybe inverse square law has a read/write pair.", then "yes, run the test"): ISX (`plans/isx-plan.md`, `runs/isx/`), exact, nothing killed: a disc's light on its axis is its share 1/(1 + s²) of the hemisphere (s = d/a), the inverse square its far chart, E(s) + E(1/s) = πL, half at d = a; coaxial discs reciprocal (ratio the sizes, product the distance); a square plate has no such pairing (1.0045 to 1.108 πL), the round cap's sin²α + cos²α = 1.
   R978 (14 Nov; Tom: "update the papers and essays with the inverse square law"): R977 in *Reads and Writes* §7 ("A candle writes its distance the same way"), essays 1 §5, 4 §13 and 9. No new claim.

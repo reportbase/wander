@@ -183,6 +183,11 @@ shared distance comes down, leaving the sizes against each other: 0.089/0.1125 i
 square root is one in ten. Neither read had either result alone. Its other cases are this essay's too: exchange rates
 round a triangle multiply to 1, which is §4's loop, and a rate that is off shows in the loop and cannot be placed by it.
 
+Light does the same exchange. Two discs facing each other each take a share of the other's view, A/d² to first order;
+the two reads are reciprocal (each disc's area times its share of the other is the same), so their ratio leaves the
+sizes against each other and their product, far off, the distance in the sizes' geometric mean (ISX, exact;
+`../inverse-square.md`, "From one vantage").
+
 The check is §4's loop and §6's receipt. Readings on one denominator close: the loop multiplies to 1, the squares of the
 shares add to 1. When they do not, a denominator changed somewhere.
 

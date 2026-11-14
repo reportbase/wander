@@ -727,6 +727,11 @@ corner h = v = 1/√2. A read has it exactly in squares, ½ and ½; the blueprin
 construction and not a count. So there are three grades of cost: nothing, for what is rational in the slope; a square
 root, a finite construction, for the shares and for halving a turn; and a limit, for how much the whole is, π and e.
 
+The circle's read form has a physical face. A flat, evenly bright disc of radius a lights a point on its axis at
+distance d by exactly 1/(1 + s²) of the receiver's hemisphere, s = d/a: the heat met as light. Its other term, s²/(1 + s²),
+is the same disc seen from d = a²/d, so near and far are the identity's two sides, half each at d = a; far off the share
+is the inverse square (ISX, exact; `../inverse-square.md`, "From one vantage").
+
 ---
 
 ## 10. What it comes to
