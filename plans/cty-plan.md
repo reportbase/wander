@@ -62,4 +62,40 @@ entering are the series' (R934).
 3. Whether cars stop, turn at junctions or follow streets, which would need their state held (runs 15–17: own loops
    are exact from T; anything that reacts to anything else is not).
 
+## Tom's decisions, and what they change (14 November 2026, before any code)
+
+Tom: "1. yes, 2. skyscripaers and exterior elevators 3. lets try both". So: a new page; one scale of city, skyscrapers
+with elevators running up their outside faces (in place of towers on towers at every scale); and both kinds of car, side
+by side. Written and committed before any code; the predictions above stand except where this section replaces them.
+
+- **The city.** Cells 48 units on a side; streets 12 wide on the cell lines; each block four lots, most with a
+  skyscraper: a footprint of 8 to 16, a height from 24 to about 190 (heavy toward the low end), setbacks above 60% and
+  85% of the height on the tallest, a mast on some. One tower is one thing: its breadth b the largest of its sizes, its
+  centre the middle of its box. In place of `thumbs-walk.html`'s near cut d ≥ b (which would drop a tall tower while the
+  eye stood beside it), only the tower the eye is inside is not held.
+- **Exterior elevators.** About half the towers have a car on one face, running from the ground to near the top and back
+  at a steady speed: its height at tick T is a triangle wave in T alone, exact.
+- **Flying.** W and S along the heading (level), A and D across it, Space and C up and down, a stride of one unit (shift:
+  eight); the eye never goes below one unit. (The plan above said W moves along the look; level moves keep every place a
+  rational point with the integer heading, so this is the change.)
+- **Cars on their own loops** (from T alone): above the streets at lane heights 60, 76, 92, …, each round its own ring of
+  1 to 3 blocks by 1 to 3 along the street lines, its own speed, direction and phase. Loops at one height can cross: these
+  cars do not see each other.
+- **Traffic** (cars that react, so their state is held): a district of 8 by 8 blocks at the origin, one-way streets
+  alternating by line, north–south lanes at height 28 and east–west at 32 (so crossings never meet), the district's edges
+  wrapped. 48 cars, speeds 1 or 2 units a step, a step every two ticks. A car moves one unit at a time only if no car is
+  within 8 units ahead in its lane; at a junction it wants to turn (by a hash of the car, the junction and its count of
+  junctions) and turns only if the other lane is clear within 8 units either side. Its state is stepped from the moment
+  the page opens, one step at a time; nothing gives it from T alone. Each car also carries a ghost, the same rules with no
+  other car, so the page can show which cars are off the path they would have flown alone.
+
+Predictions C1–C6 stand as written, with C1's blueprint now towers, elevators and loop cars, and C2 now "cars on loops
+and elevators". Added:
+
+- **C7, traffic needs its state.** By 600 steps at least one car is off its ghost's path; stepping 0 → 600 at once and in
+  ten pieces gives the same state exactly; the traffic's steps taken grow as cars × steps, while the loop cars' work does
+  not grow with T at all.
+- **C8, traffic keeps its rule.** Over 6,000 steps no two cars in one lane are ever nearer than 4 units (a car's length).
+  Killed by any nearer pair.
+
 ## Runs
