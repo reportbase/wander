@@ -534,6 +534,11 @@ at the band's edge 16% of the readings are at or below zero. Inverting them as i
 Kelker's bias (1973): a read taken for an extent. Of the misplaced boundaries in this paper, it is the one shown to cause a
 known difficulty.
 
+A standard candle writes distance as a bounce writes size (§4.1): an amount carried in (the luminosity L, as the pull g)
+lets a count (of light, as of ticks) write a length, d = √(L/4πF). The 4π is the source's whole sphere, the dual
+hemispherical vantage's; the receiver's own form, paint unchanged and the share (Δ/d)², needs no π (`inverse-square.md`,
+"From one vantage"). [reading]
+
 ### 7.3 The distance ladder as a tower [data, simulation]
 
 A ladder's rungs are reads joined into extents, with writes at the anchors: the angles and the flux ratios of one kind are

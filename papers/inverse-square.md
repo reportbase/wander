@@ -163,6 +163,28 @@ What changes from 10 October. The 2 is still physics (three dimensions), and con
 where the corner sits (in the address count, not in levels of light), that the law's form across a receiver is the
 Cauchy, and which of the corpus's star results are readings and which are writings.
 
+## From one vantage (14 November)
+
+Read with the single and dual hemispherical vantages (SHV, DHV; *Reads and Writes* §7), two points come out. Neither is new
+physics.
+
+1. **The 4π is the dual vantage's.** E = P/(4πd²) is stated at the source, over the whole sphere about it, both
+   hemispheres at once, held from no standpoint: the blueprint's form, and the one that carries π. The receiver's
+   argument uses one hemisphere, its own front: the paint along each direction is unchanged with distance (§0, the
+   radiance theorem), and a source of breadth Δ at distance d covers a share of the read set by the slope Δ/d, its
+   room in slope-area (Δ/d)². So E = paint × (Δ/d)² up to the source's shape, the inverse square with no π and no
+   whole sphere; the 4π returns only when P, an amount over every direction, is asked for. The two forms agree, as
+   conservation says they must; what differs is where each stands. [the identity classical; the sorting a reading]
+2. **The bounce and the standard candle are one move.** A bounce's ticks write its size only because the pull g is
+   carried in (A = gP²/8; *Reads and Writes* §7, "A bounce writes its size"); a candle's flux writes its distance only
+   because the luminosity L is carried in (d = √(L/4πF)). Scale the world with the paint fixed and nothing read moves
+   (§"The law as addresses and payload", item 7); hold one amount fixed while scaling and a count, of ticks or of light,
+   writes a length. The inverse square is the scale test with L held fixed, as Galileo's square–cube law is the scale
+   test with g held fixed. [reading]
+
+Not taken: on the sky-city page (`sky-city.html`) a thing turns from a held share to a point where it passes the keep
+rule's grain, which depends on where it sits in the read; that grain is chosen, so it is no law.
+
 ## 1. The law as physics holds it
 
 - **Derived from conservation and three dimensions** [physics]. A point source sends a fixed amount per second. With
