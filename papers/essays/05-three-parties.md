@@ -204,6 +204,13 @@ the middle at 45° against the photograph's 0.25; essay 17, "The Cauchy map").
 The one-party sweep's density is (2/π)·cos²θ. With n other parties it is the same constant form times cos to the power
 n + 1: one more power of the cosine for each party added.
 
+A read holds the whole hemisphere in front; a flat screen shows only its middle. One whose half-width is a slope of 1.2,
+on a 16:9 window, takes about 1.78 of the 2π steradians in front, some 28% of the directions, and, since the heat per unit
+of a flat screen is the solid angle's own measure, the same share of the heat. No flat screen reaches 90° off the look:
+it would have to be infinitely wide. The one chart that fits the whole hemisphere on a disc, the equal-area map about the
+look, reads to the eye as a ball seen from outside, its rim round and its squeeze toward the rim a ball's foreshortening,
+and so gives the read a shape it does not have (`sky-city.html`; *Reads and Writes* §8).
+
 *Demo: the pinhole, "a uniform sky" (the share within q, 1 − 1/√(1 + q²)).*
 
 ---

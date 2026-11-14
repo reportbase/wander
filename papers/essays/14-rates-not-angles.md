@@ -264,6 +264,14 @@ sweep, with everything between it and home before it. A read has steps, never po
 there is no dial for a position to sit on. So where a constant must be named, name the one sweep's, π/2 or 2/π, before
 π, and keep the arctangent for the blueprint's formulas.
 
+**Run as code.** A first-person view can be built this way. Turning, projecting, picking and walking call no trigonometric
+function: a turn is a half-slope p/q, its rotation the rational pair ((q² − p²)/(q² + p²), 2pq/(q² + p²)), and a heading is
+a whole number of such steps. No π enters the loop either; what stays is the one square root, √(1 + s²). The read is
+simpler here in the kinds of thing it needs, fractions and one square root with no angle and no transcendental number, and
+that simplicity counts for its own sake. It buys exactness: a walk retraced comes back exactly, and scaling the world moves
+no slope. It costs growing digits, turns in steps and slower arithmetic, and classical fixes reach the same ends another
+way (`thumbs-walk.html`, `sky-city.html`; *Reads and Writes* §9 "Run as code").
+
 ## 7. It has been done
 
 This is not only a way of talking. The draw project's Tangent Bridge, the theorem behind its curve format, was proved in

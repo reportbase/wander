@@ -530,6 +530,16 @@ the place reached home again, so the control holds no growing number. Essay 8 (�
 exactly to the whole. Content made from the address is the payload as a function on the addresses, and here the function
 is the program.
 
+**A world made as needed.** A program needs the world anyway: the machine counts, so something has to hold or make the
+world before any view of it exists, and the read decides only which part is looked at and how finely. Made as needed, each
+thing from its cell when a read reaches it, the world splits the work three ways: a read from each standpoint, holding K
+things whatever N is; a rule for everything nobody has touched, made on demand and never stored; and writes only where
+something has been changed, the one part that grows, and it grows with what has been done, not with the world's size.
+Without end there is no whole to hold, so the dual hemispherical vantage cannot be formed at all and nothing compares with
+the read: the rule answers for any one place from no standpoint, a lookup and not a view, and showing the whole at once
+would mean making all of it. A stored blueprint out to 10²⁶ units would be about 10⁵² cells; the read scans some 29,000 at
+every distance (essay 22, §13; `sky-city.html`).
+
 ---
 
 ## 11. What a blueprint adds
