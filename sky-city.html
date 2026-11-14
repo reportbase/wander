@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sky city</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    sky-city.html: a sky city, read from where you fly (14 November 2026, CTY, plans/cty-plan.md; Tom: "have you ever seen a
+    futuristic city downtown sky scripers, where cars fly instead of drive on the ground?", then "yes", then "1. yes,
+    2. skyscripaers and exterior elevators 3. lets try both").
+    An original city, wireframe, after thumbs-walk.html: whole numbers and exact fractions, no trigonometry in turning,
+    projecting, moving or picking, nothing stored. The city is made from its cells (48 units, streets on the cell lines,
+    four lots a block, most with a skyscraper, some with an elevator running up the outside). Each thing is held by the
+    read's heat where it stands: b ≥ g·d, g = (1/32)·√cosh(ln ρ)/cos^(3/2) α, ρ = d/(√3·H), H the reach to what is under
+    the crosshair, nothing behind the look, the tower the eye is inside not held, and nothing farther than 4,512 units.
+    Two kinds of car. On their own loops: each rings 1 to 3 blocks by 1 to 3 along the street lines at its own lane height,
+    speed, direction and phase, its place at tick T exact from T alone. Traffic: 48 cars in a district of 8 by 8 blocks at
+    the origin, one-way streets, each car waiting for the one ahead and turning only when the other lane is clear, its state
+    stepped from the moment the page opens; each with a ghost that flies the same rules alone.
+    W A S D fly level (shift: eight strides), Space and C up and down, drag or the arrows turn, G half way to the thing
+    under the crosshair, B back, the wheel sets the thumb, H holds it, T pauses time, M the menu.
+    ?x=&y=&z=&q=&ky=&kp=&tick=&time=0&loops=0&traffic=0&menu=1&heat=1
+    Hook window.__skyCity: Fr, set(o), state(), cull(), againstMade(half), againstStepped(o), trigFree(steps), scaleCheck(),
+    traffic: { state, run(n), check(n), pieces(total, parts) }, target(), exact(), onScreen(t).
+    -->
+    <style>
+        :root { --bg: #070b12; --ink: #d9e2ef; --dim: #8796ab; --teal: #4fd1c5; --gold: #f2c14e; --violet: #a78bfa;
+                --grey: #6b7280; --panel: rgba(13, 19, 30, 0.93); --line: #24324a; --ok: #6ee7a0; --bad: #f87171; }
+        html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); overflow: hidden;
+                     font: 13px/1.45 "DM Mono", ui-monospace, monospace; }
+        canvas { display: block; width: 100vw; height: 100vh; cursor: crosshair; }
+        #menuBtn { position: fixed; top: 12px; left: 12px; width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line);
+                   background: var(--panel); color: var(--ink); font-size: 18px; cursor: pointer; }
+        #panel { position: fixed; top: 56px; left: 12px; width: 440px; max-height: calc(100vh - 72px); overflow: auto;
+                 background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: none; }
+        #panel.open { display: block; }
+        #panel h2 { font: 20px "DM Serif Display", serif; margin: 0 0 6px; }
+        #panel h3 { font: 500 13px "DM Mono", monospace; margin: 12px 0 4px; color: var(--gold); }
+        #panel label { display: block; margin: 2px 0; color: var(--dim); cursor: pointer; }
+        #panel p { margin: 4px 0; color: var(--dim); }
+        #panel table { border-collapse: collapse; width: 100%; }
+        #panel td { padding: 1px 4px; vertical-align: top; }
+        .ok { color: var(--ok); } .bad { color: var(--bad); } .num { color: var(--ink); }
+        #pad { position: fixed; left: 14px; bottom: 14px; display: none; gap: 14px; align-items: flex-end; user-select: none; -webkit-user-select: none; }
+        #pad .walk { display: grid; grid-template-columns: repeat(3, 52px); grid-template-rows: repeat(3, 52px); gap: 6px; }
+        #pad .acts { display: grid; gap: 6px; }
+        #pad button { width: 52px; height: 52px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel);
+                      color: var(--ink); font: 500 16px "DM Mono", monospace; touch-action: none; }
+        #pad button.on { border-color: var(--gold); color: var(--gold); }
+        @media (pointer: coarse) { #pad { display: flex; } }
+        @media (max-width: 480px) { #panel { width: auto; right: 12px; } }
+        button.run { background: #172236; color: var(--ink); border: 1px solid var(--line); border-radius: 6px; padding: 3px 10px;
+                     font: inherit; cursor: pointer; margin: 2px 0; }
+    </style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+<button id="menuBtn" title="menu (M)">☰</button>
+<div id="pad">
+    <div class="walk">
+        <button data-k=" " data-hold="1" title="up (Space)">↑</button><button data-k="w" data-hold="1" title="forward (W)">▲</button><button data-k="c" data-hold="1" title="down (C)">↓</button>
+        <button data-k="a" data-hold="1" title="left (A)">◀</button><button data-k="shift" title="eight strides at a time (shift)">×8</button><button data-k="d" data-hold="1" title="right (D)">▶</button>
+        <span></span><button data-k="s" data-hold="1" title="back (S)">▼</button><span></span>
+    </div>
+    <div class="acts">
+        <button data-k="g" title="half way to the thing under the crosshair (G)">G</button>
+        <button data-k="b" title="back to twice as far (B)">B</button>
+        <button data-k="h" title="hold the thumb (H)">H</button>
+    </div>
+</div>
+<div id="panel">
+    <h2>Sky city</h2>
+    <p>W A S D fly level (shift: eight strides at a time), Space and C up and down, drag or the arrow keys turn, G half way to the thing under the crosshair, B back to twice as far, the wheel sets the thumb, H holds it, T stops and starts time, M the menu.</p>
+    <p>On a touch screen: drag to look, pinch to set the thumb, hold the arrows to fly, ↑ and ↓ up and down.</p>
+    <h3>show</h3>
+    <label><input type="checkbox" id="optLoops" checked> cars on their own loops (placed from the tick alone)</label>
+    <label><input type="checkbox" id="optTraffic" checked> traffic (cars that react; their state held)</label>
+    <label><input type="checkbox" id="optHeat"> the heat on the screen, cos³ off the look</label>
+    <label><input type="checkbox" id="optRead" checked> the thing under the crosshair</label>
+    <label><input type="checkbox" id="optHeld" checked> what is held</label>
+    <label><input type="checkbox" id="optCars" checked> the cars</label>
+    <label><input type="checkbox" id="optChecks"> the checks (plans/cty-plan.md)</label>
+    <label><input type="checkbox" id="optAbout"> about</label>
+    <div id="out"></div>
+</div>
+<script>
+'use strict';
+// ---------- exact fractions (BigInt), as thumbs-walk.html ----------
+const Fr = (() => {
+    const abs = a => a < 0n ? -a : a;
+    const gcd = (a, b) => { a = abs(a); b = abs(b); while (b) { [a, b] = [b, a % b]; } return a; };
+    const make = (n, d = 1n) => { n = BigInt(n); d = BigInt(d); if (d === 0n) throw new Error('zero denominator');
+        if (d < 0n) { n = -n; d = -d; } const g = gcd(n, d) || 1n; return { n: n / g, d: d / g }; };
+    const dy = (x) => { if (Number.isInteger(x)) return make(x); let k = 0; while (!Number.isInteger(x * 2 ** k) && k < 1100) k++;
+        return make(BigInt(x * 2 ** k), 2n ** BigInt(k)); };
+    return {
+        make, gcd, dy,
+        of: (x) => typeof x === 'object' ? x : dy(x),
+        add: (a, b) => make(a.n * b.d + b.n * a.d, a.d * b.d),
+        sub: (a, b) => make(a.n * b.d - b.n * a.d, a.d * b.d),
+        mul: (a, b) => make(a.n * b.n, a.d * b.d),
+        div: (a, b) => make(a.n * b.d, a.d * b.n),
+        neg: (a) => ({ n: -a.n, d: a.d }),
+        eq: (a, b) => a.n === b.n && a.d === b.d,
+        zero: (a) => a.n === 0n,
+        sign: (a) => a.n > 0n ? 1 : a.n < 0n ? -1 : 0,
+        num: (a) => { const ln = a.n.toString().length, ld = a.d.toString().length, sh = Math.max(0, Math.max(ln, ld) - 300);
+            if (!sh) return Number(a.n) / Number(a.d); const p = 10n ** BigInt(sh); return Number(a.n / p) / Number(a.d / p); },
+        str: (a) => a.d === 1n ? a.n.toString() : a.n.toString() + '/' + a.d.toString(),
+        digits: (a) => a.d.toString().length,
+    };
+})();
+const ZERO = Fr.make(0), ONE = Fr.make(1);
+function turnCS(p, q) { p = BigInt(p); q = BigInt(q); const den = q * q + p * p; return [Fr.make(q * q - p * p, den), Fr.make(2n * p * q, den)]; }
+function matMul(A, B) { const C = new Array(9);
+    for (let i = 0; i < 3; i++) for (let j = 0; j < 3; j++) { let s = ZERO; for (let k = 0; k < 3; k++) s = Fr.add(s, Fr.mul(A[3 * i + k], B[3 * k + j])); C[3 * i + j] = s; }
+    return C; }
+function Ry(c, s) { return [c, ZERO, s, ZERO, ONE, ZERO, Fr.neg(s), ZERO, c]; }
+function Rx(c, s) { return [ONE, ZERO, ZERO, ZERO, c, Fr.neg(s), ZERO, s, c]; }
+function quarter(q) { q = ((q % 4) + 4) % 4; const cs = [[1, 0], [0, 1], [-1, 0], [0, -1]][q]; return Ry(Fr.make(cs[0]), Fr.make(cs[1])); }
+const BASE = matMul(Rx(...turnCS(7, 22)), Ry(...turnCS(-29, 70)));   // the thumbs' diagonal turned to face north
+const QD = 128n;
+function floorDiv(a, b) { const q = a / b; return (a % b !== 0n && ((a < 0n) !== (b < 0n))) ? q - 1n : q; }
+function floorFr(f, w) { return floorDiv(f.n * w.d, f.d * w.n); }
+
+// ---------- the city, made from its cells ----------
+const QS = new URLSearchParams(location.search);
+const CELL = 48, CELLF = Fr.make(CELL), GRAIN = 1 / 32, BMAX = 216, RCAP = 96, SQ3 = Math.sqrt(3);
+const I32 = x => Number(BigInt.asIntN(32, x));
+function hash(i, j, s) {   // thumbs-walk.html's, unchanged under 2²⁰ and extended past it
+    let h;
+    if (i > -1048576n && i < 1048576n && j > -1048576n && j < 1048576n) h = (Number(i) * 374761393 + Number(j) * 668265263 + s * 2246822519) | 0;
+    else {
+        h = Math.imul(I32(i), 374761393) ^ Math.imul(I32(j), 668265263) ^ Math.imul(I32(i >> 32n), 1103515245) ^ Math.imul(I32(j >> 32n), 1664525)
+            ^ Math.imul(s | 0, 2246822519 | 0);
+        for (let ri = i >> 64n, rj = j >> 64n, k = 1; !((ri === 0n || ri === -1n) && (rj === 0n || rj === -1n)); ri >>= 32n, rj >>= 32n, k++)
+            h = Math.imul(h ^ I32(ri) ^ Math.imul(I32(rj), 2654435761 | 0), 2246822519 | 0) ^ k;
+    }
+    h = Math.imul(h ^ (h >>> 13), 1274126177); h ^= h >>> 16; return (h >>> 0) / 4294967296; }
+function boxEdges(x0, x1, y0, y1, z0, z1, E) {
+    const bot = [[x0, y0, z0], [x1, y0, z0], [x1, y0, z1], [x0, y0, z1]], top = bot.map(p => [p[0], y1, p[2]]);
+    for (let k = 0; k < 4; k++) { E.push([bot[k], bot[(k + 1) % 4]]); E.push([top[k], top[(k + 1) % 4]]); E.push([bot[k], top[k]]); }
+    return E;
+}
+const cellCache = new Map();
+// a cell's block: four lots of 18 inside the streets (the block from 6 to 42 of the cell), most with a skyscraper; a
+// tower's lengths are whole numbers, its centre a half-integer inside its cell, exact as a fraction
+function cellOf(i, j) {
+    const key = i + ',' + j; let c = cellCache.get(key); if (c) return c;
+    c = { towers: [], elevs: [] };
+    const cx = Fr.mul(Fr.make(i), CELLF), cz = Fr.mul(Fr.make(j), CELLF);
+    for (let lot = 0; lot < 4; lot++) {
+        const h = k => hash(i, j, k + 100 * lot);
+        if (h(1) >= 0.8) continue;
+        const lx = 6 + 18 * (lot & 1), lz = 6 + 18 * (lot >> 1);
+        const w = 8 + 2 * Math.floor(h(2) * 5), d = 8 + 2 * Math.floor(h(3) * 5);
+        const ox = lx + Math.floor(h(4) * (19 - w)), oz = lz + Math.floor(h(5) * (19 - d));
+        const u = h(6), H = 2 * Math.round(12 * Math.pow(2, 3 * u * u));          // 24 to 192, most low
+        const boxes = [];
+        if (H > 140) { const a = Math.round(0.6 * H), b = Math.round(0.85 * H);
+            boxes.push([0, w, 0, a, 0, d], [2, w - 2, a, b, 2, d - 2], [4, w - 4, b, H, 4, d - 4]); }
+        else if (H > 80) { const a = Math.round(0.6 * H); boxes.push([0, w, 0, a, 0, d], [2, w - 2, a, H, 2, d - 2]); }
+        else boxes.push([0, w, 0, H, 0, d]);
+        const mast = H > 120 && h(7) < 0.5 ? Math.round(H / 8) : 0, top = H + mast;
+        const lc = [ox + w / 2, top / 2, oz + d / 2];                            // the centre of its box, in the cell
+        const t = { kind: 'tower', key: 't' + key + ':' + lot, i, j, w, d, h: top, H, b: Math.max(w, d, top), lc,
+                    C: [Fr.add(cx, Fr.dy(lc[0])), Fr.dy(lc[1]), Fr.add(cz, Fr.dy(lc[2]))], r: [0, 0, 0] };
+        // edges and pick boxes about the centre
+        const E = [], pick = [];
+        for (const [x0, x1, y0, y1, z0, z1] of boxes) {
+            const q = [x0 - w / 2, x1 - w / 2, y0 - top / 2, y1 - top / 2, z0 - d / 2, z1 - d / 2]; boxEdges(...q, E); pick.push(q); }
+        if (mast) E.push([[0, H - top / 2, 0], [0, top / 2, 0]]);
+        t.edges = E; t.pick = pick; t.base = boxes[0];
+        // floor lines every 8 units on each box, drawn only near
+        const B = []; for (const [x0, x1, y0, y1, z0, z1] of boxes) for (let y = y0 + 8; y < y1; y += 8) {
+            const q = [x0 - w / 2, x1 - w / 2, z0 - d / 2, z1 - d / 2], yy = y - top / 2;
+            B.push([[q[0], yy, q[2]], [q[1], yy, q[2]]], [[q[1], yy, q[2]], [q[1], yy, q[3]]], [[q[1], yy, q[3]], [q[0], yy, q[3]]], [[q[0], yy, q[3]], [q[0], yy, q[2]]]); }
+        t.bands = B;
+        c.towers.push(t);
+        // an exterior elevator on one face of the base box, its car 3 across, running from the ground to 3 below the base's top
+        if (h(8) < 0.5 && boxes[0][3] >= 40) {
+            const f = Math.floor(h(9) * 4), Hb = boxes[0][3], L4 = 4 * (Hb - 3), m = 1 + Math.floor(h(10) * 3), ph = Math.floor(h(11) * 2 * L4);
+            // the face's middle, the car's centre 2 out from it
+            const fx = [ox + w / 2, ox + w + 2, ox + w / 2, ox - 2][f], fz = [oz - 2, oz + d / 2, oz + d + 2, oz + d / 2][f];
+            const e = { kind: 'elev', key: 'e' + t.key, i, j, w: 3, d: 3, h: 3, b: 3, tower: t, f, L4, m, ph, fx, fz, cx, cz, r: [0, 0, 0] };
+            e.edges = boxEdges(-1.5, 1.5, -1.5, 1.5, -1.5, 1.5, []); e.pick = [[-1.5, 1.5, -1.5, 1.5, -1.5, 1.5]];
+            // the rails, on the tower: two lines up the face beside the car
+            const ry0 = -top / 2, ry1 = Hb - top / 2, px = [fx, ox + w, fx, ox][f], pz = [oz, fz, oz + d, fz][f];   // on the face
+            const s = f % 2 ? [[px, pz - 1.5], [px, pz + 1.5]] : [[px - 1.5, pz], [px + 1.5, pz]];
+            for (const [a, b] of s) E.push([[a - lc[0], ry0, b - lc[2]], [a - lc[0], ry1, b - lc[2]]]);
+            c.elevs.push(e); t.elev = e;
+        }
+    }
+    cellCache.set(key, c); if (cellCache.size > 300000) cellCache.clear();
+    return c;
+}
+// the elevator's height at tick T, from T alone: a triangle wave in quarter-units, exact
+function elevQ(e, T) { const M = BigInt(2 * e.L4); let p = ((BigInt(T) + BigInt(e.ph)) * BigInt(e.m)) % M; if (p < 0n) p += M; p = Number(p); return p < e.L4 ? p : 2 * e.L4 - p; }
+function elevLc(e, y4) { return [e.fx, y4 / 4 + 1.5, e.fz]; }
+function elevC(e, y4) { const lc = elevLc(e, y4); return [Fr.add(e.cx, Fr.dy(lc[0])), Fr.dy(lc[1]), Fr.add(e.cz, Fr.dy(lc[2]))]; }
+
+// ---------- cars on their own loops (CTY; after TWK run 16): from T alone ----------
+const LOOPS0 = QS.get('loops') !== '0', MREACH = 4;
+function loopCarOf(i, j) {
+    const key = 'c' + i + ',' + j; if (cellCache.has(key)) return cellCache.get(key);
+    let t = null; const h = k => hash(i, j, k + 999999);
+    if (h(1) < 0.10) {
+        const A = (1 + Math.floor(h(2) * 3)) * CELL, B = (1 + Math.floor(h(3) * 3)) * CELL, flip = h(4) < 0.5;
+        t = { kind: 'car', loop: true, key, i, j, A: flip ? B : A, B: flip ? A : B, flip, y: 60 + 16 * Math.floor(h(5) * 6) + 1,
+              m: 1 + Math.floor(h(6) * 4), w: 6, d: 6, h: 2, b: 6, cx: Fr.mul(Fr.make(i), CELLF), cz: Fr.mul(Fr.make(j), CELLF), r: [0, 0, 0] };
+        t.P4 = 8 * (t.A + t.B); t.ph = Math.floor(h(7) * t.P4);
+    }
+    cellCache.set(key, t); return t;
+}
+function loopQ(t, T) { const M = BigInt(t.P4); let r = ((BigInt(T) + BigInt(t.ph)) * BigInt(t.m)) % M; if (r < 0n) r += M; return Number(r); }
+function loopLc(t, d4) {   // d4 quarter-units round the ring from the home corner; returns the centre in the cell and the way it heads
+    const d = d4 / 4, { A, B, flip } = t; let x, z, ax;
+    if (d < A) { x = d; z = 0; ax = 0; } else if (d < A + B) { x = A; z = d - A; ax = 1; }
+    else if (d < 2 * A + B) { x = 2 * A + B - d; z = B; ax = 0; } else { x = 0; z = 2 * A + 2 * B - d; ax = 1; }
+    return flip ? { lc: [z, t.y, x], ax: 1 - ax } : { lc: [x, t.y, z], ax };
+}
+function loopC(t, d4) { const { lc } = loopLc(t, d4); return [Fr.add(t.cx, Fr.dy(lc[0])), Fr.dy(lc[1]), Fr.add(t.cz, Fr.dy(lc[2]))]; }
+const CAR_X = boxEdges(-3, 3, -1, 1, -1.5, 1.5, []), CAR_Z = boxEdges(-1.5, 1.5, -1, 1, -3, 3, []);
+
+// ---------- traffic: cars that react (CTY C7, C8); the state held and stepped ----------
+// A district of 8 by 8 blocks, x and z from 0 to 384. North-south lanes on the lines x = 48k at height 28, east-west on
+// z = 48k at height 32, so crossings never meet; one-way, alternating by line; the edges wrapped. A car moves a unit at
+// a time, only if no car in its lane is within 8 ahead; at a junction it may want to turn (a hash of the car, the
+// junction and its count of junctions) and turns only if the other lane is clear within 8 either side.
+const TRAFFIC0 = QS.get('traffic') !== '0', TN = 48, TL = 384, TGAP = 8, TY = [28, 32];
+const tdir = k => (k % 2 ? -1 : 1);
+const tmod = p => ((p % TL) + TL) % TL;
+function tdist(a, b) { const x = tmod(a - b); return Math.min(x, TL - x); }
+function trafficInit() {
+    const cars = []; let s = 0;
+    while (cars.length < TN && s < 10000) {
+        const h = k => hash(BigInt(s), 7n, k + 4242); s++;
+        const c = { id: cars.length, ax: h(1) < 0.5 ? 0 : 1, line: Math.floor(h(2) * 8), p: 2 * Math.floor(h(3) * TL / 2), s: 1 + Math.floor(h(4) * 2), visits: 0 };
+        if (cars.some(o => o.ax === c.ax && o.line === c.line && tdist(o.p, c.p) < TGAP)) continue;
+        cars.push(c);
+    }
+    return { T: 0, steps: 0, cars, ghosts: cars.map(c => ({ ...c })), minGap: Infinity, turns: 0, refused: 0, waits: 0 };
+}
+function tAhead(c, others) {   // is any car in c's lane within TGAP ahead of it?
+    const dir = tdir(c.line);
+    for (const o of others) { if (o === c || o.ax !== c.ax || o.line !== c.line) continue;
+        const a = tmod((o.p - c.p) * dir); if (a > 0 && a <= TGAP) return true; }
+    return false;
+}
+function tClear(ax, line, p, others, self) { for (const o of others) if (o !== self && o.ax === ax && o.line === line && tdist(o.p, p) < TGAP) return false; return true; }
+function tMove(c, others, st) {   // one unit; others = [] for a ghost
+    if (tAhead(c, others)) { if (st) st.waits++; return; }
+    c.p = tmod(c.p + tdir(c.line));
+    if (c.p % CELL === 0) {   // a junction: the crossing line is c.p / 48, the place on it is this line's coordinate
+        c.visits++;
+        if (hash(BigInt(c.id), BigInt(c.visits), 9100 + c.ax * 64 + c.line) < 0.3) {
+            const nax = 1 - c.ax, nline = c.p / CELL, np = c.line * CELL;
+            if (tClear(nax, nline, np, others, c)) { c.ax = nax; c.line = nline; c.p = np; if (st) st.turns++; }
+            else if (st) st.refused++;
+        }
+    }
+}
+function trafficStep(st) {
+    for (let sub = 0; sub < 2; sub++) {
+        for (const c of st.cars) if (c.s > sub) tMove(c, st.cars, st);
+        for (const g of st.ghosts) if (g.s > sub) tMove(g, [], null);
+    }
+    st.T++; st.steps += st.cars.length;
+    for (let a = 0; a < st.cars.length; a++) for (let b = a + 1; b < st.cars.length; b++) { const x = st.cars[a], y = st.cars[b];
+        if (x.ax === y.ax && x.line === y.line) st.minGap = Math.min(st.minGap, tdist(x.p, y.p)); }
+}
+function tWorld(c) { const y = TY[c.ax]; return c.ax === 0 ? [c.line * CELL, y, c.p] : [c.p, y, c.line * CELL]; }
+function tOff(st) { return st.cars.map((c, k) => { const g = st.ghosts[k]; return c.ax !== g.ax || c.line !== g.line || c.p !== g.p; }); }
+function tKey(st) { return st.cars.map(c => c.ax + ':' + c.line + ':' + c.p + ':' + c.visits).join('|'); }
+const TCARS = Array.from({ length: TN }, (_, k) => ({ kind: 'car', traffic: true, id: k, key: 'x' + k, w: 4, d: 4, h: 2, b: 4, r: [0, 0, 0] }));
+
+// ---------- the pose (thumbs-walk.html's: whole numbers, no angle) ----------
+const S = {
+    q: Math.round(+QS.get('q') || 0), ky: Math.round(+QS.get('ky') || 0), kp: Math.round(+QS.get('kp') || 0), dragX: 0, dragY: 0,
+    eye: [Fr.make(QS.has('x') ? Math.round(+QS.get('x')) : 0), Fr.make(QS.has('y') ? Math.max(1, Math.round(+QS.get('y'))) : 30), Fr.make(QS.has('z') ? Math.round(+QS.get('z')) : -60)],
+    H: null, holdH: false, target: null, lock: null, tick: BigInt(QS.get('tick') || 0), run: QS.get('time') !== '0', tAcc: 0, tPrev: 0,
+    lastHeading: null, anchors: 0, goes: 0, loops: LOOPS0, traffic: TRAFFIC0, live: 0,
+    show: { heat: QS.get('heat') === '1', read: true, held: true, cars: true, checks: false, about: false },
+};
+const TR = { st: trafficInit() };
+const KPMAX = 85;
+function turnBy(dk) { if (dk) S.lock = null; const N = 128 * S.q + S.ky + dk, m = Math.floor((N + 128) / 256); S.q = 2 * m; S.ky = N - 256 * m; }
+function tiltBy(dk) { if (dk) S.lock = null; S.kp = Math.max(-KPMAX, Math.min(KPMAX, S.kp + dk)); }
+let exactPose = null;
+function pose() {
+    turnBy(0); tiltBy(0); const key = S.q + '|' + S.ky + '|' + S.kp;
+    if (exactPose && exactPose.key === key) return exactPose;
+    const Y = matMul(quarter(S.q), Ry(...turnCS(S.ky, QD)));
+    const R = matMul(matMul(Y, Rx(...turnCS(-S.kp, QD))), BASE), Rf = R.map(Fr.num);
+    const col = j => [Rf[j], Rf[3 + j], Rf[6 + j]], a = col(0), b = col(1), c = col(2);
+    const dg = [a[0] + b[0] + c[0], a[1] + b[1] + c[1], a[2] + b[2] + c[2]], n = Math.hypot(...dg), F = dg.map(x => x / n);
+    exactPose = { key, R, Rf, a, b, c, F, fwd: [Y[2], ZERO, Y[8]], right: [Y[0], ZERO, Y[6]] };
+    return exactPose;
+}
+const GRID = 16n;
+function snap(f) { return Fr.make(floorDiv(2n * f.n * GRID + f.d, 2n * f.d), GRID); }
+function stride(dir, n = 1) {
+    const P = pose(), heading = S.q + '|' + S.ky; S.lock = null;
+    if (S.lastHeading !== null && heading !== S.lastHeading) { S.eye = S.eye.map(snap); S.anchors++; }
+    S.lastHeading = heading;
+    for (let k = 0; k < n; k++) {
+        if (dir === 'up') { S.eye[1] = Fr.add(S.eye[1], ONE); continue; }
+        if (dir === 'down') { const y = Fr.sub(S.eye[1], ONE); if (Fr.sign(Fr.sub(y, ONE)) >= 0) S.eye[1] = y; continue; }
+        const v = dir === 'w' ? P.fwd : dir === 's' ? P.fwd.map(Fr.neg) : dir === 'd' ? P.right : P.right.map(Fr.neg);
+        S.eye = [Fr.add(S.eye[0], v[0]), S.eye[1], Fr.add(S.eye[2], v[2])];
+    }
+}
+function towardTarget(f) {   // G and B: half way to, or back to twice as far from, the centre of the thing under the crosshair
+    const t = S.target; if (!t) return false;
+    const C = cNow(t), D = [0, 1, 2].map(i => Fr.sub(S.eye[i], C[i]));
+    const d2 = D.reduce((a, x) => Fr.add(a, Fr.mul(x, x)), ZERO), bb = Fr.dy(t.b);
+    if (Fr.sign(Fr.sub(Fr.mul(Fr.mul(f, f), d2), Fr.mul(bb, bb))) < 0) return false;
+    const E2 = [0, 1, 2].map(i => Fr.add(C[i], Fr.mul(f, D[i])));
+    if (Fr.sign(Fr.sub(E2[1], ONE)) < 0) return false;
+    S.eye = E2; S.goes++; S.lock = t; return true;
+}
+
+// ---------- the read's heat, and what is held ----------
+const RD = { F: [0, 0, 1], Hp: 48 };
+function readFrame() { const P = pose(); RD.F = P.F; RD.Hp = SQ3 * Math.max(1e-6, S.H || 48); return RD; }
+function grainFor(r) {
+    const d = Math.hypot(r[0], r[1], r[2]), c = (r[0] * RD.F[0] + r[1] * RD.F[1] + r[2] * RD.F[2]) / d;
+    if (!(c > 0)) return Infinity;
+    const rho = d / RD.Hp; return GRAIN * Math.sqrt((rho + 1 / rho) / 2) / (c * Math.sqrt(c));
+}
+function dmaxFor(bmax) { const H = RD.Hp, f = d => d * Math.sqrt((d / H + H / d) / 2) * GRAIN - bmax;
+    let lo = 0, hi = H; while (f(hi) < 0) hi *= 2; for (let i = 0; i < 60; i++) { const m = (lo + hi) / 2; if (f(m) < 0) lo = m; else hi = m; } return hi; }
+function scanR() { return Math.min(RCAP, Math.ceil(dmaxFor(BMAX) / CELL) + 1); }
+// b ≥ g·d (in squares), within the read's reach (RCAP cells), and not the tower the eye is inside
+function keepR(t, r) {
+    const d2 = r[0] * r[0] + r[1] * r[1] + r[2] * r[2], g = grainFor(r);
+    if (!(t.b * t.b >= g * g * d2) || d2 > ((RCAP - 2) * CELL) ** 2) return false;
+    return !(Math.abs(r[0]) <= t.w / 2 && Math.abs(r[1]) <= t.h / 2 && Math.abs(r[2]) <= t.d / 2);
+}
+function cNow(t) {   // a thing's centre now, exact
+    if (t.kind === 'tower') return t.C;
+    if (t.kind === 'elev') return elevC(t, elevQ(t, S.tick));
+    if (t.loop) return loopC(t, loopQ(t, S.tick));
+    return tWorld(TR.st.cars[t.id]).map(v => Fr.make(v));
+}
+const CULL = { R: 0, scanned: 0, examined: 0, towers: 0, elevs: 0, loops: 0, traffic: 0 };
+let cand = null;   // the cells about an anchor, kept while the eye stays near it
+const within = new Map();
+function cellsWithin(R) { if (!within.has(R)) { let c = 0; for (let i = -R; i <= R; i++) for (let j = -R; j <= R; j++) if (i * i + j * j <= R * R) c++; within.set(R, c); } return within.get(R); }
+function candidates(R, ci, cj) {
+    if (cand && cand.R >= R + 2 && Math.abs(Number(ci - cand.ai)) <= 2 && Math.abs(Number(cj - cand.aj)) <= 2) return cand;
+    const RR = R + 6, list = [], cars = [];
+    for (let di = -RR; di <= RR; di++) for (let dj = -RR; dj <= RR; dj++) { if (di * di + dj * dj > RR * RR) continue;
+        const c = cellOf(ci + BigInt(di), cj + BigInt(dj)); for (const t of c.towers) list.push({ t, di, dj }); for (const t of c.elevs) list.push({ t, di, dj });
+        const lc = loopCarOf(ci + BigInt(di), cj + BigInt(dj)); if (lc) cars.push({ t: lc, di, dj }); }
+    cand = { R: RR, ai: ci, aj: cj, list, cars }; return cand;
+}
+let heldCache = { key: null, out: [] };
+function thingsNear() {
+    readFrame(); const R = scanR();
+    const key = S.eye.map(Fr.str).join(',') + '|' + S.tick + '|' + RD.F.join() + '|' + RD.Hp + '|' + S.loops + S.traffic + TR.st.T;
+    if (heldCache.key === key) return heldCache.out;
+    const ci = floorFr(S.eye[0], CELLF), cj = floorFr(S.eye[2], CELLF), A = candidates(R, ci, cj);
+    // the eye from the anchor's corner, exactly, then a small double (a floating origin)
+    const ex = Fr.num(Fr.sub(S.eye[0], Fr.mul(Fr.make(A.ai), CELLF))), ez = Fr.num(Fr.sub(S.eye[2], Fr.mul(Fr.make(A.aj), CELLF))), ey = Fr.num(S.eye[1]);
+    const oi = Number(ci - A.ai), oj = Number(cj - A.aj), R2 = R * R, out = [], T = S.tick;
+    let ex2 = 0, nt = 0, ne = 0, nl = 0, nx = 0;
+    for (const { t, di, dj } of A.list) { const a = di - oi, b = dj - oj; if (a * a + b * b > R2) continue; ex2++;
+        const lc = t.kind === 'elev' ? elevLc(t, elevQ(t, T)) : t.lc;
+        t.r = [di * CELL + lc[0] - ex, lc[1] - ey, dj * CELL + lc[2] - ez];
+        if (keepR(t, t.r)) { out.push(t); t.kind === 'tower' ? nt++ : ne++; } }
+    if (S.loops) { const RM = R + MREACH, RM2 = RM * RM;
+        for (const { t, di, dj } of A.cars) { const a = di - oi, b = dj - oj; if (a * a + b * b > RM2) continue;
+            const L = loopLc(t, loopQ(t, T)); t.alongZ = L.ax === 1; t.r = [di * CELL + L.lc[0] - ex, L.lc[1] - ey, dj * CELL + L.lc[2] - ez];
+            if (keepR(t, t.r)) { out.push(t); nl++; } } }
+    if (S.traffic) { const off = tOff(TR.st), E = S.eye.map(Fr.num);
+        // the district is near the origin, so its cars are placed from the exact eye directly
+        TR.st.cars.forEach((c, k) => { const t = TCARS[k], w = tWorld(c);
+            t.r = [0, 1, 2].map(m => Fr.num(Fr.sub(Fr.make(w[m]), S.eye[m]))); t.alongZ = c.ax === 0; t.off = off[k];
+            if (keepR(t, t.r)) { out.push(t); nx++; } }); }
+    CULL.R = R; CULL.scanned = cellsWithin(R); CULL.examined = ex2; CULL.towers = nt; CULL.elevs = ne; CULL.loops = nl; CULL.traffic = nx;
+    heldCache = { key, out }; return out;
+}
+
+// ---------- the checks ----------
+function keepExact(t, C) { const r = [0, 1, 2].map(k => Fr.num(Fr.sub(C[k], S.eye[k]))); return keepR(t, r); }
+function compareSets(read, bp) { let missing = 0, extra = 0; for (const k of bp) if (!read.has(k)) missing++; for (const k of read) if (!bp.has(k)) extra++;
+    return { read: read.size, blueprint: bp.size, missing, extra }; }
+// C1: a blueprint made about the eye, every cell within `half` times the read's reach, every tower, elevator and loop car
+// listed with its exact centre, the rule applied; set beside the read thing for thing
+function againstMade(half = 2) {
+    const held = thingsNear().filter(t => !t.traffic), read = new Set(held.map(t => t.key)), R = CULL.R, RR = Math.ceil(half * R) + MREACH, bp = new Set();
+    const ci = floorFr(S.eye[0], CELLF), cj = floorFr(S.eye[2], CELLF), T = S.tick; let cells = 0;
+    for (let di = -RR; di <= RR; di++) for (let dj = -RR; dj <= RR; dj++) { if (di * di + dj * dj > RR * RR) continue; cells++;
+        const i = ci + BigInt(di), j = cj + BigInt(dj), c = cellOf(i, j);
+        for (const t of c.towers) if (keepExact(t, t.C)) bp.add(t.key);
+        for (const e of c.elevs) if (keepExact(e, elevC(e, elevQ(e, T)))) bp.add(e.key);
+        if (S.loops) { const lc = loopCarOf(i, j); if (lc && keepExact(lc, loopC(lc, loopQ(lc, T)))) bp.add(lc.key); } }
+    return { ...compareSets(read, bp), cells, scanned: CULL.scanned, R };
+}
+// C2: loop cars and elevators near the eye stored at T0 and stepped one tick at a time (quarter-units added, wrapped),
+// set beside the read's places from T alone at every `every` ticks
+function againstStepped(o = {}) {
+    const T0 = BigInt(o.T0 ?? S.tick), ticks = o.ticks ?? 200, every = o.every ?? 10, fly = o.fly ?? 0;
+    let sd = (o.seed ?? 1) >>> 0; const rnd = () => ((sd = (Math.imul(sd, 1103515245) + 12345) >>> 0) / 4294967296);
+    const tick0 = S.tick, holdH = S.holdH; S.holdH = true; S.H = S.H || 48;
+    const store = new Map(), rows = []; let adds = 0;
+    const stepIt = q => { if (q.t.kind === 'elev') { q.p += q.t.m; if (q.p >= 2 * q.t.L4) q.p -= 2 * q.t.L4; }
+        else { q.d4 += q.t.m; if (q.d4 >= q.t.P4) q.d4 -= q.t.P4; } adds++; };
+    const placeOf = q => q.t.kind === 'elev' ? elevC(q.t, q.p < q.t.L4 ? q.p : 2 * q.t.L4 - q.p) : loopC(q.t, q.d4);
+    const cover = T => { const R = scanR() + MREACH + 2, ci = floorFr(S.eye[0], CELLF), cj = floorFr(S.eye[2], CELLF);
+        for (let di = -R; di <= R; di++) for (let dj = -R; dj <= R; dj++) { if (di * di + dj * dj > R * R) continue;
+            const i = ci + BigInt(di), j = cj + BigInt(dj), c = cellOf(i, j), lc = S.loops ? loopCarOf(i, j) : null;
+            for (const t of [...c.elevs, ...(lc ? [lc] : [])]) { if (store.has(t.key)) continue;
+                const q = t.kind === 'elev' ? { t, p: (() => { const M = BigInt(2 * t.L4); let p = ((T0 + BigInt(t.ph)) * BigInt(t.m)) % M; if (p < 0n) p += M; return Number(p); })() } : { t, d4: loopQ(t, T0) };
+                for (let k = T0; k < T; k++) stepIt(q); store.set(t.key, q); } } };
+    try {
+        for (let k = 0; k <= ticks; k++) {
+            const T = T0 + BigInt(k);
+            if (k > 0) { for (const q of store.values()) stepIt(q); if (fly && rnd() < fly) stride('wasd'[Math.floor(rnd() * 4)], 4); }
+            if (k % every) continue;
+            S.tick = T; cover(T);
+            const held = thingsNear().filter(t => t.kind === 'elev' || t.loop), read = new Set(held.map(t => t.key)), bp = new Set(); let same = true, compared = 0;
+            for (const q of store.values()) { const C = placeOf(q); if (keepExact(q.t, C)) bp.add(q.t.key);
+                if (read.has(q.t.key)) { compared++; const Cr = cNow(q.t); if (!(Fr.eq(Cr[0], C[0]) && Fr.eq(Cr[1], C[1]) && Fr.eq(Cr[2], C[2]))) same = false; } }
+            rows.push({ T: T.toString(), ...compareSets(read, bp), compared, same, stored: store.size, adds });
+        }
+    } finally { S.tick = tick0; S.holdH = holdH; }
+    return rows;
+}
+// C4: the thing under the crosshair's three pair slopes, the world and the eye scaled by k
+function thumbX(C, E, R, k = ONE) { const v = [0, 1, 2].map(i => Fr.sub(Fr.mul(k, C[i]), Fr.mul(k, E[i])));
+    return [0, 1, 2].map(j => Fr.add(Fr.add(Fr.mul(R[j], v[0]), Fr.mul(R[3 + j], v[1])), Fr.mul(R[6 + j], v[2]))); }
+function exactOf(t) {
+    if (!t) return null; const P = pose(), C = cNow(t), x = thumbX(C, S.eye, P.R);
+    const pairs = [[0, 1, 'ab'], [1, 2, 'bc'], [2, 0, 'ca']].map(([i, j, name]) => Fr.zero(x[i]) ? { name, s: null } : { name, s: Fr.div(x[j], x[i]) });
+    const closure = pairs.every(p => p.s) ? pairs.reduce((a, p) => Fr.mul(a, p.s), ONE) : null;
+    return { t, x, C, pairs, closure, facing: x.every(v => Fr.sign(v) > 0) ? 'this wedge' : 'another facing' };
+}
+function scaleCheck() {
+    const X = exactOf(S.target); if (!X) return null; const P = pose();
+    const ks = [Fr.make(1, 1000), Fr.make(1000), Fr.make(7, 3)];
+    const same = ks.every(k => { const y = thumbX(X.C, S.eye, P.R, k); return X.pairs.every((p, n) => { const [i, j] = [[0, 1], [1, 2], [2, 0]][n]; return !p.s || Fr.eq(Fr.div(y[j], y[i]), p.s); }); });
+    return { same, closure: X.closure && Fr.str(X.closure) };
+}
+// C7: traffic stepped 0 → total at once and in pieces
+function trafficPieces(total = 600, parts = 10) {
+    const a = trafficInit(); for (let k = 0; k < total; k++) trafficStep(a);
+    const b = trafficInit(); const n = Math.floor(total / parts); let done = 0;
+    for (let p = 0; p < parts; p++) { const m = p === parts - 1 ? total - done : n; for (let k = 0; k < m; k++) trafficStep(b); done += m; }
+    return { same: tKey(a) === tKey(b), off: tOff(a).filter(Boolean).length, steps: a.steps, minGap: a.minGap, turns: a.turns, refused: a.refused, waits: a.waits };
+}
+function trafficCheck(total = 6000) { const a = trafficInit(); let firstOff = null;
+    for (let k = 0; k < total; k++) { trafficStep(a); if (firstOff === null && tOff(a).some(Boolean)) firstOff = a.T; }
+    return { steps: a.T, carSteps: a.steps, minGap: a.minGap, firstOff, off: tOff(a).filter(Boolean).length, turns: a.turns, refused: a.refused, waits: a.waits }; }
+
+// ---------- drawing ----------
+const cv = document.getElementById('cv'), g = cv.getContext('2d');
+let W = 0, Hh = 0, foc = 1, heatImg = null;
+function resize() {
+    const dpr = Math.min(2, window.devicePixelRatio || 1); W = innerWidth; Hh = innerHeight;
+    cv.width = W * dpr; cv.height = Hh * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0); foc = (W / 2) / 1.2;
+    const w = Math.ceil(W / 4), h = Math.ceil(Hh / 4), c = document.createElement('canvas'); c.width = w; c.height = h;
+    const cx = c.getContext('2d'), im = cx.createImageData(w, h);
+    for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) { const x = (i * 4 - W / 2) / foc, y = (j * 4 - Hh / 2) / foc, q = Math.pow(1 + x * x + y * y, -1.5), k = 4 * (j * w + i);
+        im.data[k] = 7 + 30 * q; im.data[k + 1] = 11 + 34 * q; im.data[k + 2] = 18 + 52 * q; im.data[k + 3] = 255; }
+    cx.putImageData(im, 0, 0); heatImg = c;
+}
+function project(v, P) {
+    const F = P.F; if (!P.UR) { const d = F[1]; let U = [-d * F[0], 1 - d * F[1], -d * F[2]]; const n = Math.hypot(...U); U = U.map(x => x / n);
+        P.UR = [U, [U[1] * F[2] - U[2] * F[1], U[2] * F[0] - U[0] * F[2], U[0] * F[1] - U[1] * F[0]]]; }
+    const [U, Rt] = P.UR; return [v[0] * Rt[0] + v[1] * Rt[1] + v[2] * Rt[2], v[0] * U[0] + v[1] * U[1] + v[2] * U[2], v[0] * F[0] + v[1] * F[1] + v[2] * F[2]];
+}
+function screenOf(p) { return [W / 2 + foc * p[0] / p[2], Hh / 2 - foc * p[1] / p[2]]; }
+function edge(a, b) { const near = 0.05; if (a[2] < near && b[2] < near) return null;
+    if (a[2] < near) { const t = (near - a[2]) / (b[2] - a[2]); a = [a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1]), near]; }
+    if (b[2] < near) { const t = (near - b[2]) / (a[2] - b[2]); b = [b[0] + t * (a[0] - b[0]), b[1] + t * (a[1] - b[1]), near]; }
+    return [screenOf(a), screenOf(b)]; }
+const add3 = (p, e) => [p[0] + e[0], p[1] + e[1], p[2] + e[2]];
+function rayBoxes(F, t) {   // the nearest hit of the look on a thing's boxes, from the eye (0)
+    let best = null; const boxes = t.pick || [[-t.w / 2, t.w / 2, -t.h / 2, t.h / 2, -t.d / 2, t.d / 2]];
+    for (const q of boxes) { const lo = [t.r[0] + q[0], t.r[1] + q[2], t.r[2] + q[4]], hi = [t.r[0] + q[1], t.r[1] + q[3], t.r[2] + q[5]]; let t0 = 0, t1 = Infinity, ok = true;
+        for (let i = 0; i < 3 && ok; i++) { if (Math.abs(F[i]) < 1e-12) { if (0 < lo[i] || 0 > hi[i]) ok = false; continue; }
+            let a = lo[i] / F[i], b = hi[i] / F[i]; if (a > b) [a, b] = [b, a]; t0 = Math.max(t0, a); t1 = Math.min(t1, b); if (t0 > t1) ok = false; }
+        if (ok && (best === null || t0 < best)) best = t0; }
+    return best;
+}
+function colourOf(t, P, isT) {
+    if (isT) return '#f2c14e';
+    if (t.traffic) return t.off ? '#f87171' : '#e8edf5';
+    const x = [P.a, P.b, P.c].map(v => t.r[0] * v[0] + t.r[1] * v[1] + t.r[2] * v[2]);
+    if (x[0] <= 0 || x[1] <= 0 || x[2] <= 0) return '#5b6474';
+    const r = ((x[0] + x[1] + x[2]) / 3) / (S.H || 48);
+    if (r <= 1) return t.kind === 'tower' ? '#4fd1c5' : '#9ff2ea';
+    const L = Math.min(1, Math.log2(r) / 4);
+    return t.kind === 'tower' ? `rgb(${Math.round(167 - 50 * L)},${Math.round(139 - 60 * L)},${Math.round(250 - 50 * L)})` : '#d6c9ff';
+}
+function frame() {
+    const P = pose(), ey = Fr.num(S.eye[1]);
+    g.fillStyle = '#070b12'; g.fillRect(0, 0, W, Hh);
+    if (S.show.heat && heatImg) g.drawImage(heatImg, 0, 0, W, Hh);
+    // the streets: each block's kerb (6 and 42 of the cell), within 24 cells of the eye
+    { const ci = floorFr(S.eye[0], CELLF), cj = floorFr(S.eye[2], CELLF), ex = Fr.num(Fr.sub(S.eye[0], Fr.mul(Fr.make(ci), CELLF))), ez = Fr.num(Fr.sub(S.eye[2], Fr.mul(Fr.make(cj), CELLF))), Rg = 24 * CELL;
+      g.strokeStyle = 'rgba(135,150,171,0.13)'; g.lineWidth = 1; g.beginPath();
+      for (let k = -24; k <= 24; k++) for (const o of [6, 42]) { const u = k * CELL + o;
+          for (const seg of [[[u - ex, -ey, -Rg], [u - ex, -ey, Rg]], [[-Rg, -ey, u - ez], [Rg, -ey, u - ez]]]) {
+              const s = edge(project(seg[0], P), project(seg[1], P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } } }
+      g.stroke(); }
+    // the traffic district's edge
+    if (S.traffic) { const E = S.eye.map(Fr.num), q = [[0, 0], [TL, 0], [TL, TL], [0, TL]]; g.strokeStyle = 'rgba(248,113,113,0.25)'; g.beginPath();
+        for (let k = 0; k < 4; k++) { const a = q[k], b = q[(k + 1) % 4], s = edge(project([a[0] - E[0], -E[1], a[1] - E[2]], P), project([b[0] - E[0], -E[1], b[1] - E[2]], P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } }
+        g.stroke(); }
+    const things = thingsNear(); let best = null, bt = Infinity;
+    for (const t of things) { const hit = rayBoxes(P.F, t); if (hit !== null && hit < bt) { bt = hit; best = t; } }
+    if (S.lock && things.includes(S.lock) && rayBoxes(P.F, S.lock) !== null) best = S.lock; else S.lock = null;
+    S.target = best;
+    if (S.target && !S.holdH) { const x = [P.a, P.b, P.c].map(v => S.target.r[0] * v[0] + S.target.r[1] * v[1] + S.target.r[2] * v[2]); S.H = Math.max(1e-6, (x[0] + x[1] + x[2]) / 3); }
+    for (const t of things) {
+        const isT = t === S.target; g.strokeStyle = colourOf(t, P, isT); g.lineWidth = isT ? 2 : t.kind === 'tower' ? 1 : 1.4; g.beginPath();
+        const E = t.kind === 'car' ? (t.alongZ ? CAR_Z : CAR_X) : t.edges;
+        for (const [a, b] of E) { const s = edge(project(add3(a, t.r), P), project(add3(b, t.r), P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } }
+        g.stroke();
+        if (t.kind === 'tower' && t.r[0] * t.r[0] + t.r[1] * t.r[1] + t.r[2] * t.r[2] < 360000) {   // floor lines, near only
+            g.globalAlpha = 0.35; g.beginPath();
+            for (const [a, b] of t.bands) { const s = edge(project(add3(a, t.r), P), project(add3(b, t.r), P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } }
+            g.stroke(); g.globalAlpha = 1; }
+    }
+    g.strokeStyle = '#f2c14e'; g.lineWidth = 1.4; g.beginPath();
+    g.moveTo(W / 2 - 9, Hh / 2); g.lineTo(W / 2 + 9, Hh / 2); g.moveTo(W / 2, Hh / 2 - 9); g.lineTo(W / 2, Hh / 2 + 9); g.stroke();
+}
+
+// ---------- the panel ----------
+const panel = document.getElementById('panel'), out = document.getElementById('out');
+function fmt(f) { const x = Fr.num(f); return Math.abs(x) >= 1e5 || (Math.abs(x) < 1e-3 && x !== 0) ? x.toExponential(4) : x.toFixed(4); }
+const NAMES = { tower: 'a skyscraper', elev: 'an elevator car', car: 'a car' };
+let lastHtml = '';
+function panelHtml() {
+    let h = ''; const X = exactOf(S.target);
+    if (S.show.read) {
+        h += '<h3>the thing under the crosshair</h3>';
+        if (!X) h += '<p>nothing; turn toward a thing</p>';
+        else { const t = X.t, d = Math.hypot(...t.r);
+            h += `<p>${NAMES[t.kind]}${t.kind === 'tower' ? `, ${t.w} × ${t.d} at the foot, ${t.H} tall${t.h > t.H ? ' and a mast to ' + t.h : ''}${t.elev ? ', an elevator on its face' : ''}` : t.loop ? ', on its own loop, placed from the tick alone' : t.traffic ? `, in traffic (${t.off ? 'off' : 'on'} the path it would fly alone)` : ''}; ${d.toFixed(1)} units off, in ${X.facing}</p>`;
+            h += `<p>the thumb H = ${S.H.toFixed(2)}${S.holdH ? ' (held)' : ' (on this thing, so it is one thumb out)'}; its three pair slopes ${X.pairs.map(p => p.name + ' ' + (p.s ? fmt(p.s) : '—')).join(', ')}, multiplying to <span class="${X.closure && Fr.eq(X.closure, ONE) ? 'ok' : 'bad'}">${X.closure ? Fr.str(X.closure) : '—'}</span>, exactly.</p>`; }
+    }
+    if (S.show.held) {
+        h += `<h3>what is held: the read's heat</h3><p>Held now: ${CULL.towers.toLocaleString()} towers, ${CULL.elevs} elevator cars, ${CULL.loops} cars on loops and ${CULL.traffic} in traffic, from the ${CULL.scanned.toLocaleString()} cells within ${CULL.R} of the eye; nothing is stored, and how big the city is never enters.</p>`;
+        h += `<p>A thing of breadth b at distance d is kept when b ≥ g·d, g = (1/32)·√cosh(ln ρ)/cos^(3/2) α: the heat cos³α off the look times sech(ln ρ) in distance, ρ = d/(√3·H) against the thumb. Nothing behind the look; the tower the eye is inside is not held.</p>`;
+        h += `<p>The one assumption: g ∝ 1/√heat takes the count kept to go as 1/g², only roughly so among things on a ground, so the count moves with the look and the thumb. Chosen, not derived: the fineness 1/32, and the read's reach, ${((RCAP - 2) * CELL).toLocaleString()} units at most.</p>`;
+    }
+    if (S.show.cars) {
+        const st = TR.st, off = tOff(st).filter(Boolean).length;
+        h += `<h3>the cars</h3><p>On their own loops (${S.loops ? 'shown' : 'hidden'}): each rings its own 1 to 3 blocks by 1 to 3 above the streets, at its own height, speed, direction and phase; where it is at tick T = ${S.tick} comes from T alone, so nothing is stepped and time can jump anywhere. They do not see each other: loops at one height cross.</p>`;
+        h += `<p>Traffic (${S.traffic ? 'shown' : 'hidden'}): ${TN} cars in the district of 8 by 8 blocks at the origin (its edge in red on the ground), one-way streets, each waiting for the car ahead and turning only when the other lane is clear. Its state is held and stepped: ${st.T.toLocaleString()} steps since the page opened, ${st.steps.toLocaleString()} car-steps, ${st.waits.toLocaleString()} waits, ${st.turns} turns, ${st.refused} turns refused. ${off} of ${TN} are off the path they would fly alone (red). The nearest two cars in one lane have come is ${isFinite(st.minGap) ? st.minGap : '—'} units.</p>`;
+    }
+    if (S.show.checks) {
+        h += '<h3>the checks (plans/cty-plan.md)</h3><p><button class="run" data-act="p">C1 against a made blueprint</button> <button class="run" data-act="s">C2 against cars stepped</button> <button class="run" data-act="k">C4 scale the world</button> <button class="run" data-act="tr">C7, C8 traffic</button></p>';
+        if (S.c1) h += `<p>C1: a blueprint made from every cell within twice the read's reach (${S.c1.cells.toLocaleString()} cells): ${S.c1.blueprint.toLocaleString()} things by the rule from their exact centres; the read holds ${S.c1.read.toLocaleString()} from ${S.c1.scanned.toLocaleString()} cells: <b class="${S.c1.missing || S.c1.extra ? 'bad' : 'ok'}">${S.c1.missing} missing, ${S.c1.extra} extra</b>.</p>`;
+        if (S.c2) { const bad = S.c2.filter(r => r.missing || r.extra || !r.same).length, last = S.c2[S.c2.length - 1];
+            h += `<p>C2: ${last.stored} elevators and loop cars stored at the start and stepped one tick at a time (${last.adds.toLocaleString()} additions over ${S.c2.length - 1 ? (S.c2.length - 1) * 10 : 0} ticks); at ${S.c2.length} compared ticks <b class="${bad ? 'bad' : 'ok'}">${bad ? bad + ' ticks differ' : 'the same things held, at the same places exactly'}</b>.</p>`; }
+        if (S.c4) h += `<p>C4: the world and the eye scaled by 1/1000, 1000 and 7/3: the three pair slopes <b class="${S.c4.same ? 'ok' : 'bad'}">${S.c4.same ? 'the same fractions' : 'changed'}</b>.</p>`;
+        if (S.c7) h += `<p>C7: traffic stepped 0 → 600 at once and in ten pieces: <b class="${S.c7.same ? 'ok' : 'bad'}">${S.c7.same ? 'the same state exactly' : 'different'}</b>; ${S.c7.off} of ${TN} off their ghosts' paths, ${S.c7.steps.toLocaleString()} car-steps. C8: over ${S.c8.steps.toLocaleString()} steps the nearest two cars in one lane came <b class="${S.c8.minGap >= 4 ? 'ok' : 'bad'}">${S.c8.minGap}</b> units apart; first car off its ghost at step ${S.c8.firstOff}.</p>`;
+    }
+    if (S.show.about) {
+        h += `<h3>about</h3><p>An original city of our own. Every tower, elevator and car on a loop is made from the hash of its cell, so the city is the same every time and none of it is stored; the read looks only at the cells within its reach, which is set by the thing under the crosshair (the thumb H) and not by how far the city goes.</p>
+        <p>The look is held as whole numbers (quarter turns and half-slopes), so turning, flying and picking call no trigonometric function; strides are a rational step along a rational heading, and the eye's place is an exact fraction wherever it flies.</p>
+        <p>The two kinds of car show the line runs 15 to 17 found: a car on its own loop has a law in T, so it is placed from T alone at any T; a car that waits for another has none, so its state has to be stepped from the start and held. The traffic here is held from when the page opened; the loops would be the same at T = 10³⁰.</p>`;
+    }
+    return h;
+}
+let panelTick = 0;
+function updatePanel(force) { if (!panel.classList.contains('open')) return; if (!force && ++panelTick % 6) return;
+    const h = panelHtml(); if (h !== lastHtml) { out.innerHTML = h; lastHtml = h; for (const b of out.querySelectorAll('[data-act]')) b.onclick = () => act(b.dataset.act); } }
+document.getElementById('menuBtn').onclick = () => { panel.classList.toggle('open'); updatePanel(true); };
+for (const [id, k] of Object.entries({ optHeat: 'heat', optRead: 'read', optHeld: 'held', optCars: 'cars', optChecks: 'checks', optAbout: 'about' })) {
+    const el = document.getElementById(id); el.checked = S.show[k]; el.onchange = () => { S.show[k] = el.checked; updatePanel(true); }; }
+{ const a = document.getElementById('optLoops'), b = document.getElementById('optTraffic'); a.checked = S.loops; b.checked = S.traffic;
+  a.onchange = () => { S.loops = a.checked; updatePanel(true); }; b.onchange = () => { S.traffic = b.checked; updatePanel(true); }; }
+
+// ---------- input ----------
+const keys = new Set();
+function act(k) {
+    if (k === 'm') { panel.classList.toggle('open'); updatePanel(true); return true; }
+    if (k === 'escape') { panel.classList.remove('open'); return true; }
+    if (k === 'h') { S.holdH = !S.holdH; return true; }
+    if (k === 'g') { towardTarget(Fr.make(1, 2)); return true; }
+    if (k === 'b') { towardTarget(Fr.make(2)); return true; }
+    if (k === 't') { S.run = !S.run; return true; }
+    if (k === 'p') { S.c1 = againstMade(2); updatePanel(true); return true; }
+    if (k === 's') { S.c2 = againstStepped({ ticks: 200, every: 10 }); updatePanel(true); return true; }
+    if (k === 'k') { S.c4 = scaleCheck() || { same: false }; updatePanel(true); return true; }
+    if (k === 'tr') { S.c7 = trafficPieces(600, 10); S.c8 = trafficCheck(6000); updatePanel(true); return true; }
+    return false;
+}
+addEventListener('keydown', ev => { const k = ev.key.toLowerCase();
+    if (k !== 's' && k !== 'k' && k !== 'p' && act(k)) return;
+    keys.add(k); if (ev.key.startsWith('Arrow') || k === ' ') ev.preventDefault(); });
+addEventListener('keyup', ev => keys.delete(ev.key.toLowerCase()));
+let drag = null; const ptrs = new Map(); let pinch = null;
+cv.style.touchAction = 'none';
+cv.addEventListener('pointerdown', ev => { cv.setPointerCapture(ev.pointerId); ptrs.set(ev.pointerId, [ev.clientX, ev.clientY]);
+    if (ptrs.size === 1) drag = [ev.clientX, ev.clientY];
+    else if (ptrs.size === 2) { const [p, q] = [...ptrs.values()]; pinch = { d: Math.hypot(p[0] - q[0], p[1] - q[1]) || 1, H: S.H || 48 }; drag = null; } });
+function ptrUp(ev) { ptrs.delete(ev.pointerId); if (ptrs.size < 2) pinch = null;
+    if (ptrs.size === 1) { const p = [...ptrs.values()][0]; drag = [p[0], p[1]]; } else if (!ptrs.size) drag = null; }
+cv.addEventListener('pointerup', ptrUp); cv.addEventListener('pointercancel', ptrUp);
+cv.addEventListener('pointermove', ev => { if (!ptrs.has(ev.pointerId)) return; ptrs.set(ev.pointerId, [ev.clientX, ev.clientY]);
+    if (pinch && ptrs.size >= 2) { const [p, q] = [...ptrs.values()], d = Math.hypot(p[0] - q[0], p[1] - q[1]) || 1; S.holdH = true; S.H = Math.max(1e-6, pinch.H * d / pinch.d); return; }
+    if (!drag) return; const dx = ev.clientX - drag[0], dy = ev.clientY - drag[1]; drag = [ev.clientX, ev.clientY];
+    S.dragX += dx; S.dragY += dy; const kx = Math.trunc(S.dragX / 2), ky = Math.trunc(S.dragY / 2); S.dragX -= 2 * kx; S.dragY -= 2 * ky; turnBy(kx); tiltBy(-ky); });
+for (const b of document.querySelectorAll('#pad button')) {
+    const k = b.dataset.k, hold = b.dataset.hold === '1';
+    b.addEventListener('pointerdown', ev => { ev.preventDefault(); b.setPointerCapture(ev.pointerId);
+        if (hold) { keys.add(k); b.classList.add('on'); } else if (k === 'shift') { keys.has('shift') ? keys.delete('shift') : keys.add('shift'); b.classList.toggle('on', keys.has('shift')); } else act(k); });
+    const up = () => { if (hold) { keys.delete(k); b.classList.remove('on'); } };
+    b.addEventListener('pointerup', up); b.addEventListener('pointercancel', up); b.addEventListener('lostpointercapture', up);
+}
+cv.addEventListener('wheel', ev => { ev.preventDefault(); S.holdH = true; S.H = (S.H || 48) * Math.pow(2, ev.deltaY > 0 ? 0.25 : -0.25); }, { passive: false });
+function advance(k) {   // time: k ticks; the traffic stepped a step every two ticks of the page's own running
+    S.tick += BigInt(k); S.live += k; const want = Math.floor(S.live / 2); while (TR.st.T < want) trafficStep(TR.st);
+}
+function tick() {
+    { const now = performance.now(); if (S.run && S.tPrev) { S.tAcc += Math.min(0.25, (now - S.tPrev) / 1000) * 60; const k = Math.floor(S.tAcc); if (k > 0) { advance(k); S.tAcc -= k; } } S.tPrev = now; }
+    const n = keys.has('shift') ? 8 : 1;
+    for (const k of ['w', 'a', 's', 'd']) if (keys.has(k)) stride(k, n);
+    if (keys.has(' ')) stride('up', n); if (keys.has('c')) stride('down', n);
+    if (keys.has('arrowleft')) turnBy(-1); if (keys.has('arrowright')) turnBy(1);
+    if (keys.has('arrowup')) tiltBy(1); if (keys.has('arrowdown')) tiltBy(-1);
+    frame(); updatePanel(false); requestAnimationFrame(tick);
+}
+
+// ---------- hook ----------
+window.__skyCity = {
+    Fr, frame: () => frame(), pose, stride, turnBy, tiltBy, target: () => S.target, exact: () => exactOf(S.target),
+    cull() { const held = thingsNear(); return { ...CULL, held: held.length }; },
+    againstMade, againstStepped, scaleCheck,
+    trigFree(steps = 300) {
+        const names = ['sin', 'cos', 'tan', 'atan', 'atan2', 'asin', 'acos', 'sinh', 'cosh', 'tanh'], saved = {}, calls = {};
+        for (const n of names) { saved[n] = Math[n]; calls[n] = 0; Math[n] = (...a) => { calls[n]++; return saved[n](...a); }; }
+        try { for (let i = 0; i < steps; i++) { turnBy(i % 7 === 0 ? 3 : 0); tiltBy(i % 11 === 0 ? (i % 2 ? 1 : -1) : 0);
+            stride(['w', 'a', 's', 'd', 'up', 'down'][i % 6], 2); frame(); exactOf(S.target); } }
+        finally { for (const n of names) Math[n] = saved[n]; }
+        return calls;
+    },
+    traffic: { state: () => ({ T: TR.st.T, steps: TR.st.steps, off: tOff(TR.st).filter(Boolean).length, minGap: TR.st.minGap }), run(n) { for (let k = 0; k < n; k++) trafficStep(TR.st); return this.state(); },
+               check: trafficCheck, pieces: trafficPieces },
+    onScreen: t => { const s = project(t.r, pose()); if (s[2] <= 0) return false; const p = screenOf(s); return p[0] >= 0 && p[0] <= W && p[1] >= 0 && p[1] <= Hh; },
+    set(o) { if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
+        if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
+        if (o.tick !== undefined) S.tick = BigInt(o.tick); if (o.run !== undefined) S.run = !!o.run;
+        if (o.loops !== undefined) S.loops = !!o.loops; if (o.traffic !== undefined) S.traffic = !!o.traffic;
+        S.lock = null; frame(); return this.state(); },
+    state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH, tick: S.tick.toString(),
+        target: S.target ? { kind: S.target.kind, key: S.target.key } : null }),
+};
+addEventListener('resize', resize);
+resize();
+if (QS.get('menu') === '1') panel.classList.add('open');
+requestAnimationFrame(tick);
+</script>
+</body>
+</html>

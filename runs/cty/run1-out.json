@@ -1,0 +1,1210 @@
+{
+ "res": {
+  "C1": {
+   "poses": 40,
+   "missing": 0,
+   "extra": 0,
+   "worst": []
+  },
+  "C2": [
+   {
+    "k": "C2still",
+    "rows": 21,
+    "bad": 0,
+    "compared": 55,
+    "stored": 7819,
+    "adds": 1563800
+   },
+   {
+    "k": "C2fly",
+    "rows": 21,
+    "bad": 0,
+    "compared": 38,
+    "stored": 8009,
+    "adds": 1601800
+   },
+   {
+    "k": "C2big",
+    "rows": 21,
+    "bad": 0,
+    "compared": 21,
+    "stored": 7784,
+    "adds": 1556800
+   }
+  ],
+  "C3": {
+   "sin": 0,
+   "cos": 0,
+   "tan": 0,
+   "atan": 0,
+   "atan2": 0,
+   "asin": 0,
+   "acos": 0,
+   "sinh": 0,
+   "cosh": 0,
+   "tanh": 0
+  },
+  "C4": null,
+  "C4target": null,
+  "C5": [
+   {
+    "x": 1,
+    "scanned": 6625,
+    "R": 46,
+    "held": 999
+   },
+   {
+    "x": 7,
+    "scanned": 6625,
+    "R": 46,
+    "held": 1035
+   },
+   {
+    "x": 101,
+    "scanned": 6625,
+    "R": 46,
+    "held": 977
+   }
+  ],
+  "C6": {
+   "level": {
+    "n": 8,
+    "min": 156,
+    "max": 1284,
+    "mean": 651
+   },
+   "up": {
+    "n": 8,
+    "min": 79,
+    "max": 281,
+    "mean": 226
+   },
+   "down": {
+    "n": 8,
+    "min": 629,
+    "max": 1209,
+    "mean": 795
+   },
+   "mid": {
+    "n": 8,
+    "min": 401,
+    "max": 2983,
+    "mean": 1126
+   },
+   "roof": {
+    "n": 8,
+    "min": 809,
+    "max": 3145,
+    "mean": 2503
+   }
+  },
+  "C7": {
+   "same": true,
+   "off": 35,
+   "steps": 28800,
+   "minGap": 8,
+   "turns": 225,
+   "refused": 39,
+   "waits": 3086
+  },
+  "C8": {
+   "steps": 6000,
+   "carSteps": 288000,
+   "minGap": 8,
+   "firstOff": 6,
+   "off": 42,
+   "turns": 2256,
+   "refused": 338,
+   "waits": 34609
+  },
+  "errors": []
+ },
+ "raw": {
+  "C1": [
+   {
+    "kind": 0,
+    "missing": 0,
+    "extra": 0,
+    "read": 504,
+    "R": 32
+   },
+   {
+    "kind": 1,
+    "missing": 0,
+    "extra": 0,
+    "read": 556,
+    "R": 36
+   },
+   {
+    "kind": 2,
+    "missing": 0,
+    "extra": 0,
+    "read": 3071,
+    "R": 86
+   },
+   {
+    "kind": 3,
+    "missing": 0,
+    "extra": 0,
+    "read": 264,
+    "R": 43
+   },
+   {
+    "kind": 4,
+    "missing": 0,
+    "extra": 0,
+    "read": 629,
+    "R": 43
+   },
+   {
+    "kind": 0,
+    "missing": 0,
+    "extra": 0,
+    "read": 1233,
+    "R": 52
+   },
+   {
+    "kind": 1,
+    "missing": 0,
+    "extra": 0,
+    "read": 2983,
+    "R": 85
+   },
+   {
+    "kind": 2,
+    "missing": 0,
+    "extra": 0,
+    "read": 3145,
+    "R": 87
+   },
+   {
+    "kind": 3,
+    "missing": 0,
+    "extra": 0,
+    "read": 79,
+    "R": 20
+   },
+   {
+    "kind": 4,
+    "missing": 0,
+    "extra": 0,
+    "read": 672,
+    "R": 43
+   },
+   {
+    "kind": 0,
+    "missing": 0,
+    "extra": 0,
+    "read": 181,
+    "R": 20
+   },
+   {
+    "kind": 1,
+    "missing": 0,
+    "extra": 0,
+    "read": 1355,
+    "R": 55
+   },
+   {
+    "kind": 2,
+    "missing": 0,
+    "extra": 0,
+    "read": 2463,
+    "R": 75
+   },
+   {
+    "kind": 3,
+    "missing": 0,
+    "extra": 0,
+    "read": 277,
+    "R": 43
+   },
+   {
+    "kind": 4,
+    "missing": 0,
+    "extra": 0,
+    "read": 644,
+    "R": 43
+   },
+   {
+    "kind": 0,
+    "missing": 0,
+    "extra": 0,
+    "read": 174,
+    "R": 20
+   },
+   {
+    "kind": 1,
+    "missing": 0,
+    "extra": 0,
+    "read": 812,
+    "R": 43
+   },
+   {
+    "kind": 2,
+    "missing": 0,
+    "extra": 0,
+    "read": 809,
+    "R": 43
+   },
+   {
+    "kind": 3,
+    "missing": 0,
+    "extra": 0,
+    "read": 243,
+    "R": 40
+   },
+   {
+    "kind": 4,
+    "missing": 0,
+    "extra": 0,
+    "read": 691,
+    "R": 43
+   },
+   {
+    "kind": 0,
+    "missing": 0,
+    "extra": 0,
+    "read": 684,
+    "R": 39
+   },
+   {
+    "kind": 1,
+    "missing": 0,
+    "extra": 0,
+    "read": 1152,
+    "R": 50
+   },
+   {
+    "kind": 2,
+    "missing": 0,
+    "extra": 0,
+    "read": 2726,
+    "R": 80
+   },
+   {
+    "kind": 3,
+    "missing": 0,
+    "extra": 0,
+    "read": 246,
+    "R": 43
+   },
+   {
+    "kind": 4,
+    "missing": 0,
+    "extra": 0,
+    "read": 1209,
+    "R": 64
+   },
+   {
+    "kind": 0,
+    "missing": 0,
+    "extra": 0,
+    "read": 1284,
+    "R": 53
+   },
+   {
+    "kind": 1,
+    "missing": 0,
+    "extra": 0,
+    "read": 401,
+    "R": 31
+   },
+   {
+    "kind": 2,
+    "missing": 0,
+    "extra": 0,
+    "read": 2756,
+    "R": 81
+   },
+   {
+    "kind": 3,
+    "missing": 0,
+    "extra": 0,
+    "read": 188,
+    "R": 35
+   },
+   {
+    "kind": 4,
+    "missing": 0,
+    "extra": 0,
+    "read": 677,
+    "R": 43
+   },
+   {
+    "kind": 0,
+    "missing": 0,
+    "extra": 0,
+    "read": 994,
+    "R": 46
+   },
+   {
+    "kind": 1,
+    "missing": 0,
+    "extra": 0,
+    "read": 934,
+    "R": 46
+   },
+   {
+    "kind": 2,
+    "missing": 0,
+    "extra": 0,
+    "read": 2643,
+    "R": 78
+   },
+   {
+    "kind": 3,
+    "missing": 0,
+    "extra": 0,
+    "read": 281,
+    "R": 43
+   },
+   {
+    "kind": 4,
+    "missing": 0,
+    "extra": 0,
+    "read": 665,
+    "R": 43
+   },
+   {
+    "kind": 0,
+    "missing": 0,
+    "extra": 0,
+    "read": 156,
+    "R": 20
+   },
+   {
+    "kind": 1,
+    "missing": 0,
+    "extra": 0,
+    "read": 815,
+    "R": 43
+   },
+   {
+    "kind": 2,
+    "missing": 0,
+    "extra": 0,
+    "read": 2412,
+    "R": 74
+   },
+   {
+    "kind": 3,
+    "missing": 0,
+    "extra": 0,
+    "read": 229,
+    "R": 40
+   },
+   {
+    "kind": 4,
+    "missing": 0,
+    "extra": 0,
+    "read": 1173,
+    "R": 63
+   }
+  ],
+  "C6": {
+   "level": [
+    504,
+    1233,
+    181,
+    174,
+    684,
+    1284,
+    994,
+    156
+   ],
+   "up": [
+    264,
+    79,
+    277,
+    243,
+    246,
+    188,
+    281,
+    229
+   ],
+   "down": [
+    629,
+    672,
+    644,
+    691,
+    1209,
+    677,
+    665,
+    1173
+   ],
+   "mid": [
+    556,
+    2983,
+    1355,
+    812,
+    1152,
+    401,
+    934,
+    815
+   ],
+   "roof": [
+    3071,
+    3145,
+    2463,
+    809,
+    2726,
+    2756,
+    2643,
+    2412
+   ]
+  },
+  "C2still": [
+   {
+    "T": "0",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 0
+   },
+   {
+    "T": "10",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 78190
+   },
+   {
+    "T": "20",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 156380
+   },
+   {
+    "T": "30",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 234570
+   },
+   {
+    "T": "40",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 312760
+   },
+   {
+    "T": "50",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 390950
+   },
+   {
+    "T": "60",
+    "read": 3,
+    "blueprint": 3,
+    "missing": 0,
+    "extra": 0,
+    "compared": 3,
+    "same": true,
+    "stored": 7819,
+    "adds": 469140
+   },
+   {
+    "T": "70",
+    "read": 3,
+    "blueprint": 3,
+    "missing": 0,
+    "extra": 0,
+    "compared": 3,
+    "same": true,
+    "stored": 7819,
+    "adds": 547330
+   },
+   {
+    "T": "80",
+    "read": 3,
+    "blueprint": 3,
+    "missing": 0,
+    "extra": 0,
+    "compared": 3,
+    "same": true,
+    "stored": 7819,
+    "adds": 625520
+   },
+   {
+    "T": "90",
+    "read": 4,
+    "blueprint": 4,
+    "missing": 0,
+    "extra": 0,
+    "compared": 4,
+    "same": true,
+    "stored": 7819,
+    "adds": 703710
+   },
+   {
+    "T": "100",
+    "read": 4,
+    "blueprint": 4,
+    "missing": 0,
+    "extra": 0,
+    "compared": 4,
+    "same": true,
+    "stored": 7819,
+    "adds": 781900
+   },
+   {
+    "T": "110",
+    "read": 3,
+    "blueprint": 3,
+    "missing": 0,
+    "extra": 0,
+    "compared": 3,
+    "same": true,
+    "stored": 7819,
+    "adds": 860090
+   },
+   {
+    "T": "120",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 938280
+   },
+   {
+    "T": "130",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 1016470
+   },
+   {
+    "T": "140",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 1094660
+   },
+   {
+    "T": "150",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 1172850
+   },
+   {
+    "T": "160",
+    "read": 3,
+    "blueprint": 3,
+    "missing": 0,
+    "extra": 0,
+    "compared": 3,
+    "same": true,
+    "stored": 7819,
+    "adds": 1251040
+   },
+   {
+    "T": "170",
+    "read": 3,
+    "blueprint": 3,
+    "missing": 0,
+    "extra": 0,
+    "compared": 3,
+    "same": true,
+    "stored": 7819,
+    "adds": 1329230
+   },
+   {
+    "T": "180",
+    "read": 3,
+    "blueprint": 3,
+    "missing": 0,
+    "extra": 0,
+    "compared": 3,
+    "same": true,
+    "stored": 7819,
+    "adds": 1407420
+   },
+   {
+    "T": "190",
+    "read": 3,
+    "blueprint": 3,
+    "missing": 0,
+    "extra": 0,
+    "compared": 3,
+    "same": true,
+    "stored": 7819,
+    "adds": 1485610
+   },
+   {
+    "T": "200",
+    "read": 3,
+    "blueprint": 3,
+    "missing": 0,
+    "extra": 0,
+    "compared": 3,
+    "same": true,
+    "stored": 7819,
+    "adds": 1563800
+   }
+  ],
+  "C2fly": [
+   {
+    "T": "0",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 0
+   },
+   {
+    "T": "10",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 78190
+   },
+   {
+    "T": "20",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 156380
+   },
+   {
+    "T": "30",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 234570
+   },
+   {
+    "T": "40",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 312760
+   },
+   {
+    "T": "50",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 390950
+   },
+   {
+    "T": "60",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 469140
+   },
+   {
+    "T": "70",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 547330
+   },
+   {
+    "T": "80",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 625520
+   },
+   {
+    "T": "90",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7819,
+    "adds": 703710
+   },
+   {
+    "T": "100",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7819,
+    "adds": 781900
+   },
+   {
+    "T": "110",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7819,
+    "adds": 860090
+   },
+   {
+    "T": "120",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7819,
+    "adds": 938280
+   },
+   {
+    "T": "130",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7921,
+    "adds": 1029730
+   },
+   {
+    "T": "140",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7921,
+    "adds": 1108940
+   },
+   {
+    "T": "150",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7921,
+    "adds": 1188150
+   },
+   {
+    "T": "160",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7986,
+    "adds": 1277760
+   },
+   {
+    "T": "170",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7986,
+    "adds": 1357620
+   },
+   {
+    "T": "180",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 7986,
+    "adds": 1437480
+   },
+   {
+    "T": "190",
+    "read": 2,
+    "blueprint": 2,
+    "missing": 0,
+    "extra": 0,
+    "compared": 2,
+    "same": true,
+    "stored": 8009,
+    "adds": 1521710
+   },
+   {
+    "T": "200",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 8009,
+    "adds": 1601800
+   }
+  ],
+  "C2big": [
+   {
+    "T": "1000000000000000000000000000000",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 0
+   },
+   {
+    "T": "1000000000000000000000000000010",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 77840
+   },
+   {
+    "T": "1000000000000000000000000000020",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 155680
+   },
+   {
+    "T": "1000000000000000000000000000030",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 233520
+   },
+   {
+    "T": "1000000000000000000000000000040",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 311360
+   },
+   {
+    "T": "1000000000000000000000000000050",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 389200
+   },
+   {
+    "T": "1000000000000000000000000000060",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 467040
+   },
+   {
+    "T": "1000000000000000000000000000070",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 544880
+   },
+   {
+    "T": "1000000000000000000000000000080",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 622720
+   },
+   {
+    "T": "1000000000000000000000000000090",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 700560
+   },
+   {
+    "T": "1000000000000000000000000000100",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 778400
+   },
+   {
+    "T": "1000000000000000000000000000110",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 856240
+   },
+   {
+    "T": "1000000000000000000000000000120",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 934080
+   },
+   {
+    "T": "1000000000000000000000000000130",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 1011920
+   },
+   {
+    "T": "1000000000000000000000000000140",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 1089760
+   },
+   {
+    "T": "1000000000000000000000000000150",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 1167600
+   },
+   {
+    "T": "1000000000000000000000000000160",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 1245440
+   },
+   {
+    "T": "1000000000000000000000000000170",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 1323280
+   },
+   {
+    "T": "1000000000000000000000000000180",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 1401120
+   },
+   {
+    "T": "1000000000000000000000000000190",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 1478960
+   },
+   {
+    "T": "1000000000000000000000000000200",
+    "read": 1,
+    "blueprint": 1,
+    "missing": 0,
+    "extra": 0,
+    "compared": 1,
+    "same": true,
+    "stored": 7784,
+    "adds": 1556800
+   }
+  ],
+  "C3": {
+   "sin": 0,
+   "cos": 0,
+   "tan": 0,
+   "atan": 0,
+   "atan2": 0,
+   "asin": 0,
+   "acos": 0,
+   "sinh": 0,
+   "cosh": 0,
+   "tanh": 0
+  },
+  "C4": null,
+  "C4target": null,
+  "C5": [
+   {
+    "x": 1,
+    "scanned": 6625,
+    "R": 46,
+    "held": 999
+   },
+   {
+    "x": 7,
+    "scanned": 6625,
+    "R": 46,
+    "held": 1035
+   },
+   {
+    "x": 101,
+    "scanned": 6625,
+    "R": 46,
+    "held": 977
+   }
+  ],
+  "C7": {
+   "same": true,
+   "off": 35,
+   "steps": 28800,
+   "minGap": 8,
+   "turns": 225,
+   "refused": 39,
+   "waits": 3086
+  },
+  "C8": {
+   "steps": 6000,
+   "carSteps": 288000,
+   "minGap": 8,
+   "firstOff": 6,
+   "off": 42,
+   "turns": 2256,
+   "refused": 338,
+   "waits": 34609
+  }
+ }
+}

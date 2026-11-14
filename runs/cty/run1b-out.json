@@ -1,0 +1,66 @@
+{
+ "c4": [
+  {
+   "eye": [
+    0,
+    30,
+    -60
+   ],
+   "ky": -120,
+   "kind": "tower",
+   "same": true,
+   "closure": "1"
+  },
+  {
+   "eye": [
+    100,
+    20,
+    300
+   ],
+   "ky": -120,
+   "kind": "tower",
+   "same": true,
+   "closure": "1"
+  },
+  {
+   "eye": [
+    -500,
+    150,
+    40
+   ],
+   "ky": -120,
+   "kind": "tower",
+   "same": true,
+   "closure": "1"
+  },
+  {
+   "eye": [
+    2000,
+    60,
+    2000
+   ],
+   "ky": -120,
+   "kind": "tower",
+   "same": true,
+   "closure": "1"
+  },
+  {
+   "eye": [
+    0,
+    30,
+    -60
+   ],
+   "ky": -120,
+   "kind": "tower",
+   "same": true,
+   "closure": "1"
+  }
+ ],
+ "times": {
+  "street": 16.3,
+  "mid": 24.6,
+  "above": 35.8,
+  "up": 3
+ },
+ "errors": []
+}
