@@ -18,11 +18,12 @@
     Two kinds of car. On their own loops: each rings 1 to 3 blocks by 1 to 3 along the street lines at its own lane height,
     speed, direction and phase, its place at tick T exact from T alone. Traffic: 48 cars in a district of 8 by 8 blocks at
     the origin, one-way streets, each car waiting for the one ahead and turning only when the other lane is clear, its state
-    stepped from the moment the page opens; each with a ghost that flies the same rules alone.
+    stepped from the moment the page opens; each with a ghost that flies the same rules alone. Bouncing balls (R971) at a
+    third of the street crossings (none in the traffic district), radius k = 3 to 5, to k² and back every 20k ticks under one pull, from T alone.
     W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E or drag or the arrows turn, the crosshairs follow the mouse, G half way to the thing
-    under the crosshair, B back, V the whole hemisphere in front, the wheel (or + and −, 1 back) zooms, H holds it, T pauses time, M the menu.
-    ?view=hemi&zoom=&x=&y=&z=&q=&ky=&kp=&tick=&time=0&loops=0&traffic=0&menu=1&heat=1
-    Hook window.__skyCity: Fr, set(o), state(), cull(), againstMade(half), againstStepped(o), trigFree(steps), scaleCheck(),
+    under the crosshair, B back, the wheel (or + and −, 1 back) zooms, H holds it, T pauses time, M the menu.
+    ?zoom=&x=&y=&z=&q=&ky=&kp=&tick=&time=0&loops=0&traffic=0&balls=0&menu=1&heat=1
+    Hook window.__skyCity: Fr, set(o), state(), cull(), againstMade(half), againstStepped(o), trigFree(steps), scaleCheck(), ballCheck(t, k),
     traffic: { state, run(n), check(n), pieces(total, parts) }, target(), exact(), onScreen(t).
     -->
     <style>
@@ -72,13 +73,13 @@
 </div>
 <div id="panel">
     <h2>Sky city</h2>
-    <p>W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E, a drag or the arrow keys turn, the crosshairs follow the mouse (the middle of the screen on a touch screen), G half way to the thing under the crosshair, B back to twice as far, V the whole hemisphere in front, the wheel (or + and −, 1 back) zooms, H holds it, T stops and starts time, M the menu.</p>
+    <p>W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E, a drag or the arrow keys turn, the crosshairs follow the mouse (the middle of the screen on a touch screen), G half way to the thing under the crosshair, B back to twice as far, the wheel (or + and −, 1 back) zooms, H holds it, T stops and starts time, M the menu.</p>
     <p>On a touch screen: drag to look; two fingers dragged together fly (up the screen forward, across sideways), spread or closed they zoom; hold the arrows to fly, ↑ and ↓ up and down.</p>
     <h3>show</h3>
     <label><input type="checkbox" id="optLoops" checked> cars on their own loops (placed from the tick alone)</label>
     <label><input type="checkbox" id="optTraffic" checked> traffic (cars that react; their state held)</label>
-    <label><input type="checkbox" id="optHemi"> the whole hemisphere in front (V): the single hemispherical vantage, laid by equal area</label>
-    <label><input type="checkbox" id="optHeat"> the heat on the screen (cos³ off the look on the flat screen; flat on the hemisphere)</label>
+    <label><input type="checkbox" id="optBalls" checked> bouncing balls (placed from the tick alone)</label>
+    <label><input type="checkbox" id="optHeat"> the heat on the screen, cos³ off the look</label>
     <label><input type="checkbox" id="optRead" checked> the thing under the crosshair</label>
     <label><input type="checkbox" id="optHeld" checked> what is held</label>
     <label><input type="checkbox" id="optCars" checked> the cars</label>
@@ -224,6 +225,24 @@ function loopLc(t, d4) {   // d4 quarter-units round the ring from the home corn
     return flip ? { lc: [z, t.y, x], ax: 1 - ax } : { lc: [x, t.y, z], ax };
 }
 function loopC(t, d4) { const { lc } = loopLc(t, d4); return [Fr.add(t.cx, Fr.dy(lc[0])), Fr.dy(lc[1]), Fr.add(t.cz, Fr.dy(lc[2]))]; }
+// ---------- bouncing balls (R971): at a third of the street crossings, placed from T alone ----------
+// A ball of radius k (k = 3, 4 or 5) bounces on the street to k² above it, every 20k ticks, under one pull, g = 1/50 a
+// tick² (so the period goes as the square root of the height: 8A/P² = g). Its centre at tick T: τ = (T + phase) mod P,
+// height r + 4A·τ(P − τ)/P², exact. None in the traffic district, whose lanes cross at 28 and 32.
+const BALLS0 = QS.get('balls') !== '0', GPULL = Fr.make(1, 50);
+function ballOf(i, j) {
+    const key = 'b' + i + ',' + j; if (cellCache.has(key)) return cellCache.get(key);
+    let t = null; const h = k => hash(i, j, k + 777777);
+    const inDistrict = i >= 0n && i <= 8n && j >= 0n && j <= 8n;
+    if (!inDistrict && h(1) < 1 / 3) { const k = 3 + Math.floor(h(2) * 3);
+        t = { kind: 'ball', key, i, j, k, rad: k, A: k * k, P: 20 * k, w: 2 * k, d: 2 * k, h: 2 * k, b: 2 * k,
+              cx: Fr.mul(Fr.make(i), CELLF), cz: Fr.mul(Fr.make(j), CELLF), r: [0, 0, 0] };
+        t.ph = Math.floor(h(3) * t.P); }
+    cellCache.set(key, t); return t;
+}
+function ballTau(t, T) { const M = BigInt(t.P); let r = (BigInt(T) + BigInt(t.ph)) % M; if (r < 0n) r += M; return Number(r); }
+function ballY(t, tau) { return Fr.add(Fr.make(t.rad), Fr.make(4 * t.A * tau * (t.P - tau), t.P * t.P)); }   // the centre's height, exact
+function ballC(t, T) { return [t.cx, ballY(t, ballTau(t, T)), t.cz]; }
 // a car is 12 long, 6 wide and 3 tall (since R966; it was 6 by 3 by 2)
 const CAR_X = boxEdges(-6, 6, -1.5, 1.5, -3, 3, []), CAR_Z = boxEdges(-3, 3, -1.5, 1.5, -6, 6, []);
 
@@ -283,8 +302,8 @@ const TCARS = Array.from({ length: TN }, (_, k) => ({ kind: 'car', traffic: true
 const S = {
     q: Math.round(+QS.get('q') || 0), ky: Math.round(+QS.get('ky') || 0), kp: Math.round(+QS.get('kp') || 0), dragX: 0, dragY: 0,
     eye: [Fr.make(QS.has('x') ? Math.round(+QS.get('x')) : 0), Fr.make(QS.has('y') ? Math.max(1, Math.round(+QS.get('y'))) : 30), Fr.make(QS.has('z') ? Math.round(+QS.get('z')) : -60)],
-    H: null, holdH: false, view: QS.get('view') === 'hemi' ? 'hemi' : 'flat', zoom: Math.min(64, Math.max(1, +(QS.get('zoom') || 1))), target: null, lock: null, cur: null, tick: BigInt(QS.get('tick') || 0), run: QS.get('time') !== '0', tAcc: 0, tPrev: 0,
-    lastHeading: null, anchors: 0, goes: 0, loops: LOOPS0, traffic: TRAFFIC0, live: 0,
+    H: null, holdH: false, zoom: Math.min(64, Math.max(1, +(QS.get('zoom') || 1))), target: null, lock: null, cur: null, tick: BigInt(QS.get('tick') || 0), run: QS.get('time') !== '0', tAcc: 0, tPrev: 0,
+    lastHeading: null, anchors: 0, goes: 0, loops: LOOPS0, traffic: TRAFFIC0, balls: BALLS0, live: 0,
     show: { heat: QS.get('heat') === '1', read: true, held: true, cars: true, checks: false, about: false },
 };
 const TR = { st: trafficInit() };
@@ -346,30 +365,32 @@ function cNow(t) {   // a thing's centre now, exact
     if (t.kind === 'tower') return t.C;
     if (t.kind === 'elev') return elevC(t, elevQ(t, S.tick));
     if (t.loop) return loopC(t, loopQ(t, S.tick));
+    if (t.kind === 'ball') return ballC(t, S.tick);
     return tWorld(TR.st.cars[t.id]).map(v => Fr.make(v));
 }
-const CULL = { R: 0, scanned: 0, examined: 0, towers: 0, elevs: 0, loops: 0, traffic: 0 };
+const CULL = { R: 0, scanned: 0, examined: 0, towers: 0, elevs: 0, loops: 0, traffic: 0, balls: 0 };
 let cand = null;   // the cells about an anchor, kept while the eye stays near it
 const within = new Map();
 function cellsWithin(R) { if (!within.has(R)) { let c = 0; for (let i = -R; i <= R; i++) for (let j = -R; j <= R; j++) if (i * i + j * j <= R * R) c++; within.set(R, c); } return within.get(R); }
 function candidates(R, ci, cj) {
     if (cand && cand.R >= R + 2 && Math.abs(Number(ci - cand.ai)) <= 2 && Math.abs(Number(cj - cand.aj)) <= 2) return cand;
-    const RR = R + 6, list = [], cars = [];
+    const RR = R + 6, list = [], cars = [], balls = [];
     for (let di = -RR; di <= RR; di++) for (let dj = -RR; dj <= RR; dj++) { if (di * di + dj * dj > RR * RR) continue;
         const c = cellOf(ci + BigInt(di), cj + BigInt(dj)); for (const t of c.towers) list.push({ t, di, dj }); for (const t of c.elevs) list.push({ t, di, dj });
-        const lc = loopCarOf(ci + BigInt(di), cj + BigInt(dj)); if (lc) cars.push({ t: lc, di, dj }); }
-    cand = { R: RR, ai: ci, aj: cj, list, cars }; return cand;
+        const lc = loopCarOf(ci + BigInt(di), cj + BigInt(dj)); if (lc) cars.push({ t: lc, di, dj });
+        const bl = ballOf(ci + BigInt(di), cj + BigInt(dj)); if (bl) balls.push({ t: bl, di, dj }); }
+    cand = { R: RR, ai: ci, aj: cj, list, cars, balls }; return cand;
 }
 let heldCache = { key: null, out: [] };
 function thingsNear() {
     readFrame(); const R = scanR();
-    const key = S.eye.map(Fr.str).join(',') + '|' + S.tick + '|' + RD.F.join() + '|' + RD.Hp + '|' + S.zoom + '|' + S.loops + S.traffic + TR.st.T;
+    const key = S.eye.map(Fr.str).join(',') + '|' + S.tick + '|' + RD.F.join() + '|' + RD.Hp + '|' + S.zoom + '|' + S.loops + S.traffic + S.balls + TR.st.T;
     if (heldCache.key === key) return heldCache.out;
     const ci = floorFr(S.eye[0], CELLF), cj = floorFr(S.eye[2], CELLF), A = candidates(R, ci, cj);
     // the eye from the anchor's corner, exactly, then a small double (a floating origin)
     const ex = Fr.num(Fr.sub(S.eye[0], Fr.mul(Fr.make(A.ai), CELLF))), ez = Fr.num(Fr.sub(S.eye[2], Fr.mul(Fr.make(A.aj), CELLF))), ey = Fr.num(S.eye[1]);
     const oi = Number(ci - A.ai), oj = Number(cj - A.aj), R2 = R * R, out = [], T = S.tick;
-    let ex2 = 0, nt = 0, ne = 0, nl = 0, nx = 0;
+    let ex2 = 0, nt = 0, ne = 0, nl = 0, nx = 0, nb = 0;
     for (const { t, di, dj } of A.list) { const a = di - oi, b = dj - oj; if (a * a + b * b > R2) continue; ex2++;
         const lc = t.kind === 'elev' ? elevLc(t, elevQ(t, T)) : t.lc;
         t.r = [di * CELL + lc[0] - ex, lc[1] - ey, dj * CELL + lc[2] - ez];
@@ -378,12 +399,15 @@ function thingsNear() {
         for (const { t, di, dj } of A.cars) { const a = di - oi, b = dj - oj; if (a * a + b * b > RM2) continue;
             const L = loopLc(t, loopQ(t, T)); t.alongZ = L.ax === 1; t.r = [di * CELL + L.lc[0] - ex, L.lc[1] - ey, dj * CELL + L.lc[2] - ez];
             if (keepR(t, t.r)) { out.push(t); nl++; } } }
+    if (S.balls) for (const { t, di, dj } of A.balls) { const a = di - oi, b = dj - oj; if (a * a + b * b > R2) continue;
+        t.yc = Fr.num(ballY(t, ballTau(t, T))); t.r = [di * CELL - ex, t.yc - ey, dj * CELL - ez];
+        if (keepR(t, t.r)) { out.push(t); nb++; } }
     if (S.traffic) { const off = tOff(TR.st), E = S.eye.map(Fr.num);
         // the district is near the origin, so its cars are placed from the exact eye directly
         TR.st.cars.forEach((c, k) => { const t = TCARS[k], w = tWorld(c);
             t.r = [0, 1, 2].map(m => Fr.num(Fr.sub(Fr.make(w[m]), S.eye[m]))); t.alongZ = c.ax === 0; t.off = off[k];
             if (keepR(t, t.r)) { out.push(t); nx++; } }); }
-    CULL.R = R; CULL.scanned = cellsWithin(R); CULL.examined = ex2; CULL.towers = nt; CULL.elevs = ne; CULL.loops = nl; CULL.traffic = nx;
+    CULL.R = R; CULL.scanned = cellsWithin(R); CULL.examined = ex2; CULL.towers = nt; CULL.elevs = ne; CULL.loops = nl; CULL.traffic = nx; CULL.balls = nb;
     heldCache = { key, out }; return out;
 }
 
@@ -400,7 +424,8 @@ function againstMade(half = 2) {
         const i = ci + BigInt(di), j = cj + BigInt(dj), c = cellOf(i, j);
         for (const t of c.towers) if (keepExact(t, t.C)) bp.add(t.key);
         for (const e of c.elevs) if (keepExact(e, elevC(e, elevQ(e, T)))) bp.add(e.key);
-        if (S.loops) { const lc = loopCarOf(i, j); if (lc && keepExact(lc, loopC(lc, loopQ(lc, T)))) bp.add(lc.key); } }
+        if (S.loops) { const lc = loopCarOf(i, j); if (lc && keepExact(lc, loopC(lc, loopQ(lc, T)))) bp.add(lc.key); }
+        if (S.balls) { const bl = ballOf(i, j); if (bl && keepExact(bl, ballC(bl, T))) bp.add(bl.key); } }
     return { ...compareSets(read, bp), cells, scanned: CULL.scanned, R };
 }
 // C2: loop cars and elevators near the eye stored at T0 and stepped one tick at a time (quarter-units added, wrapped),
@@ -448,6 +473,16 @@ function scaleCheck() {
     const same = ks.every(k => { const y = thumbX(X.C, S.eye, P.R, k); return X.pairs.every((p, n) => { const [i, j] = [[0, 1], [1, 2], [2, 0]][n]; return !p.s || Fr.eq(Fr.div(y[j], y[i]), p.s); }); });
     return { same, closure: X.closure && Fr.str(X.closure) };
 }
+// R971: a ball under the crosshair, the world and the eye scaled by k: its slopes at the top and the foot of its bounce,
+// and the ticks a bounce would take under the same pull (8A/P² = g, so P' = P·√k)
+function ballCheck(t = S.target, k = 4) {
+    if (!t || t.kind !== 'ball') return null; const P = pose(), K = Fr.make(k);
+    const at = tau => { const C = [t.cx, ballY(t, tau), t.cz], x = thumbX(C, S.eye, P.R), y = thumbX(C, S.eye, P.R, K);
+        return [[0, 1], [1, 2], [2, 0]].every(([i, j]) => Fr.zero(x[i]) || Fr.eq(Fr.div(x[j], x[i]), Fr.div(y[j], y[i]))); };
+    const top = at(t.P / 2), foot = at(0);
+    const P2 = Fr.div(Fr.mul(Fr.make(8 * t.A), K), GPULL);   // P'² under the same pull
+    return { top, foot, P: t.P, Pk: Math.sqrt(Fr.num(P2)), ratio: Math.sqrt(Fr.num(P2)) / t.P, k };
+}
 // C7: traffic stepped 0 → total at once and in pieces
 function trafficPieces(total = 600, parts = 10) {
     const a = trafficInit(); for (let k = 0; k < total; k++) trafficStep(a);
@@ -464,10 +499,6 @@ const cv = document.getElementById('cv'), g = cv.getContext('2d');
 let W = 0, Hh = 0, foc = 1, heatImg = null;
 // the zoom magnifies the screen (foc × Z) and holds by size on the screen, so the grain is 1/32 ÷ Z; it never moves H
 function setFoc() { foc = (W / 2) / 1.2 * S.zoom; heatKey = null; }
-// the single hemispherical vantage: every direction in front of the look on one disc, laid by equal area (Lambert's
-// azimuthal map about the look): radius √(2(1 − cos α)), cos α the direction's dot with the look, so no trigonometry;
-// the rim, at √2, is the look's horizon. Equal room holds equal directions, so the read's heat per unit of this screen is flat.
-function hemiScale() { return Math.min(W, Hh) / 2 / Math.SQRT2 * 0.96 * S.zoom; }
 function zoomBy(f) { S.zoom = Math.min(64, Math.max(1, S.zoom * f)); setFoc(); }
 function resize() {
     const dpr = Math.min(2, window.devicePixelRatio || 1); W = innerWidth; Hh = innerHeight;
@@ -489,12 +520,6 @@ function heatAbout(cx0, cy0) {
 function crossAt() { return S.cur ? S.cur : [W / 2, Hh / 2]; }
 function crossDir(P) {   // the crosshair's direction from the eye, a unit vector
     if (!S.cur) return P.F; project([0, 0, 1], P);
-    if (S.view === 'hemi') {   // the disc point back to its direction: cos α = 1 − ρ²/2, sin α = ρ·√(1 − ρ²/4)
-        const [U, Rt] = P.UR, F = P.F, k = hemiScale(); let X = (S.cur[0] - W / 2) / k, Y = -(S.cur[1] - Hh / 2) / k, r = Math.hypot(X, Y);
-        if (r > Math.SQRT2 - 1e-9) { X *= (Math.SQRT2 - 1e-9) / r; Y *= (Math.SQRT2 - 1e-9) / r; r = Math.SQRT2 - 1e-9; }
-        if (r < 1e-12) return F;
-        const c = 1 - r * r / 2, sn = r * Math.sqrt(1 - r * r / 4), ux = X / r, uy = Y / r;
-        return [0, 1, 2].map(m => F[m] * c + sn * (ux * Rt[m] + uy * U[m])); }
     const [U, Rt] = P.UR, F = P.F, x = (S.cur[0] - W / 2) / foc, y = -(S.cur[1] - Hh / 2) / foc;
     const v = [0, 1, 2].map(k => F[k] + x * Rt[k] + y * U[k]), n = Math.hypot(...v); return v.map(c => c / n);
 }
@@ -503,21 +528,15 @@ function project(v, P) {
         P.UR = [U, [U[1] * F[2] - U[2] * F[1], U[2] * F[0] - U[0] * F[2], U[0] * F[1] - U[1] * F[0]]]; }
     const [U, Rt] = P.UR; return [v[0] * Rt[0] + v[1] * Rt[1] + v[2] * Rt[2], v[0] * U[0] + v[1] * U[1] + v[2] * U[2], v[0] * F[0] + v[1] * F[1] + v[2] * F[2]];
 }
-function screenOf(p) {
-    if (S.view !== 'hemi') return [W / 2 + foc * p[0] / p[2], Hh / 2 - foc * p[1] / p[2]];
-    const n = Math.hypot(p[0], p[1], p[2]), rho = Math.hypot(p[0], p[1]);
-    if (rho < 1e-12) return [W / 2, Hh / 2];
-    const k = hemiScale() * Math.sqrt(Math.max(0, 2 * (1 - p[2] / n))) / rho; return [W / 2 + k * p[0], Hh / 2 - k * p[1]];
-}
-const HEMI_N = 10;   // pieces an edge is cut into on the hemisphere, where straight lines bend
-function along(a, b, n) { const out = []; for (let k = 0; k <= n; k++) { const u = k / n; out.push([a[0] + u * (b[0] - a[0]), a[1] + u * (b[1] - a[1]), a[2] + u * (b[2] - a[2])]); } return out; }
-function strokePts(pts) { g.moveTo(...pts[0]); for (let k = 1; k < pts.length; k++) g.lineTo(...pts[k]); }
+function screenOf(p) { return [W / 2 + foc * p[0] / p[2], Hh / 2 - foc * p[1] / p[2]]; }
 function edge(a, b) { const near = 0.05; if (a[2] < near && b[2] < near) return null;
     if (a[2] < near) { const t = (near - a[2]) / (b[2] - a[2]); a = [a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1]), near]; }
     if (b[2] < near) { const t = (near - b[2]) / (a[2] - b[2]); b = [b[0] + t * (a[0] - b[0]), b[1] + t * (a[1] - b[1]), near]; }
-    return S.view === 'hemi' ? along(a, b, HEMI_N).map(screenOf) : [screenOf(a), screenOf(b)]; }
+    return [screenOf(a), screenOf(b)]; }
 const add3 = (p, e) => [p[0] + e[0], p[1] + e[1], p[2] + e[2]];
 function rayBoxes(F, t) {   // the nearest hit of the look on a thing's boxes, from the eye (0)
+    if (t.kind === 'ball') { const b = F[0] * t.r[0] + F[1] * t.r[1] + F[2] * t.r[2], c = t.r[0] ** 2 + t.r[1] ** 2 + t.r[2] ** 2 - t.rad * t.rad, q = b * b - c;
+        return q < 0 || b + Math.sqrt(q) < 0 ? null : Math.max(0, b - Math.sqrt(q)); }
     let best = null; const boxes = t.pick || [[-t.w / 2, t.w / 2, -t.h / 2, t.h / 2, -t.d / 2, t.d / 2]];
     for (const q of boxes) { const lo = [t.r[0] + q[0], t.r[1] + q[2], t.r[2] + q[4]], hi = [t.r[0] + q[1], t.r[1] + q[3], t.r[2] + q[5]]; let t0 = 0, t1 = Infinity, ok = true;
         for (let i = 0; i < 3 && ok; i++) { if (Math.abs(F[i]) < 1e-12) { if (0 < lo[i] || 0 > hi[i]) ok = false; continue; }
@@ -549,20 +568,27 @@ function clipNear(poly) {   // camera-space polygon cut at z = 0.05
 function boxesOf(t) { return t.kind === 'car' ? [t.alongZ ? [-3, 3, -1.5, 1.5, -6, 6] : [-6, 6, -1.5, 1.5, -3, 3]] : t.pick; }
 function drawFilled(things, P) {
     const list = [];
-    for (const t of things) for (const q of boxesOf(t)) {
+    for (const t of things) { if (t.kind === 'ball') { const d = Math.max(0, Math.hypot(...t.r) - t.rad); list.push({ t, d: d * d }); continue; }
+      for (const q of boxesOf(t)) {
         const lo = [t.r[0] + q[0], t.r[1] + q[2], t.r[2] + q[4]], hi = [t.r[0] + q[1], t.r[1] + q[3], t.r[2] + q[5]];
         let d = 0; for (let m = 0; m < 3; m++) { const c = Math.max(lo[m], Math.min(0, hi[m])); d += c * c; }   // the box's nearest point
-        list.push({ t, lo, hi, d }); }
+        list.push({ t, lo, hi, d }); } }
     list.sort((a, b) => b.d - a.d);
     const col = new Map(), lineW = t => t === S.target ? 2 : t.kind === 'tower' ? 1 : 1.4;
-    const poly = (pts, fill, stroke, w) => { let c = clipNear(pts.map(v => project(v, P))); if (c.length < 3) return;
-        if (S.view === 'hemi') c = c.flatMap((v, k) => along(v, c[(k + 1) % c.length], HEMI_N).slice(0, -1));
+    const poly = (pts, fill, stroke, w) => { const c = clipNear(pts.map(v => project(v, P))); if (c.length < 3) return;
         g.beginPath(); c.forEach((v, k) => { const s = screenOf(v); k ? g.lineTo(...s) : g.moveTo(...s); }); g.closePath();
         g.fillStyle = fill; g.fill(); g.strokeStyle = stroke; g.lineWidth = w; g.stroke(); };
     const seg = (a, b, stroke, w, alpha) => { const s = edge(project(a, P), project(b, P)); if (!s) return; g.globalAlpha = alpha;
-        g.strokeStyle = stroke; g.lineWidth = w; g.beginPath(); strokePts(s); g.stroke(); g.globalAlpha = 1; };
+        g.strokeStyle = stroke; g.lineWidth = w; g.beginPath(); g.moveTo(...s[0]); g.lineTo(...s[1]); g.stroke(); g.globalAlpha = 1; };
     for (const { t, lo, hi, d } of list) {
         let c = col.get(t); if (!c) { const st = colourOf(t, P, t === S.target); c = { st, rgb: rgbOf(st) }; col.set(t, c); }
+        if (t.kind === 'ball') {   // its foot on the street, a cross as wide as the ball, then the ball
+            const f = [t.r[0], t.r[1] - t.yc, t.r[2]], R = t.rad;
+            seg([f[0] - R, f[1], f[2]], [f[0] + R, f[1], f[2]], c.st, 1, 0.6); seg([f[0], f[1], f[2] - R], [f[0], f[1], f[2] + R], c.st, 1, 0.6);
+            const s = project(t.r, P); if (s[2] <= R) continue;
+            const [sx, sy] = screenOf(s), sr = foc * R / Math.sqrt(s[0] * s[0] + s[1] * s[1] + s[2] * s[2] - R * R);
+            g.beginPath(); g.arc(sx, sy, sr, 0, 2 * Math.PI); g.fillStyle = shade(c.rgb, 0.35); g.fill(); g.strokeStyle = c.st; g.lineWidth = lineW(t); g.stroke();
+            continue; }
         const [x0, y0, z0] = lo, [x1, y1, z1] = hi, w = lineW(t);
         // each face with its outward normal; seen only from its outer side
         const faces = [];
@@ -591,30 +617,27 @@ function drawFilled(things, P) {
 function frame() {
     const P = pose(), ey = Fr.num(S.eye[1]);
     g.fillStyle = '#070b12'; g.fillRect(0, 0, W, Hh);
-    if (S.view === 'hemi') {   // the disc of the hemisphere in front; with the heat shown it is one tint, the heat per unit of an equal-area screen being flat
-        const R = hemiScale() * Math.SQRT2; g.beginPath(); g.arc(W / 2, Hh / 2, R, 0, 2 * Math.PI);
-        g.fillStyle = S.show.heat ? 'rgb(22,30,44)' : 'rgb(10,15,24)'; g.fill(); g.strokeStyle = 'rgba(242,193,78,0.5)'; g.lineWidth = 1.2; g.stroke();
-    } else if (S.show.heat) g.drawImage(heatAbout(...crossAt()), 0, 0, W, Hh);
+    if (S.show.heat) g.drawImage(heatAbout(...crossAt()), 0, 0, W, Hh);
     // the streets: each block's kerb (6 and 42 of the cell), within 24 cells of the eye
     { const ci = floorFr(S.eye[0], CELLF), cj = floorFr(S.eye[2], CELLF), ex = Fr.num(Fr.sub(S.eye[0], Fr.mul(Fr.make(ci), CELLF))), ez = Fr.num(Fr.sub(S.eye[2], Fr.mul(Fr.make(cj), CELLF))), Rg = 24 * CELL;
       g.strokeStyle = 'rgba(135,150,171,0.13)'; g.lineWidth = 1; g.beginPath();
       for (let k = -24; k <= 24; k++) for (const o of [6, 42]) { const u = k * CELL + o;
           for (const seg of [[[u - ex, -ey, -Rg], [u - ex, -ey, Rg]], [[-Rg, -ey, u - ez], [Rg, -ey, u - ez]]]) {
-              const s = edge(project(seg[0], P), project(seg[1], P)); if (s) strokePts(s); } }
+              const s = edge(project(seg[0], P), project(seg[1], P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } } }
       g.stroke(); }
     // the traffic district's edge
     if (S.traffic) { const E = S.eye.map(Fr.num), q = [[0, 0], [TL, 0], [TL, TL], [0, TL]]; g.strokeStyle = 'rgba(248,113,113,0.25)'; g.beginPath();
-        for (let k = 0; k < 4; k++) { const a = q[k], b = q[(k + 1) % 4], s = edge(project([a[0] - E[0], -E[1], a[1] - E[2]], P), project([b[0] - E[0], -E[1], b[1] - E[2]], P)); if (s) strokePts(s); }
+        for (let k = 0; k < 4; k++) { const a = q[k], b = q[(k + 1) % 4], s = edge(project([a[0] - E[0], -E[1], a[1] - E[2]], P), project([b[0] - E[0], -E[1], b[1] - E[2]], P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } }
         g.stroke(); }
     const things = thingsNear(); let best = null, bt = Infinity;
     for (const t of things) { const hit = rayBoxes(RD.F, t); if (hit !== null && hit < bt) { bt = hit; best = t; } }
     if (S.lock !== best) S.lock = null;   // what is behind something drawn is never under the crosshair
     S.target = best;
-    if (S.target && !S.holdH) { const x = [P.a, P.b, P.c].map(v => S.target.r[0] * v[0] + S.target.r[1] * v[1] + S.target.r[2] * v[2]); S.H = Math.max(1e-6, (x[0] + x[1] + x[2]) / 3); }
+    // H: the reach along the thumbs to the thing's centre; where that is not ahead of the eye (beside a tower), the reach to
+    // the point the crosshair meets on it (R971: before, H fell to 10⁻⁶ there, nothing was held and the page stayed empty)
+    if (S.target && !S.holdH) { const reach = p => { const x = [P.a, P.b, P.c].map(v => p[0] * v[0] + p[1] * v[1] + p[2] * v[2]); return (x[0] + x[1] + x[2]) / 3; };
+        let m = reach(S.target.r); if (!(m > 1e-3)) m = reach(RD.F.map(c => c * bt)); if (m > 1e-3) S.H = m; }
     drawFilled(things, P);
-    if (S.view === 'hemi') {   // the three thumbs, each 54.74° off the look, on the disc at 2·sin(27.37°) = 0.919 of √2's 1.414
-        g.fillStyle = '#f2c14e'; for (const v of [P.a, P.b, P.c]) { const q = project(v, P); if (q[2] <= 0) continue; const [x, y] = screenOf(q);
-            g.beginPath(); g.arc(x, y, 3.5, 0, 2 * Math.PI); g.fill(); } }
     g.strokeStyle = '#f2c14e'; g.lineWidth = 1.4; g.beginPath();
     { const [cx, cy] = crossAt(); g.moveTo(cx - 9, cy); g.lineTo(cx + 9, cy); g.moveTo(cx, cy - 9); g.lineTo(cx, cy + 9); g.stroke(); }
 }
@@ -622,7 +645,7 @@ function frame() {
 // ---------- the panel ----------
 const panel = document.getElementById('panel'), out = document.getElementById('out');
 function fmt(f) { const x = Fr.num(f); return Math.abs(x) >= 1e5 || (Math.abs(x) < 1e-3 && x !== 0) ? x.toExponential(4) : x.toFixed(4); }
-const NAMES = { tower: 'a skyscraper', elev: 'an elevator car', car: 'a car' };
+const NAMES = { tower: 'a skyscraper', elev: 'an elevator car', car: 'a car', ball: 'a bouncing ball' };
 let lastHtml = '';
 function panelHtml() {
     let h = ''; const X = exactOf(S.target);
@@ -630,11 +653,14 @@ function panelHtml() {
         h += '<h3>the thing under the crosshair</h3>';
         if (!X) h += '<p>nothing; turn toward a thing</p>';
         else { const t = X.t, d = Math.hypot(...t.r);
-            h += `<p>${NAMES[t.kind]}${t.kind === 'tower' ? `, ${t.w} × ${t.d} at the foot, ${t.H} tall${t.h > t.H ? ' and a mast to ' + t.h : ''}${t.elev ? ', an elevator on its face' : ''}` : t.loop ? ', on its own loop, placed from the tick alone' : t.traffic ? `, in traffic (${t.off ? 'off' : 'on'} the path it would fly alone)` : ''}; ${d.toFixed(1)} units off, in ${X.facing}</p>`;
-            h += `<p>the thumb H = ${S.H.toFixed(2)}${S.holdH ? ' (held)' : ' (on this thing, so it is one thumb out)'}; its three pair slopes ${X.pairs.map(p => p.name + ' ' + (p.s ? fmt(p.s) : '—')).join(', ')}, multiplying to <span class="${X.closure && Fr.eq(X.closure, ONE) ? 'ok' : 'bad'}">${X.closure ? Fr.str(X.closure) : '—'}</span>, exactly.</p>`; }
+            h += `<p>${NAMES[t.kind]}${t.kind === 'tower' ? `, ${t.w} × ${t.d} at the foot, ${t.H} tall${t.h > t.H ? ' and a mast to ' + t.h : ''}${t.elev ? ', an elevator on its face' : ''}` : t.loop ? ', on its own loop, placed from the tick alone' : t.traffic ? `, in traffic (${t.off ? 'off' : 'on'} the path it would fly alone)` : t.kind === 'ball' ? `, radius ${t.rad}, bouncing on the street, placed from the tick alone` : ''}; ${d.toFixed(1)} units off, in ${X.facing}</p>`;
+            h += `<p>the thumb H = ${S.H.toFixed(2)}${S.holdH ? ' (held)' : ' (on this thing, so it is one thumb out)'}; its three pair slopes ${X.pairs.map(p => p.name + ' ' + (p.s ? fmt(p.s) : '—')).join(', ')}, multiplying to <span class="${X.closure && Fr.eq(X.closure, ONE) ? 'ok' : 'bad'}">${X.closure ? Fr.str(X.closure) : '—'}</span>, exactly.</p>`;
+            if (t.kind === 'ball') { const tau = ballTau(t, S.tick), up = Fr.div(Fr.sub(ballY(t, tau), Fr.make(t.rad)), Fr.make(2 * t.rad)), bc = ballCheck(t);
+                h += `<h3>the bounce, from one standpoint</h3><p>From here a read has the ball's directions: its breadth across the look, 2r/d = ${(2 * t.rad / d).toFixed(4)}, and, from its foot on the street and its breadth, how high it is in its own breadths: now ${fmt(up)}, at the top ${Fr.str(Fr.make(t.A, 2 * t.rad))}. Neither its size nor its height in units is read.</p>`;
+                h += `<p>Scale the world by ${bc.k} (the ball, its bounce and the eye): its three slopes at the top of the bounce are <b class="${bc.top ? 'ok' : 'bad'}">${bc.top ? 'the same fractions' : 'changed'}</b>, and at its foot <b class="${bc.foot ? 'ok' : 'bad'}">${bc.foot ? 'the same' : 'changed'}</b>. Its timing is not: a bounce takes ${bc.P} ticks, and under the same pull (g = 1/50 a tick², 8A/P² = g) the scaled ball would take ${bc.Pk.toFixed(2)}, ${bc.ratio.toFixed(4)} times as many. The pull is an amount in a unit, so the ticks of a bounce, counted, write the ball's size: with g carried in, A = gP²/8 = ${Fr.str(Fr.div(Fr.mul(GPULL, Fr.make(t.P * t.P)), Fr.make(8)))}.</p>`; } }
     }
     if (S.show.held) {
-        h += `<h3>what is held: the read's heat</h3><p>Zoom ×${S.zoom.toFixed(2)} (it magnifies the screen and holds by size on it; it moves no H). Held now: ${CULL.towers.toLocaleString()} towers, ${CULL.elevs} elevator cars, ${CULL.loops} cars on loops and ${CULL.traffic} in traffic, from the ${CULL.scanned.toLocaleString()} cells within ${CULL.R} of the eye; nothing is stored, and how big the city is never enters.</p>`;
+        h += `<h3>what is held: the read's heat</h3><p>Zoom ×${S.zoom.toFixed(2)} (it magnifies the screen and holds by size on it; it moves no H). Held now: ${CULL.towers.toLocaleString()} towers, ${CULL.elevs} elevator cars, ${CULL.loops} cars on loops, ${CULL.traffic} in traffic and ${CULL.balls} bouncing balls, from the ${CULL.scanned.toLocaleString()} cells within ${CULL.R} of the eye; nothing is stored, and how big the city is never enters.</p>`;
         h += `<p>A thing of breadth b at distance d is kept when b ≥ g·d, g = (1/32)·√cosh(ln ρ)/cos^(3/2) α: the heat cos³α off the look times sech(ln ρ) in distance, ρ = d/(√3·H) against the thumb. Nothing behind the look; the tower the eye is inside is not held.</p>`;
         h += `<p>The one assumption: g ∝ 1/√heat takes the count kept to go as 1/g², only roughly so among things on a ground, so the count moves with the look and the thumb. Chosen, not derived: the fineness 1/32, and the read's reach, ${((RCAP - 2) * CELL).toLocaleString()} units at most.</p>`;
     }
@@ -664,11 +690,9 @@ function updatePanel(force) { if (!panel.classList.contains('open')) return; if 
 document.getElementById('menuBtn').onclick = () => { panel.classList.toggle('open'); updatePanel(true); };
 for (const [id, k] of Object.entries({ optHeat: 'heat', optRead: 'read', optHeld: 'held', optCars: 'cars', optChecks: 'checks', optAbout: 'about' })) {
     const el = document.getElementById(id); el.checked = S.show[k]; el.onchange = () => { S.show[k] = el.checked; updatePanel(true); }; }
-function syncView() { const e = document.getElementById('optHemi'); if (e) e.checked = S.view === 'hemi'; updatePanel(true); }
-document.getElementById('optHemi').checked = S.view === 'hemi';
-document.getElementById('optHemi').onchange = ev => { S.view = ev.target.checked ? 'hemi' : 'flat'; syncView(); };
 { const a = document.getElementById('optLoops'), b = document.getElementById('optTraffic'); a.checked = S.loops; b.checked = S.traffic;
-  a.onchange = () => { S.loops = a.checked; updatePanel(true); }; b.onchange = () => { S.traffic = b.checked; updatePanel(true); }; }
+  a.onchange = () => { S.loops = a.checked; updatePanel(true); }; b.onchange = () => { S.traffic = b.checked; updatePanel(true); };
+  const c = document.getElementById('optBalls'); c.checked = S.balls; c.onchange = () => { S.balls = c.checked; updatePanel(true); }; }
 
 // ---------- input ----------
 const keys = new Set();
@@ -679,7 +703,6 @@ function act(k) {
     if (k === '=' || k === '+') { zoomBy(2); return true; }
     if (k === '-' || k === '_') { zoomBy(0.5); return true; }
     if (k === '1') { zoomBy(1 / S.zoom); return true; }
-    if (k === 'v') { S.view = S.view === 'hemi' ? 'flat' : 'hemi'; syncView(); return true; }
     if (k === 'g') { towardTarget(Fr.make(1, 2)); return true; }
     if (k === 'b') { towardTarget(Fr.make(2)); return true; }
     if (k === 't') { S.run = !S.run; return true; }
@@ -741,7 +764,8 @@ function tick() {
 window.__skyCity = {
     Fr, frame: () => frame(), pose, stride, turnBy, tiltBy, target: () => S.target, exact: () => exactOf(S.target),
     cull() { const held = thingsNear(); return { ...CULL, held: held.length }; },
-    againstMade, againstStepped, scaleCheck,
+    held: () => thingsNear().map(t => ({ key: t.key, kind: t.kind, r: t.r.slice(), screen: (() => { const s = project(t.r, pose()); return s[2] > 0 ? screenOf(s) : null; })() })),
+    againstMade, againstStepped, scaleCheck, ballCheck,
     trigFree(steps = 300) {
         const names = ['sin', 'cos', 'tan', 'atan', 'atan2', 'asin', 'acos', 'sinh', 'cosh', 'tanh'], saved = {}, calls = {};
         for (const n of names) { saved[n] = Math[n]; calls[n] = 0; Math[n] = (...a) => { calls[n]++; return saved[n](...a); }; }
@@ -752,15 +776,15 @@ window.__skyCity = {
     },
     traffic: { state: () => ({ T: TR.st.T, steps: TR.st.steps, off: tOff(TR.st).filter(Boolean).length, minGap: TR.st.minGap }), run(n) { for (let k = 0; k < n; k++) trafficStep(TR.st); return this.state(); },
                check: trafficCheck, pieces: trafficPieces },
-    onScreen: t => { const s = project(t.r, pose()); if (s[2] <= 0) return false; const p = screenOf(s); if (S.view === 'hemi') return Math.hypot(p[0] - W / 2, p[1] - Hh / 2) <= hemiScale() * Math.SQRT2; return p[0] >= 0 && p[0] <= W && p[1] >= 0 && p[1] <= Hh; },
+    onScreen: t => { const s = project(t.r, pose()); if (s[2] <= 0) return false; const p = screenOf(s); return p[0] >= 0 && p[0] <= W && p[1] >= 0 && p[1] <= Hh; },
     set(o) { if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
-        if (o.cur !== undefined) S.cur = o.cur; if (o.zoom !== undefined) zoomBy(o.zoom / S.zoom); if (o.view !== undefined) { S.view = o.view === 'hemi' ? 'hemi' : 'flat'; syncView(); } if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
+        if (o.cur !== undefined) S.cur = o.cur; if (o.zoom !== undefined) zoomBy(o.zoom / S.zoom); if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
         if (o.tick !== undefined) S.tick = BigInt(o.tick); if (o.run !== undefined) S.run = !!o.run;
-        if (o.loops !== undefined) S.loops = !!o.loops; if (o.traffic !== undefined) S.traffic = !!o.traffic;
+        if (o.loops !== undefined) S.loops = !!o.loops; if (o.traffic !== undefined) S.traffic = !!o.traffic; if (o.balls !== undefined) S.balls = !!o.balls;
         S.lock = null; frame(); return this.state(); },
     hits() { const out = thingsNear(); return out.map(t => ({ t, d: rayBoxes(RD.F, t) })).filter(x => x.d !== null).sort((a, b) => a.d - b.d)
         .map(x => ({ key: x.t.key, kind: x.t.kind, d: x.d })); },   // what the crosshair's ray meets among the things drawn, nearest first
-    state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH, zoom: S.zoom, view: S.view, tick: S.tick.toString(),
+    state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH, zoom: S.zoom, tick: S.tick.toString(),
         target: S.target ? { kind: S.target.kind, key: S.target.key } : null }),
 };
 addEventListener('resize', resize);
