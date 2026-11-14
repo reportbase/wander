@@ -20,8 +20,8 @@
     the origin, one-way streets, each car waiting for the one ahead and turning only when the other lane is clear, its state
     stepped from the moment the page opens; each with a ghost that flies the same rules alone.
     W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E or drag or the arrows turn, the crosshairs follow the mouse, G half way to the thing
-    under the crosshair, B back, V the whole hemisphere in front, the wheel (or + and −, 1 back) zooms, H holds it, T pauses time, M the menu.
-    ?view=hemi&zoom=&x=&y=&z=&q=&ky=&kp=&tick=&time=0&loops=0&traffic=0&menu=1&heat=1
+    under the crosshair, B back, the wheel (or + and −, 1 back) zooms, H holds it, T pauses time, M the menu.
+    ?zoom=&x=&y=&z=&q=&ky=&kp=&tick=&time=0&loops=0&traffic=0&menu=1&heat=1
     Hook window.__skyCity: Fr, set(o), state(), cull(), againstMade(half), againstStepped(o), trigFree(steps), scaleCheck(),
     traffic: { state, run(n), check(n), pieces(total, parts) }, target(), exact(), onScreen(t).
     -->
@@ -72,13 +72,12 @@
 </div>
 <div id="panel">
     <h2>Sky city</h2>
-    <p>W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E, a drag or the arrow keys turn, the crosshairs follow the mouse (the middle of the screen on a touch screen), G half way to the thing under the crosshair, B back to twice as far, V the whole hemisphere in front, the wheel (or + and −, 1 back) zooms, H holds it, T stops and starts time, M the menu.</p>
+    <p>W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E, a drag or the arrow keys turn, the crosshairs follow the mouse (the middle of the screen on a touch screen), G half way to the thing under the crosshair, B back to twice as far, the wheel (or + and −, 1 back) zooms, H holds it, T stops and starts time, M the menu.</p>
     <p>On a touch screen: drag to look; two fingers dragged together fly (up the screen forward, across sideways), spread or closed they zoom; hold the arrows to fly, ↑ and ↓ up and down.</p>
     <h3>show</h3>
     <label><input type="checkbox" id="optLoops" checked> cars on their own loops (placed from the tick alone)</label>
     <label><input type="checkbox" id="optTraffic" checked> traffic (cars that react; their state held)</label>
-    <label><input type="checkbox" id="optHemi"> the whole hemisphere in front (V): the single hemispherical vantage, laid by equal area</label>
-    <label><input type="checkbox" id="optHeat"> the heat on the screen (cos³ off the look on the flat screen; flat on the hemisphere)</label>
+    <label><input type="checkbox" id="optHeat"> the heat on the screen, cos³ off the look</label>
     <label><input type="checkbox" id="optRead" checked> the thing under the crosshair</label>
     <label><input type="checkbox" id="optHeld" checked> what is held</label>
     <label><input type="checkbox" id="optCars" checked> the cars</label>
@@ -283,7 +282,7 @@ const TCARS = Array.from({ length: TN }, (_, k) => ({ kind: 'car', traffic: true
 const S = {
     q: Math.round(+QS.get('q') || 0), ky: Math.round(+QS.get('ky') || 0), kp: Math.round(+QS.get('kp') || 0), dragX: 0, dragY: 0,
     eye: [Fr.make(QS.has('x') ? Math.round(+QS.get('x')) : 0), Fr.make(QS.has('y') ? Math.max(1, Math.round(+QS.get('y'))) : 30), Fr.make(QS.has('z') ? Math.round(+QS.get('z')) : -60)],
-    H: null, holdH: false, view: QS.get('view') === 'hemi' ? 'hemi' : 'flat', zoom: Math.min(64, Math.max(1, +(QS.get('zoom') || 1))), target: null, lock: null, cur: null, tick: BigInt(QS.get('tick') || 0), run: QS.get('time') !== '0', tAcc: 0, tPrev: 0,
+    H: null, holdH: false, zoom: Math.min(64, Math.max(1, +(QS.get('zoom') || 1))), target: null, lock: null, cur: null, tick: BigInt(QS.get('tick') || 0), run: QS.get('time') !== '0', tAcc: 0, tPrev: 0,
     lastHeading: null, anchors: 0, goes: 0, loops: LOOPS0, traffic: TRAFFIC0, live: 0,
     show: { heat: QS.get('heat') === '1', read: true, held: true, cars: true, checks: false, about: false },
 };
@@ -464,10 +463,6 @@ const cv = document.getElementById('cv'), g = cv.getContext('2d');
 let W = 0, Hh = 0, foc = 1, heatImg = null;
 // the zoom magnifies the screen (foc × Z) and holds by size on the screen, so the grain is 1/32 ÷ Z; it never moves H
 function setFoc() { foc = (W / 2) / 1.2 * S.zoom; heatKey = null; }
-// the single hemispherical vantage: every direction in front of the look on one disc, laid by equal area (Lambert's
-// azimuthal map about the look): radius √(2(1 − cos α)), cos α the direction's dot with the look, so no trigonometry;
-// the rim, at √2, is the look's horizon. Equal room holds equal directions, so the read's heat per unit of this screen is flat.
-function hemiScale() { return Math.min(W, Hh) / 2 / Math.SQRT2 * 0.96 * S.zoom; }
 function zoomBy(f) { S.zoom = Math.min(64, Math.max(1, S.zoom * f)); setFoc(); }
 function resize() {
     const dpr = Math.min(2, window.devicePixelRatio || 1); W = innerWidth; Hh = innerHeight;
@@ -489,12 +484,6 @@ function heatAbout(cx0, cy0) {
 function crossAt() { return S.cur ? S.cur : [W / 2, Hh / 2]; }
 function crossDir(P) {   // the crosshair's direction from the eye, a unit vector
     if (!S.cur) return P.F; project([0, 0, 1], P);
-    if (S.view === 'hemi') {   // the disc point back to its direction: cos α = 1 − ρ²/2, sin α = ρ·√(1 − ρ²/4)
-        const [U, Rt] = P.UR, F = P.F, k = hemiScale(); let X = (S.cur[0] - W / 2) / k, Y = -(S.cur[1] - Hh / 2) / k, r = Math.hypot(X, Y);
-        if (r > Math.SQRT2 - 1e-9) { X *= (Math.SQRT2 - 1e-9) / r; Y *= (Math.SQRT2 - 1e-9) / r; r = Math.SQRT2 - 1e-9; }
-        if (r < 1e-12) return F;
-        const c = 1 - r * r / 2, sn = r * Math.sqrt(1 - r * r / 4), ux = X / r, uy = Y / r;
-        return [0, 1, 2].map(m => F[m] * c + sn * (ux * Rt[m] + uy * U[m])); }
     const [U, Rt] = P.UR, F = P.F, x = (S.cur[0] - W / 2) / foc, y = -(S.cur[1] - Hh / 2) / foc;
     const v = [0, 1, 2].map(k => F[k] + x * Rt[k] + y * U[k]), n = Math.hypot(...v); return v.map(c => c / n);
 }
@@ -503,19 +492,11 @@ function project(v, P) {
         P.UR = [U, [U[1] * F[2] - U[2] * F[1], U[2] * F[0] - U[0] * F[2], U[0] * F[1] - U[1] * F[0]]]; }
     const [U, Rt] = P.UR; return [v[0] * Rt[0] + v[1] * Rt[1] + v[2] * Rt[2], v[0] * U[0] + v[1] * U[1] + v[2] * U[2], v[0] * F[0] + v[1] * F[1] + v[2] * F[2]];
 }
-function screenOf(p) {
-    if (S.view !== 'hemi') return [W / 2 + foc * p[0] / p[2], Hh / 2 - foc * p[1] / p[2]];
-    const n = Math.hypot(p[0], p[1], p[2]), rho = Math.hypot(p[0], p[1]);
-    if (rho < 1e-12) return [W / 2, Hh / 2];
-    const k = hemiScale() * Math.sqrt(Math.max(0, 2 * (1 - p[2] / n))) / rho; return [W / 2 + k * p[0], Hh / 2 - k * p[1]];
-}
-const HEMI_N = 10;   // pieces an edge is cut into on the hemisphere, where straight lines bend
-function along(a, b, n) { const out = []; for (let k = 0; k <= n; k++) { const u = k / n; out.push([a[0] + u * (b[0] - a[0]), a[1] + u * (b[1] - a[1]), a[2] + u * (b[2] - a[2])]); } return out; }
-function strokePts(pts) { g.moveTo(...pts[0]); for (let k = 1; k < pts.length; k++) g.lineTo(...pts[k]); }
+function screenOf(p) { return [W / 2 + foc * p[0] / p[2], Hh / 2 - foc * p[1] / p[2]]; }
 function edge(a, b) { const near = 0.05; if (a[2] < near && b[2] < near) return null;
     if (a[2] < near) { const t = (near - a[2]) / (b[2] - a[2]); a = [a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1]), near]; }
     if (b[2] < near) { const t = (near - b[2]) / (a[2] - b[2]); b = [b[0] + t * (a[0] - b[0]), b[1] + t * (a[1] - b[1]), near]; }
-    return S.view === 'hemi' ? along(a, b, HEMI_N).map(screenOf) : [screenOf(a), screenOf(b)]; }
+    return [screenOf(a), screenOf(b)]; }
 const add3 = (p, e) => [p[0] + e[0], p[1] + e[1], p[2] + e[2]];
 function rayBoxes(F, t) {   // the nearest hit of the look on a thing's boxes, from the eye (0)
     let best = null; const boxes = t.pick || [[-t.w / 2, t.w / 2, -t.h / 2, t.h / 2, -t.d / 2, t.d / 2]];
@@ -555,12 +536,11 @@ function drawFilled(things, P) {
         list.push({ t, lo, hi, d }); }
     list.sort((a, b) => b.d - a.d);
     const col = new Map(), lineW = t => t === S.target ? 2 : t.kind === 'tower' ? 1 : 1.4;
-    const poly = (pts, fill, stroke, w) => { let c = clipNear(pts.map(v => project(v, P))); if (c.length < 3) return;
-        if (S.view === 'hemi') c = c.flatMap((v, k) => along(v, c[(k + 1) % c.length], HEMI_N).slice(0, -1));
+    const poly = (pts, fill, stroke, w) => { const c = clipNear(pts.map(v => project(v, P))); if (c.length < 3) return;
         g.beginPath(); c.forEach((v, k) => { const s = screenOf(v); k ? g.lineTo(...s) : g.moveTo(...s); }); g.closePath();
         g.fillStyle = fill; g.fill(); g.strokeStyle = stroke; g.lineWidth = w; g.stroke(); };
     const seg = (a, b, stroke, w, alpha) => { const s = edge(project(a, P), project(b, P)); if (!s) return; g.globalAlpha = alpha;
-        g.strokeStyle = stroke; g.lineWidth = w; g.beginPath(); strokePts(s); g.stroke(); g.globalAlpha = 1; };
+        g.strokeStyle = stroke; g.lineWidth = w; g.beginPath(); g.moveTo(...s[0]); g.lineTo(...s[1]); g.stroke(); g.globalAlpha = 1; };
     for (const { t, lo, hi, d } of list) {
         let c = col.get(t); if (!c) { const st = colourOf(t, P, t === S.target); c = { st, rgb: rgbOf(st) }; col.set(t, c); }
         const [x0, y0, z0] = lo, [x1, y1, z1] = hi, w = lineW(t);
@@ -591,20 +571,17 @@ function drawFilled(things, P) {
 function frame() {
     const P = pose(), ey = Fr.num(S.eye[1]);
     g.fillStyle = '#070b12'; g.fillRect(0, 0, W, Hh);
-    if (S.view === 'hemi') {   // the disc of the hemisphere in front; with the heat shown it is one tint, the heat per unit of an equal-area screen being flat
-        const R = hemiScale() * Math.SQRT2; g.beginPath(); g.arc(W / 2, Hh / 2, R, 0, 2 * Math.PI);
-        g.fillStyle = S.show.heat ? 'rgb(22,30,44)' : 'rgb(10,15,24)'; g.fill(); g.strokeStyle = 'rgba(242,193,78,0.5)'; g.lineWidth = 1.2; g.stroke();
-    } else if (S.show.heat) g.drawImage(heatAbout(...crossAt()), 0, 0, W, Hh);
+    if (S.show.heat) g.drawImage(heatAbout(...crossAt()), 0, 0, W, Hh);
     // the streets: each block's kerb (6 and 42 of the cell), within 24 cells of the eye
     { const ci = floorFr(S.eye[0], CELLF), cj = floorFr(S.eye[2], CELLF), ex = Fr.num(Fr.sub(S.eye[0], Fr.mul(Fr.make(ci), CELLF))), ez = Fr.num(Fr.sub(S.eye[2], Fr.mul(Fr.make(cj), CELLF))), Rg = 24 * CELL;
       g.strokeStyle = 'rgba(135,150,171,0.13)'; g.lineWidth = 1; g.beginPath();
       for (let k = -24; k <= 24; k++) for (const o of [6, 42]) { const u = k * CELL + o;
           for (const seg of [[[u - ex, -ey, -Rg], [u - ex, -ey, Rg]], [[-Rg, -ey, u - ez], [Rg, -ey, u - ez]]]) {
-              const s = edge(project(seg[0], P), project(seg[1], P)); if (s) strokePts(s); } }
+              const s = edge(project(seg[0], P), project(seg[1], P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } } }
       g.stroke(); }
     // the traffic district's edge
     if (S.traffic) { const E = S.eye.map(Fr.num), q = [[0, 0], [TL, 0], [TL, TL], [0, TL]]; g.strokeStyle = 'rgba(248,113,113,0.25)'; g.beginPath();
-        for (let k = 0; k < 4; k++) { const a = q[k], b = q[(k + 1) % 4], s = edge(project([a[0] - E[0], -E[1], a[1] - E[2]], P), project([b[0] - E[0], -E[1], b[1] - E[2]], P)); if (s) strokePts(s); }
+        for (let k = 0; k < 4; k++) { const a = q[k], b = q[(k + 1) % 4], s = edge(project([a[0] - E[0], -E[1], a[1] - E[2]], P), project([b[0] - E[0], -E[1], b[1] - E[2]], P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } }
         g.stroke(); }
     const things = thingsNear(); let best = null, bt = Infinity;
     for (const t of things) { const hit = rayBoxes(RD.F, t); if (hit !== null && hit < bt) { bt = hit; best = t; } }
@@ -612,9 +589,6 @@ function frame() {
     S.target = best;
     if (S.target && !S.holdH) { const x = [P.a, P.b, P.c].map(v => S.target.r[0] * v[0] + S.target.r[1] * v[1] + S.target.r[2] * v[2]); S.H = Math.max(1e-6, (x[0] + x[1] + x[2]) / 3); }
     drawFilled(things, P);
-    if (S.view === 'hemi') {   // the three thumbs, each 54.74° off the look, on the disc at 2·sin(27.37°) = 0.919 of √2's 1.414
-        g.fillStyle = '#f2c14e'; for (const v of [P.a, P.b, P.c]) { const q = project(v, P); if (q[2] <= 0) continue; const [x, y] = screenOf(q);
-            g.beginPath(); g.arc(x, y, 3.5, 0, 2 * Math.PI); g.fill(); } }
     g.strokeStyle = '#f2c14e'; g.lineWidth = 1.4; g.beginPath();
     { const [cx, cy] = crossAt(); g.moveTo(cx - 9, cy); g.lineTo(cx + 9, cy); g.moveTo(cx, cy - 9); g.lineTo(cx, cy + 9); g.stroke(); }
 }
@@ -664,9 +638,6 @@ function updatePanel(force) { if (!panel.classList.contains('open')) return; if 
 document.getElementById('menuBtn').onclick = () => { panel.classList.toggle('open'); updatePanel(true); };
 for (const [id, k] of Object.entries({ optHeat: 'heat', optRead: 'read', optHeld: 'held', optCars: 'cars', optChecks: 'checks', optAbout: 'about' })) {
     const el = document.getElementById(id); el.checked = S.show[k]; el.onchange = () => { S.show[k] = el.checked; updatePanel(true); }; }
-function syncView() { const e = document.getElementById('optHemi'); if (e) e.checked = S.view === 'hemi'; updatePanel(true); }
-document.getElementById('optHemi').checked = S.view === 'hemi';
-document.getElementById('optHemi').onchange = ev => { S.view = ev.target.checked ? 'hemi' : 'flat'; syncView(); };
 { const a = document.getElementById('optLoops'), b = document.getElementById('optTraffic'); a.checked = S.loops; b.checked = S.traffic;
   a.onchange = () => { S.loops = a.checked; updatePanel(true); }; b.onchange = () => { S.traffic = b.checked; updatePanel(true); }; }
 
@@ -679,7 +650,6 @@ function act(k) {
     if (k === '=' || k === '+') { zoomBy(2); return true; }
     if (k === '-' || k === '_') { zoomBy(0.5); return true; }
     if (k === '1') { zoomBy(1 / S.zoom); return true; }
-    if (k === 'v') { S.view = S.view === 'hemi' ? 'flat' : 'hemi'; syncView(); return true; }
     if (k === 'g') { towardTarget(Fr.make(1, 2)); return true; }
     if (k === 'b') { towardTarget(Fr.make(2)); return true; }
     if (k === 't') { S.run = !S.run; return true; }
@@ -752,15 +722,15 @@ window.__skyCity = {
     },
     traffic: { state: () => ({ T: TR.st.T, steps: TR.st.steps, off: tOff(TR.st).filter(Boolean).length, minGap: TR.st.minGap }), run(n) { for (let k = 0; k < n; k++) trafficStep(TR.st); return this.state(); },
                check: trafficCheck, pieces: trafficPieces },
-    onScreen: t => { const s = project(t.r, pose()); if (s[2] <= 0) return false; const p = screenOf(s); if (S.view === 'hemi') return Math.hypot(p[0] - W / 2, p[1] - Hh / 2) <= hemiScale() * Math.SQRT2; return p[0] >= 0 && p[0] <= W && p[1] >= 0 && p[1] <= Hh; },
+    onScreen: t => { const s = project(t.r, pose()); if (s[2] <= 0) return false; const p = screenOf(s); return p[0] >= 0 && p[0] <= W && p[1] >= 0 && p[1] <= Hh; },
     set(o) { if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
-        if (o.cur !== undefined) S.cur = o.cur; if (o.zoom !== undefined) zoomBy(o.zoom / S.zoom); if (o.view !== undefined) { S.view = o.view === 'hemi' ? 'hemi' : 'flat'; syncView(); } if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
+        if (o.cur !== undefined) S.cur = o.cur; if (o.zoom !== undefined) zoomBy(o.zoom / S.zoom); if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
         if (o.tick !== undefined) S.tick = BigInt(o.tick); if (o.run !== undefined) S.run = !!o.run;
         if (o.loops !== undefined) S.loops = !!o.loops; if (o.traffic !== undefined) S.traffic = !!o.traffic;
         S.lock = null; frame(); return this.state(); },
     hits() { const out = thingsNear(); return out.map(t => ({ t, d: rayBoxes(RD.F, t) })).filter(x => x.d !== null).sort((a, b) => a.d - b.d)
         .map(x => ({ key: x.t.key, kind: x.t.kind, d: x.d })); },   // what the crosshair's ray meets among the things drawn, nearest first
-    state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH, zoom: S.zoom, view: S.view, tick: S.tick.toString(),
+    state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH, zoom: S.zoom, tick: S.tick.toString(),
         target: S.target ? { kind: S.target.kind, key: S.target.key } : null }),
 };
 addEventListener('resize', resize);
