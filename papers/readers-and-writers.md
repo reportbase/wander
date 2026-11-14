@@ -1151,6 +1151,28 @@ writes through a unit, and every write, once made, joins what is read.
 and still partially. A loop that closes shows that the routes taken agree; it cannot show that no route remains untaken.
 Completeness is never a read. What recovers the thing is not reading harder but the passage through standpoints.
 
+**A bounce writes its size.** A ball bounces to a height A every P ticks under one pull, g = 8A/P². Scale the world and
+the observer by k: the ball's directions at the top of the bounce and at its foot are the same fractions, and so is its
+height in its own breadths, read from its foot and its breadth. Under the same pull the scaled ball takes √k times the
+ticks, since P goes as √A. The pull is an amount in a unit, so the ticks of a bounce, counted, write the ball's size,
+A = gP²/8: Galileo's square–cube law, where the unit gets in. **Classical**; **Checked** (`sky-city.html`, its balls
+placed from the tick alone, the slopes unchanged and the ticks doubled at k = 4).
+
+**A single vantage and the blueprint, side by side.** A read is a single hemispherical vantage; the blueprint is the dual,
+drawn from no standpoint. Where the blueprint is what is wanted, the list above says so: what acts out of view with no law
+in time, whose state has to be stepped whether anyone looks; more than one standpoint, which must agree on something that
+belongs to neither; a plan, a save, an edit. A program needs the world anyway: a machine is a counting thing, so the world
+has to be held or made before any view of it exists, and the read decides only which part is looked at and how finely.
+For a program the single vantage is an option, not a requirement; its interest is as the account of observing, since no
+observer in nature has the view from no standpoint. A world can also be made as needed: each thing from its cell when a
+read reaches it, by a rule. Without end there is no whole to hold, so the dual vantage cannot be formed at all, and
+nothing compares with the read. The rule answers for any one place from no standpoint, a lookup and not a view; showing the
+whole at once would mean making all of it. The work then falls three ways: a read from each standpoint, holding K things
+whatever N is; the rule, for everything nobody has touched; and writes, only where something has been changed, the one
+part that grows. **Checked** (`thumbs-walk.html`, `sky-city.html`: the read set beside a blueprint made about the eye, 0
+missing and 0 extra; a stored blueprint's cells out to 10²⁶ units about 10⁵², against some 29,000 cells scanned at every
+distance; cars on loops placed from the tick alone, cars in traffic held). **Reading.**
+
 ## 8. In space
 
 **Three parties.** With a third party, V₂, the look turns two ways: up from the horizontal (altitude) and round it
@@ -1197,7 +1219,13 @@ from the eye onto a screen square to the look, directions spread evenly over the
 Cauchy, 1/(2π(1 + r²)^(3/2)) per unit of screen at r thumbs off the look: the look its peak, rings of equal area its rings
 of equal share, and the rim, 90° off, its long tail, never landing. Each pair of thumbs' quarter turn, from its home to its
 horizon, is a part of it, the wedge's triangle, 35.26° off at a home and 54.74° at a thumb. The sphere, behind as well as
-in front, is the head turned all the way round, other facings joined, the blueprint's.
+in front, is the head turned all the way round, other facings joined, the blueprint's. What a read holds is this whole
+hemisphere; what a flat screen shows of it is the middle only. A screen whose half-width is a slope of 1.2, on a 16:9
+window, takes about 1.78 of the 2π steradians in front, some 28% of the directions and the same share of the heat (on a
+flat screen the heat per unit of screen is the solid angle's own measure); no flat screen reaches 90° off the look. The
+one chart that fits the whole hemisphere on a disc, the equal-area map about the look, reads to the eye as a ball seen from
+outside, its rim round and its squeeze toward the rim a ball's foreshortening, and so gives the read a shape it does not
+have. **Checked** (`sky-city.html`: every direction with cos α > 0 kept by the rule, many held things off the screen).
 
 **The sphere without V, and the cone of one read.** H, V and V₂ held as amounts combine into the blueprint's sphere (an
 ellipsoid unless written equal); H, H and H, one thumb crossed with itself, into the read's Cauchy. With V unknown only
@@ -1315,6 +1343,18 @@ thing more, and worse: it eliminates the sweep. It names a single place on the t
 say, as though that place could be gone to directly. It cannot. A direction is had only within its sweep, with every
 direction between it and home had before it; the sweep starts at home and there is no other way in. So the arctangent
 is kept for the blueprint's formulas and avoided elsewhere.
+
+**Run as code.** A first-person view can be run this way. Turning, projecting, picking and walking call no trigonometric
+function: a turn is a half-slope p/q, its rotation the rational pair ((q² − p²)/(q² + p²), 2pq/(q² + p²)); a heading is a
+whole number of such steps. No π enters the loop: the rule that keeps a thing needs only ratios, the heat's 1/(2π)
+cancelling and √cosh(ln ρ) being √((ρ + 1/ρ)/2). What stays is the one square root, √(1 + s²), in normalizing a direction
+and in the heat's 3/2 power. What it buys is exactness: the three pair slopes multiply to exactly 1, scaling the world
+moves none of them, a walk retraced comes back exactly, and places stay exact 10¹⁰⁰ units out. What it costs: fractions
+grow digits, so the observer's place is put down on a grid at each change of heading (a write); turns come in steps; exact
+fractions are slow beside floating point; and classical fixes (an integer heading with a sine table, a floating origin)
+reach the same ends another way. For these key things the read is simpler, in the kinds of thing it needs (fractions and one
+square root, no angle, no transcendental number), and that simplicity counts for its own sake. **Checked** (`thumbs-walk.html`, `sky-city.html`: 0 trigonometric calls in 300 steps;
+100 of 100 walks retraced exactly; TWK, PWL).
 
 **Two 1's.** On the axes the three ways to measure a direction of the square agree: the largest component (the cube's),
 the sum h + v (the diamond's) and the length √(h² + v²) (the circle's) all give 1. At the corner they part: 1, 2 and √2.
