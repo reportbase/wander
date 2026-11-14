@@ -867,3 +867,27 @@ look); here it is restated for level looks only.
 - R3b: over 120 one-step pans, 16 ms apart, the largest change in drawn strength in one step under 0.35 and no step
   adding or dropping more than 6% of what is held.
 - R4b, R5b: as R4, R5.
+
+**Run 20b** (`runs/twk/run20b.mjs`, output `runs/twk/run20b-out.json`; the page's H waiting as stated). R1b, R4b, R5b not
+killed; R2b, R3b killed.
+- R1b not killed: 8 level looks hold 425 to 446.
+- R2b killed: with the page's own √3·H = 27.7 at the start (H = 16), H × 2^k held 38, 76, 144, 226, 306, 374, 428, 447,
+  487, 504, 509, 494, 488 for k = −6 … 6. Post hoc: at small H the heat's peak distance is nearer than anything can stand
+  (the eye is 2 units above a ground, so nothing is nearer than 2); at large H the count rises 19%. The sum over scales is
+  the same at every H only for a world without a ground and an eye height; this one has both.
+- R3b killed: worst change in drawn strength 0.885 in one step; worst step 17% of what is held. Post hoc (a probe, step
+  by step): at the start H went from unset to the first thing's distance with no glide (the glide had no starting
+  value); held things beside the eye (cos α near 0, off the screen) change strength fastest as the look turns, since
+  cos^(3/2) α is steepest there; and when the wait commits to a thing three times nearer, H's glide (0.12 s) moves it too
+  fast for the fade.
+- R4b: 0 missing, 0 extra at the five poses (404, 434, 171, 165, 70). R5b: nothing behind the look held.
+
+## Run 20c: the glide starts where H starts, and is slower (predictions, written and committed before the run)
+
+Changes: H's glide starts from the fallback (8 times the eye's height) rather than jumping to the first thing; in the heat
+mode H glides with a time constant of 0.4 s (the focus keeps 0.12 s). R3's measure is restated for what is drawn: things
+in front whose centre lands on the screen.
+
+- R3c: over 120 one-step pans, 16 ms apart, from a fresh start, the largest change in drawn strength in one step among
+  things on the screen under 0.35, and no step adding or dropping more than 6% of the things on the screen.
+- R4c: 0 missing, 0 extra at the five poses.
