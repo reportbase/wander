@@ -468,6 +468,11 @@ the same fractions, as is its height in its own breadths. Under the same pull, t
 ticks. The pull is an amount in a unit, so a bounce's ticks, counted, write the ball's size, A = gP²/8. This is Galileo's
 square–cube law, met at the place in the sorting where it belongs (*Reads and Writes* §7; `sky-city.html`).
 
+A standard candle is the same move with light. Scale everything, the light per direction fixed, and no flux changes:
+1/d² is not something one standpoint reads. Carry in the source's luminosity, as the pull was carried in, and a flux
+counted writes a distance, d = √(L/4πF). The inverse square is the scale test with the luminosity held fixed
+(*Reads and Writes* §7; `inverse-square.md`, "From one vantage").
+
 *Demo: the mountain and the thumb, with "scale the world".*
 
 ---

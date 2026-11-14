@@ -185,6 +185,19 @@ physics.
 Not taken: on the sky-city page (`sky-city.html`) a thing turns from a held share to a point where it passes the keep
 rule's grain, which depends on where it sits in the read; that grain is chosen, so it is no law.
 
+**A read and its exchange** (ISX, `plans/isx-plan.md`, `runs/isx/isx.py`, exact at 50 digits, nothing killed). A flat,
+evenly bright disc of radius a lights a point on its axis at distance d by exactly its share of the receiver's front
+hemisphere, counted with the cosine: E/(πL) = 1/(1 + s²), s = d/a, the Cauchy's heat. The inverse square is that
+share's far chart (off by 1/(1 + s²) exactly), the flat near field its near chart; s ↔ 1/s makes them complements,
+E(s) + E(1/s) = πL, half each at the corner d = a (NRF's σ(s) + σ(1/s) = −2 is the same pairing in slopes). The share
+is a read: (a, d) scaled together moves nothing; holding a fixed, d → kd gives (1 + s²)/(1 + k²s²), 1/k² only far off,
+so the inverse square in d needs a carried in. Between two coaxial discs each end's read of the other is reciprocal
+(A₁F₁₂ = A₂F₂₁ to 10⁻⁵⁰): their ratio leaves the sizes, their product far off the distance in the sizes' geometric mean,
+the denominator paradox's exchange. The pairing is the round source's: the disc's share is sin²α (tan α = a/d), the
+exchange takes α to 90° − α, sin²α + cos²α = 1; a square plate's two shares sum to 1.0045 πL far off and 1.108 πL at the
+corner, complements nowhere. A sphere seen from outside is the plain inverse square at every d ≥ a, with no near side
+to pair. [exact; the disc formula, NRF's slope form and reciprocity classical; the sorting a reading]
+
 ## 1. The law as physics holds it
 
 - **Derived from conservation and three dimensions** [physics]. A point source sends a fixed amount per second. With

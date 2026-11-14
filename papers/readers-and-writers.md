@@ -1158,6 +1158,25 @@ ticks, since P goes as √A. The pull is an amount in a unit, so the ticks of a 
 A = gP²/8: Galileo's square–cube law, where the unit gets in. **Classical**; **Checked** (`sky-city.html`, its balls
 placed from the tick alone, the slopes unchanged and the ticks doubled at k = 4).
 
+**A candle writes its distance the same way.** Scale the world with the paint fixed and no solid angle, flux or
+irradiance moves: one standpoint does not read 1/d². Carry in a source's luminosity L, as the pull g is carried in, and
+a flux counted writes its distance, d = √(L/4πF). The inverse square is the scale test with L held fixed, as the
+square–cube law is the scale test with g held fixed. Its 4π is the source's whole sphere, held from no standpoint, the
+dual hemispherical vantage's form; the single vantage at the receiver needs only its own front, the paint along each
+direction unchanged with distance and the source's share set by the slope, (Δ/d)², with no π. The two forms agree, as
+conservation says; what differs is where each stands. **Classical**, the sorting a reading (`inverse-square.md`, "From
+one vantage").
+
+**Near and far, one share and its exchange.** On its axis a flat, evenly bright disc of radius a gives exactly its share
+of the front hemisphere, E/(πL) = 1/(1 + s²) with s = d/a: the heat of §2, met as light. Far off that share is the
+inverse square, close in it is flat, and the exchange s ↔ 1/s makes the two complements, E(s) + E(1/s) = πL, half each at
+the corner d = a: §9's 1/(1 + s²) + s²/(1 + s²) = 1, with near and far its two sides. Scaled with its distance the disc
+moves no share; only with its size held fixed does the inverse square in d appear. Two discs facing each other read each
+other reciprocally: the ratio of the two reads leaves the sizes, their product the distance in their geometric mean.
+The pairing is the round source's (sin²α + cos²α = 1 for its rim's cone); a square plate's two shares overlap at the
+corner. **Checked** (ISX, `plans/isx-plan.md`, exact at 50 digits, nothing killed); the formulas classical, the sorting a
+reading.
+
 **A single vantage and the blueprint, side by side.** A read is a single hemispherical vantage; the blueprint is the dual,
 drawn from no standpoint. Where the blueprint is what is wanted, the list above says so: what acts out of view with no law
 in time, whose state has to be stepped whether anyone looks; more than one standpoint, which must agree on something that
