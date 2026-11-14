@@ -649,7 +649,7 @@ const S = {
     // the look held as whole numbers: q quarter turns and two half-slopes ky/128 (across) and kp/128 (up); no angle
     q: Math.round(+params.get('q') || 0), ky: Math.round(+params.get('ky') || 0), kp: Math.round(+params.get('kp') || 0), dragX: 0, dragY: 0,
     eye: [Fr.make(params.get('x') ? Math.round(+params.get('x')) : 0), Fr.make(2), Fr.make(params.get('z') ? Math.round(+params.get('z')) : -30)],
-    H: null, holdH: false, target: null, lastPoseKey: '', focus: 0, holdFocus: false, fg: 0, fCand: null, fSince: 0, Hg: null, tLast: 0, tick: BigInt(params.get('tick') || 0), run: params.get('time') !== '0', tAcc: 0,
+    H: null, holdH: false, target: null, lastPoseKey: '', focus: 0, holdFocus: false, heldOnce: false, fg: 0, fCand: null, fSince: 0, Hg: null, tLast: 0, tick: BigInt(params.get('tick') || 0), run: params.get('time') !== '0', tAcc: 0,
     walk: { key: null, m: [], strides: 0 },
     anchor: params.get('anchor') !== '0', anchors: 0, lastHeading: null, goes: 0, lock: null,
     show: { thumbs: params.get('thumbs') !== '0', heat: params.get('heat') !== '0', sky: params.get('sky') === '1',
@@ -923,10 +923,16 @@ function frame() {
     // keep line and back. Now a new focus is taken only once it has stood under the crosshair for DWELL seconds (0.4 s,
     // `?dwell=`), or at once for the thing followed (G, B); `?glide=0` keeps the old step, so older runs reproduce
     if (!S.holdFocus) {
-        const want = best ? best.lv : Math.max(-BELOW, Math.min(LEVELS, Math.round(Math.log2(Math.max(1e-300, ey) / 2)))), now = performance.now();
+        // (since R956; Tom: "I focus on an object, and a bunch of other objects become visible, then I lose focus and the all
+        // disappear again", then "yes"): the focus is sticky. With nothing under the crosshair it stays where it was, so
+        // what came in with a thing stays until a thing of another scale is held; the eye height's scale only before the
+        // first thing is held, or with `?glide=0` (the old way)
+        const eyeLv = Math.max(-BELOW, Math.min(LEVELS, Math.round(Math.log2(Math.max(1e-300, ey) / 2))));
+        const want = best ? best.lv : (GLIDE && S.heldOnce ? S.focus : eyeLv), now = performance.now();
+        if (best && S.focus === best.lv) S.heldOnce = true;
         if (want === S.focus || !GLIDE || DWELL <= 0 || (best && best === S.lock)) { S.focus = want; S.fCand = null; }
         else if (want !== S.fCand) { S.fCand = want; S.fSince = now; }
-        else if (now - S.fSince >= DWELL * 1000) { S.focus = want; S.fCand = null; }
+        else if (now - S.fSince >= DWELL * 1000) { S.focus = want; S.fCand = null; if (best) S.heldOnce = true; }
     }
     if (best !== S.target) { S.target = best; S.walk = { key: null, m: [], strides: 0 }; }
     if (S.target && !S.holdH) { const x = thumbCoordsF(S.target.r, e, P); S.H = Math.max(1e-6, (x[0] + x[1] + x[2]) / 3); }
