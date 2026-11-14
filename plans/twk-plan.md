@@ -840,3 +840,30 @@ the look moves the heat with it and H moves it in distance. The old rule stays a
 
 If R1 and R2 hold, the read holds about K things wherever it looks and whatever the thumb, with no count of the world
 entering: §6's "K and N" on the page, from the heat alone.
+
+**Run 20** (`runs/twk/run20.mjs`, output `runs/twk/run20-out.json`; headless Chromium, `?time=0&movers=0&rings=0`, no
+page errors). R1, R3 killed; R2 not tested (my set-up); R4, R5 not killed.
+- R1 killed: level looks hold 425 to 482, but tilted up (kp = 40) 223 to 241, a factor 2.16 against 1.5. The heat follows
+  the look, and the world's things stand on a ground: tilted up, much of the heat falls on empty sky. The count is K only
+  where the world fills the view.
+- R2 not tested, my set-up: the page's H is unset (null) until something is under the crosshair long enough, so "H × 2^k"
+  set it to 0 and every count was the fallback's 427.
+- R3 killed: worst change in drawn strength 1 in one step, up to 39% of what is held added or dropped in a step. Post hoc
+  (`scratchpad` probe): H follows whatever is under the crosshair, and panning across things 4 to 160 units off swung H
+  on almost every step, the distance heat with it (50 to 200 things a step).
+- R4 not killed: 0 missing, 0 extra at all five poses (446, 434, 171, 165, 70 held).
+- R5 not killed: nothing behind the look held.
+
+## Run 20b: H waits as the focus does (predictions, written and committed before the change)
+
+The fix for R3, as R952 did for the focus: H takes a new thing's distance only after it has stood under the crosshair
+0.4 s (or at once for the thing followed with G, B, or a thumb set by the wheel or a pinch), and keeps following that
+thing as the eye walks; with nothing under the crosshair H stays. R1 stays killed as stated (it was a claim about any
+look); here it is restated for level looks only.
+
+- R1b: over 8 level looks (kp = 0) the largest count within 1.5 times the smallest.
+- R2b: with H set to 2^k times the page's own √3·H at the start (read from the hook), k = −6 … 6, every count within 15%
+  of the count at k = 0.
+- R3b: over 120 one-step pans, 16 ms apart, the largest change in drawn strength in one step under 0.35 and no step
+  adding or dropping more than 6% of what is held.
+- R4b, R5b: as R4, R5.
