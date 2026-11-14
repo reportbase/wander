@@ -310,8 +310,8 @@ the tangent and arctangent, which convert a direction into a share of the whole 
 
 **Two facings and the blueprint.** The two numbers sit in two facings. The central one, facing across to a rim, reaches its
 end at a point: π/2 is had there. The inscribed one, facing from home toward a horizon, only approaches its end: 2/π is a
-limit. Both are reads, each with a vantage and one hemisphere. Neither is the blueprint's. The blueprint is both hemispheres
-at once, with no facing and no vantage, and its number is the 1, which is also their product. A person takes both reads,
+limit. Both are reads, each a single hemispherical vantage. Neither is the blueprint's. The blueprint is both hemispheres
+at once, the dual hemispherical vantage, drawn, with no facing and no standpoint, and its number is the 1, which is also their product. A person takes both reads,
 and draws besides: it reads the far world from home, faces the thing in front of it across one hemisphere, and has a
 blueprint in whatever it draws whole. So π/2 × 2/π = 1 is not two parties meeting; it is one observer's two reads
 multiplied, which is arithmetic, and the 1 is its own thumb.
@@ -320,8 +320,8 @@ multiplied, which is arithmetic, and the 1 is its own thumb.
 thumb's share h averages 2/π, the mean of what is seen of one thumb from a standpoint that never moves, and it is
 approached at the horizon, never reached. π/2 is what walking counts: the quarter arc from all of h to all of v is π/2
 thumbs long, and it is reached, at a point. An arc in thumbs is an extent, had here by walking and counting: a count laid over
-the steps walked, each step a write. With the thumb in metres it is an amount in a unit, a write. So, in short, both numbers belong to reads, each with a vantage and one hemisphere: 2/π to the inscribed sweep and π/2 to the central one, whose arc the walk counts, and
-their product, 1, is also the blueprint's number; the blueprint has no vantage and is neither read nor write. Both stay the blueprint's arithmetic, since a read holds no π;
+the steps walked, each step a write. With the thumb in metres it is an amount in a unit, a write. So, in short, both numbers belong to reads, each a single hemispherical vantage: 2/π to the inscribed sweep and π/2 to the central one, whose arc the walk counts, and
+their product, 1, is also the blueprint's number; the blueprint, the dual hemispherical vantage, has no standpoint and is neither read nor write. Both stay the blueprint's arithmetic, since a read holds no π;
 what is sorted is the read each one measures.
 
 **Short by reading, long by walking, and whole.** Said most simply: the true size is 1, the thumb in thumbs. Reading gives

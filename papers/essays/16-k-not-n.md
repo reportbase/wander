@@ -649,7 +649,7 @@ not usually mark is that its address space was laid out with an N, before the fi
 series comes before that layout.
 
 Put in computing's own letters: a world laid out has N, and with N the blueprint states every item as 1/N of a whole, all
-alike, from no vantage; a read has K,
+alike, from no standpoint; a read has K,
 spent unevenly, finest where it looks. The Cauchy is the cull between them, K addresses over any N at a cost constant in N,
 and the only cull among its kind that can be re-aimed and recombined without leaving its family. From it come the corner
 as the one place a bounded register can switch, order statistics as the statistics that survive, the logarithm as the

@@ -44,8 +44,8 @@ continuous ratio of their slopes (parallax). A **write** is discrete and moved b
 stone, a stride, a mark, a metre bar, and an amount put down in a unit carried in from outside, a metre or a second. The
 write is the discrete, scale-variant companion of the read. The two mixed cases are tools of description: a count,
 discrete and unmoved by scaling, and the number line in a unit, continuous and moved by it. Read and write are acts,
-the verbs for the continuous and the discrete: there is no reader and no writer here. Every read has a vantage and one hemisphere; the *blueprint*, the drawn shape,
-has both hemispheres at once and no vantage, so it is neither a read nor a write. It is classical geometry, the view
+the verbs for the continuous and the discrete: there is no reader and no writer here. Every read is a *single hemispherical vantage*, one standpoint and one hemisphere; the *blueprint*, the drawn shape,
+is the *dual hemispherical vantage*, both hemispheres at once, which no standpoint holds and which exists only as drawn, so it is neither a read nor a write. It is classical geometry, the view
 from no standpoint, and it is in this paper only as a point of comparison: the paper is about reads and writes.
 
 The read's directions are laid by the uniform turn, whose law in the reading v/h is the Cauchy: its median at the corner
@@ -115,7 +115,7 @@ read or written. The friction between continuous and discrete shows wherever one
 holding a read (a slope no fraction lands on, the ringing at a sharp edge, §6), a read holding a count (K, §5), and
 parallax, where a walk is cut into strides before the reads at its two ends give a size. π and e belong to neither box
 of the table's right column. Each is a pure ratio that scaling does not move, and a count reaches neither. They are how
-the blueprint's three concepts are synthesized: both hemispheres at once, completeness, and no vantage. π is the turn
+the blueprint's three concepts are synthesized: both hemispheres at once, completeness, and no standpoint. π is the turn
 completed, e the scale completed (§9, "What is free, and what Ω costs"). **A reading.**
 
 - **D1. One point, two parts.** A point seen from a standpoint is, in the blueprint's notation, ln(z/H) = ln(d/H) + iθ, H
@@ -362,17 +362,17 @@ count of directions, a description.
 
 **Reads, writes and the blueprint.** There are reads and writes; there is no reader and no writer. Both are acts, and
 one observer does both: it reads while it stands and turns, and writes while it strides, leaves a mark or agrees a unit. A
-read has a vantage and one hemisphere, and there are two of them, the two sweeps: the inscribed, from home to a horizon
+read is a single hemispherical vantage, one standpoint and one hemisphere, and there are two of them, the two sweeps: the inscribed, from home to a horizon
 (1/Ω, the limit it approaches), and the central, across a bounded thing to its rim (Ω, the limit a count of its arc tends to, the end itself reached at a point). Both
 are reads. A write is a bounded thing with a size, a stride taken, a mark made, a unit carried in (D4); it is how a read is carried to a later
 read. Two looks held together are joined with no write. Neither a read
 nor a write holds both hemispheres. What holds both at once is the **blueprint**: the drawn shape, with both signs of every axis, the turn completed, the
-facings joined. It has no vantage. Reads and writes are what is done from a vantage, so the blueprint has nothing to do
+facings joined. It is the dual hemispherical vantage, and it exists only as the blueprint: no standpoint holds both hemispheres, so the blueprint is drawn, never stood at. Reads and writes are what is done from a standpoint, so the blueprint has nothing to do
 with reads and writes: it is not a third act beside them, not a read of a larger kind, and not what they add up to.
 It is classical geometry, with its eye above the figure seeing every side at once. This paper is about reads and
 writes; the blueprint is brought in as the point of comparison, the familiar statement a read's or a write's form is
-set beside (e^(iπ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. "Dual hemispherical" and "without a vantage" say the same thing: a vantage faces
-one way. The circle held whole, the sphere and the cube, the angle and trigonometry, π and e
+set beside (e^(iπ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. "Dual hemispherical vantage" and "from no standpoint" say the same thing: a standpoint faces
+one way, so both hemispheres at once can only be drawn. The circle held whole, the sphere and the cube, the angle and trigonometry, π and e
 are the blueprint's. Whole, with π at its exact value, it is a limit. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
 walk or count.
 
@@ -397,7 +397,7 @@ median and the absence of any mean are what a read with no breadth in it is.
   line of sight, is the Cauchy whatever the apple's shape, the shape only the paint. The hand holds the back as the eye
   holds the front, so both hemispheres are in reach and the turn is known; the apple is a thing with a size, held, and in the hand
   the apple's V is **known**: held whole. Its amount in a unit needs a unit carried in, and its exact amount is the limit of §6.
-- *The human draws a circle on paper.* This fourth is the comparison, classical geometry's circle. The drawing is the blueprint: both hemispheres at once, with no vantage and so no facing, neither read nor write, whole
+- *The human draws a circle on paper.* This fourth is the comparison, classical geometry's circle. The drawing is the blueprint, the dual hemispherical vantage: both hemispheres at once, held from no standpoint and so with no facing, neither read nor write, whole
   only at its limit (§9, "What is free, and what Ω costs"), made, not seen, a mark holding both halves together, V = H at one length, π held whole. It has neither sweep's
   number. Ω and 1/Ω belong to the two facings, the central reached at a point and the inscribed approached; the blueprint
   has the number 1, the thumb in thumbs. The product of the two reads' numbers is also 1; that is arithmetic, not a way of making the blueprint from reads.
@@ -407,7 +407,7 @@ median and the absence of any mean are what a read with no breadth in it is.
 | inscribed, toward the universe | one | home, facing a horizon | unknowable | 1/Ω, approached | a read: what turning sees |
 | central, toward the apple | one | the apple's centre, across to its rim | knowable | Ω, the limit a count of its arc tends to; the end reached at a point | a read about a bounded thing; from afar its rim is one direction, met at −1 by walking; its arc, counted in thumbs, is an extent |
 | the apple held and turned | both, in reach | one, the turn known | known, held | the turn's Cauchy | looks joined by a known turn, of a thing held in the hand |
-| the blueprint | both at once | none | known | 1 | neither read nor write: no vantage |
+| the blueprint | both at once | dual, drawn; no standpoint | known | 1 | neither read nor write: the dual hemispherical vantage |
 
 The human is all of these at the same time, not by turns: it reads the universe, faces the apple and is faced by it, and
 what it holds in the hand or draws it holds as a blueprint. The apple has the facings and never the blueprint. So Ω · 1/Ω = 1 is
@@ -431,15 +431,15 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
 - A read's far field is said in ratios: a thing one thumb wide reads one in two, one in four, one in eight. Counted in
   thumbs, two, four, eight thumbs out, it is an extent. Never "doubling" or "level".
 - A read has a vantage, never a shape: no circle, no sphere, no body.
-- There is no reader and no writer, only reads and writes; what holds both hemispheres at once is the blueprint. Where
+- There is no reader and no writer, only reads and writes; a read is the single hemispherical vantage, and what holds both hemispheres at once is the blueprint, the dual hemispherical vantage, which exists only as drawn. Where
   someone has to stand, walk or count, say "the observer".
 - A read is continuous and unmoved by scaling; a write is discrete and moved by it; a count and the number line in a
   unit are descriptions. Definitions are stated on those two axes.
 - *Heat* and *paint* are pictures, for the read's density and for what it meets, and are not leaned on; *address* only as a computing metaphor or for a count of K
   places at the heat's quantiles (§5).
-- Ω and 1/Ω (defined before §1; Ω = π/2) are the limits the two reads encounter, each with a vantage and one hemisphere: 1/Ω the inscribed
+- Ω and 1/Ω (defined before §1; Ω = π/2) are the limits the two reads encounter, each a single hemispherical vantage: 1/Ω the inscribed
   sweep's, Ω the central sweep's (its arc walked and counted is an extent; §9, "Reading is 1/Ω; walking is Ω"). Ω
-  and the one-length circle are the blueprint's: both hemispheres, no vantage, nothing to do with reads and writes.
+  and the one-length circle are the blueprint's: the dual hemispherical vantage, from no standpoint, nothing to do with reads and writes.
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
 
 **Continuous and discrete.** A read is continuous: a turn passes through every direction between two, and nothing in it
@@ -1426,7 +1426,7 @@ point, −1. An arc in thumbs is a length against the thumb, unmoved by scaling 
 calls an extent, here counted out, so a count; with the thumb in a unit it is a write (D4). The sweep whose arc that is,
 the central one, is itself a read: one hemisphere, from the bounded thing's centre, facing its rim. So both numbers belong to
 single-hemisphere reads, 1/Ω to the inscribed and Ω to the central, and the walk is how the second one's arc is
-counted. Their product is 1, which is also the blueprint's number, the thumb in thumbs; the blueprint itself has no vantage and
+counted. Their product is 1, which is also the blueprint's number, the thumb in thumbs; the blueprint itself, the dual hemispherical vantage, has no standpoint and
 is neither of them. The exchange swaps the two, and they agree only at the corner, where a length walked and a
 ratio held say the same (§6). Both numbers are limits, their values held by no read or count; what is sorted is
 which read each one measures. In the table above the total's 1/Ω is the inscribed read's factor and its Ω the central
@@ -1544,9 +1544,9 @@ The read's form shows three things the classical statement does not. First, Eule
 family, and the extreme one. w(s) × w(1/s) = −1 holds at every slope, pairing each direction with its exchange. Put
 s = 0: home lands at +1 and its exchange, the horizon, at −1. So e^(iπ) = −1 says that home and the horizon are an
 exchanged pair, and it is the only pair of the family that needs the horizon, which no read reaches; every pair
-between is finite and exact, and the classical statement does not mention them. Every pair between has a vantage: it
+between is finite and exact, and the classical statement does not mention them. Every pair between has a standpoint: it
 is two directions of one read. The identity is the one member with none, the family completed, and so the one member
-that carries π and e, which are how completeness with no vantage is put into numbers. Second, the corner's member is
+that carries π and e, which are how completeness from no standpoint is put into numbers. Second, the corner's member is
 i × i = −1. The corner is its own exchange and lands at i, so the equation that defines i is this identity taken at
 the corner: i is the corner. Third, with the complex notation taken away almost nothing is left. Exchanging h and v
 swaps the two shares, so their difference h² − v² changes sign while their product is kept. At home the difference is
@@ -1821,8 +1821,8 @@ before the data can show where it is not. **Checked** (TCF; killed).
   already requires; the record's "the read's own length" describes how it is chosen, not a different kind.
 - **O3. Completed joins, and their name.** *Closed (12 November):* a completed join (π, the one-length circle, the
   facings joined) is unmoved by scaling, so it is not a write; it was called "the blueprint's" until a word was chosen.
-  The word is the **blueprint**: both hemispheres at once, no vantage, apart from reads and writes (§1, "Reads, writes and
-  the blueprint"). *Settled (R890, R891; R922):* it is neither a kind beside D1–D7 nor their sum. It has no vantage, so
+  The word is the **blueprint**, the dual hemispherical vantage: both hemispheres at once, from no standpoint, apart from reads and writes (§1, "Reads, writes and
+  the blueprint"). *Settled (R890, R891; R922):* it is neither a kind beside D1–D7 nor their sum. It has no standpoint, so
   it has nothing to do with reads and writes, and no reads or writes, finite or carried to a limit, make it; it is
   classical geometry, set beside a read's form only for comparison. *Sharpened
   (R796):* what an angle needs comes in two stages. The ratio s = v/h needs nothing; it is the read. The shares h and v

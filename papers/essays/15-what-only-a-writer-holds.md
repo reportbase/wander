@@ -184,13 +184,13 @@ that the heat in the v/h chart and the heat in the h/v chart, 1/(1 + s²) and s�
 identity, that w(s)·w(1/s) = −1 for w = (1 + is)/(1 − is), at the corner i × i = −1. Of the total, that the heat below
 the corner equals the heat above it: equal halves, with no π/4 in them. In the plane, π is the price of turning "equal halves" into
 "how much" (essay 2 §9, "Four identities, one exchange"); in space the same price is 2, with no π in it. And the two numbers the blueprint puts on the sweep belong to two
-reads, each with a vantage and one hemisphere: 2/π the inscribed sweep's, what turning sees, the thumb's mean share,
+reads, each a single hemispherical vantage: 2/π the inscribed sweep's, what turning sees, the thumb's mean share,
 approached; π/2 the central sweep's, reached, its arc in thumbs what a walk counts, an extent.
 
 This essay's title, "what only a writer holds", needs one more distinction, which the ladder of §1 already drew. A walk counted is
 a count laid over writes, the strides, and every walk actually made is a finite count, so what it holds is a fraction: 22/7, 355/113, a series
 stopped at some term. It uses π's name and its approximants; it never has the value, which would take a count without end. Only the
-blueprint holds π itself, the completed whole, every facing at once; it has no vantage, so it is not counting carried
+blueprint holds π itself, the completed whole, every facing at once; it is the dual hemispherical vantage, held from no standpoint, so it is not counting carried
 further, and whole, with π at its exact value, it is a limit, never a thing anyone has made. So π only seems free. What the sweep gives at no cost is the relation, the corner, the equal
 halves, the four facings (π/2 of relations, four times, is the circle) and the 1 that the two numbers multiply to; and that 1 needs no π,
 since the two are reciprocals and any fraction held for π/2 gives it exactly, 11/7 × 7/11 = 1 (essay 2 §7).
@@ -209,9 +209,9 @@ multiply the next one on, the look so far has to be there to start from, kept in
 write; the next read is taken from it. So (1 + iπ/n)ⁿ is read, keep, read, keep: what is read is then written, and what
 is written is then read. Euler's identity is that alternation carried to its limit, the turn completed and the scale
 completed meeting at the opposite facing. No cycle anyone makes is the identity; it is what the cycle is a cycle
-toward. And of the whole family w(s) × w(1/s) = −1 it is the one member with no vantage: every other pair is two
+toward. And of the whole family w(s) × w(1/s) = −1 it is the one member with no standpoint: every other pair is two
 directions of one read, and this one pairs home with the horizon, where nobody stands. That is what π and e are for.
-They are how three things are put into numbers together: both hemispheres at once, completeness, and no vantage.
+They are how three things are put into numbers together: both hemispheres at once, completeness, and no standpoint.
 
 The Cauchy's total goes the same way, and more easily. Its heat 1/(1 + s²) is rational, the corner is its median because
 the two halves are equal, and it has no mean; π enters only in the constant 2/π that closes it to 1. A count
