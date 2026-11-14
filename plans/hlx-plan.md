@@ -43,3 +43,21 @@ of π and e as content in NTN is the limits and the charts or totals stated for 
 ## Runs
 
 (appended below as they come out; nothing above this line edited afterwards)
+
+### Run 1 (14 Nov 2026; `runs/hlx/hlx.py`, output `runs/hlx/hlx-run1.txt`): nothing killed
+
+- H1 not killed: the two-turn loop computed from four quaternions in fractions gives a rational cos(Θ/2) and τ² at all
+  five cases, each equal to the law's restatement (e.g. t_a = 2, t_b = 3/4, n_a·n_b = 2/3: cos(Θ/2) = 17/25, τ² = 336/289).
+- H2 not killed: the turn-and-stretch loop gives cosh ζ = tr L/2 and u² rational, equal to the law (t = 1/3, c = 9/4:
+  cosh ζ = 9/8, u² = 1/17).
+- H3 not killed: the Thomas–Wigner rotation read from B(composite)⁻¹·B₂·B₁, all 4×4 entries rational, gives τ² equal to
+  (ab·sin φ/(1 + ab·cos φ))² at all five (a = 1/5, b = 2/3, cos φ = 2/3: τ² = 20/2401).
+- H4 not tested by arithmetic, as planned: 102 is the leading term of a limit.
+
+Said plainly: the loops were computed from their maps, not from the formulas, so the agreement could have failed; that
+they come out rational is because every map was built from half-slopes and rational axes, where a turn, a stretch and a
+boost are rational matrices (classical: the Cayley parametrisation of rotations and the rational form of Lorentz boosts).
+What it shows is that the three exact holonomy laws carry no π or e once the leftover is written by its own half-slope,
+as the inputs are: they are notation by NTN's rule applied to both sides. With NTN, of the 82 laws that carry π or e,
+content is then the 32 limits, fourteen chart laws whose subject is a chart or a total itself, 93 (θ/sin θ)(sin θ/θ),
+the Trotter term 102 (a limit) and Kepler's whole turn 83.
