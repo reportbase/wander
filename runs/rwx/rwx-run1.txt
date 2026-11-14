@@ -1,0 +1,7 @@
+R1 ok  RC: shares 1/(1+s^2), s^2/(1+s^2), sum 1, s<->1/s swaps, cos^2(phase), tan phase = s; worst 9.24e-47; crossover 1/2 at s=1
+R2 ok  collision, matching, Fresnel all exactly 4k/(1+k)^2 (fractions, 8 ratios), k<->1/k unchanged, = sech^2(ln k/2), R = tanh^2, R+T=1, 1 at k=1, slope 0
+R3 ok  sech^2 = 1/(1+sinh^2) on s = (sqrt k - 1/sqrt k)/2; RLC P/Pmax = 1/(1+s^2), s = 2Q sinh(ln w/w0), w<->w0^2/w unchanged, tan phase = s; half power at s=+-1; worst 1.84e-45
+R4 ok  scaling each pair by k (masses, resistances, indices, R and C as kR, C/k) moves no share
+R5 ok  th0=0.1: T*sqrt(g/l)=6.2871145493 (exact 6.2871145493); th0=1.0: T*sqrt(g/l)=6.6999756644 (exact 6.6999756644); th0=2.5: T*sqrt(g/l)=10.3231628659 (exact 10.3231628659); Kepler T*sqrt(GM/a^3)-2pi worst 5.0e-12, e read back worst 1.9e-13; a counted period with g carried in writes l=7 to 1e-8
+R6 ok  C1 turn's share (crossover); C2-C5 level's share (stationary corner), one share on the sinh chart; C6, C7 counts that write with g, GM carried in
+killed: none

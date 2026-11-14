@@ -52,3 +52,26 @@ Exact (fractions or mpmath at 50 digits) unless stated; C6, C7 by numerical inte
 ## Runs
 
 (appended below as they come out; nothing above this line edited afterwards)
+
+### Run 1 (14 Nov 2026; `runs/rwx/rwx.py`, output `runs/rwx/rwx-run1.txt`): nothing killed
+
+- R1 not killed: the RC divider from its impedances gives 1/(1 + s²) and s²/(1 + s²), sum 1, swapped by s ↔ 1/s,
+  ½ each at s = 1; the low-pass share cos²φ with tan φ = s (worst 9·10⁻⁴⁷).
+- R2 not killed: the collision (momentum and energy checked), the matched load and Fresnel at normal incidence (from
+  field continuity) each give exactly 4k/(1 + k)² in fractions at eight ratios, the same at k and 1/k (for Fresnel, light
+  going in and coming out), = sech²(½ ln k), R = tanh²(½ ln k), R + T = 1, 1 at k = 1 with zero slope.
+- R3 not killed: sech²(½ ln k) = 1/(1 + s²) on s = (√k − 1/√k)/2; the series RLC's P/P_max = 1/(1 + s²) on
+  s = 2Q·sinh(ln(ω/ω₀)), unchanged by ω ↔ ω₀²/ω, tan φ = s, half power at s = ±1 (worst 2·10⁻⁴⁵).
+- R4 not killed: every share unmoved when the pair is scaled together.
+- R5 not killed: T·√(g/ℓ) the same at ℓ = 1, 7, 100 (6.2871145493, 6.6999756644, 10.3231628659 at θ₀ = 0.1, 1, 2.5,
+  Legendre's 2π/AGM(1, cos(θ₀/2)) each); with g carried in a counted period writes ℓ = 7 to 10⁻⁸. Kepler:
+  T·√(GM/a³) = 2π to 5·10⁻¹² at e = 0, 0.5, 0.9 and a = 1, 10, 1000; e read back from the orbit to 2·10⁻¹³.
+- R6 not killed: every case fell in one of the three types, the first two one share.
+
+Said plainly: R3's identity sech² = 1/(1 + sinh²) is algebra and could not fail; what could was that each physical case,
+computed from its own physics, lands on it, which all did. R6 is a sorting I made, not a blind one; a case chosen by
+someone else could need a fourth type. Post hoc, what the two charts say: the same share 1/(1 + s²) is a crossover
+(near against far, low against high) when its chart is the ratio itself, where the exchange is s ↔ 1/s and turns one
+share into its complement; it is a stationary best point (matching, equal masses, the same index, resonance) when its
+chart is the sinh of the level, where the exchange is s ↔ −s and leaves the share unchanged. Which chart a situation
+uses is set by whether its pair is read directly (ωRC, d/a) or through the ratio's level (½ ln k, ln(ω/ω₀)).
