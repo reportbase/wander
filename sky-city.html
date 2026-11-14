@@ -10,7 +10,7 @@
     sky-city.html: a sky city, read from where you fly (14 November 2026, CTY, plans/cty-plan.md; Tom: "have you ever seen a
     futuristic city downtown sky scripers, where cars fly instead of drive on the ground?", then "yes", then "1. yes,
     2. skyscripaers and exterior elevators 3. lets try both").
-    An original city, wireframe, after thumbs-walk.html: whole numbers and exact fractions, no trigonometry in turning,
+    An original city, its buildings and cars filled, after thumbs-walk.html: whole numbers and exact fractions, no trigonometry in turning,
     projecting, moving or picking, nothing stored. The city is made from its cells (48 units, streets on the cell lines,
     four lots a block, most with a skyscraper, some with an elevator running up the outside). Each thing is held by the
     read's heat where it stands: b ≥ g·d, g = (1/32)·√cosh(ln ρ)/cos^(3/2) α, ρ = d/(√3·H), H the reach to what is under
@@ -171,7 +171,7 @@ function cellOf(i, j) {
         const E = [], pick = [];
         for (const [x0, x1, y0, y1, z0, z1] of boxes) {
             const q = [x0 - w / 2, x1 - w / 2, y0 - top / 2, y1 - top / 2, z0 - d / 2, z1 - d / 2]; boxEdges(...q, E); pick.push(q); }
-        if (mast) E.push([[0, H - top / 2, 0], [0, top / 2, 0]]);
+        if (mast) { E.push([[0, H - top / 2, 0], [0, top / 2, 0]]); t.mast = [[0, H - top / 2, 0], [0, top / 2, 0]]; }
         t.edges = E; t.pick = pick; t.base = boxes[0];
         // floor lines every 8 units on each box, drawn only near
         const B = []; for (const [x0, x1, y0, y1, z0, z1] of boxes) for (let y = y0 + 8; y < y1; y += 8) {
@@ -189,7 +189,8 @@ function cellOf(i, j) {
             // the rails, on the tower: two lines up the face beside the car
             const ry0 = -top / 2, ry1 = Hb - top / 2, px = [fx, ox + w, fx, ox][f], pz = [oz, fz, oz + d, fz][f];   // on the face
             const s = f % 2 ? [[px, pz - 1.5], [px, pz + 1.5]] : [[px - 1.5, pz], [px + 1.5, pz]];
-            for (const [a, b] of s) E.push([[a - lc[0], ry0, b - lc[2]], [a - lc[0], ry1, b - lc[2]]]);
+            t.rails = []; t.railN = [[0, 0, -1], [1, 0, 0], [0, 0, 1], [-1, 0, 0]][f];   // the face's outward normal
+            for (const [a, b] of s) { const seg = [[a - lc[0], ry0, b - lc[2]], [a - lc[0], ry1, b - lc[2]]]; E.push(seg); t.rails.push(seg); }
             c.elevs.push(e); t.elev = e;
         }
     }
@@ -497,6 +498,58 @@ function colourOf(t, P, isT) {
     const L = Math.min(1, Math.log2(r) / 4);
     return t.kind === 'tower' ? `rgb(${Math.round(167 - 50 * L)},${Math.round(139 - 60 * L)},${Math.round(250 - 50 * L)})` : '#d6c9ff';
 }
+// ---------- the fills: every box's faces turned toward the eye, filled, the boxes drawn far to near ----------
+const BG = [7, 11, 18];
+function rgbOf(c) { if (c[0] === '#') return [1, 3, 5].map(k => parseInt(c.slice(k, k + 2), 16)); return c.match(/\d+/g).slice(0, 3).map(Number); }
+function shade(rgb, k) { return `rgb(${rgb.map((v, m) => Math.round(BG[m] + k * (v - BG[m]))).join(',')})`; }
+function clipNear(poly) {   // camera-space polygon cut at z = 0.05
+    const near = 0.05, out = [];
+    for (let k = 0; k < poly.length; k++) { const a = poly[k], b = poly[(k + 1) % poly.length], ia = a[2] >= near, ib = b[2] >= near;
+        if (ia) out.push(a);
+        if (ia !== ib) { const u = (near - a[2]) / (b[2] - a[2]); out.push([a[0] + u * (b[0] - a[0]), a[1] + u * (b[1] - a[1]), near]); } }
+    return out;
+}
+function boxesOf(t) { return t.kind === 'car' ? [t.alongZ ? [-1.5, 1.5, -1, 1, -3, 3] : [-3, 3, -1, 1, -1.5, 1.5]] : t.pick; }
+function drawFilled(things, P) {
+    const list = [];
+    for (const t of things) for (const q of boxesOf(t)) {
+        const lo = [t.r[0] + q[0], t.r[1] + q[2], t.r[2] + q[4]], hi = [t.r[0] + q[1], t.r[1] + q[3], t.r[2] + q[5]];
+        let d = 0; for (let m = 0; m < 3; m++) { const c = Math.max(lo[m], Math.min(0, hi[m])); d += c * c; }   // the box's nearest point
+        list.push({ t, lo, hi, d }); }
+    list.sort((a, b) => b.d - a.d);
+    const col = new Map(), lineW = t => t === S.target ? 2 : t.kind === 'tower' ? 1 : 1.4;
+    const poly = (pts, fill, stroke, w) => { const c = clipNear(pts.map(v => project(v, P))); if (c.length < 3) return;
+        g.beginPath(); c.forEach((v, k) => { const s = screenOf(v); k ? g.lineTo(...s) : g.moveTo(...s); }); g.closePath();
+        g.fillStyle = fill; g.fill(); g.strokeStyle = stroke; g.lineWidth = w; g.stroke(); };
+    const seg = (a, b, stroke, w, alpha) => { const s = edge(project(a, P), project(b, P)); if (!s) return; g.globalAlpha = alpha;
+        g.strokeStyle = stroke; g.lineWidth = w; g.beginPath(); g.moveTo(...s[0]); g.lineTo(...s[1]); g.stroke(); g.globalAlpha = 1; };
+    for (const { t, lo, hi, d } of list) {
+        let c = col.get(t); if (!c) { const st = colourOf(t, P, t === S.target); c = { st, rgb: rgbOf(st) }; col.set(t, c); }
+        const [x0, y0, z0] = lo, [x1, y1, z1] = hi, w = lineW(t);
+        // each face with its outward normal; seen only from its outer side
+        const faces = [];
+        if (y1 < 0) faces.push([[[x0, y1, z0], [x1, y1, z0], [x1, y1, z1], [x0, y1, z1]], 0.42, 'y']);   // the top, from above
+        if (y0 > 0) faces.push([[[x0, y0, z0], [x1, y0, z0], [x1, y0, z1], [x0, y0, z1]], 0.12, 'y']);   // the underside
+        if (x0 > 0) faces.push([[[x0, y0, z0], [x0, y1, z0], [x0, y1, z1], [x0, y0, z1]], 0.22, 'x', x0]);
+        if (x1 < 0) faces.push([[[x1, y0, z0], [x1, y1, z0], [x1, y1, z1], [x1, y0, z1]], 0.22, 'x', x1]);
+        if (z0 > 0) faces.push([[[x0, y0, z0], [x1, y0, z0], [x1, y1, z0], [x0, y1, z0]], 0.30, 'z', z0]);
+        if (z1 < 0) faces.push([[[x0, y0, z1], [x1, y0, z1], [x1, y1, z1], [x0, y1, z1]], 0.30, 'z', z1]);
+        for (const [pts, k, ax, at] of faces) {
+            poly(pts, shade(c.rgb, k), c.st, w);
+            // a tower's floor lines, every 8 units up its sides, near only
+            if (t.kind === 'tower' && ax !== 'y' && d < 360000) {
+                const base = t.r[1] - t.h / 2;
+                for (let y = Math.ceil((y0 - base + 1e-9) / 8) * 8 + base; y < y1 - 1e-9; y += 8)
+                    seg(ax === 'x' ? [at, y, z0] : [x0, y, at], ax === 'x' ? [at, y, z1] : [x1, y, at], c.st, 1, 0.35); }
+        }
+        // an elevator's rails, on its face if that face is seen, and a mast, drawn with the tower's top box
+        if (t.kind === 'tower' && Math.abs(hi[1] - (t.r[1] + t.H - t.h / 2)) < 1e-6) {
+            if (t.mast) seg(add3(t.mast[0], t.r), add3(t.mast[1], t.r), c.st, w, 1); }
+        if (t.kind === 'tower' && t.rails && Math.abs(lo[1] - (t.r[1] - t.h / 2)) < 1e-6) {
+            const n = t.railN, p = add3(t.rails[0][0], t.r);
+            if (n[0] * p[0] + n[1] * p[1] + n[2] * p[2] < 0) for (const [a, b] of t.rails) seg(add3(a, t.r), add3(b, t.r), c.st, w, 1); }
+    }
+}
 function frame() {
     const P = pose(), ey = Fr.num(S.eye[1]);
     g.fillStyle = '#070b12'; g.fillRect(0, 0, W, Hh);
@@ -514,19 +567,10 @@ function frame() {
         g.stroke(); }
     const things = thingsNear(); let best = null, bt = Infinity;
     for (const t of things) { const hit = rayBoxes(P.F, t); if (hit !== null && hit < bt) { bt = hit; best = t; } }
-    if (S.lock && things.includes(S.lock) && rayBoxes(P.F, S.lock) !== null) best = S.lock; else S.lock = null;
+    if (S.lock !== best) S.lock = null;   // what is behind something drawn is never under the crosshair
     S.target = best;
     if (S.target && !S.holdH) { const x = [P.a, P.b, P.c].map(v => S.target.r[0] * v[0] + S.target.r[1] * v[1] + S.target.r[2] * v[2]); S.H = Math.max(1e-6, (x[0] + x[1] + x[2]) / 3); }
-    for (const t of things) {
-        const isT = t === S.target; g.strokeStyle = colourOf(t, P, isT); g.lineWidth = isT ? 2 : t.kind === 'tower' ? 1 : 1.4; g.beginPath();
-        const E = t.kind === 'car' ? (t.alongZ ? CAR_Z : CAR_X) : t.edges;
-        for (const [a, b] of E) { const s = edge(project(add3(a, t.r), P), project(add3(b, t.r), P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } }
-        g.stroke();
-        if (t.kind === 'tower' && t.r[0] * t.r[0] + t.r[1] * t.r[1] + t.r[2] * t.r[2] < 360000) {   // floor lines, near only
-            g.globalAlpha = 0.35; g.beginPath();
-            for (const [a, b] of t.bands) { const s = edge(project(add3(a, t.r), P), project(add3(b, t.r), P)); if (s) { g.moveTo(...s[0]); g.lineTo(...s[1]); } }
-            g.stroke(); g.globalAlpha = 1; }
-    }
+    drawFilled(things, P);
     g.strokeStyle = '#f2c14e'; g.lineWidth = 1.4; g.beginPath();
     g.moveTo(W / 2 - 9, Hh / 2); g.lineTo(W / 2 + 9, Hh / 2); g.moveTo(W / 2, Hh / 2 - 9); g.lineTo(W / 2, Hh / 2 + 9); g.stroke();
 }
@@ -652,6 +696,8 @@ window.__skyCity = {
         if (o.tick !== undefined) S.tick = BigInt(o.tick); if (o.run !== undefined) S.run = !!o.run;
         if (o.loops !== undefined) S.loops = !!o.loops; if (o.traffic !== undefined) S.traffic = !!o.traffic;
         S.lock = null; frame(); return this.state(); },
+    hits() { const P = pose(); return thingsNear().map(t => ({ t, d: rayBoxes(P.F, t) })).filter(x => x.d !== null).sort((a, b) => a.d - b.d)
+        .map(x => ({ key: x.t.key, kind: x.t.kind, d: x.d })); },   // what the crosshair's ray meets among the things drawn, nearest first
     state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH, tick: S.tick.toString(),
         target: S.target ? { kind: S.target.kind, key: S.target.key } : null }),
 };
