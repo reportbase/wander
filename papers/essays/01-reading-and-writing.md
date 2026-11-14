@@ -462,6 +462,12 @@ rescaling has been treated as a property of statements, laws and scales. Here it
 standing somewhere gets every invariant quantity for free and nothing else. Everything that moves under scaling is what
 it would have to be handed.
 
+The test also shows where a unit first gets into motion. A ball bounces to a height A every P ticks under one pull, so
+g = 8A/P². Scale the world and the observer by k, and the ball's directions at the top and at the foot of the bounce are
+the same fractions, as is its height in its own breadths. Under the same pull, though, the scaled ball takes √k times the
+ticks. The pull is an amount in a unit, so a bounce's ticks, counted, write the ball's size, A = gP²/8. This is Galileo's
+square–cube law, met at the place in the sorting where it belongs (*Reads and Writes* §7; `sky-city.html`).
+
 *Demo: the mountain and the thumb, with "scale the world".*
 
 ---
