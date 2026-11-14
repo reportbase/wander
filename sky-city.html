@@ -20,8 +20,8 @@
     the origin, one-way streets, each car waiting for the one ahead and turning only when the other lane is clear, its state
     stepped from the moment the page opens; each with a ghost that flies the same rules alone.
     W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E or drag or the arrows turn, the crosshairs follow the mouse, G half way to the thing
-    under the crosshair, B back, the wheel sets the thumb, H holds it, T pauses time, M the menu.
-    ?x=&y=&z=&q=&ky=&kp=&tick=&time=0&loops=0&traffic=0&menu=1&heat=1
+    under the crosshair, B back, the wheel (or + and −, 1 back) zooms, H holds it, T pauses time, M the menu.
+    ?zoom=&x=&y=&z=&q=&ky=&kp=&tick=&time=0&loops=0&traffic=0&menu=1&heat=1
     Hook window.__skyCity: Fr, set(o), state(), cull(), againstMade(half), againstStepped(o), trigFree(steps), scaleCheck(),
     traffic: { state, run(n), check(n), pieces(total, parts) }, target(), exact(), onScreen(t).
     -->
@@ -72,8 +72,8 @@
 </div>
 <div id="panel">
     <h2>Sky city</h2>
-    <p>W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E, a drag or the arrow keys turn, the crosshairs follow the mouse (the middle of the screen on a touch screen), G half way to the thing under the crosshair, B back to twice as far, the wheel sets the thumb, H holds it, T stops and starts time, M the menu.</p>
-    <p>On a touch screen: drag to look; two fingers dragged together fly (up the screen forward, across sideways), spread or closed they set the thumb; hold the arrows to fly, ↑ and ↓ up and down.</p>
+    <p>W A S D fly level (W and S four strides a frame; shift: eight times as many), Space or X up, C or Z down, Q and E, a drag or the arrow keys turn, the crosshairs follow the mouse (the middle of the screen on a touch screen), G half way to the thing under the crosshair, B back to twice as far, the wheel (or + and −, 1 back) zooms, H holds it, T stops and starts time, M the menu.</p>
+    <p>On a touch screen: drag to look; two fingers dragged together fly (up the screen forward, across sideways), spread or closed they zoom; hold the arrows to fly, ↑ and ↓ up and down.</p>
     <h3>show</h3>
     <label><input type="checkbox" id="optLoops" checked> cars on their own loops (placed from the tick alone)</label>
     <label><input type="checkbox" id="optTraffic" checked> traffic (cars that react; their state held)</label>
@@ -207,7 +207,7 @@ const LOOPS0 = QS.get('loops') !== '0', MREACH = 4;
 function loopCarOf(i, j) {
     const key = 'c' + i + ',' + j; if (cellCache.has(key)) return cellCache.get(key);
     let t = null; const h = k => hash(i, j, k + 999999);
-    if (h(1) < 0.10) {
+    if (h(1) < 1) {   // a car on every block (was one block in ten)
         const A = (1 + Math.floor(h(2) * 3)) * CELL, B = (1 + Math.floor(h(3) * 3)) * CELL, flip = h(4) < 0.5;
         t = { kind: 'car', loop: true, key, i, j, A: flip ? B : A, B: flip ? A : B, flip, y: 60 + 16 * Math.floor(h(5) * 6) + 1,
               m: 1 + Math.floor(h(6) * 4), w: 6, d: 6, h: 2, b: 6, cx: Fr.mul(Fr.make(i), CELLF), cz: Fr.mul(Fr.make(j), CELLF), r: [0, 0, 0] };
@@ -281,7 +281,7 @@ const TCARS = Array.from({ length: TN }, (_, k) => ({ kind: 'car', traffic: true
 const S = {
     q: Math.round(+QS.get('q') || 0), ky: Math.round(+QS.get('ky') || 0), kp: Math.round(+QS.get('kp') || 0), dragX: 0, dragY: 0,
     eye: [Fr.make(QS.has('x') ? Math.round(+QS.get('x')) : 0), Fr.make(QS.has('y') ? Math.max(1, Math.round(+QS.get('y'))) : 30), Fr.make(QS.has('z') ? Math.round(+QS.get('z')) : -60)],
-    H: null, holdH: false, target: null, lock: null, cur: null, tick: BigInt(QS.get('tick') || 0), run: QS.get('time') !== '0', tAcc: 0, tPrev: 0,
+    H: null, holdH: false, zoom: Math.min(64, Math.max(1, +(QS.get('zoom') || 1))), target: null, lock: null, cur: null, tick: BigInt(QS.get('tick') || 0), run: QS.get('time') !== '0', tAcc: 0, tPrev: 0,
     lastHeading: null, anchors: 0, goes: 0, loops: LOOPS0, traffic: TRAFFIC0, live: 0,
     show: { heat: QS.get('heat') === '1', read: true, held: true, cars: true, checks: false, about: false },
 };
@@ -329,9 +329,9 @@ function readFrame() { const P = pose(); RD.F = crossDir(P); RD.Hp = SQ3 * Math.
 function grainFor(r) {
     const d = Math.hypot(r[0], r[1], r[2]), c = (r[0] * RD.F[0] + r[1] * RD.F[1] + r[2] * RD.F[2]) / d;
     if (!(c > 0)) return Infinity;
-    const rho = d / RD.Hp; return GRAIN * Math.sqrt((rho + 1 / rho) / 2) / (c * Math.sqrt(c));
+    const rho = d / RD.Hp; return (GRAIN / S.zoom) * Math.sqrt((rho + 1 / rho) / 2) / (c * Math.sqrt(c));
 }
-function dmaxFor(bmax) { const H = RD.Hp, f = d => d * Math.sqrt((d / H + H / d) / 2) * GRAIN - bmax;
+function dmaxFor(bmax) { const H = RD.Hp, f = d => d * Math.sqrt((d / H + H / d) / 2) * (GRAIN / S.zoom) - bmax;
     let lo = 0, hi = H; while (f(hi) < 0) hi *= 2; for (let i = 0; i < 60; i++) { const m = (lo + hi) / 2; if (f(m) < 0) lo = m; else hi = m; } return hi; }
 function scanR() { return Math.min(RCAP, Math.ceil(dmaxFor(BMAX) / CELL) + 1); }
 // b ≥ g·d (in squares), within the read's reach (RCAP cells), and not the tower the eye is inside
@@ -361,7 +361,7 @@ function candidates(R, ci, cj) {
 let heldCache = { key: null, out: [] };
 function thingsNear() {
     readFrame(); const R = scanR();
-    const key = S.eye.map(Fr.str).join(',') + '|' + S.tick + '|' + RD.F.join() + '|' + RD.Hp + '|' + S.loops + S.traffic + TR.st.T;
+    const key = S.eye.map(Fr.str).join(',') + '|' + S.tick + '|' + RD.F.join() + '|' + RD.Hp + '|' + S.zoom + '|' + S.loops + S.traffic + TR.st.T;
     if (heldCache.key === key) return heldCache.out;
     const ci = floorFr(S.eye[0], CELLF), cj = floorFr(S.eye[2], CELLF), A = candidates(R, ci, cj);
     // the eye from the anchor's corner, exactly, then a small double (a floating origin)
@@ -460,10 +460,12 @@ function trafficCheck(total = 6000) { const a = trafficInit(); let firstOff = nu
 // ---------- drawing ----------
 const cv = document.getElementById('cv'), g = cv.getContext('2d');
 let W = 0, Hh = 0, foc = 1, heatImg = null;
+// the zoom magnifies the screen (foc × Z) and holds by size on the screen, so the grain is 1/32 ÷ Z; it never moves H
+function setFoc() { foc = (W / 2) / 1.2 * S.zoom; heatKey = null; }
+function zoomBy(f) { S.zoom = Math.min(64, Math.max(1, S.zoom * f)); setFoc(); }
 function resize() {
     const dpr = Math.min(2, window.devicePixelRatio || 1); W = innerWidth; Hh = innerHeight;
-    cv.width = W * dpr; cv.height = Hh * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0); foc = (W / 2) / 1.2;
-    heatKey = null;
+    cv.width = W * dpr; cv.height = Hh * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0); setFoc();
 }
 // the heat painted about the crosshair: cos³ of each pixel's turn off the crosshair's direction (at the screen's middle,
 // (1 + x² + y²)^(−3/2), the flat screen's own); rebuilt only when the crosshair moves and the heat is shown
@@ -605,7 +607,7 @@ function panelHtml() {
             h += `<p>the thumb H = ${S.H.toFixed(2)}${S.holdH ? ' (held)' : ' (on this thing, so it is one thumb out)'}; its three pair slopes ${X.pairs.map(p => p.name + ' ' + (p.s ? fmt(p.s) : '—')).join(', ')}, multiplying to <span class="${X.closure && Fr.eq(X.closure, ONE) ? 'ok' : 'bad'}">${X.closure ? Fr.str(X.closure) : '—'}</span>, exactly.</p>`; }
     }
     if (S.show.held) {
-        h += `<h3>what is held: the read's heat</h3><p>Held now: ${CULL.towers.toLocaleString()} towers, ${CULL.elevs} elevator cars, ${CULL.loops} cars on loops and ${CULL.traffic} in traffic, from the ${CULL.scanned.toLocaleString()} cells within ${CULL.R} of the eye; nothing is stored, and how big the city is never enters.</p>`;
+        h += `<h3>what is held: the read's heat</h3><p>Zoom ×${S.zoom.toFixed(2)} (it magnifies the screen and holds by size on it; it moves no H). Held now: ${CULL.towers.toLocaleString()} towers, ${CULL.elevs} elevator cars, ${CULL.loops} cars on loops and ${CULL.traffic} in traffic, from the ${CULL.scanned.toLocaleString()} cells within ${CULL.R} of the eye; nothing is stored, and how big the city is never enters.</p>`;
         h += `<p>A thing of breadth b at distance d is kept when b ≥ g·d, g = (1/32)·√cosh(ln ρ)/cos^(3/2) α: the heat cos³α off the look times sech(ln ρ) in distance, ρ = d/(√3·H) against the thumb. Nothing behind the look; the tower the eye is inside is not held.</p>`;
         h += `<p>The one assumption: g ∝ 1/√heat takes the count kept to go as 1/g², only roughly so among things on a ground, so the count moves with the look and the thumb. Chosen, not derived: the fineness 1/32, and the read's reach, ${((RCAP - 2) * CELL).toLocaleString()} units at most.</p>`;
     }
@@ -644,6 +646,9 @@ function act(k) {
     if (k === 'm') { panel.classList.toggle('open'); updatePanel(true); return true; }
     if (k === 'escape') { panel.classList.remove('open'); return true; }
     if (k === 'h') { S.holdH = !S.holdH; return true; }
+    if (k === '=' || k === '+') { zoomBy(2); return true; }
+    if (k === '-' || k === '_') { zoomBy(0.5); return true; }
+    if (k === '1') { zoomBy(1 / S.zoom); return true; }
     if (k === 'g') { towardTarget(Fr.make(1, 2)); return true; }
     if (k === 'b') { towardTarget(Fr.make(2)); return true; }
     if (k === 't') { S.run = !S.run; return true; }
@@ -661,24 +666,24 @@ let drag = null; const ptrs = new Map(); let pinch = null;
 cv.style.touchAction = 'none';
 cv.addEventListener('pointerdown', ev => { cv.setPointerCapture(ev.pointerId); ptrs.set(ev.pointerId, [ev.clientX, ev.clientY]);
     if (ptrs.size === 1) drag = [ev.clientX, ev.clientY];
-    else if (ptrs.size === 2) { const [p, q] = [...ptrs.values()]; pinch = { d: Math.hypot(p[0] - q[0], p[1] - q[1]) || 1, H: S.H || 48, m: [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2], mode: null, fx: 0, fy: 0 }; drag = null; } });
+    else if (ptrs.size === 2) { const [p, q] = [...ptrs.values()]; pinch = { d: Math.hypot(p[0] - q[0], p[1] - q[1]) || 1, Z: S.zoom, m: [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2], mode: null, fx: 0, fy: 0 }; drag = null; } });
 function ptrUp(ev) { ptrs.delete(ev.pointerId); if (ptrs.size < 2) pinch = null;
     if (ptrs.size === 1) { const p = [...ptrs.values()][0]; drag = [p[0], p[1]]; } else if (!ptrs.size) drag = null; }
 cv.addEventListener('pointerup', ptrUp); cv.addEventListener('pointercancel', ptrUp);
 cv.addEventListener('pointerleave', ev => { if (ev.pointerType === 'mouse') S.cur = null; });
 cv.addEventListener('pointermove', ev => { if (ev.pointerType === 'mouse') S.cur = [ev.clientX, ev.clientY]; if (!ptrs.has(ev.pointerId)) return; ptrs.set(ev.pointerId, [ev.clientX, ev.clientY]);
-    if (pinch && ptrs.size >= 2) {   // two fingers: dragged together they fly (up the screen forward, across sideways); spread or closed they set the thumb
+    if (pinch && ptrs.size >= 2) {   // two fingers: dragged together they fly (up the screen forward, across sideways); spread or closed they zoom
         const [p, q] = [...ptrs.values()], d = Math.hypot(p[0] - q[0], p[1] - q[1]) || 1, m = [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2];
         const mx = m[0] - pinch.m[0], my = m[1] - pinch.m[1];
         if (!pinch.mode) { const moved = Math.hypot(mx, my), spread = Math.abs(d - pinch.d);
             if (Math.max(moved, spread) < 12) return; pinch.mode = moved > spread ? 'pan' : 'pinch'; pinch.m = m; return; }
-        if (pinch.mode === 'pinch') { S.holdH = true; S.H = Math.max(1e-6, pinch.H * d / pinch.d); return; }
+        if (pinch.mode === 'pinch') { zoomBy(pinch.Z * d / pinch.d / S.zoom); return; }
         pinch.m = m; pinch.fy -= my; pinch.fx += mx;
         const nf = Math.trunc(pinch.fy / 3), ns = Math.trunc(pinch.fx / 6); pinch.fy -= 3 * nf; pinch.fx -= 6 * ns;
         if (nf) stride(nf > 0 ? 'w' : 's', Math.abs(nf) * 2); if (ns) stride(ns > 0 ? 'd' : 'a', Math.abs(ns));
         return; }
     if (!drag) return; const dx = ev.clientX - drag[0], dy = ev.clientY - drag[1]; drag = [ev.clientX, ev.clientY];
-    S.dragX += dx; S.dragY += dy; const kx = Math.trunc(S.dragX / 2), ky = Math.trunc(S.dragY / 2); S.dragX -= 2 * kx; S.dragY -= 2 * ky; turnBy(kx); tiltBy(-ky); });
+    S.dragX += dx; S.dragY += dy; const px = 2 * S.zoom, kx = Math.trunc(S.dragX / px), ky = Math.trunc(S.dragY / px); S.dragX -= px * kx; S.dragY -= px * ky;   /* a drag turns slower as the zoom grows */ turnBy(kx); tiltBy(-ky); });
 for (const b of document.querySelectorAll('#pad button')) {
     const k = b.dataset.k, hold = b.dataset.hold === '1';
     b.addEventListener('pointerdown', ev => { ev.preventDefault(); b.setPointerCapture(ev.pointerId);
@@ -686,7 +691,7 @@ for (const b of document.querySelectorAll('#pad button')) {
     const up = () => { if (hold) { keys.delete(k); b.classList.remove('on'); } };
     b.addEventListener('pointerup', up); b.addEventListener('pointercancel', up); b.addEventListener('lostpointercapture', up);
 }
-cv.addEventListener('wheel', ev => { ev.preventDefault(); S.holdH = true; S.H = (S.H || 48) * Math.pow(2, ev.deltaY > 0 ? 0.25 : -0.25); }, { passive: false });
+cv.addEventListener('wheel', ev => { ev.preventDefault(); zoomBy(Math.pow(2, ev.deltaY > 0 ? -0.25 : 0.25)); }, { passive: false });
 function advance(k) {   // time: k ticks; the traffic stepped a step every two ticks of the page's own running
     S.tick += BigInt(k); S.live += k; const want = Math.floor(S.live / 2); while (TR.st.T < want) trafficStep(TR.st);
 }
@@ -718,13 +723,13 @@ window.__skyCity = {
                check: trafficCheck, pieces: trafficPieces },
     onScreen: t => { const s = project(t.r, pose()); if (s[2] <= 0) return false; const p = screenOf(s); return p[0] >= 0 && p[0] <= W && p[1] >= 0 && p[1] <= Hh; },
     set(o) { if (o.q !== undefined) S.q = o.q; if (o.ky !== undefined) { S.ky = o.ky; turnBy(0); } if (o.kp !== undefined) { S.kp = o.kp; tiltBy(0); }
-        if (o.cur !== undefined) S.cur = o.cur; if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
+        if (o.cur !== undefined) S.cur = o.cur; if (o.zoom !== undefined) zoomBy(o.zoom / S.zoom); if (o.eye) S.eye = o.eye.map(v => Fr.of(v)); if (o.H !== undefined) { S.H = o.H; S.holdH = o.H !== null; }
         if (o.tick !== undefined) S.tick = BigInt(o.tick); if (o.run !== undefined) S.run = !!o.run;
         if (o.loops !== undefined) S.loops = !!o.loops; if (o.traffic !== undefined) S.traffic = !!o.traffic;
         S.lock = null; frame(); return this.state(); },
     hits() { const out = thingsNear(); return out.map(t => ({ t, d: rayBoxes(RD.F, t) })).filter(x => x.d !== null).sort((a, b) => a.d - b.d)
         .map(x => ({ key: x.t.key, kind: x.t.kind, d: x.d })); },   // what the crosshair's ray meets among the things drawn, nearest first
-    state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH, tick: S.tick.toString(),
+    state: () => ({ q: S.q, ky: S.ky, kp: S.kp, eye: S.eye.map(Fr.str), H: S.H, holdH: S.holdH, zoom: S.zoom, tick: S.tick.toString(),
         target: S.target ? { kind: S.target.kind, key: S.target.key } : null }),
 };
 addEventListener('resize', resize);
