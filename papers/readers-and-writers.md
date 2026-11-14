@@ -1187,7 +1187,9 @@ edges and a triple corner, is the blueprint's description of the read, drawn who
 heat over every direction in front, out to the horizon. The heat is the look's, not the thumbs': hottest wherever the look
 points; looked down the thumbs' diagonal, where they cross, [1 : 1 : 1], every pair at its corner. Laid on a screen square
 to one thumb instead, as the wedge's law is in v/h and v₂/h, the same directions are hottest along that thumb, at home;
-nothing moved but the screen. As the look turns, the heat map turns with it, without a seam: perfect wherever it
+nothing moved but the screen. Let the crosshairs leave the middle of the look, as on a screen where they follow a pointer, and the heat
+goes with them, hottest on the line through the crosshairs, while the thumbs stay the look's frame: off the middle, the
+hottest direction and the thumbs' crossing are two points, one only down the thumbs' diagonal (`sky-city.html`). As the look turns, the heat map turns with it, without a seam: perfect wherever it
 looks, because it is wherever it looks.
 
 **The read's heat covers the hemisphere.** One read's heat covers the hemisphere in front, nothing smaller. Projected
