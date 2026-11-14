@@ -20,18 +20,19 @@ for L in R.LAWS:
     if L['verdict'] != 'notation':
         none.append(n)
         continue
-    try:
-        src = inspect.getsource(L['new'])
-    except (OSError, TypeError):
-        src = ''
-    # the 'new' source: only the lambda or def body after its name
-    body = src.split(':', 1)[1] if ':' in src else src
+    # the names the restatement's own code uses (not its source line, which it shares with 'orig')
     bad_text = FORB.findall(L['restated'])
-    bad_code = [t for t in FORB.findall(body) if t not in ('e',)]  # a bare e as a variable name is allowed in code
+    BADN = {'pi', 'e', 'exp', 'expj', 'log', 'ln', 'sin', 'cos', 'tan', 'sec', 'cot', 'csc', 'atan', 'atan2', 'asin',
+            'acos', 'sinh', 'cosh', 'tanh', 'sech', 'asinh', 'atanh', 'gamma', 'quad', 'nsum', 'nprod', 'limit', 'arg'}
+    names, todo = set(), [L['new'].__code__]
+    while todo:
+        c = todo.pop(); names |= set(c.co_names); todo += [k for k in c.co_consts if hasattr(k, 'co_names')]
+    bad_code = sorted(names & BADN)
     errs = []
     for x in L['points']:
         a, b = L['orig'](x), L['new'](x)
-        errs.append(abs(mp.mpmathify(a) - mp.mpmathify(b)))
+        a, b = (a, b) if isinstance(a, (list, tuple)) else ([a], [b])
+        errs += [abs(mp.mpmathify(u) - mp.mpmathify(v)) for u, v in zip(a, b)]
     ok = max(errs) < mp.mpf(10) ** -30 and not bad_text and not bad_code and len(L['points']) >= 3
     (notation if ok else failed).append(n)
     if not ok:
