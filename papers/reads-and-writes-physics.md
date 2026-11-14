@@ -539,6 +539,12 @@ lets a count (of light, as of ticks) write a length, d = √(L/4πF). The 4π is
 hemispherical vantage's; the receiver's own form, paint unchanged and the share (Δ/d)², needs no π (`inverse-square.md`,
 "From one vantage"). [reading]
 
+The disc shows the pair exactly (ISX): on its axis a flat, evenly bright disc gives E/(πL) = 1/(1 + s²), s = d/a, its
+share of the receiver's hemisphere and the Cauchy's heat; the inverse square is the far chart, the flat near field the
+near chart, and s ↔ 1/s makes them complements, E(s) + E(1/s) = πL, half each at d = a. Coaxial discs read each other
+reciprocally (A₁F₁₂ = A₂F₂₁), the ratio the sizes, the product the distance. Only a round source pairs so (a square
+plate's two shares sum to 1.0045 to 1.108 πL). [exact; the formulas classical, the sorting a reading]
+
 ### 7.3 The distance ladder as a tower [data, simulation]
 
 A ladder's rungs are reads joined into extents, with writes at the anchors: the angles and the flux ratios of one kind are
