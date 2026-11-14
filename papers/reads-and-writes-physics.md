@@ -419,7 +419,12 @@ are a joining, and what the joining leaves over when the loop closes depends on 
   encloses nothing and turns nothing (5 × 10⁻⁵¹ on the sphere, 2.5 × 10⁻⁴⁹ in velocity space).
 
 So the leftover of joining is a map, a turn between the first look and the last, and its angle is the area the joined
-reads enclose, with no unit and no clock. A rate
+reads enclose, with no unit and no clock. Nor does it need π to be stated. Built from rational half-slopes along axes with rational
+components (a turn by its half-slope t, a boost by its half-rapidity a, β = 2a/(1 + a²)), each loop's own map, computed in
+fractions, leaves a leftover whose half-slope squared is a fraction equal to its law: two turns with half-slopes 2 and ¾
+about axes whose cosine is 2/3 leave cos(Θ/2) = 17/25; two boosts of half-rapidity 1/5 and 2/3 leave tan²(Θ/2) = 20/2401
+(HLX, `plans/hlx-plan.md`, nothing killed; the rational forms of rotations and boosts are classical). The angle is the
+name of that half-slope; π enters only where the area is written as an angle. A rate
 of turning is another matter. Foucault's pendulum (1851) turns, against the ground, by 360°·sin φ a sidereal day at
 latitude φ: the area the latitude's circle leaves out of the hemisphere, read per turn of the Earth. The degree a day
 carries the sidereal day in, a clock, so it is a write. Measured rates were sought before any was read; one site met the
