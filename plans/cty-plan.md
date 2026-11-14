@@ -99,3 +99,36 @@ and elevators". Added:
   Killed by any nearer pair.
 
 ## Runs
+
+### Run 1 (14 November 2026; `runs/cty/run1.mjs`, the page's hook in headless Chromium, 1280 × 720; outputs `runs/cty/run1-out.json`, `run1-street.png`, `run1-above.png`)
+
+- **C1 not killed.** At 40 poses of a seeded flight (eight each at street level, mid-height, above the roofs, looking
+  straight up and looking straight down, up to 2,000 units from the origin) the read held, thing for thing, what a
+  blueprint made from every cell within twice its reach held by the same rule from exact centres: 0 missing, 0 extra
+  in all, towers, elevators and loop cars.
+- **C2 not killed.** Elevators and loop cars stored and stepped one tick at a time over 200 ticks (about 7,800 stored,
+  1.56 million additions), compared every 10 ticks: the same things held, at exactly the same places, with the eye
+  still, flying, and from T = 10³⁰.
+- **C3 not killed.** 300 steps of turning, flying (every direction, up and down included) and picking: 0 calls to any
+  trigonometric function.
+- **C4 not tested in run 1 (my set-up).** At the pose I chose, looking north down the avenue, nothing was under the
+  crosshair, so there were no slopes to scale.
+- **C5 not killed.** One look, the thumb held at 60: 6,625 cells scanned (reach 46 cells) at the origin, 10⁶ and 10¹⁰⁰
+  units out, exactly the same; held 999, 1,035, 977.
+- **C6 killed.** Level looks along a street held 156 to 1,284 (mean 651); one is under the predicted 200. The rest of it
+  held: straight up held 79 to 281 (mean 226, under half the level mean), straight down 629 to 1,209 (mean 795, above the
+  level mean). Mid-height looks held 401 to 2,983 and those above the roofs 809 to 3,145: a skyline seen whole is the
+  most the read holds.
+- **C7 not killed.** Traffic stepped 0 → 600 at once and in ten pieces: the same state exactly; 35 of 48 cars off their
+  ghosts' paths; 28,800 car-steps (cars × steps), 3,086 waits, 225 turns, 39 refused.
+- **C8 not killed.** Over 6,000 steps the nearest two cars in one lane ever came was 8 units (the gap the rule keeps); the
+  first car left its ghost's path at step 6; 42 of 48 off by the end.
+- No page errors.
+
+### Run 1b (14 November 2026; `runs/cty/run1b.mjs`; C4 at poses with something under the crosshair, which run 1 lacked)
+
+- **C4 not killed.** At five poses (street, low, mid-height, 2,000 units out, looking up), each with a tower under the
+  crosshair: the world and the eye scaled by 1/1000, 1000 and 7/3 left the three pair slopes the same fractions, and
+  they multiplied to exactly 1.
+- Frame times in headless software rendering: looking up 3 ms, along a street 16 ms, at mid-height 25 ms, above the roofs
+  36 ms.
