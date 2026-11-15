@@ -464,6 +464,18 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       series and π from it (twice the first positive zero of cos); either way a completed limit first and −1 last. The
       read's route has −1 first, as the opposite home reached by fractions, π and e after as the blueprint's names for
       the total and the chart. Where each starts, not a fault in either (R335, R364).
+    - **Fewer starting assumptions** (Tom: "Deriving pi and e starting with 1 is more fundamental."): Tom's reading,
+      recorded as his (R939, R940). What supports it: starting from 1 is not the difference (classical analysis builds
+      e = Σ 1/n! and π by Leibniz's series from fractions too, and BLD gets both as limits); the difference is where −1
+      enters. Classically −1 is reached only through π and e, both limits completed first; on the read's route −1 comes
+      before either, exactly, from fractions. So the content of Euler's identity needs fewer starting assumptions than
+      the identity: 1, the composition rule and fractions, no limit.
+    - **Scaffolding** (Tom: "But than pi and e cancell out, they are just scaffolding"; "Classical takes pi and e as
+      inputs"): in the classical derivation of the identity π and e are inputs, defined before it; put up (π the angle,
+      e the exponent) and taken down, the rational −1 left, as a denominator is (essay 20, R883, R884). Scaffolding only
+      on the classical route; the read's route needs none. And only in the identity and laws like it: where a law states
+      a total or a limit for itself (a circle's length in a unit, the Gaussian's normalization, Kepler's equation; essay
+      24) π and e are content and stay.
     - Standing: a reading; every exact piece already run (CPX, BLD, HLX, HOL, BRL). Next, offered, not run: one exact
       test giving curvature +1, 0, −1 (turns, strides, boosts) from loop leftover over area, matched to CPX's sign of Δ
       (Cayley–Klein classical), and random rational splits of the half turn multiplying to −1.
