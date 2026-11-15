@@ -320,8 +320,8 @@ multiplied, which is arithmetic, and the 1 is its own thumb.
 or face away from V? Facing V (the inscribed sweep), the thumb's share h averages 2/π over the quarter turn, approached
 at the horizon, never reached. Facing away from V (the central sweep), the quarter arc from all of h to all of v is π/2
 thumbs long, reached at a point. Both faces stand on H and turn one quarter turn (essay 26 §7). Their product, 1, is also
-the number of the dual hemispherical vantage (DHV), which has no standpoint and faces neither way. Both stay the DHV's
-arithmetic, since the single hemispherical vantage (SHV) holds no π.
+the number of the dual hemispherical vantage (DHV), which has no standpoint and faces neither way. Face V and face away from V at the same time and no facing
+is left: the non-facing, discrete value of 1 thumb. Both stay the DHV's arithmetic, since the single hemispherical vantage (SHV) holds no π.
 
 **Short facing V, long facing away, and whole.** Said most simply: the true size is 1, the thumb in thumbs. Facing V
 gives the short side of it, 2/π; facing away from V gives the long side, π/2; their product is the 1.
@@ -780,6 +780,6 @@ their median.
   31 (the angle in a semicircle is right); Book VI, propositions 8 and 13 (the mean proportional).
 - Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Berlin.
 
-The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read, extent and write): the corner in §4 (Propositions 1 and 2), the arc from
+The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read and write): the corner in §4 (Propositions 1 and 2), the arc from
 the chord, the two sweeps and what each reads in §4, the one-length circle in §5 (Proposition 3, with the derivation of the
 circle from a uniform returning sweep as part (g)), and the three paths in §12.2.

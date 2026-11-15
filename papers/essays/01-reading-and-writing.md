@@ -85,7 +85,7 @@ outside?
 
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
-| continuous | reading: a read, and what reads held together give, an extent or a map | the number line in a unit (the blueprint) |
+| continuous | reading: a read, and what reads held together give, a distance in thumbs or a map | the number line in a unit (the blueprint) |
 | discrete | a count or an order, descriptions kept in writes | a write |
 
 A read is continuous and unmoved: a direction, a slope, a ratio of slopes. A write is discrete and moved: a stone, a
@@ -96,8 +96,9 @@ over them, and what is kept of it is kept as things (marks, pebbles), each a wri
 unit, or the circle held whole at a size, is continuous and moved: the blueprint, set beside the two acts for comparison.
 
 Among acts the two properties are one. A thing that is discrete has a boundary, so it has a size, so scaling moves it;
-a direction has no boundary and no size. So reading is the verb for the continuous and writing the verb for the
-discrete, and the two mixed boxes hold no act: a count and the number line are nouns, descriptions laid over what was
+a direction has no boundary and no size. Discreteness has no face (essay 26): a write has scale and size and faces
+nothing; a read has no scale and no size, and it is a face. That is exactly what reads and writes are. So reading is
+the verb for the continuous and writing the verb for the discrete, and the two mixed boxes hold no act: a count and the number line are nouns, descriptions laid over what was
 read or written. The friction between continuous and discrete shows wherever one is made to hold the other, a count
 holding a slope no fraction lands on, or a walk cut into strides so that the looks at its two ends give a size. π and e
 are not in the table. Each is a pure ratio that scaling does not move and that no count reaches; they are how both
@@ -737,6 +738,6 @@ The essay draws on these; each is cited for something it uses.
   Psychology: Human Perception and Performance* 10(5), 683–703.
 
 The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November
-(R788) with read, extent and write), in the same collection: readers and writers in
+(R788) with read and write), in the same collection: readers and writers in
 §3.1, the one-length circle in §5, the Cauchy as the law of the uniform turn in §7, reading and writing in §9, and the
 classical pieces in Appendix A ("The Cauchy from one length").

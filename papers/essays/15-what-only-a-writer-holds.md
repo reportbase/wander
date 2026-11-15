@@ -393,7 +393,7 @@ the turn comes back, and the scale goes on, and to say either in a number you ha
 The dates and titles above are given from memory and are to be checked against the texts.
 
 The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is
-*Reads and Writes*, rewritten 10 November on R788 with read, extent and write): §2 (the read's ignorance as turns and rescalings; zero and a new zero; tangent addition), §3.8 (no
+*Reads and Writes*, rewritten 10 November on R788 with read and write): §2 (the read's ignorance as turns and rescalings; zero and a new zero; tangent addition), §3.8 (no
 read has V), §4 ("Rates, not angles"; the landing point), §5 ("Why halving", "Circular mathematics without V"),
 §7.4 (a shape as ln r = a₀ + f(θ)), Appendix A ("Polar form and the complex logarithm", "What square roots reach") and
 Appendix B ("Machine arithmetic and the infinite"). The essays before this one: 2 (§9, Euler's formula), 4 (thumbs past the

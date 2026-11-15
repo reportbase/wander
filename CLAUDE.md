@@ -482,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1040 (15 Nov; Tom: "Update the essays"): R1032–R1039 in essays 1, 2, 7, 11, 14, 17, every Sources line ("read and write"), README row 26 and `essays.html`; no new claim.
   R1039 (15 Nov; Tom: "discreteness has no face, I think that is what a write is … That is exactly what reads and writes are."): **a write is discreteness: no face, with scale and size; a read is continuity: no scale, no size, a face.** *Reads and Writes* §1 "Two verbs, two nouns"; essay 26 §1.
   R1038 (15 Nov; Tom: "Remove extent as a third thing beyond reading and writing. Just describe for what it is"): **an extent is a distance in thumbs or steps, reading (two looks held together) or a count; never a third thing beside reading and writing.** *Reads and Writes* D3 "A distance in thumbs", the kinds tables, §11, O1; essay 1; README.
   R1037 (15 Nov; Tom: "Prefer SHV and DHV over blueprint and read."): **for new writing prefer SHV (single hemispherical vantage) over "a read" and DHV (dual hemispherical vantage) over "the blueprint"**, spelled out at first use; refines R887 and R967. New writing only; existing text not swept (Tom: "No, just moving forward.").

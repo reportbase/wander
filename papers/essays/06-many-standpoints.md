@@ -495,7 +495,7 @@ is the length every place is found in.
   *Vision Algorithms: Theory and Practice*, LNCS 1883, 298–372.
 
 The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November
-with read, extent and write, R788), §9 (Propositions 9–12, "Inside a room", "To move the
+with read and write, R788), §9 (Propositions 9–12, "Inside a room", "To move the
 furniture is to write", "Far off", "One standpoint gives no parallax", "From one place"; the classical side of a shape in Appendix A, "A shape as a
 function on the circle"), and the parallax results in the
 working paper `parallax.md` (§3–§6).

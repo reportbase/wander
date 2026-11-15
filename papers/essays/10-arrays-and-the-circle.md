@@ -364,5 +364,5 @@ Qian and Wang's adaptive Fourier decomposition (2011); Poisson's kernel and Abel
 
 The array picture, its four facings, the read's and the blueprint's arrays and the worked example with K = 8 are set out in
 *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10
-November with read, extent and write, R788), §7.3 ("In the picture of an array", "Laid on the sweeps"), and for programmers in the
+November with read and write, R788), §7.3 ("In the picture of an array", "Laid on the sweeps"), and for programmers in the
 computer-science companion, §6 ("The array").

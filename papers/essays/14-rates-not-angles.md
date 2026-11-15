@@ -126,7 +126,8 @@ blueprint's rate is the fixed point of the reciprocal that pairs the two sweeps:
 **Each of the two is a facing.** π/2 is not walking and 2/π is not reading; they are entirely the facing, toward V or
 away from V. Facing V (the inscribed sweep), the thumb's share h, averaged over the quarter turn, is 2/π, approached at
 the horizon and never reached. Facing away from V (the central sweep), the quarter arc itself is π/2 thumbs long,
-reached at a point. The 1 between them is also the
+reached at a point. Face V and face away from V at the same time and no facing is left: the non-facing,
+discrete value of 1 thumb. The 1 between them is also the
 blueprint's number, the blueprint, the dual hemispherical vantage, having no standpoint and being neither read nor write (the second essay, §7). The reason is one line: each step of the arc gains v at the rate h,
 so the shares, summed over the steps of arc, are all of v; a mean of 2/π over a length of π/2 is 1. Any path from the
 one end to the other gives the 1 (the chord 1/√2 over √2); only the split is the turn's. And the 1 never needed π: the
@@ -613,6 +614,6 @@ algebraic form (`papers/tb_algebra.md`: the two charts and their exchange rate, 
 its π is the normalization") and the format's specification (`papers/tvf.md`, "The kernel is rational, and the decoder
 can be trig-free").
 
-The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten 10 November on R788 with read, extent and write): §2, "Zero, and a new zero" (the turn met, not computed; tangent
+The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten 10 November on R788 with read and write): §2, "Zero, and a new zero" (the turn met, not computed; tangent
 addition); §4, "Why the corner sits at 45°", "Why there are two sweeps, and only two" and "Rates, not angles" (the two
 sweeps' rates, the blueprint's 1, and payload per direction); §7.1 (the uniform turn and the Cauchy).
