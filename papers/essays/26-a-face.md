@@ -123,69 +123,31 @@ into the next face. But the read has the −1 first, by fractions, at the end of
 
 ## 7. Toward and away
 
-Take two points, H and V. Both faces stand on H (Tom: "Both stand on H. On facing V and on facing away from V"). A
-face turns a quarter turn, never a half turn (Tom: "Quarter turn not half turn. Never half turn."). What tells the two
-sweeps apart is which way the face points when it starts:
+This section is Tom's framing, kept as he gave it (Tom: "Stick with my framing.").
 
-- **Ω: the face starts facing away from V.** The quarter turn takes it round to its end, and it gets there, at a
-  point. What is counted on the way, the arc in thumbs, tends to Ω. This is the central sweep: reached.
-- **1/Ω: the face starts facing toward V.** V is in front from the start, and the quarter turn takes the face away from
-  it, toward a horizon it never meets. What turning sees of the thumb, on average, tends to 1/Ω. This is the inscribed
-  sweep: approached.
+Take two points, H and V. The Ω sweep is every way H can stand relative to V (Tom: "Omega sweep is all possible H
+relative to V."). Both faces stand on H (Tom: "Both stand on H. On facing V and on facing away from V"), and each turns
+a quarter turn, never a half turn (Tom: "Quarter turn not half turn. Never half turn."):
 
-They finish facing different ways too (Tom: "Inscribed finishes facing down. Central finishes facing up."): the
-inscribed face ends facing down, the central face ends facing up. Opposite at the start, toward V and away from it, and
-opposite at the finish, down and up.
+- **The inner sweep, 1/Ω.** It starts facing toward V and finishes facing down. It compresses.
+- **The outer sweep, Ω.** It starts facing away from V and finishes facing up. It expands.
 
-Both are one face, one quarter turn, from the same start. Their numbers are reciprocals, and their product is the 1
-the thumb gives back (*Reads and Writes* §9, "The thumb, short by reading, long by walking, and whole"); which of the two
-a face is depends only on whether V is behind it or in front of it when it begins. Tom's (R1017); the assignment of Ω and
-1/Ω to the two sweeps is R802's and R889's. The demo `faces.html` turns the two faces side by side, with each one's running number
-and their product, 1 at every point of the turn.
+(Tom: "The inner sweep compresses, the outer sweep expands."; "Inscribed finishes facing down. Central finishes facing
+up.") Opposite at the start and opposite at the finish.
 
-**Three routes.** Between H and V there are three (Tom: "Three routes between H and V. The long route Omega, the
-short route, 1/Omega, and the line itself. Continuous just means the distance of the facing, and there are two possible
-facings."):
+**Three routes.** Between H and V there are three: the long route, Ω; the short route, 1/Ω; and the line itself (Tom:
+"Three routes between H and V. The long route Omega, the short route, 1/Omega, and the line itself."). Continuous just
+means the distance of the facing, and there are two possible facings (Tom).
 
-| route | in the line's unit | the face | |
-|---|---|---|---|
-| the long route | Ω, about 1.5708 | facing away from V at the start | the arc, reached at its end |
-| the line itself | 1 | no face | the two points and the chord between them |
-| the short route | 1/Ω, about 0.6366 | facing toward V at the start | the line seen per arc, approached |
+**The two facings multiply to 1.** Ω · 1/Ω = 1 (Tom: "The two facings multiply to equal 1, that's what every one for
+gets."). The demo `faces.html` turns the two sweeps side by side on H, with the long route, the short route and the
+line, and their product, 1 at every point of the turn.
 
-No path between H and V is shorter than the line, so the short route is not a shorter path in the line's own unit: it
-is the line measured from the arc's side, chord over arc, what the face turned toward V holds of the way on average.
-The long route is the arc measured from the line's side, arc over chord. One distance, the distance a face sweeps, read
-from its two facings. Continuous, in this sense, is that distance; a count has none, and the line, two points, has no
-face to sweep it.
+**Into the sphere.** Euler's formula takes this into the sphere, and it is still just H and V, with another degree of
+freedom (Tom: "Ehulers takes this into the sphere"; "it still just H and V. With another degree of freedom.").
 
-And the two facings multiply to 1 (Tom: "The two facings multiply to equal 1, that's what every one for gets."):
-Ω · 1/Ω = 1, the line, at the end and at every point on the way (θ/sin θ times sin θ/θ). Each facing, taken alone,
-looks like a number of its own, a long Ω or a short 1/Ω; taken together they give back the line and nothing more,
-which is the thumb in thumbs (*Reads and Writes* §9; R804). `faces.html` draws the three routes and keeps the product.
-
-**Into the sphere: still H and V.** Euler's formula takes this into the sphere (Tom: "Ehulers takes this into the
-sphere"; "it still just H and V. With another degree of freedom."). The pair does not change: still H and V, still one
-face standing on H, still a quarter turn, never a half. What the sphere adds is one more degree of freedom: which way
-round the face turns, the plane it turns in, taken from all the planes through the line from H to V. The series has
-written that freedom as the azimuth (R237); it is a direction to turn in, not a third point.
-
-Euler's formula carries over with its form intact. For each plane, e^(uθ) = cos θ + u·sin θ, where u is that plane's
-own square root of −1 (a unit quaternion, u² = −1, as i² = −1). In each plane the face is the plane's face: e^(uΩ) = u
-at the end of the quarter turn, e^(2uΩ) = −1 two faces on, and the two facings multiply to 1 there as on the page.
-
-Two things follow from the extra freedom, and both are classical. First, taken over every plane at once, the face is
-a hemisphere, and its two numbers become the hemisphere's: ½ facing toward, 2 facing away (*Reads and Writes* §7, "the
-hemisphere's 2 and ½"; R804). Their product is still 1. So the 1 goes into the sphere unchanged, and Ω and 1/Ω turn
-out to be the plane's numbers for it. Second, faces in different planes do not commute: two quarter turns about two
-axes land 120° apart by their order (essay 13), the units of different planes anticommute (ij = −ji), and a loop of
-faces comes back turned by its area. That leftover is the sphere's curvature, made of fractions (HLX; discussion note
-item 20). One H, one V, one face at a time; the extra degree of freedom is where the curvature is.
-
-Where a doubled angle appears, it is not the face turning twice as far. Euclid's III.20 (the angle at the centre is
-twice the angle at the circle) and the landing point W(s) running from +1 to −1 in §6 are the blueprint's measures of
-one quarter-turn face, written on a circle drawn whole. Older wordings in the series that give the central sweep "a half
-turn" (R233, R450, `facing.html`'s facing turning to 180°) predate this and are to be brought to it.
+Older wordings in the series that give the outer sweep "a half turn" (R233, R450, `facing.html`'s facing turning to
+180°) predate this and are to be brought to it.
 
 ## 8. What needs a face, and what does not
 
@@ -238,4 +200,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022.
