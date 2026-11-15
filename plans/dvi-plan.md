@@ -45,3 +45,42 @@ The rates are DVG's and DVH's, unchanged.
 ## Runs
 
 (appended below as they come out; nothing above this line edited afterwards)
+
+### Run 1 (15 Nov 2026; `runs/dvi/fetch.py`, list `runs/dvi/laws-all.md` sampled by `runs/dvi/sample.py` to `runs/dvi/laws.md`,
+### class `runs/dvi/chart.md`, restatements `runs/dvi/restate.py`, each by its own fresh agent; scored by `runs/dvi/dvi.py`,
+### I3's expectation `runs/dvi/dvi-expect.txt` committed before the check, output `runs/dvi/dvi-run1.txt`)
+
+Pages fetched (revision id, timestamp, sha256 of the wikitext; the wikitext not committed):
+
+| page | revision | timestamp | sha256 |
+|---|---|---|---|
+| Spherical coordinate system | 1383917922 | 2026-11-05T15:59:06Z | 37656a03dfdbd5d53b7a402efb77394363d0dc3c46d20a40c8059a1856604507 |
+| Polar coordinate system | 1382008000 | 2026-10-26T00:56:32Z | 70d876257e4114c98ade1cd8ca2694cb01f2aac16f14aec7131c989634be69c6 |
+| Quaternions and spatial rotation | 1370422953 | 2026-08-21T01:55:03Z | 9c747ca8287802831133304f2e7234b49d7ce0ecb1fd6d615d9e3029ca3023b9 |
+| Haversine formula | 1383688779 | 2026-11-04T04:51:17Z | 443969909ff7c054992a1efc58db51e58db6ad968de8e20472dec729b6a5f88a |
+| Total internal reflection | 1380935616 | 2026-10-18T22:10:48Z | acd48737e289b158fa30c1bebe85a050b0a0b816a497b9a1ea7d388daa45a45b |
+| Stereographic projection | 1376614858 | 2026-09-25T05:26:19Z | 9c044320092b7ed8084970dd494839602a66caf8ec1a54cdf4d50a01ccc5e21d |
+| Lorentz factor | 1382103367 | 2026-10-26T16:49:24Z | e97c4bcaab1663a511aa3a27864f42800453a2a46f3e22050040bfe2bb228393 |
+| Waveplate | 1359162193 | 2026-06-13T14:32:19Z | 6d198813fcde2e7fdcb4b334d2c4a809dcfcbde8a057a3271f118c916c50457d |
+| Precession | 1385526762 | 2026-11-13T19:30:28Z | 3531ae023097e5bde2fc21bb6dff7a42e33b87f481a27ee0ba9607817a74d243 |
+| Ellipse | 1385637208 | 2026-11-14T11:17:39Z | 1ce9052da785ab6ed78c81a01efcaaa6b5624371f39572e24065ebbb408307b9 |
+
+297 candidate blocks; a fresh agent listed 187 laws (`runs/dvi/laws-all.md`), sampled to 120. The lister left out bare
+ranges and domain conditions as relations not stated (its own call), so sentence 3 is tested here only inside laws (96's
+0 ≤ t ≤ 2π). The blind judge: chart 89, other 31. I3's expectation, written before the check: (0.92·89 + 0.03·31)/120 =
+69.0%. A fresh restater marked 89 notation, every one passing the checker (0 failed), the checker printing it no class
+split. I read every passing restatement before counting and judge none not the same relation (59 is restated as printed,
+which the restater notes may be off by a factor of 2 from the true composition; the restatement and the original agree).
+
+- **I1 not killed**: chart laws 87 of 89 notation (97.8%). The two content: 87 and 88 (tanh φ = β; γ = cosh φ), which
+  this restater called a rapidity "a hyperbolic amount", against the chart rule and against DVH's restater, who restated
+  rapidities by their slope.
+- **I2 not killed**: other laws 2 of 31 notation (6.5%): 50 (α = 2π/3) and 51 (the unit quaternion from it), which the
+  judge read as a total turned through and the restater as a stated value of a direction's angle.
+- **I3 not killed**: 89 of 120 = 74.2%, against 69.0% ± 8.
+
+Said plainly: for the first time all three predictions held, on a fresh list with the rule and both briefs written before
+it. Read, post hoc and untested: what is left is two calls, each made one way by one agent and the other way by another:
+whether a rotation angle stated as a number (2π/3) is a direction's value or a total, and whether a rapidity is a chart
+(DVG, DVH) or an amount (this restater). Neither brief names rapidity's restatement as sentence 1 names an angle's. One
+list; sentence 3 hardly met; nothing in the papers changed.
