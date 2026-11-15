@@ -482,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1030 (15 Nov; Tom: "explain continuous and discrete are in terms of thumbs. … Explain the tower, explain no circles needed, no trig, just your thumb."): essay 26 §7 gains continuous and discrete in thumbs, a tower of thumbs, no circle and no trig, any size and amount, and "So, to recap", all before the resolution.
   R1029 (15 Nov; Tom: "when you assignd V to H, you created the near field or proportional space, where H is the denominator. … In the far field, V is the denominator and H the numerator."): essay 26 §7 "Near and far".
   R1028 (15 Nov; Tom: "H represents horizontal. V represents verticle. … The sweep is rotation of our horizontal thumb to our vertical thumb. This is the quarter turn … and it creates your complete geometry."): essay 26 §7 "How one thumb does it".
   R1027 (15 Nov; Tom: "To have a relation, you need two parties. We've assigned H to 1 thumb. … Anyones thumb will do."): essay 26 §7: whose thumb H is does not matter, a child's or a parent's.

@@ -163,6 +163,37 @@ proportional space with H the denominator: V in terms of H. Where V runs on past
 far field is made too, and it is what holds the infinity: there V is the denominator and H the numerator, H in terms of
 V. One quarter turn of two thumbs, and the near field and the far field come with it.
 
+**Continuous and discrete, in thumbs.** Inside the thumb, in the near field, any fraction of a thumb will do: a third
+of a thumb, 0.7 of a thumb, any value at all between nothing and one. That is the continuous, the distance a facing
+sweeps, and it needs no count. Past the thumb, in the far field, things are taken in whole thumbs: one thumb, two
+thumbs, four, eight. That is the discrete, a count of thumbs, and a count, as §1 said, has no face. The same thumb
+gives both: continuous within it, counted beyond it.
+
+**A tower of thumbs.** Nothing has to be measured in anything but thumbs. Take the house in thumbs, then the tree in
+houses, then the hill in trees: each thing in terms of the one before. Multiply the steps and every middle term comes
+down, as scaffolding does (essay 20), so the hill comes out in thumbs and the house and the tree are gone from the
+answer. However tall the tower, it ends on the thumb it started from.
+
+**No circle, no trigonometry.** The quarter turn of a thumb draws no circle; nobody has to hold a circle for it to
+happen. A circle is something drawn whole on paper, and the read never needs one. No angle, no sine, no cosine, no π:
+what the thumb has at each point of its turn is a slope, the vertical over the horizontal, a fraction. Turns combine as
+fractions too. Just your thumb.
+
+**Any size, any amount.** And it does not care how big anything is. Scale the whole world by a thousand, thumb and all,
+and nothing in the geometry moves: a child's thumb against a pebble and a parent's thumb against a mountain make the
+same geometry. Wherever the thumb is held, exactly half of the sweep lies inside it, the near field, and half beyond
+it, the far field, which holds the whole infinity: one thumb's worth of space weighs the same as everything past it. And
+it never asks how much there is. Double the world, or make it endless, and the read is the same; it needs only that
+there is something there.
+
+**So, to recap.** Two points, H and V, and you stand on H. H is your thumb, held horizontal, anyone's thumb. V is never
+known, only in terms of H, anywhere from nothing to infinity. One move: the thumb turns a quarter turn to the vertical,
+never a half. That one sweep makes the near field and the far field, the continuous inside the thumb and the counted
+beyond it, every tower of ratios ending on the thumb, with no circle, no angle and no π, the same at any size and for
+any amount. And when every relation of H to V is summed, it gives two answers, Ω or 1/Ω, chosen only by the way you
+happened to face. A complete geometry, from one vantage, facing one direction, with one thumb, of a V you will never
+know.
+
 **The two facings multiply to 1.** Here is the way out, and it is the thing everyone forgets. The two answers were never
 rivals. They are the one sweep read from its two facings, and multiplied together they give 1: Ω · 1/Ω = 1, at the end
 of the turn and at every point along it. The long route and the short route are not two totals of the same thing; they
@@ -175,7 +206,7 @@ product, 1 at every point of the turn.
 **Into the sphere.** Euler's formula takes all of this into the sphere, and nothing new comes in with it: it is still
 just H and V, with one more degree of freedom.
 
-The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028, R1029), the wording mine. Older wordings in the series
+The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028, R1029, R1030), the wording mine. Older wordings in the series
 that give the outer sweep "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
 brought to it.
 
@@ -230,4 +261,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026, R1027, R1028, R1029.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026, R1027, R1028, R1029, R1030.
