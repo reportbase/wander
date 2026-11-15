@@ -105,3 +105,26 @@ Predictions, as run 1's: **G1′** chart laws notation at 85% or more; **G2′**
 within 8 points of 54.2%. Caution, stated before the run: this run is not a fresh test of the rule, since its list and its
 misses were seen in run 1; it tests only whether the brief's one open call was what moved G1, and the chart rule still
 needs a fresh list once the brief is fixed.
+
+### Run 2 results (`runs/dvg/restate2.py`, `runs/dvg/dvg-run2.txt`)
+
+A fresh restater, given only the list, the rule with the one settled sentence and the checker, marked 78 of 120 notation;
+every one passed the checker (0 failed), and I read each before counting. Its template note: `check2.py` reads
+`verdict`, so its `N` and `T` carry `verdict` beside the brief's `notation` flag (no change to any check).
+
+- **G1′ not killed**: chart laws 68 of 69 notation (98.6%, against ≥ 85%). The one content chart law is 5 (a matrix
+  exponential of a general matrix times amounts). The eleven run 1 misses (24, 34, 37–44 and the rest) are all notation:
+  the angle given by arccos, arcsin, artanh or arg restated as its slope or share equal to the same expression.
+- **G2′ killed**: other laws 10 of 51 notation (19.6%, against ≤ 10%): 11, 12, 17, 21, 29, 61, 87, 106, 108, 115.
+- **G3′ killed**: 78 of 120 = 65.0%, against 54.2% ± 8.
+
+Read, post hoc and untested. The ten "other" laws that went notation are of three kinds: angles given by an inverse
+function of a ratio of like quantities, which the settled sentence now covers (11 and 12, rapidity as artanh or ½·ln of
+energies; 61, the true anomaly by arg; 87, the phase by arctan + nπ); stated angle values, restated as the direction's
+shares (21 and 29, π/2; 106 and 108, multiples of π; DVE's "a stated value" leak again); and a direction read from a sine
+or cosine of an angle (17, the aberration's sine difference restated exactly and at first order; 115, cos(φ₁ − φ₂) read as
+the share between two phasors). So the fix settled the chart side, as run 1's misses predicted, and moved the same laws
+on the other side: the blind judge reads ln and artanh of energies, arg and a phase solved for as not charting a direction,
+the brief now restates them as one. The disagreement left is between the judge's reading of "a ratio charted" and the
+brief's, not the checker's. Not a fresh test (stated above); a fresh list with both the judge's brief and the restater's
+carrying the same sentence on angle outputs and stated values would be.
