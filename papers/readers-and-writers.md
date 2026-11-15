@@ -111,7 +111,8 @@ scaling moves it; a direction has no boundary and no size, and scaling has nothi
 for the continuous and writing the verb for the discrete, and the scale test follows from that; it is not a second
 definition. And discreteness has no face (essay 26): a write is discrete, so it has scale and size and faces nothing;
 a read is continuous, so it has no scale and no size, and it is a face. That is exactly what reads and writes are
-(Tom, R1039). The two mixed boxes hold no act. A count and the number line are nouns, descriptions laid over what was
+(Tom, R1039). The read is the stage, the write is the play (Tom, R1041): the stage has no scale and no size, and what is
+played on it is discrete, sized things. The two mixed boxes hold no act. A count and the number line are nouns, descriptions laid over what was
 read or written. The friction between continuous and discrete shows wherever one is made to hold the other: a count
 holding a read (a slope no fraction lands on, the ringing at a sharp edge, §6), a read holding a count (K, §5), and
 parallax, where a walk is cut into strides before the reads at its two ends give a size. π and e belong to neither box
