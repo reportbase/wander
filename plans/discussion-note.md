@@ -427,3 +427,18 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       hemispherical vantage; a read has the −1 as i·i with no π or e to cancel, so the cancellation is the blueprint
       returning to a landmark a read already had. Tested from the read's side by BLD (R1009); carried into essay 25 and
       *Reads and Writes* §1 (R1010).
+
+19. **When composing reads forces i** (15 Nov; a pasted note asking under what conditions read-composition maps share a
+    J with J² = −I; Claude's reply; a second pasted note asking that it be recorded as a conditional lemma and an open
+    obligation). CPX (`plans/cpx-plan.md`, `runs/cpx/`), exact. The lemma: real linear maps on the pair [h : v] that
+    commute with one non-scalar map A are pI + qB, B = A − (tr A/2)·I, and B² = (Δ/4)·I with Δ = (tr A)² − 4·det A, so
+    the sign of one number decides the algebra: Δ < 0 the complex numbers (no direction fixed, a turn), Δ > 0 the
+    split-complex (two fixed, a boost or fixed share), Δ = 0 the dual numbers (one fixed, a stride). Among maps that keep
+    orientation only the first returns. So i is derived from the maps once four premises are granted: composition is
+    linear on the pair, the family commutes with one map, it keeps orientation, and it returns (no fixed direction
+    follows from returning). Dropping commutativity is changing c: K_c = [[0, −c²], [1, 0]] keeps h² + c²·v², commutes
+    with J₀ only at c² = 1. Standing: a conditional lemma, classical (Cayley–Hamilton; Yaglom's three numbers; WLK run 2's
+    three maps); the reading ours. Open: whether a read's composition must be linear, commutative within one sweep (it is
+    not in space, essay 13), orientation-keeping and returning. Next: none proposed; the archived OFS Proposition 3(g)
+    already takes linearity and return as its premises.
+

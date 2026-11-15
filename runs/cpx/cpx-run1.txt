@@ -1,0 +1,16 @@
+samples: elliptic 800, hyperbolic 800, parabolic 400 (rational entries, seed 20261115)
+returns (A^n scalar, n<=64): {'ell': 57, 'hyp': 29, 'para': 0}
+  returned with disc>=0: ['1/2', '3', '4/3', '-1/2'] n = 2 tr 0 det -17/4
+  returned with disc>=0: ['0', '1', '3', '0'] n = 2 tr 0 det -3
+  returned with disc>=0: ['-1', '2', '5/4', '1'] n = 2 tr 0 det -7/2
+  returned with disc>=0: ['-1', '-5/3', '1/3', '1'] n = 2 tr 0 det -4/9
+  returned with disc>=0: ['-1/2', '3/2', '2/3', '1/2'] n = 2 tr 0 det -5/4
+constructed returns: {'[[0,-1],[1,0]]': 2, '[[1,-1],[1,1]]': 4, '[[-1,-1],[1,0]]': 3, '[[1,-1],[1,0]]': 3}
+J6 K_c commutes with J0 / form dim: [('1/4', False, 1), ('1/2', False, 1), ('1', True, 1), ('2', False, 1), ('4', False, 1), ('9', False, 1)]
+J6 form h^2 + v^2/c^2 kept by K_c: [('1/4', False), ('2', False), ('9', False)]
+J1 not killed 
+J2 not killed 
+J3 not killed 
+J4 not killed 
+J5 killed (30 failures)
+J6 killed (1 failures)

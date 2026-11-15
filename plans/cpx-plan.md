@@ -51,3 +51,28 @@ first returns. It would not show that a read's composition is linear, commutativ
 ## Runs
 
 (below this line, nothing above is edited)
+
+### Run 1 (15 Nov 2026; `runs/cpx/cpx.py`, output `runs/cpx/cpx-run1.txt`)
+
+2,000 seeded rational maps (800 elliptic, 800 hyperbolic, 400 parabolic). J1–J4 not killed; J5 and J6 killed, both by
+my arithmetic.
+
+- **J1.** B² = (Δ/4)·I exactly at all 2,000: Δ < 0 gives J with J² = −I from the map itself, no chart brought in.
+- **J2.** The commutant of every map is exactly two-dimensional, spanned by I and A, at every sign of Δ.
+- **J3.** Its products are the complex numbers for Δ < 0, the split-complex for Δ > 0, the dual numbers for Δ = 0, at
+  every sample. The three kinds of map (WLK run 2) and the three rulers (Yaglom) are one family split by the sign of Δ.
+- **J4.** Parabolic samples fix one direction (B ≠ 0, det B = 0) at all 400. (For Δ ≠ 0 the count is the sign of Δ,
+  so this part was nearly definitional.)
+- **J5 killed** (30 failures). 29 hyperbolic samples return at n = 2: every one has trace 0 and det < 0, a reflection,
+  which fixes two directions and swaps nothing back yet squares to a scalar. I noticed this case after committing the
+  plan and before running; the plan was not edited. And I predicted [[1, −1], [1, 0]] returns at 6: its cube is −I, a
+  scalar, so projectively 3 (I counted the linear order, not the projective one). Post hoc (`runs/cpx/cpx1-posthoc.py`):
+  of the 640 samples with det > 0 and Δ ≥ 0 none returns, so among maps that keep orientation only the elliptic return.
+- **J6 killed** (1 failure). K_c commutes with J₀ exactly at c² = 1 (held), the preserved form is one-dimensional for
+  all 800 elliptic samples and for every K_c (held), but the form K_c keeps is h² + c²·v², not h² + v²/c² as I wrote
+  (post hoc, checked at c² = ¼, 2, 9): my slip in which axis carries c. The content stands: two turns with different c
+  are two ellipses, and a shared J is one inner product.
+
+How hard a test it was: J1–J3 are Cayley–Hamilton and the centralizer of a non-scalar 2 × 2 matrix, so they could not
+fail as linear algebra; the run checks the arithmetic and the joining of the three kinds. What a run cannot give is the
+open obligation: that a read's composition is linear, commutes, keeps orientation and returns. Those stay premises.

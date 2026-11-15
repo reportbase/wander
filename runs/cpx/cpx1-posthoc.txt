@@ -1,0 +1,6 @@
+J5 failures that are hyperbolic samples: 29
+  all trace 0, det < 0, return at n = 2: True
+  det > 0 with disc >= 0: 640 samples, returning: 0
+  K_c keeps h^2 + c^2 v^2 at c^2 = 1/4 : True
+  K_c keeps h^2 + c^2 v^2 at c^2 = 2 : True
+  K_c keeps h^2 + c^2 v^2 at c^2 = 9 : True
