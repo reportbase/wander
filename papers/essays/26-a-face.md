@@ -139,6 +139,13 @@ up.") Opposite at the start and opposite at the finish.
 "Three routes between H and V. The long route Omega, the short route, 1/Omega, and the line itself."). Continuous just
 means the distance of the facing, and there are two possible facings (Tom).
 
+**On the face of it, absurd.** Now look at what was just said. The Ω sweep is every possible relation of H to V,
+all of them. Add them up and there should be one answer. There are two: Ω or 1/Ω, a long route or a short one, and
+nothing about H or V decides which. Only the face does, which way it pointed when it started (Tom: "all possible
+relations of H and V sum two possible values. That is absurd, on the face of it."). Every relation there is, summed,
+and the total depends on where you stand facing. On the face of it, that cannot be right. (The idiom is older than this
+essay, the Latin *prima facie*, "at first appearance"; here the face is literal, and it is what decides the sum.)
+
 **The two facings multiply to 1.** Ω · 1/Ω = 1 (Tom: "The two facings multiply to equal 1, that's what every one for
 gets."). The demo `faces.html` turns the two sweeps side by side on H, with the long route, the short route and the
 line, and their product, 1 at every point of the turn.
@@ -200,4 +207,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023.
