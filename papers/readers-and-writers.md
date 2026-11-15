@@ -1552,7 +1552,8 @@ that closes the heat, and it is approached at the horizon, never reached. *Facin
 outer): the quarter arc from all of h to all of v is Ω thumbs long, the heat gathered to the horizon,
 ∫₀^∞ ds/(1 + s²), reached at a named point, −1. Their product is 1, which is also the number of the dual hemispherical vantage (DHV), the thumb in
 thumbs. Facing V and facing away from V at the same time leaves no facing: the result is the non-facing, discrete value
-of 1 thumb (Tom, R1033); the DHV has no standpoint and faces neither way. The exchange swaps
+of 1 thumb (Tom, R1033); so does near times far, s × (1/s) = 1, the faceless discrete value (Tom, R1042), the −1 being
+the landing points', which carry the turn. The DHV has no standpoint and faces neither way. The exchange swaps
 the two, and they agree only at the corner (§6). Both numbers are limits, their values held by no SHV or count. In the
 table above the total's 1/Ω is the factor facing V and its Ω the factor facing away, and "the two facings" are those
 two. **Classical** (the mean share and the arc); the assignment is Tom's (R1032), replacing an earlier sorting of the

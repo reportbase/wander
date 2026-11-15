@@ -482,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1042 (15 Nov; Tom: "Near *far =no facing discrete faceless value"): **near times far, s × (1/s) = 1, is no facing, the discrete faceless value of one thumb**; the −1 is the landing points' (they carry the turn); *Reads and Writes* §9, essay 26 §7.
   R1041 (15 Nov; Tom: "Read is the stage, the write is the play"): **the read is the stage, the write is the play**, a picture of R1039; *Reads and Writes* §1, essays 1 and 26.
   R1040 (15 Nov; Tom: "Update the essays"): R1032–R1039 in essays 1, 2, 7, 11, 14, 17, every Sources line ("read and write"), README row 26 and `essays.html`; no new claim.
   R1039 (15 Nov; Tom: "discreteness has no face, I think that is what a write is … That is exactly what reads and writes are."): **a write is discreteness: no face, with scale and size; a read is continuity: no scale, no size, a face.** *Reads and Writes* §1 "Two verbs, two nouns"; essay 26 §1.

@@ -234,6 +234,10 @@ terms of V. Take any reading and its far-field partner and multiply where they l
 s = 1, and the product is i · i = −1. So the near field and the far field, multiplied, make the whole quarter turn, and
 the −1 of Euler's identity is the one pair of them with nothing in between: the horizontal thumb and the vertical.
 
+Multiply the readings themselves, not where they land, and the near field times the far field is s × 1/s = 1: no
+facing at all, the discrete, faceless value of one thumb (Tom, R1042). The −1 belongs to the landing points, which carry
+the turn; the readings, multiplied, carry none, as facing V and facing away from V at once leave none.
+
 What, then, are e and π doing in e^(iπ)? They are the blueprint's way of writing the same quarter turn: π measures it as
 an angle on a circle drawn whole, where the landing goes halfway round, and e writes turning as a power. They arrive as a
 pair and cancel, and what is left is the −1 the thumb already had (discussion note item 20). From one vantage, with
