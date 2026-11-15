@@ -1540,7 +1540,8 @@ The Gaussian shows the same split from the blueprint's side. In polar form (1/2�
 (dθ/2π)·(e^(−r²/2) r dr): the uniform turn, whose slope is the Cauchy, times a law for the length, an amount, the payload.
 Two independent zero-mean Gaussian amounts of one spread, divided, give the standard Cauchy; of spreads in a ratio c, a
 Cauchy of scale c. Dividing by the thumb integrates the length away, taking e with it and leaving Ω. So the Cauchy is a
-law of directions, a heat made a probability only when it is closed, on the blueprint, and the Gaussian a law of amounts.
+law of directions, a heat made a probability only when it is closed, on the blueprint, and the Gaussian a law of amounts. The Gaussian
+says nothing about facing either: it is entirely a distribution of the dual hemispherical vantage (Tom, R1036).
 **Classical**; the read's forms checked by hand; the assignment is a reading.
 
 **1/Ω is facing V; Ω is facing away from V.** Ω is not walking and 1/Ω is not reading; they are entirely the facing:

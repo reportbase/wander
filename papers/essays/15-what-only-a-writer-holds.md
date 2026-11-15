@@ -172,7 +172,8 @@ gathers, (1/2i)·d(ln w)/ds, is 1/(1 + s²). So the half-Cauchy's 2/π is the id
 variable together (essay 2 §9). Each step a read can follow in finite terms (w at the horizon is −1, a pair); the
 total iπ is the turn completed, the blueprint's.
 
-The two constants also part at one division. The Gaussian, the law of amounts, written round a point is
+The two constants also part at one division. The Gaussian says nothing about facing: it is entirely a distribution of
+the dual hemispherical vantage, the law of amounts. Written round a point it is
 (1/2π)·e^(−r²/2) dx dy = (dθ/2π)·(e^(−r²/2) r dr): a uniform turn times a law for the length. Divide by the thumb, one
 amount over another, and the length is integrated away: the e goes with it, and what is left is the turn, whose slope is
 the Cauchy, the read's law of directions, with π alone in its closing constant. The scale's constant lives in the
