@@ -482,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1027 (15 Nov; Tom: "To have a relation, you need two parties. We've assigned H to 1 thumb. … Anyones thumb will do."): essay 26 §7: whose thumb H is does not matter, a child's or a parent's.
   R1026 (15 Nov; Tom: "In shv, the value 1 is one thumb. Thumb = 1."): **in the single hemispherical vantage, 1 is one thumb**; essay 26 §7's resolution (the facings multiply to one thumb) and `faces.html`.
   R1025 (15 Nov; Tom: "You can improve the narrative, I'm just giving the bones."): **Tom gives the bones; write the narrative up, his framing and claims unchanged, nothing added** (narrows R1022). Essay 26 §7 rewritten as one narrative, the absurdity before the resolution.
   R1024 (15 Nov; Tom: "we are creating a complete geometry from one vantage facing one direction, with only 1 thumb."): essay 26 §7 "It gets more absurd" (V known only in terms of H, H one thumb), before the resolution, in his words.

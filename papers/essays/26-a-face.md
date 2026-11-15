@@ -147,7 +147,8 @@ the face of it, that cannot be right. (The idiom is older than this essay, the L
 appearance"; here the face is literal, and it is what decides the sum.)
 
 **It gets worse.** For a read, V is not even known. V is known only in terms of H. So what is H, actually? Say it is a
-thumb, one thumb held out. Here, then, is the whole claim, put as plainly as it can be put: a complete geometry, made
+thumb, one thumb held out. A relation needs two parties, and one of them has now been given away to a thumb. Whose
+thumb? It does not matter. A child's thumb or a parent's, anyone's thumb will do. Here, then, is the whole claim, put as plainly as it can be put: a complete geometry, made
 from one vantage, facing one direction, with one thumb.
 
 **The two facings multiply to 1.** Here is the way out, and it is the thing everyone forgets. The two answers were never
@@ -162,7 +163,7 @@ product, 1 at every point of the turn.
 **Into the sphere.** Euler's formula takes all of this into the sphere, and nothing new comes in with it: it is still
 just H and V, with one more degree of freedom.
 
-The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026), the wording mine. Older wordings in the series
+The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027), the wording mine. Older wordings in the series
 that give the outer sweep "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
 brought to it.
 
@@ -217,4 +218,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026, R1027.
