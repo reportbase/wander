@@ -63,8 +63,8 @@ my arithmetic.
   every sample. The three kinds of map (WLK run 2) and the three rulers (Yaglom) are one family split by the sign of Δ.
 - **J4.** Parabolic samples fix one direction (B ≠ 0, det B = 0) at all 400. (For Δ ≠ 0 the count is the sign of Δ,
   so this part was nearly definitional.)
-- **J5 killed** (30 failures). 29 hyperbolic samples return at n = 2: every one has trace 0 and det < 0, a reflection,
-  which fixes two directions and swaps nothing back yet squares to a scalar. I noticed this case after committing the
+- **J5 killed** (30 failures). 29 hyperbolic samples return at n = 2: every one has trace 0 and det < 0, a reflection, which
+  fixes two directions yet squares to a scalar. I noticed this case after committing the
   plan and before running; the plan was not edited. And I predicted [[1, −1], [1, 0]] returns at 6: its cube is −I, a
   scalar, so projectively 3 (I counted the linear order, not the projective one). Post hoc (`runs/cpx/cpx1-posthoc.py`):
   of the 640 samples with det > 0 and Δ ≥ 0 none returns, so among maps that keep orientation only the elliptic return.
