@@ -625,7 +625,8 @@ uniform turn over a quarter turn has the law
 the half-Cauchy. Its median is s = 1, the *corner*, where v = h; its quartiles √2 − 1 and √2 + 1; its far end, s = ∞,
 the direction [0 : 1], the *horizon*, reached by no finite reading. It has no mean: averages of readings climb without
 settling, by (1/Ω)·ln 10 for every tenfold further the readings run. Given the uniform turn this holds whatever is looked
-at, a straight wall, a row of trees, a curved hill, an empty sky; the wall's shape only decides where each direction
+at, a straight wall, a row of trees, a curved hill, an empty sky. So the Cauchy is not the inside of a circle's, nor one
+facing's: it works on a straight line too, the lighthouse's shore (Tom, R1034). The wall's shape only decides where each direction
 meets it. The constant 1/Ω and the quartiles' values are the blueprint's arithmetic; a read has the order of its
 readings, the corner and the directions. **Classical.**
 
