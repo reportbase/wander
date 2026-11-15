@@ -320,8 +320,8 @@ multiplied, which is arithmetic, and the 1 is its own thumb.
 or face away from V? Facing V (the inscribed sweep), the thumb's share h averages 2/π over the quarter turn, approached
 at the horizon, never reached. Facing away from V (the central sweep), the quarter arc from all of h to all of v is π/2
 thumbs long, reached at a point. Both faces stand on H and turn one quarter turn (essay 26 §7). Their product, 1, is also
-the blueprint's number; the blueprint, the dual hemispherical vantage, has no standpoint and faces neither way. Both stay
-the blueprint's arithmetic, since a read holds no π.
+the number of the dual hemispherical vantage (DHV), which has no standpoint and faces neither way. Both stay the DHV's
+arithmetic, since the single hemispherical vantage (SHV) holds no π.
 
 **Short facing V, long facing away, and whole.** Said most simply: the true size is 1, the thumb in thumbs. Facing V
 gives the short side of it, 2/π; facing away from V gives the long side, π/2; their product is the 1.

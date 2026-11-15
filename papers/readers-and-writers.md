@@ -451,7 +451,7 @@ median and the absence of any mean are what a read with no breadth in it is.
 
 | | hemispheres | vantage | V | the blueprint's number for it | what it is |
 |---|---|---|---|---|---|
-| inscribed, toward the universe | one | home, facing a horizon | unknowable | 1/Ω, approached | a read, facing V |
+| inscribed, toward the universe | one | home, facing a horizon | unknowable | 1/Ω, approached | SHV, facing V |
 | central, toward the apple | one | the apple's centre, across to its rim | knowable | Ω, the limit a count of its arc tends to; the end reached at a point | a read about a bounded thing; from afar its rim is one direction, met at −1 by walking; its arc, counted in thumbs, is an extent |
 | the apple held and turned | both, in reach | one, the turn known | known, held | the turn's Cauchy | looks joined by a known turn, of a thing held in the hand |
 | the blueprint | both at once | dual, drawn; no standpoint | known | 1 | neither read nor write: the dual hemispherical vantage |
@@ -1541,7 +1541,7 @@ The Gaussian shows the same split from the blueprint's side. In polar form (1/2�
 Two independent zero-mean Gaussian amounts of one spread, divided, give the standard Cauchy; of spreads in a ratio c, a
 Cauchy of scale c. Dividing by the thumb integrates the length away, taking e with it and leaving Ω. So the Cauchy is a
 law of directions, a heat made a probability only when it is closed, on the blueprint, and the Gaussian a law of amounts. The Gaussian
-says nothing about facing either: it is entirely a distribution of the dual hemispherical vantage (Tom, R1036).
+says nothing about facing either: it is entirely a DHV distribution, of the dual hemispherical vantage (Tom, R1036).
 **Classical**; the read's forms checked by hand; the assignment is a reading.
 
 **1/Ω is facing V; Ω is facing away from V.** Ω is not walking and 1/Ω is not reading; they are entirely the facing:
@@ -1549,10 +1549,10 @@ does one face V, or face away from V? Both faces stand on H and turn one quarter
 *Facing V* (the inscribed sweep, the inner): over the quarter turn the thumb's share h averages 1/Ω; it is the constant
 that closes the heat, and it is approached at the horizon, never reached. *Facing away from V* (the central sweep, the
 outer): the quarter arc from all of h to all of v is Ω thumbs long, the heat gathered to the horizon,
-∫₀^∞ ds/(1 + s²), reached at a named point, −1. Their product is 1, which is also the blueprint's number, the thumb in
+∫₀^∞ ds/(1 + s²), reached at a named point, −1. Their product is 1, which is also the number of the dual hemispherical vantage (DHV), the thumb in
 thumbs. Facing V and facing away from V at the same time leaves no facing: the result is the non-facing, discrete value
-of 1 thumb (Tom, R1033); the blueprint itself, the dual hemispherical vantage, has no standpoint and faces neither way. The exchange swaps
-the two, and they agree only at the corner (§6). Both numbers are limits, their values held by no read or count. In the
+of 1 thumb (Tom, R1033); the DHV has no standpoint and faces neither way. The exchange swaps
+the two, and they agree only at the corner (§6). Both numbers are limits, their values held by no SHV or count. In the
 table above the total's 1/Ω is the factor facing V and its Ω the factor facing away, and "the two facings" are those
 two. **Classical** (the mean share and the arc); the assignment is Tom's (R1032), replacing an earlier sorting of the
 two numbers by act (reading and walking).
