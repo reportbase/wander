@@ -146,6 +146,12 @@ relations of H and V sum two possible values. That is absurd, on the face of it.
 and the total depends on where you stand facing. On the face of it, that cannot be right. (The idiom is older than this
 essay, the Latin *prima facie*, "at first appearance"; here the face is literal, and it is what decides the sum.)
 
+**It gets more absurd.** For a read, V is not even known. V is known only in terms of H. And what is H, actually?
+Say it is one thumb. So, to recap: a complete geometry, made from one vantage, facing one direction, with one thumb
+(Tom: "It gets even more absurd. For a read, V is not even known. So V is only know in terms of H. But what is H
+actually. Let's just say it's 1 thumb. So let's recap, we are creating a complete geometry from one vantage facing one
+direction, with only 1 thumb.").
+
 **The two facings multiply to 1.** Ω · 1/Ω = 1 (Tom: "The two facings multiply to equal 1, that's what every one for
 gets."). The demo `faces.html` turns the two sweeps side by side on H, with the long route, the short route and the
 line, and their product, 1 at every point of the turn.
@@ -207,4 +213,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024.
