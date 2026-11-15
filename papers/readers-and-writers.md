@@ -19,9 +19,8 @@ from this paper, this paper stands.
 weight ds/(1 + s²), the one weight that composing slopes leaves unchanged, summed over every slope from 0 up. π is two
 sweeps' worth. Since the paper's subject is the single sweep, its constants are mostly π/2 and 2/π, and it is simpler to
 give that total its own letter than to keep halving π: Ω = π/2, so 2/π is 1/Ω, the turn is 4Ω and the sphere 8Ω, the
-Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω and its inverse are to reads and writes what π is to the blueprint: 1/Ω is the
-number for facing V, Ω the number for facing away from V (§9, "1/Ω is facing V; Ω is facing away from V"), and π, two
-sweeps joined, is the blueprint's own. Both are limits, and they are the limits a read and a write actually encounter: 1/Ω is
+Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω and its inverse are to reads and writes what π is to the blueprint: the limits at the
+horizon of one sweep (§9, "Facing V and facing away from V"), and π, two sweeps' worth joined, is the blueprint's own. Both are limits, and they are the limits a read and a write actually encounter: 1/Ω is
 what the thumb's share tends to as a sweep runs on toward the horizon, and Ω is what a count of the walk tends to,
 stride by stride. No finite sweep and no finite count has either value, but each is headed for its own. π is a limit
 neither encounters, since it takes both hemispheres at once. From here on the paper writes Ω where it helps and π where it does
@@ -410,9 +409,9 @@ count of directions, a description.
 
 **Reads, writes and the blueprint.** There are reads and writes; there is no reader and no writer. Both are acts, and
 one observer does both: it reads while it stands and turns, and writes while it strides, leaves a mark or agrees a unit. A
-read is a single hemispherical vantage, one standpoint and one hemisphere, and there are two of them, the two sweeps: the inscribed, from home to a horizon
-(1/Ω, the limit it approaches), and the central, across a bounded thing to its rim (Ω, the limit a count of its arc tends to, the end itself reached at a point). Both
-are reads. A write is a bounded thing with a size, a stride taken, a mark made, a unit carried in (D4); it is how a read is carried to a later
+read is a single hemispherical vantage, one standpoint and one hemisphere, faced one of two ways: toward V, the near
+reading s = v/h (V in terms of H), or away from V, the far reading 1/s = h/v (H in terms of V). The two multiply to 1 at
+every reading, no facing, one thumb, and meet at 1 at the corner (Tom, R1042, R1043). A write is a bounded thing with a size, a stride taken, a mark made, a unit carried in (D4); it is how a read is carried to a later
 read. Two looks held together are joined with no write. Neither a read
 nor a write holds both hemispheres. What holds both at once is the **blueprint**: the drawn shape, with both signs of every axis, the turn completed, the
 facings joined. It is the dual hemispherical vantage, and it exists only as the blueprint: no standpoint holds both hemispheres, so the blueprint is drawn, never stood at. Reads and writes are what is done from a standpoint, so the blueprint has nothing to do
@@ -430,15 +429,13 @@ V in metres is a write, had by walking and a unit. Neither is a shortcoming of t
 median and the absence of any mean are what a read with no breadth in it is.
 
 **Four things: the universe, an apple, a human and a sheet of paper.** Two reads, a thing held and turned and, for comparison, the blueprint, and where V stands in each.
-- *The apple and the human read the universe by the inscribed sweep.* From home to a horizon: directions only, a turn
-  that never ends, 1/Ω the limit it tends to, never reached. The universe has no far side to face, so its V
+- *The apple and the human read the universe.* From home to a horizon: directions only, a turn that never ends, the
+  far reading running on without end. The universe has no far side to face, so its V
   is **unknowable**: no size could be had, and with none there is no inside or outside, only home and the horizon.
 - *The apple and the human face each other as bounded things.* From a distance each one's paint stops at a finite slope
   in the other's look: its rim, one direction inside the read like any other, not the horizon. That is what the universe
-  lacks, an end that can be walked to. The sweep that has that end is the central one, a read across one hemisphere from
-  the bounded thing's own centre (the pivot of Euclid III.20): its end is reached at a point, e^(iπ) = −1, and Ω is the
-  limit a count of its arc tends to. The observer at a distance is not at that centre. It meets the same −1 in its own
-  read only by walking to the rim, where at contact the slope runs out to the horizon (§6, "Two ways to arrive"). So the
+  lacks, an end that can be walked to. The observer at a distance meets that end, −1 on the landing points, only by
+  walking to the rim, where at contact the slope runs out to the horizon (§6, "Two ways to arrive"). So the
   other's V is **knowable**: the end exists and can be met. It is not known, since the far hemisphere stays turned away;
   each holds the other's front only.
 - *The human holds the apple and turns it.* The turn makes the Cauchy: a uniform turn, read as the slope v/h against the
@@ -446,25 +443,24 @@ median and the absence of any mean are what a read with no breadth in it is.
   holds the front, so both hemispheres are in reach and the turn is known; the apple is a thing with a size, held, and in the hand
   the apple's V is **known**: held whole. Its amount in a unit needs a unit carried in, and its exact amount is the limit of §6.
 - *The human draws a circle on paper.* This fourth is the comparison, classical geometry's circle. The drawing is the blueprint, the dual hemispherical vantage: both hemispheres at once, held from no standpoint and so with no facing, neither read nor write, whole
-  only at its limit (§9, "What is free, and what Ω costs"), made, not seen, a mark holding both halves together, V = H at one length, π held whole. It has neither sweep's
-  number. Ω and 1/Ω belong to the two facings, the central reached at a point and the inscribed approached; the blueprint
-  has the number 1, the thumb in thumbs. The product of the two reads' numbers is also 1; that is arithmetic, not a way of making the blueprint from reads.
+  only at its limit (§9, "What is free, and what Ω costs"), made, not seen, a mark holding both halves together, V = H at one length, π held whole. It has no
+  facing; its number is 1, the thumb in thumbs. Near times far, s × 1/s, is also 1; that is the faceless value of one
+  thumb, not a way of making the blueprint from reads.
 
 | | hemispheres | vantage | V | the blueprint's number for it | what it is |
 |---|---|---|---|---|---|
-| inscribed, toward the universe | one | home, facing a horizon | unknowable | 1/Ω, approached | SHV, facing V |
-| central, toward the apple | one | the apple's centre, across to its rim | knowable | Ω, the limit a count of its arc tends to; the end reached at a point | a read about a bounded thing; from afar its rim is one direction, met at −1 by walking; its arc, counted in thumbs, is an extent |
+| the read, toward the universe | one | home, facing a horizon | unknowable | s near, 1/s far, without end | SHV |
+| the read, toward the apple | one | home, its rim one direction in the look | knowable | the rim a finite reading, met at −1 by walking | SHV; the walk to the rim, counted in thumbs, is an extent |
 | the apple held and turned | both, in reach | one, the turn known | known, held | the turn's Cauchy | looks joined by a known turn, of a thing held in the hand |
 | the blueprint | both at once | dual, drawn; no standpoint | known | 1 | neither read nor write: the dual hemispherical vantage |
 
 The human is all of these at the same time, not by turns: it reads the universe, faces the apple and is faced by it, and
 what it holds in the hand or draws it holds as a blueprint. The apple has the facings and never the blueprint. So Ω · 1/Ω = 1 is
-not two parties meeting but one observer's two reads held at once, and the 1 is its own thumb given back.
+not two parties meeting but one observer's two facings held at once, and the 1 is its own thumb given back.
 
-Faced, V is knowable, not known. The inscribed sweep approaches its horizon without end; a bounded thing puts its rim
-inside the look, one direction that the central sweep, about the thing's centre, reaches at a point and that a walk
-carries to −1 at contact. Only a write holds V whole; parallax narrows the band toward it and never closes it (§6). Euler's identity is the hinge: the
-turn's end, endless in the read's chart (s → ∞), is one named point, −1, in the central one, and a named point is what
+Faced, V is knowable, not known. Toward the universe the far reading runs on to the horizon without end; a bounded
+thing puts its rim inside the look, one direction that a walk carries to −1 at contact. Only a write holds V whole; parallax narrows the band toward it and never closes it (§6). Euler's identity is the hinge: the
+turn's end, endless in the read's chart (s → ∞), is one named point, −1, on the landing points, and a named point is what
 can be carried onto the blueprint.
 
 **Reads do not conflict.** A read adds nothing, so reads of one geometry can be taken in any order, or all at once, and
@@ -485,9 +481,10 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
   unit are descriptions. Definitions are stated on those two axes.
 - *Heat* and *paint* are pictures, for the read's density and for what it meets, and are not leaned on; *address* only as a computing metaphor or for a count of K
   places at the heat's quantiles (§5).
-- Ω and 1/Ω (defined before §1; Ω = π/2) are the limits the two reads encounter, each a single hemispherical vantage: 1/Ω the inscribed
-  sweep's, Ω the central sweep's: facing V and facing away from V (§9, "1/Ω is facing V; Ω is facing away from V"). Ω
-  and the one-length circle are the blueprint's: the dual hemispherical vantage, from no standpoint, nothing to do with reads and writes.
+- Facing V is the near reading s, facing away from V the far reading 1/s; their product 1 is no facing, one thumb
+  (§9, "Facing V and facing away from V"). Ω and 1/Ω (defined before §1; Ω = π/2) are limits at the horizon, the heat's
+  total and the mean share. Ω and the one-length circle are the blueprint's: the dual hemispherical vantage, from no
+  standpoint, nothing to do with reads and writes.
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
 
 **Continuous and discrete.** A read is continuous: a turn passes through every direction between two, and nothing in it
@@ -1271,7 +1268,7 @@ Each hand alone gives the one-dimensional Cauchy with its own corner; the crossi
 Cauchy. For every crossing to hold the same share, the round hand spreads its fingers evenly by turn and the upright hand
 evenly in height, not in angle (in the blueprint's terms, equal steps of the up share v, dv = h·da for altitude a, with h the level share: Archimedes' hat-box again); spread both evenly by angle and the pair neither hand reads leaves its corner. Two hands
 add no second length. The picture is not about hands: it shows that the read's three dimensions are not Cartesian, no
-three axes of amounts, but one thumb crossed with itself and two sweeps from where it is held. The Cartesian frame is
+three axes of amounts, but one thumb crossed with itself and turned from where it is held. The Cartesian frame is
 the blueprint's cube.
 
 **One thumb, two thumbs, three.** In the plane a read holds one thumb square to the line of sight, one reading, v
@@ -1356,13 +1353,11 @@ elliptical Cauchy, its standpoint five numbers in space against the plane's m + 
 **The blueprint's cube, and the sphere as the blueprint's picture.** The blueprint's frame with three parties is Descartes's: X,
 Y, Z, three number lines, every point three amounts. It reaches the read's directions only with H and the angles:
 X = H·cos a·cos ψ, and so on. Every direction about a point at radius H is a sphere, drawn whole. Placed together,
-the corner of the read's wedge points at the vertex of the blueprint's cube. With the cube outside the sphere, touching it
-at the ends of the axes, the picture is the inscribed sweep's; with the cube inside, its far corner on the sphere, the
-central sweep's (Thales' circle through home, the ends and the far corner). The hemisphere's 2 and ½, like Ω and 1/Ω,
+the corner of the read's wedge points at the vertex of the blueprint's cube. The hemisphere's 2 and ½, like Ω and 1/Ω,
 are limits, their values held by no read.
 
-**What survives in space, and what does not.** In the plane one law plays four parts: the image of the uniform turn under
-a Möbius map, harmonic measure, the powers of the standpoint, and the two sweeps' rates. On the sphere they part into
+**What survives in space, and what does not.** In the plane one law plays three parts: the image of the uniform turn under
+a Möbius map, harmonic measure, and the powers of the standpoint. On the sphere they part into
 three laws: harmonic measure keeps the powers of the standpoint and its mean; the spherical Cauchy, the uniform turn pushed
 through a boost, keeps the Möbius maps; neither is the other's image. A quarter turn about one axis and then another ends
 120° away from the same two in the other order. What survives is the split between direction and payload, heat and paint,
@@ -1406,15 +1401,11 @@ one you must hold the whole turn first. A rate is of something per something: th
 read; the *of* is the payload. The Cauchy is the law of the per against itself, the turn's speed through the readings with
 no payload in it.
 
-**The blueprint's measures of the sweep.** The angle is arc per radius, measured against the completed turn: the blueprint's
-rate is 1. A hand swept from horizontal to vertical can pivot two ways. From the centre of the circle on the chord (the
-*central* sweep), it turns twice as far as its direction does, arc over chord θ/sin θ running from 1 to Ω at the far
-end. From home on the circle (the *inscribed* sweep), chord over arc sin θ/θ runs from 1 to 1/Ω, approached at the
-horizon. Their product is 1 at every θ. These are the only two standpoints from which equal turns cut equal arcs (Euclid
-III.20). So the sweep is measured at Ω or 1/Ω, never at 1; 1 is had only by joining both. Ω and 1/Ω are the
-blueprint's measure of the read's sweeps, not numbers a read holds. At the corner three things coincide: v fills as
-fast as h empties; v/h = 1; and 1 is the geometric mean of Ω and 1/Ω, the fixed point of the reciprocal that exchanges
-the sweeps. The running rates there are 1.1107 and 0.9003, not 1. **Classical**; the assignment is a reading.
+**The blueprint's measure of the sweep.** The angle is arc per radius, measured against the completed turn: the blueprint's
+rate is 1. Arc over chord, θ/sin θ, and chord over arc, sin θ/θ, are the blueprint's ratios in angles; they need θ and
+π, so they are not the read's, and they do not meet at 1 at the corner (1.1107 and 0.9003). The read's two facings are
+the near reading s and the far reading 1/s, fractions with no angle, whose product is 1 at every reading and which meet
+at 1 at the corner, where v fills as fast as h empties (Tom, R1043). **Classical** (the ratios); the assignment is Tom's.
 
 **Tangent addition is the read's; tan and arctan the blueprint's.** Evaluating tan or arctan converts between a direction
 and an angle, a share of the whole turn. A read composes directions by tangent addition, (a ⊕ b) = (a + b)/(1 − ab),
@@ -1545,23 +1536,19 @@ law of directions, a heat made a probability only when it is closed, on the blue
 says nothing about facing either: it is entirely a DHV distribution, of the dual hemispherical vantage (Tom, R1036).
 **Classical**; the read's forms checked by hand; the assignment is a reading.
 
-**1/Ω is facing V; Ω is facing away from V.** Ω is not walking and 1/Ω is not reading; they are entirely the facing:
-does one face V, or face away from V? Both faces stand on H and turn one quarter turn, never a half (essay 26 §7).
-*Facing V* (the inscribed sweep, the inner): over the quarter turn the thumb's share h averages 1/Ω; it is the constant
-that closes the heat, and it is approached at the horizon, never reached. *Facing away from V* (the central sweep, the
-outer): the quarter arc from all of h to all of v is Ω thumbs long, the heat gathered to the horizon,
-∫₀^∞ ds/(1 + s²), reached at a named point, −1. Their product is 1, which is also the number of the dual hemispherical vantage (DHV), the thumb in
-thumbs. Facing V and facing away from V at the same time leaves no facing: the result is the non-facing, discrete value
-of 1 thumb (Tom, R1033); so does near times far, s × (1/s) = 1, the faceless discrete value (Tom, R1042), the −1 being
-the landing points', which carry the turn. The DHV has no standpoint and faces neither way. The exchange swaps
-the two, and they agree only at the corner (§6). Both numbers are limits, their values held by no SHV or count. In the
-table above the total's 1/Ω is the factor facing V and its Ω the factor facing away, and "the two facings" are those
-two. **Classical** (the mean share and the arc); the assignment is Tom's (R1032), replacing an earlier sorting of the
-two numbers by act (reading and walking).
+**Facing V and facing away from V.** The facing is neither walking nor reading: does one face V, or face away from V
+(Tom, R1032)? Facing V is the near reading s = v/h, V in terms of H; facing away from V is the far reading 1/s = h/v,
+H in terms of V (Tom, R1043). Both stand on H over one quarter turn, never a half (essay 26 §7). Facing V and facing
+away from V at the same time leaves no facing: near times far, s × (1/s) = 1 at every reading, the non-facing,
+discrete value of 1 thumb (Tom, R1033, R1042); the −1 is the landing points', which carry the turn. At the corner
+s = 1/s = 1, the one reading that is that value itself. The exchange swaps the two, and the heat below the corner equals
+the heat above it (§6). The DHV has no standpoint and faces neither way, and its number is the same 1. Ω and 1/Ω are
+limits at the horizon: the heat's total ∫₀^∞ ds/(1 + s²) = Ω, approached by a count, and the thumb's mean share 1/Ω,
+values held by no SHV or count. An earlier account in angles, two sweeps pivoting at a circle's centre and on it, is
+withdrawn (R1043).
 
-**The thumb, short facing V, long facing away, and whole.** Said most simply: the true size is 1, the thumb in thumbs.
-Facing V gives the short side of it, 1/Ω; facing away from V gives the long side, Ω; the two together give back the 1.
-The proof is one line, in the blueprint's terms. Along the sweep, from all of h to all of v, each step dℓ of the arc
+**The thumb, as a mean share times a length, and whole.** Said most simply: the true size is 1, the thumb in thumbs.
+The mean share over the turn, 1/Ω, times the arc's length, Ω, gives back the 1. The proof is one line, in the blueprint's terms. Along the sweep, from all of h to all of v, each step dℓ of the arc
 gains v at the rate dv/dℓ = h: the thumb's share h at a place is the rate at which the thumb is gained per step of arc
 there. Summed over the arc the gain is all of v,
 
@@ -1584,9 +1571,8 @@ plane's price. Three cautions keep the statement exact. The 1 is the thumb, H in
 mountain's size (D4). One read is one share h; 1/Ω is their average over the turn, a sum, so a limit the turning tends to and no read holds. And the walk
 here is counted in thumbs, an extent as a count; it is an amount, a write, only once the thumb has a unit. The mathematics is old: the mean
 projection of a segment over all directions is 1/Ω of its length (Cauchy 1841), a curve's length is Ω times its mean
-projection (Cauchy 1841; Crofton 1868), and Buffon's needle (1777) is the same 1/Ω met as a chance. What is ours is the
-assignment: the short factor to facing V, the long one to facing away from V, their product to the two held together.
-**Classical**; the assignment is a reading.
+projection (Cauchy 1841; Crofton 1868), and Buffon's needle (1777) is the same 1/Ω met as a chance. It is the blueprint's
+statement, in angles and π; the read's own 1 is near times far, s × 1/s (R1042, R1043). **Classical**.
 
 **The same 1 on the road.** §6's walk to the mountain has a 1 of this kind, and it is the square's row of the table, not
 the arc's. Take the reading as shares with the larger one full. Far off the thumb's share is full and the mountain's
@@ -1612,8 +1598,8 @@ square's edges to 2. **Classical**; the wording is a reading.
 
 **What is free, and what Ω costs.** Two things have to be kept apart here. The geometry is prior to any physics and
 free: the relation of the vertical to the horizontal, every slope from all of h to all of v; the exchange s ↔ 1/s and its
-corner; the heat's equal halves either side of the corner; the four facings; and the 1, the thumb in thumbs, which the
-short side and the long side give back whatever they are. None of these moves when the world is scaled or when what
+corner; the heat's equal halves either side of the corner; the four facings; and the 1, the thumb in thumbs, which near and far, s and
+1/s, give back at every reading. None of these moves when the world is scaled or when what
 arrives is changed, none was measured, no step is taken and no algorithm run to have them, and they take no time, since a
 read holds none (§3, "What a read is"). They are the read's forms of "Four identities, one exchange", rational in s.
 
@@ -1621,11 +1607,11 @@ The numbers Ω and 1/Ω are not free. Ω is a limit, transcendental ("A limit ma
 ever a fraction near it, each further digit at a further cost, the whole of it at an infinite one. It can be named
 exactly, as the total of the turn, and the name used; what cannot be had in finite time is the value. So the sweep
 only seems to hand over Ω at no cost. What it hands over free is that there is a whole, split in equal halves at the
-corner, and that the two facings multiply to 1; how much the whole is, and so how short the short side and how long
-the long side, is the blueprint's completed sum. That is the exact sense of "Ω is the price", above: the price is an
+corner, and that the two facings, s and 1/s, multiply to 1; how much the whole is, Ω, is the blueprint's
+completed sum. That is the exact sense of "Ω is the price", above: the price is an
 infinity, paid only at the limit, and a read never pays it because a read never needs the value.
 
-So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves; it does not use Ω, and 1/Ω is the limit its share of the thumb tends to as the sweep runs on toward the horizon ("1/Ω is facing V; Ω is facing away from V", above). A count
+So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves; it does not use Ω, and 1/Ω is the limit its share of the thumb tends to as the sweep runs on toward the horizon ("Facing V and facing away from V", above). A count
 is of a walk actually made, and any such walk is finite, so a count holds fractions: 11/7, 355/226, a series
 stopped at some term, each nearer Ω and none of them Ω. A count uses Ω's name and its approximants, and never has its
 value; Ω is the limit it tends to, stride by stride. So Ω and 1/Ω are limits the two acts actually encounter, each
@@ -1861,9 +1847,8 @@ view moves: still 45°, still eighteen fingers.
 **Mountain equals thumb.** With no V, drawing the range at its own H reads it one thumb wide at half a thumb away: the
 blueprint's circle, V = H. Every amount is then off by V\*/H = 20, the same on both sides of the corner.
 
-**The two sweeps, measured.** On the circle drawn about the thumb, the central sweep is measured at Ω and the
-inscribed at 1/Ω; to the range's ends, 1.1107 and 0.9003. Their product is 1, the starting length returned, H in H. The
-mountain never enters.
+**The two facings, read.** The range's ends at the corner read s = 1 and 1/s = 1: near times far is 1, the thumb
+given back, H in H. The mountain never enters.
 
 **Walk one thumb.** Step one thumb toward the range and read again. The half-angle's reading goes from s = 1 to
 s′ = 10/9. The distance is d = H·s′/(s′ − s) = 10 thumbs and the range V = 2·s·d = 20 thumbs: extents, exactly. Count the
@@ -1929,8 +1914,7 @@ the geometry's; how far below it a pattern falls is what arrives. **Checked** (W
 1984). The geometric one is half the solid angle the loop of directions encloses: the same taken twice as slowly, in a
 field twice as strong, in an apparatus twice the size. The dynamical one is energy times time and moves with all three.
 Experiments have separated them by keeping the loop and changing the rest (Tomita and Chiao 1986; Bitter and Dubbers
-1987). Both tests sort it. The half is the central sweep's twice the angle: a spin state at angle θ has its point on the sphere
-of states at 2θ. **Classical**; not run here.
+1987). Both tests sort it. The half is the doubled angle of the sphere of states: a spin state at angle θ has its point on it at 2θ. **Classical**; not run here.
 
 **And one where it failed.** Seeds falling from a plant also spread with a fat tail, and the turn can be named
 beforehand: a seed leaving its release point straight, every downward direction alike, lands as the hemisphere's Cauchy,
