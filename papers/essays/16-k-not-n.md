@@ -716,7 +716,7 @@ geometry of a read is K, not N.
 The references are carried over from the archived companion, where they were checked when it was written.
 
 The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`, rewritten 10 November on R788 with
-read, extent and write): §5 ("K and N"); its passages on
+read and write): §5 ("K and N"); its passages on
 computing are now a note, `plans/rw-computing-note.md` (a machine is built to do both acts, R641). The proofs are in the archived *Observation from Somewhere* and its computer-science companion
 (`../archive/ofs/observation-from-somewhere-cs.md`), kept for reference: the corner and the registers in §3, the
 separation in §5, the array in §6, the floor in §7, the two layouts in §8, detail and the fixed count in §9, the

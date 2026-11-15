@@ -35,6 +35,11 @@ holds every direction together, so it faces none of them. It does not pass from 
 the horizon and everything between already, at once. That is why the series calls it the dual hemispherical vantage and
 says no one stands at it.
 
+**A write.** Discreteness has no face, and that is what a write is. Discreteness has scale and size; continuity has
+no scale and no size. A stride, a mark, a metre bar: each is discrete, each has a size that scaling the world moves, and
+none faces anything. A read is the other side: continuous, no scale, no size, and a face. That is exactly what reads
+and writes are (R1039).
+
 So two things have no face, for opposite reasons. A count has too little to face anything with: separate things, no
 direction among them. The blueprint has too much: every direction held, none faced. Neither flows.
 
@@ -199,6 +204,8 @@ rivals. They are the one sweep read from its two facings, and multiplied togethe
 of the turn and at every point along it. The long route and the short route are not two totals of the same thing; they
 are the two faces of one total, and that total is 1. In a single hemispherical vantage, 1 is one thumb: thumb = 1. So
 the two facings multiply back to the very thing the geometry was made with, the one thumb held out, and nothing else.
+Face V and face away from V at the same time, and there is no facing left: what remains is the non-facing, discrete
+value of 1 thumb.
 The absurdity was in taking either facing alone. The demo
 `faces.html` turns both sweeps side by side on H, with the long route, the short route and the line, and keeps their
 product, 1 at every point of the turn.

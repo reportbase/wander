@@ -259,7 +259,8 @@ constant 2/π that closes the heat to a total of 1, and that total is the comple
 k of K equal turns, and the fractions of Gregory's and Leibniz's series, 1 − 1/3 + 1/5 − … for the half below the
 corner, never its limit π/4 (essay 2 §9).
 
-The bell sits beside the map as its opposite. A Gaussian is a law of amounts, and its exact facts are sums: counted,
+The bell sits beside the map as its opposite. A Gaussian is a law of amounts, and says nothing about facing: it is entirely a distribution of
+the dual hemispherical vantage (DHV). Its exact facts are sums: counted,
 it is the binomial, counts of tosses, with the mean and the variance exact, where the map's exact facts are
 its middle and its equal halves. In polar form the bell is a turn times a length; its π is all in the turn, the circle
 whole, and its e all in the length. Divide two such amounts and the length goes, taking the e with it; what is left is
@@ -347,7 +348,7 @@ second map in distance), `read.html` (the read with no world: the hemisphere in 
 The references are carried over from the essays before this one and *Reads and Writes*, where they were checked.
 
 The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`, rewritten 10 November on R788 with
-read, extent and write): §3 ("Why there is no mean", "Where the heat comes from"), §4 ("Heat and paint"), §5 ("The
+read and write): §3 ("Why there is no mean", "Where the heat comes from"), §4 ("Heat and paint"), §5 ("The
 crosshairs", "The overlay's heat in distance", "H is a zoom; K comes first", "Where the split falls") and §8 ("The read's
 heat covers the hemisphere"). The rulings are SPN
 R700–R707. The comparison of harmonic measure and the boosted sky on the sphere is EUL (`../../plans/eul-plan.md`), the

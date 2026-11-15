@@ -20,7 +20,7 @@ weight ds/(1 + s²), the one weight that composing slopes leaves unchanged, summ
 sweeps' worth. Since the paper's subject is the single sweep, its constants are mostly π/2 and 2/π, and it is simpler to
 give that total its own letter than to keep halving π: Ω = π/2, so 2/π is 1/Ω, the turn is 4Ω and the sphere 8Ω, the
 Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω and its inverse are to reads and writes what π is to the blueprint: 1/Ω is the
-number for what turning sees, Ω the number for what walking counts (§9, "Reading is 1/Ω; walking is Ω"), and π, two
+number for facing V, Ω the number for facing away from V (§9, "1/Ω is facing V; Ω is facing away from V"), and π, two
 sweeps joined, is the blueprint's own. Both are limits, and they are the limits a read and a write actually encounter: 1/Ω is
 what the thumb's share tends to as a sweep runs on toward the horizon, and Ω is what a count of the walk tends to,
 stride by stride. No finite sweep and no finite count has either value, but each is headed for its own. π is a limit
@@ -39,8 +39,7 @@ factor (the observer's own thumb and stride with it), leaves the direction and t
 and moves only that last term, the thumb in metres, by the same amount for every point. Two properties sort
 what an observer has: whether it is continuous or discrete, and whether that scaling moves it. A **read** is continuous
 and unmoved by scaling: the direction, [h : v], from one standpoint, its slopes spread by one density. Two looks held
-together are still a read: the distance they give in thumbs, a **parallax extent**, an *extent* for short, is a
-continuous ratio of their slopes (parallax). A **write** is discrete and moved by scaling: a bounded thing with a size, a
+together are still reading: the distance they give in thumbs is a continuous ratio of their slopes (parallax). A **write** is discrete and moved by scaling: a bounded thing with a size, a
 stone, a stride, a mark, a metre bar, and an amount put down in a unit carried in from outside, a metre or a second. The
 write is the discrete, scale-variant companion of the read. The two mixed cases are tools of description: a count,
 discrete and unmoved by scaling, and the number line in a unit, continuous and moved by it. Read and write are acts,
@@ -110,7 +109,9 @@ it claims nothing about what the world is made of. The two tests (D5, D6) keep t
 *Two verbs, two nouns.* Among acts the two properties are one. A discrete thing has a boundary, so it has a size, so
 scaling moves it; a direction has no boundary and no size, and scaling has nothing of it to move. So reading is the verb
 for the continuous and writing the verb for the discrete, and the scale test follows from that; it is not a second
-definition. The two mixed boxes hold no act. A count and the number line are nouns, descriptions laid over what was
+definition. And discreteness has no face (essay 26): a write is discrete, so it has scale and size and faces nothing;
+a read is continuous, so it has no scale and no size, and it is a face. That is exactly what reads and writes are
+(Tom, R1039). The two mixed boxes hold no act. A count and the number line are nouns, descriptions laid over what was
 read or written. The friction between continuous and discrete shows wherever one is made to hold the other: a count
 holding a read (a slope no fraction lands on, the ringing at a sharp edge, §6), a read holding a count (K, §5), and
 parallax, where a walk is cut into strides before the reads at its two ends give a size. π and e belong to neither box
@@ -134,11 +135,10 @@ completed, e the scale completed (§9, "What is free, and what Ω costs"). **A r
   standpoint at one moment. *Reading*, the act, is anything continuous and unmoved by scaling had with nothing kept.
   Two looks held together at once, with nothing kept
   between them, are still reading (D3), though they are two reads and not one; closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
-- **D3. A parallax extent**, an **extent** for short, is a gap across: a distance in thumbs, d/H, or one distance
-  against another, d₁/d₂. Scaling the world
+- **D3. A distance in thumbs**, called a parallax extent, or *extent*, in this paper, is a gap across: d/H, or one
+  distance against another, d₁/d₂. The word names what it is; it is not a third thing beside reading and writing. Scaling the world
   leaves it unchanged, as it leaves a read; but no single look holds it. Two looks held together give it, as a
-  continuous ratio of their slopes: parallax (§6), which is why it carries that name. So had, it is reading (two reads held together, not one read), not a third
-  kind: two eyes have it with nothing kept and nothing counted. Counted out, so many thumbs or strides, it is a count,
+  continuous ratio of their slopes: parallax (§6), which is why it carries that name. So had, it is reading (two reads held together, not one read): two eyes have it with nothing kept and nothing counted. Counted out, so many thumbs or strides, it is a count,
   a description (above). Where one standpoint moves, the earlier look has to be kept to be there for the later one, and
   what keeps it is a write. It has two named cases: a *parallax distance*, d/H,
   along the line of sight, and a *parallax breadth*, V\*/H, across it. The word says how far or how large, not where: a
@@ -155,8 +155,8 @@ completed, e the scale completed (§9, "What is free, and what Ω costs"). **A r
   the world: it moves every write's number and no extent, no read as a read holds it (an angle in degrees is the
   blueprint's coordinate on a read, and its number follows the blueprint's choice of degree or radian).
 - **D5. The first test.** Multiply every length in the world by k, the observer's thumb and stride included; the units
-  stay outside the world. What moves is a write. Among the geometry's quantities, what stays is a read, an extent
-  among them; a count of the observer's own strides stays too, and is a count.
+  stay outside the world. What moves is a write. Among the geometry's quantities, what stays is reading, a distance in thumbs
+  among it; a count of the observer's own strides stays too, and is a count.
   This is the geometric test, and it
   sorts the geometry. In general the test is a named scaling, one dimension at a time: multiply every amount of that
   dimension in the world by k, the world's constants of that dimension included, the unit staying outside. A quantity
@@ -272,7 +272,7 @@ horizon. Within one read nothing comes down; the thumb's size was never in it. W
 of readings joined, a/b · b/c = a/c, where b was needed for both links and is in neither end (§6, "A tower of extents").
 That is said by whoever keeps the chain, so scaffolding is a word for writes, and a scaffold put up and kept, a step
 taken and counted, is a write with a count laid over it. The last "in terms of" never comes down: a/c is still in terms of c. Where a tower
-ends is its kind: on the thumb, a read; on a kept step, an extent; on an agreed unit, a size. A unit is scaffolding
+ends is its kind: on the thumb, a reading; on a kept step, a distance in steps; on an agreed unit, a size. A unit is scaffolding
 left up by agreement. A denominator leaves no mark on a number written down, so two readings on different denominators
 can be joined by mistake: each of two people sees the other smaller, in terms of its own hand. Dividing one such reading
 by the other takes down the distance they share and leaves their sizes against each other; multiplying takes down the
@@ -390,7 +390,7 @@ own space (§4), and D6, not this table, sorts it.
 | | moved by scaling? | held by one standpoint? | kind |
 |---|---|---|---|
 | a direction [h : v] (up) | no | yes | read |
-| a gap across: d/H, d₁/d₂, V\*/H | no | no: two looks held together | a read (an extent) |
+| a gap across: d/H, d₁/d₂, V\*/H | no | no: two looks held together | reading (two reads held together) |
 | the across zero tied to a unit | yes | no | write |
 
 Read and write are so the named outcomes of two tests that cross, and the crossing has a fourth box, the
@@ -398,10 +398,10 @@ payload's:
 
 | | the geometry: stays when what arrives changes (D6) | the payload: changes with what arrives (D6) |
 |---|---|---|
-| unmoved by scaling (D5) | a read (one standpoint), with its heat; an extent (two, a gap); an order or a map (two, no gap) | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
+| unmoved by scaling (D5) | reading: a read (one standpoint), with its heat; two reads held together, giving a gap in thumbs, an order or a map | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
 | an amount in a unit (D4), moved by its own dimension's scaling | a write: a distance in metres | a write: a frequency in hertz, a brightness in watts |
 
-A write is found in both columns; a read and an extent are the geometry's alone; a ratio of payloads is the payload's
+A write is found in both columns; reading is the geometry's alone; a ratio of payloads is the payload's
 counterpart of a read, unmoved by scaling and not a direction of the geometry. Being unmoved by scaling therefore never
 shows that a quantity is a read. One thing can supply several variables of different kinds: a pixel's value in the
 sensor's unit is a payload's write, its ratio to its neighbour a ratio of payloads, the pixel's position in the grid a
@@ -451,7 +451,7 @@ median and the absence of any mean are what a read with no breadth in it is.
 
 | | hemispheres | vantage | V | the blueprint's number for it | what it is |
 |---|---|---|---|---|---|
-| inscribed, toward the universe | one | home, facing a horizon | unknowable | 1/Ω, approached | a read: what turning sees |
+| inscribed, toward the universe | one | home, facing a horizon | unknowable | 1/Ω, approached | SHV, facing V |
 | central, toward the apple | one | the apple's centre, across to its rim | knowable | Ω, the limit a count of its arc tends to; the end reached at a point | a read about a bounded thing; from afar its rim is one direction, met at −1 by walking; its arc, counted in thumbs, is an extent |
 | the apple held and turned | both, in reach | one, the turn known | known, held | the turn's Cauchy | looks joined by a known turn, of a thing held in the hand |
 | the blueprint | both at once | dual, drawn; no standpoint | known | 1 | neither read nor write: the dual hemispherical vantage |
@@ -485,7 +485,7 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
 - *Heat* and *paint* are pictures, for the read's density and for what it meets, and are not leaned on; *address* only as a computing metaphor or for a count of K
   places at the heat's quantiles (§5).
 - Ω and 1/Ω (defined before §1; Ω = π/2) are the limits the two reads encounter, each a single hemispherical vantage: 1/Ω the inscribed
-  sweep's, Ω the central sweep's (its arc walked and counted is an extent; §9, "Reading is 1/Ω; walking is Ω"). Ω
+  sweep's, Ω the central sweep's: facing V and facing away from V (§9, "1/Ω is facing V; Ω is facing away from V"). Ω
   and the one-length circle are the blueprint's: the dual hemispherical vantage, from no standpoint, nothing to do with reads and writes.
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
 
@@ -625,7 +625,8 @@ uniform turn over a quarter turn has the law
 the half-Cauchy. Its median is s = 1, the *corner*, where v = h; its quartiles √2 − 1 and √2 + 1; its far end, s = ∞,
 the direction [0 : 1], the *horizon*, reached by no finite reading. It has no mean: averages of readings climb without
 settling, by (1/Ω)·ln 10 for every tenfold further the readings run. Given the uniform turn this holds whatever is looked
-at, a straight wall, a row of trees, a curved hill, an empty sky; the wall's shape only decides where each direction
+at, a straight wall, a row of trees, a curved hill, an empty sky. So the Cauchy is not the inside of a circle's alone:
+it takes a v and an h, and it works on a straight line too, the lighthouse's shore (Tom, R1034). The wall's shape only decides where each direction
 meets it. The constant 1/Ω and the quartiles' values are the blueprint's arithmetic; a read has the order of its
 readings, the corner and the directions. **Classical.**
 
@@ -1539,36 +1540,36 @@ The Gaussian shows the same split from the blueprint's side. In polar form (1/2�
 (dθ/2π)·(e^(−r²/2) r dr): the uniform turn, whose slope is the Cauchy, times a law for the length, an amount, the payload.
 Two independent zero-mean Gaussian amounts of one spread, divided, give the standard Cauchy; of spreads in a ratio c, a
 Cauchy of scale c. Dividing by the thumb integrates the length away, taking e with it and leaving Ω. So the Cauchy is a
-law of directions, a heat made a probability only when it is closed, on the blueprint, and the Gaussian a law of amounts.
+law of directions, a heat made a probability only when it is closed, on the blueprint, and the Gaussian a law of amounts. The Gaussian
+says nothing about facing either: it is entirely a DHV distribution, of the dual hemispherical vantage (Tom, R1036).
 **Classical**; the read's forms checked by hand; the assignment is a reading.
 
-**Reading is 1/Ω; walking is Ω.** The two numbers sort by act. *1/Ω is what turning sees*: over the quarter turn the
-thumb's share h averages 1/Ω, the mean of what is seen of one thumb from a standpoint that never moves; it is the constant
-that closes the heat, and it is approached at the horizon, never reached. *Ω is what walking counts*: the quarter arc
-from all of h to all of v is Ω thumbs long, the heat gathered to the horizon, ∫₀^∞ ds/(1 + s²), reached at a named
-point, −1. An arc in thumbs is a length against the thumb, unmoved by scaling and held by no single read: of the kind D3
-calls an extent, here counted out, so a count; with the thumb in a unit it is a write (D4). The sweep whose arc that is,
-the central one, is itself a read: one hemisphere, from the bounded thing's centre, facing its rim. So both numbers belong to
-single-hemisphere reads, 1/Ω to the inscribed and Ω to the central, and the walk is how the second one's arc is
-counted. Their product is 1, which is also the blueprint's number, the thumb in thumbs; the blueprint itself, the dual hemispherical vantage, has no standpoint and
-is neither of them. The exchange swaps the two, and they agree only at the corner, where a length walked and a
-ratio held say the same (§6). Both numbers are limits, their values held by no read or count; what is sorted is
-which read each one measures. In the table above the total's 1/Ω is the inscribed read's factor and its Ω the central
-read's, and "the two facings" are those two reads. **Classical** (the mean share and the arc); the assignment is a reading.
+**1/Ω is facing V; Ω is facing away from V.** Ω is not walking and 1/Ω is not reading; they are entirely the facing:
+does one face V, or face away from V? Both faces stand on H and turn one quarter turn, never a half (essay 26 §7).
+*Facing V* (the inscribed sweep, the inner): over the quarter turn the thumb's share h averages 1/Ω; it is the constant
+that closes the heat, and it is approached at the horizon, never reached. *Facing away from V* (the central sweep, the
+outer): the quarter arc from all of h to all of v is Ω thumbs long, the heat gathered to the horizon,
+∫₀^∞ ds/(1 + s²), reached at a named point, −1. Their product is 1, which is also the number of the dual hemispherical vantage (DHV), the thumb in
+thumbs. Facing V and facing away from V at the same time leaves no facing: the result is the non-facing, discrete value
+of 1 thumb (Tom, R1033); the DHV has no standpoint and faces neither way. The exchange swaps
+the two, and they agree only at the corner (§6). Both numbers are limits, their values held by no SHV or count. In the
+table above the total's 1/Ω is the factor facing V and its Ω the factor facing away, and "the two facings" are those
+two. **Classical** (the mean share and the arc); the assignment is Tom's (R1032), replacing an earlier sorting of the
+two numbers by act (reading and walking).
 
-**The thumb, short by reading, long by walking, and whole.** Said most simply: the true size is 1, the thumb in thumbs.
-Reading gives the short side of it, 1/Ω; walking gives the long side, Ω; the two together give back the 1. The proof is
-one line, in the blueprint's terms. Along the sweep, from all of h to all of v, each step dℓ of the arc gains v at the rate
-dv/dℓ = h: what is read at a place, the thumb's share h, is the rate at which the thumb is gained per step walked there.
-Summed over the walk the gain is all of v,
+**The thumb, short facing V, long facing away, and whole.** Said most simply: the true size is 1, the thumb in thumbs.
+Facing V gives the short side of it, 1/Ω; facing away from V gives the long side, Ω; the two together give back the 1.
+The proof is one line, in the blueprint's terms. Along the sweep, from all of h to all of v, each step dℓ of the arc
+gains v at the rate dv/dℓ = h: the thumb's share h at a place is the rate at which the thumb is gained per step of arc
+there. Summed over the arc the gain is all of v,
 
 ∫ h dℓ = 1,
 
-and a sum is a mean times a length: (mean of what is read) × (length walked) = (1/Ω) × (Ω) = 1. The 1 owes nothing to the
+and a sum is a mean times a length: (mean share) × (length of the path) = (1/Ω) × (Ω) = 1. The 1 owes nothing to the
 circle. On any path from the one end to the other the gain per step, summed over the steps, is the whole of v, so the mean
 rate times the length is 1 on every path; only the split between the two factors is the path's:
 
-| the path | mean gain per step | length walked | product |
+| the path | mean gain per step | length | product |
 |---|---|---|---|
 | the chord, straight across | 1/√2 | √2 | 1 |
 | the quarter arc, the one length turned | 1/Ω | Ω | 1 |
@@ -1582,7 +1583,7 @@ mountain's size (D4). One read is one share h; 1/Ω is their average over the tu
 here is counted in thumbs, an extent as a count; it is an amount, a write, only once the thumb has a unit. The mathematics is old: the mean
 projection of a segment over all directions is 1/Ω of its length (Cauchy 1841), a curve's length is Ω times its mean
 projection (Cauchy 1841; Crofton 1868), and Buffon's needle (1777) is the same 1/Ω met as a chance. What is ours is the
-assignment: the short factor to the read, the long one to the walk, their product to the two held together.
+assignment: the short factor to facing V, the long one to facing away from V, their product to the two held together.
 **Classical**; the assignment is a reading.
 
 **The same 1 on the road.** §6's walk to the mountain has a 1 of this kind, and it is the square's row of the table, not
@@ -1618,11 +1619,11 @@ The numbers Ω and 1/Ω are not free. Ω is a limit, transcendental ("A limit ma
 ever a fraction near it, each further digit at a further cost, the whole of it at an infinite one. It can be named
 exactly, as the total of the turn, and the name used; what cannot be had in finite time is the value. So the sweep
 only seems to hand over Ω at no cost. What it hands over free is that there is a whole, split in equal halves at the
-corner, and that the read and the walk multiply to 1; how much the whole is, and so how short the short side and how long
+corner, and that the two facings multiply to 1; how much the whole is, and so how short the short side and how long
 the long side, is the blueprint's completed sum. That is the exact sense of "Ω is the price", above: the price is an
 infinity, paid only at the limit, and a read never pays it because a read never needs the value.
 
-So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves; it does not use Ω, and 1/Ω is the limit its share of the thumb tends to as the sweep runs on toward the horizon ("Reading is 1/Ω; walking is Ω", above). A count
+So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves; it does not use Ω, and 1/Ω is the limit its share of the thumb tends to as the sweep runs on toward the horizon ("1/Ω is facing V; Ω is facing away from V", above). A count
 is of a walk actually made, and any such walk is finite, so a count holds fractions: 11/7, 355/226, a series
 stopped at some term, each nearer Ω and none of them Ω. A count uses Ω's name and its approximants, and never has its
 value; Ω is the limit it tends to, stride by stride. So Ω and 1/Ω are limits the two acts actually encounter, each
@@ -1745,8 +1746,8 @@ else; the same split is why the square of ∫ e^(−x²) dx is π, a full turn 2
 
 The count's tier is de Moivre's (1733): tossing and counting is what counting does, and the Gaussian is
 what the counts tend to. Ω arrives in that limit through Wallis's product (1656),
-Ω = (2·2)/(1·3) × (4·4)/(3·5) × (6·6)/(5·7) × …, every partial product a fraction: the walk's Ω, reached by
-counting. And what is exact flips once more. For the Cauchy the exact facts were the median and the equal halves, and
+Ω = (2·2)/(1·3) × (4·4)/(3·5) × (6·6)/(5·7) × …, every partial product a fraction: the Ω of facing away from V,
+approached by counting. And what is exact flips once more. For the Cauchy the exact facts were the median and the equal halves, and
 there was no mean; for the Gaussian the exact facts a count holds are the mean and the variance, which are
 sums. The Cauchy is kept by order and the Gaussian by sums, a law of directions and a law of amounts. This is no fifth
 read's identity: a read holds nothing of one Gaussian amount, only the direction of a pair, which is the Cauchy it
@@ -1885,8 +1886,9 @@ and the tower is 15 metres tall and 60 away: the one write. **Checked** (`runs/t
 ## 11. Cases in data, and what this changes
 
 **What it changes.** No mathematics. It sorts.
-- **Every reading is a read, every gap across an extent, every amount a write.** A result unmoved by scaling and held by
-  one standpoint is a read; unmoved and needing two, an extent; moved, a write, which needs an amount carried in.
+- **Every result is reading or writing.** A result unmoved by scaling and held by one standpoint is a read; unmoved
+  and needing two, still reading, two reads held together (a gap across, in thumbs); moved, a write, which needs an
+  amount carried in.
 - **A Cauchy-type quantity is a direction where a turn that lays it can be named, apart from the law's shape.** A fat
   tail alone is no evidence of a turn: a mixture of amounts makes one too.
 - **The constants have owners.** π and e are the blueprint's; Ω, 1/Ω and the hemisphere's 2 and ½ are
@@ -1938,7 +1940,8 @@ before the data can show where it is not. **Checked** (TCF; killed).
 
 ## 12. Open questions
 
-- **O1. The name of D3's kind.** *Closed:* it is a parallax extent, "extent" for short (it was "place" until
+- **O1. The word for D3's distance in thumbs.** *Closed:* "parallax extent", "extent" for short, a word for what it
+  is and not a third thing beside reading and writing (R1038) (it was "place" until
   11 November, a working name that said position where the paper says a read has none). Its scope is fixed by D3 (a gap
   across, unmoved by scaling, needing two standpoints).
 - **O2. The thumb.** *Closed (R792):* the thumb is the across axis's chosen zero, as home is the up axis's, as D5

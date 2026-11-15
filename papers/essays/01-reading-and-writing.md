@@ -85,7 +85,7 @@ outside?
 
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
-| continuous | reading: a read, and what reads held together give, an extent or a map | the number line in a unit (the blueprint) |
+| continuous | reading: a read, and what reads held together give, a distance in thumbs or a map | the number line in a unit (the blueprint) |
 | discrete | a count or an order, descriptions kept in writes | a write |
 
 A read is continuous and unmoved: a direction, a slope, a ratio of slopes. A write is discrete and moved: a stone, a
@@ -96,8 +96,9 @@ over them, and what is kept of it is kept as things (marks, pebbles), each a wri
 unit, or the circle held whole at a size, is continuous and moved: the blueprint, set beside the two acts for comparison.
 
 Among acts the two properties are one. A thing that is discrete has a boundary, so it has a size, so scaling moves it;
-a direction has no boundary and no size. So reading is the verb for the continuous and writing the verb for the
-discrete, and the two mixed boxes hold no act: a count and the number line are nouns, descriptions laid over what was
+a direction has no boundary and no size. Discreteness has no face (essay 26): a write has scale and size and faces
+nothing; a read has no scale and no size, and it is a face. That is exactly what reads and writes are. So reading is
+the verb for the continuous and writing the verb for the discrete, and the two mixed boxes hold no act: a count and the number line are nouns, descriptions laid over what was
 read or written. The friction between continuous and discrete shows wherever one is made to hold the other, a count
 holding a slope no fraction lands on, or a walk cut into strides so that the looks at its two ends give a size. π and e
 are not in the table. Each is a pure ratio that scaling does not move and that no count reaches; they are how both
@@ -400,10 +401,10 @@ Imagine every length in the world multiplied by the same factor k, your own leng
 larger, and so are you, your stride, your rulers and the gap between your eyes. Then look at any quantity you recorded
 before, and ask what happened to it.
 
-- If it did not change, it is a **reading** or an **extent**. A direction, an angle, the place of the corner, held from
-  one standpoint, are readings; the ratio of two lengths, a shape held up against its own average size, the map in
-  steps, which need a second standpoint, are extents: reading still where two looks hold them together, a count where
-  they are counted out in steps. All of these come through untouched. (Reads
+- If it did not change, it is a **reading**. A direction, an angle, the place of the corner, held from one
+  standpoint, are readings; the ratio of two lengths, a shape held up against its own average size, the map in steps,
+  which need a second standpoint, are reading too, two looks held together, or a count where they are counted out in
+  steps. All of these come through untouched. (Reads
   joined can also give an order, as in essay 11, or a map carrying one look's directions to another's, as a turn or a
   boost does in essay 7; neither has a gap in space, and neither moves.)
 - If it changed by the factor k, it is a **writing**. A length in metres, a distance on a map's scale bar, the size of
@@ -414,16 +415,16 @@ Nothing length-like can do anything else. It is either fixed or it moves by k.
 Try it on the room. The map in steps does not move: everything grew by k, your step grew by k, and every length in steps
 is the same number as before. The map in metres moves: the stride was measured against a rule, the rule did not grow
 with the world, and every length in metres is k times larger. One test, and it puts the map in steps with the readings,
-unmoved (an extent, in steps), and the map in metres on the writing side.
+unmoved (distances in steps), and the map in metres on the writing side.
 
 Three cautions keep the test honest. What it sorts is a variable, a quantity said of something named: this direction,
 that gap, this light's frequency. A bare number is not yet sorted, and one thing can supply several variables of
 different kinds. Second, the test crosses with a partner the third essay gives, change what arrives and keep the
-directions, and the crossing has four boxes. On the geometry's side, unmoved is a reading or an extent and moved is a
+directions, and the crossing has four boxes. On the geometry's side, unmoved is reading and moved is a
 writing, a distance in metres. On the payload's side, unmoved is a ratio of payloads, one colour channel over another,
 and moved is again a writing, a frequency in hertz. So a writing is any amount in a unit carried in, whichever side it
 is on, and being unmoved by scaling never shows by itself that a thing is a reading. Third, joining two reads does not
-always give an extent. An extent has a gap in space in it. Which read came before which is an order, with no gap. And
+always give a distance. A distance has a gap in space in it. Which read came before which is an order, with no gap. And
 turning the look, or changing one's motion, joins two reads by a map, one read's directions carried to the other's,
 again with no gap; an angle of turn, or a rapidity, is a coordinate on such a map, inferred from the directions and
 not itself a reading. Whether those three are all the ways reads can be joined is not claimed (*Reads and Writes* §1,
@@ -737,6 +738,6 @@ The essay draws on these; each is cited for something it uses.
   Psychology: Human Perception and Performance* 10(5), 683–703.
 
 The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November
-(R788) with read, extent and write), in the same collection: readers and writers in
+(R788) with read and write), in the same collection: readers and writers in
 §3.1, the one-length circle in §5, the Cauchy as the law of the uniform turn in §7, reading and writing in §9, and the
 classical pieces in Appendix A ("The Cauchy from one length").

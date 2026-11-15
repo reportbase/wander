@@ -172,7 +172,8 @@ gathers, (1/2i)·d(ln w)/ds, is 1/(1 + s²). So the half-Cauchy's 2/π is the id
 variable together (essay 2 §9). Each step a read can follow in finite terms (w at the horizon is −1, a pair); the
 total iπ is the turn completed, the blueprint's.
 
-The two constants also part at one division. The Gaussian, the law of amounts, written round a point is
+The two constants also part at one division. The Gaussian says nothing about facing: it is entirely a DHV distribution,
+of the dual hemispherical vantage, the law of amounts. Written round a point it is
 (1/2π)·e^(−r²/2) dx dy = (dθ/2π)·(e^(−r²/2) r dr): a uniform turn times a law for the length. Divide by the thumb, one
 amount over another, and the length is integrated away: the e goes with it, and what is left is the turn, whose slope is
 the Cauchy, the read's law of directions, with π alone in its closing constant. The scale's constant lives in the
@@ -184,8 +185,9 @@ that the heat in the v/h chart and the heat in the h/v chart, 1/(1 + s²) and s�
 identity, that w(s)·w(1/s) = −1 for w = (1 + is)/(1 − is), at the corner i × i = −1. Of the total, that the heat below
 the corner equals the heat above it: equal halves, with no π/4 in them. In the plane, π is the price of turning "equal halves" into
 "how much" (essay 2 §9, "Four identities, one exchange"); in space the same price is 2, with no π in it. And the two numbers the blueprint puts on the sweep belong to two
-reads, each a single hemispherical vantage: 2/π the inscribed sweep's, what turning sees, the thumb's mean share,
-approached; π/2 the central sweep's, reached, its arc in thumbs what a walk counts, an extent.
+facings, each a single hemispherical vantage: 2/π facing V (the inscribed sweep), the thumb's mean share,
+approached; π/2 facing away from V (the central sweep), its arc in thumbs, reached. Neither is reading or walking; each
+is only which way one faces (essay 26 §7).
 
 This essay's title, "what only a writer holds", needs one more distinction, which the ladder of §1 already drew. A walk counted is
 a count laid over writes, the strides, and every walk actually made is a finite count, so what it holds is a fraction: 22/7, 355/113, a series
@@ -391,7 +393,7 @@ the turn comes back, and the scale goes on, and to say either in a number you ha
 The dates and titles above are given from memory and are to be checked against the texts.
 
 The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is
-*Reads and Writes*, rewritten 10 November on R788 with read, extent and write): §2 (the read's ignorance as turns and rescalings; zero and a new zero; tangent addition), §3.8 (no
+*Reads and Writes*, rewritten 10 November on R788 with read and write): §2 (the read's ignorance as turns and rescalings; zero and a new zero; tangent addition), §3.8 (no
 read has V), §4 ("Rates, not angles"; the landing point), §5 ("Why halving", "Circular mathematics without V"),
 §7.4 (a shape as ln r = a₀ + f(θ)), Appendix A ("Polar form and the complex logarithm", "What square roots reach") and
 Appendix B ("Machine arithmetic and the infinite"). The essays before this one: 2 (§9, Euler's formula), 4 (thumbs past the

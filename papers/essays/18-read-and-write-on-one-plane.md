@@ -344,7 +344,7 @@ as a boost; the heat at each point and per chart; a line and a spiral with their
   falcons (*Falco peregrinus*). *Journal of Experimental Biology* 203, 3755–3763.
 
 The account this essay follows is *Reads and Writes* (`../readers-and-writers.md`, rewritten 10 November on R788 with
-read, extent and write): §2 ("The plane", "The thumb's lay is itself a turn", "π with the direction, e with the
+read and write): §2 ("The plane", "The thumb's lay is itself a turn", "π with the direction, e with the
 distance"), §3 ("The heat depends on what it is counted per"), §8 ("What survives in space, and what does not", "Three
 loops") and §9 ("Euler's formula as a count of reads"). The rulings are SPN R580, R647, R736–R740, R743 and R788; the checks are `runs/elm/` (n reads), `plans/flc-plan.md` with `runs/flc/` (a flat chart for the read in space) and the page's own hook, `window.__euler`. The essays before
 this one: 2 (Euler's formula, the blueprint's notation), 4 (near and far, the three rulers), 7 (the moving sky), 13 (where
