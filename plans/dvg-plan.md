@@ -47,3 +47,45 @@ The rates are DVE's and DVF's, unchanged.
 ## Runs
 
 (appended below as they come out; nothing above this line edited afterwards)
+
+### Run 1 (15 Nov 2026; `runs/dvg/fetch.py`, list `runs/dvg/laws-all.md` sampled by `runs/dvg/sample.py` to
+### `runs/dvg/laws.md`, class `runs/dvg/chart.md`, restatements `runs/dvg/restate.py`, each by its own fresh agent; scored
+### by `runs/dvg/dvg.py`, G3's expectation `runs/dvg/dvg-expect.txt` committed before the check, output `runs/dvg/dvg-run1.txt`)
+
+Pages fetched (revision id, timestamp, sha256 of the wikitext; the wikitext not committed):
+
+| page | revision | timestamp | sha256 |
+|---|---|---|---|
+| Rapidity | 1383473035 | 2026-11-02T21:47:20Z | 9b7170bfd67ce37ea218386fe8972a8a7a08a97d9ed90f94fdecd33feef68362 |
+| Velocity-addition formula | 1379283888 | 2026-10-09T01:32:57Z | b59dd5371ea1d9e793b8a86db767c0467bb95029eba40eb7a5355b97b85f8d40 |
+| Thomas precession | 1385580159 | 2026-11-14T01:19:00Z | 783bf2eb9f8a3636dfaad7ede46f3c26d405d55dcb9633051aef59b86fd99403 |
+| Euler angles | 1381977340 | 2026-10-25T21:54:51Z | caf18013cbd54c079224749e7f1cd99bad48990672401542b293048ee7478f82 |
+| Kepler orbit | 1383915216 | 2026-11-05T15:36:32Z | a77c04be4ab984bf3fae90c3bcb31115a9e31bb027f09b597bf841e5a351a59a |
+| Harmonic oscillator | 1373924880 | 2026-09-08T19:43:44Z | aa84e72c0ea7cefaeeecb5612a793407cfb9a469216cad0e495ea40640086b09 |
+| Lens | 1384860947 | 2026-11-10T12:52:39Z | ee43e541f46f3c2db0220ed960418ce6f3dda0e3c5774e155d783f8bac88c5ce |
+| Diffraction | 1383422735 | 2026-11-02T16:22:04Z | 849887b5a686b218e304ede261142adac3fcc7d89c29d5cfb76b2591179a9404 |
+| Wave interference | 1383568553 | 2026-11-03T11:22:04Z | 9aea464d3df63ab8d80d4f4b143d916176e1f797ddb753e81cf768f3161c5bfd |
+| Torque | 1382438427 | 2026-10-28T18:24:48Z | 415f2e8b44e2f3cebf6333dcbbcbca89e8763b0438642290af4642e1ea4ad6d3 |
+
+251 candidate blocks; the list agent kept 207 laws (dropped 42, merged 2), so a seeded sample of 120. Class, blind, by
+the chart rule: chart 69, other 51. G3's expectation, written before the check: (0.92·69 + 0.03·51)/120 = 54.2%. The
+restater (DVF's brief) claimed 60 notation; all 60 pass the check. Read before counting, I judge two not the same
+relation: 17 and 18, approximations whose restatement keeps the exact part and drops the "≈" step. By the rule all 60
+count.
+
+- **G1 killed, narrowly**: 58 of 69 laws judged chart are notation (84.1%, under 85%).
+- **G2 not killed**: 2 of 51 laws judged other are notation (3.9%), and they are the two I judge not the same relation.
+- **G3 not killed**: 60 of 120 = 50.0%, against the 54.2% expected (4.2 points).
+
+Said plainly: for the first time the content side held. Written down before the list, the chart rule left out no kind of
+notation: of 51 laws it put elsewhere, none restated by the rule but two approximations restated in part. Its chart side
+missed its bound by one law. Nine of the eleven chart laws called content are the Euler angles read back from a frame or
+a rotation matrix (34, 37–44: α = arctan(R₃₂/R₂₂), β = arcsin(−R₁₂), …), which the restater called content because "the
+angle is the output"; the other two are a matrix exponential of a sum (5) and the rapidity as artanh β (24), the same
+reason. Earlier restaters took a law giving an angle by an inverse function as notation, stated as the direction's slope
+(DVC 16, the critical angle; DVE 18, arctan 4; DVF 10, 16). So the miss turns on one call that the restaters' brief does
+not settle: whether "θ = arctan(x)" is restated by "the slope of θ is x". By the earlier restaters' call G1 would be
+69 − 2 = 67 of 69 (97%); that count is post hoc and not scored.
+
+Post hoc, untested: the chart rule sorts these lists as well as the restatement rule itself; what is left open is not the
+entry but the restaters' treatment of an angle given as an output.
