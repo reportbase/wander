@@ -43,3 +43,23 @@ Kill condition: any of B0–B5 false at any m in its range. A killed prediction 
 ## Runs
 
 (below this line, nothing above is edited)
+
+### Run 1 (15 Nov 2026; `runs/bld/bld.py`, output `runs/bld/bld-run1.txt`)
+
+Nothing killed: B0–B5 hold at every m. The integer search is fast (m = 10⁵, N = 157,080, 15 s).
+
+- **B0.** The count of reads to the horizon, found with integers only, equals the referee's ⌈π/(2·arctan(1/m))⌉ at
+  all 14 m.
+- **B1, B2.** N(m) − πm/2 lies in (0.04, 1.005); 2N/m is above π at every m ≥ 2, by 2/m times the fractional
+  shortfall of πm/2 (0.86 at m = 2, 5.8·10⁻² at 10, 4.1·10⁻⁴ at 1000, 7.3·10⁻⁶ at 10⁵).
+- **B3.** Only m = 1 lands exactly on the horizon (N = 2, (1 + i)² = 2i: two corner reads). Every other m passes it.
+- **B4.** e/2 − m·(e − E(m)) times m climbs 0.85, 1.14, 1.234, 1.2447, 1.2458, toward 11e/24 = 1.24581, under the
+  bound 1.25 throughout: e approached from below, by e/(2m) − 11e/(24m²).
+- **B5.** The length the N reads carry, m·(N/2)·ln(1 + 1/m²), within 1.1·10⁻² of π/4 by m = 10 and 1.8·10⁻⁶ at 10⁵.
+
+How hard a test it was (said after the run): B1, B2 and B5 follow from B0 by arithmetic, since N is a ceiling, so
+once B0 held they could hardly fail; B4 is the series of (1 + 1/m)ᵐ. What could have failed is B0 (that a count of
+equal reads, with no angle, finds the horizon where the angle says) and B3 (that it lands there only at the corner's
+two steps). Post hoc: at m = 10ᵏ, 2N/m is π rounded up at k decimals, so the digits the count gives are the base
+chosen for m, not anything of π's; no finite count is π (R922), and the approach is one-sided, π from above along the
+turn, e from below along the scale.
