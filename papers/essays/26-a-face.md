@@ -244,8 +244,7 @@ just H and V, with one more degree of freedom.
 
 The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028, R1029, R1030, R1031), the wording mine. Older wordings in the series
 that give a facing "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
-brought to it. Its first version gave the two facings as an inner and an outer sweep, with routes Ω and 1/Ω; since
-R1043 they are the near and far readings, s and 1/s.
+brought to it. Since R1043 the two facings are the near and far readings, s and 1/s.
 
 ## 8. What needs a face, and what does not
 
