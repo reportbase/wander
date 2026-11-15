@@ -51,12 +51,12 @@ point moves sideways by ln k. Nothing moves up or down, and a slide keeps every 
 larger with the thumb, and no point of the page moves at all: a distance in thumbs is what it was. What that scaling
 moves is only where the across axis's zero sits against a unit outside the world, the thumb in metres, since
 ln(d/metre) = ln(d/H) + ln(H/metre) and only the last term changes. So the first test, scale the world, comes down to which part
-moved: what stays is a reading (up) or an extent (a gap across, a distance in thumbs, one distance against another); what
+moved: what stays is reading: up, and the gaps across (a distance in thumbs, one distance against another); what
 moves is the zero tied to a metre, a writing. The direction up is what one read holds. The distance across is an extent:
 unmoved by scaling, held by no single look, needing a second standpoint. Two looks held at once have it by reading
 alone, a ratio of their slopes; one standpoint moved needs its earlier look kept and the step taken, and those are
 writes. Where its zero falls
-against a unit, the size of anything in metres, is the one number no reading or extent fixes.
+against a unit, the size of anything in metres, is the one number no reading fixes.
 
 **Turning the world slides up or down.** Turn, and every point moves up by the same amount, and nothing moves across. An
 observer's two ignorances, after Jaynes, are which way it faces and how large things are. On this plane they are two slides
@@ -282,7 +282,7 @@ Almost all of it is old.
 - **The limit.** (1 + iθ/n)ⁿ is Euler's own route; the leftover of non-commuting steps in space is the Lie–Trotter
   formula (Trotter 1959).
 
-What is the series' own is the reading: up as the read, gaps across as extents and the across zero as the write, the scale
+What is the series' own is the reading: up as the read, gaps across had by reads held together, and the across zero as the write, the scale
 test as which part moved, the two
 corners as its two mirrors, the thumb's lay as a turn in distance, the sphere as the blueprint's picture of why the charts
 agree, the heat as a count per chart, and the place where it stops as the place where reading and placing stay apart but
@@ -311,8 +311,8 @@ It settles what the heat is. The heat is the read's measure counted per unit of 
 flat. A heat map is a good picture of the read, and the picture depends on the chart.
 
 And it marks where the clean arithmetic ends. In the plane, turns add; in space they do not, and a loop leaves a turn
-behind. What survives everywhere is the part the series cares most about: the read holds directions, extents are gaps
-across, the write holds amounts, and scaling the world moves only the third.
+behind. What survives everywhere is the part the series cares most about: reading holds directions and the gaps across
+between them, the write holds amounts, and scaling the world moves only the write.
 
 **Demos.** `euler.html` (the three charts side by side or one sliding into the next; the blueprint's sphere and the thumb
 as a boost; the heat at each point and per chart; a line and a spiral with their mirrors; two turns in space; a flat chart in space, Lambert's and the stereographic, turned; breaths, three loops side by side; n reads),

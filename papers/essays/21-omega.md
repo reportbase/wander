@@ -172,9 +172,9 @@ chart is what one has when it is not. That is a mistake, and the letter Ω makes
 one read, whatever is or is not known. What knowing a size changes is something else: a size is an amount in a unit,
 which is a write, and a write is not a property of either chart.
 
-What the paper does distinguish is two reads. In the inscribed read the horizon is approached and never stood at. In
-the central read, across a thing to its rim, the rim is a point that is reached. The bounded chart suits the second,
-and its number Ω is reached there; the first is described by 1/Ω, a mean that is only approached.
+What the paper does distinguish is two facings. Facing V, the near reading s = v/h gives V in terms of H; facing away
+from V, the far reading 1/s = h/v gives H in terms of V. They multiply to 1 at every reading and meet at 1 at the
+corner. Ω and 1/Ω stay at the horizon, as limits: Ω the total of the heat, approached by a count, 1/Ω the mean share.
 
 ## 7. Three thumbs
 
@@ -386,9 +386,7 @@ total. Ω is what the blueprint says the total is.
 
 *It is not one number before a path is chosen* (§3).
 
-*It does not turn two reads into one.* Ω × (1/Ω) = 1 shows that the two constants are reciprocal. It does not show that
-the inscribed and central reads are one operation; that is Euclid III.20, a statement about one point seen from two
-places on a circle.
+*It does not turn two reads into one.* Ω × (1/Ω) = 1 shows that the two constants are reciprocal, and nothing more.
 
 *It should not go into the paper.* Classical mathematics uses π, and a reader who knows that 2/π is the Cauchy's
 coefficient should find it there. The letter is for thinking with.

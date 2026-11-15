@@ -55,8 +55,8 @@
 <body>
 <main>
     <h1>One moon</h1>
-    <p class="lede">A single moon crossing the sky, nothing else. The read's directions, the <span class="teal">inscribed
-    sweep</span>, cover the whole wedge, their heat given before anything arrives; each tick the moon's light paints a few of them: a
+    <p class="lede">A single moon crossing the sky, nothing else. The read's <span class="teal">directions</span>
+    cover the whole wedge, their heat given before anything arrives; each tick the moon's light paints a few of them: a
     small patch, moving over directions that stay put (drawn as cells, a count of places). From the patch alone come the moon's track, its turn per tick, its
     time to contact and its path's angle, all ratios and ticks. Its <span class="violet">shape about its own centre</span>
     is a radius along each direction from that centre, an amount in a unit nothing reads, had only by ranging (a writing)
@@ -72,7 +72,7 @@
             <button id="smooth">smooth moon</button><button id="truth">the referee</button><button id="known">radius known</button>
         </div>
         <div class="grid" style="margin-top:10px">
-            <div><canvas id="map" width="512" height="512"></canvas><p class="cap">The inscribed sweep: the whole wedge, Lambert's
+            <div><canvas id="map" width="512" height="512"></canvas><p class="cap">The read's directions: the whole wedge, Lambert's
             equal-area map (azimuth across from h to v₂, height up to v), every cell an equal share, given. Gold: the corners.
             White: the cells the moon paints this tick; teal: its track.</p></div>
             <div><canvas id="near" width="512" height="512"></canvas><p class="cap">The same cells near the moon, one pixel a
@@ -85,7 +85,7 @@
     </div>
     <p class="cap">The test is MON (run 2: detections unmoved by scaling; ω exact; τ and the path angle exact for the smooth
     moon, off by up to 9% for the one with relief, whose turning profile its share takes in). Other demos:
-    <a href="recover.html?step=7">the inscribed sweep among many bodies</a>, <a href="demos.html">all demos</a>.</p>
+    <a href="recover.html?step=7">one read among many bodies</a>, <a href="demos.html">all demos</a>.</p>
     <p class="cap"><b>In physics.</b> Ranging is writing: with a range per direction (the signal's speed carried in) the face comes
     back to 4% and distance and speed to 0.25%; with directions alone, the outline and nothing of the face. (<a
     href="https://github.com/reportbase/wander/blob/main/papers/reads-and-writes-physics.md"><i>Reads and Writes in
@@ -219,7 +219,7 @@ function hud(){
     const r = readout(S.t, S.smooth), k = 10 ** S.lgk, D1 = detect(S.t, 1, S.smooth), Dk = detect(S.t, k, S.smooth);
     const a = new Set(D1.det); let diff = 0; for (const x of Dk.det) if (!a.has(x)) diff++; diff += D1.det.length - (Dk.det.length - diff);
     const f = (x, p = 3) => x.toFixed(p), deg = x => (x / RAD).toFixed(2) + '°', L = [];
-    L.push(`tick ${S.t}: the moon paints ${D1.det.length} of the inscribed sweep's cells, a share ${D1.share.toExponential(3)} of the octant's π/2 (a solid angle)`);
+    L.push(`tick ${S.t}: the moon paints ${D1.det.length} of the read's cells, a share ${D1.share.toExponential(3)} of the octant's π/2 (a solid angle)`);
     L.push(`from the detections alone: turning ω ${r.om.toExponential(3)} a tick, time to contact τ ${f(r.tau, 1)} ticks, the path ${deg(r.beta)} off the line of sight`);
     if (S.truth) L.push(`the referee: ω ${r.truth.om.toExponential(3)}, τ ${f(r.truth.tau, 1)}, the path ${deg(r.truth.beta)}; distance ${f(r.truth.d, 2)} (no reading gives it)`);
     L.push(`scale the world ×${k >= 100 || k < 0.01 ? k.toExponential(0) : k.toPrecision(3)}: ${diff} detections changed; the shape the same, its radii ×k`);

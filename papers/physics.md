@@ -142,7 +142,7 @@ current one.
   the radial error is least inside the circle. Parallax is kept, like the inverse square, as a calibration case.
 - 13 October: parallax worked back from what it already knows (`papers/parallax.md` §6; PXC run 4; SPN R223). The
   astronomers' rule that the relative distance error equals the relative parallax error is the far-field limit of the
-  exact ratio γ/sin γ, the outer reading of the parallax angle (π/2 on the Thales circle, parts in 10¹¹ off 1 at 1 pc);
+  exact ratio γ/sin γ, the blueprint's arc over chord in the parallax angle (π/2 on the Thales circle, parts in 10¹¹ off 1 at 1 pc);
   the practice of inferring distances rather than inverting noisy parallaxes (Bailer-Jones 2015) is the flip's missing
   mean with the median kept; the au, measured outside the parallaxes and now fixed by the IAU, is the one outside amount.
 - 14 October: two real-data runs once the network reached the archives. GRD run 1 (`plans/grd-plan.md`; SPN R248): the
@@ -211,10 +211,10 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | a reading and a writing from one pair of stamps | radar: two echo times t₁, t₂ give the Doppler factor as their ratio, t₂/t₁ = k², and the interval as their product, t₁t₂ = τ² (ds² = du·dv); a common rescale of both stamps leaves the ratio and moves the product; the clock at √(t₁t₂), Einstein's assigned time at (t₁ + t₂)/2, Reichenbach's ε entering only the additive quantities (Bondi 1964) | the clock's unit, for the product only | the archived SR paper, checked numerically (R475) |
 | the turn ruler's angle χ (β = sin χ) | the aberration of the seen median: half the sky within 90° − χ; 45° at γβ = 1 | none | SRR P2 |
 | a payload weighting on the addresses; the pair's corner the fixed point of swapping who counts | the Doppler factor D = cosh ξ′/cosh(ξ′ − η); unshifted at cos θ′ = ρ = tanh(η/2); median D γ by source, 1/γ by the observer's directions | a rest frequency (a known kind) | SRR P3, P4 |
-| the inscribed reading, an address, laid by a uniform turn | the weak value A_w = n_z − V·tan(θ_f − θ_i): under a uniform turn of the post-selection the Cauchy at ⟨σz⟩ + iV; superweak share ½ for pure states, (1/π)·arctan(2n_x/(1 − \|n\|²)) for mixed | none | WVR P1, P3 |
-| the central reading (the Bloch point, its height V and foot) and Born's weight carrying the address to the payload | the Born-weighted weak value has mean n_z and variance V², so V² + P² = ⟨σz²⟩ = 1 for a pure state | Born's rule | WVR P2 |
+| a reading (the near reading s = v/h), an address, laid by a uniform turn | the weak value A_w = n_z − V·tan(θ_f − θ_i): under a uniform turn of the post-selection the Cauchy at ⟨σz⟩ + iV; superweak share ½ for pure states, (1/π)·arctan(2n_x/(1 − \|n\|²)) for mixed | none | WVR P1, P3 |
+| the point at twice the angle (the blueprint's, Euclid III.20: the Bloch point, its height V and foot) and Born's weight carrying the address to the payload | the Born-weighted weak value has mean n_z and variance V², so V² + P² = ⟨σz²⟩ = 1 for a pure state | Born's rule | WVR P2 |
 | a payload law and the bare turn, mixed | a fringe's arrivals read as tan(φ/2): a share V on the payload's law, 1 − V on the Cauchy; the mean climbing (1 − V)·(2/π)·ln 10 a decade | Born's rule | WVR P5 |
-| a mean over the uniform turn's directions of a bounded amount (the shadow cos θ, or the central height sin 2θ) | 2/π in averaging meters, Buffon, fibre and canopy factors, a square wave's fundamental (34 of TPI's 65) | the turn's uniformity: any other fair weight moves it | TPR P1, P6 |
+| a mean over the uniform turn's directions of a bounded amount (the shadow cos θ, or the height sin 2θ at twice the angle) | 2/π in averaging meters, Buffon, fibre and canopy factors, a square wave's fundamental (34 of TPI's 65) | the turn's uniformity: any other fair weight moves it | TPR P1, P6 |
 | the turn's share below a direction, (2/π)θ, ½ at the corner | sign correlators, Kendall's τ, the arcsine law, Bell's local model (10 of 65) | none at the corner (the exchange alone); the uniform turn elsewhere | TPR P6 |
 | the turn's length, or a square's mean ½ | Flamant, Sato–Tate, the normal law's 1/2π, Kramers–Kronig's half residue (8 of 65): 2/π under every fair weight | none | TPR P6 |
 | the uniform turn aimed outward, laid on a flat receiver (the lighthouse; OFS's Cauchy wedge) | a point source's light on a plane, the cos³ law: half the (D − 1)-dimensional Cauchy of scale d; the inverse square its height on the axis | the source's power P | ISR P1 |
@@ -222,7 +222,7 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | a reading (unchanged when the world is scaled) against a writing | log N–log S, the 3/2 slope of counts by flux, read with no distance; 1/d² itself a comparison of standpoints, needing a baseline or a standard candle | a baseline (parallax) or a kind (the candle) for 1/d²; none for the counts | ISR P5; MAG, CNT, GCN sorted |
 | the finest degree held at the point under the reader, πR/(aε): one octave per level of altitude, exact | the finest relief a pass at altitude a resolves; per level of distance only far off (1.10 octaves at a = R, 14.6 at a = 10⁻³R); the Cauchy height e^(−κa) the same law, log₂(2K) octaves coarser on the plane, the multipole cut (R/d)ⁿ from far off | none (a ratio) | RFR P3–P4 |
 | REF's ρ_k, relief at its first hold in the reader's addresses | 2·RMS_k/λ_k: the world's own relief over wavelength, the same at every K and, to first order, every distance | none | RFR P5′ |
-| the ℓ₁ cut h + v = 1 of two standpoints' readings, joined by their exchange (neither an inscribed nor a central reading) | hard-ball contact d = r_a + r_b; the momentum share hands over at equal sizes (q(ρ) + q(1/ρ) = 1 + e) and the energy passed is stationary there ((1 + e)²/4) | none for contact; one material (a known kind) for masses | POL P1–P2; POR identities, P1 |
+| the ℓ₁ cut h + v = 1 of two standpoints' readings, joined by their exchange (not one standpoint's reading) | hard-ball contact d = r_a + r_b; the momentum share hands over at equal sizes (q(ρ) + q(1/ρ) = 1 + e) and the energy passed is stationary there ((1 + e)²/4) | none for contact; one material (a known kind) for masses | POL P1–P2; POR identities, P1 |
 | a payload folded into address cells of breadth in proportion to distance (a mean, irreversible) | an apparent 1/D^dim fall-off of a signal held by distance; its peak lost; refining by time to arrival recovers nothing | the signal's own grain σ, or a known kind (its shape) | POR P4–P5; POL runs 16–18 re-read |
 | a rung's error as a pan (one factor, a zoom) against a stretch (an offset linear in distance: another lay, a hidden pivot amount) | a distance-ladder rung calibrated against an independent distance; Hubble 1929's brightest-star rung a stretch, not a factor | the pivot distance, for a stretch | LTR P1–P3 |
 | a loop's closure error | locates a misread link only through a network of loops whose routes cross different objects; a drift that fails to close belongs to the sample compared, not a rung | none | LTR P1(c), P4 |
@@ -254,17 +254,17 @@ What each piece of SPN's geometry meets in physics, and through which bridge. "T
 | one stream against readings at once with a shared denominator | looming's size–distance ambiguity; a same-depth neighbour's ratio S₁/S₂ separates approach from growth | none | PAY P1, P2 |
 | one amount from outside fixes every amount linked to it (OFS Proposition 8(b)); a unit agreed between readers (OFS §9) | dimensional analysis (only dimensionless ratios are read); the SI since 2019, every base unit fixed by an agreed value of a constant (Δν_Cs, c, h, e, k_B, N_A, K_cd) | the constants themselves, by agreement | OFS review 5, point 5 |
 | the addresses (directions, order, shape up to scale) exact while the scale is arbitrary; one amount from outside, a pan in levels | the completed view assembled from situated observations (parallax, triangulation, multi-epoch astrometry, the distance ladder); statistical error, which averages down, against systematic calibration error, which does not and is carried up the ladder | a baseline (travel), a shared length, a known kind | STC P1–P7 |
-| the central reading in squares at twice the angle: the point (h², hv) on the circle over the line (R265, a reading) | Malus's law (the foot h² = cos²θ); a polarization's Stokes point at 2θ; a resonance's admittance circle, half power at the corner X = R; the unitarity circle and Breit–Wigner's sin²δ | none: classical identities, stated, then checked | `runs/thl/waves.py` (identities) |
+| the point at twice the angle, in squares (the blueprint's, Euclid III.20): the point (h², hv) on the circle over the line (R265, a reading) | Malus's law (the foot h² = cos²θ); a polarization's Stokes point at 2θ; a resonance's admittance circle, half power at the corner X = R; the unitarity circle and Breit–Wigner's sin²δ | none: classical identities, stated, then checked | `runs/thl/waves.py` (identities) |
 | the facing on the unit circle: sin 2θ = 2hv and cos 2θ = h² − v², with h and v two paths' amplitudes as unit relations | two-path interference: visibility at most 2hv, predictability P = \|h² − v²\|, V² + P² ≤ 1 (Greenberger and Yasin 1988; Englert 1996), equal for a pure state; full visibility only at the corner, 2hv = sech of the levels between the amplitudes, already in print as V = sech θ, P = tanh θ (Bramon, Garbarino and Hiesmayr 2004; Krause, Fischbach and Rohrbach 2014) | the Born rule: an amplitude is the square root of a share of the counts | WVP run 4 (the bound, at the corner only); `runs/thl/waves.py` (the identity) |
 | a payload held whole as a pattern, met one arrival at a time (R270, a reading: wave-like, particle-like) | an intensity pattern built by counted detections, independent draws at √N | the Born rule; one detection an event | WVP runs 1–2 (simulation), 3–4 (real photons; classical) |
-| the two sweeps of one point: the inscribed (a party's direction at θ, its reading the stereographic chart s = v/h) and the central (the pair's middle, at 2θ, the direction squared, ½(h + iv)²) (OFS §4) | a qubit: the state (a ray, amplitudes h and v, the complex ratio ζ = ψ₁/ψ₀ the Bloch sphere's stereographic chart) and its Bloch point at 2θ, (2hv, 0, h² − v²) on the real slice; Born's rule the foot h²; orthogonal states antipodal; a 2π state turn gives −ψ (720° of rotation to return); a pure state on the sphere, a mixture inside the ball | Born's rule | QBT (identities, exact) |
+| a direction and its point at twice the angle: the direction at θ (its reading the stereographic chart s = v/h) and the pair's middle at 2θ, the direction squared, ½(h + iv)² (the blueprint's, Euclid III.20; OFS §4) | a qubit: the state (a ray, amplitudes h and v, the complex ratio ζ = ψ₁/ψ₀ the Bloch sphere's stereographic chart) and its Bloch point at 2θ, (2hv, 0, h² − v²) on the real slice; Born's rule the foot h²; orthogonal states antipodal; a 2π state turn gives −ψ (720° of rotation to return); a pure state on the sphere, a mixture inside the ball | Born's rule | QBT (identities, exact) |
 | the reader's ignorance as a group (Jaynes): what cannot be fixed is averaged over; readings survive, amounts need an agreed unit | quantum reference frames (Bartlett, Rudolph and Spekkens 2007): the twirl over an unshared frame; without a phase reference the visibility 2hv is lost and the predictability h² − v² kept; without an orientation one qubit is I/2 and two copies keep only the overlap (1 + n₁·n₂)/2; a weak value pre-selected on the equator is the stereographic address tan(a/2)·sin b, even in height (law ½(1 + x²)^(−3/2), superweak 1 − 1/√2 past the corner), the foot (Born's weight) giving back ⟨σz⟩; two Gaussians' overlap 2k/(1 + k²) = sech(ln k), the reference width a zoom | the twirl; Born's rule; the width | QSO (exact; F4 killed twice by my set-up and arithmetic, F4″ not) |
 
 ## 1½. Re-read on 22 October (SRR, WVR, TPR, SPN R437; POR, RFR, GDR, LTR, SPN R439)
 
 Tom: "we've put physics aside writing the ofs paper. we have learned alot, lets revisit our physics results", then
 "1,2,3". The motion and relativity results, the wave results and the 2/π catalogue re-read with OFS's address and payload,
-reading and writing, and the two sweeps; each with a plan written first and an exact run (`plans/srr-plan.md`,
+reading and writing, and the point at twice the angle; each with a plan written first and an exact run (`plans/srr-plan.md`,
 `plans/wvr-plan.md`, `plans/tpr-plan.md`). Nothing below is new physics; what moves is where each piece falls, and some of
 the earlier wording, corrected here and in notes appended to each plan:
 - **Motion and relativity.** MOT run 3's "three pairs, three corners" are three kinds: the sky's a median (only in the frame
@@ -274,11 +274,11 @@ the earlier wording, corrected here and in notes appended to each plan:
   two intervals (or the sender's exchanged), and a Doppler factor read as a frequency needs a rest frequency: a writing,
   not "no bridge" (the rows below and in §1 that say so). Mass is the least value of E over boosts, the pair's geometric
   mean; the corner is the rest frame.
-- **Waves.** The weak value is the address (the inscribed reading), the Cauchy at ⟨σz⟩ + iV under a uniform turn of the
-  post-selection; the Bloch point, its height V = 2hv and foot (predictability, Born's h²) are central readings; counted
+- **Waves.** The weak value is the address (a reading, the near reading s), the Cauchy at ⟨σz⟩ + iV under a uniform turn of the
+  post-selection; the Bloch point, its height V = 2hv and foot (predictability, Born's h²) are the point at twice the angle (the blueprint's); counted
   arrivals are the payload, Born-weighted. The twirl averages (a payload operation) and changes no member's V, so "the
-  visibility lost as an amount, the predictability kept as a reading" (§1, QSO) misassigns both: both are central. The
-  fringe phase by circular mean (WVP Q3) is a central reading, not an address. "Wave-like, particle-like" (R270) is better
+  visibility lost as an amount, the predictability kept as a reading" (§1, QSO) misassigns both: both are the doubled point's. The
+  fringe phase by circular mean (WVP Q3) is the doubled point's, not an address. "Wave-like, particle-like" (R270) is better
   said as: payload arrivals, Born-weighted, whose directions are addresses.
 - **2/π.** Not "the inner reading" the address reader holds (that reader has shares and medians, no means). 34 of the 65
   are a payload-side mean over the uniform turn's directions of a bounded amount; 10 a share of the turn (at the corner
@@ -456,7 +456,7 @@ Then (SPN R440; Tom: "proceed with recommended changes") a real-data test of the
   Kosterlitz–Thouless jump. For 62 of them the constant, computed from the step of its derivation where π enters,
   matches its source (63 checks, mostly to 40 digits); two share the square wave's computation, and Wheeler's microstrip
   formula was not traced. Fifty-five come from a turn taken evenly (an orientation, a phase, the equal-spread normal
-  pair, a Haar measure) and read as something never negative, the inner reading of OFS §3.4. Seven are the circle held
+  pair, a Haar measure) and read as something never negative, the mean shadow of OFS §3.4 (the blueprint's). Seven are the circle held
   as a shape (a semicircle's area or the arcsine integral: contact, a disc's capacitance, a fault's slip, random
   matrices, stellar line profiles), one is a pole (alternating permutations) and two were not traced. In space the
   shadow on an axis gives ½, but the relative angle π/4 and the half-angle chord 2/3. Read as a conversion (SPN R254; a reading, untested): the
@@ -760,7 +760,7 @@ that holds less of it can be tested against the referee exactly. That is evidenc
   13 of 51 turn formulas infer an unknown against 4 of 7 shape formulas (P7 killed). The clue's best cases are the turn
   formulas used to read a missing whole through a shadow or a sign. Run 4 (SPN R253, the third mark, a sweep actually
   made): only the averaging AC meter and the relay's describing function carry all three marks (P9 killed, two not
-  three); there the 2/π is the inner reading as an instrument. Ten if a population held at once counts as a sweep.
+  three); there the 2/π is the mean shadow taken by an instrument. Ten if a population held at once counts as a sweep.
 - **MAG P4: K0 III scatters 1.4 levels**, not under 1.0. A known kind is a bridge about a level wide.
 - **CNT P3 and P4: the plane and the poles count alike.** The disc was predicted to flatten the counts toward the poles
   more than in the plane. It does not: both give 1.23. Dust in the plane and the clumping of young bright stars are the
@@ -910,7 +910,7 @@ the rules of §0; neither is a result of this paper yet.*
   - *Its angular density is not the pushforward.* The pushforward of dθ/π to θ is uniform; cos²θ/(π/2) is dθ/dx written
     as a density in θ, another law.
   - *It runs the address and the payload together.* In this paper's dictionary (§1, QBT) Born's weight is the foot h² of
-    the central sweep's point at 2θ, a share of the payload's point, while 2/(π(1 + s²)) = (2/π)·h² is the density of the
+    the point at 2θ (the blueprint's, Euclid III.20), a share of the payload's point, while 2/(π(1 + s²)) = (2/π)·h² is the density of the
     addresses: one shape, two things (SPN R289). The draft's square is the second read as the first.
   - *Fubini–Study is circular here*: d_FS is defined from |⟨k|ψ⟩|, so cos²(d_FS) = |⟨k|ψ⟩|² assumes the overlap.
   - *Gleason's qubit gap* is already closed with generalized measurements (Busch 2003; Caves, Fuchs, Manne and Renes
@@ -919,5 +919,5 @@ the rules of §0; neither is a result of this paper yet.*
     exclude unless the sharing is nonlocal.
   - *"Single-shot Cauchy, accumulated Gaussian"* contradicts the Cauchy's stability: a mean of Cauchy readings is the
     same Cauchy (OFS §7.2); a move toward the Gaussian marks amounts (LGO, SPN R468).
-  - *What agrees:* the measured weight as a central reading of one point, and a measurement changing what the reader
+  - *What agrees:* the measured weight as the foot of one point at twice the angle, and a measurement changing what the reader
     holds rather than the state (QBT, QSO); both already here, classical, the reading ours.

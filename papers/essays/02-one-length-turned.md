@@ -5,8 +5,8 @@
 The first essay ended on a claim: a read with no second length has no circle, yet has the circle's geometry, because its
 own single length, pointed at the mountain and turned, generates it. This essay takes that claim slowly. It asks what
 pointing one length gives you, why the turn, drawn whole, is a circle and not some other curve, and why there is one
-special direction, at 45°. It also shows how two different ways of pivoting the same length read the same point twice, once
-as a ratio and once as a square.
+special direction, at 45°. It also shows the two facings, the near reading and the far reading, and how the blueprint
+names one point of its circle twice, once as a ratio and once as a square.
 
 All of it is classical geometry, most of it in Euclid. What is new is the order in which it is read. Usually the circle
 comes first, as an object held whole, and turning is something done to it afterwards. Here the pointing comes first. The
@@ -185,69 +185,57 @@ turns through an angle θ, the crossing moves round the circle by twice that ang
 
 ---
 
-## 6. Two sweeps, one standpoint
+## 6. Two facings, and one point named twice
 
 That factor of two is Euclid again, in Book III: an angle at the edge of a circle is half the angle at the centre that
-stands on the same arc. It is called the inscribed angle theorem, and it organises everything a read can hold.
+stands on the same arc. It is called the inscribed angle theorem. On the blueprint it gives one point of the arc two
+names: the ray from A at θ, and the radius from the middle of the chord at 2θ, which end at the same point for every θ.
+Both names are the blueprint's, in angles. The standpoint is at A, a point the blueprint's circle passes through. The
+centre belongs to the pair, A and B, and is neither party's place.
 
-There are two natural ways to sweep the same arc.
+### The two facings
 
-- **From A, a point on the circle.** A ray from A turns through θ. This is the *inscribed* sweep.
-- **From the middle of the chord, the circle's centre.** A radius turns through 2θ. This is the *central* sweep.
+What the standpoint has is its readings, and they come in two facings. Facing V, it has the near reading s = v/h, V in
+terms of H. Facing away from V, it has the far reading 1/s = h/v, H in terms of V. The two multiply to 1 at every
+reading, s × 1/s = 1, and they meet at 1 at the corner, where s and 1/s are equal. Taken at even steps of turning, the
+readings follow the Cauchy law: the heat below the corner equals the heat above it, the median at 1, and no mean.
 
-The ray at θ and the radius at 2θ end at the same point of the arc, for every θ. One point, reached two ways.
+### A ratio and a square
 
-Why only these two? A sweep is useful for reading an arc when equal steps of turning reach equal stretches of arc,
-wherever the sweep points. From the centre that is obviously so: each step of turn moves the radius's end by the same
-step of arc. From a point on the circle it is so too, by the inscribed angle theorem: each step of turn moves the end by
-twice the step of arc, always twice. From anywhere else it fails. Stand inside the circle but off centre, and a step of
-turn sweeps more arc when you look toward the centre than when you look away from it. Stand outside, and the rate runs
-wild as your gaze grazes the edge. So a circle has exactly two places to sweep it evenly from: its centre, and any point
-on it. There is no third.
+The blueprint names the same point in two different ways, and the two names are of different kinds.
 
-These are not two reads, and not two motions. They are one standpoint's directions, counted about the two pivots the
-geometry allows. The standpoint is at A, a point the blueprint's circle passes through. The centre belongs to the pair, A and
-B, and is neither party's place.
+**A ratio.** Follow A's ray out until it crosses the line that touches the circle at B. The height where it crosses is
+s = v/h, the reading of section 1. As the ray turns toward the vertical, that height runs off to infinity. The readings
+are unbounded, and they are the ones that follow the Cauchy law.
 
-### What each sweep reads
+**A square.** The radius at 2θ ends at a point whose coordinates are half of (h² − v², 2hv). If you write A's direction
+as a single complex number, h + iv, that point is half its square. Its coordinates never exceed the radius, so they are
+bounded, and every average over an even turn exists: the across part averages to 0, and the height, measured against the
+radius, averages to 2/π.
 
-The two sweeps name the same point in two different ways, and the two names are of different kinds.
-
-**The inscribed sweep reads a ratio.** Follow A's ray out until it crosses the line that touches the circle at B. The
-height where it crosses is s = v/h, the reading of section 1. As the ray turns toward the vertical, that height runs off
-to infinity. The readings are unbounded. This is the sweep whose readings, taken at even steps of turning, follow the
-Cauchy law: half below the corner and half above, the median at 1, and no mean.
-
-**The central sweep reads a square.** The radius at 2θ ends at a point whose coordinates are half of (h² − v², 2hv). If
-you write A's direction as a single complex number, h + iv, that point is half its square. The central sweep's point is
-the inscribed sweep's direction, squared. Its coordinates never exceed the radius, so they are bounded, and every average
-over an even turn exists: the across part averages to 0, and the height, measured against the radius, averages to
-2/π.
-
-The factor of two between the sweeps *is* that squaring. It is why the radius turns twice as fast as the ray. It is why
-one sweep's readings are ratios, unbounded and held by their median, and the other's are squares, bounded and held by
-their mean.
+The factor of two between the ray and the radius *is* that squaring. It is why the radius turns twice as fast as the
+ray. It is why the ratios are unbounded and held by their median, and the squares bounded and held by their mean.
 
 The same doubling is how a spin's state is drawn in physics: a state at angle θ has its point on the sphere of states at
 2θ. Carry a spin round a closed loop of directions and the phase it gains from the loop alone, Berry's geometric phase, is
 half the solid angle the loop encloses, the half being this doubling (the third essay, section 10).
 
-There is a pretty corollary. In complex form, the central sweep's point is half of e raised to 2iθ. At the start, zero
+There is a pretty corollary. In complex form, the radius's end point is half of e raised to 2iθ. At the start, zero
 turn, it sits at B. At the corner, it sits at the top of the arc, in the direction i. At the end of the quarter turn,
 the horizon, the radius has made a half turn and sits back at A, home. That half turn is e to the power iπ, which equals
-−1. Euler's identity is the central sweep's half turn, seen from the middle of the chord, while the read's own ray has
+−1. Euler's identity is the radius's half turn, seen from the middle of the chord, while A's own ray has
 made only a quarter. The e and the π are only notation here: the same squaring, written with the reading s, is (1 +
 is)/(1 − is), and as s runs off to infinity that runs to −1. What the identity records is projective: the read's two
 ends, zero and the horizon, land at the two ends of one diameter. Section 9 comes back to Euler's formula as the
 blueprint's notation for the read's turn.
 
-**One turn, two charts.** The even turn belongs to neither sweep. Written as the inscribed sweep's ratio, it is the
-Cauchy: the long tails and the missing mean come from the ratio running off to infinity. Written as the central sweep's
+**One turn, two charts.** The even turn belongs to neither name. Written as the ratio, it is the
+Cauchy: the long tails and the missing mean come from the ratio running off to infinity. Written as the radius's end
 point, the very same turn is spread evenly along the half circle, and it has a mean because the half circle is bounded.
 Neither is a bell curve. The bell, the Gaussian, belongs to what arrives, and only as a model: if the light's strengths
 along two axes vary independently and look the same however the axes are turned, together they make a round bell, and
 the direction of that bell's samples is an even turn, which is why its ratio is a Cauchy. That is a fact about one kind
-of paint, not about either sweep. The Cauchy is the read's distribution, a law of directions; the Gaussian is a
+of paint, not about either chart. The Cauchy is the read's distribution, a law of directions; the Gaussian is a
 law of amounts.
 
 The bell also shows where its two constants come from. In polar form it is a turn times a length,
@@ -272,7 +260,7 @@ where its payload will land. *The heat is given; the paint is met.* The third es
 the read's directions and the world's landing points are joined, one to one, by a theorem that needs no second length,
 only the observer's own length turned.
 
-*Demos: one turn and one read; the central reader, step 6 (one read).*
+*Demos: one turn and one read; `central-reader.html`, step 6 (one read).*
 
 ---
 
@@ -283,24 +271,25 @@ There is a number on each side of the chord and the arc, and the two numbers are
 Raise the arm through its quarter turn. Its tip travels π/2 of the arm's length along the arc, while its straight reach
 upward goes from nothing to all of the arm, 1. Read the turn as arc over straight reach and it comes to π/2 over the whole
 quarter; read it as straight reach over arc and it comes to 2/π. The first is what the blueprint, holding the straight reach
-and the whole quarter, measures through the central sweep; the second, through the inscribed sweep. Both have π in them,
+and the whole quarter, measures as arc over chord, θ/sin θ at the end; the second as chord over arc, sin θ/θ. Both are
+in angles, and both have π in them,
 and π is not a read's number: from one place a read has its readings and their corner, not these.
 
-Neither is the straight length itself. The blueprint, holding it whole, has it as 1, no curve involved. Each sweep gets at
+Neither is the straight length itself. The blueprint, holding it whole, has it as 1, no curve involved. Each measure gets at
 that 1 through the arc, and each gets it distorted: one too long by π/2, one too short by 2/π. Only their product
 gives back the 1:
 
 > π/2 × 2/π = 1.
 
 This is not a coincidence of numbers. It says that the sweep, faced from the standpoint, never gives the chord's
-length directly. Measured on the blueprint it is had twice over, once from each pivot, and the two measures multiply to
+length directly. Measured on the blueprint it is had twice over, arc over chord and chord over arc, and the two measures multiply to
 exactly the 1 the blueprint holds, which is arithmetic. What they return is the observer's own length measured in itself, H in H: one thumb, in thumbs. They do not
 return the size of anything else.
 
 **They are rates, not angles, and they are the blueprint's.** Raise the hand from horizontal to vertical, and against
-the straight line from start to end, held whole, the sweep is measured at one of two rates: π/2 from the middle of the chord,
-2/π from a point of the circle. Never 1: the 1 is the blueprint's own rate, the angle, arc per radius read against the
-completed turn; the two sweeps' rates multiply to it, which is arithmetic and no way of making it. Angles are the blueprint's; a read has sweeps. And because
+the straight line from start to end, held whole, the sweep is measured at one of two rates: π/2 arc over chord,
+2/π chord over arc. Never 1: the 1 is the blueprint's own rate, the angle, arc per radius read against the
+completed turn; the two rates multiply to it, which is arithmetic and no way of making it. Angles are the blueprint's; a read has sweeps. And because
 each of these numbers has π in it, the count of a completed turn, they are the blueprint's account of the sweep, not the
 read's own: the blueprint is transcendental, a read is not. A read holds one length, and one length makes only
 rationals; square roots need two lengths combined, and π a limit, the whole turn. A read holds the same sweep as the
@@ -308,31 +297,32 @@ Cauchy, its readings and their corner at 1, where v fills exactly as fast as h e
 something per something, the payload per direction: the per is read, the of is the paint, met. The fourteenth essay, "Rates, not angles", takes this up, and with it why
 the tangent and arctangent, which convert a direction into a share of the whole turn and back, are the blueprint's tools.
 
-**Two facings and the blueprint.** The two numbers sit in two facings. The central one, facing across to a rim, reaches its
-end at a point: π/2 is had there. The inscribed one, facing from home toward a horizon, only approaches its end: 2/π is a
-limit. Both are reads, each a single hemispherical vantage. Neither is the blueprint's. The blueprint is both hemispheres
-at once, the dual hemispherical vantage, drawn, with no facing and no standpoint, and its number is the 1, which is also their product. A person takes both reads,
-and draws besides: it reads the far world from home, faces the thing in front of it across one hemisphere, and has a
-blueprint in whatever it draws whole. So π/2 × 2/π = 1 is not two parties meeting; it is one observer's two reads
-multiplied, which is arithmetic, and the 1 is its own thumb.
+**Two facings and the blueprint.** The two facings are the two readings. Facing V is the near reading s, V in terms
+of H; facing away from V is the far reading 1/s, H in terms of V. Each is a single hemispherical vantage; they multiply
+to 1 at every reading and meet at 1 at the corner. The blueprint is both hemispheres at once, the dual hemispherical
+vantage, drawn, with no facing and no standpoint, and its number is the 1. A person takes both readings, and draws
+besides: it reads the far world from home, faces the thing in front of it across one hemisphere, and has a blueprint in
+whatever it draws whole. So s × 1/s = 1 is not two parties meeting; it is one observer's two readings multiplied, and the
+1 is its own thumb.
 
-**Each number is a facing.** π/2 is not walking and 2/π is not reading; they are entirely the facing: do you face V,
-or face away from V? Facing V (the inscribed sweep), the thumb's share h averages 2/π over the quarter turn, approached
-at the horizon, never reached. Facing away from V (the central sweep), the quarter arc from all of h to all of v is π/2
-thumbs long, reached at a point. Both faces stand on H and turn one quarter turn (essay 26 §7). Their product, 1, is also
-the number of the dual hemispherical vantage (DHV), which has no standpoint and faces neither way. Face V and face away from V at the same time and no facing
-is left: the non-facing, discrete value of 1 thumb. Both stay the DHV's arithmetic, since the single hemispherical vantage (SHV) holds no π.
+**π/2 and 2/π are limits at the horizon, not facings.** π/2 is not walking and 2/π is not reading, and neither is a
+facing. The thumb's share h averages 2/π over the quarter turn, approached at the horizon, never reached; the heat
+1/(1 + s²), gathered from home toward the horizon, totals π/2, approached by a count. Both faces stand on H (essay 26 §7).
+Their product, 1, is also the number of the dual hemispherical vantage (DHV), which has no standpoint and faces neither
+way. Face V and face away from V at the same time and no facing is left: the non-facing, discrete value of 1 thumb.
+π/2 and 2/π stay the DHV's arithmetic, since the single hemispherical vantage (SHV) holds no π.
 
-**Short facing V, long facing away, and whole.** Said most simply: the true size is 1, the thumb in thumbs. Facing V
-gives the short side of it, 2/π; facing away from V gives the long side, π/2; their product is the 1.
+**Short, long, and whole.** Said most simply: the true size is 1, the thumb in thumbs. On the blueprint, chord over arc
+gives the short side of it, 2/π; arc over chord gives the long side, π/2; their product is the 1. From the standpoint
+the same 1 is the near reading times the far reading, s × 1/s.
 The proof is one line, the
 blueprint's. Along the sweep each step of the arc gains v at the rate h: the share at a place is the rate at which the
 thumb is gained per step of arc there. Summed over the arc the gain is all of v, 1; and a sum is a mean times a length,
 (2/π) × (π/2) = 1. The 1 is no property of the circle: straight across the chord the mean gain is 1/√2 over a length √2,
 along the square's two edges ½ over a length 2. Only the split is the path's, and π is what the split costs when the path
 is the turn; in space the same split is ½ and 2, with no π. The 1 is the thumb, not the mountain. The mathematics is old
-(Cauchy's mean projection, 1841; Crofton; Buffon's needle, 1777); the assignment of the short factor to facing V
-and the long one to facing away from V is ours. A walk straight toward a thing is the square's row: far off the thing's share fills, from
+(Cauchy's mean projection, 1841; Crofton; Buffon's needle, 1777); the reading of the 1 as
+the thumb is ours. A walk straight toward a thing is the square's row: far off the thing's share fills, from
 the corner in the thumb's share empties by the same step each stride, and the step times the count is 1 with no π in it
 (essay 19, section 8).
 
@@ -521,7 +511,7 @@ the blueprint's, the same combination is e^(iα)·e^(iβ) = e^(i(α + β)): the 
 read's awkward arithmetic is the turn's plain arithmetic, seen through the tangent. A read uses no trigonometry: its turns compose in the slope, and every sine, tangent and arctangent
 in these essays is the blueprint's (*Reads and Writes* §1, "A read uses no trigonometry"). A reading has no sign, so a turn
 and the same turn plus a half turn give the same reading; the read's line closes after half a turn of its ray, and the
-squaring of section 6 turns that half turn into one whole turn of the central sweep.
+squaring of section 6 turns that half turn into one whole turn of the radius from the centre.
 
 All of this is classical: polar form, the complex logarithm, the area that multiplication keeps, the double cover. What is
 the series' own is the reading: e^(iθ) as the direction, r as the payload, the logarithm's imaginary part the reading and
@@ -533,7 +523,7 @@ counting; a write needs its zero.
 foot and the height above the line that the third essay (section 6) gives every Cauchy, as one complex number z = m +
 iγ. The Cauchy's Fourier transform, the average of e^(itX), is then Euler's exponential of that point, e^(izt): the foot
 sets how fast it oscillates and the height how fast it dies away. A spectral line with a Lorentzian shape is exactly
-this, a turning phasor fading out. And carry the Cauchy onto the circle, the central sweep's chart, and its averages
+this, a turning phasor fading out. And carry the Cauchy onto the circle, the square's chart of section 6, and its averages
 become the powers of one point w inside the circle: the average of Wⁿ is wⁿ. The law with no mean on the line has a mean
 on the circle, and that mean is the standpoint, carried across. This is section 6's "the missing mean is the
 chart's", said in Euler's notation. For the read's own quarter turn the mean direction of the landing point is
@@ -541,7 +531,7 @@ chart's", said in Euler's notation. For the read's own quarter turn the mean dir
 
 The division of the last subsection is here too, with the turn kept. The blueprint's point x + iy = r·e^(iθ), divided by the
 thumb, is the reading 1 + is = sec θ·e^(iθ): the turn whole, carrying a length. Divide once more, by the mirror reading
-1 − is, and the length goes as well: (1 + is)/(1 − is) = e^(2iθ), the central sweep's landing point, with home at +1, the
+1 − is, and the length goes as well: (1 + is)/(1 − is) = e^(2iθ), the landing point of section 6, with home at +1, the
 corner at i and the horizon at e^(iπ) = −1.
 
 **The Cauchy's constant comes from the same turn.** Take the logarithm of that landing point, following it continuously
@@ -601,7 +591,7 @@ way to turn, and the ways do not take turns politely.
 
 The Cauchy's own coincidences part at the same place. In the plane one law plays four parts: it is the uniform turn
 carried by a Möbius map, it is where a random walk from the standpoint first meets the circle (harmonic measure), its
-averages are powers of one point, and it is the two sweeps' rates combined. On the sphere these come apart into two
+averages are powers of one point, and it is the ray's and the radius's rates combined. On the sphere these come apart into two
 laws. One, harmonic measure, keeps the powers, so its mean is still the standpoint. The other, the boosted sky of the
 seventh essay, keeps the Möbius maps, so boosts still compose, but its mean is no longer a power: at rapidity η its mean
 cosine is coth η − η/sinh² η, where the plane's would be tanh(η/2). The reason is old: only in the plane do the maps that
@@ -632,13 +622,13 @@ over those horizons gives 1 + 1/9 + 1/25 + … = ½·(π/2)², from which Basel'
 **In physics.** The one-length circle sits in relativity in plain sight. Divide E² = (pc)² + (mc²)² by E² and it is the
 unit circle of (pc, mc²) in the one unit E, c the bridge: its shares are β and 1/γ, the moving clock's rate, and v/h is
 the celerity γβ. Home is E = mc², the horizon E = pc, light, and the corner pc = mc², β = 1/√2, where Newton's form and
-the massless form are each other's reciprocal, both 6.07% high. A qubit is the two sweeps: its state a direction at θ,
-its Bloch point at 2θ, the central sweep's point, Born's rule that point's foot h². And interference has the arc's two
+the massless form are each other's reciprocal, both 6.07% high. A qubit is section 6's ray and radius: its state a direction at θ,
+its Bloch point at 2θ, the radius's end point, Born's rule that point's foot h². And interference has the arc's two
 numbers as a bound: visibility at most 2hv, predictability |h² − v²|, V² + P² ≤ 1, full visibility only at the corner.
 All textbook; what the sort adds is where each part sits (*Reads and Writes in Physics*
 (`../reads-and-writes-physics.md`), §4.2, §8.1, §8.2).
 
-**Four equations, one.** The circle h² + v² = 1, Euler's e^(iπ) = −1, the two sweeps' π/2 × 2/π = 1 and the Cauchy's
+**Four equations, one.** The circle h² + v² = 1, Euler's e^(iπ) = −1, the blueprint's π/2 × 2/π = 1 and the Cauchy's
 total (2/π)·∫₀^∞ ds/(1 + s²) = 1 look alike because they are one equation read four ways. Divide the blueprint's circle,
 x² + y² = r², by the thumb: 1 + s² = 1/h², the circle in the read's slope. Its reciprocal, h² = 1/(1 + s²), is the
 read's heat, rational in s, with no π and no root in it. Gather that heat from home toward the horizon and it is the
@@ -757,14 +747,14 @@ when it stands still (the sixth essay, "From one look to two, and to an amount";
 lengths, a thing one length made.
 
 **Everything special about the circle is available from one length pointed, with no circle held.** That includes the corner
-at 45°, its two mirrored halves, the right angle on the chord, and the inscribed sweep's ratios and the central sweep's
-squares. So is the blueprint's measure of the two sweeps, π/2 and 2/π, whose product returns the observer's own length. None of
-it needs a second length or the size of anything.
+at 45°, its two mirrored halves, the right angle on the chord, and the two facings, the near reading s and the far
+reading 1/s, whose product is 1. So is the blueprint's arc-over-chord measure, π/2 and 2/π, whose product returns the
+observer's own length. None of it needs a second length or the size of anything.
 
-**The Cauchy is the circle read from its edge.** The inscribed sweep, from the standpoint, where the blueprint's
-circle passes, reads directions as ratios, unbounded, with their median at the corner and no mean. That is the Cauchy, the
-circle's law without the V. The central sweep, from the middle of the pair, reads the same points as squares, bounded, with
-means. They are two names for one point, joined by a theorem in Euclid.
+**The Cauchy is the circle read from its edge.** From the standpoint, where the blueprint's circle passes, directions are
+read as ratios, unbounded, with their median at the corner and no mean. That is the Cauchy, the circle's law without the
+V. The blueprint, from the middle of the pair, names the same points as squares, bounded, with means. They are two names
+for one point, joined by a theorem in Euclid.
 
 The third essay takes the Cauchy on its own terms. It takes a v and an h, nothing else, and it is not the
 inside of a circle's alone: it works on a straight line too, as the lighthouse's flashes along a straight shore show. The essay asks what it means that the read's directions and their
@@ -781,5 +771,5 @@ their median.
 - Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Berlin.
 
 The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10 November (R788) with read and write): the corner in §4 (Propositions 1 and 2), the arc from
-the chord, the two sweeps and what each reads in §4, the one-length circle in §5 (Proposition 3, with the derivation of the
+the chord, the ratio and the square in §4, the one-length circle in §5 (Proposition 3, with the derivation of the
 circle from a uniform returning sweep as part (g)), and the three paths in §12.2.

@@ -77,8 +77,8 @@
 <body>
 <main>
     <h1>Walking the room</h1>
-    <p class="lede">An observer walks round a room. Wherever it stands its directions and their heat are given, the <span class="g">inscribed
-    sweep</span>, every direction once round, before anything arrives: where each thing is from here, the layout, no
+    <p class="lede">An observer walks round a room. Wherever it stands its directions and their heat are given, <span class="g">every
+    direction</span> once round, before anything arrives: where each thing is from here, the layout, no
     amount. A thing's <span class="r">shape about its own centre</span> is a radius toward each standpoint, an amount in a
     unit nothing fixes, had only by ranging (a writing: a pulse carries the speed); walking round a thing collects it.
     The readout keeps the situation: what has been read, what is held, what is written, and what is still unknown.
@@ -95,13 +95,13 @@
             <span id="lfv" class="cap"></span></div>
         <div class="row"><label for="lk">scale the world k</label><input id="lk" type="range" min="-2" max="2" step="0.01" value="0"></div>
         <div class="grid">
-            <div><canvas id="plan" height="430"></canvas><p class="cap">The floor. Tap to walk there. Gold: the inscribed
-            sweep's directions from where the observer stands. Teal: the radii (ranged, a writing) from each thing's centre
+            <div><canvas id="plan" height="430"></canvas><p class="cap">The floor. Tap to walk there. Gold: the
+            directions from where the observer stands. Teal: the radii (ranged, a writing) from each thing's centre
             toward every standpoint taken.</p></div>
             <div><canvas id="map" height="230"></canvas><p class="cap" id="mapcap">The observer's own map.</p>
             <canvas id="shape" height="200"></canvas><p class="cap" id="shapecap">The chosen thing's shape about its centre.</p></div>
         </div>
-        <canvas id="strip" height="92"></canvas><p class="cap">The inscribed sweep from here: every direction once round from
+        <canvas id="strip" height="92"></canvas><p class="cap">The directions from here: every direction once round from
         its zero (the way it walked in; the white tick on the floor), each thing laid as the directions of its two edges, in the order of the turn.</p>
     </div>
     <div class="panel">
@@ -434,14 +434,14 @@
         const n = ro.standpoints, have = ro.placed.length;
         const lines = [];
         lines.push(`Standpoints taken: ${n}${n ? ` · legs walked: ${ro.legs}, each along the zero it faced (the way the last leg came in), its length not read` : ''}`);
-        lines.push(`The inscribed sweep, the directions (their heat given; what arrives paints them; no amount): ${n ? `${NAMES.length} things, ${n * NAMES.length} directions so far` : '—'}`);
+        lines.push(`The directions (their heat given; what arrives paints them; no amount): ${n ? `${NAMES.length} things, ${n * NAMES.length} directions so far` : '—'}`);
         const cov = NAMES.map(nm => `${nm} ${centralOf(nm).covered}/${NC}`).join(', ');
         lines.push(`Shapes about each thing's centre (radii along given directions: amounts, by ranging, a writing, in a unit no reading fixes): ${n ? cov : '—'}`);
         lines.push(`Placed (from two standpoints, the walk's first leg as H): ${have ? `${have} of ${NAMES.length}${ro.legsH && ro.legsH.length > 1 ? `; later legs found from the things: ${ro.legsH.slice(1).map(f3).join(', ')} H` : ''}` : (ro.why || '—')}`);
         lines.push(`Held (a thing's two edges read at once, at its distance): ${have ? 'breadths across the line of sight, in H' : '—'}`);
         const tr = ro.rows.find(r => r.name === 'tree'), deg = x => (x * 180 / Math.PI).toPrecision(3) + '°';
         lines.push(`The tree, through the window: the walk turns ${n > 1 ? deg(tr.gamma) : '0°'} as seen from it (one direction about its centre is ${deg(BIN)}, the resolution ε ${deg(EPS)}): `
-            + (tr.regime === 'both sweeps' ? 'near enough to walk round in part: both sweeps'
+            + (tr.regime === 'both sweeps' ? 'near enough to walk round in part: shape and place'
                 : tr.regime === 'parallax only' ? `too far to walk round: no shape, its place by parallax alone (±${(100 * tr.relErr).toPrecision(2)}% of its distance)`
                 : n > 1 ? 'so far that every standpoint reads it in one direction: a ray, no place' : 'one standpoint: a direction')
             + (n ? (tr.resolved ? '; its two edges told apart' : '; narrower than ε: one point, no breadth') : ''));
@@ -456,7 +456,7 @@
             const shp = r.central ? `${Math.min(...r.shape).toFixed(2)}–${Math.max(...r.shape).toFixed(2)}` : '—';
             t += `<tr><td style="color:${BASE[r.name].col}">${r.name}</td><td>${r.dir == null ? '—' : r.dir.toFixed(1) + '°'}</td>`
                 + `<td>${r.edges ? r.edges.map(a => a.toFixed(1) + '°').join(' to ') : '—'}</td>`
-                + `<td>${r.regime}</td><td class="r">${r.central}/${NC}</td><td class="r">${shp}</td>`
+                + `<td>${r.regime === 'both sweeps' ? 'shape and place' : r.regime}</td><td class="r">${r.central}/${NC}</td><td class="r">${shp}</td>`
                 + `<td class="${pl ? 'w' : 'no'}">${pl ? `(${f3(pl[0])}, ${f3(pl[1])}) ${unit}${r.relErr > 1e-3 ? ` ±${(100 * r.relErr).toPrecision(2)}%` : ''}` : 'not placed'}</td>`
                 + `<td class="${ac != null ? 'w' : 'no'}">${ac != null ? f3(ac) + ' ' + unit : '—'}</td>`
                 + (st.truth ? `<td class="x">(${f3(r.truth.place[0])}, ${f3(r.truth.place[1])}), ${f3(r.truth.across)}</td>` : '') + '</tr>';

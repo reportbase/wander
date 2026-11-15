@@ -410,8 +410,7 @@ Two standpoints held at once, two eyes, have the extent by reading alone, a rati
 moved to its second standpoint kept its first look and took a step, and the mark that keeps and the stride taken are
 writes; what it then holds, every place in its own stride, is still unmoved when the world is scaled with the stride.
 Put down in an agreed unit, the places are amounts, writes. When it stops and looks again, it reads. Reading and
-writing are not kinds of observer; they are what one observer is doing, and an extent is not a third kind between
-them (the sorting is the series' reading).
+writing are not kinds of observer; they are what one observer is doing (the sorting is the series' reading).
 
 The first essay's survey says the same thing in its own words: the many directions are read (the instrument writes each
 down in degrees), with the base as the thumb every side is an extent, and the one base counted in a unit is the write; a

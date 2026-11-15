@@ -62,12 +62,12 @@
 <body>
 <main>
     <h1>One turn, one read</h1>
-    <p class="lede">One direction from home, given before anything arrives, meets one point, and that one read breaks down
-    two ways. Counted as a <span class="g">direction</span> from where you stand, it is the direction with its heat, the inscribed sweep;
-    counted from the centre of the circle on the chord, it is the <span class="r">point</span> where the paint lands, the
-    central sweep. Both end at the same point: the direction meets its paint there. The heat is given; the paint is met. Over the whole quarter turn the two
-    sweeps, in the blueprint's measure, take the line as π/2 and 2/π (numbers with π in them, the blueprint's); their product
-    is 1, which is also the blueprint's number. In complex form the point
+    <p class="lede">One <span class="g">direction</span> from home, with its heat, given before anything arrives, meets one
+    point. Classically (Euclid III.20; the blueprint's description, in angles, shown for comparison) the radius from the
+    centre of the circle on the chord reaches the same <span class="r">point</span>, where the paint lands, at twice the
+    angle. The direction meets its paint there. The heat is given; the paint is met. In the blueprint's measure, arc over
+    chord and chord over arc take the line as π/2 and 2/π over the whole quarter turn (numbers with π in them, the
+    blueprint's); their product is 1, which is also the blueprint's number. In complex form the point
     is the direction squared, ½e^(2iθ) from the centre: where the direction's reading runs off to ∞ at the horizon, the radius has made
     its half turn to home, e^(iπ) = −1.</p>
     <div class="panel">
@@ -83,8 +83,8 @@
                 <div class="read" id="addr"></div>
                 <div class="read" id="pay"></div>
                 <div class="read" id="both"></div>
-                <canvas id="cv2" height="200"></canvas><p class="cap">Over the quarter turn, in the blueprint's measure: the central sweep's arc over chord
-                (teal, rising to π/2), the inscribed sweep's chord over arc (gold, falling to 2/π), and their product
+                <canvas id="cv2" height="200"></canvas><p class="cap">Over the quarter turn, in the blueprint's measure, in angles: arc over chord
+                (teal, rising to π/2), chord over arc (gold, falling to 2/π), and their product
                 (white), 1 throughout.</p>
                 <canvas id="cv3" height="220"></canvas><p class="cap">The same read on the Cayley disc,
                 w = (s − i)/(s + i) = −e^(2iθ) for the reading s = tan θ: the standpoint i goes to the centre, zero to −1,
@@ -113,8 +113,8 @@
         e^(imt − γ|t|), the other half (the slider shows t ≥ 0). One residue, at the pole, gives both. Classical (the Poisson kernel and its Fourier
         transform); that the pole is where the standpoint is drawn is our reading.</p>
     </div>
-    <p class="note"><b>What needs π, and what does not.</b> The product of the two sweeps is 1 with no π in it: the two are
-        reciprocals, a read's s × (1/s) = 1. The landing point reaches −1 with no e or π: the corner is i, and two corners
+    <p class="note"><b>What needs π, and what does not.</b> Arc over chord times chord over arc is 1 with no π in it: the two
+        are reciprocals. A read's own reciprocals are the near reading s and the far reading 1/s, s × (1/s) = 1. The landing point reaches −1 with no e or π: the corner is i, and two corners
         are i × i = −1. The heat 1/(1 + s²) is rational, and the corner halves it; π enters only when the area is closed to a
         total. And the circle's own equation, h² + v² = 1, is 1/(1 + s²) + s²/(1 + s²) = 1 at every direction. π/2, 2/π and
         e^(iπ) are the completed circle's, the blueprint's: a count has fractions near them, and lands exactly only
@@ -308,14 +308,14 @@
         const r = read(st.t), cc = c();
         $('tv').textContent = st.t.toFixed(1) + '°';
         $('cv').textContent = cc.toFixed(3);
-        $('addr').innerHTML = `<span class="g">The direction</span> (the inscribed sweep, from home): a reading, no amount.\n`
+        $('addr').innerHTML = `<span class="g">The direction</span> (from home): a reading, no amount.\n`
             + `  [h : v] = [${f4(r.h)} : ${f4(r.v)}], so v/h = ${f4(r.ratio)}\n  the sweep's share so far, g = ${f4(r.g)}${Math.abs(st.t - 45) < 0.05 ? '  (the corner: the arms read alike)' : ''}`;
-        $('pay').innerHTML = `<span class="r">Where the paint lands</span> (the central sweep, from the centre): a point of the circle, bounded, no distance to anything.\n`
+        $('pay').innerHTML = `<span class="r">Where the paint lands</span> (from the centre, classically; the blueprint's): a point of the circle, bounded, no distance to anything.\n`
             + `  the radius at 2θ = ${(2 * st.t).toFixed(1)}°; the point's foot h² = ${f4(r.foot)}, height hv = ${f4(r.height)}\n`
             + `  from the centre ½(h + iv)² = ½e^(2iθ), e^(2iθ) = ${f4(landing(st.t)[0])} ${landing(st.t)[1] < 0 ? '−' : '+'} ${f4(Math.abs(landing(st.t)[1]))}i`
             + (mark(st.t) ? `\n  ${mark(st.t)}` : '');
         $('both').innerHTML = `<span class="w">The arc turned through</span> θ = ${f4(r.arc)} over its chord sin θ = ${f4(r.chord)}:\n`
-            + `  central sweep, arc over chord: <span class="r">${f4(r.payload)}</span>\n  inscribed sweep, chord over arc: <span class="g">${f4(r.address)}</span>\n`
+            + `  arc over chord (the blueprint's): <span class="r">${f4(r.payload)}</span>\n  chord over arc (the blueprint's): <span class="g">${f4(r.address)}</span>\n`
             + `  their product: <span class="b">${f4(r.product)}</span>, also the blueprint's number` + (st.t >= 89.95 ? '\n  at the end of the turn: π/2 and 2/π' : '')
             + (Math.abs(cc - 1) > 1e-9 ? `\n<span class="x">Drawn at V = ${cc.toFixed(2)}H: the ray at θ and the radius at 2θ part, by ${gap(st.t).toFixed(4)}.</span>` : '');
     }

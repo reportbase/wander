@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <title>Arrays on the sweeps</title>
+    <title>Arrays on the quarter turn</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
     <!--
@@ -50,10 +50,11 @@
 </head>
 <body>
 <main>
-    <h1>Arrays on the sweeps</h1>
+    <h1>Arrays on the quarter turn</h1>
     <p class="lede">Lay K places on the quarter turn. A direction from home, read as the ratio v/h, goes to the place
-    <code>k = ⌊K·(2/π)·arctan(v/h)⌋</code>: its share of the turn times K. No length enters. The central sweep meets the
-    same point from the centre of the circle, at twice the angle, and gives it the same place. Four kinds of array lie on
+    <code>k = ⌊K·(2/π)·arctan(v/h)⌋</code>: its share of the turn times K. No length enters. Classically (Euclid III.20), the
+    radius from the centre of the circle meets the same point at twice the angle and gives it the same place: the
+    blueprint's description, in angles, shown for comparison. Four kinds of array lie on
     those places: the <span class="g">index alone</span>, the <span class="r">values on the index</span>, a
     <span class="w">constant array</span>, and an <span class="b">array of known length</span>, whose index needs its extent.</p>
     <div class="panel">
@@ -71,8 +72,8 @@
             <span id="Hv" class="b"></span></div>
         <div class="grid">
             <div><canvas id="cv1" height="430"></canvas><p class="cap">The chord from home A to B and the circle on it. Gold:
-            the K places from home, the inscribed sweep's equal angles; teal: the same places from the centre, at twice the
-            angle. The lit place is the one the direction falls in, by both sweeps.</p></div>
+            the K places from home, at equal angles; teal: the same places from the centre, at twice the
+            angle (the blueprint's, for comparison). The lit place is the one the direction falls in, both ways.</p></div>
             <div>
                 <div class="read" id="r1"></div>
                 <div class="read" id="r2"></div>
@@ -243,11 +244,11 @@
         $('kv').textContent = kOf().toPrecision(3);
         $('Hv').textContent = HOf().toPrecision(3);
         $('hrow').style.display = st.kind === 'length' ? '' : 'none';
-        $('r1').innerHTML = `<span class="g">From home</span> (the inscribed sweep): the direction [h : v] = [${f4(rd.h)} : ${f4(rd.v)}]\n`
+        $('r1').innerHTML = `<span class="g">From home</span>: the direction [h : v] = [${f4(rd.h)} : ${f4(rd.v)}]\n`
             + `  v/h = ${f4(rd.s)}, its share of the turn g = (2/π)·arctan(v/h) = ${rd.g.toFixed(4)}\n`
             + `  index k = ⌊${K}·g⌋ = <span class="b">${rd.index}</span>${rd.s === Infinity ? ' (the horizon, kept in the last place)' : ''}\n`
             + `  its reciprocal h/v goes to place ${rd.reciprocal}` + (K % 2 === 0 || rd.index !== (K - 1) / 2 ? `, ${K - 1} − k` : '');
-        $('r2').innerHTML = `<span class="r">From the centre</span> (the central sweep): the same point at φ = 2θ = ${(2 * st.t).toFixed(1)}°\n`
+        $('r2').innerHTML = `<span class="r">From the centre</span> (classically, the radius at twice the angle; the blueprint's): the same point at φ = 2θ = ${(2 * st.t).toFixed(1)}°\n`
             + `  index ⌊${K}·φ/π⌋ = <span class="b">${rd.central}</span>: the same place\n`
             + `Scaling the world by k = ${kOf().toPrecision(3)} multiplies h and v together and moves no index.`;
     }

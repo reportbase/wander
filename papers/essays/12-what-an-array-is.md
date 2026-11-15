@@ -73,27 +73,26 @@ inside and an outside.
 **Four things.** Put the apple beside three others: the universe, a human and a sheet of paper. They sort where V, the
 other's breadth, stands.
 
-- *The apple and the human each read the universe by the inscribed sweep*, from home to a horizon. The universe has no
+- *The apple and the human each read the universe*, from home to a horizon. The universe has no
   far side to face; no size could be had, so its V is **unknowable** (the fourth section's horizon).
 - *The apple and the human face each other as bounded things.* From a distance each one's paint stops at a finite slope
-  in the other's look: its rim, one direction inside the read, not the horizon, and an end that can be walked to. The
-  sweep that has that end is the central one, read from the bounded thing's own centre, its end reached at a point; the
-  observer at a distance meets it by walking to the rim. So the other's V is **knowable**: the end exists and can be
+  in the other's look: its rim, one direction inside the read, not the horizon, and an end that can be walked to, reached
+  at a point; the observer at a distance meets it by walking to the rim. So the other's V is **knowable**: the end exists and can be
   met. It is not known, for the far hemisphere stays turned away; each holds only the other's front.
 - *The human holds the apple and turns it.* The turn makes the Cauchy: a uniform turn, read as the slope v/h against the
   line of sight, is the Cauchy whatever the apple's shape, which is only the paint. And the hand holds the back while the
   eye holds the front, so in the hand the apple's V is **known**. This is the holding above.
 - *The human draws a circle on the paper.* This fourth is the comparison, classical geometry's circle. The view of both
   hemispheres is made, not seen: a mark holding both halves at once, the dual hemispherical vantage, from no standpoint and so with no facing, neither read nor
-  write, the blueprint. The two reads have the blueprint's numbers 2/π (inscribed, approached) and π/2 (central, reached),
-  each a single hemispherical vantage; the blueprint has the number 1. Their product is also 1; that is arithmetic,
-  not a way of making the blueprint from reads. The apple reads and is read; only the human draws a blueprint.
+  write, the blueprint. A read, from a single hemispherical vantage, has the near reading s = v/h and the far reading
+  1/s = h/v; the blueprint, with no facing, has the number 1. The two readings multiply to 1 at every reading; that is
+  arithmetic, not a way of making the blueprint from reads. The apple reads and is read; only the human draws a blueprint.
 
 The human is all four at the same time, not by turns: it reads the universe, faces the apple, and holds as a blueprint what it
 holds in the hand or draws.
 
-V is knowable, not known: the inscribed sweep approaches its end, the central sweep reaches it at a point, and only a
-hand or a mark holds it whole.
+V is knowable, not known: the universe's horizon is only approached, a bounded thing's rim is reached at a point by
+walking, and only a hand or a mark holds it whole.
 
 ---
 
@@ -190,26 +189,25 @@ element held, has neither end. Its array has a first slot and a last.
 
 ## 5. The two numbers at the end of the sweep
 
-The second essay showed that one turn is read two ways, from two pivots. From the middle of a chord, the centre of the
-circle on it, a radius turns through a half turn. From one end of the chord, home, a ray turns through a quarter turn.
-Both sweep the same arc, and both end at the same point.
+A read has two readings of each direction. Facing V, the near reading s = v/h gives V in terms of H; facing away from
+V, the far reading 1/s = h/v gives H in terms of V. They multiply to 1 at every reading, and they meet at 1 at the
+corner, where s = 1/s = 1. The heat below the corner equals the heat above it.
 
-The blueprint measures it differently through each (these numbers carry π, the blueprint's; the fourteenth essay). The central sweep reads arc over chord, θ/sin θ: 1 at the start, 1.1107 at the corner,
-π/2 at the end. The inscribed sweep reads chord over arc, sin θ/θ: 1 at the start, 0.9003 at the corner, 2/π at the
-end. At every θ their product is 1, the chord, which is the blueprint's: walking the chord is strides, counted; the two sweeps face
-the arc.
+The blueprint, in angles, compares the arc with its chord (these numbers carry π, the blueprint's; the fourteenth
+essay). Arc over chord, θ/sin θ, is 1 at the start, 1.1107 at the corner and π/2 at the end; chord over arc, sin θ/θ,
+is 1, 0.9003 and 2/π. Their product is 1 at every θ, but they never meet at 1 at the corner. Neither is a facing or a
+read: both need the angle and π.
 
-The horizon tells the two ends apart. The radius, its half turn done, lands back on home: a point, a place with a
-bounded chart around it. π/2 is attained there. The ray, as v/h runs without bound, goes tangent to the circle: the
-horizon. 2/π is approached and never reached. It is the horizon's number.
+Where π/2 and 2/π belong is the horizon. The total of the heat, ∫₀^∞ ds/(1 + s²), is π/2, approached by a count and
+never reached; 2/π is the mean share. They are limits at the horizon, not rates.
 
 So the blueprint has three numbers for the one chord, one held and two measured:
 
-| | how it has the chord | the blueprint's number | at the end |
-|---|---|---|---|
-| a counted walk | walks it | 1 | an amount, held |
-| the central sweep | faces the arc from the centre | π/2 | attained, at a point |
-| the inscribed sweep | faces the arc from home | 2/π | approached, at the horizon |
+| | how it has the chord | the blueprint's number |
+|---|---|---|
+| a counted walk | walks it | 1, an amount, held |
+| arc over chord | θ/sin θ, in angles | π/2, a limit at the horizon |
+| chord over arc | sin θ/θ, in angles | 2/π, a limit at the horizon |
 
 ---
 
@@ -299,9 +297,9 @@ slot; that is why this section gives it to the blueprint and why it should be us
 
 ## 7. The array, read twice
 
-Back to `int a[10]`. Read from a standpoint, it splits along the same two sweeps.
+Back to `int a[10]`. Read from a standpoint, it splits in two: the index and the values.
 
-**Inscribed: the index as directions.** Give the read a fineness K, equal steps of turn over its quarter turn; counted
+**The index as directions.** Give the read a fineness K, equal steps of turn over its quarter turn; counted
 out, they are K places, and they land at
 
   i = m + γ·tan((k + ½)·π/2K),  k = 0, 1, …, K − 1.
@@ -314,7 +312,7 @@ To a read there are no K places at all, only a heat: a continuous weight over it
 at the foot and cooling toward the horizon, which these ten quantiles cut into equal shares. The heat is given; the paint
 is met.
 
-**Central: the values as payload.** Lay the slots round a circle instead, one per equal step of turn, and stand at its
+**The values as payload.** In the blueprint's classical polar picture, lay the slots round a circle instead, one per equal step of turn, and stand at its
 centre. Now the directions are given, one per slot, and what each slot holds arrives along its direction as an amount:
 a radius, an amount in a unit no reading fixes. Held together, the radii make a shape, and holding them as a shape is
 the blueprint's: a read has a vantage, not a shape. Multiply every value by the same factor and that shape, divided by the
@@ -337,7 +335,7 @@ again and again, toward the end at 0 of section 4. The eighth essay gives it its
 
 Put the array through the test once more, now with all three in view.
 
-| change | the array as declared | the inscribed sweep | the central sweep |
+| change | the array as declared | the index, as directions | the values, round a centre |
 |---|---|---|---|
 | double every slot's width and the standpoint's distance together | every length doubles | nothing moves | the radii move, the shape does not |
 | double every stored value | every value doubles | nothing moves | the shape does not move |
@@ -418,8 +416,8 @@ thumb. It takes in a sweep, not the array. The blueprint can lay any array on th
 tangent and arctangent, but that drawing needs N; a read has only its turn, the share passed and no end. Where an N
 exists it reads N only as N/H. Where none does, or none could, the sweep runs to a horizon, and at a horizon there is no
 inside, no outside and no half of anything, only the two ends 0 and ∞ of the projective line, the reciprocal that swaps
-them, and the corner it fixes. The blueprint measures the central sweep's π/2 as reached at a point and the inscribed sweep's 2/π only at the
-horizon; all three numbers, their product 1 too, are the blueprint's.
+them, and the corner it fixes. The near and far readings, s and 1/s, multiply to 1 and meet at 1 at the corner; π/2 and 2/π, the blueprint's arc over
+chord and chord over arc, are limits at the horizon, and the blueprint's.
 
 Holding is how a thing read becomes a thing known whole: the hand holds the back and knows the turn. What cannot be held
 (a street, the sky, a list too long to iterate) can only be swept, and a program can hold such a sweep faithfully: keep
@@ -439,8 +437,8 @@ puts them down as one. A read, from a standpoint, never could.
   rim as the edge of what is seen.)
 
 The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten 10 November on R788 with read and write): the reading and the scale test in §9, the one number
-a blueprint adds and V, which no read ever has, in §3.8, the corner and the two sweeps in §4 ("Why the corner sits at
-45°", with π/2 attained at a point and 2/π a limit at the horizon), the readings as the projective line in §4, the array
+a blueprint adds and V, which no read ever has, in §3.8, the corner in §4 ("Why the corner sits at
+45°"), the readings as the projective line in §4, the array
 picture in §7.3, and what the floor discards in §8. For programmers, the computer-science companion's §6 ("The array")
 §3 ("Division by zero"), §5 (index statistics and value statistics), §7 ("What Math.floor throws
 away") and §11 ("A dial: scrolling without end").

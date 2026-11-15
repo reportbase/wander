@@ -162,8 +162,8 @@ Euler's identity is the place where the two constants touch:
   e^(iπ) = −1.
 
 The scale's base, raised to the turn's half total, lands on −1. Essay 2 met this already as the blueprint's notation for
-something a read holds in finite terms: the central sweep's landing point at the horizon (OFS §4, the landing point
-(h + iv)² at twice the angle reaching −1 when the inscribed reading reaches the horizon). A read holds that
+something a read holds in finite terms: the point w = (1 + is)/(1 − is) reaching −1 as the reading s reaches the
+horizon (in the blueprint's angles, (h + iv)² at twice the angle; OFS §4). A read holds that
 direction as a pair, [0 : 1], with nothing infinite in it. The blueprint writes the same thing with both its constants.
 
 The Cauchy's own constant comes from the same place. Write the reading s as the point w = (1 + is)/(1 − is), which is
@@ -184,10 +184,10 @@ What a read holds of each identity is finite, and it is one fact: the exchange s
 that the heat in the v/h chart and the heat in the h/v chart, 1/(1 + s²) and s²/(1 + s²), add to one. Of Euler's
 identity, that w(s)·w(1/s) = −1 for w = (1 + is)/(1 − is), at the corner i × i = −1. Of the total, that the heat below
 the corner equals the heat above it: equal halves, with no π/4 in them. In the plane, π is the price of turning "equal halves" into
-"how much" (essay 2 §9, "Four identities, one exchange"); in space the same price is 2, with no π in it. And the two numbers the blueprint puts on the sweep belong to two
-facings, each a single hemispherical vantage: 2/π facing V (the inscribed sweep), the thumb's mean share,
-approached; π/2 facing away from V (the central sweep), its arc in thumbs, reached. Neither is reading or walking; each
-is only which way one faces (essay 26 §7).
+"how much" (essay 2 §9, "Four identities, one exchange"); in space the same price is 2, with no π in it. And the two facings, each a single hemispherical vantage, are the near and far
+readings: facing V, s = v/h, V in terms of H; facing away from V, 1/s = h/v, H in terms of V. They multiply to 1 at
+every reading and meet at 1 at the corner. The two numbers the blueprint puts on the sweep, 2/π and π/2, are limits
+at the horizon: the thumb's mean share, and the heat's total approached by a count (essay 26 §7).
 
 This essay's title, "what only a writer holds", needs one more distinction, which the ladder of §1 already drew. A walk counted is
 a count laid over writes, the strides, and every walk actually made is a finite count, so what it holds is a fraction: 22/7, 355/113, a series
@@ -364,7 +364,7 @@ the turn comes back, and the scale goes on, and to say either in a number you ha
   blueprint's ruler.
 - `slide-rule.html`: readings laid on the logarithm, ratios read as gaps between places, no number of nats needed.
 - `paths.html`: the share of the sweep along three paths, ½ at the corner on each; the angle π/4 is the circle's alone.
-- `mountain.html`: the two vantages, π/2 and 2/π, the blueprint's measure of the two sweeps, their product 1.
+- `mountain.html`: π/2 and 2/π on the thumb, the blueprint's arc over chord and chord over arc, their product 1.
 
 ## Sources
 

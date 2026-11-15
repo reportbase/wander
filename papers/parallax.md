@@ -22,7 +22,7 @@ Proposition 11(a)–(c), which this paper builds on.*
     quoted one, and Hipparcos's band ends near 1 kpc, Gaia's near 50 kpc (§5).
 - 13 October: worked back from what parallax already knows (§6; Tom: "seems to me that we should be able to work
   backwards from known results of paralax and show the forced logical chain of logic"; PXC run 4, nothing killed). The
-  astronomers' rule σ_d/d = σ_p/p is the far-field limit of γ/sin γ, the outer reading of the parallax angle, π/2 on the
+  astronomers' rule σ_d/d = σ_p/p is the far-field limit of γ/sin γ, the blueprint's arc over chord in the parallax angle, π/2 on the
   Thales circle; "best when square" is the flip's fixed point; the round error needs the two standpoints alike;
   inverting a noisy parallax keeps its median and loses its mean; the parsec is a far-field unit.
 - 13 October, later (Tom: "can parallax be used to illustrate PI/2 * 2/PI = 1"): yes, with step 3 of §6, and one thing
@@ -240,16 +240,16 @@ results, each in print:
    (`observation-from-somewhere.md` Proposition 8(a)), and one amount from outside the readings fixes them all (8(b)).
    The au was that amount, measured outside the parallaxes for two centuries, and is now an agreed unit, which is what
    that paper's §9 says a unit is. **[exact]**, **[reading]** for the history's words.
-3. **From K3, the outer vantage.** The ratio of the relative errors is exactly (σ_d/d)/(σ_p/p) = γ/sin γ, the outer
-   reading of the turn γ in `observation-from-somewhere.md` §3.4 (PXC P12). K3 is its far-field limit, 1; on the Thales
+3. **From K3, arc over chord.** The ratio of the relative errors is exactly (σ_d/d)/(σ_p/p) = γ/sin γ, the blueprint's
+   arc over chord in the angle γ, in angles (`observation-from-somewhere.md` §3.4; PXC P12). K3 is its far-field limit, 1; on the Thales
    circle it is π/2; near the baseline it grows without bound (2.77 one level inside the circle, 24.2 four levels in).
-   Its reciprocal, sin γ/γ, is the inner reading, and their product is 1. The turn here is γ, the pair's facing, twice
-   its sweep angle p: the outer reading reaches π/2 when γ is a right angle, which is at the pair's corner, d = a. On
+   Its reciprocal, sin γ/γ, is chord over arc, and their product is 1. The angle here is γ, the pair's facing, twice
+   its sweep angle p: arc over chord reaches π/2 when γ is a right angle, which is at the pair's corner, d = a. On
    the thumb of `observation-from-somewhere.md` §10 the turn is the sweep angle itself, and π/2 comes at the sweep's
    horizon. It is the same identity read on two different angles, and the two places are not to be conflated. The
    product 1 holds at every γ, since the two ratios convert one relative error into the other and back; what parallax
    adds is that the π/2 is measured, the growth of a relative error on the Thales circle, not a unit chosen. So the
-   rule of thumb is one vantage's reading of the parallax angle, exact only far off. Stellar parallax is all far field:
+   rule of thumb is the far limit of the blueprint's arc over chord in the parallax angle, exact only far off. Stellar parallax is all far field:
    there the rule holds to parts in 10¹¹. **[exact]**
 4. **From K5, the flip.** The places at d and a²/d see the baseline at γ and π − γ (PXC P11), so the depth's precision,
    sin γ, is the same at both: the flip of the pair is the supplement of its angle. A precision unchanged by the flip is
@@ -266,7 +266,7 @@ results, each in print:
    2.3 levels inside that edge. The practice K4 describes, inferring the distance and never averaging inverted
    parallaxes, is what the flip forces. **[exact]**, **[reading]** for the words.
 7. **From K1 again, the parsec.** Defined by the small-angle form, it differs from the tangent form by a·ε/3 = 242 km,
-   with ε one arcsecond (PXC P15), the outer reading's first departure from 1. One parsec lies 17.65 levels past the
+   with ε one arcsecond (PXC P15), arc over chord's first departure from 1. One parsec lies 17.65 levels past the
    pair's corner: astronomy's unit of distance was set in the far field. **[exact]**
 
 **Read forwards,** the chain is this paper: the pair and its corner (§1), one amount from outside (§2), the bell and
@@ -342,7 +342,7 @@ holds, and OFS §9, "Units within units"):
 | off the bisector, the radial error least inside the circle | measured | PXC run 3 |
 | the band acosh(1/ε)/ln 2 levels each side; far edge B/ε | exact | PXC P3 |
 | "best when square" is the flip's fixed point: γ at d, π − γ at a²/d | exact | PXC P11 |
-| σ_d/d = σ_p/p is the far limit of γ/sin γ, the outer reading; π/2 on the circle | exact | PXC P12 |
+| σ_d/d = σ_p/p is the far limit of γ/sin γ, the blueprint's arc over chord; π/2 on the circle | exact | PXC P12 |
 | the round error needs the two standpoints alike | exact | PXC P13 |
 | inverting a noisy parallax: no mean, the median kept | exact | PXC P14 |
 | the parsec a far-field unit, 242 km from the tangent form | exact | PXC P15 |

@@ -135,19 +135,16 @@ relations, all of them, every one there is. A face on H can take that sweep in o
 only two directions. It can start facing V, or it can start facing away from V. Either way it turns one quarter turn
 and stops. Never a half turn.
 
-- **The inner sweep** starts facing V. It turns its quarter and finishes facing down. As it goes it compresses, and
-  its route comes to 1/Ω, the short route.
-- **The outer sweep** starts facing away from V. It turns its quarter and finishes facing up. As it goes it expands,
-  and its route comes to Ω, the long route.
+- **Facing V**, each relation reads as V in terms of H: the near reading s, how tall V stands in thumbs.
+- **Facing away from V**, the same relation reads as H in terms of V: the far reading 1/s.
 
-Opposite at the start, opposite at the finish. Between H and V there are now three routes: the long one, Ω; the short
-one, 1/Ω; and the line itself. That is all "continuous" turns out to mean here, the distance of a facing, and there are
-only two facings to have it.
+Opposite facings, opposite readings, and no angle in either: each is a fraction. That is all "continuous" turns out to
+mean here, the distance a facing sweeps, and there are only two facings to have it.
 
 **On the face of it, absurd.** Now look at what has just been said. The Ω sweep is every possible relation of H to V.
-Add every one of them up and there ought to be a single answer, whatever it is. There are two. The total is Ω or it is
-1/Ω, the long route or the short, and nothing about H or V decides which. Only the face decides: which way it happened
-to point when it started. Every relation there is, all of it summed, and the sum depends on where you stand facing. On
+Each one of them ought to have a single value, whatever it is. Each has two. A relation reads s or it reads 1/s, and
+nothing about H or V decides which. Only the face decides: which way it happened to point when it started. Every
+relation there is, and its value depends on where you stand facing. On
 the face of it, that cannot be right. (The idiom is older than this essay, the Latin *prima facie*, "at first
 appearance"; here the face is literal, and it is what decides the sum.)
 
@@ -195,20 +192,18 @@ there is something there.
 known, only in terms of H, anywhere from nothing to infinity. One move: the thumb turns a quarter turn to the vertical,
 never a half. That one sweep makes the near field and the far field, the continuous inside the thumb and the counted
 beyond it, every tower of ratios ending on the thumb, with no circle, no angle and no π, the same at any size and for
-any amount. And when every relation of H to V is summed, it gives two answers, Ω or 1/Ω, chosen only by the way you
-happened to face. A complete geometry, from one vantage, facing one direction, with one thumb, of a V you will never
+any amount. And every relation of H to V has two values, s or 1/s, chosen only by the way you happened to face. A complete geometry, from one vantage, facing one direction, with one thumb, of a V you will never
 know.
 
-**The two facings multiply to 1.** Here is the way out, and it is the thing everyone forgets. The two answers were never
-rivals. They are the one sweep read from its two facings, and multiplied together they give 1: Ω · 1/Ω = 1, at the end
-of the turn and at every point along it. The long route and the short route are not two totals of the same thing; they
-are the two faces of one total, and that total is 1. In a single hemispherical vantage, 1 is one thumb: thumb = 1. So
+**The two facings multiply to 1.** Here is the way out, and it is the thing everyone forgets. The two values were never
+rivals. They are the one relation read from its two facings, and multiplied together they give 1: s × 1/s = 1, at every
+point of the turn. They are not two values of the same thing; they are the two faces of one value, and that value is 1. In a single hemispherical vantage, 1 is one thumb: thumb = 1. So
 the two facings multiply back to the very thing the geometry was made with, the one thumb held out, and nothing else.
 Face V and face away from V at the same time, and there is no facing left: what remains is the non-facing, discrete
-value of 1 thumb.
-The absurdity was in taking either facing alone. The demo
-`faces.html` turns both sweeps side by side on H, with the long route, the short route and the line, and keeps their
-product, 1 at every point of the turn.
+value of 1 thumb. At the corner the two facings read the same, s = 1/s = 1: there the one reading is that value
+itself.
+The absurdity was in taking either facing alone. The demo `faces.html` runs both readings along the thumb's quarter
+turn, s and 1/s, and keeps their product, 1 at every point of the turn.
 
 **Euler's identity, in thumbs.** Everyone knows e^(iπ) = −1. Here it is from one vantage, with one thumb, and
 nothing else.
@@ -234,6 +229,10 @@ terms of V. Take any reading and its far-field partner and multiply where they l
 s = 1, and the product is i · i = −1. So the near field and the far field, multiplied, make the whole quarter turn, and
 the −1 of Euler's identity is the one pair of them with nothing in between: the horizontal thumb and the vertical.
 
+Multiply the readings themselves, not where they land, and the near field times the far field is s × 1/s = 1: no
+facing at all, the discrete, faceless value of one thumb (Tom, R1042). The −1 belongs to the landing points, which carry
+the turn; the readings, multiplied, carry none, as facing V and facing away from V at once leave none.
+
 What, then, are e and π doing in e^(iπ)? They are the blueprint's way of writing the same quarter turn: π measures it as
 an angle on a circle drawn whole, where the landing goes halfway round, and e writes turning as a power. They arrive as a
 pair and cancel, and what is left is the −1 the thumb already had (discussion note item 20). From one vantage, with
@@ -244,8 +243,8 @@ one thumb, Euler's identity needs no circle, no angle, no π and no e: a horizon
 just H and V, with one more degree of freedom.
 
 The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028, R1029, R1030, R1031), the wording mine. Older wordings in the series
-that give the outer sweep "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
-brought to it.
+that give a facing "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
+brought to it. Since R1043 the two facings are the near and far readings, s and 1/s.
 
 ## 8. What needs a face, and what does not
 

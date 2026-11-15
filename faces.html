@@ -7,16 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
     <!--
-    faces.html: two faces on H (15 November 2026, SPN R1019; essay 26 §7; Tom: "Make a demo to show this.", after
-    R1017, R1018 and "Both stand on H. On facing V and on facing away from V"). Two points, H and V, V to the right.
-    Both faces stand on H and each turns one quarter turn, never a half turn, the same way round:
-      the inner sweep starts facing V (east) and ends facing down (south): 1/Ω, it compresses;
-      the outer sweep starts facing away from V (west) and ends facing up (north): Ω, it expands.
-    The turn is t of the quarter (0 to 1). Readouts: the slope s from each face's start (the same for both), the
-    inscribed face's running mean share of the thumb (sin θ)/θ, tending to 1/Ω = 2/π, and the central face's arc over
-    chord θ/sin θ, tending to Ω = π/2, their product 1 at every t. θ = t·Ω is the blueprint's measure of the turn,
-    used here only to draw it. Three routes (R1020): bars in the line's unit, the short route 1/Ω (chord over arc),
-    the line 1 and the long route Ω (arc over chord), with their product.
+    faces.html: two faces on H (15 November 2026, SPN R1019; essay 26 §7; Tom: "Make a demo to show this."; reworked
+    for R1043, "Remove any mention of inscribed and central sweeps", and R1042). Two points, H and V, V to the right.
+    One thumb on H turns one quarter turn, from lying along the line toward V to standing up. Its shares are
+    h = 1 − t and v = t (t of the quarter, 0 to 1; rational, no angle), the corner at t = ½ where h = v.
+      facing V: the near reading s = v/h, V in terms of H;
+      facing away from V: the far reading 1/s = h/v, H in terms of V.
+    They multiply to 1 at every reading (s × 1/s = 1: no facing, one thumb) and meet at 1 at the corner. The heat
+    1/(1 + s²) below the reading against the heat above it: the heat above s is the heat below 1/s (the exchange), so
+    both are sums over finite ranges, equal at the corner. Their total tends to Ω (classically π/2), approached only.
     Links: ?t=<0..1>&play=1. Test hook: window.__faces (dir, readings, set, state).
     -->
     <style>
@@ -47,13 +46,13 @@
 <body>
 <main>
     <h1>Two faces on H</h1>
-    <p class="lede">Two points, H and V. The Ω sweep is every way H can stand relative to V. Both faces stand on H, and
-    each turns one quarter turn, never a half turn. The inner sweep starts facing V, finishes facing down and compresses;
-    the outer sweep starts facing away from V, finishes facing up and expands. Three routes between H and V: the long
-    route, Ω, the short route, 1/Ω, and the line itself. The two facings multiply to 1, and 1 is one thumb.</p>
+    <p class="lede">Two points, H and V. One thumb on H turns one quarter turn, from lying along the line toward V to
+    standing up. Facing V, it reads near: s = v/h, V in terms of H. Facing away from V, it reads far: 1/s = h/v, H in
+    terms of V. The two readings multiply to 1 at every point of the turn, and 1 is one thumb, with no facing. At the
+    corner they meet: s = 1/s = 1.</p>
 
     <div class="panel">
-        <canvas id="cv" width="1800" height="1000" aria-label="H and V, the two faces turning a quarter turn"></canvas>
+        <canvas id="cv" width="1800" height="1000" aria-label="H and V, one thumb turning a quarter turn, its near and far readings"></canvas>
         <div class="row">
             <button id="play">▶ turn</button>
             <button id="reset">start</button>
@@ -65,36 +64,53 @@
 
     <div class="grid">
         <div class="face panel">
-            <h3 class="teal">inner sweep · 1/Ω · compresses</h3>
+            <h3 class="teal">facing V · the near reading s = v/h</h3>
             <div class="out" id="outI"></div>
         </div>
         <div class="face panel">
-            <h3 class="gold">outer sweep · Ω · expands</h3>
+            <h3 class="gold">facing away from V · the far reading 1/s = h/v</h3>
             <div class="out" id="outC"></div>
         </div>
     </div>
     <div class="panel out" id="outB"></div>
 
-    <p class="note">Ω is classically π/2. The slope s is counted from each face's start and runs from 0 to the horizon
-    for both. The inner sweep compresses to 1/Ω, the outer sweep expands to Ω, and the two facings multiply to 1 at
-    every point of the turn: one thumb. From essay 26, <i>A face</i>, §7 (SPN R1017, R1018, R1020, R1022).</p>
+    <p class="note">The thumb's shares here are h = 1 − t and v = t, so every reading is a fraction and no angle is
+    used. The heat 1/(1 + s²) below the reading and the heat above it are equal at the corner; the heat above s is the
+    heat below 1/s. The total heat tends to Ω (classically π/2), approached by a count, never reached. From essay 26,
+    <i>A face</i>, §7 (SPN R1042, R1043).</p>
 </main>
 <script>
 (() => {
-    const OMEGA = Math.PI / 2;
-    const START = { inscribed: 0, central: Math.PI };          // screen angle: 0 east (toward V), π west (away)
-    const END_NAME = { inscribed: 'down', central: 'up' };
-    // screen coordinates, y down: increasing angle turns clockwise on the screen (east → south, west → north)
+    // the thumb's shares along the quarter turn: h = 1 − t, v = t (rational, no angle); the corner at t = ½
+    function shares(t) { return { h: 1 - t, v: t }; }
+    // dir(t), or dir(face, t) as before: the thumb's direction on the screen (x toward V, y up), normalized
     function dir(face, t) {
-        const a = START[face] + t * OMEGA;
-        return [Math.cos(a), Math.sin(a)];
+        if (typeof face === 'number') t = face;
+        const { h, v } = shares(t), n = Math.hypot(h, v);
+        return [h / n, v / n];
+    }
+    // the heat 1/(1 + u²) summed from 0 to x (Simpson's rule; x finite)
+    function heatTo(x) {
+        if (!(x > 0)) return 0;
+        const n = 2000, dx = x / n, f = u => 1 / (1 + u * u);
+        let sum = f(0) + f(x);
+        for (let i = 1; i < n; i++) sum += (i % 2 ? 4 : 2) * f(i * dx);
+        return sum * dx / 3;
     }
     function readings(t) {
-        const th = t * OMEGA;
-        const s = t >= 1 ? Infinity : Math.tan(th);
-        const share = th === 0 ? 1 : Math.sin(th) / th;          // inscribed: mean of the thumb's share so far
-        const arc = th === 0 ? 1 : th / Math.sin(th);            // central: arc over chord so far
-        return { t, s, share, arc, product: share * arc, limitShare: 1 / OMEGA, limitArc: OMEGA };
+        const { h, v } = shares(t);
+        const s = h === 0 ? Infinity : v / h;                 // near: V in terms of H
+        const inv = v === 0 ? Infinity : h / v;               // far: H in terms of V
+        const product = (h > 0 && v > 0) ? s * inv : 1;       // at the ends one reading is 0, the other the horizon
+        // heat below s, and above it (= heat below 1/s, by the exchange); each a sum over a finite range
+        const below = s === Infinity ? null : heatTo(s);
+        const above = inv === Infinity ? null : heatTo(inv);
+        let shareBelow, shareAbove;
+        if (below === null) { shareBelow = 1; shareAbove = 0; }
+        else if (above === null) { shareBelow = 0; shareAbove = 1; }
+        else { shareBelow = below / (below + above); shareAbove = above / (below + above); }
+        return { t, h, v, s, inv, product, heatBelow: below, heatAbove: above, shareBelow, shareAbove,
+            total: below !== null && above !== null ? below + above : null };
     }
 
     const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
@@ -106,70 +122,75 @@
     function draw() {
         const W = cv.width, Hh = cv.height;
         ctx.clearRect(0, 0, W, Hh);
-        const hx = W * 0.42, hy = Hh * 0.5, vx = W * 0.86, r = Math.min(W, Hh) * 0.3;
+        const hx = W * 0.30, hy = Hh * 0.62, vx = W * 0.62, r = Math.min(W, Hh) * 0.42;
         const teal = css('--teal'), gold = css('--gold'), dim = css('--dim'), bright = css('--bright');
+        const R = readings(t);
         // the line from H to V
         ctx.setLineDash([10, 10]); ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 2;
-        ctx.beginPath(); ctx.moveTo(W * 0.06, hy); ctx.lineTo(W * 0.97, hy); ctx.stroke(); ctx.setLineDash([]);
-        // the quarter each face will sweep, faint
-        for (const [face, col] of [['inscribed', teal], ['central', gold]]) {
-            const a0 = START[face];
-            ctx.fillStyle = col + '14';
-            ctx.beginPath(); ctx.moveTo(hx, hy); ctx.arc(hx, hy, r, a0, a0 + OMEGA); ctx.closePath(); ctx.fill();
-            ctx.fillStyle = col + '38';
-            ctx.beginPath(); ctx.moveTo(hx, hy); ctx.arc(hx, hy, r, a0, a0 + t * OMEGA); ctx.closePath(); ctx.fill();
-            ctx.strokeStyle = col; ctx.lineWidth = 4;
-            ctx.beginPath(); ctx.arc(hx, hy, r, a0, a0 + t * OMEGA); ctx.stroke();
-        }
-        // the faces as arrows
-        for (const [face, col] of [['inscribed', teal], ['central', gold]]) {
-            const [dx, dy] = dir(face, t), L = r * 1.18, ex = hx + dx * L, ey = hy + dy * L;
-            ctx.strokeStyle = col; ctx.fillStyle = col; ctx.lineWidth = 6;
-            ctx.beginPath(); ctx.moveTo(hx, hy); ctx.lineTo(ex, ey); ctx.stroke();
-            const a = Math.atan2(dy, dx), k = 26;
-            ctx.beginPath(); ctx.moveTo(ex, ey);
-            ctx.lineTo(ex - k * Math.cos(a - 0.4), ey - k * Math.sin(a - 0.4));
-            ctx.lineTo(ex - k * Math.cos(a + 0.4), ey - k * Math.sin(a + 0.4)); ctx.closePath(); ctx.fill();
-            ctx.font = '500 30px "DM Mono", monospace';
-            ctx.fillText(face === 'inscribed' ? 'inner' : 'outer', ex + dx * 20 - (dx < -0.3 ? 140 : 0), ey + dy * 30 + (Math.abs(dy) < 0.3 ? -14 : 10));
-        }
+        ctx.beginPath(); ctx.moveTo(W * 0.04, hy); ctx.lineTo(W * 0.70, hy); ctx.stroke(); ctx.setLineDash([]);
+        // the corner's direction, dotted
+        const [cx, cy] = dir(0.5);
+        ctx.setLineDash([4, 10]); ctx.strokeStyle = 'rgba(255,255,255,0.35)';
+        ctx.beginPath(); ctx.moveTo(hx, hy); ctx.lineTo(hx + cx * r * 1.05, hy - cy * r * 1.05); ctx.stroke(); ctx.setLineDash([]);
+        ctx.fillStyle = dim; ctx.font = '400 22px "DM Mono", monospace';
+        ctx.fillText('the corner, s = 1/s = 1', hx + cx * r * 1.07, hy - cy * r * 1.07);
+        // the thumb's shares: h along the line toward V, v up
+        const { h, v } = R, n = Math.hypot(h, v), px = hx + (h / n) * r, py = hy - (v / n) * r;
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = teal; ctx.beginPath(); ctx.moveTo(hx, hy); ctx.lineTo(px, hy); ctx.stroke();
+        ctx.strokeStyle = gold; ctx.beginPath(); ctx.moveTo(px, hy); ctx.lineTo(px, py); ctx.stroke();
+        // the thumb
+        ctx.strokeStyle = bright; ctx.fillStyle = bright; ctx.lineWidth = 7;
+        ctx.beginPath(); ctx.moveTo(hx, hy); ctx.lineTo(px, py); ctx.stroke();
+        ctx.beginPath(); ctx.arc(px, py, 9, 0, 2 * Math.PI); ctx.fill();
+        ctx.font = '400 24px "DM Mono", monospace';
+        ctx.fillStyle = teal; ctx.fillText('h', (hx + px) / 2 - 6, hy + 32);
+        ctx.fillStyle = gold; if (v > 0.02) ctx.fillText('v', px + 12, (hy + py) / 2);
         // H and V
         ctx.fillStyle = bright;
         ctx.beginPath(); ctx.arc(hx, hy, 11, 0, 2 * Math.PI); ctx.fill();
         ctx.beginPath(); ctx.arc(vx, hy, 11, 0, 2 * Math.PI); ctx.fill();
         ctx.font = '400 40px "DM Serif Display", Georgia, serif';
         ctx.fillText('H', hx - 14, hy + 56); ctx.fillText('V', vx - 12, hy + 56);
-        ctx.fillStyle = dim; ctx.font = '400 24px "DM Mono", monospace';
-        ctx.fillText('one thumb', hx + r + 10, hy + 34);
-        // the three routes, in the line's unit: the short route 1/Ω, the line 1, the long route Ω
-        const R3 = readings(t), unit = W * 0.13, bx = W * 0.04, by = Hh * 0.70;
-        const bars = [['short route · 1/Ω, compresses', R3.share, teal], ['the line · 1 thumb', 1, bright], ['long route · Ω, expands', R3.arc, gold]];
+        // right side: the two readings and their product, then the heat below and above
+        const bx = W * 0.74, bw = W * 0.22, by = Hh * 0.14;
+        const capped = x => x === Infinity ? 1 : x / (1 + x);    // drawn as x/(1 + x), the horizon at the bar's end
+        const bars = [['near  s = v/h', R.s, teal], ['far  1/s = h/v', R.inv, gold], ['s × 1/s', R.product, bright]];
         ctx.font = '400 22px "DM Mono", monospace';
-        bars.forEach(([name, len, col], i) => {
-            const y = by + i * 70;
-            ctx.fillStyle = col + (i === 1 ? 'cc' : '');
-            ctx.fillRect(bx, y, len * unit, 14);
-            ctx.fillStyle = dim; ctx.fillText(`${name}  ${len.toFixed(4)}`, bx, y - 8);
+        bars.forEach(([name, x, col], i) => {
+            const y = by + i * 78;
+            ctx.fillStyle = 'rgba(255,255,255,0.08)'; ctx.fillRect(bx, y, bw, 14);
+            ctx.fillStyle = col; ctx.fillRect(bx, y, capped(x) * bw, 14);
+            ctx.fillStyle = 'rgba(255,255,255,0.5)'; ctx.fillRect(bx + bw / 2 - 1, y - 4, 2, 22);
+            ctx.fillStyle = dim; ctx.fillText(`${name}  ${x === Infinity ? '∞' : x.toFixed(4)}`, bx, y - 8);
         });
-        ctx.fillStyle = dim; ctx.fillText(`short × long = ${(R3.share * R3.arc).toFixed(6)}`, bx, by - 48);
+        ctx.fillStyle = dim; ctx.fillText('drawn as x/(1 + x), mark at 1', bx, by + 3 * 78 - 14);
+        const hy2 = by + 3 * 78 + 40;
+        ctx.fillText('heat below the reading | above it', bx, hy2 - 10);
+        ctx.fillStyle = teal; ctx.fillRect(bx, hy2, R.shareBelow * bw, 22);
+        ctx.fillStyle = gold; ctx.fillRect(bx + R.shareBelow * bw, hy2, R.shareAbove * bw, 22);
+        ctx.fillStyle = 'rgba(255,255,255,0.6)'; ctx.fillRect(bx + bw / 2 - 1, hy2 - 6, 2, 34);
+        ctx.fillStyle = dim;
+        ctx.fillText(`${R.shareBelow.toFixed(4)} | ${R.shareAbove.toFixed(4)}`, bx, hy2 + 52);
     }
 
     const fmt = (x, d = 4) => x === Infinity ? '∞ (the horizon)' : x.toFixed(d);
     function show() {
         const R = readings(t);
         tv.textContent = `t = ${t.toFixed(3)} of the quarter turn`;
-        const where = t === 0 ? 'at the start' : t >= 1 ? 'at the finish' : 'turning';
+        const where = t === 0 ? 'lying along the line toward V' : t >= 1 ? 'standing up' : t === 0.5 ? 'at the corner' : 'turning';
         outI.textContent =
-            `starts facing V, finishes facing ${END_NAME.inscribed}\n${where}\n` +
-            `slope from its start  s = ${fmt(R.s)}\n` +
-            `short route = ${R.share.toFixed(4)}\n` +
-            `compresses to 1/Ω = ${R.limitShare.toFixed(4)}`;
+            `V in terms of H\n${where}\n` +
+            `h = ${R.h.toFixed(4)}, v = ${R.v.toFixed(4)}\n` +
+            `s = v/h = ${fmt(R.s)}`;
         outC.textContent =
-            `starts facing away from V, finishes facing ${END_NAME.central}\n${where}\n` +
-            `slope from its start  s = ${fmt(R.s)}\n` +
-            `long route = ${R.arc.toFixed(4)}\n` +
-            `expands to Ω = ${R.limitArc.toFixed(4)}`;
-        outB.textContent = `product of the two = ${R.product.toFixed(12)}   (1 at every t)`;
+            `H in terms of V\n${where}\n` +
+            `h = ${R.h.toFixed(4)}, v = ${R.v.toFixed(4)}\n` +
+            `1/s = h/v = ${fmt(R.inv)}`;
+        outB.textContent =
+            `s × 1/s = ${R.product.toFixed(12)}   (1 at every point: no facing, one thumb` +
+            `${t === 0 || t >= 1 ? '; at the ends one reading is 0 and the other the horizon' : ''})\n` +
+            `heat below the reading ${R.shareBelow.toFixed(4)}, above it ${R.shareAbove.toFixed(4)}   (equal at the corner)`;
         draw();
     }
     function setT(v) { t = Math.min(1, Math.max(0, v)); slider.value = Math.round(t * 1000); show(); }
