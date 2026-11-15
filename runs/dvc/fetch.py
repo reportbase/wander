@@ -15,17 +15,26 @@ def get(url):
             return urllib.request.urlopen(urllib.request.Request(url, headers=UA)).read()
         except urllib.error.HTTPError as e:
             if e.code != 429: raise
-            time.sleep(10 * (k + 1))
+            time.sleep(30 * (k + 1))
     raise RuntimeError("rate limited: " + url)
 PAT = re.compile(r"\\pi\b|π|e\^|\\mathrm\{e\}\^|\\exp\b|\\ln\b|\\log\b|\\(?:arc)?(?:sin|cos|tan|cot|sec|csc)h?\b"
                  r"|\\operatorname\{(?:arc)?(?:sin|cos|tan|cot|sec|csc|exp|ln|log)h?\}|\bexp\(|\bln\(|\b(?:sin|cos|tan|sinh|cosh|tanh)\b")
 rows, meta = [], []
+titles = "|".join(p.replace(" ", "_") for p in PAGES)
+info = json.loads(get("https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids|timestamp&format=json&titles="
+                      + urllib.parse.quote(titles, safe="|")))
+norm = {n["to"]: n["from"] for n in info["query"].get("normalized", [])}
+revs = {}
+for pg in info["query"]["pages"].values():
+    revs[norm.get(pg["title"], pg["title"]).replace("_", " ")] = pg["revisions"][0]
 for p in PAGES:
     t = urllib.parse.quote(p.replace(" ", "_"))
-    raw = get(f"https://en.wikipedia.org/w/index.php?title={t}&action=raw")
-    info = json.loads(get(f"https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids|timestamp&format=json&titles={t}"))
-    rev = next(iter(info["query"]["pages"].values()))["revisions"][0]
-    open(os.path.join(out, p.replace(" ", "_") + ".wiki"), "wb").write(raw)
+    path = os.path.join(out, p.replace(" ", "_") + ".wiki")
+    if os.path.exists(path): raw = open(path, "rb").read()
+    else:
+        raw = get(f"https://en.wikipedia.org/w/index.php?title={t}&action=raw")
+        open(path, "wb").write(raw)
+    rev = revs[p]
     meta.append((p, rev["revid"], rev["timestamp"], hashlib.sha256(raw).hexdigest()))
     text = raw.decode("utf-8")
     heading = ""
