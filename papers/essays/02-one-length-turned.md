@@ -739,6 +739,10 @@ e are content").
 On a textbook's list the first two grades hold fewer: 18 of 107 standard formulas (NTX), since most carry an amount; laws
 that relate directions without a limit reach them about three times in five on either list (DVA, post hoc).
 
+The third grade can be counted toward from the first. One read of slope 1/m composed with itself is (m + i)^N in whole
+numbers, and the first N past the horizon gives 2N/m above π by under 2/m + 2/m², at every m tried to 100,000; only slope
+1, the corner, lands on the horizon exactly, in two steps (BLD; essay 25). The count is exact at every step and never π.
+
 ---
 
 ## 10. What it comes to
@@ -771,6 +775,7 @@ their median.
 
 ## Sources
 
+- `../../plans/bld-plan.md`, `../../runs/bld/`: counts of reads toward π and e (BLD run 1); essay 25.
 - Euclid, *Elements*: Book III, propositions 20 (the angle at the centre is double the angle at the circumference) and
   31 (the angle in a semicircle is right); Book VI, propositions 8 and 13 (the mean proportional).
 - Steiner, J. (1832). *Systematische Entwickelung der Abhängigkeit geometrischer Gestalten von einander*. Berlin.

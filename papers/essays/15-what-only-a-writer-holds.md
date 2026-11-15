@@ -276,6 +276,14 @@ On a textbook's list the share is lower, 18 of 107 (NTX): most standard formulas
 kT, a period in seconds, and such π stays. Among laws that relate directions and take no limit, about three in five
 lose it on either list (DVA, looked at after the run).
 
+Met, then, and counted toward, but not made. One small read of slope 1/m composed with itself is a multiplication by
+m + i in whole numbers; the clicks it takes to pass the horizon are the count the angle gives at every m tried, to
+100,000, and twice that count over m lies above π, by under 2/m + 2/m². Only slope 1, the corner, lands on the horizon
+exactly, in two clicks. Bernoulli's m shares of 1/m lie below e by about e/(2m). So π is approached from above along the
+turn and e from below along the scale, every step a fraction, the limit neither (BLD; essay 25). Where the two meet in one
+equation and cancel, as in e^(iπ) = −1, the cancellation lands on a point a read already has; the theorems that say so
+(Niven, Lindemann, Gelfond–Schneider) hold the turn completed, the blueprint's view, which is this essay's claim again.
+
 ## 7. A machine stops short of the blueprint
 
 Essay 12 asked what a computer can hold, and found that every machine operation on numbers is monotone and finite. Here
@@ -356,6 +364,7 @@ the turn comes back, and the scale goes on, and to say either in a number you ha
 
 ## Sources
 
+- `../../plans/bld-plan.md`, `../../runs/bld/`: counts of reads toward π and e (BLD run 1); essay 25.
 - Bernoulli, J. (1690). *Quæstiones nonnullæ de usuris* (in *Acta Eruditorum*, May 1690; the question posed in 1683).
   (Compound interest and its limit.)
 - Madhava of Sangamagrama (c. 1400), the series for the arctangent, as reported in the *Yuktibhāṣā* (c. 1530); Gregory,
