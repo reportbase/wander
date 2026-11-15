@@ -10,7 +10,8 @@ spec.loader.exec_module(R)
 FORB = re.compile(r"π|Ω|\bpi\b|\be\b(?!\w)|\bexp|\bln\b|\blog|\bsin|\bcos|\btan|\bsec\b|\bcot|arctan|\batan|\basin|\bacos|"
                   r"\bsinh|\bcosh|\btanh|\bsech|\bgd\b|Γ|gamma\(|expj|mpf\('?2\.71|mp\.e\b")
 pie = {}
-for line in open('runs/dvh/chart.md', encoding='utf-8'):
+import os
+for line in (open('runs/dvh/chart.md', encoding='utf-8') if os.environ.get('DVH_SPLIT') else []):
     m = re.match(r'\s*(\d+)\.\s*\**\s*(chart|other)\b', line)
     if m:
         pie[int(m.group(1))] = m.group(2)

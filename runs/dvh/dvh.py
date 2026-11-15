@@ -16,7 +16,7 @@ expect = (0.92 * len(D) + 0.03 * len(O)) / n
 print(f'{n} laws; class chart {len(D)}, other {len(O)}')
 print(f'H3 expected share (0.92*{len(D)} + 0.03*{len(O)})/{n} = {expect:.4f}')
 if len(sys.argv) > 1 and sys.argv[1] == 'expect': sys.exit()
-out = subprocess.run(['python3', 'runs/dvh/check.py'], capture_output=True, text=True).stdout
+out = subprocess.run(['python3', 'runs/dvh/check.py'], capture_output=True, text=True, env={**__import__('os').environ, 'DVH_SPLIT': '1'}).stdout
 print(out.strip())
 nota = set(int(x) for x in re.search(r'all notation: \[(.*)\]', out).group(1).split(', ') if x)
 d, o = sorted(set(D) & nota), sorted(set(O) & nota)
