@@ -482,7 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
-  R1037 (15 Nov; Tom: "Prefer SHV and DHV over blueprint and read."): **for new writing prefer SHV (single hemispherical vantage) over "a read" and DHV (dual hemispherical vantage) over "the blueprint"**, spelled out at first use; refines R887 and R967. Corpus not yet swept.
+  R1037 (15 Nov; Tom: "Prefer SHV and DHV over blueprint and read."): **for new writing prefer SHV (single hemispherical vantage) over "a read" and DHV (dual hemispherical vantage) over "the blueprint"**, spelled out at first use; refines R887 and R967. New writing only; existing text not swept (Tom: "No, just moving forward.").
   R1036 (15 Nov; Tom: "Gaussian also says nothing about facing, it is entirely a DHV distribution."): **the Gaussian says nothing about facing; it is entirely a dual hemispherical vantage distribution**; *Reads and Writes* §9, essay 15 §5.
   R1035 (15 Nov; Tom: "We don't need to say anything, it just takes a v and an h, no thing about facing in the formula."): **the Cauchy takes a v and an h, nothing about facing**; say nothing tying it to the facings.
   R1034 (15 Nov; Tom: "Cauchy also works on straight lines, the light house"): **the Cauchy is not exclusively inside the circle**; it works on straight lines (the lighthouse). Loosens R330, R454, R579; *Reads and Writes* §1, essays 2, 10.
