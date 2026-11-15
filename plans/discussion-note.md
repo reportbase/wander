@@ -442,3 +442,28 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
     not in space, essay 13), orientation-keeping and returning. Next: none proposed; the archived OFS Proposition 3(g)
     already takes linearity and return as its premises.
 
+
+20. **The curvature is in the relation, by algebra** (15 Nov; Tom: "The relation itself has an [intrinsic] curviture,
+    just with algebra."; "each read has a tiny curve that sums to Pai."; "Just saying we don't need pi, the relation has
+    the curviture built in with algebra."; "But than it cancels out with E."; "But classical derivrs this starting with
+    the Pi as a given"; then "Yes, record it as item 20"). Tom's, with Claude's precisions.
+    - **Built in.** Reads compose by s ⊕ a = (s + a)/(1 − sa), not s + a; the 1 − sa (a third-order departure, about
+      sa(s + a)) bends the slopes past the horizon and back, so one sweep closes (CPX's return) with no circle drawn.
+      One sweep has no intrinsic curvature in Gauss's sense (a line cannot); on two thumbs it is intrinsic: a loop of
+      reads comes back turned per unit area (HOL, BRL), the leftover exact and rational in the half-slopes (HLX). Two
+      thumbs do not commute exactly where that curvature appears (CPX, essay 13).
+    - **Each read a tiny bend.** However the half turn is cut (equal reads, as BLD's, or any rational split), the bends
+      total the same; in the read's terms the landing points multiply to exactly −1 at any count, no limit. Measured as
+      angles the bends are arctan(s), the blueprint's, and their total is what it calls π; no finite set of rational
+      reads has angles adding to π as a number (BLD B3, Niven; R909, R922).
+    - **π and e cancel.** Writing the turn as an angle brings in π, writing composition as an exponent brings in e
+      (turns adding as e^(iθ)); they arrive as a pair and cancel, e^(iπ) = −1 returning the −1 the reads already reached.
+      By Lindemann–Weierstrass e^(iθ) is algebraic only at θ = 0 or θ transcendental, so the cancellation is forced
+      (item 18, R1008; essay 25).
+    - **Two starting points.** Classically π is given first (Archimedes) and −1 found from it, or exp defined by its
+      series and π from it (twice the first positive zero of cos); either way a completed limit first and −1 last. The
+      read's route has −1 first, as the opposite home reached by fractions, π and e after as the blueprint's names for
+      the total and the chart. Where each starts, not a fault in either (R335, R364).
+    - Standing: a reading; every exact piece already run (CPX, BLD, HLX, HOL, BRL). Next, offered, not run: one exact
+      test giving curvature +1, 0, −1 (turns, strides, boosts) from loop leftover over area, matched to CPX's sign of Δ
+      (Cayley–Klein classical), and random rational splits of the half turn multiplying to −1.
