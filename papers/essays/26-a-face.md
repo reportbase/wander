@@ -132,6 +132,10 @@ turn. Never half turn."). What tells the two sweeps apart is which way the face 
   it, toward a horizon it never meets. What turning sees of the thumb, on average, tends to 1/Ω. This is the inscribed
   sweep: approached.
 
+They finish facing different ways too (Tom: "Inscribed finishes facing down. Central finishes facing up."): the
+inscribed face ends facing down, the central face ends facing up. Opposite at the start, toward V and away from it, and
+opposite at the finish, down and up.
+
 Both are one face, one quarter turn, from the same start. Their numbers are reciprocals, and their product is the 1
 the thumb gives back (*Reads and Writes* §9, "The thumb, short by reading, long by walking, and whole"); which of the two
 a face is depends only on whether V is behind it or in front of it when it begins. Tom's (R1017); the assignment of Ω and
