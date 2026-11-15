@@ -1,5 +1,5 @@
-"""DVF (plans/dvf-plan.md): F3's expected share from the blind entry classes alone (`python3 runs/dvf/dve.py expect`),
-then, once the restatements exist, the entry classes crossed with the checker's verdicts (`python3 runs/dvf/dve.py`)."""
+"""DVF (plans/dvf-plan.md): F3's expected share from the blind entry classes alone (`python3 runs/dvf/dvf.py expect`),
+then, once the restatements exist, the entry classes crossed with the checker's verdicts (`python3 runs/dvf/dvf.py`)."""
 import re, subprocess, sys
 def read(path, pat):
     out = {}
