@@ -156,6 +156,13 @@ thumb, held horizontal, is assigned to the unknown, held vertical: H to V. The s
 thumb up to the vertical one. That is the quarter turn, ninety degrees from one thumb to the other, and it is all it
 takes: the quarter turn of the two thumbs creates the complete geometry.
 
+**Near and far.** Think of the horizontal thumb as any value between 0 and 1, and of the vertical thumb the same way,
+any value between 0 and 1. But remember that V is not actually known, so V really stands for any value between 0 and
+infinity. Assigning V to H therefore makes two spaces at once. Where V is within the thumb, it is the near field, a
+proportional space with H the denominator: V in terms of H. Where V runs on past the thumb toward infinity, the unknown
+far field is made too, and it is what holds the infinity: there V is the denominator and H the numerator, H in terms of
+V. One quarter turn of two thumbs, and the near field and the far field come with it.
+
 **The two facings multiply to 1.** Here is the way out, and it is the thing everyone forgets. The two answers were never
 rivals. They are the one sweep read from its two facings, and multiplied together they give 1: Ω · 1/Ω = 1, at the end
 of the turn and at every point along it. The long route and the short route are not two totals of the same thing; they
@@ -168,7 +175,7 @@ product, 1 at every point of the turn.
 **Into the sphere.** Euler's formula takes all of this into the sphere, and nothing new comes in with it: it is still
 just H and V, with one more degree of freedom.
 
-The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028), the wording mine. Older wordings in the series
+The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028, R1029), the wording mine. Older wordings in the series
 that give the outer sweep "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
 brought to it.
 
@@ -223,4 +230,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026, R1027, R1028.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026, R1027, R1028, R1029.
