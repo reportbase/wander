@@ -1,0 +1,2 @@
+78 laws; entry dir 13, other 65
+F3 expected share (0.92*13 + 0.03*65)/78 = 0.1783
