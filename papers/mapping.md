@@ -1,8 +1,8 @@
 # Mapping from addresses
 
 *Started 19 October 2026, at Tom's word: "start a new paper that can fully explore this." A working paper: a reading,
-revised as it is worked over, not a ruling. Its question is how a reader maps a room, or any scene, from the inscribed
-sweep's addresses, what each stage needs, and how that compares with the methods that already exist. Tom set its stance
+revised as it is worked over, not a ruling. Its question is how a reader maps a room, or any scene, from a
+read's addresses, what each stage needs, and how that compares with the methods that already exist. Tom set its stance
 (SPN R387):*
 - *"seems to me that this might provide an alternative to existing methods."*
 - *"the prospect of an alternative method is interesting, even if exiisting methods are better. understanding the
@@ -105,7 +105,7 @@ where they agree and where they part, not a contest. A gap either way is informa
 
 ## 2. The reader and its addresses
 
-- **Two inscribed sweeps.** In three dimensions the inscribed sweep is two: the altitude (up–down) and the azimuth
+- **Altitude and azimuth.** In three dimensions the turn has two parts: the altitude (up–down) and the azimuth
   (left–right), horizon coordinates, each with its corner at 45° (OFS §2; SPN R237; AZM). **[exact]**
 - **Even over the wedge.** The reader's uniform sweep of the wedge is even in azimuth and in height (sin a), not in both
   angles: Archimedes' hat-box, Lambert's equal-area map. Then every pair of unit relations is at its corner and the near
@@ -187,11 +187,11 @@ where they agree and where they part, not a contest. A gap either way is informa
   - It gives the breadth in H: R̂/R − 1 ~ Cauchy(0, γ(cot β + cosh(ln k))).
   - It gives τ with no physics, but beats the bearings only for an object larger than its distance from the baseline.
   - **[simulation]**
-- **The two sweeps together, on a round object.**
-  - The object's own Cauchy is the wrapped Cauchy: the Poisson kernel, the harmonic measure from the reader's place.
-  - It equals ±(2·dθ/dφ − 1)/2π: twice the inscribed rate less the central rate (CIW).
+- **A round object, classically.**
+  - The object's own Cauchy is the wrapped Cauchy: the Poisson kernel, the harmonic measure from the reader's place
+    (classical; CIW).
   - Its parameters are the reader's place in the object's radius, with no unit.
-  - From outside it needs each ray's far crossing, which only the central sweep reaches.
+  - From outside it needs each ray's far crossing.
   - Only the circle has it.
   - **[exact]**
 
@@ -204,7 +204,7 @@ where they agree and where they part, not a contest. A gap either way is informa
   needs the signal's speed c and a clock. **[classical]**
   - The range is an amount whose unit is the signal's speed. A ranging reader is therefore a writer: it carries c in
     (CFH; OFS §9, "From one place"; SPN R356). **[simulation]**, CFH; **[reading]**, "a writer".
-  - It is a central-sweep reader: amounts along directions it gives itself (OFS §3.1; SPN R309). **[reading]**
+  - It holds amounts along directions it gives itself (OFS §3.1; SPN R309). **[reading]**
   - A held speed that is wrong makes every range off by one factor. Bats in heliox, where sound runs faster (15% in the
     experiment), kept their built-in speed and read every distance closer (WRD; Amichai et al. 2021). **[classical]**, the
     measurement; **[reading]**, the account.
@@ -278,8 +278,8 @@ the section; each claim's own mark where it has one; MAP (`plans/map-plan.md`) t
 - **The address reader.** A turn gives a direction to everything met: every corner of every thing, the lines where walls
   meet. It also gives what is in front of what, since occlusion orders things (RSH), but no distance and no size: ghosts
   at half or twice the size and distance sit on the same rays (§3). **[exact]**
-- **The payload reader.** It receives what arrives along each direction. Strictly the central sweep stands at a thing's
-  centre, which a reader in a room cannot do. From home, the payload is the wave itself: colour, brightness, texture, and,
+- **The payload reader.** It receives what arrives along each direction. Polar coordinates about a thing's centre
+  (classical) need a standpoint at that centre, which a reader in a room cannot take. From home, the payload is the wave itself: colour, brightness, texture, and,
   if the reader ranges, an amount (§5).
 
 Neither maps alone: the first has where without how far, the second what without where.
@@ -394,7 +394,7 @@ shape library twice:
 - **walked at constant speed along the outline:** what comes back is the shape's own arc element, different for each
   shape.
 
-The shape enters the turn only as what is met along each direction (the central reader's radii). A walk paced by the
+The shape enters the turn only as what is met along each direction (the radii from its centre, in the blueprint's classical account). A walk paced by the
 outline's length is not a turn, so the shape shows in it. draw's RCC lab says the same of one reader: its readings carry
 the turn, not the size. The corpus met it again in RSH (the census one sphere), in `h-chain.html` step 3 and in HZT.
 **[simulation]**, the labs.
@@ -404,7 +404,7 @@ Nothing in §§3–7 needs the Cauchy by name. It enters in four places:
 - **as the error law of bearings read at finite resolution** (§4);
 - **as the lighthouse,** when the sweep lands on a flat surface (§2). The turn may aim a receiver (an eye) or an emitter (a
   lamp, a lidar's beam); the law is the turn's either way (§5, "Passive and active readers");
-- **as the wrapped Cauchy on a round object,** when the two sweeps are combined (§5).
+- **as the wrapped Cauchy on a round object,** as the harmonic measure from the reader's place (§5).
 
 In each, it is the law of addresses, not of what arrives (OFS §7.2, "The rule"). **[exact]**, the four statements;
 **[reading]**, that this is why the pieces of mapping have their shapes.

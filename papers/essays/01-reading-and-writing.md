@@ -147,8 +147,8 @@ part is what arrives along each direction, its colour, brightness and texture, l
 The paint never comes without its direction, because whatever arrives arrives along some direction. The directions can
 come without the paint: a direction along which nothing arrives is still a direction, with its heat. *The heat is given;
 the paint is met.* Heat and paint are not two kinds of read.
-They are two parts of the one read, and the geometry gives two ways of reading where the paint sits, which later essays call
-the inscribed and the central sweeps.
+They are two parts of the one read, and the read gives two readings of where the paint sits, which later essays call
+the near reading s = v/h (V in terms of H) and the far reading 1/s = h/v (H in terms of V).
 
 | side | what you know | what you have | a picture of it |
 |---|---|---|---|
@@ -389,8 +389,8 @@ why it is the law a reasoner ignorant of scale must assign, and a second test to
 is only this. The deepest piece of the read's side, the law of its directions, is the circle's geometry without the
 circle: what one thumb, pointed, generates.
 
-*Demos: one turn and one read (the ray and the radius meeting on one circle); sweeping from zero (the turn counted
-against itself); the central reader, step 1 (the hand, its fingers laid by the turn, painted by the light).*
+*Demos: one turn and one read (the blueprint's ray and radius meeting on one circle, Euclid III.20, in angles); sweeping
+from zero (the turn counted against itself); the hand (its fingers laid by the turn, painted by the light).*
 
 ---
 

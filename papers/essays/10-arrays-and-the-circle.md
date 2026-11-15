@@ -91,9 +91,9 @@ With the size held, there is neither.
   array is the equation h² + v² = 1.
 - **The blueprint's shape** is an ordinary array of known length, a breadth in amounts at every index, which the blueprint joins into
   the closed shape.
-- **The read's central sweep** gives the values without the length: an amount at each given index, known only up to one common factor.
+- **The paint on the read's places** gives the values without the length: an amount at each given index, known only up to one common factor.
   The values can be ranked and averaged against each other, and cannot be sized.
-- **The read's inscribed sweep** gives the index alone, laid before any value arrives and with no length: its places the Cauchy's
+- **The read's places** give the index alone, laid before any value arrives and with no length: its places the Cauchy's
   quantiles, its middle the corner, its last place running to the horizon, K places for any N. The Cauchy takes a v and
   an h, nothing else, and is not the inside of a circle's alone: it works on a straight line too, the lighthouse's shore.
 
@@ -102,7 +102,7 @@ With nothing related there is no array: a length H, the thumb, but no index and 
 The blueprint's arrays are the circle and the shape, with the length known. The read's are the payload on the index and the index
 itself, with the length missing. That one number is a count of the whole.
 
-**Laid on the sweeps.** Take K = 8 places on the quarter turn. A direction's share of the turn is g = (2/π)·arctan(v/h),
+**Laid on the quarter turn.** Take K = 8 places on the quarter turn. A direction's share of the turn is g = (2/π)·arctan(v/h),
 so its index is k = ⌊8g⌋, with the horizon kept in the last place. No length enters. The places' boundaries are tan(kπ/16):
 0, 0.199, 0.414, 0.668, 1, 1.497, 2.414, 5.027 and the horizon.
 
@@ -112,9 +112,9 @@ so its index is k = ⌊8g⌋, with the horizon kept in the last place. No length
 | index k | 0 | 2 | 4 | 5 | 6 | 7 | 7 | 7 |
 
 The corner is the boundary between places 3 and 4, found with no length. A reading and its reciprocal go to places k
-and 7 − k: 2 to place 5, ½ to place 2. Scaling the world by 10⁻³, 7 or 10⁶ leaves a reading of 3 in place 6. And the
-central sweep, meeting the same point at twice the angle (the second essay's III.20), indexes it by ⌊K·φ/π⌋ over its
-half turn and lands on the same place, place for place. One index serves both sweeps.
+and 7 − k: 2 to place 5, ½ to place 2. Scaling the world by 10⁻³, 7 or 10⁶ leaves a reading of 3 in place 6. The
+blueprint, from the circle's centre, meets the same point at twice the angle (Euclid III.20, in angles), indexes it by
+⌊K·φ/π⌋ over its half turn and lands on the same place, place for place. One index serves both.
 
 Against that, a count index places an amount x on [0, X] at ⌊N·x/X⌋, which needs X. With N = 8 and X = 100, the amounts 10, 50
 and 99 go to places 0, 4 and 7. Read from home at a distance laid by H, ⌊8·(2/π)·arctan(x/H)⌋, they go to places 4, 6 and 7
@@ -189,7 +189,7 @@ back is a guess about the payload, not an address recovered.
 ## 4. The same kernel in slopes
 
 Now the step that gives the papers their name. Write the kernel not in the angle φ but in the slope s = tan(φ/2), the
-reading v/h of the inscribed angle. It becomes
+reading v/h at half the angle (classically, Euclid's inscribed angle). It becomes
 
   K_N = Im[(1 + is)^N] / (N·s·(1 + s²)^⌊N/2⌋).
 

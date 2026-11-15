@@ -55,7 +55,7 @@
 <main>
     <h1>The room</h1>
     <p class="lede">An observer stands at home, the room's corner. Its directions and their heat are given there, before anything arrives:
-    the inscribed sweep, every direction from one wall to the other, gives where things are: directions, no amounts. A
+    every direction from one wall to the other gives where things are: directions, no amounts. A
     thing's shape about its own centre is a radius per direction, an amount, had only by ranging (a writing) or from
     further standpoints: its shape, not its size. Holding a thing and the wall at once gives its size in the room's
     units. To put a thing at a place in metres the observer must write, and move.</p>
@@ -76,12 +76,12 @@
             marked ◆; the gold ray is the hand, one direction of the given ones.</p></div>
             <div><canvas id="plan" height="260"></canvas><p class="cap">From above: the blueprint's floor plan (classical geometry, shown for comparison). Lengths
             show only once written.</p><canvas id="strip" height="170"></canvas><p class="cap" id="stripcap">The
-            inscribed sweep, g = (2/π)ψ.</p></div>
+            directions, g = (2/π)ψ.</p></div>
         </div>
         <div id="hud"></div>
         <p class="note" id="note"></p>
     </div>
-    <p class="note">After OFS §9, "Inside a room: the two sweeps" and "To move the furniture is to write". Geometry only:
+    <p class="note">After OFS §9, "Inside a room" and "To move the furniture is to write". Geometry only:
     true sizes are drawn so the page can show them, and no read has them. <a href="demos.html">All demos</a>.</p>
 </main>
 <script>
@@ -275,7 +275,7 @@
         for (const o of sweepOrder()) { if (st.step === 3 && st.sweep && o.g > cur) continue;
             g.fillStyle = BASE[o.name].col; g.beginPath(); g.arc(x(o.g), y0, 4, 0, 2 * Math.PI); g.fill(); g.fillText(o.name, x(o.g) - 14, y0 - 12 - 12 * (NAMES.indexOf(o.name) % 2)); }
         if (st.step >= 2) { g.strokeStyle = '#d4a052'; g.beginPath(); g.moveTo(x(cur), y0 - 30); g.lineTo(x(cur), y0 + 4); g.stroke(); }
-        $('stripcap').textContent = 'The inscribed sweep, g = (2/π)ψ: where each thing is, by direction only. The corner at ½.';
+        $('stripcap').textContent = 'The directions, g = (2/π)ψ: where each thing is, by direction only. The corner at ½.';
     }
     function currentAz() { return (st.step === 3 && st.sweep) ? st.sweep.az : st.az; }
     function sweepDir() { const a = st.alt * Math.PI / 180, p = st.sweep.az * Math.PI / 180; return [Math.cos(a) * Math.cos(p), Math.sin(a), Math.cos(a) * Math.sin(p)]; }
@@ -283,7 +283,7 @@
     const NOTES = {
         1: 'Home is the room\'s floor corner, so the whole room is one wedge: every direction in it has h, v and v₂ at or above 0.',
         2: 'Choose a direction (altitude and azimuth). Its reading is two ratios, v₂/h and v/√(h² + v₂²), given before anything arrives; what arrives along it is paint. The heat is given; the paint is met. No length arrives.',
-        3: 'The inscribed sweep: every direction from along the first wall (all h) to along the second (all v₂), given at once; "show the order" steps through them in the order of the turn. Each thing lies where its directions are. That is the layout, and it holds no amount.',
+        3: 'The directions: every direction from along the first wall (all h) to along the second (all v₂), given at once; "show the order" steps through them in the order of the turn. Each thing lies where its directions are. That is the layout, and it holds no amount.',
         4: 'A thing\'s shape about its own centre: given directions from the centre, a radius along each. A radius is an amount, had only by ranging (a writing: a pulse carries the speed) or from further standpoints. The radii give the shape; their common factor, the size, is not read.',
         5: 'Holding: the thing and the room\'s width read at once, at one distance. Their ratio is the thing\'s size in the room\'s units, and the distance cancels.',
         6: 'To put a thing at a place in metres, the observer must write: take a known step and read again. One step writes the room. Then move the thing; its direction changes, its shape does not.'
@@ -315,7 +315,7 @@
         for (const b of $('things').children) b.classList.toggle('on', b.dataset.n === st.thing); }
 
     // ---- controls ----
-    const STEP_NAMES = ['', 'the room', 'point', 'the inscribed sweep', 'a shape, by ranging', 'holding', 'writing'];
+    const STEP_NAMES = ['', 'the room', 'point', 'the directions', 'a shape, by ranging', 'holding', 'writing'];
     for (let s = 1; s <= 6; s++) { const b = document.createElement('button'); b.textContent = `${s}. ${STEP_NAMES[s]}`; b.dataset.s = s; b.onclick = () => set({ step: s }); $('steps').appendChild(b); }
     for (const n of NAMES) { const b = document.createElement('button'); b.textContent = n; b.dataset.n = n; b.onclick = () => set({ thing: n }); $('things').appendChild(b); }
     $('alt').oninput = e => set({ alt: +e.target.value }); $('az').oninput = e => set({ az: +e.target.value });

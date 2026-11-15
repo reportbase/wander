@@ -4,8 +4,8 @@
 
 The first essay found that a read with no second length has no circle, yet the thumb pointed at the mountain gives it
 the circle's geometry, and that read from the standpoint that geometry is the Cauchy distribution. The second showed how
-one length pointed and turned generates it, the circle being the blueprint's drawing of the turn, and how two sweeps read the
-same point twice. This essay is about the Cauchy itself: what it is a law *of*.
+one length pointed and turned generates it, the circle being the blueprint's drawing of the turn, and how one read gives the
+near reading s and the far reading 1/s, which multiply to 1. This essay is about the Cauchy itself: what it is a law *of*.
 
 The usual answer is that it is a law of something measured: noise, a spectral line, a ratio of two measurements. The
 answer here is that it is the heat of a read's *directions*: a continuous weight over the ways one can look, hottest
@@ -54,7 +54,7 @@ In space the window takes both hands: one spreading its fingers upright, the oth
 pane lining up with a crossing of one finger from each. The fifth essay works it out. It shows that the read's space is
 not Cartesian, no three axes of amounts, but one thumb crossed with itself and two sweeps of fingers.
 
-*Demos: the central reader, step 1 (the hand, its fingers laid by the turn, painted by the light); the read (the directions
+*Demos: the hand (its fingers laid by the turn, painted by the light); the read (the directions
 and their heat, with no world to paint them).*
 
 ---
@@ -424,8 +424,8 @@ to the sources themselves. The sort does not settle the dipole's origin. It says
 
 **One photon at a time.** In a double-slit experiment lit one photon at a time, each photon lands at one place and the
 fringes build up over many. With the two paths' amplitudes as h and v, the fringes' visibility can be at most 2hv, and the
-which-path predictability is the difference of their squares. That is the central sweep's height and foot from the
-second essay, a known bound in quantum optics. In published frames the two slits' counts, 9,026 against 10,465 and 11,993 against 11,891,
+which-path predictability is the difference of their squares. In the blueprint's angles they are sin 2θ and cos 2θ, the
+point at twice the angle (Euclid III.20); it is a known bound in quantum optics. In published frames the two slits' counts, 9,026 against 10,465 and 11,993 against 11,891,
 give 2hv = 2√(n₁n₂)/(n₁ + n₂) = 0.997 and 1.000: the pair at its corner, where the bound is 1. The measured contrast falls below it, short by the source's coherence. The bound is set by the two shares
 alone, which is geometry. How far below it a pattern falls belongs to the source, what arrives.
 
@@ -437,7 +437,7 @@ energy times time, and it moves with all three. Experiments have pulled them apa
 rest: light in a coiled optical fibre, whose polarization turned by the solid angle of the coil's turning alone (Tomita
 and Chiao, 1986), and neutrons in a turning field, where strength and time were varied and the geometric part stayed
 (Bitter and Dubbers, 1987). Both tests sort it. Scale the world, or change what is carried along the loop, and only the
-dynamical phase moves. Read in this series' terms, the half is the central sweep's doubling from the second essay: a
+dynamical phase moves. Read in this series' terms, the half is the blueprint's doubling of the angle (Euclid III.20): a
 spin's direction at θ has its point on the sphere of states at 2θ, so a loop counted on that sphere is counted twice.
 
 None of these is new physics. Each is classical. What the reading supplies is the sort.

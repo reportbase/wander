@@ -210,7 +210,7 @@ must be carried in to state it in amounts. "None" means one standpoint reads it.
 | the uniform turn aimed outward, laid on a flat receiver | a point source on a plane, the cos³ law | none | the source's power |
 | a census of directions with no cut on the paint | Ellis and Baldwin's 2 in the count dipole | unmoved by what arrives | none |
 | the reciprocal of a sum of two reads | a triangulated depth | its law unmoved by scaling | the baseline |
-| the central sweep's point: height 2hv, foot h² | the Bloch point; Born's weight; the visibility bound | none | Born's rule |
+| the point at twice the angle (the blueprint's, Euclid III.20): height 2hv, foot h² | the Bloch point; Born's weight; the visibility bound | none | Born's rule |
 | the sum cut of two standpoints' readings, h + v = 1 | hard-ball contact | unmoved by scaling | none |
 | a direction of two channels read at one instant | LIGO's [H1 : L1] | unmoved by averaging | none |
 | dimensionless groups | Buckingham's π groups | unmoved by scaling | the base units |
@@ -528,7 +528,7 @@ standpoints improve the figure, never the scale.
 
 The pair is (B/2, d); its corner is the Thales circle on the baseline, where the parallax angle γ is 90°. The relative
 distance error per unit angle is cosh(ln k), least at the corner and the same at k and 1/k, and sin γ = sech(ln k), the
-height of the central sweep's point. With angles read to a step ε, the relative error stays under one over a band
+height 2hv of the point at twice the angle (the blueprint's). With angles read to a step ε, the relative error stays under one over a band
 reaching a factor of about 1/ε to either side of the corner; its far edge is about B/ε. Past it a point is a ray: parallax
 needs a standpoint's read and returns to one.
 
@@ -576,10 +576,10 @@ one write.
 
 ## 8. Waves and the qubit
 
-### 8.1 The qubit is the two sweeps [exact, classical]
+### 8.1 The qubit: a read and its doubled point [exact, classical]
 
-A qubit's state is a ray with real amplitudes h and v, a direction [h : v] (at θ in the blueprint's angle): the inscribed
-read. Its Bloch point is at 2θ, (2hv, 0, h² − v²): the central sweep's point, at twice the angle (Euclid III.20), in the
+A qubit's state is a ray with real amplitudes h and v, a direction [h : v] (at θ in the blueprint's angle): a
+read. Its Bloch point is at 2θ, (2hv, 0, h² − v²): the point at twice the angle (Euclid III.20, the blueprint's), in the
 read's slope s = v/h the doubled turn (1 + is)/(1 − is). Born's rule is the point's foot, h².
 Orthogonal states are antipodal on the sphere; a turn of the state by 2π gives −ψ, so 720° returns it; the complex ratio
 ψ₁/ψ₀ is the Bloch sphere's stereographic chart; a pure state lies on the sphere and a mixture inside. All textbook; the
@@ -608,7 +608,7 @@ amplitude is the square root of a share of the counts.
 A state pre-selected at θ_i and post-selected at θ_f has the weak value of σz equal to ⟨σz⟩ − V·tan(θ_f − θ_i), with
 ⟨σz⟩ = h² − v² and V = 2hv (Aharonov, Albert and Vaidman 1988); in the read's slopes the tangent is
 (s_f − s_i)/(1 + s_i·s_f). Under a uniform turn of the post-selection it follows
-the Cauchy at ⟨σz⟩ + iV: a read laid by the turn, its point the state's central point. A party without a shared phase
+the Cauchy at ⟨σz⟩ + iV: a read laid by the turn, its point the state's Bloch point. A party without a shared phase
 reference averages over what it cannot fix (Bartlett, Rudolph and Spekkens 2007): the twirl, an operation on the
 payload. It lowers the ensemble's visibility and changes no member's overlap: amounts are lost, readings kept. Two
 copies twirled together keep only their overlap, (1 + n₁·n₂)/2.
@@ -620,8 +620,8 @@ is half the solid angle the loop of directions encloses: it depends on which dir
 the same taken twice as slowly, in a field twice as strong, or in an apparatus twice the size. The dynamical one is
 energy times time and moves with all three. Experiments have separated them by keeping the loop and changing the rest:
 photons in a coiled fibre (Tomita and Chiao 1986) and neutrons in a turning field (Bitter and Dubbers 1987). Both tests
-sort it: scaling, and changing what is carried, each move only the dynamical phase. The half is the central sweep's
-twice the angle: the state at θ has its point at 2θ, so a loop counted on the sphere of states is counted twice.
+sort it: scaling, and changing what is carried, each move only the dynamical phase. The half is the doubled angle
+(the blueprint's account): the state at θ has its point at 2θ, so a loop counted on the sphere of states is counted twice.
 
 ## 9. Two detectors, one direction [data]
 

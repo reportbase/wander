@@ -92,10 +92,10 @@
         truly is. The gap is V/H, the number of thumbs the mountain really is.</p>
         <div id="hud"></div>
     </div>
-    <p class="note">The two reads, said simply: the true size is 1, the thumb in thumbs. The inscribed read gives the short side of
-        it, 2/π, the fingers' mean share; the central read gives the long side, π/2, its arc walked and counted in thumbs; their product is the 1.
-        The 1 is the thumb, not the mountain, and it needs no π: the two numbers are reciprocals. π itself is held only by
-        the blueprint, the circle held whole.</p>
+    <p class="note">The two facings, said simply: facing the range, the near reading s = v/h; facing away, the far reading
+        1/s = h/v; they multiply to 1 at every reading and meet at 1 at the corner. The 1 is the thumb, not the mountain, and
+        it needs no π: the two are reciprocals. π itself is held only by the blueprint, the circle held whole; its arc over chord
+        (π/2) and chord over arc (2/π), in angles, are its comparison, shown in the readout.</p>
     <p class="note">Keep the case: h and v are unit relations, and a read holds only their ratios, which have no
     scale. H, V and d are amounts, in miles; a read has only H, the thumb. Each pair has its own corner: the range's ends sit at the
     corner of the pair (half-width, distance), not of the thumb against anything. The walk is where an amount
@@ -247,7 +247,7 @@
             `the blueprint: thumb H = 1 mi, mountain V = ${fmt(Vt)} mi, distance d = ${fmt(dt)} mi`,
             `  pairs: half-width/distance ${r.endsVH.toFixed(3)}${r.atCorner ? ' (at its corner)' : ''}; width/distance ${r.widthToDistance.toFixed(3)}; distance/thumb ${fmt(dt / H)} (${Math.log2(dt / H).toFixed(2)} doublings); mountain/thumb ${fmt(Vt / H)} (${e.doublings.toFixed(2)} doublings)`,
             `from the standpoint: ends at v/h = ±${r.endsVH.toFixed(3)} (±${r.alpha.toFixed(1)}°); ${r.fingersOn} of ${FINGERS} fingers on the range, share ${r.share.toFixed(3)}; the same at every scale`,
-            `the blueprint's numbers for the two reads, on the thumb: central (the radius, a half turn) π/2 = ${vt.limb.outer.toFixed(4)}, inscribed (the ray from home, the fingers' mean shadow) ${vt.limb.innerFingers.toFixed(4)} for ${2 * vt.limb.fingers} fingers (2/π = ${vt.limb.inner.toFixed(4)}): product 1, H in H, the starting value returned; to the ends (${vt.ends.deg.toFixed(1)}°) ${vt.ends.outer.toFixed(4)} × ${vt.ends.inner.toFixed(4)} = 1; the mountain never enters`,
+            `the blueprint's comparison, in angles, on the thumb's circle: arc over chord π/2 = ${vt.limb.outer.toFixed(4)}, chord over arc (the fingers' mean shadow) ${vt.limb.innerFingers.toFixed(4)} for ${2 * vt.limb.fingers} fingers (2/π = ${vt.limb.inner.toFixed(4)}): product 1, H in H, the starting value returned; to the ends (${vt.ends.deg.toFixed(1)}°) ${vt.ends.outer.toFixed(4)} × ${vt.ends.inner.toFixed(4)} = 1; the mountain never enters`,
             `mountain equals thumb (amounts read off the thumb's circle): read ${e.Vread} mi wide at ${fmt(e.dRead)} mi; truly ${fmt(Vt)} at ${fmt(dt)}: off by V/H = ${fmt(e.factor)}, ${e.doublings.toFixed(2)} doublings, the same on both sides of the corner`,
             w ? `walked one thumb: half-angle ${w.a1.toFixed(1)}° → ${w.a2.toFixed(1)}°, s ${w.s1.toFixed(3)} → ${w.s2.toFixed(3)}; d = H·s₂/(s₂ − s₁) = ${fmt(w.d)} mi, V = 2·s₁·d = ${fmt(w.V)} mi`
               : (walked ? 'too near to walk a whole thumb toward it' : 'walk one thumb toward the range to construct the true distance and width')];

@@ -55,7 +55,7 @@
     <h1>Why the plane is special</h1>
     <p class="lede">In the plane, the read's Cauchy plays four parts at once: the <span class="g">uniform turn carried by a
     Möbius map</span>, <span class="r">where a random walker from the standpoint lands</span> (harmonic measure), the law whose
-    averages are <span class="b">the powers of the standpoint</span>, and <span class="w">the two sweeps' rates combined</span>.
+    averages are <span class="b">the powers of the standpoint</span>, and <span class="w">twice the landings' density less the uniform</span>.
     In space those parts come apart into separate laws, and turns stop commuting. Move the standpoint and watch one curve in
     the plane become several on the sphere.</p>
 
@@ -363,7 +363,7 @@ walkers: ${st.walk.n} released at z, mean cosine of where they land ${st.walk.me
 <span class="b">no harmonic measure is this law</span>
   nearest r = ${near.toFixed(4)}, least gap ${(100 * S.nearest.gap).toFixed(2)}% of the peak
 
-<span class="w">the two sweeps' rates combine into neither</span>
+<span class="w">twice the landings less the uniform is neither</span>
   best a·L + b: a = ${S.fit.a.toFixed(3)}, b = ${S.fit.b.toFixed(3)} (the plane's 2 and −1)
   residual ${(100 * S.fit.res).toFixed(2)}% of harmonic measure's peak${st.walk ? `
 

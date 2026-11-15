@@ -22,7 +22,7 @@ question. Of everything a read has in the plane, what is a fact about reads, and
 standpoint, and a book turned two ways); `central-reader.html` (step 5, a standpoint off the centre of a circle: its uniform turn lands unevenly, and the
 landing, doubled less the uniform, is harmonic measure); `one-read.html` (the landing point ½e^(2iθ) and the Cayley
 disc); `boost-sky.html` (a sky seen under a boost: the spherical Cauchy); `wedge.html` (step 7, position, then sweep);
-`sphere-cube.html` (step 7, the two sweeps).*
+`sphere-cube.html` (step 7, altitude and azimuth).*
 
 ---
 
@@ -45,7 +45,7 @@ along it, and the temperature at z is the average of the line's temperatures ove
 lays down is also the law of where a blind random path would end up. Nothing about the turn mentions walkers; it is a
 coincidence, and the plane is where it happens.
 
-**Its averages are the powers of one point.** Carry the line onto a circle, the central sweep's chart, with the Cayley
+**Its averages are the powers of one point.** Carry the line onto a circle, the blueprint's bounded chart, with the Cayley
 map W = (X − i)/(X + i). The standpoint z goes to a point w = (z − i)/(z + i) inside the circle, and the averages of the
 law become the powers of w: the average of W is w, of W² is w², and so on. A law with no mean on the line has one on the
 circle, and the mean is the standpoint itself, carried across. The second essay's Euler section said this in Euler's
@@ -54,10 +54,11 @@ one pole above the line, and that pole is the standpoint; at t = 0 the same resi
 kernels only the Cauchy's transform is one pure phasor (essay 2 §9; the OPL run): a characterization that uniqueness of
 the Fourier transform already gives, the reading of the pole as the standpoint ours.
 
-**It is the two sweeps' rates, combined.** Put an observer inside a circle, off its centre, and let it turn uniformly. Its
+**It is the landing, doubled less the uniform.** Put an observer inside a circle, off its centre, and let it turn uniformly. Its
 directions land on the circle unevenly: bunched on the near side, spread on the far side. Call the landing density L.
-Then 2L less the uniform density is exactly the circle's harmonic measure from the observer's place. Twice the inscribed
-rate less the central rate, the second essay's two sweeps, gives the law of where a walker from the same place lands.
+Then 2L less the uniform density is exactly the circle's harmonic measure from the observer's place. So the landing of a uniform
+turn, doubled less the uniform, gives the law of where a walker from the same place lands (a classical identity of the
+disc).
 This is the demo `central-reader.html`, step 5.
 
 Four parts, one law. EUL, the run behind this essay, checked each of them in the plane to forty digits: the Fourier
@@ -129,7 +130,7 @@ measure comes nearest. The least gap never fell below half a percent of the peak
 a boost carries harmonic measure onto no harmonic measure at all: from r = 0.3, a boost of 0.5 lands at least 2% of the
 peak from the nearest one.
 
-**The two sweeps' rates have no counterpart.** Inside a ball, a uniform turn from off the centre lands on the
+**The doubled landing has no counterpart.** Inside a ball, a uniform turn from off the centre lands on the
 sphere with density L = (1 − rt)/(4π(1 + r² − 2rt)^(3/2)). In the plane, 2L less the uniform was harmonic measure
 exactly. In space no a·L + b/(4π), for any constants a and b, comes within 2.6% (at r = 0.3) or 5.8% (at r = 0.7) of it.
 The best a is 1.52 or 1.66, not 2.
@@ -227,7 +228,7 @@ stand.
 **What depends on the plane** is everything that moves the standpoint off the centre:
 - that the mean, in the bounded chart, is the standpoint (in space it is for harmonic measure, not for the Möbius law);
 - that the uniform turn's law and the walker's law agree (in space they do not);
-- that the two sweeps' rates combine into either of them (in space into neither);
+- that the landing, doubled less the uniform, is either of them (in space it is neither);
 - that turns compose by adding (in space only within one sweep).
 
 The boundary decides it, not the dimension alone. From a height above a *flat* wall, in any number of dimensions, the
@@ -277,14 +278,14 @@ solid angle, the half because a state's point sits at twice its angle (*Reads an
 ## 7. What it comes to
 
 In the plane, the read's Cauchy wears four hats: the uniform turn under every change of chart, where a walker
-lands, the law whose averages are the powers of the standpoint, and the two sweeps' rates combined. It wears them
+lands, the law whose averages are the powers of the standpoint, and the landing doubled less the uniform. It wears them
 because the plane has endless angle-keeping maps, because those maps keep heat as heat, and because turning is
 multiplication that does not care about order. Euler's formula, z = r·e^(iθ), is the notation of all three, the
 blueprint's notation for the read's turn (the second essay).
 
 In space the hats come off. Liouville leaves only the Möbius maps; the heat problem stops being kept by them; turns
 stop commuting. Harmonic measure keeps the powers and the mean. The spherical Cauchy keeps the Möbius maps and the
-boosted sky. The two sweeps' rates combine into neither, and two sweeps compose only in order.
+boosted sky. The doubled landing is neither, and sweeps in altitude and azimuth compose only in order.
 
 What does not come off is what the series has built on: the split of a point into a direction and an amount, the test
 that asks which of them moved, each pair's corner, the corner in distance, and the uniform law from home, with the
