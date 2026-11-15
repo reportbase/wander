@@ -313,6 +313,17 @@ unit shows why (DVA, `plans/dva-plan.md`): relating directions is close to neces
 sufficient, its predicted rate killed on both lists; looked at afterwards, a law that relates directions and takes no
 limit is notation about three times in five on either list, every limit is content on both, and this paper holds many
 more laws of the first kind (43 of 82 against 24 of 107). That last sorting is post hoc and untested.
+Eight further lists, each from ten Wikipedia articles, classed blind and checked by the same script with predictions
+committed first (DVB–DVJ, `plans/dvb-plan.md` to `plans/dvj-plan.md`; essay 24 §10), sharpened the line into a rule
+written beforehand: π or e is a chart when it enters only through a circular or hyperbolic function of an angle or a
+rapidity standing for a ratio of two like quantities. On the four lists judged by it, such laws restate exactly 335 times
+in 358 (94%). Amounts inside a function, whole turns as periods or totals, integrals, series, limits and logarithms of
+amounts stayed content wherever the judge was clear. The edge never settled: each time a case was named in both briefs
+(angles given by an inverse function, stated values, ranges, turns added, supplements outside a function), the leak moved
+to the next, because one symbol was read as a direction by one agent and as an amount of turn by another. **A reading**:
+classical notation writes θ for both, a direction whose π is a name (a read's side) and an amount of turn whose π is
+counted (a count's side), and the law does not say which. The restatements are classical; every agent was an instance of
+one model.
 
 | | memory | unit |
 |---|---|---|
