@@ -203,10 +203,40 @@ The absurdity was in taking either facing alone. The demo
 `faces.html` turns both sweeps side by side on H, with the long route, the short route and the line, and keeps their
 product, 1 at every point of the turn.
 
+**Euler's identity, in thumbs.** Everyone knows e^(iπ) = −1. Here it is from one vantage, with one thumb, and
+nothing else.
+
+Hold the thumb horizontal. Call where it lands +1. Now raise the vertical against it: at every moment of the quarter
+turn there is one reading, s, how tall the vertical stands in thumbs. Mark where each reading lands with one rule,
+(1 + is)/(1 − is), which is only the reading and its fractions:
+
+| the thumb | s | where it lands |
+|---|---|---|
+| horizontal | 0 | +1 |
+| a third of a thumb up | 1/3 | 4/5 + 3/5·i |
+| as tall as it is wide: the corner | 1 | i |
+| three thumbs up, in the far field | 3 | −4/5 + 3/5·i |
+| vertical, the horizon | without end | −1 |
+
+So the thumb turns one quarter, horizontal to vertical, never a half, and its landing goes from +1 to −1. That is
+Euler's identity. The −1 is not a half turn of anything; it is where one quarter turn of one thumb ends.
+
+Now the near and far fields. In the near field the reading is s, V in terms of H. In the far field it is 1/s, H in
+terms of V. Take any reading and its far-field partner and multiply where they land: always −1, exactly, in fractions
+(a third of a thumb and three thumbs: (4/5 + 3/5·i)(−4/5 + 3/5·i) = −1). At the corner the two are the same reading,
+s = 1, and the product is i · i = −1. So the near field and the far field, multiplied, make the whole quarter turn, and
+the −1 of Euler's identity is the one pair of them with nothing in between: the horizontal thumb and the vertical.
+
+What, then, are e and π doing in e^(iπ)? They are the blueprint's way of writing the same quarter turn: π measures it as
+an angle on a circle drawn whole, where the landing goes halfway round, and e writes turning as a power. They arrive as a
+pair and cancel, and what is left is the −1 the thumb already had (discussion note item 20). From one vantage, with
+one thumb, Euler's identity needs no circle, no angle, no π and no e: a horizontal thumb, raised to vertical, lands on
+−1.
+
 **Into the sphere.** Euler's formula takes all of this into the sphere, and nothing new comes in with it: it is still
 just H and V, with one more degree of freedom.
 
-The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028, R1029, R1030), the wording mine. Older wordings in the series
+The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028, R1029, R1030, R1031), the wording mine. Older wordings in the series
 that give the outer sweep "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
 brought to it.
 
@@ -261,4 +291,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026, R1027, R1028, R1029, R1030.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026, R1027, R1028, R1029, R1030, R1031.
