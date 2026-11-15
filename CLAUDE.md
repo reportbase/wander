@@ -482,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1014 (15 Nov; a pasted note, "under what exact conditions … a common operator J with J² = −I?"): CPX (`plans/cpx-plan.md`, `runs/cpx/`), exact: maps commuting with a non-scalar A are pI + qB, B² = (Δ/4)·I, the sign of Δ deciding complex, split-complex or dual (turn, boost, stride); J1–J4 not killed, J5 and J6 killed by my arithmetic; i derived given linear, commuting, orientation-keeping, returning composition, those premises open. Discussion note item 19; no paper changed.
   R1013 (15 Nov; a pasted referee evaluation, `plans/rw-review-5.md`): the factor 1 + iθ/n is not a pure read (it carries √(1 + θ²/n²)); the read is the pair [1 : θ/n], the normalized product the turn alone; *Reads and Writes* §9 and essay 15. Nothing else changed.
   R1012 (15 Nov; Tom: "merge and update the demos"): BLD as notes on `notation.html`, `euler.html` (menu, n reads) and `demos.html`'s notation and Euler cards; no script changed.
   R1011 (15 Nov; Tom: "merge and update the essays"): BLD and essay 25 in essays 2 §9, 15 §6, 18 §7 and 24 §10; no new claim.
