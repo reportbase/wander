@@ -1548,7 +1548,8 @@ does one face V, or face away from V? Both faces stand on H and turn one quarter
 that closes the heat, and it is approached at the horizon, never reached. *Facing away from V* (the central sweep, the
 outer): the quarter arc from all of h to all of v is Ω thumbs long, the heat gathered to the horizon,
 ∫₀^∞ ds/(1 + s²), reached at a named point, −1. Their product is 1, which is also the blueprint's number, the thumb in
-thumbs; the blueprint itself, the dual hemispherical vantage, has no standpoint and faces neither way. The exchange swaps
+thumbs. Facing V and facing away from V at the same time leaves no facing: the result is the non-facing, discrete value
+of 1 thumb (Tom, R1033); the blueprint itself, the dual hemispherical vantage, has no standpoint and faces neither way. The exchange swaps
 the two, and they agree only at the corner (§6). Both numbers are limits, their values held by no read or count. In the
 table above the total's 1/Ω is the factor facing V and its Ω the factor facing away, and "the two facings" are those
 two. **Classical** (the mean share and the arc); the assignment is Tom's (R1032), replacing an earlier sorting of the
