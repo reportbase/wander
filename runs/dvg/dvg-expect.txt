@@ -1,0 +1,2 @@
+120 laws; class chart 69, other 51
+G3 expected share (0.92*69 + 0.03*51)/120 = 0.5418
