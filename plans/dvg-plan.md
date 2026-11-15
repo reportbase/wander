@@ -89,3 +89,19 @@ not settle: whether "θ = arctan(x)" is restated by "the slope of θ is x". By t
 
 Post hoc, untested: the chart rule sorts these lists as well as the restatement rule itself; what is left open is not the
 entry but the restaters' treatment of an angle given as an output.
+
+### Run 2, the brief fixed (predictions committed before the restater runs)
+
+Run 1's G1 turned on a call the brief did not settle: a law that gives an angle by an inverse function (θ = arctan x,
+β = arcsin(−R₁₂)) was content to run 1's restater ("the angle is the output") and notation to the earlier ones (DVC 16,
+DVE 18, DVF 10, 16). Run 2 settles it in the brief, the same for every law: **where a law gives a direction's angle by an
+inverse circular or hyperbolic function of quantities, it is restated by saying the angle's slope (or share, or
+half-slope) equals the same expression; that is the same relation, since on the range a direction's angle and its slope
+determine each other.** Nothing else in the brief changes; a fresh restater, given only `runs/dvg/laws.md`, the rule with
+this sentence added and the checker, writes `runs/dvg/restate2.py`; `runs/dvg/check2.py` is `check.py` reading it. The
+list, the blind classes (`runs/dvg/chart.md`) and G3's expectation (54.2%) are run 1's, unchanged.
+
+Predictions, as run 1's: **G1′** chart laws notation at 85% or more; **G2′** other laws at 10% or less; **G3′** overall
+within 8 points of 54.2%. Caution, stated before the run: this run is not a fresh test of the rule, since its list and its
+misses were seen in run 1; it tests only whether the brief's one open call was what moved G1, and the chart rule still
+needs a fresh list once the brief is fixed.
