@@ -1,0 +1,2 @@
+120 laws; entry dir 52, other 68
+E3 expected share (0.92*52 + 0.03*68)/120 = 0.4157
