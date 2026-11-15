@@ -15,7 +15,8 @@
     The turn is t of the quarter (0 to 1). Readouts: the slope s from each face's start (the same for both), the
     inscribed face's running mean share of the thumb (sin θ)/θ, tending to 1/Ω = 2/π, and the central face's arc over
     chord θ/sin θ, tending to Ω = π/2, their product 1 at every t. θ = t·Ω is the blueprint's measure of the turn,
-    used here only to draw it.
+    used here only to draw it. Three routes (R1020): bars in the line's unit, the short route 1/Ω (chord over arc),
+    the line 1 and the long route Ω (arc over chord), with their product.
     Links: ?t=<0..1>&play=1. Test hook: window.__faces (dir, readings, set, state).
     -->
     <style>
@@ -48,7 +49,8 @@
     <h1>Two faces on H</h1>
     <p class="lede">Two points, H and V. Both faces stand on H, and each turns one quarter turn, the same way round, never a
     half turn. The inscribed face starts facing V and finishes facing down; the central face starts facing away from V
-    and finishes facing up. Opposite at the start, opposite at the finish.</p>
+    and finishes facing up. Opposite at the start, opposite at the finish. Three routes from H: the long one, Ω, the
+    short one, 1/Ω, and the line itself, 1; the two facings multiply to the line.</p>
 
     <div class="panel">
         <canvas id="cv" width="1800" height="1000" aria-label="H and V, the two faces turning a quarter turn"></canvas>
@@ -141,6 +143,17 @@
         ctx.fillText('H', hx - 14, hy + 56); ctx.fillText('V', vx - 12, hy + 56);
         ctx.fillStyle = dim; ctx.font = '400 24px "DM Mono", monospace';
         ctx.fillText('one thumb', hx + r + 10, hy + 34);
+        // the three routes, in the line's unit: the short route 1/Ω, the line 1, the long route Ω
+        const R3 = readings(t), unit = W * 0.13, bx = W * 0.04, by = Hh * 0.70;
+        const bars = [['short route · 1/Ω, toward V', R3.share, teal], ['the line · 1', 1, bright], ['long route · Ω, away from V', R3.arc, gold]];
+        ctx.font = '400 22px "DM Mono", monospace';
+        bars.forEach(([name, len, col], i) => {
+            const y = by + i * 70;
+            ctx.fillStyle = col + (i === 1 ? 'cc' : '');
+            ctx.fillRect(bx, y, len * unit, 14);
+            ctx.fillStyle = dim; ctx.fillText(`${name}  ${len.toFixed(4)}`, bx, y - 8);
+        });
+        ctx.fillStyle = dim; ctx.fillText(`short × long = ${(R3.share * R3.arc).toFixed(6)}`, bx, by - 48);
     }
 
     const fmt = (x, d = 4) => x === Infinity ? '∞ (the horizon)' : x.toFixed(d);

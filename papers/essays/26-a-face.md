@@ -143,6 +143,27 @@ a face is depends only on whether V is behind it or in front of it when it begin
 1/Ω to the two sweeps is R802's and R889's. The demo `faces.html` turns the two faces side by side, with each one's running number
 and their product, 1 at every point of the turn.
 
+**Three routes.** Between H and V there are three (Tom: "Three routes between H and V. The long route Omega, the
+short route, 1/Omega, and the line itself. Continuous just means the distance of the facing, and there are two possible
+facings."):
+
+| route | in the line's unit | the face | |
+|---|---|---|---|
+| the long route | Ω, about 1.5708 | facing away from V at the start | the arc, reached at its end |
+| the line itself | 1 | no face | the two points and the chord between them |
+| the short route | 1/Ω, about 0.6366 | facing toward V at the start | the line seen per arc, approached |
+
+No path between H and V is shorter than the line, so the short route is not a shorter path in the line's own unit: it
+is the line measured from the arc's side, chord over arc, what the face turned toward V holds of the way on average.
+The long route is the arc measured from the line's side, arc over chord. One distance, the distance a face sweeps, read
+from its two facings. Continuous, in this sense, is that distance; a count has none, and the line, two points, has no
+face to sweep it.
+
+And the two facings multiply to 1 (Tom: "The two facings multiply to equal 1, that's what every one for gets."):
+Ω · 1/Ω = 1, the line, at the end and at every point on the way (θ/sin θ times sin θ/θ). Each facing, taken alone,
+looks like a number of its own, a long Ω or a short 1/Ω; taken together they give back the line and nothing more,
+which is the thumb in thumbs (*Reads and Writes* §9; R804). `faces.html` draws the three routes and keeps the product.
+
 Where a doubled angle appears, it is not the face turning twice as far. Euclid's III.20 (the angle at the centre is
 twice the angle at the circle) and the landing point W(s) running from +1 to −1 in §6 are the blueprint's measures of
 one quarter-turn face, written on a circle drawn whole. Older wordings in the series that give the central sweep "a half
@@ -199,4 +220,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020.
