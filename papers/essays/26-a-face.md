@@ -18,8 +18,8 @@ This essay is about that third thing. In the series' words: a count has no face;
 of one face.
 
 The order: what has no face (§1), what a face is (§2), flowing over (§3), Ω as the measure of a face (§4), faces counted
-(§5), leaving a face (§6), what needs a face and what does not (§7), what is classical and what is ours (§8), and what it
-changes (§9).
+(§5), leaving a face (§6), toward and away (§7), what needs a face and what does not (§8), what is classical and what
+is ours (§9), and what it changes (§10).
 
 ---
 
@@ -121,7 +121,28 @@ with no circle drawn and no π. Measured as angles the bends total Ω for the pa
 calls π, for the landing point, which turns twice as fast. Past the horizon the slopes come back from the other side,
 into the next face. But the read has the −1 first, by fractions, at the end of one face.
 
-## 7. What needs a face, and what does not
+## 7. Toward and away
+
+Take two points, H and V, and start at H. A face turns a quarter turn, never a half turn (Tom: "Quarter turn not half
+turn. Never half turn."). What tells the two sweeps apart is which way the face points when it starts:
+
+- **Ω: the face starts facing away from V.** The quarter turn brings it round to V, and it gets there, at a point. What
+  is counted on the way, the arc in thumbs, tends to Ω. This is the central sweep: reached.
+- **1/Ω: the face starts facing toward V.** V is in front from the start, and the quarter turn takes the face away from
+  it, toward a horizon it never meets. What turning sees of the thumb, on average, tends to 1/Ω. This is the inscribed
+  sweep: approached.
+
+Both are one face, one quarter turn, from the same start. Their numbers are reciprocals, and their product is the 1
+the thumb gives back (*Reads and Writes* §9, "The thumb, short by reading, long by walking, and whole"); which of the two
+a face is depends only on whether V is behind it or in front of it when it begins. Tom's (R1017); the assignment of Ω and
+1/Ω to the two sweeps is R802's and R889's.
+
+Where a doubled angle appears, it is not the face turning twice as far. Euclid's III.20 (the angle at the centre is
+twice the angle at the circle) and the landing point W(s) running from +1 to −1 in §6 are the blueprint's measures of
+one quarter-turn face, written on a circle drawn whole. Older wordings in the series that give the central sweep "a half
+turn" (R233, R450, `facing.html`'s facing turning to 180°) predate this and are to be brought to it.
+
+## 8. What needs a face, and what does not
 
 Sorting by the picture gives a test for whether a quantity needs a face:
 
@@ -135,7 +156,7 @@ The second list is the address side of the series' oldest split, the first is mo
 are the ones that keep order, and order among directions comes only with a face. That is a reading; the classical part
 is that the projective line carries no linear order until it is cut.
 
-## 8. What is classical and what is ours
+## 9. What is classical and what is ours
 
 **Classical.** The projective line's cyclic order, and that cutting it at two points gives a linear one. The weight
 ds/(1 + s²) and its total π/2 over the positive slopes. Tangent addition and its pole at s·a = 1. The four quadrants of
@@ -150,7 +171,7 @@ says how many, the face lets the read flow over them.
 **Not claimed.** That anything in the world is discrete, or continuous (R645). That a face is a physical surface: it is
 a direction faced (R313). That Ω is a number any read holds (R913).
 
-## 9. What it changes
+## 10. What it changes
 
 Two things the series had kept apart come together. R645 said K is a count read continuously, one foot in each world,
 without saying what joins the feet. R896 said a read is continuous and what it reads is discrete, without saying how the
@@ -172,4 +193,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017.
