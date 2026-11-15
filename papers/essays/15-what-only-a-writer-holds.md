@@ -184,8 +184,9 @@ that the heat in the v/h chart and the heat in the h/v chart, 1/(1 + s²) and s�
 identity, that w(s)·w(1/s) = −1 for w = (1 + is)/(1 − is), at the corner i × i = −1. Of the total, that the heat below
 the corner equals the heat above it: equal halves, with no π/4 in them. In the plane, π is the price of turning "equal halves" into
 "how much" (essay 2 §9, "Four identities, one exchange"); in space the same price is 2, with no π in it. And the two numbers the blueprint puts on the sweep belong to two
-reads, each a single hemispherical vantage: 2/π the inscribed sweep's, what turning sees, the thumb's mean share,
-approached; π/2 the central sweep's, reached, its arc in thumbs what a walk counts, an extent.
+facings, each a single hemispherical vantage: 2/π facing V (the inscribed sweep), the thumb's mean share,
+approached; π/2 facing away from V (the central sweep), its arc in thumbs, reached. Neither is reading or walking; each
+is only which way one faces (essay 26 §7).
 
 This essay's title, "what only a writer holds", needs one more distinction, which the ladder of §1 already drew. A walk counted is
 a count laid over writes, the strides, and every walk actually made is a finite count, so what it holds is a fraction: 22/7, 355/113, a series

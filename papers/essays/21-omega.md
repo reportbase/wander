@@ -444,7 +444,7 @@ statement about one sweep written in the unit of the whole.
   2/π; walking is π/2", "The thumb, short by reading, long by walking, and whole" (the three paths), "What is free, and
   what π costs", "Four identities, one exchange", and the passage on a turn added to itself (`../../plans/chs-plan.md`); §8 (three
   thumbs, the octant, the two orders). The current account,
-  written in Ω since 12 November, where these headings now read "Reading is 1/Ω; walking is Ω" and "What is free, and
+  written in Ω since 12 November, where these headings later read "Reading is 1/Ω; walking is Ω" (since R1032 "1/Ω is facing V; Ω is facing away from V") and "What is free, and
   what Ω costs". The exact checks behind §7's numbers are `../../plans/swp-plan.md` and `../../plans/wdg-plan.md`.
 - Demos: `../../one-read.html` (one turn and its landing point), `../../paths.html` (one sweep, three paths),
   `../../sweep-zero.html` (composing sweeps from zero), `../../wedge.html` (the octant), `../../euler.html` (n reads).

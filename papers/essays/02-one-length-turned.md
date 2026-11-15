@@ -316,24 +316,23 @@ and draws besides: it reads the far world from home, faces the thing in front of
 blueprint in whatever it draws whole. So π/2 × 2/π = 1 is not two parties meeting; it is one observer's two reads
 multiplied, which is arithmetic, and the 1 is its own thumb.
 
-**Which act each number measures.** The two numbers also sort by act. 2/π is what turning sees: over the quarter turn the
-thumb's share h averages 2/π, the mean of what is seen of one thumb from a standpoint that never moves, and it is
-approached at the horizon, never reached. π/2 is what walking counts: the quarter arc from all of h to all of v is π/2
-thumbs long, and it is reached, at a point. An arc in thumbs is an extent, had here by walking and counting: a count laid over
-the steps walked, each step a write. With the thumb in metres it is an amount in a unit, a write. So, in short, both numbers belong to reads, each a single hemispherical vantage: 2/π to the inscribed sweep and π/2 to the central one, whose arc the walk counts, and
-their product, 1, is also the blueprint's number; the blueprint, the dual hemispherical vantage, has no standpoint and is neither read nor write. Both stay the blueprint's arithmetic, since a read holds no π;
-what is sorted is the read each one measures.
+**Each number is a facing.** π/2 is not walking and 2/π is not reading; they are entirely the facing: do you face V,
+or face away from V? Facing V (the inscribed sweep), the thumb's share h averages 2/π over the quarter turn, approached
+at the horizon, never reached. Facing away from V (the central sweep), the quarter arc from all of h to all of v is π/2
+thumbs long, reached at a point. Both faces stand on H and turn one quarter turn (essay 26 §7). Their product, 1, is also
+the blueprint's number; the blueprint, the dual hemispherical vantage, has no standpoint and faces neither way. Both stay
+the blueprint's arithmetic, since a read holds no π.
 
-**Short by reading, long by walking, and whole.** Said most simply: the true size is 1, the thumb in thumbs. Reading gives
-the short side of it, 2/π; walking, which counts the central read's arc, gives the long side, π/2; their product is the 1.
+**Short facing V, long facing away, and whole.** Said most simply: the true size is 1, the thumb in thumbs. Facing V
+gives the short side of it, 2/π; facing away from V gives the long side, π/2; their product is the 1.
 The proof is one line, the
-blueprint's. Along the sweep each step of the arc gains v at the rate h: what is read at a place is the rate at which the
-thumb is gained per step walked there. Summed over the walk the gain is all of v, 1; and a sum is a mean times a length,
+blueprint's. Along the sweep each step of the arc gains v at the rate h: the share at a place is the rate at which the
+thumb is gained per step of arc there. Summed over the arc the gain is all of v, 1; and a sum is a mean times a length,
 (2/π) × (π/2) = 1. The 1 is no property of the circle: straight across the chord the mean gain is 1/√2 over a length √2,
 along the square's two edges ½ over a length 2. Only the split is the path's, and π is what the split costs when the path
 is the turn; in space the same split is ½ and 2, with no π. The 1 is the thumb, not the mountain. The mathematics is old
-(Cauchy's mean projection, 1841; Crofton; Buffon's needle, 1777); the assignment of the short factor to the inscribed read
-and the long one to the central read's arc, which the walk counts, is ours. A walk straight toward a thing is the square's row: far off the thing's share fills, from
+(Cauchy's mean projection, 1841; Crofton; Buffon's needle, 1777); the assignment of the short factor to facing V
+and the long one to facing away from V is ours. A walk straight toward a thing is the square's row: far off the thing's share fills, from
 the corner in the thumb's share empties by the same step each stride, and the step times the count is 1 with no π in it
 (essay 19, section 8).
 

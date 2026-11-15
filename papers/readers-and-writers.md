@@ -20,7 +20,7 @@ weight ds/(1 + s²), the one weight that composing slopes leaves unchanged, summ
 sweeps' worth. Since the paper's subject is the single sweep, its constants are mostly π/2 and 2/π, and it is simpler to
 give that total its own letter than to keep halving π: Ω = π/2, so 2/π is 1/Ω, the turn is 4Ω and the sphere 8Ω, the
 Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω and its inverse are to reads and writes what π is to the blueprint: 1/Ω is the
-number for what turning sees, Ω the number for what walking counts (§9, "Reading is 1/Ω; walking is Ω"), and π, two
+number for facing V, Ω the number for facing away from V (§9, "1/Ω is facing V; Ω is facing away from V"), and π, two
 sweeps joined, is the blueprint's own. Both are limits, and they are the limits a read and a write actually encounter: 1/Ω is
 what the thumb's share tends to as a sweep runs on toward the horizon, and Ω is what a count of the walk tends to,
 stride by stride. No finite sweep and no finite count has either value, but each is headed for its own. π is a limit
@@ -451,7 +451,7 @@ median and the absence of any mean are what a read with no breadth in it is.
 
 | | hemispheres | vantage | V | the blueprint's number for it | what it is |
 |---|---|---|---|---|---|
-| inscribed, toward the universe | one | home, facing a horizon | unknowable | 1/Ω, approached | a read: what turning sees |
+| inscribed, toward the universe | one | home, facing a horizon | unknowable | 1/Ω, approached | a read, facing V |
 | central, toward the apple | one | the apple's centre, across to its rim | knowable | Ω, the limit a count of its arc tends to; the end reached at a point | a read about a bounded thing; from afar its rim is one direction, met at −1 by walking; its arc, counted in thumbs, is an extent |
 | the apple held and turned | both, in reach | one, the turn known | known, held | the turn's Cauchy | looks joined by a known turn, of a thing held in the hand |
 | the blueprint | both at once | dual, drawn; no standpoint | known | 1 | neither read nor write: the dual hemispherical vantage |
@@ -485,7 +485,7 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
 - *Heat* and *paint* are pictures, for the read's density and for what it meets, and are not leaned on; *address* only as a computing metaphor or for a count of K
   places at the heat's quantiles (§5).
 - Ω and 1/Ω (defined before §1; Ω = π/2) are the limits the two reads encounter, each a single hemispherical vantage: 1/Ω the inscribed
-  sweep's, Ω the central sweep's (its arc walked and counted is an extent; §9, "Reading is 1/Ω; walking is Ω"). Ω
+  sweep's, Ω the central sweep's: facing V and facing away from V (§9, "1/Ω is facing V; Ω is facing away from V"). Ω
   and the one-length circle are the blueprint's: the dual hemispherical vantage, from no standpoint, nothing to do with reads and writes.
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
 
@@ -1542,33 +1542,31 @@ Cauchy of scale c. Dividing by the thumb integrates the length away, taking e wi
 law of directions, a heat made a probability only when it is closed, on the blueprint, and the Gaussian a law of amounts.
 **Classical**; the read's forms checked by hand; the assignment is a reading.
 
-**Reading is 1/Ω; walking is Ω.** The two numbers sort by act. *1/Ω is what turning sees*: over the quarter turn the
-thumb's share h averages 1/Ω, the mean of what is seen of one thumb from a standpoint that never moves; it is the constant
-that closes the heat, and it is approached at the horizon, never reached. *Ω is what walking counts*: the quarter arc
-from all of h to all of v is Ω thumbs long, the heat gathered to the horizon, ∫₀^∞ ds/(1 + s²), reached at a named
-point, −1. An arc in thumbs is a length against the thumb, unmoved by scaling and held by no single read: of the kind D3
-calls an extent, here counted out, so a count; with the thumb in a unit it is a write (D4). The sweep whose arc that is,
-the central one, is itself a read: one hemisphere, from the bounded thing's centre, facing its rim. So both numbers belong to
-single-hemisphere reads, 1/Ω to the inscribed and Ω to the central, and the walk is how the second one's arc is
-counted. Their product is 1, which is also the blueprint's number, the thumb in thumbs; the blueprint itself, the dual hemispherical vantage, has no standpoint and
-is neither of them. The exchange swaps the two, and they agree only at the corner, where a length walked and a
-ratio held say the same (§6). Both numbers are limits, their values held by no read or count; what is sorted is
-which read each one measures. In the table above the total's 1/Ω is the inscribed read's factor and its Ω the central
-read's, and "the two facings" are those two reads. **Classical** (the mean share and the arc); the assignment is a reading.
+**1/Ω is facing V; Ω is facing away from V.** Ω is not walking and 1/Ω is not reading; they are entirely the facing:
+does one face V, or face away from V? Both faces stand on H and turn one quarter turn, never a half (essay 26 §7).
+*Facing V* (the inscribed sweep, the inner): over the quarter turn the thumb's share h averages 1/Ω; it is the constant
+that closes the heat, and it is approached at the horizon, never reached. *Facing away from V* (the central sweep, the
+outer): the quarter arc from all of h to all of v is Ω thumbs long, the heat gathered to the horizon,
+∫₀^∞ ds/(1 + s²), reached at a named point, −1. Their product is 1, which is also the blueprint's number, the thumb in
+thumbs; the blueprint itself, the dual hemispherical vantage, has no standpoint and faces neither way. The exchange swaps
+the two, and they agree only at the corner (§6). Both numbers are limits, their values held by no read or count. In the
+table above the total's 1/Ω is the factor facing V and its Ω the factor facing away, and "the two facings" are those
+two. **Classical** (the mean share and the arc); the assignment is Tom's (R1032), replacing an earlier sorting of the
+two numbers by act (reading and walking).
 
-**The thumb, short by reading, long by walking, and whole.** Said most simply: the true size is 1, the thumb in thumbs.
-Reading gives the short side of it, 1/Ω; walking gives the long side, Ω; the two together give back the 1. The proof is
-one line, in the blueprint's terms. Along the sweep, from all of h to all of v, each step dℓ of the arc gains v at the rate
-dv/dℓ = h: what is read at a place, the thumb's share h, is the rate at which the thumb is gained per step walked there.
-Summed over the walk the gain is all of v,
+**The thumb, short facing V, long facing away, and whole.** Said most simply: the true size is 1, the thumb in thumbs.
+Facing V gives the short side of it, 1/Ω; facing away from V gives the long side, Ω; the two together give back the 1.
+The proof is one line, in the blueprint's terms. Along the sweep, from all of h to all of v, each step dℓ of the arc
+gains v at the rate dv/dℓ = h: the thumb's share h at a place is the rate at which the thumb is gained per step of arc
+there. Summed over the arc the gain is all of v,
 
 ∫ h dℓ = 1,
 
-and a sum is a mean times a length: (mean of what is read) × (length walked) = (1/Ω) × (Ω) = 1. The 1 owes nothing to the
+and a sum is a mean times a length: (mean share) × (length of the path) = (1/Ω) × (Ω) = 1. The 1 owes nothing to the
 circle. On any path from the one end to the other the gain per step, summed over the steps, is the whole of v, so the mean
 rate times the length is 1 on every path; only the split between the two factors is the path's:
 
-| the path | mean gain per step | length walked | product |
+| the path | mean gain per step | length | product |
 |---|---|---|---|
 | the chord, straight across | 1/√2 | √2 | 1 |
 | the quarter arc, the one length turned | 1/Ω | Ω | 1 |
@@ -1582,7 +1580,7 @@ mountain's size (D4). One read is one share h; 1/Ω is their average over the tu
 here is counted in thumbs, an extent as a count; it is an amount, a write, only once the thumb has a unit. The mathematics is old: the mean
 projection of a segment over all directions is 1/Ω of its length (Cauchy 1841), a curve's length is Ω times its mean
 projection (Cauchy 1841; Crofton 1868), and Buffon's needle (1777) is the same 1/Ω met as a chance. What is ours is the
-assignment: the short factor to the read, the long one to the walk, their product to the two held together.
+assignment: the short factor to facing V, the long one to facing away from V, their product to the two held together.
 **Classical**; the assignment is a reading.
 
 **The same 1 on the road.** §6's walk to the mountain has a 1 of this kind, and it is the square's row of the table, not
@@ -1618,11 +1616,11 @@ The numbers Ω and 1/Ω are not free. Ω is a limit, transcendental ("A limit ma
 ever a fraction near it, each further digit at a further cost, the whole of it at an infinite one. It can be named
 exactly, as the total of the turn, and the name used; what cannot be had in finite time is the value. So the sweep
 only seems to hand over Ω at no cost. What it hands over free is that there is a whole, split in equal halves at the
-corner, and that the read and the walk multiply to 1; how much the whole is, and so how short the short side and how long
+corner, and that the two facings multiply to 1; how much the whole is, and so how short the short side and how long
 the long side, is the blueprint's completed sum. That is the exact sense of "Ω is the price", above: the price is an
 infinity, paid only at the limit, and a read never pays it because a read never needs the value.
 
-So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves; it does not use Ω, and 1/Ω is the limit its share of the thumb tends to as the sweep runs on toward the horizon ("Reading is 1/Ω; walking is Ω", above). A count
+So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves; it does not use Ω, and 1/Ω is the limit its share of the thumb tends to as the sweep runs on toward the horizon ("1/Ω is facing V; Ω is facing away from V", above). A count
 is of a walk actually made, and any such walk is finite, so a count holds fractions: 11/7, 355/226, a series
 stopped at some term, each nearer Ω and none of them Ω. A count uses Ω's name and its approximants, and never has its
 value; Ω is the limit it tends to, stride by stride. So Ω and 1/Ω are limits the two acts actually encounter, each
@@ -1745,8 +1743,8 @@ else; the same split is why the square of ∫ e^(−x²) dx is π, a full turn 2
 
 The count's tier is de Moivre's (1733): tossing and counting is what counting does, and the Gaussian is
 what the counts tend to. Ω arrives in that limit through Wallis's product (1656),
-Ω = (2·2)/(1·3) × (4·4)/(3·5) × (6·6)/(5·7) × …, every partial product a fraction: the walk's Ω, reached by
-counting. And what is exact flips once more. For the Cauchy the exact facts were the median and the equal halves, and
+Ω = (2·2)/(1·3) × (4·4)/(3·5) × (6·6)/(5·7) × …, every partial product a fraction: the Ω of facing away from V,
+approached by counting. And what is exact flips once more. For the Cauchy the exact facts were the median and the equal halves, and
 there was no mean; for the Gaussian the exact facts a count holds are the mean and the variance, which are
 sums. The Cauchy is kept by order and the Gaussian by sums, a law of directions and a law of amounts. This is no fifth
 read's identity: a read holds nothing of one Gaussian amount, only the direction of a pair, which is the Cauchy it
