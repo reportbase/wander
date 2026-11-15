@@ -204,7 +204,9 @@ it. The blueprint holds the limit, with the arc named π and the base named e. S
 only the blueprint holds, and the two parts the fact does not depend on: π is the price of saying how long the arc to −1
 is, e the price of saying it as one smooth turn where a read has two corner steps.
 
-The count's product is also the two acts in turn. Each factor 1 + iπ/n is one read, a slope and nothing else. To
+The count's product is also the two acts in turn. Each factor, as the pair [1 : π/n], is one read, a slope and nothing else; as the
+complex number 1 + iπ/n it also carries a length √(1 + π²/n²), the representation's, which the product compounds.
+Divided by it, each factor has length 1 and the n of them are the turn alone, tending to e^(iπ) all the same. To
 multiply the next one on, the look so far has to be there to start from, kept in something, and what is kept is a
 write; the next read is taken from it. So (1 + iπ/n)ⁿ is read, keep, read, keep: what is read is then written, and what
 is written is then read. Euler's identity is that alternation carried to its limit, the turn completed and the scale
