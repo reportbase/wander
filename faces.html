@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Two faces on H</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    faces.html: two faces on H (15 November 2026, SPN R1019; essay 26 §7; Tom: "Make a demo to show this.", after
+    R1017, R1018 and "Both stand on H. On facing V and on facing away from V"). Two points, H and V, V to the right.
+    Both faces stand on H and each turns one quarter turn, never a half turn, the same way round:
+      the inscribed face starts facing V (east) and ends facing down (south): 1/Ω, approached;
+      the central face starts facing away from V (west) and ends facing up (north): Ω, reached.
+    The turn is t of the quarter (0 to 1). Readouts: the slope s from each face's start (the same for both), the
+    inscribed face's running mean share of the thumb (sin θ)/θ, tending to 1/Ω = 2/π, and the central face's arc over
+    chord θ/sin θ, tending to Ω = π/2, their product 1 at every t. θ = t·Ω is the blueprint's measure of the turn,
+    used here only to draw it.
+    Links: ?t=<0..1>&play=1. Test hook: window.__faces (dir, readings, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0 }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 5px 10px; cursor: pointer; touch-action: manipulation }
+    input[type=range] { flex: 1 1 220px; min-width: 0; accent-color: var(--gold) }
+    label { color: var(--dim) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr } }
+    .face { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px }
+    .face h3 { margin: 0 0 4px; font: 500 14px/1.3 'DM Mono', monospace }
+    .teal { color: var(--teal) } .gold { color: var(--gold) }
+    .out { white-space: pre-wrap; color: var(--bright); font-size: 12.5px }
+    .note { color: var(--dim); font-size: 12.5px; max-width: 80ch }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Two faces on H</h1>
+    <p class="lede">Two points, H and V. Both faces stand on H, and each turns one quarter turn, the same way round, never a
+    half turn. The inscribed face starts facing V and finishes facing down; the central face starts facing away from V
+    and finishes facing up. Opposite at the start, opposite at the finish.</p>
+
+    <div class="panel">
+        <canvas id="cv" width="1800" height="1000" aria-label="H and V, the two faces turning a quarter turn"></canvas>
+        <div class="row">
+            <button id="play">▶ turn</button>
+            <button id="reset">start</button>
+            <label for="t">turn</label>
+            <input id="t" type="range" min="0" max="1000" value="0">
+            <span id="tv" class="out">t = 0.000</span>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="face panel">
+            <h3 class="teal">inscribed · 1/Ω</h3>
+            <div class="out" id="outI"></div>
+        </div>
+        <div class="face panel">
+            <h3 class="gold">central · Ω</h3>
+            <div class="out" id="outC"></div>
+        </div>
+    </div>
+    <div class="panel out" id="outB"></div>
+
+    <p class="note">Ω is the total of one quarter turn, classically π/2. The slope s is what each face holds of its turn,
+    counted from where it started; it runs from 0 to the horizon for both. The two running numbers are the blueprint's
+    measures of the two faces: the inscribed face's mean share of the thumb, which tends to 1/Ω and never reaches it,
+    and the central face's arc over chord, which tends to Ω and is reached at its end. Their product is 1 at every point
+    of the turn. From essay 26, <i>A face</i>, §7 (SPN R1017, R1018).</p>
+</main>
+<script>
+(() => {
+    const OMEGA = Math.PI / 2;
+    const START = { inscribed: 0, central: Math.PI };          // screen angle: 0 east (toward V), π west (away)
+    const END_NAME = { inscribed: 'down', central: 'up' };
+    // screen coordinates, y down: increasing angle turns clockwise on the screen (east → south, west → north)
+    function dir(face, t) {
+        const a = START[face] + t * OMEGA;
+        return [Math.cos(a), Math.sin(a)];
+    }
+    function readings(t) {
+        const th = t * OMEGA;
+        const s = t >= 1 ? Infinity : Math.tan(th);
+        const share = th === 0 ? 1 : Math.sin(th) / th;          // inscribed: mean of the thumb's share so far
+        const arc = th === 0 ? 1 : th / Math.sin(th);            // central: arc over chord so far
+        return { t, s, share, arc, product: share * arc, limitShare: 1 / OMEGA, limitArc: OMEGA };
+    }
+
+    const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+    const slider = document.getElementById('t'), tv = document.getElementById('tv');
+    const outI = document.getElementById('outI'), outC = document.getElementById('outC'), outB = document.getElementById('outB');
+    const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+    let t = 0, playing = false, last = 0;
+
+    function draw() {
+        const W = cv.width, Hh = cv.height;
+        ctx.clearRect(0, 0, W, Hh);
+        const hx = W * 0.42, hy = Hh * 0.5, vx = W * 0.86, r = Math.min(W, Hh) * 0.3;
+        const teal = css('--teal'), gold = css('--gold'), dim = css('--dim'), bright = css('--bright');
+        // the line from H to V
+        ctx.setLineDash([10, 10]); ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(W * 0.06, hy); ctx.lineTo(W * 0.97, hy); ctx.stroke(); ctx.setLineDash([]);
+        // the quarter each face will sweep, faint
+        for (const [face, col] of [['inscribed', teal], ['central', gold]]) {
+            const a0 = START[face];
+            ctx.fillStyle = col + '14';
+            ctx.beginPath(); ctx.moveTo(hx, hy); ctx.arc(hx, hy, r, a0, a0 + OMEGA); ctx.closePath(); ctx.fill();
+            ctx.fillStyle = col + '38';
+            ctx.beginPath(); ctx.moveTo(hx, hy); ctx.arc(hx, hy, r, a0, a0 + t * OMEGA); ctx.closePath(); ctx.fill();
+            ctx.strokeStyle = col; ctx.lineWidth = 4;
+            ctx.beginPath(); ctx.arc(hx, hy, r, a0, a0 + t * OMEGA); ctx.stroke();
+        }
+        // the faces as arrows
+        for (const [face, col] of [['inscribed', teal], ['central', gold]]) {
+            const [dx, dy] = dir(face, t), L = r * 1.18, ex = hx + dx * L, ey = hy + dy * L;
+            ctx.strokeStyle = col; ctx.fillStyle = col; ctx.lineWidth = 6;
+            ctx.beginPath(); ctx.moveTo(hx, hy); ctx.lineTo(ex, ey); ctx.stroke();
+            const a = Math.atan2(dy, dx), k = 26;
+            ctx.beginPath(); ctx.moveTo(ex, ey);
+            ctx.lineTo(ex - k * Math.cos(a - 0.4), ey - k * Math.sin(a - 0.4));
+            ctx.lineTo(ex - k * Math.cos(a + 0.4), ey - k * Math.sin(a + 0.4)); ctx.closePath(); ctx.fill();
+            ctx.font = '500 30px "DM Mono", monospace';
+            ctx.fillText(face, ex + dx * 20 - (dx < -0.3 ? 140 : 0), ey + dy * 30 + (Math.abs(dy) < 0.3 ? -14 : 10));
+        }
+        // H and V
+        ctx.fillStyle = bright;
+        ctx.beginPath(); ctx.arc(hx, hy, 11, 0, 2 * Math.PI); ctx.fill();
+        ctx.beginPath(); ctx.arc(vx, hy, 11, 0, 2 * Math.PI); ctx.fill();
+        ctx.font = '400 40px "DM Serif Display", Georgia, serif';
+        ctx.fillText('H', hx - 14, hy + 56); ctx.fillText('V', vx - 12, hy + 56);
+        ctx.fillStyle = dim; ctx.font = '400 24px "DM Mono", monospace';
+        ctx.fillText('one thumb', hx + r + 10, hy + 34);
+    }
+
+    const fmt = (x, d = 4) => x === Infinity ? '∞ (the horizon)' : x.toFixed(d);
+    function show() {
+        const R = readings(t);
+        tv.textContent = `t = ${t.toFixed(3)} of the quarter turn`;
+        const where = t === 0 ? 'at the start' : t >= 1 ? 'at the finish' : 'turning';
+        outI.textContent =
+            `starts facing V, finishes facing ${END_NAME.inscribed}\n${where}\n` +
+            `slope from its start  s = ${fmt(R.s)}\n` +
+            `mean share of the thumb = ${R.share.toFixed(4)}\n` +
+            `tends to 1/Ω = ${R.limitShare.toFixed(4)}, approached`;
+        outC.textContent =
+            `starts facing away from V, finishes facing ${END_NAME.central}\n${where}\n` +
+            `slope from its start  s = ${fmt(R.s)}\n` +
+            `arc over chord = ${R.arc.toFixed(4)}\n` +
+            `tends to Ω = ${R.limitArc.toFixed(4)}, reached at the end`;
+        outB.textContent = `product of the two = ${R.product.toFixed(12)}   (1 at every t)`;
+        draw();
+    }
+    function setT(v) { t = Math.min(1, Math.max(0, v)); slider.value = Math.round(t * 1000); show(); }
+    function tick(now) {
+        if (!playing) return;
+        const dt = last ? (now - last) / 1000 : 0; last = now;
+        setT(t + dt / 3);
+        if (t >= 1) { playing = false; document.getElementById('play').textContent = '▶ turn'; return; }
+        requestAnimationFrame(tick);
+    }
+    function play() {
+        if (t >= 1) setT(0);
+        playing = !playing; last = 0;
+        document.getElementById('play').textContent = playing ? '❚❚ pause' : '▶ turn';
+        if (playing) requestAnimationFrame(tick);
+    }
+    slider.addEventListener('input', () => setT(slider.value / 1000));
+    document.getElementById('play').addEventListener('click', play);
+    document.getElementById('reset').addEventListener('click', () => { playing = false; setT(0);
+        document.getElementById('play').textContent = '▶ turn'; });
+
+    const q = new URLSearchParams(location.search);
+    setT(q.has('t') ? parseFloat(q.get('t')) || 0 : 0);
+    if (q.get('play') === '1') play();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+
+    window.__faces = { dir, readings, set: o => { if (o && 't' in o) setT(o.t); return window.__faces.state(); },
+        state: () => ({ t, playing, ...readings(t) }) };
+})();
+</script>
+</body>
+</html>

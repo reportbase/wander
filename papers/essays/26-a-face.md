@@ -123,11 +123,12 @@ into the next face. But the read has the −1 first, by fractions, at the end of
 
 ## 7. Toward and away
 
-Take two points, H and V, and start at H. A face turns a quarter turn, never a half turn (Tom: "Quarter turn not half
-turn. Never half turn."). What tells the two sweeps apart is which way the face points when it starts:
+Take two points, H and V. Both faces stand on H (Tom: "Both stand on H. On facing V and on facing away from V"). A
+face turns a quarter turn, never a half turn (Tom: "Quarter turn not half turn. Never half turn."). What tells the two
+sweeps apart is which way the face points when it starts:
 
-- **Ω: the face starts facing away from V.** The quarter turn brings it round to V, and it gets there, at a point. What
-  is counted on the way, the arc in thumbs, tends to Ω. This is the central sweep: reached.
+- **Ω: the face starts facing away from V.** The quarter turn takes it round to its end, and it gets there, at a
+  point. What is counted on the way, the arc in thumbs, tends to Ω. This is the central sweep: reached.
 - **1/Ω: the face starts facing toward V.** V is in front from the start, and the quarter turn takes the face away from
   it, toward a horizon it never meets. What turning sees of the thumb, on average, tends to 1/Ω. This is the inscribed
   sweep: approached.
@@ -139,7 +140,8 @@ opposite at the finish, down and up.
 Both are one face, one quarter turn, from the same start. Their numbers are reciprocals, and their product is the 1
 the thumb gives back (*Reads and Writes* §9, "The thumb, short by reading, long by walking, and whole"); which of the two
 a face is depends only on whether V is behind it or in front of it when it begins. Tom's (R1017); the assignment of Ω and
-1/Ω to the two sweeps is R802's and R889's.
+1/Ω to the two sweeps is R802's and R889's. The demo `faces.html` turns the two faces side by side, with each one's running number
+and their product, 1 at every point of the turn.
 
 Where a doubled angle appears, it is not the face turning twice as far. Euclid's III.20 (the angle at the centre is
 twice the angle at the circle) and the landing point W(s) running from +1 to −1 in §6 are the blueprint's measures of
@@ -197,4 +199,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019.
