@@ -482,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1022 (15 Nov; Tom: "Your reframed. Stick with my framing. Omega sweep is all possible H relative to V. The inner sweep compresses, the outer sweep expands."): **keep Tom's framing as he gives it; do not reframe it.** Essay 26 §7 rewritten in his words (Ω sweep every way H stands relative to V; inner sweep 1/Ω compresses, outer Ω expands; three routes; facings multiply to 1; the sphere still H and V plus a degree of freedom); my precisions of R1020–R1021 taken out of the essay; `faces.html` wording to match.
   R1021 (15 Nov; Tom: "Ehulers takes this into the sphere"; "it still just H and V. With another degree of freedom."): essay 26 §7 "Into the sphere: still H and V": the extra freedom the plane the face turns in (the azimuth), Euler per plane e^(uθ), the hemisphere's ½ and 2 with product 1, faces in different planes not commuting (the curvature).
   R1020 (15 Nov; Tom: "Three routes between H and V. The long route Omega, the short route, 1/Omega, and the line itself."; "The two facings multiply to equal 1, that's what every one for gets."): essay 26 §7 "Three routes" (Ω arc over chord facing away, 1 the line with no face, 1/Ω chord over arc facing toward; the short route a ratio, not a shorter path; Ω · 1/Ω = 1 at every point); `faces.html` bars.
   R1019 (15 Nov; Tom: "Make a demo to show this."; "Both stand on H. On facing V and on facing away from V"): `faces.html` (see its entry under Files); essay 26 §7: both faces on H, the central no longer "brought round to V".
@@ -759,8 +760,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `cross`, `groupsOf`, `turns`, `back`, `leibniz`, `wallis`, `set`, `state`). Not in the flying page.
 - `faces.html`: **two faces on H** (15 Nov 2026, SPN R1019; essay 26 §7; Tom: "Make a demo to show this."), a standalone
   page like `shv.html`, plain canvas. H and V on a line; both faces stand on H and turn one quarter turn the same way
-  round (never a half turn): the inscribed from facing V to facing down (1/Ω, approached), the central from facing away
-  from V to facing up (Ω, reached). Readouts: the slope from each start, the inscribed face's mean share of the thumb
+  round (never a half turn): the inner sweep from facing V to facing down (1/Ω, compresses), the outer from facing away
+  from V to facing up (Ω, expands; R1022). Readouts: the slope from each start, the inscribed face's mean share of the thumb
   (sin θ)/θ, the central face's arc over chord θ/sin θ, their product 1 at every t; the three routes (1/Ω, the line 1, Ω) as bars (R1020). `?t=<0..1>&play=1`; hook
   `window.__faces` (`dir`, `readings`, `set`, `state`). Not in the flying page.
 - `read.html`: **the read, geometry only** (5 Nov 2026, SPN R690; Tom: "the buildings are actually irrelevent, they are

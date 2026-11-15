@@ -10,8 +10,8 @@
     faces.html: two faces on H (15 November 2026, SPN R1019; essay 26 §7; Tom: "Make a demo to show this.", after
     R1017, R1018 and "Both stand on H. On facing V and on facing away from V"). Two points, H and V, V to the right.
     Both faces stand on H and each turns one quarter turn, never a half turn, the same way round:
-      the inscribed face starts facing V (east) and ends facing down (south): 1/Ω, approached;
-      the central face starts facing away from V (west) and ends facing up (north): Ω, reached.
+      the inner sweep starts facing V (east) and ends facing down (south): 1/Ω, it compresses;
+      the outer sweep starts facing away from V (west) and ends facing up (north): Ω, it expands.
     The turn is t of the quarter (0 to 1). Readouts: the slope s from each face's start (the same for both), the
     inscribed face's running mean share of the thumb (sin θ)/θ, tending to 1/Ω = 2/π, and the central face's arc over
     chord θ/sin θ, tending to Ω = π/2, their product 1 at every t. θ = t·Ω is the blueprint's measure of the turn,
@@ -47,10 +47,10 @@
 <body>
 <main>
     <h1>Two faces on H</h1>
-    <p class="lede">Two points, H and V. Both faces stand on H, and each turns one quarter turn, the same way round, never a
-    half turn. The inscribed face starts facing V and finishes facing down; the central face starts facing away from V
-    and finishes facing up. Opposite at the start, opposite at the finish. Three routes from H: the long one, Ω, the
-    short one, 1/Ω, and the line itself, 1; the two facings multiply to the line.</p>
+    <p class="lede">Two points, H and V. The Ω sweep is every way H can stand relative to V. Both faces stand on H, and
+    each turns one quarter turn, never a half turn. The inner sweep starts facing V, finishes facing down and compresses;
+    the outer sweep starts facing away from V, finishes facing up and expands. Three routes between H and V: the long
+    route, Ω, the short route, 1/Ω, and the line itself. The two facings multiply to 1.</p>
 
     <div class="panel">
         <canvas id="cv" width="1800" height="1000" aria-label="H and V, the two faces turning a quarter turn"></canvas>
@@ -65,21 +65,19 @@
 
     <div class="grid">
         <div class="face panel">
-            <h3 class="teal">inscribed · 1/Ω</h3>
+            <h3 class="teal">inner sweep · 1/Ω · compresses</h3>
             <div class="out" id="outI"></div>
         </div>
         <div class="face panel">
-            <h3 class="gold">central · Ω</h3>
+            <h3 class="gold">outer sweep · Ω · expands</h3>
             <div class="out" id="outC"></div>
         </div>
     </div>
     <div class="panel out" id="outB"></div>
 
-    <p class="note">Ω is the total of one quarter turn, classically π/2. The slope s is what each face holds of its turn,
-    counted from where it started; it runs from 0 to the horizon for both. The two running numbers are the blueprint's
-    measures of the two faces: the inscribed face's mean share of the thumb, which tends to 1/Ω and never reaches it,
-    and the central face's arc over chord, which tends to Ω and is reached at its end. Their product is 1 at every point
-    of the turn. From essay 26, <i>A face</i>, §7 (SPN R1017, R1018).</p>
+    <p class="note">Ω is classically π/2. The slope s is counted from each face's start and runs from 0 to the horizon
+    for both. The inner sweep compresses to 1/Ω, the outer sweep expands to Ω, and the two facings multiply to 1 at
+    every point of the turn. From essay 26, <i>A face</i>, §7 (SPN R1017, R1018, R1020, R1022).</p>
 </main>
 <script>
 (() => {
@@ -133,7 +131,7 @@
             ctx.lineTo(ex - k * Math.cos(a - 0.4), ey - k * Math.sin(a - 0.4));
             ctx.lineTo(ex - k * Math.cos(a + 0.4), ey - k * Math.sin(a + 0.4)); ctx.closePath(); ctx.fill();
             ctx.font = '500 30px "DM Mono", monospace';
-            ctx.fillText(face, ex + dx * 20 - (dx < -0.3 ? 140 : 0), ey + dy * 30 + (Math.abs(dy) < 0.3 ? -14 : 10));
+            ctx.fillText(face === 'inscribed' ? 'inner' : 'outer', ex + dx * 20 - (dx < -0.3 ? 140 : 0), ey + dy * 30 + (Math.abs(dy) < 0.3 ? -14 : 10));
         }
         // H and V
         ctx.fillStyle = bright;
@@ -145,7 +143,7 @@
         ctx.fillText('one thumb', hx + r + 10, hy + 34);
         // the three routes, in the line's unit: the short route 1/Ω, the line 1, the long route Ω
         const R3 = readings(t), unit = W * 0.13, bx = W * 0.04, by = Hh * 0.70;
-        const bars = [['short route · 1/Ω, toward V', R3.share, teal], ['the line · 1', 1, bright], ['long route · Ω, away from V', R3.arc, gold]];
+        const bars = [['short route · 1/Ω, compresses', R3.share, teal], ['the line', 1, bright], ['long route · Ω, expands', R3.arc, gold]];
         ctx.font = '400 22px "DM Mono", monospace';
         bars.forEach(([name, len, col], i) => {
             const y = by + i * 70;
@@ -164,13 +162,13 @@
         outI.textContent =
             `starts facing V, finishes facing ${END_NAME.inscribed}\n${where}\n` +
             `slope from its start  s = ${fmt(R.s)}\n` +
-            `mean share of the thumb = ${R.share.toFixed(4)}\n` +
-            `tends to 1/Ω = ${R.limitShare.toFixed(4)}, approached`;
+            `short route = ${R.share.toFixed(4)}\n` +
+            `compresses to 1/Ω = ${R.limitShare.toFixed(4)}`;
         outC.textContent =
             `starts facing away from V, finishes facing ${END_NAME.central}\n${where}\n` +
             `slope from its start  s = ${fmt(R.s)}\n` +
-            `arc over chord = ${R.arc.toFixed(4)}\n` +
-            `tends to Ω = ${R.limitArc.toFixed(4)}, reached at the end`;
+            `long route = ${R.arc.toFixed(4)}\n` +
+            `expands to Ω = ${R.limitArc.toFixed(4)}`;
         outB.textContent = `product of the two = ${R.product.toFixed(12)}   (1 at every t)`;
         draw();
     }
