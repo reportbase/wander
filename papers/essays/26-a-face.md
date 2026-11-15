@@ -153,14 +153,16 @@ from one vantage, facing one direction, with one thumb.
 **The two facings multiply to 1.** Here is the way out, and it is the thing everyone forgets. The two answers were never
 rivals. They are the one sweep read from its two facings, and multiplied together they give 1: Ω · 1/Ω = 1, at the end
 of the turn and at every point along it. The long route and the short route are not two totals of the same thing; they
-are the two faces of one total, and that total is the line. The absurdity was in taking either facing alone. The demo
+are the two faces of one total, and that total is 1. In a single hemispherical vantage, 1 is one thumb: thumb = 1. So
+the two facings multiply back to the very thing the geometry was made with, the one thumb held out, and nothing else.
+The absurdity was in taking either facing alone. The demo
 `faces.html` turns both sweeps side by side on H, with the long route, the short route and the line, and keeps their
 product, 1 at every point of the turn.
 
 **Into the sphere.** Euler's formula takes all of this into the sphere, and nothing new comes in with it: it is still
 just H and V, with one more degree of freedom.
 
-The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024), the wording mine. Older wordings in the series
+The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026), the wording mine. Older wordings in the series
 that give the outer sweep "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
 brought to it.
 
@@ -215,4 +217,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026.

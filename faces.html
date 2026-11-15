@@ -50,7 +50,7 @@
     <p class="lede">Two points, H and V. The Ω sweep is every way H can stand relative to V. Both faces stand on H, and
     each turns one quarter turn, never a half turn. The inner sweep starts facing V, finishes facing down and compresses;
     the outer sweep starts facing away from V, finishes facing up and expands. Three routes between H and V: the long
-    route, Ω, the short route, 1/Ω, and the line itself. The two facings multiply to 1.</p>
+    route, Ω, the short route, 1/Ω, and the line itself. The two facings multiply to 1, and 1 is one thumb.</p>
 
     <div class="panel">
         <canvas id="cv" width="1800" height="1000" aria-label="H and V, the two faces turning a quarter turn"></canvas>
@@ -77,7 +77,7 @@
 
     <p class="note">Ω is classically π/2. The slope s is counted from each face's start and runs from 0 to the horizon
     for both. The inner sweep compresses to 1/Ω, the outer sweep expands to Ω, and the two facings multiply to 1 at
-    every point of the turn. From essay 26, <i>A face</i>, §7 (SPN R1017, R1018, R1020, R1022).</p>
+    every point of the turn: one thumb. From essay 26, <i>A face</i>, §7 (SPN R1017, R1018, R1020, R1022).</p>
 </main>
 <script>
 (() => {
@@ -143,7 +143,7 @@
         ctx.fillText('one thumb', hx + r + 10, hy + 34);
         // the three routes, in the line's unit: the short route 1/Ω, the line 1, the long route Ω
         const R3 = readings(t), unit = W * 0.13, bx = W * 0.04, by = Hh * 0.70;
-        const bars = [['short route · 1/Ω, compresses', R3.share, teal], ['the line', 1, bright], ['long route · Ω, expands', R3.arc, gold]];
+        const bars = [['short route · 1/Ω, compresses', R3.share, teal], ['the line · 1 thumb', 1, bright], ['long route · Ω, expands', R3.arc, gold]];
         ctx.font = '400 22px "DM Mono", monospace';
         bars.forEach(([name, len, col], i) => {
             const y = by + i * 70;
