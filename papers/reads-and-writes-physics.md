@@ -13,7 +13,7 @@ paper as rewritten on SPN R788: what scaling leaves unmoved is a read if one sta
 two, and only an amount in a unit carried in is a write. Since 12 November (R896) the sorting is by two properties,
 continuous or discrete, moved by scaling or not: a read is continuous and unmoved; a write is discrete and moved, a
 bounded thing with a size or an amount put down in a unit; a count is discrete and unmoved, a description laid over
-writes; and an extent is not a third kind (held by two looks together it is a read, counted out it is a count). Its physics comes from the working
+writes; and an extent, a distance in thumbs, is had by two looks held together (reading) or counted out (a count). Its physics comes from the working
 record, `papers/physics.md`, and from the plans and runs it names; a new physics result goes into the record first and
 is carried out to this paper.*
 

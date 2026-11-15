@@ -136,7 +136,7 @@ completed, e the scale completed (§9, "What is free, and what Ω costs"). **A r
   Two looks held together at once, with nothing kept
   between them, are still reading (D3), though they are two reads and not one; closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
 - **D3. A distance in thumbs**, called a parallax extent, or *extent*, in this paper, is a gap across: d/H, or one
-  distance against another, d₁/d₂. The word names what it is; it is not a third thing beside reading and writing. Scaling the world
+  distance against another, d₁/d₂. Scaling the world
   leaves it unchanged, as it leaves a read; but no single look holds it. Two looks held together give it, as a
   continuous ratio of their slopes: parallax (§6), which is why it carries that name. So had, it is reading (two reads held together, not one read): two eyes have it with nothing kept and nothing counted. Counted out, so many thumbs or strides, it is a count,
   a description (above). Where one standpoint moves, the earlier look has to be kept to be there for the later one, and
@@ -1927,7 +1927,7 @@ before the data can show where it is not. **Checked** (TCF; killed).
 ## 12. Open questions
 
 - **O1. The word for D3's distance in thumbs.** *Closed:* "parallax extent", "extent" for short, a word for what it
-  is and not a third thing beside reading and writing (R1038) (it was "place" until
+  is (it was "place" until
   11 November, a working name that said position where the paper says a read has none). Its scope is fixed by D3 (a gap
   across, unmoved by scaling, needing two standpoints).
 - **O2. The thumb.** *Closed (R792):* the thumb is the across axis's chosen zero, as home is the up axis's, as D5
