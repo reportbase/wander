@@ -1475,8 +1475,11 @@ to e^(iπ) = −1. In space, alternating small steps about two thumbs leaves a t
 (θ₁θ₂/2)·sin(φ/2)/(φ/2) for a whole turn φ; in the plane none. **Classical** (Euler 1748; Trotter 1959); **checked**
 (ELM); the reading (each finite count a read, the limit the blueprint's) is ours.
 
-**Read, write, read, write.** The product is also the two acts in turn. Each factor 1 + iθ/n is one read, a slope and
-nothing else. To multiply the next factor on, the look so far has to be there to start from, kept in something, and what
+**Read, write, read, write.** The product is also the two acts in turn. Each factor, as the pair [1 : θ/n], is one read, a slope and
+nothing else. Written as the complex number 1 + iθ/n it also carries a length, √(1 + θ²/n²), which is the
+representation's, not the read's; that is the stretch above. Divided by it, u = (1 + iθ/n)/√(1 + θ²/n²) has length 1, and
+uⁿ is the turn alone, n·arctan(θ/n), with length 1 at every n and tending to e^(iθ); tangent addition composes the pairs
+with no division at all, which is the same turn kept rational. To multiply the next factor on, the look so far has to be there to start from, kept in something, and what
 is kept is a write (§1, D7); the next read is taken from it. So (1 + iπ/n)ⁿ is read, keep, read, keep, n times: what is
 read is then written, and what is written is then read (§7, "Write once, then read again"). The n is a count laid
 over the kept looks, not a write itself. Euler's identity is that alternation carried to its limit: π the turn
