@@ -1,4 +1,4 @@
-"""DVH (plans/dvg-plan.md): if runs/dvh/laws.md lists more than 120 laws, move it to runs/dvh/laws-all.md and write a
+"""DVH (plans/dvh-plan.md): if runs/dvh/laws.md lists more than 120 laws, move it to runs/dvh/laws-all.md and write a
 seeded sample of 120 (seed 15112026), in order, renumbered 1-120, each line keeping its number in the full list."""
 import random, re, shutil
 lines = open('runs/dvh/laws.md', encoding='utf-8').read().split('\n')

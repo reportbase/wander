@@ -1,4 +1,4 @@
-"""DVH step 1-2 (plans/dvg-plan.md): fetch ten Wikipedia articles' wikitext, record revision id and sha256,
+"""DVH step 1-2 (plans/dvh-plan.md): fetch ten Wikipedia articles' wikitext, record revision id and sha256,
 and pull every <math> or {{math|...}} block carrying pi or e in any form into runs/dvh/candidates.md.
 Wikitext saved to the directory given as argv[1] (not committed). Run from the repository root."""
 import hashlib, json, os, re, sys, urllib.request, urllib.parse, urllib.error

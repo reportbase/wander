@@ -1,4 +1,4 @@
-"""DVH (plans/dvg-plan.md): H3's expected share from the blind chart classes alone (`python3 runs/dvh/dvh.py expect`),
+"""DVH (plans/dvh-plan.md): H3's expected share from the blind chart classes alone (`python3 runs/dvh/dvh.py expect`),
 then, once the restatements exist, the chart classes crossed with the checker's verdicts (`python3 runs/dvh/dvh.py`)."""
 import re, subprocess, sys
 def read(path, pat):

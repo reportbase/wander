@@ -1,4 +1,4 @@
-"""DVH: check runs/dvh/restate.py (plans/dvg-plan.md); NTN's checker with the paths changed. A law counts as notation only if every pair agrees to
+"""DVH: check runs/dvh/restate.py (plans/dvh-plan.md); NTN's checker with the paths changed. A law counts as notation only if every pair agrees to
 10^-30 and the restatement's text and its Python function carry no forbidden token. Run from the repository root."""
 import importlib.util, inspect, re, sys
 import mpmath as mp
