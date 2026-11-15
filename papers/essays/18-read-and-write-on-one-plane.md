@@ -202,6 +202,12 @@ far kept, and what is kept is a write, from which the next read is taken. Read, 
 count laid over the kept looks. Euler's identity is that alternation at its limit, and so it is the blueprint's; the
 finite product is the cycle anyone can make (essay 15 §5).
 
+Run the up axis alone and the count closes in on π. One read of slope 1/m composed N times is (m + i)^N in whole
+numbers; the first N that passes the horizon makes 2N/m a fraction above π, by under 2/m + 2/m², at every m tried to
+100,000, and only m = 1 lands on the horizon exactly, the corner twice. Run the across axis alone and m shares of 1/m
+close in on e from below. Left unnormalized, the turn's clicks also carry a length, the across axis dragged along, whose
+log times m tends to π/4 (BLD; essay 25).
+
 ## 8. What the plane is not
 
 It is the blueprint's notation for the read. e^(iθ) states the turn as a number and carries π with it, and π, the turn
@@ -315,6 +321,7 @@ as a boost; the heat at each point and per chart; a line and a spiral with their
 
 ## Sources
 
+- `../../plans/bld-plan.md`, `../../runs/bld/`: counts of reads toward π and e (BLD run 1); essay 25.
 - Euler, L. (1748). *Introductio in analysin infinitorum.* Lausanne.
 - Euler, L. (1778). De repraesentatione superficiei sphaericae super plano. *Acta Academiae Scientiarum Imperialis
   Petropolitanae* 1777, I, 107–132.

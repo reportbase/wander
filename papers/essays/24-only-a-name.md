@@ -238,10 +238,16 @@ Three things keep it in proportion. The restatements are classical (the half-ang
 agent was a fresh instance of one model, blind to the others but not independent the way different people would be. And
 the overall share was within its window on four of the eight lists that predicted it; it depends on each list's mix.
 
+Essay 25 takes the other side of the same line. Counted as a direction, the turn's π is never reached: equal small reads
+composed in whole numbers pass the horizon at a count that bounds π from above, landing exactly only at the corner's two
+clicks. Where π and e cancel in one equation, as in e^(iπ) = −1, the result is one of a read's three landmarks, and the
+theorems behind it hold the turn completed.
+
 ---
 
 ## Sources
 
+- `../../plans/bld-plan.md`, `../../runs/bld/`: counts of reads toward π and e (BLD run 1); essay 25.
 - `../../plans/pie-plan.md`, `../../runs/pie/`: the 82 flagged laws and their blind classes (PIE run 1).
 - `../../plans/ntn-plan.md`, `../../runs/ntn/`: the rule, the restatements and the checker on the paper's laws (NTN run 1).
 - `../../plans/hlx-plan.md`, `../../runs/hlx/`: the three holonomy laws computed in fractions (HLX run 1).
