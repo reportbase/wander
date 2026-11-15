@@ -17,7 +17,8 @@ Two ideas run through all of them:
   and a length as an exact number in a unit is continuous and moved, the blueprint; both are tools of description. Among
   acts the two properties are one, so reading is the verb for the continuous and writing the verb for the discrete; π and
   e are how both hemispheres at once, completeness and no standpoint are put into numbers. An
-  *extent*, a distance in thumbs or steps (V\*/H, a gap across Euler's plane), is not a third kind: held by two looks
+  *extent*, a distance in thumbs or steps (V\*/H, a gap across Euler's plane), is a word for what it is, not a third
+  thing beside reading and writing: held by two looks
   together it is a read, a ratio of their slopes, and counted out it is a count. (*Reads and Writes* was rewritten on
   10 November, R788, on read, extent and write; essays that still make an extent a third kind, or a kept count a write,
   are to be read, and fixed, by this.)

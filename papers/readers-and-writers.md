@@ -39,8 +39,7 @@ factor (the observer's own thumb and stride with it), leaves the direction and t
 and moves only that last term, the thumb in metres, by the same amount for every point. Two properties sort
 what an observer has: whether it is continuous or discrete, and whether that scaling moves it. A **read** is continuous
 and unmoved by scaling: the direction, [h : v], from one standpoint, its slopes spread by one density. Two looks held
-together are still a read: the distance they give in thumbs, a **parallax extent**, an *extent* for short, is a
-continuous ratio of their slopes (parallax). A **write** is discrete and moved by scaling: a bounded thing with a size, a
+together are still reading: the distance they give in thumbs is a continuous ratio of their slopes (parallax). A **write** is discrete and moved by scaling: a bounded thing with a size, a
 stone, a stride, a mark, a metre bar, and an amount put down in a unit carried in from outside, a metre or a second. The
 write is the discrete, scale-variant companion of the read. The two mixed cases are tools of description: a count,
 discrete and unmoved by scaling, and the number line in a unit, continuous and moved by it. Read and write are acts,
@@ -134,11 +133,10 @@ completed, e the scale completed (§9, "What is free, and what Ω costs"). **A r
   standpoint at one moment. *Reading*, the act, is anything continuous and unmoved by scaling had with nothing kept.
   Two looks held together at once, with nothing kept
   between them, are still reading (D3), though they are two reads and not one; closing a circle, with its π and 2π, is a join of several (D7), and a join is not a read.
-- **D3. A parallax extent**, an **extent** for short, is a gap across: a distance in thumbs, d/H, or one distance
-  against another, d₁/d₂. Scaling the world
+- **D3. A distance in thumbs**, called a parallax extent, or *extent*, in this paper, is a gap across: d/H, or one
+  distance against another, d₁/d₂. The word names what it is; it is not a third thing beside reading and writing. Scaling the world
   leaves it unchanged, as it leaves a read; but no single look holds it. Two looks held together give it, as a
-  continuous ratio of their slopes: parallax (§6), which is why it carries that name. So had, it is reading (two reads held together, not one read), not a third
-  kind: two eyes have it with nothing kept and nothing counted. Counted out, so many thumbs or strides, it is a count,
+  continuous ratio of their slopes: parallax (§6), which is why it carries that name. So had, it is reading (two reads held together, not one read): two eyes have it with nothing kept and nothing counted. Counted out, so many thumbs or strides, it is a count,
   a description (above). Where one standpoint moves, the earlier look has to be kept to be there for the later one, and
   what keeps it is a write. It has two named cases: a *parallax distance*, d/H,
   along the line of sight, and a *parallax breadth*, V\*/H, across it. The word says how far or how large, not where: a
@@ -155,8 +153,8 @@ completed, e the scale completed (§9, "What is free, and what Ω costs"). **A r
   the world: it moves every write's number and no extent, no read as a read holds it (an angle in degrees is the
   blueprint's coordinate on a read, and its number follows the blueprint's choice of degree or radian).
 - **D5. The first test.** Multiply every length in the world by k, the observer's thumb and stride included; the units
-  stay outside the world. What moves is a write. Among the geometry's quantities, what stays is a read, an extent
-  among them; a count of the observer's own strides stays too, and is a count.
+  stay outside the world. What moves is a write. Among the geometry's quantities, what stays is reading, a distance in thumbs
+  among it; a count of the observer's own strides stays too, and is a count.
   This is the geometric test, and it
   sorts the geometry. In general the test is a named scaling, one dimension at a time: multiply every amount of that
   dimension in the world by k, the world's constants of that dimension included, the unit staying outside. A quantity
@@ -272,7 +270,7 @@ horizon. Within one read nothing comes down; the thumb's size was never in it. W
 of readings joined, a/b · b/c = a/c, where b was needed for both links and is in neither end (§6, "A tower of extents").
 That is said by whoever keeps the chain, so scaffolding is a word for writes, and a scaffold put up and kept, a step
 taken and counted, is a write with a count laid over it. The last "in terms of" never comes down: a/c is still in terms of c. Where a tower
-ends is its kind: on the thumb, a read; on a kept step, an extent; on an agreed unit, a size. A unit is scaffolding
+ends is its kind: on the thumb, a reading; on a kept step, a distance in steps; on an agreed unit, a size. A unit is scaffolding
 left up by agreement. A denominator leaves no mark on a number written down, so two readings on different denominators
 can be joined by mistake: each of two people sees the other smaller, in terms of its own hand. Dividing one such reading
 by the other takes down the distance they share and leaves their sizes against each other; multiplying takes down the
@@ -390,7 +388,7 @@ own space (§4), and D6, not this table, sorts it.
 | | moved by scaling? | held by one standpoint? | kind |
 |---|---|---|---|
 | a direction [h : v] (up) | no | yes | read |
-| a gap across: d/H, d₁/d₂, V\*/H | no | no: two looks held together | a read (an extent) |
+| a gap across: d/H, d₁/d₂, V\*/H | no | no: two looks held together | reading (two reads held together) |
 | the across zero tied to a unit | yes | no | write |
 
 Read and write are so the named outcomes of two tests that cross, and the crossing has a fourth box, the
@@ -398,10 +396,10 @@ payload's:
 
 | | the geometry: stays when what arrives changes (D6) | the payload: changes with what arrives (D6) |
 |---|---|---|
-| unmoved by scaling (D5) | a read (one standpoint), with its heat; an extent (two, a gap); an order or a map (two, no gap) | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
+| unmoved by scaling (D5) | reading: a read (one standpoint), with its heat; two reads held together, giving a gap in thumbs, an order or a map | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
 | an amount in a unit (D4), moved by its own dimension's scaling | a write: a distance in metres | a write: a frequency in hertz, a brightness in watts |
 
-A write is found in both columns; a read and an extent are the geometry's alone; a ratio of payloads is the payload's
+A write is found in both columns; reading is the geometry's alone; a ratio of payloads is the payload's
 counterpart of a read, unmoved by scaling and not a direction of the geometry. Being unmoved by scaling therefore never
 shows that a quantity is a read. One thing can supply several variables of different kinds: a pixel's value in the
 sensor's unit is a payload's write, its ratio to its neighbour a ratio of payloads, the pixel's position in the grid a
@@ -1886,8 +1884,9 @@ and the tower is 15 metres tall and 60 away: the one write. **Checked** (`runs/t
 ## 11. Cases in data, and what this changes
 
 **What it changes.** No mathematics. It sorts.
-- **Every reading is a read, every gap across an extent, every amount a write.** A result unmoved by scaling and held by
-  one standpoint is a read; unmoved and needing two, an extent; moved, a write, which needs an amount carried in.
+- **Every result is reading or writing.** A result unmoved by scaling and held by one standpoint is a read; unmoved
+  and needing two, still reading, two reads held together (a gap across, in thumbs); moved, a write, which needs an
+  amount carried in.
 - **A Cauchy-type quantity is a direction where a turn that lays it can be named, apart from the law's shape.** A fat
   tail alone is no evidence of a turn: a mixture of amounts makes one too.
 - **The constants have owners.** π and e are the blueprint's; Ω, 1/Ω and the hemisphere's 2 and ½ are
@@ -1939,7 +1938,8 @@ before the data can show where it is not. **Checked** (TCF; killed).
 
 ## 12. Open questions
 
-- **O1. The name of D3's kind.** *Closed:* it is a parallax extent, "extent" for short (it was "place" until
+- **O1. The word for D3's distance in thumbs.** *Closed:* "parallax extent", "extent" for short, a word for what it
+  is and not a third thing beside reading and writing (R1038) (it was "place" until
   11 November, a working name that said position where the paper says a read has none). Its scope is fixed by D3 (a gap
   across, unmoved by scaling, needing two standpoints).
 - **O2. The thumb.** *Closed (R792):* the thumb is the across axis's chosen zero, as home is the up axis's, as D5
