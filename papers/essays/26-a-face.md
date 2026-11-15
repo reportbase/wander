@@ -164,6 +164,24 @@ And the two facings multiply to 1 (Tom: "The two facings multiply to equal 1, th
 looks like a number of its own, a long Ω or a short 1/Ω; taken together they give back the line and nothing more,
 which is the thumb in thumbs (*Reads and Writes* §9; R804). `faces.html` draws the three routes and keeps the product.
 
+**Into the sphere: still H and V.** Euler's formula takes this into the sphere (Tom: "Ehulers takes this into the
+sphere"; "it still just H and V. With another degree of freedom."). The pair does not change: still H and V, still one
+face standing on H, still a quarter turn, never a half. What the sphere adds is one more degree of freedom: which way
+round the face turns, the plane it turns in, taken from all the planes through the line from H to V. The series has
+written that freedom as the azimuth (R237); it is a direction to turn in, not a third point.
+
+Euler's formula carries over with its form intact. For each plane, e^(uθ) = cos θ + u·sin θ, where u is that plane's
+own square root of −1 (a unit quaternion, u² = −1, as i² = −1). In each plane the face is the plane's face: e^(uΩ) = u
+at the end of the quarter turn, e^(2uΩ) = −1 two faces on, and the two facings multiply to 1 there as on the page.
+
+Two things follow from the extra freedom, and both are classical. First, taken over every plane at once, the face is
+a hemisphere, and its two numbers become the hemisphere's: ½ facing toward, 2 facing away (*Reads and Writes* §7, "the
+hemisphere's 2 and ½"; R804). Their product is still 1. So the 1 goes into the sphere unchanged, and Ω and 1/Ω turn
+out to be the plane's numbers for it. Second, faces in different planes do not commute: two quarter turns about two
+axes land 120° apart by their order (essay 13), the units of different planes anticommute (ij = −ji), and a loop of
+faces comes back turned by its area. That leftover is the sphere's curvature, made of fractions (HLX; discussion note
+item 20). One H, one V, one face at a time; the extra degree of freedom is where the curvature is.
+
 Where a doubled angle appears, it is not the face turning twice as far. Euclid's III.20 (the angle at the centre is
 twice the angle at the circle) and the landing point W(s) running from +1 to −1 in §6 are the blueprint's measures of
 one quarter-turn face, written on a circle drawn whole. Older wordings in the series that give the central sweep "a half
@@ -220,4 +238,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021.
