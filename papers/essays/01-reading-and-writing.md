@@ -97,7 +97,8 @@ unit, or the circle held whole at a size, is continuous and moved: the blueprint
 
 Among acts the two properties are one. A thing that is discrete has a boundary, so it has a size, so scaling moves it;
 a direction has no boundary and no size. Discreteness has no face (essay 26): a write has scale and size and faces
-nothing; a read has no scale and no size, and it is a face. That is exactly what reads and writes are. So reading is
+nothing; a read has no scale and no size, and it is a face. That is exactly what reads and writes are. The read is the
+stage, the write is the play. So reading is
 the verb for the continuous and writing the verb for the discrete, and the two mixed boxes hold no act: a count and the number line are nouns, descriptions laid over what was
 read or written. The friction between continuous and discrete shows wherever one is made to hold the other, a count
 holding a slope no fraction lands on, or a walk cut into strides so that the looks at its two ends give a size. π and e

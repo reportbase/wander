@@ -38,7 +38,7 @@ says no one stands at it.
 **A write.** Discreteness has no face, and that is what a write is. Discreteness has scale and size; continuity has
 no scale and no size. A stride, a mark, a metre bar: each is discrete, each has a size that scaling the world moves, and
 none faces anything. A read is the other side: continuous, no scale, no size, and a face. That is exactly what reads
-and writes are (R1039).
+and writes are (R1039). The read is the stage, the write is the play (R1041).
 
 So two things have no face, for opposite reasons. A count has too little to face anything with: separate things, no
 direction among them. The blueprint has too much: every direction held, none faced. Neither flows.
