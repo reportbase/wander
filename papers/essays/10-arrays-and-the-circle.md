@@ -94,8 +94,8 @@ With the size held, there is neither.
 - **The read's central sweep** gives the values without the length: an amount at each given index, known only up to one common factor.
   The values can be ranked and averaged against each other, and cannot be sized.
 - **The read's inscribed sweep** gives the index alone, laid before any value arrives and with no length: its places the Cauchy's
-  quantiles, its middle the corner, its last place running to the horizon, K places for any N. The Cauchy is not this
-  sweep's alone, nor the inside of a circle's: it works on a straight line too, the lighthouse's shore.
+  quantiles, its middle the corner, its last place running to the horizon, K places for any N. The Cauchy takes a v and
+  an h, nothing else, and is not the inside of a circle's alone: it works on a straight line too, the lighthouse's shore.
 
 With nothing related there is no array: a length H, the thumb, but no index and no relation to store.
 

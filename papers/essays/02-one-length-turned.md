@@ -766,8 +766,8 @@ circle passes, reads directions as ratios, unbounded, with their median at the c
 circle's law without the V. The central sweep, from the middle of the pair, reads the same points as squares, bounded, with
 means. They are two names for one point, joined by a theorem in Euclid.
 
-The third essay takes the Cauchy on its own terms. It is not the inscribed sweep's alone, nor the inside of a
-circle's: it works on a straight line too, as the lighthouse's flashes along a straight shore show. The essay asks what it means that the read's directions and their
+The third essay takes the Cauchy on its own terms. It takes a v and an h, nothing else, and it is not the
+inside of a circle's alone: it works on a straight line too, as the lighthouse's flashes along a straight shore show. The essay asks what it means that the read's directions and their
 heat are given before anything arrives, how they stay apart from what arrives, and why practice has always been right to read them by
 their median.
 
