@@ -423,3 +423,7 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       corner and the ends.
     - **Next step:** none asked. A check would list laws carrying both π and e and sort them by axis (turn, scale,
       self-completed) before reading which restate.
+    - **15 Nov, later** (Tom: "But he considered it from dhv"): the theorems above hold the turn completed, the dual
+      hemispherical vantage; a read has the −1 as i·i with no π or e to cancel, so the cancellation is the blueprint
+      returning to a landmark a read already had. Tested from the read's side by BLD (R1009); carried into essay 25 and
+      *Reads and Writes* §1 (R1010).

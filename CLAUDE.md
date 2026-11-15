@@ -482,6 +482,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1010 (15 Nov; Tom: "But he considered it from dhv", then "Write an essay about this result and summarize the result in the read and write paper."): essay 25, `papers/essays/25-counted-toward.md`, *Counted toward* (a ratchet wrench): BLD and the π–e cancellation as one essay, the cancellation theorems the dual hemispherical vantage's; *Reads and Writes* §1 "Counted toward, and where they cancel"; README row ("twenty-five essays"), `essays.html` card, smoke count 25 (not run). No new test.
   R1009 (15 Nov; Tom: "build e and pi, from multiple reads", then "Yes"): BLD (`plans/bld-plan.md`, `runs/bld/`), exact, nothing killed: reads of slope 1/m composed in Gaussian integers pass the horizon at the angle's count (B0), 2N/m → π from above, exactly on the horizon only at m = 1 (B3, Niven); (1 + 1/m)ᵐ → e from below by e/(2m). B1, B2, B5 follow from B0. No count is π or e (R922). No paper changed.
   R1008 (15 Nov; Tom: "when PI and E are in the same equation … they cancel each other.", then "ok"): `plans/discussion-note.md` item 18, no paper changed: e along the turn by a rational fraction a root of unity, along the scale transcendental (Gelfond–Schneider, Lindemann–Weierstrass); rational slopes there only at home, corner, horizon (Niven), +1, i, −1; Lindemann's proof rests on e^(iπ) = −1; the normal law's total self-cancelling, not π against e.
   R1007 (15 Nov; Tom: "yes, proceed"): DVB–DVJ written up: essay 24 §10 "Eight more lists, and where the line is" and *Reads and Writes* §1 "Where π and e are content" (chart laws 335 of 358 on four lists; content held where the judge was clear; the edge moved each time it was named, read as one letter for a direction and for an amount of turn); README row, `essays.html` card. No new test.
@@ -4096,7 +4097,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     twenty-three essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     twenty-five essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
