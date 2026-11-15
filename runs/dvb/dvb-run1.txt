@@ -1,0 +1,17 @@
+83 laws; tags D 4, A 79; classes A 68, L 15, X 0
+cells: D no limit 4, D limit 0, A no limit 64, A limit 15
+Q4 expected share (0.60*4 + 0.10*64)/83 = 0.1060
+notation 9, NONE 74, failed checks 0
+listed 83: notation share 9/83 = 0.108
+PIE class A: 9 of 68 notation: [14, 33, 44, 45, 62, 63, 64, 65, 66]
+PIE class L: 0 of 15 notation: []
+PIE class X: 0 of 0 notation: []
+all notation: [14, 33, 44, 45, 62, 63, 64, 65, 66]
+D no limit: 2 of 4 = 50.0% [14, 44]
+D limit: 0 of 0 []
+A no limit: 7 of 64 = 10.9% [33, 45, 62, 63, 64, 65, 66]
+A limit: 0 of 15 = 0.0% []
+Q1 (no L law notation): not killed
+Q2 void: fewer than 10 D laws with no limit
+Q3 (A no limit under 20%): 7/64 = 10.9% not killed
+Q4 (overall within 8 points of 10.6%): 9/83 = 10.8% not killed
