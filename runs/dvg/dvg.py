@@ -1,5 +1,5 @@
-"""DVG (plans/dvg-plan.md): G3's expected share from the blind entry classes alone (`python3 runs/dvg/dvf.py expect`),
-then, once the restatements exist, the entry classes crossed with the checker's verdicts (`python3 runs/dvg/dvf.py`)."""
+"""DVG (plans/dvg-plan.md): G3's expected share from the blind chart classes alone (`python3 runs/dvg/dvg.py expect`),
+then, once the restatements exist, the chart classes crossed with the checker's verdicts (`python3 runs/dvg/dvg.py`)."""
 import re, subprocess, sys
 def read(path, pat):
     out = {}
