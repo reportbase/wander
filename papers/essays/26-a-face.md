@@ -123,44 +123,46 @@ into the next face. But the read has the −1 first, by fractions, at the end of
 
 ## 7. Toward and away
 
-This section is Tom's framing, kept as he gave it (Tom: "Stick with my framing.").
+Put two points on the page, H and V, and stand on H.
 
-Take two points, H and V. The Ω sweep is every way H can stand relative to V (Tom: "Omega sweep is all possible H
-relative to V."). Both faces stand on H (Tom: "Both stand on H. On facing V and on facing away from V"), and each turns
-a quarter turn, never a half turn (Tom: "Quarter turn not half turn. Never half turn."):
+Everything this section needs is already there. The Ω sweep is every way H can stand relative to V: not some of the
+relations, all of them, every one there is. A face on H can take that sweep in only two ways, because it can start in
+only two directions. It can start facing V, or it can start facing away from V. Either way it turns one quarter turn
+and stops. Never a half turn.
 
-- **The inner sweep, 1/Ω.** It starts facing toward V and finishes facing down. It compresses.
-- **The outer sweep, Ω.** It starts facing away from V and finishes facing up. It expands.
+- **The inner sweep** starts facing V. It turns its quarter and finishes facing down. As it goes it compresses, and
+  its route comes to 1/Ω, the short route.
+- **The outer sweep** starts facing away from V. It turns its quarter and finishes facing up. As it goes it expands,
+  and its route comes to Ω, the long route.
 
-(Tom: "The inner sweep compresses, the outer sweep expands."; "Inscribed finishes facing down. Central finishes facing
-up.") Opposite at the start and opposite at the finish.
+Opposite at the start, opposite at the finish. Between H and V there are now three routes: the long one, Ω; the short
+one, 1/Ω; and the line itself. That is all "continuous" turns out to mean here, the distance of a facing, and there are
+only two facings to have it.
 
-**Three routes.** Between H and V there are three: the long route, Ω; the short route, 1/Ω; and the line itself (Tom:
-"Three routes between H and V. The long route Omega, the short route, 1/Omega, and the line itself."). Continuous just
-means the distance of the facing, and there are two possible facings (Tom).
+**On the face of it, absurd.** Now look at what has just been said. The Ω sweep is every possible relation of H to V.
+Add every one of them up and there ought to be a single answer, whatever it is. There are two. The total is Ω or it is
+1/Ω, the long route or the short, and nothing about H or V decides which. Only the face decides: which way it happened
+to point when it started. Every relation there is, all of it summed, and the sum depends on where you stand facing. On
+the face of it, that cannot be right. (The idiom is older than this essay, the Latin *prima facie*, "at first
+appearance"; here the face is literal, and it is what decides the sum.)
 
-**On the face of it, absurd.** Now look at what was just said. The Ω sweep is every possible relation of H to V,
-all of them. Add them up and there should be one answer. There are two: Ω or 1/Ω, a long route or a short one, and
-nothing about H or V decides which. Only the face does, which way it pointed when it started (Tom: "all possible
-relations of H and V sum two possible values. That is absurd, on the face of it."). Every relation there is, summed,
-and the total depends on where you stand facing. On the face of it, that cannot be right. (The idiom is older than this
-essay, the Latin *prima facie*, "at first appearance"; here the face is literal, and it is what decides the sum.)
+**It gets worse.** For a read, V is not even known. V is known only in terms of H. So what is H, actually? Say it is a
+thumb, one thumb held out. Here, then, is the whole claim, put as plainly as it can be put: a complete geometry, made
+from one vantage, facing one direction, with one thumb.
 
-**It gets more absurd.** For a read, V is not even known. V is known only in terms of H. And what is H, actually?
-Say it is one thumb. So, to recap: a complete geometry, made from one vantage, facing one direction, with one thumb
-(Tom: "It gets even more absurd. For a read, V is not even known. So V is only know in terms of H. But what is H
-actually. Let's just say it's 1 thumb. So let's recap, we are creating a complete geometry from one vantage facing one
-direction, with only 1 thumb.").
+**The two facings multiply to 1.** Here is the way out, and it is the thing everyone forgets. The two answers were never
+rivals. They are the one sweep read from its two facings, and multiplied together they give 1: Ω · 1/Ω = 1, at the end
+of the turn and at every point along it. The long route and the short route are not two totals of the same thing; they
+are the two faces of one total, and that total is the line. The absurdity was in taking either facing alone. The demo
+`faces.html` turns both sweeps side by side on H, with the long route, the short route and the line, and keeps their
+product, 1 at every point of the turn.
 
-**The two facings multiply to 1.** Ω · 1/Ω = 1 (Tom: "The two facings multiply to equal 1, that's what every one for
-gets."). The demo `faces.html` turns the two sweeps side by side on H, with the long route, the short route and the
-line, and their product, 1 at every point of the turn.
+**Into the sphere.** Euler's formula takes all of this into the sphere, and nothing new comes in with it: it is still
+just H and V, with one more degree of freedom.
 
-**Into the sphere.** Euler's formula takes this into the sphere, and it is still just H and V, with another degree of
-freedom (Tom: "Ehulers takes this into the sphere"; "it still just H and V. With another degree of freedom.").
-
-Older wordings in the series that give the outer sweep "a half turn" (R233, R450, `facing.html`'s facing turning to
-180°) predate this and are to be brought to it.
+The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024), the wording mine. Older wordings in the series
+that give the outer sweep "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
+brought to it.
 
 ## 8. What needs a face, and what does not
 
@@ -213,4 +215,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025.
