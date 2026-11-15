@@ -1,0 +1,12 @@
+78 laws; entry dir 13, other 65
+F3 expected share (0.92*13 + 0.03*65)/78 = 0.1783
+notation 28, NONE 50, failed checks 0
+listed 78: notation share 28/78 = 0.359
+entry dir: 13 of 13 notation: [1, 2, 10, 16, 18, 19, 46, 69, 73, 74, 75, 76, 78]
+entry other: 15 of 65 notation: [22, 34, 35, 36, 37, 38, 40, 41, 45, 53, 54, 55, 59, 60, 72]
+all notation: [1, 2, 10, 16, 18, 19, 22, 34, 35, 36, 37, 38, 40, 41, 45, 46, 53, 54, 55, 59, 60, 69, 72, 73, 74, 75, 76, 78]
+dir notation 13 of 13; other notation 15 of 65 [22, 34, 35, 36, 37, 38, 40, 41, 45, 53, 54, 55, 59, 60, 72]
+dir content: []
+F1 void
+F2 (other <= 10%): 23.1% KILLED
+F3 (within 8 points of 17.8%): 28/78 = 35.9% KILLED

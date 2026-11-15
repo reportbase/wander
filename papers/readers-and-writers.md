@@ -313,6 +313,18 @@ unit shows why (DVA, `plans/dva-plan.md`): relating directions is close to neces
 sufficient, its predicted rate killed on both lists; looked at afterwards, a law that relates directions and takes no
 limit is notation about three times in five on either list, every limit is content on both, and this paper holds many
 more laws of the first kind (43 of 82 against 24 of 107). That last sorting is post hoc and untested.
+Eight further lists, each from ten Wikipedia articles, classed blind and checked by the same script with predictions
+committed first (DVB–DVJ, `plans/dvb-plan.md` to `plans/dvj-plan.md`; essay 24 §10), sharpened the line into a rule
+written beforehand: π or e is a chart when it enters only through a circular or hyperbolic function of an angle or a
+rapidity standing for a ratio of two like quantities. On the four lists judged by it, such laws restate exactly 335 times
+in 358 (94%). Amounts inside a function, whole turns as periods or totals, integrals, series, limits and logarithms of
+amounts stayed content wherever the judge was clear. The edge never settled: each time a case was named in both briefs
+(angles given by an inverse function, stated values, ranges, turns added, supplements outside a function), the leak moved
+to the next, because one symbol was read as a direction by one agent and as an amount of turn by another. **A reading**:
+classical notation writes θ for both, a direction whose π is a name (a read's side) and an amount of turn whose π is
+counted (a count's side), and the law does not say which. The restatements are classical; every agent was an instance of
+one model.
+**Counted toward, and where they cancel.** Run the other way, reads and counts build every step toward π and e and never the limit. One read of slope 1/m composed with itself is multiplying h + iv by m + i, whole numbers only, no angle; counting the clicks N(m) until the pair passes the horizon gives exactly the count the angle gives at every m tried (to 10⁵), and 2N/m lies above π by less than 2/m + 2/m² (0.86 at m = 2, 7·10⁻⁶ at 10⁵). It lands exactly on the horizon only at m = 1, two corner clicks, i·i = −1: a count of equal reads lands only where a read already stands (Niven). Along the scale, m fixed shares of 1/m give (1 + 1/m)ᵐ, below e by about e/(2m). π from above along the turn, e from below along the scale (BLD, `plans/bld-plan.md`, predictions first, nothing killed; once the integer count matched, the bounds followed by arithmetic). Where π and e meet in one equation, e carried along the turn by a rational fraction gives a root of unity, and along the scale e^π and e^a (a algebraic, nonzero) stay transcendental (Gelfond–Schneider, Lindemann–Weierstrass); Lindemann's proof that π is transcendental rests on e^(iπ) = −1 being plain. Those theorems hold the turn completed, the blueprint's view; a read has the −1 as i·i with no π or e to cancel, so the cancellation is the blueprint returning to a landmark a read already had. **A reading** of classical theorems; essay 25.
 
 | | memory | unit |
 |---|---|---|

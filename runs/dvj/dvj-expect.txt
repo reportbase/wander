@@ -1,0 +1,2 @@
+120 laws; class chart 100, other 20
+J3 expected share (0.92*100 + 0.03*20)/120 = 0.7717

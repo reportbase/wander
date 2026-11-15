@@ -188,7 +188,55 @@ does. The papers now say "about three in five, on both lists" where they said "t
 
 The next test is the obvious one: a third list, from a source nobody here chose (a physics handbook's index, say), with
 "three in five for laws among directions without a limit, none for limits" committed before the tagging. That would turn
-a reading into a result, or kill it.
+a reading into a result, or kill it. §10 is that test, and seven lists more.
+
+## 10. Eight more lists, and where the line is
+
+The third list came, and seven more after it (R998–R1006). Each was drawn from ten Wikipedia articles nobody here had used,
+listed by one fresh agent, classed blind by another, restated by a third and checked by the same script, the predictions
+committed before the fetch. The rule for what counts as notation never changed. What changed, list by list, was the line
+the blind judge was asked to draw beforehand.
+
+| list | the line drawn first | its side | the other side | overall, against expected |
+|---|---|---|---|---|
+| DVB (physics list pages) | directions or amounts | void (4 laws) | 10.9% | 10.8% against 10.6% |
+| DVC (optics, crystals, the sky) | directions or amounts | 92.4% | 75.5% | 84.9% against 37.7% |
+| DVE | where π or e enters | 52 of 52 | 19.1% | 54.2% against 41.6% |
+| DVF | the same, sharpened | 13 of 13 | 23.1% | 35.9% against 17.8% |
+| DVG | a chart of a ratio of like quantities | 84.1% | 3.9% | 50.0% against 54.2% |
+| DVH | the chart, angle outputs and values settled | 98.0% | 30.0% | 86.7% against 77.2% |
+| DVI | and ranges, turns, approximations settled | 97.8% | 6.5% | 74.2% against 69.0% |
+| DVJ | the same briefs, unchanged | 92.0% | 35.0% | 82.5% against 77.2% |
+
+(DVG's second run, the same list with the restater's one open call settled, gave 98.6% and 19.6%; not a fresh test.)
+
+The chart side held from DVG on. Where π or e enters only through a circular or hyperbolic function of an angle or a
+rapidity, and that angle stands for a ratio of two like quantities (a direction, a speed against light's, a phase of two
+like coefficients), the law restates exactly in slopes and shares: 335 of 358 on four fresh lists, 94%. Of the 23 that
+did not, eleven are DVG's, mostly Euler angles read back from a matrix, which that run's restater called content because
+the angle was the output, before the briefs said how to treat it; the rest are a hyperbolic side read as a length, a
+logarithm of lengths that is an inverse hyperbolic function in disguise, an angle differentiated, a matrix exponential of
+amounts.
+
+The other side held whenever the judge was clear. Amounts inside a function (ωt, kx, a time over a time constant),
+whole turns as periods and totals (2π a revolution, 4π a sphere, 2π a wavelength), integrals, series and limits,
+logarithms of amounts, and an angle used beside its own sine as in Kepler's equation stayed content on every list.
+
+What never settled was the edge, and the edge moved every time it was named. Settle angles given by an inverse function
+and the leaks are stated values (θ = π/2); settle those and they are ranges (0 ≤ θ < 2π) and a whole turn added to an
+angle; settle those and they are supplements written outside a function (A′ = π − a, the azimuth's ± π branches). In
+none of them did the script fail. Each time two agents read one symbol two ways: the judge, by the letter of its brief,
+as an amount of turning, the restater as a direction.
+
+That is the finding I would keep, and it is a reading, made after the runs and untested as a claim: classical notation
+writes one letter for two things. θ in cos θ is a direction; θ in θ + 2π, in Kepler's E − e·sin E, in "turned through 3π"
+is an amount of turn, a count. The law's text does not say which, and the rule cannot be made to say it for the law. Where
+θ is a direction, its π is a name (the read's side, R909); where θ is an amount of turn, π is doing work, the turn
+counted (the count's side, R896). Most laws make plain which; the ones that do not are where the lists leaked.
+
+Three things keep it in proportion. The restatements are classical (the half-angle substitution, Weierstrass's). Every
+agent was a fresh instance of one model, blind to the others but not independent the way different people would be. And
+the overall share was within its window on four of the eight lists that predicted it; it depends on each list's mix.
 
 ---
 
@@ -205,4 +253,6 @@ a reading into a result, or kill it.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 "A read uses no trigonometry", "The shape of a law" and "Where π and
   e are content"; *Reads and Writes in Physics* §5.4.
 - Essay 2 §9 (the three grades of cost), essay 13 §4 (holonomy), essay 14 §6, essay 15 §6, essay 23 §8.
+- `../../plans/dvb-plan.md`, `dvc-plan.md`, `dve-plan.md`, `dvf-plan.md`, `dvg-plan.md`, `dvh-plan.md`, `dvi-plan.md`,
+  `dvj-plan.md` and `../../runs/dv{b,c,e,f,g,h,i,j}/`: the eight further lists (R998–R1006).
 - Demo: `../../notation.html`.

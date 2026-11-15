@@ -400,3 +400,30 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
     Parallax, 1/(d/B) = 1/s₁ + 1/s₂, is the second shape taken inward. Whether every geometric law the papers use is
     one of the two is open; a third shape would show up as a law whose denominator neither cancels nor is shared.
     Classical throughout (telescoping, the Cayley form of tangent addition); the reading ours.
+
+18. **Where π and e cancel** (15 Nov; Tom: "when PI and E are in the same equation, under some circumstances, they
+    cancel each other.", then "ok"). **Whose:** Tom's observation; the sorting Claude's. **Standing:** a reading of
+    classical theorems, untested as a claim about the papers; not in any paper.
+
+    - **Along the turn they cancel; along the scale they do not.** e^(iπr) is algebraic for every rational r (a root
+      of unity: e^(iπ) = −1, e^(iπ/2) = i, e^(2iπ) = 1). e^π is transcendental (Gelfond–Schneider), and so is e^a
+      for every algebraic a ≠ 0 (Lindemann–Weierstrass).
+    - **Where they cancel to a rational slope, a read already stands.** At a rational fraction of a turn tan θ is
+      rational only at 0, 1 and ∞ (Niven): home, the corner and the horizon, landing points +1, i, −1, the three a
+      read has with no π (R811, R848).
+    - **The cancellation is how π is shown transcendental.** Lindemann 1882: e^(iπ) = −1 is algebraic, so iπ cannot be
+      algebraic (else Lindemann–Weierstrass makes e^(iπ) transcendental). The read's landmark −1 is what shows the
+      turn's total is the blueprint's.
+    - **Self-cancelling is a different thing.** The normal law (1/2π)·e^(−r²/2)·dθ·r dr totals 1 by π against the
+      whole turn's 2π and e against its own radial integral, not π against e. Where neither is completed both stay
+      (Stirling's √(2πn)(n/e)ⁿ).
+    - **Reading.** π on the up axis of Euler's plane (the turn), e the base of the across axis (the scale); they meet
+      in something plain only when e is carried along the turn to a landmark the read has free. Bears on essay 24 and
+      *Reads and Writes* §1 "Where π and e are content": the plain cases are the ones NTN calls notation at the
+      corner and the ends.
+    - **Next step:** none asked. A check would list laws carrying both π and e and sort them by axis (turn, scale,
+      self-completed) before reading which restate.
+    - **15 Nov, later** (Tom: "But he considered it from dhv"): the theorems above hold the turn completed, the dual
+      hemispherical vantage; a read has the −1 as i·i with no π or e to cancel, so the cancellation is the blueprint
+      returning to a landmark a read already had. Tested from the read's side by BLD (R1009); carried into essay 25 and
+      *Reads and Writes* §1 (R1010).
