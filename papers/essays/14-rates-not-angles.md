@@ -17,8 +17,10 @@ The blueprint here is classical geometry's view from no standpoint, the whole tu
 comparison, and is not something a read or a write makes.
 
 Three things follow. A rate is always a rate *of* something *per* something: the per is the sweep's, a direction, and the
-of is what arrives there, the payload. A hand swept from horizontal to vertical, measured on the blueprint against the straight
-line it holds, goes at one of two rates, π/2 or 2/π, depending on where it pivots, and never at 1, the blueprint's own rate,
+of is what arrives there, the payload. A hand swept from horizontal to vertical has two facings: facing V, the near reading s = v/h; facing
+away from V, the far reading 1/s. They multiply to 1 at every reading and meet at 1 at the corner. Measured on the
+blueprint, in angles, against the straight line it holds, the same sweep comes out at π/2 (arc over chord) or 2/π
+(chord over arc), and never at 1, the blueprint's own rate,
 the angle. And the tangent and arctangent,
 which convert between a direction and an angle, are the blueprint's tools: they need the completed turn. A read runs the
 sweep and never needs them.
@@ -76,22 +78,24 @@ for so much radius, step for step. In the blueprint's measure the sweep goes at 
 hand's first place to its last, the chord, is a length it holds whole. That 1 is the blueprint's rate. It is what an angle
 is: arc per radius, read against the completed turn.
 
-A read has no such measure. It has the sweep, from its standpoint, and there are only two places to stand where a sweep is
-even (the second essay): the middle of the chord, where the radius turns, and a point of the circle, where the ray turns.
-From each, the blueprint measures the same sweep from horizontal to vertical at its own rate against the straight line it holds:
+A read has no such measure. It has its readings, from its standpoint, in two facings. Facing V it has the near
+reading s = v/h, V in terms of H. Facing away from V it has the far reading 1/s = h/v, H in terms of V. Each is a single
+hemispherical vantage. They multiply to 1 at every reading, s × 1/s = 1, and they meet at 1 at the corner, where s and
+1/s are equal.
 
-- **π/2, the central sweep.** From the middle, the sweep runs π/2 of arc for the chord's 1. Along the way the running
-  value is arc over chord, θ/sin θ, from 1 at the start through 1.1107 at the corner, and it is attained when the radius,
-  its half turn done, lands back on home, a point.
-- **2/π, the inscribed sweep.** From a point of the circle, the chord comes at 2/π per unit of sweep. Along the way it is
-  chord over arc, sin θ/θ, through 0.9003 at the corner, and it reaches 2/π only as the ray goes to the horizon,
-  approached and never arrived at.
+The blueprint, holding the chord and the whole quarter turn, measures the same sweep from horizontal to vertical in
+angles, against the straight line it holds, and gets two numbers:
+
+- **π/2, arc over chord.** The sweep runs π/2 of arc for the chord's 1. Along the way the running value θ/sin θ goes
+  from 1 at the start through 1.1107 at the corner.
+- **2/π, chord over arc.** The reciprocal, sin θ/θ, goes through 0.9003 at the corner, and reaches 2/π only at the
+  horizon, approached and never arrived at.
 
 Neither is 1. Both start at 1, at zero, before any sweeping has happened, and part from it at once. Once the hand is
 moving, the blueprint's account of it is π/2 or 2/π, never its own 1. The two numbers, multiplied, are 1, at every point of the
-sweep and not only at its ends; but no one sweep has it. The second essay put this as the two sweeps each set against the
-blueprint's 1 through the arc, one too long and one too short. In rates it is plainer: the blueprint has the angle, a read
-has the sweep. Both sweeps are reads, each a single hemispherical vantage; that their numbers multiply to 1 is
+sweep and not only at its ends; but neither alone has it, and they do not meet at 1 at the corner. The second essay put
+this as two measures each set against the blueprint's 1 through the arc, one too long and one too short. In rates it is
+plainer: the blueprint has the angle, a read has the sweep. That the blueprint's two numbers multiply to 1 is
 arithmetic, the 1 being also the blueprint's number, and not a way of making the angle from sweeps.
 
 None of these rates changes when the world is scaled, and none of them is a rate of anything that arrives. They are the
@@ -119,14 +123,15 @@ not a turning point.
 **Their ratio is the blueprint's 1.** At the corner the reading is v/h = 1. Everywhere else along the sweep the
 reading differs from 1; here, and only here, it agrees with the blueprint's rate.
 
-**The blueprint's 1 is the corner of the two sweeps' rates.** π/2 and 2/π are reciprocals, and 1 is their geometric mean,
+**The blueprint's 1 sits between its two numbers.** π/2 and 2/π are reciprocals, and 1 is their geometric mean,
 √(π/2 · 2/π). On the logarithm they sit either side of it, ln(π/2) = 0.4516 above and ln(2/π) = −0.4516 below. So the
-blueprint's rate is the fixed point of the reciprocal that pairs the two sweeps: the corner between them.
+blueprint's rate is the fixed point of the reciprocal that pairs them.
 
-**Each of the two is a facing.** π/2 is not walking and 2/π is not reading; they are entirely the facing, toward V or
-away from V. Facing V (the inscribed sweep), the thumb's share h, averaged over the quarter turn, is 2/π, approached at
-the horizon and never reached. Facing away from V (the central sweep), the quarter arc itself is π/2 thumbs long,
-reached at a point. Face V and face away from V at the same time and no facing is left: the non-facing,
+**The facings are s and 1/s.** π/2 is not walking and 2/π is not reading, and neither is a facing. Facing V is the
+near reading s; facing away from V is the far reading 1/s; their product is 1 at every reading. π/2 and 2/π are limits
+at the horizon: the thumb's share h, averaged over the quarter turn, is 2/π, approached at the horizon and never
+reached; the heat 1/(1 + s²), gathered from home toward the horizon, totals π/2, approached by a count. Face V and
+face away from V at the same time and no facing is left: the non-facing,
 discrete value of 1 thumb. The 1 between them is also the
 blueprint's number, the blueprint, the dual hemispherical vantage, having no standpoint and being neither read nor write (the second essay, §7). The reason is one line: each step of the arc gains v at the rate h,
 so the shares, summed over the steps of arc, are all of v; a mean of 2/π over a length of π/2 is 1. Any path from the
@@ -136,30 +141,30 @@ the exchange, s × (1/s) = 1; a count has fractions; π itself is held only by t
 (the second essay, §7, "What is free, and what π costs"). The half turn is had the same way with no e or π: the corner is
 the quarter turn, i, and two corners are i × i = −1 (the second essay, §9).
 
-One thing does not happen there. The sweeps' running rates are not 1 at the corner: arc over chord is 1.1107 and chord
-over arc 0.9003. They are 1 only at zero, before any sweeping. The corner is not where the read's sweep runs at the
-blueprint's rate. It is where the horizontal and vertical balance, their ratio is the blueprint's 1, and the blueprint's 1 sits
-between the sweep's two rates.
+One thing does not happen there. The blueprint's running rates are not 1 at the corner: arc over chord is 1.1107 and
+chord over arc 0.9003. They are 1 only at zero, before any sweeping. The corner is not where the blueprint's measures
+agree with its 1. It is where the horizontal and vertical balance, where s and 1/s meet at 1, and the blueprint's 1
+sits between its two numbers.
 
 No 45° was used. "45°" is the blueprint's name for the corner, the corner given as an eighth of the whole turn. A read
 finds it by the sweep alone.
 
 ---
 
-## 4. Two sweeps, two rates
+## 4. Twice as fast, on the blueprint
 
-The second essay showed two pivots for one standpoint. Measured in the blueprint's angle, a radius turned about the
+The second essay named one point of the blueprint's circle twice. Measured in the blueprint's angle, a radius turned about the
 circle's centre moves its end one step of arc for each step of turn, and a ray turned about a point of the circle moves
 its end two steps of arc for each step of turn (Euclid III.20: the angle at the centre is double the angle at the circumference). Those are the only two places
 where the rate is the same wherever the ray points. Anywhere else a step of turn carries the end by 2t/(t + t′) steps of
 arc, t and t′ the distances ahead and behind, which changes as the ray turns.
 
-So the inscribed angle theorem, read this way, is a statement about rates: the facing turns twice as fast as the sweep.
-Measured against the blueprint's chord, the two pivots give the two rates of the second section, π/2 and 2/π.
-The square of the second essay, the central point ½(h + iv)², is that twice-as-fast turn written as a point.
+So the inscribed angle theorem, read this way, is a statement about rates: the radius turns twice as fast as the ray.
+Both are the blueprint's, in angles, and neither is a read.
+The square of the second essay, the radius's end point ½(h + iv)², is that twice-as-fast turn written as a point.
 
 A standpoint off the centre and off the circle has no uniform rate, and this is where the circle's own law comes from. Turned
-uniformly, its end lands unevenly; twice its rate less the central rate, (2·dθ/dφ − 1)/2π, is the circle's harmonic
+uniformly, its end lands unevenly; twice its rate less the rate from the centre, (2·dθ/dφ − 1)/2π, is the circle's harmonic
 measure from that standpoint, the wrapped Cauchy (the thirteenth essay, "One law, four parts"). It is a
 combination of two rates, and needs nothing else.
 
@@ -240,8 +245,8 @@ transcendental. Viète's product of 1593 shows the last two rungs together:
 
 Each factor is the cosine of a halved angle, a square root of two variables combined, and the product closes on a
 transcendental only in the limit. It is the blueprint's ladder from the corner to 2/π; a read has none of its rungs.
-π is not a read's number, and neither is √2 made. And the blueprint's 1, the angle, is neither sweep's: each sweep is a
-read with a vantage, and the blueprint has none.
+π is not a read's number, and neither is √2 made. And the blueprint's 1, the angle, is neither facing's: the near reading s and the far
+reading 1/s are each a read with a vantage, and the blueprint has none.
 
 **What an angle needs.** The same ladder says what each step toward an angle takes. The slope s = v/h needs nothing:
 it is the read. The shares h and v with h² + v² = 1 need the other party held at the thumb's one length, the one-length
@@ -435,7 +440,7 @@ from the mean it cannot.
 **What is ours.** Every piece above is classical: the two motions, the fluxions, the hemisphere's 2, the observer's
 coordinates, the rhumb line. What this essay adds is the sorting. The straight chord and the angle are the blueprint's; the
 two motions and their mix are the read's; the mix is a rate, of a payload per direction; and the three numbers 1, π/2 and
-2/π, or on a sphere 1, 2 and ½, are the blueprint's rate and its account of the read's two sweeps. The read's own
+2/π, or on a sphere 1, 2 and ½, are the blueprint's rate and its account of the read's sweep. The read's own
 numbers are the Cauchy's, and have no π in them.
 
 **The blueprint's cube, and its sphere of the read.** The picture settles into two shapes, both the blueprint's. The blueprint's
@@ -465,23 +470,22 @@ The classical ratios between the two shapes hold for both measures at once: a ci
 and π/4 of its perimeter, a sphere in its cube π/6 of its volume and π/6 of its surface, and measured in its own
 straight-edged norm the square's π is 4 where the circle's is π (Adler and Tanton).
 
-**The cube outside the sphere, and inside it.** The two placements are the two sweeps. Put the blueprint's unit cube with
-home at one vertex, its near vertices A, B (and C) on the axes and its far vertex at (1, 1, 1).
+**The cube outside the sphere, and inside it.** There are two placements, both the blueprint's. Put the blueprint's
+unit cube with home at one vertex, its near vertices A, B (and C) on the axes and its far vertex at (1, 1, 1).
 
-- *The cube outside the sphere* is the inscribed sweep's picture. Its circle is the unit circle about home, centred at
-  home, radius 1: it passes through A and B, the sweep's two ends, and the cube's far corner stands outside it, at √2 in
-  the plane and √3 in space.
-- *The cube inside the sphere* is the central sweep's. The sphere round the cube, centred at the cube's middle (in the
-  plane the middle of the chord AB), passes through every vertex: home, A, B and the far corner. It is the circle on the
-  chord, Thales' circle, which runs through home because the angle at home is square. Its centre is the central sweep's
-  pivot, and home, a point of it, the inscribed sweep's.
+- *The cube outside the sphere.* Its circle is the unit circle about home, centred at home, radius 1: it passes
+  through A and B, the sweep's two ends, and the cube's far corner stands outside it, at √2 in the plane and √3 in space.
+- *The cube inside the sphere.* The sphere round the cube, centred at the cube's middle (in the plane the middle of the
+  chord AB), passes through every vertex: home, A, B and the far corner. It is the circle on the chord, Thales' circle,
+  which runs through home because the angle at home is square. Its centre belongs to the pair, and home is a point of
+  it.
 
 In both, the read's corner direction from home points at the cube's far corner. On the circle round the cube it lands
 there exactly: a ray from home in direction d meets that circle at the distance d·(1, 1), which is 1 on each axis and √2
-at 45°, so at 0° the ray lands on A, at 45° on the far corner (1, 1), at 90° on B. From the middle that is the central
-sweep's half turn from A through the corner to B; from home the inscribed sweep's quarter turn. So the cube outside the
-sphere touches it at the sweep's ends, and the cube inside the sphere touches it at the corner as well: the inscribed sweep
-holds the ends, the central sweep holds the corner, and the blueprint's cube is what both are drawn against.
+at 45°, so at 0° the ray lands on A, at 45° on the far corner (1, 1), at 90° on B. From the middle that is the radius's
+half turn from A through the corner to B; from home the ray's quarter turn. So the cube outside the sphere touches it at
+the sweep's ends, and the cube inside the sphere touches it at the corner as well: the circle about home holds the ends,
+the circle on the chord holds the corner, and the blueprint's cube is what both are drawn against.
 
 **Two 1's, and the corner between them.** The table above gives A to B three lengths, and it is fair to ask which is the
 blueprint's 1. The answer is that a 1 needs a measure. On one number line there is only one way to measure, and so only one
@@ -511,12 +515,12 @@ and the round one is its own dual; Hölder's inequality, here Cauchy and Schwarz
 
 with equality exactly when every component that is not zero has the same size: on the axes, and on the corner's diagonal.
 At the corner the round √2 is the geometric mean of the blueprint's 1 and 2, as √n is of 1 and n. It is the third section's
-pattern again, one step smaller: there the blueprint's 1 is the geometric mean of the sweeps' π/2 and 2/π; here the round √2
+pattern again, one step smaller: there the blueprint's 1 is the geometric mean of its π/2 and 2/π; here the round √2
 is the geometric mean of the blueprint's two 1's.
 
 So nothing has to be withdrawn, only named. The edge and the sum h + v = 1 are both the blueprint's, the same 1 at A and B and
-a factor of 2 apart at the corner. The inscribed sweep's 2/π is measured against an edge, one axis filled from 0 to 1; the
-central sweep's π/2 against the chord taken as a diameter (both the blueprint's measures, each with its π); and the chord's
+a factor of 2 apart at the corner. The blueprint's 2/π, chord over arc, is measured against an edge, one axis filled from 0 to 1;
+its π/2, arc over chord, against the chord taken as a diameter (both the blueprint's measures, in angles, each with its π); and the chord's
 own length, √2, is the blueprint's too, two variables combined.
 
 **Two sweeps, three axes.** The hand can be swept two ways, both out from the horizontal: horizontal to vertical, the
@@ -555,14 +559,15 @@ scale-free: −½ under steady braking is stopping distance equal to distance (*
 **Five things called 1, kept apart.** This essay has used the number 1 for five different things, and they are worth
 naming once. *The blueprint's rate*: the angle, arc per radius, against the completed turn. *The corner*: the reading
 v/h = 1, the read's. *The edge*: one number line's unit, the cube's 1. *The sum*: h + v = 1, the diamond's 1. *The
-product*: π/2 · 2/π = 1, the blueprint's two measures of one sweep multiplied. The running rates of the sweep are also 1 at
+product*: π/2 · 2/π = 1, the blueprint's two measures of one sweep multiplied. The blueprint's running rates are also 1 at
 zero, before any sweeping; that is the start, not a sixth thing.
 
 **The blueprint has angles; a read has sweeps.** An angle is a share of the whole turn, measured at rate 1, arc per radius,
-against a turn held complete. A sweep is what one length does from its standpoint; measured on the blueprint from either
-even pivot it comes at its own rate: π/2 from the middle, 2/π from a point of the circle. Never 1. The 1 is the blueprint's.
-Both sweeps are reads, each a single hemispherical vantage; their numbers multiply to 1 by arithmetic, and the
-blueprint, the dual hemispherical vantage held from no standpoint, is apart from both.
+against a turn held complete. A sweep is what one length does from its standpoint. It has two facings, the near reading s facing V and the far
+reading 1/s facing away from V, each a single hemispherical vantage; they multiply to 1 at every reading and meet at 1
+at the corner. Measured on the blueprint, in angles, the sweep comes at π/2, arc over chord, or 2/π, chord over arc.
+Never 1. The 1 is the blueprint's, and the blueprint, the dual hemispherical vantage held from no standpoint, is apart
+from both facings.
 
 **The blueprint is transcendental; a read is not.** π, and every number with π in it, is the blueprint's: the count of a
 completed turn. A read holds one variable, H, the thumb, and one variable makes only rationals; the irrationals need
@@ -615,5 +620,5 @@ its π is the normalization") and the format's specification (`papers/tvf.md`, "
 can be trig-free").
 
 The geometry is in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten 10 November on R788 with read and write): §2, "Zero, and a new zero" (the turn met, not computed; tangent
-addition); §4, "Why the corner sits at 45°", "Why there are two sweeps, and only two" and "Rates, not angles" (the two
-sweeps' rates, the blueprint's 1, and payload per direction); §7.1 (the uniform turn and the Cauchy).
+addition); §4, "Why the corner sits at 45°", "Why there are two sweeps, and only two" and "Rates, not angles" (arc over
+chord and chord over arc, the blueprint's 1, and payload per direction); §7.1 (the uniform turn and the Cauchy).
