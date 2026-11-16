@@ -482,6 +482,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1053 (16 Nov; Tom: "Yes, write essay 29"): essay 29, `papers/essays/29-algorithms-from-one-standpoint.md`,
+  *Algorithms from one standpoint* (a straight line drawn on a screen of pixels): ALG as one essay, the algorithms sorted
+  as essay 28 sorted theorems; the float DDA's 8 misses checked afterwards, all exact ties. README row ("twenty-nine
+  essays"), `essays.html` card, smoke count 29 (not run). No new test beyond ALG; no paper changed.
   ALG (`plans/alg-plan.md` + `runs/alg/`, 16 Nov; SPN R1052; Tom: "Let's find more dhv and shv comparisons with classical
   algorithms", "Yes, write the plan and run the test"): classical algorithms sorted as essay 28 sorted theorems, exact or
   seeded, predictions first. Run 1: 15 of 16 not killed. Single-vantage already: Bresenham (exact at 1,061,045 points, a
@@ -4191,7 +4195,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     twenty-eight essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     twenty-nine essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
