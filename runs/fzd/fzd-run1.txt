@@ -1,0 +1,31 @@
+== F1. The coefficient from the rule ==
+   first order: 1 - 1/n**2  (Galilean: 1); second-order coefficient: (1 - n**2)/n**3
+== F2. The second order ==
+   u = 2 m/s: second order / first = 5.003e-9
+   u = 4 m/s: second order / first = 1.001e-8
+   u = 7 m/s: second order / first = 1.751e-8
+   u = 7.069 m/s: second order / first = 1.768e-8
+   u = 8.72 m/s: second order / first = 2.181e-8
+   u = 7.65 m/s: second order / first = 1.914e-8
+   u = 5.67 m/s: second order / first = 1.418e-8
+   u = 5.536 m/s: second order / first = 1.385e-8
+== F3. Dispersion is the Doppler factor's ==
+   water at the D lines: n = 1.33335, f0 = 0.43751, with Lorentz's term 0.45126, lowered by -3.14%
+   composed with n at the Doppler-shifted wavelength, first order = Lorentz's f: True
+== F4. Michelson and Morley 1886 ==
+   measured 0.434 +/- 0.02; f0(D) = 0.4375 (0.176 of their error); from their own n^2 = 1.78: 0.4382; Galilean 1: 28.3; none 0: 21.7
+== F5. Fizeau 1851 ==
+   0.46 of 0.92 for full drag: f = 0.500; Fresnel by Fizeau's own calculation 0.40/0.92 = 0.4348; against f0(D) 0.4375: off by 14.3%; against his 0.40: 15.0%; no uncertainty stated
+== F6. Zeeman 1915 ==
+   4500 A: observed f = 0.4653 +/- 0.0058; f0 0.4428, with dispersion 0.4648  (Zeeman's own ratio of Lorentz to Fresnel 1.0496, ours 1.05)
+   4580 A: observed f = 0.4636 +/- 0.0043; f0 0.4423, with dispersion 0.4636  (Zeeman's own ratio of Lorentz to Fresnel 1.0480, ours 1.048)
+   5461 A: observed f = 0.4518 +/- 0.0051; f0 0.4388, with dispersion 0.4542  (Zeeman's own ratio of Lorentz to Fresnel 1.0361, ours 1.035)
+   6870 A: observed f = 0.4449 +/- 0.009; f0 0.4354, with dispersion 0.4468  (Zeeman's own ratio of Lorentz to Fresnel 1.0260, ours 1.026)
+   summed squares: f0 0.00122, with dispersion 9.33e-6; chi2 on 4: 47.46, 0.2662
+== verdicts ==
+  F1: not killed
+  F2: KILLED
+  F3: KILLED
+  F4: not killed
+  F5: not killed
+  F6: not killed

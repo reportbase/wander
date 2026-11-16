@@ -482,6 +482,29 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1062 (16 Nov; Tom: "I disagree. If they ever produced different results, that would be the discovery, they won't.";
+  "When we consider non human natural processes, I bet we find the same read/write. Read is the ongoing real time
+  continuous system dynamics. Writes are the discrete results."; "What is new is the clear eyed sorting of what math goes
+  with each."; "Yes"): **what is new is the sorting of the mathematics: which tools a read needs (slopes, composition,
+  the exchange and corner, the heat, order statistics, no angle, no π, no unit), which a write needs (counts, amounts,
+  sums and means, a size fixed by an amount carried in), and which only the blueprint needs (completions: π, e, totals),
+  each placed by a test.** SHV and DHV forms agree wherever both apply; a disagreement would be the discovery (R950), so
+  the distinction is judged by what each form needs, never by different numbers (corrects Claude's "it changed no
+  prediction" as a weakness). Tom's expectation, untested: non-human natural processes sort the same way, continuous
+  dynamics a read (relations unmoved by scaling), discrete results writes (a size an outside amount fixes). *Reads and
+  Writes* §1 "Which mathematics goes with each", with the table.
+  R1061 (16 Nov; Tom: "1 2 3"): `three-kinds.html` (see its entry under Files), a card on `demos.html`, a link on essay
+  28's card.
+  FZD (`plans/fzd-plan.md` + `runs/fzd/`, 16 Nov; SPN R1060; Tom: "1 2 3"): the boost's composition rule against Fizeau's
+  moving water, predictions first. F1, F4, F5, F6 not killed: the rule's first order 1 − 1/n² (Galilean 1); Michelson and
+  Morley 1886's 0.434 ± 0.02 against 0.4375 (Galilean 28 errors off); Fizeau 1851's 0.46 of 0.92, f = 0.500, 14.3% high
+  (at the edge of my 15%; no error stated); Zeeman 1915's four colours fit with n read at the Doppler-shifted wavelength
+  (Lorentz's term), χ² 0.27 on 4, against 47.5 without. F2 killed by my bound (the second order 1.4–2.2 × 10⁻⁸ of the
+  first), F3 by my sign (the dispersion term raises f by 3.1%; I wrote "lowers"), its exact clause holding. Sources read
+  primary (C. R. scan, KNAW PDFs; sha256s in the plan); water's n(λ) Daimon and Masumura 2007. Classical (Laue 1907,
+  Lorentz 1895); does not tell relativity from Fresnel's drag with Lorentz's term.
+  R1059 (16 Nov; Tom: "1 2 3"): PYK carried into essay 28 §3 ("Three kinds, one rule"), *Reads and Writes* §9 (after
+  PYT's paragraph) and the physics paper §4.2 ("Three kinds of composition, one rule", [exact]). No new claim.
   PYK (`plans/pyk-plan.md` + `runs/pyk/`, 16 Nov; SPN R1058; Tom: "What's next", then "Yes and proceed with tests"):
   PYT for the other two kinds of composition (CPX's sign κ), exact, predictions first. One rule s ⊕_κ a = (s + a)/(1 − κsa)
   and one identity 1 + κ(s ⊕_κ a)² = (1 + κs²)(1 + κa²)/(1 − κsa)² for turns (κ = 1), boosts (−1: relativistic velocity
@@ -871,6 +894,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   class, or all three; the cross-table. Data embedded from `runs/dva/laws.json` (`python3 runs/dva/export.py > runs/dva/laws.json`; rebuild the
   page's JSON block if a run changes). `?s=p/q&n=&k=&group=list|tag|cls|cross&law=NTN-21`; hook `window.__notation` (`laws`, `counts`,
   `cross`, `groupsOf`, `turns`, `back`, `leibniz`, `wallis`, `set`, `state`). Not in the flying page.
+- `three-kinds.html`: **three kinds** (16 Nov 2026, SPN R1061; PYK; Tom: "1 2 3"), a standalone page like `notation.html`,
+  plain canvas, exact BigInt fractions. One rule (s + a)/(1 − κsa) walked n steps from home for κ = 1 (circle), −1
+  (hyperbola, boosts) and 0 (the line, strides), each point kept as its half-slope pair [p : q]; the rational points from
+  half-slopes q ≤ 12; whether each walk comes home within 200 steps and the digits used; the weight each keeps
+  (ds/(1 + κs²)) shaded to the walk's reading, the turn's total π, the others' none. `?t=p/q&n=`; hook
+  `window.__threeKinds` (`compose`, `walk`, `point`, `closes`, `heat`, `set`, `state`). Not in the flying page.
 - `faces.html`: **two faces on H** (15 Nov 2026, SPN R1019; essay 26 §7; Tom: "Make a demo to show this."), a standalone
   page like `shv.html`, plain canvas. H and V on a line; both faces stand on H and turn one quarter turn the same way
   round (never a half turn): the inner sweep from facing V to facing down (1/Ω, compresses), the outer from facing away

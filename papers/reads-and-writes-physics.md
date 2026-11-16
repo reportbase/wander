@@ -271,6 +271,16 @@ one circle in one unit, home and horizon, the two limits one approximation under
 geometric mean. What it does not give: c's value, or why a change of frame is a hyperbolic turn rather than a circular
 one. That sign is the world's.
 
+**Three kinds of composition, one rule [exact].** Velocity addition is the turn's tangent addition with one sign
+changed: s ⊕ a = (s + a)/(1 − κsa), κ = −1 for boosts (s = β), +1 for turns, 0 for Galilean strides, and
+1 + κ(s ⊕ a)² = (1 + κs²)(1 + κa²)/(1 − κsa)² for all three; at κ = −1 it is 1/γ² composing as a product, so γ² − (γβ)² = 1
+is the boost's Pythagoras. Each kind leaves one weight unchanged, ds/(1 + κs²): the angle, the rapidity, ds. Only the
+turn's has a total, so only the turn has an invariant probability (the Cauchy, a median at the corner) and π; on velocities
+no law is unchanged by every boost. The boost's exchange β ↦ −β sends the Doppler factor k to 1/k and fixes rest; the
+light cone β = ±1 is fixed by every boost and reached by none. To first order every kind is Galilean, and the first
+correction κ·sa(s + a) has opposite signs for turns and boosts. (`plans/pyk-plan.md`; classical, the sorting ours.) What
+it still does not give is which sign the world has: that is §4.2's "the sign is the world's".
+
 ### 4.3 Time and the standpoint's phasor [exact, data]
 
 The characteristic function of the Cauchy from z = m + iγ is e^(imt − γ|t|): a phasor turning at m and fading at γ. Read

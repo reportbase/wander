@@ -121,6 +121,23 @@ of the table's right column. Each is a pure ratio that scaling does not move, an
 the blueprint's three concepts are synthesized: both hemispheres at once, completeness, and no standpoint. π is the turn
 completed, e the scale completed (§9, "What is free, and what Ω costs"). **A reading.**
 
+*Which mathematics goes with each.* That things change continuously and leave discrete results is old. What this paper
+adds is the sorting of the mathematics: which tools a read needs, which a write needs, and which only the blueprint (the
+dual hemispherical vantage) needs, each placed by a test that could have failed (Tom, R1062).
+
+| | its mathematics | placed by |
+|---|---|---|
+| **read** (continuous, unmoved by scaling) | slopes and ratios; composing them, (s + a)/(1 − κsa); the exchange s ↔ 1/s and the corner; the heat ds/(1 + s²); order: the median and quantiles; relations with no unit; one square root, √(1 + s²). No angle, no trigonometry, no π, no unit | PYT, PYK (§9); Theorem 6's order statistics (§3); ALG's exact turns and lines (§9, "Run as code"); NTN and DVA, relations among directions with π only a name ("Where π and e are content") |
+| **write** (discrete, moved by scaling) | counts; amounts in a unit; sums and means; a size fixed by an amount carried in (a stride, a pull, a refractive index) | the walk counted (ONE, WLK; §6), the bounce (§7), the scale test (D5) |
+| **blueprint** (for comparison) | completions: π the turn whole, e the scale whole, the circle held at a size, totals over both hemispheres | PYK (only the turn's heat has a total), BLD (no count is π or e), NTN (every limit keeps its π) |
+
+The two forms of one result agree wherever both apply: they describe one geometry, and a disagreement would be the
+discovery (R950). What the sorting tells is what each form needs to reach the result, not a different result. A mean is
+a write's tool, which is why a read has none (§3); π appears only where something is completed. Tom's expectation, not yet
+tested: non-human natural processes sort the same way, the ongoing continuous dynamics a read (its relations unmoved by
+scaling) and the discrete results writes (each with a size an amount from outside fixes): a tree's growth and its ring,
+a membrane's potential and its spike, a stream from a tap and the drop that pinches off. **A reading**, the tests named.
+
 - **D1. One point, two parts.** A point seen from a standpoint is, in the blueprint's notation, ln(z/H) = ln(d/H) + iθ, H
   the thumb held out at arm's length: up the direction θ, across the distance in thumbs. In space the point is d·u, u a
   direction, and the across part ln(d/H) is unchanged (§2). θ is the blueprint's coordinate on the direction, the one in
@@ -1617,6 +1634,15 @@ is (1 + |s|²)^(−(n+1)/2), the sum raised to a power. Only the square does it:
 keeps a unit circle. Where it stops: no rational direction but the quarter turns closes a turn, the corner's share 1/√2
 is the one root, and the heat's total is a completion; the median at the corner needs none. So the read's relations, its
 corner and its heat are Pythagoras divided by the thumb; π is not. **Exact**; the reading ours.
+
+The same rule with a sign, checked exactly (PYK): s ⊕ a = (s + a)/(1 − κsa) composes turns (κ = 1), boosts (κ = −1,
+relativistic velocity addition) and strides (κ = 0, Galilean addition), and 1 + κ(s ⊕ a)² = (1 + κs²)(1 + κa²)/(1 − κsa)²
+holds for all three: the boost's is the turn's at s ↦ is, the read's form of γ² − (γβ)² = 1. Each keeps one weight,
+ds/(1 + κs²), the turn's heat, the rapidity, plain ds; only the turn's has a total (π), so the Cauchy, the median at the
+corner and π belong to the one composition that closes. The boost has no corner of equal shares; its exchange s ↦ −s
+(the Doppler factor k ↦ 1/k) fixes rest, and composition fixes the light cone s = ±1, which no boost reaches. Both curves
+take the half-slope's one rational lattice, only the square keeps either, and no rational boost closes. **Exact**; the
+sorting ours.
 
 **Four identities, one exchange.** Four equations state the completed joins: h² + v² = 1, e^(iπ) = −1, Ω · 1/Ω = 1
 and (1/Ω)·∫₀^∞ ds/(1 + s²) = 1. Each is the blueprint's completion of something a read holds without Ω, rational in the

@@ -1,8 +1,8 @@
 # Two statements of one theorem: classical results from no standpoint and from one
 
 *The twenty-eighth of a series of essays on what can be known from where one stands. Draft, 16 November 2026. It starts
-from Tom's request: "Let's create a new essay that compares the dhv and shv versions of classical math theorems." One
-test since, PYT, for Pythagoras (§3). Every formula is classical or checked by arithmetic in the runs named; where a statement is a reading, it is
+from Tom's request: "Let's create a new essay that compares the dhv and shv versions of classical math theorems." Two
+tests since, PYT and PYK, for Pythagoras (§3). Every formula is classical or checked by arithmetic in the runs named; where a statement is a reading, it is
 marked so.*
 
 The back pages of a geometry book list the theorems: the sides of a right triangle, the angles of a sum, the circle on a
@@ -108,6 +108,20 @@ within 200 steps; Niven). The corner's share 1/√2 is the one square root a rea
 a square. And the heat's total, π/2, is no expression in s: Pythagoras gives every relation among directions, and the
 median at the corner without any total (the heat below 1 equals the heat above by the exchange alone), but π only comes
 from completing the turn, which a single vantage never does (§10).
+
+**Three kinds, one rule.** Tangent addition is one of three ways two readings compose. Write the rule as
+s ⊕ a = (s + a)/(1 − κsa): κ = 1 is the turn, κ = −1 is the boost (relativistic velocity addition, s a speed in units of
+light's), κ = 0 the stride (Galilean addition, s + a). One identity covers all three, 1 + κ(s ⊕ a)² =
+(1 + κs²)(1 + κa²)/(1 − κsa)²: Pythagoras's sum for the turn, its difference for the boost (the read's form of
+γ² − (γβ)² = 1), and nothing to keep for the stride. Each kind leaves one weight alone, ds/(1 + κs²): the turn's heat,
+the boost's rapidity, the stride's plain ds. Only the turn's has a total, and the total is π; the other two run on
+without end, so neither has a law of its own like the Cauchy or a median. The arrangement reverses too: the turn's corner
+is in the middle of the read and its horizon at the end, while the boost's exchange s ↦ −s fixes rest, and the one place
+every boost leaves where it is, s = ±1, is light's speed, never reached. Both curved kinds share the half-slope's
+rational lattice (the hyperbola's 7,121 rational points to denominator 2,000 each from one t), only the square keeps
+either curve, and no rational boost ever comes back. So the Cauchy and π belong to the one kind of composition that
+closes, the turn; PYK (`plans/pyk-plan.md`, exact, predictions written first) checked each of these. **Exact**; the
+sorting a reading.
 
 So of the dozen theorems here, this one is not merely whole. It is where the others come from.
 
@@ -283,6 +297,7 @@ whether they ever hold it whole.
 - Essay 21 (`21-omega.md`): Ω. Essay 23 (`23-one-share-and-the-shape-of-a-law.md`): the disc's share, ISX. Essay 24
   (`24-only-a-name.md`): NTN, DVA and the lists after them. Essay 25 (`25-counted-toward.md`): BLD. Essay 27
   (`27-one-standpoint-or-none.md`): the two vantages side by side in AI.
+- `plans/pyk-plan.md` (R1058; Tom: "Yes and proceed with tests"): the boost's and the stride's Pythagoras, exact.
 - `plans/pyt-plan.md` (R1057; Tom: "Wow, Pythagoras is powerful for the SHV", "This seems foundational … Let's make
   sure it explored completely."), `plans/thl-plan.md`, `plans/ntn-plan.md`, `plans/dva-plan.md`, `plans/isx-plan.md`, `plans/bld-plan.md`.
 - SPN rulings cited: R235, R725, R793, R809, R814, R818, R836, R837, R841, R847, R848, R950, R1036, R1037, R1042.
