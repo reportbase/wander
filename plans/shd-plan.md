@@ -74,3 +74,23 @@ ce12919b240af45bdf46d243601eaca2b6212b159b5e7e9b435ee7ee40c5619c; not committed)
 - E3′, D2′: readings rounded to 12 significant figures before ranking (so last-bit ties are ties); then
   Spearman(|s|, cos) on pairs in front is 1 to 10⁻¹², and |s|'s and cosine's Spearman with the ratings move by under
   10⁻¹² when each word is scaled by its own factor, Euclidean's falls by at least 0.05. D1 is not rerun: it stays killed.
+
+Run 2 result (`runs/shd/shd2.py`, output `runs/shd/shd-run2.txt`), nothing killed:
+- E1′ not killed: shared correlation 0.49982, 0.49974, 0.50006 (normal, uniform, exponential; spread 0.0013–0.0017
+  over 200 repeats), own denominators within 0.0002 of 0.
+- E3′ not killed: rounded to 12 figures, Spearman(|s|, cos) is 1 on both lists.
+- D2′ not killed: cosine's and |s|'s Spearman unchanged (0) when each word is scaled by its own factor; Euclidean's
+  falls 0.237 (SimLex) and 0.542 (WordSim). (The factors came from a fresh generator seeded 20261116, so the falls
+  differ from run 1's 0.217 and 0.315, drawn after part 1.)
+
+What the two runs show:
+- The shared denominator is what holds many readings together: their logs correlate at ½, and the share with every
+  reading inside the corner is 1/(n + 1), where readings over their own denominators give 0 and ½ⁿ.
+- Read about a query, the shared denominator is cosine similarity: the same ranking exactly. It cannot beat cosine; it
+  says why cosine is the read (a direction, unmoved when each thing is scaled), where Euclidean distance is an amount
+  and collapses under that scaling.
+- Each axis over its own denominator (the orthogonal reading) does worst on both lists.
+- Embedding directions are far from the uniform hemisphere (tens of thousands of times the uniform share within 45° of
+  a query, centred or not), so the Cauchy about a query is not the law of a vocabulary's directions.
+- D1 stays killed: on SimLex, GloVe 50d's Euclidean distance edges cosine, so the vectors' lengths carry something the
+  ratings follow; what is written into an embedding is not all direction.
