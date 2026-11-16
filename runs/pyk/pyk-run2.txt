@@ -1,0 +1,6 @@
+K2' powers 1/2 and 2 not kept for kappa = +1, -1: True
+K3' integral to 1 - delta = (1/2) ln((2 - delta)/delta): True ; numerically at delta = 10^-n: False
+K7' every Doppler factor > 1, powers strictly increasing: True
+  K2': not killed
+  K3': KILLED
+  K7': not killed
