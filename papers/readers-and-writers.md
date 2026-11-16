@@ -1494,6 +1494,32 @@ reach the same ends another way. For these key things the read is simpler, in th
 square root, no angle, no transcendental number), and that simplicity counts for its own sake. **Checked** (`thumbs-walk.html`, `sky-city.html`: 0 trigonometric calls in 300 steps;
 100 of 100 walks retraced exactly; TWK, PWL).
 
+**Proved from no standpoint, run from one: the Tangent Bridge.** One algorithm holds both vantages at once. Store N
+values of a curve at N places evenly round a circle and rebuild it with the Dirichlet kernel,
+K_N(φ) = sin(Nφ/2)/(N·tan(φ/2)). Draw's *Tangent Bridge* proves what the rebuilding does in the angle chart, over the
+whole turn: the stored values come back exactly at the places; between them the error stays within the Lebesgue
+constant, about (2/π)·ln N, times the curve's change over one spacing; and the rebuilding converges for every curve
+whose modulus of continuity beats the logarithm. That is the dual hemispherical vantage's chart, the blueprint's, and
+the proof is right to use it. The same papers then run the rebuilding in the slope chart, the single hemispherical
+vantage's, with no trigonometric call: each place is its slope s_k = tan(θ_k/2), for even N exactly the N evenly
+spaced quantiles of the Cauchy; the kernel is rational in s (K_2 = 1/(1 + s²), the Cauchy's curve itself;
+K_4 = (1 − s²)/(1 + s²)²); the places are built from the corner, s = 1, by halving a turn, s ↦ s/(1 + √(1 + s²)), and
+composing turns by tangent addition. Run so, with every trigonometric function replaced by a counter that stays at zero,
+the round trip comes back to 10⁻¹⁶ at N up to 64, and the lattice alone to N = 2,048 lands within 3·10⁻¹⁵ of the tangent
+construction. The two charts are one projective line joined by the half-angle, s = tan(φ/2), so every result moves
+across unchanged. Where the blueprint comes in is marked inside the algorithm: the halving's one square root, √(1 + s²),
+two lengths combined, makes laying the lattice the blueprint's while the kernel at its leaves is rational; the reachable
+N are Gauss's (2^m, and with the seeds 1/√3 and tan(π/10) also 3·2^m and 5·2^m; not 33 or 72), the square-root
+counterpart of the roots of unity exact in fractions only for N = 1, 2, 4; and the Lebesgue constant's 2/π is a
+statement about the worst case over the whole turn, not anything a read computes. The arithmetic has its own craft: the
+textbook half-angle, (√(1 + s²) − 1)/s, is the same number as s/(1 + √(1 + s²)) but cancels for small s, drifting to
+1.6·10⁻⁹ by N = 2,048 where the other form holds 10⁻¹³. The same split runs through the classical algorithms (ALG): the
+ones that keep the pair, compose slopes or keep the order (Bresenham, atan2, rational turns, the median, inverse depth,
+CORDIC's direction) were exact where their blueprint forms misrounded, drifted, lost the facing or overflowed, and the
+ones with no single vantage form are completions (CORDIC's gain, the DFT's roots of unity, the mean). **Checked** (draw's
+`tb_classical.md` and `tb_algebra.md`, figures quoted, not rerun here; ALG, `plans/alg-plan.md`, predictions first,
+15 of 16 and the 16th's successor not killed); the theorem classical, the sorting a reading. Essays 10, 28 and 29.
+
 **Two 1's.** On the axes the three ways to measure a direction of the square agree: the largest component (the cube's),
 the sum h + v (the diamond's) and the length √(h² + v²) (the circle's) all give 1. At the corner they part: 1, 2 and √2.
 A 1 needs a measure; the turn picks the round one, and √2 is the geometric mean of the other two (Hölder:
@@ -1566,6 +1592,31 @@ freedom) gives (1 + t)·e^(−t), not a phasor; two simple poles beat; the hyper
 that does not total term by term; the Gaussian and Laplace kernels have no point off the line at all. Here t is the
 transform's variable, dual to position on the line, not time. **Checked** (OPL, to 25 digits at z = 0.7 + 0.4i,
 t = 1.3); classical by uniqueness of the transform; that the one pole is the standpoint is our reading.
+
+**Pythagoras, from no standpoint and from one.** From no standpoint the theorem is a triangle held whole: legs a and b,
+hypotenuse c, three lengths in one unit, a² + b² = c². From one standpoint there is a look and a thumb. Divide by the leg
+along the look and, with s = b/a the reading of the far corner,
+
+  1 + s² = (c/a)²,
+
+with no length left; in shares of the hypotenuse it is 1/(1 + s²) + s²/(1 + s²) = 1, the heat below a reading and the
+heat above it filling the whole, equal at the corner, s = 1. What a read does not have is the hypotenuse as a length:
+√(1 + s²) is the one square root a read meets (§1, "A read uses no trigonometry"), and the corner's share 1/√2 is no
+fraction. The whole-number triangles are exactly the rational slopes whose root is rational too, s = 4/3 for 3, 4, 5,
+s = 12/5 for 5, 12, 13. In space the same theorem with a third leg is the sphere's equation divided by the thumb,
+1 + s² + s₂² = (r/x)² (§2, "The paper in one equation"). So the circle's h² + v² = 1 below is Pythagoras read in the
+read's shares, and the triangle's a² + b² = c² is the same theorem stated with its amounts. **Classical**; the sorting a
+reading. Essay 28 §3.
+
+What comes out of it, checked exactly (PYT): composing two readings multiplies their sums of squares,
+1 + (s ⊕ a)² = (1 + s²)(1 + a²)/(1 − sa)², which is the Brahmagupta–Fibonacci identity with the composed slope as its
+direction; so a composed turn keeps one unit circle, the heat ds/(1 + s²) is the one weight composing leaves alone, and
+|w(s)| = 1 since (1 + is)(1 − is) = 1 + s². Every rational direction comes from one rational half-slope t,
+((1 − t²)/(1 + t²), 2t/(1 + t²)), the lattice the Tangent Bridge runs on; for n parties the uniform law on a flat screen
+is (1 + |s|²)^(−(n+1)/2), the sum raised to a power. Only the square does it: with |a|^p + |b|^p, p ≠ 2, no composed step
+keeps a unit circle. Where it stops: no rational direction but the quarter turns closes a turn, the corner's share 1/√2
+is the one root, and the heat's total is a completion; the median at the corner needs none. So the read's relations, its
+corner and its heat are Pythagoras divided by the thumb; π is not. **Exact**; the reading ours.
 
 **Four identities, one exchange.** Four equations state the completed joins: h² + v² = 1, e^(iπ) = −1, Ω · 1/Ω = 1
 and (1/Ω)·∫₀^∞ ds/(1 + s²) = 1. Each is the blueprint's completion of something a read holds without Ω, rational in the

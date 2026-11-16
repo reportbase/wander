@@ -1,0 +1,45 @@
+== C. CORDIC ==
+C1 final y/x equals the composed slope, exactly, in 200 cases: True
+C2 length^2 grows by prod(1 + 4^-i) exactly: True   K_30 = 0.607252935009  K_inf = 0.607252935008881
+C3 (letter: sign of the slope left) sequences equal in 891 of 1000; differing targets |theta| min 1.5718446203274636
+   post hoc, the slope left kept as a pair (sign of the cross term): equal in 1000 of 1000
+== B. Bresenham ==
+B1 Bresenham against the exact line: 0 mismatches in 1061045 points; B2 float DDA: 8 mismatches
+== T. atan2 against atan ==
+T1 atan gives d and -d the same value: True; atan2 keeps them pi apart: True
+T2 y/x at x = 0 raises (float True, exact True); atan2 gives +-pi/2: True
+== R. Rotation drift ==
+   rational n=10: return error 0, denominator digits 19 (n*log10 65 = 18.1)
+   rational n=100: return error 0, denominator digits 182 (n*log10 65 = 181.3)
+   rational n=1000: return error 0, denominator digits 1813 (n*log10 65 = 1812.9)
+   rational n=4000: return error 0, denominator digits 7252 (n*log10 65 = 7251.7)
+R2 float return error: {1000: '4.239e-15', 10000: '3.417e-14', 100000: '2.927e-13'}
+== M. Median and mean under increasing maps ==
+   x^3: median(f) == f(median) True; mean(f) vs f(mean) relative gap 9.999e-01
+   e^x: median(f) == f(median) True; mean(f) vs f(mean) relative gap 3.927e-01
+   ln(x+10): median(f) == f(median) True; mean(f) vs f(mean) relative gap 2.202e-03
+== I. Inverse depth ==
+   d=1e300: xyz direction NaN False; second camera xyz NaN False; inverse-depth bearing [0.36 0.48 0.8 ], rho = 1e-300
+   d=1e310: xyz direction NaN True; second camera xyz NaN True; inverse-depth bearing [0.36 0.48 0.8 ], rho = 1e-310
+   d=inf: xyz direction NaN True; second camera xyz NaN True; inverse-depth bearing [0.36 0.48 0.8 ], rho = 0.0
+== F. Median and mean filters on Cauchy noise ==
+F1 mean filter IQR / raw = 0.969 (predicted within 10% of 1); F2 median filter = 0.209 (predicted 0.212 within 15%)
+== N. Roots of unity ==
+N1 cos(2pi/N) rational for N = [1, 2, 3, 4, 6] ; cos and sin both rational for N = [1, 2, 4]
+== verdicts ==
+  C1: not killed
+  C2: not killed
+  C3: KILLED
+  B1: not killed
+  B2: not killed
+  T1: not killed
+  T2: not killed
+  R1: not killed
+  R2: not killed
+  M1: not killed
+  M2: not killed
+  I1: not killed
+  I2: not killed
+  F1: not killed
+  F2: not killed
+  N1: not killed

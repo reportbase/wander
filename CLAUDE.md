@@ -482,6 +482,49 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  PYT (`plans/pyt-plan.md` + `runs/pyt/`, 16 Nov; SPN R1057; Tom: "Wow, Pythagoras is powerful for the SHV", then
+  "Yes. This seems foundational and supports the point of view or paper has taken. Let's make sure it explored
+  completely."): exact, predictions first. From 1 + s² = (c/a)² alone: the shares and the corner; composition multiplies
+  sums of squares (1 + (s ⊕ a)² = (1 + s²)(1 + a²)/(1 − sa)², Brahmagupta–Fibonacci, its direction the composed slope),
+  so a composed turn is rigid and ds/(1 + s²) the one weight it leaves alone; |w| = 1; every rational direction from one
+  half-slope (2,556 points with denominator ≤ 2,000); for n parties the flat screen's law (1 + |s|²)^(−(n+1)/2) (the Gram
+  determinant exact, n = 1–4); rational points of the sphere from two half-slopes (62,054). Only p = 2: ℓ₁, ℓ₃, ℓ₄ left by
+  one composed step (0.12–0.37), ℓ₂ kept to 10⁻⁶¹. Where it stops: rational half-slopes close only at 0 and 1 (491 tried to
+  n = 200), 1/√2 the one root, the total π/2 a completion; the median at the corner needs no total. Run 1's P7 killed by my
+  code (sympy left sqrt(det) unsimplified), run 2's P7′ not. Essay 28 §3 "What comes out of it"; *Reads and Writes* §9
+  after "Pythagoras, from no standpoint and from one".
+  R1056 (16 Nov; Tom: "How about Pythagoras thereom", then "Yes, add it"): *Reads and Writes* §9 "Pythagoras, from no
+  standpoint and from one", before "Four identities, one exchange": a² + b² = c² the blueprint's, 1 + s² = (c/a)² and the
+  shares the read's, √(1 + s²) the one root, whole-number triangles the rational slopes with rational roots, in space
+  1 + s² + s₂² = (r/x)². No new claim.
+  R1055 (16 Nov; Tom: "Include tangent bridge in read and write."): *Reads and Writes* §9 "Proved from no standpoint, run
+  from one: the Tangent Bridge", after "Run as code": the rebuilding proved in the angle chart (the blueprint's), run in
+  the slope chart (the single vantage's) with no trigonometric call, the half-angle the join; the square root, Gauss's
+  N and the 2/π where the blueprint comes in; ALG's split in one sentence. No new claim; draw not rerun.
+  R1054 (16 Nov; Tom: "Did you include tangent bridge", then "Yes, add it"): essay 29 §7 "The Tangent Bridge: proved
+  from no standpoint, run from one" (draw's reconstruction from an even lattice, proved in the angle chart, run in the
+  slope chart with no trigonometric call, joined by s = tan(φ/2); the halving's square root, Gauss's reachable N and the
+  Lebesgue constant's 2/π the blueprint's), a row in its table, later sections renumbered 8–13; a paragraph in essay 28
+  §11. From essay 10 and draw's papers; draw not rerun.
+  R1053 (16 Nov; Tom: "Yes, write essay 29"): essay 29, `papers/essays/29-algorithms-from-one-standpoint.md`,
+  *Algorithms from one standpoint* (a straight line drawn on a screen of pixels): ALG as one essay, the algorithms sorted
+  as essay 28 sorted theorems; the float DDA's 8 misses checked afterwards, all exact ties. README row ("twenty-nine
+  essays"), `essays.html` card, smoke count 29 (not run). No new test beyond ALG; no paper changed.
+  ALG (`plans/alg-plan.md` + `runs/alg/`, 16 Nov; SPN R1052; Tom: "Let's find more dhv and shv comparisons with classical
+  algorithms", "Yes, write the plan and run the test"): classical algorithms sorted as essay 28 sorted theorems, exact or
+  seeded, predictions first. Run 1: 15 of 16 not killed. Single-vantage already: Bresenham (exact at 1,061,045 points, a
+  float DDA 8 misses), atan2 (the facing and the horizon kept), the median (exact under x³, eˣ, ln), inverse depth (the
+  direction at 10³¹⁰ and ∞ where xyz is NaN), rational turns (exact return, digits n·log₁₀ 65; floats 2.9·10⁻¹³ at 10⁵).
+  CORDIC composes slopes exactly (C1); its gain ∏(1 + 4⁻ⁱ)^(−½) = 0.6072529350 a completion on the length alone (C2);
+  C3 killed: steering by a single slope left gives the table's choices for 891 of 1,000, failing past the quarter turn;
+  run 2's C3′, the slope left kept as a pair, 1,000 of 1,000 (targets given as pairs from cos and sin). Completions: the
+  DFT's roots rational only for N = 1, 2, 4; the mean filter leaves Cauchy noise 0.969 as wide, the median 0.209.
+  R1051 (16 Nov; Tom: "Let's create a new essay that compares the dhv and shv versions of classical math theoroms"): essay
+  28, `papers/essays/28-two-statements-of-one-theorem.md`, *Two statements of one theorem* (the theorem list at the back
+  of a geometry book): a dozen classical theorems in both forms, sorted whole (rational in the slope: Pythagoras, angle
+  addition, Euler's family, Thales, s × 1/s, parallax, the disc's share), only renamed (the Cauchy's total) or not at all
+  (completions: the circle's area, Basel, the Gaussian, e); the line NTN and DVA found. README row ("twenty-eight
+  essays"), `essays.html` card, smoke count 28 (not run). No new test; no paper changed.
   R1050 (16 Nov; Tom: "Dhv also has a scale problem, at some point the historical record of writes is as large as the
   universe itself. It becomes the universe it records."; "Yes, add it to the papers and essays"): **a complete record of
   writes holds N and every change since (a read holds K); carried through it must record itself, which no finite record
@@ -4176,7 +4219,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     twenty-seven essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     twenty-nine essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.

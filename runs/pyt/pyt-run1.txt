@@ -1,0 +1,35 @@
+== P1. The shares ==
+P1 shares add to 1: True; exchange swaps them: True; equal only at s = [-1, 1]; 10,000 rationals exact: True
+== P2. Composition is the product of sums of two squares ==
+P2 1 + (s+a)^2 = (1+s^2)(1+a^2)/(1-sa)^2: True; Brahmagupta-Fibonacci: True; its direction the composed slope: True
+== P3. The heat is unchanged by composing ==
+P3 d(s+a)/(1+(s+a)^2) = ds/(1+s^2): True; the exchange reverses it: True
+== P4. The landing point ==
+P4 (1+is)(1-is) = 1+s^2: True; |w|^2 = 1: True; w(s)w(a) = w(s+a): True; w(s)w(1/s) = -1: True; w(1) = i: True
+== P5. The rational directions ==
+P5 2556 rational points with denominator <= 2000: each from one half-slope t: True; 7260 t's all on the circle: True; triples = rational s with rational root, s = 2t/(1-t^2): True
+== P6. Rational directions never close a turn, but at the axes ==
+P6 491 rational half-slopes in [0, 1] tried to n = 200; closing ones (t, first n): [(Fraction(0, 1), 1), (Fraction(1, 1), 4)]
+== P7. Space, and n parties ==
+   n = 1: surface element (1 + |s|^2)^(-2/2): True; density constant Gamma((n+1)/2)/pi^((n+1)/2) = 1/pi: True
+   n = 2: surface element (1 + |s|^2)^(-3/2): False; density constant Gamma((n+1)/2)/pi^((n+1)/2) = 1/(2*pi): True
+   n = 3: surface element (1 + |s|^2)^(-4/2): False; density constant Gamma((n+1)/2)/pi^((n+1)/2) = pi**(-2): True
+   totals: n = 1 1, n = 2 1
+   200,000 points on S^2: share within |s| <= 1 = 0.29292, 1 - 1/sqrt 2 = 0.29289, 0.03 standard errors
+== P8. Rational points in space ==
+P8 62054 rational points on the unit sphere (d <= 300, a, b >= 0) from a rational pair (t1, t2): True
+== P9. Only the square ==
+P9 worst departure from the l_p unit circle after one composed step: {1: '0.37357', 2: '2.3336e-61', 3: '0.11515', 4: '0.16754'}
+== P10. Where it stops ==
+P10 (a) corner share 1/sqrt 2 irrational: True; (b) total of the heat = pi/2, rational: False; (c) heat below 1 equals heat above by the exchange alone: True
+== verdicts ==
+  P1: not killed
+  P2: not killed
+  P3: not killed
+  P4: not killed
+  P5: not killed
+  P6: not killed
+  P7: KILLED
+  P8: not killed
+  P9: not killed
+  P10: not killed
