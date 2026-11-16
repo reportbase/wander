@@ -482,6 +482,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1062 (16 Nov; Tom: "I disagree. If they ever produced different results, that would be the discovery, they won't.";
+  "When we consider non human natural processes, I bet we find the same read/write. Read is the ongoing real time
+  continuous system dynamics. Writes are the discrete results."; "What is new is the clear eyed sorting of what math goes
+  with each."; "Yes"): **what is new is the sorting of the mathematics: which tools a read needs (slopes, composition,
+  the exchange and corner, the heat, order statistics, no angle, no π, no unit), which a write needs (counts, amounts,
+  sums and means, a size fixed by an amount carried in), and which only the blueprint needs (completions: π, e, totals),
+  each placed by a test.** SHV and DHV forms agree wherever both apply; a disagreement would be the discovery (R950), so
+  the distinction is judged by what each form needs, never by different numbers (corrects Claude's "it changed no
+  prediction" as a weakness). Tom's expectation, untested: non-human natural processes sort the same way, continuous
+  dynamics a read (relations unmoved by scaling), discrete results writes (a size an outside amount fixes). *Reads and
+  Writes* §1 "Which mathematics goes with each", with the table.
   R1061 (16 Nov; Tom: "1 2 3"): `three-kinds.html` (see its entry under Files), a card on `demos.html`, a link on essay
   28's card.
   FZD (`plans/fzd-plan.md` + `runs/fzd/`, 16 Nov; SPN R1060; Tom: "1 2 3"): the boost's composition rule against Fizeau's
