@@ -485,8 +485,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   SHD (`plans/shd-plan.md` + `runs/shd/`, 16 Nov; SPN R1045; Tom: "Cauchy works on 3d. Does it work on 4d or greater? If so, could be
   used in AI."; "But AI dimensions are orthogonal. In observation, they share a denominator."; "Yes, write the plan and run
   the test"): readings over one shared h correlate in log at ½ and hold 1/(n + 1) inside every corner at once, against 0
-  and ½ⁿ over their own denominators (E1′, E2). Read about a query the shared denominator ranks exactly as cosine
-  (worked out before the data; E3′), so it cannot beat cosine; on GloVe 50d with SimLex-999 and WordSim-353, cosine and
+  and ½ⁿ over their own denominators (E1′, E2). Read about a query the shared denominator ranks the front exactly as
+  cosine (worked out before the data; E3′), so it cannot beat cosine there; since R1046 (Tom: "Cosine is dhv, so is
+  Ai.") cosine is the dual vantage's form (no standpoint, both hemispheres, an angle's function), s = v/h the single
+  vantage's, agreeing in front; on GloVe 50d with SimLex-999 and WordSim-353, cosine and
   |s| unmoved when each word is scaled, Euclidean collapsing (D2′), each axis over its own denominator worst (D3),
   embedding directions far from uniform (D4, D5). D1 killed: on SimLex Euclidean edges cosine (0.276 against 0.265).
   Run 1's E1, E3, D2 killed by my standard error and floating-point ties, run 2 not.

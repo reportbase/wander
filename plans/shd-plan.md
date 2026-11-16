@@ -13,12 +13,12 @@ and does reading an embedding in terms of the query's own axis keep its near nei
 
 Read a candidate x from a query q: h = x·q̂ (along the look), v₁ … v_n the components in any orthonormal basis of the
 complement. Then |s| = |v|/h = tan α, α the angle between x and q, for h > 0 (h ≤ 0: behind the look, past the horizon).
-So **any reading about the query that treats the n readings alike (a function of |s|) ranks candidates exactly as cosine
-does**; the Cauchy heat about the look, (1 + |s|²)^(−(n+1)/2) = cos^(n+1) α, is a monotone function of cosine. A reading
+So **any reading about the query that treats the n readings alike (a function of |s|) ranks the candidates in front
+exactly as cosine does**; the Cauchy heat about the look, (1 + |s|²)^(−(n+1)/2) = cos^(n+1) α, is a monotone function of cosine. A reading
 that does not treat them alike (each |sᵢ| ≤ 1, a cube) depends on the basis chosen for the complement, which the query
 does not supply. So the proposal "reading in terms of the query's axis keeps more neighbours than cosine" is settled
-by arithmetic, not data: it ranks the same. What the framing can do is say why cosine works (it reads a direction,
-unmoved by scaling) and test the rest below.
+by arithmetic, not data: it ranks the same. What the framing can do is test the rest below.
+(R1046, after the runs: cosine is the dual hemispherical vantage's form, not the read; see the runs.)
 
 ## Predictions (committed before the data are fetched)
 
@@ -86,11 +86,19 @@ Run 2 result (`runs/shd/shd2.py`, output `runs/shd/shd-run2.txt`), nothing kille
 What the two runs show:
 - The shared denominator is what holds many readings together: their logs correlate at ½, and the share with every
   reading inside the corner is 1/(n + 1), where readings over their own denominators give 0 and ½ⁿ.
-- Read about a query, the shared denominator is cosine similarity: the same ranking exactly. It cannot beat cosine; it
-  says why cosine is the read (a direction, unmoved when each thing is scaled), where Euclidean distance is an amount
-  and collapses under that scaling.
+- Read about a query, the shared denominator ranks the front hemisphere exactly as cosine similarity does, so it
+  cannot beat cosine there. Both are unmoved when each thing is scaled, where Euclidean distance is an amount and
+  collapses. (Corrected by R1046: cosine is not the read. It is the dual hemispherical vantage's form, with no
+  standpoint, over both hemispheres (−1 to 1), an angle's function; s = v/h is the single hemispherical vantage's, from
+  the query, front only. They agree in front, as two accounts of one geometry do; behind the look (1.4% of WordSim's
+  pairs) cosine ranks and the read has the horizon.)
 - Each axis over its own denominator (the orthogonal reading) does worst on both lists.
 - Embedding directions are far from the uniform hemisphere (tens of thousands of times the uniform share within 45° of
   a query, centred or not), so the Cauchy about a query is not the law of a vocabulary's directions.
 - D1 stays killed: on SimLex, GloVe 50d's Euclidean distance edges cosine, so the vectors' lengths carry something the
   ratings follow; what is written into an embedding is not all direction.
+
+R1046 (16 Nov; Tom: "Cosine is dhv, so is Ai."): cosine similarity is the dual hemispherical vantage's (the blueprint's):
+no standpoint, both vectors alike, both hemispheres, an angle's function. AI as built holds every vector at once in one
+frame, its coordinates amounts: dual vantage too. The single vantage's reading s = v/h from the query agrees with
+cosine on the front hemisphere and has no behind. Sorted, not ranked: neither is called better (R939).
