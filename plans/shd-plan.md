@@ -49,4 +49,28 @@ prediction.
 
 ## Runs
 
-(none yet)
+**Run 1** (16 Nov, `runs/shd/shd.py`, output `runs/shd/shd-run1.txt`; data sha256: glove50.gz
+5c55f98957aa9fed8d2ac5fb1dcff57af3b23c5a3ee7af3f7945f8d49198eb24, simlex.txt
+405394ffb7d25f6d0e3c041f87c9f27d29dc6b047506769953e85c4523b11685, ws353.txt
+ce12919b240af45bdf46d243601eaca2b6212b159b5e7e9b435ee7ee40c5619c; not committed).
+- E1 killed by my standard error: the exponential law's shared correlation 0.4961, outside my normal-theory 3 SE
+  (0.0036). Post hoc, 200 seeded repeats give mean 0.49999 and spread 0.00135, wider than the 0.00119 I assumed
+  (the log of an exponential is skewed). Normal 0.5015, uniform 0.4968; own denominators 0 within error for all three.
+- E2 not killed: 1/(n + 1) shared and ½ⁿ own, every law, n = 1 … 8 (n = 8: 0.110 against 0.0038).
+- E3 killed by my tolerance: Spearman(|s|, cos) 0.999999997 and 0.99999993. Post hoc both lists hold duplicate pairs
+  (one in SimLex, two in WordSim); their cosines are equal to the last bit and their |s|, read in the two words' frames
+  in turn, differ in the last bit, so two ranks split a tie. No other rank differs.
+- D1 killed: on SimLex-999 Euclidean distance (0.2758) beats cosine (0.2646); on WordSim-353 cosine leads (0.5033
+  against 0.4636). In GloVe 50d a vector's length carries something SimLex's ratings follow.
+- D2 killed by my tolerance, in the |s| clause only (it moved by 5·10⁻⁸ on SimLex, the same duplicate ties). Cosine
+  unchanged to 10⁻¹²; Euclidean fell 0.2758 → 0.0589 and 0.4636 → 0.1486 when each word was scaled by its own factor.
+- D3 not killed: own denominators 0.1919 and 0.2375, against cosine 0.2646 and 0.5033.
+- D4 not killed: 4.4·10⁻⁴ of the vocabulary within 45° of a query, 6.7·10⁴ times the uniform hemisphere's 6.6·10⁻⁹.
+- D5 not killed: centring brings it to 1.9·10⁻⁴ (0.43 of raw), still 2.9·10⁴ times uniform.
+
+**Run 2** (predictions written before it runs, same data and seeds as run 1):
+- E1′: each law's shared correlation within 3 of its own spread over 200 seeded repeats of 400,000 draws, the mean of
+  the 200 within 3·spread/√200 of ½; own within the same of 0.
+- E3′, D2′: readings rounded to 12 significant figures before ranking (so last-bit ties are ties); then
+  Spearman(|s|, cos) on pairs in front is 1 to 10⁻¹², and |s|'s and cosine's Spearman with the ratings move by under
+  10⁻¹² when each word is scaled by its own factor, Euclidean's falls by at least 0.05. D1 is not rerun: it stays killed.
