@@ -205,6 +205,11 @@ The line runs where it was found to run on the lists: the single vantage restate
 each other, and has no form for what completes a turn, a length or a sum. The second kind is the narrow ground between,
 where the relation is a single vantage's and the number that normalises it is a completion.
 
+One algorithm holds both forms at once: draw's Tangent Bridge proves the rebuilding of a curve from an even lattice
+in the angle chart, over the whole turn, and runs it in the slope chart with no trigonometric call, the two joined by
+the half-angle s = tan(φ/2) (essay 10; essay 29 §7). It is the clearest single case of a theorem stated from no
+standpoint and carried out from one.
+
 Two cautions. The sorting is a reading, made one theorem at a time, and the tests that back it (NTN, DVA and the lists
 after them) found the line moving each time it was named exactly (essay 24 §10). And "whole" does not mean shorter in
 every case: the single vantage's forms are rational, which is the kind of thing they need, not always fewer symbols.

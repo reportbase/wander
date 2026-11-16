@@ -20,9 +20,9 @@ through only by renaming a constant, and those that do not come through at all b
 essay does the same for algorithms, with a test behind each entry.
 
 The order: the two ways of computing (§1), the line (§2), the pair kept (§3), turning without drifting (§4), the
-calculator's two parts (§5), the one prediction that failed (§6), order kept (§7), the horizon held (§8), what has no
-single-vantage form (§9), the sorting gathered (§10), what is classical and what is ours (§11), and what it changes
-(§12).
+calculator's two parts (§5), the one prediction that failed (§6), the Tangent Bridge (§7), order kept (§8), the horizon
+held (§9), what has no single-vantage form (§10), the sorting gathered (§11), what is classical and what is ours (§12),
+and what it changes (§13).
 
 ---
 
@@ -130,7 +130,55 @@ terms. What needs no table is the steering, a sign at each step; making the targ
 
 **Kind: a blueprint form and a single-vantage one**, with the condition the failure taught: keep the pair.
 
-## 7. Order kept
+## 7. The Tangent Bridge: proved from no standpoint, run from one
+
+One algorithm does in a single place what this essay and the last have been sorting. It is draw's Tangent Bridge, a set
+of papers in the draw project (reportbase/draw: a classical presentation, `tb_classical.md`, and an algebraic one,
+`tb_algebra.md`), set out at length in essay 10. Nothing here is new to them; this section only places them in the
+sorting. It is not part of ALG's test, and draw was not rerun for it.
+
+**The problem.** Store N values of a curve at N places spaced evenly round a circle, and rebuild the curve from them. The
+rebuilding is a kernel centred on each place, the Dirichlet kernel K_N(φ) = sin(Nφ/2)/(N·tan(φ/2)), each stored value
+carried by its copy.
+
+**Proved from no standpoint.** The papers prove what the rebuilding does in the angle chart, the language of classical
+approximation: it gives the stored values back exactly at the places, it stays within the Lebesgue constant, about
+(2/π)·ln N, times the curve's change over one spacing between them, and it converges for every curve smooth enough
+that its modulus of continuity beats the logarithm. Every one of these is a statement about the whole turn at once,
+periods and Fourier modes on a finished circle. That is the blueprint's chart, and the proof is right to use it.
+
+**Run from one standpoint.** The papers then run the same rebuilding with no angle at all. Each place is read as its
+slope, s_k = tan(θ_k/2); for even N those slopes are exactly the N evenly spaced quantiles of the Cauchy. The kernel
+becomes a rational function of the slope: K_2 = 1/(1 + s²), the Cauchy's curve itself, K_4 = (1 − s²)/(1 + s²)², and
+so on, each the Cauchy's curve raised to a power times a polynomial whose zeros are the other places. The places themselves are built
+from the corner, s = 1, by halving a turn, s ↦ s/(1 + √(1 + s²)), and composing turns by tangent addition. Run that way,
+with every trigonometric function replaced by a counter that stays at zero, the round trip comes back to 10⁻¹⁶ at N up
+to 64, and the lattice alone to N = 2,048 lands within 3·10⁻¹⁵ of the tangent construction (the papers' figures, quoted
+in essay 10).
+
+**The join.** The two charts are one closed line of directions read two ways, joined by the half-angle s = tan(φ/2).
+Put the slope in place of the angle and every result moves across unchanged: proved where turns add, run where one
+reading is taken at a time.
+
+**Where the completions sit.** The sorting of §11 shows up inside it:
+- *The square root.* Halving a turn needs one square root, √(1 + s²), the hypotenuse, two lengths combined. Laying the
+  lattice is therefore the blueprint's; what a read holds are its leaves, each a ratio, and the kernel at them rational.
+- *Which N.* Halving from the corner reaches the places for N = 2^m, and, with the seeds 1/√3 and tan(π/10), 3·2^m and
+  5·2^m; at N = 33 or 72 it stops. That is Gauss's constructibility condition, the square-root counterpart of §10's roots of
+  unity: an exact place in square roots exists only for some N, an exact place in fractions only for
+  N = 1, 2, 4.
+- *The 2/π.* The Lebesgue constant's (2/π)·ln N carries the blueprint's π; it is a statement about the rebuilding's
+  worst case over the whole turn, not anything a read computes.
+- *The arithmetic's own craft.* The textbook half-angle, (√(1 + s²) − 1)/s, is the same number as s/(1 + √(1 + s²)) but
+  subtracts nearly equal numbers for small s: built that way the lattice drifts to 1.6·10⁻⁹ by N = 2,048, built the
+  other way it holds 10⁻¹³. Running in slopes does not make the arithmetic free; it makes its losses visible, as the
+  float line of §2 and the float turns of §4 did.
+
+**Kind: both at once.** The theorem is the blueprint's and the operation the single vantage's, with the one square root
+and the choice of N marking where the blueprint comes in. It is the cleanest case of the pattern this essay keeps
+meeting: the classical proof needs the whole turn; the running does not.
+
+## 8. Order kept
 
 The median of a set of values is the middle one. Apply any increasing map to every value, and the median moves with it:
 median(f(X)) = f(median(X)). The mean does not: the mean of the cubes is not the cube of the mean.
@@ -146,7 +194,7 @@ against a predicted 0.212.
 
 **Kind: already single-vantage.** The median keeps the order; the mean needs the sum, and a slope's law has none.
 
-## 8. The horizon held
+## 9. The horizon held
 
 A camera that tracks a far landmark can store it as three coordinates, x, y, z, or, as Civera, Davison and Montiel
 proposed for monocular SLAM in 2008, as the direction it was first seen in together with the inverse of its distance,
@@ -159,7 +207,7 @@ equal to the first bearing: at the horizon there is no parallax, and the form sa
 
 **Kind: already single-vantage.** The direction kept, the horizon a value of ρ rather than an overflow.
 
-## 9. What has no single-vantage form
+## 10. What has no single-vantage form
 
 Two of the tests found completions with no single-vantage form at all.
 
@@ -171,9 +219,9 @@ cos(2π/N) is rational only for N = 1, 2, 3, 4 and 6, and cosine and sine are bo
 (Niven 1956). For every other N the transform needs the turn completed and cut into N equal parts, which is the
 blueprint's.
 
-The mean (§7) belongs here too: it is a sum over everything, divided by how many there are.
+The mean (§8) belongs here too: it is a sum over everything, divided by how many there are.
 
-## 10. The sorting gathered
+## 11. The sorting gathered
 
 | algorithm | from no standpoint | from one standpoint | what the run found |
 |---|---|---|---|
@@ -187,6 +235,7 @@ The mean (§7) belongs here too: it is a sum over everything, divided by how man
 | filtering Cauchy noise | mean filter | median filter | 0.969 against 0.209 of the raw width |
 | a far point | x, y, z | direction and ρ = 1/d | NaN against exact at 10³¹⁰ and ∞ |
 | the DFT | roots of unity e^(2πik/N) | none | exact in fractions only for N = 1, 2, 4 |
+| rebuilding from an even lattice (Tangent Bridge) | Dirichlet kernel in the angle, proved over the whole turn | the kernel rational in the slope, places by halving and tangent addition | no trigonometric call, 10⁻¹⁶ at N ≤ 64 (draw's papers, not rerun); the halving's square root and the reachable N the blueprint's |
 
 The pattern is the one essay 28 found for theorems, now with a way the algorithms fail. Where the blueprint's form
 divides a pair into a single number, adds angles or forms an amount, it misrounds, drifts, loses the facing or
@@ -199,20 +248,22 @@ cuts are possible. The single-vantage forms are not offered as faster or better:
 exact arithmetic costs), and the classical engineering that uses floating point does so knowingly, with fixes of its own
 (essay 22, PWL). What the sorting says is where each kind of failure comes from.
 
-## 11. What is classical and what is ours
+## 12. What is classical and what is ours
 
 Classical: every algorithm, and every fact the runs confirmed about them. Bresenham's integer line (1965); CORDIC and its
 gain (Volder 1959); atan2 and its handling of quadrants; the drift of floating-point rotations and the exactness of
 rational ones; the equivariance of the median under monotone maps; the Cauchy's mean having the Cauchy's width; inverse
-depth (Civera, Davison and Montiel 2008); Niven's theorem (1956). The citations are given from memory, except Civera et
+depth (Civera, Davison and Montiel 2008); Niven's theorem (1956); the Dirichlet kernel, the Lebesgue constant and
+Gauss's constructibility, and the Tangent Bridge papers' own results. The citations are given from memory, except Civera et
 al., which the series has read in full.
 
 Ours: the sorting. That Bresenham, atan2, the median, inverse depth and rational turns are the single vantage's forms;
 that CORDIC splits into a single vantage's direction and a blueprint's length; that its angle table can be replaced by a
 sign of a pair but not of a single slope, and that the place a single slope fails is the quarter turn, the same place
-atan fails; and that the algorithms with no single-vantage form are exactly the completions.
+atan fails; that the Tangent Bridge is one algorithm in both vantages at once, proved in the blueprint's chart and run in the
+single vantage's; and that the algorithms with no single-vantage form are exactly the completions.
 
-## 12. What it changes
+## 13. What it changes
 
 Nothing in how the algorithms are used. Bresenham's line and atan2 will go on being used for the reasons they always
 were.
@@ -230,7 +281,8 @@ atan does: a single slope was asked to do a pair's work past a quarter turn.
 - Tom, 16 November 2026: "Let's find more dhv and shv comparisons with classical algorithms"; "Yes, write the plan and
   run the test"; "Yes, write essay 29".
 - `plans/alg-plan.md`, `runs/alg/alg.py`, `runs/alg/alg2.py`, outputs `runs/alg/alg-run1.txt`, `alg-run2.txt`.
-- Essay 28 (`28-two-statements-of-one-theorem.md`): the theorems sorted. Essay 22 (`22-god-mode-and-a-vantage.md`): the
+- Essay 28 (`28-two-statements-of-one-theorem.md`): the theorems sorted. Essay 10 (`10-arrays-and-the-circle.md`)
+  §3–§4: the Tangent Bridge in full; draw's `papers/tb_classical.md` and `papers/tb_algebra.md` (reportbase/draw). Essay 22 (`22-god-mode-and-a-vantage.md`): the
   walk on whole numbers, TWK and PWL. Essay 12 (`12-what-an-array-is.md`) §9: what a machine can keep. Essay 24
   (`24-only-a-name.md`): notation and content.
 - J. E. Bresenham, "Algorithm for computer control of a digital plotter", *IBM Systems Journal* 4(1), 1965. J. E. Volder,

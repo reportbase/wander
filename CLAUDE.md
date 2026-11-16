@@ -482,6 +482,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1054 (16 Nov; Tom: "Did you include tangent bridge", then "Yes, add it"): essay 29 §7 "The Tangent Bridge: proved
+  from no standpoint, run from one" (draw's reconstruction from an even lattice, proved in the angle chart, run in the
+  slope chart with no trigonometric call, joined by s = tan(φ/2); the halving's square root, Gauss's reachable N and the
+  Lebesgue constant's 2/π the blueprint's), a row in its table, later sections renumbered 8–13; a paragraph in essay 28
+  §11. From essay 10 and draw's papers; draw not rerun.
   R1053 (16 Nov; Tom: "Yes, write essay 29"): essay 29, `papers/essays/29-algorithms-from-one-standpoint.md`,
   *Algorithms from one standpoint* (a straight line drawn on a screen of pixels): ALG as one essay, the algorithms sorted
   as essay 28 sorted theorems; the float DDA's 8 misses checked afterwards, all exact ties. README row ("twenty-nine
