@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Three kinds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    three-kinds.html: three kinds of composition, one rule (16 November 2026, SPN R1061; PYK; Tom: "1 2 3"). A standalone
+    page like notation.html, plain canvas, exact fractions in BigInt.
+      One rule composes two readings, s ⊕ a = (s + a)/(1 − κsa): κ = 1 turns (the circle), κ = −1 boosts (the hyperbola,
+      relativistic velocity addition), κ = 0 strides (the line, Galilean addition). A point is kept as its half-slope
+      [p : q], a pair, so the turn's far side [1 : 0] is no infinity; each step composes the pair with the step's
+      half-slope exactly. Panels: the three curves with their rational points from half-slopes p/q (q ≤ 12) and the walk
+      of n steps from home; the heat each kind keeps, ds/(1 + κs²), its share passed so far, the turn's total π and the
+      others' none; a readout: closed or not, after how many steps, and the digits the walk has used.
+    Links: ?t=p/q&n=&kind=turn|boost|stride. Test hook: window.__threeKinds (compose, walk, point, closes, heat, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0 }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 5px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 220px; min-width: 0; accent-color: var(--gold) }
+    label { color: var(--dim) }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    canvas { width: 100%; display: block; background: #101017; border-radius: 8px }
+    .k { color: var(--bright); margin: 4px 0 2px }
+    .out { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; overflow-wrap: anywhere }
+    .note { color: var(--dim); font-size: 12.5px; max-width: 76ch }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Three kinds</h1>
+    <p class="lede">Two readings compose by one rule, s ⊕ a = (s + a)/(1 − κs·a). With κ = 1 it is a turn (the circle),
+    with κ = −1 a boost (the hyperbola: speeds added as relativity adds them), with κ = 0 a stride (the line: speeds added
+    as Galileo did). Each walk below starts at home and takes n equal steps of half-slope t, in exact fractions.</p>
+
+    <div class="panel">
+        <div class="row"><label>step half-slope t</label>
+            <button data-t="1/1">1</button><button data-t="1/2">1/2</button><button data-t="1/3">1/3</button>
+            <button data-t="2/3">2/3</button><button data-t="1/5">1/5</button><button data-t="0/1">0</button>
+            <span id="tlab" class="k"></span></div>
+        <div class="row"><label for="tn">steps n</label><input id="tn" type="range" min="0" max="48" value="8"><span id="nlab" class="k"></span></div>
+        <div class="row"><label for="tp">or t = p/q</label><input id="tp" type="range" min="0" max="23" value="6"><span class="k">/ 24</span></div>
+    </div>
+
+    <div class="grid">
+        <div class="panel"><div class="k">turn, κ = 1: the circle</div><canvas id="c1" width="300" height="300"></canvas><div id="o1" class="out"></div></div>
+        <div class="panel"><div class="k">boost, κ = −1: the hyperbola</div><canvas id="c2" width="300" height="300"></canvas><div id="o2" class="out"></div></div>
+        <div class="panel"><div class="k">stride, κ = 0: the line</div><canvas id="c3" width="300" height="300"></canvas><div id="o3" class="out"></div></div>
+    </div>
+
+    <div class="panel">
+        <div class="k">the heat each kind keeps, ds/(1 + κs²), from home to the walk's reading</div>
+        <canvas id="h" width="900" height="220"></canvas>
+        <div id="oh" class="out"></div>
+    </div>
+
+    <p class="note">One identity holds for all three, 1 + κ(s ⊕ a)² = (1 + κs²)(1 + κa²)/(1 − κsa)²: Pythagoras's sum for the
+    turn, its difference for the boost (γ² − (γβ)² = 1), nothing to keep for the stride. Each kind leaves one weight alone:
+    the turn's heat (its angle), the boost's rapidity, the stride's plain ds. Only the turn's has a total, π, so only the
+    turn has the Cauchy and its corner. A rational turn comes home only at the quarter turns (t = 1 in four steps, t = 0
+    at once); no rational boost comes back; a stride never returns. The boost never reaches light's speed, s = ±1, the one
+    place every boost leaves where it is. Exact checks: <code>plans/pyt-plan.md</code>, <code>plans/pyk-plan.md</code>;
+    Fizeau's moving water read by the boost's rule: <code>plans/fzd-plan.md</code>; essay 28 §3.</p>
+</main>
+<script>
+(function () {
+    const KINDS = { turn: 1n, boost: -1n, stride: 0n };
+    const gcd = (a, b) => { a = a < 0n ? -a : a; b = b < 0n ? -b : b; while (b) [a, b] = [b, a % b]; return a; };
+    function norm([p, q]) { const g = gcd(p, q) || 1n; p /= g; q /= g; if (q < 0n || (q === 0n && p < 0n)) { p = -p; q = -q; } return [p, q]; }
+    // half-slopes as pairs [p : q]; the rule on pairs: [p1 q2 + p2 q1 : q1 q2 − κ p1 p2]
+    function compose(x, y, k) { return norm([x[0] * y[1] + y[0] * x[1], x[1] * y[1] - k * x[0] * y[0]]); }
+    function walk(t, n, k) { const out = [[0n, 1n]]; let c = [0n, 1n]; for (let i = 0; i < n; i++) { c = compose(c, t, k); out.push(c); } return out; }
+    // a point on each curve from its half-slope pair
+    function point([p, q], k) {
+        const P = Number(p), Q = Number(q);
+        if (k === 1n) { const d = P * P + Q * Q; return [(Q * Q - P * P) / d, 2 * P * Q / d]; }
+        if (k === -1n) { const d = Q * Q - P * P; return d === 0 ? [Infinity, Infinity] : [(Q * Q + P * P) / d, 2 * P * Q / d]; }
+        return [1, 2 * P / Q];
+    }
+    // the full reading s = 2T/(1 − κT²) from the half-slope T = p/q
+    function reading([p, q], k) { const P = Number(p), Q = Number(q); const d = Q * Q - Number(k) * P * P; return d === 0 ? Infinity : 2 * P * Q / d; }
+    function closes(t, k, max) { let c = [0n, 1n]; for (let i = 1; i <= max; i++) { c = compose(c, t, k); if (c[0] === 0n && c[1] === 1n) return i; } return 0; }
+    // heat passed from home: the turn's angle (as a share of its total π, counted round), the rapidity, ds
+    function heat(path, k) {
+        if (k === 1n) { // count the turn round by summing each step's angle (writer's arithmetic, for the readout only)
+            let a = 0; for (let i = 1; i < path.length; i++) { const t = Number(path[1][0]) / Number(path[1][1]); a += 2 * Math.atan(t); }
+            return a;
+        }
+        const s = reading(path[path.length - 1], k);
+        return k === -1n ? Math.atanh(Math.max(-1, Math.min(1, s))) : s;
+    }
+    const digits = path => Math.max(...path.map(([p, q]) => Math.max(p.toString().length, q.toString().length)));
+
+    const S = { t: [1n, 4n], n: 8 };
+    const q = new URLSearchParams(location.search);
+    if (q.get('t')) { const [a, b] = q.get('t').split('/'); S.t = norm([BigInt(a), BigInt(b || 1)]); }
+    if (q.get('n')) S.n = Math.max(0, Math.min(200, +q.get('n')));
+
+    const lattice = {};
+    for (const [name, k] of Object.entries(KINDS)) {
+        const pts = [];
+        for (let qq = 1; qq <= 12; qq++) for (let pp = -qq * 3; pp <= qq * 3; pp++) {
+            if (gcd(BigInt(pp), BigInt(qq)) !== 1n) continue;
+            const pt = point([BigInt(pp), BigInt(qq)], k);
+            if (isFinite(pt[0]) && Math.abs(pt[0]) < 4 && Math.abs(pt[1]) < 4) pts.push(pt);
+        }
+        lattice[name] = pts;
+    }
+
+    function drawCurve(cv, name, k, path) {
+        const g = cv.getContext('2d'), W = cv.width, H = cv.height;
+        const sc = k === 1n ? W / 2.6 : W / 6.4, cx = k === 1n ? W / 2 : W * 0.18, cy = H / 2;
+        const X = x => cx + x * sc, Y = y => cy - y * sc;
+        g.clearRect(0, 0, W, H);
+        g.strokeStyle = 'rgba(255,255,255,0.12)'; g.lineWidth = 1;
+        g.beginPath(); g.moveTo(0, cy); g.lineTo(W, cy); g.moveTo(cx, 0); g.lineTo(cx, H); g.stroke();
+        g.strokeStyle = '#8a8a96'; g.lineWidth = 1.2; g.beginPath();
+        if (k === 1n) g.arc(cx, cy, sc, 0, 2 * Math.PI);
+        else if (k === -1n) { for (let i = -200; i <= 200; i++) { const e = i / 70, x = Math.cosh(e), y = Math.sinh(e); i === -200 ? g.moveTo(X(x), Y(y)) : g.lineTo(X(x), Y(y)); } }
+        else { g.moveTo(X(1), 0); g.lineTo(X(1), H); }
+        g.stroke();
+        if (k === -1n) { g.setLineDash([4, 4]); g.strokeStyle = 'rgba(217,110,91,0.6)'; g.beginPath(); g.moveTo(X(-1), Y(-1)); g.lineTo(X(5), Y(5)); g.moveTo(X(-1), Y(1)); g.lineTo(X(5), Y(-5)); g.stroke(); g.setLineDash([]); }
+        g.fillStyle = 'rgba(140,230,205,0.35)';
+        for (const [x, y] of lattice[name]) { g.beginPath(); g.arc(X(x), Y(y), 1.6, 0, 7); g.fill(); }
+        g.strokeStyle = 'rgba(212,160,82,0.55)'; g.beginPath();
+        path.forEach((h, i) => { const [x, y] = point(h, k); if (!isFinite(x)) return; i ? g.lineTo(X(x), Y(y)) : g.moveTo(X(x), Y(y)); }); g.stroke();
+        path.forEach((h, i) => { const [x, y] = point(h, k); if (!isFinite(x) || Math.abs(x) > 50 || Math.abs(y) > 50) return;
+            g.fillStyle = i === path.length - 1 ? '#d4a052' : i === 0 ? '#e6e4ee' : 'rgba(212,160,82,0.8)';
+            g.beginPath(); g.arc(X(x), Y(y), i === path.length - 1 ? 5 : 3, 0, 7); g.fill(); });
+    }
+
+    function drawHeat(cv, info) {
+        const g = cv.getContext('2d'), W = cv.width, H = cv.height;
+        g.clearRect(0, 0, W, H);
+        const cols = [['turn', 1, '#8ce6cd'], ['boost', -1, '#b59cf0'], ['stride', 0, '#d4a052']];
+        const w = W / 3;
+        cols.forEach(([name, k, col], j) => {
+            const x0 = j * w + 20, x1 = (j + 1) * w - 14, y0 = H - 26, y1 = 18;
+            const smax = k === 1 ? 6 : k === -1 ? 1 : 6;
+            const fx = s => x0 + (x1 - x0) * s / smax, fy = v => y0 - (y0 - y1) * v;
+            g.strokeStyle = 'rgba(255,255,255,0.15)'; g.beginPath(); g.moveTo(x0, y0); g.lineTo(x1, y0); g.moveTo(x0, y0); g.lineTo(x0, y1); g.stroke();
+            const dens = s => k === -1 ? Math.min(1 / (1 - s * s), 6) / 6 : 1 / (1 + k * s * s);
+            const sNow = Math.min(Math.abs(info[name].s), smax * (k === -1 ? 0.995 : 1));
+            g.fillStyle = col + '33'; g.beginPath(); g.moveTo(fx(0), fy(0));
+            for (let i = 0; i <= 200; i++) { const s = sNow * i / 200; g.lineTo(fx(s), fy(dens(s))); } g.lineTo(fx(sNow), fy(0)); g.fill();
+            g.strokeStyle = col; g.beginPath();
+            for (let i = 0; i <= 300; i++) { const s = smax * i / 300 * (k === -1 ? 0.999 : 1); i ? g.lineTo(fx(s), fy(dens(s))) : g.moveTo(fx(s), fy(dens(s))); } g.stroke();
+            g.fillStyle = '#8a8a96'; g.font = '11px DM Mono, monospace';
+            g.fillText(name + (k === -1 ? '  (s → 1: light)' : k === 1 ? '  (s → ∞: horizon)' : '  (no end)'), x0, H - 8);
+        });
+    }
+
+    function render() {
+        const info = {};
+        for (const [name, k] of Object.entries(KINDS)) {
+            const path = walk(S.t, S.n, k), last = path[path.length - 1], c = closes(S.t, k, 200);
+            info[name] = { path, last, s: reading(last, k), heat: heat(path, k), closes: c, digits: digits(path) };
+        }
+        drawCurve(document.getElementById('c1'), 'turn', 1n, info.turn.path);
+        drawCurve(document.getElementById('c2'), 'boost', -1n, info.boost.path);
+        drawCurve(document.getElementById('c3'), 'stride', 0n, info.stride.path);
+        const tS = S.t[0] + '/' + S.t[1];
+        const line = (name) => { const I = info[name];
+            return `after ${S.n}: half-slope ${I.last[0]}/${I.last[1]}\n` +
+                (I.closes ? `home again after ${I.closes} step${I.closes > 1 ? 's' : ''}` : `not home within 200 steps`) +
+                `\ndigits used: ${I.digits}`; };
+        document.getElementById('o1').textContent = line('turn');
+        document.getElementById('o2').textContent = line('boost') + `\nspeed ${isFinite(info.boost.s) ? info.boost.s.toFixed(6) : '1'} of light's, never 1`;
+        document.getElementById('o3').textContent = line('stride');
+        drawHeat(document.getElementById('h'), info);
+        document.getElementById('oh').textContent =
+            `turn: heat passed ${info.turn.heat.toFixed(4)} (${(info.turn.heat / Math.PI).toFixed(4)} π, counted round); all the readings' heat is π, a half turn, so the turn has a law (the Cauchy) and a corner\n` +
+            `boost: rapidity ${info.boost.heat.toFixed(4)}, unbounded as the speed nears light's: no total, no law of its own\n` +
+            `stride: ds passed ${info.stride.heat.toFixed(4)}, unbounded: no total`;
+        document.getElementById('tlab').textContent = 't = ' + tS;
+        document.getElementById('nlab').textContent = String(S.n);
+        document.querySelectorAll('[data-t]').forEach(b => b.classList.toggle('on', b.dataset.t === tS));
+        S.info = info;
+    }
+    function set(o) {
+        if (o.t) { const [a, b] = String(o.t).split('/'); S.t = norm([BigInt(a), BigInt(b || 1)]); }
+        if (o.n != null) S.n = Math.max(0, Math.min(200, o.n | 0));
+        render(); return state();
+    }
+    function state() {
+        const r = {}; for (const k of Object.keys(KINDS)) { const I = S.info[k]; r[k] = { last: I.last.map(String), s: I.s, heat: I.heat, closes: I.closes, digits: I.digits }; }
+        return { t: S.t.map(String), n: S.n, kinds: r };
+    }
+    document.querySelectorAll('[data-t]').forEach(b => b.onclick = () => set({ t: b.dataset.t }));
+    document.getElementById('tn').oninput = e => set({ n: +e.target.value });
+    document.getElementById('tp').oninput = e => set({ t: e.target.value + '/24' });
+    document.getElementById('tn').value = S.n;
+    render();
+    window.__threeKinds = { compose: (x, y, k) => compose(x.map(BigInt), y.map(BigInt), BigInt(k)).map(String),
+        walk: (t, n, k) => walk(t.map(BigInt), n, BigInt(k)).map(h => h.map(String)), point: (h, k) => point(h.map(BigInt), BigInt(k)),
+        closes: (t, k, max = 200) => closes(norm(t.map(BigInt)), BigInt(k), max), heat, set, state };
+})();
+</script>
+</body>
+</html>
