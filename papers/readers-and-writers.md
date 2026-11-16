@@ -1604,7 +1604,7 @@ heat above it filling the whole, equal at the corner, s = 1. What a read does no
 √(1 + s²) is the one square root a read meets (§1, "A read uses no trigonometry"), and the corner's share 1/√2 is no
 fraction. The whole-number triangles are exactly the rational slopes whose root is rational too, s = 4/3 for 3, 4, 5,
 s = 12/5 for 5, 12, 13. In space the same theorem with a third leg is the sphere's equation divided by the thumb,
-1 + s² + s₂² = (r/x)² (§1, "The paper in one equation"). So the circle's h² + v² = 1 below is Pythagoras read in the
+1 + s² + s₂² = (r/x)² (§2, "The paper in one equation"). So the circle's h² + v² = 1 below is Pythagoras read in the
 read's shares, and the triangle's a² + b² = c² is the same theorem stated with its amounts. **Classical**; the sorting a
 reading. Essay 28 §3.
 
