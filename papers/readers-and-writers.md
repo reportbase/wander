@@ -111,7 +111,9 @@ for the continuous and writing the verb for the discrete, and the scale test fol
 definition. And discreteness has no face (essay 26): a write is discrete, so it has scale and size and faces nothing;
 a read is continuous, so it has no scale and no size, and it is a face. That is exactly what reads and writes are
 (Tom, R1039). The read is the stage, the write is the play (Tom, R1041): the stage has no scale and no size, and what is
-played on it is discrete, sized things. The two mixed boxes hold no act. A count and the number line are nouns, descriptions laid over what was
+played on it is discrete, sized things. Writing is reaching out into the world to touch it, and all sorts of temporary
+writes are needed to manage that touch (Tom, R1048): the last look kept, the reach counted, the start marked, each over
+once the touch has given its number (§6, "Touch, the walk to the foot"). The two mixed boxes hold no act. A count and the number line are nouns, descriptions laid over what was
 read or written. The friction between continuous and discrete shows wherever one is made to hold the other: a count
 holding a read (a slope no fraction lands on, the ringing at a sharp edge, §6), a read holding a count (K, §5), and
 parallax, where a walk is cut into strides before the reads at its two ends give a size. π and e belong to neither box
@@ -1104,6 +1106,16 @@ Two reads and a count of one already give the product, by the formulas above. Th
 ratio of reads and counts nothing, so it has s at every moment and no n, and its sum of steps falls short of the whole
 by (1 − r)^m after m steps, at every m. The 1 is closed by a count and only approached by a ratio. How this 1 stands to
 §9's 1/Ω × Ω is said there. **Checked** (ONE, exact).
+
+**Touch, the walk to the foot.** Touch is parallax along the line of sight, carried to the end (Tom, R1048). Parallax is
+two reads and one counted step; here the step is along the look, and two reads a counted stride apart give the strides
+left exactly, at any stride. Looking only approaches the foot; the counted reach arrives, and contact is where the strides
+left come to zero, the walk's −1, reached by a count and approached by a ratio. The meeting of the surface is the last
+read; what makes it a touch is the write: the reach aimed, the hand's place kept, the distance counted. Those are
+temporary writes, the parallax's working parts. Each is needed while the touch is managed and none is in what it gives,
+one number, how far in, as the middle denominators of a tower are in none of its ends ("A tower of extents"). Touch
+guided by looking is parallax; touch with the eyes shut is not, since there are no reads to join, only moves counted and
+checked by loops, a count with no reads. **A reading**, on WLK's exact walk; it claims nothing about how anything touches.
 
 **Extents come by degrees.** The crossing from reads to extents, and from extents to writes, is not a switch thrown.
 - *In what.* Two standpoints a step apart give every extent in that step. If the step was one thumb, extents are in thumbs

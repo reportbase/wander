@@ -482,6 +482,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1048 (16 Nov; Tom: "Writing is reaching out into the world to touch it. All sorts of temporary writes are needed
+  manage that touch"; "That means touch is a version of paralax."; "Yes, add it to the papers and essays"): **a write
+  reaches out to touch the world; temporary writes (a look kept, a reach counted, a start marked) manage the touch and are
+  over once it gives its number. Touch guided by looking is parallax along the line of sight carried to the end** (the
+  walk's strides left reaching zero, the −1 reached by a count); the meeting is the last read, what makes it a touch the
+  write (reconciles R538); touch with eyes shut a count, not parallax (R539). *Reads and Writes* §1 and §6 "Touch, the
+  walk to the foot"; essays 1, 19 §8, 27 §11 (weights lasting writes, activations and cache temporary).
   R1047 (16 Nov; Tom: "Write an essay on this and a section to the read wrote paper as a point of comparison between shv and
   DHV."): essay 27, `papers/essays/27-one-standpoint-or-none.md`, *One standpoint or none: how alike, in AI and in a read*
   (a "more like this" button): SHD and R1046 as one essay; *Reads and Writes* §7 "Similarity from one standpoint and from
