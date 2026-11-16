@@ -392,6 +392,13 @@ time stands in for the history and the blueprint is a lookup, live at any tick. 
 that, and their state has to be stepped and kept, a record a step behind. And the read's now is not the world's either:
 it is the now of what arrives. It is the only now there is from a standpoint, and it needs nothing written. (R1049.)
 
+**And never small enough.** Tom again: "at some point the historical record of writes is as large as the universe
+itself. It becomes the universe it records." The cell counts on the walk are that cost: a stored blueprint four times
+larger each doubling of its side, about 10⁵² cells at 10²⁶ units, against the read's 29,000 at every distance. A complete
+record would have to hold itself as well, so the only complete one is the world itself, each thing carrying its own
+state. The loops are cheap because a law in time holds them; the colliding balls are not, since their state has to be
+kept, and it grows. (R1050.)
+
 ## 14. What it changes
 
 The blueprint is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on

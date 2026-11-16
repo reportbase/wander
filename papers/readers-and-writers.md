@@ -946,6 +946,21 @@ O(K) work, whatever N. What the cull gives up is sameness: a count that holds N 
 alike, with no standpoint favoured; a read's K is spent finest at the corner and coarser each stretch away, and that
 unevenness is the vantage. **Checked** (`star-field.html`).
 
+**A record the size of what it records.** The blueprint has a second cost beside lagging (R1049): its size (Tom, R1050).
+A write is a thing with a size, so a complete record of the writes that have occurred takes at least as many things as
+there were writes, N and everything changed since, where a read holds K whatever N. Carried through, the record is in the
+world too, of the same kind of thing, so a complete record would have to record itself; no finite record inside the world
+can. The only complete record of the world is the world, the things themselves each carrying its own state (R950): a
+blueprint pushed to completeness becomes the universe it records, Carroll's map of a mile to the mile (*Sylvie and Bruno
+Concluded*, 1893) and Borges's map the size of the empire ("Del rigor en la ciencia", 1946). A law shrinks the record
+where there is one: a law in time leaves only the rule and a seed (things on loops placed from the tick alone, TWK runs
+15–16), and a geometric law is what the geometry has in place of memory (§1). Where there is none the record grows with
+the history: interaction spreads the state to keep (TWK run 17), and in chaos the digits needed to hold the start grow at
+the rule's rate (§9, CXB). So the record is largest where the world is least lawful. Lagging and growing are two costs of
+one thing, holding the whole from no standpoint; a read pays neither, holding K, now, and keeping nothing. **Reading**,
+on the cell counts of `thumbs-walk.html` (a stored blueprint about 10⁵² cells at 10²⁶ units, the read some 29,000 at
+every distance).
+
 **Something to read, and K of it.** A read says nothing about N except that there is something to read, and it only ever
 holds K of it. It does not need the world to come counted: N is a count, and a count is a description laid over things
 (§1), so whether the world has an N, finite or not, is the blueprint's question. The read is the same in every case, even
@@ -1274,7 +1289,8 @@ record; where things interact with no such law, their state has to be stepped an
 step behind (TWK runs 15–17). The read's own present is not the world's either: it is the present of what arrives, paint
 that left its sources earlier, starlight by years. It is the only now there is from a standpoint, and nothing has to have
 been written for it. No one has the world's now from no standpoint; simultaneity far off is a convention, a write; the
-blueprint's now is assembled afterwards from records. **Reading.**
+blueprint's now is assembled afterwards from records. And the record grows toward the size of what it records
+(§6, "A record the size of what it records"; R1050). **Reading.**
 
 **Similarity from one standpoint and from none.** The same comparison in another field. An embedding, as AI builds it,
 holds every vector at once in one frame, each coordinate an amount on its own orthogonal axis: the dual hemispherical
@@ -1296,7 +1312,7 @@ against 0.265), so the vectors' lengths, amounts written in by training, carry s
 directions are far from a uniform sky (within 45° of a word about 67,000 times the uniform share, about 29,000 times with
 the mean vector removed), so the Cauchy about a query is not a vocabulary's law. An embedding is a record in R1049's
 sense: trained on writing that has already happened and frozen at its cutoff, so its similarity is history consulted,
-not a look. Neither vantage is called better.
+not a look; and a compressed one, far smaller than its corpus, which is what lets it be held at all (R1050). Neither vantage is called better.
 **Checked** (SHD, `plans/shd-plan.md`, predictions before the data; the ranking's agreement worked out before it was
 run; the prediction that cosine beats Euclidean on both lists killed); the measures and the data classical, the sorting
 a reading. Essay 27.

@@ -482,6 +482,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1050 (16 Nov; Tom: "Dhv also has a scale problem, at some point the historical record of writes is as large as the
+  universe itself. It becomes the universe it records."; "Yes, add it to the papers and essays"): **a complete record of
+  writes holds N and every change since (a read holds K); carried through it must record itself, which no finite record
+  in the world can, so the only complete record is the world, each thing carrying its own state (R950): a blueprint pushed
+  to completeness becomes the universe it records** (Carroll 1893, Borges 1946). A law shrinks it to a rule and a seed
+  (TWK runs 15–16; R864); without one it grows with the history (run 17; chaos, CXB). Lagging (R1049) and growing two
+  costs of holding the whole from no standpoint. *Reads and Writes* §6 "A record the size of what it records", §7; essays
+  16 §11, 22 §13, 27 §11 (an embedding a compressed record).
   R1049 (16 Nov; Tom: "The problem with dhv and why the natural world does not use it is because it's not real time,
   it's historical, it's a record of writes that have occurred."; "Yes, add it to the papers and essays"): **every
   blueprint held is a record of writes that have occurred, historical, lagging, never now; a read is the present, a write
