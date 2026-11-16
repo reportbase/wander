@@ -482,6 +482,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1055 (16 Nov; Tom: "Include tangent bridge in read and write."): *Reads and Writes* §9 "Proved from no standpoint, run
+  from one: the Tangent Bridge", after "Run as code": the rebuilding proved in the angle chart (the blueprint's), run in
+  the slope chart (the single vantage's) with no trigonometric call, the half-angle the join; the square root, Gauss's
+  N and the 2/π where the blueprint comes in; ALG's split in one sentence. No new claim; draw not rerun.
   R1054 (16 Nov; Tom: "Did you include tangent bridge", then "Yes, add it"): essay 29 §7 "The Tangent Bridge: proved
   from no standpoint, run from one" (draw's reconstruction from an even lattice, proved in the angle chart, run in the
   slope chart with no trigonometric call, joined by s = tan(φ/2); the halving's square root, Gauss's reachable N and the

@@ -1494,6 +1494,32 @@ reach the same ends another way. For these key things the read is simpler, in th
 square root, no angle, no transcendental number), and that simplicity counts for its own sake. **Checked** (`thumbs-walk.html`, `sky-city.html`: 0 trigonometric calls in 300 steps;
 100 of 100 walks retraced exactly; TWK, PWL).
 
+**Proved from no standpoint, run from one: the Tangent Bridge.** One algorithm holds both vantages at once. Store N
+values of a curve at N places evenly round a circle and rebuild it with the Dirichlet kernel,
+K_N(φ) = sin(Nφ/2)/(N·tan(φ/2)). Draw's *Tangent Bridge* proves what the rebuilding does in the angle chart, over the
+whole turn: the stored values come back exactly at the places; between them the error stays within the Lebesgue
+constant, about (2/π)·ln N, times the curve's change over one spacing; and the rebuilding converges for every curve
+whose modulus of continuity beats the logarithm. That is the dual hemispherical vantage's chart, the blueprint's, and
+the proof is right to use it. The same papers then run the rebuilding in the slope chart, the single hemispherical
+vantage's, with no trigonometric call: each place is its slope s_k = tan(θ_k/2), for even N exactly the N evenly
+spaced quantiles of the Cauchy; the kernel is rational in s (K_2 = 1/(1 + s²), the Cauchy's curve itself;
+K_4 = (1 − s²)/(1 + s²)²); the places are built from the corner, s = 1, by halving a turn, s ↦ s/(1 + √(1 + s²)), and
+composing turns by tangent addition. Run so, with every trigonometric function replaced by a counter that stays at zero,
+the round trip comes back to 10⁻¹⁶ at N up to 64, and the lattice alone to N = 2,048 lands within 3·10⁻¹⁵ of the tangent
+construction. The two charts are one projective line joined by the half-angle, s = tan(φ/2), so every result moves
+across unchanged. Where the blueprint comes in is marked inside the algorithm: the halving's one square root, √(1 + s²),
+two lengths combined, makes laying the lattice the blueprint's while the kernel at its leaves is rational; the reachable
+N are Gauss's (2^m, and with the seeds 1/√3 and tan(π/10) also 3·2^m and 5·2^m; not 33 or 72), the square-root
+counterpart of the roots of unity exact in fractions only for N = 1, 2, 4; and the Lebesgue constant's 2/π is a
+statement about the worst case over the whole turn, not anything a read computes. The arithmetic has its own craft: the
+textbook half-angle, (√(1 + s²) − 1)/s, is the same number as s/(1 + √(1 + s²)) but cancels for small s, drifting to
+1.6·10⁻⁹ by N = 2,048 where the other form holds 10⁻¹³. The same split runs through the classical algorithms (ALG): the
+ones that keep the pair, compose slopes or keep the order (Bresenham, atan2, rational turns, the median, inverse depth,
+CORDIC's direction) were exact where their blueprint forms misrounded, drifted, lost the facing or overflowed, and the
+ones with no single vantage form are completions (CORDIC's gain, the DFT's roots of unity, the mean). **Checked** (draw's
+`tb_classical.md` and `tb_algebra.md`, figures quoted, not rerun here; ALG, `plans/alg-plan.md`, predictions first,
+15 of 16 and the 16th's successor not killed); the theorem classical, the sorting a reading. Essays 10, 28 and 29.
+
 **Two 1's.** On the axes the three ways to measure a direction of the square agree: the largest component (the cube's),
 the sum h + v (the diamond's) and the length √(h² + v²) (the circle's) all give 1. At the corner they part: 1, 2 and √2.
 A 1 needs a measure; the turn picks the round one, and √2 is the geometric mean of the other two (Hölder:
