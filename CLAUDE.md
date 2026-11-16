@@ -482,6 +482,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1056 (16 Nov; Tom: "How about Pythagoras thereom", then "Yes, add it"): *Reads and Writes* §9 "Pythagoras, from no
+  standpoint and from one", before "Four identities, one exchange": a² + b² = c² the blueprint's, 1 + s² = (c/a)² and the
+  shares the read's, √(1 + s²) the one root, whole-number triangles the rational slopes with rational roots, in space
+  1 + s² + s₂² = (r/x)². No new claim.
   R1055 (16 Nov; Tom: "Include tangent bridge in read and write."): *Reads and Writes* §9 "Proved from no standpoint, run
   from one: the Tangent Bridge", after "Run as code": the rebuilding proved in the angle chart (the blueprint's), run in
   the slope chart (the single vantage's) with no trigonometric call, the half-angle the join; the square root, Gauss's

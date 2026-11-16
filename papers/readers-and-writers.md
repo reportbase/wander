@@ -1593,6 +1593,21 @@ that does not total term by term; the Gaussian and Laplace kernels have no point
 transform's variable, dual to position on the line, not time. **Checked** (OPL, to 25 digits at z = 0.7 + 0.4i,
 t = 1.3); classical by uniqueness of the transform; that the one pole is the standpoint is our reading.
 
+**Pythagoras, from no standpoint and from one.** From no standpoint the theorem is a triangle held whole: legs a and b,
+hypotenuse c, three lengths in one unit, a² + b² = c². From one standpoint there is a look and a thumb. Divide by the leg
+along the look and, with s = b/a the reading of the far corner,
+
+  1 + s² = (c/a)²,
+
+with no length left; in shares of the hypotenuse it is 1/(1 + s²) + s²/(1 + s²) = 1, the heat below a reading and the
+heat above it filling the whole, equal at the corner, s = 1. What a read does not have is the hypotenuse as a length:
+√(1 + s²) is the one square root a read meets (§1, "A read uses no trigonometry"), and the corner's share 1/√2 is no
+fraction. The whole-number triangles are exactly the rational slopes whose root is rational too, s = 4/3 for 3, 4, 5,
+s = 12/5 for 5, 12, 13. In space the same theorem with a third leg is the sphere's equation divided by the thumb,
+1 + s² + s₂² = (r/x)² (§1, "The paper in one equation"). So the circle's h² + v² = 1 below is Pythagoras read in the
+read's shares, and the triangle's a² + b² = c² is the same theorem stated with its amounts. **Classical**; the sorting a
+reading. Essay 28 §3.
+
 **Four identities, one exchange.** Four equations state the completed joins: h² + v² = 1, e^(iπ) = −1, Ω · 1/Ω = 1
 and (1/Ω)·∫₀^∞ ds/(1 + s²) = 1. Each is the blueprint's completion of something a read holds without Ω, rational in the
 slope, and each of those is a fact about the exchange s ↔ 1/s, whose fixed point is the corner.
