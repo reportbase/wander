@@ -482,6 +482,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1047 (16 Nov; Tom: "Write an essay on this and a section to the read wrote paper as a point of comparison between shv and
+  DHV."): essay 27, `papers/essays/27-one-standpoint-or-none.md`, *One standpoint or none: how alike, in AI and in a read*
+  (a "more like this" button): SHD and R1046 as one essay; *Reads and Writes* §7 "Similarity from one standpoint and from
+  none" after "A single vantage and the blueprint, side by side". README row ("twenty-seven essays"), `essays.html` card,
+  smoke count 27 (not run). No new test; no explainer yet.
   SHD (`plans/shd-plan.md` + `runs/shd/`, 16 Nov; SPN R1045; Tom: "Cauchy works on 3d. Does it work on 4d or greater? If so, could be
   used in AI."; "But AI dimensions are orthogonal. In observation, they share a denominator."; "Yes, write the plan and run
   the test"): readings over one shared h correlate in log at ½ and hold 1/(n + 1) inside every corner at once, against 0
@@ -4147,7 +4152,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     twenty-six essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     twenty-seven essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.

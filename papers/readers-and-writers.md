@@ -1251,6 +1251,29 @@ part that grows. **Checked** (`thumbs-walk.html`, `sky-city.html`: the read set 
 missing and 0 extra; a stored blueprint's cells out to 10²⁶ units about 10⁵², against some 29,000 cells scanned at every
 distance; cars on loops placed from the tick alone, cars in traffic held). **Reading.**
 
+**Similarity from one standpoint and from none.** The same comparison in another field. An embedding, as AI builds it,
+holds every vector at once in one frame, each coordinate an amount on its own orthogonal axis: the dual hemispherical
+vantage (DHV), the blueprint. Its cosine similarity, x·y/(|x||y|), is the dual vantage's form: no standpoint (swap x
+and y and nothing changes), both hemispheres (from +1 to −1, the behind given a value), an angle's function. The single
+hemispherical vantage (SHV) reads the same items from a query q: h the part of x along the look, v₁ … v_n the parts
+square to it, every reading sᵢ = vᵢ/h over the one h, s = |v|/h about the look, and for h ≤ 0 the horizon. The shared
+denominator ties the readings together: their logs correlate at exactly ½ when the parts have one law, against 0 for
+readings over their own denominators, and the share with every reading inside its corner at once is 1/(n + 1) (h the
+largest of n + 1 parts) against ½ⁿ for orthogonal axes, one in 769 against 2⁻⁷⁶⁸ at 768 readings. In front of the look
+s grows as cosine falls, so any reading about the query that treats its readings alike, the Cauchy's own heat
+(1 + s²)^(−(n+1)/2) among them, ranks the front exactly as cosine does. The two agree wherever both apply; they part in
+the standpoint, in the behind (which cosine ranks and the read does not reach) and in the trigonometry. On GloVe's
+50-dimensional vectors with two human similarity lists (SimLex-999, WordSim-353): cosine and s rank alike (0.265, 0.503),
+both unmoved when each word's vector is scaled by its own factor, where Euclidean distance, an amount, collapses (to
+0.04 and below 0.15); each coordinate over its own denominator scores worst (0.192, 0.238); 1.4% of WordSim's pairs lie
+behind the look. Two findings belong to the embedding, not the vantages: on SimLex Euclidean distance edges cosine (0.276
+against 0.265), so the vectors' lengths, amounts written in by training, carry something the ratings follow; and the
+directions are far from a uniform sky (within 45° of a word about 67,000 times the uniform share, about 29,000 times with
+the mean vector removed), so the Cauchy about a query is not a vocabulary's law. Neither vantage is called better.
+**Checked** (SHD, `plans/shd-plan.md`, predictions before the data; the ranking's agreement worked out before it was
+run; the prediction that cosine beats Euclidean on both lists killed); the measures and the data classical, the sorting
+a reading. Essay 27.
+
 ## 8. In space
 
 **Three parties.** With a third party, V₂, the look turns two ways: up from the horizontal (altitude) and round it
