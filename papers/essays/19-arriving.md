@@ -236,6 +236,15 @@ count assumes that a stride is the same stride each time, which the geometry doe
 exactly like the next, and a walker's strides are only roughly so. The read is solid. The count, a description laid
 over the writes, is where the open questions are.
 
+**Touch.** The walk carried to the door is touch. Tom: "Writing is reaching out into the world to touch it. All sorts of
+temporary writes are needed to manage that touch", and then, "That means touch is a version of parallax." It is the
+road's own parallax, the counted step taken along the look rather than across it, run until the strides left are none.
+Looking brings the door nearer only as a ratio; the counted reach arrives. The last look kept, the strides counted, the
+mark at the start: each is a temporary write, needed while the touch is managed and gone from what it gives, which is one
+number, how far. The meeting itself is a look; everything that makes it a touch is the write. With the eyes shut it is no
+longer parallax: there are no looks to join, only moves counted. (*Reads and Writes* §6, "Touch, the walk to the foot";
+R1048.)
+
 ## 9. In space
 
 On a road there is one line of sight, and everything above happens along it. In space the walker has two thumbs crossed,
@@ -308,6 +317,9 @@ the breadth), `one-read.html` (the reading on the blueprint's circle, 1, i and �
 on Euler's plane; n reads).
 
 ## Sources
+
+- Tom, 16 November 2026: "Writing is reaching out into the world to touch it. All sorts of temporary writes are needed
+  to manage that touch"; "That means touch is a version of paralax." (R1048, §8 "Touch").
 
 - Baird, E., Boeddeker, N., Ibbotson, M. R. and Srinivasan, M. V. (2013). A universal strategy for visually guided
   landing. *Proceedings of the National Academy of Sciences* 110(46), 18686–18691.

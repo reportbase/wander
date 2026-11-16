@@ -563,6 +563,15 @@ or an interface between components built apart needs the amount. None is needed 
 needed when parts made apart must meet, amounts must add, or the whole must be stated in advance: the needs of an
 intricate system of many parts. A blueprint is a capability, not a condition.
 
+**What a blueprint costs.** Tom: "Dhv also has a scale problem, at some point the historical record of writes is as large
+as the universe itself. It becomes the universe it records." A blueprint held is a record of writes (R1049), and a write
+takes room, so a complete one holds N and every change since, where a read holds K. On `thumbs-walk.html` a stored
+blueprint out to 10²⁶ units is about 10⁵² cells; the read scans some 29,000 at every distance. Carried through, the record
+must record itself too, which no finite record in the world can, so the only complete record is the world: the map of a
+mile to the mile. A program escapes only by a law. A seeded rule, or a motion given as a function of the tick, holds the
+whole in a rule and a seed; state that reacts must be stepped and kept, and that part grows with the history. Compression
+is the law; what has no law cannot be held in less than itself. (R1050.)
+
 **Distance in the payload.** What arrives can carry cues to distance: an echo's delay, how faint a thing of a known kind
 looks. Each becomes a distance only with an amount carried in, the signal's speed and a clock, or the thing's true
 brightness. Ranging is writing. Scale the world and the distance so stated moves.

@@ -111,7 +111,9 @@ for the continuous and writing the verb for the discrete, and the scale test fol
 definition. And discreteness has no face (essay 26): a write is discrete, so it has scale and size and faces nothing;
 a read is continuous, so it has no scale and no size, and it is a face. That is exactly what reads and writes are
 (Tom, R1039). The read is the stage, the write is the play (Tom, R1041): the stage has no scale and no size, and what is
-played on it is discrete, sized things. The two mixed boxes hold no act. A count and the number line are nouns, descriptions laid over what was
+played on it is discrete, sized things. Writing is reaching out into the world to touch it, and all sorts of temporary
+writes are needed to manage that touch (Tom, R1048): the last look kept, the reach counted, the start marked, each over
+once the touch has given its number (§6, "Touch, the walk to the foot"). The two mixed boxes hold no act. A count and the number line are nouns, descriptions laid over what was
 read or written. The friction between continuous and discrete shows wherever one is made to hold the other: a count
 holding a read (a slope no fraction lands on, the ringing at a sharp edge, §6), a read holding a count (K, §5), and
 parallax, where a walk is cut into strides before the reads at its two ends give a size. π and e belong to neither box
@@ -420,7 +422,11 @@ It is classical geometry, with its eye above the figure seeing every side at onc
 writes; the blueprint is brought in as the point of comparison, the familiar statement a read's or a write's form is
 set beside (e^(iπ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. "Dual hemispherical vantage" and "from no standpoint" say the same thing: a standpoint faces
 one way, so both hemispheres at once can only be drawn. The circle held whole, the sphere and the cube, the angle and trigonometry, π and e
-are the blueprint's. Whole, with π at its exact value, it is a limit. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
+are the blueprint's. Whole, with π at its exact value, it is a limit. Any blueprint actually held, a map, a stored world,
+a table of measurements, is finite, and it is historical: a record of writes that have occurred, so it lags what it
+describes and is never now. A read is the present, one place now; a write is the past tense, over once it is made. That
+is why nothing in nature acts from the dual vantage: it is never live (Tom, R1049). The whole blueprint is still made by
+no reads or writes (R890, R922); what is a record is every blueprint anyone has. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
 walk or count.
 
 **V.** V is the other party's breadth, the mountain in the distance that the thumb is held up against. A reading is a
@@ -940,6 +946,21 @@ O(K) work, whatever N. What the cull gives up is sameness: a count that holds N 
 alike, with no standpoint favoured; a read's K is spent finest at the corner and coarser each stretch away, and that
 unevenness is the vantage. **Checked** (`star-field.html`).
 
+**A record the size of what it records.** The blueprint has a second cost beside lagging (R1049): its size (Tom, R1050).
+A write is a thing with a size, so a complete record of the writes that have occurred takes at least as many things as
+there were writes, N and everything changed since, where a read holds K whatever N. Carried through, the record is in the
+world too, of the same kind of thing, so a complete record would have to record itself; no finite record inside the world
+can. The only complete record of the world is the world, the things themselves each carrying its own state (R950): a
+blueprint pushed to completeness becomes the universe it records, Carroll's map of a mile to the mile (*Sylvie and Bruno
+Concluded*, 1893) and Borges's map the size of the empire ("Del rigor en la ciencia", 1946). A law shrinks the record
+where there is one: a law in time leaves only the rule and a seed (things on loops placed from the tick alone, TWK runs
+15–16), and a geometric law is what the geometry has in place of memory (§1). Where there is none the record grows with
+the history: interaction spreads the state to keep (TWK run 17), and in chaos the digits needed to hold the start grow at
+the rule's rate (§9, CXB). So the record is largest where the world is least lawful. Lagging and growing are two costs of
+one thing, holding the whole from no standpoint; a read pays neither, holding K, now, and keeping nothing. **Reading**,
+on the cell counts of `thumbs-walk.html` (a stored blueprint about 10⁵² cells at 10²⁶ units, the read some 29,000 at
+every distance).
+
 **Something to read, and K of it.** A read says nothing about N except that there is something to read, and it only ever
 holds K of it. It does not need the world to come counted: N is a count, and a count is a description laid over things
 (§1), so whether the world has an N, finite or not, is the blueprint's question. The read is the same in every case, even
@@ -1105,6 +1126,16 @@ ratio of reads and counts nothing, so it has s at every moment and no n, and its
 by (1 − r)^m after m steps, at every m. The 1 is closed by a count and only approached by a ratio. How this 1 stands to
 §9's 1/Ω × Ω is said there. **Checked** (ONE, exact).
 
+**Touch, the walk to the foot.** Touch is parallax along the line of sight, carried to the end (Tom, R1048). Parallax is
+two reads and one counted step; here the step is along the look, and two reads a counted stride apart give the strides
+left exactly, at any stride. Looking only approaches the foot; the counted reach arrives, and contact is where the strides
+left come to zero, the walk's −1, reached by a count and approached by a ratio. The meeting of the surface is the last
+read; what makes it a touch is the write: the reach aimed, the hand's place kept, the distance counted. Those are
+temporary writes, the parallax's working parts. Each is needed while the touch is managed and none is in what it gives,
+one number, how far in, as the middle denominators of a tower are in none of its ends ("A tower of extents"). Touch
+guided by looking is parallax; touch with the eyes shut is not, since there are no reads to join, only moves counted and
+checked by loops, a count with no reads. **A reading**, on WLK's exact walk; it claims nothing about how anything touches.
+
 **Extents come by degrees.** The crossing from reads to extents, and from extents to writes, is not a switch thrown.
 - *In what.* Two standpoints a step apart give every extent in that step. If the step was one thumb, extents are in thumbs
   and V is placed as V\*/H. Only a step counted in an agreed unit gives an amount, a write, the one rung scaling the world
@@ -1250,6 +1281,41 @@ whatever N is; the rule, for everything nobody has touched; and writes, only whe
 part that grows. **Checked** (`thumbs-walk.html`, `sky-city.html`: the read set beside a blueprint made about the eye, 0
 missing and 0 extra; a stored blueprint's cells out to 10²⁶ units about 10⁵², against some 29,000 cells scanned at every
 distance; cars on loops placed from the tick alone, cars in traffic held). **Reading.**
+
+**A record, and where it keeps up.** Every blueprint held is a record of writes that have occurred, so it is historical,
+not live (Tom, R1049). It keeps up with the present in one case only: where a law in time stands in for the history.
+Things on loops are placed from the tick alone, exactly, at any tick, and there the blueprint is a lookup and not a
+record; where things interact with no such law, their state has to be stepped and stored, and it is a record again, a
+step behind (TWK runs 15–17). The read's own present is not the world's either: it is the present of what arrives, paint
+that left its sources earlier, starlight by years. It is the only now there is from a standpoint, and nothing has to have
+been written for it. No one has the world's now from no standpoint; simultaneity far off is a convention, a write; the
+blueprint's now is assembled afterwards from records. And the record grows toward the size of what it records
+(§6, "A record the size of what it records"; R1050). **Reading.**
+
+**Similarity from one standpoint and from none.** The same comparison in another field. An embedding, as AI builds it,
+holds every vector at once in one frame, each coordinate an amount on its own orthogonal axis: the dual hemispherical
+vantage (DHV), the blueprint. Its cosine similarity, x·y/(|x||y|), is the dual vantage's form: no standpoint (swap x
+and y and nothing changes), both hemispheres (from +1 to −1, the behind given a value), an angle's function. The single
+hemispherical vantage (SHV) reads the same items from a query q: h the part of x along the look, v₁ … v_n the parts
+square to it, every reading sᵢ = vᵢ/h over the one h, s = |v|/h about the look, and for h ≤ 0 the horizon. The shared
+denominator ties the readings together: their logs correlate at exactly ½ when the parts have one law, against 0 for
+readings over their own denominators, and the share with every reading inside its corner at once is 1/(n + 1) (h the
+largest of n + 1 parts) against ½ⁿ for orthogonal axes, one in 769 against 2⁻⁷⁶⁸ at 768 readings. In front of the look
+s grows as cosine falls, so any reading about the query that treats its readings alike, the Cauchy's own heat
+(1 + s²)^(−(n+1)/2) among them, ranks the front exactly as cosine does. The two agree wherever both apply; they part in
+the standpoint, in the behind (which cosine ranks and the read does not reach) and in the trigonometry. On GloVe's
+50-dimensional vectors with two human similarity lists (SimLex-999, WordSim-353): cosine and s rank alike (0.265, 0.503),
+both unmoved when each word's vector is scaled by its own factor, where Euclidean distance, an amount, collapses (to
+0.04 and below 0.15); each coordinate over its own denominator scores worst (0.192, 0.238); 1.4% of WordSim's pairs lie
+behind the look. Two findings belong to the embedding, not the vantages: on SimLex Euclidean distance edges cosine (0.276
+against 0.265), so the vectors' lengths, amounts written in by training, carry something the ratings follow; and the
+directions are far from a uniform sky (within 45° of a word about 67,000 times the uniform share, about 29,000 times with
+the mean vector removed), so the Cauchy about a query is not a vocabulary's law. An embedding is a record in R1049's
+sense: trained on writing that has already happened and frozen at its cutoff, so its similarity is history consulted,
+not a look; and a compressed one, far smaller than its corpus, which is what lets it be held at all (R1050). Neither vantage is called better.
+**Checked** (SHD, `plans/shd-plan.md`, predictions before the data; the ranking's agreement worked out before it was
+run; the prediction that cosine beats Euclidean on both lists killed); the measures and the data classical, the sorting
+a reading. Essay 27.
 
 ## 8. In space
 

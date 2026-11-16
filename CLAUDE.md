@@ -482,6 +482,45 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1050 (16 Nov; Tom: "Dhv also has a scale problem, at some point the historical record of writes is as large as the
+  universe itself. It becomes the universe it records."; "Yes, add it to the papers and essays"): **a complete record of
+  writes holds N and every change since (a read holds K); carried through it must record itself, which no finite record
+  in the world can, so the only complete record is the world, each thing carrying its own state (R950): a blueprint pushed
+  to completeness becomes the universe it records** (Carroll 1893, Borges 1946). A law shrinks it to a rule and a seed
+  (TWK runs 15–16; R864); without one it grows with the history (run 17; chaos, CXB). Lagging (R1049) and growing two
+  costs of holding the whole from no standpoint. *Reads and Writes* §6 "A record the size of what it records", §7; essays
+  16 §11, 22 §13, 27 §11 (an embedding a compressed record).
+  R1049 (16 Nov; Tom: "The problem with dhv and why the natural world does not use it is because it's not real time,
+  it's historical, it's a record of writes that have occurred."; "Yes, add it to the papers and essays"): **every
+  blueprint held is a record of writes that have occurred, historical, lagging, never now; a read is the present, a write
+  the past tense (R644, R651), so nothing in nature acts from the dual vantage.** Reconciled with R890/R922 by R887: the
+  blueprint whole (the limit) is made by no writes; every blueprint anyone has is a record. A blueprint keeps up only where
+  a law in time stands in for the history (a lookup, TWK runs 15–16); with interaction it is a stepped record again (run
+  17). The read's now is the now of what arrives, the only now from a standpoint; simultaneity far off a convention.
+  *Reads and Writes* §1 "Reads, writes and the blueprint", §7 "A record, and where it keeps up" and the similarity
+  paragraph; essays 22 §13, 27 §11 (an embedding a record frozen at its cutoff).
+  R1048 (16 Nov; Tom: "Writing is reaching out into the world to touch it. All sorts of temporary writes are needed
+  manage that touch"; "That means touch is a version of paralax."; "Yes, add it to the papers and essays"): **a write
+  reaches out to touch the world; temporary writes (a look kept, a reach counted, a start marked) manage the touch and are
+  over once it gives its number. Touch guided by looking is parallax along the line of sight carried to the end** (the
+  walk's strides left reaching zero, the −1 reached by a count); the meeting is the last read, what makes it a touch the
+  write (reconciles R538); touch with eyes shut a count, not parallax (R539). *Reads and Writes* §1 and §6 "Touch, the
+  walk to the foot"; essays 1, 19 §8, 27 §11 (weights lasting writes, activations and cache temporary).
+  R1047 (16 Nov; Tom: "Write an essay on this and a section to the read wrote paper as a point of comparison between shv and
+  DHV."): essay 27, `papers/essays/27-one-standpoint-or-none.md`, *One standpoint or none: how alike, in AI and in a read*
+  (a "more like this" button): SHD and R1046 as one essay; *Reads and Writes* §7 "Similarity from one standpoint and from
+  none" after "A single vantage and the blueprint, side by side". README row ("twenty-seven essays"), `essays.html` card,
+  smoke count 27 (not run). No new test; no explainer yet.
+  SHD (`plans/shd-plan.md` + `runs/shd/`, 16 Nov; SPN R1045; Tom: "Cauchy works on 3d. Does it work on 4d or greater? If so, could be
+  used in AI."; "But AI dimensions are orthogonal. In observation, they share a denominator."; "Yes, write the plan and run
+  the test"): readings over one shared h correlate in log at ½ and hold 1/(n + 1) inside every corner at once, against 0
+  and ½ⁿ over their own denominators (E1′, E2). Read about a query the shared denominator ranks the front exactly as
+  cosine (worked out before the data; E3′), so it cannot beat cosine there; since R1046 (Tom: "Cosine is dhv, so is
+  Ai.") cosine is the dual vantage's form (no standpoint, both hemispheres, an angle's function), s = v/h the single
+  vantage's, agreeing in front; on GloVe 50d with SimLex-999 and WordSim-353, cosine and
+  |s| unmoved when each word is scaled, Euclidean collapsing (D2′), each axis over its own denominator worst (D3),
+  embedding directions far from uniform (D4, D5). D1 killed: on SimLex Euclidean edges cosine (0.276 against 0.265).
+  Run 1's E1, E3, D2 killed by my standard error and floating-point ties, run 2 not.
   R1044 (15 Nov; Tom: "remove any mention that extents are a third thing on par with reads and writes."): R1038 finished: the disclaimers "not a third thing/kind" removed from *Reads and Writes* D3 and O1, the physics paper's head, the essays README and essay 6; essay 18's three-way sorting (reading / extent / write) on Euler's plane now two (reading, the gaps across had by reads held together, and the write). **For new writing: describe an extent as what it is (a distance in thumbs, had by reading or a count); never set it beside reads and writes, even to deny it.**
   R1043 (15 Nov; Tom: "So the discrete value is the corner"; "That means the inscribed / central sweeps are not correct"; "Yes, remove any mention of inscribed and central sweeps."): **the facings are the near reading s (facing V, V in terms of H) and the far reading 1/s (facing away, H in terms of V)**, meeting at 1 at the corner, where the one reading is the faceless value; **the inscribed and central sweeps are removed** (stated in θ, their rates sin θ/θ and θ/sin θ the blueprint's, 1.1107 and 0.9003 at the corner); Ω and 1/Ω only limits at the horizon. Supersedes R1032's assignment of 1/Ω and Ω to the facings, R1017–R1022's inner and outer sweeps, and every inscribed/central entry above (R273, R284, R328, R332, R450, R454, R889 …), which describe the text before. Carried through *Reads and Writes*, the essays, the physics papers and the demos' wording; `faces.html` reworked to s and 1/s. **For new writing: never mention the inscribed or central sweep.**
   R1042 (15 Nov; Tom: "Near *far =no facing discrete faceless value"): **near times far, s × (1/s) = 1, is no facing, the discrete faceless value of one thumb**; the −1 is the landing points' (they carry the turn); *Reads and Writes* §9, essay 26 §7.
@@ -4137,7 +4176,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     twenty-six essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     twenty-seven essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.

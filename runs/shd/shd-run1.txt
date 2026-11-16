@@ -1,0 +1,38 @@
+== Part 1 ==
+E1: correlation of ln|v_i/h| and ln|v_j/h| (shared) and with own denominators
+  normal       shared 0.5015  own -0.0018  ok
+  uniform      shared 0.4968  own +0.0013  ok
+  exponential  shared 0.4961  own -0.0027  MISS
+  E1 KILLED
+E2: share with every |s_i| <= 1, shared h against own h
+  normal       n=1: shared 0.5012 (1/(n+1) 0.5000)  own 0.5004 (1/2^n 0.5000)  ok
+  normal       n=2: shared 0.3327 (1/(n+1) 0.3333)  own 0.2510 (1/2^n 0.2500)  ok
+  normal       n=4: shared 0.2004 (1/(n+1) 0.2000)  own 0.0624 (1/2^n 0.0625)  ok
+  normal       n=8: shared 0.1103 (1/(n+1) 0.1111)  own 0.0038 (1/2^n 0.0039)  ok
+  uniform      n=1: shared 0.5001 (1/(n+1) 0.5000)  own 0.4999 (1/2^n 0.5000)  ok
+  uniform      n=2: shared 0.3330 (1/(n+1) 0.3333)  own 0.2490 (1/2^n 0.2500)  ok
+  uniform      n=4: shared 0.1991 (1/(n+1) 0.2000)  own 0.0620 (1/2^n 0.0625)  ok
+  uniform      n=8: shared 0.1104 (1/(n+1) 0.1111)  own 0.0038 (1/2^n 0.0039)  ok
+  exponential  n=1: shared 0.5005 (1/(n+1) 0.5000)  own 0.4995 (1/2^n 0.5000)  ok
+  exponential  n=2: shared 0.3335 (1/(n+1) 0.3333)  own 0.2504 (1/2^n 0.2500)  ok
+  exponential  n=4: shared 0.1994 (1/(n+1) 0.2000)  own 0.0623 (1/2^n 0.0625)  ok
+  exponential  n=8: shared 0.1117 (1/(n+1) 0.1111)  own 0.0038 (1/2^n 0.0039)  ok
+  E2 not killed
+== Part 2 ==
+  400000 words, 50 dimensions
+  simlex: 999 pairs, front 1.000
+    Spearman  cos 0.2646  euc 0.2758  |s| 0.2646  own 0.1919
+    scaled    cos 0.2646  euc 0.0589  |s| 0.2646  own 0.0045
+    E3 Spearman(|s|, cos) on pairs in front 0.999999996990979
+  ws353: 353 pairs, front 0.986
+    Spearman  cos 0.5033  euc 0.4636  |s| 0.5034  own 0.2375
+    scaled    cos 0.5033  euc 0.1486  |s| 0.5034  own 0.1366
+    E3 Spearman(|s|, cos) on pairs in front 0.999999928815214
+  E3 KILLED
+  D1 KILLED
+  D2 KILLED
+  D3 not killed
+  uniform hemisphere share within 45 deg (n = 49): 6.634e-09
+  vocabulary within 45 deg of a query: raw 4.4233e-04 (6.67e+04 x uniform), centred 1.9124e-04 (2.88e+04 x)
+  D4 not killed
+  D5 not killed

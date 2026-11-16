@@ -1,0 +1,8 @@
+E1' normal       shared mean 0.49982 spread 0.00156  own mean -0.00005 spread 0.00151  ok
+E1' uniform      shared mean 0.49974 spread 0.00168  own mean -0.00020 spread 0.00139  ok
+E1' exponential  shared mean 0.50006 spread 0.00134  own mean +0.00011 spread 0.00158  ok
+E1' not killed
+simlex: E3' Spearman(|s|, cos) 1.000000000000000; D2' change cos 0.0e+00, |s| 0.0e+00, Euclidean fall 0.2367
+ws353: E3' Spearman(|s|, cos) 1.000000000000000; D2' change cos 0.0e+00, |s| 0.0e+00, Euclidean fall 0.5422
+E3' not killed
+D2' not killed
