@@ -64,3 +64,41 @@ Exact unless said: sympy for identities, fractions for counts.
 Kill conditions are each prediction's own; a failed one stays failed, and a fix is a new run with its own prediction.
 
 ## Runs
+**Run 1** (16 Nov, `runs/pyt/pyt.py`, output `runs/pyt/pyt-run1.txt`). 9 of 10 not killed; P7 killed by my code.
+- P1 not killed: the shares add to 1, the exchange swaps them, equal only at s = ±1; 10,000 seeded rationals exact.
+- P2 not killed: 1 + (s ⊕ a)² = (1 + s²)(1 + a²)/(1 − sa)²; cleared of denominators the Brahmagupta–Fibonacci
+  identity, whose product (xu − yv : xv + yu) is the composed slope.
+- P3 not killed: ds/(1 + s²) carried to itself by every s ↦ s ⊕ a, and reversed by the exchange.
+- P4 not killed: (1 + is)(1 − is) = 1 + s², so |w|² = 1; w(s)·w(a) = w(s ⊕ a); w(s)·w(1/s) = −1; w(1) = i.
+- P5 not killed: all 2,556 rational points of the unit circle with denominator ≤ 2,000 come from one half-slope each;
+  7,260 half-slopes all land on the circle; every rational slope with a rational root is 2t/(1 − t²).
+- P6 not killed: of 491 rational half-slopes in [0, 1], tried to n = 200, only t = 0 (n = 1) and t = 1 (n = 4) close.
+- P7 killed by my code: for n = 2, 3 the check `simplify(sqrt(det) − (1 + |s|²)^(−(n+1)/2)) == 0` returned False,
+  though the determinant factors to exactly (1 + |s|²)^(−(n+1)) and the difference is 0 at seeded rational points
+  (sympy does not take the square root of the power). n = 1, the constants Γ((n + 1)/2)/π^((n+1)/2), the totals 1
+  (n = 1, 2) and the seeded sample (0.29292 against 0.29289, 0.03 standard errors) all as predicted.
+- P8 not killed: 62,054 rational points on the unit sphere (d ≤ 300, a, b ≥ 0, both signs of c) from a rational pair.
+- P9 not killed: after one composed step the ℓ₂ circle is kept to 2·10⁻⁶¹; ℓ₁, ℓ₃, ℓ₄ are left by 0.37, 0.12, 0.17.
+- P10 not killed: 1/√2 irrational; the heat's total π/2, not rational; the heat below 1 equals the heat above by the
+  exchange alone.
+
+**Run 2** (prediction written before it runs): P7′, the same Jacobians for n = 1, 2, 3, 4, compared without a square
+root: the Gram determinant det(JᵀJ) of the screen-to-sphere map equals (1 + |s|²)^(−(n+1)) exactly (sympy `factor`,
+difference simplified to 0), so the surface element is Pythagoras's sum to the −(n + 1)/2. Kill if any n differs.
+
+Run 2 result (`runs/pyt/pyt2.py`, output `runs/pyt/pyt-run2.txt`): P7′ not killed: det(JᵀJ) = (1 + |s|²)^(−(n+1)) for
+n = 1, 2, 3, 4.
+
+What the runs show:
+- From Pythagoras divided by the thumb, 1 + s² = (c/a)², and nothing else, come: the two shares and their exchange
+  (P1); composition, since composing two readings multiplies their sums of squares (Brahmagupta–Fibonacci, P2), so a
+  composed turn keeps one unit circle; the heat, the one measure composing leaves alone (P3); the landing point on the
+  unit circle and Euler's family w(s)·w(1/s) = −1 (P4); every rational direction, by the half-slope (P5); in space and
+  for any number of parties the same, the law of uniform directions on a flat screen being the sum 1 + |s|² raised to
+  −(n + 1)/2 (P7, P8).
+- It is the square that does it: with |a|^p + |b|^p for p = 1, 3, 4 no composition of directions keeps one unit circle
+  (P9), so the read's rigid turn, its corner and its Cauchy are Pythagoras's and no other norm's (OFS 3(g)).
+- Where it stops: rational directions close no turn but at the quarter turns (P6); the corner's share 1/√2 is the one
+  root (P10a); the heat's total π/2 is a completion (P10b). The median at the corner needs no total (P10c). So
+  Pythagoras gives every relation among directions and the corner; it does not give π, which only completing the turn
+  gives.
