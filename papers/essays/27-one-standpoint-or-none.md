@@ -209,6 +209,12 @@ needed to manage that touch." A model has both kinds. Its trained weights, and t
 writes, kept between inputs. The activations and the attention cache are temporary writes: kept only while the model
 reaches through one input, and cleared after. (R1048; the sorting a reading.)
 
+And one more, after Tom: "The problem with dhv and why the natural world does not use it is because it's not real time,
+it's historical, it's a record of writes that have occurred." An embedding is that record. It is trained on writing that
+has already happened and frozen at its cutoff, so "more like this" is history consulted: two entries of the record
+compared, from no standpoint. A look is now. (R1049; the whole blueprint, the limit, is still made by no writes, R890;
+what is a record is every blueprint anyone has.)
+
 ---
 
 ## Sources
@@ -226,4 +232,4 @@ reaches through one input, and cleared after. (R1048; the sorting a reading.)
   search in context: the concept revisited", *ACM TOIS* 20(1), 2002. L. van der Maaten, G. Hinton, "Visualizing data
   using t-SNE", *JMLR* 9, 2008. J. Mu, P. Viswanath, "All-but-the-top", ICLR 2018. K. Ethayarajh, "How contextual are
   contextualized word representations?", EMNLP 2019. Cited from memory, not opened.
-- SPN rulings cited: R793, R939, R950, R1037, R1045, R1046, R1048.
+- SPN rulings cited: R793, R939, R950, R1037, R1045, R1046, R1048, R1049.

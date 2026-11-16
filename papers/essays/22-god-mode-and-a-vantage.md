@@ -384,6 +384,14 @@ making all of it, and there is no all of it to make; as any one digit of π can 
 whole. In such a world the read is the only thing that looks, set beside nothing but other reads and the writes that keep
 what has been changed.
 
+**A record, never live.** Tom, later: "The problem with dhv and why the natural world does not use it is because it's not
+real time, it's historical, it's a record of writes that have occurred." A read is now, one place; a write is over once
+it is made. So every blueprint anyone holds, the god's map on the phone included, is built from writes already made and
+lags what it shows. The walk's pages show the one exception: things on loops placed from the tick alone, where a law in
+time stands in for the history and the blueprint is a lookup, live at any tick. The balls that collide unequally break
+that, and their state has to be stepped and kept, a record a step behind. And the read's now is not the world's either:
+it is the now of what arrives. It is the only now there is from a standpoint, and it needs nothing written. (R1049.)
+
 ## 14. What it changes
 
 The blueprint is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on

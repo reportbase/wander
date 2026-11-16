@@ -482,6 +482,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1049 (16 Nov; Tom: "The problem with dhv and why the natural world does not use it is because it's not real time,
+  it's historical, it's a record of writes that have occurred."; "Yes, add it to the papers and essays"): **every
+  blueprint held is a record of writes that have occurred, historical, lagging, never now; a read is the present, a write
+  the past tense (R644, R651), so nothing in nature acts from the dual vantage.** Reconciled with R890/R922 by R887: the
+  blueprint whole (the limit) is made by no writes; every blueprint anyone has is a record. A blueprint keeps up only where
+  a law in time stands in for the history (a lookup, TWK runs 15–16); with interaction it is a stepped record again (run
+  17). The read's now is the now of what arrives, the only now from a standpoint; simultaneity far off a convention.
+  *Reads and Writes* §1 "Reads, writes and the blueprint", §7 "A record, and where it keeps up" and the similarity
+  paragraph; essays 22 §13, 27 §11 (an embedding a record frozen at its cutoff).
   R1048 (16 Nov; Tom: "Writing is reaching out into the world to touch it. All sorts of temporary writes are needed
   manage that touch"; "That means touch is a version of paralax."; "Yes, add it to the papers and essays"): **a write
   reaches out to touch the world; temporary writes (a look kept, a reach counted, a start marked) manage the touch and are

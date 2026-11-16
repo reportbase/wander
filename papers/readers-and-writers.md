@@ -422,7 +422,11 @@ It is classical geometry, with its eye above the figure seeing every side at onc
 writes; the blueprint is brought in as the point of comparison, the familiar statement a read's or a write's form is
 set beside (e^(iπ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. "Dual hemispherical vantage" and "from no standpoint" say the same thing: a standpoint faces
 one way, so both hemispheres at once can only be drawn. The circle held whole, the sphere and the cube, the angle and trigonometry, π and e
-are the blueprint's. Whole, with π at its exact value, it is a limit. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
+are the blueprint's. Whole, with π at its exact value, it is a limit. Any blueprint actually held, a map, a stored world,
+a table of measurements, is finite, and it is historical: a record of writes that have occurred, so it lags what it
+describes and is never now. A read is the present, one place now; a write is the past tense, over once it is made. That
+is why nothing in nature acts from the dual vantage: it is never live (Tom, R1049). The whole blueprint is still made by
+no reads or writes (R890, R922); what is a record is every blueprint anyone has. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
 walk or count.
 
 **V.** V is the other party's breadth, the mountain in the distance that the thumb is held up against. A reading is a
@@ -1263,6 +1267,15 @@ part that grows. **Checked** (`thumbs-walk.html`, `sky-city.html`: the read set 
 missing and 0 extra; a stored blueprint's cells out to 10²⁶ units about 10⁵², against some 29,000 cells scanned at every
 distance; cars on loops placed from the tick alone, cars in traffic held). **Reading.**
 
+**A record, and where it keeps up.** Every blueprint held is a record of writes that have occurred, so it is historical,
+not live (Tom, R1049). It keeps up with the present in one case only: where a law in time stands in for the history.
+Things on loops are placed from the tick alone, exactly, at any tick, and there the blueprint is a lookup and not a
+record; where things interact with no such law, their state has to be stepped and stored, and it is a record again, a
+step behind (TWK runs 15–17). The read's own present is not the world's either: it is the present of what arrives, paint
+that left its sources earlier, starlight by years. It is the only now there is from a standpoint, and nothing has to have
+been written for it. No one has the world's now from no standpoint; simultaneity far off is a convention, a write; the
+blueprint's now is assembled afterwards from records. **Reading.**
+
 **Similarity from one standpoint and from none.** The same comparison in another field. An embedding, as AI builds it,
 holds every vector at once in one frame, each coordinate an amount on its own orthogonal axis: the dual hemispherical
 vantage (DHV), the blueprint. Its cosine similarity, x·y/(|x||y|), is the dual vantage's form: no standpoint (swap x
@@ -1281,7 +1294,9 @@ both unmoved when each word's vector is scaled by its own factor, where Euclidea
 behind the look. Two findings belong to the embedding, not the vantages: on SimLex Euclidean distance edges cosine (0.276
 against 0.265), so the vectors' lengths, amounts written in by training, carry something the ratings follow; and the
 directions are far from a uniform sky (within 45° of a word about 67,000 times the uniform share, about 29,000 times with
-the mean vector removed), so the Cauchy about a query is not a vocabulary's law. Neither vantage is called better.
+the mean vector removed), so the Cauchy about a query is not a vocabulary's law. An embedding is a record in R1049's
+sense: trained on writing that has already happened and frozen at its cutoff, so its similarity is history consulted,
+not a look. Neither vantage is called better.
 **Checked** (SHD, `plans/shd-plan.md`, predictions before the data; the ranking's agreement worked out before it was
 run; the prediction that cosine beats Euclidean on both lists killed); the measures and the data classical, the sorting
 a reading. Essay 27.
