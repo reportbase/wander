@@ -482,6 +482,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1051 (16 Nov; Tom: "Let's create a new essay that compares the dhv and shv versions of classical math theoroms"): essay
+  28, `papers/essays/28-two-statements-of-one-theorem.md`, *Two statements of one theorem* (the theorem list at the back
+  of a geometry book): a dozen classical theorems in both forms, sorted whole (rational in the slope: Pythagoras, angle
+  addition, Euler's family, Thales, s × 1/s, parallax, the disc's share), only renamed (the Cauchy's total) or not at all
+  (completions: the circle's area, Basel, the Gaussian, e); the line NTN and DVA found. README row ("twenty-eight
+  essays"), `essays.html` card, smoke count 28 (not run). No new test; no paper changed.
   R1050 (16 Nov; Tom: "Dhv also has a scale problem, at some point the historical record of writes is as large as the
   universe itself. It becomes the universe it records."; "Yes, add it to the papers and essays"): **a complete record of
   writes holds N and every change since (a read holds K); carried through it must record itself, which no finite record
@@ -4176,7 +4182,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     twenty-seven essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     twenty-eight essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
