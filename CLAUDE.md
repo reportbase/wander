@@ -482,6 +482,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  ALG (`plans/alg-plan.md` + `runs/alg/`, 16 Nov; SPN R1052; Tom: "Let's find more dhv and shv comparisons with classical
+  algorithms", "Yes, write the plan and run the test"): classical algorithms sorted as essay 28 sorted theorems, exact or
+  seeded, predictions first. Run 1: 15 of 16 not killed. Single-vantage already: Bresenham (exact at 1,061,045 points, a
+  float DDA 8 misses), atan2 (the facing and the horizon kept), the median (exact under x³, eˣ, ln), inverse depth (the
+  direction at 10³¹⁰ and ∞ where xyz is NaN), rational turns (exact return, digits n·log₁₀ 65; floats 2.9·10⁻¹³ at 10⁵).
+  CORDIC composes slopes exactly (C1); its gain ∏(1 + 4⁻ⁱ)^(−½) = 0.6072529350 a completion on the length alone (C2);
+  C3 killed: steering by a single slope left gives the table's choices for 891 of 1,000, failing past the quarter turn;
+  run 2's C3′, the slope left kept as a pair, 1,000 of 1,000 (targets given as pairs from cos and sin). Completions: the
+  DFT's roots rational only for N = 1, 2, 4; the mean filter leaves Cauchy noise 0.969 as wide, the median 0.209.
   R1051 (16 Nov; Tom: "Let's create a new essay that compares the dhv and shv versions of classical math theoroms"): essay
   28, `papers/essays/28-two-statements-of-one-theorem.md`, *Two statements of one theorem* (the theorem list at the back
   of a geometry book): a dozen classical theorems in both forms, sorted whole (rational in the slope: Pythagoras, angle

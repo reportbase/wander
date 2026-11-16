@@ -92,3 +92,21 @@ script run again, same seeds, before any verdict was read. 15 of 16 not killed; 
 **Run 2** (prediction written before it runs): C3′, CORDIC's rotation mode with σ chosen by the sign of the cross term
 x·b − y·a (the slope left kept as a pair, the target given as the pair (b : a)), on 1,000 fresh seeded targets in
 (−1.74, 1.74) rad (seed 99, not run 1's), n = 32: the table's sequence every time. Kill if any differs.
+
+Run 2 result (`runs/alg/alg2.py`, output `runs/alg/alg-run2.txt`): C3′ not killed, the table's sequence for 1,000 of
+1,000 fresh targets. One caution: the targets were made from angles, their pairs by cos and sin, so the test gives the
+target in the blueprint's terms; what needs no table is the steering, a sign of x·b − y·a at each step.
+
+What the runs show:
+- Already single-vantage, and exact: Bresenham (the slope as a pair of integers, no division), atan2 (the pair kept,
+  so the facing and the horizon), the median (order only), inverse depth (the direction kept, ρ = 0 the horizon),
+  rational turns (a return exact at any n, the price digits growing as n·log₁₀ 65).
+- A blueprint form and a single-vantage one: CORDIC rotates by composing slopes, s ⊕ σ·2⁻ⁱ, exactly; its angle table
+  is not needed to steer, provided the slope left is kept as a pair. A single slope fails past the quarter turn (C3),
+  the same loss as atan's.
+- Completions, with no single-vantage form: CORDIC's gain K = ∏(1 + 4⁻ⁱ)^(−½), which corrects only the length, an
+  amount; the DFT's roots of unity, exact in fractions only for N = 1, 2, 4; the mean, which no increasing map commutes
+  with and which a Cauchy does not narrow.
+- Where each blueprint form fails is where the read keeps the pair or the order: floats drift (R2: 10⁻¹³ after 10⁵
+  turns), overflow (I: NaN at 10³¹⁰) and misround (B2: 8 points); the exact forms did none of these, at a cost in
+  digits (R1) and, for the steering, the target given as a pair.
