@@ -482,6 +482,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  PYT (`plans/pyt-plan.md` + `runs/pyt/`, 16 Nov; SPN R1057; Tom: "Wow, Pythagoras is powerful for the SHV", then
+  "Yes. This seems foundational and supports the point of view or paper has taken. Let's make sure it explored
+  completely."): exact, predictions first. From 1 + s² = (c/a)² alone: the shares and the corner; composition multiplies
+  sums of squares (1 + (s ⊕ a)² = (1 + s²)(1 + a²)/(1 − sa)², Brahmagupta–Fibonacci, its direction the composed slope),
+  so a composed turn is rigid and ds/(1 + s²) the one weight it leaves alone; |w| = 1; every rational direction from one
+  half-slope (2,556 points with denominator ≤ 2,000); for n parties the flat screen's law (1 + |s|²)^(−(n+1)/2) (the Gram
+  determinant exact, n = 1–4); rational points of the sphere from two half-slopes (62,054). Only p = 2: ℓ₁, ℓ₃, ℓ₄ left by
+  one composed step (0.12–0.37), ℓ₂ kept to 10⁻⁶¹. Where it stops: rational half-slopes close only at 0 and 1 (491 tried to
+  n = 200), 1/√2 the one root, the total π/2 a completion; the median at the corner needs no total. Run 1's P7 killed by my
+  code (sympy left sqrt(det) unsimplified), run 2's P7′ not. Essay 28 §3 "What comes out of it"; *Reads and Writes* §9
+  after "Pythagoras, from no standpoint and from one".
   R1056 (16 Nov; Tom: "How about Pythagoras thereom", then "Yes, add it"): *Reads and Writes* §9 "Pythagoras, from no
   standpoint and from one", before "Four identities, one exchange": a² + b² = c² the blueprint's, 1 + s² = (c/a)² and the
   shares the read's, √(1 + s²) the one root, whole-number triangles the rational slopes with rational roots, in space

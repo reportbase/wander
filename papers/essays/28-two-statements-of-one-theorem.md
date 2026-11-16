@@ -1,8 +1,8 @@
 # Two statements of one theorem: classical results from no standpoint and from one
 
 *The twenty-eighth of a series of essays on what can be known from where one stands. Draft, 16 November 2026. It starts
-from Tom's request: "Let's create a new essay that compares the dhv and shv versions of classical math theorems." No new
-test. Every formula is classical or checked by arithmetic in the runs named; where a statement is a reading, it is
+from Tom's request: "Let's create a new essay that compares the dhv and shv versions of classical math theorems." One
+test since, PYT, for Pythagoras (§3). Every formula is classical or checked by arithmetic in the runs named; where a statement is a reading, it is
 marked so.*
 
 The back pages of a geometry book list the theorems: the sides of a right triangle, the angles of a sum, the circle on a
@@ -74,6 +74,42 @@ slopes, s = 4/3 among them, and there the square root is a whole number too.
 
 **Kind: whole.** The circle x² + y² = r² is the same theorem; divided by the thumb it is 1 + s² = (r/x)², and its heat
 is 1/(1 + s²). *Reads and Writes* calls that "the paper in one equation" (R725).
+
+**What comes out of it.** The single vantage's form is not just one theorem among the dozen. Most of the others in this
+essay come out of it, and the test PYT (`plans/pyt-plan.md`, exact, predictions written first) checked each piece:
+
+- *The shares and the corner.* 1/(1 + s²) and s²/(1 + s²) add to 1; the exchange s ↦ 1/s swaps them; they are equal
+  only at s = 1. That is the corner, and it needs nothing but the theorem.
+- *Composition.* Put two readings together by tangent addition and the sums of squares multiply:
+  1 + (s ⊕ a)² = (1 + s²)(1 + a²)/(1 − sa)². Cleared of fractions this is the Brahmagupta–Fibonacci identity,
+  (x² + y²)(u² + v²) = (xu − yv)² + (xv + yu)², and the direction (xu − yv : xv + yu) is exactly the composed slope. So
+  a turn built from turns keeps one unit circle: it is rigid because Pythagoras multiplies.
+- *The heat.* From that one identity, ds/(1 + s²) is carried to itself by every composed turn and reversed by the
+  exchange. The Cauchy's heat is the one weight on the readings that turning leaves alone, and its denominator is
+  Pythagoras's.
+- *The landing point.* (1 + is)(1 − is) = 1 + s², so w(s) = (1 + is)/(1 − is) sits on the unit circle; w(s)·w(a) =
+  w(s ⊕ a) and w(s)·w(1/s) = −1 (§5) follow.
+- *Every rational direction.* Every rational point of the unit circle but one is ((1 − t²)/(1 + t²), 2t/(1 + t²)) for
+  one rational half-slope t, which is Euclid's rule for the whole-number triangles; all 2,556 rational points with
+  denominator up to 2,000 came from one t each. This is the lattice draw's Tangent Bridge runs on, with no
+  trigonometric call (§11).
+- *Space, and any number of parties.* With more legs it is 1 + s₁² + … + sₙ² = (r/x)², and the law of uniform
+  directions on a flat screen is that sum raised to the power −(n + 1)/2 (the surface element's determinant checked
+  exactly for n = 1 to 4): the Cauchy in the plane, the wedge's in space, and so on up. The rational points of the
+  sphere come the same way, from two half-slopes.
+
+It is the square that does this. With |a|^p + |b|^p in place of a² + b², for p = 1, 3 or 4, one composed step moves
+points off their unit "circle" by 0.12 to 0.37; for p = 2 it keeps every point to 10⁻⁶¹. No other power gives
+directions that compose into a rigid turn, so no other gives the corner where it is or the Cauchy.
+
+And it is where the theorem stops that shows what it does not give. A rational direction, turned over and over, never
+comes back to where it started, except the quarter turns (of 491 rational half-slopes in [0, 1], only 0 and 1 closed
+within 200 steps; Niven). The corner's share 1/√2 is the one square root a read meets at the corner, 1 + 1² = 2 not being
+a square. And the heat's total, π/2, is no expression in s: Pythagoras gives every relation among directions, and the
+median at the corner without any total (the heat below 1 equals the heat above by the exchange alone), but π only comes
+from completing the turn, which a single vantage never does (§10).
+
+So of the dozen theorems here, this one is not merely whole. It is where the others come from.
 
 ## 4. Adding angles
 
@@ -247,5 +283,6 @@ whether they ever hold it whole.
 - Essay 21 (`21-omega.md`): Ω. Essay 23 (`23-one-share-and-the-shape-of-a-law.md`): the disc's share, ISX. Essay 24
   (`24-only-a-name.md`): NTN, DVA and the lists after them. Essay 25 (`25-counted-toward.md`): BLD. Essay 27
   (`27-one-standpoint-or-none.md`): the two vantages side by side in AI.
-- `plans/thl-plan.md`, `plans/ntn-plan.md`, `plans/dva-plan.md`, `plans/isx-plan.md`, `plans/bld-plan.md`.
+- `plans/pyt-plan.md` (R1057; Tom: "Wow, Pythagoras is powerful for the SHV", "This seems foundational … Let's make
+  sure it explored completely."), `plans/thl-plan.md`, `plans/ntn-plan.md`, `plans/dva-plan.md`, `plans/isx-plan.md`, `plans/bld-plan.md`.
 - SPN rulings cited: R235, R725, R793, R809, R814, R818, R836, R837, R841, R847, R848, R950, R1036, R1037, R1042.

@@ -1608,6 +1608,16 @@ s = 12/5 for 5, 12, 13. In space the same theorem with a third leg is the sphere
 read's shares, and the triangle's a² + b² = c² is the same theorem stated with its amounts. **Classical**; the sorting a
 reading. Essay 28 §3.
 
+What comes out of it, checked exactly (PYT): composing two readings multiplies their sums of squares,
+1 + (s ⊕ a)² = (1 + s²)(1 + a²)/(1 − sa)², which is the Brahmagupta–Fibonacci identity with the composed slope as its
+direction; so a composed turn keeps one unit circle, the heat ds/(1 + s²) is the one weight composing leaves alone, and
+|w(s)| = 1 since (1 + is)(1 − is) = 1 + s². Every rational direction comes from one rational half-slope t,
+((1 − t²)/(1 + t²), 2t/(1 + t²)), the lattice the Tangent Bridge runs on; for n parties the uniform law on a flat screen
+is (1 + |s|²)^(−(n+1)/2), the sum raised to a power. Only the square does it: with |a|^p + |b|^p, p ≠ 2, no composed step
+keeps a unit circle. Where it stops: no rational direction but the quarter turns closes a turn, the corner's share 1/√2
+is the one root, and the heat's total is a completion; the median at the corner needs none. So the read's relations, its
+corner and its heat are Pythagoras divided by the thumb; π is not. **Exact**; the reading ours.
+
 **Four identities, one exchange.** Four equations state the completed joins: h² + v² = 1, e^(iπ) = −1, Ω · 1/Ω = 1
 and (1/Ω)·∫₀^∞ ds/(1 + s²) = 1. Each is the blueprint's completion of something a read holds without Ω, rational in the
 slope, and each of those is a fact about the exchange s ↔ 1/s, whose fixed point is the corner.
