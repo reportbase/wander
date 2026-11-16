@@ -482,6 +482,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  PYK (`plans/pyk-plan.md` + `runs/pyk/`, 16 Nov; SPN R1058; Tom: "What's next", then "Yes and proceed with tests"):
+  PYT for the other two kinds of composition (CPX's sign κ), exact, predictions first. One rule s ⊕_κ a = (s + a)/(1 − κsa)
+  and one identity 1 + κ(s ⊕_κ a)² = (1 + κs²)(1 + κa²)/(1 − κsa)² for turns (κ = 1), boosts (−1: relativistic velocity
+  addition, γ² − (γβ)² = 1) and strides (0: Galilean); the boost's identity the turn's at s ↦ is. Each keeps
+  ds/(1 + κs²) (angle, rapidity, ds); only the turn's has a total (π), so the Cauchy and π are the compact kind's alone.
+  The boost has no corner of equal shares; its exchange s ↦ −s (Doppler k ↦ 1/k) fixes rest, and composition fixes the
+  light cone, never reached. Both curves have one rational lattice from a half-slope (7,121 hyperbola points); no
+  rational boost closes; only p = 2 keeps either curve. Run 1's K2, K3, K7 killed by my set-up or code, run 2's K2′, K7′
+  not; K3′, K3″ killed by my precision and quadrature (the divergence exact: ½·ln((2 − δ)/δ)). Not yet in any paper.
   PYT (`plans/pyt-plan.md` + `runs/pyt/`, 16 Nov; SPN R1057; Tom: "Wow, Pythagoras is powerful for the SHV", then
   "Yes. This seems foundational and supports the point of view or paper has taken. Let's make sure it explored
   completely."): exact, predictions first. From 1 + s² = (c/a)² alone: the shares and the corner; composition multiplies
