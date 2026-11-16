@@ -1618,6 +1618,15 @@ keeps a unit circle. Where it stops: no rational direction but the quarter turns
 is the one root, and the heat's total is a completion; the median at the corner needs none. So the read's relations, its
 corner and its heat are Pythagoras divided by the thumb; π is not. **Exact**; the reading ours.
 
+The same rule with a sign, checked exactly (PYK): s ⊕ a = (s + a)/(1 − κsa) composes turns (κ = 1), boosts (κ = −1,
+relativistic velocity addition) and strides (κ = 0, Galilean addition), and 1 + κ(s ⊕ a)² = (1 + κs²)(1 + κa²)/(1 − κsa)²
+holds for all three: the boost's is the turn's at s ↦ is, the read's form of γ² − (γβ)² = 1. Each keeps one weight,
+ds/(1 + κs²), the turn's heat, the rapidity, plain ds; only the turn's has a total (π), so the Cauchy, the median at the
+corner and π belong to the one composition that closes. The boost has no corner of equal shares; its exchange s ↦ −s
+(the Doppler factor k ↦ 1/k) fixes rest, and composition fixes the light cone s = ±1, which no boost reaches. Both curves
+take the half-slope's one rational lattice, only the square keeps either, and no rational boost closes. **Exact**; the
+sorting ours.
+
 **Four identities, one exchange.** Four equations state the completed joins: h² + v² = 1, e^(iπ) = −1, Ω · 1/Ω = 1
 and (1/Ω)·∫₀^∞ ds/(1 + s²) = 1. Each is the blueprint's completion of something a read holds without Ω, rational in the
 slope, and each of those is a fact about the exchange s ↔ 1/s, whose fixed point is the corner.
