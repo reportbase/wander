@@ -64,4 +64,31 @@ Kill conditions are each prediction's own; a failed one stays failed, and a fix 
 
 ## Runs
 
-(none yet)
+**Run 1** (16 Nov, `runs/alg/alg.py`, output `runs/alg/alg-run1.txt`). The first attempt stopped at R1, n = 4,000, on
+Python's limit for printing a 7,252-digit integer (my code); lifted (`sys.set_int_max_str_digits(0)`) and the whole
+script run again, same seeds, before any verdict was read. 15 of 16 not killed; C3 killed.
+- C1 not killed: in 200 seeded cases CORDIC's final y/x is the composed slope exactly; the gain is not used.
+- C2 not killed: the length squared grows by exactly ∏(1 + 4⁻ⁱ); K₃₀ = 0.607252935009, K_∞ = 0.607252935008881.
+- C3 killed: choosing σ by the sign of the slope left, (T − s)/(1 + Ts), gives the angle table's sequence for 891 of
+  1,000 targets; every one that differs has |θ| > 1.5718 rad, past the quarter turn, where the single slope has lost
+  the facing (the same loss as atan against atan2, T1). Post hoc, not a prediction: the slope left kept as a pair (its
+  cross term x·b − y·a, the numerator of the tangent subtraction, with the target given as a pair) gave the table's
+  sequence for 1,000 of 1,000, on the same seeds.
+- B1 not killed: Bresenham equals the exact line rounded half down at all 1,061,045 points checked, with no division.
+- B2 not killed: the binary64 DDA misses the exact line at 8 of them.
+- T1, T2 not killed: atan(y/x) gives d and −d one value; atan2 keeps them π apart; at x = 0 division raises and atan2
+  gives ±π/2.
+- R1 not killed: the rational turn (63/65, 16/65) n times and back returns exactly at n = 10, 100, 1,000, 4,000; the
+  denominator has 19, 182, 1,813, 7,252 digits against n·log₁₀ 65 = 18.1, 181.3, 1,812.9, 7,251.7.
+- R2 not killed: the binary64 return error 4.2·10⁻¹⁵, 3.4·10⁻¹⁴, 2.9·10⁻¹³ at n = 10³, 10⁴, 10⁵, growing about as n.
+- M1, M2 not killed: median(f(X)) = f(median X) exactly for x³, eˣ, ln(x + 10); the mean misses by 1.0, 0.39 and
+  0.0022 relative.
+- I1, I2 not killed: at d = 10³¹⁰ and ∞ the xyz direction and the second camera's bearing are NaN; the inverse-depth
+  bearing is the direction itself, ρ = 10⁻³¹⁰ and 0 (at 10³⁰⁰ both forms finite).
+- F1, F2 not killed: on Cauchy noise in windows of 25 the mean filter's interquartile range is 0.969 of the raw, the
+  median filter's 0.209 (predicted 0.212).
+- N1 not killed: cos(2π/N) rational only for N = 1, 2, 3, 4, 6; cos and sin both rational only for N = 1, 2, 4.
+
+**Run 2** (prediction written before it runs): C3′, CORDIC's rotation mode with σ chosen by the sign of the cross term
+x·b − y·a (the slope left kept as a pair, the target given as the pair (b : a)), on 1,000 fresh seeded targets in
+(−1.74, 1.74) rad (seed 99, not run 1's), n = 32: the table's sequence every time. Kill if any differs.
