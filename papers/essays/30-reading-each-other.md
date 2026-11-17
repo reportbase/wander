@@ -227,6 +227,14 @@ Three held as predicted:
   s_A·s_B = 1, and nowhere else. Every exchange rule that is odd and strictly increasing (x/2, tanh, x³/3, arctan) has one
   rest point, there. A fixed stride rests on the whole stretch between the two corners, so it has no single conclusion.
 
+One pair of mutual readings gives three things, and pool shows all three. On a table each ball reads another as
+v = r_B/d and is told the other's reading h = r_A/d, radii over the distance between centres, in one unit and so with no
+bridge (POL). Their product r_A·r_B/d² is shared, the same from either side. Their ratio v/h = r_B/r_A is the sizes, owned,
+told once and never changed by play. And their sum decides contact: the balls touch at h + v = 1, the ℓ₁ cut of the
+pair's two shares, equal balls at the corner. All three are unmoved when the world is scaled. Every contact in a game
+played this way, each ball in its own size, falls on h + v = 1 to rounding, and the game is the referee's (POL runs 1, 9;
+POR).
+
 So Tom's guess is right in this sense: the pair's corner of §3 is the reader's form of Euler's identity held between two
 systems. It says where a rest can be. Whether the exchange gets there is still §5–§7's question.
 

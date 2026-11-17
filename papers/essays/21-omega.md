@@ -343,6 +343,16 @@ that causes it stays with the rule. That a run uses up its start's digits at the
 general, not only for this map: it is the classical entropy of a chaotic map (Kolmogorov and Sinai, and Pesin's
 equality with the rate of parting).
 
+The same spending shows in a game of pool. Find each contact where the pair's readings reach h + v = 1, each ball
+in its own size, and a contact turns an error in the aim by A = s/(2r·cos φ), s the run before it, r the radius, φ the
+cut; read from the striker's start it is cos α/((h + v)·cos φ) − 1, and for a full hit 2^L − 1, where L = log₂(1/(h + v))
+is how far in binary digits the pair started from touching. So a contact spends as many binary digits of the aim as the
+pair started from contact. On an open table that is 1.5 to 2 digits a contact, and an aim off by a tenth of a degree
+misses half a pocket by the third contact; inside a rack, where the runs are shorter than the balls, a contact gains
+digits and the cluster forgets the aim (POL runs 8–9, every contact and chain to rounding once contact was made exact).
+The sensitivity is the geometry's, a ratio of angles read from the striker's start; what runs out is the aim, put down to
+finitely many digits.
+
 Two limits. This is one map, and its close relatives; at other settings of the logistic map there is no such sweep
 behind it. The mark is a rate below the entropy: the map at 4 and the Chebyshev cubic stretch at exactly their
 entropy (ln 2 and ln 3), while at 3.7, 3.8 and 3.9 the rate falls short by 0.027, 0.036 and 0.044, so no chart turns
