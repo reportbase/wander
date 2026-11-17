@@ -482,6 +482,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  R1065 (17 Nov; Tom: "all we ever know is our heat, how the painting was painted or how it got to is operationally
+  irrelevant."; "Our writes of the painting our ours not the paintings."; "The painting itself reads it's environment and
+  from that read, writes it's own writes."; "Yes. read the writes of another read of another write,"): **a write belongs to
+  whoever made it; everything reads and writes.** How the paint arrives (a paint gun, a window) is the blueprint's story,
+  not in a read; reads are always current because the painting is continuously painted; each thing reads from its own
+  standpoint and writes its own state, so a read reads another's writes, made from its read of another's. Shown in POL;
+  for natural processes expected, untested. "Reads" is the geometry of a standpoint, never awareness. *Reads and Writes*
+  §1 "Whose writes", D4. R1066 (Tom: "Update the essays and merge"): in essay 1 §2 and essay 22 §10.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.

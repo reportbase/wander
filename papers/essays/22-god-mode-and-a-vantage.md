@@ -249,7 +249,7 @@ needs no list once places change with time.
 So interaction alone is not where a read from T stops. A law in T is: where there is one, the read needs no list; where
 there is none, the state to keep spreads to everything that has touched, and each thing has to carry its own. On the page
 that state would be a stored list; in the world there is no list, only the things, each carrying its own state, which the
-read meets as paint (R950, R951). Classical geometry agrees with the read wherever both apply, since they share the
+read meets as paint (R950, R951). The state each thing carries is its own write, made from its own read of what reaches it (R1065). Classical geometry agrees with the read wherever both apply, since they share the
 geometry; the runs matched it to the digit. The blueprint is the idealization that holds the whole at once, from no
 standpoint; a read always has one.
 
