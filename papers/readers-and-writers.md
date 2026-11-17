@@ -88,6 +88,18 @@ metre bar. An amount put down in a unit, so many metres, is a write too: a mark,
 world changes. A write is over once it is made, and it is used only by being read (§7). Reading is continuous, and what
 is read is discrete.
 
+*Whose writes.* A write belongs to whoever made it. The painting, everything there is to read, never stops being painted,
+so every read meets it as it is now; that is why reads are always current, while each read's continuity, its heat, is the
+geometry's. What an observer sets down about the painting (a count, a measured amount, a record kept) is the observer's
+write, not the painting's. And the painting reads and writes too: each thing in it reads its surroundings from its own
+standpoint and, from that read, writes its own state (§7, "A single vantage and the blueprint, side by side": each thing
+carries its own state). A stone's size is the stone's write. So it goes on without end: a read reads the writes of
+another, which were written from that one's read of yet another's writes. No one holds the whole; each holds its own
+writes and reads the rest. That a thing reads means only that what reaches it from its own standpoint arrives as
+directions and slopes with no scale; it says nothing of awareness. It is shown where it has been built (pool played from
+inside each ball, POL: each ball reads the others' directions and writes its own contact at h + v = 1 in its own size,
+and the game is the referee's to rounding); that natural processes do it throughout is expected, not tested.
+
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
 | **continuous** | reading: a read, and what reads held together give, an extent or a map | the number line in a unit |
@@ -170,7 +182,7 @@ a membrane's potential and its spike, a stream from a tap and the drop that pinc
   a hertz, an agreed notch. The exact amount, a real number with no last digit, is the number line's, the blueprint's
   (§6, "Extents come by degrees"). For the geometry it is the across axis's zero tied to a unit, a distance in metres, and one such amount serves
   every extent hung from the same thumb (§7). A payload has writes too: a frequency in hertz, a brightness in watts.
-  Scaling the world in a write's own dimension moves it (D5). A change of units is a different operation from scaling
+  A write is the writer's own: a stone's size is the stone's, a stride counted the walker's (§1, "Whose writes"). Scaling the world in a write's own dimension moves it (D5). A change of units is a different operation from scaling
   the world: it moves every write's number and no extent, no read as a read holds it (an angle in degrees is the
   blueprint's coordinate on a read, and its number follows the blueprint's choice of degree or radian).
 - **D5. The first test.** Multiply every length in the world by k, the observer's thumb and stride included; the units
