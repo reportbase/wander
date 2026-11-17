@@ -59,3 +59,24 @@ B1 off by more than its tolerances at any setting; B2's formula disagreeing.
   consensus, and stable laws through linear maps are classical (R1071).
 
 ## Runs
+
+**Run 1** (`runs/mny/mny.py`, output `runs/mny/mny-run1.txt`, 17 Nov).
+- **Not killed: A1, A2, A3, A4, B2.**
+  - A1: on 60 convex spherical polygons (N = 4, 5, 6) |loop sum| equals the excess to 2·10⁻⁶⁰, whatever the frames.
+  - A2: the cycle space has dimension 3, 6, 10 for K₄, K₅, K₆, and every triangle's loop sum is the sum of those through
+    observer 1 to 10⁻⁶⁰. For K₄ round the centre the four excesses add to 4π and the outward loop sums to 0 mod 2π.
+  - A3: on a ring of 5 and on K₅ on the sphere every loop sum was kept, the frames stopped, and the rest was the projection
+    onto the cycle space to 10⁻⁵⁹; the rates 0.8618034 and 0.5 equal max|1 − αλ|. On the sphere the resting residuals are
+    not zero (up to 2.74 on K₅); in the plane they are (10⁻⁶⁴): full agreement.
+  - A4: on rings of 4, 5, 6 on the sphere the residuals sit at S/N and every frame turns α·S/N a round for ever, to 10⁻⁶⁰;
+    in the plane S = 0 and the frames stop.
+  - B2: the pair's half-width from the formula equals essay 30's at every share tried, 0.1 to 1.3.
+- **B1 killed, by my tolerance.** Every half-IQR matched the formula within 1.4% (the 3% held), but the medians were off by
+  up to 0.177γ against my 0.02γ. A Cauchy sample's median has standard error π·s/(2√S), here s up to 12.6γ and S = 10⁵,
+  so 0.06γ: the 0.177 is 2.8 standard errors, and my bound was below the sampling error.
+- **B3, measured.** No gap keeps one read's width. Half-widths run 2.7γ to 12.6γ, the end gaps narrowest and the middle
+  widest, growing with N (the middle 3.8γ at N = 5, 7.0γ at N = 8 for small and middle shares).
+
+**Run 2 prediction** (committed before run 2):
+- **B1′.** As B1 with a fresh seed, the medians within 4 standard errors, π·s/(2√S) with s the formula's half-width, of
+  the noiseless fixed point, and each half-IQR within 3% of the formula.
