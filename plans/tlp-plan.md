@@ -1,0 +1,72 @@
+# TLP: three systems in a loop, reading each other's directions
+
+17 November 2026. SPN R1072. Tom: "Yes, write the plan and run the test", to essay 30 §13's first open item (three
+things reading each other round a triangle: does the exchange settle, cycle, or come back turned?).
+
+## The question
+
+MRL's loops closed, but they were loops of owned amounts (scalar slopes). Here each system also has its own facing, a
+frame it reads directions in. Round a triangle of three systems, what do the mutual directions say about the frames, and
+what happens when each system turns its frame toward agreement with the others? Does the exchange settle, cycle, or come
+back turned for ever?
+
+## The set-up
+
+- **Three systems** at places P_1, P_2, P_3, each with its own frame. In the plane a frame is a unit complex number f_i;
+  on a sphere, a unit tangent vector at P_i.
+- **A direction read.** In the plane, i reads j as z_ij = (P_j − P_i)·conj(f_i): a direction in i's own frame (its size is
+  the distance, which no comparison below uses). On the unit sphere, i reads j as the bearing β_ij of the great circle
+  from P_i to P_j, measured from i's frame.
+- **The owned turn on an edge.** From the two mutual readings alone: in the plane ρ_ij = −z_ij/z_ji; in angles
+  r_ij = β_ij − β_ji + π (wrapped to (−π, π]). Turning frame i by φ_i lowers every β_ij by φ_i, so r_ij moves by
+  φ_j − φ_i.
+- **Loop sum** S = r_12 + r_23 + r_31.
+- **Two exchange rules**, with a share α each round, all systems at once:
+  - *mutual*: each turns toward both neighbours, φ_i += α(r_(i,i+1) − r_(i−1,i));
+  - *cyclic*: each turns toward its next neighbour only, φ_i += α·r_(i,i+1).
+- **Arithmetic.** The plane exactly: rational places and rational unit frames f = (1 − t² + 2it)/(1 + t²), the exchange
+  in Fractions. The sphere at 50 digits (mpmath).
+
+## Predictions (committed before any run)
+
+- **T1. The turn is owned and read from directions alone.** In the plane ρ_ij = f_j/f_i exactly, a unit complex number:
+  the distance cancels and so does every other system. Round the triangle ρ_12·ρ_23·ρ_31 = 1 exactly (S = 0), for 200
+  random triangles and frames.
+- **T2. Euler's −1 is the angle sum.** Each system's own reading of the angle it sees, z_(i,i−1)/z_(i,i+1), multiplied
+  over the three systems, is exactly −1 in Gaussian rationals, whatever the frames: the interior angles add to π, read in
+  three private frames that cancel.
+- **T3. The count.** In the plane the six bearings depend on 3 frame angles and 6 coordinates; the Jacobian has rank 5 at
+  random rational points (9 variables less the 4 of one turn, two translations and one scale; the one relation among the
+  six is T2's angle sum). In space, with each frame a full rotation, the six unit bearings (12 numbers) depend on 18
+  variables; rank 11 (less 3 turns, 3 translations, 1 scale; one relation, the angle sum).
+- **T4. On the sphere the loop comes back turned by the area.** |S| equals the spherical excess E (computed independently
+  from the three side lengths by L'Huilier) to 10⁻⁴⁰ for 50 random triangles, whatever the frames; reversing the order of
+  the loop flips the sign of S. Shrinking a triangle toward a point by k, S/k² tends to a constant (the flat area), so
+  S → 0 like the area.
+- **T5. Scaling.** In the plane S = 0 at every scale. On the sphere, S depends on the triangle's size against the
+  sphere's radius: a triangle with the same side lengths in amounts on a sphere of radius R has excess area/R² (to
+  leading order), and scaling the whole world (sphere and places) by k leaves S unchanged. So a loop comes back turned
+  only where an amount, the radius of curvature, enters.
+- **T6. Mutual exchange.** The sum S is preserved every round. The edge residuals e_i = r_(i,i+1) tend to S/3 each, the
+  deviation multiplied by exactly (1 − 3α) a round (exactly in Fractions in the plane, where S = 0 and the frames come to
+  agree); stable for 0 < α < 2/3. On the sphere the frames stop, every edge left disagreeing by S/3: no drift, but no
+  agreement.
+- **T7. Cyclic exchange.** S preserved; the residuals tend to S/3 each, the squared deviation multiplied by exactly
+  (1 − 3α + 3α²) a round, spiralling (complex eigenvalues 1 − α(1 − ω), ω a cube root of 1). In the plane the frames
+  settle (S = 0). On the sphere they never do: at rest every frame turns by α·S/3 every round for ever, to 10⁻⁴⁰ after 400
+  rounds. The loop comes back turned.
+
+## Kill conditions
+
+Any exact equality failing in Fractions; a rank other than 5 or 11; |S| − E above 10⁻⁴⁰; S not flipping with the order;
+an exchange's rate or rest value off its formula beyond 10⁻⁴⁰; a frame drifting in the plane or not drifting on the
+sphere under the cyclic rule.
+
+## What this does not test
+
+- Moving systems (boosts): TWG already has the Thomas–Wigner loop.
+- Whether any real system uses either rule. The rules are chosen, as in MUT.
+- Novelty: holonomy on the sphere (Girard, Gauss–Bonnet), the Laplacian of a cycle and consensus rates, and frustrated
+  cyclic consensus are classical. What is ours is the sorting (R1071).
+
+## Runs
