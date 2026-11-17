@@ -107,6 +107,22 @@ touching at the corner. All three are unmoved by scaling the world. The product 
 systems found exactly in MRL; the sum is the pair's own contact. **Checked** (POL runs 1 and 9, every contact on
 h + v = 1 to 2·10⁻¹⁶; POR).
 
+**The engine, audited.** The same table's program was audited for where each kind of mathematics sits (ENG: every
+arithmetic call counted and attributed by its call stack over 60 shots). Where two balls touch, which way they push (along
+the line of centres) and the mass ratio (h/v)³ use no angle and no trigonometric function: none is called in the physics.
+The contact test is the sum of shares, or the same test with its denominator multiplied out, an amount against an amount,
+which decides alike and needs both amounts in one unit. Trigonometry enters once a shot, where the player's aim is turned
+into a direction (12 or 13 calls whatever the shot does), and once more as a record, the cut written in degrees for the
+text. When a ball stops sliding or a bounce is kept is decided by writes: the cloth's grip, restitution, gravity and an
+absolute stopping speed, amounts carried in. The blueprint was in the integrator and in two jobs not predicted: the stop
+(the shot over when no ball anywhere moves) and the order (pairs written one after another in index order). Both come
+off it. With no look over all balls the game is the original's to the bit on 60 of 60 shots; with every pair resolved
+together from the tick's start it no longer depends on how the balls are numbered (60 of 60 within 10⁻⁹) and solves all
+15 challenges, parting from the original only where contacts chain within one tick (a rack, a frozen pair, the break),
+where the fixed step, not the physics, sets the order. What stays the blueprint's is the world frame the state is kept
+in, the shared tick and the integrator. **Checked** (ENG runs 1–2; four predictions killed, in their letter, by my bound,
+by the two jobs I had not predicted and by my floating point).
+
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
 | **continuous** | reading: a read, and what reads held together give, an extent or a map | the number line in a unit |
@@ -2243,6 +2259,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
 
 ## References
 
+- The pool engine audited (§1, "The engine, audited"): `plans/eng-plan.md`, `runs/eng/eng.mjs`, `runs/eng/eng2.mjs`.
 - Abbott, R. et al. (LIGO, Virgo and KAGRA Collaborations) (2023). Open data from the third observing run of LIGO, Virgo,
   KAGRA and GEO. *Astrophysical Journal Supplement Series* 267, 29.
 - Archimedes. *On the Sphere and Cylinder*, Book I.

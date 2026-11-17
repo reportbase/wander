@@ -235,6 +235,16 @@ pair's two shares, equal balls at the corner. All three are unmoved when the wor
 played this way, each ball in its own size, falls on h + v = 1 to rounding, and the game is the referee's (POL runs 1, 9;
 POR).
 
+The program that plays the table was then audited for where each kind of mathematics sits (ENG, `plans/eng-plan.md`).
+The three things above use no angle: contact, the push along the line of centres and the mass ratio call no
+trigonometric function at all. Trigonometry comes in once a shot, where a person aims, and the cut in degrees is only
+written down for the text. How long a ball slides and whether it bounces are writes, amounts carried in. What is left
+from no standpoint is the bookkeeping that holds the balls together: the world frame, the shared tick, the integrator,
+and two jobs I had not predicted, the stop and the order in which pairs are written. Those two came off. Run with no look
+over all balls, the game was the same to the bit; with every pair resolved from the tick's start and added together, it
+no longer depended on how the balls were numbered, and every challenge was still solved. Where contacts chain within one
+tick, as on a break, the fixed step had been choosing the order, not the balls.
+
 So Tom's guess is right in this sense: the pair's corner of §3 is the reader's form of Euler's identity held between two
 systems. It says where a rest can be. Whether the exchange gets there is still §5–§7's question.
 
