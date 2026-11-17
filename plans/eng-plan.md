@@ -51,3 +51,61 @@ That the engine is right about pool (CUE did, against pooltool); that nature wor
 standpoint beats the classical form (R950: they agree). The scale test is POR's (R439), not repeated.
 
 ## Runs
+
+**Run 1** (17 Nov; the static read of `play-trick.html`'s physics, lines 150–353, and `runs/eng/eng.mjs`, output
+`runs/eng/eng-run1.txt`: 60 shots, 45 seeded over the rack, scatter, line, jump and massé layouts with random aim, power,
+tip and the cue raised on the last two, and the 15 challenges' reference shots; 51,564 substeps, 140 contacts; every
+Math trig and root call counted and attributed by its call stack).
+
+- **E1 killed, in its letter.** No trig in `image`, `respond`, `pairs`, `inAir`, `imageInCushion`, `cloth`, `own` or
+  `gripOf`. But trig is in two places my list or clause did not allow:
+  - `firstStop`, which I listed as physics, is the aim alone: cos and sin of the aim angle, to find the ghost ball for the
+    preview. No shot calls it (0 calls in run 1).
+  - `simulate`'s contact log reports the first cut as an angle, `Math.asin(sinPhi)/D`, for the challenges' text. It is a
+    record of the shot and decides nothing.
+- **E2 killed, by my bound.** Trig calls attributed to the physics functions: 0. Every shot made 12 or 13 in all (10 in
+  `strikeOf`: the aim, the tip and the cue's rise turned into a direction and a spin; 2 in `simulate`, the aim turned into
+  the white's velocity; 1 in the log, the cut in degrees), against my 8. They do not grow with the shot: correlation with
+  the shot's substeps −0.24.
+- **E3 killed, in its letter.** The decisive contact test is a sum of shares: `ib.v + ia.v > 1` between balls,
+  `im.v + im.v > 1` at a cushion, and the push runs along the unit vector of a difference of positions. But several tests
+  are written with the denominator multiplied out, an amount against an amount, undivided:
+  - between balls, a prefilter (r_a + r_b)² > d² before any root is taken;
+  - a pocket, ex² + ez² < POCK² about its fixed centre, the comment's "v = POCK/d > 1, squared", with no share computed;
+  - a cushion, the gap < r before the share is formed;
+  - a ball in the air, d < r_a + r_b.
+  Each is the share test times its denominator, so it is unmoved by scaling the world, but it is not stated as a share.
+- **E4 killed.** The blueprint parts predicted are there: each ball's state in world coordinates (read back only as
+  differences, or against the cushion planes and pocket centres), the shared tick (FRAME/SUB) and one integrator stepping
+  every ball. Two more were found:
+  - **the stop:** the shot ends when no ball anywhere moves (`moving()`), a decision over all balls at once (with a cap of
+    2,700 frames);
+  - **the order:** within a substep the pairs are resolved one after another in index order, each writing positions and
+    velocities in place, so a ball in two contacts in one substep has its first write read by the second.
+  (The frame snapshots and the contact log are records for drawing and sound, not physics.)
+- **E5, measured.** The writes that enter decisions, not only updates:
+  - sliding or rolling: |slip| ≤ 3.5·MU_S·h, an amount against the cloth's grip times the tick;
+  - a landing bounce kept only if E_TABLE times the speed is over 1.5 units a second, an absolute speed;
+  - flying over a cushion: the height against CUSH_H = 1.27 R; sunk only below 0.3 r (a share);
+  - the push's size: (1 + e) and the mass ratio (h/v)³, a read standing for the masses only with one material assumed.
+- **E6, measured.** 18.3 roots a substep: almost all `cloth`'s slip magnitude (937,098 of 942,428, one per moving ball per
+  substep), then `inAir`, `respond`'s exact-contact root (378, about 2.7 a contact) and `image`. None is √(1 + s²); all are
+  lengths of vectors in amounts, the cloth's friction direction among them.
+
+## What the run shows (post hoc, not predicted)
+
+- **Where two balls touch, which way they push, and the mass ratio are reads.** Every contact is decided on a sum of
+  shares or the same test with its denominator multiplied out, and the push runs along the line of centres. No angle,
+  no π and no trigonometry is in the physics.
+- **Trigonometry enters only where a person aims.** The player gives an angle and a cue's rise, and the engine turns them
+  into a direction once a shot, a fixed 12 calls whatever the shot does. The challenges' "cut in degrees" is a record.
+- **How much, and when a ball stops sliding or bouncing, are writes.** Friction, restitution, gravity, the grip's fit and
+  an absolute stopping speed are amounts carried in; they decide the sliding/rolling switch and the bounce, not contact.
+- **The blueprint is in the integrator, and in two places I did not predict.** Positions are held in one world frame
+  (scaffolding read back only as differences), one tick is shared, and the integrator also decides when the whole shot
+  is over and in what order simultaneous contacts are written. Those two are a single standpoint's account only if
+  something outside the balls holds all of them: the referee's part of the engine, not the balls'.
+- **The multiplied-out tests are the share test written for cost.** They avoid a root and a division and decide exactly
+  what the share decides. By R1062 the forms agree; what differs is what each needs: the share needs a division, the
+  multiplied form needs both amounts in one unit.
+- Classical in every part (impulse contact, Coulomb friction, a fixed-step integrator); the sorting is ours (R1062).

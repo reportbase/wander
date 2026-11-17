@@ -535,6 +535,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R1078 (Tom: "update the demos"): notes on `pool.html` and `plane-sphere.html`, and their and trick shots' `demos.html` cards.
   R1079 (Tom: "i notice you used trig", "yes, fix it and merge"): the pool text in slopes and shares, s/(2r·√(1 − f²)),
   1/(h + v) − 1 for a full hit, the cos φ form marked the blueprint's; no "60°" or "degree".
+  ENG (`plans/eng-plan.md` + `runs/eng/eng.mjs`, 17 Nov; SPN R1080; Tom: "i'm wondering if this helps our read/write
+  thesis", "yes"): the pool engine audited by read, write and blueprint: no trig in the physics (0 calls over 60 shots), trig
+  only turning the aim into a direction (12–13 a shot) and a recorded cut; contact on shares (or multiplied out); writes
+  decide sliding and bouncing; the blueprint the world frame, the tick, the integrator, and (not predicted) the stop over
+  all balls and the order simultaneous contacts are written. E1–E4 killed (letter, my bound, two blueprint parts). Not in any paper.
+  Run with `node runs/eng/eng.mjs` (playwright from /opt/node22/lib/node_modules).
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.

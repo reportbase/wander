@@ -1,0 +1,8 @@
+shots 60, substeps 51564, contacts 140
+trig calls by function:call  {"strikeOf:cos":240,"strikeOf:sin":240,"strikeOf:atan2":120,"simulate:cos":60,"simulate:sin":60,"log:asin":45}
+trig calls attributed to the physics functions: 0
+most trig calls in one shot: 13; per shot: 12 13 13 12 12 13 12 12 12 13 13 13 13 13 13 13 13 13 13 13 12 13 12 13 13 13 13 13 13 13 12 13 12 12 13 12 13 12 12 13 13 13 13 12 13 13 13 13 13 13 13 13 13 13 13 13 13 13 13 13
+correlation of a shot's trig calls with its substeps: -0.241
+roots by function:call (all shots)  {"strikeOf:sqrt":60,"strikeOf:hypot":120,"cloth:hypot":937098,"respond:sqrt":378,"onRail:hypot":106,"own:hypot":106,"image:hypot":272,"respond:hypot":536,"pairs:hypot":272,"log:hypot":185,"inAir:hypot":2375}
+roots per substep: 18.259; per contact: 6725.06
+E2: KILLED (physics trig 0, most in a shot 13)
