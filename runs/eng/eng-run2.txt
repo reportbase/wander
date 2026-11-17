@@ -1,0 +1,12 @@
+shots 60
+V1: own stop differs on 0 shots (none); challenges unsolved with it: none; base unsolved: none
+  V1 not killed
+V2: 58 shots with no ball in two contacts in a substep; together differs on 18 (rack2 5.204170427930421e-17, scatter2 2.6645352591003757e-15, scatter3 8.881784197001252e-16, scatter4 8.881784197001252e-16, scatter5 1.7763568394002505e-15, scatter7 2.6645352591003757e-15, scatter8 1.3322676295501878e-15, line0 6.217248937900877e-15, line1 2.6645352591003757e-15, line6 1.7763568394002505e-15, jump7 8.881784197001252e-16, masse5 8.881784197001252e-16, ch:bank 9.992007221626409e-16, ch:thin 4.3298697960381105e-15, ch:draw 2.1094237467877974e-15, ch:cannon 1.1546319456101628e-14, ch:throw 0.4654782610437116, ch:row 2.220446049250313e-16)
+  V2 KILLED
+V3: together solves 15 of 15 reference shots; unsolved: none
+  measured: 2 shots with a ball in two contacts in a substep (substeps: rack1:1 ch:break:4)
+  their outcomes moved (largest final place change, Infinity = a different pocket): rack1 2.32e+0, ch:break 1.32e+1
+  V3 not killed
+V4: reversed order moves a final place > 1e-6 under the original rule on 3 shots (rack1 ch:throw ch:break); under together, within 1e-9 on 60 of 60
+  together reversed, largest change per shot: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.8e-15 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7.1e-15
+  V4 not killed

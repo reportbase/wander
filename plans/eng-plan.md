@@ -128,3 +128,33 @@ them off it in a copy of the page served by the script (the page itself unchange
 - **V4.** The original rule is order-dependent and the together rule is not: reversing the order moves some ball's final
   place by more than 10⁻⁶ on at least one shot under the original rule, and under the together rule leaves every ball's
   final place within 10⁻⁹ on at least 90% of the 60 shots. *Killed* otherwise.
+
+**Run 2** (`runs/eng/eng2.mjs`, output `runs/eng/eng-run2.txt`; the page copied and changed in the script only: the stop
+condition, a together rule wrapped round the original `pairs`, and the balls' order reversed on request).
+- **V1 not killed.** With no look over all balls (the integrator runs the full 2,700 frames and each ball's own state
+  alone decides what it does), every ball's final place and pocket is bitwise the original on all 60 shots, and all 15
+  reference shots still solve. The stop was bookkeeping: it saves computing, and decides nothing in the game.
+- **V2 killed.** On the 58 shots in which no ball has two contacts in one substep, together differs from the original on
+  18. On 17 the difference is 5·10⁻¹⁷ to 1.2·10⁻¹⁴, my code: the together rule adds each pair's change back as
+  (new − old), which is not bitwise the new value in floating point. On one, the throw challenge (a frozen pair), the
+  white's final place moved 0.47: the original passes a push along the touching pair within one substep (white to 1, then
+  1 to 2, in index order), the together rule a substep later, and my count of two contacts from the substep's start
+  state does not see a contact that only begins inside the substep. The throw is still solved.
+- **V3 not killed.** Together solves all 15 reference shots. Two shots had a ball in two contacts in one substep (a rack
+  shot, 1 substep, and the break, 4); their outcomes moved 2.3 and 13.2 units, a different game, as a break is.
+- **V4 not killed.** Reversing the order moves a final place by more than 10⁻⁶ under the original rule on 3 shots (the
+  rack shot, the throw, the break); under the together rule every ball's final place is within 10⁻⁹ on 60 of 60 (zero
+  on 58, 1.8·10⁻¹⁵ and 7.1·10⁻¹⁵ on two).
+
+## What run 2 shows (post hoc)
+
+- **The stop is not physics.** No ball needs to know the shot is over; each at rest does nothing, and the game is the
+  same to the bit. Run 1's first unpredicted blueprint part is only the program's way of not computing an idle table.
+- **The order is physics only where contacts chain within one tick.** Resolved together, every pair from the same start
+  state, the game no longer depends on how the balls are numbered (60 of 60 within 10⁻⁹), solves every challenge, and is
+  the original wherever contacts come one at a time. Where they chain (a rack, a frozen pair, the break) the original's
+  index order decides how a push travels inside one tick, an artefact of a fixed step: neither rule is the true one, and
+  the outcomes there part, chaotically on a break.
+- **So the referee's two jobs come off it.** What stays the blueprint's is the world frame the state is kept in, the
+  shared tick and the integrator. A finer tick, or contacts found in time order as the event-driven runs of MRB part 1
+  did, would shrink the order's effect; the shared clock would remain.
