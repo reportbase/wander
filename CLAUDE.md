@@ -510,6 +510,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   w(s_A)·w(s_B) = −1 exactly at the pair's corner, where every odd increasing exchange rule rests (a fixed stride on an
   interval). L4 killed by my count: N(N − 1) readings carry 4N − 7 numbers (plane), 5N − 11 (space), positions fixed only
   up to Möbius maps (cross ratios); run 2's L4′ not killed, L4″ killed by my factor. Classical; the sorting ours.
+  R1071 (17 Nov; Tom: "Classical gives the tools, not the full explanation of what they mean, or how they combine."):
+  **the classical tools are not the explanation**; what they mean in a read or a write and how they combine is the
+  series' work. Still no novelty claimed for any result (R925). Essay 30 §12; MRL also in essay 30 §10.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.

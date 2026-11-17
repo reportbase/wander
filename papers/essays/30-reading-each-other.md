@@ -270,11 +270,15 @@ All of the mathematics is classical:
 - the geometric mean of two corners, which is the denominator paradox's and parallax's;
 - a cocycle with a potential, Möbius composition, and the conformal group's cross ratios.
 
-None of it is a new result. What is ours is the sorting:
+None of it is a new result. But, as Tom put it, "Classical gives the tools, not the full explanation of what they mean,
+or how they combine." Each tool above is proved and used in its own field. What is ours is what they mean here and how
+they combine: the sorting.
 - the readings and the corner as the geometry's;
 - the rule, the stride and the timing as each thing's own writes;
 - the heat as what keeps the conclusion a distribution;
-- the infinity as the blueprint's.
+- the infinity as the blueprint's;
+- the shared product, the owned ratio and the Möbius freedom as one account of many systems reading each other, with
+  Euler's −1 as the place a fair exchange rests.
 
 ## 13. What is still open
 
@@ -299,7 +303,7 @@ Each of these should be a plan with its predictions first, before anything here 
   observers don't walk infinity, they are rational. geometric laws collapse infinite complexity into a inevitable single
   conclusion."; "We should explore this somehow with H V and h v."; "each system reads and writes. systems interact with
   each other with reads and writes."; "the combinitorial complexity is massive, but there are laws that collapse that
-  complexity."; "All of this is classical, it just iteration over the
+  complexity."; "Classical gives the tools, not the full explanation of what they mean, or how they combine."; "All of this is classical, it just iteration over the
   same core ideas to organize them."; "lets iterate this in an essay first. i doubt it is so easily handled."
 - `plans/mut-plan.md`; `runs/mut/mut.py`, `mut2.py` (outputs `mut-run1.txt`, `mut-run2.txt`); `runs/mut/mut3-checks.py`
   (output `mut3-checks.txt`), checks made while writing, not committed predictions. `plans/mrl-plan.md`;
@@ -309,4 +313,4 @@ Each of these should be a plan with its predictions first, before anything here 
   essay 21 §9 (chaos).
 - POL (`plans/pol-plan.md`, runs 3–4: reading late), ADR (`plans/adr-plan.md`: averaging gains nothing), HOL, BRL, TWG
   (loops that come back turned), TWK runs 17 and 19b, CXB.
-- SPN rulings cited: R654, R842, R864, R871, R1049, R1050, R1065, R1068, R1070.
+- SPN rulings cited: R654, R842, R864, R871, R1049, R1050, R1065, R1068, R1070, R1071.
