@@ -70,3 +70,22 @@ sphere under the cyclic rule.
   cyclic consensus are classical. What is ours is the sorting (R1071).
 
 ## Runs
+
+**Run 1** (`runs/tlp/tlp.py`, output `runs/tlp/tlp-run1.txt`, 17 Nov).
+- **Not killed: T1, T2, T3, T4, T6, T7.**
+  - T1: ρ_ij = −z_ij/z_ji = f_j/f_i exactly on 200 triangles, a unit complex number, the loop product 1.
+  - T2: the three systems' own angle readings multiply to −1 exactly, in three private frames.
+  - T3: rank 5 in the plane (exact) and 11 in space (the 12th singular value about 10⁻⁶¹ at 60 digits).
+  - T4: |S| equals the excess to 5·10⁻⁵⁹ on 50 random triangles; reversing the loop gives −S; shrunk by k, |S|/k² settles
+    (0.3815, 0.3592, 0.35707, 0.35685).
+  - T6: in the plane every residual times (1 − 3α) a round exactly, S = 0 kept, α = 7/10 diverging; on the sphere
+    (S = 2.2969) S kept to 4·10⁻⁶⁰, the residuals at S/3, the frames stopped.
+  - T7: in the plane the squared deviation times (1 − 3α + 3α²) a round exactly; on the sphere the residuals at S/3 to
+    7·10⁻⁵⁸ and every frame turning α·S/3 = 0.15313 a round for ever, off by 2·10⁻⁵⁸ after 400 rounds.
+- **T5 killed, by my code.** The plane's ρ was unchanged by 50 scalings exactly, and the 3-4-5 triangle's E·R²/area went
+  1.0213, 1.00021, 1.0000021 at R = 10, 100, 1000. But the world scaled by 7 moved S by 0.564. My bearing took the tangent
+  as P_j − (P_i·P_j)·P_i, which is right only for unit vectors; on a sphere of radius 7 it is not the tangent.
+
+**Run 2 prediction** (committed before run 2):
+- **T5′.** With the tangent P_j − (P_i·P_j/|P_i|²)·P_i and the frame's second axis P_i × e_i/|P_i|, scaling the whole
+  world (sphere and places) by 7, 1/3 and 1000 leaves S unchanged to 10⁻⁴⁰ for 20 random triangles and frames.
