@@ -491,6 +491,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   for natural processes expected, untested. "Reads" is the geometry of a standpoint, never awareness. *Reads and Writes*
   §1 "Whose writes", D4. R1066 (Tom: "Update the essays and merge"): in essay 1 §2 and essay 22 §10. R1067 (Tom: "Update the demos"): notes on `pool.html` and
   `write.html` and their `demos.html` cards.
+  MUT (`plans/mut-plan.md` + `runs/mut/`, 17 Nov; SPN R1068; Tom: "every reader / writer is reading and writing each other
+  based on their geometric heat"; "geometric laws collapse infinite complexity into a inevitable single conclusion"; "explore
+  this somehow with H V and h v"): exact, predictions first. Two things, readings s_A = (H_B/d)/t_A, s_B = (H_A/d)/t_B, each
+  stepping a share of the gap in levels toward its own corner: the endless back-and-forth is one closed form, d* = √(d_A·d_B)
+  at equal shares (error |1 − 2α|^n exactly), where s_A·s_B = 1, the pair's corner neither reaches alone; unequal shares a
+  weighted geometric mean; N on a line one linear solve; overshoot no collapse; alternating a two-cycle. Run 1's M2 killed
+  by my code, run 2's M2b not. Post hoc: the gaps settle, the line walks on (shape fixed, place free). Not in any paper.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.
