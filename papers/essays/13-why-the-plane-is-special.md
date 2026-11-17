@@ -198,6 +198,20 @@ motion, comes home with nothing left in space as in the plane, because scaling b
 scaling in two unequal lengths, a stretch, leaves a squeeze instead of a turn, and the squeeze grows with each loop (the BRL run, exact; the
 eighteenth essay, section 9).
 
+**Gauss–Bonnet, from no standpoint and from one.** The theorem behind the leftover is usually stated whole: the
+curvature added up over a region equals what its boundary falls short of being straight, so a spherical triangle's angles
+add to π plus its area over the radius squared (Girard 1629, then Gauss and Bonnet), and over a closed surface the total
+is 2π times its Euler characteristic, 4π for the sphere. That statement holds the region at once, from no standpoint: it
+is the dual hemispherical vantage's, the blueprint's, and its total a completion. From one standpoint the same fact is
+smaller. Each turn along the loop is read where it is taken, two directions and no size; the turns are composed in order
+by the slope rule (s + a)/(1 − sa), whose 1 − sa is where the curvature sits; and the question is only whether the loop
+comes home. Taken in fractions it does not need π to answer (the HLX run above): the angle sum's π is a name. What is left
+over belongs to no one turn and no one frame along the way, and though it is unmoved when the whole world is scaled, it is
+the loop's size against the world's radius of curvature, which no direction gives; a read meets it, a size sets it, and
+the plane, with no such radius, leaves nothing. With observers in place of a carried direction, the thirtieth essay
+(section 11) has the same leftover kept by every exchange of turns (the TLP and MNY runs). The theorem is classical; what
+is ours is the sorting, not a result.
+
 ---
 
 ## 5. What survives in space

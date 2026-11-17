@@ -278,6 +278,14 @@ the ends, widest in the middle, wider as the chain grows. Each gap is spread by 
 (B1 was killed by my tolerance: I asked the medians for 0.02γ against a sampling error of up to 0.06γ. Run 2's B1′, at
 four standard errors, was not.)
 
+The theorem underneath is Gauss–Bonnet, and it sorts the same way. As usually stated it holds the region whole, its
+curvature added up over the area equal to what the boundary falls short of straight, a total from no standpoint (the
+dual hemispherical vantage's, the blueprint's). The same fact from inside the loop is smaller: each edge's turn is two
+reads, composed in order round the loop by the slope rule (s + a)/(1 − sa), and the only question is whether the loop
+comes home. That composing needs no angle and no π (HLX found a loop's leftover rational in its half-slope squared), but
+it does need the edges taken in order, so a loop is reads held together across standpoints, or one standpoint's looks
+kept. Essay 13 §4 has it for a direction carried round a loop.
+
 So the loop that §8 doubted does what curvature lets it. Where no size enters, the exchange of facings settles, as the
 pair's did. Where one does, the loop keeps a leftover that belongs to no thing: a mutual exchange stops short of agreeing,
 and a one-way exchange turns for ever. Among many, each thing's own facing is the part a rule can settle; the leftovers
@@ -359,4 +367,4 @@ Each of these should be a plan with its predictions first, before anything here 
   essay 21 §9 (chaos).
 - POL (`plans/pol-plan.md`, runs 3–4: reading late), ADR (`plans/adr-plan.md`: averaging gains nothing), HOL, BRL, TWG
   (loops that come back turned), TWK runs 17 and 19b, CXB.
-- SPN rulings cited: R654, R842, R864, R871, R1049, R1050, R1065, R1068, R1070, R1071, R1072, R1073.
+- SPN rulings cited: R654, R842, R864, R871, R1049, R1050, R1065, R1068, R1070, R1071, R1072, R1073, R1075.
