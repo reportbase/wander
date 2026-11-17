@@ -482,6 +482,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R811 (10 Nov; Tom: "lets apply this idea to euhlers"): the −1 never needed e or π: the corner w(1) = i, two corners
   i × i = −1; the reader w(s)·w(1/s) = −1; the writer at work exact only at two corner steps (Niven), (1 + iθ/n)ⁿ near,
   never on; the paper e^(iπ) = −1. *Reads and Writes* §9 "What is free, and what π costs"; essay 15 §5.
+  PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
+  here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
+  predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.
+  E(d) + E(c²/d) = πL for every d exactly when the law of ln ρ over the turn is symmetric about ln c, the geometric mean
+  (P1 cos nφ, P2 odd modes, P4 a disc off its axis at the power of the point √(a² − b²), all to 10⁻⁴¹). A ring with
+  ρ₁ρ₂ = c² mirrors instead, E(d) = E(c²/d), brightest at c: a disc seen from outside its rim at the tangent length (P5),
+  an annulus at √(r₁r₂) (P6). Mixed modes, the ellipse and the polygons fail (P3). P7 and P8 killed by my 10⁻³ bound:
+  the ellipse 8·10⁻⁴, the square 1.2·10⁻⁴, the octagon 1.5·10⁻⁶. Post hoc, every failure is about 0.16 × the third
+  central moment of ln ρ. ISX's "complements nowhere" for the square holds only at its half-side; at its geometric mean
+  it misses by 1.2·10⁻⁴. Not yet in any paper.
   R1062 (16 Nov; Tom: "I disagree. If they ever produced different results, that would be the discovery, they won't.";
   "When we consider non human natural processes, I bet we find the same read/write. Read is the ongoing real time
   continuous system dynamics. Writes are the discrete results."; "What is new is the clear eyed sorting of what math goes

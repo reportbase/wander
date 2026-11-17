@@ -1,0 +1,7 @@
+mixed 1,2    sd 0.3953  third central moment +4.687e-02  least dev 6.850e-03  dev/|m3| 0.146
+mixed 2,4    sd 0.3536  third central moment +3.600e-02  least dev 5.356e-03  dev/|m3| 0.149
+ellipse 1:2  sd 0.2391  third central moment +5.001e-03  least dev 8.042e-04  dev/|m3| 0.161
+3-gon        sd 0.1983  third central moment +6.268e-03  least dev 1.001e-03  dev/|m3| 0.160
+4-gon        sd 0.1014  third central moment +7.495e-04  least dev 1.237e-04  dev/|m3| 0.165
+6-gon        sd 0.0426  third central moment +5.179e-05  least dev 8.795e-06  dev/|m3| 0.170
+8-gon        sd 0.0235  third central moment +8.534e-06  least dev 1.451e-06  dev/|m3| 0.170
