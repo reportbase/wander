@@ -673,6 +673,18 @@ Each simulation here is checked against a referee that computes the known physic
   L = log₂(1/(h + v)), so each contact spends about the binary digits the pair started from touching: 1.5 to 2 a contact
   on an open table, one part in 570 past one in 16 (half a pocket) by the third; inside a rack contacts gain digits (POL runs
   8–9). [simulation]
+- **The engine sorted.** The trick-shot engine's own arithmetic, audited (every call counted by its stack over 60 shots):
+  contact, the push along the line of centres and the mass ratio use no trigonometric function; trigonometry only turns
+  the player's aim into a direction, a fixed 12 or 13 calls a shot; sliding, rolling and bouncing are decided by amounts
+  carried in (grip, restitution, gravity, a stopping speed). The program's stop (no ball moving) and its order of
+  writing pairs come off it: with no look over all balls the game is the same to the bit, and with pairs resolved
+  together from each tick's start it is the same whatever the balls' numbering (60 of 60 within 10⁻⁹), every challenge
+  still solved; it parts only where contacts chain within one tick. The world frame, the shared tick and the integrator
+  stay the blueprint's (ENG runs 1–2). [simulation]
+- **A collision, sorted.** Before contact, reads (the two slopes; product shared, ratio owned, sum deciding). At contact,
+  h + v = 1 the last read, each ball then writing its own new state. The push's direction a read; the mass ratio (v/h)³ a
+  read only given one material; restitution, grip, gravity and speeds in a unit writes. Simultaneity across all balls
+  (the frame, the tick, the integrator) the blueprint's. Classical impulse contact; the sorting ours.
 - **Cooling counted in contacts.** Five hundred smooth inelastic spheres, contact found where h + v = 1. Per contact per
   sphere the temperature falls by (1 − e²)/3 of itself to 0.8% wherever the gas stays even (Haff 1983). Density,
   diameter and pair correlation leave the count; the clock needs them all, and near the clustering instability goes

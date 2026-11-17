@@ -399,6 +399,14 @@ record would have to hold itself as well, so the only complete one is the world 
 state. The loops are cheap because a law in time holds them; the colliding balls are not, since their state has to be
 kept, and it grows. (R1050.)
 
+**A table of balls, audited.** The same sorting was run on a game engine (ENG, `plans/eng-plan.md`): the trick-shot pool
+table, every arithmetic call counted by its stack over 60 shots. The contact and the push are reads, with no
+trigonometric call; trigonometry turns the aim into a direction once a shot; sliding and bouncing are writes. The
+program's look over all balls to stop the shot, and its order of writing pairs, came off without changing a game (the
+first to the bit, the second within 10⁻⁹ on every shot, every challenge still solved). What stays the dual vantage's is
+the frame the balls are kept in, the shared tick and the integrator that steps them all: a program needs the world held,
+as above, and this is the least of it that pool needed.
+
 ## 14. What it changes
 
 The blueprint is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on
