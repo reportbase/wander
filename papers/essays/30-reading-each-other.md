@@ -21,8 +21,8 @@ complexity. but observers don't walk infinity, they are rational. geometric laws
 inevitable single conclusion." And then the doubt that this essay follows: "i doubt it is so easily handled."
 
 The order: two readings and two corners (§1), the endless exchange (§2), where it closes (§3), what closed it (§4),
-strides, not shares (§5), together or in turn (§6), the heat (§7), many things (§8), where there is no law (§9), what
-it leaves (§10), what is classical and what is ours (§11), and what is still open (§12).
+strides, not shares (§5), together or in turn (§6), the heat (§7), many things (§8), where there is no law (§9), laws
+between systems (§10), what it leaves (§11), what is classical and what is ours (§12), and what is still open (§13).
 
 ---
 
@@ -208,7 +208,41 @@ Even there no thing walks an infinity. Each does one read and one write a step, 
 Only a blueprint trying to hold every thing at once has the growing record (R1050). So the infinity was never the
 things' problem. But "inevitable" belongs only to the cases with a law.
 
-## 10. What it leaves
+## 10. Laws between systems
+
+Tom then put it as systems: "each system reads and writes. systems interact with each other with reads and writes";
+"the combinitorial complexity is massive, but there are laws that collapse that complexity." He guessed a law "somethihng
+like Oelher's identity", Euler's. MRL (`plans/mrl-plan.md`) looked for laws that hold among the readings exactly, whatever the
+rule, with predictions written first and checked in exact fractions.
+
+Three held as predicted:
+
+- **The product is shared.** For any two systems i and j, s_ij·s_ji = H_i·H_j/(t_i·t_j·d_ij²). Neither's breadth or thumb
+  appears alone. This is the denominator paradox's product, now between any pair of N.
+- **The ratio is owned.** s_ij/s_ji = q_j/q_i, with q = H·t, each system's own write (it moves by k when the world is
+  scaled). Round every loop of 3, 4 or 5 systems, in the plane and in space, the ratios multiply to exactly 1. There is no
+  arbitrage: the ratios come from one number per system, a potential.
+- **Euler's −1 is where a fair exchange rests.** With w(s) = (1 + is)/(1 − is), w(s_A)·w(s_B) = −1 exactly when
+  s_A·s_B = 1, and nowhere else. Every exchange rule that is odd and strictly increasing (x/2, tanh, x³/3, arctan) has one
+  rest point, there. A fixed stride rests on the whole stretch between the two corners, so it has no single conclusion.
+
+So Tom's guess is right in this sense: the pair's corner of §3 is the reader's form of Euler's identity held between two
+systems. It says where a rest can be. Whether the exchange gets there is still §5–§7's question.
+
+The fourth law was the count, and my prediction was wrong. N systems make N(N − 1) readings. I predicted they carry
+4N − 5 numbers in the plane and 5N − 8 in space: every breadth, thumb and position, less the scalings, translations and
+turns. The exact rank was 4N − 7 and 5N − 11, two and three fewer. I had left out the inversions. An inversion multiplies
+each squared distance by one factor per point, and each system's breadth and thumb can absorb its own factor, so no
+reading changes. Mutual readings therefore fix the systems' places only up to the conformal (Möbius) maps, whose
+invariants are the cross ratios of distances. A second run confirmed the count, and a slip in my factor for the
+inversion's null direction (2 where it is 1) was recorded as killed by my arithmetic.
+
+This is a collapse of the kind Tom meant. N(N − 1) readings, quadratic, are carried by a number of quantities that grows
+linearly, and the laws that do it are exact. The group that is left over, the Möbius maps, is the same one that keeps the
+Cauchy family (R359) and that SRB found behind the boost. All of it is classical (a cocycle, inversive geometry, rigidity
+counts); the sorting into a shared product, an owned ratio and the Möbius freedom is ours.
+
+## 11. What it leaves
 
 The doubt was right. Taken together:
 
@@ -226,14 +260,15 @@ So I would restate Tom's sentence. Geometric laws collapse the infinite exchange
 writes are small, timely and in proportion. The conclusion is then the corner, held as a heat. Otherwise the exchange
 cycles, drifts or wanders, and no read can tell a thing which case it is in.
 
-## 11. What is classical and what is ours
+## 12. What is classical and what is ours
 
 All of the mathematics is classical:
 - a linear fixed-point iteration, its rate and its stability bound;
 - a delayed iteration's characteristic roots;
 - the stability of a nonlinear map at its rest point;
 - the Cauchy's widths adding under linear combination;
-- the geometric mean of two corners, which is the denominator paradox's and parallax's.
+- the geometric mean of two corners, which is the denominator paradox's and parallax's;
+- a cocycle with a potential, Möbius composition, and the conformal group's cross ratios.
 
 None of it is a new result. What is ours is the sorting:
 - the readings and the corner as the geometry's;
@@ -241,10 +276,11 @@ None of it is a new result. What is ours is the sorting:
 - the heat as what keeps the conclusion a distribution;
 - the infinity as the blueprint's.
 
-## 12. What is still open
+## 13. What is still open
 
-- **Loops.** Three things reading each other round a triangle on a plane. Does the exchange settle, cycle, or come
-  back turned?
+- **Loops.** Three things reading each other round a triangle on a plane. MRL's loops close, but they are loops of
+  owned amounts, scalar slopes. With directions carried round the loop, does the exchange settle, cycle, or come back
+  turned?
 - **Which rule.** Is there a reason, from the geometry, for one write rule over another? Or is the rule always the
   things' own?
 - **Steps from reads alone.** Can a thing keep its steps short against a distance it cannot read, for example by
@@ -261,13 +297,16 @@ Each of these should be a plan with its predictions first, before anything here 
 - Tom, 17 November 2026: "each observer reads / writes. than reads / writes. etc. so every reader / writer is reading
   and writing each other based on their geometric heat."; "this quickly creates infinite computation complexity. but
   observers don't walk infinity, they are rational. geometric laws collapse infinite complexity into a inevitable single
-  conclusion."; "We should explore this somehow with H V and h v."; "All of this is classical, it just iteration over the
+  conclusion."; "We should explore this somehow with H V and h v."; "each system reads and writes. systems interact with
+  each other with reads and writes."; "the combinitorial complexity is massive, but there are laws that collapse that
+  complexity."; "All of this is classical, it just iteration over the
   same core ideas to organize them."; "lets iterate this in an essay first. i doubt it is so easily handled."
 - `plans/mut-plan.md`; `runs/mut/mut.py`, `mut2.py` (outputs `mut-run1.txt`, `mut-run2.txt`); `runs/mut/mut3-checks.py`
-  (output `mut3-checks.txt`), checks made while writing, not committed predictions.
+  (output `mut3-checks.txt`), checks made while writing, not committed predictions. `plans/mrl-plan.md`;
+  `runs/mrl/mrl.py`, `mrl2.py` (outputs `mrl-run1.txt`, `mrl-run2.txt`).
 - *Each Sees the Other Smaller* (`papers/denominator-paradox.md`); *Reads and Writes* §1 "Whose writes", §6 "A record the
   size of what it records". Essay 6 §2 (motion from reads), essay 16 (K, not N), essay 22 §10–§11 (TWK runs 15–19),
   essay 21 §9 (chaos).
 - POL (`plans/pol-plan.md`, runs 3–4: reading late), ADR (`plans/adr-plan.md`: averaging gains nothing), HOL, BRL, TWG
   (loops that come back turned), TWK runs 17 and 19b, CXB.
-- SPN rulings cited: R654, R842, R864, R871, R1049, R1050, R1065, R1068.
+- SPN rulings cited: R654, R842, R864, R871, R1049, R1050, R1065, R1068, R1070.
