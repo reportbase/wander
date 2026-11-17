@@ -1,0 +1,8 @@
+P1: not killed  ln rho = ln c + cos(n phi)/2: n=1 dev 1.15e-41, E(c) 0.5; n=2 dev 1.15e-41, E(c) 0.5; n=3 dev 1.15e-41, E(c) 0.5; n=5 dev 1.15e-41, E(c) 0.5
+P2: not killed  odd modes 1, 3, 5: dev 1.15e-41, E(c) 0.5
+P3: not killed  0.5cos phi + 0.25cos 2phi: best c 1.49026 (gm 1.50000), least dev 6.850e-03, third moment 0.0469; 0.4cos 2phi + 0.3cos 4phi: best c 1.49241 (gm 1.50000), least dev 5.356e-03, third moment 0.0360
+P4: not killed  b=0.3: dev at sqrt(a^2-b^2) 2.3e-41, at c(1+1e-20) 9.52e-21, E(c) 0.5, |gm - c| 1.15e-41, area check 3.3e-16; b=0.7: dev at sqrt(a^2-b^2) 1.15e-41, at c(1+1e-20) 7.12e-21, E(c) 0.5, |gm - c| 1.15e-41, area check 6.7e-16; b=0.95: dev at sqrt(a^2-b^2) 2.3e-41, at c(1+1e-20) 4.26e-21, E(c) 0.5, |gm - c| 5.74e-42, area check 1.0e-15
+P5: not killed  b=1.5: mirror dev 2.87e-42, max at 1.11803398874989 vs sqrt(b^2-a^2) 1.11803398874989, E there 0.1273220038, area check 2.8e-17; b=3: mirror dev 7.17e-43, max at 2.82842712474619 vs sqrt(b^2-a^2) 2.82842712474619, E there 0.02859547921, area check 3.5e-18
+P6: not killed  1 to 4.0: mirror dev 2.37e-41, max at 2.0 vs sqrt(r1 r2) 2.0, E there 0.6, area check 2.8e-17; 1 to 10.0: mirror dev 2.3e-41, max at 3.16227766016838 vs sqrt(r1 r2) 3.16227766016838, E there 0.8181818182, area check 1.1e-16
+P7: KILLED  semi-axes 1, 2: best c 1.33232 (gm 1.33333, sqrt(ab) 1.41421), least dev 8.042e-04
+P8: KILLED  n=3: best c 1.23070 (gm 1.23189), least dev 1.001e-03; n=4: best c 1.11618 (gm 1.11631), least dev 1.237e-04; n=6: best c 1.04813 (gm 1.04814), least dev 8.795e-06; n=8: best c 1.02645 (gm 1.02645), least dev 1.451e-06; square at half-side: E(10)+E(1/10) 1.00445, 2E(1) 1.10825 (x pi L)

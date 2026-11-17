@@ -447,8 +447,11 @@ source's share set by the slope, (Δ/d)² (`../inverse-square.md`, "From one van
 A flat, evenly bright disc shows near and far as one share. On its axis it gives exactly E/(πL) = 1/(1 + s²), s = d/a
 its distance in its own radii: flat close in, the inverse square far off, and under the exchange s ↔ 1/s the two are
 complements, E(s) + E(1/s) = πL, half each at d = a, the disc's corner. Scaled with its distance it moves no share; only
-with its size held fixed does 1/d² appear. The pairing is the round source's: a square plate's near and far shares
-overlap at the corner, summing to 1.108 πL (ISX, exact; `../inverse-square.md`, "From one vantage").
+with its size held fixed does 1/d² appear. Which sources pair is set by the read: from the foot it meets a
+flat source only through its edge radius along each direction of the turn, and near and far are complements exactly when
+the logarithms of those radii are spread symmetrically, the corner their geometric mean. A disc seen off its axis pairs
+at √(a² − b²); a square misses by 1.2·10⁻⁴ at its own corner; with the foot outside the source the near and far mirror
+instead, brightest at the corner (ISX, PRX, exact; `../inverse-square.md`, "From one vantage").
 
 The disc's corner is a crossover, near against far. The same share has a second kind of corner elsewhere, as MOT had
 found in motion: read through the level of a ratio, s = sinh(½ ln k), swapping the pair leaves the share unchanged and

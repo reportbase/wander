@@ -557,8 +557,12 @@ hemispherical vantage's; the receiver's own form, paint unchanged and the share 
 The disc shows the pair exactly (ISX): on its axis a flat, evenly bright disc gives E/(πL) = 1/(1 + s²), s = d/a, its
 share of the receiver's hemisphere and the Cauchy's heat; the inverse square is the far chart, the flat near field the
 near chart, and s ↔ 1/s makes them complements, E(s) + E(1/s) = πL, half each at d = a. Coaxial discs read each other
-reciprocally (A₁F₁₂ = A₂F₂₁), the ratio the sizes, the product the distance. Only a round source pairs so (a square
-plate's two shares sum to 1.0045 to 1.108 πL). [exact; the formulas classical, the sorting a reading]
+reciprocally (A₁F₁₂ = A₂F₂₁), the ratio the sizes, the product the distance. Which sources pair so is a
+read's statement (PRX, `plans/prx-plan.md`): exactly those whose log edge radii, over the uniform turn about the axis,
+have a symmetric law, the corner their geometric mean (cos nφ shapes; a disc off its axis at √(a² − b²)); with the
+foot outside, the light mirrors, E(d) = E(c²/d), brightest at d = c (the tangent length; an annulus's √(r₁r₂)); skew
+shapes miss by about 0.16 times the third central moment (the square 1.2·10⁻⁴ at its own corner). [exact; the
+formulas classical, the sorting a reading]
 
 The same share sorts other classical cases on two charts (RWX, `plans/rwx-plan.md`). Read as a ratio, s ↔ 1/s makes a
 crossover: the RC divider's low-pass and high-pass shares 1/(1 + s²) and s²/(1 + s²), s = ωRC, half each at s = 1.
