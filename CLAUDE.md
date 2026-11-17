@@ -546,6 +546,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   frozen pair. The referee's two jobs come off; the world frame, the shared tick and the integrator stay the blueprint's.
   R1082 (Tom: "add it to the papers and essays"): ENG in *Reads and Writes* §1 "The engine, audited", the physics paper
   §10, essays 30 §10 and 22 §13; no new claim.
+  R1083 (Tom: "add it to the papers and essays and merge."): a collision sorted (where and which way read, how much
+  written, when the blueprint's) in *Reads and Writes* §1 "A collision, sorted", the physics paper §10, essay 30 §10.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.

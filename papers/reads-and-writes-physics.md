@@ -681,6 +681,10 @@ Each simulation here is checked against a referee that computes the known physic
   together from each tick's start it is the same whatever the balls' numbering (60 of 60 within 10⁻⁹), every challenge
   still solved; it parts only where contacts chain within one tick. The world frame, the shared tick and the integrator
   stay the blueprint's (ENG runs 1–2). [simulation]
+- **A collision, sorted.** Before contact, reads (the two slopes; product shared, ratio owned, sum deciding). At contact,
+  h + v = 1 the last read, each ball then writing its own new state. The push's direction a read; the mass ratio (v/h)³ a
+  read only given one material; restitution, grip, gravity and speeds in a unit writes. Simultaneity across all balls
+  (the frame, the tick, the integrator) the blueprint's. Classical impulse contact; the sorting ours.
 - **Cooling counted in contacts.** Five hundred smooth inelastic spheres, contact found where h + v = 1. Per contact per
   sphere the temperature falls by (1 − e²)/3 of itself to 0.8% wherever the gas stays even (Haff 1983). Density,
   diameter and pair correlation leave the count; the clock needs them all, and near the clustering instability goes

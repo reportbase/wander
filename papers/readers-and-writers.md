@@ -123,6 +123,16 @@ where the fixed step, not the physics, sets the order. What stays the blueprint'
 in, the shared tick and the integrator. **Checked** (ENG runs 1–2; four predictions killed, in their letter, by my bound,
 by the two jobs I had not predicted and by my floating point).
 
+**A collision, sorted.** Put together, one contact between two balls sorts in four steps. Before it, only reads: the two
+slopes, their shared product, owned ratio and the sum that decides contact. At it, h + v = 1 is the last read, the walk's
+strides left reaching zero (§6, "Touch, the walk to the foot"); what makes it a touch is that each ball then writes its own
+new state. The push's direction is a read (along the line of centres, no length); its share between the balls is a read
+only under a premise carried in, one material, so that the mass ratio is (v/h)³; how much speed comes back (restitution),
+the cloth's grip, gravity and every speed in a unit are writes. After it, the contact has spent about the digits the pair
+started from touching (§9). And when, for all balls at once, is the blueprint's: the world frame, the shared tick and
+the integrator, the stop and the order being the program's and removable. Where and which way is read, how much is
+written, and when is the blueprint's. **A reading** of classical impulse contact; the arithmetic is POL's and ENG's.
+
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
 | **continuous** | reading: a read, and what reads held together give, an extent or a map | the number line in a unit |
