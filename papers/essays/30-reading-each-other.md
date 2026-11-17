@@ -22,7 +22,8 @@ inevitable single conclusion." And then the doubt that this essay follows: "i do
 
 The order: two readings and two corners (§1), the endless exchange (§2), where it closes (§3), what closed it (§4),
 strides, not shares (§5), together or in turn (§6), the heat (§7), many things (§8), where there is no law (§9), laws
-between systems (§10), what it leaves (§11), what is classical and what is ours (§12), and what is still open (§13).
+between systems (§10), facings round a loop and among many (§11), what it leaves (§12), what is classical and what is
+ours (§13), and what is still open (§14).
 
 ---
 
@@ -193,8 +194,8 @@ ends have one neighbour, and the steps were in amounts.
 
 On a plane or in space there is a further reason to doubt the easy collapse, and I have not tested it. There, readings
 carried round a loop come back turned. Two turns about two axes do not commute and leave a leftover (HOL, BRL, TWG). Three
-things reading each other round a triangle are such a loop. Whether their exchange settles, cycles or turns for ever is
-open.
+things reading each other round a triangle are such a loop. Whether their exchange settles, cycles or turns for ever was
+open when this section was written; §11 has the answer.
 
 ## 9. Where there is no law
 
@@ -242,7 +243,49 @@ linearly, and the laws that do it are exact. The group that is left over, the M�
 Cauchy family (R359) and that SRB found behind the boost. All of it is classical (a cocycle, inversive geometry, rigidity
 counts); the sorting into a shared product, an owned ratio and the Möbius freedom is ours.
 
-## 11. What it leaves
+## 11. Facings round a loop, and among many
+
+Two plans took up the loop of three and the many (TLP and MNY, predictions first, exact at 50 digits or in fractions;
+the heat seeded).
+
+**Each thing has its own facing**, a frame it reads directions in. Between two things, the turn from one's frame to
+the other's is read from the two mutual directions alone: in the plane ρ = −z_ij/z_ji, the distance cancelling and so
+does every other thing. That turn is owned by neither reading; it is the pair's, read from both.
+
+**In the plane the loop closes.** Round a triangle the three turns multiply to exactly 1, in three private frames, and
+the three things' own readings of the angle each sees multiply to exactly −1: Euler's −1 is the triangle's angle sum
+(Euclid I.32), read with no shared frame. Both rules I tried (each turning toward both neighbours, or toward its next
+neighbour only) bring the frames to agree, at the rates 1 − 3α and √(1 − 3α + 3α²) a round. The six mutual bearings
+carry 5 numbers in the plane and 11 in space: everything but one turn, the translations and one scale.
+
+**On a sphere the loop comes back turned, by the area.** The turns round the triangle add to its spherical excess, the
+same in every frame, changing sign with the loop's order (Girard, Gauss–Bonnet). Then the two rules part. The mutual rule
+stops with every edge left disagreeing by S/3: no drift, no agreement. The one-way rule never stops: at rest every frame
+turns α·S/3 a round, for ever. Scaling the whole world moves nothing, since the excess is area/R², the triangle against
+the sphere's radius. So the leftover needs a size, the radius of curvature, which no read gives; in the plane there is
+none, and none is left. (T5 was killed by my code: my tangent was right only on a unit sphere. Run 2's T5′ was not.)
+
+**Among many, facings split in two.** The edge turns between N things are a part made of each thing's own facing, which
+an exchange of turns can remove, and a part made of the loops' leftovers, E − N + 1 of them, which no exchange touches
+(a classical decomposition of edge data). On a sphere each leftover is its loop's excess; in the plane every one is zero.
+A mutual rule on any graph keeps every leftover, removes the rest, and stops, at the rate the graph's Laplacian sets. A
+one-way ring cannot stop: its frames turn α·S/N a round for ever.
+
+**The heat grows with the many.** With the Cauchy heat on every read, a chain's gaps stay Cauchy, centred where the
+noiseless chain rests, their half-width γ·Σ_k |row of M^k·B|, the stable law passed through the linear rule. The pair
+keeps exactly one read's width (for shares up to 1). A chain does not: its gaps are 2.7 to 12.6 reads wide, narrowest at
+the ends, widest in the middle, wider as the chain grows. Each gap is spread by every read in the chain, passed along it.
+(B1 was killed by my tolerance: I asked the medians for 0.02γ against a sampling error of up to 0.06γ. Run 2's B1′, at
+four standard errors, was not.)
+
+So the loop that §8 doubted does what curvature lets it. Where no size enters, the exchange of facings settles, as the
+pair's did. Where one does, the loop keeps a leftover that belongs to no thing: a mutual exchange stops short of agreeing,
+and a one-way exchange turns for ever. Among many, each thing's own facing is the part a rule can settle; the leftovers
+and the heat are not, and the heat grows with the number reading each other. All of it is classical; the sorting is ours
+(R1071): the turn on an edge is two reads, each facing its thing's own write, a loop's leftover the world's curvature,
+which a read meets and a size sets.
+
+## 12. What it leaves
 
 The doubt was right. Taken together:
 
@@ -260,7 +303,7 @@ So I would restate Tom's sentence. Geometric laws collapse the infinite exchange
 writes are small, timely and in proportion. The conclusion is then the corner, held as a heat. Otherwise the exchange
 cycles, drifts or wanders, and no read can tell a thing which case it is in.
 
-## 12. What is classical and what is ours
+## 13. What is classical and what is ours
 
 All of the mathematics is classical:
 - a linear fixed-point iteration, its rate and its stability bound;
@@ -280,17 +323,18 @@ they combine: the sorting.
 - the shared product, the owned ratio and the Möbius freedom as one account of many systems reading each other, with
   Euler's −1 as the place a fair exchange rests.
 
-## 13. What is still open
+## 14. What is still open
 
-- **Loops.** Three things reading each other round a triangle on a plane. MRL's loops close, but they are loops of
-  owned amounts, scalar slopes. With directions carried round the loop, does the exchange settle, cycle, or come back
-  turned?
+- **Loops.** Answered in §11 (TLP): in the plane the loop closes and the exchange settles; on a sphere it comes back
+  turned by the excess, a mutual rule stopping short and a one-way rule turning for ever. Left: moving things, where the
+  loop is the Thomas–Wigner turn (TWG), under an exchange.
 - **Which rule.** Is there a reason, from the geometry, for one write rule over another? Or is the rule always the
   things' own?
 - **Steps from reads alone.** Can a thing keep its steps short against a distance it cannot read, for example by
   stepping in proportion to how fast its reading changes, which is τ, the time to contact (essay 6 §2)? Lee's τ̇ ≥ −½
   says something like that already for one thing approaching another.
-- **The heat in the many.** With N things and Cauchy reads, do the gaps keep the read's own width, as the pair does?
+- **The heat in the many.** Answered in §11 (MNY): no; a chain's gaps are 2.7 to 12.6 reads wide and widen with N.
+  Left: whether a rule can be chosen that keeps one read's width among many, and at what cost.
 
 Each of these should be a plan with its predictions first, before anything here is carried into *Reads and Writes*.
 
@@ -307,10 +351,12 @@ Each of these should be a plan with its predictions first, before anything here 
   same core ideas to organize them."; "lets iterate this in an essay first. i doubt it is so easily handled."
 - `plans/mut-plan.md`; `runs/mut/mut.py`, `mut2.py` (outputs `mut-run1.txt`, `mut-run2.txt`); `runs/mut/mut3-checks.py`
   (output `mut3-checks.txt`), checks made while writing, not committed predictions. `plans/mrl-plan.md`;
-  `runs/mrl/mrl.py`, `mrl2.py` (outputs `mrl-run1.txt`, `mrl-run2.txt`).
+  `runs/mrl/mrl.py`, `mrl2.py` (outputs `mrl-run1.txt`, `mrl-run2.txt`). `plans/tlp-plan.md`; `runs/tlp/tlp.py`,
+  `tlp2.py` (outputs `tlp-run1.txt`, `tlp-run2.txt`). `plans/mny-plan.md`; `runs/mny/mny.py`, `mny2.py` (outputs
+  `mny-run1.txt`, `mny-run2.txt`).
 - *Each Sees the Other Smaller* (`papers/denominator-paradox.md`); *Reads and Writes* §1 "Whose writes", §6 "A record the
   size of what it records". Essay 6 §2 (motion from reads), essay 16 (K, not N), essay 22 §10–§11 (TWK runs 15–19),
   essay 21 §9 (chaos).
 - POL (`plans/pol-plan.md`, runs 3–4: reading late), ADR (`plans/adr-plan.md`: averaging gains nothing), HOL, BRL, TWG
   (loops that come back turned), TWK runs 17 and 19b, CXB.
-- SPN rulings cited: R654, R842, R864, R871, R1049, R1050, R1065, R1068, R1070, R1071.
+- SPN rulings cited: R654, R842, R864, R871, R1049, R1050, R1065, R1068, R1070, R1071, R1072, R1073.

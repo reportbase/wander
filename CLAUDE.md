@@ -517,12 +517,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   reading each other's directions, each in its own frame. Plane: the edge turn read from the mutual directions alone
   (−z_ij/z_ji = f_j/f_i), the loop closing to 1, the three angle readings multiplying to −1; ranks 5 (plane), 11 (space).
   Sphere: the loop comes back turned by the excess (area/R², an amount), a mutual exchange stopping with each edge off by
-  S/3, a cyclic one turning every frame α·S/3 a round for ever. T5 killed by my code, T5′ not. Not yet in essay 30.
+  S/3, a cyclic one turning every frame α·S/3 a round for ever. T5 killed by my code, T5′ not. In essay 30 §11 (R1074).
   MNY (`plans/mny-plan.md` + `runs/mny/`, 17 Nov; SPN R1073; Tom: "proceed with additional tests"): many observers. Edge
   turns split into each observer's own facing (removable by exchange) and loop leftovers (E − N + 1 of them, each its
   excess on a sphere, zero in the plane); a mutual rule settles at the leftovers alone, a one-way ring turns for ever. With
   Cauchy reads a chain's gaps stay Cauchy, half-width γ·Σ_k |row of M^k·B|, 2.7 to 12.6 reads' widths, not one read's as
-  for a pair. B1 killed by my median tolerance, B1′ not. Not in any paper or essay.
+  for a pair. B1 killed by my median tolerance, B1′ not. In essay 30 §11 (R1074; Tom: "update the essays and merge"); no paper.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.
