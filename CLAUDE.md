@@ -548,6 +548,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   §10, essays 30 §10 and 22 §13; no new claim.
   R1083 (Tom: "add it to the papers and essays and merge."): a collision sorted (where and which way read, how much
   written, when the blueprint's) in *Reads and Writes* §1 "A collision, sorted", the physics paper §10, essay 30 §10.
+  CNB (`plans/cnb-plan.md` + `runs/cnb/`, 17 Nov; SPN R1084; Tom: "what about shooting a canning ball", then "yes"): a
+  cannonball under quadratic drag, predictions first. Vacuum all read (range share 2s/(1 + s²), best at the corner, apex
+  seen at slope s/2); air enters only through β = v₀²/(g·L), a ratio of two writes: best slope below the corner (s* ≈
+  1 − 0.2100·β small, 0.47 at β = 100), the exchange broken toward the flat shot, a bigger ball nearer the corner. C7
+  killed by my set-up (flat maximum), C7′ not. Not in any paper.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.

@@ -62,3 +62,24 @@ events; the best slope by Brent's method on the range).
 **Run 2 prediction** (committed before run 2). C7′: s* found instead as the root of the range's central difference
 (step 10⁻⁴; the range to 10⁻¹², so the slope of the range to about 10⁻⁸ and s* to about 10⁻⁸). Then (1 − s*)/β at
 β = 10⁻⁴, 3·10⁻⁴, 10⁻³ agrees to three digits, between 0.205 and 0.215. *Killed* otherwise.
+
+**Run 2** (`runs/cnb/cnb2.py`, output `runs/cnb/cnb-run2.txt`).
+- **C7′ not killed.** (1 − s*)/β = 0.210015, 0.210015, 0.209937 at β = 10⁻⁴, 3·10⁻⁴, 10⁻³ (then 0.209668, 0.208720 at
+  3·10⁻³, 10⁻², the second order): the best slope leaves the corner as s* ≈ 1 − 0.2100·β. No closed form for a was
+  sought or claimed.
+
+## What the runs show (post hoc)
+
+- **In a vacuum the cannonball is all read, from the corner.** Every shape number is a fraction of the launch slope: the
+  range share 2s/(1 + s²) = 2hv, the apex at half the range and s/4 high, seen from the cannon at slope s/2, the landing
+  at −s. The exchange s ↔ 1/s leaves the range alone, and its fixed point, the corner, is the best shot. How far and how
+  long are writes, v₀²/g carried in, exactly as the bounce (R971).
+- **Air enters through one number, and only through it.** The drag length is an amount (the ball's mass over air
+  density times area), so β = v₀²/(g·L) is a ratio of two writes. Once it is not zero the shape stops being scale-free in
+  the world: the best slope leaves the corner (0.80 at β ≈ 2), the exchange breaks toward the flat shot, the landing is
+  steeper than the launch and the apex leans past half the range. Every departure is a function of β alone (C2), so the
+  shape is again a read in the right variables: the read of a world with one more amount in it.
+- **Size now shows.** In a vacuum a ball twice the size flies the same shape; with air, same material and speed, it flies
+  a different one, nearer the corner (C6: Galileo's square–cube law, mass r³ against area r²). Scaling the world moves
+  the shape only because it moves the ratio of the drag length to v₀²/g; scale those together and nothing moves.
+- Classical (projectile motion with quadratic drag; the optimal angle below 45°); the sorting is ours (R1062).
