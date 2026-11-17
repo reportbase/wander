@@ -55,3 +55,25 @@ they actually carry?
   rigidity count. The sorting into shared product and owned ratio is the series' own.
 
 ## Runs
+
+**Run 1** (`runs/mrl/mrl.py`, output `runs/mrl/mrl-run1.txt`, 17 Nov).
+- **Not killed: L1, L2, L2b, L3, L5.**
+  - The product is shared exactly, on 200 pairs.
+  - w(s)·w(1/s) = −1 exactly, and w(s)·w(a) = w(s ⊕ a) with no −1 off the corner.
+  - Each of the four odd increasing rules has one rest point, at the geometric mean, where w_A·w_B = −1.
+  - f = sign rests at all 299 points tested between the corners.
+  - Every loop of 3, 4 and 5 systems closes to 1 exactly, in the plane and in space.
+  - Scaling the world moves no reading, and moves q_i = H_i·t_i by k.
+- **L4 killed, by my count.** The rank is 13, 33, 73 in the plane and 14, 39, 89 in space, against 15, 35, 75 and 17, 42,
+  92 predicted. That is 4N − 7 and 5N − 11: two and three fewer.
+- **Post hoc reading of the kill.** I left out the special conformal maps. An inversion multiplies each squared distance
+  by a factor c_i·c_j, one factor per point. Each system's ln H and ln t can absorb its own factor, so no reading changes.
+  - The readings then fix the positions only up to the conformal (Möbius) group of the plane or of space, which has
+    dimension 6 and 10, plus the one joint scaling of H and t: 7 and 11.
+
+**Run 2 predictions** (committed before run 2):
+- **L4′.** The rank is 4N − 7 in the plane and 5N − 11 in space, at new random rational points, for N = 5, 10 and 20.
+- **L4″.** For each b, the infinitesimal special conformal map δx_i = 2(b·x_i)x_i − |x_i|²·b, together with
+  δ ln H_i = σ·2(b·x_i) and δ ln t_i = −σ·2(b·x_i) for one sign σ, is in the Jacobian's null space exactly: J·v = 0 in
+  Fractions, for every b on a coordinate axis, in the plane and in space. With the other sign it is not.
+- **Kill conditions.** Either rank off; or no sign giving J·v = 0 exactly.
