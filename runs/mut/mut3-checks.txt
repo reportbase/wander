@@ -1,0 +1,16 @@
+heat: share 0.1 each: median 1.5002 (x* 1.5), half-IQR 0.05007, worked 0.05000
+heat: share 0.25 each: median 1.5001 (x* 1.5), half-IQR 0.04998, worked 0.05000
+heat: share 0.5 each: median 1.5000 (x* 1.5), half-IQR 0.04999, worked 0.05000
+heat: share 0.7 each: median 1.4998 (x* 1.5), half-IQR 0.11670, worked 0.11667
+late: share 0.25: after 2000 rounds 1.5 (x* 1.5)
+late: share 0.45: after 2000 rounds 1.5 (x* 1.5)
+late: share 0.5: after 2000 rounds 8 (x* 1.5)
+late: share 0.55: after 2000 rounds -1.63822e+42 (x* 1.5)
+late: share 0.6: after 2000 rounds -1.89605e+79 (x* 1.5)
+strides: S 0.5 (S/d* 0.112): last values [np.float64(4.4817)]
+strides: S 2 (S/d* 0.446): last values [np.float64(4.4817)]
+strides: S 4 (S/d* 0.893): last values [np.float64(4.4817)]
+strides: S 4.4 (S/d* 0.982): last values [np.float64(4.4817)]
+strides: S 4.6 (S/d* 1.026): last values [np.float64(3.0149), np.float64(6.662)]
+strides: S 5 (S/d* 1.116): last values [np.float64(1.9755), np.float64(10.1672)]
+strides: S 15 (S/d* 3.347): last values [np.float64(-22.3607)]

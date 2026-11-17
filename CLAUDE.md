@@ -498,6 +498,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   at equal shares (error |1 − 2α|^n exactly), where s_A·s_B = 1, the pair's corner neither reaches alone; unequal shares a
   weighted geometric mean; N on a line one linear solve; overshoot no collapse; alternating a two-cycle. Run 1's M2 killed
   by my code, run 2's M2b not. Post hoc: the gaps settle, the line walks on (shape fixed, place free). Not in any paper.
+  R1069 (Tom: "All of this is classical, it just iteration over the same core ideas to organize them."; "lets iterate
+  this in an essay first. i doubt it is so easily handled."): essay 30, `papers/essays/30-reading-each-other.md`, *Reading
+  each other* (a corridor dance), an iteration, not a result; checks made while writing (`runs/mut/mut3-checks.py`, not
+  committed predictions): strides settle only while shorter than the meeting distance, one round late halves the safe
+  share, Cauchy heat leaves the pair wandering as wide as one read. README row ("thirty essays"), `essays.html` card,
+  smoke count 30 (not run). Nothing in *Reads and Writes*.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.
@@ -4285,7 +4291,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     twenty-nine essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     thirty essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
