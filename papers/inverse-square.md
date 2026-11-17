@@ -198,6 +198,22 @@ exchange takes α to 90° − α, sin²α + cos²α = 1; a square plate's two sh
 corner, complements nowhere. A sphere seen from outside is the plain inverse square at every d ≥ a, with no near side
 to pair. [exact; the disc formula, NRF's slope form and reciprocity classical; the sorting a reading]
 
+**Which sources pair** (PRX, `plans/prx-plan.md`, `runs/prx/`, exact at 40 digits, predictions first; 17 November). ISX's
+"the pairing is the round source's" was too narrow. From the foot of the axis the read meets a flat source only through
+its edge radius ρ(φ) along each direction of the uniform turn about the axis: E(d)/(πL) = (1/2π)∫ρ²/(d² + ρ²) dφ. The
+share at c²/d is, direction by direction, the complement of the share at d with ρ replaced by c²/ρ. So near and far are
+complements, E(d) + E(c²/d) = πL at every d, exactly when the law of ln ρ over the turn is symmetric about ln c, and c,
+the corner, is the geometric mean of the radii, half the light there. Shapes that are not round pair (ln ρ = ln c +
+½cos nφ for n = 1, 2, 3, 5; any sum of odd modes; to 10⁻⁴¹), and so does a disc seen off its axis with the foot inside,
+at c = √(a² − b²), the power of the foot (Euclid III.35). With the foot outside the source, a ring between ρ₁(φ) and
+ρ₂(φ) with ρ₁ρ₂ = c², the exchange mirrors instead, E(d) = E(c²/d), the light greatest at d = c: a disc beyond its rim
+at the tangent length √(b² − a²), an annulus at √(r₁r₂) (greatest 3/5 πL for radii 1 to 4). The two kinds are RWX's
+crossover and best point. Where the law is skew the pairing fails, in proportion: the ellipse 1 : 2 by 8·10⁻⁴, the
+polygons by 1.0·10⁻³, 1.2·10⁻⁴, 8.8·10⁻⁶, 1.5·10⁻⁶ (n = 3, 4, 6, 8), each about 0.16 times the third central moment of
+ln ρ (post hoc), the best corner within 0.8% of the geometric mean. ISX's square numbers hold at c = the half-side; at
+its own corner, 1.116 half-sides, the square misses by 1.2·10⁻⁴. P7 and P8 were killed by my bound (10⁻³), not by a
+pairing. [exact; each formula classical; the rule by the symmetry of the log-radii a reading, not searched for]
+
 ## 1. The law as physics holds it
 
 - **Derived from conservation and three dimensions** [physics]. A point source sends a fixed amount per second. With

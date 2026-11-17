@@ -1267,9 +1267,18 @@ inverse square, close in it is flat, and the exchange s ↔ 1/s makes the two co
 the corner d = a: §9's 1/(1 + s²) + s²/(1 + s²) = 1, with near and far its two sides. Scaled with its distance the disc
 moves no share; only with its size held fixed does the inverse square in d appear. Two discs facing each other read each
 other reciprocally: the ratio of the two reads leaves the sizes, their product the distance in their geometric mean.
-The pairing is the round source's (sin²α + cos²α = 1 for its rim's cone); a square plate's two shares overlap at the
-corner. **Checked** (ISX, `plans/isx-plan.md`, exact at 50 digits, nothing killed); the formulas classical, the sorting a
+**Checked** (ISX, `plans/isx-plan.md`, exact at 50 digits, nothing killed); the formulas classical, the sorting a
 reading.
+
+*Which sources pair.* A flat source is met from the foot of the axis only through its edge's slope ρ(φ)/d along each
+direction of the uniform turn about the axis. Near and far are complements, E(d) + E(c²/d) = πL at every d, exactly
+when the law of ln ρ over that turn is symmetric; the corner c is the geometric mean of the radii. The round disc is the
+plainest case, not the only one: shapes with ln ρ = ln c + ½cos nφ pair, and so does a disc seen off its axis with the
+foot inside, at the power of the foot √(a² − b²). With the foot outside the source the exchange mirrors instead,
+E(d) = E(c²/d), brightest at d = c (a disc beyond its rim at the tangent length; an annulus at √(r₁r₂)): §7's crossover
+and best point, met in one source. Where the law of ln ρ is skew the pairing fails by about 0.16 times its third central
+moment (the ellipse 1 : 2 by 8·10⁻⁴, the square by 1.2·10⁻⁴ at its own corner). **Checked** (PRX, `plans/prx-plan.md`,
+exact at 40 digits; two predictions killed by my bound, none by a pairing); the formulas classical, the rule a reading.
 
 **The same share elsewhere: a crossover and a best point.** The share 1/(1 + s²) turns up in other classical situations
 on two charts. Where the pair is read as a ratio itself, s ↔ 1/s turns the share into its complement and the corner is a

@@ -12,7 +12,7 @@ are, a share of directions, and about what the same share does in places that ha
 a question the share raised: what a law is, read this way, and how many of the laws the series uses have the shape it
 suggests. The answer to the last was smaller than predicted, and that is part of the result.
 
-The order: the lamp over the page (§1), two ends reading each other (§2), only a round source pairs (§3), the same share
+The order: the lamp over the page (§1), two ends reading each other (§2), which sources pair (§3), the same share
 elsewhere (§4), counting ticks (§5), the tower (§6), what a law is (§7), sorting the laws (§8), what is classical and what
 is ours (§9), and what it changes (§10).
 
@@ -63,17 +63,34 @@ That is the denominator paradox's exchange (*Each Sees the Other Smaller*): two 
 of their own hand, and dividing the two reads leaves the hands, multiplying them leaves the distance. The discs do it with
 light.
 
-## 3. Only a round source pairs
+## 3. Which sources pair
 
 Is the exchange a property of light, or of the disc? A square plate of half-side b, on its axis at s = d/b, has an exact
-share too. Its near and far shares do not add to one: E(s) + E(1/s) runs from 1.0045 πL at s = 10 to 1.108 πL at the
-corner. The pairing is the round source's.
+share too. Counted from its half-side its near and far shares do not add to one: E(s) + E(1/s) runs from 1.0045 πL at
+s = 10 to 1.108 πL there. The first reading was that the pairing is the round source's: from the axis the disc's rim is
+one cone, of half-angle α with tan α = 1/s, its share sin²α, and the exchange takes α to 90° − α, sin²α + cos²α = 1.
 
-The reason is one line. From the axis the disc's rim is one cone, of half-angle α with tan α = 1/s, and the disc's share
-is sin²α. The exchange takes α to 90° − α, so the two shares are sin²α + cos²α = 1: a round cap and its complement. A
-square's rim is not one cone, so its near and far shares overlap at the corner and are complements nowhere. A sphere,
-seen from outside, gives (a/d)² exactly at every d ≥ a, the plain inverse square: its s below 1 is inside the body, so it
-has no partner to pair with.
+That was too narrow (PRX). From the foot of the axis the page meets any flat source only through its edge: one radius
+ρ(φ) along each direction φ of the uniform turn about the axis, and E(d)/(πL) = (1/2π)∫ρ²/(d² + ρ²) dφ. Replace d by
+c²/d and each direction's term becomes the complement of the term with ρ replaced by c²/ρ. So near and far are
+complements at every d exactly when the radii, as the turn meets them, have the same law as c²/ρ: when the law of ln ρ
+is symmetric about ln c. The corner c is then the geometric mean of the radii, half the light there.
+
+The round disc is the plainest case. Others are not round: an edge with ln ρ = ln c + ½cos nφ pairs for every n, and so
+does any edge made of odd modes, to forty digits. A disc seen off its axis, the foot inside it a distance b from its
+centre, pairs too, at c = √(a² − b²): along opposite directions the two radii multiply to a² − b², Euclid's power of
+the point. The square fails because its log-radii are skew, and only a little: at its own corner, 1.116 half-sides, it
+misses by 1.2·10⁻⁴; the ellipse 1 : 2 by 8·10⁻⁴, the triangle by 10⁻³, the octagon by 1.5·10⁻⁶. Each miss is about
+0.16 times the third central moment of ln ρ, the first odd moment the corner does not remove.
+
+Move the foot outside the source and the exchange does something else. The source is then a ring between two radii
+along each direction, and where their product is c² the light mirrors: E(d) = E(c²/d), the same at d and c²/d, greatest
+at the corner. A disc seen from beyond its rim is brightest at the tangent length √(b² − a²); an annulus between radii
+1 and 4 at height 2, where it gives 3/5 of πL. Near and far either complete each other or mirror each other, the
+crossover and the best point of §4, in one lamp.
+
+A sphere, seen from outside, gives (a/d)² exactly at every d ≥ a, the plain inverse square: its s below 1 is inside the
+body, so it has no partner to pair with.
 
 ## 4. The same share elsewhere
 
@@ -201,7 +218,7 @@ share, maximum power transfer, Fresnel's normal incidence, the RLC resonance, Le
 telescoping products and the Cayley form of tangent addition. Every number in this essay is one of those, computed.
 
 Ours: the sorting. That the near field and the inverse square are one share read at two ends, paired by the exchange,
-and that the pairing is the round source's; that the crossover and the best point are one share on two charts; that the
+and that which sources pair is the symmetry of their log edge radii over the turn, completing or mirroring; that the crossover and the best point are one share on two charts; that the
 pendulum and the orbit are the bounce's move; that a law of the chain shape is what the cancellation leaves; and that
 this shape covers a quarter of the paper's laws, not three quarters; and that π or e in those laws is content only in
 limits, in charts or totals stated for themselves, one identity and Kepler's turn. The sort of the cases into types is
@@ -222,6 +239,8 @@ the next question is what the third shape, the change of chart, is for a read.
 
 - `../../plans/isx-plan.md`, `../../runs/isx/`: the disc's share, the exchange, the coaxial discs, the square plate, the
   sphere (ISX run 1).
+- `../../plans/prx-plan.md`, `../../runs/prx/`: which sources pair, the disc off its axis, the mirror with the foot
+  outside, the annulus, the ellipse and the polygons (PRX run 1).
 - `../../plans/rwx-plan.md`, `../../runs/rwx/`: the RC divider, the collision, the matched load, Fresnel, the RLC, the
   pendulum and Kepler (RWX run 1).
 - `../../plans/lws-plan.md`, `../../runs/lws/`: the 125 laws, the sort and the checks (LWS run 1).

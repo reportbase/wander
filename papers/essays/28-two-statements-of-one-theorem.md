@@ -200,7 +200,8 @@ count is the B.
 
 The same goes for the inverse square law. From no standpoint, L/(4πd²); from one, a round flat source of radius a seen on
 its axis from d lights the receiver by its share 1/(1 + s²) of the hemisphere, s = d/a, whose far form is 1/s²; the
-shares at s and 1/s add to the whole, half each at d = a (ISX). The 4π is the blueprint's, the whole sphere counted.
+shares at s and 1/s add to the whole, half each at d = a (ISX); any flat source whose log edge radii, over the turn about the axis, are spread symmetrically
+pairs the same way, the corner their geometric mean (PRX). The 4π is the blueprint's, the whole sphere counted.
 
 ## 9. Only renamed
 

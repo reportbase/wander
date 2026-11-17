@@ -491,7 +491,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   an annulus at √(r₁r₂) (P6). Mixed modes, the ellipse and the polygons fail (P3). P7 and P8 killed by my 10⁻³ bound:
   the ellipse 8·10⁻⁴, the square 1.2·10⁻⁴, the octagon 1.5·10⁻⁶. Post hoc, every failure is about 0.16 × the third
   central moment of ln ρ. ISX's "complements nowhere" for the square holds only at its half-side; at its geometric mean
-  it misses by 1.2·10⁻⁴. Not yet in any paper.
+  it misses by 1.2·10⁻⁴. R1064 (Tom: "Update the paper and essays with this result."): carried into `inverse-square.md`
+  ("Which sources pair"), *Reads and Writes* §7, the physics paper §7.2, essays 4, 23 (§3 now "Which sources pair") and
+  28, the README and `essays.html`; "only a round source pairs" withdrawn everywhere.
   R1062 (16 Nov; Tom: "I disagree. If they ever produced different results, that would be the discovery, they won't.";
   "When we consider non human natural processes, I bet we find the same read/write. Read is the ongoing real time
   continuous system dynamics. Writes are the discrete results."; "What is new is the clear eyed sorting of what math goes
