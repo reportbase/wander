@@ -80,3 +80,23 @@ B1 off by more than its tolerances at any setting; B2's formula disagreeing.
 **Run 2 prediction** (committed before run 2):
 - **B1′.** As B1 with a fresh seed, the medians within 4 standard errors, π·s/(2√S) with s the formula's half-width, of
   the noiseless fixed point, and each half-IQR within 3% of the formula.
+
+**Run 2** (`runs/mny/mny2.py`, output `runs/mny/mny-run2.txt`). **B1′ not killed**: the medians within 3.0 standard
+errors at every setting (the largest 2.99, over 33 gaps), every half-IQR within 1.1% of the formula.
+
+**What the runs show.**
+- **Facings among many split in two, by a classical decomposition.** The edge turns read between observers are a
+  gradient part (differences of the observers' own facings, which an exchange of turns can remove) plus a cycle part (the
+  loops' leftovers, which no exchange touches). There are E − N + 1 independent loops; on a sphere each carries its
+  enclosed excess, area over radius squared; in the plane every one is zero.
+- **Exchange keeps the leftovers and removes the rest.** A mutual rule on any graph settles at the cycle part alone: every
+  loop sum kept, the frames stopped, at the rate the graph's Laplacian sets. A one-way rule round a ring cannot stop: its
+  frames turn α·S/N a round for ever. In the plane both agree fully.
+- **The heat grows with the many.** A chain of observers each reading its neighbours with the Cauchy heat on every read
+  keeps every gap a Cauchy, its half-width the stable-law sum γ·Σ_k |row of M^k·B|. A pair keeps exactly one read's width
+  (for shares up to 1); a chain does not: 2.7 to 12.6 reads' widths, widest in the middle, growing with the number of
+  observers. Each gap is spread by every read in the chain, passed along it.
+- **Classical**: Gauss–Bonnet, the discrete Hodge decomposition of edge data, graph-Laplacian consensus, stable laws
+  through linear maps. The sorting is ours (R1071): the turn on an edge is two reads; each observer's facing is its own
+  write; a loop's leftover belongs to no observer and needs a size (the radius); the heat is the reads', and the many pass
+  it to one another.
