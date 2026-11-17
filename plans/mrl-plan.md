@@ -77,3 +77,20 @@ they actually carry?
   δ ln H_i = σ·2(b·x_i) and δ ln t_i = −σ·2(b·x_i) for one sign σ, is in the Jacobian's null space exactly: J·v = 0 in
   Fractions, for every b on a coordinate axis, in the plane and in space. With the other sign it is not.
 - **Kill conditions.** Either rank off; or no sign giving J·v = 0 exactly.
+
+**Run 2** (`runs/mrl/mrl2.py`, output `runs/mrl/mrl-run2.txt`).
+- **L4′ not killed.** The rank is 13, 33, 73 in the plane and 14, 39, 89 in space: 4N − 7 and 5N − 11 exactly.
+- **L4″ killed, by my factor.** With δ ln H_i = ±2(b·x_i) and δ ln t_i = ∓2(b·x_i), the special conformal map is not null.
+  - I had the factor wrong. Worked in one dimension, δ ln D_ij = 2b·(x_i + x_j), so each system needs b·x_i, not 2b·x_i.
+  - Post hoc, with the coefficient 1 the map is exactly null for every axis b, in the plane and in space. With −1 it is not.
+
+**What the runs show, with the classical names.**
+- **Shared and owned.** The product of two systems' readings of each other is shared: H_i·H_j/(t_i·t_j·D_ij). The ratio
+  is owned: q_j/q_i, with q = H·t. Loops of ratios close to 1, which is a cocycle with a potential: no arbitrage.
+- **The exchange's rest is Euler's −1.** Where a fair exchange rests, w(s_A)·w(s_B) = −1 holds between the two systems.
+  - Odd and strictly increasing rules rest at one point; a fixed stride rests on a whole interval.
+- **Up to Möbius maps.** The N(N − 1) readings are carried by 4N − 7 numbers in the plane and 5N − 11 in space.
+  - Each system absorbs its own conformal factor, so mutual readings fix positions only up to the conformal group, whose
+    invariants are the cross ratios of distances D_ij·D_kl/(D_ik·D_jl) (inversive geometry, classical).
+  - That is the same group that keeps the Cauchy family (R359) and that SRB found behind the boost's composition.
+  - The sorting is ours; the arithmetic is classical.

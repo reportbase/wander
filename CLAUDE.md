@@ -504,6 +504,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   committed predictions): strides settle only while shorter than the meeting distance, one round late halves the safe
   share, Cauchy heat leaves the pair wandering as wide as one read. README row ("thirty essays"), `essays.html` card,
   smoke count 30 (not run). Nothing in *Reads and Writes*.
+  MRL (`plans/mrl-plan.md` + `runs/mrl/`, 17 Nov; SPN R1070; Tom: "systems interact with each other with reads and
+  writes"; "the combinitorial complexity is massive, but there are laws that collapse that complexity."): exact, predictions
+  first. Mutual readings s_ij = (H_j/d_ij)/t_i: the product shared, the ratio owned (q = H·t, a write; loops close to 1);
+  w(s_A)·w(s_B) = −1 exactly at the pair's corner, where every odd increasing exchange rule rests (a fixed stride on an
+  interval). L4 killed by my count: N(N − 1) readings carry 4N − 7 numbers (plane), 5N − 11 (space), positions fixed only
+  up to Möbius maps (cross ratios); run 2's L4′ not killed, L4″ killed by my factor. Classical; the sorting ours.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.
