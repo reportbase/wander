@@ -489,7 +489,40 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   not in a read; reads are always current because the painting is continuously painted; each thing reads from its own
   standpoint and writes its own state, so a read reads another's writes, made from its read of another's. Shown in POL;
   for natural processes expected, untested. "Reads" is the geometry of a standpoint, never awareness. *Reads and Writes*
-  §1 "Whose writes", D4. R1066 (Tom: "Update the essays and merge"): in essay 1 §2 and essay 22 §10.
+  §1 "Whose writes", D4. R1066 (Tom: "Update the essays and merge"): in essay 1 §2 and essay 22 §10. R1067 (Tom: "Update the demos"): notes on `pool.html` and
+  `write.html` and their `demos.html` cards.
+  MUT (`plans/mut-plan.md` + `runs/mut/`, 17 Nov; SPN R1068; Tom: "every reader / writer is reading and writing each other
+  based on their geometric heat"; "geometric laws collapse infinite complexity into a inevitable single conclusion"; "explore
+  this somehow with H V and h v"): exact, predictions first. Two things, readings s_A = (H_B/d)/t_A, s_B = (H_A/d)/t_B, each
+  stepping a share of the gap in levels toward its own corner: the endless back-and-forth is one closed form, d* = √(d_A·d_B)
+  at equal shares (error |1 − 2α|^n exactly), where s_A·s_B = 1, the pair's corner neither reaches alone; unequal shares a
+  weighted geometric mean; N on a line one linear solve; overshoot no collapse; alternating a two-cycle. Run 1's M2 killed
+  by my code, run 2's M2b not. Post hoc: the gaps settle, the line walks on (shape fixed, place free). Not in any paper.
+  R1069 (Tom: "All of this is classical, it just iteration over the same core ideas to organize them."; "lets iterate
+  this in an essay first. i doubt it is so easily handled."): essay 30, `papers/essays/30-reading-each-other.md`, *Reading
+  each other* (a corridor dance), an iteration, not a result; checks made while writing (`runs/mut/mut3-checks.py`, not
+  committed predictions): strides settle only while shorter than the meeting distance, one round late halves the safe
+  share, Cauchy heat leaves the pair wandering as wide as one read. README row ("thirty essays"), `essays.html` card,
+  smoke count 30 (not run). Nothing in *Reads and Writes*.
+  MRL (`plans/mrl-plan.md` + `runs/mrl/`, 17 Nov; SPN R1070; Tom: "systems interact with each other with reads and
+  writes"; "the combinitorial complexity is massive, but there are laws that collapse that complexity."): exact, predictions
+  first. Mutual readings s_ij = (H_j/d_ij)/t_i: the product shared, the ratio owned (q = H·t, a write; loops close to 1);
+  w(s_A)·w(s_B) = −1 exactly at the pair's corner, where every odd increasing exchange rule rests (a fixed stride on an
+  interval). L4 killed by my count: N(N − 1) readings carry 4N − 7 numbers (plane), 5N − 11 (space), positions fixed only
+  up to Möbius maps (cross ratios); run 2's L4′ not killed, L4″ killed by my factor. Classical; the sorting ours.
+  R1071 (17 Nov; Tom: "Classical gives the tools, not the full explanation of what they mean, or how they combine."):
+  **the classical tools are not the explanation**; what they mean in a read or a write and how they combine is the
+  series' work. Still no novelty claimed for any result (R925). Essay 30 §12; MRL also in essay 30 §10.
+  TLP (`plans/tlp-plan.md` + `runs/tlp/`, 17 Nov; SPN R1072; Tom: "Yes, write the plan and run the test"): three systems
+  reading each other's directions, each in its own frame. Plane: the edge turn read from the mutual directions alone
+  (−z_ij/z_ji = f_j/f_i), the loop closing to 1, the three angle readings multiplying to −1; ranks 5 (plane), 11 (space).
+  Sphere: the loop comes back turned by the excess (area/R², an amount), a mutual exchange stopping with each edge off by
+  S/3, a cyclic one turning every frame α·S/3 a round for ever. T5 killed by my code, T5′ not. In essay 30 §11 (R1074).
+  MNY (`plans/mny-plan.md` + `runs/mny/`, 17 Nov; SPN R1073; Tom: "proceed with additional tests"): many observers. Edge
+  turns split into each observer's own facing (removable by exchange) and loop leftovers (E − N + 1 of them, each its
+  excess on a sphere, zero in the plane); a mutual rule settles at the leftovers alone, a one-way ring turns for ever. With
+  Cauchy reads a chain's gaps stay Cauchy, half-width γ·Σ_k |row of M^k·B|, 2.7 to 12.6 reads' widths, not one read's as
+  for a pair. B1 killed by my median tolerance, B1′ not. In essay 30 §11 (R1074; Tom: "update the essays and merge"); no paper.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.
@@ -4277,7 +4310,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     twenty-nine essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     thirty essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.

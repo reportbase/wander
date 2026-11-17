@@ -1,0 +1,6 @@
+L1: not killed  200 random pairs (plane and space): (s_ij s_ji)^2 = (d_ij* d_ji* / D_ij)^2 = (H_i H_j/(t_i t_j D_ij))^2 exactly
+L2: not killed  w(s)w(1/s) = -1 exactly on 200 pairs; w(s)w(a) = w(s (+) a) exactly on 200 pairs with sa != 1, of which 0 gave -1
+L2b: not killed  f=x/2: 1 rest point, at 1.5, |w_A w_B + 1| 0.0; f=tanh: 1 rest point, at 1.5, |w_A w_B + 1| 0.0; f=x^3/3: 1 rest point, at 1.5, |w_A w_B + 1| 0.0; f=atan: 1 rest point, at 1.5, |w_A w_B + 1| 0.0; f=sign: rest at 299 of 299 points between the corners, 0 of 4 outside
+L3: not killed  (s_ij/s_ji)^2 = (H_j t_j/(H_i t_i))^2 exactly; the product round every loop of 3, 4, 5 systems 1 exactly, plane and space, 40 loops each
+L4: KILLED  2D N=5: 20 readings, rank 13 (predicted 15); 2D N=10: 90 readings, rank 33 (predicted 35); 2D N=20: 380 readings, rank 73 (predicted 75); 3D N=5: 20 readings, rank 14 (predicted 17); 3D N=10: 90 readings, rank 39 (predicted 42); 3D N=20: 380 readings, rank 89 (predicted 92)
+L5: not killed  world scaled by random rational k: every reading unchanged exactly (so every product and loop), each q_i = H_i t_i moved by k
