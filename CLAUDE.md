@@ -527,6 +527,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   edge turn a read, each frame its observer's write, the loop reads held in order, composed by (s + a)/(1 − sa) with no π
   (HLX), the leftover no observer's and set by a size (the radius) no read gives; the theorem's total over a region the
   dual vantage's. Essay 13 §4 and essay 30 §11; no new claim.
+  R1076 (Tom: "add it to the read/write paper."): the same in *Reads and Writes* §8 after "Two boosts joined", with
+  TLP and MNY's loops among standpoints; Girard and Bonnet in the references.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.
