@@ -1497,6 +1497,34 @@ correction is −ε²/12 at every angle, the boost loop's (1/3 + cos φ/4)·ε²
 it enters with the premise that a change of standpoint by motion keeps the angles between nearby stars, so that every such
 map of the sky is a Möbius map (Liouville). **Checked** (TWG, to 10⁻⁵⁸); classical (Thomas 1926, Wigner 1939).
 
+**Gauss–Bonnet, from no standpoint and from one.** The theorem behind the two-turn loop's leftover is usually stated
+whole: the curvature added up over a region equals what its boundary falls short of being straight, so a spherical
+triangle's angles add to π plus its area over the radius squared (Girard 1629; Gauss 1828; Bonnet 1848), and over a
+closed surface the total is 2π times its Euler characteristic, 4π for the sphere. That statement holds the region at
+once, from no standpoint: it is the dual hemispherical vantage's, the blueprint's, and its total is a completion. From one
+standpoint the same fact is smaller. Each turn along the loop is read where it is taken: between two standpoints, the
+turn from one's frame to the other's is fixed by their two directions to each other alone (in the plane
+ρ = −z_ij/z_ji, no distance and no third party in it). Each frame is its own standpoint's write, a facing it holds and
+can change. The turns are composed in order round the loop by the slope rule (s + a)/(1 − sa), whose 1 − sa is where the
+curvature sits, and the question is only whether the loop comes home. A loop is therefore reads held together in order
+across standpoints, or one standpoint's earlier looks kept. Taken in fractions the composition needs no angle and no π:
+the leftover's half-slope squared comes out rational (HLX, §1 "Where π and e are content"), so the angle sum's π is a
+name. What is left over belongs to no one turn and no one frame. It is unmoved when the whole world is scaled, yet it is
+the loop's size against the world's radius of curvature, which no direction gives: a read meets it, a size sets it, and
+the plane, having no such radius, leaves nothing.
+
+With standpoints round the loop the same leftover sorts what an exchange of facings can do. In the plane three
+standpoints' turns multiply to exactly 1, their own readings of the angle each sees multiply to exactly −1 (the angle
+sum, read in three private frames), and an exchange of turns (each turning toward both neighbours, or toward the next
+only) brings the frames to agree; six mutual bearings carry 5 numbers in the plane and 11 in space. On the sphere the
+turns round a triangle add to its excess, with its sign set by the order, and the rules part: the mutual one stops with
+every edge still off by S/3, the one-way one turns every frame α·S/3 a round for ever. Among N standpoints the edge turns
+split into each one's own facing, which an exchange removes, and E − N + 1 loop leftovers, which none touches (the
+discrete Hodge decomposition of edge data); a mutual rule on any graph settles at the leftovers alone, at its Laplacian's
+rate, and a one-way ring circulates. **Checked** (TLP, MNY, exact at 50 digits; TLP's scaling check killed first by my
+code, a tangent right only on a unit sphere, then not). Classical (Girard, Gauss and Bonnet, holonomy, consensus on a
+graph); the sorting is ours.
+
 ## 9. Which numbers belong to whom
 
 **Rates, not angles.** A carpenter calls a roof "six in twelve", a road sign says "10%", a ramp is built "one in
@@ -2186,7 +2214,7 @@ cells: `plans/dyh-plan.md`, `runs/dyh/`. The Cauchy's routes: `plans/cauchy-rout
 reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `runs/txt/`. The read's math in slopes: `plans/slp-plan.md`, `runs/slp/`. The tower and two thumbs:
 `runs/two/two_thumbs.py`. Three thumbs at the crosshair: `plans/thm-plan.md`, `runs/thm/`. The shape swept:
 `plans/swp-plan.md`, `runs/swp/`. Three laws on the sphere: `plans/eul-plan.md`, `runs/eul/`. Euler's formula as a count of
-reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The two completions tested blind, and the odd sums: `plans/twc-plan.md`, `runs/twc/`. The distance between
+reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Loops among standpoints: `plans/tlp-plan.md`, `plans/mny-plan.md`, `runs/tlp/`, `runs/mny/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The two completions tested blind, and the odd sums: `plans/twc-plan.md`, `runs/twc/`. The distance between
 standpoints: `plans/frg-plan.md`, `runs/frg/frg.py`. A flat chart in space: `plans/flc-plan.md`, `runs/flc/`. Epicycles and
 aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The data cases:
 `plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`; each records its
@@ -2213,6 +2241,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
   A* 392, 45–57.
 - Bitter, T. and Dubbers, D. (1987). Manifestation of Berry's topological phase in neutron spin rotation. *Physical Review
   Letters* 59, 251–254.
+- Bonnet, O. (1848). Mémoire sur la théorie générale des surfaces. *Journal de l'École Polytechnique* 19, 1–146.
 - Boole, G. (1857). On the comparison of transcendents, with certain applications to the theory of definite
   integrals. *Philosophical Transactions of the Royal Society of London* 147, 745–803.
 - Borel, É. (1914). *Introduction géométrique à quelques théories physiques.* Gauthier-Villars, Paris.
@@ -2251,6 +2280,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
   Gottingensis Recentiores* 6, 99–146.
 - Gibbs, J. W. (1899). Fourier's series. *Nature* 59, 606.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.
+- Girard, A. (1629). *Invention nouvelle en l'algèbre.* Blaeuw, Amsterdam.
 - Gosset, W. S. ("Student") (1908). The probable error of a mean. *Biometrika* 6(1), 1–25.
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.
   *Physics Letters A* 128, 391–394.
