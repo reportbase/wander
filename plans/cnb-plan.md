@@ -40,3 +40,25 @@ Real guns (C_d varies with Mach, the shell spins and lifts, the ground and air v
 run. Linear drag. The spotter's triangulation.
 
 ## Runs
+
+**Run 1** (`runs/cnb/cnb.py`, output `runs/cnb/cnb-run1.txt`; scipy DOP853 at rtol 10⁻¹², the landing and the apex as
+events; the best slope by Brent's method on the range).
+- **C1 not killed.** In exact fractions at s = ¼, ½, ⅔, 1, 3/2, 4: range share 2s/(1 + s²), the same at 1/s, the apex at
+  ½ the range and s/4 high, seen at slope s/2; integrated, all to 10⁻¹⁰, landing slope −s; best s 0.99999999.
+- **C2 not killed.** Four (v₀, g, L) per β (from (1, 1) to (300, 1.62) and (0.02, 274)), every scale-free output within
+  1.3·10⁻¹¹.
+- **C3 not killed.** s* falls strictly from 0.99791 at β = 0.01 to 0.92192 at 0.48, 0.80002 at 2.07, 0.65170 at 8.86 and
+  0.46959 at 100.
+- **C4 not killed.** The flatter of each pair carries farther at every β: R(½)/R(2) 1.0256 at β = 0.1, 1.1638 at 1,
+  1.4258 at 10.
+- **C5 not killed.** At β = 1, s = 1: range 0.589 of v₀²/g, landing slope −1.556, the apex at 0.552 of the range, seen
+  from the cannon at slope 0.562 (vacuum 0.5).
+- **C6 not killed.** Radius doubled twice (β 4 → 2 → 1): s* 0.7318, 0.8035, 0.8686; the apex share at s = 1 0.6036, 0.5766,
+  0.5519, both toward the corner and ½.
+- **C7 killed, by my set-up.** (1 − s*)/β reads 0.2079, 0.2102, 0.2099, 0.2097, 0.2087 at β = 10⁻⁴ … 10⁻²: positive, but
+  not settled to three digits. At small β the maximum is flat, so a range good to 10⁻¹² fixes s* only to about 10⁻⁶,
+  which at β = 10⁻⁴ is a hundredth of the quantity read.
+
+**Run 2 prediction** (committed before run 2). C7′: s* found instead as the root of the range's central difference
+(step 10⁻⁴; the range to 10⁻¹², so the slope of the range to about 10⁻⁸ and s* to about 10⁻⁸). Then (1 − s*)/β at
+β = 10⁻⁴, 3·10⁻⁴, 10⁻³ agrees to three digits, between 0.205 and 0.215. *Killed* otherwise.

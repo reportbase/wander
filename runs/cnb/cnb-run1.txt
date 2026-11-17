@@ -1,0 +1,18 @@
+C1 exact and integrated: ok ; best s at beta 0: 0.9999999861
+C2 worst spread over four (v0, g, L) per beta: 1.27e-11 not killed
+C3 s* over beta: 0.01:0.99791 0.0162:0.99662 0.0264:0.99455 0.0428:0.99125 0.0695:0.98602 0.113:0.97789 0.183:0.96553 0.298:0.94737 0.483:0.92192 0.785:0.88835 1.27:0.84709 2.07:0.80002 3.36:0.74995 5.46:0.69976 8.86:0.65170 14.4:0.60714 23.4:0.56671 37.9:0.53047 61.6:0.49822 100:0.46959
+C3 not killed
+C4 not killed ; C5 not killed
+beta 1, s 1: R 0.589012 land -1.556048 apex share 0.551944 apex seen 0.562174
+  R(0.5)/R(2.0) at beta 0.1: 1.025631
+  R(0.5)/R(2.0) at beta 1: 1.163801
+  R(0.5)/R(2.0) at beta 10: 1.425830
+  R(1)/R(1.0) at beta 0.1: 1.000000
+  R(1)/R(1.0) at beta 1: 1.000000
+  R(1)/R(1.0) at beta 10: 1.000000
+C6 s* at beta 4,2,1: [np.float64(0.731775), np.float64(0.803458), np.float64(0.868598)] apex share at s=1: [np.float64(0.603594), np.float64(0.576568), np.float64(0.551944)] not killed
+C7 beta 0.0001: (1 - s*)/beta = 0.207879
+C7 beta 0.0003: (1 - s*)/beta = 0.210208
+C7 beta 0.001: (1 - s*)/beta = 0.209941
+C7 beta 0.003: (1 - s*)/beta = 0.209659
+C7 beta 0.01: (1 - s*)/beta = 0.208721
