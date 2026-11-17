@@ -344,13 +344,15 @@ general, not only for this map: it is the classical entropy of a chaotic map (Ko
 equality with the rate of parting).
 
 The same spending shows in a game of pool. Find each contact where the pair's readings reach h + v = 1, each ball
-in its own size, and a contact turns an error in the aim by A = s/(2r·cos φ), s the run before it, r the radius, φ the
-cut; read from the striker's start it is cos α/((h + v)·cos φ) − 1, and for a full hit 2^L − 1, where L = log₂(1/(h + v))
-is how far in binary digits the pair started from touching. So a contact spends as many binary digits of the aim as the
-pair started from contact. On an open table that is 1.5 to 2 digits a contact, and an aim off by a tenth of a degree
-misses half a pocket by the third contact; inside a rack, where the runs are shorter than the balls, a contact gains
+in its own size, and a contact multiplies an error in the aim, read as a slope, by A = s/(2r·√(1 − f²)), s the run
+before it, r the radius, f the line's offset from the object's centre as a share of 2r (the ghost ball's share), with the
+one square root and no angle; for a full hit, read from the striker's start, A = 1/(h + v) − 1, the gap still to close
+over the share closed, which is 2^L − 1, where L = log₂(1/(h + v)) is how far in binary digits the pair started from
+touching. (The blueprint writes the cut as an angle φ and the factor as s/(2r·cos φ).) So a contact spends as many binary digits of the aim as the
+pair started from contact. On an open table that is 1.5 to 2 digits a contact, and an aim off by one part in 570
+misses half a pocket (one in 16) by the third contact; inside a rack, where the runs are shorter than the balls, a contact gains
 digits and the cluster forgets the aim (POL runs 8–9, every contact and chain to rounding once contact was made exact).
-The sensitivity is the geometry's, a ratio of angles read from the striker's start; what runs out is the aim, put down to
+The sensitivity is the geometry's, a ratio of slopes and shares read from the striker's start; what runs out is the aim, put down to
 finitely many digits.
 
 Two limits. This is one map, and its close relatives; at other settings of the logistic map there is no such sweep

@@ -533,6 +533,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   three things (product shared, ratio owned, sum the contact h + v = 1); a contact spends about the binary digits the pair
   started from touching (s/(2r·cos φ), 2^L − 1). *Reads and Writes* §1, §9, physics §10, essays 30 §10 and 21 §9.
   R1078 (Tom: "update the demos"): notes on `pool.html` and `plane-sphere.html`, and their and trick shots' `demos.html` cards.
+  R1079 (Tom: "i notice you used trig", "yes, fix it and merge"): the pool text in slopes and shares, s/(2r·√(1 − f²)),
+  1/(h + v) − 1 for a full hit, the cos φ form marked the blueprint's; no "60°" or "degree".
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.

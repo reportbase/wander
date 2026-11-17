@@ -1980,10 +1980,14 @@ can follow the orbit (the CHS plan, Code and data, exact).
 
 So the rule is fixed and free, and the orbit is determined; what gives out is the count. Unpredictability here is a
 statement about what a count can hold, one binary digit a step, not about the rule or the law. The same
-spending shows in a game of pool played from inside: a contact turns an error in the aim by s/(2r·cos φ), for a full hit
-2^L − 1 with L = log₂(1/(h + v)) the binary digits the pair started from touching, so each contact spends about as many
-digits of the aim as the pair was from contact; on an open table 1.5 to 2 a contact, a tenth of a degree past half a
-pocket by the third, while inside a rack contacts gain digits. The sensitivity is a ratio of angles, the geometry's; what
+spending shows in a game of pool played from inside: a contact multiplies an error in the aim, read
+as a slope, by s/(2r·√(1 − f²)), s the run before it, r the radius and f the line's offset from the object's centre as a
+share of 2r (the ghost ball's share), the one square root; for a full hit, read from the striker's start, it is
+1/(h + v) − 1 = (1 − (h + v))/(h + v), the gap still to close over the share closed, which is 2^L − 1 with
+L = log₂(1/(h + v)) the binary digits the pair started from touching. So each contact spends about as many digits of the
+aim as the pair was from contact; on an open table 1.5 to 2 a contact, an aim off by one part in 570 past one in 16 (half
+a pocket) by the third, while inside a rack contacts gain digits. (The blueprint writes the cut as an angle φ,
+s/(2r·cos φ).) The sensitivity is a ratio of slopes and shares, the geometry's; what
 runs out is the aim, a write to finitely many digits. **Checked** (POL runs 8–9, to rounding). And the
 Cauchy is seen a second way: it is the heat of one sweep, and it is also the one law a turn added to itself, again
 and again, leaves as it was.
