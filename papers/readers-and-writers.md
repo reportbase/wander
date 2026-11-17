@@ -100,6 +100,13 @@ directions and slopes with no scale; it says nothing of awareness. It is shown w
 inside each ball, POL: each ball reads the others' directions and writes its own contact at h + v = 1 in its own size,
 and the game is the referee's to rounding); that natural processes do it throughout is expected, not tested.
 
+The pool table also shows one pair of mutual readings giving three things. Ball A reads B as v = r_B/d and is told B's
+reading h = r_A/d. Their product r_A·r_B/d² is shared, the same from either side; their ratio v/h = r_B/r_A is the sizes,
+each ball's own, told once; their sum decides contact, h + v = 1, the ℓ₁ cut of the pair's two shares, equal balls
+touching at the corner. All three are unmoved by scaling the world. The product and the ratio are the laws between
+systems found exactly in MRL; the sum is the pair's own contact. **Checked** (POL runs 1 and 9, every contact on
+h + v = 1 to 2·10⁻¹⁶; POR).
+
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
 | **continuous** | reading: a read, and what reads held together give, an extent or a map | the number line in a unit |
@@ -1972,7 +1979,12 @@ can follow the orbit (the CHS plan, Code and data, exact).
 | the blueprint | the direction whole: every step, and the cycles, which sit at turns that are rational parts of Ω |
 
 So the rule is fixed and free, and the orbit is determined; what gives out is the count. Unpredictability here is a
-statement about what a count can hold, one binary digit a step, not about the rule or the law. And the
+statement about what a count can hold, one binary digit a step, not about the rule or the law. The same
+spending shows in a game of pool played from inside: a contact turns an error in the aim by s/(2r·cos φ), for a full hit
+2^L − 1 with L = log₂(1/(h + v)) the binary digits the pair started from touching, so each contact spends about as many
+digits of the aim as the pair was from contact; on an open table 1.5 to 2 a contact, a tenth of a degree past half a
+pocket by the third, while inside a rack contacts gain digits. The sensitivity is a ratio of angles, the geometry's; what
+runs out is the aim, a write to finitely many digits. **Checked** (POL runs 8–9, to rounding). And the
 Cauchy is seen a second way: it is the heat of one sweep, and it is also the one law a turn added to itself, again
 and again, leaves as it was.
 
