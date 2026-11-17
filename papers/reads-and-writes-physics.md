@@ -668,9 +668,10 @@ Each simulation here is checked against a referee that computes the known physic
   standpoints' reads; equal balls touch at the corner. A cushion is a ball meeting its own mirror image, always at the
   corner. Played from inside, each ball in its own size, a game of pool equals the referee's to rounding, and scaling the
   world moves no reading and no contact. The pair's product r_a·r_b/d² is shared and its ratio r_b/r_a owned (MRL's two
-  laws); the sum is contact. A contact turns an aim error by s/(2r·cos φ), for a full hit 2^L − 1 with
+  laws); the sum is contact. A contact multiplies an aim error (a slope) by s/(2r·√(1 − f²)), f the line's offset
+  from the object's centre over 2r (the blueprint's s/(2r·cos φ)); for a full hit 1/(h + v) − 1 = 2^L − 1 with
   L = log₂(1/(h + v)), so each contact spends about the binary digits the pair started from touching: 1.5 to 2 a contact
-  on an open table, a tenth of a degree past half a pocket by the third; inside a rack contacts gain digits (POL runs
+  on an open table, one part in 570 past one in 16 (half a pocket) by the third; inside a rack contacts gain digits (POL runs
   8–9). [simulation]
 - **Cooling counted in contacts.** Five hundred smooth inelastic spheres, contact found where h + v = 1. Per contact per
   sphere the temperature falls by (1 − e²)/3 of itself to 0.8% wherever the gas stays even (Haff 1983). Density,
