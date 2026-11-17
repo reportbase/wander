@@ -513,6 +513,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R1071 (17 Nov; Tom: "Classical gives the tools, not the full explanation of what they mean, or how they combine."):
   **the classical tools are not the explanation**; what they mean in a read or a write and how they combine is the
   series' work. Still no novelty claimed for any result (R925). Essay 30 §12; MRL also in essay 30 §10.
+  TLP (`plans/tlp-plan.md` + `runs/tlp/`, 17 Nov; SPN R1072; Tom: "Yes, write the plan and run the test"): three systems
+  reading each other's directions, each in its own frame. Plane: the edge turn read from the mutual directions alone
+  (−z_ij/z_ji = f_j/f_i), the loop closing to 1, the three angle readings multiplying to −1; ranks 5 (plane), 11 (space).
+  Sphere: the loop comes back turned by the excess (area/R², an amount), a mutual exchange stopping with each edge off by
+  S/3, a cyclic one turning every frame α·S/3 a round for ever. T5 killed by my code, T5′ not. Not yet in essay 30.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.

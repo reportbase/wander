@@ -89,3 +89,24 @@ sphere under the cyclic rule.
 **Run 2 prediction** (committed before run 2):
 - **T5′.** With the tangent P_j − (P_i·P_j/|P_i|²)·P_i and the frame's second axis P_i × e_i/|P_i|, scaling the whole
   world (sphere and places) by 7, 1/3 and 1000 leaves S unchanged to 10⁻⁴⁰ for 20 random triangles and frames.
+
+**Run 2** (`runs/tlp/tlp2.py`, output `runs/tlp/tlp-run2.txt`). **T5′ not killed**: scaling the world by 7, 1/3 and 1000
+moved S by at most 2·10⁻⁶⁰ on 20 triangles.
+
+**What the runs show.**
+- **In the plane the loop closes, and the exchange settles.** Each edge's turn between two frames is read from the two
+  mutual directions alone (ρ = −z_ij/z_ji): the distance cancels, and so does every other system. Round the triangle the
+  turns multiply to 1, a cocycle with a potential (each system's own facing), so both rules bring the frames to agree.
+- **Euler's −1 is the triangle's angle sum, read from three private frames.** The three systems' own angle readings
+  multiply to −1 exactly, whatever their frames.
+- **The count.** Six mutual bearings carry 5 numbers in the plane, 11 of 12 in space: everything but one turn, the
+  translations and one scale, with the angle sum the one relation.
+- **On the sphere the loop comes back turned, by the area.** The turns round the triangle add to the spherical excess,
+  the same in every frame and changing sign with the loop's order. The mutual rule then stops with every edge left
+  disagreeing by S/3; the cyclic rule never stops, every frame turning α·S/3 a round for ever.
+- **The turn needs an amount.** Scaling the whole world moves nothing; the excess is area/R², the triangle against the
+  sphere's radius. In the plane there is no such amount, and no turn is left.
+- **Classical**: Girard's theorem and Gauss–Bonnet, holonomy, the cycle's Laplacian and consensus rates, frustrated
+  cyclic consensus. The sorting is ours (R1071): the turn on an edge is read; the loop's leftover is the world's
+  curvature, which a read meets but a size sets; whether the exchange settles or turns for ever is the rule, each
+  system's own write.
