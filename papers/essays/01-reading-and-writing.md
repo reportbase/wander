@@ -95,6 +95,17 @@ A count, "three trees", "514 strides", is discrete and unmoved: the strides are 
 over them, and what is kept of it is kept as things (marks, pebbles), each a write. A length as an exact number in a
 unit, or the circle held whole at a size, is continuous and moved: the blueprint, set beside the two acts for comparison.
 
+A write belongs to whoever made it. The world we read is painted without pause, so every read meets it as it is now;
+what we set down about it, a count, a measured amount, a record, is ours, not the world's. And the world reads and writes
+too. Each thing in it reads its surroundings from its own standpoint and, from that read, writes its own state: the
+stone's size is the stone's write, the stride counted is the walker's. So a read reads the writes of another, which were
+written from that one's read of another's writes, and no one holds the whole. How the paint was made, or how it got here,
+is in no read: a read holds its heat and the paint on it, and any account of the paint's journey (a lamp, a window, a
+paint gun) is told from no standpoint, the blueprint's. "Reads" here names the geometry of a standpoint, what arrives as
+directions and slopes with no scale, never awareness. It has been built and checked where each pool ball reads the
+others and writes its own contact at h + v = 1 (pool played from inside, `pool.html`, POL); that natural processes do it throughout is expected, not tested
+(*Reads and Writes* §1, "Whose writes").
+
 Among acts the two properties are one. A thing that is discrete has a boundary, so it has a size, so scaling moves it;
 a direction has no boundary and no size. Discreteness has no face (essay 26): a write has scale and size and faces
 nothing; a read has no scale and no size, and it is a face. That is exactly what reads and writes are. The read is the

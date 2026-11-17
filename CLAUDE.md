@@ -489,7 +489,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   not in a read; reads are always current because the painting is continuously painted; each thing reads from its own
   standpoint and writes its own state, so a read reads another's writes, made from its read of another's. Shown in POL;
   for natural processes expected, untested. "Reads" is the geometry of a standpoint, never awareness. *Reads and Writes*
-  §1 "Whose writes", D4.
+  §1 "Whose writes", D4. R1066 (Tom: "Update the essays and merge"): in essay 1 §2 and essay 22 §10.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.
