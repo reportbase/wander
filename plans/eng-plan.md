@@ -109,3 +109,22 @@ Math trig and root call counted and attributed by its call stack).
   what the share decides. By R1062 the forms agree; what differs is what each needs: the share needs a division, the
   multiplied form needs both amounts in one unit.
 - Classical in every part (impulse contact, Coulomb friction, a fixed-step integrator); the sorting is ours (R1062).
+
+**Run 2 prediction** (committed before run 2; Tom: "run the varient and merge"). Run 1 found the engine's two referee
+jobs: the stop (`moving()` over all balls) and the order (pairs written one after another in index order). Run 2 takes
+them off it in a copy of the page served by the script (the page itself unchanged), and plays the same 60 shots:
+- *own stop*: no look over all balls; the integrator runs the full cap (2,700 frames) and each ball's own state alone
+  decides whether it does anything;
+- *together*: within a substep every pair is resolved from the state at the substep's start, and each ball's changes
+  from all its pairs are added at the end (Jacobi), so no pair sees another's write;
+- *reversed*: the balls taken in reverse index order, with either rule.
+
+- **V1.** With the own stop, every ball's final x, z and pocket are bitwise equal to the original on all 60 shots, and all
+  15 challenges' reference shots still solve. *Killed* by any difference.
+- **V2.** Together, on every shot in which no ball has two contacts in one substep, the final state is bitwise equal to
+  the original. *Killed* by any difference on such a shot.
+- **V3.** Together, at least 13 of the 15 reference shots still solve. *Killed* if fewer. Measured: how many shots have a
+  substep with a ball in two contacts, and how far their outcomes move.
+- **V4.** The original rule is order-dependent and the together rule is not: reversing the order moves some ball's final
+  place by more than 10⁻⁶ on at least one shot under the original rule, and under the together rule leaves every ball's
+  final place within 10⁻⁹ on at least 90% of the 60 shots. *Killed* otherwise.
