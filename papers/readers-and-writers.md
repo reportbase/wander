@@ -699,7 +699,7 @@ scales it by 1/D, the ring moved at most 0.05 μas); the second and third stayed
 diameter moving with the emission model by up to a quarter, and the test that would part them is the photon subrings,
 light that went round once more, set by the hole's geometry whatever the gas does, not resolved by the present array.
 Curved spacetime is the hole's own geometry, not a rival to observation geometry; observation geometry is prior to
-physics and keeps its own rules wherever physics has another geometry. Observation geometry belongs to the standpoint, not to what is observed: it is the same for every object read from that standpoint, and a thing's own geometry decides what is met within it, never the geometry of the read; what changes it is the observer's own state (a boost), not the thing. **Reading** (the EHO numbers **checked**).
+physics and keeps its own rules wherever physics has another geometry. Observation geometry belongs to the standpoint, not to what is observed: it is the same for every object read from that standpoint, and a thing's own geometry decides what is met within it, never the geometry of the read; what changes it is the observer's own state (a boost), not the thing. It is least visible where an observation is aimed: at the focus the lay is uniform to first order, the finest relative grain (§6), so the observer's geometry enters there only at second order and grows off the look (on the equal-area screen about the look, radial scale cos(α/2): 0.9% off at 15°, 3.4% at 30°, 7.6% at 45°); over a small field it is negligible, as at M87*, where the whole ring spans 42 μas. Negligible is not absent. **Reading** (the EHO numbers **checked**).
 
 ## 3. Up: the read
 
