@@ -576,6 +576,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  CLC (`plans/clc-plan.md` + `runs/clc/`, 18 Nov; SPN R1099; Tom: "Let's compare shv to calculus."): exact, predictions
+  first. Rational derivatives by dual numbers (κ = 0) with no limit, the chain rule the tower; only the first derivative of
+  one length on another unmoved by scaling (dⁿy/dxⁿ as k^(1−n)): a slope a read, higher orders and clock rates writes;
+  integration leaves the rationals (a log part, ln or arctan, every generic case); the fundamental theorem exact as
+  telescoping, the integrand's sum off by 1/n. Run 1's D1, D2, I2 killed by my code, run 2 not. Not in any paper.
   R1098 (18 Nov; Tom: "cauchy is actually the even turn of the shapes center of gravity"): **the Cauchy is the even turn
   about the look; aimed at the shape it is centred on it; the shape's centre of gravity is the density's (a mean, the
   payload's), not the Cauchy's (its centre a median, the corner).** *Reads and Writes* §1. Never give the Cauchy a mean or

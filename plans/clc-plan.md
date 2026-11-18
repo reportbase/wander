@@ -58,3 +58,29 @@ result: I1's count (if random rational functions often have rational antiderivat
 
 ## Runs
 
+**Run 1** (`runs/clc/clc.py`, output `runs/clc/clc-run1.txt`). D1 killed by my code (296 of 300), D2 killed by my code
+(193 of 200 against sympy; 200 of 200 against the product of the links), I2 killed by my code (82 of 100): I compared
+with `sympy.nsimplify`, which approximates a large fraction through a float and so called equal values unequal, and I
+passed improper fractions (numerator degree ≥ denominator degree) to `ratint_ratpart`, which expects the polynomial
+part divided off first and left its unknown coefficients unsolved. S1 (first derivative unmoved 300 of 300, higher
+orders moved 900 of 900), S2 (time-rates moved by k 1,196 of 1,196, their ratios unmoved 1,196 of 1,196), I1 (no
+antiderivative rational, 0 of 200; every derivative rational, 200 of 200) and F1 (telescoping exact 100 of 100;
+Riemann sums inexact 100 of 100; Euler–Maclaurin's n·error within 5% at n = 1000 in 99 of 100) not killed.
+F1's Riemann clause was run at one partition, n = 7, not at every n from 1 to 50; my set-up, stated here.
+
+**Run 2** (`runs/clc/clc2.py`, output `runs/clc/clc-run2.txt`; the same seed and cases, comparisons by `sp.Rational`
+and `sp.cancel`, the polynomial part divided off before Hermite's reduction). Nothing killed: D1 300 of 300, D2 200
+of 200 (and 200 of 200 against the links' product), S1 and S2 as run 1, I1 0 of 200 rational and 200 of 200
+derivatives rational, I2 100 of 100 back to f with a nonzero log part in 100 of 100, F1 as run 1.
+
+**What it shows.** Within the rational functions, differentiation is algebra on fractions with ε² = 0, the stride
+kind: no limit is taken, and the chain rule's dual parts multiply link by link, the middle cancelling (the tower).
+Only the first derivative of one length against another is unmoved by scaling the world (dⁿy/dxⁿ moves as k^(1−n)),
+so a slope is a read and curvature, acceleration and every higher order a write; a rate against the clock is a write
+at every order, and only ratios of rates of one order are unmoved. Integration leaves the rationals: Hermite's
+rational part is had in rational arithmetic, but every one of 200 generic cases (300 with I2) kept a log part, which
+needs ln or arctan, the completions. The fundamental theorem is exact as telescoping at every partition; the integrand's
+own sum misses at every finite n by Euler–Maclaurin's −(b − a)(f(b) − f(a))/(2n), so the limit is needed only where the
+integrand is summed in place of the antiderivative's differences. Classical throughout; the sorting ours. I1's count was
+the one prediction that could fail as a result; the rest are identities checked, which could fail only by my code, as
+run 1 did.
