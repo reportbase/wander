@@ -142,8 +142,8 @@ share squared, 9/25. That quantity, 1/(1 + s²), is the heat of essay 2: the Cau
 one equation taken in terms of two different things from inside it.
 
 They do not cost the same. The slope needs nothing but the two lengths against each other. The shares need the 5,
-which is a square root of the two together, and in general no fraction: that is the blueprint's construction, as essay 15
-has it. And the circle held whole, closed and with every sign, is the blueprint's altogether: classical
+which is a square root of the two together, and in general no fraction: that is the construction of the dual hemispherical vantage (DHV), as essay 15
+has it. And the circle held whole, closed and with every sign, is the DHV's altogether: classical
 geometry's circle, seen from no standpoint, set here for comparison. A read has the slope and
 its heat.
 

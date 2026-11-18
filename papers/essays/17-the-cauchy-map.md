@@ -42,14 +42,14 @@ that 60°. That heat map is the two-dimensional Cauchy,
 
   1/(2π(1 + r²)^(3/2)) per unit of glass,
 
-falling, in the blueprint's angle α off the look, as cos³α. (The blueprint is classical geometry's view from no
-standpoint; it is set beside the read for comparison.)
+falling, in the dual hemispherical vantage's angle α off the look, as cos³α. (The dual hemispherical vantage, DHV for
+short, is classical geometry's view from no standpoint; it is set beside the read for comparison.)
 
 That is the map on the flat screen. Drawn on another chart the same looking makes another curve: the stereographic
 chart of the whole sky gives (1/π)/(1 + |z|²)², which is not this one. The cos³ belongs to the screen square to the look.
 
 In the plane, with one thumb instead of two crossed, the same construction gives the familiar Cauchy, (2/π)/(1 + s²) per
-unit of the reading s = v/h (falling as cos²θ, in the blueprint's angle).
+unit of the reading s = v/h (falling as cos²θ, in the DHV's angle).
 
 Three things are worth saying about this map at once.
 
@@ -75,7 +75,7 @@ Start with the measure that treats every direction alike: uniform by angle in th
 That is the turn's own measure, the one the hand sweeps with no clock and no ruler (essays 2 and 14). It has no heat: on
 the hemisphere, by angle, every direction weighs the same.
 
-The heat appears when the directions are read in a coordinate. The derivation is the blueprint's, in angles. In the plane, a
+The heat appears when the directions are read in a coordinate. The derivation belongs to the dual hemispherical vantage, in angles. In the plane, a
 direction θ off home reads s = v/h = tan θ, and
 
   dθ = ds/(1 + s²) = cos²θ · ds.
@@ -101,8 +101,8 @@ is.
 
 There is an easy way to get this backward, and it is worth getting it wrong once on purpose.
 
-Suppose the world in front of you is a wall of tiles, evenly spaced: a Cartesian grid, a blueprint's grid, so many tiles a
-metre. Is the Cauchy the way that grid looks from where you stand?
+Suppose the world in front of you is a wall of tiles, evenly spaced: a Cartesian grid, the grid of the dual hemispherical vantage
+(DHV), so many tiles a metre. Is the Cauchy the way that grid looks from where you stand?
 
 No. Tiles on a wall d away sit at y = d·s, so in the reading s they are spaced evenly; on the glass they are flat. Per unit
 of angle they are not flat: they crowd toward the horizon, as sec²θ in the plane and sec³α on a wall in space, because a
@@ -112,8 +112,8 @@ The Cauchy is the other way round: the even turn laid on that flat grid,
 
   dθ/ds = 1/(1 + s²),  dΩ/dA = cos³α,
 
-the turn per unit of the blueprint's grid. It is a rate, the *per* of essay 14: how much of the looking per tile. The tiles
-are the blueprint's; the turn is the read's; the Cauchy is how one sits on the other. It belongs neither to the wall alone
+the turn per unit of the DHV's grid. It is a rate, the *per* of essay 14: how much of the looking per tile. The tiles
+are the DHV's; the turn is the read's; the Cauchy is how one sits on the other. It belongs neither to the wall alone
 nor to the eye alone: it is the rate at which a turn consumes the world. It is not the layout of the world.
 
 ## 4. The same map, from a walker
@@ -228,7 +228,7 @@ read along distance instead of across directions.
 
 Both bells are counts per unit of something, and change with it. Per unit of turn the first map is flat; it is cos²θ
 only per unit of the reading. Per unit of the thumb's lay, (2/π)·arctan(d/H), the second is flat too; it is sech only per
-unit of ln(d/H). A blueprint that wraps the plane onto a sphere with one thumb on its equator shows why: the lay is the
+unit of ln(d/H). A representation that wraps the plane onto a sphere with one thumb on its equator shows why: the lay is the
 latitude drawn evenly, sech(ln(d/H)) is the cosine of the latitude, and the logarithm is Mercator's chart of the same
 sphere, which stretches it (`euler.html`). No chart gives the heat of itself; the lay drawn square, turn against lay, is
 where the read is flat both ways, and the product below is a choice of counts, the one that puts the hot spot on the thing

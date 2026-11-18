@@ -14,12 +14,12 @@ are two different paces, and no pace is both.
 
 The series has two ideas, reading against writing and the Cauchy, and two tests, scale the world and change what
 arrives. Here the first idea is taken down a single road. Look, stride, look: the look is a read, the stride is a write,
-the smallest there is, with the count a description laid over the strides, and the road from far off to the door is, in the blueprint's notation, half of Euler's
-circle, with −1 at the door. (The blueprint is classical geometry's view from no standpoint; it is here for
+the smallest there is, with the count a description laid over the strides, and the road from far off to the door is, in the notation of the dual hemispherical vantage (DHV), half of Euler's
+circle, with −1 at the door. (The DHV is classical geometry's view from no standpoint; it is here for
 comparison, and the road is all reads and writes.)
 
 The order: the scene (§1), one look (§2), two looks and a stride (§3), the even ladder (§4), the other pace (§5), the
-blueprint's circle (§6), a chain of looks and where the infinite is (§7), what is free, what is kept and what is carried in
+DHV's circle (§6), a chain of looks and where the infinite is (§7), what is free, what is kept and what is carried in
 (§8), in space (§9), who saw which piece (§10), and what it changes (§11).
 
 ---
@@ -130,9 +130,9 @@ bees landing on a wall or a flower were found to hold the image's rate of expans
 the distance left (Baird et al. 2013). Those are findings about bees, and theirs. The claim here is the smaller one,
 and it is about the geometry: both paces are built from the same looks, and the looks cost nothing.
 
-## 6. The blueprint's circle
+## 6. The dual hemispherical vantage's circle
 
-The blueprint has one picture for all of this, and it is Euler's.
+The DHV has one picture for all of this, and it is Euler's.
 
 Put each reading s on the number
 
@@ -142,13 +142,13 @@ Every such Z lies on the circle of radius 1. Far off, where s is near nothing, Z
 At the door, where s grows without end, Z goes to −1. So the whole road, from far off to the door, is the upper half of
 that circle, travelled from 1 through i to −1.
 
-The blueprint names the point by an angle and gives the end of the road as e^(iπ) = −1. Read on the road, Euler's identity
+The DHV names the point by an angle and gives the end of the road as e^(iπ) = −1. Read on the road, Euler's identity
 is the arrival. The corner is i, and i times i is −1: the corner, taken twice, is the arrival. And a place and its
 mirror, the place at distance d and the place at the corner's distance squared over d, have readings s and 1/s, and
 
   Z(s) · Z(1/s) = −1
 
-for every s. None of that needed the angle. It is rational in the reading. The angle, and π with it, are the blueprint's
+for every s. None of that needed the angle. It is rational in the reading. The angle, and π with it, are the DHV's
 way of naming where on the circle a reading falls.
 
 On this circle the three things a walker can do are three different kinds of motion, and the kinds are classical.
@@ -182,7 +182,7 @@ vanishing step.
 
 There is one place where a step must shrink. If, instead of joining the slopes, you add them as though they were angles,
 the sum comes out too large, by an amount that falls as the square of the stride, a quarter each time the stride is
-halved. The angle is that sum's limit. Joining is exact at any stride and belongs to the geometry. Adding is the blueprint's,
+halved. The angle is that sum's limit. Joining is exact at any stride and belongs to the geometry. Adding is the dual hemispherical vantage's,
 and the limit comes with it.
 
 ## 8. What is free, what is kept, what is carried in
@@ -313,7 +313,7 @@ them is its own.
 
 **Demos.** `approach.html` (the walk with the thumb held out: the reading, the corner found by looking, the strides
 counted from the corner, the two paces), `mountain.html` ("walk one thumb": two looks and one step give the distance and
-the breadth), `one-read.html` (the reading on the blueprint's circle, 1, i and −1), `euler.html` (the fixed share as a slide
+the breadth), `one-read.html` (the reading on the dual hemispherical vantage's circle, 1, i and −1), `euler.html` (the fixed share as a slide
 on Euler's plane; n reads).
 
 ## Sources

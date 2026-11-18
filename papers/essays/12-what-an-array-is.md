@@ -83,12 +83,12 @@ other's breadth, stands.
   line of sight, is the Cauchy whatever the apple's shape, which is only the paint. And the hand holds the back while the
   eye holds the front, so in the hand the apple's V is **known**. This is the holding above.
 - *The human draws a circle on the paper.* This fourth is the comparison, classical geometry's circle. The view of both
-  hemispheres is made, not seen: a mark holding both halves at once, the dual hemispherical vantage, from no standpoint and so with no facing, neither read nor
-  write, the blueprint. A read, from a single hemispherical vantage, has the near reading s = v/h and the far reading
-  1/s = h/v; the blueprint, with no facing, has the number 1. The two readings multiply to 1 at every reading; that is
-  arithmetic, not a way of making the blueprint from reads. The apple reads and is read; only the human draws a blueprint.
+  hemispheres is made, not seen: a mark holding both halves at once, the dual hemispherical vantage (DHV), from no standpoint and so with no facing,
+  neither read nor write. A read, from a single hemispherical vantage, has the near reading s = v/h and the far reading
+  1/s = h/v; the DHV, with no facing, has the number 1. The two readings multiply to 1 at every reading; that is
+  arithmetic, not a way of making the DHV from reads. The apple reads and is read; only the human draws a representation.
 
-The human is all four at the same time, not by turns: it reads the universe, faces the apple, and holds as a blueprint what it
+The human is all four at the same time, not by turns: it reads the universe, faces the apple, and holds as a representation what it
 holds in the hand or draws.
 
 V is knowable, not known: the universe's horizon is only approached, a bounded thing's rim is reached at a point by
@@ -114,7 +114,7 @@ slot. The direction whose slope from the foot is s lands at
 
   i = m + γ·s
 
-(in the blueprint's angle θ, counted from the foot, s = tan θ).
+(in θ, the angle of the dual hemispherical vantage, counted from the foot, s = tan θ).
 
 Two things come with the standpoint, and only two.
 
@@ -142,7 +142,7 @@ first ten slots.
 What happens at the far end of the sweep depends on whether there is an N to reach.
 
 If there is one, and the read simply does not hold it, the paint stops. Past the last slot the directions meet
-nothing. With the foot at 0 and γ = 1, an array of 10 slots fills the turn up to the share (the blueprint's formula)
+nothing. With the foot at 0 and γ = 1, an array of 10 slots fills the turn up to the share (the dual hemispherical vantage's formula)
 
   g = (2/π)·arctan(10/1) ≈ 0.937,
 
@@ -150,7 +150,7 @@ and the last 6% of the turn runs past the end. Where the paint stops can be seen
 
   s = N/γ
 
-(the blueprint's tan(πg/2)).
+(the DHV's tan(πg/2)).
 
 It reads N/γ, never N. Double the array to 20 slots and the paint stops at 0.968 instead. Nothing else in the read's
 view moves. A read has the array's length only as a ratio to its own breadth, as it has a mountain only in
@@ -193,17 +193,17 @@ A read has two readings of each direction. Facing V, the near reading s = v/h gi
 V, the far reading 1/s = h/v gives H in terms of V. They multiply to 1 at every reading, and they meet at 1 at the
 corner, where s = 1/s = 1. The heat below the corner equals the heat above it.
 
-The blueprint, in angles, compares the arc with its chord (these numbers carry π, the blueprint's; the fourteenth
-essay). Arc over chord, θ/sin θ, is 1 at the start, 1.1107 at the corner and π/2 at the end; chord over arc, sin θ/θ,
+The dual hemispherical vantage (DHV), in angles, compares the arc with its chord (these numbers carry π, the DHV's; the
+fourteenth essay). Arc over chord, θ/sin θ, is 1 at the start, 1.1107 at the corner and π/2 at the end; chord over arc, sin θ/θ,
 is 1, 0.9003 and 2/π. Their product is 1 at every θ, but they never meet at 1 at the corner. Neither is a facing or a
 read: both need the angle and π.
 
 Where π/2 and 2/π belong is the horizon. The total of the heat, ∫₀^∞ ds/(1 + s²), is π/2, approached by a count and
 never reached; 2/π is the mean share. They are limits at the horizon, not rates.
 
-So the blueprint has three numbers for the one chord, one held and two measured:
+So the DHV has three numbers for the one chord, one held and two measured:
 
-| | how it has the chord | the blueprint's number |
+| | how it has the chord | the DHV's number |
 |---|---|---|
 | a counted walk | walks it | 1, an amount, held |
 | arc over chord | θ/sin θ, in angles | π/2, a limit at the horizon |
@@ -213,8 +213,8 @@ So the blueprint has three numbers for the one chord, one held and two measured:
 
 ## 6. Laying an array on the quarter turn, and who can
 
-There is a neat construction that seems to give a read its way into any array. It turns out to be the blueprint's,
-and seeing why is the point of this section.
+There is a neat construction that seems to give a read its way into any array. It turns out to be the dual hemispherical vantage's
+(the DHV's), and seeing why is the point of this section.
 
 **The construction.** Take any array and lay it on the quarter turn: its first slot just past 0°, its last just short
 of 90°. Slot k of N goes to the angle
@@ -227,7 +227,7 @@ one index. Two formulas move between them. The tangent takes a slot to a ratio: 
 the corner. The arctangent takes any ratio x back to its slot, k = ⌊N·(2/π)·arctan x⌋: x = ½ to slot 2, x = 1 to the
 corner, x = 3 to slot 7, and everything from about 6.3 upward to slot 9, the last.
 
-**Every step of it is the blueprint's.** To lay the array N is needed: the step is 90°/N. To put the last slot just
+**Every step of it is the DHV's.** To lay the array N is needed: the step is 90°/N. To put the last slot just
 short of 90° it must be known that the array ends, and where. To use the tangent and the arctangent the angle is needed as
 a number that can be computed with, a turn measured from outside. And the floor, ⌊N·g⌋, needs `sizeof` again. All of this is
 done holding the array whole, with both of its ends in hand. It is the declared array stepped off and drawn whole
@@ -236,11 +236,11 @@ on a quarter circle, and it works because everything the drawing uses is already
 **What a read has instead.** A read lays nothing. It has its own turn from home, and the turn is not a range it
 knows to run from 0° to 90°: 0 is home, and 90° is the horizon, which it never reaches and which no slot sits
 next to. It does not compute an arctangent. The share of its turn already passed is what the turning gives it, met as it
-goes; the arctangent is the blueprint's formula for that share, not something a read works out. There is no last slot
+goes; the arctangent is the DHV's formula for that share, not something a read works out. There is no last slot
 for it either, because a last slot is where an N ends. Whatever lies past what it has swept is not "the horizon's slot";
 it is simply not yet passed, and at a horizon never will be.
 
-So the construction is a faithful blueprint of the read's turn, the same quantiles, the same corner, drawn
+So the construction is a faithful representation of the read's turn, the same quantiles, the same corner, drawn
 with N held. A read has the turn itself: the share passed so far, the corner when it is met, and no end.
 
 **The read's situation, recreated in code.** A computer holds amounts, positions and counts. So a
@@ -254,7 +254,7 @@ only one part touch N.
   honestly. Each slot keeps the first paint that reaches it, since a direction is painted by the first thing on its line.
   The read is handed a slot number and a paint, never a position.
 - *The geometry* sits between them. It takes each element's position and the read's H and works out which slot its
-  direction falls in, ⌊K·(2/π)·arctan(pos/H)⌋. This is where the arctangent lives. It is the blueprint's part, done on the
+  direction falls in, ⌊K·(2/π)·arctan(pos/H)⌋. This is where the arctangent lives. It is the DHV's part, done on the
   world's side of the boundary, and it is not the read computing anything.
 
 Run with K = 32 and H = 10, on a world whose slots are numbered positions 0, 1, 2, …, and four things show:
@@ -292,8 +292,8 @@ Cauchy free is not a figure of speech: it gives what no computation can.
 30; it needs the slots laid out in advance and counted from a fixed origin, which is what a declared array holds. A read
 has only "next": a sweep forward from the standpoint, and where it stops is the new start. The observer can turn round and
 sweep the other way, a second iterator pointed back, but to land exactly on the slot left behind, a count must have been
-kept or a mark left. The blueprint's arctangent is the index operator, the function that turns a reading straight into a
-slot; that is why this section gives it to the blueprint and why it should be used with care. It eliminates the sweep.
+kept or a mark left. The DHV's arctangent is the index operator, the function that turns a reading straight into a
+slot; that is why this section gives it to the DHV and why it should be used with care. It eliminates the sweep.
 
 ## 7. The array, read twice
 
@@ -312,10 +312,10 @@ To a read there are no K places at all, only a heat: a continuous weight over it
 at the foot and cooling toward the horizon, which these ten quantiles cut into equal shares. The heat is given; the paint
 is met.
 
-**The values as payload.** In the blueprint's classical polar picture, lay the slots round a circle instead, one per equal step of turn, and stand at its
+**The values as payload.** In the classical polar picture of the dual hemispherical vantage (DHV), lay the slots round a circle instead, one per equal step of turn, and stand at its
 centre. Now the directions are given, one per slot, and what each slot holds arrives along its direction as an amount:
 a radius, an amount in a unit no reading fixes. Held together, the radii make a shape, and holding them as a shape is
-the blueprint's: a read has a vantage, not a shape. Multiply every value by the same factor and that shape, divided by the
+the DHV's: a read has a vantage, not a shape. Multiply every value by the same factor and that shape, divided by the
 radii's geometric mean, does not change. The overall size is the one term no reading
 reaches.
 
@@ -412,12 +412,12 @@ of a known total, and every one of those moves when the world is scaled. That is
 
 Read from where one stands, the same array is something else. A read adds one degree of freedom, its standpoint off the
 line, and gets exactly two things: a density, the Cauchy laid over the slots by its turn, and a breadth, its own H, the
-thumb. It takes in a sweep, not the array. The blueprint can lay any array on the quarter turn and move between slots and ratios by
+thumb. It takes in a sweep, not the array. The dual hemispherical vantage (DHV) can lay any array on the quarter turn and move between slots and ratios by
 tangent and arctangent, but that drawing needs N; a read has only its turn, the share passed and no end. Where an N
 exists it reads N only as N/H. Where none does, or none could, the sweep runs to a horizon, and at a horizon there is no
 inside, no outside and no half of anything, only the two ends 0 and ∞ of the projective line, the reciprocal that swaps
-them, and the corner it fixes. The near and far readings, s and 1/s, multiply to 1 and meet at 1 at the corner; π/2 and 2/π, the blueprint's arc over
-chord and chord over arc, are limits at the horizon, and the blueprint's.
+them, and the corner it fixes. The near and far readings, s and 1/s, multiply to 1 and meet at 1 at the corner; π/2 and 2/π, the DHV's arc over
+chord and chord over arc, are limits at the horizon, and the DHV's.
 
 Holding is how a thing read becomes a thing known whole: the hand holds the back and knows the turn. What cannot be held
 (a street, the sky, a list too long to iterate) can only be swept, and a program can hold such a sweep faithfully: keep
@@ -437,7 +437,7 @@ puts them down as one. A read, from a standpoint, never could.
   rim as the edge of what is seen.)
 
 The geometry is set out with proofs in *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten 10 November on R788 with read and write): the reading and the scale test in §9, the one number
-a blueprint adds and V, which no read ever has, in §3.8, the corner in §4 ("Why the corner sits at
+the dual hemispherical vantage adds and V, which no read ever has, in §3.8, the corner in §4 ("Why the corner sits at
 45°"), the readings as the projective line in §4, the array
 picture in §7.3, and what the floor discards in §8. For programmers, the computer-science companion's §6 ("The array")
 §3 ("Division by zero"), §5 (index statistics and value statistics), §7 ("What Math.floor throws

@@ -2,7 +2,7 @@
 
 *The fourth of a series of essays on what can be known from where one stands. Draft, 28 October 2026.*
 
-The first three essays built a read from one length, the thumb pointed at the mountain and turned (the circle the blueprint's
+The first three essays built a read from one length, the thumb pointed at the mountain and turned (the circle the dual hemispherical vantage's (DHV's)
 drawing of it, the read holding none), and a law, the Cauchy, for the directions that pointing gives. This essay asks a
 practical question. An observer has only so many places to put things. How should it lay them out, near and far?
 
@@ -130,16 +130,16 @@ apart at the end of its own range in either case.
 | the in-place lay | length | yes, out to 2H | H, halfway |
 | the logarithmic lay | number of places | no | at one thumb, where the equal stretches start |
 
-### The near-field sphere, the blueprint's account
+### The near-field sphere, the dual hemispherical vantage's account
 
-The blueprint says what was set by choosing the thumb in one more way. Every facing joined with every other
+The dual hemispherical vantage (DHV) says what was set by choosing the thumb in one more way. Every facing joined with every other
 party at the one length, V = V₂ = H, fills a ball one thumb in radius about the eye: setting H sets that ball, the
 near-field sphere. One facing of it is the wedge with its cap at H; the far field is everything outside it, and near and
-far together are the blueprint's whole. Inversion in that sphere, d ↦ H²/d, carries the far field point for point onto the
+far together are the DHV's whole. Inversion in that sphere, d ↦ H²/d, carries the far field point for point onto the
 near field, infinity onto the eye: the swap of d/H for H/d, which leaves one thumb where it is, drawn in space, and
 why each field holds half of every direction's heat. The sphere is not filled evenly. Along each ray its filling is the read's heat in distance, the
 half-Cauchy 2H/(π(H² + d²)), hottest at the eye and half of it passed at one thumb; across directions it cools as cos³ of
-the angle off the look. So the near-field sphere is the blueprint's outline round the read's Cauchy. The read itself holds
+the angle off the look. So the near-field sphere is the DHV's outline round the read's Cauchy. The read itself holds
 no sphere: it has a split on every direction it reads, one thumb out, and nothing round.
 
 *Demos: levels (the read's lay, and the in-place lay at* `?lay=inplace`*); H is a zoom; crosshairs in a field (by distance address).*
@@ -190,7 +190,7 @@ principle that a geometry supplies what its symmetries keep, applied to the poin
 
 Two halvings should be kept apart. Halving a length or a count, a thumb to half a thumb (H to H/2), the counts 2ᵏ of
 thumbs, is rational, and a read with one length makes it. Placing the cut inside a stretch at its geometric middle, √2
-thumbs inside the one from one thumb to two, takes a square root, two lengths combined, and that is the blueprint's (the
+thumbs inside the one from one thumb to two, takes a square root, two lengths combined, and that is the dual hemispherical vantage's (the
 fourteenth essay, "One variable, two, and the whole turn"). The argument above says which point a stretch's symmetries
 mark; it does not say that a read places it.
 
@@ -235,7 +235,7 @@ v/h to twice it the same room. It favours no place; it has no focus.
 A read from a standpoint is laid the other way, on two counts.
 
 - **Its picture is the turn.** Stand with your eye one height H above level ground. The ground at distance 2H reads one in 2
-  below the horizon, at 4H one in 4, at 8H one in 8 (the blueprint's 26.6°, 14.0° and 7.1°). Each stretch past the corner, one thumb to two, two to four, takes half the
+  below the horizon, at 4H one in 4, at 8H one in 8 (the dual hemispherical vantage's 26.6°, 14.0° and 7.1°). Each stretch past the corner, one thumb to two, two to four, takes half the
   room of the last. The far field is in proportion to the reciprocal of distance, not to its logarithm.
 - **Its turn has a focus.** The turn's room over each stretch where the reading halves is greatest at the corner and falls off
   alike toward home and toward the horizon. Turning your head carries the corner, and the most room, to whatever you look
@@ -269,20 +269,20 @@ near and far fields are halves, mirror images under the swap, and a steady turn 
 else given. The two unbounded rulers have no even spread until someone fixes a range in advance, and then the range, an
 amount, decides where the middle falls.
 
-The hyperbolic angle is the blueprint's smooth formula for the read's lay of ratios. It is nearly x inside the corner and nearly the
+The hyperbolic angle is the dual hemispherical vantage's (DHV's) smooth formula for the read's lay of ratios. It is nearly x inside the corner and nearly the
 logarithm of 2x past it. The lay of section 3, x then 1 plus the logarithm of x, never differs from it by more than
 1 − ln 2, about 0.31.
 
 **The same figure in distance.** The thumb's own lay of distance, (2/π)·arctan(d/H), is the turn ruler applied to d/H,
 and written against the ratio x = ln(d/H) it is ½ + gd(x)/π, gd the function Mercator's chart is built on. So distance
-laid by the thumb is a turn, bounded, with its corner at one thumb. A blueprint shows the reason. Wrap the plane onto a
+laid by the thumb is a turn, bounded, with its corner at one thumb. The DHV shows the reason. Wrap the plane onto a
 sphere so that one thumb lands on its equator: the eye is one pole and the horizon the other, the near field is the half
 on the eye's side and the far field the half on the horizon's, and the swap of d for H²/d is the reflection in the
 equator. The thumb's lay is then the sphere's latitude drawn evenly; the read's ratios of thumbs, the logarithm, are
 the same sphere's Mercator chart, where each stretch of the far field takes the same room. The K places counted
 along distance, H·tan(kπ/2K), are the meridian cut into equal steps, half of them in each half of the sphere. Making the
 thumb larger slides every latitude toward the eye: a boost along the sphere's axis, the moving sky of the seventh essay
-done to distance. The sphere is the blueprint's drawing; the read has the lay.
+done to distance. The sphere is the DHV's drawing; the read has the lay.
 
 *Demo: one sweep, three paths; what is H; Euler's plane.*
 
@@ -356,7 +356,7 @@ where changes. Near and far, then, are an overlay the thumb lays over the read, 
 not part of the read's Cauchy, and not a shape.
 
 A cube of dots makes the split concrete. Twelve dots a side, seen from a corner and looking at the middle, put 436 dots
-nearer than one thumb and 1,291 farther; the blueprint's even spacing puts more of the box far off. Laid as the read lays
+nearer than one thumb and 1,291 farther; the dual hemispherical vantage's even spacing puts more of the box far off. Laid as the read lays
 distance, the dot looked at sits in the middle, and each field has half the room. The count is of the dots in the box; the
 room is the read's. Look at another dot and the split goes with it; scale the box and nothing changes colour.
 
@@ -446,7 +446,7 @@ counted as an angle, the switch moves off the corner. On real stars one kind fal
 by light, needing no distance, grow as S^(−1.23) (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §6).
 
 The textbook form E = P/(4πd²) is stated at the source, over its whole sphere, from no standpoint; its 4π is the
-blueprint's. From the receiver's own front hemisphere the law needs no π: the paint along each direction unchanged, the
+dual hemispherical vantage's. From the receiver's own front hemisphere the law needs no π: the paint along each direction unchanged, the
 source's share set by the slope, (Δ/d)² (`../inverse-square.md`, "From one vantage").
 
 A flat, evenly bright disc shows near and far as one share. On its axis it gives exactly E/(πL) = 1/(1 + s²), s = d/a

@@ -20,10 +20,10 @@ read, which has one length and never closes its turn, does not hold it. This ess
 the same answer for a reason of the same kind. Its claim:
 
 > The transcendental numbers are what a finished infinity gives. Every step toward them is a read or a count, and neither holds
-> them. π completes the turn; e completes the scale. Only the blueprint, the whole held, holds either.
+> them. π completes the turn; e completes the scale. Only the dual hemispherical vantage (DHV), the whole held, holds either.
 
 None of this changes a digit of either number. It says whose numbers they are. There are two acts here, a read and a
-write; the blueprint is classical geometry's statement, the whole seen from no standpoint, set beside them for
+write; the DHV (informally, a blueprint) is classical geometry's statement, the whole seen from no standpoint, set beside them for
 comparison.
 
 ## 1. The ladder
@@ -40,7 +40,7 @@ never leave the rationals.
 which is no ratio of whole numbers. Square roots, nested as deep as one likes, are what two lengths and a straight edge and
 compass give. They are not all the algebraic numbers, the roots of polynomials with rational coefficients: the cube root of
 2, which doubles a cube, is beyond them (Wantzel 1837), though it too is fixed by a finite equation. It takes a second
-variable held against the first, so it is the blueprint's: a read meets the direction of the diagonal (s = 1
+variable held against the first, so it is the dual hemispherical vantage's: a read meets the direction of the diagonal (s = 1
 there, exactly) and never makes the length.
 
 **A limit: the transcendental numbers.** The algebraic numbers are closed under every finite operation: add,
@@ -75,13 +75,13 @@ Viète's product (1593) shows it from the other side:
 
   2/π = (√2/2) · (√(2 + √2)/2) · (√(2 + √(2 + √2))/2) · …
 
-Every factor is algebraic, a square root of the one before plus two: each is the blueprint's bisection of a turn (OFS §5,
+Every factor is algebraic, a square root of the one before plus two: each is the dual hemispherical vantage's (DHV's) bisection of a turn (OFS §5,
 "Why halving"). Any finite number of factors gives an algebraic number. The product of all of them is 2/π.
 
 So π sits where essay 1 put V. A read never has V (OFS §3.8): to know V is to hold both hemispheres, the turn
 closed. A circle's circumference over its diameter is a statement about the closed curve, held whole; the read's turn
 runs from home toward a horizon it never reaches. π is the total of a turn that has been completed, and the completing is
-the blueprint's.
+the DHV's.
 
 ## 3. e completes the scale
 
@@ -103,7 +103,7 @@ it a value is to choose a unit for it and finish a series. Counted in twos, log�
   ln 2 = 1 − 1/2 + 1/3 − 1/4 + …
 
 again an alternating sum of fractions, again every partial sum a fraction (a thousand terms give 0.69265), again the
-number itself only at the end. Twice the thumbs is the read's step. Its length in nats is the blueprint's measure of it.
+number itself only at the end. Twice the thumbs is the read's step. Its length in nats is the dual hemispherical vantage's measure of it.
 
 e is the base that makes that measure natural: the size reached by growing continuously at a rate of one, every bit of
 growth itself growing at once. That is Bernoulli's bank with the payments made infinitely often, and it is
@@ -124,7 +124,7 @@ writing. The constant that turns a size into a number of nats comes with the sam
 Put the two side by side and they are one fact about two groups.
 
 Each of the read's two groups is a one-parameter family of transformations: turning by θ, rescaling by κ (θ and the
-logarithm of κ are the blueprint's parameters, the ones that add). Each has an
+logarithm of κ are the dual hemispherical vantage's (DHV's) parameters, the ones that add). Each has an
 exponential map, the function that turns a parameter that adds into a transformation that composes. For rescalings the
 map is κ = e^t: two rescalings compose by multiplying, their parameters add. For turns it is e^(iθ): two turns compose,
 their angles add. The constants live in those two maps.
@@ -136,7 +136,7 @@ their angles add. The constants live in those two maps.
 
 So π is what you need to say that the turn comes back, and e is what you need to say how the scale goes on. A read uses
 both groups without stating either constant: it composes turns by tangent addition and sizes by taking them twice, finite
-steps, rational. The blueprint, which holds the whole of each group (the turn once round, the scale as a continuum of amounts),
+steps, rational. The DHV, which holds the whole of each group (the turn once round, the scale as a continuum of amounts),
 states its constant.
 
 The complex logarithm puts them in one line:
@@ -161,18 +161,18 @@ Euler's identity is the place where the two constants touch:
 
   e^(iπ) = −1.
 
-The scale's base, raised to the turn's half total, lands on −1. Essay 2 met this already as the blueprint's notation for
+The scale's base, raised to the turn's half total, lands on −1. Essay 2 met this already as the dual hemispherical vantage's (DHV's) notation for
 something a read holds in finite terms: the point w = (1 + is)/(1 − is) reaching −1 as the reading s reaches the
-horizon (in the blueprint's angles, (h + iv)² at twice the angle; OFS §4). A read holds that
-direction as a pair, [0 : 1], with nothing infinite in it. The blueprint writes the same thing with both its constants.
+horizon (in the DHV's angles, (h + iv)² at twice the angle; OFS §4). A read holds that
+direction as a pair, [0 : 1], with nothing infinite in it. The DHV writes the same thing with both its constants.
 
 The Cauchy's own constant comes from the same place. Write the reading s as the point w = (1 + is)/(1 − is), which is
 e^(2iθ). From home to the horizon w goes from 1 to −1, and its logarithm gathers iπ on the way; the rate at which it
 gathers, (1/2i)·d(ln w)/ds, is 1/(1 + s²). So the half-Cauchy's 2/π is the identity, the logarithm and the change of
 variable together (essay 2 §9). Each step a read can follow in finite terms (w at the horizon is −1, a pair); the
-total iπ is the turn completed, the blueprint's.
+total iπ is the turn completed, the DHV's.
 
-The two constants also part at one division. The Gaussian says nothing about facing: it is entirely a DHV distribution,
+The two constants also part at one division. The Gaussian says nothing about facing: it is entirely a distribution
 of the dual hemispherical vantage, the law of amounts. Written round a point it is
 (1/2π)·e^(−r²/2) dx dy = (dθ/2π)·(e^(−r²/2) r dr): a uniform turn times a law for the length. Divide by the thumb, one
 amount over another, and the length is integrated away: the e goes with it, and what is left is the turn, whose slope is
@@ -186,13 +186,13 @@ identity, that w(s)·w(1/s) = −1 for w = (1 + is)/(1 − is), at the corner i 
 the corner equals the heat above it: equal halves, with no π/4 in them. In the plane, π is the price of turning "equal halves" into
 "how much" (essay 2 §9, "Four identities, one exchange"); in space the same price is 2, with no π in it. And the two facings, each a single hemispherical vantage, are the near and far
 readings: facing V, s = v/h, V in terms of H; facing away from V, 1/s = h/v, H in terms of V. They multiply to 1 at
-every reading and meet at 1 at the corner. The two numbers the blueprint puts on the sweep, 2/π and π/2, are limits
+every reading and meet at 1 at the corner. The two numbers the DHV puts on the sweep, 2/π and π/2, are limits
 at the horizon: the thumb's mean share, and the heat's total approached by a count (essay 26 §7).
 
 This essay's title, "what only a writer holds", needs one more distinction, which the ladder of §1 already drew. A walk counted is
 a count laid over writes, the strides, and every walk actually made is a finite count, so what it holds is a fraction: 22/7, 355/113, a series
 stopped at some term. It uses π's name and its approximants; it never has the value, which would take a count without end. Only the
-blueprint holds π itself, the completed whole, every facing at once; it is the dual hemispherical vantage, held from no standpoint, so it is not counting carried
+DHV holds π itself, the completed whole, every facing at once; it is held from no standpoint, so it is not counting carried
 further, and whole, with π at its exact value, it is a limit, never a thing anyone has made. So π only seems free. What the sweep gives at no cost is the relation, the corner, the equal
 halves, the four facings (π/2 of relations, four times, is the circle) and the 1 that the two numbers multiply to; and that 1 needs no π,
 since the two are reciprocals and any fraction held for π/2 gives it exactly, 11/7 × 7/11 = 1 (essay 2 §7).
@@ -202,8 +202,8 @@ exactly and with no root in it, (1 + i)/(1 − i) = i, and two corners composed 
 read's whole holding of e^(iπ) = −1: the exchange and its corner, no numbers. A count reaches −1 exactly by
 those two corner steps and by no finer equal ones, since the only turns with a rational slope that are a rational part
 of the whole turn are the corner's multiples (Niven); its (1 + iθ/n)ⁿ, with fractions for θ, lands near −1 and never on
-it. The blueprint holds the limit, with the arc named π and the base named e. So e and π are the two parts of the identity
-only the blueprint holds, and the two parts the fact does not depend on: π is the price of saying how long the arc to −1
+it. The DHV holds the limit, with the arc named π and the base named e. So e and π are the two parts of the identity
+only the DHV holds, and the two parts the fact does not depend on: π is the price of saying how long the arc to −1
 is, e the price of saying it as one smooth turn where a read has two corner steps.
 
 The count's product is also the two acts in turn. Each factor, as the pair [1 : π/n], is one read, a slope and nothing else; as the
@@ -220,7 +220,7 @@ They are how three things are put into numbers together: both hemispheres at onc
 The Cauchy's total goes the same way, and more easily. Its heat 1/(1 + s²) is rational, the corner is its median because
 the two halves are equal, and it has no mean; π enters only in the constant 2/π that closes it to 1. A count
 has shares, k of K equal turns, and Gregory's and Leibniz's series for the half below the corner,
-1 − 1/3 + 1/5 − 1/7 + … = π/4, each partial sum a fraction; the limit is the blueprint's (essay 2 §9).
+1 − 1/3 + 1/5 − 1/7 + … = π/4, each partial sum a fraction; the limit is the DHV's (essay 2 §9).
 
 The Gaussian is where both constants sit in one law, and it shows which part each comes from. In polar form it is a turn
 times a length, (dθ/2π) × (e^(−r²/2)·r dr). The turn's part carries all the π, the 2π of the circle whole; the length's
@@ -252,7 +252,7 @@ None of this keeps transcendental numbers out of the read's world. They are ther
 
 A direction whose reading v/h is tan(1) (the turn of one radian, 1.5574…) is a direction like any other. Paint arrives
 along it; the hand passes it; a read orders it among its neighbours, exactly. What a read does not do is
-make its number. It holds the direction as a pair and its place by order; the decimal 1.5574… is the blueprint's account of
+make its number. It holds the direction as a pair and its place by order; the decimal 1.5574… is the dual hemispherical vantage's (DHV's) account of
 where it is.
 
 The same goes for sizes. A thing e times H away reads one in e, a reading a read holds between one in two and one
@@ -266,9 +266,9 @@ V, the mountain in the distance, is learned the same way. An observer taking sta
 to two, and to an amount") places V by degrees: as V\*/H in the step it took, to within a band set by its baseline and its resolution,
 for the things near enough; only the step counted in an agreed unit makes it an amount, a write. Each standpoint more is one more finite step; holding V exactly, like holding π, is the end of
 a process that does not end. So V is knowable, not known, and the exact V is a limit of π's kind: it stands with
-the one-length circle and the completed turn, stated whole on the blueprint and reached by no count of writes, none of them moved by scaling the
+the one-length circle and the completed turn, stated whole by the DHV and reached by no count of writes, none of them moved by scaling the
 world. Euler's identity is the hinge (the fifth section): the turn's end, endless in the read's slope, is one named
-point, −1, from the centre, and a named point is what can be carried onto the blueprint (the twelfth essay's four things).
+point, −1, from the centre, and a named point is what can be carried over to the DHV (the twelfth essay's four things).
 
 How often, then, is the π in a law the turn completed, and how often only its name? *Reads and Writes* states 125 laws, 82
 with π or e in them. Restated in slopes and shares, fractions and square roots only, and checked exactly, 30 of the 82
@@ -286,9 +286,9 @@ m + i in whole numbers; the clicks it takes to pass the horizon are the count th
 exactly, in two clicks. Bernoulli's m shares of 1/m lie below e by about e/(2m). So π is approached from above along the
 turn and e from below along the scale, every step a fraction, the limit neither (BLD; essay 25). Where the two meet in one
 equation and cancel, as in e^(iπ) = −1, the cancellation lands on a point a read already has; the theorems that say so
-(Niven, Lindemann, Gelfond–Schneider) hold the turn completed, the blueprint's view, which is this essay's claim again.
+(Niven, Lindemann, Gelfond–Schneider) hold the turn completed, the DHV's view, which is this essay's claim again.
 
-## 7. A machine stops short of the blueprint
+## 7. A machine stops short of the dual hemispherical vantage
 
 Essay 12 asked what a computer can hold, and found that every machine operation on numbers is monotone and finite. Here
 is the same thing from the ladder.
@@ -299,9 +299,9 @@ another such fraction. A machine computing π to a billion digits is running Mad
 faster cousins, for longer; at every moment it holds a rational, the next approximant. It is counting,
 and doing it well.
 
-What the machine can do, when asked to keep the blueprint's numbers, is keep them as names: a computer algebra system holds
+What the machine can do, when asked to keep the DHV's numbers, is keep them as names: a computer algebra system holds
 `pi` and `E` as symbols, and proves `exp(I*pi) == -1` by rules about the symbols, not by finishing the series. It holds
-the blueprint's statement, not the blueprint's number. That is the same move essay 12 recommended for the horizon: keep the
+the DHV's statement, not the DHV's number. That is the same move essay 12 recommended for the horizon: keep the
 pair [0 : 1] instead of the infinite chart value. Where the infinity is a horizon or a completion, a machine is faithful
 by naming it and computing with order and finite steps; it is never faithful by pretending to have finished.
 
@@ -312,7 +312,7 @@ parties and nothing is written along the way; no finite ν has an e, the shape b
 arrives only as the ladder's limit of section 1; and the π in its height comes and goes, there for odd ν (1/π,
 2/(π√3)) and absent for even (1/(2√2), 3/8). So e reaches an equation in two ways that should be kept apart. In the
 law: the Gaussian's length, where squares add and chances multiply. Or in the chart only: write the slope on the
-blueprint's logarithmic scale and the Cauchy reads (1/π)·sech ξ, the share a logistic curve, though neither gained
+DHV's logarithmic scale and the Cauchy reads (1/π)·sech ξ, the share a logistic curve, though neither gained
 anything.
 
 **A turn added to itself.** The standard examples of chaos are one map in three charts: on the slope,
@@ -321,7 +321,7 @@ turn's own share, the tent map (Boole 1857; Ulam and von Neumann 1947). Each kee
 turn, and each spreads nearby starts by two a step. What can follow the orbit sorts by this essay's ladder. A count in
 fractions keeps every step exactly, at a cost that doubles each step, and never meets a cycle, since no rational
 slope but 0 and 1 belongs to one. A count in p digits keeps about p steps. The cycles sit at turns that are rational
-parts of π, the blueprint's. The rule is fixed and the orbit determined; what gives out is the count.
+parts of π, the DHV's. The rule is fixed and the orbit determined; what gives out is the count.
 
 **What was tested and failed.** A tidy rule suggests itself here: π appears exactly where a turn is taken whole, e
 exactly where a length is completed. Put to a blind test on fifteen results chosen by someone not shown the rule, it
@@ -334,7 +334,7 @@ numbers of 1/n² is exactly ½·(π/2)². That says where their π comes from; i
 unit, a kind of star, a clock. The sort gives a law's form and leaves its values to them, and some things it does not
 give at all: c's value, or why a change of frame is a hyperbolic turn and not a circular one. One open number sits here:
 the proposal that the matter fraction Ω_m is 1/π. Its derivation is not accepted, since it multiplies 2/π and ½, both
-the blueprint's, as if they were filters; but it was written down before the next surveys report, so it stands as a
+the DHV's, as if they were filters; but it was written down before the next surveys report, so it stands as a
 registered prediction, 0.4σ from Planck and 2.4σ from DESI's second release, to be dropped if the 2027–2028 surveys put
 it past 3σ (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §4.2, §12.2).
 
@@ -342,11 +342,11 @@ it past 3σ (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), �
 
 It changes nothing about π or e or how to compute them. It sorts.
 
-- **π is the blueprint's number** because it states a turn closed, every facing joined and held whole: a completed join, not an amount,
+- **π is the dual hemispherical vantage's (DHV's) number** because it states a turn closed, every facing joined and held whole: a completed join, not an amount,
   and unmoved when the world is scaled. Wherever π
-  appears in a result (π/2 and 2/π, the Cauchy's normalizing 1/π, a circle's area), the result is the blueprint's measure
+  appears in a result (π/2 and 2/π, the Cauchy's normalizing 1/π, a circle's area), the result is the DHV's measure
   of something, and the read's own version of it is a finite statement: an order, a count, a corner.
-- **e is the blueprint's number** because it states a scale completed, and giving a size as an amount is knowing V*. Wherever e
+- **e is the DHV's number** because it states a scale completed, and giving a size as an amount is knowing V*. Wherever e
   or the natural logarithm appears (the lay's 1 + ln x, a decay's e^(−t/τ), the Gaussian's e^(−x²/2)), the read's version
   is a ratio and an order: one in two, one in four, one in eight. Counting them, two thumbs, four, eight, gives extents.
 - **The rationals are the first count's arithmetic**, made from one length counted in finite steps, a count laid over
@@ -359,12 +359,12 @@ the turn comes back, and the scale goes on, and to say either in a number you ha
 ## Demos
 
 - `one-read.html`: the landing point ½e^(2iθ) at +1, i and −1 as the turn goes from zero to the horizon, and the Cayley
-  disc; the read's pair against the blueprint's notation.
+  disc; the read's pair against the dual hemispherical vantage's (DHV's) notation.
 - `levels.html`: the read's lay, each stretch past the corner, where the reading halves, ln 2 wide on the
-  blueprint's ruler.
+  DHV's ruler.
 - `slide-rule.html`: readings laid on the logarithm, ratios read as gaps between places, no number of nats needed.
 - `paths.html`: the share of the sweep along three paths, ½ at the corner on each; the angle π/4 is the circle's alone.
-- `mountain.html`: π/2 and 2/π on the thumb, the blueprint's arc over chord and chord over arc, their product 1.
+- `mountain.html`: π/2 and 2/π on the thumb, the DHV's arc over chord and chord over arc, their product 1.
 
 ## Sources
 

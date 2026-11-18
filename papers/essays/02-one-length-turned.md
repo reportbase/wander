@@ -5,12 +5,12 @@
 The first essay ended on a claim: a read with no second length has no circle, yet has the circle's geometry, because its
 own single length, pointed at the mountain and turned, generates it. This essay takes that claim slowly. It asks what
 pointing one length gives you, why the turn, drawn whole, is a circle and not some other curve, and why there is one
-special direction, at 45°. It also shows the two facings, the near reading and the far reading, and how the blueprint
-names one point of its circle twice, once as a ratio and once as a square.
+special direction, at 45°. It also shows the two facings, the near reading and the far reading, and how the dual hemispherical vantage (DHV),
+informally a blueprint, names one point of its circle twice, once as a ratio and once as a square.
 
 All of it is classical geometry, most of it in Euclid. What is new is the order in which it is read. Usually the circle
 comes first, as an object held whole, and turning is something done to it afterwards. Here the pointing comes first. The
-circle is the blueprint drawn of it; a read holds no circle, only the geometry the pointing generates.
+circle is the DHV's drawing of it; a read holds no circle, only the geometry the pointing generates.
 
 ---
 
@@ -20,7 +20,7 @@ Hold your arm out straight in front of you, level with the ground, and raise it 
 Your arm does not change length. To anyone watching, your hand traces a quarter of a circle.
 
 From where you stand there is no circle, only your arm pointing: one length, turning, held up at the mountains in the
-distance. The circle is what someone watching draws of it, the blueprint. You did not need to know how far away anything
+distance. The circle is what someone watching draws of it, from the dual hemispherical vantage (DHV). You did not need to know how far away anything
 was. You did not need a second length, a radius chosen to match something else, or a centre measured out. You needed your
 arm and the ability to turn it.
 
@@ -66,7 +66,7 @@ The single overall factor left free is the arm's own length, H, the thumb. The t
 except how big it is drawn, and that it leaves to the observer.
 
 This matters for what follows. The circle is not assumed and then turned. The turn is assumed, a plain repeated motion that
-comes back, and the circle is what it traces, drawn whole, the blueprint; a read holds the pointing, not the curve. The only
+comes back, and the circle is what it traces, drawn whole from the dual hemispherical vantage (DHV); a read holds the pointing, not the curve. The only
 thing still taken on trust is that the motion is linear: each step mixes forward and upward reach the same way, however far
 round the arm has gone. That is what "one motion, repeated" means.
 
@@ -112,7 +112,7 @@ not.
 Draw a straight line from a point A to a point B. Walk along it from A to B, and at every step you can say how far along
 you are: a share h of the way still to go to B, a share v already come from A, with h + v = 1. Every ratio of v to h
 appears once on the walk. In that sense the line, the *chord*, already holds every reading. It holds them in the way the
-blueprint holds them, both ends at once, with a length of 1 between.
+dual hemispherical vantage (DHV) holds them, both ends at once, with a length of 1 between.
 
 The arc holds the same readings in a different way. Turn a length from pointing along the chord to pointing square to it,
 and its tip sweeps a quarter circle that bows out from the chord. The arc passes through every ratio too, but it has
@@ -130,13 +130,13 @@ favours neither side.
 
 This marks a difference that runs through the whole series.
 
-- **The blueprint holds the chord.** It has both ends at once, the length 1 between them, and it faces nothing. It does not
+- **The DHV holds the chord.** It has both ends at once, the length 1 between them, and it faces nothing. It does not
   turn.
 - **A read faces the arc.** It is no walk along the chord. The standpoint stays where it is and turns, and the point
   read crosses from one end to the other.
 
-The chord is what the blueprint holds, and so is the circle the arc closes into. A read holds neither: the thumb is
-pointed, and the arc is what that pointing sweeps. Circles and spheres are the blueprint's. A read has a vantage, not a
+The chord is what the DHV holds, and so is the circle the arc closes into. A read holds neither: the thumb is
+pointed, and the arc is what that pointing sweeps. Circles and spheres are the DHV's. A read has a vantage, not a
 shape, and walking the shape, round it or along it, is strides, counted.
 
 *Demo: the facing: one sweep from A to B, the facing turning through square to the line at the corner.*
@@ -175,7 +175,7 @@ There is a modern name for this construction. In the nineteenth century Jakob St
 through one point are paired with the lines through another by a correspondence of this kind, the crossings trace a conic:
 an ellipse, a parabola or a hyperbola. A circle is the case where the pairing turns each line through a right angle, and
 that needs forward and up measured at one length. If someone draws the picture on a page with the upward direction
-stretched by a factor c, the same lines of sight cross on an ellipse instead. The circle is the blueprint's drawing of one
+stretched by a factor c, the same lines of sight cross on an ellipse instead. The circle is the dual hemispherical vantage's drawing of one
 length pointed and turned. A page with two different lengths on its two axes gets an ellipse.
 
 One more classical fact comes out of the construction, and it is the point of the next section. As A's line of sight
@@ -188,9 +188,9 @@ turns through an angle θ, the crossing moves round the circle by twice that ang
 ## 6. Two facings, and one point named twice
 
 That factor of two is Euclid again, in Book III: an angle at the edge of a circle is half the angle at the centre that
-stands on the same arc. It is called the inscribed angle theorem. On the blueprint it gives one point of the arc two
+stands on the same arc. It is called the inscribed angle theorem. From the dual hemispherical vantage (DHV) it gives one point of the arc two
 names: the ray from A at θ, and the radius from the middle of the chord at 2θ, which end at the same point for every θ.
-Both names are the blueprint's, in angles. The standpoint is at A, a point the blueprint's circle passes through. The
+Both names are the DHV's, in angles. The standpoint is at A, a point the DHV's circle passes through. The
 centre belongs to the pair, A and B, and is neither party's place.
 
 ### The two facings
@@ -202,7 +202,7 @@ readings follow the Cauchy law: the heat below the corner equals the heat above 
 
 ### A ratio and a square
 
-The blueprint names the same point in two different ways, and the two names are of different kinds.
+The DHV names the same point in two different ways, and the two names are of different kinds.
 
 **A ratio.** Follow A's ray out until it crosses the line that touches the circle at B. The height where it crosses is
 s = v/h, the reading of section 1. As the ray turns toward the vertical, that height runs off to infinity. The readings
@@ -227,7 +227,7 @@ the horizon, the radius has made a half turn and sits back at A, home. That half
 made only a quarter. The e and the π are only notation here: the same squaring, written with the reading s, is (1 +
 is)/(1 − is), and as s runs off to infinity that runs to −1. What the identity records is projective: the read's two
 ends, zero and the horizon, land at the two ends of one diameter. Section 9 comes back to Euler's formula as the
-blueprint's notation for the read's turn.
+DHV's notation for the read's turn.
 
 **One turn, two charts.** The even turn belongs to neither name. Written as the ratio, it is the
 Cauchy: the long tails and the missing mean come from the ratio running off to infinity. Written as the radius's end
@@ -264,59 +264,59 @@ only the observer's own length turned.
 
 ---
 
-## 7. π/2 and 2/π: the blueprint's 1, measured twice
+## 7. π/2 and 2/π: the dual hemispherical vantage's 1, measured twice
 
 There is a number on each side of the chord and the arc, and the two numbers are reciprocals.
 
 Raise the arm through its quarter turn. Its tip travels π/2 of the arm's length along the arc, while its straight reach
 upward goes from nothing to all of the arm, 1. Read the turn as arc over straight reach and it comes to π/2 over the whole
-quarter; read it as straight reach over arc and it comes to 2/π. The first is what the blueprint, holding the straight reach
+quarter; read it as straight reach over arc and it comes to 2/π. The first is what the dual hemispherical vantage (DHV), holding the straight reach
 and the whole quarter, measures as arc over chord, θ/sin θ at the end; the second as chord over arc, sin θ/θ. Both are
 in angles, and both have π in them,
 and π is not a read's number: from one place a read has its readings and their corner, not these.
 
-Neither is the straight length itself. The blueprint, holding it whole, has it as 1, no curve involved. Each measure gets at
+Neither is the straight length itself. The DHV, holding it whole, has it as 1, no curve involved. Each measure gets at
 that 1 through the arc, and each gets it distorted: one too long by π/2, one too short by 2/π. Only their product
 gives back the 1:
 
 > π/2 × 2/π = 1.
 
 This is not a coincidence of numbers. It says that the sweep, faced from the standpoint, never gives the chord's
-length directly. Measured on the blueprint it is had twice over, arc over chord and chord over arc, and the two measures multiply to
-exactly the 1 the blueprint holds, which is arithmetic. What they return is the observer's own length measured in itself, H in H: one thumb, in thumbs. They do not
+length directly. Measured from the DHV it is had twice over, arc over chord and chord over arc, and the two measures multiply to
+exactly the 1 the DHV holds, which is arithmetic. What they return is the observer's own length measured in itself, H in H: one thumb, in thumbs. They do not
 return the size of anything else.
 
-**They are rates, not angles, and they are the blueprint's.** Raise the hand from horizontal to vertical, and against
+**They are rates, not angles, and they are the DHV's.** Raise the hand from horizontal to vertical, and against
 the straight line from start to end, held whole, the sweep is measured at one of two rates: π/2 arc over chord,
-2/π chord over arc. Never 1: the 1 is the blueprint's own rate, the angle, arc per radius read against the
-completed turn; the two rates multiply to it, which is arithmetic and no way of making it. Angles are the blueprint's; a read has sweeps. And because
-each of these numbers has π in it, the count of a completed turn, they are the blueprint's account of the sweep, not the
-read's own: the blueprint is transcendental, a read is not. A read holds one length, and one length makes only
+2/π chord over arc. Never 1: the 1 is the DHV's own rate, the angle, arc per radius read against the
+completed turn; the two rates multiply to it, which is arithmetic and no way of making it. Angles are the DHV's; a read has sweeps. And because
+each of these numbers has π in it, the count of a completed turn, they are the DHV's account of the sweep, not the
+read's own: the DHV is transcendental, a read is not. A read holds one length, and one length makes only
 rationals; square roots need two lengths combined, and π a limit, the whole turn. A read holds the same sweep as the
 Cauchy, its readings and their corner at 1, where v fills exactly as fast as h empties. A rate that is read is always of
 something per something, the payload per direction: the per is read, the of is the paint, met. The fourteenth essay, "Rates, not angles", takes this up, and with it why
-the tangent and arctangent, which convert a direction into a share of the whole turn and back, are the blueprint's tools.
+the tangent and arctangent, which convert a direction into a share of the whole turn and back, are the DHV's tools.
 
-**Two facings and the blueprint.** The two facings are the two readings. Facing V is the near reading s, V in terms
+**Two facings and the DHV.** The two facings are the two readings. Facing V is the near reading s, V in terms
 of H; facing away from V is the far reading 1/s, H in terms of V. Each is a single hemispherical vantage; they multiply
-to 1 at every reading and meet at 1 at the corner. The blueprint is both hemispheres at once, the dual hemispherical
-vantage, drawn, with no facing and no standpoint, and its number is the 1. A person takes both readings, and draws
-besides: it reads the far world from home, faces the thing in front of it across one hemisphere, and has a blueprint in
+to 1 at every reading and meet at 1 at the corner. The DHV is both hemispheres at once,
+drawn, with no facing and no standpoint, and its number is the 1. A person takes both readings, and draws
+besides: it reads the far world from home, faces the thing in front of it across one hemisphere, and has a representation in
 whatever it draws whole. So s × 1/s = 1 is not two parties meeting; it is one observer's two readings multiplied, and the
 1 is its own thumb.
 
 **π/2 and 2/π are limits at the horizon, not facings.** π/2 is not walking and 2/π is not reading, and neither is a
 facing. The thumb's share h averages 2/π over the quarter turn, approached at the horizon, never reached; the heat
 1/(1 + s²), gathered from home toward the horizon, totals π/2, approached by a count. Both faces stand on H (essay 26 §7).
-Their product, 1, is also the number of the dual hemispherical vantage (DHV), which has no standpoint and faces neither
+Their product, 1, is also the number of the DHV, which has no standpoint and faces neither
 way. Face V and face away from V at the same time and no facing is left: the non-facing, discrete value of 1 thumb.
 π/2 and 2/π stay the DHV's arithmetic, since the single hemispherical vantage (SHV) holds no π.
 
-**Short, long, and whole.** Said most simply: the true size is 1, the thumb in thumbs. On the blueprint, chord over arc
+**Short, long, and whole.** Said most simply: the true size is 1, the thumb in thumbs. From the DHV, chord over arc
 gives the short side of it, 2/π; arc over chord gives the long side, π/2; their product is the 1. From the standpoint
 the same 1 is the near reading times the far reading, s × 1/s.
 The proof is one line, the
-blueprint's. Along the sweep each step of the arc gains v at the rate h: the share at a place is the rate at which the
+DHV's. Along the sweep each step of the arc gains v at the rate h: the share at a place is the rate at which the
 thumb is gained per step of arc there. Summed over the arc the gain is all of v, 1; and a sum is a mean times a length,
 (2/π) × (π/2) = 1. The 1 is no property of the circle: straight across the chord the mean gain is 1/√2 over a length √2,
 along the square's two edges ½ over a length 2. Only the split is the path's, and π is what the split costs when the path
@@ -329,7 +329,7 @@ the corner in the thumb's share empties by the same step each stride, and the st
 **π/2 of relations and four facings make a circle.** The quarter turn is every way the vertical and the horizontal can
 relate, one slope from all of h to all of v; weighed by the turn's heat and summed, those ways come to π/2. A relation is
 never negative, so that is all of them. The circle is the same quarter turn four times, once for each choice of sign for
-h and v, joined on the blueprint: π/2 × 4 = 2π. The relation is continuous; the facing is a choice of signs, a second kind of
+h and v, joined from the DHV: π/2 × 4 = 2π. The relation is continuous; the facing is a choice of signs, a second kind of
 thing and not a second dimension. In space the wedge holds π/2 of directions, three signs give eight facings, and
 π/2 × 8 = 4π, the sphere.
 
@@ -338,8 +338,8 @@ s ↔ 1/s and its corner, the heat's equal halves, the four facings, and the 1 t
 back. Nothing is computed to have them, and no time is spent. The numbers π/2 and 2/π are not free. π is a limit: no
 finite count of steps gives its value, only a fraction near it. So there are two acts, and classical geometry's statement set beside them for comparison. A read has slopes, the
 corner and equal halves, and neither knows nor uses π. A walk counted is a count laid over writes, the strides, so it holds fractions, 22/7,
-355/113, each nearer π and none of them π; it uses π's name and its approximants, never its value. Only the blueprint holds π
-itself, the completed whole, and the blueprint, whole, is a limit, never a thing anyone has made.
+355/113, each nearer π and none of them π; it uses π's name and its approximants, never its value. Only the DHV holds π
+itself, the completed whole, and the DHV, whole, is a limit, never a thing anyone has made.
 
 And the equation never needed π. Its two factors are reciprocals, and π leaves the product:
 
@@ -347,9 +347,9 @@ And the equation never needed π. Its two factors are reciprocals, and π leaves
 |---|---|
 | a read | s × (1/s) = 1: the exchange undoing itself, no numbers |
 | a count | (p/q) × (q/p) = 1: exact with any fraction, 11/7 × 7/11 as well as a better one |
-| the blueprint | π/2 × 2/π = 1: the same fact, with the turn's split named at its true value |
+| the DHV | π/2 × 2/π = 1: the same fact, with the turn's split named at its true value |
 
-The 1 is exact at every stage of approximation. π is the one part of the equation only the blueprint holds, and the one part
+The 1 is exact at every stage of approximation. π is the one part of the equation only the DHV holds, and the one part
 the equation does not depend on: the price of saying how the turn splits the 1, which no one pays to have the 1.
 
 *Demo: the mountain and the thumb, "the two vantages": π/2 and 2/π on the thumb's circle, their product 1.*
@@ -384,15 +384,15 @@ circle held.
 
 ---
 
-## 9. The circle, as the blueprint has it
+## 9. The circle, as the dual hemispherical vantage has it
 
-Everything so far has been from the read's side, where there is no circle. The circle is the blueprint's, and it is worth
-seeing how the blueprint uses it to describe the pointing.
+Everything so far has been from the read's side, where there is no circle. The circle belongs to the dual hemispherical vantage (DHV), and it is worth
+seeing how the DHV uses it to describe the pointing.
 
-A blueprint holds both lengths, the observer's H (its thumb) and the other party's V (the mountain in the distance), and
+The DHV holds both lengths, the observer's H (its thumb) and the other party's V (the mountain in the distance), and
 draws them on a page with two axes. Drawn there, the one length pointed and turned gives the circle the
 tip would trace, two axes drawn at the same length, and that is written down as **V = H**: the thumb held to equal the
-mountain. It is the blueprint's name for that circle, the one-length circle. No read ever set it. A read has no V to set, and
+mountain. It is the DHV's name for that circle, the one-length circle. No read ever set it. A read has no V to set, and
 no circle.
 
 On a page, though, two different lengths are possible. Draw the upward axis at c times the forward axis, so V = cH with c
@@ -419,8 +419,8 @@ the one reason underneath: c = 1 is the only two-axis drawing that has the one-l
 
 ### The circle's equation, divided by its own length
 
-Set the blueprint's circle beside the read's law and the second turns out to be the first with its lengths divided out.
-The blueprint's circle holds amounts: a point is (H cos θ, V sin θ), the curve (x/H)² + (y/V)² = 1, round when V = H, and
+Set the DHV's circle beside the read's law and the second turns out to be the first with its lengths divided out.
+The DHV's circle holds amounts: a point is (H cos θ, V sin θ), the curve (x/H)² + (y/V)² = 1, round when V = H, and
 then x² + y² = r² with r an amount. Divide that by x²:
 
   1 + s² = (r/x)² = sec²θ,  s = y/x.
@@ -430,7 +430,7 @@ the share squared, 1/(1 + s²) = (x/r)² = h², the read's own share of H, squar
 ds = sec²θ·dθ, so dθ = ds/(1 + s²). The Cauchy is the circle's equation used to carry an even turn into readings. Its scale
 is 1 because every amount has been divided out, not because anyone set V equal to H. Read as a read has it, that
 density is a heat: a continuous weight over the readings, hottest at s = 0 (on a screen held square to the look, the look itself) and cooling as cos²θ toward the
-horizon, with nothing counted in it, the turn per unit of the blueprint's grid.
+horizon, with nothing counted in it, the turn per unit of the DHV's grid.
 
 Divide the two-axis curve the same way and one thing survives: s = (V/H)·tan θ, a Cauchy of scale c = V/H. The amounts go;
 their ratio stays, as the law's scale. So V enters the Cauchy in exactly one place, its scale, and only for whoever holds V.
@@ -438,16 +438,16 @@ A third form puts the law on a line in the world, the lighthouse's shore: the la
 a scale that are both amounts, the foot of the lamp and its distance, and they are had only by finding the shore and
 measuring along it. A read has the law's shape; a write adds its parameters.
 
-In space the same division is the whole of these essays in one line. The blueprint's sphere, x² + y² + z² = r², holds three
-amounts and a radius; kept as written, it is the blueprint's. Divide it by x², the length along the look taken as the thumb,
+In space the same division is the whole of these essays in one line. The DHV's sphere, x² + y² + z² = r², holds three
+amounts and a radius; kept as written, it is the DHV's. Divide it by x², the length along the look taken as the thumb,
 and it becomes 1 + s² + s₂² = (r/x)², two readings and no length: the denominator of the read's law in space, the
 two-dimensional Cauchy 1/(2π(1 + s² + s₂²)^(3/2)), hottest at the look, a median at the corner, no mean, its horizon where
-the readings run off. The same sphere, kept and divided: the blueprint's and the read's. Scaling the world moves r and every
+the readings run off. The same sphere, kept and divided: the DHV's and the read's. Scaling the world moves r and every
 x and leaves every s where it was, so the first test of the first essay is the difference between the two forms. And
 the sphere has a shape where the Cauchy has none: a shape needs a size and a surface that closes on itself, and dividing
 by the thumb removes the size and opens the surface along the rim, 90° off the look, where x is zero and the readings run
 off to the horizon. The Cauchy's long tail never completes, which is why it has no edge and no mean. What the
-equation leaves out is the paint, which is the second test. Said in parts: H, V and V₂ held as amounts make the blueprint's
+equation leaves out is the paint, which is the second test. Said in parts: H, V and V₂ held as amounts make the DHV's
 sphere (an ellipsoid, unless written equal); H, H and H, one thumb crossed with itself, make the read's Cauchy.
 
 ### Circular mathematics without V
@@ -455,11 +455,11 @@ sphere (an ellipsoid, unless written equal); H, H and H, one thumb crossed with 
 That raises a fair question. The circle's equation seems to need V. On a page it reads (x/H)² + (y/V)² = 1, and it is a
 circle only when V equals H. If a read never holds V, how can it carry circular mathematics at all?
 
-The answer is that the circle is the blueprint's either way. The equation on the page describes a drawing with two axes, each
+The answer is that the circle is the DHV's either way. The equation on the page describes a drawing with two axes, each
 with its own size, and that drawing needs two lengths. The circle's classical definition, everything at one distance from
 a centre, needs only one, and a length turned, drawn whole, has its tip trace it, as section 2 showed. A read
 holds no circle; the thumb is pointed, and the readings need only that one length. The turn's two parts are h and v (the
-blueprint's cos θ and sin θ), the across and up shares of the same length. So h² + v² = 1 is a fact about the shares of one length. The v in it
+DHV's cos θ and sin θ), the across and up shares of the same length. So h² + v² = 1 is a fact about the shares of one length. The v in it
 is the turned length's own up share, not a share of some second party's breadth. Reading it as the second is where the
 confusion comes from.
 
@@ -468,8 +468,8 @@ is arc over radius. π is circumference over diameter, a ratio. e^(iθ) is the u
 radius. The corner, π/2 and 2/π, and the Cauchy are ratios too. None of them moves when the world is scaled. But being
 unmoved by scaling is needed for a reading and is not enough. √2 combines two lengths, and π, with every number that
 carries it, needs the whole turn; both are made only by an observer combining lengths or holding the turn complete, which is
-the blueprint, not a read (the fourteenth essay). So a read has the corner, its readings and the Cauchy's shape; sine and
-cosine as numbers, the radian, π, π/2 and 2/π are the blueprint's, scale-free as they are. Trigonometry is the blueprint's
+the DHV, not a read (the fourteenth essay). So a read has the corner, its readings and the Cauchy's shape; sine and
+cosine as numbers, the radian, π, π/2 and 2/π are the DHV's, scale-free as they are. Trigonometry is the DHV's
 record of the read's turn.
 
 What cannot be done from reads without an amount carried in is to place a point at (x, y) in metres, state the circumference as 2π
@@ -477,9 +477,9 @@ times so many metres or the area as so many square metres, or say how large anot
 are amounts, and amounts are writing. A read has every part of circular mathematics except the parts that state a
 size.
 
-### Euler's formula, the blueprint's notation for the read's turn
+### Euler's formula, the dual hemispherical vantage's notation for the read's turn
 
-One piece of classical notation holds all of this at once: Euler's formula, written in polar form. It is the blueprint's
+One piece of classical notation holds all of this at once: Euler's formula, written in polar form. It is the DHV's
 notation: e^(iθ) takes the angle as a number, and the whole turn, π, with it (the fourteenth essay). What it records of
 a read is the split of direction from amount and the composition of readings, which in the readings themselves is
 tangent addition, rational:
@@ -507,9 +507,9 @@ four to one in eight (counted, the same stretches are one thumb to two, four to 
 
 **Composition becomes addition.** In the read's own chart, readings taken from two zeros combine by tangent addition,
 (s₁ + s₂)/(1 − s₁s₂). That is awkward, and it blows up when the two turns together reach the vertical. In Euler's form,
-the blueprint's, the same combination is e^(iα)·e^(iβ) = e^(i(α + β)): the angles just add, and nothing is special at the vertical. The
+the DHV's, the same combination is e^(iα)·e^(iβ) = e^(i(α + β)): the angles just add, and nothing is special at the vertical. The
 read's awkward arithmetic is the turn's plain arithmetic, seen through the tangent. A read uses no trigonometry: its turns compose in the slope, and every sine, tangent and arctangent
-in these essays is the blueprint's (*Reads and Writes* §1, "A read uses no trigonometry"). A reading has no sign, so a turn
+in these essays is the DHV's (*Reads and Writes* §1, "A read uses no trigonometry"). A reading has no sign, so a turn
 and the same turn plus a half turn give the same reading; the read's line closes after half a turn of its ray, and the
 squaring of section 6 turns that half turn into one whole turn of the radius from the centre.
 
@@ -529,7 +529,7 @@ on the circle, and that mean is the standpoint, carried across. This is section 
 chart's", said in Euler's notation. For the read's own quarter turn the mean direction of the landing point is
 (2/π)·i: it points at the corner, and its length is 2/π.
 
-The division of the last subsection is here too, with the turn kept. The blueprint's point x + iy = r·e^(iθ), divided by the
+The division of the last subsection is here too, with the turn kept. The DHV's point x + iy = r·e^(iθ), divided by the
 thumb, is the reading 1 + is = sec θ·e^(iθ): the turn whole, carrying a length. Divide once more, by the mirror reading
 1 − is, and the length goes as well: (1 + is)/(1 − is) = e^(2iθ), the landing point of section 6, with home at +1, the
 corner at i and the horizon at e^(iπ) = −1.
@@ -540,8 +540,8 @@ reading. Sweep from home to the horizon and w runs along the upper half of the c
 ∫₀^∞ ds/(1 + s²) = π/2, and the half-Cauchy's 2/π is one over the arc gathered. Over the whole line w goes once round and
 the total is π, the standard Cauchy's. Euler's identity marks where the sweep ends; the logarithm records what was
 gathered; the change from angle to reading makes it the kernel. Each finite read stays rational (w = (1 − s² + 2is)/(1 + s²),
-and composing reads multiplies the w's, which is tangent addition); π enters only when the sweep is totalled, on the
-blueprint. That last sentence, and the standpoint at i where the kernel has its pole, are our reading of the arithmetic,
+and composing reads multiplies the w's, which is tangent addition); π enters only when the sweep is totalled, from the
+DHV. That last sentence, and the standpoint at i where the kernel has its pole, are our reading of the arithmetic,
 not something the arithmetic proves (*Reads and Writes* §9, "The Cauchy's constant, from the same turn").
 The same pole gives the Cauchy's characteristic function. From a standpoint z = m + iγ, weight the kernel by a turn
 e^(its) and close the line above it: the one residue, at z, is e^(izt) = e^(imt − γt) (for t < 0 the line closes below,
@@ -564,20 +564,20 @@ one plane, each a mirror line. Each is moved by sliding the plane along its own 
 across the world's directions, and choosing H, the size of the thumb, slides the second along the distances, so many thumbs
 away. That is why the two corners can be set independently: they sit on different axes.
 
-**Drawn.** The logarithm's plane can be drawn, and `euler.html` draws it with a blueprint's grid on it. The grid's circles
+**Drawn.** The logarithm's plane can be drawn, and `euler.html` draws it with the DHV's grid on it. The grid's circles
 about the eye at one, two, four and eight thumbs come out as evenly spaced upright lines; its rays as level lines; every
 straight line of the grid as one and the same curve, slid sideways by how far off the line is and up or down by which way
 it faces; a logarithmic spiral as a straight line. Squeeze the distance axis by the thumb, (2/π)·arctan(d/H), and it
-becomes ½ + gd(x)/π, x = ln(d/H), with gd Mercator's own function: distance laid by the thumb is a turn too. A blueprint
+becomes ½ + gd(x)/π, x = ln(d/H), with gd Mercator's own function: distance laid by the thumb is a turn too. The DHV
 shows why. Wrap the plane onto a sphere so that one thumb lands on its equator: the eye is one pole, the horizon the other,
 the near field one half and the far field the other. The logarithm's plane is then that sphere's Mercator chart, the
 thumb's lay its chart of plain latitude and longitude, and the swap of a distance for its reciprocal its reflection in the
 equator. Turning the world turns the sphere about its axis; making the thumb larger slides every latitude toward the eye,
 a boost of rapidity ln k, the moving sky of the seventh essay done to distance. Both are slides on the logarithm's plane
-because the two motions commute. The sphere is the blueprint's: a read has the lay.
+because the two motions commute. The sphere is the DHV's: a read has the lay.
 
 **Where it stops.** Euler's formula is a tool for the flat case, one other party and turns in a plane. With three parties
-(the fifth essay's wedge, which is the blueprint's description of the read's heat map), only half of it survives. The split
+(the fifth essay's wedge, which is the DHV's description of the read's heat map), only half of it survives. The split
 survives: a point of space is still an amount times a direction, scaling the world still moves only the amount, and the
 scale test still asks the same question. What fails is composition as addition. Turns in a plane commute, so their angles
 add. Turns in space do not: a quarter turn about one axis and then another ends somewhere different from the same two turns
@@ -605,18 +605,18 @@ can still say what a thousand turns would do. What needs keeping is only which t
 the read's form the rule is plainer still: w(s) × w(1/s) = −1 at every slope, a pair of directions of one read, of
 which the famous identity is the one member that needs the horizon and i × i = −1 the one at the corner. That is the
 same relation held two ways. The algebra joining the two forms is ordinary, and they are equivalent; which one a read
-holds is this series' reading. The home and horizon member is the blueprint's, since no read holds the horizon, and it is
+holds is this series' reading. The home and horizon member is the DHV's, since no read holds the horizon, and it is
 the one that carries π. "Law" here means a geometric law, a relation among one read's directions; laws in general are
 many things and are not a third kind beside reading and writing.
 
-**No dial, and the quarter turn's two numbers.** The circle of this essay is the blueprint's in a stronger sense than
+**No dial, and the quarter turn's two numbers.** The circle of this essay is the DHV's in a stronger sense than
 its shape. A read is one sweep from h to v on the thumb H, with no V in it; it stops at its horizon and closes nothing,
-and each read stands by itself. Steps kept are kept in things, which are writes, and laid end to end they are counted; the circle whole, with no standpoint in it, is the blueprint's, set here for comparison. So the numbers that belong to one sweep
+and each read stands by itself. Steps kept are kept in things, which are writes, and laid end to end they are counted; the circle whole, with no standpoint in it, is the DHV's, set here for comparison. So the numbers that belong to one sweep
 are the quarter turn's, π/2 and 2/π, and they are the ones to state first; π and 2π belong to the join of several. The
-arctangent is the worst of the blueprint's tools to lend a read, because it eliminates the sweep: it names one place
+arctangent is the worst of the DHV's tools to lend a read, because it eliminates the sweep: it names one place
 on the turn as though it could be gone to directly, where a direction is had only within its sweep, with everything
 between it and home before it. The quarter turn even reaches sums that show no turn. Carried past one read by the
-blueprint's join, the slope meets a horizon at every odd multiple of the quarter turn, and Euler's expansion of the slope
+DHV's join, the slope meets a horizon at every odd multiple of the quarter turn, and Euler's expansion of the slope
 over those horizons gives 1 + 1/9 + 1/25 + … = ½·(π/2)², from which Basel's π²/6 follows as ⅔·(π/2)².
 
 **In physics.** The one-length circle sits in relativity in plain sight. Divide E² = (pc)² + (mc²)² by E² and it is the
@@ -628,8 +628,8 @@ numbers as a bound: visibility at most 2hv, predictability |h² − v²|, V² + 
 All textbook; what the sort adds is where each part sits (*Reads and Writes in Physics*
 (`../reads-and-writes-physics.md`), §4.2, §8.1, §8.2).
 
-**Four equations, one.** The circle h² + v² = 1, Euler's e^(iπ) = −1, the blueprint's π/2 × 2/π = 1 and the Cauchy's
-total (2/π)·∫₀^∞ ds/(1 + s²) = 1 look alike because they are one equation read four ways. Divide the blueprint's circle,
+**Four equations, one.** The circle h² + v² = 1, Euler's e^(iπ) = −1, the DHV's π/2 × 2/π = 1 and the Cauchy's
+total (2/π)·∫₀^∞ ds/(1 + s²) = 1 look alike because they are one equation read four ways. Divide the DHV's circle,
 x² + y² = r², by the thumb: 1 + s² = 1/h², the circle in the read's slope. Its reciprocal, h² = 1/(1 + s²), is the
 read's heat, rational in s, with no π and no root in it. Gather that heat from home toward the horizon and it is the
 logarithm of w = (1 + is)/(1 − is) over 2i; at the horizon w is −1, e^(iπ), and the heat has totalled π/2. Close it with
@@ -638,12 +638,12 @@ logarithm of w = (1 + is)/(1 − is) over 2i; at the horizon w is −1, e^(iπ),
 > (2/π)·∫₀^∞ h² ds = (2/π)·(1/2i)·ln(−1) = 1, with h² = 1/(1 + s²) from h² + v² = 1.
 
 A read holds one piece of it, the heat. The horizon reached, π, and the 2/π that makes the heat a probability are the
-blueprint's. A read's distribution is a heat; it becomes a total only when it is closed, on the blueprint.
+DHV's. A read's distribution is a heat; it becomes a total only when it is closed, from the DHV.
 
 **Four identities, one exchange.** Each of the four also has a form a read holds: rational in the slope, with no π,
 and each one a fact about the exchange s ↔ 1/s, whose fixed point is the corner.
 
-| | the blueprint's form | the read's form | what it says of the exchange |
+| | the DHV's form | the read's form | what it says of the exchange |
 |---|---|---|---|
 | the circle | h² + v² = 1 | 1/(1 + s²) + s²/(1 + s²) = 1 | the heat in the v/h chart and the heat in the h/v chart share one whole |
 | the half turn | e^(iπ) = −1 | w(s)·w(1/s) = −1, w = (1 + is)/(1 − is) | a direction and its reciprocal compose to the half turn |
@@ -656,10 +656,10 @@ only for h itself. Turn s over inside w and it becomes −1/w, so the product is
 i × i = −1, the corner composed with itself the horizon, Euler's identity with no e and no π. And putting s = 1/t carries
 the heat below the corner onto the heat above it: a read has "half and half" without ever having "π/4 and π/4".
 
-So a read holds one fact four ways, the exchange and its corner, and the blueprint's four equations are what that fact
+So a read holds one fact four ways, the exchange and its corner, and the DHV's four equations are what that fact
 becomes once the horizon is reached and the total stated. In the plane, π is the price of turning "equal halves" into "how much" (in space the same price is 2, §7). The
 first holds at every direction, so one read has it, in squares; the other three need the horizon reached, which no read
-does. Squares are the read's where roots are the blueprint's: w = (h + iv)² is rational in s and h + iv is not, the same
+does. Squares are the read's where roots are the DHV's: w = (h + iv)² is rational in s and h + iv is not, the same
 split as doubling a turn against halving one.
 
 **The −1 never needed e or π.** The second row can be read as §7 read the third. The corner is the quarter turn,
@@ -671,12 +671,12 @@ as an exponential, base e:
 |---|---|
 | a read | w(s) × w(1/s) = −1; at the corner i × i = −1: the exchange, no numbers |
 | a count | two corner steps land on −1 exactly; finer equal steps, (1 + iθ/n)ⁿ with fractions for θ, land near it and never on it |
-| the blueprint | e^(iπ) = −1, held whole: the arc named π and the base named e, the value the finer steps approach |
+| the DHV | e^(iπ) = −1, held whole: the arc named π and the base named e, the value the finer steps approach |
 
 One thing differs from π/2 × 2/π = 1, where any fraction gave the 1 exactly. Here a count is exact only at
 the corner: the only turns with a rational slope that are a rational part of the whole turn are the corner's multiples
 (Niven), so equal rational steps finer than the corner never land on −1. The corner is the one finite door to it, and
-everything finer is an approach. So e and π are the two parts of the identity only the blueprint holds, and the two parts
+everything finer is an approach. So e and π are the two parts of the identity only the DHV holds, and the two parts
 the fact does not depend on: π the price of saying how long the arc to −1 is, e the price of saying it as one smooth
 turn where a read has two corner steps.
 
@@ -689,14 +689,14 @@ slope:
 |---|---|
 | a read | the heat 1/(1 + s²), and equal halves either side of the corner; no total |
 | a count | shares by count: of K equal turns, k below a slope, k/K; fractions near 2/π for the constant |
-| the blueprint | the total closed to 1, the constant 2/π named |
+| the DHV | the total closed to 1, the constant 2/π named |
 
 A share is a turn over a turn, so counted in turns it needs no π to be defined. The corner is again the one exact door:
 the only rational slopes with a rational share are 0, 1 and the horizon, with shares 0, ½ and 1 (Niven); the quartiles
 are exact too, at √2 − 1 and √2 + 1, by one square root. The counted sum is Gregory's and Leibniz's series for
 the heat below the corner, 1 − 1/3 + 1/5 − 1/7 + … = π/4: every partial sum a fraction, only the limit π/4, and the
 read's equal halves say the whole is twice it without summing it. Across the three identities the free facts are
-s × (1/s) = 1, i × i = −1 and equal halves at the corner; what only the blueprint holds is π, e and π, and 2/π.
+s × (1/s) = 1, i × i = −1 and equal halves at the corner; what only the DHV holds is π, e and π, and 2/π.
 
 **The circle needed no π, and its corner flips.** The first row is different. h² + v² = 1 has no π in it: in the
 read's form, 1/(1 + s²) + s²/(1 + s²) = 1, it is rational in the slope and holds at every direction, so one read has
@@ -708,11 +708,11 @@ the whole measured.
 |---|---|
 | a read | the squares, 1/(1 + s²) + s²/(1 + s²) = 1, at every direction |
 | a count | exact points wherever 1 + s² is the square of a fraction: the Pythagorean triples, s = 3/4 giving h = 4/5, v = 3/5 |
-| the blueprint | the circle whole: every point, its length 2π, its area π |
+| the DHV | the circle whole: every point, its length 2π, its area π |
 
 In the other three the corner was a count's one exact door. On the circle it is the landmark a fraction
 cannot reach: home and the horizon are exact, the triples give exact points as near together as one likes, and at the
-corner h = v = 1/√2. A read has it exactly in squares, ½ and ½; the blueprint has it as the diagonal of the square, a
+corner h = v = 1/√2. A read has it exactly in squares, ½ and ½; the DHV has it as the diagonal of the square, a
 construction and not a count. So there are three grades of cost: nothing, for what is rational in the slope; a square
 root, a finite construction, for the shares and for halving a turn; and a limit, for how much the whole is, π and e.
 
@@ -739,21 +739,21 @@ numbers, and the first N past the horizon gives 2N/m above π by under 2/m + 2/m
 The two unifying ideas of the series, reading against writing and the Cauchy, meet in the circle, and this essay has
 been about how.
 
-**The circle is one length's before it is two lengths'.** The blueprint starts with the circle as an equation in two lengths and
+**The circle is one length's before it is two lengths'.** The dual hemispherical vantage (DHV) starts with the circle as an equation in two lengths and
 turns it. A read starts with one length, pointed at the mountain and turned, and holds no circle: the circle is the
-blueprint drawn of the turning. From one place a read has the open quarter's directions, its readings; the circle
-closed, with its π, is the blueprint's, held from no standpoint; an observer that walks and counts has writes, and reads again
-when it stands still (the sixth essay, "From one look to two, and to an amount"; the fourteenth). The blueprint's equation describes, in two
+DHV's drawing of the turning. From one place a read has the open quarter's directions, its readings; the circle
+closed, with its π, is the DHV's, held from no standpoint; an observer that walks and counts has writes, and reads again
+when it stands still (the sixth essay, "From one look to two, and to an amount"; the fourteenth). The DHV's equation describes, in two
 lengths, a thing one length made.
 
 **Everything special about the circle is available from one length pointed, with no circle held.** That includes the corner
 at 45°, its two mirrored halves, the right angle on the chord, and the two facings, the near reading s and the far
-reading 1/s, whose product is 1. So is the blueprint's arc-over-chord measure, π/2 and 2/π, whose product returns the
+reading 1/s, whose product is 1. So is the DHV's arc-over-chord measure, π/2 and 2/π, whose product returns the
 observer's own length. None of it needs a second length or the size of anything.
 
-**The Cauchy is the circle read from its edge.** From the standpoint, where the blueprint's circle passes, directions are
+**The Cauchy is the circle read from its edge.** From the standpoint, where the DHV's circle passes, directions are
 read as ratios, unbounded, with their median at the corner and no mean. That is the Cauchy, the circle's law without the
-V. The blueprint, from the middle of the pair, names the same points as squares, bounded, with means. They are two names
+V. The DHV, from the middle of the pair, names the same points as squares, bounded, with means. They are two names
 for one point, joined by a theorem in Euclid.
 
 The third essay takes the Cauchy on its own terms. It takes a v and an h, nothing else, and it is not the

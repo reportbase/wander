@@ -1,7 +1,7 @@
 # Read and write on one plane
 
 *The eighteenth of a series of essays on what can be known from where one stands. Draft, 7 November 2026. It gathers
-the rulings of 7 November (R736–R740) on Euler's plane, the thumb's lay, the blueprint's sphere behind them and two turns in
+the rulings of 7 November (R736–R740) on Euler's plane, the thumb's lay, the sphere of the dual hemispherical vantage (DHV) behind them and two turns in
 space, and follows* Reads and Writes *§2 ("The plane") and §9. Brought to R788 on 10 November: up is the read, gaps across are
 places, and only the across axis's zero, tied to a unit, is a write.*
 
@@ -22,27 +22,27 @@ argument but a picture: reading runs one way across it, placing the other, and w
 zero. This essay draws the picture, says what it
 shows past itself, and says where it stops.
 
-The order: one plane (§1), the blueprint's grid on it (§2), two corners as two mirrors (§3), the thumb's lay, distance as a
-turn (§4), the sphere behind it, the blueprint's (§5), heat counted per chart (§6), reads counted, and the blueprint's limit
+The order: one plane (§1), the DHV's grid on it (§2), two corners as two mirrors (§3), the thumb's lay, distance as a
+turn (§4), the sphere behind it, the DHV's (§5), heat counted per chart (§6), reads counted, and the DHV's limit
 (§7), what the plane is not (§8), where it stops (§9), who saw which piece (§10), and what it changes (§11).
 
 ---
 
 ## 1. One plane
 
-Stand somewhere and look out. Every point of the world in front of you is, as the blueprint has it (the blueprint
+Stand somewhere and look out. Every point of the world in front of you is, as the dual hemispherical vantage (DHV) has it (the DHV
 being classical geometry's view from no standpoint, set beside the read and the write for comparison), a distance d and a
 direction θ, or as one complex number z = d·e^(iθ). Hold up your thumb at arm's length: H, the one length a read has.
 Divide by it and take the logarithm:
 
   ln(z/H) = ln(d/H) + iθ.
 
-The angle θ is the blueprint's coordinate on the direction, the one in which turns add. A read holds the direction as
+The angle θ is the DHV's coordinate on the direction, the one in which turns add. A read holds the direction as
 the pair [h : v], its slope s = v/h, and composes turns by tangent addition, (s₁ + s₂)/(1 − s₁s₂), with no angle (§8).
 
 Draw that as a plane: the direction up, the distance across, the distance read as a ratio of thumbs, one in two, one in
-four, or two thumbs, four, eight, each the same step across. That is Euler's plane, and `euler.html` draws it with a
-blueprint's grid on it.
+four, or two thumbs, four, eight, each the same step across. That is Euler's plane, and `euler.html` draws it with the
+DHV's grid on it.
 
 On it the two tests of the series become the two directions of the page.
 
@@ -67,33 +67,33 @@ The plane shows it.
 That is the picture. Reading is up and down; places are across; a write ties the across axis's zero to a unit. The
 phone's two gestures are the two slides.
 
-## 2. The blueprint's grid on it
+## 2. The dual hemispherical vantage's grid on it
 
-Lay a blueprint's grid on the ground in front of you, squares one unit on a side, the eye at one corner, and carry every
+Lay the DHV's grid on the ground in front of you, squares one unit on a side, the eye at one corner, and carry every
 point of it onto the plane. The grid is straight; what it becomes is not, and how it bends says what each act holds.
 
-- **Circles about the eye become upright lines.** A circle of one radius is one distance at every direction. The blueprint's
+- **Circles about the eye become upright lines.** A circle of one radius is one distance at every direction. The DHV's
   circles at one thumb, two, four and eight come out evenly spaced, ln 2 apart: on this plane the far field is an even
   grid, every stretch where the reading halves the same width. No circle sits inside another; nothing nests.
 - **Rays from the eye become horizontal lines.** A ray is one direction at every distance.
 - **Every straight line is the same curve.** A line at distance p from the eye, facing φ₀, is
   u = ln(p/H) − ln cos(θ − φ₀): the one curve −ln cos θ, slid across by how far off the line is and up or down by which way
   it faces. It spans exactly half a turn of directions, nearest the eye at its middle, running off to the far side at
-  both ends. The blueprint has infinitely many lines; this plane has one shape of line, moved.
+  both ends. The DHV has infinitely many lines; this plane has one shape of line, moved.
 - **A logarithmic spiral is a straight line.** A spiral whose distance grows by the same factor for every equal turn is a
   slanted straight line on the plane, its slope the spiral's growth per turn. It crosses every ray at one angle. Anything
   that keeps a fixed angle to something it is closing on, a moth to a lamp, a hawk to its prey held at one place in its
   view, travels a log spiral, and on this plane flies straight. (Tucker (2000) proposed it for raptors, whose sharpest
   vision looks sideways; the same issue's field study found wild peregrines flying curved paths that resemble it.)
 - **The grid's points pile up on the far side.** Per unit of the plane's area the even grid holds e^(2u) points, so most of
-  the blueprint's grid lies far across, toward the horizon. The blueprint's evenness is the far side's crowd.
+  the DHV's grid lies far across, toward the horizon. The DHV's evenness is the far side's crowd.
 
 ## 3. Two corners, two mirrors
 
 The series has two corners, and on this plane each is a mirror.
 
-Swap a reading for its reciprocal, v/h for h/v, s for 1/s (the blueprint's θ for 90° − θ): a reflection top to bottom about
-the horizontal line s = 1, the blueprint's 45°. That line, left in place, is the corner in direction.
+Swap a reading for its reciprocal, v/h for h/v, s for 1/s (θ for 90° − θ, as the dual hemispherical vantage (DHV) has it): a reflection top to bottom about
+the horizontal line s = 1, the DHV's 45°. That line, left in place, is the corner in direction.
 
 Swap a distance for its reciprocal about the thumb, d/H for H/d, and ln(d/H) changes sign: a reflection left to right
 about the upright line at one thumb. That line is the corner in distance, where near meets far.
@@ -107,7 +107,7 @@ hottest, the thing looked at.
 Covering a fixed share of the distance left with every step is a steady slide across the plane, the same slide each step,
 and a steady slide never runs out of plane: the foot is its limit. A steady stride is not a slide here. It is even on the
 number line instead, where thumb over mountain falls by the same amount each stride, and it reaches the foot in a
-finite count. On the blueprint's circle, Z = (1 + is)/(1 − is), both run from 1 far off, through i at the corner, toward
+finite count. On the DHV's circle, Z = (1 + is)/(1 − is), both run from 1 far off, through i at the corner, toward
 −1 at the foot: one arrives by counting, the other approaches by ratio, and a turn of the look does neither (WLK, exact).
 Look by look the walk's points join exactly, at any stride: from the corner to the foot a quarter of the circle, and the
 half circle only for a walk begun without end. The infinite in e^(iπ) = −1 is the far start.
@@ -131,14 +131,14 @@ in-place lay does. Drawn with the turn up and g across, the lay is a square: the
 every direction's horizon at once. Drawn with g as the radius and the turn as the angle, it is a quarter disc, the eye at
 its centre and the horizon its rim.
 
-The square's two edges are worth a look. Its right edge is the line at infinity: every vertical line of the blueprint's grid
+The square's two edges are worth a look. Its right edge is the line at infinity: every vertical line of the dual hemispherical vantage's grid
 ends at one point of it, every horizontal line at another, and the diagonals at a third, 45°. A family of parallel lines
 meets the edge at one point, its vanishing point. Its left edge is the eye, drawn as a whole side; the quarter disc puts
 it back to one point.
 
-## 5. The sphere behind it, the blueprint's
+## 5. The sphere behind it, the dual hemispherical vantage's
 
-The blueprint can say why the three pictures are so alike. Take the plane of distances and directions and wrap it onto a
+The DHV can say why the three pictures are so alike. Take the plane of distances and directions and wrap it onto a
 sphere, stereographically, scaled so that the circle one thumb out lands on the equator. The eye goes to one pole and the
 horizon to the other. The near field is the half on the eye's side, the far field the half on the horizon's, and the
 swap of d for H²/d, the corner in distance, is the reflection in the equator. Then:
@@ -155,7 +155,7 @@ eye's pole, by tan(χ′/2) = tan(χ/2)/k: a boost of rapidity ln k along the ax
 essay, aberration, done to distance instead of to directions. A turn about the axis and a boost along it commute, which is
 why both are slides on Euler's plane.
 
-The sphere is the blueprint's drawing, and the read is not its even measure. Count the read per unit of the sphere's area and
+The sphere is the DHV's drawing, and the read is not its even measure. Count the read per unit of the sphere's area and
 it runs as 1/sin of the angle from the eye's pole, without bound at both poles; the sphere's own even spread is a
 different law. The sphere has a size and a surface that closes; a read has the lay, and never holds the sphere whole.
 `euler.html`'s "the writer's sphere" turns it, and "move the thumb in and out" plays the boost.
@@ -166,17 +166,17 @@ The series calls the read a heat map: hottest where it looks, cooling outward. O
 always heat per unit of something.
 
 Per unit of turn, the directions have no heat; per unit of the reading s = v/h they fall off as 1/(1 + s²), the half-Cauchy
-(the blueprint's cos²θ); per unit of a flat screen in space as 1/(1 + r²)^(3/2) (cos³α). Per unit of the thumb's lay, distance has no heat either; per unit of ln(d/H) it
-is (1/π)·sech(ln(d/H)), the bell centred on one thumb; per unit of the blueprint's plane it runs without bound at the eye.
+(the cos²θ of the dual hemispherical vantage, DHV); per unit of a flat screen in space as 1/(1 + r²)^(3/2) (cos³α). Per unit of the thumb's lay, distance has no heat either; per unit of ln(d/H) it
+is (1/π)·sech(ln(d/H)), the bell centred on one thumb; per unit of the DHV's plane it runs without bound at the eye.
 The lay square, the turn against g, is the one chart on which the read is flat both ways, every place the same room.
 
-So the series' heat in the plane, (1 + s)²/(2(1 + s²)) · 2x/(1 + x²) with x = d/H (the blueprint's
+So the series' heat in the plane, (1 + s)²/(2(1 + s²)) · 2x/(1 + x²) with x = d/H (the DHV's
 cos²(θ − 45°)·sech(ln(d/H))), counts direction per unit of reading and distance per unit of
 ratio. It is a good choice, the one that puts the hot spot on the thing looked at, and it is a choice: no chart gives a
 heat of itself. `euler.html` paints both, the heat at each point and the heat per unit of each chart, and on the lay the
 second is one flat colour.
 
-## 7. Reads counted, and the blueprint's limit
+## 7. Reads counted, and the dual hemispherical vantage's limit
 
 Euler's formula is usually met as a limit, and the limit is a count of reads. Cut a turn θ into n reads of θ/n, each the
 pair [1 : θ/n], and compose them by tangent addition; in complex numbers that is
@@ -186,7 +186,7 @@ pair [1 : θ/n], and compose them by tangent addition; in complex numbers that i
 exact at every n, rational whenever θ/n is. Its direction falls short of θ by θ − n·arctan(θ/n), about θ³/(3n²); its
 length grows by (1 + θ²/n²)^(n/2) − 1, about θ²/(2n). Four reads of one radian fall 0.0201 short and are 1.129 long. The
 direction comes right fast; the length comes right slowly, and no read ever sees it, since [h : v] divides the length out
-at every step. As n grows the count becomes e^(iθ), with its length 1: the limit, held whole, is the blueprint's. The same
+at every step. As n grows the count becomes e^(iθ), with its length 1: the limit, held whole, is the DHV's. The same
 limit along the real axis, (1 + 1/n)ⁿ, is Bernoulli's e. One limit, two axes: e compounds along the thumb, e^(iθ) square to
 it. `euler.html`'s "n reads" draws the polygon closing on the circle.
 
@@ -194,12 +194,12 @@ The count never lands on −1, at any n, with fractions for θ: the direction is
 little long. Yet −1 is reached in two steps, exactly, by another road: the corner is the quarter turn,
 (1 + i)/(1 − i) = i, and i × i = −1. That is the one finite door, since no finer equal step with a rational slope is a
 rational part of the turn (Niven). So e^(iπ) = −1 is held two ways, with the classical statement beside them: a read has the exchange, w(s) × w(1/s) = −1; a
-count has the two corner steps, and approximations for anything finer; the blueprint, whole at its
+count has the two corner steps, and approximations for anything finer; the DHV, whole at its
 limit, has it with the arc named π and the base named e, neither of which the fact depends on (the second essay, §9).
 
 The product is the plane's two acts taken in turn. Each factor is a read; multiplying the next one on needs the look so
 far kept, and what is kept is a write, from which the next read is taken. Read, keep, read, keep, n times: the n is a
-count laid over the kept looks. Euler's identity is that alternation at its limit, and so it is the blueprint's; the
+count laid over the kept looks. Euler's identity is that alternation at its limit, and so it is the DHV's; the
 finite product is the cycle anyone can make (essay 15 §5).
 
 Run the up axis alone and the count closes in on π. One read of slope 1/m composed N times is (m + i)^N in whole
@@ -210,8 +210,8 @@ log times m tends to π/4 (BLD; essay 25).
 
 ## 8. What the plane is not
 
-It is the blueprint's notation for the read. e^(iθ) states the turn as a number and carries π with it, and π, the turn
-completed, is the blueprint's (the fifteenth essay). A read holds a direction as the pair [h : v], composes by tangent
+It is the dual hemispherical vantage's (DHV's) notation for the read. e^(iθ) states the turn as a number and carries π with it, and π, the turn
+completed, is the DHV's (the fifteenth essay). A read holds a direction as the pair [h : v], composes by tangent
 addition, and states no angle. The plane is the best map of the read, not the read.
 
 It does not hold the second test. The paint, whatever arrives along each direction, sits on top of the plane at every
@@ -237,11 +237,11 @@ two side by side; the thirteenth essay takes the reason apart (Frobenius, Gauss 
 That loop is two turns about two axes. Take a turn and a scaling instead: up by α, across by λ (the thumb scaled, the
 first test's own motion), and both undone. On the plane it closes because the two slides commute. In space it closes
 too, since scaling by one factor commutes with every turn of space; a scaling put anywhere into a loop changes only the
-loop's overall size (checked to 10⁻⁶¹, the plan BRL). The loops are compositions of motions, the blueprint's account, not
+loop's overall size (checked to 10⁻⁶¹, the plan BRL). The loops are compositions of motions, the dual hemispherical vantage's (DHV's) account, not
 reads. So three loops part. A turn and a scaling close, in the plane and in space.
 Two reads in different directions come home turned, by Ω with cos(Ω/2) = 1 − 2·sin²(α/2)·sin²(β/2)·sin²φ for axes φ apart,
 the same turn every time the loop is repeated, so the thing goes round and never grows. A turn with a scaling in two
-unequal lengths, a stretch by c along one axis (the blueprint's two axes drawn at V = cH), comes home squeezed: its net
+unequal lengths, a stretch by c along one axis (the DHV's two axes drawn at V = cH), comes home squeezed: its net
 map has eigenvalues e^(±ζ), cosh ζ = 1 + 2·sin²α·sinh²(½ ln c), about |α·ln c| when small, a squeeze of rapidity ζ up to a
 turn, and it grows by ζ with every loop: 0.4507 a loop at α = 40° and c = 2. It closes only at c = 1. A loop of a turn and
 a scaling is steady exactly when the scaling is in one length, which is the one-length circle said of a loop.
@@ -253,7 +253,7 @@ direction, lays space out as a straight line times the sphere of directions, and
 line's coordinate alone, commuting with every turn of space, to rounding. The heat can be laid flat too: Lambert's
 equal-area map about the look, crossed with the thumb's lay g, carries the read's heat at one constant density, and every
 turn of the look keeps that map's areas, so the heat stays flat wherever the look goes. What no flat chart can do is make
-the turns rigid. The turn that keeps Lambert's areas bends its shapes: turn the look by φ and, in the blueprint's sums, the old
+the turns rigid. The turn that keeps Lambert's areas bends its shapes: turn the look by φ and, in the DHV's sums, the old
 look's direction is stretched by 1/cos(φ/2), √2 at a quarter turn, and the directions square to both looks by up to 2; over
 every direction in front of both looks the stretch never passes 2. The stereographic chart keeps every turn's angles instead and loses the heat, a
 quarter as hot at its rim as at its middle. Gauss's theorem says no flat chart of a piece of a sphere keeps its distances,
@@ -284,13 +284,13 @@ Almost all of it is old.
 
 What is the series' own is the reading: up as the read, gaps across had by reads held together, and the across zero as the write, the scale
 test as which part moved, the two
-corners as its two mirrors, the thumb's lay as a turn in distance, the sphere as the blueprint's picture of why the charts
+corners as its two mirrors, the thumb's lay as a turn in distance, the sphere as the dual hemispherical vantage's (DHV's) picture of why the charts
 agree, the heat as a count per chart, and the place where it stops as the place where reading and placing stay apart but
 turning stops being simple.
 
 **In physics.** A boost along one axis is a slide on this plane: in the stereographic chart about that axis it
 multiplies z by the Doppler factor k, sliding ln z by the rapidity, so collinear rapidities add as slides do, and the
-velocity law (β₁ + β₂)/(1 + β₁β₂) is the blueprint's tanh of the read's sum. Three stars'
+velocity law (β₁ + β₂)/(1 + β₁β₂) is the DHV's tanh of the read's sum. Three stars'
 directions before and after fix the Möbius map between the two looks, with no frequency and no distance; the rapidity
 is that map's coordinate, inferred from its trace, 2·cosh(ζ/2), not itself a read. That is how it is sorted, not a doubt that it can be
 measured: the boost is a physical change of standpoint, and the stars are the evidence for it. Two boosts along
@@ -304,7 +304,7 @@ is the difference between up, gaps across and the across axis's zero, and anyone
 already done the two slides.
 
 It says what the thumb is. Choosing H slides the whole plane across and moves nothing up or down: the thumb is a zoom on
-distance and nothing else. On the blueprint's sphere it is a boost along the axis, the same act that a moving observer
+distance and nothing else. On the dual hemispherical vantage's (DHV's) sphere it is a boost along the axis, the same act that a moving observer
 performs on the sky.
 
 It settles what the heat is. The heat is the read's measure counted per unit of a chart, and the lay square is where it is
@@ -314,10 +314,10 @@ And it marks where the clean arithmetic ends. In the plane, turns add; in space 
 behind. What survives everywhere is the part the series cares most about: reading holds directions and the gaps across
 between them, the write holds amounts, and scaling the world moves only the write.
 
-**Demos.** `euler.html` (the three charts side by side or one sliding into the next; the blueprint's sphere and the thumb
+**Demos.** `euler.html` (the three charts side by side or one sliding into the next; the DHV's sphere and the thumb
 as a boost; the heat at each point and per chart; a line and a spiral with their mirrors; two turns in space; a flat chart in space, Lambert's and the stereographic, turned; breaths, three loops side by side; n reads),
 `plane-sphere.html` (the plane's one law and the sphere's three), `levels.html` (the read's lay of distance),
-`boost-sky.html` (a boost on the sky's chart), `uncompressed.html` (a blueprint's grid in space, compressed into the read).
+`boost-sky.html` (a boost on the sky's chart), `uncompressed.html` (the DHV's grid in space, compressed into the read).
 
 ## Sources
 
@@ -347,5 +347,5 @@ The account this essay follows is *Reads and Writes* (`../readers-and-writers.md
 read and write): §2 ("The plane", "The thumb's lay is itself a turn", "π with the direction, e with the
 distance"), §3 ("The heat depends on what it is counted per"), §8 ("What survives in space, and what does not", "Three
 loops") and §9 ("Euler's formula as a count of reads"). The rulings are SPN R580, R647, R736–R740, R743 and R788; the checks are `runs/elm/` (n reads), `plans/flc-plan.md` with `runs/flc/` (a flat chart for the read in space) and the page's own hook, `window.__euler`. The essays before
-this one: 2 (Euler's formula, the blueprint's notation), 4 (near and far, the three rulers), 7 (the moving sky), 13 (where
-the plane's one law parts), 15 (π and e as the blueprint's), 17 (the heat map).
+this one: 2 (Euler's formula, the dual hemispherical vantage's (DHV's) notation), 4 (near and far, the three rulers), 7 (the moving sky), 13 (where
+the plane's one law parts), 15 (π and e as the DHV's), 17 (the heat map).

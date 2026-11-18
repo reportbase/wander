@@ -45,7 +45,7 @@ along it, and the temperature at z is the average of the line's temperatures ove
 lays down is also the law of where a blind random path would end up. Nothing about the turn mentions walkers; it is a
 coincidence, and the plane is where it happens.
 
-**Its averages are the powers of one point.** Carry the line onto a circle, the blueprint's bounded chart, with the Cayley
+**Its averages are the powers of one point.** Carry the line onto a circle, the bounded chart of the dual hemispherical vantage, with the Cayley
 map W = (X − i)/(X + i). The standpoint z goes to a point w = (z − i)/(z + i) inside the circle, and the averages of the
 law become the powers of w: the average of W is w, of W² is w², and so on. A law with no mean on the line has one on the
 circle, and the mean is the standpoint itself, carried across. The second essay's Euler section said this in Euler's
@@ -202,7 +202,7 @@ eighteenth essay, section 9).
 curvature added up over a region equals what its boundary falls short of being straight, so a spherical triangle's angles
 add to π plus its area over the radius squared (Girard 1629, then Gauss and Bonnet), and over a closed surface the total
 is 2π times its Euler characteristic, 4π for the sphere. That statement holds the region at once, from no standpoint: it
-is the dual hemispherical vantage's, the blueprint's, and its total a completion. From one standpoint the same fact is
+is the dual hemispherical vantage's, and its total a completion. From one standpoint the same fact is
 smaller. Each turn along the loop is read where it is taken, two directions and no size; the turns are composed in order
 by the slope rule (s + a)/(1 − sa), whose 1 − sa is where the curvature sits; and the question is only whether the loop
 comes home. Taken in fractions it does not need π to answer (the HLX run above): the angle sum's π is a name. What is left
@@ -234,7 +234,7 @@ fifth essay assumed a standpoint off the centre, so nothing there depends on the
 only the exchange of two shares, never two turns taken in order, which is why they survive what the turns lose.
 
 **The Cauchy wedge survives.** The two-dimensional Cauchy of the wedge's readings, (v/h, v₂/h), is the uniform law on the
-octant seen through a flat screen: the blueprint's description of the read's heat map (the blueprint being classical
+octant seen through a flat screen: the dual hemispherical vantage's description of the read's heat map (classical
 geometry's view from no standpoint, here for comparison), cut to a quarter of its screen. It is
 the image of the uniform directions, with no standpoint moved. It holds in every dimension, and the fifth essay's numbers
 stand.
@@ -295,7 +295,7 @@ In the plane, the read's Cauchy wears four hats: the uniform turn under every ch
 lands, the law whose averages are the powers of the standpoint, and the landing doubled less the uniform. It wears them
 because the plane has endless angle-keeping maps, because those maps keep heat as heat, and because turning is
 multiplication that does not care about order. Euler's formula, z = r·e^(iθ), is the notation of all three, the
-blueprint's notation for the read's turn (the second essay).
+notation of the dual hemispherical vantage for the read's turn (the second essay).
 
 In space the hats come off. Liouville leaves only the Möbius maps; the heat problem stops being kept by them; turns
 stop commuting. Harmonic measure keeps the powers and the mean. The spherical Cauchy keeps the Möbius maps and the

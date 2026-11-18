@@ -4,7 +4,7 @@
 
 The first essay found that a read with no second length has no circle, yet the thumb pointed at the mountain gives it
 the circle's geometry, and that read from the standpoint that geometry is the Cauchy distribution. The second showed how
-one length pointed and turned generates it, the circle being the blueprint's drawing of the turn, and how one read gives the
+one length pointed and turned generates it, the circle being the dual hemispherical vantage's drawing of the turn, and how one read gives the
 near reading s and the far reading 1/s, which multiply to 1. This essay is about the Cauchy itself: what it is a law *of*.
 
 The usual answer is that it is a law of something measured: noise, a spectral line, a ratio of two measurements. The
@@ -197,8 +197,8 @@ v/h is to lay each direction out as an amount on the chart that puts the horizon
 chart's far end: the running average climbs by about 1.47 for every tenfold further the readings run. The missing mean
 belongs to that chart, not to the directions; the bounded chart s/(1 + s) of the same directions averages ½. The median and
 the quartiles name the same directions on every chart, because they commute with every order-keeping change, so they belong
-to the directions; the mean does not. A mean can be had, on the blueprint. Add the directions as unit vectors and the average
-points at the corner, at length 2√2/π, the blueprint's measure with π in it. Cap the world at some bound and the Cauchy has a
+to the directions; the mean does not. A mean can be had, from the dual hemispherical vantage (DHV). Add the directions as unit vectors and the average
+points at the corner, at length 2√2/π, the DHV's measure with π in it. Cap the world at some bound and the Cauchy has a
 mean, set by the extent (about 8.8 at a cap of a million): the mean appears only once an extent is written in, and its
 value is set by that bound, not equal to it. A computer's Cauchy has one for the same reason.
 
@@ -424,7 +424,7 @@ to the sources themselves. The sort does not settle the dipole's origin. It says
 
 **One photon at a time.** In a double-slit experiment lit one photon at a time, each photon lands at one place and the
 fringes build up over many. With the two paths' amplitudes as h and v, the fringes' visibility can be at most 2hv, and the
-which-path predictability is the difference of their squares. In the blueprint's angles they are sin 2θ and cos 2θ, the
+which-path predictability is the difference of their squares. In the angles of the dual hemispherical vantage (DHV) they are sin 2θ and cos 2θ, the
 point at twice the angle (Euclid III.20); it is a known bound in quantum optics. In published frames the two slits' counts, 9,026 against 10,465 and 11,993 against 11,891,
 give 2hv = 2√(n₁n₂)/(n₁ + n₂) = 0.997 and 1.000: the pair at its corner, where the bound is 1. The measured contrast falls below it, short by the source's coherence. The bound is set by the two shares
 alone, which is geometry. How far below it a pattern falls belongs to the source, what arrives.
@@ -437,7 +437,7 @@ energy times time, and it moves with all three. Experiments have pulled them apa
 rest: light in a coiled optical fibre, whose polarization turned by the solid angle of the coil's turning alone (Tomita
 and Chiao, 1986), and neutrons in a turning field, where strength and time were varied and the geometric part stayed
 (Bitter and Dubbers, 1987). Both tests sort it. Scale the world, or change what is carried along the loop, and only the
-dynamical phase moves. Read in this series' terms, the half is the blueprint's doubling of the angle (Euclid III.20): a
+dynamical phase moves. Read in this series' terms, the half is the DHV's doubling of the angle (Euclid III.20): a
 spin's direction at θ has its point on the sphere of states at 2θ, so a loop counted on that sphere is counted twice.
 
 None of these is new physics. Each is classical. What the reading supplies is the sort.
@@ -448,7 +448,7 @@ apple's), and what the hole sends (its glowing gas, the payload). On the Event H
 came off exactly and was negligible; the second and third stayed tangled in our fits, the ring's size moving with how
 the gas was modelled. Here the address and payload sort is not the hard part; the hard part is telling a thing's own
 geometry (write geometry, with a size) from what it sends, one write from another, and that needs a route test (light that went round once more), not a test of the read. The hole
-is its writes; the ring model fitted to the data is a blueprint of it, a representation that cannot yet tell the two
+is its writes; the ring model fitted to the data is a representation of it, one that cannot yet tell the two
 apart, while the telescope reads the hole itself.
 
 **In physics.** *Reads and Writes in Physics* (`../reads-and-writes-physics.md`) adds cases where the split was made

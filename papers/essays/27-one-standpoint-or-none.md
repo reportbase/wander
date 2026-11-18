@@ -14,7 +14,7 @@ Ask the same question standing somewhere ("what here looks like the thing in fro
 differently. There is a look, a front and a behind, and everything is seen in terms of the one thing looked at.
 
 This essay sets the two side by side. In the series' words, cosine similarity is the dual hemispherical vantage (DHV),
-the blueprint, from no standpoint; a read about a query is the single hemispherical vantage (SHV), from one standpoint.
+from no standpoint; a read about a query is the single hemispherical vantage (SHV), from one standpoint.
 They agree wherever both apply, and the places they part show what each one is.
 
 The order: the two questions (§1), cosine from no standpoint (§2), a read from the query (§3), one shared denominator
@@ -38,15 +38,15 @@ The first is how embeddings are built and searched. The second is how a read is 
 
 ## 2. Cosine, from no standpoint
 
-Cosine similarity is x·y divided by |x| times |y|. Three things make it the blueprint's.
+Cosine similarity is x·y divided by |x| times |y|. Three things make it the dual hemispherical vantage's (DHV's).
 
 - **No standpoint.** Swap x and y and nothing changes. Neither vector is the look; both sit in one frame, side by side.
 - **Both hemispheres.** It runs from +1 through 0 to −1. A thing directly behind gets a value, −1, as readily as a thing
   directly in front. Nothing is past a horizon.
 - **An angle's function.** It is the cosine of the angle between the two, the completed turn's chart, which is
-  trigonometry, and so the blueprint's (*Reads and Writes* §1, R793).
+  trigonometry, and so the DHV's (*Reads and Writes* §1, R793).
 
-The embedding it works on is the blueprint too. Every vector is held at once, all N of them, in one global frame, each
+The embedding it works on is the DHV's too. Every vector is held at once, all N of them, in one global frame, each
 coordinate an amount on its own axis. That is what Tom's first sentence says: the dimensions are orthogonal, each its own
 quantity, read on its own.
 
@@ -64,7 +64,7 @@ Taken together, the readings give one number about the look, s = |v|/h: how far 
 own reach along the look. At s = 0 it is straight ahead; at s = 1 it is at the corner, as far off the look as along it.
 For h ≤ 0 it is not in front at all; it is past the horizon, and the read has nothing to say about it.
 
-No angle is taken and no trigonometric function is used. The readings are ratios of parts. The blueprint's name for s is
+No angle is taken and no trigonometric function is used. The readings are ratios of parts. The dual hemispherical vantage's name for s is
 tan α, α the angle between x and q, but the read does not need the name.
 
 ## 4. One shared denominator
@@ -125,7 +125,7 @@ correlation, higher matching better).
 
 | measure | SimLex | WordSim |
 |---|---|---|
-| cosine (the blueprint, from no standpoint) | 0.265 | 0.503 |
+| cosine (the dual hemispherical vantage, from no standpoint) | 0.265 | 0.503 |
 | the read from the query, s (one standpoint, shared h) | 0.265 | 0.503 |
 | Euclidean distance (an amount) | 0.276 | 0.464 |
 | each coordinate over its own denominator | 0.192 | 0.238 |
@@ -185,7 +185,7 @@ That a correlation of logs over a shared denominator is ½, and that the share w
 exercises.
 
 Ours: the sorting. Cosine as the dual hemispherical vantage's form, from no standpoint and over both hemispheres; the
-embedding held whole as the blueprint; the read about a query as the single hemispherical vantage's, with a shared
+embedding held whole, from the DHV; the read about a query as the single hemispherical vantage's, with a shared
 denominator, a front and a horizon; the observation that the two rank the front alike, so the difference lies in the
 standpoint, the behind and the trigonometry, not in the order of what is in front; and the orthogonal axes' ½ⁿ against
 the shared denominator's 1/(n + 1) as the reason many readings hold together only from a standpoint.
@@ -195,7 +195,7 @@ the shared denominator's 1/(n + 1) as the reason many readings hold together onl
 Nothing in how AI works, and the essay does not ask it to. Cosine is right for what it does, which is to compare two
 things held in one frame from no standpoint. Neither vantage is called better (R939).
 
-What changes is what the number is. "Similarity" in an embedding is a blueprint's statement: both things held, neither
+What changes is what the number is. "Similarity" in an embedding is a statement of the dual hemispherical vantage: both things held, neither
 looked from, everything behind counted. A read's "alike" is another kind of statement: one thing looked from, the other
 read in its terms, the behind past a horizon. They give the same order to what is in front, which is why the difference
 has been easy to miss.
@@ -212,8 +212,8 @@ reaches through one input, and cleared after. (R1048; the sorting a reading.)
 And one more, after Tom: "The problem with dhv and why the natural world does not use it is because it's not real time,
 it's historical, it's a record of writes that have occurred." An embedding is that record. It is trained on writing that
 has already happened and frozen at its cutoff, so "more like this" is history consulted: two entries of the record
-compared, from no standpoint. A look is now. (R1049; the whole blueprint, the limit, is still made by no writes, R890;
-what is a record is every blueprint anyone has.) It is a compressed record, far smaller than its corpus, which is what
+compared, from no standpoint. A look is now. (R1049; the DHV whole, the limit, is still made by no writes, R890;
+what is a record is every representation anyone has.) It is a compressed record, far smaller than its corpus, which is what
 lets it be held at all; a complete record of what it was trained on would be as large as the writing itself (R1050).
 
 ---

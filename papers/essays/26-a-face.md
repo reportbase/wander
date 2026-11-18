@@ -30,7 +30,7 @@ from where. It does not say which stride came first. Add the strides in any orde
 discrete and unmoved by scaling the world (*Reads and Writes* §1, the two-by-two table): it describes writes made, and it
 faces nothing. The pickets, as a number of pickets, are the same from either end of the fence.
 
-**The blueprint.** At the other extreme is the circle drawn whole on paper, both hemispheres at once (R798, R967). It
+**The dual hemispherical vantage (DHV).** At the other extreme is the circle drawn whole on paper, both hemispheres at once (R798, R967). It
 holds every direction together, so it faces none of them. It does not pass from home toward the horizon; it has home,
 the horizon and everything between already, at once. That is why the series calls it the dual hemispherical vantage and
 says no one stands at it.
@@ -41,7 +41,7 @@ none faces anything. A read is the other side: continuous, no scale, no size, an
 and writes are (R1039). The read is the stage, the write is the play (R1041).
 
 So two things have no face, for opposite reasons. A count has too little to face anything with: separate things, no
-direction among them. The blueprint has too much: every direction held, none faced. Neither flows.
+direction among them. The DHV has too much: every direction held, none faced. Neither flows.
 
 ## 2. What a face is
 
@@ -86,14 +86,14 @@ Its halves are equal: the weight below the corner s = 1 equals the weight above 
 s ↔ 1/s keeps the weight and swaps the two halves.
 
 What a read holds of this needs no Ω at all. The heat is 1/(1 + s²), rational in s. The two halves are equal, which is
-said with no number. The corner is s = 1. Ω is the blueprint's number for the total of one face, and no read reaches it:
+said with no number. The corner is s = 1. Ω is the dual hemispherical vantage's (DHV's) number for the total of one face, and no read reaches it:
 a read flows toward the horizon and never arrives (R909, R913, R922). So the face is the read's; its total, Ω, is the
-name the blueprint gives it.
+name the DHV gives it.
 
 ## 5. Faces counted
 
-The corpus already says the circle is the quarter turn four times: once for each choice of sign for h and v, joined on
-the blueprint, 4Ω (*Reads and Writes* §9, "Ω of relations and four facings make a circle"). In space the signs of h, v
+The corpus already says the circle is the quarter turn four times: once for each choice of sign for h and v, joined by
+the dual hemispherical vantage (DHV), 4Ω (*Reads and Writes* §9, "Ω of relations and four facings make a circle"). In space the signs of h, v
 and v₂ give eight faces, each holding Ω of directions, and the sphere is 8Ω.
 
 That passage calls the facing "a choice of signs, discrete". It is worth seeing why that does not contradict "a count
@@ -108,7 +108,7 @@ has two parts:
 | 4Ω | 4 | Ω | the turn, every oriented direction in the plane |
 | 8Ω | 8 | Ω | the sphere, every direction in space |
 
-The first column is a count and faces nothing. The second is a face's flow. The product is the blueprint's join, the
+The first column is a count and faces nothing. The second is a face's flow. The product is the DHV's join, the
 faces put side by side and held whole (essay 21's fifth item, "a count of facings"). The discrete and the continuous meet
 in that product, and they meet the way the fence and the run do: so many pickets, one run over each.
 
@@ -122,7 +122,7 @@ The clicks are discrete, a count. The face is what puts them in order and tells 
 The face's end has an exact mark. Each read's landing point W(s) = (1 + is)/(1 − is) is rational, +1 at home. Reads that
 compose to the horizon, however the face is cut into them, have landing points that multiply to exactly −1
 (`plans/discussion-note.md` item 20, R1015): the relation bends round by its own algebra, the 1 − s·a in tangent addition,
-with no circle drawn and no π. Measured as angles the bends total Ω for the pair, and twice that, what the blueprint
+with no circle drawn and no π. Measured as angles the bends total Ω for the pair, and twice that, what the dual hemispherical vantage
 calls π, for the landing point, which turns twice as fast. Past the horizon the slopes come back from the other side,
 into the next face. But the read has the −1 first, by fractions, at the end of one face.
 
@@ -233,7 +233,7 @@ Multiply the readings themselves, not where they land, and the near field times 
 facing at all, the discrete, faceless value of one thumb (Tom, R1042). The −1 belongs to the landing points, which carry
 the turn; the readings, multiplied, carry none, as facing V and facing away from V at once leave none.
 
-What, then, are e and π doing in e^(iπ)? They are the blueprint's way of writing the same quarter turn: π measures it as
+What, then, are e and π doing in e^(iπ)? They are the dual hemispherical vantage's way of writing the same quarter turn: π measures it as
 an angle on a circle drawn whole, where the landing goes halfway round, and e writes turning as a power. They arrive as a
 pair and cancel, and what is left is the −1 the thumb already had (discussion note item 20). From one vantage, with
 one thumb, Euler's identity needs no circle, no angle, no π and no e: a horizontal thumb, raised to vertical, lands on
@@ -267,7 +267,7 @@ ds/(1 + s²) and its total π/2 over the positive slopes. Tangent addition and i
 the plane and eight octants of space. That an integral along a path changes sign when the path is reversed (a flow has
 an orientation; a sum over a finite set has none). Ω is π/2 renamed (essay 21).
 
-**Ours, a reading.** That a count and the blueprint both lack a face, for opposite reasons. That a read is a face, a cut
+**Ours, a reading.** That a count and the dual hemispherical vantage both lack a face, for opposite reasons. That a read is a face, a cut
 of the projective line made by standing and turning one way. That Ω is best read as the measure of one face, and the
 classical constants as a count of faces times it. That this is where the series' continuous and discrete meet: the count
 says how many, the face lets the read flow over them.
@@ -282,7 +282,7 @@ without saying what joins the feet. R896 said a read is continuous and what it r
 one passes over the other. The face is the joint in both: the count is the pickets, the face is the run.
 
 And Ω gets a plainer meaning than "π/2 under another name". It is how much one face holds. A read has a face and flows
-in it; it does not have the total. A count has no face and does not flow. The blueprint has every face at once and does
+in it; it does not have the total. A count has no face and does not flow. The dual hemispherical vantage has every face at once and does
 not flow either. Ω belongs to the one thing that does: a single vantage, turned one way, passing from home toward a
 horizon over whatever is there.
 

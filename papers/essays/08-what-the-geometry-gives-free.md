@@ -129,7 +129,7 @@ Once the observer chooses H, its one length, the thumb it holds up, these follow
   This is the one the dial leans on hardest.
 
 Two more need one stated premise each, and are free once it is granted:
-- **precision far off**, the lay past the corner, 1 + ln s on the read's lay (the blueprint's formula for the read's
+- **precision far off**, the lay past the corner, 1 + ln s on the read's lay (the formula of the dual hemispherical vantage, the DHV, for the read's
   ratios, as many places from one in two to one in four as from one in four to one in eight) or 2 − 1/s on the in-place lay. The premise is the
   fourth essay's: that no stretch past the corner, over which the reading halves, is preferred to another.
 - **detail**, how finely things are drawn, given the read's resolution K (counted, it is K addresses). H then divides the K between the near field
@@ -168,7 +168,7 @@ The common remedies are the other lays.
 - **Logarithmic depth** in its plain form, ln(d/n)/ln(f/n), is the read's lay past the corner, 1 + ln s, with its corner
   at the near plane. Each stretch from a distance to twice it gets equal room.
 - The form ln(Cd + 1)/ln(Cf + 1), proportional below d ≈ 1/C and logarithmic above, is a smooth form of the whole lay, near
-  field and far, turning at d ≈ 1/C. It is the hyperbolic angle of section 1, the blueprint's smooth formula for the read's lay of ratios, with its corner
+  field and far, turning at d ≈ 1/C. It is the hyperbolic angle of section 1, the dual hemispherical vantage's smooth formula for the read's lay of ratios, with its corner
   moved from the near plane out to 1/C.
 - **Reversed-Z**, the remedy most engines now use, stores the in-place lay turned round, in a floating-point number. The
   fourth essay showed that a float is itself a read's lay in base 2: an exponent counting powers of two and a mantissa

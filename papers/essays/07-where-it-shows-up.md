@@ -14,7 +14,7 @@ one length, or the turn is lost. The freedom is the size, which every one of the
 
 The third essay already took three cases from data: LIGO's two detectors, the quasar dipole, and photons arriving one at a
 time. Those sorted heat from paint. The cases here are older and more familiar, and they sort something else:
-what the one-length circle, the blueprint's drawing of the thumb's pointing, looks like once it is drawn on a page, a shore
+what the one-length circle, the dual hemispherical vantage's drawing of the thumb's pointing, looks like once it is drawn on a page, a shore
 or a chart, where a second axis exists and can be stretched.
 
 ---
@@ -73,7 +73,7 @@ fixes.
 The two mistakes are different in kind. A stretch, c ≠ 1, breaks the turn and moves the median off the corner. A wrong
 size, H ≠ β, breaks nothing that can be read. The first is a stretch, the second a zoom.
 
-**Standing at the lamp.** A read taken at the lamp, each flash read by its direction, holds the reading itself, the slope the blueprint
+**Standing at the lamp.** A read taken at the lamp, each flash read by its direction, holds the reading itself, the slope the dual hemispherical vantage (DHV)
 writes tan θ. It has
 no β at all and no second length. Its one length gives the turn, so the requirement that c = 1 is met before it can
 arise. The requirement only appears once someone draws the scene with two axes, a sea axis and a shore axis, and then has
@@ -81,7 +81,7 @@ to choose how long to make each. The uniformity in this picture is the lamp's, a
 find the amount: here the lamp turns and the flash is the amount, and the beach records only where each flash landed.
 
 **The lamp, the shore and V.** The picture holds the Cauchy in each of the three forms the second essay derived. At the
-lamp, the reading (the blueprint's tan θ) is the standard half-Cauchy of one length turned: scale 1, no V, the corner at its median. On a
+lamp, the reading (the DHV's tan θ) is the standard half-Cauchy of one length turned: scale 1, no V, the corner at its median. On a
 drawing with two axes it is a Cauchy of scale c, the ratio of the shore's drawn length to the sea's. On the beach the marks
 follow C(α, β), a location and a scale, both amounts, both moved by scaling the world. So V, the shore playing the mountain
 in the distance, comes in only as the scale, and only when someone finds the shore and lays a ruler along it: the walker's
@@ -121,7 +121,7 @@ course is a straight line. That is why navigators have laid compass courses on i
 **The small circle.** A circle of small radius δ on the globe, its points δ·(cos t, sin t) north and east, is drawn as
 δ·(f′(φ)·cos t, sec φ·sin t): an ellipse whose axes stand in the ratio c. Cartographers call it Tissot's indicatrix (Tissot
 1881), and they use it to see at a glance what any chart does at each place. In the language of these essays, it is the
-blueprint's circle of one length, one thumb, traced in two units. It is a circle exactly where the chart keeps angles, and
+dual hemispherical vantage's circle of one length, one thumb, traced in two units. It is a circle exactly where the chart keeps angles, and
 among the charts of this kind, only Mercator's keeps it a circle everywhere.
 
 **Four charts, one course.** In v and h, with v = sin φ (the height above the equator's plane) and h = cos φ (the distance
@@ -177,7 +177,7 @@ and a flat sheet has none (Gauss 1828).
 So the familiar argument about which projection is "right" is an argument about which property to keep. Mercator kept the
 directions and let the sizes go. Lambert kept the sizes and let the directions go. Nothing obliges anyone to use either.
 Each chart follows from the property it keeps, and only the globe itself, the complete object, keeps every direction and
-every area at once. The globe is the blueprint's: it holds both hemispheres, every amount, every angle. The charts are two
+every area at once. The globe is the dual hemispherical vantage's: it holds both hemispheres, every amount, every angle. The charts are two
 ways of laying it on a sheet, each keeping one kind of thing.
 
 The complaint about Greenland is a complaint about the zoom, not about the drawing.
@@ -233,7 +233,7 @@ so it is the only one in which the sweep is a turn and the median of every pair'
 ## 5. Where c ≠ 1 comes from
 
 The cases above invite an objection: "V = H is still a choice. Someone decided to draw both axes at one length, and could
-have decided otherwise." The second essay answered it. It is an objection from the blueprint, supposing someone who holds both axes
+have decided otherwise." The second essay answered it. It is an objection from the dual hemispherical vantage, supposing someone who holds both axes
 and sets c, who holds the thumb up to equal the mountain; a read, whose sweep is a turn, holds one length and has no c to
 set.
 
@@ -377,7 +377,7 @@ the join leaves a turn of the sky, the Thomas–Wigner rotation. Three stars see
 no frequency and no distance (essay 9, "Thomas precession").
 
 **The thumb moved is the same slide.** The near and far fields slide the same way. Wrap the read's plane of
-distances onto a sphere so that one thumb lands on its equator (the blueprint's drawing): the eye is one pole, the horizon the
+distances onto a sphere so that one thumb lands on its equator (the dual hemispherical vantage's drawing): the eye is one pole, the horizon the
 other. Then taking the thumb k times larger is z ↦ z/k again, a boost of rapidity ln k along that sphere's axis, every
 latitude sliding toward the eye's pole, and the logarithm of the distance in thumbs slides by ln k exactly. Turning the
 world turns the same sphere about its axis. The split of near from far moves under the thumb as the moving sky's
@@ -438,7 +438,7 @@ more, the photon subrings, is set by the hole's geometry whatever the gas does, 
 does not resolve it. The geometry the telescope reads M87* with is the same one it reads an apple or empty sky with: it
 belongs to the standpoint, not to the hole. Over a field 42 μas across it is invisible, since at the focus the read is even
 to first order; negligible there, not absent. The hole itself is its writes, the spacetime and the gas; the ring
-model is a blueprint of it, a representation that cannot yet tell them apart.
+model is a representation of it, one that cannot yet tell them apart.
 
 ---
 

@@ -11,7 +11,7 @@ need to know what a radian is, or that π exists, to find out that it takes some
 ratchet takes proportionally more.
 
 This essay asks what that count is. Run it backwards: the series has said for some weeks that π and e belong to the
-blueprint, the dual hemispherical vantage that holds the whole turn and the whole scale at once (R909, R922), and that a
+dual hemispherical vantage (DHV), the view that holds the whole turn and the whole scale at once (R909, R922), and that a
 read, from one vantage, never holds either. If that is right, then reads and counts cannot *make* π or e. But they can
 be counted toward them. How close does a count come, from which side, and where does it land exactly?
 
@@ -117,19 +117,19 @@ Tom's answer to §6 was short: but he considered it from the dual hemispherical 
 §6 should be read.
 
 Lindemann, Niven and Gelfond–Schneider all work with the turn completed. They treat iπ as an amount and e^(iπ) as the half
-turn swept whole from +1 to −1, holding both facings at once. That is the blueprint (R848 found e^(iπ) = −1 the one
+turn swept whole from +1 to −1, holding both facings at once. That is the dual hemispherical vantage, the DHV (R848 found e^(iπ) = −1 the one
 member of its family that needs the horizon; R900 the one with no vantage). From the single hemispherical vantage there
 is nothing to cancel, because a read never holds π or e. Its −1 is the corner twice, i·i, or w(s)·w(1/s) = −1, rational in
 the slope. Its landmarks are given, not reached by carrying e along a turn.
 
-So the cancellation is the blueprint's: π and e appear together only because the blueprint brings in both, π to complete
-the turn and e to complete the scale, and they cancel exactly where the blueprint's statement lands back on a point a read
-already had. The transcendence of π, read this way, is a statement about the blueprint: no finite algebraic step reaches
-the completed turn. That is R807 and R808 again, π the blueprint's limit, now with a theorem under it.
+So the cancellation is the DHV's: π and e appear together only because the DHV brings in both, π to complete
+the turn and e to complete the scale, and they cancel exactly where the DHV's statement lands back on a point a read
+already had. The transcendence of π, read this way, is a statement about the DHV: no finite algebraic step reaches
+the completed turn. That is R807 and R808 again, π the DHV's limit, now with a theorem under it.
 
 And the reverse construction of §1 to §5 is the read's side of the same fact. Counts of reads get every member of the
 sequence toward π and e exactly, as fractions, and get them from one side only. The limit itself they never make: no
-reads or writes, finite or carried to a limit, make the blueprint (R922).
+reads or writes, finite or carried to a limit, make the DHV (R922).
 
 ## 8. How hard a test it was
 
@@ -149,18 +149,18 @@ known facts in a construction with no angle in it.
 
 Ours is the sorting. π is what a count of reads along the turn tends to, from above; e what a count of fixed shares along
 the scale tends to, from below. They land on a plain number only at the read's three landmarks, and their meeting in one
-equation is the blueprint's, since only the blueprint completes both. That is a reading, made with the run and not tested
+equation is the dual hemispherical vantage's (DHV's), since only the DHV completes both. That is a reading, made with the run and not tested
 apart from it.
 
 ## 10. What it changes
 
-It gives the series' claim that π and e are the blueprint's a construction to stand on. Before, the claim was that no read
+It gives the series' claim that π and e are the dual hemispherical vantage's (DHV's) a construction to stand on. Before, the claim was that no read
 holds π. Now there is a count that a read can make, with nothing but whole numbers, and it can be watched closing in on π
 and never arriving, and landing exactly only where the corner says.
 
 It also says what a cancellation of π and e is evidence of. When the two vanish into a root of unity, that is not π and e
-undoing each other; it is the blueprint returning to a landmark a read had from the start. When they do not vanish, as in
-e^π or Stirling, both completions are still in play, and the statement is the blueprint's through and through.
+undoing each other; it is the DHV returning to a landmark a read had from the start. When they do not vanish, as in
+e^π or Stirling, both completions are still in play, and the statement is the DHV's through and through.
 
 And it marks the line once more. Every finite count here is exact, a fraction, the same for everyone who counts. The
 number it tends to is not a count. A wrench can tell you how many clicks; it cannot tell you π.
@@ -174,7 +174,7 @@ number it tends to is not a count. A wrench can tell you how many clicks; it can
 - `../../plans/discussion-note.md` item 18: where π and e cancel (SPN R1008), and Tom's point that it is seen from the dual
   hemispherical vantage (SPN R1010).
 - *Reads and Writes* (`../readers-and-writers.md`) §1 "Where π and e are content" and §9 "What is free, and what Ω costs".
-- Essay 15 (Bernoulli's bank, what only the blueprint holds), essay 18 (one plane: the turn up, the scale across), essay 24
+- Essay 15 (Bernoulli's bank, what only the dual hemispherical vantage holds), essay 18 (one plane: the turn up, the scale across), essay 24
   (where π and e are only a name).
 - Classical: I. Niven, *Irrational Numbers* (1956), the rational values of tan at rational fractions of π; F. Lindemann
   (1882), π transcendental; A. O. Gelfond and T. Schneider (1934), e^π transcendental. Cited as usually stated, not opened.

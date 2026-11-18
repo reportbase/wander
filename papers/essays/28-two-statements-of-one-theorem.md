@@ -9,7 +9,7 @@ The back pages of a geometry book list the theorems: the sides of a right triang
 diameter, the area under a bell. Each is stated the same way. A figure is drawn on the page, every part of it in view at
 once, and the theorem says how its parts stand to each other.
 
-That way of stating is the dual hemispherical vantage (DHV), the blueprint: the figure held whole, from no standpoint,
+That way of stating is the dual hemispherical vantage (DHV): the figure held whole, from no standpoint,
 every side seen at once. It is the way classical mathematics is written, and nothing below is a complaint about it.
 
 The same facts can also be stated from one standpoint, the single hemispherical vantage (SHV): one place, looking one
@@ -37,14 +37,14 @@ goes from home toward a horizon and closes no circle. What a read has is the slo
 s = 1 where the exchange stands still, and the heat 1/(1 + s²) over the readings.
 
 The two agree wherever both apply, since they describe one geometry (R950). The difference is in what each statement
-needs: the blueprint's needs a completed turn or an amount; the single vantage's needs only slopes, and sometimes one
+needs: the dual hemispherical vantage's needs a completed turn or an amount; the single vantage's needs only slopes, and sometimes one
 square root.
 
 ## 2. Three kinds of outcome
 
 A classical theorem, restated from one standpoint, lands in one of three places (R847):
 
-- **Whole.** There is an exact statement rational in the slope, with no limit and no π. The blueprint's form and the
+- **Whole.** There is an exact statement rational in the slope, with no limit and no π. The dual hemispherical vantage's form and the
   single vantage's form say the same thing, and each checks against the other to the last digit.
 - **Only renamed.** π can be swapped for "the total of one sweep", which is always possible and says nothing new unless
   the statement then reads as being about one sweep.
@@ -156,7 +156,7 @@ i·i = −1. Checked at s = 0.3, 1 and 2.7: the product is −1 to rounding each
 this family that pairs home with the horizon, s = 0 with 1/s = ∞, and it is the only member that needs π (R848). Every
 other member is a pair of directions of one read, and holds with no limit.
 
-**Kind: whole**, for every member but the endpoint, which is the blueprint's. The same relation held two ways is the
+**Kind: whole**, for every member but the endpoint, which is the dual hemispherical vantage's. The same relation held two ways is the
 central example in *Reads and Writes* §1.
 
 ## 6. The angle in a semicircle
@@ -169,7 +169,7 @@ The two readings multiply to 1, and the rays cross square: their directions (1, 
 −s² + s² = 0. The crossing point is (1, s)/(1 + s²), the same shares as §3.
 
 **Kind: whole.** The right angle is not measured; it is the exchange. The semicircle itself, drawn as a curve, is the
-blueprint's picture of every such crossing at once (R235, THL).
+dual hemispherical vantage's picture of every such crossing at once (R235, THL).
 
 ## 7. The reciprocal product
 
@@ -179,7 +179,7 @@ measure of the completed turn.
 **From one standpoint.** s × (1/s) = 1, at every reading. The near reading, V in terms of H, and the far reading, H in
 terms of V, multiply to one thumb: no facing, the discrete faceless value (R1042). At the corner both are 1.
 
-**Kind: whole.** The 1 never needed π (R809). The blueprint's form carries π in both factors and cancels it; the
+**Kind: whole.** The 1 never needed π (R809). The dual hemispherical vantage's form carries π in both factors and cancels it; the
 single vantage's form has it in neither.
 
 ## 8. Parallax
@@ -192,7 +192,7 @@ law of sines, or d = B/(cot α₁ + cot α₂).
   B/d = 1/s₁ + 1/s₂.
 
 Rational, exact, no angle. A check: with the point 3 out and 2 and 5 along from the two stations, B/d = 7/3, and
-1/s₁ + 1/s₂ = 2/3 + 5/3. The cotangent is the blueprint's name for 1/s. π enters only where a slope is turned into an
+1/s₁ + 1/s₂ = 2/3 + 5/3. The cotangent is the dual hemispherical vantage's (DHV's) name for 1/s. π enters only where a slope is turned into an
 angle, as in the parsec's 648000/π (R818).
 
 **Kind: whole**, with a caution: this is two reads joined by a counted step, not one read. The step is a write; its
@@ -201,7 +201,7 @@ count is the B.
 The same goes for the inverse square law. From no standpoint, L/(4πd²); from one, a round flat source of radius a seen on
 its axis from d lights the receiver by its share 1/(1 + s²) of the hemisphere, s = d/a, whose far form is 1/s²; the
 shares at s and 1/s add to the whole, half each at d = a (ISX); any flat source whose log edge radii, over the turn about the axis, are spread symmetrically
-pairs the same way, the corner their geometric mean (PRX). The 4π is the blueprint's, the whole sphere counted.
+pairs the same way, the corner their geometric mean (PRX). The 4π is the DHV's, the whole sphere counted.
 
 ## 9. Only renamed
 
@@ -230,7 +230,7 @@ Some theorems have no single vantage form, because what they state is a completi
 - **The exponential's limit.** e = lim (1 + 1/n)ⁿ is a length completed by repeated proportional steps. Every finite n
   gives a fraction, never e (BLD, essay 25).
 
-**Kind: not at all.** These are the blueprint's statements in the strict sense: completions held whole. They are
+**Kind: not at all.** These are the dual hemispherical vantage's statements in the strict sense: completions held whole. They are
 exactly the laws where π or e is content, not notation (NTN, DVA).
 
 ## 11. What the sorting rests on
@@ -274,17 +274,17 @@ theorem.
 
 Ours: the sorting. Which form belongs to which vantage; that the whole kind is exactly the theorems relating
 directions, the not-at-all kind exactly the completions; that the reciprocal product and Euler's identity are members
-of families whose other members need no π; and the reading that the blueprint's statement is the single vantage's
+of families whose other members need no π; and the reading that the dual hemispherical vantage's statement is the single vantage's
 carried to its completion, where it can be, and stated whole, where it cannot.
 
 ## 13. What it changes
 
-Nothing in the theorems. Each is as true in one form as in the other, and the blueprint's form is the one the books
+Nothing in the theorems. Each is as true in one form as in the other, and the dual hemispherical vantage's (DHV's) form is the one the books
 will keep.
 
 What it changes is what can be asked of a theorem. Ask "does this need the turn completed?" and most classical
 statements about directions answer no: they have a form in slopes, rational, checkable to the last digit, with π only as
-the name the blueprint gives a total no single vantage reaches. Ask it of the area of a circle, or of e, and the answer
+the name the DHV gives a total no single vantage reaches. Ask it of the area of a circle, or of e, and the answer
 is yes, and that answer is the content of the theorem. The two vantages share the geometry; what they differ in is
 whether they ever hold it whole.
 

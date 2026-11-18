@@ -28,7 +28,7 @@ and what it changes (§13).
 
 ## 1. Two ways of computing
 
-**From no standpoint**, the dual hemispherical vantage (DHV), the blueprint: the quantity is an amount in a frame that
+**From no standpoint**, the dual hemispherical vantage (DHV): the quantity is an amount in a frame that
 holds everything at once. A direction is an angle measured round the whole turn; a point is three coordinates; a line is
 y = mx + c with m a real number; a set of values is summarised by its mean.
 
@@ -46,7 +46,7 @@ up when D > 0 and adjusts D by whole numbers. The slope dy/dx is never formed. I
 the comparison that would need it is done by multiplying across.
 
 The test: 1,000 seeded segments with dx up to a million. At all 1,061,045 points checked, Bresenham's pixel was the exact
-line rounded half down (B1). The same line computed the blueprint's way, y = (dy/dx)·x in binary floating point and
+line rounded half down (B1). The same line computed the dual hemispherical vantage's way, y = (dy/dx)·x in binary floating point and
 rounded, missed the exact line at 8 of them (B2). Eight in a million is small, but it is not zero. Checked afterwards, every miss is a case where the exact answer is a
 tie, x·dy/dx landing exactly on a half, and the floating-point division put it a hair to the wrong side.
 
@@ -68,7 +68,7 @@ to infinity. The pair keeps both. atan2 is the classical admission that the pair
 
 ## 4. Turning without drifting
 
-Turn the point (1, 0) n times by a small rotation and then n times back. The blueprint's way: cos θ and sin θ in
+Turn the point (1, 0) n times by a small rotation and then n times back. The dual hemispherical vantage's way: cos θ and sin θ in
 floating point, θ = 2·atan(1/8). The single vantage's way: the rational turn (63/65, 16/65), whose half-slope is
 exactly 1/8, composed in fractions.
 
@@ -81,7 +81,7 @@ digits, against n·log₁₀ 65 = 18.1, 181.3, 1,812.9 and 7,251.7 predicted. Ex
 The walk on `thumbs-walk.html` paid it another way, by holding the heading as one whole number of half-slope steps, so
 that the return is exact and the digits never grow (TWK run 12).
 
-**Kind: a blueprint form and a single-vantage one.** Turning by an angle drifts; composing rational slopes does not.
+**Kind: the DHV's form and a single-vantage one.** Turning by an angle drifts; composing rational slopes does not.
 
 ## 5. The calculator's two parts
 
@@ -106,12 +106,12 @@ needed for the direction.
 an infinite product, a completion. It reached that value to ten digits by thirty steps (K₃₀ = 0.607252935009).
 
 The gain touches only the length, an amount. The direction never needed it. So CORDIC is a single vantage's algorithm
-for the direction, with one blueprint constant attached to correct the amount; anyone who wants only the slope, or only
+for the direction, with one constant from the dual hemispherical vantage (DHV) attached to correct the amount; anyone who wants only the slope, or only
 which way a vector points, can leave the gain out.
 
 ## 6. The one prediction that failed
 
-CORDIC has a second dependence on the blueprint. To turn through a target angle θ it keeps the angle still to go,
+CORDIC has a second dependence on the dual hemispherical vantage (DHV). To turn through a target angle θ it keeps the angle still to go,
 z = θ − Σ σⱼ·atan 2⁻ʲ, and chooses each σᵢ by the sign of z. That needs a table of arctangents, angles measured round
 the whole turn.
 
@@ -125,10 +125,10 @@ into one number.
 
 The kill stays recorded. A second prediction (C3′, run 2), on fresh targets, kept the slope still to go as a pair, its
 numerator x·b − y·a with the target as the pair (b : a). That gave the table's choices for 1,000 of 1,000. One caution
-the plan states: the test made its targets from angles, by cos and sin, so the target was given in the blueprint's
+the plan states: the test made its targets from angles, by cos and sin, so the target was given in the DHV's
 terms. What needs no table is the steering, a sign at each step; making the target is a separate matter.
 
-**Kind: a blueprint form and a single-vantage one**, with the condition the failure taught: keep the pair.
+**Kind: the DHV's form and a single-vantage one**, with the condition the failure taught: keep the pair.
 
 ## 7. The Tangent Bridge: proved from no standpoint, run from one
 
@@ -145,7 +145,7 @@ carried by its copy.
 approximation: it gives the stored values back exactly at the places, it stays within the Lebesgue constant, about
 (2/π)·ln N, times the curve's change over one spacing between them, and it converges for every curve smooth enough
 that its modulus of continuity beats the logarithm. Every one of these is a statement about the whole turn at once,
-periods and Fourier modes on a finished circle. That is the blueprint's chart, and the proof is right to use it.
+periods and Fourier modes on a finished circle. That is the chart of the dual hemispherical vantage (DHV), and the proof is right to use it.
 
 **Run from one standpoint.** The papers then run the same rebuilding with no angle at all. Each place is read as its
 slope, s_k = tan(θ_k/2); for even N those slopes are exactly the N evenly spaced quantiles of the Cauchy. The kernel
@@ -162,20 +162,20 @@ reading is taken at a time.
 
 **Where the completions sit.** The sorting of §11 shows up inside it:
 - *The square root.* Halving a turn needs one square root, √(1 + s²), the hypotenuse, two lengths combined. Laying the
-  lattice is therefore the blueprint's; what a read holds are its leaves, each a ratio, and the kernel at them rational.
+  lattice is therefore the DHV's; what a read holds are its leaves, each a ratio, and the kernel at them rational.
 - *Which N.* Halving from the corner reaches the places for N = 2^m, and, with the seeds 1/√3 and tan(π/10), 3·2^m and
   5·2^m; at N = 33 or 72 it stops. That is Gauss's constructibility condition, the square-root counterpart of §10's roots of
   unity: an exact place in square roots exists only for some N, an exact place in fractions only for
   N = 1, 2, 4.
-- *The 2/π.* The Lebesgue constant's (2/π)·ln N carries the blueprint's π; it is a statement about the rebuilding's
+- *The 2/π.* The Lebesgue constant's (2/π)·ln N carries the DHV's π; it is a statement about the rebuilding's
   worst case over the whole turn, not anything a read computes.
 - *The arithmetic's own craft.* The textbook half-angle, (√(1 + s²) − 1)/s, is the same number as s/(1 + √(1 + s²)) but
   subtracts nearly equal numbers for small s: built that way the lattice drifts to 1.6·10⁻⁹ by N = 2,048, built the
   other way it holds 10⁻¹³. Running in slopes does not make the arithmetic free; it makes its losses visible, as the
   float line of §2 and the float turns of §4 did.
 
-**Kind: both at once.** The theorem is the blueprint's and the operation the single vantage's, with the one square root
-and the choice of N marking where the blueprint comes in. It is the cleanest case of the pattern this essay keeps
+**Kind: both at once.** The theorem is the DHV's and the operation the single vantage's, with the one square root
+and the choice of N marking where the DHV comes in. It is the cleanest case of the pattern this essay keeps
 meeting: the classical proof needs the whole turn; the running does not.
 
 ## 8. Order kept
@@ -217,7 +217,7 @@ Two of the tests found completions with no single-vantage form at all.
 exact transform in fractions, their cosines and sines would have to be rational. The test (N1), by minimal polynomials:
 cos(2π/N) is rational only for N = 1, 2, 3, 4 and 6, and cosine and sine are both rational only for N = 1, 2 and 4
 (Niven 1956). For every other N the transform needs the turn completed and cut into N equal parts, which is the
-blueprint's.
+dual hemispherical vantage's.
 
 The mean (§8) belongs here too: it is a sum over everything, divided by how many there are.
 
@@ -235,9 +235,9 @@ The mean (§8) belongs here too: it is a sum over everything, divided by how man
 | filtering Cauchy noise | mean filter | median filter | 0.969 against 0.209 of the raw width |
 | a far point | x, y, z | direction and ρ = 1/d | NaN against exact at 10³¹⁰ and ∞ |
 | the DFT | roots of unity e^(2πik/N) | none | exact in fractions only for N = 1, 2, 4 |
-| rebuilding from an even lattice (Tangent Bridge) | Dirichlet kernel in the angle, proved over the whole turn | the kernel rational in the slope, places by halving and tangent addition | no trigonometric call, 10⁻¹⁶ at N ≤ 64 (draw's papers, not rerun); the halving's square root and the reachable N the blueprint's |
+| rebuilding from an even lattice (Tangent Bridge) | Dirichlet kernel in the angle, proved over the whole turn | the kernel rational in the slope, places by halving and tangent addition | no trigonometric call, 10⁻¹⁶ at N ≤ 64 (draw's papers, not rerun); the halving's square root and the reachable N the dual hemispherical vantage's (DHV's) |
 
-The pattern is the one essay 28 found for theorems, now with a way the algorithms fail. Where the blueprint's form
+The pattern is the one essay 28 found for theorems, now with a way the algorithms fail. Where the DHV's form
 divides a pair into a single number, adds angles or forms an amount, it misrounds, drifts, loses the facing or
 overflows. Where the single vantage's form keeps the pair, composes the slopes or keeps the order, it was exact in every
 case tested, paying in digits where it paid at all. And where an algorithm needs a completion, a product carried to its
@@ -258,9 +258,9 @@ Gauss's constructibility, and the Tangent Bridge papers' own results. The citati
 al., which the series has read in full.
 
 Ours: the sorting. That Bresenham, atan2, the median, inverse depth and rational turns are the single vantage's forms;
-that CORDIC splits into a single vantage's direction and a blueprint's length; that its angle table can be replaced by a
+that CORDIC splits into a single vantage's direction and a length from the dual hemispherical vantage (DHV); that its angle table can be replaced by a
 sign of a pair but not of a single slope, and that the place a single slope fails is the quarter turn, the same place
-atan fails; that the Tangent Bridge is one algorithm in both vantages at once, proved in the blueprint's chart and run in the
+atan fails; that the Tangent Bridge is one algorithm in both vantages at once, proved in the DHV's chart and run in the
 single vantage's; and that the algorithms with no single-vantage form are exactly the completions.
 
 ## 13. What it changes

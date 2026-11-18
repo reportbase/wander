@@ -25,7 +25,7 @@ many are held. A world laid out has N. A read never does, and has only K. The Ca
 
 The order: the two words (§1), the two letters (§2), two types that must never be silently cast into each other (§3), a
 direction kept as a pair (§4), the corner as a register (§5), index statistics and value statistics (§6), the array
-(§7), what the floor throws away (§8), two layouts of addresses (§9), the cull (§10), what a blueprint adds (§11), what
+(§7), what the floor throws away (§8), two layouts of addresses (§9), the cull (§10), what the dual hemispherical vantage adds (§11), what
 comes free (§12), and what a machine can and cannot hold (§13).
 
 *Demos: `array-sweeps.html` (K places on the quarter turn, an array of known length beside them); `star-field.html` and
@@ -142,8 +142,8 @@ field browsed at N and at 2N stars, counted exactly at K addresses, gives views 
 So the Cauchy is a *cull*. Whatever N is, the read's work is K, O(K). For a fixed K it does not grow with N; there is no N in it to grow.
 
 What the cull gives up is sameness. With N held, every item can be stated as 1/N of the whole, all alike, on the
-blueprint's number line with no corner, and no item has an advantage over another, because no standpoint is favoured:
-the blueprint has none. A
+number line of the dual hemispherical vantage (DHV), with no corner, and no item has an advantage over another, because
+no standpoint is favoured: the DHV has none. A
 read's K is spent unevenly: finest at the corner, coarser each time a thing is twice as far, and that unevenness is the
 vantage. What is looked at gets the most. Knowing N buys equality; holding only K buys a standpoint, at a cost that does
 not grow with the world.
@@ -157,8 +157,8 @@ the fraction of a day gone or the share of a road behind. A relation needs two, 
 h and v, in lower case.
 
 The wholes are written in upper case. A read has one, H, the thumb, a value chosen to start from rather than a
-size measured; any H will do, and H only sets where the finest addresses fall. It has no other. The blueprint (classical
-geometry's view from no standpoint, set beside the two acts for comparison), holding both
+size measured; any H will do, and H only sets where the finest addresses fall. It has no other. The dual hemispherical
+vantage (DHV, informally a blueprint: classical geometry's view from no standpoint, set beside the two acts for comparison), holding both
 sides, also holds V, the other party's breadth, and V* is the other party's true size, an amount. The amounts are h·H and
 v·V*, and so
 
@@ -324,10 +324,10 @@ the places' middles are the half-Cauchy's eight evenly spaced quantiles, 0.099 t
 between places 3 and 4, found with no length; a reading and its reciprocal go to places k and K − 1 − k; scaling v and h
 together moves no index.
 
-That code is the blueprint's, and it should be said so. It evaluates an arctangent, which takes π, and it floors, which
-takes K; both are the blueprint's tools for describing where the read's addresses fall. A read evaluates nothing: its
+That code belongs to the dual hemispherical vantage (DHV), and it should be said so. It evaluates an arctangent, which takes π, and it floors, which
+takes K; both are the DHV's tools for describing where the read's addresses fall. A read evaluates nothing: its
 turn passes the places in order, and the share passed is met, not computed. A program recreates the read's situation
-by a boundary: the world a generator with no length across, the read K slots of its own, and the blueprint's arithmetic
+by a boundary: the world a generator with no length across, the read K slots of its own, and the DHV's arithmetic
 between them (essay 12, §6).
 
 Against it, an array of known length: `Math.floor(N * x / X)` needs the size X. With N = 8 and X = 100 the amounts 10,
@@ -342,7 +342,7 @@ applied to code: the first list needs the count, the second is reading.
 **Four kinds of array.** What is known of the two breadths gives four kinds.
 - *A constant array of known length*: every entry the radius. It needs no storing; it is the equation of the one-length
   circle.
-- *An array of known length*: an amount at every index, which can be joined on the blueprint into a closed shape.
+- *An array of known length*: an amount at every index, which the DHV can join into a closed shape.
 - *Values without the length*: amounts known only up to one common factor, like samples from a sensor of unknown gain.
   They can be ranked and their ratios taken, not sized.
 - *The index alone*: allocated before any value arrives, with no length; its slots the Cauchy's quantiles, its middle the
@@ -361,7 +361,7 @@ by exactly its logarithm.
 **One array per facing.** A circle has four facings, the quadrants, and can be stored as four arrays on one lattice,
 places at (k + ½)·(π/2)/K. Reading one backwards is the reciprocal. A sphere is eight, one per octant. A reading carries no
 sign, so from a standpoint every facing is the same array, and a read stays within one. Joining two needs their values
-to meet at the shared end in one unit, which needs each array's size, which no reading fixes. The blueprint has the sizes
+to meet at the shared end in one unit, which needs each array's size, which no reading fixes. The DHV has the sizes
 and the four joined into a closed circle; a read cannot tell whether two ends meet. Not knowing the size is also what
 makes the corner and the horizon: the declared array ends at an amount; the read's ends at a direction, [0 : 1], where
 its chart runs out.
@@ -423,7 +423,7 @@ Inside the corner a read's readings can be laid in proportion. Past it the recip
 nothing about layout. Ask only that a lay not build in a scale a read cannot have: that the room between x and λx
 depend on λ alone. Then the far lay is the logarithm, as many addresses over each stretch where the reading halves
 (Cauchy's functional equation, Cauchy 1821). The ratio is what a read holds; the stretches counted are a count, and the smooth
-1 + ln x is the blueprint's. The premise is assumed, not derived, and it is the only premise the logarithm needs.
+1 + ln x is the dual hemispherical vantage's (the DHV's). The premise is assumed, not derived, and it is the only premise the logarithm needs.
 
 **Floating point lays its numbers this way.** The exponent counts powers of two and the significand is a plain share
 between one and the next; the subnormals lay one stretch in proportion from zero. Count of powers plus the share toward the
@@ -439,7 +439,7 @@ the corner, and find its expansions failing. Each of these is familiar from nume
 them, the only subdivision its symmetries preserve is the cut at the corner into two halves; applied again, binary
 subdivision. Any other number of parts needs a measure carried in. Halving a count or a length is rational and the
 read's. Halving a turn, or a stretch's ratio at its geometric middle, takes a square root, two lengths combined, and is
-the blueprint's. A calendar's uneven units (months, hours, minutes) match no single factor and cost a table: uniformity can be
+the DHV's. A calendar's uneven units (months, hours, minutes) match no single factor and cost a table: uniformity can be
 free; variation has to be stored.
 
 **Three boundaries.** The *corner*, v = h, between the two sides of a reading, which every read finds. The *end of its
@@ -450,12 +450,12 @@ The *horizon*, h = 0, the reading's own infinity, which no read reaches.
 
 ## 10. The cull
 
-Now the K addresses can be laid along distance. The blueprint's account of where they fall, with its tangent and its π, is
+Now the K addresses can be laid along distance. The dual hemispherical vantage's (DHV's) account of where they fall, with its tangent and its π, is
 
   d_k = H·tan(kπ/2K),  k = 1, …, K − 1,
 
 the Cauchy's quantiles with its scale at H. The heat they sample is the read's; the places are a count, and the formula placing
-them is the blueprint's.
+them is the DHV's.
 
 - Since tan(π/4) = 1, the middle boundary is d = H, one thumb away, whatever H is: half the addresses inside the corner and
   half past it, at every H. H moves the split; it never changes the count.
@@ -537,12 +537,12 @@ things whatever N is; a rule for everything nobody has touched, made on demand a
 something has been changed, the one part that grows, and it grows with what has been done, not with the world's size.
 Without end there is no whole to hold, so the dual hemispherical vantage cannot be formed at all and nothing compares with
 the read: the rule answers for any one place from no standpoint, a lookup and not a view, and showing the whole at once
-would mean making all of it. A stored blueprint out to 10²⁶ units would be about 10⁵² cells; the read scans some 29,000 at
+would mean making all of it. A stored representation out to 10²⁶ units would be about 10⁵² cells; the read scans some 29,000 at
 every distance (essay 22, §13; `sky-city.html`).
 
 ---
 
-## 11. What a blueprint adds
+## 11. What the dual hemispherical vantage adds
 
 **Ratios suffice.** Everything done from a standpoint is done in ratios. Every reading is a ratio with no
 unit in it; the index and its law are given before any value; near and far are laid by count; order statistics survive
@@ -554,24 +554,24 @@ readings, from any number of standpoints, fixes the scale. Supply one amount L�
 readings link to it is fixed. And two observers who share one closed loop, each counting in its own unit, recover from the
 closure the ratio of their units, H_B/H_A = |S_A|/|S_B|, and nothing more: a shared fact buys one factor.
 
-**What a blueprint adds.** A blueprint is the classical statement: the whole in amounts, seen from no standpoint. An
+**What the DHV adds.** The dual hemispherical vantage (DHV) is the classical statement: the whole in amounts, seen from no standpoint. An
 observer comes to what it holds only by writes, things counted or a unit carried in, never by a read. It gives seven things the ratios do not:
 the size; parts made apart that must meet out of view; sums, totals, means and budgets; the join of every facing; a
 statement before the thing exists, to be built to; completeness stated; and a far field in proportion, common to observers
 whose corners differ. In a program's terms: an index and its order statistics run on ratios; a schema with units, a sum,
 or an interface between components built apart needs the amount. None is needed to work from a standpoint. Each becomes
 needed when parts made apart must meet, amounts must add, or the whole must be stated in advance: the needs of an
-intricate system of many parts. A blueprint is a capability, not a condition.
+intricate system of many parts. The DHV is a capability, not a condition.
 
-**What a blueprint costs.** Tom: "Dhv also has a scale problem, at some point the historical record of writes is as large
-as the universe itself. It becomes the universe it records." A blueprint held is a record of writes (R1049), and a write
+**What the DHV costs.** Tom: "Dhv also has a scale problem, at some point the historical record of writes is as large
+as the universe itself. It becomes the universe it records." A representation held is a record of writes (R1049), and a write
 takes room, so a complete one holds N and every change since, where a read holds K. On `thumbs-walk.html` a stored
-blueprint out to 10²⁶ units is about 10⁵² cells; the read scans some 29,000 at every distance. Carried through, the record
+representation out to 10²⁶ units is about 10⁵² cells; the read scans some 29,000 at every distance. Carried through, the record
 must record itself too, which no finite record in the world can, so the only complete record is the world: the map of a
 mile to the mile. A program escapes only by a law. A seeded rule, or a motion given as a function of the tick, holds the
 whole in a rule and a seed; state that reacts must be stepped and kept, and that part grows with the history. Compression
 is the law; what has no law cannot be held in less than itself. (R1050.) The same holds for one thing: an apple is its
-writes, a blueprint of it a representation, and a blueprint the size of the apple is the apple (R1095).
+writes, a representation of it is only that, and a representation the size of the apple is the apple (R1095).
 
 **Distance in the payload.** What arrives can carry cues to distance: an echo's delay, how faint a thing of a known kind
 looks. Each becomes a distance only with an amount carried in, the signal's speed and a clock, or the thing's true
@@ -668,7 +668,7 @@ is why the Cauchy maps onto computing so well: the split it lives on is the one 
 not usually mark is that its address space was laid out with an N, before the first read. The read of this
 series comes before that layout.
 
-Put in computing's own letters: a world laid out has N, and with N the blueprint states every item as 1/N of a whole, all
+Put in computing's own letters: a world laid out has N, and with N the dual hemispherical vantage (DHV) states every item as 1/N of a whole, all
 alike, from no standpoint; a read has K,
 spent unevenly, finest where it looks. The Cauchy is the cull between them, K addresses over any N at a cost constant in N,
 and the only cull among its kind that can be re-aimed and recombined without leaving its family. From it come the corner
@@ -684,7 +684,7 @@ Three habits follow for a program:
 - **Run the scale test.** Multiply the world by k and see which outputs move. Those needed an amount carried in; the
   others never contained the world's size, and could not.
 
-Counts and amounts, and the blueprint set beside them, are not lesser for any of this. A blueprint, a schema, a sum, a known N: these are what let parts made
+Counts and amounts, and the DHV set beside them, are not lesser for any of this. A representation, a schema, a sum, a known N: these are what let parts made
 apart meet. But a program that reads a world it does not hold, a sky, a stream, a list with no end, is reading, and the
 geometry of a read is K, not N.
 
@@ -730,7 +730,7 @@ read and write): §5 ("K and N"); its passages on
 computing are now a note, `plans/rw-computing-note.md` (a machine is built to do both acts, R641). The proofs are in the archived *Observation from Somewhere* and its computer-science companion
 (`../archive/ofs/observation-from-somewhere-cs.md`), kept for reference: the corner and the registers in §3, the
 separation in §5, the array in §6, the floor in §7, the two layouts in §8, detail and the fixed count in §9, the
-blueprint in §10, the dial in §11, what comes free in §12. Where the companion's wording differs from the later rulings
+dual hemispherical vantage in §10, the dial in §11, what comes free in §12. Where the companion's wording differs from the later rulings
 (it speaks of "the reader's circle", of π/2 and 2/π as the reader's own, and says the word *writer* has nothing to do with a
 memory write, which R613 qualifies), the rulings stand. The essays before this one: 3 (address and payload), 4 (thumbs past the corner, H as a zoom, K), 8 (the dial, the
 depth buffer, the floor), 12 (what an array is, what a machine holds), 13 (where the plane's conveniences stop), 15 (what

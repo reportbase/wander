@@ -21,7 +21,7 @@ gets simpler in Ω, the formula was about one sweep. Where it gets worse, it was
 several sweeps joined into a whole.
 
 **In short.** Ω is to one read what π is to the turn: its total. π is two reads' worth; Ω is one. The total is the
-blueprint's number for a read, not a number a read holds: a read has the slopes and the equal halves, and no count
+dual hemispherical vantage's (DHV's) number for a read, not a number a read holds: a read has the slopes and the equal halves, and no count
 reaches Ω. With that said, the aim of the essay is to strip the notation down to the least that states the series'
 equations. Five things are enough:
 
@@ -43,9 +43,9 @@ equations. Five things are enough:
 | π, 2π, 4π | 2Ω, 4Ω, 8Ω |
 
 Nothing in the right-hand column uses an angle, a trigonometric function, π, e or i. But Ω is π/2 under another name,
-and π is no part of reads and writes: it is the blueprint's. So the column sorts in two. The rows with no Ω in them
+and π is no part of reads and writes: it is the DHV's. So the column sorts in two. The rows with no Ω in them
 (the slope, s ⊕ a, s = 1, the shares, the horizon) are what a read has. The rows with Ω (the coefficient, the weights
-adding to Ω, the counts of facings) are still the blueprint's statements, made shorter. The sections below are these five
+adding to Ω, the counts of facings) are still the DHV's statements, made shorter. The sections below are these five
 things worked through, and where they keep the classical notation (the landing point in §8, for one) it is to show
 what the notation was saying.
 
@@ -226,7 +226,7 @@ operation does not, which is the reverse of what one might expect.
 
 ## 8. Facings, Euler and composing
 
-A sweep runs within one facing: both shares positive. Signs are a join of reads, the blueprint's, and they count the
+A sweep runs within one facing: both shares positive. Signs are a join of reads, the dual hemispherical vantage's (DHV's), and they count the
 facings: four in the plane, eight in space. The totals are then
 
 - the whole turn: 4Ω (classically 2π);
@@ -237,7 +237,7 @@ is eight octants where the first is four quarters.
 
 Euler's formula takes the same reading. The landing point of a slope, w(s) = (1 + is)/(1 − is), turns twice as fast as
 the sweep (Euclid III.20: the angle at the centre is twice the angle at the rim). So over one sweep it runs from 1,
-through i at the corner, to −1 at the horizon. In the blueprint's notation:
+through i at the corner, to −1 at the horizon. In the DHV's notation:
 
 - one Ω: e^(iΩ) = i;
 - two: e^(2iΩ) = −1, which is Euler's identity;
@@ -348,7 +348,7 @@ in its own size, and a contact multiplies an error in the aim, read as a slope, 
 before it, r the radius, f the line's offset from the object's centre as a share of 2r (the ghost ball's share), with the
 one square root and no angle; for a full hit, read from the striker's start, A = 1/(h + v) − 1, the gap still to close
 over the share closed, which is 2^L − 1, where L = log₂(1/(h + v)) is how far in binary digits the pair started from
-touching. (The blueprint writes the cut as an angle φ and the factor as s/(2r·cos φ).) So a contact spends as many binary digits of the aim as the
+touching. (The dual hemispherical vantage writes the cut as an angle φ and the factor as s/(2r·cos φ).) So a contact spends as many binary digits of the aim as the
 pair started from contact. On an open table that is 1.5 to 2 digits a contact, and an aim off by one part in 570
 misses half a pocket (one in 16) by the third contact; inside a rack, where the runs are shorter than the balls, a contact gains
 digits and the cluster forgets the aim (POL runs 8–9, every contact and chain to rounding once contact was made exact).
@@ -385,16 +385,16 @@ attached. The bottom rows are about wholes: a disc, every whole number, a bell o
 π is the more natural unit and Ω only adds a factor.
 
 That is the experiment's result, and it agrees with the series' sorting. A read is about one sweep. The whole turn, the
-disc and the completed line are the blueprint's, and π is the blueprint's letter.
+disc and the completed line are the dual hemispherical vantage's, and π is the DHV's letter.
 
 ## 11. What Ω does not do
 
 *It does not make the number cheaper.* Ω is the same limit π/2 always was. No count reaches it; Wallis's product and
-Leibniz's series only approach. A new letter is a name, and the series' rule stands: the value is held whole only on
-the blueprint.
+Leibniz's series only approach. A new letter is a name, and the series' rule stands: the value is held whole only from
+the dual hemispherical vantage (DHV).
 
 *It is not a read's number.* A read has the slopes, the measure's shape, the exchange and the equal halves. It has no
-total. Ω is what the blueprint says the total is.
+total. Ω is what the DHV says the total is.
 
 *It is not one number before a path is chosen* (§3).
 
@@ -412,7 +412,7 @@ Madhava's before them. Buffon's needle is of 1777.
 
 The idea that π is the wrong unit is not new either. Palais argued in 2001 that the whole turn, 2π, is the natural
 constant, and Hartl's manifesto of 2010 named it τ. In that vocabulary Ω is a quarter of τ. Those arguments are about
-which unit makes the blueprint's formulas tidiest, and they favour the whole turn because the blueprint's subject is
+which unit makes the dual hemispherical vantage's formulas tidiest, and they favour the whole turn because the DHV's subject is
 the whole. This essay asks a different question, which unit fits one sweep, and so lands on the quarter.
 
 What the series adds is the order of the telling: the operation first, its measure second, the total third, and the
