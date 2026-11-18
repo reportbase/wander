@@ -543,6 +543,13 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       spacetime, emission) with the first separated before the other two, or a sorting of measured numbers by layer;
       the main explanations (EHT, Gralla–Holz–Wald) speak of spacetime against emission. The papers say nothing about
       what other work lacks (R335, R364); this is a record of the search.
+    - **A thing's own geometry** (18 Nov; Tom: "The apple in your hand, has the geometry of the apple, its what makes it
+      an apple. Same for the black hole. This is different the geometry of read and writes."; "observation geometry is
+      distinct from physical geometry."): "physical geometry" in this item means the thing's own geometry (the apple's
+      shape, the hole's spacetime), what makes it that thing and different for each thing; observation geometry is the
+      geometry of reads and writes, the same for every thing. Curved spacetime is the hole's own geometry, not a rival to
+      observation geometry and no change to it; it decides only which of the hole lands in which direction. Carried into
+      *Reads and Writes* §2, "Observation geometry and a thing's own geometry" (R1091).
     - **Done on their own data: EHO** (`plans/eho-plan.md`, `runs/eho/`, 18 Nov; Tom: "maybe we could do that for them
       with their own data?"; SPN R1090), predictions committed before each fit, on the EHT's public 2017 and 2018 M87*
       visibilities (ODC-PDDL). Run 1: the observer's own motion sorted exactly and found negligible (a boost turns no
