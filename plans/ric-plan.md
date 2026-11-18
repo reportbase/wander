@@ -48,3 +48,22 @@ none of small height exists, not that the entries are transcendental.
 
 ## Runs
 
+**Run 1** (`runs/ric/ric.py`, output `runs/ric/ric-run1.txt`). A first attempt stopped before any result on a type error
+of mine (an mpmath number made from a Fraction); fixed and rerun, same seed. Nothing killed.
+
+- Q1: three steps of u = 1/3 give 13/9 exactly, equal to tan(3·arctan(1/3)) to the last of 50 digits.
+- Q2 (a): the composition rule held exactly in 141 of 141 cases (my counter also counted the 41 cases later skipped for a
+  pole; all pass). Q2 (b): five steps equal the flow expm(5τB) to 10⁻⁴⁰ in 100 of 100; 41 drawn cases skipped because the
+  flow passed a pole (s through infinity) on the way.
+- Q3: Euler's error slope −0.997, RK4's −3.984 (errors 0.016 → 0.00026 and 2.3·10⁻¹⁰ → 1.6·10⁻¹⁷ from N = 200 to 12,800).
+- Q4: digits(40)/digits(20) at most 2.07, median 1.97: the composed fraction grows linearly in the number of steps.
+- Q5: the Airy Riccati's maps over [0, 1] and [1, 2] do not commute (largest entry of the difference 0.706); PSLQ finds
+  no integer relation of height ≤ 10⁴ for any entry of M₀₁ (0.6803…, 0.4674…, −0.9186…, 0.8388…).
+
+**What it shows.** With constant rational coefficients the Riccati equation, the slope's own flow, is stepped exactly by
+rational Möbius maps composing by (u + v)/(1 + Δuv), PYK's rule with κ = −Δ: no N, no error, the cost the digits of the
+fraction growing linearly with the steps (what a write costs). The elapsed time each step stands for, τ(u) =
+artanh(u√Δ)/√Δ (arctan for the turn), is not rational in u: the clock time is where the completion enters, as the angle
+does for a turn. A solver stepping in time pays N with error N^(−1) or N^(−4). With a coefficient varying in time the
+maps are Möbius still but form no one-parameter group and showed no small rational step: there N comes back. Classical
+(Riccati's linearization, Möbius flows, the Airy functions); the sorting ours.

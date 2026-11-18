@@ -1,0 +1,9 @@
+Q1 three steps of 1/3: 13/9  |s - tan(3 atan 1/3)| = 0.0
+Q2 (a) composition rule exact: 141 / 100 tried pairs (incl. skipped-free set)
+Q2 (b) five steps = flow to 1e-40: 100 / 100  skipped (pole on the way): 41
+Q4 digits(40)/digits(20): max 2.069  median 1.968
+Q3 Euler errors ['0.0163', '0.00209', '0.000262']  slope -0.9966
+Q3 RK4 errors ['2.34e-10', '6.43e-14', '1.59e-17']  slope -3.984
+Q5 (a) largest entry of [M01, M12]: 0.7062
+Q5 (b) PSLQ relations of height <= 1e4 for M01 entries: [None, None, None, None]
+     M01 = [['0.680336924768', '0.467354138111'], ['-0.918628888528', '0.83881231017']]

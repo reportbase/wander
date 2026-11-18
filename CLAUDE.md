@@ -576,6 +576,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  RIC (`plans/ric-plan.md` + `runs/ric/`, 18 Nov; SPN R1101; Tom: "1 2 3"): the Riccati equation, the slope's own
+  flow, with constant rational coefficients stepped exactly by rational Möbius maps composing by PYK's rule (κ = −Δ), no N,
+  digits growing linearly, the clock time τ(u) the completion; Euler and RK4 N^(−1), N^(−4); s′ = t + s² no one-parameter
+  group, no small rational step. Nothing killed. R1100: where calculus needs N (a note in `plans/clc-plan.md`).
   CLC (`plans/clc-plan.md` + `runs/clc/`, 18 Nov; SPN R1099; Tom: "Let's compare shv to calculus."): exact, predictions
   first. Rational derivatives by dual numbers (κ = 0) with no limit, the chain rule the tower; only the first derivative of
   one length on another unmoved by scaling (dⁿy/dxⁿ as k^(1−n)): a slope a read, higher orders and clock rates writes;
