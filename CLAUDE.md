@@ -569,6 +569,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   for every thing) is distinct from physical geometry (a thing's own: the apple's shape, the hole's spacetime)**; a thing's
   own geometry decides only which of it lands where. *Reads and Writes* §2 "Observation geometry and a thing's own
   geometry"; discussion note item 21.
+  R1092 (18 Nov; a ChatGPT note, Tom: "yes"): observation geometry belongs to the standpoint, the same for every object
+  read from it; independent of the object, not of the observer's own state (a boost); of structure, not content.
+  One sentence in *Reads and Writes* §2.
   EHO (`plans/eho-plan.md` + `runs/eho/`, 18 Nov; SPN R1090; Tom: "maybe we could do that for them with their own data?",
   "yes"): the three layers (observer's geometry, spacetime, emission) sorted on the EHT's own numbers and public data,
   predictions first (Q1–Q7); discussion note item 21. Run 1 on EHT 2017 and 2018 public data (2019-D01-01, 2024-D01-01,
