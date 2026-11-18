@@ -571,6 +571,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   sign); the 2017 ring steady to 2.7%; my fit's 2018 ring 7% larger (Q4 killed, cause open); every quantity sorted (Q1).
   Run 2 (`runs/eho/eho4.py`, closures only, gains cancelled): Q8 killed (2017 splits 42 against 47.5 μas), Q9 not killed by
   its letter; the simple ring's diameter carries the emission whichever way it is fitted.
+  Run 3 (`runs/eho/eho5.py`, an m-ring of order 3 and a floor, closures only): Q11 killed (2017 spread 25%), Q13 not
+  (better fits): more emission structure loosened the size; the clean split needs the subrings.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.
