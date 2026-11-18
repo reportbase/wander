@@ -49,10 +49,11 @@ from no standpoint, and it is in this paper only as a point of comparison: the p
 **One relation space, different facings.** The single and the dual hemispherical vantage hold the same relation space;
 they differ only in how many facings they hold. A facing is the quarter turn, every way the vertical and the horizontal
 relate, one slope s from all of h to all of v, with its heat ds/(1 + s²), its corner s = 1 and its exchange s ↔ 1/s; it
-is the same in every facing, and only the signs tell facings apart. A read holds the relation in one facing; the DHV
-holds the facings joined, four in the plane and eight in space. The Cauchy is always the relation, never the paint, so it
-is one law whether one facing is held or eight. What the count of facings changes is the total, Ω for one, 4Ω = 2π for
-four, 8Ω = 4π for eight, and with it everything a total brings: a period, a clock time, the circle held at a size. So
+is the same in every facing, and only the signs tell facings apart. One hemisphere is two facings, facing V (the near
+reading s) and facing away from V (the far reading 1/s); a read holds one hemisphere and faces one of its two facings at
+a time. The DHV holds both hemispheres, the facings joined, four in the plane and eight in space. The Cauchy is always the
+relation, never the paint, so it is one law in one facing, two or eight. What the count of facings changes is the total,
+Ω for one, 2Ω = π for a hemisphere's two, 4Ω = 2π for four, 8Ω = 4π for eight, and with it everything a total brings: a period, a clock time, the circle held at a size. So
 where the two vantages agree they agree because the relation is one, and where the DHV is needed it is needed for the
 facings joined. In space the join is more than a count: the eight facings are joined by turns that do not commute (§8).
 
@@ -534,7 +535,8 @@ with reads and writes: it is not a third act beside them, not a read of a larger
 It is classical geometry, with its eye above the figure seeing every side at once. This paper is about reads and
 writes; the DHV is brought in as the point of comparison, the familiar statement a read's or a write's form is
 set beside (e^(iπ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. The two hold one relation
-space with different facings, one for a read, four or eight joined for the DHV (Tom, R1105; the abstract, "One
+space with different facings: a read one hemisphere, two facings, faced one at a time; the DHV four or eight joined
+(Tom, R1105, R1106; the abstract, "One
 relation space, different facings"). "Dual hemispherical vantage" and "from no standpoint" say the same thing: a standpoint faces
 one way, so both hemispheres at once can only be drawn. The circle held whole, the sphere and the cube, the angle and trigonometry, π and e
 are the DHV's. Whole, with π at its exact value, it is a limit. Any representation actually held, a map, a stored world,

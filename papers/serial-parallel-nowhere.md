@@ -7591,6 +7591,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 - **R1102** (18 Nov 2026; the same "1 2 3"): essay 31, *Calculus from one standpoint: where it needs N, and where it
   does not* (a car's speedometer and odometer), CLC, R1100 and RIC as one essay; README row, `essays.html` card, the smoke
   test's count 31 (not run). No paper changed.
+- **R1106** (18 Nov 2026; Claude asked whether a read is "one hemisphere" or "one facing"; Tom: "One hemisphere is two
+  facings"): **one hemisphere is two facings**, facing V (the near reading s) and facing away from V (the far reading
+  1/s), R1043's two; a read is the single hemispherical vantage, one hemisphere, and faces one of its two facings at a
+  time (so R1105's "Shv is one facing" is the read's facing, the hemisphere its two); the DHV both hemispheres, four
+  facings in the plane, eight in space. Totals: Ω a facing, 2Ω = π a hemisphere's two, 2π four, 4π eight. *Reads and
+  Writes* abstract and §1, essay 31 §8.
 - **R1105** (18 Nov 2026; Tom: "All this can be described with facings. Dhv is just 4 facings. Shv is one facing. And
   cauchy is always the relation, not the paint. So 1 facing. 4 facings, or 8 facings, its the relation, with different
   number of facing.", then "Yes. Dhv and shv is Same relation space, different facings. Foreground this."): **the single

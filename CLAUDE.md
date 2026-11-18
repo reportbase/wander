@@ -576,6 +576,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1106 (18 Nov; Tom: "One hemisphere is two facings"): a hemisphere is two facings (toward V, s; away from V, 1/s); a
+  read holds one hemisphere and faces one facing at a time; the DHV both hemispheres, four facings (eight in space).
   R1105 (18 Nov; Tom: "Dhv is just 4 facings. Shv is one facing."; "Dhv and shv is Same relation space, different facings.
   Foreground this."): **SHV and DHV are one relation space with different facings**: a read one facing, the DHV four
   (plane) or eight (space) joined; the Cauchy the relation, never the paint, the same in every facing; the count changes
