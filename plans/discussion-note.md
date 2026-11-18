@@ -479,3 +479,55 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
     - Standing: a reading; every exact piece already run (CPX, BLD, HLX, HOL, BRL). Next, offered, not run: one exact
       test giving curvature +1, 0, −1 (turns, strides, boosts) from loop leftover over area, matched to CPX's sign of Δ
       (Cayley–Klein classical), and random rational splits of the half turn multiplying to −1.
+
+21. **Three things in one number: observation geometry, physical geometry, payload** (18 Nov; Tom: "observation
+    geometry is prior to physics, and that it follows its own rules. but physics itself may have a different geometry,
+    gravity, for example."; "the issue is that this makes measurement hard, what are you actuallly measuring, the
+    observation geometry, the physical geometry or the payload."; "take black holes."). **Whose:** Tom's framing;
+    Claude's sorting and the sources' readings below.
+    - **Two geometries.** Observation geometry: directions from one standpoint, slopes, the corner, the exchange, the
+      heat; no unit, no mass, no G; prior to physics in the logical sense (it holds whatever physics says), not that
+      physics comes from it (R655, R852). Physical geometry: spacetime and its metric, curved by mass, its sizes amounts
+      (G, the mass, a curvature radius), the blueprint's (Einstein 1915). They meet in the equivalence principle: near
+      any standpoint spacetime is flat, so gravity never reshapes a read; it decides which source lands at which
+      address and how much sky each covers, as refraction does (R820). Surface brightness is unchanged along rays in
+      curved spacetime (Etherington 1933), so share × amount survives exactly and only the share is physics' (bears on
+      R1088's candidate: the form of a non-living read the observation geometry's, the share in it the physical
+      geometry's). Physical geometry shows only when reads are joined (a loop's leftover, distances by brightness and by
+      size disagreeing; TLP, MNY, R1075).
+    - **Three tests, one each.** (1) Scale the world: read or write. (2) Change what arrives: address or payload.
+      Gravity's bending is the same for every colour, glass's is not, so lensing passes (2) as not payload though it
+      moves a star off its flat-space place. (3), new, a candidate: change the route, same source: observation
+      geometry (the same at every standpoint) or physical geometry (differs by route). Classical controls already do
+      (3): the 1919 eclipse plates against night plates of the same stars; lensing time delays. Mixed quantities stay
+      mixed in one read: brightness is payload × share (magnified faint or unlensed bright), a frequency shift the
+      source's or gravitational redshift; only a second route or a known source (a write) parts them. So the hardness
+      is built in: physical geometry only by joining reads, which are writes, which carry amounts.
+    - **Black holes.** The hole's geometry: Kerr, fixed by mass and spin, every size an amount (horizon 2GM/c² without
+      spin, the shadow's edge √27·GM/c²). Its payload is borrowed (disc, jet, stars behind); the shadow is directions
+      whose routes end at the horizon, payload absent. The observer's geometry unchanged: every direction there, what
+      lands where moved, the rest of the sky squeezed into rings. The event horizon (a place, a radius from the mass) is
+      not the papers' horizon (a direction, [0 : 1]); never run them together.
+    - **What black hole physicists say** (checked 18 Nov, abstracts and records only): they split the same three as
+      "the spacetime", "the astrophysics" or emission, and the observer as parameters (inclination, distance) on an
+      image plane at infinity in units of GM/c² (Bardeen's; his Les Houches chapter, "Timelike and null geodesics in the
+      Kerr metric", in *Black Holes*, DeWitt and DeWitt eds., 1973, not reached: a related chapter, "Properties of black
+      holes relevant to their observation", doi 10.1017/S0074180900236218, was). That plane is a writer's screen, not
+      one standpoint's directions; it serves what they measure, and the papers' point is only that the read has rules
+      of its own before any spacetime enters (a sorting, not a correction; R335, R364).
+      - The scale test as they have it: an image fixes θ_g = GM/(Dc²) only; M87* ring 42 ± 3 μas, θ_g 3.8 ± 0.4 μas,
+        the mass 6.5 × 10⁹ M☉ only with D = 16.8 Mpc carried in, the ring turned into θ_g by GRMHD calibration (EHT
+        2019, Paper VI, arXiv:1906.11243).
+      - Change what arrives: in 2018 the ring was 43.3 μas, consistent with 2017, the bright side moved about 30° (EHT
+        2024, "The persistent shadow of the supermassive black hole of M 87. I", A&A 681, A79).
+      - Sgr A*: image size within about 10% of Kerr's given a prior on mass over distance, the shadow-to-ring step again
+        from a simulation library (EHT 2022, Paper VI, ApJL 930, L17); the prior from stellar orbits is Claude's memory,
+        not confirmed in the records read.
+      - How cleanly one image parts spacetime from emission is disputed: the dark area mostly the emission's and
+        redshift's (Gralla, Holz and Wald 2019, PRD 100, 024018); for spherical inflow the edge at √27 r_g, "a signature
+        of spacetime geometry" (Narayan, Johnson and Gammie 2019, ApJL, doi 10.3847/2041-8213/ab518c).
+      - The route test, proposed: the nested subrings, light that went round once more each, leave universal signatures
+        on long baselines giving mass, spin and a GR test (Johnson et al. 2020, Sci. Adv. 6, eaaz1310); not yet measured.
+    - Standing: a reading; nothing run. Next, offered, not run: an exact lensed-source check (a point mass: colour
+      moves nothing, route moves address and share, brightness × share fixed, against the flat inverse square at the
+      same distance). Whether test (3) goes into *Reads and Writes* beside the two tests is Tom's call.
