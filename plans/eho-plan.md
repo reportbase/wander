@@ -182,3 +182,34 @@ stations at one time, so an empty array; my code), fixed and rerun with the pred
   emission the field describes, and why the EHT calibrates its ring against simulations. Separating them needs a richer
   emission model (more azimuthal terms, a thickness, the large-scale flux) or the photon subrings, not a simpler fit.
   Not run: such a model.
+
+**Run 3, predictions** (18 Nov, committed before the fit; Tom: "merge, then try a richer model"). Run 2 found the
+simple ring's diameter trading against its width and contrast. Run 3 gives the emission more room so that the diameter
+need not carry it: an m-ring of order 3 (Johnson et al. 2020's family: V = Σ_k β_k J_k(π d ρ) e^{ik(φ − π/2)}, β₀ = 1,
+β₋ₖ = β̄ₖ, three complex β), blurred by a circular Gaussian of FWHM w, plus a filled disc of the same diameter holding
+a share f of the flux (a floor inside the ring). Nine parameters (d, w, f, β₁…β₃). Fitted, as in run 2, to closure
+phases and log closure amplitudes only (station gains cancel), the same baselines and errors. `runs/eho/eho5.py`.
+
+- **Q11:** 2017's diameter steady over the four days and two bands: spread under 5% (run 2 had 13.7%).
+- **Q12:** 2018 days 111 and 115 (bands b3, b4) within 5% of 2017's mean.
+- **Q13:** the fit improves: median χ²/n over the 2017 and 2018 b3/b4 fits lower than run 2's.
+- **Q14 (recorded):** if Q11 or Q12 is killed with Q13 not, the extra room went to fitting noise, not to separating
+  diameter from emission; the next step would be the subrings, which this array cannot resolve.
+
+**Run 3** (18 Nov; `runs/eho/eho5.py`, `runs/eho/eho5.out`). The first pass, one file at a time, was stopped after five
+files for time and rerun whole with the same fit and starts, one process per file; the five agree.
+
+- **Q11 killed.** 2017's spread grew to 25% (38.4–49.8 μas), against run 2's 13.7%. April 5–6 at 38.4–44.3, April 10–11
+  at 48.3–49.8; even one day's two bands differ by 3.1 μas (April 5) and 3.3 μas (April 6), where the errors are under 0.6.
+- **Q12 not killed, by its letter.** 2018 days 111 and 115 (b3, b4) average 45.9 μas against 2017's 45.1, 1.8% apart; again
+  a mean over 2017's spread, so it means little.
+- **Q13 not killed.** The fits are better: median χ²/n 1.18 for 2017 (run 2's 1.29) and 1.32 for 2018 b3/b4 (run 2's 1.35).
+- **Q14 applies.** The extra room improved the fit and loosened the diameter: the floor's share f takes 0.00 to 0.37 in
+  2017, and the diameter moves with it (the days with f 0.35–0.37 the largest). More emission structure gave the
+  diameter more to trade against, not less. From closures on this array, with these models, the ring's diameter is not
+  separated from the emission; a richer model fits the payload better and leaves the spacetime's size less fixed.
+- **What the three runs say together.** The EHT's steady 42 μas rests on what these fits lacked: amplitudes held by
+  the a-priori calibration (run 1, which held 2017 to 2.7%), imaging and modelling pipelines tested on synthetic data,
+  and the ring calibrated against simulated emission. That calibration is where the payload's assumptions enter (item
+  21). The clean split the sorting asks for, size by spacetime alone, needs the route test (the subrings), which this
+  array cannot resolve. Not run further here.
