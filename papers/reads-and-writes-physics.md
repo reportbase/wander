@@ -6,8 +6,8 @@
 
 *A first full draft (8 November 2026), from the outline in `plans/phy-outline.md`. Its geometry is* Reads and Writes*'s
 (`papers/readers-and-writers.md`), and where the two differ that paper stands. A read uses no trigonometry (*Reads
-and Writes* §1): where this paper writes an angle or a trigonometric function it speaks from the blueprint (classical geometry's view
-from no standpoint, set beside the read for comparison); a read's own
+and Writes* §1): where this paper writes an angle or a trigonometric function it speaks from the dual hemispherical vantage (DHV;
+informally, a blueprint: classical geometry's view from no standpoint, set beside the read for comparison); a read's own
 results are rational in the slope s = v/h. Since 10 November 2026 it follows that
 paper as rewritten on SPN R788: what scaling leaves unmoved is a read if one standpoint holds it and an extent if it needs
 two, and only an amount in a unit carried in is a write. Since 12 November (R896) the sorting is by two properties,
@@ -68,7 +68,7 @@ sorting on these two properties, continuous or discrete and moved by scaling or 
 
 Physics uses all four boxes. Its measured numbers are writes: a length to so many digits, in metres. Its counts,
 photons arrived or contacts made, are unmoved by scaling and are descriptions laid over the things counted. Its laws
-are stated on the number line in a unit, exact real amounts, which is the blueprint's box: classical statement, set
+are stated on the number line in a unit, exact real amounts, which is the dual hemispherical vantage's box: classical statement, set
 here for comparison and found nowhere among the things measured. And what an observer has before any of these is the
 read. A write changes only what arrives, never a direction, so the two do not collide (*Reads and Writes* §1). Among
 acts the two properties are one: a discrete thing has a boundary, so a size, so scaling moves it, and a direction has
@@ -100,7 +100,7 @@ things it is kept in are.) Physics has used this test for a century as
 dimensional analysis: Bridgman (1922) and Buckingham (1914) sort quantities into dimensionless groups and the scale
 that sets them. The groups are reads or extents (with one base unit they are exactly the directions of a read; Buckingham's
 π groups, checked in `plans/bpi-plan.md`); the scale is the write. The test is necessary for a reading and not
-sufficient: a number unmoved by scaling can still be no read, as π is none: it is the blueprint's, the turn held closed.
+sufficient: a number unmoved by scaling can still be no read, as π is none: it is the DHV's, the turn held closed.
 
 **Change what arrives.** Keep the standpoint and the turn, and change the world that paints the directions: another
 source, another spectrum, another brightness, another medium. What stays is the read's own: the directions and their
@@ -156,7 +156,7 @@ a ratio of the thumb's own shares.
 (2/π)/(1 + (v/h)²), its median at the corner, its quartiles √2 − 1 and √2 + 1, and no mean, since the horizon carries a
 tail no average can settle. With a second thumb crossed with the first, square to the look, the readings (v/h, v₂/h) on a
 screen square to the look follow the two-dimensional Cauchy, 1/(2π(1 + r²)^(3/2)) per unit of screen, r thumbs off the
-look (the blueprint's cos³α, α the angle off the look, r = tan α). The Cauchy is best read as a *heat*: a continuous weight over the directions, hottest along the
+look (the dual hemispherical vantage's cos³α, α the angle off the look, r = tan α). The Cauchy is best read as a *heat*: a continuous weight over the directions, hottest along the
 look, given whole before anything arrives.
 
 **The paint.** What arrives along each direction is the *payload*, the paint met there: a colour, a flux, a spectrum, a
@@ -210,7 +210,7 @@ must be carried in to state it in amounts. "None" means one standpoint reads it.
 | the uniform turn aimed outward, laid on a flat receiver | a point source on a plane, the cos³ law | none | the source's power |
 | a census of directions with no cut on the paint | Ellis and Baldwin's 2 in the count dipole | unmoved by what arrives | none |
 | the reciprocal of a sum of two reads | a triangulated depth | its law unmoved by scaling | the baseline |
-| the point at twice the angle (the blueprint's, Euclid III.20): height 2hv, foot h² | the Bloch point; Born's weight; the visibility bound | none | Born's rule |
+| the point at twice the angle (the dual hemispherical vantage's, Euclid III.20): height 2hv, foot h² | the Bloch point; Born's weight; the visibility bound | none | Born's rule |
 | the sum cut of two standpoints' readings, h + v = 1 | hard-ball contact | unmoved by scaling | none |
 | a direction of two channels read at one instant | LIGO's [H1 : L1] | unmoved by averaging | none |
 | dimensionless groups | Buckingham's π groups | unmoved by scaling | the base units |
@@ -223,7 +223,7 @@ A thing of half-size S at distance d closes at speed u. A read gives x = S/d, th
 clock, in ticks.
 
 - **Time to contact is the reading over its rate**, x/ẋ = d/u, at every distance, before and past the corner, with none
-  of S, d or u known (Lee 1976). Read from the angle arctan x instead (the blueprint's chart), the same ratio gives d/u times
+  of S, d or u known (Lee 1976). Read from the angle arctan x instead (the dual hemispherical vantage's chart), the same ratio gives d/u times
   arctan(x)(1 + x²)/x: right far off, too long by π/2 at the corner, and worse past it. So the exact carrier is the ratio.
 - **A rate joins reads, so τ is held by no single read**: it is a count of the observer's own ticks, unmoved by scaling, with the earlier look kept. Two looks a tick apart give it exactly:
   x₁/(x₂ − x₁) is the time to contact at the second look, x₂/(x₂ − x₁) one tick earlier. Seconds are carried in with a
@@ -328,7 +328,7 @@ A moving observer's sky is the clearest place in physics where a read and a writ
   between nearby stars are kept, and nothing arriving is consulted.
 - **A uniform sky, seen moving, is the spherical Cauchy**, density D²/4π with D the Doppler factor of each direction
   (Kato and McCullagh 2020): the Möbius family carries the uniform law within itself. No law on the sky is
-  boost-invariant; boosts carry the uniform one within its family. In the read's half-angle slope t (the blueprint's
+  boost-invariant; boosts carry the uniform one within its family. In the read's half-angle slope t (the dual hemispherical vantage's
   tan(θ/2), the stereographic coordinate) a boost is t ↦ t/k, k = e^η; on −ln t (the pseudorapidity) a uniform sky lies
   as ½·sech² and a boost slides it by the rapidity η. So the
   rapidity is had from directions alone: from one look, with the sources taken as uniform in their own frame, the slide
@@ -367,7 +367,7 @@ stereographic chart centred on that axis, a multiplication z ↦ k·z, a slide o
 line add. A Möbius map fitted to three stars' apparent directions before and after a boost along n by ζ has trace
 2·cosh(ζ/2): the three directions are the evidence, the map is what they fix, and the rapidity is the map's coordinate,
 inferred from its trace with no frequency and no distance (a coordinate of a map between reads, not itself a read).
-Two boosts along n give ζ₁ + ζ₂, and tanh of it is (β₁ + β₂)/(1 + β₁β₂), the velocity law, which is the blueprint's tanh of the read's sum.
+Two boosts along n give ζ₁ + ζ₂, and tanh of it is (β₁ + β₂)/(1 + β₁β₂), the velocity law, which is the DHV's tanh of the read's sum.
 
 Boosts along two axes cannot be one slide. Joined, they leave a turn, the Thomas–Wigner rotation (Thomas 1926; Wigner
 1939). Its angle Ω satisfies tan(Ω/2) = ab·sin φ/(1 + ab·cos φ), a = tanh(ζ₁/2), b = tanh(ζ₂/2), φ the angle between the
@@ -513,7 +513,7 @@ precision; it is not this paper's to test. What the sort says is where it lives.
   dimensions. The receiver catches exactly half. This is the cos³ law of illumination, by a change of variable. A lens
   adds one cosine more, cos⁴, for the aperture seen obliquely: three cosines are the heat, the fourth the lens's.
 - **The corner lives in the count.** An even line of half-length b at distance d gives (λ/4πd)·2·arctan(b/d): paint
-  falling as 1/d on every direction it covers, and the share of directions it covers (in the blueprint's formula (2/π)·arctan(b/d)), whose median is exactly at
+  falling as 1/d on every direction it covers, and the share of directions it covers (in the dual hemispherical vantage's formula (2/π)·arctan(b/d)), whose median is exactly at
   b = d. Its slope on logarithmic axes at b = d is −1.637: −1 from the paint and −2/π from the directions.
 - **The dimension.** The cosine-weighted share sin^(D−1)θ is symmetric under the reciprocal only in three dimensions:
   D = 3 is singled out by Lambert's cosine, not by the turn, whose one-axis marginal is the Cauchy in every dimension.
@@ -574,7 +574,7 @@ standpoints improve the figure, never the scale.
 
 The pair is (B/2, d); its corner is the Thales circle on the baseline, where the parallax angle γ is 90°. The relative
 distance error per unit angle is cosh(ln k), least at the corner and the same at k and 1/k, and sin γ = sech(ln k), the
-height 2hv of the point at twice the angle (the blueprint's). With angles read to a step ε, the relative error stays under one over a band
+height 2hv of the point at twice the angle (the dual hemispherical vantage's). With angles read to a step ε, the relative error stays under one over a band
 reaching a factor of about 1/ε to either side of the corner; its far edge is about B/ε. Past it a point is a ray: parallax
 needs a standpoint's read and returns to one.
 
@@ -628,8 +628,8 @@ one write.
 
 ### 8.1 The qubit: a read and its doubled point [exact, classical]
 
-A qubit's state is a ray with real amplitudes h and v, a direction [h : v] (at θ in the blueprint's angle): a
-read. Its Bloch point is at 2θ, (2hv, 0, h² − v²): the point at twice the angle (Euclid III.20, the blueprint's), in the
+A qubit's state is a ray with real amplitudes h and v, a direction [h : v] (at θ in the dual hemispherical vantage's angle): a
+read. Its Bloch point is at 2θ, (2hv, 0, h² − v²): the point at twice the angle (Euclid III.20, the DHV's), in the
 read's slope s = v/h the doubled turn (1 + is)/(1 − is). Born's rule is the point's foot, h².
 Orthogonal states are antipodal on the sphere; a turn of the state by 2π gives −ψ, so 720° returns it; the complex ratio
 ψ₁/ψ₀ is the Bloch sphere's stereographic chart; a pure state lies on the sphere and a mixture inside. All textbook; the
@@ -637,7 +637,7 @@ reading is the sort's. Entanglement, Bell's theorem and measurement are not touc
 
 ### 8.2 The duality relation [exact, data]
 
-In the blueprint's angle, sin 2θ = 2hv and cos 2θ = h² − v²; a read has 2hv and h² − v² themselves. With h and v two paths' amplitudes, the fringe visibility is at
+In the DHV's angle, sin 2θ = 2hv and cos 2θ = h² − v²; a read has 2hv and h² − v² themselves. With h and v two paths' amplitudes, the fringe visibility is at
 most 2hv and the which-path predictability is |h² − v²|, so V² + P² ≤ 1, with equality for a pure state (Greenberger and
 Yasin 1988; Englert 1996). Full visibility comes only at the corner, and 2hv is sech of the logarithm of the amplitudes'
 ratio, already in print as V = sech θ, P = tanh θ (Bramon, Garbarino and Hiesmayr 2004). The bridge is Born's rule: an
@@ -671,7 +671,7 @@ the same taken twice as slowly, in a field twice as strong, or in an apparatus t
 energy times time and moves with all three. Experiments have separated them by keeping the loop and changing the rest:
 photons in a coiled fibre (Tomita and Chiao 1986) and neutrons in a turning field (Bitter and Dubbers 1987). Both tests
 sort it: scaling, and changing what is carried, each move only the dynamical phase. The half is the doubled angle
-(the blueprint's account): the state at θ has its point at 2θ, so a loop counted on the sphere of states is counted twice.
+(the DHV's account): the state at θ has its point at 2θ, so a loop counted on the sphere of states is counted twice.
 
 ## 9. Two detectors, one direction [data]
 
@@ -705,7 +705,7 @@ Each simulation here is checked against a referee that computes the known physic
   corner. Played from inside, each ball in its own size, a game of pool equals the referee's to rounding, and scaling the
   world moves no reading and no contact. The pair's product r_a·r_b/d² is shared and its ratio r_b/r_a owned (MRL's two
   laws); the sum is contact. A contact multiplies an aim error (a slope) by s/(2r·√(1 − f²)), f the line's offset
-  from the object's centre over 2r (the blueprint's s/(2r·cos φ)); for a full hit 1/(h + v) − 1 = 2^L − 1 with
+  from the object's centre over 2r (the dual hemispherical vantage's s/(2r·cos φ)); for a full hit 1/(h + v) − 1 = 2^L − 1 with
   L = log₂(1/(h + v)), so each contact spends about the binary digits the pair started from touching: 1.5 to 2 a contact
   on an open table, one part in 570 past one in 16 (half a pocket) by the third; inside a rack contacts gain digits (POL runs
   8–9). [simulation]
@@ -716,11 +716,11 @@ Each simulation here is checked against a referee that computes the known physic
   writing pairs come off it: with no look over all balls the game is the same to the bit, and with pairs resolved
   together from each tick's start it is the same whatever the balls' numbering (60 of 60 within 10⁻⁹), every challenge
   still solved; it parts only where contacts chain within one tick. The world frame, the shared tick and the integrator
-  stay the blueprint's (ENG runs 1–2). [simulation]
+  stay the DHV's (ENG runs 1–2). [simulation]
 - **A collision, sorted.** Before contact, reads (the two slopes; product shared, ratio owned, sum deciding). At contact,
   h + v = 1 the last read, each ball then writing its own new state. The push's direction a read; the mass ratio (v/h)³ a
   read only given one material; restitution, grip, gravity and speeds in a unit writes. Simultaneity across all balls
-  (the frame, the tick, the integrator) the blueprint's. Classical impulse contact; the sorting ours.
+  (the frame, the tick, the integrator) the DHV's. Classical impulse contact; the sorting ours.
 - **A flight, many writes.** A cannonball in a vacuum is all read (shape set by the launch slope alone; g writes only
   size); with quadratic drag the shape depends only on β = v₀²/(g·L), a ratio of two writes (to 10⁻¹¹), the best slope
   below the corner (≈ 1 − 0.2100·β small). A real flight is written by many things at once (air, wind with height, spin);
@@ -805,7 +805,7 @@ It changes no physics. It sorts, and the sort gives four working rules.
   Ω_m = 1/π = 0.3183, with Ω_Λ = 1 − 1/π and w = −1, and through Friedmann's equations z_eq = (π − 1)^(1/3) − 1 = 0.2890
   and z_acc = (2(π − 1))^(1/3) − 1 = 0.6240. Its derivation is not accepted here: it multiplies 2/π and ½, the mean
   projection of a uniform direction in two dimensions and in three, as if they were filters in sequence, and the sort
-  above would place both with the blueprint. But the numbers were written down before the next surveys report, so they
+  above would place both with the dual hemispherical vantage. But the numbers were written down before the next surveys report, so they
   are a fair test whatever their origin. Planck 2018 gives Ω_m = 0.3153 ± 0.0073 (Planck Collaboration 2020), 0.4σ from
   1/π; DESI's second data release's BAO alone gives 0.2975 ± 0.0086, 2.4σ below. Against DESI's five-year BAO with Euclid
   (2027) and Roman's and Rubin's supernovae and growth (2027–2028): if the best combination sits more than 3σ from 1/π,
