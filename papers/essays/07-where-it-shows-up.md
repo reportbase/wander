@@ -437,7 +437,8 @@ our fits: the ring's diameter moved with the emission model by up to a quarter. 
 more, the photon subrings, is set by the hole's geometry whatever the gas does, and would part them; the present array
 does not resolve it. The geometry the telescope reads M87* with is the same one it reads an apple or empty sky with: it
 belongs to the standpoint, not to the hole. Over a field 42 μas across it is invisible, since at the focus the read is even
-to first order; negligible there, not absent.
+to first order; negligible there, not absent. The hole itself is its writes, the spacetime and the gas; the ring
+model is a blueprint of it, a representation that cannot yet tell them apart.
 
 ---
 

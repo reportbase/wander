@@ -570,7 +570,8 @@ blueprint out to 10²⁶ units is about 10⁵² cells; the read scans some 29,00
 must record itself too, which no finite record in the world can, so the only complete record is the world: the map of a
 mile to the mile. A program escapes only by a law. A seeded rule, or a motion given as a function of the tick, holds the
 whole in a rule and a seed; state that reacts must be stepped and kept, and that part grows with the history. Compression
-is the law; what has no law cannot be held in less than itself. (R1050.)
+is the law; what has no law cannot be held in less than itself. (R1050.) The same holds for one thing: an apple is its
+writes, a blueprint of it a representation, and a blueprint the size of the apple is the apple (R1095).
 
 **Distance in the payload.** What arrives can carry cues to distance: an echo's delay, how faint a thing of a known kind
 looks. Each becomes a distance only with an amount carried in, the signal's speed and a clock, or the thing's true
