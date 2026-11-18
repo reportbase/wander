@@ -555,6 +555,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   killed by my set-up (flat maximum), C7′ not. R1085 (Tom: "the cannon ball trajectory is affected by many things";
   "add it to the papers and essays and merge"): a flight written by many things at once, one read unable to sort them;
   in *Reads and Writes* §1 "A flight, many writes", the physics paper §10, essay 30 §10.
+  R1086 (Tom: "update the demos"): ENG, the collision sorted and the cannonball's many writes as notes on `pool.html`
+  and lines on `demos.html`'s pool and trick-shots cards; visible wording only.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.
