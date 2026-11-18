@@ -377,6 +377,10 @@ So there are two centres, and they must not be confused.
   holding the readings together.
 - **The unresolved payload's centre is the centroid,** a weighted mean. It arrives first and exactly.
 
+Aiming the look at the group does not join them. The turn about the look is centred where it is aimed, its middle
+the corner; the group's centre of gravity is the payload's, and the median of what arrives meets the corner only for a
+group alike near and far (*Reads and Writes* §1; essay 17 §8).
+
 Fingers order; colours add.
 
 ---

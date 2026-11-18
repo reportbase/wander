@@ -269,6 +269,15 @@ the turn, and that is the map.
 The paint does. Light adds; colours average; the payload has every mean it ought to have. *What arrives can be averaged;
 where it arrives cannot.*
 
+Aim the look at a shape and the map is centred on the shape, but only because it was aimed there: the Cauchy is the
+even turn about the look, and its middle is the corner, set by where one stands and where one looks, never by the
+thing. The shape's own centre of gravity is another kind of middle, a mean, and so it belongs to the paint. Seen from
+the unit sphere out to the thing, the shape is a density laid over the unchanged map (*Reads and Writes* §1): flat at
+the sphere, the outline returned by the logarithm of the density, the size never. Aiming at the centroid does not make
+the two middles one. The median of what arrives sits off the corner by the part of the shape the exchange of near and
+far reverses, and only a shape alike near and far puts it on the corner. The map has a centre, a median, and no centre
+of gravity; the thing has a centre of gravity, the density's.
+
 ## 9. Addresses, a word for counts
 
 The essays used to call a read's directions its *addresses*. That word is discrete: an address is a place in a
