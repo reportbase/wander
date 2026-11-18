@@ -576,6 +576,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1095 (18 Nov; Tom: "The apple is the thing itself, the blueprint is representation of it.  A blueprint the size of
+  the apple is the apple."): **the thing is its writes (its history, both hemispheres, held by the thing alone); a
+  blueprint represents it; a blueprint the size of the thing is the thing.** Any blueprint made is the drawer's record.
+  Never call a thing its own blueprint. *Reads and Writes* §1 "The thing and its blueprint", §2.
   R1093 (18 Nov; a ChatGPT note, Tom: "yes, add it and merge"): observation geometry least visible where aimed (second
   order at the focus, growing off the look; negligible over a small field, not absent); not taken: why others miss it.
   EHO (`plans/eho-plan.md` + `runs/eho/`, 18 Nov; SPN R1090; Tom: "maybe we could do that for them with their own data?",
