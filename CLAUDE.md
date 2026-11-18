@@ -576,6 +576,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1105 (18 Nov; Tom: "Dhv is just 4 facings. Shv is one facing."; "Dhv and shv is Same relation space, different facings.
+  Foreground this."): **SHV and DHV are one relation space with different facings**: a read one facing, the DHV four
+  (plane) or eight (space) joined; the Cauchy the relation, never the paint, the same in every facing; the count changes
+  only the total (Ω, 2π, 4π) and what it brings (periods, clock times, sizes). In space the join adds non-commuting turns.
+  *Reads and Writes* abstract, §1, the calculus paragraph; essay 31 §8.
   R1104 (18 Nov; Tom: "We are just showing that shv is very valuable,  can compete with dhv.", "Yes"): **the calculus runs
   show the SHV competes with the DHV** (the same results exactly, fractions, no limit, no N; the DHV needed for the clock
   and totals); identity checks are the evidence, not a weakness. "Competes", never "better". Curvature in a unit a write,

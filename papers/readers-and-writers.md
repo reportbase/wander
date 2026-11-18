@@ -46,6 +46,16 @@ the verbs for the continuous and the discrete: there is no reader and no writer 
 is the *dual hemispherical vantage* (DHV), both hemispheres at once, which no standpoint holds and which exists only as drawn, so it is neither a read nor a write. It is classical geometry, the view
 from no standpoint, and it is in this paper only as a point of comparison: the paper is about reads and writes.
 
+**One relation space, different facings.** The single and the dual hemispherical vantage hold the same relation space;
+they differ only in how many facings they hold. A facing is the quarter turn, every way the vertical and the horizontal
+relate, one slope s from all of h to all of v, with its heat ds/(1 + s²), its corner s = 1 and its exchange s ↔ 1/s; it
+is the same in every facing, and only the signs tell facings apart. A read holds the relation in one facing; the DHV
+holds the facings joined, four in the plane and eight in space. The Cauchy is always the relation, never the paint, so it
+is one law whether one facing is held or eight. What the count of facings changes is the total, Ω for one, 4Ω = 2π for
+four, 8Ω = 4π for eight, and with it everything a total brings: a period, a clock time, the circle held at a size. So
+where the two vantages agree they agree because the relation is one, and where the DHV is needed it is needed for the
+facings joined. In space the join is more than a count: the eight facings are joined by turns that do not commute (§8).
+
 The read's directions are laid by the uniform turn, whose law in the reading v/h is the Cauchy: its median at the corner
 v = h, its horizon never reached, no mean. It is best read as a *heat*, a continuous weight over the readings, hottest
 along the look and given before anything arrives. What arrives along a direction is the *payload*, the paint. *The heat
@@ -212,7 +222,10 @@ equation, while the shape's points are rational.
 In each, the steps are the read's and the clock is the completion. **Exact** (the three runs, nothing killed in their
 final runs); the sorting **a reading**. What it shows is that the single hemispherical vantage competes with the dual
 hemispherical vantage across calculus (R1104): the same results, exactly, in fractions with no limit and no N, where the
-classical route takes ln, arctan or π; the dual vantage is still needed for the clock and the totals.
+classical route takes ln, arctan or π; the dual vantage is still needed for the clock and the totals. Said by facings
+(R1105): every exact step stays in one facing, and every completion is a total over facings joined, the clock time of a
+step its share of Ω, an oscillator's period four facings (2π/ω), Kepler's period the whole turn and his time to a point
+a part of it.
 
 The two forms of one result agree wherever both apply: they describe one geometry, and a disagreement would be the
 discovery (R950). What the sorting tells is what each form needs to reach the result, not a different result. A mean is
@@ -520,7 +533,9 @@ facings joined. It exists only as drawn: no standpoint holds both hemispheres, s
 with reads and writes: it is not a third act beside them, not a read of a larger kind, and not what they add up to.
 It is classical geometry, with its eye above the figure seeing every side at once. This paper is about reads and
 writes; the DHV is brought in as the point of comparison, the familiar statement a read's or a write's form is
-set beside (e^(iπ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. "Dual hemispherical vantage" and "from no standpoint" say the same thing: a standpoint faces
+set beside (e^(iπ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. The two hold one relation
+space with different facings, one for a read, four or eight joined for the DHV (Tom, R1105; the abstract, "One
+relation space, different facings"). "Dual hemispherical vantage" and "from no standpoint" say the same thing: a standpoint faces
 one way, so both hemispheres at once can only be drawn. The circle held whole, the sphere and the cube, the angle and trigonometry, π and e
 are the DHV's. Whole, with π at its exact value, it is a limit. Any representation actually held, a map, a stored world,
 a table of measurements, is finite, and it is historical: a record of writes that have occurred, so it lags what it

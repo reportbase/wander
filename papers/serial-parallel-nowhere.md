@@ -7591,6 +7591,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 - **R1102** (18 Nov 2026; the same "1 2 3"): essay 31, *Calculus from one standpoint: where it needs N, and where it
   does not* (a car's speedometer and odometer), CLC, R1100 and RIC as one essay; README row, `essays.html` card, the smoke
   test's count 31 (not run). No paper changed.
+- **R1105** (18 Nov 2026; Tom: "All this can be described with facings. Dhv is just 4 facings. Shv is one facing. And
+  cauchy is always the relation, not the paint. So 1 facing. 4 facings, or 8 facings, its the relation, with different
+  number of facing.", then "Yes. Dhv and shv is Same relation space, different facings. Foreground this."): **the single
+  and the dual hemispherical vantage hold the same relation space with different facings**: a read one facing (the
+  quarter turn, the relation [h : v] with its heat, corner and exchange), the DHV the facings joined, four in the plane,
+  eight in space. The Cauchy is always the relation, never the paint, the same law in every facing; the count of facings
+  changes only the total (Ω, 4Ω = 2π, 8Ω = 4π) and what a total brings (a period, a clock time, a size). The calculus runs
+  read so: exact steps stay in one facing, completions are totals over facings joined. Claude's precision: in space the
+  eight facings are joined by turns that do not commute, so the join is more than a count (EUL, essay 13). Foregrounded
+  in *Reads and Writes*' abstract ("One relation space, different facings"), §1 "Reads, writes and the dual hemispherical
+  vantage" and the calculus paragraph; essay 31 §8. Facing here is R805's sign-facing (one quarter turn per choice of
+  signs); within it the near reading s and the far reading 1/s (R1043) are its two readings.
 - **R1104** (18 Nov 2026; Tom: "We are just showing that shv is very valuable,  can compete with dhv.", then "Yes"): **the
   aim of the calculus runs (CLC, RIC, ORB) is to show that the single hemispherical vantage is valuable and competes with
   the dual hemispherical vantage**, not to claim new mathematics. The identity checks are that evidence: the SHV form
