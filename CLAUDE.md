@@ -576,6 +576,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1104 (18 Nov; Tom: "We are just showing that shv is very valuable,  can compete with dhv.", "Yes"): **the calculus runs
+  show the SHV competes with the DHV** (the same results exactly, fractions, no limit, no N; the DHV needed for the clock
+  and totals); identity checks are the evidence, not a weakness. "Competes", never "better". Curvature in a unit a write,
+  against the curve's own length or another curvature a read; Newton's Lemma XXVIII cited for ORB. *Reads and Writes* §1,
+  essay 31.
+  ORB (`plans/orb-plan.md` + `runs/orb/`, 18 Nov; SPN R1103; Tom: "Merge  1 2"): an oscillator's direction steps exactly by
+  rational maps, its size λ (√ undamped, e^(−γτ) damped); Kepler's orbit rational in the half-slope, its clock Kepler's
+  equation (no small relation, Newton 4–7 iterations). Nothing killed. CLC, RIC, ORB carried into *Reads and Writes* §1's
+  "Which mathematics goes with each" (table rows and a paragraph), essay 31 cited.
   R1102 (18 Nov; Tom: "1 2 3"): essay 31, `papers/essays/31-calculus-from-one-standpoint.md`, *Calculus from one
   standpoint: where it needs N, and where it does not* (a car's speedometer and odometer): CLC, R1100 and RIC as one essay.
   README row ("thirty-one essays"), `essays.html` card, smoke count 31 (not run). No paper changed.

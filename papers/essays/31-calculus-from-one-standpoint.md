@@ -38,7 +38,10 @@ The second derivative does not pass. Scale a curve by k about the origin, so tha
 the matching point become g⁽ⁿ⁾(kx) = k^(1−n)·f⁽ⁿ⁾(x). The first is unchanged; the second is divided by k, the third by k²,
 and so on. CLC checked this exactly on 100 seeded rational curves at three values of k: the first derivative unmoved in
 300 of 300, every higher one moved in 900 of 900. Curvature, the bend of a road, carries a size: a road scaled up bends
-more gently. So the first derivative is a read and every higher order is a write, a thing's own shape with a size.
+more gently. So the first derivative is a read and every higher order, in a unit, is a write, a thing's own shape with a
+size. The bend itself is not lost. Curvature times arc length, the turn a stretch of road makes, is unmoved by scaling,
+and so is the ratio of the curvatures at two places, or y″·x: a higher derivative measured against a length of the same
+curve reads again. What the read lacks is the bend in metres, never the bend.
 
 The speedometer is a write even at first order. Its rate pairs a length with ticks of a clock, and scaling the world moves
 the length and not the ticks: CLC found every rate against the clock moved by k (1,196 of 1,196), and only the ratio of
@@ -132,6 +135,14 @@ stride. That time is not a fraction of u. The steps are exact in the slope's own
 where the completion enters, as the angle does for a turn (essay 14). A read steps the equation by its readings and has
 no clock; the time on the clock is a write, and its value a completion.
 
+Physics' own equations split the same way (ORB). An oscillator x″ + 2γx′ + ω²x = 0 has a direction x′/x that obeys a
+Riccati equation with constant coefficients, so its steps are exact rational maps (50 of 50 against the flow to 10⁻⁴⁰);
+its size carries a square root when undamped and e^(−γτ) when damped, a completion. A Kepler orbit's points are rational
+in the half-slope of the angle (500 of 500 exactly on the conic), while the time to reach a point is Kepler's
+M = E − e·sin E, no small relation found and its inverse an iteration (Newton's method, 4 to 7 steps). Newton saw the
+split: Lemma XXVIII of the *Principia* (Book I, Section VI) says no oval's area cut off by a line can be found by a finite
+equation, which is why the time along an orbit cannot be, while the orbit's shape is a conic.
+
 ## 7. Where stepping needs N
 
 Step the same equation in time instead, as a solver does. RIC ran Euler's method and the fourth-order Runge–Kutta method
@@ -151,7 +162,8 @@ does. There, N comes back.
 | Slopes | dy/dx of two lengths, a read | dⁿy/dxⁿ, n ≥ 2, and rates against the clock: writes |
 | Derivatives | rational functions, exact by ε² = 0; the chain rule the tower | eˣ, sin: the function's value a completion |
 | Integrals | rational antiderivatives, telescoping exact at every N | the integrand summed (1/N); ln, arctan, π |
-| Equations | constant-coefficient Riccati, rational Möbius steps, no N | the elapsed clock time τ(u); time-varying coefficients; Euler, RK4 |
+| Curvature | against the curve's own length, or another curvature | in a unit |
+| Equations | constant-coefficient Riccati, rational Möbius steps, no N; an oscillator's direction; an orbit's shape | the elapsed clock time τ(u); Kepler's time; decay; time-varying coefficients; Euler, RK4 |
 
 The left column is the read's arithmetic: fractions, composition and one rule in three kinds. The right column is where
 a count is held or carried to a limit.
@@ -172,6 +184,11 @@ classical tools are not the explanation (R1071); what they mean in a read or a w
 
 Nothing in how calculus is done. Solvers will go on stepping in time, and the limit will go on defining the integral.
 
+What it shows is that the single hemispherical vantage competes with the dual one (R1104): across differentiation,
+integration by antiderivative and the equations with constant coefficients it reaches the same results, exactly, in
+fractions, with no limit and no N, where the classical statement takes ln, arctan or π. The dual vantage is needed for
+the clock and the totals, and nowhere else in these runs.
+
 What it changes is where one looks for the limit. It is not in differentiating, which needs none for the functions built
 from fractions. It is not in the fundamental theorem, which gives an exact answer at every partition. It is in two
 places only: a sum of an integrand's strips, and any total that leaves the fractions. And for the one equation the read
@@ -182,7 +199,8 @@ owns, the slope's own flow, it is in the clock, not in the steps.
 ## Sources
 
 - Tom, 18 November 2026: "Let's compare shv to calculus."; "Merge and proceed with your recomendations."; "Doesn't
-  calculus need N?"; "What's next?"; "1 2 3".
+  calculus need N?"; "What's next?"; "1 2 3"; "We are just showing that shv is very valuable,  can compete with dhv."
+- `plans/orb-plan.md`, `runs/orb/orb.py`, output `runs/orb/orb-run1.txt`.
 - `plans/clc-plan.md`, `runs/clc/clc.py`, `runs/clc/clc2.py`, outputs `runs/clc/clc-run1.txt`, `clc-run2.txt`, and its
   note R1100. `plans/ric-plan.md`, `runs/ric/ric.py`, output `runs/ric/ric-run1.txt`.
 - Essays 14 (`14-rates-not-angles.md`), 15 (`15-what-only-a-writer-holds.md`), 19 (`19-arriving.md`), 20
@@ -190,4 +208,7 @@ owns, the slope's own flow, it is in the clock, not in the steps.
   PYK (`plans/pyk-plan.md`): the three kinds of composition.
 - W. K. Clifford, "Preliminary sketch of biquaternions", *Proceedings of the London Mathematical Society* 4, 1873.
   C. Hermite, "Sur l'intégration des fractions rationnelles", *Nouvelles Annales de Mathématiques* 11, 1872. Both as usually cited, not opened.
-- SPN rulings cited: R871, R883, R1037, R1062, R1071, R1099, R1100, R1101.
+- I. Newton, *Philosophiæ Naturalis Principia Mathematica*, 1687, Book I, Section VI, Lemma XXVIII; read in Bruce's
+  translation (17centurymaths.com, Book I, Section VI). Its modern form (no smooth convex closed curve has its cut-off area
+  an algebraic function of the line) after Pourciau 2001, as usually cited, not opened.
+- SPN rulings cited: R871, R883, R1037, R1062, R1071, R1099, R1100, R1101, R1103, R1104.
