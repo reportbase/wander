@@ -1,0 +1,7 @@
+D1 dual derivative = sympy, exact: 300 / 300
+D2 chain by duals = sympy: 200 / 200; = product of links: 200 / 200
+S1 first derivative unmoved: 300 / 300; higher moved: 900 / 900
+S2 time-rates moved by k: 1196 / 1196 ; ratios of rates unmoved: 1196 / 1196
+I1 antiderivative rational: 0 / 200; derivative rational: 200 / 200
+I2 rational part + log integrand back to f: 100 / 100; log part nonzero: 100 / 100
+F1 telescoping exact at every partition: 100 / 100; Riemann (n = 7) inexact: 100 / 100 ; n·error within 5% of Euler–Maclaurin at n = 1000: 99 / 100
