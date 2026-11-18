@@ -442,6 +442,13 @@ spin's direction at θ has its point on the sphere of states at 2θ, so a loop c
 
 None of these is new physics. Each is classical. What the reading supplies is the sort.
 
+One case did not sort cleanly, and it is worth saying why. An image of a black hole carries three things: the
+observer's geometry (directions, the read's), the hole's own geometry (its spacetime, the thing's, as roundness is an
+apple's), and what the hole sends (its glowing gas, the payload). On the Event Horizon Telescope's own data the first
+came off exactly and was negligible; the second and third stayed tangled in our fits, the ring's size moving with how
+the gas was modelled. Here the address and payload sort is not the hard part; the hard part is telling a thing's own
+geometry from what it sends, and that needs a route test (light that went round once more), not a test of the read.
+
 **In physics.** *Reads and Writes in Physics* (`../reads-and-writes-physics.md`) adds cases where the split was made
 long ago without its name. A spectral line's Lorentzian is the heat of a phase's turn: the Cauchy in frequency from a
 standpoint whose height is the fading rate. Its width and the excited state's lifetime are that one height read two

@@ -428,6 +428,15 @@ writing carried in. The second, that a change of standpoint is fixed by finitely
 century reach the same group from the principle of relativity; this one reaches it from the sky. What it
 adds is a sharp statement of where relativity enters an observer's account: at the speed a read cannot hold.
 
+The same sorting reaches a black hole, and there it shows what is easy and what is hard. The hole's spacetime is the
+hole's own geometry, as roundness is an apple's; it is not a rival to the geometry of the read, and it does not change
+it. Bent light only decides which part of the glowing gas lands in which direction of the sky. On the Event Horizon
+Telescope's public M87* data (EHO), the observer's own layer comes off exactly: our motion turns no part of the sky and
+scales it by 1/D, which moves a 42 μas ring by at most 0.05 μas. The hole's geometry and its gas did not come apart in
+our fits: the ring's diameter moved with the emission model by up to a quarter. The light that went round the hole once
+more, the photon subrings, is set by the hole's geometry whatever the gas does, and would part them; the present array
+does not resolve it.
+
 ---
 
 ## 8. What it comes to

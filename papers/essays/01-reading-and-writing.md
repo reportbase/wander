@@ -200,6 +200,14 @@ People sometimes think of a case the two leave out. Each turns out to be one of 
 The two are exhaustive. That is a strong claim, and it matters. It means that anything you could record about the
 world can be asked: was this read or written? The answer settles what the record can and cannot contain.
 
+One thing the two acts are not is the shape of what is read. The apple in your hand has the apple's geometry, its
+roundness and its dimple; that is what makes it an apple, and it is the apple's. A black hole has the hole's geometry,
+its spacetime curved by its mass; that is what makes it a black hole. The geometry of reading and writing is another
+geometry, the same for the apple and the hole and anything else: directions from where you stand, their slopes, the
+corner, the counted step. A thing's own geometry decides only which part of it lands in which of your directions, as
+turning the apple does. So a measured number can carry three things: your geometry, the thing's own, and what the thing
+sends, its colour or its glow (*Reads and Writes* §2, "Observation geometry and a thing's own geometry").
+
 *Demo: the blueprint's box, its three views: the blueprint's, a read's from home, and ranges.*
 
 ---
