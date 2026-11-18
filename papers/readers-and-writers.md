@@ -133,6 +133,18 @@ started from touching (§9). And when, for all balls at once, is the blueprint's
 the integrator, the stop and the order being the program's and removable. Where and which way is read, how much is
 written, and when is the blueprint's. **A reading** of classical impulse contact; the arithmetic is POL's and ENG's.
 
+**A flight, many writes.** A cannonball is the other kind of case (CNB). In a vacuum its shape is all read: every shape
+number a fraction of the launch slope s (the range share 2s/(1 + s²), the same at s and 1/s and greatest at the corner;
+the apex at half the range, seen from the cannon at slope s/2; the landing at −s); the pull g only writes how far and how
+long. With air a write reaches the shape, but only as a ratio of writes, β = v₀²/(g·L), L the drag length: any (v₀, g, L)
+with one β fly one shape to 10⁻¹¹, the best slope falling below the corner and the flat shot of each pair carrying
+farther. A real flight, though, is written by many things at once and all along it (gravity, air, wind changing with
+height, spin, the ball's surface), each adding a ratio, and the path is the ball's own write of all of them. One read of
+that path cannot sort which did what; that takes more reads or amounts carried in, which is writing. Pool is the clean
+case because between contacts little is written and at a contact one pair's readings decide; a flight is the opposite.
+**Checked** for one write added at a time (CNB runs 1–2, exact; C7 killed by my set-up, C7′ not); the many-writes point
+is a reading.
+
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
 | **continuous** | reading: a read, and what reads held together give, an extent or a map | the number line in a unit |
@@ -2270,6 +2282,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
 ## References
 
 - The pool engine audited (§1, "The engine, audited"): `plans/eng-plan.md`, `runs/eng/eng.mjs`, `runs/eng/eng2.mjs`.
+- A cannonball under drag (§1, "A flight, many writes"): `plans/cnb-plan.md`, `runs/cnb/cnb.py`, `runs/cnb/cnb2.py`.
 - Abbott, R. et al. (LIGO, Virgo and KAGRA Collaborations) (2023). Open data from the third observing run of LIGO, Virgo,
   KAGRA and GEO. *Astrophysical Journal Supplement Series* 267, 29.
 - Archimedes. *On the Sphere and Cylinder*, Book I.

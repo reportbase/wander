@@ -685,6 +685,10 @@ Each simulation here is checked against a referee that computes the known physic
   h + v = 1 the last read, each ball then writing its own new state. The push's direction a read; the mass ratio (v/h)³ a
   read only given one material; restitution, grip, gravity and speeds in a unit writes. Simultaneity across all balls
   (the frame, the tick, the integrator) the blueprint's. Classical impulse contact; the sorting ours.
+- **A flight, many writes.** A cannonball in a vacuum is all read (shape set by the launch slope alone; g writes only
+  size); with quadratic drag the shape depends only on β = v₀²/(g·L), a ratio of two writes (to 10⁻¹¹), the best slope
+  below the corner (≈ 1 − 0.2100·β small). A real flight is written by many things at once (air, wind with height, spin),
+  and one read of the path cannot separate them; pool is the clean case (CNB runs 1–2). [exact]
 - **Cooling counted in contacts.** Five hundred smooth inelastic spheres, contact found where h + v = 1. Per contact per
   sphere the temperature falls by (1 − e²)/3 of itself to 0.8% wherever the gas stays even (Haff 1983). Density,
   diameter and pair correlation leave the count; the clock needs them all, and near the clustering instability goes
