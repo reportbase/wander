@@ -563,6 +563,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   a write needs no read; reading is common, not required; non-living things read too, differently (no look, no aim,
   nothing kept), how open; Claude's candidate (untested) the share of the sky times the source's amount, the inverse
   square's form (exact for a sphere's pull and light). Never say a thing "reads nothing".
+  R1089 (Tom: "update and merge"): R1088 in *Reads and Writes* §1 "Whose writes", essays 30 and 22.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.

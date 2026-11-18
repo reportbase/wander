@@ -15,7 +15,8 @@ Everyone has done this. It is two readers reading each other. Each reads where t
 next step from that read. Then each reads the other's write and writes again. Nothing in the rule says when to stop.
 
 The series has said that everything reads and writes. Each thing reads from its own standpoint, writes its own state,
-and what it reads is the writes of others (R1065). Tom took the next step: "every reader / writer is reading and
+and what it reads is the writes of others (R1065). Not every thing reads as an observer does: a write needs no read,
+and things without life read differently, with no look, no aim and nothing kept (R1088). Tom took the next step: "every reader / writer is reading and
 writing each other based on their geometric heat". Then he named the worry: "this quickly creates infinite computation
 complexity. but observers don't walk infinity, they are rational. geometric laws collapse infinite complexity into a
 inevitable single conclusion." And then the doubt that this essay follows: "i doubt it is so easily handled."

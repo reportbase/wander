@@ -93,7 +93,10 @@ so every read meets it as it is now; that is why reads are always current, while
 geometry's. What an observer sets down about the painting (a count, a measured amount, a record kept) is the observer's
 write, not the painting's. And the painting reads and writes too: each thing in it reads its surroundings from its own
 standpoint and, from that read, writes its own state (§7, "A single vantage and the blueprint, side by side": each thing
-carries its own state). A stone's size is the stone's write. So it goes on without end: a read reads the writes of
+carries its own state). A stone's size is the stone's write. A write needs no read to be made, and reading, though
+common, is not required. Things without life read too, but differently: they turn no look, aim at nothing and keep
+nothing. How is open; one reading, untested, is the inverse square's form, each source's share of the thing's sky times
+that source's amount (§1, "A flight, many writes"). So it goes on without end: a read reads the writes of
 another, which were written from that one's read of yet another's writes. No one holds the whole; each holds its own
 writes and reads the rest. That a thing reads means only that what reaches it from its own standpoint arrives as
 directions and slopes with no scale; it says nothing of awareness. It is shown where it has been built (pool played from
