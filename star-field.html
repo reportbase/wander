@@ -73,7 +73,7 @@
 <body>
 <main>
     <h1>An infinite star field</h1>
-    <p class="lede">The blueprint (classical geometry, shown for comparison) has the stars where they are: give the world more and its far field fills. A read has
+    <p class="lede">The dual hemispherical vantage (DHV; classical geometry, shown for comparison) has the stars where they are: give the world more and its far field fills. A read has
         each star only as a direction, at its fineness K (equal angles; counted, they are K places), and holds
         the share of what it reads in each. However many stars there are, N or 2N or infinitely many, that view is the same: the unit circle, in
         proportion on both sides of the corner. N is invisible to a read. Its fineness, K, is
@@ -112,7 +112,7 @@
                     whole field is 2H across, the far rings mirroring the near ones about H and the horizon the outer edge).
                     Every star falls in one cell of the K × K, whatever N is. Move H: no ray moves, so no star changes its
                     direction; the rings slide, so stars change their place in distance. A read has K;
-                    the blueprint, which holds every star's distance, has N. (Lines drawn are thinned to at most 64 a
+                    the DHV, which holds every star's distance, has N. (Lines drawn are thinned to at most 64 a
                     side; the cells counted are all K.)</p>
                 <div id="kgridNote" class="note"></div>
             </div>
@@ -121,7 +121,7 @@
 
     <div class="grid">
         <div class="panel">
-            <h2>The blueprint's view</h2>
+            <h2>The DHV's view</h2>
             <canvas id="map" width="900" height="900"></canvas>
             <p class="cap">Where the stars are, every distance an amount: home at bottom left, h to the right, v up, laid in
                 proportion out to H (the gold arc) and every doubling the same width past it (arcs at 10, 100, …), so the
@@ -142,7 +142,7 @@
         </div>
     </div>
 
-    <p class="note">The blueprint needs N: to place a star it needs its distance, and the far field's count grows with N. A
+    <p class="note">The DHV needs N: to place a star it needs its distance, and the far field's count grows with N. A
         read needs none of it: its directions and their heat are given by its turn, and its view is the share of what it reads at each, the
         same at N, 2N and ∞ (<a href="payload-free.html">the payload doesn't matter</a>). <a href="star-field-3d.html">The same
         in 3D</a>. <a href="demos.html">All demos</a>.</p>
@@ -266,7 +266,7 @@ function starNear(sx, sy) {
 const fmt = I => I.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 const sci = x => x < 1e4 ? x.toPrecision(4) : x.toExponential(3);
 function describe(s) { const vh = Math.tan(s.th), k = Math.min(S.n - 1, Math.floor(s.th / Q * S.n));
-    return `star #${fmt(indexOf(s))}\nthe blueprint: distance d = ${sci(s.r)} u = ${sci(s.r / Hof())} H, level ${s.j}, row ${s.ir.toLocaleString()} out, place ${s.ia.toLocaleString()} across\n` +
+    return `star #${fmt(indexOf(s))}\nthe DHV: distance d = ${sci(s.r)} u = ${sci(s.r / Hof())} H, level ${s.j}, row ${s.ir.toLocaleString()} out, place ${s.ia.toLocaleString()} across\n` +
         `the read: direction ${k + 1} of ${S.n}, ${vh <= 1 ? 'v/h = ' + sci(vh) : 'h/v = ' + sci(1 / vh)} (${vh <= 1 ? 'inside' : 'past'} the corner), no distance`; }
 function showInfo() { const s = hover || pinned;
     if (hoverAddr >= 0) { const a = readerView(curN(), S.n), b = readerView(S.inf ? Infinity : 2n * curN(), S.n), t0 = hoverAddr / S.n * Q, t1 = (hoverAddr + 1) / S.n * Q;
@@ -356,11 +356,11 @@ function render() {
         diff: Math.max(...a.share.map((x, k) => Math.abs(x - b.share[k]))), near: near.toString(), a0: a.share, far: far === null ? '∞' : far.toString(), drawnInfo, jN: w.jN };
     $('Nval').textContent = S.inf ? 'no end' : `≈ 2^${S.m} = ${fmt(w.N)}`;
     $('Hval').textContent = `H = 2^${S.k} u` + (S.k < 0 ? ` = ${Hof()} u` : ` = ${Hof().toLocaleString()} u`);
-    $('say').innerHTML = `The blueprint: ${S.inf ? 'infinitely many stars' : fmt(Ne) + ' stars'}, ` +
+    $('say').innerHTML = `The DHV: ${S.inf ? 'infinitely many stars' : fmt(Ne) + ' stars'}, ` +
         `${S.inf ? 'every level filled' : `out to level ${w.jN} (d ≤ 2^${w.jN} u)`}; at H = 2^${S.k} u, ${fmt(near)} inside the corner and ` +
         `${far === null ? 'infinitely many' : fmt(far)} past it. The read: fineness K = ${S.n}, ${S.n / 2} places inside H and ${S.n / 2} past it, the same at every N and every H.`;
     $('check').innerHTML = `<span class="ok">The read's view at N and at 2N differ by at most ${last.diff.toExponential(2)} in any direction's share × K;</span> ` +
-        `each, drawn as the blueprint draws it, is the unit circle to within ${Math.max(a.maxDev, b.maxDev).toExponential(2)}, half its reading past the corner${N !== Infinity && N < 16n * BigInt(S.n) ? ` (only ${fmt(N)} stars for K = ${S.n}: the read has single stars; raise N)` : ''}. The blueprint meanwhile ` +
+        `each, drawn as the DHV draws it, is the unit circle to within ${Math.max(a.maxDev, b.maxDev).toExponential(2)}, half its reading past the corner${N !== Infinity && N < 16n * BigInt(S.n) ? ` (only ${fmt(N)} stars for K = ${S.n}: the read has single stars; raise N)` : ''}. The DHV meanwhile ` +
         `${S.inf ? 'has no end to its stars' : `has ${fmt(Ne)} stars, then ${fmt(worldOf(2n * N).N)}`}. `;
     document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
     $('inf').classList.toggle('on', S.inf); $('m').value = S.m; $('m').disabled = S.inf; $('half').disabled = S.inf; $('dbl').disabled = S.inf; $('H').value = S.k;

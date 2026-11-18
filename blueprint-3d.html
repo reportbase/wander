@@ -79,12 +79,12 @@
 <body>
 <main>
     <h1>One blueprint in 3D</h1>
-    <p class="lede">The same property in three dimensions. The <span class="w">blueprint</span> (classical geometry, shown for comparison) is the model, every length in
+    <p class="lede">The same property in three dimensions. The <span class="w">dual hemispherical vantage</span> (DHV; classical geometry, shown for comparison) is the model, every length in
         metres, heights too. Its frame is a box, a number line on each axis held on both signs, each extent an amount. A <span class="p">read</span> has a vantage,
-        not a shape (spheres are the blueprint's; the shell drawn here is the blueprint's picture of it): one point, looking out: nothing in the room sends, so it receives only the light the room scatters, each
+        not a shape (spheres are the DHV's; the shell drawn here is the DHV's picture of it): one point, looking out: nothing in the room sends, so it receives only the light the room scatters, each
         direction painted by the first surface on its line, and no distance. Put in a floor corner, the room is one octant
-        of the blueprint's sphere round it, the wedge, each direction [h : v : v₂] with the turn's heat over them, given before anything arrives: the heat is given; the paint is met. The blueprint has no vantage;
-        a read has one. Scale the world and only the blueprint's numbers change. Write the room: one counted stride turns two
+        of the DHV's sphere round it, the wedge, each direction [h : v : v₂] with the turn's heat over them, given before anything arrives: the heat is given; the paint is met. The DHV has no vantage;
+        a read has one. Scale the world and only the DHV's numbers change. Write the room: one counted stride turns two
         looks from home into metres. <a href="blueprint.html">The plan in 2D</a>.</p>
     <div class="panel" style="margin-bottom:12px">
         <div class="row"><label for="k">scale the world, k</label><input id="k" type="range" min="-2" max="2" step="0.05" value="0"><span id="kv" style="min-width:9ch"></span></div>
@@ -95,16 +95,16 @@
     </div>
     <div class="grid">
         <div class="panel">
-            <p class="tag w">the blueprint</p><h2>The model, in metres</h2>
+            <p class="tag w">the DHV</p><h2>The model, in metres</h2>
             <canvas id="scene"></canvas>
             <div class="nogl" id="nogl1"></div>
             <p class="cap">Every length an amount, stated whole: each room's width, depth and height, the lot's extent. The
-                blueprint's box (blue) is a number line on each axis, held on both signs, round everything it holds; each
+                DHV's box (blue) is a number line on each axis, held on both signs, round everything it holds; each
                 extent is an amount, and the metres
                 need a unit measured beforehand: the scale bar. Drag to turn, scroll or pinch to zoom, tap a floor to stand
                 the <span class="p">eye</span> there (teal); <span class="a">home</span> for the directions from a corner is the gold
                 corner, its three walls h, v (up) and v₂. The wedge (gold) runs out along every direction to the
-                blueprint's box: its horizon, the box seen from inside, reached and never measured.</p>
+                DHV's box: its horizon, the box seen from inside, reached and never measured.</p>
             <p class="read" id="readW"></p>
         </div>
         <div class="stack">
@@ -141,11 +141,11 @@
             <p class="read" id="readM"></p>
         </div>
     </div>
-    <p class="cap" style="margin-top:12px">The blueprint, and a read. The blueprint is the whole, in a unit, from no standpoint. Its frame is a box,
+    <p class="cap" style="margin-top:12px">The dual hemispherical vantage (DHV), and a read. The DHV is the whole, in a unit, from no standpoint. Its frame is a box,
         one number line on each axis, both signs held, nothing round in it; a read has a vantage, not a shape: one point, looking
-        out, its directions given and painted by what arrives, holding no distance; a pulse's ranges are a write. From a corner the read's wedge, as the blueprint draws it, is one octant of a sphere, and the standpoint is
-        inside the blueprint's box: in the far field every direction of the wedge reaches the box, its horizon, whose size
-        no read gives. The blueprint holds three numbers a point, a read two (a direction); the one between is the size. One stride counted is the amount that turns the looks from home into metres.
+        out, its directions given and painted by what arrives, holding no distance; a pulse's ranges are a write. From a corner the read's wedge, as the DHV draws it, is one octant of a sphere, and the standpoint is
+        inside the DHV's box: in the far field every direction of the wedge reaches the box, its horizon, whose size
+        no read gives. The DHV holds three numbers a point, a read two (a direction); the one between is the size. One stride counted is the amount that turns the looks from home into metres.
         Other demos: <a href="blueprint.html">the blueprint</a>, <a href="room-ratios.html">the room in ratios</a>,
         <a href="wedge.html">the wedge</a>, <a href="demos.html">all demos</a>.</p>
 </main>
@@ -368,7 +368,7 @@ function render() {
     $('write').classList.toggle('on', S.write); $('pulse').classList.toggle('on', S.pulse);
     $('shellTag').textContent = S.pulse ? 'a pulse sent: a write' : 'a read'; $('shellHead').textContent = S.pulse ? 'A pulse sent: ranges, in its unit' : 'A vantage, painted by what arrives'; $('roof').classList.toggle('on', S.roof);
     drawTri(); drawMap();
-    $('say').textContent = `The blueprint states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}, the rooms ${fmtM(2.7 * k)} high, its box round everything ${fmtM(48 * k)} × ${fmtM(32 * k)} × ${fmtM(TOP * k)}, one number line a side. ` +
+    $('say').textContent = `The DHV states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}, the rooms ${fmtM(2.7 * k)} high, its box round everything ${fmtM(48 * k)} × ${fmtM(32 * k)} × ${fmtM(TOP * k)}, one number line a side. ` +
         `The read's vantage is the same at every k: its directions, and the colours arriving along them` + (S.pulse ? `; a pulse's ranges come back with geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in. ` : `, and no distance. `) + `From home a read holds ${NA.toLocaleString('en')} directions (a count): v ≤ h ${(100 * C.vh).toFixed(1)}%, ` +
         `v₂ ≤ h ${(100 * C.v2h).toFixed(1)}%, v₂ ≤ v ${(100 * C.v2v).toFixed(1)}%, the near field ${(100 * C.near).toFixed(1)}%, at every k and in every room.`;
     describe(); if (draw3d) draw3d();
@@ -458,7 +458,7 @@ if (r1 && r2) {
     const num = (x, f) => { const v = x * f; return v >= 100 ? v.toFixed(0) : v >= 10 ? v.toFixed(1).replace(/\.0$/, '') : v.toPrecision(2).replace(/\.0$/, ''); };
     const relabel = k => { const [f, u] = unitOf(k);
         B.ROOMS.forEach((R, i) => write(roomLab[i], `${R.name} ${num((R.r[2] - R.r[0]) * k, f)}×${num((R.r[3] - R.r[1]) * k, f)}×${num(R.z * k, f)} ${u}`));
-        write(lotLab, `${num(48 * k, f)} ${u}`, '#9fc3ff'); write(wsLab, `the blueprint's box, ${num(48 * k, f)} × ${num(32 * k, f)} × ${num(B.writerBox(k).hi[2], f)} ${u}`, '#7fb2ff'); write(lotLab2, `${num(32 * k, f)} ${u}`, '#9fc3ff');
+        write(lotLab, `${num(48 * k, f)} ${u}`, '#9fc3ff'); write(wsLab, `the DHV's box, ${num(48 * k, f)} × ${num(32 * k, f)} × ${num(B.writerBox(k).hi[2], f)} ${u}`, '#7fb2ff'); write(lotLab2, `${num(32 * k, f)} ${u}`, '#9fc3ff');
         const nice = x => { const e = 10 ** Math.floor(Math.log10(x)), m = x / e; return (m >= 5 ? 5 : m >= 2 ? 2 : 1) * e; }, len = nice(5 * k) / k;
         barGeo.setFromPoints([new THREE.Vector3(38, 1, 0.05), new THREE.Vector3(38 + len, 1, 0.05)]); barLab.position.set(38 + len / 2, 1.8, 0.4);
         const t = len * k; write(barLab, t >= 1000 ? `${t / 1000} km` : t >= 1 ? `${t} m` : t >= 0.01 ? `${+(t * 100).toPrecision(3)} cm` : `${+(t * 1000).toPrecision(3)} mm`, '#e6e4ee'); };

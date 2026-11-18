@@ -108,7 +108,7 @@
         <h2>The circular rule: directions are turns</h2>
         <div class="grid">
             <div><canvas id="cv4" height="300"></canvas><p class="cap">Tap a thing to make its direction the new zero (the
-            head turned to it). Every other direction is then read off as a turn from it, on the same dial. The blueprint's
+            head turned to it). Every other direction is then read off as a turn from it, on the same dial. The dual hemispherical vantage's
             formula for the new reading is tangent subtraction, (s − t)/(1 + st); the turn gives it without the formula.</p></div>
             <div class="read" id="r4"></div>
         </div>
@@ -379,7 +379,7 @@
             const t = turn(z, j); worst = Math.max(worst, Math.abs(t.byTurn - t.byFormula) / (1 + Math.abs(t.byFormula)));
             s += `  ${T.name}      ${((t.angle >= 0 ? '+' : '') + t.angle.toFixed(1)).padStart(6)}°      ${t.byTurn.toPrecision(5).padStart(10)}       ${t.byFormula.toPrecision(5).padStart(10)}\n`;
         });
-        s += `\nlargest difference ${worst.toExponential(1)}. The head turns; the formula is\nhow the blueprint states what the turn did. Directions behind\nthe new zero read negative: the other facing.`;
+        s += `\nlargest difference ${worst.toExponential(1)}. The head turns; the formula is\nhow the DHV states what the turn did. Directions behind\nthe new zero read negative: the other facing.`;
         $('r4').innerHTML = s;
     }
 

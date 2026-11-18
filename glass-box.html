@@ -95,12 +95,12 @@
 <div id="panel" class="glass">
     <button id="fold" aria-label="fold the panel">▾</button>
     <h1>The stained-glass box</h1>
-    <p class="sub">The <b class="blue">blueprint</b> (classical geometry, shown for comparison) is a box with a picture on every face. A <b class="gold">read</b>
-        is taken inside it from a vantage, not a shape: one point, drawn here as the blueprint draws it, a sphere of radius H and
+    <p class="sub">The <b class="blue">dual hemispherical vantage</b> (DHV; classical geometry, shown for comparison) is a box with a picture on every face. A <b class="gold">read</b>
+        is taken inside it from a vantage, not a shape: one point, drawn here as the DHV draws it, a sphere of radius H and
         one octant of it, the wedge, its directions and their heat. Light from
         each pixel travels in along one direction, through the wedge, to the standpoint, and paints the direction it arrives
         along. The heat is given; the paint is met: the colours are the world's. No colour says how far it came.</p>
-    <div class="vant" id="vant"><button data-v="writer">the blueprint</button><button data-v="reader">the read, from home</button></div>
+    <div class="vant" id="vant"><button data-v="writer">the DHV</button><button data-v="reader">the read, from home</button></div>
     <p id="vcap"></p>
     <div class="more">
         <h3>the pictures</h3>
@@ -118,7 +118,7 @@
         <h3>the ghost: the same box, larger or smaller about the standpoint</h3>
         <div class="ctl"><label for="lg">g</label><input id="lg" type="range" min="-0.7" max="0.7" step="0.01"><output id="lgo"></output></div>
         <div class="row"><button id="bGhost">show the ghost</button></div>
-        <h3>the read and the blueprint</h3>
+        <h3>the read and the DHV</h3>
         <div class="ctl"><label for="lgH">H, the zoom</label><input id="lgH" type="range" min="-0.7" max="0.9" step="0.01"><output id="lgHo"></output></div>
         <div class="ctl"><label for="bx">X</label><input id="bx" type="range" min="2" max="24" step="0.5"><output id="bxo"></output></div>
         <div class="ctl"><label for="by">Y</label><input id="by" type="range" min="2" max="24" step="0.5"><output id="byo"></output></div>
@@ -342,7 +342,7 @@ function drawBox() { const E = S.E, k = K(), key = E.join() + '|' + S.lk + '|' +
         for (const [i, j] of [[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4], [0, 4], [1, 5], [2, 6], [3, 7]]) ed.push(...v[i], ...v[j]); return ed; };
     setPos(boxEdges, edges([0, 0, 0], 1));
     for (let f = 0; f < 6; f++) { faceMesh[f].geometry.dispose(); faceMesh[f].geometry = faceGeometry(f, E); }
-    boxLab.position.set(0, E[1] / 2 + 0.9, -E[2] / 2); write(boxLab, `the blueprint's box, ${fmt(E[0] * k)} × ${fmt(E[1] * k)} × ${fmt(E[2] * k)}`, '#7fb2ff'); }
+    boxLab.position.set(0, E[1] / 2 + 0.9, -E[2] / 2); write(boxLab, `the DHV's box, ${fmt(E[0] * k)} × ${fmt(E[1] * k)} × ${fmt(E[2] * k)}`, '#7fb2ff'); }
 function drawGhost() { const g = GG(), P = S.P, E = S.E, c = P.map(x => x * (1 - g));
     const [a, b, cc] = E.map(x => x * g / 2), v = [[-a, -b, -cc], [a, -b, -cc], [a, b, -cc], [-a, b, -cc], [-a, -b, cc], [a, -b, cc], [a, b, cc], [-a, b, cc]].map(p => p.map((x, i) => x + c[i])), ed = [];
     for (const [i, j] of [[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4], [0, 4], [1, 5], [2, 6], [3, 7]]) ed.push(...v[i], ...v[j]);
@@ -389,7 +389,7 @@ function applyView() { const v = S.view, P = S.P;
 function cutAway() { if (S.view !== 'writer') return; const d = camW.getWorldDirection(new THREE.Vector3());
     for (let f = 0; f < 6; f++) { const n = G.FACE_BASIS[f].n; faceMesh[f].visible = n[0] * d.x + n[1] * d.y + n[2] * d.z > 0.02; } }
 const VCAP = {
-    writer: `<b class="blue">The blueprint</b>: the box whole, its pictures, the standpoint's place in it, every point three amounts. The faces turned toward you are cut away. Light leaves each pixel and travels in, through the wedge, to the standpoint; it paints the direction it arrives along.`,
+    writer: `<b class="blue">The dual hemispherical vantage</b>: the box whole, its pictures, the standpoint's place in it, every point three amounts. The faces turned toward you are cut away. Light leaves each pixel and travels in, through the wedge, to the standpoint; it paints the direction it arrives along.`,
     reader: `<b class="gold">The read</b>, from its standpoint, looking out down the wedge: the triangle h + v + v₂ = 1, its medians the pairs' corners. Each direction holds the colour that arrived along it. No box, no number line, no distance: the same picture from a box g times as large.` };
 const HINT = {
     writer: 'Drag the gold ball to move the standpoint (arrows, page up/down too). Drag elsewhere to turn the view, scroll to zoom. Point at the wedge for a direction, where its light came from and how far.',
@@ -406,14 +406,14 @@ function hud() { const k = K(), c = CN, n = L.length, hv = S.hover != null ? L[S
             `no distance arrives: the light of ${pct(c.within)} of the directions started within H of the standpoint, painted like the rest${gh}`;
         if (hv) { const m = Math.max(hv.h, hv.v, hv.v2); s += `\n\ndirection [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}], painted ${rgbTxt(hv.rgb)}; from how far, never`; }
         $('hud').textContent = s; return; }
-    let s = `the blueprint holds the box, ${S.E.map(x => fmt(x * k)).join(' × ')}, its pictures, and the standpoint at (${S.P.map(x => fmt(x * k)).join(', ')}): amounts and pixels\n` +
+    let s = `the DHV holds the box, ${S.E.map(x => fmt(x * k)).join(' × ')}, its pictures, and the standpoint at (${S.P.map(x => fmt(x * k)).join(', ')}): amounts and pixels\n` +
         `the read holds ${n.toLocaleString('en')} directions (given; counted here): ${shares}\n` +
         `each painted by the pixel its ray meets: ` + c.faces.map((x, i) => x > 0 ? `${G.FACES[i]} ${pct(x)}` : null).filter(Boolean).join(', ') + '\n' +
         `the light of ${pct(c.within)} of them started within H = ${fmt(H())} of the standpoint, painted the same way${gh}`;
     if (hv) { const m = Math.max(hv.h, hv.v, hv.v2);
         s += `\n\ndirection [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}] (the read's), painted ${rgbTxt(hv.rgb)}\n` +
             `its light left face ${G.FACES[hv.face]} at (${hv.p.map(fmt).join(', ')}), pixel (${hv.uv.map(x => x.toFixed(3)).join(', ')}) of its picture\n` +
-            `and came ${fmt(hv.t)} to the standpoint: the blueprint's amount; no colour carries it`; }
+            `and came ${fmt(hv.t)} to the standpoint: the DHV's amount; no colour carries it`; }
     $('hud').textContent = s; }
 // the inset: Lambert's map of the wedge, each cell the colour that arrived; the pairs' corners dashed
 const map = $('map'), mg = map.getContext('2d');

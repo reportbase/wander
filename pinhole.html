@@ -52,7 +52,7 @@
     <p class="lede">A read never divides. Light from the top of a thing comes through the pinhole along one ray, and
     the ray is the reading: a direction, which is already a ratio. Make the thing bigger and farther together and nothing
     the read holds moves. Send its breadth to infinity and it arrives as one more direction, the horizon. The division
-    V*/d belongs to the description, the blueprint's account of the reading.</p>
+    V*/d belongs to the description, the account of the reading from the dual hemispherical vantage (DHV).</p>
     <div class="panel">
         <div class="row">
             <label for="lv">breadth V*</label><input id="lv" type="range" min="-2" max="3" step="0.01" value="0.5">
@@ -63,7 +63,7 @@
         </div>
         <div class="row" style="margin-top:6px">
             <label for="lk">scale the world, k</label><input id="lk" type="range" min="-3" max="6" step="0.01" value="0">
-            <button id="account">the blueprint's account</button>
+            <button id="account">the DHV's account</button>
         </div>
         <div class="grid" style="margin-top:10px">
             <div><canvas id="scene" height="300"></canvas><p class="cap">The scene, drawn to fit: the pinhole O, the thing
@@ -147,7 +147,7 @@
         const hb = S.H * sc; if (hb > 0.5 && hb < W) { g.strokeStyle = '#d96e5b'; g.lineWidth = 2; g.beginPath(); g.moveTo(ox, oy + 28); g.lineTo(ox + hb, oy + 28); g.stroke(); txt(g, '1 H', ox + Math.min(hb, W - 60) + 4, oy + 32, '#d96e5b', 11); }
         else txt(g, `1 H is ${hb <= 0.5 ? 'below a pixel' : 'wider than the figure'} here`, ox, oy + 32, '#d96e5b', 11);
         if (S.account) {
-            txt(g, `the blueprint's account: V* = ${fmt(w.V)} H, d = ${fmt(w.d)} H`, 10, 18, '#e6e4ee');
+            txt(g, `the DHV's account: V* = ${fmt(w.V)} H, d = ${fmt(w.d)} H`, 10, 18, '#e6e4ee');
             txt(g, `V*/d = ${fmt(w.V)} / ${fmt(w.d)} = ${fmt(r.ratio)}  (a sum no read does)`, 10, 36, '#e6e4ee');
         } else txt(g, 'a read holds the ray, not V* or d', 10, 18);
         // the flat screen: unbounded

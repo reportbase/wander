@@ -54,7 +54,7 @@
     <p class="lede">Lay K places on the quarter turn. A direction from home, read as the ratio v/h, goes to the place
     <code>k = ⌊K·(2/π)·arctan(v/h)⌋</code>: its share of the turn times K. No length enters. Classically (Euclid III.20), the
     radius from the centre of the circle meets the same point at twice the angle and gives it the same place: the
-    blueprint's description, in angles, shown for comparison. Four kinds of array lie on
+    description of the dual hemispherical vantage (DHV), in angles, shown for comparison. Four kinds of array lie on
     those places: the <span class="g">index alone</span>, the <span class="r">values on the index</span>, a
     <span class="w">constant array</span>, and an <span class="b">array of known length</span>, whose index needs its extent.</p>
     <div class="panel">
@@ -73,7 +73,7 @@
         <div class="grid">
             <div><canvas id="cv1" height="430"></canvas><p class="cap">The chord from home A to B and the circle on it. Gold:
             the K places from home, at equal angles; teal: the same places from the centre, at twice the
-            angle (the blueprint's, for comparison). The lit place is the one the direction falls in, both ways.</p></div>
+            angle (the DHV's, for comparison). The lit place is the one the direction falls in, both ways.</p></div>
             <div>
                 <div class="read" id="r1"></div>
                 <div class="read" id="r2"></div>
@@ -82,8 +82,8 @@
         <canvas id="cv2" height="260"></canvas><p class="cap" id="cap2"></p>
     </div>
     <p class="note"><b>An iterator, not an index.</b> The place formula on this page, the floor of K times the share of the
-    sweep, uses the arctangent to go straight from a reading to a place. That is the blueprint's index operator. A read
-    sweeps forward from where it stands and has only the next step; the formula is how the blueprint lays the places out.</p>
+    sweep, uses the arctangent to go straight from a reading to a place. That is the DHV's index operator. A read
+    sweeps forward from where it stands and has only the next step; the formula is how the DHV lays the places out.</p>
     <p class="note">Related: <a href="one-read.html">one turn, one read</a>, <a href="sweep-zero.html">counting from zero</a>,
     <a href="depth.html">the floor's depth</a>, <a href="zoom.html">H is a zoom</a>. <a href="demos.html">All the demos</a>.</p>
 </main>
@@ -223,7 +223,7 @@
             // the writer's line [0, X] in N = K cells
             g.strokeStyle = 'rgba(230,228,238,0.6)'; g.beginPath(); g.moveTo(pad, y0); g.lineTo(w - pad, y0); g.stroke();
             for (let i = 0; i <= K; i++) { const x = pad + (w - 2 * pad) * i / K; g.beginPath(); g.moveTo(x, y0 - 4); g.lineTo(x, y0 + 4); g.stroke(); }
-            g.fillStyle = '#e6e4ee'; g.fillText(`the blueprint's line, 0 to X = ${X.toPrecision(3)}, ${K} cells`, pad, y0 + 18);
+            g.fillStyle = '#e6e4ee'; g.fillText(`the DHV's line, 0 to X = ${X.toPrecision(3)}, ${K} cells`, pad, y0 + 18);
             const rows = [];
             for (const a of AMOUNTS) {
                 const x = a * k, ci = countIndex(x, X, K), ti = turnIndex(x, H, K);
@@ -248,7 +248,7 @@
             + `  v/h = ${f4(rd.s)}, its share of the turn g = (2/π)·arctan(v/h) = ${rd.g.toFixed(4)}\n`
             + `  index k = ⌊${K}·g⌋ = <span class="b">${rd.index}</span>${rd.s === Infinity ? ' (the horizon, kept in the last place)' : ''}\n`
             + `  its reciprocal h/v goes to place ${rd.reciprocal}` + (K % 2 === 0 || rd.index !== (K - 1) / 2 ? `, ${K - 1} − k` : '');
-        $('r2').innerHTML = `<span class="r">From the centre</span> (classically, the radius at twice the angle; the blueprint's): the same point at φ = 2θ = ${(2 * st.t).toFixed(1)}°\n`
+        $('r2').innerHTML = `<span class="r">From the centre</span> (classically, the radius at twice the angle; the DHV's): the same point at φ = 2θ = ${(2 * st.t).toFixed(1)}°\n`
             + `  index ⌊${K}·φ/π⌋ = <span class="b">${rd.central}</span>: the same place\n`
             + `Scaling the world by k = ${kOf().toPrecision(3)} multiplies h and v together and moves no index.`;
     }

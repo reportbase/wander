@@ -63,11 +63,11 @@
 <main>
     <h1>One turn, one read</h1>
     <p class="lede">One <span class="g">direction</span> from home, with its heat, given before anything arrives, meets one
-    point. Classically (Euclid III.20; the blueprint's description, in angles, shown for comparison) the radius from the
+    point. Classically (Euclid III.20, as the dual hemispherical vantage, the DHV, describes it, in angles, shown for comparison) the radius from the
     centre of the circle on the chord reaches the same <span class="r">point</span>, where the paint lands, at twice the
-    angle. The direction meets its paint there. The heat is given; the paint is met. In the blueprint's measure, arc over
+    angle. The direction meets its paint there. The heat is given; the paint is met. In the DHV's measure, arc over
     chord and chord over arc take the line as π/2 and 2/π over the whole quarter turn (numbers with π in them, the
-    blueprint's); their product is 1, which is also the blueprint's number. In complex form the point
+    DHV's); their product is 1, which is also the DHV's number. In complex form the point
     is the direction squared, ½e^(2iθ) from the centre: where the direction's reading runs off to ∞ at the horizon, the radius has made
     its half turn to home, e^(iπ) = −1.</p>
     <div class="panel">
@@ -83,7 +83,7 @@
                 <div class="read" id="addr"></div>
                 <div class="read" id="pay"></div>
                 <div class="read" id="both"></div>
-                <canvas id="cv2" height="200"></canvas><p class="cap">Over the quarter turn, in the blueprint's measure, in angles: arc over chord
+                <canvas id="cv2" height="200"></canvas><p class="cap">Over the quarter turn, in the DHV's measure, in angles: arc over chord
                 (teal, rising to π/2), chord over arc (gold, falling to 2/π), and their product
                 (white), 1 throughout.</p>
                 <canvas id="cv3" height="220"></canvas><p class="cap">The same read on the Cayley disc,
@@ -117,11 +117,11 @@
         are reciprocals. A read's own reciprocals are the near reading s and the far reading 1/s, s × (1/s) = 1. The landing point reaches −1 with no e or π: the corner is i, and two corners
         are i × i = −1. The heat 1/(1 + s²) is rational, and the corner halves it; π enters only when the area is closed to a
         total. And the circle's own equation, h² + v² = 1, is 1/(1 + s²) + s²/(1 + s²) = 1 at every direction. π/2, 2/π and
-        e^(iπ) are the completed circle's, the blueprint's: a count has fractions near them, and lands exactly only
+        e^(iπ) are the completed circle's, the DHV's: a count has fractions near them, and lands exactly only
         at the corner.</p>
     <p class="note"><b>One relation, held two ways.</b> The fourth panel's w = (1 + is)/(1 − is) gives a read's form of
         Euler's identity: w(s) × w(1/s) = −1 at every slope, a direction and its reciprocal, and at the corner i × i = −1.
-        The blueprint's e^(iπ) = −1 is the one member of that family that pairs home with the horizon, which no read holds, and
+        The DHV's e^(iπ) = −1 is the one member of that family that pairs home with the horizon, which no read holds, and
         so the one that carries π. The algebra joining the two forms is ordinary and they are equivalent; which form a read
         holds is a reading. The rule holds for every pair at once and nothing in it happened: a geometric law needs no
         memory, and only the turns actually taken need keeping (<i>Reads and Writes</i> §1, "The same relation, held two
@@ -310,13 +310,13 @@
         $('cv').textContent = cc.toFixed(3);
         $('addr').innerHTML = `<span class="g">The direction</span> (from home): a reading, no amount.\n`
             + `  [h : v] = [${f4(r.h)} : ${f4(r.v)}], so v/h = ${f4(r.ratio)}\n  the sweep's share so far, g = ${f4(r.g)}${Math.abs(st.t - 45) < 0.05 ? '  (the corner: the arms read alike)' : ''}`;
-        $('pay').innerHTML = `<span class="r">Where the paint lands</span> (from the centre, classically; the blueprint's): a point of the circle, bounded, no distance to anything.\n`
+        $('pay').innerHTML = `<span class="r">Where the paint lands</span> (from the centre, classically; the DHV's): a point of the circle, bounded, no distance to anything.\n`
             + `  the radius at 2θ = ${(2 * st.t).toFixed(1)}°; the point's foot h² = ${f4(r.foot)}, height hv = ${f4(r.height)}\n`
             + `  from the centre ½(h + iv)² = ½e^(2iθ), e^(2iθ) = ${f4(landing(st.t)[0])} ${landing(st.t)[1] < 0 ? '−' : '+'} ${f4(Math.abs(landing(st.t)[1]))}i`
             + (mark(st.t) ? `\n  ${mark(st.t)}` : '');
         $('both').innerHTML = `<span class="w">The arc turned through</span> θ = ${f4(r.arc)} over its chord sin θ = ${f4(r.chord)}:\n`
-            + `  arc over chord (the blueprint's): <span class="r">${f4(r.payload)}</span>\n  chord over arc (the blueprint's): <span class="g">${f4(r.address)}</span>\n`
-            + `  their product: <span class="b">${f4(r.product)}</span>, also the blueprint's number` + (st.t >= 89.95 ? '\n  at the end of the turn: π/2 and 2/π' : '')
+            + `  arc over chord (the DHV's): <span class="r">${f4(r.payload)}</span>\n  chord over arc (the DHV's): <span class="g">${f4(r.address)}</span>\n`
+            + `  their product: <span class="b">${f4(r.product)}</span>, also the DHV's number` + (st.t >= 89.95 ? '\n  at the end of the turn: π/2 and 2/π' : '')
             + (Math.abs(cc - 1) > 1e-9 ? `\n<span class="x">Drawn at V = ${cc.toFixed(2)}H: the ray at θ and the radius at 2θ part, by ${gap(st.t).toFixed(4)}.</span>` : '');
     }
     // one pole, the constant and the phasor (SPN R753): from z = m + iγ the kernel's total weighted by e^(its) is e^(izt);
