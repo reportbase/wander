@@ -529,7 +529,12 @@ density gives the shape and never the size, the one write this gradient does not
 density: ln ρ returns the modes of f to second order in τ. The median of what arrives moves only by
 the part of f the exchange reverses, and only at first order. So the Cauchy is read geometry, the same for every thing,
 and the density over it is the thing's write geometry arriving as paint; it is the payload's, the world's, not the
-read's. **Exact** (RHO, nothing killed); the gradient's reading **a reading**.
+read's. The Cauchy is the even turn about the look: aimed at the thing, it is centred on the thing, and its centre is
+a median, the corner, set by the standpoint and the aim, never by the thing. A centre of gravity is a mean, which the
+Cauchy has none of; the thing's centre of gravity is the density's, the payload's, laid over it (Tom, R1098). Aiming at
+that centroid does not make the two meet: the median of what arrives sits off the corner by the part of the shape the
+exchange reverses, and only a shape alike near and far puts it there. **Exact** (RHO, nothing killed); the gradient's
+reading **a reading**.
 
 **V.** V is the other party's breadth, the mountain in the distance that the thumb is held up against. A reading is a
 ratio of the thumb's own shares; V was never in it, and it does not "cancel" from it. V\*/H is an extent, had by walking;

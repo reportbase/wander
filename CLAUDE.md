@@ -576,6 +576,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1098 (18 Nov; Tom: "cauchy is actually the even turn of the shapes center of gravity"): **the Cauchy is the even turn
+  about the look; aimed at the shape it is centred on it; the shape's centre of gravity is the density's (a mean, the
+  payload's), not the Cauchy's (its centre a median, the corner).** *Reads and Writes* §1. Never give the Cauchy a mean or
+  a centre of gravity.
   R1097 (18 Nov; Tom: "shape recovery from a unit sphere … the cauchy itself through the density gradient"): **the gradient
   of representations from the unit sphere to the thing is a density over the fixed Cauchy** (RHO): flat at the unit
   sphere, the shape from ln ρ, never the size; the Cauchy unchanged, the density the payload's. *Reads and Writes* §1.
