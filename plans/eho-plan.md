@@ -150,3 +150,35 @@ cc0db19ee5110725d52d4dd79e9ce60daaf8a85cce60e8996d5ce50c8920a673  L2V1_M87_2018_
   three-layer sorting is in practice two layers, spacetime and emission, plus the writes carried in. Separating those
   two from one array's data is where the difficulty is, as the field says: my one-model fit held the size across a week
   and lost it across a year.
+
+**Run 2, predictions** (18 Nov, committed before the fit; Tom: "merge, than try closures"). Run 1's Q4 left one cause
+untested that the fit itself could remove: station gains. Run 1 fitted visibility amplitudes directly, and network
+calibration leaves station gain errors of several percent to tens of percent on amplitudes, which a ring's size can
+absorb. Closure amplitudes |V_ab||V_cd|/(|V_ac||V_bd|) over each quadrangle of four stations at one time, and closure
+phases over each triangle, cancel every station gain. Run 2 fits the same m-ring (order 1, Gaussian blur) to closure
+phases and log closure amplitudes only, with the flux fixed (closures carry no overall scale), the same baselines
+(> 0.1 Gλ), each visibility's error with 10% in quadrature as before. `runs/eho/eho4.py`.
+
+- **Q8:** 2017's diameter from closures stays steady over the four days and two bands: spread (max − min)/mean under 5%.
+- **Q9:** 2018 days 111 and 115 (bands b3, b4, the best covered, as in run 1's post hoc), mean diameter within 5% of
+  2017's closure mean. Killed if more than 5% apart. If killed, station gains are not the cause of Q4's gap, and what
+  is left is the array's coverage or the model.
+- **Q10 (recorded, not a kill):** 2018 day 112's fits, with 38 to 315 closure phases, are too sparse to count; reported only.
+
+**Run 2** (18 Nov; `runs/eho/eho4.py`, `runs/eho/eho4.out`). The first pass crashed at day 112 (no quadrangle of four
+stations at one time, so an empty array; my code), fixed and rerun with the predictions unchanged.
+
+- **Q8 killed.** From closures alone 2017 splits in two: April 5–6 at 41.9–42.6 μas, April 10–11 at 46.8–48.0 μas, a
+  spread of 13.7%. The blur w sits at its bound of 0 on all eight 2017 fits, so diameter and width are not held apart
+  without the amplitudes' overall scale.
+- **Q9 not killed, by its letter.** 2018 days 111 and 115 (bands b3, b4) average 45.9 μas against 2017's closure mean
+  of 44.9, 2.3% apart; but that mean is the average of Q8's two groups, so the agreement means little.
+- **Q10 (recorded).** Day 112 has no closure amplitudes and 38–315 closure phases; its fits range 41.7–61.5 μas, with
+  errors up to ±970.
+- **Post hoc, not a prediction.** Taking out the station gains did not settle the year-to-year question. It took away
+  what had held 2017 steady in run 1. In closures this simple ring's diameter trades against its width and brightness
+  contrast: the 2017 days with the larger contrast (b 0.39–0.42) come out larger, and 2018 fits a wider blur (w 12–17).
+  So in this model the diameter carries the emission (E) whichever way it is fitted. That is the mixing of spacetime and
+  emission the field describes, and why the EHT calibrates its ring against simulations. Separating them needs a richer
+  emission model (more azimuthal terms, a thickness, the large-scale flux) or the photon subrings, not a simpler fit.
+  Not run: such a model.
