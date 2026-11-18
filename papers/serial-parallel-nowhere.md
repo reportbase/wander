@@ -7591,6 +7591,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 - **R1102** (18 Nov 2026; the same "1 2 3"): essay 31, *Calculus from one standpoint: where it needs N, and where it
   does not* (a car's speedometer and odometer), CLC, R1100 and RIC as one essay; README row, `essays.html` card, the smoke
   test's count 31 (not run). No paper changed.
+- **R1104** (18 Nov 2026; Tom: "We are just showing that shv is very valuable,  can compete with dhv.", then "Yes"): **the
+  aim of the calculus runs (CLC, RIC, ORB) is to show that the single hemispherical vantage is valuable and competes with
+  the dual hemispherical vantage**, not to claim new mathematics. The identity checks are that evidence: the SHV form
+  reaches the classical result exactly, in fractions, with no limit and no N, where the classical statement takes ln,
+  arctan or π; a disagreement would be the discovery (R1062, R950). The DHV is still needed for the clock and the totals
+  (τ(u), Kepler's time, decay, integrals leaving the fractions). "Competes", never "better" (R939, R940). With it, two
+  corrections of Claude's: a higher derivative or curvature in a unit is a write, but taken against the curve's own
+  length (curvature × arc length) or another curvature it is unmoved, a read again (the read has the bend, not its size
+  in a unit); and Newton's *Principia* Book I, Lemma XXVIII (no oval's cut-off area by a finite equation; checked in
+  Bruce's translation) cited as ORB's classical anchor. *Reads and Writes* §1 (table and paragraph), essay 31 §1, §6, §8,
+  §10 and Sources, the ORB plan.
 - **R1103** (18 Nov 2026; Tom: "Merge  1 2"): ORB (`plans/orb-plan.md` + `runs/orb/`), exact, predictions first, nothing
   killed: a damped or undamped oscillator's direction x′/x steps exactly by rational maps I + u(A + γI) (50 of 50), its
   state exact with the scalar λ⁶, λ² = 1/(1 + u²ω²) undamped and with no small relation damped (e^(−γτ)); Kepler's orbit's

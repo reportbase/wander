@@ -62,4 +62,5 @@ can fail by a small integer relation turning up (a pass only says none of small 
 undamped (energy kept) and e^(−γτ) when damped, a completion. The orbit's shape is rational in the half-slope of the
 angle; the time to reach a point is Kepler's, with no small relation, and its inverse takes an iteration count. In both,
 as in RIC, the steps are the read's, the clock and the decay the completion. Classical (the oscillator's matrix
-exponential, the conic in the half-angle, Kepler 1609, Newton's method); the sorting ours.
+exponential, the conic in the half-angle, Kepler 1609, Newton's method; Newton's *Principia* Book I, Lemma XXVIII, no oval's cut-off area given by a finite
+equation, the classical statement of the orbit's split, read in Bruce's translation after the run); the sorting ours.
