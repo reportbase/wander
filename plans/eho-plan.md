@@ -182,3 +182,16 @@ stations at one time, so an empty array; my code), fixed and rerun with the pred
   emission the field describes, and why the EHT calibrates its ring against simulations. Separating them needs a richer
   emission model (more azimuthal terms, a thickness, the large-scale flux) or the photon subrings, not a simpler fit.
   Not run: such a model.
+
+**Run 3, predictions** (18 Nov, committed before the fit; Tom: "merge, then try a richer model"). Run 2 found the
+simple ring's diameter trading against its width and contrast. Run 3 gives the emission more room so that the diameter
+need not carry it: an m-ring of order 3 (Johnson et al. 2020's family: V = Σ_k β_k J_k(π d ρ) e^{ik(φ − π/2)}, β₀ = 1,
+β₋ₖ = β̄ₖ, three complex β), blurred by a circular Gaussian of FWHM w, plus a filled disc of the same diameter holding
+a share f of the flux (a floor inside the ring). Nine parameters (d, w, f, β₁…β₃). Fitted, as in run 2, to closure
+phases and log closure amplitudes only (station gains cancel), the same baselines and errors. `runs/eho/eho5.py`.
+
+- **Q11:** 2017's diameter steady over the four days and two bands: spread under 5% (run 2 had 13.7%).
+- **Q12:** 2018 days 111 and 115 (bands b3, b4) within 5% of 2017's mean.
+- **Q13:** the fit improves: median χ²/n over the 2017 and 2018 b3/b4 fits lower than run 2's.
+- **Q14 (recorded):** if Q11 or Q12 is killed with Q13 not, the extra room went to fitting noise, not to separating
+  diameter from emission; the next step would be the subrings, which this array cannot resolve.
