@@ -137,7 +137,7 @@ reported as failed, and a fix is a new prediction with its own run.
 ### 1.5 What follows
 
 §2 gives the geometry in brief. §3 is the dictionary: quantity by quantity, read or written, and the bridge. Then the
-cases: motion and time (§4), the moving sky and two boosts joined (§5), light and the inverse square (§6), distance and
+cases: motion and time (§4), the moving sky, two boosts joined and a black hole (§5), light and the inverse square (§6), distance and
 parallax (§7), waves and the qubit (§8), two detectors read together (§9), and many bodies (§10). §11 reports where the
 sort failed and what each failure taught. §12 says what the sort changes and what is open.
 
@@ -459,6 +459,40 @@ None of it is new physics: Gauss, Thomas, Wigner, Foucault and Berry hold every 
 piece falls. The turn comes from the loop alone; the loop is a joining of reads and the turn it leaves a map between looks; a rate of turning in degrees a day needs a
 clock, a write.
 
+### 5.5 A black hole: three things in one number [exact, data]
+
+Observation geometry, the geometry of reads and writes, is distinct from physical geometry, a thing's own geometry. An
+apple's roundness is the apple's; it is what makes it an apple. A black hole's spacetime is the hole's, curved by its
+mass (Einstein 1915), fixed by mass and spin (Kerr), with its horizon at 2GM/c² and the edge of its shadow at
+√27·GM/c²; that is what makes it a black hole. Observation geometry is the same for the apple, the hole and anything
+else, and is not changed by what is read. A thing's own geometry decides only which of the thing lands in which
+direction, as turning the apple does; light bent by the hole does the same at a distance, and the brightness along each
+ray is unchanged on the way (Etherington 1933). The event horizon is a place, a radius from the mass; the read's horizon
+is a direction, [0 : 1]. They are not to be run together.
+
+So a measured number may carry three things: the observer's geometry, the thing's own geometry, and what the thing sends
+(for the hole, the glowing gas about it). The scale test sorts them as the field already does: an image fixes only
+θ_g = GM/(Dc²), and the mass needs the distance carried in (Event Horizon Telescope Collaboration 2019). On the
+collaboration's public M87* visibilities from 2017 and 2018, predictions committed before each fit:
+
+- **The observer's geometry, exactly.** A boost acts on the sky as a Möbius map, turning no part of it and scaling a
+  small source by 1/D. The observer's motion changes a 42 μas ring by at most 0.05 μas. This layer comes off before any
+  physics and is negligible here.
+- **The thing's own geometry against what it sends, in our fits.** Signal strengths with a systematic allowance held the
+  2017 ring steady to 2.7% (41.8 μas) but put 2018's 7% larger. Closure quantities alone, in which every station's gain
+  cancels, split the 2017 days 42 against 47.5 μas. A ring with more structure fitted better and spread the 2017 days by
+  a quarter. The more the emission was allowed to vary, the less the size was fixed: the bright ring is where the gas
+  shines, shaped by spacetime, not spacetime alone.
+- **What would part them.** Light that went round the hole once more forms thin subrings whose shape is set by the hole's
+  geometry whatever the gas does (Johnson et al. 2020). That is a route test: the same source, another route. The present
+  array does not resolve the subrings.
+
+The collaboration's steady diameter (42 ± 3 μas in 2017, 43.3 μas in 2018; Event Horizon Telescope Collaboration 2024)
+rests on more than the data's closures: amplitude calibration, tested pipelines, and a calibration from simulations
+that turns the ring into θ_g. Nothing here says that result is wrong; our fits only show where the emission's
+assumptions enter. Curved spacetime is the hole's own geometry, not a rival to observation geometry: the observer's layer
+came off exactly, and what stayed tangled was a question about the hole.
+
 ## 6. Light
 
 ### 6.1 The inverse square, as heat and paint [exact]
@@ -731,6 +765,9 @@ Predictions are written before the runs, so some fail. The ones that teach most:
   relief is shared across scales is the world's, and no reading predicts it.
 - **The near field, counted otherwise** (§6.2): an angle or an unprojected solid angle switches off s = 1, not
   symmetrically.
+- **A black hole's size** (§5.5). The ring's diameter was predicted steady across 2017's days and against 2018's; my fits
+  moved it by 7% between years, then by 13.7% and 25% across 2017's days as the emission model grew. The hole's own
+  geometry and its gas did not come apart from these data.
 - **Constructions carry systematics.** Least squares on bearing lines left a floor on the shape error that more reads did
   not remove (errors in the variables); maximum likelihood removed it.
 
@@ -795,7 +832,7 @@ written before it was run and its runs recorded as they came out, the killed one
   `plans/emc-plan.md`, `runs/emc/`; time and the standpoint, `plans/tim-plan.md`, `runs/tim/`.
 - §5: the moving sky, `plans/sra-plan.md`, `plans/srr-plan.md`, `runs/sra/`, `runs/srr/`; the quasar dipole,
   `plans/ebd-plan.md`, `runs/ebd/`; two boosts joined, `plans/twg-plan.md`, `runs/twg/`; loops that come home turned, `plans/hol-plan.md`,
-  `runs/hol/`.
+  `runs/hol/`; a black hole's three layers, `plans/eho-plan.md`, `runs/eho/`, from `plans/discussion-note.md` item 21.
 - §6: the inverse square, `plans/isr-plan.md`, `runs/isr/`; the near field, `plans/nrf-plan.md`; light and number on the
   stars, `plans/mag-plan.md`, `plans/cnt-plan.md`, `plans/gcn-plan.md`.
 - §7: parallax as a sum of reads, `plans/pxs-plan.md`, `runs/pxs/`, after `plans/tri-plan.md`; parallax from the corner,
@@ -859,6 +896,9 @@ Curry, J. J., Den Hartog, E. A. and Lawler, J. E. (1997). Radiative lifetimes of
 
 Drescher, M. et al. (2002). Time-resolved atomic inner-shell spectroscopy. *Nature* 419, 803–807.
 
+Einstein, A. (1915). Die Feldgleichungen der Gravitation. *Sitzungsberichte der Königlich Preußischen Akademie der
+Wissenschaften* 1915, 844–847.
+
 Ellis, G. F. R. and Baldwin, J. E. (1984). On the expected anisotropy of radio source counts. *Monthly Notices of the
 Royal Astronomical Society* 206, 377.
 
@@ -866,6 +906,15 @@ Englert, B.-G. (1996). Fringe visibility and which-way information: an inequalit
 2154–2157.
 
 ESA (1997). *The Hipparcos and Tycho Catalogues*. ESA SP-1200.
+
+Etherington, I. M. H. (1933). On the definition of distance in general relativity. *Philosophical Magazine* 15,
+761–773.
+
+Event Horizon Telescope Collaboration (2019). First M87 Event Horizon Telescope results. VI. The shadow and mass of
+the central black hole. *Astrophysical Journal Letters* 875, L6. Data: github.com/eventhorizontelescope/2019-D01-01.
+
+Event Horizon Telescope Collaboration (2024). The persistent shadow of the supermassive black hole of M 87. I.
+*Astronomy and Astrophysics* 681, A79. Data: github.com/eventhorizontelescope/2024-D01-01.
 
 Foucault, L. (1851). Démonstration physique du mouvement de rotation de la Terre au moyen du pendule. *Comptes rendus
 de l'Académie des sciences* 32, 135–138.
@@ -899,6 +948,9 @@ National Academy of Sciences* 15, 168.
 
 Ignatowski, W. von (1910). Einige allgemeine Bemerkungen zum Relativitätsprinzip. *Physikalische Zeitschrift* 11,
 972–976.
+
+Johnson, M. D. et al. (2020). Universal interferometric signatures of a black hole's photon ring. *Science
+Advances* 6, eaaz1310.
 
 Kato, S. and McCullagh, P. (2020). Some properties of a Cauchy family on the sphere derived from the Möbius
 transformations. *Bernoulli* 26(4), 3224–3248.
