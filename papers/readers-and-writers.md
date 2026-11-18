@@ -684,6 +684,23 @@ the paper; its directions and their heat are laid over it, blank or full, and th
 paper's writing met there. This says where physics sits in this frame and tells physics nothing it does not know.
 **Reading.**
 
+**Observation geometry and a thing's own geometry.** Observation geometry, the geometry of reads and writes, is distinct
+from physical geometry, a thing's own geometry. The apple in the hand has the apple's geometry: its roundness, its
+dimple, its size; that is what makes it an apple, and it is the apple's, not the hand's (its writes are its own, §1
+"Whose writes"). A black hole has the hole's geometry: its spacetime, curved by its mass (Einstein), its horizon at
+2GM/c² and its photon ring; that is what makes it a black hole. Observation geometry is the same for both and for
+anything: the directions from one standpoint, their slopes, the corner, the heat, and the counted step that joins two
+looks. It does not change with what is read, and what is read does not change it; a thing's own geometry decides only
+which of the thing lands in which direction, as turning the apple in the hand does, and light bent by the hole does
+the same at a distance. So a measured number may carry three things: the observer's geometry, the thing's own
+geometry, and what the thing sends (the apple's colour, the hole's glowing gas). On the Event Horizon Telescope's own
+M87* data (EHO), the first came off exactly and was negligible (the observer's motion turns no part of the sky and
+scales it by 1/D, the ring moved at most 0.05 μas); the second and third stayed tangled in our fits, the ring's
+diameter moving with the emission model by up to a quarter, and the test that would part them is the photon subrings,
+light that went round once more, set by the hole's geometry whatever the gas does, not resolved by the present array.
+Curved spacetime is the hole's own geometry, not a rival to observation geometry; observation geometry is prior to
+physics and keeps its own rules wherever physics has another geometry. **Reading** (the EHO numbers **checked**).
+
 ## 3. Up: the read
 
 **What a read is.** A read is every sweep of the thumb at once, from one standpoint, at one moment. A sweep is the one
