@@ -168,6 +168,16 @@ does. There, N comes back.
 The left column is the read's arithmetic: fractions, composition and one rule in three kinds. The right column is where
 a count is held or carried to a limit.
 
+The two columns hold one relation space with different facings (R1105, R1106). A facing is the quarter turn, one slope from
+all of h to all of v, with the same heat, corner and exchange in every facing. The left column stays within one facing,
+and so stays in fractions. The right column is a total over facings joined: the clock time a step stands for is its
+share of Ω, one facing's total; an oscillator's period is four facings, 2π/ω; Kepler's period is the whole turn, and his
+time to a point a part of it. One hemisphere is two facings, facing V and facing away from V (the near reading s and
+the far reading 1/s); a read holds one hemisphere and faces one at a time, and the dual vantage holds both, four facings.
+The Cauchy is the relation, not the paint, so it is the same law in one facing, two or four; only the total changes. And it is
+the same for every shape (R1107): the curve differentiated, the orbit, the oscillator's path change the paint, never the
+stage the steps are taken on.
+
 ## 9. What is classical and what is ours
 
 Classical: the dual numbers and automatic differentiation; the chain rule; Hermite's reduction and Liouville's theorem
@@ -199,7 +209,9 @@ owns, the slope's own flow, it is in the clock, not in the steps.
 ## Sources
 
 - Tom, 18 November 2026: "Let's compare shv to calculus."; "Merge and proceed with your recomendations."; "Doesn't
-  calculus need N?"; "What's next?"; "1 2 3"; "We are just showing that shv is very valuable,  can compete with dhv."
+  calculus need N?"; "What's next?"; "1 2 3"; "We are just showing that shv is very valuable,  can compete with dhv."; "Dhv and shv is Same relation space, different
+  facings."; "One hemisphere is two facings"; "The key point is the cauchy relation space is the
+  same for all shapes. The stage is always the same, its the ultimate invarient."
 - `plans/orb-plan.md`, `runs/orb/orb.py`, output `runs/orb/orb-run1.txt`.
 - `plans/clc-plan.md`, `runs/clc/clc.py`, `runs/clc/clc2.py`, outputs `runs/clc/clc-run1.txt`, `clc-run2.txt`, and its
   note R1100. `plans/ric-plan.md`, `runs/ric/ric.py`, output `runs/ric/ric-run1.txt`.
@@ -211,4 +223,4 @@ owns, the slope's own flow, it is in the clock, not in the steps.
 - I. Newton, *Philosophiæ Naturalis Principia Mathematica*, 1687, Book I, Section VI, Lemma XXVIII; read in Bruce's
   translation (17centurymaths.com, Book I, Section VI). Its modern form (no smooth convex closed curve has its cut-off area
   an algebraic function of the line) after Pourciau 2001, as usually cited, not opened.
-- SPN rulings cited: R871, R883, R1037, R1062, R1071, R1099, R1100, R1101, R1103, R1104.
+- SPN rulings cited: R871, R883, R1037, R1062, R1071, R1099, R1100, R1101, R1103, R1104, R1105, R1106, R1107.

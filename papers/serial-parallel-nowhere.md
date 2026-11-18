@@ -7591,6 +7591,33 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 - **R1102** (18 Nov 2026; the same "1 2 3"): essay 31, *Calculus from one standpoint: where it needs N, and where it
   does not* (a car's speedometer and odometer), CLC, R1100 and RIC as one essay; README row, `essays.html` card, the smoke
   test's count 31 (not run). No paper changed.
+- **R1107** (18 Nov 2026; Tom: "The key point is the cauchy relation space is the same for all shapes. The stage is
+  always the same, its the ultimate invarient."): **the Cauchy relation space is the same for every shape; the stage is
+  always the same, the ultimate invariant.** Whatever is met and at whatever size, the read's directions are laid by one
+  uniform turn with one heat, corner and exchange; the shape changes only the paint and where it lands (Theorem 6; SMP's
+  census in draw, HZT, R394, `payload-free.html`). Joins R1041 (the read the stage, the write the play) and R1105 (one
+  relation space, different facings). Claude's scoping: invariant under scaling the world, the paint, the shape and the
+  look's turn; each read's own heat is unchanged by any map between reads (ORD), while where landings fall on a surface
+  (the point z of the family) depends on the standpoint. Foregrounded in *Reads and Writes*' abstract ("The stage is
+  always the same", before "One relation space, different facings"); essay 31 §8.
+- **R1106** (18 Nov 2026; Claude asked whether a read is "one hemisphere" or "one facing"; Tom: "One hemisphere is two
+  facings"): **one hemisphere is two facings**, facing V (the near reading s) and facing away from V (the far reading
+  1/s), R1043's two; a read is the single hemispherical vantage, one hemisphere, and faces one of its two facings at a
+  time (so R1105's "Shv is one facing" is the read's facing, the hemisphere its two); the DHV both hemispheres, four
+  facings in the plane, eight in space. Totals: Ω a facing, 2Ω = π a hemisphere's two, 2π four, 4π eight. *Reads and
+  Writes* abstract and §1, essay 31 §8.
+- **R1105** (18 Nov 2026; Tom: "All this can be described with facings. Dhv is just 4 facings. Shv is one facing. And
+  cauchy is always the relation, not the paint. So 1 facing. 4 facings, or 8 facings, its the relation, with different
+  number of facing.", then "Yes. Dhv and shv is Same relation space, different facings. Foreground this."): **the single
+  and the dual hemispherical vantage hold the same relation space with different facings**: a read one facing (the
+  quarter turn, the relation [h : v] with its heat, corner and exchange), the DHV the facings joined, four in the plane,
+  eight in space. The Cauchy is always the relation, never the paint, the same law in every facing; the count of facings
+  changes only the total (Ω, 4Ω = 2π, 8Ω = 4π) and what a total brings (a period, a clock time, a size). The calculus runs
+  read so: exact steps stay in one facing, completions are totals over facings joined. Claude's precision: in space the
+  eight facings are joined by turns that do not commute, so the join is more than a count (EUL, essay 13). Foregrounded
+  in *Reads and Writes*' abstract ("One relation space, different facings"), §1 "Reads, writes and the dual hemispherical
+  vantage" and the calculus paragraph; essay 31 §8. Facing here is R805's sign-facing (one quarter turn per choice of
+  signs); within it the near reading s and the far reading 1/s (R1043) are its two readings.
 - **R1104** (18 Nov 2026; Tom: "We are just showing that shv is very valuable,  can compete with dhv.", then "Yes"): **the
   aim of the calculus runs (CLC, RIC, ORB) is to show that the single hemispherical vantage is valuable and competes with
   the dual hemispherical vantage**, not to claim new mathematics. The identity checks are that evidence: the SHV form
