@@ -511,6 +511,14 @@ is why nothing in nature acts from the dual vantage: it is never live (Tom, R104
 no reads or writes (R890, R922); what is a record is every blueprint anyone has. So this paper says "a read", "a write" and "the blueprint", and "the observer" where someone has to stand,
 walk or count.
 
+**The thing and its blueprint.** An apple is the thing itself: the result of many writes, its history to this moment,
+held whole by nothing but the apple, back, inside and seeds included. A blueprint of it is a representation, drawn from
+no standpoint; any blueprint actually made is the drawer's record (its writes are the drawer's, §1 "Whose writes") and
+falls short of the apple. A blueprint the size of the apple leaves nothing out, and then it is no longer a
+representation: it is the apple (Tom, R1095; §6, "A record the size of what it records", the same at the scale of one
+thing). So the thing is made of writes, and the blueprint only stands for them; no reads or writes make the blueprint
+(R890, R922). **Reading.**
+
 **V.** V is the other party's breadth, the mountain in the distance that the thumb is held up against. A reading is a
 ratio of the thumb's own shares; V was never in it, and it does not "cancel" from it. V\*/H is an extent, had by walking;
 V in metres is a write, had by walking and a unit. Neither is a shortcoming of the read: the horizon, the corner as a
@@ -703,7 +711,8 @@ diameter moving with the emission model by up to a quarter, and the test that wo
 light that went round once more, set by the hole's geometry whatever the gas does, not resolved by the present array.
 Curved spacetime is the hole's own write geometry, not a rival to read geometry; read geometry is prior to
 physics and keeps its own rules wherever physics has another geometry. So the tangle at M87* was between two writes, the
-hole's spacetime and its gas, and the subrings would part one write from another, not a write from the read. Read geometry belongs to the standpoint, not to what is observed: it is the same for every object read from that standpoint, and a thing's own geometry decides what is met within it, never the geometry of the read; what changes it is the observer's own state (a boost), not the thing. It is least visible where an observation is aimed: at the focus the lay is uniform to first order, the finest relative grain (§5), so the observer's read geometry enters there only at second order and grows off the look (on the equal-area screen about the look, radial scale cos(α/2): 0.9% off at 15°, 3.4% at 30°, 7.6% at 45°); over a small field it is negligible, as at M87*, where the whole ring spans 42 μas. Negligible is not absent. **Reading** (the EHO numbers **checked**).
+hole's spacetime and its gas, and the subrings would part one write from another, not a write from the read. The hole is its writes; a ring model fitted to the data is a blueprint of
+it, a representation that cannot yet tell the two apart, while the telescope reads the hole itself. Read geometry belongs to the standpoint, not to what is observed: it is the same for every object read from that standpoint, and a thing's own geometry decides what is met within it, never the geometry of the read; what changes it is the observer's own state (a boost), not the thing. It is least visible where an observation is aimed: at the focus the lay is uniform to first order, the finest relative grain (§5), so the observer's read geometry enters there only at second order and grows off the look (on the equal-area screen about the look, radial scale cos(α/2): 0.9% off at 15°, 3.4% at 30°, 7.6% at 45°); over a small field it is negligible, as at M87*, where the whole ring spans 42 μas. Negligible is not absent. **Reading** (the EHO numbers **checked**).
 
 ## 3. Up: the read
 
