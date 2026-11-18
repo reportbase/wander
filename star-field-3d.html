@@ -77,10 +77,10 @@
 <body>
 <main>
     <h1>An infinite star field, in 3D</h1>
-    <p class="lede">The blueprint (classical geometry, shown for comparison) has the stars where they are: give the world more and its far field fills. A read has
+    <p class="lede">The dual hemispherical vantage (DHV; classical geometry, shown for comparison) has the stars where they are: give the world more and its far field fills. A read has
         each star only as a direction over the octant, at its fineness K (counted, it is K cells), and holds
         the share of what it reads in each. At N, 2N or infinitely many stars, and at any H, that view is the same. N is invisible to a read; H only
-        slides the blueprint's stars along their rays.</p>
+        slides the DHV's stars along their rays.</p>
 
     <div class="panel">
         <div class="row"><label for="m">N, the stars</label><input id="m" type="range" min="3" max="60" step="1" value="24">
@@ -105,7 +105,7 @@
 
     <div class="grid">
         <div class="panel">
-            <h2>The blueprint's view</h2>
+            <h2>The DHV's view</h2>
             <canvas id="scene"></canvas>
             <p class="cap">Where the stars are, every distance an amount. Home where the axes meet: h, v (up) and v₂; in
                 proportion out to H (the gold sphere, the corner), then every doubling the same depth, so the infinite field
@@ -130,7 +130,7 @@
         </div>
     </div>
 
-    <p class="note">The blueprint needs N: to place a star it needs its distance, and the far field's count grows with N. A
+    <p class="note">The DHV needs N: to place a star it needs its distance, and the far field's count grows with N. A
         read needs none of it: its directions and their heat are given, uniform over the octant, before anything arrives (the heat is given; the paint is met), and its view is the share of what it reads at each,
         the same at N, 2N and ∞, and at every H. <a href="star-field.html">The same in 2D</a>,
         <a href="payload-free-3d.html">the payload doesn't matter in 3D</a>, <a href="demos.html">all demos</a>.</p>
@@ -218,7 +218,7 @@ function drawMap(cv, v) { const g = cv.getContext('2d'), W = cv.width, P = 18, L
 const fmt = I => I.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 const sci = x => x < 1e4 && x > 1e-3 ? x.toPrecision(4) : x.toExponential(3);
 function describe(s) { const d = s.dir, H = Hof(), n = S.n, cell = Math.min(n - 1, Math.floor(s.y * n)) * n + Math.min(n - 1, Math.floor(s.psi / Q * n));
-    return `star #${fmt(indexOf(s))}\nthe blueprint: d = ${sci(s.r)} u = ${sci(s.r / H)} H (${s.r <= H ? 'inside' : 'past'} the corner), level ${s.j}\n` +
+    return `star #${fmt(indexOf(s))}\nthe DHV: d = ${sci(s.r)} u = ${sci(s.r / H)} H (${s.r <= H ? 'inside' : 'past'} the corner), level ${s.j}\n` +
         `the read: cell ${cell + 1} of ${n * n}, [h : v : v₂] = [1 : ${sci(d[1] / d[0])} : ${sci(d[2] / d[0])}], no distance`; }
 function showInfo() {
     if (hoverCell >= 0) { const a = readerView(curN(), S.n), b = readerView(S.inf ? Infinity : 2n * curN(), S.n);
@@ -255,13 +255,13 @@ function render() {
     $('Hval').textContent = `H = 2^${S.k} u` + (S.k < 0 ? ` = ${H} u` : ` = ${H.toLocaleString()} u`);
     $('tA').textContent = S.inf ? 'at N = ∞' : `at N = 2^${S.m}`; $('tB').textContent = S.inf ? 'at 2N = ∞' : `at 2N = 2^${S.m + 1}`;
     const Ne = N === Infinity ? null : w.N, past = Ne === null ? '∞' : fmt(Ne - near);
-    $('say').innerHTML = `The blueprint: ${S.inf ? 'infinitely many stars' : fmt(Ne) + ' stars'}, ${S.inf ? 'every level filled' : `out to level ${w.jN} (d ≤ 2^${w.jN} u)`}; ` +
+    $('say').innerHTML = `The DHV: ${S.inf ? 'infinitely many stars' : fmt(Ne) + ' stars'}, ${S.inf ? 'every level filled' : `out to level ${w.jN} (d ≤ 2^${w.jN} u)`}; ` +
         `at H = 2^${S.k} u, ${fmt(near)} inside the corner and ${past} past it. The read: fineness K = ${S.n} × ${S.n}, the same at every N and every H.`;
     const pc = x => (100 * x).toFixed(2) + '%';
     $('check').innerHTML = `<span class="ok">The read's view at N and at 2N differ by at most ${diff.toExponential(2)} in any cell's share × K;</span> ` +
         `each is even to within ${Math.max(a.maxDev, b.maxDev).toExponential(2)}${N !== Infinity && N < 16n * BigInt(S.n * S.n) ? ` (only ${fmt(N)} stars for K = ${S.n * S.n}: the read has single stars; raise N)` : ''}. ` +
         `What it reads past each corner: v > h ${pc(1 - a.vh)}, v₂ > h ${pc(1 - a.v2h)}, v₂ > v ${pc(1 - a.v2v)}; the near field in both readings ${pc(a.near)}. ` +
-        `None of it moves with H: the read holds directions and their heat, and H lays only the blueprint's distances.`;
+        `None of it moves with H: the read holds directions and their heat, and H lays only the DHV's distances.`;
     document.querySelectorAll('[data-n]').forEach(b => b.classList.toggle('on', +b.dataset.n === S.n));
     $('inf').classList.toggle('on', S.inf); $('m').value = S.m; $('m').disabled = S.inf; $('half').disabled = S.inf; $('dbl').disabled = S.inf; $('H').value = S.k;
     showInfo(); if (scene3d) scene3d.rebuild();
@@ -296,7 +296,7 @@ window.__starField3d = { h32, G, nPsi, nY, nR, star, indexOf: s => indexOf(s).to
     readerView: (N, n) => readerView(N === Infinity ? N : BigInt(N), n), nearCount: (k, N) => nearCount(k, N === undefined ? curN() : N === Infinity ? N : BigInt(N)).toString(),
     placeOf, lay, inWorld, distanceAddresses, set, goTo, state: () => ({ ...S, last }), frames: 0, webgl: false, drawn: 0, thinned: [] };
 setTimeout(() => { if (!window.__starField3d.webgl) { $('nogl').style.display = 'block';
-    $('nogl').textContent = 'The blueprint\'s scene needs WebGL and three.js from cdn.jsdelivr.net; the read\'s view and the readout still work.'; } }, 12000);
+    $('nogl').textContent = 'The DHV\'s scene needs WebGL and three.js from cdn.jsdelivr.net; the read\'s view and the readout still work.'; } }, 12000);
 const pendingStar = q.has('star') && /^\d+$/.test(q.get('star')) ? q.get('star') : null;
 </script>
 

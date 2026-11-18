@@ -65,12 +65,12 @@
 <body>
 <main>
     <h1>One blueprint, and a read beside it</h1>
-    <p class="lede">The same property, held whole and read from a standpoint. The <span class="w">blueprint</span> (classical geometry's view from no standpoint, shown for comparison) is the plan: every length in
+    <p class="lede">The same property, held whole and read from a standpoint. The <span class="w">dual hemispherical vantage</span> (DHV; classical geometry's view from no standpoint, shown for comparison) is the plan, the lot's blueprint: every length in
         metres, the whole of it. A <span class="p">read</span> is taken at one point, and its directions are given
         there, drawn as a circle round it: nothing on the lot sends, so the light the lot scatters paints each direction with the
         first thing on its line, and no distance arrives. Taken from a <span class="a">corner</span> (home), the read's
         directions are the quarter turn, each [h : v], with the turn's heat over them: where things are, never how far. The heat is given; the paint is met. Scale the world and only the
-        blueprint's numbers change. Write: one counted stride turns two looks from home into metres.</p>
+        DHV's numbers change. Write: one counted stride turns two looks from home into metres.</p>
     <div class="panel" style="margin-bottom:12px">
         <div class="row"><label for="k">scale the world, k</label><input id="k" type="range" min="-2" max="2" step="0.05" value="0"><span id="kv" style="min-width:9ch"></span>
             <label for="home">home at</label><select id="home">
@@ -81,7 +81,7 @@
     </div>
     <div class="grid">
         <div class="panel">
-            <p class="tag w">the blueprint</p><h2>The blueprint, in metres</h2>
+            <p class="tag w">the DHV</p><h2>The plan, in metres</h2>
             <canvas id="plan"></canvas>
             <p class="cap">Every length an amount, stated whole: both sides of every wall, the lot's full extent. Its ruler
                 is the number line, the same at every length, no corner. The metres need a unit measured beforehand: the scale
@@ -110,9 +110,9 @@
             </div>
         </div>
     </div>
-    <p class="cap" style="margin-top:12px">The blueprint, and a read. The blueprint is the whole, in a unit, from no standpoint. Its circle is round
-        the whole: circles are the blueprint's. A read has a vantage, not a shape: one point, looking out,
-        its directions given and painted by what arrives, holding no distance. The circle drawn round it is the blueprint's picture
+    <p class="cap" style="margin-top:12px">The dual hemispherical vantage (DHV), and a read. The DHV is the whole, in a unit, from no standpoint. Its circle is round
+        the whole: circles are the DHV's. A read has a vantage, not a shape: one point, looking out,
+        its directions given and painted by what arrives, holding no distance. The circle drawn round it is the DHV's picture
         of that vantage. A pulse's ranges are a write. Other demos: <a href="room.html">the room</a>, <a href="room-walk.html">walking the room</a>,
         <a href="writer-readers.html">the writer and two standpoints</a>, <a href="blueprint-3d.html">the blueprint in 3D</a>, <a href="demos.html">all demos</a>.</p>
 </main>
@@ -241,7 +241,7 @@ function drawPlan() {
     g.fillStyle = 'rgba(127,178,255,0.06)'; g.fillRect(X(21), Y(8), 3 * s, 8 * s);   // the drive, flat: no ray stops at it
     g.save(); g.beginPath(); g.rect(0, 0, W, H); g.clip(); g.strokeStyle = 'rgba(127,178,255,0.35)'; g.setLineDash([3, 5]); g.lineWidth = 1.2;   // the writer's circle, round the whole
     g.beginPath(); g.arc(X(24), Y(16), WR0 * s, 0, 7); g.stroke(); g.setLineDash([]); g.restore();
-    g.font = '11px "DM Mono", monospace'; g.fillStyle = 'rgba(127,178,255,0.8)'; g.textAlign = 'center'; g.fillText(`the blueprint's circle, radius ${fmtM(WR0 * K())}`, X(24), Y(16) - WR0 * s + 16); g.textAlign = 'left';
+    g.font = '11px "DM Mono", monospace'; g.fillStyle = 'rgba(127,178,255,0.8)'; g.textAlign = 'center'; g.fillText(`the DHV's circle, radius ${fmtM(WR0 * K())}`, X(24), Y(16) - WR0 * s + 16); g.textAlign = 'left';
     for (const [x1, y1, x2, y2, t] of SEG) { g.strokeStyle = lit(t) ? '#ffffff' : colOf(t); g.lineWidth = t === 'fence' ? 1.5 : t === 'inner' ? 2 : 3; g.beginPath(); g.moveTo(X(x1), Y(y1)); g.lineTo(X(x2), Y(y2)); g.stroke(); }
     for (const [cx, cy, r, t] of TREES) { g.fillStyle = colOf(t, lit(t) ? 0.85 : 0.45); g.strokeStyle = lit(t) ? '#fff' : colOf(t); g.lineWidth = 1.5; g.beginPath(); g.arc(X(cx), Y(cy), r * s, 0, 7); g.fill(); g.stroke(); }
     const k = K(); g.font = '11px "DM Mono", monospace'; g.fillStyle = 'rgba(200,215,255,0.85)'; g.textAlign = 'center';
@@ -326,8 +326,8 @@ function render() {
     drawPlan(); drawPay(); drawAddr();
     $('kv').textContent = 'k = ' + (k >= 1 ? k.toPrecision(3) : k.toFixed(k < 0.1 ? 4 : 3)); $('home').value = S.home;
     const below = A.filter(o => o.ratio < 1).length;
-    $('say').textContent = `The blueprint states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}. Its circle round the whole is ${fmtM(Math.hypot(24, 16) * k)} in radius. ` +
-        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The read's vantage is the same at every k: its directions and what paints them, no distance (the circle drawn round it is the blueprint's picture).`) + ` From home a read holds ${NA} directions (a count): ${below} below v = h and ${NA - below} above, at every k.`;
+    $('say').textContent = `The DHV states the lot as ${fmtM(48 * k)} by ${fmtM(32 * k)}. Its circle round the whole is ${fmtM(Math.hypot(24, 16) * k)} in radius. ` +
+        (S.pulse ? `A pulse's ranges have geometric mean ${fmtM(P.gm)}, in the unit the pulse carried in; their shape is the same at every k.` : `The read's vantage is the same at every k: its directions and what paints them, no distance (the circle drawn round it is the DHV's picture).`) + ` From home a read holds ${NA} directions (a count): ${below} below v = h and ${NA - below} above, at every k.`;
     describe();
 }
 function describe() {

@@ -78,7 +78,7 @@
 <canvas id="reader" aria-label="the view from the eye: every dot in front by its direction from the eye"></canvas>
 <div id="panel" class="glass">
     <h1>A cube of heat</h1>
-    <p class="sub">The cube is the blueprint's (classical geometry, shown for comparison): dots at places. Stand at one dot, look one way, and every dot in front takes the
+    <p class="sub">The cube is the dual hemispherical vantage's (DHV; classical geometry, shown for comparison): dots at places. Stand at one dot, look one way, and every dot in front takes the
     read's heat: hottest at the dot looked at, cooling every way without end. Behind the eye, nothing: one read is half the
     cube. The heat has no edge and no shape.</p>
     <div class="row"><span style="align-self:center">tap to</span><button id="tStand">stand</button><button id="tLook" class="on">look at</button></div>
@@ -493,7 +493,7 @@ function hud() {
         `<b>eye</b> at dot (${eye.join(', ')})   <b>looking at</b> (${t.join(', ')})\n` +
         `H, the thumb: ${st.H.toPrecision(3)} = ${Math.pow(2, S.h).toPrecision(3)} × the distance looked at (${dT.toPrecision(3)})\n` +
         `in front of the eye: ${fr.inFront} of ${fr.dots} dots (${(100 * fr.share).toFixed(0)}%)\n` +
-        `dots nearer than one thumb hold ${(100 * fr.heatNear / (tot || 1)).toFixed(0)}% of the dots' heat (the blueprint's spacing)\n` +
+        `dots nearer than one thumb hold ${(100 * fr.heatNear / (tot || 1)).toFixed(0)}% of the dots' heat (the DHV's spacing)\n` +
         `scale the world ×${st.k.toPrecision(3)}: no colour moves`;
     yawEl.value = S.yaw; yawO.textContent = S.yaw.toFixed(1) + '°';
     pitchEl.value = S.pitch; pitchO.textContent = S.pitch.toFixed(1) + '°';

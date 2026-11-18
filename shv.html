@@ -48,7 +48,7 @@
 <main>
     <h1>One vantage</h1>
     <p class="lede">A read is a single hemispherical vantage: one standpoint, everything in front of it, nothing behind.
-    The blueprint is the dual hemispherical vantage, both hemispheres at once, drawn from no standpoint. Five panels, one
+    The dual hemispherical vantage (DHV) holds both hemispheres at once, drawn from no standpoint. Five panels, one
     idea each, taken from the sky city and the walk on whole numbers.</p>
 
     <div class="panel">
@@ -63,7 +63,7 @@
 
     <div class="panel">
         <h2>2. Made as needed</h2>
-        <p class="cap">How far the world goes. A blueprint stored out to that reach holds every cell; the read looks at
+        <p class="cap">How far the world goes. A representation stored out to that reach holds every cell; the read looks at
         the same cells near the eye whatever the reach, and each thing is made from its cell when the read reaches it.
         Only what has been changed has to be kept.</p>
         <div class="row"><label for="d">reach 10^</label><input id="d" type="range" min="2" max="100" step="1" value="6"><span id="dv"></span>
@@ -105,7 +105,7 @@
     <p class="note">The bounce is not alone. A pendulum's period in units of √(ℓ/g) depends on its swing only, and a
     Kepler orbit's in units of √(a³/GM) is 2π: from one standpoint the ticks read no size, and with g or GM carried in the
     ticks counted write the length or the orbit's size.</p>
-    <p class="note">Behind it: <i>Reads and Writes</i> §7 "A single vantage and the blueprint, side by side" and "A bounce
+    <p class="note">Behind it: <i>Reads and Writes</i> §7 "A single vantage and the DHV, side by side" and "A bounce
     writes its size", §8, §9 "Run as code"; essay 22 §13, "What a single vantage is for". Pages: <a href="sky-city.html">the
     sky city</a>, <a href="thumbs-walk.html">three thumbs, walking</a>, <a href="demos.html">all demos</a>.</p>
 </main>
@@ -164,14 +164,14 @@ function draw2() {
     const L = +$('d').value, R = cells2(L), { g, w, h } = fit($('c2'));
     g.fillStyle = '#000'; g.fillRect(0, 0, w, h);
     const x0 = 150, top = 14, rowH = 44, max = 210, X = v => x0 + (w - x0 - 16) * Math.min(1, v / max);
-    const rows = [['blueprint, stored', R.blueprintLog10, C.violet], ['read, scanned', Math.log10(R.read), C.teal], ['writes, kept', R.writes ? Math.log10(R.writes) : 0, C.gold]];
+    const rows = [['representation, stored', R.blueprintLog10, C.violet], ['read, scanned', Math.log10(R.read), C.teal], ['writes, kept', R.writes ? Math.log10(R.writes) : 0, C.gold]];
     g.font = '12px "DM Mono", monospace'; g.textBaseline = 'middle';
     rows.forEach(([name, lg, col], k) => { const y = top + k * rowH;
         g.fillStyle = C.ink; g.fillText(name, 8, y + 14);
         g.fillStyle = col; g.fillRect(x0, y + 4, Math.max(2, X(lg) - x0), 20); });
     g.fillStyle = C.dim; g.fillText('log₁₀ of the count (bar scale 0 to 210)', x0, top + 3 * rowH + 4);
     $('dv').textContent = `${L} units`;
-    $('o2').textContent = `cells a blueprint out to 10^${L} units holds: about 10^${R.blueprintLog10.toFixed(1)}\n` +
+    $('o2').textContent = `cells a representation out to 10^${L} units holds: about 10^${R.blueprintLog10.toFixed(1)}\n` +
         `cells the read looks at, at this reach or any other: ${R.read.toLocaleString()}\n` +
         `writes kept: ${R.writes} (one for each thing changed; the rule makes everything else again when it is needed)`;
     return R;

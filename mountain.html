@@ -61,7 +61,7 @@
 <main>
     <h1>The mountain and the thumb</h1>
     <p class="lede">An observer looks at a mountain range, face on. Its thumb is its one measure, <span class="gold">H = 1 mile</span>.
-    The blueprint (classical geometry, shown for comparison) also has the <span class="teal">mountain, V = 20 miles wide</span>, and its distance, 10 miles. A read
+    The dual hemispherical vantage (DHV; classical geometry, shown for comparison) also has the <span class="teal">mountain, V = 20 miles wide</span>, and its distance, 10 miles. A read
     has only the thumb. Read from where the observer stands, the range's ends sit exactly at the corners; a read sets nothing, holding no
     second length; to say anything in miles the observer has only its thumb, so read from where it stands the mountain comes out one
     thumb wide (mountain equals thumb), and is then off by twenty; one walk of a thumb's length gives it the truth.</p>
@@ -78,8 +78,8 @@
             <label for="k">scale the world</label><input id="k" type="range" min="-3" max="3" step="0.01" value="0"><output id="ko"></output>
         </div>
         <div class="grid" style="margin-top:12px">
-            <div><h2>The blueprint</h2><canvas id="plan" height="300"></canvas>
-            <p class="cap">The blueprint (classical geometry, shown for comparison), from above: the thumb (gold), the range (teal) and the sight lines to its ends. Every
+            <div><h2>The DHV</h2><canvas id="plan" height="300"></canvas>
+            <p class="cap">The DHV (classical geometry, shown for comparison), from above: the thumb (gold), the range (teal) and the sight lines to its ends. Every
             amount is held, and the 45° guides are simply where the ends happen to be.</p></div>
             <div><h2>From where the observer stands</h2><canvas id="view" height="300"></canvas>
             <p class="cap">The observer's fingers, spread evenly over the half turn, with the corners at ±45°. Fingers that reach the
@@ -88,13 +88,13 @@
         <h2 style="margin-top:14px">Mountain equals thumb</h2>
         <canvas id="lay" height="170"></canvas>
         <p class="cap">The read's lay of distances, in thumbs: proportional inside the corner (one thumb), one equal step per
-        doubling past it. Gold: where the range lands when amounts are read off the one-length circle, which holds only the thumb (in the blueprint's terms, the mountain set equal to the thumb, V = H). Teal: where it
+        doubling past it. Gold: where the range lands when amounts are read off the one-length circle, which holds only the thumb (in the DHV's terms, the mountain set equal to the thumb, V = H). Teal: where it
         truly is. The gap is V/H, the number of thumbs the mountain really is.</p>
         <div id="hud"></div>
     </div>
     <p class="note">The two facings, said simply: facing the range, the near reading s = v/h; facing away, the far reading
         1/s = h/v; they multiply to 1 at every reading and meet at 1 at the corner. The 1 is the thumb, not the mountain, and
-        it needs no π: the two are reciprocals. π itself is held only by the blueprint, the circle held whole; its arc over chord
+        it needs no π: the two are reciprocals. π itself is held only by the DHV, the circle held whole; its arc over chord
         (π/2) and chord over arc (2/π), in angles, are its comparison, shown in the readout.</p>
     <p class="note">Keep the case: h and v are unit relations, and a read holds only their ratios, which have no
     scale. H, V and d are amounts, in miles; a read has only H, the thumb. Each pair has its own corner: the range's ends sit at the
@@ -238,16 +238,16 @@
         const readT = 'read: mountain = thumb'; g.fillText(readT, clampX(xr - 20, readT), ly + 46);
         g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath(); g.arc(xt, ly, 6, 0, 2 * Math.PI); g.stroke();
         if (w) { g.fillStyle = '#8ce6cd'; g.beginPath(); g.arc(LX(lay(w.d / H)), ly, 3.5, 0, 2 * Math.PI); g.fill(); }
-        const trueT = e.layTrue > RMAX ? 'true → (off the lay)' : (w ? 'true, recovered by the walk' : 'true (on the blueprint)');
+        const trueT = e.layTrue > RMAX ? 'true → (off the lay)' : (w ? 'true, recovered by the walk' : 'true (from the DHV)');
         g.fillStyle = '#8ce6cd'; g.fillText(trueT, clampX(xt - tw2(trueT) / 2, trueT), ly - 20);
         const facT = `× ${fmt(e.factor)} = ${e.doublings.toFixed(2)} doublings`;
         g.fillStyle = '#b59cf0'; g.fillText(facT, clampX((xr + xt) / 2 - tw2(facT) / 2, facT), ly + 64);
         // ── the readout ──
         const lines = [
-            `the blueprint: thumb H = 1 mi, mountain V = ${fmt(Vt)} mi, distance d = ${fmt(dt)} mi`,
+            `the DHV: thumb H = 1 mi, mountain V = ${fmt(Vt)} mi, distance d = ${fmt(dt)} mi`,
             `  pairs: half-width/distance ${r.endsVH.toFixed(3)}${r.atCorner ? ' (at its corner)' : ''}; width/distance ${r.widthToDistance.toFixed(3)}; distance/thumb ${fmt(dt / H)} (${Math.log2(dt / H).toFixed(2)} doublings); mountain/thumb ${fmt(Vt / H)} (${e.doublings.toFixed(2)} doublings)`,
             `from the standpoint: ends at v/h = ±${r.endsVH.toFixed(3)} (±${r.alpha.toFixed(1)}°); ${r.fingersOn} of ${FINGERS} fingers on the range, share ${r.share.toFixed(3)}; the same at every scale`,
-            `the blueprint's comparison, in angles, on the thumb's circle: arc over chord π/2 = ${vt.limb.outer.toFixed(4)}, chord over arc (the fingers' mean shadow) ${vt.limb.innerFingers.toFixed(4)} for ${2 * vt.limb.fingers} fingers (2/π = ${vt.limb.inner.toFixed(4)}): product 1, H in H, the starting value returned; to the ends (${vt.ends.deg.toFixed(1)}°) ${vt.ends.outer.toFixed(4)} × ${vt.ends.inner.toFixed(4)} = 1; the mountain never enters`,
+            `the DHV's comparison, in angles, on the thumb's circle: arc over chord π/2 = ${vt.limb.outer.toFixed(4)}, chord over arc (the fingers' mean shadow) ${vt.limb.innerFingers.toFixed(4)} for ${2 * vt.limb.fingers} fingers (2/π = ${vt.limb.inner.toFixed(4)}): product 1, H in H, the starting value returned; to the ends (${vt.ends.deg.toFixed(1)}°) ${vt.ends.outer.toFixed(4)} × ${vt.ends.inner.toFixed(4)} = 1; the mountain never enters`,
             `mountain equals thumb (amounts read off the thumb's circle): read ${e.Vread} mi wide at ${fmt(e.dRead)} mi; truly ${fmt(Vt)} at ${fmt(dt)}: off by V/H = ${fmt(e.factor)}, ${e.doublings.toFixed(2)} doublings, the same on both sides of the corner`,
             w ? `walked one thumb: half-angle ${w.a1.toFixed(1)}° → ${w.a2.toFixed(1)}°, s ${w.s1.toFixed(3)} → ${w.s2.toFixed(3)}; d = H·s₂/(s₂ − s₁) = ${fmt(w.d)} mi, V = 2·s₁·d = ${fmt(w.V)} mi`
               : (walked ? 'too near to walk a whole thumb toward it' : 'walk one thumb toward the range to construct the true distance and width')];
