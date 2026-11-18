@@ -576,6 +576,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1096 (18 Nov; Tom: "Blueprint is the informal name. Reduce its use."): **say the dual hemispherical vantage (DHV)
+  for the view from no standpoint, a representation for something held that stands for a thing, a record for writes kept
+  over time; "blueprint" once per paper as the informal picture.** Swept in *Reads and Writes* and the physics paper;
+  essays next. File names (`blueprint.html`) and quoted titles keep theirs. **For new writing: not "blueprint".**
   R1095 (18 Nov; Tom: "The apple is the thing itself, the blueprint is representation of it.  A blueprint the size of
   the apple is the apple."): **the thing is its writes (its history, both hemispheres, held by the thing alone); a
   blueprint represents it; a blueprint the size of the thing is the thing.** Any blueprint made is the drawer's record.
