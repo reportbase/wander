@@ -576,6 +576,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1097 (18 Nov; Tom: "shape recovery from a unit sphere … the cauchy itself through the density gradient"): **the gradient
+  of representations from the unit sphere to the thing is a density over the fixed Cauchy** (RHO): flat at the unit
+  sphere, the shape from ln ρ, never the size; the Cauchy unchanged, the density the payload's. *Reads and Writes* §1.
   R1096 (18 Nov; Tom: "Blueprint is the informal name. Reduce its use."): **say the dual hemispherical vantage (DHV)
   for the view from no standpoint, a representation for something held that stands for a thing, a record for writes kept
   over time; "blueprint" once per paper as the informal picture.** Swept in *Reads and Writes* and the physics paper;
