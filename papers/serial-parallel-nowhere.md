@@ -7591,6 +7591,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 - **R1102** (18 Nov 2026; the same "1 2 3"): essay 31, *Calculus from one standpoint: where it needs N, and where it
   does not* (a car's speedometer and odometer), CLC, R1100 and RIC as one essay; README row, `essays.html` card, the smoke
   test's count 31 (not run). No paper changed.
+- **R1107** (18 Nov 2026; Tom: "The key point is the cauchy relation space is the same for all shapes. The stage is
+  always the same, its the ultimate invarient."): **the Cauchy relation space is the same for every shape; the stage is
+  always the same, the ultimate invariant.** Whatever is met and at whatever size, the read's directions are laid by one
+  uniform turn with one heat, corner and exchange; the shape changes only the paint and where it lands (Theorem 6; SMP's
+  census in draw, HZT, R394, `payload-free.html`). Joins R1041 (the read the stage, the write the play) and R1105 (one
+  relation space, different facings). Claude's scoping: invariant under scaling the world, the paint, the shape and the
+  look's turn; each read's own heat is unchanged by any map between reads (ORD), while where landings fall on a surface
+  (the point z of the family) depends on the standpoint. Foregrounded in *Reads and Writes*' abstract ("The stage is
+  always the same", before "One relation space, different facings"); essay 31 §8.
 - **R1106** (18 Nov 2026; Claude asked whether a read is "one hemisphere" or "one facing"; Tom: "One hemisphere is two
   facings"): **one hemisphere is two facings**, facing V (the near reading s) and facing away from V (the far reading
   1/s), R1043's two; a read is the single hemispherical vantage, one hemisphere, and faces one of its two facings at a

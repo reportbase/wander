@@ -46,6 +46,12 @@ the verbs for the continuous and the discrete: there is no reader and no writer 
 is the *dual hemispherical vantage* (DHV), both hemispheres at once, which no standpoint holds and which exists only as drawn, so it is neither a read nor a write. It is classical geometry, the view
 from no standpoint, and it is in this paper only as a point of comparison: the paper is about reads and writes.
 
+**The stage is always the same.** The Cauchy relation space is the same for every shape. Whatever is met, a wall, a
+row of trees, a moon, a room or nothing at all, and at whatever size or distance, the read's directions are laid by one
+uniform turn with one heat, its corner at s = 1 and its exchange s ↔ 1/s; the shape changes only the paint and where it
+lands (Theorem 6, §3). The read is the stage and the write the play (R1041), and the stage never changes: it is the
+ultimate invariant, unmoved by scaling the world, by the paint, by the shape and by which way the look is turned.
+
 **One relation space, different facings.** The single and the dual hemispherical vantage hold the same relation space;
 they differ only in how many facings they hold. A facing is the quarter turn, every way the vertical and the horizontal
 relate, one slope s from all of h to all of v, with its heat ds/(1 + s²), its corner s = 1 and its exchange s ↔ 1/s; it

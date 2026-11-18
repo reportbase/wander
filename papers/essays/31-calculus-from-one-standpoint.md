@@ -174,7 +174,9 @@ and so stays in fractions. The right column is a total over facings joined: the 
 share of Ω, one facing's total; an oscillator's period is four facings, 2π/ω; Kepler's period is the whole turn, and his
 time to a point a part of it. One hemisphere is two facings, facing V and facing away from V (the near reading s and
 the far reading 1/s); a read holds one hemisphere and faces one at a time, and the dual vantage holds both, four facings.
-The Cauchy is the relation, not the paint, so it is the same law in one facing, two or four; only the total changes.
+The Cauchy is the relation, not the paint, so it is the same law in one facing, two or four; only the total changes. And it is
+the same for every shape (R1107): the curve differentiated, the orbit, the oscillator's path change the paint, never the
+stage the steps are taken on.
 
 ## 9. What is classical and what is ours
 
@@ -208,7 +210,8 @@ owns, the slope's own flow, it is in the clock, not in the steps.
 
 - Tom, 18 November 2026: "Let's compare shv to calculus."; "Merge and proceed with your recomendations."; "Doesn't
   calculus need N?"; "What's next?"; "1 2 3"; "We are just showing that shv is very valuable,  can compete with dhv."; "Dhv and shv is Same relation space, different
-  facings."; "One hemisphere is two facings"
+  facings."; "One hemisphere is two facings"; "The key point is the cauchy relation space is the
+  same for all shapes. The stage is always the same, its the ultimate invarient."
 - `plans/orb-plan.md`, `runs/orb/orb.py`, output `runs/orb/orb-run1.txt`.
 - `plans/clc-plan.md`, `runs/clc/clc.py`, `runs/clc/clc2.py`, outputs `runs/clc/clc-run1.txt`, `clc-run2.txt`, and its
   note R1100. `plans/ric-plan.md`, `runs/ric/ric.py`, output `runs/ric/ric-run1.txt`.
@@ -220,4 +223,4 @@ owns, the slope's own flow, it is in the clock, not in the steps.
 - I. Newton, *Philosophiæ Naturalis Principia Mathematica*, 1687, Book I, Section VI, Lemma XXVIII; read in Bruce's
   translation (17centurymaths.com, Book I, Section VI). Its modern form (no smooth convex closed curve has its cut-off area
   an algebraic function of the line) after Pourciau 2001, as usually cited, not opened.
-- SPN rulings cited: R871, R883, R1037, R1062, R1071, R1099, R1100, R1101, R1103, R1104, R1105, R1106.
+- SPN rulings cited: R871, R883, R1037, R1062, R1071, R1099, R1100, R1101, R1103, R1104, R1105, R1106, R1107.
