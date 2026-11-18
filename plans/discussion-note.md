@@ -543,6 +543,17 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       spacetime, emission) with the first separated before the other two, or a sorting of measured numbers by layer;
       the main explanations (EHT, Gralla–Holz–Wald) speak of spacetime against emission. The papers say nothing about
       what other work lacks (R335, R364); this is a record of the search.
-    - Standing: a reading; nothing run. Next, offered, not run: an exact lensed-source check (a point mass: colour
+    - **Done on their own data: EHO** (`plans/eho-plan.md`, `runs/eho/`, 18 Nov; Tom: "maybe we could do that for them
+      with their own data?"; SPN R1090), predictions committed before each fit, on the EHT's public 2017 and 2018 M87*
+      visibilities (ODC-PDDL). Run 1: the observer's own motion sorted exactly and found negligible (a boost turns no
+      part of the sky, scales it by 1/D, the ring moved at most 0.05 μas; Q6 killed by my sign); every quantity in the
+      papers sorted by layer; my amplitude fit held 2017 steady to 2.7% and put 2018's ring 7% larger (Q4 killed).
+      Run 2, closures only (station gains cancelled): 2017 split 42 against 47.5 μas (Q8 killed). Run 3, a ring of
+      order 3 and a floor, closures only: better fits, 2017 spread 25% (Q11 killed). So the observer's layer comes off
+      cleanly; spacetime and emission do not, from these data by my fits: the simple ring's diameter carries the
+      emission however it is fitted, and a clean split needs the photon subrings (the route test above), which this
+      array does not resolve. What the EHT's steady 42 μas rests on beyond the data (amplitude calibration, tested
+      pipelines, the GRMHD factor) is where the emission's assumptions enter; no claim about their result (R364).
+    - Standing: a reading, with EHO run. Next, offered, not run: an exact lensed-source check (a point mass: colour
       moves nothing, route moves address and share, brightness × share fixed, against the flat inverse square at the
       same distance). Whether test (3) goes into *Reads and Writes* beside the two tests is Tom's call.
