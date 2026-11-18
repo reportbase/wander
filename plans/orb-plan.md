@@ -48,3 +48,18 @@ can fail by a small integer relation turning up (a pass only says none of small 
 
 ## Runs
 
+**Run 1** (`runs/orb/orb.py`, output `runs/orb/orb-run1.txt`). Nothing killed.
+
+- O1: the direction after six rational steps equals the flow's, kept as a pair (their cross product under 10⁻⁴⁰), 50 of 50.
+- O2: λ⁶ times the rational state equals the flow's state to 10⁻⁴⁰, 50 of 50.
+- O3: undamped, λ² = 1/(1 + u²ω²) exactly, the one-step energy ratio, 5 of 5; damped, no relation [λ², 1] of height
+  ≤ 10⁴, 45 of 45.
+- K1: rational points on the orbit's conic exactly, 500 of 500. K2: twenty composed half-slopes land on the angle
+  40·arctan(a) to 10⁻⁴⁰, 50 of 50. K3: no relation [M, 1, π] of height ≤ 10⁴ for the time to a rational point, 50 of 50.
+- K4: Newton on Kepler's equation at M = ½ reaches 10⁻⁴⁰ in 4, 6 and 7 iterations at e = 0.1, 0.5, 0.9.
+
+**What it shows.** The oscillator's direction steps exactly by rational maps; its size carries λ, a square root when
+undamped (energy kept) and e^(−γτ) when damped, a completion. The orbit's shape is rational in the half-slope of the
+angle; the time to reach a point is Kepler's, with no small relation, and its inverse takes an iteration count. In both,
+as in RIC, the steps are the read's, the clock and the decay the completion. Classical (the oscillator's matrix
+exponential, the conic in the half-angle, Kepler 1609, Newton's method); the sorting ours.

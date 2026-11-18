@@ -192,9 +192,21 @@ hemispherical vantage (DHV) needs, each placed by a test that could have failed 
 
 | | its mathematics | placed by |
 |---|---|---|
-| **read** (continuous, unmoved by scaling) | slopes and ratios; composing them, (s + a)/(1 − κsa); the exchange s ↔ 1/s and the corner; the heat ds/(1 + s²); order: the median and quantiles; relations with no unit; one square root, √(1 + s²). No angle, no trigonometry, no π, no unit | PYT, PYK (§9); Theorem 6's order statistics (§3); ALG's exact turns and lines (§9, "Run as code"); NTN and DVA, relations among directions with π only a name ("Where π and e are content") |
-| **write** (discrete, moved by scaling) | counts; amounts in a unit; sums and means; a size fixed by an amount carried in (a stride, a pull, a refractive index) | the walk counted (ONE, WLK; §6), the bounce (§7), the scale test (D5) |
-| **DHV** (for comparison) | completions: π the turn whole, e the scale whole, the circle held at a size, totals over both hemispheres | PYK (only the turn's heat has a total), BLD (no count is π or e), NTN (every limit keeps its π) |
+| **read** (continuous, unmoved by scaling) | slopes and ratios; composing them, (s + a)/(1 − κsa); the exchange s ↔ 1/s and the corner; the heat ds/(1 + s²); order: the median and quantiles; relations with no unit; one square root, √(1 + s²); in calculus, the first derivative of one length on another, the derivatives of rational functions with no limit (a number with ε² = 0, the stride kind), the chain rule as a tower, an antiderivative that telescopes, and the slope's own equation (the Riccati, constant coefficients) stepped by rational maps; an oscillator's direction and an orbit's shape. No angle, no trigonometry, no π, no unit | PYT, PYK (§9); Theorem 6's order statistics (§3); ALG's exact turns and lines (§9, "Run as code"); NTN and DVA, relations among directions with π only a name ("Where π and e are content"); CLC, RIC, ORB (essay 31) |
+| **write** (discrete, moved by scaling) | counts; amounts in a unit; sums and means; a size fixed by an amount carried in (a stride, a pull, a refractive index); every derivative past the first, and every rate against a clock | the walk counted (ONE, WLK; §6), the bounce (§7), the scale test (D5); CLC (dⁿy/dxⁿ moved as k^(1−n)) |
+| **DHV** (for comparison) | completions: π the turn whole, e the scale whole, the circle held at a size, totals over both hemispheres; an integrand's sum carried to its limit, ln and the arctangent; the clock time a step stands for (Kepler's equation, a damped oscillator's e^(−γt)) | PYK (only the turn's heat has a total), BLD (no count is π or e), NTN (every limit keeps its π); CLC, RIC, ORB |
+
+Calculus sorts the same way (CLC, RIC, ORB; essay 31). A slope of one length on another is a read; the second
+derivative is divided by k when the world is scaled by k, so curvature and acceleration are writes, and a speedometer's
+rate against the clock is a write at first order. For functions built from fractions the derivative needs no limit, and
+an antiderivative's differences telescope to F(b) − F(a) at every partition, so the count of strips drops out; the
+integrand summed strip by strip misses by about (b − a)(f(b) − f(a))/(2N), and N returns wherever the antiderivative
+leaves the fractions (0 of 200 generic rational functions had a rational one). The slope's own equation, the Riccati,
+with constant coefficients is stepped exactly by rational Möbius maps composing by (u + v)/(1 + Δuv), the rule above
+with κ = −Δ; so is an oscillator's direction x′/x, while its amplitude carries e^(−γτ); and an orbit's points are
+rational in the half-slope of the angle, while the time to reach one needs Kepler's equation, solved only by iteration.
+In each, the steps are the read's and the clock is the completion. **Exact** (the three runs, nothing killed in their
+final runs); the sorting **a reading**.
 
 The two forms of one result agree wherever both apply: they describe one geometry, and a disagreement would be the
 discovery (R950). What the sorting tells is what each form needs to reach the result, not a different result. A mean is

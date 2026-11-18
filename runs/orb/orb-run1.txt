@@ -1,0 +1,9 @@
+O1 direction after 6 rational steps = flow (as a pair) to 1e-40: 50 / 50
+O2 state = lambda^6 * rational steps to 1e-40: 50 / 50
+O3 undamped lambda^2 = 1/(1 + u^2 w^2) exactly (energy ratio): 5 / 5 ; damped, no relation [lambda^2, 1] of height <= 1e4: 45 / 45
+K1 rational points on the conic exactly: 500 / 500
+K2 twenty composed half-slopes land on the angle 40 atan(a): 50 / 50
+K3 no relation [M, 1, pi] of height <= 1e4: 50 / 50
+K4 e = 0.1 : Newton iterations to 1e-40: 4
+K4 e = 0.5 : Newton iterations to 1e-40: 6
+K4 e = 0.9 : Newton iterations to 1e-40: 7
