@@ -88,3 +88,65 @@ fetched only after this plan is committed. Source, licence and sha256 to be reco
 data cannot be reached, parts 1 and 3 run alone and part 2 is untested.
 
 ## Runs
+
+**Data (fetched after the plan's commit).** 2017: github.com/eventhorizontelescope/2019-D01-01 (commit 27ae76a), the
+HOPS network-calibrated Stokes I csv files, four days (MJD 57848–57854; days 095, 096, 100, 101) × two bands; licence
+ODC-PDDL. 2018: github.com/eventhorizontelescope/2024-D01-01 (commit fda41da; also CyVerse doi:10.25739/epm5-r371), the
+HOPS network-calibrated csv files, days 111, 112, 115 × bands b1–b4; ODC-PDDL. Not committed. sha256:
+
+```
+1e7c2a63e79b1722dcc5d7fe73d8193309adec20c4e660b0659169ee66c63541  SR1_M87_2017_095_hi_hops_netcal_StokesI.csv
+e11231fbb09a29762dbb318a733be329a1dfea2ba2cad4e13a6208766b0134a8  SR1_M87_2017_095_lo_hops_netcal_StokesI.csv
+769e5ab12c47f3f4ad5da99e7ed44594111717e831c5aa5e4a5c366cfc0bd6b6  SR1_M87_2017_096_hi_hops_netcal_StokesI.csv
+fd4d1b39ab2e561f502d70c93667d67a525aa9ac4af432ceed01669e039911c5  SR1_M87_2017_096_lo_hops_netcal_StokesI.csv
+3e6f034e12212a862632e6242b26335e4b48c68cfa87647632834cd43714a353  SR1_M87_2017_100_hi_hops_netcal_StokesI.csv
+1dc51e3e31a840ec34de5b5ff4d8a6af0cbb73cd8c6db85e917366ed3ec7924a  SR1_M87_2017_100_lo_hops_netcal_StokesI.csv
+7710f9a5c830ded0749e4f52ced75438435faf8bfb0b6e11b9e3adec25489b92  SR1_M87_2017_101_hi_hops_netcal_StokesI.csv
+6411680cdd4a0b6a651b56c8ada9069ae49659935877ff7e03acb9b173a80bb2  SR1_M87_2017_101_lo_hops_netcal_StokesI.csv
+a89d6efd29322c9ed1437bf3f8bd9f5083f7360b996b3062858a432b52826d9b  L2V1_M87_2018_111_b1_hops_netcal_10s_StokesI.csv
+d005092d7201304cd25b446d8f5d867d9ea449ed8055e57133327aca580c6314  L2V1_M87_2018_111_b2_hops_netcal_10s_StokesI.csv
+79bdbcb5f8124323bff733095e6fa998071b8a5bce4edbbba26f4f83eb652187  L2V1_M87_2018_111_b3_hops_netcal_10s_StokesI.csv
+ef1b5f61c06846129e027fb91b5e1d1a7361ad4581bd18b414e7362e77aded7d  L2V1_M87_2018_111_b4_hops_netcal_10s_StokesI.csv
+6f79e4c2d00102465f51fb150add9d0ea7a124d44b17df7390fcfab97670a302  L2V1_M87_2018_112_b1_hops_netcal_10s_StokesI.csv
+2ef696731ed39ad4380a984a2c6d6858b4df7b0aecf389bdf395ead2846e0b06  L2V1_M87_2018_112_b2_hops_netcal_10s_StokesI.csv
+519f90e02f2a8c085ff3791cc0650d4144cdd642a8512eba5b26aa183465ed58  L2V1_M87_2018_112_b3_hops_netcal_10s_StokesI.csv
+817e26d44486bea0e8f592886e68a34b672f5b21fcebc832deee2d2df4951ded  L2V1_M87_2018_112_b4_hops_netcal_10s_StokesI.csv
+801aa7a65a7d079b820bb7a2f22378d2c2ab585895a609658f26b83815ee0eda  L2V1_M87_2018_115_b1_hops_netcal_10s_StokesI.csv
+1020d904ce28ae7504df2878839d74d9fef6224e3efee2187e8c0b538ca410b5  L2V1_M87_2018_115_b2_hops_netcal_10s_StokesI.csv
+cc0db19ee5110725d52d4dd79e9ce60daaf8a85cce60e8996d5ce50c8920a673  L2V1_M87_2018_115_b3_hops_netcal_10s_StokesI.csv
+94dab15bb7333a3c17385d015eb47894f8343dc74a49c86bcc30f780d0a600cc  L2V1_M87_2018_115_b4_hops_netcal_10s_StokesI.csv
+```
+
+**Run 1** (18 Nov; `runs/eho/eho3.py`, `runs/eho/eho2.py`, outputs `.out`; run as
+`python3 runs/eho/eho2.py "<dir>/2019-D01-01/csv/SR1_M87_2017_*_StokesI.csv" "<dir>/2024-D01-01/csv/L2V1_M87_2018_*_hops_netcal_10s_StokesI.csv"`).
+
+- **Q6 killed by my sign, its content not.** The local scale of a boost on a small source is **1/D** of the seen
+  direction (D = 1/(γ(1 − β cos χ′))), not D: sources ahead, where D > 1, look smaller (aberration crowds them toward the
+  apex). Matched to 2·10⁻⁶¹ at all twelve (β, χ); the rotation exactly 0 at all twelve (the derivative of w ↦ e^(−η)w is
+  real and positive); a ring of radius 21 μas maps to a circle to 1.3·10⁻⁴¹ (rounding; a Möbius map keeps circles).
+- **Q7 not killed.** Largest change of a 42 μas ring: Earth's spin 6.5·10⁻⁵ μas, Earth's orbit 0.0042 μas, the Sun
+  against the CMB 0.052 μas, all under 2% of the 3 μas error. At EHT precision the observer's own motion is negligible;
+  the observer layer enters as D carried in (a write) and the sky's orientation.
+- **Q2 not killed.** 2017, four days × two bands: the first null u₀ spread 2.7% (3.747–3.848 Gλ).
+- **Q3 not killed.** 2017 mean diameter 41.80 μas (41.03–42.14), 0.5% from 42.
+- **Q5 (recorded, my prediction wrong).** The bright side's angle in my fit spans 78° over the 2017 days (and 32° between
+  the two bands of day 100), against my < 20°. The angle's zero is my model's convention (not checked against the EHT's
+  position angle east of north); only differences are used.
+- **Q4 killed.** 2018 day 111 (its four bands agreeing to 2.1% in u₀): u₀ 3.503 Gλ against 2017's 3.778, 7.3% off
+  (diameter 45.1 against 41.8 μas); day 112 5.9% (sparse: 38–315 closure phases, χ²/n near 7); day 115 9.1% (bands b1, b2
+  at 33.5 μas, plainly failed fits). The bright side moved: 69°, −18°, 50° from 2017's mean on days 111, 112, 115 (my
+  convention), so the payload did change; but my fit's diameter moved past 5% too. The EHT's own 2018 diameter is 43.3
+  (+1.5/−3.1) μas, consistent with 2017, so this is my simple fit, not a claim about M87*.
+- **Post hoc** (`runs/eho/eho2-posthoc.py`, not a prediction): with the blur held fixed at 5, 10 or 15 μas for every
+  day, 2018 (days 111, 115, bands b3, b4) still comes out 1.07–1.09 times 2017. So the width trade does not explain it.
+  Not checked: station gains (fitting amplitudes directly leaves them in; closure amplitudes would not), the 2018 array's
+  different coverage (GLT and KP added), and a model with more azimuthal terms. Unresolved.
+- **Q1 not killed (a reading, mine, not blind).** Every quantity in the table placed: the ring's diameter steady within
+  2017 and moved by emission's assumptions between fits (S mixed with E: in this run the fitted d is where E leaks in,
+  as the EHT's calibration factor says); θ_g S through the calibration; mass and distance writes; width, brightness angle,
+  contrast and flux E (the angle and the flux both changed day to day here, F 0.24–0.40 Jy in 2017); the image's
+  orientation O with S's spin axis. None needed a fourth layer.
+- **What the run says.** The observer's own layer is exact and negligible at this precision (Q6's content, Q7): the
+  three-layer sorting is in practice two layers, spacetime and emission, plus the writes carried in. Separating those
+  two from one array's data is where the difficulty is, as the field says: my one-model fit held the size across a week
+  and lost it across a year.

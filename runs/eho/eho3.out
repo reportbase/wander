@@ -1,0 +1,21 @@
+Q6: local scale against the Doppler factor, local rotation
+  beta=1e-04 chi=  0  scale=0.9999000049995000375  D(chi')=1.0001000050005000375  1/D=0.9999000049995000375  rot=0.0
+  beta=1e-04 chi= 30  scale=0.99991339995940505603  D(chi')=1.0000866075408114941  1/D=0.99991339995940505603  rot=0.0
+  beta=1e-04 chi= 90  scale=0.9999999949999999875  D(chi')=1.0000000050000000375  1/D=0.9999999949999999875  rot=0.0
+  beta=1e-04 chi=150  scale=1.0000866050405949565  D(chi')=0.99991340245918858093  1/D=1.0000866050405949565  rot=0.0
+  beta=1e-03 chi=  0  scale=0.99900049950037462531  D(chi')=1.0010005005003753753  1/D=0.99900049950037462531  rot=0.0
+  beta=1e-03 chi= 30  scale=0.99913422437977165626  D(chi')=1.0008665258371724656  1/D=0.99913422437977165626  rot=0.0
+  beta=1e-03 chi= 90  scale=0.99999949999987499994  D(chi')=1.0000005000003750003  1/D=0.99999949999987499994  rot=0.0
+  beta=1e-03 chi=150  scale=1.0008662756203533437  D(chi')=0.99913447416357753501  1/D=1.0008662756203533437  rot=0.0
+  beta=5e-03 chi=  0  scale=0.9950124377332079835  D(chi')=1.0050125627355517823  1/D=0.9950124377332079835  rot=0.0
+  beta=5e-03 chi= 30  scale=0.99567609595667704981  D(chi')=1.0043426813809047073  1/D=0.99567609595667704981  rot=0.0
+  beta=5e-03 chi= 90  scale=0.99998749992187402342  D(chi')=1.0000125002343798829  1/D=0.99998749992187402342  rot=0.0
+  beta=5e-03 chi=150  scale=1.0043364041214474619  D(chi')=0.99568231908785505849  1/D=1.0043364041214474619  rot=0.0
+  worst |scale - D or 1/D| = 2.33e-61  worst rotation = 0.0
+Q6 finite ring, alpha = 42 uas / 2 (radius), beta = 5e-3, chi = 90
+  image a circle: max |radius - mean|/mean = 1.3e-41  plane offset 1.56e-61
+  image radius / alpha = 0.999987499921874
+Q7: change of the ring's diameter (42 uas) for the observer's motions, worst over direction
+  Earth's spin   beta=1.550e-06  max fractional 1.55e-6  -> 6.51e-5 uas
+  Earth's orbit  beta=9.940e-05  max fractional 9.94e-5  -> 0.004175 uas
+  Sun vs CMB     beta=1.230e-03  max fractional 0.001231  -> 0.05169 uas
