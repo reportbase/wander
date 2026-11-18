@@ -572,6 +572,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R1092 (18 Nov; a ChatGPT note, Tom: "yes"): observation geometry belongs to the standpoint, the same for every object
   read from it; independent of the object, not of the observer's own state (a boost); of structure, not content.
   One sentence in *Reads and Writes* §2.
+  R1094 (18 Nov; Tom: "There is read geometry and write geometry."): **read geometry (the standpoint's: directions, no
+  size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
+  units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
+  geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
   R1093 (18 Nov; a ChatGPT note, Tom: "yes, add it and merge"): observation geometry least visible where aimed (second
   order at the focus, growing off the look; negligible over a small field, not absent); not taken: why others miss it.
   EHO (`plans/eho-plan.md` + `runs/eho/`, 18 Nov; SPN R1090; Tom: "maybe we could do that for them with their own data?",

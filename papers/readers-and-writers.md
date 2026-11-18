@@ -684,13 +684,16 @@ the paper; its directions and their heat are laid over it, blank or full, and th
 paper's writing met there. This says where physics sits in this frame and tells physics nothing it does not know.
 **Reading.**
 
-**Observation geometry and a thing's own geometry.** Observation geometry, the geometry of reads and writes, is distinct
-from physical geometry, a thing's own geometry. The apple in the hand has the apple's geometry: its roundness, its
+**Read geometry and write geometry.** There is read geometry and write geometry. Read geometry, the geometry of
+observation, is the standpoint's: directions, their slopes, the corner, the heat and their order, with no size in it, so
+scaling the world moves none of it. Write geometry is a thing's own: a shape with a size, moved by scaling, the write of
+whoever made it (§1 "Whose writes"); the observer's own strides, marks and units are write geometry too, on the same
+side as the apple's shape. The apple in the hand has the apple's geometry: its roundness, its
 dimple, its size; that is what makes it an apple, and it is the apple's, not the hand's (its writes are its own, §1
 "Whose writes"). A black hole has the hole's geometry: its spacetime, curved by its mass (Einstein), its horizon at
-2GM/c² and its photon ring; that is what makes it a black hole. Observation geometry is the same for both and for
-anything: the directions from one standpoint, their slopes, the corner, the heat, and the counted step that joins two
-looks. It does not change with what is read, and what is read does not change it; a thing's own geometry decides only
+2GM/c² and its photon ring; that is what makes it a black hole. Read geometry is the same for both and for
+anything: the directions from one standpoint, their slopes, the corner, the heat (the counted step that joins two looks
+is a write, the observer's own). It does not change with what is read, and what is read does not change it; a thing's own geometry decides only
 which of the thing lands in which direction, as turning the apple in the hand does, and light bent by the hole does
 the same at a distance. So a measured number may carry three things: the observer's geometry, the thing's own
 geometry, and what the thing sends (the apple's colour, the hole's glowing gas). On the Event Horizon Telescope's own
@@ -698,8 +701,9 @@ M87* data (EHO), the first came off exactly and was negligible (the observer's m
 scales it by 1/D, the ring moved at most 0.05 μas); the second and third stayed tangled in our fits, the ring's
 diameter moving with the emission model by up to a quarter, and the test that would part them is the photon subrings,
 light that went round once more, set by the hole's geometry whatever the gas does, not resolved by the present array.
-Curved spacetime is the hole's own geometry, not a rival to observation geometry; observation geometry is prior to
-physics and keeps its own rules wherever physics has another geometry. Observation geometry belongs to the standpoint, not to what is observed: it is the same for every object read from that standpoint, and a thing's own geometry decides what is met within it, never the geometry of the read; what changes it is the observer's own state (a boost), not the thing. It is least visible where an observation is aimed: at the focus the lay is uniform to first order, the finest relative grain (§5), so the observer's geometry enters there only at second order and grows off the look (on the equal-area screen about the look, radial scale cos(α/2): 0.9% off at 15°, 3.4% at 30°, 7.6% at 45°); over a small field it is negligible, as at M87*, where the whole ring spans 42 μas. Negligible is not absent. **Reading** (the EHO numbers **checked**).
+Curved spacetime is the hole's own write geometry, not a rival to read geometry; read geometry is prior to
+physics and keeps its own rules wherever physics has another geometry. So the tangle at M87* was between two writes, the
+hole's spacetime and its gas, and the subrings would part one write from another, not a write from the read. Read geometry belongs to the standpoint, not to what is observed: it is the same for every object read from that standpoint, and a thing's own geometry decides what is met within it, never the geometry of the read; what changes it is the observer's own state (a boost), not the thing. It is least visible where an observation is aimed: at the focus the lay is uniform to first order, the finest relative grain (§5), so the observer's read geometry enters there only at second order and grows off the look (on the equal-area screen about the look, radial scale cos(α/2): 0.9% off at 15°, 3.4% at 30°, 7.6% at 45°); over a small field it is negligible, as at M87*, where the whole ring spans 42 μas. Negligible is not absent. **Reading** (the EHO numbers **checked**).
 
 ## 3. Up: the read
 
