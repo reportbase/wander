@@ -397,7 +397,8 @@ itself. It becomes the universe it records." The cell counts on the walk are tha
 larger each doubling of its side, about 10⁵² cells at 10²⁶ units, against the read's 29,000 at every distance. A complete
 record would have to hold itself as well, so the only complete one is the world itself, each thing carrying its own
 state. The loops are cheap because a law in time holds them; the colliding balls are not, since their state has to be
-kept, and it grows. (R1050.)
+kept, and it grows. (R1050.) It holds for one thing too: an apple is its writes, a blueprint of it a representation,
+and a blueprint the size of the apple is the apple (R1095).
 
 **A table of balls, audited.** The same sorting was run on a game engine (ENG, `plans/eng-plan.md`): the trick-shot pool
 table, every arithmetic call counted by its stack over 60 shots. The contact and the push are reads, with no

@@ -212,6 +212,12 @@ special geometry for looking at a black hole: the one the telescope reads M87* w
 or empty sky with. The thing decides what is met; what changes the geometry of the read is the observer's own state, a
 boost, never the thing.
 
+The apple itself is the result of many writes: its history up to now, the back, the inside and the seeds, held whole by
+nothing but the apple. A blueprint of it is a representation, a drawing from no standpoint, and any blueprint anyone
+makes is a record of that person's writes, not the apple's, so it falls short. Make the blueprint leave nothing out, the
+size of the apple and every write in it, and it stops being a representation: it is the apple. The thing is made of
+writes; a blueprint only stands for them (*Reads and Writes* §1, "The thing and its blueprint").
+
 *Demo: the blueprint's box, its three views: the blueprint's, a read's from home, and ranges.*
 
 ---

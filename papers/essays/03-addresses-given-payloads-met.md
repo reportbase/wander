@@ -447,7 +447,9 @@ observer's geometry (directions, the read's), the hole's own geometry (its space
 apple's), and what the hole sends (its glowing gas, the payload). On the Event Horizon Telescope's own data the first
 came off exactly and was negligible; the second and third stayed tangled in our fits, the ring's size moving with how
 the gas was modelled. Here the address and payload sort is not the hard part; the hard part is telling a thing's own
-geometry (write geometry, with a size) from what it sends, one write from another, and that needs a route test (light that went round once more), not a test of the read.
+geometry (write geometry, with a size) from what it sends, one write from another, and that needs a route test (light that went round once more), not a test of the read. The hole
+is its writes; the ring model fitted to the data is a blueprint of it, a representation that cannot yet tell the two
+apart, while the telescope reads the hole itself.
 
 **In physics.** *Reads and Writes in Physics* (`../reads-and-writes-physics.md`) adds cases where the split was made
 long ago without its name. A spectral line's Lorentzian is the heat of a phase's turn: the Cauchy in frequency from a
