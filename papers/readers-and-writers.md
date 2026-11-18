@@ -519,6 +519,18 @@ representation: it is the apple (Tom, R1095; §6, "A record the size of what it 
 thing). So the thing is made of writes, and a representation only stands for them; no reads or writes make the DHV
 (R890, R922). **Reading.**
 
+**From the unit sphere to the thing: a density over the Cauchy.** Representations of a thing run from the unit sphere,
+which holds nothing of it, to the thing itself (Tom, R1097). Along the way the Cauchy does not change: its directions
+stay where they are, and the thing comes in as a density over them. Lay a shape ln r = a₀ + τ·f(θ) along its outline and
+it is the weight ρ(θ) = √(r² + r′²)/max on the unmoved directions (RHO, `plans/rho-plan.md`; the identity known from
+draw's SMP lab). The circle is the one shape whose density is flat, so the unit sphere is the bare Cauchy, τ = 0; τ is
+the density's departure from flat, and as it rises the density climbs toward the thing's own. The size a₀ cancels, so the
+density gives the shape and never the size, the one write this gradient does not reach. The shape comes back from the
+density: ln ρ returns the modes of f to second order in τ. The median of what arrives moves only by
+the part of f the exchange reverses, and only at first order. So the Cauchy is read geometry, the same for every thing,
+and the density over it is the thing's write geometry arriving as paint; it is the payload's, the world's, not the
+read's. **Exact** (RHO, nothing killed); the gradient's reading **a reading**.
+
 **V.** V is the other party's breadth, the mountain in the distance that the thumb is held up against. A reading is a
 ratio of the thumb's own shares; V was never in it, and it does not "cancel" from it. V\*/H is an extent, had by walking;
 V in metres is a write, had by walking and a unit. Neither is a shortcoming of the read: the horizon, the corner as a
