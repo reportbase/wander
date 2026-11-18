@@ -461,10 +461,12 @@ clock, a write.
 
 ### 5.5 A black hole: three things in one number [exact, data]
 
-Observation geometry, the geometry of reads and writes, is distinct from physical geometry, a thing's own geometry. An
+There is read geometry and write geometry. Read geometry is the observer's: directions from one standpoint, no size,
+unmoved by scaling. Write geometry is a thing's own: a shape with a size, moved by scaling, like the observer's own
+strides and units. An
 apple's roundness is the apple's; it is what makes it an apple. A black hole's spacetime is the hole's, curved by its
 mass (Einstein 1915), fixed by mass and spin (Kerr), with its horizon at 2GM/c² and the edge of its shadow at
-√27·GM/c²; that is what makes it a black hole. Observation geometry is the same for the apple, the hole and anything
+√27·GM/c²; that is what makes it a black hole. Read geometry is the same for the apple, the hole and anything
 else, and is not changed by what is read. A thing's own geometry decides only which of the thing lands in which
 direction, as turning the apple does; light bent by the hole does the same at a distance, and the brightness along each
 ray is unchanged on the way (Etherington 1933). The event horizon is a place, a radius from the mass; the read's horizon
@@ -490,8 +492,8 @@ collaboration's public M87* visibilities from 2017 and 2018, predictions committ
 The collaboration's steady diameter (42 ± 3 μas in 2017, 43.3 μas in 2018; Event Horizon Telescope Collaboration 2024)
 rests on more than the data's closures: amplitude calibration, tested pipelines, and a calibration from simulations
 that turns the ring into θ_g. Nothing here says that result is wrong; our fits only show where the emission's
-assumptions enter. Curved spacetime is the hole's own geometry, not a rival to observation geometry: the observer's layer
-came off exactly, and what stayed tangled was a question about the hole.
+assumptions enter. Curved spacetime is the hole's own write geometry, not a rival to read geometry: the observer's layer
+came off exactly, and what stayed tangled was two writes, the hole's spacetime and its gas.
 
 ## 6. Light
 

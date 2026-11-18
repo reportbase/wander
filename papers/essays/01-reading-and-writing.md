@@ -202,11 +202,12 @@ world can be asked: was this read or written? The answer settles what the record
 
 One thing the two acts are not is the shape of what is read. The apple in your hand has the apple's geometry, its
 roundness and its dimple; that is what makes it an apple, and it is the apple's. A black hole has the hole's geometry,
-its spacetime curved by its mass; that is what makes it a black hole. The geometry of reading and writing is another
-geometry, the same for the apple and the hole and anything else: directions from where you stand, their slopes, the
-corner, the counted step. A thing's own geometry decides only which part of it lands in which of your directions, as
+its spacetime curved by its mass; that is what makes it a black hole. There is read geometry and write geometry. The apple's
+shape and the hole's spacetime are write geometry, things with a size, each its maker's, like your own strides and
+units. Read geometry is the other: the same for the apple and the hole and anything else, directions from where you
+stand, their slopes, the corner, with no size in it. A thing's own geometry decides only which part of it lands in which of your directions, as
 turning the apple does. So a measured number can carry three things: your geometry, the thing's own, and what the thing
-sends, its colour or its glow (*Reads and Writes* §2, "Observation geometry and a thing's own geometry"). There is no
+sends, its colour or its glow (*Reads and Writes* §2, "Read geometry and write geometry"). There is no
 special geometry for looking at a black hole: the one the telescope reads M87* with is the one it reads an apple, a star
 or empty sky with. The thing decides what is met; what changes the geometry of the read is the observer's own state, a
 boost, never the thing.
