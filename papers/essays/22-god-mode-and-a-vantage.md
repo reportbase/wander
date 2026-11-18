@@ -17,9 +17,9 @@ kept showing the same thing from different sides: classical geometry is a view w
 everything it gives it gives by holding the whole; a read has a standpoint, holds a fixed amount, and does not need the
 whole to exist as a count anywhere it can reach.
 
-The order: what the blueprint is good for (§1), a view on whole numbers (§2), the tower and the scaffolding (§3), keeping
+The order: what the dual hemispherical vantage (DHV) is good for (§1), a view on whole numbers (§2), the tower and the scaffolding (§3), keeping
 by size on the screen (§4), each scale its share (§5), what nearness and distance cost (§6), something to read (§7), what is classical
-and what is ours (§8), set beside a blueprint thing for thing (§9), things that move (§10), a view that holds still
+and what is ours (§8), set beside a representation thing for thing (§9), things that move (§10), a view that holds still
 while the look moves (§11), a city of both kinds (§12), what a single vantage is for (§13), and what it changes (§14).
 
 *Demos: `thumbs-walk.html` (W A S D walk, G half way to the thing under the crosshair, B back, M the menu) and `sky-city.html`.*
@@ -33,12 +33,12 @@ of every axis, both hemispheres of every turn, the circle closed and π its numb
 field, the volume of a room, the total mass of a galaxy, the sum of a series. It can join: two maps made from two places
 become one map. It can say where everything is before anyone looks.
 
-This series calls that view the blueprint, and sets it beside a read only for comparison. It is not a criticism. The
-blueprint is why bridges stand. It is used because it is so strong.
+This series calls that view the dual hemispherical vantage, informally a blueprint, and sets it beside a read only for
+comparison. It is not a criticism. The DHV is why bridges stand. It is used because it is so strong.
 
 What it costs is that everything it gives, it gives by holding the whole. A total needs every term. A join needs both
 pieces in one frame, which means the size of each. A map of everything needs a count of everything, or at least a bound
-on where the counting stops. In a world laid out by a person, that is no trouble: the world has an N and the blueprint
+on where the counting stops. In a world laid out by a person, that is no trouble: the world has an N and the DHV
 holds it. The question the page was built for is what a view from one place needs when nobody hands it an N.
 
 ## 2. A view on whole numbers
@@ -92,7 +92,7 @@ amounts and stays up until it is written over.
 
 ## 4. Keeping by size on the screen
 
-A blueprint of an endless field is an endless list. Run 4 replaced the field near the eye with a field at every scale:
+A representation of an endless field is an endless list. Run 4 replaced the field near the eye with a field at every scale:
 scale j has cells 24·2^j wide, each holding at most one thing with every length times 2^j. A thing is kept when its
 breadth b is at least a grain g times its distance d, and when the eye is not inside it, compared in squares, b² ≥ g²d²
 and d² ≥ b², so with no root and no angle. Since b at scale j is at most 32·2^j, a kept thing lies within 1,024·2^j
@@ -161,11 +161,11 @@ What, then, does a read assume about the world? Not that the world is finite, an
 On the page this is literal. No count of things exists in the program. A thing exists at a cell when a hash of the cell
 says so; the hash is a rule, and a rule is not asked for a total. The program holds K things, about 2,000 to 2,200 at the
 poses tried, and K does not change whether the field is taken to end at the edge of the scan or to go on forever.
-Whether the world comes counted is the blueprint's question. A read holds K of whatever there is to read; that there is
+Whether the world comes counted is the question of the dual hemispherical vantage (DHV). A read holds K of whatever there is to read; that there is
 something to read is all it says about N.
 
 What scales, then, is whatever has a vantage: the read scales because it holds its share at each scale and the share is
-summable; the write pays by the digit, for each place it puts down. The blueprint does not scale in this sense, because it
+summable; the write pays by the digit, for each place it puts down. The DHV does not scale in this sense, because it
 has no standpoint from which a share could fall off.
 
 ## 8. What is classical, and what is ours
@@ -185,25 +185,25 @@ fixed total, about π/ln 2 times one scale's count. And the sorting: no count of
 the readings take no more digits at any depth; what pays is the place, which is a write. The classical view has the same
 arithmetic available. What it does not have is a standpoint to fall off from.
 
-## 9. Set beside a blueprint, thing for thing
+## 9. Set beside a representation, thing for thing
 
 After that answer Tom asked for results rather than statements (R940): "let others make those statements. lets actually
-prove it with undeniable results." So the page was set beside a blueprint and the two were compared, thing for thing,
+prove it with undeniable results." So the page was set beside a representation and the two were compared, thing for thing,
 and nothing on the page says which is better (R939).
 
-- **The same things.** A blueprint was made about the eye from every cell out to twice the read's reach, each thing kept
+- **The same things.** A representation was made about the eye from every cell out to twice the read's reach, each thing kept
   by the read's own rule applied to its exact centre. The read, storing nothing, held exactly those: 0 missing, 0 extra,
   at the start and 10¹⁰⁰ units out (run 8), and at every one of 300 poses of three seeded walks (run 9).
-- **The same picture.** Segment for segment, what the read draws and what the blueprint's own record draws differ by at
+- **The same picture.** Segment for segment, what the read draws and what the representation's own record draws differ by at
   most 4.5·10⁻¹³ of a pixel (run 10). The walks also found a fault: the key that backs off could take the eye below the
   ground. It now stops first.
-- **What each costs.** A blueprint stored from the start out to the eye, at the scales the read holds, has 10⁵ cells ten
+- **What each costs.** A representation stored from the start out to the eye, at the scales the read holds, has 10⁵ cells ten
   units out, 10⁵² at 10²⁶ and 6·10²¹⁰ at 10¹⁰³, four times as many for each doubling of the distance; the read scans
   between 28,700 and 29,100 cells at every one of those distances and stores none (run 11, and the U key on the page).
-- **A denser world.** With D things to a cell, the blueprint stored over the same square holds 35,013 × D. With its grain
+- **A denser world.** With D things to a cell, the representation stored over the same square holds 35,013 × D. With its grain
   fixed the read holds D times as many things from the same cells. Held to a count K by its own tally, moving its grain
   only by what it holds, it holds between 2,045 and 2,108 things at every D from 1 to 16, looking at 1.45 times as many
-  things at D = 16 as at D = 1, and still 0 missing and 0 extra against a blueprint made about the eye (run 13).
+  things at D = 16 as at D = 1, and still 0 missing and 0 extra against a representation made about the eye (run 13).
 - **Two ways, the same walk.** Drawn the page's way and a classical way (yaw and pitch as floats, the frame from sines and
   cosines), 300 poses give pictures within 2.4·10⁻¹² of a pixel; the page made no trigonometric call and the classical
   way 2,400 sines and cosines (run 14). Both lay the world on a signed grid of cells and hold the eye in it.
@@ -250,7 +250,7 @@ So interaction alone is not where a read from T stops. A law in T is: where ther
 there is none, the state to keep spreads to everything that has touched, and each thing has to carry its own. On the page
 that state would be a stored list; in the world there is no list, only the things, each carrying its own state, which the
 read meets as paint (R950, R951). The state each thing carries is its own write, made from its own read of what reaches it (R1065). A stone reads differently from an observer, with no look to turn and nothing kept (R1088). Classical geometry agrees with the read wherever both apply, since they share the
-geometry; the runs matched it to the digit. The blueprint is the idealization that holds the whole at once, from no
+geometry; the runs matched it to the digit. The dual hemispherical vantage is the idealization that holds the whole at once, from no
 standpoint; a read always has one.
 
 ## 11. A view that holds still while the look moves
@@ -261,7 +261,7 @@ grain is counted from (§5).
 - **Steps.** When the thing under the crosshair changed, the focus jumped to its scale at once, and every scale's grain
   jumped with it. The focus now glides over about a quarter of a second, and what is held is kept while the eye stays in
   its cells. What is held did not change: 2,195, 4,264 and 8,654 things at densities 1, 2 and 4, 0 missing and 0 extra
-  against a blueprint made (R946).
+  against a representation made (R946).
 - **Flicker.** A slight pan that brushed a thing of another scale still moved the focus, and hundreds of things at the
   keep line went and then came back. Panning one step at a time, the held set changed on 44 of 120 steps, 400 to 1,500
   things each time. Now a new focus is taken only after it has stood under the crosshair for 0.4 s, or at once for the
@@ -281,7 +281,7 @@ from their cells, elevators on their faces, and two kinds of car.
 - **Cars on their own loops.** Each rings one to three blocks by one to three at its own height, speed, direction and
   phase, its place at tick T worked out from T alone. Set beside every elevator and loop car stored and stepped one tick
   at a time over 200 ticks (about 7,800 stored, 1.56 million additions): the same things held at exactly the same places,
-  standing still, flying and from T = 10³⁰. Against a blueprint made from every cell within twice the read's reach, at 40
+  standing still, flying and from T = 10³⁰. Against a representation made from every cell within twice the read's reach, at 40
   poses from the street to above the roofs: 0 missing, 0 extra.
 - **Cars in traffic.** 48 cars in a district eight blocks by eight, on one-way streets, each waiting for the car ahead
   and turning only when the other lane is clear. They have no law in T. Stepped 600 steps at once and in ten pieces they
@@ -295,15 +295,15 @@ from their cells, elevators on their faces, and two kinds of car.
 - **Size on the screen.** A thing is held while its breadth is at least the grain times its distance. A car 6 across was
   held only near the eye; made 12 across it was held twice as far, 30 cars at one pose where there had been 10. A zoom by
   Z magnifies the screen and holds things Z times smaller, the grain 1/32 ÷ Z; it moves no H, which is set only by the
-  thing under the crosshairs. At ×1 and ×4: 0 missing, 0 extra against a blueprint made.
+  thing under the crosshairs. At ×1 and ×4: 0 missing, 0 extra against a representation made.
 
 So the city says in one scene what §10 found in pieces: what has a law in T is placed from T alone, and what reacts has
 its state stepped and held.
 
 ## 13. What a single vantage is for
 
-A read is a single hemispherical vantage: one standpoint, everything in front of it, nothing behind. The blueprint is the
-dual hemispherical vantage, both hemispheres at once, drawn from no standpoint. The city asks the practical question: who
+A read is a single hemispherical vantage: one standpoint, everything in front of it, nothing behind. The dual hemispherical
+vantage (DHV) is both hemispheres at once, drawn from no standpoint. The city asks the practical question: who
 would build with the first, when the second is what every engine already keeps?
 
 **The held set is the whole front hemisphere; the picture is not.** Each frame the keep rule runs over every direction
@@ -327,10 +327,10 @@ detail (§8). What needs the dual vantage is what no single standpoint holds:
 - editing, saving and planning, done in world coordinates from no standpoint.
 
 **Small worlds and galaxies.** For a small world, storing everything in world coordinates and reading it from every
-camera is what most games do, and it is enough. For a galaxy a stored blueprint is not an option: from the start out to
+camera is what most games do, and it is enough. For a galaxy a stored representation is not an option: from the start out to
 10²⁶ units it is about 10⁵² cells (R943), against the 29,000 or so the read scans at every distance. Galaxy-sized games
 store none of it; each makes what is at a coordinate from a seed when asked. That rule answers for any place from no
-standpoint, so it is blueprint-like, but it holds no list and no count. The work then splits three ways:
+standpoint, so it is like the DHV, but it holds no list and no count. The work then splits three ways:
 
 - a read from each standpoint, holding K things whatever N is;
 - a rule for everything nobody has touched, made on demand, never stored (here the cells and the tick);
@@ -371,7 +371,7 @@ in the sorting where it belongs.
 something has to hold or make the world before any view of it exists: a stored list, a seeded rule that makes things on
 demand, state stepped for what reacts. The read does not remove that; it decides only which part is looked at and how
 finely. For building, the single vantage is an option, not a requirement. Its interest lies elsewhere: no observer in
-nature has the view from no standpoint, and every read has a vantage. The blueprint is the idealization that holds the
+nature has the view from no standpoint, and every read has a vantage. The DHV is the idealization that holds the
 whole at once; in the world there is no list, the things themselves carry their state, and a read meets them as paint. So
 a program has to supply what the world supplies by being there, and the single vantage describes what any observer, a
 person, an animal or an instrument, has from where it stands. The pages are useful because they show where a program
@@ -386,19 +386,19 @@ what has been changed.
 
 **A record, never live.** Tom, later: "The problem with dhv and why the natural world does not use it is because it's not
 real time, it's historical, it's a record of writes that have occurred." A read is now, one place; a write is over once
-it is made. So every blueprint anyone holds, the god's map on the phone included, is built from writes already made and
+it is made. So every representation anyone holds, the god's map on the phone included, is built from writes already made and
 lags what it shows. The walk's pages show the one exception: things on loops placed from the tick alone, where a law in
-time stands in for the history and the blueprint is a lookup, live at any tick. The balls that collide unequally break
+time stands in for the history and the representation is a lookup, live at any tick. The balls that collide unequally break
 that, and their state has to be stepped and kept, a record a step behind. And the read's now is not the world's either:
 it is the now of what arrives. It is the only now there is from a standpoint, and it needs nothing written. (R1049.)
 
 **And never small enough.** Tom again: "at some point the historical record of writes is as large as the universe
-itself. It becomes the universe it records." The cell counts on the walk are that cost: a stored blueprint four times
+itself. It becomes the universe it records." The cell counts on the walk are that cost: a stored record four times
 larger each doubling of its side, about 10⁵² cells at 10²⁶ units, against the read's 29,000 at every distance. A complete
 record would have to hold itself as well, so the only complete one is the world itself, each thing carrying its own
 state. The loops are cheap because a law in time holds them; the colliding balls are not, since their state has to be
-kept, and it grows. (R1050.) It holds for one thing too: an apple is its writes, a blueprint of it a representation,
-and a blueprint the size of the apple is the apple (R1095).
+kept, and it grows. (R1050.) It holds for one thing too: an apple is its writes, a representation of it is only that,
+and a representation the size of the apple is the apple (R1095).
 
 **A table of balls, audited.** The same sorting was run on a game engine (ENG, `plans/eng-plan.md`): the trick-shot pool
 table, every arithmetic call counted by its stack over 60 shots. The contact and the push are reads, with no
@@ -410,7 +410,7 @@ as above, and this is the least of it that pool needed.
 
 ## 14. What it changes
 
-The blueprint is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on
+The dual hemispherical vantage (DHV) is god mode, and the series has no quarrel with it. It is what anyone uses who has the whole, or a bound on
 it, and wants totals, joins and a map of everything at once.
 
 What the walk showed is where it stops. Its strength is that it holds every point in one frame, and that same strength is
@@ -419,7 +419,7 @@ one thumb's length held out, a share that falls off with distance, and K of what
 what lets it go on. It can walk from the size of a house to a millionth of it and see the same view, read the same
 fractions, and hold the same number of things, while the only thing that grows is the record of where it has been.
 
-The difference, stated once: the blueprint holds the world and states amounts; a read holds K of it from somewhere and
+The difference, stated once: the DHV holds the world and states amounts; a read holds K of it from somewhere and
 states ratios; the place an observer stands is the one thing that has to be written, and it is the one thing that pays.
 
 ---

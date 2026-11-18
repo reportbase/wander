@@ -17,9 +17,9 @@ This essay is about what went wrong, because the same thing goes wrong in a long
 relativity, Simpson's paradox in a statistics class, the prosecutor's fallacy in a courtroom, Zeno's runner, the
 two-envelope game, Benford's first digits, the dark night sky. Each has a standard resolution, worked out on its own
 terms, and this essay does not offer a better one. It offers one diagnosis that fits them all. Every essay so far has
-kept two things apart: what is read from a standpoint, and what is stated on the blueprint, which holds
-everything. A paradox, nearly always, is the two run together. A reading is quoted as if it were a writing, or a
-blueprint's question is put to a read that has nothing to answer it with.
+kept two things apart: what is read from a standpoint, and what is stated from the dual hemispherical vantage (DHV;
+informally, a blueprint), which holds everything. A paradox, nearly always, is the two run together. A reading is quoted as if it were a writing, or the
+DHV's question is put to a read that has nothing to answer it with.
 
 Each entry below says which vantage each side of the paradox speaks from, what the paradox becomes once they are kept
 apart, and what was already known. A caution goes with all of it. A paradox is explained by a vantage reading only if each
@@ -167,15 +167,15 @@ The essays have kept apart two sides, called vantages here for short, though onl
 - **A read** is taken from somewhere. It holds one length, its H, the thumb, turned. What it has are ratios:
   directions and their heat, the order of things, the corner where two of its relations are equal. It holds no total and no
   count of what there is, and it meets a horizon.
-- **The blueprint**, classical geometry's view, set beside a read for comparison, holds the whole. It has every amount in a unit, both hemispheres, the count, the sum. It is the
+- **The dual hemispherical vantage (DHV)**, classical geometry's view, set beside a read for comparison, holds the whole. It has every amount in a unit, both hemispheres, the count, the sum. It is the
   drawn shape, the equation on the page, the globe. It has no standpoint, no corner and no horizon.
 
-Neither is wrong, and each can do what the other cannot. What the blueprint states of a thing can be arrived at from many
-readings, by standpoints, loops closed and one amount carried in (the sixth essay); that gives extents and a write, not the blueprint. The blueprint can state what any read would have
+Neither is wrong, and each can do what the other cannot. What the DHV states of a thing can be arrived at from many
+readings, by standpoints, loops closed and one amount carried in (the sixth essay); that gives extents and a write, not the DHV. The DHV can state what any read would have
 from any place (the seventh essay's lighthouse drawn at any size). What no one can do is hold both at once in one
 observation.
 
-A paradox, in this account, is a question asked from one vantage and answered from the other. Usually it is the blueprint's
+A paradox, in this account, is a question asked from one vantage and answered from the other. Usually it is the DHV's
 question, a total, a sum, a single length, the whole, put to a read that holds none of them. Sometimes it is the other way:
 a read's ratio quoted as a written amount. The two tests find which:
 - **Scale the world.** Multiply every amount by k. If a claim does not move, it is a reading, or an extent if it joins two
@@ -190,7 +190,7 @@ The rest of the essay goes through the catalogue by kind.
 ## 4. The whole and the count
 
 **Zeno's runner.** To cross a distance one must first cross half of it, then half of what is left, without end; so the
-runner never arrives. The blueprint holds the whole series and sums it: ½ + ¼ + ⅛ + … = 1. From a standpoint the steps are counted, and
+runner never arrives. The dual hemispherical vantage (DHV) holds the whole series and sums it: ½ + ¼ + ⅛ + … = 1. From a standpoint the steps are counted, and
 each halving is one more step, without end. The fourth essay showed both on one lay. Drawn by length, on the in-place lay,
 the stretches past the corner, one thumb to two, two to four, four to eight, all fit into one more H, one more thumb, so
 infinitely many fit in a finite length. Counted, each takes the same share of the read's fineness, so the count never ends. Finite
@@ -199,20 +199,20 @@ Aristotle's distinction between potential and actual infinity, are the two vanta
 
 **Galileo's squares and Hilbert's hotel.** There are as many square numbers as whole numbers, since each n pairs with n²,
 yet the squares are a vanishing share of the whole numbers (Galileo 1638). A hotel with infinitely many rooms, every one
-full, still takes a new guest by moving everyone along one. The one-to-one pairing is the blueprint's: it holds both sets
+full, still takes a new guest by moving everyone along one. The one-to-one pairing is the DHV's: it holds both sets
 whole and matches them. "A vanishing share" is a read's: counted from home, the squares are ever rarer. Each claim
-is true from its vantage. Cantor's cardinality makes the blueprint's answer precise, and natural density the read's.
+is true from its vantage. Cantor's cardinality makes the DHV's answer precise, and natural density the read's.
 
 **The coastline.** A coastline's measured length grows without bound as the ruler shrinks (Richardson 1961; Mandelbrot
-1967). "The length" is the blueprint's single amount. The measured length is a count at the observer's own step, and the fourth
-essay's detail is exactly that count: a thing is held as finely as its span covers. For such a curve the blueprint's single
+1967). "The length" is the DHV's single amount. The measured length is a count at the observer's own step, and the fourth
+essay's detail is exactly that count: a thing is held as finely as its span covers. For such a curve the DHV's single
 length does not exist, and what exists is the count at each step.
 
 **A growing list looks finished.** An observer of fixed resolution watches a list grow. Past a size set by its resolution,
 the part not yet arrived falls below one step: the frontier cannot be told from the horizon, and the list looks
-complete. "Finished" is the blueprint's notion. A read meets only the horizon closing over the frontier. In the classical
+complete. "Finished" is the DHV's notion. A read meets only the horizon closing over the frontier. In the classical
 order of limits, the step taken to zero first and the count grown after, the frontier stays visible for ever, which is the
-blueprint's assumption built into the mathematics.
+DHV's assumption built into the mathematics.
 
 **More points, less seen.** An observer that resolves directions to a step ε sees N points spread evenly round a circle from
 its centre. When N is small every point is seen apart. As N grows, neighbours fall within one step of each other and merge,
@@ -237,13 +237,13 @@ law (Hill 1995). The vantage reading is his theorem said in the essays' terms.
 
 **Two envelopes.** One envelope holds twice what the other does. Whichever you hold, the argument goes, switching gains on
 average, half the time twice as much and half the time half; so you should switch for ever. The argument averages over the
-amounts, which needs a total over all of them, the blueprint's distribution. The holder of one envelope knows neither amount and
+amounts, which needs a total over all of them, the dual hemispherical vantage's distribution. The holder of one envelope knows neither amount and
 has no scale. With none preferred the measure is dx/x, which has no total and cannot be made a probability. The averaging
 step needs exactly what the holder lacks. The standard resolutions say the paradox needs an improper prior; the vantage
 reading says why that prior is the one an observer with no scale would hold.
 
 **The St Petersburg game.** A coin is tossed until it lands heads; the payout doubles with each tail. Its expected payout
-is infinite, and nobody will pay much to play (Bernoulli 1738). The infinite expectation is the blueprint's total. The player
+is infinite, and nobody will pay much to play (Bernoulli 1738). The infinite expectation is the DHV's total. The player
 values payouts from where it stands. Past its own unit there is no preferred scale, so each step from a payout to twice it
 counts the same: Bernoulli's logarithmic utility is the far field's lay. The reading adds one thing: inside the player's
 unit, value would be in proportion, so the reading predicts near-linear valuation of small stakes and logarithmic of large
@@ -265,7 +265,7 @@ amounts on a scale instead of a read's ratios.
 ## 6. Sums and the median
 
 **The Cauchy has a median and no mean.** A well-shaped, symmetric law whose average does not exist, and which more samples
-do not help. The third essay is all about this one. The mean is a sum over amounts, the blueprint's total. The Cauchy is the heat
+do not help. The third essay is all about this one. The mean is a sum over amounts, the dual hemispherical vantage's total. The Cauchy is the heat
 of a read's directions. What survives from a standpoint is what a read can find from home: the
 median, at the corner, and the symmetry under the reciprocal.
 
@@ -277,7 +277,7 @@ and only the order stands.
 
 **Olbers' dark night.** In an endless, unchanging universe of stars, every line of sight ends on a star, so the night sky
 should be as bright as the sun's surface. The paradox sums the light of every shell of stars, each shell giving the same
-light, and the sum diverges: the blueprint's total. A read receives only what has arrived, and its sky fills only as far as
+light, and the sum diverges: the DHV's total. A read receives only what has arrived, and its sky fills only as far as
 signals have come. The standard answer, the universe's finite age and the finite speed of light, is exactly that. The
 vantage reading restates it and adds nothing to it.
 
@@ -294,7 +294,7 @@ sphere, held from no standpoint; the receiver's front hemisphere gives the same 
 
 **Near and far seem to obey different laws.** The near field and the far field of a source, a lens or an antenna behave
 as if governed by different mathematics, and one expects the far to continue the near and finds otherwise. The
-expectation is the blueprint's: one drawing, one scale throughout. The two laws are the read's two sides of the corner,
+expectation is the dual hemispherical vantage's: one drawing, one scale throughout. The two laws are the read's two sides of the corner,
 v read against h before it and h against v past it. The plainest case is the light of a disc, which grows as x²/(1 + x²) in
 its size against its distance: in proportion to x² near and saturating far, the change at x = 1. Near- and far-field
 approximations are standard, and that they are one function is known; the reading says why the change comes where it
@@ -318,12 +318,12 @@ with an illustration, the `flight.html` demo, and it is the eighth essay's depth
 ## 8. What a read can tell apart
 
 **The Gibbs paradox.** Mixing two different gases raises the entropy however alike they are, but mixing a gas with itself
-does not, so the entropy jumps as the gases become identical. The blueprint labels every molecule. A read that cannot tell
+does not, so the entropy jumps as the gases become identical. The dual hemispherical vantage labels every molecule. A read that cannot tell
 the gases apart has nothing to mix. Entropy counts what a read can tell apart. That is the standard resolution, by
 indistinguishability, and it is Jaynes's own account that entropy depends on the distinctions the observer makes (Jaynes
 1992).
 
-**The heap.** One grain is not a heap, and adding a grain never makes a heap; yet heaps exist. The blueprint's predicate is
+**The heap.** One grain is not a heap, and adding a grain never makes a heap; yet heaps exist. The DHV's predicate is
 sharp. A read resolves "more than one" only from its own step. In a synthetic test in the working notes, an observer
 with no model of what it looks at is certain of "two" once the two are one step apart, and below that is right with
 probability equal to their separation in steps. The vague boundary is the observer's resolution limit, an amount carried
@@ -342,7 +342,7 @@ honest.
   and none is offered here.
 - **Monty Hall.** The host acts from a view of all the doors; the player reads the act from its own. Whether that is more
   than a restatement of the conditional probability has not been checked.
-- **Zeno's arrow.** Motion at an instant: the blueprint's snapshot against a read's arrivals.
+- **Zeno's arrow.** Motion at an instant: the dual hemispherical vantage's snapshot against a read's arrivals.
 - **Quantum measurement.** Whether observer-dependence there is a question of vantage at all is not something these essays
   can say. It is named only to say so.
 
@@ -361,9 +361,9 @@ too large, since the paint carries most of it (*Reads and Writes in Physics* (`.
 standpoint, and it does not move when the world is scaled; a ratio joining two standpoints, an extent, does not move either.
 A writing is an amount, and it needed something carried in. Every
 paradox in the denominator family is a reading quoted as a writing, its private denominator dropped. Zeno, Galileo, the
-coastline, the growing list and the many points are the blueprint's whole asked of a count from a standpoint. Benford, the envelopes,
+coastline, the growing list and the many points are the dual hemispherical vantage's (DHV's) whole asked of a count from a standpoint. Benford, the envelopes,
 St Petersburg and Weber–Fechner are a flat measure of amounts laid where a read has no scale. Olbers and the dimming star
-are the blueprint's sum asked of a read's directions. Gibbs and the heap are the blueprint's labels or sharp line asked of a
+are the DHV's sum asked of a read's directions. Gibbs and the heap are the DHV's labels or sharp line asked of a
 read's resolution.
 
 **The Cauchy.** It appears in the catalogue twice, as an entry and as the pattern. As an entry, it is the law with a median
@@ -374,7 +374,7 @@ can use: a sum needs things counted, and a heat has none. *The heat is given; th
 
 Nothing here is a new resolution. Perspective needed no new fact; the twins needed nothing relativity did not already say;
 the kidney-stone data were correct all along; Hill had proved Benford; Olbers' answer was known. Each was resolved by
-finding an assumption so automatic that nobody noticed making it: a shared ruler, a total, the blueprint's whole. What the
+finding an assumption so automatic that nobody noticed making it: a shared ruler, a total, the DHV's whole. What the
 essays add is that the assumption has one form, and two tests find it.
 
 Back to the field. A sees B small and B sees A small, and both are right. Each was reading. The contradiction came from
@@ -406,4 +406,4 @@ ratio of their sizes and their distance apart, both exact, both places, and stil
 
 The catalogue is kept, with each entry's standing, in the working paper `vantages.md`, and the denominator family is set
 out at length in *Each Sees the Other Smaller* (`denominator-paradox.md`), an earlier paper this essay restates in the
-present frame: the read and the blueprint in place of the older "situated" and "completed" views.
+present frame: the read and the dual hemispherical vantage in place of the older "situated" and "completed" views.

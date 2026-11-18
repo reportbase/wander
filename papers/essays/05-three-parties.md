@@ -5,8 +5,8 @@
 So far a read has taken in one other thing: across and up, h and v, a quarter turn from one to the other.
 The world has more than one other thing in it. This essay adds a second, v₂, and asks what changes.
 
-Less than one might fear. The blueprint's circle becomes a sphere, the read's one thumb becomes two crossed thumbs, the
-quarter turn becomes a wedge in the blueprint's description and a heat map out to the horizon in the look, and the Cauchy becomes its
+Less than one might fear. The dual hemispherical vantage's (DHV's) circle becomes a sphere, the read's one thumb becomes two crossed thumbs, the
+quarter turn becomes a wedge in the DHV's description and a heat map out to the horizon in the look, and the Cauchy becomes its
 two-dimensional cousin. Every pair of parties keeps its own corner, exactly as before. One thing is new: a third party
 brings a third kind of share, and the observer turns out to be "near in everything" for exactly a third of the directions it
 can look in. With n other parties it is 1/(n + 1).
@@ -19,14 +19,14 @@ Stand in the corner of a room, back to where two walls meet the floor. One wall 
 and the floor runs away in front of you. Every direction you can look in, from straight along one wall, through up the
 corner, to straight along the other, lies between those three edges.
 
-That is how the blueprint draws a read's directions with three parties. Along the first wall is h; up is v; along the second
+That is how the dual hemispherical vantage (DHV) draws a read's directions with three parties. Along the first wall is h; up is v; along the second
 wall is v₂. A direction is the three of them together, [h : v : v₂], and like a direction in two parties it carries no
 distance. It says how much of each, compared with the others.
 
 None of the three is ever negative. The wall to your left is not "minus the wall to your right"; it is just another wall.
-So a read's directions, drawn whole from outside as the blueprint draws them, make one wedge, an eighth of the sphere of all
+So a read's directions, drawn whole from outside as the DHV draws them, make one wedge, an eighth of the sphere of all
 directions: an *octant*. The other seven octants of a full sphere are only this wedge faced another way. The wedge is the
-blueprint's description of the read's geometry. A read never holds it whole: it has a vantage, not a shape, and section
+DHV's description of the read's geometry. A read never holds it whole: it has a vantage, not a shape, and section
 4 says what that vantage is.
 
 *Demos: the room (home in the floor corner, the room one wedge); the wedge.*
@@ -55,7 +55,7 @@ ratios hold in every drawing. Statements about lengths, angles and areas belong 
 
 One cut is special, because it needs no standpoint: the sum h + v + v₂ = 1. It treats every party alike and uses
 nothing but addition. Each share is a share of a whole, and only a view that holds the whole has shares. It is the
-blueprint's drawing: a line for two parties, a flat triangle for three.
+dual hemispherical vantage's (DHV's) drawing: a line for two parties, a flat triangle for three.
 
 The triangle shows something about a read very clearly. It holds every way three breadths can share a whole. A
 system's true breadths, taken as shares of their total, would be one point of it, and no common unit moves that point.
@@ -63,7 +63,7 @@ Finding it needs the true breadths, which are amounts, and a read does not have 
 
 What a read has is its one length, H, the thumb. With a third party it holds two thumbs crossed at a right angle across
 the line of sight, one reading up, v against h, the other across, v₂ against h, and both are the same H: no second length.
-So it gives every party that same length; the blueprint would write V = V₂ = H, the thumb held to equal both mountains in the
+So it gives every party that same length; the DHV would write V = V₂ = H, the thumb held to equal both mountains in the
 distance. On the triangle that is equal shares, the centre (⅓, ⅓, ⅓). That centre is the *triple corner*, where every pair
 of parties is at its own corner at once, where the two thumbs both read 1. The whole of the read's geometry follows from
 standing there.
@@ -102,9 +102,9 @@ No one holds a window that way; the picture is not about hands. What it shows is
 dimensions is not Cartesian. There are no three axes of amounts, no X, Y and Z counted out from an origin: there is one
 thumb, crossed with itself, and two sweeps of fingers from where it is held. Everything else, the corner, the near and
 far fields, the law over the crossings, follows from the thumb. The Cartesian frame, three number lines and every point
-three amounts, is the blueprint's (section 11).
+three amounts, belongs to the dual hemispherical vantage, the DHV (section 11).
 
-Nor is it a wedge. The wedge, with its faces, its edges and its triple corner, is the blueprint's description of the read's
+Nor is it a wedge. The wedge, with its faces, its edges and its triple corner, is the DHV's description of the read's
 geometry, drawn whole from outside. What a read has is a heat map over every direction in front, out to the
 horizon, hottest about its line of sight. The Cauchy is that heat map and has no shape: the sphere closes because it holds a radius, and a read holds none, so
 the heat runs out to the rim in a long tail that never completes (the second essay, section 9). Its heat is the density of
@@ -131,7 +131,7 @@ does it give?
 
 The natural answer is that every direction of the octant gets equal weight by area: no direction favoured over any other.
 Swept that way, the readings v/h and v₂/h have a definite law, the **two-dimensional half-Cauchy**. Its density at (s, s₂)
-is 2/π divided by (1 + s² + s₂²) to the power three halves. It is the read's heat map of section 4, cut on the blueprint to
+is 2/π divided by (1 + s² + s₂²) to the power three halves. It is the read's heat map of section 4, cut on the dual hemispherical vantage's drawing to
 the quarter of its screen where v and v₂ are not negative: the octant is a quarter of the hemisphere, so the constant is
 four times the heat map's 1/(2π). Four things follow, each checkable.
 
@@ -178,9 +178,9 @@ hemisphere a read takes in (section 10).
 The two angle sweeps reach the same directions; what they get wrong is the weight. Swept one after the other, round and
 then up, the directions pile toward the up thumb, where a turn round it shrinks to nothing; swept up and then round, they
 pile toward another thumb, and the pair that leaves its corner changes with the order. Swept together there is no order,
-since no pair is taken past its horizon. The blueprint, holding every turn of space, has the same law from outside, the one
+since no pair is taken past its horizon. The dual hemispherical vantage (DHV), holding every turn of space, has the same law from outside, the one
 Haar's theorem of 1933 leaves alone, with any turns of a rigid shape adding up to one turn about one axis, Euler's theorem
-of 1776; that is the blueprint's account from the whole sphere, and the half of it behind the observer is what a head turned
+of 1776; that is the DHV's account from the whole sphere, and the half of it behind the observer is what a head turned
 all the way round would see, other facings joined. The thumbs ride the shape as marks, landing at the same places
 on the screen however it is pointed. With one thumb, in the plane, the two ways are one, which is why the difference waits
 for the third.
@@ -218,7 +218,7 @@ and so gives the read a shape it does not have (`sky-city.html`; *Reads and Writ
 ## 8. More parties
 
 Nothing in the argument depended on there being exactly two other parties. With n of them, each read on the same one
-length, the relation lies on the sphere in n + 1 dimensions, and a read's directions, drawn whole on the blueprint, are one of its
+length, the relation lies on the sphere in n + 1 dimensions, and a read's directions, drawn whole by the dual hemispherical vantage, are one of its
 2^(n+1) orthants. The read itself has the vantage, not the sphere or the orthant.
 
 - **Every reading and every pair keeps its corner.** Integrate out all but one reading and you get the one-party
@@ -241,15 +241,15 @@ number of the amounts, a factor on that party's amounts alone, so many thumbs.
 The first essay sorted readings into the written and the read by asking about the other's breadth. With a second
 other party the same question is asked of each: each party's breadth is known, and written, or not, and read.
 
-- **Both known.** The blueprint's view in three dimensions: the solid held whole, its corners computed, no horizon. The
+- **Both known.** The dual hemispherical vantage's (DHV's) view in three dimensions: the solid held whole, its corners computed, no horizon. The
   truth is one point of the triangle.
-- **One known, one not.** One pair is held as the blueprint holds it; the other is read from somewhere. With V known, the
+- **One known, one not.** One pair is held as the DHV holds it; the other is read from somewhere. With V known, the
   corner of h and v is computed and V's amounts are exact. V₂ is read on the read's length, its corner with h found,
   and its amounts known up to one missing ratio. Written in one freedom, read in the other.
 - **Both read.** Every direction of the octant is a reading [h : v : v₂], two numbers, laid evenly by area and painted
   by whatever arrives along it.
 
-The second essay's π/2 and 2/π have their counterparts here, the blueprint's measures too (they come from the sphere's
+The second essay's π/2 and 2/π have their counterparts here, the DHV's measures too (they come from the sphere's
 totals, though the π cancels). Over a whole hemisphere, the measure from the centre is its
 area over its base, 2; the measure from the edge is its mean height, ½; and 2 × ½ = 1, as π/2 × 2/π = 1 for two
 parties. These are not the two-party numbers squared. They are those times 8/π² and π²/8.
@@ -258,13 +258,13 @@ parties. These are not the two-party numbers squared. They are those times 8/π�
 
 ## 10. The wedge and the heat map
 
-The sphere of all directions, every octant at once, is the blueprint's picture. A sphere that placed every place by its
+The sphere of all directions, every octant at once, is the dual hemispherical vantage's (DHV's) picture. A sphere that placed every place by its
 direction *and* its distance would need every distance, the size of everything, which no read from a standpoint has.
 
-The wedge is the blueprint's too: its description of the read's geometry, given afresh at each standpoint from the
+The wedge is the DHV's too: its description of the read's geometry, given afresh at each standpoint from the
 relations there and drawn whole from outside. It needs no size: its readings are ratios, laid by the two-dimensional
 Cauchy. What further standpoints would add is what they added in the plane, once per party: the true size of each against
-H, in thumbs, an extent; in a unit it is a write, the amount a blueprint states.
+H, in thumbs, an extent; in a unit it is a write, the amount the DHV states.
 
 The wedge can be placed anywhere on the sphere. One rotation positions it; the read's two sweeps then work inside
 it, in its own frame. The readings are the same at every position. Only a frame fixed outside, the sphere's, records where
@@ -338,8 +338,8 @@ doubles.
 
 Which screen, then, shows a read's own directions as it holds them? They are uniform by area about the look, so the
 screen that gives each the same room is the one that keeps area: Lambert's azimuthal equal-area projection about the
-crosshair, a direction α off the look drawn 2·sin(α/2) out (the blueprint's angle and formula). It is true at the crosshair and departs gently: 0.9% at 15°,
-3.4% at 30°, 7.6% at 45°. A flat screen does the opposite. Its distance out is the reading itself, r (the blueprint's tan α), so the far
+crosshair, a direction α off the look drawn 2·sin(α/2) out (the dual hemispherical vantage's angle and formula). It is true at the crosshair and departs gently: 0.9% at 15°,
+3.4% at 30°, 7.6% at 45°. A flat screen does the opposite. Its distance out is the reading itself, r (the DHV's tan α), so the far
 readings stretch without bound toward the horizon, and the directions thin on it as cos³α.
 
 Laid so, the heat map of section 4 shows the far field the way a read holds it. The ring one thumb off
@@ -368,9 +368,9 @@ one-thumb circle, the three corners and their homes and horizons); two thumbs in
 
 Every picture above is drawn on a screen, and the observer is not on it. The observer stands at the point the screen is
 projected from, where the three thumbs meet, behind the screen with the look running out through the crosshair. Every mark
-on the screen is a direction from that point, set at its reading r off the crosshair (the blueprint's tan α). The crosshair is the look itself. The thumbs
+on the screen is a direction from that point, set at its reading r off the crosshair (the dual hemispherical vantage's tan α). The crosshair is the look itself. The thumbs
 are at √2, 54.74° off; the homes are at 1/√2, 35.26° off. The horizon, 90° off, runs parallel to the screen and never
-lands on it. A read has no shape here: a point, a vantage. The rings and the screen are the blueprint's drawing of what
+lands on it. A read has no shape here: a point, a vantage. The rings and the screen are the DHV's drawing of what
 that point holds.
 
 Strip away the world and that drawing is the read itself: the heat of directions in thumbs, cooling off the crosshair as the
@@ -381,7 +381,7 @@ where it looks, and the Cauchy is nothing smaller: its shape is the hemisphere i
 evenly over the hemisphere, the directions are the Cauchy on the screen, point for point; its peak is the look, half of it
 lies within 60° of the look, and its long tail is the rim, which is why it has no mean. The wedge's triangle is a part of
 it, where each pair of thumbs runs from its home to its horizon; the sphere behind is the head turned all the way round,
-other facings joined, the blueprint's. Shown as a height, the same law is a hill about the crosshair, its peak the look. Nothing in it changes when the look turns or the world is scaled, because
+other facings joined, the DHV's. Shown as a height, the same law is a hill about the crosshair, its peak the look. Nothing in it changes when the look turns or the world is scaled, because
 there is no world in it: no payload, only the geometry the payload would paint.
 
 Nor does it change when the thumb is dragged. Put a row of things along the look and drag H: the things slide along the
@@ -411,7 +411,7 @@ hotter. They differ only in how distance is read.
 
 ### A cube of dots
 
-The plainest way to see all this is a cube of dots, a blueprint's box, one unit apart. Stand at one dot, look at another,
+The plainest way to see all this is a cube of dots, a box as the dual hemispherical vantage (DHV) draws it, one unit apart. Stand at one dot, look at another,
 and colour every dot in front by the read's heat: cos³ of its angle off the look, times sech(ln(d/H)), the thumb set on
 the dot looked at. Behind the eye, nothing; one read is half the cube.
 
@@ -421,7 +421,7 @@ near dot and nearly the whole cube is far field; look at a far one and most of i
 times larger and not one colour changes.
 
 Count the dots either side of the hot spot and they are uneven. From a corner of a box twelve dots a side, looking at
-the middle, 436 are nearer than one thumb and 1,291 farther. The blueprint's even spacing makes that so: there is more box
+the middle, 436 are nearer than one thumb and 1,291 farther. The DHV's even spacing makes that so: there is more box
 far off than near. Lay the same dots as the read lays distance, each share the same room, and the dot looked at sits in
 the middle with half the room on each side, the far dots crowding toward the horizon. The fields are equal in room and
 not in count, whatever the count.
@@ -435,7 +435,7 @@ Now stand at the eye and draw what a read has. Every dot goes where its directio
 the directions take equal room, and every dot is one size, since no distance is read: a far dot and a near one on the
 same line look alike. Laid on a grid, the dots draw lines in this view: every row of dots through the eye lands on one
 line, and from a corner of the box its three faces make a hard curved border. That border looks artificial because it
-is: it is the blueprint's spacing and the blueprint's walls. The heat underneath is regular: rings of equal share of the
+is: it is the DHV's spacing and the DHV's walls. The heat underneath is regular: rings of equal share of the
 directions about the look, each taking the same room, each as hot as cos³ of its angle, the same whatever dots happen to
 be there. Take the dots away and the regular heat map is all that is left, with no border. Turn the look and the dots stream across a heat that stays put about the crosshair. That is the read:
 directions and their heat, given; the dots met, wherever they happen to be.
@@ -453,7 +453,7 @@ Put a sphere, free to turn, at the centre of a cube of half-width e. From the ce
 its ray to exactly one point of the cube's surface, on the face of its largest component. Every point of the surface is
 reached once, at every size of cube and after any turn of the sphere.
 
-H, V and V₂ held as amounts combine into the blueprint's sphere, round only where they are written equal and an
+H, V and V₂ held as amounts combine into the dual hemispherical vantage's sphere, round only where they are written equal and an
 ellipsoid otherwise (drawn unequal, the readings from inside are still a Cauchy, stretched, the same family). H, H and H, one
 thumb crossed with itself, combine into the read's Cauchy. The sphere in this section is the first; the faces' heat is
 the second.
@@ -481,8 +481,8 @@ Physics* (`../reads-and-writes-physics.md`), §6.1).
 
 ## 12. What it comes to
 
-**Reading and writing.** The blueprint's drawing of three parties is the flat triangle, the sum, needing no standpoint and
-holding the truth as one point. The blueprint's description of a read is the wedge, built from a standpoint, holding every
+**Reading and writing.** The dual hemispherical vantage's (DHV's) drawing of three parties is the flat triangle, the sum, needing no standpoint and
+holding the truth as one point. The DHV's description of a read is the wedge, built from a standpoint, holding every
 party at its one length: the triangle's centre. The difference between them is two numbers, one per party, and both are
 amounts. What the observer itself looks down is neither: it is the horizon's heat map, generated from the thumb wherever it looks.
 

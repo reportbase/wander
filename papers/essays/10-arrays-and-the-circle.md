@@ -39,7 +39,7 @@ read's side of the same split is a direction and its heat, continuous and with n
 arrives along it. Why the read's heat follows the uniform turn is the second essay's result, not the array's.
 
 **The index is the address.** The places are fixed by the index before any value is stored, at equal steps of turn.
-Read each place as its slope, the reading v/h of the second essay (in the blueprint's angle, the half-angle
+Read each place as its slope, the reading v/h of the second essay (in the dual hemispherical vantage's angle, the half-angle
 s_k = tan(θ_k/2)). For even N
 those slopes are exactly the N evenly spaced quantiles of the standard Cauchy. At N = 8, for instance, they are
 
@@ -68,14 +68,14 @@ round the whole.
   half-Cauchy, the law of one quarter turn.
 - Within an array, its middle is the corner, and reading it backwards is the reciprocal: tan θ_k · tan θ_(N−1−k) = 1.
 - A closed curve stored as 4N samples over the full turn is these four arrays laid end to end. A sphere is eight arrays,
-  one per octant, each two-dimensional, uniform in azimuth and in height, the fifth essay's wedge (the blueprint's
-  description; a read has the horizon's heat map).
+  one per octant, each two-dimensional, uniform in azimuth and in height, the fifth essay's wedge (described from the dual
+  hemispherical vantage, DHV for short; a read has the horizon's heat map).
 
-**The arrays are read; the blueprint joins them.** A reading carries no sign, and turns composed by tangent
+**The arrays are read; the DHV joins them.** A reading carries no sign, and turns composed by tangent
 addition repeat after a half turn. So from a standpoint every facing is the same array, and a read is within one.
 To join two arrays, their values must meet at the shared end in one unit, and that needs each array's size, its length
 in amounts. A read holds each array only up to its own factor, the size no reading fixes, so it cannot tell whether
-two ends meet. The blueprint holds the sizes, and which facing each array is, and so it joins the four into the closed
+two ends meet. The DHV holds the sizes, and which facing each array is, and so it joins the four into the closed
 circle or the eight into the sphere.
 
 **Not knowing the size makes the corner and the horizon.** This is the array's way of saying what the first essay said
@@ -86,10 +86,10 @@ split of near from far and the median of its readings: the corner. With no size,
 only a direction, [0 : 1], where the chart v/h runs out: the horizon. Both are the read's because the size is missing.
 With the size held, there is neither.
 
-**The read's arrays and the blueprint's.** The first essay's two sides give four kinds of array, two each.
-- **The blueprint's circle** is a constant array of known length, every entry the radius. Its one value needs no storing, so the
+**The read's arrays and the DHV's.** The first essay's two sides give four kinds of array, two each.
+- **The DHV's circle** is a constant array of known length, every entry the radius. Its one value needs no storing, so the
   array is the equation h² + v² = 1.
-- **The blueprint's shape** is an ordinary array of known length, a breadth in amounts at every index, which the blueprint joins into
+- **The DHV's shape** is an ordinary array of known length, a breadth in amounts at every index, which the DHV joins into
   the closed shape.
 - **The paint on the read's places** gives the values without the length: an amount at each given index, known only up to one common factor.
   The values can be ranked and averaged against each other, and cannot be sized.
@@ -99,7 +99,7 @@ With the size held, there is neither.
 
 With nothing related there is no array: a length H, the thumb, but no index and no relation to store.
 
-The blueprint's arrays are the circle and the shape, with the length known. The read's are the payload on the index and the index
+The DHV's arrays are the circle and the shape, with the length known. The read's are the payload on the index and the index
 itself, with the length missing. That one number is a count of the whole.
 
 **Laid on the quarter turn.** Take K = 8 places on the quarter turn. A direction's share of the turn is g = (2/π)·arctan(v/h),
@@ -113,7 +113,7 @@ so its index is k = ⌊8g⌋, with the horizon kept in the last place. No length
 
 The corner is the boundary between places 3 and 4, found with no length. A reading and its reciprocal go to places k
 and 7 − k: 2 to place 5, ½ to place 2. Scaling the world by 10⁻³, 7 or 10⁶ leaves a reading of 3 in place 6. The
-blueprint, from the circle's centre, meets the same point at twice the angle (Euclid III.20, in angles), indexes it by
+DHV, from the circle's centre, meets the same point at twice the angle (Euclid III.20, in angles), indexes it by
 ⌊K·φ/π⌋ over its half turn and lands on the same place, place for place. One index serves both.
 
 Against that, a count index places an amount x on [0, X] at ⌊N·x/X⌋, which needs X. With N = 8 and X = 100, the amounts 10, 50
@@ -226,8 +226,8 @@ every kernel value computed only as the rational function above of these constru
 anywhere, exact to 10⁻¹⁶ at N up to 64; the algebraic paper carries the lattice alone to N = 2048, within 3·10⁻¹⁵ of the
 tangent construction, with every trigonometric function replaced by a counter that stays at zero. That it can be done at
 all rests on one fact: halving a turn needs one square root and nothing more. On these essays' rulings that square root
-is where the blueprint comes in: halving a length is the read's, halving a turn takes two lengths combined, the
-hypotenuse √(1 + s²) (the fifteenth essay, and *Reads and Writes* §9). So the lattice is the blueprint's, and what a
+is where the dual hemispherical vantage (DHV) comes in: halving a length is the read's, halving a turn takes two lengths combined, the
+hypotenuse √(1 + s²) (the fifteenth essay, and *Reads and Writes* §9). So the lattice is the DHV's, and what a
 read holds are its leaves, each one a ratio.
 
 **Two charts, one circle.** So the reconstruction theorem is proved in one coordinate and run in another. The proof uses
@@ -236,7 +236,7 @@ speaks. The operation uses the slope: ratios, the reciprocal, tangent addition, 
 same closed line, the third essay's projective line of directions, read through s = tan(φ/2). The angle chart needs the
 whole circle at once, every period and every closed identity defined on a finished turn, and the proof is right to use
 it. The slope chart is the chart of one reading at a time, and the operation, which reads one point, never needs more.
-Trigonometry is the blueprint's tool here, not anything in a read: the blueprint has the count of the leaves and both
+Trigonometry is the DHV's tool here, not anything in a read: the DHV has the count of the leaves and both
 hemispheres of the turn and describes a read that has neither. The proof's one square root, √(1 + s²), belongs with
 it, since it is the halving of a turn, which lays the lattice; the read's kernel at the leaves is rational.
 
@@ -316,14 +316,14 @@ these essays do. Three are worth naming, so that a reader of both is not misled.
   is the turn's is set by the standpoint. Which reading of "unique" the papers mean is still awaiting a ruling, and these
   essays do not borrow the stronger words.
 - **The observer and the spectator.** The papers speak of a bounded observer and a spectator. In these essays those are the
-  read and the blueprint, and the point is the same one: a read holds a finite count of places and never the completed
-  grid; the blueprint is the completed grid and the theorems about it. The papers' K, the leaves actually drawn, and N,
+  read and the dual hemispherical vantage (DHV), and the point is the same one: a read holds a finite count of places and never the completed
+  grid; the DHV is the completed grid and the theorems about it. The papers' K, the leaves actually drawn, and N,
   the completed grid, are the fourth essay's K and N.
 - **2/π.** The papers read the Lebesgue constant's 2/π as the chord over the arc. The essays have kept that number to what
   it was found to be: a ratio of two sums over the turn, the uniform turn's mean of a projection, taken by whoever adds the
   projections. The algebraic paper shows where its π sits: the sum of |sin| over the turn, written in the slope, is
   2∫₀^∞ s(1 + s²)^(−3/2) ds = 2, algebraic, and the π is the turn's own total, dividing it. The 2 is in the slope's
-  arithmetic; the π is the blueprint's count of the whole turn.
+  arithmetic; the π is the DHV's count of the whole turn.
 
 None of this touches the mathematics. The kernel identities, the round trip, the slope form, the nesting and the transform
 are exact, and checked.
@@ -337,7 +337,7 @@ address, laid before anything is stored, the Cauchy's quantiles. Its values are 
 place. The index is a count laid on the read's heat, which counts nothing: *the heat is given; the paint is
 met.* Its length is what the finished array has and a read lacks, and the lack is what makes the corner and the horizon.
 The four kinds of array, the constant, the known-length, the values without the length and the index alone, are the
-blueprint's two and the one read, counted two ways. Joining arrays into a closed circle is the blueprint's; reading within one
+dual hemispherical vantage's two and the one read, counted two ways. Joining arrays into a closed circle is the DHV's; reading within one
 is a read's.
 
 **The Cauchy.** With two places on a circle, the kernel that carries each stored value round the circle is the Cauchy's
@@ -362,7 +362,7 @@ Lebesgue's lemma, Jackson's estimate, Erdős and Turán's bound on the Lebesgue 
 summation and the Cooley–Tukey factorization, as presented there. The aimed terms are Takenaka's (1925) and Malmquist's (1926), chosen as in
 Qian and Wang's adaptive Fourier decomposition (2011); Poisson's kernel and Abel's summation are classical.
 
-The array picture, its four facings, the read's and the blueprint's arrays and the worked example with K = 8 are set out in
+The array picture, its four facings, the read's and the dual hemispherical vantage's arrays and the worked example with K = 8 are set out in
 *Observation from Somewhere* (archived since 30 October and kept for its proofs; the current account is *Reads and Writes*, rewritten on 10
 November with read and write, R788), §7.3 ("In the picture of an array", "Laid on the sweeps"), and for programmers in the
 computer-science companion, §6 ("The array").

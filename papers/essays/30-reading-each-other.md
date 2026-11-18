@@ -60,7 +60,7 @@ necessary. With N things all reading each other it is worse: every write changes
 of the whole exchange grows without bound, which is essay 16's and §6 of *Reads and Writes*'s "a record the size of
 what it records" (R1050).
 
-Tom's claim is that this is the blueprint's problem, not the things'. Each thing does one read and one write a step.
+Tom's claim is that this is the problem of the dual hemispherical vantage (DHV), not the things'. Each thing does one read and one write a step.
 None of them walks the infinity. And where there is a law, the infinity is not walked at all: one expression covers
 every length of the exchange at once (R864, R871).
 
@@ -207,7 +207,7 @@ spends the start's digits at the rule's own rate. In those cases nothing collaps
 a time.
 
 Even there no thing walks an infinity. Each does one read and one write a step, locally, and carries its own state.
-Only a blueprint trying to hold every thing at once has the growing record (R1050). So the infinity was never the
+Only the dual hemispherical vantage, trying to hold every thing at once, has the growing record (R1050). So the infinity was never the
 things' problem. But "inevitable" belongs only to the cases with a law.
 
 ## 10. Laws between systems
@@ -250,8 +250,8 @@ So a collision sorts like this. Before it, the two balls only read each other. A
 what makes it a touch is that each ball writes its own new state. Which way the push goes is a read, along the line of
 centres. How it is shared is a read too, the sizes cubed, but only because one material was assumed; a second material
 would need the densities, which are amounts. How much speed comes back, the grip of the cloth and every speed in a unit
-are writes. And when it all happens, for every ball at once, is the blueprint's: one frame, one tick, one integrator.
-Where and which way is read, how much is written, and when is the blueprint's.
+are writes. And when it all happens, for every ball at once, is the dual hemispherical vantage's (the DHV's): one frame, one tick, one
+integrator. Where and which way is read, how much is written, and when is the DHV's.
 
 A cannonball is the other kind of case. In a vacuum its arc is all read, set by the launch slope alone, with gravity
 writing only how far and how long; with air, the drag reaches the shape only as one ratio of writes (CNB). But a real
@@ -314,7 +314,7 @@ four standard errors, was not.)
 
 The theorem underneath is Gauss–Bonnet, and it sorts the same way. As usually stated it holds the region whole, its
 curvature added up over the area equal to what the boundary falls short of straight, a total from no standpoint (the
-dual hemispherical vantage's, the blueprint's). The same fact from inside the loop is smaller: each edge's turn is two
+dual hemispherical vantage's). The same fact from inside the loop is smaller: each edge's turn is two
 reads, composed in order round the loop by the slope rule (s + a)/(1 − sa), and the only question is whether the loop
 comes home. That composing needs no angle and no π (HLX found a loop's leftover rational in its half-slope squared), but
 it does need the edges taken in order, so a loop is reads held together across standpoints, or one standpoint's looks
@@ -361,7 +361,7 @@ they combine: the sorting.
 - the readings and the corner as the geometry's;
 - the rule, the stride and the timing as each thing's own writes;
 - the heat as what keeps the conclusion a distribution;
-- the infinity as the blueprint's;
+- the infinity as the dual hemispherical vantage's;
 - the shared product, the owned ratio and the Möbius freedom as one account of many systems reading each other, with
   Euler's −1 as the place a fair exchange rests.
 

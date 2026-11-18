@@ -32,12 +32,12 @@ laid over the writes, with no unit in it.
 a physical law carries units; they are not a third kind beside reading and writing. That the geometry's laws are of
 this kind may be why it needs no memory.
 
-The plainest example is Euler's identity. The blueprint, which here means classical geometry with its view from no standpoint, brought in only for comparison, states it as e^(iπ) = −1, with an exponential, the number e and a
+The plainest example is Euler's identity. The dual hemispherical vantage (DHV; informally, a blueprint), which here means classical geometry with its view from no standpoint, brought in only for comparison, states it as e^(iπ) = −1, with an exponential, the number e and a
 half turn measured by π. The same relation is there in a form that uses none of them: write a direction of slope s as
 w(s) = (1 + is)/(1 − is), and w(s)·w(1/s) = −1 for every slope, a direction and its reciprocal; at the corner, i·i = −1.
 The algebra is ordinary and the two forms are equivalent. The simpler one exists because it relates directions of one
 read; a position, a total or a closing has no simpler read's form, because a read does not hold them at all. And the
-blueprint's form holds something the read's does not, the join completed (the second essay, section 9).
+DHV's form holds something the read's does not, the join completed (the second essay, section 9).
 
 ---
 
@@ -85,7 +85,7 @@ outside?
 
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
-| continuous | reading: a read, and what reads held together give, a distance in thumbs or a map | the number line in a unit (the blueprint) |
+| continuous | reading: a read, and what reads held together give, a distance in thumbs or a map | the number line in a unit (the dual hemispherical vantage) |
 | discrete | a count or an order, descriptions kept in writes | a write |
 
 A read is continuous and unmoved: a direction, a slope, a ratio of slopes. A write is discrete and moved: a stone, a
@@ -93,7 +93,7 @@ stride, a mark on a wall, a metre bar, or an amount put down in a unit, 0.7 m. A
 only by being read: reading is continuous, and what is read is discrete. The other two boxes are tools of description.
 A count, "three trees", "514 strides", is discrete and unmoved: the strides are writes, the count is an account laid
 over them, and what is kept of it is kept as things (marks, pebbles), each a write. A length as an exact number in a
-unit, or the circle held whole at a size, is continuous and moved: the blueprint, set beside the two acts for comparison.
+unit, or the circle held whole at a size, is continuous and moved: the DHV, set beside the two acts for comparison.
 
 A write belongs to whoever made it. The world we read is painted without pause, so every read meets it as it is now;
 what we set down about it, a count, a measured amount, a record, is ours, not the world's. And the world reads and writes
@@ -101,7 +101,7 @@ too. Each thing in it reads its surroundings from its own standpoint and, from t
 stone's size is the stone's write, the stride counted is the walker's. So a read reads the writes of another, which were
 written from that one's read of another's writes, and no one holds the whole. How the paint was made, or how it got here,
 is in no read: a read holds its heat and the paint on it, and any account of the paint's journey (a lamp, a window, a
-paint gun) is told from no standpoint, the blueprint's. "Reads" here names the geometry of a standpoint, what arrives as
+paint gun) is told from no standpoint, the DHV's. "Reads" here names the geometry of a standpoint, what arrives as
 directions and slopes with no scale, never awareness. It has been built and checked where each pool ball reads the
 others and writes its own contact at h + v = 1 (pool played from inside, `pool.html`, POL); that natural processes do it throughout is expected, not tested
 (*Reads and Writes* §1, "Whose writes").
@@ -128,7 +128,7 @@ The rest of the essay takes these two acts apart. They have a structure, and the
 
 Every reading you could ever take can be sorted by asking two questions about it. Each question has two answers, and
 each answer either ends the sorting or leads to the next question. So every reading lands in exactly one place, and the
-places do not overlap. There are two of them: the blueprint's, which has no standpoint and is set here for comparison, and
+places do not overlap. There are two of them: the dual hemispherical vantage's (DHV's), which has no standpoint and is set here for comparison, and
 the read's.
 
 Before the questions, a little language. You, the observer, have a length of your own. It might be your stride, your thumb
@@ -147,8 +147,8 @@ length, then there is nothing to read. You have your own length and nothing to h
 the same as having a reading. A ruler in a dark room measures nothing.
 
 **Second: is the other's breadth V known?** If it is, the whole thing is in your hands: both lengths, both amounts, and
-everything that follows from them. That is the **blueprint**. If V equals H in every direction, the whole is a circle, the
-equation h² + v² = 1, held whole: the blueprint's circle is the thumb held to equal the mountain. If V is known but differs
+everything that follows from them. That is the **DHV**. If V equals H in every direction, the whole is a circle, the
+equation h² + v² = 1, held whole: the DHV's circle is the thumb held to equal the mountain. If V is known but differs
 from H, or differs from one direction to another, the whole is some other shape, an ellipse, a coastline, a floor plan, a
 breadth given in every direction.
 
@@ -165,19 +165,19 @@ the near reading s = v/h (V in terms of H) and the far reading 1/s = h/v (H in t
 
 | side | what you know | what you have | a picture of it |
 |---|---|---|---|
-| the blueprint | the other's breadth V, equal to H or not | the whole, as a circle or a shape | the equation h² + v² = 1; an architect's drawing |
+| the DHV | the other's breadth V, equal to H or not | the whole, as a circle or a shape | the equation h² + v² = 1; an architect's drawing |
 | a read | your length H, and a standpoint; never V | the directions, and what arrives along each | a hand held up to a stained-glass window |
 
 Each has a scene that fits it.
 
-The blueprint's scene is the circle in a geometry book, centre, radius, the equation, every point at once; or an architect's
+The DHV's scene is the circle in a geometry book, centre, radius, the equation, every point at once; or an architect's
 drawing, every wall drawn to scale, front and back, from no particular place, every length marked in one unit.
 
 A read's scene is a stained-glass window seen from inside a church, with a hand held up against it, fingers spread.
 Each finger points in one direction. The fingers are there whether the light is bright or dim, red or blue, or out
 altogether. They are the places the colour can be put. They are not the colour. Each pane lights the finger it lines up
 with, and the window tells you nothing about how far away the sun is. In space it takes both hands, thumbs crossed: not
-three axes of amounts, as the blueprint has, but one thumb and two sweeps of fingers (the fifth essay).
+three axes of amounts, as the DHV has, but one thumb and two sweeps of fingers (the fifth essay).
 
 ### Things that look like a third act
 
@@ -188,9 +188,9 @@ People sometimes think of a case the two leave out. Each turns out to be one of 
   what was read.
 - **Several observers.** Each has a standpoint of its own. What passes between them is a separate matter, which the essay
   comes to in section 6.
-- **A system that changes over time.** At any one reading it is a read's or the blueprint's. An observer can pass from
+- **A system that changes over time.** At any one reading it is a read's or the DHV's. An observer can pass from
   reading to writing, as the observer in the room did the moment the stride was measured; that is a write, made from a
-  standpoint, and the blueprint has none.
+  standpoint, and the DHV has none.
 - **Directions along which nothing arrives.** These are still directions, with their heat and nothing painted on them. That is a fact
   about what arrives, not about the vantage.
 - **Your own length changes between readings.** This changes no reading. Every reading is a ratio, and your unit
@@ -213,12 +213,12 @@ or empty sky with. The thing decides what is met; what changes the geometry of t
 boost, never the thing.
 
 The apple itself is the result of many writes: its history up to now, the back, the inside and the seeds, held whole by
-nothing but the apple. A blueprint of it is a representation, a drawing from no standpoint, and any blueprint anyone
-makes is a record of that person's writes, not the apple's, so it falls short. Make the blueprint leave nothing out, the
+nothing but the apple. A representation of it is a drawing from no standpoint, and any representation anyone
+makes is a record of that person's writes, not the apple's, so it falls short. Make the representation leave nothing out, the
 size of the apple and every write in it, and it stops being a representation: it is the apple. The thing is made of
-writes; a blueprint only stands for them (*Reads and Writes* §1, "The thing and its blueprint").
+writes; a representation only stands for them (*Reads and Writes* §1, "The thing and its representation").
 
-*Demo: the blueprint's box, its three views: the blueprint's, a read's from home, and ranges.*
+*Demo: the blueprint's box, its three views: the DHV's, a read's from home, and ranges.*
 
 ---
 
@@ -226,23 +226,23 @@ writes; a blueprint only stands for them (*Reads and Writes* §1, "The thing and
 
 Set beside the two acts of the first section, the two sides sort cleanly.
 
-**The blueprint's shapes are amounts alone, the kind of thing a write states.** A blueprint states amounts: this wall is
+**The dual hemispherical vantage's (DHV's) shapes are amounts alone, the kind of thing a write states.** The DHV states amounts: this wall is
 four metres, that door is ninety centimetres. It holds every breadth, and holding every breadth means holding the whole, front and
 back, from no standpoint at all. An architect's drawing is not a view from anywhere. It is what you would have if you
 could stand nowhere and see everything. Its natural frame is a box, one number line along each axis, both signs, every
 side an amount. Nothing in it is round, because roundness, as we will see, belongs to turning from a point, and the
-blueprint has no point to turn from.
+DHV has no point to turn from.
 
 **The directions, their heat and their paint are reading alone.** They are what a standpoint has: directions, and what arrives along
 them. No second breadth is known, and none is needed to read.
 
-**The circle is the blueprint's, and the read's geometry looks just like it, which is why the whole distinction is so easy
-to miss.** The circle is the most familiar object in mathematics. The blueprint holds it as an equation, h² + v² = 1, with V
+**The circle is the DHV's, and the read's geometry looks just like it, which is why the whole distinction is so easy
+to miss.** The circle is the most familiar object in mathematics. The DHV holds it as an equation, h² + v² = 1, with V
 known to equal H: the thumb held to equal the mountain. A read has no circle. The observer points its crossed thumbs (in the
 plane, one thumb) at the mountain, and that pointing generates a geometry of its own, which section 4 will explain: a
 corner where the thumbs cross, directions laid by turning, near and far read as ratios of the thumb. That geometry has every feature
 of the circle except the circle. Because of that, the line between reading and writing runs straight through the middle of
-the thing everyone starts from, and it is very hard to see. Classical geometry works almost entirely on the blueprint's side.
+the thing everyone starts from, and it is very hard to see. Classical geometry works almost entirely on the DHV's side.
 It never needs to say so, because the circle it begins with looks, from a standpoint, like what the pointing gives.
 
 So the map is simple:
@@ -250,8 +250,8 @@ So the map is simple:
 | what | whose |
 |---|---|
 | nothing related | no one's: nothing to read |
-| the circle | the blueprint's: V = H, the thumb equal to the mountain; the thumbs' pointing gives its features, not the circle |
-| any other shape, in amounts | the blueprint's alone |
+| the circle | the DHV's: V = H, the thumb equal to the mountain; the thumbs' pointing gives its features, not the circle |
+| any other shape, in amounts | the DHV's alone |
 | the directions, their heat and their paint | the read's alone |
 
 ### What writing needs
@@ -297,7 +297,7 @@ sees.
 
 Here is the part of the story that seems to me the most surprising.
 
-Look again at the circle, the place where a read and the blueprint meet. The blueprint's circle is an equation in
+Look again at the circle, the place where a read and the dual hemispherical vantage (DHV) meet. The DHV's circle is an equation in
 two breadths. To write h² + v² = 1, and to mean it as a statement about lengths, you must know V and know that it
 equals H. Two amounts, and a claim about how they compare.
 
@@ -311,7 +311,7 @@ without the circle. Where does it come from?
 It comes from pointing. Hold your one length, H, your thumb, up at the mountain, and turn it about one end, steadily, like
 the beam of a lighthouse sweeping the sea, or your gaze sweeping along a row of trees. Drawn whole, the free end
 traces a circle, for one simple reason: the length does not change as it turns. A read does not hold that circle.
-Circles and spheres are the blueprint's; a read has a vantage, not a shape. It holds where the thumb points, and each pointing is a reading. Its geometry is what the pointing generates.
+Circles and spheres are the DHV's; a read has a vantage, not a shape. It holds where the thumb points, and each pointing is a reading. Its geometry is what the pointing generates.
 
 Now ask what is read as the thumb turns. At each moment the length points in some direction. The direction has an
 across part and an up part, two shares of the same length: h across and v up. What is read is how they compare,
@@ -331,9 +331,9 @@ there: the line's shape, the measurements' ratio, the flashes on the beach.
 Read from the standpoint, it is something else. It is the law of the directions themselves: the turn's own measure,
 there before anything arrives to be measured. And it needs no V at all.
 
-**The Cauchy is the blueprint's circle with the second breadth taken away.**
+**The Cauchy is the DHV's circle with the second breadth taken away.**
 
-Consider what the blueprint's circle gives. On a quarter turn, from straight ahead to straight up, there is a special place in
+Consider what the DHV's circle gives. On a quarter turn, from straight ahead to straight up, there is a special place in
 the middle: 45°, where the across and the up are equal and v equals h. The quarter turn is symmetric about it. Swap across
 for up and the near half lands on the far half, point for point. Half of the turn lies on each side.
 
@@ -349,7 +349,7 @@ Every one of those features survives in the Cauchy, and none of them needs V.
   corner, between a half and two. The rest thin out toward each end. Every equal step of turning holds equal weight;
   only the slope, read as a number, crowds and thins.
 
-The blueprint's circle has every one of these properties, with V known. The pointed thumb has every one of them with V
+The DHV's circle has every one of these properties, with V known. The pointed thumb has every one of them with V
 unknown, and no circle. That is the sense in which the Cauchy is the circle without the V. It is the circle's geometry, the
 corner, the halves and the swap, generated by one thumb pointed, with no circle held.
 
@@ -357,7 +357,7 @@ corner, the halves and the swap, generated by one thumb pointed, with no circle 
 
 The second breadth is gone, but it leaves its mark, and the mark is the most famous thing about the Cauchy.
 
-The blueprint's circle closes. Go far enough round it and you come back to where you started, at a place you could name in
+The DHV's circle closes. Go far enough round it and you come back to where you started, at a place you could name in
 amounts. A read's quarter turn ends somewhere else entirely: at straight up, where h has dropped to nothing and the
 reading v/h has run off to infinity. That end is the **horizon**. It is a direction you can always point at, and it is
 never a place. Nothing has a distance there, because a distance would need the very breadth that is missing.
@@ -370,7 +370,7 @@ not there. The median, sitting at the corner, is perfectly well defined. It is w
 on the size of anything.
 
 There is a neat way to say all this. Not knowing the size of the far end is exactly what gives the corner its job and
-creates the horizon. The read's geometry needs V unknown. The blueprint, holding V, has neither. Its corner is just a point
+creates the horizon. The read's geometry needs V unknown. The DHV, holding V, has neither. Its corner is just a point
 on the circle, and its circle has no horizon, because it closes.
 
 ### What it means
@@ -393,8 +393,8 @@ direction read from a standpoint. Its median is the corner, a feature of the geo
 there is no amount to be had.
 
 One more point, about a phrase that appears often in the writings this essay draws on: "V = H". When the observer
-points its thumb, one length is turned; the blueprint draws the circle its tip would trace, and describes it in its own
-terms: two breadths, both equal to H, the thumb equal to the mountain. The phrase is the blueprint's name for that circle. A
+points its thumb, one length is turned; the DHV draws the circle its tip would trace, and describes it in its own
+terms: two breadths, both equal to H, the thumb equal to the mountain. The phrase is the DHV's name for that circle. A
 read never sets V equal to H. It has no V to set, and no circle.
 
 ### What is old and what is new
@@ -412,7 +412,7 @@ radius, so the absence of a V is never remarked. What is new is the reading of w
 length and never has V, and each feature of the Cauchy is a feature of the circle that survives without V. The corner
 is the median, the near and far halves are mirrored by the reciprocal, and the lack of a mean is what a read of directions
 is, with no V in it to leave anything behind.
-The blueprint, holding V, has its far end as an amount: no horizon, and the corner only a point. We did not find this
+The DHV, holding V, has its far end as an amount: no horizon, and the corner only a point. We did not find this
 assembly in print; the pieces are classical.
 
 The Cauchy's own story is long, and it has its own essay, the third: how its directions and their heat are kept apart from what arrives,
@@ -420,7 +420,7 @@ why it is the law a reasoner ignorant of scale must assign, and a second test to
 is only this. The deepest piece of the read's side, the law of its directions, is the circle's geometry without the
 circle: what one thumb, pointed, generates.
 
-*Demos: one turn and one read (the blueprint's ray and radius meeting on one circle, Euclid III.20, in angles); sweeping
+*Demos: one turn and one read (the DHV's ray and radius meeting on one circle, Euclid III.20, in angles); sweeping
 from zero (the turn counted against itself); the hand (its fingers laid by the turn, painted by the light).*
 
 ---
@@ -469,7 +469,7 @@ large. The view is still the same. The mountain's width in miles changed every t
 did.
 
 Try it on the two sides. A read's directions, their heat and their paint never move: they are what a standpoint has, and a standpoint
-has only directions. The blueprint moves by k in every number it states. The circle is the blueprint's, and it moves
+has only directions. The dual hemispherical vantage (DHV) moves by k in every number it states. The circle is the DHV's, and it moves
 with the amounts; the thumb's pointing, read as directions, does not.
 
 In Euler's notation the test has a picture. Write a thing as a direction times an amount, r·e^(iθ), and take the
@@ -654,8 +654,8 @@ position: the length it starts from, and the places it chooses to stand.
 **Completeness is never a reading.** A loop that closes shows that the routes taken agree. It cannot show that no
 route remains untaken. So an observer can find out that its account is incomplete, when two routes disagree, but it can
 never prove that its account is complete. And even when an observer recovers something exactly, its shape, its places,
-even its size in strides once a stride is counted, recovering it does not make its reads a blueprint. The blueprint holds the whole,
-from no standpoint. An observer that arrives at the blueprint's answer got there by cleverness: where it
+even its size in strides once a stride is counted, recovering it does not make its reads the dual hemispherical vantage (DHV). The DHV holds the whole,
+from no standpoint. An observer that arrives at the DHV's answer got there by cleverness: where it
 stood, which loops it closed, what it was handed. That is not a lesser achievement. It is a different one.
 
 *Demo: a read is a slide rule: chains, loops and a misread link.*

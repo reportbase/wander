@@ -86,8 +86,8 @@ say. Then the reading grows by the same ratio each step, the approach slows as t
 quite touches: the foot is a limit, met at no speed. A landing has this form; a walk has the first. The two are different
 paces, and no pace is both.
 
-The blueprint has one picture for both. Put each reading s on Z = (1 + is)/(1 − is): far off Z is 1, at the corner i, at
-the foot −1, the blueprint's e^(iπ) = −1. The steady stride reaches −1 in a finite count; the fixed share approaches it for
+The dual hemispherical vantage (DHV) has one picture for both. Put each reading s on Z = (1 + is)/(1 − is): far off Z is 1, at the corner i, at
+the foot −1, the DHV's e^(iπ) = −1. The steady stride reaches −1 in a finite count; the fixed share approaches it for
 ever; a turn of the look moves every reading and arrives nowhere. These are the three kinds of map the line of slopes
 has, and they are classical. What each thing that approaches does with them is its own affair; the readings they stand on
 are the same for all, and cost nothing (WLK, exact; `approach.html`).
@@ -95,10 +95,10 @@ are the same for all, and cost nothing (WLK, exact; `approach.html`).
 One more thing the walk shows, about where the infinite is. Parallax is the link: two looks and one counted stride. Chain
 the links and the middle cancels; the whole walk comes down to its first look and its last, however many strides lay
 between, and nothing needs the stride to be small. From the corner to the foot the looks gather exactly a quarter of the
-blueprint's circle, in seven strides or a thousand. The half circle, Euler's −1 reached from 1, belongs only to a walk that
+DHV's circle, in seven strides or a thousand. The half circle, Euler's −1 reached from 1, belongs only to a walk that
 began without end: start thirty corners out and you gather all of it but about a fiftieth, a million corners out all but
 less than a millionth. The infinite in Euler's identity is the horizon behind you, not a vanishing step. A step has to
-shrink only when slopes are added as if they were angles, which is the blueprint's sum and the blueprint's limit.
+shrink only when slopes are added as if they were angles, which is the DHV's sum and the DHV's limit.
 
 And the look and the count multiply. The reading times the strides left is the same at every place, the corner's
 distance in strides; with the thumb over the arm it is the thing's size in strides. Counted in corners it is 1: a
@@ -164,7 +164,7 @@ chart, the cotangent of its angle: cot a from one end, cot b from the other. The
   cot a + cot b = B / d.
 
 Each read is taken inward, toward the other standpoint, so both are positive for a target between the two feet; in
-slopes off the baseline they are 1/s₁ and 1/s₂, and the angles a and b are only the blueprint's names for the two
+slopes off the baseline they are 1/s₁ and 1/s₂, and the angles a and b are only the names the dual hemispherical vantage (DHV) gives the two
 directions. The depth is the reciprocal of a sum of two reads. Those are exactly the operations the third essay found the Cauchy
 closed under: a sum, which is a relay of standpoints, and a reciprocal, which is the exchange. So parallax never takes a
 read out of the family.
@@ -174,8 +174,8 @@ about the true direction, and the two reads' errors are independent. In the cot 
 its point at w = (c + iγ)/(1 − iγc), c being the true value. The depth is then exactly a Cauchy, at every γ and not only
 for small errors, and its point is the same triangulation done on the two points instead of the two values:
 D = B/conj(w_a + w_b). The rays that fail to meet ahead are part of the same law, as negative depths. At the corner the
-depth's point stays at the true distance, turned by twice the read's error: D = d·(1 + iγ)/(1 − iγ) (the blueprint's d·e^(2i·atan γ)). Its median
-falls a little short, at d·(1 − γ²)/(1 + γ²) (the blueprint's d·cos(2·atan γ)).
+depth's point stays at the true distance, turned by twice the read's error: D = d·(1 + iγ)/(1 − iγ) (the DHV's d·e^(2i·atan γ)). Its median
+falls a little short, at d·(1 − γ²)/(1 + γ²) (the DHV's d·cos(2·atan γ)).
 
 Two things leave the family, and each can be seen in a line. The place across the line of sight is a ratio of two sums,
 a Cauchy only for small errors: its density right over each standpoint is infinite, because it multiplies a read's
@@ -197,7 +197,7 @@ neither look alone holds any of it. (Two standpoints at once, two eyes, need not
 its earlier look kept, in things, and the step taken, and those are writes.) The corner
 circle is the two slopes reciprocal, s₁·s₂ = 1, known without counting the step: above 1 the target is inside, below 1
 outside. On it d/B = s/(1 + s²): slopes 2 and ½ give the point (1/5, 2/5), a 3-4-5 triangle. The error's curve is
-rational as well, (k + 1/k)/2, the same at k and 1/k; cosh(ln k) is the blueprint's smooth name for it. π comes in only
+rational as well, (k + 1/k)/2, the same at k and 1/k; cosh(ln k) is the DHV's smooth name for it. π comes in only
 where a slope is turned into an angle: the parallax angle in arcseconds, the two angles that sum to π, the π/2 at the
 corner, the parsec's 648000/π astronomical units. The depth is rational, the range along a ray a square root, the
 angle a limit. What never needed π is the extent in steps; the step in metres is still the one amount carried in.
@@ -208,7 +208,7 @@ angle a limit. What never needed π is the extent in steps; the step in metres i
 
 ## 5. The band, and its far edge
 
-Read the direction to a step ε, the smallest change the pair can tell (an angle, in the blueprint's units). The relative depth error stays below 1 for a band
+Read the direction to a step ε, the smallest change the pair can tell (an angle, in the units of the dual hemispherical vantage). The relative depth error stays below 1 for a band
 reaching a factor of about 2/ε on each side of the corner, out to 2/ε half-baselines and in to ε/2 of one. At ε = 10⁻³,
 that is a factor of 2,000 each side (2 to the power 10.97).
 
@@ -246,7 +246,7 @@ the chain ends at the essays' geometry.
    That is the one amount carried in, and its history is the first essay's distinction between reading and writing
    played out over two hundred years.
 3. **The relative distance error equals the relative parallax error.** That rule is the far-field limit of an exact
-   ratio, γ/sin γ, which is the second essay's π/2, the blueprint's measure of the turn γ. It is exactly 1 far off, π/2 on Thales' circle,
+   ratio, γ/sin γ, which is the second essay's π/2, the dual hemispherical vantage's measure of the turn γ. It is exactly 1 far off, π/2 on Thales' circle,
    and grows without bound toward the baseline. Its reciprocal is the 2/π measure, and their product is 1.
 4. **An intersection is best when its rays cross square.** That is the corner.
 5. **Do not invert a noisy parallax.** Astronomers learned, from Thomas Lutz and Douglas Kelker in 1973 and many since,
@@ -312,7 +312,7 @@ Say it plainly: **a read never has a shape.** One look has the sweep, the same d
 same heat for every world, and the paint on them. *The heat is given; the paint is met.* A thing is to it the directions
 it paints and what it paints them with: a patch of directions, what is in front of what, a colour. How far the surface lies along each direction is not in one look, so one look gives no shape.
 Two looks held together give the shape up to its size, in the step between them, with no amount in it;
-ranging and a blueprint handed over give it in a unit, as amounts carried in. One look has the Cauchy sweep and its paint.
+ranging and a representation handed over give it in a unit, as amounts carried in. One look has the Cauchy sweep and its paint.
 
 That an image does not settle the shape that made it is an old observation: Helmholtz's perception as unconscious
 inference, inverse optics as an ill-posed problem (Poggio, Torre and Koch 1985), Gibson's optic array. Those accounts
@@ -402,10 +402,10 @@ and a direction; nothing in it is a place, nothing is counted, and a read has a 
 with the step walked, and one length counted makes the rationals: the fourteenth essay). A
 second standpoint adds a second variable, the step between the two. Now each point, matched in both looks, is two rays
 crossing, and its distance comes out of the crossing's lengths and angles, sines and square roots, numbers no single length
-makes. More standpoints give every place seen, in the step's length: the places a blueprint's box states on its three
+makes. More standpoints give every place seen, in the step's length: the places the box of the dual hemispherical vantage (DHV) states on its three
 number lines, up to its size. Count the step in an agreed unit and the places are in that unit.
 
-So parallax is how an observer comes to the places the blueprint's cube states, up to its size: the passage from one look to an extent.
+So parallax is how an observer comes to the places the DHV's cube states, up to its size: the passage from one look to an extent.
 Two standpoints held at once, two eyes, have the extent by reading alone, a ratio of their slopes. An observer that
 moved to its second standpoint kept its first look and took a step, and the mark that keeps and the stride taken are
 writes; what it then holds, every place in its own stride, is still unmoved when the world is scaled with the stride.
@@ -423,8 +423,8 @@ pair's corner, about ε·d/B far off, and past about B/ε nothing but a ray (the
 example, one thumb walked toward a range ten thumbs off puts it at k = 20, an error about ten times the step's ε; a
 baseline of twenty thumbs would put it at the corner. *Of which things:* the
 same two standpoints give V for the near things and leave it unknown for the far ones. More standpoints, a longer baseline,
-narrow the band; nothing closes it. Holding V exactly, as the blueprint does, is no stage of this: the stages approach
-the value the blueprint states and do not make the blueprint, the dual hemispherical vantage, which no standpoint holds. That is the fifteenth essay's shape again: every stage of learning V is a finite approximant, as
+narrow the band; nothing closes it. Holding V exactly, as the DHV does, is no stage of this: the stages approach
+the value the DHV states and do not make the DHV, which no standpoint holds. That is the fifteenth essay's shape again: every stage of learning V is a finite approximant, as
 every partial sum of π is, and holding V exactly, like holding π, would need the infinite process finished. An observer
 placing V holds it to so many digits, for so many things, out to so far. V is knowable, not known: parallax places it
 without V ever being known first, and holds it exactly only at the limit. The twelfth essay's four things (the universe,

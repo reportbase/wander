@@ -14,7 +14,7 @@ reads cos 2θ = (1 − s²)/(1 + s²): a fraction of fractions, true at every sl
 work no other number could. In the second, it is only a name the angle brings with it.
 
 This essay is about how often each happens. The question came out of the series' rule that a read uses no
-trigonometry: a read has slopes and shares, and an angle, with the π it brings, is the blueprint's way of writing them
+trigonometry: a read has slopes and shares, and an angle, with the π it brings, is the dual hemispherical vantage's way of writing them
 (*Reads and Writes* §1). If that is right, many laws among directions should not need π at all, and the ones that do
 should need it for a reason that can be named. Both turned out to be true, and the first less often than I expected.
 
@@ -176,7 +176,7 @@ fractions. The restatements are mine, and so is the reading of what the content 
 
 ## 9. What it changes
 
-The series has said that a read uses no trigonometry and that π is the blueprint's (*Reads and Writes* §1, R909). These
+The series has said that a read uses no trigonometry and that π is the dual hemispherical vantage's (*Reads and Writes* §1, R909). These
 runs put a number on how far that reaches into the laws themselves. Where a law relates directions and takes no limit, π
 or e is more often than not a name the angle or the logarithm brings, and the law holds without it. Where a law takes a
 limit, states a total or a value, or is about an amount, π or e does work, and saying so is not a criticism of the law:
