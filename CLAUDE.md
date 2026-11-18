@@ -564,6 +564,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   nothing kept), how open; Claude's candidate (untested) the share of the sky times the source's amount, the inverse
   square's form (exact for a sphere's pull and light). Never say a thing "reads nothing".
   R1089 (Tom: "update and merge"): R1088 in *Reads and Writes* §1 "Whose writes", essays 30 and 22.
+  EHO (`plans/eho-plan.md` + `runs/eho/`, 18 Nov; SPN R1090; Tom: "maybe we could do that for them with their own data?",
+  "yes"): the three layers (observer's geometry, spacetime, emission) sorted on the EHT's own numbers and public data,
+  predictions first (Q1–Q7); discussion note item 21. Run 1 on EHT 2017 and 2018 public data (2019-D01-01, 2024-D01-01,
+  ODC-PDDL, not committed): the observer's motion exact and negligible (rotation 0, scale 1/D, ≤ 0.05 μas; Q6 killed by my
+  sign); the 2017 ring steady to 2.7%; my fit's 2018 ring 7% larger (Q4 killed, cause open); every quantity sorted (Q1).
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.
