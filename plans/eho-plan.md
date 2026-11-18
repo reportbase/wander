@@ -150,3 +150,17 @@ cc0db19ee5110725d52d4dd79e9ce60daaf8a85cce60e8996d5ce50c8920a673  L2V1_M87_2018_
   three-layer sorting is in practice two layers, spacetime and emission, plus the writes carried in. Separating those
   two from one array's data is where the difficulty is, as the field says: my one-model fit held the size across a week
   and lost it across a year.
+
+**Run 2, predictions** (18 Nov, committed before the fit; Tom: "merge, than try closures"). Run 1's Q4 left one cause
+untested that the fit itself could remove: station gains. Run 1 fitted visibility amplitudes directly, and network
+calibration leaves station gain errors of several percent to tens of percent on amplitudes, which a ring's size can
+absorb. Closure amplitudes |V_ab||V_cd|/(|V_ac||V_bd|) over each quadrangle of four stations at one time, and closure
+phases over each triangle, cancel every station gain. Run 2 fits the same m-ring (order 1, Gaussian blur) to closure
+phases and log closure amplitudes only, with the flux fixed (closures carry no overall scale), the same baselines
+(> 0.1 Gλ), each visibility's error with 10% in quadrature as before. `runs/eho/eho4.py`.
+
+- **Q8:** 2017's diameter from closures stays steady over the four days and two bands: spread (max − min)/mean under 5%.
+- **Q9:** 2018 days 111 and 115 (bands b3, b4, the best covered, as in run 1's post hoc), mean diameter within 5% of
+  2017's closure mean. Killed if more than 5% apart. If killed, station gains are not the cause of Q4's gap, and what
+  is left is the array's coverage or the model.
+- **Q10 (recorded, not a kill):** 2018 day 112's fits, with 38 to 315 closure phases, are too sparse to count; reported only.
