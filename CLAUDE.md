@@ -552,7 +552,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   cannonball under quadratic drag, predictions first. Vacuum all read (range share 2s/(1 + s²), best at the corner, apex
   seen at slope s/2); air enters only through β = v₀²/(g·L), a ratio of two writes: best slope below the corner (s* ≈
   1 − 0.2100·β small, 0.47 at β = 100), the exchange broken toward the flat shot, a bigger ball nearer the corner. C7
-  killed by my set-up (flat maximum), C7′ not. Not in any paper.
+  killed by my set-up (flat maximum), C7′ not. R1085 (Tom: "the cannon ball trajectory is affected by many things";
+  "add it to the papers and essays and merge"): a flight written by many things at once, one read unable to sort them;
+  in *Reads and Writes* §1 "A flight, many writes", the physics paper §10, essay 30 §10.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.

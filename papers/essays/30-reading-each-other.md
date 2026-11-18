@@ -252,6 +252,12 @@ would need the densities, which are amounts. How much speed comes back, the grip
 are writes. And when it all happens, for every ball at once, is the blueprint's: one frame, one tick, one integrator.
 Where and which way is read, how much is written, and when is the blueprint's.
 
+A cannonball is the other kind of case. In a vacuum its arc is all read, set by the launch slope alone, with gravity
+writing only how far and how long; with air, the drag reaches the shape only as one ratio of writes (CNB). But a real
+flight is written by many things at once, all the way along it: the pull, the air, a wind that changes with height, the
+ball's spin. The arc is the ball's write of all of them, and one read of it cannot sort which did what. Pool is clean
+because so little is written between contacts; a flight is written the whole way.
+
 So Tom's guess is right in this sense: the pair's corner of §3 is the reader's form of Euler's identity held between two
 systems. It says where a rest can be. Whether the exchange gets there is still §5–§7's question.
 
