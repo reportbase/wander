@@ -414,6 +414,11 @@ that something is there and where to look next. Moving the corner there is a new
 
 This says where a focus *should* go, and why. It is not a claim about what any eye does.
 
+It also says where the observer's geometry is hardest to see: at the focus. There the lay is even to first order, so
+the geometry of the read enters only at second order and grows off the look. On the equal-area screen about the look it
+is 0.9% off at 15°, 3.4% at 30°, 7.6% at 45°; over a field as small as the Event Horizon Telescope's, 42 μas across, it
+is nothing anyone could measure (the seventh essay). Negligible is not absent.
+
 So an observer separates the near field from the far field by looking around at things: whatever the crossed thumbs point at
 is taken as H, half of every direction's heat in distance nearer than it and half farther, and looking at something else moves
 the split there. Parallax gives one more reason to think it should. A thing at the corner is a thing at parallax's corner:

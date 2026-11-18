@@ -206,7 +206,10 @@ its spacetime curved by its mass; that is what makes it a black hole. The geomet
 geometry, the same for the apple and the hole and anything else: directions from where you stand, their slopes, the
 corner, the counted step. A thing's own geometry decides only which part of it lands in which of your directions, as
 turning the apple does. So a measured number can carry three things: your geometry, the thing's own, and what the thing
-sends, its colour or its glow (*Reads and Writes* §2, "Observation geometry and a thing's own geometry").
+sends, its colour or its glow (*Reads and Writes* §2, "Observation geometry and a thing's own geometry"). There is no
+special geometry for looking at a black hole: the one the telescope reads M87* with is the one it reads an apple, a star
+or empty sky with. The thing decides what is met; what changes the geometry of the read is the observer's own state, a
+boost, never the thing.
 
 *Demo: the blueprint's box, its three views: the blueprint's, a read's from home, and ranges.*
 
