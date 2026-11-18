@@ -73,17 +73,23 @@ def fit(f):
     b1 = p[3] + 1j*p[4]
     return dict(d=p[0], ed=np.sqrt(abs(cov[0,0])), w=p[1], f=p[2], b=abs(b1), psi=np.rad2deg(-np.angle(b1)) % 360,
                 b2=abs(p[5]+1j*p[6]), b3=abs(p[7]+1j*p[8]), chi2=2*best.cost/len(best.fun), ncp=len(cps), nca=len(cas))
-res = {}
-for f in sorted(f for p in sys.argv[1:] for f in glob.glob(p)):
-    parts = f.split('/')[-1].split('_'); key = parts[2] + '-' + parts[3] + ' ' + parts[4]
-    r = fit(f); res[key] = r
-    print(f"{key}: d={r['d']:.2f}±{r['ed']:.2f} uas  w={r['w']:.1f}  f={r['f']:.2f}  |b1|={r['b']:.2f} |b2|={r['b2']:.2f} |b3|={r['b3']:.2f}  "
-          f"chi2/n={r['chi2']:.2f}  (closure phases {r['ncp']}, closure amplitudes {r['nca']})", flush=True)
-d17 = np.array([v['d'] for k,v in res.items() if k.startswith('2017')])
-d18 = np.array([v['d'] for k,v in res.items() if k[:8] in ('2018-111','2018-115') and k.endswith(('b3','b4'))])
-c17 = [v["chi2"] for k,v in res.items() if k.startswith("2017")]
-c18 = [v["chi2"] for k,v in res.items() if k[:8] in ("2018-111","2018-115") and k.endswith(("b3","b4"))]
-print(f"Q13: median chi2/n 2017 {np.median(c17):.3f}, 2018 b3/b4 {np.median(c18):.3f}")
-print(f"Q11 (2017): spread (max-min)/mean = {np.ptp(d17)/d17.mean():.4f}  (kill > 0.05); mean {d17.mean():.2f} uas")
-print(f"Q12 (2018 days 111, 115; b3, b4): mean {d18.mean():.2f} uas against 2017's {d17.mean():.2f}: off {abs(d18.mean()-d17.mean())/d17.mean():.4f}  (kill > 0.05)")
-print("(2018 day 112, recorded):", ", ".join(f"{k}: {v['d']:.1f}" for k,v in res.items() if k.startswith('2018-112')))
+if __name__ == "__main__":
+    import multiprocessing as mp
+    files = sorted(f for p in sys.argv[1:] for f in glob.glob(p))
+    keys = []
+    for f in files:
+        parts = f.split('/')[-1].split('_'); keys.append(parts[2] + '-' + parts[3] + ' ' + parts[4])
+    with mp.Pool(min(len(files), mp.cpu_count())) as pool:
+        outs = pool.map(fit, files)
+    res = dict(zip(keys, outs))
+    for key, r in res.items():
+        print(f"{key}: d={r['d']:.2f}±{r['ed']:.2f} uas  w={r['w']:.1f}  f={r['f']:.2f}  |b1|={r['b']:.2f} |b2|={r['b2']:.2f} |b3|={r['b3']:.2f}  "
+              f"chi2/n={r['chi2']:.2f}  (closure phases {r['ncp']}, closure amplitudes {r['nca']})", flush=True)
+    d17 = np.array([v['d'] for k,v in res.items() if k.startswith('2017')])
+    d18 = np.array([v['d'] for k,v in res.items() if k[:8] in ('2018-111','2018-115') and k.endswith(('b3','b4'))])
+    c17 = [v["chi2"] for k,v in res.items() if k.startswith("2017")]
+    c18 = [v["chi2"] for k,v in res.items() if k[:8] in ("2018-111","2018-115") and k.endswith(("b3","b4"))]
+    print(f"Q13: median chi2/n 2017 {np.median(c17):.3f}, 2018 b3/b4 {np.median(c18):.3f}")
+    print(f"Q11 (2017): spread (max-min)/mean = {np.ptp(d17)/d17.mean():.4f}  (kill > 0.05); mean {d17.mean():.2f} uas")
+    print(f"Q12 (2018 days 111, 115; b3, b4): mean {d18.mean():.2f} uas against 2017's {d17.mean():.2f}: off {abs(d18.mean()-d17.mean())/d17.mean():.4f}  (kill > 0.05)")
+    print("(2018 day 112, recorded):", ", ".join(f"{k}: {v['d']:.1f}" for k,v in res.items() if k.startswith('2018-112')))
