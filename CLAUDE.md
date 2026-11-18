@@ -569,6 +569,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   predictions first (Q1–Q7); discussion note item 21. Run 1 on EHT 2017 and 2018 public data (2019-D01-01, 2024-D01-01,
   ODC-PDDL, not committed): the observer's motion exact and negligible (rotation 0, scale 1/D, ≤ 0.05 μas; Q6 killed by my
   sign); the 2017 ring steady to 2.7%; my fit's 2018 ring 7% larger (Q4 killed, cause open); every quantity sorted (Q1).
+  Run 2 (`runs/eho/eho4.py`, closures only, gains cancelled): Q8 killed (2017 splits 42 against 47.5 μas), Q9 not killed by
+  its letter; the simple ring's diameter carries the emission whichever way it is fitted.
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.
