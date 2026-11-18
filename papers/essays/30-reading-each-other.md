@@ -15,7 +15,8 @@ Everyone has done this. It is two readers reading each other. Each reads where t
 next step from that read. Then each reads the other's write and writes again. Nothing in the rule says when to stop.
 
 The series has said that everything reads and writes. Each thing reads from its own standpoint, writes its own state,
-and what it reads is the writes of others (R1065). Tom took the next step: "every reader / writer is reading and
+and what it reads is the writes of others (R1065). Not every thing reads as an observer does: a write needs no read,
+and things without life read differently, with no look, no aim and nothing kept (R1088). Tom took the next step: "every reader / writer is reading and
 writing each other based on their geometric heat". Then he named the worry: "this quickly creates infinite computation
 complexity. but observers don't walk infinity, they are rational. geometric laws collapse infinite complexity into a
 inevitable single conclusion." And then the doubt that this essay follows: "i doubt it is so easily handled."
@@ -255,7 +256,9 @@ Where and which way is read, how much is written, and when is the blueprint's.
 A cannonball is the other kind of case. In a vacuum its arc is all read, set by the launch slope alone, with gravity
 writing only how far and how long; with air, the drag reaches the shape only as one ratio of writes (CNB). But a real
 flight is written by many things at once, all the way along it: the pull, the air, a wind that changes with height, the
-ball's spin. The arc is the ball's write of all of them, and one read of it cannot sort which did what. Pool is clean
+ball's spin, and the arc is what they wrote. The ball reads too, but differently from the gunner: it turns no look,
+aims at nothing and keeps nothing, and what reaches it may be read as each source's share of its sky times that source's
+amount, the inverse square's form. The gunner reads from the cannon, and one read of the arc cannot sort which did what. Pool is clean
 because so little is written between contacts; a flight is written the whole way.
 
 So Tom's guess is right in this sense: the pair's corner of §3 is the reader's form of Euler's identity held between two

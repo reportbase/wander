@@ -93,7 +93,10 @@ so every read meets it as it is now; that is why reads are always current, while
 geometry's. What an observer sets down about the painting (a count, a measured amount, a record kept) is the observer's
 write, not the painting's. And the painting reads and writes too: each thing in it reads its surroundings from its own
 standpoint and, from that read, writes its own state (§7, "A single vantage and the blueprint, side by side": each thing
-carries its own state). A stone's size is the stone's write. So it goes on without end: a read reads the writes of
+carries its own state). A stone's size is the stone's write. A write needs no read to be made, and reading, though
+common, is not required. Things without life read too, but differently: they turn no look, aim at nothing and keep
+nothing. How is open; one reading, untested, is the inverse square's form, each source's share of the thing's sky times
+that source's amount (§1, "A flight, many writes"). So it goes on without end: a read reads the writes of
 another, which were written from that one's read of yet another's writes. No one holds the whole; each holds its own
 writes and reads the rest. That a thing reads means only that what reaches it from its own standpoint arrives as
 directions and slopes with no scale; it says nothing of awareness. It is shown where it has been built (pool played from
@@ -139,8 +142,13 @@ the apex at half the range, seen from the cannon at slope s/2; the landing at �
 long. With air a write reaches the shape, but only as a ratio of writes, β = v₀²/(g·L), L the drag length: any (v₀, g, L)
 with one β fly one shape to 10⁻¹¹, the best slope falling below the corner and the flat shot of each pair carrying
 farther. A real flight, though, is written by many things at once and all along it (gravity, air, wind changing with
-height, spin, the ball's surface), each adding a ratio, and the path is the ball's own write of all of them. One read of
-that path cannot sort which did what; that takes more reads or amounts carried in, which is writing. Pool is the clean
+height, spin, the ball's surface), each adding a ratio, and its path is what all of them wrote. The ball reads too, but not as the person who
+shoots it does: it has no look to turn, aims at nothing and keeps nothing. What reaches it may be read as each source's
+share of its sky times that source's amount, the inverse square's form (a uniform sphere's pull is (4/3)·G·ρ·R times its
+cosine-weighted share π·(R/d)², exactly, as an evenly glowing sphere's light is its brightness times the same share); how
+a thing without a look reads is open, and that form a reading. The shooter's reads are of another kind (the launch slope
+set at the muzzle, the apex seen from the cannon at s/2, the fall watched). One such read of the path cannot sort which
+did what; that takes more reads or amounts carried in, which is writing. Pool is the clean
 case because between contacts little is written and at a contact one pair's readings decide; a flight is the opposite.
 **Checked** for one write added at a time (CNB runs 1–2, exact; C7 killed by my set-up, C7′ not); the many-writes point
 is a reading.
