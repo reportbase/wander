@@ -1852,7 +1852,7 @@ try {
     const r = await page.request.get(new URL(pth, base).href);
     if (!r.ok()) failures.push(`[essays.html] ${pth} answers ${r.status()}`);
   }
-  if (elinks.cards !== 30) failures.push(`[essays.html] ${elinks.cards} essays, not 30`);
+  if (elinks.cards !== 31) failures.push(`[essays.html] ${elinks.cards} essays, not 31`);
   console.log(`${failures.length === before7e ? 'ok  ' : 'FAIL'} essays.html (${elinks.cards} essays, ${elinks.local.length} links into the site)`);
   // explainers.html: the explainers' page beside it, its links into the site answering
   const before7x = failures.length;

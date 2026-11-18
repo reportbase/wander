@@ -576,6 +576,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1102 (18 Nov; Tom: "1 2 3"): essay 31, `papers/essays/31-calculus-from-one-standpoint.md`, *Calculus from one
+  standpoint: where it needs N, and where it does not* (a car's speedometer and odometer): CLC, R1100 and RIC as one essay.
+  README row ("thirty-one essays"), `essays.html` card, smoke count 31 (not run). No paper changed.
+  RIC (`plans/ric-plan.md` + `runs/ric/`, 18 Nov; SPN R1101; Tom: "1 2 3"): the Riccati equation, the slope's own
+  flow, with constant rational coefficients stepped exactly by rational Möbius maps composing by PYK's rule (κ = −Δ), no N,
+  digits growing linearly, the clock time τ(u) the completion; Euler and RK4 N^(−1), N^(−4); s′ = t + s² no one-parameter
+  group, no small rational step. Nothing killed. R1100: where calculus needs N (a note in `plans/clc-plan.md`).
   CLC (`plans/clc-plan.md` + `runs/clc/`, 18 Nov; SPN R1099; Tom: "Let's compare shv to calculus."): exact, predictions
   first. Rational derivatives by dual numbers (κ = 0) with no limit, the chain rule the tower; only the first derivative of
   one length on another unmoved by scaling (dⁿy/dxⁿ as k^(1−n)): a slope a read, higher orders and clock rates writes;
@@ -4394,7 +4401,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     thirty essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     thirty-one essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.

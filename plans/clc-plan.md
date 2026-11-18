@@ -84,3 +84,15 @@ own sum misses at every finite n by Euler–Maclaurin's −(b − a)(f(b) − f(
 integrand is summed in place of the antiderivative's differences. Classical throughout; the sorting ours. I1's count was
 the one prediction that could fail as a result; the rest are identities checked, which could fail only by my code, as
 run 1 did.
+
+**Note, R1100** (18 Nov 2026; Tom: "Doesn't calculus need N?", then "1 2 3"). Where N enters, read from runs 1–2:
+
+| Part | Needs N? |
+|---|---|
+| Differentiation | no (dual numbers, exact; the limit h → 0 is a limit but no count) |
+| Integration by summing the integrand | yes, and its limit (Euler–Maclaurin's 1/N at every finite N) |
+| Integration by antiderivative, rational | no (telescoping exact at every partition: N drops out like the tower's middle) |
+| Integration by antiderivative, leaving the rationals | yes, inside ln, arctan, π (a series, a count toward a limit) |
+
+"Integration leaves the rationals" is the same place where N, held from no standpoint, comes back. A reading of D1, I1,
+I2, F1; no new run. Carried on in RIC (differential equations).
