@@ -255,8 +255,9 @@ Where and which way is read, how much is written, and when is the blueprint's.
 A cannonball is the other kind of case. In a vacuum its arc is all read, set by the launch slope alone, with gravity
 writing only how far and how long; with air, the drag reaches the shape only as one ratio of writes (CNB). But a real
 flight is written by many things at once, all the way along it: the pull, the air, a wind that changes with height, the
-ball's spin. The ball reads none of it; it is written on, and the arc is what they wrote. The reads are the gunner's,
-from the cannon, and one read of the arc cannot sort which did what. Pool is clean
+ball's spin, and the arc is what they wrote. The ball reads too, but differently from the gunner: it turns no look,
+aims at nothing and keeps nothing, and what reaches it may be read as each source's share of its sky times that source's
+amount, the inverse square's form. The gunner reads from the cannon, and one read of the arc cannot sort which did what. Pool is clean
 because so little is written between contacts; a flight is written the whole way.
 
 So Tom's guess is right in this sense: the pair's corner of §3 is the reader's form of Euler's identity held between two

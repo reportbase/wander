@@ -558,7 +558,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   R1086 (Tom: "update the demos"): ENG, the collision sorted and the cannonball's many writes as notes on `pool.html`
   and lines on `demos.html`'s pool and trick-shots cards; visible wording only. R1087 (Tom: "The cannon ball itself does
   not read though.  the person shooting the ball does"): the cannonball reads nothing, it is written on; the reads are the
-  shooter's. Never call a flight's path the ball's own write.
+  shooter's. Never call a flight's path the ball's own write. R1088 (Tom: "non life reads, but probably differently.
+  maybe something like the inverse square law."; "yes, key point they read, just differently somehow."): corrects R1087:
+  a write needs no read; reading is common, not required; non-living things read too, differently (no look, no aim,
+  nothing kept), how open; Claude's candidate (untested) the share of the sky times the source's amount, the inverse
+  square's form (exact for a sphere's pull and light). Never say a thing "reads nothing".
   PRX (`plans/prx-plan.md` + `runs/prx/`, 17 Nov; SPN R1063; Tom: "Seems like the read write has something new to say
   here.", then "Yes, write the plan and run the test"): which flat sources pair near with far, exact at 40 digits,
   predictions first. The read sees a source only through its edge radius ρ(φ) along each direction of the uniform turn.

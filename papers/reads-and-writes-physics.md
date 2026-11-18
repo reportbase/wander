@@ -688,7 +688,8 @@ Each simulation here is checked against a referee that computes the known physic
 - **A flight, many writes.** A cannonball in a vacuum is all read (shape set by the launch slope alone; g writes only
   size); with quadratic drag the shape depends only on β = v₀²/(g·L), a ratio of two writes (to 10⁻¹¹), the best slope
   below the corner (≈ 1 − 0.2100·β small). A real flight is written by many things at once (air, wind with height, spin);
-  the ball reads nothing, the reads are the shooter's, and one read of the path cannot separate them; pool is the clean case (CNB runs 1–2). [exact]
+  the ball reads too, differently (no look, no aim, nothing kept; possibly each source's share of its sky times its
+  amount, the inverse square's form), the shooter's reads are of another kind, and one read of the path cannot separate them; pool is the clean case (CNB runs 1–2). [exact]
 - **Cooling counted in contacts.** Five hundred smooth inelastic spheres, contact found where h + v = 1. Per contact per
   sphere the temperature falls by (1 − e²)/3 of itself to 0.8% wherever the gas stays even (Haff 1983). Density,
   diameter and pair correlation leave the count; the clock needs them all, and near the clustering instability goes
