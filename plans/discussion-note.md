@@ -528,6 +528,21 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
         of spacetime geometry" (Narayan, Johnson and Gammie 2019, ApJL, doi 10.3847/2041-8213/ab518c).
       - The route test, proposed: the nested subrings, light that went round once more each, leave universal signatures
         on long baselines giving mass, spin and a GR test (Johnson et al. 2020, Sci. Adv. 6, eaaz1310); not yet measured.
+    - **Is the observer's geometry stated plainly?** (18 Nov; Tom: "a plain language discussion of this from black hole
+      phsysices is lacking"; one search round, abstracts only, so not found is not absent.) Found, as working machinery:
+      an observer's sky has its own geometry, motion acting on it as a conformal map (Penrose 1959, Proc. Camb. Phil.
+      Soc. 55, 137; Terrell 1959), carried to black hole spacetimes (arXiv:2511.09355); the shadow for an observer
+      anywhere outside the hole and for a comoving one (Perlick and Tsupko, "Calculating black hole shadows: review of
+      analytical studies", Physics Reports, arXiv:2105.07101); the image built in the observer's own tetrad (e.g.
+      arXiv:2609.24926, 2603.12670); an approach free of coordinates and tetrads in which aberration comes out of the
+      framework (Zhu 2024, PRD 109, 044057). Nearest to the point: Chang and Zhu, "The observer-dependent shadow of the
+      Kerr black hole" (JCAP 09 (2021) 003): the shadow "could be rotated by an angle in observers' celestial sphere due
+      to the observer in motion", so the spin axis may not be recoverable from the shadow alone, and for Sgr A* the
+      observer's velocity dominates the shadow's change; there the observer's motion is a correction, not a geometry
+      with its own rules. Not found: a plain statement that every measurement has three layers (observer's geometry,
+      spacetime, emission) with the first separated before the other two, or a sorting of measured numbers by layer;
+      the main explanations (EHT, Gralla–Holz–Wald) speak of spacetime against emission. The papers say nothing about
+      what other work lacks (R335, R364); this is a record of the search.
     - Standing: a reading; nothing run. Next, offered, not run: an exact lensed-source check (a point mass: colour
       moves nothing, route moves address and share, brightness × share fixed, against the flat inverse square at the
       same distance). Whether test (3) goes into *Reads and Writes* beside the two tests is Tom's call.
