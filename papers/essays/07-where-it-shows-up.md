@@ -435,7 +435,9 @@ Telescope's public M87* data (EHO), the observer's own layer comes off exactly: 
 scales it by 1/D, which moves a 42 μas ring by at most 0.05 μas. The hole's geometry and its gas did not come apart in
 our fits: the ring's diameter moved with the emission model by up to a quarter. The light that went round the hole once
 more, the photon subrings, is set by the hole's geometry whatever the gas does, and would part them; the present array
-does not resolve it.
+does not resolve it. The geometry the telescope reads M87* with is the same one it reads an apple or empty sky with: it
+belongs to the standpoint, not to the hole. Over a field 42 μas across it is invisible, since at the focus the read is even
+to first order; negligible there, not absent.
 
 ---
 
