@@ -608,3 +608,12 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       Where they appear as two values (the walk over the chord, r, and 1/r) they meet at home, not the corner, and that
       family is not the exchange. So item 23's pairs sort in two: maps on directions, each fixed at the corner or the
       tip, and a change of chart (Ω ↔ 1/Ω), fixed nowhere. Exact, nothing killed. A reading.
+    - **The geometry is the extent's, not the bar's making (R1119; Tom: "the geometry does not exist, it just the heat map
+      of how the universe paints the hemishpere"; "the bar inherintely has this geometry, but it does not create it.  the
+      geometry is free, intrinsic to any extent, any extent has this geometry.").** What there is: the bar, given 1, and
+      the paint. The full geometry is the account of turning, sweeping and holding the bar; what it accounts for is the
+      heat map, the same for any universe, the universe deciding only the paint. So the inverses are the heat map's: s and
+      1/s one direction counted from either end of the bar, the corner where the heat is half each way; the swaps that
+      keep the law facts about the heat, the bare reciprocals (Ω and 1/Ω, π/2 · 2/π) facts about how it is written.
+      Claude's, not ruled: every relation of two parties carries its inverse because nothing in a read picks which party
+      is the denominator.

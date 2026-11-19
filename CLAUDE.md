@@ -576,6 +576,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1119 (19 Nov; Tom: "the geometry does not exist, it just the heat map of how the universe paints the hemishpere.";
+  "the bar inherintely has this geometry, but it does not create it.  the geometry is free, intrinsic to any extent, any
+  extent has this geometry."): **the geometry is intrinsic to any extent; the bar has it, does not make it.** What there
+  is: the bar (given 1) and the paint; the full geometry the account of turning, sweeping and holding the bar, of the heat
+  map (the same for any universe), the universe deciding only the paint. The inverses are the heat map's (s and 1/s one
+  direction counted from either end of the bar); bare reciprocals (Ω and 1/Ω) how it is written. Discussion note item 23.
   INV (`plans/inv-plan.md` + `runs/inv/inv.py`, 19 Nov; SPN R1118; Tom: "Just noticing all the inverses including Omega";
   "Yes. I'm just hunting for deeper mesnings"): exact, nothing killed. The distance overlay (1/π)·sech(ln(d/H)) written in
   x = d/H is exactly the half-Cauchy, the slope's law: the near/far exchange is the facings' exchange, one fixed point (1).
