@@ -7591,6 +7591,21 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 - **R1102** (18 Nov 2026; the same "1 2 3"): essay 31, *Calculus from one standpoint: where it needs N, and where it
   does not* (a car's speedometer and odometer), CLC, R1100 and RIC as one essay; README row, `essays.html` card, the smoke
   test's count 31 (not run). No paper changed.
+- **R1109** (19 Nov 2026; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon", then "Yes"): restates
+  R614 with the compression: the read keeps K at every H, half each side of the corner, and N is compressed, not cut, into
+  the horizon (everything past about 2K/π thumbs, counted, sharing the last address; R411); every thing keeps its
+  direction. Claude's precisions: the compressing is the heat ds/(1 + s²), not a count; K a fineness, addresses only when
+  counted (R706); tied to R1108, N readings averaged one reading, so N leaves no trace in what is held (a Gaussian's
+  average narrows by √N) — a reading. *Reads and Writes* §6 "K and N" and the R1108 paragraph in §1.
+- **R1108** (19 Nov 2026; Tom: "Cauchy has the unique property of that the average together. Two cauchy equals cauchy.
+  What in can calculate can do that?", then "Put it in read write"): independent Cauchy readings from z₁ and z₂ average
+  to one from (z₁ + z₂)/2, and from one standpoint any number average to the same Cauchy: the standpoint m + iγ is
+  averaged, not an amount. Unique among symmetric laws (index-1 stable); independence needed. Calculus's counterpart is
+  the mean value property of harmonic and holomorphic functions: the Cauchy is the Poisson kernel, its density
+  (1/π)·Im 1/(x − z) the Cauchy integral formula's kernel, a bounded holomorphic function averaged over it giving its value
+  at z (e^(itx) to e^(izt)); stepping back a semigroup with heights adding as lengths (the heat kernel's widths as
+  squares, so the Gaussian's average narrows by √n). Laplace's equation the calculus that needs no N. Classical; the tie to
+  R1107 a reading. *Reads and Writes* §1, after the calculus paragraph. No run (an exact check offered, not asked).
 - **R1107** (18 Nov 2026; Tom: "The key point is the cauchy relation space is the same for all shapes. The stage is
   always the same, its the ultimate invarient."): **the Cauchy relation space is the same for every shape; the stage is
   always the same, the ultimate invariant.** Whatever is met and at whatever size, the read's directions are laid by one
