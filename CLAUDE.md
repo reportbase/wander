@@ -582,7 +582,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   The six beats (draw's "The sweep and its two faces", reportbase/draw#135) rejected, in no paper; R1017–R1019's two faces
   on H superseded as far as faces go. Open: how Ω and 1/Ω attach to the inside and outside (as path lengths they do not
   fit, every point going Ω times its distance from the pivot; as the trace against the bar and the bar against the trace
-  they do). Nothing else changed.
+  they do). Then (Tom: "But this means the inside never moves,", "Seems like 1."): the inside is the pivot, never moves,
+  the standpoint (R450); the midpoint traces the quarter turn as Ω, the outside 2Ω, the inside 0, so 1/Ω only the bar
+  against the trace. Nothing else changed.
   R1109 (19 Nov; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon"): the cull keeps K at every N
   and compresses N into the horizon, nothing cut; the same fact as R1108 (N readings averaged one reading). *Reads and
   Writes* §6 "K and N", §1. A reading.

@@ -7602,7 +7602,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   ruled: every point of the bar travels Ω times its distance from the pivot, so with the midpoint tracing the quarter
   turn the ends' paths straddle it (halfway: its path less and more by the same amount; geometric middle: its path over
   and times one factor) and are not Ω and 1/Ω; Ω and 1/Ω fit as the one trace against the bar and the bar against the
-  trace. **Open:** how Ω and 1/Ω attach to the inside and outside. No paper, essay or demo changed.
+  trace. Then (Tom: "But this means the inside never moves,"; to Claude's two options, "Seems like 1."): **the inside is
+  the pivot; it never moves; it is the standpoint** (staying where it stands while what it reads crosses, R450). With the
+  midpoint's distance from the inside as the unit, the midpoint traces the quarter turn as Ω and the outside 2Ω; the
+  inside traces 0, so 1/Ω is not a path, only the bar against the trace. Tom's "seems like": to confirm before any paper
+  is rebuilt on it. No paper, essay or demo changed.
 - **R1109** (19 Nov 2026; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon", then "Yes"): restates
   R614 with the compression: the read keeps K at every H, half each side of the corner, and N is compressed, not cut, into
   the horizon (everything past about 2K/π thumbs, counted, sharing the last address; R411); every thing keeps its
