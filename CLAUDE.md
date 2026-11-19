@@ -576,6 +576,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1117 (19 Nov; Tom: "The bar is denominator in the near field. The near field is how much of the bar."; "Thats a good way
+  to discuss parallax."; "Yes."): **in the near field the bar is the denominator, a thing read as d/H, how much of the bar
+  reaches it; past the tip the denominators swap, H/d, how much of the distance the bar is**; the two exchanges meeting at 1
+  at the trace. For parallax the bar is the half-baseline (the tip the Thales corner, d = B/2): inside a ruler, outside a
+  fraction, the far reading the annual parallax itself (the bar 1 AU); the error even about the tip; a ray once H/d is
+  under a grain (d ≈ B/ε). A distance in thumbs, had from two looks a bar apart. `papers/parallax.md` §5½; no other paper.
   R1116 (19 Nov; Tom: "I picture the cauchy sphere as bouncing ball, following your gaze", then "No, it's not a correct
   metaphor"; "the correct metaphor is something built out from the bar"; "Why half way? The near field is the bar itself,
   the far field is what is beyond the bar."; "Yes"): **the near field is the bar itself, pivot to trace, one thumb long; the

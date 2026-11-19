@@ -29,6 +29,10 @@ Proposition 11(a)–(c), which this paper builds on.*
   made explicit there: the turn in γ/sin γ is the pair's facing, twice its sweep angle, so its π/2 falls at the pair's
   corner, where on the thumb (`observation-from-somewhere.md` §10, step 3) it falls at the sweep's horizon. The same
   identity on two different angles.
+- 19 November (SPN R1117; Tom: "The bar is denominator in the near field. The near field is how much of the bar."; then
+  "Thats a good way to discuss parallax."): parallax told by the bar (§5½). The bar is the half-baseline, the same H
+  this paper's k already uses; inside it a reading says how much of the bar reaches the thing, outside it how much of the
+  distance the bar is, and that far reading is the annual parallax itself.
 
 **Standing marks.** Each claim carries one:
 - **[classical]**: established outside this corpus (geometry, surveying, stereo vision, astrometry), quoted;
@@ -217,6 +221,28 @@ readings follow, **[reading]**:
 - The eyes' corner, 3 cm off, is nearer than they can focus: binocular depth is used only on the far side of its bell.
 - Every star is many levels past the orbit's corner: 1 pc is 2.06 × 10⁵ AU, 17.7 levels out. Stellar parallax lives in
   the bell's far tail, where the relative depth error is ε·d/B.
+
+## 5½. The bar: a ruler inside, a fraction outside
+
+*SPN R1116, R1117.* The bar is one thumb, H, from the pivot to the trace; the near field is the bar itself, the far field
+what lies beyond it. Here the bar is the half-baseline, H = B/2, so the baseline is two bars (the Thales circle's
+diameter) and the bar's tip is parallax's corner, d = B/2 (§1). **[reading]** for the words; the numbers are §3–§5's.
+
+- **Inside the bar, a ruler.** A place nearer than the tip reads d/H, a share of the bar from 0 to 1: how much of the bar
+  reaches it. The bar is the denominator. The two rays cross nearly square, and the relative error per step,
+  cosh(ln k), is near its least (Proposition 1).
+- **Outside the bar, a fraction.** Past the tip the denominators swap: the reading is H/d, how much of the distance the bar
+  covers, one in two, one in four. That share is what the two looks see: far off their slopes differ by about B/d = 2H/d.
+  In astronomy the bar is 1 AU and H/d is the annual parallax p (in radians), so **the annual parallax is the bar's share
+  of the distance**; the parsec is the distance at which the bar is one part in 206,265 (648000/π, the arcsecond's
+  count, a writer's unit, §6). **[exact]** for p = (B/2)/d to first order; **[reading]** for the words.
+- **The tip, where one becomes the other.** d/H and H/d are exchanges and meet at 1. The error per step is the same at d
+  and H²/d (Proposition 1's evenness in ln k): half a bar out and two bars out are read alike.
+- **Where the fraction is too small.** When H/d falls below the step, the bar's share of the distance is under one grain
+  and a place is a ray: the band's far edge, near d = B/ε (Proposition 4). The far field's reach is how small a share of
+  the distance the bar can still be seen to be.
+- **Where the bar's length comes from.** "How much of the bar" is a distance in thumbs. One look gives directions only;
+  two looks held together, a bar apart, give it (§2). The bar in metres is a further amount carried in (B, the bridge).
 
 ## 6. Working back from what is known
 
