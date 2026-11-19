@@ -7591,6 +7591,22 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 - **R1102** (18 Nov 2026; the same "1 2 3"): essay 31, *Calculus from one standpoint: where it needs N, and where it
   does not* (a car's speedometer and odometer), CLC, R1100 and RIC as one essay; README row, `essays.html` card, the smoke
   test's count 31 (not run). No paper changed.
+- **R1111** (19 Nov 2026; Tom: "If we remove any dhv terms from the cauchy discussion, I bet it cleans up.", then
+  "Yes"): *Reads and Writes*' Cauchy discussion restated in the read's own terms, the DHV's forms kept only as marked
+  comparisons (R891, R1110's trap). §3: the three forms (one length turned, two axes drawn, a line in the world) in
+  slopes, the lamp's landing x = m + d·s with quartiles where its slope is ∓1; the circle's equation divided by x² ending
+  in 1 + s² = (r/x)² and the heat h² (sec²θ, dθ the DHV's, in brackets), its table's read column s = v/h and
+  1 + s² = (r/x)²; the routes' landing w = (1 + iu)/(1 − iu) and the even heat carried to the line (the Cayley map and
+  e^(2iθ) the DHV's); the heat counted per direction, per s and per screen in (1 + r²)^(−3/2): 0.35 one thumb off, ⅛ at
+  √3, half the peak at r ≈ 0.77 with a fifth inside, half the directions within √3, the vignetting (1 + r²)^(−2) (the
+  angles in one bracket). §5: the hot spot's heat across the look; the one-thumb ring 1/√2 thumbs off, the corners a
+  third of the way round, √2 thumbs to the horizon; Lambert's radius in r; the dial's needle at the corner, its rate
+  1/(1 + x²). §2: θ + 2π and the rim marked. Kept as the DHV's, by nature: Euler's plane's up axis (iθ), the sphere and
+  Mercator charts, π and e, the flat charts turned by φ, the "by turns" lay. Every number checked unchanged (35.26° is
+  r = 1/√2, 54.74° is √2, 37.5° is 0.766, 60° is √3). The arithmetic is unchanged; only the terms. Then (Tom:
+  "Yes"): essay 17's map on the glass, the tiles counted per direction, the Poisson kernel's heat, the walker's corner,
+  the second map's lay and the median in thumbs; essay 2 §9's circle divided by x² and the two-axis form, the same way.
+  The photographer's cos⁴ law, quoted, kept as the hook; essay 2's 45° images for the first-time reader kept.
 - **R1110** (19 Nov 2026; Tom, after a draw session's explainer "The sweep and its two faces" (draw `flows/sweep.tvfs`,
   reportbase/draw#135): "A facing is just the end of the bar. Each end of the bar traces Omega and 1/Omega."; "The trace
   is the middle of the bar"; "The sweep has one face, not the bars ends. The bars ends are the inside and outside of the

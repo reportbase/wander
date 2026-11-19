@@ -691,7 +691,7 @@ after over the same line before, k·e^(iα); the real part of its logarithm is t
 **Each axis has a zero, and the two are not alike.** Up, the zero is home, s = 0 (the DHV's θ = 0), where the direction lies along h.
 Across, the zero is the thumb, d = H. Both are the read's: home is where it faces, the thumb what it holds out. The
 axes differ in how they end. Up closes: within one read it runs from home to a horizon a quarter turn off, never reached,
-and it wraps (θ and θ + 2π one place) only when turns are joined. Across is open both ways: no total, no natural size,
+and it wraps (the DHV's θ and θ + 2π one place) only when turns are joined. Across is open both ways: no total, no natural size,
 nothing on it marking a place but the thumb. That is why no read and no extent gives the overall size: there is no mark on
 the open axis to read it against, until a unit is carried in.
 
@@ -733,7 +733,7 @@ What is left is two ratios, unmoved by scaling, and nothing closes: where the sp
 infinity, the horizon. The left side is the denominator of the two-dimensional Cauchy, 1/(2π(1 + s² + s₂²)^(3/2)), the
 even turn's heat on a screen square to the look (§3): its corner s = 1, its horizon s = ∞, a median and no mean. The
 sphere has a shape, a size and a boundary that closes; dividing by the thumb takes the size away and opens the surface
-along the rim, 90° off the look, and what is left is heat thinning outward with a tail that never completes. In the plane
+along the rim, the look's horizon, and what is left is heat thinning outward with a tail that never completes. In the plane
 Euler's formula says the same: the DHV's point x + iy = r·e^(iθ), divided by the thumb, is the reading
 1 + is = sec θ·e^(iθ); divided once more by its mirror, (1 + is)/(1 − is) = e^(2iθ), every length is gone and the horizon
 lands at −1. What the equation leaves out is the paint (D6). **Classical**; the reading is the paper's.
@@ -838,15 +838,17 @@ never its mean; this is the reason. **Classical**; the reason is a reading.
 **The Cauchy from one length, from two axes, from a line in the world.** The family has a location m and a scale γ.
 Derived from what is held, it comes in three forms.
 
-- *One length turned.* The tip of H turned uniformly is at (H cos θ, H sin θ); the reading v/h = tan θ has no H in it.
-  The share passed before the reading reaches s is, in the DHV's account, (1/Ω)·arctan s: the standard half-Cauchy,
-  scale 1, median at the corner. The scale is 1 because a reading is a ratio, and a ratio carries no scale.
-- *Two axes drawn.* Draw the second axis at a length V of its own: the point (H cos θ, V sin θ), the reading
-  (V/H)·tan θ, a Cauchy of scale c = V/H, its median at c. Scaling leaves c unchanged, so c is an extent, not a write; but
-  it needs two lengths held against each other, as √2 needs the square's two sides.
-- *A line in the world.* A lamp turning uniformly lights a shore at distance d; its landings x = m + d·tan θ follow
-  C(m, d), quartiles m ± d. In metres both parameters are writes. The angles follow the uniform turn whatever d is; the
-  scale appears only when the landings are laid on a ruler along the shore.
+- *One length turned.* The thumb turned from lying along h to standing along v: each reading is its slope s = v/h, a
+  ratio of the thumb's own shares, with no H in it, and the heat over the readings is 1/(1 + s²): the standard
+  half-Cauchy, scale 1, median at the corner. The scale is 1 because a reading is a ratio, and a ratio carries no scale.
+  (The DHV puts the thumb's tip at (H cos θ, H sin θ), the reading at tan θ and the share passed at (1/Ω)·arctan s.)
+- *Two axes drawn.* Draw the second axis at a length V of its own: each reading becomes (V/H)·s, a Cauchy of scale
+  c = V/H, its median at c. Scaling leaves c unchanged, so c is an extent, not a write; but it needs two lengths held
+  against each other, as √2 needs the square's two sides.
+- *A line in the world.* A lamp turning on its pivot lights a shore at distance d; each landing is x = m + d·s, s the
+  lamp's slope against the perpendicular, so the landings follow C(m, d), quartiles m ± d where the slope is ∓1, the
+  lamp's corners. In metres both parameters are writes. The slopes follow the heat whatever d is; the scale appears only
+  when the landings are laid on a ruler along the shore. (The DHV writes the landing m + d·tan θ.)
 
 The ratio of two zero-mean normal amounts gives the same three: equal spreads (the first), spreads σ₁ and σ₂ (scale
 σ₁/σ₂), and the two correlated by ρ (a location, ρσ₁/σ₂, the scale then (σ₁/σ₂)·√(1 − ρ²)). With means away from zero
@@ -866,16 +868,16 @@ the sorting is a reading.
 **The circle's equation, divided by its own length.** The DHV's circle holds amounts: x = H cos θ, y = V sin θ,
 (x/H)² + (y/V)² = 1, round only when V = H, then x² + y² = r². Divide the round circle by x²:
 
-  1 + s² = (r/x)² = sec²θ,  s = y/x.
+  1 + s² = (r/x)²,  s = y/x.
 
-The density is the share squared, 1/(1 + s²) = (x/r)² = h², and ds = sec²θ·dθ, so dθ = ds/(1 + s²): the uniform turn,
-read as s, is (1/Ω)·1/(1 + s²). The Cauchy is the circle's equation used to carry an even turn into readings. (The
-division is the DHV's account, not something the read does.)
+Turned over, the right side is the share squared, 1/(1 + s²) = (x/r)² = h²: the read's heat. The Cauchy is the circle's
+equation used to carry an even turn into readings. (The division is the DHV's account, not something the read does; in
+its angle, 1 + s² = sec²θ and dθ = ds/(1 + s²), so its uniform turn, read as s, is (1/Ω)·1/(1 + s²).)
 
 | | the DHV's circle (with V) | the read's Cauchy (without V) |
 |---|---|---|
-| a point, a reading | (H cos θ, V sin θ), amounts | s = tan θ, a ratio |
-| the equation | (x/H)² + (y/V)² = 1 | 1 + s² = sec²θ |
+| a point, a reading | (H cos θ, V sin θ), amounts | s = v/h, a ratio |
+| the equation | (x/H)² + (y/V)² = 1 | 1 + s² = (r/x)² |
 | the law | none needed: every point stated | (1/Ω)/(1 + s²) = (1/Ω)·h² |
 | what it states | the area πHV, the circumference, points | the median 1, quartiles √2 ∓ 1, the horizon, no mean |
 | if V ≠ H | an ellipse | a Cauchy of scale V/H |
@@ -892,8 +894,9 @@ to ask of each case (§11). **Classical**; the reading is ours.
 **The Cauchy's routes.** Every Cauchy is one measure: the Poisson kernel of the upper half-plane seen from a point
 z = m + iγ, p(x) = (1/π)·Im 1/(x − z), the harmonic measure of a line seen from a point off it. The circle and the point
 off the line are one construction in two coordinates: centre the line at the foot and scale it by the height,
-u = (x − m)/γ; the Cayley map w = (1 + iu)/(1 − iu) = e^(2iθ), θ = arctan u, takes the line to the circle, and the
-circle's even angle, returned to the line, is dθ/dx = γ/((x − m)² + γ²); divided by π, that is p. Many mechanisms put a
+u = (x − m)/γ; the landing w = (1 + iu)/(1 − iu) takes the line to the landing points, and the even heat 1/(1 + u²),
+carried back to x, is γ/((x − m)² + γ²); divided by π, that is p. (The DHV writes the landing e^(2iθ), θ = arctan u,
+the Cayley map of the line onto a circle, and the heat as the circle's even angle.) Many mechanisms put a
 point at z and reach the line from it:
 - **a uniform turn read on the line**: the lighthouse, the ratio of any rotation-invariant pair, a circle seen from a
   point of it;
@@ -921,28 +924,31 @@ by a boost is the rapidity (§4), and there it is no extent: no gap in space lie
 coordinate of a map (D7). The formula is one; what it is said of decides the kind. **Checked** (FRG); classical.
 
 **Where the heat comes from.** The read is a heat map: a continuous weight over its readings, with nothing counted in it.
-The measure is uniform by solid angle, every direction of the hemisphere alike, so by angle there is no heat; the heat is
-that measure read in a coordinate. In the plane, with one thumb, the heat per unit of reading s is 1/(1 + s²) = h², the
+Every direction of the hemisphere counts alike, so counted per direction there is no heat; the heat is that count read
+per unit of a reading. In the plane, with one thumb, the heat per unit of reading s is 1/(1 + s²) = h², the
 half-Cauchy (in the DHV's angle, dθ = ds/(1 + s²) = cos²θ·ds). In space, a small patch dA of a screen one thumb out,
 square to the look, r thumbs off it, subtends dA/(1 + r²)^(3/2) of the directions (the DHV's cos³α·dA, r = tan α: one
 cosine for the patch's tilt, two for its distance squared), so the heat per unit of screen is 1/(2π(1 + r²)^(3/2)), the
 two-dimensional Cauchy:
-0.35 of the peak at 45°, 0.125 at 60°, none at the rim. With n thumbs square to the look it falls as cos^(n+1). Half the
-peak heat is at 37.5° off the look, with a fifth of the directions inside (the share within α is 1 − cos α); half the
-directions lie within 60°, √3 thumbs out on the screen. A camera shows it: a wide lens's natural vignetting, the cos⁴α by
-which a photograph's corners darken, is this cos³α and one cosine more for the aperture seen at a slant, so three of its
-four cosines are the heat, there before any light arrives (0.35 of the middle at 45°, against the photograph's 0.25).
+0.35 of the peak one thumb off the look (r = 1), ⅛ at √3 thumbs, none at the horizon. With n thumbs square to the look it
+falls as (1 + r²)^(−(n+1)/2). Half the peak heat is at r = √(2^(2/3) − 1) ≈ 0.77 thumbs off the look, with a fifth of the
+directions inside (the share within r is 1 − 1/√(1 + r²)); half the directions lie within √3 thumbs. A camera shows it: a
+wide lens's natural vignetting, by which a photograph's corners darken, is this heat, (1 + r²)^(−3/2), and one more factor
+(1 + r²)^(−1/2) for the aperture seen at a slant, so three of its four factors are the heat, there before any light
+arrives (0.35 of the middle one thumb off, against the photograph's 0.25). (In the DHV's angles, r = tan α: the heat
+cos³α, the vignetting cos⁴α, the half-peak at 37.5° and the half-share at 60°.)
 **Classical.**
 
-**The heat depends on what it is counted per.** Per unit of turn the direction has no heat; per unit of s it falls as
-cos²θ, per unit of a flat screen in space as cos³α. The heat is not a grid seen from home: marks laid evenly on a wall one
-distance d away, the DHV's grid, are flat in the reading and crowd toward the horizon per unit of angle, as sec²θ in
-the plane and sec³α in space. The Cauchy is the other way round: the turn, even in angle, laid on that flat grid. It is
+**The heat depends on what it is counted per.** Counted per direction there is no heat; per unit of s it falls as
+1/(1 + s²), per unit of a flat screen in space as (1 + r²)^(−3/2). The heat is not a grid seen from home: marks laid
+evenly on a wall one distance d away, the DHV's grid, are flat in the reading and crowd toward the horizon per direction,
+as 1 + s² in the plane and (1 + r²)^(3/2) in space. The Cauchy is the other way round: the turn, even over directions,
+laid on that flat grid. It is
 the turn per unit of the DHV's grid, the *per* of §9, the rate at which a turn consumes the world. In measure theory it
 is a Radon–Nikodym derivative: the turn's even measure carried onto the wall by the projection from home, against the
 wall's own measure, dν/dλ = (1/π)·d/(d² + y²) for a wall d away, the half-plane's Poisson kernel. On a flat wall the two
 agree in every dimension: the half-space's kernel, Γ(n/2)/π^(n/2)·d/|x|^n, is the even hemisphere carried onto the wall,
-(2/|S^(n−1)|)·d/|x|^n, the same constant; in space (1/2π)·d/(d² + r²)^(3/2), the cos³α above. Stepping back composes the
+(2/|S^(n−1)|)·d/|x|^n, the same constant; in space (1/2π)·d/(d² + r²)^(3/2), the screen's heat above. Stepping back composes the
 kernels, e^(−d|k|), the Poisson semigroup in the standpoint's height. This is Laplace's equation, a steady state; it is
 not the heat equation, whose kernel is the Gaussian, e^(−tk²). The Gaussian too keeps every frequency, damping the fine
 ones by k² where the Cauchy damps by |k|; the kernel that loses frequencies outright is the floor's box blur, whose
@@ -1084,26 +1090,27 @@ point with no size. The hot spot is one thumb out along the look, where the thum
 direction the triple corner [1 : 1 : 1], in distance d/H = 1, the point fixed when every distance ratio is turned over,
 and the median as well as the peak. The two corners meet there only because the thumbs are pointed at a thing and
 takes that thing as its thumb; pointed elsewhere, the heat moves and no direction does. From the hot spot the heat thins
-every way: across the look as cos³α, along it as sech(ln(d/H)). The near field runs from the eye to the hot spot,
+every way: across the look as (1 + r²)^(−3/2), along it as sech(ln(d/H)). The near field runs from the eye to the hot spot,
 distance in proportion; the far field from the hot spot to the horizon, in ratios; each holds half the heat. Joining the cuts on every direction, the DHV
 draws the near-field sphere of radius H (§8). A read holds only the mark one
 thumb out on each direction it reads.
 
 **The one-thumb circle, and the three corners.** Everything within one thumb of the crosshair's point is a ball (a disc
 in the plane) touching each face of the wedge, at the cube's corners one thumb back along each thumb. From the eye its
-outline is a circle 35.26° about the look, the largest about the crosshair inside the wedge, holding 73% of its
-directions; in the plane the same construction runs ±45°, home to horizon. Whatever is pointed at becomes the corner, so
+outline is a ring 1/√2 thumbs off the look on the screen square to it, the largest about the crosshair inside the
+wedge, holding 73% of its directions; in the plane the same construction runs from home to horizon. Whatever is pointed at becomes the corner, so
 the circle goes with the look. Home is on it, at the three points it touches. Each pair of thumbs has its own corner, a
-line through the crosshair, the three crossing there 120° apart; along each, the third thumb runs a quarter turn from
-home on the circle (35.26° off the look) through the corner to the horizon at that thumb's direction (54.74° off). Inside
+line through the crosshair, the three crossing there a third of the way round the look from one another; along each,
+the third thumb runs a quarter turn from home on the ring (1/√2 thumbs off the look) through the corner to the horizon at
+that thumb's direction (√2 thumbs off). Inside
 the circle there is no distortion at the corner, every pair's ln(v/h) zero there; moving out each direction's
 grain holds more, in proportion, as one over twice the reading toward home: compression, not blur, hexagonal near the
 corner and unbounded only at the three homes. It is a precision, not a size: laid by turns off the look a thing's place
-parts from a flat screen's only far out (tan α/α, 1.10 at 30°, 1.27 at 45°). **Checked** (THM).
+parts from a flat screen's only far out (r over the DHV's turn arctan r: 1.10 at r = 1/√3, 1.27 one thumb off). **Checked** (THM).
 
 **Laid by the heat.** A flat screen does not give each direction the same room; the screen that does is Lambert's
-equal-area map about the look, a direction α off it at radius 2·sin(α/2): true at the crosshair, off by 0.9% at 15°, 3.4%
-at 30°, 7.6% at 45°. Laid that way the rings of the distance overlay come where the readings fall: one thumb off the look
+equal-area map about the look, a direction r thumbs off it at radius √(2(1 − 1/√(1 + r²))): true at the crosshair, off
+by 0.9% at r = 0.27, 3.4% at r = 0.58, 7.6% one thumb off (the DHV's 2·sin(α/2), at 15°, 30° and 45°). Laid that way the rings of the distance overlay come where the readings fall: one thumb off the look
 at 0.765, then one in two, one in four, one in eight at 1.05, 1.23 and 1.32, packing toward the rim at √2, because each
 stretch holds fewer of the look's directions than the one before (0.26, 0.20, 0.12 of what is in front, and 0.12 past one
 in eight). The ground has its own reading: a point ρ along it, with the thumb's ground point D away, reads
@@ -1176,10 +1183,10 @@ are the reading here.
 **The read as a control.** The same split can be held in the hand as a dial. A held push adds to the hyperbolic angle
 ζ at a steady rate; the place it reaches is one thumb times sinh ζ from home, and the needle is drawn at the turn gd ζ,
 so it never leaves the quarter turn. Near home the place moves in proportion; one thumb out it reaches the corner
-(ζ = 0.881, the needle at 45°); far out a steady push reads a steady ratio, one in two each ln 2 of ζ (2.31 from the corner
-itself, 2.0037 ten thumbs out, 2 within 4·10⁻⁵ at a hundred). The needle turns per unit of place as cos²θ, half at the
+(ζ = 0.881, the needle at the corner); far out a steady push reads a steady ratio, one in two each ln 2 of ζ (2.31 from the corner
+itself, 2.0037 ten thumbs out, 2 within 4·10⁻⁵ at a hundred). The needle turns per unit of place as 1/(1 + x²), x the place in thumbs, half at the
 corner. With one more degree of freedom the control is a dome looking down on a floor without end: home straight down,
-the rim the horizon, the heat per unit of floor cos³α; each place painted by what its one direction meets, so a far place
+the rim the horizon, the heat per unit of floor (1 + r²)^(−3/2); each place painted by what its one direction meets, so a far place
 is a sample of the floor, read at the detail its footprint earns, a few dozen tiles for the whole world. Laid as sound,
 one in two is an octave, and a tone of octaves that rises without arriving (Shepard 1964) is the horizon heard. None of it
 needs a count of what is out there. **Checked** (reportbase/calendar's dials).

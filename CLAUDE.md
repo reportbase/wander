@@ -576,6 +576,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1111 (19 Nov; Tom: "If we remove any dhv terms from the cauchy discussion, I bet it cleans up.", "Yes"): *Reads and
+  Writes* §3's and §5's Cauchy discussion restated in slopes, shares and thumbs off the look (r), every DHV angle form kept
+  only in a marked bracket; numbers unchanged (37.5° → r ≈ 0.77, 60° → √3, 35.26° → 1/√2, 54.74° → √2). Euler's plane,
+  the sphere charts, π and e stay the DHV's by nature. Then essays 17 and 2 §9 likewise (the photographer's cos⁴, quoted, kept).
   R1110 (19 Nov; Tom: "The sweep has one face, not the bars ends.   The bars ends are the inside and outside of the
   sweep."; "What traces the quarter turn.  The midpoint of the bar."; "Ignore the six beats, it is clearly wrong"):
   **the sweep has one face; the bar's ends are its inside and outside** (a midpoint clause, withdrawn the same day).
