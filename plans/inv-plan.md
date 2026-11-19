@@ -90,3 +90,23 @@ motions that do not add.
 Closed (19 Nov; Tom: "ok, proceed with your recommendation"): the share square's pieces are classical (the exchanges
 h² ↔ v², the thumb an odds ratio, the arcsine law), and its half turn is Euler's under a chart (q = ½(1 − tanh u),
 p = cos²θ). Not explored further.
+
+**Run 3, predictions** (19 Nov, written before `runs/inv/inv3.py`; Tom: "proceed with the open thread", item 23's last
+open point: Ω and 1/Ω, the one pair with no fixed point). Ω = ∫₀^∞ ds/(1 + s²), the trace's walk for a bar of one
+thumb; 1/Ω the coefficient that makes it a law. Claude's reading, to be checked: Ω and 1/Ω are not a pair of the
+exchange at all, but the length of the chart in which the exchange is a reflection and the factor that makes that
+length 1.
+
+- **Z1.** In the weight chart w(s) = ∫₀^s dt/(1 + t²) the exchange s ↦ 1/s is exactly w ↦ Ω − w: a reflection whose
+  fixed point is Ω/2, at s = 1, the corner. Ω is the span of that reflection, not a value it moves.
+- **Z2.** Multiplying by 1/Ω turns it into g ↦ 1 − g on [0, 1] (g the share of the sweep passed); the pair (Ω, 1/Ω)
+  becomes (1, 1) and Ω leaves every statement. So the pairing of Ω with 1/Ω depends on the chart; the pairing of s
+  with 1/s does not (in the weight chart and in g it is still the one reflection, fixed at the corner).
+- **Z3.** The one family that carries Ω and 1/Ω as values, the walk over the chord r(s) = w(s)·√(1 + s²)/s and its
+  reciprocal, has product 1 everywhere and meets (r = 1) only at home (s → 0), not at the corner (r(1) = Ω/√2·… =
+  1.1107); it reaches Ω and 1/Ω only at the horizon.
+- **Z4.** That family is not the exchange: r(1/s) ≠ 1/r(s) (at s → ∞, r(1/s) → 1 while 1/r(s) → 1/Ω).
+- **Z5.** Ω/2 (the corner in the weight chart) is not 1/Ω, and no choice of thumb moves Ω (it has no unit to move).
+
+Kill: any stated equality not exact (sympy to 0, or 50 digits where it does not close); Z3's family meeting anywhere but
+home; Z4's two equal.
