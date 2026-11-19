@@ -234,6 +234,23 @@ classical route takes ln, arctan or π; the dual vantage is still needed for the
 step its share of Ω, an oscillator's period four facings (2π/ω), Kepler's period the whole turn and his time to a point
 a part of it.
 
+**The Cauchy averages to itself, and where calculus does the same.** Readings from standpoints z₁ = m₁ + iγ₁ and
+z₂ = m₂ + iγ₂, independent, average to a reading from (z₁ + z₂)/2; from one standpoint, the average of any number of
+readings is the same Cauchy as one. What is averaged is the standpoint, a point m + iγ, not an amount, which is how a law
+with no mean averages to itself. Among symmetric laws only the Cauchy does this (the stable law of index 1); the
+Gaussian's average narrows by √n, the law of large numbers the Cauchy does not obey. Independence is needed: copies held
+equal average to themselves under any law. Calculus has the same property in one place, the mean value property of
+harmonic and holomorphic functions: a harmonic function's value at a point is its average over any circle round it, and a
+function bounded and holomorphic in the upper half-plane, averaged over the Cauchy from z, gives its value at z (with
+e^(itx), the phasor e^(izt) of §5). The Cauchy is that averaging's kernel, the Poisson kernel, its density
+(1/π)·Im 1/(x − z) the imaginary part of the kernel in Cauchy's integral formula. Stepping back composes the same way, the
+Cauchy from height a after the Cauchy from height b the Cauchy from a + b; heights add as lengths, so n readings averaged
+divide the summed height by n and land where they began, where the heat kernel's widths add as squares. Laplace's
+equation is the calculus that needs no N: its mean value is exact, no count of strips and no limit, and it is the one
+place calculus builds in a read's own act, a value given as the average over a standpoint's directions. **Classical**
+(Cauchy's integral formula, Poisson, the stable laws); that harmonic functions are calculus's form of the stage being the
+same everywhere (R1107) is **a reading** (Tom, R1108).
+
 The two forms of one result agree wherever both apply: they describe one geometry, and a disagreement would be the
 discovery (R950). What the sorting tells is what each form needs to reach the result, not a different result. A mean is
 a write's tool, which is why a read has none (§3); π appears only where something is completed. Tom's expectation, not yet

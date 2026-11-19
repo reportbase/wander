@@ -576,6 +576,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1108 (19 Nov; Tom: "Two cauchy equals cauchy. What in can calculate can do that?", "Put it in read write"): the
+  Cauchy averages to itself because the standpoint m + iγ is averaged; calculus's counterpart the mean value property
+  (harmonic, holomorphic; the Cauchy the Poisson kernel, Cauchy's integral formula's kernel); Laplace's equation needs no
+  N. *Reads and Writes* §1. Classical; the tie to R1107 a reading.
   R1107 (18 Nov; Tom: "the cauchy relation space is the same for all shapes. The stage is always the same, its the
   ultimate invarient."): **the stage never changes**: one relation space for every shape, size and paint; the shape
   changes only the paint and where it lands. *Reads and Writes* abstract ("The stage is always the same"), essay 31 §8.
