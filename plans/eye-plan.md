@@ -40,3 +40,26 @@ gives when it is the one with the eye.
   ruler only once an eye rides its trace. Kill: the pivot's eye turned yields any distance (a nonzero baseline).
 
 ## Runs
+
+**Run 1** (`runs/eye/eye.py`, output `runs/eye/eye-run1.txt`, 50 digits). E1 not killed (every share 1/K to 10⁻⁵¹,
+the median boundary slope 1). E2's kill clause not killed (scaling the world by 10⁻³, 7, 10³ changed no receptor at
+K = 64, 1024); its gap clause killed by my code: the receptor index wrapped angles below 0 to 2π, so a turn of 0.3
+moved gaps by 4K + 1 (257, 4097). E3 not killed (400 things placed to 3·10⁻⁴⁷ at turns of 30°, 90°, 150°; the world
+scaled by 7 moves each place by 7 in bars, everything scaled by 7 moves none). E4 killed by my factor: the median error
+reaches ½ at 2.36 to 2.54 times sin Δ/ε, not within 2 (the chord is √2 and a receptor's middle errs by ε/4 typically, not
+ε; my estimate took neither); at 4× the reach the median read fails (rays crossing behind or not at all). E5 not killed
+(least at d = ½ bar exactly, 2.0 there; d and 1/(4d) equal to 10⁻⁴⁷). E6 not killed (the pivot's eye does not move when
+the bar turns: baseline 0, no distance).
+
+**Run 2** (`runs/eye/eye2.py`, `eye-run2.txt`): E2's gap clause, the index counted from the receptor's zero without the
+wrap: turned by 0.3, −0.7 and 1.1, no pair's gap changed by more than one receptor at K = 64, 1024 (E2′ not killed).
+
+**Reading.** Where the eye sits on the bar decides what the bar gives. At the pivot: directions laid on K receptors,
+the heat binned, nothing a scaling of the world moves, no distance, turning only slides every direction alike. At the
+trace: the turn carries the eye along a chord, so a turn becomes a step and every thing is placed in bars, exactly with
+exact directions, out to a few times sin Δ/ε with K receptors; scaling the world (the bar kept) moves every place by k,
+so a place in bars is a write against the bar as an amount. At both ends held still: the bar is the baseline, the best
+reading half a bar out, the same at d and 1/(4d): the bar's own exchange (R1117) about its half. All classical (HTP,
+PXC); what is shown is that the pivot points and the trace walks (R1110) once each end is given an eye. The 2 in the
+corner at ½ is the bar's whole length against parallax's half-baseline: the pair's corner sits at the bar's middle,
+not its tip.

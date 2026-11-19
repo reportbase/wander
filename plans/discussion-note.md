@@ -625,3 +625,8 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       enters with the mapping; "real" not used (R900). Offered, not run: retinal and cortical falloff (Curcio and Allen
       1990, Watson 2014, Horton and Hoyt 1991) against the heat about the look, predictions first; it may well fail,
       the eye's curve its building cost rather than the geometry.
+    - **The bar given eyes (R1121, EYE; Tom: "maybe if we gave the bar eyes, see what happens.").** Where the eye sits
+      decides what the bar gives: at the pivot directions only (the heat on K receptors, no distance); at the trace a
+      turn becomes a step, every thing placed in bars, exactly, out to a few × sin Δ/ε; at both ends held still the bar
+      is the baseline, best half a bar out, alike at d and 1/(4d). The pivot points, the trace walks (R1110). Exact,
+      E2 and E4 killed by my code and my factor; classical (HTP, PXC).

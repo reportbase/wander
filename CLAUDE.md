@@ -576,6 +576,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  EYE (`plans/eye-plan.md` + `runs/eye/`, 19 Nov; SPN R1121; Tom: "maybe if we gave the bar eyes, see what happens."):
+  where the eye sits on the bar decides what it gives: the pivot directions only (K receptors, no distance), the trace a
+  turn made a step (places in bars, a write against the bar), both ends a baseline (best half a bar out, d ↔ 1/(4d)).
+  E2 killed by my code (run 2 not), E4 by my factor; classical (HTP, PXC). Discussion note item 23.
   R1120 (19 Nov; Tom: "Something needs to map that geometry to something else, otherwise its just the bar with all this
   amazing geometry but its not mapped to anything."): **the geometry is free; a mapping onto something held (a receptor, a
   mark, a state) is a write**; an eye one such (curved retina, K densest at the look, cortex proportional then log, classical).
