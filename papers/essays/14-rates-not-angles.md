@@ -127,10 +127,12 @@ reading differs from 1; here, and only here, it agrees with the DHV's rate.
 √(π/2 · 2/π). On the logarithm they sit either side of it, ln(π/2) = 0.4516 above and ln(2/π) = −0.4516 below. So the
 DHV's rate is the fixed point of the reciprocal that pairs them.
 
-**The facings are s and 1/s.** π/2 is not walking and 2/π is not reading, and neither is a facing. Facing V is the
+**The facings are s and 1/s.** Neither π/2 nor 2/π is a facing; π/2 walks the arc and 2/π points to it (R1110, below). Facing V is the
 near reading s; facing away from V is the far reading 1/s; their product is 1 at every reading. π/2 and 2/π are limits
 at the horizon: the thumb's share h, averaged over the quarter turn, is 2/π, approached at the horizon and never
-reached; the heat 1/(1 + s²), gathered from home toward the horizon, totals π/2, approached by a count. Face V and
+reached; the heat 1/(1 + s²), gathered from home toward the horizon, totals π/2, approached by a count. Where the two
+sit is the two ends of one bar turned a quarter turn about one end: the trace end π/2, the pivot end 2/π (R1110; essay
+26 §7). Face V and
 face away from V at the same time and no facing is left: the non-facing,
 discrete value of 1 thumb. The 1 between them is also the
 DHV's number, the DHV having no standpoint and being neither read nor write (the second essay, §7). The reason is one line: each step of the arc gains v at the rate h,

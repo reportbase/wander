@@ -576,6 +576,30 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1110 (19 Nov; Tom: "The sweep has one face, not the bars ends.   The bars ends are the inside and outside of the
+  sweep."; "What traces the quarter turn.  The midpoint of the bar."; "Ignore the six beats, it is clearly wrong"):
+  **the sweep has one face; the bar's ends are its inside and outside** (a midpoint clause, withdrawn the same day).
+  The six beats (draw's "The sweep and its two faces", reportbase/draw#135) rejected, in no paper; R1017–R1019's two faces
+  on H superseded as far as faces go. Open: how Ω and 1/Ω attach to the inside and outside (as path lengths they do not
+  fit, every point going Ω times its distance from the pivot; as the trace against the bar and the bar against the trace
+  they do). Then (Tom: "But this means the inside never moves,", "Seems like 1."): the inside is the pivot, never moves,
+  the standpoint (R450); the midpoint traces the quarter turn as Ω, the outside 2Ω, the inside 0, so 1/Ω only the bar
+  against the trace. Then (Tom: "Still wrong. One side of the bar is the pivot, the other side is the trace. Not the
+  middle of the bar. Omega than faces the pivot"): **one end of the bar the pivot, the other end the trace (Ω for a bar of
+  1, a quarter turn), and the trace faces the pivot**; the midpoint clause withdrawn. Then (Tom: "1/Omega than is the
+  pivot"): **1/Ω is the pivot, Ω the trace**, one at each end, product 1; the pivot travels nothing, so 1/Ω is the bar
+  against the trace held at the pivot (Claude's, not ruled). Then (Tom: "It's profound because the ends of the bar now
+  have a clear meaning. It's not just a bar of 1."): **the bar's ends mean something: one end Ω, the other 1/Ω**;
+  supersedes R1032's and R1043's placing of Ω and 1/Ω on the facings. Then (Tom: "Yes, update paper and essays."):
+  *Reads and Writes* §9 "The bar's two ends: Ω and 1/Ω", essay 26 §7 "The bar's two ends", a sentence in essays 2 and 14,
+  the README row; `faces.html` and the draw explainer not changed. Then (Tom: "Furthermore, this means Omega walks the
+  arc, 1/Omega points to it."): **Ω walks the arc, 1/Ω points to it**; supersedes R1032's "π/2 is not walking" for Ω;
+  in the same paper and essay paragraphs, essays 2 and 14 reworded. Then (Tom: "Omega than is the radius. 1/Omega is
+  the center."): **Ω the radius, 1/Ω the centre**; read as the radius's walking end (the radius as a length is 1, the arc
+  Ω). Then (Tom: "The trap is using dhv terms to describe shv."): **radius and centre are the DHV's names for the
+  bar's ends; describing the SHV in DHV terms is the trap**; the SHV's words are the trace and the pivot. One sentence
+  each in *Reads and Writes* §9 and essay 26 §7. **For new writing: describe a single vantage in its own terms (trace
+  and pivot, walking and pointing, slopes), never in the DHV's (radius, centre, angle, circle).**
   R1109 (19 Nov; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon"): the cull keeps K at every N
   and compresses N into the horizon, nothing cut; the same fact as R1108 (N readings averaged one reading). *Reads and
   Writes* §6 "K and N", §1. A reading.

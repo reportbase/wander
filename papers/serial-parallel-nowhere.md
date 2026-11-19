@@ -7591,6 +7591,47 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 - **R1102** (18 Nov 2026; the same "1 2 3"): essay 31, *Calculus from one standpoint: where it needs N, and where it
   does not* (a car's speedometer and odometer), CLC, R1100 and RIC as one essay; README row, `essays.html` card, the smoke
   test's count 31 (not run). No paper changed.
+- **R1110** (19 Nov 2026; Tom, after a draw session's explainer "The sweep and its two faces" (draw `flows/sweep.tvfs`,
+  reportbase/draw#135): "A facing is just the end of the bar. Each end of the bar traces Omega and 1/Omega."; "The trace
+  is the middle of the bar"; "The sweep has one face, not the bars ends. The bars ends are the inside and outside of the
+  sweep."; "What traces the quarter turn. The midpoint of the bar."; "Ignore the six beats, it is clearly wrong"):
+  **the sweep has one face; the bar's ends are the inside and the outside of the sweep** (the midpoint clause below,
+  withdrawn the same day). The six beats (a bar of 1, the far end going Ω, the place 1/Ω along it going 1, two faces) are
+  rejected and go into no paper; the draw explainer built on them is to be redone in a draw session. Supersedes the
+  two-faces picture of R1017–R1019 (both faces on H, `faces.html`) as far as faces go. Claude's arithmetic, recorded, not
+  ruled: every point of the bar travels Ω times its distance from the pivot, so with the midpoint tracing the quarter
+  turn the ends' paths straddle it (halfway: its path less and more by the same amount; geometric middle: its path over
+  and times one factor) and are not Ω and 1/Ω; Ω and 1/Ω fit as the one trace against the bar and the bar against the
+  trace. Then (Tom: "But this means the inside never moves,"; to Claude's two options, "Seems like 1."): **the inside is
+  the pivot; it never moves; it is the standpoint** (staying where it stands while what it reads crosses, R450). With the
+  midpoint's distance from the inside as the unit, the midpoint traces the quarter turn as Ω and the outside 2Ω; the
+  inside traces 0, so 1/Ω is not a path, only the bar against the trace. Then (Tom: "Still wrong. One side of the bar is
+  the pivot, the other side is the trace. Not the middle of the bar. Omega than faces the pivot"): **corrected: one end of
+  the bar is the pivot, the other end is the trace; the midpoint traces nothing of note. The trace, Ω for a bar of 1 turned
+  a quarter turn, faces the pivot** (the arc's hollow side toward it). "The midpoint traces the quarter turn" and the
+  midpoint-as-unit arithmetic above are withdrawn. Then (Tom: "1/Omega than is the pivot"): **1/Ω is the pivot; Ω is the
+  trace.** Each end of the bar is one of the two: the pivot end 1/Ω, the trace end Ω; their product 1, no facing (R1042).
+  Claude's precision, recorded, not ruled: the pivot does not move, so 1/Ω is not a length it travels; it is the bar
+  measured against the trace (1 over Ω), held at the pivot. Then (Tom: "But that then means that one end of the bar is
+  Omega and the other end of the bar is 1/Omega."; "It's profound because the ends of the bar now have a clear meaning.
+  It's not just a bar of 1."): **the bar's ends have a meaning: one end Ω, the other 1/Ω; the bar is not just a bar of
+  1.** The one face is the sweep; the two ends carry its two numbers. Supersedes, as to where Ω and 1/Ω sit, R1032's and
+  R1043's assignment of them to the facings. Claude's caution: Ω × 1/Ω = 1 is arithmetic; the new thing is where the two
+  numbers sit, a reading. Then (Tom: "Yes, update paper and essays."): *Reads and Writes* §9 "The bar's two ends: Ω and
+  1/Ω" (with pointers in the opening paragraph, "Words used throughout", the four-identities table and Wallis's Ω), essay
+  26 §7 "The bar's two ends", one sentence each in essays 2 and 14, and the README row. Demos not changed. Then (Tom:
+  "Furthermore, this means Omega walks the arc, 1/Omega points to it."): **Ω walks the arc; 1/Ω points to it** (the
+  trace end goes along the arc, the pivot stays and points at it). Supersedes, for Ω and 1/Ω, R1032's "Pi/2 is not
+  walking, 2/pi is not readin"; essays 2 and 14's "π/2 is not walking and 2/π is not reading" reworded, a sentence added
+  to *Reads and Writes* §9's and essay 26 §7's paragraphs. Then (Tom: "Omega than is the radius. 1/Omega is the
+  center."): **Ω is the radius, 1/Ω the centre.** Claude's precisions, recorded, not ruled: as lengths the radius is the
+  bar, 1, and the arc Ω, so "Ω is the radius" is read as the radius's far end, the end that walks; and "radius" and
+  "centre" are a circle's words, which the read was said not to need (R643, R843; essay 26 §7 "No circle, no
+  trigonometry"), so whether they are the DHV's names for the bar's two ends (as with central and inscribed, R1043) is
+  put to Tom. Not yet in the paper or essays. Then (Tom: "I'm just marveling how it all connects. The trap is using dhv
+  terms to describe shv."): settled: **radius and centre are the DHV's names for the bar's two ends; the trap is
+  describing the SHV in DHV terms.** The SHV's words stay the trace and the pivot, walking and pointing (as R1043 for
+  central and inscribed). One sentence each in *Reads and Writes* §9's and essay 26 §7's "bar's two ends" paragraphs.
 - **R1109** (19 Nov 2026; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon", then "Yes"): restates
   R614 with the compression: the read keeps K at every H, half each side of the corner, and N is compressed, not cut, into
   the horizon (everything past about 2K/π thumbs, counted, sharing the last address; R411); every thing keeps its
