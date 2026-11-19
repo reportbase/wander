@@ -576,6 +576,25 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1117 (19 Nov; Tom: "The bar is denominator in the near field. The near field is how much of the bar."; "Thats a good way
+  to discuss parallax."; "Yes."): **in the near field the bar is the denominator, a thing read as d/H, how much of the bar
+  reaches it; past the tip the denominators swap, H/d, how much of the distance the bar is**; the two exchanges meeting at 1
+  at the trace. For parallax the bar is the half-baseline (the tip the Thales corner, d = B/2): inside a ruler, outside a
+  fraction, the far reading the annual parallax itself (the bar 1 AU); the error even about the tip; a ray once H/d is
+  under a grain (d ≈ B/ε). A distance in thumbs, had from two looks a bar apart. `papers/parallax.md` §5½; no other paper.
+  R1116 (19 Nov; Tom: "I picture the cauchy sphere as bouncing ball, following your gaze", then "No, it's not a correct
+  metaphor"; "the correct metaphor is something built out from the bar"; "Why half way? The near field is the bar itself,
+  the far field is what is beyond the bar."; "Yes"): **the near field is the bar itself, pivot to trace, one thumb long; the
+  far field is what lies beyond the bar.** The bars pivot at the eye and point; gaze moving swings them, nothing travels (the
+  bouncing ball withdrawn: it bounces only in units, and gives the read a shape). The "sphere" is the bars' tips, the trace,
+  swung every way about the pivot: NFS's S1, one thumb about the eye, the distance median, ½ of the heat; S2 (√3 out, where
+  the bars cross) is not it. Item 22 closed. Claude's "halfway" (the trace's Ω/2) was the corner in direction, not in
+  distance; halfway survives only in the heat (the bar holds ½). Recorded in SPN, `plans/nfs-plan.md`, discussion note
+  item 22; no paper changed.
+  Then (Tom: "So the near field is spherical in dhv defined by the bar. The far field is every thing beyond near field
+  sphere.", "Yes"): **in the DHV the near field is the ball of one thumb about the eye, the bar swung over all eight facings
+  (8Ω); the far field everything beyond it**, with no outer surface (the horizon, never reached); in the SHV no sphere,
+  only the bar on every direction read; the split even in heat (½ each), not in size.
   R1115 (19 Nov; Tom: "The cauchy sweep is the bars as cross hairs."; "The three bars as a 3d cross hair is the cauchy
   near field sphere. Where that sphere goes is not entirely clear."; "Yes"): NFS (`plans/nfs-plan.md` + `runs/nfs/`,
   exact, nothing killed). Two places for the one-thumb sphere. S1 about the eye: the distance median on every
