@@ -226,6 +226,12 @@ with κ = −Δ; so is an oscillator's direction x′/x, while its amplitude car
 rational in the half-slope of the angle, while the time to reach one needs Kepler's equation, solved only by iteration; Newton's Lemma XXVIII (*Principia*,
 Book I, Section VI) is the classical statement that no oval's cut-off area, so no orbit's time, is given by a finite
 equation, while the shape's points are rational.
+The bar of §9 ("The bar's two ends") pictures the split (R1113): the pivot's pointing is the slope, and the walk per unit
+of pointing, 1/(1 + s²), is a derivative given in fractions; the trace's whole walk, Ω, is the integral, where the
+arctangent leaves them; so the pivot (1/Ω) is the derivative and the trace (Ω) the integral, the bar joining them the
+fundamental theorem. Read the other way, a bar turned steadily is the Riccati equation ds/dw = 1 + s², its steps of
+pointing exact by tangent addition, its walk the clock. One bar, one parameter: s′ = t + s² has none. **Classical**
+(d arctan s/ds = 1/(1 + s²); tan solves s′ = 1 + s²); the placing at the bar's ends **a reading**.
 In each, the steps are the read's and the clock is the completion. **Exact** (the three runs, nothing killed in their
 final runs); the sorting **a reading**. What it shows is that the single hemispherical vantage competes with the dual
 hemispherical vantage across calculus (R1104): the same results, exactly, in fractions with no limit and no N, where the

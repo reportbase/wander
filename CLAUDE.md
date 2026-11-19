@@ -576,6 +576,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1113 (19 Nov; Tom: "Does the bar extend to calculus", "Yes"): **the bar's two ends are calculus's two halves**: the
+  pivot (1/Ω) the derivative, the walk per pointing 1/(1 + s²) in fractions with no limit; the trace (Ω) the integral,
+  the arctangent's total, the completion; the bar the fundamental theorem; a bar turned steadily the Riccati equation
+  ds/dw = 1 + s² (RIC), its steps exact, its walk the clock. Only the turn's symmetry (s′ = t + s² has no bar). Essay 31
+  §8 "The bar at both ends" (later sections 9–11), *Reads and Writes* §1's calculus paragraph. A reading; classical parts named.
   R1112 (19 Nov; Tom: "I wonder if we can describe cauchy in terms of the bar.", "Yes"): **the Cauchy is the trace
   end's walk counted per unit of the pivot's pointing**: walk per pointing 1/(1 + s²) = h², total Ω (the trace), the
   coefficient 1/Ω (the pivot), totalling 1 because the ends multiply to 1; corner the trace halfway, horizon the pointing
