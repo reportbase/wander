@@ -576,6 +576,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1110 (19 Nov; Tom: "The sweep has one face, not the bars ends.   The bars ends are the inside and outside of the
+  sweep."; "What traces the quarter turn.  The midpoint of the bar."; "Ignore the six beats, it is clearly wrong"):
+  **the sweep has one face; the bar's ends are its inside and outside; the midpoint of the bar traces the quarter turn.**
+  The six beats (draw's "The sweep and its two faces", reportbase/draw#135) rejected, in no paper; R1017–R1019's two faces
+  on H superseded as far as faces go. Open: how Ω and 1/Ω attach to the inside and outside (as path lengths they do not
+  fit, every point going Ω times its distance from the pivot; as the trace against the bar and the bar against the trace
+  they do). Nothing else changed.
   R1109 (19 Nov; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon"): the cull keeps K at every N
   and compresses N into the horizon, nothing cut; the same fact as R1108 (N readings averaged one reading). *Reads and
   Writes* §6 "K and N", §1. A reading.

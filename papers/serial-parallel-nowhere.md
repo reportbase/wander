@@ -7591,6 +7591,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 - **R1102** (18 Nov 2026; the same "1 2 3"): essay 31, *Calculus from one standpoint: where it needs N, and where it
   does not* (a car's speedometer and odometer), CLC, R1100 and RIC as one essay; README row, `essays.html` card, the smoke
   test's count 31 (not run). No paper changed.
+- **R1110** (19 Nov 2026; Tom, after a draw session's explainer "The sweep and its two faces" (draw `flows/sweep.tvfs`,
+  reportbase/draw#135): "A facing is just the end of the bar. Each end of the bar traces Omega and 1/Omega."; "The trace
+  is the middle of the bar"; "The sweep has one face, not the bars ends. The bars ends are the inside and outside of the
+  sweep."; "What traces the quarter turn. The midpoint of the bar."; "Ignore the six beats, it is clearly wrong"):
+  **the sweep has one face; the bar's ends are the inside and the outside of the sweep; the midpoint of the bar traces
+  the quarter turn.** The six beats (a bar of 1, the far end going Ω, the place 1/Ω along it going 1, two faces) are
+  rejected and go into no paper; the draw explainer built on them is to be redone in a draw session. Supersedes the
+  two-faces picture of R1017–R1019 (both faces on H, `faces.html`) as far as faces go. Claude's arithmetic, recorded, not
+  ruled: every point of the bar travels Ω times its distance from the pivot, so with the midpoint tracing the quarter
+  turn the ends' paths straddle it (halfway: its path less and more by the same amount; geometric middle: its path over
+  and times one factor) and are not Ω and 1/Ω; Ω and 1/Ω fit as the one trace against the bar and the bar against the
+  trace. **Open:** how Ω and 1/Ω attach to the inside and outside. No paper, essay or demo changed.
 - **R1109** (19 Nov 2026; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon", then "Yes"): restates
   R614 with the compression: the read keeps K at every H, half each side of the corner, and N is compressed, not cut, into
   the horizon (everything past about 2K/π thumbs, counted, sharing the last address; R411); every thing keeps its
