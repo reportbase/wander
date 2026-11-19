@@ -20,7 +20,7 @@ weight ds/(1 + s²), the one weight that composing slopes leaves unchanged, summ
 sweeps' worth. Since the paper's subject is the single sweep, its constants are mostly π/2 and 2/π, and it is simpler to
 give that total its own letter than to keep halving π: Ω = π/2, so 2/π is 1/Ω, the turn is 4Ω and the sphere 8Ω, the
 Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω and its inverse are to reads and writes what π is to the dual hemispherical vantage: the limits at the
-horizon of one sweep (§9, "Facing V and facing away from V"), and π, two sweeps' worth joined, is the DHV's own. Both are limits, and they are the limits a read and a write actually encounter: 1/Ω is
+horizon of one sweep (§9, "Facing V and facing away from V"; on a bar turned a quarter turn about one end, the trace end is Ω and the pivot end 1/Ω, §9, "The bar's two ends"), and π, two sweeps' worth joined, is the DHV's own. Both are limits, and they are the limits a read and a write actually encounter: 1/Ω is
 what the thumb's share tends to as a sweep runs on toward the horizon, and Ω is what a count of the walk tends to,
 stride by stride. No finite sweep and no finite count has either value, but each is headed for its own. π is a limit
 neither encounters, since it takes both hemispheres at once. From here on the paper writes Ω where it helps and π where it does
@@ -655,7 +655,8 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
   places at the heat's quantiles (§5).
 - Facing V is the near reading s, facing away from V the far reading 1/s; their product 1 is no facing, one thumb
   (§9, "Facing V and facing away from V"). Ω and 1/Ω (defined before §1; Ω = π/2) are limits at the horizon, the heat's
-  total and the mean share. Ω and the one-length circle are the dual hemispherical vantage's, from no
+  total and the mean share. On a bar turned a quarter turn about one end, the trace end is Ω and the pivot end 1/Ω
+  (§9, "The bar's two ends"). Ω and the one-length circle are the dual hemispherical vantage's, from no
   standpoint, nothing to do with reads and writes.
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
 
@@ -1865,7 +1866,7 @@ slope, and each of those is a fact about the exchange s ↔ 1/s, whose fixed poi
 |---|---|---|---|
 | the circle | h² + v² = 1 | 1/(1 + s²) + s²/(1 + s²) = 1 | the heat in the v/h chart and the heat in the h/v chart share one whole |
 | the half turn | e^(iπ) = −1 | w(s)·w(1/s) = −1, w = (1 + is)/(1 − is) | a direction and its reciprocal compose to the half turn |
-| the two facings | Ω · 1/Ω = 1 | s · (1/s) = 1 | the exchange undoes itself; the corner is its fixed point |
+| the bar's two ends; the two facings | Ω · 1/Ω = 1 | s · (1/s) = 1 | the exchange undoes itself; the corner is its fixed point |
 | the total | (1/Ω)·∫₀^∞ ds/(1 + s²) = 1 | ∫₀¹ ds/(1 + s²) = ∫₁^∞ ds/(1 + s²) | the corner splits the heat in equal halves |
 
 *The circle.* The heat per unit of s is h² = 1/(1 + s²); in the turned-over chart t = 1/s it is 1/(1 + t²) = s²/(1 + s²)
@@ -1902,6 +1903,16 @@ the heat above it (§6). The DHV has no standpoint and faces neither way, and it
 limits at the horizon: the heat's total ∫₀^∞ ds/(1 + s²) = Ω, approached by a count, and the thumb's mean share 1/Ω,
 values held by no SHV or count. An earlier account in angles, two sweeps pivoting at a circle's centre and on it, is
 withdrawn (R1043).
+
+**The bar's two ends: Ω and 1/Ω.** Where the two limits sit has a plain picture (Tom, R1110). Turn a bar of one thumb
+one quarter turn about one of its ends. The sweep has one face, not two. One end of the bar is the pivot, the
+standpoint, and never moves; the other end is the trace, which runs the quarter arc and faces the pivot. The trace end
+is Ω: for a bar of 1 it is the length traced. The pivot end is 1/Ω. Multiplied, the two ends give 1, with no facing,
+the same 1 as near times far. So the bar is not just a bar of 1: its two ends have a meaning (Tom: "It's not just a bar
+of 1."). The pivot travels nothing, so 1/Ω there is not a distance; it is the bar measured against its trace, 1 over Ω,
+held at the pivot (a reading). Ω × 1/Ω = 1 is arithmetic; what is new is where the two numbers sit. This places Ω and
+1/Ω on the bar's ends, where R1032 had placed them on the facings; the facings stay the near and far readings, s and
+1/s, and an earlier picture with the trace at the bar's middle is withdrawn (R1110).
 
 **The thumb, as a mean share times a length, and whole.** Said most simply: the true size is 1, the thumb in thumbs.
 The mean share over the turn, 1/Ω, times the arc's length, Ω, gives back the 1. The proof is one line, in the DHV's terms. Along the sweep, from all of h to all of v, each step dℓ of the arc
@@ -2090,7 +2101,7 @@ else; the same split is why the square of ∫ e^(−x²) dx is π, a full turn 2
 
 The count's tier is de Moivre's (1733): tossing and counting is what counting does, and the Gaussian is
 what the counts tend to. Ω arrives in that limit through Wallis's product (1656),
-Ω = (2·2)/(1·3) × (4·4)/(3·5) × (6·6)/(5·7) × …, every partial product a fraction: the Ω of facing away from V,
+Ω = (2·2)/(1·3) × (4·4)/(3·5) × (6·6)/(5·7) × …, every partial product a fraction: the Ω of the bar's trace end,
 approached by counting. And what is exact flips once more. For the Cauchy the exact facts were the median and the equal halves, and
 there was no mean; for the Gaussian the exact facts a count holds are the mean and the variance, which are
 sums. The Cauchy is kept by order and the Gaussian by sums, a law of directions and a law of amounts. This is no fifth

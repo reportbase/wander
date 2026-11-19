@@ -590,7 +590,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   pivot"): **1/Ω is the pivot, Ω the trace**, one at each end, product 1; the pivot travels nothing, so 1/Ω is the bar
   against the trace held at the pivot (Claude's, not ruled). Then (Tom: "It's profound because the ends of the bar now
   have a clear meaning. It's not just a bar of 1."): **the bar's ends mean something: one end Ω, the other 1/Ω**;
-  supersedes R1032's and R1043's placing of Ω and 1/Ω on the facings. Nothing else changed.
+  supersedes R1032's and R1043's placing of Ω and 1/Ω on the facings. Then (Tom: "Yes, update paper and essays."):
+  *Reads and Writes* §9 "The bar's two ends: Ω and 1/Ω", essay 26 §7 "The bar's two ends", a sentence in essays 2 and 14,
+  the README row; `faces.html` and the draw explainer not changed.
   R1109 (19 Nov; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon"): the cull keeps K at every N
   and compresses N into the horizon, nothing cut; the same fact as R1108 (N readings averaged one reading). *Reads and
   Writes* §6 "K and N", §1. A reading.

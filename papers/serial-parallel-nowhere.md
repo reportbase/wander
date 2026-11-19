@@ -7617,7 +7617,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   It's not just a bar of 1."): **the bar's ends have a meaning: one end Ω, the other 1/Ω; the bar is not just a bar of
   1.** The one face is the sweep; the two ends carry its two numbers. Supersedes, as to where Ω and 1/Ω sit, R1032's and
   R1043's assignment of them to the facings. Claude's caution: Ω × 1/Ω = 1 is arithmetic; the new thing is where the two
-  numbers sit, a reading. No paper, essay or demo changed.
+  numbers sit, a reading. Then (Tom: "Yes, update paper and essays."): *Reads and Writes* §9 "The bar's two ends: Ω and
+  1/Ω" (with pointers in the opening paragraph, "Words used throughout", the four-identities table and Wallis's Ω), essay
+  26 §7 "The bar's two ends", one sentence each in essays 2 and 14, and the README row. Demos not changed.
 - **R1109** (19 Nov 2026; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon", then "Yes"): restates
   R614 with the compression: the read keeps K at every H, half each side of the corner, and N is compressed, not cut, into
   the horizon (everything past about 2K/π thumbs, counted, sharing the last address; R411); every thing keeps its

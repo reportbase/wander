@@ -205,6 +205,15 @@ itself.
 The absurdity was in taking either facing alone. The demo `faces.html` runs both readings along the thumb's quarter
 turn, s and 1/s, and keeps their product, 1 at every point of the turn.
 
+**The bar's two ends.** There is a plainer way to see where Ω and 1/Ω live. Take the thumb as a bar and turn it the
+quarter turn about one of its ends. The sweep has one face, not two. One end of the bar is the pivot: it never moves,
+and it is where you stand. The other end is the trace: it runs the quarter arc, and the arc it draws faces the pivot.
+For a bar of one thumb the trace is Ω long. So one end of the bar is Ω, the trace, and the other end is 1/Ω, the pivot.
+Multiply the two ends and you get 1, with no facing, the same one thumb that near times far gave. The bar is not just a
+bar of one thumb any more: its two ends mean something. (The pivot goes nowhere, so its 1/Ω is not a distance it
+travels; it is the bar held against its own trace, one over Ω. And Ω × 1/Ω = 1 is only arithmetic; what is new is
+where each number sits.)
+
 **Euler's identity, in thumbs.** Everyone knows e^(iπ) = −1. Here it is from one vantage, with one thumb, and
 nothing else.
 
@@ -242,9 +251,10 @@ one thumb, Euler's identity needs no circle, no angle, no π and no e: a horizon
 **Into the sphere.** Euler's formula takes all of this into the sphere, and nothing new comes in with it: it is still
 just H and V, with one more degree of freedom.
 
-The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028, R1029, R1030, R1031), the wording mine. Older wordings in the series
+The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028, R1029, R1030, R1031, R1110), the wording mine. Older wordings in the series
 that give a facing "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
-brought to it. Since R1043 the two facings are the near and far readings, s and 1/s.
+brought to it. Since R1043 the two facings are the near and far readings, s and 1/s; since R1110 Ω and 1/Ω sit at
+the bar's two ends, the trace and the pivot, and not on the facings.
 
 ## 8. What needs a face, and what does not
 
@@ -297,4 +307,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026, R1027, R1028, R1029, R1030, R1031.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026, R1027, R1028, R1029, R1030, R1031, R1110.
