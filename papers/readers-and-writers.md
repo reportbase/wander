@@ -249,7 +249,8 @@ divide the summed height by n and land where they began, where the heat kernel's
 equation is the calculus that needs no N: its mean value is exact, no count of strips and no limit, and it is the one
 place calculus builds in a read's own act, a value given as the average over a standpoint's directions. **Classical**
 (Cauchy's integral formula, Poisson, the stable laws); that harmonic functions are calculus's form of the stage being the
-same everywhere (R1107) is **a reading** (Tom, R1108).
+same everywhere (R1107) is **a reading** (Tom, R1108). It is the cull again (§6, "K and N"): a law that N readings averaged leave unchanged holds
+no trace of N, the cull's K at every N seen from the statistics' side (R1109).
 
 The two forms of one result agree wherever both apply: they describe one geometry, and a disagreement would be the
 discovery (R950). What the sorting tells is what each form needs to reach the result, not a different result. A mean is
@@ -1131,7 +1132,12 @@ N and the view does not change; make N unbounded and it still does not (an infin
 the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull: an implementation holding K samples does
 O(K) work, whatever N. What the cull gives up is sameness: a count that holds N holds every item as 1/N of the whole, all
 alike, with no standpoint favoured; a read's K is spent finest at the corner and coarser each stretch away, and that
-unevenness is the vantage. **Checked** (`star-field.html`).
+unevenness is the vantage. **Checked** (`star-field.html`). The cull leaves K and compresses N at the horizon (Tom, R1109): nothing is
+cut, every thing keeps its direction, and what lies past the last address (about 2K/π thumbs out, counted) shares it with
+everything beyond. What does the compressing is the heat, ds/(1 + s²), thinning toward the horizon, not a count; K is a
+fineness, counted as addresses only by a write (R706). The same fact in statistics: readings from one standpoint averaged
+are one reading (below, "The Cauchy averages to itself"), so N leaves no mark in what is held, where a Gaussian's average
+narrows by √N. **A reading** (Tom, R1109).
 
 **A record the size of what it records.** A record has a second cost beside lagging (R1049): its size (Tom, R1050).
 A write is a thing with a size, so a complete record of the writes that have occurred takes at least as many things as
