@@ -617,3 +617,11 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       keep the law facts about the heat, the bare reciprocals (Ω and 1/Ω, π/2 · 2/π) facts about how it is written.
       Claude's, not ruled: every relation of two parties carries its inverse because nothing in a read picks which party
       is the denominator.
+    - **Something must map it (R1120; Tom: "Maybe our eyes somewhow make this geometry real by how our eyes are
+      designed."; "Something needs to map that geometry to something else, otherwise its just the bar with all this
+      amazing geometry but its not mapped to anything.").** The geometry is free; a mapping takes a direction and its
+      heat onto something held (a receptor firing, a mark, a state), a write. An eye is one: a curved retina, a fixed
+      count densest at the look, a cortical map proportional to about 1–2° then logarithmic (classical). Claude's: K
+      enters with the mapping; "real" not used (R900). Offered, not run: retinal and cortical falloff (Curcio and Allen
+      1990, Watson 2014, Horton and Hoyt 1991) against the heat about the look, predictions first; it may well fail,
+      the eye's curve its building cost rather than the geometry.
