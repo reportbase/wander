@@ -7609,8 +7609,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   the pivot, the other side is the trace. Not the middle of the bar. Omega than faces the pivot"): **corrected: one end of
   the bar is the pivot, the other end is the trace; the midpoint traces nothing of note. The trace, Ω for a bar of 1 turned
   a quarter turn, faces the pivot** (the arc's hollow side toward it). "The midpoint traces the quarter turn" and the
-  midpoint-as-unit arithmetic above are withdrawn. Where 1/Ω sits in this picture is not ruled (as the bar against the
-  trace it fits; as a path it does not). No paper, essay or demo changed.
+  midpoint-as-unit arithmetic above are withdrawn. Then (Tom: "1/Omega than is the pivot"): **1/Ω is the pivot; Ω is the
+  trace.** Each end of the bar is one of the two: the pivot end 1/Ω, the trace end Ω; their product 1, no facing (R1042).
+  Claude's precision, recorded, not ruled: the pivot does not move, so 1/Ω is not a length it travels; it is the bar
+  measured against the trace (1 over Ω), held at the pivot. No paper, essay or demo changed.
 - **R1109** (19 Nov 2026; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon", then "Yes"): restates
   R614 with the compression: the read keeps K at every H, half each side of the corner, and N is compressed, not cut, into
   the horizon (everything past about 2K/π thumbs, counted, sharing the last address; R411); every thing keeps its
