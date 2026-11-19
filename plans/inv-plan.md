@@ -110,3 +110,19 @@ length 1.
 
 Kill: any stated equality not exact (sympy to 0, or 50 digits where it does not close); Z3's family meeting anywhere but
 home; Z4's two equal.
+
+**Run 3** (`runs/inv/inv3.py`, output `inv-run3.txt`, 19 Nov). Nothing killed. Z1: in the weight chart the exchange is
+w ↦ Ω − w, fixed at Ω/2 = w(1), the corner (sympy left arctan(1/s) + arctan s = Ω open for s > 0; closed by its derivative
+0 and at 50 digits, as the kill allows). Z2: divided by Ω, g ↦ 1 − g on [0, 1], and (Ω, 1/Ω) becomes (1, 1). Z3: the walk
+over the chord r(s) and its reciprocal multiply to 1, r rises from 1 at home through Ω/√2 = 1.1107 at the corner to Ω at
+the horizon, meeting 1/r only at home. Z4: r(1/s) ≠ 1/r(s) at every s tried (at 10³⁰, 1 against 1/Ω). Z5: Ω/2 ≠ 1/Ω; the
+total of ds/(1 + s²) is Ω whatever the thumb.
+
+**Reading.** Ω and 1/Ω have no fixed point because they are not a pair of the exchange. Ω is the length of the chart in
+which the exchange is a mirror, w ↦ Ω − w, and that mirror has a fixed point, Ω/2, the corner: the trace's walk folded at
+its middle. 1/Ω is the factor that makes the length 1, the share g, where the mirror is g ↦ 1 − g (run 2's square) and Ω
+is gone. So their product 1 says only that the unit interval has length one; no read moves Ω to 1/Ω. Where they do
+appear as two values, in the walk over the chord and its reciprocal, the two meet at home, not at the corner, and that
+family is not the exchange. So the pairs of item 23 sort in two: maps on directions (s ↔ 1/s, d/H ↔ H/d, w(s) ↔ w(1/s),
+the heat's halves), each with a fixed point at the corner or the tip, and a change of chart (Ω ↔ 1/Ω), which has none.
+A reading; classical parts (arctan s + arctan(1/s) = π/2).

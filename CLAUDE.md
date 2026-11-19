@@ -586,6 +586,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   in shares the unit square (1/(1 + s²), 1/(1 + x²)): both corners one point (½, ½), each exchange p ↦ 1 − p, both a half
   turn, no π or e in any map; the thumb rational (q ↦ q/(q + k²(1 − q))), the turn rational only in h and v; both laws the
   arcsine, π its total, in no motion. Euler's plane trades π and e for motions that add; the square keeps fractions.
+  Run 3 (Tom: "proceed with the open thread"): Ω and 1/Ω are not a pair of the exchange: Ω the length of the weight
+  chart, where the exchange is w ↦ Ω − w fixed at Ω/2 (the corner), 1/Ω the factor making it [0, 1]; as two values (the
+  walk over the chord and 1/r) they meet at home. The pairs sort in two: maps on directions (fixed at the corner or the
+  tip) and a change of chart (Ω ↔ 1/Ω, fixed nowhere).
   R1117 (19 Nov; Tom: "The bar is denominator in the near field. The near field is how much of the bar."; "Thats a good way
   to discuss parallax."; "Yes."): **in the near field the bar is the denominator, a thing read as d/H, how much of the bar
   reaches it; past the tip the denominators swap, H/d, how much of the distance the bar is**; the two exchanges meeting at 1

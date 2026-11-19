@@ -592,8 +592,7 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
     - **Found.** The near/far exchange is the facings' exchange in the ratio chart: one half-Cauchy, median 1 both ways.
       On Euler's plane two perpendicular mirrors, composing to a half turn about the heat's peak. They differ in motion:
       a turn leaves the slope's law fixed, a new thumb moves the distance's median to it.
-    - **Open.** Whether Ω and 1/Ω belong with them or stand apart (no fixed point); what the half turn about the hot spot
-      means for a read; Tom to say.
+    - **Open.** What the half turn about the hot spot means for a read; Tom to say. (Ω and 1/Ω: answered below.)
     - **The SHV's plane (INV run 2; Tom: "euler's plane is dhv, what is the shv equivalent/", then "yes").** The pair (s, x) read as
       shares (p, q) = (1/(1 + s²), 1/(1 + x²)), the unit square: corner and tip one point (½, ½), each exchange p ↦ 1 − p,
       both a half turn, no π or e in any map; the thumb q ↦ q/(q + k²(1 − q)), rational; the turn (√p − a√(1 − p))²/(1 + a²),
@@ -602,5 +601,10 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       explored further (Tom: "ok, proceed with your recommendation"): every piece is classical (each exchange h² ↔ v²,
       "one minus"; the thumb the odds q/(1 − q) times 1/k²; the law the arcsine of cos² under a uniform turn, CHS's logistic
       chart), and the square's half turn is Euler's in another chart: q = ½(1 − tanh u) takes u ↦ −u to q ↦ 1 − q, p = cos²θ
-      takes θ ↦ π/2 − θ to p ↦ 1 − p. Its new motions need h and v, so it returns to the slope chart. Closed. The open
-      thread left in this item is Ω and 1/Ω, the one pair with no fixed point.
+      takes θ ↦ π/2 − θ to p ↦ 1 − p. Its new motions need h and v, so it returns to the slope chart. Closed.
+    - **Ω and 1/Ω (INV run 3; Tom: "proceed with the open thread").** Not a pair of the exchange: Ω is the length of
+      the weight chart, where the exchange is the mirror w ↦ Ω − w with its fixed point Ω/2 at the corner (the trace's
+      walk folded at its middle); 1/Ω the factor making that length 1, where the mirror is g ↦ 1 − g and Ω is gone.
+      Where they appear as two values (the walk over the chord, r, and 1/r) they meet at home, not the corner, and that
+      family is not the exchange. So item 23's pairs sort in two: maps on directions, each fixed at the corner or the
+      tip, and a change of chart (Ω ↔ 1/Ω), fixed nowhere. Exact, nothing killed. A reading.
