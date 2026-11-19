@@ -578,13 +578,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
   R1110 (19 Nov; Tom: "The sweep has one face, not the bars ends.   The bars ends are the inside and outside of the
   sweep."; "What traces the quarter turn.  The midpoint of the bar."; "Ignore the six beats, it is clearly wrong"):
-  **the sweep has one face; the bar's ends are its inside and outside; the midpoint of the bar traces the quarter turn.**
+  **the sweep has one face; the bar's ends are its inside and outside** (a midpoint clause, withdrawn the same day).
   The six beats (draw's "The sweep and its two faces", reportbase/draw#135) rejected, in no paper; R1017–R1019's two faces
   on H superseded as far as faces go. Open: how Ω and 1/Ω attach to the inside and outside (as path lengths they do not
   fit, every point going Ω times its distance from the pivot; as the trace against the bar and the bar against the trace
   they do). Then (Tom: "But this means the inside never moves,", "Seems like 1."): the inside is the pivot, never moves,
   the standpoint (R450); the midpoint traces the quarter turn as Ω, the outside 2Ω, the inside 0, so 1/Ω only the bar
-  against the trace. Nothing else changed.
+  against the trace. Then (Tom: "Still wrong. One side of the bar is the pivot, the other side is the trace. Not the
+  middle of the bar. Omega than faces the pivot"): **one end of the bar the pivot, the other end the trace (Ω for a bar of
+  1, a quarter turn), and the trace faces the pivot**; the midpoint clause withdrawn; where 1/Ω sits not ruled. Nothing
+  else changed.
   R1109 (19 Nov; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon"): the cull keeps K at every N
   and compresses N into the horizon, nothing cut; the same fact as R1108 (N readings averaged one reading). *Reads and
   Writes* §6 "K and N", §1. A reading.

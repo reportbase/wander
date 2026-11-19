@@ -7595,8 +7595,8 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   reportbase/draw#135): "A facing is just the end of the bar. Each end of the bar traces Omega and 1/Omega."; "The trace
   is the middle of the bar"; "The sweep has one face, not the bars ends. The bars ends are the inside and outside of the
   sweep."; "What traces the quarter turn. The midpoint of the bar."; "Ignore the six beats, it is clearly wrong"):
-  **the sweep has one face; the bar's ends are the inside and the outside of the sweep; the midpoint of the bar traces
-  the quarter turn.** The six beats (a bar of 1, the far end going Ω, the place 1/Ω along it going 1, two faces) are
+  **the sweep has one face; the bar's ends are the inside and the outside of the sweep** (the midpoint clause below,
+  withdrawn the same day). The six beats (a bar of 1, the far end going Ω, the place 1/Ω along it going 1, two faces) are
   rejected and go into no paper; the draw explainer built on them is to be redone in a draw session. Supersedes the
   two-faces picture of R1017–R1019 (both faces on H, `faces.html`) as far as faces go. Claude's arithmetic, recorded, not
   ruled: every point of the bar travels Ω times its distance from the pivot, so with the midpoint tracing the quarter
@@ -7605,8 +7605,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   trace. Then (Tom: "But this means the inside never moves,"; to Claude's two options, "Seems like 1."): **the inside is
   the pivot; it never moves; it is the standpoint** (staying where it stands while what it reads crosses, R450). With the
   midpoint's distance from the inside as the unit, the midpoint traces the quarter turn as Ω and the outside 2Ω; the
-  inside traces 0, so 1/Ω is not a path, only the bar against the trace. Tom's "seems like": to confirm before any paper
-  is rebuilt on it. No paper, essay or demo changed.
+  inside traces 0, so 1/Ω is not a path, only the bar against the trace. Then (Tom: "Still wrong. One side of the bar is
+  the pivot, the other side is the trace. Not the middle of the bar. Omega than faces the pivot"): **corrected: one end of
+  the bar is the pivot, the other end is the trace; the midpoint traces nothing of note. The trace, Ω for a bar of 1 turned
+  a quarter turn, faces the pivot** (the arc's hollow side toward it). "The midpoint traces the quarter turn" and the
+  midpoint-as-unit arithmetic above are withdrawn. Where 1/Ω sits in this picture is not ruled (as the bar against the
+  trace it fits; as a path it does not). No paper, essay or demo changed.
 - **R1109** (19 Nov 2026; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon", then "Yes"): restates
   R614 with the compression: the read keeps K at every H, half each side of the corner, and N is compressed, not cut, into
   the horizon (everything past about 2K/π thumbs, counted, sharing the last address; R411); every thing keeps its
