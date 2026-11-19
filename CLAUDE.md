@@ -576,6 +576,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1122 (19 Nov; Tom: "we need to build out from the bar one step at a time."; "two reads create an extent."; "in paralax,
+  there are no bars, only extents."): **build from the bar one step at a time, Tom's steps only, nothing added**, kept in
+  `plans/bar-steps.md` (the bar a place holder for any extent; two reads create an extent; in parallax no bars, only extents).
   EYE (`plans/eye-plan.md` + `runs/eye/`, 19 Nov; SPN R1121; Tom: "maybe if we gave the bar eyes, see what happens."):
   where the eye sits on the bar decides what it gives: the pivot directions only (K receptors, no distance), the trace a
   turn made a step (places in bars, a write against the bar), both ends a baseline (best half a bar out, d ↔ 1/(4d)).
