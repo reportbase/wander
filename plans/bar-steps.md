@@ -13,6 +13,7 @@ words; nothing is added until he gives it. Anything of Claude's is marked so.
    create the geometry.   no geometry without the sweep.")
 6. Just being an extent is not enough for the geometry. ("just being an extent is not enough for the geometry.")
 7. The bar is a write, the sweep is the read. ("the bar is a write, the sweep is the read.")
+8. Geometry requires a previous write. ("that is helpful reframe.   so geometry requires a previous write.")
 
 Claude's reading of 1–3 (that parallax needs no bar) withdrawn by step 4. Claude's candidate step "one read creates
 no extent" offered, not taken.
@@ -24,3 +25,8 @@ extent swept.
 
 Claude's reading of 5–7, not ruled: the geometry takes a write and a read together, the bar (discrete, with a size,
 R1039) and its sweep (continuous, no size); neither alone has it.
+
+Claude's flags on step 8, for Tom, not ruled: it reverses the order the papers have used, where a read needs nothing
+(R297 "reading is free") and the geometry stands without physics (R852). If the bar is a write (a size, moved by
+scaling, R1039), the geometry now waits on one. H as "the value chosen to start the system" (R226) would then be that
+first write.
