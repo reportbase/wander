@@ -70,3 +70,19 @@ share, p = 1/(1 + s²) and q = 1/(1 + x²), a point of the unit square.
 
 Kill: any stated equality not exact (sympy to 0, or 50 digits where it does not close), Y3's map rational in p, or
 Y2's map not fixing 0 and 1.
+
+**Run 2** (`runs/inv/inv2.py`, output `inv-run2.txt`, 19 Nov). Nothing killed. Y1: each exchange is p ↦ 1 − p exactly,
+the one fixed point ½ (the corner, the bar's tip), both at once the half turn about (½, ½). Y2: x ↦ kx is
+q ↦ q/(q + k²(1 − q)), fixing 0 and 1, M_k′ ∘ M_k = M_(kk′). Y3: the turn is (√p − a√(1 − p))²/(1 + a²), not rational
+in p, rational in (h, v) as (h − a·v)²/(1 + a²); its shift depends on p (at a = ⅓: −3/10 at p = ½, (1 − 3√3)/20 at
+p = ¼), so not a translation. Y4: the slope's law in p and the distance's in q are both the arcsine law
+1/(π√(p(1 − p))), total exactly 1; sympy left an Abs(√(1 − p)) open (p not declared below 1), closed at 50 digits as the
+kill allows. Y5: after x ↦ kx the median of q is 1/(1 + k²) at k = 2, 7/3, 10.
+
+**Reading.** The SHV's counterpart of Euler's plane is the pair (s, x), and in shares the unit square: the two corners one
+point (½, ½), the two exchanges two reflections, both at once a half turn, with no π, e or angle in any map. What the
+square gives up is Euler's one trick: neither motion slides. The thumb is a Möbius map of the share, rational; the turn
+needs the shares' roots, h and v, so the turn is the slope's (tangent addition) or the roots' ((h − a·v)), never the
+share's alone. And the law on the square carries π (the arcsine's 1/π), though no map does: π is the law's total, the
+DHV's, not any motion's. So Euler's plane trades π and e for addition; the share square keeps fractions and pays in
+motions that do not add.

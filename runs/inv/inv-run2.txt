@@ -1,0 +1,20 @@
+Y1 p(1/s) = 1 - p(s): ok
+Y1 q(1/x) = 1 - q(x): ok
+Y1 fixed point of p->1-p: [1/2]  P(1) = 1/2
+Y1 both = half turn about (1/2,1/2): ok
+Y2 q(kx) = Mk(q(x)): ok
+Y2 composes: M_k2(M_k(q)) = M_(k k2)(q): ok
+Y2 fixes 0 and 1: 0 1
+Y3 PYT identity: ok
+Y3 p(s+a) = turn_p(p(s)): ok
+Y3 rational in p? False | contains sqrt: True
+Y3 in (h, v): (a*v - h)**2/(a**2 + 1) (rational)
+Y3 shift at p=1/4,1/2 (a=1/3): [1/20 - 3*sqrt(3)/20, -3/10]
+Y4 slope law in p = arcsine: FAIL 1/(pi*sqrt(p)*Abs(sqrt(1 - p))) - 1/(pi*sqrt(p)*sqrt(1 - p))
+Y4 sech law in x = half-Cauchy: ok
+Y4 arcsine total: 0.9999999999999999999999999993569049837796
+Y5 k=2.0: median kx 2.0, median q 0.2 vs 1/(1+k^2) 0.2
+Y5 k=2.33333: median kx 2.33333333333333333333333333333, median q 0.155172413793103448275862068966 vs 1/(1+k^2) 0.155172413793103448275862068966
+Y5 k=10.0: median kx 10.0, median q 0.00990099009900990099009900990099 vs 1/(1+k^2) 0.00990099009900990099009900990099
+Y4 slope law in p = arcsine, 50 digits at p = 1/7, 1/2, 9/10: ['0.0', '0.0', '0.0']
+Y4 arcsine total, exact: 1

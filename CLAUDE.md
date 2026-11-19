@@ -582,6 +582,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   On Euler's plane the two are perpendicular mirrors (θ = π/4, u = 0) composing to a half turn about the heat's peak (the
   hot spot, R728); they differ in motion (a turn keeps the slope's law, a new thumb moves the distance's median to k).
   Ω and 1/Ω have no fixed point and are not in it. Discussion note item 23; no paper changed.
+  Run 2 (Tom: "euler's plane is dhv, what is the shv equivalent/", then "yes"): the SHV's counterpart is the pair (s, x),
+  in shares the unit square (1/(1 + s²), 1/(1 + x²)): both corners one point (½, ½), each exchange p ↦ 1 − p, both a half
+  turn, no π or e in any map; the thumb rational (q ↦ q/(q + k²(1 − q))), the turn rational only in h and v; both laws the
+  arcsine, π its total, in no motion. Euler's plane trades π and e for motions that add; the square keeps fractions.
   R1117 (19 Nov; Tom: "The bar is denominator in the near field. The near field is how much of the bar."; "Thats a good way
   to discuss parallax."; "Yes."): **in the near field the bar is the denominator, a thing read as d/H, how much of the bar
   reaches it; past the tip the denominators swap, H/d, how much of the distance the bar is**; the two exchanges meeting at 1

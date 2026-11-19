@@ -594,3 +594,9 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       a turn leaves the slope's law fixed, a new thumb moves the distance's median to it.
     - **Open.** Whether Ω and 1/Ω belong with them or stand apart (no fixed point); what the half turn about the hot spot
       means for a read; Tom to say.
+    - **The SHV's plane (INV run 2; Tom: "euler's plane is dhv, what is the shv equivalent/", then "yes").** The pair (s, x) read as
+      shares (p, q) = (1/(1 + s²), 1/(1 + x²)), the unit square: corner and tip one point (½, ½), each exchange p ↦ 1 − p,
+      both a half turn, no π or e in any map; the thumb q ↦ q/(q + k²(1 − q)), rational; the turn (√p − a√(1 − p))²/(1 + a²),
+      rational only in h and v; both laws the arcsine 1/(π√(p(1 − p))), π the law's total, in no motion. Euler's plane buys
+      addition with π and e; the square keeps fractions and its motions do not add. Exact, nothing killed. Open: whether the
+      square's half turn and Euler's are one map under a chart (atan and the shares), and what the turn looks like in (h, v).
