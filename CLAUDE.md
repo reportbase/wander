@@ -576,6 +576,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1126 (19 Nov; Tom: "the bar is a write, the sweep is the read."): bar-steps step 7; **the bar a write, the sweep
+  the read** (R1039). Claude's, not ruled: the geometry takes both.
   R1125 (19 Nov; Tom: "just being an extent is not enough for the geometry."): bar-steps step 6; **an extent alone does
   not have the geometry, it takes the sweep**; narrows R1119's "intrinsic to any extent" to an extent swept.
   R1124 (19 Nov; Tom: "you have to sweep the bar to create the geometry.   no geometry without the sweep."): bar-steps
