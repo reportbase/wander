@@ -218,6 +218,14 @@ bar of one thumb any more: its two ends mean something. (The pivot goes nowhere,
 travels; it is the bar held against its own trace, one over Ω. And Ω × 1/Ω = 1 is only arithmetic; what is new is
 where each number sits.)
 
+So the bar is one sweep with two ends, each with a job. Everything round is that sweep joined: two facings make the
+semicircle (2Ω, the writer's π), four the circle (4Ω), eight the sphere (8Ω, the writer's 4π). Every sweep in the join
+is still one bar, one end walking and one pointing; joining adds bars and changes none of them. A read is one bar, and
+the semicircle, circle and sphere are the dual hemispherical vantage's joins. In space two things change. A facing there
+is an octant, swept by two thumbs together, and its Ω is an area (three right angles less two, Girard's count), so the
+sphere's 8Ω is the same number in another measure. And bars in different planes do not compose in either order: a loop
+through them comes back turned, which is what the sphere adds beyond eight sweeps.
+
 The bar gives the Cauchy too. The pivot points at the trace end, and the reading is the slope of the pointing. Each
 small step of pointing moves the trace end on by ds/(1 + s²), so the walk counted against the pointing is 1/(1 + s²),
 the thumb's share squared: the Cauchy, with no angle in it. Its whole walk is Ω, the trace end; scaled by 1/Ω, the
@@ -262,7 +270,7 @@ one thumb, Euler's identity needs no circle, no angle, no π and no e: a horizon
 **Into the sphere.** Euler's formula takes all of this into the sphere, and nothing new comes in with it: it is still
 just H and V, with one more degree of freedom.
 
-The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028, R1029, R1030, R1031, R1110), the wording mine. Older wordings in the series
+The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028, R1029, R1030, R1031, R1110, R1112, R1114), the wording mine. Older wordings in the series
 that give a facing "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
 brought to it. Since R1043 the two facings are the near and far readings, s and 1/s; since R1110 Ω and 1/Ω sit at
 the bar's two ends, the trace and the pivot, and not on the facings.
@@ -318,4 +326,4 @@ horizon over whatever is there.
 - *Reads and Writes* (`../readers-and-writers.md`) §1 (the two-by-two table; "Four things"), §9 ("Ω of relations and four
   facings make a circle").
 - `plans/discussion-note.md` items 18–20; `plans/bld-plan.md`; `plans/cpx-plan.md`.
-- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026, R1027, R1028, R1029, R1030, R1031, R1110.
+- SPN rulings cited: R313, R645, R798, R896, R909, R913, R922, R967, R1009, R1015, R1016, R1017, R1018, R1019, R1020, R1021, R1022, R1023, R1024, R1025, R1026, R1027, R1028, R1029, R1030, R1031, R1110, R1112, R1114.

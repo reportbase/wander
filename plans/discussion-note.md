@@ -564,3 +564,17 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
     - Standing: a reading, with EHO run. Next, offered, not run: an exact lensed-source check (a point mass: colour
       moves nothing, route moves address and share, brightness × share fixed, against the flat inverse square at the
       same distance). Whether test (3) goes into *Reads and Writes* beside the two tests is Tom's call.
+
+22. **Where the near-field sphere goes** (19 Nov; Tom: "The cauchy sweep is the bars as cross hairs."; "The three bars as
+    a 3d cross hair is the cauchy near field sphere. Where that sphere goes is not entirely clear."). Open; see the NFS plan
+    (`plans/nfs-plan.md`, run 1 exact, nothing killed).
+    - **Two exact places for the sphere of one thumb.** S1 is about the eye: the bars' traces, the distance law's
+      median on every direction, holding ½ of the heat. S2 is about the crosshair at √3 along the look: the bars crossed
+      at the triple corner. S2's rim is at r = 1/√2, the three homes, the exchange partner of the thumbs at √2. It holds
+      0.0471 of the heat.
+    - **Post hoc.** S2 lies wholly inside the region where the combined heat cos³α·sech(ln d) is at least half its peak,
+      and touches that boundary along one ring (½ to 31 digits, at α = 34.26°, d = 1.653). Found, not predicted, not yet
+      proved.
+    - **Next.** Tom to say which place, or whether both have a role (S1 for distance, S2 for the look). If he wants
+      it, prove the half-heat tangency.
+
