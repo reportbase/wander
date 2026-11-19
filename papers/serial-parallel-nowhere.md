@@ -7628,7 +7628,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   bar, 1, and the arc Ω, so "Ω is the radius" is read as the radius's far end, the end that walks; and "radius" and
   "centre" are a circle's words, which the read was said not to need (R643, R843; essay 26 §7 "No circle, no
   trigonometry"), so whether they are the DHV's names for the bar's two ends (as with central and inscribed, R1043) is
-  put to Tom. Not yet in the paper or essays.
+  put to Tom. Not yet in the paper or essays. Then (Tom: "I'm just marveling how it all connects. The trap is using dhv
+  terms to describe shv."): settled: **radius and centre are the DHV's names for the bar's two ends; the trap is
+  describing the SHV in DHV terms.** The SHV's words stay the trace and the pivot, walking and pointing (as R1043 for
+  central and inscribed). One sentence each in *Reads and Writes* §9's and essay 26 §7's "bar's two ends" paragraphs.
 - **R1109** (19 Nov 2026; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon", then "Yes"): restates
   R614 with the compression: the read keeps K at every H, half each side of the corner, and N is compressed, not cut, into
   the horizon (everything past about 2K/π thumbs, counted, sharing the last address; R411); every thing keeps its

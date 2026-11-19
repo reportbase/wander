@@ -209,7 +209,10 @@ turn, s and 1/s, and keeps their product, 1 at every point of the turn.
 quarter turn about one of its ends. The sweep has one face, not two. One end of the bar is the pivot: it never moves,
 and it is where you stand. The other end is the trace: it runs the quarter arc, and the arc it draws faces the pivot.
 For a bar of one thumb the trace is Ω long. So one end of the bar is Ω, the trace, and the other end is 1/Ω, the pivot.
-Ω walks the arc; 1/Ω points to it: one end goes along the arc, the other stays put and points at where it is.
+Ω walks the arc; 1/Ω points to it: one end goes along the arc, the other stays put and points at where it is. Someone
+drawing the whole circle would call these the radius and the centre, and they would not be wrong; but those are the
+dual hemispherical vantage's words, and describing a single vantage in them is the trap. From one vantage there is only
+an end that walks and an end that points.
 Multiply the two ends and you get 1, with no facing, the same one thumb that near times far gave. The bar is not just a
 bar of one thumb any more: its two ends mean something. (The pivot goes nowhere, so its 1/Ω is not a distance it
 travels; it is the bar held against its own trace, one over Ω. And Ω × 1/Ω = 1 is only arithmetic; what is new is

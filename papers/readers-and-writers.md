@@ -1908,7 +1908,9 @@ withdrawn (R1043).
 one quarter turn about one of its ends. The sweep has one face, not two. One end of the bar is the pivot, the
 standpoint, and never moves; the other end is the trace, which runs the quarter arc and faces the pivot. The trace end
 is Ω: for a bar of 1 it is the length traced. The pivot end is 1/Ω. Ω walks the arc; 1/Ω points to it (Tom, R1110):
-the trace end goes along the arc, the pivot stays and points at where the trace end is. Multiplied, the two ends give 1, with no facing,
+the trace end goes along the arc, the pivot stays and points at where the trace end is. The DHV, drawing the circle
+whole, names the same two ends the radius and the centre; those are its words, and describing the SHV in them is the
+trap (Tom, R1110). The SHV's own words are the trace and the pivot, one walking and one pointing. Multiplied, the two ends give 1, with no facing,
 the same 1 as near times far. So the bar is not just a bar of 1: its two ends have a meaning (Tom: "It's not just a bar
 of 1."). The pivot travels nothing, so 1/Ω there is not a distance; it is the bar measured against its trace, 1 over Ω,
 held at the pivot (a reading). Ω × 1/Ω = 1 is arithmetic; what is new is where the two numbers sit. This places Ω and

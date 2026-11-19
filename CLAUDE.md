@@ -596,7 +596,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   arc, 1/Omega points to it."): **Ω walks the arc, 1/Ω points to it**; supersedes R1032's "π/2 is not walking" for Ω;
   in the same paper and essay paragraphs, essays 2 and 14 reworded. Then (Tom: "Omega than is the radius. 1/Omega is
   the center."): **Ω the radius, 1/Ω the centre**; read as the radius's walking end (the radius as a length is 1, the arc
-  Ω); whether radius and centre are the DHV's names (a circle's words, R643, R843) put to Tom; not yet in the papers.
+  Ω). Then (Tom: "The trap is using dhv terms to describe shv."): **radius and centre are the DHV's names for the
+  bar's ends; describing the SHV in DHV terms is the trap**; the SHV's words are the trace and the pivot. One sentence
+  each in *Reads and Writes* §9 and essay 26 §7. **For new writing: describe a single vantage in its own terms (trace
+  and pivot, walking and pointing, slopes), never in the DHV's (radius, centre, angle, circle).**
   R1109 (19 Nov; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon"): the cull keeps K at every N
   and compresses N into the horizon, nothing cut; the same fact as R1108 (N readings averaged one reading). *Reads and
   Writes* §6 "K and N", §1. A reading.
