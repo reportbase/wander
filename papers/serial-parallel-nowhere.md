@@ -7591,6 +7591,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
 - **R1102** (18 Nov 2026; the same "1 2 3"): essay 31, *Calculus from one standpoint: where it needs N, and where it
   does not* (a car's speedometer and odometer), CLC, R1100 and RIC as one essay; README row, `essays.html` card, the smoke
   test's count 31 (not run). No paper changed.
+- **R1113** (19 Nov 2026; Tom: "Does the bar extend to calculus", then "Yes"): **the bar's two ends are the derivative and the integral.** The pivot points (the slope s) and travels nothing; the walk per unit of pointing, dw/ds = 1/(1 + s²) = h², is rational at every rational s, CLC's derivative with no limit: the pivot, 1/Ω, is the derivative, a read. The trace's whole walk, Ω, is the arctangent's total, where CLC's integration leaves the fractions: the trace is the integral, the completion. The bar joining them is the fundamental theorem, Ω × 1/Ω = 1 the total by its own coefficient. Read the other way, ds/dw = 1 + s²: a bar turned steadily is RIC's Riccati equation in its plainest case, its steps of pointing exact by tangent addition (13/9 from three steps of 1/3), the walk they stand for the clock (§6 of essay 31), ORB's oscillator the same bar. Limits: the pointing a first derivative (unmoved by scaling); the trace's bend 1/length a write in a unit, a read against the curve's own length (R1104); one bar, one parameter, so s′ = t + s² (no one-parameter group) has no bar. Classical: d arctan s/ds = 1/(1 + s²), tan solving s′ = 1 + s², the fundamental theorem; the placing at the bar's ends the series' (Claude's reading, agreed by Tom). Made: essay 31 §8 "The bar at both ends" (later sections renumbered 9–11, the order paragraph updated), *Reads and Writes* §1's calculus paragraph; no new run.
+- **R1112** (19 Nov 2026; Tom: "I wonder if we can describe cauchy in terms of the bar.", then "Yes"): **the Cauchy is
+  the trace end's walk counted per unit of the pivot's pointing.** The pointing's slope s is the reading; a step ds of
+  pointing moves the trace end ds/(1 + s²), so the walk per pointing is 1/(1 + s²) = h², rational; the walk's total is Ω
+  (the trace end) and the coefficient 1/Ω (the pivot end), so the law totals (1/Ω) × Ω = 1 because the bar's ends multiply
+  to 1. The corner the trace halfway (Ω/2 each side, the median); the horizon the pointing without end while the walk is
+  finite (no mean); the exchange the walk read from its other end; the lighthouse the pivot as a lamp, landing x = d·s.
+  Claude's proposal, taken by Tom; classical arithmetic, the reading the paper's. *Reads and Writes* §3 "The Cauchy, by
+  the bar"; essay 26 §7, a paragraph after "The bar's two ends".
 - **R1111** (19 Nov 2026; Tom: "If we remove any dhv terms from the cauchy discussion, I bet it cleans up.", then
   "Yes"): *Reads and Writes*' Cauchy discussion restated in the read's own terms, the DHV's forms kept only as marked
   comparisons (R891, R1110's trap). §3: the three forms (one length turned, two axes drawn, a line in the world) in

@@ -23,7 +23,7 @@ fractions.
 
 The order: a slope is a read (§1), derivatives without a limit (§2), summing and telescoping (§3), where N comes back
 (§4), the slope's own equation (§5), the clock is the completion (§6), where stepping needs N (§7), the sorting gathered
-(§8), what is classical and what is ours (§9), and what it changes (§10).
+(§9), what is classical and what is ours (§10), and what it changes (§11); between them, the bar at both ends (§8).
 
 ---
 
@@ -155,7 +155,36 @@ did not commute (their difference reached 0.706 in one entry), and PSLQ found no
 for any entry of the first: no small rational step. That is not a proof that none exists, only that none of small height
 does. There, N comes back.
 
-## 8. The sorting gathered
+## 8. The bar at both ends
+
+The sorting has a picture (Tom, R1113: "Does the bar extend to calculus"). Turn a bar a quarter turn about one end
+(essay 26 §7). One end, the pivot, points: its pointing is the slope s, and it travels nothing. The other end, the trace,
+walks the arc. A step ds of pointing moves the trace by ds/(1 + s²), so the walk per unit of pointing is
+
+  dw/ds = 1/(1 + s²) = h²,
+
+a fraction at every fractional s: the derivative of §2, given with no limit. The trace's whole walk over the quarter
+turn is Ω, which is the antiderivative's total of §3 and §4, the place where the integral leaves the fractions (the
+arctangent, the log part). So the two ends are the two halves of calculus: **the pivot is the derivative, 1/Ω, a read;
+the trace is the integral, Ω, the completion**. The bar joining them is the fundamental theorem: the walk the trace has
+made is the pointing's rate gathered along the way, and Ω × 1/Ω = 1 is that total measured by its own coefficient.
+
+Read the other way round, the pivot's pointing changes per unit walked as ds/dw = 1 + s². That is §5's slope equation
+in its plainest case: a bar turned steadily *is* the Riccati equation s′ = 1 + s². Its steps of pointing compose by
+tangent addition, exactly, in fractions (RIC: three steps of 1/3 give 13/9); what the steps stand for in walk, the clock
+time of §6, is the trace's, and there the completion enters. ORB's oscillator is the same bar, its direction stepped by
+rational maps and its period the trace's.
+
+Two limits go with the picture. The pointing is a first derivative, the one §1 found unmoved by scaling; the trace's
+bend, 1 over the bar's length, is a second-order quantity, a write in a unit and a read only against the curve's own
+length or another curvature (§1). And the bar is one bar with one parameter: §7's s′ = t + s² has no one-parameter
+group, so no bar whose turn it is. The bar pictures the calculus that has the turn's symmetry, not calculus in general.
+
+What is classical: d(arctan s)/ds = 1/(1 + s²), tan solving s′ = 1 + s², and the fundamental theorem. What is the
+series': the derivative and the integral placed at the bar's two ends, the pivot's 1/Ω and the trace's Ω (R1110). A
+reading; no new run.
+
+## 9. The sorting gathered
 
 | | Single hemispherical vantage | Needs a count or a completion |
 |---|---|---|
@@ -178,7 +207,7 @@ The Cauchy is the relation, not the paint, so it is the same law in one facing, 
 the same for every shape (R1107): the curve differentiated, the orbit, the oscillator's path change the paint, never the
 stage the steps are taken on.
 
-## 9. What is classical and what is ours
+## 10. What is classical and what is ours
 
 Classical: the dual numbers and automatic differentiation; the chain rule; Hermite's reduction and Liouville's theorem
 on elementary antiderivatives; Euler and Maclaurin; Riccati's linearization and the Möbius maps of its flow; the Airy
@@ -190,7 +219,7 @@ the fundamental theorem is where a count is replaced by a law; that "needs N" an
 places; that the slope's own equation is stepped exactly in the read's own chart, the clock time the completion. The
 classical tools are not the explanation (R1071); what they mean in a read or a write is the series' work.
 
-## 10. What it changes
+## 11. What it changes
 
 Nothing in how calculus is done. Solvers will go on stepping in time, and the limit will go on defining the integral.
 
@@ -211,7 +240,8 @@ owns, the slope's own flow, it is in the clock, not in the steps.
 - Tom, 18 November 2026: "Let's compare shv to calculus."; "Merge and proceed with your recomendations."; "Doesn't
   calculus need N?"; "What's next?"; "1 2 3"; "We are just showing that shv is very valuable,  can compete with dhv."; "Dhv and shv is Same relation space, different
   facings."; "One hemisphere is two facings"; "The key point is the cauchy relation space is the
-  same for all shapes. The stage is always the same, its the ultimate invarient."
+  same for all shapes. The stage is always the same, its the ultimate invarient." 19 November: "Does the bar extend to
+  calculus"; "Yes".
 - `plans/orb-plan.md`, `runs/orb/orb.py`, output `runs/orb/orb-run1.txt`.
 - `plans/clc-plan.md`, `runs/clc/clc.py`, `runs/clc/clc2.py`, outputs `runs/clc/clc-run1.txt`, `clc-run2.txt`, and its
   note R1100. `plans/ric-plan.md`, `runs/ric/ric.py`, output `runs/ric/ric-run1.txt`.
@@ -223,4 +253,4 @@ owns, the slope's own flow, it is in the clock, not in the steps.
 - I. Newton, *Philosophiæ Naturalis Principia Mathematica*, 1687, Book I, Section VI, Lemma XXVIII; read in Bruce's
   translation (17centurymaths.com, Book I, Section VI). Its modern form (no smooth convex closed curve has its cut-off area
   an algebraic function of the line) after Pourciau 2001, as usually cited, not opened.
-- SPN rulings cited: R871, R883, R1037, R1062, R1071, R1099, R1100, R1101, R1103, R1104, R1105, R1106, R1107.
+- SPN rulings cited: R871, R883, R1037, R1062, R1071, R1099, R1100, R1101, R1103, R1104, R1105, R1106, R1107, R1110, R1113.

@@ -226,6 +226,12 @@ with κ = −Δ; so is an oscillator's direction x′/x, while its amplitude car
 rational in the half-slope of the angle, while the time to reach one needs Kepler's equation, solved only by iteration; Newton's Lemma XXVIII (*Principia*,
 Book I, Section VI) is the classical statement that no oval's cut-off area, so no orbit's time, is given by a finite
 equation, while the shape's points are rational.
+The bar of §9 ("The bar's two ends") pictures the split (R1113): the pivot's pointing is the slope, and the walk per unit
+of pointing, 1/(1 + s²), is a derivative given in fractions; the trace's whole walk, Ω, is the integral, where the
+arctangent leaves them; so the pivot (1/Ω) is the derivative and the trace (Ω) the integral, the bar joining them the
+fundamental theorem. Read the other way, a bar turned steadily is the Riccati equation ds/dw = 1 + s², its steps of
+pointing exact by tangent addition, its walk the clock. One bar, one parameter: s′ = t + s² has none. **Classical**
+(d arctan s/ds = 1/(1 + s²); tan solves s′ = 1 + s²); the placing at the bar's ends **a reading**.
 In each, the steps are the read's and the clock is the completion. **Exact** (the three runs, nothing killed in their
 final runs); the sorting **a reading**. What it shows is that the single hemispherical vantage competes with the dual
 hemispherical vantage across calculus (R1104): the same results, exactly, in fractions with no limit and no N, where the
@@ -822,6 +828,18 @@ at, a straight wall, a row of trees, a curved hill, an empty sky. So the Cauchy 
 it takes a v and an h, and it works on a straight line too, the lighthouse's shore (Tom, R1034). The wall's shape only decides where each direction
 meets it. The constant 1/Ω and the quartiles' values are the DHV's arithmetic; a read has the order of its
 readings, the corner and the directions. **Classical.**
+
+**The Cauchy, by the bar.** The same law needs nothing but the bar of §9's "The bar's two ends" (Tom, R1112). Turn it a
+quarter turn about its pivot: the trace end walks, the pivot points at it, and the reading is the pointing's slope s.
+Each step ds of the pointing moves the trace end on by ds/(1 + s²), so the walk counted per unit of pointing is
+1/(1 + s²) = h², the thumb's share squared: the Cauchy's shape, rational, no angle in it. The walk's whole length is Ω,
+the trace end; scaled by 1/Ω, the pivot end, the heat becomes the law (1/Ω)·1/(1 + s²), whose total is (1/Ω) × Ω = 1. So
+the Cauchy's coefficient is the pivot, its total the trace, and it totals 1 because the bar's two ends multiply to 1. The
+corner is the trace end halfway along its walk, Ω/2 each side, which is why it is the median; the horizon is the trace
+end arriving along v while the pointing's slope runs on without end, the walk finite and the pointing not, which is why
+there is no mean; the exchange s ↔ 1/s is the walk read from its other end; and the lighthouse is the pivot as a lamp,
+its pointing landing at x = d·s on a shore d away. **Classical** (ds/(1 + s²) is the turn's own measure, its total Ω);
+the reading by the bar is the paper's.
 
 **Why there is no mean.** A mean is a sum of amounts over their count. The Cauchy weighs directions, and a direction has
 no length to add; its number is a chart, and the question is what survives a change of chart. To average v/h is to take
