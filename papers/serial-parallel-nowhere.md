@@ -7603,7 +7603,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   third of the way round, √2 thumbs to the horizon; Lambert's radius in r; the dial's needle at the corner, its rate
   1/(1 + x²). §2: θ + 2π and the rim marked. Kept as the DHV's, by nature: Euler's plane's up axis (iθ), the sphere and
   Mercator charts, π and e, the flat charts turned by φ, the "by turns" lay. Every number checked unchanged (35.26° is
-  r = 1/√2, 54.74° is √2, 37.5° is 0.766, 60° is √3). The arithmetic is unchanged; only the terms. Essays not yet.
+  r = 1/√2, 54.74° is √2, 37.5° is 0.766, 60° is √3). The arithmetic is unchanged; only the terms. Then (Tom:
+  "Yes"): essay 17's map on the glass, the tiles counted per direction, the Poisson kernel's heat, the walker's corner,
+  the second map's lay and the median in thumbs; essay 2 §9's circle divided by x² and the two-axis form, the same way.
+  The photographer's cos⁴ law, quoted, kept as the hook; essay 2's 45° images for the first-time reader kept.
 - **R1110** (19 Nov 2026; Tom, after a draw session's explainer "The sweep and its two faces" (draw `flows/sweep.tvfs`,
   reportbase/draw#135): "A facing is just the end of the bar. Each end of the bar traces Omega and 1/Omega."; "The trace
   is the middle of the bar"; "The sweep has one face, not the bars ends. The bars ends are the inside and outside of the

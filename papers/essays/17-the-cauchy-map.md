@@ -26,19 +26,19 @@ word for counts (§9), who saw which piece (§10), and what it changes (§11).
 ## 1. A map of where the looking is
 
 Stand anywhere and look. Everything in front of you, out to the edge of what you can see, is a hemisphere of directions:
-straight ahead in its middle, the horizon of the look its rim, 90° off on every side. Nothing about that hemisphere favours
+straight ahead in its middle, the horizon of the look its rim on every side. Nothing about that hemisphere favours
 one direction over another. The turn that carries the look from one direction to the next treats them all alike; measured
 by itself it is uniform (essay 2).
 
 Now hold a sheet of glass one thumb in front of you, square to the look, and mark where each direction crosses it. A
-direction α off the look crosses at r = tan α thumbs from the middle. The directions that were even on the hemisphere are
+direction crosses it r thumbs from the middle, r its slope off the look (the DHV's tan α, α the angle off the look). The directions that were even on the hemisphere are
 not even on the glass. Near the middle they crowd; out toward the edge of the glass they thin, and the rim of the
 hemisphere never lands on the glass at all, however large it is.
 
 Count them in a small patch of the glass and you have a number per patch: how much of the looking passes through there.
 Lay those numbers over the glass and you have a heat map. It is hottest where the look points, cools steadily off it, and
-reaches nothing at the rim: 0.35 of the peak one thumb off the middle (45°), 0.125 at 60°, half the hemisphere inside
-that 60°. That heat map is the two-dimensional Cauchy,
+reaches nothing at the rim: 0.35 of the peak one thumb off the middle, ⅛ at √3 thumbs, half the hemisphere inside
+√3 thumbs (the DHV's 45° and 60°). That heat map is the two-dimensional Cauchy,
 
   1/(2π(1 + r²)^(3/2)) per unit of glass,
 
@@ -104,15 +104,15 @@ There is an easy way to get this backward, and it is worth getting it wrong once
 Suppose the world in front of you is a wall of tiles, evenly spaced: a Cartesian grid, the grid of the dual hemispherical vantage
 (DHV), so many tiles a metre. Is the Cauchy the way that grid looks from where you stand?
 
-No. Tiles on a wall d away sit at y = d·s, so in the reading s they are spaced evenly; on the glass they are flat. Per unit
-of angle they are not flat: they crowd toward the horizon, as sec²θ in the plane and sec³α on a wall in space, because a
-small turn near the horizon sweeps across many tiles. Nothing about the tiles is hottest along the look.
+No. Tiles on a wall d away sit at y = d·s, so in the reading s they are spaced evenly; on the glass they are flat. Counted
+per direction they are not flat: they crowd toward the horizon, as 1 + s² in the plane and (1 + r²)^(3/2) on a wall in
+space, because a small turn near the horizon sweeps across many tiles. Nothing about the tiles is hottest along the look.
 
 The Cauchy is the other way round: the even turn laid on that flat grid,
 
-  dθ/ds = 1/(1 + s²),  dΩ/dA = cos³α,
+  1/(1 + s²) per unit of s,  (1 + r²)^(−3/2) per unit of wall
 
-the turn per unit of the DHV's grid. It is a rate, the *per* of essay 14: how much of the looking per tile. The tiles
+(the DHV's dθ/ds and dΩ/dA = cos³α), the turn per unit of the DHV's grid. It is a rate, the *per* of essay 14: how much of the looking per tile. The tiles
 are the DHV's; the turn is the read's; the Cauchy is how one sits on the other. It belongs neither to the wall alone
 nor to the eye alone: it is the rate at which a turn consumes the world. It is not the layout of the world.
 
@@ -136,7 +136,7 @@ any number of dimensions, the half-space's Poisson kernel is
   Γ(n/2)/π^(n/2) · d/|x|^n,
 
 and the even hemisphere carried onto the wall is (2/|S^(n−1)|) · d/|x|^n. The two constants are equal for every n; checked
-for n = 2 to 5. In space it is (1/2π) · d/(d² + r²)^(3/2): the cos³α of §2. In the language of measure theory, the Cauchy
+for n = 2 to 5. In space it is (1/2π) · d/(d² + r²)^(3/2): the glass's heat of §2. In the language of measure theory, the Cauchy
 is the Radon–Nikodym derivative of the turn's measure, carried onto the wall by the projection from home, against the
 wall's own measure.
 
@@ -164,7 +164,7 @@ and that point can be put there in different ways:
 
 All land on the same law, checked side by side at thirty digits (`plans/cauchy-routes.md`). They are told apart only by
 what the height tracks, a distance or a decay rate or a sum, and by the wall's shape. Curve the wall into a ball, and from
-halfway out to the rim the share landing within 45° of straight ahead is 0.482 for the walker and 0.359 for the straight
+halfway out to the rim the share landing within the corner of straight ahead (slope 1 off it) is 0.482 for the walker and 0.359 for the straight
 turn. So the map is not the turn's alone. The turn is the read's way of seeing it, the one that makes the heat over its
 directions.
 
@@ -226,8 +226,9 @@ hottest at one thumb and cooling alike both ways: 0.8 of the peak at one in two 
 and four, 0.25 at one in eight and eight. It never reaches zero, and it is the same law as the first map, the half-Cauchy,
 read along distance instead of across directions.
 
-Both bells are counts per unit of something, and change with it. Per unit of turn the first map is flat; it is cos²θ
-only per unit of the reading. Per unit of the thumb's lay, (2/π)·arctan(d/H), the second is flat too; it is sech only per
+Both bells are counts per unit of something, and change with it. Counted per direction the first map is flat; it is
+1/(1 + s²) only per unit of the reading. Per unit of the thumb's lay (the share of the heat below d/H; the DHV's
+(2/π)·arctan(d/H)), the second is flat too; it is sech only per
 unit of ln(d/H). A representation that wraps the plane onto a sphere with one thumb on its equator shows why: the lay is the
 latitude drawn evenly, sech(ln(d/H)) is the cosine of the latitude, and the logarithm is Mercator's chart of the same
 sphere, which stretches it (`euler.html`). No chart gives the heat of itself; the lay drawn square, turn against lay, is
@@ -244,7 +245,7 @@ question about the map.
 
 ## 8. A middle and no centre of mass
 
-A heat map has a hottest point. The Cauchy map has a middle, too: half its weight inside 60° of the look on the
+A heat map has a hottest point. The Cauchy map has a middle, too: half its weight inside √3 thumbs of the look on the
 hemisphere, half inside the corner s = 1 in the plane. These are medians, and they are the same however the readings are
 written down, because a median commutes with every increasing change of chart.
 

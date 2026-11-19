@@ -425,16 +425,16 @@ Set the DHV's circle beside the read's law and the second turns out to be the fi
 The DHV's circle holds amounts: a point is (H cos θ, V sin θ), the curve (x/H)² + (y/V)² = 1, round when V = H, and
 then x² + y² = r² with r an amount. Divide that by x²:
 
-  1 + s² = (r/x)² = sec²θ,  s = y/x.
+  1 + s² = (r/x)²,  s = y/x.
 
 No length is left: r/x is a ratio of two amounts and not an amount. Two things follow. The density of the read's law is
-the share squared, 1/(1 + s²) = (x/r)² = h², the read's own share of H, squared. And the even turn becomes the Cauchy:
-ds = sec²θ·dθ, so dθ = ds/(1 + s²). The Cauchy is the circle's equation used to carry an even turn into readings. Its scale
+the share squared, 1/(1 + s²) = (x/r)² = h², the read's own share of H, squared, and that is the Cauchy: the circle's
+equation used to carry an even turn into readings. (In the DHV's angle, 1 + s² = sec²θ and dθ = ds/(1 + s²).) Its scale
 is 1 because every amount has been divided out, not because anyone set V equal to H. Read as a read has it, that
-density is a heat: a continuous weight over the readings, hottest at s = 0 (on a screen held square to the look, the look itself) and cooling as cos²θ toward the
+density is a heat: a continuous weight over the readings, hottest at s = 0 (on a screen held square to the look, the look itself) and cooling as 1/(1 + s²) toward the
 horizon, with nothing counted in it, the turn per unit of the DHV's grid.
 
-Divide the two-axis curve the same way and one thing survives: s = (V/H)·tan θ, a Cauchy of scale c = V/H. The amounts go;
+Divide the two-axis curve the same way and one thing survives: each reading becomes (V/H)·s, a Cauchy of scale c = V/H. The amounts go;
 their ratio stays, as the law's scale. So V enters the Cauchy in exactly one place, its scale, and only for whoever holds V.
 A third form puts the law on a line in the world, the lighthouse's shore: the landings follow a Cauchy with a location and
 a scale that are both amounts, the foot of the lamp and its distance, and they are had only by finding the shore and
@@ -447,7 +447,7 @@ two-dimensional Cauchy 1/(2π(1 + s² + s₂²)^(3/2)), hottest at the look, a m
 the readings run off. The same sphere, kept and divided: the DHV's and the read's. Scaling the world moves r and every
 x and leaves every s where it was, so the first test of the first essay is the difference between the two forms. And
 the sphere has a shape where the Cauchy has none: a shape needs a size and a surface that closes on itself, and dividing
-by the thumb removes the size and opens the surface along the rim, 90° off the look, where x is zero and the readings run
+by the thumb removes the size and opens the surface along the rim, the look's horizon, where x is zero and the readings run
 off to the horizon. The Cauchy's long tail never completes, which is why it has no edge and no mean. What the
 equation leaves out is the paint, which is the second test. Said in parts: H, V and V₂ held as amounts make the DHV's
 sphere (an ellipsoid, unless written equal); H, H and H, one thumb crossed with itself, make the read's Cauchy.
