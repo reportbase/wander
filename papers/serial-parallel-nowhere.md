@@ -7623,7 +7623,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   "Furthermore, this means Omega walks the arc, 1/Omega points to it."): **Ω walks the arc; 1/Ω points to it** (the
   trace end goes along the arc, the pivot stays and points at it). Supersedes, for Ω and 1/Ω, R1032's "Pi/2 is not
   walking, 2/pi is not readin"; essays 2 and 14's "π/2 is not walking and 2/π is not reading" reworded, a sentence added
-  to *Reads and Writes* §9's and essay 26 §7's paragraphs.
+  to *Reads and Writes* §9's and essay 26 §7's paragraphs. Then (Tom: "Omega than is the radius. 1/Omega is the
+  center."): **Ω is the radius, 1/Ω the centre.** Claude's precisions, recorded, not ruled: as lengths the radius is the
+  bar, 1, and the arc Ω, so "Ω is the radius" is read as the radius's far end, the end that walks; and "radius" and
+  "centre" are a circle's words, which the read was said not to need (R643, R843; essay 26 §7 "No circle, no
+  trigonometry"), so whether they are the DHV's names for the bar's two ends (as with central and inscribed, R1043) is
+  put to Tom. Not yet in the paper or essays.
 - **R1109** (19 Nov 2026; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon", then "Yes"): restates
   R614 with the compression: the read keeps K at every H, half each side of the corner, and N is compressed, not cut, into
   the horizon (everything past about 2K/π thumbs, counted, sharing the last address; R411); every thing keeps its

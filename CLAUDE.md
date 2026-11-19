@@ -594,7 +594,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   *Reads and Writes* §9 "The bar's two ends: Ω and 1/Ω", essay 26 §7 "The bar's two ends", a sentence in essays 2 and 14,
   the README row; `faces.html` and the draw explainer not changed. Then (Tom: "Furthermore, this means Omega walks the
   arc, 1/Omega points to it."): **Ω walks the arc, 1/Ω points to it**; supersedes R1032's "π/2 is not walking" for Ω;
-  in the same paper and essay paragraphs, essays 2 and 14 reworded.
+  in the same paper and essay paragraphs, essays 2 and 14 reworded. Then (Tom: "Omega than is the radius. 1/Omega is
+  the center."): **Ω the radius, 1/Ω the centre**; read as the radius's walking end (the radius as a length is 1, the arc
+  Ω); whether radius and centre are the DHV's names (a circle's words, R643, R843) put to Tom; not yet in the papers.
   R1109 (19 Nov; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon"): the cull keeps K at every N
   and compresses N into the horizon, nothing cut; the same fact as R1108 (N readings averaged one reading). *Reads and
   Writes* §6 "K and N", §1. A reading.
