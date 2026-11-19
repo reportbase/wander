@@ -588,7 +588,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   middle of the bar. Omega than faces the pivot"): **one end of the bar the pivot, the other end the trace (Ω for a bar of
   1, a quarter turn), and the trace faces the pivot**; the midpoint clause withdrawn. Then (Tom: "1/Omega than is the
   pivot"): **1/Ω is the pivot, Ω the trace**, one at each end, product 1; the pivot travels nothing, so 1/Ω is the bar
-  against the trace held at the pivot (Claude's, not ruled). Nothing else changed.
+  against the trace held at the pivot (Claude's, not ruled). Then (Tom: "It's profound because the ends of the bar now
+  have a clear meaning. It's not just a bar of 1."): **the bar's ends mean something: one end Ω, the other 1/Ω**;
+  supersedes R1032's and R1043's placing of Ω and 1/Ω on the facings. Nothing else changed.
   R1109 (19 Nov; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon"): the cull keeps K at every N
   and compresses N into the horizon, nothing cut; the same fact as R1108 (N readings averaged one reading). *Reads and
   Writes* §6 "K and N", §1. A reading.

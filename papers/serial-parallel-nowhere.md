@@ -7612,7 +7612,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   midpoint-as-unit arithmetic above are withdrawn. Then (Tom: "1/Omega than is the pivot"): **1/Ω is the pivot; Ω is the
   trace.** Each end of the bar is one of the two: the pivot end 1/Ω, the trace end Ω; their product 1, no facing (R1042).
   Claude's precision, recorded, not ruled: the pivot does not move, so 1/Ω is not a length it travels; it is the bar
-  measured against the trace (1 over Ω), held at the pivot. No paper, essay or demo changed.
+  measured against the trace (1 over Ω), held at the pivot. Then (Tom: "But that then means that one end of the bar is
+  Omega and the other end of the bar is 1/Omega."; "It's profound because the ends of the bar now have a clear meaning.
+  It's not just a bar of 1."): **the bar's ends have a meaning: one end Ω, the other 1/Ω; the bar is not just a bar of
+  1.** The one face is the sweep; the two ends carry its two numbers. Supersedes, as to where Ω and 1/Ω sit, R1032's and
+  R1043's assignment of them to the facings. Claude's caution: Ω × 1/Ω = 1 is arithmetic; the new thing is where the two
+  numbers sit, a reading. No paper, essay or demo changed.
 - **R1109** (19 Nov 2026; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon", then "Yes"): restates
   R614 with the compression: the read keeps K at every H, half each side of the corner, and N is compressed, not cut, into
   the horizon (everything past about 2K/π thumbs, counted, sharing the last address; R411); every thing keeps its
