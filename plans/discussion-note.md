@@ -583,3 +583,14 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       In the DHV the near field is the one-thumb ball about the eye (the bar over eight facings), the far field everything
       beyond it, with no outer surface; in the SHV only the bar. Half the heat each side.
 
+23. **All the inverses** (19 Nov; Tom: "Interesting about ehulers simplification with shv. The inverse"; "Both. Just
+    noticing all the inverses including Omega"; "Yes. I'm just hunting for deeper mesnings"). A reading, checked by INV
+    (`plans/inv-plan.md`, run 1 exact, nothing killed).
+    - **The pairs.** s and 1/s (the facings, meeting at the corner); d/H and H/d (inside and beyond the bar, meeting at
+      the tip); 1/Ω and Ω (the bar's ends, no meeting point, product the bar); w(s) and w(1/s) (landing points, product
+      −1, the turn carried); the heat below and above the corner (equal halves).
+    - **Found.** The near/far exchange is the facings' exchange in the ratio chart: one half-Cauchy, median 1 both ways.
+      On Euler's plane two perpendicular mirrors, composing to a half turn about the heat's peak. They differ in motion:
+      a turn leaves the slope's law fixed, a new thumb moves the distance's median to it.
+    - **Open.** Whether Ω and 1/Ω belong with them or stand apart (no fixed point); what the half turn about the hot spot
+      means for a read; Tom to say.

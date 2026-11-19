@@ -576,6 +576,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  INV (`plans/inv-plan.md` + `runs/inv/inv.py`, 19 Nov; SPN R1118; Tom: "Just noticing all the inverses including Omega";
+  "Yes. I'm just hunting for deeper mesnings"): exact, nothing killed. The distance overlay (1/π)·sech(ln(d/H)) written in
+  x = d/H is exactly the half-Cauchy, the slope's law: the near/far exchange is the facings' exchange, one fixed point (1).
+  On Euler's plane the two are perpendicular mirrors (θ = π/4, u = 0) composing to a half turn about the heat's peak (the
+  hot spot, R728); they differ in motion (a turn keeps the slope's law, a new thumb moves the distance's median to k).
+  Ω and 1/Ω have no fixed point and are not in it. Discussion note item 23; no paper changed.
   R1117 (19 Nov; Tom: "The bar is denominator in the near field. The near field is how much of the bar."; "Thats a good way
   to discuss parallax."; "Yes."): **in the near field the bar is the denominator, a thing read as d/H, how much of the bar
   reaches it; past the tip the denominators swap, H/d, how much of the distance the bar is**; the two exchanges meeting at 1
