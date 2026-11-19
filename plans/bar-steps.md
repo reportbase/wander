@@ -5,7 +5,10 @@ words; nothing is added until he gives it. Anything of Claude's is marked so.
 
 1. The bar is a place holder for any extent. ("we just established the bar is a place holder for any extent.")
 2. Two reads create an extent. ("two reads create an extent.")
-3. In parallax there are no bars, only extents. ("in paralax, there are no bars, only extents.")
+3. ~~In parallax there are no bars, only extents.~~ ("in paralax, there are no bars, only extents."; corrected by 4.)
+4. Parallax uses the thumb for the bar, so there is a bar. The extent two reads create is another extent: there are now
+   two extents. ("parallax uses the thumb for the bar, so there is a bar actually.   the extent that is created from two
+   reads is another extent.    So we now have two extents.")
 
-Claude's reading of 1–3, not ruled: the bar is the name an extent takes when it is held as 1; parallax needs no such
-name, since its two reads make the extent directly.
+Claude's reading of 1–3 (that parallax needs no bar) withdrawn by step 4. Claude's candidate step "one read creates
+no extent" offered, not taken.
