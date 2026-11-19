@@ -14,6 +14,8 @@ words; nothing is added until he gives it. Anything of Claude's is marked so.
 6. Just being an extent is not enough for the geometry. ("just being an extent is not enough for the geometry.")
 7. The bar is a write, the sweep is the read. ("the bar is a write, the sweep is the read.")
 8. Geometry requires a previous write. ("that is helpful reframe.   so geometry requires a previous write.")
+9. Geometry requires physics, and then physics requires geometry, and so on. ("i know.   that is a major reframe.
+   according to this idea, geometry requires physics, and than physics requires geometry, etc.")
 
 Claude's reading of 1–3 (that parallax needs no bar) withdrawn by step 4. Claude's candidate step "one read creates
 no extent" offered, not taken.
@@ -30,3 +32,9 @@ Claude's flags on step 8, for Tom, not ruled: it reverses the order the papers h
 (R297 "reading is free") and the geometry stands without physics (R852). If the bar is a write (a size, moved by
 scaling, R1039), the geometry now waits on one. H as "the value chosen to start the system" (R226) would then be that
 first write.
+
+Step 9 answers the flags on step 8: a major reframe, accepted. R852 ("the geometry is complete without physics") and
+R297 ("reading is free") no longer stand as an order; the two come in turn. Claude's, not ruled: this is the cycle
+already in the papers (R644 "a write is over and must be read"; R900's read, write, read, write; R1065 "everything reads
+and writes"), now with geometry on the read's side and physics on the write's. Open: whether the cycle has a first
+term.
