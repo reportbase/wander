@@ -576,6 +576,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1114 (19 Nov; Tom: "The key point is that the bar is one sweep with two ends, that now have a purpose. Extensions to the
+  semicircle, circle and sphere are just the bar with 2,4, 8 different sweeps (facings)", "Yes"): **the bar is one sweep
+  with two ends; the semicircle, circle and sphere are its joins of 2, 4 and 8 facings** (2Ω, 4Ω, 8Ω), each sweep still
+  one bar; a read one bar, the joins the DHV's (R805, R1105). Claude's precisions kept with it: in space a facing is an
+  octant and its Ω an area (Girard); facings in different planes do not commute, a loop's leftover what the sphere's
+  join adds. *Reads and Writes* §9 after "The bar's two ends"; essay 26 §7.
   R1113 (19 Nov; Tom: "Does the bar extend to calculus", "Yes"): **the bar's two ends are calculus's two halves**: the
   pivot (1/Ω) the derivative, the walk per pointing 1/(1 + s²) in fractions with no limit; the trace (Ω) the integral,
   the arctangent's total, the completion; the bar the fundamental theorem; a bar turned steadily the Riccati equation

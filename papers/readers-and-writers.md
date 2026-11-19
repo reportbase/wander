@@ -1942,6 +1942,16 @@ held at the pivot (a reading). Ω × 1/Ω = 1 is arithmetic; what is new is wher
 1/Ω on the bar's ends, where R1032 had placed them on the facings; the facings stay the near and far readings, s and
 1/s, and an earlier picture with the trace at the bar's middle is withdrawn (R1110).
 
+**One sweep, and the joins of 2, 4 and 8.** The bar is one sweep with two ends, each with a purpose (Tom, R1114). The
+semicircle, the circle and the sphere are not other things beside it: they are the bar's sweep joined in 2, 4 and 8
+facings, 2Ω = π, 4Ω = 2π, 8Ω = 4π (§9's four and eight facings, R805). Each sweep in the join is still one bar, its pivot
+1/Ω pointing and its trace Ω walking; the join adds sweeps and changes nothing a bar does. A read is one bar; the
+semicircle, circle and sphere are the DHV's joins of bars (R1105). Two precisions go with it. In space a facing is an
+octant swept by the two thumbs together, and its Ω is an area, 3Ω − 2Ω = Ω (Girard), so 8Ω = 4π is the same number in
+another measure. And in space the join is more than a count: bars in one plane compose in either order, facings in
+different planes do not, and a loop through them comes back turned (§8, the loop's leftover). That leftover is what the
+sphere's join adds beyond eight sweeps.
+
 **The thumb, as a mean share times a length, and whole.** Said most simply: the true size is 1, the thumb in thumbs.
 The mean share over the turn, 1/Ω, times the arc's length, Ω, gives back the 1. The proof is one line, in the DHV's terms. Along the sweep, from all of h to all of v, each step dℓ of the arc
 gains v at the rate dv/dℓ = h: the thumb's share h at a place is the rate at which the thumb is gained per step of arc
