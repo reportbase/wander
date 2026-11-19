@@ -218,6 +218,13 @@ bar of one thumb any more: its two ends mean something. (The pivot goes nowhere,
 travels; it is the bar held against its own trace, one over Ω. And Ω × 1/Ω = 1 is only arithmetic; what is new is
 where each number sits.)
 
+The bar gives the Cauchy too. The pivot points at the trace end, and the reading is the slope of the pointing. Each
+small step of pointing moves the trace end on by ds/(1 + s²), so the walk counted against the pointing is 1/(1 + s²),
+the thumb's share squared: the Cauchy, with no angle in it. Its whole walk is Ω, the trace end; scaled by 1/Ω, the
+pivot end, it totals 1. The corner is the trace end halfway along its walk; the horizon is where the pointing runs off
+without end while the walk stays finite, which is why there is no mean. One end walks, the other points, and the
+Cauchy is the one counted against the other.
+
 **Euler's identity, in thumbs.** Everyone knows e^(iπ) = −1. Here it is from one vantage, with one thumb, and
 nothing else.
 
