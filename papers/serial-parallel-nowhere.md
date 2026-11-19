@@ -7619,7 +7619,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   R1043's assignment of them to the facings. Claude's caution: Ω × 1/Ω = 1 is arithmetic; the new thing is where the two
   numbers sit, a reading. Then (Tom: "Yes, update paper and essays."): *Reads and Writes* §9 "The bar's two ends: Ω and
   1/Ω" (with pointers in the opening paragraph, "Words used throughout", the four-identities table and Wallis's Ω), essay
-  26 §7 "The bar's two ends", one sentence each in essays 2 and 14, and the README row. Demos not changed.
+  26 §7 "The bar's two ends", one sentence each in essays 2 and 14, and the README row. Demos not changed. Then (Tom:
+  "Furthermore, this means Omega walks the arc, 1/Omega points to it."): **Ω walks the arc; 1/Ω points to it** (the
+  trace end goes along the arc, the pivot stays and points at it). Supersedes, for Ω and 1/Ω, R1032's "Pi/2 is not
+  walking, 2/pi is not readin"; essays 2 and 14's "π/2 is not walking and 2/π is not reading" reworded, a sentence added
+  to *Reads and Writes* §9's and essay 26 §7's paragraphs.
 - **R1109** (19 Nov 2026; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon", then "Yes"): restates
   R614 with the compression: the read keeps K at every H, half each side of the corner, and N is compressed, not cut, into
   the horizon (everything past about 2K/π thumbs, counted, sharing the last address; R411); every thing keeps its

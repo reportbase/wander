@@ -305,8 +305,8 @@ besides: it reads the far world from home, faces the thing in front of it across
 whatever it draws whole. So s × 1/s = 1 is not two parties meeting; it is one observer's two readings multiplied, and the
 1 is its own thumb.
 
-**π/2 and 2/π are limits at the horizon, not facings.** π/2 is not walking and 2/π is not reading, and neither is a
-facing. The thumb's share h averages 2/π over the quarter turn, approached at the horizon, never reached; the heat
+**π/2 and 2/π are limits at the horizon, not facings.** π/2 walks the arc and 2/π points to it
+(R1110, below). The thumb's share h averages 2/π over the quarter turn, approached at the horizon, never reached; the heat
 1/(1 + s²), gathered from home toward the horizon, totals π/2, approached by a count. Both faces stand on H (essay 26 §7).
 Where the two do sit is the two ends of one bar: turned a quarter turn about one end, the trace end is π/2 and the pivot
 end 2/π, the sweep's one face between them (R1110; essay 26 §7, "The bar's two ends").

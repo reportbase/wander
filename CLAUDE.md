@@ -592,7 +592,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   have a clear meaning. It's not just a bar of 1."): **the bar's ends mean something: one end Ω, the other 1/Ω**;
   supersedes R1032's and R1043's placing of Ω and 1/Ω on the facings. Then (Tom: "Yes, update paper and essays."):
   *Reads and Writes* §9 "The bar's two ends: Ω and 1/Ω", essay 26 §7 "The bar's two ends", a sentence in essays 2 and 14,
-  the README row; `faces.html` and the draw explainer not changed.
+  the README row; `faces.html` and the draw explainer not changed. Then (Tom: "Furthermore, this means Omega walks the
+  arc, 1/Omega points to it."): **Ω walks the arc, 1/Ω points to it**; supersedes R1032's "π/2 is not walking" for Ω;
+  in the same paper and essay paragraphs, essays 2 and 14 reworded.
   R1109 (19 Nov; Tom: "Cauchy is the great kull, leaves K, compresses N at the horizon"): the cull keeps K at every N
   and compresses N into the horizon, nothing cut; the same fact as R1108 (N readings averaged one reading). *Reads and
   Writes* §6 "K and N", §1. A reading.
