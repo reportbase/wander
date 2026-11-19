@@ -11,9 +11,12 @@ words; nothing is added until he gives it. Anything of Claude's is marked so.
    reads is another extent.    So we now have two extents.")
 5. You have to sweep the bar to create the geometry; no geometry without the sweep. ("you have to sweep the bar to
    create the geometry.   no geometry without the sweep.")
+6. Just being an extent is not enough for the geometry. ("just being an extent is not enough for the geometry.")
 
 Claude's reading of 1–3 (that parallax needs no bar) withdrawn by step 4. Claude's candidate step "one read creates
 no extent" offered, not taken.
 
 Claude's question on step 5, put to Tom: R1119 said the bar has the geometry and does not create it; step 5 says the
 sweep creates it. Read together: the geometry is the extent's, free, but there is none until the bar is swept?
+Answered by step 6: an extent alone does not have the geometry; R1119's "intrinsic to any extent" is narrowed to an
+extent swept.
