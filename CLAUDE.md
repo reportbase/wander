@@ -576,6 +576,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1129 (19 Nov; Tom: "rotating a bar is similar to parralax, its the motion that creates the writes."): bar-steps step
+  10; **the motion creates the writes**; with step 7 (the sweep the read) put to Tom, open.
   R1128 (19 Nov; Tom: "that is a major reframe.    according to this idea, geometry requires physics, and than physics
   requires geometry, etc."): bar-steps step 9; **geometry and physics require each other in turn**; supersedes R852's
   "complete without physics" and R297's "reading is free" as an order. Whether the cycle has a first term, open.
