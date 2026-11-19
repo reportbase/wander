@@ -576,6 +576,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1124 (19 Nov; Tom: "you have to sweep the bar to create the geometry.   no geometry without the sweep."): bar-steps
+  step 5; how it sits with R1119 (the bar has the geometry, does not create it) put to Tom, open.
   R1123 (19 Nov; Tom: "parallax uses the thumb for the bar, so there is a bar actually.   the extent that is created from
   two reads is another extent.    So we now have two extents."): corrects R1122: parallax has a bar (the thumb); two reads
   create a second extent, so two extents. `plans/bar-steps.md` step 4.
