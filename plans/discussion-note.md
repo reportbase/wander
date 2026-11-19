@@ -598,5 +598,9 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       shares (p, q) = (1/(1 + s²), 1/(1 + x²)), the unit square: corner and tip one point (½, ½), each exchange p ↦ 1 − p,
       both a half turn, no π or e in any map; the thumb q ↦ q/(q + k²(1 − q)), rational; the turn (√p − a√(1 − p))²/(1 + a²),
       rational only in h and v; both laws the arcsine 1/(π√(p(1 − p))), π the law's total, in no motion. Euler's plane buys
-      addition with π and e; the square keeps fractions and its motions do not add. Exact, nothing killed. Open: whether the
-      square's half turn and Euler's are one map under a chart (atan and the shares), and what the turn looks like in (h, v).
+      addition with π and e; the square keeps fractions and its motions do not add. Exact, nothing killed. Settled, not
+      explored further (Tom: "ok, proceed with your recommendation"): every piece is classical (each exchange h² ↔ v²,
+      "one minus"; the thumb the odds q/(1 − q) times 1/k²; the law the arcsine of cos² under a uniform turn, CHS's logistic
+      chart), and the square's half turn is Euler's in another chart: q = ½(1 − tanh u) takes u ↦ −u to q ↦ 1 − q, p = cos²θ
+      takes θ ↦ π/2 − θ to p ↦ 1 − p. Its new motions need h and v, so it returns to the slope chart. Closed. The open
+      thread left in this item is Ω and 1/Ω, the one pair with no fixed point.

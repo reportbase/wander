@@ -86,3 +86,7 @@ needs the shares' roots, h and v, so the turn is the slope's (tangent addition) 
 share's alone. And the law on the square carries π (the arcsine's 1/π), though no map does: π is the law's total, the
 DHV's, not any motion's. So Euler's plane trades π and e for addition; the share square keeps fractions and pays in
 motions that do not add.
+
+Closed (19 Nov; Tom: "ok, proceed with your recommendation"): the share square's pieces are classical (the exchanges
+h² ↔ v², the thumb an odds ratio, the arcsine law), and its half turn is Euler's under a chart (q = ½(1 − tanh u),
+p = cos²θ). Not explored further.
