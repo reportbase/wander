@@ -66,3 +66,8 @@ boundary along one ring and crosses it nowhere. This is found to 31 digits and n
 law). S2 is where the three bars cross. Its rim is the homes' ring, the thumbs' exchange partner. It holds about a
 twenty-first of the heat, and it fits inside the half-heat region. Where the sphere goes is still open between the two.
 Tom's ruling is needed on whether the post hoc fit (S2 inside the half-heat surface, tangent to it) is the place.
+
+**Ruled (R1116, 19 Nov).** Tom: "The near field is the bar itself, the far field is what is beyond the bar." The bars
+pivot at the eye, one thumb long; their tips, swung every way, are S1. So the near-field sphere is S1, the distance
+median, ½ of the heat. S2 is where the bars cross, not the near field; its half-heat tangency (post hoc above) stays
+unproved and has no role.

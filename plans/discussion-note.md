@@ -566,7 +566,9 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       same distance). Whether test (3) goes into *Reads and Writes* beside the two tests is Tom's call.
 
 22. **Where the near-field sphere goes** (19 Nov; Tom: "The cauchy sweep is the bars as cross hairs."; "The three bars as
-    a 3d cross hair is the cauchy near field sphere. Where that sphere goes is not entirely clear."). Open; see the NFS plan
+    a 3d cross hair is the cauchy near field sphere. Where that sphere goes is not entirely clear."). **Closed by R1116**
+    (Tom: "The near field is the bar itself, the far field is what is beyond the bar."): the sphere is S1, the bars' tips
+    swung about the eye; S2 is where the bars cross, not the near field. See the NFS plan
     (`plans/nfs-plan.md`, run 1 exact, nothing killed).
     - **Two exact places for the sphere of one thumb.** S1 is about the eye: the bars' traces, the distance law's
       median on every direction, holding ½ of the heat. S2 is about the crosshair at √3 along the look: the bars crossed
@@ -575,6 +577,7 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
     - **Post hoc.** S2 lies wholly inside the region where the combined heat cos³α·sech(ln d) is at least half its peak,
       and touches that boundary along one ring (½ to 31 digits, at α = 34.26°, d = 1.653). Found, not predicted, not yet
       proved.
-    - **Next.** Tom to say which place, or whether both have a role (S1 for distance, S2 for the look). If he wants
-      it, prove the half-heat tangency.
+    - **Settled (R1116).** The near field is the bar itself, pivot to trace; the far field beyond it. The sphere is the
+      bars' tips, S1. The bouncing ball (the sphere following the gaze) was withdrawn: the bars swing, nothing travels.
+      The half-heat tangency of S2 stays a found, unproved fact with no role.
 
