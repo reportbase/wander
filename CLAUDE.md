@@ -585,6 +585,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the bars cross) is not it. Item 22 closed. Claude's "halfway" (the trace's Ω/2) was the corner in direction, not in
   distance; halfway survives only in the heat (the bar holds ½). Recorded in SPN, `plans/nfs-plan.md`, discussion note
   item 22; no paper changed.
+  Then (Tom: "So the near field is spherical in dhv defined by the bar. The far field is every thing beyond near field
+  sphere.", "Yes"): **in the DHV the near field is the ball of one thumb about the eye, the bar swung over all eight facings
+  (8Ω); the far field everything beyond it**, with no outer surface (the horizon, never reached); in the SHV no sphere,
+  only the bar on every direction read; the split even in heat (½ each), not in size.
   R1115 (19 Nov; Tom: "The cauchy sweep is the bars as cross hairs."; "The three bars as a 3d cross hair is the cauchy
   near field sphere. Where that sphere goes is not entirely clear."; "Yes"): NFS (`plans/nfs-plan.md` + `runs/nfs/`,
   exact, nothing killed). Two places for the one-thumb sphere. S1 about the eye: the distance median on every

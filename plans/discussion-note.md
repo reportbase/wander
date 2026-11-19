@@ -580,4 +580,6 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
     - **Settled (R1116).** The near field is the bar itself, pivot to trace; the far field beyond it. The sphere is the
       bars' tips, S1. The bouncing ball (the sphere following the gaze) was withdrawn: the bars swing, nothing travels.
       The half-heat tangency of S2 stays a found, unproved fact with no role.
+      In the DHV the near field is the one-thumb ball about the eye (the bar over eight facings), the far field everything
+      beyond it, with no outer surface; in the SHV only the bar. Half the heat each side.
 
