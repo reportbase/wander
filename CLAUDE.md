@@ -576,6 +576,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1143 (20 Nov; Tom: "The last read reads the last write, the read is continuous, the write is discreet."): a read reads
+  what is there now, the last write; "last" the writes' order, the read holding no time (R649, R652).
   R1142 (20 Nov; Tom: "The read just reads, the intelligence is in the write."): the read given, nothing learned in it;
   what is learned is in the writes (keys, values, weights; R1138). Proposed: NAT run 2, the read fixed, learning only in the writes.
   R1141 (20 Nov; Tom: "The natural world figured this out long ago, let's follow its lead"): NAT (`plans/nat-plan.md`,
