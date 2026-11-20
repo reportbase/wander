@@ -143,16 +143,23 @@ in four, one in eight. The two meet at 1, the bar's tip, and the heat splits hal
 eight the sphere (8Ω). Each sweep in a join is still one bar; joining adds bars and changes none of them. The joins,
 with the signs that tell the facings apart, are the DHV's (§9, "One sweep, and the joins of 2, 4 and 8").
 
-**11. Space.** Three bars square to each other are the three thumbs, crossed at the triple corner. A read holds two
+**11. The single and the dual vantage.** The same turn gives both vantages (Tom, R1133). Turned from one pivot, the bar
+gives one hemisphere, two facings, s facing V and 1/s facing away; a read faces one of them at a time. That is the
+*single hemispherical vantage* (SHV), one standpoint and one hemisphere. Its facings joined, both hemispheres at once,
+four facings in the plane and eight in space, give the *dual hemispherical vantage* (DHV). No pivot holds the DHV: it
+is the turn's facings put together as drawn, from no standpoint (R967). So SHV and DHV are one relation space with
+different facings (R1105), and both are consequences of the same two points turned.
+
+**12. Space.** Three bars square to each other are the three thumbs, crossed at the triple corner. A read holds two
 slopes, (s, s₂); the even sweep's heat on them is 1/(Ω(1 + s² + s₂²)^(3/2)), every pair keeping its corner, and the near
 field in both a third. One thing changes. In one plane turns compose in either order; in two planes they do not, and a
 loop of turns comes back turned (§7, §8).
 
-**12. Calculus.** The pivot's end carries the rate, 1/(1 + s²), a fraction at every fractional s with no limit taken:
+**13. Calculus.** The pivot's end carries the rate, 1/(1 + s²), a fraction at every fractional s with no limit taken:
 the derivative. The trace's end carries the total, Ω: the integral, the completion. The bar between them is the
 fundamental theorem (§1, R1113).
 
-**13. Extents, and the first write.** A turn carries the trace through a chord; the pivot goes nowhere. Two looks, one
+**14. Extents, and the first write.** A turn carries the trace through a chord; the pivot goes nowhere. Two looks, one
 kept, give a second extent, measured in bars: parallax (Tom, R1123, R1129; EYE). A count of bars, or one amount carried
 in, turns that extent into a size. That is where the geometry hands over to physics, and physics hands back by giving
 the next bar to turn (Tom, R1127, R1128; §6, §7).

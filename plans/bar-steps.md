@@ -22,6 +22,7 @@ words; nothing is added until he gives it. Anything of Claude's is marked so.
     extent is just two points: rotate two points at a pivot and it creates the universe. ("the new insight for me any
     ways is that an extent by itself does not have any geometry, its the sweep and the extent that creates the rich
     geometry."; "An extent is just two points.    rotate two points at a pivot creates the universe.")
+12. It also creates the SHV and the DHV. ("it also creates shv and dhv.")
 
 Claude's reading of 1–3 (that parallax needs no bar) withdrawn by step 4. Claude's candidate step "one read creates
 no extent" offered, not taken.
