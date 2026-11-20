@@ -59,6 +59,19 @@ the residual carries the token on. CPU, four threads.
 - **A5 (the Cauchy on a direction against on an amount).** Read, front's mean perplexity is no more than 2% above the
   amount-Cauchy's. Killed if the amount-Cauchy is better by more than 2% and by more than twice the standard error.
 
+**Added 20 Nov, while training ran, before any read arm had finished** (Tom: "Seem ls like the real win is with being
+correct topologicaly, which could lessen hallucinations."; "We have tested it, and cauchy won here overwhelmingly"; that
+earlier test is not in this repository, so it is not cited here). Seen before writing these: softmax's and the
+amount-Cauchy's perplexity at seed 42 only (155.42, 154.07), which bear on neither.
+- **A6 (calibration, a proxy).** On validation tokens, the expected calibration error of the next-token prediction (top-1
+  confidence against top-1 accuracy, 15 equal-width bins), averaged over the three seeds: read, front's is no greater
+  than softmax's. Killed if read, front's is greater by more than twice the standard error of the difference.
+- **A7 (robustness to size, a proxy).** At evaluation only, multiply the keys of every attention layer by a factor per
+  token, e^U with U uniform on (−1, 1) (seeded): read, front's validation loss is unchanged to 10⁻⁵; softmax's rises by at
+  least 1%. Killed if either clause fails.
+Neither is hallucination; they are where being correct in topology (a weight by direction alone, the front only) would
+show at this scale.
+
 One scale (CPU, 400 steps): a result here is evidence about this scale. A killed prediction stays killed; a fix is a new
 run with its own prediction.
 
