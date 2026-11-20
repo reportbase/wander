@@ -81,3 +81,7 @@ run with its own prediction.
 **not killed.** Read weights moved by at most 4.5·10⁻¹³ (front) and 2.4·10⁻¹³ (both) when each key was scaled by its own
 factor, 6.6·10⁻¹⁴ when the query was; read, front's weight on keys with h ≤ 0 exactly 0. Softmax moved by 0.78 and the
 amount-Cauchy by 0.16 under the same key scaling; softmax's least weight on a key behind the query 0.0014, not 0.
+
+*A note on what was seen early.* Testing the A6/A7 code (after A6 and A7 were committed) ran it on the softmax seed-42
+model over the first 40 validation blocks only: loss 4.9755, with keys scaled 4.9916 (+0.32%), calibration error 0.0165.
+So A7's softmax clause (a rise of at least 1%) may fail; the prediction stands as written.

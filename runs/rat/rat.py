@@ -64,11 +64,14 @@ class Attn(nn.Module):
         self.register_buffer("mask", torch.tril(torch.ones(cfg.block_size, cfg.block_size)).view(1, 1, cfg.block_size,
                                                                                               cfg.block_size))
         self.last_back = None
+        self.key_scale = None  # A7: a factor per token on the keys, at evaluation only
 
     def forward(self, x):
         B, T, C = x.shape
         q, k, v = self.c_attn(x).split(self.ne, dim=-1)
         q, k, v = (t.view(B, T, self.nh, self.hd).transpose(1, 2) for t in (q, k, v))
+        if self.key_scale is not None:
+            k = k * self.key_scale[:, None, :T, None]
         m = self.mask[:, :, :T, :T]
         if self.arm == "softmax":
             s = w_softmax(q, k, 1.0 / math.sqrt(self.hd)).masked_fill(m == 0, float("-inf"))
@@ -204,5 +207,50 @@ def report():
     json.dump(res, open(OUT, "w"), indent=1); print(json.dumps(res["verdicts"], indent=1))
 
 
+@torch.no_grad()
+def proxies():
+    """A6 (calibration) and A7 (key-size robustness) on the trained models."""
+    tr, va = cah.tokens(); res = load()
+    nb = (len(va) - 1) // cah.BLOCK_SIZE
+    xs = va[:nb * cah.BLOCK_SIZE].reshape(nb, cah.BLOCK_SIZE); ys = va[1:nb * cah.BLOCK_SIZE + 1].reshape(nb, cah.BLOCK_SIZE)
+    out = {}
+    for arm in ARMS:
+        for seed in SEEDS:
+            m = LM(cah.ModelConfig(horizon_k=cah.BLOCK_SIZE), arm)
+            m.load_state_dict(torch.load(os.path.join(CKPT, f"{arm}-{seed}.pt"))); m.eval()
+            def run(scaled):
+                g = torch.Generator().manual_seed(11)
+                conf, corr, loss, n = [], [], 0.0, 0
+                for i in range(0, nb, 32):
+                    x = torch.from_numpy(xs[i:i + 32]); y = torch.from_numpy(ys[i:i + 32])
+                    for b in m.blocks:
+                        b.attn.key_scale = (torch.exp(torch.rand(x.shape[0], x.shape[1], generator=g) * 2 - 1)
+                                            if scaled else None)
+                    lg, _ = m(x)
+                    lp = F.log_softmax(lg.double(), -1)
+                    loss += float(-lp.gather(-1, y[..., None]).sum()); n += y.numel()
+                    c, pred = lp.exp().max(-1)
+                    conf.append(c.flatten()); corr.append((pred == y).flatten().double())
+                for b in m.blocks: b.attn.key_scale = None
+                conf, corr = torch.cat(conf), torch.cat(corr)
+                bins = torch.clamp((conf * 15).long(), max=14); ece = 0.0
+                for j in range(15):
+                    sel = bins == j
+                    if sel.any(): ece += float(sel.double().mean() * (conf[sel].mean() - corr[sel].mean()).abs())
+                return loss / n, ece
+            l0, ece = run(False); l1, _ = run(True)
+            out[f"{arm}-{seed}"] = {"loss": l0, "loss_keys_scaled": l1, "rel_change": l1 / l0 - 1, "ece": ece}
+            print(arm, seed, out[f"{arm}-{seed}"], flush=True)
+    def ms(arm, key):
+        v = [out[f"{arm}-{s}"][key] for s in SEEDS]; return float(np.mean(v)), float(np.std(v, ddof=1) / math.sqrt(len(v)))
+    (er, sr), (es, ss) = ms("read-front", "ece"), ms("softmax", "ece")
+    A6 = "KILLED" if (er - es > 2 * math.hypot(sr, ss)) else "not killed"
+    rf = max(abs(out[f"read-front-{s}"]["rel_change"]) for s in SEEDS)
+    sm = min(out[f"softmax-{s}"]["rel_change"] for s in SEEDS)
+    A7 = "not killed" if (rf < 1e-5 and sm >= 0.01) else "KILLED"
+    res["proxies"] = out; res["A6"] = [A6, er, es]; res["A7"] = [A7, rf, sm]
+    json.dump(res, open(OUT, "w"), indent=1); print("A6", res["A6"], "A7", res["A7"])
+
+
 if __name__ == "__main__":
-    {"exact": exact, "train": train_all, "back": back, "report": report}[sys.argv[1] if len(sys.argv) > 1 else "train"]()
+    {"exact": exact, "train": train_all, "back": back, "report": report, "proxies": proxies}[sys.argv[1] if len(sys.argv) > 1 else "train"]()
