@@ -576,6 +576,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1139 (20 Nov; Tom: "These ideas can be explored without expensive ai training sessions. Others can test these ideas
+  at scale."): **no AI training runs; explore by the geometry, point it at AI; others test at scale.**
+  R1138 (20 Nov; Tom: "discreetness organizes the writes. Discreteness writes the full Apple … Discreteness does not have
+  a hemisphere."): a write is whole, no hemisphere; a facing is a read's. RAT (`plans/rat-plan.md`, `runs/rat/`):
+  attention as a read; the read unmoved by key size, calibration level; front only 6.7% behind softmax, back joined
+  1.3%; softmax 24% of its weight behind the query. Closed at run 1.
   R1137 (20 Nov; Tom: "1,2,3"): PR #480 merged; the philosophy note's citations checked by a fresh agent (Leibniz did
   not scale the world; Poincaré's thousandfold universe is "La relativité de l'espace", 1906–07, in *Science and Method*
   1908, credited to Delbœuf; smaller precisions); `two-points.html`, §0 as a demo, with a `demos.html` card.

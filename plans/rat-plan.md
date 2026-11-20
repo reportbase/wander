@@ -85,3 +85,39 @@ amount-Cauchy by 0.16 under the same key scaling; softmax's least weight on a ke
 *A note on what was seen early.* Testing the A6/A7 code (after A6 and A7 were committed) ran it on the softmax seed-42
 model over the first 40 validation blocks only: loss 4.9755, with keys scaled 4.9916 (+0.32%), calibration error 0.0165.
 So A7's softmax clause (a rise of at least 1%) may fail; the prediction stands as written.
+
+### Run 1 (20 Nov 2026)
+
+`python3 runs/rat/rat.py train|back|report|proxies`; output `runs/rat/rat-results.json`. Checkpoints kept outside the
+repo. The first background job stopped at its two-hour limit with 11 of 12 runs done; it resumed for the twelfth.
+
+Perplexity, mean of three seeds (standard error):
+
+| arm | seeds 42, 137, 2024 | mean (se) |
+|---|---|---|
+| Cauchy on an amount | 154.07, 154.03, 156.28 | 154.79 (0.74) |
+| softmax | 155.42, 155.75, 156.92 | 156.03 (0.46) |
+| read, both | 157.60, 157.78, 158.80 | 158.06 (0.37) |
+| read, front | 169.75, 163.58, 165.92 | 166.42 (1.80) |
+
+- **A1 not killed** (above).
+- **A2 killed:** read, front 6.7% above softmax (bound 5%).
+- **A3 killed:** read, front 5.3% above read, both, 4.5 standard errors of the difference. At this scale the back side
+  helps.
+- **A4 killed:** trained softmax puts 25.7%, 24.1%, 22.1% of its weight on keys behind the query (mean 24.0%; bound 20%).
+- **A5 killed:** read, front 7.5% above the amount-Cauchy.
+- **A6 not killed:** expected calibration error, read, front 0.0104 against softmax 0.0107 (read, both 0.0102,
+  amount-Cauchy 0.0108); all within a seed's spread of each other.
+- **A7 killed, by its softmax clause:** keys scaled at random per token, read, front's loss moved by at most 3.7·10⁻¹⁰
+  (read, both 2.4·10⁻¹⁰), but softmax's rose only 0.34–0.41% (bound 1%; the amount-Cauchy 0.14–0.18%). The code test had
+  shown this beforehand (above).
+
+**Reading, after the run, not a test.** The read is unmoved by key size, exactly, and is as well calibrated as softmax;
+its front-only form loses by about 7% here, joined with the back side by about 1.3%. Two choices of this set-up bear on
+the front read and were not tested: a row with no key in front gives no output, and the writes (initialisation, rate,
+400 steps) were CAH's, made for softmax. Tom: "I think the results would be dependent on how the writes are written.";
+"discreetness organizes the writes. Discreteness writes the full Apple, not half the apple in front and half in back.
+Discreteness does not have a hemisphere." (R1138): a key is a whole write; one read faces one hemisphere of it; the
+whole needs two facings or the DHV's join. Then Tom: "These ideas can be explored without expensive ai training
+sessions. Others can test these ideas at scale." (R1139): **no further training runs**; RAT is closed at run 1. One
+scale (CPU, 400 steps, 7.3M parameters): evidence about this scale only.
