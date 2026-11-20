@@ -138,3 +138,62 @@ question R1134 answered in the turn's terms: only p = 2 is kept by a turn that r
 - Every citation in §3 to be checked against the text before use.
 - The natural place is an essay for philosophers (Tom: appreciation and philosophy belong in essays, not the
   mathematics), built on two points turned against Kant, Helmholtz, Poincaré and Einstein. Not written.
+
+## 6. Two later comments, and the questions they leave
+
+Two further ChatGPT comments came the same day (20 Nov), pasted by Tom. Checked by R863.
+
+**"Dependence does not necessarily imply precedence."** The first comment argued that the steps are not a hierarchy or
+a sequence (A → B → A → B) but a reciprocal relation (A → B and B → A at once), and that the chicken-and-egg problem
+comes from assuming one must come first.
+
+Claude's answer: this holds for some pairs in the corpus. The pivot and the trace, Ω and 1/Ω, and s and 1/s each depend
+on each other with neither prior. Aristotle said the same of relatives (*Categories* 7: double and half "simultaneous by
+nature"; from memory, to check). But the steps also use words of order. Step 8 says geometry requires a *previous* write;
+step 9 says "and then … etc."; step 10 says the motion creates the writes. The corpus already has an alternation in time:
+a write is over and must be read (R644), and read, write, read, write (R900). So the comment does not fit every step as
+written.
+
+**"Inside or outside?"** The second comment gave inside and outside as another reciprocally defined pair, and added that
+the bar's ends arise together without being interchangeable: one points, the other walks. Its closing line: the
+construction does not find what came first; it challenges the assumption that something must have.
+
+Claude's answer: taken, the point that simultaneous origin does not mean identical function; it fits R1110 (the pivot
+and the trace) well. Not taken, inside and outside as the example: the corpus has dropped that pair for the read (R304;
+R570: where the size could never be known there is no inside or outside, only home and the horizon). A boundary held
+whole is the DHV's. R1110 first called the bar's ends its inside and outside and then replaced that with the pivot and
+the trace. As logic the pair shows reciprocal definition; as geometry it belongs to the DHV, not the read.
+
+### Open questions, with Claude's answers (not ruled)
+
+1. **Is the relation between geometry and physics mutual with no order, or an alternation with no first term?**
+   - Reading 1, mutual, no order: the extent and its sweep sustain each other at once, like the pivot and the trace.
+     "Previous" in step 8 would be withdrawn or reworded.
+   - Reading 2, an alternation with no first term: each read rests on a write before it and each write on a read before
+     it, without end in both directions. The order is real; only the beginning is missing. Step 8 stands.
+
+   *Claude's answer:* both, at two scales. Within one turn the relation is mutual: the extent and the sweep, the pivot
+   and the trace, have no order between them. Across turns it alternates: a write (the bar), a read (the sweep), a write
+   again (the chord the motion makes, step 10), then a read of that. This keeps step 8, since a turn rests on a write
+   made before it, and still answers the comment, since within a turn nothing is first. *Tom to rule.*
+
+2. **Does the cycle have a first term?**
+
+   *Claude's answer:* within one turn the question does not arise (reading 1). Across turns there is no first term
+   in the steps as written: every write the steps describe is made by a motion (step 10), and every motion turns an
+   extent already there. The candidate for a first term (§2), two ends kept the same while turned, is not a term in the
+   cycle but its premise: what has to hold for any turn to be a turn. *Tom to rule.*
+
+3. **Is "two ends kept the same while turned" a write, a read, or neither?**
+
+   *Claude's answer:* neither, on the corpus's definitions. A write has a size moved by scaling (R1039), and
+   rigidity is unmoved by scaling. A read is continuous and has no size, and rigidity is not a direction or a slope.
+   It is closest to what *Reads and Writes* calls a law: a relation that holds for every turn at once, with nothing
+   in it happening (R853, R864). That suggests the cycle of reads and writes sits on one law, the turn being rigid, and
+   needs no first term because the law is not an event. *Speculative; Tom to rule.*
+
+4. **Does dependence without precedence belong in the papers?**
+
+   *Claude's answer:* the mathematical part is already there: the pivot and the trace, s and 1/s, the exchange with
+   its fixed point. The philosophical claim, that the question "which came first" rests on a false assumption, belongs
+   in an essay for philosophers, not in *Reads and Writes* (Tom: philosophy and appreciation belong in essays).
