@@ -576,6 +576,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1146 (20 Nov; Tom: "Ai is doing something new, no natural world comparison."): a language model reads a record of
+  human writes, no natural counterpart; nature's lead (NAT) bears on reads of a world, not on reading a record.
   R1145 (20 Nov; Tom: "George Washington apple tree is a story about honest, apples and trees. The natural world would
   not care about there connection, AI would."): a story's connections are human writes; a model learns the record's
   joins, nature's reads carry none (Weems's cherry tree, 1806, noted).
