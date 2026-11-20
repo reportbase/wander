@@ -44,3 +44,30 @@ varies in training, and how they fail when it varies more.
 A killed prediction stays killed; a fix is a new run with its own prediction.
 
 ## Runs
+
+### Run 1 (20 Nov 2026)
+
+`python3 runs/sct/sct.py` (3 min 42 s on four threads); output `runs/sct/sct-results.json`. Mean accuracy over five
+seeds, 20,000 test cases a range (chance 1/32 = 3.1%):
+
+| arm | a = 0.5 (trained) | a = 1.5 | a = 3 |
+|---|---|---|---|
+| read, front | 92.1% | 92.1% | 92.1% |
+| softmax | 52.6% | 28.9% | 20.4% |
+| Cauchy on an amount | 49.5% | 38.6% | 28.9% |
+| read, both | 47.2% | 47.2% | 47.2% |
+
+- **S1 not killed:** both reads gave the same prediction case by case at every range, every seed.
+- **S2 not killed:** softmax fell 32.1 points from a = 0.5 to a = 3.
+- **S3 not killed:** the amount-Cauchy fell 20.5 points.
+- **S4 not killed:** read, front 39.6 points *above* softmax at the training range (the prediction allowed it to be up to
+  5 below).
+
+**Reading, after the run, not a test.** The task is built so that direction alone decides the answer and size is a
+write with no bearing on it; it shows the scale test on a learner, not a general advantage. Even within the training
+range (lengths within a factor 2.7), softmax and the amount-Cauchy learned the task only about half as well as the
+front read in 4,000 steps, and widening the range cut them further; the reads did not move. Read, both sits near half
+(47%) for a geometric reason: joining the back side makes a key and its opposite read alike, and of 32 random keys in 16
+dimensions the most opposed is about as often more extreme than the most aligned (R1138: a key is whole; one facing reads
+the half that answers here, the join confuses the two). In RAT's language model the join helped; here, where the answer
+lies in front by construction, it halves the score.

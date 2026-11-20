@@ -576,6 +576,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1140 (20 Nov; Tom: "We should be able to train small models to make a geometric point.", "Yes"): SCT
+  (`plans/sct-plan.md`, `runs/sct/`), the scale test on a small learner (direction decides, lengths random): the reads
+  unmoved at every range, read, front 92%; softmax 53% → 20% and the amount-Cauchy 49% → 29% as lengths widen ×403;
+  read, both 47% (a key and its opposite read alike). Nothing killed; a task built for the point.
   R1139 (20 Nov; Tom: "These ideas can be explored without expensive ai training sessions. Others can test these ideas
   at scale."): **no AI training runs; explore by the geometry, point it at AI; others test at scale.**
   R1138 (20 Nov; Tom: "discreetness organizes the writes. Discreteness writes the full Apple … Discreteness does not have
