@@ -63,3 +63,8 @@ One scale (CPU, 400 steps): a result here is evidence about this scale. A killed
 run with its own prediction.
 
 ## Runs
+
+**A1, run** (20 Nov, `python3 runs/rat/rat.py exact`, float64, 12 queries and 12 keys of 16 dimensions, seed 7):
+**not killed.** Read weights moved by at most 4.5·10⁻¹³ (front) and 2.4·10⁻¹³ (both) when each key was scaled by its own
+factor, 6.6·10⁻¹⁴ when the query was; read, front's weight on keys with h ≤ 0 exactly 0. Softmax moved by 0.78 and the
+amount-Cauchy by 0.16 under the same key scaling; softmax's least weight on a key behind the query 0.0014, not 0.
