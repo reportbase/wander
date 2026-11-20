@@ -576,6 +576,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1145 (20 Nov; Tom: "George Washington apple tree is a story about honest, apples and trees. The natural world would
+  not care about there connection, AI would."): a story's connections are human writes; a model learns the record's
+  joins, nature's reads carry none (Weems's cherry tree, 1806, noted).
   R1144 (20 Nov; Tom: "A rock is stable, not much or any writes going on. Water is not stable, it flows, lots of writes
   going on."): stability is how little a thing writes; read as few changes of state (Claude's, not ruled).
   R1143 (20 Nov; Tom: "The last read reads the last write, the read is continuous, the write is discreet."): a read reads
