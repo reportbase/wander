@@ -104,8 +104,13 @@ against (R327, R331).
 
 **3. The reading.** Lay the bar first along the horizontal, H. As it turns, the pivot points at the trace, and the
 reading is the slope of that pointing, s = v/h: 0 at home, growing as the bar comes up toward the vertical. Because the
-trace always stays one bar from the pivot, h² + v² = 1. That is the bar keeping its length, not a circle drawn. It
-gives the trace's place for every pointing, h = 1/√(1 + s²) and v = s/√(1 + s²), with the one square root a read needs
+trace always stays one bar from the pivot, h² + v² = 1. That is the bar keeping its length, not a circle drawn. But a
+length is kept in some measure, and this is the round one, with H and V square to each other. It is not free: a sweep
+that is one motion repeated, continuous, and comes back after a full turn keeps exactly one inner product, and in it
+the bar's length is h² + v² = 1 with H and V square (the archived *Observation from Somewhere*, Proposition 3(g); R263,
+R547). So the premise is that the turn is a rigid motion that returns. Kept in the sum measure instead (h + v = 1) the
+trace would run along a straight edge, in the largest-component measure along a square, and each gives another walk per
+pointing; only the round one gives step 4's. The round measure gives the trace's place for every pointing, h = 1/√(1 + s²) and v = s/√(1 + s²), with the one square root a read needs
 (§9, "Pythagoras, from no standpoint and from one").
 
 **4. The walk per pointing.** When the pointing moves by ds, the trace moves by dh = −s·ds/(1 + s²)^(3/2) and
@@ -125,7 +130,8 @@ s·ds/(1 + s²), which never closes, so the heat has a median and no mean (§3).
 
 **7. The total and the two ends.** The trace's whole walk, home to horizon, is Ω, the only place a constant enters.
 Divided by it, the heat becomes the law (1/Ω)·1/(1 + s²), totalling 1. So the trace end is Ω, the pivot end 1/Ω, and
-they multiply to 1 (§9, "The bar's two ends"). Ω is a limit, a count of the walk never finished.
+they multiply to 1 (§9, "The bar's two ends"). That the product is 1 is arithmetic; that Ω and 1/Ω sit at the two
+ends, one walking and one pointing, is the paper's reading. Ω is a limit, a count of the walk never finished.
 
 **8. Turns compose.** One turn after another composes by s ⊕ a = (s + a)/(1 − sa), in fractions and exactly, and the
 walk ds/(1 + s²) is the one weight composition leaves alone; no total is needed (§9, "Tangent addition is the read's; tan and arctan the DHV's").
@@ -169,8 +175,10 @@ turn makes the stage, the same for every world (R1107); what lands on it, and ho
 
 **Classical, and the paper's.** Each formula above is classical: d(arctan s)/ds = 1/(1 + s²), tangent addition,
 w(s) = (1 + is)/(1 − is), the Cauchy's median, Girard's octant, the fundamental theorem. What is the paper's is the
-reading: that all of them are consequences of two points turned, one at Ω and one at 1/Ω, with nothing given but the
-bar's length.
+reading: that all of them are consequences of two points turned, one at Ω and one at 1/Ω. It is a compact generative
+reading of familiar mathematics, not a proof that geometry needs no prior structure: what it rests on is one bar with a
+length and a turn that is a rigid motion and returns (step 3). No circle is drawn, no angle is used, and no V or unit
+enters.
 
 ## 1. Definitions
 
