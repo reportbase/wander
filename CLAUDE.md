@@ -576,6 +576,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1130 (20 Nov; Tom: "an extent by itself does not have any geometry, its the sweep and the extent that creates the rich
+  geometry."; "An extent is just two points.    rotate two points at a pivot creates the universe."): bar-steps step 11;
+  **an extent alone has no geometry, the extent and the sweep together create it; an extent is two points turned at a
+  pivot** (Claude's note: the stage, the universe the paint, R1119). The worked case under it: the Cauchy from the bar
+  alone, the trace's walk per pointing ds/(1 + s²), corner by the exchange, no mean, Ω only the total. Appreciation a
+  blog post's judgement, not a paper's (Tom).
   R1129 (19 Nov; Tom: "rotating a bar is similar to parralax, its the motion that creates the writes."): bar-steps step
   10; **the motion creates the writes**; with step 7 (the sweep the read) put to Tom, open.
   R1128 (19 Nov; Tom: "that is a major reframe.    according to this idea, geometry requires physics, and than physics
