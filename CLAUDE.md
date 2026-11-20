@@ -576,6 +576,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1136 (20 Nov; Tom: "finish the note with these open questions and your answers."): the note's §6, two more ChatGPT
+  comments (dependence without precedence; inside and outside, not taken, R304, R570) and four open questions with
+  Claude's answers, not ruled: mutual within a turn, alternating across turns; no first term, rigidity the premise, a law.
+  R1135 (20 Nov; Tom: "write a note about it and add historical context."): `plans/two-points-philosophy-note.md`, which
+  is prior, geometry or physics, against Euclid, Leibniz, Kant, Riemann, Helmholtz (free mobility, the nearest match),
+  Poincaré, Einstein, Reichenbach, Dingler, Weyl; citations from memory, to check. No paper changed.
+  R1134 (20 Nov; a ChatGPT assessment, Tom: "If you agree."): §0 names its premise, the round measure (h² + v² = 1, H
+  and V square) from a turn that is a rigid motion and returns (archived OFS 3(g)); the placing of Ω and 1/Ω the
+  reading; §0 a generative reading, not a proof that geometry needs no prior structure.
   R1133 (20 Nov; Tom: "it also creates shv and dhv."): bar-steps step 12; the turn of two points creates the SHV (one
   pivot, one hemisphere, two facings) and the DHV (the facings joined, held by no pivot); *Reads and Writes* §0 step 11.
   R1132 (20 Nov; Tom: "do we have a section in the paper that walks through in a plain statement, the full geometry that
