@@ -583,3 +583,50 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       In the DHV the near field is the one-thumb ball about the eye (the bar over eight facings), the far field everything
       beyond it, with no outer surface; in the SHV only the bar. Half the heat each side.
 
+23. **All the inverses** (19 Nov; Tom: "Interesting about ehulers simplification with shv. The inverse"; "Both. Just
+    noticing all the inverses including Omega"; "Yes. I'm just hunting for deeper mesnings"). A reading, checked by INV
+    (`plans/inv-plan.md`, run 1 exact, nothing killed).
+    - **The pairs.** s and 1/s (the facings, meeting at the corner); d/H and H/d (inside and beyond the bar, meeting at
+      the tip); 1/Ω and Ω (the bar's ends, no meeting point, product the bar); w(s) and w(1/s) (landing points, product
+      −1, the turn carried); the heat below and above the corner (equal halves).
+    - **Found.** The near/far exchange is the facings' exchange in the ratio chart: one half-Cauchy, median 1 both ways.
+      On Euler's plane two perpendicular mirrors, composing to a half turn about the heat's peak. They differ in motion:
+      a turn leaves the slope's law fixed, a new thumb moves the distance's median to it.
+    - **Open.** What the half turn about the hot spot means for a read; Tom to say. (Ω and 1/Ω: answered below.)
+    - **The SHV's plane (INV run 2; Tom: "euler's plane is dhv, what is the shv equivalent/", then "yes").** The pair (s, x) read as
+      shares (p, q) = (1/(1 + s²), 1/(1 + x²)), the unit square: corner and tip one point (½, ½), each exchange p ↦ 1 − p,
+      both a half turn, no π or e in any map; the thumb q ↦ q/(q + k²(1 − q)), rational; the turn (√p − a√(1 − p))²/(1 + a²),
+      rational only in h and v; both laws the arcsine 1/(π√(p(1 − p))), π the law's total, in no motion. Euler's plane buys
+      addition with π and e; the square keeps fractions and its motions do not add. Exact, nothing killed. Settled, not
+      explored further (Tom: "ok, proceed with your recommendation"): every piece is classical (each exchange h² ↔ v²,
+      "one minus"; the thumb the odds q/(1 − q) times 1/k²; the law the arcsine of cos² under a uniform turn, CHS's logistic
+      chart), and the square's half turn is Euler's in another chart: q = ½(1 − tanh u) takes u ↦ −u to q ↦ 1 − q, p = cos²θ
+      takes θ ↦ π/2 − θ to p ↦ 1 − p. Its new motions need h and v, so it returns to the slope chart. Closed.
+    - **Ω and 1/Ω (INV run 3; Tom: "proceed with the open thread").** Not a pair of the exchange: Ω is the length of
+      the weight chart, where the exchange is the mirror w ↦ Ω − w with its fixed point Ω/2 at the corner (the trace's
+      walk folded at its middle); 1/Ω the factor making that length 1, where the mirror is g ↦ 1 − g and Ω is gone.
+      Where they appear as two values (the walk over the chord, r, and 1/r) they meet at home, not the corner, and that
+      family is not the exchange. So item 23's pairs sort in two: maps on directions, each fixed at the corner or the
+      tip, and a change of chart (Ω ↔ 1/Ω), fixed nowhere. Exact, nothing killed. A reading.
+    - **The geometry is the extent's, not the bar's making (R1119; Tom: "the geometry does not exist, it just the heat map
+      of how the universe paints the hemishpere"; "the bar inherintely has this geometry, but it does not create it.  the
+      geometry is free, intrinsic to any extent, any extent has this geometry.").** What there is: the bar, given 1, and
+      the paint. The full geometry is the account of turning, sweeping and holding the bar; what it accounts for is the
+      heat map, the same for any universe, the universe deciding only the paint. So the inverses are the heat map's: s and
+      1/s one direction counted from either end of the bar, the corner where the heat is half each way; the swaps that
+      keep the law facts about the heat, the bare reciprocals (Ω and 1/Ω, π/2 · 2/π) facts about how it is written.
+      Claude's, not ruled: every relation of two parties carries its inverse because nothing in a read picks which party
+      is the denominator.
+    - **Something must map it (R1120; Tom: "Maybe our eyes somewhow make this geometry real by how our eyes are
+      designed."; "Something needs to map that geometry to something else, otherwise its just the bar with all this
+      amazing geometry but its not mapped to anything.").** The geometry is free; a mapping takes a direction and its
+      heat onto something held (a receptor firing, a mark, a state), a write. An eye is one: a curved retina, a fixed
+      count densest at the look, a cortical map proportional to about 1–2° then logarithmic (classical). Claude's: K
+      enters with the mapping; "real" not used (R900). Offered, not run: retinal and cortical falloff (Curcio and Allen
+      1990, Watson 2014, Horton and Hoyt 1991) against the heat about the look, predictions first; it may well fail,
+      the eye's curve its building cost rather than the geometry.
+    - **The bar given eyes (R1121, EYE; Tom: "maybe if we gave the bar eyes, see what happens.").** Where the eye sits
+      decides what the bar gives: at the pivot directions only (the heat on K receptors, no distance); at the trace a
+      turn becomes a step, every thing placed in bars, exactly, out to a few × sin Δ/ε; at both ends held still the bar
+      is the baseline, best half a bar out, alike at d and 1/(4d). The pivot points, the trace walks (R1110). Exact,
+      E2 and E4 killed by my code and my factor; classical (HTP, PXC).

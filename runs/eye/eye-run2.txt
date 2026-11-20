@@ -1,0 +1,6 @@
+K=   64  turned  0.3: largest change in any pair's receptor gap 1
+K=   64  turned -0.7: largest change in any pair's receptor gap 1
+K=   64  turned  1.1: largest change in any pair's receptor gap 1
+K= 1024  turned  0.3: largest change in any pair's receptor gap 1
+K= 1024  turned -0.7: largest change in any pair's receptor gap 1
+K= 1024  turned  1.1: largest change in any pair's receptor gap 1

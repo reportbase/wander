@@ -184,6 +184,10 @@ What is classical: d(arctan s)/ds = 1/(1 + s²), tan solving s′ = 1 + s², and
 series': the derivative and the integral placed at the bar's two ends, the pivot's 1/Ω and the trace's Ω (R1110). A
 reading; no new run.
 
+Underneath the picture there is less still. The bar is an extent, and an extent is two points; turned about one of
+them, the two points are the pivot, 1/Ω, and the trace, Ω (R1130, R1131). The derivative at one, the integral at the
+other, and the fundamental theorem between are consequences of turning two points.
+
 ## 9. The sorting gathered
 
 | | Single hemispherical vantage | Needs a count or a completion |

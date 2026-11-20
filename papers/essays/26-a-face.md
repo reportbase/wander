@@ -233,6 +233,13 @@ pivot end, it totals 1. The corner is the trace end halfway along its walk; the 
 without end while the walk stays finite, which is why there is no mean. One end walks, the other points, and the
 Cauchy is the one counted against the other.
 
+**Two points, turned.** Take one more thing away. The bar is only an extent, and an extent is just two points; by
+itself it has no geometry at all. Turn the two points, one about the other, and the geometry is all there: the one that
+stays is the pivot, 1/Ω, pointing; the one that goes round is the trace, Ω, walking. The slope, the Cauchy, the corner,
+the horizon with no mean, the total Ω and the semicircle, circle and sphere joined from it: every one of them is a
+consequence of that turn. It takes no angle, no circle and no unit. What the turn makes is the stage; what lands on it
+is the world's.
+
 **Euler's identity, in thumbs.** Everyone knows e^(iπ) = −1. Here it is from one vantage, with one thumb, and
 nothing else.
 

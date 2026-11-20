@@ -1,0 +1,22 @@
+E1  pivot, a uniform sky
+   K=   8  worst share off 1/K 1.0e-51  median boundary slope 1.0
+   K=  64  worst share off 1/K 1.13e-51  median boundary slope 1.0
+   K= 256  worst share off 1/K 1.57e-51  median boundary slope 1.0
+E2  pivot, scaling and turning
+   K=   64  scaling by 1e-3, 7, 1e3: every receptor the same; turned 0.3: largest gap change 257 receptor(s)
+   K= 1024  scaling by 1e-3, 7, 1e3: every receptor the same; turned 0.3: largest gap change 4097 receptor(s)
+E3  trace, turning gives distance (exact directions)
+   turn 30.0 deg: 400 things, worst relative place error 2.92e-47; world x7: place moves by 7.0 in bars; all x7: place in bars 1.0 of the unscaled
+   turn 90.0 deg: 400 things, worst relative place error 1.64e-47; world x7: place moves by 7.0 in bars; all x7: place in bars 1.0 of the unscaled
+   turn 150.0 deg: 400 things, worst relative place error 5.0e-48; world x7: place moves by 7.0 in bars; all x7: place in bars 1.0 of the unscaled
+E4  trace, K receptors (directions read to the receptor's middle), turn pi/2
+   K=   64  sin(D)/eps = 40.744 bars; median error 1/2 at 100.83 bars, ratio 2.475; at 4x reach 10.0
+   K=  256  sin(D)/eps = 162.97 bars; median error 1/2 at 413.41 bars, ratio 2.537; at 4x reach 10.0
+   K= 1024  sin(D)/eps = 651.9 bars; median error 1/2 at 1535.3 bars, ratio 2.355; at 4x reach 10.0
+E5  both ends, still: relative error per unit direction error on the bisector
+   least at d = 0.5 bars; rel(0.5) = 2.0
+   d= 0.05  rel 10.1  rel(1/(4d)) 10.1  diff 8.55e-50
+   d=  0.2  rel 2.9  rel(1/(4d)) 2.9  diff 0.0
+   d=  3.0  rel 6.16666666667  rel(1/(4d)) 6.16666666667  diff 6.41e-50
+   d= 40.0  rel 80.0125  rel(1/(4d)) 80.0125  diff 1.74e-47
+E6  the pivot's eye turned: baseline 0.0 (the eye does not move), so no distance

@@ -1,0 +1,14 @@
+ok   X1 sech(ln x)/pi dlnx == (2/pi)dx/(1+x^2)
+ok   X2 law kept by x->1/x
+ok   X2 median 1
+ok   X2 quartiles sqrt2-+1
+ok   X2 w(x)w(1/x)=-1
+ok   X2 w(0),w(1),w(oo)=1,i,-1
+ok   X3 composite = half turn about (0,pi/4)
+ok   X3 heat kept by each and both
+ok   X3 peak at (0,pi/4) = 1
+ok   X4 turn keeps uniform theta (whole turn)
+ok   X4 thumb change moves median to k
+ok   X5 atan(e^u) = pi/4 + gd(u)/2
+ok   X5 d atan(e^u)/du = sech(u)/2 (theta prime uniform iff u ~ sech/pi)
+ok   X5 u law not uniform

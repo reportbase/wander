@@ -576,6 +576,68 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1133 (20 Nov; Tom: "it also creates shv and dhv."): bar-steps step 12; the turn of two points creates the SHV (one
+  pivot, one hemisphere, two facings) and the DHV (the facings joined, held by no pivot); *Reads and Writes* §0 step 11.
+  R1132 (20 Nov; Tom: "do we have a section in the paper that walks through in a plain statement, the full geometry that
+  is created by this rotation of two points?", "yes"): *Reads and Writes* §0, "The geometry of two points turned", thirteen
+  steps in order from two points to the first write; numbered 0 so nothing is renumbered. No new claim.
+  R1131 (20 Nov; Tom: "Add this to the papers and essays.   That all this geometry is consequence of simply rotating two
+  points, one point is omega and one point is 1/omega."): **all of the geometry is two points turned, the trace Ω and the
+  pivot 1/Ω**; *Reads and Writes* abstract and §9 ("Two points, turned, and all of it", with R1130's derivation), essays
+  26 §7 and 31 §8; the stage, the paint the world's.
+  R1130 (20 Nov; Tom: "an extent by itself does not have any geometry, its the sweep and the extent that creates the rich
+  geometry."; "An extent is just two points.    rotate two points at a pivot creates the universe."): bar-steps step 11;
+  **an extent alone has no geometry, the extent and the sweep together create it; an extent is two points turned at a
+  pivot** (Claude's note: the stage, the universe the paint, R1119). The worked case under it: the Cauchy from the bar
+  alone, the trace's walk per pointing ds/(1 + s²), corner by the exchange, no mean, Ω only the total. Appreciation a
+  blog post's judgement, not a paper's (Tom).
+  R1129 (19 Nov; Tom: "rotating a bar is similar to parralax, its the motion that creates the writes."): bar-steps step
+  10; **the motion creates the writes**; with step 7 (the sweep the read) put to Tom, open.
+  R1128 (19 Nov; Tom: "that is a major reframe.    according to this idea, geometry requires physics, and than physics
+  requires geometry, etc."): bar-steps step 9; **geometry and physics require each other in turn**; supersedes R852's
+  "complete without physics" and R297's "reading is free" as an order. Whether the cycle has a first term, open.
+  R1127 (19 Nov; Tom: "so geometry requires a previous write."): bar-steps step 8; flagged against R297 and R852 (H the
+  first write?), not ruled.
+  R1126 (19 Nov; Tom: "the bar is a write, the sweep is the read."): bar-steps step 7; **the bar a write, the sweep
+  the read** (R1039). Claude's, not ruled: the geometry takes both.
+  R1125 (19 Nov; Tom: "just being an extent is not enough for the geometry."): bar-steps step 6; **an extent alone does
+  not have the geometry, it takes the sweep**; narrows R1119's "intrinsic to any extent" to an extent swept.
+  R1124 (19 Nov; Tom: "you have to sweep the bar to create the geometry.   no geometry without the sweep."): bar-steps
+  step 5; how it sits with R1119 (the bar has the geometry, does not create it) put to Tom, open.
+  R1123 (19 Nov; Tom: "parallax uses the thumb for the bar, so there is a bar actually.   the extent that is created from
+  two reads is another extent.    So we now have two extents."): corrects R1122: parallax has a bar (the thumb); two reads
+  create a second extent, so two extents. `plans/bar-steps.md` step 4.
+  R1122 (19 Nov; Tom: "we need to build out from the bar one step at a time."; "two reads create an extent."; "in paralax,
+  there are no bars, only extents."): **build from the bar one step at a time, Tom's steps only, nothing added**, kept in
+  `plans/bar-steps.md` (the bar a place holder for any extent; two reads create an extent; in parallax no bars, only extents).
+  EYE (`plans/eye-plan.md` + `runs/eye/`, 19 Nov; SPN R1121; Tom: "maybe if we gave the bar eyes, see what happens."):
+  where the eye sits on the bar decides what it gives: the pivot directions only (K receptors, no distance), the trace a
+  turn made a step (places in bars, a write against the bar), both ends a baseline (best half a bar out, d ↔ 1/(4d)).
+  E2 killed by my code (run 2 not), E4 by my factor; classical (HTP, PXC). Discussion note item 23.
+  R1120 (19 Nov; Tom: "Something needs to map that geometry to something else, otherwise its just the bar with all this
+  amazing geometry but its not mapped to anything."): **the geometry is free; a mapping onto something held (a receptor, a
+  mark, a state) is a write**; an eye one such (curved retina, K densest at the look, cortex proportional then log, classical).
+  Never say the eye makes the geometry "real" (R900). A falloff test offered, not run. Discussion note item 23.
+  R1119 (19 Nov; Tom: "the geometry does not exist, it just the heat map of how the universe paints the hemishpere.";
+  "the bar inherintely has this geometry, but it does not create it.  the geometry is free, intrinsic to any extent, any
+  extent has this geometry."): **the geometry is intrinsic to any extent; the bar has it, does not make it.** What there
+  is: the bar (given 1) and the paint; the full geometry the account of turning, sweeping and holding the bar, of the heat
+  map (the same for any universe), the universe deciding only the paint. The inverses are the heat map's (s and 1/s one
+  direction counted from either end of the bar); bare reciprocals (Ω and 1/Ω) how it is written. Discussion note item 23.
+  INV (`plans/inv-plan.md` + `runs/inv/inv.py`, 19 Nov; SPN R1118; Tom: "Just noticing all the inverses including Omega";
+  "Yes. I'm just hunting for deeper mesnings"): exact, nothing killed. The distance overlay (1/π)·sech(ln(d/H)) written in
+  x = d/H is exactly the half-Cauchy, the slope's law: the near/far exchange is the facings' exchange, one fixed point (1).
+  On Euler's plane the two are perpendicular mirrors (θ = π/4, u = 0) composing to a half turn about the heat's peak (the
+  hot spot, R728); they differ in motion (a turn keeps the slope's law, a new thumb moves the distance's median to k).
+  Ω and 1/Ω have no fixed point and are not in it. Discussion note item 23; no paper changed.
+  Run 2 (Tom: "euler's plane is dhv, what is the shv equivalent/", then "yes"): the SHV's counterpart is the pair (s, x),
+  in shares the unit square (1/(1 + s²), 1/(1 + x²)): both corners one point (½, ½), each exchange p ↦ 1 − p, both a half
+  turn, no π or e in any map; the thumb rational (q ↦ q/(q + k²(1 − q))), the turn rational only in h and v; both laws the
+  arcsine, π its total, in no motion. Euler's plane trades π and e for motions that add; the square keeps fractions.
+  Run 3 (Tom: "proceed with the open thread"): Ω and 1/Ω are not a pair of the exchange: Ω the length of the weight
+  chart, where the exchange is w ↦ Ω − w fixed at Ω/2 (the corner), 1/Ω the factor making it [0, 1]; as two values (the
+  walk over the chord and 1/r) they meet at home. The pairs sort in two: maps on directions (fixed at the corner or the
+  tip) and a change of chart (Ω ↔ 1/Ω, fixed nowhere).
   R1117 (19 Nov; Tom: "The bar is denominator in the near field. The near field is how much of the bar."; "Thats a good way
   to discuss parallax."; "Yes."): **in the near field the bar is the denominator, a thing read as d/H, how much of the bar
   reaches it; past the tip the denominators swap, H/d, how much of the distance the bar is**; the two exchanges meeting at 1
