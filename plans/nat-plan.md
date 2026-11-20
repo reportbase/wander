@@ -68,3 +68,48 @@ accuracy is 100% on every test with no training. What the run adds is how far th
 A killed prediction stays killed; a fix is a new run with its own prediction.
 
 ## Runs
+
+### Run 1 (20 Nov 2026)
+
+`python3 runs/nat/nat.py` (about 4 minutes on four threads); output `runs/nat/nat-results.json`.
+
+**Part A, exact.** The front hemisphere's share inside the corner and the median slope, by dimension n:
+
+| n | 2 | 3 | 4 | 8 | 16 | 32 | 64 |
+|---|---|---|---|---|---|---|---|
+| share inside the corner | 0.5 | 0.2929 | 0.1817 | 0.0332 | 0.0015 | 4.2·10⁻⁶ | 4.6·10⁻¹¹ |
+| median slope | 1 | 1.732 | 2.264 | 3.720 | 5.603 | 8.158 | 11.70 |
+| median / √(n − 1) | 1 | 1.225 | 1.307 | 1.406 | 1.447 | 1.465 | 1.474 |
+
+- **A1 not killed**, **A2 not killed** (1.4740 against 1.4826 at n = 64, 0.6% off), **A3 not killed**, **A4 not killed**
+  (sd of cos α times √n = 1 at every n).
+
+**Part B.** Mean accuracy over three seeds (chance 1/32 = 3.1%):
+
+| arm | parameters | training world | world × 10³ | world × 10⁻³ | 1,024 things |
+|---|---|---|---|---|---|
+| nature | 0 | 100% | 100% | 100% | 100% |
+| read-3 | 19 | 96.6% | 96.6% | 96.6% | 81.1% |
+| softmax-mlp | 17,025 | 66.7% | 58.7% | 17.4% | 17.5% |
+| softmax-3 | 19 | 17.4% | 17.4% | 17.4% | 2.7% |
+| read-mlp | 17,025 | 3.2% | 3.2% | 3.2% | 0.1% |
+
+- **B1 not killed** (the check).
+- **B2 not killed:** softmax-3 and read-3 the same case by case under ×10³ and ×10⁻³.
+- **B3 killed:** softmax-mlp fell 8.0 points under ×10³ (bound 20). It fell 49.3 points under ×10⁻³: the embedding
+  breaks the scale test, but on the side I did not predict.
+- **B4 not killed:** softmax-3 82.6 points below nature.
+- **B5 not killed:** softmax-mlp 82.5 points below nature with 1,024 things.
+- **B6 not killed:** the best learned arm (read-3) 96.6%.
+- **read-mlp failed to train** (constant from step 250, the same at every test, near 1/32). Post hoc, untested: the
+  guard 10⁻³⁰⁰ is 0 in float32, so its weights may have collapsed to zero, every arg-max the first key. My code, not a
+  result about the arm; a fix is a new run with its own prediction.
+
+**Reading, after the run, not a test.** Part A is classical (the concentration of measure; Vaswani's 1/√d), the sorting
+ours: the Cauchy's corner as the median of a read is the plane's alone; in space half lies within √3 (R700); as the
+dimension grows nearly every direction sits at the horizon (inside the corner 0.15% at 16 dimensions, 5·10⁻¹¹ at 64),
+which is what softmax's 1/√d rescales. The read's heat gives the front its structure only in few dimensions. In part B
+the geometry given (no parameter, no training) answered every test; nineteen learned parameters in its form reached 97%
+and were unmoved by scale; the high-dimensional embedding, with 900 times the parameters, reached 67%, lost most of it
+when the world shrank and when the things grew in number. The task is the read's own, built so (as SCT's); it shows what
+the given geometry does without cost, not a general advantage over learned attention.

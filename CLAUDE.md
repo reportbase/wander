@@ -576,6 +576,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1141 (20 Nov; Tom: "The natural world figured this out long ago, let's follow its lead"): NAT (`plans/nat-plan.md`,
+  `runs/nat/`): exact, the corner's share of a front hemisphere ½, 0.29, 0.0015, 5·10⁻¹¹ at n = 2, 3, 16, 64, softmax's
+  1/√d the horizon's rescaling; the eye's task, the given read 100% with no parameters, 19 learned 97%, a 64-wide
+  embedding with softmax 67% and 17% with the world shrunk or 1,024 things. B3 killed (wrong side); read-mlp my code.
   R1140 (20 Nov; Tom: "We should be able to train small models to make a geometric point.", "Yes"): SCT
   (`plans/sct-plan.md`, `runs/sct/`), the scale test on a small learner (direction decides, lengths random): the reads
   unmoved at every range, read, front 92%; softmax 53% → 20% and the amount-Cauchy 49% → 29% as lengths widen ×403;
