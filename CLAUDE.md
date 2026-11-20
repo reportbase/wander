@@ -576,6 +576,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1137 (20 Nov; Tom: "1,2,3"): PR #480 merged; the philosophy note's citations checked by a fresh agent (Leibniz did
+  not scale the world; Poincaré's thousandfold universe is "La relativité de l'espace", 1906–07, in *Science and Method*
+  1908, credited to Delbœuf; smaller precisions); `two-points.html`, §0 as a demo, with a `demos.html` card.
   R1136 (20 Nov; Tom: "finish the note with these open questions and your answers."): the note's §6, two more ChatGPT
   comments (dependence without precedence; inside and outside, not taken, R304, R570) and four open questions with
   Claude's answers, not ruled: mutual within a turn, alternating across turns; no first term, rigidity the premise, a law.
@@ -1197,6 +1200,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Writes* §9 "All of this is prior to any physics".
   R803 (10 Nov; Tom: "update the essays."): R801 and R802 in essay 2 §7 ("Which act each number measures") and §9 ("Four
   identities, one exchange", with the table), essay 14 §3 and essay 15 §5; no new claim.
+- `two-points.html`: **two points, turned** (20 Nov 2026, SPN R1137; Tom: "1,2,3"; *Reads and Writes* §0), a standalone
+  page like `facing.html`, plain canvas. The pivot (points, 1/Ω) and the trace (walks, Ω); the slider the share of the
+  trace's walk passed, so moving it evenly is the sweep; the reading s = v/h. The bar keeps its length round (default),
+  by the sum or by the largest part: the trace's track drawn only as walked, its walk per pointing as the heat on the
+  slopes (the Cauchy for round, the round curve dashed beside the others), the corner splitting the walk in half in all
+  three, the mean of s never settling, the exchange's halves, and s ⊕ a's weight check (1 only for round). Facings 1, 2,
+  4 drawn (the DHV's joins). §0's fourteen steps as a list that sets the picture. `?w=&m=round|sum|max&f=1|2|4&play=1`;
+  hook `window.__twoPoints` (`M`, `heat`, `compose`, `composeRatio`, `meanTo`, `steps`, `set`, `state`). Not in the flying page.
 - `notation.html`: **only a name** (14 Nov 2026, SPN R997; essay 24), a standalone page like `shv.html`, plain script: one turn by its
   angle (cos, sin, so π) and by its half-slope in exact BigInt fractions, n turns and back; Leibniz and Wallis as limits (a fraction at every
   step, π at none); the 189 laws of NTN and NTX as tiles, teal where the checker found π or e notation, grouped by list, DVA's tag, the blind
