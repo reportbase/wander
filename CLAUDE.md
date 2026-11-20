@@ -576,6 +576,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1132 (20 Nov; Tom: "do we have a section in the paper that walks through in a plain statement, the full geometry that
+  is created by this rotation of two points?", "yes"): *Reads and Writes* §0, "The geometry of two points turned", thirteen
+  steps in order from two points to the first write; numbered 0 so nothing is renumbered. No new claim.
   R1131 (20 Nov; Tom: "Add this to the papers and essays.   That all this geometry is consequence of simply rotating two
   points, one point is omega and one point is 1/omega."): **all of the geometry is two points turned, the trace Ω and the
   pivot 1/Ω**; *Reads and Writes* abstract and §9 ("Two points, turned, and all of it", with R1130's derivation), essays
