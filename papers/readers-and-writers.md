@@ -80,6 +80,13 @@ reciprocal, and at the corner i·i = −1 (§1, "The same relation, held two way
 None of the mathematics is new. What is offered is a division of it: which parts one standpoint has, which need two, and
 which need a unit, with the plane as the frame that holds the division in one line.
 
+**Two points, turned.** All of this geometry is the consequence of turning two points (Tom, R1130, R1131). An extent is
+two points, and an extent alone has no geometry; turned about one of them, the sweep and the extent together give it
+all. One point is the pivot, 1/Ω, which points; the other is the trace, Ω, which walks (§9, "The bar's two ends"). From
+those two points and one reading, the slope of the pointing, come the walk per pointing 1/(1 + s²) (the Cauchy), its
+corner and exchange, its horizon and missing mean, the total Ω and its joins into the semicircle, circle and sphere, and
+calculus's two halves (§3, "The Cauchy, by the bar"; §9). What the turn gives is the stage; the paint is the world's.
+
 ## 1. Definitions
 
 **The room, without a ruler.** Stand in a corner of a room, look at each thing, and note where it is: so far round, so
@@ -1951,6 +1958,25 @@ octant swept by the two thumbs together, and its Ω is an area, 3Ω − 2Ω = Ω
 another measure. And in space the join is more than a count: bars in one plane compose in either order, facings in
 different planes do not, and a loop through them comes back turned (§8, the loop's leftover). That leftover is what the
 sphere's join adds beyond eight sweeps.
+
+**Two points, turned, and all of it.** Strip the bar to what it is: an extent is two points (Tom, R1131). By itself an
+extent has no geometry; the sweep and the extent together create it (Tom, R1130). Turn two points about one of them and
+the one is the pivot, 1/Ω, pointing, the other the trace, Ω, walking. Everything in this section and §3 follows from
+that turn and one reading, the pointing's slope s = v/h, with no angle, no trigonometric function, no circle drawn, no V
+and no unit:
+
+- the trace's place, h = 1/√(1 + s²), v = s/√(1 + s²), the one square root, because the trace stays one bar out;
+- its walk per pointing, √(dh² + dv²) = ds/(1 + s²) = h²·ds, so the even sweep's heat on the slopes is the Cauchy's
+  shape, before any constant;
+- the corner as the median, since s ↦ 1/s keeps ds/(1 + s²): as much walk below s = 1 as above;
+- the horizon and no mean, since s·ds/(1 + s²) does not close as the pointing runs on;
+- the total Ω, the only place a constant enters, the law (1/Ω)/(1 + s²) totalling 1 because the two ends multiply to 1;
+- the joins: two, four and eight sweeps the semicircle, circle and sphere, 2Ω, 4Ω, 8Ω;
+- calculus's two halves, the pivot's rate and the trace's total, joined by the fundamental theorem (§1).
+
+What the turn gives is the stage, the same for every world (R1107); the paint that lands on it is the world's (R1119).
+**Classical** (d(arctan s)/ds = 1/(1 + s²) and the rest); that all of it is two points turned, one at Ω and one at 1/Ω,
+is the paper's reading.
 
 **The thumb, as a mean share times a length, and whole.** Said most simply: the true size is 1, the thumb in thumbs.
 The mean share over the turn, 1/Ω, times the arc's length, Ω, gives back the 1. The proof is one line, in the DHV's terms. Along the sweep, from all of h to all of v, each step dℓ of the arc

@@ -576,6 +576,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1131 (20 Nov; Tom: "Add this to the papers and essays.   That all this geometry is consequence of simply rotating two
+  points, one point is omega and one point is 1/omega."): **all of the geometry is two points turned, the trace Ω and the
+  pivot 1/Ω**; *Reads and Writes* abstract and §9 ("Two points, turned, and all of it", with R1130's derivation), essays
+  26 §7 and 31 §8; the stage, the paint the world's.
   R1130 (20 Nov; Tom: "an extent by itself does not have any geometry, its the sweep and the extent that creates the rich
   geometry."; "An extent is just two points.    rotate two points at a pivot creates the universe."): bar-steps step 11;
   **an extent alone has no geometry, the extent and the sweep together create it; an extent is two points turned at a
