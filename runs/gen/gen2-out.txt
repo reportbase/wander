@@ -1,0 +1,7 @@
+octant -7.3808e-21
+screen -1.0309e-20
+pair 0.0
+near 0.0
+order -6.7042e-25
+G9' holds
+G11' holds

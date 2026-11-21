@@ -80,3 +80,19 @@ the halves below and above d = 1 are equal and total 1 to 40 digits. Neither kil
 Run 2's predictions, committed before `runs/gen/gen2.py` is written: **G9′**, the same five numbers within 10⁻¹⁸ of
 1, 1, ½, ⅓, ⅙; **G11′**, the identity checked after rewriting in exponentials, and the two halves equal and totalling 1
 within 10⁻³⁰.
+
+### Run 2 (21 Nov; `runs/gen/gen2.py`, output `runs/gen/gen2-out.txt`)
+
+**G9′ not killed**: octant −7.4·10⁻²¹, screen −1.0·10⁻²⁰, pair 0, near field 0, one order −6.7·10⁻²⁵ from 1, 1, ½, ⅓, ⅙.
+**G11′ not killed**: the identity 0 in exponentials, the halves equal and totalling 1 to 40 digits.
+
+So all thirteen stand: from a point, a second point picked from it, their distance the thumb as hypotenuse, legs of equal
+extent and the turn keeping the thumb, the read geometry comes out whole: readings as slopes of legs (G1), the shares
+and the one root (G2), every rational direction from a half-slope (G3), composition that keeps the thumb (G4), the one
+weight it leaves alone, the Cauchy, the trace's walk per pointing (G5), the corner as the exchange's fixed point and the
+median with no π (G6), no mean (G7), Ω only as the completed total, never reached by a rational step (G8, the DHV's),
+the screen's law in three legs with every pair at its corner, the near field a third and each order a sixth (G9′), the
+equal extent the one assumption that puts the corner at 1 (G10), near and far with its sech heat split at the thumb
+(G11′), Euler's −1 as the exchange in fractions (G12), and no size anywhere (G13). Classical pieces, each named in the
+corpus before (PYT, PYK, WDG, INV, R1056); what is new is only that they all follow, in this order, from the start of
+step 17.
