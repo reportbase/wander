@@ -106,3 +106,10 @@ every direction (R1116), and is where the look is (the focus at the corner, R500
 corner and changes no reading's law (R1107, the stage the same). Without the assignment the single point still has every
 direction (the read's heat, which needs no H, R703) but no near or far. So steps 13–15's two points become one point and
 one choice.
+
+**Step 17** (21 Nov; Tom: "this is a simpler starting point. Take any point, from that point pick another point."):
+**the starting point: take any point; from that point pick another point.** Supersedes step 13's "two points" and
+step 16's "a single point" as where the steps begin: nothing is given but one point, and the second is picked from it.
+Claude's reading, not ruled: picking from the first point makes it the standpoint (R1155) and the second the trace;
+their distance is the thumb (R1154), assigned, not measured (step 16), so any pick will do; turning the pick gives the
+rest.
