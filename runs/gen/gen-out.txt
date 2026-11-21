@@ -1,0 +1,8 @@
+G1 holds 
+G2 holds 
+G3 holds (exact fractions, 29 x 29 half-slopes)
+G4 holds 
+G5 holds 
+G6 holds 
+G7 holds 
+G8 holds closers [Fraction(0, 1), Fraction(1, 1)]
