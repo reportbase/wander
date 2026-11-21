@@ -576,6 +576,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1149 (21 Nov; Tom: "1"): GPA (`plans/gpa-plan.md`, `runs/gpa/`), GPT-2 small forward only: no knee in distance
+  (d^(−0.85), G3 killed); q·k's sign no facing (G1 killed, my set-up); post hoc centred per query, half the keys get 5%
+  of the weight; keys centred, 12 of 64 dimensions; 48% on the first token.
   R1148 (20 Nov; Tom: "Yes"): LNK (`plans/lnk-plan.md`, `runs/lnk/`), mutual information by distance in WikiText-2:
   1.25 bits at d = 1, 0.03 at 16; the Cauchy in distance killed (L2); a knee near ten words, steep then about d^(−0.3).
   R1147 (20 Nov; Tom: "Not all links the same, maybe close links are better"): in a record the joins differ, close ones

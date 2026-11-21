@@ -41,3 +41,33 @@ One model, one text, inference only: evidence about GPT-2 small on this text. A 
 new run with its own prediction.
 
 ## Runs
+
+### Run 1 (21 Nov 2026)
+
+`python3 runs/gpa/gpa.py` (about 3 minutes); output `runs/gpa/gpa-results.json`. 40 blocks, 9,920 queries a head.
+
+- **G0 not killed** (the check): in every head the front keys' weight share is at least their count share.
+- **G1 killed:** the median head's back share is 64% (mean 63%), by layer 42–78%. But 98% of keys have q·k ≤ 0 by count,
+  so the measure says little: in GPT-2 the raw sign of q·k is set mostly by a shared offset between queries and keys,
+  and softmax is unchanged by adding one constant to all of a query's logits. My set-up: the sign of q·k is not a facing
+  softmax sees.
+- **G2 not killed:** the median head's key participation ratio is 3.1 of 64 (queries 4.7; by layer 2.0–7.3). See the
+  post hoc note: much of this is the shared offset.
+- **G3 killed:** no knee. The log–log slope is −0.88 over d = 1 … 8 and −0.82 over 16 … 128: attention (key 0 left out)
+  falls with distance at one rate, about d^(−0.85), unlike the text's own links in LNK (about −1.5, then −0.3).
+- **G4 not killed:** the median head puts 48% of its weight on key 0 (by layer 1% in layer 0 rising to 64% in layer 7).
+
+**Post hoc, not predictions** (`runs/gpa/gpa_posthoc.py`, 20 blocks; `runs/gpa/gpa-posthoc.json`; both choices made
+after seeing run 1):
+- With each query's logits centred on their mean over its keys, about half the keys lie below (median 53%), and they
+  get 5.2% of the weight (median head; by layer 2–14%, highest in layers 0–1). Read so, nearly all of a head's weight
+  falls on one half of what it could read, measured from the head's own zero, not from the origin.
+- With the keys centred, the median participation ratio is 12.1 of 64 (2.5 to 27 by layer, lowest in layers 2–4): the
+  3.1 of run 1 was mostly one shared direction. Few dimensions, but not three.
+
+**Reading, after the run, not a test.** Softmax has no standpoint of its own: the sign of q·k is not something it reads,
+since it depends on logits only up to a constant per query (consistent with R1046: softmax the DHV's form, no facing).
+What a trained model does build is a facing of its own, relative to each query's mean: almost all weight on the keys
+above it. Its keys use about a fifth of their 64 dimensions once the shared offset is removed, and almost half its weight
+goes to the first token, which no direction asks for. Its weight falls with distance at one rate, not with the text's
+knee. One model, one text.
