@@ -578,6 +578,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1168 (21 Nov; Tom: "the readers geometry is the same no matter what he does. Say its a stage, and he just moves the
+  stage when he picks a new second point."): **one stage, never changed; a new pick recentres it.** Claude's reading,
+  not ruled: the move s ↦ s ⊕ a carries the stage onto itself (G4, G5); two stages from two first points place a thing.
+  Bar-steps step 23; restates R1107, R1041.
   R1167 (21 Nov; Tom: "scanning a room without moving gives a continuous cauchy heat with a different selected second
   point."): **a scan is a continuous Cauchy heat recentred on each new pick; parallax a new first point.** Claude's
   reading, not ruled: the law unchanged (G4, G5), its centre and paint moving, the near/far overlay with the pick's

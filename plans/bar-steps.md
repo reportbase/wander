@@ -153,3 +153,12 @@ not ruled: the heat's law is the same at every pick, since composition keeps the
 changes where the heat is centred and what paints it, never the heat; the thumb's distance is assigned to each pick
 (step 16), so the near/far overlay slides with it (R703), as `crosshairs.html` already shows (H follows what the
 crosshairs point at); nothing is placed until a second first point is taken.
+
+**Step 23** (21 Nov; Tom: "lets say the readers geometry is the same no matter what he does. Say its a stage, and he
+just moves the stage when he picks a new second point. the stage never changes, but you can change where it is
+centered."): **the read geometry is one stage, the same whatever the reader does; picking a new second point moves the
+stage, recentring it, and never changes it.** Restates R1107 ("the stage is always the same") and R1041 ("the read is the
+stage") for a scan. Claude's reading, not ruled: moving the stage is composing by the turn to the new pick (s ↦ s ⊕ a),
+which carries the stage onto itself, its one weight unchanged (GEN G4, G5): every corner, median and share where it was
+relative to the centre, only the centre moved; a new first point moves the stage too, and two stages held together are
+what place a thing (parallax); the paint is the world's, met on the stage wherever it is centred.
