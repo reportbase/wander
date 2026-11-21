@@ -88,3 +88,10 @@ turn): **the distance kept between the two points is the thumb.** It is the one 
 carried is not an extra: it is H itself. Claude's, not ruled: by the case rule, the kept distance as a length is H; in
 itself it is 1 (one thumb), and as the trace turns it splits into the shares h and v with h² + v² = 1, h = 1 at home.
 So "your h" is read as H, the thumb, with h its share along the first point's direction; Tom's lowercase kept as he wrote it.
+
+**Step 15** (21 Nov; Tom: "but what if one of those points is you, the pivot point."): **one of the two points is you,
+the pivot.** Claude's reading, not ruled: then the pivot is the standpoint (it never moves and points, 1/Ω; R1110, R450),
+and the other point, the trace, is one thumb from you (step 14); turning it sweeps every direction about you, and what
+the trace walks per pointing is the heat as seen from where you stand (R1112). The circle it traces is one thumb about
+you, the near field's edge (R1116: the near field the bar itself, pivot to trace; the far field beyond the trace). So
+reader geometry is two points turned with you at one of them: a standpoint, a kept length, and a turn.

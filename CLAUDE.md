@@ -576,6 +576,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1155 (21 Nov; Tom: "but what if one of those points is you, the pivot point."): one of the two points is you, the
+  pivot; Claude's reading, not ruled: the pivot the standpoint, the trace one thumb off, its circle the near field's edge
+  (R1116). Bar-steps step 15.
   R1154 (21 Nov; Tom: "That is your h"): the distance kept between the two points through the turn is the thumb, the
   one given length (read as H; in itself 1, its shares h and v as the trace turns). Bar-steps step 14.
   R1153 (21 Nov; Tom: "I don't think it's a bar, it's two points. The rotation of two points is the Genesis of reader
