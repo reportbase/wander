@@ -71,3 +71,28 @@ What a trained model does build is a facing of its own, relative to each query's
 above it. Its keys use about a fifth of their 64 dimensions once the shared offset is removed, and almost half its weight
 goes to the first token, which no direction asks for. Its weight falls with distance at one rate, not with the text's
 knee. One model, one text.
+
+### Run 2: predictions (21 Nov 2026, committed before the script is written)
+
+Tom: "Ok", to turning run 1's post hoc numbers into predictions. Inference only (R1139). Four cells: GPT-2 small (12 × 12
+heads) and GPT-2 medium (Hugging Face `openai-community/gpt2-medium`, 24 layers × 16 heads, 64 dimensions a head, MIT;
+sha256 recorded when fetched, not committed), each on two texts not used in run 1: WikiText-2-raw's **test** split, and
+*Pride and Prejudice* (Project Gutenberg 1342, the pglaf mirror's `1342-0.txt`, public domain in the US; the licence
+header and footer cut at the "*** START" and "*** END" lines; sha256 recorded). Twenty blocks of 256 tokens a cell, the
+first block of each text skipped. Key 0 left out and the weights renormalised, queries with fewer than 8 earlier keys left
+out, as in run 1. The measures are `gpa_posthoc.py`'s, unchanged: a key is "below" when its logit q·k is at or under the
+mean of the query's logits over its keys; the keys' participation ratio from their covariance (centred).
+
+- **H1 (a facing from the query's own zero).** In every cell the median head puts between 2% and 10% of its weight on the
+  keys below, and the median head's share of keys below (by count) lies between 40% and 60%. Killed if any cell falls
+  outside either band.
+- **H2 (few dimensions, once centred).** In every cell the median head's centred key participation ratio lies between 6
+  and 24 of 64. Killed if any cell falls outside.
+- **H3 (the shared offset).** In every cell the median head's uncentred key participation ratio is below its centred one.
+  Killed if any cell has it at or above.
+- **H4 (the sink).** In every cell the median head puts at least 30% of its weight on key 0. Killed if any cell has less.
+- **H5 (no knee, run 1's G3 turned round).** In every cell the head-averaged log–log slope of weight against distance
+  over d = 1 … 8 and over d = 16 … 128 differ by less than 0.5. Killed if any cell differs by 0.5 or more.
+
+The bands are wide on purpose: run 1 gave 5.2%, 53% and 12.1 on one model and one text, and a second text or a model
+twice the depth could move them. A killed prediction stays killed; a fix is a new run with its own prediction.
