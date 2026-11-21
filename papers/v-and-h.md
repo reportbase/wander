@@ -15,6 +15,11 @@ sets V = H as a placeholder. Items below written before Oct 9 often use h for H 
 and *Serial, Parallel and Nowhere* §1 ("What a sweep is", "H and h kept apart", "The corner is found"). This matches the
 older papers' **reader (H)** and **writer (V)** noted above.
 
+⚠ **Nov 21: two points, not a bar** (SPN R1153, R1157, R1164; Tom: "I don't think it's a bar, it's two points."). Items
+below that say "the bar" (of length 1, turned, swept, its attitude) mean two points turned: the pivot and the trace,
+their distance the thumb. The items are the record and keep their words; new writing says two points (or the pivot, the
+trace and the thumb), and begins with "take any point; from it pick another".
+
 **Rulings, Sep 24 afternoon** (Tom): **the order is v/h** (h underneath, so the horizon is at h = 0); **readers don't
 build arches; building is the view from everywhere** (later: **the builder is the writer**; one writer, two types of reader); **depth is z**; the reader's limits are **chosen**; **one facing
 per freedom**. Later: **breadth means extent, not quantity**. Also agreed: dividing is what removes the scale, and choosing what goes underneath is what gives a reader

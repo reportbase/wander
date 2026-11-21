@@ -197,6 +197,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `fid=addr`, by distance address: across equal angles (±75°), up the row (2/π)·atan(D/ρ) with heights at the rate
   (2/π)·D/(ρ² + D²), the thumb at the crosshair, rows one in 2, 4, 8 bunching under the horizon (labelled with words on).
   The toggle: by distance address / tunnel / equal area / by turns / silver ball / flat screen. Hook adds `addr()`, `cull()`.
+  Since R1164 the √3 (H the pointed thing's depth over √3) is said as the derived hypotenuse of three legs of one
+  thumb (R1161), not the cube's diagonal; no number changed.
   Since R698 (Tom: "Yes", to the tunnel as the quarter turn, after R696): the tunnel is drawn in the wedge only (`wedgeEdge`,
   35.26° at a home, 54.74° at a thumb, its rings clipped to it), the full round the menu's "tunnel turned all the way round"
   (`?round=1`); `tunnel()` adds `quarter` and `edge(β)`, `set` takes `round`.
@@ -576,6 +578,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1164 (21 Nov; Tom: "1,2"): `crosshairs.html`'s H = depth/√3 read as R1161's derived hypotenuse (the thumb on each
+  leg), not the cube's diagonal; wording only, R1159's flag closed. `parallax.md` §5½ in two points (pivot, trace, the
+  thumb); `v-and-h.md` a head note that its items' "bar" means two points turned, the items kept as the record.
   R1163 (21 Nov; Tom: "Yes, the simplified cauchy derivation gives this modeling a great deal of credibility."): **the
   Cauchy is the conversion between the two placements of the thumb** (h² = one slant × one distance; h^(n+1) with n
   readings); GEN run 3, G14, G15 not killed; *Reads and Writes* §0 step 5.
