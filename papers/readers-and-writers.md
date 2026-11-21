@@ -81,8 +81,8 @@ None of the mathematics is new. What is offered is a division of it: which parts
 which need a unit, with the plane as the frame that holds the division in one line.
 
 **One point taken, one point picked.** All of this geometry is built from two acts: take any point, and from it pick
-another (Tom, R1157). The distance between them is assigned, the thumb, and placed on one leg the other legs are the
-readings, the hypotenuse derived (Tom, R1161). The first point is the pivot, 1/Ω, which points; the second, turned about
+another (Tom, R1157). The distance between them is assigned: it is the thumb, the hypotenuse, and the legs are derived
+from it, their ratios the readings (Tom, R1159, R1170). The first point is the pivot, 1/Ω, which points; the second, turned about
 it, is the trace, Ω, which walks (§9, "The two points: Ω and 1/Ω"). From those two points and one reading, the slope of the
 pointing, come the walk per pointing 1/(1 + s²) (the Cauchy), its corner and exchange, its horizon and missing mean, the
 total Ω and its joins into the semicircle, circle and sphere, and calculus's two halves (§0 walks through it in order;
@@ -102,22 +102,21 @@ every direction from it and the heat on them (§3), but nothing near or far, and
 **2. One point picked.** From the first point, pick another, any point: the *trace*. The distance between them is not
 measured but assigned: it is the thumb, H, held at arm's length, so whatever is picked is one thumb off (Tom, R1156).
 Having a length, the thumb is a write (Tom, R1126); it is the one given length, and what the rest of this section keeps
-(Tom, R1154). The pick gives the trace three numbers, h, v and depth, where a write would give x, y and z in a unit
-(Tom, R1158).
+(Tom, R1154). Picking sets the hypotenuse, not a leg (Tom, R1170): the thumb is the distance from the pivot to the
+trace. The pick gives the trace three numbers, h, v and depth, where a write would give x, y and z in a unit (Tom,
+R1158).
 
-**3. The thumb on a leg: the readings.** Lay the thumb along one leg, h, so that h = 1 (Tom, R1161). Then the other legs
-simply are the readings: in the plane v = s, the slope of the pointing, 0 at home and growing toward the vertical; in
-space depth = s₂ as well. Nothing is divided, and every leg is a fraction for every fractional reading. The distance from
-the pivot to the trace, the hypotenuse, is derived: √(1 + s²) thumbs in the plane, √(1 + s² + s₂²) in space. That is the
-one square root a read has, and no reading uses it (§9, "Pythagoras, from no standpoint and from one"). The picks with
-that leg one thumb long lie on a straight line square to it in the plane, a flat screen in space (the lighthouse's
-shore), so no circle appears. Scaling every length moves no reading (G1, G13).
+**3. The legs, derived, and the readings.** The thumb being the hypotenuse, the legs are its shares, derived from it
+given that they have the same extent (Tom, R1159): h² + v² = 1 in the plane, h² + v² + depth² = 1 in space. A reading
+is a ratio of legs, the slope of the pointing s = v/h (and s₂ = depth/h in space), 0 at home and growing toward the
+vertical; the legs in terms of it are h = 1/√(1 + s²), v = s/√(1 + s²). That √(1 + s²) is the one square root a read
+has, and no reading uses it, since every reading is a ratio of legs (§9, "Pythagoras, from no standpoint and from
+one"). Scaling every length moves no reading (G1, G13).
 
 **4. The turn.** Turn the trace about the pivot. The turn is the sweep, and the sweep is the read (Tom, R1126):
-continuous and with no size. A turn keeps the distance from the pivot, so turning puts the thumb on the hypotenuse
-instead, and the legs become its shares: h = 1/√(1 + s²), v = s/√(1 + s²), h² + v² = 1 (Tom, R1159). That is the turn
-keeping its length, not a circle drawn, and it is not free: a sweep that is one motion repeated, continuous, and comes
-back after a full turn keeps exactly one inner product, and in it the length is h² + v² = 1 with the legs square (the
+continuous and with no size. A turn keeps the distance from the pivot, the hypotenuse, so the thumb picked is the thumb
+kept, and the legs stay its shares, h² + v² = 1, in every direction. That is the turn keeping its length, not a
+circle drawn, and it is not free: a sweep that is one motion repeated, continuous, and comes back after a full turn keeps exactly one inner product, and in it the length is h² + v² = 1 with the legs square (the
 archived *Observation from Somewhere*, Proposition 3(g); R263, R547). So the premise is that the turn is a rigid motion
 that returns. Kept in the sum measure instead (h + v = 1) the trace would run along a straight edge, in the
 largest-component measure along a square, and each gives another walk per pointing; only the round one gives step 5's.
@@ -127,22 +126,21 @@ Every rational direction with rational shares comes from one half-slope t, h = (
 **5. The walk per pointing.** When the pointing moves by ds, the trace walks ds/(1 + s²) = h²·ds (G5). Near home the
 trace walks a full step for each step of pointing; toward the vertical it walks almost nothing while the pointing runs
 on. The sweep is the trace walking evenly, so the heat each slope gets is 1/(1 + s²): the Cauchy's shape, before any
-constant (§3, "The Cauchy, by the two points"). On the line of step 3 it is the same thing seen from the other side: equal
-turns land on the line crowded near the foot, 1/(1 + s²) per unit of s.
+constant (§3, "The Cauchy, by the two points").
 
-*The Cauchy, as the change of placement* (Tom, R1163). The two placements of the thumb (steps 3 and 4) give each pick two
-places: on the line at the reading s, and one thumb out, its shadow. Move the pick along the line by ds and its shadow
-moves by h²·ds, for two reasons read off similar triangles. The line meets the pointing at a slant, so only h·ds of the
-step goes across the pointing; and the line is 1/h thumbs out, so that step shrinks by another h when brought in to one
-thumb. So 1/(1 + s²) is what the line costs in turn, per unit of reading: the Cauchy, with no angle, no arctangent and no
-change of variable. The count carries to every dimension: on a screen with n readings there is one slant (toward the
+*The Cauchy, as the cost of laying the readings on a line* (Tom, R1163, R1170). Lay each reading s out as a place on
+the line square to h at one thumb, the lighthouse's shore: the pick one thumb out along its pointing, and its reading s
+on the line. Move the reading along the line by ds and the pick moves by h²·ds, for two reasons read off similar
+triangles. The line meets the pointing at a slant, so only h·ds of the step goes across the pointing; and the line is
+1/h thumbs out, so that step shrinks by another h when brought in to the pick, one thumb out. So 1/(1 + s²) is what the
+line costs in turn, per unit of reading: the Cauchy, with no angle, no arctangent and no change of variable. The count carries to every dimension: on a screen with n readings there is one slant (toward the
 screen's foot) and n factors of distance, so the shadow's measure per unit of screen is h^(n+1) = (1 + |r|²)^(−(n+1)/2),
 the plane's 1/(1 + s²), space's (1 + s² + s₂²)^(−3/2) and so on, one count instead of a result for each (GEN run 3).
-Two more things are seen in it. Moving the thumb to the other leg is the exchange s ↦ 1/s, and the corner is the one pick
-where it makes no difference which leg holds the thumb, which is why it splits the heat in half. And the tail: on the
+Two more things are seen in it. Laying the readings on the other leg's line is the exchange s ↦ 1/s, and the corner is
+the one pick that both lines read alike, which is why it splits the heat in half. And the tail: on the
 line the picks run off without end toward the horizon while their shadows stop at the vertical, a finite walk, so the
 law has a median and no mean. Each piece is classical (the lighthouse, the flat screen's cos³, the Jacobian of central
-projection); that they are one conversion between two placements of one thumb is the paper's reading.
+projection); that they are one cost, the pick's turn laid on a line, is the paper's reading.
 
 **6. The exchange and the corner.** Read the pointing from the other leg and the slope is 1/s: s faces V, 1/s faces
 away from V, and their product is 1, no facing, one thumb (§9). The walk ds/(1 + s²) is the same read either way, so the
@@ -188,8 +186,7 @@ facings (R1105), and both follow from the one point taken and the one picked.
 they have the same extent (Tom, R1159). A read holds two slopes, (s, s₂); the even sweep's heat on them is
 1/(Ω(1 + s² + s₂²)^(3/2)) over one octant, every pair keeping its corner, the near field in both a third, and each of
 the six orders of the legs a sixth (G9). Drawn with unequal extents the corner would move off 1 (G10). At the triple
-corner, with the thumb on a leg, each leg is 1 and the hypotenuse √3; with the thumb on the hypotenuse, each leg is
-1/√3. One thing changes from the plane: in one plane turns compose in either order; in two planes they do not, and a
+corner each leg is 1/√3 of the thumb. One thing changes from the plane: in one plane turns compose in either order; in two planes they do not, and a
 loop of turns comes back turned (§7, §8).
 
 **14. Calculus.** The pivot carries the rate, 1/(1 + s²), a fraction at every fractional s with no limit taken: the
@@ -201,20 +198,19 @@ kept, give a second extent, measured in thumbs: parallax (Tom, R1123, R1129; EYE
 carried in, turns that extent into a size. That is where the geometry hands over to physics, and physics hands back by
 giving the next point to pick (Tom, R1127, R1128; §6, §7).
 
-**Why the thumb goes on a leg.** Both placements give the same read, because every reading is a ratio of legs (G1). On
-the hypotenuse (step 4) the thumb is what the turn keeps and treats the legs alike, but the legs carry a root and are
-fractions only through a half-slope, and each reading has to be divided out of them. On a leg (step 3) the readings are
-the legs, every number is a fraction, and the root is left in the hypotenuse, where nothing reads it. So deriving the
-hypotenuse is the cleaner way for the read; the hypotenuse as the thumb is the way to state the turn's premise (Tom,
-R1161). It is the same division as "The paper in one equation" (§1): x² + y² + z² = r² divided by one coordinate is
-1 + s² + s₂² = (r/x)². What the leg gives up is that the turn does not keep its hypotenuse, which grows as √(1 + s²)
-toward the horizon, and that one leg has to be chosen.
+**One derivation, and why it is this one.** Picking sets the hypotenuse (Tom, R1170). Laying the thumb along a leg
+instead (R1161, withdrawn) made every reading a leg and left the root in the hypotenuse: cleaner arithmetic, but not
+what picking does, since the leg's length changes with the direction picked and the turn does not keep it. So there is
+one derivation, the less clean one, and it is the logically correct one: the thumb is the distance assigned to the pick
+and kept by the turn, and the legs are derived. The fractions the leg gave are not lost: they are the readings, ratios
+of the legs, and the line they are laid on (step 5). Dividing by a leg is the same division as "The paper in one
+equation" (§1): x² + y² + z² = r² divided by one coordinate is 1 + s² + s₂² = (r/x)², done to the readings, never to
+the thumb.
 
 *Is the hypotenuse the radius?* "Radius" is the DHV's word for it (R1110): drawn from no standpoint, the hypotenuse is
 the radius of the sphere about the pivot through the picked point. In the single vantage it is the trace's distance from
-the pivot. With the thumb on the hypotenuse that distance is one thumb for every pick, and a writer drawing them all
-sees a sphere of radius 1. With the thumb on a leg it is √(1 + s² + s₂²), different for each direction, so there is no
-one radius and no sphere: the picks lie on the flat screen.
+the pivot, one thumb for every pick, and a writer drawing them all sees a sphere of radius 1 (Tom, R1170: "the
+hypotenuse or radius").
 
 **What the pick does not give.** It gives no size for anything met (V*), no paint, no position, and no value of Ω. The
 pick and the turn make the stage, the same for every world (R1107); what lands on it, and how big it is, is the world's

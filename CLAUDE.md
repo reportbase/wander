@@ -578,6 +578,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1171 (21 Nov; Tom: "this elimantes the two derivation paths, the less clean one is logically the correct one."):
+  **one derivation, the thumb the hypotenuse, the legs derived**; *Reads and Writes* abstract and §0, essay 26 §7.
+  `crosshairs.html` not yet changed.
   R1170 (21 Nov; Tom: "selecting the second point is setting the hypoetnous or radious, not the legs."): **the pick sets
   the hypotenuse (radius), not the legs**; supersedes R1161, restores R1159. Claude's reading, not ruled: readings
   unchanged (G1), R1163's arithmetic with roles reversed. Not yet carried: *Reads and Writes* §0, essays 26 §7, 31 §8,
