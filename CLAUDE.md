@@ -576,6 +576,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1159 (21 Nov; Tom: "pick a point, that gives you a hypoteinous, and the v1,v2,v3 are derived from that if you assume
+  they all have the same extent."): **the thumb is the hypotenuse; the legs v1, v2, v3 derived from it, equal extent
+  assumed** (each 1/√3 at the triple corner). R670's √3 and `crosshairs.html`'s H/√3 the cube's, flagged. Bar-steps step 19.
   R1158 (21 Nov; Tom: "it has a v, h and depth in reader geometry, or x,y,z in writer geometry"): the picked point has
   h, v and depth (read geometry; the three thumbs' readings, no unit) or x, y, z (write geometry, amounts in a unit).
   Bar-steps step 18.

@@ -121,3 +121,12 @@ reading, not ruled: three numbers either way, the same count; in read geometry t
 assignment (step 16), so the point is the corner in all three; in write geometry they are amounts in a unit, moved by
 scaling. Corrects Claude's answer the same day that the pick gives only a direction: it gives the point in its own three
 coordinates, none of them in a unit.
+
+**Step 19** (21 Nov; Tom, to "is the thumb the hypotenuse or the three legs?": "Yes, that is the simpler idea, pick a
+point, that gives you a hypoteinous, and the v1,v2,v3 are derived from that if you assume they all have the same
+extent."): **picking a point gives the hypotenuse, the thumb; the legs v1, v2, v3 are derived from it, given that they
+all have the same extent.** Claude's reading, not ruled: the hypotenuse is what the turn keeps (steps 13–14); with the
+three legs of equal extent the point is the triple corner and each leg is 1/√3 ≈ 0.577 of the thumb, v1² + v2² + v3² = 1;
+the readings (ratios of legs) are the same whichever length is the unit. The equal extent is the one assumption, the
+three-leg form of V = V₂ = H (R238's centre). The thumb on each leg, the hypotenuse √3 (R670–R671, `crosshairs.html`'s
+H = depth/√3), is the unit cube's, the DHV's; flagged, not changed.
