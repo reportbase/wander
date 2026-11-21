@@ -205,40 +205,42 @@ itself.
 The absurdity was in taking either facing alone. The demo `faces.html` runs both readings along the thumb's quarter
 turn, s and 1/s, and keeps their product, 1 at every point of the turn.
 
-**The bar's two ends.** There is a plainer way to see where Ω and 1/Ω live. Take the thumb as a bar and turn it the
-quarter turn about one of its ends. The sweep has one face, not two. One end of the bar is the pivot: it never moves,
-and it is where you stand. The other end is the trace: it runs the quarter arc, and the arc it draws faces the pivot.
-For a bar of one thumb the trace is Ω long. So one end of the bar is Ω, the trace, and the other end is 1/Ω, the pivot.
-Ω walks the arc; 1/Ω points to it: one end goes along the arc, the other stays put and points at where it is. Someone
-drawing the whole circle would call these the radius and the centre, and they would not be wrong; but those are the
-dual hemispherical vantage's words, and describing a single vantage in them is the trap. From one vantage there is only
-an end that walks and an end that points.
-Multiply the two ends and you get 1, with no facing, the same one thumb that near times far gave. The bar is not just a
-bar of one thumb any more: its two ends mean something. (The pivot goes nowhere, so its 1/Ω is not a distance it
-travels; it is the bar held against its own trace, one over Ω. And Ω × 1/Ω = 1 is only arithmetic; what is new is
-where each number sits.)
+**One point taken, one point picked.** There is a plainer way to see where Ω and 1/Ω live, and it starts from less
+than a thumb. Take any point: it is where you stand. From it, pick another point, any point, and give the distance
+between them one thumb (Tom, R1157). Turn the picked point a quarter turn about the first. The sweep has one face, not
+two. The point you took is the pivot: it never moves. The point you picked is the trace: it runs the quarter arc, and
+the arc it draws faces the pivot. At one thumb off the trace is Ω long. So the trace is Ω and the pivot is 1/Ω. Ω walks
+the arc; 1/Ω points to it: one goes along the arc, the other stays put and points at where it is. Someone drawing the
+whole circle would call these the centre and the radius, and they would not be wrong; but those are the dual
+hemispherical vantage's words, and describing a single vantage in them is the trap. From one vantage there is only a
+point that walks and a point that points.
+Multiply the two and you get 1, with no facing, the same one thumb that near times far gave. The two points are not just
+a length of one thumb any more: each means something. (The pivot goes nowhere, so its 1/Ω is not a distance it travels;
+it is the thumb held against its own trace, one over Ω. And Ω × 1/Ω = 1 is only arithmetic; what is new is where each
+number sits.)
 
-So the bar is one sweep with two ends, each with a job. Everything round is that sweep joined: two facings make the
+Where the thumb goes matters only for how cleanly it reads (Tom, R1161). Lay it along the horizontal leg and the
+vertical leg simply is the reading, s, how tall in thumbs, with nothing divided; the distance from you to the trace is
+then derived, √(1 + s²) thumbs, and that root is the only one, sitting where no reading needs it. Lay it along the
+distance instead and the turn keeps it, but the legs become shares with the root inside them. Both give the same
+readings; the leg is the cleaner.
+
+So the turn is one sweep with two points, each with a job. Everything round is that sweep joined: two facings make the
 semicircle (2Ω, the writer's π), four the circle (4Ω), eight the sphere (8Ω, the writer's 4π). Every sweep in the join
-is still one bar, one end walking and one pointing; joining adds bars and changes none of them. A read is one bar, and
-the semicircle, circle and sphere are the dual hemispherical vantage's joins. In space two things change. A facing there
-is an octant, swept by two thumbs together, and its Ω is an area (three right angles less two, Girard's count), so the
-sphere's 8Ω is the same number in another measure. And bars in different planes do not compose in either order: a loop
-through them comes back turned, which is what the sphere adds beyond eight sweeps.
+is still one sweep, one point walking and one pointing; joining adds sweeps and changes none of them. A read is one
+sweep, and the semicircle, circle and sphere are the dual hemispherical vantage's joins. In space two things change. A
+facing there is an octant, swept by two thumbs together, and its Ω is an area (three right angles less two, Girard's
+count), so the sphere's 8Ω is the same number in another measure. And turns in different planes do not compose in
+either order: a loop through them comes back turned, which is what the sphere adds beyond eight sweeps.
 
-The bar gives the Cauchy too. The pivot points at the trace end, and the reading is the slope of the pointing. Each
-small step of pointing moves the trace end on by ds/(1 + s²), so the walk counted against the pointing is 1/(1 + s²),
-the thumb's share squared: the Cauchy, with no angle in it. Its whole walk is Ω, the trace end; scaled by 1/Ω, the
-pivot end, it totals 1. The corner is the trace end halfway along its walk; the horizon is where the pointing runs off
-without end while the walk stays finite, which is why there is no mean. One end walks, the other points, and the
-Cauchy is the one counted against the other.
-
-**Two points, turned.** Take one more thing away. The bar is only an extent, and an extent is just two points; by
-itself it has no geometry at all. Turn the two points, one about the other, and the geometry is all there: the one that
-stays is the pivot, 1/Ω, pointing; the one that goes round is the trace, Ω, walking. The slope, the Cauchy, the corner,
-the horizon with no mean, the total Ω and the semicircle, circle and sphere joined from it: every one of them is a
-consequence of that turn. It takes no angle, no circle and no unit. What the turn makes is the stage; what lands on it
-is the world's.
+The two points give the Cauchy too. The pivot points at the trace, and the reading is the slope of the pointing. Each
+small step of pointing moves the trace on by ds/(1 + s²), so the walk counted against the pointing is 1/(1 + s²), the
+thumb's share squared: the Cauchy, with no angle in it. Its whole walk is Ω, the trace; scaled by 1/Ω, the pivot, it
+totals 1. The corner is the trace halfway along its walk; the horizon is where the pointing runs off without end while
+the walk stays finite, which is why there is no mean. One walks, the other points, and the Cauchy is the one counted
+against the other. The slope, the Cauchy, the corner, the horizon with no mean, the total Ω and the semicircle, circle
+and sphere joined from it: every one of them follows from one point taken and one point picked from it. It takes no
+angle, no circle and no unit. What the turn makes is the stage; what lands on it is the world's.
 
 **Euler's identity, in thumbs.** Everyone knows e^(iπ) = −1. Here it is from one vantage, with one thumb, and
 nothing else.
@@ -280,7 +282,8 @@ just H and V, with one more degree of freedom.
 The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1027, R1028, R1029, R1030, R1031, R1110, R1112, R1114), the wording mine. Older wordings in the series
 that give a facing "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
 brought to it. Since R1043 the two facings are the near and far readings, s and 1/s; since R1110 Ω and 1/Ω sit at
-the bar's two ends, the trace and the pivot, and not on the facings.
+the two points, the trace and the pivot, and not on the facings; since R1153 and R1157 the two points are one taken and
+one picked from it, not a bar, and since R1161 the thumb lies on a leg.
 
 ## 8. What needs a face, and what does not
 

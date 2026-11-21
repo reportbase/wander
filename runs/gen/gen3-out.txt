@@ -1,0 +1,5 @@
+n=1: volume factor 1/(s1**2 + 1)  equals h^2: True; across/distance factors: True
+n=2: volume factor (s1**2 + s2**2 + 1)**(-3/2)  equals h^3: True; across/distance factors: True
+n=3: volume factor (s1**2 + s2**2 + s3**2 + 1)**(-2)  equals h^4: True; across/distance factors: True
+G14 holds
+G15 holds

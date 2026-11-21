@@ -71,3 +71,65 @@ What a trained model does build is a facing of its own, relative to each query's
 above it. Its keys use about a fifth of their 64 dimensions once the shared offset is removed, and almost half its weight
 goes to the first token, which no direction asks for. Its weight falls with distance at one rate, not with the text's
 knee. One model, one text.
+
+### Run 2: predictions (21 Nov 2026, committed before the script is written)
+
+Tom: "Ok", to turning run 1's post hoc numbers into predictions. Inference only (R1139). Four cells: GPT-2 small (12 × 12
+heads) and GPT-2 medium (Hugging Face `openai-community/gpt2-medium`, 24 layers × 16 heads, 64 dimensions a head, MIT;
+sha256 recorded when fetched, not committed), each on two texts not used in run 1: WikiText-2-raw's **test** split, and
+*Pride and Prejudice* (Project Gutenberg 1342, the pglaf mirror's `1342-0.txt`, public domain in the US; the licence
+header and footer cut at the "*** START" and "*** END" lines; sha256 recorded). Twenty blocks of 256 tokens a cell, the
+first block of each text skipped. Key 0 left out and the weights renormalised, queries with fewer than 8 earlier keys left
+out, as in run 1. The measures are `gpa_posthoc.py`'s, unchanged: a key is "below" when its logit q·k is at or under the
+mean of the query's logits over its keys; the keys' participation ratio from their covariance (centred).
+
+- **H1 (a facing from the query's own zero).** In every cell the median head puts between 2% and 10% of its weight on the
+  keys below, and the median head's share of keys below (by count) lies between 40% and 60%. Killed if any cell falls
+  outside either band.
+- **H2 (few dimensions, once centred).** In every cell the median head's centred key participation ratio lies between 6
+  and 24 of 64. Killed if any cell falls outside.
+- **H3 (the shared offset).** In every cell the median head's uncentred key participation ratio is below its centred one.
+  Killed if any cell has it at or above.
+- **H4 (the sink).** In every cell the median head puts at least 30% of its weight on key 0. Killed if any cell has less.
+- **H5 (no knee, run 1's G3 turned round).** In every cell the head-averaged log–log slope of weight against distance
+  over d = 1 … 8 and over d = 16 … 128 differ by less than 0.5. Killed if any cell differs by 0.5 or more.
+
+The bands are wide on purpose: run 1 gave 5.2%, 53% and 12.1 on one model and one text, and a second text or a model
+twice the depth could move them. A killed prediction stays killed; a fix is a new run with its own prediction.
+
+### Run 2 (21 Nov 2026)
+
+`python3 runs/gpa/gpa2.py` (about 25 minutes on four threads); output `runs/gpa/gpa2-results.json`. GPT-2 medium
+`model.safetensors` sha256 fc5a354a19255ad494f3d71549390baca1ccf61d1d822b9408971705c687c9cd; *Pride and Prejudice*
+`1342-0.txt` sha256 81300b79e8a8d65ac530a97578417d06137e3bbc90622a10a65e5036183d2500 (neither committed). Twenty
+blocks a cell, 4,960 queries a head.
+
+| cell | below: weight | below: count | PR centred | PR uncentred | sink | slope 1–8 | slope 16–128 |
+|---|---|---|---|---|---|---|---|
+| small, WikiText test | 5.5% | 52.9% | 11.4 | 3.1 | 45.7% | −0.88 | −0.81 |
+| small, *Pride and Prejudice* | 6.3% | 53.9% | 10.4 | 2.9 | 45.5% | −0.81 | −0.82 |
+| medium, WikiText test | 6.1% | 51.3% | **24.06** | 3.1 | 50.5% | −0.75 | −0.75 |
+| medium, *Pride and Prejudice* | 6.8% | 52.4% | 14.5 | 2.7 | 49.5% | −0.69 | −0.75 |
+
+- **H1 not killed:** in all four cells the median head puts 5.5–6.8% of its weight on the half of its keys (51–54% by
+  count) whose logits are at or below the query's own mean.
+- **H2 killed,** narrowly, by one cell: GPT-2 medium on WikiText puts its median head's centred participation ratio at
+  24.06 against my bound of 24. The other three cells are 10.4, 11.4 and 14.5.
+- **H3 not killed:** uncentred 2.7–3.1 in every cell, against centred 10.4–24.1; the shared offset is one direction in
+  both models and both texts.
+- **H4 not killed:** the median head puts 45–50% of its weight on the first token.
+- **H5 not killed:** no knee in either model; the two slopes differ by at most 0.07 (small) and 0.06 (medium), about
+  d^(−0.7) to d^(−0.9) throughout.
+
+**Reading, after the run, not a test.** The facing from the query's own zero repeats as predicted: half the keys, about
+6% of the weight, in two models and two texts. The keys' dimensions depend on the text and the depth: by layer the
+centred ratio runs 2–7 in each model's early layers (small layers 2–4, medium 2–5, the same 2.2 and 1.8 on both
+texts), and higher in later layers, where WikiText gives more than the novel (medium's late layers 26–31 against
+15–20). So "about 12 of 64" was GPT-2 small's; medium's median on Wikipedia text is twice it. One family of models,
+two texts.
+
+**A caution after run 2 (21 Nov 2026), not a test.** Calling H1's split "a facing" was premature. Softmax gives such a
+split by itself whenever a query's logits are spread: for roughly normal logits of spread σ, the weight below their mean
+is about Φ(−σ), so 6% needs only σ ≈ 1.5. H1's numbers may measure a learned sharpness (a temperature), not a boundary.
+A facing would be a hard edge unmoved by the spread; telling the two apart (per head, the share below the mean against
+Φ(−σ)) was offered as run 3 and not run. Then Tom: "OK, let's move on from AI." GPA is closed at run 2.

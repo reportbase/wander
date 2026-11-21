@@ -12,7 +12,7 @@
 
     In the single vantage's own words: the pivot (stays, points) and the trace (goes round, walks); the reading is the
     pointing's slope s = v/h. The slider is the share of the trace's walk passed, so moving it evenly is the even sweep.
-    The bar keeps its length in a measure: round (h² + v² = 1, the default, the one a turn that returns keeps; Reads and
+    The picked point keeps its distance in a measure: round (h² + v² = 1, the default, the one a turn that returns keeps; Reads and
     Writes §0 step 3, R1134), sum (h + v = 1) or largest component (max(h, v) = 1). For each:
       the trace's place (h, v) for the pointing s; its walk per pointing f(s) (round 1/(1 + s²), sum √2/(1 + s)²,
       largest 1 then 1/s²); the total walk T (round Ω, sum √2, largest 2); the share passed W(s).
@@ -67,7 +67,7 @@
             <button id="corner">the corner</button>
         </div>
         <div class="row" style="margin-top:8px">
-            <span style="color:var(--dim)">the bar keeps its length</span>
+            <span style="color:var(--dim)">the picked point keeps its distance</span>
             <button data-m="round" class="on">round</button>
             <button data-m="sum">by the sum</button>
             <button data-m="max">by the largest part</button>
@@ -94,11 +94,11 @@
         <ol class="steps" id="steps"></ol>
     </div>
     <p class="note">All of this is a consequence of two points turned, one at Ω (the trace, its whole walk) and one at
-    1/Ω (the pivot); Ω × 1/Ω = 1 is arithmetic, where each sits is the reading. The premise is that the bar stays the same
+    1/Ω (the pivot); Ω × 1/Ω = 1 is arithmetic, where each sits is the reading. The premise is that the picked point stays the same
     while it turns and the turn comes back: that is what picks the round measure (try the others: the corner and the
     missing mean survive, the Cauchy and composition do not). What the turn gives is the stage; the paint is the
     world's. The formulas are classical (d(arctan s)/ds = 1/(1 + s²), tangent addition); the reading is the paper's.
-    Behind it: <i>Reads and Writes</i> §0, §3 "The Cauchy, by the bar", §9 "The bar's two ends". Other demos:
+    Behind it: <i>Reads and Writes</i> §0, §3 "The Cauchy, by the two points", §9 "The two points: Ω and 1/Ω". Other demos:
     <a href="facing.html">the facing</a>, <a href="paths.html">one sweep, three paths</a>,
     <a href="one-read.html">one turn and one read</a>, <a href="demos.html">all demos</a>.</p>
 </main>
@@ -139,17 +139,17 @@
     const STEPS = [
         ['Two points.', 'An extent of length 1, the thumb. Alone it has no geometry; having a size, it is a write.', { w: 0 }],
         ['One turned about the other.', 'The pivot stays and the trace goes round. The sweep is the read, even by its own walk.', { w: 0.15 }],
-        ['The reading.', 'The pointing’s slope s = v/h. The bar keeps its length: the round measure, h² + v² = 1, from a turn that returns.', { w: 0.3, m: 'round' }],
+        ['The reading.', 'The pointing’s slope s = v/h. The picked point keeps its distance: the round measure, h² + v² = 1, from a turn that returns.', { w: 0.3, m: 'round' }],
         ['The walk per pointing.', 'ds/(1 + s²) = h²·ds: the Cauchy’s shape, before any constant.', { w: 0.4, m: 'round' }],
         ['The exchange and the corner.', 's facing V, 1/s facing away, product 1. The walk below s = 1 equals the walk above: the median.', { w: 0.5, m: 'round' }],
         ['The horizon and no mean.', 'The trace arrives; the pointing runs on. The mean of s never settles.', { w: 0.97, m: 'round' }],
         ['The total and the two ends.', 'The whole walk is Ω, the trace; 1/Ω the pivot; product 1, arithmetic.', { w: 0.999, m: 'round' }],
         ['Turns compose.', '(s + a)/(1 − sa) in fractions, and the walk ds/(1 + s²) is the one weight it leaves alone. w(s)·w(1/s) = −1.', { w: 0.3, m: 'round' }],
-        ['Near and far.', 'The bar is the near field, d/H; past its tip the far field, H/d. An overlay H lays on the read.', { w: 0.5, m: 'round' }],
+        ['Near and far.', 'Short of the picked point is the near field, d/H; past it the far field, H/d. An overlay H lays on the read.', { w: 0.5, m: 'round' }],
         ['Joins.', 'Two facings the semicircle (2Ω), four the circle (4Ω), eight the sphere (8Ω): the DHV’s.', { w: 0.999, m: 'round', f: 4 }],
         ['The single and the dual vantage.', 'From one pivot, one hemisphere, two facings: the SHV. Its facings joined: the DHV, held by no pivot.', { w: 0.999, m: 'round', f: 2 }],
         ['Space.', 'Three bars square, crossed at the triple corner; every pair keeps its corner; turns in two planes do not commute.', { w: 0.5, m: 'round', f: 1 }],
-        ['Calculus.', 'The pivot carries the rate 1/(1 + s²); the trace the total Ω; the bar between is the fundamental theorem.', { w: 0.6, m: 'round' }],
+        ['Calculus.', 'The pivot carries the rate 1/(1 + s²); the trace the total Ω; the turn between is the fundamental theorem.', { w: 0.6, m: 'round' }],
         ['Extents, and the first write.', 'The trace moves a chord; two looks, one kept, give a second extent: parallax. A count or an amount carried in gives a size.', { w: 0.25, m: 'round' }]
     ];
     const st = { w: 0.3, m: 'round', f: 1, step: -1 };

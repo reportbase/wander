@@ -576,6 +576,45 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1163 (21 Nov; Tom: "Yes, the simplified cauchy derivation gives this modeling a great deal of credibility."): **the
+  Cauchy is the conversion between the two placements of the thumb** (h² = one slant × one distance; h^(n+1) with n
+  readings); GEN run 3, G14, G15 not killed; *Reads and Writes* §0 step 5.
+  R1162 (21 Nov; Tom: "yes, explaining the gemoetry is built from one taken point, and one selected point is very
+  compelling."): *Reads and Writes* §0 "The geometry of one point taken and one point picked"; "bar" cleared from the paper
+  (§3 "The Cauchy, by the two points", §9 "The two points: Ω and 1/Ω"), essays 2, 14, 26 §7, 31 §8, `two-points.html`.
+  R1161 (21 Nov; Tom: "Lets explain both derivations in the read write paper and explain why deriving the hypotneous is
+  cleaner. is the hypotenous the radious?"): **for the read the thumb is a leg, the hypotenuse derived (cleaner: the
+  readings are the legs, all fractions)**; the thumb as hypotenuse kept as what the turn keeps; supersedes R1159 for the
+  read; the hypotenuse is the DHV's radius. *Reads and Writes* §0 "A simpler start, and two ways to place the thumb".
+  GEN (`plans/gen-plan.md` + `runs/gen/`, 21 Nov; SPN R1160; Tom: "have established the rules, can we now generate the
+  complete reader geomety/"): the read geometry derived from R1157–R1159 and the turn, claims G1–G13 first; run 1 G9
+  killed by my tolerance, G11 by my code, run 2 G9′, G11′ not; all thirteen stand. Not in any paper.
+  R1159 (21 Nov; Tom: "pick a point, that gives you a hypoteinous, and the v1,v2,v3 are derived from that if you assume
+  they all have the same extent."): **the thumb is the hypotenuse; the legs v1, v2, v3 derived from it, equal extent
+  assumed** (each 1/√3 at the triple corner). R670's √3 and `crosshairs.html`'s H/√3 the cube's, flagged. Bar-steps step 19.
+  R1158 (21 Nov; Tom: "it has a v, h and depth in reader geometry, or x,y,z in writer geometry"): the picked point has
+  h, v and depth (read geometry; the three thumbs' readings, no unit) or x, y, z (write geometry, amounts in a unit).
+  Bar-steps step 18.
+  R1157 (21 Nov; Tom: "this is a simpler starting point.    Take any point, from that point pick another point."): **the
+  start: any point, and from it another point picked**; supersedes R1153 and R1156 as the start. Bar-steps step 17.
+  **For new writing: begin the geometry with "take any point; from it pick another".**
+  R1156 (21 Nov; Tom: "A single point creates the complete reader geometry. From that point, pick another point in 3d
+  space, any point, assign the distance of your thumb to this point."): one point, you; any other point picked and given
+  the thumb's distance. Claude's reading, not ruled: the assignment is choosing H, the point picked the corner and focus;
+  without it, directions and heat but no near or far. Bar-steps step 16.
+  R1155 (21 Nov; Tom: "but what if one of those points is you, the pivot point."): one of the two points is you, the
+  pivot; Claude's reading, not ruled: the pivot the standpoint, the trace one thumb off, its circle the near field's edge
+  (R1116). Bar-steps step 15.
+  R1154 (21 Nov; Tom: "That is your h"): the distance kept between the two points through the turn is the thumb, the
+  one given length (read as H; in itself 1, its shares h and v as the trace turns). Bar-steps step 14.
+  R1153 (21 Nov; Tom: "I don't think it's a bar, it's two points. The rotation of two points is the Genesis of reader
+  geometry."): **not a bar: two points, their rotation the genesis of reader geometry**; bar-steps step 13. The bar's one
+  carried premise: the distance kept through the turn. **For new writing: say two points turned, not a bar.** Not swept yet.
+  R1152 (21 Nov; Tom: "So facing is not what Ai does?", "OK, let's move on from AI."): softmax has no facing; GPA H1's
+  split may be only the logits' spread (Φ(−σ), σ ≈ 1.5), a temperature; "a facing of its own" withdrawn. AI thread closed.
+  R1151 (21 Nov; Tom: "Ok"): GPA run 2 (`runs/gpa/gpa2.py`), GPT-2 small and medium on WikiText test and *Pride and
+  Prejudice*, predictions first: the facing from the query's own zero repeats (half the keys about 6% of the weight, H1),
+  the sink 45–50% (H4), no knee (H5); H2 killed narrowly (centred PR 24.06 > 24, medium on WikiText; 10.4–14.5 elsewhere).
   R1150 (21 Nov; Tom: "proceed with 1 and 2"): #481 merged; essay 32, `papers/essays/32-reading-a-record.md`, *Reading a
   record: what attention reads, and where it learns* (a phone keyboard): RAT, SCT, NAT, LNK, GPA as one essay, no new
   claim. README row ("thirty-two essays"), `essays.html` card, smoke count 32 (not run).

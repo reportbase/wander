@@ -20,7 +20,7 @@ weight ds/(1 + s²), the one weight that composing slopes leaves unchanged, summ
 sweeps' worth. Since the paper's subject is the single sweep, its constants are mostly π/2 and 2/π, and it is simpler to
 give that total its own letter than to keep halving π: Ω = π/2, so 2/π is 1/Ω, the turn is 4Ω and the sphere 8Ω, the
 Cauchy's coefficient is 1/Ω, and the corner has Ω/2 on each side. Ω and its inverse are to reads and writes what π is to the dual hemispherical vantage: the limits at the
-horizon of one sweep (§9, "Facing V and facing away from V"; on a bar turned a quarter turn about one end, the trace end is Ω and the pivot end 1/Ω, §9, "The bar's two ends"), and π, two sweeps' worth joined, is the DHV's own. Both are limits, and they are the limits a read and a write actually encounter: 1/Ω is
+horizon of one sweep (§9, "Facing V and facing away from V"; with the picked point turned a quarter turn about the point taken, the trace is Ω and the pivot 1/Ω, §9, "The two points: Ω and 1/Ω"), and π, two sweeps' worth joined, is the DHV's own. Both are limits, and they are the limits a read and a write actually encounter: 1/Ω is
 what the thumb's share tends to as a sweep runs on toward the horizon, and Ω is what a count of the walk tends to,
 stride by stride. No finite sweep and no finite count has either value, but each is headed for its own. π is a limit
 neither encounters, since it takes both hemispheres at once. From here on the paper writes Ω where it helps and π where it does
@@ -80,105 +80,152 @@ reciprocal, and at the corner i·i = −1 (§1, "The same relation, held two way
 None of the mathematics is new. What is offered is a division of it: which parts one standpoint has, which need two, and
 which need a unit, with the plane as the frame that holds the division in one line.
 
-**Two points, turned.** All of this geometry is the consequence of turning two points (Tom, R1130, R1131). An extent is
-two points, and an extent alone has no geometry; turned about one of them, the sweep and the extent together give it
-all. One point is the pivot, 1/Ω, which points; the other is the trace, Ω, which walks (§9, "The bar's two ends"). From
-those two points and one reading, the slope of the pointing, come the walk per pointing 1/(1 + s²) (the Cauchy), its
-corner and exchange, its horizon and missing mean, the total Ω and its joins into the semicircle, circle and sphere, and
-calculus's two halves (§0 walks through it in order; §3, "The Cauchy, by the bar"; §9). What the turn gives is the stage; the paint is the world's.
+**One point taken, one point picked.** All of this geometry is built from two acts: take any point, and from it pick
+another (Tom, R1157). The distance between them is assigned, the thumb, and placed on one leg the other legs are the
+readings, the hypotenuse derived (Tom, R1161). The first point is the pivot, 1/Ω, which points; the second, turned about
+it, is the trace, Ω, which walks (§9, "The two points: Ω and 1/Ω"). From those two points and one reading, the slope of the
+pointing, come the walk per pointing 1/(1 + s²) (the Cauchy), its corner and exchange, its horizon and missing mean, the
+total Ω and its joins into the semicircle, circle and sphere, and calculus's two halves (§0 walks through it in order;
+§3, "The Cauchy, by the two points"; §9). What the pick and the turn give is the stage; the paint is the world's.
 
-## 0. The geometry of two points turned
+## 0. The geometry of one point taken and one point picked
 
-Everything this paper calls the read's geometry comes from one act: two points, one turned about the other (Tom,
-R1130, R1131). This section walks through it in order, each step from the ones before, in the single vantage's own
-words (the pivot and the trace, pointing and walking, slopes), with no angle, no trigonometric function, no circle drawn
-and no unit. Each step names where the rest of the paper takes it up.
+Everything this paper calls the read's geometry is built from two acts: take any point, and from it pick another
+(Tom, R1157). This section walks through it in order, each step from the ones before, in the single vantage's own words
+(the pivot and the trace, pointing and walking, slopes), with no angle, no trigonometric function, no circle drawn and
+no unit. Each step names where the rest of the paper takes it up, and each claim is checked exactly in GEN
+(`plans/gen-plan.md`, G1–G13).
 
-**1. Two points.** An extent is two points. Give it a length and call it 1: the thumb, H, held at arm's length. By
-itself it has no geometry; it is only a length (Tom, R1125, R1130). Having a size, it is a write (Tom, R1126).
+**1. One point taken.** Take any point. It is the *pivot*, the standpoint, and it never moves. By itself it already has
+every direction from it and the heat on them (§3), but nothing near or far, and no length.
 
-**2. One turned about the other.** Turn one point about the other. The one that stays is the *pivot*, the standpoint;
-it never moves. The one that goes round is the *trace*. The turn is the sweep, and the sweep is the read (Tom, R1126):
-continuous and with no size. Counted by its own walk the sweep is even, since nothing else is there to count it
-against (R327, R331).
+**2. One point picked.** From the first point, pick another, any point: the *trace*. The distance between them is not
+measured but assigned: it is the thumb, H, held at arm's length, so whatever is picked is one thumb off (Tom, R1156).
+Having a length, the thumb is a write (Tom, R1126); it is the one given length, and what the rest of this section keeps
+(Tom, R1154). The pick gives the trace three numbers, h, v and depth, where a write would give x, y and z in a unit
+(Tom, R1158).
 
-**3. The reading.** Lay the bar first along the horizontal, H. As it turns, the pivot points at the trace, and the
-reading is the slope of that pointing, s = v/h: 0 at home, growing as the bar comes up toward the vertical. Because the
-trace always stays one bar from the pivot, h² + v² = 1. That is the bar keeping its length, not a circle drawn. But a
-length is kept in some measure, and this is the round one, with H and V square to each other. It is not free: a sweep
-that is one motion repeated, continuous, and comes back after a full turn keeps exactly one inner product, and in it
-the bar's length is h² + v² = 1 with H and V square (the archived *Observation from Somewhere*, Proposition 3(g); R263,
-R547). So the premise is that the turn is a rigid motion that returns. Kept in the sum measure instead (h + v = 1) the
-trace would run along a straight edge, in the largest-component measure along a square, and each gives another walk per
-pointing; only the round one gives step 4's. The round measure gives the trace's place for every pointing, h = 1/√(1 + s²) and v = s/√(1 + s²), with the one square root a read needs
-(§9, "Pythagoras, from no standpoint and from one").
+**3. The thumb on a leg: the readings.** Lay the thumb along one leg, h, so that h = 1 (Tom, R1161). Then the other legs
+simply are the readings: in the plane v = s, the slope of the pointing, 0 at home and growing toward the vertical; in
+space depth = s₂ as well. Nothing is divided, and every leg is a fraction for every fractional reading. The distance from
+the pivot to the trace, the hypotenuse, is derived: √(1 + s²) thumbs in the plane, √(1 + s² + s₂²) in space. That is the
+one square root a read has, and no reading uses it (§9, "Pythagoras, from no standpoint and from one"). The picks with
+that leg one thumb long lie on a straight line square to it in the plane, a flat screen in space (the lighthouse's
+shore), so no circle appears. Scaling every length moves no reading (G1, G13).
 
-**4. The walk per pointing.** When the pointing moves by ds, the trace moves by dh = −s·ds/(1 + s²)^(3/2) and
-dv = ds/(1 + s²)^(3/2), so it walks √(dh² + dv²) = ds/(1 + s²) = h²·ds. Near home the trace walks a full step for each
-step of pointing; toward the vertical it walks almost nothing while the pointing runs on. The sweep is the trace walking
-evenly, so the heat each slope gets is 1/(1 + s²): the Cauchy's shape, before any constant (§3, "The Cauchy, by the
-bar").
+**4. The turn.** Turn the trace about the pivot. The turn is the sweep, and the sweep is the read (Tom, R1126):
+continuous and with no size. A turn keeps the distance from the pivot, so turning puts the thumb on the hypotenuse
+instead, and the legs become its shares: h = 1/√(1 + s²), v = s/√(1 + s²), h² + v² = 1 (Tom, R1159). That is the turn
+keeping its length, not a circle drawn, and it is not free: a sweep that is one motion repeated, continuous, and comes
+back after a full turn keeps exactly one inner product, and in it the length is h² + v² = 1 with the legs square (the
+archived *Observation from Somewhere*, Proposition 3(g); R263, R547). So the premise is that the turn is a rigid motion
+that returns. Kept in the sum measure instead (h + v = 1) the trace would run along a straight edge, in the
+largest-component measure along a square, and each gives another walk per pointing; only the round one gives step 5's.
+Every rational direction with rational shares comes from one half-slope t, h = (1 − t²)/(1 + t²), v = 2t/(1 + t²)
+(G3). Counted by its own walk the sweep is even, since nothing else is there to count it against (R327, R331).
 
-**5. The exchange and the corner.** Read the pointing from the other side and the slope is 1/s: s faces V, 1/s faces
+**5. The walk per pointing.** When the pointing moves by ds, the trace walks ds/(1 + s²) = h²·ds (G5). Near home the
+trace walks a full step for each step of pointing; toward the vertical it walks almost nothing while the pointing runs
+on. The sweep is the trace walking evenly, so the heat each slope gets is 1/(1 + s²): the Cauchy's shape, before any
+constant (§3, "The Cauchy, by the two points"). On the line of step 3 it is the same thing seen from the other side: equal
+turns land on the line crowded near the foot, 1/(1 + s²) per unit of s.
+
+*The Cauchy, as the change of placement* (Tom, R1163). The two placements of the thumb (steps 3 and 4) give each pick two
+places: on the line at the reading s, and one thumb out, its shadow. Move the pick along the line by ds and its shadow
+moves by h²·ds, for two reasons read off similar triangles. The line meets the pointing at a slant, so only h·ds of the
+step goes across the pointing; and the line is 1/h thumbs out, so that step shrinks by another h when brought in to one
+thumb. So 1/(1 + s²) is what the line costs in turn, per unit of reading: the Cauchy, with no angle, no arctangent and no
+change of variable. The count carries to every dimension: on a screen with n readings there is one slant (toward the
+screen's foot) and n factors of distance, so the shadow's measure per unit of screen is h^(n+1) = (1 + |r|²)^(−(n+1)/2),
+the plane's 1/(1 + s²), space's (1 + s² + s₂²)^(−3/2) and so on, one count instead of a result for each (GEN run 3).
+Two more things are seen in it. Moving the thumb to the other leg is the exchange s ↦ 1/s, and the corner is the one pick
+where it makes no difference which leg holds the thumb, which is why it splits the heat in half. And the tail: on the
+line the picks run off without end toward the horizon while their shadows stop at the vertical, a finite walk, so the
+law has a median and no mean. Each piece is classical (the lighthouse, the flat screen's cos³, the Jacobian of central
+projection); that they are one conversion between two placements of one thumb is the paper's reading.
+
+**6. The exchange and the corner.** Read the pointing from the other leg and the slope is 1/s: s faces V, 1/s faces
 away from V, and their product is 1, no facing, one thumb (§9). The walk ds/(1 + s²) is the same read either way, so the
 trace walks as far below s = 1 as above it. The point s = 1, where the exchange meets itself, is the *corner*: the
-median of the heat, half each side, with no total needed to find it.
+median of the heat, half each side, with no total needed to find it (G6).
 
-**6. The horizon and no mean.** As the bar reaches the vertical, the trace arrives and stops, but the pointing's slope
-runs on without end. That end is the *horizon*, approached and never reached. Weighting each slope by its walk gives
-s·ds/(1 + s²), which never closes, so the heat has a median and no mean (§3).
+**7. The horizon and no mean.** As the trace reaches the vertical it arrives and stops, but the pointing's slope runs
+on without end. That end is the *horizon*, approached and never reached. Weighting each slope by its walk gives
+s·ds/(1 + s²), which never closes, so the heat has a median and no mean (§3; G7).
 
-**7. The total and the two ends.** The trace's whole walk, home to horizon, is Ω, the only place a constant enters.
-Divided by it, the heat becomes the law (1/Ω)·1/(1 + s²), totalling 1. So the trace end is Ω, the pivot end 1/Ω, and
-they multiply to 1 (§9, "The bar's two ends"). That the product is 1 is arithmetic; that Ω and 1/Ω sit at the two
-ends, one walking and one pointing, is the paper's reading. Ω is a limit, a count of the walk never finished.
+**8. The total and the two ends.** The trace's whole walk, home to horizon, is Ω, the only place a constant enters,
+and no rational step reaches it: of all rational half-slopes only 0 and 1 ever come back home (G8). Divided by it, the
+heat becomes the law (1/Ω)·1/(1 + s²), totalling 1. So the trace is Ω, the pivot 1/Ω, and they multiply to 1 (§9, "The
+two points: Ω and 1/Ω"). That the product is 1 is arithmetic; that Ω and 1/Ω sit at the two points, one walking and one
+pointing, is the paper's reading. Ω is a limit, a count of the walk never finished.
 
-**8. Turns compose.** One turn after another composes by s ⊕ a = (s + a)/(1 − sa), in fractions and exactly, and the
-walk ds/(1 + s²) is the one weight composition leaves alone; no total is needed (§9, "Tangent addition is the read's; tan and arctan the DHV's").
-Mark where each pointing lands by w(s) = (1 + is)/(1 − is): +1 at home, i at the corner, and toward −1 at the
-horizon. A pointing and its exchange land at w(s)·w(1/s) = −1, for every s. That is the read's form of Euler's
-identity; e^(iπ) = −1 is its one member pairing home with the horizon, and it is the DHV's (§1, "The same relation,
-held two ways"; §9).
+**9. Turns compose.** One turn after another composes by s ⊕ a = (s + a)/(1 − sa), in fractions and exactly; the
+composed shares again square to 1, and the walk ds/(1 + s²) is the one weight composition leaves alone (G4, G5; §9,
+"Tangent addition is the read's; tan and arctan the DHV's"). Mark where each pointing lands by w(s) = (1 + is)/(1 − is):
++1 at home, i at the corner, and toward −1 at the horizon. A pointing and its exchange land at w(s)·w(1/s) = −1, for
+every s (G12). That is the read's form of Euler's identity; e^(iπ) = −1 is its one member pairing home with the horizon,
+and it is the DHV's (§1, "The same relation, held two ways"; §9).
 
-**9. Near and far.** The bar is the *near field*: pivot to trace, one thumb long, with things read as d/H, how much of
-the bar reaches them. Past its tip is the *far field*, read as H/d, how much of the distance the bar is, one in two, one
-in four, one in eight. The two meet at 1, the bar's tip, and the heat splits half and half there (Tom, R1116, R1117;
-§5). The Cauchy itself has no near and far: this split is an overlay H lays on it (R703).
+**10. Near and far.** The picked point is one thumb off, and that is where near and far split, on every direction. Short
+of it is the *near field*, things read as d/H, how much of the thumb reaches them; past it is the *far field*, read as
+H/d, how much of the distance the thumb is, one in two, one in four, one in eight. The two meet at 1, and the heat
+(1/π)·sech(ln(d/H)) splits half and half there (Tom, R1116, R1117; §5; G11). The point picked is where the look is, the
+focus at the corner (R500, R701); pick another and the split moves, no law with it (R1107). The Cauchy itself has no near
+and far: this split is an overlay H lays on it (R703).
 
-**10. Joins.** The bar's one sweep is one facing. Joined, two facings make the semicircle (2Ω), four the circle (4Ω),
-eight the sphere (8Ω). Each sweep in a join is still one bar; joining adds bars and changes none of them. The joins,
-with the signs that tell the facings apart, are the DHV's (§9, "One sweep, and the joins of 2, 4 and 8").
+**11. Joins.** One sweep is one facing. Joined, two facings make the semicircle (2Ω), four the circle (4Ω), eight the
+sphere (8Ω). Each sweep in a join is still one sweep; joining adds sweeps and changes none of them. The joins, with the
+signs that tell the facings apart, are the DHV's (§9, "One sweep, and the joins of 2, 4 and 8").
 
-**11. The single and the dual vantage.** The same turn gives both vantages (Tom, R1133). Turned from one pivot, the bar
-gives one hemisphere, two facings, s facing V and 1/s facing away; a read faces one of them at a time. That is the
-*single hemispherical vantage* (SHV), one standpoint and one hemisphere. Its facings joined, both hemispheres at once,
-four facings in the plane and eight in space, give the *dual hemispherical vantage* (DHV). No pivot holds the DHV: it
-is the turn's facings put together as drawn, from no standpoint (R967). So SHV and DHV are one relation space with
-different facings (R1105), and both are consequences of the same two points turned.
+**12. The single and the dual vantage.** The same turn gives both vantages (Tom, R1133). Turned from one pivot, it gives
+one hemisphere, two facings, s facing V and 1/s facing away; a read faces one of them at a time. That is the *single
+hemispherical vantage* (SHV), one standpoint and one hemisphere. Its facings joined, both hemispheres at once, four
+facings in the plane and eight in space, give the *dual hemispherical vantage* (DHV). No pivot holds the DHV: it is the
+turn's facings put together as drawn, from no standpoint (R967). So SHV and DHV are one relation space with different
+facings (R1105), and both follow from the one point taken and the one picked.
 
-**12. Space.** Three bars square to each other are the three thumbs, crossed at the triple corner. A read holds two
-slopes, (s, s₂); the even sweep's heat on them is 1/(Ω(1 + s² + s₂²)^(3/2)), every pair keeping its corner, and the near
-field in both a third. One thing changes. In one plane turns compose in either order; in two planes they do not, and a
+**13. Space.** The pick has three legs, the three thumbs, crossed at the triple corner, and the one assumption is that
+they have the same extent (Tom, R1159). A read holds two slopes, (s, s₂); the even sweep's heat on them is
+1/(Ω(1 + s² + s₂²)^(3/2)) over one octant, every pair keeping its corner, the near field in both a third, and each of
+the six orders of the legs a sixth (G9). Drawn with unequal extents the corner would move off 1 (G10). At the triple
+corner, with the thumb on a leg, each leg is 1 and the hypotenuse √3; with the thumb on the hypotenuse, each leg is
+1/√3. One thing changes from the plane: in one plane turns compose in either order; in two planes they do not, and a
 loop of turns comes back turned (§7, §8).
 
-**13. Calculus.** The pivot's end carries the rate, 1/(1 + s²), a fraction at every fractional s with no limit taken:
-the derivative. The trace's end carries the total, Ω: the integral, the completion. The bar between them is the
-fundamental theorem (§1, R1113).
+**14. Calculus.** The pivot carries the rate, 1/(1 + s²), a fraction at every fractional s with no limit taken: the
+derivative. The trace carries the total, Ω: the integral, the completion. The turn between them is the fundamental
+theorem (§1, R1113).
 
-**14. Extents, and the first write.** A turn carries the trace through a chord; the pivot goes nowhere. Two looks, one
-kept, give a second extent, measured in bars: parallax (Tom, R1123, R1129; EYE). A count of bars, or one amount carried
-in, turns that extent into a size. That is where the geometry hands over to physics, and physics hands back by giving
-the next bar to turn (Tom, R1127, R1128; §6, §7).
+**15. Extents, and the first write.** A turn carries the trace through a chord; the pivot goes nowhere. Two looks, one
+kept, give a second extent, measured in thumbs: parallax (Tom, R1123, R1129; EYE). A count of thumbs, or one amount
+carried in, turns that extent into a size. That is where the geometry hands over to physics, and physics hands back by
+giving the next point to pick (Tom, R1127, R1128; §6, §7).
 
-**What the turn does not give.** It gives no size for anything met (V*), no paint, no position, and no value of Ω. The
-turn makes the stage, the same for every world (R1107); what lands on it, and how big it is, is the world's (R1119).
+**Why the thumb goes on a leg.** Both placements give the same read, because every reading is a ratio of legs (G1). On
+the hypotenuse (step 4) the thumb is what the turn keeps and treats the legs alike, but the legs carry a root and are
+fractions only through a half-slope, and each reading has to be divided out of them. On a leg (step 3) the readings are
+the legs, every number is a fraction, and the root is left in the hypotenuse, where nothing reads it. So deriving the
+hypotenuse is the cleaner way for the read; the hypotenuse as the thumb is the way to state the turn's premise (Tom,
+R1161). It is the same division as "The paper in one equation" (§1): x² + y² + z² = r² divided by one coordinate is
+1 + s² + s₂² = (r/x)². What the leg gives up is that the turn does not keep its hypotenuse, which grows as √(1 + s²)
+toward the horizon, and that one leg has to be chosen.
 
-**Classical, and the paper's.** Each formula above is classical: d(arctan s)/ds = 1/(1 + s²), tangent addition,
-w(s) = (1 + is)/(1 − is), the Cauchy's median, Girard's octant, the fundamental theorem. What is the paper's is the
-reading: that all of them are consequences of two points turned, one at Ω and one at 1/Ω. It is a compact generative
-reading of familiar mathematics, not a proof that geometry needs no prior structure: what it rests on is one bar with a
-length and a turn that is a rigid motion and returns (step 3). No circle is drawn, no angle is used, and no V or unit
-enters.
+*Is the hypotenuse the radius?* "Radius" is the DHV's word for it (R1110): drawn from no standpoint, the hypotenuse is
+the radius of the sphere about the pivot through the picked point. In the single vantage it is the trace's distance from
+the pivot. With the thumb on the hypotenuse that distance is one thumb for every pick, and a writer drawing them all
+sees a sphere of radius 1. With the thumb on a leg it is √(1 + s² + s₂²), different for each direction, so there is no
+one radius and no sphere: the picks lie on the flat screen.
+
+**What the pick does not give.** It gives no size for anything met (V*), no paint, no position, and no value of Ω. The
+pick and the turn make the stage, the same for every world (R1107); what lands on it, and how big it is, is the world's
+(R1119).
+
+**Classical, and the paper's.** Each formula above is classical: Pythagoras, d(arctan s)/ds = 1/(1 + s²), tangent
+addition, w(s) = (1 + is)/(1 − is), the Cauchy's median, Girard's octant, the fundamental theorem. What is the paper's is
+the reading: that all of them follow, in this order, from one point taken and one point picked from it, one at 1/Ω and
+one at Ω. It is a compact generative reading of familiar mathematics, not a proof that geometry needs no prior
+structure: what it rests on is a length assigned to the pick, legs of equal extent, and a turn that is a rigid motion
+and returns (steps 2–4). No circle is drawn, no angle is used, and no V or unit enters.
 
 ## 1. Definitions
 
@@ -326,12 +373,12 @@ with κ = −Δ; so is an oscillator's direction x′/x, while its amplitude car
 rational in the half-slope of the angle, while the time to reach one needs Kepler's equation, solved only by iteration; Newton's Lemma XXVIII (*Principia*,
 Book I, Section VI) is the classical statement that no oval's cut-off area, so no orbit's time, is given by a finite
 equation, while the shape's points are rational.
-The bar of §9 ("The bar's two ends") pictures the split (R1113): the pivot's pointing is the slope, and the walk per unit
+The two points of §9 ("The two points: Ω and 1/Ω") picture the split (R1113): the pivot's pointing is the slope, and the walk per unit
 of pointing, 1/(1 + s²), is a derivative given in fractions; the trace's whole walk, Ω, is the integral, where the
-arctangent leaves them; so the pivot (1/Ω) is the derivative and the trace (Ω) the integral, the bar joining them the
-fundamental theorem. Read the other way, a bar turned steadily is the Riccati equation ds/dw = 1 + s², its steps of
-pointing exact by tangent addition, its walk the clock. One bar, one parameter: s′ = t + s² has none. **Classical**
-(d arctan s/ds = 1/(1 + s²); tan solves s′ = 1 + s²); the placing at the bar's ends **a reading**.
+arctangent leaves them; so the pivot (1/Ω) is the derivative and the trace (Ω) the integral, the turn joining them the
+fundamental theorem. Read the other way, the picked point turned steadily is the Riccati equation ds/dw = 1 + s², its steps of
+pointing exact by tangent addition, its walk the clock. One turn, one parameter: s′ = t + s² has none. **Classical**
+(d arctan s/ds = 1/(1 + s²); tan solves s′ = 1 + s²); the placing at the two points **a reading**.
 In each, the steps are the read's and the clock is the completion. **Exact** (the three runs, nothing killed in their
 final runs); the sorting **a reading**. What it shows is that the single hemispherical vantage competes with the dual
 hemispherical vantage across calculus (R1104): the same results, exactly, in fractions with no limit and no N, where the
@@ -761,8 +808,8 @@ contents (an array that reallocates, a table that rehashes) has to rebuild that 
   places at the heat's quantiles (§5).
 - Facing V is the near reading s, facing away from V the far reading 1/s; their product 1 is no facing, one thumb
   (§9, "Facing V and facing away from V"). Ω and 1/Ω (defined before §1; Ω = π/2) are limits at the horizon, the heat's
-  total and the mean share. On a bar turned a quarter turn about one end, the trace end is Ω and the pivot end 1/Ω
-  (§9, "The bar's two ends"). Ω and the one-length circle are the dual hemispherical vantage's, from no
+  total and the mean share. With the picked point turned a quarter turn about the point taken, the trace is Ω and the pivot 1/Ω
+  (§9, "The two points: Ω and 1/Ω"). Ω and the one-length circle are the dual hemispherical vantage's, from no
   standpoint, nothing to do with reads and writes.
 - The Cauchy has no near and no far; H lays them over the read as an overlay (§5).
 
@@ -929,17 +976,17 @@ it takes a v and an h, and it works on a straight line too, the lighthouse's sho
 meets it. The constant 1/Ω and the quartiles' values are the DHV's arithmetic; a read has the order of its
 readings, the corner and the directions. **Classical.**
 
-**The Cauchy, by the bar.** The same law needs nothing but the bar of §9's "The bar's two ends" (Tom, R1112). Turn it a
-quarter turn about its pivot: the trace end walks, the pivot points at it, and the reading is the pointing's slope s.
-Each step ds of the pointing moves the trace end on by ds/(1 + s²), so the walk counted per unit of pointing is
+**The Cauchy, by the two points.** The same law needs nothing but the two points of §9's "The two points: Ω and 1/Ω"
+(Tom, R1112). Turn the picked point a quarter turn about the pivot: the trace walks, the pivot points at it, and the reading is the pointing's slope s.
+Each step ds of the pointing moves the trace on by ds/(1 + s²), so the walk counted per unit of pointing is
 1/(1 + s²) = h², the thumb's share squared: the Cauchy's shape, rational, no angle in it. The walk's whole length is Ω,
-the trace end; scaled by 1/Ω, the pivot end, the heat becomes the law (1/Ω)·1/(1 + s²), whose total is (1/Ω) × Ω = 1. So
-the Cauchy's coefficient is the pivot, its total the trace, and it totals 1 because the bar's two ends multiply to 1. The
-corner is the trace end halfway along its walk, Ω/2 each side, which is why it is the median; the horizon is the trace
-end arriving along v while the pointing's slope runs on without end, the walk finite and the pointing not, which is why
+the trace; scaled by 1/Ω, the pivot, the heat becomes the law (1/Ω)·1/(1 + s²), whose total is (1/Ω) × Ω = 1. So
+the Cauchy's coefficient is the pivot, its total the trace, and it totals 1 because the two points multiply to 1. The
+corner is the trace halfway along its walk, Ω/2 each side, which is why it is the median; the horizon is the trace
+arriving along v while the pointing's slope runs on without end, the walk finite and the pointing not, which is why
 there is no mean; the exchange s ↔ 1/s is the walk read from its other end; and the lighthouse is the pivot as a lamp,
 its pointing landing at x = d·s on a shore d away. **Classical** (ds/(1 + s²) is the turn's own measure, its total Ω);
-the reading by the bar is the paper's.
+the reading by the two points is the paper's.
 
 **Why there is no mean.** A mean is a sum of amounts over their count. The Cauchy weighs directions, and a direction has
 no length to add; its number is a chart, and the question is what survives a change of chart. To average v/h is to take
@@ -1991,7 +2038,7 @@ slope, and each of those is a fact about the exchange s ↔ 1/s, whose fixed poi
 |---|---|---|---|
 | the circle | h² + v² = 1 | 1/(1 + s²) + s²/(1 + s²) = 1 | the heat in the v/h chart and the heat in the h/v chart share one whole |
 | the half turn | e^(iπ) = −1 | w(s)·w(1/s) = −1, w = (1 + is)/(1 − is) | a direction and its reciprocal compose to the half turn |
-| the bar's two ends; the two facings | Ω · 1/Ω = 1 | s · (1/s) = 1 | the exchange undoes itself; the corner is its fixed point |
+| the two points; the two facings | Ω · 1/Ω = 1 | s · (1/s) = 1 | the exchange undoes itself; the corner is its fixed point |
 | the total | (1/Ω)·∫₀^∞ ds/(1 + s²) = 1 | ∫₀¹ ds/(1 + s²) = ∫₁^∞ ds/(1 + s²) | the corner splits the heat in equal halves |
 
 *The circle.* The heat per unit of s is h² = 1/(1 + s²); in the turned-over chart t = 1/s it is 1/(1 + t²) = s²/(1 + s²)
@@ -2029,36 +2076,38 @@ limits at the horizon: the heat's total ∫₀^∞ ds/(1 + s²) = Ω, approached
 values held by no SHV or count. An earlier account in angles, two sweeps pivoting at a circle's centre and on it, is
 withdrawn (R1043).
 
-**The bar's two ends: Ω and 1/Ω.** Where the two limits sit has a plain picture (Tom, R1110). Turn a bar of one thumb
-one quarter turn about one of its ends. The sweep has one face, not two. One end of the bar is the pivot, the
-standpoint, and never moves; the other end is the trace, which runs the quarter arc and faces the pivot. The trace end
-is Ω: for a bar of 1 it is the length traced. The pivot end is 1/Ω. Ω walks the arc; 1/Ω points to it (Tom, R1110):
-the trace end goes along the arc, the pivot stays and points at where the trace end is. The DHV, drawing the circle
-whole, names the same two ends the radius and the centre; those are its words, and describing the SHV in them is the
-trap (Tom, R1110). The SHV's own words are the trace and the pivot, one walking and one pointing. Multiplied, the two ends give 1, with no facing,
-the same 1 as near times far. So the bar is not just a bar of 1: its two ends have a meaning (Tom: "It's not just a bar
-of 1."). The pivot travels nothing, so 1/Ω there is not a distance; it is the bar measured against its trace, 1 over Ω,
-held at the pivot (a reading). Ω × 1/Ω = 1 is arithmetic; what is new is where the two numbers sit. This places Ω and
-1/Ω on the bar's ends, where R1032 had placed them on the facings; the facings stay the near and far readings, s and
-1/s, and an earlier picture with the trace at the bar's middle is withdrawn (R1110).
+**The two points: Ω and 1/Ω.** Where the two limits sit has a plain picture (Tom, R1110). Take a point and pick
+another one thumb off (§0), and turn the picked point one quarter turn about the first. The sweep has one face, not two.
+The point taken is the pivot, the standpoint, and never moves; the point picked is the trace, which runs the quarter arc
+and faces the pivot. The trace is Ω: for a distance of one thumb it is the length traced. The pivot is 1/Ω. Ω walks the
+arc; 1/Ω points to it (Tom, R1110): the trace goes along the arc, the pivot stays and points at where the trace is. The
+DHV, drawing the circle whole, names the same two points the centre and, by the distance between them, the radius;
+those are its words, and describing the SHV in them is the trap (Tom, R1110). The SHV's own words are the trace and the
+pivot, one walking and one pointing. Multiplied, the two give 1, with no facing, the same 1 as near times far. So the
+two points are not just a length of 1: each has a meaning (Tom: "It's not just a bar of 1."). The pivot travels
+nothing, so 1/Ω there is not a distance; it is the thumb measured against its trace, 1 over Ω, held at the pivot (a
+reading). Ω × 1/Ω = 1 is arithmetic; what is new is where the two numbers sit. This places Ω and 1/Ω on the two points,
+where R1032 had placed them on the facings; the facings stay the near and far readings, s and 1/s, and an earlier picture
+with the trace at the middle of the length is withdrawn (R1110). The paper said "a bar" for the two points until R1153
+(Tom: "I don't think it's a bar, it's two points.").
 
-**One sweep, and the joins of 2, 4 and 8.** The bar is one sweep with two ends, each with a purpose (Tom, R1114). The
-semicircle, the circle and the sphere are not other things beside it: they are the bar's sweep joined in 2, 4 and 8
-facings, 2Ω = π, 4Ω = 2π, 8Ω = 4π (§9's four and eight facings, R805). Each sweep in the join is still one bar, its pivot
-1/Ω pointing and its trace Ω walking; the join adds sweeps and changes nothing a bar does. A read is one bar; the
-semicircle, circle and sphere are the DHV's joins of bars (R1105). Two precisions go with it. In space a facing is an
-octant swept by the two thumbs together, and its Ω is an area, 3Ω − 2Ω = Ω (Girard), so 8Ω = 4π is the same number in
-another measure. And in space the join is more than a count: bars in one plane compose in either order, facings in
-different planes do not, and a loop through them comes back turned (§8, the loop's leftover). That leftover is what the
-sphere's join adds beyond eight sweeps.
+**One sweep, and the joins of 2, 4 and 8.** The picked point's turn is one sweep, its two points each with a purpose
+(Tom, R1114). The semicircle, the circle and the sphere are not other things beside it: they are that sweep joined in 2,
+4 and 8 facings, 2Ω = π, 4Ω = 2π, 8Ω = 4π (§9's four and eight facings, R805). Each sweep in the join is still one sweep,
+its pivot 1/Ω pointing and its trace Ω walking; the join adds sweeps and changes nothing a sweep does. A read is one
+sweep; the semicircle, circle and sphere are the DHV's joins of sweeps (R1105). Two precisions go with it. In space a
+facing is an octant swept by the two thumbs together, and its Ω is an area, 3Ω − 2Ω = Ω (Girard), so 8Ω = 4π is the same
+number in another measure. And in space the join is more than a count: turns in one plane compose in either order,
+facings in different planes do not, and a loop through them comes back turned (§8, the loop's leftover). That leftover is
+what the sphere's join adds beyond eight sweeps.
 
-**Two points, turned, and all of it.** Strip the bar to what it is: an extent is two points (Tom, R1131). By itself an
+**Two points, turned, and all of it.** Strip it to what it is: an extent is two points (Tom, R1131). By itself an
 extent has no geometry; the sweep and the extent together create it (Tom, R1130). Turn two points about one of them and
 the one is the pivot, 1/Ω, pointing, the other the trace, Ω, walking. Everything in this section and §3 follows from
 that turn and one reading, the pointing's slope s = v/h, with no angle, no trigonometric function, no circle drawn, no V
 and no unit:
 
-- the trace's place, h = 1/√(1 + s²), v = s/√(1 + s²), the one square root, because the trace stays one bar out;
+- the trace's place, h = 1/√(1 + s²), v = s/√(1 + s²), the one square root, because the trace stays one thumb out;
 - its walk per pointing, √(dh² + dv²) = ds/(1 + s²) = h²·ds, so the even sweep's heat on the slopes is the Cauchy's
   shape, before any constant;
 - the corner as the median, since s ↦ 1/s keeps ds/(1 + s²): as much walk below s = 1 as above;
@@ -2258,7 +2307,7 @@ else; the same split is why the square of ∫ e^(−x²) dx is π, a full turn 2
 
 The count's tier is de Moivre's (1733): tossing and counting is what counting does, and the Gaussian is
 what the counts tend to. Ω arrives in that limit through Wallis's product (1656),
-Ω = (2·2)/(1·3) × (4·4)/(3·5) × (6·6)/(5·7) × …, every partial product a fraction: the Ω of the bar's trace end,
+Ω = (2·2)/(1·3) × (4·4)/(3·5) × (6·6)/(5·7) × …, every partial product a fraction: the Ω of the trace,
 approached by counting. And what is exact flips once more. For the Cauchy the exact facts were the median and the equal halves, and
 there was no mean; for the Gaussian the exact facts a count holds are the mean and the variance, which are
 sums. The Cauchy is kept by order and the Gaussian by sums, a law of directions and a law of amounts. This is no fifth
