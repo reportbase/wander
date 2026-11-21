@@ -576,6 +576,41 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1149 (21 Nov; Tom: "1"): GPA (`plans/gpa-plan.md`, `runs/gpa/`), GPT-2 small forward only: no knee in distance
+  (d^(−0.85), G3 killed); q·k's sign no facing (G1 killed, my set-up); post hoc centred per query, half the keys get 5%
+  of the weight; keys centred, 12 of 64 dimensions; 48% on the first token.
+  R1148 (20 Nov; Tom: "Yes"): LNK (`plans/lnk-plan.md`, `runs/lnk/`), mutual information by distance in WikiText-2:
+  1.25 bits at d = 1, 0.03 at 16; the Cauchy in distance killed (L2); a knee near ten words, steep then about d^(−0.3).
+  R1147 (20 Nov; Tom: "Not all links the same, maybe close links are better"): in a record the joins differ, close ones
+  may count for more; read as near and far field on the record's order. Proposed: a count of what a word tells at d places.
+  R1146 (20 Nov; Tom: "Ai is doing something new, no natural world comparison."): a language model reads a record of
+  human writes, no natural counterpart; nature's lead (NAT) bears on reads of a world, not on reading a record.
+  R1145 (20 Nov; Tom: "George Washington apple tree is a story about honest, apples and trees. The natural world would
+  not care about there connection, AI would."): a story's connections are human writes; a model learns the record's
+  joins, nature's reads carry none (Weems's cherry tree, 1806, noted).
+  R1144 (20 Nov; Tom: "A rock is stable, not much or any writes going on. Water is not stable, it flows, lots of writes
+  going on."): stability is how little a thing writes; read as few changes of state (Claude's, not ruled).
+  R1143 (20 Nov; Tom: "The last read reads the last write, the read is continuous, the write is discreet."): a read reads
+  what is there now, the last write; "last" the writes' order, the read holding no time (R649, R652).
+  R1142 (20 Nov; Tom: "The read just reads, the intelligence is in the write."): the read given, nothing learned in it;
+  what is learned is in the writes (keys, values, weights; R1138). Proposed: NAT run 2, the read fixed, learning only in the writes.
+  R1141 (20 Nov; Tom: "The natural world figured this out long ago, let's follow its lead"): NAT (`plans/nat-plan.md`,
+  `runs/nat/`): exact, the corner's share of a front hemisphere ½, 0.29, 0.0015, 5·10⁻¹¹ at n = 2, 3, 16, 64, softmax's
+  1/√d the horizon's rescaling; the eye's task, the given read 100% with no parameters, 19 learned 97%, a 64-wide
+  embedding with softmax 67% and 17% with the world shrunk or 1,024 things. B3 killed (wrong side); read-mlp my code.
+  R1140 (20 Nov; Tom: "We should be able to train small models to make a geometric point.", "Yes"): SCT
+  (`plans/sct-plan.md`, `runs/sct/`), the scale test on a small learner (direction decides, lengths random): the reads
+  unmoved at every range, read, front 92%; softmax 53% → 20% and the amount-Cauchy 49% → 29% as lengths widen ×403;
+  read, both 47% (a key and its opposite read alike). Nothing killed; a task built for the point.
+  R1139 (20 Nov; Tom: "These ideas can be explored without expensive ai training sessions. Others can test these ideas
+  at scale."): **no AI training runs; explore by the geometry, point it at AI; others test at scale.**
+  R1138 (20 Nov; Tom: "discreetness organizes the writes. Discreteness writes the full Apple … Discreteness does not have
+  a hemisphere."): a write is whole, no hemisphere; a facing is a read's. RAT (`plans/rat-plan.md`, `runs/rat/`):
+  attention as a read; the read unmoved by key size, calibration level; front only 6.7% behind softmax, back joined
+  1.3%; softmax 24% of its weight behind the query. Closed at run 1.
+  R1137 (20 Nov; Tom: "1,2,3"): PR #480 merged; the philosophy note's citations checked by a fresh agent (Leibniz did
+  not scale the world; Poincaré's thousandfold universe is "La relativité de l'espace", 1906–07, in *Science and Method*
+  1908, credited to Delbœuf; smaller precisions); `two-points.html`, §0 as a demo, with a `demos.html` card.
   R1136 (20 Nov; Tom: "finish the note with these open questions and your answers."): the note's §6, two more ChatGPT
   comments (dependence without precedence; inside and outside, not taken, R304, R570) and four open questions with
   Claude's answers, not ruled: mutual within a turn, alternating across turns; no first term, rigidity the premise, a law.
@@ -1197,6 +1232,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Writes* §9 "All of this is prior to any physics".
   R803 (10 Nov; Tom: "update the essays."): R801 and R802 in essay 2 §7 ("Which act each number measures") and §9 ("Four
   identities, one exchange", with the table), essay 14 §3 and essay 15 §5; no new claim.
+- `two-points.html`: **two points, turned** (20 Nov 2026, SPN R1137; Tom: "1,2,3"; *Reads and Writes* §0), a standalone
+  page like `facing.html`, plain canvas. The pivot (points, 1/Ω) and the trace (walks, Ω); the slider the share of the
+  trace's walk passed, so moving it evenly is the sweep; the reading s = v/h. The bar keeps its length round (default),
+  by the sum or by the largest part: the trace's track drawn only as walked, its walk per pointing as the heat on the
+  slopes (the Cauchy for round, the round curve dashed beside the others), the corner splitting the walk in half in all
+  three, the mean of s never settling, the exchange's halves, and s ⊕ a's weight check (1 only for round). Facings 1, 2,
+  4 drawn (the DHV's joins). §0's fourteen steps as a list that sets the picture. `?w=&m=round|sum|max&f=1|2|4&play=1`;
+  hook `window.__twoPoints` (`M`, `heat`, `compose`, `composeRatio`, `meanTo`, `steps`, `set`, `state`). Not in the flying page.
 - `notation.html`: **only a name** (14 Nov 2026, SPN R997; essay 24), a standalone page like `shv.html`, plain script: one turn by its
   angle (cos, sin, so π) and by its half-slope in exact BigInt fractions, n turns and back; Leibniz and Wallis as limits (a fraction at every
   step, π at none); the 189 laws of NTN and NTX as tiles, teal where the checker found π or e notation, grouped by list, DVA's tag, the blind

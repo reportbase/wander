@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Two points, turned</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    two-points.html: two points, turned (20 Nov 2026, SPN R1137; Tom: "1,2,3", the third a demo of Reads and Writes §0,
+    "The geometry of two points turned"). A standalone page like facing.html, plain canvas.
+
+    In the single vantage's own words: the pivot (stays, points) and the trace (goes round, walks); the reading is the
+    pointing's slope s = v/h. The slider is the share of the trace's walk passed, so moving it evenly is the even sweep.
+    The bar keeps its length in a measure: round (h² + v² = 1, the default, the one a turn that returns keeps; Reads and
+    Writes §0 step 3, R1134), sum (h + v = 1) or largest component (max(h, v) = 1). For each:
+      the trace's place (h, v) for the pointing s; its walk per pointing f(s) (round 1/(1 + s²), sum √2/(1 + s)²,
+      largest 1 then 1/s²); the total walk T (round Ω, sum √2, largest 2); the share passed W(s).
+    Every measure is fair to the exchange s ↔ 1/s, so the corner s = 1 is the median and there is no mean in each; only
+    the round one gives the Cauchy's shape, and only the round one's weight is left alone by composing turns,
+    s ⊕ a = (s + a)/(1 − sa) (the check f(s ⊕ a)·d(s ⊕ a)/ds / f(s), 1 only for round).
+    The joins (1, 2, 4 facings drawn, 8 in space as a count) are the DHV's.
+    Internally the round measure's share uses atan and its inverse tan: the DHV's formula for the share of the walk,
+    used here only to draw; nothing shown to the reader is an angle.
+    Links: ?w=<0..1>&m=round|sum|max&f=1|2|4&play=1. Test hook: window.__twoPoints.
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 1020px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 20px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 76ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 260px; min-width: 0; accent-color: var(--gold) }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    .note { color: var(--dim); font-size: 12.5px }
+    ol.steps { margin: 0; padding-left: 22px; color: var(--ink) }
+    ol.steps li { margin: 0 0 6px; cursor: pointer }
+    ol.steps li.on { color: var(--gold) }
+    ol.steps li b { color: var(--bright); font-weight: 500 }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Two points, turned</h1>
+    <p class="lede">An extent is two points. By itself it has no geometry. Turn one point about the other and the
+    geometry is all there: the one that stays is the pivot, which points; the one that goes round is the trace, which
+    walks. The reading is the slope of the pointing, s = v/h. Move the slider evenly and the trace walks evenly: that is
+    the sweep, and everything below comes from it.</p>
+    <div class="panel">
+        <div class="row">
+            <button id="play">play</button>
+            <label for="w" style="color:var(--dim)">walk passed</label>
+            <input id="w" type="range" min="0" max="0.999" step="0.001" value="0.3">
+            <button id="corner">the corner</button>
+        </div>
+        <div class="row" style="margin-top:8px">
+            <span style="color:var(--dim)">the bar keeps its length</span>
+            <button data-m="round" class="on">round</button>
+            <button data-m="sum">by the sum</button>
+            <button data-m="max">by the largest part</button>
+            <span style="color:var(--dim);margin-left:12px">facings drawn</span>
+            <button data-f="1" class="on">1</button><button data-f="2">2</button><button data-f="4">4</button>
+        </div>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="bar" height="340"></canvas><p class="cap">The pivot (white) points at the trace (gold). The
+            trace's track is drawn only as far as it has walked; no circle is drawn first.</p></div>
+            <div><canvas id="heat" height="340"></canvas><p class="cap">The trace's walk for each step of pointing: the
+            heat on the slopes. Teal what the trace has walked so far; the corner s = 1 splits the walk in half.</p></div>
+        </div>
+        <div class="grid" style="margin-top:12px">
+            <div><canvas id="swap" height="170"></canvas><p class="cap">The exchange: s facing V, 1/s facing away. The
+            walk below the corner and above it.</p></div>
+            <div><canvas id="comp" height="170"></canvas><p class="cap">Turns composed: s ⊕ a = (s + a)/(1 − sa).
+            Does the weight of the walk survive? Only in the round measure.</p></div>
+        </div>
+        <div id="hud"></div>
+    </div>
+    <div class="panel">
+        <h2>The fourteen steps</h2>
+        <p class="cap" style="margin:0 0 8px">From <i>Reads and Writes</i> §0. Tap a step to set the picture.</p>
+        <ol class="steps" id="steps"></ol>
+    </div>
+    <p class="note">All of this is a consequence of two points turned, one at Ω (the trace, its whole walk) and one at
+    1/Ω (the pivot); Ω × 1/Ω = 1 is arithmetic, where each sits is the reading. The premise is that the bar stays the same
+    while it turns and the turn comes back: that is what picks the round measure (try the others: the corner and the
+    missing mean survive, the Cauchy and composition do not). What the turn gives is the stage; the paint is the
+    world's. The formulas are classical (d(arctan s)/ds = 1/(1 + s²), tangent addition); the reading is the paper's.
+    Behind it: <i>Reads and Writes</i> §0, §3 "The Cauchy, by the bar", §9 "The bar's two ends". Other demos:
+    <a href="facing.html">the facing</a>, <a href="paths.html">one sweep, three paths</a>,
+    <a href="one-read.html">one turn and one read</a>, <a href="demos.html">all demos</a>.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id), OM = Math.PI / 2, R2 = Math.SQRT2;
+    // the three measures in which the bar keeps its length
+    const M = {
+        round: {
+            trace: s => { const r = Math.sqrt(1 + s * s); return [1 / r, s / r]; },
+            walk: s => 1 / (1 + s * s), total: OM,
+            share: s => Math.atan(s) / OM, fromShare: w => Math.tan(w * OM)
+        },
+        sum: {
+            trace: s => [1 / (1 + s), s / (1 + s)],
+            walk: s => R2 / ((1 + s) * (1 + s)), total: R2,
+            share: s => s / (1 + s), fromShare: w => w / (1 - w)
+        },
+        max: {
+            trace: s => s <= 1 ? [1, s] : [1 / s, 1],
+            walk: s => s <= 1 ? 1 : 1 / (s * s), total: 2,
+            share: s => s <= 1 ? s / 2 : 1 - 1 / (2 * s), fromShare: w => w <= 0.5 ? 2 * w : 1 / (2 * (1 - w))
+        }
+    };
+    const heat = (s, m) => M[m].walk(s) / M[m].total;
+    const compose = (s, a) => (s + a) / (1 - s * a);
+    // how a turn by a carries the walk's weight: 1 means the weight is left alone
+    function composeRatio(s, a, m) {
+        const t = compose(s, a), dt = (1 + a * a) / ((1 - s * a) * (1 - s * a));
+        return M[m].walk(t) * dt / M[m].walk(s);
+    }
+    // the mean of s over the walk up to a cut, which never settles as the cut runs to the horizon
+    function meanTo(cut, m) {
+        let sum = 0, mass = 0; const n = 20000;
+        for (let i = 0; i < n; i++) { const w = (i + 0.5) / n * M[m].share(cut), s = M[m].fromShare(w); sum += s; mass += 1; }
+        return sum / mass;
+    }
+    const STEPS = [
+        ['Two points.', 'An extent of length 1, the thumb. Alone it has no geometry; having a size, it is a write.', { w: 0 }],
+        ['One turned about the other.', 'The pivot stays and the trace goes round. The sweep is the read, even by its own walk.', { w: 0.15 }],
+        ['The reading.', 'The pointing’s slope s = v/h. The bar keeps its length: the round measure, h² + v² = 1, from a turn that returns.', { w: 0.3, m: 'round' }],
+        ['The walk per pointing.', 'ds/(1 + s²) = h²·ds: the Cauchy’s shape, before any constant.', { w: 0.4, m: 'round' }],
+        ['The exchange and the corner.', 's facing V, 1/s facing away, product 1. The walk below s = 1 equals the walk above: the median.', { w: 0.5, m: 'round' }],
+        ['The horizon and no mean.', 'The trace arrives; the pointing runs on. The mean of s never settles.', { w: 0.97, m: 'round' }],
+        ['The total and the two ends.', 'The whole walk is Ω, the trace; 1/Ω the pivot; product 1, arithmetic.', { w: 0.999, m: 'round' }],
+        ['Turns compose.', '(s + a)/(1 − sa) in fractions, and the walk ds/(1 + s²) is the one weight it leaves alone. w(s)·w(1/s) = −1.', { w: 0.3, m: 'round' }],
+        ['Near and far.', 'The bar is the near field, d/H; past its tip the far field, H/d. An overlay H lays on the read.', { w: 0.5, m: 'round' }],
+        ['Joins.', 'Two facings the semicircle (2Ω), four the circle (4Ω), eight the sphere (8Ω): the DHV’s.', { w: 0.999, m: 'round', f: 4 }],
+        ['The single and the dual vantage.', 'From one pivot, one hemisphere, two facings: the SHV. Its facings joined: the DHV, held by no pivot.', { w: 0.999, m: 'round', f: 2 }],
+        ['Space.', 'Three bars square, crossed at the triple corner; every pair keeps its corner; turns in two planes do not commute.', { w: 0.5, m: 'round', f: 1 }],
+        ['Calculus.', 'The pivot carries the rate 1/(1 + s²); the trace the total Ω; the bar between is the fundamental theorem.', { w: 0.6, m: 'round' }],
+        ['Extents, and the first write.', 'The trace moves a chord; two looks, one kept, give a second extent: parallax. A count or an amount carried in gives a size.', { w: 0.25, m: 'round' }]
+    ];
+    const st = { w: 0.3, m: 'round', f: 1, step: -1 };
+    function fit(cv) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1), w = cv.clientWidth, hh = +(cv.dataset.h || (cv.dataset.h = cv.getAttribute('height')));
+        if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(hh * dpr); }
+        const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.fillStyle = '#000'; g.fillRect(0, 0, w, hh); return [g, w, hh];
+    }
+    const txt = (g, s, x, y, col = '#8a8a96', size = 12) => { g.fillStyle = col; g.font = `${size}px DM Mono, monospace`; g.fillText(s, x, y); };
+    function state() {
+        const m = st.m, s = M[m].fromShare(st.w), [h, v] = M[m].trace(s);
+        const below = M[m].share(1), half = Math.abs(below - 0.5) < 1e-12;
+        return { w: st.w, m, f: st.f, s, h, v, inv: s > 0 ? 1 / s : Infinity, walk: M[m].walk(s), heat: heat(s, m),
+            total: M[m].total, below, half, ratio: composeRatio(0.5, 1 / 3, m), step: st.step };
+    }
+    function drawBar(r) {
+        const [g, W, H] = fit($('bar'));
+        const f = st.f, size = Math.min(W, H) * (f === 1 ? 0.78 : 0.4), ox = f === 1 ? 34 : W / 2, oy = f === 4 ? H / 2 : H - 30;
+        const P = (x, y) => [ox + x * size, oy - y * size];
+        // the walked track, in each facing drawn (the joins are the DHV's)
+        const signs = f === 1 ? [[1, 1]] : f === 2 ? [[1, 1], [-1, 1]] : [[1, 1], [-1, 1], [-1, -1], [1, -1]];
+        const n = 240;
+        signs.forEach(([sx, sy], k) => {
+            const done = k === 0 ? r.w : 0.999;
+            g.strokeStyle = k === 0 ? 'rgba(212,160,82,0.9)' : 'rgba(181,156,240,0.55)'; g.lineWidth = k === 0 ? 2.5 : 1.5;
+            g.beginPath();
+            for (let i = 0; i <= n; i++) {
+                const ww = done * i / n, s = M[r.m].fromShare(ww), [hh, vv] = M[r.m].trace(s);
+                // facings 2 and 4 swap the roles, so the join closes
+                const x = (k % 2 ? vv : hh) * sx, y = (k % 2 ? hh : vv) * sy;
+                const q = P(x, y); i ? g.lineTo(...q) : g.moveTo(...q);
+            }
+            g.stroke();
+        });
+        // axes: H along, V up, short
+        g.strokeStyle = 'rgba(255,255,255,0.12)'; g.lineWidth = 1; g.beginPath();
+        g.moveTo(...P(f === 1 ? 0 : -1.1, 0)); g.lineTo(...P(1.1, 0)); g.moveTo(...P(0, f === 4 ? -1.1 : 0)); g.lineTo(...P(0, 1.1)); g.stroke();
+        // the pointing, past the trace toward the horizon
+        const ext = Math.min(3, 1.1 / Math.max(r.h, 1e-3));
+        g.strokeStyle = 'rgba(140,230,205,0.35)'; g.setLineDash([4, 5]); g.beginPath(); g.moveTo(...P(0, 0)); g.lineTo(...P(r.h * ext, r.v * ext)); g.stroke(); g.setLineDash([]);
+        g.strokeStyle = '#e6e4ee'; g.lineWidth = 3; g.beginPath(); g.moveTo(...P(0, 0)); g.lineTo(...P(r.h, r.v)); g.stroke();
+        g.fillStyle = '#e6e4ee'; g.beginPath(); g.arc(...P(0, 0), 5, 0, 7); g.fill();
+        g.fillStyle = '#d4a052'; g.beginPath(); g.arc(...P(r.h, r.v), 6, 0, 7); g.fill();
+        txt(g, 'pivot 1/Ω', P(0, 0)[0] + 8, P(0, 0)[1] + 18, '#e6e4ee');
+        txt(g, 'trace Ω', P(r.h, r.v)[0] + 9, P(r.h, r.v)[1] - 8, '#d4a052');
+        txt(g, `s = v/h = ${isFinite(r.s) ? r.s.toFixed(3) : '∞'}`, 12, 18, '#e6e4ee');
+        txt(g, f === 1 ? 'one facing: the read' : `${f} facings joined: the DHV`, 12, 34, f === 1 ? '#8a8a96' : '#b59cf0');
+    }
+    function drawHeat(r) {
+        const [g, W, H] = fit($('heat'));
+        const L = 40, Rr = W - 16, T = 24, B = H - 34, smax = 5, ymax = 1 / M.round.total * 1.0;
+        const yMax = Math.max(ymax, heat(0, r.m), heat(1, r.m)) * 1.08;
+        const X = s => L + (Rr - L) * s / smax, Y = y => B - (B - T) * y / yMax;
+        g.strokeStyle = 'rgba(255,255,255,0.15)'; g.lineWidth = 1; g.beginPath(); g.moveTo(L, T); g.lineTo(L, B); g.lineTo(Rr, B); g.stroke();
+        for (let k = 0; k <= smax; k++) txt(g, String(k), X(k) - 4, B + 16);
+        txt(g, 's → horizon', Rr - 92, B + 30);
+        // the walked area
+        const cut = Math.min(r.s, smax), n = 200;
+        g.fillStyle = 'rgba(140,230,205,0.25)'; g.beginPath(); g.moveTo(X(0), B);
+        for (let i = 0; i <= n; i++) { const s = cut * i / n; g.lineTo(X(s), Y(heat(s, r.m))); }
+        g.lineTo(X(cut), B); g.closePath(); g.fill();
+        // the Cauchy for comparison when another measure is chosen
+        if (r.m !== 'round') {
+            g.strokeStyle = 'rgba(181,156,240,0.6)'; g.setLineDash([5, 4]); g.beginPath();
+            for (let i = 0; i <= 400; i++) { const s = smax * i / 400, q = [X(s), Y(heat(s, 'round'))]; i ? g.lineTo(...q) : g.moveTo(...q); }
+            g.stroke(); g.setLineDash([]); txt(g, 'round: the Cauchy', X(2.2), Y(heat(2.2, 'round')) - 8, '#b59cf0');
+        }
+        g.strokeStyle = '#8ce6cd'; g.lineWidth = 2; g.beginPath();
+        for (let i = 0; i <= 400; i++) { const s = smax * i / 400, q = [X(s), Y(heat(s, r.m))]; i ? g.lineTo(...q) : g.moveTo(...q); }
+        g.stroke();
+        g.strokeStyle = 'rgba(212,160,82,0.8)'; g.setLineDash([3, 4]); g.beginPath(); g.moveTo(X(1), T); g.lineTo(X(1), B); g.stroke(); g.setLineDash([]);
+        txt(g, 'corner', X(1) + 4, T + 12, '#d4a052');
+        const label = { round: 'heat (1/Ω)·(1/(1 + s²))', sum: 'heat (1/√2)·√2/(1 + s)²', max: 'heat ½, then 1/(2s²)' }[r.m];
+        txt(g, label, L + 6, T - 6, '#e6e4ee');
+    }
+    function drawSwap(r) {
+        const [g, W, H] = fit($('swap'));
+        const below = r.below, above = 1 - below, L = 120, Rr = W - 20;
+        [['below s = 1', below, '#8ce6cd'], ['above s = 1', above, '#b59cf0']].forEach(([lab, val, col], k) => {
+            const y = 40 + k * 40; txt(g, lab, 12, y + 4);
+            g.fillStyle = col; g.fillRect(L, y - 10, (Rr - L) * val, 16); txt(g, val.toFixed(4), L + 6, y + 3, '#000');
+        });
+        const prod = isFinite(r.s) && r.s > 0 ? (r.s * (1 / r.s)).toFixed(4) : '1';
+        txt(g, `s = ${isFinite(r.s) ? r.s.toFixed(3) : '∞'}   1/s = ${isFinite(r.inv) ? r.inv.toFixed(3) : '∞'}   s · 1/s = ${prod}`, 12, 134, '#e6e4ee');
+        txt(g, 'the exchange keeps the walk, so the halves are equal in every measure', 12, 154);
+    }
+    function drawComp(r) {
+        const [g, W, H] = fit($('comp'));
+        const pairs = [[0.5, 1 / 3], [0.2, 0.7], [1, 0.4], [2, 0.3]];
+        txt(g, 'weight carried by s ⊕ a  (1 = left alone)', 12, 18, '#e6e4ee');
+        pairs.forEach(([s, a], k) => {
+            const y = 44 + k * 26, q = composeRatio(s, a, r.m), ok = Math.abs(q - 1) < 1e-9;
+            txt(g, `s ${s.toFixed(2)} ⊕ a ${a.toFixed(2)} = ${compose(s, a).toFixed(3)}`, 12, y);
+            txt(g, q.toFixed(6), W - 100, y, ok ? '#8ce6cd' : '#d96e5b');
+        });
+        txt(g, r.m === 'round' ? 'round: the walk is the one weight composing leaves alone' : 'this measure: composing turns changes the weight', 12, 156, r.m === 'round' ? '#8ce6cd' : '#d96e5b');
+    }
+    function draw() {
+        const r = state();
+        drawBar(r); drawHeat(r); drawSwap(r); drawComp(r);
+        const mean = meanTo(Math.min(r.s, 1e6), r.m);
+        $('hud').textContent =
+            `measure ${r.m}   walk passed ${(r.w * 100).toFixed(1)}%   s = ${isFinite(r.s) ? r.s.toFixed(4) : '∞'}   trace (h, v) = (${r.h.toFixed(4)}, ${r.v.toFixed(4)})\n` +
+            `walk per pointing ${r.walk.toFixed(4)}${r.m === 'round' ? ' = h² = ' + (r.h * r.h).toFixed(4) : ''}   total walk ${r.m === 'round' ? 'Ω = ' : ''}${r.total.toFixed(4)}\n` +
+            `walk below the corner ${r.below.toFixed(4)} (the median at s = 1)   mean of s over the walk so far ${mean.toFixed(3)} (no limit as the walk nears the horizon)`;
+        [...document.querySelectorAll('[data-m]')].forEach(b => b.classList.toggle('on', b.dataset.m === st.m));
+        [...document.querySelectorAll('[data-f]')].forEach(b => b.classList.toggle('on', +b.dataset.f === st.f));
+        [...document.querySelectorAll('#steps li')].forEach((li, i) => li.classList.toggle('on', i === st.step));
+    }
+    function set(o) {
+        if (o.w !== undefined) { st.w = Math.min(0.999, Math.max(0, +o.w)); $('w').value = st.w; }
+        if (o.m && M[o.m]) st.m = o.m;
+        if (o.f && [1, 2, 4].includes(+o.f)) st.f = +o.f;
+        if (o.step !== undefined) st.step = o.step;
+        draw(); return state();
+    }
+    const ol = $('steps');
+    STEPS.forEach(([head, body, pose], i) => {
+        const li = document.createElement('li'); li.innerHTML = `<b>${head}</b> ${body}`;
+        li.addEventListener('click', () => { stop(); set(Object.assign({ f: 1 }, pose, { step: i })); });
+        ol.appendChild(li);
+    });
+    let playing = false, last = null;
+    const stop = () => { playing = false; $('play').textContent = 'play'; $('play').classList.remove('on'); };
+    function tick(now) {
+        if (playing) {
+            const dt = last === null ? 0 : (now - last) / 1000; let w = st.w + 0.12 * dt;
+            if (w >= 0.999) w = 0; set({ w });
+        }
+        last = now; requestAnimationFrame(tick);
+    }
+    $('play').addEventListener('click', () => { playing = !playing; $('play').textContent = playing ? 'pause' : 'play'; $('play').classList.toggle('on', playing); });
+    $('corner').addEventListener('click', () => { stop(); set({ w: M[st.m].share(1) }); });
+    $('w').addEventListener('input', () => { st.w = +$('w').value; draw(); });
+    document.querySelectorAll('[data-m]').forEach(b => b.addEventListener('click', () => {
+        const s = M[st.m].fromShare(st.w); st.m = b.dataset.m; set({ w: M[st.m].share(s) });
+    }));
+    document.querySelectorAll('[data-f]').forEach(b => b.addEventListener('click', () => set({ f: +b.dataset.f })));
+    window.addEventListener('resize', draw);
+    const q = new URLSearchParams(location.search);
+    set({ w: q.has('w') ? +q.get('w') : 0.3, m: q.get('m') || 'round', f: q.get('f') || 1 });
+    if (q.get('play') === '1') { playing = true; $('play').textContent = 'pause'; $('play').classList.add('on'); }
+    requestAnimationFrame(tick);
+
+    window.__twoPoints = { M, heat, compose, composeRatio, meanTo, steps: STEPS.map(x => x[0]), set, state };
+})();
+</script>
+</body>
+</html>
