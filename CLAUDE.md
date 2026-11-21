@@ -197,8 +197,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `fid=addr`, by distance address: across equal angles (±75°), up the row (2/π)·atan(D/ρ) with heights at the rate
   (2/π)·D/(ρ² + D²), the thumb at the crosshair, rows one in 2, 4, 8 bunching under the horizon (labelled with words on).
   The toggle: by distance address / tunnel / equal area / by turns / silver ball / flat screen. Hook adds `addr()`, `cull()`.
-  Since R1164 the √3 (H the pointed thing's depth over √3) is said as the derived hypotenuse of three legs of one
-  thumb (R1161), not the cube's diagonal; no number changed.
+  Since R1172 (Tom: "yes", to R1170 carried in) H is the pointed thing's depth along the look, the pick's distance, the
+  hypotenuse (`reachOf`, the ground's g); the pick's three legs are H/√3 and the readings reaches along the thumbs over
+  that leg, so the pick still reads 1 in all three and every field, cube and corner stands where it did; H's number is
+  √3 times what it was (R1164's wording undone). The readout says "units to the pick".
   Since R698 (Tom: "Yes", to the tunnel as the quarter turn, after R696): the tunnel is drawn in the wedge only (`wedgeEdge`,
   35.26° at a home, 54.74° at a thumb, its rings clipped to it), the full round the menu's "tunnel turned all the way round"
   (`?round=1`); `tunnel()` adds `quarter` and `edge(β)`, `set` takes `round`.
@@ -578,6 +580,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1172 (21 Nov; Tom: "yes"): `crosshairs.html`'s H the distance to the pick (the hypotenuse), legs H/√3, readings over
+  the leg; nothing moves on the screen, H's number √3 larger; R1164 undone. Probe: pick reads (1.03, 1.00, 0.97), no errors.
   R1171 (21 Nov; Tom: "this elimantes the two derivation paths, the less clean one is logically the correct one."):
   **one derivation, the thumb the hypotenuse, the legs derived**; *Reads and Writes* abstract and §0, essay 26 §7.
   `crosshairs.html` not yet changed.
