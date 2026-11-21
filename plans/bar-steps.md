@@ -169,3 +169,12 @@ in the geometry's own terms the gaze is the second point picked (step 21); the a
 (R701, R728: heat, not a body), so following is recentring, not carrying a thing about (R1116 withdrew the bouncing
 ball because it gave the read a shape and bounced only in units); nothing in it is touched by what it follows, the
 world only paints it.
+
+**Step 25** (21 Nov; Tom: "I'm having second thoughts hypotenous. selecting the second point is setting the hypoetnous
+or radious, not the legs."): **selecting the second point sets the hypotenuse (the radius), not the legs.** Supersedes
+step 20 (R1161, the thumb on a leg) and restores step 19 (R1159): the pick is one thumb away; the legs are its shares,
+derived, h² + v² (+ v₂²) = 1, each 1/√3 at the triple corner with equal extent. Claude's reading, not ruled: no reading
+changes (every reading is a ratio of legs, G1), and the Cauchy derivation of R1163 stands as arithmetic, read the other
+way round: the pick lies on the thumb's turn, and the line of a leg is a screen the readings are laid on, its h² the
+conversion from the pick's turn to that screen. Not yet carried: *Reads and Writes* §0 ("why the thumb goes on a leg"),
+essays 26 §7 and 31 §8, and `crosshairs.html`, whose H = depth/√3 puts the thumb on each leg (R1164's wording).

@@ -578,6 +578,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1170 (21 Nov; Tom: "selecting the second point is setting the hypoetnous or radious, not the legs."): **the pick sets
+  the hypotenuse (radius), not the legs**; supersedes R1161, restores R1159. Claude's reading, not ruled: readings
+  unchanged (G1), R1163's arithmetic with roles reversed. Not yet carried: *Reads and Writes* §0, essays 26 §7, 31 §8,
+  `crosshairs.html` (R1164's wording). Bar-steps step 25.
   R1169 (21 Nov; Tom: "so the read geometry is like an apparatus that follows you gaze."): **an apparatus that follows the
   gaze** (the stage recentred on each pick). Claude's reading, not ruled: the gaze the pick; no shape or size (R701, R728),
   following is recentring (not R1116's bouncing ball). Bar-steps step 24.
