@@ -145,3 +145,11 @@ pick changes. Claude's reading, not ruled: the old pick and the new are related 
 keeping the thumb, GEN G4), so a sweep gives directions and how they relate, and places nothing; what places is taking a
 new first point, where two picks of one thing from two taken points cross (parallax). Supersedes R1165's reading, which
 put an eye's offset into the sweep.
+
+**Step 22** (21 Nov; Tom: "this is interesting contrast to parallax which requires you to move. scanning a room without
+moving gives a continuous cauchy heat with a different selected second point."): **scanning without moving is a
+continuous Cauchy heat, recentred on each new second point; parallax needs a move, a new first point.** Claude's reading,
+not ruled: the heat's law is the same at every pick, since composition keeps the one weight (GEN G4, G5), so the scan
+changes where the heat is centred and what paints it, never the heat; the thumb's distance is assigned to each pick
+(step 16), so the near/far overlay slides with it (R703), as `crosshairs.html` already shows (H follows what the
+crosshairs point at); nothing is placed until a second first point is taken.
