@@ -576,6 +576,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1156 (21 Nov; Tom: "A single point creates the complete reader geometry. From that point, pick another point in 3d
+  space, any point, assign the distance of your thumb to this point."): one point, you; any other point picked and given
+  the thumb's distance. Claude's reading, not ruled: the assignment is choosing H, the point picked the corner and focus;
+  without it, directions and heat but no near or far. Bar-steps step 16.
   R1155 (21 Nov; Tom: "but what if one of those points is you, the pivot point."): one of the two points is you, the
   pivot; Claude's reading, not ruled: the pivot the standpoint, the trace one thumb off, its circle the near field's edge
   (R1116). Bar-steps step 15.

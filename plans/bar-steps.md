@@ -95,3 +95,14 @@ and the other point, the trace, is one thumb from you (step 14); turning it swee
 the trace walks per pointing is the heat as seen from where you stand (R1112). The circle it traces is one thumb about
 you, the near field's edge (R1116: the near field the bar itself, pivot to trace; the far field beyond the trace). So
 reader geometry is two points turned with you at one of them: a standpoint, a kept length, and a turn.
+
+**Step 16** (21 Nov; Tom: "how about this. A single point creates the complete reader geometry. From that point, pick
+another point in 3d space, any point, assign the distance of your thumb to this point."): **a single point, you, creates
+the complete reader geometry; from it pick any other point in space and assign it the thumb's distance.** Claude's
+reading, not ruled: the second point is not given but chosen, and its distance is not measured but assigned, so it is
+always one thumb off whatever point is picked; that assignment is choosing H (R226: the value that starts the system,
+any value; R264: it cannot be declined). With it the point picked sits at the corner, the split between near and far on
+every direction (R1116), and is where the look is (the focus at the corner, R500, R701); picking another point moves the
+corner and changes no reading's law (R1107, the stage the same). Without the assignment the single point still has every
+direction (the read's heat, which needs no H, R703) but no near or far. So steps 13–15's two points become one point and
+one choice.
