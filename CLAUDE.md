@@ -576,6 +576,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1152 (21 Nov; Tom: "So facing is not what Ai does?", "OK, let's move on from AI."): softmax has no facing; GPA H1's
+  split may be only the logits' spread (Φ(−σ), σ ≈ 1.5), a temperature; "a facing of its own" withdrawn. AI thread closed.
   R1151 (21 Nov; Tom: "Ok"): GPA run 2 (`runs/gpa/gpa2.py`), GPT-2 small and medium on WikiText test and *Pride and
   Prejudice*, predictions first: the facing from the query's own zero repeats (half the keys about 6% of the weight, H1),
   the sink 45–50% (H4), no knee (H5); H2 killed narrowly (centred PR 24.06 > 24, medium on WikiText; 10.4–14.5 elsewhere).

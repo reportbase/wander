@@ -127,3 +127,9 @@ centred ratio runs 2–7 in each model's early layers (small layers 2–4, mediu
 texts), and higher in later layers, where WikiText gives more than the novel (medium's late layers 26–31 against
 15–20). So "about 12 of 64" was GPT-2 small's; medium's median on Wikipedia text is twice it. One family of models,
 two texts.
+
+**A caution after run 2 (21 Nov 2026), not a test.** Calling H1's split "a facing" was premature. Softmax gives such a
+split by itself whenever a query's logits are spread: for roughly normal logits of spread σ, the weight below their mean
+is about Φ(−σ), so 6% needs only σ ≈ 1.5. H1's numbers may measure a learned sharpness (a temperature), not a boundary.
+A facing would be a hard edge unmoved by the spread; telling the two apart (per head, the share below the mean against
+Φ(−σ)) was offered as run 3 and not run. Then Tom: "OK, let's move on from AI." GPA is closed at run 2.
