@@ -96,3 +96,20 @@ equal extent the one assumption that puts the corner at 1 (G10), near and far wi
 (G11′), Euler's −1 as the exchange in fractions (G12), and no size anywhere (G13). Classical pieces, each named in the
 corpus before (PYT, PYK, WDG, INV, R1056); what is new is only that they all follow, in this order, from the start of
 step 17.
+
+### Run 3: the Cauchy as the conversion between the two placements (predictions)
+
+21 Nov; Tom: "Yes, the simplified cauchy derivation gives this modeling a great deal of credibility." Committed before
+`runs/gen/gen3.py` is written.
+
+**G14.** With the thumb on a leg, a pick at readings r = (s₁, …, sₙ) on the screen; with the thumb on the hypotenuse,
+its shadow r/√(1 + |r|²) one thumb out. A step of the pick on the screen moves the shadow by one slant factor h (the
+screen meets the pointing at a slant, h = 1/√(1 + |r|²)) and n distance factors h (the screen is 1/h thumbs out), so the
+shadow's measure per unit of screen measure is h^(n+1) = (1 + |r|²)^(−(n+1)/2). Checked exactly for n = 1, 2, 3 as the
+Gram determinant of the shadow map's derivatives (the square root of it, the n-volume factor), and separately the two
+factors: the step's part across the pointing is h times the step along the pointing's own direction removed, and the
+distance is 1/h.
+
+**G15.** Moving the thumb from one leg to the other is the exchange: in the plane the pick at s on the first leg's line is
+the pick at 1/s on the second's, and both lines' measures give the same shadow measure, so h² ds = (h′)² d(1/s) up to sign,
+and the corner s = 1 is the one pick where both placements put it at the same reading.
