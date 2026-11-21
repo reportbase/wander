@@ -578,6 +578,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1166 (21 Nov; Tom: "lets keep it abstract without eyes, just the geoemtry.   sweeping the sky is just picking a new
+  second point."): **a sweep is picking a new second point from the same first**; Claude's reading, not ruled: picks
+  related by composition alone, directions and no place; placing needs a new first point (parallax). Supersedes R1165's
+  reading. Bar-steps step 21. **For new writing: no eyes; say points taken and picked.**
   R1165 (21 Nov; Tom: "sweeping your eye across the sky is an interesting type of paralax, but only your eyes are
   moving."): recorded; Claude's reading, not ruled: the eye two points turned (centre of rotation the pivot, optical
   centre the trace ~7.6 mm out), a sweep's chord a baseline (ocular parallax, HTP), placing only to r·sin Δ/ε ≈ 4.5 m;

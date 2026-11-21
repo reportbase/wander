@@ -138,3 +138,10 @@ readings are the legs, all fractions, the one root left in the hypotenuse, which
 hypotenuse (step 19) stays as what the turn keeps, the rigid premise. Supersedes step 19 for the read. The hypotenuse is
 what the DHV calls the radius; in the single vantage, the trace's distance from the pivot; with the thumb on a leg it
 varies with direction, so there is no one radius. *Reads and Writes* §0, "A simpler start, and two ways to place the thumb".
+
+**Step 21** (21 Nov; Tom: "lets keep it abstract without eyes, just the geoemtry. sweeping the sky is just picking a new
+second point."): **a sweep is picking a new second point from the same first point.** The first point stays; only the
+pick changes. Claude's reading, not ruled: the old pick and the new are related by composition alone (s ⊕ a, the turn
+keeping the thumb, GEN G4), so a sweep gives directions and how they relate, and places nothing; what places is taking a
+new first point, where two picks of one thing from two taken points cross (parallax). Supersedes R1165's reading, which
+put an eye's offset into the sweep.
