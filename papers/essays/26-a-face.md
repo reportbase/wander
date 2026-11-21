@@ -219,11 +219,10 @@ a length of one thumb any more: each means something. (The pivot goes nowhere, s
 it is the thumb held against its own trace, one over Ω. And Ω × 1/Ω = 1 is only arithmetic; what is new is where each
 number sits.)
 
-Where the thumb goes matters only for how cleanly it reads (Tom, R1161). Lay it along the horizontal leg and the
-vertical leg simply is the reading, s, how tall in thumbs, with nothing divided; the distance from you to the trace is
-then derived, √(1 + s²) thumbs, and that root is the only one, sitting where no reading needs it. Lay it along the
-distance instead and the turn keeps it, but the legs become shares with the root inside them. Both give the same
-readings; the leg is the cleaner.
+The thumb is the distance from you to the trace (Tom, R1170): picking the second point sets it, and the turn keeps it.
+The legs are derived from it, shares of the thumb, and the reading s is their ratio, how tall against how far across.
+Laying the thumb along a leg instead would make the reading a leg and the arithmetic cleaner, but picking does not do
+that, and the turn would not keep it; so there is one way, the less clean one, and it is the one picking gives.
 
 So the turn is one sweep with two points, each with a job. Everything round is that sweep joined: two facings make the
 semicircle (2Ω, the writer's π), four the circle (4Ω), eight the sphere (8Ω, the writer's 4π). Every sweep in the join
@@ -283,7 +282,7 @@ The framing of this section is Tom's (SPN R1017, R1018, R1020–R1024, R1026, R1
 that give a facing "a half turn" (R233, R450, `facing.html`'s facing turning to 180°) predate it and are to be
 brought to it. Since R1043 the two facings are the near and far readings, s and 1/s; since R1110 Ω and 1/Ω sit at
 the two points, the trace and the pivot, and not on the facings; since R1153 and R1157 the two points are one taken and
-one picked from it, not a bar, and since R1161 the thumb lies on a leg.
+one picked from it, not a bar, and since R1170 the pick sets the thumb as the hypotenuse (R1161's thumb on a leg withdrawn).
 
 ## 8. What needs a face, and what does not
 
