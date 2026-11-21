@@ -576,6 +576,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1158 (21 Nov; Tom: "it has a v, h and depth in reader geometry, or x,y,z in writer geometry"): the picked point has
+  h, v and depth (read geometry; the three thumbs' readings, no unit) or x, y, z (write geometry, amounts in a unit).
+  Bar-steps step 18.
   R1157 (21 Nov; Tom: "this is a simpler starting point.    Take any point, from that point pick another point."): **the
   start: any point, and from it another point picked**; supersedes R1153 and R1156 as the start. Bar-steps step 17.
   **For new writing: begin the geometry with "take any point; from it pick another".**

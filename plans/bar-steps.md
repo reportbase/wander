@@ -113,3 +113,11 @@ step 16's "a single point" as where the steps begin: nothing is given but one po
 Claude's reading, not ruled: picking from the first point makes it the standpoint (R1155) and the second the trace;
 their distance is the thumb (R1154), assigned, not measured (step 16), so any pick will do; turning the pick gives the
 rest.
+
+**Step 18** (21 Nov; Tom: "it has a v, h and depth in reader geometry, or x,y,z in writer geometry", of the second
+picked point): **the picked point has h, v and depth in read geometry, or x, y, z in write geometry.** Claude's
+reading, not ruled: three numbers either way, the same count; in read geometry they are the three thumbs' readings
+(horizontal, vertical, depth, as in R670), shares of the one thumb, unmoved by scaling, the depth one thumb by the
+assignment (step 16), so the point is the corner in all three; in write geometry they are amounts in a unit, moved by
+scaling. Corrects Claude's answer the same day that the pick gives only a direction: it gives the point in its own three
+coordinates, none of them in a unit.
