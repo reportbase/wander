@@ -113,3 +113,12 @@ distance is 1/h.
 **G15.** Moving the thumb from one leg to the other is the exchange: in the plane the pick at s on the first leg's line is
 the pick at 1/s on the second's, and both lines' measures give the same shadow measure, so h² ds = (h′)² d(1/s) up to sign,
 and the corner s = 1 is the one pick where both placements put it at the same reading.
+
+### Run 3 (21 Nov; `runs/gen/gen3.py`, output `runs/gen/gen3-out.txt`)
+
+**G14 not killed**: the shadow's volume factor is 1/(1 + s²), (1 + s₁² + s₂²)^(−3/2) and (1 + s₁² + s₂² + s₃²)^(−2) for
+n = 1, 2, 3, exactly h^(n+1); the distance is 1/h, and a step's part across the pointing has squared length
+(1 + |r|² − s₁²)/(1 + |r|²) for a step along s₁, which is h² in the plane. In space, then, the slant falls only on the
+screen's direction toward the foot (the step across it is not slanted), so the count reads: one slant factor, for the
+one direction that runs toward the foot, and n distance factors. **G15 not killed**: the two legs' lines give the same
+shadow measure under s ↦ 1/s, and the one pick read alike from both is s = 1.

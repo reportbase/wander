@@ -130,6 +130,20 @@ on. The sweep is the trace walking evenly, so the heat each slope gets is 1/(1 +
 constant (§3, "The Cauchy, by the two points"). On the line of step 3 it is the same thing seen from the other side: equal
 turns land on the line crowded near the foot, 1/(1 + s²) per unit of s.
 
+*The Cauchy, as the change of placement* (Tom, R1163). The two placements of the thumb (steps 3 and 4) give each pick two
+places: on the line at the reading s, and one thumb out, its shadow. Move the pick along the line by ds and its shadow
+moves by h²·ds, for two reasons read off similar triangles. The line meets the pointing at a slant, so only h·ds of the
+step goes across the pointing; and the line is 1/h thumbs out, so that step shrinks by another h when brought in to one
+thumb. So 1/(1 + s²) is what the line costs in turn, per unit of reading: the Cauchy, with no angle, no arctangent and no
+change of variable. The count carries to every dimension: on a screen with n readings there is one slant (toward the
+screen's foot) and n factors of distance, so the shadow's measure per unit of screen is h^(n+1) = (1 + |r|²)^(−(n+1)/2),
+the plane's 1/(1 + s²), space's (1 + s² + s₂²)^(−3/2) and so on, one count instead of a result for each (GEN run 3).
+Two more things are seen in it. Moving the thumb to the other leg is the exchange s ↦ 1/s, and the corner is the one pick
+where it makes no difference which leg holds the thumb, which is why it splits the heat in half. And the tail: on the
+line the picks run off without end toward the horizon while their shadows stop at the vertical, a finite walk, so the
+law has a median and no mean. Each piece is classical (the lighthouse, the flat screen's cos³, the Jacobian of central
+projection); that they are one conversion between two placements of one thumb is the paper's reading.
+
 **6. The exchange and the corner.** Read the pointing from the other leg and the slope is 1/s: s faces V, 1/s faces
 away from V, and their product is 1, no facing, one thumb (§9). The walk ds/(1 + s²) is the same read either way, so the
 trace walks as far below s = 1 as above it. The point s = 1, where the exchange meets itself, is the *corner*: the
