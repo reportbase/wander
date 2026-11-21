@@ -82,3 +82,9 @@ name for what is turned (steps 1–12 and R1110–R1133 say "bar"; they describe
 - It settles R1124 against R1119 in R1124's favour: two points alone have no geometry (step 11, R1130); turned, they
   have all of it. The geometry is made by the rotation, not held by an object. R1127 (a previous write) stays open:
   whether two points set down are a write.
+
+**Step 14** (21 Nov; Tom: "That is your h", of the one premise in step 13, the two points' distance kept through the
+turn): **the distance kept between the two points is the thumb.** It is the one length given, so the premise the bar
+carried is not an extra: it is H itself. Claude's, not ruled: by the case rule, the kept distance as a length is H; in
+itself it is 1 (one thumb), and as the trace turns it splits into the shares h and v with h² + v² = 1, h = 1 at home.
+So "your h" is read as H, the thumb, with h its share along the first point's direction; Tom's lowercase kept as he wrote it.
