@@ -23,7 +23,7 @@ fractions.
 
 The order: a slope is a read (§1), derivatives without a limit (§2), summing and telescoping (§3), where N comes back
 (§4), the slope's own equation (§5), the clock is the completion (§6), where stepping needs N (§7), the sorting gathered
-(§9), what is classical and what is ours (§10), and what it changes (§11); between them, the bar at both ends (§8).
+(§9), what is classical and what is ours (§10), and what it changes (§11); between them, the pivot and the trace (§8).
 
 ---
 
@@ -155,38 +155,38 @@ did not commute (their difference reached 0.706 in one entry), and PSLQ found no
 for any entry of the first: no small rational step. That is not a proof that none exists, only that none of small height
 does. There, N comes back.
 
-## 8. The bar at both ends
+## 8. The pivot and the trace
 
-The sorting has a picture (Tom, R1113: "Does the bar extend to calculus"). Turn a bar a quarter turn about one end
-(essay 26 §7). One end, the pivot, points: its pointing is the slope s, and it travels nothing. The other end, the trace,
+The sorting has a picture (Tom, R1113: "Does the bar extend to calculus"). Take a point, pick another one thumb
+off, and turn the picked point a quarter turn about the first (essay 26 §7). The point taken, the pivot, points: its pointing is the slope s, and it travels nothing. The point picked, the trace,
 walks the arc. A step ds of pointing moves the trace by ds/(1 + s²), so the walk per unit of pointing is
 
   dw/ds = 1/(1 + s²) = h²,
 
 a fraction at every fractional s: the derivative of §2, given with no limit. The trace's whole walk over the quarter
 turn is Ω, which is the antiderivative's total of §3 and §4, the place where the integral leaves the fractions (the
-arctangent, the log part). So the two ends are the two halves of calculus: **the pivot is the derivative, 1/Ω, a read;
-the trace is the integral, Ω, the completion**. The bar joining them is the fundamental theorem: the walk the trace has
+arctangent, the log part). So the two points are the two halves of calculus: **the pivot is the derivative, 1/Ω, a read;
+the trace is the integral, Ω, the completion**. The turn joining them is the fundamental theorem: the walk the trace has
 made is the pointing's rate gathered along the way, and Ω × 1/Ω = 1 is that total measured by its own coefficient.
 
 Read the other way round, the pivot's pointing changes per unit walked as ds/dw = 1 + s². That is §5's slope equation
-in its plainest case: a bar turned steadily *is* the Riccati equation s′ = 1 + s². Its steps of pointing compose by
+in its plainest case: a point turned steadily about another *is* the Riccati equation s′ = 1 + s². Its steps of pointing compose by
 tangent addition, exactly, in fractions (RIC: three steps of 1/3 give 13/9); what the steps stand for in walk, the clock
-time of §6, is the trace's, and there the completion enters. ORB's oscillator is the same bar, its direction stepped by
+time of §6, is the trace's, and there the completion enters. ORB's oscillator is the same turn, its direction stepped by
 rational maps and its period the trace's.
 
 Two limits go with the picture. The pointing is a first derivative, the one §1 found unmoved by scaling; the trace's
-bend, 1 over the bar's length, is a second-order quantity, a write in a unit and a read only against the curve's own
-length or another curvature (§1). And the bar is one bar with one parameter: §7's s′ = t + s² has no one-parameter
-group, so no bar whose turn it is. The bar pictures the calculus that has the turn's symmetry, not calculus in general.
+bend, 1 over its distance from the pivot, is a second-order quantity, a write in a unit and a read only against the curve's own
+length or another curvature (§1). And the turn is one turn with one parameter: §7's s′ = t + s² has no one-parameter
+group, so no turn whose sweep it is. The two points picture the calculus that has the turn's symmetry, not calculus in general.
 
 What is classical: d(arctan s)/ds = 1/(1 + s²), tan solving s′ = 1 + s², and the fundamental theorem. What is the
-series': the derivative and the integral placed at the bar's two ends, the pivot's 1/Ω and the trace's Ω (R1110). A
+series': the derivative and the integral placed at the two points, the pivot's 1/Ω and the trace's Ω (R1110). A
 reading; no new run.
 
-Underneath the picture there is less still. The bar is an extent, and an extent is two points; turned about one of
-them, the two points are the pivot, 1/Ω, and the trace, Ω (R1130, R1131). The derivative at one, the integral at the
-other, and the fundamental theorem between are consequences of turning two points.
+Underneath the picture there is less still: one point taken, and one picked from it (R1157); turned about the first,
+the two are the pivot, 1/Ω, and the trace, Ω (R1130, R1131). The derivative at one, the integral at the
+other, and the fundamental theorem between are consequences of that one pick and its turn.
 
 ## 9. The sorting gathered
 

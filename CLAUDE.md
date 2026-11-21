@@ -576,6 +576,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1162 (21 Nov; Tom: "yes, explaining the gemoetry is built from one taken point, and one selected point is very
+  compelling."): *Reads and Writes* §0 "The geometry of one point taken and one point picked"; "bar" cleared from the paper
+  (§3 "The Cauchy, by the two points", §9 "The two points: Ω and 1/Ω"), essays 2, 14, 26 §7, 31 §8, `two-points.html`.
   R1161 (21 Nov; Tom: "Lets explain both derivations in the read write paper and explain why deriving the hypotneous is
   cleaner. is the hypotenous the radious?"): **for the read the thumb is a leg, the hypotenuse derived (cleaner: the
   readings are the legs, all fractions)**; the thumb as hypotenuse kept as what the turn keeps; supersedes R1159 for the
