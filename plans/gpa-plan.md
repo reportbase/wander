@@ -96,3 +96,34 @@ mean of the query's logits over its keys; the keys' participation ratio from the
 
 The bands are wide on purpose: run 1 gave 5.2%, 53% and 12.1 on one model and one text, and a second text or a model
 twice the depth could move them. A killed prediction stays killed; a fix is a new run with its own prediction.
+
+### Run 2 (21 Nov 2026)
+
+`python3 runs/gpa/gpa2.py` (about 25 minutes on four threads); output `runs/gpa/gpa2-results.json`. GPT-2 medium
+`model.safetensors` sha256 fc5a354a19255ad494f3d71549390baca1ccf61d1d822b9408971705c687c9cd; *Pride and Prejudice*
+`1342-0.txt` sha256 81300b79e8a8d65ac530a97578417d06137e3bbc90622a10a65e5036183d2500 (neither committed). Twenty
+blocks a cell, 4,960 queries a head.
+
+| cell | below: weight | below: count | PR centred | PR uncentred | sink | slope 1–8 | slope 16–128 |
+|---|---|---|---|---|---|---|---|
+| small, WikiText test | 5.5% | 52.9% | 11.4 | 3.1 | 45.7% | −0.88 | −0.81 |
+| small, *Pride and Prejudice* | 6.3% | 53.9% | 10.4 | 2.9 | 45.5% | −0.81 | −0.82 |
+| medium, WikiText test | 6.1% | 51.3% | **24.06** | 3.1 | 50.5% | −0.75 | −0.75 |
+| medium, *Pride and Prejudice* | 6.8% | 52.4% | 14.5 | 2.7 | 49.5% | −0.69 | −0.75 |
+
+- **H1 not killed:** in all four cells the median head puts 5.5–6.8% of its weight on the half of its keys (51–54% by
+  count) whose logits are at or below the query's own mean.
+- **H2 killed,** narrowly, by one cell: GPT-2 medium on WikiText puts its median head's centred participation ratio at
+  24.06 against my bound of 24. The other three cells are 10.4, 11.4 and 14.5.
+- **H3 not killed:** uncentred 2.7–3.1 in every cell, against centred 10.4–24.1; the shared offset is one direction in
+  both models and both texts.
+- **H4 not killed:** the median head puts 45–50% of its weight on the first token.
+- **H5 not killed:** no knee in either model; the two slopes differ by at most 0.07 (small) and 0.06 (medium), about
+  d^(−0.7) to d^(−0.9) throughout.
+
+**Reading, after the run, not a test.** The facing from the query's own zero repeats as predicted: half the keys, about
+6% of the weight, in two models and two texts. The keys' dimensions depend on the text and the depth: by layer the
+centred ratio runs 2–7 in each model's early layers (small layers 2–4, medium 2–5, the same 2.2 and 1.8 on both
+texts), and higher in later layers, where WikiText gives more than the novel (medium's late layers 26–31 against
+15–20). So "about 12 of 64" was GPT-2 small's; medium's median on Wikipedia text is twice it. One family of models,
+two texts.
