@@ -170,6 +170,37 @@ kept, give a second extent, measured in bars: parallax (Tom, R1123, R1129; EYE).
 in, turns that extent into a size. That is where the geometry hands over to physics, and physics hands back by giving
 the next bar to turn (Tom, R1127, R1128; §6, §7).
 
+**A simpler start, and two ways to place the thumb.** The steps can begin with less (Tom, R1157): take any point; from
+it pick another. The first is the pivot, the second the trace, and the distance between them is not measured but
+assigned. What the pick gives is three numbers, h, v and depth here, x, y and z in a write (R1158). The thumb can be
+placed on that distance in two ways, and both give the same read, because every reading is a ratio of legs (GEN, G1–G13,
+in `plans/gen-plan.md`).
+
+*The thumb as the hypotenuse* (R1159). The distance to the picked point is the thumb, 1, and the three legs are its
+shares: v1² + v2² + v3² = 1, each 1/√3 at the triple corner when the legs have the same extent. This is what the turn
+keeps (step 3), and it treats the three legs alike. But the legs carry a root, v1 = 1/√(1 + s² + s₂²); they are rational
+only through a half-slope (step 3, and §9's rational points), and each reading has to be divided out of them.
+
+*The thumb as a leg, the hypotenuse derived* (Tom, R1161). Put the thumb on one leg instead, v1 = 1. Then the other two
+legs simply are the readings, v2 = s and v3 = s₂, with nothing divided, and the hypotenuse is derived:
+√(1 + s² + s₂²) thumbs, √3 at the triple corner. Every leg is rational for every rational reading; the one root a read
+needs (step 3) sits only in the hypotenuse, which no reading uses. The points with that leg one thumb long lie on a flat
+screen square to it (in the plane, a straight line: the lighthouse's shore), so no circle appears at all, and the heat
+on the screen is the screen's own law, (1 + s² + s₂²)^(−3/2) before its constant, with no change of variable. It is the
+same division as "The paper in one equation" (§1): x² + y² + z² = r² divided by one coordinate is 1 + s² + s₂² = (r/x)².
+What it gives up is what the first way has: the turn does not keep this hypotenuse, which grows as √(1 + s²) and runs off
+toward the horizon, and one leg has to be chosen as the thumb.
+
+So deriving the hypotenuse is the cleaner way for the read: the readings are the legs, every number is a fraction, and
+the root is left where nothing reads it. The hypotenuse as the thumb is what the turn keeps, the rigid premise of
+step 3, and it is the way to state that premise.
+
+*Is the hypotenuse the radius?* "Radius" is the DHV's word for it (R1110): drawn from no standpoint, the hypotenuse is
+the radius of the sphere about the pivot through the picked point. In the single vantage it is the trace's distance from
+the pivot. With the thumb on the hypotenuse that distance is one thumb for every pick, and a writer drawing them all
+sees a sphere of radius 1. With the thumb on a leg it is √(1 + s² + s₂²), different for each direction, so there is no
+one radius and no sphere: the picks lie on the flat screen.
+
 **What the turn does not give.** It gives no size for anything met (V*), no paint, no position, and no value of Ω. The
 turn makes the stage, the same for every world (R1107); what lands on it, and how big it is, is the world's (R1119).
 

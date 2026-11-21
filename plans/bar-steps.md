@@ -130,3 +130,11 @@ three legs of equal extent the point is the triple corner and each leg is 1/√3
 the readings (ratios of legs) are the same whichever length is the unit. The equal extent is the one assumption, the
 three-leg form of V = V₂ = H (R238's centre). The thumb on each leg, the hypotenuse √3 (R670–R671, `crosshairs.html`'s
 H = depth/√3), is the unit cube's, the DHV's; flagged, not changed.
+
+**Step 20** (21 Nov; Tom, to the thumb on a leg with the hypotenuse derived, or the thumb as the hypotenuse: "i agree.
+Lets explain both derivations in the read write paper and explain why deriving the hypotneous is cleaner. is the
+hypotenous the radious?"): **for the read the thumb is a leg and the hypotenuse is derived; that is cleaner** (the
+readings are the legs, all fractions, the one root left in the hypotenuse, which no reading uses). The thumb as the
+hypotenuse (step 19) stays as what the turn keeps, the rigid premise. Supersedes step 19 for the read. The hypotenuse is
+what the DHV calls the radius; in the single vantage, the trace's distance from the pivot; with the thumb on a leg it
+varies with direction, so there is no one radius. *Reads and Writes* §0, "A simpler start, and two ways to place the thumb".
