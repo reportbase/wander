@@ -138,3 +138,34 @@ readings are the legs, all fractions, the one root left in the hypotenuse, which
 hypotenuse (step 19) stays as what the turn keeps, the rigid premise. Supersedes step 19 for the read. The hypotenuse is
 what the DHV calls the radius; in the single vantage, the trace's distance from the pivot; with the thumb on a leg it
 varies with direction, so there is no one radius. *Reads and Writes* §0, "A simpler start, and two ways to place the thumb".
+
+**Step 21** (21 Nov; Tom: "lets keep it abstract without eyes, just the geoemtry. sweeping the sky is just picking a new
+second point."): **a sweep is picking a new second point from the same first point.** The first point stays; only the
+pick changes. Claude's reading, not ruled: the old pick and the new are related by composition alone (s ⊕ a, the turn
+keeping the thumb, GEN G4), so a sweep gives directions and how they relate, and places nothing; what places is taking a
+new first point, where two picks of one thing from two taken points cross (parallax). Supersedes R1165's reading, which
+put an eye's offset into the sweep.
+
+**Step 22** (21 Nov; Tom: "this is interesting contrast to parallax which requires you to move. scanning a room without
+moving gives a continuous cauchy heat with a different selected second point."): **scanning without moving is a
+continuous Cauchy heat, recentred on each new second point; parallax needs a move, a new first point.** Claude's reading,
+not ruled: the heat's law is the same at every pick, since composition keeps the one weight (GEN G4, G5), so the scan
+changes where the heat is centred and what paints it, never the heat; the thumb's distance is assigned to each pick
+(step 16), so the near/far overlay slides with it (R703), as `crosshairs.html` already shows (H follows what the
+crosshairs point at); nothing is placed until a second first point is taken.
+
+**Step 23** (21 Nov; Tom: "lets say the readers geometry is the same no matter what he does. Say its a stage, and he
+just moves the stage when he picks a new second point. the stage never changes, but you can change where it is
+centered."): **the read geometry is one stage, the same whatever the reader does; picking a new second point moves the
+stage, recentring it, and never changes it.** Restates R1107 ("the stage is always the same") and R1041 ("the read is the
+stage") for a scan. Claude's reading, not ruled: moving the stage is composing by the turn to the new pick (s ↦ s ⊕ a),
+which carries the stage onto itself, its one weight unchanged (GEN G4, G5): every corner, median and share where it was
+relative to the centre, only the centre moved; a new first point moves the stage too, and two stages held together are
+what place a thing (parallax); the paint is the world's, met on the stage wherever it is centred.
+
+**Step 24** (21 Nov; Tom: "so the read geometry is like an apparatus that follows you gaze."): **the read geometry is
+like an apparatus that follows the gaze**: the stage of step 23, recentred on each pick. Claude's reading, not ruled:
+in the geometry's own terms the gaze is the second point picked (step 21); the apparatus has no shape and no size
+(R701, R728: heat, not a body), so following is recentring, not carrying a thing about (R1116 withdrew the bouncing
+ball because it gave the read a shape and bounced only in units); nothing in it is touched by what it follows, the
+world only paints it.

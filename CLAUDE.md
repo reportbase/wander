@@ -197,6 +197,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   `fid=addr`, by distance address: across equal angles (±75°), up the row (2/π)·atan(D/ρ) with heights at the rate
   (2/π)·D/(ρ² + D²), the thumb at the crosshair, rows one in 2, 4, 8 bunching under the horizon (labelled with words on).
   The toggle: by distance address / tunnel / equal area / by turns / silver ball / flat screen. Hook adds `addr()`, `cull()`.
+  Since R1164 the √3 (H the pointed thing's depth over √3) is said as the derived hypotenuse of three legs of one
+  thumb (R1161), not the cube's diagonal; no number changed.
   Since R698 (Tom: "Yes", to the tunnel as the quarter turn, after R696): the tunnel is drawn in the wedge only (`wedgeEdge`,
   35.26° at a home, 54.74° at a thumb, its rings clipped to it), the full round the menu's "tunnel turned all the way round"
   (`?round=1`); `tunnel()` adds `quarter` and `edge(β)`, `set` takes `round`.
@@ -576,6 +578,28 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1169 (21 Nov; Tom: "so the read geometry is like an apparatus that follows you gaze."): **an apparatus that follows the
+  gaze** (the stage recentred on each pick). Claude's reading, not ruled: the gaze the pick; no shape or size (R701, R728),
+  following is recentring (not R1116's bouncing ball). Bar-steps step 24.
+  R1168 (21 Nov; Tom: "the readers geometry is the same no matter what he does. Say its a stage, and he just moves the
+  stage when he picks a new second point."): **one stage, never changed; a new pick recentres it.** Claude's reading,
+  not ruled: the move s ↦ s ⊕ a carries the stage onto itself (G4, G5); two stages from two first points place a thing.
+  Bar-steps step 23; restates R1107, R1041.
+  R1167 (21 Nov; Tom: "scanning a room without moving gives a continuous cauchy heat with a different selected second
+  point."): **a scan is a continuous Cauchy heat recentred on each new pick; parallax a new first point.** Claude's
+  reading, not ruled: the law unchanged (G4, G5), its centre and paint moving, the near/far overlay with the pick's
+  thumb (R703, `crosshairs.html`). Bar-steps step 22.
+  R1166 (21 Nov; Tom: "lets keep it abstract without eyes, just the geoemtry.   sweeping the sky is just picking a new
+  second point."): **a sweep is picking a new second point from the same first**; Claude's reading, not ruled: picks
+  related by composition alone, directions and no place; placing needs a new first point (parallax). Supersedes R1165's
+  reading. Bar-steps step 21. **For new writing: no eyes; say points taken and picked.**
+  R1165 (21 Nov; Tom: "sweeping your eye across the sky is an interesting type of paralax, but only your eyes are
+  moving."): recorded; Claude's reading, not ruled: the eye two points turned (centre of rotation the pivot, optical
+  centre the trace ~7.6 mm out), a sweep's chord a baseline (ocular parallax, HTP), placing only to r·sin Δ/ε ≈ 4.5 m;
+  the sky a pure turn, directions only.
+  R1164 (21 Nov; Tom: "1,2"): `crosshairs.html`'s H = depth/√3 read as R1161's derived hypotenuse (the thumb on each
+  leg), not the cube's diagonal; wording only, R1159's flag closed. `parallax.md` §5½ in two points (pivot, trace, the
+  thumb); `v-and-h.md` a head note that its items' "bar" means two points turned, the items kept as the record.
   R1163 (21 Nov; Tom: "Yes, the simplified cauchy derivation gives this modeling a great deal of credibility."): **the
   Cauchy is the conversion between the two placements of the thumb** (h² = one slant × one distance; h^(n+1) with n
   readings); GEN run 3, G14, G15 not killed; *Reads and Writes* §0 step 5.
