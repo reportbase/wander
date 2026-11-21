@@ -68,3 +68,15 @@ s = 0 paired with the horizon (DHV).
 ## Runs
 
 *(nothing above this line is edited after the run)*
+
+### Run 1 (21 Nov; `runs/gen/gen.py`, output `runs/gen/gen-out.txt`)
+
+G1–G8, G10, G12, G13 not killed. **G9 killed by my tolerance**: the octant 1.0, the screen 1.0, the pair 0.5, the near
+field 0.333333333333 and one order 0.166666666667 to twelve digits, but I asked 10⁻³⁰ of a 40-digit quadrature over
+infinite ranges, and the octant's total reached only 7·10⁻²¹ (the pair and the near field were exact to 40). **G11
+killed by my code**: sympy's `simplify` left sech(ln d) − 2d/(1 + d²) unreduced; rewritten in exponentials it is 0, and
+the halves below and above d = 1 are equal and total 1 to 40 digits. Neither kill is the geometry's.
+
+Run 2's predictions, committed before `runs/gen/gen2.py` is written: **G9′**, the same five numbers within 10⁻¹⁸ of
+1, 1, ½, ⅓, ⅙; **G11′**, the identity checked after rewriting in exponentials, and the two halves equal and totalling 1
+within 10⁻³⁰.
