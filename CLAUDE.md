@@ -576,6 +576,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1150 (21 Nov; Tom: "proceed with 1 and 2"): #481 merged; essay 32, `papers/essays/32-reading-a-record.md`, *Reading a
+  record: what attention reads, and where it learns* (a phone keyboard): RAT, SCT, NAT, LNK, GPA as one essay, no new
+  claim. README row ("thirty-two essays"), `essays.html` card, smoke count 32 (not run).
   R1149 (21 Nov; Tom: "1"): GPA (`plans/gpa-plan.md`, `runs/gpa/`), GPT-2 small forward only: no knee in distance
   (d^(−0.85), G3 killed); q·k's sign no facing (G1 killed, my set-up); post hoc centred per query, half the keys get 5%
   of the weight; keys centred, 12 of 64 dimensions; 48% on the first token.
@@ -4609,7 +4612,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     thirty-one essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     thirty-two essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
