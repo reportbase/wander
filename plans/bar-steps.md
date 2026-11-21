@@ -71,3 +71,14 @@ extent has no trace; each line above uses both. The arithmetic is classical (d(a
 (the walk per pointing, the corner and the missing mean before the constant, one length the only given) is the series'.
 Tom, of its standing: "appreciation is a qualitive judgement so its a comment for a blog post not a math paper": the
 papers show what it derives, not how much it is valued.
+
+**Step 13** (21 Nov; Tom: "I don't think it's a bar, it's two points. The rotation of two points is the Genesis of reader
+geometry."): **not a bar: two points. Their rotation is the genesis of reader geometry.** Supersedes "the bar" as the
+name for what is turned (steps 1–12 and R1110–R1133 say "bar"; they describe the text before). Claude's, not ruled:
+- What the word "bar" carried that two points must still carry is their distance kept through the turn: the turn is a
+  rigid motion that returns (R1134's premise). Two points moving otherwise give no Cauchy (`two-points.html`: the sum and
+  the largest part give other heats).
+- Which point is the pivot is the standpoint; the other is the trace. Nothing else is given.
+- It settles R1124 against R1119 in R1124's favour: two points alone have no geometry (step 11, R1130); turned, they
+  have all of it. The geometry is made by the rotation, not held by an object. R1127 (a previous write) stays open:
+  whether two points set down are a write.
