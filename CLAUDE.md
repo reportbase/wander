@@ -578,6 +578,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1165 (21 Nov; Tom: "sweeping your eye across the sky is an interesting type of paralax, but only your eyes are
+  moving."): recorded; Claude's reading, not ruled: the eye two points turned (centre of rotation the pivot, optical
+  centre the trace ~7.6 mm out), a sweep's chord a baseline (ocular parallax, HTP), placing only to r·sin Δ/ε ≈ 4.5 m;
+  the sky a pure turn, directions only.
   R1164 (21 Nov; Tom: "1,2"): `crosshairs.html`'s H = depth/√3 read as R1161's derived hypotenuse (the thumb on each
   leg), not the cube's diagonal; wording only, R1159's flag closed. `parallax.md` §5½ in two points (pivot, trace, the
   thumb); `v-and-h.md` a head note that its items' "bar" means two points turned, the items kept as the record.
