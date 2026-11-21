@@ -578,6 +578,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  R1169 (21 Nov; Tom: "so the read geometry is like an apparatus that follows you gaze."): **an apparatus that follows the
+  gaze** (the stage recentred on each pick). Claude's reading, not ruled: the gaze the pick; no shape or size (R701, R728),
+  following is recentring (not R1116's bouncing ball). Bar-steps step 24.
   R1168 (21 Nov; Tom: "the readers geometry is the same no matter what he does. Say its a stage, and he just moves the
   stage when he picks a new second point."): **one stage, never changed; a new pick recentres it.** Claude's reading,
   not ruled: the move s ↦ s ⊕ a carries the stage onto itself (G4, G5); two stages from two first points place a thing.

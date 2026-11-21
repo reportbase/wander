@@ -162,3 +162,10 @@ stage") for a scan. Claude's reading, not ruled: moving the stage is composing b
 which carries the stage onto itself, its one weight unchanged (GEN G4, G5): every corner, median and share where it was
 relative to the centre, only the centre moved; a new first point moves the stage too, and two stages held together are
 what place a thing (parallax); the paint is the world's, met on the stage wherever it is centred.
+
+**Step 24** (21 Nov; Tom: "so the read geometry is like an apparatus that follows you gaze."): **the read geometry is
+like an apparatus that follows the gaze**: the stage of step 23, recentred on each pick. Claude's reading, not ruled:
+in the geometry's own terms the gaze is the second point picked (step 21); the apparatus has no shape and no size
+(R701, R728: heat, not a body), so following is recentring, not carrying a thing about (R1116 withdrew the bouncing
+ball because it gave the read a shape and bounced only in units); nothing in it is touched by what it follows, the
+world only paints it.
