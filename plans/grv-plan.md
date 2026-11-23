@@ -103,3 +103,16 @@ Against the run, what each part rests on:
 - *Both hemispheres*: V2 and V6.
 
 Standing: a reading of known physics; it predicts nothing new as it stands.
+
+Tom, later the same day: "gravity is the dhv read, two dhv reads combinin cleanly like cauchy shv reads". What it rests on, and
+where it stops:
+- *Combining cleanly, exactly*: the Cauchy is the Poisson kernel of the half-plane, and two of them compose to a third with the
+  heights added, P_h ∗ P_k = P_(h+k) (the family closed under its own combining; *Reads and Writes* §5, "The Cauchy averages to
+  itself"). Carrying a sheet's pull up by h and then by k is the same composition, since V4's kernel is that Cauchy: one semigroup
+  for both. And any two pulls add to a pull of the same kind (each is harmonic outside its matter, and sums of harmonic fields are
+  harmonic). Classical; the composition is not tested in run 1.
+- *Where it is not the Cauchy's closure*: two Cauchys sum to one Cauchy, exactly, at any separation. Two masses' pulls sum to one
+  mass's pull (the total at the centre of mass) only far off, the next terms down by (size/distance) each order (PAY, P4).
+- *The word*: the paper's dual hemispherical vantage is "held from no standpoint". Gravity's read is both hemispheres from one
+  standpoint. If gravity is the DHV's read, the DHV has a read and not only a blueprint, and that sentence of the paper changes:
+  Tom's to rule.
