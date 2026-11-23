@@ -140,3 +140,12 @@ Tom's summing up: "Gravity is just the dhv version of the shv cauchy read." Side
 - the first thing on a line | everything on the line (the column; V1, V7).
 "Just" is the part not shown: the list is of likenesses and exact identities in particular cases (the sheet), not a derivation of
 gravity from the Cauchy. A reading; nothing new is predicted.
+
+Tom: "Gravity is not a substance or particle.  Its a heat map." Against what is observed (nothing run):
+- *Not a substance*: general relativity's own position (the shape of space and time, no medium). Consistent.
+- *Not a particle*: no experiment has seen gravity come in quanta; the graviton is a hypothesis. Consistent with everything observed,
+  and not established: nothing has shown it is not quantised either.
+- *What a heat map must still carry*: gravity's changes travel, at light's speed, as waves (seen directly since 2015), and they
+  take energy from their sources (the Hulse–Taylor pulsar's orbit shrinking at the rate predicted, 1975 on). A map that is redrawn
+  outward with a delay gives the waves (the read is of an earlier write); that the redrawing costs the sources energy is not in
+  the heat-map picture as it stands. An open point for the reading, not a kill: nothing here was predicted.
