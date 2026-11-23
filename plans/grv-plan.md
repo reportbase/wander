@@ -116,3 +116,16 @@ where it stops:
 - *The word*: the paper's dual hemispherical vantage is "held from no standpoint". Gravity's read is both hemispheres from one
   standpoint. If gravity is the DHV's read, the DHV has a read and not only a blueprint, and that sentence of the paper changes:
   Tom's to rule.
+
+Tom: "The combined gravity dhv read creates the fingers thhe physics paints". What known physics has of it (nothing run here):
+- *The fingers are the paths light takes*, and gravity lays them: with no mass they are straight and the uniform turn's; with mass
+  they bend (gravitational lensing). At the standpoint the fingers are still the uniform turn, the Cauchy exact; what gravity
+  sets is where each finger leads.
+- *It moves addresses, not paint*: lensing keeps surface brightness along each line (Liouville's theorem; a static lens changes no
+  colour); it re-maps directions and with them a source's share of the sky. That is the paper's own split, an operation on
+  addresses that leaves the payload, as aberration is in "A moving sky".
+- *By the same columns*: a thin lens bends by its mass projected along the line of sight, Σ, the column of this plan's claim, the
+  bendings of separate masses adding in the weak field.
+- *Limits*: the bending is twice what Newton's pull alone gives (general relativity; 1919); in a strong field the bendings do not
+  simply add. Classical and observed; the sorting a reading. It asks one thing of *Reads and Writes*: "the fingers are given by the
+  turn" holds at the standpoint, and where they lead is laid by the combined pull. Tom's to rule.
