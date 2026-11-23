@@ -129,3 +129,14 @@ Tom: "The combined gravity dhv read creates the fingers thhe physics paints". Wh
 - *Limits*: the bending is twice what Newton's pull alone gives (general relativity; 1919); in a strong field the bendings do not
   simply add. Classical and observed; the sorting a reading. It asks one thing of *Reads and Writes*: "the fingers are given by the
   turn" holds at the standpoint, and where they lead is laid by the combined pull. Tom's to rule.
+
+Tom's summing up: "Gravity is just the dhv version of the shv cauchy read." Side by side, each line marked:
+- one hemisphere, with a look | both hemispheres, no look (V2, V6).
+- no amount laid on it | mass laid on it (V5).
+- unsigned: no reading carries a sign | signed: opposite sides oppose (V2).
+- no mean (the tail does not total) | a mean, the centre of gravity; with one hemisphere only, no limit either (V6, πR).
+- totals 1 | totals the mass enclosed (Gauss's law; classical, not run).
+- two combine to another, heights adding | two add to another pull; above a sheet the same kernel and the same adding (V4).
+- the first thing on a line | everything on the line (the column; V1, V7).
+"Just" is the part not shown: the list is of likenesses and exact identities in particular cases (the sheet), not a derivation of
+gravity from the Cauchy. A reading; nothing new is predicted.
