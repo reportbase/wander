@@ -82,3 +82,24 @@ standpoint of the mass along each, with no distance left in it (V1, V7); it adds
 met; it is taken over both hemispheres with direction, and only so does a uniform world give a finite answer (V2, V6: one
 hemisphere of a uniform world pulls by πR, growing without end; both by 0); above a sheet it is the Cauchy of the height laid on
 the density (V4), the height its level of detail, e^(−kh); and its size is a write while its ratios and shares are reads (V5).
+
+### After run 1: Tom's reading (23 Nov 2026), recorded in his words; not a run, and no ruling is numbered here
+
+Tom: "I think the idea that gravity is like a read, not a read, but the same in some ways,  an invarient like the cauchy heat map",
+then "Gravity is  the invarient combined heat map of writes.  Not calculated but combined like paralax reads." Earlier the same day:
+"Gravity requires two writes.  Parallax requires two reads.", "in this case the read is not shv because the mass of both hemispheres
+is read.", "Gravity is the stage, physics is the play".
+
+Against the run, what each part rests on:
+- *The invariant heat map*: the weight over directions is fixed before any matter and the same whatever the matter is (V1, V7);
+  above a sheet it is the Cauchy of the height, totalling 1 at every height (V4). Its total not changing with the arrangement is
+  Gauss's law, conservation of flux in three dimensions (classical; not tested here).
+- *Of writes*: what is laid on the map is mass, an amount; the pull's size moves with the scale, its ratios and shares do not (V5).
+  So it is like a read in its map and not a read in what the map carries.
+- *Combined, not calculated*: each mass lays its own map and the maps add, as two reads of a parallax cross: the geometry does the
+  combining and no one works it out. Reads combine by crossing and give a place, with nothing carried in; writes combine by adding
+  and give a pull. In Newton's gravity the adding is exact (superposition). **A limit, stated so it is not lost:** in general
+  relativity the maps do not simply add (the field is its own source), so "combined" is exact only in the weak field.
+- *Both hemispheres*: V2 and V6.
+
+Standing: a reading of known physics; it predicts nothing new as it stands.
