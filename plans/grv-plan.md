@@ -53,3 +53,32 @@ mpmath at 50 digits; "to 10⁻³⁰" means agreement past 30 digits. G = ρ = 1 
 ## Runs
 
 (appended below as they come out; nothing above this line edited afterwards)
+
+### Run 1 (23 Nov 2026; `runs/grv/grv.py`, output `runs/grv/grv-run1.txt`): V3 killed in one clause, by my guess
+
+- V1 not killed: the ball's pull by columns is (4/3)πR³/d² at d/R = 1.01, 2, 10 and 1000 (worst 6·10⁻⁵¹), which is (4/3)R times
+  the share π(R/d)².
+- V2 not killed: inside the spherical shell the column toward u is the column toward −u on all 40 directions at both points (worst
+  4·10⁻⁵¹): the pull is nothing pair by pair, not only in total.
+- **V3 killed in its first clause.** Between the cubes the pull is not zero (0.01654, the same to 2·10⁻⁶ over 100,000 and 400,000
+  directions), as predicted; but opposite columns differed by more than 10⁻³ on 12 of the 40 directions, not on half or more.
+  Post hoc: a ray that leaves the inner and the outer cube through faces of one axis has the column 0.5/|uᵢ|, and so has its
+  opposite; the pairs differ only where the two exits are on different axes, near the cubes' edges. So a cube's shell cancels pair
+  by pair over most of the sky and fails only toward its edges. The count was my guess; the claim it stood for (the pairing is the
+  sphere's) is not killed, but it is narrower than I wrote it.
+- V4 not killed: the sheet's pull is 2π(1 + ε·e^(−kh)·cos kx) at the three cases (worst 10⁻⁵⁰); over a uniform sheet it is 2π at
+  h = 10⁻³, 1 and 10³; the kernel over 2π totals 1; in the plane h/(2π(r² + h²)^(3/2)) totals 1 at h = ½, 1, 3 and is a quarter of
+  the wedge's law.
+- V5 not killed: at one density the pull goes as k, at one mass as 1/k²; the ratio of the two pulls stays 25/4 and the share ¼.
+- V6 not killed: the half-ball pulls its face's centre by πR by columns and by cylinders at R = 1, 10 and 10⁶; the whole ball by 0.
+- V7 not killed: the cap pulls by π·sin²(0.4) = 0.476411986899 at radius 1, 10 and 1000.
+
+Said plainly: V5 is an identity of V1's closed form, V7's radius cancels inside its own integrand, and the wedge clause of V4 is
+algebra; none of the three could fail as arithmetic. What could fail were V1 and V4 (quadrature against a closed form), V2 (a
+geometric fact about chords), V3 (a guess, and it did in one clause) and V6's cylinder form against its column form.
+
+What the run supports, as a sorting of known results and no more: Newton's pull is exactly a sum over the directions about a
+standpoint of the mass along each, with no distance left in it (V1, V7); it adds along a line where light takes the first thing
+met; it is taken over both hemispheres with direction, and only so does a uniform world give a finite answer (V2, V6: one
+hemisphere of a uniform world pulls by πR, growing without end; both by 0); above a sheet it is the Cauchy of the height laid on
+the density (V4), the height its level of detail, e^(−kh); and its size is a write while its ratios and shares are reads (V5).
