@@ -623,6 +623,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1185 (24 Nov; Tom: "lets add the gravity observations to the read&write paper. Its our internal working paper. In
+  future sessions we will try to tighen the connection between observation and gravity."): *Reads and Writes* §7 "Gravity
+  on the stage: what has been observed so far" (FCL's runs as a working record: where a pull keeps the read's law, where
+  it differs, corners an amount owns, five open items). **The place to start when tightening observation and gravity.**
+  The mathematics is known (Poisson kernel, geophysics' depth = half-width, upward continuation, Boole, Letac; from
+  memory); the tie to a standpoint's directions not seen, unsearched.
   R1184 (24 Nov; Tom: "not an insight about gravity, but about how cauchy connects observation and gravity."; "add this
   to the read & write paper because its about the read and dmv", read as DHV): the Cauchy is the law of anything even
   over directions from a point, laid on a plane; a look that with no amount over one hemisphere, a pull that with an
