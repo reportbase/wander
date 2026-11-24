@@ -600,6 +600,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   ratios); unmoved by scaling lengths or both masses; the centre of mass at 1/μ, ρ_meet²·ρ_centre = 1; equal pulls on
   Apollonius's sphere, every net pull there aimed at the meeting point; each mass its own Cauchy on the meeting plane,
   equal at the foot only, the totals' difference the same through every plane between.
+  Run 4 (the pair in orbit): five balance points for one at rest; the two off the line at a = b = D for every mass
+  ratio (the corner back at 1); between the masses the exponent ½ becomes ⅓ ((m/3)^(1/3)); unmoved by scaling when
+  the rate follows the masses. M1 killed by my search at m = 10⁻⁶; run 4b recounts (see the plan).
+  Run 5 (Tom: "proceed with 2"; light past a point mass, thin lens, in Einstein radii), nothing killed: two images with
+  u₊u₋ = −1, the Einstein ring the exchange's fixed circle, half of all images inside it for every sky; along a line
+  through the mass images Cauchy(z) come from sources Cauchy(z − 1/z) (centred: scale γ + 1/γ, least at the ring), and
+  Cauchy sources are seen as two Cauchys at z₁ and −1/z₁, z₁ + z₂ = w; over the whole screen the family breaks (density
+  zero on the ring, 0.144 from any centred 2D Cauchy). The ring is the play's corner, an amount. Classical.
   R1179 (24 Nov; Tom: "update the essays"): R1174–R1178 carried through the essays and README (23 files): a number in a
   unit is "an amount", never "a write" or "a writing"; a count "gives" a size. Left for Tom: "temporary writes" (R1048),
   "what is kept is a write" where the keeping is private, R568's wording, the older "writer". Physics paper, demos not swept.

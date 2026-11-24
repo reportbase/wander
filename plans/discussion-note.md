@@ -651,7 +651,14 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
     - **A pair has a meeting point, the exchange's fixed point** (run 3): the pulls cancel at ρ = √μ, ρ ↔ μ/ρ carrying
       the pulls' ratio to its reciprocal; its place a ratio of two masses only; the centre of mass (a mean) on the other
       side at 1/μ; off the line Apollonius's sphere, every net pull on it aimed at the meeting point.
-    - Next: what motion adds (run 4, the pair in orbit). Later candidates: what a second facing adds; whether a mass's
-      bending of directions keeps the Cauchy family (light); bodies with size.
+    - **Motion turns one meeting point into five** (run 4): the two off the line stand at equal distances from both
+      masses whatever the masses are (the corner back at 1); between the masses √m becomes (m/3)^(1/3). One count
+      killed by my search, recounted in run 4b.
+    - **Light past a mass: the ring is a corner, and on a line the bending is one of the Cauchy's own maps** (run 5):
+      two images exchanged by u ↔ −1/u, half of all images inside the Einstein ring for every sky; along a line
+      through the mass Cauchy stays Cauchy (z ↦ z − 1/z, and back as two Cauchys whose points add to the source's);
+      over the whole screen the family breaks, by the stretch round the ring. The ring's place is set by the mass, an
+      amount: the play's corner, where the look's is chosen.
+    - Later candidates: what a second facing adds; bodies with size; a lens off the line of sight's centre (two masses).
     Standing: a working thread. Nothing in any paper. What gravity is stays untouched (Tom: "what is gravity
     specificaly. but lets not get bogged down").

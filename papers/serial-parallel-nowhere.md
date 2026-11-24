@@ -7636,6 +7636,20 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   aims at the meeting point. On the plane through it each mass lays its own Cauchy (scales the two distances, totals
   the two masses), equal at the foot only; the totals' difference is the same through every plane between. Force shared,
   accelerations owned. At rest only; classical.
+  Then (Tom: "add it to to a note and proceed. whats next?") the thread gathered as `plans/discussion-note.md` item 24,
+  and FCL run 4 (`runs/fcl/fcl4.py`), the pair in orbit: five balance points for the one at rest; the two off the line at
+  equal distances from both masses, each the pair's separation, for every mass ratio (the corner back at 1, the ratio
+  gone from the place); between the masses the distance from the lighter goes as (m/3)^(1/3) where at rest it went as
+  √m; all unmoved by scaling while the turning rate follows the masses. M1 killed by my search (one point found of five
+  at m = 10⁻⁶); run 4b recounts.
+  Then (Tom: "proceed with 2") FCL run 5 (`runs/fcl/fcl5.py`), light past a point mass by the thin-lens equation, in
+  Einstein radii, predictions first, nothing killed: each source has two images with u₊u₋ = −1, the look's exchange
+  with the Einstein ring its fixed circle, and half of all images lie inside the ring for every sky; along a line
+  through the mass the map u − 1/u is one of the Cauchy family's own (images at z come from sources at z − 1/z; centred,
+  scale γ from γ + 1/γ, least at the ring; Cauchy sources are seen as two Cauchys at z₁ and −1/z₁, the points adding
+  to the source's); over the whole screen the family is not kept (image density zero on the ring; 0.144 from any
+  centred 2D Cauchy), broken by the stretch round the ring. The ring is a corner set by the mass, an amount, where the
+  look's is chosen. Classical (Einstein 1936, Refsdal 1964, Boole 1857); the lens equation taken, not derived.
 - **R1171** (21 Nov 2026; Tom: "this elimantes the two derivation paths, the less clean one is logically the correct one."): **one derivation: the pick sets the thumb as the hypotenuse and the legs are derived; the less clean path is the logically correct one.** *Reads and Writes* abstract and §0 (step 2 names it, step 3 "The legs, derived, and the readings", step 4 the turn keeping the thumb picked, step 5's Cauchy "as the cost of laying the readings on a line", step 13 each leg 1/√3, "One derivation, and why it is this one" replacing "Why the thumb goes on a leg", the radius one thumb for every pick); essay 26 §7 likewise. The arithmetic of R1163 unchanged. `crosshairs.html` (H = depth/√3) not yet changed.
 - **R1170** (21 Nov 2026; Tom: "I'm having second thoughts hypotenous.    selecting the second point is setting the hypoetnous or radious, not the legs."): **selecting the second point sets the hypotenuse, the radius, not the legs.** Supersedes R1161 and restores R1159 as the start: the pick one thumb away, the legs its derived shares (1/√3 each at the triple corner, equal extent assumed). Claude's reading, not ruled: no reading changes (ratios of legs, GEN G1); R1163's arithmetic stands with the roles named the other way (the pick on the thumb's turn, a leg's line a screen, h² the conversion). Not yet carried: *Reads and Writes* §0, essays 26 §7 and 31 §8, `crosshairs.html` (H = depth/√3, the thumb on each leg; R1164 to be undone). `plans/bar-steps.md` step 25.
 - **R1169** (21 Nov 2026; Tom: "so the read geometry is like an apparatus that follows you gaze."): **the read geometry is like an apparatus that follows the gaze**, step 23's stage recentred on each pick. Claude's reading, not ruled: the gaze is the second point picked (R1166); the apparatus has no shape or size (R701, R728), so following is recentring, not carrying a body about (R1116's bouncing ball withdrawn for giving the read a shape); the world only paints it. `plans/bar-steps.md` step 24.

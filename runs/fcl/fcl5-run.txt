@@ -1,0 +1,18 @@
+FCL run 5, mpmath 30 digits
+
+L1: not killed (u+ u- off -1, or the lens equation, by at most 1.67e-28)
+L2: not killed (inside, outside of 20,000 sources: [('cauchy', 20000, 20000), ('gauss', 20000, 20000), ('disc', 20000, 20000)]; magnifications differ from 1 by 7.26e-29)
+  L3 images at z = (0.0 + 1.0j): sources at (0.0 + 2.0j)
+  L3 images at z = (0.0 + 0.3j): sources at (0.0 + 3.6333333j)
+  L3 images at z = (0.7 + 0.4j): sources at (-0.37692308 + 1.0153846j)
+  L3 images at z = (-2.0 + 1.5j): sources at (-1.68 + 1.74j)
+  L3 images centred on the mass, scale -> sources' scale: 0.25 -> 4.25, 0.5 -> 2.5, 1 -> 2.0, 2 -> 2.5, 4 -> 4.25
+L3: not killed (largest gap in the distribution function 4.93e-31)
+  L4 sources at w = (0.0 + 2.0j): images' two points (0.0 + 1.0j) and (0.0 + 1.0j)
+  L4 sources at w = (1.0 + 0.5j): images' two points (1.5956803 + 0.36408438j) and (-0.59568027 + 0.13591562j)
+  L4 sources at w = (-3.0 + 0.2j): images' two points (0.30192387 + 0.01675564j) and (-3.3019239 + 0.18324436j)
+L4: not killed (largest gap in the density 8.22e-30)
+  L5 images inside and outside the ring: 1.0, 1.0; density on the ring 0.0
+  L5 least gap from a centred 2D Cauchy: 0.144238 at scale 1.71
+L5: not killed 
+L6: not killed (an identity; nothing run)

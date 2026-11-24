@@ -390,3 +390,48 @@ number is a guess from a few points worked by hand.
   which a line does not have. Kill: density on the ring not zero; or the least gap under 0.08.
 - **L6, the scale test.** L1–L5 are stated in Einstein radii and hold for every mass and distance. The radius itself
   is an amount: with the mass fixed and every length scaled by k it scales as k^(−1/2) as an angle. An identity.
+
+### Run 5 (24 November 2026; `runs/fcl/fcl5.py`, output `runs/fcl/fcl5-run.txt`; a few seconds)
+
+| | result | verdict |
+|---|---|---|
+| L1 | u₊·u₋ = −1 at six y (10⁻²⁸) | not killed |
+| L2 | 20,000 inside and 20,000 outside for each of three skies; the magnifications differ by 1 (10⁻²⁹) | not killed |
+| L3 | images Cauchy(z) give sources Cauchy(z − 1/z) for four z (10⁻³¹); centred, scale γ gives γ + 1/γ: 4.25, 2.5, 2, 2.5, 4.25 at γ = ¼, ½, 1, 2, 4 | not killed |
+| L4 | the images' density is the sum of the two Cauchys at z₁ and −1/z₁, three w, twelve u (10⁻³⁰) | not killed |
+| L5 | the image density on the ring exactly 0; inside and outside each hold 1.0; least gap from a centred 2D Cauchy 0.144 (at scale 1.71), above my 0.08 | not killed |
+| L6 | an identity, nothing run | not killed |
+
+Nothing killed. Read off the output afterwards, not predicted (both are one line of algebra once seen):
+
+- The two image points add to the source's: z₁ + z₂ = w (0.364 + 0.136 = 0.5 in height at w = 1 + 0.5i). The source's
+  standpoint is the sum of its images' standpoints, as added readings add their points (SUM, R358).
+- A centred sky of scale exactly 2 Einstein radii has both image points at i: its images along a line are one Cauchy,
+  of scale the Einstein radius, counted twice.
+
+### What run 5 says, as a reading (Claude's, not ruled)
+
+**Along a line through the mass the bending keeps the Cauchy family; over the whole screen it does not.**
+
+- **The ring is a corner, and the bending brings the look's exchange with it.** Every source has two images with
+  u₊·u₋ = −1 (L1): the exchange s ↔ 1/s, with a change of side, and the Einstein ring its fixed circle. Half of all
+  images lie inside the ring whatever the sky is (L2). That is the corner's property (half each side, for every
+  payload), but here the corner's place is set by the mass: it is the play's corner, an amount, where the look's corner
+  is chosen with the thumb.
+- **On a line the lens is one of the family's own maps.** Reading u − 1/u along a line through the mass, Cauchy images
+  come from Cauchy sources at z − 1/z (L3), and Cauchy sources are seen as two Cauchys, one for each image, their points
+  swapped by the ring's exchange and adding to the source's (L4). So here Tom's "it merges and combines and remains a
+  cauchy" holds exactly for the bending: the mass moves the standpoint and doubles it, and leaves the law.
+- **The sources' spread is least when the images sit at the ring.** Images centred on the mass with scale γ come from
+  sources of scale γ + 1/γ (L3): least at γ = 1, the same at γ and 1/γ. The exchange again, on the scale.
+- **Over the whole screen the family breaks** (L5): the images of a Cauchy sky are no Cauchy, their density zero on
+  the ring. What breaks it is the stretch round the ring (the tangential magnification), which the line does not have.
+  It is the same split as the boosted sky's lens (IMS, `boost-sky.html`): a map that is one of the family's own keeps
+  it, a map with a stretch of its own does not. A turn and a boost are the family's own on the whole sky; a mass's
+  bending is the family's own only along lines through the mass.
+
+Limits. A point mass, weak bending, small angles, a flat screen; the thin-lens equation is taken, not derived, and the
+size of the Einstein radius (general relativity's factor) is not tested. Classical: Einstein 1936 and Refsdal 1964 for
+the lens, Boole 1857 and Letac 1977 for u − 1/u keeping the Cauchy (cited from memory, not opened). The statement on a
+line is about sources and images along one line through the mass with the line's own measure, not a slice of a 2D sky.
+Not claimed: that the bending is a read, or anything about what gravity is.
