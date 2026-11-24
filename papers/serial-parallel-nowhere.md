@@ -7607,6 +7607,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1190** (24 Nov 2026; Tom: "The cauchy provides new ways to think about gravity.   Even small insights are
+  valuable."): **the Cauchy provides new ways to think about gravity, and small insights count.** Narrows R1184's rule
+  as Claude had written it ("never present FCL as an insight about gravity"): what R1184 excludes is a claim of new
+  physics or a mechanism; a way of thinking about known gravity is allowed and is the thread's product. Claude's
+  reading, not ruled: "new" is said of the way of thinking, not of the formulas (classical) nor of the core fact (in
+  print for light, `plans/fcl-literature.md`). The small insights so far, each from a run: a pull through a plane has
+  the look's corners, with no amount (2); the depth of a buried line is its profile's half-width, read with no density
+  (7, 11); two pulls cancel at the fixed point of an exchange, ρ = √μ (3); the Einstein ring is the exchange's fixed
+  circle and a line of lens masses keeps the Cauchy (5, 8); masses stand to pulls as V to a read, in no ratio of
+  directions (9); a look's halves add and a pull's subtract, a median against a first moment (6, 10). R1183 and R1173
+  stand: a pull is not a read; no new physics.
 - **R1189** (24 Nov 2026; Tom: "Same results with cauchy framing to classical is a result in it self"): **that the
   Cauchy framing gives the same results as the classical treatment of gravity is itself a result**, as R403, R950 and
   R1062 have it for the read (a tie shows correctness; a disagreement would be the discovery; the forms are judged by
