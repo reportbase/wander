@@ -243,3 +243,49 @@ theorem, Newton's third law). What is being looked for is how it sorts.
   in the ratio 1/μ. An identity, listed for the sorting: the product shared, the ratio owned, as for two looks (MRL).
 
 Not in this run: motion (orbits, the rotating frame's balance points), more than two masses, bodies with size.
+
+### Run 3 (24 November 2026; `runs/fcl/fcl3.py`, output `runs/fcl/fcl3-run.txt`; 25 seconds)
+
+| | result | verdict |
+|---|---|---|
+| T1 | the pulls cancel at ρ = √μ at all five μ (10⁻⁴²): x = ⅓, ½, ⅔, ¾, 0.9002 D; no other zero from 400 starts | not killed |
+| T2 | ratios at ρ and μ/ρ multiply to 1, the ratio μ/ρ², over 30 pairs (10⁻³⁹) | not killed |
+| T3 | ρ_meet² · ρ_centre = 1; opposite sides of the middle; unmoved by lengths × 7 and by both masses × 7; one mass × 7 moves it | not killed |
+| T4 | equal pulls on the sphere at 200 points (10⁻⁴⁰), at none of 200 points off it | not killed |
+| T5 | the net pull aims at the meeting point at all 200 points of the sphere (10⁻³⁹) | not killed |
+| T6 | each total 2πGM; the ratio 1 at the foot, rising to μ^(3/2) (8, 27, 733.05); the net the same through another plane | not killed |
+| T7 | an identity | not killed |
+
+Nothing killed, and as said beforehand nothing here could have been killed by the world. Not predicted, read off the
+output: one lighter-distance out from the foot on the meeting plane the heavier's crossing is already 2.02, 2.41, 2.78
+times the lighter's (μ = 4, 9, 81.3).
+
+### What run 3 says, as a reading (Claude's, not ruled)
+
+**Yes: the pair has a meeting point of its own, and it is a corner in the look's sense.**
+
+- **The meeting point is the exchange's fixed point.** Along the line between the two, the pulls' ratio is μ/ρ², and the
+  places ρ and μ/ρ carry reciprocal ratios (T2). The one place left alone is ρ = √μ, where the pulls are equal and
+  cancel (T1). For two looks the corner is where the readings multiply to 1 (MUT, MRL); here it is where the pulls'
+  ratio is 1. The same exchange, with the corner moved from 1 to √μ by the play.
+- **Where it stands is a ratio of two masses, nothing else.** It does not move when every length is scaled, or when
+  both masses are scaled together; it moves when one mass changes (T3). So its place, in units of the separation, is a
+  number without a unit that only the two masses set: by R1178's wording, a ratio of two writes.
+- **Two centres, one for each kind of arithmetic.** The meeting point sits at √μ, toward the lighter; the centre of
+  mass at 1/μ, toward the heavier; ρ_meet² · ρ_centre = 1 (T3). The centre of mass is a mean (a sum over the masses,
+  the play's own arithmetic); the meeting point is the exchange's fixed point (the stage's). They agree only when the
+  masses are equal, at the middle.
+- **Off the line, the corner is a sphere, and every pull on it aims at the meeting point** (T4, T5). The places of
+  equal pull are Apollonius's sphere round the lighter mass; on it the net pull is the bisector, and all the bisectors
+  pass through the one meeting point. At equal masses the sphere opens into the middle plane.
+- **On the plane through the meeting point each mass lays its own Cauchy, on one stage** (T6): the same law, scales the
+  two distances, totals the two masses. They cancel at the foot only. The totals do not cancel and do not depend on
+  where the plane stands: 2πG(M₁ − M₂) through every plane between. So the meeting point is a matter of the heat at one
+  place, not of the totals.
+- **Shared and owned** (T7): the force is the pair's, one number; the accelerations are each one's own, in the ratio of
+  the masses. For two looks the product was shared and the ratio owned (MRL); here likewise.
+
+Limits. Classical throughout (the neutral point, Apollonius, the bisector theorem, Newton's third law), and every
+prediction was worked out beforehand, so this run is a sorting, not a test. Two points at rest: with the pair in orbit
+the balance points are others (Lagrange's), since the turning adds its own term; not looked at. The meeting point is a
+saddle, not a resting place (Earnshaw): a thing put there stays only on the line's cross directions.

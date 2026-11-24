@@ -595,6 +595,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   look's corners (½ within one height across a thumb, x ↔ d²/x; ⅓ in the square; ½ within √3 round the foot); along the
   line through a ball, proportion inside and inverse square outside, greatest at the surface, not the look's exchange.
   C2 killed by my bound, C4 by my code, C4′ not.
+  Run 3 (Tom: "proceed"; two masses on each other's stage), nothing killed, all derived beforehand (a sorting): the pulls
+  cancel at ρ = √μ (ρ the distances' ratio, μ the masses'), the fixed point of the exchange ρ ↔ μ/ρ (reciprocal pull
+  ratios); unmoved by scaling lengths or both masses; the centre of mass at 1/μ, ρ_meet²·ρ_centre = 1; equal pulls on
+  Apollonius's sphere, every net pull there aimed at the meeting point; each mass its own Cauchy on the meeting plane,
+  equal at the foot only, the totals' difference the same through every plane between.
   R1179 (24 Nov; Tom: "update the essays"): R1174–R1178 carried through the essays and README (23 files): a number in a
   unit is "an amount", never "a write" or "a writing"; a count "gives" a size. Left for Tom: "temporary writes" (R1048),
   "what is kept is a write" where the keeping is private, R568's wording, the older "writer". Physics paper, demos not swept.
