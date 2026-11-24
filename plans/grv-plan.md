@@ -149,3 +149,17 @@ Tom: "Gravity is not a substance or particle.  Its a heat map." Against what is 
   take energy from their sources (the Hulse–Taylor pulsar's orbit shrinking at the rate predicted, 1975 on). A map that is redrawn
   outward with a delay gives the waves (the read is of an earlier write); that the redrawing costs the sources energy is not in
   the heat-map picture as it stands. An open point for the reading, not a kill: nothing here was predicted.
+
+Tom (24 Nov): "Let's say gravity sweeps outwards from the center of gravity in every directions.   Think cauchy in all directions at
+once." What it comes to, from results already in the corpus (nothing run here):
+- *The source's side of the same kernel.* A point mass's pull, counted as flux, is uniform over the sphere of directions about it
+  (Gauss: 4πGM in all, whatever surface catches it). On any flat plane a distance d off, the flux through the plane is
+  GM·d/(d² + r²)^(3/2), which is 2πGM times the two-dimensional Cauchy of scale d: the lighthouse, sending in every direction at
+  once, its standpoint the mass, m + i·d. Half of all the flux crosses any plane, at every d; a share 1 − 1/√(1 + (r/d)²) lands
+  within r of the foot (half within √3·d); the inverse square GM/d² is the kernel's height at the foot. ISR has the same for light
+  (`plans/isr-plan.md`); V4 here is the receiver's side, the same kernel with source and receiver exchanged (reciprocity).
+- *"From the centre of gravity"* is exact outside a spherically symmetric body (Newton; V1) and for one point mass; for any other
+  body it is the first term, the next down by (size/distance) each order (PAY, P4).
+- *"Sweeps"* in the paper's sense (R454): the geometry's, not an act in time; nothing travels in a steady pull. A change in the
+  source does travel, at light's speed.
+A reading of known results; the sorting ours.
