@@ -201,3 +201,45 @@ a look. The radius is the play's, a size; the thumb is chosen.
 
 Limits. Classical throughout (the Cauchy's marginals, the solid angle of a disc and of a square, Newton's shell theorem).
 C5 is an identity. The ball is uniform; a body denser at its centre has its greatest pull inside its surface.
+
+## Run 3: two masses on each other's stage
+
+Tom, 24 November, after run 2: "proceed" (to Claude's next small step: "two masses on each other's stage: whether the
+pair has a meeting point of its own, like the pair's corner for two looks").
+
+Set-up. Two point masses, M₁ at the origin and M₂ a distance D along the axis, μ = M₁/M₂. A place on the axis between
+them is named by ρ = x/(D − x), its distance from M₁ over its distance from M₂ (a ratio of two distances, no unit). A
+place anywhere is named by a and b, its distances from M₁ and M₂. Exact, mpmath, 40 digits; μ = ¼, 1, 4, 9, 81.3.
+
+Said beforehand: every prediction below I worked out on paper before writing it, so each can fail only by my algebra or
+my code, not by the world. All of it is classical (the neutral point, the circle of Apollonius, the angle bisector
+theorem, Newton's third law). What is being looked for is how it sorts.
+
+### Predictions (committed before running)
+
+- **T1, the meeting point.** The two pulls cancel at exactly one place, on the axis between the masses, at ρ = √μ. Off
+  the axis they cancel nowhere. Kill: the axis zero off √μ past 10⁻³⁰; or a second zero found from 400 seeded starts in
+  space.
+- **T2, the exchange.** On the axis between the masses the pulls' ratio is |g₁|/|g₂| = μ/ρ². The places ρ and μ/ρ have
+  reciprocal ratios, and the one place the exchange leaves alone is the meeting point: the look's exchange s ↔ 1/s with
+  its corner, moved to √μ. Kill: the product of the ratios at ρ and μ/ρ off 1 past 10⁻³⁰ at any of six ρ.
+- **T3, two centres.** The meeting point (ρ = √μ) and the centre of mass (ρ = 1/μ) lie on opposite sides of the middle
+  for every μ ≠ 1, with ρ_meet² · ρ_centre = 1; both sit at the middle only at μ = 1. Both are unmoved by scaling every
+  length by 7 and by scaling both masses by 7; both move when one mass alone is scaled. Kill: any clause off past 10⁻³⁰.
+- **T4, the sphere of equal pulls.** The places where the two pulls are equal in size are a sphere (Apollonius): a/b =
+  √μ, centre on the axis at D·μ/(μ − 1) from M₁, radius D·√μ/|μ − 1|; at μ = 1 the plane through the middle. It passes
+  through the meeting point. Kill: |g₁| − |g₂| off zero past 10⁻³⁰ relative at any of 200 seeded points of the sphere,
+  or zero at any of 200 seeded points off it (nearer than 10⁻³ relative counts as zero).
+- **T5, every pull on that sphere aims at the meeting point.** At each place of the sphere the net pull points exactly
+  at the meeting point (the inner bisector). Kill: the net pull's direction and the direction to the meeting point
+  differing by more than 10⁻³⁰ at any of 200 seeded points.
+- **T6, the plane through the meeting point.** Square to the axis there, each mass lays its own Cauchy on the plane, of
+  scale its own distance (x and D − x) and total 2πG times its own mass, the two crossing in opposite senses. They are
+  equal at the foot and nowhere else: off the foot the heavier's is the larger everywhere, their ratio rising steadily
+  from 1 to μ^(3/2) far out (μ > 1). The net crossing is 2πG(M₁ − M₂) through this plane and through every plane
+  between the masses, wherever it stands. Kill: either total off 2πGM past 10⁻²⁰; the ratio at the foot off 1 or its
+  far limit off μ^(3/2) past 10⁻⁶ (at r = 10⁶ D); the ratio not increasing along 60 radii.
+- **T7, shared and owned.** The force on each is the same size (M₂·g₁ at M₂ equals M₁·g₂ at M₁); the accelerations are
+  in the ratio 1/μ. An identity, listed for the sorting: the product shared, the ratio owned, as for two looks (MRL).
+
+Not in this run: motion (orbits, the rotating frame's balance points), more than two masses, bodies with size.
