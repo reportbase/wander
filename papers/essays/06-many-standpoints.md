@@ -61,8 +61,8 @@ The number had from two reads a tick apart is exactly the distance over the step
 distances, as a distance in thumbs is. Calling that number a time adds a premise no read supplies, that the steps to
 come go on like the one taken; so the time to contact is not listed among the extents, and its kind as a time is left
 open. The braking rule, ticks per tick, is unmoved by any clock and by scaling the world, and it is no read either,
-since no single read holds a rate of change. Only seconds make a write: a unit carried in from a clock. The rate at which the standpoint turns cancels from every reading,
-as the thumb's length does. And a speed in metres a second is a writing twice over: a metre and a second, both carried in.
+since no single read holds a rate of change. Only seconds make an amount: a unit carried in from a clock. The rate at which the standpoint turns cancels from every reading,
+as the thumb's length does. And a speed in metres a second is an amount twice over: a metre and a second, both carried in.
 
 **A shared denominator gives relative payloads.** Two readings taken at the same moment against the same thing, say two
 objects side by side at the same distance, have a ratio in which the distance cancels. So a neighbour at the same depth
@@ -302,11 +302,11 @@ in it moves when the world is scaled.
 
 The face, the surface between the edges, needs more: how far the surface lies along each direction, an amount in a unit.
 A range gives it, the time for a signal to go out and come back, times the signal's speed. That speed is an amount
-measured beforehand and carried in. So ranging is writing. With the ranges, every point met is held in the speed's unit,
+measured beforehand and carried in. So a range is an amount, not a read. With the ranges, every point met is held in the speed's unit,
 and with it the face, the thing's distance and its speed.
 
 From one place, then, the directions, their heat, their paint and the outline come free. The face needs an amount along each
-direction, written, or further standpoints.
+direction, had by ranging with its unit carried in, or further standpoints.
 
 Say it plainly: **a read never has a shape.** One look has the sweep, the same directions with the
 same heat for every world, and the paint on them. *The heat is given; the paint is met.* A thing is to it the directions
@@ -329,7 +329,7 @@ Minkowski problem, 1903; in vision, Horn's extended Gaussian image, 1984). Plane
 of spherical harmonics in the radius.
 
 What the reading adds is where each part of that function comes from. The directions, with their heat, are the same for every
-shape. The radius along each is an amount, the payload, had only by ranging, which is writing, or from further standpoints.
+shape. The radius along each is an amount, the payload, had only by ranging, which carries a unit in, or from further standpoints.
 Write the outline as ln r = a₀ + f(θ): the constant a₀ is the one term no ratio of radii reads, so the normalisation the
 descriptors make by choice is here what reading leaves out. The terms of f, taken in order, are detail, the broad form
 first. The classical treatments begin with r(θ) in hand; the reading says what it cost to get it.
@@ -353,7 +353,7 @@ room and the step are scaled together. That was the first essay's opening scene.
 Then the first essay's distinction returns in a practical form. **To move the furniture is to write.** An observer that wants
 a chair a metre from the wall, or a picture at eye level, wants a thing to be at an amount, and no reading holds that. It
 must write, and writing needs what reading never does: the observer must move and engage with the room
-physically. A known step, a hand laid flat against the wall, a tape measure. One amount carried in writes every length of
+physically. A known step, a hand laid flat against the wall, a tape measure. One amount carried in gives every length of
 the room in its unit, and only then can the place wanted be named. (Placing the chair three strides from the wall needs
 no unit: that is a count of strides, and the strides are the writes. The metre puts it down as an amount in a unit.) Reading the room again afterwards is free.
 
@@ -413,16 +413,16 @@ So parallax is how an observer comes to the places the DHV's cube states, up to 
 Two standpoints held at once, two eyes, have the extent by reading alone, a ratio of their slopes. An observer that
 moved to its second standpoint kept its first look and took a step, and the mark that keeps and the stride taken are
 writes; what it then holds, every place in its own stride, is still unmoved when the world is scaled with the stride.
-Put down in an agreed unit, the places are amounts, writes. When it stops and looks again, it reads. Reading and
+Put down in an agreed unit, the places are amounts, bookkeeping about writes. When it stops and looks again, it reads. Reading and
 writing are not kinds of observer; they are what one observer is doing (the sorting is the series' reading).
 
 The first essay's survey says the same thing in its own words: the many directions are read (the instrument writes each
-down in degrees), with the base as the thumb every side is an extent, and the one base counted in a unit is the write; a
+down in degrees), with the base as the thumb every side is an extent, and the one base walked is the write, its count in a unit the one amount; a
 surveyor does all of it in one morning.
 
 And the passage has degrees. Knowing V, the mountain in the distance, is not a switch thrown by the second standpoint; it
 comes in amounts, three ways. *In what:* in the step taken, in H if the step was H (one thumb, and extents come out in
-thumbs, V placed as V\*/H), in metres only if the step was counted in metres, the one write. *How well:* the fractional error in the distance, and so in V, is ε·cosh(ln k) with k = d/(B/2), ε at the
+thumbs, V placed as V\*/H), in metres only if the step was counted in metres, the one amount carried in. *How well:* the fractional error in the distance, and so in V, is ε·cosh(ln k) with k = d/(B/2), ε at the
 pair's corner, about ε·d/B far off, and past about B/ε nothing but a ray (the fourth and fifth sections). In the mountain
 example, one thumb walked toward a range ten thumbs off puts it at k = 20, an error about ten times the step's ε; a
 baseline of twenty thumbs would put it at the corner. *Of which things:* the
@@ -443,11 +443,11 @@ the thing at parallax's corner, where its error is least. You need the distance 
 short step, then a longer baseline set from what the short one gave.
 
 **In physics.** What astronomy does with parallax is this essay's chain run backwards: d = a/tan p with the astronomical
-unit carried in, σ_d/d = σ_p/p the far limit of γ/sin γ, and Lutz and Kelker's bias a read inverted as if it were a
-write. A distance ladder is a tower of extents, reads joined across baselines and one unit at the top, each rung one factor only where it is flat against an
+unit carried in, σ_d/d = σ_p/p the far limit of γ/sin γ, and Lutz and Kelker's bias a read inverted as if it were an
+amount. A distance ladder is a tower of extents, reads joined across baselines and one unit at the top, each rung one factor only where it is flat against an
 independent distance; on Cosmicflows-4, Hubble's 1929 rungs are not. And in a simulation of many standpoints with one
 length carried in at 1% error, the shape improved as N^(−0.49) while the scale never left the 1%: the reads averaged
-down, the one write did not (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §7).
+down, the one amount carried in did not (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §7).
 
 ---
 
@@ -458,7 +458,7 @@ give the figure, exact, in the length of the step between them; the observer tha
 last rung is the agreed length that fixes the scale, the write. Astronomy's history of
 the astronomical unit is that rung, measured from outside for two centuries and finally agreed. Each standpoint's
 reading is reading; two held at once place by reading still, and one that moved placed by a step and a look kept,
-which are writes; agreeing the unit is writing an amount.
+which are writes; the agreed unit, counted, gives an amount.
 
 **The Cauchy.** It appears twice here. Parallax has the corner and the bell of the steady turn, for the same reason: the
 pair's facing turns fastest at the corner. And on the far side of the reciprocal, inverted parallaxes behave exactly as

@@ -585,6 +585,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy-weighted average of its density, ripples fading as e^(−kh); a point mass's pull through a plane 2πGM times the
   2D Cauchy of scale d. V3 killed in one clause by my guess (a cube shell's opposite columns); the rest not killed. Classical
   (the Poisson kernel of the half-space); Tom's statements of both days recorded below the runs, each with its limits.
+  R1179 (24 Nov; Tom: "update the essays"): R1174–R1178 carried through the essays and README (23 files): a number in a
+  unit is "an amount", never "a write" or "a writing"; a count "gives" a size. Left for Tom: "temporary writes" (R1048),
+  "what is kept is a write" where the keeping is private, R568's wording, the older "writer". Physics paper, demos not swept.
   R1178 (24 Nov; Tom: "geometry  does accept 3 meters though to give it scale, but we are just playing with ratios when we
   do that."): an amount in a unit is the thing over the unit's bearer, a ratio of two writes, moved by the scale test only
   because the bearer is kept outside the scaling; the geometry and the bookkeeping hold ratios only. *Reads and Writes* §7.

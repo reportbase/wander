@@ -110,8 +110,8 @@ tower can end.
   twelve strides, and the stride is still under it. Essay 19 called the stride the smallest write there is, and
   said a law brings the chain of writes down to its least and not to zero. The least is this last storey.
 - *It ends on an agreed unit.* The stride is 0.7 metres. Now the bottom storey is a stick kept somewhere and agreed
-  on, and the result is moved by scaling the world against that stick. That is an amount put down in a unit, the write the first
-  test finds (essay 1).
+  on, and the result is moved by scaling the world against that stick. That is an amount put down in a unit, which the first
+  test moves (essay 1): bookkeeping about the stride, with the stick, a thing others can meet, a write under it.
 
 A unit, on this picture, is scaffolding that everyone has agreed to leave up.
 
@@ -227,7 +227,7 @@ is the keeper's scaffolding; the last one standing is the difference between a r
 a cancellation that happened to work out. It is the job.
 
 *There are three places a tower can end.* On the thumb, a read. On a step, an extent: a read still where two looks
-hold it together, a count where the steps are counted out. On an agreed unit, a size, a write. The series' two tests ask, of any number, what its last storey is.
+hold it together, a count where the steps are counted out. On an agreed unit, an amount: bookkeeping about a write, with the unit's bearer another write. The series' two tests ask, of any number, what its last storey is.
 
 *The circle and the Cauchy are one equation.* The difference is what it was taken in terms of, and that choice is also
 the difference in what each costs.

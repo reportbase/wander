@@ -187,7 +187,7 @@ its hold at −101 on a stream of median 10.
 
 *The Unit Rule* raced its rule against rules meant to beat it, on 49 recorded test signals, each of which returns to
 where it began, so an honest record should add up to zero. Those measurements were made there and not run again; they
-price the rule, and they answer a write's question, how closely the held values track the stream's amounts.
+price the rule, and they answer a question about amounts, how closely the held values track the stream's amounts.
 - **The rule's own frontier.** Its median error falls as about 2 to the minus the number of bits it spends a look, with no
   knee: 0.0132 at 0.635 bits, 0.0064 at 1, 0.00020 at 4.5. Any rival has to beat that line.
 - **A tailored step,** like a camera's auto-exposure, is 2.3 times better at the median and 3 times worse at the worst
@@ -378,7 +378,7 @@ gone from the count, while the clock needs them all (Haff 1983) (*Reads and Writ
 
 **Reading and writing.** An observer holding in order with one slot holds only readings: each arrival in terms of the last.
 It can say when the stream turned, how many looks lay between turns, where the stream's median is, and whether its record
-closed. It cannot say how high the water was. That needs a gauge and a datum, a unit and a zero carried in: a writing.
+closed. It cannot say how high the water was. That needs a gauge and a datum, a unit and a zero carried in: an amount.
 The races priced the difference. Rules that hold amounts track the amounts better, by about 1.2 at a fair bill, and lose
 the turns in the gaps by seven to fourteen times.
 

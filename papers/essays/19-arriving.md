@@ -71,7 +71,8 @@ Notice what was needed. Two looks, the first of them kept, and one stride. The s
 with a size, and the smallest write on this road. The "one" is a count laid over it, a description, and a count has
 no unit. Scale the world, stride included, and the count is still one, the strides left are still 999, the breadth is
 still 17 and a seventh strides. Metres come only if someone says how long a stride is, an amount put down in a unit
-carried in, which is a write as well. Physics enters the walk with the stride, the first thing on it with a size; the
+carried in, which is bookkeeping about the stride and no write; the unit's bearer, a metre bar others can meet, is
+another write. Physics enters the walk with the stride, the first thing on it with a size; the
 metre only names that size.
 
 And notice what was not needed. The stride did not have to be small. The two formulas are exact for a stride of any

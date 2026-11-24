@@ -18,7 +18,7 @@ relativity, Simpson's paradox in a statistics class, the prosecutor's fallacy in
 two-envelope game, Benford's first digits, the dark night sky. Each has a standard resolution, worked out on its own
 terms, and this essay does not offer a better one. It offers one diagnosis that fits them all. Every essay so far has
 kept two things apart: what is read from a standpoint, and what is stated from the dual hemispherical vantage (DHV;
-informally, a blueprint), which holds everything. A paradox, nearly always, is the two run together. A reading is quoted as if it were a writing, or the
+informally, a blueprint), which holds everything. A paradox, nearly always, is the two run together. A reading is quoted as if it were an amount, or the
 DHV's question is put to a read that has nothing to answer it with.
 
 Each entry below says which vantage each side of the paradox speaks from, what the paradox becomes once they are kept
@@ -74,9 +74,9 @@ So a paradox of this kind has a two-part resolution:
   an amount in.
 
 The two tests of the first and third essays sort it at once. Scale the world, every length in the field multiplied by k:
-r_A and r_B do not move, so they are readings. The sizes S_A and S_B move, so "who is bigger, in metres" is a writing.
+r_A and r_B do not move, so they are readings. The sizes S_A and S_B move, so "who is bigger, in metres" is an amount.
 And the readings' ratio and product, which do not move either, are places: they join two standpoints' readings, and the
-exchange turns two private readings into two shared ones, without writing anything.
+exchange turns two private readings into two shared ones, with no unit carried in.
 
 ---
 
@@ -171,15 +171,15 @@ The essays have kept apart two sides, called vantages here for short, though onl
   drawn shape, the equation on the page, the globe. It has no standpoint, no corner and no horizon.
 
 Neither is wrong, and each can do what the other cannot. What the DHV states of a thing can be arrived at from many
-readings, by standpoints, loops closed and one amount carried in (the sixth essay); that gives extents and a write, not the DHV. The DHV can state what any read would have
+readings, by standpoints, loops closed and one amount carried in (the sixth essay); that gives extents and an amount, not the DHV. The DHV can state what any read would have
 from any place (the seventh essay's lighthouse drawn at any size). What no one can do is hold both at once in one
 observation.
 
 A paradox, in this account, is a question asked from one vantage and answered from the other. Usually it is the DHV's
 question, a total, a sum, a single length, the whole, put to a read that holds none of them. Sometimes it is the other way:
-a read's ratio quoted as a written amount. The two tests find which:
+a read's ratio quoted as an amount in a unit. The two tests find which:
 - **Scale the world.** Multiply every amount by k. If a claim does not move, it is a reading, or an extent if it joins two
-  standpoints. If it moves, it is a writing, and it needed something carried in.
+  standpoints. If it moves, it is a write's size or an amount kept about one, and it needed something carried in.
 - **Change what arrives.** Keep the standpoint and the turn, and change what reaches the standpoint. If a claim does not move,
   it is about the directions and their heat. If it moves, it is about the payload, the paint.
 
@@ -272,7 +272,7 @@ median, at the corner, and the symmetry under the reciprocal.
 **The median survives; the mean does not.** Statistics of order, ranks, the median, the corner, are unchanged by any
 increasing change of what arrives. Statistics of amount, the mean and every sum, are not. Re-timing the arrivals of a
 five-lobed star moved the mean over arrivals by 27% while the statistics of the directions stayed fixed. Order is what a read
-holds; sums need a write's amounts. This is the third essay's second test applied to statistics: change what arrives,
+holds; sums need amounts. This is the third essay's second test applied to statistics: change what arrives,
 and only the order stands.
 
 **Olbers' dark night.** In an endless, unchanging universe of stars, every line of sight ends on a star, so the night sky
@@ -302,13 +302,13 @@ does.
 
 **v/h read as V/H.** A geometric result seems to predict a physical amount, and then fails by a constant factor. The
 reading v/h is a ratio of unit relations, a read's. V/H is a ratio of breadths, each an amount. The bridge between them
-is (v·V)/(h·H) = (v/h)·(V/H). Reading one as the other assumes written breadths, V the mountain in the distance
+is (v·V)/(h·H) = (v/h)·(V/H). Reading one as the other assumes breadths held as amounts, V the mountain in the distance
 measured. With both drawn at one length, the thumb equal to the mountain, the two agree in number, which is why the
 confusion is easy, and why it fails by V/H when the breadths differ. These essays have kept the case of the letters because
 this one mistake undid many earlier attempts, including some of our own.
 
 **The seam in a flight simulator.** The change from ground to sky looks wrong in flight simulators however finely the
-ground is drawn. The ground is modelled in a write's metres; the eye reads it as h/v ahead. A line on the ground h ahead
+ground is drawn. The ground is modelled in metres, as amounts; the eye reads it as h/v ahead. A line on the ground h ahead
 lands v/h below eye level, so the corner, h = v, keeps one row of the screen at every height. Detail set by metres slides
 across the screen as the height changes; set by h/v they stay put. The seam is where the two disagree. That is a reading
 with an illustration, the `flight.html` demo, and it is the eighth essay's depth buffer in another costume.
@@ -346,7 +346,7 @@ honest.
 - **Quantum measurement.** Whether observer-dependence there is a question of vantage at all is not something these essays
   can say. It is named only to say so.
 
-**In physics.** Physics has paradoxes of this kind, each a read and a write run together. A parallax with a Gaussian
+**In physics.** Physics has paradoxes of this kind, each a read and an amount run together. A parallax with a Gaussian
 error has an inverse with no mean, and averaging those inverses as distances is Lutz and Kelker's bias (1973). The
 rotation two boosts leave, Thomas and Wigner's, looks strange only until it is seen to belong to the joining: no single
 boost has it. It is a map between the two looks, with no gap in space, so neither a read nor an extent. And a quasar dipole read as the directions' alone gives a speed nearly three times
@@ -357,10 +357,10 @@ too large, since the paint carries most of it (*Reads and Writes in Physics* (`.
 
 ## 10. What it comes to
 
-**Reading and writing.** The catalogue sorts by one question: was the claim read or written? A reading is a ratio from a
+**Reading and writing.** The catalogue sorts by one question: was the claim a reading or an amount? A reading is a ratio from a
 standpoint, and it does not move when the world is scaled; a ratio joining two standpoints, an extent, does not move either.
-A writing is an amount, and it needed something carried in. Every
-paradox in the denominator family is a reading quoted as a writing, its private denominator dropped. Zeno, Galileo, the
+An amount is in a unit, and it needed something carried in. Every
+paradox in the denominator family is a reading quoted as an amount, its private denominator dropped. Zeno, Galileo, the
 coastline, the growing list and the many points are the dual hemispherical vantage's (DHV's) whole asked of a count from a standpoint. Benford, the envelopes,
 St Petersburg and Weber–Fechner are a flat measure of amounts laid where a read has no scale. Olbers and the dimming star
 are the DHV's sum asked of a read's directions. Gibbs and the heap are the DHV's labels or sharp line asked of a

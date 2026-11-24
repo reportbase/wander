@@ -368,9 +368,9 @@ even though it cannot draw from its tail: the median of its readings is the true
 quartiles. The third essay's theorem, that order survives every change of what arrives and sums do not, becomes a rule
 for code.
 
-**Make reading and writing a type boundary.** Give a direction a type with no length, no unit and no addition, and an
+**Make readings and amounts a type boundary.** Give a direction a type with no length, no unit and no addition, and an
 amount a type that carries its unit. Then a function from a direction to an amount can be written only where an amount
-is passed in, which is the cost of writing stated as a signature. The three-part split of section 6, world, geometry and
+is passed in, which is the cost of an amount stated as a signature. The three-part split of section 6, world, geometry and
 read, stops being a convention and becomes an interface the compiler checks: no code on the read's side can ask for
 `sizeof`, because the type it holds has none.
 

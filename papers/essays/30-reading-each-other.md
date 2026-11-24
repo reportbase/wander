@@ -31,7 +31,7 @@ ours (§13), and what is still open (§14).
 ## 1. Two readings, two corners
 
 Keep it as small as it can be. There are two things, A and B, a distance d apart. Each has a breadth, H_A and H_B,
-which are amounts and so the writer's. Each holds out a thumb of its own, t_A and t_B, as a slope.
+which are sizes and so in no read. Each holds out a thumb of its own, t_A and t_B, as a slope.
 
 A reads B as a slope against its own thumb,
 
@@ -118,7 +118,7 @@ There is a worse problem with the rule I chose. A share of the gap in levels mea
 factor: d becomes d·s^α. To do that a walker would need to know d. It does not. It has its reading s and nothing in
 amounts (R654: there is no V in a read).
 
-What a walker actually has is a stride, an amount of its own: a write, and its own write. So try the nearest honest
+What a walker actually has is a stride, a thing of its own with a size: a write, and its own write. So try the nearest honest
 rule. Each steps S·ln s: a stride's worth, scaled by how far its reading is from 1 in levels. Then
 
   d′ = d + S·ln s_A + S·ln s_B,
@@ -221,7 +221,7 @@ Three held as predicted:
 
 - **The product is shared.** For any two systems i and j, s_ij·s_ji = H_i·H_j/(t_i·t_j·d_ij²). Neither's breadth or thumb
   appears alone. This is the denominator paradox's product, now between any pair of N.
-- **The ratio is owned.** s_ij/s_ji = q_j/q_i, with q = H·t, each system's own write (it moves by k when the world is
+- **The ratio is owned.** s_ij/s_ji = q_j/q_i, with q = H·t, each system's own amount, kept about its own breadth (it moves by k when the world is
   scaled). Round every loop of 3, 4 or 5 systems, in the plane and in space, the ratios multiply to exactly 1. There is no
   arbitrage: the ratios come from one number per system, a potential.
 - **Euler's −1 is where a fair exchange rests.** With w(s) = (1 + is)/(1 − is), w(s_A)·w(s_B) = −1 exactly when
@@ -239,7 +239,7 @@ POR).
 The program that plays the table was then audited for where each kind of mathematics sits (ENG, `plans/eng-plan.md`).
 The three things above use no angle: contact, the push along the line of centres and the mass ratio call no
 trigonometric function at all. Trigonometry comes in once a shot, where a person aims, and the cut in degrees is only
-written down for the text. How long a ball slides and whether it bounces are writes, amounts carried in. What is left
+written down for the text. How long a ball slides and whether it bounces are set by the cloth and the balls, which are the writes; the numbers the program holds for them are amounts carried in. What is left
 from no standpoint is the bookkeeping that holds the balls together: the world frame, the shared tick, the integrator,
 and two jobs I had not predicted, the stop and the order in which pairs are written. Those two came off. Run with no look
 over all balls, the game was the same to the bit; with every pair resolved from the tick's start and added together, it
@@ -250,11 +250,11 @@ So a collision sorts like this. Before it, the two balls only read each other. A
 what makes it a touch is that each ball writes its own new state. Which way the push goes is a read, along the line of
 centres. How it is shared is a read too, the sizes cubed, but only because one material was assumed; a second material
 would need the densities, which are amounts. How much speed comes back, the grip of the cloth and every speed in a unit
-are writes. And when it all happens, for every ball at once, is the dual hemispherical vantage's (the DHV's): one frame, one tick, one
-integrator. Where and which way is read, how much is written, and when is the DHV's.
+are amounts too, kept about the balls and the cloth, which are the writes. And when it all happens, for every ball at once, is the dual hemispherical vantage's (the DHV's): one frame, one tick, one
+integrator. Where and which way is read, how much is an amount about the writes, and when is the DHV's.
 
 A cannonball is the other kind of case. In a vacuum its arc is all read, set by the launch slope alone, with gravity
-writing only how far and how long; with air, the drag reaches the shape only as one ratio of writes (CNB). But a real
+writing only how far and how long; with air, the drag reaches the shape only as one ratio of amounts (CNB). But a real
 flight is written by many things at once, all the way along it: the pull, the air, a wind that changes with height, the
 ball's spin, and the arc is what they wrote. The ball reads too, but differently from the gunner: it turns no look,
 aims at nothing and keeps nothing, and what reaches it may be read as each source's share of its sky times that source's

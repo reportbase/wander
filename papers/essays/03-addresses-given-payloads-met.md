@@ -188,8 +188,8 @@ direction arrives as a direction, with the distance along it already gone; the p
 What the light paints on a direction arrives as paint, never as so many units. The paint is the world's, met
 along the direction; the read is the direction and its heat, and it is geometry, there whether the paint is or not. So a read manages no magnitudes at all,
 neither the size of the other party nor the size of what arrives. It has no unit to manage them in. Its one length, H, the
-thumb, is its own unit: measured in itself it is 1, one thumb, and what it is in metres is something only a write can say.
-A read has no scale whatsoever. Every magnitude, and the unit it is stated in, belongs to a write.
+thumb, is its own unit: measured in itself it is 1, one thumb, and what it is in metres is an amount, which needs a metre carried in.
+A read has no scale whatsoever. Every magnitude belongs to a write, a thing in the world; the number stated for it in a unit is bookkeeping about it.
 
 **Why there is no mean.** The missing mean is usually told as the Cauchy's defect. Read as the heat of directions it is what such
 a heat should do. A mean is a sum of amounts divided by their count, and a direction has no length to add. To average the readings
@@ -209,7 +209,7 @@ exactly as a direction is and unchanged when the world is scaled (a ratio of two
 leaves it, and it is read as a direction is); a shape about a centre comes back whole this way, every
 mode but its overall size, and that size is V again. (Radio astronomers read polarization so: a source's own
 polarization angle, from the ratio of two of its Stokes parameters, is a reading of the payload, unchanged by scale, while
-the Faraday rotation that turns it on the way carries a rotation measure in radians per square metre, and is a writing.)
+the Faraday rotation that turns it on the way carries a rotation measure in radians per square metre, and is an amount.)
 By dividing the heat out: what is counted is the heat of the directions
 times the payload's weight, and the heat is known in advance, so dividing by it leaves the payload's distribution,
 as an astronomer flat-fields an image. By undoing the blur: seen from a height, the payload arrives smoothed by the Cauchy
@@ -366,7 +366,7 @@ tangent of something does not pass the test; the turn has to be there.
 
 ### The second test
 
-The first essay gave a test for reading against writing: scale the world, and see what moves. Here is its partner, for
+The first essay gave a test for a reading against an amount in a unit: scale the world, and see what moves. Here is its partner, for
 heat against paint.
 
 **Change what arrives, and keep the directions.** Replace what arrives along each direction with something else. A
@@ -379,7 +379,7 @@ observer moving is a change of standpoint, not of what arrives, and it does move
 quantities, not causes: one cause can move both, as a boost moves where a star is seen and the colour of its light.
 
 Together the two tests sort any fact four ways: readings of the directions (the corner, the quartiles of directions),
-readings of what arrives (a colour, a ratio of intensities), and writings of either (a range in metres, a flux in a
+readings of what arrives (a colour, a ratio of intensities), and amounts of either (a range in metres, a flux in a
 unit). Neither test needs this essay's vocabulary to run.
 
 The second test is also why reads never race with writes. A write changes the payload, being a thing among the things met; the second test says a change of

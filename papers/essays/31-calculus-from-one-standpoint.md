@@ -38,15 +38,15 @@ The second derivative does not pass. Scale a curve by k about the origin, so tha
 the matching point become g⁽ⁿ⁾(kx) = k^(1−n)·f⁽ⁿ⁾(x). The first is unchanged; the second is divided by k, the third by k²,
 and so on. CLC checked this exactly on 100 seeded rational curves at three values of k: the first derivative unmoved in
 300 of 300, every higher one moved in 900 of 900. Curvature, the bend of a road, carries a size: a road scaled up bends
-more gently. So the first derivative is a read and every higher order, in a unit, is a write, a thing's own shape with a
+more gently. So the first derivative is a read and every higher order, in a unit, is an amount kept about a write, a thing's own shape with a
 size. The bend itself is not lost. Curvature times arc length, the turn a stretch of road makes, is unmoved by scaling,
 and so is the ratio of the curvatures at two places, or y″·x: a higher derivative measured against a length of the same
 curve reads again. What the read lacks is the bend in metres, never the bend.
 
-The speedometer is a write even at first order. Its rate pairs a length with ticks of a clock, and scaling the world moves
+The speedometer's number is an amount even at first order. Its rate pairs a length with ticks of a clock, and scaling the world moves
 the length and not the ticks: CLC found every rate against the clock moved by k (1,196 of 1,196), and only the ratio of
 two such rates of the same order unmoved (1,196 of 1,196). A rate of one length against another is a read; a rate against
-the clock is a write.
+the clock is an amount, and the clock, a thing others can meet, is the write it is kept against.
 
 ## 2. Derivatives without a limit
 
@@ -126,14 +126,14 @@ tan(3·arctan(1/3)) to the last of fifty digits. Over 100 seeded equations with 
 five steps equalled the exact flow to 10⁻⁴⁰ in 100 of 100 (41 more drawn cases passed through a pole, s through
 infinity, and were set aside), and the composition rule held exactly in every case tried. There is no N and no error.
 What the exactness costs is digits: the composed fraction grew linearly with the number of steps (the ratio of digits at
-40 steps to 20 at most 2.07). That is the cost the series keeps finding for a write: exact, paid by the digit.
+40 steps to 20 at most 2.07). That is the cost the series keeps finding for what is kept: exact, paid by the digit.
 
 ## 6. The clock is the completion
 
 Each step u stands for an elapsed time τ(u) = artanh(u√Δ)/√Δ, which is the arctangent for the turn and u itself for the
 stride. That time is not a fraction of u. The steps are exact in the slope's own chart; the clock time they stand for is
 where the completion enters, as the angle does for a turn (essay 14). A read steps the equation by its readings and has
-no clock; the time on the clock is a write, and its value a completion.
+no clock; the clock is a write, the time read off it an amount, and its value a completion.
 
 Physics' own equations split the same way (ORB). An oscillator x″ + 2γx′ + ω²x = 0 has a direction x′/x that obeys a
 Riccati equation with constant coefficients, so its steps are exact rational maps (50 of 50 against the flow to 10⁻⁴⁰);
@@ -176,7 +176,7 @@ time of §6, is the trace's, and there the completion enters. ORB's oscillator i
 rational maps and its period the trace's.
 
 Two limits go with the picture. The pointing is a first derivative, the one §1 found unmoved by scaling; the trace's
-bend, 1 over its distance from the pivot, is a second-order quantity, a write in a unit and a read only against the curve's own
+bend, 1 over its distance from the pivot, is a second-order quantity, an amount in a unit and a read only against the curve's own
 length or another curvature (§1). And the turn is one turn with one parameter: §7's s′ = t + s² has no one-parameter
 group, so no turn whose sweep it is. The two points picture the calculus that has the turn's symmetry, not calculus in general.
 
@@ -192,7 +192,7 @@ other, and the fundamental theorem between are consequences of that one pick and
 
 | | Single hemispherical vantage | Needs a count or a completion |
 |---|---|---|
-| Slopes | dy/dx of two lengths, a read | dⁿy/dxⁿ, n ≥ 2, and rates against the clock: writes |
+| Slopes | dy/dx of two lengths, a read | dⁿy/dxⁿ, n ≥ 2, and rates against the clock: amounts |
 | Derivatives | rational functions, exact by ε² = 0; the chain rule the tower | eˣ, sin: the function's value a completion |
 | Integrals | rational antiderivatives, telescoping exact at every N | the integrand summed (1/N); ln, arctan, π |
 | Curvature | against the curve's own length, or another curvature | in a unit |
@@ -218,7 +218,7 @@ on elementary antiderivatives; Euler and Maclaurin; Riccati's linearization and 
 functions; the orders of Euler's and Runge's methods. Nothing in the two tests is new as mathematics, and the tests could
 fail only where a count could (the rational antiderivatives, the digits' growth, the small rational step).
 
-Ours: the sorting. That the first derivative is the one order a read has; that a rate against the clock is a write; that
+Ours: the sorting. That the first derivative is the one order a read has; that a rate against the clock is an amount; that
 the fundamental theorem is where a count is replaced by a law; that "needs N" and "leaves the fractions" mark the same
 places; that the slope's own equation is stepped exactly in the read's own chart, the clock time the completion. The
 classical tools are not the explanation (R1071); what they mean in a read or a write is the series' work.

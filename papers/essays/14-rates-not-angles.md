@@ -63,8 +63,8 @@ per is read, and is geometry; the of is met, the world's things and marks, and i
 
 The two places behave differently when the world is scaled. Scale everything by k and every direction stays where it was,
 since a direction has no size. So the per never moves. The of may or may not: a payload compared with another payload
-arriving along a neighbouring direction is a ratio and stays put; a payload stated in an agreed unit moves with k, and is a
-writing (the first essay). The geometry fixes the per, completely and in advance. What fills the of is the world's.
+arriving along a neighbouring direction is a ratio and stays put; a payload stated in an agreed unit moves with k, and is an
+amount (the first essay). The geometry fixes the per, completely and in advance. What fills the of is the world's.
 
 ---
 
@@ -254,7 +254,7 @@ reading 1/s are each a read with a vantage, and the DHV has none.
 it is the read. The shares h and v with h² + v² = 1 need the other party held at the thumb's one length, the one-length
 circle; with them come cos and sin as the shares themselves, √(1 + s²) = 1/h, and the halving, t = v/(1 + h), rational
 once the circle is held. The angle θ needs that circle and the turn completed as well, π: an arc over the radius, counted
-against the whole. Neither step needs a true breadth or a unit, so neither is a write; both are completed joins, the
+against the whole. Neither step needs a true breadth or a unit, so neither is an amount in a unit; both are completed joins, the
 circle first and π second, held from the DHV. So doubling a turn is the read's, (1 + is)/(1 − is), and
 halving one the DHV's.
 
@@ -316,8 +316,8 @@ carefully, it is a claim about what a turning thing has to hand: a sweep, and wh
 
 The second claim of this essay sorts the examples. A rate is of something, and the something decides whether it is a
 reading. A wheel of diameter 1 rolls π along the road for each turn: road per turn. But road is an amount, so stated that
-way it is a writing, the dual hemispherical vantage's (DHV's) angle carried onto the ground. A planet sweeps equal areas in equal times: area per
-time, and a time is a clock carried in, so that too is a writing. The rates a read has are of what arrives per direction:
+way it is an amount, the dual hemispherical vantage's (DHV's) angle carried onto the ground. A planet sweeps equal areas in equal times: area per
+time, and a time is a clock carried in, so that too is an amount. The rates a read has are of what arrives per direction:
 how much brighter one direction is than its neighbour, which directions are painted and which are dark, where along the
 sweep the paint changes. Those are payload per direction, compared between directions, and they are unchanged when the world
 is scaled. A sunflower following the light, an eye tracking an edge, a hand raised to point: each has its sweep and what
@@ -330,10 +330,10 @@ in hand.
 
 One caution keeps the claim exact. A rate must say what it is per. Per direction, against the sweep's own spacing, a rate
 is a ratio of payloads and scale-free. Per second, it carries the clock's unit (radians per second, photons per second),
-and moving between the two needs the clock carried in. That is a writing. Motion says the same (the sixth essay, §2): the
+and moving between the two needs the clock carried in. That gives an amount. Motion says the same (the sixth essay, §2): the
 time until a thing arrives, from its growing edge, comes out as a count of the observer's own ticks (a count, unmoved by
 scaling or by any change of clock, laid over looks kept, and held by no single read, since a rate of change joins reads; so is ticks per tick),
-and in seconds it is a write, and a speed in metres a second carries two units in.
+and in seconds it is an amount, and a speed in metres a second carries two units in.
 
 ---
 
@@ -426,7 +426,7 @@ azimuth are measured from a standpoint, against one's own horizon: a read's swee
 the sky and holds all of it: the DHV's frame, from no standpoint.
 
 **The closest is Poincaré.** His enlarged universe is this series' first test, scale the world, nearly word for word: a
-reading is what survives it, a writing what does not. His representative space is the read's, and his geometric
+reading is what survives it; what does not is a write's size or an amount kept about one. His representative space is the read's, and his geometric
 space, the same for everyone, is the DHV's cube. His geometry from the observer's movements is the read's two sweeps
 of one length; and his group of displacements is Klein's idea applied to an observer, the line that leads to Jaynes, on
 whom the main paper builds. Leibniz is the root: space as relations, and a geometry of situation, which is what "situated"

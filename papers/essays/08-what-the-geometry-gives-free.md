@@ -304,7 +304,7 @@ thing between two of them is held at the coarser, not rounded to either. The flo
 
 The first essay's test finds a second difference at once. Where the floor is taken of an amount, `Math.floor(x / w)`, the
 cell width w is an amount too, and scaling every amount in the world by k moves the key unless w is scaled with it. The key
-is then a writing: its grain had to be carried in. A floor taken of a share of the turn, `Math.floor(theta / dTheta)` with
+is then an amount: its grain had to be carried in. A floor taken of a share of the turn, `Math.floor(theta / dTheta)` with
 `dTheta` a fraction of the quarter turn, carries no amount, and no scaling moves its key.
 
 **Why it matters.** Three things follow.
@@ -437,7 +437,7 @@ buffer's lay, the flat screen's weighting, a key floored from a share of the tur
 when every amount in the world is scaled, so all are readings, and all came free once H was chosen. What moves is what was
 carried in: the near plane's distance, the cell width of a floor taken of an amount, the noises of a filter, a far plane.
 Engineering keeps rediscovering which numbers it must carry in, often one at a time and by trouble. The geometry says in
-advance: one length H, the thumb, for the zoom, a count K if one is wanted, and an amount for each thing to be written.
+advance: one length H, the thumb, for the zoom, a count K if one is wanted, and an amount for each thing to be put down in a unit.
 
 **The Cauchy.** The property this essay has leaned on most is the one the fourth essay found: its heat needs no count.
 That is what the dial uses to cross a list of any length, what consistent hashing uses to add a machine and move almost

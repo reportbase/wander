@@ -169,8 +169,8 @@ marked Ω. The second shows what it is: the direction with no along share, which
 
 It is tempting to say that the bounded chart is what one has when the far thing's size is known and the unbounded
 chart is what one has when it is not. That is a mistake, and the letter Ω makes it easy to make. Both charts describe
-one read, whatever is or is not known. What knowing a size changes is something else: a size is an amount in a unit,
-which is a write, and a write is not a property of either chart.
+one read, whatever is or is not known. What knowing a size changes is something else: a size is a write's, and an amount in a unit
+is bookkeeping about it; neither is a property of either chart.
 
 What the paper does distinguish is two facings. Facing V, the near reading s = v/h gives V in terms of H; facing away
 from V, the far reading 1/s = h/v gives H in terms of V. They multiply to 1 at every reading and meet at 1 at the
@@ -332,13 +332,13 @@ a record nobody can extend: the rule is exact, and the start was never written o
 
 So chaos comes apart along the same line as everything else in this series. The stretch is the rule's. Two exactly
 given starts a hair apart part at ln 2 a step whoever runs them and however carefully; scaling the world does not
-change the rate, and no measuring enters it. The unpredictability is the write's. It bites only because the start was
+change the rate, and no measuring enters it. The unpredictability is the record's, the observer's bookkeeping. It bites only because the start was
 put down to finitely many digits, and the rule spends them at a fixed rate. Given the start whole, the run would hold
 no surprise, since the rule adds nothing. Chaos, as the loss of prediction, is a finite record running out under an
 exact stretch. In a physical system the start can never be put down whole: below any record sit the system's own small
 motions, thermal or quantum, and the stretch lifts them into view, which is Lorenz's butterfly. And chaos leaves marks
 that need no prediction: mixing, a broad spectrum, the fine structure of an attractor. These are the stretch's, and
-they can be measured. What the sorting places is the loss of prediction, on the side of what was written; the stretch
+they can be measured. What the sorting places is the loss of prediction, on the side of what was put down; the stretch
 that causes it stays with the rule. That a run uses up its start's digits at the rule's rate holds for chaos in
 general, not only for this map: it is the classical entropy of a chaotic map (Kolmogorov and Sinai, and Pesin's
 equality with the rate of parting).

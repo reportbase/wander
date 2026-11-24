@@ -85,7 +85,7 @@ lamp, the reading (the DHV's tan θ) is the standard half-Cauchy of one length t
 drawing with two axes it is a Cauchy of scale c, the ratio of the shore's drawn length to the sea's. On the beach the marks
 follow C(α, β), a location and a scale, both amounts, both moved by scaling the world. So V, the shore playing the mountain
 in the distance, comes in only as the scale, and only when someone finds the shore and lays a ruler along it: the walker's
-paces place the marks, and the pace counted in metres is the writing. And the marks have no mean for the reason the third essay gave: they are the lamp's directions
+paces place the marks, and the pace counted in metres gives the amount. And the marks have no mean for the reason the third essay gave: they are the lamp's directions
 carried onto the sand and written as places, and directions have no sum. The flashes' light, which is payload,
 averages as any amount does.
 
@@ -239,7 +239,7 @@ set.
 
 But a c ≠ 1 can still appear in what the readings are taken through, imposed rather than chosen. When it does, it
 has a signature, and the cases above sort into four.
-- **It is writing, not reading.** Amounts are wanted in a shared unit, so c is the ratio of real units, measured. The
+- **It is amounts, not readings.** Amounts are wanted in a shared unit, so c is the ratio of real units, measured. The
   equal-area map and the task-weighted features are of this kind: they keep amounts on purpose.
 - **It is uncalibrated.** Unequal gains, pixels that are not square, variables left in their own units: c is imposed by
   the instrument or the data's units. The median of the readings then sits at c instead of on the corner, and
@@ -252,7 +252,7 @@ has a signature, and the cases above sort into four.
   readings still come back to a turn in the right chart.
 
 Each of the four leaves a mark. A median off the corner, at c, says uncalibrated. A median off the corner that moves with
-an estimate says the estimate was drawn in. A median that tracks a shared unit says writing. And a law that is not a
+an estimate says the estimate was drawn in. A median that tracks a shared unit says amounts. And a law that is not a
 Cauchy at all says the measure was never a turn.
 
 ---
@@ -368,8 +368,8 @@ needs two things of the sky: that every source is counted whatever its brightnes
 sources are uniform in their own frame. The third essay's quasar dipole showed what happens when the first fails. A
 census cut by brightness adds a weighting of the directions, D raised to a power read from the census's own counts and
 colours. That is still a reading, needing no rest frequency, but no longer of directions alone. And to read the Doppler
-factor as a frequency, a shift of a spectral line, needs the line's rest frequency carried in, a known kind of atom: a
-writing.
+factor as a frequency, a shift of a spectral line, needs the line's rest frequency carried in, a known kind of atom: an
+amount.
 
 The slide also says why rapidities add. Two boosts along one axis are two slides of the same ξ, and slides add; the
 velocity law (β₁ + β₂)/(1 + β₁β₂) is tanh of the sum. Two boosts along different axes are slides of different ξ's, and
@@ -423,8 +423,8 @@ Lorentz group.
 
 This does not derive relativity from looking. Two of the four premises carry the physics. The first, said of the
 world and not just of a read's rules, is that what no read can hold makes no difference to what is read: the light
-postulate, stated for reads. A moving medium breaks it (light in flowing water is dragged along), and then the medium is a
-writing carried in. The second, that a change of standpoint is fixed by finitely many numbers, is a premise. Routes known for a
+postulate, stated for reads. A moving medium breaks it (light in flowing water is dragged along), and then the medium's motion is an
+amount carried in. The second, that a change of standpoint is fixed by finitely many numbers, is a premise. Routes known for a
 century reach the same group from the principle of relativity; this one reaches it from the sky. What it
 adds is a sharp statement of where relativity enters an observer's account: at the speed a read cannot hold.
 
@@ -449,7 +449,7 @@ can be drawn at any lamp distance; Mercator's chart at any scale, varying from p
 in any unit, since the unit cancels; a moving sky at any distance, since only directions were used. What each fixes is a
 reading. Where a size is needed, each case says where it must come from: the lamp's distance from a survey, the globe's
 radius from an arc measured on the ground, a shared unit for amounts, a rest frequency for the Doppler shift. Each is one
-amount carried in, and each is a writing.
+amount carried in, in a unit no reading supplies.
 
 The first test of the first essay, scale the world, sorts them at once. Scale the lighthouse's world by k and every mark
 moves by k while every angle stays. Scale the globe and Mercator's chart is redrawn at a new scale with the same courses.

@@ -3,7 +3,7 @@
 *The eighteenth of a series of essays on what can be known from where one stands. Draft, 7 November 2026. It gathers
 the rulings of 7 November (R736–R740) on Euler's plane, the thumb's lay, the sphere of the dual hemispherical vantage (DHV) behind them and two turns in
 space, and follows* Reads and Writes *§2 ("The plane") and §9. Brought to R788 on 10 November: up is the read, gaps across are
-places, and only the across axis's zero, tied to a unit, is a write.*
+places, and only the across axis's zero, tied to a unit, is an amount in a unit (so worded since R1176, 24 November).*
 
 Put two fingers on a map on a phone and move them. Spread them and the map grows; twist them and it turns; do both at
 once and it does both, and neither gets in the other's way. The phone works out what the fingers did from one number:
@@ -18,7 +18,7 @@ twist then a pinch does.
 
 That logarithm is the subject of this essay. The series has two ideas, reading against writing and the Cauchy, and two
 tests, scale the world and change what arrives. On the logarithm's plane the first idea and the first test are not an
-argument but a picture: reading runs one way across it, placing the other, and writing is where the across axis has its
+argument but a picture: reading runs one way across it, placing the other, and amounts in a unit enter where the across axis has its
 zero. This essay draws the picture, says what it
 shows past itself, and says where it stops.
 
@@ -52,7 +52,7 @@ larger with the thumb, and no point of the page moves at all: a distance in thum
 moves is only where the across axis's zero sits against a unit outside the world, the thumb in metres, since
 ln(d/metre) = ln(d/H) + ln(H/metre) and only the last term changes. So the first test, scale the world, comes down to which part
 moved: what stays is reading: up, and the gaps across (a distance in thumbs, one distance against another); what
-moves is the zero tied to a metre, a writing. The direction up is what one read holds. The distance across is an extent:
+moves is the zero tied to a metre, an amount, bookkeeping about writes. The direction up is what one read holds. The distance across is an extent:
 unmoved by scaling, held by no single look, needing a second standpoint. Two looks held at once have it by reading
 alone, a ratio of their slopes; one standpoint moved needs its earlier look kept and the step taken, and those are
 writes. Where its zero falls
@@ -64,7 +64,7 @@ along two axes, and they commute: turn then scale ends where scale then turn doe
 dθ·dκ/κ, is nothing more than area on this plane. Jaynes found it by asking what the observer's ignorance leaves unchanged.
 The plane shows it.
 
-That is the picture. Reading is up and down; places are across; a write ties the across axis's zero to a unit. The
+That is the picture. Reading is up and down; places are across; a unit ties the across axis's zero to a thing kept outside the scaling, a metre bar. The
 phone's two gestures are the two slides.
 
 ## 2. The dual hemispherical vantage's grid on it
@@ -282,7 +282,7 @@ Almost all of it is old.
 - **The limit.** (1 + iθ/n)ⁿ is Euler's own route; the leftover of non-commuting steps in space is the Lie–Trotter
   formula (Trotter 1959).
 
-What is the series' own is the reading: up as the read, gaps across had by reads held together, and the across zero as the write, the scale
+What is the series' own is the reading: up as the read, gaps across had by reads held together, and the across zero tied to a unit as an amount, the scale
 test as which part moved, the two
 corners as its two mirrors, the thumb's lay as a turn in distance, the sphere as the dual hemispherical vantage's (DHV's) picture of why the charts
 agree, the heat as a count per chart, and the place where it stops as the place where reading and placing stay apart but
@@ -312,7 +312,8 @@ flat. A heat map is a good picture of the read, and the picture depends on the c
 
 And it marks where the clean arithmetic ends. In the plane, turns add; in space they do not, and a loop leaves a turn
 behind. What survives everywhere is the part the series cares most about: reading holds directions and the gaps across
-between them, the write holds amounts, and scaling the world moves only the write.
+between them, amounts in a unit are the observer's bookkeeping about writes, and scaling the world moves only a write's
+size or an amount kept about one.
 
 **Demos.** `euler.html` (the three charts side by side or one sliding into the next; the DHV's sphere and the thumb
 as a boost; the heat at each point and per chart; a line and a spiral with their mirrors; two turns in space; a flat chart in space, Lambert's and the stereographic, turned; breaths, three loops side by side; n reads),

@@ -15,7 +15,8 @@ caches, the network, is built on top of them.
 
 The essays have been using the same two words for something older. A *read* is what an observer has from where it
 stands: directions, ratios, the light arriving along each, nothing that changes when the world is scaled. A *write*
-states amounts: lengths in a unit, totals, the whole. The two pairs of words were not chosen to match, and yet
+is a thing in the world with a size and a mass, that other reads can meet: a stone, a stride, a mark on a tree, a metre
+bar. What an observer calls it, "0.7 m", is the observer's bookkeeping about it. The two pairs of words were not chosen to match, and yet
 they do match, closely enough that it is worth asking how far. The answer is that computing already keeps the split this
 series is about, the address apart from what is found there, and that it keeps it in a world already laid
 out. This essay asks what changes when nobody has laid the world out yet.
@@ -45,7 +46,7 @@ held up to a stained-glass window: the fingers are there before any light reache
 the colours and moves no finger. Hardware has had the split since the first stored-program machine.
 
 A computer's write stores at an address a value that came from somewhere else: from input, from a computation over
-other values, from a constant in the source. A write in this series likewise needs an amount carried in from outside.
+other values, from a constant in the source. A size stated in a unit in this series likewise needs an amount carried in from outside.
 No collection of readings, from any number of standpoints, fixes a size; one amount brought in fixes every size the
 readings link to it (§11).
 
@@ -59,12 +60,14 @@ Then the two pairs part, in five places.
 - **What a read returns.** A computer's read returns an amount: a byte, an integer, a float, in whatever unit the
   program agreed. A read here returns a direction and the paint arriving along it, with every amount along that
   direction already gone. Nothing in it would change if the world were k times as large.
-- **What a write changes.** A computer's write changes the memory. A write here states amounts ("the room is 15 metres
-  wide"); it changes the world only when it is acted on, as moving the furniture is.
+- **What a write changes.** A computer's write changes the memory. A write here is a thing made in the world that other reads can
+  meet, as moving the furniture is; a statement of amounts ("the room is 15 metres wide") is the observer's bookkeeping
+  and changes nothing.
 - **What stays the same.** A computer's read is repeatable: read one address twice with no write between and the value
   is the same. A read here has a stronger sameness, across worlds: scale the world and no reading moves.
 - **Where caching falls.** In a computer, keeping a value read, in a cache or a variable, is a write into another place.
-  Here too: to keep a length in a unit, or an entry in a table of known size, is to write it; a direction kept as a
+  Here a length kept in a unit, or an entry in a table of known size, is an amount, the observer's bookkeeping, and
+  needed a unit or a count carried in; a direction kept as a
   direction stays a read.
 
 So the computing words are a laid-out frame applied to both acts. Memory is a world laid out, and a computer's read is
@@ -174,8 +177,8 @@ no unit and no addition; an amount type that carries its unit; and a conversion 
 argument, so the breadth has to come from somewhere visible. Essay 12 asked for exactly this.
 
 The first essay's test becomes a property test. Run the system on the world, and on the world with every length
-multiplied by k. Whatever does not move is a reading. Whatever moves by k (or a power of k) is a writing, and an amount
-had to be carried in to make it. A record the test would not move cannot contain the world's size, however carefully it
+multiplied by k. Whatever does not move is a reading. Whatever moves by k (or a power of k) is a write's size or an amount kept
+about one, and an amount had to be carried in to state it. A record the test would not move cannot contain the world's size, however carefully it
 was made.
 
 ---
@@ -374,7 +377,7 @@ appends stays under gN/(g − 1): 2N at g = 2, 3N at g = 1.5. Any g above 1 give
 forced; their base is not.
 
 A timestamp is the other side. An address made of slots, a fixed number to each digit whatever the digit holds, does not
-move as the world grows: the radix was agreed beforehand, and it is a written amount carried into every address. The price
+move as the world grows: the radix was agreed beforehand, and it is an amount carried into every address. The price
 is the slots held empty.
 
 ---
@@ -413,7 +416,7 @@ And the floor imposes a depth where a read takes one off what it meets. The floo
 by the store before anything is read. A read at height γ keeps each depth softly, multiplying a wave by e^(−kγ), never
 zero and never a wall; the floor keeps every halving coarser than the cell whole and none finer. Where the floor is taken
 of an amount, `Math.floor(x / w)`, the width w is an amount, and the scale test moves the key unless w moves with it: the
-key is a writing. A floor taken of a share of the turn carries no amount and nothing moves it.
+key is an amount. A floor taken of a share of the turn carries no amount and nothing moves it.
 
 ---
 
@@ -488,7 +491,7 @@ The shares add to a finite total, about π/ln 2 ≈ 4.53 times the focus scale's
 every scale given the same share, 4,351 things held over nine scales and growing with every scale added; with the Cauchy's,
 1,337 over nine and 1,340 over forty-one, and about 2,200 with forty more below. Shrunk by 2⁻²⁰, the view is the same view
 within 4%. The readings take no more digits there, since the depth is in both terms of every slope and cancels; only the
-eye's own position takes about six more digits, because a position in a unit is a write. Culling by size on screen is
+eye's own position takes about six more digits, because a position in a unit is an amount. Culling by size on screen is
 ordinary level of detail. The share law, and a world with no N anywhere, are the reads-and-writes part.
 
 **H is a zoom, not an escape.** An observer could choose a very large H, a big thumb, and hold everything in proportion, with
@@ -555,7 +558,7 @@ readings link to it is fixed. And two observers who share one closed loop, each 
 closure the ratio of their units, H_B/H_A = |S_A|/|S_B|, and nothing more: a shared fact buys one factor.
 
 **What the DHV adds.** The dual hemispherical vantage (DHV) is the classical statement: the whole in amounts, seen from no standpoint. An
-observer comes to what it holds only by writes, things counted or a unit carried in, never by a read. It gives seven things the ratios do not:
+observer comes to what it holds only by things counted or a unit carried in, never by a read. It gives seven things the ratios do not:
 the size; parts made apart that must meet out of view; sums, totals, means and budgets; the join of every facing; a
 statement before the thing exists, to be built to; completeness stated; and a far field in proportion, common to observers
 whose corners differ. In a program's terms: an index and its order statistics run on ratios; a schema with units, a sum,
@@ -575,7 +578,7 @@ writes, a representation of it is only that, and a representation the size of th
 
 **Distance in the payload.** What arrives can carry cues to distance: an echo's delay, how faint a thing of a known kind
 looks. Each becomes a distance only with an amount carried in, the signal's speed and a clock, or the thing's true
-brightness. Ranging is writing. Scale the world and the distance so stated moves.
+brightness. A range is an amount. Scale the world and the distance so stated moves.
 
 **The best guess is the median.** An observer that must guess the other's size, the mountain's, knowing only V₋ ≤ V* ≤ V₊,
 does best, on the logarithm, at √(V₋V₊), the corner of its bounds; holding a distribution, at its median, for every
@@ -649,7 +652,7 @@ list without end. What the geometry adds is the reason they fit together.
 third, the same every time, with no state behind it. That is why it needs no memory and why reads never race. State
 enters only with keeping: which steps this observer took. And what is kept is kept in things, marks, pebbles, the
 cells of a register, each with a size and each a write. A count of steps is a description laid over them, with no
-unit; scale the world and it is unchanged. An amount in a unit is a write as well. With the first write comes physics,
+unit; scale the world and it is unchanged. An amount in a unit is the observer's bookkeeping about writes, the thing measured and the unit's bearer. With the first write comes physics,
 and everything a machine calls a measurement. A law needs no memory; a
 history does. ("Law" in the geometric sense only, a relation among one read's directions: the sorting stays read and
 write, with no third kind.)

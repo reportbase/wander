@@ -74,10 +74,12 @@ looks' slopes, continuous, with nothing counted in it. Taken as it was here, by 
 has to be kept while the second is taken, and the step is a thing with a size. Reading and placing needed no unit, and
 they gave you everything except one number.
 
-The second act is **writing**. To say how many metres the table is, you must be given an amount from outside your
-readings: the stride measured once against a rule. Writing cost that one number, and nothing your eyes could do would
-have supplied it. A write is a bounded thing with a size, or an amount put down in a unit carried in; scaling the world
-moves it. The map in steps does not move, so it is not one.
+The second act is **writing**. A write is a thing in the world with a size and a mass that other reads can meet: a
+stone, a stride, a mark on a tree, a metre bar. Your stride was one; scaling the world moves it. To say how many metres
+the table is, you must be given an amount from outside your readings: the stride measured once against a rule, which is
+another such thing. The map in metres cost that one number, and nothing your eyes could do would have supplied it. The
+number itself, 0.7 m, is your bookkeeping about the stride, not a write. The map in steps does not move, and it is
+not a write either.
 
 Two properties do the sorting, and the series reads everything by them (a reading, the series' own). Is the thing
 continuous or discrete? And does it move when the world is scaled, the thumb and the stride with it, the units left
@@ -86,13 +88,14 @@ outside?
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
 | continuous | reading: a read, and what reads held together give, a distance in thumbs or a map | the number line in a unit (the dual hemispherical vantage) |
-| discrete | a count or an order, descriptions kept in writes | a write |
+| discrete | a count or an order, descriptions laid over writes | a write |
 
 A read is continuous and unmoved: a direction, a slope, a ratio of slopes. A write is discrete and moved: a stone, a
-stride, a mark on a wall, a metre bar, or an amount put down in a unit, 0.7 m. A write is over once made, and it is used
+stride, a mark on a wall, a metre bar: a thing in the world, with a mass, that other reads can meet. What an observer
+calls it, 0.7 m, is the observer's bookkeeping about it and no write. A write is over once made, and it is used
 only by being read: reading is continuous, and what is read is discrete. The other two boxes are tools of description.
 A count, "three trees", "514 strides", is discrete and unmoved: the strides are writes, the count is an account laid
-over them, and what is kept of it is kept as things (marks, pebbles), each a write. A length as an exact number in a
+over them, the counter's own; where it is kept as things others can meet (marks, pebbles), each of those is a write. A length as an exact number in a
 unit, or the circle held whole at a size, is continuous and moved: the DHV, set beside the two acts for comparison.
 
 A write belongs to whoever made it. The world we read is painted without pause, so every read meets it as it is now;
@@ -189,7 +192,7 @@ People sometimes think of a case the two leave out. Each turns out to be one of 
 - **Several observers.** Each has a standpoint of its own. What passes between them is a separate matter, which the essay
   comes to in section 6.
 - **A system that changes over time.** At any one reading it is a read's or the DHV's. An observer can pass from
-  reading to writing, as the observer in the room did the moment the stride was measured; that is a write, made from a
+  reading to writing, as the observer in the room did the moment it took a stride; that is a write, made from a
   standpoint, and the DHV has none.
 - **Directions along which nothing arrives.** These are still directions, with their heat and nothing painted on them. That is a fact
   about what arrives, not about the vantage.
@@ -198,7 +201,7 @@ People sometimes think of a case the two leave out. Each turns out to be one of 
   observers again.
 
 The two are exhaustive. That is a strong claim, and it matters. It means that anything you could record about the
-world can be asked: was this read or written? The answer settles what the record can and cannot contain.
+world can be asked: was this read, or is it an amount in a unit? The answer settles what the record can and cannot contain.
 
 One thing the two acts are not is the shape of what is read. The apple in your hand has the apple's geometry, its
 roundness and its dimple; that is what makes it an apple, and it is the apple's. A black hole has the hole's geometry,
@@ -226,7 +229,7 @@ writes; a representation only stands for them (*Reads and Writes* §1, "The thin
 
 Set beside the two acts of the first section, the two sides sort cleanly.
 
-**The dual hemispherical vantage's (DHV's) shapes are amounts alone, the kind of thing a write states.** The DHV states amounts: this wall is
+**The dual hemispherical vantage's (DHV's) shapes are amounts alone, bookkeeping about writes.** The DHV states amounts: this wall is
 four metres, that door is ninety centimetres. It holds every breadth, and holding every breadth means holding the whole, front and
 back, from no standpoint at all. An architect's drawing is not a view from anywhere. It is what you would have if you
 could stand nowhere and see everything. Its natural frame is a box, one number line along each axis, both signs, every
@@ -254,9 +257,9 @@ So the map is simple:
 | any other shape, in amounts | the DHV's alone |
 | the directions, their heat and their paint | the read's alone |
 
-### What writing needs
+### What an amount needs
 
-If writing is stating amounts, where do the amounts come from? Not from any reading, as section 5 will make exact. They
+If the DHV states amounts, where do the amounts come from? Not from any reading, as section 5 will make exact. They
 come from outside, and there are only a few ways they come.
 
 - **A step whose length you count.** The stride in the room, measured once.
@@ -264,13 +267,13 @@ come from outside, and there are only a few ways they come.
   door becomes an amount.
 - **A base you walk.** Surveyors lay a measured line on the ground and carry it through a network of angles.
 - **A clock and the speed of a signal.** Radar and sonar time an echo and multiply by a speed someone measured before.
-  Ranging is writing: the speed is the amount carried in.
+  Ranging gives an amount: the speed is carried in.
 - **A standard agreed beforehand.** The metre itself, the kilogram, the second: amounts kept somewhere and copied.
 
 The philosopher Niels Martens, writing about mass, puts the point sharply. A magnitude like mass "can only be reported
 or expressed, non-dynamically, in terms of how this magnitude relates to the magnitude of another particle having the
 same determinable property." And of the unit we use to report it: "A unit is thus merely a relation—to a standard
-reference body … in disguise." That is writing seen from the inside. Every amount is a reading against some
+reference body … in disguise." That is an amount seen from the inside. Every amount is a reading against some
 standard, and the standard has to be carried in.
 
 ### Two rulers
@@ -303,9 +306,9 @@ equals H. Two amounts, and a claim about how they compare.
 
 A read has no V. More than that, it never comes to hold one. Every reading is a ratio of the thumb's own shares, and V was
 never in it: not missing, never there. So no reading, however many, carries it. V against the thumb, V\*/H, is placed by
-walking a baseline or counting a step; V as an amount is known only by writing: a step counted in an agreed unit, a
+walking a baseline or counting a step; V as an amount is had only with a unit carried in: a step counted in an agreed unit, a
 signal of known speed timed, or an agreed unit handed over, each an amount carried in from outside. An observer that comes
-to know V has not read better. It has placed it by walking, or, with a unit, written it, and passed from reading to writing. Yet a read has the circle's geometry,
+to know V has not read better. It has placed it by walking, or, with a unit, put an amount to it, and neither is reading. Yet a read has the circle's geometry,
 without the circle. Where does it come from?
 
 It comes from pointing. Hold your one length, H, your thumb, up at the mountain, and turn it about one end, steadily, like
@@ -427,7 +430,7 @@ from zero (the turn counted against itself); the hand (its fingers laid by the t
 
 ## 5. The test: scale the world
 
-There is a simple test that tells reading from writing without asking how a record was made.
+There is a simple test that tells a reading from an amount in a unit without asking how a record was made.
 
 Imagine every length in the world multiplied by the same factor k, your own length included. The room is ten times
 larger, and so are you, your stride, your rulers and the gap between your eyes. Then look at any quantity you recorded
@@ -439,23 +442,25 @@ before, and ask what happened to it.
   steps. All of these come through untouched. (Reads
   joined can also give an order, as in essay 11, or a map carrying one look's directions to another's, as a turn or a
   boost does in essay 7; neither has a gap in space, and neither moves.)
-- If it changed by the factor k, it is a **writing**. A length in metres, a distance on a map's scale bar, the size of
-  the table in centimetres: all of these move, and each moved because somewhere an amount was carried in to state it.
+- If it changed by the factor k, it is a **write's size, or an amount kept about one**. A length in metres, a distance
+  on a map's scale bar, the size of the table in centimetres: all of these move, and each moved because somewhere an
+  amount was carried in to state it. Being moved is needed for a write and is not enough: the number is the observer's
+  bookkeeping, and only the thing measured is the write.
 
 Nothing length-like can do anything else. It is either fixed or it moves by k.
 
 Try it on the room. The map in steps does not move: everything grew by k, your step grew by k, and every length in steps
 is the same number as before. The map in metres moves: the stride was measured against a rule, the rule did not grow
 with the world, and every length in metres is k times larger. One test, and it puts the map in steps with the readings,
-unmoved (distances in steps), and the map in metres on the writing side.
+unmoved (distances in steps), and the map in metres among the amounts.
 
 Three cautions keep the test honest. What it sorts is a variable, a quantity said of something named: this direction,
 that gap, this light's frequency. A bare number is not yet sorted, and one thing can supply several variables of
 different kinds. Second, the test crosses with a partner the third essay gives, change what arrives and keep the
-directions, and the crossing has four boxes. On the geometry's side, unmoved is reading and moved is a
-writing, a distance in metres. On the payload's side, unmoved is a ratio of payloads, one colour channel over another,
-and moved is again a writing, a frequency in hertz. So a writing is any amount in a unit carried in, whichever side it
-is on, and being unmoved by scaling never shows by itself that a thing is a reading. Third, joining two reads does not
+directions, and the crossing has four boxes. On the geometry's side, unmoved is reading and moved is an
+amount, a distance in metres. On the payload's side, unmoved is a ratio of payloads, one colour channel over another,
+and moved is again an amount, a frequency in hertz. So an amount in a unit carried in is found on both sides,
+bookkeeping about writes whichever side it is on, and being unmoved by scaling never shows by itself that a thing is a reading. Third, joining two reads does not
 always give a distance. A distance has a gap in space in it. Which read came before which is an order, with no gap. And
 turning the look, or changing one's motion, joins two reads by a map, one read's directions carried to the other's,
 again with no gap; an angle of turn, or a rapidity, is a coordinate on such a map, inferred from the directions and
@@ -476,7 +481,7 @@ In Euler's notation the test has a picture. Write a thing as a direction times a
 logarithm, ln r + iθ. With r in an outside unit, scaling the world by k slides the real part by ln k and leaves the imaginary part alone
 (with r in thumbs, and the thumb scaled too, no point moves; only the thumb in metres does): the
 imaginary part is the reading, differences of the real part are extents, and the real part's zero, tied to a unit, is
-the writing (the second essay, section 9; *Reads and Writes* §2).
+the amount (the second essay, section 9; *Reads and Writes* §2).
 
 This test is not new, and the essay claims no credit for it. Henri Poincaré imagined, more than a century ago, all the
 dimensions of the universe becoming a thousand times larger overnight, and observed that "I shall not notice anything
@@ -498,17 +503,17 @@ it would have to be handed.
 The test also shows where a unit first gets into motion. A ball bounces to a height A every P ticks under one pull, so
 g = 8A/P². Scale the world and the observer by k, and the ball's directions at the top and at the foot of the bounce are
 the same fractions, as is its height in its own breadths. Under the same pull, though, the scaled ball takes √k times the
-ticks. The pull is an amount in a unit, so a bounce's ticks, counted, write the ball's size, A = gP²/8. This is Galileo's
+ticks. The pull is an amount in a unit, so a bounce's ticks, counted, give the ball's size, A = gP²/8. This is Galileo's
 square–cube law, met at the place in the sorting where it belongs (*Reads and Writes* §7; `sky-city.html`).
 
 A standard candle is the same move with light. Scale everything, the light per direction fixed, and no flux changes:
 1/d² is not something one standpoint reads. Carry in the source's luminosity, as the pull was carried in, and a flux
-counted writes a distance, d = √(L/4πF). The inverse square is the scale test with the luminosity held fixed
+counted gives a distance, d = √(L/4πF). The inverse square is the scale test with the luminosity held fixed
 (*Reads and Writes* §7; `inverse-square.md`, "From one vantage").
 
 A pendulum and an orbit do the same. A pendulum's period in units of √(ℓ/g) depends on its swing alone, and a Kepler
 orbit's in units of √(a³/GM) is 2π: one standpoint counting ticks reads no length. Carry in g or GM and the ticks
-counted write the length or the orbit's size (RWX, exact; essay 23 §5).
+counted give the length or the orbit's size (RWX, exact; essay 23 §5).
 
 *Demo: the mountain and the thumb, with "scale the world".*
 
@@ -516,7 +521,7 @@ counted write the length or the orbit's size (RWX, exact; essay 23 §5).
 
 ## 6. What placing and writing cost: a count
 
-If writing costs amounts carried in, it is natural to ask how many, and what placing costs on the way. The answer can be
+If an amount in a unit has to be carried in, it is natural to ask how many, and what placing costs on the way. The answer can be
 counted exactly, and it is small.
 
 Set up a simple scene: four objects, each with a size and a distance, and an observer who reads only directions, how wide
@@ -539,7 +544,7 @@ could be changed without changing anything the observer has read.
   someone, once, measures a stride against the standard metre.
 
 So placing costs one step for a lone observer, and one number exchanged for each further observer who must agree (a ratio
-of two strides, itself unmoved by scaling); writing costs one amount more, the notch that ties them all to a public
+of two strides, itself unmoved by scaling); metres cost one amount more, the notch that ties them all to a public
 standard. Each comes from moving or from exchanging; none comes from looking harder.
 
 This kind of count has relatives. Buckingham's theorem in dimensional analysis counts how many dimensionless
@@ -573,7 +578,7 @@ measured later. It added nothing to the scale. It checked the angles that had ca
 the country.
 
 The costs fall exactly where the geometry puts them. Each angle needed an instrument and a place to stand. The base
-needed the ground itself, crossed rod by rod, and one was enough to write everything. The finished map is a
+needed the ground itself, crossed rod by rod, and one was enough to give everything in a unit. The finished map is a
 plan in a unit, and its scale bar is the base.
 
 ### The body as the base
@@ -587,7 +592,7 @@ H. A. Sedgwick worked out the relation in 1973: from the angle to an object's fo
 above it, its height over your eye height is fixed. It is a ratio of readings and needs no unit. As he put it later, without
 the eye height "the vertical extents of all those objects relative to each other are still visible even though their
 vertical extents relative to the observer are not." Take the eye height as the unit and every object is placed in eye
-heights; supply it in metres and every object is written.
+heights; supply it in metres and every object has its amount in metres.
 
 The body supplies such bases all the time. In a well-known experiment of 1984, William Warren asked short and tall
 people to judge which stairs they could climb without using their hands. The boundary fell at the same proportion for
@@ -597,7 +602,7 @@ carries.
 
 So the carried-in amount does not have to be a metre rod. In perception it is the body: eye height, leg length, the gap
 between the eyes, the length of a step. The observer reads everything against it and places everything in it; one amount
-for it, in a public unit, writes everything.
+for it, in a public unit, gives everything in that unit.
 
 *Demos: one's own height; walking the room.*
 
@@ -624,13 +629,13 @@ comparison is a chain of ratios through the tower.
 
 Now carry in one amount, any one. If the building is twelve metres long, the first thing in A is four and a half metres
 and the second thing in B is one and a third. If instead someone measures that second thing in B as one metre, the
-building comes out at nine metres and everything else follows. One amount anywhere in the tower writes every length in
-it. Scale the world, and every amount moves by k while the six readings stay put.
+building comes out at nine metres and everything else follows. One amount anywhere in the tower gives every length in
+it as an amount. Scale the world, and every amount moves by k while the six readings stay put.
 
 Real systems are built this way. A metric screw thread's profile is fixed as fractions of its pitch, the same from an
 M6 bolt to an M36; the pitch is fixed against the diameter by a second standard; and one diameter in
-millimetres writes all of it. Paper sizes work the same way. Every A sheet has its sides in the ratio of the square root
-of two, so that halving it gives the next size down with the same shape, and one written amount, A0's area of one square
+millimetres gives all of it. Paper sizes work the same way. Every A sheet has its sides in the ratio of the square root
+of two, so that halving it gives the next size down with the same shape, and one amount, A0's area of one square
 metre, fixes them all. A whole system of sizes is held in ratios, with one number at the top.
 
 ### Closing a loop
@@ -660,11 +665,13 @@ stood, which loops it closed, what it was handed. That is not a lesser achieveme
 
 *Demo: a read is a slide rule: chains, loops and a misread link.*
 
-**One write, and where physics enters.** "Write" could be asked to do two jobs in this essay, and on the two axes
-of section 1 only one of them is a write. An amount in a unit carried in, the stride given in metres, is a write:
-scale the world and it moves. So is the stride itself, and a mark left where one started: bounded things with a size.
-A count of strides is not a write. Scale the world and it does not move, and it is discrete: a count, a description
-laid over the strides. What is kept of it is kept in things, marks or pebbles, and each of those is a write; a read
+**One write, and where physics enters.** "Write" could be asked to do several jobs in this essay, and only one of
+them is a write. The stride itself is a write, and so is a mark left where one started that others can meet: bounded
+things in the world, with a size and a mass. An amount in a unit carried in, the stride given in metres, is not: scale
+the world and it moves, but being moved is not enough. The 0.7 m is the observer's bookkeeping about the stride, the
+stride over the metre bar, and the bar is another write.
+A count of strides is not a write either. Scale the world and it does not move, and it is discrete: a count, a description
+laid over the strides, the counter's own. Where it is kept in things others can meet, marks or pebbles, each of those is a write; a read
 keeps nothing. So physics enters with the first write, the first thing with a size, and it is orthogonal to the
 geometry: the geometry is complete without it, and physics, when it comes, assigns amounts and moves no read. (The
 sorting is a reading, the series' own.)
@@ -684,8 +691,8 @@ someone keeps the steps and lays them end to end.
 Buckingham's): a ratio unmoved by it is a read, and anything that moves had an amount carried in. Changing what arrives
 splits one formula into its directions and its paint: aberration from Doppler, the quasar dipole's 2 from its x(1 + α).
 What crosses between is a bridge, and there are few: a speed, a rest frequency, a baseline, a kind of star, a clock.
-Sorted this way a parallax is an angle read and a distance written through the astronomical unit, and inverting noisy
-parallaxes as if they were distances is Lutz and Kelker's bias, a read taken for a write. *Reads and Writes in Physics*
+Sorted this way a parallax is an angle read and a distance given through the astronomical unit, and inverting noisy
+parallaxes as if they were distances is Lutz and Kelker's bias, a read taken for an amount. *Reads and Writes in Physics*
 (`../reads-and-writes-physics.md`) goes through the known cases one by one, the failures with them. It claims no new
 physics, only where each part of a known result lives.
 
@@ -696,17 +703,17 @@ physics, only where each part of a known result lives.
 It would be easy to call all of this obvious. Of course angles do not depend on units; of course you need a ruler to
 get metres. But the distinction does real work, and it is worth spelling out what.
 
-**It finds mistakes.** The commonest is to take a reading for a writing. An observer with no outside amount does the only
+**It finds mistakes.** The commonest is to take a reading for an amount. An observer with no outside amount does the only
 sensible thing about the mountain's size: it takes its own length as the best guess, so that, in effect, mountain
 equals thumb. That is a fine estimate, and it is the best available when nothing says bigger or smaller. It becomes a
 mistake only when the estimate is read as a measurement, when "one thumb" is written down as "one mile". The same error
 in a subtler form is well known in astronomy. A star's parallax is an angle, a reading. Its distance is that angle
-turned into an amount using the size of Earth's orbit, a writing. The two have different statistics. An angle with
+turned into an amount using the size of Earth's orbit, an amount in a unit. The two have different statistics. An angle with
 a small symmetric error becomes, once turned upside down into a distance, a distance with a lopsided error, and
 catalogues that treat the distances as if they were the measurements come out biased (astronomers know the effect as
-the Lutz–Kelker bias). Keeping the reading and the writing apart is most of the cure.
+the Lutz–Kelker bias). Keeping the reading and the amount apart is most of the cure.
 
-**It asks one question of any quantity.** Was it read or written? Was it a direction, something painted on a
+**It asks one question of any quantity.** Was it read, or is it an amount in a unit? Was it a direction, something painted on a
 direction, a shape held whole, or an amount stated in a unit? The answer says what the quantity can and cannot contain.
 A record that scaling the world would leave unchanged cannot contain the world's size, however carefully it was made.
 Measured data sorts the same way: the third essay's three cases (two gravitational-wave detectors, the quasar dipole,
@@ -727,7 +734,7 @@ their heat are given, and nothing writes to them. This is argued from a principl
 **It explains how much a lone observer can do.** This is perhaps the most surprising lesson. With no unit at all, an observer
 can map a room, size every object against every other, build a tower of units, check it by closing loops, and have the full
 geometry of the circle, its corner, its halves and its symmetry, as the law of its own directions, with no circle held:
-only its thumbs pointed. Almost everything comes free. What it cannot have is one number per agreement. The written world,
+only its thumbs pointed. Almost everything comes free. What it cannot have is one number per agreement. The world in amounts,
 the map in metres, the number line, is a fine and useful thing: it lets sizes be stated before anything is
 built, lets observers who never meet compare notes, and lets amounts be added up. But it rests on that handful of numbers,
 carried in from outside, and the world as read was complete before they arrived.

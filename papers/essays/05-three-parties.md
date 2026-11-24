@@ -238,14 +238,14 @@ number of the amounts, a factor on that party's amounts alone, so many thumbs.
 
 ## 9. Reading and writing, with a second party
 
-The first essay sorted readings into the written and the read by asking about the other's breadth. With a second
-other party the same question is asked of each: each party's breadth is known, and written, or not, and read.
+The first essay sorted readings into the DHV's and the read's by asking about the other's breadth. With a second
+other party the same question is asked of each: each party's breadth is known, an amount, or not, and read.
 
 - **Both known.** The dual hemispherical vantage's (DHV's) view in three dimensions: the solid held whole, its corners computed, no horizon. The
   truth is one point of the triangle.
 - **One known, one not.** One pair is held as the DHV holds it; the other is read from somewhere. With V known, the
   corner of h and v is computed and V's amounts are exact. V₂ is read on the read's length, its corner with h found,
-  and its amounts known up to one missing ratio. Written in one freedom, read in the other.
+  and its amounts known up to one missing ratio. An amount in one freedom, read in the other.
 - **Both read.** Every direction of the octant is a reading [h : v : v₂], two numbers, laid evenly by area and painted
   by whatever arrives along it.
 
@@ -264,7 +264,7 @@ direction *and* its distance would need every distance, the size of everything, 
 The wedge is the DHV's too: its description of the read's geometry, given afresh at each standpoint from the
 relations there and drawn whole from outside. It needs no size: its readings are ratios, laid by the two-dimensional
 Cauchy. What further standpoints would add is what they added in the plane, once per party: the true size of each against
-H, in thumbs, an extent; in a unit it is a write, the amount the DHV states.
+H, in thumbs, an extent; in a unit it is an amount, the kind the DHV states.
 
 The wedge can be placed anywhere on the sphere. One rotation positions it; the read's two sweeps then work inside
 it, in its own frame. The readings are the same at every position. Only a frame fixed outside, the sphere's, records where
