@@ -580,6 +580,42 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  GRV (`plans/grv-plan.md` + `runs/grv/grv.py`, 23–24 Nov; Tom: "Proceed"): gravity sorted by direction, exact at 50 digits.
+  The pull at a place is a fixed weight over directions times the mass met along each (the column); above a sheet 2πG times
+  the Cauchy-weighted average of its density, ripples fading as e^(−kh); a point mass's pull through a plane 2πGM times the
+  2D Cauchy of scale d. V3 killed in one clause by my guess (a cube shell's opposite columns); the rest not killed. Classical
+  (the Poisson kernel of the half-space); Tom's statements of both days recorded below the runs, each with its limits.
+  R1178 (24 Nov; Tom: "geometry  does accept 3 meters though to give it scale, but we are just playing with ratios when we
+  do that."): an amount in a unit is the thing over the unit's bearer, a ratio of two writes, moved by the scale test only
+  because the bearer is kept outside the scaling; the geometry and the bookkeeping hold ratios only. *Reads and Writes* §7.
+  R1177 (24 Nov; Tom: "Yes, update the paper.   what the reader calls the bar is irrelevent to the universe, only the bar
+  is relevent."): R1176 carried through *Reads and Writes* (subtitle "what is written to the world"; abstract; §1's kinds
+  tables; §7 "The zero: writes and amounts", "A bounce gives its size", "A candle gives its distance"; §11's rule "a read,
+  a write, or bookkeeping about them"). **In the paper: a number in a unit is "an amount", never "a write"; a count
+  "gives" a size.** The essays, the physics paper and the demos keep the older sense, not swept.
+  R1176 (24 Nov; Tom: "if it does not affect the universe in some way, its not a write.   3 meters is booking of of the
+  readers."): **the test for a write is the world's; an amount in a unit ("3 metres") is the observer's bookkeeping about
+  a write, not a write**; the thing measured is the write, and a unit's bearer others can meet (a metre bar) is another;
+  "moved by scaling" needed, not enough. *Reads and Writes* D4, D5, §7, §8. **For new writing: a number never "is" a
+  write; say a count "gives" a size in a unit, not "writes" it.** Not swept: the paper's verb "writes its size", its kinds
+  tables, §7's opening, the essays, the physics paper, the demos.
+  R1175 (24 Nov; Tom: "the write has to have scale.   the write ,must have mass and gravity.   Abstract thoughts are not
+  such a thing."; "its just the readers bookeeping, his own."): **a write is a thing in the world with scale, mass and so a
+  pull, that other reads can meet; thoughts, counts held and private marks are the observer's bookkeeping, never writes.**
+  *Reads and Writes* D4. **For new writing: do not call a convention, a frame, a count or a number a write.** Flagged, not
+  yet changed: D4's "an amount put down in a unit", §7's simultaneity "a write", §8's frame "its write".
+  R1174 (24 Nov; Tom: "A count does not write to the universe, it is specific to the reader.  A write is to the universe
+  and all readers share each others writes."): **a count is the counter's own; a write is to the world, met and shared by
+  every read**; a mark that is the counter's alone is no write, a mark others can meet (a tree notched, a flag planted) is
+  one (Tom: "if the mark is reader specific, his alone, it is not a write"). *Reads and Writes* D7, §1's table, §5, §9 ("a read
+  and a count, both the standpoint's own"). Who Ω and 1/Ω belong to stays open (Tom: "We are exploring that"); Claude's
+  reading, not ruled: both the single standpoint's limits, 1/Ω by pointing, Ω by its own count, π the DHV's.
+  R1173 (24 Nov; Tom: "Update the paper.  It is about the read, the write should be simplified as need to make points about
+  the read"): ***Reads and Writes* is about the read; a write is taken up only where a point about the read needs one,
+  simplified as far as that point allows, the passage naming what it left out.** The paper's head says so; §7 "A write's own
+  heat: the pull" is the first such passage (a write a point with one mass at one moment, Newton's pulls adding; every write
+  has this heat, alike the read's and not the same: every direction, an amount, a sum with a mean). **For new writing: do not
+  build out the write for its own sake; never say gravity is a read, or new physics.**
   R1172 (21 Nov; Tom: "yes"): `crosshairs.html`'s H the distance to the pick (the hypotenuse), legs H/√3, readings over
   the leg; nothing moves on the screen, H's number √3 larger; R1164 undone. Probe: pick reads (1.03, 1.00, 0.97), no errors.
   R1171 (21 Nov; Tom: "this elimantes the two derivation paths, the less clean one is logically the correct one."):

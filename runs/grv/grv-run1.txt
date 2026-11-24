@@ -1,0 +1,35 @@
+V1 a uniform ball by columns against (4/3) pi R^3 / d^2 and (4/3) R x pi (R/d)^2
+  d/R 1.01 columns 4.1062544895465062098 rel miss 2.6e-51 share form miss 0.0
+  d/R 2 columns 1.0471975511965977462 rel miss 0.0 share form miss 0.0
+  d/R 10 columns 0.041887902047863909846 rel miss 5.98e-51 share form miss 8.35e-53
+  d/R 1000 columns 4.1887902047863909846e-6 rel miss 4.87e-51 share form miss 1.02e-56
+V2 inside a spherical shell (1, 1.5): the column toward u against the column toward -u, 40 seeded directions
+  at 0.3 the worst pair differs by 4.01e-51
+  at 0.9 the worst pair differs by 2.67e-51
+V3 inside a shell between cubes (1, 1.5) at (0.3, 0.2, 0.1)
+  pairs differing by more than 1e-3: 12 of 40; the largest 0.191
+  the pull over 100000 directions ['0.002553', '-0.012599', '-0.010413'] size 0.016544
+  the pull over 400000 directions ['0.002545', '-0.012599', '-0.010413'] size 0.016542
+V4 above a sheet: the vertical pull against 2 pi (1 + eps e^(-kh) cos kx)
+  k 1.0 h 1.0 x 0.0 pull 6.9766217170541395077 miss 1.07e-50
+  k 3.0 h 0.5 x 0.7 pull 6.0708518603233949502 miss 0.0
+  k 0.2 h 4.0 x 2.0 pull 7.0632918642567379345 miss 1.07e-50
+  uniform sheet, h 0.001 pull over 2 pi 1.0 the Cauchy totals 1 within 0.0
+  uniform sheet, h 1.0 pull over 2 pi 1.0 the Cauchy totals 1 within 0.0
+  uniform sheet, h 1000.0 pull over 2 pi 1.0 the Cauchy totals 1 within 0.0
+  in the plane, h 0.5 the kernel h/(2 pi (r^2+h^2)^(3/2)) totals 1.0 miss 0.0
+  in the plane, h 1.0 the kernel h/(2 pi (r^2+h^2)^(3/2)) totals 1.0 miss 0.0
+  in the plane, h 3.0 the kernel h/(2 pi (r^2+h^2)^(3/2)) totals 1.0 miss 0.0
+  at h = 1, four times the kernel against the wedge law at (0.7, 1.3): miss 0.0
+V5 the scale test on the ball, test points at 2R and 5R (exact fractions; pi left out of the pull)
+  k 1/1000 same density: pull x 1/1000 1/1000 | same mass: pull x 1000000 1000000 | ratio of the two pulls 25/4 25/4 25/4 | share (R/d)^2 1/4 1/4
+  k 7 same density: pull x 7 7 | same mass: pull x 1/49 1/49 | ratio of the two pulls 25/4 25/4 25/4 | share (R/d)^2 1/4 1/4
+  k 1000000 same density: pull x 1000000 1000000 | same mass: pull x 1/1000000000000 1/1000000000000 | ratio of the two pulls 25/4 25/4 25/4 | share (R/d)^2 1/4 1/4
+V6 a half-ball from the centre of its flat face: by columns, by cylinders, against pi R; the whole ball
+  R 1 columns 3.1415926535897932385 rel miss 0.0 cylinders rel miss 0.0 the whole ball 0.0
+  R 10 columns 31.415926535897932385 rel miss 0.0 cylinders rel miss 0.0 the whole ball 0.0
+  R 1000000 columns 3141592.6535897932385 rel miss 0.0 cylinders rel miss 0.0 the whole ball 0.0
+V7 a thin cap of a sphere about the standpoint, half-angle 0.4: over its area with 1/r^2, against pi sin^2(0.4)
+  radius 1 pull 0.47641198689900950968 miss 6.68e-52
+  radius 10 pull 0.47641198689900950968 miss 6.68e-52
+  radius 1000 pull 0.47641198689900950968 miss 6.68e-52
