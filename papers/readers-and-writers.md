@@ -1681,6 +1681,61 @@ apart place the source in steps, and the mass then needs G carried in. **Checked
 formulas classical (Newton 1687; the plane's kernel is potential theory's Poisson kernel of the half-space, not there
 called the Cauchy), the sorting a reading. No new physics: Newton's law, placed.
 
+**Gravity on the stage: what has been observed so far.** A working record, kept here so later work can tighten the
+connection between observation and gravity. Each item is exact arithmetic on Newton's pulls or the thin lens, checked in
+FCL's eight runs (`plans/fcl-plan.md`, `runs/fcl/`; essay 33; the demo `look-pull.html`), and each is classical in its
+mathematics. What is ours, and unsearched, is setting them beside the read.
+
+*Where a pull keeps the read's law.*
+
+- A point mass one height d from a plane spreads its pull through the plane as the Cauchy of scale d: half within √3·d
+  of the foot round it, half within d across one thumb, a third inside the square of side 2d. These are the read's own
+  shares (§3), with the height in the thumb's place.
+- A flat sheet's pull at a height is 2πG times the Cauchy-weighted average of its density, and a ripple in the density
+  fades as e^(−kh) with height, which is §3's stepping back. The sheet leans away from the place, carrying √(1 + r²) of
+  matter per direction at slope r, and a facing takes exactly that back, so the sheet's pull straight down is even per
+  direction, the uniform turn.
+- A buried body is found as a standpoint is. Along the ground over a long buried cylinder the pull is exactly a Cauchy
+  curve, and its depth is the curve's half-width at half height; over a ball the half-width is 0.77 of the depth. This is
+  "find the z" (§2) used in practice: the law's scale is the distance to its source. (Geophysics' depth rules and upward
+  continuation; from memory, not opened.)
+- Light bent past masses on one line keeps the Cauchy along that line: images that follow the Cauchy with point z come
+  from sources that follow the Cauchy with point z − Σ εᵢ/(z − aᵢ), and Cauchy sources are seen as one Cauchy per
+  image. With one mass the two images multiply to −1 in units of its ring, the read's own exchange (§9), and half of
+  all images lie inside the ring whatever the sky. Over the whole screen the family is not kept.
+
+*Where a pull differs.*
+
+- It carries an amount. From one place a pull gives only M/d², never M or d; the direction of a pull is unmoved by
+  scaling and its strength is not.
+- It has no facing. Given one for a moment, what is taken from in front less what is taken from behind is the pull along
+  that facing, where a read's two halves add to all there is. Six facings give the whole pull. The facings without their
+  directions give one amount only. Inside an even shell every facing equals its opposite: the nothing there is a balance,
+  each side far from nothing.
+- One facing of an endless even world has no total (a sideways take over a sheet grows without limit), as the Cauchy has
+  no mean; only the difference of opposite facings has a limit.
+
+*Corners that an amount owns.* The read's corner sits where the thumb puts it. The corners below have the same exchange
+and are placed by masses.
+
+- Two masses at rest: the pulls cancel where the distances' ratio is the square root of the masses' ratio, ρ = √μ, the
+  fixed point of ρ ↔ μ/ρ. Scaling every length, or both masses alike, does not move it. The places of equal pull are a
+  sphere (Apollonius), and every net pull on it points at the meeting place.
+- The same pair in orbit: five balance points; the two off the line stand at equal distance from both masses for every
+  mass ratio, the corner back at 1; between the masses the square root becomes a cube root.
+- A ball: inside, the pull grows in proportion to the distance from the centre, and outside it falls as 1/x², greatest
+  at the surface. With size, two balls keep the meeting place where points have it while it is outside both, and each
+  gains a balance point near its own centre. The meeting place never enters a ball: it meets that inner point one third
+  of the way between the centres and both go.
+- A lens: its ring, where the two images exchange.
+
+*Open, for later sessions.* (1) Whether "even from a point" is all that joins the two, or whether the subtraction of
+opposite facings has a form on the read's side (a read's two facings s and 1/s multiply to 1; a pull's two halves
+subtract). (2) Whether the corners owned by an amount can be had from ratios of pulls alone, as a read's corner is had
+by looking, without the masses written. (3) A check on measured gravity profiles over bodies of known depth. (4) What
+moving masses and light's own delay do to any of it; everything above is at rest or in steady orbit. (5) A search for
+where this is in print. None of this is new physics, and a pull is not a read.
+
 **A single vantage and the DHV, side by side.** A read is a single hemispherical vantage; the DHV is the dual,
 drawn from no standpoint. Where the DHV is what is wanted, the list above says so: what acts out of view with no law
 in time, whose state has to be stepped whether anyone looks; more than one standpoint, which must agree on something that

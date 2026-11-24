@@ -7607,6 +7607,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1185** (24 Nov 2026; Tom: "show gravity follows cauchy is interesting, is this known?"; "lets add the gravity
+  observations to the read&write paper. Its our internal working paper. In future sessions we will try to tighen the
+  connection between observation and gravity."): *Reads and Writes* §7 gains "Gravity on the stage: what has been
+  observed so far", a working record of FCL's eight runs sorted as where a pull keeps the read's law, where it differs,
+  the corners an amount owns, and five open items for later sessions. Claude's answer on what is known, from memory, not
+  opened: the plane's law is the Poisson kernel of the half-space (the multivariate Cauchy, Brownian hitting); a buried
+  cylinder's anomaly is a Cauchy curve with depth its half-width, a ball's 0.77 of the depth; upward continuation is
+  convolution with the kernel; u − 1/u keeping the Cauchy is Boole 1857 and Letac 1977. Not seen, unsearched: the tie to
+  a standpoint's directions and the add/subtract difference. No new claim; a pull is not a read (R1183).
 - **R1184** (24 Nov 2026; Tom: "Right, not an insight about gravity, but about how cauchy connects observation and
   gravity."; "lets add this to the read & write paper because its about the read and dmv." (read as DHV, the dual
   hemispherical vantage)): **the thread's result is not an insight about gravity; it is about how the Cauchy connects
