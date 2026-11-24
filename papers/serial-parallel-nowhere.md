@@ -7607,6 +7607,23 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1182** (24 Nov 2026; Tom: "merge, 1, 2, 3", to Claude's three next steps: his ruling on a place with no facing, a
+  demo for the thread, more runs): PR #489 merged. **No ruling made: item 1 is put to Tom.** The question as it stands:
+  is a place with no facing a second way to read (Tom, R1180: "there now seems to be two ways to read"), or no read at
+  all? What the runs give exactly: no facing is every facing at once with its direction attached; a pull joins a facing
+  to its opposite by subtracting where a look's two halves add; and it carries an amount. Claude's recommendation, not
+  a ruling: no read (a read is one facing, continuous, unmoved by scaling, with no amount; a pull has none of the four,
+  and R1173's "never say gravity is a read" then stands unchanged); what the two share is the stage. FCL run 8
+  (`runs/fcl/fcl8.py`), predictions first, nothing killed, all worked out on paper beforehand: for two uniform balls the
+  point meeting place (ρ = √μ) is unmoved by the radii while outside both, each ball gains a balance point near its
+  centre (s ≈ M₁R₂³/(M₂D²), three amounts; the exchange ρ ↔ μ/ρ fails inside by exactly (R/s)³), and the meeting place
+  never enters a ball: it meets the ball's inner point one third of the way between the centres, at
+  M₂/M₁ = (27/4)(R₂/D)³, and both go, so the line holds three balance points or one; two lens masses on one line keep the
+  Cauchy along it (images Cauchy(z) from sources Cauchy(z − ε₁/(z − a) − ε₂/(z − b)); Cauchy sources seen as three
+  Cauchys whose points add to w + a + b), run 5's pairing −1/z the one-mass case only. `look-pull.html`, "A look and a
+  pull", the thread's demo (a facing turned among masses, the takes in front and behind, their difference the pull along
+  the facing, six facings the whole pull, the shell's balance, and the sheet's lean cancelling); a card on `demos.html`,
+  a link on essay 33's card. One probe run (the identities to 10⁻¹⁵, no page errors); `npm test` not run. No paper changed.
 - **R1181** (24 Nov 2026; Tom: "merge, then 2 and 3", to Claude's three next steps: merge the pull request, the sheet
   taken by facings, an essay): PR #488 merged. FCL run 7 (`runs/fcl/fcl7.py`), predictions first, nothing killed: a flat
   sheet is not an even sky, it leans, carrying √(1 + r²) per unit of direction at slope r; a faced take's cosine cancels

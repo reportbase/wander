@@ -666,6 +666,6 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
     - **The sheet's lean cancels the facing's cosine** (run 7): a flat sheet carries √(1 + r²) per unit of direction,
       a faced pull counts 1/√(1 + r²) of it, so the sheet's weight is the look's law; thinned, it is run 6's even sky.
       A facing along the sheet has no limit.
-    - Written up as essay 33 (R1181). Later candidates: bodies with size; a lens of two masses.
+    - Written up as essay 33 (R1181). Run 8 (R1182): with size, the meeting point is unmoved outside the bodies, each body gains a balance point near its centre, and the meeting point never enters a body (it meets the inner point a third of the way across and both go); two lens masses on a line keep the Cauchy along it. Demo: `look-pull.html`. Open for Tom: is a place with no facing a second way to read, or no read at all.
     Standing: a working thread. Nothing in any paper. What gravity is stays untouched (Tom: "what is gravity
     specificaly. but lets not get bogged down").
