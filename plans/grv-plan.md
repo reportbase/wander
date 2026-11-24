@@ -183,3 +183,13 @@ reduced." Claude's reading, not ruled, nothing run:
   pair weighs less than its parts by the binding energy and relative motion adds kinetic energy; the sign is the other way round
   from "not in step, reduced" if "reduced" meant the total. A changing arrangement also radiates (the open point above).
 Open: which of these Tom means by "reduced".
+
+Tom (24 Nov): "The read write paper shows that there is a clean separation between the address and the payload. I'm saying that
+gravity is no different." What run 1 already shows of it, and where it stops (Claude's sorting, not ruled):
+- *Exact for Newton's static pull.* g = G∮Σ(Ω)·Ω̂ dΩ is a fixed kernel over directions (on a plane the Cauchy) times the mass met
+  along each (the column Σ). The paper's second test passes: change the mass and no direction and no weight of the kernel moves
+  (V4: any density under the same Cauchy; V2, V3: the shell's shape changes the columns, never the kernel); and the kernel is the
+  same at every size (V5, V7), the amount entering only through the mass and G. Pulls add for the same reason heat maps do.
+- *Where it stops.* The separation is linearity. In general relativity the mass also bends the paths (lensing: the payload moves
+  light's addresses, noted above) and the field's own energy is a source, so two strong fields do not simply add. Exact in the
+  weak, static case; approximate beyond it.
