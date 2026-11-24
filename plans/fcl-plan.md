@@ -484,3 +484,44 @@ Said beforehand: S1, S3, S5 and S6 are identities I derived; S2's equality is Ne
   more facings are needed. Kill: g rebuilt from six takes off past 10⁻²⁵, in 10 scenes with seeded axes.
 - **S6, the scale test.** Every F scales as k⁻² with lengths and as the masses; the ratio F(n)/F(−n) is unmoved by
   either. An identity.
+
+### Run 6 (24 November 2026; `runs/fcl/fcl6.py`, output `runs/fcl/fcl6-run.txt`; 47 seconds)
+
+| | result | verdict |
+|---|---|---|
+| S1 | F(n) − F(−n) = n·g at 50 facings (10⁻³¹) | not killed |
+| S2 | inside the shell the two opposite takes equal (0.2559, 0.2778, 0.3482 at 0.3, 0.6, 0.9 of the radius); at 0.9 across the line 0.4358, 25% more than along it | not killed |
+| S3 | the means exactly ¼ and ⅙; on a grid of 80,000 facings ⟨F⟩ within 7·10⁻⁶ of the sky's amount over 4 and 6⟨nF⟩ within 2·10⁻⁵ of g | not killed |
+| S4 | share within r exactly r²/(1 + r²), ½ at one thumb, r and 1/r adding to 1; across one thumb ½ at 1/√3 (10⁻³²) | not killed |
+| S5 | g rebuilt from six takes (10⁻³¹) | not killed |
+| S6 | the ratio of opposite takes 0.35158 under both scalings; one take × k² | not killed |
+
+Nothing killed. S2's variation was a guess of "more than 1%"; it is 25%. Read off afterwards: the faced take's two
+half-marks (1 round the foot, 1/√3 across one thumb) are the look's (√3 and 1) each divided by √3.
+
+### What run 6 says, as a reading (Claude's, not ruled)
+
+**A facing gives a pull a front, and with the front the look's exchange comes back whole.**
+
+- **"No facing" is all facings at once, each keeping its direction** (S3): g = 6·⟨n·F(n)⟩. Drop the directions and
+  all the facings together give only an amount, the sky's total over four. So Tom's sentence holds in this exact
+  form: the faceless take is the facings summed with their directions attached. Six of them, three square pairs, are
+  already enough (S5).
+- **Opposite facings subtract** (S1). For a look, a facing and its opposite are joined by adding (two hemispheres make
+  the DHV's whole, 2Ω and 2Ω). For a pull they are joined by subtracting: what is alike in front and behind goes. That
+  is the one sign that separates the two plays on the one stage.
+- **The shell's nothing is a balance, not an absence** (S2). Inside a shell each facing takes in a good deal (0.26 to
+  0.44 of the shell's mass over its radius squared), more across the line to the centre than along it; the pull is
+  nothing because every facing equals its opposite (Newton's opposite cones). A look inside the shell sees it in every
+  direction; a faced take feels it in every direction; only the difference is nothing.
+- **A faced take of an even sky has the look's exchange exactly, its corner at one thumb** (S4): the share within r of
+  the foot is r²/(1 + r²), the plane's own share v², half at r = 1, with r and 1/r complementing. The look's heat on
+  the same screen has its half at √3 and run 2's single mass had no reciprocal pairing at all. The extra power is the
+  facing's own cosine: a pull counts only its part along the facing. It is ISX's disc, met there for light.
+- **A pair of opposite takes is a ratio no scaling moves** (S6): F(n)/F(−n) is unmoved by scaling lengths or masses,
+  where each take alone is an amount.
+
+Limits. Every prediction but S2's size was derived beforehand; classical (Newton's shell argument, Lambert's cosine,
+the mean of a clipped cosine over the sphere). A faced take is a definition made for this run (what crosses a small
+window from the front); it is not claimed that any thing in the world takes a pull this way. The even sky in S4 is a
+sky alike in every direction in amount per direction, not a mass spread evenly through space.

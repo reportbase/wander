@@ -1,0 +1,12 @@
+FCL run 6, mpmath 30 digits
+
+S1: not killed (largest miss 3.94e-31 over 50 facings)
+  S2 at 0.3 of the radius: toward the near side 0.255893325461, toward the far side 0.255893325461; across the line 0.258945640637
+  S2 at 0.6 of the radius: toward the near side 0.277777777778, toward the far side 0.277777777778; across the line 0.294145221822
+  S2 at 0.9 of the radius: toward the near side 0.348216114596, toward the far side 0.348216114596; across the line 0.435751334784
+S2: not killed (opposite takes differ by 0.0; at 0.9 across against along differ by 25.14%)
+  S3 mean of (n.u)+ = 0.25, mean of n (n.u)+ along u = 0.166666666666667
+S3: not killed (exact means off by 0.0, 0.0; on a grid of 80,000 facings <F> off sky/4 by 6.5e-6, 6<nF> off g by 1.8e-5)
+S4: not killed (largest miss 9.86e-32; share within one thumb 0.5; strip to 1/sqrt 3 0.5; the look's share within sqrt 3 is 0.5)
+S5: not killed (g rebuilt from six takes, largest miss 4.53e-31)
+S6: not killed (the ratio of opposite takes 0.35158038 under both scalings; one take x k^2: 1.0)

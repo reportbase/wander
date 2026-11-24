@@ -608,6 +608,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   through the mass images Cauchy(z) come from sources Cauchy(z − 1/z) (centred: scale γ + 1/γ, least at the ring), and
   Cauchy sources are seen as two Cauchys at z₁ and −1/z₁, z₁ + z₂ = w; over the whole screen the family breaks (density
   zero on the ring, 0.144 from any centred 2D Cauchy). The ring is the play's corner, an amount. Classical.
+  Run 6 (Tom: "proceed"; what a facing adds to a pull), nothing killed: a faced take F(n) keeps what arrives from in
+  front, along the facing; opposite facings subtract (F(n) − F(−n) = n·g) where a look's add; the faceless take is
+  6·⟨n·F(n)⟩ over all facings, six enough, the facings without their directions only an amount (the sky's total over 4);
+  inside a shell every facing equals its opposite, each far from nothing; an even sky's faced take on the flat screen
+  has share r²/(1 + r²), half at one thumb, r ↔ 1/r complementing (ISX's disc). A definition made for the run.
   R1179 (24 Nov; Tom: "update the essays"): R1174–R1178 carried through the essays and README (23 files): a number in a
   unit is "an amount", never "a write" or "a writing"; a count "gives" a size. Left for Tom: "temporary writes" (R1048),
   "what is kept is a write" where the keeping is private, R568's wording, the older "writer". Physics paper, demos not swept.

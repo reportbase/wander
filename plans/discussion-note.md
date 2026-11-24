@@ -659,6 +659,11 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       through the mass Cauchy stays Cauchy (z ↦ z − 1/z, and back as two Cauchys whose points add to the source's);
       over the whole screen the family breaks, by the stretch round the ring. The ring's place is set by the mass, an
       amount: the play's corner, where the look's is chosen.
-    - Later candidates: what a second facing adds; bodies with size; a lens off the line of sight's centre (two masses).
+    - **A facing gives a pull a front** (run 6): opposite facings subtract where a look's add; "no facing" is all
+      facings at once with their directions attached (g = 6·⟨n·F(n)⟩, six enough), and without the directions only
+      an amount; the shell's nothing is every facing equal to its opposite; an even sky's faced take has the look's
+      exchange exactly, its corner at one thumb.
+    - Later candidates: bodies with size; a lens of two masses; a sheet or a ball taken with a facing (GRV's sheet
+      by facings).
     Standing: a working thread. Nothing in any paper. What gravity is stays untouched (Tom: "what is gravity
     specificaly. but lets not get bogged down").
