@@ -585,6 +585,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy-weighted average of its density, ripples fading as e^(−kh); a point mass's pull through a plane 2πGM times the
   2D Cauchy of scale d. V3 killed in one clause by my guess (a cube shell's opposite columns); the rest not killed. Classical
   (the Poisson kernel of the half-space); Tom's statements of both days recorded below the runs, each with its limits.
+  R1175 (24 Nov; Tom: "the write has to have scale.   the write ,must have mass and gravity.   Abstract thoughts are not
+  such a thing."; "its just the readers bookeeping, his own."): **a write is a thing in the world with scale, mass and so a
+  pull, that other reads can meet; thoughts, counts held and private marks are the observer's bookkeeping, never writes.**
+  *Reads and Writes* D4. **For new writing: do not call a convention, a frame, a count or a number a write.** Flagged, not
+  yet changed: D4's "an amount put down in a unit", §7's simultaneity "a write", §8's frame "its write".
   R1174 (24 Nov; Tom: "A count does not write to the universe, it is specific to the reader.  A write is to the universe
   and all readers share each others writes."): **a count is the counter's own; a write is to the world, met and shared by
   every read**; a mark that is the counter's alone is no write, a mark others can meet (a tree notched, a flag planted) is

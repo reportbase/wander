@@ -440,7 +440,7 @@ a membrane's potential and its spike, a stream from a tap and the drop that pinc
   a thing, and what it gives is an extent. V\*/H, a party's true breadth in thumbs, is an extent. An extent is a relation
   between standpoints and named things in space; not every number had from two reads is one (§12, O9).
 - **D4. A write** is discrete and moved by scaling: a bounded thing with a size. A stone, a stride, a mark on a wall
-  and a metre bar are writes. So is an amount put down in a unit carried in from outside the world: a metre, a second,
+  and a metre bar are writes. A write has scale: it is a thing in the world, with mass and so with a pull (§7, "A write's own heat"), where other reads can meet it. A thought, a count held or a mark kept for oneself is the observer's own bookkeeping and no write (R1174, R1175). So is an amount put down in a unit carried in from outside the world: a metre, a second,
   a hertz, an agreed notch. The exact amount, a real number with no last digit, is the number line's, the DHV's
   (§6, "Extents come by degrees"). For the geometry it is the across axis's zero tied to a unit, a distance in metres, and one such amount serves
   every extent hung from the same thumb (§7). A payload has writes too: a frequency in hertz, a brightness in watts.
