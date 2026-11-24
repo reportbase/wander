@@ -7607,6 +7607,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1183** (24 Nov 2026; Tom: "proceed with your recommendations.", to Claude's recommendation on R1182's question):
+  **a place with no facing is not a read, and not a second way to read. A look and a pull stand on one stage and are
+  different plays.** A read is one facing, continuous, unmoved by scaling, with no amount; a pull has no facing, is a
+  sum, moves with scaling and carries an amount; taken with a facing for a moment its two halves subtract where a read's
+  add. Settles R1180's exploration (Tom's "two ways to read" not taken up); R890, R967 and R1173 stand unchanged.
+  **For new writing: never call a pull, or a place with no facing, a read or a way to read; say they share the stage.**
+  Carried into *Reads and Writes* §7 "A write's own heat: the pull" (one sentence), essay 33's head and §10,
+  `look-pull.html`'s note, discussion note item 24.
 - **R1182** (24 Nov 2026; Tom: "merge, 1, 2, 3", to Claude's three next steps: his ruling on a place with no facing, a
   demo for the thread, more runs): PR #489 merged. **No ruling made: item 1 is put to Tom.** The question as it stands:
   is a place with no facing a second way to read (Tom, R1180: "there now seems to be two ways to read"), or no read at

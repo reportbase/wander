@@ -622,8 +622,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (s ≈ M₁R₂³/(M₂D²), the exchange failing inside by (R/s)³); the meeting point never enters a ball, it meets the inner
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
-  adding to w + a + b). `look-pull.html` the thread's demo. Open, Tom's to rule: whether a place with no facing is a
-  second way to read or no read at all (Claude recommends: no read; R1173 stands).
+  adding to w + a + b). `look-pull.html` the thread's demo.
+  R1183 (24 Nov; Tom: "proceed with your recommendations."): **a place with no facing is not a read, nor a second way to
+  read; a look and a pull stand on one stage and are different plays** (a pull has no facing, is a sum, moves with
+  scaling, carries an amount; its two halves subtract where a read's add). R1173 stands. *Reads and Writes* §7, essay 33
+  §10. **For new writing: never call a pull or a place with no facing a read; say they share the stage.**
   R1181 (24 Nov; Tom: "merge, then 2 and 3"): #488 merged; FCL run 7; essay 33, `papers/essays/33-one-stage-two-plays.md`,
   *One stage, two plays: a look and a pull* (a plumb line): GRV and FCL as one essay, exploration, no ruling changed, the
   pull never called a read. README row ("thirty-three essays"), `essays.html` card, smoke count 33 (not run). No paper changed.
