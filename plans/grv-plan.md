@@ -262,3 +262,10 @@ energy a thing has in its own rest frame (E = mc²). A write "occupies a discree
 which it is at rest, and whatever has such a frame has mass. Light has no rest frame and occupies no position: by that it is not
 a write but what arrives, and it has energy with no mass. So: every write has mass, and so a pull; the precision "energy" only
 says the source of gravity is wider than the writes, light gravitating too (weakly: its energy over c²).
+
+Tom (24 Nov): "So we are taking a static universe,  what it is at one moment." The scope, as Tom sets it; Claude's notes, not
+ruled. It is the scope in which the day's statements are exact: Newton's law (Poisson's equation) has no time in it, the heat
+maps of all the writes at one moment simply overlaid, as a read is one moment from one standpoint (R648). Left outside by the
+scope: anything that changes (a change in a source reaching others at light's speed; waves and the energy they carry, the open
+point above). Still inside it: "one moment" across distant things is a convention (R1049), harmless only while nothing moves; and
+the strong-field failure of adding, which needs no change in time.
