@@ -104,3 +104,25 @@ Limits. All classical, and three of the eight (F1, F2, F8) are identities that c
 for point masses in general position; a continuous body is not recovered from finitely many takes, and from a closed surface
 only its outside moments are (the classical non-uniqueness). Nothing here bears on whether a mass "reads"; that word is Tom's
 to rule on. Not in any paper.
+
+### After run 1: Tom's statements (24 November 2026), each with its limits
+
+Recorded as said; nothing here is a ruling, and no paper is changed.
+
+- "remember that cauchy is the stage, not the play itself. Its the heat map and as we have learned the cauchy plays nicely it
+  merges and combines and remains a cauchy." Corrects the emphasis of the reading above, which led with the sums and amounts
+  (the play). The stage is one: the even spread over directions, landing on a flat plane as the Cauchy, the same for a look
+  and for a pull. What differs is the play (paint with no amount; mass with an amount) and how many facings are used (one
+  hemisphere; all of it). Where "merges and remains a Cauchy" holds, by what is already run: exactly for stepping back (the
+  pull at height h₁ + h₂ is the pull at h₁ spread by the Cauchy of scale h₂; GRV's e^(−kh)) and for readings added (the
+  relay, SUM); approximately for sources overlaid, two masses being two Cauchys side by side that become one from afar, the
+  difference falling as (size/distance)² (F3). R728's limit stands: heat maps overlaid are a heat map, not one Cauchy.
+- "thats why I think this is possibly an importent conceptual insight about gravity, which is such a mystery." Claude's
+  reading: a sorting of known gravity, not an explanation. The stage's part (the inverse square, the spread over a plane,
+  the fading with height, the merging from afar) is geometry shared with light and with a look; gravity's own part is the
+  play (mass as what sits there, one sign, no shielding, G). Not touched: why mass pulls, why with that strength, why the
+  mass that pulls is the mass that resists. Where it stops, untested: in Einstein's gravity the mass moves the directions
+  themselves, so the play changes the stage.
+- "No, its not the complete story, for example, what is gravity specificaly. but lets not get bogged down, lets understand
+  each small win to see where it takes us." Small wins, one at a time, each recorded with its limits. The first: **the
+  stage is the same for a look and for a pull; only the play and the facings differ.**
