@@ -1,0 +1,16 @@
+FCL run 7, mpmath 40 digits
+
+  W1 slope 0.2: amount per direction 1.01980390272 (sqrt(1 + r^2) = 1.01980390272)
+  W1 slope 1: amount per direction 1.41421356237 (sqrt(1 + r^2) = 1.41421356237)
+  W1 slope 1.7320508: amount per direction 1.99999999345 (sqrt(1 + r^2) = 1.99999999345)
+  W1 slope 5: amount per direction 5.09901951359 (sqrt(1 + r^2) = 5.09901951359)
+  W1 slope 40: amount per direction 40.0124980475 (sqrt(1 + r^2) = 40.0124980475)
+W1: not killed (largest miss 2.3e-41)
+W2: not killed (largest miss 1.15e-41; per unit of direction the take is 1 at every slope; share within sqrt 3: 0.5; total over 2 pi: 1.0)
+W3: not killed (largest miss 1.15e-41; even sky per direction; share within one height 0.5; total over pi 1.0)
+W4: not killed (each take off 2 pi, or their difference, by at most 0.0; above one sheet the facing away has nothing in front)
+  W5 disc of 10 heights: sideways take 4.00637152018 (formula 4.00637152018)
+  W5 disc of 100 heights: sideways take 8.59678472372 (formula 8.59678472372)
+  W5 disc of 1000 heights: sideways take 13.2018064191 (formula 13.2018064191)
+W5: not killed (largest miss 1.03e-25; growth over the last tenfold 4.6050217, 2 ln 10 = 4.6051702)
+W6: not killed (an identity of W2: the total is 2 pi at heights 0.2, 1 and 1.9 in W4)

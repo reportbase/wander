@@ -7607,6 +7607,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1181** (24 Nov 2026; Tom: "merge, then 2 and 3", to Claude's three next steps: merge the pull request, the sheet
+  taken by facings, an essay): PR #488 merged. FCL run 7 (`runs/fcl/fcl7.py`), predictions first, nothing killed: a flat
+  sheet is not an even sky, it leans, carrying √(1 + r²) per unit of direction at slope r; a faced take's cosine cancels
+  the lean exactly, so what the sheet sends along the straight-down facing is even per direction, the uniform turn, and
+  its weight laid back on the sheet is the look's law (GRV's Cauchy of the height, half at √3) and not run 6's; the
+  sheet thinned by 1/√(1 + r²) is an even sky with run 6's law, half at one height, half the total; a facing along the
+  sheet has no limit, its take growing 2σ·ln 10 a tenfold while the opposite take grows the same. Essay 33,
+  `papers/essays/33-one-stage-two-plays.md`, *One stage, two plays: a look and a pull* (opens on a plumb line): GRV and
+  FCL's seven runs as one essay, marked exploration: no ruling changed (R890, R967, R1173 stand), the pull never called
+  a read, no new physics; what was killed in §9, what it does not say in §10. README row, `essays.html` card, the smoke
+  test's count 33 (not run). No paper changed.
 - **R1180** (24 Nov 2026; Tom: "that seems important to me. Here is a connection between an shv read, and a dhv read.";
   "seems to me when V is not known, the cauchy emerges. And there now seems to be two ways to read, with the SHV and the
   DHV."; "explore further first. right, if you don't have a facing, you get all facings at once, kind of like the god's eye

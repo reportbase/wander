@@ -613,6 +613,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   6·⟨n·F(n)⟩ over all facings, six enough, the facings without their directions only an amount (the sky's total over 4);
   inside a shell every facing equals its opposite, each far from nothing; an even sky's faced take on the flat screen
   has share r²/(1 + r²), half at one thumb, r ↔ 1/r complementing (ISX's disc). A definition made for the run.
+  Run 7 (R1181; Tom: "merge, then 2 and 3"; the sheet by facings), nothing killed: a flat sheet leans, √(1 + r²) per unit
+  of direction at slope r, and the facing's cosine cancels it exactly, so its straight-down take is even per direction
+  and its weight on the sheet the look's law (half at √3), not run 6's; thinned by 1/√(1 + r²) it is an even sky with
+  run 6's law; a sideways facing has no limit (2σ·ln 10 a tenfold), opposite takes equal.
+  R1181 (24 Nov; Tom: "merge, then 2 and 3"): #488 merged; FCL run 7; essay 33, `papers/essays/33-one-stage-two-plays.md`,
+  *One stage, two plays: a look and a pull* (a plumb line): GRV and FCL as one essay, exploration, no ruling changed, the
+  pull never called a read. README row ("thirty-three essays"), `essays.html` card, smoke count 33 (not run). No paper changed.
   R1179 (24 Nov; Tom: "update the essays"): R1174–R1178 carried through the essays and README (23 files): a number in a
   unit is "an amount", never "a write" or "a writing"; a count "gives" a size. Left for Tom: "temporary writes" (R1048),
   "what is kept is a write" where the keeping is private, R568's wording, the older "writer". Physics paper, demos not swept.
@@ -4753,7 +4760,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     thirty-two essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     thirty-three essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.

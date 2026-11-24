@@ -663,7 +663,9 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       facings at once with their directions attached (g = 6·⟨n·F(n)⟩, six enough), and without the directions only
       an amount; the shell's nothing is every facing equal to its opposite; an even sky's faced take has the look's
       exchange exactly, its corner at one thumb.
-    - Later candidates: bodies with size; a lens of two masses; a sheet or a ball taken with a facing (GRV's sheet
-      by facings).
+    - **The sheet's lean cancels the facing's cosine** (run 7): a flat sheet carries √(1 + r²) per unit of direction,
+      a faced pull counts 1/√(1 + r²) of it, so the sheet's weight is the look's law; thinned, it is run 6's even sky.
+      A facing along the sheet has no limit.
+    - Written up as essay 33 (R1181). Later candidates: bodies with size; a lens of two masses.
     Standing: a working thread. Nothing in any paper. What gravity is stays untouched (Tom: "what is gravity
     specificaly. but lets not get bogged down").
