@@ -239,3 +239,14 @@ the bar has it, does not make it"). A read's heat belongs to any standpoint, the
 heat map belongs to any thing, the same form for all (the kernel, and the near and far about its own border), with one amount in
 it, its mass. "Every" holds in known physics: whatever has energy gravitates, so no write is without one. What differs between
 writes is only the amount and the border, both the write's own. No new physics claimed: Newton's law sorted.
+
+Tom (24 Nov): "Two points create the read  geometry, the write of those two points creates the write geometry which is gravity."
+Claude's reading, not ruled, nothing run:
+- *The same two points, twice.* Taken and picked (R1157), two points give the read geometry: a direction, the turn, the heat, no
+  size, one point the pivot and one the trace. Written (each a thing with an amount, their separation an amount), the same two
+  points give G·M·m/d²: sizes throughout, and no pivot or trace, the pull the same on both (Newton's third law), which is "a write
+  has no face" (R1039) and the dual hemispherical vantage's both-at-once.
+- *What it would change, flagged.* R1094 has write geometry as "a thing's own shape with a size, its maker's". "Which is gravity"
+  either extends that (a thing's shape and its pull, both sized by the thing) or replaces it; Tom's to say. Known physics leans the
+  same way without our help: in general relativity gravity is a geometry (the metric), set by mass and energy. No claim made here
+  that the two are one.
