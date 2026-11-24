@@ -623,6 +623,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1186 (24 Nov; Tom: "merge, 1, 2"): `plans/fcl-literature.md`, a prior-work search: formulas right, attributions
+  corrected; "even from a point lands as the Cauchy" is in print for light (Lu 2020; Dupuy et al. 2019), so not ours;
+  not found: the gravity statement beside a standpoint's directions, Cauchy closure in lensing, add against subtract.
+  FCL run 9 (doubles, scipy; nothing killed): the meeting place of two masses met by the pull's direction alone;
+  directions at four places (or with strength ratios, three) give both places and μ in steps; the masses in no ratio,
+  as V in no read; one strength in a unit gives only GM. §7's open item 2 answered for two masses at rest.
   R1185 (24 Nov; Tom: "lets add the gravity observations to the read&write paper. Its our internal working paper. In
   future sessions we will try to tighen the connection between observation and gravity."): *Reads and Writes* §7 "Gravity
   on the stage: what has been observed so far" (FCL's runs as a working record: where a pull keeps the read's law, where

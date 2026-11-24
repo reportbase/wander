@@ -1731,8 +1731,12 @@ and are placed by masses.
 
 *Open, for later sessions.* (1) Whether "even from a point" is all that joins the two, or whether the subtraction of
 opposite facings has a form on the read's side (a read's two facings s and 1/s multiply to 1; a pull's two halves
-subtract). (2) Whether the corners owned by an amount can be had from ratios of pulls alone, as a read's corner is had
-by looking, without the masses written. (3) A check on measured gravity profiles over bodies of known depth. (4) What
+subtract). (2) Answered for two masses at rest (FCL run 9, doubles): yes. On the line between them the meeting place is where the
+pull's direction flips, found with no strength, no mass and no G; off the line, the pull's directions at four places a
+counted step apart, or directions and ratios of strengths at three, give both masses' places and their ratio in steps.
+The masses are in no ratio: they stand to the pulls as V stands to a read, and even one strength in a unit gives only
+GM, G being a second amount carried in. The distances' ratio at the meeting place, squared, is the masses' ratio, as a
+read's corner gives a breadth in thumbs. Open still: the same for the pair in orbit, a ball and a lens. (3) A check on measured gravity profiles over bodies of known depth. (4) What
 moving masses and light's own delay do to any of it; everything above is at rest or in steady orbit. (5) Done once (`plans/fcl-literature.md`): that an even spread from a point lands on a plane as the Cauchy is in
 print for light (Lu 2020; Dupuy, Belcour and Heitz 2019); its statement for gravity beside a standpoint's directions,
 the add-and-subtract difference and the Cauchy kept along a line of lens masses were not found, in one search. None of

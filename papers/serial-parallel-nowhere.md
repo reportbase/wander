@@ -7607,6 +7607,21 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1186** (24 Nov 2026; Tom: "merge, 1, 2", to Claude's next steps: a prior-work search, and open item 2 of R1185's
+  passage): PR #492 merged. (1) The search (`plans/fcl-literature.md`; a fresh agent, about fourteen queries, not a
+  citation trace): no from-memory formula wrong; attributions corrected (the depth rules checked in Unsworth's notes,
+  not Telford or Blakely; Letac 1977 generalises Pólya and Szegő and does not name Boole; Boole by way of Adler and
+  Weiss 1973; u₊u₋ = −1 a consequence, not quoted). **That an even spread from a point lands on a plane as the Cauchy
+  is in print for light** (Lu 2020, a blog post; Dupuy, Belcour and Heitz 2019, the "projective-Cauchy"), so R1184's
+  sentence is not ours. Not found: the statement for gravity beside a standpoint's directions, "Gauss's law gives the
+  Cauchy", Cauchy closure in lensing, the add-and-subtract difference. (2) FCL run 9 (`runs/fcl/fcl9.py`, doubles and
+  least squares, predictions first, nothing killed): scaling both masses moves no direction or strength ratio; on the
+  line the meeting place is where the pull's direction flips, met by halving on the sign alone, and (d₁/d₂)² there is
+  μ; directions at four places a counted step apart give both masses' places and μ (20 of 20, no second solution
+  found), at three places not (0 of 20); directions and strength ratios at three places do (20 of 20); one strength in a
+  unit gives only GM, both masses with G. Claude's reading, not ruled: the corner an amount owns is had by looking at
+  pulls; the masses stand to the pulls as V to a read; the count is parallax's. *Reads and Writes* §7's open item 2
+  answered for two masses at rest and item 5 done once; essay 33's Sources.
 - **R1185** (24 Nov 2026; Tom: "show gravity follows cauchy is interesting, is this known?"; "lets add the gravity
   observations to the read&write paper. Its our internal working paper. In future sessions we will try to tighen the
   connection between observation and gravity."): *Reads and Writes* §7 gains "Gravity on the stage: what has been
