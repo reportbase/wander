@@ -602,7 +602,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   equal at the foot only, the totals' difference the same through every plane between.
   Run 4 (the pair in orbit): five balance points for one at rest; the two off the line at a = b = D for every mass
   ratio (the corner back at 1); between the masses the exponent ½ becomes ⅓ ((m/3)^(1/3)); unmoved by scaling when
-  the rate follows the masses. M1 killed by my search at m = 10⁻⁶; run 4b recounts (see the plan).
+  the rate follows the masses. M1 killed by my search at m = 10⁻⁶; run 4b found all five there and was killed at 10⁻⁹ by my code (a pole counted, no start settling).
   Run 5 (Tom: "proceed with 2"; light past a point mass, thin lens, in Einstein radii), nothing killed: two images with
   u₊u₋ = −1, the Einstein ring the exchange's fixed circle, half of all images inside it for every sky; along a line
   through the mass images Cauchy(z) come from sources Cauchy(z − 1/z) (centred: scale γ + 1/γ, least at the ring), and

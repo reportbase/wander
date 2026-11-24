@@ -7641,7 +7641,7 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   equal distances from both masses, each the pair's separation, for every mass ratio (the corner back at 1, the ratio
   gone from the place); between the masses the distance from the lighter goes as (m/3)^(1/3) where at rest it went as
   √m; all unmoved by scaling while the turning rate follows the masses. M1 killed by my search (one point found of five
-  at m = 10⁻⁶); run 4b recounts.
+  at m = 10⁻⁶); run 4b found all five there and was killed at m = 10⁻⁹, again by my code (a pole counted as a zero, no start settling).
   Then (Tom: "proceed with 2") FCL run 5 (`runs/fcl/fcl5.py`), light past a point mass by the thin-lens equation, in
   Einstein radii, predictions first, nothing killed: each source has two images with u₊u₋ = −1, the look's exchange
   with the Einstein ring its fixed circle, and half of all images lie inside the ring for every sky; along a line

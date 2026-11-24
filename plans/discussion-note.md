@@ -653,7 +653,7 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       side at 1/μ; off the line Apollonius's sphere, every net pull on it aimed at the meeting point.
     - **Motion turns one meeting point into five** (run 4): the two off the line stand at equal distances from both
       masses whatever the masses are (the corner back at 1); between the masses √m becomes (m/3)^(1/3). One count
-      killed by my search, recounted in run 4b.
+      killed by my search; the recount (run 4b) found all five at m = 10⁻⁶ and failed at 10⁻⁹ by my code.
     - **Light past a mass: the ring is a corner, and on a line the bending is one of the Cauchy's own maps** (run 5):
       two images exchanged by u ↔ −1/u, half of all images inside the Einstein ring for every sky; along a line
       through the mass Cauchy stays Cauchy (z ↦ z − 1/z, and back as two Cauchys whose points add to the source's);

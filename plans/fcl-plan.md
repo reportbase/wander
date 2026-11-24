@@ -435,3 +435,15 @@ size of the Einstein radius (general relativity's factor) is not tested. Classic
 the lens, Boole 1857 and Letac 1977 for u − 1/u keeping the Cauchy (cited from memory, not opened). The statement on a
 line is about sources and images along one line through the mass with the line's own measure, not a slice of a 2D sky.
 Not claimed: that the bending is a read, or anything about what gravity is.
+
+### Run 4b (24 November 2026; `runs/fcl/fcl4b.py`, output `runs/fcl/fcl4b-run.txt`; about 25 minutes)
+
+Recorded here, after run 5, because it finished after it.
+
+**M1′ killed**, at m = 10⁻⁹, by my code as far as I can tell. At m = 10⁻⁶: three sign changes on the line and two
+points off it at a = b = D (10⁻²⁹), so the five are all seen there. At m = 10⁻⁹: four sign changes counted and no point
+off the line found. The fourth sign change is the lighter mass's own pole: its pull a grid step away is about 10, under
+the 10³ I set to tell a pole from a zero. The search off the line found nothing in 400 starts: at that m the net term
+is of order 10⁻⁹ all round the circle, and Newton's method did not settle within 400 steps. Checked afterwards, not a
+prediction: at the equilateral place the net term at m = 10⁻⁹ is zero to 30 digits. So the count of five stands
+confirmed down to m = 10⁻⁶ and is not established by counting below that; I have not rerun it.
