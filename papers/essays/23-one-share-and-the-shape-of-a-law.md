@@ -126,8 +126,8 @@ cos(θ₀/2)), Legendre's): 6.2871 at a small swing, 6.6999 at one radian, 10.32
 orbit's period in units of √(a³/GM) is 2π at every eccentricity. From one standpoint the ticks read no size: a pendulum
 seven times as long, under seven times the pull, swings in the same ticks.
 
-Carry in g, or GM, and a counted period writes the length, or the orbit's size. That is the bounce's move (essay 22 §13)
-and the candle's (essay 1 §5): an amount carried in lets a count write a length. The lamp, the circuit and the collision
+Carry in g, or GM, and a counted period gives the length, or the orbit's size. That is the bounce's move (essay 22 §13)
+and the candle's (essay 1 §5): an amount carried in lets a count give a length. The lamp, the circuit and the collision
 are reads; the pendulum and the orbit are counts waiting for an amount.
 
 ## 6. The tower

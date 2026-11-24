@@ -406,7 +406,7 @@ at the corner. The corner itself, where the two amounts are equal, slides off 45
 
 So where does a c other than 1 come from, if the observer never chooses it? Four places, each with a signature.
 
-- **It is writing.** Amounts are wanted in a shared unit, and c is a real ratio of units, measured on purpose. An
+- **It is an amount in a unit.** Amounts are wanted in a shared unit, and c is a real ratio of units, measured on purpose. An
   equal-area map does this deliberately.
 - **It is uncalibrated.** An instrument with unequal gains, pixels that are not square, or variables left in their own
   units imposes a c. The median of the readings sits at c instead of on the corner. Standardizing puts it back.
@@ -439,7 +439,7 @@ Divide the two-axis curve the same way and one thing survives: each reading beco
 their ratio stays, as the law's scale. So V enters the Cauchy in exactly one place, its scale, and only for whoever holds V.
 A third form puts the law on a line in the world, the lighthouse's shore: the landings follow a Cauchy with a location and
 a scale that are both amounts, the foot of the lamp and its distance, and they are had only by finding the shore and
-measuring along it. A read has the law's shape; a write adds its parameters.
+measuring along it. A read has the law's shape; its parameters are amounts, carried in.
 
 In space the same division is the whole of these essays in one line. The DHV's sphere, x² + y² + z² = r², holds three
 amounts and a radius; kept as written, it is the DHV's. Divide it by x², the length along the look taken as the thumb,
@@ -477,7 +477,7 @@ record of the read's turn.
 
 What cannot be done from reads without an amount carried in is to place a point at (x, y) in metres, state the circumference as 2π
 times so many metres or the area as so many square metres, or say how large another party is beside the observer's own thumb. Those
-are amounts, and amounts are writing. A read has every part of circular mathematics except the parts that state a
+are amounts, and an amount needs a unit carried in. A read has every part of circular mathematics except the parts that state a
 size.
 
 ### Euler's formula, the dual hemispherical vantage's notation for the read's turn
@@ -491,9 +491,9 @@ tangent addition, rational:
 
 **The two factors are the direction and the payload.** The factor e^(iθ) has size exactly 1. It is a direction and
 nothing else, held in the observer's own length, H measured in H, the thumb in thumbs. The factor r is an amount, how
-far, how bright, how big, and it means something only in a unit, which only a write can supply. Polar form has been
+far, how bright, how big, and it means something only in a unit, which only a write, the unit's bearer, can supply. Polar form has been
 splitting a number into its direction and its amount since the eighteenth century. Read from a standpoint, that split is
-the read and the write.
+the read and the amount.
 
 **The logarithm makes the scale test a question of which part moved.** Take the logarithm:
 
@@ -502,7 +502,7 @@ the read and the write.
 Scale the world by k and only the real part moves, by ln k. Turn, and only the imaginary part moves. So the first test of
 the series, scale the world, comes down to which part of the logarithm changed: the imaginary part is a reading;
 differences of the real part are places, unmoved, had by walking; the real part's starting point, tied to a unit, the one
-amount that sets every size, is the writing, and no reading fixes it. And
+amount that sets every size, is carried in, and no reading fixes it. And
 the read's ignorance, which turn is faced and how large anything is, is nothing more than sliding this plane up and down
 and left and right. Sliding keeps area, so the measure that suits that ignorance is plain area on the logarithm's plane:
 uniform in direction, and uniform in distance read as a ratio, as much room from one in two to one in four as from one in
@@ -518,9 +518,9 @@ squaring of section 6 turns that half turn into one whole turn of the radius fro
 
 All of this is classical: polar form, the complex logarithm, the area that multiplication keeps, the double cover. What is
 the series' own is the reading: e^(iθ) as the direction, r as the payload, the logarithm's imaginary part the reading and
-its real part the extents, with the writing at its zero (*Reads and Writes* §2). It is the right notation for a read
+its real part the extents, with the amount at its zero (*Reads and Writes* §2). It is the right notation for a read
 because it keeps them apart. A read holds the imaginary part; extents are gaps in the real one, had by two looks held together or by walking and
-counting; a write needs its zero.
+counting; an amount needs its zero.
 
 **The Cauchy in Euler's notation.** The Cauchy itself fits this notation twice over. Write the standpoint, the
 foot and the height above the line that the third essay (section 6) gives every Cauchy, as one complex number z = m +

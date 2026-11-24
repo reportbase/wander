@@ -82,9 +82,9 @@ its longest denominator reached 102 digits by leg 50 and 129 at its most; the ta
 136 digits. With the eye put down on the nearest point of a 1/16 grid at each new heading, its denominator never passed
 6 digits and the slopes stayed under 10. Every check held both ways.
 
-Putting the eye down on a grid is a write: a mark made, an amount stated in a unit. It gives up one thing, the exact path
+Putting the eye down on a grid is keeping an amount: a place stated in a unit, the observer's bookkeeping. It gives up one thing, the exact path
 back to where the walk began. No reading from where the eye now stands uses that path. The tower's middle terms cancel by
-themselves; the place's terms have to be taken down by hand, and taking them down is a write.
+themselves; the place's terms have to be taken down by hand, and taking them down is bookkeeping.
 
 Essay 20 called a denominator scaffolding: needed for each reading to be made, gone from what the readings give together.
 Here the two sides are on one screen. The frame is a chain of ratios and comes down for free. The place is a sum of
@@ -143,7 +143,7 @@ Run 6 made it visible on the page. G moves the eye half way to the thing under t
 the line to its centre, so its direction does not move and its breadth on the screen doubles; B goes back to twice as far.
 On a box 23 of its own breadths off, four halvings left the three pair slopes the same fractions, digit for digit, and
 then stopped, since a fifth would put the eye inside its breadth. Four presses of B put the eye back exactly where it began.
-The eye's fractions gained a binary digit a halving. A menu panel shows both counts side by side: the place, a write, paying
+The eye's fractions gained a binary digit a halving. A menu panel shows both counts side by side: the place, an amount, paying
 by the digit; the read paying nothing for being near.
 
 Distance from the start is the same story. Until run 7 the page held its view only to about 10¹² units from where it
@@ -165,7 +165,7 @@ Whether the world comes counted is the question of the dual hemispherical vantag
 something to read is all it says about N.
 
 What scales, then, is whatever has a vantage: the read scales because it holds its share at each scale and the share is
-summable; the write pays by the digit, for each place it puts down. The DHV does not scale in this sense, because it
+summable; an amount pays by the digit, for each place put down. The DHV does not scale in this sense, because it
 has no standpoint from which a share could fall off.
 
 ## 8. What is classical, and what is ours
@@ -182,7 +182,7 @@ classical. My answer was no, and it should be said here.
 
 What is ours is two things. The share law: each scale held at its Cauchy share sech(k·ln 2), so scales without end cost a
 fixed total, about π/ln 2 times one scale's count. And the sorting: no count of the world enters anything the page reads;
-the readings take no more digits at any depth; what pays is the place, which is a write. The classical view has the same
+the readings take no more digits at any depth; what pays is the place, which is an amount. The classical view has the same
 arithmetic available. What it does not have is a standpoint to fall off from.
 
 ## 9. Set beside a representation, thing for thing
@@ -313,8 +313,8 @@ about 1.78 of the 2π steradians in front, some 28%, and at ×4 about 3%. On a f
 the solid angle's own measure, so the share of the heat on the screen is the same 28%. No flat screen can show the rest
 (one reaching 90° off the look would be infinitely wide), and the one chart that fits the whole hemisphere on a disc, the
 equal-area map about the look, was tried and taken off the page: its round rim and its squeeze toward the rim read as a
-ball seen from outside (R970). A walk is many single vantages joined by writes: each frame one read, each stride, the
-eye's exact place, the counted ticks and the traffic's stepped state writes.
+ball seen from outside (R970). A walk is many single vantages joined by what is kept: each frame one read, each stride and the
+traffic's stepped state writes, the eye's exact place and the counted ticks bookkeeping about them.
 
 **Who keeps which.** Drawing has always been done from one standpoint: a renderer draws from one camera, drops what is
 behind it and thins what is small on the screen, and the city's keep rule is a cousin of that screen-size level of
@@ -346,7 +346,7 @@ retraced comes back exactly (100 of 100, R944), and positions stay exact 10¹⁰
 not avoid:
 
 - square roots stay (a direction normalized, the heat's 3/2 power), the one exception, √(1 + s²);
-- exact fractions grow digits, so the eye is put down on a 1/16 grid at each change of heading (R931), a write;
+- exact fractions grow digits, so the eye is put down on a 1/16 grid at each change of heading (R931), an amount kept;
 - turns come in steps of a half-slope 1/128, not any angle;
 - BigInt fractions are slow beside a GPU's floats (19 to 37 ms a frame in headless software rendering, R946);
 - engines hold turns as quaternions or matrices and use trigonometry mainly where an angle is typed in, so leaving it
@@ -364,7 +364,7 @@ hard; on replays and procedural worlds that must regenerate identically; and on 
 pull, g = 1/50 a tick², their places from T alone. From one standpoint a read has a ball's directions and its height in
 its own breadths, never its size. Scale the world and the eye by 4: the slopes at the top of the bounce and at its foot are
 the same fractions, but under the same pull the scaled ball would take twice the ticks (P goes as √A). The pull is an
-amount in a unit, so a bounce's ticks, counted, write the ball's size, A = gP²/8: Galileo's square–cube law, at the place
+amount in a unit, so a bounce's ticks, counted, give the ball's size in that unit, A = gP²/8: Galileo's law of fall, at the place
 in the sorting where it belongs.
 
 **Not required, and still the account of observing.** A program needs the world anyway. A computer is a writer, so
@@ -420,7 +420,7 @@ what lets it go on. It can walk from the size of a house to a millionth of it an
 fractions, and hold the same number of things, while the only thing that grows is the record of where it has been.
 
 The difference, stated once: the DHV holds the world and states amounts; a read holds K of it from somewhere and
-states ratios; the place an observer stands is the one thing that has to be written, and it is the one thing that pays.
+states ratios; the place an observer stands is the one thing that has to be put down as an amount, and it is the one thing that pays.
 
 ---
 

@@ -351,7 +351,7 @@ half past it at every H. Counted as K places, K addresses, it sits at H·tan(kπ
 it, each share the same room and the corner in the middle, it does not move at all. Drag the thumb out and the things in
 the world slide through that fixed heat, more of them into the near field, each with less room; drag it in and they slide
 out past the corner, the near ones held finer. The heat stays; the world slides through it, its paint met wherever it
-lands. *The heat is given; the paint is met.* Nothing is written: no amount is carried in, only which things land
+lands. *The heat is given; the paint is met.* No amount is carried in, and only which things land
 where changes. Near and far, then, are an overlay the thumb lays over the read, a split on every direction one thumb out,
 not part of the read's Cauchy, and not a shape.
 
