@@ -670,3 +670,40 @@ As with run 3, each was worked out on paper beforehand, so the run is a check of
   since f(u) = u − Σ εᵢ/(u − aᵢ) carries the upper half-plane into itself with real poles (classical: such maps keep
   the Cauchy; Letac 1977 as I remember it, not opened). Run 5's pairing z₂ = −1/z₁ is the one-mass case only; with two
   masses the three points are tied only by their sum.
+
+## Run 9: can the corner an amount owns be had from ratios of pulls alone?
+
+Tom, 24 November: "merge, 1, 2" (2: open item 2 of *Reads and Writes* §7's "Gravity on the stage": whether the corners
+owned by an amount can be had from ratios of pulls alone, as a read's corner is had by looking, without the masses
+written). PR #492 merged before this was written. A prior-work search (item 1) runs beside it and is not used here.
+
+Set-up. Two point masses M₁, M₂ at rest at unknown places, μ = M₁/M₂. An observer takes the net pull at several places
+a counted step apart (the places known in steps, in one frame). From each take it keeps only what scaling both masses
+alike cannot move: the pull's direction (two numbers), and in R4 also the ratios of the pulls' strengths between
+places. No G, no mass, no unit of force. Unknowns: the two masses' places (six numbers, in steps) and μ: seven.
+Doubles, scipy's least squares (installed for the run; not exact arithmetic).
+
+Said beforehand: R1, R2 and R5 follow from the pull being linear in the masses; R3 and R4 are counts of equations
+against unknowns, which can fail (a count gives no guarantee of one solution). I expect R3's "four places" to hold and
+am unsure of it.
+
+### Predictions (committed before running)
+
+- **R1, nothing a ratio keeps can give a mass.** Multiply both masses by λ = 10⁻³, 7, 10⁶: every direction and every
+  ratio of strengths is unchanged, to 10⁻¹² (doubles). So no set of them gives M₁ or M₂. Kill: any moved.
+- **R2, the meeting place is met by direction alone, on the line.** Along the line between the masses the pull's
+  direction is one sign, and it flips once, at the meeting place. Halving steps on the sign alone (no strength, no mass)
+  close on s = D·√M₂/(√M₁ + √M₂) to 10⁻¹², and the distances' ratio there, squared, is μ: the corner gives the masses'
+  ratio as a read's corner gives a breadth in thumbs. Kill: off past 10⁻¹⁰ in any of four cases.
+- **R3, four places' directions give everything but the amounts.** From directions at four places in general position
+  (eight numbers for seven unknowns) both masses' places and μ come back, and so the meeting place, to 10⁻⁶ of a step,
+  in at least 18 of 20 seeded scenes, from starts not near the truth (the best of 40 random starts, residual under
+  10⁻¹⁰), up to naming the masses the other way round. From three places (six numbers) they do not: in at least 15 of 20
+  scenes a solution with residual under 10⁻¹⁰ lies more than 10⁻² of a step from the truth. Kill: either count missed.
+- **R4, with ratios of strengths, three places are enough.** Directions and strength ratios at three places (eight
+  numbers) give the same, in at least 18 of 20 scenes. Kill: fewer.
+- **R5, one amount then gives both masses.** With the scene solved, one pull's strength in a unit, with G carried in,
+  gives M₁ and M₂ to 10⁻⁸ relative. Without G it gives only GM. Kill: off.
+
+The reading if these hold: the corner two masses own is had by looking at pulls, with no mass written, as a read's
+corner is; the masses stand to it as V stands to a read (never in a ratio; one amount carried in gives both).
