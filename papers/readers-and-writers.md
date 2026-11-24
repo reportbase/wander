@@ -1661,7 +1661,7 @@ pull grows in proportion to the distance from the centre, outside it falls as th
 strongest at the surface; proportion gives way to ratio there, though not by the exact exchange (x against 1/x²). The
 two heats are alike, not the same. A read takes one hemisphere, its fineness is no amount, and its slopes have
 no mean; a pull takes every direction about the write, its strength is the write's amount, and it is a sum of
-amounts, as §4's paint is. One standpoint has from a pull only M/d², never M or d, as a read never has V; two pulls a counted step
+amounts, as §4's paint is. So a pull is not a read, and a place with no facing is not a second way to read: taken with a facing for a moment, a pull's two halves, in front and behind, subtract to the pull along that facing, where a read's two halves add to all there is; a look and a pull stand on one stage and are different plays (FCL, `plans/fcl-plan.md`). One standpoint has from a pull only M/d², never M or d, as a read never has V; two pulls a counted step
 apart place the source in steps, and the mass then needs G carried in. **Checked** (GRV, `plans/grv-plan.md`, exact at
 50 digits; one clause of one prediction killed by my guess, how many of a cube shell's opposite columns differ); the
 formulas classical (Newton 1687; the plane's kernel is potential theory's Poisson kernel of the half-space, not there

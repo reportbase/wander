@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>A look and a pull</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    look-pull.html: a look and a pull on one stage (24 November 2026, SPN R1182; essay 33; FCL runs 1-8; Tom: "merge,
+    1, 2, 3", the second a demo for the thread). Exploration, no ruling: the pull is never called a read here (R1173).
+    Panel 1, the facing. Masses about a place (a seeded scatter, a shell with the place off its centre, or one mass).
+    A facing n is turned by the slider. The faced take F(n) = sum of m (n.u)/d^2 over the masses in front (n.u > 0),
+    a definition made for FCL run 6. Opposite takes subtract to the pull along n: F(n) - F(-n) = n.g. A look's two
+    halves add: the masses in front and behind count to all of them. Six facings give the whole pull:
+    g = sum of n F(n) over +-x, +-y, +-z. Inside a shell every facing equals its opposite.
+    Panel 2, the sheet. A place one height above a plane. The share within r heights of the foot: a look's directions
+    1 - 1/sqrt(1 + r^2) (half at sqrt 3); a flat sheet's pull straight down, the same (its lean sqrt(1 + r^2) per
+    direction cancelled by the facing's cosine, FCL run 7); an even sky's faced take r^2/(1 + r^2) (half at 1).
+    Links: ?scene=scatter|shell|one&phi=<degrees>&off=<0..0.9>&r=<heights>&seed=. Hook: window.__lookPull
+    (masses, take, pull, six, counts, shares, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0 }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 5px 10px; cursor: pointer; touch-action: manipulation }
+    input[type=range] { flex: 1 1 220px; min-width: 0; accent-color: var(--gold) }
+    label { color: var(--dim) }
+    select { font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000; touch-action: none }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr } }
+    .face { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px }
+    .face h3 { margin: 0 0 4px; font: 500 14px/1.3 'DM Mono', monospace }
+    .teal { color: var(--teal) } .gold { color: var(--gold) }
+    .out { white-space: pre-wrap; color: var(--bright); font-size: 12.5px }
+    .note { color: var(--dim); font-size: 12.5px; max-width: 80ch }
+    a { color: var(--teal) }
+    </style>
+</head>
+<body>
+<main>
+    <h1>A look and a pull</h1>
+    <p class="lede">One place, and matter about it. A look from the place faces one way and keeps its directions apart.
+    A pull at the place has no facing: every direction is taken in at once, each with its amount. Give the pull a facing
+    for a moment and the two can be set side by side. A look's two halves add to everything there is. A pull's two halves
+    subtract, and what is left is the pull along the facing.</p>
+
+    <div class="panel">
+        <canvas id="cv" width="1800" height="900" aria-label="masses about a place, a facing turned, the takes in front and behind"></canvas>
+        <div class="row">
+            <label for="scene">matter</label>
+            <select id="scene"><option value="scatter">a scatter</option><option value="shell">a shell</option><option value="one">one mass</option></select>
+            <label for="phi">facing</label><input id="phi" type="range" min="0" max="360" value="40">
+        </div>
+        <div class="row" id="offrow">
+            <label for="off">place off the shell's centre</label><input id="off" type="range" min="0" max="90" value="60">
+        </div>
+        <div class="grid">
+            <div class="face"><h3 class="teal">a look, faced</h3><div class="out" id="look"></div></div>
+            <div class="face"><h3 class="gold">a pull, given a facing</h3><div class="out" id="pullo"></div></div>
+        </div>
+    </div>
+
+    <div class="panel">
+        <canvas id="cv2" width="1800" height="700" aria-label="a place above a plane, the share within r heights of the foot three ways"></canvas>
+        <div class="row"><label for="r">out from the foot</label><input id="r" type="range" min="0" max="600" value="173"></div>
+        <div class="out" id="sheet"></div>
+    </div>
+
+    <p class="note">The faced take is a definition made for the runs, not a thing in nature: a pull has no facing, and a place with no facing is not a read. Nothing here
+    calls the pull a read, and none of it is new physics. The numbers are Newton's pulls, added. The essay is
+    <a href="https://github.com/reportbase/wander/blob/main/papers/essays/33-one-stage-two-plays.md">One stage, two plays</a>;
+    the runs are in <code>plans/fcl-plan.md</code>. All pages: <a href="demos.html">the demos</a>.</p>
+</main>
+<script>
+(() => {
+    'use strict';
+    const $ = id => document.getElementById(id);
+    const q = new URLSearchParams(location.search);
+    const S = { scene: ['scatter', 'shell', 'one'].includes(q.get('scene')) ? q.get('scene') : 'scatter',
+        phi: +(q.get('phi') ?? 40), off: Math.min(0.9, Math.max(0, +(q.get('off') ?? 0.6))),
+        r: Math.max(0, +(q.get('r') ?? Math.sqrt(3))), seed: (+(q.get('seed') ?? 7)) | 0 };
+    const rng = seed => { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; };
+
+    // the matter, as seen from the place (the place is the origin): [x, y, z, m]
+    function masses(scene = S.scene, off = S.off, seed = S.seed) {
+        const out = [];
+        if (scene === 'one') return [[1.2, -0.9, 0, 1]];
+        if (scene === 'shell') {            // an even shell of radius 1, the place off its centre by `off` along x
+            const N = 1500, g = Math.PI * (3 - Math.sqrt(5));
+            for (let i = 0; i < N; i++) { const z = 1 - 2 * (i + 0.5) / N, s = Math.sqrt(1 - z * z);
+                out.push([s * Math.cos(i * g) - off, s * Math.sin(i * g), z, 1 / N]); }
+            return out;
+        }
+        const R = rng(seed);
+        for (let i = 0; i < 28; i++) { const d = 0.5 + 2 * R(), a = 2 * Math.PI * R();     // in the drawing's plane, so the pull drawn is the whole pull
+            out.push([d * Math.cos(a), d * Math.sin(a), 0, 0.2 + R()]); }
+        return out;
+    }
+    const facing = (deg = S.phi) => [Math.cos(deg * Math.PI / 180), Math.sin(deg * Math.PI / 180), 0];
+    // the faced take: what arrives from in front, along the facing
+    function take(n, M = masses()) { let F = 0;
+        for (const [x, y, z, m] of M) { const d2 = x * x + y * y + z * z, c = (n[0] * x + n[1] * y + n[2] * z) / Math.sqrt(d2); if (c > 0) F += m * c / d2; }
+        return F; }
+    function pull(M = masses()) { const g = [0, 0, 0];
+        for (const [x, y, z, m] of M) { const d = Math.hypot(x, y, z), k = m / (d * d * d); g[0] += k * x; g[1] += k * y; g[2] += k * z; }
+        return g; }
+    function six(M = masses()) { const g = [0, 0, 0];
+        for (let a = 0; a < 3; a++) for (const s of [1, -1]) { const n = [0, 0, 0]; n[a] = s; g[a] += s * take(n, M); }
+        return g; }
+    function counts(n, M = masses()) { let f = 0, b = 0; for (const [x, y, z] of M) (n[0] * x + n[1] * y + n[2] * z > 0) ? f++ : b++;
+        return { front: f, behind: b, all: M.length }; }
+    const shares = r => ({ look: 1 - 1 / Math.sqrt(1 + r * r), sheetDown: 1 - 1 / Math.sqrt(1 + r * r), evenSky: r * r / (1 + r * r) });
+
+    const f4 = x => (Math.abs(x) < 5e-5 ? 0 : x).toFixed(4);
+    function draw() {
+        const cv = $('cv'), c = cv.getContext('2d'), W = cv.width, H = cv.height;
+        c.fillStyle = '#000'; c.fillRect(0, 0, W, H);
+        const M = masses(), n = facing(), g = pull(M), cx = W * 0.32, cy = H / 2, sc = S.scene === 'shell' ? 300 : 150;
+        // the line that splits front from behind
+        c.strokeStyle = 'rgba(255,255,255,0.18)'; c.setLineDash([10, 10]); c.lineWidth = 2; c.beginPath();
+        c.moveTo(cx + n[1] * 900, cy + n[0] * 900); c.lineTo(cx - n[1] * 900, cy - n[0] * 900); c.stroke(); c.setLineDash([]);
+        for (const [x, y, z, m] of M) { const front = n[0] * x + n[1] * y + n[2] * z > 0;
+            c.fillStyle = front ? 'rgba(140,230,205,0.85)' : 'rgba(181,156,240,0.6)';
+            c.beginPath(); c.arc(cx + x * sc, cy - y * sc, S.scene === 'shell' ? 3 : 5 + 9 * Math.sqrt(m), 0, 7); c.fill(); }
+        const arrow = (v, len, col, w) => { const L = Math.hypot(v[0], v[1]) || 1, ux = v[0] / L, uy = v[1] / L, ex = cx + ux * len, ey = cy - uy * len;
+            c.strokeStyle = c.fillStyle = col; c.lineWidth = w; c.beginPath(); c.moveTo(cx, cy); c.lineTo(ex, ey); c.stroke();
+            c.beginPath(); c.moveTo(ex + ux * 22, ey - uy * 22); c.lineTo(ex - uy * 12, ey - ux * 12); c.lineTo(ex + uy * 12, ey + ux * 12); c.fill(); };
+        const gl = Math.hypot(g[0], g[1]);
+        if (gl > 1e-4) arrow(g, 90 + 60 * Math.min(1, gl), '#e6e4ee', 5);
+        arrow(n, 190, '#d4a052', 5);
+        c.fillStyle = '#e6e4ee'; c.beginPath(); c.arc(cx, cy, 9, 0, 7); c.fill();
+        c.font = '26px DM Mono, monospace'; c.fillStyle = '#d4a052'; c.fillText('the facing', cx + n[0] * 215 - 60, cy - n[1] * 215);
+        if (gl > 1e-4) { c.fillStyle = '#e6e4ee'; c.fillText('the pull', cx + g[0] / gl * 170 + 14, cy - g[1] / gl * 170 + 30); }
+        // bars: the two takes and their difference
+        const Ff = take(n, M), Fb = take([-n[0], -n[1], -n[2]], M), ng = n[0] * g[0] + n[1] * g[1] + n[2] * g[2];
+        const bx = W * 0.66, bw = W * 0.3, top = 150, mx = Math.max(Ff, Fb, 1e-9);
+        const bar = (y, v, col, label) => { c.fillStyle = 'rgba(255,255,255,0.07)'; c.fillRect(bx, y, bw, 46);
+            c.fillStyle = col; const w = bw * Math.abs(v) / mx; c.fillRect(bx, y, w, 46);
+            c.fillStyle = '#c8c8d0'; c.fillText(label + '  ' + f4(v), bx, y - 12); };
+        bar(top, Ff, '#8ce6cd', 'taken from in front'); bar(top + 150, Fb, '#b59cf0', 'taken from behind');
+        bar(top + 300, Ff - Fb, '#d4a052', 'in front less behind'); bar(top + 450, ng, '#e6e4ee', 'the pull along the facing');
+        const k = counts(n, M), s6 = six(M);
+        $('look').textContent = 'in front ' + k.front + ' + behind ' + k.behind + ' = ' + k.all + ', all of it\nthe two halves add; turning the facing moves\nmatter from one half to the other, never the total';
+        $('pullo').textContent = 'in front ' + f4(Ff) + ' − behind ' + f4(Fb) + ' = ' + f4(Ff - Fb) + '\nthe pull along the facing  ' + f4(ng) +
+            '\nsix facings give the whole pull: (' + s6.map(f4).join(', ') + ')\nadded directly:                 (' + g.map(f4).join(', ') + ')' +
+            (S.scene === 'shell' ? '\ninside the shell every facing equals its opposite: no pull, a balance' : '');
+        $('offrow').style.display = S.scene === 'shell' ? '' : 'none';
+        draw2();
+    }
+    function draw2() {
+        const cv = $('cv2'), c = cv.getContext('2d'), W = cv.width, H = cv.height, r = S.r, sh = shares(r);
+        c.fillStyle = '#000'; c.fillRect(0, 0, W, H); c.font = '24px DM Mono, monospace';
+        // left: the place above the plane, the disc out to r
+        const px = 330, gy = 520, u = 95;
+        c.strokeStyle = 'rgba(255,255,255,0.3)'; c.lineWidth = 2; c.beginPath(); c.moveTo(20, gy); c.lineTo(660, gy); c.stroke();
+        const rr = Math.min(r * u, 320); c.strokeStyle = '#d4a052'; c.lineWidth = 8; c.beginPath(); c.moveTo(px - rr, gy); c.lineTo(px + rr, gy); c.stroke();
+        c.strokeStyle = 'rgba(212,160,82,0.45)'; c.lineWidth = 2; c.beginPath(); c.moveTo(px - rr, gy); c.lineTo(px, gy - u); c.lineTo(px + rr, gy); c.stroke();
+        c.fillStyle = '#e6e4ee'; c.beginPath(); c.arc(px, gy - u, 8, 0, 7); c.fill();
+        c.fillStyle = '#8a8a96'; c.fillText('the place, one height up', px - 150, gy - u - 24); c.fillText('within ' + r.toFixed(2) + ' heights of the foot', px - 170, gy + 44);
+        // right: the three shares against r
+        const x0 = 760, x1 = W - 40, y0 = 600, y1 = 60, R = 6, X = v => x0 + (x1 - x0) * v / R, Y = v => y0 + (y1 - y0) * v;
+        c.strokeStyle = 'rgba(255,255,255,0.15)'; c.lineWidth = 1; c.strokeRect(x0, y1, x1 - x0, y0 - y1);
+        c.beginPath(); c.moveTo(x0, Y(0.5)); c.lineTo(x1, Y(0.5)); c.stroke(); c.fillStyle = '#8a8a96'; c.fillText('½', x0 - 30, Y(0.5) + 8);
+        for (const [v, t] of [[1, '1'], [Math.sqrt(3), '√3']]) { c.beginPath(); c.moveTo(X(v), y0); c.lineTo(X(v), y1); c.stroke(); c.fillText(t, X(v) - 10, y0 + 30); }
+        const curve = (f, col, w, dash) => { c.strokeStyle = col; c.lineWidth = w; c.setLineDash(dash); c.beginPath();
+            for (let i = 0; i <= 300; i++) { const v = R * i / 300; i ? c.lineTo(X(v), Y(f(v))) : c.moveTo(X(v), Y(f(v))); } c.stroke(); c.setLineDash([]); };
+        curve(v => shares(v).look, '#8ce6cd', 9, []); curve(v => shares(v).sheetDown, '#d4a052', 3, [14, 10]); curve(v => shares(v).evenSky, '#b59cf0', 4, []);
+        const rc = Math.min(r, R); for (const [v, col] of [[sh.look, '#8ce6cd'], [sh.evenSky, '#b59cf0']]) { c.fillStyle = col; c.beginPath(); c.arc(X(rc), Y(v), 9, 0, 7); c.fill(); }
+        $('sheet').textContent = 'a look\'s directions within it          ' + f4(sh.look) + '   (half at √3)\n' +
+            'a flat sheet\'s pull straight down      ' + f4(sh.sheetDown) + '   (the same law: the sheet leans by √(1 + r²) = ' + Math.sqrt(1 + r * r).toFixed(3) +
+            ' per direction,\n                                               and the facing takes 1/' + Math.sqrt(1 + r * r).toFixed(3) + ' of it back)\n' +
+            'an even sky\'s take, faced straight down ' + f4(sh.evenSky) + '   (half at 1: the facing\'s share is not cancelled)';
+    }
+    function sync() { $('scene').value = S.scene; $('phi').value = ((S.phi % 360) + 360) % 360; $('off').value = Math.round(S.off * 100); $('r').value = Math.round(Math.min(6, S.r) * 100); }
+    $('scene').onchange = e => { S.scene = e.target.value; draw(); };
+    $('phi').oninput = e => { S.phi = +e.target.value; draw(); };
+    $('off').oninput = e => { S.off = e.target.value / 100; draw(); };
+    $('r').oninput = e => { S.r = e.target.value / 100; draw(); };
+    window.__lookPull = { masses, facing, take, pull, six, counts, shares,
+        set(o) { Object.assign(S, o); sync(); draw(); return { ...S }; }, state: () => ({ ...S }) };
+    sync(); draw();
+})();
+</script>
+</body>
+</html>

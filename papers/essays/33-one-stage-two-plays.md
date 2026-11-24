@@ -3,8 +3,8 @@
 *The thirty-third of a series of essays on what can be known from where one stands. Draft, 24 November 2026. It writes
 up two tests: GRV (`plans/grv-plan.md`, `runs/grv/`) and the seven runs of FCL (`plans/fcl-plan.md`, `runs/fcl/`). Every
 run had its predictions committed before it ran, and the kills are gathered in §9. Every number below is from those
-runs. This is exploration: no ruling of the series is changed by it, the pull is never called a read, and nothing here
-is new physics. The mathematics is classical throughout and is named where it is used; the sorting is the series' own,
+runs. It began as exploration and ends on one ruling (§10): a place with no facing is not a read. The pull is never called a
+read, and nothing here is new physics. The mathematics is classical throughout and is named where it is used; the sorting is the series' own,
 and is marked as a reading.*
 
 A plumb line is a weight on a string. Let it hang and it shows which way is down. Builders have used one for as long as
@@ -236,8 +236,11 @@ directions is shared.
 It does not say that anything in the world takes a pull with a facing. The faced take is a definition, made to test
 one sentence.
 
-And it does not settle the question it started from, whether a place with no facing is a second way to read. That is
-Tom's to rule. What the sixth run adds is the exact sense in which no facing is all facings at once.
+The question it started from, whether a place with no facing is a second way to read, is settled by a ruling made after
+the runs (24 November): it is not a read. A read is one facing, continuous, unmoved by scaling, and carries no amount. A
+pull has no facing, is a sum, moves with scaling, and carries an amount. What the two share is the stage. The sixth run
+gives the exact sense in which no facing is all facings at once: each facing taken with its direction attached, and
+each joined to its opposite by subtracting.
 
 ## 11. What it changes
 
@@ -279,4 +282,4 @@ front. That is why it can show which way is down.
   and J.-L. Lagrange, 1772, on the three-body balance points. A. Einstein, "Lens-like action of a star by the deviation
   of light in the gravitational field", *Science* 84, 1936. S. Refsdal, 1964, on the point lens. G. Boole, 1857, on
   the map x − 1/x. All from memory, not opened.
-- SPN rulings cited: R890, R967, R1173, R1174–R1178, R1180, R1181.
+- SPN rulings cited: R890, R967, R1173, R1174–R1178, R1180–R1183.

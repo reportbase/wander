@@ -617,6 +617,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   of direction at slope r, and the facing's cosine cancels it exactly, so its straight-down take is even per direction
   and its weight on the sheet the look's law (half at √3), not run 6's; thinned by 1/√(1 + r²) it is an even sky with
   run 6's law; a sideways facing has no limit (2σ·ln 10 a tenfold), opposite takes equal.
+  Run 8 (R1182; Tom: "merge, 1, 2, 3"; bodies with size, a lens of two masses), nothing killed, all worked out beforehand:
+  outside both balls the meeting point stays at ρ = √μ, and each ball gains a balance point near its centre
+  (s ≈ M₁R₂³/(M₂D²), the exchange failing inside by (R/s)³); the meeting point never enters a ball, it meets the inner
+  point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
+  masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
+  adding to w + a + b). `look-pull.html` the thread's demo.
+  R1183 (24 Nov; Tom: "proceed with your recommendations."): **a place with no facing is not a read, nor a second way to
+  read; a look and a pull stand on one stage and are different plays** (a pull has no facing, is a sum, moves with
+  scaling, carries an amount; its two halves subtract where a read's add). R1173 stands. *Reads and Writes* §7, essay 33
+  §10. **For new writing: never call a pull or a place with no facing a read; say they share the stage.**
   R1181 (24 Nov; Tom: "merge, then 2 and 3"): #488 merged; FCL run 7; essay 33, `papers/essays/33-one-stage-two-plays.md`,
   *One stage, two plays: a look and a pull* (a plumb line): GRV and FCL as one essay, exploration, no ruling changed, the
   pull never called a read. README row ("thirty-three essays"), `essays.html` card, smoke count 33 (not run). No paper changed.
@@ -1391,6 +1401,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   three, the mean of s never settling, the exchange's halves, and s ⊕ a's weight check (1 only for round). Facings 1, 2,
   4 drawn (the DHV's joins). §0's fourteen steps as a list that sets the picture. `?w=&m=round|sum|max&f=1|2|4&play=1`;
   hook `window.__twoPoints` (`M`, `heat`, `compose`, `composeRatio`, `meanTo`, `steps`, `set`, `state`). Not in the flying page.
+- `look-pull.html`: **a look and a pull** (24 Nov 2026, SPN R1182; essay 33; FCL; Tom: "merge, 1, 2, 3"), a standalone page
+  like `faces.html`, plain canvas. Masses about a place (a seeded scatter in the drawing's plane, an even shell with the
+  place off its centre, one mass), a facing turned by a slider: the faced take F(n) (a definition from FCL run 6) in front
+  and behind, their difference the pull along the facing, six facings the whole pull, against a look's front and behind
+  counts adding to all; below, the share within r heights of the foot for a look, a flat sheet's pull straight down (the
+  same law) and an even sky's faced take. Never calls the pull a read. `?scene=scatter|shell|one&phi=&off=&r=&seed=`; hook
+  `window.__lookPull` (`masses`, `facing`, `take`, `pull`, `six`, `counts`, `shares`, `set`, `state`). Not in the flying page.
 - `notation.html`: **only a name** (14 Nov 2026, SPN R997; essay 24), a standalone page like `shv.html`, plain script: one turn by its
   angle (cos, sin, so π) and by its half-slope in exact BigInt fractions, n turns and back; Leibniz and Wallis as limits (a fraction at every
   step, π at none); the 189 laws of NTN and NTX as tiles, teal where the checker found π or e notation, grouped by list, DVA's tag, the blind
