@@ -152,3 +152,22 @@ own arithmetic and can fail.
   Kill: any change past 10⁻¹⁸. An identity.
 
 What would count against "the pull has the look's corners": C1's exchange failing, or C3's third.
+
+### Run 2 (24 November 2026; `runs/fcl/fcl2.py`, output `runs/fcl/fcl2-run2.txt`; 3 minutes)
+
+| | result | |
+|---|---|---|
+| C1 | the strip \|x\| ≤ d holds ½; strips at x₀ and d²/x₀ add to 1 at all four x₀ (to 30 digits) | not killed |
+| C2 | the disc's share on the formula (10⁻³¹), ½ at √3; c ↦ 1 − c complements exactly; the reciprocal r ↦ 3/r misses by up to **0.0607** (at r = 7.33), outside my [0.01, 0.05] | **killed**, by my bound |
+| C3 | the square of one thumb each way holds ⅓; ½ at s = 1.553774; the formula to 10⁻³¹ | not killed |
+| C4 | outside the ball 1/x² to 12 digits; inside x less 3·10⁻⁶·x | **killed**, by my code: I left a gap of 2·10⁻⁶·x about the shell through the point, and the miss is that gap's mass |
+| C5 | strip, disc and square unchanged under ×7 | not killed |
+
+C2's kill is of my guess at the size (I worked it at r = 1 only, 0.023, and guessed the range from that); the claim it
+tested, that the reciprocal is not the disc's pairing, holds more strongly than I wrote. C4 is rerun below with the gap
+closed, as a new run with its own prediction.
+
+### Run 2b: prediction (committed before running)
+
+- **C4′** The same six values as C4, the inside integral taken up to the shell through the point from each side with no gap:
+  x inside and 1/x² outside to 10⁻¹⁰. Kill: any value off past 10⁻¹⁰.
