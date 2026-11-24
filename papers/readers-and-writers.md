@@ -1648,12 +1648,12 @@ reaches others only at light's speed, and carries energy), strong fields, where 
 which pulls too and is no write. A read has a heat, the same for every standpoint, with no amount in it (§3). A write
 has one too. Its pull leaves it evenly over every direction, GM/d² at every distance and never zero, so like the read's
 heat it has no edge. Through any flat plane a distance d off it lands as GM·d/(d² + r²)^(3/2), which is 2πGM times the
-two-dimensional Cauchy of scale d, the heat of §8 with the write at the standpoint: half the pull crosses any plane,
+two-dimensional Cauchy of scale d, §3's heat in space with the write at the standpoint: half the pull crosses any plane,
 half of that within √3·d of the foot, and the inverse square is that law's height at the foot. The amount is the same
 through every surface round the write (Gauss), so what thins with distance is the share, not the write: 1/d² is
 geometry and M the one amount. Seen from the other side, the pull at a place is a fixed weight over directions times
 the mass met along each; above a sheet of mass it is 2πG times the Cauchy-weighted average of the sheet's density, and
-a ripple in the density fades as e^(−kh) with height, §4's stepping back. So the second test passes: change the mass
+a ripple in the density fades as e^(−kh) with height, §3's stepping back. So the second test passes: change the mass
 and no direction and no weight moves; scale the world and the weight is the same at every size. One write's heat does
 not alter another's, as one standpoint's does not, which is why pulls add piece by piece; another write enters mine
 only as what is met along a direction. A thing with a border carries its own near and far: inside a uniform ball the
