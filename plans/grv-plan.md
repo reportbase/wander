@@ -212,3 +212,16 @@ R659); each standpoint has its own heat, the same law, and another observer ente
 piece by piece), and another mass enters my pull only as payload, a column along some direction. So in both, the other is never in
 my addresses, only in what lands on them. Limit as above: exact while pulls add (Newton, weak fields); in general relativity one
 mass does alter the other's field.
+
+Tom (24 Nov): "Each write occupies a discreet position in reality  and this means it's affect goes beyond its extent.  Think of
+gravity the full extent of the object.    Very strong closs, very weak far away.    So a write has a gradient". Claude's reading,
+not ruled, nothing run (the formulas Newton's, checked in V1 and V5):
+- *A bounded thing, an unbounded reach.* A write has a size (R896); its pull has no edge, GM/d² at every distance, never zero: like
+  the heat's tail, it does not close. "The full extent of the object" as the reach of its pull is then without end.
+- *The gradient is the geometry's, not the write's fading.* The flux through any surface round the body is 4πGM at every distance
+  (Gauss): the amount is the same far and near, spread over more directions' worth of area. The payload is constant; 1/d² is the
+  share. The separation again.
+- *The shape of the gradient, in the body's own radii x = d/R (uniform ball):* inside the pull is x times the surface's (in
+  proportion, zero at the centre), outside 1/x²; strongest at the surface, not at the centre. The surface is where proportion gives
+  way to ratio, as the corner does for near and far; not the exact exchange (x against 1/x², not 1/x). The shape has no unit; the
+  amount at the surface, (4/3)πGρR, does.
