@@ -1,0 +1,1 @@
+  m = 1e-06: 3 sign changes on the line; 2 points off the line, a and b off D by 1.71e-29
