@@ -250,3 +250,9 @@ Claude's reading, not ruled, nothing run:
   either extends that (a thing's shape and its pull, both sized by the thing) or replaces it; Tom's to say. Known physics leans the
   same way without our help: in general relativity gravity is a geometry (the metric), set by mass and energy. No claim made here
   that the two are one.
+
+Tom (24 Nov), to the flag above: "A write has mass.  Having mass is gravity." Taken as the answer: gravity is not a second thing
+added to a write's shape; a write is a thing with a size and a mass, and its pull is what having the mass is. So write geometry
+(R1094) stays "a thing's own, with a size", the mass among what is its own. Two precisions from known physics (Claude's): mass
+also resists a push (inertia), and that the two masses are one is the equivalence principle, measured, not defined (to about
+10⁻¹⁵, MICROSCOPE; from memory); and light, with energy and no mass, gravitates too, so strictly "having energy".
