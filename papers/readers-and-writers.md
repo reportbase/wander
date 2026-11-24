@@ -15,6 +15,10 @@ it; whether those assumptions fit a physical system is a further claim, made cas
 proofs this paper draws on are in *Observation from Somewhere*, archived (`papers/archive/ofs/`); where its wording differs
 from this paper, this paper stands.
 
+**The paper is about the read.** The write is not its subject. A write is taken up only where a point about the read
+needs one, and it is then simplified as far as that point allows: a thing with a place and one amount, at one moment,
+with whatever else it has in the world left out. Each such passage names what it left out. **Reading.**
+
 **One letter, Ω = π/2.** A read is one sweep, from home to the horizon, and the total of one sweep is π/2: the
 weight ds/(1 + s²), the one weight that composing slopes leaves unchanged, summed over every slope from 0 up. π is two
 sweeps' worth. Since the paper's subject is the single sweep, its constants are mostly π/2 and 2/π, and it is simpler to
@@ -1638,6 +1642,31 @@ alone and T·√(GM/a³) = 2π, so a counted period writes the length or the axi
 **Checked** (RWX, `plans/rwx-plan.md`, each case computed from its own physics, nothing killed); the formulas classical,
 the sorting a reading, and not blind (a case chosen by someone else could need a fourth kind).
 
+**A write's own heat: the pull.** A point about the read, made with the write simplified to a point with one amount, its
+mass, at one moment, pulls adding as Newton has them; left out are a write's shape, anything that changes (a change
+reaches others only at light's speed, and carries energy), strong fields, where pulls do not simply add, and light,
+which pulls too and is no write. A read has a heat, the same for every standpoint, with no amount in it (§3). A write
+has one too. Its pull leaves it evenly over every direction, GM/d² at every distance and never zero, so like the read's
+heat it has no edge. Through any flat plane a distance d off it lands as GM·d/(d² + r²)^(3/2), which is 2πGM times the
+two-dimensional Cauchy of scale d, the heat of §8 with the write at the standpoint: half the pull crosses any plane,
+half of that within √3·d of the foot, and the inverse square is that law's height at the foot. The amount is the same
+through every surface round the write (Gauss), so what thins with distance is the share, not the write: 1/d² is
+geometry and M the one amount. Seen from the other side, the pull at a place is a fixed weight over directions times
+the mass met along each; above a sheet of mass it is 2πG times the Cauchy-weighted average of the sheet's density, and
+a ripple in the density fades as e^(−kh) with height, §4's stepping back. So the second test passes: change the mass
+and no direction and no weight moves; scale the world and the weight is the same at every size. One write's heat does
+not alter another's, as one standpoint's does not, which is why pulls add piece by piece; another write enters mine
+only as what is met along a direction. A thing with a border carries its own near and far: inside a uniform ball the
+pull grows in proportion to the distance from the centre, outside it falls as the ratio 1/x² in the ball's own radii,
+strongest at the surface, the two descriptions of its potential exchanged about the surface by r ↦ R²/r (Kelvin). The
+two heats are alike, not the same. A read takes one hemisphere, its fineness is no amount, its paint does not add and
+it has no mean; a pull takes every direction about the write, its strength is the write's amount, and it is a sum,
+with a mean. One standpoint has from a pull only M/d², never M or d, as a read never has V; two pulls a counted step
+apart place the source in steps, and the mass then needs G carried in. **Checked** (GRV, `plans/grv-plan.md`, exact at
+50 digits; one clause of one prediction killed by my guess, how many of a cube shell's opposite columns differ); the
+formulas classical (Newton 1687; the plane's kernel is potential theory's Poisson kernel of the half-space, not there
+called the Cauchy), the sorting a reading. No new physics: Newton's law, placed.
+
 **A single vantage and the DHV, side by side.** A read is a single hemispherical vantage; the DHV is the dual,
 drawn from no standpoint. Where the DHV is what is wanted, the list above says so: what acts out of view with no law
 in time, whose state has to be stepped whether anyone looks; more than one standpoint, which must agree on something that
@@ -2602,7 +2631,7 @@ reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `
 `plans/swp-plan.md`, `runs/swp/`. Three laws on the sphere: `plans/eul-plan.md`, `runs/eul/`. Euler's formula as a count of
 reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Loops among standpoints: `plans/tlp-plan.md`, `plans/mny-plan.md`, `runs/tlp/`, `runs/mny/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The two completions tested blind, and the odd sums: `plans/twc-plan.md`, `runs/twc/`. The distance between
 standpoints: `plans/frg-plan.md`, `runs/frg/frg.py`. A flat chart in space: `plans/flc-plan.md`, `runs/flc/`. Epicycles and
-aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The data cases:
+aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The pull by direction: `plans/grv-plan.md`, `runs/grv/`. The data cases:
 `plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`; each records its
 runs as they came out, the killed ones too, and none alone establishes the sort. Pages: `read.html`, `pinhole.html`,
 `crosshairs.html`, `heat-cube.html`, `euler.html`, `approach.html`, `slide-rule.html`, `star-field.html`. The read as a
@@ -2696,6 +2725,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
   donné de points. *Comptes Rendus du Sixième Congrès des Mathématiciens Scandinaves* (Copenhagen, 1925), 253–259.
 - McCullagh, P. (1992). Conditional inference and Cauchy models. *Biometrika* 79, 247–259.
 - Mercator, G. (1569). *Nova et aucta orbis terrae descriptio ad usum navigantium emendate accommodata.* Duisburg.
+- Newton, I. (1687). *Philosophiæ Naturalis Principia Mathematica.* London.
 - Niven, I. (1956). *Irrational Numbers.* Carus Mathematical Monographs 11. Mathematical Association of America.
 - Poincaré, H. (1902). *La Science et l'hypothèse.* Paris. (1908). *Science et méthode.* Paris.
 - Qian, T. and Wang, Y.-B. (2011). Adaptive Fourier series, a variation of greedy algorithm. *Advances in

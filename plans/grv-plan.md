@@ -304,3 +304,7 @@ Tom (24 Nov): "We need to make some simplifying assumptions about the write". Pr
    write from nothing would need saying where its energy came from.)
 What these give up: shape (the border, near and far about it, returns only for a cluster of writes), delay and waves, strong
 fields, and light's own pull.
+
+Tom (24 Nov), to the six proposed assumptions: "Update the paper.  It is about the read, the write should be simplified as need to
+make points about the read". So no standing list: each passage simplifies the write as its point needs and says what it left out
+(SPN R1173). Carried into *Reads and Writes*: the head's "The paper is about the read" and §7 "A write's own heat: the pull".

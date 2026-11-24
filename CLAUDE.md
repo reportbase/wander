@@ -580,6 +580,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   size, unmoved by scaling) and write geometry (a thing's own shape with a size, its maker's, the observer's strides and
   units included)**; supersedes R1091's "the geometry of reads and writes". *Reads and Writes* §2 "Read geometry and write
   geometry"; essays 1, 3, 7, physics §5.5, `boost-sky.html`. **For new writing: say read geometry and write geometry.**
+  GRV (`plans/grv-plan.md` + `runs/grv/grv.py`, 23–24 Nov; Tom: "Proceed"): gravity sorted by direction, exact at 50 digits.
+  The pull at a place is a fixed weight over directions times the mass met along each (the column); above a sheet 2πG times
+  the Cauchy-weighted average of its density, ripples fading as e^(−kh); a point mass's pull through a plane 2πGM times the
+  2D Cauchy of scale d. V3 killed in one clause by my guess (a cube shell's opposite columns); the rest not killed. Classical
+  (the Poisson kernel of the half-space); Tom's statements of both days recorded below the runs, each with its limits.
+  R1173 (24 Nov; Tom: "Update the paper.  It is about the read, the write should be simplified as need to make points about
+  the read"): ***Reads and Writes* is about the read; a write is taken up only where a point about the read needs one,
+  simplified as far as that point allows, the passage naming what it left out.** The paper's head says so; §7 "A write's own
+  heat: the pull" is the first such passage (a write a point with one mass at one moment, Newton's pulls adding; every write
+  has this heat, alike the read's and not the same: every direction, an amount, a sum with a mean). **For new writing: do not
+  build out the write for its own sake; never say gravity is a read, or new physics.**
   R1172 (21 Nov; Tom: "yes"): `crosshairs.html`'s H the distance to the pick (the hypotenuse), legs H/√3, readings over
   the leg; nothing moves on the screen, H's number √3 larger; R1164 undone. Probe: pick reads (1.03, 1.00, 0.97), no errors.
   R1171 (21 Nov; Tom: "this elimantes the two derivation paths, the less clean one is logically the correct one."):
