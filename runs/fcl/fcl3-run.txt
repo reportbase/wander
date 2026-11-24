@@ -1,0 +1,17 @@
+FCL run 3, mpmath 40 digits
+
+  T1 mu = 0.25: the pulls cancel at x = 0.333333333333 D, rho = 0.5
+  T1 mu = 1.0: the pulls cancel at x = 0.5 D, rho = 1.0
+  T1 mu = 4.0: the pulls cancel at x = 0.666666666667 D, rho = 2.0
+  T1 mu = 9.0: the pulls cancel at x = 0.75 D, rho = 3.0
+  T1 mu = 81.3: the pulls cancel at x = 0.900166235827 D, rho = 9.01665126308
+T1: not killed (rho off sqrt(mu) by 5.74e-42; other zeros found from 400 starts: [])
+T2: not killed (largest miss 1.93e-39 over 30 pairs)
+T3: not killed (largest miss 9.18e-41; opposite sides: True; one mass x7 moves the meeting point's rho by at least 0.8229)
+T4: not killed (equal pulls on the sphere to 3.07e-40 at 200 points; equal at 0 of 200 points off it)
+T5: not killed (net pull against the direction to the meeting point: 1.53e-39 at 200 points)
+  T6 mu 4.0: totals off 0.0, ratio 1 at the foot, 2.02386 at one lighter-height out, 8.0 far out (mu^1.5 = 8.0), rising: True
+  T6 mu 9.0: totals off 0.0, ratio 1 at the foot, 2.41495 at one lighter-height out, 27.0 far out (mu^1.5 = 27.0), rising: True
+  T6 mu 81.3: totals off 0.0, ratio 1 at the foot, 2.77703 at one lighter-height out, 733.05375 far out (mu^1.5 = 733.05375), rising: True
+T6: not killed 
+T7: not killed (an identity)

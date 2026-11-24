@@ -1,0 +1,35 @@
+FCL run 1, mpmath 50 digits
+
+  F1 inside the shell at 0.0: pull 6.3724e-58
+  F1 inside the shell at 0.3: pull 4.7793e-57
+  F1 inside the shell at 0.9: pull -7.4434e-53
+F1: not killed (largest 7.44e-53; a look meets the shell in every direction)
+F2: not killed (m at d against 4m at 2d: 0.0; direction under k: 1.49e-51; length x k^-2: 0.0; one density, x k: 1.34e-51)
+  F3 r =    10: off the monopole 0.0009898, with the quadrupole 0.0001494
+  F3 r =    20: off the monopole 0.0002471, with the quadrupole 1.913e-5
+  F3 r =    40: off the monopole 6.184e-5, with the quadrupole 2.418e-6
+  F3 r =    80: off the monopole 1.548e-5, with the quadrupole 3.04e-7
+  F3 r =   160: off the monopole 3.871e-6, with the quadrupole 3.811e-8
+  F3 r =   320: off the monopole 9.681e-7, with the quadrupole 4.77e-9
+  F3 r =   640: off the monopole 2.421e-7, with the quadrupole 5.967e-10
+  F3 r =  1280: off the monopole 6.052e-8, with the quadrupole 7.462e-11
+F3: not killed (slopes -1.9994 and -2.992; predicted -2, -3)
+F4: not killed (largest of skew, place, the length-ratio check and the mass over five scenes: 1.07e-50)
+  F5 s =  0.01, r = 10: lines miss by 2.205e-6
+  F5 s =  0.02, r = 10: lines miss by 8.823e-6
+  F5 s =  0.04, r = 10: lines miss by 3.53e-5
+  F5 s =  0.08, r = 10: lines miss by 0.0001413
+  F5 s =  0.16, r = 10: lines miss by 0.0005661
+  F5 s =  0.32, r = 10: lines miss by 0.002271
+  F5 s =  0.64, r = 10: lines miss by 0.009129
+  F5 s = 0.1, r =   10: lines miss by 0.0002209
+  F5 s = 0.1, r =   20: lines miss by 0.0001103
+  F5 s = 0.1, r =   40: lines miss by 5.515e-5
+  F5 s = 0.1, r =   80: lines miss by 2.757e-5
+  F5 s = 0.1, r =  160: lines miss by 1.378e-5
+  F5 s = 0.1, r =  320: lines miss by 6.89e-6
+  F5 s = 0.1, r =  640: lines miss by 3.445e-6
+F5: not killed (slopes 2.0023 in s and -1.0004 in r; predicted +2, -1)
+F6: not killed (rank min(3K, 4n) in 120 cases; short: [])
+F7: not killed (rank min(K, 4n) in 100 cases, short: []; mirrored scene, coplanar takes: lengths differ by 0.0, arrows by 0.0102)
+F8: not killed (unmoved: direction 7.47e-52, length ratio 2.67e-51, place in baselines 1.49e-51; moved: |g| x 0.0204082, m/B^2 x 0.0204082)

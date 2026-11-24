@@ -585,6 +585,34 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy-weighted average of its density, ripples fading as e^(−kh); a point mass's pull through a plane 2πGM times the
   2D Cauchy of scale d. V3 killed in one clause by my guess (a cube shell's opposite columns); the rest not killed. Classical
   (the Poisson kernel of the half-space); Tom's statements of both days recorded below the runs, each with its limits.
+  FCL (`plans/fcl-plan.md` + `runs/fcl/fcl.py`, 24 Nov; SPN R1180; Tom: "there now seems to be two ways to read, with the
+  SHV and the DHV."; "if you don't have a facing, you get all facings at once, kind of like the god's eye view."; "explore
+  further first", "yes, write the plan and test"): exploration, no ruling (R890, R967, R1173 stand). A place with no facing
+  takes in every direction summed: three numbers whatever the scene (one with no frame), nothing inside a shell, moments in
+  order from afar, direction unmoved and length an amount; framed takes recover n masses from ⌈4n/3⌉ places, as parallax
+  with the amount; unframed 4n and a mirror twin. Exact, nothing killed, classical. Not in any paper.
+  Run 2 (Tom: "cauchy is the stage, not the play itself"; "each small win"; "proceed"): on the plane the pull has the
+  look's corners (½ within one height across a thumb, x ↔ d²/x; ⅓ in the square; ½ within √3 round the foot); along the
+  line through a ball, proportion inside and inverse square outside, greatest at the surface, not the look's exchange.
+  C2 killed by my bound, C4 by my code, C4′ not.
+  Run 3 (Tom: "proceed"; two masses on each other's stage), nothing killed, all derived beforehand (a sorting): the pulls
+  cancel at ρ = √μ (ρ the distances' ratio, μ the masses'), the fixed point of the exchange ρ ↔ μ/ρ (reciprocal pull
+  ratios); unmoved by scaling lengths or both masses; the centre of mass at 1/μ, ρ_meet²·ρ_centre = 1; equal pulls on
+  Apollonius's sphere, every net pull there aimed at the meeting point; each mass its own Cauchy on the meeting plane,
+  equal at the foot only, the totals' difference the same through every plane between.
+  Run 4 (the pair in orbit): five balance points for one at rest; the two off the line at a = b = D for every mass
+  ratio (the corner back at 1); between the masses the exponent ½ becomes ⅓ ((m/3)^(1/3)); unmoved by scaling when
+  the rate follows the masses. M1 killed by my search at m = 10⁻⁶; run 4b found all five there and was killed at 10⁻⁹ by my code (a pole counted, no start settling).
+  Run 5 (Tom: "proceed with 2"; light past a point mass, thin lens, in Einstein radii), nothing killed: two images with
+  u₊u₋ = −1, the Einstein ring the exchange's fixed circle, half of all images inside it for every sky; along a line
+  through the mass images Cauchy(z) come from sources Cauchy(z − 1/z) (centred: scale γ + 1/γ, least at the ring), and
+  Cauchy sources are seen as two Cauchys at z₁ and −1/z₁, z₁ + z₂ = w; over the whole screen the family breaks (density
+  zero on the ring, 0.144 from any centred 2D Cauchy). The ring is the play's corner, an amount. Classical.
+  Run 6 (Tom: "proceed"; what a facing adds to a pull), nothing killed: a faced take F(n) keeps what arrives from in
+  front, along the facing; opposite facings subtract (F(n) − F(−n) = n·g) where a look's add; the faceless take is
+  6·⟨n·F(n)⟩ over all facings, six enough, the facings without their directions only an amount (the sky's total over 4);
+  inside a shell every facing equals its opposite, each far from nothing; an even sky's faced take on the flat screen
+  has share r²/(1 + r²), half at one thumb, r ↔ 1/r complementing (ISX's disc). A definition made for the run.
   R1179 (24 Nov; Tom: "update the essays"): R1174–R1178 carried through the essays and README (23 files): a number in a
   unit is "an amount", never "a write" or "a writing"; a count "gives" a size. Left for Tom: "temporary writes" (R1048),
   "what is kept is a write" where the keeping is private, R568's wording, the older "writer". Physics paper, demos not swept.

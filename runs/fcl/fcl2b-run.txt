@@ -1,0 +1,7 @@
+  C4' x = 0.2: pull (0.2 - 7.2034208458799e-20j) against 0.2
+  C4' x = 0.5: pull 0.5 against 0.5
+  C4' x = 0.9: pull (0.9 - 7.4310768403323e-19j) against 0.9
+  C4' x = 1.1: pull 0.82644628099174 against 0.82644628099174
+  C4' x = 2: pull 0.25 against 0.25
+  C4' x = 5: pull 0.04 against 0.04
+C4': not killed (largest miss 2.22e-17)

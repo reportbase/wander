@@ -7607,6 +7607,57 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1180** (24 Nov 2026; Tom: "that seems important to me. Here is a connection between an shv read, and a dhv read.";
+  "seems to me when V is not known, the cauchy emerges. And there now seems to be two ways to read, with the SHV and the
+  DHV."; "explore further first. right, if you don't have a facing, you get all facings at once, kind of like the god's eye
+  view."; "yes, write the plan and test"): **exploration, not a ruling.** Tom's statements recorded; R890, R967 and R1173
+  stand until he rules. Claude's reading: the Cauchy is there with V known or not (known, it comes times an amount and
+  closed by a total; unknown, it is all that is left); a place with no facing takes in every direction at once, summed,
+  where the view from no standpoint holds them apart. FCL (`plans/fcl-plan.md`, `runs/fcl/fcl.py`), predictions first,
+  exact at 50 digits, nothing killed: a faceless take holds three numbers whatever the scene (one with no frame carried
+  in), nothing inside a shell, and cannot part amount from distance; its direction is unmoved by scaling and its length an
+  amount; a far body leaves moments in order (slopes −2, −3); two framed takes place one mass in baselines and give its
+  amount, n masses need ⌈4n/3⌉; two takes tell one mass from two by s²/r; without a frame 4n takes and a mirror twin.
+  Classical throughout. Not in any paper.
+  Then (Tom: "remember that cauchy is the stage, not the play itself. Its the heat map and as we have learned the cauchy
+  plays nicely it merges and combines and remains a cauchy."; "lets understand each small win to see where it takes us.";
+  "proceed"): the first small win, the stage is the same for a look and for a pull, only the play and the facings differ.
+  FCL run 2 (`runs/fcl/fcl2.py`, `fcl2b.py`), does the pull have a corner: on the plane it has the look's corners (half
+  within one height across one thumb with the exchange x ↔ d²/x, a third in the square of one height each way, half within
+  √3 heights round the foot, none carrying the mass or moved by scaling); along the line through a uniform ball a near in
+  proportion and a far as the inverse square, greatest at the surface, equal pulls at x and x^(−1/2), not the look's
+  exchange. C2 killed by my bound (the reciprocal misses by 0.0607, I allowed 0.05), C4 by my code, C4′ not.
+  Then (Tom: "proceed") FCL run 3 (`runs/fcl/fcl3.py`), two masses on each other's stage, predictions first, each worked
+  out beforehand (a sorting, not a test), nothing killed: the pair has a meeting point, where the pulls cancel, at
+  ρ = √μ (ρ its distances' ratio, μ the masses'), the fixed point of the exchange ρ ↔ μ/ρ, which carries the pulls'
+  ratio to its reciprocal: the look's exchange and corner, the corner moved from 1 to √μ by the play. Its place is a
+  ratio of two masses only (unmoved by scaling lengths, or both masses). The centre of mass, a mean, sits on the other
+  side at 1/μ, ρ_meet²·ρ_centre = 1. Off the line the equal pulls are Apollonius's sphere, and every net pull on it
+  aims at the meeting point. On the plane through it each mass lays its own Cauchy (scales the two distances, totals
+  the two masses), equal at the foot only; the totals' difference is the same through every plane between. Force shared,
+  accelerations owned. At rest only; classical.
+  Then (Tom: "add it to to a note and proceed. whats next?") the thread gathered as `plans/discussion-note.md` item 24,
+  and FCL run 4 (`runs/fcl/fcl4.py`), the pair in orbit: five balance points for the one at rest; the two off the line at
+  equal distances from both masses, each the pair's separation, for every mass ratio (the corner back at 1, the ratio
+  gone from the place); between the masses the distance from the lighter goes as (m/3)^(1/3) where at rest it went as
+  √m; all unmoved by scaling while the turning rate follows the masses. M1 killed by my search (one point found of five
+  at m = 10⁻⁶); run 4b found all five there and was killed at m = 10⁻⁹, again by my code (a pole counted as a zero, no start settling).
+  Then (Tom: "proceed with 2") FCL run 5 (`runs/fcl/fcl5.py`), light past a point mass by the thin-lens equation, in
+  Einstein radii, predictions first, nothing killed: each source has two images with u₊u₋ = −1, the look's exchange
+  with the Einstein ring its fixed circle, and half of all images lie inside the ring for every sky; along a line
+  through the mass the map u − 1/u is one of the Cauchy family's own (images at z come from sources at z − 1/z; centred,
+  scale γ from γ + 1/γ, least at the ring; Cauchy sources are seen as two Cauchys at z₁ and −1/z₁, the points adding
+  to the source's); over the whole screen the family is not kept (image density zero on the ring; 0.144 from any
+  centred 2D Cauchy), broken by the stretch round the ring. The ring is a corner set by the mass, an amount, where the
+  look's is chosen. Classical (Einstein 1936, Refsdal 1964, Boole 1857); the lens equation taken, not derived.
+  Then (Tom: "proceed") FCL run 6 (`runs/fcl/fcl6.py`), what a facing adds to a pull, predictions first, nothing
+  killed. A faced take keeps what arrives from in front and only its part along the facing (a definition made for the
+  run). A facing and its opposite subtract, F(n) − F(−n) = n·g, where a look's two hemispheres are joined by adding;
+  "no facing" is all facings at once with their directions attached, g = 6·⟨n·F(n)⟩, six facings enough, and without
+  the directions only an amount (a quarter of the sky's total); inside a shell each facing takes in 0.26 to 0.44 and
+  equals its opposite, so the nothing there is a balance; an even sky's faced take on the flat screen has the share
+  r²/(1 + r²) within r of the foot, half at one thumb, r and 1/r complementing exactly (the look's half is at √3;
+  ISX's disc); the ratio of opposite takes is unmoved by scaling. Classical (Newton's cones, Lambert's cosine).
 - **R1171** (21 Nov 2026; Tom: "this elimantes the two derivation paths, the less clean one is logically the correct one."): **one derivation: the pick sets the thumb as the hypotenuse and the legs are derived; the less clean path is the logically correct one.** *Reads and Writes* abstract and §0 (step 2 names it, step 3 "The legs, derived, and the readings", step 4 the turn keeping the thumb picked, step 5's Cauchy "as the cost of laying the readings on a line", step 13 each leg 1/√3, "One derivation, and why it is this one" replacing "Why the thumb goes on a leg", the radius one thumb for every pick); essay 26 §7 likewise. The arithmetic of R1163 unchanged. `crosshairs.html` (H = depth/√3) not yet changed.
 - **R1170** (21 Nov 2026; Tom: "I'm having second thoughts hypotenous.    selecting the second point is setting the hypoetnous or radious, not the legs."): **selecting the second point sets the hypotenuse, the radius, not the legs.** Supersedes R1161 and restores R1159 as the start: the pick one thumb away, the legs its derived shares (1/√3 each at the triple corner, equal extent assumed). Claude's reading, not ruled: no reading changes (ratios of legs, GEN G1); R1163's arithmetic stands with the roles named the other way (the pick on the thumb's turn, a leg's line a screen, h² the conversion). Not yet carried: *Reads and Writes* §0, essays 26 §7 and 31 §8, `crosshairs.html` (H = depth/√3, the thumb on each leg; R1164 to be undone). `plans/bar-steps.md` step 25.
 - **R1169** (21 Nov 2026; Tom: "so the read geometry is like an apparatus that follows you gaze."): **the read geometry is like an apparatus that follows the gaze**, step 23's stage recentred on each pick. Claude's reading, not ruled: the gaze is the second point picked (R1166); the apparatus has no shape or size (R701, R728), so following is recentring, not carrying a body about (R1116's bouncing ball withdrawn for giving the read a shape); the world only paints it. `plans/bar-steps.md` step 24.
