@@ -602,3 +602,45 @@ other side.
 
 Limits. Classical (the infinite sheet's field; Lambert's cosine; the logarithm of a slab's sideways attraction).
 Everything was derived before the run. A faced take is this plan's definition, not a claim about the world.
+
+## Run 8: bodies with size, and a lens of two masses
+
+Tom, 24 November, after run 7 and essay 33: "merge, 1, 2, 3" (3: "More runs. Two candidates are left: bodies with size
+(where the meeting point falls inside one of them), and a lens of two masses."). PR #489 merged before this was written.
+
+Set-up A, two uniform balls. Masses M₁ and M₂, radii R₁ and R₂, centres D apart, not overlapping, at rest. Outside a
+ball its pull is a point's; inside, in proportion to the distance from its centre (run 2). Places on the line between
+the centres, s measured from ball 2's centre toward ball 1. Exact, mpmath, 30 digits.
+
+Set-up B, two lens masses on one line. Run 5's lens with two point masses at a and b on a line, strengths ε₁ and ε₂
+(in units where the sum's Einstein radius is 1). For sources and images on that line the lens equation is
+y = u − ε₁/(u − a) − ε₂/(u − b).
+
+Said beforehand: I worked these out on paper just before writing them. A3's "a third" surprised me and may be wrong.
+Classical where it is known to me (the shell theorem; inner functions keeping the Cauchy).
+
+### Predictions (committed before running)
+
+- **A1, size adds balance points inside.** With the point meeting place (ρ = √μ, run 3) outside both balls, there are
+  exactly three balance points on the line between the centres: that one, unmoved by the radii, and one inside each
+  ball near its centre, where the ball's own pull has fallen to the other's. Kill: a count other than three, or the
+  outer one off √μ past 10⁻²⁵, in any of four seeded cases.
+- **A2, the inner one is the play's.** For a far, light companion the inner point stands at s ≈ M₁R₂³/(M₂D²) from its
+  ball's centre: it carries both masses and the ball's radius, and the exchange ρ ↔ μ/ρ does not hold inside. Kill: off
+  that by more than 2% where it predicts s under D/100; or reciprocal pull ratios at ρ and μ/ρ to 10⁻⁶ for a pair of
+  places with one inside the ball.
+- **A3, the meeting place does not enter a ball: it merges and goes.** When the point meeting place would fall inside
+  ball 2, it and ball 2's inner point are both inside, and as ball 2 is made lighter they meet and vanish together,
+  leaving one balance point on the line (inside ball 1). They meet exactly a third of the way from ball 2's centre to
+  ball 1's, whatever the masses and radii, when M₂/M₁ = (27/4)·(R₂/D)³. So the count is three or one, never two.
+  Kill: the count on either side of that mass ratio (1% above and below) not three and one; or the meeting place off
+  D/3 by more than 10⁻⁶·D at the ratio itself; in three cases with R₂ > D/3.
+- **B1, two lens masses on a line keep the Cauchy along it.** Images along the line that follow a Cauchy with point z
+  come from sources that follow exactly the Cauchy with point z − ε₁/(z − a) − ε₂/(z − b). Kill: off past 10⁻²⁰ in the
+  distribution function at any of seven points, for three z and two pairs of masses.
+- **B2, three images, three Cauchys.** Sources along the line following a Cauchy with point w are seen as the sum of
+  exactly three Cauchys, one for each image, their points the three solutions of the lens equation above the line, and
+  those three points add to w + a + b. Kill: the density off the sum past 10⁻²⁰ at any of twelve places; a solution
+  not above the line; the sum off past 10⁻²⁵.
+
+Not in this run: sources off the line of a two-mass lens (three or five images, classical), bodies in motion.
