@@ -1729,9 +1729,21 @@ and are placed by masses.
   of the way between the centres and both go.
 - A lens: its ring, where the two images exchange.
 
-*Open, for later sessions.* (1) Whether "even from a point" is all that joins the two, or whether the subtraction of
-opposite facings has a form on the read's side (a read's two facings s and 1/s multiply to 1; a pull's two halves
-subtract). (2) Answered for two masses at rest (FCL run 9, doubles): yes. On the line between them the meeting place is where the
+*Open, for later sessions.* (1) Answered (FCL run 10, exact but for two seeded checks): the subtraction is on the
+read's side too. A read has one odd moment of its own, the heat met below the corner less the heat met above it; it is
+zero on the bare stage, which is the corner being the median, and to first order it is how far a lopsided paint moves
+the median of what is met (by −ε·∫ of the near half, for a weight 1 + ε·f). A pull is the same parity taken with
+amounts: the first moment of the paint, each source's amount over its distance squared times its direction, over two
+looks back to back. Opposite halves subtract because that moment is a vector, as a total's halves add because it is a
+scalar; "a look adds, a pull subtracts" is order 0 against order 1 of one paint, and an even paint gives neither. The
+two are different moments: the read's weighs a direction by which half it is in, the pull's by its amount and its
+cosine to the facing, so a paint can move one and not the other (a circle painted 1 + ε(cos θ + 0.8·cos(3θ − 1)) has
+its first moment at 0° and its balance axis at 8.25°), and an increasing map of the amounts moves the pull and never
+the count. So the read's is an order statistic and the pull's a sum: §4's split, the median the heat's and the mean the
+paint's, with gravity on the paint's side, its centre of gravity in the literal sense. Where light goes with mass the
+pull's direction is the sky's brightness dipole (known, and used for the Local Group; from memory). Open still: whether
+any read-side moment carries a cosine weight without an amount.
+(2) Answered for two masses at rest (FCL run 9, doubles): yes. On the line between them the meeting place is where the
 pull's direction flips, found with no strength, no mass and no G; off the line, the pull's directions at four places a
 counted step apart, or directions and ratios of strengths at three, give both masses' places and their ratio in steps.
 The masses are in no ratio: they stand to the pulls as V stands to a read, and even one strength in a unit gives only

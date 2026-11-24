@@ -784,3 +784,34 @@ Group's pull from galaxy surveys; from memory, not opened.
 
 The reading if these hold: the subtraction is on the read's side too, as its one odd moment, the near half less the far
 half; a pull is the same parity taken with amounts. Not a mechanism and not new physics.
+
+### Run 10 (`runs/fcl/fcl10.py`, output `runs/fcl/fcl10-run.txt`), 24 November: nothing killed
+
+| | result | |
+| --- | --- | --- |
+| T1 | twenty scenes: front less back equals the first moment along the facing, and the brightness dipole lies along the pull, to 7·10⁻¹⁵ | not killed |
+| T2 | even skies (P₂, P₄) pull 0; exchange-even weights keep the median at the corner to 10⁻⁴² | not killed |
+| T3 | (a) the pull ε·a·4π/3 whatever the P₃ and P₅ parts; (b) the median moves by −ε·∫ of the near half (ratios 0.9999995, 0.99999985, 0.9999995); for sin 8(θ − Ω/2) the median stays at the corner exactly while the mean angle moves by −0.0375 | not killed |
+| T4 | the first moment at 0° exactly; the balance axis at 8.2489°, the same at ε = 0.01, 0.1, 0.5 (my working said about 9°) | not killed |
+| T5 | m → m³: the pull's direction moved over 1° in 20 of 20; the count's balance axis unmoved in 20 of 20 | not killed |
+
+T1, T2, T3a and the unmoved half of T5 are identities (the first moment's linearity, parity, orthogonality, a count
+that takes no amount); they could have failed only by my code. T3b, T4 and T5's first half are the tests.
+
+### What run 10 says, as a reading (Claude's, not ruled)
+
+- The subtraction is on the read's side too. A read's one odd moment is the heat met below the corner less the heat met
+  above it. On the bare stage it is zero, which is the corner being the median; a lopsided paint makes it non-zero, and
+  to first order it is exactly how far the median of what is met moves.
+- A pull is the same parity taken with amounts: the first moment of the paint (each source's amount over its distance
+  squared) over two looks back to back. Opposite halves subtract because the moment is a vector, as a total's halves add
+  because it is a scalar. "A look adds, a pull subtracts" is order 0 against order 1 of one paint.
+- They are different moments. The read's weighs a direction by which half it is in; the pull's by its amount and its
+  cosine to the facing. A paint can move one and not the other (T3b, T4: 8.25° apart), and an increasing map of the
+  amounts moves the pull and never the count (T5). So the read's is an order statistic and the pull's a sum: §4's split,
+  the median the heat's and the mean the paint's, with gravity on the paint's side.
+- This places the pull: it is the payload's centre of gravity taken on the stage, in the literal sense, which is R1098
+  (the Cauchy has a median; the centre of gravity is the density's). It also says why a pull has no facing: a first
+  moment over the whole sphere needs none.
+- Where light goes with mass, the pull's direction is the sky's brightness dipole. Known and used (galaxy flux dipoles
+  against the Local Group's motion); from memory, not opened. It is the nearest thing to reading a pull by looking.

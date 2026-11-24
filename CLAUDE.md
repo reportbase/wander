@@ -623,6 +623,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1187 (24 Nov; Tom: "merge, then the subtraction on the read's side"): FCL run 10, nothing killed. A read's one odd
+  moment is the heat met below the corner less the heat above (zero on the bare stage; to first order the median's
+  shift); a pull is the same parity with amounts, the paint's first moment over two looks back to back; halves subtract
+  for a vector moment, add for a scalar; different moments (0° against 8.25°; m → m³ moves the pull, never the count).
+  Claude's reading: the read's an order statistic, the pull a sum, gravity on the paint's side (R1098). §7's item 1.
   R1186 (24 Nov; Tom: "merge, 1, 2"): `plans/fcl-literature.md`, a prior-work search: formulas right, attributions
   corrected; "even from a point lands as the Cauchy" is in print for light (Lu 2020; Dupuy et al. 2019), so not ours;
   not found: the gravity statement beside a standpoint's directions, Cauchy closure in lensing, add against subtract.

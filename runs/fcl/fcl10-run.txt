@@ -1,0 +1,31 @@
+T1  the pull is the first moment of the paint m/d^2 over two looks back to back
+  20 scenes: worst of |front - back - n.g| and the dipole's angle off the pull: 7.11e-15  ok
+
+T2  an even paint gives no odd moment
+  (a) sky 1 + 0.3(1 P2 + 0 P4): pull 0.0  ok
+  (a) sky 1 + 0.5(0.4 P2 + -0.7 P4): pull 0.0  ok
+  (a) sky 1 + 0.9(-1 P2 + 0.2 P4): pull 0.0  ok
+  (b) quarter turn 1 + 0.3·sin 2θ: median off the corner by -3.51e-42  ok
+  (b) quarter turn 1 + 0.3·cos 4(θ − Ω/2): median off the corner by -2.38e-44  ok
+  (b) quarter turn 1 + 0.3·(θ − Ω/2)²: median off the corner by 3.17e-42  ok
+T2 ok
+
+T3  of an odd paint each takes one moment
+  (a) sky 1 + 0.3(1 P1 + 0 P3 + 0 P5): pull 1.25663706144, eps·a·4π/3 = 1.25663706144  ok
+  (a) sky 1 + 0.3(1 P1 + 0.8 P3 + -0.5 P5): pull 1.25663706144, eps·a·4π/3 = 1.25663706144  ok
+  (a) sky 1 + 0.6(-0.4 P1 + 1 P3 + 1 P5): pull -1.00530964915, eps·a·4π/3 = -1.00530964915  ok
+  (b) 1 + 10⁻³·sin 2(θ − Ω/2): median moves 0.00049999975, predicted 0.0005, ratio 0.9999995  ok
+  (b) 1 + 10⁻³·θ − Ω/2: median moves 0.00030842509, predicted 0.00030842514, ratio 0.99999985  ok
+  (b) 1 + 10⁻³·sin 6(θ − Ω/2): median moves 0.00016666658, predicted 0.00016666667, ratio 0.9999995  ok
+  (b) 1 + 0.3·sin 8(θ − Ω/2): near-half integral -3.46e-49; median off the corner by 0.0; mean angle off by -0.0375  ok
+T3 ok
+
+T4  same parity, different moments: the first moment and the balance axis part
+  eps 0.01: first moment points at 0.0°; balance axis at 8.248861223°  ok
+  eps 0.1: first moment points at 0.0°; balance axis at 8.248861223°  ok
+  eps 0.5: first moment points at 0.0°; balance axis at 8.248861223°  ok
+  the balance axis the same at every eps: ok
+T4 ok
+
+T5  one is a sum, the other a count
+  m -> m³: the pull's direction moved more than 1° in 20 of 20; the count's balance axis unmoved in 20 of 20  ok

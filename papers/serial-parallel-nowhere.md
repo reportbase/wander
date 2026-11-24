@@ -7607,6 +7607,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1187** (24 Nov 2026; Tom: "merge, then the subtraction on the read's side"): PR #493 merged. FCL run 10
+  (`runs/fcl/fcl10.py`, mpmath at 40 digits and two seeded checks, predictions first, nothing killed). **The subtraction
+  is on the read's side too**: a read's one odd moment is the heat met below the corner less the heat met above it, zero
+  on the bare stage (the corner the median) and, to first order, how far a lopsided paint moves the median
+  (−ε·∫ of the near half; ratios 0.9999995). A pull is the same parity taken with amounts, the first moment of the paint
+  m/d² over two looks back to back; halves subtract for a vector moment and add for a scalar one, and an even paint
+  gives neither (P₂, P₄ skies pull 0; exchange-even weights leave the median at the corner). Different moments: the
+  first moment at 0° and the balance axis at 8.2489° on one painted circle; m → m³ moves the pull in 20 of 20 scenes and
+  the count's balance in none. Claude's reading, not ruled: the read's is an order statistic and the pull's a sum, so
+  gravity is on the paint's side of §4's split, the payload's centre of gravity in the literal sense (R1098). Several
+  checks were identities and say so in the plan. *Reads and Writes* §7's open item 1 answered.
 - **R1186** (24 Nov 2026; Tom: "merge, 1, 2", to Claude's next steps: a prior-work search, and open item 2 of R1185's
   passage): PR #492 merged. (1) The search (`plans/fcl-literature.md`; a fresh agent, about fourteen queries, not a
   citation trace): no from-memory formula wrong; attributions corrected (the depth rules checked in Unsworth's notes,
