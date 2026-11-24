@@ -525,3 +525,42 @@ Limits. Every prediction but S2's size was derived beforehand; classical (Newton
 the mean of a clipped cosine over the sphere). A faced take is a definition made for this run (what crosses a small
 window from the front); it is not claimed that any thing in the world takes a pull this way. The even sky in S4 is a
 sky alike in every direction in amount per direction, not a mass spread evenly through space.
+
+## Run 7: the sheet, taken by facings
+
+Tom, 24 November, after run 6: "merge, then 2 and 3" (2: "the sheet of mass from the earlier gravity run, taken by
+facings, to see whether its Cauchy weighting is this same faced law"; 3: an essay). PR #488 merged before this was
+written; this run and the essay are on a new branch.
+
+The question. GRV found the pull above a flat sheet is 2πG times the sheet's density weighted by the 2D Cauchy of the
+height, the look's law on a flat screen (half within √3 heights of the foot). Run 6 found that a faced take of a sky
+alike in every direction follows another law, r²/(1 + r²) (half within one height). Which is the sheet's, and why?
+
+Set-up. A flat sheet of surface density σ = 1, the take a height h above it, G = 1. A place on the sheet is ρ from the
+foot, seen at slope r = ρ/h off the straight-down direction. Faced takes as in run 6. mpmath, 30 digits.
+
+Said beforehand: I worked the answer out on paper before writing this, so the run can fail only by my algebra or code.
+Classical (the infinite sheet's 2πGσ; Lambert's cosine).
+
+### Predictions (committed before running)
+
+- **W1, the sheet is not an even sky; it leans.** The sheet's mass over distance squared, per unit of direction, is
+  σ·√(1 + r²): more the farther off the straight-down direction, without bound toward the horizon. Kill: the amount in
+  thin rings of direction off that by more than 10⁻²⁰ at five r.
+- **W2, the lean cancels the facing's cosine, exactly.** Facing straight down, what the sheet sends along the facing
+  is the same from every direction: σ per unit of direction, the uniform turn. So on the sheet itself the weight is the
+  look's law: share within r equal to 1 − 1/√(1 + r²), half at √3, total 2πσ at every height. It is not run 6's faced
+  law. Kill: any share off past 10⁻²⁰; the total off 2π.
+- **W3, the two laws are one sheet, thinned or not.** A sheet whose density thins as 1/√(1 + r²) is a sky alike in
+  every direction, and its faced take has run 6's share r²/(1 + r²), half at one height, total πσ. Kill: off past
+  10⁻²⁰ at four r.
+- **W4, between two sheets, a balance.** Between two equal parallel sheets each facing square to them takes in 2πσ
+  and the pull is nothing at every height between. Above one sheet the facing away from it takes in nothing, and
+  the pull is the one take whole. Kill: either off past 10⁻²⁵.
+- **W5, a sideways facing has no limit.** Facing along the sheet, the take from a disc of radius R about the foot is
+  2σ·(asinh(R/h) − (R/h)/√(1 + (R/h)²)), growing by 2σ·ln 10 for each tenfold of R and never settling; the opposite
+  facing takes the same, so the sideways pull is nothing while each take is without bound. Kill: the take off the
+  formula past 10⁻¹⁵ at R/h = 10, 100, 1000; or the growth per tenfold off 2·ln 10 by more than 0.01 between the last
+  two.
+- **W6, the scale test.** The straight-down take, 2πσ, does not change with the height: at one surface density,
+  scaling every length moves nothing. The shares are unmoved too. An identity of W2.
