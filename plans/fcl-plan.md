@@ -126,3 +126,29 @@ Recorded as said; nothing here is a ruling, and no paper is changed.
 - "No, its not the complete story, for example, what is gravity specificaly. but lets not get bogged down, lets understand
   each small win to see where it takes us." Small wins, one at a time, each recorded with its limits. The first: **the
   stage is the same for a look and for a pull; only the play and the facings differ.**
+
+## Run 2: does the pull have a corner? Predictions (committed before running)
+
+24 November 2026. Tom: "proceed" (to the first of three next steps Claude offered: "Does the pull have a corner?"). A mass M at
+height d over a plane; its pull through the plane is 2πGM times the kernel d/(2π(d² + x² + y²)^(3/2)), total 1. Shares below
+are of that total. Then the pull along a line through a uniform ball of radius R. mpmath, 30 digits; "exact" means to 10⁻¹⁸
+by quadrature of the kernel itself, not of a formula derived from it. All classical; C2's bound and C3's two numbers are my
+own arithmetic and can fail.
+
+- **C1** (one thumb's corner) The strip |x| ≤ d holds exactly ½ of the pull, and the strips |x| ≤ x₀ and |x| ≤ d²/x₀ hold shares
+  adding to 1, for x₀/d = 0.2, 0.5, 2, 7. So across one thumb the pull has the look's corner and the look's exchange,
+  x ↔ d²/x. Kill: any miss past 10⁻¹⁸.
+- **C2** (round the foot) The disc of radius ρ about the foot holds 1 − 1/√(1 + r²), r = ρ/d: half at r = √3. The pairing
+  that complements is c ↦ 1 − c in c = 1/√(1 + r²) (equal steps of height on the sphere), fixed at c = ½; it is not the
+  reciprocal r ↦ 3/r, which misses 1 everywhere but √3, by an amount whose largest size lies between 0.01 and 0.05.
+  Kill: the disc's share off the formula past 10⁻¹⁸, or the reciprocal's largest miss outside [0.01, 0.05].
+- **C3** (two thumbs' corner) The square |x|, |y| ≤ a holds (2/π)·arcsin(v²), v² = s²/(1 + s²), s = a/d: exactly ⅓ at a = d (the
+  near field in both thumbs, the look's third), and ½ at s = √(1 + √2) ≈ 1.5538. Kill: either number off past 10⁻¹².
+- **C4** (along the line, through a body) The pull at distance x·R from the centre of a uniform ball, in units of GM/R², is x
+  inside and 1/x² outside, greatest exactly at the surface; computed by integrating the ball's shells, at x = 0.2, 0.5, 0.9,
+  1.1, 2, 5 (to 10⁻¹⁰). Places of equal pull are x and x^(−1/2), not x and 1/x: the near field is in proportion and the far
+  field falls, as for a look, but the exchange is not the look's. Kill: any value off past 10⁻¹⁰.
+- **C5** (the scale test) Every share in C1–C3 is unchanged when d, x₀, ρ and a are all multiplied by 7, and none depends on M.
+  Kill: any change past 10⁻¹⁸. An identity.
+
+What would count against "the pull has the look's corners": C1's exchange failing, or C3's third.
