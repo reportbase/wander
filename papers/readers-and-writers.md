@@ -1651,17 +1651,18 @@ heat it has no edge. Through any flat plane a distance d off it lands as GM·d/(
 two-dimensional Cauchy of scale d, §3's heat in space with the write at the standpoint: half the pull crosses any plane,
 half of that within √3·d of the foot, and the inverse square is that law's height at the foot. The amount is the same
 through every surface round the write (Gauss), so what thins with distance is the share, not the write: 1/d² is
-geometry and M the one amount. Seen from the other side, the pull at a place is a fixed weight over directions times
+the share and M, with G, the amount (that the amount is kept is physics, Gauss's law, not geometry). Seen from the other side, the pull at a place is a fixed weight over directions times
 the mass met along each; above a sheet of mass it is 2πG times the Cauchy-weighted average of the sheet's density, and
 a ripple in the density fades as e^(−kh) with height, §3's stepping back. So the second test passes: change the mass
-and no direction and no weight moves; scale the world and the weight is the same at every size. One write's heat does
-not alter another's, as one standpoint's does not, which is why pulls add piece by piece; another write enters mine
+and no direction and no weight moves. Under the first, the weight has the same form at every size, while the pull
+itself, an amount, moves. One write's heat does
+not alter another's, as one standpoint's does not, which is why pulls add piece by piece; another write enters a write's pull
 only as what is met along a direction. A thing with a border carries its own near and far: inside a uniform ball the
 pull grows in proportion to the distance from the centre, outside it falls as the ratio 1/x² in the ball's own radii,
-strongest at the surface, the two descriptions of its potential exchanged about the surface by r ↦ R²/r (Kelvin). The
-two heats are alike, not the same. A read takes one hemisphere, its fineness is no amount, its paint does not add and
-it has no mean; a pull takes every direction about the write, its strength is the write's amount, and it is a sum,
-with a mean. One standpoint has from a pull only M/d², never M or d, as a read never has V; two pulls a counted step
+strongest at the surface; proportion gives way to ratio there, though not by the exact exchange (x against 1/x²). The
+two heats are alike, not the same. A read takes one hemisphere, its fineness is no amount, and its slopes have
+no mean; a pull takes every direction about the write, its strength is the write's amount, and it is a sum of
+amounts, as §4's paint is. One standpoint has from a pull only M/d², never M or d, as a read never has V; two pulls a counted step
 apart place the source in steps, and the mass then needs G carried in. **Checked** (GRV, `plans/grv-plan.md`, exact at
 50 digits; one clause of one prediction killed by my guess, how many of a cube shell's opposite columns differ); the
 formulas classical (Newton 1687; the plane's kernel is potential theory's Poisson kernel of the half-space, not there

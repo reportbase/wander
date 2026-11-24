@@ -308,3 +308,11 @@ fields, and light's own pull.
 Tom (24 Nov), to the six proposed assumptions: "Update the paper.  It is about the read, the write should be simplified as need to
 make points about the read". So no standing list: each passage simplifies the write as its point needs and says what it left out
 (SPN R1173). Carried into *Reads and Writes*: the head's "The paper is about the read" and §7 "A write's own heat: the pull".
+
+**Correction** (24 Nov, after a fresh agent's read of *Reads and Writes*). The note above on the border as the near field said
+the ball's inside and outside potentials are "exchanged by Kelvin's inversion r ↦ R²/r". Wrong for a ball: its inside holds
+mass, so its potential there, −(GM/2R)(3 − x²), is not harmonic, and the inversion of the outside's −GM/r is a constant. Kelvin's
+exchange holds for expansions in empty space inside and outside a shell of sources (PAY P4's case), not for a solid ball. What
+stands: x inside, 1/x² outside, strongest at the surface, and not an exact exchange. The paper's passage is corrected, with three
+smaller slips there (the scale clause filed under the wrong test; "1/d² is geometry" overstated; "its paint does not add"
+against §4).
