@@ -324,3 +324,27 @@ they can fail by my memory as well as my code. Classical (Euler 1767, Lagrange 1
   both masses are scaled by 7 (the turning rate following from Kepler's law each time); it moves if the turning rate is
   set by hand instead. Kill: any of the five moving past 10⁻²⁰ under either scaling; or not moving when the rate is
   doubled by hand.
+
+### Run 4 (24 November 2026; `runs/fcl/fcl4.py`, output `runs/fcl/fcl4-run.txt`; 32 seconds)
+
+| | result | verdict |
+|---|---|---|
+| M1 | five balance points at m = ½, 0.2, 0.01, 10⁻³; at m = 10⁻⁶ the search found **one** | **killed**, by my search (see below) |
+| M2 | the two off the line at a = b = D at every m where they were found (10⁻²⁷) | not killed |
+| M3 | slope 0.33319; at m = 10⁻⁹ the distance 0.00069320, 0.99977 of (m/3)^(1/3); at rest it stood at 0.0000316 | not killed |
+| M4 | (a) 0.66666662 against ⅔; (b) 0.5833333333 against 7/12 | not killed |
+| M5 | the point between at the middle | not killed |
+| M6 | unmoved under both scalings (10⁻²²); the rate doubled by hand moves the inner point 0.027 and 0.093 D | not killed |
+
+M1's kill is my search's, as far as I can tell, not the count's: 120 starts a mass drawn over a box 4.5 by 4 D, Newton's
+method, and at m = 10⁻⁶ the net term is tiny all round the circle of radius D, so Newton wanders and only one start
+settled. (I also wrote "600 seeded starts" meaning 120 for each of five m; the letter was ambiguous.) It stays killed.
+M3 and M4 found the three on the line at that m by bracketing, so three of the five are seen there; the two off the
+line were not. Rerun below with its own prediction.
+
+### Run 4b: prediction (committed before running)
+
+- **M1′** At m = 10⁻⁶ and 10⁻⁹: (a) along the line the net term changes sign exactly three times away from the two
+  masses (counted on 200,000 points from −3 D to 4 D); (b) from 400 seeded starts within 0.3 D of the circle of radius
+  D about the heavier mass, with up to 400 Newton steps, the distinct balance points found off the line are exactly
+  two, at a = b = D to 10⁻²⁰. Kill: a count other than three in (a) or other than two in (b), or a, b off D.
