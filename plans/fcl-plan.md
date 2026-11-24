@@ -888,3 +888,60 @@ removed using the profile's own ends (which pulls the wings toward zero and so n
 estimate a few per cent in d; not corrected). If D1 and D2 hold, the classical rule works on this site to the profile's
 noise; nothing about the framing is tested beyond that, since the rule is classical. If they fail, the first suspects
 are the regional and a tunnel that is not round.
+
+### Run 11 (`runs/fcl/fcl11.py`, output `runs/fcl/fcl11-run.txt`), 24 November: D3 killed in one clause; D1 at its edge
+
+Least squares in doubles (scipy), σ = 0.004 mGal, 17 degrees of freedom a profile.
+
+| | P1 (mid-height 16.25 m, roof 12.5, floor 20) | P2 (17.25 m, 13.5, 21) |
+| --- | --- | --- |
+| line: depth d | 18.89 ± 2.33 m (bootstrap 2.85) | 13.64 ± 1.81 m (bootstrap 1.89) |
+| (d − mid-height)/error | +1.13 | −1.9993 |
+| place x₀ | 51.64 ± 0.80 m | 47.67 ± 0.78 m |
+| χ² per degree of freedom | 1.79 | 1.24 |
+| ball: depth | 23.50 ± 2.58 m | 17.48 ± 2.04 m |
+| ball over line | 1.244 | 1.282 |
+| χ², ball less line | −0.45 | −0.81 |
+| values × 7: d moves by | 3·10⁻¹⁰ | 2·10⁻¹⁰ |
+| missing mass per metre, A/(2G) | 78 t/m | 49 t/m |
+
+Weighted mean of the two, line: 15.61 ± 1.43 m against 16.75 m, 6.8% short. Ball: 19.81 m.
+
+| | | |
+| --- | --- | --- |
+| D1 | both within two errors of the mid-height (P2 by its letter only, −1.9993; by the bootstrap error −1.92); the mean 6.8% off | not killed, P2 at the edge |
+| D2 | both depths inside the tunnel (P2's 13.64 m is 0.14 m under its roof); x₀ within 2.4 m of 50 m | not killed, P2 at the edge |
+| D3 | the factor 1.244 and 1.282, in the band; χ² differences under 1, the curves not told apart; but the ball's mean depth is 19.81 m, not below the floor | **killed** in that clause |
+| D4 | 1.79 and 1.24 | not killed |
+| D5 | unmoved to 10⁻⁹ | not killed (an identity) |
+| M1 | Medford's dip fits as 7.1 ± 1.6 ft against 24 ft to centre (χ² 17.6 on 5) | fails as recorded beforehand |
+
+What it shows, plainly.
+
+- The rule works on this site to the profile's noise and no better. The half-width of the missing pull gives the
+  tunnel's depth to about 2 m a profile (12% and 13% of the depth), and the two profiles, 30 m apart over one tunnel,
+  differ from each other by 5.3 m, 1.8 of their joint error: one high by 16%, one low by 21%. Their mean is 7% short.
+  Twenty-one stations at 0.004 mGal on a 0.045 mGal dip do not fix a width better than that.
+- The depth came with no density and no amount (D5), which is the point of the rule: the width is the shape's. The
+  paper's own modelling, which fixes densities, reports a 20% (2.5 m) error from leaving the lining out; the shape's
+  estimate here is no closer than that, from noise instead.
+- D3's killed clause was mine: I predicted the ball's law would put the depth below the floor. It did on P1 (23.5 m)
+  and not on P2 (17.5 m), because P2's fit is narrow; the mean, 19.8 m, is just inside. The ratio between the two laws'
+  depths held (1.24 and 1.28 against the rules' 1.305). The data cannot tell the line's curve from the ball's by fit
+  (χ² differences 0.5 and 0.8, slightly favouring the ball), so the law of the fall-off is not tested here; only the
+  depth is, given the law.
+- The amplitudes differ more than the depths: 78 and 49 tonnes a metre missing, where an empty bore of 43.7 m² in clay
+  near 2 t/m³ would miss about 87 less the lining's concrete. A and d trade off in the fit (a wider curve needs more
+  mass), so these follow the depths' scatter; not a test.
+- The regional. My estimate above the Runs line, that the authors' straight line through the profile's ends would
+  narrow the curve by a few per cent, was wrong: with the fit's constant left free a noise-free curve treated the same
+  way comes back at 16.25 m exactly (the constant takes it up, 0.0068 mGal; the fitted constants are 0.010 and 0.005).
+- Medford is what a messy site does to the rule: a dip three stations wide over a passage 24 ft down reads as 7 ft.
+  Butler's report says the flanks are shallow pinnacles and clay pockets; the passage's own dip, about 10 µGal by his
+  model's scale, is under them. The rule needs the body to own the profile.
+
+Limits, kept with the result: one tunnel, two profiles, values read from a figure by a program (not the authors'
+numbers), predictions made after the values and a rough half-width had been seen, a body that is not exactly round
+(7.5 m high, lining thicker at the bottom). Classical throughout (the depth rule for a horizontal cylinder); nothing
+about a read is tested. The search found no table of such data in the open; a second clean site would need one of the
+paywalled originals (Arzi 1975, a drilled cavity 6.4 m to centre; Davis, Jackson and Richter 1957, Camagüey).

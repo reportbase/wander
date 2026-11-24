@@ -1,0 +1,23 @@
+FCL run 11: Brezno tunnel
+
+P1: mid-height 16.25 m, roof-floor (12.5, 20.0)
+  line: d = 18.89 +- 2.33 m (bootstrap 2.85), x0 = 51.64 +- 0.80 m, A = 1.0421 mGal m, c = 0.0101, chi2 = 30.5 on 17, per dof 1.79
+  ball: d = 23.50 +- 2.58 m, x0 = 51.57, chi2 = 30.0; ratio ball/line = 1.244; chi2 ball - line = -0.45
+  (d - mid)/se = +1.13 (covariance), +0.93 (bootstrap)
+  D5: values x 7: d changes by 2.9e-10, x0 by 2.3e-10
+  missing mass per metre A/(2G) = 78.1 t/m; over 43.7 m2 that is 1786 kg/m3
+
+P2: mid-height 17.25 m, roof-floor (13.5, 21.0)
+  line: d = 13.64 +- 1.81 m (bootstrap 1.89), x0 = 47.67 +- 0.78 m, A = 0.6526 mGal m, c = 0.0048, chi2 = 21.0 on 17, per dof 1.24
+  ball: d = 17.48 +- 2.04 m, x0 = 47.66, chi2 = 20.2; ratio ball/line = 1.282; chi2 ball - line = -0.81
+  (d - mid)/se = -2.00 (covariance), -1.92 (bootstrap)
+  D5: values x 7: d changes by 2.1e-10, x0 by 8.3e-11
+  missing mass per metre A/(2G) = 48.9 t/m; over 43.7 m2 that is 1119 kg/m3
+
+weighted mean, line: 15.61 +- 1.43 m against 16.75 m (-6.8%)
+weighted mean, ball: 19.81 m (floors 20 and 21 m)
+
+regional check: a true depth 16.25 with the ends' straight line removed fits as d = 16.25 m with the free constant c = 0.0068
+
+Medford Cave, 80 N-S line (counter-case)
+  line fit on 60-140 ft: d = 7.1 +- 1.6 ft, x0 = 98.7 ft, against 24 ft to centre; chi2 = 17.6 on 5

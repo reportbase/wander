@@ -7607,6 +7607,20 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1188** (24 Nov 2026; Tom: "Proceed", then "3", to Claude's next steps: a check on measured gravity profiles): PR
+  #494 merged. FCL run 11 (`runs/fcl/fcl11.py`), the thread's first use of measurements. A fresh agent's search found no
+  open table of a gravity profile over a body of independently known depth; one clean case as a published figure, the
+  Březno railway tunnel (Blecha and Mašín; two profiles of 21 stations, 0.004 mGal, roof 12.5 m and floor 20 m by
+  construction), its values read from the figure by a program, and one messy case (Medford Cave, Butler 1983). The
+  predictions were written after those values and a rough half-width had been seen, and say so. Fitting the Cauchy's
+  curve c − A·d/((x − x₀)² + d²): d = 18.89 ± 2.33 m and 13.64 ± 1.81 m against mid-heights 16.25 m and 17.25 m
+  (+1.13 and −1.9993 errors), mean 15.61 ± 1.43 m against 16.75 m; both inside the tunnel, P2 by 0.14 m; χ² per degree
+  of freedom 1.79 and 1.24; the depth unmoved when every value is multiplied by 7. D1, D2, D4, D5 not killed (D1 and D2
+  at their edge on P2); **D3 killed in one clause** (the ball's law gives 19.81 m, inside the tunnel, where I predicted
+  below the floor; its ratio to the line's, 1.24 and 1.28, held; the two curves are not told apart by fit). Medford's
+  dip reads 7.1 ft against 24 ft, as recorded beforehand. So the classical depth rule holds on the one clean site to
+  the profile's noise (about 12%), and nothing about a read is tested. My estimate that the authors' regional narrows
+  the curve was wrong (a free constant takes it up). *Reads and Writes* §7's open item 3.
 - **R1187** (24 Nov 2026; Tom: "merge, then the subtraction on the read's side"): PR #493 merged. FCL run 10
   (`runs/fcl/fcl10.py`, mpmath at 40 digits and two seeded checks, predictions first, nothing killed). **The subtraction
   is on the read's side too**: a read's one odd moment is the heat met below the corner less the heat met above it, zero

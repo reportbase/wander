@@ -623,6 +623,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1188 (24 Nov; Tom: "3"): FCL run 11, measured data: no open table found; the Březno railway tunnel's two profiles
+  (Blecha and Mašín, read from a figure; predictions after the values were seen) fitted with the Cauchy's curve give
+  18.9 ± 2.3 m and 13.6 ± 1.8 m against mid-heights 16.25 and 17.25 m, mean 15.6 ± 1.4 against 16.75; no density
+  needed; line and ball curves not told apart; D3 killed in one clause (ball's depth 19.8 m, not below the floor);
+  Medford Cave reads 7 ft against 24 ft. The classical depth rule only, to about 12%. §7's item 3.
   R1187 (24 Nov; Tom: "merge, then the subtraction on the read's side"): FCL run 10, nothing killed. A read's one odd
   moment is the heat met below the corner less the heat above (zero on the bare stage; to first order the median's
   shift); a pull is the same parity with amounts, the paint's first moment over two looks back to back; halves subtract
