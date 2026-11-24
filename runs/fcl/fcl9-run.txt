@@ -1,0 +1,13 @@
+R1  both masses scaled alike: no direction and no ratio of strengths moves
+  worst change over 5 scenes, 3 scalings: 4.44e-16  ok
+
+R2  on the line, halving on the sign of the pull alone meets the meeting place; (d1/d2)^2 there is mu
+  M1/M2 1   : met at s = 0.500000000000 (exact 0.500000000000), (d1/d2)^2 = 1.0000000000 against mu 1  ok
+  M1/M2 3   : met at s = 0.366025403784 (exact 0.366025403784), (d1/d2)^2 = 3.0000000000 against mu 3  ok
+  M1/M2 10  : met at s = 0.240253073352 (exact 0.240253073352), (d1/d2)^2 = 10.0000000000 against mu 10  ok
+  M1/M2 0.4 : met at s = 0.612574113277 (exact 0.612574113277), (d1/d2)^2 = 0.4000000000 against mu 0.4  ok
+R2 ok
+
+R3  directions alone
+/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py:2767: RuntimeWarning: overflow encountered in dot
+  sqnorm = x.dot(x)
