@@ -232,3 +232,10 @@ radius R in the thumb's place. What is already in the corpus for it: PAY P4 (ins
 of r/R, outside in R/r, the two meeting at r = R and exchanged by Kelvin's inversion r ↦ R²/r, which is the exact exchange here,
 on the potential, where the pull's x against 1/x² is not); ISX and NRF (a disc's light half at d = a, E(s) + E(1/s) = πL). The
 difference from a read: a read's thumb is chosen and the split moves with it; a thing's border is its own, a size, a write.
+
+Tom (24 Nov): "But the main point is that this is a heat map that every write has intrinsically." The main point of the day's
+statements, as Tom gives it. Claude's reading, not ruled: the counterpart of R1119 ("the geometry is … intrinsic to any extent;
+the bar has it, does not make it"). A read's heat belongs to any standpoint, the same for all, with no amount in it; a write's
+heat map belongs to any thing, the same form for all (the kernel, and the near and far about its own border), with one amount in
+it, its mass. "Every" holds in known physics: whatever has energy gravitates, so no write is without one. What differs between
+writes is only the amount and the border, both the write's own. No new physics claimed: Newton's law sorted.
