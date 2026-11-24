@@ -163,3 +163,9 @@ once." What it comes to, from results already in the corpus (nothing run here):
 - *"Sweeps"* in the paper's sense (R454): the geometry's, not an act in time; nothing travels in a steady pull. A change in the
   source does travel, at light's speed.
 A reading of known results; the sorting ours.
+
+Tom (24 Nov): "Classical says not much about cauchy". Agreed, in this sense. The kernel is in classical potential theory under
+another name, the Poisson kernel of the half-space (geophysics' upward continuation of gravity data, e^(−kh), is the same fact);
+what the classical texts do not say is that it is the Cauchy, the law of the uniform turn from a standpoint, so that the pull on a
+plane is a read's own measure laid over the mass (R1071: the classical tools are not the explanation). From memory, no search made;
+no claim that the naming is absent from print.
