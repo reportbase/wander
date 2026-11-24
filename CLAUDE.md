@@ -587,7 +587,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (the Poisson kernel of the half-space); Tom's statements of both days recorded below the runs, each with its limits.
   R1174 (24 Nov; Tom: "A count does not write to the universe, it is specific to the reader.  A write is to the universe
   and all readers share each others writes."): **a count is the counter's own; a write is to the world, met and shared by
-  every read** (a count becomes a write only once put down as marks). *Reads and Writes* D7, §1's table, §5, §9 ("a read
+  every read**; a mark that is the counter's alone is no write, a mark others can meet (a tree notched, a flag planted) is
+  one (Tom: "if the mark is reader specific, his alone, it is not a write"). *Reads and Writes* D7, §1's table, §5, §9 ("a read
   and a count, both the standpoint's own"). Who Ω and 1/Ω belong to stays open (Tom: "We are exploring that"); Claude's
   reading, not ruled: both the single standpoint's limits, 1/Ω by pointing, Ω by its own count, π the DHV's.
   R1173 (24 Nov; Tom: "Update the paper.  It is about the read, the write should be simplified as need to make points about

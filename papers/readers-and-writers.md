@@ -493,10 +493,10 @@ a membrane's potential and its spike, a stream from a tap and the drop that pinc
   this direction, that gap, this light's frequency. A relation between two variables is another variable and is put to
   the same tests; it does not inherit the kind of what it relates. A representation of a variable, its number in a
   coordinate, a count, a mark kept, has the variable's kind: an angle in degrees and a pixel's index are reads in the
-  DHV's coordinate and count. A count is neither a read nor a write: a write is to the world, where every read meets it and all share it, and a count is the counter's own, in the world only once it is put down as marks (R1174). It is discrete, and no scaling of the world
+  DHV's coordinate and count. A count is neither a read nor a write: a write is to the world, where every read meets it and all share it, and a count is the counter's own. A mark that is the counter's alone is no write either; a mark others can meet, a tree notched or a flag planted, is one (R1174). It is discrete, and no scaling of the world
   moves it: a count of steps taken, an extent put on paper in thumbs. The steps are writes, things with a size; the
-  count is a description laid over them, and what is kept of it is kept as things, marks or pebbles, each a write. So
-  keeping is done in writes, and physics enters with the first write, a thing with a size, not only with the unit. The
+  count is a description laid over them. Kept by the counter alone it stays the counter's own; put where others can
+  meet it, as marks or pebbles, it is kept in writes. Physics enters with the first write, a thing with a size, not only with the unit. The
   geometry itself keeps nothing ("A law needs no memory", below).
 
 **A law needs no memory.** The geometry keeps nothing, and yet it holds functions that describe the composing of any
