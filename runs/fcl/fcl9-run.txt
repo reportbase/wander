@@ -1,0 +1,38 @@
+R1  both masses scaled alike: no direction and no ratio of strengths moves
+  worst change over 5 scenes, 3 scalings: 4.44e-16  ok
+
+R2  on the line, halving on the sign of the pull alone meets the meeting place; (d1/d2)^2 there is mu
+  M1/M2 1   : met at s = 0.500000000000 (exact 0.500000000000), (d1/d2)^2 = 1.0000000000 against mu 1  ok
+  M1/M2 3   : met at s = 0.366025403784 (exact 0.366025403784), (d1/d2)^2 = 3.0000000000 against mu 3  ok
+  M1/M2 10  : met at s = 0.240253073352 (exact 0.240253073352), (d1/d2)^2 = 10.0000000000 against mu 10  ok
+  M1/M2 0.4 : met at s = 0.612574113277 (exact 0.612574113277), (d1/d2)^2 = 0.4000000000 against mu 0.4  ok
+R2 ok
+
+R3  directions alone
+/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py:2767: RuntimeWarning: overflow encountered in dot
+  sqnorm = x.dot(x)
+  four places, directions (8 numbers, 7 unknowns): the truth found in 20 of 20; a solved start more than 0.01 from the truth in 0 of 20
+     scene 0: best 8.5e-16 from the truth; 7 of 40 starts solved; farthest solved 4.12e-15
+     scene 1: best 5.6e-16 from the truth; 5 of 40 starts solved; farthest solved 6.57e-16
+     scene 2: best 3.6e-15 from the truth; 25 of 40 starts solved; farthest solved 3.10e-14
+     scene 3: best 3.7e-15 from the truth; 19 of 40 starts solved; farthest solved 4.64e-14
+  three places, directions (6 numbers): the truth found in 0 of 20; a solved start more than 0.01 from the truth in 20 of 20
+     scene 0: best 3.6e+00 from the truth; 27 of 40 starts solved; farthest solved 2.48e+01
+     scene 1: best 4.2e+00 from the truth; 37 of 40 starts solved; farthest solved 6.41e+01
+     scene 2: best 2.9e+01 from the truth; 36 of 40 starts solved; farthest solved 3.58e+01
+     scene 3: best 7.2e-01 from the truth; 31 of 40 starts solved; farthest solved 2.42e+01
+R3 ok (four places: also 0 of 20 with another solution)
+
+R4  directions and ratios of strengths, three places (8 numbers)
+  three places, directions and strength ratios: the truth found in 20 of 20; a solved start more than 0.01 from the truth in 0 of 20
+     scene 0: best 1.1e-15 from the truth; 20 of 40 starts solved; farthest solved 1.36e-14
+     scene 1: best 2.1e-17 from the truth; 32 of 40 starts solved; farthest solved 9.99e-16
+     scene 2: best 4.4e-15 from the truth; 36 of 40 starts solved; farthest solved 5.41e-14
+     scene 3: best 4.4e-15 from the truth; 16 of 40 starts solved; farthest solved 2.33e-14
+R4 ok (0 of 20 with another solution)
+
+R5  one strength in a unit, with G carried in, gives both masses
+  scene 0: G M2 = 3.337150e+14 (all that is had without G); with G, M2 = 5.000000e+24 (true 5.000000e+24), M1 = 7.047587e+24 (true 7.047587e+24)  ok
+  scene 1: G M2 = 6.674300e+14 (all that is had without G); with G, M2 = 1.000000e+25 (true 1.000000e+25), M1 = 2.871498e+25 (true 2.871498e+25)  ok
+  scene 2: G M2 = 1.001145e+15 (all that is had without G); with G, M2 = 1.500000e+25 (true 1.500000e+25), M1 = 5.492824e+24 (true 5.492824e+24)  ok
+R5 ok

@@ -287,4 +287,12 @@ front. That is why it can show which way is down.
   and J.-L. Lagrange, 1772, on the three-body balance points. A. Einstein, "Lens-like action of a star by the deviation
   of light in the gravitational field", *Science* 84, 1936. S. Refsdal, 1964, on the point lens. G. Boole, 1857, on
   the map x − 1/x. All from memory, not opened.
+- Checked since (`plans/fcl-literature.md`, one search): R. J. Blakely, *Potential Theory in Gravity and Magnetic
+  Applications*, Cambridge, 1995, §12.1 (upward continuation as convolution with the half-space's kernel, e^(−Δz|k|));
+  P. Mörters and Y. Peres, *Brownian Motion*, Cambridge, 2010, Theorem 2.33 (the Cauchy as a hitting law); G. Letac,
+  "Which functions preserve Cauchy laws?", *Proc. Amer. Math. Soc.* 67(2), 1977, 277–286; E. J. G. Pitman and E. J.
+  Williams, *Ann. Math. Statist.* 38, 1967, 916–918; S. Mao, "Introduction to gravitational microlensing",
+  arXiv:0811.0441. Boole's map is attributed to him by way of R. Adler and B. Weiss, *Israel J. Math.* 16, 1973; his
+  1857 paper was not opened. That an even spread from a point lands on a plane as the Cauchy is in print for light (X.
+  Lu, "Cauchy Distribution: A Physics Perspective", 2020; J. Dupuy, L. Belcour and E. Heitz, arXiv:1909.07605).
 - SPN rulings cited: R890, R967, R1173, R1174–R1178, R1180–R1183.
