@@ -193,3 +193,15 @@ gravity is no different." What run 1 already shows of it, and where it stops (Cl
 - *Where it stops.* The separation is linearity. In general relativity the mass also bends the paths (lensing: the payload moves
   light's addresses, noted above) and the field's own energy is a source, so two strong fields do not simply add. Exact in the
   weak, static case; approximate beyond it.
+
+Tom (24 Nov): "I'm saying gravity and observation are similar, not the same.   We can therefor learn about gravity by studying
+observation." Taken as a method: carry a result across, state it for gravity before checking, and see whether it is already known
+there. Candidates (Claude's, none run, each expected to be classical):
+- *One standpoint gives no size.* A read has no V; one reading of a pull gives only M/d², never M or d. *Parallax:* two pulls a
+  counted step apart place the source in steps, d₁ = step/(√(g₁/g₂) − 1) for a point mass (the tidal gradient), and the mass then
+  needs G carried in.
+- *Stepping back blurs, and undoing it is unique but not stable* (R605, R629): a pull read higher is the lower one under the
+  Cauchy; continuing it downward multiplies e^(+kh).
+- *Order survives, sums do not* (Theorem 6): to try on a pull's direction against its size.
+Where they part: a read has one hemisphere and its paint does not add; a pull takes every direction and is a sum of amounts, with a
+mean. So results resting on "no sum" should not carry.
