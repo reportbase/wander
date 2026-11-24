@@ -7607,6 +7607,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1180** (24 Nov 2026; Tom: "that seems important to me. Here is a connection between an shv read, and a dhv read.";
+  "seems to me when V is not known, the cauchy emerges. And there now seems to be two ways to read, with the SHV and the
+  DHV."; "explore further first. right, if you don't have a facing, you get all facings at once, kind of like the god's eye
+  view."; "yes, write the plan and test"): **exploration, not a ruling.** Tom's statements recorded; R890, R967 and R1173
+  stand until he rules. Claude's reading: the Cauchy is there with V known or not (known, it comes times an amount and
+  closed by a total; unknown, it is all that is left); a place with no facing takes in every direction at once, summed,
+  where the view from no standpoint holds them apart. FCL (`plans/fcl-plan.md`, `runs/fcl/fcl.py`), predictions first,
+  exact at 50 digits, nothing killed: a faceless take holds three numbers whatever the scene (one with no frame carried
+  in), nothing inside a shell, and cannot part amount from distance; its direction is unmoved by scaling and its length an
+  amount; a far body leaves moments in order (slopes −2, −3); two framed takes place one mass in baselines and give its
+  amount, n masses need ⌈4n/3⌉; two takes tell one mass from two by s²/r; without a frame 4n takes and a mirror twin.
+  Classical throughout. Not in any paper.
 - **R1171** (21 Nov 2026; Tom: "this elimantes the two derivation paths, the less clean one is logically the correct one."): **one derivation: the pick sets the thumb as the hypotenuse and the legs are derived; the less clean path is the logically correct one.** *Reads and Writes* abstract and §0 (step 2 names it, step 3 "The legs, derived, and the readings", step 4 the turn keeping the thumb picked, step 5's Cauchy "as the cost of laying the readings on a line", step 13 each leg 1/√3, "One derivation, and why it is this one" replacing "Why the thumb goes on a leg", the radius one thumb for every pick); essay 26 §7 likewise. The arithmetic of R1163 unchanged. `crosshairs.html` (H = depth/√3) not yet changed.
 - **R1170** (21 Nov 2026; Tom: "I'm having second thoughts hypotenous.    selecting the second point is setting the hypoetnous or radious, not the legs."): **selecting the second point sets the hypotenuse, the radius, not the legs.** Supersedes R1161 and restores R1159 as the start: the pick one thumb away, the legs its derived shares (1/√3 each at the triple corner, equal extent assumed). Claude's reading, not ruled: no reading changes (ratios of legs, GEN G1); R1163's arithmetic stands with the roles named the other way (the pick on the thumb's turn, a leg's line a screen, h² the conversion). Not yet carried: *Reads and Writes* §0, essays 26 §7 and 31 §8, `crosshairs.html` (H = depth/√3, the thumb on each leg; R1164 to be undone). `plans/bar-steps.md` step 25.
 - **R1169** (21 Nov 2026; Tom: "so the read geometry is like an apparatus that follows you gaze."): **the read geometry is like an apparatus that follows the gaze**, step 23's stage recentred on each pick. Claude's reading, not ruled: the gaze is the second point picked (R1166); the apparatus has no shape or size (R701, R728), so following is recentring, not carrying a body about (R1116's bouncing ball withdrawn for giving the read a shape); the world only paints it. `plans/bar-steps.md` step 24.

@@ -67,3 +67,40 @@ What would count against the reading: F6 or F7 short of full rank (the take hold
 (the take keeps more than moments in order), or F5 flat (two takes cannot tell one mass from two).
 
 ## Runs
+
+### Run 1 (24 November 2026; `runs/fcl/fcl.py`, output `runs/fcl/fcl-run1.txt`; 3 seconds)
+
+Nothing killed.
+
+| | result | |
+|---|---|---|
+| F1 | the pull inside the shell 6·10⁻⁵⁸, 5·10⁻⁵⁷, 7·10⁻⁵³ at 0, 0.3, 0.9 from the centre | not killed |
+| F2 | m at d and 4m at 2d give one arrow (exactly); under k = 7 the direction stays (10⁻⁵¹), the length × k⁻², one density × k | not killed |
+| F3 | off the monopole 9.9·10⁻⁴ at r = 10 to 6.1·10⁻⁸ at 1,280, slope −1.9994; with the quadrupole −2.992 | not killed |
+| F4 | two framed takes place one mass and give its amount, five scenes, to 10⁻⁵⁰; the length-ratio check holds | not killed |
+| F5 | two takes' lines miss by 2.2·10⁻⁴ at s = 0.1, r = 10; slopes +2.0023 in s, −1.0004 in r | not killed |
+| F6 | rank min(3K, 4n) in all 120 cases (n = 1–4, K = 1–6, five scenes) | not killed |
+| F7 | rank min(K, 4n) in all 100 cases; a scene mirrored in the takes' plane gives the same lengths exactly, arrows 0.010 apart | not killed |
+| F8 | direction, length ratio and place in baselines unmoved (10⁻⁵¹); \|g\| and m/B² both × 1/49 | not killed |
+
+What it says, as a reading (Claude's, not ruled):
+
+- **A faceless take is not the view from nowhere.** At one place it holds three numbers whatever the scene (one, a length,
+  with no frame carried in): a sum. Inside the shell it holds nothing where a look meets the shell in every direction. One
+  take cannot part amount from distance (F2). The view from no standpoint holds every thing apart, with its size.
+- **Its numbers sort by the scale test like everything else.** The arrow's direction, ratios of lengths and a place in
+  baselines are unmoved; each length is an amount (F8). So the take has a part that is unmoved by scaling, a single
+  direction the world hands it, and a part that is an amount.
+- **What it keeps of a far body is moments, in order** (F3): the total at the centre of mass, then a term down by (R/r)², then
+  (R/r)³. A look keeps directions in order; the take keeps sums in order of fineness.
+- **Several takes recover a scene as parallax does, amount included** (F4, F6): two framed takes place one mass in baselines by
+  directions alone and then give its amount, with two numbers to spare; n masses need ⌈4n/3⌉ framed takes. Two takes tell one
+  mass from two by their lines missing, by s²/r (F5): a pair closer than about √(r × the takes' grain) is one mass to them.
+- **The frame is the price** (F7). A thing with no facing has no frame; without one carried in it holds one number, needs 4n
+  takes, and a scene and its mirror in the takes' plane cannot be told apart. The arrow is the one direction it is given, and
+  it means something only against a frame, which is a write's (things kept in place) or the dual vantage's.
+
+Limits. All classical, and three of the eight (F1, F2, F8) are identities that could fail only by my code. The counts are
+for point masses in general position; a continuous body is not recovered from finitely many takes, and from a closed surface
+only its outside moments are (the classical non-uniqueness). Nothing here bears on whether a mass "reads"; that word is Tom's
+to rule on. Not in any paper.

@@ -585,6 +585,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy-weighted average of its density, ripples fading as e^(−kh); a point mass's pull through a plane 2πGM times the
   2D Cauchy of scale d. V3 killed in one clause by my guess (a cube shell's opposite columns); the rest not killed. Classical
   (the Poisson kernel of the half-space); Tom's statements of both days recorded below the runs, each with its limits.
+  FCL (`plans/fcl-plan.md` + `runs/fcl/fcl.py`, 24 Nov; SPN R1180; Tom: "there now seems to be two ways to read, with the
+  SHV and the DHV."; "if you don't have a facing, you get all facings at once, kind of like the god's eye view."; "explore
+  further first", "yes, write the plan and test"): exploration, no ruling (R890, R967, R1173 stand). A place with no facing
+  takes in every direction summed: three numbers whatever the scene (one with no frame), nothing inside a shell, moments in
+  order from afar, direction unmoved and length an amount; framed takes recover n masses from ⌈4n/3⌉ places, as parallax
+  with the amount; unframed 4n and a mirror twin. Exact, nothing killed, classical. Not in any paper.
   R1179 (24 Nov; Tom: "update the essays"): R1174–R1178 carried through the essays and README (23 files): a number in a
   unit is "an amount", never "a write" or "a writing"; a count "gives" a size. Left for Tom: "temporary writes" (R1048),
   "what is kept is a write" where the keeping is private, R568's wording, the older "writer". Physics paper, demos not swept.
