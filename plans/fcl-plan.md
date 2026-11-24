@@ -815,3 +815,76 @@ that takes no amount); they could have failed only by my code. T3b, T4 and T5's 
   moment over the whole sphere needs none.
 - Where light goes with mass, the pull's direction is the sky's brightness dipole. Known and used (galaxy flux dipoles
   against the Local Group's motion); from memory, not opened. It is the nearest thing to reading a pull by looking.
+
+## Run 11, planned 24 November: the depth rule on a measured profile (Tom: "3")
+
+*Reads and Writes* §7's open item 3: a check on measured gravity profiles over bodies of known depth. Everything in runs
+1–10 is exact arithmetic on set-ups of our own; this is the thread's first use of measurements.
+
+**The search for data** (a fresh agent, 24 November; nothing found as a table). No openly reachable table of station
+against gravity over a compact body of independently known depth was found. Opened and usable only as published
+figures: one clean case and one poor one. Opened and not usable: Manatee Springs conduit (WES TR GL-83-1 report 4,
+contour maps only), the Senec test cellar (anomaly cut off by the lot, body wider than its depth), the Trnava crypts
+(maps only), Ape Cave (height errors as large as the signal). The classic field examples of the inversion papers
+(Mobrun, Camagüey, Louga, Humble) were set aside: the "drilling depths" quoted for them disagree between papers (Mobrun
+30.5 m and 23.34 m) and none of the papers opened tabulates its profile.
+
+**The data.**
+
+- **Březno railway tunnel, Czech Republic** (the test). Blecha and Mašín, "Observed and calculated gravity anomalies
+  above a tunnel driven in clays: implication for errors in gravity interpretation", authors' preprint
+  (`web.natur.cuni.cz/uhigug/masin/download/BM_NSG13-pp.pdf`, sha256 `ad85f96e…e3680f0c`; no licence stated, so cited
+  and not committed; published in *Near Surface Geophysics*, volume and pages not checked). A tunnel 1,758 m long, inner
+  cross-section 43.7 m², concrete lining 0.6 m on the walls and 1.2 m on the bottom. Two profiles 100 m long square to
+  its axis, 130 m and 160 m from the portal, a station every 5 m, 21 stations each; Scintrex CG-3M, a fifth of stations
+  repeated, mean square error 0.004 mGal; flat ground; a straight-line regional already taken out by the authors, fitted
+  on 0–20 m and 80–100 m. Built geometry, independent of the gravity: on P1 the roof 12.5 m and the floor 20 m below
+  the surface; P2 1 m deeper. So the mid-height is 16.25 m (P1) and 17.25 m (P2): my arithmetic, the paper states no
+  axis depth. The numbers are not published as a table: they were read from the paper's Figure 2a and 2b by template
+  matching on the plotted markers (the agent's estimate ±0.0003 mGal, under a tenth of the measurement error; P1's
+  minimum reads −0.0455 against the paper's stated −0.046). The 42 values are in `runs/fcl/fcl11.py`.
+- **Medford Cave, Florida, the 80 N-S line** (recorded as a counter-case, not a test). Butler 1983, US Army WES
+  Technical Report GL-83-1, report 1 (DTIC ADA124574, public domain; sha256 `ab6a8bb2…bce2fb27`), Figure 43: 23
+  stations 10 ft apart, read by eye to about ±2 µGal. A mapped cave passage, verified by borings in two places, crosses
+  under the line at a depth to centre of about 24 ft, 9 ft across.
+
+**What was seen before these predictions** (so they are not blind). The agent's report gave me the 42 tunnel values and
+a rough half-width from straight-line interpolation: about 17 m on P1 and 14–15 m on P2. It also gave Medford's values
+and said its dip rests on three stations, about 8–9 ft half-width. No fit had been made. The kill conditions below were
+fixed before any fit; M1 is recorded as already seen to fail.
+
+**The claim.** Outside a round cylinder of even density the pull is exactly a line mass's on its axis, and a round
+lining concentric with it changes the amount, never the shape. So across a long tunnel the missing pull is
+g(x) = −A·d/((x − x₀)² + d²), the Cauchy's curve with scale d: the depth of the axis is the curve's half-width at half
+height, read with no density at all (GRV; classical, the depth rule for a horizontal cylinder).
+
+**The fit.** Each profile by least squares to c − A·d/((x − x₀)² + d²), four numbers (c, A, x₀, d), every station
+weighted alike with σ = 0.004 mGal; d's error from the fit's covariance and, beside it, from a bootstrap of the
+residuals (2,000 draws, seeded). The same with the ball's curve c − A·d³/((x − x₀)² + d²)^(3/2).
+
+**Predictions, with kills.**
+
+- **D1, the depth from the shape alone.** The fitted d lies within two of its own standard errors of the mid-height on
+  each profile (16.25 m on P1, 17.25 m on P2), and the two profiles' weighted mean lies within 20% of 16.75 m (the
+  paper's own figure for how far a fixed-density model goes wrong when the lining is left out). Kill: either.
+- **D2, inside the tunnel.** Each profile's fitted d lies between its roof and its floor (12.5–20 m, 13.5–21 m), and
+  the tunnel's place x₀ within one station (5 m) of 50 m. Kill: either, on either profile.
+- **D3, the law is the line's, not the ball's.** Fitted with the ball's curve, the depth comes out deeper by a factor
+  between 1.2 and 1.4 (the rules' ratio is 1/0.766 = 1.305), which puts the weighted mean below the tunnel's floor
+  (past 20.5 m). The data will not tell the two curves apart by goodness of fit: the difference in χ² under 4 on each
+  profile. Kill: the factor outside the band, the ball's depth inside the tunnel, or a χ² difference of 4 or more
+  either way.
+- **D4, the scatter is the instrument's.** χ² per degree of freedom of the line fit between 0.4 and 2.5 on each
+  profile (17 degrees of freedom, σ = 0.004 mGal). Kill: outside on either.
+- **D5, no amount needed, and one amount gives one.** Multiplying every gravity value by 7 leaves the fitted d and x₀
+  unchanged to 10⁻⁶ of themselves (an identity of the fit; it can fail only by my code). Reported, not predicted: the
+  mass missing per metre, A/(2G), in tonnes a metre, which is what the amplitude gives once G is carried in.
+- **M1, the counter-case (seen beforehand to fail).** Medford's dip fitted the same way gives a depth under half the
+  24 ft the borings give: the dip is too narrow for a passage that deep, as Butler's own account of shallow pinnacles
+  and clay pockets says. Recorded so that the rule's failure on a messy site stands beside its test on a clean one.
+
+What this can and cannot show. Two profiles over one tunnel, digitized from a figure, with a regional the authors
+removed using the profile's own ends (which pulls the wings toward zero and so narrows the curve a little: by my
+estimate a few per cent in d; not corrected). If D1 and D2 hold, the classical rule works on this site to the profile's
+noise; nothing about the framing is tested beyond that, since the rule is classical. If they fail, the first suspects
+are the regional and a tunnel that is not round.
