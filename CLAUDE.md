@@ -623,6 +623,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1184 (24 Nov; Tom: "not an insight about gravity, but about how cauchy connects observation and gravity."; "add this
+  to the read & write paper because its about the read and dmv", read as DHV): the Cauchy is the law of anything even
+  over directions from a point, laid on a plane; a look that with no amount over one hemisphere, a pull that with an
+  amount over both, summed at a place: neither a read nor the dual hemispherical vantage; a stage, not a mechanism.
+  *Reads and Writes* §7 "Even from a point"; essay 33 §11. **Never present FCL as an insight about gravity.**
   R1183 (24 Nov; Tom: "proceed with your recommendations."): **a place with no facing is not a read, nor a second way to
   read; a look and a pull stand on one stage and are different plays** (a pull has no facing, is a sum, moves with
   scaling, carries an amount; its two halves subtract where a read's add). R1173 stands. *Reads and Writes* §7, essay 33

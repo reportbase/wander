@@ -7607,6 +7607,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1184** (24 Nov 2026; Tom: "Right, not an insight about gravity, but about how cauchy connects observation and
+  gravity."; "lets add this to the read & write paper because its about the read and dmv." (read as DHV, the dual
+  hemispherical vantage)): **the thread's result is not an insight about gravity; it is about how the Cauchy connects
+  observation and gravity.** Claude's reading beside it, not ruled: the Cauchy is the law of anything even over
+  directions from a point, laid on a plane; a look is that with no amount over one hemisphere, a pull that with an
+  amount over both; a pull takes both hemispheres as the dual hemispherical vantage does but is at a place and sums
+  them, so it is neither a read (R1183) nor that vantage; a shared stage, not a mechanism. *Reads and Writes* §7 "Even
+  from a point: what joins the read, the pull and the dual hemispherical vantage"; essay 33 §11.
 - **R1183** (24 Nov 2026; Tom: "proceed with your recommendations.", to Claude's recommendation on R1182's question):
   **a place with no facing is not a read, and not a second way to read. A look and a pull stand on one stage and are
   different plays.** A read is one facing, continuous, unmoved by scaling, with no amount; a pull has no facing, is a

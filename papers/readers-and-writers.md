@@ -1661,7 +1661,21 @@ pull grows in proportion to the distance from the centre, outside it falls as th
 strongest at the surface; proportion gives way to ratio there, though not by the exact exchange (x against 1/x²). The
 two heats are alike, not the same. A read takes one hemisphere, its fineness is no amount, and its slopes have
 no mean; a pull takes every direction about the write, its strength is the write's amount, and it is a sum of
-amounts, as §4's paint is. So a pull is not a read, and a place with no facing is not a second way to read: taken with a facing for a moment, a pull's two halves, in front and behind, subtract to the pull along that facing, where a read's two halves add to all there is; a look and a pull stand on one stage and are different plays (FCL, `plans/fcl-plan.md`). One standpoint has from a pull only M/d², never M or d, as a read never has V; two pulls a counted step
+amounts, as §4's paint is. So a pull is not a read, and a place with no facing is not a second way to read: taken with a facing for a moment, a pull's two halves, in front and behind, subtract to the pull along that facing, where a read's two halves add to all there is; a look and a pull stand on one stage and are different plays (FCL, `plans/fcl-plan.md`). 
+
+**Even from a point: what joins the read, the pull and the dual hemispherical vantage.** The Cauchy is not gravity's and
+not observation's. It is the law of anything spread evenly over directions from one point, laid on a flat plane: an even
+spread from a point one height off a plane lands as the Cauchy of that height. A look is even over directions because the
+turn is uniform. A point mass's pull is even over directions because the same total crosses every surface round it
+(Gauss; that the total is kept is physics, as is the count of dimensions). So one geometric fact is used twice, and the
+same holds for light or sound from a point (§7, the candle). What differs is how much of the sphere is taken and whether
+an amount rides on it. A read, the single hemispherical vantage, takes one hemisphere, faces one way and carries no
+amount. A pull takes both hemispheres at once, as the dual hemispherical vantage does, and carries an amount. But a pull
+is not the dual hemispherical vantage either: that vantage holds every direction apart, from no standpoint, while a pull
+is at a place and sums them, each facing less its opposite, to three numbers whatever the scene. So the pull sits between
+the two: both hemispheres like the dual vantage, one place like the single one, and neither's kind (not a read; no view of
+the whole). The connection is a shared stage, not a mechanism: the Cauchy does not say why mass pulls, only how an even
+spread lands. A reading; classical in its parts (the Poisson kernel of the half-space, Gauss's law). One standpoint has from a pull only M/d², never M or d, as a read never has V; two pulls a counted step
 apart place the source in steps, and the mass then needs G carried in. **Checked** (GRV, `plans/grv-plan.md`, exact at
 50 digits; one clause of one prediction killed by my guess, how many of a cube shell's opposite columns differ); the
 formulas classical (Newton 1687; the plane's kernel is potential theory's Poisson kernel of the half-space, not there

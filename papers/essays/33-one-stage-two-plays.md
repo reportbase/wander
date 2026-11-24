@@ -251,6 +251,11 @@ weight a mass lays over a plane, the weight a sheet's pull is averaged with, and
 light carries onto itself. In each case what is the stage's does not carry the amount and does not move under scaling,
 and what carries the amount is the play's.
 
+Why the stage is shared can be said in one line. The Cauchy is the law of anything spread evenly over directions from a
+point, laid on a plane. A look is that with no amount, over one hemisphere. A pull is that with an amount, over both
+hemispheres at once, summed at a place. So this is not an insight about gravity. It is about how the Cauchy joins
+observation and gravity: one geometric fact, used twice, with light and sound from a point as further uses.
+
 A corner can be chosen or owned. The look's corner sits where the thumb puts it. A pair of masses has a corner at √μ,
 a lens has one at its ring, a ball has one at its surface. The exchange is the same in each. What sets the corner's
 place is different: a choice for the look, an amount for the rest.
