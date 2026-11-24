@@ -1683,8 +1683,31 @@ called the Cauchy), the sorting a reading. No new physics: Newton's law, placed.
 
 **Gravity on the stage: what has been observed so far.** A working record, kept here so later work can tighten the
 connection between observation and gravity. Each item is exact arithmetic on Newton's pulls or the thin lens, checked in
-FCL's eight runs (`plans/fcl-plan.md`, `runs/fcl/`; essay 33; the demo `look-pull.html`), and each is classical in its
+FCL's runs (`plans/fcl-plan.md`, `runs/fcl/`; essay 33; the demo `look-pull.html`), and each is classical in its
 mathematics. What is ours, and unsearched, is setting them beside the read.
+
+*What the Cauchy gives as ways to think about gravity.* The thread's product is a way of thinking about known gravity,
+and small insights count (R1190). That the stage's account and the classical one give the same results wherever both
+were worked is itself a result (R1189): each run is a place the two could have parted and did not, and what
+distinguishes the forms is what each needs, never a different number. Six so far, each from a run, each classical in
+its mathematics, the details in the lists below:
+
+1. *Corners without an amount.* A pull through a plane has the look's corners (half within one height across a thumb,
+   a third in the square); the mass sets only the size (run 2).
+2. *Depth from shape.* A buried line's depth is its profile's half-width at half height, read with no density (run 7).
+   Checked once on measurements: a railway tunnel's depth to about 12%, the reading unmoved when every value is
+   multiplied by 7 (run 11).
+3. *A balance point as a fixed point.* Two pulls cancel where the distances' ratio is the square root of the masses'
+   ratio, the fixed point of an exchange, as the corner is for a read; but the place is owned by an amount (run 3).
+4. *Lensing.* The Einstein ring is that exchange's fixed circle, half of all images inside it; along a line through
+   the lens the Cauchy is kept, by one mass or several (runs 5, 8).
+5. *Masses stand to pulls as V stands to a read.* No ratio of directions or of strengths gives a mass; ratios give the
+   masses' ratio, and one strength in a unit gives GM (run 9).
+6. *Add against subtract.* A look's two halves add and a pull's subtract: the read's is a median, an order statistic,
+   and the pull's a first moment, a sum, so gravity is on the paint's side of §4's split (runs 6, 10).
+
+None of this is new physics or a mechanism, and a pull is not a read (R1183). "New" is said of the way of thinking: the
+formulas are classical, and that an even spread from a point lands on a plane as the Cauchy is in print for light.
 
 *Where a pull keeps the read's law.*
 

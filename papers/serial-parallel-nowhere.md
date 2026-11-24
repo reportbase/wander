@@ -7607,6 +7607,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1191** (24 Nov 2026; Tom: "merge, and add them to the paper"): PR #495 merged. R1189 and R1190 carried into
+  *Reads and Writes* §7, "Gravity on the stage": a paragraph "What the Cauchy gives as ways to think about gravity" and
+  the six small insights as a numbered list ahead of the detailed lists, each with its run, with the limits (no new
+  physics, no mechanism, a pull not a read; "new" said of the way of thinking). No new claim.
 - **R1190** (24 Nov 2026; Tom: "The cauchy provides new ways to think about gravity.   Even small insights are
   valuable."): **the Cauchy provides new ways to think about gravity, and small insights count.** Narrows R1184's rule
   as Claude had written it ("never present FCL as an insight about gravity"): what R1184 excludes is a claim of new

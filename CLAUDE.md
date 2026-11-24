@@ -623,6 +623,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1191 (24 Nov; Tom: "merge, and add them to the paper"): R1189, R1190 in *Reads and Writes* §7 as "What the Cauchy
+  gives as ways to think about gravity", six numbered insights each with its run. No new claim.
   R1190 (24 Nov; Tom: "The cauchy provides new ways to think about gravity.   Even small insights are valuable."):
   narrows R1184: a way of thinking about known gravity may be said and small insights count; what stays excluded is
   new physics, a mechanism, or calling a pull a read. **For new writing: "a way to think about gravity", never "new physics".**
