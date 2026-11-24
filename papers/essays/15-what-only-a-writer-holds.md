@@ -116,8 +116,8 @@ steps, and that is what e records.
 
 And as π was the turn completed, e is tied to the size completed. The unknown size of the world, in the units the observer
 might have used, is a₀ = ln(V*/H) (OFS §7.4, essay 6: a shape as ln r = a₀ + f(θ), where no ratio reads a₀). A read
-has the shape, f, as ratios of its radii, and never a₀. To give a₀ a value is to know V*, the size as an amount: a
-writing. The constant that turns a size into a number of nats comes with the same write that holds the size.
+has the shape, f, as ratios of its radii, and never a₀. To give a₀ a value is to know V*, the size as an amount, with a
+unit carried in. The constant that turns a size into a number of nats comes with the same amount that holds the size.
 
 ## 4. Two groups, two constants
 
@@ -260,11 +260,11 @@ in four. A read holds it; it does not hold "e times".
 
 This is essay 14's "met, not made" one rung higher. A read meets irrational directions and does not make √2; it meets
 transcendental directions and sizes and does not make π or e. It makes no numbers by reading: it composes, turns over,
-orders and finds the corner, and the rationals are made where a count comes in, in parallax (places) and in writing.
+orders and finds the corner, and the rationals are made where a count comes in, in parallax (places) and in amounts.
 
 V, the mountain in the distance, is learned the same way. An observer taking standpoints (the sixth essay, "From one look
 to two, and to an amount") places V by degrees: as V\*/H in the step it took, to within a band set by its baseline and its resolution,
-for the things near enough; only the step counted in an agreed unit makes it an amount, a write. Each standpoint more is one more finite step; holding V exactly, like holding π, is the end of
+for the things near enough; only the step counted in an agreed unit makes it an amount. Each standpoint more is one more finite step; holding V exactly, like holding π, is the end of
 a process that does not end. So V is knowable, not known, and the exact V is a limit of π's kind: it stands with
 the one-length circle and the completed turn, stated whole by the DHV and reached by no count of writes, none of them moved by scaling the
 world. Euler's identity is the hinge (the fifth section): the turn's end, endless in the read's slope, is one named
@@ -330,7 +330,7 @@ over the whole numbers, 1 + 1/4 + 1/9 + …, with no turn in sight. Looking back
 slope, carried past one read, meets a horizon at every odd multiple of the quarter turn, and the sum over the odd
 numbers of 1/n² is exactly ½·(π/2)². That says where their π comes from; it is not a way to have foreseen it.
 
-**In physics.** Every bridge in physics is a write of this kind: the speed of light, a rest frequency, the astronomical
+**In physics.** Every bridge in physics is an amount carried in of this kind: the speed of light, a rest frequency, the astronomical
 unit, a kind of star, a clock. The sort gives a law's form and leaves its values to them, and some things it does not
 give at all: c's value, or why a change of frame is a hyperbolic turn and not a circular one. One open number sits here:
 the proposal that the matter fraction Ω_m is 1/π. Its derivation is not accepted, since it multiplies 2/π and ½, both
