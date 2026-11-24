@@ -348,3 +348,45 @@ line were not. Rerun below with its own prediction.
   masses (counted on 200,000 points from −3 D to 4 D); (b) from 400 seeded starts within 0.3 D of the circle of radius
   D about the heavier mass, with up to 400 Newton steps, the distinct balance points found off the line are exactly
   two, at a = b = D to 10⁻²⁰. Kill: a count other than three in (a) or other than two in (b), or a, b off D.
+
+## Run 5: light past a mass (does the bending keep the Cauchy family?)
+
+Tom, 24 November: "proceed with 2" (of three next steps offered; this one because it is where a mass acts on the
+directions a look receives, the stage itself, and not only plays on it). Run 4b was still running when this was
+written; its result is recorded where it finishes.
+
+Set-up, all classical (Einstein 1936; Refsdal 1964): a point mass between the eye and a far sky, weak bending, small
+angles, the thin-lens equation. Directions are laid on a flat screen square to the line to the mass, in units of the
+Einstein radius (the mass, the distances and the speed of light enter only through that one radius; the factor in it
+is general relativity's and is not tested here). A source at y on the screen is seen at u, with y = u − u/|u|²: along
+any line through the mass, y = u − 1/u, u a signed position on the line. mpmath, 30 digits; counts seeded.
+
+Said beforehand: L1, L2 and L6 are identities of the lens equation. L3 and L4 I derived on paper (the map u − 1/u
+carries the upper half-plane into itself, so it should carry Cauchy to Cauchy; Boole 1857, Letac 1977 from memory). L5's
+number is a guess from a few points worked by hand.
+
+### Predictions (committed before running)
+
+- **L1, two images and their exchange.** Every source off the line of sight has two images, on opposite sides of the
+  mass, with u₊·u₋ = −1: the exchange u ↔ −1/u, whose fixed circle is the Einstein ring. A source on the line of sight
+  is the ring. Kill: the product off −1 past 10⁻²⁵ at any of six y.
+- **L2, half inside the ring, whatever the sky.** Each source has exactly one image inside the ring and one outside,
+  so half of all images lie within one Einstein radius for every law of the sources (three seeded skies of 20,000: a
+  2D Cauchy off centre, a Gaussian, a uniform disc). The outer image is the brighter, by exactly one source's worth:
+  the magnifications differ by 1. Kill: a count off N; the difference off 1 past 10⁻²⁰.
+- **L3, along a line the family is kept, images to sources.** If the images along a line through the mass are Cauchy
+  with point z = m + iγ, their sources are exactly Cauchy with point z − 1/z. For images centred on the mass (z = iγ)
+  the sources' scale is γ + 1/γ: least, 2, when the images' scale is the Einstein radius, and the same at γ and 1/γ.
+  Kill: the sources' law off Cauchy(z − 1/z) past 10⁻²⁰ in its distribution function at any of seven points, for any
+  of four z.
+- **L4, along a line, sources to images: two Cauchys, exchanged.** If the sources along the line are Cauchy with point
+  w, the images' density is exactly the sum of two Cauchy densities, with points z₁ and z₂ = −1/z₁ the two solutions of
+  z − 1/z = w in the upper half-plane: one family member for each image, the pair swapped by the ring's exchange. Kill:
+  the density off that sum past 10⁻²⁰ at any of twelve u, for any of three w.
+- **L5, over the whole screen the family is not kept.** For a sky that is a 2D Cauchy centred on the mass (scale 1
+  Einstein radius), the images' law over the screen is no 2D Cauchy and no pair of them: its density is zero on the
+  ring, where every Cauchy is positive. The outer images' radial law stays at least 0.08 from every centred 2D Cauchy
+  (largest gap in the distribution function, least over the scale). What breaks it is the stretch round the ring,
+  which a line does not have. Kill: density on the ring not zero; or the least gap under 0.08.
+- **L6, the scale test.** L1–L5 are stated in Einstein radii and hold for every mass and distance. The radius itself
+  is an amount: with the mass fixed and every length scaled by k it scales as k^(−1/2) as an angle. An identity.
