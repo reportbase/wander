@@ -1,6 +1,6 @@
 # Reads and Writes
 
-**What one standpoint holds, what two standpoints place, and what a unit writes**
+**What one standpoint holds, what two standpoints place, and what is written to the world**
 
 *Tom Brinkman. Rewritten 10 November 2026 (SPN R788) from version 17, which is kept unchanged as
 `papers/archive/rw/reads-and-writes-record.md`; section numbers cited before 10 November are the record's. Written with AI
@@ -42,8 +42,8 @@ factor (the observer's own thumb and stride with it), leaves the direction and t
 and moves only that last term, the thumb in metres, by the same amount for every point. Two properties sort
 what an observer has: whether it is continuous or discrete, and whether that scaling moves it. A **read** is continuous
 and unmoved by scaling: the direction, [h : v], from one standpoint, its slopes spread by one density. Two looks held
-together are still reading: the distance they give in thumbs is a continuous ratio of their slopes (parallax). A **write** is discrete and moved by scaling: a bounded thing with a size, a
-stone, a stride, a mark, a metre bar, and an amount put down in a unit carried in from outside, a metre or a second. The
+together are still reading: the distance they give in thumbs is a continuous ratio of their slopes (parallax). A **write** is discrete and moved by scaling: a bounded thing with a size and a mass, in the world where other reads can meet it: a
+stone, a stride, a mark on a tree, a metre bar. What an observer calls it, "3 metres", is the observer's own bookkeeping and no write; nothing that leaves the world as it was is one. The
 write is the discrete, scale-variant companion of the read. The two mixed cases are tools of description: a count,
 discrete and unmoved by scaling, and the number line in a unit, continuous and moved by it. Read and write are acts,
 the verbs for the continuous and the discrete: there is no reader and no writer here. Every read is a *single hemispherical vantage*, one standpoint and one hemisphere; the drawn shape, informally the *blueprint*,
@@ -312,7 +312,7 @@ share of its sky times that source's amount, the inverse square's form (a unifor
 cosine-weighted share π·(R/d)², exactly, as an evenly glowing sphere's light is its brightness times the same share); how
 a thing without a look reads is open, and that form a reading. The shooter's reads are of another kind (the launch slope
 set at the muzzle, the apex seen from the cannon at s/2, the fall watched). One such read of the path cannot sort which
-did what; that takes more reads or amounts carried in, which is writing. Pool is the clean
+did what; that takes more reads or amounts carried in. Pool is the clean
 case because between contacts little is written and at a contact one pair's readings decide; a flight is the opposite.
 **Checked** for one write added at a time (CNB runs 1–2, exact; C7 killed by my set-up, C7′ not); the many-writes point
 is a reading.
@@ -683,7 +683,7 @@ own space (§4), and D6, not this table, sorts it.
 |---|---|---|---|
 | a direction [h : v] (up) | no | yes | read |
 | a gap across: d/H, d₁/d₂, V\*/H | no | no: two looks held together | reading (two reads held together) |
-| the across zero tied to a unit | yes | no | write |
+| the across zero tied to a unit: a distance in metres | yes | no | an amount: bookkeeping about writes (the thing, and the unit's bearer) |
 
 Read and write are so the named outcomes of two tests that cross, and the crossing has a fourth box, the
 payload's:
@@ -691,12 +691,12 @@ payload's:
 | | the geometry: stays when what arrives changes (D6) | the payload: changes with what arrives (D6) |
 |---|---|---|
 | unmoved by scaling (D5) | reading: a read (one standpoint), with its heat; two reads held together, giving a gap in thumbs, an order or a map | a ratio of payloads: one colour channel over another, a probability of what arrives, a frequency over a rest frequency |
-| an amount in a unit (D4), moved by its own dimension's scaling | a write: a distance in metres | a write: a frequency in hertz, a brightness in watts |
+| moved by its own dimension's scaling (D4) | a write's size, kept as an amount: a distance in metres | a source's amount: a frequency in hertz, a brightness in watts |
 
-A write is found in both columns; reading is the geometry's alone; a ratio of payloads is the payload's
+A write, and the amounts kept about it, are found in both columns; reading is the geometry's alone; a ratio of payloads is the payload's
 counterpart of a read, unmoved by scaling and not a direction of the geometry. Being unmoved by scaling therefore never
 shows that a quantity is a read. One thing can supply several variables of different kinds: a pixel's value in the
-sensor's unit is a payload's write, its ratio to its neighbour a ratio of payloads, the pixel's position in the grid a
+sensor's unit is an amount kept about the payload, its ratio to its neighbour a ratio of payloads, the pixel's position in the grid a
 count of directions, a description.
 
 **Reads, writes and the dual hemispherical vantage.** There are reads and writes; there is no reader and no writer. Both are acts, and
@@ -960,7 +960,7 @@ gives its geometry: the corner where the thumbs cross, the fingers spread from i
 thumb. Drawn out whole, a length held and turned about one end traces a circle, and the DHV calls it
 V = H, the thumb equal to the mountain: the *one-length circle*, held whole, with a circumference and an area. A read
 does not draw it. Circles and spheres are a line's whole turn held at once, the DHV's. A read has a standpoint and
-the turn from it; walking round a shape, it gets extents, and with a unit it writes (§6, §7).
+the turn from it; walking round a shape, it gets extents, and with a unit it has amounts (§6, §7).
 
 **The uniform turn.** A turn measured by itself is uniform: equal turns, equal shares. In the reading s = v/h the
 uniform turn over a quarter turn has the law
@@ -1022,7 +1022,7 @@ the ratio is no Cauchy at all.
 |---|---|---|---|---|
 | one length turned | H | 1 | 0 (the corner) | read |
 | two axes drawn | H and V | V/H | 0 | an extent (two lengths held) |
-| a line in the world | the line's place | d | m | writes, in a unit |
+| a line in the world | the line's place | d | m | amounts, in a unit |
 
 So V enters the Cauchy as its scale, and only there. The point m + iγ that indexes the family is the standpoint's place
 with respect to the line; the read's ignorance is turns and rescalings, never translations, so in its own chart it
@@ -1183,8 +1183,8 @@ obeys (x − α)/β = tan θ, α the lamp's foot on the shore and β its distanc
 evenly whatever shore there is; the landings follow a Cauchy because the shore is straight; within each flash the path
 to the shore cancels. The lamp's own corner, the flash halfway through the quarter turn, lands at the foot plus one
 distance only if the shore is measured at the sea's own scale; read on a ruler whose unit is c times the lamp's distance, the landing
-that reads 1 is the flash at the dual hemispherical vantage's arctan c, not the halfway one. To read β from the landings, take half the spread between the quartiles, never the mean. In metres β is a
-write: it needs the shore found and a ruler laid along it. The lamp is the read, the shore the line where V comes in as
+that reads 1 is the flash at the dual hemispherical vantage's arctan c, not the halfway one. To read β from the landings, take half the spread between the quartiles, never the mean. In metres β is an
+amount: it needs the shore found and a ruler laid along it. The lamp is the read, the shore the line where V comes in as
 the scale. **Classical.**
 
 **Mercator's map.** A navigator wants a straight line on the chart to be a constant compass bearing. On a chart whose
@@ -1219,7 +1219,7 @@ two steps. The inference is conditional on the
 premise: directions alone do not give the sky's rest frame, nor show that such a frame is the only one. Taken as the
 sky's median before a boost against after, the same coordinate is had by joining two looks at one position, with no gap
 in space: a map again, not an extent. The speed in metres a second needs c carried in, and D read as a line's shift needs the
-line's rest frequency: both writes. **Classical**; the sorting is a reading.
+line's rest frequency: both amounts. **Classical**; the sorting is a reading.
 
 ## 5. Near and far
 
@@ -1423,8 +1423,8 @@ d_c = V\*·L/H stay unknown. Past it the two sides mirror each other: d and d_c�
 reads climb toward the horizon, [0 : 1], and no read meets it; the walk arrives because the walk is a count of strides and
 ends, and at the foot a read has one more read, its feet. A steady pace makes τ̇ = −1, past Lee's −½, arriving at
 speed; easing so that it holds at −½ stops at the foot. The strides from the corner to the foot are d_c, so counting them
-gives V\* = (strides from the corner) × H/L: an extent, in the walker's stride; in metres once the stride is carried in, a
-write. Scale the world, the walker's stride with it, and nothing along the walk moves: no read, no count of strides; only
+gives V\* = (strides from the corner) × H/L: an extent, in the walker's stride; in metres once the stride is carried in, an
+amount. Scale the world, the walker's stride with it, and nothing along the walk moves: no read, no count of strides; only
 the metre carried in.
 
 **The mountain's own corner.** The walk has a second corner, with no thumb in it. Stand on the mountain's centreline and
@@ -1501,9 +1501,9 @@ one number, how far in, as the middle denominators of a tower are in none of its
 guided by looking is parallax; touch with the eyes shut is not, since there are no reads to join, only moves counted and
 checked by loops, a count with no reads. **A reading**, on WLK's exact walk; it claims nothing about how anything touches.
 
-**Extents come by degrees.** The crossing from reads to extents, and from extents to writes, is not a switch thrown.
+**Extents come by degrees.** The crossing from reads to extents, and from extents to amounts, is not a switch thrown.
 - *In what.* Two standpoints a step apart give every extent in that step. If the step was one thumb, extents are in thumbs
-  and V is placed as V\*/H. Only a step counted in an agreed unit gives an amount, a write, the one rung scaling the world
+  and V is placed as V\*/H. Only a step counted in an agreed unit gives an amount, the one rung scaling the world
   moves.
 - *How well.* The extent's error per unit of angular error is least when the thing sits at the pair's corner, half the
   baseline equal to the distance. With k = d/(B/2) and ε the smallest step in direction a read tells apart, the
@@ -1555,9 +1555,9 @@ there, a count.
   corners (0.59) and not its turning at all (0.00). **Checked** (TXT, with the predictions that failed recorded).
 - *Ω and e are where a count tries to hold a turn* (§9).
 
-## 7. The zero: writes
+## 7. The zero: writes and amounts
 
-**The unit carried in.** A write ties the across axis's zero to something outside the world: a metre bar, a second, an
+**The unit carried in.** A write is a thing in the world; what an observer calls it is bookkeeping, and only the thing matters to the world (R1176). A unit ties the across axis's zero to one such thing kept outside the scaling: a metre bar, a second's clock, an
 agreed notch. Every extent hung from the same thumb is then an amount, all at once, by one number: the thumb in metres.
 Scaling the world moves that number and every amount with it, and moves no extent. The foot, the cubit and at last the
 metre were each one observer's body or object made into a public notch. Two observers that see one thing in common need
@@ -1587,23 +1587,23 @@ drawn. To be used it must be read: someone stands somewhere and looks at it, at 
 ratios, as at anything else that arrives. A plan in a drawer does nothing until it is looked at; a survey's base,
 once counted, is read against by every angle that follows; a drawing of a known room, rendered from a standpoint, is a
 write turned back into a read. So the passage runs both ways: reads become extents through standpoints, extents become
-writes through a unit, and every write, once made, joins what is read.
+amounts through a unit, and every write, once made, joins what is read.
 
 **Recovered, by placing.** An observer can recover a thing exactly, its shape, its extents, even its size in its stride,
 and still partially. A loop that closes shows that the routes taken agree; it cannot show that no route remains untaken.
 Completeness is never a read. What recovers the thing is not reading harder but the passage through standpoints.
 
-**A bounce writes its size.** A ball bounces to a height A every P ticks under one pull, g = 8A/P². Scale the world and
+**A bounce gives its size.** A ball bounces to a height A every P ticks under one pull, g = 8A/P². Scale the world and
 the observer by k: the ball's directions at the top of the bounce and at its foot are the same fractions, and so is its
 height in its own breadths, read from its foot and its breadth. Under the same pull the scaled ball takes √k times the
-ticks, since P goes as √A. The pull is an amount in a unit, so the ticks of a bounce, counted, write the ball's size,
-A = gP²/8: Galileo's square–cube law, where the unit gets in. **Classical**; **Checked** (`sky-city.html`, its balls
+ticks, since P goes as √A. The pull is an amount in a unit, so the ticks of a bounce, counted, give the ball's size in that unit,
+A = gP²/8: Galileo's law of fall, where the unit gets in. **Classical**; **Checked** (`sky-city.html`, its balls
 placed from the tick alone, the slopes unchanged and the ticks doubled at k = 4).
 
-**A candle writes its distance the same way.** Scale the world with the paint fixed and no solid angle, flux or
+**A candle gives its distance the same way.** Scale the world with the paint fixed and no solid angle, flux or
 irradiance moves: one standpoint does not read 1/d². Carry in a source's luminosity L, as the pull g is carried in, and
-a flux counted writes its distance, d = √(L/4πF). The inverse square is the scale test with L held fixed, as the
-square–cube law is the scale test with g held fixed. Its 4π is the source's whole sphere, held from no standpoint, the
+a flux counted gives its distance, d = √(L/4πF). The inverse square is the scale test with L held fixed, as the
+law of fall is the scale test with g held fixed. Its 4π is the source's whole sphere, held from no standpoint, the
 dual hemispherical vantage's form; the single vantage at the receiver needs only its own front, the paint along each
 direction unchanged with distance and the source's share set by the slope, (Δ/d)², with no π. The two forms agree, as
 conservation says; what differs is where each stands. **Classical**, the sorting a reading (`inverse-square.md`, "From
@@ -1637,7 +1637,7 @@ power from its source and light crossing between two indices at normal incidence
 4k/(1 + k)² = sech²(½ ln k) (equal masses, the matched load, the same index), and a driven series RLC gives
 P/P_max = 1/(1 + s²) with s = 2Q·sinh(ln(ω/ω₀)), unchanged by ω ↔ ω₀²/ω. In each the share is a read, unmoved when the
 pair is scaled together. A pendulum and a Kepler orbit make the bounce's move instead: T·√(g/ℓ) depends on the amplitude
-alone and T·√(GM/a³) = 2π, so a counted period writes the length or the axis once g or GM is carried in.
+alone and T·√(GM/a³) = 2π, so a counted period gives the length or the axis once g or GM is carried in.
 **Checked** (RWX, `plans/rwx-plan.md`, each case computed from its own physics, nothing killed); the formulas classical,
 the sorting a reading, and not blind (a case chosen by someone else could need a fourth kind).
 
@@ -2459,7 +2459,7 @@ given back, H in H. The mountain never enters.
 
 **Walk one thumb.** Step one thumb toward the range and read again. The half-angle's reading goes from s = 1 to
 s′ = 10/9. The distance is d = H·s′/(s′ − s) = 10 thumbs and the range V = 2·s·d = 20 thumbs: extents, exactly. Count the
-thumb in miles and they are 10 miles and 20 miles: writes.
+thumb in miles and they are 10 miles and 20 miles: amounts.
 
 **The mountain as H** (§6, "The thing itself as H"). As the unit, its ends 90° across put the standpoint half a range-width
 from its middle, from one look; as the focus, a baseline of twenty miles puts it at parallax's corner, where one thumb
@@ -2480,9 +2480,8 @@ and the tower is 15 metres tall and 60 away: the one write. **Checked** (`runs/t
 ## 11. Cases in data, and what this changes
 
 **What it changes.** No mathematics. It sorts.
-- **Every result is reading or writing.** A result unmoved by scaling and held by one standpoint is a read; unmoved
-  and needing two, still reading, two reads held together (a gap across, in thumbs); moved, a write, which needs an
-  amount carried in.
+- **Every result is a read, a write, or bookkeeping about them.** A result unmoved by scaling and held by one standpoint is a read; unmoved
+  and needing two, still reading, two reads held together (a gap across, in thumbs); a thing in the world, with a size and a mass, is a write; a count, or an amount in a unit, is the observer's bookkeeping, and an amount needs a unit carried in.
 - **A Cauchy-type quantity is a direction where a turn that lays it can be named, apart from the law's shape.** A fat
   tail alone is no evidence of a turn: a mixture of amounts makes one too.
 - **The constants have owners.** π and e are the dual hemispherical vantage's; Ω, 1/Ω and the hemisphere's 2 and ½ are

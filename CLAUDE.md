@@ -585,6 +585,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy-weighted average of its density, ripples fading as e^(−kh); a point mass's pull through a plane 2πGM times the
   2D Cauchy of scale d. V3 killed in one clause by my guess (a cube shell's opposite columns); the rest not killed. Classical
   (the Poisson kernel of the half-space); Tom's statements of both days recorded below the runs, each with its limits.
+  R1177 (24 Nov; Tom: "Yes, update the paper.   what the reader calls the bar is irrelevent to the universe, only the bar
+  is relevent."): R1176 carried through *Reads and Writes* (subtitle "what is written to the world"; abstract; §1's kinds
+  tables; §7 "The zero: writes and amounts", "A bounce gives its size", "A candle gives its distance"; §11's rule "a read,
+  a write, or bookkeeping about them"). **In the paper: a number in a unit is "an amount", never "a write"; a count
+  "gives" a size.** The essays, the physics paper and the demos keep the older sense, not swept.
   R1176 (24 Nov; Tom: "if it does not affect the universe in some way, its not a write.   3 meters is booking of of the
   readers."): **the test for a write is the world's; an amount in a unit ("3 metres") is the observer's bookkeeping about
   a write, not a write**; the thing measured is the write, and a unit's bearer others can meet (a metre bar) is another;
