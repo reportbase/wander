@@ -7607,6 +7607,40 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1190** (24 Nov 2026; Tom: "The cauchy provides new ways to think about gravity.   Even small insights are
+  valuable."): **the Cauchy provides new ways to think about gravity, and small insights count.** Narrows R1184's rule
+  as Claude had written it ("never present FCL as an insight about gravity"): what R1184 excludes is a claim of new
+  physics or a mechanism; a way of thinking about known gravity is allowed and is the thread's product. Claude's
+  reading, not ruled: "new" is said of the way of thinking, not of the formulas (classical) nor of the core fact (in
+  print for light, `plans/fcl-literature.md`). The small insights so far, each from a run: a pull through a plane has
+  the look's corners, with no amount (2); the depth of a buried line is its profile's half-width, read with no density
+  (7, 11); two pulls cancel at the fixed point of an exchange, ρ = √μ (3); the Einstein ring is the exchange's fixed
+  circle and a line of lens masses keeps the Cauchy (5, 8); masses stand to pulls as V to a read, in no ratio of
+  directions (9); a look's halves add and a pull's subtract, a median against a first moment (6, 10). R1183 and R1173
+  stand: a pull is not a read; no new physics.
+- **R1189** (24 Nov 2026; Tom: "Same results with cauchy framing to classical is a result in it self"): **that the
+  Cauchy framing gives the same results as the classical treatment of gravity is itself a result**, as R403, R950 and
+  R1062 have it for the read (a tie shows correctness; a disagreement would be the discovery; the forms are judged by
+  what each needs, never by different numbers). Corrects Claude's "run 11 added almost nothing" and "no measurement can
+  confirm it": run 11 could have failed and did not (D1, D2 at their edge on one profile), and each of runs 1–10 is a
+  place where the stage's account and the classical one were worked separately and agree. What the stage's form needs
+  less of, from the runs: the pull's shape through a plane (its corners, half within one height, the depth as the
+  half-width) comes with no amount, the amount setting only the size (run 11's D5: the depth with no density). Still
+  not an insight about gravity (R1184) and no new physics; a pull is not a read (R1183).
+- **R1188** (24 Nov 2026; Tom: "Proceed", then "3", to Claude's next steps: a check on measured gravity profiles): PR
+  #494 merged. FCL run 11 (`runs/fcl/fcl11.py`), the thread's first use of measurements. A fresh agent's search found no
+  open table of a gravity profile over a body of independently known depth; one clean case as a published figure, the
+  Březno railway tunnel (Blecha and Mašín; two profiles of 21 stations, 0.004 mGal, roof 12.5 m and floor 20 m by
+  construction), its values read from the figure by a program, and one messy case (Medford Cave, Butler 1983). The
+  predictions were written after those values and a rough half-width had been seen, and say so. Fitting the Cauchy's
+  curve c − A·d/((x − x₀)² + d²): d = 18.89 ± 2.33 m and 13.64 ± 1.81 m against mid-heights 16.25 m and 17.25 m
+  (+1.13 and −1.9993 errors), mean 15.61 ± 1.43 m against 16.75 m; both inside the tunnel, P2 by 0.14 m; χ² per degree
+  of freedom 1.79 and 1.24; the depth unmoved when every value is multiplied by 7. D1, D2, D4, D5 not killed (D1 and D2
+  at their edge on P2); **D3 killed in one clause** (the ball's law gives 19.81 m, inside the tunnel, where I predicted
+  below the floor; its ratio to the line's, 1.24 and 1.28, held; the two curves are not told apart by fit). Medford's
+  dip reads 7.1 ft against 24 ft, as recorded beforehand. So the classical depth rule holds on the one clean site to
+  the profile's noise (about 12%), and nothing about a read is tested. My estimate that the authors' regional narrows
+  the curve was wrong (a free constant takes it up). *Reads and Writes* §7's open item 3.
 - **R1187** (24 Nov 2026; Tom: "merge, then the subtraction on the read's side"): PR #493 merged. FCL run 10
   (`runs/fcl/fcl10.py`, mpmath at 40 digits and two seeded checks, predictions first, nothing killed). **The subtraction
   is on the read's side too**: a read's one odd moment is the heat met below the corner less the heat met above it, zero
