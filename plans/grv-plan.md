@@ -169,3 +169,17 @@ another name, the Poisson kernel of the half-space (geophysics' upward continuat
 what the classical texts do not say is that it is the Cauchy, the law of the uniform turn from a standpoint, so that the pull on a
 plane is a read's own measure laid over the mass (R1071: the classical tools are not the explanation). From memory, no search made;
 no claim that the naming is absent from print.
+
+Tom (24 Nov): "The tell is that when a body moves in lock step with another body, their center gravity combines, if not it is
+reduced." Claude's reading, not ruled, nothing run:
+- *What holds whatever the motion.* Pulls add (the heat maps overlay; V4's linearity), and from far off any system reads as its total
+  mass at its centre of mass, the next term down by (size/distance)² (PAY P4). In Newton's gravity neither needs lock step: two
+  bodies flying apart still have one centre of mass, moving steadily, carrying the whole mass.
+- *Where lock step does matter.* Bodies that keep their arrangement (rigid, or bound and co-moving) keep the same size, so the
+  one-centre reading holds as well tomorrow as today and the pair can stand as one body in a larger system (the tower: Earth and Moon
+  as one mass to the Sun, to about (384,000 km / 1 au)² ≈ 7·10⁻⁶). Bodies not in step spread, the size grows, and the one-centre
+  reading gets worse with time: the combination is not lost but its accuracy is. That is the sense in which "reduced" is exact.
+- *Where the amount itself changes* (relativity, classical results): a system's gravitating mass is its total energy, so a bound
+  pair weighs less than its parts by the binding energy and relative motion adds kinetic energy; the sign is the other way round
+  from "not in step, reduced" if "reduced" meant the total. A changing arrangement also radiates (the open point above).
+Open: which of these Tom means by "reduced".
