@@ -171,3 +171,33 @@ closed, as a new run with its own prediction.
 
 - **C4′** The same six values as C4, the inside integral taken up to the shell through the point from each side with no gap:
   x inside and 1/x² outside to 10⁻¹⁰. Kill: any value off past 10⁻¹⁰.
+
+### Run 2b (24 November 2026; `runs/fcl/fcl2b.py`, output `runs/fcl/fcl2b-run.txt`; 2 minutes)
+
+The first attempt did not run: a quadrature node rounded onto the shell through the point and divided by zero (my code).
+With that one node given the integrand's limit there, 1/(4x²): **C4′ not killed**, x inside and 1/x² outside at all six
+places, largest miss 2·10⁻¹⁷. (Two values carry an imaginary part of 10⁻¹⁹, from a distance rounding a hair below zero
+under the 3/2 power; it is below the tolerance and no part of the result.)
+
+### What run 2 says, as a reading (Claude's, not ruled)
+
+**Yes: on the plane the pull has the look's corners, because it stands on the look's stage.**
+
+- **Across one thumb**, the look's corner and the look's exchange, exactly: half the pull lands within one height of the
+  foot's line, and the strips at x₀ and d²/x₀ complement (C1).
+- **Across two thumbs**, the look's third: the square one height each way holds ⅓ (C3), the same number as the near field
+  in both readings of a look (wedge, R220).
+- **Round the foot**, half within √3 heights, the same as a look's half within √3 thumbs of the look (R700). The pairing
+  that complements there is equal steps of height on the sphere (c ↦ 1 − c), not a reciprocal of radii, which misses by
+  up to 0.06 (C2).
+- **None of it carries the mass, and none moves under scaling** (C5): the corners are the stage's.
+
+**Along the line the pull has a near and a far, but not the look's exchange** (C4′). Inside a uniform ball the pull is in
+proportion to the distance from the centre; outside it falls as the inverse square; it is greatest exactly at the
+surface. So the body's own border splits near from far, as Tom said on 24 November ("The physical border is the near
+field beyond is the far field"). But places of equal pull are x and x^(−1/2), not x and 1/x: the look's exchange belongs
+to directions, and along the line the pull is an amount, with the body's own radius standing where the thumb stands for
+a look. The radius is the play's, a size; the thumb is chosen.
+
+Limits. Classical throughout (the Cauchy's marginals, the solid angle of a disc and of a square, Newton's shell theorem).
+C5 is an identity. The ball is uniform; a body denser at its centre has its greatest pull inside its surface.

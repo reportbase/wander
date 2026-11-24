@@ -591,6 +591,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   takes in every direction summed: three numbers whatever the scene (one with no frame), nothing inside a shell, moments in
   order from afar, direction unmoved and length an amount; framed takes recover n masses from ⌈4n/3⌉ places, as parallax
   with the amount; unframed 4n and a mirror twin. Exact, nothing killed, classical. Not in any paper.
+  Run 2 (Tom: "cauchy is the stage, not the play itself"; "each small win"; "proceed"): on the plane the pull has the
+  look's corners (½ within one height across a thumb, x ↔ d²/x; ⅓ in the square; ½ within √3 round the foot); along the
+  line through a ball, proportion inside and inverse square outside, greatest at the surface, not the look's exchange.
+  C2 killed by my bound, C4 by my code, C4′ not.
   R1179 (24 Nov; Tom: "update the essays"): R1174–R1178 carried through the essays and README (23 files): a number in a
   unit is "an amount", never "a write" or "a writing"; a count "gives" a size. Left for Tom: "temporary writes" (R1048),
   "what is kept is a write" where the keeping is private, R568's wording, the older "writer". Physics paper, demos not swept.
