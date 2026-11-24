@@ -205,3 +205,10 @@ there. Candidates (Claude's, none run, each expected to be classical):
 - *Order survives, sums do not* (Theorem 6): to try on a pull's direction against its size.
 Where they part: a read has one hemisphere and its paint does not add; a pull takes every direction and is a sum of amounts, with a
 mean. So results resting on "no sum" should not carry.
+
+Tom (24 Nov): "Notice how my cauchy does not affect your cauchy". In observation: reads are unconnected and do not conflict (R652,
+R659); each standpoint has its own heat, the same law, and another observer enters mine only as paint. Carried to gravity
+(Claude's, not ruled): each mass's kernel is its own and unaltered by any other mass (superposition; why V4's sheet can be summed
+piece by piece), and another mass enters my pull only as payload, a column along some direction. So in both, the other is never in
+my addresses, only in what lands on them. Limit as above: exact while pulls add (Newton, weak fields); in general relativity one
+mass does alter the other's field.
