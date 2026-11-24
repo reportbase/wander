@@ -585,6 +585,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the Cauchy-weighted average of its density, ripples fading as e^(−kh); a point mass's pull through a plane 2πGM times the
   2D Cauchy of scale d. V3 killed in one clause by my guess (a cube shell's opposite columns); the rest not killed. Classical
   (the Poisson kernel of the half-space); Tom's statements of both days recorded below the runs, each with its limits.
+  R1176 (24 Nov; Tom: "if it does not affect the universe in some way, its not a write.   3 meters is booking of of the
+  readers."): **the test for a write is the world's; an amount in a unit ("3 metres") is the observer's bookkeeping about
+  a write, not a write**; the thing measured is the write, and a unit's bearer others can meet (a metre bar) is another;
+  "moved by scaling" needed, not enough. *Reads and Writes* D4, D5, §7, §8. **For new writing: a number never "is" a
+  write; say a count "gives" a size in a unit, not "writes" it.** Not swept: the paper's verb "writes its size", its kinds
+  tables, §7's opening, the essays, the physics paper, the demos.
   R1175 (24 Nov; Tom: "the write has to have scale.   the write ,must have mass and gravity.   Abstract thoughts are not
   such a thing."; "its just the readers bookeeping, his own."): **a write is a thing in the world with scale, mass and so a
   pull, that other reads can meet; thoughts, counts held and private marks are the observer's bookkeeping, never writes.**

@@ -357,7 +357,7 @@ hemispherical vantage (DHV) needs, each placed by a test that could have failed 
 | | its mathematics | placed by |
 |---|---|---|
 | **read** (continuous, unmoved by scaling) | slopes and ratios; composing them, (s + a)/(1 − κsa); the exchange s ↔ 1/s and the corner; the heat ds/(1 + s²); order: the median and quantiles; relations with no unit; one square root, √(1 + s²); in calculus, the first derivative of one length on another, the derivatives of rational functions with no limit (a number with ε² = 0, the stride kind), the chain rule as a tower, a curvature taken against the curve's own length or against another curvature, an antiderivative that telescopes, and the slope's own equation (the Riccati, constant coefficients) stepped by rational maps; an oscillator's direction and an orbit's shape. No angle, no trigonometry, no π, no unit | PYT, PYK (§9); Theorem 6's order statistics (§3); ALG's exact turns and lines (§9, "Run as code"); NTN and DVA, relations among directions with π only a name ("Where π and e are content"); CLC, RIC, ORB (essay 31) |
-| **write** (discrete, moved by scaling) | amounts in a unit; sums and means; a size fixed by an amount carried in (a stride, a pull, a refractive index); a higher derivative or a curvature in a unit, and every rate against a clock | the walk counted (ONE, WLK; §6), the bounce (§7), the scale test (D5); CLC (dⁿy/dxⁿ moved as k^(1−n)) |
+| **write** (discrete, moved by scaling; a thing with mass) | things with a size, and, as bookkeeping about them, amounts in a unit, sums and means; a size fixed by an amount carried in (a stride, a pull, a refractive index); a higher derivative or a curvature in a unit, and every rate against a clock | the walk counted (ONE, WLK; §6), the bounce (§7), the scale test (D5); CLC (dⁿy/dxⁿ moved as k^(1−n)) |
 | **DHV** (for comparison) | completions: π the turn whole, e the scale whole, the circle held at a size, totals over both hemispheres; an integrand's sum carried to its limit, ln and the arctangent; the clock time a step stands for (Kepler's equation, a damped oscillator's e^(−γt)) | PYK (only the turn's heat has a total), BLD (no count is π or e), NTN (every limit keeps its π); CLC, RIC, ORB |
 
 Calculus sorts the same way (CLC, RIC, ORB; essay 31). A slope of one length on another is a read; the second
@@ -440,15 +440,14 @@ a membrane's potential and its spike, a stream from a tap and the drop that pinc
   a thing, and what it gives is an extent. V\*/H, a party's true breadth in thumbs, is an extent. An extent is a relation
   between standpoints and named things in space; not every number had from two reads is one (§12, O9).
 - **D4. A write** is discrete and moved by scaling: a bounded thing with a size. A stone, a stride, a mark on a wall
-  and a metre bar are writes. A write has scale: it is a thing in the world, with mass and so with a pull (§7, "A write's own heat"), where other reads can meet it. A thought, a count held or a mark kept for oneself is the observer's own bookkeeping and no write (R1174, R1175). So is an amount put down in a unit carried in from outside the world: a metre, a second,
-  a hertz, an agreed notch. The exact amount, a real number with no last digit, is the number line's, the DHV's
-  (§6, "Extents come by degrees"). For the geometry it is the across axis's zero tied to a unit, a distance in metres, and one such amount serves
-  every extent hung from the same thumb (§7). A payload has writes too: a frequency in hertz, a brightness in watts.
+  and a metre bar are writes. A write has scale: it is a thing in the world, with mass and so with a pull (§7, "A write's own heat"), where other reads can meet it. A thought, a count held or a mark kept for oneself is the observer's own bookkeeping and no write (R1174, R1175). The test is the world's: what does not affect the world in some way is not a write. So an amount put down in a unit, "3 metres", is not a write but bookkeeping about one; the write is the thing measured, and the unit's bearer, a metre bar or an agreed notch that others can meet, is another. The exact amount, a real number with no last digit, is the number line's, the DHV's
+  (§6, "Extents come by degrees"). For the geometry the unit ties the across axis's zero to such a bearer, and one tie serves
+  every extent hung from the same thumb (§7). What arrives has its writes too, the sources themselves; a frequency in hertz or a brightness in watts is bookkeeping about them.
   A write is the writer's own: a stone's size is the stone's, a stride counted the walker's (§1, "Whose writes"). Scaling the world in a write's own dimension moves it (D5). A change of units is a different operation from scaling
   the world: it moves every write's number and no extent, no read as a read holds it (an angle in degrees is the
   DHV's coordinate on a read, and its number follows the DHV's choice of degree or radian).
 - **D5. The first test.** Multiply every length in the world by k, the observer's thumb and stride included; the units
-  stay outside the world. What moves is a write. Among the geometry's quantities, what stays is reading, a distance in thumbs
+  stay outside the world. What moves is a write's size, or a number kept about one; being moved is needed for a write and is not enough, since the number is bookkeeping and only the thing is the write (D4). Among the geometry's quantities, what stays is reading, a distance in thumbs
   among it; a count of the observer's own strides stays too, and is a count.
   This is the geometric test, and it
   sorts the geometry. In general the test is a named scaling, one dimension at a time: multiply every amount of that
@@ -1689,7 +1688,7 @@ Things on loops are placed from the tick alone, exactly, at any tick, and there 
 record; where things interact with no such law, their state has to be stepped and stored, and it is a record again, a
 step behind (TWK runs 15–17). The read's own present is not the world's either: it is the present of what arrives, paint
 that left its sources earlier, starlight by years. It is the only now there is from a standpoint, and nothing has to have
-been written for it. No one has the world's now from no standpoint; simultaneity far off is a convention, a write; the
+been written for it. No one has the world's now from no standpoint; simultaneity far off is a convention, the observer's bookkeeping; the
 DHV's now is assembled afterwards from records. And the record grows toward the size of what it records
 (§6, "A record the size of what it records"; R1050). **Reading.**
 
@@ -1867,7 +1866,7 @@ closed surface the total is 2π times its Euler characteristic, 4π for the sphe
 once, from no standpoint: it is the dual hemispherical vantage's, and its total is a completion. From one
 standpoint the same fact is smaller. Each turn along the loop is read where it is taken: between two standpoints, the
 turn from one's frame to the other's is fixed by their two directions to each other alone (in the plane
-ρ = −z_ij/z_ji, no distance and no third party in it). Each frame is its own standpoint's write, a facing it holds and
+ρ = −z_ij/z_ji, no distance and no third party in it). Each frame is its own standpoint's, a facing it holds and
 can change. The turns are composed in order round the loop by the slope rule (s + a)/(1 − sa), whose 1 − sa is where the
 curvature sits, and the question is only whether the loop comes home. A loop is therefore reads held together in order
 across standpoints, or one standpoint's earlier looks kept. Taken in fractions the composition needs no angle and no π:
