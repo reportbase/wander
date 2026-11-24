@@ -564,3 +564,41 @@ Classical (the infinite sheet's 2πGσ; Lambert's cosine).
   two.
 - **W6, the scale test.** The straight-down take, 2πσ, does not change with the height: at one surface density,
   scaling every length moves nothing. The shares are unmoved too. An identity of W2.
+
+### Run 7 (24 November 2026; `runs/fcl/fcl7.py`, output `runs/fcl/fcl7-run.txt`; a few seconds)
+
+| | result | verdict |
+|---|---|---|
+| W1 | the sheet's amount per unit of direction is √(1 + r²) at five slopes (10⁻⁴¹): 1.02, 1.41, 2, 5.10, 40.0 | not killed |
+| W2 | facing down, the take per unit of direction is 1 at every slope; share 1 − 1/√(1 + r²), half at √3; total 2π | not killed |
+| W3 | the sheet thinned by 1/√(1 + r²) is an even sky; its share r²/(1 + r²), half at one height; total π | not killed |
+| W4 | between two sheets each facing takes 2π at three places, their difference nothing | not killed |
+| W5 | sideways from discs of 10, 100, 1000 heights: 4.006, 8.597, 13.202, on the formula (10⁻²⁵); 4.6050 over the last tenfold against 2·ln 10 = 4.6052 | not killed |
+| W6 | an identity of W2 | not killed |
+
+Nothing killed; computed on the sheet, place by place, so the statements about directions were checked from the
+other side.
+
+### What run 7 says, as a reading (Claude's, not ruled)
+
+**The sheet's weighting is the look's law, and the reason is a cancellation.**
+
+- A flat sheet is not a sky alike in every direction: seen from above it leans, carrying √(1 + r²) times as much per
+  unit of direction at slope r as straight down (W1), because a slanted line of sight crosses more of it and its far
+  parts lie behind one another in direction.
+- A pull, taken with a facing, counts only its part along the facing: one cosine, 1/√(1 + r²). The two cancel exactly
+  (W2). What the sheet sends along the straight-down facing is the same from every direction: the uniform turn. So
+  the sheet's weight, laid back on the sheet, is the look's own heat on a flat screen, the 2D Cauchy of the height.
+  That is why GRV found the look's law there and not run 6's.
+- Run 6's law is the same sheet with the lean taken out: thin the sheet by 1/√(1 + r²) and it is an even sky, half
+  within one height, total πσ, half the whole sheet's (W3). The two laws are one sheet, thinned or not.
+- So the flat sheet is the one arrangement of mass whose pull, faced square to it, lays out exactly as a look lays
+  out. It is also why the sheet's pull has no height in it (W6): every direction gives the same, and the directions
+  do not change with the height.
+- Turn the facing along the sheet and there is no limit (W5): the lean is no longer cancelled, and the take grows by
+  2σ·ln 10 for each tenfold of sheet, without end, like the Cauchy's own missing mean. The opposite facing grows the
+  same, and their difference, the pull, is nothing. One facing of an endless even world has no total; two opposite
+  facings have a difference (GRV's V6 found the same of a half-ball).
+
+Limits. Classical (the infinite sheet's field; Lambert's cosine; the logarithm of a slab's sideways attraction).
+Everything was derived before the run. A faced take is this plan's definition, not a claim about the world.
