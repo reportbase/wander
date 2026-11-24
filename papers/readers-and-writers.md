@@ -736,7 +736,7 @@ stay where they are, and the thing comes in as a density over them. Lay a shape 
 it is the weight ρ(θ) = √(r² + r′²)/max on the unmoved directions (RHO, `plans/rho-plan.md`; the identity known from
 draw's SMP lab). The circle is the one shape whose density is flat, so the unit sphere is the bare Cauchy, τ = 0; τ is
 the density's departure from flat, and as it rises the density climbs toward the thing's own. The size a₀ cancels, so the
-density gives the shape and never the size, the one write this gradient does not reach. The shape comes back from the
+density gives the shape and never the size, the one amount this gradient does not reach. The shape comes back from the
 density: ln ρ returns the modes of f to second order in τ. The median of what arrives moves only by
 the part of f the exchange reverses, and only at first order. So the Cauchy is read geometry, the same for every thing,
 and the density over it is the thing's write geometry arriving as paint; it is the payload's, the world's, not the
@@ -1566,7 +1566,7 @@ who share nothing in view. **Reading.**
 
 **A survey.** Snellius (1617) and Roy (1784–85) wrote whole countries this way: thousands of directions read, each
 written down in degrees by the instrument, one base walked and counted. The directions are reads; with the base as the
-thumb, every side of every triangle is an extent; the base counted in a unit is the one write, and every side is then in
+thumb, every side of every triangle is an extent; the base walked is the write and its count in a unit the one amount, and every side is then in
 the base's unit. A second base checks the first and adds no scale. **Classical.**
 
 **What the dual hemispherical vantage adds.** The DHV is the classical statement, the whole in amounts seen from no standpoint. An observer builds with reads and extents and never needs a unit, until one of these is wanted:
@@ -2475,7 +2475,7 @@ of the second thumb: in space each step gives two changes for one unknown, so on
 condition of stereo vision). Take the step for diagonal when it was across, and the up thumb says the step had no up in
 it: the misreading is caught. Step one thumb forward instead and both readings grow by the same factor, the top to
 (3/11, 4/11), either thumb giving 12. Scale the world, the step with it, and no extent changes. Count the thumb as 5 metres
-and the tower is 15 metres tall and 60 away: the one write. **Checked** (`runs/two/two_thumbs.py`).
+and the tower is 15 metres tall and 60 away: the one amount. **Checked** (`runs/two/two_thumbs.py`).
 
 ## 11. Cases in data, and what this changes
 
