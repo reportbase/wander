@@ -269,3 +269,14 @@ maps of all the writes at one moment simply overlaid, as a read is one moment fr
 scope: anything that changes (a change in a source reaching others at light's speed; waves and the energy they carry, the open
 point above). Still inside it: "one moment" across distant things is a convention (R1049), harmless only while nothing moves; and
 the strong-field failure of adding, which needs no change in time.
+
+Tom (24 Nov): "So what I'm wondering is if mass has fingers \"gravity\", just like read geometry." Claude's answer, not ruled,
+nothing run: yes, and physics has the picture under another name, lines of force (Faraday; Gauss's law is their count). A point
+mass's lines leave it evenly over every direction, the uniform turn in all directions at once; on a plane they land as the Cauchy
+(the note above); the pull at a place is how thickly they pass through it; they never end (no negative mass to end on), as the
+heat's tail never closes. Like and unlike a read's fingers:
+- *Like:* laid by the geometry alone, evenly by direction, the same form for every mass; another mass never moves mine (each
+  mass's own lines stay straight; only the summed pull's lines curve).
+- *Unlike:* all directions, not one hemisphere; and their number is the mass, an amount, where a read's K is a fineness with no
+  amount. A read's fingers are painted by what arrives; a mass's fingers are what other masses feel.
+Counting lines works exactly only for the inverse square in three dimensions; the lines are a picture, not things.
