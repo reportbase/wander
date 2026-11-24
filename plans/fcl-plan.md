@@ -447,3 +447,40 @@ the 10³ I set to tell a pole from a zero. The search off the line found nothing
 is of order 10⁻⁹ all round the circle, and Newton's method did not settle within 400 steps. Checked afterwards, not a
 prediction: at the equilateral place the net term at m = 10⁻⁹ is zero to 30 digits. So the count of five stands
 confirmed down to m = 10⁻⁶ and is not established by counting below that; I have not rerun it.
+
+## Run 6: what a facing adds to a pull
+
+Tom, 24 November, after run 5: "proceed" (to Claude's next step: "what a second facing adds: the step between one look
+and a pull that sums every direction … the closest test of your 'no facing means all facings at once'").
+
+Set-up. At a place p the scene's pull arrives from directions u. A **faced take** with facing n keeps only what
+arrives from in front and only its part along the facing: F(n) = Σ m (n·u)/r² over the masses with n·u > 0 (for a
+spread mass, the same as an integral). It is what crosses a small window square to n from the front. The faceless take
+of runs 1–5 is g = Σ m u/r². mpmath, 30 digits; seeded scenes of 8 masses.
+
+Known beforehand: the screen law in S4 is ISX's disc (the share 1/(1 + s²) and its exchange), met there for light.
+Said beforehand: S1, S3, S5 and S6 are identities I derived; S2's equality is Newton's own argument for the shell
+(opposite cones), its size of variation a guess; S4 I derived for this run.
+
+### Predictions (committed before running)
+
+- **S1, a facing and its opposite subtract.** F(n) − F(−n) = n·g for every facing: the faceless take along any line is
+  the difference of the two opposite faced takes. Joined, two opposite facings of a pull cancel what they share, where
+  two opposite facings of a look are joined by adding. Kill: off past 10⁻²⁵ in any of 10 scenes × 5 facings.
+- **S2, the shell, by facings.** Inside a uniform shell, at places 0.3, 0.6 and 0.9 of its radius from the centre,
+  F(n) = F(−n) along the line through the centre: the shell's nothing is every facing equal to its opposite, each take
+  being far from nothing. The takes do depend on the facing: at 0.9, F across the line and F along it differ by more
+  than 1% (a guess). Kill: the pair unequal past 10⁻²⁰; or the two facings within 1% at 0.9.
+- **S3, all facings at once.** Averaged over every facing, ⟨F⟩ = ¼·Σ m/r²: a number, the whole sky's amount, with no
+  direction. Averaged with its facing attached, ⟨n·F(n)⟩ = g/6: the faceless take is six times the facing-weighted
+  mean of the faced takes. So "no facing" is all facings at once, each carrying its own direction; without the
+  directions the facings give only an amount. Kill: either off past 10⁻²⁰.
+- **S4, a faced take has the look's exchange, with its corner at one thumb.** For a sky alike in every direction, what
+  crosses the facing's flat screen (one thumb out) has density 1/(π(1 + r²)²), one more power than the look's heat
+  1/(2π(1 + r²)^(3/2)). The share within r of the foot is r²/(1 + r²): half within r = 1, and the shares at r and 1/r
+  add to 1 exactly, where the look's half is at √3 and run 2's point mass had no reciprocal pairing. Across one thumb
+  the share within x₀ is x₀/√(1 + x₀²), half at 1/√3. Kill: any of these off past 10⁻²⁰.
+- **S5, six facings are enough.** The three pairs of opposite facings along any three square axes give g exactly; no
+  more facings are needed. Kill: g rebuilt from six takes off past 10⁻²⁵, in 10 scenes with seeded axes.
+- **S6, the scale test.** Every F scales as k⁻² with lengths and as the masses; the ratio F(n)/F(−n) is unmoved by
+  either. An identity.
