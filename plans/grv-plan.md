@@ -280,3 +280,15 @@ heat's tail never closes. Like and unlike a read's fingers:
 - *Unlike:* all directions, not one hemisphere; and their number is the mass, an amount, where a read's K is a fineness with no
   amount. A read's fingers are painted by what arrives; a mass's fingers are what other masses feel.
 Counting lines works exactly only for the inverse square in three dimensions; the lines are a picture, not things.
+
+Tom (24 Nov): "Writing sffects the previous writes around where its written.  Lots of writes in the same location creates mass.
+Writes can move, it's not static." Claude's reading, not ruled, nothing run:
+- *A new write affects those already there:* its heat map is overlaid on theirs and each feels it, most nearby; and it feels
+  theirs, equally (the pull is mutual). R1065's "everything reads and writes", for the pull.
+- *Many writes in one place:* the amounts add, so the place's heat map is the sum (V4's piece-by-piece sum). Against "a write has
+  mass" (above) this reads as more mass, not mass from none; Tom's to say which. Known physics has a version of "creates": most of
+  an ordinary thing's mass is the energy of its parts' motion and binding, not the parts' own masses.
+- *Writes move:* this leaves the static scope set just above. In Newton's account it costs nothing: each moment is still a static
+  overlay, and each write moves as the sum of the others' maps directs, carrying its own map with it (the N-body problem; the
+  record of where each has been is the history, R1050). What Newton leaves out is the delay: a moved write's map is updated
+  elsewhere only at light's speed, and the update carries energy (the open point).
