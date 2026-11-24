@@ -3,7 +3,7 @@
 *The eighteenth of a series of essays on what can be known from where one stands. Draft, 7 November 2026. It gathers
 the rulings of 7 November (R736–R740) on Euler's plane, the thumb's lay, the sphere of the dual hemispherical vantage (DHV) behind them and two turns in
 space, and follows* Reads and Writes *§2 ("The plane") and §9. Brought to R788 on 10 November: up is the read, gaps across are
-places, and only the across axis's zero, tied to a unit, is an amount in a unit.*
+places, and only the across axis's zero, tied to a unit, is an amount in a unit (so worded since R1176, 24 November).*
 
 Put two fingers on a map on a phone and move them. Spread them and the map grows; twist them and it turns; do both at
 once and it does both, and neither gets in the other's way. The phone works out what the fingers did from one number:
