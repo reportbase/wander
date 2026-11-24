@@ -644,3 +644,29 @@ Classical where it is known to me (the shell theorem; inner functions keeping th
   not above the line; the sum off past 10⁻²⁵.
 
 Not in this run: sources off the line of a two-mass lens (three or five images, classical), bodies in motion.
+
+### Run 8 (`runs/fcl/fcl8.py`, output `runs/fcl/fcl8-run.txt`), 24 November: nothing killed
+
+| | result | |
+| --- | --- | --- |
+| A1 | three balance points in all four cases (closed form and a 20,000-step scan agree); the outer one at ρ = √μ to 5·10⁻⁴¹ whatever the radii | not killed |
+| A2 | inner point off M₁R₂³/(M₂D²) by 0.2%, 0.4%, 0.6%, 1.65%; with one place inside the ball the pull ratios at ρ and μ/ρ multiply to 27, 4.096, 3.375 (points: 1), which is (R₂/s)³ | not killed |
+| A3 | at R₂ = 0.45, 0.5, 0.6 D: three points 1% above M₂/M₁ = (27/4)(R₂/D)³, one 1% below; the pair meet at s = D/3 exactly | not killed |
+| B1 | six cases, seven points each: gap at most 2.3·10⁻⁴¹ | not killed |
+| B2 | six cases: three points above the line, adding to w + a + b exactly, density gap under 10⁻³⁹ | not killed |
+
+As with run 3, each was worked out on paper beforehand, so the run is a check of the working, not a finding.
+
+### What run 8 says, as a reading (Claude's, not ruled)
+
+- Size leaves the point meeting place alone while it stays outside both bodies (the shell theorem), and adds one more
+  balance point inside each body, near its centre. Those inner points carry both masses, the separation and the body's
+  radius: three amounts. The exchange ρ ↔ μ/ρ fails inside by exactly (R/s)³, the share of the ball that still pulls.
+- The meeting place never crosses a surface. When it would, it is already paired with the body's inner point, and the
+  two close on each other and go, at one third of the way between the centres, for every mass and radius. The count on
+  the line is three or one. The ⅓ is the play's (the largest value of s(D − s)²), not the stage's corner.
+- Along the line of two lens masses the Cauchy family is kept, as with one (run 5): images Cauchy(z) come from sources
+  Cauchy(f(z)), and Cauchy sources are seen as one Cauchy per image. This holds for any number of masses on the line,
+  since f(u) = u − Σ εᵢ/(u − aᵢ) carries the upper half-plane into itself with real poles (classical: such maps keep
+  the Cauchy; Letac 1977 as I remember it, not opened). Run 5's pairing z₂ = −1/z₁ is the one-mass case only; with two
+  masses the three points are tied only by their sum.
