@@ -733,3 +733,54 @@ Doubles and a least-squares solver, 40 random starts a scene, so "no second solu
 - The count is parallax's. One place gives a direction and places nothing; places a counted step apart place the
   sources in steps; an amount is needed only for the size. FCL run 1 had this for strengths in a unit; run 9 has it
   with ratios alone, which is the closer match to a read.
+
+## Run 10: does the subtraction have a form on the read's side?
+
+Tom, 24 November: "merge, then the subtraction on the read's side" (open item 1 of *Reads and Writes* §7's "Gravity on
+the stage"). PR #493 merged before this was written.
+
+The proposal, worked out on paper before any run. A look and a pull are both moments of one paint laid on the stage,
+and what they do across opposite halves is set by the moment's parity, nothing else.
+
+- The stage's own law is even under its reversal: the look's under the exchange s ↔ 1/s (equal heat either side of the
+  corner), the sky's under n ↔ −n. So every odd moment of the bare stage is zero: the read's median sits at the corner,
+  and an even sky pulls nowhere.
+- A count or a total is the moment of order 0, a scalar: the halves add. A pull is the moment of order 1, a vector, each
+  source's amount over its distance squared times its direction: opposite halves subtract. "Adds for a look, subtracts
+  for a pull" is scalar against vector.
+- A read has an odd moment of its own: the heat met below the corner less the heat met above it. It is zero on the bare
+  stage, and it is what moves the median of what is met off the corner. That is the subtraction on the read's side.
+- The two subtractions have the same parity and are different moments. The read's weighs each direction by a sign (which
+  half it is in) and never by an amount. The pull's weighs each by its amount and the cosine to the facing. So the read's
+  is an order statistic and the pull's is a sum: the split of *Reads and Writes* §4 (the median the heat's, the mean the
+  paint's) met again.
+
+Said beforehand: T1, T2 and T3a are orthogonality and symmetry and could fail only by my code; T3b's exactness, T4's
+angle and T5's counts are the tests. Known already and named: where light and mass go together, a pull's direction is
+the direction of the sky's brightness dipole (both fall as the inverse square), used in cosmology to estimate the Local
+Group's pull from galaxy surveys; from memory, not opened.
+
+### Predictions (committed before running)
+
+- **T1, the pull is the paint's first moment over two looks back to back.** For twenty seeded scenes of point masses,
+  the sum over every source of (amount/d²) × direction equals the pull, and equals F(n)·n-wise the front take less the
+  back take along any facing, to 10⁻¹² (doubles). With brightness in proportion to mass the brightness dipole points
+  along the pull exactly. Kill: off.
+- **T2, an even paint gives no odd moment, on either side.** (a) A sky with density 1 + ε·(a·P₂ + b·P₄) about any axis
+  pulls nowhere, to 10⁻²⁵, for three (ε, a, b). (b) A quarter turn weighted 1 + ε·f with f unchanged by the exchange
+  (f(θ) = f(Ω − θ), three such f) keeps its median exactly at the corner, to 10⁻²⁵. Kill: either moved.
+- **T3, of an odd paint each takes one moment.** (a) A sky 1 + ε·(a·P₁ + b·P₃ + c·P₅): the pull is ε·a·(4π/3) along
+  the axis whatever b and c, to 10⁻²⁵. (b) A quarter turn weighted 1 + ε·f with f reversed by the exchange: the median
+  moves by −ε·∫₀^(Ω/2) f to first order (ratio to that within 2% at ε = 10⁻³), and for an f reversed by the exchange
+  whose integral over the near half is zero (f = sin 8(θ − Ω/2)) the median stays at the corner exactly, to 10⁻²⁵,
+  though the paint's mean angle moves. Kill: any.
+- **T4, same parity, different moments: the two part.** On a full circle of directions painted 1 + ε·(cos θ + 0.8·cos(3θ
+  − 1)), the first moment points along θ = 0 exactly, whatever ε. The balance axis, the direction with equal paint on
+  its left and right, is off it by between 5° and 15° (my working gives about 9°), the same for every small ε. Kill:
+  outside that band, or the first moment off 0 past 10⁻²⁰.
+- **T5, one is a sum and the other a count.** Twenty seeded scenes of thirty point masses in a plane. Replace every
+  amount m by m³ (an increasing map): the pull's direction moves by more than 1° in at least 18 of 20, and the count's
+  balance axis (as many sources on its left as on its right) does not move at all in any. Kill: either count missed.
+
+The reading if these hold: the subtraction is on the read's side too, as its one odd moment, the near half less the far
+half; a pull is the same parity taken with amounts. Not a mechanism and not new physics.
