@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1189 (24 Nov; Tom: "Same results with cauchy framing to classical is a result in it self"): the Cauchy framing
+  agreeing with classical gravity is itself a result (as R403, R950, R1062 for the read); judged by what each form
+  needs: the pull's shape through a plane comes with no amount. **Do not call an agreement with classical "nothing".**
   R1188 (24 Nov; Tom: "3"): FCL run 11, measured data: no open table found; the Březno railway tunnel's two profiles
   (Blecha and Mašín, read from a figure; predictions after the values were seen) fitted with the Cauchy's curve give
   18.9 ± 2.3 m and 13.6 ± 1.8 m against mid-heights 16.25 and 17.25 m, mean 15.6 ± 1.4 against 16.75; no density

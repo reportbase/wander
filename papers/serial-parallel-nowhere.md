@@ -7607,6 +7607,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1189** (24 Nov 2026; Tom: "Same results with cauchy framing to classical is a result in it self"): **that the
+  Cauchy framing gives the same results as the classical treatment of gravity is itself a result**, as R403, R950 and
+  R1062 have it for the read (a tie shows correctness; a disagreement would be the discovery; the forms are judged by
+  what each needs, never by different numbers). Corrects Claude's "run 11 added almost nothing" and "no measurement can
+  confirm it": run 11 could have failed and did not (D1, D2 at their edge on one profile), and each of runs 1–10 is a
+  place where the stage's account and the classical one were worked separately and agree. What the stage's form needs
+  less of, from the runs: the pull's shape through a plane (its corners, half within one height, the depth as the
+  half-width) comes with no amount, the amount setting only the size (run 11's D5: the depth with no density). Still
+  not an insight about gravity (R1184) and no new physics; a pull is not a read (R1183).
 - **R1188** (24 Nov 2026; Tom: "Proceed", then "3", to Claude's next steps: a check on measured gravity profiles): PR
   #494 merged. FCL run 11 (`runs/fcl/fcl11.py`), the thread's first use of measurements. A fresh agent's search found no
   open table of a gravity profile over a body of independently known depth; one clean case as a published figure, the
