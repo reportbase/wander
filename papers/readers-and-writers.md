@@ -1558,7 +1558,7 @@ there, a count.
 ## 7. The zero: writes and amounts
 
 **The unit carried in.** A write is a thing in the world; what an observer calls it is bookkeeping, and only the thing matters to the world (R1176). A unit ties the across axis's zero to one such thing kept outside the scaling: a metre bar, a second's clock, an
-agreed notch. Every extent hung from the same thumb is then an amount, all at once, by one number: the thumb in metres.
+agreed notch. The geometry does take "3 metres" to be given a scale, and in taking it is still working in ratios: 3 is the thing over the bar, a ratio of two writes, and it moves under the scale test only because the bar is kept outside the scaling (R1178). Every extent hung from the same thumb is then an amount, all at once, by one number: the thumb in metres.
 Scaling the world moves that number and every amount with it, and moves no extent. The foot, the cubit and at last the
 metre were each one observer's body or object made into a public notch. Two observers that see one thing in common need
 no unit between them: the ratio of their thumbs is an extent, read off what they share. A unit is needed between observers
