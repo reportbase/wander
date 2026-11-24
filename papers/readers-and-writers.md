@@ -357,7 +357,7 @@ hemispherical vantage (DHV) needs, each placed by a test that could have failed 
 | | its mathematics | placed by |
 |---|---|---|
 | **read** (continuous, unmoved by scaling) | slopes and ratios; composing them, (s + a)/(1 − κsa); the exchange s ↔ 1/s and the corner; the heat ds/(1 + s²); order: the median and quantiles; relations with no unit; one square root, √(1 + s²); in calculus, the first derivative of one length on another, the derivatives of rational functions with no limit (a number with ε² = 0, the stride kind), the chain rule as a tower, a curvature taken against the curve's own length or against another curvature, an antiderivative that telescopes, and the slope's own equation (the Riccati, constant coefficients) stepped by rational maps; an oscillator's direction and an orbit's shape. No angle, no trigonometry, no π, no unit | PYT, PYK (§9); Theorem 6's order statistics (§3); ALG's exact turns and lines (§9, "Run as code"); NTN and DVA, relations among directions with π only a name ("Where π and e are content"); CLC, RIC, ORB (essay 31) |
-| **write** (discrete, moved by scaling) | counts; amounts in a unit; sums and means; a size fixed by an amount carried in (a stride, a pull, a refractive index); a higher derivative or a curvature in a unit, and every rate against a clock | the walk counted (ONE, WLK; §6), the bounce (§7), the scale test (D5); CLC (dⁿy/dxⁿ moved as k^(1−n)) |
+| **write** (discrete, moved by scaling) | amounts in a unit; sums and means; a size fixed by an amount carried in (a stride, a pull, a refractive index); a higher derivative or a curvature in a unit, and every rate against a clock | the walk counted (ONE, WLK; §6), the bounce (§7), the scale test (D5); CLC (dⁿy/dxⁿ moved as k^(1−n)) |
 | **DHV** (for comparison) | completions: π the turn whole, e the scale whole, the circle held at a size, totals over both hemispheres; an integrand's sum carried to its limit, ln and the arctangent; the clock time a step stands for (Kepler's equation, a damped oscillator's e^(−γt)) | PYK (only the turn's heat has a total), BLD (no count is π or e), NTN (every limit keeps its π); CLC, RIC, ORB |
 
 Calculus sorts the same way (CLC, RIC, ORB; essay 31). A slope of one length on another is a read; the second
@@ -493,7 +493,7 @@ a membrane's potential and its spike, a stream from a tap and the drop that pinc
   this direction, that gap, this light's frequency. A relation between two variables is another variable and is put to
   the same tests; it does not inherit the kind of what it relates. A representation of a variable, its number in a
   coordinate, a count, a mark kept, has the variable's kind: an angle in degrees and a pixel's index are reads in the
-  DHV's coordinate and count. A count is neither a read nor a write. It is discrete, and no scaling of the world
+  DHV's coordinate and count. A count is neither a read nor a write: a write is to the world, where every read meets it and all share it, and a count is the counter's own, in the world only once it is put down as marks (R1174). It is discrete, and no scaling of the world
   moves it: a count of steps taken, an extent put on paper in thumbs. The steps are writes, things with a size; the
   count is a description laid over them, and what is kept of it is kept as things, marks or pebbles, each a write. So
   keeping is done in writes, and physics enters with the first write, a thing with a size, not only with the unit. The
@@ -1308,7 +1308,7 @@ alike, with no standpoint favoured; a read's K is spent finest at the corner and
 unevenness is the vantage. **Checked** (`star-field.html`). The cull leaves K and compresses N at the horizon (Tom, R1109): nothing is
 cut, every thing keeps its direction, and what lies past the last address (about 2K/π thumbs out, counted) shares it with
 everything beyond. What does the compressing is the heat, ds/(1 + s²), thinning toward the horizon, not a count; K is a
-fineness, counted as addresses only by a write (R706). The same fact in statistics: readings from one standpoint averaged
+fineness, counted as addresses only by a count (R706). The same fact in statistics: readings from one standpoint averaged
 are one reading (below, "The Cauchy averages to itself"), so N leaves no mark in what is held, where a Gaussian's average
 narrows by √N. **A reading** (Tom, R1109).
 
@@ -2210,10 +2210,10 @@ corner, and that the two facings, s and 1/s, multiply to 1; how much the whole i
 completed sum. That is the exact sense of "Ω is the price", above: the price is an
 infinity, paid only at the limit, and a read never pays it because a read never needs the value.
 
-So there are two acts, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves; it does not use Ω, and 1/Ω is the limit its share of the thumb tends to as the sweep runs on toward the horizon ("Facing V and facing away from V", above). A count
+So there are a read and a count, both the standpoint's own, and the classical statement set beside them for comparison. A read has slopes, the corner and equal halves; it does not use Ω, and 1/Ω is the limit its share of the thumb tends to as the sweep runs on toward the horizon ("Facing V and facing away from V", above). A count
 is of a walk actually made, and any such walk is finite, so a count holds fractions: 11/7, 355/226, a series
 stopped at some term, each nearer Ω and none of them Ω. A count uses Ω's name and its approximants, and never has its
-value; Ω is the limit it tends to, stride by stride. So Ω and 1/Ω are limits the two acts actually encounter, each
+value; Ω is the limit it tends to, stride by stride. So Ω and 1/Ω are limits a read and a count actually encounter, each
 headed for its own and neither reaching it. What neither encounters is π, two sweeps joined: the DHV's, every
 facing at once, the total of a sum no one finishes. The DHV, whole, is therefore a limit, as the exact V is (§6,
 "Extents come by degrees"), and never a thing anyone has made. What is exact is that Ω is defined as the total of one
