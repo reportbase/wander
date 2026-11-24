@@ -225,3 +225,10 @@ not ruled, nothing run (the formulas Newton's, checked in V1 and V5):
   proportion, zero at the centre), outside 1/x²; strongest at the surface, not at the centre. The surface is where proportion gives
   way to ratio, as the corner does for near and far; not the exact exchange (x against 1/x², not 1/x). The shape has no unit; the
   amount at the surface, (4/3)πGρR, does.
+
+Tom (24 Nov): "Interesting idea.    The physical border is the near field beyond is the far field." Claude's reading, not ruled,
+nothing run. It is R1116 for a thing ("the near field is the bar itself … the far field is what is beyond the bar"), the body's
+radius R in the thumb's place. What is already in the corpus for it: PAY P4 (inside a body's radius the expansion runs in powers
+of r/R, outside in R/r, the two meeting at r = R and exchanged by Kelvin's inversion r ↦ R²/r, which is the exact exchange here,
+on the potential, where the pull's x against 1/x² is not); ISX and NRF (a disc's light half at d = a, E(s) + E(1/s) = πL). The
+difference from a read: a read's thumb is chosen and the split moves with it; a thing's border is its own, a size, a write.
