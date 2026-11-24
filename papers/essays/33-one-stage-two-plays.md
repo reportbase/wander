@@ -208,7 +208,7 @@ So the ring is a corner too. But its place is set by the mass, an amount. The lo
 
 ## 9. What was killed
 
-Eight runs, about fifty predictions. Six were killed, all by Claude's own guesses or code, and they stay recorded as
+Eight runs, about fifty predictions. Five were killed, all by Claude's own guesses or code, and they stay recorded as
 killed.
 
 - GRV's third prediction guessed that the pairing of opposite columns holds between two cubes as it does between two
