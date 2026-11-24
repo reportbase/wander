@@ -630,3 +630,28 @@ scaling, a write discrete and moved by it; a count and the number line in a unit
       turn becomes a step, every thing placed in bars, exactly, out to a few × sin Δ/ε; at both ends held still the bar
       is the baseline, best half a bar out, alike at d and 1/(4d). The pivot points, the trace walks (R1110). Exact,
       E2 and E4 killed by my code and my factor; classical (HTP, PXC).
+
+24. **Gravity on the Cauchy's stage** (24 Nov; Tom: "there now seems to be two ways to read, with the SHV and the DHV.";
+    "if you don't have a facing, you get all facings at once, kind of like the god's eye view."; "remember that cauchy is
+    the stage, not the play itself. Its the heat map and as we have learned the cauchy plays nicely it merges and
+    combines and remains a cauchy."; "thats why I think this is possibly an importent conceptual insight about gravity,
+    which is such a mystery."; "lets understand each small win to see where it takes us."; "add it to to a note and
+    proceed."). Exploration; no ruling (R890, R967 and R1173 stand: gravity is not called a read). Tested in FCL
+    (`plans/fcl-plan.md`, `runs/fcl/`; SPN R1180), exact, classical throughout. The small wins so far, each Claude's
+    reading of a run, not ruled:
+    - **One stage, two plays.** A point mass's pull through a plane is 2πGM times the 2D Cauchy of scale its distance
+      (GRV): the law a look lays on a flat screen. The stage is the same for a look and for a pull; the play (paint or
+      mass) and the facings (one hemisphere or all, summed) differ.
+    - **A place with no facing takes in a sum** (run 1): three numbers whatever the scene, nothing inside a shell, amount
+      and distance not parted from one place; its direction unmoved by scaling, its length an amount. Placing needs
+      more places, as parallax does, and gives the amount with the place.
+    - **On the plane the pull has the look's corners** (run 2): half within one height across a thumb with x ↔ d²/x, a
+      third in the one-height square, half within √3 heights. None carries the mass. Along the line through a ball it
+      has a near (proportion) and a far (inverse square) split at the body's own surface, but not the look's exchange.
+    - **A pair has a meeting point, the exchange's fixed point** (run 3): the pulls cancel at ρ = √μ, ρ ↔ μ/ρ carrying
+      the pulls' ratio to its reciprocal; its place a ratio of two masses only; the centre of mass (a mean) on the other
+      side at 1/μ; off the line Apollonius's sphere, every net pull on it aimed at the meeting point.
+    - Next: what motion adds (run 4, the pair in orbit). Later candidates: what a second facing adds; whether a mass's
+      bending of directions keeps the Cauchy family (light); bodies with size.
+    Standing: a working thread. Nothing in any paper. What gravity is stays untouched (Tom: "what is gravity
+    specificaly. but lets not get bogged down").

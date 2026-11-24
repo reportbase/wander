@@ -289,3 +289,38 @@ Limits. Classical throughout (the neutral point, Apollonius, the bisector theore
 prediction was worked out beforehand, so this run is a sorting, not a test. Two points at rest: with the pair in orbit
 the balance points are others (Lagrange's), since the turning adds its own term; not looked at. The meeting point is a
 saddle, not a resting place (Earnshaw): a thing put there stays only on the line's cross directions.
+
+## Run 4: what motion adds (the pair in orbit)
+
+Tom, 24 November, after run 3: "add it to to a note and proceed. whats next?" (the note: `plans/discussion-note.md`
+item 24).
+
+Set-up. The two masses of run 3 on circular orbits about their centre of mass, seen in the frame turning with them
+(the classical circular restricted problem). G = 1, the separation D = 1, M₁ + M₂ = 1, m = M₂ the lighter's share, so
+the turning rate squared is (M₁ + M₂)/D³ = 1. A small thing at rest in that frame feels the two pulls and the turning's
+outward term from the centre of mass. A balance point is where the three cancel. Exact root-finding, mpmath, 30 digits.
+
+Said beforehand: M1, M2, M5, M6 I can derive; M3 and M4 are leading terms I hold from memory and have not derived, so
+they can fail by my memory as well as my code. Classical (Euler 1767, Lagrange 1772, Hill 1878).
+
+### Predictions (committed before running)
+
+- **M1, five in place of one.** For every m tried (½, 0.2, 0.01, 10⁻³, 10⁻⁶) there are exactly five balance points:
+  three on the line (between the masses, beyond the lighter, beyond the heavier) and two off it. The rest pair had one.
+  Kill: a count other than five from 600 seeded starts in the plane.
+- **M2, off the line the corner goes back to 1.** The two off the line stand at a = b = D for every m: equal distances
+  from both masses, and equal to the pair's own separation. The masses' ratio does not enter their place at all (at
+  rest the meeting point stood at √μ). Kill: a or b off D past 10⁻²⁵ at any m.
+- **M3, on the line the exponent changes from ½ to ⅓.** The balance point between the masses stands farther from the
+  lighter than run 3's meeting point: for small m its distance is D·(m/3)^(1/3) to leading order (at rest D·√m). Kill:
+  the slope of ln(distance) against ln m over m = 10⁻⁶ … 10⁻¹² off ⅓ by more than 0.005, or the distance over
+  (m/3)^(1/3) farther than 0.01 from 1 at m = 10⁻⁹.
+- **M4, two from memory.** (a) The inner and outer points about the lighter stand at r_H(1 ∓ r_H/3), r_H = (m/3)^(1/3):
+  (outer − inner)/r_H² tends to ⅔. (b) The point beyond the heavier stands at D(1 − 7m/12) from it to leading order.
+  Kill: (a) off ⅔ by more than 0.01 at m = 10⁻⁹; (b) (1 − distance)/m off 7/12 by more than 0.001 at m = 10⁻⁶.
+- **M5, equal masses.** At m = ½ the point between stands at the middle, where run 3's did: rest and motion agree at the
+  pair's own corner. Kill: off the middle past 10⁻²⁵.
+- **M6, the scale test.** Every balance point's place in units of D is unmoved when all lengths are scaled by 7 and when
+  both masses are scaled by 7 (the turning rate following from Kepler's law each time); it moves if the turning rate is
+  set by hand instead. Kill: any of the five moving past 10⁻²⁰ under either scaling; or not moving when the rate is
+  doubled by hand.
