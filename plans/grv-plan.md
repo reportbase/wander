@@ -292,3 +292,15 @@ Writes can move, it's not static." Claude's reading, not ruled, nothing run:
   overlay, and each write moves as the sum of the others' maps directs, carrying its own map with it (the N-body problem; the
   record of where each has been is the history, R1050). What Newton leaves out is the delay: a moved write's map is updated
   elsewhere only at light's speed, and the update carries energy (the open point).
+
+Tom (24 Nov): "We need to make some simplifying assumptions about the write". Proposed by Claude, awaiting Tom; none adopted:
+1. A write is a point: a place and nothing else, no shape of its own.
+2. Every write is alike, one unit. Then the mass at a place is the count of writes there (a count laid over writes, R896), which
+   squares "a write has mass" with "lots of writes in the same location creates mass".
+3. One moment at a time: each moment a static overlay; motion is a sequence of them, no delay.
+4. Pulls add (Newton, weak fields), in flat space of three dimensions.
+5. Only writes are sources: what arrives (light) is left out.
+6. Writes are neither made nor unmade within a run; "writing" places or moves one. (Known physics conserves mass-energy, so a
+   write from nothing would need saying where its energy came from.)
+What these give up: shape (the border, near and far about it, returns only for a cluster of writes), delay and waves, strong
+fields, and light's own pull.
