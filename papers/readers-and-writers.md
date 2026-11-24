@@ -1697,8 +1697,8 @@ mathematics. What is ours, and unsearched, is setting them beside the read.
   direction, the uniform turn.
 - A buried body is found as a standpoint is. Along the ground over a long buried cylinder the pull is exactly a Cauchy
   curve, and its depth is the curve's half-width at half height; over a ball the half-width is 0.77 of the depth. This is
-  "find the z" (§2) used in practice: the law's scale is the distance to its source. (Geophysics' depth rules and upward
-  continuation; from memory, not opened.)
+  "find the z" (§2) used in practice: the law's scale is the distance to its source. (Geophysics' depth rules, checked in Unsworth's lecture notes, and
+  upward continuation, Blakely 1995 §12.1; `plans/fcl-literature.md`.)
 - Light bent past masses on one line keeps the Cauchy along that line: images that follow the Cauchy with point z come
   from sources that follow the Cauchy with point z − Σ εᵢ/(z − aᵢ), and Cauchy sources are seen as one Cauchy per
   image. With one mass the two images multiply to −1 in units of its ring, the read's own exchange (§9), and half of
@@ -1733,8 +1733,10 @@ and are placed by masses.
 opposite facings has a form on the read's side (a read's two facings s and 1/s multiply to 1; a pull's two halves
 subtract). (2) Whether the corners owned by an amount can be had from ratios of pulls alone, as a read's corner is had
 by looking, without the masses written. (3) A check on measured gravity profiles over bodies of known depth. (4) What
-moving masses and light's own delay do to any of it; everything above is at rest or in steady orbit. (5) A search for
-where this is in print. None of this is new physics, and a pull is not a read.
+moving masses and light's own delay do to any of it; everything above is at rest or in steady orbit. (5) Done once (`plans/fcl-literature.md`): that an even spread from a point lands on a plane as the Cauchy is in
+print for light (Lu 2020; Dupuy, Belcour and Heitz 2019); its statement for gravity beside a standpoint's directions,
+the add-and-subtract difference and the Cauchy kept along a line of lens masses were not found, in one search. None of
+this is new physics, and a pull is not a read.
 
 **A single vantage and the DHV, side by side.** A read is a single hemispherical vantage; the DHV is the dual,
 drawn from no standpoint. Where the DHV is what is wanted, the list above says so: what acts out of view with no law

@@ -11,3 +11,8 @@ R2 ok
 R3  directions alone
 /usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py:2767: RuntimeWarning: overflow encountered in dot
   sqnorm = x.dot(x)
+  four places, directions (8 numbers, 7 unknowns): the truth found in 20 of 20; a solved start more than 0.01 from the truth in 0 of 20
+     scene 0: best 8.5e-16 from the truth; 7 of 40 starts solved; farthest solved 4.12e-15
+     scene 1: best 5.6e-16 from the truth; 5 of 40 starts solved; farthest solved 6.57e-16
+     scene 2: best 3.6e-15 from the truth; 25 of 40 starts solved; farthest solved 3.10e-14
+     scene 3: best 3.7e-15 from the truth; 19 of 40 starts solved; farthest solved 4.64e-14
