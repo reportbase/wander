@@ -256,3 +256,9 @@ added to a write's shape; a write is a thing with a size and a mass, and its pul
 (R1094) stays "a thing's own, with a size", the mass among what is its own. Two precisions from known physics (Claude's): mass
 also resists a push (inertia), and that the two masses are one is the equivalence principle, measured, not defined (to about
 10⁻¹⁵, MICROSCOPE; from memory); and light, with energy and no mass, gravitates too, so strictly "having energy".
+
+Tom (24 Nov): "So a write has energy not mass?" Claude's answer, not ruled: both, and "a write has mass" stands. Mass is the
+energy a thing has in its own rest frame (E = mc²). A write "occupies a discreet position" (Tom, above), so it has a frame in
+which it is at rest, and whatever has such a frame has mass. Light has no rest frame and occupies no position: by that it is not
+a write but what arrives, and it has energy with no mass. So: every write has mass, and so a pull; the precision "energy" only
+says the source of gravity is wider than the writes, light gravitating too (weakly: its energy over c²).
