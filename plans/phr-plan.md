@@ -211,3 +211,36 @@ frequency) is available for them on measurement. The microwave notch's one curve
 5% bound the predictions set. Both data sets are sampled at about 6 points a width; a finer sweep would test the reading
 to a few percent. Classical throughout (a single pole's Kramers–Kronig pair); what is recorded is that the measured
 lines are of that kind.
+
+### Run 5, finer sweeps: data recorded and predictions committed before the fit (25 Nov; Tom: "Merge, then find the finer sweep data")
+
+**Data set 3.** Carter, Khaire, Novosad and Chang, data of "scraps: an open-source Python-based analysis package for
+analyzing and plotting superconducting resonator data" (IEEE Trans. Appl. Supercond., ASC 2016), Zenodo
+10.5281/zenodo.61575, MIT licence. `Carter_ASC_2016_Paper_Figures_Data_and_Code.zip`, 28,783,805 bytes, md5
+61a30ace353ab7ecd426e06f19185be8, sha256 c85b356ec4dbb65ec9defab0a24e933ffa8fd288fbfec4803dc865b4d523a81e; not committed.
+972 sweeps (`08222016Res/RES-{1,2,3}_<power>_DBM_TEMP_<T>.S2P`, 324 each) of a NbN CPW chip, 2,001 points, frequency
+and complex transmission I, Q. No noise columns.
+
+**Data set 4.** Rieger, Günzler et al., data of "Fano Interference in Microwave Resonator Measurements" (KIT), Zenodo
+10.5281/zenodo.7767046, CC BY 4.0. `Fano Interference Data and Code.zip`, 9,204,518 bytes, md5
+4cf7087378cb0424feaa1054269ffd2b, sha256 34b9dfa440ca911a6b5cbc9e44fc5f6b35535df2489ca831b1bc4fef71d5e695; not
+committed. `Data/{undercoupled,overcoupled}/resonator_<n>_powersweep_*.npz` (18 files; the one field sweep left out),
+each 19 powers × 1,001 points, amplitude and phase. `settings.npy` (an object array) is not loaded: unpickling
+untrusted data. Their subject is Fano interference, which makes lines asymmetric; the one-pole model's complex A and
+complex linear background carry the textbook form of that asymmetry, a frequency-dependent coupling would not.
+
+Seen before this record: the file lists, the headers and array shapes, and, from the run 1 half-power rule on 25
+seeded Carter files and three Fano sweeps, the points across a line (Carter 31–53 where the rule found a line, and
+some 750–1,100 where it did not; Fano 117–162). Nothing of either width measure or any phase was computed.
+
+**Method:** run 4's script (`runs/phr/phr3.py`'s `analyse`, rescaled, four starts, residual bootstrap), unchanged,
+with 50 bootstrap resamples. Selection, fixed now: run 1's line test (peak at least 20 times the wings' rms), the full
+fit's f₀ ± 2Γ inside the sweep, and at least 20 points across Γ (fine sampling, the point of this run). Carter: a
+seeded random 200 of the 972 files (seed 1209), each judged by the rule; Fano: all 342 sweeps.
+
+- **R5.** On each set, at most 10% of qualifying sweeps have |Γ_phase − Γ_amp| beyond 3σ + 2% of Γ_amp.
+- **R6.** On each set, the median |Γ_phase/Γ_amp − 1| is under 3% (run 4's 6.5 points a width gave quartiles of
+  about ±10%; at 20 or more points it should tighten).
+- **R7.** On each set, the median data turn across f₀ ± Γ_phase/2 is 90° ± 5°.
+- **R8 (Fano).** R5–R7 hold on the Fano set as on Carter's: the asymmetry is a rotated coupling plus background, which
+  the model has. Killed if the Fano set fails R5 or R6 where Carter's passes.
