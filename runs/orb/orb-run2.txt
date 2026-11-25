@@ -1,0 +1,13 @@
+P1 symbolic: wrapped Cauchy - stage = 0 ; (1/2pi)dE/dnu - stage = (-sqrt(-1/(e - 1))*sqrt(1 - e**2)*(-2*e*sin(nu/2)**2 + e + 1) + sqrt(e + 1)*(e*cos(nu) + 1))/(2*pi*sqrt(-1/(e - 1))*(e*cos(nu) + 1)*(-2*e*sin(nu/2)**2 + e + 1))
+P2 symbolic: clock/stage - r/a = 0
+P7 symbolic: r/a in E = -e*cos(E) + 1 ; its integral from 0 - (E - e sin E) = 0
+e=0.01: P1 6.68e-52  P2 2.67e-51  P3 stage-mean-1 0.0  clock-mean-(1+e^2/2) 0.0 [clock mean 1.00005]  P4 1.34e-51  P5 payload 2.67e-51 period 1.38e-51
+e=0.1: P1 1.34e-51  P2 5.35e-51  P3 stage-mean-1 0.0  clock-mean-(1+e^2/2) 0.0 [clock mean 1.005]  P4 1.34e-51  P5 payload 2.67e-51 period 1.38e-51
+e=0.3: P1 1.34e-51  P2 5.35e-51  P3 stage-mean-1 0.0  clock-mean-(1+e^2/2) 0.0 [clock mean 1.045]  P4 1.34e-51  P5 payload 2.67e-51 period 1.38e-51
+e=0.6: P1 2.0e-51  P2 5.35e-51  P3 stage-mean-1 0.0  clock-mean-(1+e^2/2) 0.0 [clock mean 1.18]  P4 2.67e-51  P5 payload 2.67e-51 period 0.0
+e=0.9: P1 9.35e-51  P2 5.35e-51  P3 stage-mean-1 0.0  clock-mean-(1+e^2/2) 2.67e-51 [clock mean 1.405]  P4 2.67e-51  P5 payload 2.67e-51 period 1.38e-51
+e=0.99: P1 3.05e-49  P2 5.35e-51  P3 stage-mean-1 5.35e-51  clock-mean-(1+e^2/2) 8.02e-51 [clock mean 1.49005]  P4 9.35e-51  P5 payload 2.67e-51 period 0.0
+P6 e=0.3: best wrapped Cauchy misses the clock by 0.0483 at most (rho -0.3000, centre 0.0000)
+P6 e=0.6: best wrapped Cauchy misses the clock by 0.2500 at most (rho 0.6000, centre 3.1416)
+P6 e=0.9: best wrapped Cauchy misses the clock by 1.2939 at most (rho -0.9000, centre 6.2832)
+verdicts: P1 KILLED, P2 not killed, P3a not killed, P3b not killed, P4 not killed, P5 not killed, P6 not killed, P7 not killed

@@ -1,0 +1,15 @@
+# ORB run 3: P1' in plans/orb-plan.md, the push-forward of uniform E as the stage, checked in rational form.
+import sympy as sp
+e, t = sp.symbols('e t', positive=True)
+s = sp.Symbol('s', positive=True)                     # s = sqrt(1 - e^2)
+k = s/(1 - e)                                         # sqrt((1+e)/(1-e)) = sqrt(1-e^2)/(1-e)
+# nu = 2 atan t, E = 2 atan(t/k): dE/dnu = (dE/dt)/(dnu/dt)
+dEdt = sp.diff(2*sp.atan(t/k), t); dnudt = sp.diff(2*sp.atan(t), t)
+cosnu = (1 - t**2)/(1 + t**2)
+diff = sp.together(dEdt/dnudt/(2*sp.pi) - s/(2*sp.pi*(1 + e*cosnu)))
+num = sp.expand(sp.numer(diff)).subs(s**2, 1 - e**2)
+num = sp.expand(num).subs(s**2, 1 - e**2)
+res = sp.simplify(num)
+print("P1' numerator after s^2 = 1 - e^2:", res)
+print("P1'", "not killed" if res == 0 else "KILLED")
+open('runs/orb/orb-run3.txt', 'w').write(f"P1' numerator: {res}\nP1' {'not killed' if res == 0 else 'KILLED'}\n")

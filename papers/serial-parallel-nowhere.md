@@ -7607,6 +7607,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1198** (25 Nov 2026; Tom: "We know cauchy very well now. Could we use it to calculate planetary orbits", then "We
+  would have to create a payload that gives the same results", then "Yes"): ORB runs 2–3 (`runs/orb/orb2.py`, `orb3.py`,
+  50 digits and sympy, predictions committed first). **A two-body orbit is a stage and a payload**: the eccentric anomaly
+  taken evenly gives the direction from the focus the wrapped Cauchy of width β = (1 − √(1−e²))/e centred on the far
+  point (the stage, e alone, no amount); the time per direction is the stage times r/a exactly (the payload, the
+  distance, unique given the stage); its mean 1 over the stage, 1 + e²/2 over the clock; its sum Kepler's equation, so
+  the position at a given time is the payload's sum inverted; the period 2π√(a³/GM) needs a and GM; the clock's law on no
+  wrapped Cauchy (5%–129% off). Run 2's P1 killed by my code (sympy left the push-forward unsimplified; numerically
+  3·10⁻⁴⁹), run 3's P1′ not. Classical in every part; the reading ours. Not in any paper.
 - **R1197** (25 Nov 2026; Tom: "If we can prove that gravity is cauchy based, then the separation of the heat and the payload
   must also be true.   Unfortunately this says nothing about the payload, and they can be completely different.", then
   "Yes"): **the Cauchy form of a pull fixes the heat and says nothing about the payload; different payloads can give

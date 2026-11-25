@@ -1,0 +1,2 @@
+P1' numerator: 0
+P1' not killed
