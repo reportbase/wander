@@ -68,3 +68,15 @@ the sweep covers ω₀ ± 2Γ. Γ for the window is the amplitude's FWHM. Q2: am
 fits |χ|² with rms residual under 2% of the peak, killed if more than 10% have the scaled curves differing by more
 than 5% rms. Q3 and Q4 judged on the same channels, each killed if more than 10% miss. Q5 untested on this set
 unless a channel shows two lines.
+
+### Data set 2, recorded before analysis
+
+Ungerer, Sarmah, Kononov, Ridderbos, Haller, Cheung and Schoenenberger, data of "Performance of high impedance
+resonators in dirty dielectric environments", Zenodo 10.5281/zenodo.7602079 (v2, 3 Feb 2023), CC BY 4.0. `data.zip`,
+55,091 bytes, md5 760099b1a6a4ce2b71ac6a63cc09211e, sha256 64a2230f393ec492becef482887b0ba07458965f3380845c6ea0e0541eee4244;
+not committed. One curve, `Fig1c/resonance_curve.dat`: 150 points of complex S21 (real and imaginary) across a NbTiN
+resonator near 4.731 GHz, read in transmission past it (a notch). The other files hold fitted numbers only. Seen before
+this record: the headers and the first four rows. The resonant part of a notch is 1 − S21, a single pole in the ideal
+model; a mismatch on the line turns that circle about the off-resonance point (an asymmetric line), which a background
+linear in ω does not remove. That is a known way for Q2 to fail on this set; the preprocessing is not changed for it.
+Judged as set 1, with one channel: each prediction killed if this channel misses.

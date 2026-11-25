@@ -1,0 +1,20 @@
+Q1 one pole: dphi/dw - (G/2)|chi|^2/|A|^2 = 0
+Q1 oscillator: d/dw atan(gw/(w0^2-w^2)) - g(w0^2+w^2)/D = 0
+Q1 oscillator Q=10: (dphi/dw)/|chi|^2 varies by 2.2099e-01 over w0 +- gamma; 2 gamma/w0 = 2.0000e-01
+Q1 oscillator Q=100: (dphi/dw)/|chi|^2 varies by 2.0201e-02 over w0 +- gamma; 2 gamma/w0 = 2.0000e-02
+Q1 oscillator Q=1000: (dphi/dw)/|chi|^2 varies by 2.0020e-03 over w0 +- gamma; 2 gamma/w0 = 2.0000e-03
+channels: 352 Counter({'ok': 237, 'noise': 86, 'narrow': 29})
+analysed 237 ; Lorentzian (resid<2%) 0
+Q2 diff>5% among Lorentzian: (0, 0)
+Q3 phase-peak Gamma off >5%: (0, 0)
+Q3 phase-span Gamma off >5%: (0, 0)
+Q4 total turn off pi by >10 deg: (0, 0)
+Q4 half-width turn off 90 by >5 deg: (0, 0)
+medians over analysed: f0 5215.0 Gamma 1.455 resid 0.0886 diff 0.3011 Gpk -0.444 Gspan 2.177 turn 322.6 half 85.9 pts/Gamma 7.3
+  resid: quartiles [0.0692 0.0886 0.1127]
+  diff: quartiles [0.2345 0.3011 0.3896]
+  Gpk: quartiles [-0.6307 -0.4436 -0.2431]
+  Gspan: quartiles [0.3849 2.1774 2.8067]
+  turn: quartiles [165.4937 322.5542 338.352 ]
+  half: quartiles [77.7189 85.8584 94.6862]
+  ptsPerGamma: quartiles [5.9137 7.2751 9.0898]
