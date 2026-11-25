@@ -288,3 +288,24 @@ Seen after the run, not tested: what is left between these runs and the paper's 
 travel time across the orbit, which shifts the places' dates by up to about eight days, most near pericentre), the paper's
 joint fit of several stars with one mass and one R₀, and the instruments' offsets in velocity (Keck against VLT). Each is
 a write the paper carries in. Whether they close the gap is a run of its own; this plan stops here unless Tom asks.
+
+### Run 6: the Rømer delay, predictions before the data (25 Nov 2026; Tom: "Merge and proceed")
+
+Mode in `runs/kpl/kpl6.py`: run 5's joint fit with each look's date taken as the light's arrival, the light emitted
+earlier by z/c (z the star's distance behind the focus along the line of sight, z = C·X + H·Y in mas, times R₀ into au;
+four fixed-point steps). Classical; the paper's model has it. The delay is a write in the sense of an amount: it needs
+R₀ and the light's speed.
+
+The checks before the data (seed 1218, 20 draws each, the paper's orbit generated with the delay):
+- fitted with the delay (`runs/kpl/kpl-run6-check-gen1-fit1.txt`): e 0.8843 ± 0.0018, P 15.996 ± 0.018 yr,
+  a 125.64 ± 0.61 mas, R₀ 8306 ± 130 pc: unbiased.
+- fitted without it, as run 5 did (`runs/kpl/kpl-run6-check-gen1-fit0.txt`): e 0.8842, P 15.992, a 125.98, R₀ 8256.
+  So leaving the delay out moves the fit by about −0.004 yr in P, +0.34 mas in a, −0.0001 in e, −50 pc in R₀: a tenth or
+  less of the gap runs 3–5 left (P +0.08 yr, a −2.6 mas, e −0.004).
+
+Predictions, written after the checks and before the data:
+- **R1.** With the delay, e, P and a move from run 5's by less than 0.002, 0.02 yr and 1.5 mas.
+- **R2.** The gap stays: P still more than 0.05 yr and a more than 1.7 mas from the paper's (run 5's Z3 bounds).
+- **R3.** R₀ moves by less than 150 pc from run 5's 8629.
+If R1–R3 hold, the delay is not what separates these fits from the paper's; what is left is the paper's joint fit of
+several stars and the instruments' velocity offsets.
