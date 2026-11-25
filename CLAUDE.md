@@ -623,6 +623,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1196 (25 Nov; Tom: "update the essays"): essay 33 brought up to FCL runs 9–12 and R1189–R1195 (new §9–§12; the
+  kills §13, "does not say" §14, "what it changes" §15), its README row and `essays.html` card. No new claim.
   R1195 (25 Nov; Tom: "However classical does not distinguish the payload from the heat.    We show that gravity is
   separate from the heat"): recorded. Claude's precision, not ruled: the classical formula has a kernel and a density
   but holds both as gravity's; the runs show the kernel is the stage's heat (the same for a look) and gravity's part

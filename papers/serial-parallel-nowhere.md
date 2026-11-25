@@ -7607,6 +7607,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1196** (25 Nov 2026; Tom: "update the essays"): PR #497 merged. Essay 33 brought up to FCL runs 9–12 and
+  R1189–R1195: four new sections (§9 what a pull's direction can find, §10 adding and subtracting from the look's side,
+  §11 a tunnel under a hill, §12 the front and the depth), the kills now §13 (run 11's D3 added), "what this does not
+  say" §14, "what it changes" §15 with R1190's narrowing of "not an insight about gravity", R1195's heat and paint and
+  R1189's agreement as a result. Its README row and `essays.html` card. No new claim; no other essay touches the thread.
 - **R1195** (25 Nov 2026; Tom: "However classical does not distinguish the payload from the heat.    We show that
   gravity is separate from the heat"): **the classical account does not tell the heat from the payload; here gravity is
   shown separate from the heat.** Recorded as said. Claude's precision, not ruled: the classical formula does carry two
