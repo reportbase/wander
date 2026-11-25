@@ -246,3 +246,12 @@ grid against the cut Cauchy; R6 as a limit at e = 1 − 10⁻ⁿ, n = 2, 4, 8.
   10⁻⁴⁵ at 50 digits for η = 0.01, 0.5, 2, 10.
 
 Fail only by my algebra or code.
+
+**Run 7** (`runs/orb/orb7.py`, output `runs/orb/orb-run7.txt`). R1′ not killed (y − p·t = 0 as a rational function).
+R3′ killed by my set-up: its sympy clause is 0, but at η = 10, coth η − 1 ≈ 4·10⁻⁹ loses nine of the fifty digits and
+e^η ≈ 22,026 multiplies what is left, so the absolute gap is 7·10⁻⁴⁰, over my 10⁻⁴⁵; a bound on the absolute gap was
+the wrong measure.
+
+## Run 8 (prediction committed before the run)
+
+- **R3″.** The relative gap |K(coth η) − e^η|/e^η is under 10⁻⁴⁰ at 50 digits for η = 0.01, 0.5, 2, 10.
