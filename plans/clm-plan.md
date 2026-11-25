@@ -61,3 +61,26 @@ direction-by-direction pairing is what removes it. Classical in its parts (Newto
 whether the column premise as the starting point, and its equivalences, are stated in print.
 
 ## Runs
+
+### Run 1 (`runs/clm/clm.py`, output `runs/clm/clm-run1.txt`)
+
+**C2 killed, by my set-up.** The shell summed over directions is exactly G·M/d² outside and exactly zero inside in
+sympy (the identity holds), but the 30-digit quadrature in θ came out 2.6·10⁻²¹ off with a complex part of 8·10⁻²¹, past
+my 10⁻²⁵: the column σa/√(a² − d² sin²θ) is infinite at the edge direction θ = asin(a/d), the endpoint is rounded, and
+the root of a tiny negative number went complex. My quadrature, not the identity; killed by its letter all the same.
+- **C1 not killed**: a column slid from [1, 2] to [5, 6] leaves its direction's pull unchanged exactly at p = D − 1 in
+  D = 2, 3, 4, and moves it by +92% and −48% at p = D − 1 ∓ ½.
+- **C3 not killed**: from any inside place a direction and its opposite meet the shell at equal |cos χ|, identically
+  (sympy); at p = 2 the two ends' pulls equal, at p = 1.5 and 2.5 in the ratio 0.758 and 1.319.
+- **C4 not killed**: f = A/r² + B·r pulls from outside as the point mass at the centre (A·M/d² + B·M·d) for every A, B,
+  and from inside B·M·b, zero only at B = 0 (exact).
+- **C5 not killed**: at p = 1, 1.5, 2.5, 3 the outside shell is off the point mass by −8.8%, −5.7%, +8.9%, +21.6% and
+  pulls inside (0.39, 0.28, −0.55, −1.54 of the outside value); at p = 2 both exact to 10⁻⁴⁷; a ring at p = 1 in two
+  dimensions to 10⁻⁴².
+- **C6 not killed**: two shells and a place off both axes, lengths × k at fixed density: the pull × k exactly, its
+  direction unmoved.
+
+### Run 2, predictions (committed before its code)
+
+- **C2′.** The same outside sum by quadrature in w = sin²θ over [0, a²/d²] with the endpoint exact (a = 1, d = 3, σ = 1),
+  real throughout, equals 4π/9 to 10⁻²⁵; and at d = 1.5 and d = 10 equals 4π/d² to 10⁻²⁵. Kill past 10⁻²⁵.

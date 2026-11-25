@@ -1,0 +1,38 @@
+C1: a unit column (uniform density, integral of rho dr = 1) at r in [1,2] against [5,6]; pull per direction
+  D=2 p=1/2: far/near - 1 = 0.9232916213099117
+  D=2 p=1: far/near - 1 = 0
+  D=2 p=3/2: far/near - 1 = -0.48475427974723634
+  D=3 p=3/2: far/near - 1 = 0.9232916213099117
+  D=3 p=2: far/near - 1 = 0
+  D=3 p=5/2: far/near - 1 = -0.48475427974723634
+  D=4 p=5/2: far/near - 1 = 0.9232916213099117
+  D=4 p=3: far/near - 1 = 0
+  D=4 p=7/2: far/near - 1 = -0.48475427974723634
+C1 not killed
+C2: thin shell radius a, density sigma; pull summed over directions, column sigma/|cos chi| per crossing (G = 1)
+  outside, summed over directions: 4*pi*a**2*sigma/d**2 ; GM/d^2 = 4*pi*a**2*sigma/d**2 ; equal: True
+  inside, summed over directions: 0
+  quadrature in theta, a=1, d=3: (1.39626340159546366153635554421 - 8.26877867667483450657834347526e-21j) against 4*pi/9 = 1.39626340159546366153895261479 diff (-2.6e-21 - 8.27e-21j)
+C2 KILLED
+C3: from an inside place, a direction and its opposite meet the shell at equal angles (equal columns)
+  |cos chi| forward = |cos chi| backward, identically: True (both = sqrt((b.u)^2 - b^2 + a^2)/a)
+  p=2: the two ends' pulls in the ratio 1.0
+  p=1.5: the two ends' pulls in the ratio 0.75819371971
+  p=2.5: the two ends' pulls in the ratio 1.31892414037
+C3 not killed
+C4: f = A/r^2 + B r, a thin shell integrated directly (sympy)
+  r term, outside: 4*pi*a**2*d*sigma = M d: True ; inside: 4*pi*a**2*b*sigma = M b: True
+  1/r^2 term, outside: 4*pi*a**2*sigma/d**2 = M/d^2: True ; inside: 0
+  so with f = A/r^2 + B r: outside A M/d^2 + B M d (the point mass at the centre), inside B M b, zero only at B = 0
+C4 not killed
+C5: f = r^-p, shell a = 1 (M = 4 pi), outside at d = 2, inside at b = 1/2 (mpmath, 40 digits)
+  p=1.0: outside/point - 1 = -0.0880204; inside/outside = 0.386063
+  p=1.5: outside/point - 1 = -0.057191; inside/outside = 0.277401
+  p=2.0: outside/point - 1 = 0.0; inside/outside = 7.85913e-48
+  p=2.5: outside/point - 1 = 0.0886621; inside/outside = -0.554803
+  p=3.0: outside/point - 1 = 0.215973; inside/outside = -1.54425
+  ring, p=1: outside 3.141592653589793238462643 against 2 pi/2 = 3.141592653589793238462643; inside 1.68e-42
+C5 not killed
+C6: two shells, a place off both axes; lengths x k at fixed volume density (sigma x k)
+  F(scaled) - k F: [0, 0, 0] (direction unmoved, strength x k)
+C6 not killed
