@@ -623,6 +623,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1225 (25 Nov; Tom: "update the essays and demos"): GDI, MVM, LDL, ACC and COS in essays 4 §13, 6 §12 and 7 §7,
+  and as notes on `look-pull.html` and `thin.html` with their `demos.html` cards; no new claim, no script changed.
   ACC run 2 (`runs/acc/acc2.py`, 25 Nov; SPN R1224; Tom: "1 then 3"): a pair in orbit, the whole 1PN field, exact at
   rational points: the 7/2 survives (the partner adds G² and velocity terms, no acceleration), the whole equals EIH's
   test-body limit.

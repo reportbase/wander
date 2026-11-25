@@ -440,6 +440,16 @@ belongs to the standpoint, not to the hole. Over a field 42 μas across it is in
 to first order; negligible there, not absent. The hole itself is its writes, the spacetime and the gas; the ring
 model is a representation of it, one that cannot yet tell them apart.
 
+A moving mass parts a look from a pull (MVM, ACC, exact; essay 33 §14). The look points where the light left, the
+retarded place, as aberration says; the present place follows only with the speed and the distance carried in. The
+weak-field pull of a mass in steady motion points where it is now, off only by the square of the speed. A mass at rest
+but speeding up is looked at, and pulled by an opposite charge, toward one place half its acceleration times the
+light-time squared along it, where it will be a light-time later; its gravity pulls toward a place seven times as far,
+and a partner in orbit doing the accelerating keeps the seven (the Einstein–Infeld–Hoffmann equation). Each departure is
+a ratio of lengths, the acceleration times the distance over c², and scaling the world moves none of them. A lens's two
+images also arrive apart in time: the delay's shape comes from their directions alone, its size in days from one amount,
+the lens's mass (LDL).
+
 ---
 
 ## 8. What it comes to
