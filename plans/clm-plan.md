@@ -1,0 +1,63 @@
+# CLM: the pull from columns, a derivation path
+
+25 Nov 2026; Tom: "I think this is more than sorting, it shows a different derivation path.", then "yes". The static
+gravity runs (GRV, FCL, COS) built a pull from a place outward: each direction from the place, weighed by the matter
+along it, summed over directions. This plan asks what that route assumes and what it derives. Exact arithmetic (sympy)
+and 30-digit quadrature (mpmath); no data. A pull is not a read (R1183); the route is a way to think about gravity, not
+new physics (R1190).
+
+## The premise, stated
+
+A central, additive pull: a mass element dm at distance r along the unit direction u pulls a body at the place by
+G·dm·f(r)·u. In D dimensions dm = ρ·r^(D−1)·dr·dΩ, so the pull from one direction is
+
+  dF(u) = G·u·dΩ·∫ ρ(r u)·f(r)·r^(D−1) dr.
+
+**The column premise (P):** the pull from a direction depends only on how much matter lies along it, the column
+∫ ρ dr, and not on where along the direction it sits. Then the route is: directions from the place, each weighed by its
+column, summed.
+
+## What I know beforehand (said, so the predictions are not blind)
+
+- (P) holds for every ρ exactly when f(r)·r^(D−1) is constant (a linear functional of ρ depending only on ∫ρ dr has a
+  constant kernel): f ∝ r^(−(D−1)), the inverse square in three dimensions. That step is immediate; C1 only checks it.
+- Newton, *Principia* Book I: Proposition 70 (no pull inside a shell, by pairing the two ends of each chord) and
+  Proposition 71 (outside, the shell pulls as its mass at the centre); Propositions 77–78 treat the force growing as r,
+  for which a shell also pulls from outside as its mass at the centre. From memory; to check.
+- So the outside shell theorem does **not** single out the inverse square: f = A/r² + B·r passes it for every A, B. I
+  said otherwise in the message before this plan ("the converse ... so the two are equivalent"); that was wrong, and the
+  predictions below say what I now expect.
+
+## Predictions (committed before any code)
+
+- **C1 (column only).** In D = 2, 3, 4, sliding a fixed column along one direction (the same ∫ρ dr, placed at different
+  distances) leaves that direction's pull unchanged exactly when p = D − 1 for f = r^(−p); for p = D − 1 ± ½ it changes
+  (by more than 1% between a column at r ∈ [1, 2] and at r ∈ [5, 6]).
+- **C2 (the shell from columns).** A thin shell of radius a and surface density σ in three dimensions. Summing over
+  directions from the place, each direction's column being σ/|cos χ| at each crossing (χ the angle to the shell's normal
+  there), gives at an outside place d > a exactly G·M/d² toward the centre, M = 4πa²σ (sympy), and at an inside place
+  exactly zero.
+- **C3 (why inside is zero).** From any inside place, the two ends of every chord meet the shell at equal angles, so a
+  direction and its opposite carry equal columns (exact, sympy, for every inside place and direction). Under (P) the two
+  pulls cancel direction by direction; for f = r^(−p), p ≠ 2, the two ends' pulls are in the ratio (r₁/r₂)^(2−p) and do
+  not cancel.
+- **C4 (the Hooke exception).** For f = A/r² + B·r in three dimensions, the outside shell pull equals the point mass at
+  the centre for every A and B (exact); the inside pull is zero only when B = 0 (it is B·M times the place's offset from
+  the centre). So the outside theorem allows the r term; outside and inside together leave only the inverse square in
+  this family.
+- **C5 (power laws).** For f = r^(−p), p ∈ {1, 1.5, 2.5, 3}, a shell at d = 2a fails the outside theorem (off by more than
+  1%) and pulls inside (at half the radius from the centre, more than 1% of the outside value); at p = 2 both hold to
+  10⁻²⁵. In two dimensions a ring at p = 1 has no inside pull and pulls from outside as its mass at the centre.
+- **C6 (scale).** Lengths × k at fixed density: every direction unmoved, the strength × k (each column × k); a ratio of
+  two places' pulls unmoved.
+
+Kill: an identity (C2, C3, C4's exact parts, C6) not exact in sympy or off past 10⁻²⁵ in quadrature; C1 or C5 a
+threshold not met.
+
+What it would answer: whether "directions weighed by columns" is a starting point equivalent to Newton's law. If C1–C4
+hold: (P) is equivalent to the inverse square (in D dimensions, 1/r^(D−1)); from (P) the shell theorems follow by
+summing directions, no field equation solved; the outside theorem alone is weaker (it admits the r term), and (P)'s
+direction-by-direction pairing is what removes it. Classical in its parts (Newton 70, 71, 77); the claim to check is
+whether the column premise as the starting point, and its equivalences, are stated in print.
+
+## Runs
