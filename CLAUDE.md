@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1230 (25 Nov; Tom: "the connection between observation and gravity is potentially very interesting.", "yes, 1 then
+  2"): LGS (`plans/lgs-plan.md` + `runs/lgs/`): light's and gravity's inverse squares one premise on one stage (the
+  brightness theorem, the column), F = B·D and g = Gρ(4R/3)·D, a ball's g/F distance-free; LNS (`plans/lns-plan.md` +
+  `runs/lns/`): a lens reads the column with the pull's law at D = 2. Nothing killed; classical; *Reads and Writes* §7.
   R1229 (25 Nov; Tom: "read write framing is supported when it derives the same results.    its not going to derive new
   phyics, maybe simplified derivation, but not new or different physics.", "yes and merge"): **the framing is supported
   when it derives the same results; no new or different physics, at most a simpler derivation, claimed only where shown.**

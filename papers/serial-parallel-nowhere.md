@@ -7607,6 +7607,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1230** (25 Nov 2026; Tom: "the connection between observation and gravity is potentially very interesting.", then
+  "yes, 1 then 2"): LGS and LNS (`plans/lgs-plan.md`, `plans/lns-plan.md`, `runs/lgs/`, `runs/lns/`, exact), predictions
+  first, nothing killed. LGS: light's inverse square and gravity's are one premise on one stage, what a direction carries
+  does not depend on how far along it its source lies (the brightness theorem; CLM's column); a ball's flux B·D and pull
+  Gρ(4R/3)·D on the same D = π(R/d)², so one ball's pull over its light is a mass-to-light reading with no distance;
+  a cube loses it (76% from 0.5 to 20 sides), a medium (κR = 0.1) breaks light's half of the premise; L5 held by
+  construction. LNS: a lens reads the column and lays it on the sky's plane with the pull's law one dimension down
+  (1/r at D = 2), so only the column inside the impact radius bends the light; N1 could not fail (shift invariance over
+  the whole path), N4 rests on N3's ring law. Classical throughout; support by the same results (R1229).
 - **R1229** (25 Nov 2026; Tom: "read write framing is supported when it derives the same results.    its not going to
   derive new phyics, maybe simplified derivation, but not new or different physics.", then "yes and merge"): **the
   framing is supported when it derives the same results; it will not give new or different physics, at most a simpler

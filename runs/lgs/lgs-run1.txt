@@ -1,0 +1,20 @@
+L1: F = pi*B*R**2/d**2 ; g = 4*pi*G*R**3*rho/(3*d**2) ; F = B D: True ; g = G rho (4R/3) D: True
+L1 not killed
+L2: D=2: radiance independent of d exactly when p in [1]
+L2: D=3: radiance independent of d exactly when p in [2]
+L2: D=4: radiance independent of d exactly when p in [3]
+L2 not killed
+L3: kappa R = 0.1, d = 2.0 R: F/(B D) = 0.88680646, g/F = 1.5035223
+L3: kappa R = 0.1, d = 5.0 R: F/(B D) = 0.65175549, g/F = 2.045757
+L3: kappa R = 0.1, d = 20.0 R: F/(B D) = 0.14488389, g/F = 9.2027716
+  (without absorption g/F = 4/3 at every d: 1.333333333333333333333333 )
+L3 not killed
+L4: ball g/F = 4*G*R*rho/(3*B) (no d)
+  cube face-on at 0.5 sides: g/F = (G rho/B) x 0.54176
+  cube face-on at 2 sides: g/F = (G rho/B) x 0.691937
+  cube face-on at 20 sides: g/F = (G rho/B) x 0.952601
+L4 not killed
+L5: F with the hidden ball = pi*B/25 = F of the big ball alone; g rises by pi*G*rho/6000 = G (4/3) pi r^3 rho / 8^2: True
+L5 not killed
+L6: lengths x k: F unmoved: True ; g x k: True
+L6 not killed

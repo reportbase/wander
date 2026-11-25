@@ -1,0 +1,12 @@
+N1: alpha at z0 = -5b, 0, 7b: [4*G*M/(b*c**2), 4*G*M/(b*c**2), 4*G*M/(b*c**2)] ; split 1/3 at -3b and 2/3 at 4b: 4*G*M/(b*c**2)
+N1 not killed
+N2: alpha = 4*G*M/(b*c**2) = 4GM/(c^2 b): True
+N2 not killed
+N3: ring (4G lam/c^2 units): outside at 2a 3.14159265358979323846264338328 against 2 pi a/2 = 3.14159265358979323846264338328; inside 1.68e-42
+  the kernel (xi - xi')/|xi - xi'|^2 is 1/r^(D-1) at D = 2: CLM's column premise on the sky's plane
+N3 not killed
+N4: uniform disc of column 1 (inside its edge): alpha = 4*pi*G*xi/c**2; 4 G M(<xi)/(c^2 xi) equal: True
+N4: 1/(1 + s^2): alpha = 4*pi*G*log(xi**2 + 1)/(c**2*xi); 4 G M(<xi)/(c^2 xi) equal: True
+N4 not killed
+N5: lengths and masses x k: alpha unmoved; masses x k alone: alpha x k: True
+N5 not killed

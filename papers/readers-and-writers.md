@@ -1841,7 +1841,13 @@ pull to the read's situation and adds per direction only the amount, so the stag
 the classical law is built. This is support of the kind the framing can have (R1229): it derives the same result,
 no new or different physics (Newton's cone argument already holds the content), and here a simpler route to one part,
 the inside of a shell from a chord's two equal angles with no field equation; and a pull is still not a read: it shares the stage
-and sums along each direction where a read counts once.
+and sums along each direction where a read counts once. Light and gravity stand on it alike (LGS, LNS, exact): the
+brightness theorem (radiance unchanged along a ray) is light's inverse square as the column is gravity's, so a ball's
+light is B·D and its pull Gρ(4R/3)·D on one D, and one ball's pull over its light is a mass-to-light reading with no
+distance in it (a cube's moves 76% between half a side and twenty sides; a medium that absorbs breaks light's half);
+and a lens reads the pull's own take, the column along the line of sight, laid on the sky's plane with the pull's law
+one dimension down (1/r), so only the column inside the impact radius bends the light. What the look sees bent is a
+column's pull, carried to it as directions. Classical in every part; support by the same results.
 (2) Answered for two masses at rest (FCL run 9, doubles): yes. On the line between them the meeting place is where the
 pull's direction flips, found with no strength, no mass and no G; off the line, the pull's directions at four places a
 counted step apart, or directions and ratios of strengths at three, give both masses' places and their ratio in steps.
@@ -2895,7 +2901,7 @@ reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `
 `plans/swp-plan.md`, `runs/swp/`. Three laws on the sphere: `plans/eul-plan.md`, `runs/eul/`. Euler's formula as a count of
 reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Loops among standpoints: `plans/tlp-plan.md`, `plans/mny-plan.md`, `runs/tlp/`, `runs/mny/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The two completions tested blind, and the odd sums: `plans/twc-plan.md`, `runs/twc/`. The distance between
 standpoints: `plans/frg-plan.md`, `runs/frg/frg.py`. A flat chart in space: `plans/flc-plan.md`, `runs/flc/`. Epicycles and
-aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The pull by direction: `plans/grv-plan.md`, `runs/grv/`. Bodies, motion, delay and the cosine weight (§7, items 1, 2 and 4): `plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`, `plans/cos-plan.md`, `plans/clm-plan.md`, with `runs/gdi/`, `runs/mvm/`, `runs/ldl/`, `runs/acc/`, `runs/cos/`, `runs/clm/`. The data cases:
+aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The pull by direction: `plans/grv-plan.md`, `runs/grv/`. Bodies, motion, delay and the cosine weight (§7, items 1, 2 and 4): `plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`, `plans/cos-plan.md`, `plans/clm-plan.md`, `plans/lgs-plan.md`, `plans/lns-plan.md`, with `runs/gdi/`, `runs/mvm/`, `runs/ldl/`, `runs/acc/`, `runs/cos/`, `runs/clm/`, `runs/lgs/`, `runs/lns/`. The data cases:
 `plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, `plans/phr-plan.md`, `plans/frd-plan.md`, `plans/kpl-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`, `runs/phr/`, `runs/frd/`, `runs/kpl/`; each records its
 runs as they came out, the killed ones too, and none alone establishes the sort. Pages: `read.html`, `pinhole.html`,
 `crosshairs.html`, `heat-cube.html`, `euler.html`, `approach.html`, `slide-rule.html`, `star-field.html`. The read as a
