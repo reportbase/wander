@@ -103,3 +103,22 @@ theorem alone is weaker: the force growing as r passes it too (C4). The inside t
 among A/r² + B·r and among powers it leaves only the inverse square (C4, C5). Scaling moves no direction (C6).
 Classical in its parts (Newton, *Principia* I, 70, 71, 77, from memory); whether the column premise is stated in print
 as a starting point equivalent to the law is the open question for the search.
+
+### The search (one round, 25 Nov, at snippet depth)
+
+- Wikipedia's *Shell theorem* has the converse: a central force law that adds over the shell allows the extra term
+  (the r law), and requiring no force inside a hollow ball excludes it, leaving the inverse square unique. So C4 and C5
+  are in the standard account (R1206: well known).
+- Newton's Proposition 70 proves the inside case by pairing opposite parts of the sphere, and the cone of small solid
+  angle cutting a shell on its near and far sides is the classical form of the argument (Cavendish's null method, as
+  told in arXiv:1608.01520). C3 is that argument.
+- Proofs of Proposition 71 by the solid angle a sphere subtends are in print ("Newton revisited", arXiv:0910.4807;
+  "On Newton's shell theorem", ResearchGate). So C2's route by directions is known too.
+- Not found: the premise (P) stated by itself, "a direction's pull is its column", as a starting point equivalent to
+  the law. It is one line away from what is in print (the r² of the cone's cross-section cancelling the 1/r²), and Gauss's
+  law is the same fact in flux form, so I would not call it new.
+
+Plain assessment: the derivation path is real and exact, and it is Newton's own (the cone argument of Propositions 70
+and 71), with Gauss's law its field-equation form. What the stage adds is where it sits: the pull as the read's cosine
+weight over directions with each direction weighed by its column (COS), so the inverse square is the condition that a
+direction's weight is its amount alone, wherever along it the amount lies.
