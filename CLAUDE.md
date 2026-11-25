@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  ORB runs 2–3 (`runs/orb/orb2.py`, `orb3.py`, 25 Nov; SPN R1198; Tom: "We would have to create a payload that gives the
+  same results", "Yes"): a two-body orbit as a stage and a payload, exact: even eccentric anomaly gives the direction from
+  the focus the wrapped Cauchy of width β centred on the far point; time per direction is that times r/a (the payload);
+  its sum is Kepler's equation; the period needs a and GM. P1 killed by my code (sympy), P1′ not. Not in any paper.
   R1196 (25 Nov; Tom: "update the essays"): essay 33 brought up to FCL runs 9–12 and R1189–R1195 (new §9–§12; the
   kills §13, "does not say" §14, "what it changes" §15), its README row and `essays.html` card. No new claim.
   R1195 (25 Nov; Tom: "However classical does not distinguish the payload from the heat.    We show that gravity is
