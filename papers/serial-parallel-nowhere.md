@@ -7607,6 +7607,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1203** (25 Nov 2026; Tom: "We have found repeatedly that cauchy is misunderstood."; then "This is an internal
+  document so we didn't need to be careful, just accurate, our assessments can can be modified later."): **the Cauchy is
+  repeatedly misunderstood**: read as a law of amounts, a heavy tail with a missing mean, where every test found the law
+  of directions a turn lays and the amount carried elsewhere (LGO, CCA, FLR, GRV/FCL, ORB, and our own CAH). The numbers
+  are right throughout; the reading is what is wrong; TCF bounds the claim (no turn, no Cauchy reading). *Reads and
+  Writes* §11 "The Cauchy is repeatedly misunderstood". **In the internal working documents (Reads and Writes, SPN, the
+  plans), state assessments accurately and plainly, without hedging for an outside reader; they are modified as the
+  evidence changes.** Narrows R364 and R925 to published text: calibration against other work's standing still waits for
+  publication, but an internal assessment is said as it stands.
 - **R1202** (25 Nov 2026; Tom: "Record your findings in the read write papers and essays for later confirmations."):
   ORB runs 2–5 and the search of R1201 recorded for later confirmation, not claimed: *Reads and Writes* §7 item 8 now names
   the classical pieces (β as Brouwer and Clemence's, not Laplace's; McCullagh's closure) and what one search did not find

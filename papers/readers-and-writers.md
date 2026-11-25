@@ -2653,6 +2653,20 @@ and the tower is 15 metres tall and 60 away: the one amount. **Checked** (`runs/
 - **The acts move.** An observer reads while it stands and turns, places while it walks and counts, and has an amount
   when it agrees a unit.
 
+**The Cauchy is repeatedly misunderstood.** Each case below and each test that put the Cauchy to data found the same
+thing: the law is read as a law of amounts, a heavy-tailed distribution of some quantity whose missing mean is a
+pathology, when it is the law of directions a turn lays, the amount carried by something else. The cases: LIGO's heavy
+tail was a t and one transient, the Cauchy in the direction [H1 : L1] (below); canonical correlation's "shared variance"
+is the square of a cosine of an angle between two planes of data (CCA); Fieller's "exclusive" interval for a ratio is an
+arc of directions through the slope chart's infinity (FLR); the half-space's Poisson kernel is held as part of gravity's
+formula, where it is the stage, the same for a look, and gravity's part the paint (GRV, FCL; §7); the wrapped Cauchy sits
+in Kepler's dE/dν, set by the eccentricity alone, unread as a stage beside the payload r/a (ORB; §7 item 8); and the same
+reading misled our own earlier work, the turn's 2/π taken as the payload's (CAH). The classical numbers are right in every
+case; what is misunderstood is what the law is. The one case where no turn could be named (seed dispersal, below) bounds
+the claim, not the finding. This is an assessment in an internal working document, stated as plainly as the evidence
+allows, and is to be modified as the evidence changes (Tom, 25 November: "This is an internal document so we didn't
+need to be careful, just accurate, our assessments can can be modified later.").
+
 **LIGO.** In open data from the two LIGO detectors (Abbott et al. 2023; 512 s, about two million whitened samples each),
 each detector's signal taken alone is an amount, and its heavy tail is one loud transient on a law of finite spread: block
 means shrink as n^(−½), which nothing Cauchy can do. The Cauchy is in the direction [H1 : L1] of the two read at one
