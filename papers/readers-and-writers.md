@@ -1843,7 +1843,12 @@ exact) for a mass in uniform motion: a look and a pull, one direction at rest, p
 left, the retarded place, and the present place follows only with the speed and the distance carried in; the pull in
 linearized gravity points where the mass is now, departing only at order β² (a uniformly moving charge's field points
 there exactly). Scaling every length and time moves neither direction. Past β = 1/√3 the pull on the line of motion
-reverses (known, and debated). Open still: accelerated masses, and light's delay past a lens. (5) Done once (`plans/fcl-literature.md`): that an even spread from a point lands on a plane as the Cauchy is in
+reverses (known, and debated). Light's delay past a lens sorts the same way (LDL, exact): the two images' delay has
+its shape from their directions alone, for a point mass ½(q − 1/q) for the extra path and ln q for the slowing, q the
+ratio of the images' distances from the lens (the slowing the exchange's own logarithm, the geometric part never the
+smaller), while for an isothermal sphere the extra paths cancel and the delay is all the slowing; its size is an amount,
+4GM(1 + z)/c³ for the point mass, so a delay counted in days gives the mass with no distance. Open still: accelerated
+masses. (5) Done once (`plans/fcl-literature.md`): that an even spread from a point lands on a plane as the Cauchy is in
 print for light (Lu 2020; Dupuy, Belcour and Heitz 2019); its statement for gravity beside a standpoint's directions,
 the add-and-subtract difference and the Cauchy kept along a line of lens masses were not found, in one search. None of
 this is new physics, and a pull is not a read.

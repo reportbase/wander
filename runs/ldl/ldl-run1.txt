@@ -1,0 +1,15 @@
+T1 stationary: 0 0
+T1 beta 1/7 (q 1.15342519232): geometric - (q - 1/q)/2 = 2.8e-191; Shapiro - ln q = 7.0e-192; T2 ratio geo/Shapiro 1.0033990522975782618
+T1 beta 1/2 (q 1.64038820320): geometric - (q - 1/q)/2 = 2.8e-191; Shapiro - ln q = 1.4e-191; T2 ratio geo/Shapiro 1.0413293986986877465
+T1 beta 1 (q 2.61803398875): geometric - (q - 1/q)/2 = 5.6e-191; Shapiro - ln q = 2.8e-191; T2 ratio geo/Shapiro 1.1616859047586931998
+T1 beta 3 (q 10.9083269132): geometric - (q - 1/q)/2 = 2.2e-190; Shapiro - ln q = 1.1e-190; T2 ratio geo/Shapiro 2.2633467598192421224
+T1 beta 25/2 (q 158.243680632): geometric - (q - 1/q)/2 = 3.6e-189; Shapiro - ln q = 2.2e-190; T2 ratio geo/Shapiro 15.623332122537233994
+T1 odd under q -> 1/q: True; zero at q = 1: True
+T2 g(1) = 0, g'(q) = (q - 1)**2/q**2 (>= 0 for q > 0), limit of ratio at q -> 1: 1, at q -> oo: oo
+T3 SIS stationary: 0 0
+T3 SIS geometric difference 0; potential difference 2/3; total 2*beta
+T4 point mass: T under lengths and times scaled by k (GM -> k GM, c fixed): k; q depends only on beta/theta_E: angles unchanged
+T4 M from a counted delay and q: M = Delta_t*c**3/(4*G*(z + 1)*(q/2 + log(q) - 1/(2*q))) (no distance)
+T5 f(sqrt r) - [ (sqrt r - 1/sqrt r)/2 + ln r / 2 ] = 0
+   beta 0.333333: t(-) - t(+) = 0.669740352221836766743868556631; f(q) = 0.669740352221836766743868556631
+   beta 2.0: t(-) - t(+) = 4.59117429878527614806859609838; f(q) = 4.59117429878527614806859609838

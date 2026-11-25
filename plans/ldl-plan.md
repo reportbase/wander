@@ -30,3 +30,21 @@ Kill conditions: an identity failing past an exact zero (or 10⁻⁴⁰ numerica
 failing at any q > 1 tried.
 
 ## Runs
+
+### Run 1 (`runs/ldl/ldl.py`, output `runs/ldl/ldl-run1.txt`): nothing killed
+
+- **T1 not killed**: the geometric part is ½(q − 1/q) and the Shapiro part ln q to 10⁻¹⁸⁹ at β = 1/7 … 25/2; both odd
+  under q ↔ 1/q and zero at the ring; the Fermat times at 50 digits give the same delay (0.66974… at β = 1/3).
+- **T2 not killed**: 2·(geometric − Shapiro) = q − 1/q − 2 ln q has derivative (q − 1)²/q² ≥ 0 and is 0 at q = 1, so the
+  geometric part is never less; the ratio runs 1.0034 at q = 1.15 to 15.6 at q = 158, limit 1 at the ring, unbounded.
+- **T3 not killed**: for the SIS the two images' extra paths are equal (θ± − β = ±1), the geometric difference exactly 0,
+  the whole delay the potential's, 2β.
+- **T4 not killed**: T = 4GM(1 + z)/c³ scales by k with GM and the times, q not at all; a counted delay and q give
+  M(1 + z_L) = c³Δt/(4G·f(q)) with no distance.
+- **T5 not killed**: the delay's form from the brightness ratio alone, exactly.
+
+Reading: the delay's shape is the images' directions' (q, or the brightness ratio q²), its size an amount (T: for a
+point mass GM in seconds, needing G and the clock; for the SIS a distance). The two parts sort as the corpus sorts: the
+geometric part, the extra path, lives in the place differences; the Shapiro part, ln q, is the exchange's own
+logarithm, the level between the two images. For the point mass the geometric part always leads; for the SIS it
+vanishes and the delay is all potential. Classical (Refsdal 1964; the point and SIS delays are textbook).
