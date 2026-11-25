@@ -7607,6 +7607,21 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1211** (25 Nov 2026; Tom: "Merge 506, then Faraday test"; SPICE-RACS unreachable, Tom: "Data is no longer
+  available"). FRD (`plans/frd-plan.md` + `runs/frd/`), on Anderson et al. 2016's per-channel Q, U of 36 sources at
+  1.3–10 GHz (VizieR J/ApJ/825/59), predictions first: where one rotation measure fits (15 of 25 analysed), the angle
+  read alone gives it on 14 (F1 not killed, median 0.19σ apart, F2), and dividing Q, U by I leaves it to 10⁻¹⁴ while the
+  full fit moves (F5). F4 killed (the angle's line within its errors on only 5 of 15: my first-order angle error near the
+  3σ cut), F3 killed (one of three partings an adequate source, 1315-46, whose RM ≈ −711 rad m⁻² slips the angle's
+  unwrapping by π across the band gap: a turn read between samples is fixed only to whole half turns). Not in any paper.
+- **R1210** (25 Nov 2026; Tom: "Kepler test", after a Gemini note asking whether ORB's r/a payload connects to time to
+  contact; Claude's reply checked by R863: four overstatements corrected (aberration's form, not a boost; "zero e"
+  meaning Euler's; EHO did not split cleanly; the stage's total is π)). KPL (`plans/kpl-plan.md` + `runs/kpl/`), exact at
+  40 digits, predictions first, nothing killed: from the focus, directions and a planet's angular size give e and ω
+  with no time; the mean anomaly is a function of position; the observer's own ticks then give the period in ticks
+  (directions and ticks alone suffice); no look or tick count moves under Kepler's-third-law scalings, so a, GM and
+  seconds are amounts carried in. With noise (10⁻⁴ rad, 10⁻³), e and P within 1 standard error. Classical; the
+  orbit's counterpart of time to contact counted in ticks. Not in any paper.
 - **R1208** (25 Nov 2026; Tom: "Merge, then run 3"): PHR runs 3–4, a one-pole fit of both quadratures, then the width
   from the amplitude alone and from the phase alone, predictions committed first. Run 3: on the microwave notch the two
   widths 65.1 and 69.9 kHz, 7.3% apart at 1.2σ (R1 killed by its 5% bound, the line 6.8 points wide); set 1 void by my
