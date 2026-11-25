@@ -1689,7 +1689,12 @@ mathematics. What is ours, and unsearched, is setting them beside the read.
 *What the Cauchy gives as ways to think about gravity.* The thread's product is a way of thinking about known gravity,
 and small insights count (R1190). That the stage's account and the classical one give the same results wherever both
 were worked is itself a result (R1189): each run is a place the two could have parted and did not, and what
-distinguishes the forms is what each needs, never a different number. Seven so far, each from a run, each classical in
+distinguishes the forms is what each needs, never a different number. What the stage's account adds is a separation
+(R1195). The classical formula has two factors, a weight over directions and the matter met along each, and holds both
+as gravity's, the weight a consequence of the inverse square. Here the weight is the stage's heat: the law of a
+standpoint's directions, the same for a look with no mass in it and for every arrangement of matter. What is gravity's
+is on the paint's side, the amount along each direction. The separation is of roles; a pull needs both, and no
+classical number changes. Each item below is a case of it. Seven so far, each from a run, each classical in
 its mathematics, the details in the lists below:
 
 1. *Corners without an amount.* A pull through a plane has the look's corners (half within one height across a thumb,

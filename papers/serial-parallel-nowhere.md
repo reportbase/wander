@@ -7615,8 +7615,7 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   it and for every arrangement of matter. What the runs show is that: the heat is the stage's (R1184; GRV, FCL runs
   1–8), and what is gravity's is on the paint's side, the amount along each direction (the depth, R1192; the first
   moment, run 10; the flat lay moved by scaling, run 12). "Separate" is said of the roles; a pull still needs both, and
-  the classical numbers are unchanged (R1189). No judgement of classical work (R335, R364); no new physics. Not yet in
-  any paper.
+  the classical numbers are unchanged (R1189). No judgement of classical work (R335, R364); no new physics. *Reads and Writes* §7 (Tom: "add it to the paper and merge").
 - **R1194** (25 Nov 2026; Tom: "yes, run the test", to checking how far R1193's likeness goes): PR #496 merged. FCL
   run 12 (`runs/fcl/fcl12.py`, mpmath at 40 digits, predictions committed first, nothing killed). The two depths are
   alike in lying along the direction, and in how they are had from two places: two pull strengths a step B apart along
