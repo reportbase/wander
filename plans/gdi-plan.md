@@ -45,3 +45,34 @@ Kill conditions: any exact identity failing past 10⁻⁴⁰; D7's recovery off 
 second solution found as good.
 
 ## Runs
+
+### Run 1 (`runs/gdi/gdi.py`, output `runs/gdi/gdi-run1.txt`)
+
+The first attempt stopped in D7 before giving any D7 result: the least squares had no bounds, a start sent D to
+overflow and the fit failed on NaNs (my code). Bounds were added (ln μ in [−7, 3], ln D in [−2, 3], the centre in
+[−4, 4]², the turn in [−4, 4]) and D4's exact check, which sympy left unsimplified, was made at 60 digits. D1–D6 printed
+the same both times.
+- **D1 not killed**: two outside directions give the centre with zero error, exactly; the direction at a place is the
+  same with the place inside or outside, and R appears in neither.
+- **D2 not killed**: g·r² ratios are exactly 1 outside and (r/R)³ inside; one inside ratio gives R = 7/3 exactly;
+  scaling every length and the step moves no ratio.
+- **D3 not killed in its identities, killed in one clause by my arithmetic**: θ_E = √(θ₊|θ₋|) and β = θ₊ + θ₋
+  exactly; the magnification ratio is a function of q = θ₊/|θ₋| alone, as predicted, but it is q², not the q⁴ I wrote
+  (μ± = 1/(1 − (θ_E/θ±)⁴) with θ_E² = θ₊|θ₋| gives |μ₊/μ₋| = q²; checked to 10⁻⁵¹).
+- **D4 not killed**: the separation and the magnification ratio place the unseen lens to 10⁻¹⁹⁰; without the ratio a
+  one-parameter family.
+- **D5 not killed**: for the SIS the Einstein radius is the arithmetic mean of the image distances, the geometric mean
+  equal to it only at β = 0.
+- **D6 not killed**: the turning frame's directions unmoved by scaling lengths with the Kepler rate, to 6.7·10⁻¹⁶.
+- **D7 killed in its letter by my set-up**: from six directions the fit recovers μ, D, the centre and the turn to
+  2·10⁻¹⁵ for μ = 1, 0.3 and 0.01, and finds a second exact solution for μ = 1 and 0.3: μ ↦ 1/μ with the turn moved by
+  π, which is the same two masses with my labels exchanged (my parametrization puts "mass 1" on one side). For
+  μ = 0.01 the relabelled solution has ln μ = 4.6, outside my bound, and none was found. Physically one solution.
+
+Reading: what FCL run 9 found for two masses at rest holds for a ball, a lens and the pair in orbit. Directions give
+places and, with ratios of strengths or of brightness, the sizes in steps or in angle: a ball's centre (its radius
+only from strength ratios inside it), a lens's ring and the source's place, a turning pair's places, separation and
+mass ratio in steps. No mass and no G enter anywhere; the mass of the lens needs its distances, the pair's mass the
+year's seconds and G. The lens's ring is the exchange's corner θ ↔ −θ_E²/θ for a point mass (the geometric mean) and
+not for the SIS (the arithmetic mean): which mean the corner is belongs to the deflection law, the paint, not to lenses
+or to the stage. Classical throughout (the point and SIS lens formulas, the shell theorem, the restricted problem).

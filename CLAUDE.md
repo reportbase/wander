@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  GDI (`plans/gdi-plan.md` + `runs/gdi/gdi.py`, 25 Nov; SPN R1219; Tom: "Merge and proceed with gravity."): §7's open
+  item (2) for a ball, a lens and a pair in orbit, exact: directions give places, ratios the sizes (a ball's radius only
+  from strength ratios inside; a lens's ring √(θ₊|θ₋|), brightness ratio q²; the SIS's ring the arithmetic mean; a turning
+  pair's μ and places from six directions), no mass, no G. D3's q⁴ clause killed by my arithmetic, D7 by my labels.
   R1218 (25 Nov; Tom: "Merge and proceed"): KPL run 6 (`runs/kpl/kpl6.py`): the Rømer delay added to run 5's fit moves
   S2's orbit as little as the check said (R1–R3 not killed); the gap is not the delay either.
   R1217 (25 Nov; Tom: "Proceed with your recommendations"): KPL run 5 (`runs/kpl/kpl5.py`): S2's radial velocities

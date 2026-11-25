@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1219** (25 Nov 2026; Tom: "Merge and proceed with gravity."): GDI (`plans/gdi-plan.md` + `runs/gdi/gdi.py`), *Reads
+  and Writes* §7's open item (2) for a ball, a lens and the pair in orbit, exact, predictions first. Directions alone give
+  a ball's centre, never its radius (inside or out), strength ratios inside give the radius in steps (D1, D2); a point
+  lens's images give θ_E = √(θ₊|θ₋|) and β, the magnification ratio q² of their distances' ratio (D3 killed in its q⁴
+  clause by my arithmetic), the unseen lens placed by the ratio (D4); the SIS's ring the arithmetic mean (D5); a turning
+  pair's directions unmoved by scaling with Kepler's rate (D6) and giving μ, D and places from six (D7 killed in its letter
+  by my labels: μ ↦ 1/μ, the same pair). No mass, no G. Classical.
 - **R1218** (25 Nov 2026; Tom: "Merge and proceed"): KPL run 6 (`runs/kpl/kpl6.py`), run 5's joint fit with the Rømer
   delay, checked first on the paper's orbit (left out, the delay moves P by −0.004 yr and a by +0.34 mas). On S2 it moved
   e, P and a by 0.0002, 0.005 yr and 0.32 mas the way the check said (R1), the gap stayed (R2), R₀ +58 pc (R3); nothing
