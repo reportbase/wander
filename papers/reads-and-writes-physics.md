@@ -583,6 +583,18 @@ a·r/c², which scaling moves nowhere. A lens's two images arrive apart in time:
 ½(q − 1/q) + ln q in units of 4GM(1 + z)/c³, its shape from the images' directions and its size the mass alone, no
 distance. [exact: MVM, ACC, LDL]
 
+One premise for light and gravity. What a direction carries does not depend on how far along it its source lies. For
+gravity this is that a direction's pull is its column wherever the matter sits, which holds for the inverse square and
+no other power (1/r^(D−1) in D dimensions); for light it is the brightness theorem, radiance unchanged along a ray. From
+it alone, summing the directions gives both shell theorems with no field equation solved, the inside one because a
+chord meets a sphere at equal angles at its two ends; the outside theorem by itself would also allow a force growing as
+r. So a ball's light is B·D and its pull Gρ(4R/3)·D on the same D, and one ball's pull over its light is a mass-to-light
+ratio with no distance in it, which a face-on cube's is not (76% between half a side and twenty sides) and which an
+absorbing medium breaks on light's side. A thin lens bends light by the column along the line of sight with the pull's
+law one dimension down, 1/r, so only the column inside the impact radius bends it: what a look sees bent is a column's
+pull. Newton's own route (*Principia* I, Propositions 70, 71), the brightness theorem and the thin lens; the same results
+from one stage, with the inside of a shell the one shorter route, and no new physics. [exact: CLM, LGS, LNS]
+
 On data, twice. A railway tunnel's depth from the width of its gravity dip, no density (the Březno tunnel, two profiles
 read from a figure): 18.9 ± 2.3 m and 13.6 ± 1.8 m against 16.25 and 17.25 m, the classical depth rule to about 12%.
 S2's orbit about Sgr A* (Gillessen et al. 2017): the places give the clock in the observer's years and the shape, the size
@@ -876,7 +888,7 @@ written before it was run and its runs recorded as they came out, the killed one
 - §6: the inverse square, `plans/isr-plan.md`, `runs/isr/`; the near field, `plans/nrf-plan.md`; light and number on the
   stars, `plans/mag-plan.md`, `plans/cnt-plan.md`, `plans/gcn-plan.md`; gravity on the stage, `plans/grv-plan.md`,
   `plans/fcl-plan.md`, `plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`,
-  `plans/cos-plan.md`, `plans/kpl-plan.md`, with their `runs/`.
+  `plans/cos-plan.md`, `plans/clm-plan.md`, `plans/lgs-plan.md`, `plans/lns-plan.md`, `plans/kpl-plan.md`, with their `runs/`.
 - §7: parallax as a sum of reads, `plans/pxs-plan.md`, `runs/pxs/`, after `plans/tri-plan.md`; parallax from the corner,
   `plans/pxc-plan.md`, `runs/pxc/`; the ladder, `plans/lth-plan.md`, `plans/ltr-plan.md`; many standpoints,
   `plans/stc-plan.md`, `runs/stc/`.
