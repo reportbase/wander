@@ -1,0 +1,7 @@
+K1: e error 1.15e-41, omega error 0.0 -> not killed
+K2/K3: M/2pi linear in ticks, max residual 3.67e-40; period 1315.20216084976 ticks (truth 1315.20216084976): rel error 2.3e-41 -> not killed
+     from two looks: rel error 1.15e-40
+K4: e error 0.00e+00, omega error 1.11e-16, P rel error 0.00e+00 -> not killed
+K5: every direction lies on orbits of e = 0.05 and 0.9 as on 0.3: True -> not killed
+K6: every look unchanged under Kepler-III scalings, max change 5.51e-40 -> not killed
+K7: e 0.299997 (truth 0.3, 0.46 se), P 1315.2001 ticks (truth 1315.2022, 0.88 se), bootstrap rel error on P 1.78e-06 -> not killed

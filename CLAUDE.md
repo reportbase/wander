@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  KPL (`plans/kpl-plan.md` + `runs/kpl/kpl.py`, 25 Nov; SPN R1210; Tom: "Kepler test"): an orbit's clock from looks
+  alone, exact, nothing killed: directions and angular size give e and ω untimed, the mean anomaly is position's, the
+  observer's ticks give the period in ticks (directions and ticks alone suffice), and Kepler-III scalings move no look
+  (a, GM, seconds carried in). Not in any paper.
   R1208 (25 Nov; Tom: "Merge, then run 3"): PHR runs 3–4: one-pole fit of both quadratures, width from amplitude
   alone and from phase alone. The notch 7.3% apart at 1.2σ (R1 killed by its 5% bound); on the vibrating wire 96% of 217
   channels agree within their errors and the phase turns 91.8° across f₀ ± Γ/2 (R2′, R4′ not killed): single-pole

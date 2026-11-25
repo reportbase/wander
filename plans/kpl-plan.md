@@ -50,3 +50,24 @@ are amounts carried in (K6). This is the orbit's counterpart of time to contact 
 paper until Tom says.
 
 ## Runs
+
+### Run 1 (`runs/kpl/kpl.py`, output `kpl-run1.txt`): nothing killed
+
+e = 0.3, ω = 0.7, a = 2.5, GM = 1.9, planet radius 0.01, a tick 0.0137 s (none of these known to the observers); 41
+noise-free looks over two periods at 40 digits; then 200 noisy looks.
+
+- **K1 not killed.** From directions and angular sizes, untimed: e to 1·10⁻⁴¹, ω exact.
+- **K2, K3 not killed.** M from position alone, against ticks a straight line to 4·10⁻⁴⁰; the period 1315.20216084976
+  ticks, to 2·10⁻⁴¹; from two looks, 1·10⁻⁴⁰.
+- **K4 not killed.** From directions and ticks alone (no angular size), e, ω and P in ticks to double precision.
+- **K5 not killed** (by argument; checked on ten looks for e = 0.05 and 0.9): untimed directions fix no shape.
+- **K6 not killed.** Under a and the planet's radius scaled by λ with the tick by λ^(3/2), or GM by μ with the tick by
+  μ^(−1/2) (three cases), no look and no tick count moves (5·10⁻⁴⁰): no observer recovers a, GM or seconds.
+- **K7 not killed.** Directions to 10⁻⁴ rad and sizes to 10⁻³, 200 looks: e 0.299997 (0.46 standard errors from the
+  truth), P 1315.2001 ticks (0.88 standard errors), the bootstrap's relative error on P 1.8·10⁻⁶.
+
+**What it shows.** An orbit's clock, as a fraction of its period, is a function of position: e and ω come from looks with
+no time (K1), the mean anomaly from e and the direction (K2), and one clock, the observer's own ticks, sets the period in
+ticks (K3); directions and ticks alone do as well (K4). Nothing read gives the orbit's size, GM or seconds (K6): each is
+an amount carried in, the tick's length in seconds first and then GM for a. The orbit's counterpart of time to contact in
+the observer's ticks. Classical (Kepler, Gauss); K5 is trivial and was included as a check, not a finding.
