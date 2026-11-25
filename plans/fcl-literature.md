@@ -38,3 +38,20 @@ No formula was wrong. Attributions corrected below.
 "Even from a point lands as the Cauchy" is in print for light (Lu 2020; Dupuy et al. 2019), so it is not ours. Not
 found: its statement for gravity beside a standpoint's directions; the add-and-subtract difference between a look and a
 pull; the Cauchy kept along a line of lens masses. One search does not make these new (R925).
+
+## A second site for the depth rule (25 November; Tom: "1,2,3,4", item 4; a search by a fresh agent, no data fetched)
+
+Wanted: an open table (not a figure) of a gravity profile over a buried, roughly cylindrical or compact target whose depth
+is known independently. None meets all three. The nearest:
+- **Birmingham campus utility tunnel** (Stray et al. 2022, *Nature* 602, 590–594, doi:10.1038/s41586-021-04315-3, CC BY
+  4.0): Source Data for Fig. 3 is a spreadsheet, sheet "Figure3a", 17 stations at 0.5 m over 8.5 m, with uncertainties;
+  raw data at doi:10.25500/edata.bham.00000740 (CC BY 4.0, several GB). The target is a concrete tunnel 2 m × 2 m inside,
+  walls about 0.2 m, its top about 0.89 m down (the paper's inferred centre 1.89 −0.59/+2.3 m). Not clean for the rule as
+  stated: the quantity is the vertical gradient of g (a line source's ∝ (x² − z²)/(x² + z²)², zero at x = ±z, not the
+  Cauchy's half-width), the line covers only about ±2 depths, errors 15–30 E on about 150 E, and the box is square and
+  shallow. A test would have to be restated for the gradient (its zero crossings), predictions first.
+- Nullarbor cavity surveys (Geological Survey of South Australia, Report Book 2017/00021, data 2017A2 on SARIG): tabulated,
+  but no cavity drilled or mapped, so no independent depth.
+- Lanzarote's Cueva de Los Naturalistas (gravity with a laser-scanned tube): no data release found; would need the authors.
+- Figures only or paywalled: Liverpool's Williamson tunnels, Lavrion, the Nevada test-site tunnels; USGS ScienceBase
+  microgravity releases are volcanic or aquifer surveys, no voids; textbook profiles are synthetic.
