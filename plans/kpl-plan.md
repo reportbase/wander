@@ -71,3 +71,38 @@ no time (K1), the mean anomaly from e and the direction (K2), and one clock, the
 ticks (K3); directions and ticks alone do as well (K4). Nothing read gives the orbit's size, GM or seconds (K6): each is
 an amount carried in, the tick's length in seconds first and then GM for a. The orbit's counterpart of time to contact in
 the observer's ticks. Classical (Kepler, Gauss); K5 is trivial and was included as a check, not a finding.
+
+### Run 2: a measured orbit, predictions before the data (25 Nov 2026; Tom: "Merge 509, then 1 and 2")
+
+Run 1 was exact arithmetic with the observer at the focus. Here the observer is far off and sees the orbit projected on
+the sky: each look gives the companion's place relative to the primary, two angles (offsets in RA and Dec), and the
+observer's date, a tick (a year of its own orbit). Nothing it holds carries the distance to the system, GM or seconds.
+
+The data: the star S2 about Sgr A*, the astrometry of Gillessen et al. 2017 ("An update on monitoring stellar orbits in
+the Galactic Center", ApJ 837, 30), from VizieR (J/ApJ/837/30) through the CfA mirror; source, licence and sha256 to be
+recorded before analysis. Radial velocities, if in the table, are not used: a velocity is an amount in a unit.
+
+Known beforehand (not looked up for this run, from memory of the paper; to be checked when the data come): e 0.884,
+i 134°, Ω 227°, ω 66°, P 16.0 yr, a 0.1255″ (125 mas), the mass 4.3·10⁶ suns at R₀ ≈ 8.3 kpc.
+
+Method, fixed now:
+1. **Untimed shape.** The places alone, dates dropped: a general conic fitted to them (least squares on
+   Ax² + Bxy + Cy² + Dx + Ey = 1, weighted by the stated errors). Projection keeps ratios along a line, so the true
+   eccentricity is the apparent ellipse's centre-to-primary distance over the half-chord through the primary along the
+   same line (the primary at the origin, Sgr A*'s place in the paper's frame). Then the Thiele–Innes constants from the
+   apparent ellipse and the focus (Kowalsky's method), giving i, Ω and ω, still with no dates.
+2. **The clock as place.** With e from step 1, each look's eccentric anomaly from its place on the deprojected orbit,
+   M = E − e·sin E, M/2π the share of a period passed since pericentre, from position alone.
+3. **Period in ticks.** M/2π against the dates, a straight line; its slope gives P in the observer's years.
+4. **Sizes.** The semi-major axis comes out in milliarcseconds only.
+
+Predictions:
+- **V1.** From the untimed places alone, e within 0.02 of 0.884.
+- **V2.** From the untimed places alone, i, Ω and ω each within 3° of 134°, 227°, 66°.
+- **V3.** M/2π from place alone (step 2) against the dates: the median |residual| from the straight line under 0.01 of
+  a period.
+- **V4.** The period from step 3 within 1% of 16.0 years.
+- **V5.** a within 3% of 125 mas; and no step gives a in au, GM or the period in seconds without an amount carried in
+  (R₀ for the first, R₀ and the year's seconds for GM). Reported with R₀ = 8.3 kpc as the classical check, not predicted.
+Each killed if outside its bound. A kill from the frame (Sgr A* not at the origin of the positions, or a drift of the
+frame) is recorded as such, not fixed in this run.
