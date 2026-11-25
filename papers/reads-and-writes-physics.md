@@ -41,7 +41,9 @@ rotation left by two boosts joined, Thomas and Wigner's, is inferred from three 
 joining, never to one boost: a map between the looks, not an extent. A line's Lorentzian is the heat of a phase's turn, and its width and the decay time it
 answers to are one quantity read two ways. The quasar dipole's expected size is 2β from directions plus a payload term
 read from the catalogue, the payload carrying 60–70% of it. Interference's visibility is bounded by 2hv, the two paths'
-shares, at most 1 at their corner. Each case is checked on published data or in exact arithmetic, with its prediction
+shares, at most 1 at their corner. A pull stands on the stage a look lays (the Cauchy through a plane) and is not a read:
+its directions give places and ratios, its mass an amount, and a mass speeding up pulls toward a place seven times as
+far along its acceleration as the look points. Each case is checked on published data or in exact arithmetic, with its prediction
 written before its run, and the cases where the sort failed are kept.
 
 Nothing here is new physics. Reading and writing describe the observer, not the world. What is offered is where each
@@ -137,7 +139,7 @@ reported as failed, and a fix is a new prediction with its own run.
 ### 1.5 What follows
 
 §2 gives the geometry in brief. §3 is the dictionary: quantity by quantity, read or written, and the bridge. Then the
-cases: motion and time (§4), the moving sky, two boosts joined and a black hole (§5), light and the inverse square (§6), distance and
+cases: motion and time (§4), the moving sky, two boosts joined and a black hole (§5), light and the inverse square, and gravity on the same stage (§6), distance and
 parallax (§7), waves and the qubit (§8), two detectors read together (§9), and many bodies (§10). §11 reports where the
 sort failed and what each failure taught. §12 says what the sort changes and what is open.
 
@@ -495,7 +497,7 @@ that turns the ring into θ_g. Nothing here says that result is wrong; our fits 
 assumptions enter. Curved spacetime is the hole's own write geometry, not a rival to read geometry: the observer's layer
 came off exactly, and what stayed tangled was two writes, the hole's spacetime and its gas.
 
-## 6. Light
+## 6. Light, and a pull on the same stage
 
 ### 6.1 The inverse square, as heat and paint [exact]
 
@@ -550,6 +552,42 @@ share of the directions.
 
 The distance-based results are extents, through parallax and a kind, and writes once the parsec is in metres; the counts
 by light are reads.
+
+### 6.4 A pull on the same stage [exact, data]
+
+Gravity sorts by the same two tests, and its inverse square is light's in form (essay 33; *Reads and Writes* §7). The
+pull at a place is a fixed weight over directions times the matter met along each, its column. Through a plane that
+weight is the Cauchy, the law a look lays on the same plane: a point mass d off a plane pulls through it as the
+two-dimensional Cauchy of scale d, half within √3 heights of the foot, and above a sheet the pull is 2πG times the
+sheet's Cauchy-weighted density, a ripple fading as e^(−kh). The connection is a shared stage, not a mechanism, and a pull
+is not a read: it has no facing, takes both hemispheres, sums its directions and carries an amount; given a facing for a
+moment, its two halves subtract to the pull along the facing where a look's two halves add to all there is. A read has a
+cosine weight of its own with no amount, the projected solid angle D of what it meets; a pull is D's integral with each
+direction weighed by its column, for a ball G·ρ·(4R/3)·D at every distance outside, for a cube not (Newton's shell
+theorem, read this way). The Cauchy form fixes the weight and never the matter: a point and a shell of one mass pull alike
+outside it. [exact: GRV, FCL, COS]
+
+What directions give, and what needs an amount. Two masses' pulls cancel where the distances' ratio is √μ, the exchange's
+fixed point; directions at four places give both places and the mass ratio in steps, and no mass. Two plumb lines give a
+ball's centre and never its radius, which a ratio of pull strengths inside it gives. A point lens's two images give the
+ring √(θ₊|θ₋|), the geometric mean of their distances, and place a lens no one sees by their brightness ratio, the square
+of their distances' ratio; an isothermal sphere's ring is the arithmetic mean instead. A mass in each case needs G and a
+length carried in. [exact: FCL, GDI]
+
+Motion and delay. A moving mass's look points where the light left; its weak-field pull points where it is now, off only
+at the speed's square (on the line of motion past c/√3 a body at rest is pushed, a known result). A mass at rest but
+accelerating is looked at, and pulled by an opposite charge, toward ½aT² along its acceleration, T the light-time; its
+gravity pulls toward (7/2)aT², and an orbiting pair, nothing left out at first post-Newtonian order, keeps the 7/2, the
+whole agreeing with the Einstein–Infeld–Hoffmann equation for a test body at rest. Every departure is a ratio of lengths,
+a·r/c², which scaling moves nowhere. A lens's two images arrive apart in time: for a point mass the delay is
+½(q − 1/q) + ln q in units of 4GM(1 + z)/c³, its shape from the images' directions and its size the mass alone, no
+distance. [exact: MVM, ACC, LDL]
+
+On data, twice. A railway tunnel's depth from the width of its gravity dip, no density (the Březno tunnel, two profiles
+read from a figure): 18.9 ± 2.3 m and 13.6 ± 1.8 m against 16.25 and 17.25 m, the classical depth rule to about 12%.
+S2's orbit about Sgr A* (Gillessen et al. 2017): the places give the clock in the observer's years and the shape, the size
+only as an angle; the radial velocities, amounts, give the distance and the mass (8.6 kpc, 4.6·10⁶ suns), within 4% of
+the paper's; a gap of 1–3% stays, not the frame, the amounts or the light's travel time. [data: FCL run 11, KPL]
 
 ## 7. Distance
 
@@ -836,7 +874,9 @@ written before it was run and its runs recorded as they came out, the killed one
   `plans/ebd-plan.md`, `runs/ebd/`; two boosts joined, `plans/twg-plan.md`, `runs/twg/`; loops that come home turned, `plans/hol-plan.md`,
   `runs/hol/`; a black hole's three layers, `plans/eho-plan.md`, `runs/eho/`, from `plans/discussion-note.md` item 21.
 - §6: the inverse square, `plans/isr-plan.md`, `runs/isr/`; the near field, `plans/nrf-plan.md`; light and number on the
-  stars, `plans/mag-plan.md`, `plans/cnt-plan.md`, `plans/gcn-plan.md`.
+  stars, `plans/mag-plan.md`, `plans/cnt-plan.md`, `plans/gcn-plan.md`; gravity on the stage, `plans/grv-plan.md`,
+  `plans/fcl-plan.md`, `plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`,
+  `plans/cos-plan.md`, `plans/kpl-plan.md`, with their `runs/`.
 - §7: parallax as a sum of reads, `plans/pxs-plan.md`, `runs/pxs/`, after `plans/tri-plan.md`; parallax from the corner,
   `plans/pxc-plan.md`, `runs/pxc/`; the ladder, `plans/lth-plan.md`, `plans/ltr-plan.md`; many standpoints,
   `plans/stc-plan.md`, `runs/stc/`.

@@ -623,6 +623,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1226 (25 Nov; Tom: "Merge, and update the physics paper"): the gravity thread in `papers/physics.md` §2.1–§2.2 and
+  *Reads and Writes in Physics* §6.4 "A pull on the same stage", the abstract, §1.5, Code and data; no new claim.
   R1225 (25 Nov; Tom: "update the essays and demos"): GDI, MVM, LDL, ACC and COS in essays 4 §13, 6 §12 and 7 §7,
   and as notes on `look-pull.html` and `thin.html` with their `demos.html` cards; no new claim, no script changed.
   ACC run 2 (`runs/acc/acc2.py`, 25 Nov; SPN R1224; Tom: "1 then 3"): a pair in orbit, the whole 1PN field, exact at
