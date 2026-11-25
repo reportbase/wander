@@ -1737,6 +1737,23 @@ outside is no shorter than Gauss's law. Each part is in print (Newton's Proposit
 the thin lens, the Einstein–Infeld–Hoffmann equation); setting them on one stage beside the read was not found in the
 searches made (`plans/fcl-literature.md`, CLM's). Open: a second measured site for the depth rule; S2's orbit (KPL).
 
+*Two geometries, kept apart* (R1234; Tom: "Describing gravity in terms of read and write separates two very
+complicated geometries."). Classical gravity holds two geometries in one formula, a kernel times a density over the
+body, so they read as one hard problem. In this account they come apart. The read geometry is the stage: a
+standpoint's directions and their weight, the same for every body, unmoved by scaling, holding no distance and no
+size; all it takes here is the share of directions a body fills, D, and the plane's law one dimension down for a
+lens. The write geometry is the matter's own: its shape, its density, its size, its amounts, and in general relativity
+spacetime's own curvature (§2, "Read geometry and write geometry"). Everything hard about gravity lies on that side: why
+a cube's pull over its light moves with distance (76% from half a side to twenty sides, LGS) where a ball's does not,
+why different bodies can pull alike (the inverse problem's non-uniqueness, R1197), what a lens's mass is laid as. Under
+the column premise the two meet at one place only, what each direction carries: the stage gives the weight per
+direction, the matter one amount along it, its column. They come apart as two factors on every direction, not as two
+problems that never touch: the write geometry still decides how the columns vary over the directions, so a simple stage
+does not make a body's pull simple. A ball is the case where the write geometry comes down to one number, Gρ·(4R/3),
+and the pull carries no distance; a cube is the matter's shape coming back through the columns, never through the stage.
+The parting holds exactly where the premise does: a medium that adds an amount per length breaks it, as absorption broke
+light's half (LGS). A way to organize known gravity, not new physics (R1229).
+
 **Gravity on the stage: the record, run by run.** A working record, kept here so later work can tighten the
 connection between observation and gravity. Each item is exact arithmetic on Newton's pulls or the thin lens, checked in
 FCL's runs (`plans/fcl-plan.md`, `runs/fcl/`; essay 33; the demo `look-pull.html`), and each is classical in its
