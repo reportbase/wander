@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1215 (25 Nov; Tom: "Merge and Proceed"): KPL run 3 (`runs/kpl/kpl3.py`): each look's distance to the projected orbit,
+  untimed, checked unbiased on the paper's orbit first; on S2 e 0.869, P 16.13 yr, a 119.3 mas (W1, W3–W5 not killed),
+  W2 killed (ω 5.6°); the three off 2.4–2.8σ the same way, the frame suspected, unchecked.
   R1214 (25 Nov; Tom: "Merge 509, then 1 and 2"): KPL run 2 (`runs/kpl/kpl2.py`), S2 about Sgr A* (VizieR J/ApJ/837/30):
   V3 not killed (the clock from place a straight line in the observer's years); V1, V2, V4, V5 killed by my untimed conic
   fit's bias (a code check on the paper's orbit reproduces it); V2 also by its letter (four untimed solutions).

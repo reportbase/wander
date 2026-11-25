@@ -143,3 +143,46 @@ in the observer's years, V3), but my untimed estimator does not recover the shap
 untimed shape needs an estimator that fits the distance from each look to the projected orbit itself (the eccentric
 anomaly of each look a free number, still no date used), checked first on the paper's orbit with its errors. That would
 be run 3, with its own predictions.
+
+### Run 3: the untimed shape by distance to the projected orbit, predictions before the data (25 Nov 2026; Tom: "Merge and Proceed")
+
+The estimator run 2's post hoc note asked for (`runs/kpl/kpl3.py`): the unknowns are the Thiele–Innes constants A, B, F,
+G, the eccentricity e and one eccentric anomaly per look, a free number, so no date enters; each look's residual is its
+offset from its own point on the projected orbit over the stated errors; started from run 2's conic. Steps 2–4 then as in
+run 2 (the clock from place, the period in the observer's years, a in mas).
+
+Checked first on the paper's orbit (table 3's elements) at run 2's 145 dates with the stated errors, 20 seeded draws
+(seed 1214; `kpl-run3-check.txt`), before this record: e 0.8851 ± 0.0061, P 15.990 ± 0.050 yr, a 125.89 ± 2.36 mas,
+against 0.8839, 16.000, 125.50. The estimator is unbiased to within its scatter here; run 2's conic was not.
+
+Predictions on the data, bounds three of those scatters:
+- **W1.** e within 0.02 of 0.884.
+- **W2.** Among the untimed solutions, one within 5° of (134°, 227°, 66°) in each angle; and the untimed places give
+  four solutions, the dates two (the sense of motion), none settling the node's side (stated now; run 2's V2 did not).
+- **W3.** M/2π from place alone against the dates, median |residual| under 0.01 of a period.
+- **W4.** P within 0.15 yr of 16.0.
+- **W5.** a within 7 mas of 125.5; nothing in au, GM or seconds without an amount carried in.
+A miss is recorded as it comes out; the paper fits Sgr A*'s place and drift in its frame and the data here are used in
+the frame as given, so a kill may be the frame's, and would be named so only with a check.
+
+### Run 3, as it came out (`runs/kpl/kpl-run3.txt`)
+
+The script printed its verdicts with run 2's bounds (its judging lines were reused unchanged): 3° for the angles, 1% for
+P, 3% of 125 for a. The judgments below are by run 3's bounds as committed above.
+
+- **W1 not killed**: e 0.8694 from the untimed places (0.015 from 0.884; χ²/dof 0.64).
+- **W2 killed**: four untimed solutions as stated, the dates leaving two; the nearer (i 136.77°, Ω 222.39°, ω 60.36°) is
+  2.6°, 4.6° and 5.6° from (134°, 227°, 66°): ω past 5°. The other is the same orbit with the node on the far side.
+- **W3 not killed**: M/2π from place alone against the dates, median |residual| 0.0021 of a period (max 0.031).
+- **W4 not killed**: P 16.130 observer's years (0.13 from 16.0).
+- **W5 not killed**: a 119.29 mas (6.2 from 125.5); in au and suns only with R₀ carried in (990 au, 3.7·10⁶ suns at
+  8.3 kpc).
+
+Post hoc, not tested: against the check's scatter the data land e 2.4σ low, a 2.6σ low, P 2.8σ long, all three the
+same way (a rounder, smaller, slower orbit). The check had the focus exactly at the origin; the paper fits Sgr A*'s place
+and drift in this frame, which the run did not, so a frame offset is the first candidate. Not checked.
+
+Reading: from places alone, with no date, the measured looks give S2's shape (e to 0.015, a to 5%) and its orientation up
+to what places cannot hold (the sense of motion, the node's side); with the observer's years as ticks, the clock read from
+place is a straight line, and the period comes out in those years (16.13). The size stays in mas: au, solar masses and
+seconds come only with R₀ and the year carried in.
