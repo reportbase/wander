@@ -84,3 +84,22 @@ the root of a tiny negative number went complex. My quadrature, not the identity
 
 - **C2′.** The same outside sum by quadrature in w = sin²θ over [0, a²/d²] with the endpoint exact (a = 1, d = 3, σ = 1),
   real throughout, equals 4π/9 to 10⁻²⁵; and at d = 1.5 and d = 10 equals 4π/d² to 10⁻²⁵. Kill past 10⁻²⁵.
+
+### Run 2 (`runs/clm/clm2.py`, output `runs/clm/clm-run2.txt`)
+
+**C2′ killed, by my set-up again.** Real now, but off 2.4·10⁻²¹, 9.5·10⁻²¹ and 1.1·10⁻²² at d = 3, 1.5, 10, past my
+10⁻²⁵. The cause, seen after the run: 1 − d²w is computed near the edge direction by subtracting two nearly equal
+numbers, so at 40 digits it keeps about half of them, and an inverse square root there limits the sum to about
+√(10⁻⁴⁰) = 10⁻²⁰. A quadrature measured from the edge (v = 1 − d²w) would remove the cancellation, but it is the integral
+of 1/√v, which is the sympy identity written again, so I stop: C2's identity stands exactly in sympy (run 1), and the
+two numerical checks of it were killed by my numerics, not by the shell.
+
+Reading of runs 1–2: the column premise (P), "the pull from a direction depends only on how much matter lies along it,
+not where", is equivalent to the inverse square (1/r^(D−1) in D dimensions; C1). From (P) alone, summing directions
+gives both of Newton's shell theorems with no field equation solved: outside, each direction's two crossings carry
+σa/s each and the sum is G·M/d² (C2, exact); inside, every direction and its opposite carry equal columns because a
+chord meets a sphere at equal angles at its two ends, so the pulls cancel direction by direction (C3). The outside
+theorem alone is weaker: the force growing as r passes it too (C4). The inside theorem is where (P) is used whole, and
+among A/r² + B·r and among powers it leaves only the inverse square (C4, C5). Scaling moves no direction (C6).
+Classical in its parts (Newton, *Principia* I, 70, 71, 77, from memory); whether the column premise is stated in print
+as a starting point equivalent to the law is the open question for the search.
