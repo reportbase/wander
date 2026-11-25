@@ -106,3 +106,11 @@ Predictions:
   (R₀ for the first, R₀ and the year's seconds for GM). Reported with R₀ = 8.3 kpc as the classical check, not predicted.
 Each killed if outside its bound. A kill from the frame (Sgr A* not at the origin of the positions, or a drift of the
 frame) is recorded as such, not fixed in this run.
+
+**Data, recorded before analysis.** VizieR J/ApJ/837/30 (Gillessen et al. 2017), fetched 25 Nov 2026 through
+vizier.cfa.harvard.edu as ASU-TSV with all columns; VizieR's licence (https://cds.unistra.fr/vizier-org/licences_vizier.html).
+`table5.tsv` (the astrometric and radial-velocity data, 216 rows, offsets in mas from Sgr A*, dates in fractional years):
+135,790 bytes, sha256 70db6570fb2966c0322512328a443aa10047b7322b254f5f396a316c27b48705. `table3.tsv` (the paper's
+orbital elements, for the comparison only): 10,657 bytes, sha256
+b0db1869b253457a8bd38e8f20cdd82f9b760643d8fd37439b5c87eada1e8bf7. Not committed. Only the header has been read.
+Rows used: Flag "a" with S2's two offsets present; radial-velocity rows dropped.
