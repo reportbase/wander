@@ -99,3 +99,27 @@ Eccentricities e in {0.01, 0.1, 0.3, 0.6, 0.9, 0.99}.
 What could fail: P1, P2, P4, P5, P7 are identities and fail only by my code or my algebra (a sign of the centre, a
 factor of the period); P3's second clause is a known result recalled from memory and can fail by my recollection; P6
 can fail by its 1% (a fitted wrapped Cauchy may come closer than I expect at e = 0.3).
+
+**Run 2** (`runs/orb/orb2.py`, output `runs/orb/orb-run2.txt`). P1 killed by my code; the rest not killed.
+
+- P1 killed in its symbolic clause: sympy proved the wrapped Cauchy with ρ = β centred at π equal to the stage (0),
+  but left the push-forward of uniform E, (1/2π)·dE/dν − stage, unsimplified (a sum of square roots it did not combine),
+  where the prediction asked for 0. Numerically the three agree at every e to 3·10⁻⁴⁹ or better (10⁻⁵¹ but at
+  e = 0.99), under the 10⁻⁴⁵ asked.
+- P2: clock/stage − r/a is 0 in sympy, and under 6·10⁻⁵¹ at 200 ν for every e.
+- P3: the payload's mean over the stage is 1, its mean over the clock 1 + e²/2 (1.00005, 1.005, 1.045, 1.18, 1.405,
+  1.49005), each to 10⁻⁵⁰.
+- P4: the period is 2π√(a³/GM) to 10⁻⁵⁰ at every e, a and GM. P5: a scaled by 10³ leaves r/a unchanged to 3·10⁻⁵¹ and
+  multiplies the period by 10^4.5 exactly to rounding.
+- P6: the best wrapped Cauchy misses the clock's law by 4.8%, 25% and 129% at e = 0.3, 0.6, 0.9 (each fit ρ = ±e
+  centred on the near point: post hoc, the clock's 1/(1 + e cos ν)² is nearest the Cauchy shape 1/(1 + e cos ν)
+  squared away from it).
+- P7: r/a in E is 1 − e cos E and its integral from the near point E − e sin E, both 0 in sympy.
+
+## Run 3 (prediction committed before the run)
+
+- **P1′.** With t = tan(ν/2) and the push-forward written rationally (E = 2·atan(t/k), so dE/dν = k(1 + t²)/(k² + t²)
+  · ½·... taken by sympy from that form, with cos ν = (1 − t²)/(1 + t²) and k² = (1 + e)/(1 − e) substituted as a
+  symbol K with K² = (1 + e)/(1 − e)), (1/2π)·dE/dν − √(1−e²)/(2π(1 + e cos ν)) reduces to 0 in sympy after
+  eliminating K and √(1−e²) by their squares (`sp.simplify` on the expression with K = √((1+e)/(1−e)) written as
+  s/(1−e), s = √(1−e²)). Fails only by my algebra or code.
