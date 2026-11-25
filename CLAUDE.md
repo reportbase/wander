@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1214 (25 Nov; Tom: "Merge 509, then 1 and 2"): KPL run 2 (`runs/kpl/kpl2.py`), S2 about Sgr A* (VizieR J/ApJ/837/30):
+  V3 not killed (the clock from place a straight line in the observer's years); V1, V2, V4, V5 killed by my untimed conic
+  fit's bias (a code check on the paper's orbit reproduces it); V2 also by its letter (four untimed solutions).
   R1212 (25 Nov; Tom: "Merge 508, then the cable delay test"): PHR run 6 (`runs/phr/phr6.py`): the delay read off the
   line and removed; Carter τ 37.4 ns throughout (R11), the turn 89.9° (R10), 175 lines pass (R12); R9 killed at 4.0%
   (RES-3 coarse; RES-1 −25% → −0.2%); R13 killed (Fano's phase already without delay). Run 5b's gap was the cable's.

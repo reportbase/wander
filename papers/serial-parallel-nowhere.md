@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1214** (25 Nov 2026; Tom: "Merge 509, then 1 and 2"): KPL run 2 on S2's measured orbit about Sgr A* (Gillessen et
+  al. 2017, VizieR J/ApJ/837/30), predictions V1–V5 committed before the data. V3 not killed: the clock read from place
+  alone against the observer's years is a straight line (median residual 0.005 of a period). V1, V2, V4, V5 killed (e
+  0.811, P 16.39 yr, a 111 mas against 0.884, 16.0, 125; V2 also by my letter, since untimed places leave four solutions,
+  the sense of motion needing the order of the looks and the ascending node a velocity). Post hoc, a code check on the
+  paper's orbit at the same dates: exact noise-free, the same bias with the stated errors, so the kills are my untimed
+  conic estimator's, not the data's or the geometry's. A run 3 with a fit to the projected orbit itself proposed.
 - **R1212** (25 Nov 2026; Tom: "Merge 508, then the cable delay test"): PHR run 6, predictions R9–R13 committed before
   the fit: a delay e^(−2πifτ) read off the line alone and removed, then run 5b's analysis unchanged. Carter: τ 37.4 ns on
   every fitted sweep (R11), 175 sweeps pass the line test against 63 (R12), the turn 89.9° (R10); R9 killed narrowly
