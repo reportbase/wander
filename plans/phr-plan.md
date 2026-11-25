@@ -125,3 +125,34 @@ So on these runs R362's reading is neither confirmed nor refuted. A run 3, with 
 quadratures at once with one pole (a complex amplitude, f₀, Γ and a complex background), and then compare Γ fitted from
 the amplitude alone with Γ fitted from the phase alone, taken about the fitted circle's centre. That needs no
 derivative and no threshold on the fit.
+
+### Run 3, predictions (25 Nov; Tom: "Merge, then run 3"), committed before the fit is written
+
+The same two data sets and the same selection as runs 1–2 (set 1: every channel that passed run 1's line-and-coverage
+test; set 2: its one curve). New method, fixed now:
+
+1. **One-pole fit of both quadratures at once.** z(f) = A/(f₀ − f − iΓ/2) + B₀ + B₁(f − f̄), with A, B₀, B₁ complex,
+   by least squares on real and imaginary parts together, started from run 1's estimates. The fit's background is
+   subtracted: z_c = z − B₀ − B₁(f − f̄), whose ideal form passes through 0 off resonance.
+2. **Γ from the amplitude alone:** a Lorentzian a/((f − f₀)² + Γ²/4) fitted to |z_c|², f₀ and Γ free.
+3. **Γ from the phase alone:** φ(f) = φ₀ + atan2(Γ/2, f₀ − f) fitted to the unwrapped arg z_c, f₀, Γ, φ₀ free, each
+   point weighted by |z_c| (the phase's noise goes as 1/|z_c|). This is the angle seen from the circle's off-resonance
+   point, which is where the reading puts the turn: half a turn across the line, the corner (a quarter) at f₀.
+4. **Errors** by a residual bootstrap of step 1 (200 resamples, seeded), steps 2–3 redone on each; σ the combined
+   spread of Γ_phase − Γ_amp.
+
+The amplitude and phase fits share step 1's background, so they are not independent measurements; what is tested is
+whether the response's size and its angle each, read alone, give one width.
+
+- **R1 (set 2).** Γ_phase/Γ_amp − 1 within 5%, and within 3σ.
+- **R2 (set 1).** Among the analysed channels, at most 10% have |Γ_phase − Γ_amp| beyond 3σ + 2% of Γ_amp. Killed past 10%.
+- **R3 (set 1, the fit's adequacy).** Set 1 records each point's standard deviations (stdX, stdY). The step-1 fit's χ²
+  per degree of freedom, using them, is under 2 for the median channel. Killed if 2 or more. (Set 2 has no noise column;
+  untested there.)
+- **R4 (the turn).** Fitted from the phase alone, the turn across f₀ ± Γ/2 is 90° by construction of the model; what is
+  tested is the data's: the unwrapped arg z_c at f₀ ± Γ_phase/2 differs by 90° ± 10° on set 2 and on the median set-1
+  channel. Killed otherwise.
+
+If R1 and R2 hold, the measured lines are single-pole responses whose width can be read from the phase alone, so R362's
+reading (the line is the phase's turn read per unit of frequency) is available for these two kinds of resonance. If they
+fail where R3 says the one-pole fit is adequate, the reading fails on data.
