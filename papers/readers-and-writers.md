@@ -1826,7 +1826,13 @@ pull's direction flips, found with no strength, no mass and no G; off the line, 
 counted step apart, or directions and ratios of strengths at three, give both masses' places and their ratio in steps.
 The masses are in no ratio: they stand to the pulls as V stands to a read, and even one strength in a unit gives only
 GM, G being a second amount carried in. The distances' ratio at the meeting place, squared, is the masses' ratio, as a
-read's corner gives a breadth in thumbs. Open still: the same for the pair in orbit, a ball and a lens. (3) Tried once (FCL run 11), on the one clean site an open search found: two measured profiles across a railway tunnel
+read's corner gives a breadth in thumbs. The same holds for a ball, a lens and the pair in orbit (GDI, exact): a ball's
+centre from two directions and never its radius, which only strength ratios inside it give, in steps; a point lens's
+ring √(θ₊|θ₋|) and the source's place from the images' directions, their brightness ratio the square of their
+distances' ratio, so the unseen lens is placed by it; the turning pair's mass ratio, separation and places from six
+directions, unmoved by scaling with Kepler's rate. The lens's mass needs its distances. For a point mass the ring is the
+geometric mean of the images' distances, the exchange's corner; for an isothermal sphere it is their arithmetic mean:
+which mean is the corner belongs to the deflection law, the paint, not to the stage. (3) Tried once (FCL run 11), on the one clean site an open search found: two measured profiles across a railway tunnel
 of built depth (Blecha and Mašín, the Březno tunnel; the values read from the paper's figure). Fitting the Cauchy's curve
 gives the depth from the profile's width alone, with no density: 18.9 ± 2.3 m and 13.6 ± 1.8 m against mid-heights of
 16.25 m and 17.25 m, their mean 15.6 ± 1.4 m against 16.75 m. So the rule holds there to the profile's noise, about
