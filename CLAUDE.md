@@ -623,6 +623,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1234 (25 Nov; Tom: "Describing gravity in terms of read and write separates two very complicated geometries.",
+  "yes, add it to the paper and merge"): in the gravity account the read geometry (the stage, the same for every body)
+  and the write geometry (the matter's shape, density, size, curvature) meet only in each direction's column; they part
+  as two factors per direction, not two problems (a cube's shape returns through the columns), exact only where the
+  premise holds. *Reads and Writes* §7 "Two geometries, kept apart". Not new physics.
   R1232 (25 Nov; Tom: "1,2,3,4"): CLM, LGS, LNS in `papers/physics.md` §2.2 and *Reads and Writes in Physics* §6.4.
   R1231 (25 Nov; Tom: "3 then 4"): *Reads and Writes* §7 "Gravity on the stage, in one account" (the place to start on
   gravity), before the record run by run; essay 33 §15, essays 4 and 7, README, `essays.html`, notes on `look-pull.html`

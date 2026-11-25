@@ -7607,6 +7607,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1234** (25 Nov 2026; Tom: "Describing gravity in terms of read and write separates two very complicated
+  geometries.", then "yes, add it to the paper and merge"): the read geometry (the stage: a standpoint's directions and
+  their weight, the same for every body, unmoved by scaling, no distance or size) and the write geometry (the matter's
+  own shape, density and size, its amounts, and in general relativity spacetime's curvature) come apart in the gravity
+  account: under the column premise they meet only in what each direction carries, the stage's weight times the
+  matter's column. Claude's qualification, kept with it: they part as two factors per direction, not as two problems,
+  since the write geometry still decides how the columns vary over the directions (a ball reduces it to Gρ·(4R/3) and
+  the pull carries no distance; a cube's shape returns through the columns, 76% over LGS's range, never through the
+  stage); exact only where the premise holds (absorption breaks light's half). The hard parts of gravity (shape,
+  non-uniqueness, curvature) all on the write side. *Reads and Writes* §7, "Two geometries, kept apart", in the one
+  account. A way to organize known gravity, not new physics (R1229).
 - **R1232** (25 Nov 2026; Tom: "1,2,3,4"): CLM, LGS and LNS carried into `papers/physics.md` §2.2 ("One premise for
   light and gravity") and *Reads and Writes in Physics* §6.4 (a paragraph, [exact: CLM, LGS, LNS]) and its Code and
   data. No new claim.
