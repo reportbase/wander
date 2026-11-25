@@ -1689,7 +1689,7 @@ mathematics. What is ours, and unsearched, is setting them beside the read.
 *What the Cauchy gives as ways to think about gravity.* The thread's product is a way of thinking about known gravity,
 and small insights count (R1190). That the stage's account and the classical one give the same results wherever both
 were worked is itself a result (R1189): each run is a place the two could have parted and did not, and what
-distinguishes the forms is what each needs, never a different number. Six so far, each from a run, each classical in
+distinguishes the forms is what each needs, never a different number. Seven so far, each from a run, each classical in
 its mathematics, the details in the lists below:
 
 1. *Corners without an amount.* A pull through a plane has the look's corners (half within one height across a thumb,
@@ -1705,6 +1705,22 @@ its mathematics, the details in the lists below:
    masses' ratio, and one strength in a unit gives GM (run 9).
 6. *Add against subtract.* A look's two halves add and a pull's subtract: the read's is a median, an order statistic,
    and the pull's a first moment, a sum, so gravity is on the paint's side of §4's split (runs 6, 10).
+7. *A look takes the front; a pull takes the depth.* Split by direction, the pull at a place is a fixed weight a
+   direction times the mass along it: the inverse square cancels against the way volume grows with distance, so the
+   distance drops out and each direction gives its column, the density times how deep the matter goes along that line
+   (GRV). For an even density that is the depth itself: more depth along a direction, more pull from it. A look takes
+   only the first thing met along a direction, and no depth is in it, which is why a read holds no distance; a pull
+   takes everything along the direction, front to back, nothing hidden behind anything. So the stage's heat is the same
+   for both and the paint differs: the front for a look, the depth for a pull, and the depth is why a pull carries an
+   amount. Three classical cases, worked by hand and not a run: inside a shell opposite directions have equal depth and
+   cancel (Newton's own argument); on an even ball the depth along a direction is the chord, and the chords sum to the
+   surface's pull, (4/3)πGρR; above a flat slab the depth grows with the slant exactly as the facing's cosine shrinks,
+   so every direction counts alike (run 7). This depth is the matter along a line, not how far down a body lies: a body
+   buried deeper gives a wider, lower curve with the same total (item 2). Observation has a depth of its own, how far
+   along a direction in thumbs, laid on a read by the thumb or had from two looks (§6); it seems the counterpart of
+   gravity's depth, both lying along the direction where the stage's heat lies across it. How far the likeness goes is
+   open: the look's depth is one distance to the first thing met and no amount, the pull's the whole column and an
+   amount.
 
 None of this is new physics or a mechanism, and a pull is not a read (R1183). "New" is said of the way of thinking: the
 formulas are classical, and that an even spread from a point lands on a plane as the Cauchy is in print for light.

@@ -623,6 +623,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1193 (25 Nov; Tom: "Observation has it's own version of depth, seems analagous to gravy's depth."): recorded as
+  open in §7: observation's depth (how far along a direction, in thumbs) beside gravity's (the column along it).
+  R1192 (25 Nov; Tom: "What if cauchy heat for gravity is just the depth, more heart, more depth"; "yes, add it to the
+  paper and merge."): **a look takes the front of each direction, a pull takes its depth** (the column along it, GRV);
+  the depth is the paint, not the stage's heat. §7's seventh item; three classical cases by hand, no run.
   R1191 (24 Nov; Tom: "merge, and add them to the paper"): R1189, R1190 in *Reads and Writes* §7 as "What the Cauchy
   gives as ways to think about gravity", six numbered insights each with its run. No new claim.
   R1190 (24 Nov; Tom: "The cauchy provides new ways to think about gravity.   Even small insights are valuable."):
