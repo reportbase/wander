@@ -348,6 +348,14 @@ Then (SPN R440; Tom: "proceed with recommended changes") a real-data test of the
 
 ### 2.1 On real data
 
+- **A buried tunnel's depth, and S2's orbit** (FCL run 11, KPL runs 2–6, 24–25 November). The Březno railway tunnel's two
+  gravity profiles (Blecha and Mašín, read from a figure, predictions after the values were seen) fitted with the
+  Cauchy's curve give its depth from the profile's width alone, no density: 18.9 ± 2.3 m and 13.6 ± 1.8 m against
+  mid-heights 16.25 and 17.25 m. S2 about Sgr A* (Gillessen et al. 2017, VizieR J/ApJ/837/30): its 145 places give the
+  clock (16.1 of the observer's years) and the shape (e 0.869–0.880), the size only as an angle; its 44 radial velocities,
+  amounts, give the distance (8.6 kpc) and the mass (4.6·10⁶ suns) within 4% of the paper's; a 1–3% gap to the paper's
+  orbit stays, not the frame, the amounts or the light's travel time.
+
 - **Two levels of light per level of distance** (MAG, `plans/mag-plan.md`). On the Hipparcos stars, with distance from
   parallax and kind from the spectrum:
   - G0–G5 dwarfs within 23 pc lose 2.02 levels of light per level of distance (83 stars);
@@ -449,6 +457,24 @@ Then (SPN R440; Tom: "proceed with recommended changes") a real-data test of the
   reading adds only that the product is free.
 
 ### 2.2 Exact arithmetic
+
+- **Gravity by direction, and on the stage** (GRV, FCL runs 1–12, GDI, MVM, LDL, ACC runs 1–2, COS, 23–25 November; SPN
+  R1180–R1224; *Reads and Writes* §7, essay 33). A pull is a fixed weight over directions times the matter met along each;
+  through a plane that weight is the Cauchy, the same law a look lays on the plane (half within √3 heights), and above a
+  sheet the pull is 2πG times its Cauchy-weighted density. A pull is not a read: it has no facing, sums both hemispheres
+  and carries an amount, and with a facing for a moment its two halves subtract where a look's add. Directions give
+  places and ratios sizes: two masses meet where the pull flips, at a distance ratio √μ, the exchange's fixed point; a
+  ball's centre from two plumb lines, its radius only from strength ratios inside; a point lens's ring √(θ₊|θ₋|) and an
+  unseen lens's place from its images' directions and brightness ratio q²; no mass without G. A moving mass's look points
+  at its retarded place, its weak-field pull at its present place to the speed's square (past β = 1/√3 it pushes on the
+  line of motion, known). A mass at rest but accelerating is looked at, and pulled by an opposite charge, toward ½aT²
+  along a; its gravity pulls toward (7/2)aT², kept when a partner in orbit does the accelerating (the
+  Einstein–Infeld–Hoffmann equation, checked exactly at rational points). A lens's delay has its shape from the images'
+  directions, ½(q − 1/q) + ln q for a point mass, and its size from the mass, 4GM(1 + z)/c³. A read's own cosine weight
+  with no amount is the occupancy's first moment, the projected solid angle D; a pull is D's integral weighed by each
+  direction's column, for a ball G·ρ·(4R/3)·D at every distance outside (Newton's shell theorem read so), for a cube not.
+  The Cauchy form fixes the heat and never the paint: different matter can pull alike. Classical throughout; the
+  sorting ours; no new physics.
 
 - **Where 2/π shows up** (TPI, `plans/tpi-plan.md`). Sixty-five occurrences across about forty fields, from Buffon's
   needle and Viète to AC meters, one-bit correlators, Kendall's τ, the Lebesgue constant, Onsager's Ising energy, an
