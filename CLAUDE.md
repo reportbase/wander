@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  LDL (`plans/ldl-plan.md` + `runs/ldl/ldl.py`, 25 Nov; SPN R1221; Tom: "1 then 5"): light's delay past a lens, exact,
+  nothing killed: the delay's shape from the images' directions (point mass ½(q − 1/q) + ln q, geometric never less than
+  Shapiro; SIS all potential), its size an amount (a counted delay gives the point mass's M, no distance).
   MVM (`plans/mvm-plan.md` + `runs/mvm/`, 25 Nov; SPN R1220; Tom: "Merge and proceed"): §7's item (4), a mass in uniform
   motion, exact: the look points at the retarded place (M1's angle relation killed by my geometry, corrected post hoc),
   a moving charge's field exactly and linearized gravity's pull to first order in β at the present place (M2, M3), no

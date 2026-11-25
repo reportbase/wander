@@ -7607,6 +7607,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1221** (25 Nov 2026; Tom: "1 then 5"): LDL (`plans/ldl-plan.md` + `runs/ldl/ldl.py`), §7's item (4), light's delay
+  past a lens, exact, nothing killed. For a point mass Δt/T = ½(q − 1/q) + ln q, the geometric part and the Shapiro part
+  each a function of the images' distance ratio q alone (T1), the geometric never less (T2); for the SIS the extra paths
+  cancel and the delay is all potential (T3); the size T = 4GM(1 + z)/c³ an amount, a counted delay giving M with no
+  distance (T4); the form from the brightness ratio alone (T5). Classical (Refsdal).
 - **R1220** (25 Nov 2026; Tom: "Merge and proceed"): MVM (`plans/mvm-plan.md` + `runs/mvm/`), §7's open item (4), a
   mass in uniform motion, exact, predictions first. The look points at the retarded place; my angle relation was wrong
   (M1 killed by my geometry; the triangle's sin δ = β(R_r/R_p)·sin θ_r holds to 10⁻¹⁹¹, post hoc). A uniformly moving
