@@ -1694,7 +1694,7 @@ distinguishes the forms is what each needs, never a different number. What the s
 as gravity's, the weight a consequence of the inverse square. Here the weight is the stage's heat: the law of a
 standpoint's directions, the same for a look with no mass in it and for every arrangement of matter. What is gravity's
 is on the paint's side, the amount along each direction. The separation is of roles; a pull needs both, and no
-classical number changes. Each item below is a case of it. Seven so far, each from a run, each classical in
+classical number changes. The separation runs one way only (R1197): the Cauchy form, a theorem for any pull falling as the inverse square (its potential harmonic, the Poisson kernel its weight), fixes the heat and says nothing about the paint, and different paints can give the same pull outright (a point mass and a uniform shell of the same mass pull alike everywhere outside the shell; matter rearranged inside a body without changing its outer field is not met outside), the classical non-uniqueness of the gravity inverse problem. So a density, a shape or a depth comes from elsewhere (run 11's line and ball curves not told apart). Each item below is a case of it. Seven so far, each from a run, each classical in
 its mathematics, the details in the lists below:
 
 1. *Corners without an amount.* A pull through a plane has the look's corners (half within one height across a thumb,
