@@ -627,6 +627,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   same results", "Yes"): a two-body orbit as a stage and a payload, exact: even eccentric anomaly gives the direction from
   the focus the wrapped Cauchy of width β centred on the far point; time per direction is that times r/a (the payload);
   its sum is Kepler's equation; the period needs a and GM. P1 killed by my code (sympy), P1′ not. Not in any paper.
+  R1197 (25 Nov; Tom: "If we can prove that gravity is cauchy based, then the separation of the heat and the payload must
+  also be true. Unfortunately this says nothing about the payload", then "Yes"): **the Cauchy form fixes the heat, never
+  the payload**; a theorem for any inverse-square pull; different payloads can pull alike (a point and a shell; the
+  inverse problem's non-uniqueness), so a density, shape or depth is carried in. *Reads and Writes* §7.
   R1196 (25 Nov; Tom: "update the essays"): essay 33 brought up to FCL runs 9–12 and R1189–R1195 (new §9–§12; the
   kills §13, "does not say" §14, "what it changes" §15), its README row and `essays.html` card. No new claim.
   R1195 (25 Nov; Tom: "However classical does not distinguish the payload from the heat.    We show that gravity is

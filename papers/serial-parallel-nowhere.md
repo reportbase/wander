@@ -7616,6 +7616,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   the position at a given time is the payload's sum inverted; the period 2π√(a³/GM) needs a and GM; the clock's law on no
   wrapped Cauchy (5%–129% off). Run 2's P1 killed by my code (sympy left the push-forward unsimplified; numerically
   3·10⁻⁴⁹), run 3's P1′ not. Classical in every part; the reading ours. Not in any paper.
+- **R1197** (25 Nov 2026; Tom: "If we can prove that gravity is cauchy based, then the separation of the heat and the payload
+  must also be true.   Unfortunately this says nothing about the payload, and they can be completely different.", then
+  "Yes"): **the Cauchy form of a pull fixes the heat and says nothing about the payload; different payloads can give
+  the same pull.** Claude's precision, agreed: "gravity is Cauchy based" is already a theorem given the inverse square
+  (the potential harmonic, the Poisson kernel its weight over a flat region; GRV, FCL), so it holds for any
+  inverse-square pull, not gravity alone, and the separation of R1195 follows from it. The payload's freedom is the
+  classical non-uniqueness of the gravity inverse problem: a point mass and a uniform shell of the same mass pull alike
+  outside the shell, and any rearrangement inside a body that keeps its outer field is not met outside, so a density, a
+  shape or a depth is carried in from elsewhere (FCL run 11: line and ball curves not told apart). Light and gravity one
+  stage with different paints (R1192). No new physics. *Reads and Writes* §7, one passage.
 - **R1196** (25 Nov 2026; Tom: "update the essays"): PR #497 merged. Essay 33 brought up to FCL runs 9–12 and
   R1189–R1195: four new sections (§9 what a pull's direction can find, §10 adding and subtracting from the look's side,
   §11 a tunnel under a hill, §12 the front and the depth), the kills now §13 (run 11's D3 added), "what this does not
