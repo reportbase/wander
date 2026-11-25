@@ -36,14 +36,39 @@ rr = [sp.sqrt(((X - p[A]).T*(X - p[A]))[0]) for A in (0, 1)]
 n = [(X - p[A])/rr[A] for A in (0, 1)]                  # from the mass to the test body
 expect = [sum(G*m[A]/rr[A]*(sp.Rational(7, 2)*a[A][i] + sp.Rational(1, 2)*(a[A].T*n[A])[0]*n[A][i]) for A in (0, 1))
           for i in range(3)]
+# exact checks in rational arithmetic at points where every distance is a whole number (Pythagorean quadruples)
+quads = [(1, 2, 2), (2, 3, 6), (1, 4, 8), (2, 6, 9), (4, 4, 7), (6, 6, 7), (2, 10, 11)]
+import random; rnd = random.Random(1219)
+def pts():
+    out = []
+    for _ in range(6):
+        q1, q2 = rnd.sample(quads, 2); s1 = [rnd.choice((-1, 1))*c for c in q1]; s2 = [rnd.choice((-1, 1))*c for c in q2]
+        # X at 0; p1 = -s1, p2 = -s2 so X - p_A = s_A; |p1 - p2| must be rational too: try until it is
+        d2 = sum((s1[i] - s2[i])**2 for i in range(3))
+        if sp.sqrt(d2).is_rational:
+            vals = {X[i]: 0 for i in range(3)}
+            for i in range(3): vals[p[0][i]] = -s1[i]; vals[p[1][i]] = -s2[i]
+            for A in (0, 1):
+                for i in range(3):
+                    vals[v[A][i]] = sp.Rational(rnd.randint(-9, 9), 7); vals[a[A][i]] = sp.Rational(rnd.randint(-9, 9), 5)
+            vals[G] = sp.Rational(3, 2); vals[m[0]] = sp.Rational(2); vals[m[1]] = sp.Rational(5, 3)
+            out.append(vals)
+    return out
+P = []
+while len(P) < 6: P += pts()
+P = P[:6]
 ok1 = True; noa = True
 for i in range(3):
     e = sp.expand(acc[i].coeff(eps, 1))
-    lin = sum(e.diff(a[A][j]).subs({a[B][k]: 0 for B in (0, 1) for k in range(3)})*a[A][j] for A in (0, 1) for j in range(3))
-    ok1 &= sp.simplify(lin - expect[i]) == 0
-    rest = sp.expand(e - lin)
-    noa &= all(rest.diff(a[A][j]) == 0 for A in (0, 1) for j in range(3))
-print('B1 the accelerations enter only as sum G m (7/2 a + 1/2 (a.n) n)/r:', ok1, '; nothing else holds an acceleration:', noa)
+    da = {(A, j): e.diff(a[A][j]) for A in (0, 1) for j in range(3)}
+    for vals in P:
+        zero_a = {a[B][k]: 0 for B in (0, 1) for k in range(3)}
+        lin = sum(da[(A, j)].subs(vals)*vals[a[A][j]] for A in (0, 1) for j in range(3))
+        ok1 &= sp.nsimplify(lin - expect[i].subs(vals)) == 0
+        # nothing else holds an acceleration: the a-derivatives do not depend on any a
+        noa &= all(sp.simplify(da[(A, j)].subs(vals) - da[(A, j)].subs({**vals, **{a[B][k]: vals[a[B][k]] + 1 for B in (0, 1) for k in range(3)}})) == 0
+                   for A in (0, 1) for j in range(3))
+print('B1 (exact, at 6 rational points) the accelerations enter only as sum G m (7/2 a + 1/2 (a.n) n)/r:', ok1, '; nothing else holds an acceleration:', noa)
 
 # B2: against the EIH equation's limit for a test body at rest (as remembered)
 R12 = sp.sqrt(((p[0] - p[1]).T*(p[0] - p[1]))[0])
@@ -58,8 +83,8 @@ for i in range(3):
         tot += eps*G*m[b]/rr[b]**2*((nab.T*(-3*v[b]))[0])*(-v[b][i])
         tot += eps*sp.Rational(7, 2)*G*m[b]*a[b][i]/rr[b]
     eih.append(tot)
-diffs = [sp.simplify(sp.expand(acc[i] - eih[i])) for i in range(3)]
-print('B2 the whole 1PN expression minus EIH (test body at rest), components:', diffs)
+diffs = [[sp.nsimplify(sp.expand(acc[i].subs(eps, 1).subs(vals) - eih[i].subs(eps, 1).subs(vals))) for vals in P] for i in range(3)]
+print('B2 (exact, at 6 rational points) whole 1PN minus EIH, test body at rest:', diffs)
 
 # B3: a circular pair, lengths x k and masses x k
 mp.mp.dps = 40

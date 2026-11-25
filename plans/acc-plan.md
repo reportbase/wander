@@ -88,3 +88,23 @@ U_A the Newtonian potential of the other masses at A; V's retardation expanded t
   light-times) leave the direction of the test body's 1PN acceleration unchanged to 10⁻²⁵ and its size moved by 1/k.
 
 Kill: B1 or B2 not an identity in sympy; B3 a direction moved past 10⁻²⁵.
+
+### Run 2 (`runs/acc/acc2.py`, output `runs/acc/acc-run2.txt`)
+
+A change of method, said: the predictions asked for identities in sympy; `simplify` on the square roots did not finish
+in ten minutes, so B1 and B2 were checked exactly in rational arithmetic at six points where every distance is a whole
+number (Pythagorean quadruples, velocities and accelerations chosen at random as fractions). Exact at those points, not
+a symbolic proof.
+
+Nothing killed.
+- **B1 not killed**: the source accelerations enter the test body's 1PN acceleration only as
+  Σ_A (G m_A/r_A)(7/2·a_A + ½(a_A·n_A)·n_A), at all six points; no other term holds an acceleration. The partner adds
+  only G² terms (−4V∂V, the −U_A in σ) and velocity terms. So run 1's 7/2 survives the whole solution at this order: the
+  "rope" is gravity's own field and adds no acceleration term.
+- **B2 not killed**: the whole expression equals the Einstein–Infeld–Hoffmann equation's limit for a test body at rest,
+  term by term, zero at all six points in all three components (my memory of the EIH form and my expansion agree).
+- **B3 not killed**: lengths and masses × 5 and × 1000 leave the direction exactly where it was and the size × 1/k.
+
+Reading: for a pair in orbit, nothing left out at first post-Newtonian order, a body at rest is pulled toward each mass's
+present place moved (7/2)·a·T² along that mass's acceleration, a ratio of lengths a·r/c² unmoved by scaling; the look
+still points at ½·a·T². Classical (EIH, 1938); the sorting ours.

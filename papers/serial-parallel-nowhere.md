@@ -7607,6 +7607,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1224** (25 Nov 2026; Tom: "1 then 3"): ACC run 2 (`runs/acc/acc2.py`), the pair's whole 1PN field at a test body
+  at rest, exact at six rational points (sympy's simplify did not finish; said in the plan), nothing killed: the
+  accelerations enter only as Σ (G m/r)(7/2·a + ½(a·n)n) (B1), the whole equals EIH's test-body limit (B2), scaling moves
+  no direction (B3). The 7/2 survives with gravity as the rope.
 - **R1223** (25 Nov 2026; Tom: "1 then 3"): COS (`plans/cos-plan.md` + `runs/cos/cos.py`), §7's item (1), exact,
   nothing killed. The occupancy's first moment D = ∫ o(u)·u dΩ (presence only, the projected solid angle) has the
   cosine weight and no amount: F_o(n) − F_o(−n) = n·D (K1), unmoved by scaling or any map of the densities (K2); a ball's

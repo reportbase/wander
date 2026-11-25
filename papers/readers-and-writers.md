@@ -1859,7 +1859,7 @@ smaller), while for an isothermal sphere the extra paths cancel and the delay is
 opposite charge, toward one place, ½aT² along its acceleration (T the light-time), where it will be a light-time later;
 its weak-field gravity pulls toward a place seven times as far, (7/2)aT², the departure a·r/c² times the sine of the
 angle, unmoved by scaling every length and time. What accelerates the mass is left out, and its own field would add,
-so the 7/2 is the moving mass's part of the pull, not a whole solution (classical: the first post-Newtonian terms). (5) Done once (`plans/fcl-literature.md`): that an even spread from a point lands on a plane as the Cauchy is in
+so the 7/2 was the moving mass's part of the pull; a pair in orbit, each mass accelerated by the other and nothing left out at the first post-Newtonian order (ACC run 2, checked exactly against the Einstein–Infeld–Hoffmann equation), keeps it: the partner adds terms in G² and in the velocities and none with an acceleration (classical). (5) Done once (`plans/fcl-literature.md`): that an even spread from a point lands on a plane as the Cauchy is in
 print for light (Lu 2020; Dupuy, Belcour and Heitz 2019); its statement for gravity beside a standpoint's directions,
 the add-and-subtract difference and the Cauchy kept along a line of lens masses were not found, in one search. None of
 this is new physics, and a pull is not a read.
