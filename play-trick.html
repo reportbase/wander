@@ -151,7 +151,7 @@
 
     // ══ played from inside (pool.html, POL runs 1–2) ══
     // what arrives at a from b: b's direction and v = r_b/d
-    function image(a, b) { const dx = b.x - a.x, dz = b.z - a.z, d = Math.hypot(dx, dz); return { n: [dx / d, dz / d], v: b.r / d }; }
+    function image(a, b) { const dx = b.x - a.x, dz = b.z - a.z, d = Math.hypot(dx, dz); return { n: [dx / d, dz / d], v: b.r / d, fix: !!b.fixed }; }
     // what a does with it, in its own size: the other's motion converted by v/h, the mass ratio (h/v)³ (one material)
     function respond(a, ia, ib, ub, e, tick) {
         const v = ia.v, h = ib.v, n = ia.n, ua = [a.vx / a.r, a.vz / a.r];
@@ -166,8 +166,9 @@
         if (tau >= 0 && tau <= (tick || 0)) {   // the line of centres then; respond along it; since then it has moved with the new motion
             const pc = [p[0] - w[0] * tau, p[1] - w[1] * tau], l = Math.hypot(...pc); m = [pc[0] / l, pc[1] / l];
         } else tau = NaN;                        // overlapping from before this tick (a ball set down too close): the old push
-        const k = (1 + e) * (w[0] * m[0] + w[1] * m[1]) / (1 + (h / v) ** 3), du = [k * m[0], k * m[1]];
-        step = isNaN(tau) ? [-over * n[0], -over * n[1]] : [du[0] * tau, du[1] * tau];
+        // a fixed ball (games' bowling ditch, Nov 25: "The balls in the ditch block other balls") takes no push and gives the whole rebound
+        const k = a.fixed ? 0 : (1 + e) * (w[0] * m[0] + w[1] * m[1]) / (ia.fix ? 1 : 1 + (h / v) ** 3), du = [k * m[0], k * m[1]];
+        step = a.fixed ? [0, 0] : isNaN(tau) ? [-over * n[0], -over * n[1]] : [du[0] * tau, du[1] * tau];
         return { step, du, hit: true, n: m, tau: isNaN(tau) ? 0 : tau, hvC: isNaN(tau) ? h + v : c / Math.hypot(p[0] - w[0] * tau, p[1] - w[1] * tau) };
     }
     function pairs(B, log) {
