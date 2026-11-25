@@ -7607,6 +7607,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1213** (25 Nov 2026; Tom: "Merge 509, then 1 and 2"): PHR (runs 1–6) and FRD as two cases in *Reads and Writes*
+  §11, "A resonance's width" and "Faraday rotation", with their kills, the cable's lesson (an instrument's own turn read
+  and removed before the line's is judged) and the angle's catch (a turn between samples fixed only to whole half
+  turns); the CMU paragraph points to the first; the four data sets in the references and Code and data. No new claim.
 - **R1212** (25 Nov 2026; Tom: "Merge 508, then the cable delay test"): PHR run 6, predictions R9–R13 committed before
   the fit: a delay e^(−2πifτ) read off the line alone and removed, then run 5b's analysis unchanged. Carter: τ 37.4 ns on
   every fitted sweep (R11), 175 sweeps pass the line test against 63 (R12), the turn 89.9° (R10); R9 killed narrowly
