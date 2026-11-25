@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1215** (25 Nov 2026; Tom: "Merge and Proceed"): KPL run 3, the untimed shape by each look's distance to the
+  projected orbit (its eccentric anomaly free, no date), checked first on the paper's orbit with its errors (unbiased: e
+  0.885 ± 0.006, P 15.99 ± 0.05 yr, a 125.9 ± 2.4 mas), predictions W1–W5 from that scatter. On S2's looks: W1, W3, W4,
+  W5 not killed (e 0.869, the clock from place a straight line to 0.002 of a period, P 16.13 observer's years, a 119.3
+  mas); W2 killed (ω 5.6° off; four untimed solutions, two with the dates, as stated). Post hoc: all three numbers
+  2.4–2.8σ the same way, the frame (Sgr A*'s place and drift, fitted by the paper) the first candidate, unchecked. The
+  script's printed verdicts used run 2's bounds; judged by run 3's.
 - **R1214** (25 Nov 2026; Tom: "Merge 509, then 1 and 2"): KPL run 2 on S2's measured orbit about Sgr A* (Gillessen et
   al. 2017, VizieR J/ApJ/837/30), predictions V1–V5 committed before the data. V3 not killed: the clock read from place
   alone against the observer's years is a straight line (median residual 0.005 of a period). V1, V2, V4, V5 killed (e
