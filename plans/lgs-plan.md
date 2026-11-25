@@ -45,3 +45,26 @@ Kill: an identity (L1, L2, L4's ball, L5, L6) not exact in sympy or past 10⁻²
 variables measured from the edge, to avoid CLM's cancellation); a threshold in L3 or L4's cube not met.
 
 ## Runs
+
+### Run 1 (`runs/lgs/lgs.py`, output `runs/lgs/lgs-run1.txt`)
+
+Nothing killed.
+- **L1 not killed**: for a ball, F = πB·R²/d² = B·D and g = (4π/3)Gρ·R³/d² = Gρ·(4R/3)·D exactly: one stage weight D,
+  times the radiance for light and times the mean column for gravity.
+- **L2 not killed**: radiance unchanged with distance exactly when the flux falls as d^(−(D−1)), in D = 2, 3, 4: the
+  brightness theorem is light's inverse square, as CLM's column premise is gravity's.
+- **L3 not killed**: with absorption κR = 0.1, F/(B·D) is 0.887, 0.652, 0.145 at d = 2, 5, 20 R, and g/F 1.50, 2.05,
+  9.20 against 4/3 without absorption: the medium adds an amount per length and the look's take then depends on where.
+- **L4 not killed**: one ball's g/F = 4GρR/(3B), no d; a cube face-on 0.542, 0.692, 0.953 (× Gρ/B) at 0.5, 2, 20 sides,
+  76% apart (COS's ⟨L⟩, since only its near face is seen and its radiance is uniform).
+- **L5 not killed**, but by construction: F takes the first surface and g sums every column, so the hidden ball leaves F
+  at πB/25 and adds Gρπ/6000 = G·(4/3)πr³ρ/8² to g. The check is that the sums were set up as the takes say, not a test.
+- **L6 not killed**: lengths × k at fixed B and ρ, F unmoved and g × k exactly.
+
+Reading: light's inverse square and gravity's are one premise on one stage: what a direction carries does not depend on
+how far along it its source lies (the brightness theorem; the column). A look and a pull then both read the stage weight
+D, a ratio of lengths, times an amount per direction: radiance, the first surface's; the column, everything along it. So
+one ball's pull over its light is a mass-to-light reading with no distance in it; a body without spherical symmetry
+(the cube) loses that, and a medium (absorption) breaks the light's half of the premise while gravity's stands. Classical
+in every part (Lambert, the brightness theorem, Newton, mass-to-light ratios); the joining is the stage's, and under
+R1229 it is support by the same results with one route for two laws.
