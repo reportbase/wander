@@ -1,8 +1,15 @@
-# PHR run 5: run 4's analysis on finer sweeps (Carter et al. 2016, Zenodo 61575; Rieger, Guenzler et al. 2023,
+# PHR runs 5 and 5b (5b: a budget per sweep): run 4's analysis on finer sweeps (Carter et al. 2016, Zenodo 61575; Rieger, Guenzler et al. 2023,
 # Zenodo 7767046). Usage: python3 runs/phr/phr5.py <carter 08222016Res dir> <fano Data dir>
 import sys, os, glob, numpy as np, multiprocessing as mp
 src = open(os.path.join(os.path.dirname(__file__), 'phr3.py')).read().split("root, set2 = sys.argv")[0]
-exec(src)  # model, fit1, side_fits, analyse (run 4's, unchanged)
+exec(src)  # model, fit1, side_fits, analyse (run 4's)
+# run 5b's budget: each fit capped at 500 evaluations, 20 bootstrap resamples, 5 minutes a sweep
+import signal
+_ls = least_squares
+def least_squares(*a, **k):
+    k['max_nfev'] = min(k.get('max_nfev', 500), 500); return _ls(*a, **k)
+class _Timeout(Exception): pass
+def _alarm(*a): raise _Timeout()
 
 def qualifies(f, z):
     n = len(f); k = max(3, int(0.2*n)); idx = np.r_[0:k, n-k:n]
@@ -15,8 +22,11 @@ def one(job):
     tag, f, z, seed = job
     rng = np.random.default_rng(seed)
     if not qualifies(f, z): return (tag, 'noise')
-    try: r = analyse(f, z, nboot=50)
+    signal.signal(signal.SIGALRM, _alarm); signal.alarm(300)
+    try: r = analyse(f, z, nboot=20)
+    except _Timeout: return (tag, 'timed out')
     except Exception: return (tag, 'fail')
+    finally: signal.alarm(0)
     if f.min() > r['f0'] - 2*r['G'] or f.max() < r['f0'] + 2*r['G']: return (tag, 'narrow')
     if r['pts'] < 20: return (tag, 'coarse')
     print('%s rel %+.4f sig/G %.4f turn %.1f pts %.0f' % (tag, r['rel'], r['sig']/r['Gamp'], r['turn'], r['pts']), flush=True)

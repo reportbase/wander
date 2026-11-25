@@ -1,0 +1,17 @@
+RES-1_-25_DBM_TEMP_1.156.S2P rel -0.2547 sig/G 0.0289 turn 81.0 pts 40
+RES-1_-25_DBM_TEMP_1.200.S2P rel -0.2534 sig/G 0.0271 turn 80.8 pts 42
+RES-1_-35_DBM_TEMP_1.200.S2P rel -0.2464 sig/G 0.0245 turn 80.7 pts 42
+RES-1_-35_DBM_TEMP_1.155.S2P rel -0.2555 sig/G 0.0269 turn 81.0 pts 40
+RES-1_-35_DBM_TEMP_1.238.S2P rel -0.2447 sig/G 0.0308 turn 80.4 pts 44
+RES-1_-45_DBM_TEMP_0.101.S2P rel -0.2262 sig/G 0.0199 turn 82.6 pts 34
+RES-1_-45_DBM_TEMP_1.202.S2P rel -0.2533 sig/G 0.0263 turn 80.1 pts 42
+RES-1_-45_DBM_TEMP_1.237.S2P rel -0.2470 sig/G 0.0300 turn 80.4 pts 44
+RES-1_-45_DBM_TEMP_1.112.S2P rel -0.2550 sig/G 0.0328 turn 81.5 pts 39
+RES-1_-55_DBM_TEMP_1.465.S2P rel -0.3060 sig/G 0.0321 turn 73.6 pts 57
+RES-1_-65_DBM_TEMP_1.155.S2P rel -0.2623 sig/G 0.0342 turn 83.4 pts 41
+RES-1_-75_DBM_TEMP_0.596.S2P rel -0.5177 sig/G 238.5537 turn 73.0 pts 473
+resonator_1_powersweep_overcoupled.npz p20 rel +0.0008 sig/G 0.0013 turn 90.1 pts 147
+resonator_1_powersweep_overcoupled.npz p21 rel -0.0031 sig/G 0.0026 turn 90.2 pts 147
+resonator_1_powersweep_overcoupled.npz p22 rel -0.0128 sig/G 0.0055 turn 90.3 pts 147
+resonator_1_powersweep_overcoupled.npz p23 rel -0.0392 sig/G 0.0098 turn 91.4 pts 147
+resonator_1_powersweep_overcoupled.npz p24 rel -0.0868 sig/G 0.0181 turn 93.6 pts 152

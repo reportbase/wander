@@ -244,3 +244,14 @@ seeded random 200 of the 972 files (seed 1209), each judged by the rule; Fano: a
 - **R7.** On each set, the median data turn across f₀ ± Γ_phase/2 is 90° ± 5°.
 - **R8 (Fano).** R5–R7 hold on the Fano set as on Carter's: the asymmetry is a rotated coupling plus background, which
   the model has. Killed if the Fano set fails R5 or R6 where Carter's passes.
+
+### Run 5, stopped; run 5b's budget, recorded before it runs
+
+Run 5 was stopped (Tom: "Merge 507, then 5b") after about an hour: each of the four workers had spent an hour of CPU on
+single 2,001-point Carter sweeps (four starting widths, 50 bootstrap refits each, no limit per sweep), 17 sweeps had
+reported (`phr-run5-stopped.txt`, kept as it stood), and the Fano set had not begun. Nothing was judged.
+
+Run 5b: R5–R8, the data, the selection and the measures unchanged; only the compute budget. At most 5 minutes of
+wall time per sweep (a sweep that reaches it is counted "timed out", reported, not judged); 20 bootstrap resamples, not
+50 (σ noisier, so the 3σ test somewhat looser: a weakness stated now); each least-squares fit capped at 500 function
+evaluations. Seen before this record: the 17 lines of run 5's output.
