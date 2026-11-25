@@ -49,3 +49,22 @@ them. It does not show the reading is the only one. A fail where the line looks 
 of CMU's 15.
 
 ## Runs
+
+### Data set 1, recorded before analysis
+
+Lopez et al., dataset of "Performance Study of the Vibrating Wire Technique to Determine Longitudinal Magnetic Field
+Profile Using Scans to High Wire Harmonic", Zenodo 10.5281/zenodo.15485044, v2 (21 May 2025), CC BY 4.0.
+`VWireStudyData.zip`, 1,755,802 bytes, md5 4e8abe8b2d4b02045dcf481e84bb55e1, sha256
+e51699e065b4af05a32f41468b3ee95019d2b6cf7746cd9cf8acd813ce9ec947; not committed. A taut wire carrying an AC current in
+a quadrupole's field, swept in frequency through one of its harmonics; two lock-ins read the wire's two transverse
+motions as X and Y (columns MeanX1, MeanY1 and MeanX2, MeanY2). Seen before this record: the file list and the first
+40 rows of one scan (jan16_fscan_n86.txt), which show a narrow line on a sizeable complex background with noisy
+points near the peak.
+
+How the predictions are judged on it, fixed now: every scan file under `RawScans/Wire/02_Precision` and
+`03_FieldReconstr`, each channel separately, the complex response X + iY. A channel is analysed only if its
+background-subtracted |χ|² peak stands at least 20 times the rms of |χ|² in the outer 20% (a line, not noise) and
+the sweep covers ω₀ ± 2Γ. Γ for the window is the amplitude's FWHM. Q2: among analysed channels where a Lorentzian
+fits |χ|² with rms residual under 2% of the peak, killed if more than 10% have the scaled curves differing by more
+than 5% rms. Q3 and Q4 judged on the same channels, each killed if more than 10% miss. Q5 untested on this set
+unless a channel shows two lines.
