@@ -114,3 +114,32 @@ vizier.cfa.harvard.edu as ASU-TSV with all columns; VizieR's licence (https://cd
 orbital elements, for the comparison only): 10,657 bytes, sha256
 b0db1869b253457a8bd38e8f20cdd82f9b760643d8fd37439b5c87eada1e8bf7. Not committed. Only the header has been read.
 Rows used: Flag "a" with S2's two offsets present; radial-velocity rows dropped.
+
+### Run 2, as it came out (`runs/kpl/kpl2.py`, output `kpl-run2.txt`)
+
+145 astrometric looks of S2, 1992.224 to 2016.530.
+- **V1 killed**: e 0.8107 from the untimed places against 0.884 (the paper 0.8839).
+- **V2 killed**: the untimed places give four solutions (i 42.6° or 137.4°, Ω 24.1° or 204.1°, ω with them), none within
+  3° of (134°, 227°, 66°). Killed twice over: by the values, and by my letter, since untimed places cannot settle the
+  sense of motion (it needs the order of the looks) nor which node is ascending (it needs a radial velocity), so no
+  untimed method gives one solution. I had not stated that.
+- **V3 not killed**: M/2π from place alone against the dates is a straight line, median |residual| 0.0050 of a period
+  (max 0.045, near pericentre).
+- **V4 killed**: the period 16.394 observer's years against 16.0 (the paper 16.00).
+- **V5 killed**: a 111.16 mas against 125 (the paper 125.5). With R₀ = 8.3 kpc carried in, 923 au and 2.9·10⁶ suns
+  (the paper's 4.3·10⁶).
+
+Post hoc, a check of my code (`runs/kpl/kpl2-check.py`, output `kpl-run2-check.txt`): the paper's own orbit (table 3)
+made into places at run 2's 145 dates. Noise-free, every step is exact (e 0.8839, P 16.000 yr, a 125.50 mas, the paper's
+elements among the four untimed solutions and the dates leaving two). With the paper's stated errors added (one seeded
+draw), the same method gives e 0.776, P 16.45 yr and a 111 mas, the run's numbers within their scatter. So the kills
+are my method's, not the data's or the geometry's: a conic fitted to noisy places, most of them along the slow far side
+and few through the fast pericentre, is pulled to a rounder, smaller ellipse (the reweighted algebraic fit is not the
+distance to the curve, and the error at pericentre is a large share of the ellipse's width there). The frame (Sgr A*'s
+place and drift, fitted by the paper) is not what moved it; the check has the focus exactly at the origin and is pulled alike.
+
+Reading: what run 1 shows exactly holds on the measured orbit in its form (the clock from place alone is a straight line
+in the observer's years, V3), but my untimed estimator does not recover the shape from these looks. A fair test of the
+untimed shape needs an estimator that fits the distance from each look to the projected orbit itself (the eccentric
+anomaly of each look a free number, still no date used), checked first on the paper's orbit with its errors. That would
+be run 3, with its own predictions.

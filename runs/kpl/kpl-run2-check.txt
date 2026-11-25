@@ -1,0 +1,25 @@
+S2 astrometric looks: 145, dates 1992.224 to 2016.530
+noise-free
+    STEP 1 (untimed): apparent centre (82.80, -14.44) mas, e = 0.8839
+        (1, np.float64(125.5), np.float64(45.82), np.float64(226.94), np.float64(294.49))
+        (1, np.float64(125.5), np.float64(45.82), np.float64(46.94), np.float64(114.49))
+        (-1, np.float64(125.5), np.float64(134.18), np.float64(226.94), np.float64(65.51))
+        (-1, np.float64(125.5), np.float64(134.18), np.float64(46.94), np.float64(245.51))
+    STEP 2-3: sense -1; M/2pi against the date: slope 0.06250 /yr, median |residual| 0.0000 period, max 0.0000
+              period 16.000 yr (the observer's years), a pericentre at 2002.330
+    STEP 4: a = 125.50 mas (no a in au, GM or seconds from any step)
+    V1 e 0.8839 vs 0.884 -> not killed
+    V4 P 16.000 yr vs 16.0 -> not killed
+    V5 a 125.50 mas vs 125 -> not killed
+with the stated errors
+    STEP 1 (untimed): apparent centre (76.80, -14.11) mas, e = 0.7757
+        (1, np.float64(110.951276), np.float64(44.642), np.float64(17.57), np.float64(143.251))
+        (1, np.float64(110.951276), np.float64(44.642), np.float64(197.57), np.float64(323.251))
+        (-1, np.float64(110.951276), np.float64(135.358), np.float64(17.57), np.float64(216.749))
+        (-1, np.float64(110.951276), np.float64(135.358), np.float64(197.57), np.float64(36.749))
+    STEP 2-3: sense -1; M/2pi against the date: slope 0.06081 /yr, median |residual| 0.0070 period, max 0.0561
+              period 16.445 yr (the observer's years), a pericentre at 2002.253
+    STEP 4: a = 110.95 mas (no a in au, GM or seconds from any step)
+    V1 e 0.7757 vs 0.884 -> KILLED
+    V4 P 16.445 yr vs 16.0 -> KILLED
+    V5 a 110.95 mas vs 125 -> KILLED
