@@ -92,29 +92,34 @@ print('R4 set 2', 'not killed' if abs(r2['turn'] - 90) <= 10 else 'KILLED')
 
 # set 1: the channels run 1 analysed (same selection rule)
 files = sorted(glob.glob(os.path.join(root, '02_Precision', '*.txt')) + glob.glob(os.path.join(root, '03_FieldReconstr', '*.txt')))
-rows = []
-for fn in files:
+def one(job):
+    # one channel; its own seed (run 4 runs channels in parallel, so the shared generator is replaced per channel)
+    global rng
+    fn, ch, seed = job
+    rng = np.random.default_rng(seed)
     try: D = np.genfromtxt(fn, delimiter=',', names=True)
-    except Exception: continue
-    if D.size < 20 or 'Frequency' not in D.dtype.names: continue
+    except Exception: return None
+    if D.size < 20 or 'Frequency' not in D.dtype.names: return None
     f = D['Frequency']; o = np.argsort(f); f = f[o]
-    for ch in (1, 2):
-        z = (D[f'MeanX{ch}'] + 1j*D[f'MeanY{ch}'])[o]
-        sx = D[f'stdX{ch}'][o]; sy = D[f'stdY{ch}'][o]
-        n = len(f); k = max(3, int(0.2*n)); idx = np.r_[0:k, n-k:n]
-        cr = np.polyfit(f[idx], z.real[idx], 1); ci = np.polyfit(f[idx], z.imag[idx], 1)
-        zc = z - (np.polyval(cr, f) + 1j*np.polyval(ci, f)); p = np.abs(zc)**2
-        if p.max() < 20*np.sqrt(np.mean(p[idx]**2)): continue
-        i0 = p.argmax(); ab = np.where(p >= p[i0]/2)[0]; fw = f[ab.max()] - f[ab.min()]
-        if fw <= 0: fw = np.median(np.diff(f))
-        # run 1's coverage test used the Lorentzian fit; approximate by the FWHM here, then require coverage by the full fit
-        try:
-            r = analyse(f, z, np.maximum(sx, 1e-12), np.maximum(sy, 1e-12), nboot=100)
-        except Exception as e:
-            rows.append((fn, ch, 'fail')); continue
-        if f[0] > r['f0'] - 2*r['G'] or f[-1] < r['f0'] + 2*r['G']:
-            rows.append((fn, ch, 'narrow')); continue
-        rows.append((fn, ch, 'ok', r))
+    z = (D[f'MeanX{ch}'] + 1j*D[f'MeanY{ch}'])[o]
+    sx = D[f'stdX{ch}'][o]; sy = D[f'stdY{ch}'][o]
+    n = len(f); k = max(3, int(0.2*n)); idx = np.r_[0:k, n-k:n]
+    cr = np.polyfit(f[idx], z.real[idx], 1); ci = np.polyfit(f[idx], z.imag[idx], 1)
+    zc = z - (np.polyval(cr, f) + 1j*np.polyval(ci, f)); p = np.abs(zc)**2
+    if p.max() < 20*np.sqrt(np.mean(p[idx]**2)): return None
+    try:
+        r = analyse(f, z, np.maximum(sx, 1e-12), np.maximum(sy, 1e-12), nboot=100)
+    except Exception:
+        return (fn, ch, 'fail')
+    if f[0] > r['f0'] - 2*r['G'] or f[-1] < r['f0'] + 2*r['G']:
+        return (fn, ch, 'narrow')
+    print('%s ch%d rel %+.4f sig/G %.4f turn %.1f chi2 %.2f' % (os.path.basename(fn), ch, r['rel'], r['sig']/r['Gamp'],
+          r['turn'], r['chi2']), flush=True)
+    return (fn, ch, 'ok', r)
+import multiprocessing as mp
+jobs = [(fn, ch, 1208 + 2*i + ch) for i, fn in enumerate(files) for ch in (1, 2)]
+with mp.Pool(min(8, os.cpu_count())) as pool:
+    rows = [x for x in pool.map(one, jobs, chunksize=1) if x is not None]
 ok = [x[3] for x in rows if x[2] == 'ok']
 print('SET 1: channels fitted', len(ok), 'other', [x[2] for x in rows if x[2] != 'ok'].count('narrow'), 'narrow,',
       [x[2] for x in rows if x[2] != 'ok'].count('fail'), 'failed')
