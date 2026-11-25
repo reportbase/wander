@@ -89,3 +89,38 @@ chance of a pass.
 - Nothing about what drives the field.
 
 ## Runs
+
+### Run 1 (`python3 -I runs/gmf/gmf.py <datadir>`, output `runs/gmf/gmf-run1.txt`)
+
+Data: the USGS service answered for all three stations (one-minute X, Y, 2026-10-01 to 10-07 23:59). sha256 as fetched:
+
+```
+2b306882a035e95d75ee1584905e6bcada259c78e3379c39df5a975d7fb34ef4  BOU.txt
+065ef93be9e38390d0bfe8a817fe7567541fcf1fb2d1bb07ca410c7d2879b9ed  FRD.txt
+50a97f4f2b04fd6622778aebc5cfb1d1b960357f959414fa0b6529823c170443  CMO.txt
+```
+
+Two departures from the plan, both said before any result was read. FRD's file came back with every X and Y value the
+missing code (99999), so by the plan's rule it is dropped and not replaced: four station-bands, not six (the thresholds
+"at least four of six" read as "at least four of four", "three or more" as stated). And B1 as written (periods 2–10
+minutes) cannot be built: a 2-minute period is the Nyquist limit of one-minute data, my set-up. It was run at 2.5–10
+minutes, the nearest buildable band.
+
+- **G1 killed**, in a way I did not expect. The amounts are heavy-tailed (excess kurtosis 11.7 to 80.9) but standardized X
+  is within 0.014 to 0.041 of the best Cauchy, under the plan's 0.05, at all four: the field's changes have a nearly
+  Cauchy-shaped tail in their amounts.
+- **G2 killed**: the ratio is 0.081, 0.089 (BOU B1, B2), 0.100, 0.109 (CMO B1, B2) from the Cauchy at half A's z, all past
+  0.03.
+- **G3 killed**: loudness moves the ratio's law by 0.119, 0.064, 0.052, 0.089, all past 0.03, while |X|'s law moves by 0.71
+  to 0.90.
+- **G4 not killed**: at every failure of G2 the undone angle is 0.075 to 0.132 from uniform, so the direction of change is
+  not a turn here.
+- **G5**: G2 failed everywhere, so its order is not tested.
+
+Reading: in this domain, in this week, the direction of the field's change is not a turn: it has preferred directions
+that move with how disturbed the field is, as the physics risk said, so the rule predicts no Cauchy in the direction and
+finds none (consistent with R719; the test failed in its letter, as SMN's microseism band and WND did). And the amounts
+show what R719 warns of: a tail close to a Cauchy in shape with no turn anywhere, a fat tail that is no evidence. My
+expectation (G1 holding, a pass at mid latitude short band) was wrong on both counts. So O6 stands: the rule has passed
+where the turn could be named (LIGO's [H1 : L1], seismic noise at 1–4 Hz) and has not claimed a turn where none was
+there (the seeds, the wind, the microseism band, the geomagnetic field).

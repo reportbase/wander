@@ -1,0 +1,17 @@
+BOU: 10080 minutes, missing 0.00%
+  B1 (2.5-10 min; plan 2-10, Nyquist): m=-0.1434 g=0.8919 rho=-0.159 sy/sx=0.903; half B: D(r,Cauchy)=0.0808 median -0.3532 quartiles -1.4680,0.6868 (m-g -1.0353, m+g 0.7485); D(angle,uniform)=0.0926
+     loud vs quiet: D(r)=0.1190, D(|X|)=0.7079; kurtosis X 17.1 Y 16.9; D(X, Cauchy)=0.014, D(X, Gauss)=0.178; n_B=2520
+  B2 (10-60 min): m=-0.0351 g=1.1066 rho=-0.032 sy/sx=1.107; half B: D(r,Cauchy)=0.0894 median -0.2849 quartiles -1.6923,0.8038 (m-g -1.1416, m+g 1.0715); D(angle,uniform)=0.0748
+     loud vs quiet: D(r)=0.0635, D(|X|)=0.7444; kurtosis X 11.7 Y 15.7; D(X, Cauchy)=0.016, D(X, Gauss)=0.176; n_B=2520
+FRD: 10080 minutes, missing 100.00%
+  dropped (more than 10% missing)
+CMO: 10080 minutes, missing 0.00%
+  B1 (2.5-10 min; plan 2-10, Nyquist): m=0.0627 g=1.0593 rho=0.059 sy/sx=1.061; half B: D(r,Cauchy)=0.1003 median 0.1390 quartiles -0.4979,0.6887 (m-g -0.9966, m+g 1.1219); D(angle,uniform)=0.1318
+     loud vs quiet: D(r)=0.0524, D(|X|)=0.8651; kurtosis X 75.2 Y 52.5; D(X, Cauchy)=0.034, D(X, Gauss)=0.264; n_B=2520
+  B2 (10-60 min): m=0.2658 g=0.4507 rho=0.508 sy/sx=0.523; half B: D(r,Cauchy)=0.1085 median 0.1186 quartiles -0.3352,0.5619 (m-g -0.1849, m+g 0.7164); D(angle,uniform)=0.1054
+     loud vs quiet: D(r)=0.0889, D(|X|)=0.8968; kurtosis X 21.3 Y 80.9; D(X, Cauchy)=0.041, D(X, Gauss)=0.245; n_B=2520
+G1: 0 of 4 meet it -> KILLED
+G2: D >= 0.03 in 4 of 4 -> KILLED
+G3: ratio D >= 0.03 in 4; both parts met in 0 -> KILLED
+G4: failures of G2 with the angle within 0.03 of uniform: 0 -> not killed
+G5: G2 failures at [('BOU', 'B1 (2.5-10 min; plan 2-10, Nyquist)'), ('BOU', 'B2 (10-60 min)'), ('CMO', 'B1 (2.5-10 min; plan 2-10, Nyquist)'), ('CMO', 'B2 (10-60 min)')]

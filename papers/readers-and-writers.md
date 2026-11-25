@@ -2896,7 +2896,15 @@ before the data can show where it is not. **Checked** (TCF; killed).
   no gap, and whether extents, orders and maps exhaust the relations between reads. Neither is claimed.
 - **O5. Do observers put the thing looked at on the corner?** A "should" (§5), not a claim about eyes or instruments.
 - **O6. A second test that can fail.** "Find the z" has passed once in data (LIGO) and failed once (the seeds). A second
-  domain, where the turn can be named before the data, would show whether the rule sorts.
+  domain, where the turn can be named before the data, would show whether the rule sorts. *Since (R923, R924, R929,
+  R1233):* it passed a second time, in ambient seismic noise at 1–4 Hz (the direction of horizontal motion Cauchy at the
+  second moments' z at 8 of 9 station-weeks, unmoved by loudness, while the amounts carry kurtosis in the thousands;
+  SMN), and in three domains the turn could not be named and no Cauchy was claimed: the microseism band (directional),
+  one-minute wind (the turn below the data's step; WND) and the geomagnetic field's changes (preferred directions that
+  move with the field's disturbance, the undone angle 0.075 to 0.132 from uniform; GMF). The geomagnetic amounts also
+  show the warning: a tail within 0.014 to 0.041 of a Cauchy in shape with no turn anywhere. So the rule has sorted where
+  it was tried, two passes and four refusals, the turn named before the data each time; open still whether a third pass
+  is found in a domain chosen beforehand.
 - **O7. The essays, the demos and *Reads and Writes in Physics*.** *Closed (R792):* all three brought to R788's kinds;
   the last place still calling an extent a write, the demos page's card for `write.html`, now says the move places.
 - **O8. Why the sky is conformal.** The moving sky's Möbius map rests on motion keeping angles on the sky. SRB (runs 1–2)
@@ -2957,7 +2965,7 @@ reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `
 `plans/swp-plan.md`, `runs/swp/`. Three laws on the sphere: `plans/eul-plan.md`, `runs/eul/`. Euler's formula as a count of
 reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Loops among standpoints: `plans/tlp-plan.md`, `plans/mny-plan.md`, `runs/tlp/`, `runs/mny/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The two completions tested blind, and the odd sums: `plans/twc-plan.md`, `runs/twc/`. The distance between
 standpoints: `plans/frg-plan.md`, `runs/frg/frg.py`. A flat chart in space: `plans/flc-plan.md`, `runs/flc/`. Epicycles and
-aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The pull by direction: `plans/grv-plan.md`, `runs/grv/`. Bodies, motion, delay and the cosine weight (§7, items 1, 2 and 4): `plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`, `plans/cos-plan.md`, `plans/clm-plan.md`, `plans/lgs-plan.md`, `plans/lns-plan.md`, with `runs/gdi/`, `runs/mvm/`, `runs/ldl/`, `runs/acc/`, `runs/cos/`, `runs/clm/`, `runs/lgs/`, `runs/lns/`. The data cases:
+aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The pull by direction: `plans/grv-plan.md`, `runs/grv/`. Bodies, motion, delay and the cosine weight (§7, items 1, 2 and 4): `plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`, `plans/cos-plan.md`, `plans/clm-plan.md`, `plans/lgs-plan.md`, `plans/lns-plan.md`, with `runs/gdi/`, `runs/mvm/`, `runs/ldl/`, `runs/acc/`, `runs/cos/`, `runs/clm/`, `runs/lgs/`, `runs/lns/`; "find the z" in the geomagnetic field, `plans/gmf-plan.md`, `runs/gmf/`. The data cases:
 `plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, `plans/phr-plan.md`, `plans/frd-plan.md`, `plans/kpl-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`, `runs/phr/`, `runs/frd/`, `runs/kpl/`; each records its
 runs as they came out, the killed ones too, and none alone establishes the sort. Pages: `read.html`, `pinhole.html`,
 `crosshairs.html`, `heat-cube.html`, `euler.html`, `approach.html`, `slide-rule.html`, `star-field.html`. The read as a
