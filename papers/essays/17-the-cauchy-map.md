@@ -325,6 +325,18 @@ that could fail. It has failed once: seeds falling from a plant, read as a strai
 land as the hemisphere's Cauchy with a tail falling as the cube of the distance; on 35 measured wind-dispersed kernels the
 tails fall about as the square, a mixture over wind speeds. A fat tail is not, by itself, a map of looking.
 
+It changes how the Cauchy is read, and the series has found the usual reading wrong again and again. The law is taken
+for a law of amounts: some quantity with a heavy tail, its missing mean a pathology to be managed. Wherever it was put
+to the test it was the map of a turn, the amount carried by something else. LIGO's heavy tail was a t and one
+transient; the Cauchy was in the direction between the two detectors. Canonical correlation's "shared variance" is the
+square of a cosine of an angle between two planes of data. Fieller's puzzling interval for a ratio is an arc of
+directions through infinity. The half-space's Poisson kernel, held as part of gravity's formula, is the stage a pull
+shares with a look (essay 33). The wrapped Cauchy has sat in Kepler's equations for two centuries, set by the
+eccentricity alone and never read as a map beside the orbit's time (essay 33, §13). And the series made the same mistake
+itself once, reading the turn's 2/π as the payload's. In every case the classical numbers are right; what is wrong is
+what the law is taken to be. The seeds above bound the finding: where no turn can be named, there is no map to read.
+(*Reads and Writes* §11, "The Cauchy is repeatedly misunderstood"; an assessment, to be revised as the evidence changes.)
+
 It changes what to expect of an average. The map's middle is a median, and the median is the statistic that survives
 every change of chart. Practice already takes the median of a Cauchy and never its mean; the map says why.
 
@@ -343,6 +355,9 @@ second map in distance), `read.html` (the read with no world: the hemisphere in 
 
 ## Sources
 
+- Tom, 25 November 2026: "We have found repeatedly that cauchy is misunderstood."; "This is an internal document so we
+  didn't need to be careful, just accurate, our assessments can can be modified later."; "Yes" (to the finding in the
+  essays). SPN R1203–R1204.
 - Doyle, P. G. and Snell, J. L. (1984). *Random Walks and Electric Networks*. Carus Mathematical Monographs 22.
 - Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 - Kakutani, S. (1944). Two-dimensional Brownian motion and harmonic functions. *Proceedings of the Imperial Academy

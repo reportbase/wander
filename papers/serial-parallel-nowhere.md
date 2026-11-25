@@ -7607,6 +7607,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1204** (25 Nov 2026; Tom: "Yes", to the finding of R1203 in the essays too): essay 17 §11 says it plainly ("It
+  changes how the Cauchy is read": the usual reading a law of amounts, found wrong in LIGO, CCA, Fieller, gravity's
+  kernel, Kepler's orbit and our own CAH; numbers right, reading wrong; the seeds the bound). **R1203's plain statement
+  of assessments extends to the essays**; R364 and R925 bind only text submitted for publication.
 - **R1203** (25 Nov 2026; Tom: "We have found repeatedly that cauchy is misunderstood."; then "This is an internal
   document so we didn't need to be careful, just accurate, our assessments can can be modified later."): **the Cauchy is
   repeatedly misunderstood**: read as a law of amounts, a heavy tail with a missing mean, where every test found the law

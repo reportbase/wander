@@ -623,6 +623,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1204 (25 Nov; Tom: "Yes"): R1203's finding in essay 17 §11 too; plain assessments extend to the essays, R364 and R925
+  binding only text submitted for publication.
   R1203 (25 Nov; Tom: "We have found repeatedly that cauchy is misunderstood."; "This is an internal document so we didn't
   need to be careful, just accurate, our assessments can can be modified later."): **the Cauchy is repeatedly
   misunderstood**, read as a law of amounts where every test found the turn's law of directions (LGO, CCA, FLR, GRV/FCL,
