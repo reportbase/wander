@@ -194,3 +194,32 @@ major axis, the same form as relativistic aberration with the speed e, and two s
 focus, past half way (e/2 < β < e). At the ends: the stage's far over near is k² = r_max/r_min, the payload's near over
 far its reciprocal, the clock's far over near k⁴, the areal law's r². A form shared with aberration, not a claim that
 an orbit is a boost; whether the likeness is in print was not searched. Classical in each part.
+
+## Run 6: the orbit at e ≥ 1 (predictions committed before the run)
+
+25 November 2026, Tom: "1 2 3", the third being the orbit pushed to the parabola and the hyperbola. Worked by hand
+beforehand from the standard relations (Barker's equation; tan(ν/2) = √((e + 1)/(e − 1))·tanh(F/2) for the hyperbolic
+anomaly F); the run checks them exactly. Claude's guess when offering it, "the stage becomes the plain Cauchy on a line
+of directions between the asymptotes", is restated as R1 and R4.
+
+- **R1 (the parabola's lighthouse).** On a parabola r = p/(1 + cos ν), the coordinate across the axis through the focus
+  is y = p·tan(ν/2) = p·D, D Barker's parabolic anomaly. So directions ν taken evenly from the focus over (−π, π) give y
+  exactly the Cauchy of scale p (the semi-latus rectum) centred on the axis: a lighthouse turning at half the rate. The
+  eccentric-anomaly stage of runs 2–5 does not carry over: uniform D pushed to ν has density (1 + D²)/2 per unit ν,
+  which has no finite total.
+- **R2 (the parabola's clock).** Time per unit D is proportional to 1 + D² (so M ∝ D + D³/3, Barker), the reciprocal of
+  R1's Cauchy density in y, times a constant: the clock over y is the stage's density inverted.
+- **R3 (the exchange e ↔ 1/e).** With e = coth η for the hyperbola (and tanh η for the ellipse), the hyperbolic map is
+  tan(ν/2) = e^η·tanh(F/2): the ellipse of eccentricity e and the hyperbola of eccentricity 1/e have the same k, and
+  their maps differ only by tan ↔ tanh. The parabola, e = 1, is the exchange's fixed point, where k is infinite.
+- **R4 (the hyperbola's stage).** Directions ν taken evenly over the hyperbola's open range (−ν∞, ν∞), cos ν∞ = −1/e,
+  give t = tan(ν/2) the Cauchy cut to |t| < K = √((e + 1)/(e − 1)), the asymptote's half-slope; as e → 1⁺ the cut
+  goes to infinity and R1's Cauchy returns.
+- **R5 (the payload survives).** For the hyperbola dM = (r/a)·dF exactly, M = e·sinh F − F, r = a(e·cosh F − 1): time
+  is the even measure in F times r/a, Kepler's hyperbolic equation the sum, the measure now with no finite total (the
+  orbit is open), so no stage as a probability.
+- **R6 (the ellipse's stage at e → 1⁻).** The elliptic stage's width β → 1 and its weight piles onto the far point:
+  for any fixed arc about ν = 0 not containing π, its share of the stage goes to 0.
+
+Kill conditions: any identity off by more than 10⁻⁴⁰ at 50 digits, or failing in sympy where exact; R4 on a 200-point
+grid against the cut Cauchy; R6 as a limit at e = 1 − 10⁻ⁿ, n = 2, 4, 8.

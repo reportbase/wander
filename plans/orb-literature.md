@@ -48,3 +48,17 @@ found only Lavenda's hint, which names a likeness without the half-angle map. So
 a wrapped Cauchy from −β, the E → ν map as a hyperbolic translation by artanh e with aberration's form, its composition
 by velocity addition, and time per direction as the stage times r/a. Every piece under them is classical (the map,
 β, McCullagh's closure, aberration's half-angle form), and one search does not make the joins new (R925).
+
+## Second search (expectations committed before it ran)
+
+25 November 2026, Tom: "1 2 3", the first being a proper confirmation of the first search. One fresh agent, the primary
+texts opened where they can be reached: Gauss's *Theoria Motus* (1809; Davis's English translation, 1857, public
+domain), Brouwer and Clemence (1961) if reachable, and the literature on the Kepler problem's hidden symmetry (Fock
+1935, Bargmann 1936, Moser 1970; the SO(4) and SO(3,1) treatments, Cushman and Bates).
+
+- **Y1.** Gauss writes the map as tan ½v = tan(45° + ½φ)·tan ½E. Expected found, opened.
+- **Y2.** β = tan(φ/2) stated in so many words: expected not found (it follows from Y1 in one line).
+- **Y3.** The E → ν map as aberration's form, or as a hyperbolic translation of the disc by artanh e: expected not found
+  in the symmetry literature either, since those works lift the problem to momentum space or the four-sphere, not to
+  the anomaly's disc. If found, the joins of ORB runs 4–5 are known and the essays are corrected.
+- **Y4.** The ellipse e and the hyperbola 1/e sharing k (run 6's R3): expected not found as such.
