@@ -1,4 +1,4 @@
-# PHR run 3: one-pole fit of both quadratures, then Gamma from the amplitude alone and from the phase alone.
+# PHR runs 3-4 (run 4: each channel rescaled, z/max|z| and f in sweep steps, before any fit): one-pole fit of both quadratures, then Gamma from the amplitude alone and from the phase alone.
 # Usage: python3 runs/phr/phr3.py <VWireStudyData/RawScans/Wire> <online_data/Fig1c/resonance_curve.dat>
 import sys, glob, os, numpy as np
 from scipy.optimize import least_squares
@@ -42,6 +42,10 @@ def side_fits(f, zc, f0, G):
 
 def analyse(f, z, sx=None, sy=None, nboot=200):
     o = np.argsort(f); f, z = f[o], z[o]
+    # run 4: rescale so every fitted number is of order 1 (widths are compared as ratios)
+    zs = np.max(np.abs(z)); df = np.median(np.diff(f)); fm = f.mean()
+    f = (f - fm)/df; z = z/zs
+    if sx is not None: sx, sy = sx/zs, sy/zs
     if sx is not None: sx, sy = sx[o], sy[o]
     fb = f.mean(); n = len(f); k = max(3, int(0.2*n)); idx = np.r_[0:k, n-k:n]
     cr = np.polyfit(f[idx]-fb, z.real[idx], 1); ci = np.polyfit(f[idx]-fb, z.imag[idx], 1)
@@ -50,7 +54,12 @@ def analyse(f, z, sx=None, sy=None, nboot=200):
     G0 = max(f[above.max()] - f[above.min()], np.median(np.diff(f)))
     A0 = zc0[i0]*(-0.5j*G0)
     p0 = [A0.real, A0.imag, f[i0], G0, cr[1], ci[1], cr[0], ci[0]]
-    fit = fit1(f, z, p0, fb, sx, sy)
+    # run 4: several starting widths, keep the least cost (one start found a worse local minimum after rescaling)
+    fit = None
+    for m in (0.5, 1, 2, 4):
+        q0 = list(p0); q0[3] = G0*m; q0[0], q0[1] = (A0*m).real, (A0*m).imag
+        r_ = fit1(f, z, q0, fb, sx, sy)
+        if fit is None or r_.cost < fit.cost: fit = r_
     p = fit.x
     chi2 = None
     if sx is not None:
@@ -68,8 +77,8 @@ def analyse(f, z, sx=None, sy=None, nboot=200):
             a, g, _, _ = from_fit(pb, zb); diffs.append(g - a)
         except Exception: pass
     sig = np.std(diffs) if len(diffs) > 10 else np.nan
-    return dict(f0=f0, G=abs(p[3]), Gamp=Ga, Gph=Gp, rel=Gp/Ga - 1, sig=sig, turn=turn, chi2=chi2,
-                pts=abs(p[3])/np.median(np.diff(f)))
+    return dict(f0=fm + f0*df, G=abs(p[3])*df, Gamp_u=Ga, G_u=abs(p[3]), Gamp=Ga*df, Gph=Gp*df, rel=Gp/Ga - 1, sig=sig*df, turn=turn, chi2=chi2,
+                pts=abs(p[3]))
 
 root, set2 = sys.argv[1], sys.argv[2]
 d = np.loadtxt(set2, delimiter=',', comments='#')
@@ -112,6 +121,11 @@ print('SET 1: channels fitted', len(ok), 'other', [x[2] for x in rows if x[2] !=
 bad = [r for r in ok if abs(r['Gph'] - r['Gamp']) > 3*r['sig'] + 0.02*r['Gamp']]
 print('R2: beyond 3 sigma + 2%%: %d of %d (%.1f%%) ->' % (len(bad), len(ok), 100*len(bad)/len(ok)),
       'not killed' if len(bad) <= 0.10*len(ok) else 'KILLED')
+good = [r for r in ok if r['chi2'] < 2]
+badg = [r for r in good if abs(r['Gph'] - r['Gamp']) > 3*r['sig'] + 0.02*r['Gamp']]
+print('R2 (adequate, chi2/dof<2): %d of %d (%.1f%%)' % (len(badg), len(good), 100*len(badg)/max(1,len(good))))
+print('R4 (adequate): median turn %.1f deg' % np.median([r['turn'] for r in good]))
+relg = np.array([r['rel'] for r in good]); print('adequate rel: median %+.4f quartiles %+.4f %+.4f' % (np.median(relg), *np.percentile(relg,[25,75])))
 chis = np.array([r['chi2'] for r in ok])
 print('R3: chi2/dof median %.2f (quartiles %.2f, %.2f) ->' % (np.median(chis), *np.percentile(chis, [25, 75])),
       'not killed' if np.median(chis) < 2 else 'KILLED')
