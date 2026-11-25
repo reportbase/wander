@@ -1,0 +1,224 @@
+RES-1_-25_DBM_TEMP_1.156.S2P rel -0.0002 sig/G 0.0010 turn 89.8 pts 48
+   RES-1_-25_DBM_TEMP_1.156.S2P tau 36.917 ns
+RES-1_-25_DBM_TEMP_1.200.S2P rel -0.0041 sig/G 0.0010 turn 89.9 pts 50
+   RES-1_-25_DBM_TEMP_1.200.S2P tau 36.852 ns
+RES-1_-35_DBM_TEMP_1.009.S2P rel -0.0007 sig/G 0.0012 turn 89.6 pts 42
+   RES-1_-35_DBM_TEMP_1.009.S2P tau 37.008 ns
+RES-1_-35_DBM_TEMP_1.045.S2P rel -0.0022 sig/G 0.0013 turn 89.8 pts 43
+   RES-1_-35_DBM_TEMP_1.045.S2P tau 37.016 ns
+RES-1_-35_DBM_TEMP_1.155.S2P rel -0.0014 sig/G 0.0011 turn 89.9 pts 48
+   RES-1_-35_DBM_TEMP_1.155.S2P tau 36.907 ns
+RES-1_-35_DBM_TEMP_1.200.S2P rel +0.0051 sig/G 0.0009 turn 89.8 pts 50
+   RES-1_-35_DBM_TEMP_1.200.S2P tau 36.854 ns
+RES-1_-35_DBM_TEMP_1.238.S2P rel -0.0011 sig/G 0.0009 turn 90.1 pts 52
+   RES-1_-35_DBM_TEMP_1.238.S2P tau 36.795 ns
+RES-1_-35_DBM_TEMP_2.036.S2P rel -0.0785 sig/G 0.0071 turn 88.7 pts 78
+   RES-1_-35_DBM_TEMP_2.036.S2P tau 39.302 ns
+RES-1_-45_DBM_TEMP_1.112.S2P rel +0.0004 sig/G 0.0024 turn 90.0 pts 46
+   RES-1_-45_DBM_TEMP_1.112.S2P tau 36.966 ns
+RES-1_-45_DBM_TEMP_1.202.S2P rel -0.0041 sig/G 0.0023 turn 90.1 pts 50
+   RES-1_-45_DBM_TEMP_1.202.S2P tau 36.839 ns
+RES-1_-45_DBM_TEMP_1.237.S2P rel -0.0035 sig/G 0.0020 turn 90.8 pts 52
+   RES-1_-45_DBM_TEMP_1.237.S2P tau 36.816 ns
+RES-1_-55_DBM_TEMP_1.044.S2P rel -0.0018 sig/G 0.0055 turn 88.8 pts 43
+   RES-1_-55_DBM_TEMP_1.044.S2P tau 36.982 ns
+RES-1_-55_DBM_TEMP_1.465.S2P rel +0.0053 sig/G 0.0056 turn 86.4 pts 70
+   RES-1_-55_DBM_TEMP_1.465.S2P tau 36.966 ns
+RES-1_-65_DBM_TEMP_1.155.S2P rel +0.0030 sig/G 0.0201 turn 88.6 pts 49
+   RES-1_-65_DBM_TEMP_1.155.S2P tau 36.852 ns
+RES-1_-65_DBM_TEMP_1.008.S2P rel -0.0077 sig/G 0.0216 turn 84.1 pts 42
+   RES-1_-65_DBM_TEMP_1.008.S2P tau 37.087 ns
+RES-1_-65_DBM_TEMP_1.706.S2P rel -0.0467 sig/G 0.0455 turn 93.0 pts 49
+   RES-1_-65_DBM_TEMP_1.706.S2P tau 38.773 ns
+RES-1_-75_DBM_TEMP_0.130.S2P rel +0.0107 sig/G 0.0545 turn 96.1 pts 39
+   RES-1_-75_DBM_TEMP_0.130.S2P tau 37.198 ns
+RES-1_-75_DBM_TEMP_0.265.S2P rel -0.0909 sig/G 0.0435 turn 91.8 pts 38
+   RES-1_-75_DBM_TEMP_0.265.S2P tau 37.004 ns
+RES-1_-75_DBM_TEMP_0.688.S2P rel -0.0923 sig/G 0.0587 turn 102.3 pts 37
+   RES-1_-75_DBM_TEMP_0.688.S2P tau 37.151 ns
+RES-1_-75_DBM_TEMP_0.966.S2P rel -0.1802 sig/G 0.0443 turn 96.1 pts 41
+   RES-1_-75_DBM_TEMP_0.966.S2P tau 37.225 ns
+RES-2_-25_DBM_TEMP_0.298.S2P rel +0.0022 sig/G 0.0018 turn 90.0 pts 33
+   RES-2_-25_DBM_TEMP_0.298.S2P tau 35.424 ns
+RES-2_-35_DBM_TEMP_0.101.S2P rel +0.0023 sig/G 0.0020 turn 89.9 pts 33
+   RES-2_-35_DBM_TEMP_0.101.S2P tau 35.384 ns
+RES-2_-35_DBM_TEMP_0.227.S2P rel +0.0007 sig/G 0.0016 turn 90.0 pts 33
+   RES-2_-35_DBM_TEMP_0.227.S2P tau 35.412 ns
+RES-2_-35_DBM_TEMP_0.298.S2P rel +0.0067 sig/G 0.0027 turn 90.1 pts 33
+   RES-2_-35_DBM_TEMP_0.298.S2P tau 35.413 ns
+RES-2_-45_DBM_TEMP_0.158.S2P rel +0.0048 sig/G 0.0041 turn 90.1 pts 33
+   RES-2_-45_DBM_TEMP_0.158.S2P tau 35.432 ns
+RES-2_-45_DBM_TEMP_0.245.S2P rel +0.0009 sig/G 0.0036 turn 89.9 pts 33
+   RES-2_-45_DBM_TEMP_0.245.S2P tau 35.434 ns
+RES-2_-45_DBM_TEMP_1.622.S2P rel +0.0097 sig/G 0.0034 turn 90.7 pts 45
+   RES-2_-45_DBM_TEMP_1.622.S2P tau 35.186 ns
+RES-2_-55_DBM_TEMP_0.130.S2P rel +0.1616 sig/G 8.7971 turn 94.3 pts 467
+   RES-2_-55_DBM_TEMP_0.130.S2P tau 35.420 ns
+RES-2_-55_DBM_TEMP_0.347.S2P rel +0.0070 sig/G 0.0060 turn 88.4 pts 33
+   RES-2_-55_DBM_TEMP_0.347.S2P tau 35.444 ns
+RES-2_-55_DBM_TEMP_0.411.S2P rel -0.0023 sig/G 0.0095 turn 90.9 pts 33
+   RES-2_-55_DBM_TEMP_0.411.S2P tau 35.452 ns
+RES-2_-55_DBM_TEMP_0.507.S2P rel +0.0070 sig/G 0.0085 turn 90.6 pts 34
+   RES-2_-55_DBM_TEMP_0.507.S2P tau 35.466 ns
+RES-2_-65_DBM_TEMP_0.101.S2P rel +0.0008 sig/G 0.0278 turn 83.9 pts 33
+   RES-2_-65_DBM_TEMP_0.101.S2P tau 35.473 ns
+RES-2_-65_DBM_TEMP_0.228.S2P rel -0.0245 sig/G 0.0254 turn 97.9 pts 34
+   RES-2_-65_DBM_TEMP_0.228.S2P tau 35.481 ns
+RES-2_-65_DBM_TEMP_0.144.S2P rel +0.0149 sig/G 0.0256 turn 92.4 pts 33
+   RES-2_-65_DBM_TEMP_0.144.S2P tau 35.408 ns
+RES-2_-65_DBM_TEMP_0.287.S2P rel -0.0127 sig/G 0.0235 turn 87.6 pts 34
+   RES-2_-65_DBM_TEMP_0.287.S2P tau 35.470 ns
+RES-2_-65_DBM_TEMP_0.799.S2P rel +0.0053 sig/G 0.0308 turn 90.7 pts 35
+   RES-2_-65_DBM_TEMP_0.799.S2P tau 35.464 ns
+RES-2_-75_DBM_TEMP_0.715.S2P rel -0.0830 sig/G 0.0627 turn 81.6 pts 34
+   RES-2_-75_DBM_TEMP_0.715.S2P tau 35.557 ns
+RES-2_-75_DBM_TEMP_0.627.S2P rel -0.1832 sig/G 0.0622 turn 94.4 pts 35
+   RES-2_-75_DBM_TEMP_0.627.S2P tau 35.375 ns
+RES-2_-75_DBM_TEMP_0.797.S2P rel -0.1310 sig/G 0.0768 turn 97.4 pts 35
+   RES-2_-75_DBM_TEMP_0.797.S2P tau 35.491 ns
+RES-2_-75_DBM_TEMP_1.200.S2P rel -0.1176 sig/G 0.0754 turn 84.8 pts 37
+   RES-2_-75_DBM_TEMP_1.200.S2P tau 35.565 ns
+RES-2_-75_DBM_TEMP_1.276.S2P rel -0.0840 sig/G 0.1172 turn 97.7 pts 39
+   RES-2_-75_DBM_TEMP_1.276.S2P tau 35.349 ns
+RES-3_-25_DBM_TEMP_0.158.S2P rel -0.0401 sig/G 0.0151 turn 89.3 pts 30
+   RES-3_-25_DBM_TEMP_0.158.S2P tau 37.431 ns
+RES-3_-25_DBM_TEMP_0.190.S2P rel -0.0417 sig/G 0.0201 turn 89.0 pts 30
+   RES-3_-25_DBM_TEMP_0.190.S2P tau 37.428 ns
+RES-3_-25_DBM_TEMP_0.716.S2P rel -0.0377 sig/G 0.0182 turn 88.3 pts 30
+   RES-3_-25_DBM_TEMP_0.716.S2P tau 37.574 ns
+RES-3_-25_DBM_TEMP_0.778.S2P rel -0.0437 sig/G 0.0172 turn 89.2 pts 30
+   RES-3_-25_DBM_TEMP_0.778.S2P tau 37.601 ns
+RES-3_-25_DBM_TEMP_1.080.S2P rel -0.0582 sig/G 0.0185 turn 89.0 pts 33
+   RES-3_-25_DBM_TEMP_1.080.S2P tau 37.690 ns
+RES-3_-25_DBM_TEMP_1.378.S2P rel -0.0482 sig/G 0.0190 turn 88.9 pts 38
+   RES-3_-25_DBM_TEMP_1.378.S2P tau 37.755 ns
+RES-3_-35_DBM_TEMP_0.101.S2P rel -0.0408 sig/G 0.0209 turn 88.6 pts 30
+   RES-3_-35_DBM_TEMP_0.101.S2P tau 37.425 ns
+RES-3_-25_DBM_TEMP_1.625.S2P rel -0.0490 sig/G 0.0281 turn 89.2 pts 48
+   RES-3_-25_DBM_TEMP_1.625.S2P tau 37.808 ns
+RES-3_-35_DBM_TEMP_0.173.S2P rel -0.0381 sig/G 0.0158 turn 88.4 pts 30
+   RES-3_-35_DBM_TEMP_0.173.S2P tau 37.427 ns
+RES-3_-35_DBM_TEMP_0.265.S2P rel -0.0427 sig/G 0.0163 turn 89.3 pts 30
+   RES-3_-35_DBM_TEMP_0.265.S2P tau 37.440 ns
+RES-3_-35_DBM_TEMP_0.347.S2P rel -0.0310 sig/G 0.0193 turn 87.9 pts 30
+   RES-3_-35_DBM_TEMP_0.347.S2P tau 37.468 ns
+RES-3_-35_DBM_TEMP_0.656.S2P rel -0.0396 sig/G 0.0195 turn 89.4 pts 30
+   RES-3_-35_DBM_TEMP_0.656.S2P tau 37.556 ns
+RES-3_-35_DBM_TEMP_1.078.S2P rel -0.0186 sig/G 0.0188 turn 90.0 pts 33
+   RES-3_-35_DBM_TEMP_1.078.S2P tau 37.688 ns
+RES-3_-35_DBM_TEMP_0.688.S2P rel -0.0394 sig/G 0.0191 turn 89.6 pts 30
+   RES-3_-35_DBM_TEMP_0.688.S2P tau 37.569 ns
+RES-3_-35_DBM_TEMP_1.156.S2P rel -0.0485 sig/G 0.0214 turn 89.8 pts 34
+   RES-3_-35_DBM_TEMP_1.156.S2P tau 37.701 ns
+RES-3_-35_DBM_TEMP_1.238.S2P rel -0.0576 sig/G 0.0189 turn 89.5 pts 35
+   RES-3_-35_DBM_TEMP_1.238.S2P tau 37.728 ns
+RES-3_-35_DBM_TEMP_1.298.S2P rel -0.0517 sig/G 0.0175 turn 88.8 pts 36
+   RES-3_-35_DBM_TEMP_1.298.S2P tau 37.728 ns
+RES-3_-45_DBM_TEMP_0.173.S2P rel -0.0440 sig/G 0.0190 turn 91.3 pts 30
+   RES-3_-45_DBM_TEMP_0.173.S2P tau 37.465 ns
+RES-3_-45_DBM_TEMP_0.347.S2P rel -0.0411 sig/G 0.0238 turn 90.6 pts 30
+   RES-3_-45_DBM_TEMP_0.347.S2P tau 37.495 ns
+RES-3_-35_DBM_TEMP_1.969.S2P rel +0.0244 sig/G 0.0207 turn 91.8 pts 81
+   RES-3_-35_DBM_TEMP_1.969.S2P tau 37.743 ns
+RES-3_-45_DBM_TEMP_0.565.S2P rel -0.0470 sig/G 0.0215 turn 89.4 pts 30
+   RES-3_-45_DBM_TEMP_0.565.S2P tau 37.563 ns
+RES-3_-45_DBM_TEMP_0.596.S2P rel -0.0460 sig/G 0.0205 turn 91.5 pts 30
+   RES-3_-45_DBM_TEMP_0.596.S2P tau 37.568 ns
+RES-3_-45_DBM_TEMP_0.798.S2P rel -0.0308 sig/G 0.0157 turn 86.1 pts 30
+   RES-3_-45_DBM_TEMP_0.798.S2P tau 37.633 ns
+RES-3_-45_DBM_TEMP_0.716.S2P rel -0.0497 sig/G 0.0246 turn 89.4 pts 30
+   RES-3_-45_DBM_TEMP_0.716.S2P tau 37.603 ns
+RES-3_-45_DBM_TEMP_0.882.S2P rel -0.0323 sig/G 0.0201 turn 89.6 pts 31
+   RES-3_-45_DBM_TEMP_0.882.S2P tau 37.663 ns
+RES-3_-45_DBM_TEMP_0.965.S2P rel -0.0401 sig/G 0.0234 turn 90.9 pts 31
+   RES-3_-45_DBM_TEMP_0.965.S2P tau 37.676 ns
+RES-3_-45_DBM_TEMP_1.045.S2P rel -0.0537 sig/G 0.0228 turn 89.5 pts 32
+   RES-3_-45_DBM_TEMP_1.045.S2P tau 37.705 ns
+RES-3_-45_DBM_TEMP_1.201.S2P rel -0.0600 sig/G 0.0162 turn 88.6 pts 35
+   RES-3_-45_DBM_TEMP_1.201.S2P tau 37.748 ns
+RES-3_-45_DBM_TEMP_1.276.S2P rel -0.0687 sig/G 0.0211 turn 90.3 pts 35
+   RES-3_-45_DBM_TEMP_1.276.S2P tau 37.771 ns
+RES-3_-45_DBM_TEMP_1.543.S2P rel -0.0632 sig/G 0.0237 turn 89.7 pts 44
+   RES-3_-45_DBM_TEMP_1.543.S2P tau 37.827 ns
+RES-3_-55_DBM_TEMP_0.118.S2P rel -0.0765 sig/G 0.0415 turn 96.6 pts 30
+   RES-3_-55_DBM_TEMP_0.118.S2P tau 37.430 ns
+RES-3_-55_DBM_TEMP_0.173.S2P rel -0.0272 sig/G 0.0377 turn 100.9 pts 30
+   RES-3_-55_DBM_TEMP_0.173.S2P tau 37.440 ns
+RES-3_-55_DBM_TEMP_0.228.S2P rel -0.0443 sig/G 0.0455 turn 91.5 pts 30
+   RES-3_-55_DBM_TEMP_0.228.S2P tau 37.443 ns
+RES-3_-55_DBM_TEMP_0.473.S2P rel -0.0884 sig/G 0.0309 turn 87.1 pts 30
+   RES-3_-55_DBM_TEMP_0.473.S2P tau 37.538 ns
+RES-3_-55_DBM_TEMP_0.439.S2P rel -0.0620 sig/G 0.0480 turn 83.3 pts 29
+   RES-3_-55_DBM_TEMP_0.439.S2P tau 37.509 ns
+RES-3_-55_DBM_TEMP_0.507.S2P rel -0.0606 sig/G 0.0454 turn 78.1 pts 30
+   RES-3_-55_DBM_TEMP_0.507.S2P tau 37.534 ns
+RES-3_-55_DBM_TEMP_0.596.S2P rel -0.0403 sig/G 0.0296 turn 93.9 pts 30
+   RES-3_-55_DBM_TEMP_0.596.S2P tau 37.547 ns
+RES-3_-55_DBM_TEMP_0.797.S2P rel -0.0710 sig/G 0.0355 turn 96.0 pts 30
+   RES-3_-55_DBM_TEMP_0.797.S2P tau 37.615 ns
+RES-3_-55_DBM_TEMP_1.157.S2P rel -0.0862 sig/G 0.0305 turn 93.7 pts 35
+   RES-3_-55_DBM_TEMP_1.157.S2P tau 37.787 ns
+RES-3_-55_DBM_TEMP_1.540.S2P rel -0.0019 sig/G 0.0562 turn 88.5 pts 46
+   RES-3_-55_DBM_TEMP_1.540.S2P tau 37.814 ns
+RES-3_-55_DBM_TEMP_1.621.S2P rel -0.1318 sig/G 0.0534 turn 94.0 pts 47
+   RES-3_-55_DBM_TEMP_1.621.S2P tau 37.864 ns
+RES-3_-65_DBM_TEMP_0.174.S2P rel -0.2436 sig/G 0.1347 turn 97.1 pts 29
+   RES-3_-65_DBM_TEMP_0.174.S2P tau 37.279 ns
+resonator_1_powersweep_undercoupled.npz p17 rel -0.0267 sig/G 0.0362 turn 97.9 pts 148
+   resonator_1_powersweep_undercoupled.npz p17 tau -93.906 ns
+resonator_2_powersweep_undercoupled.npz p2 rel +0.0003 sig/G 0.0035 turn 89.4 pts 149
+   resonator_2_powersweep_undercoupled.npz p2 tau -184.102 ns
+resonator_4_powersweep_undercoupled.npz p0 rel +0.0616 sig/G 0.0048 turn 86.3 pts 124
+   resonator_4_powersweep_undercoupled.npz p0 tau -78.449 ns
+resonator_3_powersweep_undercoupled.npz p1 rel +0.0197 sig/G 0.0028 turn 89.7 pts 156
+   resonator_3_powersweep_undercoupled.npz p1 tau -154.309 ns
+resonator_4_powersweep_undercoupled.npz p1 rel +0.0870 sig/G 0.0071 turn 88.0 pts 127
+   resonator_4_powersweep_undercoupled.npz p1 tau -76.467 ns
+resonator_4_powersweep_undercoupled.npz p3 rel +0.0349 sig/G 0.0079 turn 90.5 pts 104
+   resonator_4_powersweep_undercoupled.npz p3 tau -79.404 ns
+resonator_4_powersweep_undercoupled.npz p2 rel +0.0452 sig/G 0.0100 turn 82.1 pts 152
+   resonator_4_powersweep_undercoupled.npz p2 tau -75.701 ns
+resonator_4_powersweep_undercoupled.npz p4 rel +0.0168 sig/G 0.0061 turn 87.0 pts 89
+   resonator_4_powersweep_undercoupled.npz p4 tau -80.132 ns
+resonator_4_powersweep_undercoupled.npz p6 rel +0.0108 sig/G 0.0102 turn 94.0 pts 86
+   resonator_4_powersweep_undercoupled.npz p6 tau -80.962 ns
+resonator_4_powersweep_undercoupled.npz p5 rel +0.0645 sig/G 0.0072 turn 93.0 pts 86
+   resonator_4_powersweep_undercoupled.npz p5 tau -80.752 ns
+resonator_4_powersweep_undercoupled.npz p7 rel -0.1383 sig/G 0.0091 turn 90.1 pts 81
+   resonator_4_powersweep_undercoupled.npz p7 tau -80.145 ns
+resonator_4_powersweep_undercoupled.npz p9 rel +0.0273 sig/G 0.0120 turn 90.9 pts 77
+   resonator_4_powersweep_undercoupled.npz p9 tau -80.118 ns
+resonator_4_powersweep_undercoupled.npz p8 rel -0.1161 sig/G 0.0110 turn 94.0 pts 81
+   resonator_4_powersweep_undercoupled.npz p8 tau -80.034 ns
+resonator_4_powersweep_undercoupled.npz p16 rel -0.9697 sig/G 1.6237 turn 36.4 pts 90
+   resonator_4_powersweep_undercoupled.npz p16 tau -78.747 ns
+resonator_4_powersweep_undercoupled.npz p17 rel -0.9773 sig/G 0.3398 turn 140.9 pts 113
+   resonator_4_powersweep_undercoupled.npz p17 tau -78.487 ns
+resonator_4_powersweep_undercoupled.npz p15 rel -0.8911 sig/G 2.1229 turn 64.4 pts 97
+   resonator_4_powersweep_undercoupled.npz p15 tau -79.322 ns
+resonator_3_powersweep_undercoupled.npz p0 rel +0.0230 sig/G 0.0034 turn 88.9 pts 166
+   resonator_3_powersweep_undercoupled.npz p0 tau -151.522 ns
+resonator_8_powersweep_undercoupled.npz p6 rel -0.0148 sig/G 0.0119 turn 89.5 pts 122
+   resonator_8_powersweep_undercoupled.npz p6 tau -150.339 ns
+resonator_8_powersweep_undercoupled.npz p7 rel +0.0814 sig/G 0.0107 turn 90.7 pts 107
+   resonator_8_powersweep_undercoupled.npz p7 tau -155.875 ns
+resonator_8_powersweep_undercoupled.npz p14 rel +0.0815 sig/G 0.0448 turn 100.8 pts 100
+   resonator_8_powersweep_undercoupled.npz p14 tau -129.262 ns
+CARTER (200 seeded of 972), delay removed: {'narrow': 92, 'ok': 83, 'noise': 25}
+  R5 beyond 3 sigma + 2%: 2 of 83 (2.4%) -> not killed
+  R6 median |rel| 0.0401 (rel median -0.0396, quartiles -0.0579 -0.0009) -> KILLED
+  R7 median turn 89.9 deg (quartiles 88.9, 91.4) -> not killed
+  points per Gamma: median 34
+  R9 median |rel| 0.0401 -> KILLED
+  R10 median turn 89.9 -> not killed
+  R11 tau median 37.427 ns, range 35.186..39.302 ns -> not killed
+  fitted by resonator: {'RES-1': 20, 'RES-2': 21, 'RES-3': 42}
+  R12 Carter passing the line test: 175 (run 5b 63) -> not killed
+  Carter tau over all 200: median 37.036 ns, quartiles 35.484 37.564
+FANO (all power sweeps), delay removed: {'noise': 322, 'narrow': 90, 'ok': 20}
+  R5 beyond 3 sigma + 2%: 6 of 20 (30.0%) -> KILLED
+  R6 median |rel| 0.0534 (rel median +0.0183, quartiles -0.0491 +0.0493) -> KILLED
+  R7 median turn 89.9 deg (quartiles 87.8, 93.3) -> not killed
+  points per Gamma: median 106
+  R13 median rel moved +0.0143, median turn moved -1.1 deg -> KILLED
+  Fano tau median -80.1383 ns

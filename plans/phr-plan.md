@@ -311,3 +311,30 @@ Predictions (Carter unless said):
 - R13: on Fano, removing τ moves the median rel by less than 0.01 and the median turn by less than 2° (its phase was
   recorded apart from its amplitude, and run 5b found it clean).
 R5's 3σ test is reported for both sets, not predicted.
+
+### Run 6, as it came out (`runs/phr/phr-run6.txt`)
+
+Carter, the delay removed (200 seeded sweeps): 25 failed the line test, 92 too narrow, 83 fitted (RES-1 20, RES-2 21,
+RES-3 42; run 5b fitted 12, all RES-1).
+- **R9 killed**: median |rel| 0.040 against 3% (rel median −0.040, quartiles −0.058 and −0.001).
+- **R10 not killed**: median turn 89.9° (quartiles 88.9, 91.4).
+- **R11 not killed**: τ median 37.43 ns, every fitted sweep within 35.19–39.30 ns (inside 10%); over all 200, 37.04 ns.
+- **R12 not killed**: 175 sweeps pass the line test against run 5b's 63.
+- R5 reported: 2 of 83 beyond 3σ + 2% (2.4%).
+- **R13 killed**: on Fano the delay read off the line is −80 ns (negative, so not a cable), the line test now fails 322 of
+  432 sweeps (run 5b 45), 20 are fitted, the median rel moves by +0.014 and the turn by −1.1°.
+
+Seen after the run, not tested (post hoc):
+- By resonator: RES-1 median rel −0.002 and turn 89.9° (run 5b on the same resonator −0.254 and 80.8°; the sweep
+  RES-1 −45 dBm 1.202 K went from −0.253 to −0.004, σ/Γ 0.002), RES-2 +0.001 and 90.1°, RES-3 −0.045 and 89.5°. R9's
+  miss is RES-3's, the most coarsely sampled (about 30 points per Γ, at the selection's floor). On Carter the 25% gap was
+  the delay: once it is taken out, two of the three resonators give one width from amplitude and phase to a few tenths of
+  a percent, and the phase turns 90° on all three.
+- Fano's phase was evidently recorded with any delay already removed: the slope read off its "line" is the resonance's
+  own tails (its sweeps are narrower in Γ), so the correction put a false turn in. R13's prediction (that it would barely
+  move) was wrong because the off-line reading has no clean off-line stretch there, not because Fano changed.
+
+Reading: R362's reading holds on all three kinds of measured line once the instrument's own turn is taken out: the
+vibrating wire (run 4), Fano's resonators (run 5b) and Carter's (run 6). Amplitude and phase give one width, and the
+phase turns a quarter turn across f₀ ± Γ/2. The disagreement that killed run 5b on Carter was the cable's, a turn the
+measuring chain adds with frequency, not the resonator's.
