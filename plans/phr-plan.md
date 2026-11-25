@@ -169,3 +169,16 @@ fail where R3 says the one-pole fit is adequate, the reading fails on data.
   on one channel afterwards (jan16 n86, channel 1): the amplitude-only fit returned the full fit's Γ to the last digit.
   With |z_c|² near 10⁻¹¹ the least-squares tolerances stop at the start, so on set 1 the two "separate" widths were the
   same number and R2's "0 of 219" tests nothing. Set 2's values are of order 1 and did move (65.09 against 67.54).
+
+### Run 4, predictions, committed before the code is changed
+
+Run 3's method on set 1 with each channel rescaled before any fit: z and its standard deviations divided by max|z|,
+frequency by the sweep's median step about its mean (u = (f − f̄)/Δf), so every fitted number is of order 1; widths are
+compared as ratios, which the rescaling does not change. A check first, reported with the run: on jan16 n86 channel 1
+the amplitude-only Γ must differ from the full fit's in some digit (else the code is still at fault and the run void).
+
+- **R2′.** At most 10% of the analysed set-1 channels have |Γ_phase − Γ_amp| beyond 3σ + 2% of Γ_amp; and the same
+  among the channels whose one-pole fit is adequate (χ²/dof < 2). Killed if either exceeds 10%.
+- **R4′.** The median channel's data turn across f₀ ± Γ_phase/2 is 90° ± 10°, among all analysed channels and among the
+  adequate ones. Killed if either misses.
+- R3's χ² is the full fit's and does not depend on the side fits; it is not re-predicted (killed in run 3 stands).
