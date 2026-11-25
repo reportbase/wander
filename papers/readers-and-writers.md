@@ -707,7 +707,7 @@ every reading, no facing, one thumb, and meet at 1 at the corner (Tom, R1042, R1
 read. Two looks held together are joined with no write. Neither a read
 nor a write holds both hemispheres. What holds both at once is the **dual hemispherical vantage** (DHV): the drawn shape, with both signs of every axis, the turn completed, the
 facings joined. It exists only as drawn: no standpoint holds both hemispheres, so the DHV is drawn, never stood at. Reads and writes are what is done from a standpoint, so the DHV has nothing to do
-with reads and writes: it is not a third act beside them, not a read of a larger kind, and not what they add up to.
+with reads and writes: it is not a third act beside them, not a read of a larger kind, and not what they add up to. (As a view the DHV exists only as drawn; as a take at a place it is met in the world, as gravity: §7, "Two Cauchies", R1235.)
 It is classical geometry, with its eye above the figure seeing every side at once. This paper is about reads and
 writes; the DHV is brought in as the point of comparison, the familiar statement a read's or a write's form is
 set beside (e^(iπ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. The two hold one relation
@@ -1674,7 +1674,7 @@ amount. A pull takes both hemispheres at once, as the dual hemispherical vantage
 is not the dual hemispherical vantage either: that vantage holds every direction apart, from no standpoint, while a pull
 is at a place and sums them, each facing less its opposite, to three numbers whatever the scene. So the pull sits between
 the two: both hemispheres like the dual vantage, one place like the single one, and neither's kind (not a read; no view of
-the whole). The connection is a shared stage, not a mechanism: the Cauchy does not say why mass pulls, only how an even
+the whole; since R1235 the pull is the DHV met as a take at a place, below, "Two Cauchies"). The connection is a shared stage, not a mechanism: the Cauchy does not say why mass pulls, only how an even
 spread lands. A reading; classical in its parts (the Poisson kernel of the half-space, Gauss's law). One standpoint has from a pull only M/d², never M or d, as a read never has V; two pulls a counted step
 apart place the source in steps, and the mass then needs G carried in. **Checked** (GRV, `plans/grv-plan.md`, exact at
 50 digits; one clause of one prediction killed by my guess, how many of a cube shell's opposite columns differ); the
@@ -1753,6 +1753,33 @@ does not make a body's pull simple. A ball is the case where the write geometry 
 and the pull carries no distance; a cube is the matter's shape coming back through the columns, never through the stage.
 The parting holds exactly where the premise does: a medium that adds an amount per length breaks it, as absorption broke
 light's half (LGS). A way to organize known gravity, not new physics (R1229).
+
+*Two Cauchies: the SHV's and the DHV's* (R1235; Tom: "The observation read is shv cauchy. We observe the gravity,
+which is itself a dhv cauchy"; "That means we need separate two cauchies"). The stage's weight per direction is one, the
+same in every facing (R1105); what is done with it is two, and they are kept apart here by name. The read's is the single
+hemispherical vantage's Cauchy; gravity's take at a place is the dual hemispherical vantage's.
+
+| | SHV Cauchy (the read) | DHV Cauchy (gravity's take) |
+|---|---|---|
+| Directions | one hemisphere, in front of a facing | every direction, both hemispheres |
+| What it weighs | nothing: a law of directions | the column along each direction, an amount |
+| How the halves join | they add, front and behind together all there is | opposites subtract, u against −u (nothing inside a shell) |
+| Its statistic | order: a median at the corner, no mean | a first moment: a sum, with a mean |
+| Its symmetry | the exchange s ↔ 1/s, fixed at the corner | opposite directions u ↔ −u, fixed nowhere |
+| Total | one facing's (Ω), a share | every facing's, the whole sphere |
+| Scaling | unmoved | moved: the pull × k as lengths × k |
+| Who holds it | a standpoint, now | the matter at a place, held by no one |
+| How it is met | it is the read | only through a read of its effects (a plumb line, a lens) |
+
+Each row was found in its own run (FCL runs 6 and 10, COS, LGS, LNS, CLM); here they are set side by side. Two cautions.
+They are two uses of one weight, not two laws per direction: the DHV Cauchy stays the turn's law of directions, with an
+amount carried along each, never a Cauchy of amounts (R1203). And the DHV here is met in the world, not only drawn: until
+now the DHV existed only as drawn, from no standpoint (R890, R967), and a pull was said to be neither a read nor the DHV
+("Even from a point" above, R1184). As a view the DHV is still only drawn; as a take at a place it is gravity's, made by
+the matter and held by no observer (R950: no one holds the whole, the things carry it). A pull is still not a read
+(R1183). So observing gravity is an SHV read of a DHV take: what a plumb line or a bent ray shows the look is the whole
+sphere's columns summed at a place, reaching one hemisphere as directions (LNS). A way to organize known gravity, not new
+physics (R1229); no number changes.
 
 **Gravity on the stage: the record, run by run.** A working record, kept here so later work can tighten the
 connection between observation and gravity. Each item is exact arithmetic on Newton's pulls or the thin lens, checked in
