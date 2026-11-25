@@ -1,0 +1,15 @@
+first-order coefficients: departure from the present place over eps = a r, toward +a, over sin(psi)
+psi 30 eps 1e-3: look 0.4997837017  charge 0.4997847  gravity 3.507607509
+psi 30 eps 1e-4: look 0.4999783514  charge 0.4999783614  gravity 3.500758069
+psi 30 eps 1e-5: look 0.499997835  charge 0.4999978351  gravity 3.50007578
+psi 60 eps 1e-3: look 0.4998751249  charge 0.4998761239  gravity 3.50438663
+psi 60 eps 1e-4: look 0.4999875012  charge 0.4999875112  gravity 3.500437616
+psi 60 eps 1e-5: look 0.49999875  charge 0.4999987501  gravity 3.500043751
+psi 90 eps 1e-3: look 0.5000000833  charge 0.5000010833  gravity 3.500002583
+psi 90 eps 1e-4: look 0.5000000008  charge 0.5000000108  gravity 3.500000026
+psi 90 eps 1e-5: look 0.5  charge 0.5000000001  gravity 3.5
+psi 0 (a along n): angles look 0.0 charge 0.0 gravity 0.0
+scale test: lengths and times by k, accelerations by 1/k (psi 60, eps 1e-3)
+k   1: angle changes ['0.0', '0.0', '0.0']; strengths over k=1 times k^2: ['1.0', '1.0']
+k   5: angle changes ['-2.94e-42', '8.96e-42', '1.43e-41']; strengths over k=1 times k^2: ['1.0', '1.0']
+k 100: angle changes ['-2.95e-42', '1.23e-41', '3.14e-42']; strengths over k=1 times k^2: ['1.0', '1.0']

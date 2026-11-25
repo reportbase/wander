@@ -46,3 +46,24 @@ kill if it differs from ½, ½ or 7/2 by more than 10·ε (the next order) at th
 10⁻²⁰.
 
 ## Runs
+
+### Run 1 (`runs/acc/acc.py`, output `runs/acc/acc-run1.txt`)
+
+Nothing killed. The departure from the present place over ε·sin ψ, at ε = 10⁻³, 10⁻⁴, 10⁻⁵ and ψ = 30°, 60°, 90°:
+- **A1 not killed**: the look 0.49979, 0.49998, 0.499998 at ψ = 30° (0.5000000 at 90°), toward the acceleration.
+- **A2 not killed**: a charge's pull the same to within 10⁻⁶ at ε = 10⁻³ and 10⁻¹⁰ at 10⁻⁵ (0.4999978351 against the
+  look's 0.499997835 at ψ = 30°, ε = 10⁻⁵).
+- **A3 not killed**: gravity's pull 3.5076, 3.50076, 3.500076 at ψ = 30°, 3.5000026, 3.5000000 at 90°: the coefficient
+  7/2, its next order inside 10·ε. With a along n (ψ = 0) no direction departs.
+- **A4 not killed**: lengths and times by k = 5 and 100 move no direction past 1.4·10⁻⁴¹; both strengths move by
+  exactly 1/k².
+- **A5 not killed**: so a source at rest and accelerating is looked at and pulled by an opposite charge toward one place,
+  ½·a·T² along a (where it will be a light-time later, and where the light left, to this order), and pulled by its
+  gravity toward a place seven times as far along a, (7/2)·a·T². The look and the charge's pull agree to second order
+  too (they part by about ε², 10⁻⁶ at ε = 10⁻³), not predicted.
+
+Reading: as with uniform motion (MVM), a look and a pull, one direction at rest, part; here the look and an
+electric pull stay together and gravity's parts from both, by an amount of the acceleration times the distance over c²,
+unmoved by scaling. The premise stands as stated: an accelerated mass needs something to accelerate it, whose own field
+is left out, so the 7/2 is the moving mass's part of a pull, not a whole solution. Classical (the 1PN, Einstein–Infeld–
+Hoffmann terms; the 7/2 from memory and my expansion, confirmed here against the exact retarded field), the sorting ours.

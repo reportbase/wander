@@ -1847,8 +1847,12 @@ reverses (known, and debated). Light's delay past a lens sorts the same way (LDL
 its shape from their directions alone, for a point mass ½(q − 1/q) for the extra path and ln q for the slowing, q the
 ratio of the images' distances from the lens (the slowing the exchange's own logarithm, the geometric part never the
 smaller), while for an isothermal sphere the extra paths cancel and the delay is all the slowing; its size is an amount,
-4GM(1 + z)/c³ for the point mass, so a delay counted in days gives the mass with no distance. Open still: accelerated
-masses. (5) Done once (`plans/fcl-literature.md`): that an even spread from a point lands on a plane as the Cauchy is in
+4GM(1 + z)/c³ for the point mass, so a delay counted in days gives the mass with no distance. An accelerated mass
+(ACC, the exact retarded fields) sorts the same way: a source at rest but accelerating is looked at, and pulled by an
+opposite charge, toward one place, ½aT² along its acceleration (T the light-time), where it will be a light-time later;
+its weak-field gravity pulls toward a place seven times as far, (7/2)aT², the departure a·r/c² times the sine of the
+angle, unmoved by scaling every length and time. What accelerates the mass is left out, and its own field would add,
+so the 7/2 is the moving mass's part of the pull, not a whole solution (classical: the first post-Newtonian terms). (5) Done once (`plans/fcl-literature.md`): that an even spread from a point lands on a plane as the Cauchy is in
 print for light (Lu 2020; Dupuy, Belcour and Heitz 2019); its statement for gravity beside a standpoint's directions,
 the add-and-subtract difference and the Cauchy kept along a line of lens masses were not found, in one search. None of
 this is new physics, and a pull is not a read.
