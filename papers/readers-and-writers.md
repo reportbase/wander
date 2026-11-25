@@ -2742,8 +2742,9 @@ The looks give the size only as an angle (123 mas against 125.5). The velocities
 km/s, add what no look has: they choose which of two mirror orientations the star took (χ² 320 against 17,738), and,
 against the angle a year, give the distance (8.6 kpc) and with it the size in au and the mass (4.6·10⁶ suns), both within
 4% of the paper's. Every place doubled halves the distance and moves nothing else. The amounts leave the shape where the
-looks put it: a gap of 1–3% to the paper's orbit stays, and it is neither the frame nor the missing amount; the light's
-travel time across the orbit and the paper's joint fit of several stars are untested. **Checked** (KPL runs 2–5; V1, V2,
+looks put it: a gap of 1–3% to the paper's orbit stays, and it is neither the frame nor the missing amount nor the
+light's travel time across the orbit (a few days, moving the fit by a tenth of the gap); the paper's joint fit of several
+stars is untested. **Checked** (KPL runs 2–6; V1, V2,
 V4, V5, W2, Y1, Y2, Z2 and Z3 killed, the first four by my estimator, each recorded).
 
 **And one where it failed.** Seeds falling from a plant also spread with a fat tail, and the turn can be named

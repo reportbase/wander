@@ -7607,6 +7607,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1218** (25 Nov 2026; Tom: "Merge and proceed"): KPL run 6 (`runs/kpl/kpl6.py`), run 5's joint fit with the Rømer
+  delay, checked first on the paper's orbit (left out, the delay moves P by −0.004 yr and a by +0.34 mas). On S2 it moved
+  e, P and a by 0.0002, 0.005 yr and 0.32 mas the way the check said (R1), the gap stayed (R2), R₀ +58 pc (R3); nothing
+  killed. Not the frame, not the velocities, not the delay; the paper's joint fit of several stars and the instruments'
+  velocity offsets are left, untested.
 - **R1217** (25 Nov 2026; Tom: "Proceed with your recommendations"): KPL run 5 (`runs/kpl/kpl5.py`), S2's 44 radial
   velocities fitted with its places, predictions after a check on the paper's orbit (unbiased, 20 draws) and before the
   data. The velocities, amounts in km/s, choose the node the looks left open (Z1 not killed: χ² 320 against 17,738) and
