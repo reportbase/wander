@@ -67,3 +67,44 @@ electric pull stay together and gravity's parts from both, by an amount of the a
 unmoved by scaling. The premise stands as stated: an accelerated mass needs something to accelerate it, whose own field
 is left out, so the 7/2 is the moving mass's part of a pull, not a whole solution. Classical (the 1PN, Einstein–Infeld–
 Hoffmann terms; the 7/2 from memory and my expansion, confirmed here against the exact retarded field), the sorting ours.
+
+### Run 2, predictions (committed before its code; Tom: "1 then 3")
+
+Run 1 left out what accelerates the mass. Here the whole first post-Newtonian field of a pair, each mass accelerated by
+the other's pull, so the "rope" is gravity itself and nothing is left out at this order. The metric is the
+harmonic-gauge 1PN metric (Blanchet and Damour's form, from memory: g₀₀ = −1 + 2V − 2V², g₀ᵢ = −4Vᵢ, gᵢⱼ = δᵢⱼ(1 + 2V),
+c = 1), V and Vᵢ the retarded potentials of the conserved source σ = Σ m_A(1 + (3/2)v_A² − U_A)·δ, σᵢ = Σ m_A v_A·δ,
+U_A the Newtonian potential of the other masses at A; V's retardation expanded to the order needed (the superpotential
+½∂ₜ²Σ G m_A r_A). A test body at rest at the place: d²xⁱ/dt² = −Γⁱ₀₀.
+
+- **B1 (the 7/2 survives).** The source accelerations enter the test body's acceleration only as
+  Σ_A (G m_A/r_A)(7/2·a_A + ½(a_A·n_A)·n_A), ACC's term for each mass, whatever a_A is; the partner's own field adds
+  terms in G² (the −2V² and the −U_A in σ) and in the velocities, none with an acceleration (exact, sympy: the
+  coefficient of every component of a_A).
+- **B2 (against the textbook).** The whole expression equals the Einstein–Infeld–Hoffmann equation's limit for a test
+  body at rest (v = 0, its mass to zero), term by term (exact, sympy; the EIH form as I remember Wikipedia's, so a
+  failure may be my memory, to be said if it happens).
+- **B3 (scale).** For a circular pair, lengths × k and masses × k (velocities unchanged, the orbit the same shape in
+  light-times) leave the direction of the test body's 1PN acceleration unchanged to 10⁻²⁵ and its size moved by 1/k.
+
+Kill: B1 or B2 not an identity in sympy; B3 a direction moved past 10⁻²⁵.
+
+### Run 2 (`runs/acc/acc2.py`, output `runs/acc/acc-run2.txt`)
+
+A change of method, said: the predictions asked for identities in sympy; `simplify` on the square roots did not finish
+in ten minutes, so B1 and B2 were checked exactly in rational arithmetic at six points where every distance is a whole
+number (Pythagorean quadruples, velocities and accelerations chosen at random as fractions). Exact at those points, not
+a symbolic proof.
+
+Nothing killed.
+- **B1 not killed**: the source accelerations enter the test body's 1PN acceleration only as
+  Σ_A (G m_A/r_A)(7/2·a_A + ½(a_A·n_A)·n_A), at all six points; no other term holds an acceleration. The partner adds
+  only G² terms (−4V∂V, the −U_A in σ) and velocity terms. So run 1's 7/2 survives the whole solution at this order: the
+  "rope" is gravity's own field and adds no acceleration term.
+- **B2 not killed**: the whole expression equals the Einstein–Infeld–Hoffmann equation's limit for a test body at rest,
+  term by term, zero at all six points in all three components (my memory of the EIH form and my expansion agree).
+- **B3 not killed**: lengths and masses × 5 and × 1000 leave the direction exactly where it was and the size × 1/k.
+
+Reading: for a pair in orbit, nothing left out at first post-Newtonian order, a body at rest is pulled toward each mass's
+present place moved (7/2)·a·T² along that mass's acceleration, a ratio of lengths a·r/c² unmoved by scaling; the look
+still points at ½·a·T². Classical (EIH, 1938); the sorting ours.

@@ -1,8 +1,8 @@
 # One stage, two plays: a look and a pull
 
 *The thirty-third of a series of essays on what can be known from where one stands. Draft, 24 November 2026; brought up
-to FCL's twelfth run on 25 November, and to ORB's orbit (§13) the same day; on 25 November too, bodies, motion and light's delay (§14, GDI, MVM, LDL and ACC,
-`plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`). It writes up these tests and three earlier ones: GRV (`plans/grv-plan.md`, `runs/grv/`), the twelve runs
+to FCL's twelfth run on 25 November, and to ORB's orbit (§13) the same day; on 25 November too, bodies, motion and light's delay (§14, GDI, MVM, LDL, ACC and COS,
+`plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`, `plans/cos-plan.md`). It writes up these tests and three earlier ones: GRV (`plans/grv-plan.md`, `runs/grv/`), the twelve runs
 of FCL (`plans/fcl-plan.md`, `runs/fcl/`) and ORB runs 2–8 (`plans/orb-plan.md`, `runs/orb/`). Every run but one had its predictions committed before it ran (the exception,
 on measured data, is said in §11), and the kills are gathered in §15. Every number below is from those runs. It began as
 exploration and ends on one ruling (§16): a place with no facing is not a read. The pull is never called a
@@ -350,7 +350,7 @@ against tanh: an exchange, e ↔ 1/e, with the parabola its fixed point, as the 
 
 ## 14. Bodies, motion and delay
 
-Four more runs on 25 November (GDI, MVM, LDL, ACC, all exact, their predictions committed first) took what §9 found for two
+Six more runs on 25 November (GDI, MVM, LDL, ACC twice, COS, all exact, their predictions committed first) took what §9 found for two
 masses at rest to bodies with size, to masses that move and speed up, and to light's own delay.
 
 A ball. Two plumb lines outside a ball point at its centre exactly. No set of directions gives its radius: a place
@@ -390,14 +390,16 @@ light-time squared. An opposite charge's pull points at the same place, to that 
 pull points seven times as far along, three and a half times the acceleration times the light-time squared. The
 departure is the acceleration times the distance over c², times the sine of the angle between them, and scaling every
 length and time moves none of it. What accelerates the mass, a rope or a rocket or a second body, was left out, and its
-own field would add, so the seven is the moving mass's part of the pull and not a whole answer.
+own field would add, so the seven is the moving mass's part of the pull. A second run gave the mass a partner, a pair in orbit, each speeding the other up, with nothing left out at that order: the seven stays. The partner's own field adds terms that grow with the square of the masses and with the speeds, and none that holds an acceleration. The whole agrees, term by term, with the Einstein–Infeld–Hoffmann equation of 1938.
+
+A cosine with no amount. One question from §10 was whether a read holds anything weighted by the cosine to a facing, as a pull is, but with no amount. It does (COS). Take the paint as presence only, a direction occupied or not, and add up the occupied directions each weighted by its cosine: the projected solid angle, which lighting engineers call a view factor. A facing's share less its opposite's is that sum's component along the facing, as with a pull, and scaling the world or remapping every density leaves it alone. A pull is the same sum with each occupied direction weighed by its column of matter. For a ball the sum is π times the radius over the distance, squared: an inverse square with no mass in it, and the pull is that times one amount, the density times four thirds of the radius, at every distance outside (Newton's shell theorem, read this way). For a cube the amount changes with distance, by 43% between half a side and twenty sides off. And a ball hidden behind another adds nothing to the read's sum and its whole share to the pull: a read counts a direction once, a pull sums all along it.
 
 Each of these sorts as §9 did. Directions give places, and ratios give sizes in steps or in angle. A mass, a distance,
 a delay in seconds: each comes with an amount carried in, and with nothing else.
 
 ## 15. What was killed
 
-Seventeen runs, about a hundred predictions. Nine were killed, all by Claude's own guesses, arithmetic or code, and they
+Nineteen runs, about a hundred and twenty predictions. Nine were killed, all by Claude's own guesses, arithmetic or code, and they
 stay recorded as killed.
 
 - GRV's third prediction guessed that the pairing of opposite columns holds between two cubes as it does between two

@@ -1,0 +1,18 @@
+K3 D of a ball: pi*R**2/d**2  equals pi (R/d)^2: True
+K4 ball pull/(G rho) - (4/3) pi R^3/d^2: 0
+K4 ball <L> = 4*R/3
+K4 shell <L> = -4*(-R + a)*(R**2 + R*a + a**2)/(3*R**2)  minus (4/3)(R^3-a^3)/R^2: 0
+K4 d appears in the ball and shell <L>: False False
+K1 two balls, four facings: max |F(n) - F(-n) - n.D| = 8.63e-32
+K1 six axis facings give D: error 6.16e-32
+K2 D under lengths x7: change 2.47e-32 ; pull x 7.0
+K2 densities (1, 2) mapped by rho^3 : D unchanged (presence only); pull direction moves by 0.354843 rad
+K2 densities (1, 2) mapped by e^rho : D unchanged (presence only); pull direction moves by 0.148494 rad
+K5 cube, near face 0.5 away: <L> = 0.5416913855
+K5 cube, near face 1.0 away: <L> = 0.5830094179
+K5 cube, near face 2.0 away: <L> = 0.691870198
+K5 cube, near face 5.0 away: <L> = 0.8373919207
+K5 cube, near face 20.0 away: <L> = 0.9526071487
+K5 cube, near face 200.0 away: <L> = 0.9950269795
+K5 change from 0.5 to 20: -43.1359%
+K6 small ball hidden: True ; D with it = D without (the union of caps is the big cap); pull added 6.54498469498e-5 = (4/3) pi r^3/64 = 6.54498469498e-5

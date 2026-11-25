@@ -1,0 +1,4 @@
+B1 (exact, at 6 rational points) the accelerations enter only as sum G m (7/2 a + 1/2 (a.n) n)/r: True ; nothing else holds an acceleration: True
+B2 (exact, at 6 rational points) whole 1PN minus EIH, test body at rest: [[0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]]
+B3 k = 5: direction moved by 0.0 rad; size x k = 1.0
+B3 k = 1000: direction moved by 0.0 rad; size x k = 1.0
