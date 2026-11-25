@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  FRD (`plans/frd-plan.md` + `runs/frd/frd.py`, 25 Nov; SPN R1211; Tom: "Merge 506, then Faraday test"): Anderson et al.
+  2016's per-channel Q, U (VizieR J/ApJ/825/59, via the CfA mirror): the angle alone gives the rotation measure on 14 of
+  15 one-component sources (F1, F2), unmoved by the amplitude (F5); F4 (my angle errors) and F3 (one π slip at
+  RM ≈ −711 across the band gap) killed. Not in any paper.
   KPL (`plans/kpl-plan.md` + `runs/kpl/kpl.py`, 25 Nov; SPN R1210; Tom: "Kepler test"): an orbit's clock from looks
   alone, exact, nothing killed: directions and angular size give e and ω untimed, the mean anomaly is position's, the
   observer's ticks give the period in ticks (directions and ticks alone suffice), and Kepler-III scalings move no look

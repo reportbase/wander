@@ -1,0 +1,33 @@
+1315-46    n  51  RM_angle   -157.61 +-   5.71 (chi2  18.11)  RM_full   -710.62 +-   5.77 (chi2   1.19)  synth   -647.0  |d|/s  68.12
+cena_c1093 n  83  RM_angle    -58.16 +-   0.90 (chi2   2.08)  RM_full    -58.42 +-   1.00 (chi2   1.40)  synth    -58.5  |d|/s   0.19
+cena_c1435 n  24  RM_angle    -65.98 +-   2.90 (chi2   0.71)  RM_full    -66.03 +-   3.05 (chi2   0.50)  synth    -66.5  |d|/s   0.01
+cena_c1466 n 123  RM_angle    -37.60 +-   0.08 (chi2  11.22)  RM_full    -37.49 +-   0.08 (chi2  17.84)  synth    -37.5  |d|/s   0.89
+cena_c1573 n 117  RM_angle    -96.24 +-   0.61 (chi2   1.70)  RM_full    -95.99 +-   0.65 (chi2   1.50)  synth    -96.0  |d|/s   0.28
+cena_c1636 n  82  RM_angle   -110.63 +-   0.81 (chi2   2.60)  RM_full   -110.70 +-   0.88 (chi2   1.82)  synth   -111.0  |d|/s   0.06
+cena_c1827 n 103  RM_angle    -51.96 +-   0.90 (chi2   0.93)  RM_full    -51.62 +-   0.88 (chi2   1.24)  synth    -51.0  |d|/s   0.27
+cena_c1972 n 106  RM_angle    -74.54 +-   0.15 (chi2   1.60)  RM_full    -74.76 +-   0.13 (chi2   1.76)  synth    -73.5  |d|/s   1.09
+cena_s1031 n  23  RM_angle    -44.89 +-   1.98 (chi2   3.43)  RM_full    -45.88 +-   2.29 (chi2   1.88)  synth    -45.5  |d|/s   0.33
+cena_s1290 n  99  RM_angle    -49.75 +-   0.72 (chi2   3.23)  RM_full    -49.84 +-   0.78 (chi2   2.07)  synth    -50.0  |d|/s   0.08
+cena_s1382 n  20  RM_angle    -57.11 +-   2.69 (chi2   2.39)  RM_full    -57.84 +-   3.04 (chi2   1.39)  synth    -57.5  |d|/s   0.18
+cena_s1437 n  70  RM_angle    -20.66 +-   1.23 (chi2   2.62)  RM_full    -20.81 +-   1.36 (chi2   1.55)  synth    -21.0  |d|/s   0.08
+cena_s1605 n  25  RM_angle    -41.87 +-   1.84 (chi2   4.21)  RM_full    -41.16 +-   2.17 (chi2   1.95)  synth    -41.0  |d|/s   0.25
+cena_s1681 n  54  RM_angle    -79.54 +-   1.00 (chi2   2.39)  RM_full    -79.69 +-   1.10 (chi2   1.45)  synth    -79.5  |d|/s   0.10
+lmc_c01    n 136  RM_angle     18.27 +-   0.21 (chi2   1.64)  RM_full     18.19 +-   0.21 (chi2   2.75)  synth     18.0  |d|/s   0.29
+lmc_c02    n 135  RM_angle     42.82 +-   0.17 (chi2   4.11)  RM_full     43.06 +-   0.17 (chi2   4.51)  synth     43.0  |d|/s   0.99
+lmc_c03    n 135  RM_angle     39.45 +-   0.04 (chi2  11.83)  RM_full     39.19 +-   0.04 (chi2  54.37)  synth     39.0  |d|/s   4.60
+lmc_c04    n 207  RM_angle     77.20 +-   0.26 (chi2  78.51)  RM_full    147.77 +-   0.54 (chi2  10.82)  synth    192.0  |d|/s 117.08
+lmc_c06    n 128  RM_angle     36.22 +-   0.15 (chi2   2.04)  RM_full     36.25 +-   0.15 (chi2   1.85)  synth     36.0  |d|/s   0.13
+lmc_c07    n  46  RM_angle     56.23 +-   1.18 (chi2   2.60)  RM_full     54.93 +-   1.42 (chi2   1.59)  synth     57.0  |d|/s   0.71
+lmc_c15    n  44  RM_angle    108.94 +-   1.08 (chi2   4.56)  RM_full    109.06 +-   1.26 (chi2   4.97)  synth    109.5  |d|/s   0.07
+lmc_c16    n 131  RM_angle     48.00 +-   0.21 (chi2   1.61)  RM_full     48.40 +-   0.21 (chi2   3.23)  synth     48.5  |d|/s   1.36
+lmc_s11    n 172  RM_angle     51.08 +-   0.05 (chi2   9.64)  RM_full     51.08 +-   0.05 (chi2  24.23)  synth     51.0  |d|/s   0.04
+lmc_s13    n 176  RM_angle     52.67 +-   0.13 (chi2  18.35)  RM_full     52.73 +-   0.13 (chi2  11.53)  synth     52.5  |d|/s   0.34
+lmc_s14    n  49  RM_angle     48.38 +-   0.89 (chi2   1.40)  RM_full     48.43 +-   0.91 (chi2   0.98)  synth     48.0  |d|/s   0.04
+
+sources 36, analysed 25, too few channels 11
+adequate (full fit chi2/dof < 2): 15
+F1: within 3 sigma 14 of 15 (93%) -> not killed
+F2: median |d|/sigma 0.19 -> not killed
+F4: angle line chi2/dof < 2 on 5 of 15 -> KILLED
+F5: RM_angle change under Q/I, U/I max 1.42e-14; RM_full moved on 15 of 15 -> not killed
+F3: of 3 parting beyond 3 sigma, 2 inadequate -> KILLED

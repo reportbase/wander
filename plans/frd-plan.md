@@ -48,3 +48,31 @@ rad m⁻², with λ carried in) set by the turn's rate; if F1 fails where fits a
 carry the rotation measure. Classical (Burn 1966; Brentjens and de Bruyn 2005); what is tested is the separation.
 
 ## Runs
+
+### Run 1 (`runs/frd/frd.py`, output `frd-run1.txt`)
+
+36 sources; 25 keep at least 20 channels with |P| ≥ 3σ_P (11 too few); 15 of the 25 adequate (the full one-component
+fit's χ²/dof < 2).
+
+- **F1 not killed.** Among the 15 adequate, the angle's RM and the full fit's agree within 3σ on 14 (93%).
+- **F2 not killed.** Median |RM_a − RM_c|/σ 0.19.
+- **F5 not killed.** Dividing Q and U by I moves RM_a by at most 1.4·10⁻¹⁴ rad m⁻² and RM_c on 15 of 15: the angle does
+  not use the payload, the full fit does.
+- **F4 killed.** The angle's own straight line fits within χ²/dof < 2 on only 5 of the 15 adequate sources (most 2–4.6).
+- **F3 killed.** Three sources part beyond 3σ; two are inadequate (lmc_c03, lmc_c04), one adequate (1315-46): 67%, under
+  80%.
+
+Post hoc, not judged:
+- 1315-46 (the one F1 miss and F3's adequate case) has the largest |RM| (full fit −711, the RM-synthesis peak −647);
+  the angle's −158 is the unwrapping's failure: at |RM| ≈ 700 rad m⁻² the angle turns about 0.9 rad between adjacent kept
+  channels at the band's long-wavelength end and across the gap between the two bands (2–4.5 GHz is not in the data), so
+  unwrapping in order of λ² slips by π. The angle read alone is ambiguous by whole half turns between samples; the full
+  fit is anchored by its starts (the angle's slope and the RM-synthesis peak) and the amplitude.
+- F4's misses: the angle's scatter is larger than σ_χ = σ_P/(2|P|) predicts on sources the full fit calls adequate.
+  σ_χ is first order in σ_P/|P| and too small near the 3σ cut, where the angle's error is not Gaussian; the full fit
+  weighs those channels by Q and U directly. So F4 as written tested my error model as much as the turn.
+
+**What run 1 shows.** Where one rotation measure fits the response, the angle read alone gives the same rotation measure
+on 14 of 15 sources, and it does so without the amplitude (F5 exactly). The one miss is the angle's own ambiguity: a
+turn read between samples is fixed only to whole half turns, which the amplitude-weighted fit resolves. Classical
+(n·π ambiguity, Brentjens and de Bruyn 2005). Not in any paper.
