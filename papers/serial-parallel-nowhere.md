@@ -7607,6 +7607,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1235** (25 Nov 2026; Tom: "So what we have is two cauchies , on for the read and one for the write.", then "The
+  observation read is shv cauchy. We observe the gravity, which is itself a dhv cauchy", "That means we need separate two
+  cauchies", "yes, add it to the paper and merge"): **two Cauchies, the SHV's (the read) and the DHV's (gravity's take at a
+  place)**: one stage weight per direction (R1105 stands), two uses kept apart by name: one hemisphere against both,
+  nothing weighed against the column, halves adding against opposites subtracting, a median against a first moment, the
+  exchange s ↔ 1/s against u ↔ −u, one facing's total against the sphere's, unmoved against moved by scaling, held by a
+  standpoint against by the matter, the read itself against met only through a read of its effects. Revises R1184's "nor
+  the dual hemispherical vantage" and R967's "only as the blueprint": as a view the DHV is still only drawn; as a take at a
+  place it is gravity's, held by no observer (R950). A pull still not a read (R1183); never a Cauchy of amounts (R1203).
+  Claude's first answer, that it is one Cauchy and no write's, stands in that the weight is one; the separation is of
+  uses. Observing gravity is an SHV read of a DHV take (LNS). *Reads and Writes* §7, "Two Cauchies: the SHV's and the
+  DHV's", with the table; notes at "Even from a point" and at the DHV's definition. Not new physics (R1229).
 - **R1234** (25 Nov 2026; Tom: "Describing gravity in terms of read and write separates two very complicated
   geometries.", then "yes, add it to the paper and merge"): the read geometry (the stage: a standpoint's directions and
   their weight, the same for every body, unmoved by scaling, no distance or size) and the write geometry (the matter's

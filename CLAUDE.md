@@ -623,6 +623,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1235 (25 Nov; Tom: "The observation read is shv cauchy. We observe the gravity, which is itself a dhv cauchy", "That
+  means we need separate two cauchies", "yes, add it to the paper and merge"): **two Cauchies, the SHV's (the read) and the
+  DHV's (gravity's take at a place)**, one weight per direction used two ways (one hemisphere/both, nothing/the column, add/
+  subtract, median/first moment, s ↔ 1/s / u ↔ −u, unmoved/moved, a standpoint/the matter). Revises R1184 and R967: as a
+  view the DHV is only drawn, as a take at a place it is gravity's. Observing gravity is an SHV read of a DHV take. A pull
+  still not a read; never a Cauchy of amounts. *Reads and Writes* §7 "Two Cauchies". **For new writing: say the SHV
+  Cauchy and the DHV Cauchy when the two uses are meant.**
   R1234 (25 Nov; Tom: "Describing gravity in terms of read and write separates two very complicated geometries.",
   "yes, add it to the paper and merge"): in the gravity account the read geometry (the stage, the same for every body)
   and the write geometry (the matter's shape, density, size, curvature) meet only in each direction's column; they part
