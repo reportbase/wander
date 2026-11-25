@@ -475,6 +475,21 @@ Then (SPN R440; Tom: "proceed with recommended changes") a real-data test of the
   direction's column, for a ball G·ρ·(4R/3)·D at every distance outside (Newton's shell theorem read so), for a cube not.
   The Cauchy form fixes the heat and never the paint: different matter can pull alike. Classical throughout; the
   sorting ours; no new physics.
+- **One premise for light and gravity** (CLM, LGS, LNS, 25 November; SPN R1227–R1231; *Reads and Writes* §7, "Gravity on
+  the stage, in one account"; essay 33 §15). What a direction carries does not depend on how far along it its source
+  lies: for gravity a direction's pull is its column, wherever the matter sits along the line, which holds exactly for
+  1/r^(D−1) and for no other power (a column slid from [1, 2] to [5, 6] pulls the same at p = D − 1 in D = 2, 3, 4, and
+  +92% or −48% at p = D − 1 ∓ ½); for light it is the brightness theorem, radiance unchanged along a ray, the same
+  condition on the flux. From the premise alone, summing directions gives both shell theorems (outside the mass at the
+  centre; inside nothing, since a chord meets a sphere at equal angles at its two ends), and the outside theorem alone
+  admits the force growing as r (A/r² + B·r), the inside one removing it. A ball's light is B·D and its pull
+  Gρ(4R/3)·D on one D = π(R/d)², so one ball's pull over its light, 4GρR/(3B), has no distance in it; a face-on cube's
+  moves 76% between half a side and twenty sides; absorption (κR = 0.1) breaks light's half (F/(B·D) 0.887, 0.652,
+  0.145 at 2, 5, 20 R). A thin lens's deflection is the plane's pull of the projected column, kernel 1/r at D = 2, so a
+  ring of column deflects from outside as its mass at its centre and not at all inside, 4G·M(<ξ)/(c²ξ). Exact; C2's two
+  quadratures killed by my numerics (the sympy identity stands); LNS N1 could not fail (shift invariance over a whole
+  path). Classical in every part (Newton's Propositions 70 and 71, the converse in Wikipedia's shell theorem, the
+  brightness theorem, the thin lens); support by the same results (R1229), the inside of a shell a shorter route.
 
 - **Where 2/π shows up** (TPI, `plans/tpi-plan.md`). Sixty-five occurrences across about forty fields, from Buffon's
   needle and Viète to AC meters, one-bit correlators, Kendall's τ, the Lebesgue constant, Onsager's Ising energy, an

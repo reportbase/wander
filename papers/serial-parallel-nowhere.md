@@ -7607,6 +7607,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1232** (25 Nov 2026; Tom: "1,2,3,4"): CLM, LGS and LNS carried into `papers/physics.md` §2.2 ("One premise for
+  light and gravity") and *Reads and Writes in Physics* §6.4 (a paragraph, [exact: CLM, LGS, LNS]) and its Code and
+  data. No new claim.
 - **R1231** (25 Nov 2026; Tom: "3 then 4"): *Reads and Writes* §7 gains "Gravity on the stage, in one account" before
   the record (renamed "the record, run by run"): one stage, two takes (the front for a look, the column for a pull), one
   premise for both (the brightness theorem and the column, each the inverse square), what summing directions gives (a

@@ -623,6 +623,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1232 (25 Nov; Tom: "1,2,3,4"): CLM, LGS, LNS in `papers/physics.md` §2.2 and *Reads and Writes in Physics* §6.4.
   R1231 (25 Nov; Tom: "3 then 4"): *Reads and Writes* §7 "Gravity on the stage, in one account" (the place to start on
   gravity), before the record run by run; essay 33 §15, essays 4 and 7, README, `essays.html`, notes on `look-pull.html`
   and `thin.html` and their `demos.html` cards. No new claim.
