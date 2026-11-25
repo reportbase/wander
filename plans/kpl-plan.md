@@ -213,3 +213,8 @@ Predictions, written after the check and before the data:
 - **Y2.** With the frame freed the three move toward the paper's from the frame-at-zero fit (all three nearer).
 - **Y3.** The fitted offset under 3 mas and the drift under 0.5 mas/yr (a frame's size, not an orbit's).
 If Y1 and Y2 are killed, the frame is not what moved run 3.
+
+Run 4b's checks, before the data (`kpl-run4b-check-timed.txt`, `kpl-run4b-check-timed0.txt`, 20 draws each, seed 1216):
+the frame freed, e 0.8830 ± 0.0043, P 15.989 ± 0.041 yr, a 124.94 ± 2.02 mas, the offset's scatter 1.0 and 0.3 mas,
+the drift's 0.09 and 0.05 mas/yr; the frame at zero, e 0.8843 ± 0.0019, P 15.994 ± 0.019 yr, a 125.56 ± 0.71 mas. So
+Y1's bounds are e within 0.013, P within 0.12 yr, a within 6.1 mas of 0.884, 16.0, 125.5.
