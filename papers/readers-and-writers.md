@@ -1838,8 +1838,9 @@ each direction weighed by its column. What it says about the framing (R1228): th
 which a pull, like a read, holds no distance along a direction. A read has each direction and what paints it, never how
 far along; a place's pull has each direction and how much matter lies along it, never where along it. The law keeps the
 pull to the read's situation and adds per direction only the amount, so the stage and the paint are the line along which
-the classical law is built. Consistent with the framing, not evidence against classical physics (they agree wherever
-both apply, and Newton's cone argument already holds the content); and a pull is still not a read: it shares the stage
+the classical law is built. This is support of the kind the framing can have (R1229): it derives the same result,
+no new or different physics (Newton's cone argument already holds the content), and here a simpler route to one part,
+the inside of a shell from a chord's two equal angles with no field equation; and a pull is still not a read: it shares the stage
 and sums along each direction where a read counts once.
 (2) Answered for two masses at rest (FCL run 9, doubles): yes. On the line between them the meeting place is where the
 pull's direction flips, found with no strength, no mass and no G; off the line, the pull's directions at four places a

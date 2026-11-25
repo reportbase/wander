@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1229** (25 Nov 2026; Tom: "read write framing is supported when it derives the same results.    its not going to
+  derive new phyics, maybe simplified derivation, but not new or different physics.", then "yes and merge"): **the
+  framing is supported when it derives the same results; it will not give new or different physics, at most a simpler
+  derivation**, claimed only where shown (CLM: the inside of a shell from a chord's equal angles, no field equation; the
+  outside no simpler than Gauss's law). Restates R950, R1062, R1189 as the test of support. R1228's wording changed from
+  "consistent, not evidence" to support by the same result. **For new writing: call an agreement with classical physics
+  support; never claim new physics; call a derivation simpler only where it is shown.**
 - **R1228** (25 Nov 2026; Tom: "seems like this offers great support for the read / write framing.", then "yes, add it
   to the paper and merge."): from CLM, **the inverse square is the one law under which a pull, like a read, holds no
   distance along a direction**: a read has each direction and its paint, a place's pull each direction and the amount
