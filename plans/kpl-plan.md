@@ -218,3 +218,25 @@ Run 4b's checks, before the data (`kpl-run4b-check-timed.txt`, `kpl-run4b-check-
 the frame freed, e 0.8830 ± 0.0043, P 15.989 ± 0.041 yr, a 124.94 ± 2.02 mas, the offset's scatter 1.0 and 0.3 mas,
 the drift's 0.09 and 0.05 mas/yr; the frame at zero, e 0.8843 ± 0.0019, P 15.994 ± 0.019 yr, a 125.56 ± 0.71 mas. So
 Y1's bounds are e within 0.013, P within 0.12 yr, a within 6.1 mas of 0.884, 16.0, 125.5.
+
+### Run 4b, as it came out (`runs/kpl/kpl-run4b.txt`)
+
+The frame at zero: e 0.8793, P 16.091 yr, a 123.32 mas, χ²/dof 1.05, (i, Ω, ω) (134.79°, 224.95° or 44.95°, 63.54° or
+243.54°). The frame freed: e 0.8752, P 16.125 yr, a 121.84 mas, χ²/dof 0.97, offset (0.742, 0.929) mas, drift (−0.043,
+0.027) mas/yr, (135.27°, 223.61° or 43.61°, 62.60° or 242.60°).
+- **Y1 killed**, narrowly, by P: 16.125 yr against 16.0 ± 0.12; e (0.009 off) and a (3.7 mas off) inside their bounds.
+- **Y2 killed**: freeing the frame moves all three away from the paper's values (e 0.879 → 0.875, P 16.09 → 16.13,
+  a 123.3 → 121.8), not toward them.
+- **Y3 not killed**: the offset under 1 mas, the drift under 0.05 mas/yr.
+
+So the frame is not what moved run 3: it is small, as the paper's is, and it moves the orbit the wrong way.
+
+Seen after the run, not tested: the timed fit with the frame at zero is nearer the paper than run 3's untimed one (e 0.879
+against 0.869, a 123.3 against 119.3, P 16.09 against 16.13), but still 2.6σ, 5σ and 3σ from it by its own check's
+scatter. What the paper has and these runs do not: the radial velocities (fitted jointly, they pin e and the orientation
+through pericentre, where the places are fewest), the Rømer delay (light-travel time across the orbit, a few days near
+pericentre) and a joint fit of R₀. The velocities are the first candidate; they are amounts in a unit, so bringing them
+in is the step from looks to writes, and would be a run of its own.
+
+Reading: the untimed shape needs the focus given (run 4's check); with it given, the looks give S2's shape to about 1–2%
+(runs 3, 4b); the remaining 1–3% gap to the paper's orbit is not the frame.
