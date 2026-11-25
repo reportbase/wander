@@ -182,3 +182,32 @@ the amplitude-only Γ must differ from the full fit's in some digit (else the co
 - **R4′.** The median channel's data turn across f₀ ± Γ_phase/2 is 90° ± 10°, among all analysed channels and among the
   adequate ones. Killed if either misses.
 - R3's χ² is the full fit's and does not depend on the side fits; it is not re-predicted (killed in run 3 stands).
+
+### Run 4, results (`runs/phr/phr3.py`, output `phr-run4.txt`)
+
+The check first: on jan16 n86 channel 1 the amplitude-only Γ (1.534 Hz) differs from the full fit's (1.258 Hz), so the
+side fits move. Two further changes after the predictions and before the full run, both to the optimizer, not the
+measure: the full fit starts from four widths (×½, 1, 2, 4 of the half-power width) and keeps the least cost, since
+after the rescaling one start fell into a worse minimum on that channel (χ²/dof 27.5 against 0.89); and the channels ran
+in parallel, each bootstrap with its own seed (1208 + 2i + channel), after the first attempt hit the 30-minute limit
+with nothing written.
+
+- **R2′ not killed.** 217 channels fitted (49 too narrow a sweep for ±2Γ, none failed). |Γ_phase − Γ_amp| beyond
+  3σ + 2%: 9 of 217 (4.1%); among the 158 channels whose one-pole fit is adequate (χ²/dof < 2), 9 of 158 (5.7%). Both
+  under 10%.
+- **R4′ not killed.** The data's turn across f₀ ± Γ_phase/2, median 91.8° over all (quartiles 86.2°, 99.1°), 92.4° among
+  the adequate.
+- Set 2 is unchanged by the fix (Γ_amp 65.08 kHz, Γ_phase 69.85 kHz, 1.23σ; R1 killed by its 5% clause stands).
+
+Not judged, recorded: Γ_phase/Γ_amp − 1 has median −1.9% but quartiles −12.5% and +7.1%; the bootstrap σ of the
+difference is 5–8% of Γ at 6.5 points across a line, so each channel's agreement is coarse and the test is passed
+within that coarseness. With the multi-start fit the full fit's χ²/dof median is 0.82 (quartiles 0.42, 2.06): run 3's R3
+was killed partly by its worse fits; that kill stands as recorded, the better number is noted here.
+
+**What runs 1–4 show.** On a vibrating wire's 217 measured resonances the width read from the phase alone and the width
+read from the amplitude alone agree within their errors on 96% of channels, and the phase turns a quarter turn within
+one half-width: these lines are single-pole responses, so R362's reading (the line is the phase's turn read per unit of
+frequency) is available for them on measurement. The microwave notch's one curve parts by 7.3% at 1.2σ, untested at the
+5% bound the predictions set. Both data sets are sampled at about 6 points a width; a finer sweep would test the reading
+to a few percent. Classical throughout (a single pole's Kramers–Kronig pair); what is recorded is that the measured
+lines are of that kind.
