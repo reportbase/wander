@@ -223,3 +223,26 @@ of directions between the asymptotes", is restated as R1 and R4.
 
 Kill conditions: any identity off by more than 10⁻⁴⁰ at 50 digits, or failing in sympy where exact; R4 on a 200-point
 grid against the cut Cauchy; R6 as a limit at e = 1 − 10⁻ⁿ, n = 2, 4, 8.
+
+**Run 6** (`runs/orb/orb6.py`, output `runs/orb/orb-run6.txt`). R1 and R3 killed by my code; R2, R4, R5, R6 not killed.
+
+- R1 killed in its first clause: sympy left y − p·tan(ν/2) as p·(sin ν − (1 + cos ν)·tan(ν/2))/(1 + cos ν), which is
+  0 (sin ν = (1 + cos ν)·tan(ν/2)) but was not reduced. Its other clauses hold exactly: the density of y = p·tan(ν/2)
+  under uniform ν is the Cauchy p/(π(p² + y²)), and uniform D pushed to ν has density (1 + D²)/2, its weight on
+  (0, π − 10⁻⁶) already 2·10⁶.
+- R2: dt/dD = (p²/2)(1 + D²), times the Cauchy density in y a constant, p/(2π); its integral D + D³/3 (Barker).
+- R3 killed in its first clause: sympy left √(e^(2η) − 1)·√(1/(e^(2η) − 1)) − 1 unreduced (it is 0 for η > 0). The
+  second clause, k(1/e)² = k(e)², is 0; the hyperbolic map tan(ν/2) = K·tanh(F/2) holds to 3·10⁻⁴⁹ at e = 1.01, 1.5,
+  3, 20.
+- R4: uniform ν over the open range is the Cauchy in tan(ν/2) cut at |t| < K to 10⁻⁵¹; tan(ν∞/2) = K at all four.
+- R5: dM/dF − r/a = 0.
+- R6: the elliptic stage's share on |ν| < 1 is 0.0246, 0.00246, 2.5·10⁻⁵ at e = 1 − 10⁻², 10⁻⁴, 10⁻⁸ (as √(1 − e²)).
+
+## Run 7 (predictions committed before the run)
+
+- **R1′.** With t = tan(ν/2), sin ν = 2t/(1 + t²), cos ν = (1 − t²)/(1 + t²), y − p·t reduces to 0 as a rational
+  function in sympy.
+- **R3′.** With x = e^(2η) − 1 declared positive, √x·√(1/x) − 1 reduces to 0 in sympy, and K(coth η) − e^η is under
+  10⁻⁴⁵ at 50 digits for η = 0.01, 0.5, 2, 10.
+
+Fail only by my algebra or code.

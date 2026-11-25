@@ -1,0 +1,7 @@
+R1 y - p tan(nu/2) = p*(-(cos(nu) + 1)*tan(nu/2) + sin(nu))/(cos(nu) + 1) ; density of y - Cauchy(0,p) = 0 ; dD/dnu - (1+D^2)/2 = 0 ; uniform-D weight on (0, pi - 1e-6) = 2000000.0 (grows without bound)
+R2 (dt/dD)/(1+D^2) = p**2/2 ; clock x Cauchy density = p/(2*pi) ; integral = D**3/3 + D
+R3 K(coth eta) - e^eta = (sqrt(exp(2*eta) - 1)*sqrt(1/(exp(2*eta) - 1)) - 1)*exp(eta) ; k(1/e)^2 - k(e)^2 = 0 ; hyperbolic map worst 2.57e-49
+R4 uniform nu against the Cauchy cut at |t| < K, worst 1.34e-51 ; tan(nu_inf/2) = K at all four
+R5 dM/dF - r/a = 0
+R6 stage share on |nu| < 1 at e = 1 - 1e-2, 1e-4, 1e-8: 0.02464, 0.002459, 2.459e-5
+verdicts: R1 KILLED, R2 not killed, R3 KILLED, R4 not killed, R5 not killed, R6 not killed
