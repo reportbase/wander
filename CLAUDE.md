@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1217 (25 Nov; Tom: "Proceed with your recommendations"): KPL run 5 (`runs/kpl/kpl5.py`): S2's radial velocities
+  with its places choose the paper's node (Z1), give R₀ 8629 pc and M 4.61·10⁶ suns (Z4), and a doubled sky halves R₀
+  alone (Z5); they leave the shape where the looks put it (Z2, Z3 killed): the gap is not the missing amount.
   R1216 (25 Nov; Tom: "Merge, then check the frame"): KPL run 4 (`runs/kpl/kpl4.py`): untimed places do not place an
   unseen focus (freed, e wanders on the paper's own orbit); run 4b's timed fit finds the frame small (Y3) and moving the
   orbit away from the paper's (Y1, Y2 killed): not the frame; the radial velocities suspected, untested.

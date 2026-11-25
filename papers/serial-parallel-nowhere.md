@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1217** (25 Nov 2026; Tom: "Proceed with your recommendations"): KPL run 5 (`runs/kpl/kpl5.py`), S2's 44 radial
+  velocities fitted with its places, predictions after a check on the paper's orbit (unbiased, 20 draws) and before the
+  data. The velocities, amounts in km/s, choose the node the looks left open (Z1 not killed: χ² 320 against 17,738) and
+  give R₀ 8629 pc and M 4.61·10⁶ suns (Z4 not killed); doubling every place halves R₀ and moves nothing else (Z5). They
+  do not move the shape: Z2 and Z3 killed (a 122.9 mas, P 16.079 yr, as the looks alone gave). The gap is not the
+  missing amount; the Rømer delay, the paper's joint fit of several stars and instrument offsets suspected, untested.
 - **R1216** (25 Nov 2026; Tom: "Merge, then check the frame"): KPL run 4, the frame. Before the data: freed in the
   untimed fit, the focus wanders and e with it (0.47–0.59 on the paper's own orbit), since untimed places do not place a
   focus they do not see; a focus not seen is placed by the timing (equal areas in equal times). Run 4b, the timed fit

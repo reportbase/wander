@@ -2733,6 +2733,19 @@ by the total intensity moves the angle's RM by 10⁻¹⁴ while the full fit's m
 turn read between samples is fixed only to whole half turns, and one source (RM ≈ −711 rad m⁻²) slipped by π across the
 band's gap. **Checked** (FRD; F3 and F4 killed).
 
+**An orbit's clock.** A star round an unseen mass is seen as places on the sky, directions with dates. Kepler's laws
+sort what each gives. On S2's 145 places about Sgr A* (Gillessen et al. 2017, 1992–2016), the mean anomaly read from
+place alone runs straight against the observer's dates, so the clock is in the looks and the period comes out in the
+observer's own years, 16.1 of them. Without the dates the places give the shape, e 0.869 to 0.880 against the paper's
+0.884, but only once the focus is given: an unseen focus freed, undated places leave it to wander, and the dates fix it.
+The looks give the size only as an angle (123 mas against 125.5). The velocities along the line of sight, 44 amounts in
+km/s, add what no look has: they choose which of two mirror orientations the star took (χ² 320 against 17,738), and,
+against the angle a year, give the distance (8.6 kpc) and with it the size in au and the mass (4.6·10⁶ suns), both within
+4% of the paper's. Every place doubled halves the distance and moves nothing else. The amounts leave the shape where the
+looks put it: a gap of 1–3% to the paper's orbit stays, and it is neither the frame nor the missing amount; the light's
+travel time across the orbit and the paper's joint fit of several stars are untested. **Checked** (KPL runs 2–5; V1, V2,
+V4, V5, W2, Y1, Y2, Z2 and Z3 killed, the first four by my estimator, each recorded).
+
 **And one where it failed.** Seeds falling from a plant also spread with a fat tail, and the turn can be named
 beforehand: a seed leaving its release point straight, every downward direction alike, lands as the hemisphere's Cauchy,
 Clark's 2Dt with shape p = ½ and a tail falling as r⁻³. On Bullock et al.'s compiled kernels (2017), the 35 that could be
@@ -2842,7 +2855,7 @@ reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `
 reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Loops among standpoints: `plans/tlp-plan.md`, `plans/mny-plan.md`, `runs/tlp/`, `runs/mny/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The two completions tested blind, and the odd sums: `plans/twc-plan.md`, `runs/twc/`. The distance between
 standpoints: `plans/frg-plan.md`, `runs/frg/frg.py`. A flat chart in space: `plans/flc-plan.md`, `runs/flc/`. Epicycles and
 aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The pull by direction: `plans/grv-plan.md`, `runs/grv/`. The data cases:
-`plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, `plans/phr-plan.md`, `plans/frd-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`, `runs/phr/`, `runs/frd/`; each records its
+`plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, `plans/phr-plan.md`, `plans/frd-plan.md`, `plans/kpl-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`, `runs/phr/`, `runs/frd/`, `runs/kpl/`; each records its
 runs as they came out, the killed ones too, and none alone establishes the sort. Pages: `read.html`, `pinhole.html`,
 `crosshairs.html`, `heat-cube.html`, `euler.html`, `approach.html`, `slide-rule.html`, `star-field.html`. The read as a
 control: reportbase/calendar (`dial.js`, `dome.js`, `horizon.html`, `dome.html`, `dome-map.html`, `dome-instrument.html`).
@@ -2912,6 +2925,8 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
   Gottingensis Recentiores* 6, 99–146.
 - Gibbs, J. W. (1899). Fourier's series. *Nature* 59, 606.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.
+- Gillessen, S., Plewa, P. M., Eisenhauer, F. et al. (2017). An update on monitoring stellar orbits in the Galactic
+  Center. *The Astrophysical Journal* 837, 30.
 - Girard, A. (1629). *Invention nouvelle en l'algèbre.* Blaeuw, Amsterdam.
 - Gosset, W. S. ("Student") (1908). The probable error of a mean. *Biometrika* 6(1), 1–25.
 - Greenberger, D. M. and Yasin, A. (1988). Simultaneous wave and particle knowledge in a neutron interferometer.

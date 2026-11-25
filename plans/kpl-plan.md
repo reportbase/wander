@@ -265,3 +265,26 @@ Predictions, written after the check and before the data:
 - **Z5.** Every place multiplied by k = 2 leaves e, P, i, Ω, ω and the mass's a³/P² in au unchanged and halves R₀ (an
   identity: the looks give the orbit in mas, the velocity's amount gives its au, and the distance is their ratio).
 If Z2 and Z3 hold, the 1–3% gap of runs 3 and 4b was the missing amount, not the looks.
+
+### Run 5, as it came out (`runs/kpl/kpl-run5.txt`)
+
+Places and velocities together: a 122.88 mas, e 0.8798, i 135.26°, Ω 225.62°, ω 63.87°, P 16.079 yr, T_p 2002.321,
+R₀ 8629 pc, V₀ 28.5 km/s, a 1060 au, M 4.61·10⁶ suns, χ²/dof 0.98; the velocities' residuals 0.55 of their errors rms,
+none past 1.3. The places alone again (the same code, the velocities dropped): a 123.19, e 0.8796, P 16.083, the node of
+the pair at 45°, as run 4b.
+- **Z1 not killed**: the paper's node (Ω 225.6°, ω 63.9°); the other node held, χ² 17,738 against 320.
+- **Z2 killed**: e (0.8793 → 0.8798) and P (16.091 → 16.079) move toward the paper's, a (123.3 → 122.9) away.
+- **Z3 killed**: P 0.079 yr and a 2.6 mas from the paper's, past 0.05 and 1.7; e (0.004 off) inside.
+- **Z4 not killed**: R₀ 8629 pc, 309 pc from 8320 (bound 360); M 4.61·10⁶, 0.16·10⁶ from 4.45 (bound 0.45).
+- **Z5 not killed**: every place doubled, the same e, P, angles, a in au (1060.4) and mass, R₀ halved (8629 → 4314),
+  the χ² unchanged.
+
+So the velocities do what an amount does: they choose the node the looks left open, by a factor of 55 in χ², and they
+give the distance and the mass, both within 4% of the paper's. They do not close the gap in the shape: e, P and a stay
+where the looks alone put them (moved by 0.0005, 0.012 yr and 0.4 mas). The 1–3% gap is neither the frame (run 4b) nor
+the missing amount (run 5).
+
+Seen after the run, not tested: what is left between these runs and the paper's model is the Rømer delay (the light's
+travel time across the orbit, which shifts the places' dates by up to about eight days, most near pericentre), the paper's
+joint fit of several stars with one mass and one R₀, and the instruments' offsets in velocity (Keck against VLT). Each is
+a write the paper carries in. Whether they close the gap is a run of its own; this plan stops here unless Tom asks.
