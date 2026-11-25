@@ -1827,7 +1827,14 @@ is the same integral with each occupied direction weighed by an amount, its colu
 square in a ratio of lengths, and the pull is G·ρ·(4R/3)·D at every distance outside (for a shell (4/3)(R³ − a³)/R²),
 the cosine-weighted mean column one number fixed by the body (Newton's shell theorem read so); a cube's changes 43%
 between half a side and twenty sides off. A read counts a direction once, a pull sums all along it: a ball hidden
-behind another adds nothing to D and its whole share to the pull.
+behind another adds nothing to D and its whole share to the pull. Taken as a starting point, this is a derivation
+path (CLM, exact): "a direction's pull depends only on how much matter lies along it, not where" is equivalent to the
+inverse square (1/r^(D−1) in D dimensions); from it alone, summing directions gives the shell theorems with no field
+equation solved, outside the mass at the centre, inside nothing (a chord meets a sphere at equal angles at its two
+ends, so each direction and its opposite carry equal columns); the outside theorem alone also admits a force growing as
+r, and the inside one removes it. The path is Newton's own (*Principia* I, Propositions 70 and 71; the converse is in
+the standard account), with Gauss's law its field-equation form: known, and here it is the read's cosine weight with
+each direction weighed by its column.
 (2) Answered for two masses at rest (FCL run 9, doubles): yes. On the line between them the meeting place is where the
 pull's direction flips, found with no strength, no mass and no G; off the line, the pull's directions at four places a
 counted step apart, or directions and ratios of strengths at three, give both masses' places and their ratio in steps.
@@ -2881,7 +2888,7 @@ reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `
 `plans/swp-plan.md`, `runs/swp/`. Three laws on the sphere: `plans/eul-plan.md`, `runs/eul/`. Euler's formula as a count of
 reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Loops among standpoints: `plans/tlp-plan.md`, `plans/mny-plan.md`, `runs/tlp/`, `runs/mny/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The two completions tested blind, and the odd sums: `plans/twc-plan.md`, `runs/twc/`. The distance between
 standpoints: `plans/frg-plan.md`, `runs/frg/frg.py`. A flat chart in space: `plans/flc-plan.md`, `runs/flc/`. Epicycles and
-aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The pull by direction: `plans/grv-plan.md`, `runs/grv/`. Bodies, motion, delay and the cosine weight (§7, items 1, 2 and 4): `plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`, `plans/cos-plan.md`, with `runs/gdi/`, `runs/mvm/`, `runs/ldl/`, `runs/acc/`, `runs/cos/`. The data cases:
+aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The pull by direction: `plans/grv-plan.md`, `runs/grv/`. Bodies, motion, delay and the cosine weight (§7, items 1, 2 and 4): `plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`, `plans/cos-plan.md`, `plans/clm-plan.md`, with `runs/gdi/`, `runs/mvm/`, `runs/ldl/`, `runs/acc/`, `runs/cos/`, `runs/clm/`. The data cases:
 `plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, `plans/phr-plan.md`, `plans/frd-plan.md`, `plans/kpl-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`, `runs/phr/`, `runs/frd/`, `runs/kpl/`; each records its
 runs as they came out, the killed ones too, and none alone establishes the sort. Pages: `read.html`, `pinhole.html`,
 `crosshairs.html`, `heat-cube.html`, `euler.html`, `approach.html`, `slide-rule.html`, `star-field.html`. The read as a
