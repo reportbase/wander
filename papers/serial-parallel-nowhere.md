@@ -7614,6 +7614,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   the sense of motion needing the order of the looks and the ascending node a velocity). Post hoc, a code check on the
   paper's orbit at the same dates: exact noise-free, the same bias with the stated errors, so the kills are my untimed
   conic estimator's, not the data's or the geometry's. A run 3 with a fit to the projected orbit itself proposed.
+- **R1213** (25 Nov 2026; Tom: "Merge 509, then 1 and 2"): PHR (runs 1–6) and FRD as two cases in *Reads and Writes*
+  §11, "A resonance's width" and "Faraday rotation", with their kills, the cable's lesson (an instrument's own turn read
+  and removed before the line's is judged) and the angle's catch (a turn between samples fixed only to whole half
+  turns); the CMU paragraph points to the first; the four data sets in the references and Code and data. No new claim.
 - **R1212** (25 Nov 2026; Tom: "Merge 508, then the cable delay test"): PHR run 6, predictions R9–R13 committed before
   the fit: a delay e^(−2πifτ) read off the line alone and removed, then run 5b's analysis unchanged. Carter: τ 37.4 ns on
   every fitted sweep (R11), 175 sweeps pass the line test against 63 (R12), the turn 89.9° (R10); R9 killed narrowly

@@ -2674,7 +2674,7 @@ reading misled our own earlier work, the turn's 2/π taken as the payload's (CAH
 case; what is misunderstood is what the law is. The one case where no turn could be named (seed dispersal, below) bounds
 the claim, not the finding. Tested since on 30 cases not looked at before (CMU, predictions
 first, a blind classifier): 17 were a turn or a pole off the line (15 resonances and line shapes, read as a phase
-turning and fading, R362), 4 stable sums, 1 a mixture of amounts, and 7 the Cauchy chosen by a designer for its tail
+turning and fading, R362, since checked on measured lines: "A resonance's width", below), 4 stable sums, 1 a mixture of amounts, and 7 the Cauchy chosen by a designer for its tail
 (sketches, hashing, annealing, proposals), where nothing produces it and the finding does not apply; in none of the 30
 did the standard account name the angle or phase the law belongs to. This is an assessment in an internal working document, stated as plainly as the evidence
 allows, and is to be modified as the evidence changes (Tom, 25 November: "This is an internal document so we didn't
@@ -2710,6 +2710,28 @@ the geometry's; how far below it a pattern falls is what arrives. **Checked** (W
 field twice as strong, in an apparatus twice the size. The dynamical one is energy times time and moves with all three.
 Experiments have separated them by keeping the loop and changing the rest (Tomita and Chiao 1986; Bitter and Dubbers
 1987). Both tests sort it. The half is the doubled angle of the sphere of states: a spin state at angle θ has its point on it at 2θ. **Classical**; not run here.
+
+**A resonance's width.** A driven resonator answers with two readings at each frequency: how strong (the amplitude) and
+how far behind the drive (the phase). Read as a turn, the line is the phase turning a half turn across it, a quarter turn
+within f₀ ± Γ/2, and the amplitude's peak is what that turn carries (R362). If the line is one pole, the width read from
+the amplitude alone and the width read from the phase alone are one width. On a vibrating wire's 217 channels (Lopez et al.
+2025) they agree within their errors on 96%, the phase turning 91.8° across the half-width; on Rieger, Günzler et al.'s
+superconducting resonators (2023), 94 lines at about 117 points a width, to 2.6% at the median, the turn 91.0°, though
+past their own errors of 0.4% on a quarter of them. On Carter et al.'s resonators (2016) they parted by a quarter, the
+turn 81°, unmoved over 50 dB of power, until the measuring cable's delay was read off the sweep away from the line (37.4
+ns on every recording) and taken out: then 0.2% and 0.1% on two resonators, 4.5% on the third (sampled at the selection's
+floor), and the turn 89.9°. The instrument adds a turn of its own, steady in frequency; it has to be read and removed
+before the line's turn is judged. **Checked** (PHR; runs 1–2 void by their own conditions, R1, R3, R5, R9 and R13 killed,
+each recorded).
+
+**Faraday rotation.** Polarized light through a magnetized plasma turns its plane by RM·λ², the rotation measure RM a
+column of electrons times the field along the line. The usual fit takes both Stokes amounts, Q and U, and a model of the
+fractional polarization. The turn alone is the polarization angle χ = ½·atan2(U, Q), a direction, no amount; its slope
+against λ² is RM. On Anderson et al.'s broadband channels for 36 sources (2016; 1.3–10 GHz), where one rotation measure
+fits (15 of 25 analysed), the angle read alone gives it on 14, at a median 0.19σ from the full fit, and dividing Q and U
+by the total intensity moves the angle's RM by 10⁻¹⁴ while the full fit's moves. The one miss is the angle's own catch: a
+turn read between samples is fixed only to whole half turns, and one source (RM ≈ −711 rad m⁻²) slipped by π across the
+band's gap. **Checked** (FRD; F3 and F4 killed).
 
 **And one where it failed.** Seeds falling from a plant also spread with a fat tail, and the turn can be named
 beforehand: a seed leaving its release point straight, every downward direction alike, lands as the hemisphere's Cauchy,
@@ -2820,7 +2842,7 @@ reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `
 reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Loops among standpoints: `plans/tlp-plan.md`, `plans/mny-plan.md`, `runs/tlp/`, `runs/mny/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The two completions tested blind, and the odd sums: `plans/twc-plan.md`, `runs/twc/`. The distance between
 standpoints: `plans/frg-plan.md`, `runs/frg/frg.py`. A flat chart in space: `plans/flc-plan.md`, `runs/flc/`. Epicycles and
 aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The pull by direction: `plans/grv-plan.md`, `runs/grv/`. The data cases:
-`plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`; each records its
+`plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, `plans/phr-plan.md`, `plans/frd-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`, `runs/phr/`, `runs/frd/`; each records its
 runs as they came out, the killed ones too, and none alone establishes the sort. Pages: `read.html`, `pinhole.html`,
 `crosshairs.html`, `heat-cube.html`, `euler.html`, `approach.html`, `slide-rule.html`, `star-field.html`. The read as a
 control: reportbase/calendar (`dial.js`, `dome.js`, `horizon.html`, `dome.html`, `dome-map.html`, `dome-instrument.html`).
@@ -2834,6 +2856,8 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
 - A cannonball under drag (§1, "A flight, many writes"): `plans/cnb-plan.md`, `runs/cnb/cnb.py`, `runs/cnb/cnb2.py`.
 - Abbott, R. et al. (LIGO, Virgo and KAGRA Collaborations) (2023). Open data from the third observing run of LIGO, Virgo,
   KAGRA and GEO. *Astrophysical Journal Supplement Series* 267, 29.
+- Anderson, C. S., Gaensler, B. M., Feain, I. J. et al. (2016). A study of broadband Faraday rotation and polarization
+  behavior over 1.3–10 GHz in 36 discrete radio sources. *Astrophysical Journal* 825, 59. Data: VizieR J/ApJ/825/59.
 - Archimedes. *On the Sphere and Cylinder*, Book I.
 - Aspden, R. S., Padgett, M. J. and Spalding, G. C. (2016). Video recording true single-photon double-slit interference.
   *American Journal of Physics* 84, 671.
@@ -2860,6 +2884,9 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
   Supplément, tome 4. Imprimerie Royale, Paris.
 - Buckingham, E. (1914). On physically similar systems; illustrations of the use of dimensional equations. *Physical
   Review* 4, 345–376.
+- Carter, F. W., Khaire, T., Novosad, V. and Chang, C. L. (2016). scraps: an open-source Python-based analysis package
+  for analyzing and plotting superconducting resonator data. *IEEE Transactions on Applied Superconductivity*. Data:
+  Zenodo 10.5281/zenodo.61575.
 - Chyzak, F. and Nielsen, F. (2019). A closed-form formula for the Kullback–Leibler divergence between Cauchy
   distributions. arXiv:1905.10965.
 - Clark, J. S., Silman, M., Kern, R., Macklin, E. and HilleRisLambers, J. (1999). Seed dispersal near and far:
@@ -2908,6 +2935,8 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
 - Lindemann, F. (1882). Ueber die Zahl π. *Mathematische Annalen* 20, 213–225.
 - Liouville, J. (1850). Extension au cas des trois dimensions de la question du tracé géographique. Note VI in
   G. Monge, *Application de l'analyse à la géométrie*, 5th ed., Paris, 609–616.
+- Lopez et al. (2025). Performance study of the vibrating wire technique to determine longitudinal magnetic field
+  profile using scans to high wire harmonic. Data: Zenodo 10.5281/zenodo.15485044.
 - Machin, J. (1706), in W. Jones, *Synopsis palmariorum matheseos.* London.
 - Malmquist, F. (1926). Sur la détermination d'une classe de fonctions analytiques par leurs valeurs dans un ensemble
   donné de points. *Comptes Rendus du Sixième Congrès des Mathématiciens Scandinaves* (Copenhagen, 1925), 253–259.
@@ -2918,6 +2947,8 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
 - Poincaré, H. (1902). *La Science et l'hypothèse.* Paris. (1908). *Science et méthode.* Paris.
 - Qian, T. and Wang, Y.-B. (2011). Adaptive Fourier series, a variation of greedy algorithm. *Advances in
   Computational Mathematics* 34, 279–293.
+- Rieger, D., Günzler, S. et al. (2023). Fano interference in microwave resonator measurements. Data: Zenodo
+  10.5281/zenodo.7767046.
 - Roy, W. (1785). An account of the measurement of a base on Hounslow-Heath. *Philosophical Transactions* 75, 385–480.
 - Secrest, N. J. et al. (2021). A test of the cosmological principle with quasars. *Astrophysical Journal Letters* 908,
   L51.
