@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1201** (25 Nov 2026; Tom: "Proceed", to the prior-work search offered after ORB runs 4–5):
+  `plans/orb-literature.md`, expectations X1–X6 committed before one search by a fresh agent. The map and β are classical
+  (Battin; Brouwer and Clemence p. 62); McCullagh 1996's closure makes the stage a wrapped Cauchy, but no source joining
+  them was found; aberration's form for the E → ν map not found (X4, which I expected found, was wrong; Lavenda's blog
+  names a likeness only); composition by velocity addition and the stage times r/a not found. Not found is not absent
+  (R925). No paper changed.
 - **R1200** (25 Nov 2026; Tom: "Proceed", to Claude's offer of where the orbit's stage stands): ORB runs 4–5
   (`runs/orb/orb4.py`, `orb5.py`, exact, predictions first). The stage's standpoint is −β in the anomaly's disc, β the
   half-slope of the angular eccentricity (e = sin φ, β = tan(φ/2)), k = (1 + β)/(1 − β); with e = tanh η the map E → ν is
