@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  ACC (`plans/acc-plan.md` + `runs/acc/acc.py`, 25 Nov; SPN R1222; Tom: "Merge. Proceed on gravity thread"): §7's item
+  (4), accelerated masses, exact retarded fields, nothing killed: a source at rest but accelerating is looked at, and
+  pulled by an opposite charge, toward ½aT² along a; its linearized gravity pulls toward (7/2)aT² (seven times); scaling
+  moves no direction. Premise: what accelerates the mass is left out.
   LDL (`plans/ldl-plan.md` + `runs/ldl/ldl.py`, 25 Nov; SPN R1221; Tom: "1 then 5"): light's delay past a lens, exact,
   nothing killed: the delay's shape from the images' directions (point mass ½(q − 1/q) + ln q, geometric never less than
   Shapiro; SIS all potential), its size an amount (a counted delay gives the point mass's M, no distance).

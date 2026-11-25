@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1222** (25 Nov 2026; Tom: "Merge. Proceed on gravity thread"): ACC (`plans/acc-plan.md` + `runs/acc/acc.py`), §7's
+  item (4), accelerated masses, the exact retarded fields at 40 digits, nothing killed. A source at rest at t = 0 and
+  accelerating: the look and an opposite charge's pull both depart from the present place by ½·ε·sin ψ (ε = a·r/c²),
+  toward the acceleration, one place ½aT² along a (A1, A2; agreeing to second order too, post hoc); the linearized pull
+  of gravity by (7/2)·ε·sin ψ, seven times as far (A3); scaling lengths and times moves no direction, the strengths by
+  1/k² (A4). Premise: what accelerates the mass is left out, its own field too. Classical (1PN), the sorting ours.
 - **R1221** (25 Nov 2026; Tom: "1 then 5"): LDL (`plans/ldl-plan.md` + `runs/ldl/ldl.py`), §7's item (4), light's delay
   past a lens, exact, nothing killed. For a point mass Δt/T = ½(q − 1/q) + ln q, the geometric part and the Shapiro part
   each a function of the images' distance ratio q alone (T1), the geometric never less (T2); for the SIS the extra paths
