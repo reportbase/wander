@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1209 (25 Nov; Tom: "Merge 507, then 5b"): PHR runs 5–5b on finer sweeps (`runs/phr/phr5.py`): Carter's one fitted
+  resonator R5–R7 killed (phase width 25% under the amplitude's, turn 81°, steady over 50 dB; a cable delay suspected,
+  untested); Fano's R6, R7 not killed (2.6%, 91.0°), R5 killed (a 1–3% systematic beyond errors of 0.4%); R8 empty.
   FRD (`plans/frd-plan.md` + `runs/frd/frd.py`, 25 Nov; SPN R1211; Tom: "Merge 506, then Faraday test"): Anderson et al.
   2016's per-channel Q, U (VizieR J/ApJ/825/59, via the CfA mirror): the angle alone gives the rotation measure on 14 of
   15 one-component sources (F1, F2), unmoved by the amplitude (F5); F4 (my angle errors) and F3 (one π slip at

@@ -7607,6 +7607,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1209** (25 Nov 2026; Tom: "Merge, then find the finer sweep data", then "Merge 507, then 5b"): PHR run 5 (stopped
+  for its cost) and run 5b on finely sampled resonators, predictions R5–R8 committed before the fit. Carter's
+  superconducting resonators (Zenodo 61575, 12 of 200 seeded sweeps fitted, all one resonator): R5, R6, R7 killed, the
+  phase's width 25% under the amplitude's and a turn of 81°, unmoved over 50 dB of power. Fano's (Zenodo 7767046, 94
+  lines at 117 points per Γ): R6, R7 not killed (widths 2.6% apart at the median, turn 91.0°), R5 killed (26.6% beyond
+  3σ at errors of 0.4%). R8 not killed, emptily. Post hoc: Carter's steady gap suggests a cable delay the model does not
+  hold, untested. With run 4: one width from amplitude and phase to a few percent where the line is clean, never to the
+  data's own errors at fine sampling. Not in any paper.
 - **R1211** (25 Nov 2026; Tom: "Merge 506, then Faraday test"; SPICE-RACS unreachable, Tom: "Data is no longer
   available"). FRD (`plans/frd-plan.md` + `runs/frd/`), on Anderson et al. 2016's per-channel Q, U of 36 sources at
   1.3–10 GHz (VizieR J/ApJ/825/59), predictions first: where one rotation measure fits (15 of 25 analysed), the angle

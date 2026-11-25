@@ -255,3 +255,31 @@ Run 5b: R5–R8, the data, the selection and the measures unchanged; only the co
 wall time per sweep (a sweep that reaches it is counted "timed out", reported, not judged); 20 bootstrap resamples, not
 50 (σ noisier, so the 3σ test somewhat looser: a weakness stated now); each least-squares fit capped at 500 function
 evaluations. Seen before this record: the 17 lines of run 5's output.
+
+### Run 5b, as it came out (`runs/phr/phr-run5b.txt`)
+
+No sweep reached the 5-minute limit. Selection as recorded: Carter, of 200 seeded sweeps, 137 failed the line test,
+51 were too narrow (fewer than 20 points across Γ) and 12 were fitted; Fano, of 432 power sweeps, 45 failed the line
+test, 293 were too narrow and 94 were fitted.
+
+- **Carter: R5 killed** (11 of 12 beyond 3σ + 2%, 91.7%), **R6 killed** (median rel −0.254, quartiles −0.257 and
+  −0.247), **R7 killed** (median turn 80.8°, quartiles 80.3 and 81.1). Median 42 points per Γ.
+- **Fano: R5 killed** (25 of 94 beyond 3σ + 2%, 26.6%), **R6 not killed** (median |rel| 0.026; rel median +0.004,
+  quartiles −0.021 and +0.035), **R7 not killed** (median turn 91.0°, quartiles 89.7 and 93.3). Median 117 points per Γ.
+- **R8 not killed**, emptily: Carter passes nowhere, so there was no place for Fano to fail where Carter passed.
+
+Seen after the run, not tested (post hoc):
+- All 12 fitted Carter sweeps are one resonator (RES-1), from −25 to −75 dBm and 0.1 to 1.5 K. Eleven give the
+  phase's width 23–31% under the amplitude's and a turn of 80–83°, the same within a few percent over 50 dB of power.
+  A loss that changes with power (two-level systems) would move with power; this does not. The twelfth (−75 dBm) is
+  unresolved (σ 200 times Γ). The run's one-pole model takes a background that is added (a + b·f); a cable's delay
+  multiplies the response by e^(−2πifτ), a phase that turns with frequency, which an added background cannot absorb
+  and which would change the phase's width and not the amplitude's. That is a candidate cause, not a finding: it would
+  be tested by a new run with the delay in the model and predictions first.
+- On Fano the widths agree to about 2–3% at the median and the turn is 91°, but the errors are small (σ/Γ about 0.004
+  at 117 points per Γ), so departures of 1–3% are beyond 3σ on a quarter of the lines. R5's bound did not allow for a
+  systematic of that size at that precision.
+
+Reading: on the finest sampled lines with a clean pole (Fano), the amplitude and the phase give one width to about 2%
+and the phase turns 91° across f₀ ± Γ/2, as one pole does; not to within their own errors. On Carter's one resonator
+the two widths part by a quarter, steadily, and the cause is not known.
