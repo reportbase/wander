@@ -87,3 +87,9 @@ Gudermannian (tan χ = sinh q, sin χ = tanh q), and calls the result "similar t
 likeness of the E → ν map to aberration is in print, in an unrefereed paper of unknown author and date; **Y3's "not
 found" is withdrawn** and the claim that the joins of ORB runs 4–5 were not found is narrowed to the composition by
 velocity addition and the stage as a wrapped Cauchy from −β, pending the paper's text.
+
+**Then** (25 November; Tom, after the paper could not be downloaded: "It's not working. For the most part, we should
+expect this idea to be well known if it was known and the well explained in wiki."): the paper is left unread. The
+likeness is named once, in an unrefereed paper, and is not in the standard accounts (Wikipedia's "Relativistic
+aberration", "Eccentric anomaly", "True anomaly", opened in the first search), so it is recorded as not well known.
+Y3's withdrawal stands for "not in print"; the papers now say "named once, not in the standard accounts".

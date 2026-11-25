@@ -7607,6 +7607,24 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1207** (25 Nov 2026; Tom: "1 3", to Claude's two options: test the reading CMU's resonance cases rest on, and a
+  demo of the orbit's exchange). PHR (`plans/phr-plan.md` + `runs/phr/`), predictions committed before any data: is a
+  resonance's line the rate its phase turns (R362)? Q1 not killed: for one pole dφ/dω = (Γ/2)·|χ|²/|A|² exactly; for the
+  driven oscillator the ratio varies over ω₀ ± γ by about 2γ/ω₀. On data (a vibrating wire's lock-in sweeps, Zenodo
+  15485044; a notch microwave resonator, Zenodo 7602079, both CC BY 4.0) Q2–Q4 were untested by their own condition: no
+  line fitted a Lorentzian to 2% (quartiles 6.9–11.3%; 4.0%). Not judged: on the notch Γ from the phase's peak rate was
+  3.7% under the amplitude's. The runs found my design faulty (the phase read about a subtracted background that is zero
+  in the wings; a numerical derivative at six points a width; a threshold no noisy line could pass); a run 3 fitting both
+  quadratures at once with one pole is proposed, not run. R362's reading neither confirmed nor refuted. And
+  `conic-exchange.html`: the ellipse of e and the hyperbola of 1/e drawn about one focus, their landings t = k·w with one
+  k = e^η, the hyperbola's stopping at its asymptotes, the parabola the fixed point; a card on `demos.html`, a link on
+  essay 33's card.
+- **R1206** (25 Nov 2026; Tom: "It's not working. For the most part, we should expect this idea to be well known if it
+  was known and the well explained in wiki."): **a result that is known is expected to be explained in the standard
+  accounts (Wikipedia); one that is absent there is not well known, whatever a stray source says.** The orbit's likeness
+  to aberration is named once (academia.edu/3832741, unread) and in none of the standard accounts, so *Reads and Writes*
+  §7 item 8, essay 33 §13, the README row and `essays.html` say "named once, not in the standard accounts". Not a claim
+  of novelty (R925 binds published text).
 - **R1205** (25 Nov 2026; Tom: "1 2 3"): three things, predictions committed first. (1) The second orbit search
   (`plans/orb-literature.md`): the map is Gauss's (*Theoria Motus*, Book I, Art. 8, formula VII, opened); the likeness of
   the E → ν map to aberration is in print (academia.edu/3832741, an unrefereed paper writing it as a Lorentz
