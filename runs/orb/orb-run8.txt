@@ -1,0 +1,2 @@
+R3'' relative gaps: eta 0.01: 0.0, eta 0.5: 0.0, eta 2.0: 1.01e-50, eta 10.0: 3.34e-44
+verdict: R3'' not killed

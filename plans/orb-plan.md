@@ -255,3 +255,16 @@ the wrong measure.
 ## Run 8 (prediction committed before the run)
 
 - **R3″.** The relative gap |K(coth η) − e^η|/e^η is under 10⁻⁴⁰ at 50 digits for η = 0.01, 0.5, 2, 10.
+
+**Run 8** (`runs/orb/orb8.py`, output `runs/orb/orb-run8.txt`). R3″ not killed: relative gaps 0, 0, 10⁻⁵⁰, 3·10⁻⁴⁴.
+
+**What runs 6–8 show.** Past the ellipse the eccentric anomaly's stage goes (its weight has no finite total on the
+parabola and the hyperbola, and at e → 1⁻ the ellipse's stage leaves every arc about the near point as √(1 − e²)),
+and a plainer Cauchy takes its place. On the parabola the directions from the focus, taken evenly, land across the
+axis as the Cauchy of scale p: the lighthouse, turning at half the rate, y = p·tan(ν/2) = p·D. Its clock over y is that
+Cauchy's density inverted, (p²/2)(1 + D²) per unit D, Barker's equation the sum. On the hyperbola the even directions
+over its open range give tan(ν/2) the Cauchy cut at the asymptote's half-slope K, uncut again as e → 1. The payload
+survives on every conic: time is the anomaly's even measure times r/a (dM = (r/a)·dE, and dM = (r/a)·dF on the
+hyperbola). And the ellipse of eccentricity e and the hyperbola of eccentricity 1/e share k exactly, tanh η and coth η,
+their maps differing only by tan ↔ tanh: the exchange e ↔ 1/e with the parabola its fixed point. Classical in each part
+(Barker's equation, the hyperbolic anomaly); the sorting and the exchange's reading are the runs'.
