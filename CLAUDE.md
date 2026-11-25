@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1208 (25 Nov; Tom: "Merge, then run 3"): PHR runs 3–4: one-pole fit of both quadratures, width from amplitude
+  alone and from phase alone. The notch 7.3% apart at 1.2σ (R1 killed by its 5% bound); on the vibrating wire 96% of 217
+  channels agree within their errors and the phase turns 91.8° across f₀ ± Γ/2 (R2′, R4′ not killed): single-pole
+  lines, R362's reading holding on measurement, coarsely (about 6 points a width). Run 3's set 1 void by my code.
   R1207 (25 Nov; Tom: "1 3"): PHR (`plans/phr-plan.md` + `runs/phr/`), is a resonance's line its phase's rate of turn
   (R362)? Q1 exact, not killed; on two open data sets (a vibrating wire, a notch resonator) Q2–Q4 untested by their own
   2% condition, my design at fault (phase about a zeroed background, a derivative at six points a width); run 3, a

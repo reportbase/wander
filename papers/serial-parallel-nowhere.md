@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1208** (25 Nov 2026; Tom: "Merge, then run 3"): PHR runs 3–4, a one-pole fit of both quadratures, then the width
+  from the amplitude alone and from the phase alone, predictions committed first. Run 3: on the microwave notch the two
+  widths 65.1 and 69.9 kHz, 7.3% apart at 1.2σ (R1 killed by its 5% bound, the line 6.8 points wide); set 1 void by my
+  code (the tiny values left the side fits at their start). Run 4, rescaled: on the vibrating wire's 217 channels the
+  widths agree within 3σ + 2% on 96% (R2′ not killed; 94% among the 158 well-fitted), the phase turns 91.8° across
+  f₀ ± Γ/2 (R4′ not killed). The measured lines are single-pole responses, so R362's reading holds for them on
+  measurement, coarsely (about 6 points a width); a finer sweep is the next test. Not in any paper.
 - **R1207** (25 Nov 2026; Tom: "1 3", to Claude's two options: test the reading CMU's resonance cases rest on, and a
   demo of the orbit's exchange). PHR (`plans/phr-plan.md` + `runs/phr/`), predictions committed before any data: is a
   resonance's line the rate its phase turns (R362)? Q1 not killed: for one pole dφ/dω = (Γ/2)·|χ|²/|A|² exactly; for the

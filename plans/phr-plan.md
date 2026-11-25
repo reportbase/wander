@@ -125,3 +125,89 @@ So on these runs R362's reading is neither confirmed nor refuted. A run 3, with 
 quadratures at once with one pole (a complex amplitude, f₀, Γ and a complex background), and then compare Γ fitted from
 the amplitude alone with Γ fitted from the phase alone, taken about the fitted circle's centre. That needs no
 derivative and no threshold on the fit.
+
+### Run 3, predictions (25 Nov; Tom: "Merge, then run 3"), committed before the fit is written
+
+The same two data sets and the same selection as runs 1–2 (set 1: every channel that passed run 1's line-and-coverage
+test; set 2: its one curve). New method, fixed now:
+
+1. **One-pole fit of both quadratures at once.** z(f) = A/(f₀ − f − iΓ/2) + B₀ + B₁(f − f̄), with A, B₀, B₁ complex,
+   by least squares on real and imaginary parts together, started from run 1's estimates. The fit's background is
+   subtracted: z_c = z − B₀ − B₁(f − f̄), whose ideal form passes through 0 off resonance.
+2. **Γ from the amplitude alone:** a Lorentzian a/((f − f₀)² + Γ²/4) fitted to |z_c|², f₀ and Γ free.
+3. **Γ from the phase alone:** φ(f) = φ₀ + atan2(Γ/2, f₀ − f) fitted to the unwrapped arg z_c, f₀, Γ, φ₀ free, each
+   point weighted by |z_c| (the phase's noise goes as 1/|z_c|). This is the angle seen from the circle's off-resonance
+   point, which is where the reading puts the turn: half a turn across the line, the corner (a quarter) at f₀.
+4. **Errors** by a residual bootstrap of step 1 (200 resamples, seeded), steps 2–3 redone on each; σ the combined
+   spread of Γ_phase − Γ_amp.
+
+The amplitude and phase fits share step 1's background, so they are not independent measurements; what is tested is
+whether the response's size and its angle each, read alone, give one width.
+
+- **R1 (set 2).** Γ_phase/Γ_amp − 1 within 5%, and within 3σ.
+- **R2 (set 1).** Among the analysed channels, at most 10% have |Γ_phase − Γ_amp| beyond 3σ + 2% of Γ_amp. Killed past 10%.
+- **R3 (set 1, the fit's adequacy).** Set 1 records each point's standard deviations (stdX, stdY). The step-1 fit's χ²
+  per degree of freedom, using them, is under 2 for the median channel. Killed if 2 or more. (Set 2 has no noise column;
+  untested there.)
+- **R4 (the turn).** Fitted from the phase alone, the turn across f₀ ± Γ/2 is 90° by construction of the model; what is
+  tested is the data's: the unwrapped arg z_c at f₀ ± Γ_phase/2 differs by 90° ± 10° on set 2 and on the median set-1
+  channel. Killed otherwise.
+
+If R1 and R2 hold, the measured lines are single-pole responses whose width can be read from the phase alone, so R362's
+reading (the line is the phase's turn read per unit of frequency) is available for these two kinds of resonance. If they
+fail where R3 says the one-pole fit is adequate, the reading fails on data.
+
+### Run 3, results (`runs/phr/phr3.py`, output `phr-run3.txt`)
+
+- **R1 killed.** On set 2 Γ_amp 65.09 kHz and Γ_phase 69.85 kHz (the full fit's Γ 67.54 kHz): 7.3% apart, past the 5%
+  bound, though only 1.23σ (σ of the difference 3.86 kHz by the bootstrap). The line is 6.8 points wide; the 5% clause
+  was tighter than the data could test.
+- **R4 not killed on set 2:** the data's own turn across f₀ ± Γ_phase/2 is 86.7°.
+- **R3 killed.** Set 1's one-pole fit, χ²/dof with the recorded standard deviations, median 2.08 (quartiles 0.46,
+  23.2). Half the channels fit within their noise, a quarter far outside it.
+- **R2 and R4 on set 1 void, by my code.** Γ_phase/Γ_amp − 1 came out 0.0000 at the median and both quartiles. Checked
+  on one channel afterwards (jan16 n86, channel 1): the amplitude-only fit returned the full fit's Γ to the last digit.
+  With |z_c|² near 10⁻¹¹ the least-squares tolerances stop at the start, so on set 1 the two "separate" widths were the
+  same number and R2's "0 of 219" tests nothing. Set 2's values are of order 1 and did move (65.09 against 67.54).
+
+### Run 4, predictions, committed before the code is changed
+
+Run 3's method on set 1 with each channel rescaled before any fit: z and its standard deviations divided by max|z|,
+frequency by the sweep's median step about its mean (u = (f − f̄)/Δf), so every fitted number is of order 1; widths are
+compared as ratios, which the rescaling does not change. A check first, reported with the run: on jan16 n86 channel 1
+the amplitude-only Γ must differ from the full fit's in some digit (else the code is still at fault and the run void).
+
+- **R2′.** At most 10% of the analysed set-1 channels have |Γ_phase − Γ_amp| beyond 3σ + 2% of Γ_amp; and the same
+  among the channels whose one-pole fit is adequate (χ²/dof < 2). Killed if either exceeds 10%.
+- **R4′.** The median channel's data turn across f₀ ± Γ_phase/2 is 90° ± 10°, among all analysed channels and among the
+  adequate ones. Killed if either misses.
+- R3's χ² is the full fit's and does not depend on the side fits; it is not re-predicted (killed in run 3 stands).
+
+### Run 4, results (`runs/phr/phr3.py`, output `phr-run4.txt`)
+
+The check first: on jan16 n86 channel 1 the amplitude-only Γ (1.534 Hz) differs from the full fit's (1.258 Hz), so the
+side fits move. Two further changes after the predictions and before the full run, both to the optimizer, not the
+measure: the full fit starts from four widths (×½, 1, 2, 4 of the half-power width) and keeps the least cost, since
+after the rescaling one start fell into a worse minimum on that channel (χ²/dof 27.5 against 0.89); and the channels ran
+in parallel, each bootstrap with its own seed (1208 + 2i + channel), after the first attempt hit the 30-minute limit
+with nothing written.
+
+- **R2′ not killed.** 217 channels fitted (49 too narrow a sweep for ±2Γ, none failed). |Γ_phase − Γ_amp| beyond
+  3σ + 2%: 9 of 217 (4.1%); among the 158 channels whose one-pole fit is adequate (χ²/dof < 2), 9 of 158 (5.7%). Both
+  under 10%.
+- **R4′ not killed.** The data's turn across f₀ ± Γ_phase/2, median 91.8° over all (quartiles 86.2°, 99.1°), 92.4° among
+  the adequate.
+- Set 2 is unchanged by the fix (Γ_amp 65.08 kHz, Γ_phase 69.85 kHz, 1.23σ; R1 killed by its 5% clause stands).
+
+Not judged, recorded: Γ_phase/Γ_amp − 1 has median −1.9% but quartiles −12.5% and +7.1%; the bootstrap σ of the
+difference is 5–8% of Γ at 6.5 points across a line, so each channel's agreement is coarse and the test is passed
+within that coarseness. With the multi-start fit the full fit's χ²/dof median is 0.82 (quartiles 0.42, 2.06): run 3's R3
+was killed partly by its worse fits; that kill stands as recorded, the better number is noted here.
+
+**What runs 1–4 show.** On a vibrating wire's 217 measured resonances the width read from the phase alone and the width
+read from the amplitude alone agree within their errors on 96% of channels, and the phase turns a quarter turn within
+one half-width: these lines are single-pole responses, so R362's reading (the line is the phase's turn read per unit of
+frequency) is available for them on measurement. The microwave notch's one curve parts by 7.3% at 1.2σ, untested at the
+5% bound the predictions set. Both data sets are sampled at about 6 points a width; a finer sweep would test the reading
+to a few percent. Classical throughout (a single pole's Kramers–Kronig pair); what is recorded is that the measured
+lines are of that kind.
