@@ -1748,10 +1748,12 @@ its mathematics, the details in the lists below:
    β as Brouwer and Clemence define it, the areal law, McCullagh's 1996 closure of the wrapped Cauchy under maps of the
    circle); the sorting is the item. A prior-work search, its expectations committed first (`plans/orb-literature.md`,
    two searches; Gauss's *Theoria Motus* opened, Brouwer and Clemence not) found the map in Gauss's own form (Book I,
-   Art. 8, tan ½E = tan ½v·tan(45° − ½φ)) and β in the textbooks. The likeness to aberration is in print: an
+   Art. 8, tan ½E = tan ½v·tan(45° − ½φ)) and β in the textbooks. The likeness to aberration is named once, in an
    unrefereed paper, "Gudermannian – Kepler Equations of Planetary Motion" (academia.edu/3832741, author and date
    unknown, its abstract seen, its text not), writes the anomaly relation as a Lorentz transformation "similar to light
-   aberration equations". Not found: the composition by velocity addition, the stage as a wrapped Cauchy from −β, time
+   aberration equations"; it is not in the standard accounts (Wikipedia's "Relativistic aberration", "Eccentric
+   anomaly" and "True anomaly", opened), where a known result would be explained (Tom, 25 November), so it is not well
+   known. Not found: the composition by velocity addition, the stage as a wrapped Cauchy from −β, time
    per direction as the stage times r/a. Recorded for later confirmation, not claimed. Past the ellipse (runs 6–8,
    exact): on the parabola the directions from the focus, taken evenly, land across the axis as the Cauchy of scale p,
    y = p·tan(ν/2), the lighthouse at half the rate, and the clock over y is that density inverted (Barker's equation

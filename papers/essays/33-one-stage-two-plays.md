@@ -330,11 +330,13 @@ Clemence define it), the areal law, and the closure of the wrapped Cauchy under 
 prior-work search was run afterwards, its expectations committed first (`plans/orb-literature.md`), and then a second
 one. The map is Gauss's own: "Greater elegance is attained in most of these formulas by introducing in the place of e
 the angle the sine of which = e" (*Theoria Motus*, 1809, Book I, Art. 8), and his formula VII is tan ½E =
-tan ½v·tan(45° − ½φ). β is in the textbooks. The likeness to aberration turned out to be in print too: a short
+tan ½v·tan(45° − ½φ). β is in the textbooks. The likeness to aberration is named once: a short
 unrefereed paper, "Gudermannian – Kepler Equations of Planetary Motion" (on Academia.edu, author and date unknown),
 writes the anomaly relation as a Lorentz transformation, "similar to light aberration equations"; only its abstract
-was seen. Claude had expected it in print, then after the first search thought otherwise; the first expectation was
-the right one. Not found: the composition by velocity addition, the stage as a wrapped Cauchy from −β, and time per
+was seen, and it would not open. It is not in the standard accounts: Wikipedia's articles on relativistic aberration
+and on the eccentric and true anomalies, all opened, do not mention it, and a result that was known would be explained
+there (Tom, 25 November: "we should expect this idea to be well known if it was known and the well explained in wiki").
+So it is not well known, whatever that one paper says. Not found: the composition by velocity addition, the stage as a wrapped Cauchy from −β, and time per
 direction as the stage times r/a. Not found is not absent; these are recorded for later confirmation, not claimed.
 
 Past the ellipse (runs 6 to 8, exact) the eccentric anomaly's stage goes, since an open orbit has no finite total, and

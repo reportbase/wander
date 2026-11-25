@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1206 (25 Nov; Tom: "we should expect this idea to be well known if it was known and the well explained in wiki."):
+  **a known result is expected in the standard accounts (Wikipedia); absent there, it is not well known.** The orbit's
+  aberration likeness "named once, not in the standard accounts" in *Reads and Writes* §7, essay 33 §13, README, card.
   R1205 (25 Nov; Tom: "1 2 3"): the second orbit search (Gauss Art. 8 opened; the aberration likeness in print,
   academia.edu/3832741, abstract only, R1201's "not found" withdrawn); CMU (`plans/cmu-plan.md`, 30 new cases blind: T 2,
   P 15, S 4, M 1, C 7 a designer's choice, O 1; accounts A 30; C1–C4 not killed); ORB runs 6–8 (the parabola's

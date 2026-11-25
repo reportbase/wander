@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1206** (25 Nov 2026; Tom: "It's not working. For the most part, we should expect this idea to be well known if it
+  was known and the well explained in wiki."): **a result that is known is expected to be explained in the standard
+  accounts (Wikipedia); one that is absent there is not well known, whatever a stray source says.** The orbit's likeness
+  to aberration is named once (academia.edu/3832741, unread) and in none of the standard accounts, so *Reads and Writes*
+  §7 item 8, essay 33 §13, the README row and `essays.html` say "named once, not in the standard accounts". Not a claim
+  of novelty (R925 binds published text).
 - **R1205** (25 Nov 2026; Tom: "1 2 3"): three things, predictions committed first. (1) The second orbit search
   (`plans/orb-literature.md`): the map is Gauss's (*Theoria Motus*, Book I, Art. 8, formula VII, opened); the likeness of
   the E → ν map to aberration is in print (academia.edu/3832741, an unrefereed paper writing it as a Lorentz
