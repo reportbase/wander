@@ -194,3 +194,77 @@ major axis, the same form as relativistic aberration with the speed e, and two s
 focus, past half way (e/2 < β < e). At the ends: the stage's far over near is k² = r_max/r_min, the payload's near over
 far its reciprocal, the clock's far over near k⁴, the areal law's r². A form shared with aberration, not a claim that
 an orbit is a boost; whether the likeness is in print was not searched. Classical in each part.
+
+## Run 6: the orbit at e ≥ 1 (predictions committed before the run)
+
+25 November 2026, Tom: "1 2 3", the third being the orbit pushed to the parabola and the hyperbola. Worked by hand
+beforehand from the standard relations (Barker's equation; tan(ν/2) = √((e + 1)/(e − 1))·tanh(F/2) for the hyperbolic
+anomaly F); the run checks them exactly. Claude's guess when offering it, "the stage becomes the plain Cauchy on a line
+of directions between the asymptotes", is restated as R1 and R4.
+
+- **R1 (the parabola's lighthouse).** On a parabola r = p/(1 + cos ν), the coordinate across the axis through the focus
+  is y = p·tan(ν/2) = p·D, D Barker's parabolic anomaly. So directions ν taken evenly from the focus over (−π, π) give y
+  exactly the Cauchy of scale p (the semi-latus rectum) centred on the axis: a lighthouse turning at half the rate. The
+  eccentric-anomaly stage of runs 2–5 does not carry over: uniform D pushed to ν has density (1 + D²)/2 per unit ν,
+  which has no finite total.
+- **R2 (the parabola's clock).** Time per unit D is proportional to 1 + D² (so M ∝ D + D³/3, Barker), the reciprocal of
+  R1's Cauchy density in y, times a constant: the clock over y is the stage's density inverted.
+- **R3 (the exchange e ↔ 1/e).** With e = coth η for the hyperbola (and tanh η for the ellipse), the hyperbolic map is
+  tan(ν/2) = e^η·tanh(F/2): the ellipse of eccentricity e and the hyperbola of eccentricity 1/e have the same k, and
+  their maps differ only by tan ↔ tanh. The parabola, e = 1, is the exchange's fixed point, where k is infinite.
+- **R4 (the hyperbola's stage).** Directions ν taken evenly over the hyperbola's open range (−ν∞, ν∞), cos ν∞ = −1/e,
+  give t = tan(ν/2) the Cauchy cut to |t| < K = √((e + 1)/(e − 1)), the asymptote's half-slope; as e → 1⁺ the cut
+  goes to infinity and R1's Cauchy returns.
+- **R5 (the payload survives).** For the hyperbola dM = (r/a)·dF exactly, M = e·sinh F − F, r = a(e·cosh F − 1): time
+  is the even measure in F times r/a, Kepler's hyperbolic equation the sum, the measure now with no finite total (the
+  orbit is open), so no stage as a probability.
+- **R6 (the ellipse's stage at e → 1⁻).** The elliptic stage's width β → 1 and its weight piles onto the far point:
+  for any fixed arc about ν = 0 not containing π, its share of the stage goes to 0.
+
+Kill conditions: any identity off by more than 10⁻⁴⁰ at 50 digits, or failing in sympy where exact; R4 on a 200-point
+grid against the cut Cauchy; R6 as a limit at e = 1 − 10⁻ⁿ, n = 2, 4, 8.
+
+**Run 6** (`runs/orb/orb6.py`, output `runs/orb/orb-run6.txt`). R1 and R3 killed by my code; R2, R4, R5, R6 not killed.
+
+- R1 killed in its first clause: sympy left y − p·tan(ν/2) as p·(sin ν − (1 + cos ν)·tan(ν/2))/(1 + cos ν), which is
+  0 (sin ν = (1 + cos ν)·tan(ν/2)) but was not reduced. Its other clauses hold exactly: the density of y = p·tan(ν/2)
+  under uniform ν is the Cauchy p/(π(p² + y²)), and uniform D pushed to ν has density (1 + D²)/2, its weight on
+  (0, π − 10⁻⁶) already 2·10⁶.
+- R2: dt/dD = (p²/2)(1 + D²), times the Cauchy density in y a constant, p/(2π); its integral D + D³/3 (Barker).
+- R3 killed in its first clause: sympy left √(e^(2η) − 1)·√(1/(e^(2η) − 1)) − 1 unreduced (it is 0 for η > 0). The
+  second clause, k(1/e)² = k(e)², is 0; the hyperbolic map tan(ν/2) = K·tanh(F/2) holds to 3·10⁻⁴⁹ at e = 1.01, 1.5,
+  3, 20.
+- R4: uniform ν over the open range is the Cauchy in tan(ν/2) cut at |t| < K to 10⁻⁵¹; tan(ν∞/2) = K at all four.
+- R5: dM/dF − r/a = 0.
+- R6: the elliptic stage's share on |ν| < 1 is 0.0246, 0.00246, 2.5·10⁻⁵ at e = 1 − 10⁻², 10⁻⁴, 10⁻⁸ (as √(1 − e²)).
+
+## Run 7 (predictions committed before the run)
+
+- **R1′.** With t = tan(ν/2), sin ν = 2t/(1 + t²), cos ν = (1 − t²)/(1 + t²), y − p·t reduces to 0 as a rational
+  function in sympy.
+- **R3′.** With x = e^(2η) − 1 declared positive, √x·√(1/x) − 1 reduces to 0 in sympy, and K(coth η) − e^η is under
+  10⁻⁴⁵ at 50 digits for η = 0.01, 0.5, 2, 10.
+
+Fail only by my algebra or code.
+
+**Run 7** (`runs/orb/orb7.py`, output `runs/orb/orb-run7.txt`). R1′ not killed (y − p·t = 0 as a rational function).
+R3′ killed by my set-up: its sympy clause is 0, but at η = 10, coth η − 1 ≈ 4·10⁻⁹ loses nine of the fifty digits and
+e^η ≈ 22,026 multiplies what is left, so the absolute gap is 7·10⁻⁴⁰, over my 10⁻⁴⁵; a bound on the absolute gap was
+the wrong measure.
+
+## Run 8 (prediction committed before the run)
+
+- **R3″.** The relative gap |K(coth η) − e^η|/e^η is under 10⁻⁴⁰ at 50 digits for η = 0.01, 0.5, 2, 10.
+
+**Run 8** (`runs/orb/orb8.py`, output `runs/orb/orb-run8.txt`). R3″ not killed: relative gaps 0, 0, 10⁻⁵⁰, 3·10⁻⁴⁴.
+
+**What runs 6–8 show.** Past the ellipse the eccentric anomaly's stage goes (its weight has no finite total on the
+parabola and the hyperbola, and at e → 1⁻ the ellipse's stage leaves every arc about the near point as √(1 − e²)),
+and a plainer Cauchy takes its place. On the parabola the directions from the focus, taken evenly, land across the
+axis as the Cauchy of scale p: the lighthouse, turning at half the rate, y = p·tan(ν/2) = p·D. Its clock over y is that
+Cauchy's density inverted, (p²/2)(1 + D²) per unit D, Barker's equation the sum. On the hyperbola the even directions
+over its open range give tan(ν/2) the Cauchy cut at the asymptote's half-slope K, uncut again as e → 1. The payload
+survives on every conic: time is the anomaly's even measure times r/a (dM = (r/a)·dE, and dM = (r/a)·dF on the
+hyperbola). And the ellipse of eccentricity e and the hyperbola of eccentricity 1/e share k exactly, tanh η and coth η,
+their maps differing only by tan ↔ tanh: the exchange e ↔ 1/e with the parabola its fixed point. Classical in each part
+(Barker's equation, the hyperbolic anomaly); the sorting and the exchange's reading are the runs'.

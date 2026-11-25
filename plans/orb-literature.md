@@ -48,3 +48,42 @@ found only Lavenda's hint, which names a likeness without the half-angle map. So
 a wrapped Cauchy from −β, the E → ν map as a hyperbolic translation by artanh e with aberration's form, its composition
 by velocity addition, and time per direction as the stage times r/a. Every piece under them is classical (the map,
 β, McCullagh's closure, aberration's half-angle form), and one search does not make the joins new (R925).
+
+## Second search (expectations committed before it ran)
+
+25 November 2026, Tom: "1 2 3", the first being a proper confirmation of the first search. One fresh agent, the primary
+texts opened where they can be reached: Gauss's *Theoria Motus* (1809; Davis's English translation, 1857, public
+domain), Brouwer and Clemence (1961) if reachable, and the literature on the Kepler problem's hidden symmetry (Fock
+1935, Bargmann 1936, Moser 1970; the SO(4) and SO(3,1) treatments, Cushman and Bates).
+
+- **Y1.** Gauss writes the map as tan ½v = tan(45° + ½φ)·tan ½E. Expected found, opened.
+- **Y2.** β = tan(φ/2) stated in so many words: expected not found (it follows from Y1 in one line).
+- **Y3.** The E → ν map as aberration's form, or as a hyperbolic translation of the disc by artanh e: expected not found
+  in the symmetry literature either, since those works lift the problem to momentum space or the four-sphere, not to
+  the anomaly's disc. If found, the joins of ORB runs 4–5 are known and the essays are corrected.
+- **Y4.** The ellipse e and the hyperbola 1/e sharing k (run 6's R3): expected not found as such.
+
+### Second search: results
+
+About fourteen searches and fetches. Opened: Gauss, *Theory of the Motion of the Heavenly Bodies*, C. H. Davis's
+translation (1857), archive.org `theoryofmotionof00gausuoft` (OCR full text); the abstract of Hsu, arXiv:2602.12034.
+Not opened: Brouwer and Clemence (archive.org lending only, 401).
+
+| | verdict | sources |
+| --- | --- | --- |
+| Y1 Gauss's form | found, opened | Book I, Art. 8: "Greater elegance is attained in most of these formulas by introducing in the place of e the angle the sine of which = e"; formula VII, "tan ½E = tan ½v · tan(45° − ½φ)", with √((1 − e)/(1 + e)) = tan(45° − ½φ) |
+| Y2 β = tan(φ/2) stated | not found | Gauss declines the series (Art. 11: "by no means so well suited to practical use"); sin ½φ, cos ½φ and tan(45° − ½φ) appear only as auxiliaries. The series with (1 + β)/(1 − β) = √((1 + e)/(1 − e)) in arXiv:1707.02088 (snippet) |
+| Y3 aberration's form, the boost, velocity addition | not found, one lead unverified | An Academia.edu paper, "Gudermannian – Kepler Equations of Planetary Motion" (academia.edu/3832741; author and year unknown; the page refused, 403; an automatic summary only) says the anomalies can be written in a "Lorentz transformation" description and links the velocity parameterization to "light aberration equations". **The likeliest prior statement, and the one to confirm.** Hsu, arXiv:2602.12034 (2026; abstract opened): the Ligon–Schaaf regularization and the anomalies, no boost or velocity addition. Fock, Moser, Ligon–Schaaf, Milnor's hodograph, Stack Exchange: nothing |
+| Y4 e and 1/e sharing k | not found as a statement, implied by Gauss | Gauss's hyperbola (Art. 21, formula III) uses ψ with cos ψ = 1/e′ and tan ½F = tan ½v·tan ½ψ (his F a circular angle, the gudermannian of today's hyperbolic anomaly); tan ½ψ = √((e′ − 1)/(e′ + 1)), which at e′ = 1/e is Art. 8's tan(45° − ½φ), ψ = 90° − φ. Art. 29 joins the elliptic and hyperbolic quantities by i = √−1, an analytic continuation of the same e, not an exchange of e with 1/e |
+
+**What it leaves.** Y1, Y2 and Y4 held as expected (Y4 found implied, as Y2's identity is, by one line from Gauss).
+Y3 is not settled: no opened source states the map as aberration's form or a boost, but one unopened paper's summary
+says something close, and until it is read the aberration likeness of ORB runs 4–5 is marked as possibly in print.
+
+**Then** (a web search for the paper's title, its abstract seen in the search's summary, the paper itself still not
+opened): "Gudermannian – Kepler Equations of Planetary Motion" (academia.edu/3832741) writes the relation between the
+true and the eccentric anomaly as Lorentz transformations, the anomalies as space-time coordinates, through the
+Gudermannian (tan χ = sinh q, sin χ = tanh q), and calls the result "similar to light aberration equations". So the
+likeness of the E → ν map to aberration is in print, in an unrefereed paper of unknown author and date; **Y3's "not
+found" is withdrawn** and the claim that the joins of ORB runs 4–5 were not found is narrowed to the composition by
+velocity addition and the stage as a wrapped Cauchy from −β, pending the paper's text.

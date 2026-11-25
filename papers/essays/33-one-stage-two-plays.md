@@ -2,7 +2,7 @@
 
 *The thirty-third of a series of essays on what can be known from where one stands. Draft, 24 November 2026; brought up
 to FCL's twelfth run on 25 November, and to ORB's orbit (§13) the same day. It writes up three tests: GRV (`plans/grv-plan.md`, `runs/grv/`), the twelve runs
-of FCL (`plans/fcl-plan.md`, `runs/fcl/`) and ORB runs 2–5 (`plans/orb-plan.md`, `runs/orb/`). Every run but one had its predictions committed before it ran (the exception,
+of FCL (`plans/fcl-plan.md`, `runs/fcl/`) and ORB runs 2–8 (`plans/orb-plan.md`, `runs/orb/`). Every run but one had its predictions committed before it ran (the exception,
 on measured data, is said in §11), and the kills are gathered in §14. Every number below is from those runs. It began as
 exploration and ends on one ruling (§15): a place with no facing is not a read. The pull is never called a
 read, and nothing here is new physics. The mathematics is classical throughout and is named where it is used; the sorting is the series' own,
@@ -327,13 +327,23 @@ relativity adds speeds, (e₁ + e₂)/(1 + e₁e₂). The stage's far-over-near 
 
 A shared form, not a claim that an orbit is a boost. Every piece is classical: the half-angle relation, β (Brouwer and
 Clemence define it), the areal law, and the closure of the wrapped Cauchy under maps of the circle (McCullagh, 1996). A
-prior-work search was run afterwards, its expectations committed first (`plans/orb-literature.md`, one search at
-search-engine depth). It found the map and β in the textbooks. It did not find the joins: the stage as a wrapped Cauchy
-from −β, the map as aberration's form with composition by velocity addition, and time per direction as the stage times
-r/a. The nearest was one unrefereed blog post (B. Lavenda) saying the formulas "look like an aberration formula",
-without the half-angle map. Claude had expected the aberration likeness to be in print, and that expectation was wrong.
-Only a few sources were opened in full, and the main texts (Brouwer and Clemence, Battin, Gauss) were not. Not found
-is not absent; these are recorded for later confirmation, not claimed.
+prior-work search was run afterwards, its expectations committed first (`plans/orb-literature.md`), and then a second
+one. The map is Gauss's own: "Greater elegance is attained in most of these formulas by introducing in the place of e
+the angle the sine of which = e" (*Theoria Motus*, 1809, Book I, Art. 8), and his formula VII is tan ½E =
+tan ½v·tan(45° − ½φ). β is in the textbooks. The likeness to aberration turned out to be in print too: a short
+unrefereed paper, "Gudermannian – Kepler Equations of Planetary Motion" (on Academia.edu, author and date unknown),
+writes the anomaly relation as a Lorentz transformation, "similar to light aberration equations"; only its abstract
+was seen. Claude had expected it in print, then after the first search thought otherwise; the first expectation was
+the right one. Not found: the composition by velocity addition, the stage as a wrapped Cauchy from −β, and time per
+direction as the stage times r/a. Not found is not absent; these are recorded for later confirmation, not claimed.
+
+Past the ellipse (runs 6 to 8, exact) the eccentric anomaly's stage goes, since an open orbit has no finite total, and
+a plainer Cauchy takes its place. On a parabola the directions from the Sun, taken evenly, land across the axis as the
+Cauchy of scale p, y = p·tan(ν/2): a lighthouse turning at half the rate, with the orbit itself as the shore. The clock
+over y is that density turned upside down, and its sum is Barker's equation, the parabola's Kepler. On a hyperbola the
+even directions give the same Cauchy cut off at the asymptotes. The payload r/a holds on every conic. And an ellipse of
+eccentricity e and a hyperbola of eccentricity 1/e share the factor k exactly, their maps differing only by tan
+against tanh: an exchange, e ↔ 1/e, with the parabola its fixed point, as the corner is the reciprocal's.
 
 ## 14. What was killed
 
@@ -444,11 +454,13 @@ front. That is why it can show which way is down.
   arXiv:0811.0441. Boole's map is attributed to him by way of R. Adler and B. Weiss, *Israel J. Math.* 16, 1973; his
   1857 paper was not opened. That an even spread from a point lands on a plane as the Cauchy is in print for light (X.
   Lu, "Cauchy Distribution: A Physics Perspective", 2020; J. Dupuy, L. Belcour and E. Heitz, arXiv:1909.07605).
-- `plans/orb-plan.md`, `runs/orb/` (runs 2 to 5); `plans/orb-literature.md`: Battin, *An Introduction to the Mathematics
+- `plans/orb-plan.md`, `runs/orb/` (runs 2 to 8); `plans/orb-literature.md`: Battin, *An Introduction to the Mathematics
   and Methods of Astrodynamics*, AIAA, 1999, §5; D. Brouwer and G. M. Clemence, *Methods of Celestial Mechanics*,
   Academic Press, 1961, p. 62 (β); P. McCullagh, "Möbius transformation and Cauchy parameter estimation", *Ann. Statist.*
   24(2), 1996, 787–808; D. Savransky, E. Cady and N. J. Kasdin, "Parameter distributions of Keplerian orbits", *ApJ*
   728:66, 2011; B. Lavenda, "The analogy between the Kepler problem and retarded electrodynamic potentials" (blog,
-  bernardlavenda.org). Tom, 25 November: "We would have to create a payload that gives the same results"; "Record your
+  bernardlavenda.org); C. F. Gauss, *Theory of the Motion of the Heavenly Bodies Moving about the Sun in Conic Sections*,
+  trans. C. H. Davis, 1857 (Book I, Arts. 8, 21, 29, opened); "Gudermannian – Kepler Equations of Planetary Motion",
+  academia.edu/3832741 (abstract only). Tom, 25 November: "We would have to create a payload that gives the same results"; "Record your
   findings in the read write papers and essays for later confirmations."
 - SPN rulings cited: R890, R967, R1173, R1174–R1178, R1180–R1183, R1197–R1202.
