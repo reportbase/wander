@@ -79,3 +79,11 @@ Not opened: Brouwer and Clemence (archive.org lending only, 401).
 **What it leaves.** Y1, Y2 and Y4 held as expected (Y4 found implied, as Y2's identity is, by one line from Gauss).
 Y3 is not settled: no opened source states the map as aberration's form or a boost, but one unopened paper's summary
 says something close, and until it is read the aberration likeness of ORB runs 4–5 is marked as possibly in print.
+
+**Then** (a web search for the paper's title, its abstract seen in the search's summary, the paper itself still not
+opened): "Gudermannian – Kepler Equations of Planetary Motion" (academia.edu/3832741) writes the relation between the
+true and the eccentric anomaly as Lorentz transformations, the anomalies as space-time coordinates, through the
+Gudermannian (tan χ = sinh q, sin χ = tanh q), and calls the result "similar to light aberration equations". So the
+likeness of the E → ν map to aberration is in print, in an unrefereed paper of unknown author and date; **Y3's "not
+found" is withdrawn** and the claim that the joins of ORB runs 4–5 were not found is narrowed to the composition by
+velocity addition and the stage as a wrapped Cauchy from −β, pending the paper's text.
