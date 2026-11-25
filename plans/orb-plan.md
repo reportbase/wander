@@ -138,3 +138,30 @@ iteration, the position at a given time, is the payload's sum inverted. The peri
 129% off). Classical in every part (the half-angle relation, Laplace's β, the areal law, the time-averaged distance
 a(1 + e²/2)); the reading as a stage and a payload ours. Tom: "We would have to create a payload that gives the same
 results".
+
+## Run 4: where the stage's standpoint sits (predictions committed before the run)
+
+Tom (25 Nov 2026): "Proceed", to Claude's offer (the stage's wrapped Cauchy of width β is the harmonic measure seen
+from a point a·β from the auxiliary circle's centre; which point, what it is, how it moves with e). Claude's reading
+before the run, not checked: tan(ν/2) = k·tan(E/2) has the form of the relativistic aberration formula
+tan(θ′/2) = √((1+v)/(1−v))·tan(θ/2), with e in the place of the speed v; whether that is in print was not searched.
+Exact: sympy for identities, mpmath at 50 digits; e in {0.01, 0.1, 0.3, 0.6, 0.9, 0.99}.
+
+- **Q1 (β a half-slope).** With e = sin φ (φ the angular eccentricity), β = tan(φ/2) and k = (1 + β)/(1 − β), so k
+  is the corner composed with β by tangent addition, 1 ⊕ β; identities in sympy.
+- **Q2 (e a speed).** With η = artanh e: e = tanh η, k = e^η, β = tanh(η/2). The map from E to ν is a hyperbolic
+  translation of the disc by η along the major axis, so the stage's standpoint sits at hyperbolic distance η from the
+  centre (Euclidean β, since 2·artanh β = η); identities in sympy, and the push-forward of uniform E equal to the
+  harmonic measure (Poisson kernel) from −β to 10⁻⁴⁵ at 200 values of ν for every e.
+- **Q3 (composing).** Applying the map for e₁ then for e₂ is the map for e₃ = (e₁ + e₂)/(1 + e₁e₂), velocity
+  addition, and β₃ = (β₁ + β₂)/(1 + β₁β₂): the boost's rule (PYK's κ = −1) twice; 30 seeded pairs to 10⁻⁴⁵.
+- **Q4 (between centre and focus).** e/2 < β < e for every 0 < e < 1, β = e/2 + e³/8 + O(e⁵); so the standpoint lies
+  nearer the centre than the focus, past the half-way point; symbolic series and the six values.
+- **Q5 (the ratios at the ends).** The stage's density at the far point over the near point is k² = (1 + e)/(1 − e),
+  equal to r_max/r_min; the payload's near over far is 1/k²; the clock's far over near is (1 + e)²/(1 − e)², the
+  stage's k² times the payload's... wait: the clock is stage × payload, so its far/near is k² × k² = k⁴ = r_max²/r_min²
+  (the areal law's r²); all exact in sympy.
+
+What could fail: every item is an identity, so only by my algebra (Q5's statement as written above names the payload's
+ratio twice: its far/near is k², near/far 1/k²; the claim checked is clock far/near = k⁴) or by Q3's direction of
+composition; Q2's reading as a speed is a reading, and a hit there says the forms agree, not that an orbit is a boost.

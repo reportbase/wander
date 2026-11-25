@@ -1694,7 +1694,7 @@ distinguishes the forms is what each needs, never a different number. What the s
 as gravity's, the weight a consequence of the inverse square. Here the weight is the stage's heat: the law of a
 standpoint's directions, the same for a look with no mass in it and for every arrangement of matter. What is gravity's
 is on the paint's side, the amount along each direction. The separation is of roles; a pull needs both, and no
-classical number changes. The separation runs one way only (R1197): the Cauchy form, a theorem for any pull falling as the inverse square (its potential harmonic, the Poisson kernel its weight), fixes the heat and says nothing about the paint, and different paints can give the same pull outright (a point mass and a uniform shell of the same mass pull alike everywhere outside the shell; matter rearranged inside a body without changing its outer field is not met outside), the classical non-uniqueness of the gravity inverse problem. So a density, a shape or a depth comes from elsewhere (run 11's line and ball curves not told apart). Each item below is a case of it. Seven so far, each from a run, each classical in
+classical number changes. The separation runs one way only (R1197): the Cauchy form, a theorem for any pull falling as the inverse square (its potential harmonic, the Poisson kernel its weight), fixes the heat and says nothing about the paint, and different paints can give the same pull outright (a point mass and a uniform shell of the same mass pull alike everywhere outside the shell; matter rearranged inside a body without changing its outer field is not met outside), the classical non-uniqueness of the gravity inverse problem. So a density, a shape or a depth comes from elsewhere (run 11's line and ball curves not told apart). Each item below is a case of it. Eight so far, each from a run, each classical in
 its mathematics, the details in the lists below:
 
 1. *Corners without an amount.* A pull through a plane has the look's corners (half within one height across a thumb,
@@ -1732,6 +1732,16 @@ its mathematics, the details in the lists below:
    of the matter and not a length of the place's, no exchange fits it (the best misses by 0.17), and scaling moves it.
    So the one is a ratio and the other an amount. And a pull's direction is a sum: two of them cross on a single mass,
    but on a pair of masses 2a apart they cross off the centre by 3(a/d)², where two looks at a thing cross on it.
+8. *An orbit as a stage and a payload.* A two-body orbit splits the same way (ORB runs 2–3, exact). Its stage:
+   taken evenly in the eccentric anomaly, the direction of the planet from the Sun has the wrapped Cauchy of width
+   β = (1 − √(1 − e²))/e, centred on the orbit's far point, set by the eccentricity alone, with no amount in it. Its
+   payload: the time spent per direction is that stage times r/a, the distance in the orbit's own size, exactly, and
+   nothing else does it once the stage is fixed (the clock divided by the stage). The payload averages 1 over the stage
+   and 1 + e²/2 over time. Summed over the stage it is Kepler's equation, M = E − e·sin E, so the one step that takes an
+   iteration, where the planet is at a given time, is the payload's sum inverted. The amounts come in only at the
+   period, 2π√(a³/GM), which has no e in it; scaling the orbit moves neither stage nor payload. The clock's own law
+   over directions, 1/(1 + e·cos ν)², is on no wrapped Cauchy (the nearest misses by 5%, 25% and 129% at e = 0.3,
+   0.6, 0.9). Classical in every part (the half-angle relation, Laplace's β, the areal law); the sorting is the item.
 
 None of this is new physics or a mechanism, and a pull is not a read (R1183). "New" is said of the way of thinking: the
 formulas are classical, and that an even spread from a point lands on a plane as the Cauchy is in print for light.
