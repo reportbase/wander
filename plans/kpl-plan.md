@@ -186,3 +186,30 @@ Reading: from places alone, with no date, the measured looks give S2's shape (e 
 to what places cannot hold (the sense of motion, the node's side); with the observer's years as ticks, the clock read from
 place is a straight line, and the period comes out in those years (16.13). The size stays in mas: au, solar masses and
 seconds come only with R₀ and the year carried in.
+
+### Run 4: the frame (25 Nov 2026; Tom: "Merge, then check the frame"), the check before the data
+
+Run 3's post hoc candidate: the paper fits Sgr A*'s place and drift in the astrometric frame, run 3 held both at zero.
+`runs/kpl/kpl4.py` frees them in run 3's untimed fit, as a constant offset of the focus (still no date), or an offset and a
+linear drift (the drift needs the dates). Checked first on the paper's orbit with its errors, 20 draws each (seed 1216;
+`kpl-run4-check-offset.txt`, `kpl-run4-check-drift.txt`), before any data:
+- offset: e 0.59 ± 0.10, P 17.3 ± 0.7 yr, a 105 ± 8 mas, the focus wandering 14 mas (truth 0.884, 16.0, 125.5, 0);
+- offset and drift: e 0.47 ± 0.21, P 18.4 ± 1.5 yr, a 105 ± 11 mas, the focus wandering 41 mas.
+
+Read before the data: the untimed places do not place the focus. An ellipse is fixed by its points; where its projected
+focus sits inside it is not, and every point inside is the projected focus of some orbit through the same places, with
+its own e. Run 3 had the focus given (Sgr A* at the origin of the frame); free it and the shape is gone. What places a
+focus not seen, classically, is the timing: Kepler's second law, equal areas in equal times, holds about one point only.
+So the frame cannot be checked untimed. Run 4 is the timed fit instead (below), and the untimed modes are not run on the
+data.
+
+### Run 4b: the timed fit with the frame freed, predictions before the data
+
+Mode `timed` in `kpl4.py`: the orbit fitted to the places against their dates through Kepler's equation (A, B, F, G, e,
+P, the time of pericentre), the focus at (x₀ + v_x(t − 2009), y₀ + v_y(t − 2009)); classical (Gauss's angles and times).
+Two fits on the data, the frame held at zero and the frame freed; each checked first on the paper's orbit, 20 draws.
+Predictions, written after the check and before the data:
+- **Y1.** With the frame freed, e, P and a each within 3 of the check's scatters of the paper's values.
+- **Y2.** With the frame freed the three move toward the paper's from the frame-at-zero fit (all three nearer).
+- **Y3.** The fitted offset under 3 mas and the drift under 0.5 mas/yr (a frame's size, not an orbit's).
+If Y1 and Y2 are killed, the frame is not what moved run 3.

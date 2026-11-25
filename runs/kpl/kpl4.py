@@ -10,13 +10,15 @@ pre, rest = src.split("# ---- step 1", 1)
 step1, rest2 = rest.split("def ti(el):", 1)
 mode = sys.argv[2]
 exec(pre)
+exec("def ti(el):" + rest2.split("untimed = []")[0], globals())
 T0 = (t.copy(), x.copy(), y.copy(), sx.copy(), sy.copy())
-nf = 2 if mode == 'offset' else 4
+nf = 2 if mode == 'offset' else (0 if mode == 'timed0' else 4)
 
 def proj(q, E):
     A, B, F, G, e = q[:5]; X = np.cos(E) - e; Y = np.sqrt(1 - e*e)*np.sin(E)
     return A*X + F*Y, B*X + G*Y
 def frame(f, tt):
+    if len(f) == 0: return 0*tt, 0*tt
     if len(f) == 2: return f[0] + 0*tt, f[1] + 0*tt
     return f[0] + f[2]*(tt - 2009), f[1] + f[3]*(tt - 2009)
 
@@ -36,7 +38,46 @@ def fit(x, y, sx, sy):
     AB, FG, e = r.x[0:2], r.x[2:4], r.x[4]; ctr = -e*AB
     return r
 
+def kepler_xy(q, tt):
+    A, B, F, G, e, P, Tp = q
+    M = 2*np.pi*(tt - Tp)/P; E = M.copy()
+    for _ in range(50): E = E - (E - e*np.sin(E) - M)/(1 - e*np.cos(E))
+    return proj((A, B, F, G, e), E)
+def fit_timed(x, y, sx, sy):
+    global AB, FG, e, ctr, Pt, Tpt
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf): exec("# ---- step 1" + step1, globals())
+    best = None
+    for P0 in (14.0, 16.0, 18.0):
+        for Tp0 in (2001.5, 2002.3, 2003.0):
+            for sg in (1, -1):
+                q0 = np.r_[AB[0], AB[1], sg*FG[0], sg*FG[1], min(e, 0.95), P0, Tp0, np.zeros(nf)]
+                def res(p):
+                    px, py = kepler_xy(p[:7], t); fx, fy = frame(p[7:], t)
+                    return np.r_[(x - fx - px)/sx, (y - fy - py)/sy]
+                lo = np.r_[[-np.inf]*4, 0.0, 5.0, 1990.0, [-np.inf]*nf]; hi = np.r_[[np.inf]*4, 0.999, 40.0, 2020.0, [np.inf]*nf]
+                r = least_squares(res, q0, bounds=(lo, hi), x_scale='jac', max_nfev=5000)
+                if best is None or r.cost < best.cost: best = r
+    q = best.x; AB, FG, e = q[0:2], q[2:4], q[4]; ctr = -e*AB; Pt, Tpt = q[5], q[6]
+    best.fr = q[7:]
+    return best
+
 def run(x_, y_, sx_, sy_, quiet=False):
+    if mode.startswith('timed'):
+        r = fit_timed(x_, y_, sx_, sy_); f = r.fr
+        a = np.hypot(*AB)   # a placeholder; the semi-major axis from the elements below
+        chi2 = 2*r.cost/(2*len(x_) - 7 - nf)
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            el = elements(AB[0], AB[1], FG[0], FG[1])
+            print('TIMED (%s): e = %.4f, period %.3f yr, a = %.2f mas, chi2/dof %.2f, frame %s' % (mode, e, Pt, el[0][0] if el else np.nan, chi2, np.array2string(f, precision=3)))
+            print('   elements (a, i, Omega, omega):', el)
+        out = buf.getvalue()
+        if not quiet: print(out, end='')
+        return out, f
+    return run_untimed(x_, y_, sx_, sy_, quiet)
+
+def run_untimed(x_, y_, sx_, sy_, quiet=False):
     global x, y, sx, sy
     r = fit(x_, y_, sx_, sy_)
     f = r.x[5:5 + nf]; fx, fy = frame(f, t)
