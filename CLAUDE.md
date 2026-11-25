@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1207 (25 Nov; Tom: "1 3"): PHR (`plans/phr-plan.md` + `runs/phr/`), is a resonance's line its phase's rate of turn
+  (R362)? Q1 exact, not killed; on two open data sets (a vibrating wire, a notch resonator) Q2–Q4 untested by their own
+  2% condition, my design at fault (phase about a zeroed background, a derivative at six points a width); run 3, a
+  one-pole fit of both quadratures, proposed. And `conic-exchange.html` (see Files).
   R1206 (25 Nov; Tom: "we should expect this idea to be well known if it was known and the well explained in wiki."):
   **a known result is expected in the standard accounts (Wikipedia); absent there, it is not well known.** The orbit's
   aberration likeness "named once, not in the standard accounts" in *Reads and Writes* §7, essay 33 §13, README, card.
@@ -1491,6 +1495,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   counts adding to all; below, the share within r heights of the foot for a look, a flat sheet's pull straight down (the
   same law) and an even sky's faced take. Never calls the pull a read. `?scene=scatter|shell|one&phi=&off=&r=&seed=`; hook
   `window.__lookPull` (`masses`, `facing`, `take`, `pull`, `six`, `counts`, `shares`, `set`, `state`). Not in the flying page.
+- `conic-exchange.html`: **the conics' exchange** (25 Nov 2026, SPN R1207; ORB runs 6–8; Tom: "1 3"), a standalone page
+  like `faces.html`, plain canvas. An ellipse of e = tanh η and a hyperbola of e′ = coth η about one focus (nearest point
+  1), the anomaly taken evenly on each (E, F) with rays to the focus; the landing as one line t = k·w, k = e^η, w =
+  tan(E/2) or tanh(F/2), the hyperbola's directions stopping at |t| = k (its asymptotes); the parabola the fixed point.
+  `?eta=&n=`; hook `window.__conicExchange` (`k`, `kEll`, `kHyp`, `mapE`, `mapF`, `ellipse`, `hyperbola`, `set`,
+  `state`). Not in the flying page.
 - `notation.html`: **only a name** (14 Nov 2026, SPN R997; essay 24), a standalone page like `shv.html`, plain script: one turn by its
   angle (cos, sin, so π) and by its half-slope in exact BigInt fractions, n turns and back; Leibniz and Wallis as limits (a fraction at every
   step, π at none); the 189 laws of NTN and NTX as tiles, teal where the checker found π or e notation, grouped by list, DVA's tag, the blind
