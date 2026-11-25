@@ -1,9 +1,10 @@
 # One stage, two plays: a look and a pull
 
-*The thirty-third of a series of essays on what can be known from where one stands. Draft, 24 November 2026. It writes
-up two tests: GRV (`plans/grv-plan.md`, `runs/grv/`) and the seven runs of FCL (`plans/fcl-plan.md`, `runs/fcl/`). Every
-run had its predictions committed before it ran, and the kills are gathered in §9. Every number below is from those
-runs. It began as exploration and ends on one ruling (§10): a place with no facing is not a read. The pull is never called a
+*The thirty-third of a series of essays on what can be known from where one stands. Draft, 24 November 2026; brought up
+to FCL's twelfth run on 25 November. It writes up two tests: GRV (`plans/grv-plan.md`, `runs/grv/`) and the twelve runs
+of FCL (`plans/fcl-plan.md`, `runs/fcl/`). Every run but one had its predictions committed before it ran (the exception,
+on measured data, is said in §11), and the kills are gathered in §13. Every number below is from those runs. It began as
+exploration and ends on one ruling (§14): a place with no facing is not a read. The pull is never called a
 read, and nothing here is new physics. The mathematics is classical throughout and is named where it is used; the sorting is the series' own,
 and is marked as a reading.*
 
@@ -22,14 +23,15 @@ The series has been about the second of these: a look from one standpoint facing
 vantage (SHV). This essay puts the first beside it. The question came from Tom on 24 November: "if you don't have a
 facing, you get all facings at once". What does a place with no facing take in, and how does it compare with a look?
 
-The short answer, from eight runs: the two stand on one stage. The weight a look lays over directions, the Cauchy, is
+The short answer, from thirteen runs: the two stand on one stage. The weight a look lays over directions, the Cauchy, is
 the same weight a mass lays over a plane. A pull differs from a look in two ways only. It carries an amount, where a
 look carries none. And it joins a facing to its opposite by subtracting, where a look's two halves are joined by
 adding. Tom's words for the frame, the same day: "cauchy is the stage, not the play itself."
 
 The order: one stage (§1), a place with no facing (§2), the corners (§3), a facing given back (§4), the sheet (§5), two
-masses (§6), the pair in motion (§7), light past a mass (§8), what was killed (§9), what this does not say (§10), what
-it changes (§11).
+masses (§6), the pair in motion (§7), light past a mass (§8), what a pull's direction can find (§9), adding and
+subtracting from the look's side (§10), a tunnel under a hill (§11), the front and the depth (§12), what was killed
+(§13), what this does not say (§14), what it changes (§15).
 
 ## 1. One stage
 
@@ -206,9 +208,102 @@ have.
 
 So the ring is a corner too. But its place is set by the mass, an amount. The look's corner is chosen with the thumb.
 
-## 9. What was killed
+## 9. What a pull's direction can find
 
-Eight runs, about fifty predictions. Five were killed, all by Claude's own guesses or code, and they stay recorded as
+A plumb line gives a direction and no strength. Run 9 asked how much of two masses at rest can be found with that
+alone.
+
+More than one might guess. The place where the two pulls cancel can be found from the line's direction, with no
+strength measured. Directions taken at four places a counted step apart give where both masses are, and the ratio of
+one mass to the other, all in steps. If the ratio of the pull's strength between places is taken as well, three places
+are enough.
+
+What never comes out is a mass. Ratios of directions give no mass. Ratios of strengths give no mass. They give the
+ratio of the two masses and nothing past it. One strength measured in a unit gives G times the mass, and still not the
+mass by itself.
+
+The series has met this before. A read gives directions and their ratios and never V, the true size of the mountain;
+V comes only with an amount carried in. A mass stands to pulls as V stands to a read. The run was in ordinary
+arithmetic, not the exact kind, and nothing was killed.
+
+## 10. Adding and subtracting, from the look's side
+
+Section 4 found that a pull's two halves subtract. Run 10 asked the same question from the other side: does a look
+have anything that subtracts?
+
+It has one thing. Take the heat a look meets below its corner and take away the heat it meets above. On the bare
+stage the two are equal and the difference is zero. With paint on the stage they differ, and to first order the
+difference is how far the paint has moved the median off the corner.
+
+A pull is the same kind of difference, taken with amounts: the paint's first moment over two looks back to back. The
+rule that covers both is short. Halves subtract for a moment that has a direction, and add for one that has none.
+
+They are still different moments. In the run's scenes a paint could move one and leave the other, and the two lay
+8.25° apart in one of them. Replace every mass m by m³, which keeps the order of the masses, and the pull's direction
+moved by more than a degree in twenty scenes of twenty. The look's balance did not move in any. A look's centre is a
+median, which only order sets. A pull's is a sum, which amounts set. That is Claude's reading and is not ruled: it puts
+gravity on the paint's side of the series' split between heat and paint.
+
+## 11. A tunnel under a hill
+
+Section 5 says a ripple in a sheet's pull fades with height as the Cauchy says. Turned round, that is a rule
+geophysicists have long used: a buried line of missing mass shows at the surface as a dip in gravity shaped like the
+Cauchy, and the dip's half-width at half its depth is how far down the line lies. No density is needed. The shape
+gives the depth.
+
+Run 11 tried it on measurements. No open table of such a survey was found, so the values were read off a published
+figure: two gravity profiles across the Březno railway tunnel, from a preprint by Blecha and Mašín. The predictions
+were written after the values had been seen, which the lab's rules do not allow as a test, and the plan says so.
+
+Fitted with the Cauchy's curve, the two profiles put the tunnel 18.9 ± 2.3 m and 13.6 ± 1.8 m down, against true
+mid-heights of 16.25 and 17.25 m. Their mean is 15.6 ± 1.4 m against 16.75 m, about 12% off. Multiply every measured
+value by 7 and the depth read does not move, as it should not: the depth is in the shape. The data could not tell a
+buried line from a buried ball; both curves fitted. One prediction was killed (§13). A second site, Medford Cave, read
+7 ft against 24 ft; a cave is not a clean line, and the miss stands as it came.
+
+So the rule holds once, to about an eighth, on one clean site. It is the classical rule and nothing more. A second
+clean site is still wanted.
+
+## 12. The front and the depth
+
+On 25 November Tom asked what the heat is, for gravity: "What if cauchy heat for gravity is just the depth".
+
+The stage's heat is the same for a look and a pull. What differs is what each takes along a direction. A look takes
+the front: the first thing met on that line, and nothing behind it. That is why a read holds no distance. A pull takes
+the depth: everything along the line, front to back, nothing hidden behind anything.
+
+Split by direction, the pull at a place is a fixed weight for each direction times the matter met along it. The inverse
+square cancels against the way volume grows with distance, so distance drops out and each direction gives its column:
+the density times how deep the matter goes along that line. For an even density that is the depth itself. More depth
+along a direction, more pull from it.
+
+Three old results read plainly this way. Inside a shell, opposite directions have equal depth and cancel, which is
+Newton's own argument. On an even ball the depth along a direction is the chord through it, and the chords add to the
+pull at the surface. Above a flat slab the depth grows with the slant exactly as the facing's cosine shrinks, so every
+direction counts alike (§5). The depth is the paint, not the heat, and it is why a pull carries an amount.
+
+Observation has a depth too: how far along a direction a thing lies, in thumbs. Tom, the same day: "Observation has
+it's own version of depth". Run 12 asked how far the likeness goes. It was exact, and nothing was killed.
+
+It goes as far as parallax. Two looks a counted step B apart give a distance in steps, 1/(d/B) = 1/s₁ + 1/s₂, with no
+amount. Two strengths of a pull, taken a step B apart along the line to a mass, give d/B = 1/(√ρ − 1), where ρ is the
+ratio of the two strengths. No mass is in it, and no G. Gravity has a parallax of its own.
+
+It stops at the lay. Observation's depth is laid by the thumb: half the heat lies within one thumb, near and far swap
+by d ↔ H²/d, and scaling the world moves nothing. Gravity's depth is laid flat. Every length of matter counts alike at
+any distance. Its half point is the middle of the matter, which is no length of the standpoint's. No exchange fits it;
+the best one misses by 0.17. And scaling moves it.
+
+Two smaller differences. Two looks are best placed half a step from the thing; two strengths are best nearest and get
+worse steadily, with no best place between. And a pull's direction is a sum: two of them cross on a single mass, but on
+a pair of masses 2a apart they cross off the centre by about 3(a/d)², where two looks at a thing cross on it.
+
+Claude's reading, not ruled: the likeness holds in place and in parallax, and stops at the lay. One depth is a ratio.
+The other is an amount.
+
+## 13. What was killed
+
+Thirteen runs, about eighty predictions. Six were killed, all by Claude's own guesses or code, and they stay recorded as
 killed.
 
 - GRV's third prediction guessed that the pairing of opposite columns holds between two cubes as it does between two
@@ -219,11 +314,13 @@ killed.
 - In run 4 a count of balance points found one of the five at a small mass ratio, by too thin a search. The recount
   found all five at a ratio of a millionth and failed again at a billionth, by counting the lighter mass's own pole
   as a zero. The count of five stands confirmed down to a millionth and no further.
+- In run 11 one clause guessed that the ball's curve would put the tunnel below its floor. It put it at 19.8 m, above
+  the floor at 20 m.
 
-Most of the predictions in runs 3, 5, 6 and 7 were worked out on paper before they were written down. Those runs
+Most of the predictions in runs 3, 5, 6, 7, 8, 10 and 12 were worked out on paper before they were written down. Those runs
 could fail by algebra or by code, not by the world. They are a sorting, and each plan says so.
 
-## 10. What this does not say
+## 14. What this does not say
 
 It does not say what gravity is. Tom, the same day: "what is gravity specificaly. but lets not get bogged down".
 Every formula here is Newton's or older, or the textbook lens equation taken as given. The size of the Einstein radius
@@ -242,9 +339,9 @@ pull has no facing, is a sum, moves with scaling, and carries an amount. What th
 gives the exact sense in which no facing is all facings at once: each facing taken with its direction attached, and
 each joined to its opposite by subtracting.
 
-## 11. What it changes
+## 15. What it changes
 
-For the series, three things, each a reading.
+For the series, six things, each a reading.
 
 The stage is wider than the look. The Cauchy was met as the weight a standpoint lays over directions. It is also the
 weight a mass lays over a plane, the weight a sheet's pull is averaged with, and, along a line, a law the bending of
@@ -253,8 +350,22 @@ and what carries the amount is the play's.
 
 Why the stage is shared can be said in one line. The Cauchy is the law of anything spread evenly over directions from a
 point, laid on a plane. A look is that with no amount, over one hemisphere. A pull is that with an amount, over both
-hemispheres at once, summed at a place. So this is not an insight about gravity. It is about how the Cauchy joins
-observation and gravity: one geometric fact, used twice, with light and sound from a point as further uses.
+hemispheres at once, summed at a place. So this is no new physics and no mechanism. It is about how the Cauchy joins
+observation and gravity: one geometric fact, used twice, with light and sound from a point as further uses. Tom
+narrowed the point on 24 November: "The cauchy provides new ways to think about gravity. Even small insights are
+valuable." A way of thinking about known gravity is what the runs give, and that is said plainly here.
+
+The heat and the paint come apart. Tom, 25 November: "classical does not distinguish the payload from the heat. We show
+that gravity is separate from the heat". The classical formula does have two factors, a weight over directions and the
+matter met along each. It holds both as gravity's, the weight being what the inverse square gives. Here the weight is
+the stage's: the same for a look with no mass in it, and for every arrangement of matter. What is gravity's is the
+paint, the amount along each direction (§12). The separation is of roles. A pull needs both, and no classical number
+changes. This is no judgement of the classical account, which gets every number right.
+
+Agreeing with it is itself a result. Tom, 24 November: "Same results with cauchy framing to classical is a result in
+it self". Each run was a place where the stage's account and the classical one could have parted, and they did not.
+What tells the two forms apart is what each needs. The shape of a pull through a plane, and a buried line's depth
+(§11), come with no amount at all.
 
 A corner can be chosen or owned. The look's corner sits where the thumb puts it. A pair of masses has a corner at √μ,
 a lens has one at its ring, a ball has one at its surface. The exchange is the same in each. What sets the corner's
@@ -277,11 +388,15 @@ front. That is why it can show which way is down.
   and combines and remains a cauchy."; "thats why I think this is possibly an importent conceptual insight about
   gravity, which is such a mystery."; "No, its not the complete story, for example, what is gravity specificaly. but
   lets not get bogged down, lets understand each small win to see where it takes us."; "add it to to a note and
-  proceed."; "proceed with 2"; "merge, then 2 and 3".
-- `plans/grv-plan.md`, `runs/grv/`; `plans/fcl-plan.md`, `runs/fcl/` (runs 1 to 7, with 2b and 4b);
+  proceed."; "proceed with 2"; "merge, then 2 and 3". 24–25 November: "Same results with cauchy framing to classical is a result
+  in it self"; "The cauchy provides new ways to think about gravity.   Even small insights are valuable."; "What if
+  cauchy heat for gravity is just the depth, more heart, more depth"; "Observation has it's own version of depth, seems
+  analagous to gravy's depth."; "However classical does not distinguish the payload from the heat.    We show that
+  gravity is separate from the heat".
+- `plans/grv-plan.md`, `runs/grv/`; `plans/fcl-plan.md`, `runs/fcl/` (runs 1 to 12, with 2b and 4b);
   `plans/discussion-note.md` item 24.
 - Essays 4 (`04-near-and-far.md`), 17 (`17-the-cauchy-map.md`), 23 (`23-one-share-and-the-shape-of-a-law.md`) and 30
-  (`30-reading-each-other.md`). *Reads and Writes* §7, "A write's own heat: the pull".
+  (`30-reading-each-other.md`). *Reads and Writes* §7, "A write's own heat: the pull" and "Gravity on the stage".
 - I. Newton, *Principia*, 1687, Book I, Propositions 70 and 71 (the shell). N. Maskelyne, "An account of observations
   made on the mountain Schehallien for finding its attraction", *Philosophical Transactions* 65, 1775. L. Euler, 1767,
   and J.-L. Lagrange, 1772, on the three-body balance points. A. Einstein, "Lens-like action of a star by the deviation
