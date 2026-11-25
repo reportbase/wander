@@ -1,0 +1,52 @@
+# KPL: an orbit's clock from looks alone, in its own period
+
+25 Nov 2026. SPN R1210. Tom: "Kepler test", taking up Claude's offer after Gemini's question (does ORB's r/a payload
+connect to time to contact?). Claude's answer then: in both, a ratio gives time in the system's own unit (τ in the
+observer's ticks; Kepler's mean anomaly in the orbit's period), and seconds need an amount carried in (a clock; GM and
+a). This test puts the orbit half to exact arithmetic.
+
+## Set-up
+
+A planet on a Kepler ellipse (eccentricity e, perihelion direction ω, semi-major axis a, period P = 2π√(a³/GM)), looked at
+from the focus. Each look gives two numbers: the direction ν (a slope tan(ν/2), the writer's angle only as notation) and
+the planet's angular size α, which for a planet of fixed radius is proportional to 1/r. The observer also counts ticks of
+its own clock, in an unknown unit (a tick is c seconds, c unknown). Looks are taken at N ticks.
+
+Three observers, by what each holds:
+- **D:** directions only, untimed (a set of looks with no order).
+- **DT:** directions and ticks.
+- **DS:** directions and angular sizes, untimed.
+- **DST:** all three.
+
+Nothing an observer holds carries a, GM, the planet's radius or the tick's length in seconds.
+
+## Predictions (committed before any code)
+
+- **K1 (shape from DS, no time).** The ratios α/α_max give r_p/r. With the directions, 1/r ∝ 1 + e·cos(ν − ω) is linear
+  in (1, cos ν, sin ν), so e and ω come from three looks exactly, and from N noise-free looks by least squares to 10⁻¹².
+  No time and no unit enter.
+- **K2 (the clock as geometry).** Given e and ν, the mean anomaly M = E − e·sin E, with tan(E/2) = √((1 − e)/(1 + e))·tan(ν/2),
+  is a function of position alone: the fraction of the period spent from perihelion, M/2π, is known from DS with no clock.
+- **K3 (DST: period in ticks).** M/2π against the observer's ticks is a straight line exactly (noise-free, residual under
+  10⁻¹²); its slope gives P in ticks. Two looks suffice once e and ω are known.
+- **K4 (DT: directions and ticks alone suffice).** Without angular sizes, the directions at known ticks fix e, ω, P in
+  ticks and the time of perihelion (a fit of ν(t) through Kepler's equation), to 10⁻¹⁰ from noise-free looks. Angles-only
+  orbit determination, classical (Gauss 1809).
+- **K5 (D alone fails).** Untimed directions alone fix nothing of the shape: any set of directions is met by every e
+  (for each e, the same directions occur on the orbit). A sanity check, by argument and one numerical case.
+- **K6 (no amount from any of them).** Scaling a by λ and the tick by λ^(3/2) (Kepler's third law with GM fixed), or
+  GM by μ and the tick by μ^(−1/2) with a fixed, leaves every look and every tick count unchanged to rounding. So no
+  observer here recovers a, GM or P in seconds; P in seconds needs one amount carried in (the tick's length), and a then
+  needs GM as well (a³ = GM·P²/4π²).
+- **K7 (with noise).** Directions with error 10⁻⁴ rad and angular sizes with relative error 10⁻³, 200 looks evenly in
+  time over two periods, e = 0.3: e recovered within 3 standard errors of the truth by a seeded bootstrap (200 resamples),
+  P in ticks within 3 standard errors, the bootstrap's relative error on P under 10⁻⁴.
+
+## What a pass shows, stated now
+
+Classical throughout (Kepler 1609, Gauss 1809's determination from angles and times). What is sorted: the clock of an
+orbit, as a fraction of its period, is a function of position (K2), read from looks; time in seconds and the orbit's size
+are amounts carried in (K6). This is the orbit's counterpart of time to contact counted in ticks (essay 6 §2). Not in any
+paper until Tom says.
+
+## Runs
