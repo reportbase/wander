@@ -465,6 +465,13 @@ matched, light crosses two indices whole when they are equal: each 4k/(1 + k)² 
 crossover at ωRC = 1 is the first kind, a driven RLC's resonance the second (RWX, exact; `../../plans/rwx-plan.md`).
 Essay 23 gathers the disc, the two kinds of corner and the counted periods in one place.
 
+A ball has its own inverse square with no amount in it. Count the directions it covers from a place, each weighted by its
+cosine to the line toward it: the projected solid angle, π(R/d)², a ratio of lengths that scaling the world leaves alone.
+Its pull is that share times one amount, the density times four thirds of the radius, at every distance outside; a cube's
+amount changes with distance, so the clean split is the ball's. And a ball hidden behind another adds nothing to the
+share and its whole weight to the pull: the share counts a direction once, the pull sums all along it (COS, exact;
+`../../plans/cos-plan.md`; essay 33 §14).
+
 ---
 
 ## 14. What it comes to

@@ -449,6 +449,12 @@ independent distance; on Cosmicflows-4, Hubble's 1929 rungs are not. And in a si
 length carried in at 1% error, the shape improved as N^(−0.49) while the scale never left the 1%: the reads averaged
 down, the one amount carried in did not (*Reads and Writes in Physics* (`../reads-and-writes-physics.md`), §7).
 
+Gravity sorts the same way when its directions are read from many places (GDI, exact; essay 33 §14). Plumb lines at two
+places point to a ball's centre and never give its radius; a ratio of pull strengths inside it does, in counted steps. A
+lens's two images place the lens, unseen, by their directions and brightness ratio; the ring is the geometric mean of
+their distances. A pair in orbit gives its mass ratio and places from six directions. In each, directions give places
+and ratios give sizes in steps; a mass needs an amount carried in, as a size in metres does.
+
 ---
 
 ## 13. What it comes to

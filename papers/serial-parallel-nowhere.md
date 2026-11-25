@@ -7607,6 +7607,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1225** (25 Nov 2026; Tom: "update the essays and demos"): GDI, MVM, LDL, ACC and COS carried into essays 4 §13
+  (the ball's cosine-weighted share π(R/d)², the pull that times one amount), 6 §12 (directions give places, ratios
+  sizes) and 7 §7 (a moving mass's look and pull; the seven; the lens's delay), and as notes on `look-pull.html` and
+  `thin.html` with their `demos.html` cards. No new claim.
 - **R1224** (25 Nov 2026; Tom: "1 then 3"): ACC run 2 (`runs/acc/acc2.py`), the pair's whole 1PN field at a test body
   at rest, exact at six rational points (sympy's simplify did not finish; said in the plan), nothing killed: the
   accelerations enter only as Σ (G m/r)(7/2·a + ½(a·n)n) (B1), the whole equals EIH's test-body limit (B2), scaling moves
