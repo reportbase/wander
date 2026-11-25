@@ -7607,6 +7607,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1197** (25 Nov 2026; Tom: "If we can prove that gravity is cauchy based, then the separation of the heat and the payload
+  must also be true.   Unfortunately this says nothing about the payload, and they can be completely different.", then
+  "Yes"): **the Cauchy form of a pull fixes the heat and says nothing about the payload; different payloads can give
+  the same pull.** Claude's precision, agreed: "gravity is Cauchy based" is already a theorem given the inverse square
+  (the potential harmonic, the Poisson kernel its weight over a flat region; GRV, FCL), so it holds for any
+  inverse-square pull, not gravity alone, and the separation of R1195 follows from it. The payload's freedom is the
+  classical non-uniqueness of the gravity inverse problem: a point mass and a uniform shell of the same mass pull alike
+  outside the shell, and any rearrangement inside a body that keeps its outer field is not met outside, so a density, a
+  shape or a depth is carried in from elsewhere (FCL run 11: line and ball curves not told apart). Light and gravity one
+  stage with different paints (R1192). No new physics. *Reads and Writes* §7, one passage.
 - **R1196** (25 Nov 2026; Tom: "update the essays"): PR #497 merged. Essay 33 brought up to FCL runs 9–12 and
   R1189–R1195: four new sections (§9 what a pull's direction can find, §10 adding and subtracting from the look's side,
   §11 a tunnel under a hill, §12 the front and the depth), the kills now §13 (run 11's D3 added), "what this does not
