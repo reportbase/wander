@@ -80,3 +80,48 @@ this record: the headers and the first four rows. The resonant part of a notch i
 model; a mismatch on the line turns that circle about the off-resonance point (an asymmetric line), which a background
 linear in ω does not remove. That is a known way for Q2 to fail on this set; the preprocessing is not changed for it.
 Judged as set 1, with one channel: each prediction killed if this channel misses.
+
+### Run 1 (`runs/phr/phr.py`, output `phr-run1.txt`): Q1 and data set 1
+
+**Q1 not killed.** For one pole, dφ/dω − (Γ/2)|χ|²/|A|² simplifies to 0. For the driven oscillator
+χ = 1/(ω₀² − ω² − iγω), dφ/dω = γ(ω₀² + ω²)/|D|², so (dφ/dω)/|χ|² = γ(ω₀² + ω²). Over ω₀ ± γ that varies by 0.221,
+0.0202 and 0.00200 at Q = 10, 100, 1000, against 2γ/ω₀ = 0.2, 0.02, 0.002: first order in γ/ω₀, as predicted. (The run's
+first form evaluated the arctangent's derivative on a grid through ω₀, where it is 0/0, and printed nan; replaced by
+the closed form, checked symbolically against the arctangent.)
+
+**Data set 1: Q2–Q4 untested by their own condition.** Of 352 channels, 237 passed the line-and-coverage test (86 were
+noise, 29 too narrow a sweep). None fitted a Lorentzian with rms residual under 2%: the quartiles were 6.9%, 8.9% and
+11.3%. So by the judging fixed beforehand there was no channel to judge. The lines are about 1.5 Hz wide, sampled at
+6 to 9 points across Γ, with noise near the peak several times larger than in the wings.
+
+Not judged, recorded as measured over the 237: the scaled curves differed by 30% rms at the median; Γ from the phase's
+peak rate was 44% under the amplitude's at the median; the turn within ±Γ/2 was 86° at the median (quartiles 78°,
+95°). The total turn read 323° at the median, which is my set-up's fault (see run 2).
+
+### Run 2 (`runs/phr/phr2.py`, output `phr-run2.txt`): data set 2
+
+The notch's line stands 199 times its wings' noise, 6.4 points across Γ = 64.2 kHz, and the sweep covers ±2Γ.
+
+**Q2–Q4 untested by their condition again.** The Lorentzian fitted |χ|² with an rms residual of 4.0%, over the 2%
+the judging requires.
+
+Not judged:
+- Γ from the phase's peak rate was 3.7% under the amplitude's, inside Q3's 5%.
+- The turn within ±Γ/2 was 82.6°, 7.4° short of 90°.
+- The scaled curves differed by 20% rms (12% with a three-point smoothing, chosen after the run).
+- The total turn read −794°.
+
+**What the runs found about my design.** Two of the measures were impossible as I set them.
+
+- *Q4's total turn and Q3's span method.* Subtracting the background fitted to the outer 20% leaves the response
+  there at zero by construction, so its phase in the wings is the noise's. A total turn read from those wings means
+  nothing. The phase has to be read about the circle's own centre, not about the subtracted background.
+- *Q2's difference of a numerical derivative.* At six points across the line, a centred difference turns a few
+  percent of noise into tens of percent.
+- *The 2% condition.* It excluded every line in both sets, so the kill could not fire. It was meant to keep out
+  lines that are not Lorentzian; at this sampling it also kept out every noisy Lorentzian.
+
+So on these runs R362's reading is neither confirmed nor refuted. A run 3, with new predictions, would fit both
+quadratures at once with one pole (a complex amplitude, f₀, Γ and a complex background), and then compare Γ fitted from
+the amplitude alone with Γ fitted from the phase alone, taken about the fitted circle's centre. That needs no
+derivative and no threshold on the fit.

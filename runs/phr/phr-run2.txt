@@ -1,0 +1,7 @@
+points 150 peak/noise 198.84210865713916
+f0 4.731895 GHz  Gamma 0.0642 MHz  points per Gamma 6.4  covers +-2G: True
+Lorentzian rms residual 0.0397 (Q2 needs < 0.02 to apply)
+Q2 scaled rms difference 0.2046 (killed if > 0.05)
+Q3 Gamma from phase peak / amplitude - 1 = -0.0365; from phase span = -1.0000 (killed if |.| > 0.05)
+Q4 total turn -794.3 deg (killed if off 180 by > 10); within +-G/2 82.6 deg (killed if off 90 by > 5)
+post hoc: 3-point smoothing, scaled rms difference 0.1170
