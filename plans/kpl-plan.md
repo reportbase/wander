@@ -240,3 +240,28 @@ in is the step from looks to writes, and would be a run of its own.
 
 Reading: the untimed shape needs the focus given (run 4's check); with it given, the looks give S2's shape to about 1–2%
 (runs 3, 4b); the remaining 1–3% gap to the paper's orbit is not the frame.
+
+### Run 5: the radial velocities, predictions before the data (25 Nov 2026; Tom: "Proceed with your recommendations")
+
+Mode in `runs/kpl/kpl5.py`: run 4b's timed fit with the frame at zero, joined by S2's 44 radial velocities from the same
+table5 (2000.487 to 2016.519, km/s with their stated errors; the earliest from Keck, the rest VLT). The velocities are
+amounts in a unit, so they bring in what the looks never had: the distance R₀ (km/s against mas a year), with it the size
+in au and the mass by Kepler's third law (a³/P², au and years). Fitted: a, i, Ω, ω, e, P, T_p, R₀ and a system velocity
+V₀. Newtonian, no Rømer delay, no redshift (the paper's model has the Rømer delay; its effect is a few days near
+pericentre). Convention: z away from the observer, a receding star's velocity positive, v = K(cos(ω + ν) + e cos ω).
+
+The check before the data (`runs/kpl/kpl-run5-check.txt`, the paper's orbit with R₀ 8320 pc sampled at the same dates and
+errors, 20 draws, seed 1217): e 0.8839 ± 0.0016, P 16.002 ± 0.017 yr, a 125.51 ± 0.55 mas, R₀ 8314 ± 118 pc, M
+(4.44 ± 0.15)·10⁶ suns, Ω 226.91 ± 0.58°, ω 65.49 ± 0.53°: unbiased, and the velocities pick the paper's node every
+draw. (The paper's elements with R₀ 8.32 kpc imply 4.45·10⁶ suns; its quoted 4.28·10⁶ is from all its stars together.)
+
+Predictions, written after the check and before the data:
+- **Z1.** The velocities choose one node of run 4b's pair, the paper's (Ω near 227°, ω near 66°): the other node held,
+  χ² worse by more than 100.
+- **Z2.** With the velocities, e, P and a all move toward the paper's (0.884, 16.00 yr, 125.5 mas) from run 4b's
+  frame-at-zero fit (0.879, 16.09, 123.3): all three nearer.
+- **Z3.** e, P and a within 3 of the check's scatters of the paper's: e within 0.005, P within 0.05 yr, a within 1.7 mas.
+- **Z4.** R₀ within 3 check scatters (360 pc) of 8320 pc, and M within 3 scatters (0.45·10⁶) of 4.45·10⁶ suns.
+- **Z5.** Every place multiplied by k = 2 leaves e, P, i, Ω, ω and the mass's a³/P² in au unchanged and halves R₀ (an
+  identity: the looks give the orbit in mas, the velocity's amount gives its au, and the distance is their ratio).
+If Z2 and Z3 hold, the 1–3% gap of runs 3 and 4b was the missing amount, not the looks.
