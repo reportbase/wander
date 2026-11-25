@@ -45,3 +45,27 @@ occupancy's first moment, the projected solid angle), and a pull is it with each
 amount; for a spherical body the weighing is one number.
 
 ## Runs
+
+### Run 1 (`runs/cos/cos.py`, output `runs/cos/cos-run1.txt`)
+
+Nothing killed.
+- **K1 not killed**: F_o(n) − F_o(−n) = n·D for two balls at four facings to 8.6·10⁻³², the six axis facings giving D to
+  6·10⁻³² (pointwise max(0, x) − max(0, −x) = x, so it could fail only by the quadrature).
+- **K2 not killed**: D unmoved by lengths × 7 (2·10⁻³²) and by any map of the densities (it holds none); the pull × 7,
+  and its direction turned 0.355 rad by ρ ↦ ρ³ and 0.148 rad by ρ ↦ e^ρ.
+- **K3 not killed**: D = π(R/d)² for a ball, exactly (sympy).
+- **K4 not killed**: ⟨L⟩ = 4R/3 for the ball and (4/3)(R³ − a³)/R² for the shell, exactly, with no d in either.
+- **K5 not killed**: the face-on unit cube's ⟨L⟩ 0.542, 0.583, 0.692, 0.837, 0.953, 0.995 at 0.5, 1, 2, 5, 20, 200 from
+  its near face: 43% between 0.5 and 20.
+- **K6 not killed**: a ball hidden behind a larger one adds nothing to D and its whole (4/3)πr³/64 to the pull.
+
+Seen after the run, not predicted: the cube's ⟨L⟩ runs to 1 far off, its volume over the area it presents (the column a
+far place meets is the cube's own depth), not to 4V/S = 2/3, Cauchy's mean chord; the ball's 4R/3 happens to be both.
+And K4 is Newton's shell theorem read this way: outside a body with spherical symmetry the column's cosine-weighted mean
+is one number fixed by the body, so the pull is the read's D times one amount.
+
+Reading: item (1) answered, yes. A read holds a first moment with the cosine weight and no amount: the occupancy's, the
+projected solid angle D (classical as the view factor). Its odd part over a facing and its opposite is n·D, as the
+pull's is n·g. A pull is that same integral with each direction weighed by an amount, its column (the depth of R1192),
+and the two part where the columns differ (a cube's near and far) or where a direction is occupied twice (K6): a read
+counts a direction once, a pull sums all along it. Classical throughout (Lambert, Nusselt, Newton); the sorting ours.
