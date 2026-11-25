@@ -1,0 +1,6 @@
+S2 astrometric looks: 145, dates 1992.224 to 2016.530
+TIMED (timed0): e = 0.8793, period 16.091 yr, a = 123.32 mas, chi2/dof 1.05, frame []
+   elements (a, i, Omega, omega): [(np.float64(123.321815), np.float64(134.79), np.float64(224.947), np.float64(63.536)), (np.float64(123.321815), np.float64(134.79), np.float64(44.947), np.float64(243.536))]
+S2 astrometric looks: 145, dates 1992.224 to 2016.530
+TIMED (timed): e = 0.8752, period 16.125 yr, a = 121.84 mas, chi2/dof 0.97, frame [ 0.742  0.929 -0.043  0.027]
+   elements (a, i, Omega, omega): [(np.float64(121.844992), np.float64(135.265), np.float64(43.61), np.float64(242.598)), (np.float64(121.844992), np.float64(135.265), np.float64(223.61), np.float64(62.598))]

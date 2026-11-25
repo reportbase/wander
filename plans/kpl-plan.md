@@ -186,3 +186,57 @@ Reading: from places alone, with no date, the measured looks give S2's shape (e 
 to what places cannot hold (the sense of motion, the node's side); with the observer's years as ticks, the clock read from
 place is a straight line, and the period comes out in those years (16.13). The size stays in mas: au, solar masses and
 seconds come only with R₀ and the year carried in.
+
+### Run 4: the frame (25 Nov 2026; Tom: "Merge, then check the frame"), the check before the data
+
+Run 3's post hoc candidate: the paper fits Sgr A*'s place and drift in the astrometric frame, run 3 held both at zero.
+`runs/kpl/kpl4.py` frees them in run 3's untimed fit, as a constant offset of the focus (still no date), or an offset and a
+linear drift (the drift needs the dates). Checked first on the paper's orbit with its errors, 20 draws each (seed 1216;
+`kpl-run4-check-offset.txt`, `kpl-run4-check-drift.txt`), before any data:
+- offset: e 0.59 ± 0.10, P 17.3 ± 0.7 yr, a 105 ± 8 mas, the focus wandering 14 mas (truth 0.884, 16.0, 125.5, 0);
+- offset and drift: e 0.47 ± 0.21, P 18.4 ± 1.5 yr, a 105 ± 11 mas, the focus wandering 41 mas.
+
+Read before the data: the untimed places do not place the focus. An ellipse is fixed by its points; where its projected
+focus sits inside it is not, and every point inside is the projected focus of some orbit through the same places, with
+its own e. Run 3 had the focus given (Sgr A* at the origin of the frame); free it and the shape is gone. What places a
+focus not seen, classically, is the timing: Kepler's second law, equal areas in equal times, holds about one point only.
+So the frame cannot be checked untimed. Run 4 is the timed fit instead (below), and the untimed modes are not run on the
+data.
+
+### Run 4b: the timed fit with the frame freed, predictions before the data
+
+Mode `timed` in `kpl4.py`: the orbit fitted to the places against their dates through Kepler's equation (A, B, F, G, e,
+P, the time of pericentre), the focus at (x₀ + v_x(t − 2009), y₀ + v_y(t − 2009)); classical (Gauss's angles and times).
+Two fits on the data, the frame held at zero and the frame freed; each checked first on the paper's orbit, 20 draws.
+Predictions, written after the check and before the data:
+- **Y1.** With the frame freed, e, P and a each within 3 of the check's scatters of the paper's values.
+- **Y2.** With the frame freed the three move toward the paper's from the frame-at-zero fit (all three nearer).
+- **Y3.** The fitted offset under 3 mas and the drift under 0.5 mas/yr (a frame's size, not an orbit's).
+If Y1 and Y2 are killed, the frame is not what moved run 3.
+
+Run 4b's checks, before the data (`kpl-run4b-check-timed.txt`, `kpl-run4b-check-timed0.txt`, 20 draws each, seed 1216):
+the frame freed, e 0.8830 ± 0.0043, P 15.989 ± 0.041 yr, a 124.94 ± 2.02 mas, the offset's scatter 1.0 and 0.3 mas,
+the drift's 0.09 and 0.05 mas/yr; the frame at zero, e 0.8843 ± 0.0019, P 15.994 ± 0.019 yr, a 125.56 ± 0.71 mas. So
+Y1's bounds are e within 0.013, P within 0.12 yr, a within 6.1 mas of 0.884, 16.0, 125.5.
+
+### Run 4b, as it came out (`runs/kpl/kpl-run4b.txt`)
+
+The frame at zero: e 0.8793, P 16.091 yr, a 123.32 mas, χ²/dof 1.05, (i, Ω, ω) (134.79°, 224.95° or 44.95°, 63.54° or
+243.54°). The frame freed: e 0.8752, P 16.125 yr, a 121.84 mas, χ²/dof 0.97, offset (0.742, 0.929) mas, drift (−0.043,
+0.027) mas/yr, (135.27°, 223.61° or 43.61°, 62.60° or 242.60°).
+- **Y1 killed**, narrowly, by P: 16.125 yr against 16.0 ± 0.12; e (0.009 off) and a (3.7 mas off) inside their bounds.
+- **Y2 killed**: freeing the frame moves all three away from the paper's values (e 0.879 → 0.875, P 16.09 → 16.13,
+  a 123.3 → 121.8), not toward them.
+- **Y3 not killed**: the offset under 1 mas, the drift under 0.05 mas/yr.
+
+So the frame is not what moved run 3: it is small, as the paper's is, and it moves the orbit the wrong way.
+
+Seen after the run, not tested: the timed fit with the frame at zero is nearer the paper than run 3's untimed one (e 0.879
+against 0.869, a 123.3 against 119.3, P 16.09 against 16.13), but still 2.6σ, 5σ and 3σ from it by its own check's
+scatter. What the paper has and these runs do not: the radial velocities (fitted jointly, they pin e and the orientation
+through pericentre, where the places are fewest), the Rømer delay (light-travel time across the orbit, a few days near
+pericentre) and a joint fit of R₀. The velocities are the first candidate; they are amounts in a unit, so bringing them
+in is the step from looks to writes, and would be a run of its own.
+
+Reading: the untimed shape needs the focus given (run 4's check); with it given, the looks give S2's shape to about 1–2%
+(runs 3, 4b); the remaining 1–3% gap to the paper's orbit is not the frame.

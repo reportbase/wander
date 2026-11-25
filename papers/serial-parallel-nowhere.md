@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1216** (25 Nov 2026; Tom: "Merge, then check the frame"): KPL run 4, the frame. Before the data: freed in the
+  untimed fit, the focus wanders and e with it (0.47–0.59 on the paper's own orbit), since untimed places do not place a
+  focus they do not see; a focus not seen is placed by the timing (equal areas in equal times). Run 4b, the timed fit
+  through Kepler's equation, checked first: on S2 the frame comes out small (offset under 1 mas, drift under 0.05 mas/yr,
+  Y3 not killed) and freeing it moves e, P and a away from the paper's (Y2 killed; Y1 killed narrowly by P, 16.125 yr
+  against 16.0 ± 0.12). The frame is not what moved run 3; the radial velocities the paper fits jointly are the first
+  candidate, untested (amounts in a unit, the step from looks to writes).
 - **R1215** (25 Nov 2026; Tom: "Merge and Proceed"): KPL run 3, the untimed shape by each look's distance to the
   projected orbit (its eccentric anomaly free, no date), checked first on the paper's orbit with its errors (unbiased: e
   0.885 ± 0.006, P 15.99 ± 0.05 yr, a 125.9 ± 2.4 mas), predictions W1–W5 from that scatter. On S2's looks: W1, W3, W4,
