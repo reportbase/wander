@@ -1,0 +1,19 @@
+S2 astrometric looks: 145, dates 1992.224 to 2016.530
+STEP 1 (untimed): apparent centre (78.93, -13.79) mas, e = 0.8107
+STEP 1 elements consistent with the untimed places (sense, a mas, i, Omega, omega deg):
+    (1, np.float64(111.155355), np.float64(42.587), np.float64(204.12), np.float64(317.472))
+    (1, np.float64(111.155355), np.float64(42.587), np.float64(24.12), np.float64(137.472))
+    (-1, np.float64(111.155355), np.float64(137.413), np.float64(24.12), np.float64(222.528))
+    (-1, np.float64(111.155355), np.float64(137.413), np.float64(204.12), np.float64(42.528))
+STEP 2-3: sense -1; M/2pi against the date: slope 0.06100 /yr, median |residual| 0.0050 period, max 0.0454
+          period 16.394 yr (the observer's years), a pericentre at 2002.227
+STEP 4: a = 111.16 mas (no a in au, GM or seconds from any step)
+
+PREDICTIONS
+V1 e 0.8107 vs 0.884 -> KILLED
+V2 among 4 untimed solutions, within 3 deg of (134, 227, 66): [] -> KILLED
+V3 median |residual| 0.0050 period -> not killed
+V4 P 16.394 yr vs 16.0 -> KILLED
+V5 a 111.16 mas vs 125 -> KILLED
+   with R0 = 8.3 kpc carried in: a = 923 au, M = a^3/P^2 = 2.92e+06 suns
+   the paper (table3): a 0.1255", e 0.8839, i 134.18, Omega 226.94, omega 65.51, Tp 2002.33, P 16.00

@@ -71,3 +71,75 @@ no time (K1), the mean anomaly from e and the direction (K2), and one clock, the
 ticks (K3); directions and ticks alone do as well (K4). Nothing read gives the orbit's size, GM or seconds (K6): each is
 an amount carried in, the tick's length in seconds first and then GM for a. The orbit's counterpart of time to contact in
 the observer's ticks. Classical (Kepler, Gauss); K5 is trivial and was included as a check, not a finding.
+
+### Run 2: a measured orbit, predictions before the data (25 Nov 2026; Tom: "Merge 509, then 1 and 2")
+
+Run 1 was exact arithmetic with the observer at the focus. Here the observer is far off and sees the orbit projected on
+the sky: each look gives the companion's place relative to the primary, two angles (offsets in RA and Dec), and the
+observer's date, a tick (a year of its own orbit). Nothing it holds carries the distance to the system, GM or seconds.
+
+The data: the star S2 about Sgr A*, the astrometry of Gillessen et al. 2017 ("An update on monitoring stellar orbits in
+the Galactic Center", ApJ 837, 30), from VizieR (J/ApJ/837/30) through the CfA mirror; source, licence and sha256 to be
+recorded before analysis. Radial velocities, if in the table, are not used: a velocity is an amount in a unit.
+
+Known beforehand (not looked up for this run, from memory of the paper; to be checked when the data come): e 0.884,
+i 134°, Ω 227°, ω 66°, P 16.0 yr, a 0.1255″ (125 mas), the mass 4.3·10⁶ suns at R₀ ≈ 8.3 kpc.
+
+Method, fixed now:
+1. **Untimed shape.** The places alone, dates dropped: a general conic fitted to them (least squares on
+   Ax² + Bxy + Cy² + Dx + Ey = 1, weighted by the stated errors). Projection keeps ratios along a line, so the true
+   eccentricity is the apparent ellipse's centre-to-primary distance over the half-chord through the primary along the
+   same line (the primary at the origin, Sgr A*'s place in the paper's frame). Then the Thiele–Innes constants from the
+   apparent ellipse and the focus (Kowalsky's method), giving i, Ω and ω, still with no dates.
+2. **The clock as place.** With e from step 1, each look's eccentric anomaly from its place on the deprojected orbit,
+   M = E − e·sin E, M/2π the share of a period passed since pericentre, from position alone.
+3. **Period in ticks.** M/2π against the dates, a straight line; its slope gives P in the observer's years.
+4. **Sizes.** The semi-major axis comes out in milliarcseconds only.
+
+Predictions:
+- **V1.** From the untimed places alone, e within 0.02 of 0.884.
+- **V2.** From the untimed places alone, i, Ω and ω each within 3° of 134°, 227°, 66°.
+- **V3.** M/2π from place alone (step 2) against the dates: the median |residual| from the straight line under 0.01 of
+  a period.
+- **V4.** The period from step 3 within 1% of 16.0 years.
+- **V5.** a within 3% of 125 mas; and no step gives a in au, GM or the period in seconds without an amount carried in
+  (R₀ for the first, R₀ and the year's seconds for GM). Reported with R₀ = 8.3 kpc as the classical check, not predicted.
+Each killed if outside its bound. A kill from the frame (Sgr A* not at the origin of the positions, or a drift of the
+frame) is recorded as such, not fixed in this run.
+
+**Data, recorded before analysis.** VizieR J/ApJ/837/30 (Gillessen et al. 2017), fetched 25 Nov 2026 through
+vizier.cfa.harvard.edu as ASU-TSV with all columns; VizieR's licence (https://cds.unistra.fr/vizier-org/licences_vizier.html).
+`table5.tsv` (the astrometric and radial-velocity data, 216 rows, offsets in mas from Sgr A*, dates in fractional years):
+135,790 bytes, sha256 70db6570fb2966c0322512328a443aa10047b7322b254f5f396a316c27b48705. `table3.tsv` (the paper's
+orbital elements, for the comparison only): 10,657 bytes, sha256
+b0db1869b253457a8bd38e8f20cdd82f9b760643d8fd37439b5c87eada1e8bf7. Not committed. Only the header has been read.
+Rows used: Flag "a" with S2's two offsets present; radial-velocity rows dropped.
+
+### Run 2, as it came out (`runs/kpl/kpl2.py`, output `kpl-run2.txt`)
+
+145 astrometric looks of S2, 1992.224 to 2016.530.
+- **V1 killed**: e 0.8107 from the untimed places against 0.884 (the paper 0.8839).
+- **V2 killed**: the untimed places give four solutions (i 42.6° or 137.4°, Ω 24.1° or 204.1°, ω with them), none within
+  3° of (134°, 227°, 66°). Killed twice over: by the values, and by my letter, since untimed places cannot settle the
+  sense of motion (it needs the order of the looks) nor which node is ascending (it needs a radial velocity), so no
+  untimed method gives one solution. I had not stated that.
+- **V3 not killed**: M/2π from place alone against the dates is a straight line, median |residual| 0.0050 of a period
+  (max 0.045, near pericentre).
+- **V4 killed**: the period 16.394 observer's years against 16.0 (the paper 16.00).
+- **V5 killed**: a 111.16 mas against 125 (the paper 125.5). With R₀ = 8.3 kpc carried in, 923 au and 2.9·10⁶ suns
+  (the paper's 4.3·10⁶).
+
+Post hoc, a check of my code (`runs/kpl/kpl2-check.py`, output `kpl-run2-check.txt`): the paper's own orbit (table 3)
+made into places at run 2's 145 dates. Noise-free, every step is exact (e 0.8839, P 16.000 yr, a 125.50 mas, the paper's
+elements among the four untimed solutions and the dates leaving two). With the paper's stated errors added (one seeded
+draw), the same method gives e 0.776, P 16.45 yr and a 111 mas, the run's numbers within their scatter. So the kills
+are my method's, not the data's or the geometry's: a conic fitted to noisy places, most of them along the slow far side
+and few through the fast pericentre, is pulled to a rounder, smaller ellipse (the reweighted algebraic fit is not the
+distance to the curve, and the error at pericentre is a large share of the ellipse's width there). The frame (Sgr A*'s
+place and drift, fitted by the paper) is not what moved it; the check has the focus exactly at the origin and is pulled alike.
+
+Reading: what run 1 shows exactly holds on the measured orbit in its form (the clock from place alone is a straight line
+in the observer's years, V3), but my untimed estimator does not recover the shape from these looks. A fair test of the
+untimed shape needs an estimator that fits the distance from each look to the projected orbit itself (the eccentric
+anomaly of each look a free number, still no date used), checked first on the paper's orbit with its errors. That would
+be run 3, with its own predictions.
