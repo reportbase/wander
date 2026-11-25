@@ -7607,6 +7607,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1195** (25 Nov 2026; Tom: "However classical does not distinguish the payload from the heat.    We show that
+  gravity is separate from the heat"): **the classical account does not tell the heat from the payload; here gravity is
+  shown separate from the heat.** Recorded as said. Claude's precision, not ruled: the classical formula does carry two
+  factors (a kernel times a density, g = ∫ P·σ), but it holds both as gravity's, the kernel a consequence of the
+  inverse square; it does not say the kernel is a standpoint's law of directions, the same for a look with no mass in
+  it and for every arrangement of matter. What the runs show is that: the heat is the stage's (R1184; GRV, FCL runs
+  1–8), and what is gravity's is on the paint's side, the amount along each direction (the depth, R1192; the first
+  moment, run 10; the flat lay moved by scaling, run 12). "Separate" is said of the roles; a pull still needs both, and
+  the classical numbers are unchanged (R1189). No judgement of classical work (R335, R364); no new physics. Not yet in
+  any paper.
 - **R1194** (25 Nov 2026; Tom: "yes, run the test", to checking how far R1193's likeness goes): PR #496 merged. FCL
   run 12 (`runs/fcl/fcl12.py`, mpmath at 40 digits, predictions committed first, nothing killed). The two depths are
   alike in lying along the direction, and in how they are had from two places: two pull strengths a step B apart along
