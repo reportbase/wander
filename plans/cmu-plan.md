@@ -30,3 +30,31 @@ amount carried by something else. The bound (R719, TCF): a fat tail from a mixtu
   dropped in the description.
 
 Kills as stated; a kill by the classifier's reading against mine is reported as such, not overridden.
+
+## Run 1
+
+The list (`plans/cmu/list.md`, 30 entries, a fresh agent from memory) and the blind classification
+(`plans/cmu/classification.md`, a second fresh agent shown only the list) came back as:
+
+- Origin: T 2 (#2 Ott–Antonsen, #20 an irrelevant instrument), P 15 (resonances, line shapes, damped oscillations),
+  S 4 (#5, 21, 23, 24), M 1 (#18 crystallite-size broadening), C 7 (chosen by a designer: #1, 3, 4, 22, 25, 26, 28),
+  O 1 (#27 random Fourier features).
+- Account: A 30, D 0.
+
+**Verdicts.** C1 not killed (T + P = 17 of 30). C2 not killed (M = 1). C3 not killed (17 of 17 T or P cases classed A).
+C4 not killed (0 of 2 T cases named the angle), weakly: two cases.
+
+**Claude's check.** I agree with every origin. The classifier's own close calls: #2 and #4 have an angle as the
+variable and were still classed A, since the accounts treat the law as a phase density or a concentration; #14 (phase
+noise) and #15 (Hanle) are P, the Lorentzian from a decay rather than a named even phase. I would keep both.
+
+**What it shows, and what it does not.**
+- Unforeseen: a quarter of the cases (C, 7) are the Cauchy chosen as a tool for its heavy tail or its stability
+  (sketches, hashing, annealing, mutation, Metropolis proposals, t-SNE, Kuramoto's tractable frequencies). There no
+  system produces it, so R1203 does not bear on them: they are a designer's amounts by construction.
+- Half the cases are P. That a pole a half-width off the line is a phase turning at a steady rate and fading is this
+  corpus's reading (R362), not the classifier's; so C1's count of P as a turn rests on R362.
+- C3 held at 17 of 17, but the label A included "a line shape or width", so the test asked only whether the account
+  names the turn, and in none of 30 did it. That every account describes the law without its angle is the finding;
+  that they are wrong to is R1203's reading of it.
+- One mixture (#18) among 30: TCF's bound met once more.
