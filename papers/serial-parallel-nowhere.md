@@ -7607,6 +7607,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1200** (25 Nov 2026; Tom: "Proceed", to Claude's offer of where the orbit's stage stands): ORB runs 4–5
+  (`runs/orb/orb4.py`, `orb5.py`, exact, predictions first). The stage's standpoint is −β in the anomaly's disc, β the
+  half-slope of the angular eccentricity (e = sin φ, β = tan(φ/2)), k = (1 + β)/(1 − β); with e = tanh η the map E → ν is
+  a hyperbolic translation by η, the form of relativistic aberration with the speed e, two composing by velocity
+  addition; e/2 < β < e; the stage's far/near k² = r_max/r_min, the clock's k⁴. Run 4's Q1 killed by my code (sympy
+  left csc φ − cot φ − tan(φ/2) unreduced), run 5's Q1′ not. A shared form, not that an orbit is a boost; in print
+  unsearched. *Reads and Writes* §7 item 8 carries it.
+- **R1199** (25 Nov 2026; Tom: "Proceed"): ORB runs 2–3 in *Reads and Writes* §7 as the eighth item of "What the Cauchy
+  gives as ways to think about gravity": an orbit as a stage and a payload (the wrapped Cauchy of width β the heat, r/a
+  the paint, Kepler's equation their sum, the period where GM and a come in). No new claim.
 - **R1198** (25 Nov 2026; Tom: "We know cauchy very well now. Could we use it to calculate planetary orbits", then "We
   would have to create a payload that gives the same results", then "Yes"): ORB runs 2–3 (`runs/orb/orb2.py`, `orb3.py`,
   50 digits and sympy, predictions committed first). **A two-body orbit is a stage and a payload**: the eccentric anomaly

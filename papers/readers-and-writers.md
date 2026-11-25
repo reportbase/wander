@@ -1741,7 +1741,11 @@ its mathematics, the details in the lists below:
    iteration, where the planet is at a given time, is the payload's sum inverted. The amounts come in only at the
    period, 2π√(a³/GM), which has no e in it; scaling the orbit moves neither stage nor payload. The clock's own law
    over directions, 1/(1 + e·cos ν)², is on no wrapped Cauchy (the nearest misses by 5%, 25% and 129% at e = 0.3,
-   0.6, 0.9). Classical in every part (the half-angle relation, Laplace's β, the areal law); the sorting is the item.
+   0.6, 0.9). Where the stage stands (runs 4–5, exact): β is the half-slope of the angular eccentricity (e = sin φ,
+   β = tan(φ/2)), and with e = tanh η the map from E to ν is a hyperbolic translation by η, the form of relativistic
+   aberration with the speed e; two such maps compose by velocity addition, and the stage's far-over-near ratio is
+   r_max/r_min. A shared form, not a claim that an orbit is a boost (its being in print unsearched). Classical in every
+   part (the half-angle relation, Laplace's β, the areal law); the sorting is the item.
 
 None of this is new physics or a mechanism, and a pull is not a read (R1183). "New" is said of the way of thinking: the
 formulas are classical, and that an even spread from a point lands on a plane as the Cauchy is in print for light.

@@ -183,3 +183,14 @@ near/far), and Q4's check reduced to the predicted terms; neither touched a pred
 
 - **Q1′.** With t = tan(φ/2), sin φ = 2t/(1 + t²) and cos φ = (1 − t²)/(1 + t²) (so √(1 − e²) = cos φ for
   0 < φ < π/2), β = (1 − cos φ)/sin φ reduces to t in sympy as a rational function. Fails only by my algebra or code.
+
+**Run 5** (`runs/orb/orb5.py`, output `runs/orb/orb-run5.txt`). Q1′ not killed: β − t is 0 as a rational function.
+
+**What runs 4 and 5 show.** The stage's standpoint is the point −β of the anomaly's disc (the far side), β the
+half-slope of the angular eccentricity (e = sin φ, β = tan(φ/2)) and k the corner composed with it, (1 + β)/(1 − β).
+In the speed's chart e = tanh η: the map from E to ν is a hyperbolic translation of the disc by η = artanh e along the
+major axis, the same form as relativistic aberration with the speed e, and two such maps compose by velocity addition,
+(e₁ + e₂)/(1 + e₁e₂), the β's by the same rule (PYK's boost kind). The standpoint lies between the centre and the
+focus, past half way (e/2 < β < e). At the ends: the stage's far over near is k² = r_max/r_min, the payload's near over
+far its reciprocal, the clock's far over near k⁴, the areal law's r². A form shared with aberration, not a claim that
+an orbit is a boost; whether the likeness is in print was not searched. Classical in each part.
