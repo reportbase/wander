@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1228** (25 Nov 2026; Tom: "seems like this offers great support for the read / write framing.", then "yes, add it
+  to the paper and merge."): from CLM, **the inverse square is the one law under which a pull, like a read, holds no
+  distance along a direction**: a read has each direction and its paint, a place's pull each direction and the amount
+  along it, neither where along it; the law adds only the amount (a write) per direction, so the stage and the paint are
+  the line the classical law is built along. Consistent with the framing, not evidence telling it from classical physics
+  (R950; Newton's cone argument); a pull still not a read (R1183). *Reads and Writes* §7, item (1).
 - **R1227** (25 Nov 2026; Tom: "I think this is more than sorting, it shows a different derivation path.", then "yes"):
   CLM (`plans/clm-plan.md` + `runs/clm/`, exact), predictions first. The column premise, "a direction's pull depends
   only on how much matter lies along it, not where", is equivalent to the inverse square (1/r^(D−1) in D dimensions);

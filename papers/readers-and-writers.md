@@ -1834,7 +1834,13 @@ equation solved, outside the mass at the centre, inside nothing (a chord meets a
 ends, so each direction and its opposite carry equal columns); the outside theorem alone also admits a force growing as
 r, and the inside one removes it. The path is Newton's own (*Principia* I, Propositions 70 and 71; the converse is in
 the standard account), with Gauss's law its field-equation form: known, and here it is the read's cosine weight with
-each direction weighed by its column.
+each direction weighed by its column. What it says about the framing (R1228): the inverse square is the one law under
+which a pull, like a read, holds no distance along a direction. A read has each direction and what paints it, never how
+far along; a place's pull has each direction and how much matter lies along it, never where along it. The law keeps the
+pull to the read's situation and adds per direction only the amount, so the stage and the paint are the line along which
+the classical law is built. Consistent with the framing, not evidence against classical physics (they agree wherever
+both apply, and Newton's cone argument already holds the content); and a pull is still not a read: it shares the stage
+and sums along each direction where a read counts once.
 (2) Answered for two masses at rest (FCL run 9, doubles): yes. On the line between them the meeting place is where the
 pull's direction flips, found with no strength, no mass and no G; off the line, the pull's directions at four places a
 counted step apart, or directions and ratios of strengths at three, give both masses' places and their ratio in steps.
