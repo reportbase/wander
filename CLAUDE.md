@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  MVM (`plans/mvm-plan.md` + `runs/mvm/`, 25 Nov; SPN R1220; Tom: "Merge and proceed"): §7's item (4), a mass in uniform
+  motion, exact: the look points at the retarded place (M1's angle relation killed by my geometry, corrected post hoc),
+  a moving charge's field exactly and linearized gravity's pull to first order in β at the present place (M2, M3), no
+  direction moved by scaling (M4); post hoc the pull's reversal on the line of motion past β = 1/√3 (known).
   GDI (`plans/gdi-plan.md` + `runs/gdi/gdi.py`, 25 Nov; SPN R1219; Tom: "Merge and proceed with gravity."): §7's open
   item (2) for a ball, a lens and a pair in orbit, exact: directions give places, ratios the sizes (a ball's radius only
   from strength ratios inside; a lens's ring √(θ₊|θ₋|), brightness ratio q²; the SIS's ring the arithmetic mean; a turning
