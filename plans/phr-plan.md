@@ -283,3 +283,58 @@ Seen after the run, not tested (post hoc):
 Reading: on the finest sampled lines with a clean pole (Fano), the amplitude and the phase give one width to about 2%
 and the phase turns 91° across f₀ ± Γ/2, as one pole does; not to within their own errors. On Carter's one resonator
 the two widths part by a quarter, steadily, and the cause is not known.
+
+### Run 6: the cable delay, predictions before the fit (25 Nov 2026; Tom: "Merge 508, then the cable delay test")
+
+The candidate from run 5b's post hoc note: a cable or line of length L multiplies the whole response by e^(−2πifτ)
+(τ = L over the signal's speed), a phase turning steadily with frequency. Run 4's model adds a complex linear background
+to the pole; it can follow a rotating background only to first order, and the side fits then see what is left.
+
+Method. For every sweep, before any fit: τ read off the line alone, from the unwrapped phase of the outer 20% of the sweep
+on each side (the same points run 4 takes for its background), one straight line in f through both sides, slope −2πτ.
+Then z is multiplied by e^(+2πifτ) and run 5b's analysis runs unchanged (the line test, f₀ ± 2Γ inside, at least 20
+points per Γ, the one-pole fit, the side fits, 20 resamples, 500 evaluations a fit, 5 minutes a sweep). The same 200
+Carter sweeps (seed 1209) and all of Fano's.
+
+Seen before this record: run 5b's results; the header and three lines of one Carter file (columns f, I, Q, raw); its
+phase off the line from −95° at the bottom of the sweep to −162° at the top, about 67° over 5 MHz, so τ ≈ 37 ns. Worked
+out before the fit: at Carter's Γ ≈ 105 kHz such a delay turns the phase only about 1.4° across one width, against the
+9° run 5b's turn is short. So if the delay is the cause, it works through the background the model could not follow
+across the sweep, not through the line itself. I do not know which way this comes out.
+
+Predictions (Carter unless said):
+- R9: with the delay removed, median |Γ_phase/Γ_amp − 1| < 3% (run 5b: 25.4%). Killed means the delay is not the cause.
+- R10: median turn across f₀ ± Γ/2 within 90° ± 5° (run 5b: 80.8°).
+- R11: the τ read off the line positive, and within 10% of its median on every fitted sweep (one cable to one chip).
+- R12: more Carter sweeps pass the line test than run 5b's 63 (51 narrow + 12 fitted), since a background turning 67°
+  is not straight.
+- R13: on Fano, removing τ moves the median rel by less than 0.01 and the median turn by less than 2° (its phase was
+  recorded apart from its amplitude, and run 5b found it clean).
+R5's 3σ test is reported for both sets, not predicted.
+
+### Run 6, as it came out (`runs/phr/phr-run6.txt`)
+
+Carter, the delay removed (200 seeded sweeps): 25 failed the line test, 92 too narrow, 83 fitted (RES-1 20, RES-2 21,
+RES-3 42; run 5b fitted 12, all RES-1).
+- **R9 killed**: median |rel| 0.040 against 3% (rel median −0.040, quartiles −0.058 and −0.001).
+- **R10 not killed**: median turn 89.9° (quartiles 88.9, 91.4).
+- **R11 not killed**: τ median 37.43 ns, every fitted sweep within 35.19–39.30 ns (inside 10%); over all 200, 37.04 ns.
+- **R12 not killed**: 175 sweeps pass the line test against run 5b's 63.
+- R5 reported: 2 of 83 beyond 3σ + 2% (2.4%).
+- **R13 killed**: on Fano the delay read off the line is −80 ns (negative, so not a cable), the line test now fails 322 of
+  432 sweeps (run 5b 45), 20 are fitted, the median rel moves by +0.014 and the turn by −1.1°.
+
+Seen after the run, not tested (post hoc):
+- By resonator: RES-1 median rel −0.002 and turn 89.9° (run 5b on the same resonator −0.254 and 80.8°; the sweep
+  RES-1 −45 dBm 1.202 K went from −0.253 to −0.004, σ/Γ 0.002), RES-2 +0.001 and 90.1°, RES-3 −0.045 and 89.5°. R9's
+  miss is RES-3's, the most coarsely sampled (about 30 points per Γ, at the selection's floor). On Carter the 25% gap was
+  the delay: once it is taken out, two of the three resonators give one width from amplitude and phase to a few tenths of
+  a percent, and the phase turns 90° on all three.
+- Fano's phase was evidently recorded with any delay already removed: the slope read off its "line" is the resonance's
+  own tails (its sweeps are narrower in Γ), so the correction put a false turn in. R13's prediction (that it would barely
+  move) was wrong because the off-line reading has no clean off-line stretch there, not because Fano changed.
+
+Reading: R362's reading holds on all three kinds of measured line once the instrument's own turn is taken out: the
+vibrating wire (run 4), Fano's resonators (run 5b) and Carter's (run 6). Amplitude and phase give one width, and the
+phase turns a quarter turn across f₀ ± Γ/2. The disagreement that killed run 5b on Carter was the cable's, a turn the
+measuring chain adds with frequency, not the resonator's.

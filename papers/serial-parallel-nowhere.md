@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1212** (25 Nov 2026; Tom: "Merge 508, then the cable delay test"): PHR run 6, predictions R9–R13 committed before
+  the fit: a delay e^(−2πifτ) read off the line alone and removed, then run 5b's analysis unchanged. Carter: τ 37.4 ns on
+  every fitted sweep (R11), 175 sweeps pass the line test against 63 (R12), the turn 89.9° (R10); R9 killed narrowly
+  (median |rel| 4.0% against 3%), the miss RES-3's at the selection's floor of points, while RES-1 went from −25.4% to
+  −0.2% and RES-2 sits at +0.1%. R13 killed: Fano's off-line slope is the line's own tails (τ −80 ns), its phase already
+  without a delay. Post hoc: run 5b's Carter gap was the cable's. With runs 4 and 5b, one width from amplitude and phase
+  and a quarter turn across f₀ ± Γ/2 on all three kinds of measured line once the instrument's turn is out. Not in any paper.
 - **R1209** (25 Nov 2026; Tom: "Merge, then find the finer sweep data", then "Merge 507, then 5b"): PHR run 5 (stopped
   for its cost) and run 5b on finely sampled resonators, predictions R5–R8 committed before the fit. Carter's
   superconducting resonators (Zenodo 61575, 12 of 200 seeded sweeps fitted, all one resonator): R5, R6, R7 killed, the
