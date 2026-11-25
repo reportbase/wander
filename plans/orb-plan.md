@@ -165,3 +165,21 @@ Exact: sympy for identities, mpmath at 50 digits; e in {0.01, 0.1, 0.3, 0.6, 0.9
 What could fail: every item is an identity, so only by my algebra (Q5's statement as written above names the payload's
 ratio twice: its far/near is k², near/far 1/k²; the claim checked is clock far/near = k⁴) or by Q3's direction of
 composition; Q2's reading as a speed is a reading, and a hit there says the forms agree, not that an orbit is a boost.
+
+**Run 4** (`runs/orb/orb4.py`, output `runs/orb/orb-run4.txt`). Q1 killed by my code; Q2–Q5 not killed. Before the
+run, the Q5 check was corrected in code to the predicted direction (clock far/near = k⁴; the script had first tested
+near/far), and Q4's check reduced to the predicted terms; neither touched a prediction.
+
+- Q1 killed in its first clause: sympy left β − tan(φ/2) as −tan(φ/2) − cot φ + csc φ, which it did not reduce to 0
+  (it is 0: csc φ − cot φ = tan(φ/2)). Its second clause, ((1 + t)/(1 − t))² = k² with t = tan(φ/2), is 0.
+- Q2: e^(2η) = (1 + e)/(1 − e) and 2β/(1 + β²) = e with e = tanh η, β = tanh(η/2), both 0; the push-forward of
+  uniform E is the Poisson kernel from −β to 2·10⁻⁴⁹; 2·artanh β = artanh e at all six.
+- Q3: the map for e₁ then e₂ is the map for (e₁ + e₂)/(1 + e₁e₂), and the β's add by the same rule, to 10⁻⁵⁰ on 30
+  pairs.
+- Q4: β = e/2 + e³/8 + e⁵/16 + …; e/2 < β < e at all six.
+- Q5: the stage's far over near k², the payload's near over far 1/k², the clock's far over near k⁴, all 0 in sympy.
+
+## Run 5 (prediction committed before the run)
+
+- **Q1′.** With t = tan(φ/2), sin φ = 2t/(1 + t²) and cos φ = (1 − t²)/(1 + t²) (so √(1 − e²) = cos φ for
+  0 < φ < π/2), β = (1 − cos φ)/sin φ reduces to t in sympy as a rational function. Fails only by my algebra or code.
