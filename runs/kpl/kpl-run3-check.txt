@@ -1,0 +1,22 @@
+S2 astrometric looks: 145, dates 1992.224 to 2016.530
+draw 0: e 0.8873  P 16.033 yr  a 126.81 mas
+draw 1: e 0.8869  P 16.002 yr  a 125.93 mas
+draw 2: e 0.8808  P 16.050 yr  a 124.48 mas
+draw 3: e 0.8815  P 15.939 yr  a 124.45 mas
+draw 4: e 0.8774  P 16.022 yr  a 122.53 mas
+draw 5: e 0.8766  P 16.026 yr  a 123.71 mas
+draw 6: e 0.8887  P 15.968 yr  a 127.16 mas
+draw 7: e 0.8843  P 15.932 yr  a 125.75 mas
+draw 8: e 0.8700  P 16.063 yr  a 119.87 mas
+draw 9: e 0.8884  P 16.006 yr  a 127.76 mas
+draw 10: e 0.8841  P 15.990 yr  a 124.79 mas
+draw 11: e 0.8812  P 16.005 yr  a 124.89 mas
+draw 12: e 0.8887  P 16.029 yr  a 127.63 mas
+draw 13: e 0.8810  P 16.038 yr  a 124.14 mas
+draw 14: e 0.8932  P 15.888 yr  a 128.46 mas
+draw 15: e 0.8921  P 16.005 yr  a 128.96 mas
+draw 16: e 0.8914  P 15.908 yr  a 128.03 mas
+draw 17: e 0.8924  P 15.954 yr  a 128.95 mas
+draw 18: e 0.8933  P 15.914 yr  a 128.94 mas
+draw 19: e 0.8818  P 16.022 yr  a 124.59 mas
+over 20 draws: e 0.8851 +- 0.0061, P 15.990 +- 0.050 yr, a 125.89 +- 2.36 mas (truth 0.8839, 16.000, 125.50)
