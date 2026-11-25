@@ -482,7 +482,8 @@ front. That is why it can show which way is down.
   in it self"; "The cauchy provides new ways to think about gravity.   Even small insights are valuable."; "What if
   cauchy heat for gravity is just the depth, more heart, more depth"; "Observation has it's own version of depth, seems
   analagous to gravy's depth."; "However classical does not distinguish the payload from the heat.    We show that
-  gravity is separate from the heat".
+  gravity is separate from the heat". 25 November: "Merge and proceed with gravity."; "1 then 5".
+- `plans/gdi-plan.md`, `runs/gdi/`; `plans/mvm-plan.md`, `runs/mvm/`; `plans/ldl-plan.md`, `runs/ldl/`.
 - `plans/grv-plan.md`, `runs/grv/`; `plans/fcl-plan.md`, `runs/fcl/` (runs 1 to 12, with 2b and 4b);
   `plans/discussion-note.md` item 24.
 - Essays 4 (`04-near-and-far.md`), 17 (`17-the-cauchy-map.md`), 23 (`23-one-share-and-the-shape-of-a-law.md`) and 30
