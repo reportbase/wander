@@ -309,3 +309,16 @@ Predictions, written after the checks and before the data:
 - **R3.** R₀ moves by less than 150 pc from run 5's 8629.
 If R1–R3 hold, the delay is not what separates these fits from the paper's; what is left is the paper's joint fit of
 several stars and the instruments' velocity offsets.
+
+### Run 6, as it came out (`runs/kpl/kpl-run6.txt`)
+
+With the delay: a 122.56 mas, e 0.8800, i 135.54°, Ω 225.90°, ω 63.95°, P 16.084 yr, T_p 2002.320, R₀ 8687 pc,
+V₀ 25.2 km/s, M 4.67·10⁶ suns, χ²/dof 0.95 (run 5: 0.98).
+- **R1 not killed**: e +0.0002, P +0.005 yr, a −0.32 mas from run 5, each the way and about the size the check said.
+- **R2 not killed**: the gap stays, P 0.084 yr and a 2.9 mas from the paper's.
+- **R3 not killed**: R₀ +58 pc.
+
+So the delay is real in the fit (χ² down by about 6) and small, as the check said, and it is not the gap. Neither the
+frame (run 4b), nor the velocities (run 5), nor the delay (run 6) moves S2's shape to the paper's. Left, untested: the
+paper's joint fit of several stars with one mass and one R₀, and the instruments' offsets in velocity. This plan stops
+here unless Tom asks.

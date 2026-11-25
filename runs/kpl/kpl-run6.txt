@@ -1,0 +1,1 @@
+a 122.56 mas, e 0.8800, i 135.54 deg, Omega 225.90 deg, omega 63.95 deg, P 16.084 yr, Tp 2002.320, R0 8687 pc, V0 25.2 km/s, a 1064.7 au, M 4.666e+06 suns, chi2/dof 0.95
