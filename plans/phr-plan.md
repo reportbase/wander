@@ -211,3 +211,75 @@ frequency) is available for them on measurement. The microwave notch's one curve
 5% bound the predictions set. Both data sets are sampled at about 6 points a width; a finer sweep would test the reading
 to a few percent. Classical throughout (a single pole's Kramers–Kronig pair); what is recorded is that the measured
 lines are of that kind.
+
+### Run 5, finer sweeps: data recorded and predictions committed before the fit (25 Nov; Tom: "Merge, then find the finer sweep data")
+
+**Data set 3.** Carter, Khaire, Novosad and Chang, data of "scraps: an open-source Python-based analysis package for
+analyzing and plotting superconducting resonator data" (IEEE Trans. Appl. Supercond., ASC 2016), Zenodo
+10.5281/zenodo.61575, MIT licence. `Carter_ASC_2016_Paper_Figures_Data_and_Code.zip`, 28,783,805 bytes, md5
+61a30ace353ab7ecd426e06f19185be8, sha256 c85b356ec4dbb65ec9defab0a24e933ffa8fd288fbfec4803dc865b4d523a81e; not committed.
+972 sweeps (`08222016Res/RES-{1,2,3}_<power>_DBM_TEMP_<T>.S2P`, 324 each) of a NbN CPW chip, 2,001 points, frequency
+and complex transmission I, Q. No noise columns.
+
+**Data set 4.** Rieger, Günzler et al., data of "Fano Interference in Microwave Resonator Measurements" (KIT), Zenodo
+10.5281/zenodo.7767046, CC BY 4.0. `Fano Interference Data and Code.zip`, 9,204,518 bytes, md5
+4cf7087378cb0424feaa1054269ffd2b, sha256 34b9dfa440ca911a6b5cbc9e44fc5f6b35535df2489ca831b1bc4fef71d5e695; not
+committed. `Data/{undercoupled,overcoupled}/resonator_<n>_powersweep_*.npz` (18 files; the one field sweep left out),
+each 19 powers × 1,001 points, amplitude and phase. `settings.npy` (an object array) is not loaded: unpickling
+untrusted data. Their subject is Fano interference, which makes lines asymmetric; the one-pole model's complex A and
+complex linear background carry the textbook form of that asymmetry, a frequency-dependent coupling would not.
+
+Seen before this record: the file lists, the headers and array shapes, and, from the run 1 half-power rule on 25
+seeded Carter files and three Fano sweeps, the points across a line (Carter 31–53 where the rule found a line, and
+some 750–1,100 where it did not; Fano 117–162). Nothing of either width measure or any phase was computed.
+
+**Method:** run 4's script (`runs/phr/phr3.py`'s `analyse`, rescaled, four starts, residual bootstrap), unchanged,
+with 50 bootstrap resamples. Selection, fixed now: run 1's line test (peak at least 20 times the wings' rms), the full
+fit's f₀ ± 2Γ inside the sweep, and at least 20 points across Γ (fine sampling, the point of this run). Carter: a
+seeded random 200 of the 972 files (seed 1209), each judged by the rule; Fano: all 342 sweeps.
+
+- **R5.** On each set, at most 10% of qualifying sweeps have |Γ_phase − Γ_amp| beyond 3σ + 2% of Γ_amp.
+- **R6.** On each set, the median |Γ_phase/Γ_amp − 1| is under 3% (run 4's 6.5 points a width gave quartiles of
+  about ±10%; at 20 or more points it should tighten).
+- **R7.** On each set, the median data turn across f₀ ± Γ_phase/2 is 90° ± 5°.
+- **R8 (Fano).** R5–R7 hold on the Fano set as on Carter's: the asymmetry is a rotated coupling plus background, which
+  the model has. Killed if the Fano set fails R5 or R6 where Carter's passes.
+
+### Run 5, stopped; run 5b's budget, recorded before it runs
+
+Run 5 was stopped (Tom: "Merge 507, then 5b") after about an hour: each of the four workers had spent an hour of CPU on
+single 2,001-point Carter sweeps (four starting widths, 50 bootstrap refits each, no limit per sweep), 17 sweeps had
+reported (`phr-run5-stopped.txt`, kept as it stood), and the Fano set had not begun. Nothing was judged.
+
+Run 5b: R5–R8, the data, the selection and the measures unchanged; only the compute budget. At most 5 minutes of
+wall time per sweep (a sweep that reaches it is counted "timed out", reported, not judged); 20 bootstrap resamples, not
+50 (σ noisier, so the 3σ test somewhat looser: a weakness stated now); each least-squares fit capped at 500 function
+evaluations. Seen before this record: the 17 lines of run 5's output.
+
+### Run 5b, as it came out (`runs/phr/phr-run5b.txt`)
+
+No sweep reached the 5-minute limit. Selection as recorded: Carter, of 200 seeded sweeps, 137 failed the line test,
+51 were too narrow (fewer than 20 points across Γ) and 12 were fitted; Fano, of 432 power sweeps, 45 failed the line
+test, 293 were too narrow and 94 were fitted.
+
+- **Carter: R5 killed** (11 of 12 beyond 3σ + 2%, 91.7%), **R6 killed** (median rel −0.254, quartiles −0.257 and
+  −0.247), **R7 killed** (median turn 80.8°, quartiles 80.3 and 81.1). Median 42 points per Γ.
+- **Fano: R5 killed** (25 of 94 beyond 3σ + 2%, 26.6%), **R6 not killed** (median |rel| 0.026; rel median +0.004,
+  quartiles −0.021 and +0.035), **R7 not killed** (median turn 91.0°, quartiles 89.7 and 93.3). Median 117 points per Γ.
+- **R8 not killed**, emptily: Carter passes nowhere, so there was no place for Fano to fail where Carter passed.
+
+Seen after the run, not tested (post hoc):
+- All 12 fitted Carter sweeps are one resonator (RES-1), from −25 to −75 dBm and 0.1 to 1.5 K. Eleven give the
+  phase's width 23–31% under the amplitude's and a turn of 80–83°, the same within a few percent over 50 dB of power.
+  A loss that changes with power (two-level systems) would move with power; this does not. The twelfth (−75 dBm) is
+  unresolved (σ 200 times Γ). The run's one-pole model takes a background that is added (a + b·f); a cable's delay
+  multiplies the response by e^(−2πifτ), a phase that turns with frequency, which an added background cannot absorb
+  and which would change the phase's width and not the amplitude's. That is a candidate cause, not a finding: it would
+  be tested by a new run with the delay in the model and predictions first.
+- On Fano the widths agree to about 2–3% at the median and the turn is 91°, but the errors are small (σ/Γ about 0.004
+  at 117 points per Γ), so departures of 1–3% are beyond 3σ on a quarter of the lines. R5's bound did not allow for a
+  systematic of that size at that precision.
+
+Reading: on the finest sampled lines with a clean pole (Fano), the amplitude and the phase give one width to about 2%
+and the phase turns 91° across f₀ ± Γ/2, as one pole does; not to within their own errors. On Carter's one resonator
+the two widths part by a quarter, steadily, and the cause is not known.

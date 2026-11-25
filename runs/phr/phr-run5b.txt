@@ -1,0 +1,117 @@
+RES-1_-25_DBM_TEMP_1.156.S2P rel -0.2547 sig/G 0.0240 turn 81.0 pts 40
+RES-1_-25_DBM_TEMP_1.200.S2P rel -0.2534 sig/G 0.0294 turn 80.8 pts 42
+RES-1_-35_DBM_TEMP_1.238.S2P rel -0.2447 sig/G 0.0259 turn 80.4 pts 44
+RES-1_-35_DBM_TEMP_1.155.S2P rel -0.2555 sig/G 0.0244 turn 81.0 pts 40
+RES-1_-35_DBM_TEMP_1.200.S2P rel -0.2464 sig/G 0.0219 turn 80.7 pts 42
+RES-1_-45_DBM_TEMP_0.101.S2P rel -0.2262 sig/G 0.0185 turn 82.6 pts 34
+RES-1_-45_DBM_TEMP_1.202.S2P rel -0.2533 sig/G 0.0172 turn 80.1 pts 42
+RES-1_-45_DBM_TEMP_1.112.S2P rel -0.2550 sig/G 0.0343 turn 81.5 pts 39
+RES-1_-45_DBM_TEMP_1.237.S2P rel -0.2470 sig/G 0.0230 turn 80.4 pts 44
+RES-1_-55_DBM_TEMP_1.465.S2P rel -0.3060 sig/G 0.0329 turn 73.6 pts 57
+RES-1_-65_DBM_TEMP_1.155.S2P rel -0.2623 sig/G 0.0371 turn 83.4 pts 41
+RES-1_-75_DBM_TEMP_0.596.S2P rel -0.5177 sig/G 207.5073 turn 73.0 pts 473
+resonator_1_powersweep_overcoupled.npz p23 rel -0.0392 sig/G 0.0110 turn 91.4 pts 147
+resonator_1_powersweep_overcoupled.npz p22 rel -0.0128 sig/G 0.0055 turn 90.3 pts 147
+resonator_1_powersweep_overcoupled.npz p24 rel -0.0868 sig/G 0.0193 turn 93.6 pts 152
+resonator_4_powersweep_overcoupled.npz p21 rel -0.0011 sig/G 0.0042 turn 90.2 pts 93
+resonator_4_powersweep_overcoupled.npz p22 rel -0.0184 sig/G 0.0080 turn 91.1 pts 93
+resonator_4_powersweep_overcoupled.npz p23 rel -0.0413 sig/G 0.0169 turn 92.7 pts 95
+resonator_4_powersweep_overcoupled.npz p24 rel -0.0741 sig/G 0.0344 turn 96.5 pts 104
+resonator_4_powersweep_overcoupled.npz p25 rel -0.1874 sig/G 0.0353 turn 100.7 pts 124
+resonator_8_powersweep_overcoupled.npz p21 rel -0.0127 sig/G 0.0057 turn 90.7 pts 105
+resonator_8_powersweep_overcoupled.npz p22 rel -0.0257 sig/G 0.0115 turn 92.3 pts 106
+resonator_8_powersweep_overcoupled.npz p23 rel -0.0706 sig/G 0.0236 turn 94.6 pts 110
+resonator_9_powersweep_overcoupled.npz p12 rel -0.0303 sig/G 0.0067 turn 90.9 pts 177
+resonator_1_powersweep_undercoupled.npz p17 rel -0.0464 sig/G 0.0367 turn 97.6 pts 149
+resonator_2_powersweep_undercoupled.npz p4 rel -0.0062 sig/G 0.0032 turn 88.8 pts 146
+resonator_2_powersweep_undercoupled.npz p3 rel +0.0120 sig/G 0.0030 turn 90.7 pts 146
+resonator_2_powersweep_undercoupled.npz p5 rel -0.0079 sig/G 0.0028 turn 88.6 pts 140
+resonator_2_powersweep_undercoupled.npz p6 rel +0.0030 sig/G 0.0043 turn 91.3 pts 144
+resonator_2_powersweep_undercoupled.npz p7 rel -0.0121 sig/G 0.0034 turn 91.8 pts 135
+resonator_2_powersweep_undercoupled.npz p8 rel +0.0037 sig/G 0.0055 turn 90.6 pts 140
+resonator_2_powersweep_undercoupled.npz p10 rel -0.0015 sig/G 0.0037 turn 89.9 pts 127
+resonator_2_powersweep_undercoupled.npz p9 rel +0.0060 sig/G 0.0034 turn 88.1 pts 127
+resonator_2_powersweep_undercoupled.npz p11 rel +0.0146 sig/G 0.0031 turn 91.6 pts 120
+resonator_2_powersweep_undercoupled.npz p12 rel -0.0025 sig/G 0.0032 turn 90.4 pts 121
+resonator_2_powersweep_undercoupled.npz p13 rel +0.0045 sig/G 0.0019 turn 89.2 pts 118
+resonator_2_powersweep_undercoupled.npz p14 rel +0.0034 sig/G 0.0047 turn 89.2 pts 118
+resonator_2_powersweep_undercoupled.npz p15 rel -0.0125 sig/G 0.0055 turn 90.1 pts 118
+resonator_2_powersweep_undercoupled.npz p16 rel -0.0576 sig/G 0.0136 turn 92.7 pts 120
+resonator_3_powersweep_undercoupled.npz p0 rel +0.0491 sig/G 0.0032 turn 89.5 pts 169
+resonator_3_powersweep_undercoupled.npz p1 rel +0.0446 sig/G 0.0030 turn 91.0 pts 159
+resonator_3_powersweep_undercoupled.npz p3 rel +0.0282 sig/G 0.0032 turn 90.2 pts 138
+resonator_3_powersweep_undercoupled.npz p4 rel +0.0211 sig/G 0.0022 turn 93.3 pts 131
+resonator_3_powersweep_undercoupled.npz p2 rel +0.0433 sig/G 0.0032 turn 90.4 pts 149
+resonator_3_powersweep_undercoupled.npz p5 rel -0.0235 sig/G 0.0032 turn 86.5 pts 128
+resonator_3_powersweep_undercoupled.npz p6 rel -0.0243 sig/G 0.0047 turn 87.5 pts 126
+resonator_3_powersweep_undercoupled.npz p7 rel -0.0271 sig/G 0.0036 turn 87.0 pts 127
+resonator_3_powersweep_undercoupled.npz p10 rel -0.0035 sig/G 0.0030 turn 90.8 pts 114
+resonator_3_powersweep_undercoupled.npz p9 rel -0.0185 sig/G 0.0043 turn 92.4 pts 116
+resonator_3_powersweep_undercoupled.npz p13 rel +0.0106 sig/G 0.0045 turn 90.0 pts 111
+resonator_3_powersweep_undercoupled.npz p12 rel -0.0334 sig/G 0.0033 turn 89.7 pts 112
+resonator_3_powersweep_undercoupled.npz p11 rel +0.0044 sig/G 0.0030 turn 93.0 pts 115
+resonator_3_powersweep_undercoupled.npz p16 rel -0.0213 sig/G 0.0160 turn 94.2 pts 117
+resonator_3_powersweep_undercoupled.npz p14 rel -0.0055 sig/G 0.0061 turn 90.3 pts 111
+resonator_3_powersweep_undercoupled.npz p15 rel +0.0215 sig/G 0.0085 turn 94.3 pts 115
+resonator_4_powersweep_undercoupled.npz p0 rel +0.0745 sig/G 0.0051 turn 90.7 pts 125
+resonator_3_powersweep_undercoupled.npz p8 rel +0.0066 sig/G 0.0049 turn 90.8 pts 123
+resonator_4_powersweep_undercoupled.npz p1 rel +0.1003 sig/G 0.0071 turn 89.0 pts 128
+resonator_4_powersweep_undercoupled.npz p3 rel +0.0461 sig/G 0.0084 turn 91.2 pts 105
+resonator_4_powersweep_undercoupled.npz p2 rel +0.0579 sig/G 0.0103 turn 82.7 pts 154
+resonator_4_powersweep_undercoupled.npz p4 rel +0.0264 sig/G 0.0064 turn 87.4 pts 90
+resonator_4_powersweep_undercoupled.npz p6 rel +0.0197 sig/G 0.0099 turn 95.5 pts 87
+resonator_4_powersweep_undercoupled.npz p5 rel +0.0735 sig/G 0.0075 turn 94.2 pts 87
+resonator_4_powersweep_undercoupled.npz p7 rel -0.1319 sig/G 0.0092 turn 92.5 pts 81
+resonator_4_powersweep_undercoupled.npz p8 rel -0.1097 sig/G 0.0111 turn 91.9 pts 82
+resonator_4_powersweep_undercoupled.npz p9 rel +0.0356 sig/G 0.0122 turn 86.9 pts 77
+resonator_4_powersweep_undercoupled.npz p10 rel -0.0461 sig/G 0.0081 turn 88.9 pts 68
+resonator_4_powersweep_undercoupled.npz p12 rel -0.0056 sig/G 0.0111 turn 93.3 pts 65
+resonator_4_powersweep_undercoupled.npz p14 rel +0.0536 sig/G 0.0298 turn 102.5 pts 70
+resonator_4_powersweep_undercoupled.npz p15 rel -0.8989 sig/G 2.0419 turn 64.9 pts 99
+resonator_4_powersweep_undercoupled.npz p16 rel -0.9749 sig/G 1.3363 turn 29.0 pts 91
+resonator_4_powersweep_undercoupled.npz p11 rel -0.0129 sig/G 0.0098 turn 94.6 pts 65
+resonator_4_powersweep_undercoupled.npz p17 rel -0.9678 sig/G 0.3190 turn 162.5 pts 114
+resonator_4_powersweep_undercoupled.npz p13 rel +0.0326 sig/G 0.0199 turn 96.1 pts 65
+resonator_5_powersweep_undercoupled.npz p0 rel +0.0229 sig/G 0.0031 turn 90.9 pts 180
+resonator_5_powersweep_undercoupled.npz p2 rel +0.0429 sig/G 0.0030 turn 91.0 pts 168
+resonator_5_powersweep_undercoupled.npz p3 rel +0.0461 sig/G 0.0032 turn 91.0 pts 161
+resonator_5_powersweep_undercoupled.npz p4 rel +0.0176 sig/G 0.0037 turn 91.0 pts 150
+resonator_5_powersweep_undercoupled.npz p5 rel +0.0166 sig/G 0.0037 turn 91.0 pts 140
+resonator_5_powersweep_undercoupled.npz p7 rel +0.0075 sig/G 0.0046 turn 86.5 pts 125
+resonator_5_powersweep_undercoupled.npz p6 rel +0.0061 sig/G 0.0037 turn 92.0 pts 135
+resonator_5_powersweep_undercoupled.npz p8 rel +0.0108 sig/G 0.0048 turn 91.4 pts 121
+resonator_5_powersweep_undercoupled.npz p10 rel +0.0058 sig/G 0.0038 turn 92.9 pts 117
+resonator_5_powersweep_undercoupled.npz p9 rel -0.0150 sig/G 0.0047 turn 88.2 pts 117
+resonator_5_powersweep_undercoupled.npz p11 rel -0.0092 sig/G 0.0037 turn 90.6 pts 115
+resonator_5_powersweep_undercoupled.npz p12 rel +0.0036 sig/G 0.0034 turn 91.1 pts 111
+resonator_5_powersweep_undercoupled.npz p14 rel -0.0190 sig/G 0.0066 turn 92.9 pts 115
+resonator_5_powersweep_undercoupled.npz p15 rel -0.0315 sig/G 0.0103 turn 93.3 pts 116
+resonator_5_powersweep_undercoupled.npz p13 rel -0.0263 sig/G 0.0053 turn 88.6 pts 116
+resonator_5_powersweep_undercoupled.npz p16 rel -0.0234 sig/G 0.0192 turn 96.5 pts 124
+resonator_7_powersweep_undercoupled.npz p7 rel +0.0353 sig/G 0.0069 turn 87.4 pts 121
+resonator_7_powersweep_undercoupled.npz p8 rel +0.1107 sig/G 0.0109 turn 90.1 pts 122
+resonator_7_powersweep_undercoupled.npz p10 rel +0.0727 sig/G 0.0082 turn 98.2 pts 111
+resonator_7_powersweep_undercoupled.npz p11 rel +0.0353 sig/G 0.0067 turn 91.0 pts 106
+resonator_7_powersweep_undercoupled.npz p12 rel +0.0622 sig/G 0.0076 turn 96.0 pts 104
+resonator_7_powersweep_undercoupled.npz p13 rel +0.0107 sig/G 0.0141 turn 89.9 pts 104
+resonator_7_powersweep_undercoupled.npz p14 rel +0.0704 sig/G 0.0148 turn 97.1 pts 103
+resonator_8_powersweep_undercoupled.npz p6 rel +0.0001 sig/G 0.0116 turn 85.7 pts 123
+resonator_8_powersweep_undercoupled.npz p9 rel +0.0332 sig/G 0.0168 turn 86.8 pts 92
+resonator_8_powersweep_undercoupled.npz p7 rel +0.0993 sig/G 0.0115 turn 100.5 pts 108
+resonator_8_powersweep_undercoupled.npz p10 rel +0.0856 sig/G 0.0094 turn 89.7 pts 83
+resonator_8_powersweep_undercoupled.npz p8 rel +0.0289 sig/G 0.0156 turn 81.2 pts 123
+resonator_8_powersweep_undercoupled.npz p11 rel +0.0791 sig/G 0.0087 turn 93.7 pts 83
+resonator_8_powersweep_undercoupled.npz p12 rel +0.0781 sig/G 0.0141 turn 95.7 pts 76
+resonator_8_powersweep_undercoupled.npz p13 rel +0.1214 sig/G 0.0234 turn 98.8 pts 84
+resonator_8_powersweep_undercoupled.npz p14 rel +0.0522 sig/G 0.0452 turn 102.8 pts 100
+CARTER (200 seeded of 972): {'narrow': 51, 'ok': 12, 'noise': 137}
+  R5 beyond 3 sigma + 2%: 11 of 12 (91.7%) -> KILLED
+  R6 median |rel| 0.2541 (rel median -0.2541, quartiles -0.2572 -0.2468) -> KILLED
+  R7 median turn 80.8 deg (quartiles 80.3, 81.1) -> KILLED
+  points per Gamma: median 42
+FANO (all power sweeps): {'narrow': 293, 'ok': 94, 'noise': 45}
+  R5 beyond 3 sigma + 2%: 25 of 94 (26.6%) -> KILLED
+  R6 median |rel| 0.0263 (rel median +0.0040, quartiles -0.0207 +0.0348) -> not killed
+  R7 median turn 91.0 deg (quartiles 89.7, 93.3) -> not killed
+  points per Gamma: median 117
+R8 -> not killed
