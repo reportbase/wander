@@ -7607,6 +7607,27 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1195** (25 Nov 2026; Tom: "However classical does not distinguish the payload from the heat.    We show that
+  gravity is separate from the heat"): **the classical account does not tell the heat from the payload; here gravity is
+  shown separate from the heat.** Recorded as said. Claude's precision, not ruled: the classical formula does carry two
+  factors (a kernel times a density, g = ∫ P·σ), but it holds both as gravity's, the kernel a consequence of the
+  inverse square; it does not say the kernel is a standpoint's law of directions, the same for a look with no mass in
+  it and for every arrangement of matter. What the runs show is that: the heat is the stage's (R1184; GRV, FCL runs
+  1–8), and what is gravity's is on the paint's side, the amount along each direction (the depth, R1192; the first
+  moment, run 10; the flat lay moved by scaling, run 12). "Separate" is said of the roles; a pull still needs both, and
+  the classical numbers are unchanged (R1189). No judgement of classical work (R335, R364); no new physics. *Reads and Writes* §7 (Tom: "add it to the paper and merge").
+- **R1194** (25 Nov 2026; Tom: "yes, run the test", to checking how far R1193's likeness goes): PR #496 merged. FCL
+  run 12 (`runs/fcl/fcl12.py`, mpmath at 40 digits, predictions committed first, nothing killed). The two depths are
+  alike in lying along the direction, and in how they are had from two places: two pull strengths a step B apart along
+  the line give d/B = 1/(√ρ − 1) with no mass and no G (to 10⁻³⁷), as two looks give 1/(d/B) = 1/s₁ + 1/s₂, and two
+  pull directions cross on a single mass by the looks' own formula. They differ in the lay: gravity's depth is flat
+  (the share from within d is (d − a)/(b − a), the half point the matter's middle, tripling the thumb moving nothing),
+  the best exchange missing by 0.1718 (3 − 2√2), scaling moving it by k or 1/k²; the look's is the thumb's, with its
+  exchange exact. The strengths' error grows as (x + 1)/2 with no best place between, where two looks are best at
+  d = B/2. A pull's direction is a sum: on two masses 2a apart the crossing is off the centre by ±3(a/d)² (ratios
+  1.018 to 0.998 at d/a = 10 to 40). The ball's exchange is one power off, g(R²/r) = g(r)². Five of the seven were
+  identities and say so. Claude's reading, not ruled: the likeness holds in place and in parallax and stops at the
+  lay, a ratio against an amount. *Reads and Writes* §7's seventh item. Classical; no new physics.
 - **R1193** (25 Nov 2026; Tom: "Observation has it's own version of depth, seems analagous to gravy's depth.", read as
   gravity's): **observation has its own depth, seemingly the counterpart of gravity's.** Recorded with R1192 in the
   same paragraph of *Reads and Writes* §7, as open. Claude's reading, not ruled: observation's depth is how far along a

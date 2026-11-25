@@ -1,0 +1,37 @@
+Z1: a cone of even matter from a to b, apex at the place: share of its pull from within d
+  worst departure from (d - a)/(b - a) over 3 widths x 5 depths: 0.0
+  half the pull within d = 6.5 (the middle of the matter)
+
+Z2: whose the half point is
+  matter 2..11, thumb 1: pull's half point 6.5, look's half point 1 (share there 0.5)
+  matter 6..33, thumb 1: pull's half point 19.5, look's half point 1 (share there 0.5)
+  matter 2..11, thumb 3: pull's half point 6.5, look's half point 3 (share there 0.5)
+
+Z3: the flat lay d/L and an exchange d <-> c^2/d
+  least worst departure 0.17181 at c/L = 0.4145   (3 - 2 sqrt 2 = 0.171573, sqrt 2 - 1 = 0.41421)
+  the look's lay at c = H: worst |F(d) + F(H^2/d) - 1| = 2.3e-41
+
+Z4: scaling
+  k = 3.0: density kept, column x 3.0 (k = 3.0); masses kept, x 0.11111111 (1/k^2 = 0.11111111); look's share moved by 0.0
+  k = 0.1429: density kept, column x 0.14285714 (k = 0.14285714); masses kept, x 49.0 (1/k^2 = 49.0); look's share moved by 0.0
+
+Z5: depth from two pull strengths a step apart along the line
+  x = 0.1   depth off by 0.0; sensitivity 0.54999956 against (x+1)/2 = 0.55 (ratio 0.9999992); two looks' cosh(ln 2x) = 2.6
+  x = 1.0   depth off by 0.0; sensitivity 0.99999875 against (x+1)/2 = 1.0 (ratio 0.99999875); two looks' cosh(ln 2x) = 1.25
+  x = 10.0  depth off by 3.67e-40; sensitivity 5.4999684 against (x+1)/2 = 5.5 (ratio 0.99999425); two looks' cosh(ln 2x) = 10.025
+  x = 100.0 depth off by 7.35e-38; sensitivity 50.497437 against (x+1)/2 = 50.5 (ratio 0.99994925); two looks' cosh(ln 2x) = 100.002
+  (x+1)/2 increasing at every step over x = 0.01..1000: True
+
+Z6: depth from two pull directions a step across
+  (a) one mass at depth 9, off the axis by 2: crossing depth off by 0.0
+  (b) pair across, d/a = 10: crossing off the centre by 0.0305331; over 3(a/d)^2: 1.01777
+  (b) pair across, d/a = 20: crossing off the centre by 0.00753294; over 3(a/d)^2: 1.00439
+  (b) pair across, d/a = 40: crossing off the centre by 0.00187705; over 3(a/d)^2: 1.00109
+  (b) pair along, d/a = 10: crossing off the centre by -0.0291535; over 3(a/d)^2: -0.971783
+  (b) pair along, d/a = 20: crossing off the centre by -0.00744577; over 3(a/d)^2: -0.992769
+  (b) pair along, d/a = 40: crossing off the centre by -0.00187159; over 3(a/d)^2: -0.998181
+  two looks at one mass of the pair cross on it: off by 3.67e-40
+
+Z7: the ball's exchange
+  worst |g(R^2/r) - g(r)^2| inside: 1.15e-41
+  the look: near reading d/H against far reading H/d' at d' = H^2/d: worst difference 0.0

@@ -945,3 +945,104 @@ numbers), predictions made after the values and a rough half-width had been seen
 (7.5 m high, lining thicker at the bottom). Classical throughout (the depth rule for a horizontal cylinder); nothing
 about a read is tested. The search found no table of such data in the open; a second clean site would need one of the
 paywalled originals (Arzi 1975, a drilled cavity 6.4 m to centre; Davis, Jackson and Richter 1957, Camagüey).
+
+## Run 12, planned 25 November: observation's depth beside gravity's (Tom: "yes, run the test")
+
+R1193 (Tom: "Observation has it's own version of depth, seems analagous to gravy's depth."), recorded as open. The test
+asks how far the likeness goes, taking each depth two ways: as it is laid along one direction, and as it is had from two
+places a step apart.
+
+**The two depths.** Observation's: how far along a direction, in thumbs. Laid by the thumb, the share within d is the
+half-Cauchy's, half within one thumb H, and d ↔ H²/d trades the near share for the far one (§6); from two looks a step B
+apart it is 1/(d/B) = 1/s₁ + 1/s₂ (§9). Gravity's: the column along a direction, the density times the length of matter
+on that line (GRV; R1192).
+
+**Worked beforehand** (so most of these are checks of my working, and say so).
+
+- Along a direction through even matter the inverse square cancels against the volume, so every unit of length counts
+  alike at any distance: the share of that direction's pull from within d is d/L, L the matter's depth.
+- For the flat lay d/L, the worst departure of F(d) + F(c²/d) from 1 over c²/L ≤ d ≤ L is max(α², 1 − 2α) with
+  α = c/L, least at α = √2 − 1, where it is 3 − 2√2 = 0.1716.
+- A point mass, two pull strengths a step B apart along the line: g(d)/g(d + B) = ρ gives d/B = 1/(√ρ − 1), with no
+  mass and no G; a small relative error ε in ρ moves d by (x + 1)·ε/2 of itself, x = d/B.
+- Two equal masses 2a apart seen from two places 2b apart at depth d: the two pull directions cross on the axis at
+  d·(1 + 3(a/d)²) when the pair lies across the line of sight and d·(1 − 3(a/d)²) when it lies along it, to second
+  order, whatever b.
+- A ball of radius R: the pull along a line through its centre is r/R inside and (R/r)² outside, in units of the
+  surface's, so the pull at the partner R²/r of an inside place r is (r/R)², the square of the pull at r.
+
+**Predictions, with kills** (mpmath at 40 digits).
+
+- **Z1, laid flat.** A thin cone of even matter from distance a to b: the share of its pull from within d is
+  (d − a)/(b − a), to 10⁻²⁵, at five d and three cone widths (the width to second order only: within 10⁻³ of it for a
+  cone of half-slope 1/100). Half the pull comes from the nearer half of the matter's length. An identity of the
+  cancellation; it can fail only by my code. Kill: any departure.
+- **Z2, whose the half point is.** The look's half point along a direction is one thumb whatever the matter; the
+  pull's is the middle of the matter, (a + b)/2, whatever the thumb. Tripling the matter's depth triples the pull's
+  half point and leaves the look's; tripling the thumb does the reverse. Exact. Kill: either moves the other.
+- **Z3, no exchange for the flat lay.** For every c the flat lay misses the look's complement: the least worst
+  departure over c is 3 − 2√2, found within [0.15, 0.20] and at c/L within 0.01 of √2 − 1, where the look's own lay
+  has it 0 to 10⁻³⁰ at c = H. Kill: outside either band.
+- **Z4, scaling.** Lengths × k with the density kept: the column, and so the direction's pull, × k; with the masses
+  kept, × 1/k². The look's lay, thumb scaled with the world, unmoved to 10⁻³⁰. Kill: any other power.
+- **Z5, depth from two pulls along the line.** d/B = 1/(√ρ − 1) returns the depth to 10⁻³⁰ at x = 1/10, 1, 10, 100
+  for three masses a millionfold apart (no mass, no G in it). Its sensitivity to ε = 10⁻⁶ in ρ is (x + 1)/2 within 1%
+  at each x: least near, growing in proportion far off, with no place of least error between, where two looks' error
+  ε·cosh(ln(2d/B)) is least at d = B/2. Kill: the depth off, the ratio outside 1%, or an interior minimum.
+- **Z6, depth from two pull directions across.** (a) One point mass: two pull directions a step apart cross on the
+  mass, by the two looks' own formula 1/(d/B) = 1/s₁ + 1/s₂, to 10⁻³⁰ (a direction is a direction: an identity).
+  (b) Two equal masses: the crossing is off their centre by +3(a/d)² across and −3(a/d)² along, the ratio to that
+  within [0.9, 1.1] at d/a = 10, 20, 40 with b = a/2, while two looks at either mass cross on it to 10⁻³⁰. Kill: any
+  clause.
+- **Z7, the ball's exchange is one power off.** g(R²/r) = g(r)² exactly for r inside, at five r, to 10⁻³⁰; the look's
+  near reading d/H and far reading H/d′ at the partner d′ = H²/d are equal. Kill: any departure.
+
+The reading if these hold. The two depths are alike in where they lie (along the direction, square to the stage's
+heat) and in how they are had from two places (a step turns two takes into a depth in steps, no amount needed). They
+differ in the lay: observation's depth is laid by the thumb, the standpoint's own, with a corner and an exchange;
+gravity's is laid flat, every length alike, its half point owned by the matter. And a pull's direction is a sum, so
+two of them cross on a single mass but not on a body's centre. Classical throughout (the column; depth from a
+gradient, which geophysics uses as Euler deconvolution, from memory; the quadrupole). Not a mechanism; a pull is not a
+read.
+
+### Run 12 (`runs/fcl/fcl12.py`, output `runs/fcl/fcl12-run.txt`), 25 November: nothing killed
+
+| | result | |
+| --- | --- | --- |
+| Z1 | the share from within d is (d − a)/(b − a), departure 0 at three cone widths and five depths; half the pull from the nearer half of the matter's length | not killed |
+| Z2 | matter 2..11, thumb 1: pull's half point 6.5, look's 1; matter tripled: 19.5 and 1; thumb tripled: 6.5 and 3 | not killed |
+| Z3 | the flat lay's least worst departure 0.17181 at c/L = 0.4145 (3 − 2√2 = 0.17157, √2 − 1 = 0.41421, on a grid of 2,000); the look's own lay 2·10⁻⁴¹ at c = H | not killed |
+| Z4 | density kept, the column × k; masses kept, × 1/k² (k = 3 and 1/7); the look's share unmoved | not killed |
+| Z5 | d/B = 1/(√ρ − 1) returns the depth to 10⁻³⁷ at x = 0.1, 1, 10, 100 for three masses; sensitivity over (x + 1)/2: 0.9999992, 0.9999988, 0.9999943, 0.9999493; no interior minimum | not killed |
+| Z6 | (a) one mass off the axis: the crossing on it, 0; (b) pair across: 1.0178, 1.0044, 1.0011 of +3(a/d)² at d/a = 10, 20, 40; pair along: 0.9718, 0.9928, 0.9982 of −3(a/d)²; two looks at one mass on it to 10⁻⁴⁰ | not killed |
+| Z7 | g(R²/r) = g(r)² to 10⁻⁴¹; the look's near and far readings at partners equal | not killed |
+
+Z1, Z2, Z4, Z6 (a) and Z7 are identities worked beforehand and could have failed only by my code. Z3's number, Z5's
+sensitivity and Z6 (b)'s ±3(a/d)² were the tests, each of my own working. Z1 holds at every cone width, not to second
+order as I wrote above the Runs line: a cone with its apex at the place and round ends has the cancellation exactly.
+
+### What run 12 says, as a reading (Claude's, not ruled)
+
+- **Alike in where they lie.** Both depths run along the direction, where the stage's heat runs across it, and neither
+  is in the direction alone.
+- **Alike in how they are had from two places.** A counted step turns two takes into a depth in steps with no amount:
+  two looks by 1/(d/B) = 1/s₁ + 1/s₂; two pull directions by the same formula (a direction is a direction); two pull
+  strengths along the line by d/B = 1/(√ρ − 1), with no mass and no G in it. This is the strongest part of the
+  likeness: gravity has a parallax of its own.
+- **Unlike in the lay.** Observation's depth is laid by the thumb, the standpoint's own length: half within one
+  thumb, an exchange d ↔ H²/d, unmoved by scaling. Gravity's is laid flat: every length of matter counts alike at any
+  distance, the half point is the middle of the matter (the matter's, not the place's), the best any exchange can do
+  misses by 0.17, and scaling moves it. So observation's depth is a ratio and gravity's an amount: the read and the
+  number line again, along the line this time.
+- **Unlike in the error.** Two looks are best at one place (d = B/2) and worse either side; two pull strengths are
+  best nearest and worsen in proportion to the depth, with no best place between.
+- **A pull's direction is a sum.** Two of them cross on a single mass, but on a pair of masses they cross off the
+  centre by 3(a/d)², deeper when the pair lies across and shallower when it lies along. Two looks at a thing cross on
+  it. So depth from pulls is the depth of a point that stands for the body, right only as far as the body is round.
+- **The ball's edge is not a thumb.** A ball's radius cuts the line into a part in proportion and a part in ratios,
+  as the thumb does, but the pull at a place's partner is the square of the pull at the place, where the look's two
+  readings at partners are equal; and the radius is an amount.
+
+So the likeness holds in place and in parallax, and stops at the lay. Classical throughout: the column; depth from a
+gradient (used in geophysics as Euler deconvolution, from memory, not opened); the quadrupole's 3(a/d)². Not a
+mechanism and not new physics; a pull is not a read.

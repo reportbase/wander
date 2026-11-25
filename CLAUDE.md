@@ -623,6 +623,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1195 (25 Nov; Tom: "However classical does not distinguish the payload from the heat.    We show that gravity is
+  separate from the heat"): recorded. Claude's precision, not ruled: the classical formula has a kernel and a density
+  but holds both as gravity's; the runs show the kernel is the stage's heat (the same for a look) and gravity's part
+  the paint's (the amount along each direction). Roles apart, numbers unchanged; no judgement of classical work. In
+  *Reads and Writes* §7.
+  R1194 (25 Nov; Tom: "yes, run the test"): FCL run 12, nothing killed: observation's depth and gravity's are alike
+  along the direction and in parallax (two pull strengths a step apart give d/B = 1/(√ρ − 1), no mass), unlike in the
+  lay (gravity's flat, half at the matter's middle, no exchange within 0.17, moved by scaling; the look's the thumb's);
+  two pull directions cross off a pair's centre by 3(a/d)². Claude's reading: a ratio against an amount. §7 item 7.
   R1193 (25 Nov; Tom: "Observation has it's own version of depth, seems analagous to gravy's depth."): recorded as
   open in §7: observation's depth (how far along a direction, in thumbs) beside gravity's (the column along it).
   R1192 (25 Nov; Tom: "What if cauchy heat for gravity is just the depth, more heart, more depth"; "yes, add it to the

@@ -1689,7 +1689,12 @@ mathematics. What is ours, and unsearched, is setting them beside the read.
 *What the Cauchy gives as ways to think about gravity.* The thread's product is a way of thinking about known gravity,
 and small insights count (R1190). That the stage's account and the classical one give the same results wherever both
 were worked is itself a result (R1189): each run is a place the two could have parted and did not, and what
-distinguishes the forms is what each needs, never a different number. Seven so far, each from a run, each classical in
+distinguishes the forms is what each needs, never a different number. What the stage's account adds is a separation
+(R1195). The classical formula has two factors, a weight over directions and the matter met along each, and holds both
+as gravity's, the weight a consequence of the inverse square. Here the weight is the stage's heat: the law of a
+standpoint's directions, the same for a look with no mass in it and for every arrangement of matter. What is gravity's
+is on the paint's side, the amount along each direction. The separation is of roles; a pull needs both, and no
+classical number changes. Each item below is a case of it. Seven so far, each from a run, each classical in
 its mathematics, the details in the lists below:
 
 1. *Corners without an amount.* A pull through a plane has the look's corners (half within one height across a thumb,
@@ -1718,9 +1723,15 @@ its mathematics, the details in the lists below:
    so every direction counts alike (run 7). This depth is the matter along a line, not how far down a body lies: a body
    buried deeper gives a wider, lower curve with the same total (item 2). Observation has a depth of its own, how far
    along a direction in thumbs, laid on a read by the thumb or had from two looks (§6); it seems the counterpart of
-   gravity's depth, both lying along the direction where the stage's heat lies across it. How far the likeness goes is
-   open: the look's depth is one distance to the first thing met and no amount, the pull's the whole column and an
-   amount.
+   gravity's depth, both lying along the direction where the stage's heat lies across it. How far the likeness goes
+   was then checked (run 12, exact, nothing killed). It holds in how each depth is had from two places: a counted step
+   turns two takes into a depth in steps with no amount, two looks by 1/(d/B) = 1/s₁ + 1/s₂ and two pull strengths
+   along the line by d/B = 1/(√ρ − 1), ρ their ratio, with no mass in it; gravity has a parallax of its own. It stops
+   at the lay. Observation's depth is laid by the thumb: half within one thumb, the exchange d ↔ H²/d, unmoved by
+   scaling. Gravity's is laid flat: every length of matter counts alike at any distance, the half point is the middle
+   of the matter and not a length of the place's, no exchange fits it (the best misses by 0.17), and scaling moves it.
+   So the one is a ratio and the other an amount. And a pull's direction is a sum: two of them cross on a single mass,
+   but on a pair of masses 2a apart they cross off the centre by 3(a/d)², where two looks at a thing cross on it.
 
 None of this is new physics or a mechanism, and a pull is not a read (R1183). "New" is said of the way of thinking: the
 formulas are classical, and that an even spread from a point lands on a plane as the Cauchy is in print for light.
