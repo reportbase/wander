@@ -1744,8 +1744,13 @@ its mathematics, the details in the lists below:
    0.6, 0.9). Where the stage stands (runs 4–5, exact): β is the half-slope of the angular eccentricity (e = sin φ,
    β = tan(φ/2)), and with e = tanh η the map from E to ν is a hyperbolic translation by η, the form of relativistic
    aberration with the speed e; two such maps compose by velocity addition, and the stage's far-over-near ratio is
-   r_max/r_min. A shared form, not a claim that an orbit is a boost (its being in print unsearched). Classical in every
-   part (the half-angle relation, Laplace's β, the areal law); the sorting is the item.
+   r_max/r_min. A shared form, not a claim that an orbit is a boost. Classical in every part (the half-angle relation,
+   β as Brouwer and Clemence define it, the areal law, McCullagh's 1996 closure of the wrapped Cauchy under maps of the
+   circle); the sorting is the item. A prior-work search, its expectations committed first (`plans/orb-literature.md`,
+   one search at search-engine depth, few sources opened in full and the main texts not), found the map and β in the
+   textbooks and did not find the joins: the stage as a wrapped Cauchy from −β, the map as aberration's form with
+   composition by velocity addition, time per direction as the stage times r/a (the nearest, an unrefereed blog post
+   naming a likeness to aberration without the half-angle map). Recorded for later confirmation, not claimed (R925).
 
 None of this is new physics or a mechanism, and a pull is not a read (R1183). "New" is said of the way of thinking: the
 formulas are classical, and that an even spread from a point lands on a plane as the Cauchy is in print for light.

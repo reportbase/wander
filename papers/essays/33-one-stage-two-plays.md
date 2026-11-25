@@ -1,10 +1,10 @@
 # One stage, two plays: a look and a pull
 
 *The thirty-third of a series of essays on what can be known from where one stands. Draft, 24 November 2026; brought up
-to FCL's twelfth run on 25 November. It writes up two tests: GRV (`plans/grv-plan.md`, `runs/grv/`) and the twelve runs
-of FCL (`plans/fcl-plan.md`, `runs/fcl/`). Every run but one had its predictions committed before it ran (the exception,
-on measured data, is said in §11), and the kills are gathered in §13. Every number below is from those runs. It began as
-exploration and ends on one ruling (§14): a place with no facing is not a read. The pull is never called a
+to FCL's twelfth run on 25 November, and to ORB's orbit (§13) the same day. It writes up three tests: GRV (`plans/grv-plan.md`, `runs/grv/`), the twelve runs
+of FCL (`plans/fcl-plan.md`, `runs/fcl/`) and ORB runs 2–5 (`plans/orb-plan.md`, `runs/orb/`). Every run but one had its predictions committed before it ran (the exception,
+on measured data, is said in §11), and the kills are gathered in §14. Every number below is from those runs. It began as
+exploration and ends on one ruling (§15): a place with no facing is not a read. The pull is never called a
 read, and nothing here is new physics. The mathematics is classical throughout and is named where it is used; the sorting is the series' own,
 and is marked as a reading.*
 
@@ -30,8 +30,8 @@ adding. Tom's words for the frame, the same day: "cauchy is the stage, not the p
 
 The order: one stage (§1), a place with no facing (§2), the corners (§3), a facing given back (§4), the sheet (§5), two
 masses (§6), the pair in motion (§7), light past a mass (§8), what a pull's direction can find (§9), adding and
-subtracting from the look's side (§10), a tunnel under a hill (§11), the front and the depth (§12), what was killed
-(§13), what this does not say (§14), what it changes (§15).
+subtracting from the look's side (§10), a tunnel under a hill (§11), the front and the depth (§12), an orbit (§13), what
+was killed (§14), what this does not say (§15), what it changes (§16).
 
 ## 1. One stage
 
@@ -258,7 +258,7 @@ were written after the values had been seen, which the lab's rules do not allow 
 Fitted with the Cauchy's curve, the two profiles put the tunnel 18.9 ± 2.3 m and 13.6 ± 1.8 m down, against true
 mid-heights of 16.25 and 17.25 m. Their mean is 15.6 ± 1.4 m against 16.75 m, about 12% off. Multiply every measured
 value by 7 and the depth read does not move, as it should not: the depth is in the shape. The data could not tell a
-buried line from a buried ball; both curves fitted. One prediction was killed (§13). A second site, Medford Cave, read
+buried line from a buried ball; both curves fitted. One prediction was killed (§14). A second site, Medford Cave, read
 7 ft against 24 ft; a cave is not a clean line, and the miss stands as it came.
 
 So the rule holds once, to about an eighth, on one clean site. It is the classical rule and nothing more. A second
@@ -301,7 +301,41 @@ a pair of masses 2a apart they cross off the centre by about 3(a/d)², where two
 Claude's reading, not ruled: the likeness holds in place and in parallax, and stops at the lay. One depth is a ratio.
 The other is an amount.
 
-## 13. What was killed
+## 13. An orbit
+
+The same day Tom asked whether the Cauchy could carry a planet's orbit: "We would have to create a payload that gives
+the same results". ORB runs 2 to 5 did it exactly, with predictions committed first.
+
+A planet on an ellipse of eccentricity e has three angles, all old. The true anomaly ν is its direction from the Sun.
+The mean anomaly M runs evenly with time. The eccentric anomaly E is a helper between them, and the three are joined by
+tan(ν/2) = √((1 + e)/(1 − e))·tan(E/2) and by Kepler's equation, M = E − e·sin E.
+
+The stage: take E evenly round the orbit and look at the direction ν it gives. That spread is a wrapped Cauchy, the
+Cauchy bent round a circle, of width β = (1 − √(1 − e²))/e, centred on the orbit's far point. It is set by the
+eccentricity alone. No size, no mass, no G.
+
+The payload: the time the planet spends in each direction is that stage times r/a, its distance from the Sun in the
+orbit's own size, exactly. Summed over the stage it is Kepler's equation. Amounts come in at one place only, the period
+2π√(a³/GM), which has no e in it. The clock's own law over directions is no wrapped Cauchy at all: the stage carries the
+shape, the payload carries the time.
+
+Where the stage stands (runs 4 and 5): its standpoint is −β in the circle's disc. Write e = sin φ, φ the angular
+eccentricity of the old tables, and β = tan(φ/2), a half-slope. Write e = tanh η instead, and the map from E to ν is a
+hyperbolic translation by η. That is the form of relativistic aberration, the way a moving observer's sky is squeezed
+forward, with the eccentricity standing where the speed stands. Two such maps one after the other compose as
+relativity adds speeds, (e₁ + e₂)/(1 + e₁e₂). The stage's far-over-near ratio is r_max/r_min.
+
+A shared form, not a claim that an orbit is a boost. Every piece is classical: the half-angle relation, β (Brouwer and
+Clemence define it), the areal law, and the closure of the wrapped Cauchy under maps of the circle (McCullagh, 1996). A
+prior-work search was run afterwards, its expectations committed first (`plans/orb-literature.md`, one search at
+search-engine depth). It found the map and β in the textbooks. It did not find the joins: the stage as a wrapped Cauchy
+from −β, the map as aberration's form with composition by velocity addition, and time per direction as the stage times
+r/a. The nearest was one unrefereed blog post (B. Lavenda) saying the formulas "look like an aberration formula",
+without the half-angle map. Claude had expected the aberration likeness to be in print, and that expectation was wrong.
+Only a few sources were opened in full, and the main texts (Brouwer and Clemence, Battin, Gauss) were not. Not found
+is not absent; these are recorded for later confirmation, not claimed.
+
+## 14. What was killed
 
 Thirteen runs, about eighty predictions. Six were killed, all by Claude's own guesses or code, and they stay recorded as
 killed.
@@ -320,7 +354,7 @@ killed.
 Most of the predictions in runs 3, 5, 6, 7, 8, 10 and 12 were worked out on paper before they were written down. Those runs
 could fail by algebra or by code, not by the world. They are a sorting, and each plan says so.
 
-## 14. What this does not say
+## 15. What this does not say
 
 It does not say what gravity is. Tom, the same day: "what is gravity specificaly. but lets not get bogged down".
 Every formula here is Newton's or older, or the textbook lens equation taken as given. The size of the Einstein radius
@@ -339,7 +373,7 @@ pull has no facing, is a sum, moves with scaling, and carries an amount. What th
 gives the exact sense in which no facing is all facings at once: each facing taken with its direction attached, and
 each joined to its opposite by subtracting.
 
-## 15. What it changes
+## 16. What it changes
 
 For the series, six things, each a reading.
 
@@ -410,4 +444,11 @@ front. That is why it can show which way is down.
   arXiv:0811.0441. Boole's map is attributed to him by way of R. Adler and B. Weiss, *Israel J. Math.* 16, 1973; his
   1857 paper was not opened. That an even spread from a point lands on a plane as the Cauchy is in print for light (X.
   Lu, "Cauchy Distribution: A Physics Perspective", 2020; J. Dupuy, L. Belcour and E. Heitz, arXiv:1909.07605).
-- SPN rulings cited: R890, R967, R1173, R1174–R1178, R1180–R1183.
+- `plans/orb-plan.md`, `runs/orb/` (runs 2 to 5); `plans/orb-literature.md`: Battin, *An Introduction to the Mathematics
+  and Methods of Astrodynamics*, AIAA, 1999, §5; D. Brouwer and G. M. Clemence, *Methods of Celestial Mechanics*,
+  Academic Press, 1961, p. 62 (β); P. McCullagh, "Möbius transformation and Cauchy parameter estimation", *Ann. Statist.*
+  24(2), 1996, 787–808; D. Savransky, E. Cady and N. J. Kasdin, "Parameter distributions of Keplerian orbits", *ApJ*
+  728:66, 2011; B. Lavenda, "The analogy between the Kepler problem and retarded electrodynamic potentials" (blog,
+  bernardlavenda.org). Tom, 25 November: "We would have to create a payload that gives the same results"; "Record your
+  findings in the read write papers and essays for later confirmations."
+- SPN rulings cited: R890, R967, R1173, R1174–R1178, R1180–R1183, R1197–R1202.

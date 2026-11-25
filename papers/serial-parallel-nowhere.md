@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1202** (25 Nov 2026; Tom: "Record your findings in the read write papers and essays for later confirmations."):
+  ORB runs 2–5 and the search of R1201 recorded for later confirmation, not claimed: *Reads and Writes* §7 item 8 now names
+  the classical pieces (β as Brouwer and Clemence's, not Laplace's; McCullagh's closure) and what one search did not find
+  (the stage as a wrapped Cauchy from −β, aberration's form with composition by velocity addition, stage × r/a), its
+  "in print unsearched" replaced. Essay 33 gains §13 "An orbit" (later sections 14–16), its Sources, README row and
+  `essays.html` card. No new claim.
 - **R1201** (25 Nov 2026; Tom: "Proceed", to the prior-work search offered after ORB runs 4–5):
   `plans/orb-literature.md`, expectations X1–X6 committed before one search by a fresh agent. The map and β are classical
   (Battin; Brouwer and Clemence p. 62); McCullagh 1996's closure makes the stage a wrapped Cauchy, but no source joining

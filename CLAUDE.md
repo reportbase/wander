@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1202 (25 Nov; Tom: "Record your findings in the read write papers and essays for later confirmations."): ORB and its
+  search in *Reads and Writes* §7 item 8 and essay 33 §13 "An orbit" (later sections 14–16), recorded for later
+  confirmation, not claimed; README row, `essays.html` card.
   ORB literature (`plans/orb-literature.md`, 25 Nov; SPN R1201; Tom: "Proceed"): the map and β classical; the stage as a
   wrapped Cauchy (McCullagh's closure), aberration's form, composition by velocity addition and stage × r/a not found in
   one search; X4 (aberration expected in print) wrong. No paper changed.
