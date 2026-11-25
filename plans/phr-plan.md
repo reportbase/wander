@@ -283,3 +283,31 @@ Seen after the run, not tested (post hoc):
 Reading: on the finest sampled lines with a clean pole (Fano), the amplitude and the phase give one width to about 2%
 and the phase turns 91° across f₀ ± Γ/2, as one pole does; not to within their own errors. On Carter's one resonator
 the two widths part by a quarter, steadily, and the cause is not known.
+
+### Run 6: the cable delay, predictions before the fit (25 Nov 2026; Tom: "Merge 508, then the cable delay test")
+
+The candidate from run 5b's post hoc note: a cable or line of length L multiplies the whole response by e^(−2πifτ)
+(τ = L over the signal's speed), a phase turning steadily with frequency. Run 4's model adds a complex linear background
+to the pole; it can follow a rotating background only to first order, and the side fits then see what is left.
+
+Method. For every sweep, before any fit: τ read off the line alone, from the unwrapped phase of the outer 20% of the sweep
+on each side (the same points run 4 takes for its background), one straight line in f through both sides, slope −2πτ.
+Then z is multiplied by e^(+2πifτ) and run 5b's analysis runs unchanged (the line test, f₀ ± 2Γ inside, at least 20
+points per Γ, the one-pole fit, the side fits, 20 resamples, 500 evaluations a fit, 5 minutes a sweep). The same 200
+Carter sweeps (seed 1209) and all of Fano's.
+
+Seen before this record: run 5b's results; the header and three lines of one Carter file (columns f, I, Q, raw); its
+phase off the line from −95° at the bottom of the sweep to −162° at the top, about 67° over 5 MHz, so τ ≈ 37 ns. Worked
+out before the fit: at Carter's Γ ≈ 105 kHz such a delay turns the phase only about 1.4° across one width, against the
+9° run 5b's turn is short. So if the delay is the cause, it works through the background the model could not follow
+across the sweep, not through the line itself. I do not know which way this comes out.
+
+Predictions (Carter unless said):
+- R9: with the delay removed, median |Γ_phase/Γ_amp − 1| < 3% (run 5b: 25.4%). Killed means the delay is not the cause.
+- R10: median turn across f₀ ± Γ/2 within 90° ± 5° (run 5b: 80.8°).
+- R11: the τ read off the line positive, and within 10% of its median on every fitted sweep (one cable to one chip).
+- R12: more Carter sweeps pass the line test than run 5b's 63 (51 narrow + 12 fitted), since a background turning 67°
+  is not straight.
+- R13: on Fano, removing τ moves the median rel by less than 0.01 and the median turn by less than 2° (its phase was
+  recorded apart from its amplitude, and run 5b found it clean).
+R5's 3σ test is reported for both sets, not predicted.
