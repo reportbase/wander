@@ -1,10 +1,11 @@
 # One stage, two plays: a look and a pull
 
 *The thirty-third of a series of essays on what can be known from where one stands. Draft, 24 November 2026; brought up
-to FCL's twelfth run on 25 November, and to ORB's orbit (§13) the same day. It writes up three tests: GRV (`plans/grv-plan.md`, `runs/grv/`), the twelve runs
+to FCL's twelfth run on 25 November, and to ORB's orbit (§13) the same day; on 25 November too, bodies, motion and light's delay (§14, GDI, MVM and LDL,
+`plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`). It writes up these tests and three earlier ones: GRV (`plans/grv-plan.md`, `runs/grv/`), the twelve runs
 of FCL (`plans/fcl-plan.md`, `runs/fcl/`) and ORB runs 2–8 (`plans/orb-plan.md`, `runs/orb/`). Every run but one had its predictions committed before it ran (the exception,
-on measured data, is said in §11), and the kills are gathered in §14. Every number below is from those runs. It began as
-exploration and ends on one ruling (§15): a place with no facing is not a read. The pull is never called a
+on measured data, is said in §11), and the kills are gathered in §15. Every number below is from those runs. It began as
+exploration and ends on one ruling (§16): a place with no facing is not a read. The pull is never called a
 read, and nothing here is new physics. The mathematics is classical throughout and is named where it is used; the sorting is the series' own,
 and is marked as a reading.*
 
@@ -30,8 +31,8 @@ adding. Tom's words for the frame, the same day: "cauchy is the stage, not the p
 
 The order: one stage (§1), a place with no facing (§2), the corners (§3), a facing given back (§4), the sheet (§5), two
 masses (§6), the pair in motion (§7), light past a mass (§8), what a pull's direction can find (§9), adding and
-subtracting from the look's side (§10), a tunnel under a hill (§11), the front and the depth (§12), an orbit (§13), what
-was killed (§14), what this does not say (§15), what it changes (§16).
+subtracting from the look's side (§10), a tunnel under a hill (§11), the front and the depth (§12), an orbit (§13), bodies,
+motion and delay (§14), what was killed (§15), what this does not say (§16), what it changes (§17).
 
 ## 1. One stage
 
@@ -258,7 +259,7 @@ were written after the values had been seen, which the lab's rules do not allow 
 Fitted with the Cauchy's curve, the two profiles put the tunnel 18.9 ± 2.3 m and 13.6 ± 1.8 m down, against true
 mid-heights of 16.25 and 17.25 m. Their mean is 15.6 ± 1.4 m against 16.75 m, about 12% off. Multiply every measured
 value by 7 and the depth read does not move, as it should not: the depth is in the shape. The data could not tell a
-buried line from a buried ball; both curves fitted. One prediction was killed (§14). A second site, Medford Cave, read
+buried line from a buried ball; both curves fitted. One prediction was killed (§15). A second site, Medford Cave, read
 7 ft against 24 ft; a cave is not a clean line, and the miss stands as it came.
 
 So the rule holds once, to about an eighth, on one clean site. It is the classical rule and nothing more. A second
@@ -347,10 +348,49 @@ even directions give the same Cauchy cut off at the asymptotes. The payload r/a 
 eccentricity e and a hyperbola of eccentricity 1/e share the factor k exactly, their maps differing only by tan
 against tanh: an exchange, e ↔ 1/e, with the parabola its fixed point, as the corner is the reciprocal's.
 
-## 14. What was killed
+## 14. Bodies, motion and delay
 
-Thirteen runs, about eighty predictions. Six were killed, all by Claude's own guesses or code, and they stay recorded as
-killed.
+Three more runs on 25 November (GDI, MVM, LDL, all exact, their predictions committed first) took what §9 found for two
+masses at rest to bodies with size, to masses that move, and to light's own delay.
+
+A ball. Two plumb lines outside a ball point at its centre exactly. No set of directions gives its radius: a place
+inside reads the same direction as a place outside, and the radius appears in neither. What gives the radius is a
+ratio of strengths along a line through the centre: outside, the strength times the distance squared stays the same;
+inside it falls as the cube of the distance over the radius. One such ratio inside gives the radius in counted steps,
+with no mass.
+
+A lens. A point mass makes two images of one source, on a line through it. Their directions alone give the ring's
+size, the geometric mean of their two distances from the lens, and the source's place. Their brightness ratio is the
+square of the ratio of those distances (a prediction of the fourth power was Claude's arithmetic slip, and stays
+killed). So the brightness ratio places a lens no one sees. An isothermal sphere, a lens whose bending is the same at
+every distance, puts its ring at the arithmetic mean instead. Which mean is the corner belongs to how the lens bends,
+the paint, not to the stage.
+
+A pair in orbit. In the frame turning with the pair, gravity and the turning together, the directions at six places
+give the mass ratio, the separation and the places, to fifteen digits, and scaling every length with the rate of the
+orbit moves none of them. The one second solution the fit found is the same pair with its two masses' labels swapped.
+
+A moving mass. At rest, a look and a pull point the same way. When the mass moves they part. The look points where the
+light left it, the retarded place; the present place comes from one look only with the speed and the distance carried
+in. The pull, in the weak field of general relativity, points where the mass is now, departing only at the square of
+the speed: a tenth of light's speed leaves it 0.0145 radians off, the look 0.080. (A prediction of the look's angle left
+out a ratio of distances; it was killed by Claude's geometry, and the triangle's own relation holds to 191 digits.) Not
+foreseen: along the line of motion, past c/√3, the pull turns into a push, a known and debated result.
+
+Light's delay. The two images of a lensed source arrive at different times. For a point mass the delay, in its own
+units, is ½(q − 1/q) for the extra path and ln q for the slowing near the mass, q the ratio of the images' distances
+from the lens. Both come from the directions alone; the slowing is the exchange's own logarithm, the level between the
+two images, and the extra path is never the smaller. For the isothermal sphere the extra paths cancel and the delay is
+all slowing. The delay's size is an amount: 4GM(1 + z)/c³ for the point mass, so a delay counted in days gives the
+mass, with no distance, once G and the second are carried in.
+
+Each of these sorts as §9 did. Directions give places, and ratios give sizes in steps or in angle. A mass, a distance,
+a delay in seconds: each comes with an amount carried in, and with nothing else.
+
+## 15. What was killed
+
+Sixteen runs, about a hundred predictions. Nine were killed, all by Claude's own guesses, arithmetic or code, and they
+stay recorded as killed.
 
 - GRV's third prediction guessed that the pairing of opposite columns holds between two cubes as it does between two
   spheres. It does not; the pairing is the sphere's.
@@ -363,10 +403,14 @@ killed.
 - In run 11 one clause guessed that the ball's curve would put the tunnel below its floor. It put it at 19.8 m, above
   the floor at 20 m.
 
+- In GDI, the lens's brightness ratio was predicted as the fourth power of the images' distance ratio; it is the square.
+- In GDI's orbit, the fit was to find one solution; it found the same pair a second time with its labels swapped.
+- In MVM, the look's angle relation left out a ratio of distances.
+
 Most of the predictions in runs 3, 5, 6, 7, 8, 10 and 12 were worked out on paper before they were written down. Those runs
 could fail by algebra or by code, not by the world. They are a sorting, and each plan says so.
 
-## 15. What this does not say
+## 16. What this does not say
 
 It does not say what gravity is. Tom, the same day: "what is gravity specificaly. but lets not get bogged down".
 Every formula here is Newton's or older, or the textbook lens equation taken as given. The size of the Einstein radius
@@ -385,7 +429,7 @@ pull has no facing, is a sum, moves with scaling, and carries an amount. What th
 gives the exact sense in which no facing is all facings at once: each facing taken with its direction attached, and
 each joined to its opposite by subtracting.
 
-## 16. What it changes
+## 17. What it changes
 
 For the series, six things, each a reading.
 
