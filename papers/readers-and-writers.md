@@ -1838,8 +1838,12 @@ gives the depth from the profile's width alone, with no density: 18.9 ± 2.3 m a
 16.25 m and 17.25 m, their mean 15.6 ± 1.4 m against 16.75 m. So the rule holds there to the profile's noise, about
 2 m in 17, and no better; the same data cannot tell the line's curve from the ball's. On a messy site (Medford Cave,
 Butler 1983) a passage 24 ft down reads as 7 ft, shallow bodies owning the profile. Classical, and a test of the depth
-rule only. Open still: a second clean site, which needs a table the open search did not find. (4) What
-moving masses and light's own delay do to any of it; everything above is at rest or in steady orbit. (5) Done once (`plans/fcl-literature.md`): that an even spread from a point lands on a plane as the Cauchy is in
+rule only. Open still: a second clean site, which needs a table the open search did not find. (4) Begun (MVM,
+exact) for a mass in uniform motion: a look and a pull, one direction at rest, part. The look points where the light
+left, the retarded place, and the present place follows only with the speed and the distance carried in; the pull in
+linearized gravity points where the mass is now, departing only at order β² (a uniformly moving charge's field points
+there exactly). Scaling every length and time moves neither direction. Past β = 1/√3 the pull on the line of motion
+reverses (known, and debated). Open still: accelerated masses, and light's delay past a lens. (5) Done once (`plans/fcl-literature.md`): that an even spread from a point lands on a plane as the Cauchy is in
 print for light (Lu 2020; Dupuy, Belcour and Heitz 2019); its statement for gravity beside a standpoint's directions,
 the add-and-subtract difference and the Cauchy kept along a line of lens masses were not found, in one search. None of
 this is new physics, and a pull is not a read.

@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1220** (25 Nov 2026; Tom: "Merge and proceed"): MVM (`plans/mvm-plan.md` + `runs/mvm/`), §7's open item (4), a
+  mass in uniform motion, exact, predictions first. The look points at the retarded place; my angle relation was wrong
+  (M1 killed by my geometry; the triangle's sin δ = β(R_r/R_p)·sin θ_r holds to 10⁻¹⁹¹, post hoc). A uniformly moving
+  charge's field points at the present place exactly (M2); linearized gravity's pull departs from it only at order β²,
+  3GMβ²xy/r³ (M3); scaling lengths and times moves no direction (M4). Post hoc: the pull's radial part reverses on the line
+  of motion past β = 1/√3 (known, debated). A look and a pull part when the mass moves: where it was, where it is.
 - **R1219** (25 Nov 2026; Tom: "Merge and proceed with gravity."): GDI (`plans/gdi-plan.md` + `runs/gdi/gdi.py`), *Reads
   and Writes* §7's open item (2) for a ball, a lens and the pair in orbit, exact, predictions first. Directions alone give
   a ball's centre, never its radius (inside or out), strength ratios inside give the radius in steps (D1, D2); a point

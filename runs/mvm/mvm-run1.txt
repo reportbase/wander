@@ -1,0 +1,14 @@
+beta 1/10 at (3, 4): M1 sin(delta) - beta sin(theta_r) = 5.1e-03 (delta -0.080086 rad); M2 E x (x0 - present) = 3.5e-192
+beta 1/2 at (-2, 5): M1 sin(delta) - beta sin(theta_r) = -3.3e-02 (delta -0.482774 rad); M2 E x (x0 - present) = 3.5e-192
+beta 9/10 at (7, 1): M1 sin(delta) - beta sin(theta_r) = 1.1e-01 (delta -0.127625 rad); M2 E x (x0 - present) = 1.1e-193
+beta 3/5 at (0, 2): M1 sin(delta) - beta sin(theta_r) = 1.2e-01 (delta -0.643501 rad); M2 E x (x0 - present) = 0.0e+00
+M3 pull x (x0 - present) at t = 0, as a function of beta: G*M*b**2*x*y*(-(-b**2*y**2 + x**2 + y**2)/(b**2 - 1))**(3/2)*(b - 1)*(b + 1)*(b**2 - 3)/(-b**2*y**2 + x**2 + y**2)**3
+M3 series in beta: 3*G*M*b**2*x*y/(x**2 + y**2)**(3/2)
+M3 the pull points at the present place (inward) : radial component -G*M*(-(-b**2*y**2 + x**2 + y**2)/(b**2 - 1))**(3/2)*(b - 1)*(b + 1)*(b**4*y**2 + 3*b**2*x**2 - x**2 - y**2)/(-b**2*y**2 + x**2 + y**2)**3
+   beta 1/10 at (3, 4): pull direction - present direction = 1.451e-02 rad
+   beta 1/2 at (-2, 5): pull direction - present direction = -2.742e-01 rad
+   beta 9/10 at (7, 1): pull direction - present direction = 2.965e+00 rad
+   beta 3/5 at (0, 2): pull direction - present direction = 0.000e+00 rad
+M4 pull direction under scaling (ratio of components): unchanged True; strength ratio k**(-2)
+   look: delta at k = 1 and 5: -0.080085580034, -0.080085580034
+   look: delta at k = 1 and 5: -0.482774480804, -0.482774480804
