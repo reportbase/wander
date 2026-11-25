@@ -33,3 +33,27 @@ the lens is gravity on the sky's plane with the column as its mass, and the plan
 Kill: an identity not exact in sympy or past 10⁻²⁵ in quadrature.
 
 ## Runs
+
+### Run 1 (`runs/lns/lns.py`, output `runs/lns/lns-run1.txt`)
+
+Nothing killed.
+- **N1 not killed**: a point mass at z = −5b, 0, 7b deflects by 4GM/(c²b) at each, and split as ⅓ at −3b and ⅔ at 4b
+  by the same: the lens reads only the column. Said plainly: over the whole path this is the integral's shift
+  invariance, so it could not have failed; it holds only because the path is taken whole (a source or observer at a
+  finite distance brings the lens equation's distance ratios back in).
+- **N2 not killed**: α = 4GM/(c²b) exactly.
+- **N3 not killed**: a ring of column on the sky deflects from outside at 2a by exactly its mass at its centre (to 10⁻⁴⁰)
+  and inside by 1.7·10⁻⁴²: the thin-lens kernel is the pull in two dimensions, 1/r^(D−1) at D = 2, CLM's column premise
+  one dimension down.
+- **N4 not killed**: a uniform disc of column and Σ ∝ 1/(1 + ξ²) deflect by 4G·M(<ξ)/(c²ξ) exactly (4πGξ/c² and
+  4πG·ln(1 + ξ²)/(c²ξ)). Said plainly: the sympy step sums rings with N3's ring law, so it is exact given N3 (checked
+  numerically), not independent of it. An extra direct 2D quadrature, not among the predictions, divided by zero at the
+  lens point itself and was taken out.
+- **N5 not killed**: lengths and masses × k leave every angle unmoved; masses alone × k move the angles × k.
+
+Reading: a lens reads the column, the pull's own take, and lays it on the sky's plane, where its law is the pull's one
+dimension down: the deflection is the plane's pull of the projected column, so only the column inside the impact radius
+bends the light, the plane's shell theorem. Light here carries gravity's take to the observer as directions: what the
+look sees bent is a column's pull. Classical in every part (the thin-lens formula, Einstein 1936, the enclosed-mass
+law); the joining (CLM's premise in D = 3 for the pull and D = 2 for the lens) is the stage's, support by the same
+results (R1229).
