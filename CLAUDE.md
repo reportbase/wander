@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1228 (25 Nov; Tom: "seems like this offers great support for the read / write framing.", "yes, add it to the paper
+  and merge."): the inverse square is the one law under which a pull, like a read, holds no distance along a direction
+  (the amount the only thing added per direction); consistent, not discriminating; a pull still not a read. §7 item (1).
   R1227 (25 Nov; Tom: "I think this is more than sorting, it shows a different derivation path.", "yes"): CLM
   (`plans/clm-plan.md` + `runs/clm/`, exact): "a direction's pull is its column" is equivalent to the inverse square; from
   it, summing directions gives both shell theorems; the outside one alone admits the r law; C2's quadratures killed by my
