@@ -7607,6 +7607,27 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1193** (25 Nov 2026; Tom: "Observation has it's own version of depth, seems analagous to gravy's depth.", read as
+  gravity's): **observation has its own depth, seemingly the counterpart of gravity's.** Recorded with R1192 in the
+  same paragraph of *Reads and Writes* §7, as open. Claude's reading, not ruled: observation's depth is how far along a
+  direction, in thumbs, laid on a read by the thumb (the near and far overlay, §6) or had from two looks; gravity's is
+  the column along a direction. Both lie along the direction, where the stage's heat lies across it, and neither is in
+  the direction alone. Where the likeness may stop: the look's depth is one distance to the first thing met and no
+  amount; the pull's is everything along the line and an amount; and along a line through a ball the pull goes by
+  proportion inside and the inverse square outside (FCL run 2), not by the thumb's exchange. Untested.
+- **R1192** (25 Nov 2026; Tom: "What if cauchy heat for gravity is just the depth, more heart, more depth", read as heat;
+  then "yes, add it to the paper and merge."): **a look takes the front of each direction; a pull takes its depth.**
+  Split by direction the pull is a fixed weight times the column along it (GRV: the inverse square cancels against the
+  volume's growth), for an even density the depth itself: more depth, more pull. Claude's precision, kept: the depth is
+  what gravity paints on the stage, not the stage's own heat, which is the same for a look and a pull; and it is the
+  matter along a line, not how far down a body lies (a deeper body gives a wider, lower curve, the same total). Three
+  classical cases worked by hand, not a run: a shell's opposite depths cancel (Newton); an even ball's chords sum to
+  (4/3)πGρR; a slab's depth grows as the facing's cosine shrinks (FCL run 7). *Reads and Writes* §7, the seventh of
+  "What the Cauchy gives as ways to think about gravity". No new physics; a pull is not a read.
+- **R1191** (24 Nov 2026; Tom: "merge, and add them to the paper"): PR #495 merged. R1189 and R1190 carried into
+  *Reads and Writes* §7, "Gravity on the stage": a paragraph "What the Cauchy gives as ways to think about gravity" and
+  the six small insights as a numbered list ahead of the detailed lists, each with its run, with the limits (no new
+  physics, no mechanism, a pull not a read; "new" said of the way of thinking). No new claim.
 - **R1190** (24 Nov 2026; Tom: "The cauchy provides new ways to think about gravity.   Even small insights are
   valuable."): **the Cauchy provides new ways to think about gravity, and small insights count.** Narrows R1184's rule
   as Claude had written it ("never present FCL as an insight about gravity"): what R1184 excludes is a claim of new
