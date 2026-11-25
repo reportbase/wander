@@ -1718,9 +1718,15 @@ its mathematics, the details in the lists below:
    so every direction counts alike (run 7). This depth is the matter along a line, not how far down a body lies: a body
    buried deeper gives a wider, lower curve with the same total (item 2). Observation has a depth of its own, how far
    along a direction in thumbs, laid on a read by the thumb or had from two looks (§6); it seems the counterpart of
-   gravity's depth, both lying along the direction where the stage's heat lies across it. How far the likeness goes is
-   open: the look's depth is one distance to the first thing met and no amount, the pull's the whole column and an
-   amount.
+   gravity's depth, both lying along the direction where the stage's heat lies across it. How far the likeness goes
+   was then checked (run 12, exact, nothing killed). It holds in how each depth is had from two places: a counted step
+   turns two takes into a depth in steps with no amount, two looks by 1/(d/B) = 1/s₁ + 1/s₂ and two pull strengths
+   along the line by d/B = 1/(√ρ − 1), ρ their ratio, with no mass in it; gravity has a parallax of its own. It stops
+   at the lay. Observation's depth is laid by the thumb: half within one thumb, the exchange d ↔ H²/d, unmoved by
+   scaling. Gravity's is laid flat: every length of matter counts alike at any distance, the half point is the middle
+   of the matter and not a length of the place's, no exchange fits it (the best misses by 0.17), and scaling moves it.
+   So the one is a ratio and the other an amount. And a pull's direction is a sum: two of them cross on a single mass,
+   but on a pair of masses 2a apart they cross off the centre by 3(a/d)², where two looks at a thing cross on it.
 
 None of this is new physics or a mechanism, and a pull is not a read (R1183). "New" is said of the way of thinking: the
 formulas are classical, and that an even spread from a point lands on a plane as the Cauchy is in print for light.

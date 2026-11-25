@@ -1004,3 +1004,45 @@ gravity's is laid flat, every length alike, its half point owned by the matter. 
 two of them cross on a single mass but not on a body's centre. Classical throughout (the column; depth from a
 gradient, which geophysics uses as Euler deconvolution, from memory; the quadrupole). Not a mechanism; a pull is not a
 read.
+
+### Run 12 (`runs/fcl/fcl12.py`, output `runs/fcl/fcl12-run.txt`), 25 November: nothing killed
+
+| | result | |
+| --- | --- | --- |
+| Z1 | the share from within d is (d − a)/(b − a), departure 0 at three cone widths and five depths; half the pull from the nearer half of the matter's length | not killed |
+| Z2 | matter 2..11, thumb 1: pull's half point 6.5, look's 1; matter tripled: 19.5 and 1; thumb tripled: 6.5 and 3 | not killed |
+| Z3 | the flat lay's least worst departure 0.17181 at c/L = 0.4145 (3 − 2√2 = 0.17157, √2 − 1 = 0.41421, on a grid of 2,000); the look's own lay 2·10⁻⁴¹ at c = H | not killed |
+| Z4 | density kept, the column × k; masses kept, × 1/k² (k = 3 and 1/7); the look's share unmoved | not killed |
+| Z5 | d/B = 1/(√ρ − 1) returns the depth to 10⁻³⁷ at x = 0.1, 1, 10, 100 for three masses; sensitivity over (x + 1)/2: 0.9999992, 0.9999988, 0.9999943, 0.9999493; no interior minimum | not killed |
+| Z6 | (a) one mass off the axis: the crossing on it, 0; (b) pair across: 1.0178, 1.0044, 1.0011 of +3(a/d)² at d/a = 10, 20, 40; pair along: 0.9718, 0.9928, 0.9982 of −3(a/d)²; two looks at one mass on it to 10⁻⁴⁰ | not killed |
+| Z7 | g(R²/r) = g(r)² to 10⁻⁴¹; the look's near and far readings at partners equal | not killed |
+
+Z1, Z2, Z4, Z6 (a) and Z7 are identities worked beforehand and could have failed only by my code. Z3's number, Z5's
+sensitivity and Z6 (b)'s ±3(a/d)² were the tests, each of my own working. Z1 holds at every cone width, not to second
+order as I wrote above the Runs line: a cone with its apex at the place and round ends has the cancellation exactly.
+
+### What run 12 says, as a reading (Claude's, not ruled)
+
+- **Alike in where they lie.** Both depths run along the direction, where the stage's heat runs across it, and neither
+  is in the direction alone.
+- **Alike in how they are had from two places.** A counted step turns two takes into a depth in steps with no amount:
+  two looks by 1/(d/B) = 1/s₁ + 1/s₂; two pull directions by the same formula (a direction is a direction); two pull
+  strengths along the line by d/B = 1/(√ρ − 1), with no mass and no G in it. This is the strongest part of the
+  likeness: gravity has a parallax of its own.
+- **Unlike in the lay.** Observation's depth is laid by the thumb, the standpoint's own length: half within one
+  thumb, an exchange d ↔ H²/d, unmoved by scaling. Gravity's is laid flat: every length of matter counts alike at any
+  distance, the half point is the middle of the matter (the matter's, not the place's), the best any exchange can do
+  misses by 0.17, and scaling moves it. So observation's depth is a ratio and gravity's an amount: the read and the
+  number line again, along the line this time.
+- **Unlike in the error.** Two looks are best at one place (d = B/2) and worse either side; two pull strengths are
+  best nearest and worsen in proportion to the depth, with no best place between.
+- **A pull's direction is a sum.** Two of them cross on a single mass, but on a pair of masses they cross off the
+  centre by 3(a/d)², deeper when the pair lies across and shallower when it lies along. Two looks at a thing cross on
+  it. So depth from pulls is the depth of a point that stands for the body, right only as far as the body is round.
+- **The ball's edge is not a thumb.** A ball's radius cuts the line into a part in proportion and a part in ratios,
+  as the thumb does, but the pull at a place's partner is the square of the pull at the place, where the look's two
+  readings at partners are equal; and the radius is an amount.
+
+So the likeness holds in place and in parallax, and stops at the lay. Classical throughout: the column; depth from a
+gradient (used in geophysics as Euler deconvolution, from memory, not opened); the quadrupole's 3(a/d)². Not a
+mechanism and not new physics; a pull is not a read.
