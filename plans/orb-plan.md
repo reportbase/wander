@@ -123,3 +123,18 @@ can fail by its 1% (a fitted wrapped Cauchy may come closer than I expect at e =
   symbol K with K² = (1 + e)/(1 − e)), (1/2π)·dE/dν − √(1−e²)/(2π(1 + e cos ν)) reduces to 0 in sympy after
   eliminating K and √(1−e²) by their squares (`sp.simplify` on the expression with K = √((1+e)/(1−e)) written as
   s/(1−e), s = √(1−e²)). Fails only by my algebra or code.
+
+**Run 3** (`runs/orb/orb3.py`, output `runs/orb/orb-run3.txt`). P1′ not killed: in t = tan(ν/2), with k = s/(1 − e)
+and s² = 1 − e², the numerator of (1/2π)·dE/dν − stage is 0. (P1′'s text as committed has a stray fragment,
+"· ½·... taken by sympy from that form"; the check is the one its last sentence describes.)
+
+**What runs 2 and 3 show.** A two-body orbit is a stage and a payload. Taking the eccentric anomaly evenly, the
+direction from the focus has the wrapped Cauchy of width β = (1 − √(1−e²))/e, centred on the far point: the stage, set by
+e alone, with no amount. The time spent per direction is that stage times r/a, the distance in the orbit's own size,
+exactly: the payload, unique once the stage is fixed (the clock divided by it). Its mean over the stage is 1, over the
+clock 1 + e²/2. Added up over the stage it is Kepler's equation, M = E − e sin E; so the one step that takes an
+iteration, the position at a given time, is the payload's sum inverted. The period needs a and GM carried in
+(2π√(a³/GM), no e); scaling a moves neither stage nor payload. The clock's own law over ν is on no wrapped Cauchy (5% to
+129% off). Classical in every part (the half-angle relation, Laplace's β, the areal law, the time-averaged distance
+a(1 + e²/2)); the reading as a stage and a payload ours. Tom: "We would have to create a payload that gives the same
+results".
