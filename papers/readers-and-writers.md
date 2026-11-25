@@ -1819,8 +1819,15 @@ cosine to the facing, so a paint can move one and not the other (a circle painte
 its first moment at 0° and its balance axis at 8.25°), and an increasing map of the amounts moves the pull and never
 the count. So the read's is an order statistic and the pull's a sum: §4's split, the median the heat's and the mean the
 paint's, with gravity on the paint's side, its centre of gravity in the literal sense. Where light goes with mass the
-pull's direction is the sky's brightness dipole (known, and used for the Local Group; from memory). Open still: whether
-any read-side moment carries a cosine weight without an amount.
+pull's direction is the sky's brightness dipole (known, and used for the Local Group; from memory). And a read-side
+moment with the cosine weight and no amount exists (COS, exact): take the paint as presence only, a direction occupied
+or not; its first moment D = ∫ o(u)·u dΩ is the projected solid angle (the view factor, classical), a facing's take
+less its opposite's is n·D, and scaling the world or any increasing map of the densities leaves it where it is. A pull
+is the same integral with each occupied direction weighed by an amount, its column: for a ball D = π(R/d)², an inverse
+square in a ratio of lengths, and the pull is G·ρ·(4R/3)·D at every distance outside (for a shell (4/3)(R³ − a³)/R²),
+the cosine-weighted mean column one number fixed by the body (Newton's shell theorem read so); a cube's changes 43%
+between half a side and twenty sides off. A read counts a direction once, a pull sums all along it: a ball hidden
+behind another adds nothing to D and its whole share to the pull.
 (2) Answered for two masses at rest (FCL run 9, doubles): yes. On the line between them the meeting place is where the
 pull's direction flips, found with no strength, no mass and no G; off the line, the pull's directions at four places a
 counted step apart, or directions and ratios of strengths at three, give both masses' places and their ratio in steps.

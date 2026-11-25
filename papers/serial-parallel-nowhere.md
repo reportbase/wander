@@ -7607,6 +7607,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1223** (25 Nov 2026; Tom: "1 then 3"): COS (`plans/cos-plan.md` + `runs/cos/cos.py`), §7's item (1), exact,
+  nothing killed. The occupancy's first moment D = ∫ o(u)·u dΩ (presence only, the projected solid angle) has the
+  cosine weight and no amount: F_o(n) − F_o(−n) = n·D (K1), unmoved by scaling or any map of the densities (K2); a ball's
+  D = π(R/d)² (K3); the pull G·ρ·⟨L⟩·D with ⟨L⟩ = 4R/3, a shell's (4/3)(R³ − a³)/R², at every distance (K4); a cube's ⟨L⟩
+  changes 43% (K5); a hidden ball adds to the pull and not to D (K6). Classical (view factor, Newton's shell theorem).
 - **R1222** (25 Nov 2026; Tom: "Merge. Proceed on gravity thread"): ACC (`plans/acc-plan.md` + `runs/acc/acc.py`), §7's
   item (4), accelerated masses, the exact retarded fields at 40 digits, nothing killed. A source at rest at t = 0 and
   accelerating: the look and an opposite charge's pull both depart from the present place by ½·ε·sin ψ (ε = a·r/c²),

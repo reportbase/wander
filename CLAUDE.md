@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  COS (`plans/cos-plan.md` + `runs/cos/cos.py`, 25 Nov; SPN R1223; Tom: "1 then 3"): §7's item (1), exact, nothing
+  killed: the occupancy's first moment (projected solid angle) a read's cosine weight with no amount; a pull the same
+  integral weighed by each direction's column; for a ball the pull G·ρ·(4R/3)·D at every distance, a cube's not.
   ACC (`plans/acc-plan.md` + `runs/acc/acc.py`, 25 Nov; SPN R1222; Tom: "Merge. Proceed on gravity thread"): §7's item
   (4), accelerated masses, exact retarded fields, nothing killed: a source at rest but accelerating is looked at, and
   pulled by an opposite charge, toward ½aT² along a; its linearized gravity pulls toward (7/2)aT² (seven times); scaling
