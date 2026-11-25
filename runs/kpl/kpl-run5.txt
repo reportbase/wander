@@ -1,0 +1,11 @@
+S2: 145 places 1992.224 to 2016.530, 44 radial velocities 2000.487 to 2016.519
+a 122.88 mas, e 0.8798, i 135.26 deg, Omega 225.62 deg, omega 63.87 deg, P 16.079 yr, Tp 2002.321, R0 8629 pc, V0 28.5 km/s, a 1060.4 au, M 4.612e+06 suns, chi2/dof 0.98
+the other node held (Omega 45.62, omega 243.87): chi2 17737.6 against 319.5
+velocity residuals over errors: rms 0.55, worst 1.31 at 2012.210
+--- places alone
+S2: 145 places 1992.224 to 2016.530, 44 radial velocities 2000.487 to 2016.519
+a 123.19 mas, e 0.8796, i 134.96 deg, Omega 45.24 deg, omega 243.70 deg, P 16.083 yr, Tp 2002.330, chi2/dof 1.05
+--- scale 2
+S2: 145 places 1992.224 to 2016.530, 44 radial velocities 2000.487 to 2016.519
+a 122.88 mas, e 0.8798, i 135.26 deg, Omega 225.62 deg, omega 63.87 deg, P 16.079 yr, Tp 2002.321, R0 8629 pc, V0 28.5 km/s, a 1060.4 au, M 4.612e+06 suns, chi2/dof 0.98
+a 245.77 mas, e 0.8798, i 135.26 deg, Omega 225.62 deg, omega 63.87 deg, P 16.079 yr, Tp 2002.321, R0 4314 pc, V0 28.5 km/s, a 1060.4 au, M 4.612e+06 suns, chi2/dof 0.98
