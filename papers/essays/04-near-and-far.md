@@ -472,6 +472,13 @@ amount changes with distance, so the clean split is the ball's. And a ball hidde
 share and its whole weight to the pull: the share counts a direction once, the pull sums all along it (COS, exact;
 `../../plans/cos-plan.md`; essay 33 §14).
 
+That clean split rests on one premise, which light and gravity share: what a direction carries does not depend on how far
+along it its source lies. For light it is the brightness theorem, a surface as bright per direction near as far; for
+gravity it is that a direction's pull is the matter along it, wherever that matter sits. Each is the inverse square and
+nothing else, and from it, summing the directions, come Newton's shell theorems and a ball's light and pull on one share
+of the sky, their ratio free of distance (CLM, LGS, exact; essay 33 §15). The near and far of this essay is a look's; the
+premise is why a pull has none of its own along a direction, and only the amount.
+
 ---
 
 ## 14. What it comes to

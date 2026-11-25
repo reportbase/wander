@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1231 (25 Nov; Tom: "3 then 4"): *Reads and Writes* §7 "Gravity on the stage, in one account" (the place to start on
+  gravity), before the record run by run; essay 33 §15, essays 4 and 7, README, `essays.html`, notes on `look-pull.html`
+  and `thin.html` and their `demos.html` cards. No new claim.
   R1230 (25 Nov; Tom: "the connection between observation and gravity is potentially very interesting.", "yes, 1 then
   2"): LGS (`plans/lgs-plan.md` + `runs/lgs/`): light's and gravity's inverse squares one premise on one stage (the
   brightness theorem, the column), F = B·D and g = Gρ(4R/3)·D, a ball's g/F distance-free; LNS (`plans/lns-plan.md` +

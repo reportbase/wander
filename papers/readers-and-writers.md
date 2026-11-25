@@ -1681,7 +1681,63 @@ apart place the source in steps, and the mass then needs G carried in. **Checked
 formulas classical (Newton 1687; the plane's kernel is potential theory's Poisson kernel of the half-space, not there
 called the Cauchy), the sorting a reading. No new physics: Newton's law, placed.
 
-**Gravity on the stage: what has been observed so far.** A working record, kept here so later work can tighten the
+**Gravity on the stage, in one account.** What the runs below add up to, said once; the record, run by run, follows
+it. Every number here is classical and every one was checked exactly; what is put together is the sorting.
+
+*One stage.* From a place, every direction, each with the same weight: the Cauchy's heat about a look, the Poisson
+kernel's weight over a plane. It is the law of a standpoint's directions, not of anything in them, so a look with no
+mass in it and a pull from any arrangement of matter stand on the same stage. What differs is what each takes along a
+direction. A look takes the first thing met, once, and holds no distance; with light, what it takes is the radiance of
+that first surface. A pull takes everything along the direction, front to back, the column of matter, which is an
+amount. So the stage is shared and the paint is not: the front for a look, the depth for a pull.
+
+*One premise.* For both, what a direction carries does not depend on how far along it its source lies. For light that is
+the brightness theorem, radiance unchanged along a ray in a vacuum; for gravity it is that a direction's pull is its
+column, wherever along the line the matter sits. Each is equivalent to the inverse square (1/r^(D−1) in D dimensions,
+CLM, LGS). So the inverse square is the one law under which a pull, like a read, holds no distance along a direction;
+the law keeps the pull to the read's situation and adds per direction only the amount (R1228).
+
+*What follows by summing the directions.* With D = π(R/d)², the cosine-weighted share of directions a ball fills (its
+projected solid angle, an inverse square in a ratio of lengths with no amount in it), a ball's light is B·D and its pull
+Gρ(4R/3)·D at every distance outside (COS, LGS). The shell theorems follow with no field equation solved: from outside a
+shell pulls as its mass at its centre, and from inside not at all, since a chord meets a sphere at equal angles at its
+two ends, so each direction and its opposite carry equal columns (CLM). The outside theorem alone would also allow a
+force growing as r; the inside one is where the premise is used whole. One ball's pull over its light, Gρ(4R/3)/B, is a
+mass-to-light reading with no distance in it; a body that is not round loses that (a face-on cube's ratio moves 76%
+between half a side and twenty sides off), and a medium that absorbs breaks light's half of the premise while gravity's
+stands.
+
+*A lens reads the column.* Light passing a mass is bent by the column along the line of sight, laid on the sky's plane,
+and the law there is the pull one dimension down, 1/r: only the column inside the impact radius bends the light, the
+plane's own shell theorem (LNS). Its ring is where the two images exchange, their places multiplying to −1 in units of
+it, half of all images inside it whatever the sky (FCL run 5). This is where observation and gravity meet most
+directly: what a look sees bent is a column's pull, carried to it as directions.
+
+*What directions give, and what is carried in.* Directions and ratios give places and ratios of masses: where two pulls
+cancel (the distances' ratio the square root of the masses', ρ = √μ, the fixed point of an exchange), the centre of a
+ball, a lens's ring and the source behind it, a turning pair's mass ratio and separation (FCL runs 3, 9; GDI). They never
+give a mass: masses stand to pulls as V stands to a read, one strength in a unit gives GM, and G is a second amount
+carried in. Two pull strengths a counted step apart give a distance in steps, d/B = 1/(√ρ − 1), a parallax of gravity's
+own with no mass in it (FCL run 12).
+
+*Where a look and a pull part.* A pull has no facing; given one for a moment, its two halves subtract to the pull along
+it, where a read's two halves add to all there is: the read's is an order statistic, the pull's a first moment, a sum,
+gravity on the paint's side of §4's split (FCL runs 6, 10). A hidden body adds nothing to a look and its whole share to
+a pull. Gravity's depth is laid flat, every length of matter alike, where a read's is laid by the thumb (FCL run 12).
+And when the source moves the directions part: a uniformly moving mass is seen where it was and pulled toward where it
+is (MVM); a mass at rest but accelerating is seen, and pulled by an opposite charge, toward a point ½aT² along its
+acceleration, and pulled by its gravity toward (7/2)aT², a ratio a·r/c² unmoved by scaling, which a pair in orbit keeps
+with nothing left out at first post-Newtonian order (ACC).
+
+*What it takes as given, and what it does not do.* It takes the inverse square, as the column premise, or equivalently
+Gauss's law; and the masses and G as amounts. It says nothing about why mass pulls: no mechanism, no new or different
+physics, and a pull is still not a read (R1183). What it gives is support of the kind the framing can have, the same
+results from one stage, and a shorter route in one place, the inside of a shell from a chord's two angles (R1229); the
+outside is no shorter than Gauss's law. Each part is in print (Newton's Propositions 70 and 71, the brightness theorem,
+the thin lens, the Einstein–Infeld–Hoffmann equation); setting them on one stage beside the read was not found in the
+searches made (`plans/fcl-literature.md`, CLM's). Open: a second measured site for the depth rule; S2's orbit (KPL).
+
+**Gravity on the stage: the record, run by run.** A working record, kept here so later work can tighten the
 connection between observation and gravity. Each item is exact arithmetic on Newton's pulls or the thin lens, checked in
 FCL's runs (`plans/fcl-plan.md`, `runs/fcl/`; essay 33; the demo `look-pull.html`), and each is classical in its
 mathematics. What is ours, and unsearched, is setting them beside the read.

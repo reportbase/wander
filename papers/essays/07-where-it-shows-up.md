@@ -450,6 +450,11 @@ a ratio of lengths, the acceleration times the distance over c², and scaling th
 images also arrive apart in time: the delay's shape comes from their directions alone, its size in days from one amount,
 the lens's mass (LDL).
 
+The lens is where a look and a pull meet most directly. Light passing a mass is bent by the column of matter along its
+line of sight, laid out on the sky, and the bending there follows the pull's own law one dimension down: only the column
+inside the light's closest approach bends it (LNS, exact; essay 33 §15). What the look sees bent is a column's pull,
+carried to it as directions. Classical, the thin lens of 1936; the stage the series' reading.
+
 ---
 
 ## 8. What it comes to
