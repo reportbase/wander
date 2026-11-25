@@ -7607,6 +7607,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1231** (25 Nov 2026; Tom: "3 then 4"): *Reads and Writes* §7 gains "Gravity on the stage, in one account" before
+  the record (renamed "the record, run by run"): one stage, two takes (the front for a look, the column for a pull), one
+  premise for both (the brightness theorem and the column, each the inverse square), what summing directions gives (a
+  ball's light and pull on one D, the shell theorems), a lens reading the column, what directions give and what is
+  carried in, where look and pull part, what it takes as given and what it does not do, what is open. Then essay 33 §15
+  "One premise for light and gravity" (later sections 16–18, the kills now eleven of about a hundred and forty
+  predictions over twenty-three runs), paragraphs in essays 4 §13 and 7, the README row and `essays.html` card, notes on
+  `look-pull.html` and `thin.html` and their `demos.html` cards. No new claim.
 - **R1230** (25 Nov 2026; Tom: "the connection between observation and gravity is potentially very interesting.", then
   "yes, 1 then 2"): LGS and LNS (`plans/lgs-plan.md`, `plans/lns-plan.md`, `runs/lgs/`, `runs/lns/`, exact), predictions
   first, nothing killed. LGS: light's inverse square and gravity's are one premise on one stage, what a direction carries

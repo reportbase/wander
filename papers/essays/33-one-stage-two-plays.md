@@ -2,10 +2,10 @@
 
 *The thirty-third of a series of essays on what can be known from where one stands. Draft, 24 November 2026; brought up
 to FCL's twelfth run on 25 November, and to ORB's orbit (§13) the same day; on 25 November too, bodies, motion and light's delay (§14, GDI, MVM, LDL, ACC and COS,
-`plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`, `plans/cos-plan.md`). It writes up these tests and three earlier ones: GRV (`plans/grv-plan.md`, `runs/grv/`), the twelve runs
+`plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`, `plans/cos-plan.md`), and one premise for light and gravity (§15, CLM, LGS, LNS, `plans/clm-plan.md`, `plans/lgs-plan.md`, `plans/lns-plan.md`). It writes up these tests and three earlier ones: GRV (`plans/grv-plan.md`, `runs/grv/`), the twelve runs
 of FCL (`plans/fcl-plan.md`, `runs/fcl/`) and ORB runs 2–8 (`plans/orb-plan.md`, `runs/orb/`). Every run but one had its predictions committed before it ran (the exception,
-on measured data, is said in §11), and the kills are gathered in §15. Every number below is from those runs. It began as
-exploration and ends on one ruling (§16): a place with no facing is not a read. The pull is never called a
+on measured data, is said in §11), and the kills are gathered in §16. Every number below is from those runs. It began as
+exploration and ends on one ruling (§17): a place with no facing is not a read. The pull is never called a
 read, and nothing here is new physics. The mathematics is classical throughout and is named where it is used; the sorting is the series' own,
 and is marked as a reading.*
 
@@ -32,7 +32,7 @@ adding. Tom's words for the frame, the same day: "cauchy is the stage, not the p
 The order: one stage (§1), a place with no facing (§2), the corners (§3), a facing given back (§4), the sheet (§5), two
 masses (§6), the pair in motion (§7), light past a mass (§8), what a pull's direction can find (§9), adding and
 subtracting from the look's side (§10), a tunnel under a hill (§11), the front and the depth (§12), an orbit (§13), bodies,
-motion and delay (§14), what was killed (§15), what this does not say (§16), what it changes (§17).
+motion and delay (§14), one premise for light and gravity (§15), what was killed (§16), what this does not say (§17), what it changes (§18).
 
 ## 1. One stage
 
@@ -259,7 +259,7 @@ were written after the values had been seen, which the lab's rules do not allow 
 Fitted with the Cauchy's curve, the two profiles put the tunnel 18.9 ± 2.3 m and 13.6 ± 1.8 m down, against true
 mid-heights of 16.25 and 17.25 m. Their mean is 15.6 ± 1.4 m against 16.75 m, about 12% off. Multiply every measured
 value by 7 and the depth read does not move, as it should not: the depth is in the shape. The data could not tell a
-buried line from a buried ball; both curves fitted. One prediction was killed (§15). A second site, Medford Cave, read
+buried line from a buried ball; both curves fitted. One prediction was killed (§16). A second site, Medford Cave, read
 7 ft against 24 ft; a cave is not a clean line, and the miss stands as it came.
 
 So the rule holds once, to about an eighth, on one clean site. It is the classical rule and nothing more. A second
@@ -397,9 +397,47 @@ A cosine with no amount. One question from §10 was whether a read holds anythin
 Each of these sorts as §9 did. Directions give places, and ratios give sizes in steps or in angle. A mass, a distance,
 a delay in seconds: each comes with an amount carried in, and with nothing else.
 
-## 15. What was killed
+## 15. One premise for light and gravity
 
-Nineteen runs, about a hundred and twenty predictions. Nine were killed, all by Claude's own guesses, arithmetic or code, and they
+Three more runs the same day (CLM, LGS, LNS, exact, predictions first) asked what the runs above had been using without
+saying so.
+
+Every pull above was built the same way: from the place, each direction weighed by how much matter lies along it, and
+the directions summed. That works because a direction's pull does not depend on where along the line its matter sits,
+only on how much there is. The first run showed that this is the inverse square and nothing else: slide a column of
+matter out along its line and its pull stays exactly the same at the inverse square, and changes by nearly double or
+by half at powers half a step either side. In two dimensions the same holds for a pull falling as one over the
+distance, and in four for one over its cube. From that alone, summing the directions gives Newton's two shell theorems
+with no field equation solved. Outside a shell, its pull is its whole mass at its centre. Inside, there is none, because
+a chord meets a sphere at the same angle at both its ends, so each direction and its opposite carry equal columns and
+cancel. A force growing with distance would pass the outside test too; the inside one is where the premise does its
+work. None of this is new: it is Newton's own argument, Propositions 70 and 71 of the *Principia*, and Gauss's law is
+the same fact in the form of a flux. What it shows is where the law sits. A read has each direction and what paints it,
+never how far along; the inverse square is the one law under which a place's pull is the same, each direction and how
+much lies along it, never where.
+
+The second run put light on the same footing. Radiance, the brightness of a surface per direction, stays the same along
+a ray in empty space: the brightness theorem. It is light's inverse square, as the column is gravity's. So a ball's
+light at a distance is its radiance times the share of directions it fills, weighted by their cosine, and its pull is
+the same share times one amount, its density times four thirds of its radius. One ball's pull divided by its light has
+no distance in it. A face-on cube's does: the ratio moves by three quarters between half a side and twenty sides off.
+And in a fog that absorbs, light's half of the premise fails, its brightness now depending on how far along the ray the
+surface lies, while gravity's half holds. One check in this run held by construction and is said so in the plan.
+
+The third run is where observation and gravity meet most directly. Light passing a mass is bent by the column of matter
+along its line of sight, laid out on the sky, and the bending on the sky follows the pull's own law one dimension down:
+only the column inside the light's closest approach bends it, the sky's own shell theorem. What a look sees bent is a
+column's pull, carried to it as directions. One of its checks could not fail as set up (sliding the mass along the line
+over a whole path), and the plan says so.
+
+Tom, after the second run: "seems like this offers great support for the read / write framing." And then the rule for
+what that support can be: "read write framing is supported when it derives the same results. its not going to derive
+new phyics, maybe simplified derivation, but not new or different physics." The same results, from one stage; a shorter
+route in one place, the inside of a shell from a chord's two angles; the outside no shorter than Gauss's law.
+
+## 16. What was killed
+
+Twenty-three runs, about a hundred and forty predictions. Eleven were killed, all by Claude's own guesses, arithmetic or code, and they
 stay recorded as killed.
 
 - GRV's third prediction guessed that the pairing of opposite columns holds between two cubes as it does between two
@@ -416,11 +454,13 @@ stay recorded as killed.
 - In GDI, the lens's brightness ratio was predicted as the fourth power of the images' distance ratio; it is the square.
 - In GDI's orbit, the fit was to find one solution; it found the same pair a second time with its labels swapped.
 - In MVM, the look's angle relation left out a ratio of distances.
+- In CLM, both numerical checks of the outside shell were killed by Claude's numerics: an inverse square root at the
+  edge direction loses half the digits. The exact identity they checked stands.
 
 Most of the predictions in runs 3, 5, 6, 7, 8, 10 and 12 were worked out on paper before they were written down. Those runs
 could fail by algebra or by code, not by the world. They are a sorting, and each plan says so.
 
-## 16. What this does not say
+## 17. What this does not say
 
 It does not say what gravity is. Tom, the same day: "what is gravity specificaly. but lets not get bogged down".
 Every formula here is Newton's or older, or the textbook lens equation taken as given. The size of the Einstein radius
@@ -439,7 +479,7 @@ pull has no facing, is a sum, moves with scaling, and carries an amount. What th
 gives the exact sense in which no facing is all facings at once: each facing taken with its direction attached, and
 each joined to its opposite by subtracting.
 
-## 17. What it changes
+## 18. What it changes
 
 For the series, six things, each a reading.
 
@@ -494,10 +534,14 @@ front. That is why it can show which way is down.
   analagous to gravy's depth."; "However classical does not distinguish the payload from the heat.    We show that
   gravity is separate from the heat". 25 November: "Merge and proceed with gravity."; "1 then 5".
 - `plans/gdi-plan.md`, `runs/gdi/`; `plans/mvm-plan.md`, `runs/mvm/`; `plans/ldl-plan.md`, `runs/ldl/`.
+- `plans/clm-plan.md`, `runs/clm/`; `plans/lgs-plan.md`, `runs/lgs/`; `plans/lns-plan.md`, `runs/lns/`. Tom, 25 November: "I
+  think this is more than sorting, it shows a different derivation path."; "seems like this offers great support for the
+  read / write framing."; "read write framing is supported when it derives the same results."; "the connection between
+  observation and gravity is potentially very interesting."
 - `plans/grv-plan.md`, `runs/grv/`; `plans/fcl-plan.md`, `runs/fcl/` (runs 1 to 12, with 2b and 4b);
   `plans/discussion-note.md` item 24.
 - Essays 4 (`04-near-and-far.md`), 17 (`17-the-cauchy-map.md`), 23 (`23-one-share-and-the-shape-of-a-law.md`) and 30
-  (`30-reading-each-other.md`). *Reads and Writes* §7, "A write's own heat: the pull" and "Gravity on the stage".
+  (`30-reading-each-other.md`). *Reads and Writes* §7, "A write's own heat: the pull", "Gravity on the stage, in one account" and the record after it.
 - I. Newton, *Principia*, 1687, Book I, Propositions 70 and 71 (the shell). N. Maskelyne, "An account of observations
   made on the mountain Schehallien for finding its attraction", *Philosophical Transactions* 65, 1775. L. Euler, 1767,
   and J.-L. Lagrange, 1772, on the three-body balance points. A. Einstein, "Lens-like action of a star by the deviation
