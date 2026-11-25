@@ -1,0 +1,11 @@
+SET 2: f0 4.731896 GHz, Gamma(full) 67.54 kHz, Gamma_amp 65.09 kHz, Gamma_phase 69.85 kHz, rel +0.0731, sigma(diff) 3.86 kHz, |diff|/sigma 1.23, turn over f0 +- G/2 86.7 deg, points/Gamma 6.8
+R1 KILLED
+R4 set 2 not killed
+  return _methods._mean(a, axis=axis, dtype=dtype,
+  ret = ret.dtype.type(ret / rcount)
+SET 1: channels fitted 219 other 47 narrow, 0 failed
+R2: beyond 3 sigma + 2%: 0 of 219 (0.0%) -> not killed
+R3: chi2/dof median 2.08 (quartiles 0.46, 23.16) -> KILLED
+R4 set 1: median turn 81.0 deg (quartiles 45.8, 93.4) -> not killed
+set 1 Gamma_phase/Gamma_amp - 1: median +0.0000, quartiles +0.0000 +0.0000
+set 1 points per Gamma: median 5.8

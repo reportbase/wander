@@ -156,3 +156,16 @@ whether the response's size and its angle each, read alone, give one width.
 If R1 and R2 hold, the measured lines are single-pole responses whose width can be read from the phase alone, so R362's
 reading (the line is the phase's turn read per unit of frequency) is available for these two kinds of resonance. If they
 fail where R3 says the one-pole fit is adequate, the reading fails on data.
+
+### Run 3, results (`runs/phr/phr3.py`, output `phr-run3.txt`)
+
+- **R1 killed.** On set 2 Γ_amp 65.09 kHz and Γ_phase 69.85 kHz (the full fit's Γ 67.54 kHz): 7.3% apart, past the 5%
+  bound, though only 1.23σ (σ of the difference 3.86 kHz by the bootstrap). The line is 6.8 points wide; the 5% clause
+  was tighter than the data could test.
+- **R4 not killed on set 2:** the data's own turn across f₀ ± Γ_phase/2 is 86.7°.
+- **R3 killed.** Set 1's one-pole fit, χ²/dof with the recorded standard deviations, median 2.08 (quartiles 0.46,
+  23.2). Half the channels fit within their noise, a quarter far outside it.
+- **R2 and R4 on set 1 void, by my code.** Γ_phase/Γ_amp − 1 came out 0.0000 at the median and both quartiles. Checked
+  on one channel afterwards (jan16 n86, channel 1): the amplitude-only fit returned the full fit's Γ to the last digit.
+  With |z_c|² near 10⁻¹¹ the least-squares tolerances stop at the start, so on set 1 the two "separate" widths were the
+  same number and R2's "0 of 219" tests nothing. Set 2's values are of order 1 and did move (65.09 against 67.54).
