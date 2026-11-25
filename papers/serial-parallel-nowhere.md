@@ -7607,6 +7607,41 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1204** (25 Nov 2026; Tom: "Yes", to the finding of R1203 in the essays too): essay 17 §11 says it plainly ("It
+  changes how the Cauchy is read": the usual reading a law of amounts, found wrong in LIGO, CCA, Fieller, gravity's
+  kernel, Kepler's orbit and our own CAH; numbers right, reading wrong; the seeds the bound). **R1203's plain statement
+  of assessments extends to the essays**; R364 and R925 bind only text submitted for publication.
+- **R1203** (25 Nov 2026; Tom: "We have found repeatedly that cauchy is misunderstood."; then "This is an internal
+  document so we didn't need to be careful, just accurate, our assessments can can be modified later."): **the Cauchy is
+  repeatedly misunderstood**: read as a law of amounts, a heavy tail with a missing mean, where every test found the law
+  of directions a turn lays and the amount carried elsewhere (LGO, CCA, FLR, GRV/FCL, ORB, and our own CAH). The numbers
+  are right throughout; the reading is what is wrong; TCF bounds the claim (no turn, no Cauchy reading). *Reads and
+  Writes* §11 "The Cauchy is repeatedly misunderstood". **In the internal working documents (Reads and Writes, SPN, the
+  plans), state assessments accurately and plainly, without hedging for an outside reader; they are modified as the
+  evidence changes.** Narrows R364 and R925 to published text: calibration against other work's standing still waits for
+  publication, but an internal assessment is said as it stands.
+- **R1202** (25 Nov 2026; Tom: "Record your findings in the read write papers and essays for later confirmations."):
+  ORB runs 2–5 and the search of R1201 recorded for later confirmation, not claimed: *Reads and Writes* §7 item 8 now names
+  the classical pieces (β as Brouwer and Clemence's, not Laplace's; McCullagh's closure) and what one search did not find
+  (the stage as a wrapped Cauchy from −β, aberration's form with composition by velocity addition, stage × r/a), its
+  "in print unsearched" replaced. Essay 33 gains §13 "An orbit" (later sections 14–16), its Sources, README row and
+  `essays.html` card. No new claim.
+- **R1201** (25 Nov 2026; Tom: "Proceed", to the prior-work search offered after ORB runs 4–5):
+  `plans/orb-literature.md`, expectations X1–X6 committed before one search by a fresh agent. The map and β are classical
+  (Battin; Brouwer and Clemence p. 62); McCullagh 1996's closure makes the stage a wrapped Cauchy, but no source joining
+  them was found; aberration's form for the E → ν map not found (X4, which I expected found, was wrong; Lavenda's blog
+  names a likeness only); composition by velocity addition and the stage times r/a not found. Not found is not absent
+  (R925). No paper changed.
+- **R1200** (25 Nov 2026; Tom: "Proceed", to Claude's offer of where the orbit's stage stands): ORB runs 4–5
+  (`runs/orb/orb4.py`, `orb5.py`, exact, predictions first). The stage's standpoint is −β in the anomaly's disc, β the
+  half-slope of the angular eccentricity (e = sin φ, β = tan(φ/2)), k = (1 + β)/(1 − β); with e = tanh η the map E → ν is
+  a hyperbolic translation by η, the form of relativistic aberration with the speed e, two composing by velocity
+  addition; e/2 < β < e; the stage's far/near k² = r_max/r_min, the clock's k⁴. Run 4's Q1 killed by my code (sympy
+  left csc φ − cot φ − tan(φ/2) unreduced), run 5's Q1′ not. A shared form, not that an orbit is a boost; in print
+  unsearched. *Reads and Writes* §7 item 8 carries it.
+- **R1199** (25 Nov 2026; Tom: "Proceed"): ORB runs 2–3 in *Reads and Writes* §7 as the eighth item of "What the Cauchy
+  gives as ways to think about gravity": an orbit as a stage and a payload (the wrapped Cauchy of width β the heat, r/a
+  the paint, Kepler's equation their sum, the period where GM and a come in). No new claim.
 - **R1198** (25 Nov 2026; Tom: "We know cauchy very well now. Could we use it to calculate planetary orbits", then "We
   would have to create a payload that gives the same results", then "Yes"): ORB runs 2–3 (`runs/orb/orb2.py`, `orb3.py`,
   50 digits and sympy, predictions committed first). **A two-body orbit is a stage and a payload**: the eccentric anomaly

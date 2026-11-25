@@ -1694,7 +1694,7 @@ distinguishes the forms is what each needs, never a different number. What the s
 as gravity's, the weight a consequence of the inverse square. Here the weight is the stage's heat: the law of a
 standpoint's directions, the same for a look with no mass in it and for every arrangement of matter. What is gravity's
 is on the paint's side, the amount along each direction. The separation is of roles; a pull needs both, and no
-classical number changes. The separation runs one way only (R1197): the Cauchy form, a theorem for any pull falling as the inverse square (its potential harmonic, the Poisson kernel its weight), fixes the heat and says nothing about the paint, and different paints can give the same pull outright (a point mass and a uniform shell of the same mass pull alike everywhere outside the shell; matter rearranged inside a body without changing its outer field is not met outside), the classical non-uniqueness of the gravity inverse problem. So a density, a shape or a depth comes from elsewhere (run 11's line and ball curves not told apart). Each item below is a case of it. Seven so far, each from a run, each classical in
+classical number changes. The separation runs one way only (R1197): the Cauchy form, a theorem for any pull falling as the inverse square (its potential harmonic, the Poisson kernel its weight), fixes the heat and says nothing about the paint, and different paints can give the same pull outright (a point mass and a uniform shell of the same mass pull alike everywhere outside the shell; matter rearranged inside a body without changing its outer field is not met outside), the classical non-uniqueness of the gravity inverse problem. So a density, a shape or a depth comes from elsewhere (run 11's line and ball curves not told apart). Each item below is a case of it. Eight so far, each from a run, each classical in
 its mathematics, the details in the lists below:
 
 1. *Corners without an amount.* A pull through a plane has the look's corners (half within one height across a thumb,
@@ -1732,6 +1732,25 @@ its mathematics, the details in the lists below:
    of the matter and not a length of the place's, no exchange fits it (the best misses by 0.17), and scaling moves it.
    So the one is a ratio and the other an amount. And a pull's direction is a sum: two of them cross on a single mass,
    but on a pair of masses 2a apart they cross off the centre by 3(a/d)², where two looks at a thing cross on it.
+8. *An orbit as a stage and a payload.* A two-body orbit splits the same way (ORB runs 2–3, exact). Its stage:
+   taken evenly in the eccentric anomaly, the direction of the planet from the Sun has the wrapped Cauchy of width
+   β = (1 − √(1 − e²))/e, centred on the orbit's far point, set by the eccentricity alone, with no amount in it. Its
+   payload: the time spent per direction is that stage times r/a, the distance in the orbit's own size, exactly, and
+   nothing else does it once the stage is fixed (the clock divided by the stage). The payload averages 1 over the stage
+   and 1 + e²/2 over time. Summed over the stage it is Kepler's equation, M = E − e·sin E, so the one step that takes an
+   iteration, where the planet is at a given time, is the payload's sum inverted. The amounts come in only at the
+   period, 2π√(a³/GM), which has no e in it; scaling the orbit moves neither stage nor payload. The clock's own law
+   over directions, 1/(1 + e·cos ν)², is on no wrapped Cauchy (the nearest misses by 5%, 25% and 129% at e = 0.3,
+   0.6, 0.9). Where the stage stands (runs 4–5, exact): β is the half-slope of the angular eccentricity (e = sin φ,
+   β = tan(φ/2)), and with e = tanh η the map from E to ν is a hyperbolic translation by η, the form of relativistic
+   aberration with the speed e; two such maps compose by velocity addition, and the stage's far-over-near ratio is
+   r_max/r_min. A shared form, not a claim that an orbit is a boost. Classical in every part (the half-angle relation,
+   β as Brouwer and Clemence define it, the areal law, McCullagh's 1996 closure of the wrapped Cauchy under maps of the
+   circle); the sorting is the item. A prior-work search, its expectations committed first (`plans/orb-literature.md`,
+   one search at search-engine depth, few sources opened in full and the main texts not), found the map and β in the
+   textbooks and did not find the joins: the stage as a wrapped Cauchy from −β, the map as aberration's form with
+   composition by velocity addition, time per direction as the stage times r/a (the nearest, an unrefereed blog post
+   naming a likeness to aberration without the half-angle map). Recorded for later confirmation, not claimed (R925).
 
 None of this is new physics or a mechanism, and a pull is not a read (R1183). "New" is said of the way of thinking: the
 formulas are classical, and that an even spread from a point lands on a plane as the Cauchy is in print for light.
@@ -2633,6 +2652,20 @@ and the tower is 15 metres tall and 60 away: the one amount. **Checked** (`runs/
   finite: an order, a ratio, a corner, a composition by tangent addition.
 - **The acts move.** An observer reads while it stands and turns, places while it walks and counts, and has an amount
   when it agrees a unit.
+
+**The Cauchy is repeatedly misunderstood.** Each case below and each test that put the Cauchy to data found the same
+thing: the law is read as a law of amounts, a heavy-tailed distribution of some quantity whose missing mean is a
+pathology, when it is the law of directions a turn lays, the amount carried by something else. The cases: LIGO's heavy
+tail was a t and one transient, the Cauchy in the direction [H1 : L1] (below); canonical correlation's "shared variance"
+is the square of a cosine of an angle between two planes of data (CCA); Fieller's "exclusive" interval for a ratio is an
+arc of directions through the slope chart's infinity (FLR); the half-space's Poisson kernel is held as part of gravity's
+formula, where it is the stage, the same for a look, and gravity's part the paint (GRV, FCL; §7); the wrapped Cauchy sits
+in Kepler's dE/dν, set by the eccentricity alone, unread as a stage beside the payload r/a (ORB; §7 item 8); and the same
+reading misled our own earlier work, the turn's 2/π taken as the payload's (CAH). The classical numbers are right in every
+case; what is misunderstood is what the law is. The one case where no turn could be named (seed dispersal, below) bounds
+the claim, not the finding. This is an assessment in an internal working document, stated as plainly as the evidence
+allows, and is to be modified as the evidence changes (Tom, 25 November: "This is an internal document so we didn't
+need to be careful, just accurate, our assessments can can be modified later.").
 
 **LIGO.** In open data from the two LIGO detectors (Abbott et al. 2023; 512 s, about two million whitened samples each),
 each detector's signal taken alone is an amount, and its heavy tail is one loud transient on a law of finite spread: block

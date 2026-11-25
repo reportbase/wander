@@ -623,6 +623,23 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1204 (25 Nov; Tom: "Yes"): R1203's finding in essay 17 §11 too; plain assessments extend to the essays, R364 and R925
+  binding only text submitted for publication.
+  R1203 (25 Nov; Tom: "We have found repeatedly that cauchy is misunderstood."; "This is an internal document so we didn't
+  need to be careful, just accurate, our assessments can can be modified later."): **the Cauchy is repeatedly
+  misunderstood**, read as a law of amounts where every test found the turn's law of directions (LGO, CCA, FLR, GRV/FCL,
+  ORB, our own CAH); numbers right, reading wrong, TCF the bound. *Reads and Writes* §11. **In the internal working
+  documents (Reads and Writes, SPN, the plans), state assessments accurately and plainly, unhedged; they change with the
+  evidence.** R364 and R925 now bind published text only.
+  R1202 (25 Nov; Tom: "Record your findings in the read write papers and essays for later confirmations."): ORB and its
+  search in *Reads and Writes* §7 item 8 and essay 33 §13 "An orbit" (later sections 14–16), recorded for later
+  confirmation, not claimed; README row, `essays.html` card.
+  ORB literature (`plans/orb-literature.md`, 25 Nov; SPN R1201; Tom: "Proceed"): the map and β classical; the stage as a
+  wrapped Cauchy (McCullagh's closure), aberration's form, composition by velocity addition and stage × r/a not found in
+  one search; X4 (aberration expected in print) wrong. No paper changed.
+  ORB runs 4–5 (`runs/orb/orb4.py`, `orb5.py`, 25 Nov; SPN R1200; Tom: "Proceed"): the stage's standpoint −β, β = tan(φ/2)
+  with e = sin φ; with e = tanh η the anomaly map is a hyperbolic translation by η, aberration's form with speed e,
+  composing by velocity addition; stage far/near r_max/r_min. Q1 killed by my code, Q1′ not. R1199: ORB as §7 item 8.
   ORB runs 2–3 (`runs/orb/orb2.py`, `orb3.py`, 25 Nov; SPN R1198; Tom: "We would have to create a payload that gives the
   same results", "Yes"): a two-body orbit as a stage and a payload, exact: even eccentric anomaly gives the direction from
   the focus the wrapped Cauchy of width β centred on the far point; time per direction is that times r/a (the payload);

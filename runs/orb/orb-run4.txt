@@ -1,0 +1,8 @@
+Q1 beta - tan(phi/2) = -tan(phi/2) - 1/tan(phi) + 1/sin(phi) ; ((1+t)/(1-t))^2 - k^2 = 0
+Q2 e^(2eta) - (1+e)/(1-e) = 0 ; 2b/(1+b^2) - e = 0
+Q2 push-forward of uniform E against the Poisson kernel from -beta, worst 2.25e-49 ; 2 artanh(beta) = artanh(e) at all six
+Q3 composing two maps against velocity addition, worst 1.14e-50
+Q4 series of beta: e**5/16 + e**3/8 + e/2
+Q4 e/2 < beta < e at all six: True
+Q5 stage far/near - k^2 = 0 ; payload near/far - 1/k^2 = 0 ; clock far/near - k^4 = 0
+verdicts: Q1 KILLED, Q2 not killed, Q3 not killed, Q4 not killed, Q5 not killed
