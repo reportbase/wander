@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1227 (25 Nov; Tom: "I think this is more than sorting, it shows a different derivation path.", "yes"): CLM
+  (`plans/clm-plan.md` + `runs/clm/`, exact): "a direction's pull is its column" is equivalent to the inverse square; from
+  it, summing directions gives both shell theorems; the outside one alone admits the r law; C2's quadratures killed by my
+  numerics. The route is Newton's (Propositions 70, 71; the converse in Wikipedia), so known; the stage adds where it sits.
   R1226 (25 Nov; Tom: "Merge, and update the physics paper"): the gravity thread in `papers/physics.md` §2.1–§2.2 and
   *Reads and Writes in Physics* §6.4 "A pull on the same stage", the abstract, §1.5, Code and data; no new claim.
   R1225 (25 Nov; Tom: "update the essays and demos"): GDI, MVM, LDL, ACC and COS in essays 4 §13, 6 §12 and 7 §7,

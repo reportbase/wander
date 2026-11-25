@@ -7607,6 +7607,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1227** (25 Nov 2026; Tom: "I think this is more than sorting, it shows a different derivation path.", then "yes"):
+  CLM (`plans/clm-plan.md` + `runs/clm/`, exact), predictions first. The column premise, "a direction's pull depends
+  only on how much matter lies along it, not where", is equivalent to the inverse square (1/r^(D−1) in D dimensions);
+  from it alone, summing directions gives both shell theorems with no field equation solved (outside G·M/d²; inside
+  zero, a chord meeting a sphere at equal angles so each direction and its opposite carry equal columns); the outside
+  theorem alone admits the r law (A/r² + B·r), the inside one removes it. C2's two quadratures killed by my numerics
+  (an inverse square root at the edge direction; the sympy identity stands); the rest not killed. The search: the
+  converse is in Wikipedia's *Shell theorem*, the cone argument is Newton's Proposition 70 and Cavendish's, solid-angle
+  proofs of Proposition 71 are in print; the premise stated as a starting point not found, one line from what is. Claude's
+  plain assessment: the derivation path is real and is Newton's own; the stage adds where it sits (COS's cosine weight,
+  each direction weighed by its column).
 - **R1226** (25 Nov 2026; Tom: "Merge, and update the physics paper"): the gravity thread (GRV, FCL, GDI, MVM, LDL, ACC,
   COS, KPL) entered in `papers/physics.md` §2.1 and §2.2 (the record first) and carried into *Reads and Writes in Physics*
   §6.4 "A pull on the same stage" (§6 now "Light, and a pull on the same stage"), the abstract, §1.5 and Code and data.
