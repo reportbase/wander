@@ -1747,10 +1747,17 @@ its mathematics, the details in the lists below:
    r_max/r_min. A shared form, not a claim that an orbit is a boost. Classical in every part (the half-angle relation,
    β as Brouwer and Clemence define it, the areal law, McCullagh's 1996 closure of the wrapped Cauchy under maps of the
    circle); the sorting is the item. A prior-work search, its expectations committed first (`plans/orb-literature.md`,
-   one search at search-engine depth, few sources opened in full and the main texts not), found the map and β in the
-   textbooks and did not find the joins: the stage as a wrapped Cauchy from −β, the map as aberration's form with
-   composition by velocity addition, time per direction as the stage times r/a (the nearest, an unrefereed blog post
-   naming a likeness to aberration without the half-angle map). Recorded for later confirmation, not claimed (R925).
+   two searches; Gauss's *Theoria Motus* opened, Brouwer and Clemence not) found the map in Gauss's own form (Book I,
+   Art. 8, tan ½E = tan ½v·tan(45° − ½φ)) and β in the textbooks. The likeness to aberration is in print: an
+   unrefereed paper, "Gudermannian – Kepler Equations of Planetary Motion" (academia.edu/3832741, author and date
+   unknown, its abstract seen, its text not), writes the anomaly relation as a Lorentz transformation "similar to light
+   aberration equations". Not found: the composition by velocity addition, the stage as a wrapped Cauchy from −β, time
+   per direction as the stage times r/a. Recorded for later confirmation, not claimed. Past the ellipse (runs 6–8,
+   exact): on the parabola the directions from the focus, taken evenly, land across the axis as the Cauchy of scale p,
+   y = p·tan(ν/2), the lighthouse at half the rate, and the clock over y is that density inverted (Barker's equation
+   its sum); on the hyperbola the even directions give tan(ν/2) the Cauchy cut at the asymptote's half-slope; the
+   payload r/a holds on every conic (dM = (r/a)·dF); and the ellipse of eccentricity e and the hyperbola of 1/e share
+   k exactly (tanh η and coth η), their maps differing by tan ↔ tanh, the parabola the exchange's fixed point.
 
 None of this is new physics or a mechanism, and a pull is not a read (R1183). "New" is said of the way of thinking: the
 formulas are classical, and that an even spread from a point lands on a plane as the Cauchy is in print for light.
@@ -2663,7 +2670,11 @@ formula, where it is the stage, the same for a look, and gravity's part the pain
 in Kepler's dE/dν, set by the eccentricity alone, unread as a stage beside the payload r/a (ORB; §7 item 8); and the same
 reading misled our own earlier work, the turn's 2/π taken as the payload's (CAH). The classical numbers are right in every
 case; what is misunderstood is what the law is. The one case where no turn could be named (seed dispersal, below) bounds
-the claim, not the finding. This is an assessment in an internal working document, stated as plainly as the evidence
+the claim, not the finding. Tested since on 30 cases not looked at before (CMU, predictions
+first, a blind classifier): 17 were a turn or a pole off the line (15 resonances and line shapes, read as a phase
+turning and fading, R362), 4 stable sums, 1 a mixture of amounts, and 7 the Cauchy chosen by a designer for its tail
+(sketches, hashing, annealing, proposals), where nothing produces it and the finding does not apply; in none of the 30
+did the standard account name the angle or phase the law belongs to. This is an assessment in an internal working document, stated as plainly as the evidence
 allows, and is to be modified as the evidence changes (Tom, 25 November: "This is an internal document so we didn't
 need to be careful, just accurate, our assessments can can be modified later.").
 

@@ -334,7 +334,10 @@ directions through infinity. The half-space's Poisson kernel, held as part of gr
 shares with a look (essay 33). The wrapped Cauchy has sat in Kepler's equations for two centuries, set by the
 eccentricity alone and never read as a map beside the orbit's time (essay 33, §13). And the series made the same mistake
 itself once, reading the turn's 2/π as the payload's. In every case the classical numbers are right; what is wrong is
-what the law is taken to be. The seeds above bound the finding: where no turn can be named, there is no map to read.
+what the law is taken to be. The seeds above bound the finding: where no turn can be named, there is no map to read. Put
+to thirty cases not looked at before, sorted blind: seventeen were a turn or a resonance, four stable sums, one a
+mixture, and seven the Cauchy picked by a designer for its tail, where nothing makes it and the finding has nothing to
+say; and in none of the thirty did the usual account name the angle or the phase the law is about (CMU).
 (*Reads and Writes* §11, "The Cauchy is repeatedly misunderstood"; an assessment, to be revised as the evidence changes.)
 
 It changes what to expect of an average. The map's middle is a median, and the median is the statistic that survives

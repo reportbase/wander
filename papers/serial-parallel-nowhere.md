@@ -7607,6 +7607,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1205** (25 Nov 2026; Tom: "1 2 3"): three things, predictions committed first. (1) The second orbit search
+  (`plans/orb-literature.md`): the map is Gauss's (*Theoria Motus*, Book I, Art. 8, formula VII, opened); the likeness of
+  the E → ν map to aberration is in print (academia.edu/3832741, an unrefereed paper writing it as a Lorentz
+  transformation, abstract only), so R1201's "not found" for it is withdrawn; composition by velocity addition, the
+  stage from −β and stage × r/a still not found. (2) CMU (`plans/cmu-plan.md`): 30 new Cauchy cases, blind: T 2, P 15,
+  S 4, M 1, C 7 (a designer's choice), O 1; account A 30, D 0; C1–C4 not killed; the P cases count as turns only by R362,
+  and the C cases fall outside R1203. (3) ORB runs 6–8 (exact): the parabola's lighthouse (y = p·tan(ν/2) Cauchy of
+  scale p, its clock that density inverted, Barker's equation the sum), the hyperbola's Cauchy cut at the asymptotes,
+  the payload r/a on every conic, the ellipse e and the hyperbola 1/e sharing k (the exchange, the parabola its fixed
+  point); run 6's R1, R3 killed by my code, run 7's R3′ by my set-up, run 8's R3″ not. Carried into *Reads and Writes*
+  §7 item 8 and §11, essays 17 §11 and 33 §13.
 - **R1204** (25 Nov 2026; Tom: "Yes", to the finding of R1203 in the essays too): essay 17 §11 says it plainly ("It
   changes how the Cauchy is read": the usual reading a law of amounts, found wrong in LIGO, CCA, Fieller, gravity's
   kernel, Kepler's orbit and our own CAH; numbers right, reading wrong; the seeds the bound). **R1203's plain statement
