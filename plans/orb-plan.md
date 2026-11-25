@@ -64,3 +64,38 @@ angle; the time to reach a point is Kepler's, with no small relation, and its in
 as in RIC, the steps are the read's, the clock and the decay the completion. Classical (the oscillator's matrix
 exponential, the conic in the half-angle, Kepler 1609, Newton's method; Newton's *Principia* Book I, Lemma XXVIII, no oval's cut-off area given by a finite
 equation, the classical statement of the orbit's split, read in Bruce's translation after the run); the sorting ours.
+
+## Run 2: the orbit as a stage and a payload (predictions committed before the run)
+
+Tom (25 Nov 2026): "We know cauchy very well now. Could we use it to calculate planetary orbits", then, of the timing
+the Cauchy does not give, "We would have to create a payload that gives the same results", then "Yes". Claude's check
+before this plan (a 2 million draw sample at e = 0.6 and a float identity, not counted as the run): taking the eccentric
+anomaly E evenly gives the true anomaly ν a wrapped Cauchy; the time spent per direction over that stage is r/a. The
+run states and checks it exactly, at 50 digits (mpmath) and in sympy where it is an identity.
+
+Set-up: a two-body orbit of eccentricity e (0 < e < 1), semi-major axis a, GM; ν the direction from the focus, E the
+eccentric anomaly, tan(ν/2) = k·tan(E/2), k = √((1+e)/(1−e)); r = a(1−e²)/(1 + e cos ν); β = (1 − √(1−e²))/e.
+Eccentricities e in {0.01, 0.1, 0.3, 0.6, 0.9, 0.99}.
+
+- **P1 (the stage).** E uniform on the turn carries ν to the wrapped Cauchy with ρ = β centred at ν = π (the far
+  point): density (1 − β²)/(2π(1 + β² + 2β cos ν)), equal to √(1−e²)/(2π(1 + e cos ν)) as an identity in sympy, and
+  the two agree to 10⁻⁴⁵ at 200 values of ν for every e.
+- **P2 (the payload).** The clock, time per direction from the areal law dt/dν = r²/h with h = √(GM·a(1−e²)), divided
+  by the stage and by the period, is r/a exactly: an identity in sympy, and to 10⁻⁴⁵ at 200 values of ν, every e.
+- **P3 (its mean).** The payload's mean over the stage is 1 (⟨r⟩ over E is a), to 10⁻⁴⁵, every e; its mean over the
+  clock is 1 + e²/2 (the time-averaged distance a(1 + e²/2)), to 10⁻⁴⁵, every e. The two differ, so the payload is not
+  "the time" but what the stage is weighted by.
+- **P4 (Kepler's third law).** The period, the clock integrated over the whole turn, is 2π√(a³/GM) to 10⁻⁴⁵ for every e
+  and for a in {1, 7, 10³}, GM in {1, 3}: no e enters.
+- **P5 (scale).** Scaling a by k = 10³ at fixed GM leaves the stage and the payload r/a unchanged at every ν (to
+  10⁻⁴⁵) and multiplies the period by k^(3/2) exactly; the stage needs no amount, the period needs GM and a.
+- **P6 (the clock is not on the stage's family).** No wrapped Cauchy equals the clock's law over ν: for e = 0.3, 0.6,
+  0.9 the best wrapped Cauchy (ρ and centre chosen to minimise the largest relative difference over 2,000 values of ν)
+  still misses by at least 1% somewhere.
+- **P7 (Kepler's equation is the payload added up).** Integrating the payload over the stage from the near point,
+  ∫₀^E (r/a) dE′ = E − e sin E = M, as an identity in sympy; inverting it needs an iteration (ORB run 1's K4), not
+  restated here.
+
+What could fail: P1, P2, P4, P5, P7 are identities and fail only by my code or my algebra (a sign of the centre, a
+factor of the period); P3's second clause is a known result recalled from memory and can fail by my recollection; P6
+can fail by its 1% (a fitted wrapped Cauchy may come closer than I expect at e = 0.3).
