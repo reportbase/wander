@@ -1,0 +1,5 @@
+N=8: node 6.6e-16  PoU 4.2e-15  two reps 1.5e-14  slope/angle 6.7e-13  trig calls 0  ok
+N=16: node 7.0e-16  PoU 7.8e-15  two reps 2.0e-14  slope/angle 6.7e-13  trig calls 0  ok
+N=32: node 3.1e-15  PoU 1.5e-14  two reps 5.4e-14  slope/angle 6.7e-13  trig calls 0  ok
+N=64: node 7.5e-15  PoU 3.0e-14  two reps 8.5e-14  slope/angle 7.0e-13  trig calls 0  ok
+P1' not killed

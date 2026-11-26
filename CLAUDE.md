@@ -623,6 +623,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1248 (26 Nov; Tom: "Proceed"): TBH in essay 34 §8 "On the read's hemisphere", README row, `essays.html` card. No new claim.
+  R1247 (26 Nov; Tom: "Proceed"): TBH and the Tangent Bridge's own sorting (Appendix A's halves, the energy face, the
+  K-window) in *Reads and Writes* §9 "The bridge sorts its own field, and the read's hemisphere" and §1's table. No new claim.
+  TBH (`plans/tbh-plan.md` + `runs/tbh/`, 26 Nov; SPN R1246; Tom: "lean on it more to prove the points on our read write
+  paper", "Yes"): the Tangent Bridge on the read's hemisphere, line by line through the look (period π) × the azimuth: the
+  read's shares exact, zero trig calls; the horizon's antipodes glued, the signed components held only with the back
+  hemisphere (the DHV's); the grid finest at the look, the heat's even measure not its grid (Λ 6.4·10⁷ substituted,
+  a cusp conjugated). Run 1's P1 killed by my code (horizon unaddressed), P4, P7 by my bound and "exactly"; run 2 not.
   R1245 (26 Nov; Tom: "yes, read them through and write a smaller essay that summarizes the results"): essay 34,
   `papers/essays/34-the-tangent-bridge-in-brief.md`, *The Tangent Bridge, in brief* (a dot-to-dot puzzle): draw's four
   Tangent Bridge papers summarized, nothing rerun; classical, the papers' own, and where the series reads them differently.

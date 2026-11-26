@@ -4,7 +4,7 @@
 of the draw project's four Tangent Bridge papers, read through on that day: *The Tangent Bridge Theorem* in its algebraic
 presentation (`tb_algebra.md`, which carries forward everything of the earlier `tb_classical.md`), *The Tangent Bridge in
 the Spectral Court* (§§17–22) and its preliminary §23 on the aperture. Every number below is the papers'; nothing was
-rerun here. Essay 10 took up the same papers from the side of an array; this one gathers their results in one place and
+rerun here, except §8, the series' own test of the bridge on the read's hemisphere (TBH). Essay 10 took up the same papers from the side of an array; this one gathers their results in one place and
 says which are classical, which are the papers' own, and where the papers' wording goes further than this series' rulings.*
 
 A dot-to-dot puzzle is a page of numbered dots. A child joins them in order and a picture appears. Where the dots are,
@@ -235,7 +235,36 @@ tilt grid is not the uniform measure on directions: on one octant v ≤ h holds 
 
 ---
 
-## 8. What the constraints rebuild
+## 8. On the read's hemisphere (TBH)
+
+The papers' sphere is read by pan and tilt about a pole on the horizon. The read in *Reads and Writes* is the hemisphere
+in front of the look, so on 26 November this series laid the bridge there itself (TBH, `plans/tbh-plan.md`, predictions
+committed before the script). Each line through the look is one ordinary read of period π, its slope the reading off the
+look, r = tan α; these lines are combined with the azimuth round the look. The places come from halving and tangent
+addition, the kernels are rational in the composed slopes, and the trigonometric-call count stays at zero.
+
+- **The read's own content is held exactly.** The shares h², v², hv and v·v₂ come back to 10⁻¹⁴ from 8 × 4 places up,
+  and a smooth function to 10⁻¹² by N = 64.
+- **The horizon is glued.** Period π makes a line's two ends one point, so opposite directions on the rim are one place's
+  business. The signed components v and v₂, which differ there, ring at the rim at every N; h, whose sign the front never
+  changes, only kinks, its error falling as 1/N.
+- **The back hemisphere holds what the front cannot.** With the turn off the look given period 2π and the content carried
+  round the back by its own formula, h, v and v₂ are exact to 10⁻¹⁴. That is the DHV's two hemispheres, and the choice of
+  how to carry the content round the back is the DHV's too.
+- **The places are finest at the look.** Half of them lie within one thumb of the look, where the heat puts 29%, and the
+  places per unit of heat at the look double with each doubling of N. Moving the bridge onto the heat's even measure costs:
+  with the native kernel the Lebesgue constant reaches 6.4·10⁷ at 32 places; with the coordinate changed instead it stays
+  2.73, but a cusp appears at the look and hv converges only as N^(−0.52), where the meridian bridge held it exactly.
+
+Three predictions were killed, all by me: P1 by my code (the horizon left without its address, the very case the papers'
+§11.2 names; a second run with it guarded agrees to 10⁻¹³), P4 and P7 in their letters (a bound on the core too tight, and
+an "exactly ⅔" that is only a limit). The parts are classical (the tensor bridge; the full meridian's double cover, the
+"double Fourier sphere" of Merilees 1973 and Orszag 1974); the sorting is the series'. So the read alone holds ratios and
+shares exactly and does best where it looks, and a sign at the rim takes both hemispheres.
+
+---
+
+## 9. What the constraints rebuild
 
 The algebraic paper's Appendix A runs the arrow backward, asking which classical theorems follow from the operation's own
 means: the round trip, order, the halving and squaring. The constructive half does.
@@ -257,7 +286,7 @@ kernels' far tails, where every proof found uses the conjugate function.
 
 ---
 
-## 9. What it comes to
+## 10. What it comes to
 
 **What is classical.** Trigonometric interpolation at equispaced nodes, the Lebesgue constant, Jackson, Erdős's and
 Lozinski's floors, Faber's divergence, Fejér's cure, Chebyshev nodes, de Moivre, aliasing, Parseval, the Shannon
@@ -307,5 +336,8 @@ The series' rulings cited: R438 (2/π as a ratio of sums over the turn), R887 (r
 R909 (π the DHV's), R1062 (the sorting of mathematics by what each form needs), R1239 (the DHV a synthesis). Essay 10,
 *Arrays and the circle*, takes up the same papers from the array; essay 4 has K and N; AZM (`plans/azm-plan.md`) the
 pan × tilt numbers.
+
+TBH: `plans/tbh-plan.md`, `runs/tbh/` (runs 1–2). *Reads and Writes* §9, "The bridge sorts its own field, and the
+read's hemisphere" (R1247).
 
 *Demo: `array-sweeps.html` (K places on the quarter turn, the index alone and the values on it).*
