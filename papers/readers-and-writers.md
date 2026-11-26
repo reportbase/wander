@@ -3038,7 +3038,12 @@ before the data can show where it is not. **Checked** (TCF; killed).
   first, since two of its steps are no single step once the speed is dropped. Two of the four carry the physics: that what
   no read can hold makes no difference to what is read (the light postulate stated for reads), and that an extent is a
   finite list of numbers. Neither is shown to follow from reading, and §0's construction does not supply them: all of
-  GEN can be granted and SRB's premises still refused (R1243). A reconstruction, not an explanation.
+  GEN can be granted and SRB's premises still refused (R1243). A reconstruction, not an explanation. The sky of space is a
+  surface, so the classification used is the one on a surface: of its eight primitive algebras only so(3), so(3, 1) and
+  sl(3, ℝ) hold the turns, the motion leaves so(3, 1), six numbers. In the plane the directions are a circle and Lie's list
+  for one variable applies (translations, the affine maps, the projective group): the turns, fixing no point, leave out the
+  affine maps; a motion that is not a turn leaves out the one-parameter group; what is left is PSL(2, ℝ), three numbers, the
+  plane's Lorentz group. Either way the classification is local (R1244).
 - **O9. The Doppler factor, and relations between standpoints.** Three things are to be kept apart. The read is the
   direction of arrival from a standpoint, its state of motion included. The relation between two standpoints, their
   relative motion among it, is described by the rapidity (§4). The ratio of the frequencies received at the two is a

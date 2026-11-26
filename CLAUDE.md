@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1244 (26 Nov; a note on Lie's one-variable classification pasted by Tom, then "Ok"): *Reads and Writes* §12 O8 says
+  the sky of space is a surface (of the eight primitive algebras so(3), so(3, 1), sl(3, ℝ) hold the turns; the motion leaves
+  so(3, 1), six numbers) and the plane's circle takes Lie's one-variable list (the turns leave out affine, a non-turn motion
+  the one-parameter group, PSL(2, ℝ) left, three numbers); local. The note's 3 parameters for space not taken.
   R1243 (26 Nov; a pressure test of §12's open items pasted by Tom, then "yes, if you agree, then merge"): taken where
   Claude agrees (R863). O4: a cross ratio an invariant of maps, not a fourth joining; the partition not taken (R826). O6:
   a pass needs the turn named from the apparatus first and the Cauchy in the direction, not the channels' amounts. O8:
