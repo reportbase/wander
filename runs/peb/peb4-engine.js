@@ -52,7 +52,7 @@
     function simulateEvent(B0, dir, power, w, vy) {
         const B = B0.map(b => ({ y: 0, vy: 0, wx: 0, wy: 0, wz: 0, ...b })), cue = B.find(b => b.cue && !b.sunk);
         cue.vx = power * dir[0]; cue.vz = power * dir[1]; [cue.wx, cue.wy, cue.wz] = w || [0, 0, 0]; cue.vy = vy || 0;
-        const ev = [], contacts = [], cushions = [], sunk = []; let t = 0, offCloth = cue.vy > 0, events = 0;
+        const ev = [], contacts = [], cushions = [], sunk = [], phases = []; let t = 0, offCloth = cue.vy > 0, events = 0;
         while (!offCloth && events < 200000) {
             const M = B.map(motionOf);
             let Tm = Infinity; for (const m of M) Tm = Math.min(Tm, m.T);
@@ -97,7 +97,7 @@
             const phaseEnd = found.length === 0;
             B.forEach((b, i) => advance(b, M[i], dt, phaseEnd && Math.abs(M[i].T - dt) <= 1e-15 * Math.max(1, dt)));
             t += dt; events++;
-            if (phaseEnd) continue;
+            if (phaseEnd) { B.forEach((b, i) => { if (Math.abs(M[i].T - dt) <= 1e-15 * Math.max(1, dt)) phases.push({ t, n: b.n, ph: M[i].ph }); }); continue; }
             // pockets first, then ball contacts together, then cushions
             for (const e of found.filter(e => e.k === 'pock')) { const b = B[e.i]; if (b.sunk) continue; b.sunk = true; b.vx = b.vz = b.wx = b.wy = b.wz = 0; sunk.push({ n: b.n, pocket: e.p, t }); ev.push({ key: 'P' + b.n + '@' + e.p, g: 1 }); }
             const balls = found.filter(e => e.k === 'ball' && !B[e.i].sunk && !B[e.j].sunk);
@@ -119,5 +119,5 @@
             }
             if (B.some(b => !b.sunk && (b.y > 0 || b.vy > 0))) offCloth = true;
         }
-        return { contacts, cushions, sunk, ev, final: B, offCloth, events, t };
+        return { contacts, cushions, sunk, ev, phases, final: B, offCloth, events, t };
     }
