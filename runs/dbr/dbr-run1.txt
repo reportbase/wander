@@ -1,0 +1,30 @@
+D1: exact at its own leaves (K = 16, rho = 4)
+  c = 1e+01: at the leaves 6.9e-15
+  c = 1e+03: at the leaves 2.9e-15
+  c = 1e+06: at the leaves 8.9e-15
+  c = 1e+09: at the leaves 2.8e-15
+  c = 1e+12: at the leaves 3.6e-15
+D1 not killed
+D2, D3, D4: ratio content, K = 24, rho = 4
+  c = 1e+01: sup error 1.20e-03  terms per read 24  leaf values 24  trig calls 0
+  c = 1e+03: sup error 1.23e-03  terms per read 24  leaf values 24  trig calls 0
+  c = 1e+06: sup error 1.22e-03  terms per read 24  leaf values 24  trig calls 0
+  c = 1e+09: sup error 1.18e-03  terms per read 24  leaf values 24  trig calls 0
+  c = 1e+12: sup error 1.14e-03  terms per read 24  leaf values 24  trig calls 0
+D2 KILLED  (largest / smallest 1.08)
+D3, D4 not killed
+D5: the whole list on the turn (z = (x - H)/(x + H), N leaves)
+  N = 256: sup error on [H/4, 4H] 2.83e-03; on [1e3 H, 1e4 H] 2.843
+  N needed for 1e-3 on [H/4, X]: X = 16 H: 1024; X = 256 H: 1536
+D5 KILLED
+D6: size content g = cos(x/H)
+  L2 (ratios), K = 24, rho = 4: c = 10: 1.32e+00; c = 1e3: 2.203
+  L3 (records), K = 24, w = 4H: c = 1e+01: 1.7e-15  c = 1e+03: 1.3e-13  c = 1e+06: 9.8e-11  c = 1e+09: 1.1e-07  c = 1e+12: 1.1e-04
+  L3 holds 1e-6 out to c = 1e+09
+D6 KILLED
+D7: the window is a whole bridge
+  K = 16: Lebesgue 2.7278  (2/pi)(ln K + gamma + ln(8/pi)) = 2.7276  +0.0%
+  K = 32: Lebesgue 3.1689  (2/pi)(ln K + gamma + ln(8/pi)) = 3.1689  +0.0%
+  K = 64: Lebesgue 3.6102  (2/pi)(ln K + gamma + ln(8/pi)) = 3.6102  +0.0%
+  K = 12 errors ['9.3e-01', '1.4e+00', '1.2e+00', '1.3e+00', '1.4e+00']  ratio to K = 24: ['772', '1095', '1014', '1090', '1207']
+D7 not killed
