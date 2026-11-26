@@ -1,0 +1,14 @@
+F1': the toy floor, integral piece by piece
+  n=2: equally spaced 8.000000000000011
+  n=4: equally spaced 8.000000000000009
+  n=8: equally spaced 8.000000000000012
+  n=16: equally spaced 8.000000000000009
+  n=4: 20 minimizations end at least 8.000000000000, most 8.000000
+  n=8: 20 minimizations end at least 8.000000000000, most 8.088422
+F1' not killed
+F2': the sinusoid's factors with no angle
+  n=2: integral 4.000000000000000  sum 1/|P'| 2.000000000000000  product 8.000000000000000  trig calls 0
+  n=4: integral 4.000000000000000  sum 1/|P'| 2.000000000000000  product 8.000000000000000  trig calls 0
+  n=8: integral 4.000000000000000  sum 1/|P'| 2.000000000000000  product 8.000000000000000  trig calls 0
+  n=16: integral 4.000000000000000  sum 1/|P'| 2.000000000000000  product 8.000000000000000  trig calls 0
+F2' not killed

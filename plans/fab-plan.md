@@ -83,8 +83,8 @@ carries no floor.
   at no less than 1.880081351 and 2.137734981.
 - **F4 not killed.** Means 2.68125 … 4.36059 for N = 65 … 4097; slope 0.40528 against 4/π² = 0.40528 (−0.00%).
 - **F5 killed, by my bound.** The turned read equals the average's integrand to 3.2·10⁻¹⁴ (the identity). The share of
-  turns with λ(0) < 1.1 at equal spacing was 0.043, 0.028 and 0.034 at N = 9, 33, 17 … in order 0.043, 0.034, 0.028
-  at N = 9, 17, 33: positive, but under my 10% and falling with N.
+  turns with λ(0) < 1.1 at equal spacing was 0.043, 0.034 and 0.028 at N = 9, 17, 33: positive, but under my 10% and
+  falling with N.
 
 ### Run 2, predicted before it ran
 
@@ -94,3 +94,32 @@ and the halving count corrected. Nothing else changed.
 - **F1′.** Equally spaced roots give 8 to ≤ 10⁻¹² at n = 2, 4, 8, 16; 20 minimizations per n (n = 4, 8), each finished
   on the piecewise integral, end at ≥ 8 − 10⁻⁹.
 - **F2′.** For sin(nx), n = 2, 4, 8, 16: ∫|P| = 4 and Σ 1/|P′| = 2 to ≤ 10⁻¹², product 8, zero trigonometric calls.
+
+### Run 2 (26 November 2026; `runs/fab/fab2.py`, output `runs/fab/fab-run2.txt`)
+
+- **F1′ not killed.** Equally spaced roots give 8.000000000000011, …009, …012, …009 at n = 2, 4, 8, 16; the 20
+  minimizations per n end at no less than 8.000000000000 (n = 4 and n = 8; one n = 8 start stopped at 8.088).
+- **F2′ not killed.** ∫|P| = 4.000000000000000, Σ 1/|P′| = 2.000000000000000, product 8.000000000000000 at every n,
+  zero trigonometric calls.
+
+### Standing after runs 1–2
+
+Not killed: F1′, F2′, F3, F4. Killed: F1 in one clause (my quadrature), F2 (my code), F5 (my 10%; the identity held and
+the share was positive, 4.3% falling to 2.8%).
+
+What the runs show, in the plan's reading (to rule on):
+- **The open floor is closed, by the DHV's tools.** Tao (2026) proves the floor on the interval for any nodes with the
+  sharp constant, by an L¹ duality resting on the square wave's Fourier series and by residues round closed contours.
+  Both complete the circle: the floor over every set of places is a quantifier over objects no read constructs, and its
+  proof is the completed turn's. Whether order and counting alone reach it stays open.
+- **The toy's constant is the read's, its π the mean's.** The sharp 8 is the product 4 × 2 of two rational factors,
+  computed with no angle; π enters only when the integral is made a mean over the turn, the 8 becoming 8/(2π) = 4/π
+  per unit of turn. The same placing as TB §7.5's 2/π.
+- **On the circle, evenly spaced places are the least average** in every minimization tried (N = 9, 17), and that
+  average climbs at (4/π²)·ln N exactly: the interval's sharp constant, the circle's even places meeting it.
+- **The rotation gives no floor by itself.** Averaging over places and averaging one read over turns of the places are one
+  average (to 10⁻¹⁴), and some turns read λ near 1 at every N, a share falling slowly with N: a floor needs the whole
+  average, which is the global act the proof performs.
+- **The residue theorem is the read's kernel, completed.** The Cauchy's density is the imaginary part of 1/(x − z); the
+  residue theorem integrates such a kernel round a whole closed loop. The read uses the kernel in one facing; the proof of
+  the floor uses it round the circle.

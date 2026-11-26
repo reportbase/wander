@@ -7607,6 +7607,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1249** (26 Nov 2026; Tom: "Proceed with B", then, of the calendar dials, "Yes, attach it and write the plan"): FAB
+  (`plans/fab-plan.md` + `runs/fab/`), the Tangent Bridge's open floor (`tb_algebra.md` A.6). Known beforehand from a
+  search: Tao (2026, arXiv:2603.21453) proves ∫_I λ ≥ (4|I|/π²)·log n − o(log n) for any nodes on [−1, 1], by an L¹
+  duality on the square wave's Fourier series and residues round closed contours: the floor closed, by the completed
+  turn's tools. Runs: the trigonometric toy's sharp 8 met by the sinusoid and by every minimization, its two factors 4 and
+  2 computed with no angle (π only in the mean, 4/π); on the circle evenly spaced places the least average (N = 9, 17),
+  that average climbing at (4/π²)·ln N exactly; the rotation alone no floor. F1 killed in a clause by my quadrature, F2
+  by my code, F5 by my 10%; run 2 not. And DBR (`plans/dbr-plan.md`, written, not run): a Tangent Bridge behind the
+  calendar's dial over a list without end (`reportbase/calendar` `dial.js`, `horizon.html`), laid three ways (the whole
+  list on the turn; a window in ratios, y = (x − c)/(x + c); a window in records), ratio content against size content.
 - **R1248** (26 Nov 2026; Tom: "Proceed"): TBH in essay 34 §8 "On the read's hemisphere" (later sections renumbered 9–10),
   its README row and `essays.html` card. No new claim.
 - **R1247** (26 Nov 2026; Tom: "Proceed"): TBH and the Tangent Bridge's own sorting carried into *Reads and Writes* §9,
