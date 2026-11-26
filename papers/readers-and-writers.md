@@ -2404,6 +2404,21 @@ combined, is also the line between what one hemisphere holds and what needs the 
 N^(−a) found after the run); the parity and the projective plane classical, the sorting a reading. `dial-bridge.html`
 shows the dial's window.
 
+**Measured content behind the dial.** The bridge's own properties are theorems and no data can contradict them; what
+data can contradict is the claim about content, that a list with no size of its own is held in ratios at the same cost
+wherever it is read, and a list with a size only in its own units (MSR). Two measured lists. Word frequency by rank in
+WikiText-103 (101 million words, 623,941 distinct), believed to have no size (Zipf's law): from rank about 300 to rank
+30,000 a window in ratios holds it with 6 leaves at every centre, and cutting the corpus to a quarter, every count a
+quarter, changes nothing there, so the amount does not enter; but its head is not ratio content, the commonest thirty to
+a hundred words needing 32 and 16 leaves, each a particular word with its own count. The tide at San Francisco over 2025,
+with a period of 12.42 hours, a size: at twice its own scatter, a window of 96 hours needs the same 48 leaves wherever
+along the year it is put, while a window in ratios needs 64 at one day out and more than 128 from four days on. So on
+measured content the sorting held where it applies and said no where a list believed to be scale-free is not: a list
+with a size is held at a fixed cost only in its own units, a list with no size of its own at a fixed cost in ratios, and
+the head of Zipf's law is not the second kind. **Data** (`plans/msr-plan.md`, predictions before the data was fetched;
+the word list's Z1 killed, the measured result; the tide's first two runs killed by my tolerance, set below the data's
+own scatter, before a third fixed it from that scatter in advance); the sorting a reading.
+
 **Two 1's.** On the axes the three ways to measure a direction of the square agree: the largest component (the cube's),
 the sum h + v (the diamond's) and the length √(h² + v²) (the circle's) all give 1. At the corner they part: 1, 2 and √2.
 A 1 needs a measure; the turn picks the round one, and √2 is the geometric mean of the other two (Hölder:
