@@ -74,3 +74,61 @@ the K-circle, not a window cut from an N one.
 
 ## Runs
 
+### Run 1 (26 November 2026; `runs/dbr/dbr.py`, output `runs/dbr/dbr-run1.txt`)
+
+Two fixes to the script before its numbers counted, said here. K = 24 needs a lattice of 48 = 3·16 leaves, which halving
+reaches only from Gauss's seed tan(π/6) = 1/√3 (TB §11.1), so the lattice takes that seed. And D5's scan for the N
+that L1 needs tried counts halving cannot reach (10, 12, …) and stopped; it now tries only 2^m and 3·2^m. The first
+attempt had printed D1–D4 and D5's first clause, the same numbers as below.
+
+- **D1 not killed.** At its own leaves L2 is exact to 2.8·10⁻¹⁵ … 8.9·10⁻¹⁵ at c = 10 to 10¹² thumbs.
+- **D2 killed, by my bound.** At K = 24, ρ = 4 the sup error on f is 1.20·10⁻³, 1.23·10⁻³, 1.22·10⁻³, 1.18·10⁻³,
+  1.14·10⁻³ at c = 10, 10³, 10⁶, 10⁹, 10¹² thumbs: the same everywhere (largest over smallest 1.08), but 10⁻³, not
+  ≤ 10⁻⁶. I underestimated what four doublings of f's 1.7 cycles a doubling ask of 24 leaves.
+- **D3, D4 not killed.** 24 kernel terms and 24 leaf values a read at every centre; zero trigonometric calls.
+- **D5 killed.** L1 at N = 256 errs 2.8·10⁻³ on [H/4, 4H] (not below 10⁻³) and 2.84 on [10³H, 10⁴H] (above 0.3, as
+  predicted). The N it needs for 10⁻³ on [H/4, X] is 1024 at X = 16H and 1536 at X = 256H: ×1.5, not ×5. The whole
+  list on one turn holds f poorly everywhere, its error set by f's endless oscillation at both ends (toward home and
+  toward the horizon), not by how far the reading reaches. My mechanism was wrong.
+- **D6 killed.** L2 on g: 1.32 at c = 10 (not ≤ 10⁻⁶) and 2.20 at c = 10³: a ratio window cannot hold content with a
+  size even at ten thumbs (its window spans 37.5 radians of g). L3 on g: 1.7·10⁻¹⁵, 1.3·10⁻¹³, 9.8·10⁻¹¹, 1.1·10⁻⁷,
+  1.1·10⁻⁴ at c = 10 to 10¹²: within 10⁻⁶ out to 10⁹ thumbs and stopping at 10¹², where a double rounds a record to
+  1.2·10⁻⁴ (the plan said the run would state where it stops; my threshold did not allow it).
+- **D7 not killed.** The window's Lebesgue constant 2.7278, 3.1689, 3.6102 at K = 16, 32, 64 against (2/π)(ln K + γ +
+  ln(8/π)) 2.7276, 3.1689, 3.6102; its errors fall ×772 to ×1207 from K = 12 to K = 24 at every centre.
+
+### Run 2, predicted before it ran
+
+- **D2′.** L2 at K = 48 (reachable, 3·16), ρ = 4: sup error on f ≤ 10⁻⁶ at every centre c = 10 … 10¹² thumbs, the
+  largest and smallest within a factor 2; 48 terms a read and zero trigonometric calls.
+
+### Run 2 (26 November 2026; `runs/dbr/dbr2.py`, output `runs/dbr/dbr-run2.txt`)
+
+- **D2′ killed, by my factor clause.** At K = 48 the sup error on f is 2.0·10⁻¹⁴, 2.7·10⁻¹⁴, 7.4·10⁻¹⁴, 8.3·10⁻¹⁴,
+  1.05·10⁻¹³ at c = 10 … 10¹² thumbs: within 10⁻⁶ everywhere by eight orders, 48 terms a read, zero trigonometric calls.
+  The largest over the smallest is 5.2, not ≤ 2: at this level the error is the double's rounding of the record and of its
+  logarithm, which grows with c (ln of 10¹² is 27.6). The window's own error is gone; what is left is the paint's arithmetic.
+
+### Standing after runs 1–2
+
+Not killed: D1, D3, D4, D7. Killed: D2 and D2′ by my bounds (the error the same at every centre, 1.08 apart at K = 24,
+then at the double's rounding at K = 48), D5 (the whole list on one turn holds f poorly everywhere, its error set by
+f's oscillation at both ends, so the N it needs hardly grows with reach: my mechanism wrong), D6 (a ratio window cannot
+hold content with a size even at ten thumbs; a records window holds it to 10⁻⁷ out to 10⁹ thumbs and stops at 10¹²,
+where the double rounds the records).
+
+What the runs show, in the plan's reading (to rule on):
+- **Behind the dial, a window in ratios holds ratio content the same way anywhere.** At 24 leaves its error is
+  1.14–1.23·10⁻³ from 10 to 10¹² thumbs out, at 48 leaves it is at the double's rounding; every read costs K terms, with
+  no length of the list, no distance and no angle anywhere in it. The window is a whole bridge on its own interval, its
+  Lebesgue constant Chebyshev's to four digits, its error falling a thousandfold from 12 to 24 leaves: the K-circle, not
+  a cut of an N one (against the cut kernel's floor of TB §16).
+- **Content with a size is the write's, and only its units hold it.** A window in ratios loses it at once; a window in
+  records holds it until the records themselves stop being told apart by the machine.
+- **One bridge over the whole endless list is not the way.** Laid on one turn (Boyd's map), it holds ratio content
+  poorly everywhere at any reasonable N, because ratio content never settles at either end: home and the horizon each
+  carry infinitely many cycles. The dial's way, a window that moves and is rebuilt, is the one that works.
+
+Classical in its parts: Chebyshev interpolation and its Lebesgue constant, the barycentric formula, Boyd's rational
+map; the ratio coordinate y = (x − c)/(x + c) is a Möbius map. The sorting (ratio content the read's, content with a size
+the write's, the dial's moving window the K-circle) is the series'.

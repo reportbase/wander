@@ -1,0 +1,6 @@
+c = 1e+01: sup error 2.01e-14  terms 48  trig calls 0
+c = 1e+03: sup error 2.73e-14  terms 48  trig calls 0
+c = 1e+06: sup error 7.41e-14  terms 48  trig calls 0
+c = 1e+09: sup error 8.27e-14  terms 48  trig calls 0
+c = 1e+12: sup error 1.05e-13  terms 48  trig calls 0
+D2' KILLED (largest / smallest 5.22)

@@ -7607,6 +7607,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1251** (26 Nov 2026; Tom: "Proceed. What's next?"): FAB and DBR in *Reads and Writes* §9, "The open floor, and the
+  bridge behind a dial", and in essay 34 §9. No new claim.
+- **R1250** (26 Nov 2026; Tom: "Merge, then run DBR"): #539 merged; DBR runs 1–2 (`plans/dbr-plan.md`, `runs/dbr/`), a
+  Tangent Bridge behind the calendar's dial. A window in ratios round the needle (y = (x − c)/(x + c), Chebyshev leaves
+  from the lattice, Gauss's seed for 48, barycentric) holds ratio content the same from 10 to 10¹² thumbs (1.14–1.23·10⁻³
+  at 24 leaves, the double's rounding at 48), K terms a read, no N, no distance, zero trigonometric calls, its Lebesgue
+  constant Chebyshev's: the K-circle. Content with a size is held only by a window in records (10⁻⁷ to 10⁹ thumbs). One
+  bridge over the whole list (Boyd's map) holds ratio content poorly everywhere. D1, D3, D4, D7 not killed; D2, D2′ by my
+  bounds, D5 (my mechanism), D6 (my thresholds) killed.
 - **R1249** (26 Nov 2026; Tom: "Proceed with B", then, of the calendar dials, "Yes, attach it and write the plan"): FAB
   (`plans/fab-plan.md` + `runs/fab/`), the Tangent Bridge's open floor (`tb_algebra.md` A.6). Known beforehand from a
   search: Tao (2026, arXiv:2603.21453) proves ∫_I λ ≥ (4|I|/π²)·log n − o(log n) for any nodes on [−1, 1], by an L¹

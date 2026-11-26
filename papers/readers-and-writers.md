@@ -2369,6 +2369,27 @@ alone holds ratios and shares exactly and does best where it looks; a sign at th
 predictions first, run 1's P1 killed by my code, P4 and P7 in their letters, run 2 not); the theorems classical (the
 double Fourier sphere of Merilees 1973 and Orszag 1974 among them), the sorting a reading. Essay 34.
 
+**The open floor, and the bridge behind a dial.** The one step the bridge's appendix left open, a floor on the
+average error amplification over every possible set of places, is proved: Tao (2026, arXiv:2603.21453) shows that for
+any n places on an interval the integral of the Lebesgue function is at least (4|I|/π²)·log n less o(log n), the sharp
+constant. Its proof uses an L¹ duality resting on the square wave's Fourier series and the residue theorem round closed
+contours: both complete the turn, so the floor over every set of places, a quantifier over places no read constructs,
+is the DHV's, as the appendix expected. Whether order and counting alone reach it stays open. Two checks of ours sit
+beside it (FAB): the trigonometric toy's sharp constant is 8 = 4 × 2, two factors computed with no angle, π entering only
+when the integral is made a mean over the turn; and on the circle evenly spaced places gave the least average in every
+minimization tried, that average climbing at (4/π²)·ln N exactly. Behind the calendar's dial, which browses a list
+without end by a rate and a place (DBR), a bridge laid in ratios round the needle, y = (x − c)/(x + c) with Chebyshev
+leaves made from the lattice, holds content that is the same in ratio everywhere to the same error from 10 to 10¹²
+thumbs out (1.14–1.23·10⁻³ at 24 leaves, the double's rounding at 48), every read K terms with no N, no distance and no
+trigonometric call; its Lebesgue constant is Chebyshev's, so the moving window is a whole bridge, the K-circle, not a
+cut of an N one. Content with a size in records is lost by a ratio window at once and held by a window in records until
+the machine stops telling the records apart (10⁹ thumbs); and one bridge over the whole endless list holds ratio
+content poorly everywhere, because that content never settles toward home or the horizon. So the read holds what is
+the same in ratio, wherever it looks, at the cost of what it holds; a size is the write's, held only in its units.
+**Checked** (FAB and DBR, `plans/fab-plan.md`, `plans/dbr-plan.md`, predictions first, kills by my bounds, code and one
+wrong mechanism recorded; Tao's theorem read from the abstract, the blog and part of the paper, not refereed); the
+mathematics classical (Chebyshev, barycentric interpolation, Boyd's map, Tao), the sorting a reading.
+
 **Two 1's.** On the axes the three ways to measure a direction of the square agree: the largest component (the cube's),
 the sum h + v (the diamond's) and the length √(h² + v²) (the circle's) all give 1. At the corner they part: 1, 2 and √2.
 A 1 needs a measure; the turn picks the round one, and √2 is the geometric mean of the other two (Hölder:
