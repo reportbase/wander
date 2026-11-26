@@ -157,3 +157,57 @@ Not killed: P1, P1′, P1″. Killed: P2 (my guess), P3–P5 in every run.
 A run 4 would take the cloth before a contact back to the contact's moment (each ball's cloth rate over the tick kept
 by `own` and τ of it given back before the response). Not written as a prediction, since each run so far has found the
 next rounding; whether to go on to a whole event-driven step is Tom's call.
+
+### Run 4, planned (26 November 2026; Tom: "1a, write the plan"). Predictions written before any script exists
+
+Runs 2–3 placed two of the fixed tick's events at their moments, and each time the next rounding showed. Run 4 replaces
+the clock for the test: an **event-driven integrator** in a new copy (`runs/peb/play-trick-event.html`, made by a script
+`runs/peb/peb4.mjs` from `play-trick.html`, the original untouched), as POL run 9 did for contact alone.
+
+**The integrator.** On the cloth every ball's motion between events is a closed form in time, exactly as the engine's
+own rules write it: sliding, the slip u shrinks at 3.5·MU_S along a fixed direction, so velocity is linear and position
+quadratic in t; rolling, the speed falls at MU along a fixed direction, again linear and quadratic; side spin wears off
+linearly and touches neither. The events, each found as the least root in the step ahead:
+- a slip ends (t = |u|/(3.5·MU_S)); a rolling ball stops (t = speed/MU);
+- two balls touch (|Δx(t)|² = (r_a + r_b)², a quartic in t, its least root found by bracketing on the quartic's own
+  values and bisection to 10⁻¹⁵ s, then one Newton step; no trigonometric call);
+- a ball reaches a cushion (gap = r, a quadratic) or a pocket fills its view (a quartic, as the engine's POCK test);
+- the shot's end (no ball moving).
+At each event the engine's own response is applied at that instant (`respond` and the grip for balls, the cushion's
+mirror image and rail grip for cushions, the same constants), with τ = 0, so no correction is carried. Contacts that fall
+within 10⁻¹² s of each other are resolved together, as ENG run 2 resolved them. Shots that leave the cloth (a jump, a
+massé's lift) are out of scope: the layouts used here are all on the cloth, and a shot that leaves it is counted, not
+run.
+
+**Shots.** As P1 for the slope path (the layouts rack, scatter and line, 12 seeded shots each, elevation 0, and the
+challenges whose reference shot stays on the cloth). As P3 for the shot maps (the cut on the open table, the challenge
+"two rails", the rack's break; 1,024 aims; jumps bisected to 10⁻¹² rad on the contact signature).
+
+- **Q1 (the referee).** The event engine is the fixed-tick engine's limit: on the 36 seeded shots, run 3's copy with
+  SUB = 4, 16, 64 differs from the event engine in final positions by a median that falls at least ×3 for each ×4 in
+  SUB (first order in the tick), and at SUB = 64 the contact sequence is the same in at least 30 of 36. If this fails
+  the event engine is not the same table and nothing below counts.
+- **Q2 (no hidden jumps).** On run 1's post-hoc piece of the cut (0.22604 to 0.27837 rad), at the same 100,000 aims, no
+  step in a rest position exceeds twenty times the median step, and the largest step is under 10⁻⁴.
+- **Q3 (pieces held).** On the three shot maps, at least 90% of pieces wider than 10⁻⁴ rad have both balls' rest
+  positions held to 10⁻⁶ by the bridge on the piece (K in {6, 8, 12, …, 128}, as P3).
+- **Q3a (a graze ends a piece with a square root).** Where a piece ends at a graze (a contact beginning or ending with
+  the line of centres square to the closing velocity, |n·w| under 10⁻³ of |w| at the bisected aim), the rest positions
+  near that end go as √(distance to the edge): a fit of log|Δx| against log(distance) over 10⁻⁹ to 10⁻⁵ rad gives a
+  slope within 0.1 of ½ at at least 80% of graze ends. Ends that are not grazes give a slope within 0.1 of 1.
+- **Q3b (the bridge in the root's chart).** On pieces with a graze end, bridged in u = √(a − a_edge) (or both ends'
+  roots, for a piece with two graze ends the chart sending each end's root to ±1), at least 90% held to 10⁻⁶ with K ≤ 128.
+- **Q4 (a contact costs leaves).** As P4 on the pieces held under Q3 or Q3b: the median K* at two ball contacts at least
+  1.5 times that at one, and at three at least 1.5 times that at two.
+- **Q5 (no trig).** The event engine's path, given the aim as a pair, makes 0 trigonometric calls (counted on every Math
+  entry point, as P1).
+
+Each is killed by its own number. Known beforehand: ENG run 2 (contacts resolved together, the stop taken off), POL runs
+8–9 (exact contact, the aim's sensitivity), runs 1–3 here (the tick's jumps), and the classical form of a graze: a
+contact's turn of the struck ball goes as the cut's sine, √(1 − f²) near f = 1, so a square root at the edge is expected
+from geometry, not from the integrator. Q4's growth rate is the same guess as P4's; pieces also narrow with each contact.
+
+What would follow if Q1–Q3b and Q5 are not killed (a reading, to rule on): with the clock's rounding removed, what a shot
+does across all aims is held by the bridge piece by piece, the pieces' edges the table's events (a contact begun or ended,
+a cushion, a pocket), the grazes square-root ends held in their root's chart; the fixed tick, the DHV's, was what the
+bridge could not hold.
