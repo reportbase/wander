@@ -1,0 +1,36 @@
+piece 0.059609..0.078234 (w 1.86e-2): err at K=6..128 0.227 0.123 0.036 0.0269 0.0168 0.0119 0.00081 0.00208 0.000677 0.000295; worst at y -0.995
+   phase-order changes inside: 2 R1 / C0; R1 / S0
+   sub-pieces: not held 1.3e-4, 6, 12
+piece 0.091179..0.124183 (w 3.30e-2): err at K=6..128 0.00105 0.00103 0.000441 0.000377 0.000142 0.000131 0.0000481 0.0000192 0.0000259 0.00003; worst at y 0.985
+   phase-order changes inside: 2 R1 / C0; R1 / S0
+   sub-pieces: 6, 6, not held 1.7e-5
+piece 0.124183..0.147858 (w 2.37e-2): err at K=6..128 0.0138 0.00834 0.00575 0.00307 0.00161 0.00212 0.000788 0.000634 0.000431 0.000348; worst at y 0.455
+   phase-order changes inside: 2 C0 / P0; P0 / R1
+   sub-pieces: 6, not held 2.1e-4, 6
+piece 0.379178..0.411481 (w 3.23e-2): err at K=6..128 0.0815 0.0435 0.0116 0.011 0.00588 0.00387 0.00157 0.00136 0.00055 0.000471; worst at y 0.175
+   phase-order changes inside: 6 R1 / C0; R1 / S0; S0 / R1; C0 / R1; S0 / R1; C0 / R1
+   sub-pieces: 6, 6, 6, not held 3.2e-5, not held 2.4e-4, 6, not held 1.7e-5
+piece 0.411481..0.686901 (w 2.75e-1): err at K=6..128 0.0168 0.0138 0.00471 0.00539 0.00227 0.00208 0.00121 0.00162 0.00052 0.000661; worst at y -0.425
+   phase-order changes inside: 0 
+   sub-pieces: not held 6.6e-4
+piece 1.101544..1.279777 (w 1.78e-1): err at K=6..128 0.199 0.114 0.0325 0.0234 0.0144 0.0102 0.000688 0.00177 0.000575 0.00025; worst at y -0.995
+   phase-order changes inside: 2 R1 / R0; R0 / R1
+   sub-pieces: not held 1.3e-4, 24, not held 2.6e-5
+piece 1.847825..2.323236 (w 4.75e-1): err at K=6..128 0.263 0.108 0.115 0.0778 0.0466 0.0277 0.0146 0.0169 0.00675 0.00509; worst at y 0.845
+   phase-order changes inside: 1 S0 / C0
+   sub-pieces: not held 1.8e-3, 6
+piece 2.386892..2.864564 (w 4.78e-1): err at K=6..128 6.85 6.95 5.64 3.84 2.03 4.09 0.479 1.16 1.11 0.789; worst at y -0.985
+   phase-order changes inside: 2 P0 / C0; C0 / S0
+   sub-pieces: 6, 6, not held 1.8e-3
+piece 3.418622..3.894032 (w 4.75e-1): err at K=6..128 0.263 0.108 0.115 0.0778 0.0466 0.0277 0.0146 0.0169 0.00675 0.00509; worst at y 0.845
+   phase-order changes inside: 1 S0 / C0
+   sub-pieces: not held 1.8e-3, 6
+piece 3.957688..4.435360 (w 4.78e-1): err at K=6..128 8.15 8.21 6.71 4.57 2.42 4.86 0.568 1.39 1.33 0.939; worst at y -0.985
+   phase-order changes inside: 2 P0 / C0; C0 / S0
+   sub-pieces: 6, 6, not held 1.8e-3
+piece 5.596285..5.934599 (w 3.38e-1): err at K=6..128 0.0146 0.0105 0.00643 0.00743 0.00445 0.00233 0.00174 0.00119 0.000873 0.000624; worst at y 0.145
+   phase-order changes inside: 0 
+   sub-pieces: not held 6.2e-4
+piece 5.997167..6.083866 (w 8.67e-2): err at K=6..128 0.0525 0.0234 0.0231 0.0152 0.00793 0.0041 0.00369 0.0022 0.00198 0.00098; worst at y -0.515
+   phase-order changes inside: 0 
+   sub-pieces: not held 9.8e-4
