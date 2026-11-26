@@ -302,6 +302,27 @@ where the fixed step, not the physics, sets the order. What stays the DHV's is t
 in, the shared tick and the integrator. **Checked** (ENG runs 1–2; four predictions killed, in their letter, by my bound,
 by the two jobs I had not predicted and by my floating point).
 
+**The engine on slopes, and the bridge across its aims (PEB, 26 November).** The same program run with the aim and the
+cue's tilt held as half-slopes and the cut kept as its sine plays every shot as the angle path does, to 10⁻¹² with the
+same contacts, and makes no trigonometric call at all: the one place trigonometry entered was turning an aim into a
+direction, and a half-slope is already a direction. Then the question the Tangent Bridge asks of a function: what one
+shot does across every aim, where both balls come to rest, is held by a bridge piece by piece, the pieces' edges the
+aims where the run of contacts changes (jumps kept as records, §15.1 of the Tangent Bridge). On the program as it was the
+pieces would not hold, and three runs found why: a fixed tick rounds every event (a slip ending, a contact, the cloth's
+grip after it) to a whole step, and as the aim moves that step moves to the next, so a piece whose contacts never change
+still jumps, 26 times in one piece of a single cut. Each rounding placed at its own moment removed one kind of jump and
+showed the next. With the tick replaced by events, each found as the least root ahead in closed-form motion (square roots
+and halving only), and the engine's own response applied at each, the hidden jumps are gone; the old program converges to
+the new one at first order as its tick shrinks (×3.6, ×4.2 for each ×4), with the same outcome on 36 of 36 shots. What is
+left are the table's own edges, and they are of two kinds: where a cushion, a pocket or the order of contacts changes,
+the rest places are smooth to the edge, linear in the distance to it (every one measured); at a graze, where a contact
+just happens, they go as the square root of that distance on the side where it happens and linearly on the side where it
+misses, which is the cut's own √(1 − f²) and not the program's. A piece ending at a graze is held in the root's chart. So
+the bridge holds the game where the game is the table's, and the fixed tick was the dual vantage's clock, which is what it
+could not hold. About a third of the pieces are still not held to 10⁻⁶ with 128 leaves, for a reason not yet found.
+**Checked** (PEB runs 1–4 on the open table's cut and the two-rail challenge, the break's map still running; P2, P3, P4
+and runs 2–3's maps killed, by my guess and by the tick).
+
 **A collision, sorted.** Put together, one contact between two balls sorts in four steps. Before it, only reads: the two
 slopes, their shared product, owned ratio and the sum that decides contact. At it, h + v = 1 is the last read, the walk's
 strides left reaching zero (§6, "Touch, the walk to the foot"); what makes it a touch is that each ball then writes its own
@@ -3203,6 +3224,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
 ## References
 
 - The pool engine audited (§1, "The engine, audited"): `plans/eng-plan.md`, `runs/eng/eng.mjs`, `runs/eng/eng2.mjs`.
+- The engine on slopes and the bridge across its aims (§1): `plans/peb-plan.md`, `runs/peb/` (the event-driven copy `play-trick-event.html`).
 - A cannonball under drag (§1, "A flight, many writes"): `plans/cnb-plan.md`, `runs/cnb/cnb.py`, `runs/cnb/cnb2.py`.
 - Abbott, R. et al. (LIGO, Virgo and KAGRA Collaborations) (2023). Open data from the third observing run of LIGO, Virgo,
   KAGRA and GEO. *Astrophysical Journal Supplement Series* 267, 29.

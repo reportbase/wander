@@ -211,3 +211,18 @@ What would follow if Q1–Q3b and Q5 are not killed (a reading, to rule on): wit
 does across all aims is held by the bridge piece by piece, the pieces' edges the table's events (a contact begun or ended,
 a cushion, a pocket), the grazes square-root ends held in their root's chart; the fixed tick, the DHV's, was what the
 bridge could not hold.
+
+### Run 4 (26 November 2026; `runs/peb/peb4-build.mjs`, `peb4.mjs`, engine `peb4-engine.js`, copy `play-trick-event.html`)
+
+Recorded in part while the break's map runs; the rest, and the verdicts on Q3, Q3a, Q3b and Q4 over all three maps, are
+added when it finishes.
+
+- **Q1 not killed.** 36 seeded shots, none leaving the cloth. Median largest difference in final places, event engine
+  against run 3's tick: 0.080, 0.022, 0.0053 at SUB = 4, 16, 64 (×3.60 and ×4.20); the same signature at SUB = 64 on 36 of 36.
+- **Q2 not killed.** On run 1's piece, 100,000 aims: median step 3.2·10⁻⁵, largest 5.1·10⁻⁵, none past twenty times the
+  median.
+- **Q5 not killed.** 0 trigonometric calls on the event path over the 36 shots.
+- **The cut and two rails, so far.** Cut: 36 jumps (4 at a graze), 36 pieces, 24 held under Q3; graze-ended pieces held in
+  the root's chart 5 of 7. Two rails: 46 jumps (8 at a graze), 46 pieces, 26 held; graze-ended pieces held 7 of 13. Every
+  end not at a graze has slope 1.00; at a graze ends come in pairs, 0.50 on one side and 1.00 on the other (the side where
+  the contact happens takes the root, the side where it misses is linear).

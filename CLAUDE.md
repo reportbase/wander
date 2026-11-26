@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  PEB run 4 (26 Nov; SPN R1260): an event-driven integrator (`runs/peb/peb4-engine.js`, built into
+  `runs/peb/play-trick-event.html` by `peb4-build.mjs`; run `node runs/peb/peb4.mjs q125|map cut|map tworail|map rack`, then
+  `report`): the tick's hidden jumps gone, the shot map's edges the table's (a graze a square root); in *Reads and Writes* §1,
+  essays 30 §10 and 34 §9. About a third of pieces not held, unexplained; the break's map pending.
   PEB runs 2–3 (26 Nov; SPN R1259; Tom: "Merge, then run 2"): the slip's end and the cloth after a contact placed at
   their moments (`runs/peb/peb2.mjs`, `peb3.mjs`); P1 holds, P3–P5 killed: each event the fixed tick rounds is a jump in
   the shot map (largest 1.2·10⁻² → 3.3·10⁻³), more remain; the bridge holds the pieces between the integrator's events.
