@@ -245,3 +245,39 @@ Some sub-pieces still not held end where a ball stops just short of a cushion, w
 So what was left after the clock was made exact is again the table's own, the moments its friction rules switch or end;
 each is a table event like a contact. A run 5 would put all of them in the signature (the phase log, the grips' choices,
 side spin's end) and predict the pieces then held.
+
+### Run 5, planned (26 November 2026; Tom: "Merge and proceed"). Predictions written before any script exists
+
+Run 4's post hoc found the pieces not held carry kinks from the table's own rules, events the contact signature does
+not record. Run 5 records them and tests whether the pieces are then held. The engine is run 4's event engine, its
+motion unchanged; only what is recorded grows (`runs/peb/peb5-build.mjs` makes `runs/peb/play-trick-event5.html`
+from run 4's copy; `runs/peb/peb5.mjs` runs it). **The full signature** is every event in the order it happens:
+- each contact, cushion and pocket, as in run 4, with each grip's choice inside it appended (the ball grip and the rail
+  grip each take the smaller of two forces: which one, stick or slip);
+- each phase end: a slide ending (`S`), a ball stopping (`R`);
+- each ball's side spin reaching zero (`W`), placed at its moment within the step.
+A jump is a change of the full signature, bisected to 10⁻¹² rad as before. **An end is a root's** when the first event
+that differs across it is a contact or cushion met at a closing speed under 10⁻³ of the shot's (a graze, or a ball
+arriving with almost no speed, as a ball stopping just short of a cushion), or a pocket entered at a radial speed under
+10⁻³ of the ball's; the bridge's chart takes that end's root (run 4's charts), every other end is plain.
+
+Maps as run 4's: the cut on the open table and the challenge "two rails", power 14, 1,024 aims. The break is left out
+(run 4's break is still being mapped; its time per aim is ten times theirs).
+
+- **S1 (the same game).** Recording changes nothing: on run 4's 36 seeded shots the final places equal run 4's engine's
+  bitwise, and the path makes 0 trigonometric calls.
+- **S2 (pieces held).** On the two maps, at least 90% of pieces wider than 10⁻⁴ rad have both balls' rest positions held
+  to 10⁻⁶ by the bridge in their chart (K in {6, 8, 12, …, 128}).
+- **S3 (the ends' forms).** Ends that are not a root's give a slope within 0.1 of 1 (fit of log|Δx| against log distance,
+  10⁻⁹ to 10⁻⁵ rad) at at least 90% of ends; at at least 80% of the root jumps one side's slope is within 0.1 of ½.
+- **S4 (cheap pieces).** The median K* over held pieces is at most 12.
+- **S5 (where the post hoc pointed).** Two rails' run 4 piece 0.714–0.997 is split by a `W` within 10⁻³ rad of
+  0.714 + 0.8365·0.282 = 0.950, and both sides wider than 10⁻⁴ are held.
+
+Each is killed by its own number. Known beforehand: run 4 and its post hoc (the kinds of kink, 22 of 32 pieces changing
+phase order inside, the cut's 5.997–6.084 split by a grip's choice, the spin's end on two rails), so S2 and S5 are not
+blind; what is new is whether those are all. A kink of a kind not listed would leave a piece unheld.
+
+What would follow if S2–S4 are not killed (a reading, to rule on): with every clipped rule's switch recorded as an event,
+the shot map is pieces, each held by a few leaves of the bridge, its edges the table's events; the edges of the root's
+kind are where something is met at no speed.
