@@ -89,3 +89,33 @@ own content, unmoved by a sign) are held exactly by the read alone.
 
 ## Runs
 
+### Run 1 (26 November 2026; `runs/tbh/tbh.py`, output `runs/tbh/tbh-run1.txt`)
+
+- **P1 killed, by my code.** Node exactness 6.6·10⁻¹⁶ to 7.5·10⁻¹⁵, partition of unity ≤ 3.0·10⁻¹⁴, slope chart against
+  angle chart ≤ 7.0·10⁻¹³, zero trigonometric calls at every N: all as predicted. The two representatives disagreed by
+  3.3. The queries on the line β = 0 have σ = tan(β/2) = 0, so the second representative's σ′ = −1/σ is ∞, and the
+  composition (∞ − σ_j)/(1 + ∞·σ_j) is ∞/∞: a NaN, which the kernel read as "infinite argument" and set to 0. This is
+  exactly TB §11.2's warning (the horizon is an address and has to be given one), not guarded in my composition.
+- **P2 not killed.** hv, h², v² ≤ 2.3·10⁻¹⁴ at every (Nβ, Nα) from (8, 4) to (64, 64); v·v₂ 4.2·10⁻¹³ throughout.
+- **P3 not killed.** g: 3.7·10⁻¹, 1.8·10⁻³, 1.2·10⁻⁸, 7.0·10⁻¹³ at N = 8, 16, 32, 64.
+- **P4 killed, by my bound.** Over the whole hemisphere v's sup error is 1.000 at every N and v₂'s 0.97–1.00 (the
+  horizon glued, as predicted). Over the core the error falls 0.122, 0.092, 0.047, 0.026 (×2.0, ×1.8 from 16 to 64, as
+  predicted) but is 0.026 at N = 64, not below 10⁻²: the ringing from a jump at the rim decays only as 1/(N × distance
+  to it), and at 60° the rim is half a radian away.
+- **P5 not killed.** h: 0.127, 0.063, 0.031, 0.016, exponent −1.009.
+- **P6 not killed.** h, v, v₂ ≤ 1.4·10⁻¹⁴ at N = 8, 16, 32 with the back hemisphere held.
+- **P7 killed, by my set-up.** Half the leaves within r ≤ 1 at every N (0.5000 exactly), against the heat's 0.29289;
+  leaves per unit of heat at the look 3.3, 6.5, 13.0, 25.9, 51.9 (×2 a doubling). But within r ≤ √3 the share is 0.750,
+  0.625, 0.688, 0.656, 0.672, not "exactly ⅔": π/3 is not a leaf boundary, so ⅔ is only the limit. My "exactly" was wrong.
+- **P8 not killed.** (a) the equal-area leaves in the native space: Λ 19.3, 2.08·10³, 6.38·10⁷ at Nα = 8, 16, 32
+  (uniform 1.85, 2.29, 2.73). (b) conjugated: Λ the uniform one to 2.7·10⁻¹⁵; hv's sup error 0.120, 0.083, 0.058,
+  0.041, 0.029 at N = 8..128, exponent −0.517 (the Hölder-½ cusp at the look), where the meridian bridge holds hv to
+  10⁻¹⁴; h²'s exponent −1.004.
+
+### Run 2, predicted before it ran
+
+The composition given the horizon's two addresses (TB §11.2): where σ (or tan α) is ±∞, tan(t − t_k) = 1/s_k; where
+the leaf's slope is ∞ (none here), −1/s. Nothing else changed.
+
+- **P1′.** At N = 8, 16, 32, 64 the two representatives agree to ≤ 10⁻¹² over every query, the β = 0 line included;
+  node exactness, partition of unity, slope against angle chart and zero trigonometric calls as in run 1.
