@@ -214,8 +214,7 @@ bridge could not hold.
 
 ### Run 4 (26 November 2026; `runs/peb/peb4-build.mjs`, `peb4.mjs`, engine `peb4-engine.js`, copy `play-trick-event.html`)
 
-Recorded in part while the break's map runs; the rest, and the verdicts on Q3, Q3a, Q3b and Q4 over all three maps, are
-added when it finishes.
+Recorded in part while the break's map ran; the rest and the verdicts on Q3, Q3a, Q3b and Q4 follow below.
 
 - **Q1 not killed.** 36 seeded shots, none leaving the cloth. Median largest difference in final places, event engine
   against run 3's tick: 0.080, 0.022, 0.0053 at SUB = 4, 16, 64 (×3.60 and ×4.20); the same signature at SUB = 64 on 36 of 36.
@@ -226,6 +225,18 @@ added when it finishes.
   the root's chart 5 of 7. Two rails: 46 jumps (8 at a graze), 46 pieces, 26 held; graze-ended pieces held 8 of 13. Every
   end not at a graze has slope 1.00; at a graze ends come in pairs, 0.50 on one side and 1.00 on the other (the side where
   the contact happens takes the root, the side where it misses is linear).
+
+**The break, and the verdicts over all three maps** (finished after run 5 was planned; `peb-run4.txt`). Break: 202 jumps
+(66 at a graze), 202 pieces, 57 held; graze-ended pieces 100, held in the root's chart 11.
+- **Q3 KILLED.** 107 of 284 pieces held (38%), against 90%.
+- **Q3a KILLED, by its letter (my set-up).** Ends not at a graze at slope 1: 328 of 335. Graze ends at ½: 22 of 150; but
+  a graze jump has a root on one side only (the side where the contact happens) and a plain end on the other, as the cut
+  and two rails showed, so at most about half the graze ends could be at ½; I predicted both.
+- **Q3b KILLED.** 24 of 120 graze-ended pieces held in the root's chart.
+- **Q4 KILLED.** Median K* by ball contacts 8, 6, 6 at one, two and three: no growth; a held piece costs about 6 leaves
+  whatever its contacts (the break's pieces with 10, 11 and 33 contacts the exceptions, 96 to 128).
+The break holds far less than the two simpler maps: with sixteen balls, the clipped rules run 5 records (stops, slide
+ends, grips, spin) fall inside pieces far more often.
 
 **Post hoc: why a third of the pieces were not held** (`runs/peb/peb4-posthoc.mjs`, `peb4-posthoc2.mjs`,
 `peb4-posthoc3.mjs`; outputs `peb4-posthoc-cut.txt`, `peb4-posthoc-tworail.txt`, `peb4-posthoc2.txt`; not predicted).

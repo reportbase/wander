@@ -7613,7 +7613,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   held) not killed; S2 killed (160 of 184 pieces held, 87% against 90%); S3 killed in its root clause by my rule for a
   root's end (9 of 33 flagged jumps with a side at ½), its plain clause holding (263 of 265 ends at slope 1). Post hoc: 5
   of the 24 unheld pieces hide jumps the 1,024-aim grid missed (the finer signature changes and changes back inside one
-  grid cell), my set-up; the rest converge slowly, an unrecorded kink or root, not found.
+  grid cell), my set-up; the rest converge slowly, an unrecorded kink or root, not found. Run 4's break, finished the same
+  day: 57 of 202 pieces held, 107 of 284 over the three maps; Q3, Q3b and Q4 killed, Q3a by its letter (a graze is a root
+  on one side only).
 - **R1260** (26 Nov 2026; Tom: "1a, write the plan", "Merge and run", "What have you learned so far about integrating
   tb", then "Add the insights to the papers and essays"): PEB run 4, an event-driven integrator in a test copy. The engine
   runs whole on slopes (no trigonometric call); the fixed tick's rounding is what put jumps inside the shot map's pieces,
