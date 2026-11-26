@@ -691,6 +691,13 @@ Counts and amounts, and the DHV set beside them, are not lesser for any of this.
 apart meet. But a program that reads a world it does not hold, a sky, a stream, a list with no end, is reading, and the
 geometry of a read is K, not N.
 
+*Since (26 November 2026).* The dial test made "K, not N" an operator. Behind a dial over a list with no end, a window of
+K leaves rebuilt as a bridge of its own holds content that is the same in ratio to the same error from ten to a trillion
+thumbs out, each read K terms, with no length of the list and no trigonometric call in it; a window cut from a larger
+bridge instead keeps an error floor that more K does not remove. On a measured list, word frequency by rank, the tail
+from rank 300 to 30,000 is held the same way, unchanged when the corpus is cut to a quarter. Essay 34, §9; the page
+`dial-bridge.html`.
+
 ---
 
 ## Sources

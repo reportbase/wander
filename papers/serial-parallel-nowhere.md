@@ -7607,6 +7607,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1257** (26 Nov 2026; Tom: "What were the insights from today's session", then "Add the insights to the papers and
+  essays"): the day's ten results gathered in *Reads and Writes* §9, "What these tests add up to", and §1's table; essay
+  34 §10; pointers in essays 10 and 16. No new claim.
 - **R1256** (26 Nov 2026; Tom: "Yes, 1 then 3"): MSR run 3, the tide at τ = 0.1 m (twice its median sigma, fixed before
   the run): the records window 48, 48, 48, 48, 32 leaves at five centres over the year, the ratio window 64 at one day and
   more than 128 from four days (T1″, T2″ not killed). MSR in *Reads and Writes* §9, "Measured content behind the dial",

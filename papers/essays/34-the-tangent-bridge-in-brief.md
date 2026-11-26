@@ -338,6 +338,14 @@ chart and operation in the other, is the series' sorting of what each form needs
 is met*: the leaves are laid before anything arrives, and the kernel that joins them is the Cauchy's own curve, raised
 to the depth.
 
+**What today's tests add up to.** Taken together, the series' own tests of the bridge (§8 and §9) give ten results.
+Approximation theory splits along the line between the two forms, and its open floor has been proved by the completed
+circle's tools. The sharp constants are computed with no angle, π entering only in the mean. The logarithm belongs to the
+worst point, not the recovery. One hemisphere holds exactly what is rational in its slopes, and glues its horizon; the
+square root is the line. The bridge is finest where the read looks. A window rebuilt as its own bridge never asks for N.
+Content with a size is the write's, held only in its units. And on measured lists the sorting held, and once said no,
+to the head of Zipf's law. Every kill on the way was the tester's.
+
 Back to the dot-to-dot. The dots were placed before the picture was drawn, and the rule that joins them never looks
 past them. Where they stand, the picture is exact; between them it is a guess with a price, and the price is a
 logarithm that every scheme of its kind must pay. And the whole puzzle, dots, rule and refinement, can be worked with a
