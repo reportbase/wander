@@ -1,0 +1,42 @@
+Q1: 36 shots, 0 left the cloth (excluded), 36 compared
+   median final-position difference event vs tick: SUB 4 8.00e-2, SUB 16 2.23e-2, SUB 64 5.30e-3; ratios 3.60, 4.20
+   same signature at SUB 64: 36/36; same contact pairs ignoring repeats: 36/36
+   by layout, median at SUB 4/16/64: rack 6.7e-2/1.5e-2/5.3e-3; scatter 1.4e-1/3.5e-2/1.0e-2; line 3.6e-2/2.0e-2/5.3e-3
+Q1 not killed
+Q2: median step 3.19e-5, largest 5.11e-5, steps past 20 x median 0
+Q2 not killed
+Q5: most trig calls on the event path 0 over 36 shots
+Q5 not killed
+cut: 36 jumps (4 at a graze); 36 pieces wider than 1e-4 rad, held 24; graze-ended pieces 7, held in the root's chart 5
+   end slopes, graze: 0.50 0.50 1.00 1.00 0.50 0.50 1.00 1.00
+   end slopes, not graze: 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00
+tworail: 46 jumps (8 at a graze); 46 pieces wider than 1e-4 rad, held 26; graze-ended pieces 13, held in the root's chart 8
+   end slopes, graze: 0.50 1.00 0.50 0.51 1.00 1.00 0.50 0.50 1.00 0.50 1.00 1.00 0.50 0.50 1.00 1.00
+   end slopes, not graze: 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00
+rack: 202 jumps (66 at a graze); 202 pieces wider than 1e-4 rad, held 57; graze-ended pieces 100, held in the root's chart 11
+   end slopes, graze: 0.47 1.00 1.00 1.00 1.54 1.00 0.50 0.99 0.98 1.00 1.00 1.00 1.00 1.00 0.50 1.00 1.00 0.98 0.97 1.00 0.80 1.24 0.98 1.00 0.50 1.00 1.00 1.00 1.00 1.00 1.00 0.00 1.00 1.00 1.00 0.53 0.80 1.03 0.99 1.02 1.01 1.63 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 0.96 1.11 0.82 1.00 0.60 0.96 0.98 1.00 0.50 0.94 1.22 1.00 1.00 1.00 0.52 1.00 0.57 1.00 1.00 0.98 0.10 1.06 1.07 0.96 0.95 0.95 1.04 1.00 1.00 1.00 1.43 1.00 1.00 1.00 0.39 1.03 0.98 0.97 0.98 1.00 1.00 -0.00 1.46 1.00 1.00 1.00 1.00 1.00 1.00 0.97 0.98 1.11 0.99 1.00 0.63 1.17 1.06 1.00 0.50 1.00 -0.37 1.00 1.00 1.00 1.00 0.99 1.00 1.00 0.47 1.00 1.00 1.00 1.00 0.25 0.27 0.22
+   end slopes, not graze: 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 0.00 1.00 1.00 0.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 0.81 1.00 1.00 1.00 1.00 1.00 0.94 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 0.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 0.93 1.00 1.00 1.00 -0.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 0.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 -0.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.01 1.00 1.00 1.00 1.00 1.00 0.97 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00
+Q3 KILLED (107/284)
+Q3a KILLED (graze ends at ½: 22/150; other ends at 1: 328/335)
+Q3b KILLED (24/120)
+   0 ball contacts: 37 held pieces, median K* 6
+   1 ball contacts: 28 held pieces, median K* 8
+   2 ball contacts: 3 held pieces, median K* 6
+   3 ball contacts: 2 held pieces, median K* 6
+   5 ball contacts: 10 held pieces, median K* 6
+   6 ball contacts: 9 held pieces, median K* 6
+   7 ball contacts: 5 held pieces, median K* 6
+   9 ball contacts: 2 held pieces, median K* 6
+   10 ball contacts: 2 held pieces, median K* 128
+   11 ball contacts: 2 held pieces, median K* 96
+   12 ball contacts: 1 held pieces, median K* 6
+   13 ball contacts: 4 held pieces, median K* 6
+   14 ball contacts: 2 held pieces, median K* 8
+   15 ball contacts: 1 held pieces, median K* 16
+   18 ball contacts: 1 held pieces, median K* 24
+   19 ball contacts: 1 held pieces, median K* 6
+   20 ball contacts: 1 held pieces, median K* 12
+   27 ball contacts: 1 held pieces, median K* 6
+   33 ball contacts: 1 held pieces, median K* 128
+   41 ball contacts: 1 held pieces, median K* 8
+Q4 KILLED (medians 8, 6, 6)

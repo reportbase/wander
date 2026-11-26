@@ -629,10 +629,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   NBS (`plans/nbs-plan.md`, 26 Nov; SPN R1262; Tom: "Many games use the pool engine", "2, write the plan"): planned, not run:
   the bridge behind games' 9-ball computer (whole circle of aims, legal-pot windows weighed by the hand's error) against
   `ninePlanGen`'s ghost-ball line, on 60 seeded positions; `games.html` read, not changed (`runs/nbs/nbs.mjs`, `GAMES_HTML`).
+  PEB run 5 (26 Nov; SPN R1261; Tom: "Merge and proceed"): the full signature (grips' choices, phase ends, side spin's
+  end; `runs/peb/peb5-build.mjs` makes `play-trick-event5.html`, run `node runs/peb/peb5.mjs s1|map cut|map tworail`,
+  then `report`): 87% of pieces held, most by 6 leaves; S2 and S3's root clause killed, the misses partly jumps the
+  1,024-aim grid hides (my set-up).
   PEB run 4 (26 Nov; SPN R1260): an event-driven integrator (`runs/peb/peb4-engine.js`, built into
   `runs/peb/play-trick-event.html` by `peb4-build.mjs`; run `node runs/peb/peb4.mjs q125|map cut|map tworail|map rack`, then
   `report`): the tick's hidden jumps gone, the shot map's edges the table's (a graze a square root); in *Reads and Writes* §1,
-  essays 30 §10 and 34 §9. About a third of pieces not held, unexplained; the break's map pending.
+  essays 30 §10 and 34 §9. Over the three maps 38% of pieces held (the break 57 of 202); Q3, Q3a (by its letter), Q3b, Q4 killed; run 5 found why.
   PEB runs 2–3 (26 Nov; SPN R1259; Tom: "Merge, then run 2"): the slip's end and the cloth after a contact placed at
   their moments (`runs/peb/peb2.mjs`, `peb3.mjs`); P1 holds, P3–P5 killed: each event the fixed tick rounds is a jump in
   the shot map (largest 1.2·10⁻² → 3.3·10⁻³), more remain; the bridge holds the pieces between the integrator's events.
