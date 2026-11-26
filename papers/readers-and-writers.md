@@ -51,7 +51,7 @@ is the *dual hemispherical vantage* (DHV), both hemispheres at once, which no st
 from no standpoint, and it is in this paper only as a point of comparison: the paper is about reads and writes.
 
 **Why the read: simplification and correctness** (R1239; Tom: "maybe the why is simplification and correctness", then
-"correct, it exists as a synethis, not as a vantage."). Read and the DHV state the same results (R1229), so the reason to
+"correct, it exists as a synethis, not as a vantage."). A read and the DHV state the same results (R1229), so the reason to
 state them from a read is not a different number. It is two things. Simplification: wherever the question is how things
 relate from a standpoint, a read states the result in fractions, the exchange s ↔ 1/s, the corner and one square root,
 with no angle and no limit, where the DHV states it with angles, π and e (Euler's w(s)·w(1/s) = −1 beside e^(iπ) = −1;
