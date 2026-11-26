@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  PEB runs 2–3 (26 Nov; SPN R1259; Tom: "Merge, then run 2"): the slip's end and the cloth after a contact placed at
+  their moments (`runs/peb/peb2.mjs`, `peb3.mjs`); P1 holds, P3–P5 killed: each event the fixed tick rounds is a jump in
+  the shot map (largest 1.2·10⁻² → 3.3·10⁻³), more remain; the bridge holds the pieces between the integrator's events.
   PEB (`plans/peb-plan.md` + `runs/peb/`, 26 Nov; SPN R1258; Tom: "Does it work with tangent bridge.", "Yes"): the pool
   engine (`play-trick.html`; the test's slope copy `runs/peb/play-trick-slope.html`, made by `runs/peb/peb.mjs`) on slopes:
   75 shots match the angle path to 6·10⁻¹³ with no trig call (P1); P2 killed by my guess; P3, P4 killed: the shot map's

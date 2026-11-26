@@ -126,3 +126,34 @@ within the tick) each ball touched is given the cloth for τ at once (`cloth(b, 
 changes over τ), so the cloth acts from the moment of contact. Everything else as run 2.
 
 - **P1″, P3″, P4″, P5″:** as P1′, P3′, P4′, P5 on the new copy (`runs/peb/play-trick-slope3.html`).
+
+### Run 3 (26 November 2026; `runs/peb/peb3.mjs`, output `runs/peb/peb-run3.txt`, copy `runs/peb/play-trick-slope3.html`)
+
+- **P1″ not killed.** 75 shots, largest difference 4.6·10⁻¹³, the same contacts in 75 of 75, 0 trigonometric calls.
+- **P3″ killed.** 29 of 283 pieces held (cut 7 of 36, two rails 9 of 45, rack 13 of 202).
+- **P4″ killed.** Every median K* more than 128.
+- **P5″ killed.** 23 steps past twenty times the median; the largest now 3.3·10⁻³ (run 2: 1.2·10⁻²).
+
+Post hoc (`runs/peb/peb3-posthoc.mjs`): the same contact on the same tick boundary, the paths now 6·10⁻⁵ apart one
+frame after it and growing by about 8·10⁻⁵ a frame, a difference in speed of about 0.005 = MU·h. A contact found at the
+end of a tick comes after `own` has already given both balls the cloth for that whole tick on their motion from before
+the contact, including the τ after it; found at the start, it has not. So the balls carry τ of the old drag too many.
+
+### Standing after runs 1–3
+
+Not killed: P1, P1′, P1″. Killed: P2 (my guess), P3–P5 in every run.
+
+- **The engine runs whole on slopes** (P1 three times): the aim and elevation as half-slopes, the cut as its sine, every
+  shot the angle path's to 5·10⁻¹³ with the same contacts and no trigonometric call.
+- **The shot map is the table's only once the integrator is.** Each run removed one way the fixed tick writes an event
+  into a whole tick (the slip's end; the cloth after a contact) and the largest hidden jump fell (1.2·10⁻² → 1.2·10⁻² →
+  3.3·10⁻³), but each event the integrator rounds to a tick is a jump in what a shot does across its aims, and there are
+  more (the cloth before a contact, now; the cushion's likewise; a stop; a pocket). The pieces the bridge would hold are
+  the pieces between the integrator's events, not between the table's.
+- A reading, to rule on: the bridge's policy (jumps as records, smooth pieces bridged) asks of an engine that every event
+  be placed at its own moment, as POL run 9 did for contact. That is event-driven integration, classical; the fixed tick
+  is the DHV's clock, and its rounding is what the bridge sees.
+
+A run 4 would take the cloth before a contact back to the contact's moment (each ball's cloth rate over the tick kept
+by `own` and τ of it given back before the response). Not written as a prediction, since each run so far has found the
+next rounding; whether to go on to a whole event-driven step is Tom's call.
