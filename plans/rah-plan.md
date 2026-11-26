@@ -55,7 +55,7 @@ one root, two lengths combined); here the same root marks what the read alone ho
   doubling, but the smallest error at N = 64 is 2.9·10⁻⁸ (h⁵), not ≥ 10⁻⁶. Post hoc (`runs/rah/` table in the output and
   a follow-up listing): h⁵ falls 3.35·10⁻⁵, 9.4·10⁻⁷, 2.9·10⁻⁸ (about ×2⁵ a doubling), h⁴v and h⁴v₂ about ×2⁴, h³ and
   h³v₂², h³vv₂ about ×2³, h and the a = 1 family ×2: an odd monomial carrying h^a converges as N^(−a), the order to which it
-  vanishes at the rim, since its even extension |h|^a … has a corner of that order there. Not predicted.
+  vanishes at the rim, since its even extension carries |h|^a, a corner of that order there. Not predicted.
 - **R3 not killed.** The 12 odd-degree monomials without h: least sup error 0.174 over N = 16, 32, 64 (v, v₂ and their
   odd powers 0.97–1.00; v·v₂² 0.38; v·v₂⁴ 0.28), none falling.
 - **R4 not killed.** The DHV's form (α of period 2π) holds all 84 to 6.4·10⁻¹⁵ at N = 16.
