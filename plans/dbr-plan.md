@@ -101,3 +101,34 @@ attempt had printed D1–D4 and D5's first clause, the same numbers as below.
 
 - **D2′.** L2 at K = 48 (reachable, 3·16), ρ = 4: sup error on f ≤ 10⁻⁶ at every centre c = 10 … 10¹² thumbs, the
   largest and smallest within a factor 2; 48 terms a read and zero trigonometric calls.
+
+### Run 2 (26 November 2026; `runs/dbr/dbr2.py`, output `runs/dbr/dbr-run2.txt`)
+
+- **D2′ killed, by my factor clause.** At K = 48 the sup error on f is 2.0·10⁻¹⁴, 2.7·10⁻¹⁴, 7.4·10⁻¹⁴, 8.3·10⁻¹⁴,
+  1.05·10⁻¹³ at c = 10 … 10¹² thumbs: within 10⁻⁶ everywhere by eight orders, 48 terms a read, zero trigonometric calls.
+  The largest over the smallest is 5.2, not ≤ 2: at this level the error is the double's rounding of the record and of its
+  logarithm, which grows with c (ln of 10¹² is 27.6). The window's own error is gone; what is left is the paint's arithmetic.
+
+### Standing after runs 1–2
+
+Not killed: D1, D3, D4, D7. Killed: D2 and D2′ by my bounds (the error the same at every centre, 1.08 apart at K = 24,
+then at the double's rounding at K = 48), D5 (the whole list on one turn holds f poorly everywhere, its error set by
+f's oscillation at both ends, so the N it needs hardly grows with reach: my mechanism wrong), D6 (a ratio window cannot
+hold content with a size even at ten thumbs; a records window holds it to 10⁻⁷ out to 10⁹ thumbs and stops at 10¹²,
+where the double rounds the records).
+
+What the runs show, in the plan's reading (to rule on):
+- **Behind the dial, a window in ratios holds ratio content the same way anywhere.** At 24 leaves its error is
+  1.14–1.23·10⁻³ from 10 to 10¹² thumbs out, at 48 leaves it is at the double's rounding; every read costs K terms, with
+  no length of the list, no distance and no angle anywhere in it. The window is a whole bridge on its own interval, its
+  Lebesgue constant Chebyshev's to four digits, its error falling a thousandfold from 12 to 24 leaves: the K-circle, not
+  a cut of an N one (against the cut kernel's floor of TB §16).
+- **Content with a size is the write's, and only its units hold it.** A window in ratios loses it at once; a window in
+  records holds it until the records themselves stop being told apart by the machine.
+- **One bridge over the whole endless list is not the way.** Laid on one turn (Boyd's map), it holds ratio content
+  poorly everywhere at any reasonable N, because ratio content never settles at either end: home and the horizon each
+  carry infinitely many cycles. The dial's way, a window that moves and is rebuilt, is the one that works.
+
+Classical in its parts: Chebyshev interpolation and its Lebesgue constant, the barycentric formula, Boyd's rational
+map; the ratio coordinate y = (x − c)/(x + c) is a Möbius map. The sorting (ratio content the read's, content with a size
+the write's, the dial's moving window the K-circle) is the series'.
