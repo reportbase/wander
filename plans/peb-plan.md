@@ -214,8 +214,7 @@ bridge could not hold.
 
 ### Run 4 (26 November 2026; `runs/peb/peb4-build.mjs`, `peb4.mjs`, engine `peb4-engine.js`, copy `play-trick-event.html`)
 
-Recorded in part while the break's map runs; the rest, and the verdicts on Q3, Q3a, Q3b and Q4 over all three maps, are
-added when it finishes.
+Recorded in part while the break's map ran; the rest and the verdicts on Q3, Q3a, Q3b and Q4 follow below.
 
 - **Q1 not killed.** 36 seeded shots, none leaving the cloth. Median largest difference in final places, event engine
   against run 3's tick: 0.080, 0.022, 0.0053 at SUB = 4, 16, 64 (×3.60 and ×4.20); the same signature at SUB = 64 on 36 of 36.
@@ -226,6 +225,18 @@ added when it finishes.
   the root's chart 5 of 7. Two rails: 46 jumps (8 at a graze), 46 pieces, 26 held; graze-ended pieces held 8 of 13. Every
   end not at a graze has slope 1.00; at a graze ends come in pairs, 0.50 on one side and 1.00 on the other (the side where
   the contact happens takes the root, the side where it misses is linear).
+
+**The break, and the verdicts over all three maps** (finished after run 5 was planned; `peb-run4.txt`). Break: 202 jumps
+(66 at a graze), 202 pieces, 57 held; graze-ended pieces 100, held in the root's chart 11.
+- **Q3 KILLED.** 107 of 284 pieces held (38%), against 90%.
+- **Q3a KILLED, by its letter (my set-up).** Ends not at a graze at slope 1: 328 of 335. Graze ends at ½: 22 of 150; but
+  a graze jump has a root on one side only (the side where the contact happens) and a plain end on the other, as the cut
+  and two rails showed, so at most about half the graze ends could be at ½; I predicted both.
+- **Q3b KILLED.** 24 of 120 graze-ended pieces held in the root's chart.
+- **Q4 KILLED.** Median K* by ball contacts 8, 6, 6 at one, two and three: no growth; a held piece costs about 6 leaves
+  whatever its contacts (the break's pieces with 10, 11 and 33 contacts the exceptions, 96 to 128).
+The break holds far less than the two simpler maps: with sixteen balls, the clipped rules run 5 records (stops, slide
+ends, grips, spin) fall inside pieces far more often.
 
 **Post hoc: why a third of the pieces were not held** (`runs/peb/peb4-posthoc.mjs`, `peb4-posthoc2.mjs`,
 `peb4-posthoc3.mjs`; outputs `peb4-posthoc-cut.txt`, `peb4-posthoc-tworail.txt`, `peb4-posthoc2.txt`; not predicted).
@@ -245,3 +256,63 @@ Some sub-pieces still not held end where a ball stops just short of a cushion, w
 So what was left after the clock was made exact is again the table's own, the moments its friction rules switch or end;
 each is a table event like a contact. A run 5 would put all of them in the signature (the phase log, the grips' choices,
 side spin's end) and predict the pieces then held.
+
+### Run 5, planned (26 November 2026; Tom: "Merge and proceed"). Predictions written before any script exists
+
+Run 4's post hoc found the pieces not held carry kinks from the table's own rules, events the contact signature does
+not record. Run 5 records them and tests whether the pieces are then held. The engine is run 4's event engine, its
+motion unchanged; only what is recorded grows (`runs/peb/peb5-build.mjs` makes `runs/peb/play-trick-event5.html`
+from run 4's copy; `runs/peb/peb5.mjs` runs it). **The full signature** is every event in the order it happens:
+- each contact, cushion and pocket, as in run 4, with each grip's choice inside it appended (the ball grip and the rail
+  grip each take the smaller of two forces: which one, stick or slip);
+- each phase end: a slide ending (`S`), a ball stopping (`R`);
+- each ball's side spin reaching zero (`W`), placed at its moment within the step.
+A jump is a change of the full signature, bisected to 10⁻¹² rad as before. **An end is a root's** when the first event
+that differs across it is a contact or cushion met at a closing speed under 10⁻³ of the shot's (a graze, or a ball
+arriving with almost no speed, as a ball stopping just short of a cushion), or a pocket entered at a radial speed under
+10⁻³ of the ball's; the bridge's chart takes that end's root (run 4's charts), every other end is plain.
+
+Maps as run 4's: the cut on the open table and the challenge "two rails", power 14, 1,024 aims. The break is left out
+(run 4's break is still being mapped; its time per aim is ten times theirs).
+
+- **S1 (the same game).** Recording changes nothing: on run 4's 36 seeded shots the final places equal run 4's engine's
+  bitwise, and the path makes 0 trigonometric calls.
+- **S2 (pieces held).** On the two maps, at least 90% of pieces wider than 10⁻⁴ rad have both balls' rest positions held
+  to 10⁻⁶ by the bridge in their chart (K in {6, 8, 12, …, 128}).
+- **S3 (the ends' forms).** Ends that are not a root's give a slope within 0.1 of 1 (fit of log|Δx| against log distance,
+  10⁻⁹ to 10⁻⁵ rad) at at least 90% of ends; at at least 80% of the root jumps one side's slope is within 0.1 of ½.
+- **S4 (cheap pieces).** The median K* over held pieces is at most 12.
+- **S5 (where the post hoc pointed).** Two rails' run 4 piece 0.714–0.997 is split by a `W` within 10⁻³ rad of
+  0.714 + 0.8365·0.282 = 0.950, and both sides wider than 10⁻⁴ are held.
+
+Each is killed by its own number. Known beforehand: run 4 and its post hoc (the kinds of kink, 22 of 32 pieces changing
+phase order inside, the cut's 5.997–6.084 split by a grip's choice, the spin's end on two rails), so S2 and S5 are not
+blind; what is new is whether those are all. A kink of a kind not listed would leave a piece unheld.
+
+What would follow if S2–S4 are not killed (a reading, to rule on): with every clipped rule's switch recorded as an event,
+the shot map is pieces, each held by a few leaves of the bridge, its edges the table's events; the edges of the root's
+kind are where something is met at no speed.
+
+### Run 5 (26 November 2026; `runs/peb/peb5-build.mjs`, `peb5.mjs`, copy `play-trick-event5.html`; output `peb-run5.txt`)
+
+- **S1 not killed.** On the 36 seeded shots the final state (places, velocities, spins) equals run 4's engine bitwise; 0
+  trigonometric calls.
+- **S2 KILLED.** 160 of 184 pieces wider than 10⁻⁴ rad held to 10⁻⁶ (87%; cut 63 of 75, two rails 97 of 109), against
+  90%. Run 4 held 50 of 82 (61%).
+- **S3 KILLED, in its root clause.** Plain ends at slope 1: 263 of 265 (two at 0.50, 0.58, ends of a root's kind my rule
+  did not flag). Root jumps with a side at ½: 9 of 33; my rule flags a jump by a slow closing speed against the shot's,
+  and most so flagged are linear on both sides. My rule, not the table.
+- **S4 not killed.** Median K* 6 over the 160 held pieces.
+- **S5 not killed.** In two rails' run 4 piece 0.714–0.997 the full signature jumps at 0.950509 (a cushion with the rail
+  grip's slip on one side, side spin's end on the other, `C0:1R/W0`), and both pieces beside it are held.
+- What the jumps are: of 184, the first differing events are slide ends, stops and spin ends against each other or
+  against a cushion or pocket in most (`SW` 43, `CP` 33, `CW` 19, `CR` 21, `RR` 14, …), ball contacts in few.
+
+**Post hoc** (`runs/peb/peb5-posthoc.mjs`, `peb5-posthoc.txt`; not predicted). Of the 24 pieces not held, 5 (cut
+0.124–0.141, 0.145–0.160, 2.387–2.424, 3.958–3.995 and two rails 0.389–0.406) have bridge errors of 0.2 to 9 units at
+every K and second differences 10⁶ to 10⁹ times their median: a jump inside them that the map never found, since the
+finer signature can change and change back between two of the 1,024 aims, which the search does not look for (my
+set-up). The other 19 converge, slowly (errors 10⁻⁴ to 10⁻³ at K = 128, falling with K), their second differences peaking
+10² to 10⁵ times the median, often within 1% of an end: an end of a root's kind not charted, or a kink not recorded; not
+found which. A run 5b would look for a change of signature inside each piece before bridging it (a finer grid within,
+or the bridge's own leaves' signatures compared), and chart an end by its measured slope rather than by my rule.
