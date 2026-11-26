@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  RAH (`plans/rah-plan.md` + `runs/rah/`, 26 Nov; SPN R1253): the read alone (TBH's bridge) holds exactly the content
+  rational in its slopes (50 of 84 monomials, the even-degree ones, 4·10⁻¹³, zero trig calls); what carries √(1 + s²) is
+  never held exactly (h^a: N^(−a), post hoc; no h: rings at the rim); the DHV's form holds all. R2 killed by my bound.
+  R1252 (26 Nov; Tom: "Merge, then 1 the 3"): `dial-bridge.html`, a bridge behind the dial (see Files).
   R1251 (26 Nov; Tom: "Proceed. What's next?"): FAB and DBR in *Reads and Writes* §9 and essay 34 §9. No new claim.
   DBR runs 1–2 (`runs/dbr/`, 26 Nov; SPN R1250; Tom: "Merge, then run DBR"): behind the dial, a window in ratios holds
   ratio content the same at 10 to 10¹² thumbs, K terms a read, no N, zero trig calls (the K-circle); content with a size only
