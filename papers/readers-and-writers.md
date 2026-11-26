@@ -3011,7 +3011,8 @@ before the data can show where it is not. **Checked** (TCF; killed).
   standpoint that is not a step. That such maps are the Möbius maps is conditional: it follows from the premises of O8
   (given Lie's classification), not from reading alone. Möbius maps keep every cross ratio, and classically a map
   keeping the cross ratio of every four distinct directions is Möbius; the cases checked (ORD: nine maps, six slopes)
-  illustrate that and prove nothing. The heat under a map: each read has its own heat, the same at every standpoint,
+  illustrate that and prove nothing. A cross ratio is not a fourth joining: it is a number of one read's four directions
+  that every Möbius map leaves unchanged, an invariant of maps (R1243). The heat under a map: each read has its own heat, the same at every standpoint,
   and no map changes it; a map's stretch at a direction is the first read's heat carried by the map against the second
   read's own there, 1 everywhere for a turn, not for a boost. Open: whether orders and maps exhaust the joinings with
   no gap, and whether extents, orders and maps exhaust the relations between reads. Neither is claimed.
@@ -3025,7 +3026,9 @@ before the data can show where it is not. **Checked** (TCF; killed).
   move with the field's disturbance, the undone angle 0.075 to 0.132 from uniform; GMF). The geomagnetic amounts also
   show the warning: a tail within 0.014 to 0.041 of a Cauchy in shape with no turn anywhere. So the rule has sorted where
   it was tried, two passes and four refusals, the turn named before the data each time; open still whether a third pass
-  is found in a domain chosen beforehand.
+  is found in a domain chosen beforehand. A pass counts only if the turn is named from the apparatus before the data and
+  the Cauchy is found in the direction, not in the channels' own amounts (R1243): the seeds and the geomagnetic amounts
+  show a Cauchy-like tail with no turn anywhere.
 - **O7. The essays, the demos and *Reads and Writes in Physics*.** *Closed (R792):* all three brought to R788's kinds;
   the last place still calling an extent a write, the demos page's card for `write.html`, now says the move places.
 - **O8. Why the sky is conformal.** The moving sky's Möbius map rests on motion keeping angles on the sky. SRB (runs 1–2)
@@ -3034,7 +3037,8 @@ before the data can show where it is not. **Checked** (TCF; killed).
   classification of the finite groups on a surface (Lie 1880), these leave the Möbius maps alone; Newton's aberration fails the
   first, since two of its steps are no single step once the speed is dropped. Two of the four carry the physics: that what
   no read can hold makes no difference to what is read (the light postulate stated for reads), and that an extent is a
-  finite list of numbers. Neither is shown to follow from reading. A reconstruction, not an explanation.
+  finite list of numbers. Neither is shown to follow from reading, and §0's construction does not supply them: all of
+  GEN can be granted and SRB's premises still refused (R1243). A reconstruction, not an explanation.
 - **O9. The Doppler factor, and relations between standpoints.** Three things are to be kept apart. The read is the
   direction of arrival from a standpoint, its state of motion included. The relation between two standpoints, their
   relative motion among it, is described by the rapidity (§4). The ratio of the frequencies received at the two is a
@@ -3063,7 +3067,9 @@ before the data can show where it is not. **Checked** (TCF; killed).
   settled by this: whether the rapidity is always recoverable from one sky, or the assumed rest frame unique. The time
   to contact stays out of D3. *Sharpened (R921):* as d₁/B it is an extent; read as ticks still to come it is not a
   count, since a count describes writes already made and no future tick is one, though it rests on the premise every
-  count rests on, that the steps go on alike. What kind the ticks to come are is still open.
+  count rests on, that the steps go on alike. *Closed (R1243):* the number d₁/B is an extent; reading it as ticks still
+  to come is the observer's bookkeeping (R1174–R1176), and it brings in a clock, which is a write, a thing in the world
+  whose ticks are met. The prediction adds no kind beside D1–D7.
 
 ## Where the ideas come from
 
