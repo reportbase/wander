@@ -7607,6 +7607,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+
+- **R1265** (26 Nov 2026; Tom: "Continue if your still making progress"): NBS run 2 (`plans/nbs-plan.md`,
+  `runs/nbs/nbs2.mjs`): B′, the map with no scan, on PEB's event engine with its full signature. On the cut it settles
+  in 9,149 flights from 16 or 64 starting spans alike, finds all 75 of PEB run 5's jumps and 62 more the 1,024-aim scan
+  stepped over (the five its post hoc suspected among them), and holds every piece wider than 10⁻⁴ by its own 8 leaves
+  to 10⁻⁶ (373 of 373 over both maps): R1263 shown on one table, a cost of leaves and bisection steps, no N. On two
+  rails it is capped at 200,000 flights in a window 3·10⁻⁴ rad wide near 0.53534 where the white comes to rest touching
+  the 1 and the engine chatters (up to 599,920 events a shot, the signature different at every aim down to 10⁻¹⁴), so it
+  maps nothing past it. C1, C2, C5 killed there, by the engine; C6 killed by my bound (the cut cost 2.6 times the scan,
+  which had missed 62 jumps); C3, C4 not killed. A map that must hold every piece needs a rule for a place with none.
+
 - **R1264** (26 Nov 2026; Tom: "Merge and run"): NBS run 1 (`plans/nbs-plan.md`, `runs/nbs/`), 60 seeded 9-ball
   positions on games' own fixed-tick engine, `games.html` unchanged. B (the whole circle mapped, pot windows weighed by the
   hand's error) finds a pot wherever the games' ghost-ball planner C does and in 20 of the 25 where C finds none (A1), and

@@ -168,3 +168,48 @@ converging slowly near their ends, where B′ will halve and pay), so C2 and C4 
 If C1–C6 stand: on an engine whose pieces are smooth between the table's events, the map's cost is counted in leaves a
 piece and steps a jump, with no scan count in it, which is R1263 shown on one table; carrying it to the 9-ball computer
 would need that engine in `games.html`, Tom's call.
+
+### Run 2 (26 Nov 2026; `runs/nbs/nbs2.mjs`, outputs `runs/nbs/nbs2-{cut,tworail}-{16,64}.json`, `nbs-run2.txt`)
+
+Choices made in writing the runner, before any result was read: the leaves are Chebyshev–Lobatto (the span's ends
+included, so every aim lies between two neighbouring leaves of some span; first-kind leaves would leave a change between
+two spans unseen), and each aim is flown once (a cache; a shared end costs one flight); the scan's bisection steps are
+counted as PEB run 5's loop takes them, 33 a jump. Two faults of mine found while running, fixed before the counted runs:
+a span already narrower than 10⁻¹² that held a change was cut again for ever (now recorded as a jump), and the full
+signature kept as a string filled the page's memory (now a 52-bit hash of its keys). The cut's numbers are the same
+before and after both fixes.
+
+| | cut | two rails |
+| --- | --- | --- |
+| flights, S = 16 | 9,149 (4,414 leaves, 4,735 bisection steps) | 200,007, capped |
+| the scan's (1,024 + bisections) | 3,499 | 4,621 |
+| jumps, pieces | 137, 348 | 24,748, 21,249 (24,645 and 20,943 inside 0.5352–0.5355) |
+| PEB run 5's jumps found | 75 of 75 | 45 of 109 (47 of the 47 below where B′ stopped, by place) |
+| pieces wider than 10⁻⁴ held to 10⁻⁶ by their 8 leaves | 222 of 222 (worst 2.9·10⁻⁹) | 151 of 151 (worst 5.6·10⁻⁹) |
+| S = 64 against S = 16 | the same 137 jumps; flights 0.979 | capped at the same place; flights 1.000 |
+
+- **C1 KILLED** by two rails, by the engine. Near the aim 0.53534 rad the white comes to rest touching the 1 and the
+  event engine chatters: contact, stop, restart, up to 599,920 events a shot, the full signature different at every
+  aim down to 10⁻¹⁴ rad (5,566 such flights). B′ finds a change between every two leaves there and bisects each, so it
+  spent its cap in a window 3·10⁻⁴ rad wide and mapped nothing past 0.5353. The cut settles in 4 seconds.
+- **C2 KILLED** by two rails' cap: the 62 jumps it missed lie past where it stopped; on the cut, and below 0.5353 on two
+  rails, every one of PEB run 5's jumps is there (one, at 0.454072, matched by place only: B′ found it as two jumps
+  8·10⁻¹³ apart, a sliver of another order between, which PEB's bracket straddled; my check's signatures, not a miss).
+- **C3 not killed.** The cut's four flagged pieces each have a jump inside (0.124 two, the others one); two rails'
+  0.3897–0.4064 has five, which my lookup (0.389 within 6·10⁻⁴, my code) did not find, so the report says 4 of 5; it is 5.
+- **C4 not killed.** 373 of 373 pieces wider than 10⁻⁴ held to 10⁻⁶ on 200 aims each; the coefficient test was never
+  fooled.
+- **C5 KILLED** by two rails (both capped in the chatter, their jump lists differing there by a few); on the cut not
+  killed: 16 or 64 starting spans give the same 137 jumps and flights within 2.1%.
+- **C6 KILLED.** The cut cost 2.6 times the scan's flights, against my 2; two rails capped. The bound per piece and jump
+  held on both (cut 9,149 against 39,573), but it is loose.
+
+**What it says.** On the cut, R1263 holds as stated: B′ has no scan count, starts from 16 or 64 spans to the same map,
+finds every jump the 1,024 scan found and 62 it stepped over (among them the five the scan's post hoc suspected), and
+every piece is held by its own 8 leaves to 10⁻⁶; its flights are leaves and bisection steps, 26 a piece. It costs 2.6
+times the scan because the scan's map was wrong by 62 jumps; a scan fine enough to find them all would cost more. On
+two rails the same procedure meets a place where the engine has no pieces at all (a ball left touching another chatters
+without end), and a map that will not stop until every piece is held spends everything there. The scan stepped over it
+(PEB run 5 saw one jump at 0.535336). So B′ does what the scan cannot, says where the map has no pieces, and needs a rule
+for such a place: stop halving a window whose leaves change at every width (here 10⁻¹⁴) and mark it unmapped, or an
+engine that settles a touching pair. Neither is in this run.
