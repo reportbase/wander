@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1237** (26 Nov 2026; Tom: "Who has studied this cauchy on cauchy related to gravity", then "All the research and
+  nothing about read and write?", then "yes, add it to §7 and merge"): CRC in *Reads and Writes* §7, "A Cauchy reading a
+  Cauchy", with its classical lineage sorted by reads and writes: upward continuation, equivalent sources, images, Cauchy's
+  closure, Brownian hitting and Holtsmark's law each hold the kernel and the density both as gravity's (R1195); the
+  continuation kernel is not named the stage's heat, the plane not a write, the height not a standpoint, the mirror has no
+  reader, Holtsmark's a law of amounts. Citations from memory, not checked; the sorting not found in them (unsearched).
 - **R1236** (26 Nov 2026; Tom: "This is worth understanding in more detail.  A cauchy reading another cauchy.", then
   "Yes"): CRC (`plans/crc-plan.md` + `runs/crc/`, mpmath, predictions first, nothing killed). A reader at height a above a
   plane painted with the pull of matter below, its heat (the flat screen's cos³, the 3D Poisson kernel P_a) laid over the

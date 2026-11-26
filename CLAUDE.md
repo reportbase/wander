@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1237 (26 Nov; Tom: "All the research and nothing about read and write?", "yes, add it to §7 and merge"): CRC in
+  *Reads and Writes* §7 "A Cauchy reading a Cauchy", its classical lineage (upward continuation, equivalent sources,
+  images, Kakutani–Spitzer, Holtsmark) sorted by reads and writes; citations from memory, unchecked.
   CRC (`plans/crc-plan.md` + `runs/crc/`, 26 Nov; SPN R1236; Tom: "A cauchy reading another cauchy.", "Yes"): the read's
   heat (P_a) laid over a plane painted with gravity's take (P_h): one Cauchy, heights adding, the heat-weighted reading the
   pull at the reader's own place, every component; on the line the Cauchy at (X − m₂) + i(a + h + c). Stops: the median
