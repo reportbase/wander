@@ -623,6 +623,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  FAB (`plans/fab-plan.md` + `runs/fab/`, 26 Nov; SPN R1249; Tom: "Proceed with B"): the Tangent Bridge's open floor (A.6)
+  is proved (Tao 2026, arXiv:2603.21453, any nodes, sharp, by L¹ duality and residues: the completed turn's tools); the
+  toy's sharp 8 = 4 × 2 with no angle, π only in the mean; evenly spaced places the least average on the circle, (4/π²)·ln N;
+  the rotation no floor alone. F1, F2, F5 killed by my quadrature, code, bound; run 2 not. DBR (`plans/dbr-plan.md`, not run):
+  a bridge behind the calendar's dial (`reportbase/calendar`, read-only), a ratio window against a records window.
   R1248 (26 Nov; Tom: "Proceed"): TBH in essay 34 §8 "On the read's hemisphere", README row, `essays.html` card. No new claim.
   R1247 (26 Nov; Tom: "Proceed"): TBH and the Tangent Bridge's own sorting (Appendix A's halves, the energy face, the
   K-window) in *Reads and Writes* §9 "The bridge sorts its own field, and the read's hemisphere" and §1's table. No new claim.
