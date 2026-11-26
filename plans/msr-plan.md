@@ -59,3 +59,33 @@ needed K changes: a size hidden in a list believed to have none.
 
 ## Runs
 
+### Run 1 (26 November 2026; `runs/msr/msr.py`, output `runs/msr/msr-run1.txt`)
+
+Data, retrieved 26 November 2026, not committed: WikiText-103 raw train from
+`huggingface.co/datasets/Salesforce/wikitext/resolve/main/wikitext-103-raw-v1/train-0000{0,1}-of-00002.parquet`
+(sha256 74da360f23826045b3e6ac6375411fdb15f003030aa74f2596ed08b857cb9212 and
+ba090ac30dbf5461e8dcbdd1a1b8e6f3cf9c2c756d64f0c1220450acd514f720): 1,801,350 rows, 101,425,671 tokens split on spaces,
+623,941 distinct words, count at rank 10⁵ 17 (the first quarter: 25,276,063 tokens, 291,879 distinct, count 4 at rank
+10⁵). NOAA hourly height, San Francisco 9414290, 2025, MLLW, metric, GMT (`product=hourly_height`; sha256
+760f9480b3fbda312a48fb8346354aee4de68eea59a1b5c12176d4b74d68fa5d): 8,760 values, no gaps, −0.504 to 2.292 m. Read with
+`python3 -I`. The plan's last tide centre, 6144 h, has a ratio window reaching 24,576 h, past the year's 8,760: my
+set-up.
+
+- **Z1 killed.** K* in the ratio window at c = 10^1.5, 10², 10^2.5, 10³, 10^3.5, 10⁴, 10^4.5: 32, 16, 6, 6, 6, 6, 6.
+  Largest over smallest 5.33. From rank about 300 to 10^4.5 (three decades) the list is held at the same cost, 6
+  leaves: ratio content. The head is not: the commonest thirty to a hundred words need 32 and 16.
+- **Z2 not killed.** The first quarter: 24, 16, 6, 6, 6, 6 at the six centres to 10⁴, each the same or one step away
+  (and 16 at 10^4.5, where its counts are about 4 and the Poisson scatter of counts that small enters).
+- **T1 not killed, vacuously.** K* in the ratio window: more than 128 at every centre from 24 h on, the fifth centre
+  outside the record. The clause "grows until it exceeds 128" is met at once, which tests nothing.
+- **T2 killed, by my set-up.** In the records window of half-width 48 h, more than 128 at every centre too. The content
+  was the hourly samples joined by straight lines, which kink every hour by about (1/8)·ω²·A·(1 h)² ≈ 0.03 m for the
+  semidiurnal tide, more than my τ = 0.02 m: no smooth rebuild meets a kinked function to that tolerance.
+
+### Run 2, predicted before it ran
+
+The tide read as a smooth function of time: the hourly samples joined by a cubic spline (scipy `CubicSpline`, not-a-knot)
+in place of straight lines; everything else as run 1.
+
+- **T1′.** In the ratio window K* grows at least ×2.5 from c = 24 h to c = 96 h, and is more than 128 by c = 384 h.
+- **T2′.** In the records window of half-width 48 h, K* at c = 24, 96, 384, 1536, 6144 h lies within a factor 2.
