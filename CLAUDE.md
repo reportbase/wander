@@ -1638,6 +1638,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   three, the mean of s never settling, the exchange's halves, and s ⊕ a's weight check (1 only for round). Facings 1, 2,
   4 drawn (the DHV's joins). §0's fourteen steps as a list that sets the picture. `?w=&m=round|sum|max&f=1|2|4&play=1`;
   hook `window.__twoPoints` (`M`, `heat`, `compose`, `composeRatio`, `meanTo`, `steps`, `set`, `state`). Not in the flying page.
+- `dial-bridge.html`: **a bridge behind the dial** (26 Nov 2026, SPN R1252; DBR; Tom: "Merge, then 1 the 3"), a standalone
+  page, plain canvas. The calendar's dial (reportbase/calendar `dial.js`, the thumb's mode) written again in a few lines:
+  gold needle a rate, blue a place, the record H·sinh ζ. Behind it a Tangent Bridge over a window round the record, in
+  ratios (x in [c/4, 4c], y = (x − c)/(x + c)) or in records (c ± 4H), K = 12, 24, 48 Chebyshev leaves from the lattice
+  (Gauss's seed for 48), barycentric; every Math trig, hyperbolic, log and exp call counted while the bridge is built and
+  read (zero), the paint made outside the count. Content the same in ratio, or with a size. Readout: record, how far short
+  of the horizon, K, terms a read, sup error, Lebesgue constant, trig calls; reproduces DBR's numbers.
+  `?z=<ζ>&K=12|24|48&win=ratio|records&paint=ratio|size`; hook `window.__dialBridge` (`set`, `state`, `rebuild`, `lattice`,
+  `cheb`). Not in the flying page.
 - `look-pull.html`: **a look and a pull** (24 Nov 2026, SPN R1182; essay 33; FCL; Tom: "merge, 1, 2, 3"), a standalone page
   like `faces.html`, plain canvas. Masses about a place (a seeded scatter in the drawing's plane, an even shell with the
   place off its centre, one mass), a facing turned by a slider: the faced take F(n) (a definition from FCL run 6) in front
