@@ -7607,6 +7607,8 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1248** (26 Nov 2026; Tom: "Proceed"): TBH in essay 34 §8 "On the read's hemisphere" (later sections renumbered 9–10),
+  its README row and `essays.html` card. No new claim.
 - **R1247** (26 Nov 2026; Tom: "Proceed"): TBH and the Tangent Bridge's own sorting carried into *Reads and Writes* §9,
   "The bridge sorts its own field, and the read's hemisphere" (Appendix A's constructive half the read's and variational
   half the DHV's; no logarithm in energy; the K-window a different operator; on the hemisphere the read's shares exact, the
