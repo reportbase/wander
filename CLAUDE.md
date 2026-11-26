@@ -623,6 +623,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1243 (26 Nov; a pressure test of §12's open items pasted by Tom, then "yes, if you agree, then merge"): taken where
+  Claude agrees (R863). O4: a cross ratio an invariant of maps, not a fourth joining; the partition not taken (R826). O6:
+  a pass needs the turn named from the apparatus first and the Cauchy in the direction, not the channels' amounts. O8:
+  §0 does not supply SRB's premises. O9 closed: d₁/B an extent; as ticks to come, the observer's bookkeeping bringing in
+  a clock, a write (not "a DHV completion"). *Reads and Writes* §12.
+  R1242 (26 Nov; Tom: "update the essays"): R1236–R1241 in essay 33 §16 "A read laid over a pull" (CRC, the relay, the
+  DHV not gravity's, the two densities, the rock let go), §19's heat-and-paint paragraph and the why; later sections
+  renumbered 17–19; README row, `essays.html` card. No new claim.
   R1241 (26 Nov; Tom: "we observe the affects of gravity. dropping a rock from your hand. where is read geometry in
   that", "yes and merge"): *Reads and Writes* §7 "A rock dropped from the hand": the reading s = y/L = (g/2L)·t², one
   standpoint reading g/L per tick², never g; the corner one arm fallen; seen from above, τ = y/ẏ = t/2 from the size
