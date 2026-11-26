@@ -262,6 +262,12 @@ an "exactly ⅔" that is only a limit). The parts are classical (the tensor brid
 "double Fourier sphere" of Merilees 1973 and Orszag 1974); the sorting is the series'. So the read alone holds ratios and
 shares exactly and does best where it looks, and a sign at the rim takes both hemispheres.
 
+A second test (RAH) named the line. Of the 84 monomials h^a v^b v₂^c up to degree six, the 50 rational in the slopes (the
+even-degree ones) are held by the read alone to 4·10⁻¹³ with no angle; the 34 that carry the one square root
+√(1 + s₁² + s₂²) are never held exactly, those with h^a reached as N^(−a), those without h never; both hemispheres hold
+all 84. Rational in the slopes, even on the sphere and held by the read alone are one class, and the square root is the
+line.
+
 ---
 
 ## 9. What the constraints rebuild
@@ -293,7 +299,8 @@ gave the least average in every minimization tried, climbing at (4/π²)·ln N.
 And behind the calendar's dial, which browses a list without end (DBR), a bridge laid in ratios round the needle holds
 ratio content to the same error from 10 to 10¹² thumbs out, each read K terms with no N and no angle, its Lebesgue
 constant Chebyshev's: the moving window is a whole bridge, not a cut of a larger one. Content with a size in records
-needs a window in records; one bridge over the whole list holds neither well.
+needs a window in records; one bridge over the whole list holds neither well. The page `dial-bridge.html` shows it: push the needle out
+to a trillion thumbs and watch the error, the terms a read and the trigonometric calls (none) stay put.
 
 ---
 
@@ -351,4 +358,4 @@ pan × tilt numbers.
 TBH: `plans/tbh-plan.md`, `runs/tbh/` (runs 1–2). *Reads and Writes* §9, "The bridge sorts its own field, and the
 read's hemisphere" (R1247).
 
-*Demo: `array-sweeps.html` (K places on the quarter turn, the index alone and the values on it).*
+*Demos: `dial-bridge.html` (a bridge behind the dial); `array-sweeps.html` (K places on the quarter turn, the index alone and the values on it).*

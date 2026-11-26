@@ -7607,6 +7607,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1254** (26 Nov 2026; Tom: "1 then 2"): #541 merged; RAH in *Reads and Writes* §9, "What the read alone holds: what is
+  rational in its slopes" (rational in the slopes, even on the sphere and held by the read alone one class, the square
+  root the line), and in essay 34 §8, with the dial page in essay 34 §9. A reading; no new claim. Then draw's Tangent
+  Bridge papers to be brought up to Tao, TBH, RAH and DBR (a PR in reportbase/draw).
 - **R1253** (26 Nov 2026; Tom: "Merge, then 1 the 3"): RAH (`plans/rah-plan.md` + `runs/rah/`), what the read alone holds.
   Of the 84 monomials h^a v^b v₂^c to degree six, the 50 rational in the slopes (exactly the even-degree ones, sympy) are
   held by the read-alone bridge (TBH's, α of period π) to 4·10⁻¹³ with zero trigonometric calls; the 34 carrying the

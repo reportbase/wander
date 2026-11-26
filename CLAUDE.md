@@ -623,6 +623,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1254 (26 Nov; Tom: "1 then 2"): RAH in *Reads and Writes* §9 ("What the read alone holds") and essay 34 §8–§9. No new claim.
   RAH (`plans/rah-plan.md` + `runs/rah/`, 26 Nov; SPN R1253): the read alone (TBH's bridge) holds exactly the content
   rational in its slopes (50 of 84 monomials, the even-degree ones, 4·10⁻¹³, zero trig calls); what carries √(1 + s²) is
   never held exactly (h^a: N^(−a), post hoc; no h: rings at the rim); the DHV's form holds all. R2 killed by my bound.

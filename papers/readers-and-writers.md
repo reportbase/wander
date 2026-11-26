@@ -2390,6 +2390,20 @@ the same in ratio, wherever it looks, at the cost of what it holds; a size is th
 wrong mechanism recorded; Tao's theorem read from the abstract, the blog and part of the paper, not refereed); the
 mathematics classical (Chebyshev, barycentric interpolation, Boyd's map, Tao), the sorting a reading.
 
+**What the read alone holds: what is rational in its slopes.** The bridge on the hemisphere in front (TBH) holds some
+content exactly and some never, and the line between them can be named (RAH). Take every monomial h^a v^b v₂^c up to
+degree six, 84 of them. Written in the slopes (h = 1/√(1 + s₁² + s₂²), v = s₁h, v₂ = s₂h), the 50 of even degree are
+rational in (s₁, s₂) and the 34 of odd degree carry the one square root √(1 + s₁² + s₂²). The read alone, each line
+through the look one read of period π, holds the 50 to 4·10⁻¹³ with no trigonometric call, and none of the 34 exactly at
+any N: those with h^a in them vanish at the rim to order a and are reached as N^(−a); those without h jump at the rim and
+are never reached. Held by both hemispheres, the DHV's form, all 84 are exact (6·10⁻¹⁵). So three descriptions are one
+class: rational in the read's slopes, even on the sphere (a quantity a direction has whatever its sign), and held by the
+read alone. The square root that this section places as where the DHV comes in, the halving's one root, two lengths
+combined, is also the line between what one hemisphere holds and what needs the other. **Checked** (RAH,
+`plans/rah-plan.md`, predictions first, R2 killed by my bound when the fastest converged faster than I allowed, the rate
+N^(−a) found after the run); the parity and the projective plane classical, the sorting a reading. `dial-bridge.html`
+shows the dial's window.
+
 **Two 1's.** On the axes the three ways to measure a direction of the square agree: the largest component (the cube's),
 the sum h + v (the diamond's) and the length √(h² + v²) (the circle's) all give 1. At the corner they part: 1, 2 and √2.
 A 1 needs a measure; the turn picks the round one, and √2 is the geometric mean of the other two (Hölder:
