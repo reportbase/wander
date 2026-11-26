@@ -18,3 +18,7 @@ w3 pos 15 (1/1) 520 s, B 78352, C5 12, finds C true B true
 w1 pos 17 (1/4) 574 s, B 79744, C5 21, finds C false B true
 w0 pos 16 (1/2) 458 s, B 65195, C5 21, finds C false B true
 w3 pos 19 (1/6) 376 s, B 58434, C5 12, finds C true B true
+w2 pos 18 (1/5) 702 s, B 102495, C5 12, finds C true B true
+w3 pos 23 (1/11) 293 s, B 45817, C5 21, finds C false B true
+w2 pos 22 (1/10) 196 s, B 20249, C5 9, finds C false B true
+w0 pos 20 (1/7) 400 s, B 50218, C5 21, finds C false B true
