@@ -69,3 +69,28 @@ carries no floor.
 
 ## Runs
 
+### Run 1 (26 November 2026; `runs/fab/fab.py`, output `runs/fab/fab-run1.txt`)
+
+- **F1 killed, in one clause, by my measurement.** Equally spaced roots gave 7.9999999997, 7.9999999987, 7.9999999948,
+  7.9999999792 at n = 2, 4, 8, 16: off 8 by up to 2·10⁻⁸, against my 10⁻⁹. The midpoint sum over |P| loses accuracy at
+  the roots, where |P| has kinks. The floor itself held: the least of 10,000 random root sets was 10.17 (n = 4) and 18.61
+  (n = 8); the 20 minimizations ended at no less than 8.0000003 and 8.0000007, every one at or above the floor and
+  walking toward the sinusoid.
+- **F2 killed, by my code.** ∫|P| came out 4 with zero trigonometric calls, but Σ 1/|P′| came out 10¹⁴–10¹⁵. I halved
+  the corner's slope log₂ n + 1 times where log₂ n − 1 give tan(π/2n), so the walk did not land on the roots and
+  cos(nx) came out near 0.
+- **F3 not killed.** Mean of λ at equal spacing 1.880080599 (N = 9) and 2.137730863 (N = 17); the 20 minimizations ended
+  at no less than 1.880081351 and 2.137734981.
+- **F4 not killed.** Means 2.68125 … 4.36059 for N = 65 … 4097; slope 0.40528 against 4/π² = 0.40528 (−0.00%).
+- **F5 killed, by my bound.** The turned read equals the average's integrand to 3.2·10⁻¹⁴ (the identity). The share of
+  turns with λ(0) < 1.1 at equal spacing was 0.043, 0.028 and 0.034 at N = 9, 33, 17 … in order 0.043, 0.034, 0.028
+  at N = 9, 17, 33: positive, but under my 10% and falling with N.
+
+### Run 2, predicted before it ran
+
+The toy's integral taken piece by piece between consecutive roots (|P| smooth in each piece) by 64-point Gauss–Legendre,
+and the halving count corrected. Nothing else changed.
+
+- **F1′.** Equally spaced roots give 8 to ≤ 10⁻¹² at n = 2, 4, 8, 16; 20 minimizations per n (n = 4, 8), each finished
+  on the piecewise integral, end at ≥ 8 − 10⁻⁹.
+- **F2′.** For sin(nx), n = 2, 4, 8, 16: ∫|P| = 4 and Σ 1/|P′| = 2 to ≤ 10⁻¹², product 8, zero trigonometric calls.

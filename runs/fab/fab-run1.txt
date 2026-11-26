@@ -1,0 +1,30 @@
+F1: the toy floor
+  n=2: equally spaced 7.999999999676
+  n=4: equally spaced 7.999999998702
+  n=8: equally spaced 7.999999994809
+  n=16: equally spaced 7.999999979237
+  n=4: 10,000 random root sets, least 10.172423, median 675.910
+  n=4: 20 minimizations end at least 8.000000331, most 8.000000
+  n=8: 10,000 random root sets, least 18.610903, median 22804.713
+  n=8: 20 minimizations end at least 8.000000746, most 547.014716
+F1 KILLED
+F2: the sinusoid sin(nx), its factors with no angle
+  n=2: integral 4.000000000000000  sum 1/|P'| 2251799813685249.500000000000000  product 9007199254740998.000000000000000  trig calls 0
+  n=4: integral 4.000000000000000  sum 1/|P'| 788129934789838.750000000000000  product 3152519739159355.000000000000000  trig calls 0
+  n=8: integral 4.000000000000000  sum 1/|P'| 1282876336162030.000000000000000  product 5131505344648120.000000000000000  trig calls 0
+  n=16: integral 4.000000000000000  sum 1/|P'| 118428139800109.484375000000000  product 473712559200437.937500000000000  trig calls 0
+F2 KILLED
+F3: on the circle, is equal spacing the least average?
+  N=9: equally spaced mean 1.880080599; 20 minimizations end at least 1.880081351, most 1.880131
+  N=17: equally spaced mean 2.137730863; 20 minimizations end at least 2.137734981, most 4.546203
+F3 not killed
+F4: the equally spaced mean against ln N
+  means ['2.68125', '2.95904', '3.23839', '3.51852', '3.79905', '4.07977', '4.36059']  slope 0.40528 (4/pi^2 = 0.40528), -0.00%
+F4 not killed
+F5: the rotation, and one turned read
+  N=9: turned read against the average's integrand 5.8e-15; share of turns with lambda(0) < 1.1: 0.043
+  N=17: turned read against the average's integrand 1.0e-14; share of turns with lambda(0) < 1.1: 0.034
+  N=33: turned read against the average's integrand 3.2e-14; share of turns with lambda(0) < 1.1: 0.028
+F5 KILLED
+
+[exited with code 0]
