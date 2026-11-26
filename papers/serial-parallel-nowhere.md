@@ -7607,6 +7607,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1258** (26 Nov 2026; Tom: "Let's take another look at the pool engine. It works very well for pool. Does it work with
+  tangent bridge.", then "Yes, write the plan", then "Yes"): PEB (`plans/peb-plan.md` + `runs/peb/`), run 1. P1 not
+  killed: every one of 75 shots struck through a slope path (aim and elevation as half-slopes, the recorded cut as its
+  sine) matches the angle path to 6·10⁻¹³ with the same contacts and no trigonometric call. P2 killed by my guess (degrees
+  replay exactly too). P3, P4 killed: 22 of 275 shot-map pieces held; post hoc the pieces carry the integrator's own
+  jumps (26 in one piece of the cut, 10⁻⁴ to 1.2·10⁻², a ball's slip ended "within this tick"), invisible to the contact
+  sequence. The jumps are the DHV's (the clock and the integrator). Run 2 predicted (the slip's end at its exact moment),
+  not run.
 - **R1257** (26 Nov 2026; Tom: "What were the insights from today's session", then "Add the insights to the papers and
   essays"): the day's ten results gathered in *Reads and Writes* §9, "What these tests add up to", and §1's table; essay
   34 §10; pointers in essays 10 and 16. No new claim.

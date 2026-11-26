@@ -56,3 +56,50 @@ form reaches the whole game; what stays the DHV's is the frame, the clock and th
 
 ## Runs
 
+### Run 1 (26 November 2026; `runs/peb/peb.mjs`, output `runs/peb/peb-run1.txt`)
+
+- **P1 not killed.** All 75 shots (five layouts × 12 and the 15 challenges' reference shots) struck through the slope path:
+  largest difference from the angle path in any final position 6.2·10⁻¹³, the same contact sequence in 75 of 75, and 0
+  trigonometric calls in every slope shot.
+- **P2 killed, by my guess.** The degree round trip moved none of the 60 shots (largest difference 0): `(ang / D) * D`
+  gave back the same double, or a bit the contacts did not amplify past 10⁻⁹, every time. The lattice aims replayed
+  identically, as predicted, but so did the degrees: on this engine degrees replay too.
+- **P3 killed.** 22 of 275 pieces held to 10⁻⁶ with K ≤ 128 (cut 5 of 36, two rails 8 of 45, rack 9 of 194).
+- **P4 killed.** The median K* is "more than 128" at every count of contacts, so it cannot grow.
+
+Post hoc (`runs/peb/peb1-posthoc.mjs`, not predicted): the pieces are not smooth. On the cut's piece round the direct hit
+(aims 0.22604 to 0.27837 rad, one contact sequence throughout, the same cushion and the same frame count at the jump
+found), scanning 100,000 aims 5.2·10⁻⁷ rad apart finds **26 jumps in the cue ball's or the object ball's rest position,
+from 10⁻⁴ to 1.2·10⁻²**, where the usual step is 3·10⁻⁵. A bridge on that piece is stuck at about 5·10⁻³ from K = 12 to
+K = 384, with its worst point at one of them. Their source is the integrator, not the table: a ball's slip that falls
+below 3.5·MU_S·h is removed at once, "within this tick" (`cloth`), so the moment a ball starts to roll is a whole tick,
+and as the aim moves that tick steps from one to the next, and the rest of the ball's path moves with it. The contact
+sequence does not change, so P3's signature (contacts, cushions, pockets) never saw these jumps.
+
+### Standing after run 1
+
+Not killed: P1. Killed: P2 (my guess about rounding), P3 and P4 (the pieces carry the integrator's jumps).
+
+- **The whole shot runs on slopes, with no trigonometric call** (P1): the aim as a half-slope, the elevation likewise and
+  the recorded cut as its sine reproduce every shot of the angle path to 6·10⁻¹³ with the same contacts.
+- **What a shot does across the aims is not the table's alone.** Between contacts the map from aim to outcome jumps
+  wherever the integrator's tick for a ball's slip ending steps on. Those are the DHV's jumps: the clock and the
+  integrator, which ENG had already left to the DHV. The bridge's policy (jumps as records, pieces bridged) holds only
+  once the integrator's events are recorded as jumps too, or once the integrator gives the slip's end its exact moment, as
+  POL run 9 gave contact its exact moment.
+
+### Run 2, predicted before it runs
+
+The slope copy's `cloth` given the slip's end at its exact moment within the tick: when the slip would be gone within h,
+the ball slides for the time τ = |u|/(3.5·MU_S) it needs, then rolls for h − τ (its motion and spin set by the same
+−(2/7)·u, the position advanced by the sliding part and the rolling part each for its own time). Everything else as run 1.
+
+- **P1′.** As P1, on the new copy against itself through both paths: final positions within 10⁻⁹, the same contacts, 0
+  trigonometric calls.
+- **P3′.** As P3 on the new copy: at least 90% of the pieces wider than 10⁻⁴ rad held to 10⁻⁶ with K ≤ 128.
+- **P4′.** As P4 on the new copy.
+- **P5 (the hidden jumps gone).** On run 1's post hoc piece, at the same 100,000 aims, no step in a rest position exceeds
+  20 times the median step.
+
+The rolling ball's stop (`ns = max(0, sp − MU·h)`) is also clipped at a tick; P5 tests whether that clip leaves jumps of
+its own (it should not: a stop clipped within a tick changes the rest position continuously).

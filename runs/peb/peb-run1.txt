@@ -1,0 +1,36 @@
+P1: 75 shots; largest final-position difference slope vs angle 6.19e-13; same contact sequence 75/75; most trig calls in a slope shot 0
+   shots past 1e-9 or with another sequence: 0
+P1 not killed
+P2: degree round trip moved 0/60 shots past 1e-9 (largest 0.00e+0); lattice aims made again differing: 0/60
+P2 KILLED
+P3 cut: 36 jumps; 36 pieces wider than 1e-4 rad; held to 1e-6 with K <= 128: 5
+P3 tworail: 45 jumps; 45 pieces wider than 1e-4 rad; held to 1e-6 with K <= 128: 8
+P3 rack: 194 jumps; 194 pieces wider than 1e-4 rad; held to 1e-6 with K <= 128: 9
+P3 KILLED (22/275)
+   0 ball contacts: 61 pieces, median K* 999 (999 = more than 128)
+   1 ball contacts: 36 pieces, median K* 999 (999 = more than 128)
+   2 ball contacts: 9 pieces, median K* 999 (999 = more than 128)
+   3 ball contacts: 4 pieces, median K* 999 (999 = more than 128)
+   4 ball contacts: 2 pieces, median K* 999 (999 = more than 128)
+   5 ball contacts: 25 pieces, median K* 999 (999 = more than 128)
+   6 ball contacts: 8 pieces, median K* 999 (999 = more than 128)
+   7 ball contacts: 10 pieces, median K* 999 (999 = more than 128)
+   8 ball contacts: 10 pieces, median K* 999 (999 = more than 128)
+   9 ball contacts: 10 pieces, median K* 999 (999 = more than 128)
+   10 ball contacts: 12 pieces, median K* 999 (999 = more than 128)
+   11 ball contacts: 10 pieces, median K* 999 (999 = more than 128)
+   12 ball contacts: 16 pieces, median K* 999 (999 = more than 128)
+   13 ball contacts: 16 pieces, median K* 999 (999 = more than 128)
+   14 ball contacts: 12 pieces, median K* 999 (999 = more than 128)
+   15 ball contacts: 8 pieces, median K* 999 (999 = more than 128)
+   16 ball contacts: 4 pieces, median K* 999 (999 = more than 128)
+   17 ball contacts: 5 pieces, median K* 999 (999 = more than 128)
+   18 ball contacts: 3 pieces, median K* 999 (999 = more than 128)
+   19 ball contacts: 3 pieces, median K* 999 (999 = more than 128)
+   20 ball contacts: 1 pieces, median K* 999 (999 = more than 128)
+   21 ball contacts: 4 pieces, median K* 999 (999 = more than 128)
+   23 ball contacts: 2 pieces, median K* 999 (999 = more than 128)
+   24 ball contacts: 2 pieces, median K* 999 (999 = more than 128)
+   27 ball contacts: 1 pieces, median K* 999 (999 = more than 128)
+   41 ball contacts: 1 pieces, median K* 999 (999 = more than 128)
+P4 KILLED (medians 999, 999, 999)
