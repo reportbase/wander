@@ -7607,6 +7607,31 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1241** (26 Nov 2026; Tom: "we observe the affects of gravity. dropping a rock from your hand. where is read
+  geometry in that", then "yes and merge"): what is observed is gravity's effects, never its take. A rock dropped at arm's
+  length L reads s = y/L = (g/2L)·t² (a parabola in the slope, in ticks), so one standpoint has g/L, never g; the corner
+  where it has fallen one arm; seen from above the time to contact y/ẏ = t/2 from its size alone, free of g, size and
+  height; the landing the write; gravity the paint's law. Classical parts (Galileo, Lee); *Reads and Writes* §7.
+- **R1240** (26 Nov 2026; Tom: "gravity uses both hemispheres, but its not a dhv, gravity has no vantage.", then "the
+  cauchy is just a word we use for lack of a better one. its just a density. gravity has a density as well, but for
+  different reasons."): three, not two: a read (one hemisphere, a vantage), gravity's take (both hemispheres, no vantage,
+  a sum at a place in the world, no synthesis) and the DHV (both hemispheres, no vantage, a synthesis). **"The Cauchy" is
+  only a name for a density**; the read's comes from a standpoint's even turn, gravity's from the inverse square, the same
+  form for different reasons (the shared premise R1184's, even over directions from a point). Supersedes R1235's "the
+  DHV's Cauchy" and its rule; R1195's and R1234's "the same for a look" read as the same form. *Reads and Writes* §7.
+- **R1239** (26 Nov 2026; Tom: "so why bother, they allready have the correct answer?", "but classical uses dhv which
+  uses PI and e and as a cansequence is more complicated.", "maybe the why is simplification and correctness, DHV does not
+  actuallly exist.", then "correct, it exists as a synethis, not as a vantage."): **the reason to state results from a
+  read is simplification and correctness**: the same results (R1229) in fractions, the exchange, the corner and one
+  square root, no angle and no limit, where the DHV needs angles, π and e (R974); and an account of observing that gives
+  a standpoint only what a standpoint has. **The DHV exists as a synthesis, not as a vantage** (refines R967 and R890):
+  drawn and held whole, stood at by no one. Its results are not wrong; they are a synthesis's. "Correctness" is the
+  account's, never a claim of different numbers. *Reads and Writes* §1 "Why the read: simplification and correctness".
+- **R1238** (26 Nov 2026; Tom: "Think about it, we have fingers reading fingers reading payload.", then "Ok"): CRC read
+  as a relay of hands in *Reads and Writes* §7: the reader's fingers, the plane's (gravity's take, not a read) and the
+  payload; stacked fingers compose to one set with the heights added, so only the total a + h + c reaches the reading,
+  the layers uncountable from the reader; the amount enters once, at the matter; a read through a take is a sum, and a
+  layer with matter on its own side folds it into its mirror. Classical (Poisson semigroup, SUM).
 - **R1237** (26 Nov 2026; Tom: "Who has studied this cauchy on cauchy related to gravity", then "All the research and
   nothing about read and write?", then "yes, add it to §7 and merge"): CRC in *Reads and Writes* §7, "A Cauchy reading a
   Cauchy", with its classical lineage sorted by reads and writes: upward continuation, equivalent sources, images, Cauchy's
