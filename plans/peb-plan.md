@@ -103,3 +103,26 @@ the ball slides for the time τ = |u|/(3.5·MU_S) it needs, then rolls for h −
 
 The rolling ball's stop (`ns = max(0, sp − MU·h)`) is also clipped at a tick; P5 tests whether that clip leaves jumps of
 its own (it should not: a stop clipped within a tick changes the rest position continuously).
+
+### Run 2 (26 November 2026; `runs/peb/peb2.mjs`, output `runs/peb/peb-run2.txt`, copy `runs/peb/play-trick-slope2.html`)
+
+- **P1′ not killed.** 75 shots, largest difference 5.8·10⁻¹³, the same contacts in 75 of 75, 0 trigonometric calls.
+- **P3′ killed.** 23 of 285 pieces held (cut 6 of 36, two rails 7 of 45, rack 10 of 204).
+- **P4′ killed.** Every median K* more than 128.
+- **P5 killed.** On run 1's piece, 23 steps past twenty times the median (3.2·10⁻⁵), the largest 1.2·10⁻² (run 1: 26).
+
+The slip's end was not the main source. Post hoc (`runs/peb/peb2-posthoc.mjs`): the largest remaining jump, bisected to
+two aims 5.6·10⁻¹⁷ rad apart, has the one contact at the same moment (0.4041667 s, to 10⁻¹⁶: on a sub-tick boundary,
+97 ticks of 1/240 s) and the two paths identical up to it, then 1.6·10⁻³ apart one frame later and growing. The contact
+is found exactly (POL run 9) and the motion since it is moved forward (`du·τ`), but **the cloth's grip on the slip the
+contact makes starts only at the next tick**: a contact just after a tick boundary waits almost a whole tick before the
+cloth acts on it, one just before waits almost none. With the cloth's grip at MU_S = 30 that tick of free sliding is a
+step in the balls' paths. A cushion contact (`tau` likewise) has the same delay.
+
+### Run 3, predicted before it runs
+
+The run 2 copy, and after every exact contact (ball on ball, and ball on cushion, where τ is the time since contact
+within the tick) each ball touched is given the cloth for τ at once (`cloth(b, τ)`, with its position moved by what that
+changes over τ), so the cloth acts from the moment of contact. Everything else as run 2.
+
+- **P1″, P3″, P4″, P5″:** as P1′, P3′, P4′, P5 on the new copy (`runs/peb/play-trick-slope3.html`).
