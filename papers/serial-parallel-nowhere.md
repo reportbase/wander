@@ -7607,6 +7607,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1241** (26 Nov 2026; Tom: "we observe the affects of gravity. dropping a rock from your hand. where is read
+  geometry in that", then "yes and merge"): what is observed is gravity's effects, never its take. A rock dropped at arm's
+  length L reads s = y/L = (g/2L)·t² (a parabola in the slope, in ticks), so one standpoint has g/L, never g; the corner
+  where it has fallen one arm; seen from above the time to contact y/ẏ = t/2 from its size alone, free of g, size and
+  height; the landing the write; gravity the paint's law. Classical parts (Galileo, Lee); *Reads and Writes* §7.
 - **R1240** (26 Nov 2026; Tom: "gravity uses both hemispheres, but its not a dhv, gravity has no vantage.", then "the
   cauchy is just a word we use for lack of a better one. its just a density. gravity has a density as well, but for
   different reasons."): three, not two: a read (one hemisphere, a vantage), gravity's take (both hemispheres, no vantage,

@@ -1807,6 +1807,21 @@ compose (CRC). That they share it is the one premise both rest on, even over dir
 by a turn and once by a law of pull; it is not one density owned by both, and the stage's "same for a look and a pull"
 (R1195, R1234) is to be read so: the same form, different reasons. Nothing in the numbers changes.
 
+*A rock dropped from the hand: reading gravity's effects* (R1241; Tom: "we observe the affects of gravity. dropping a
+rock from your hand. where is read geometry in that", then "yes and merge"). What is observed is gravity's effects, never
+its take; a dropped rock shows where the read sits. Held at arm's length L and let go, the rock is a direction going down,
+its reading its fall over the arm, s = y/L; with y = ½gt² that is s = (g/2L)·t², a parabola in the slope counted in
+ticks, all fractions, no angle. One standpoint reads g/L, a rate per tick squared, never g: scale the world, arm and fall
+together, and the readings are the same, only the ticks a second differ; g in metres a second squared needs L and the
+second carried in. The corner s = 1 is where the rock has fallen one arm, the near field the fall against the arm, the
+far field (read as 1/s) the arm against the fall. Looked at from straight above, the rock is only its breadth over its
+distance, and the rate of that ratio gives the time to contact y/ẏ = (½gt²)/(gt) = t/2: from its shrinking size alone the
+read has half the ticks since the rock was let go, the same for every rock, every height, every steady pull; g, the
+size and the distance are in none of it. The landing is the write: a dent, a sound, the rock at rest, met by other
+reads. Gravity is in the paint, the law by which the rock's directions change; the read lays the stage (the slope, the
+corner at one arm, the size ratio) and recovers from the paint g/L and t/2, never the amount g (R1197). Classical in its
+parts (Galileo's fall; Lee's τ, here read on a body falling away); the sorting ours, the numbers unchanged (R1229).
+
 *A Cauchy reading a Cauchy* (R1237; Tom: "This is worth understanding in more detail.  A cauchy reading another
 cauchy."; then "yes, add it to §7 and merge"; CRC, `plans/crc-plan.md`). Lay the read's heat over gravity's take: a
 plane painted point by point with the pull found there from matter below it, a reader a height a above it looking down,
