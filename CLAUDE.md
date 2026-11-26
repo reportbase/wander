@@ -623,6 +623,14 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1237 (26 Nov; Tom: "All the research and nothing about read and write?", "yes, add it to §7 and merge"): CRC in
+  *Reads and Writes* §7 "A Cauchy reading a Cauchy", its classical lineage (upward continuation, equivalent sources,
+  images, Kakutani–Spitzer, Holtsmark) sorted by reads and writes; citations from memory, unchecked.
+  CRC (`plans/crc-plan.md` + `runs/crc/`, 26 Nov; SPN R1236; Tom: "A cauchy reading another cauchy.", "Yes"): the read's
+  heat (P_a) laid over a plane painted with gravity's take (P_h): one Cauchy, heights adding, the heat-weighted reading the
+  pull at the reader's own place, every component; on the line the Cauchy at (X − m₂) + i(a + h + c). Stops: the median
+  59% off (a sum, not a read's order), matter between 82%, above 96%; post hoc that matter read as its mirror. Nothing
+  killed; classical (Poisson, upward continuation, images). Not in any paper.
   R1235 (25 Nov; Tom: "The observation read is shv cauchy. We observe the gravity, which is itself a dhv cauchy", "That
   means we need separate two cauchies", "yes, add it to the paper and merge"): **two Cauchies, the SHV's (the read) and the
   DHV's (gravity's take at a place)**, one weight per direction used two ways (one hemisphere/both, nothing/the column, add/

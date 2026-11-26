@@ -475,6 +475,13 @@ Then (SPN R440; Tom: "proceed with recommended changes") a real-data test of the
   direction's column, for a ball G·ρ·(4R/3)·D at every distance outside (Newton's shell theorem read so), for a cube not.
   The Cauchy form fixes the heat and never the paint: different matter can pull alike. Classical throughout; the
   sorting ours; no new physics.
+- **A Cauchy reading a Cauchy** (CRC, 26 November; SPN R1236; `plans/crc-plan.md`). A reader at height a above a plane
+  painted with the pull of matter below lays its heat, the flat screen's cos³ (the 3D Poisson kernel P_a), over gravity's
+  take there (P_h): the two compose to one, heights adding, and the heat-weighted reading is exactly the pull at the
+  reader's own place, every component; on the line the Cauchy at (X − m₂) + i(a + h + c). It stops where the statistic is
+  a read's (the median of the painted pulls 59% off: the identity is a first moment, a sum) and where matter lies on the
+  reader's side of the plane (82% and 96% off; that matter read as its mirror in the plane, vertical flipped, post hoc).
+  [exact] Classical (Poisson's integral, upward continuation, the method of images); not new physics.
 - **One premise for light and gravity** (CLM, LGS, LNS, 25 November; SPN R1227–R1231; *Reads and Writes* §7, "Gravity on
   the stage, in one account"; essay 33 §15). What a direction carries does not depend on how far along it its source
   lies: for gravity a direction's pull is its column, wherever the matter sits along the line, which holds exactly for

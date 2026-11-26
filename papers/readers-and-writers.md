@@ -1781,6 +1781,30 @@ the matter and held by no observer (R950: no one holds the whole, the things car
 sphere's columns summed at a place, reaching one hemisphere as directions (LNS). A way to organize known gravity, not new
 physics (R1229); no number changes.
 
+*A Cauchy reading a Cauchy* (R1237; Tom: "This is worth understanding in more detail.  A cauchy reading another
+cauchy."; then "yes, add it to §7 and merge"; CRC, `plans/crc-plan.md`). Lay the read's heat over gravity's take: a
+plane painted point by point with the pull found there from matter below it, a reader a height a above it looking down,
+its heat per unit of the plane the flat screen's a/(2π(a² + ρ²)^(3/2)). Three things come out exactly. The two Cauchies
+compose to one, the heights added (P_a ∗ P_h = P_(a+h)). The heat-weighted reading of the paint is the pull at the
+reader's own place, every component. On the line it is the Cauchy at the complex point (X − m₂) + i(a + h + c): feet
+subtract, heights add, the reader's, the plane's and the matter's (the relay of standpoints, one of them the matter's).
+And three things stop it. The identity is a sum, a write's statistic: the read's own, the median of the painted pulls,
+misses by 59%. It holds only with nothing on the reader's side of the plane: a mass between misses by 82%, one above the
+reader by 96%. And what lies on that side the reading takes for its mirror in the plane, the vertical part flipped (found
+after the run). So the read's heat can carry a write's take, but only through a write's operation, and being one
+hemisphere it folds the near side onto the far.
+
+Every part is classical: Poisson's integral for the half-space, geophysics' upward continuation (Peters 1949; Henderson
+and Zietz 1949; Dean 1958; Blakely 1995), equivalent sources (Dampney 1969), images (Kelvin), Cauchy's closure (1853),
+Brownian motion's hitting law (Kakutani 1944; Spitzer 1958); cited from memory, not checked. What none of them does is
+sort it by reads and writes. They hold the kernel and the density both as gravity's (R1195): the continuation kernel is
+a property of the field, not the stage's heat that a look also uses; the survey plane is data, not a write others read;
+the continuation height is a sensor's setting, not a standpoint; the mirror is a boundary condition with no reader in
+it; Kakutani and Spitzer use the turn's law to compute a write (a harmonic function from its boundary values); and
+Holtsmark's law of random pulls (Holtsmark 1919; Chandrasekhar 1943), the place gravity best known meets a stable law,
+is a law of amounts, wholly the write's side, and index 3/2, not the turn's (R1203). The sorting is the stage's, the
+results the same (R1229).
+
 **Gravity on the stage: the record, run by run.** A working record, kept here so later work can tighten the
 connection between observation and gravity. Each item is exact arithmetic on Newton's pulls or the thin lens, checked in
 FCL's runs (`plans/fcl-plan.md`, `runs/fcl/`; essay 33; the demo `look-pull.html`), and each is classical in its
