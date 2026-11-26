@@ -7607,6 +7607,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1236** (26 Nov 2026; Tom: "This is worth understanding in more detail.  A cauchy reading another cauchy.", then
+  "Yes"): CRC (`plans/crc-plan.md` + `runs/crc/`, mpmath, predictions first, nothing killed). A reader at height a above a
+  plane painted with the pull of matter below, its heat (the flat screen's cos³, the 3D Poisson kernel P_a) laid over the
+  painted pull (gravity's take, P_h of the matter): P_a ∗ P_h = P_(a+h) on the line and the plane (C1), the heat-weighted
+  reading equal to the pull at the reader's own place, every component (C2), on the line the Cauchy at (X − m₂) +
+  i(a + h + c), feet subtracting and heights adding, the relay of standpoints with one the matter's (C3); scaling moves both
+  as amounts and leaves them equal (C5). Where it stops (C4): the median of the painted pulls 59% off (the identity a
+  heat-weighted first moment, a write's statistic, not a read's order); matter between the plane and the reader 82% off,
+  above the reader 96%. Post hoc: matter on the reader's side of the plane is read as its mirror in the plane, vertical
+  flipped, to 10⁻²⁰. Classical (Poisson's integral, upward continuation, images). Not yet in any paper.
 - **R1235** (25 Nov 2026; Tom: "So what we have is two cauchies , on for the read and one for the write.", then "The
   observation read is shv cauchy. We observe the gravity, which is itself a dhv cauchy", "That means we need separate two
   cauchies", "yes, add it to the paper and merge"): **two Cauchies, the SHV's (the read) and the DHV's (gravity's take at a

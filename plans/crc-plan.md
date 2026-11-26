@@ -38,3 +38,31 @@ read's heat laid over gravity's take returns gravity's take at the reader's own 
 Kill: an identity past its tolerance; a C4 case within 1%.
 
 ## Runs
+
+### Run 1 (`runs/crc/crc.py`, output `runs/crc/crc-run1.txt`)
+
+Nothing killed.
+- **C1 not killed**: two Poisson kernels compose to one with heights added, P_a ∗ P_h = P_(a+h), on the line to 10⁻³⁶ and
+  on the plane to 3·10⁻²⁹ at every sample.
+- **C2 not killed**: the reader's heat laid over the painted pull returns the pull at the reader's own place, every
+  component, for a mass on its axis, one off it and a pair at two depths (to 9·10⁻²⁶): one Cauchy reading another gives
+  the DHV take at the SHV's standpoint.
+- **C3 not killed**: on the line the reading is the Cauchy at the complex point (X − m₂) + i(a + h + c): feet subtract,
+  heights add (the reader's, the plane's, the mass's), to 10⁻³⁶. The relay of standpoints (SUM), one of them the matter's.
+- **C4 not killed**: the median of the painted pulls is off by 59% (0.0440 against 0.1065: the identity is a heat-weighted
+  first moment, a sum, not a read's order); a mass between the plane and the reader puts the reading off by 82%, a mass
+  above the reader by 96%.
+- **C5 not killed**: lengths × 3 and × 1/7 leave the reading equal to the pull (to 4·10⁻²⁴), both moved as amounts by 1/k².
+
+Said plainly: C1–C3 are the Poisson representation of a harmonic field and the semigroup, so they could fail only by my
+code; the content is the sorting and C4.
+
+**Post hoc** (`runs/crc/crc-posthoc.py`, output `runs/crc/crc-posthoc.txt`; found after the run, not a prediction): what the
+reading makes of a mass on its own side of the plane (between, or above the reader) is that mass's mirror in the plane,
+its pull with the vertical part flipped, to 10⁻²⁰. So C4b and C4c are not noise: the read's heat, laid over the plane,
+takes everything on the near side for its reflection on the far side.
+
+Reading: a Cauchy reading a Cauchy is one Cauchy, the heights added, and it returns gravity's take at the reader's own
+standpoint, but only as a heat-weighted sum (a write's statistic, not a read's), only with nothing on the reader's side
+of the painted plane, and what is on that side it sees as its mirror. Classical in every part (Poisson's integral,
+upward continuation, the method of images); the sorting is the stage's, support by the same results (R1229).
