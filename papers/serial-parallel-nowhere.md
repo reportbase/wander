@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1244** (26 Nov 2026; a note on Lie's 1880 classification for one variable pasted by Tom, Claude's reply, then
+  Tom: "Ok"): taken where Claude agrees (R863). *Reads and Writes* §12 O8 now says which classification applies where: the
+  sky of space is a surface, the eight primitive algebras on it of which so(3), so(3, 1) and sl(3, ℝ) hold the turns, the
+  motion leaving so(3, 1), six numbers; in the plane the one-variable list, the turns leaving out the affine maps (no fixed
+  point), a non-turn motion the one-parameter group, PSL(2, ℝ) left, three numbers; local either way. Not taken: the note's
+  one-variable list for space, the turns eliminating translations, and "the same 3-parameter limit" for the Thomas–Wigner
+  turn in space. Classical; not checked in a run.
 - **R1243** (26 Nov 2026; a pressure test of *Reads and Writes* §12's open items pasted by Tom, then "yes, if you
   agree, then merge"): taken where Claude agrees (R863). O4 gains that a cross ratio is an invariant of maps, not a
   fourth joining; the review's partition of D7 not taken (R826 forbids claiming the kinds exhaust). O6 gains its second
