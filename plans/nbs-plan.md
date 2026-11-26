@@ -69,6 +69,25 @@ by the bridge between them, is a usable plan for a player, finding pots a line s
 error is forgiven; its price is flights, not cleverness. Only then would carrying it into `games.html` (the computer's
 turn, the engine untouched, step 3 of the proposal) be put to Tom.
 
+## K is n, N is not (added 26 Nov, before any script; SPN R1263)
+
+Tom: "This might seem like a lot extra work, but tb allows us to make real the idea that k is n. N is not n." Read here
+as: the count a procedure runs over (its n) should be K, the leaves laid on what the table does, never N, the aims a
+search could fly. A1–A6 as written do not test that: B finds its pieces on a fixed scan of 720 aims, so its cost still
+grows with how finely the circle is scanned, and PEB run 5 found pieces the 1,024-aim scan stepped over. So a third
+planner and one more prediction, written now:
+
+**B′**: B with no fixed scan. Start from 16 even aims; a span is one piece when the full signature is the same at its K
+Chebyshev leaves and the bridge's last two coefficients are under the tolerance (10⁻⁶ of the leave, PEB's), otherwise it
+is halved, a change of signature bisected to 10⁻¹⁰ rad as before. Its flights are Σ over pieces (K + the bisections),
+counted by the table's events alone.
+
+- **A7 (K is n).** On the same 60 positions: (a) B′ keeps every legal-pot piece wider than 10⁻³ rad that B keeps, in at
+  least 95% of positions; (b) with B's scan doubled to 1,440 aims, B's median flights rise by at least 1.6 times, B′'s
+  (which has no scan) by none, its count identical; (c) B′'s median flights per position, divided by its median number of
+  pieces, at most 3 × its median K (the leaves, not a scan, are what it pays for). Killed by any clause. (b)'s second half
+  is true by construction and is stated only so the comparison is on the page; (a) and (c) can fail.
+
 ## How it will be run
 
 `runs/nbs/nbs.mjs`, headless Chromium (playwright from /opt/node22/lib/node_modules), loading `games.html` from a local
