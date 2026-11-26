@@ -7607,6 +7607,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1238** (26 Nov 2026; Tom: "Think about it, we have fingers reading fingers reading payload.", then "Ok"): CRC read
+  as a relay of hands in *Reads and Writes* §7: the reader's fingers, the plane's (gravity's take, not a read) and the
+  payload; stacked fingers compose to one set with the heights added, so only the total a + h + c reaches the reading,
+  the layers uncountable from the reader; the amount enters once, at the matter; a read through a take is a sum, and a
+  layer with matter on its own side folds it into its mirror. Classical (Poisson semigroup, SUM).
 - **R1237** (26 Nov 2026; Tom: "Who has studied this cauchy on cauchy related to gravity", then "All the research and
   nothing about read and write?", then "yes, add it to §7 and merge"): CRC in *Reads and Writes* §7, "A Cauchy reading a
   Cauchy", with its classical lineage sorted by reads and writes: upward continuation, equivalent sources, images, Cauchy's

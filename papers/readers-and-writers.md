@@ -1805,6 +1805,18 @@ Holtsmark's law of random pulls (Holtsmark 1919; Chandrasekhar 1943), the place 
 is a law of amounts, wholly the write's side, and index 3/2, not the turn's (R1203). The sorting is the stage's, the
 results the same (R1229).
 
+*Fingers reading fingers reading the payload* (R1238; Tom: "Think about it, we have fingers reading fingers reading
+payload."). The run has three layers: the reader's fingers (the read's heat, one hemisphere, no amount), the plane's
+fingers (gravity's take at each painted place, both hemispheres, each finger weighing its column; a take, not a read,
+R1183) and the payload (the matter). Stacked, the fingers are one set of fingers: two layers at heights a and h compose
+exactly to one at a + h, a third adds c, and any number make one, the heights summed. So only the total reaches the
+reading: a plane at 1 over matter at 2 reads as a plane at 2 over matter at 1, and no reader can count the layers between
+it and the payload or say how the reach was shared among them (the inverse problem's non-uniqueness in this form). Every
+layer passes on directions; the amount enters once, where the last fingers meet the matter (R1197). Two limits, both
+from the run: a read passed through a take comes out a sum, its median lost (59%); and every layer must have nothing on
+its own side, or what is there is folded into its mirror. Classical: the Poisson semigroup and the relay of standpoints
+(SUM), one of them the matter's.
+
 **Gravity on the stage: the record, run by run.** A working record, kept here so later work can tighten the
 connection between observation and gravity. Each item is exact arithmetic on Newton's pulls or the thin lens, checked in
 FCL's runs (`plans/fcl-plan.md`, `runs/fcl/`; essay 33; the demo `look-pull.html`), and each is classical in its

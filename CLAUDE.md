@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1238 (26 Nov; Tom: "we have fingers reading fingers reading payload.", "Ok"): *Reads and Writes* §7 "Fingers
+  reading fingers reading the payload": stacked fingers one set, heights added, only a + h + c read, the layers
+  uncountable, the amount entering once at the matter; a read through a take a sum; matter on a layer's side its mirror.
   R1237 (26 Nov; Tom: "All the research and nothing about read and write?", "yes, add it to §7 and merge"): CRC in
   *Reads and Writes* §7 "A Cauchy reading a Cauchy", its classical lineage (upward continuation, equivalent sources,
   images, Kakutani–Spitzer, Holtsmark) sorted by reads and writes; citations from memory, unchecked.
