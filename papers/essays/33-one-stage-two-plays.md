@@ -2,10 +2,10 @@
 
 *The thirty-third of a series of essays on what can be known from where one stands. Draft, 24 November 2026; brought up
 to FCL's twelfth run on 25 November, and to ORB's orbit (§13) the same day; on 25 November too, bodies, motion and light's delay (§14, GDI, MVM, LDL, ACC and COS,
-`plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`, `plans/cos-plan.md`), and one premise for light and gravity (§15, CLM, LGS, LNS, `plans/clm-plan.md`, `plans/lgs-plan.md`, `plans/lns-plan.md`). It writes up these tests and three earlier ones: GRV (`plans/grv-plan.md`, `runs/grv/`), the twelve runs
+`plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`, `plans/cos-plan.md`), and one premise for light and gravity (§15, CLM, LGS, LNS, `plans/clm-plan.md`, `plans/lgs-plan.md`, `plans/lns-plan.md`); on 26 November, a read laid over a pull and a rock let go (§16, CRC, `plans/crc-plan.md`, `runs/crc/`). It writes up these tests and three earlier ones: GRV (`plans/grv-plan.md`, `runs/grv/`), the twelve runs
 of FCL (`plans/fcl-plan.md`, `runs/fcl/`) and ORB runs 2–8 (`plans/orb-plan.md`, `runs/orb/`). Every run but one had its predictions committed before it ran (the exception,
-on measured data, is said in §11), and the kills are gathered in §16. Every number below is from those runs. It began as
-exploration and ends on one ruling (§17): a place with no facing is not a read. The pull is never called a
+on measured data, is said in §11), and the kills are gathered in §17. Every number below is from those runs. It began as
+exploration and ends on one ruling (§18): a place with no facing is not a read. The pull is never called a
 read, and nothing here is new physics. The mathematics is classical throughout and is named where it is used; the sorting is the series' own,
 and is marked as a reading.*
 
@@ -32,7 +32,7 @@ adding. Tom's words for the frame, the same day: "cauchy is the stage, not the p
 The order: one stage (§1), a place with no facing (§2), the corners (§3), a facing given back (§4), the sheet (§5), two
 masses (§6), the pair in motion (§7), light past a mass (§8), what a pull's direction can find (§9), adding and
 subtracting from the look's side (§10), a tunnel under a hill (§11), the front and the depth (§12), an orbit (§13), bodies,
-motion and delay (§14), one premise for light and gravity (§15), what was killed (§16), what this does not say (§17), what it changes (§18).
+motion and delay (§14), one premise for light and gravity (§15), a read laid over a pull (§16), what was killed (§17), what this does not say (§18), what it changes (§19).
 
 ## 1. One stage
 
@@ -259,7 +259,7 @@ were written after the values had been seen, which the lab's rules do not allow 
 Fitted with the Cauchy's curve, the two profiles put the tunnel 18.9 ± 2.3 m and 13.6 ± 1.8 m down, against true
 mid-heights of 16.25 and 17.25 m. Their mean is 15.6 ± 1.4 m against 16.75 m, about 12% off. Multiply every measured
 value by 7 and the depth read does not move, as it should not: the depth is in the shape. The data could not tell a
-buried line from a buried ball; both curves fitted. One prediction was killed (§16). A second site, Medford Cave, read
+buried line from a buried ball; both curves fitted. One prediction was killed (§17). A second site, Medford Cave, read
 7 ft against 24 ft; a cave is not a clean line, and the miss stands as it came.
 
 So the rule holds once, to about an eighth, on one clean site. It is the classical rule and nothing more. A second
@@ -435,9 +435,52 @@ what that support can be: "read write framing is supported when it derives the s
 new phyics, maybe simplified derivation, but not new or different physics." The same results, from one stage; a shorter
 route in one place, the inside of a shell from a chord's two angles; the outside no shorter than Gauss's law.
 
-## 16. What was killed
+## 16. A read laid over a pull
 
-Twenty-three runs, about a hundred and forty predictions. Eleven were killed, all by Claude's own guesses, arithmetic or code, and they
+One more run, on 26 November (CRC, exact, predictions first), put the two side by side in one place. Tom asked for it in
+four words: "A cauchy reading another cauchy." A flat plane is painted, point by point, with the pull found there from
+matter below it. A reader stands a height a above the plane and looks down at it, laying its own weight over the plane's
+points, the flat screen's a/(2π(a² + ρ²)^(3/2)).
+
+Three things came out exactly. The two weights compose to one, their heights added: a weight from a, laid over a weight
+from h, is the weight from a + h. The reading, the paint averaged by the reader's weight, is the pull at the reader's
+own place, every component of it, to thirty-odd digits. And on a line the reading is the one Cauchy at the point
+(X − m) + i(a + h + c), the feet subtracting and the three heights adding: the reader's, the plane's and the matter's.
+
+Tom's picture of it: "we have fingers reading fingers reading payload." The reader's fingers point to the plane's
+fingers, which point to the matter. Stacked, they are one set of fingers, so only the total height reaches the reading.
+A plane at 1 over matter at 2 reads exactly as a plane at 2 over matter at 1. The layers cannot be counted from the
+reading, which is the inverse problem's old fact, that one field fits many arrangements of matter. The amount enters
+once, where the last fingers meet the matter. Tom, later: "forget pointers, its just an indirection."
+
+It stops in two places, and both were predicted. The median of the painted pulls is 59% off: the reading is the heat's
+average, a sum, so a read passed through a take comes out a sum, and the order a read keeps is lost on the way. And the
+plane must have nothing on the reader's side of it: matter between the plane and the reader puts the reading 82% off,
+matter above the reader 96%. Afterwards, not predicted: what lies on a layer's own side is read as its mirror in the
+plane. Classical throughout: the Poisson kernel's semigroup, geophysics' upward continuation, Kelvin's images.
+
+Then two corrections of the words used so far. Tom, the same evening: "gravity uses both hemispheres, but its not a dhv,
+gravity has no vantage." And: "the cauchy is just a word we use for lack of a better one. its just a density. gravity has
+a density as well, but for different reasons." So there are three, not two. A read holds one hemisphere from a
+standpoint. Gravity's take holds both and has no facing, but it is no synthesis: it happens at one place, now, and
+gathers only what is there. The dual hemispherical vantage holds both and is a synthesis, drawn and completed, stood at
+by no one. And "the Cauchy" names a density. The read has one over its directions, from a standpoint turning evenly.
+Gravity has one over a plane, from the inverse square, each direction counting its whole column. The two have the same
+form for different reasons, and the shared form is why they compose. It is not one density that both own.
+
+What is experienced of gravity is then a read of its effects. Tom: "we observe the affects of gravity. dropping a rock
+from your hand. where is read geometry in that". Hold a rock at arm's length L and let it go. It is a direction going
+down, and its reading is its fall over the arm, s = y/L = (g/2L)·t², a parabola in the slope counted in ticks, all
+fractions. One standpoint reads g/L, never g: scale the world, arm and fall together, and every reading is the same,
+only the ticks a second differ. The corner is where the rock has fallen one arm's length. Look at the rock from
+straight above and it is only its breadth over its distance; the rate of that ratio gives y/ẏ = (½gt²)/(gt) = t/2. From
+its shrinking size alone the read has half the ticks since the rock was let go, the same for any rock, any height and
+any steady pull. The landing, a dent and a sound, is the write. Gravity is in the paint, the law by which the rock's
+directions change.
+
+## 17. What was killed
+
+Twenty-four runs, about a hundred and forty-five predictions. Eleven were killed, all by Claude's own guesses, arithmetic or code, and they
 stay recorded as killed.
 
 - GRV's third prediction guessed that the pairing of opposite columns holds between two cubes as it does between two
@@ -460,7 +503,7 @@ stay recorded as killed.
 Most of the predictions in runs 3, 5, 6, 7, 8, 10 and 12 were worked out on paper before they were written down. Those runs
 could fail by algebra or by code, not by the world. They are a sorting, and each plan says so.
 
-## 17. What this does not say
+## 18. What this does not say
 
 It does not say what gravity is. Tom, the same day: "what is gravity specificaly. but lets not get bogged down".
 Every formula here is Newton's or older, or the textbook lens equation taken as given. The size of the Einstein radius
@@ -479,9 +522,9 @@ pull has no facing, is a sum, moves with scaling, and carries an amount. What th
 gives the exact sense in which no facing is all facings at once: each facing taken with its direction attached, and
 each joined to its opposite by subtracting.
 
-## 18. What it changes
+## 19. What it changes
 
-For the series, six things, each a reading.
+For the series, seven things, each a reading.
 
 The stage is wider than the look. The Cauchy was met as the weight a standpoint lays over directions. It is also the
 weight a mass lays over a plane, the weight a sheet's pull is averaged with, and, along a line, a law the bending of
@@ -498,8 +541,9 @@ valuable." A way of thinking about known gravity is what the runs give, and that
 The heat and the paint come apart. Tom, 25 November: "classical does not distinguish the payload from the heat. We show
 that gravity is separate from the heat". The classical formula does have two factors, a weight over directions and the
 matter met along each. It holds both as gravity's, the weight being what the inverse square gives. Here the weight is
-the stage's: the same for a look with no mass in it, and for every arrangement of matter. What is gravity's is the
-paint, the amount along each direction (§12). The separation is of roles. A pull needs both, and no classical number
+sorted out from the matter: a look has one of the same form with no mass in it, for a different reason (§16), and it is
+the same for every arrangement of matter. What is gravity's is the paint, the amount along each direction (§12), and the
+way it is gathered. The separation is of roles. A pull needs both, and no classical number
 changes. This is no judgement of the classical account, which gets every number right.
 
 Agreeing with it is itself a result. Tom, 24 November: "Same results with cauchy framing to classical is a result in
@@ -514,6 +558,11 @@ place is different: a choice for the look, an amount for the rest.
 And a facing is what separates adding from subtracting. A look's two halves add to a whole. A pull's two halves
 subtract to a difference, and only the difference has a limit. One facing of an endless even world has no total, as the
 Cauchy has no mean.
+
+And the reason to say it from a read at all. Tom, 26 November: "maybe the why is simplification and correctness",
+then "correct, it exists as a synthesis, not as a vantage." The read states the same results in fractions, with no
+angle and no limit, and it gives a standpoint only what a standpoint has. The dual hemispherical vantage is a synthesis,
+not a place anyone stands. Its results are not wrong; they are a synthesis's.
 
 For the plumb line: it hangs along the one line left when every direction has been taken with its opposite. It has no
 front. That is why it can show which way is down.
