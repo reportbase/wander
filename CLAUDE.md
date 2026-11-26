@@ -623,6 +623,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1247 (26 Nov; Tom: "Proceed"): TBH and the Tangent Bridge's own sorting (Appendix A's halves, the energy face, the
+  K-window) in *Reads and Writes* §9 "The bridge sorts its own field, and the read's hemisphere" and §1's table. No new claim.
   TBH (`plans/tbh-plan.md` + `runs/tbh/`, 26 Nov; SPN R1246; Tom: "lean on it more to prove the points on our read write
   paper", "Yes"): the Tangent Bridge on the read's hemisphere, line by line through the look (period π) × the azimuth: the
   read's shares exact, zero trig calls; the horizon's antipodes glued, the signed components held only with the back

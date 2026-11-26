@@ -368,9 +368,9 @@ hemispherical vantage (DHV) needs, each placed by a test that could have failed 
 
 | | its mathematics | placed by |
 |---|---|---|
-| **read** (continuous, unmoved by scaling) | slopes and ratios; composing them, (s + a)/(1 − κsa); the exchange s ↔ 1/s and the corner; the heat ds/(1 + s²); order: the median and quantiles; relations with no unit; one square root, √(1 + s²); in calculus, the first derivative of one length on another, the derivatives of rational functions with no limit (a number with ε² = 0, the stride kind), the chain rule as a tower, a curvature taken against the curve's own length or against another curvature, an antiderivative that telescopes, and the slope's own equation (the Riccati, constant coefficients) stepped by rational maps; an oscillator's direction and an orbit's shape. No angle, no trigonometry, no π, no unit | PYT, PYK (§9); Theorem 6's order statistics (§3); ALG's exact turns and lines (§9, "Run as code"); NTN and DVA, relations among directions with π only a name ("Where π and e are content"); CLC, RIC, ORB (essay 31) |
+| **read** (continuous, unmoved by scaling) | slopes and ratios; composing them, (s + a)/(1 − κsa); the exchange s ↔ 1/s and the corner; the heat ds/(1 + s²); order: the median and quantiles; relations with no unit; one square root, √(1 + s²); in calculus, the first derivative of one length on another, the derivatives of rational functions with no limit (a number with ε² = 0, the stride kind), the chain rule as a tower, a curvature taken against the curve's own length or against another curvature, an antiderivative that telescopes, and the slope's own equation (the Riccati, constant coefficients) stepped by rational maps; an oscillator's direction and an orbit's shape. No angle, no trigonometry, no π, no unit | PYT, PYK (§9); Theorem 6's order statistics (§3); ALG's exact turns and lines (§9, "Run as code"); NTN and DVA, relations among directions with π only a name ("Where π and e are content"); CLC, RIC, ORB (essay 31); the Tangent Bridge's constructive half and TBH (§9) |
 | **write** (discrete, moved by scaling; a thing with mass) | things with a size, and, as bookkeeping about them, amounts in a unit, sums and means; a size fixed by an amount carried in (a stride, a pull, a refractive index); a higher derivative or a curvature in a unit, and every rate against a clock | the walk counted (ONE, WLK; §6), the bounce (§7), the scale test (D5); CLC (dⁿy/dxⁿ moved as k^(1−n)) |
-| **DHV** (for comparison) | completions: π the turn whole, e the scale whole, the circle held at a size, totals over both hemispheres; an integrand's sum carried to its limit, ln and the arctangent; the clock time a step stands for (Kepler's equation, a damped oscillator's e^(−γt)) | PYK (only the turn's heat has a total), BLD (no count is π or e), NTN (every limit keeps its π); CLC, RIC, ORB |
+| **DHV** (for comparison) | completions: π the turn whole, e the scale whole, the circle held at a size, totals over both hemispheres; an integrand's sum carried to its limit, ln and the arctangent; the clock time a step stands for (Kepler's equation, a damped oscillator's e^(−γt)) | PYK (only the turn's heat has a total), BLD (no count is π or e), NTN (every limit keeps its π); CLC, RIC, ORB; the Tangent Bridge's variational half, the rim's sign (TBH, §9) |
 
 Calculus sorts the same way (CLC, RIC, ORB; essay 31). A slope of one length on another is a read; the second
 derivative is divided by k when the world is scaled by k, so a curvature or an acceleration in a unit is a write; taken against the curve's own length (curvature times arc
@@ -2341,6 +2341,33 @@ CORDIC's direction) were exact where their DHV forms misrounded, drifted, lost t
 ones with no single vantage form are completions (CORDIC's gain, the DFT's roots of unity, the mean). **Checked** (draw's
 `tb_classical.md` and `tb_algebra.md`, figures quoted, not rerun here; ALG, `plans/alg-plan.md`, predictions first,
 15 of 16 and the 16th's successor not killed); the theorem classical, the sorting a reading. Essays 10, 28 and 29.
+
+**The bridge sorts its own field, and the read's hemisphere.** The Tangent Bridge is this paper's sorting (§1, "Which
+mathematics goes with each") carried through a whole classical subject, by the method of its own appendix. Approximation
+theory splits along the line between the two forms. The constructive half follows from the round trip, order, the halving
+and squaring, with no completed total: Lebesgue's lemma (the rebuilt curve within 1 + Λ of any curve the places can hold),
+the logarithm's form (each doubling adds a bounded positive amount, measured as (2/π)·ln 2 = 0.44127 a doubling), aliasing
+by counting (N independent readings, the next one telling nothing), Jackson's estimate by squaring twice, Bernstein's
+inequality (constant ½ on the places, the classical 1 in degree). The other half is the DHV's: that a best approximation
+exists, density as a completed limit (in the read's form a residual that settles, testably), equioscillation, and the bound
+over every possible set of places, which stays open. The theorem itself splits so: its round trip, its exactness at the
+places and its locality run in the slope chart; the bound between and the convergence are statements about the completed
+circle. Two further results place the logarithm and K. In energy the rebuilding has no logarithm at all: it is a tight frame
+with bounds ½ and 1 at every N, the ½ an exact rational eigenvalue once the turn's π is divided out; the (2/π)·ln N is the
+supremum norm's. And a rebuilding cut to the K places nearest each point is a different operator, not an approximation of
+the full one: its amplification grows with ln K, but its disagreement with the full rebuilding floors near 0.4 (of a
+200-unit figure) and never converges, while read as its own object it is exact at its own places (§6, "K and N": a read
+holds K and nothing of N). On the hemisphere in front (TBH), a bridge laid line by line through the look, each line one
+read of period π, holds the read's own shares h², v², hv and v·v₂ to 10⁻¹⁴ from 8 × 4 places, and smooth content to 10⁻¹²
+by N = 64, with no trigonometric call. The period π makes each line's two ends one point, so the horizon's opposite
+directions are glued: the signed components v and v₂ ring at the rim at every N, and are held exactly (10⁻¹⁴) only when the
+back hemisphere is held too, the DHV's two hemispheres. The bridge's places are finest at the look, half of them within one
+thumb against 29% of the heat; moved onto the heat's even measure the bridge pays (its Lebesgue constant 6.4·10⁷ at 32
+places with the native kernel; with the coordinate changed, a cusp at the look and hv converging as N^(−0.52)). So the read
+alone holds ratios and shares exactly and does best where it looks; a sign at the rim takes both hemispheres.
+**Checked** (draw's `tb_algebra.md` Appendix A and §16, `tb_spectral.md` §19, figures quoted; TBH, `plans/tbh-plan.md`,
+predictions first, run 1's P1 killed by my code, P4 and P7 in their letters, run 2 not); the theorems classical (the
+double Fourier sphere of Merilees 1973 and Orszag 1974 among them), the sorting a reading. Essay 34.
 
 **Two 1's.** On the axes the three ways to measure a direction of the square agree: the largest component (the cube's),
 the sum h + v (the diamond's) and the length √(h² + v²) (the circle's) all give 1. At the corner they part: 1, 2 and √2.
