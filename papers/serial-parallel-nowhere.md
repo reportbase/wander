@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1259** (26 Nov 2026; Tom: "Merge, then run 2"): PEB runs 2–3. P1′, P1″ not killed (the engine whole on slopes, no
+  trigonometric call, to 5·10⁻¹³). P3–P5 killed in both: placing the slip's end at its moment (run 2) and the cloth from a
+  contact's moment (run 3) lowered the largest hidden jump in a shot-map piece from 1.2·10⁻² to 3.3·10⁻³, but each event
+  the fixed tick rounds is a jump, and more remain (now the cloth before a contact, τ of old drag). The bridge holds what
+  a shot does across its aims only between the integrator's events; event-driven integration (classical) would remove
+  them. Run 4 not predicted; Tom's call.
 - **R1258** (26 Nov 2026; Tom: "Let's take another look at the pool engine. It works very well for pool. Does it work with
   tangent bridge.", then "Yes, write the plan", then "Yes"): PEB (`plans/peb-plan.md` + `runs/peb/`), run 1. P1 not
   killed: every one of 75 shots struck through a slope path (aim and elevation as half-slopes, the recorded cut as its
