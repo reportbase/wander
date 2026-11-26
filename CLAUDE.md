@@ -623,6 +623,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1251 (26 Nov; Tom: "Proceed. What's next?"): FAB and DBR in *Reads and Writes* §9 and essay 34 §9. No new claim.
   DBR runs 1–2 (`runs/dbr/`, 26 Nov; SPN R1250; Tom: "Merge, then run DBR"): behind the dial, a window in ratios holds
   ratio content the same at 10 to 10¹² thumbs, K terms a read, no N, zero trig calls (the K-circle); content with a size only
   in a records window; one bridge over the whole list (Boyd's map) poor everywhere. D2, D2′, D5, D6 killed by my bounds,

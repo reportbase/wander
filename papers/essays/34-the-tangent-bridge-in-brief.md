@@ -284,6 +284,17 @@ The variational half does not: the existence of a best approximation, Weierstras
 sets, which stays open. The paper pins its difficulty down to one step, an average floor whose logarithm lives in the
 kernels' far tails, where every proof found uses the conjugate function.
 
+That step has since been closed, though not by those means. Tao (2026, arXiv:2603.21453) proves the floor on an
+interval for any places with the sharp constant, (4|I|/π²)·log n, by an L¹ duality on the square wave's Fourier series
+and the residue theorem round closed contours, the completed turn's tools. This series checked his trigonometric toy
+(FAB): its sharp 8 is 4 × 2, two factors computed with no angle, π only in the mean; and on the circle evenly spaced places
+gave the least average in every minimization tried, climbing at (4/π²)·ln N.
+
+And behind the calendar's dial, which browses a list without end (DBR), a bridge laid in ratios round the needle holds
+ratio content to the same error from 10 to 10¹² thumbs out, each read K terms with no N and no angle, its Lebesgue
+constant Chebyshev's: the moving window is a whole bridge, not a cut of a larger one. Content with a size in records
+needs a window in records; one bridge over the whole list holds neither well.
+
 ---
 
 ## 10. What it comes to
