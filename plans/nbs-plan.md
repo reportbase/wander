@@ -134,3 +134,37 @@ whose leave must be held to 10⁻⁶ is halved until the cap, and B′ never rea
 of R1263 that can pass is on an engine whose pieces are smooth between its events (PEB runs 4–5, the event engine); a
 B′ there is the next run, if wanted. Nothing in `games.html` was changed, and carrying B into it is not proposed on this run:
 4,000 times the flights is minutes of thinking on a phone, against the 48 shots now.
+
+### Run 2, planned (26 Nov 2026; Tom: "Continue if your still making progress"). Predictions written before any script exists
+
+Run 1 left R1263 untested where it can pass: on the fixed-tick engine every span holds hidden jumps. Run 2 puts B′ on
+PEB's event engine with its full signature (PEB run 5's copy `runs/peb/play-trick-event5.html`, motion unchanged), on
+PEB run 5's two maps: the cut on the open table and the challenge "two rails", power 14, rest places of the white and the
+object ball as the leave (PEB's four outputs). PEB run 5 mapped them by a scan of N = 1,024 aims, each change bisected
+(cut 75 jumps, two rails 109, known beforehand), and its post hoc found five pieces with a jump the scan never saw (cut
+0.124–0.141, 0.145–0.160, 2.387–2.424, 3.958–3.995; two rails 0.389–0.406).
+
+**B′ as run** (`runs/nbs/nbs2.mjs`): start from S even spans of the circle. A span flies its K = 8 Chebyshev leaves. If two
+neighbouring leaves differ in the full signature, the change between them is bisected to 10⁻¹² rad, one flight a step, and
+the span is cut there; the pieces left are spans again. If all leaves agree, the span is a piece when the last two
+Chebyshev coefficients of every output are under 10⁻⁷ table units; otherwise it is halved. Nothing is scanned: the leaves
+are the only aims flown that are not bisection steps. A span under 10⁻¹² that still fails is counted as dropped. Cap
+200,000 flights a map. Its flights are counted against the scan's: 1,024 + the bisection steps PEB run 5 took (60 at most a
+jump), its bridges not counted.
+
+- **C1 (it settles).** On both maps B′ finishes under its cap with no span dropped wider than 10⁻⁹.
+- **C2 (the same jumps).** Every jump of PEB run 5's map is found by B′ (a B′ jump within 10⁻⁹ rad, the same signatures
+  either side).
+- **C3 (and the hidden ones).** In at least 4 of the 5 pieces PEB run 5's post hoc flagged, B′ finds a jump inside.
+- **C4 (pieces held).** Of B′'s pieces wider than 10⁻⁴, at least 95% have their K = 8 bridge hold all four outputs to 10⁻⁶
+  on 200 aims spread through the piece (the coefficient test is not fooled).
+- **C5 (no N).** With S = 64 starting spans instead of 16, B′ finds the same jumps (C2's sense, both ways) and its flights
+  change by under 20%.
+- **C6 (cost).** B′'s flights per map are at most 2 × the scan's (1,024 + its bisections), and at most 12 K per piece plus
+  45 per jump.
+
+Each killed by its own number. Known beforehand: PEB runs 4–5 (the jumps, the pieces held, 6 leaves the median, 19 pieces
+converging slowly near their ends, where B′ will halve and pay), so C2 and C4 are not blind; C3, C5 and C6 can fail.
+If C1–C6 stand: on an engine whose pieces are smooth between the table's events, the map's cost is counted in leaves a
+piece and steps a jump, with no scan count in it, which is R1263 shown on one table; carrying it to the 9-ball computer
+would need that engine in `games.html`, Tom's call.
