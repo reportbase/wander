@@ -350,6 +350,12 @@ anything. The kernel that turns it back into a curve is exact at the places and 
 places, kernel, depths and transform, can be run on ratios alone, with no angle and no unit, because a ratio is what an
 index on a circle already was.
 
+*Since (26 November 2026).* The series tested the bridge itself: on the hemisphere in front of the look, the read alone
+holds exactly what is rational in its slopes, and the one square root is the line past which the back hemisphere is
+needed; behind the calendar's dial, a window rebuilt as its own bridge holds ratio content at the same cost from ten to
+a trillion thumbs out, with no N and no angle; and the one step the bridge's papers left open is now proved, by the
+completed circle's tools. Essay 34 gathers them.
+
 ---
 
 ## Sources

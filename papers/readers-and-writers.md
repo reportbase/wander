@@ -368,8 +368,8 @@ hemispherical vantage (DHV) needs, each placed by a test that could have failed 
 
 | | its mathematics | placed by |
 |---|---|---|
-| **read** (continuous, unmoved by scaling) | slopes and ratios; composing them, (s + a)/(1 − κsa); the exchange s ↔ 1/s and the corner; the heat ds/(1 + s²); order: the median and quantiles; relations with no unit; one square root, √(1 + s²); in calculus, the first derivative of one length on another, the derivatives of rational functions with no limit (a number with ε² = 0, the stride kind), the chain rule as a tower, a curvature taken against the curve's own length or against another curvature, an antiderivative that telescopes, and the slope's own equation (the Riccati, constant coefficients) stepped by rational maps; an oscillator's direction and an orbit's shape. No angle, no trigonometry, no π, no unit | PYT, PYK (§9); Theorem 6's order statistics (§3); ALG's exact turns and lines (§9, "Run as code"); NTN and DVA, relations among directions with π only a name ("Where π and e are content"); CLC, RIC, ORB (essay 31); the Tangent Bridge's constructive half and TBH (§9) |
-| **write** (discrete, moved by scaling; a thing with mass) | things with a size, and, as bookkeeping about them, amounts in a unit, sums and means; a size fixed by an amount carried in (a stride, a pull, a refractive index); a higher derivative or a curvature in a unit, and every rate against a clock | the walk counted (ONE, WLK; §6), the bounce (§7), the scale test (D5); CLC (dⁿy/dxⁿ moved as k^(1−n)) |
+| **read** (continuous, unmoved by scaling) | slopes and ratios; composing them, (s + a)/(1 − κsa); the exchange s ↔ 1/s and the corner; the heat ds/(1 + s²); order: the median and quantiles; relations with no unit; one square root, √(1 + s²); in calculus, the first derivative of one length on another, the derivatives of rational functions with no limit (a number with ε² = 0, the stride kind), the chain rule as a tower, a curvature taken against the curve's own length or against another curvature, an antiderivative that telescopes, and the slope's own equation (the Riccati, constant coefficients) stepped by rational maps; an oscillator's direction and an orbit's shape. No angle, no trigonometry, no π, no unit | PYT, PYK (§9); Theorem 6's order statistics (§3); ALG's exact turns and lines (§9, "Run as code"); NTN and DVA, relations among directions with π only a name ("Where π and e are content"); CLC, RIC, ORB (essay 31); the Tangent Bridge's constructive half, TBH and RAH (what is rational in the slopes, held by one hemisphere), DBR's ratio window and MSR's measured ratio content (§9) |
+| **write** (discrete, moved by scaling; a thing with mass) | things with a size, and, as bookkeeping about them, amounts in a unit, sums and means; a size fixed by an amount carried in (a stride, a pull, a refractive index); a higher derivative or a curvature in a unit, and every rate against a clock | the walk counted (ONE, WLK; §6), the bounce (§7), the scale test (D5); CLC (dⁿy/dxⁿ moved as k^(1−n)); content with a size held only in its own units (DBR, MSR's tide, §9) |
 | **DHV** (for comparison) | completions: π the turn whole, e the scale whole, the circle held at a size, totals over both hemispheres; an integrand's sum carried to its limit, ln and the arctangent; the clock time a step stands for (Kepler's equation, a damped oscillator's e^(−γt)) | PYK (only the turn's heat has a total), BLD (no count is π or e), NTN (every limit keeps its π); CLC, RIC, ORB; the Tangent Bridge's variational half, the rim's sign (TBH, §9) |
 
 Calculus sorts the same way (CLC, RIC, ORB; essay 31). A slope of one length on another is a read; the second
@@ -2418,6 +2418,23 @@ with a size is held at a fixed cost only in its own units, a list with no size o
 the head of Zipf's law is not the second kind. **Data** (`plans/msr-plan.md`, predictions before the data was fetched;
 the word list's Z1 killed, the measured result; the tide's first two runs killed by my tolerance, set below the data's
 own scatter, before a third fixed it from that scatter in advance); the sorting a reading.
+
+**What these tests add up to (26 November).** Read together, the day's tests on the Tangent Bridge give the paper's
+sorting ten results, each exact or measured and each marked above. *Approximation theory splits along the line:* its
+constructive half follows from the round trip, order, halving and squaring, its variational half needs the completed
+circle, and the one step the bridge left open, the floor over every set of places, has been proved by the completed
+circle's tools (Tao 2026). *π sits in the mean:* the sharp constants (the toy's 8 = 4 × 2, the Lebesgue coefficient's
+algebraic 2) are computed with no angle, and π enters only when a total is divided by the turn. *The logarithm is the
+worst point's, not the recovery's:* measured in energy the bridge has bounds ½ and 1 and no logarithm. *One hemisphere
+holds what is rational in its slopes:* the shares and ratios exactly, with no trigonometric call; the one square root is
+the line past which the back hemisphere is needed, and a read of period π glues the horizon's opposite points. *The read
+is finest where it looks:* the bridge's own grid crowds the look, and forcing it onto the even heat costs. *A window
+rebuilt as its own bridge never asks for N:* held at K terms with no angle at any distance, the K-circle, against the
+floor a cut window pays. *Content with a size is the write's,* held at a fixed cost only in its own units. *On measured
+content the sorting held and once said no:* the tide's hours, Zipf's tail in ratios, and Zipf's head not ratio content.
+Every kill on the way was the tester's (tolerances, a halving count, a horizon without its address, one wrong
+mechanism), recorded with its prediction. The mathematics is classical throughout; what is the series' is the sorting,
+here tested for the first time on measured lists.
 
 **Two 1's.** On the axes the three ways to measure a direction of the square agree: the largest component (the cube's),
 the sum h + v (the diamond's) and the length √(h² + v²) (the circle's) all give 1. At the corner they part: 1, 2 and √2.
