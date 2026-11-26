@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  RAH (`plans/rah-plan.md` + `runs/rah/`, 26 Nov; SPN R1253): the read alone (TBH's bridge) holds exactly the content
+  rational in its slopes (50 of 84 monomials, the even-degree ones, 4·10⁻¹³, zero trig calls); what carries √(1 + s²) is
+  never held exactly (h^a: N^(−a), post hoc; no h: rings at the rim); the DHV's form holds all. R2 killed by my bound.
+  R1252 (26 Nov; Tom: "Merge, then 1 the 3"): `dial-bridge.html`, a bridge behind the dial (see Files).
   R1251 (26 Nov; Tom: "Proceed. What's next?"): FAB and DBR in *Reads and Writes* §9 and essay 34 §9. No new claim.
   DBR runs 1–2 (`runs/dbr/`, 26 Nov; SPN R1250; Tom: "Merge, then run DBR"): behind the dial, a window in ratios holds
   ratio content the same at 10 to 10¹² thumbs, K terms a read, no N, zero trig calls (the K-circle); content with a size only
@@ -1638,6 +1642,15 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   three, the mean of s never settling, the exchange's halves, and s ⊕ a's weight check (1 only for round). Facings 1, 2,
   4 drawn (the DHV's joins). §0's fourteen steps as a list that sets the picture. `?w=&m=round|sum|max&f=1|2|4&play=1`;
   hook `window.__twoPoints` (`M`, `heat`, `compose`, `composeRatio`, `meanTo`, `steps`, `set`, `state`). Not in the flying page.
+- `dial-bridge.html`: **a bridge behind the dial** (26 Nov 2026, SPN R1252; DBR; Tom: "Merge, then 1 the 3"), a standalone
+  page, plain canvas. The calendar's dial (reportbase/calendar `dial.js`, the thumb's mode) written again in a few lines:
+  gold needle a rate, blue a place, the record H·sinh ζ. Behind it a Tangent Bridge over a window round the record, in
+  ratios (x in [c/4, 4c], y = (x − c)/(x + c)) or in records (c ± 4H), K = 12, 24, 48 Chebyshev leaves from the lattice
+  (Gauss's seed for 48), barycentric; every Math trig, hyperbolic, log and exp call counted while the bridge is built and
+  read (zero), the paint made outside the count. Content the same in ratio, or with a size. Readout: record, how far short
+  of the horizon, K, terms a read, sup error, Lebesgue constant, trig calls; reproduces DBR's numbers.
+  `?z=<ζ>&K=12|24|48&win=ratio|records&paint=ratio|size`; hook `window.__dialBridge` (`set`, `state`, `rebuild`, `lattice`,
+  `cheb`). Not in the flying page.
 - `look-pull.html`: **a look and a pull** (24 Nov 2026, SPN R1182; essay 33; FCL; Tom: "merge, 1, 2, 3"), a standalone page
   like `faces.html`, plain canvas. Masses about a place (a seeded scatter in the drawing's plane, an even shell with the
   place off its centre, one mass), a facing turned by a slider: the faced take F(n) (a definition from FCL run 6) in front

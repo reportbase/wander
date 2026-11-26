@@ -7607,6 +7607,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1253** (26 Nov 2026; Tom: "Merge, then 1 the 3"): RAH (`plans/rah-plan.md` + `runs/rah/`), what the read alone holds.
+  Of the 84 monomials h^a v^b v₂^c to degree six, the 50 rational in the slopes (exactly the even-degree ones, sympy) are
+  held by the read-alone bridge (TBH's, α of period π) to 4·10⁻¹³ with zero trigonometric calls; the 34 carrying the
+  root √(1 + s₁² + s₂²) are never held exactly: with h^a in them they converge as N^(−a) (post hoc), without h they ring
+  at the rim (≥ 0.17); the DHV's form holds all 84 to 6·10⁻¹⁵. R2 killed by my bound (h⁵ too fast). Rational in the
+  slopes, even on the sphere and held by the read alone are one class; the one square root is the line. Not in any paper.
+- **R1252** (26 Nov 2026; Tom: "Merge, then 1 the 3"): #540 merged; `dial-bridge.html`, a bridge behind the dial (DBR on
+  a page): the dial's push and place, a window in ratios or in records rebuilt at every move, the error, the terms a read and
+  the trigonometric calls (zero) shown; DBR's numbers reproduced in the browser. A card on `demos.html`, a link on essay
+  34's card.
 - **R1251** (26 Nov 2026; Tom: "Proceed. What's next?"): FAB and DBR in *Reads and Writes* §9, "The open floor, and the
   bridge behind a dial", and in essay 34 §9. No new claim.
 - **R1250** (26 Nov 2026; Tom: "Merge, then run DBR"): #539 merged; DBR runs 1–2 (`plans/dbr-plan.md`, `runs/dbr/`), a
