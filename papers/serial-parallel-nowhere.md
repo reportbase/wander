@@ -7607,6 +7607,15 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1245** (26 Nov 2026; Tom: "Have you read the tangent bridge paper", then "yes, read them through and write a smaller
+  essay that summarizes the results"): draw's four Tangent Bridge papers read through (`tb_algebra.md`, which carries
+  forward `tb_classical.md`; `tb_spectral.md`; `tb_spectral_notes.md`) and summarized as essay 34,
+  `papers/essays/34-the-tangent-bridge-in-brief.md`, *The Tangent Bridge, in brief* (a dot-to-dot puzzle): the theorem
+  (R1–R5), proved in angles and run in slopes, the generated lattice, the price and its π, the energy face, Fejér's cure,
+  refining, the transform and the window, coordinates and optimality, the constructive half rebuilt; what is classical,
+  what is the papers' own, and where the series' rulings read them differently (no reader or writer, the DHV a synthesis,
+  π the DHV's). Nothing rerun; every number the papers'. README row ("thirty-four essays"), `essays.html` card, smoke count
+  34 (not run).
 - **R1244** (26 Nov 2026; a note on Lie's 1880 classification for one variable pasted by Tom, Claude's reply, then
   Tom: "Ok"): taken where Claude agrees (R863). *Reads and Writes* §12 O8 now says which classification applies where: the
   sky of space is a surface, the eight primitive algebras on it of which so(3), so(3, 1) and sl(3, ℝ) hold the turns, the

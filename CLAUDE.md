@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1245 (26 Nov; Tom: "yes, read them through and write a smaller essay that summarizes the results"): essay 34,
+  `papers/essays/34-the-tangent-bridge-in-brief.md`, *The Tangent Bridge, in brief* (a dot-to-dot puzzle): draw's four
+  Tangent Bridge papers summarized, nothing rerun; classical, the papers' own, and where the series reads them differently.
+  README row ("thirty-four essays"), `essays.html` card, smoke count 34 (not run).
   R1244 (26 Nov; a note on Lie's one-variable classification pasted by Tom, then "Ok"): *Reads and Writes* §12 O8 says
   the sky of space is a surface (of the eight primitive algebras so(3), so(3, 1), sl(3, ℝ) hold the turns; the motion leaves
   so(3, 1), six numbers) and the plane's circle takes Lie's one-variable list (the turns leave out affine, a non-turn motion
@@ -4998,7 +5002,7 @@ In short:
   6. **sphere.html:** the address is the same at any scale, the octant's area is π/2, and the body's bands are off far
      away and on close up.
   7. **demos.html:** every page it links to is there, and the flying page's "demos" button opens it; **essays.html:**
-     thirty-three essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
+     thirty-four essays, every page of the site it links to there. **explainers.html:** its links into the site answer.
   8. **thin.html:** grains lit × brightest grain is the light caught, 1/v² everywhere; near full brightness, far one grain dimming 4× per doubling.
   9. **ladder.html:** parallax gives out by 30,000, width by 400,000, light reads past both (and gives out with photons counted).
   10. **sky.html:** the lit share within 0.01 of 1 − e^(−L/λ); always been, the whole sky lit.
