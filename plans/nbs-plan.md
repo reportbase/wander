@@ -97,3 +97,40 @@ it (the engine text not touched; A6 checks). Parts run in parallel on four cores
 `runs/nbs/nbs-run1.txt`.
 
 ## Runs
+
+### Run 1 (26 Nov 2026; Tom: "Merge and run")
+
+`node runs/nbs/nbs.mjs run`, then `report` (`runs/nbs/nbs-run1.txt`; one JSON a position, `runs/nbs/nbs-pos-*.json`;
+the log `runs/nbs/run1.log`). games at `de6a98d`, the text above "IN THE FIELD" sha256 `8a5e806c…b97061e505471c0fd99d52ec8c1bc938e703b2e6497b24aca`
+before and after. Sixty positions from racks 0–3 (15, 20, 17 and 8 shots), self-play seed 20261126; about 5.5 hours of
+flights on four browsers. Choices I made in writing the runner, stated here because the plan did not fix them: the
+fixed-tick engine records no grips' choices or phase ends, so the signature is the contacts, cushions and pockets in time
+order; B bridges each pot piece on 8 leaves (counted in its flights) and picks the best of 64 aims in each piece by the
+Gaussian share of that piece times the bridged score; B′ uses K = 8, its leave the white's place, tolerance 10⁻⁶ table
+units, and a cap of 50,000 flights a power (after a trial of three positions in which a cap of 200,000 was hit at every
+one); a planner with no pot in hand still flies its best shot under the hand's error.
+
+| | | |
+| --- | --- | --- |
+| A1 | B finds a pot in all 35 positions where C does, and in 20 of the 25 where C finds none (80%) | not killed |
+| A2 | legal pots under the hand's error, mean over positions: level 3 B 61.0%, C 32.8%; level 5 B 85.8%, C 47.2% | not killed |
+| A3 | B's flights per position median 48,018 (6,896–105,419), C's 12: 4,001 times | **killed** (my guess of 4,000 at most) |
+| A4 | 1,317 pot pieces wider than 10⁻³ rad; the white's rest place held to 0.05 by some K ≤ 12 in 1,085 (82.4%); median error 0.017, 0.015, 0.014 at K 6, 8, 12 | not killed (narrowly) |
+| A5 | in 26 positions with a level-5 window potting the lowest ball, B's aim within 0.1 of the best of 64 flown aims in 24 (92.3%) | not killed |
+| A6 | the engine text unchanged; the referee games' `simulate` | not killed |
+| A7 | (a) B′ covers all of B's wide pot pieces in 5 of 60 positions; (b) the doubled scan costs B 1.13 times, not 1.6; (c) B′ hit its cap in every position at both powers, holding a median of no pot piece | **killed** in (a) and (b); (c) meaningless under the cap |
+
+Post hoc, not predicted. Split by whether C's own aim pots: where it does (35), level 3 B 72.7% against C 54.7%, level 5
+92.9% against 80.9%; where it does not (25), B 44.6% and 75.7% against C's 2.1% and 0.1% (its safeties). So most of A2's
+margin is the 25 positions with no ghost-ball pot, where B finds banks, kicks and other lines; on the positions both can
+pot, B's margin is the wider window it aims into (B's level-5 windows a median 0.0136 rad, about 0.78°). The fixed-tick
+engine's map has a median 545 edges a power, pot windows a median 0.001 rad wide, and 481 of the bridged pot pieces had a
+leaf off the piece's own events (hidden changes between scan aims, as PEB run 5 found on a 1,024 scan).
+
+What it says. B, the map of the whole circle, is a better planner than the games' ghost-ball line on every measure tried,
+and its price is about four thousand times the flights. A3's 4,000 was my guess and is killed by a factor of twelve. A7,
+K is n (R1263), is killed on this engine, by the engine: the fixed tick puts jumps inside every span (PEB run 1), so a span
+whose leave must be held to 10⁻⁶ is halved until the cap, and B′ never reaches a piece the size of a pot window. The test
+of R1263 that can pass is on an engine whose pieces are smooth between its events (PEB runs 4–5, the event engine); a
+B′ there is the next run, if wanted. Nothing in `games.html` was changed, and carrying B into it is not proposed on this run:
+4,000 times the flights is minutes of thinking on a phone, against the 48 shots now.

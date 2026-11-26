@@ -7607,6 +7607,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1264** (26 Nov 2026; Tom: "Merge and run"): NBS run 1 (`plans/nbs-plan.md`, `runs/nbs/`), 60 seeded 9-ball
+  positions on games' own fixed-tick engine, `games.html` unchanged. B (the whole circle mapped, pot windows weighed by the
+  hand's error) finds a pot wherever the games' ghost-ball planner C does and in 20 of the 25 where C finds none (A1), and
+  pots far more under the hand's error (level 3 61.0% against 32.8%, level 5 85.8% against 47.2%; A2), mostly from the
+  positions C cannot pot; the leave held by K ≤ 12 in 82.4% of wide pot pieces (A4), the bridged aim as good as 64 flights in
+  24 of 26 (A5). A3 killed by my guess (B costs 48,018 flights a position, 4,001 times C's 12). A7 (K is n) killed on this
+  engine, by the engine: the tick's hidden jumps keep B′ halving to its cap at every position; R1263's test belongs on the
+  event engine (PEB runs 4–5).
 - **R1263** (26 Nov 2026; Tom: "This might seem like a lot extra work, but tb allows us to make real the idea that k is
   n. N is not n."): read as: with the Tangent Bridge the count a procedure runs over is K, the leaves laid on what is met
   between its events, not N, the aims or samples a search could take; the work it buys is set by the world's events and

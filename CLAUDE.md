@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  NBS run 1 (`runs/nbs/nbs.mjs run`, then `report`; SPN R1264; Tom: "Merge and run"): 60 positions, games unchanged; B (the
+  whole circle) beats the ghost-ball planner on pots found and made (A1, A2, A4, A5), at 4,001 times the flights (A3 killed,
+  my guess); A7 (K is n) killed by the fixed tick's hidden jumps, B′ capped everywhere; its fair test is the event engine.
   R1263 (26 Nov; Tom: "tb allows us to make real the idea that k is n. N is not n."): the count a procedure runs over is
   K (leaves between the world's events), not N (what a scan could fly); NBS gains B′ (no fixed scan, pieces found by halving
   until the K-leaf bridge holds) and A7 (K is n), before any run.

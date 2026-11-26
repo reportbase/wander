@@ -1,0 +1,18 @@
+NBS run 1, 60 positions (seed 20261126); games.html above IN THE FIELD sha256 8a5e806c523e4e1b97061e505471c0fd99d52ec8c1bc938e703b2e6497b24aca
+A1: C (level 5) pots in 35; B in 35 of those; where C finds none (25), B finds one in 20 (80.0%)
+    not killed
+A2: legal pots under the hand's error, mean over positions: level 3 B 61.0% C 32.8%; level 5 B 85.8% C 47.2%
+    not killed
+A3: B's flights per position median 48017.5 (range 6896–105419), C's (level 5) 12, ratio 4001
+    KILLED
+A4: pot pieces wider than 1e-3: 1317; leave held to 0.05 by some K ≤ 12 in 1085 (82.4%); pure (no event change at the 16 checks) 1092
+    median error K6 1.65e-2, K8 1.51e-2, K12 1.35e-2
+    not killed
+A5: positions with a level-5 window potting the lowest: 26; chosen aim within 0.1 of the best of 64 in 24 (92.3%)
+    not killed
+A6: the text above IN THE FIELD unchanged (read before and after this report: one file, not written by the run); the referee is games' simulate. not killed
+A7 (a): B's pot pieces wider than 1e-3 all covered by B′ in 5 of 60 positions (8.3%)
+A7 (b): B's scan and bisection at 720 median 47925.5, at 1440 54316, ratio 1.13; B′ has no scan (by construction unchanged)
+A7 (c): B′ flights per position median 100016, pieces 5981.5, ratio 16.7 against 3K = 24; cap 50000 a power hit in 60 of 60
+    A7 KILLED
+B's edges per power median 545; pot pieces per position median 28; pot windows median width 9.77e-4 rad; bridged pot pieces with a leaf off the piece's events 481
