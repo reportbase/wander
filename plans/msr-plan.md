@@ -89,3 +89,32 @@ in place of straight lines; everything else as run 1.
 
 - **T1′.** In the ratio window K* grows at least ×2.5 from c = 24 h to c = 96 h, and is more than 128 by c = 384 h.
 - **T2′.** In the records window of half-width 48 h, K* at c = 24, 96, 384, 1536, 6144 h lies within a factor 2.
+
+### Run 2 (26 November 2026; `runs/msr/msr2.py`, output `runs/msr/msr-run2.txt`)
+
+- **T1′ killed.** K* in the ratio window is more than 128 at c = 24 h already (and at every centre after), so the first
+  clause (a finite K* at 24 h, growing ×2.5 by 96 h) fails.
+- **T2′ killed.** In the records window of half-width 48 h, K* is 128, more than 128, 128, 128, 96 at c = 24, 96, 384,
+  1536, 6144 h.
+
+Both by my tolerance. The measured tide is not smooth at the 2 cm level: the file's own sigma column (the scatter of the
+six-minute readings within each hour) has a median of 0.049 m, and the spline passes through every hourly value, wiggles
+included. τ = 0.02 m sat below the data's own scatter, so no window, in records or in ratios, holds it there with few
+leaves. Not retuned after seeing these numbers; a third run would have to fix τ from the data's sigma before it ran.
+
+### Standing after runs 1–2
+
+Not killed: Z2. Killed: Z1 (the measured result), T2, T1′, T2′ (my tolerance against the tide's own scatter), T1 passed
+only vacuously.
+
+What the runs show (a reading, to rule on):
+- **Zipf's tail is ratio content; its head is not.** From rank about 300 to rank 30,000 the word list is held in a
+  window in ratios by 6 leaves at every centre, and cutting the corpus to a quarter (every count a quarter) changes nothing
+  there: the amount does not enter. The commonest words are different: at ranks 30 and 100 the ratio window needs 32 and
+  16. There each word is a particular word with its own count, and the list has structure the ratio window has to pay
+  for. So the measured list believed to have no size is ratio content over three decades and not over its first two:
+  the sorting found where the list is scale-free and where it is not, which the bend between head and tail reported for
+  Zipf's law (to be checked) would predict.
+- **The tide gave no verdict.** Its own scatter is above the tolerance I set, so neither window held it. The one thing
+  the runs do show is the direction the plan expected: the records window came close (96–128 leaves at four of five
+  centres) where the ratio window held it nowhere.
