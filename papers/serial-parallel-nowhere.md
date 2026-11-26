@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1240** (26 Nov 2026; Tom: "gravity uses both hemispheres, but its not a dhv, gravity has no vantage.", then "the
+  cauchy is just a word we use for lack of a better one. its just a density. gravity has a density as well, but for
+  different reasons."): three, not two: a read (one hemisphere, a vantage), gravity's take (both hemispheres, no vantage,
+  a sum at a place in the world, no synthesis) and the DHV (both hemispheres, no vantage, a synthesis). **"The Cauchy" is
+  only a name for a density**; the read's comes from a standpoint's even turn, gravity's from the inverse square, the same
+  form for different reasons (the shared premise R1184's, even over directions from a point). Supersedes R1235's "the
+  DHV's Cauchy" and its rule; R1195's and R1234's "the same for a look" read as the same form. *Reads and Writes* §7.
 - **R1239** (26 Nov 2026; Tom: "so why bother, they allready have the correct answer?", "but classical uses dhv which
   uses PI and e and as a cansequence is more complicated.", "maybe the why is simplification and correctness, DHV does not
   actuallly exist.", then "correct, it exists as a synethis, not as a vantage."): **the reason to state results from a

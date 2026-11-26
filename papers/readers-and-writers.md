@@ -719,7 +719,7 @@ every reading, no facing, one thumb, and meet at 1 at the corner (Tom, R1042, R1
 read. Two looks held together are joined with no write. Neither a read
 nor a write holds both hemispheres. What holds both at once is the **dual hemispherical vantage** (DHV): the drawn shape, with both signs of every axis, the turn completed, the
 facings joined. It exists only as drawn: no standpoint holds both hemispheres, so the DHV is drawn, never stood at. Reads and writes are what is done from a standpoint, so the DHV has nothing to do
-with reads and writes: it is not a third act beside them, not a read of a larger kind, and not what they add up to. (As a view the DHV exists only as drawn; as a take at a place it is met in the world, as gravity: §7, "Two Cauchies", R1235.)
+with reads and writes: it is not a third act beside them, not a read of a larger kind, and not what they add up to. (Gravity's take also holds both hemispheres, but it is not the DHV: it has no vantage and is no synthesis, a sum gathered at a place in the world: §7, "Two densities", R1240.)
 It is classical geometry, with its eye above the figure seeing every side at once. This paper is about reads and
 writes; the DHV is brought in as the point of comparison, the familiar statement a read's or a write's form is
 set beside (e^(iπ) = −1 beside w(s)·w(1/s) = −1), and no result here is a result about it. The two hold one relation
@@ -1686,7 +1686,7 @@ amount. A pull takes both hemispheres at once, as the dual hemispherical vantage
 is not the dual hemispherical vantage either: that vantage holds every direction apart, from no standpoint, while a pull
 is at a place and sums them, each facing less its opposite, to three numbers whatever the scene. So the pull sits between
 the two: both hemispheres like the dual vantage, one place like the single one, and neither's kind (not a read; no view of
-the whole; since R1235 the pull is the DHV met as a take at a place, below, "Two Cauchies"). The connection is a shared stage, not a mechanism: the Cauchy does not say why mass pulls, only how an even
+the whole; since R1240 the pull is not the DHV either, below, "Two densities"). The connection is a shared stage, not a mechanism: the Cauchy does not say why mass pulls, only how an even
 spread lands. A reading; classical in its parts (the Poisson kernel of the half-space, Gauss's law). One standpoint has from a pull only M/d², never M or d, as a read never has V; two pulls a counted step
 apart place the source in steps, and the mass then needs G carried in. **Checked** (GRV, `plans/grv-plan.md`, exact at
 50 digits; one clause of one prediction killed by my guess, how many of a cube shell's opposite columns differ); the
@@ -1766,12 +1766,12 @@ and the pull carries no distance; a cube is the matter's shape coming back throu
 The parting holds exactly where the premise does: a medium that adds an amount per length breaks it, as absorption broke
 light's half (LGS). A way to organize known gravity, not new physics (R1229).
 
-*Two Cauchies: the SHV's and the DHV's* (R1235; Tom: "The observation read is shv cauchy. We observe the gravity,
+*Two densities: the read's and gravity's* (R1235, R1240; Tom: "The observation read is shv cauchy. We observe the gravity,
 which is itself a dhv cauchy"; "That means we need separate two cauchies"). The stage's weight per direction is one, the
 same in every facing (R1105); what is done with it is two, and they are kept apart here by name. The read's is the single
 hemispherical vantage's Cauchy; gravity's take at a place is the dual hemispherical vantage's.
 
-| | SHV Cauchy (the read) | DHV Cauchy (gravity's take) |
+| | the read's density | gravity's density (its take at a place) |
 |---|---|---|
 | Directions | one hemisphere, in front of a facing | every direction, both hemispheres |
 | What it weighs | nothing: a law of directions | the column along each direction, an amount |
@@ -1792,6 +1792,20 @@ the matter and held by no observer (R950: no one holds the whole, the things car
 (R1183). So observing gravity is an SHV read of a DHV take: what a plumb line or a bent ray shows the look is the whole
 sphere's columns summed at a place, reaching one hemisphere as directions (LNS). A way to organize known gravity, not new
 physics (R1229); no number changes.
+
+*Not the DHV, and only a density* (R1240; Tom: "gravity uses both hemispheres, but its not a dhv, gravity has no
+vantage."; "the cauchy is just a word we use for lack of a better one. its just a density. gravity has a density as well,
+but for different reasons."). The passage above, as first written, named gravity's take the DHV's Cauchy; that is
+withdrawn. Gravity's take holds both hemispheres and has no facing, but it is not the dual hemispherical vantage: the
+DHV is a synthesis, drawn and completed, held by no one and happening nowhere; gravity's take happens at one place, now,
+and gathers only what is there. So there are three: a read (one hemisphere, a vantage), gravity's take (both
+hemispheres, no vantage, in the world) and the DHV (both hemispheres, no vantage, a synthesis). And "the Cauchy" is only
+the name for a density, used for want of a better word. The read has a density over its directions, from a standpoint's
+even turn; gravity has a density over a plane, the pull through it, from the inverse square (each direction its column,
+CLM). The two have the same form, a/(2π(a² + ρ²)^(3/2)) on a plane, for different reasons, and the same form is why they
+compose (CRC). That they share it is the one premise both rest on, even over directions from a point (R1184), met once
+by a turn and once by a law of pull; it is not one density owned by both, and the stage's "same for a look and a pull"
+(R1195, R1234) is to be read so: the same form, different reasons. Nothing in the numbers changes.
 
 *A Cauchy reading a Cauchy* (R1237; Tom: "This is worth understanding in more detail.  A cauchy reading another
 cauchy."; then "yes, add it to §7 and merge"; CRC, `plans/crc-plan.md`). Lay the read's heat over gravity's take: a

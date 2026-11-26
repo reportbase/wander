@@ -623,6 +623,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1240 (26 Nov; Tom: "gravity uses both hemispheres, but its not a dhv, gravity has no vantage."; "the cauchy is just a
+  word we use for lack of a better one. its just a density. gravity has a density as well, but for different reasons."):
+  **gravity's take holds both hemispheres and has no vantage, but is not the DHV** (the DHV a synthesis, gravity a sum at
+  a place in the world); **"the Cauchy" is only a name for a density**: the read's (from an even turn) and gravity's (from
+  the inverse square) share the form for different reasons. Supersedes R1235's "DHV Cauchy" and its standing rule;
+  R1195's and R1234's shared stage read as the same form. *Reads and Writes* §7 "Two densities", "Not the DHV, and only
+  a density". **For new writing: say the read's density and gravity's density; never call gravity's take the DHV.**
   R1239 (26 Nov; Tom: "maybe the why is simplification and correctness", "correct, it exists as a synethis, not as a
   vantage."): **the why is simplification and correctness**: a read states the same results in fractions with no limit
   (R974), and gives a standpoint only what a standpoint has; **the DHV exists as a synthesis, not as a vantage** (refines
@@ -644,8 +651,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   DHV's (gravity's take at a place)**, one weight per direction used two ways (one hemisphere/both, nothing/the column, add/
   subtract, median/first moment, s ↔ 1/s / u ↔ −u, unmoved/moved, a standpoint/the matter). Revises R1184 and R967: as a
   view the DHV is only drawn, as a take at a place it is gravity's. Observing gravity is an SHV read of a DHV take. A pull
-  still not a read; never a Cauchy of amounts. *Reads and Writes* §7 "Two Cauchies". **For new writing: say the SHV
-  Cauchy and the DHV Cauchy when the two uses are meant.**
+  still not a read; never a Cauchy of amounts. *Reads and Writes* §7 "Two Cauchies". (Rule superseded by R1240.)
   R1234 (25 Nov; Tom: "Describing gravity in terms of read and write separates two very complicated geometries.",
   "yes, add it to the paper and merge"): in the gravity account the read geometry (the stage, the same for every body)
   and the write geometry (the matter's shape, density, size, curvature) meet only in each direction's column; they part
