@@ -1,0 +1,99 @@
+# NBS: a bridge behind the 9-ball computer's aim
+
+26 November 2026. Tom: "Many games use the pool engine", then "2, write the plan" (to: test the bridge against the
+computer's current aim search in 9-ball, first, here). PEB runs 4–5 found that a shot's outcome across the aim is
+pieces, cut at the table's events, most held by about 6 leaves of the Tangent Bridge. This asks whether that is any use
+to a player: the computer in reportbase/games' 9-ball. Predictions are written below before any script exists. Nothing in
+`games.html` is changed; the test reads it.
+
+## What the computer does now
+
+`games.html` (games at `de6a98d`), `ninePlanGen(g, lv)`, the engine above "IN THE FIELD" (wander's `play-trick.html`
+at 335fa6c, a fixed tick). For the lowest ball it takes the four nearest pockets; at each, the ghost-ball aim only
+(skipped past a cut of about 75°); at that aim a few powers (two below level 3, four from 3) and from level 4 three tips;
+each flown ahead in the engine (`simulate`) and scored (the 9 potted 10, the lowest potted 2 plus, from level 3, the leave
+for the next ball, `leaveQ`; no pot a legal hit, from level 4 the one that leaves least). At most about 48 flights. Then
+the hand's error, a Gaussian in the aim of `NINE_ERR` (3.2°, 1.8°, 0.8°, 0.4°, 0.15° at levels 1–5). It never looks
+away from the ghost-ball line: no bank, kick or combination, and it does not know how wide its window is.
+
+## What the bridge would add
+
+Lay the outcome across the whole circle of aims (one power at a time): find where the shot's events change (the full
+signature, PEB run 5: contacts with the grips' choices, cushions, pockets, phase ends, side spin's end), bisected to
+10⁻¹⁰ rad. Each piece has one sequence of events, so whether it is a legal pot of the lowest ball (or of the 9) is read
+once per piece, and the piece's width is the window. Within a pot piece the leave (the white's rest place and so
+`leaveQ`) is held by the bridge on K leaves (PEB's Chebyshev points, in the root's chart at an end of a root's kind), so
+the best place in the window to aim is read from K flights, not hundreds.
+
+The planner tested, **B**: at powers 16 and 28 (no tip, no elevation), map the circle; keep the pieces that pot legally;
+for each, weigh the window against the level's hand error (the share of a Gaussian of σ = `NINE_ERR` falling inside it,
+aimed at the point that maximizes that share times the bridged leave score, `leaveQ` as level 3 uses it); choose the best.
+
+The engine is the games' own fixed-tick engine, untouched (the bridge is laid on what it does). PEB run 1 found that
+engine's pieces carry the tick's hidden jumps; for a pot/no-pot verdict that does not matter (the signature is unchanged
+by them), for the leave it adds error the bridge cannot hold, which A4 measures.
+
+## Positions
+
+Sixty positions from seeded self-play: `rack9(idx)` for idx 0, 1, 2, …, both sides played by `ninePlan` at level 3, the
+table recorded before each shot; the break (each rack's first shot) and shots with the white in hand left out; the
+first 60 kept. Seed and idx list recorded in the run. Only the computer's planner and B are compared, both on the same
+positions; both judged by the same referee: the engine's own flight of the shot.
+
+## Predictions (written before any script exists)
+
+- **A1 (more pots found).** B finds a legal pot (lowest or 9, white up, lowest met first) in every position where C (the
+  current planner, level 5) does, and in at least 10% of the positions where C finds none (banks, kicks, combinations,
+  aims off the ghost-ball line).
+- **A2 (pots made under the hand's error).** With each planner's chosen shot flown 200 times under the hand's error, the
+  share of legal pots, averaged over the 60 positions: at level 3 (σ 0.8°) B at least 5 points above C; at level 5
+  (σ 0.15°) B not below C by more than 2 points.
+- **A3 (the cost, stated).** B's flights per position (the map at two powers on 720 aims, the bisections, the leaves)
+  median at most 4,000, which is at least 30 times C's. The bridge does not make the computer cheaper than the
+  ghost-ball line; what it buys is the whole circle.
+- **A4 (the leave held).** In legal-pot pieces wider than 10⁻³ rad, the white's rest place held to 0.05 table units
+  (a ninth of a ball's radius) by the bridge with K ≤ 12 in at least 80% of pieces, on this tick engine.
+- **A5 (the bridge chooses as flights would).** Within each chosen window, the aim B picks from the bridged leave score is
+  within 0.1 of the best `leaveQ` found by flying 64 evenly spaced aims across the window, in at least 80% of positions.
+- **A6 (the engine untouched).** The sha256 of `games.html`'s text above "IN THE FIELD" is the same before and after the
+  run, and the referee's flights are its `simulate`.
+
+Each is killed by its own number. Known beforehand: PEB runs 1–5 (the pieces, the tick's jumps, the full signature, about
+6 leaves a piece), the planner's code read above, and the classical facts that a wider window forgives more aim error and
+that banks and kicks exist where a ghost-ball search does not look. So A1's direction is expected; its 10% and A2's 5
+points are the guesses. A2 could fail because a ghost-ball pot is already the widest window in most positions, or because
+wide windows found by B leave the white badly.
+
+What would follow if A1, A2 and A4 are not killed (a reading, to rule on): the shot map, cut at the table's events and held
+by the bridge between them, is a usable plan for a player, finding pots a line search misses and aiming where the hand's
+error is forgiven; its price is flights, not cleverness. Only then would carrying it into `games.html` (the computer's
+turn, the engine untouched, step 3 of the proposal) be put to Tom.
+
+## K is n, N is not (added 26 Nov, before any script; SPN R1263)
+
+Tom: "This might seem like a lot extra work, but tb allows us to make real the idea that k is n. N is not n." Read here
+as: the count a procedure runs over (its n) should be K, the leaves laid on what the table does, never N, the aims a
+search could fly. A1–A6 as written do not test that: B finds its pieces on a fixed scan of 720 aims, so its cost still
+grows with how finely the circle is scanned, and PEB run 5 found pieces the 1,024-aim scan stepped over. So a third
+planner and one more prediction, written now:
+
+**B′**: B with no fixed scan. Start from 16 even aims; a span is one piece when the full signature is the same at its K
+Chebyshev leaves and the bridge's last two coefficients are under the tolerance (10⁻⁶ of the leave, PEB's), otherwise it
+is halved, a change of signature bisected to 10⁻¹⁰ rad as before. Its flights are Σ over pieces (K + the bisections),
+counted by the table's events alone.
+
+- **A7 (K is n).** On the same 60 positions: (a) B′ keeps every legal-pot piece wider than 10⁻³ rad that B keeps, in at
+  least 95% of positions; (b) with B's scan doubled to 1,440 aims, B's median flights rise by at least 1.6 times, B′'s
+  (which has no scan) by none, its count identical; (c) B′'s median flights per position, divided by its median number of
+  pieces, at most 3 × its median K (the leaves, not a scan, are what it pays for). Killed by any clause. (b)'s second half
+  is true by construction and is stated only so the comparison is on the page; (a) and (c) can fail.
+
+## How it will be run
+
+`runs/nbs/nbs.mjs`, headless Chromium (playwright from /opt/node22/lib/node_modules), loading `games.html` from a local
+clone given by `GAMES_HTML` (default `../games/games.html`), driving the 9-ball app's debug hooks (`rack9`, `ninePlanGen`,
+and the trick app's `simulate`, `strikeOf`) and, where a hook is missing, a copy of the page served with one line exposing
+it (the engine text not touched; A6 checks). Parts run in parallel on four cores; outputs `runs/nbs/nbs-*.json` and a report
+`runs/nbs/nbs-run1.txt`.
+
+## Runs

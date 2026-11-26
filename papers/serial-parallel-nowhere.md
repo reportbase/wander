@@ -7607,6 +7607,18 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1263** (26 Nov 2026; Tom: "This might seem like a lot extra work, but tb allows us to make real the idea that k is
+  n. N is not n."): read as: with the Tangent Bridge the count a procedure runs over is K, the leaves laid on what is met
+  between its events, not N, the aims or samples a search could take; the work it buys is set by the world's events and
+  K, never by how finely the world could be scanned. Claude's precision: NBS as planned still scanned 720 aims to find its
+  pieces, so N entered there; a planner B′ that finds pieces by halving until the K-leaf bridge holds, and A7 (K is n),
+  added to the plan before any run. Not run.
+- **R1262** (26 Nov 2026; Tom: "Many games use the pool engine", then "2, write the plan"): NBS (`plans/nbs-plan.md`),
+  planned, not run: the bridge behind reportbase/games' 9-ball computer, which flies only the ghost-ball line at a few
+  powers. A planner that maps the whole circle of aims, keeps the legal-pot pieces and aims where the hand's error is
+  forgiven, against the current one on 60 seeded positions; A1–A6 predicted (more pots found, more made under the hand's
+  error at level 3, the cost in flights stated, the leave held by K ≤ 12, the bridge choosing as flights would, the engine
+  untouched). `games.html` not changed.
 - **R1261** (26 Nov 2026; Tom: "Merge and proceed"): PEB run 5, the full signature (every grip's choice, phase end and
   side spin's end recorded as events) on run 4's event engine, the cut and two rails. S1 (the same game bitwise, no
   trigonometric call), S4 (median K* 6) and S5 (two rails' run 4 piece split by side spin's end at 0.9505, both sides
