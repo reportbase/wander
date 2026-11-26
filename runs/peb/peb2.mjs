@@ -43,8 +43,8 @@ rep(`            if (us <= 3.5 * MU_S * h) {   // the slip is gone within this t
                 return [dx, dz];
             } else {`);
 rep(`            } else cloth(b, h);
-            b.x += b.vx * h; b.z += b.vz * h;`, `            } else { const d = cloth(b, h); if (d) { b.x += d[0]; b.z += d[1]; } else { b.x += b.vx * h; b.z += b.vz * h; } }
-            if (b.y > 0 || b.vy > 0) { b.x += b.vx * h; b.z += b.vz * h; }`);
+            b.x += b.vx * h; b.z += b.vz * h;`, `            } else { const d = cloth(b, h); if (d) { b.x += d[0] - b.vx * h; b.z += d[1] - b.vz * h; } }
+            b.x += b.vx * h; b.z += b.vz * h;`);
 fs.writeFileSync('runs/peb/play-trick-slope2.html', src);
 
 const srv = http.createServer((q, r) => { const f = path.join(root, decodeURIComponent(q.url.split('?')[0])); fs.readFile(f, (e, d) => { if (e) { r.writeHead(404); r.end(); } else { r.writeHead(200, { 'content-type': 'text/html' }); r.end(d); } }); }).listen(0);
