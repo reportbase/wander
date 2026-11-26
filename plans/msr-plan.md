@@ -118,3 +118,12 @@ What the runs show (a reading, to rule on):
 - **The tide gave no verdict.** Its own scatter is above the tolerance I set, so neither window held it. The one thing
   the runs do show is the direction the plan expected: the records window came close (96–128 leaves at four of five
   centres) where the ratio window held it nowhere.
+
+### Run 3, predicted before it ran
+
+The tide's tolerance fixed from the data before running: twice the file's median sigma (2 × 0.049 m), rounded to
+τ = 0.1 m. The content as in run 2 (the cubic spline through the hourly values); everything else unchanged.
+
+- **T1″.** In the ratio window, K* at c = 24 h is at most 128, and K* grows at least ×2.5 from c = 24 h to c = 96 h (or
+  exceeds 128 there); it exceeds 128 at c = 384 h and at c = 1536 h.
+- **T2″.** In the records window of half-width 48 h, K* at c = 24, 96, 384, 1536, 6144 h lies within a factor 2.
