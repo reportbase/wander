@@ -7607,6 +7607,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1256** (26 Nov 2026; Tom: "Yes, 1 then 3"): MSR run 3, the tide at τ = 0.1 m (twice its median sigma, fixed before
+  the run): the records window 48, 48, 48, 48, 32 leaves at five centres over the year, the ratio window 64 at one day and
+  more than 128 from four days (T1″, T2″ not killed). MSR in *Reads and Writes* §9, "Measured content behind the dial",
+  and essay 34 §9: on measured content the sorting held where it applies and said no to Zipf's head.
 - **R1255** (26 Nov 2026; Tom: "Yes, write the plan for 1", "Yes, run MSR"): MSR (`plans/msr-plan.md` + `runs/msr/`), the
   dial's sorting on measured content, predictions first. WikiText-103 word frequency by rank: from rank ~300 to 30,000 the
   ratio window holds it with 6 leaves at every centre, unchanged with the corpus cut to a quarter (the amount does not

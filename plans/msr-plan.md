@@ -127,3 +127,24 @@ The tide's tolerance fixed from the data before running: twice the file's median
 - **T1″.** In the ratio window, K* at c = 24 h is at most 128, and K* grows at least ×2.5 from c = 24 h to c = 96 h (or
   exceeds 128 there); it exceeds 128 at c = 384 h and at c = 1536 h.
 - **T2″.** In the records window of half-width 48 h, K* at c = 24, 96, 384, 1536, 6144 h lies within a factor 2.
+
+### Run 3 (26 November 2026; `runs/msr/msr3.py`, output `runs/msr/msr-run3.txt`)
+
+- **T1″ not killed.** K* in the ratio window: 64 at c = 24 h, more than 128 at 96, 384 and 1536 h (the fifth centre
+  outside the record).
+- **T2″ not killed.** K* in the records window of half-width 48 h: 48, 48, 48, 48, 32 at c = 24, 96, 384, 1536, 6144 h.
+
+### Standing after runs 1–3
+
+Not killed: Z2, T1″, T2″. Killed: Z1 (the measured result), T2, T1′, T2′ (my tolerance below the tide's scatter);
+T1 passed vacuously.
+
+- **The tide has a size, and only its units hold it.** At twice its own scatter, a window of 96 hours needs the same
+  48 leaves (32 at the last centre) wherever along the year it is put, and a window in ratios needs 64 at one day out and
+  more than 128 from four days on: its 12.42-hour period is a size, and a ratio window spans more of it the farther out
+  it reads.
+- **The word list is ratio content in its tail, not in its head** (run 1): 6 leaves from rank ~300 to 30,000 and
+  unchanged with the amount, 32 and 16 at ranks 30 and 100.
+- So on measured content the sorting held where it applies and said no where a list believed scale-free is not: a list
+  with a size is held at fixed cost only in its own units, a list with no size of its own at fixed cost in ratios, and
+  the head of Zipf's law is not the second kind.

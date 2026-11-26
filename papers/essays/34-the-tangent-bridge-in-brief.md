@@ -302,6 +302,11 @@ constant Chebyshev's: the moving window is a whole bridge, not a cut of a larger
 needs a window in records; one bridge over the whole list holds neither well. The page `dial-bridge.html` shows it: push the needle out
 to a trillion thumbs and watch the error, the terms a read and the trigonometric calls (none) stay put.
 
+Then on measured content (MSR). Word frequency by rank in a hundred million words is held in ratios by 6 leaves from rank
+about 300 to 30,000, whatever the corpus's size, but not in its head, where the commonest words need 32 and 16: Zipf's
+list is ratio content in its tail only. A tide, whose period of 12.42 hours is a size, is held by a window of fixed width
+in hours with the same 48 leaves anywhere along a year, and by a window in ratios nowhere past a day.
+
 ---
 
 ## 10. What it comes to

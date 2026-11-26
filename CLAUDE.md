@@ -623,6 +623,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1256 (26 Nov; Tom: "Yes, 1 then 3"): MSR run 3, the tide at twice its own scatter: records window 48 leaves everywhere,
+  ratio window none past a day; MSR in *Reads and Writes* §9 ("Measured content behind the dial") and essay 34 §9.
   MSR (`plans/msr-plan.md` + `runs/msr/`, 26 Nov; SPN R1255): measured content behind the dial. Zipf's tail (ranks ~300 to
   30,000, WikiText-103) is ratio content (6 leaves everywhere, the amount not entering); its head is not (Z1 killed). The tide
   gave no verdict (my tolerance below its scatter). Data not committed; sha256s in the plan; read with `python3 -I`.
