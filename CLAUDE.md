@@ -623,6 +623,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1239 (26 Nov; Tom: "maybe the why is simplification and correctness", "correct, it exists as a synethis, not as a
+  vantage."): **the why is simplification and correctness**: a read states the same results in fractions with no limit
+  (R974), and gives a standpoint only what a standpoint has; **the DHV exists as a synthesis, not as a vantage** (refines
+  R967). Its results are not wrong; correctness is the account's, never different numbers. *Reads and Writes* §1. **For
+  new writing: say the DHV is a synthesis, never that it "does not exist".**
   R1238 (26 Nov; Tom: "we have fingers reading fingers reading payload.", "Ok"): *Reads and Writes* §7 "Fingers
   reading fingers reading the payload": stacked fingers one set, heights added, only a + h + c read, the layers
   uncountable, the amount entering once at the matter; a read through a take a sum; matter on a layer's side its mirror.

@@ -50,6 +50,18 @@ the verbs for the continuous and the discrete: there is no reader and no writer 
 is the *dual hemispherical vantage* (DHV), both hemispheres at once, which no standpoint holds and which exists only as drawn, so it is neither a read nor a write. It is classical geometry, the view
 from no standpoint, and it is in this paper only as a point of comparison: the paper is about reads and writes.
 
+**Why the read: simplification and correctness** (R1239; Tom: "maybe the why is simplification and correctness", then
+"correct, it exists as a synethis, not as a vantage."). Read and the DHV state the same results (R1229), so the reason to
+state them from a read is not a different number. It is two things. Simplification: wherever the question is how things
+relate from a standpoint, a read states the result in fractions, the exchange s ↔ 1/s, the corner and one square root,
+with no angle and no limit, where the DHV states it with angles, π and e (Euler's w(s)·w(1/s) = −1 beside e^(iπ) = −1;
+the Cauchy's heat h² beside (1/π)/(1 + x²); parallax 1/s₁ + 1/s₂; a pull through a plane, its share r²/(1 + r²)); π and
+e then come in only where a whole is what is asked for (a total, a period, a size in a unit). Correctness, as an account
+of observing: a read gives a standpoint only what a standpoint has, one hemisphere, directions and ratios, no V and no
+π. The DHV exists as a synthesis, not as a vantage: it is drawn and held whole, but no one stands at it, and an account
+that hands an observer both hemispheres hands it what no standpoint holds. The DHV's results are not wrong; they are a
+synthesis's, and a read's are a standpoint's.
+
 **The stage is always the same.** The Cauchy relation space is the same for every shape. Whatever is met, a wall, a
 row of trees, a moon, a room or nothing at all, and at whatever size or distance, the read's directions are laid by one
 uniform turn with one heat, its corner at s = 1 and its exchange s ↔ 1/s; the shape changes only the paint and where it

@@ -7607,6 +7607,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1239** (26 Nov 2026; Tom: "so why bother, they allready have the correct answer?", "but classical uses dhv which
+  uses PI and e and as a cansequence is more complicated.", "maybe the why is simplification and correctness, DHV does not
+  actuallly exist.", then "correct, it exists as a synethis, not as a vantage."): **the reason to state results from a
+  read is simplification and correctness**: the same results (R1229) in fractions, the exchange, the corner and one
+  square root, no angle and no limit, where the DHV needs angles, π and e (R974); and an account of observing that gives
+  a standpoint only what a standpoint has. **The DHV exists as a synthesis, not as a vantage** (refines R967 and R890):
+  drawn and held whole, stood at by no one. Its results are not wrong; they are a synthesis's. "Correctness" is the
+  account's, never a claim of different numbers. *Reads and Writes* §1 "Why the read: simplification and correctness".
 - **R1238** (26 Nov 2026; Tom: "Think about it, we have fingers reading fingers reading payload.", then "Ok"): CRC read
   as a relay of hands in *Reads and Writes* §7: the reader's fingers, the plane's (gravity's take, not a read) and the
   payload; stacked fingers compose to one set with the heights added, so only the total a + h + c reaches the reading,
