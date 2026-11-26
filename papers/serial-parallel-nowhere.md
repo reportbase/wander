@@ -7607,6 +7607,17 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1246** (26 Nov 2026; Tom: "We use the tangent bridge in the draw repos. It works very well, it is a legitimate
+  alternative to classical ideas. This is our original idea and we should lean on it more to prove the points on our read
+  write paper. Let's explore tb further in light of our recent insights.", then "Yes", to the hemisphere test): TBH
+  (`plans/tbh-plan.md` + `runs/tbh/`), the Tangent Bridge on the read's hemisphere, predictions first. A bridge laid line by
+  line through the look (each line one 1D read of period π, tensored with the azimuth) holds the read's quadratic shares
+  exactly (10⁻¹⁴) and smooth content to 10⁻¹² by N = 64, with zero trigonometric calls; the period π glues the horizon's
+  antipodes, so the signed components ring at the rim, held exactly only with the back hemisphere (the DHV's); the grid
+  puts half its leaves within one thumb of the look (heat 29%), and moving it onto the heat's even measure costs (Λ
+  6.4·10⁷ substituted; conjugated, a cusp at the look, hv as N^(−0.52)). Run 1's P1 killed by my code (the horizon
+  not given its address, TB §11.2), P4 and P7 in their letters by my bound and my "exactly"; run 2's P1′ not killed.
+  Not in any paper.
 - **R1245** (26 Nov 2026; Tom: "Have you read the tangent bridge paper", then "yes, read them through and write a smaller
   essay that summarizes the results"): draw's four Tangent Bridge papers read through (`tb_algebra.md`, which carries
   forward `tb_classical.md`; `tb_spectral.md`; `tb_spectral_notes.md`) and summarized as essay 34,

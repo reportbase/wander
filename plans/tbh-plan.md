@@ -119,3 +119,36 @@ the leaf's slope is ∞ (none here), −1/s. Nothing else changed.
 
 - **P1′.** At N = 8, 16, 32, 64 the two representatives agree to ≤ 10⁻¹² over every query, the β = 0 line included;
   node exactness, partition of unity, slope against angle chart and zero trigonometric calls as in run 1.
+
+### Run 2 (26 November 2026; `runs/tbh/tbh2.py`, output `runs/tbh/tbh-run2.txt`)
+
+- **P1′ not killed.** The two representatives agree to 1.5·10⁻¹⁴, 2.0·10⁻¹⁴, 5.4·10⁻¹⁴, 8.5·10⁻¹⁴ at N = 8, 16, 32, 64,
+  the β = 0 line included; node exactness, partition of unity and the slope/angle agreement as in run 1; zero
+  trigonometric calls.
+
+### Standing after runs 1–2
+
+Not killed: P1′, P2, P3, P5, P6, P8. Killed: P1 (my code: the horizon not given its address, the very case TB §11.2
+names), P4 and P7 in their letters (my bound on the core; my "exactly ⅔"), their other clauses holding as stated.
+
+What the runs show, in the plan's reading (to rule on):
+- **The read alone holds its own content exactly, with no angle.** A bridge laid line by line through the look, each
+  line one 1D read of period π, holds the read's quadratic shares (h², v², hv, v·v₂) to 10⁻¹⁴ from 8 × 4 leaves up,
+  and smooth content to 10⁻¹² by N = 64, computed with no trigonometric call: leaves by halving and tangent addition,
+  kernels rational in the composed slopes, the one √(1 + r²).
+- **It glues the horizon.** Period π makes a line's two ends one point, so antipodal directions on the rim are one
+  leaf's business. Content that differs there (v, v₂, the components with a sign) rings at the rim at every N; h, whose
+  sign the front never changes, only kinks (error as 1/N).
+- **The back hemisphere holds what the front cannot.** With α of period 2π and the content carried round the back by its
+  own formula (the DHV's two hemispheres, a choice of extension), h, v and v₂ are exact to 10⁻¹⁴. The read alone holds
+  ratios and shares; the signed components at the rim take both hemispheres.
+- **The bridge's grid is finest at the look, not even in the read's heat.** Half the leaves lie within one thumb of the
+  look against 29% of the heat, and the leaves per unit of heat at the look double with each doubling of N. Moving the
+  bridge onto the heat's own measure costs: in the native space the Lebesgue constant explodes (6.4·10⁷ at 32 leaves);
+  conjugated it is free in Λ but puts a cusp at the look, hv converging as N^(−0.52) where the meridian bridge holds it
+  exactly. So the bridge does best where the read looks: its fidelity is greatest at the crosshair (R682's "perfect
+  fidelity" at the focus), and the heat's even measure is not the bridge's grid, as on the circle it was.
+
+Classical in its parts: the tensor bridge (TB §12), the double cover by a full meridian (the double Fourier sphere,
+Merilees 1973, Orszag 1974), conjugation free and substitution explosive (TB §10.2), bandwidth moved (§10.3). Ours: the
+sorting, read alone against both hemispheres, and the meridian grid's fit to the look.
