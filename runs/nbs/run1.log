@@ -1,1 +1,20 @@
 above IN THE FIELD 8a5e806c523e4e1b97061e505471c0fd99d52ec8c1bc938e703b2e6497b24aca
+w3 pos 3 (0/4) 440 s, B 68949, C5 24, finds C true B true
+w1 pos 1 (0/2) 472 s, B 67104, C5 24, finds C true B true
+w2 pos 2 (0/3) 520 s, B 77317, C5 24, finds C true B true
+w0 pos 0 (0/1) 536 s, B 78352, C5 12, finds C true B true
+w3 pos 7 (0/10) 262 s, B 40105, C5 12, finds C true B true
+w1 pos 5 (0/7) 332 s, B 52528, C5 12, finds C true B true
+w3 pos 11 (0/16) 113 s, B 9261, C5 9, finds C false B true
+w2 pos 6 (0/8) 335 s, B 52814, C5 33, finds C false B true
+w0 pos 4 (0/6) 327 s, B 54312, C5 12, finds C true B true
+w1 pos 9 (0/14) 145 s, B 10790, C5 9, finds C false B true
+w2 pos 10 (0/15) 166 s, B 19194, C5 21, finds C false B true
+w0 pos 8 (0/11) 202 s, B 29685, C5 21, finds C false B true
+w1 pos 13 (0/18) 117 s, B 9482, C5 1, finds C true B true
+w2 pos 14 (0/19) 134 s, B 12671, C5 7, finds C true B true
+w0 pos 12 (0/17) 130 s, B 9350, C5 21, finds C true B true
+w3 pos 15 (1/1) 520 s, B 78352, C5 12, finds C true B true
+w1 pos 17 (1/4) 574 s, B 79744, C5 21, finds C false B true
+w0 pos 16 (1/2) 458 s, B 65195, C5 21, finds C false B true
+w3 pos 19 (1/6) 376 s, B 58434, C5 12, finds C true B true
