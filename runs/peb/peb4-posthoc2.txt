@@ -1,0 +1,8 @@
+cut 0.411481..0.686901: stick/slip patterns rR | RR | ; changes 2; sub-pieces not held, 6, narrow
+cut 5.596285..5.934599: stick/slip patterns RR | rR | r; changes 2; sub-pieces 6, not held, narrow
+cut 5.997167..6.083866: stick/slip patterns RR | Rr; changes 1; sub-pieces 6, 6
+tworail 0.210803..0.233102: stick/slip patterns bRR | bRRR; changes 2; sub-pieces narrow, not held, narrow
+tworail 0.714453..0.99679: stick/slip patterns RR; changes 0; sub-pieces not held
+tworail 2.242385..2.770406: stick/slip patterns  | RR | rR; changes 2; sub-pieces narrow, 6, not held
+tworail 2.841709..2.9495: stick/slip patterns RR | Rr | R; changes 2; sub-pieces 6, 6, narrow
+tworail 3.577584..4.121342: stick/slip patterns r | rR | RR; changes 2; sub-pieces narrow, 8, not held

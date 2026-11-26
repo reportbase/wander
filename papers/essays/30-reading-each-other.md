@@ -246,6 +246,17 @@ over all balls, the game was the same to the bit; with every pair resolved from 
 no longer depended on how the balls were numbered, and every challenge was still solved. Where contacts chain within one
 tick, as on a break, the fixed step had been choosing the order, not the balls.
 
+Then the same program was asked to run with no angle at all, and to be held by a Tangent Bridge (PEB, `plans/peb-plan.md`).
+With the aim kept as a half-slope it does run with no angle: every shot as before, to 10⁻¹², and no trigonometric call.
+The bridge was harder. What a shot does across all aims breaks into pieces, one for each run of contacts, and a piece
+should be smooth. On the program as it was, it was not: the fixed tick rounds every event to a whole step, and moving the
+aim moves the step, so the rest places jumped inside pieces whose contacts never changed. Fixing one rounding showed the
+next. Replacing the tick by events, each found at its own moment, removed them all, and the old program turns out to be
+the new one's coarse version. Then the pieces' edges are the table's: smooth up to a cushion or a change of order, and a
+square root at a graze, on the side where the two balls just touch. That root is the cut's, not the program's. So the
+mutual reads were never the trouble; the shared clock, the one thing kept from no standpoint, was. A third of the pieces
+still need more leaves than I allowed, and I do not yet know why.
+
 So a collision sorts like this. Before it, the two balls only read each other. At it, h + v = 1 is the last read, and
 what makes it a touch is that each ball writes its own new state. Which way the push goes is a read, along the line of
 centres. How it is shared is a read too, the sizes cubed, but only because one material was assumed; a second material

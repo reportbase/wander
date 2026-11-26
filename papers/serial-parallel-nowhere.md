@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1260** (26 Nov 2026; Tom: "1a, write the plan", "Merge and run", "What have you learned so far about integrating
+  tb", then "Add the insights to the papers and essays"): PEB run 4, an event-driven integrator in a test copy. The engine
+  runs whole on slopes (no trigonometric call); the fixed tick's rounding is what put jumps inside the shot map's pieces,
+  and the event engine removes them (Q1, Q2, Q5 not killed); the pieces' edges are then the table's, linear in the distance
+  to the edge except at a graze, which is a square root on the side where the contact happens (the cut's √(1 − f²)), held
+  in the root's chart. About a third of pieces not held to 10⁻⁶ with K ≤ 128, unexplained; the break's map still running.
+  In *Reads and Writes* §1 after "The engine, audited", essay 30 §10 and essay 34 §9.
 - **R1259** (26 Nov 2026; Tom: "Merge, then run 2"): PEB runs 2–3. P1′, P1″ not killed (the engine whole on slopes, no
   trigonometric call, to 5·10⁻¹³). P3–P5 killed in both: placing the slip's end at its moment (run 2) and the cloth from a
   contact's moment (run 3) lowered the largest hidden jump in a shot-map piece from 1.2·10⁻² to 3.3·10⁻³, but each event

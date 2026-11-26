@@ -307,6 +307,13 @@ about 300 to 30,000, whatever the corpus's size, but not in its head, where the 
 list is ratio content in its tail only. A tide, whose period of 12.42 hours is a size, is held by a window of fixed width
 in hours with the same 48 leaves anywhere along a year, and by a window in ratios nowhere past a day.
 
+And on a program (PEB). A pool engine run with every aim a half-slope plays as it did and calls no trigonometric function.
+What one shot does across all aims is a function broken at the aims where its contacts change, so the bridge is laid piece
+by piece, the breaks kept as records, as §5's cure says. It held only once the engine's clock was exact: a fixed tick puts
+jumps inside the pieces wherever an event slides from one step to the next, and an integrator that places each event at
+its own moment takes them away. The edges left are the table's, smooth where a cushion or an order changes and a square
+root at a graze, held in the root's chart. About a third of the pieces still need more than 128 leaves, not yet explained.
+
 ---
 
 ## 10. What it comes to
