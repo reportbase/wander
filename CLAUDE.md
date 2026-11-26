@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  NBS (`plans/nbs-plan.md`, 26 Nov; SPN R1262; Tom: "Many games use the pool engine", "2, write the plan"): planned, not run:
+  the bridge behind games' 9-ball computer (whole circle of aims, legal-pot windows weighed by the hand's error) against
+  `ninePlanGen`'s ghost-ball line, on 60 seeded positions; `games.html` read, not changed (`runs/nbs/nbs.mjs`, `GAMES_HTML`).
   PEB run 4 (26 Nov; SPN R1260): an event-driven integrator (`runs/peb/peb4-engine.js`, built into
   `runs/peb/play-trick-event.html` by `peb4-build.mjs`; run `node runs/peb/peb4.mjs q125|map cut|map tworail|map rack`, then
   `report`): the tick's hidden jumps gone, the shot map's edges the table's (a graze a square root); in *Reads and Writes* §1,

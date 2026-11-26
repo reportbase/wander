@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1262** (26 Nov 2026; Tom: "Many games use the pool engine", then "2, write the plan"): NBS (`plans/nbs-plan.md`),
+  planned, not run: the bridge behind reportbase/games' 9-ball computer, which flies only the ghost-ball line at a few
+  powers. A planner that maps the whole circle of aims, keeps the legal-pot pieces and aims where the hand's error is
+  forgiven, against the current one on 60 seeded positions; A1–A6 predicted (more pots found, more made under the hand's
+  error at level 3, the cost in flights stated, the leave held by K ≤ 12, the bridge choosing as flights would, the engine
+  untouched). `games.html` not changed.
 - **R1260** (26 Nov 2026; Tom: "1a, write the plan", "Merge and run", "What have you learned so far about integrating
   tb", then "Add the insights to the papers and essays"): PEB run 4, an event-driven integrator in a test copy. The engine
   runs whole on slopes (no trigonometric call); the fixed tick's rounding is what put jumps inside the shot map's pieces,
