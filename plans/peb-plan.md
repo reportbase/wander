@@ -223,6 +223,6 @@ added when it finishes.
   median.
 - **Q5 not killed.** 0 trigonometric calls on the event path over the 36 shots.
 - **The cut and two rails, so far.** Cut: 36 jumps (4 at a graze), 36 pieces, 24 held under Q3; graze-ended pieces held in
-  the root's chart 5 of 7. Two rails: 46 jumps (8 at a graze), 46 pieces, 26 held; graze-ended pieces held 7 of 13. Every
+  the root's chart 5 of 7. Two rails: 46 jumps (8 at a graze), 46 pieces, 26 held; graze-ended pieces held 8 of 13. Every
   end not at a graze has slope 1.00; at a graze ends come in pairs, 0.50 on one side and 1.00 on the other (the side where
   the contact happens takes the root, the side where it misses is linear).
