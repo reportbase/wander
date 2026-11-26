@@ -1,0 +1,12 @@
+data: /tmp/claude-0/-home-user/3866302f-40ca-5581-aced-fe09c1fdca2a/scratchpad/msrdata
+WikiText-103 train: 1801350 rows, 101425671 tokens, 623941 distinct words; count at rank 10^5: 17
+first quarter: 25276063 tokens, 291879 distinct; count at rank 10^5: 4
+Z1: K* in the ratio window, c = 10^1.5 … 10^4.5: [32, 16, 6, 6, 6, 6, 6]
+Z1 KILLED (largest / smallest 5.33)
+Z2: K* for the first quarter: [24, 16, 6, 6, 6, 6, 16]
+Z2 not killed
+tide: 8760 hourly values of 8760 (gaps 0), -0.504 … 2.292 m
+T1: K* in the ratio window, c = 24, 96, 384, 1536, 6144 h: [None, None, None, None, 'outside the record']
+T1 not killed
+T2: K* in the records window (half-width 48 h): [None, None, None, None, None]
+T2 KILLED

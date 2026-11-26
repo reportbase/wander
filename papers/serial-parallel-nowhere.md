@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1255** (26 Nov 2026; Tom: "Yes, write the plan for 1", "Yes, run MSR"): MSR (`plans/msr-plan.md` + `runs/msr/`), the
+  dial's sorting on measured content, predictions first. WikiText-103 word frequency by rank: from rank ~300 to 30,000 the
+  ratio window holds it with 6 leaves at every centre, unchanged with the corpus cut to a quarter (the amount does not
+  enter): ratio content over three decades; the head (ranks 30, 100) needs 32 and 16, so Z1 (one K within ×2 over all
+  seven centres) killed: the list is not scale-free in its first two decades. NOAA tide (San Francisco 2025): no verdict,
+  my 0.02 m tolerance below the data's own scatter (median sigma 0.049 m); the records window came close (96–128 leaves)
+  where the ratio window held it nowhere. T1 passed vacuously, T2, T1′, T2′ killed by my tolerance. Not retuned.
 - **R1254** (26 Nov 2026; Tom: "1 then 2"): #541 merged; RAH in *Reads and Writes* §9, "What the read alone holds: what is
   rational in its slopes" (rational in the slopes, even on the sphere and held by the read alone one class, the square
   root the line), and in essay 34 §8, with the dial page in essay 34 §9. A reading; no new claim. Then draw's Tangent

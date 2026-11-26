@@ -1,0 +1,4 @@
+T1': K* in the ratio window, c = 24, 96, 384, 1536, 6144 h: [None, None, None, None, 'outside the record']
+T1' KILLED
+T2': K* in the records window (half-width 48 h): [128, None, 128, 128, 96]
+T2' KILLED
