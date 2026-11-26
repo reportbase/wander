@@ -7607,6 +7607,10 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1242** (26 Nov 2026; Tom: "update the essays"): R1236–R1241 carried into essay 33 as §16, "A read laid over a
+  pull" (CRC; fingers reading fingers; gravity's take not the DHV; "the Cauchy" a name for a density; the rock let go),
+  §19's heat-and-paint paragraph brought to R1240 and the why (R1239) added; later sections renumbered 17–19; the README
+  row and `essays.html` card. No new claim.
 - **R1241** (26 Nov 2026; Tom: "we observe the affects of gravity. dropping a rock from your hand. where is read
   geometry in that", then "yes and merge"): what is observed is gravity's effects, never its take. A rock dropped at arm's
   length L reads s = y/L = (g/2L)·t² (a parabola in the slope, in ticks), so one standpoint has g/L, never g; the corner

@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1242 (26 Nov; Tom: "update the essays"): R1236–R1241 in essay 33 §16 "A read laid over a pull" (CRC, the relay, the
+  DHV not gravity's, the two densities, the rock let go), §19's heat-and-paint paragraph and the why; later sections
+  renumbered 17–19; README row, `essays.html` card. No new claim.
   R1241 (26 Nov; Tom: "we observe the affects of gravity. dropping a rock from your hand. where is read geometry in
   that", "yes and merge"): *Reads and Writes* §7 "A rock dropped from the hand": the reading s = y/L = (g/2L)·t², one
   standpoint reading g/L per tick², never g; the corner one arm fallen; seen from above, τ = y/ẏ = t/2 from the size
