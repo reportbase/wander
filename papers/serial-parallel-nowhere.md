@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1261** (26 Nov 2026; Tom: "Merge and proceed"): PEB run 5, the full signature (every grip's choice, phase end and
+  side spin's end recorded as events) on run 4's event engine, the cut and two rails. S1 (the same game bitwise, no
+  trigonometric call), S4 (median K* 6) and S5 (two rails' run 4 piece split by side spin's end at 0.9505, both sides
+  held) not killed; S2 killed (160 of 184 pieces held, 87% against 90%); S3 killed in its root clause by my rule for a
+  root's end (9 of 33 flagged jumps with a side at ½), its plain clause holding (263 of 265 ends at slope 1). Post hoc: 5
+  of the 24 unheld pieces hide jumps the 1,024-aim grid missed (the finer signature changes and changes back inside one
+  grid cell), my set-up; the rest converge slowly, an unrecorded kink or root, not found.
 - **R1260** (26 Nov 2026; Tom: "1a, write the plan", "Merge and run", "What have you learned so far about integrating
   tb", then "Add the insights to the papers and essays"): PEB run 4, an event-driven integrator in a test copy. The engine
   runs whole on slopes (no trigonometric call); the fixed tick's rounding is what put jumps inside the shot map's pieces,

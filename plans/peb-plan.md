@@ -281,3 +281,27 @@ blind; what is new is whether those are all. A kink of a kind not listed would l
 What would follow if S2–S4 are not killed (a reading, to rule on): with every clipped rule's switch recorded as an event,
 the shot map is pieces, each held by a few leaves of the bridge, its edges the table's events; the edges of the root's
 kind are where something is met at no speed.
+
+### Run 5 (26 November 2026; `runs/peb/peb5-build.mjs`, `peb5.mjs`, copy `play-trick-event5.html`; output `peb-run5.txt`)
+
+- **S1 not killed.** On the 36 seeded shots the final state (places, velocities, spins) equals run 4's engine bitwise; 0
+  trigonometric calls.
+- **S2 KILLED.** 160 of 184 pieces wider than 10⁻⁴ rad held to 10⁻⁶ (87%; cut 63 of 75, two rails 97 of 109), against
+  90%. Run 4 held 50 of 82 (61%).
+- **S3 KILLED, in its root clause.** Plain ends at slope 1: 263 of 265 (two at 0.50, 0.58, ends of a root's kind my rule
+  did not flag). Root jumps with a side at ½: 9 of 33; my rule flags a jump by a slow closing speed against the shot's,
+  and most so flagged are linear on both sides. My rule, not the table.
+- **S4 not killed.** Median K* 6 over the 160 held pieces.
+- **S5 not killed.** In two rails' run 4 piece 0.714–0.997 the full signature jumps at 0.950509 (a cushion with the rail
+  grip's slip on one side, side spin's end on the other, `C0:1R/W0`), and both pieces beside it are held.
+- What the jumps are: of 184, the first differing events are slide ends, stops and spin ends against each other or
+  against a cushion or pocket in most (`SW` 43, `CP` 33, `CW` 19, `CR` 21, `RR` 14, …), ball contacts in few.
+
+**Post hoc** (`runs/peb/peb5-posthoc.mjs`, `peb5-posthoc.txt`; not predicted). Of the 24 pieces not held, 5 (cut
+0.124–0.141, 0.145–0.160, 2.387–2.424, 3.958–3.995 and two rails 0.389–0.406) have bridge errors of 0.2 to 9 units at
+every K and second differences 10⁶ to 10⁹ times their median: a jump inside them that the map never found, since the
+finer signature can change and change back between two of the 1,024 aims, which the search does not look for (my
+set-up). The other 19 converge, slowly (errors 10⁻⁴ to 10⁻³ at K = 128, falling with K), their second differences peaking
+10² to 10⁵ times the median, often within 1% of an end: an end of a root's kind not charted, or a kink not recorded; not
+found which. A run 5b would look for a change of signature inside each piece before bridging it (a finer grid within,
+or the bridge's own leaves' signatures compared), and chart an end by its measured slope rather than by my rule.
