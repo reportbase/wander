@@ -7607,6 +7607,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1266** (27 Nov 2026; Tom: "How would we convert the ring to true cauchy"; "Do this in a demo.   Let's see if we can
+  create a true shv version of the ring.  It should work with any array,  the array is the payload."): `ring.html`. The list
+  is the shore and the bar the read: item i at the slope (i − f)/H, laid at x = s/(1 + |s|), the share of the sweep along
+  h + v = 1 (paths.html's line), rational both ways; one thumb at half the bar and x(s) + x(1/s) = 1 by the exchange; the
+  ends the horizon, every item placed, none culled; 0 square roots or trigonometric calls a frame (the half-slope 310 √,
+  the turn 400 tan and atan); told apart 27 at H = 8 for every N from 10⁴ to 10¹⁵ and without end; a repaint moves no chip.
+  Claude's precision: the spacing on this chart is not equal heat (that needs the turn's arctangent); what it keeps is the
+  corner at half and the exchange, which every fair chart keeps (OFS Theorem 6(e)).
 - **R1265** (27 Nov 2026; Tom: "The ring is cauchy without cauchy"; "Add to 17 and merge"): the games page's tool ring
   writes no Cauchy (no density, no 1/(1 + s²), no γ; "fisheye" in the code), yet equal turns laid by tan spread the tools
   by 1/(1 + s²): the turn's own heat, given, not computed (R389, R458), the lighthouse in a menu. Essay 17 §2.
