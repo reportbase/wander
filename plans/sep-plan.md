@@ -49,3 +49,24 @@ The reading offered beforehand (not a prediction): the invariance is the read's 
 a spectrum's channels carry amounts with their own errors, so the write side breaks it.
 
 ## Runs
+
+### Run 1 (`runs/sep/sep.py`, output `runs/sep/sep-out.txt`)
+
+S1 not killed (Prony exact to 10⁻⁴⁶ for K = 1–4). S2 not killed (the non-affine Möbius map (x + 1)/(1 − x/2) carries
+every fit onto its image: weights to 7·10⁻⁷, standpoints to 5·10⁻⁶). S3 KILLED by my tolerance: the medians across r at
+one d agree within 19% and 6% at d = 1.5 and 2 but 31% at d = 3; S2 and the transitivity of the isometries make the
+law identical, so the spread is the Monte Carlo scatter of four medians of 200, which my 25% did not allow. The decline
+with d held (0.062, 0.029, 0.013). S4 KILLED by its letter: the spectrum's spread across r was 1.46 and 1.30 at d = 1.5
+and 2, under the predicted 1.5 and over the kill line 1.2, within reach of the same scatter, so run 1 cannot say whether
+the spectrum breaks the invariance. S5 not killed (total amount within 2.2× of one Cauchy's in every case; from d = 3 to
+1.5 the weight error ×3.45, the total ×1.02).
+
+## Run 2: exact bounds in place of the scatter (predictions committed before the script)
+
+The Cramér–Rao bound for the weight, computed exactly (no Monte Carlo): for draws, the Fisher matrix per draw by
+quadrature (mpmath, 30 digits); for the spectrum, σ²·(JᵀJ)⁻¹ on the same grid. Same cases.
+- **S3′.** Draws: the bound on the weight at each d the same across r to 10⁻⁸ relative (the symmetry, now without
+  scatter), and decreasing in d.
+- **S4′.** Spectrum: the bound at d = 1.5 differs across r by more than 5% (the additive noise not Möbius-invariant).
+  Kill: within 5%.
+- **S5′.** Spectrum: the bound on the total amount within 3× of one Cauchy's in every case.

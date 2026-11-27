@@ -1,0 +1,38 @@
+S1 K = 1: worst error in m, gamma, amount 5.35e-51
+S1 K = 2: worst error in m, gamma, amount 1.91e-48
+S1 K = 3: worst error in m, gamma, amount 5.63e-48
+S1 K = 4: worst error in m, gamma, amount 1.38e-46
+S2 Moebius map (x + 1)/(1 - x/2): worst weight gap 7.05e-07, worst standpoint gap 5.24e-06 over 20 trials
+S3 draws d = 1.5, r =  1: median weight error 0.0617
+S3 draws d = 1.5, r =  2: median weight error 0.0574
+S3 draws d = 1.5, r =  4: median weight error 0.0680
+S3 draws d = 2.0, r =  1: median weight error 0.0288
+S3 draws d = 2.0, r =  2: median weight error 0.0306
+S3 draws d = 2.0, r =  4: median weight error 0.0289
+S3 draws d = 3.0, r =  1: median weight error 0.0126
+S3 draws d = 3.0, r =  2: median weight error 0.0144
+S3 draws d = 3.0, r =  4: median weight error 0.0125
+S3 draws d = 3.0, r = 16: median weight error 0.0110
+S3 d = 1.5: spread across r 1.185
+S3 d = 2.0: spread across r 1.062
+S3 d = 3.0: spread across r 1.306
+S4 spectrum d = 1.5, r =  1: median weight error 0.00382, total-amount error 1.31e-03
+S4 spectrum d = 1.5, r =  2: median weight error 0.00497, total-amount error 1.57e-03
+S4 spectrum d = 1.5, r =  4: median weight error 0.00341, total-amount error 1.56e-03
+S4 spectrum d = 2.0, r =  1: median weight error 0.00203, total-amount error 1.16e-03
+S4 spectrum d = 2.0, r =  2: median weight error 0.00235, total-amount error 1.24e-03
+S4 spectrum d = 2.0, r =  4: median weight error 0.00265, total-amount error 1.99e-03
+S4 spectrum d = 3.0, r =  1: median weight error 0.00111, total-amount error 1.28e-03
+S4 spectrum d = 3.0, r =  2: median weight error 0.00118, total-amount error 1.27e-03
+S4 spectrum d = 3.0, r =  4: median weight error 0.00138, total-amount error 1.63e-03
+S4 spectrum d = 3.0, r = 16: median weight error 0.00128, total-amount error 2.23e-03
+S5 one Cauchy alone: total-amount error 1.02e-03
+S4 d = 1.5: spread across r 1.460 (kill if within 1.2, predicted over 1.5)
+S4 d = 2.0: spread across r 1.302 (kill if within 1.2, predicted over 1.5)
+S4 d = 3.0: spread across r 1.247
+S5 worst total-amount error over one Cauchy's: 2.18; d 3 to 1.5 (r = 1): weight error x3.45, total x1.02
+S1: not killed
+S2: not killed
+S3: KILLED
+S4: KILLED
+S5: not killed
