@@ -1,0 +1,12 @@
+T1 M =  1: one read at u = 0.900, worst gap 1.15e-14 of the peak
+T1 M =  2: one read at u = 0.600, worst gap 6.44e-14 of the peak
+T1 M = 10: one read at u = 0.360, worst gap 1.96e-12 of the peak
+T1 M = 1, splits (0.1,0.2,0.3), (0.3,0.2,0.1), (0.6,0,0): worst gap 2.14e-14
+T2 M =  1: u = 0.900, ripple 1.400193e-02 against 2/sinh(2 pi u) = 1.400193e-02
+T2 M =  2: u = 0.600, ripple 9.226548e-02 against 2/sinh(2 pi u) = 9.226548e-02
+T2 M = 10: u = 0.360, ripple 4.211584e-01 against 2/sinh(2 pi u) = 4.211584e-01
+T2 ripple at M = 10 over M = 1: 30.1; worst relative gap 2.24e-12
+T3a uniform sky: ripple at the pixel spacing 1.731790751e-01 of the mean, 2/sinh(2 pi h3/p) = 1.731790751e-01
+T3b the stars' frequency: 1.998187176e-01 against 1.998190611e-01, relative gap 1.72e-06
+T3c the pixel frequency: 8.642784e-02 against 2e^(-2 pi h3/p) = 8.642784e-02, relative gap 2.65e-13
+verdicts: T1 not killed, T2 not killed, T3 not killed
