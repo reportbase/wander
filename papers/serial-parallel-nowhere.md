@@ -7607,6 +7607,16 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1268** (27 Nov 2026; Tom: "seems to me you can have a SHV sweep of a DHV sweep.   in other words a continuous read
+  heat sweeping a discrete write heat."; "yes and merge"): **a continuous read sweeps discrete writes.** CDW
+  (`plans/cdw-plan.md` + `runs/cdw/cdw.py`), exact at 40 digits, the identity known beforehand (Poisson summation, the
+  writer's mathematics): the read's heat from a focus f with thumb H over writes at the whole numbers sums to
+  sinh(2πH)/(cosh(2πH) − cos(2πf)), so the writes' discreteness reaches the read only as a ripple of about
+  2e^(−2πH)·cos(2πf) (0.0037 at H = 1, 3·10⁻²² at H = 8; at H = ¼ a total of 1.52 on a write, 0.66 between). Claude's
+  reading, not ruled: H ≈ 1, one write a thumb, is a corner between the read's fineness and the writes' spacing; past it
+  the read cannot tell its writes from a continuum, which is why the ring needs no N; the composition CRC's and
+  `gravity-ring.html`'s, the density beneath a comb. Wording: a write has no facing (R1138) and the DHV is a synthesis
+  (R1239), so "a DHV sweep" is the discrete writes laid out the writer's way.
 - **R1267** (27 Nov 2026; Tom: "Let's stay gravity is an array, the value is the strength of the field."; "Gravity has its
   own cautchy. So fingers browsing fingers browsing gravity array"; "Own page merge"): `gravity-ring.html`. Gravity's array
   indexed by place on the ground, its value the pull there, each mass's part its own Cauchy of its depth (GRV); a reader's
