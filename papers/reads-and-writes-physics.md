@@ -26,8 +26,8 @@ size by something carried in. A *read* is taken from a standpoint, turning there
 arm's length); every reading is a direction [h : v], a ratio, and no amount survives into it. An *extent* is a distance
 in thumbs or steps, a ratio of distances with no unit in it: two looks held together have it by reading, as a ratio
 of their slopes, and counted out in steps it is a count, a description laid over the steps. A *write* is discrete and
-moved by scaling: a bounded thing with a size, a stride, a mark, a metre bar, or an amount put down in a unit carried
-in. This paper sorts known physics by the two.
+moved by scaling: a bounded thing with a size, a stride, a mark, a metre bar; an amount put down in a unit carried
+in is the observer's bookkeeping about one. This paper sorts known physics by the two.
 
 Two tests do the sorting, and both are tests physics already uses. Scale the world, every length multiplied by one
 factor: a read or an extent is unchanged and a write moves (the test of dimensional analysis, Bridgman's and Buckingham's).
@@ -36,7 +36,7 @@ paint met along them. A law's form often comes from the first half and its value
 *bridge*: the speed of light, a rest frequency, the astronomical unit, a kind of star, a clock.
 
 Sorted this way, several familiar results come apart cleanly. A moving observer's sky is a Möbius map of directions
-(aberration, a read) carrying a payload weighting (Doppler, read from what arrives, its frequency a write); the
+(aberration, a read) carrying a payload weighting (Doppler, read from what arrives, its frequency an amount); the
 rotation left by two boosts joined, Thomas and Wigner's, is inferred from three stars' directions alone and belongs to the
 joining, never to one boost: a map between the looks, not an extent. A line's Lorentzian is the heat of a phase's turn, and its width and the decay time it
 answers to are one quantity read two ways. The quasar dipole's expected size is 2β from directions plus a payload term
@@ -58,17 +58,17 @@ Reading and writing are a division of the observer's acts, worked out in *Reads 
 geometry of one standpoint: directions, the shares of one thumb, the corner where they are equal, the horizon never
 reached, and the Cauchy, the heat the uniform turn lays over the readings before anything arrives. An extent is a distance
 as a ratio, in thumbs or steps, with no unit: two standpoints held at once have it by reading, and one standpoint
-moved has it only with its earlier look kept and the step taken. A write is a bounded thing with a size, or an amount
-put down in a unit carried in; a stride and a mark that keeps a look are writes, and a count laid over them is a
+moved has it only with its earlier look kept and the step taken. A write is a bounded thing with a size; an amount
+put down in a unit carried in is bookkeeping about one; a stride and a mark that keeps a look are writes, and a count laid over them is a
 description. Reads, and extents held by two looks together, are geometry; physics enters with the first write. (The
 sorting on these two properties, continuous or discrete and moved by scaling or not, is a reading.)
 
 | | unmoved by scaling | moved by scaling |
 |---|---|---|
 | **continuous** | reading: a direction; reads held together, a ratio of slopes (an extent) or a map | the number line in a unit: an exact real amount |
-| **discrete** | a count or an order: so many photons, contacts, ticks; which came first | a write: a thing with a size, an amount put down in a unit |
+| **discrete** | a count or an order: so many photons, contacts, ticks; which came first | a write: a thing with a size (an amount put down in a unit is bookkeeping about one) |
 
-Physics uses all four boxes. Its measured numbers are writes: a length to so many digits, in metres. Its counts,
+Physics uses all four boxes. Its measured numbers are amounts: a length to so many digits, in metres. Its counts,
 photons arrived or contacts made, are unmoved by scaling and are descriptions laid over the things counted. Its laws
 are stated on the number line in a unit, exact real amounts, which is the dual hemispherical vantage's box: classical statement, set
 here for comparison and found nowhere among the things measured. And what an observer has before any of these is the
@@ -95,13 +95,13 @@ boundary is what causes other known difficulties is a question this paper raises
 **Scale the world.** Multiply every length in a situation by one factor k, the observer's included, and keep every
 standpoint where it stands relative to the rest; the units stay outside. A quantity unchanged by k is a read where it is continuous, a
 direction or a ratio of slopes, held by one standpoint or, as an extent, by two together; where it is discrete it is
-a count, a description laid over things. A quantity that changes with k is a write, and
-somewhere an amount was carried in to give it its size, or it is itself a thing with a size. (Until 10 November this paper, with *Reads and Writes*, called
+a count, a description laid over things. A quantity that changes with k is an amount, and
+somewhere an amount was carried in to give it its size, or it is itself a thing with a size, a write. (Until 10 November this paper, with *Reads and Writes*, called
 every joining a write; R788 keeps "write" for what scaling moves, and since R896 a count kept is not a write: the
 things it is kept in are.) Physics has used this test for a century as
 dimensional analysis: Bridgman (1922) and Buckingham (1914) sort quantities into dimensionless groups and the scale
 that sets them. The groups are reads or extents (with one base unit they are exactly the directions of a read; Buckingham's
-π groups, checked in `plans/bpi-plan.md`); the scale is the write. The test is necessary for a reading and not
+π groups, checked in `plans/bpi-plan.md`); the scale is the amount. The test is necessary for a reading and not
 sufficient: a number unmoved by scaling can still be no read, as π is none: it is the DHV's, the turn held closed.
 
 **Change what arrives.** Keep the standpoint and the turn, and change the world that paints the directions: another
@@ -124,7 +124,7 @@ cases in this paper are few and named each time:
   ruler);
 - **a clock**, turning an order of reads into durations.
 
-Each carries in an amount, and so makes a write; a baseline left in its own length makes only extents. None is found by
+Each carries in an amount, and so gives an amount; a baseline left in its own length makes only extents. None is found by
 reading harder.
 
 ### 1.4 Standings
@@ -229,17 +229,17 @@ clock, in ticks.
   arctan(x)(1 + x²)/x: right far off, too long by π/2 at the corner, and worse past it. So the exact carrier is the ratio.
 - **A rate joins reads, so τ is held by no single read**: it is a count of the observer's own ticks, unmoved by scaling, with the earlier look kept. Two looks a tick apart give it exactly:
   x₁/(x₂ − x₁) is the time to contact at the second look, x₂/(x₂ − x₁) one tick earlier. Seconds are carried in with a
-  clock, a write. Scale-free too is τ̇, the rate at which τ itself changes: under steady braking τ̇ + 1 = d/(2s), s the
+  clock, an amount. Scale-free too is τ̇, the rate at which τ itself changes: under steady braking τ̇ + 1 = d/(2s), s the
   stopping distance, so Lee's critical τ̇ = −½ is stopping distance equal to distance, the pair (s, d) at its corner.
 - **How close it will pass.** With ω the bearing's rate, the closest approach as a share of the present distance is
   ωτ/√(1 + (ωτ)²). The clock enters ω and τ oppositely and leaves ωτ, so this needs nothing carried in; a bearing that
   holds still is a collision, as navigators know.
 - **One stream is one relation.** A thing coming nearer and one growing at the matching rate give the same stream of
   readings. A neighbour at the same depth, read in the same moment, separates them.
-- **A bounce writes its size.** A ball bouncing to height A every P ticks under one pull has g = 8A/P². Scale the world
+- **A bounce gives its size.** A ball bouncing to height A every P ticks under one pull has g = 8A/P². Scale the world
   and the observer by k: its directions at the top and at the foot of the bounce are the same fractions, and so is its
   height in its own breadths. Under the same pull the scaled ball takes √k times the ticks. The pull is an amount in a unit,
-  so a bounce's ticks, counted, write its size, A = gP²/8: Galileo's square–cube law, where the unit enters motion
+  so a bounce's ticks, counted, give its size, A = gP²/8: Galileo's square–cube law, where the unit enters motion
   (`sky-city.html`, the slopes unchanged and the ticks doubled at k = 4).
 
 The corners of motion come in two kinds. A quantity unchanged when its pair swaps, f(k) = f(1/k), is stationary at the
@@ -338,12 +338,12 @@ A moving observer's sky is the clearest place in physics where a read and a writ
   way the rapidity is the coordinate of a map between the looks, not a read and not a gap in space. No clock, no
   frequency, no c.
 - **Doppler shift and beaming weight the paint**, moving no direction. Of the D⁴ by which an isotropic sky brightens
-  ahead, D² is the crowding of directions and D² the paint. To state the shift as a speed needs a rest frequency, a write.
+  ahead, D² is the crowding of directions and D² the paint. To state the shift as a speed needs a rest frequency, an amount.
 - **Two more readings of one sky.** A thermal sky, each direction a blackbody at T₀·D: the hottest over the coldest is
   exactly (1 + β)/(1 − β) = k² at every speed, a ratio; a linear dipole fit reads β = 0.6 as 0.67 (Peebles and Wilkinson
   1968). Radar: two echo times give the Doppler factor as their ratio, t₂/t₁ = k², and the interval as their product,
   t₁t₂ = τ² (Bondi 1964). A common rescale of both stamps leaves the ratio and moves the product: one pair of stamps, a
-  ratio unmoved by scaling and an amount in the stamps' unit, a write.
+  ratio unmoved by scaling and an amount in the stamps' unit.
 
 ### 5.2 The quasar dipole [data]
 
@@ -439,7 +439,7 @@ about axes whose cosine is 2/3 leave cos(Θ/2) = 17/25; two boosts of half-rapid
 name of that half-slope; π enters only where the area is written as an angle. A rate
 of turning is another matter. Foucault's pendulum (1851) turns, against the ground, by 360°·sin φ a sidereal day at
 latitude φ: the area the latitude's circle leaves out of the hemisphere, read per turn of the Earth. The degree a day
-carries the sidereal day in, a clock, so it is a write. Measured rates were sought before any was read; one site met the
+carries the sidereal day in, a clock, so it is an amount. Measured rates were sought before any was read; one site met the
 rules fixed beforehand (a pendulum free of the ellipse's precession, decided from its text): Schumacher and Tarbet (2009)
 at Pittsburgh, −9.69 ± 0.09° an hour, which is 357.6 ± 3.3° a sidereal day over sin φ, 0.74 standard errors from 360°.
 One site is too few to count; the test asked for three. Berry's phase in a coiled fibre (§8.4; Tomita and Chiao 1986),
@@ -459,7 +459,7 @@ Dirac is 1.0018, the rest QED; measured over the interval without the half is 0.
 
 None of it is new physics: Gauss, Thomas, Wigner, Foucault and Berry hold every piece. What the sorting adds is where each
 piece falls. The turn comes from the loop alone; the loop is a joining of reads and the turn it leaves a map between looks; a rate of turning in degrees a day needs a
-clock, a write.
+clock, an amount carried in.
 
 ### 5.5 A black hole: three things in one number [exact, data]
 
@@ -522,7 +522,7 @@ precision; it is not this paper's to test. What the sort says is where it lives.
 - **1/d² needs distance; counts by flux are a read.** Scale every length by k with the paint fixed, and every solid angle,
   irradiance and flux is unchanged. So 1/d² compares standpoints with the source's size held fixed, and needs d as a
   ratio at least, an extent, from two standpoints a baseline apart or a kind carried in (a standard candle), and as an
-  amount in a unit a write. The count of sources brighter than a flux needs no
+  amount in a unit. The count of sources brighter than a flux needs no
   distance at all: for any population spread evenly, N(> S) falls as S^(−3/2) at every S, unmoved by scaling.
 
 All checked to 10⁻⁵⁰ in exact arithmetic; one prediction (the cosine-weighted per-axis median) was killed by my
@@ -550,7 +550,7 @@ share of the directions.
   the 1.2 reads the world's shape, between a sphere's 1.5 and a slab's 1.0. Most of those stars lie past 100 pc in a
   thin layer of luminous kinds seen through dust; which of the layer and the dust does how much is open.
 
-The distance-based results are extents, through parallax and a kind, and writes once the parsec is in metres; the counts
+The distance-based results are extents, through parallax and a kind, and amounts once the parsec is in metres; the counts
 by light are reads.
 
 ### 6.4 A pull on the same stage [exact, data]
@@ -629,14 +629,14 @@ reaching a factor of about 1/ε to either side of the corner; its far edge is ab
 needs a standpoint's read and returns to one.
 
 Working back from practice: d = a/tan p, with the astronomical unit a measured outside the parallaxes and now fixed by
-agreement: the parallax p is a read, d in astronomical units an extent, d in metres a write. σ_d/d = σ_p/p is the far limit of the exact ratio γ/sin γ. Not inverting noisy parallaxes (Bailer-Jones 2015)
+agreement: the parallax p is a read, d in astronomical units an extent, d in metres an amount. σ_d/d = σ_p/p is the far limit of the exact ratio γ/sin γ. Not inverting noisy parallaxes (Bailer-Jones 2015)
 is the reciprocal's missing mean with the median kept: a parallax with a Gaussian error has an inverse with no mean, and
 at the band's edge 16% of the readings are at or below zero. Inverting them as if they were distances is Lutz and
 Kelker's bias (1973): a read taken for an extent. Of the misplaced boundaries in this paper, it is the one shown to cause a
 known difficulty.
 
-A standard candle writes distance as a bounce writes size (§4.1): an amount carried in (the luminosity L, as the pull g)
-lets a count (of light, as of ticks) write a length, d = √(L/4πF). The 4π is the source's whole sphere, the dual
+A standard candle gives distance as a bounce gives size (§4.1): an amount carried in (the luminosity L, as the pull g)
+lets a count (of light, as of ticks) give a length, d = √(L/4πF). The 4π is the source's whole sphere, the dual
 hemispherical vantage's; the receiver's own form, paint unchanged and the share (Δ/d)², needs no π (`inverse-square.md`,
 "From one vantage"). [reading]
 
@@ -655,13 +655,13 @@ crossover: the RC divider's low-pass and high-pass shares 1/(1 + s²) and s²/(1
 Read through the level, s = sinh(½ ln k), the exchange leaves the share unchanged and the corner is a stationary best
 point: the elastic collision, the matched load and Fresnel at normal incidence each give 4k/(1 + k)² = sech²(½ ln k),
 and the series RLC 1/(1 + s²) with s = 2Q·sinh(ln(ω/ω₀)). The pendulum (T·√(g/ℓ) a function of the amplitude) and
-Kepler (T·√(GM/a³) = 2π) are the bounce's move: a counted period writes a size once g or GM is carried in. [exact; the
+Kepler (T·√(GM/a³) = 2π) are the bounce's move: a counted period gives a size once g or GM is carried in. [exact; the
 formulas classical, the sorting a reading, not blind]
 
 ### 7.3 The distance ladder as a tower [data, simulation]
 
-A ladder's rungs are reads joined into extents, with writes at the anchors: the angles and the flux ratios of one kind are
-reads; the ratios between rungs, extents; the astronomical unit, the anchors, every megaparsec and H₀, writes. A rung's error is one factor only if it is
+A ladder's rungs are reads joined into extents, with amounts at the anchors: the angles and the flux ratios of one kind are
+reads; the ratios between rungs, extents; the astronomical unit, the anchors, every megaparsec and H₀, amounts. A rung's error is one factor only if it is
 flat against an independent distance. On Cosmicflows-4 (Tully et al. 2023), Hubble's rungs (Hubble 1929) are not
 (slopes 0.79 and 0.16 against 1): his brightest-star rung was a stretch, a ruler of another kind, not a factor. An
 apparent drift between the fundamental plane and type Ia supernovae belongs to the 58 galaxies the two share, not to the
@@ -672,7 +672,7 @@ In a simulation of our own, a figure of 20 landmarks read by 16 to 4,096 standpo
 at 1% error: the shape improved as N^(−0.49), the scale never moved from the outside length's 1%, and by 4,096
 standpoints the landmarks' errors were 99% correlated, one shift shared by all. Statistical error, which more reads
 average down, against a calibration's error, which they do not: in the sort's terms, the reads and extents against the
-one write.
+one amount carried in.
 
 ## 8. Waves and the qubit
 
@@ -769,17 +769,17 @@ Each simulation here is checked against a referee that computes the known physic
   stay the DHV's (ENG runs 1–2). [simulation]
 - **A collision, sorted.** Before contact, reads (the two slopes; product shared, ratio owned, sum deciding). At contact,
   h + v = 1 the last read, each ball then writing its own new state. The push's direction a read; the mass ratio (v/h)³ a
-  read only given one material; restitution, grip, gravity and speeds in a unit writes. Simultaneity across all balls
+  read only given one material; restitution, grip, gravity and speeds in a unit amounts. Simultaneity across all balls
   (the frame, the tick, the integrator) the DHV's. Classical impulse contact; the sorting ours.
-- **A flight, many writes.** A cannonball in a vacuum is all read (shape set by the launch slope alone; g writes only
-  size); with quadratic drag the shape depends only on β = v₀²/(g·L), a ratio of two writes (to 10⁻¹¹), the best slope
+- **A flight, many writes.** A cannonball in a vacuum is all read (shape set by the launch slope alone; g gives only
+  size); with quadratic drag the shape depends only on β = v₀²/(g·L), a ratio of two amounts (to 10⁻¹¹), the best slope
   below the corner (≈ 1 − 0.2100·β small). A real flight is written by many things at once (air, wind with height, spin);
   the ball reads too, differently (no look, no aim, nothing kept; possibly each source's share of its sky times its
   amount, the inverse square's form), the shooter's reads are of another kind, and one read of the path cannot separate them; pool is the clean case (CNB runs 1–2). [exact]
 - **Cooling counted in contacts.** Five hundred smooth inelastic spheres, contact found where h + v = 1. Per contact per
   sphere the temperature falls by (1 − e²)/3 of itself to 0.8% wherever the gas stays even (Haff 1983). Density,
   diameter and pair correlation leave the count; the clock needs them all, and near the clustering instability goes
-  wrong about twice as far as the count does. The count is unmoved by scaling (contacts counted, no unit), the clock a write.
+  wrong about twice as far as the count does. The count is unmoved by scaling (contacts counted, no unit), the clock an amount.
 - **Holding a world by distance.** A hard-disc gas held as a window of discs round the standpoint and, beyond it, totals in
   cells growing with distance, against a referee computing every disc (Enskog's contact rate to 0.1%, Henderson's
   equation of state, Henderson 1975): the view's density, warmth and contacts within 0.3%, for the work of the window,
@@ -834,7 +834,7 @@ It changes no physics. It sorts, and the sort gives four working rules.
 
 - **A ratio unmoved by scaling is a read, held by one standpoint or, as an extent, by two together; a count unmoved
   by scaling is a description laid over things; anything that moves
-  is a write, and something was carried in.** Name the
+  is an amount or a write, and something was carried in.** Name the
   bridge each time: a speed, a rest frequency, a baseline, a kind, a clock.
 - **Read the median where a turn is named; average only amounts.** A Cauchy-type quantity is a direction where a turn
   that lays it can be named apart from the law's shape. There the median and quartiles are its statistics, and averaging
@@ -846,7 +846,7 @@ It changes no physics. It sorts, and the sort gives four working rules.
   join: a depth from two standpoints is an extent (a gap in space); which read came first is an order; a rotation left by
   two boosts is a map between the looks, with no gap. None of these is moved by scaling. What is written in a joining
   is the thing that kept the earlier look and the step taken, where one standpoint moved, and the amount, once a unit
-  is carried in. (*Reads and Writes*
+  is carried in, is bookkeeping about them. (*Reads and Writes*
   §1, D7; how a duration from two moments is to be classed is left open there.)
 
 ### 12.2 Open
