@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>One standpoint, simpler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    simplify.html: where restating from one standpoint simplifies, and where it stops (27 Nov 2026, SPN R1282; Reads and
+    Writes §1's table; Tom: "The how is that the math simplifies, it often does when replacing dhv with shv", then
+    "1 2 4"). A standalone page like facing.html, plain script. One card a row of the table: the result stated from no
+    standpoint (the DHV's: angles, π, e, limits, totals, every parameter) and from one standpoint (slopes, fractions, one
+    distance), both computed at the sliders' values, their difference shown, what each form needs listed, and where the
+    restatement stops. Every Math.sin, cos, tan, atan, exp and log call made by each form is counted. The last card is the
+    rows where nothing reduces. Links: ?case=<id>. Test hook: window.__simplify (cases, run(id, values), set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    h2 { font: 400 22px/1.2 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 8px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 0 }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 5px 9px; cursor: pointer; touch-action: manipulation; font-size: 12.5px }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 220px; min-width: 0; accent-color: var(--gold) }
+    label { color: var(--dim); min-width: 8ch }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px }
+    @media (max-width: 720px) { .two { grid-template-columns: 1fr } }
+    .side { border: 1px solid var(--line); border-radius: 8px; padding: 10px; overflow-x: auto }
+    .side h3 { margin: 0 0 6px; font-size: 13px; font-weight: 500 }
+    .dhv h3 { color: var(--red) } .shv h3 { color: var(--teal) }
+    .f { color: var(--bright); white-space: pre-wrap }
+    .v { color: var(--gold); margin-top: 6px; white-space: pre-wrap }
+    .n { color: var(--dim); font-size: 12px; margin-top: 6px }
+    .stop { margin-top: 10px; color: var(--violet) }
+    .diff { margin-top: 8px; color: var(--bright) }
+    .note { color: var(--dim); font-size: 12.5px }
+    </style>
+</head>
+<body>
+<main>
+    <h1>One standpoint, simpler</h1>
+    <p class="lede">The results below are classical. Each is stated twice: from no standpoint, as the classical
+    statement holds the whole (angles, π, e, limits, totals, every parameter), and from one standpoint (slopes,
+    fractions, one distance). Both are computed at the same values and agree; what changes is what each form needs. Each
+    card ends with where the restatement stops, and what is left over is always a completion, a chart or a unit.</p>
+    <div class="panel"><div class="row" id="tabs"></div></div>
+    <div class="panel" id="card"></div>
+    <p class="note">From <i>Reads and Writes</i> §1, "Where restating from one standpoint simplifies, and where it stops"
+    (R1281, R1282). The numbers are classical in every row; the sorting is a reading. Trig and exponential calls are
+    counted as each form runs.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    // count transcendental calls per form
+    let calls = 0; const M = {};
+    for (const k of ['sin', 'cos', 'tan', 'atan', 'atan2', 'exp', 'log', 'asin', 'acos'])
+        M[k] = (...a) => { calls++; return Math[k](...a); };
+    const PI = Math.PI;
+    const cx = (re, im = 0) => ({ re, im });
+    const cmul = (a, b) => cx(a.re * b.re - a.im * b.im, a.re * b.im + a.im * b.re);
+    const cdiv = (a, b) => { const s = b.re * b.re + b.im * b.im; return cx((a.re * b.re + a.im * b.im) / s, (a.im * b.re - a.re * b.im) / s); };
+    const fmt = v => (typeof v === 'number') ? (Math.abs(v) < 1e-3 && v !== 0 ? v.toExponential(4) : v.toPrecision(10)) : v;
+    // a small exact rational type with BigInt
+    const gcd = (a, b) => { a = a < 0n ? -a : a; b = b < 0n ? -b : b; while (b) [a, b] = [b, a % b]; return a; };
+    const Q = (p, q = 1n) => { if (q < 0n) { p = -p; q = -q; } const g = gcd(p, q) || 1n; return { p: p / g, q: q / g }; };
+    const qadd = (a, b) => Q(a.p * b.q + b.p * a.q, a.q * b.q), qsub = (a, b) => Q(a.p * b.q - b.p * a.q, a.q * b.q);
+    const qmul = (a, b) => Q(a.p * b.p, a.q * b.q), qdiv = (a, b) => Q(a.p * b.q, a.q * b.p);
+    const qnum = a => Number(a.p) / Number(a.q);
+    // separate.html's Fisher bound, counted noise
+    const lor = (x, m, g) => g / (PI * ((x - m) ** 2 + g * g));
+    function sepBound(z1, z2) {
+        const N = 1600, I = Array.from({ length: 6 }, () => new Array(6).fill(0));
+        for (let k = 0; k < N; k++) {
+            const t = -PI / 2 + (k + 0.5) * PI / N, x = Math.tan(t), dx = (PI / N) / Math.cos(t) ** 2;
+            const gr = (m, g, a) => { const D = (x - m) ** 2 + g * g; return [a * 2 * g * (x - m) / (PI * D * D), a * (g / (PI * D) - 2 * g ** 3 / (PI * D * D)), lor(x, m, g)]; };
+            const v = gr(z1[0], z1[1], 0.5).concat(gr(z2[0], z2[1], 0.5)), f = 0.5 * lor(x, z1[0], z1[1]) + 0.5 * lor(x, z2[0], z2[1]);
+            for (let i = 0; i < 6; i++) for (let j = i; j < 6; j++) I[i][j] += v[i] * v[j] / f * dx;
+        }
+        for (let i = 0; i < 6; i++) for (let j = 0; j < i; j++) I[i][j] = I[j][i];
+        const n = 6, A = I.map((r, i) => r.concat(Array.from({ length: n }, (_, j) => +(i === j))));
+        for (let c = 0; c < n; c++) { let p = c; for (let r = c + 1; r < n; r++) if (Math.abs(A[r][c]) > Math.abs(A[p][c])) p = r;
+            [A[c], A[p]] = [A[p], A[c]]; const v = A[c][c]; for (let j = 0; j < 2 * n; j++) A[c][j] /= v;
+            for (let r = 0; r < n; r++) if (r !== c) { const f = A[r][c]; for (let j = 0; j < 2 * n; j++) A[r][j] -= f * A[c][j]; } }
+        const C = A.map(r => r.slice(n)), g = [0, 0, 0.5, 0, 0, -0.5];
+        let s = 0; for (let i = 0; i < 6; i++) for (let j = 0; j < 6; j++) s += g[i] * C[i][j] * g[j];
+        return Math.sqrt(s);
+    }
+    function sepPair(d, r) { const g1 = 1 / Math.sqrt(r), g2 = Math.sqrt(r);
+        const dm = Math.sqrt(Math.max(2 * (Math.cosh(d) - 1) - (g1 - g2) ** 2, 0)); return [[-dm / 2, g1], [dm / 2, g2]]; }
+
+    const CASES = [
+        { id: 'circle', name: 'the circle', params: [['s', 'slope s', 0, 6, 0.01, 0.75]],
+          dhv: { f: 'θ = atan s;  h² = cos²θ', needs: 'an angle, its cosine', run: ({ s }) => M.cos(M.atan(s)) ** 2 },
+          shv: { f: 'h² = 1/(1 + s²)', needs: 'one fraction', run: ({ s }) => 1 / (1 + s * s) },
+          stop: '√(1 + s²) is the one root; π comes only with the circle\'s total.' },
+        { id: 'add', name: 'adding turns', params: [['s', 'slope s', -3, 3, 0.01, 0.5], ['a', 'slope a', -3, 3, 0.01, 1 / 3]],
+          dhv: { f: 'tan(atan s + atan a)', needs: 'two angles, a tangent', run: ({ s, a }) => M.tan(M.atan(s) + M.atan(a)) },
+          shv: { f: 's ⊕ a = (s + a)/(1 − s·a)', needs: 'one rational rule (κ = 1; boosts κ = −1, strides κ = 0)', run: ({ s, a }) => (s + a) / (1 - s * a) },
+          stop: 'The angle\'s total, π, which the rule never needs.' },
+        { id: 'euler', name: "Euler's identity", params: [['s', 'slope s', 0.05, 8, 0.01, 2]],
+          dhv: { f: 'e^(2i·atan s)·e^(2i·atan(1/s)) = e^(iπ)', needs: 'e, π, angles, exponentials',
+                 run: ({ s }) => { const th = 2 * (M.atan(s) + M.atan(1 / s)); return M.cos(th); } },
+          shv: { f: 'w(s)·w(1/s), w = (1 + is)/(1 − is)', needs: 'fractions of complex numbers; i·i = −1 at the corner',
+                 run: ({ s }) => { const w = q => cdiv(cx(1, q), cx(1, -q)); return cmul(w(s), w(1 / s)).re; } },
+          stop: 'The home–horizon member (s = 0 with 1/s = ∞) is the one that needs the limit: e^(iπ).' },
+        { id: 'cauchy', name: 'the Cauchy', params: [['s', 'slope s', 0.05, 8, 0.01, 0.6]],
+          dhv: { f: '(2/π)(atan s + atan(1/s)) = 1', needs: 'π, two angles: the total over the sweep', run: ({ s }) => (2 / PI) * (M.atan(s) + M.atan(1 / s)) },
+          shv: { f: 'heat 1/(1 + s²) ds  =  heat at 1/s, d(1/s)\n(the corner the median by the exchange)', needs: 'fractions; no total',
+                 run: ({ s }) => { const u = 1 / s; return (1 / (1 + s * s)) / ((1 / (1 + u * u)) * (u * u)); } },
+          stop: 'The normalising 2/π, which only the total needs. The SHV value is a ratio: 1 means the exchange holds.' },
+        { id: 'parallax', name: 'parallax', params: [['x', 'foot x/B', 0.05, 0.95, 0.01, 0.3], ['y', 'height y/B', 0.05, 5, 0.01, 1.2]],
+          dhv: { f: 'γ₁ = atan(y/x), γ₂ = atan(y/(B − x));\nd = B/(cot γ₁ + cot γ₂)', needs: 'two angles, their cotangents',
+                 run: ({ x, y }) => 1 / (1 / M.tan(M.atan(y / x)) + 1 / M.tan(M.atan(y / (1 - x)))) },
+          shv: { f: '1/(d/B) = 1/s₁ + 1/s₂', needs: 'two slopes, fractions', run: ({ x, y }) => { const s1 = y / x, s2 = y / (1 - x); return 1 / (1 / s1 + 1 / s2); } },
+          stop: 'Making a slope an angle (the parsec\'s 648000/π).' },
+        { id: 'riccati', name: "the slope's own equation", params: [['n', 'steps n', 1, 60, 1, 12]],
+          dhv: { f: 's(w) = tan w after w = n·atan(1/8)\n(ds/dw = 1 + s², integrated)', needs: 'the clock w as an angle, tan',
+                 run: ({ n }) => M.tan(n * M.atan(1 / 8)) },
+          shv: { f: 's ← s ⊕ 1/8, n times, exact in fractions', needs: 'one rational map repeated, no N of strips',
+                 run: ({ n }) => { let s = Q(0n), a = Q(1n, 8n); for (let k = 0; k < n; k++) s = qdiv(qadd(s, a), qsub(Q(1n), qmul(s, a))); return qnum(s); } },
+          stop: 'The clock time each step stands for, w, a completion.' },
+        { id: 'deriv', name: 'derivatives', params: [['x', 'at x', -2, 2, 0.01, 0.7]],
+          dhv: { f: "f′(x) ≈ (f(x + h) − f(x − h))/2h, h → 0\nf = x³ + 1/(1 + x²)", needs: 'a limit (here h = 10⁻⁵)',
+                 run: ({ x }) => { const f = t => t ** 3 + 1 / (1 + t * t), h = 1e-5; return (f(x + h) - f(x - h)) / (2 * h); } },
+          shv: { f: 'dual numbers: f(x + ε), ε² = 0, read the ε part', needs: 'fractions, no limit',
+                 run: ({ x }) => { const D = (a, b) => ({ a, b }), mul = (u, v) => D(u.a * v.a, u.a * v.b + u.b * v.a), add = (u, v) => D(u.a + v.a, u.b + v.b),
+                     inv = u => D(1 / u.a, -u.b / (u.a * u.a)), t = D(x, 1); const r = add(mul(mul(t, t), t), inv(add(D(1, 0), mul(t, t)))); return r.b; } },
+          stop: 'Integration: an antiderivative leaving the fractions (a log or arctan part) needs the limit back.' },
+        { id: 'mutual', name: 'reading each other', params: [['A', 'd_A', 0.2, 20, 0.1, 2], ['B', 'd_B', 0.2, 20, 0.1, 8]],
+          dhv: { f: 'each steps a share 0.3 of its gap in levels\ntoward its own corner, 200 rounds', needs: 'an endless back-and-forth, logarithms',
+                 run: ({ A, B }) => { let x = M.log(A); const a = M.log(A), b = M.log(B); for (let k = 0; k < 200; k++) x += 0.3 * (a - x) + 0.3 * (b - x); return M.exp(x); } },
+          shv: { f: 'd* = √(d_A · d_B), the pair\'s corner', needs: 'one square root', run: ({ A, B }) => Math.sqrt(A * B) },
+          stop: 'Unequal shares give a weighted mean; an overshooting share no collapse.' },
+        { id: 'sum', name: 'two Cauchys, added', params: [['x', 'at x', -6, 6, 0.01, 0.8]],
+          dhv: { f: 'the convolution ∫ C₁(t)·C₂(x − t) dt,\nC₁ = C(0.5, 0.7), C₂ = C(−1, 1.2)', needs: 'an integral over the whole line',
+                 run: ({ x }) => { let s = 0; const N = 6000; for (let k = 0; k < N; k++) { const th = -PI / 2 + (k + 0.5) * PI / N, t = Math.tan(th), dt = (PI / N) / Math.cos(th) ** 2; s += lor(t, 0.5, 0.7) * lor(x - t, -1, 1.2) * dt; } return s; } },
+          shv: { f: 'the standpoints add: z = z₁ + z₂ = −0.5 + 1.9i', needs: 'one addition', run: ({ x }) => lor(x, -0.5, 1.9) },
+          stop: 'A pixel layer between is a write, with a ripple of its own.' },
+        { id: 'disc', name: "a disc's light", params: [['s', 's = d/a', 0.05, 8, 0.01, 1.5]],
+          dhv: { f: 'E = L ∫ cos θ cos θ′ / r² dA over the disc\n(the inverse square, summed)', needs: 'an integral over the source',
+                 run: ({ s }) => { let e = 0; const N = 4000; for (let k = 0; k < N; k++) { const r = (k + 0.5) / N; e += 2 * PI * r * s * s / (s * s + r * r) ** 2 / N; } return e / PI; } },
+          shv: { f: 'E/πL = 1/(1 + s²), one share', needs: 'one fraction; E(s) + E(1/s) = πL', run: ({ s }) => 1 / (1 + s * s) },
+          stop: 'The total πL, the hemisphere\'s whole.' },
+        { id: 'sep', name: 'two lines apart', params: [['d', 'distance d', 0.6, 3, 0.01, 1.5], ['lr', 'log₂ width ratio', -2, 2, 0.01, 1]],
+          dhv: { f: 'the bound from the full Fisher information over\nboth places, both widths, the share', needs: 'every parameter (and the channels\' laying)',
+                 run: ({ d, lr }) => { const r = Math.min(2 ** lr, Math.exp(0.999 * d)), [z1, z2] = sepPair(d, Math.max(r, Math.exp(-0.999 * d))); return sepBound(z1, z2); } },
+          shv: { f: 'a function of one number:\ncosh d = 1 + |z₁ − z₂|²/(2γ₁γ₂)\n(the same at every width ratio)', needs: 'one distance (counted noise)',
+                 run: ({ d }) => { const [z1, z2] = sepPair(d, 1); return sepBound(z1, z2); } },
+          stop: 'Noise laid on even channels brings the width ratio back: the number line\'s chart (separate.html).' },
+        { id: 'turns', name: 'turns in a program', params: [['n', 'turns n (thousands)', 1, 200, 1, 50]],
+          dhv: { f: 'rotate (1, 0) by θ = 2·atan(1/8) n times with\nfloat cos and sin, then back', needs: 'sines and cosines; the error grows',
+                 run: ({ n }) => { const th = 2 * M.atan(1 / 8), c = M.cos(th), s = M.sin(th); let x = 1, y = 0; const N = n * 1000;
+                     for (let k = 0; k < N; k++) [x, y] = [c * x - s * y, s * x + c * y]; for (let k = 0; k < N; k++) [x, y] = [c * x + s * y, -s * x + c * y]; return Math.hypot(x - 1, y); } },
+          shv: { f: 'the half-slope 1/8: the turn (63/65, 16/65)\nin exact fractions, n times and back', needs: 'fractions; their digits grow',
+                 run: ({ n }) => { const N = BigInt(Math.min(n, 3)); let x = Q(1n), y = Q(0n); const c = Q(63n, 65n), s = Q(16n, 65n);
+                     for (let k = 0n; k < N; k++) [x, y] = [qsub(qmul(c, x), qmul(s, y)), qadd(qmul(s, x), qmul(c, y))];
+                     for (let k = 0n; k < N; k++) [x, y] = [qadd(qmul(c, x), qmul(s, y)), qsub(qmul(c, y), qmul(s, x))];
+                     return Math.hypot(qnum(x) - 1, qnum(y)); } },
+          stop: 'Digits: each exact turn adds about 3.6 digits (the page runs n ≤ 3 exactly to keep it quick; it returns to 0 at any n).' },
+        { id: 'none', name: 'where nothing reduces', params: [],
+          dhv: { f: 'the Gaussian: e and π are its content\nKepler: the time to a point, M = E − e·sin E\nthe circle\'s area, Basel\'s π²/6\ngeneric chaos (r = 3.8)', needs: 'completions',
+                 run: () => 'kept as they are' },
+          shv: { f: 'a pair\'s direction only (the Cauchy)\nthe orbit\'s shape rational, its time not\n—\nno chart of constant stretch', needs: 'nothing it can do', run: () => 'nothing reduces' },
+          stop: 'Here the completion is the result; the table keeps these rows because they mark the limit.' },
+    ];
+    const vals = {}; let cur = CASES[0].id;
+    function run(id, v) {
+        const c = CASES.find(k => k.id === id), p = Object.assign({}, ...c.params.map(q => ({ [q[0]]: q[5] })), v || {});
+        calls = 0; const a = c.dhv.run(p); const ca = calls; calls = 0; const b = c.shv.run(p); const cb = calls;
+        return { dhv: a, shv: b, diff: (typeof a === 'number' && typeof b === 'number') ? Math.abs(a - b) : null, callsDhv: ca, callsShv: cb };
+    }
+    function draw() {
+        const c = CASES.find(k => k.id === cur); const v = vals[cur] || (vals[cur] = Object.assign({}, ...c.params.map(q => ({ [q[0]]: q[5] }))));
+        const r = run(cur, v);
+        $('card').innerHTML = `<h2>${c.name}</h2>` + c.params.map(q => `<div class="row"><label for="p_${q[0]}">${q[1]}</label>` +
+            `<input id="p_${q[0]}" type="range" min="${q[2]}" max="${q[3]}" step="${q[4]}" value="${v[q[0]]}"><span id="v_${q[0]}">${(+v[q[0]]).toFixed(q[4] >= 1 ? 0 : 2)}</span></div>`).join('') +
+            `<div class="two"><div class="side dhv"><h3>from no standpoint (the DHV's)</h3><div class="f">${c.dhv.f}</div>` +
+            `<div class="v">${fmt(r.dhv)}</div><div class="n">needs: ${c.dhv.needs}; transcendental calls: ${r.callsDhv}</div></div>` +
+            `<div class="side shv"><h3>from one standpoint</h3><div class="f">${c.shv.f}</div>` +
+            `<div class="v">${fmt(r.shv)}</div><div class="n">needs: ${c.shv.needs}; transcendental calls: ${r.callsShv}</div></div></div>` +
+            (r.diff === null ? '' : `<div class="diff">the two forms differ by ${fmt(r.diff)}${c.id === 'turns' ? ' (the float drift on the left, the exact return on the right)' : c.id === 'sep' ? ' (the left at this width ratio, the right at ratio 1: the same)' : c.id === 'deriv' ? ' (the limit\'s leftover)' : ''}</div>`) +
+            `<div class="stop">where it stops: ${c.stop}</div>`;
+        c.params.forEach(q => { const el = $('p_' + q[0]); el.oninput = () => { v[q[0]] = +el.value; draw(); }; });
+        document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.id === cur));
+    }
+    $('tabs').innerHTML = CASES.map(c => `<button data-id="${c.id}">${c.name}</button>`).join('');
+    document.querySelectorAll('#tabs button').forEach(b => b.onclick = () => { cur = b.dataset.id; draw(); });
+    const q = new URLSearchParams(location.search); if (q.has('case') && CASES.some(c => c.id === q.get('case'))) cur = q.get('case');
+    window.__simplify = { cases: CASES.map(c => c.id), run, set: id => { cur = id; draw(); }, state: () => ({ cur, vals }) };
+    draw();
+})();
+</script>
+</body>
+</html>

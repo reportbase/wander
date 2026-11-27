@@ -631,6 +631,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Lorentzian fits give J, the CH₂/CH₃ total (1.2%) and the multiplet shares (within 6%); the matrix pencil as built fails
   (killed by my method). In *Reads and Writes* §7 and essay 33 §16 (R1275).
   SEP run 4 (`runs/sep/sep4.py`, post hoc `sep4-posthoc.py`; SPN R1279; Tom: "1"): which noise keeps the difficulty to the hyperbolic distance alone: counted noise exactly (draws binned); even-frequency channels 20–29% off; channels even in the turn about i keep its turns exactly and nearby pairs to 0.6–4% (T4 killed by my bound), T2 by its letter. Not in any paper.
+  R1282 (27 Nov; Tom: "1 2 4"): *Reads and Writes* §1 "Where restating from one standpoint simplifies, and where it
+  stops", a table of thirteen classical results (each its DHV form, its one-standpoint form, where it stops) and the rows
+  where nothing reduces; §7's SEP passages condensed into one; `simplify.html` the table's demo. No new claim.
   R1281 (27 Nov; Tom: "Not new, but clarifying.  Classical is dhv,"; "The how is that the math simplifies, it often does
   when replacing dhv with shv"): the SEP results classical, the DHV's statement; from one standpoint the split's bound
   one distance (cosh d rational), what does not reduce the number line's chart. *Reads and Writes* §7. Clarifying, not new.
@@ -639,8 +642,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the spacing and one width held, failing below d ≈ 1.4; the counting bound killed by the lines' shape (not Lorentzians);
   run 4's claim untested on data. `separate.html` and its `demos.html` card.
   R1277 (27 Nov; Tom: "add it to the papers and merge"): SEP sorted by reads and writes in *Reads and Writes* §7 and essay 33 §16: place and width the standpoint (J a read), the area paint (2 : 3 a count, the payload's), noise an amount breaking the invariance, the total kept, a measured line a chain of reads (natural + the magnet's) so one pole a line fails, the spectrometer's filter a write read as a record. Claude's reading, not ruled.
-  NBS run 6 (`runs/nbs/nbs6.mjs`, as run 4; SPN R1283; Tom: "Run 6"): the 65 jumps nearest the new one given up when narrower than its span's eighth; both maps finish, the cut unchanged, G2 killed by my rule: the jumps are found left to right, so the window (the last 65) slid out of the band over the sparse jumps past it (1.46·10⁻² rad, 1.8% in the band).
-  NBS run 5 (`runs/nbs/nbs5.mjs`, as run 4; SPN R1282; Tom: "Merge, then run 5"): only the smallest busy span given up;
+  NBS run 6 (`runs/nbs/nbs6.mjs`, as run 4; SPN R1284; Tom: "Run 6"): the 65 jumps nearest the new one given up when narrower than its span's eighth; both maps finish, the cut unchanged, G2 killed by my rule: the jumps are found left to right, so the window (the last 65) slid out of the band over the sparse jumps past it (1.46·10⁻² rad, 1.8% in the band).
+  NBS run 5 (`runs/nbs/nbs5.mjs`, as run 4; SPN R1283; Tom: "Merge, then run 5"): only the smallest busy span given up;
   every number run 4's, F2 killed by my rule: B′'s spans end at jumps, so a cluster always sits at a span's edge and no
   small span encloses it. A count must be taken about a place, not over a span.
   NBS run 4 (`runs/nbs/nbs4.mjs map cut|tworail 16|64`, then `report`; SPN R1278; Tom: "Run 4"): the floor replaced by a
@@ -1756,6 +1759,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   frequency (w = 1) or even in the turn about i (w = π(1 + x²)); a seeded sample spectrum; the bound against r at this d
   for all three (counted flat, 0.000%; even 33.6% at d = 1.5; turn-laid 1.1%). Matches run 4 to 12 digits.
   `?d=&r=<log2 r>&noise=count|freq|turn&turn=`; hook `window.__sep` (`bound`, `pair`, `curve`, `set`, `state`). Not in the flying page.
+- `simplify.html`: **one standpoint, simpler** (27 Nov 2026, SPN R1282; Tom: "1 2 4"; *Reads and Writes* §1's table), a
+  standalone page, plain script. A card a row: the result from no standpoint and from one, both computed at the sliders'
+  values, their difference, what each needs, the transcendental calls each makes (the one-standpoint side none), and where
+  the restatement stops; a last card for what never reduces. `?case=circle|add|euler|cauchy|parallax|riccati|deriv|mutual|sum|disc|sep|turns|none`;
+  hook `window.__simplify` (`cases`, `run(id, values)`, `set`, `state`). Not in the flying page.
 - `gravity-ring.html`: **fingers browsing gravity** (27 Nov 2026, SPN R1267; Tom: "Let's stay gravity is an array, the value
   is the strength of the field."; "Gravity has its own cautchy. So fingers browsing fingers browsing gravity array"; "Own page
   merge"), a standalone page, plain canvas. In the plane (masses as rods end on, the ground a line): each mass M at depth d
