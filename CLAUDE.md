@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1264 (27 Nov; Tom, of the games page's tool ring: "This is k not n in action"; "it's just not shv"; "This is why people
+  conflate shv and dhv, because you can."): K, not N, written in the DHV's terms (tan, atan, a closing); the two forms agree,
+  so only what each needs tells them apart. Essay 27 §5.
   R1263 (26 Nov; Tom: "tb allows us to make real the idea that k is n. N is not n."): the count a procedure runs over is
   K (leaves between the world's events), not N (what a scan could fly); NBS gains B′ (no fixed scan, pieces found by halving
   until the K-leaf bridge holds) and A7 (K is n), before any run.
