@@ -7607,6 +7607,7 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1279** (27 Nov 2026; Tom: "1"): SEP run 4 (`runs/sep/sep4.py`, exact, 30 digits, predictions first): which noise keeps the separation's difficulty to the hyperbolic distance alone. Counted noise (a channel's variance its own amount) does, for every width ratio to 10⁻²⁵, the bound the draws' exactly (10⁻³⁰, post hoc): draws binned. The same noise in channels even in frequency spreads 20–29% (T3); even in the turn about i it keeps exactly the turns about i (T5, 10⁻²⁶) and nearly what lies near it, 0.6–4% (T4 killed by my 5% bound). T2 killed by its letter, my comparison against run 2's twelve printed digits. Claude's reading, not ruled: the break is the noise's chart, an amount laid on channels; no chart of the line is kept by every map; a turn-laid chart keeps a read's own symmetry.
 - **R1278** (27 Nov 2026; Tom: "Run 4"): NBS run 4 (`plans/nbs-plan.md`, `runs/nbs/nbs4.mjs`): run 3's width floor replaced
   by a count, a span with more than 64 jumps found inside it and no piece wider than its eighth given up. Every map
   finishes (two rails 12,600 and 14,548 flights, against the 200,000 cap runs 2 and 3 hit), the cut is unchanged (137
