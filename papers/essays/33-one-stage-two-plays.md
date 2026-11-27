@@ -483,6 +483,15 @@ back what an earlier one smoothed. A camera in the chain is a write in the middl
 at their own spacing, 2e^(−2πh₃/p), beside the sky's, and its box adds one factor, sinc(πp/M), to what reaches the eye
 from the stars. Classical optics, transfer functions multiplying; the sorting is the stage's.
 
+To get at the payload under such a sum, the Cauchys have to be pulled apart again (SEP; Tom: "To tease out the payload,
+you might need to separate multiple overlapping cauchies"). Each is a standpoint m + iγ and an amount. With no noise
+Prony's method gives both back exactly. From draws, directions about each standpoint, how hard two are to part depends
+only on their hyperbolic distance, the one number the half-plane gives a pair: a wide one and a narrow one at the same
+distance are as hard as two alike, to 28 digits. From a spectrum, an amount in each channel with its own noise, the
+equality slips by a fifth to three tenths, the noise being an amount. The total always comes back; the split is what
+the overlap costs. Separating Cauchys is old (spectroscopy's line fitting, Prony, McCullagh's Möbius equivariance); the
+limit put in the hyperbolic distance, and the split between draws and a spectrum, were not found said.
+
 Then two corrections of the words used so far. Tom, the same evening: "gravity uses both hemispheres, but its not a dhv,
 gravity has no vantage." And: "the cauchy is just a word we use for lack of a better one. its just a density. gravity has
 a density as well, but for different reasons." So there are three, not two. A read holds one hemisphere from a

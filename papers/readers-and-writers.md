@@ -1894,7 +1894,14 @@ writes, the arrangement lost where the discreteness drops under the read's reach
 read: an objective h₁, a magnification M and later reads h₂, h₃ give exactly the read from h₁ + (h₂ + h₃)/M (to
 2·10⁻¹² of the peak), so the layers' order and split never show, a later read counts 1/M, and no layer gives back what an
 earlier one smoothed. A detector between is a write: its pixels leave their own ripple, 2e^(−2πh₃/p) at their own
-spacing p, beside the sky's, and its box adds the one factor sinc(πp/M). So the numbers are
+spacing p, beside the sky's, and its box adds the one factor sinc(πp/M). Pulling overlapping Cauchys apart (SEP, R1274; Tom: "To tease out the payload, you might need to
+separate multiple overlapping cauchies") recovers each one's standpoint m + iγ, the read geometry, and its amount, the
+payload. With no noise it is exact (Prony's method, 10⁻⁴⁶). From draws, directions from a uniform turn about each
+standpoint, how hard two are to separate is set by their hyperbolic distance alone: a Möbius map carries every fit onto
+its image, and the bound on the amounts is the same for every width ratio at one distance to 10⁻²⁸ (McCullagh's
+equivariance, 1996, with the isometries' transitivity). From a spectrum, an amount per channel with its own noise, the
+same pairs part by 20–29%: the channels' noise is an amount, which the turn's maps do not leave alone. Either way the
+total amount comes back within twice one Cauchy's error, where the split between the two does not. So the numbers are
 others', the attribution in part, the sorting ours. By R1240 the read's density and gravity's share the form for
 different reasons; this says what each reads of the other, not that they are one. No result changes (R1229).
 
