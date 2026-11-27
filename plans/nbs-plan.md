@@ -381,3 +381,26 @@ is run 5's (no width floor, K = 8, 10⁻⁷, the cap, the bracket rule at 10⁻�
 Each killed by its own number. Known beforehand: runs 2–5 (the band at least 0.53533–0.53537, 54 jumps found at
 0.5353361 by run 5 at S = 64, the widest piece there 9.2·10⁻³). I have not worked out how many jumps the chatter yields
 before 65 lie close together, so G1 and G7 are as open as G2.
+
+### Run 6 (27 Nov 2026; `runs/nbs/nbs6.mjs`, outputs `runs/nbs/nbs6-{cut,tworail}-{16,64}.json`, `nbs-run6.txt`)
+
+The cut is unchanged to the flight (9,149 and 8,954 flights, 137 jumps, nothing unmapped). Two rails finish at 47,201 and
+34,214 flights with 1,068 and 1,083 jumps, one window each: 0.5353361–0.5498964 (1.46·10⁻² rad) at S = 16 and
+0.5353361–0.5410242 (5.69·10⁻³) at S = 64.
+
+- **G1, G3, G4, G5 not killed**: both maps finish; 105 of 105 of PEB run 5's jumps outside the window found; the cut as
+  before; 294 of 294 wide pieces held (worst 5.6·10⁻⁹).
+- **G2 KILLED**, by my rule: 1.46·10⁻² rad given up, 1.8% of it in the chattering band.
+- **G6 KILLED** by its flights alone (S = 64 took 0.725 of S = 16's); the jumps outside both windows agree, 178 and 177.
+- **G7 KILLED**: 47,201 flights against 18,484.
+
+**Why the window crept.** Inside the band B′ found 877 (S = 16) and 893 (S = 64) jumps, all within 4.55·10⁻⁵ rad. B′
+finds them in order of aim, left to right, so the 65 jumps nearest a new one are the 64 just behind it: the window is
+always the last 65 found, and it ends at the newest jump. A debug rerun at S = 64 (not kept) shows the first windows
+blocked by width (the 65 nearest still reaching back 0.2 rad to the sparse jumps before the band), then from the 249th
+jump a window at every jump, each 10⁻¹¹ to 10⁻¹⁰ wide and joined to the last. Past the band's right edge the jumps
+thin out (0.5379, 0.5400, … 0.5499), but each one's 65 nearest still lie mostly in the band behind it, inside w/K of a
+span 0.054 wide, so the window slid on over them and gave up the table's own pieces there. The rule counted the cluster
+for places outside it; the flights are the chatter's (the first window came only at the 249th jump). A count about a
+place needs the place's own neighbourhood on both sides, or a radius set by the place rather than by the jumps behind
+it; for example, the jumps within w/K on each side of the new one counted separately. Not run.

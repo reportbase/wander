@@ -7607,6 +7607,7 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1280** (27 Nov 2026; Tom: "Run 6"): NBS run 6 (`runs/nbs/nbs6.mjs`): the jumps counted about a place, the 65 found nearest the new one given up when narrower than the span's eighth. Both maps finish, the cut unchanged, every PEB jump outside the window found, every wide piece held (G1, G3–G5 not killed); G2 killed by my rule (1.46·10⁻² rad given up, 1.8% in the band), G6 by its flights, G7 (47,201 flights): B′ finds the chatter's jumps left to right, so a new jump's 65 nearest are the 64 behind it and the window slid out of the band over the sparse jumps past it. A place's count must look both ways.
 - **R1279** (27 Nov 2026; Tom: "Merge, then run 5"): NBS run 5 (`plans/nbs-plan.md`, `runs/nbs/nbs5.mjs`): run 4's count,
   only the smallest busy span given up. Every number run 4's to the flight; F2 killed by my rule again (0.724 rad given
   up). Why: B′ cuts a span at each jump it finds, so every span ends at a jump and the chatter's 54 jumps at 0.5353361
