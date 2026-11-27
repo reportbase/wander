@@ -213,3 +213,27 @@ without end), and a map that will not stop until every piece is held spends ever
 (PEB run 5 saw one jump at 0.535336). So B′ does what the scan cannot, says where the map has no pieces, and needs a rule
 for such a place: stop halving a window whose leaves change at every width (here 10⁻¹⁴) and mark it unmapped, or an
 engine that settles a touching pair. Neither is in this run.
+
+### Run 3, planned (27 Nov 2026; Tom: "1"). Predictions written before any script changes
+
+Run 2's B′ spent its cap on two rails in a window where a touching pair chatters, the full signature different at every
+aim down to 10⁻¹⁴. Run 3 gives B′ a rule for a place with no pieces, and nothing else changes (the engine, the maps, K,
+the tolerance, the cap). **The floor**: a span narrower than w₀ = 10⁻⁷ rad whose 8 leaves show three or more different
+signatures (two changes or more among eight aims inside 10⁻⁷) is marked unmapped and not looked into again; a narrow
+span with two signatures is bisected as before (one jump), and a narrow span whose leaves agree but whose coefficients
+fail is marked unmapped too. Neighbouring unmapped spans are joined into windows. Everything else is run 2's B′.
+
+- **D1 (it finishes).** Both maps finish under the cap at S = 16 and S = 64.
+- **D2 (only where the engine chatters).** On two rails the unmapped windows total under 10⁻³ rad, and at least 90% of
+  their measure lies within 0.5352–0.5356 (run 2's chattering window).
+- **D3 (the jumps outside).** On two rails every jump of PEB run 5 not inside an unmapped window has a B′ jump within
+  10⁻⁹ rad (by place; run 2 showed one true jump can come back as two 10⁻¹² apart, so signatures are not compared).
+- **D4 (the cut unchanged).** On the cut the same 137 jumps as run 2, unmapped measure under 10⁻⁷ rad, flights within 5%
+  of run 2's 9,149.
+- **D5 (pieces held).** On two rails at least 95% of pieces wider than 10⁻⁴ rad held to 10⁻⁶ by their 8 leaves.
+- **D6 (no N).** On two rails S = 16 and S = 64 find the same jumps outside unmapped windows, flights within 20%.
+- **D7 (cost).** Two rails' flights at most 4 × the scan's 4,621.
+
+Each killed by its own number. Known beforehand: run 2 (where the chatter is, the cut's numbers); D2's "at least 90%"
+and D7 are guesses. If D1–D6 stand: a map with no scan count says where the table has pieces and where it does not, at a
+cost of leaves and steps, and the window it gives up on is the engine's, not the table's.
