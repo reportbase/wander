@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1269** (27 Nov 2026; Tom: "do they pull out the payload/", "we use this for gravity", "both"): CDW run 2
+  (`runs/cdw/cdw2.py`), a row of masses spaced s apart, read from u = (a + d)/s and pulled back out by least squares;
+  predictions first. Exact: an equal row's ripple is 2/sinh(2πu). Unequal masses' detail is damped e^(−πu) (frequencies
+  up to 1/(2s)): error slope 0.925 of π at σ = 10⁻⁶ (Q3; untested at 10⁻³ by my window), failure at u = ln(1/σ)/π up to a
+  constant (5.0 and 2.75, shift 2.25 against 2.20), the total mass back to 0.26σ at every u. Claude's reading, not ruled:
+  past about ln(1/σ)/π spacings a reader has the total mass per spacing and nothing of its sharing; depth and height trade
+  one for one; downward continuation's ill-posedness, classical. `gravity-ring.html` gains the row (`?scene=row`).
 - **R1268** (27 Nov 2026; Tom: "seems to me you can have a SHV sweep of a DHV sweep.   in other words a continuous read
   heat sweeping a discrete write heat."; "yes and merge"): **a continuous read sweeps discrete writes.** CDW
   (`plans/cdw-plan.md` + `runs/cdw/cdw.py`), exact at 40 digits, the identity known beforehand (Poisson summation, the

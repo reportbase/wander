@@ -28,7 +28,7 @@
   The array can be the field itself (no step) or sampled every Δ; the finger reads the item it lands on. Mass ×10 repaints
   every value; no finger moves.
 
-  ?a=&f=&seed=&mult=&step=0|0.1|0.5&n=  Hook window.__gravRing: field, arrayAt, composite, direct, check, fingers, masses,
+  ?a=&f=&seed=&mult=&step=0|0.1|0.5&n=&scene=scatter|row|uneven&s=&d=  Hook window.__gravRing: field, arrayAt, composite, direct, check, fingers, masses, ripple, row,
   set, state.
 -->
 <style>
@@ -53,6 +53,7 @@
   <label>where it stands <input type="range" id="f" min="-10" max="10" step="0.05"></label>
   <label>the array <select id="step"><option value="0">the field itself</option><option value="0.1">sampled every 0.1</option><option value="0.5">sampled every 0.5</option></select></label>
   <button id="mult" title="Every mass ×10: every value repainted, no finger moved">mass ×10</button>
+  <label>the masses <select id="scene"><option value="scatter">at random</option><option value="row">an even row</option><option value="uneven">a row, uneven</option></select></label>
   <button id="seed">other masses</button>
   <button id="aboutBtn">?</button>
 </div>
@@ -65,6 +66,10 @@
   <p>The mean over the reader's fingers equals the masses read from a + d: the heights add (gold line on the dashed one).
   Raise the reader and it is the same as sinking the masses. Mass ×10 repaints every finger and moves none; the depth and the
   mass are never told apart this way.</p>
+  <p><b>A row.</b> Masses one spacing apart at one depth, without end. Read from height a the heights add, u = (a + d) spacings,
+  and the row's ripple is 2/sinh(2πu): at one spacing a 0.0075 ripple, at two 1.4·10⁻⁵. Uneven masses are told apart only as
+  e^(−πu). Raise the reader past about one spacing and it holds the total mass per spacing and almost nothing of how that mass
+  is shared out; pulling the masses back out of the reading (downward continuation) fails at u ≈ ln(1/noise)/π.</p>
   <p>The two kinds of fingers are different plays on one stage: the reader's a law over directions, gravity's a weight times
   a mass, summed. A pull is not a read.</p>
 </div>
@@ -74,20 +79,38 @@
 (() => {
   'use strict';
   const q = new URLSearchParams(location.search);
-  const S = { a: +(q.get('a') || 1.5), f: +(q.get('f') || 0), seed: +(q.get('seed') || 1), mult: +(q.get('mult') || 1), step: +(q.get('step') || 0), n: Math.max(1, Math.min(8, +(q.get('n') || 4))) };
+  const S = { a: +(q.get('a') || 1.5), f: +(q.get('f') || 0), seed: +(q.get('seed') || 1), mult: +(q.get('mult') || 1), step: +(q.get('step') || 0), n: Math.max(1, Math.min(8, +(q.get('n') || 4))),
+    scene: ['row', 'uneven'].includes(q.get('scene')) ? q.get('scene') : 'scatter', s: +(q.get('s') || 1), d: +(q.get('d') || 0.5) };
+  // A ROW OF MASSES (27 Nov 2026, SPN R1269; Tom: "we use this for gravity", "both"): masses s apart at one depth d, without
+  // end, P = 8 to a period (all alike, or seeded between 0.5 and 1.5). Each mass's row is one periodic Cauchy in closed form,
+  // (1/(P·s))·sinh(2πd/(P·s))/(cosh(2πd/(P·s)) − cos(2π(x − n·s)/(P·s))), so the row is exact with no end cut. Read from a, the
+  // heights add (u = (a + d)/s): an equal row's ripple is 2/sinh(2πu) (CDW run 2, Q2), uneven masses are told apart only as
+  // e^(−πu); past about one spacing the reader has the total mass per spacing and little of how it is shared out.
+  const P = 8;
+  let rowM = [];
   const X0 = -12, X1 = 12, PI = Math.PI;
   let masses = [];
   function rng(seed){ let s = seed >>> 0 || 1; return () => { s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return s / 4294967296; }; }
   function makeMasses(){ const r = rng(S.seed * 2654435761); masses = [];
+    if (S.scene !== 'scatter'){
+      rowM = []; for (let n = 0; n < P; n++) rowM.push(S.scene === 'uneven' ? 0.5 + r() : 1);
+      for (let k = Math.floor((X0 - 4) / S.s); k * S.s <= X1 + 4; k++) masses.push({ m: k * S.s, d: S.d, M: rowM[((k % P) + P) % P] });
+      return; }
     for (let k = 0; k < S.n; k++) masses.push({ m: -7 + 14 * r(), d: 0.4 + 2.6 * r(), M: 0.5 + 1.5 * r() }); }
   makeMasses();
   const C = (x, m, g) => g / (PI * ((x - m) * (x - m) + g * g));
-  const field = x => { let s = 0; for (const o of masses) s += o.M * C(x, o.m, o.d); return s * S.mult; };
+  const rowAt = (x, depth) => { const L = P * S.s, t = 2 * PI * depth / L, sh = Math.sinh(t), ch = Math.cosh(t); let v = 0;
+    for (let n = 0; n < P; n++) v += rowM[n] * sh / (ch - Math.cos(2 * PI * (x - n * S.s) / L)); return v / L; };
+  const field = x => { if (S.scene !== 'scatter') return rowAt(x, S.d) * S.mult; let s = 0; for (const o of masses) s += o.M * C(x, o.m, o.d); return s * S.mult; };
   const arrayAt = x => S.step > 0 ? field(Math.round(x / S.step) * S.step) : field(x);
   // the reader's fingers: J equal turns, each landing at f + a·tan θ, painted by the array there
   const landing = (f, a, j, J) => f + a * Math.tan(-PI / 2 + (j + 0.5) * PI / J);
   function composite(f, a, J = 4096){ let s = 0; for (let j = 0; j < J; j++) s += arrayAt(landing(f, a, j, J)); return s / J; }
-  const direct = (f, a) => { let s = 0; for (const o of masses) s += o.M * C(f, o.m, o.d + a); return s * S.mult; };
+  const direct = (f, a) => { if (S.scene !== 'scatter') return rowAt(f, S.d + a) * S.mult; let s = 0; for (const o of masses) s += o.M * C(f, o.m, o.d + a); return s * S.mult; };
+  // the row as read from a: its ripple over one period, measured, against 2/sinh(2πu) for an equal row
+  function ripple(a){ const L = P * S.s; let mx = -Infinity, mn = Infinity, sum = 0, N = 400;
+    for (let k = 0; k < N; k++){ const v = direct(k * L / N, a); mx = Math.max(mx, v); mn = Math.min(mn, v); sum += v; }
+    const u = (S.d + a) / S.s; return { u, measured: (mx - mn) / (sum / N), equalRow: 2 / Math.sinh(2 * PI * u), apart: Math.exp(-PI * u) }; }
   function check(){ let worst = 0, top = 0; for (let k = 0; k <= 60; k++){ const f = X0 + 2 + (X1 - X0 - 4) * k / 60, c = composite(f, S.a), d = direct(f, S.a);
       worst = Math.max(worst, Math.abs(c - d)); top = Math.max(top, d); } return { worst, top, rel: worst / top }; }
 
@@ -166,17 +189,20 @@
     const c = composite(S.f, S.a), ck = check();
     document.getElementById('read').textContent =
       `fingers' mean ${c.toPrecision(10)}\nmasses read from a + d ${dv.toPrecision(10)}\n` +
-      `worst gap over the ground ${ck.rel.toExponential(2)} of the peak${S.step ? '  (the array sampled every ' + S.step + ')' : ''}`;
+      `worst gap over the ground ${ck.rel.toExponential(2)} of the peak${S.step ? '  (the array sampled every ' + S.step + ')' : ''}` +
+      (S.scene !== 'scatter' ? (() => { const r = ripple(S.a); return `\n(an endless row: the far fingers land on its ripple without end, so the fingers' mean closes only as they grow, 10⁻⁵ at 65,536)\nu = (a + d)/s = ${r.u.toFixed(2)}\nripple ${r.measured.toExponential(2)}` +
+        (S.scene === 'row' ? `  (2/sinh(2πu) ${r.equalRow.toExponential(2)})` : `\nmasses told apart ~ e^(−πu) ${r.apart.toExponential(2)}`); })() : '');
   }
 
   // ---- input ----
   const $ = id => document.getElementById(id);
-  const sync = () => { $('a').value = S.a; $('f').value = S.f; $('step').value = String(S.step); $('mult').textContent = S.mult === 1 ? 'mass ×10' : 'mass ÷10'; };
+  const sync = () => { $('a').value = S.a; $('f').value = S.f; $('step').value = String(S.step); $('scene').value = S.scene; $('mult').textContent = S.mult === 1 ? 'mass ×10' : 'mass ÷10'; };
   $('a').oninput = () => { S.a = +$('a').value; draw(); };
   $('f').oninput = () => { S.f = +$('f').value; draw(); };
   $('step').onchange = () => { S.step = +$('step').value; draw(); };
   $('mult').onclick = () => { S.mult = S.mult === 1 ? 10 : 1; sync(); draw(); };
   $('seed').onclick = () => { S.seed++; makeMasses(); draw(); };
+  $('scene').onchange = () => { S.scene = $('scene').value; makeMasses(); draw(); };
   $('aboutBtn').onclick = () => { const a = $('about'); a.style.display = a.style.display === 'block' ? 'none' : 'block'; };
   let dragging = false;
   cv.addEventListener('pointerdown', e => { if (!geo || e.clientY > geo.p1 + geo.h1) return; dragging = true; cv.setPointerCapture(e.pointerId); move(e); });
@@ -189,7 +215,8 @@
     field, arrayAt, composite: (f, a, J) => composite(f, a, J), direct, check,
     fingers: (f, a, J) => { const out = []; for (let j = 0; j < J; j++) out.push(landing(f, a, j, J)); return out; },
     masses: () => masses.map(o => ({ ...o })),
-    set(o){ for (const k of ['a', 'f', 'mult', 'step', 'n']) if (k in o) S[k] = o[k]; if ('seed' in o || 'n' in o){ if ('seed' in o) S.seed = o.seed; makeMasses(); } sync(); draw(); return this.state(); },
+    ripple, row: () => rowM.slice(),
+    set(o){ for (const k of ['a', 'f', 'mult', 'step', 'n', 'scene', 's', 'd']) if (k in o) S[k] = o[k]; if (['seed', 'n', 'scene', 's', 'd'].some(k => k in o)){ if ('seed' in o) S.seed = o.seed; makeMasses(); } sync(); draw(); return this.state(); },
     state: () => ({ ...S }),
   };
   sync(); size();
