@@ -1695,6 +1695,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   for comparison, the turn drawn beside it). Drag keeps the item under the finger (f = i₀ − H·s(x)), wheel or pinch H by
   10/9, tap the pick; wrap a count mod N. `?chart=line|half|turn&payload=numbers|words|emoji|colours|paste&N=|inf&H=&f=&wrap=1&compare=0`;
   hook `window.__ring` (`xOf`, `sOf`, `layout`, `counts`, `payloadAt`, `set`, `state`, `mathCalls`). Not in the flying page.
+  Since 27 Nov (Tom: "How can we strengthen the demo.  No,  it's not a proof but it illustrates the idea very well.", "1-4
+  merge"): "addresses only" (the empty slots, each with its slope as a fraction); gold outlines of the slots over the paint
+  (a repaint, another kind of array or numbers ×10⁶ moves none, to 10⁻⁹); "double N" and "keep adding" with the focus held,
+  a plot of the count told apart against N (27 flat from 10² to 10¹⁵); the writer's layout, 2W/N px an item (all 100 told
+  apart at N = 100, none past about 1,000, no width without end). Params add `slots=1&outlines=0&writer=0&mult=&append=1`;
+  hook adds `writerCounts`, `history`.
 - `look-pull.html`: **a look and a pull** (24 Nov 2026, SPN R1182; essay 33; FCL; Tom: "merge, 1, 2, 3"), a standalone page
   like `faces.html`, plain canvas. Masses about a place (a seeded scatter in the drawing's plane, an even shell with the
   place off its centre, one mass), a facing turned by a slider: the faced take F(n) (a definition from FCL run 6) in front
