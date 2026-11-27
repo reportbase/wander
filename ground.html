@@ -59,13 +59,13 @@
     <p class="lede">Stand on level ground. The horizon is at your eye's height, so it cuts every thing standing on the
     ground at the same height: the part of it below the horizon is exactly one eye height tall. Read the foot and the top,
     and the thing's height over yours is a ratio of two readings. Nothing in that needs a metre. Carry in your own height
-    and every thing is written in metres at once: the survey's base, carried in the body.</p>
+    and every thing is given in metres at once: the survey's base, carried in the body.</p>
     <div class="panel">
         <div class="row"><label for="H">your eye height</label><input id="H" type="range" min="0.4" max="3" step="0.01" value="1.6">
             <span id="Hv" class="b"></span></div>
         <div class="row"><label for="k">scale the world</label><input id="k" type="range" min="-2" max="2" step="0.01" value="0">
             <span id="kv" class="b"></span></div>
-        <div class="row"><button id="known">my eye height known (write metres)</button><button id="truth">the referee</button>
+        <div class="row"><button id="known">my eye height known (in metres)</button><button id="truth">the referee</button>
             <button id="tilt">tilt the ground ½°</button><button id="lift">throw the ball up</button></div>
         <canvas id="cv1" height="420"></canvas>
         <p class="cap">What the eye sees: the horizon (gold, dashed) at eye level, the ground's distance lines below it. Each
@@ -226,8 +226,8 @@
         let s = `<span class="b">${r.name}</span>: foot ${deg(r.F).toFixed(3)}° below the horizon, top ${Math.abs(deg(r.E)).toFixed(3)}° ${r.E >= 0 ? 'above' : 'below'} it. `
             + `Read: V*/H = (tan E + tan F)/tan F = <span class="r">${f3(r.ratio)}</span>, d/H = 1/tan F = <span class="r">${f3(r.dist)}</span>`
             + (r.err < 1e-9 && Math.abs(r.ratio - 1) < 1e-9 ? ': <span class="g">the corner</span>, its top on the horizon, one eye height tall.' : '.');
-        s += st.known ? `\n<span class="w">Written</span> with your eye height ${mfmt(st.H * k)} carried in: ${mfmt(r.written)} tall, ${mfmt(r.writtenD)} away.`
-            : `\nNo metre anywhere yet: every height and distance is in your eye heights. Carry in your eye height to write metres.`;
+        s += st.known ? `\n<span class="w">In metres</span>, with your eye height ${mfmt(st.H * k)} carried in: ${mfmt(r.written)} tall, ${mfmt(r.writtenD)} away.`
+            : `\nNo metre anywhere yet: every height and distance is in your eye heights. Carry in your eye height to give metres.`;
         if (bad.length) { const worst = bad.reduce((a, x) => x.err > a.err ? x : a);
             s += `\n<span class="x">${[st.tilt && 'The ground is not level', st.lift && 'the ball is off the ground'].filter(Boolean).join('; ')}:</span> `
             + `${bad.length} of ${t.length} things misread, the worst the ${worst.name}, ${(100 * (worst.ratio / worst.trueRatio - 1)).toFixed(0)}% in height`

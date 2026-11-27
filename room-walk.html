@@ -80,8 +80,8 @@
     <p class="lede">An observer walks round a room. Wherever it stands its directions and their heat are given, <span class="g">every
     direction</span> once round, before anything arrives: where each thing is from here, the layout, no
     amount. A thing's <span class="r">shape about its own centre</span> is a radius toward each standpoint, an amount in a
-    unit nothing fixes, had only by ranging (a writing: a pulse carries the speed); walking round a thing collects it.
-    The readout keeps the situation: what has been read, what is held, what is written, and what is still unknown.
+    unit nothing fixes, had only by ranging (a pulse carries the speed); walking round a thing collects it.
+    The readout keeps the situation: what has been read, what is held, what is given in metres, and what is still unknown.
     Through the window a tree: move it away and the walk can no longer go round it, so its shape is lost and its place
     comes from parallax alone; further still, it is only a direction.</p>
     <div class="panel">
@@ -96,7 +96,7 @@
         <div class="row"><label for="lk">scale the world k</label><input id="lk" type="range" min="-2" max="2" step="0.01" value="0"></div>
         <div class="grid">
             <div><canvas id="plan" height="430"></canvas><p class="cap">The floor. Tap to walk there. Gold: the
-            directions from where the observer stands. Teal: the radii (ranged, a writing) from each thing's centre
+            directions from where the observer stands. Teal: the radii (ranged) from each thing's centre
             toward every standpoint taken.</p></div>
             <div><canvas id="map" height="230"></canvas><p class="cap" id="mapcap">The observer's own map.</p>
             <canvas id="shape" height="200"></canvas><p class="cap" id="shapecap">The chosen thing's shape about its centre.</p></div>
@@ -391,7 +391,7 @@
             g.textAlign = 'left'; }
         const q0 = X(rec.Q[0]), q1 = X(rec.Q[1]); g.strokeStyle = '#d4a052'; g.lineWidth = 2; g.beginPath(); g.moveTo(...q0); g.lineTo(...q1); g.stroke();
         g.fillStyle = '#d4a052'; g.fillText(ro.H ? `H = ${ro.H.toFixed(3)} m` : 'H', (q0[0] + q1[0]) / 2 + 4, (q0[1] + q1[1]) / 2 - 4);
-        $('mapcap').textContent = ro.H ? 'The observer\'s map, written: the first leg counted in strides, so every place in metres.'
+        $('mapcap').textContent = ro.H ? 'The observer\'s map, in metres: the first leg counted in strides, so every place in metres.'
             : 'The observer\'s own map, in H (gold, the first leg), in its own frame (the first zero along +x): the room\'s figure, turned and similar, its size unread.';
     }
     function drawShape() {
@@ -411,7 +411,7 @@
         if (c.covered === NC) { g.strokeStyle = '#8ce6cd'; g.beginPath();
             c.samples.forEach((s, i) => { const x = cx + R0 * s.shape * Math.cos(s.phi), y = cy + R0 * s.shape * Math.sin(s.phi); i ? g.lineTo(x, y) : g.moveTo(x, y); });
             g.closePath(); g.stroke(); }
-        $('shapecap').textContent = `The ${st.thing}'s shape about its centre: ${c.covered} of ${NC} directions from its centre, each radius (ranged, a writing) over `
+        $('shapecap').textContent = `The ${st.thing}'s shape about its centre: ${c.covered} of ${NC} directions from its centre, each radius (ranged) over `
             + `their geometric mean (dashed: the dual hemispherical vantage's one-length circle). Its shape, not its size.${st.truth ? ' Red: the referee\'s outline.' : ''}`;
     }
     function drawStrip(ap) {
@@ -436,7 +436,7 @@
         lines.push(`Standpoints taken: ${n}${n ? ` · legs walked: ${ro.legs}, each along the zero it faced (the way the last leg came in), its length not read` : ''}`);
         lines.push(`The directions (their heat given; what arrives paints them; no amount): ${n ? `${NAMES.length} things, ${n * NAMES.length} directions so far` : '—'}`);
         const cov = NAMES.map(nm => `${nm} ${centralOf(nm).covered}/${NC}`).join(', ');
-        lines.push(`Shapes about each thing's centre (radii along given directions: amounts, by ranging, a writing, in a unit no reading fixes): ${n ? cov : '—'}`);
+        lines.push(`Shapes about each thing's centre (radii along given directions: amounts, by ranging, in a unit no reading fixes): ${n ? cov : '—'}`);
         lines.push(`Placed (from two standpoints, the walk's first leg as H): ${have ? `${have} of ${NAMES.length}${ro.legsH && ro.legsH.length > 1 ? `; later legs found from the things: ${ro.legsH.slice(1).map(f3).join(', ')} H` : ''}` : (ro.why || '—')}`);
         lines.push(`Held (a thing's two edges read at once, at its distance): ${have ? 'breadths across the line of sight, in H' : '—'}`);
         const tr = ro.rows.find(r => r.name === 'tree'), deg = x => (x * 180 / Math.PI).toPrecision(3) + '°';
@@ -445,8 +445,8 @@
                 : tr.regime === 'parallax only' ? `too far to walk round: no shape, its place by parallax alone (±${(100 * tr.relErr).toPrecision(2)}% of its distance)`
                 : n > 1 ? 'so far that every standpoint reads it in one direction: a ray, no place' : 'one standpoint: a direction')
             + (n ? (tr.resolved ? '; its two edges told apart' : '; narrower than ε: one point, no breadth') : ''));
-        lines.push(ro.H ? `Written: the first leg counted, ${ro.steps.toFixed(2)} strides of ${STRIDE} m (carried in), so H = ${ro.H.toFixed(3)} m; every place and breadth in metres`
-            : `Written (an amount in a unit): nothing. Still unknown: H in any agreed unit (one amount: count one leg), and every radius's unit`);
+        lines.push(ro.H ? `In metres: the first leg counted, ${ro.steps.toFixed(2)} strides of ${STRIDE} m (carried in), so H = ${ro.H.toFixed(3)} m; every place and breadth in metres`
+            : `Amounts in a unit: none. Still unknown: H in any agreed unit (one amount: count one leg), and every radius's unit`);
         $('sit').innerHTML = lines.map((l, i) => `<span class="${['', 'g', 'r', 'w', 'w', 'g', ro.H ? 'w' : 'x'][i]}">${l}</span>`).join('\n');
         const unit = ro.H ? 'm' : 'H';
         let t = `<tr><th>thing</th><th>direction from its zero</th><th>edges</th><th>regime</th><th>about its centre: directions</th><th>shape (radii / mean)</th>`
@@ -463,8 +463,8 @@
         }
         $('tab').innerHTML = t;
         $('note').textContent = n < 2 ? 'From one standpoint the observer has every direction and one radius per thing: a layout, no place, no size.'
-            : !ro.H ? 'Places and breadths are in H, the walk\'s first leg: the room\'s figure exactly, at a size no reading gives. Scale the world: nothing in this table moves. Count one leg and it is written.'
-            : 'Written: one amount carried in (the stride) puts everything in metres. Scale the world now and the metres move with it; the directions and the shapes still do not.';
+            : !ro.H ? 'Places and breadths are in H, the walk\'s first leg: the room\'s figure exactly, at a size no reading gives. Scale the world: nothing in this table moves. Count one leg and it is given in metres.'
+            : 'In metres: one amount carried in (the stride) puts everything in metres. Scale the world now and the metres move with it; the directions and the shapes still do not.';
     }
     function draw() {
         const ap = animPos(), ro = readout();

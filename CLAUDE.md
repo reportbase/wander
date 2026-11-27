@@ -631,6 +631,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Lorentzian fits give J, the CH₂/CH₃ total (1.2%) and the multiplet shares (within 6%); the matrix pencil as built fails
   (killed by my method). In *Reads and Writes* §7 and essay 33 §16 (R1275).
   SEP run 4 (`runs/sep/sep4.py`, post hoc `sep4-posthoc.py`; SPN R1279; Tom: "1"): which noise keeps the difficulty to the hyperbolic distance alone: counted noise exactly (draws binned); even-frequency channels 20–29% off; channels even in the turn about i keep its turns exactly and nearby pairs to 0.6–4% (T4 killed by my bound), T2 by its letter. Not in any paper.
+  R1285 (27 Nov; Tom: "Yes, close SEP and do the sweep"): SEP closed (`plans/sep-plan.md`, its counted case exact and
+  untested on data; transmission Mössbauer the even-channel case). The R1174–R1179 and R1240 wording carried through the
+  essays, the physics paper, the index pages and 22 demos (visible wording only): amounts, not writes; a count gives.
   R1282 (27 Nov; Tom: "1 2 4"): *Reads and Writes* §1 "Where restating from one standpoint simplifies, and where it
   stops", a table of thirteen classical results (each its DHV form, its one-standpoint form, where it stops) and the rows
   where nothing reduces; §7's SEP passages condensed into one; `simplify.html` the table's demo. No new claim.

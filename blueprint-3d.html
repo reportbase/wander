@@ -116,7 +116,7 @@
                     from the first surface on its line (dark where it is open sky). Nothing in the room sends, so no distance
                     arrives and every dot sits on the sphere: the directions, painted by the payload. Send a pulse and a range
                     comes back along each direction, drawn over their geometric mean (the dashed sphere, farther than 2.2
-                    drawn at 2.2); but the pulse's ranges carry in the signal's speed and a clock: ranging is writing.
+                    drawn at 2.2); but the pulse's ranges carry in the signal's speed and a clock: the ranges are amounts.
                     Scale the world and nothing here moves.</p>
                 <p class="read" id="readP"></p>
             </div>
@@ -377,7 +377,7 @@ function describe() {
     const k = K(), w = writer(k), t = S.hover, R = HOMES[S.home].room && w.rooms.find(r => r.key === HOMES[S.home].room);
     $('readW').textContent = (t ? `${nameOf(t)}. ` : '') + `The lot ${fmtM(w.lot[0])} × ${fmtM(w.lot[1])}; ` + (R ? `the ${R.name} ${fmtM(R.w)} × ${fmtM(R.d)} × ${fmtM(R.z)} high; ` : '') +
         `the eye ${fmtM(EYE * k)} up. Every one of these moves with k.` +
-        (WR ? `\nWritten from one stride (${fmtM(WR.stride)}): ${WR.points.length} corners placed, ${WR.room} ${fmtM(WR.written[0])} × ${fmtM(WR.written[2])} × ${fmtM(WR.written[1])} high, the largest error ${WR.maxErr.toExponential(1)} of a length.` : '');
+        (WR ? `\nGiven from one stride (${fmtM(WR.stride)}): ${WR.points.length} corners placed, ${WR.room} ${fmtM(WR.written[0])} × ${fmtM(WR.written[2])} × ${fmtM(WR.written[1])} high, the largest error ${WR.maxErr.toExponential(1)} of a length.` : '');
     const pr = t ? P.rays.filter(o => o.what === t) : [], sh = pr.filter(o => isFinite(o.r));
     $('readP').textContent = t ? (pr.length ? `${nameOf(t)}: ${pr.length} of ${NP} directions on the sphere (${(100 * pr.length / NP).toFixed(1)}% of it, a share of the directions, not a size)` +
             (S.pulse && sh.length ? `; the pulse's ranges ${Math.min(...sh.map(o => o.shape)).toFixed(3)} to ${Math.max(...sh.map(o => o.shape)).toFixed(3)} of their mean` : '') : `${nameOf(t)}: no light arrives from it here`)
@@ -387,7 +387,7 @@ function describe() {
     $('readA').textContent = t ? (C.met[t] ? `${nameOf(t)}: ${C.met[t]} of ${NA} directions (${(100 * C.met[t] / NA).toFixed(1)}% of the wedge's directions, a share of the turn, not a size); how far, never` : `${nameOf(t)}: not seen from ${HOMES[S.home].name}`)
         : `From ${HOMES[S.home].name}: ${met.length} things met. ` + met.slice(0, 6).map(([m, n]) => `${nameOf(m === 'null' ? null : m)} ${(100 * n / NA).toFixed(1)}%`).join(', ') + '.';
     $('readM').textContent = `v ≤ h ${(100 * C.vh).toFixed(2)}%, v₂ ≤ h ${(100 * C.v2h).toFixed(2)}%, v₂ ≤ v ${(100 * C.v2v).toFixed(2)}%, near field ${(100 * C.near).toFixed(2)}% (a third is 33.33%): the grid's, whatever it met.` +
-        (WR ? `\nWrite: from home and one stride on, ${WR.points.length} corners seen from both; each two rays crossing, its place in strides (the stride's direction known, its length not); one stride counted writes them in metres.` : '');
+        (WR ? `\nWrite: from home and one stride on, ${WR.points.length} corners seen from both; each two rays crossing, its place in strides (the stride's direction known, its length not); one stride counted gives them in metres.` : '');
 }
 // ── input ──────────────────────────────────────────────────────────────────────────────────────────────────────────
 const hoverTo = t => { if (t !== S.hover) { S.hover = t; drawTri(); drawMap(); describe(); if (draw3d) draw3d(true); } };

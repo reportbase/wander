@@ -69,7 +69,7 @@
     A read sends nothing, turns through nothing and computes nothing. The <span class="gold">payload</span> is the
     coloured light the world sends along each finger, and it carries no distance: a finger lit red does not say how far
     off its pane is (step 1). Steps 2–6 are classical pieces from a shape's own centre, the description of the dual hemispherical vantage (DHV), in
-    angles, shown for comparison: an amount along each direction is had only by ranging (a writing) or from more
+    angles, shown for comparison: an amount along each direction is had only by ranging or from more
     standpoints, and its size is never read.</p>
     <div class="panel">
         <div class="row" id="steps"></div>
@@ -109,7 +109,7 @@
     <p class="note">Behind it: <i>Observation from Somewhere</i> §3.7, the hand ("The fingers are free; the light colours
     them"); §9 and §4 (archived; Euclid III.20); §7.4, the shape as a perturbation of the circle. The off-centre law is harmonic
     measure: Kakutani (1944); Garnett and Marshall, <i>Harmonic Measure</i> (2005); the wrapped Cauchy as the Möbius image of
-    the Cauchy, McCullagh (1996). Steps 2–5 draw the classical polar coordinates about a shape's centre, amounts that are written or had from
+    the Cauchy, McCullagh (1996). Steps 2–5 draw the classical polar coordinates about a shape's centre, amounts that are ranged or had from
     more standpoints; the observer stands at home, step 1. Other demos: <a href="two-readers.html">the angle and the radius</a>, <a href="one-read.html">one turn, one read</a>,
     <a href="demos.html">all demos</a>.</p>
 </main>
@@ -241,8 +241,8 @@
     const GOLD = '#d4a052', TEAL = '#8ce6cd', VIOLET = '#b59cf0', BRIGHT = '#e6e4ee', RED = '#d96e5b';
     const STEPS = [
         ['the hand', 'The observer at home, a hand held up to the world as to a stained-glass window, each thing a pane of its own colour. The fingers are the uniform turn from flat (h) to upright (v), read v/h: the Cauchy, a heat over them, hottest along the look, given before anything arrives. Move the hand: the fingers, their readings and their median at the corner (v/h = 1) do not change. What changes is the colours. Each finger is lit by the first pane on its line; a read sends nothing, turns through nothing and computes nothing. To read the payload is to read the colours on the fingers; no distance comes with them. To learn how far off a pane is, walk.'],
-        ['the baseline', 'A circle seen from its own centre. From there the directions (gold) are given evenly, equal turns cutting equal arcs. Suppose an amount is had along each, by ranging (a writing: the signal\'s speed carried in) or from more standpoints: on the circle it is the same along every one. That constant is its baseline: it says the outline is round, and nothing about how big it is.'],
-        ['a shape', 'Now a shape, its radius r(θ) from its centre, ln r = a₀ + f(θ). With an amount along each given direction (written, or from more standpoints), each is a point: the direction it already had, and how far. Two numbers in the plane, where a direction from home is one. Scale the world: every amount moves by k together, and the shape, each amount over their geometric mean, does not move at all. The shape is had in full; its size a₀ never.'],
+        ['the baseline', 'A circle seen from its own centre. From there the directions (gold) are given evenly, equal turns cutting equal arcs. Suppose an amount is had along each, by ranging (the signal\'s speed carried in) or from more standpoints: on the circle it is the same along every one. That constant is its baseline: it says the outline is round, and nothing about how big it is.'],
+        ['a shape', 'Now a shape, its radius r(θ) from its centre, ln r = a₀ + f(θ). With an amount along each given direction (ranged, or from more standpoints), each is a point: the direction it already had, and how far. Two numbers in the plane, where a direction from home is one. Scale the world: every amount moves by k together, and the shape, each amount over their geometric mean, does not move at all. The shape is had in full; its size a₀ never.'],
         ['the modes', 'What it can recover is the shape\'s departure from its baseline circle: the modes of ln r, read from ratios of its radii. The size, the common term a₀ = ln k, is never among them. Keep the modes in order of n and the outline comes back broad form first: its level of detail.'],
         ['off the centre', 'Move the standpoint off the centre of a circle. Its directions are still uniform by turn, but they land unevenly (gold, dashed). The circle\'s own law seen from there is the Poisson kernel (violet), the wrapped Cauchy: harmonic measure. It gives an arc the measure (2α − arc)/2π, α the angle the arc spans at the standpoint, and its mean is the standpoint\'s place, z. A mean exists because the circle closes: there is no horizon.'],
         ['ray and radius', 'Euclid III.20 on a chord of 1: classical, the DHV\'s description, in angles, shown for comparison. From home the ray at θ is the direction, a ratio, v/h, which runs off to ∞. From the middle the radius at 2θ reaches the point where its paint lands, (h², hv), which stays on its circle. Ray and radius end at the same point every moment. The arc carved over the chord to it is θ/sin θ: π/2 at the end, as the DHV measures the sweep, π being the completed turn. There the ray is tangent, a horizon; the radius has made its half turn to home. As complex numbers the point is the direction squared, ½e^(2iθ) from the middle, so that half turn is e^(iπ) = −1.']
@@ -356,7 +356,7 @@
             lines.push(`geometric mean ${c.gm.toPrecision(4)} = e^a₀: the size, the one term no reading fixes`);
             if (st === 3) lines.push(`modes kept n ≤ ${p.L}: ${mm.modes.filter(m => m.n <= p.L && m.amp > 1e-9).map(m => `n=${m.n} ${m.amp.toFixed(3)}`).join(', ') || 'none: the circle'}`);
             $('cap1').textContent = st === 3 ? 'The outline (white), and rebuilt from the modes kept (teal, dashed), drawn at the true size for the eye only.' : 'The outline (white) and the given directions from C (gold), each ending where an amount is had (ranged, or from more standpoints).';
-            $('cap2').textContent = st === 3 ? 'The shape\'s modes. The size a₀ is not one of them. Fewer modes kept: a coarser outline, the broad form first.' : 'Along each given direction from C, an amount (a writing, or from more standpoints). Shown over their geometric mean, since the unit is not read; on the circle every bar is 1.';
+            $('cap2').textContent = st === 3 ? 'The shape\'s modes. The size a₀ is not one of them. Fewer modes kept: a coarser outline, the broad form first.' : 'Along each given direction from C, an amount (ranged, or from more standpoints). Shown over their geometric mean, since the unit is not read; on the circle every bar is 1.';
         } else if (st === 4) {
             const z = p.z;
             let [g, W, H] = fit($('main'));

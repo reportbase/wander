@@ -280,3 +280,13 @@ says it must (it grows fast as d falls); run 4's exact claim, that counted noise
 untested on data, since it needs the lines to be the family the claim is about. A counted spectrum of true Lorentzians
 (natural widths far above the instrument's: Mössbauer lines, or X-ray emission measured with a crystal spectrometer)
 is the test that remains.
+
+## Closed (27 Nov 2026; SPN R1285; Tom: "Are more tests needed", then "Yes, close SEP and do the sweep")
+
+SEP is closed. The counted case (run 4: with each channel its own count the split's difficulty is set by the hyperbolic
+distance alone) is exact, a property of the Poisson information for the Lorentzian family, and stands as mathematics.
+It is untested on data: no open counted spectrum of true Lorentzians on a negligible background was found (runs 5–6's
+X-ray lines failed by their shape), and a transmission Mössbauer spectrum, the open data that does exist (e.g. Zenodo
+17432699), counts a steady beam with the lines as small dips in it, so its noise is the even-channel case of run 4, not
+the counted one. A data run could test only the premises (that real lines are Lorentzians and counts Poisson), not the
+reading, which since R1281 is a restatement of classical results and needs no measurement.

@@ -203,7 +203,7 @@
     <h2>What H does not change</h2>
     <ol start="15">
     <li><b>Scaling the world.</b> Scale every length by 10, the eye's place included, and H in units grows by 10, but every
-    reading, colour, word and place in the wedge is as it was. H in units is a write.</li>
+    reading, colour, word and place in the wedge is as it was. H in units is an amount.</li>
     <li><b>The field itself.</b> No thing moves when H moves; only the near and far fields do, because they are where the
     three thumbs meet.</li>
     </ol>
@@ -887,7 +887,7 @@ function readout() {
     if (t) { const q = read(t).q; s += `<span class="g">at the crosshairs</span>  ${NAMES[t.kind]} (#${t.i}), reading ${q.h.toFixed(2)}, ${q.v.toFixed(2)}, ${q.d.toFixed(2)} thumbs\n`; }
     else if (S.target === GROUND) s += `<span class="g">at the crosshairs</span>  the ground\n`;
     else s += `<span class="g">at the crosshairs</span>  the sky; H kept\n`;
-    s += `<span class="b">H, the thumb</span>      ${fmt(S.Hshow)} units to the pick  <span class="d">(a write)</span>\n`;
+    s += `<span class="b">H, the thumb</span>      ${fmt(S.Hshow)} units to the pick  <span class="d">(an amount)</span>\n`;
     s += `<span class="r">near field</span>  ${c.near} things, inside one thumb in all three\n`;
     s += `<span class="w">far field</span>   ${c.far} things, one in 2 and beyond\n`;
     s += `<span class="d">another wedge</span>  ${c.other} things, behind a thumb\n`;
