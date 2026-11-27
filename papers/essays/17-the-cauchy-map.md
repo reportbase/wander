@@ -200,6 +200,12 @@ the total height (the SUM run). The heights add, and the map stays a map of dire
 because a heat map has no boundary: combining shapes means working out where their edges meet, combining heat maps means
 adding heat. Two maps laid over each other add too, but their sum is two peaks, a heat map and not one Cauchy.
 
+A wall need not be smooth either. If it is a row of posts one apart, the map laid over them sums exactly to the wrapped
+Cauchy, sinh(2πd)/(cosh(2πd) − cos(2πy)), and the posts are left as a ripple of about 2e^(−2πd): from one post-spacing
+back it is four parts in a thousand, from eight, three in 10²². Stepping back does not only dim the fine patterns; past
+one post a step it makes the posts a continuum to the map (CDW, Poisson summation; essay 33 §16 carries it to a row of
+masses).
+
 And it is how the epicycles of essay 4 and the demo `epicycles.html` blur: seen from a height γ, circle k of an outline
 shrinks by e^(−γ|k|), and no circle moves.
 
