@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Two lines apart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display&display=swap">
+    <!--
+    separate.html: two overlapping Cauchys pulled apart (27 Nov 2026, SPN R1280; SEP runs 2 and 4; Tom: "1 2 3 4", the
+    fourth a demo). A standalone page like facing.html, plain canvas.
+
+    Two lines, each a standpoint z = m + iγ and an amount (half the total each), set by their hyperbolic distance d and
+    their width ratio r (the pairs of SEP run 2: widths 1/√r and √r, feet symmetric). The bound on the split, the least
+    error with which the share a₁/(a₁ + a₂) can be had, from the Fisher information ∫ ∂f ∂f · w dx (the whole line by
+    x = tan t, 4,000 nodes), with the noise's weight w:
+      counts (and draws): w = 1/f, each channel's noise its own count, the draws binned;
+      even in frequency: w = 1, the same noise in channels laid evenly along the line;
+      even in the turn about i: w = π(1 + x²), the same noise in channels laid at equal shares of the turn from i.
+    The bounds are SEP run 4's (counts 3.9206 at d = 1.5, every r; even in frequency 13.67 at r = 1, 15.92 at r = 2).
+    Counted noise gives one bound for every r at a given d; even channels spread with r; turn-laid channels keep
+    pairs turned about i and nearly those near i. A sample spectrum is drawn in the chosen noise, seeded.
+    Links: ?d=&r=<log2 r>&noise=count|freq|turn&turn=<radians>. Test hook: window.__sep (bound, pair, curve, set, state).
+    -->
+    <style>
+    :root { color-scheme: dark; --ground: #0c0c11; --panel: #14141b; --line: rgba(255,255,255,0.09); --ink: #c8c8d0;
+        --dim: #8a8a96; --bright: #e6e4ee; --gold: #d4a052; --teal: #8ce6cd; --red: #d96e5b; --violet: #b59cf0 }
+    * { box-sizing: border-box }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 'DM Mono', ui-monospace, monospace }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px }
+    h1 { font: 400 32px/1.1 'DM Serif Display', Georgia, serif; color: var(--bright); margin: 0 0 6px }
+    .lede { color: var(--dim); margin: 0 0 14px; max-width: 72ch }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin: 0 0 14px }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 4px 0 }
+    button { max-width: 100%; font: inherit; color: var(--bright); background: #1d1d27; border: 1px solid var(--line);
+        border-radius: 6px; padding: 6px 10px; cursor: pointer; touch-action: manipulation }
+    button.on { border-color: var(--gold); color: var(--gold) }
+    input[type=range] { flex: 1 1 220px; min-width: 0; accent-color: var(--gold) }
+    label { color: var(--dim); min-width: 9ch }
+    canvas { width: 100%; display: block; border-radius: 6px; background: #000 }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr } }
+    #hud { white-space: pre-wrap; color: var(--bright); font-size: 12.5px; margin-top: 8px; overflow-x: auto }
+    .note { color: var(--dim); font-size: 12.5px }
+    .cap { color: var(--dim); font-size: 12px; margin: 4px 0 0 }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Two lines apart</h1>
+    <p class="lede">Two lines overlap. Each is a standpoint, where it sits and how wide it is, and an amount, how much of
+    the paint it holds. How well the split between them can be had depends on how far apart the two standpoints are, in
+    the half-plane's own distance d, and on how the noise is laid. Counted noise leaves it to d alone; noise laid evenly
+    on channels does not.</p>
+    <div class="panel">
+        <div class="row"><label for="dd">distance d</label><input id="dd" type="range" min="0.5" max="4" step="0.01" value="1.5"><span id="dv"></span></div>
+        <div class="row"><label for="rr">width ratio</label><input id="rr" type="range" min="-4" max="4" step="0.01" value="0"><span id="rv"></span></div>
+        <div class="row"><label for="tt">turn about i</label><input id="tt" type="range" min="0" max="3.1416" step="0.01" value="0"><span id="tv"></span></div>
+        <div class="row" id="noise">
+            <button data-n="count" class="on">counted noise (draws binned)</button>
+            <button data-n="freq">even in frequency</button>
+            <button data-n="turn">even in the turn about i</button>
+        </div>
+        <div class="grid" style="margin-top:10px">
+            <div><canvas id="spec" height="300"></canvas><p class="cap">The two lines, their sum, and a sample spectrum
+            in the chosen noise (seeded).</p></div>
+            <div><canvas id="plane" height="300"></canvas><p class="cap">The half-plane: the two standpoints, i (gold), and
+            the circle of points at distance d from the first.</p></div>
+        </div>
+        <canvas id="curve" height="260" style="margin-top:12px"></canvas>
+        <p class="cap">The bound on the split against the width ratio, over every ratio a pair at this d can have (e^−d to e^d): counted (teal) flat; even in frequency
+        (red) bent; even in the turn about i (violet) nearly flat, since these pairs sit near i. The marker is the pair
+        shown.</p>
+        <div id="hud"></div>
+    </div>
+    <p class="note">From SEP runs 2 and 4 (exact at 30 digits there; here in doubles). A Möbius map carries each line onto
+    another as a density, so the information keeps its value under the map exactly when the noise's weight is carried the
+    same way: the paint's own count is; no fixed laying of channels on the line is, since the maps keep no measure on it.
+    Laid evenly by the turn from i, channels keep only the turns about i. On a measured counted doublet (PbSO₄'s Cu Kα,
+    SEP run 6) the split came back from d ≈ 1.4 on and failed below it; the scatter there was the lines' shape, not the
+    counts.</p>
+</main>
+<script>
+(() => {
+    const $ = id => document.getElementById(id);
+    const st = { d: 1.5, lr: 0, turn: 0, noise: 'count' };
+    const q = new URLSearchParams(location.search);
+    if (q.has('d')) st.d = +q.get('d'); if (q.has('r')) st.lr = +q.get('r');
+    if (q.has('turn')) st.turn = +q.get('turn'); if (q.has('noise')) st.noise = q.get('noise');
+    // complex helpers
+    const C = (re, im) => ({ re, im });
+    const div = (a, b) => { const s = b.re * b.re + b.im * b.im; return C((a.re * b.re + a.im * b.im) / s, (a.im * b.re - a.re * b.im) / s); };
+    function turnZ(z, p) { const c = Math.cos(p), s = Math.sin(p); return div(C(c * z.re + s, c * z.im), C(-s * z.re + c, -s * z.im)); }
+    function pair(d, r, p) {
+        const g1 = 1 / Math.sqrt(r), g2 = Math.sqrt(r);
+        const dm = Math.sqrt(Math.max(2 * (Math.cosh(d) - 1) - (g1 - g2) ** 2, 0));
+        let z = [C(-dm / 2, g1), C(dm / 2, g2)];
+        if (p) z = z.map(w => turnZ(w, p));
+        return z;
+    }
+    const lor = (x, z) => z.im / (Math.PI * ((x - z.re) ** 2 + z.im * z.im));
+    function grads(x, z, a) {
+        const D = (x - z.re) ** 2 + z.im * z.im, g = z.im;
+        return [a * 2 * g * (x - z.re) / (Math.PI * D * D), a * (g / (Math.PI * D) - 2 * g ** 3 / (Math.PI * D * D)), lor(x, z)];
+    }
+    function inv(M) {
+        const n = M.length, A = M.map((r, i) => r.concat(Array.from({ length: n }, (_, j) => +(i === j))));
+        for (let c = 0; c < n; c++) {
+            let p = c; for (let r = c + 1; r < n; r++) if (Math.abs(A[r][c]) > Math.abs(A[p][c])) p = r;
+            [A[c], A[p]] = [A[p], A[c]]; const v = A[c][c];
+            for (let j = 0; j < 2 * n; j++) A[c][j] /= v;
+            for (let r = 0; r < n; r++) if (r !== c) { const f = A[r][c]; for (let j = 0; j < 2 * n; j++) A[r][j] -= f * A[c][j]; }
+        }
+        return A.map(r => r.slice(n));
+    }
+    function bound(z, noise, N = 4000) {
+        const a = [0.5, 0.5], I = Array.from({ length: 6 }, () => new Array(6).fill(0));
+        for (let k = 0; k < N; k++) {
+            const t = -Math.PI / 2 + (k + 0.5) * Math.PI / N, x = Math.tan(t), dx = (Math.PI / N) / Math.cos(t) ** 2;
+            const v = grads(x, z[0], a[0]).concat(grads(x, z[1], a[1]));
+            const f = a[0] * lor(x, z[0]) + a[1] * lor(x, z[1]);
+            const w = noise === 'count' ? 1 / f : noise === 'freq' ? 1 : Math.PI * (1 + x * x);
+            for (let i = 0; i < 6; i++) for (let j = i; j < 6; j++) I[i][j] += v[i] * v[j] * w * dx;
+        }
+        for (let i = 0; i < 6; i++) for (let j = 0; j < i; j++) I[i][j] = I[j][i];
+        const Ci = inv(I), g = [0, 0, a[1], 0, 0, -a[0]];
+        let s = 0; for (let i = 0; i < 6; i++) for (let j = 0; j < 6; j++) s += g[i] * Ci[i][j] * g[j];
+        return Math.sqrt(s);
+    }
+    // a pair at distance d exists only for width ratios within e^(±d): |√r − 1/√r| ≤ 2·sinh(d/2)
+    const lrMax = d => 0.999 * d / Math.LN2;
+    function curve(d, noise, n = 33) {
+        const out = [], m = lrMax(d);
+        for (let k = 0; k < n; k++) { const lr = -m + 2 * m * k / (n - 1); out.push([lr, bound(pair(d, 2 ** lr, 0), noise, 1600)]); }
+        return out;
+    }
+    // seeded rng
+    let seed = 7; const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296);
+    const gauss = () => { let u = 0; while (!u) u = rnd(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * rnd()); };
+    function poisson(m) { if (m > 40) return Math.max(0, Math.round(m + Math.sqrt(m) * gauss())); let L = Math.exp(-m), k = 0, p = 1; do { k++; p *= rnd(); } while (p > L); return k - 1; }
+    function fit(cv) { const r = cv.getBoundingClientRect(), dp = devicePixelRatio || 1; cv.width = Math.round(r.width * dp); cv.height = Math.round(cv.getAttribute('height') * dp); const c = cv.getContext('2d'); c.setTransform(dp, 0, 0, dp, 0, 0); return [c, r.width, +cv.getAttribute('height')]; }
+    function draw() {
+        st.lr = Math.max(-lrMax(st.d), Math.min(lrMax(st.d), st.lr)); $('rr').value = st.lr;
+        const r = 2 ** st.lr, z = pair(st.d, r, st.turn);
+        $('dv').textContent = st.d.toFixed(2); $('rv').textContent = r.toFixed(3); $('tv').textContent = st.turn.toFixed(2);
+        // spectrum
+        let [c, W, Hh] = fit($('spec')); c.fillStyle = '#000'; c.fillRect(0, 0, W, Hh);
+        const xs = [Math.min(z[0].re, z[1].re) - 4 * Math.max(z[0].im, z[1].im), Math.max(z[0].re, z[1].re) + 4 * Math.max(z[0].im, z[1].im)];
+        const f = x => 0.5 * lor(x, z[0]) + 0.5 * lor(x, z[1]);
+        let top = 0; for (let k = 0; k <= 400; k++) top = Math.max(top, f(xs[0] + (xs[1] - xs[0]) * k / 400));
+        const X = x => 10 + (W - 20) * (x - xs[0]) / (xs[1] - xs[0]), Y = v => Hh - 20 - (Hh - 40) * v / (1.25 * top);
+        seed = 7; c.fillStyle = 'rgba(230,228,238,0.55)';
+        const nb = 120;
+        for (let k = 0; k < nb; k++) {
+            let x0, x1;
+            if (st.noise === 'turn') { const a0 = Math.atan(xs[0]), a1 = Math.atan(xs[1]); x0 = Math.tan(a0 + (a1 - a0) * k / nb); x1 = Math.tan(a0 + (a1 - a0) * (k + 1) / nb); }
+            else { x0 = xs[0] + (xs[1] - xs[0]) * k / nb; x1 = xs[0] + (xs[1] - xs[0]) * (k + 1) / nb; }
+            const xm = (x0 + x1) / 2, mean = f(xm);
+            let v;
+            if (st.noise === 'count') { const N = 4000 / top; v = poisson(mean * N) / N; }
+            else v = mean + 0.06 * top * gauss();
+            c.fillRect(X(x0), Y(Math.max(v, 0)), Math.max(1, X(x1) - X(x0) - 1), Y(0) - Y(Math.max(v, 0)));
+        }
+        const stroke = (fn, col, lw) => { c.strokeStyle = col; c.lineWidth = lw; c.beginPath(); for (let k = 0; k <= 400; k++) { const x = xs[0] + (xs[1] - xs[0]) * k / 400; const yy = Y(fn(x)); k ? c.lineTo(X(x), yy) : c.moveTo(X(x), yy); } c.stroke(); };
+        stroke(x => 0.5 * lor(x, z[0]), '#8ce6cd', 1.5); stroke(x => 0.5 * lor(x, z[1]), '#b59cf0', 1.5); stroke(f, '#d4a052', 2);
+        // plane
+        [c, W, Hh] = fit($('plane')); c.fillStyle = '#000'; c.fillRect(0, 0, W, Hh);
+        const span = Math.max(3, ...z.map(w => Math.abs(w.re) + 1), ...z.map(w => w.im + 0.5));
+        const sx = x => W / 2 + (W / 2 - 10) * x / span, sy = y => Hh - 15 - (Hh - 30) * y / (span);
+        c.strokeStyle = 'rgba(255,255,255,0.25)'; c.beginPath(); c.moveTo(0, sy(0)); c.lineTo(W, sy(0)); c.stroke();
+        // hyperbolic circle about z0 radius d: euclidean centre (x, y cosh d), radius y sinh d
+        c.strokeStyle = 'rgba(140,230,205,0.35)'; c.beginPath();
+        const cy = z[0].im * Math.cosh(st.d), rr = z[0].im * Math.sinh(st.d);
+        c.ellipse(sx(z[0].re), sy(cy), Math.abs(sx(rr) - sx(0)), Math.abs(sy(rr) - sy(0)), 0, 0, 2 * Math.PI); c.stroke();
+        const dot = (w, col, lab) => { c.fillStyle = col; c.beginPath(); c.arc(sx(w.re), sy(w.im), 5, 0, 2 * Math.PI); c.fill(); c.fillText(lab, sx(w.re) + 8, sy(w.im) - 6); };
+        c.font = '12px DM Mono, monospace';
+        dot(C(0, 1), '#d4a052', 'i'); dot(z[0], '#8ce6cd', 'z₁'); dot(z[1], '#b59cf0', 'z₂');
+        // curve
+        [c, W, Hh] = fit($('curve')); c.fillStyle = '#000'; c.fillRect(0, 0, W, Hh);
+        const cv = { count: curve(st.d, 'count'), freq: curve(st.d, 'freq'), turn: curve(st.d, 'turn') };
+        let mx = 0, mn = Infinity; for (const k in cv) for (const [, b] of cv[k]) { mx = Math.max(mx, b); mn = Math.min(mn, b); }
+        const lo = 0, hi = mx * 1.1;
+        const M = lrMax(st.d), cx = lr => 50 + (W - 70) * (lr + M) / (2 * M), cyy = b => Hh - 30 - (Hh - 50) * (b - lo) / (hi - lo);
+        c.strokeStyle = 'rgba(255,255,255,0.2)'; c.strokeRect(50, 20, W - 70, Hh - 50);
+        c.fillStyle = '#8a8a96'; c.fillText('width ratio e^−d = ' + (2 ** -M).toFixed(3), 50, Hh - 10); c.fillText((2 ** M).toFixed(2), W - 44, Hh - 10); c.fillText('1', cx(0) - 3, Hh - 10);
+        c.fillText(hi.toFixed(1), 6, 26); c.fillText('0', 30, Hh - 28);
+        for (const [k, col] of [['count', '#8ce6cd'], ['freq', '#d96e5b'], ['turn', '#b59cf0']]) {
+            c.strokeStyle = col; c.lineWidth = k === st.noise ? 2.5 : 1.2; c.beginPath();
+            cv[k].forEach(([lr, b], i) => i ? c.lineTo(cx(lr), cyy(b)) : c.moveTo(cx(lr), cyy(b))); c.stroke();
+        }
+        const bnow = { count: bound(z, 'count'), freq: bound(z, 'freq'), turn: bound(z, 'turn') };
+        c.fillStyle = '#e6e4ee'; c.beginPath(); c.arc(cx(st.lr), cyy(bnow[st.noise]), 4, 0, 2 * Math.PI); c.fill();
+        const spread = k => { const v = cv[k].map(p => p[1]); return (Math.max(...v) - Math.min(...v)) / Math.min(...v); };
+        $('hud').textContent =
+            `z₁ = ${z[0].re.toFixed(3)} + ${z[0].im.toFixed(3)}i   z₂ = ${z[1].re.toFixed(3)} + ${z[1].im.toFixed(3)}i   d = ${st.d.toFixed(3)}\n` +
+            `bound on the split (one draw, or one unit of count):\n` +
+            `  counted ${bnow.count.toFixed(4)}   even in frequency ${bnow.freq.toFixed(4)}   even in the turn about i ${bnow.turn.toFixed(4)}\n` +
+            `spread across every width ratio this d allows, e^(±d) (turn 0):\n` +
+            `  counted ${(100 * spread('count')).toFixed(3)}%   even in frequency ${(100 * spread('freq')).toFixed(1)}%   even in the turn ${(100 * spread('turn')).toFixed(1)}%`;
+        state.last = { z, bnow, spread: { count: spread('count'), freq: spread('freq'), turn: spread('turn') } };
+    }
+    const state = {};
+    function set(o) { Object.assign(st, o); $('dd').value = st.d; $('rr').value = st.lr; $('tt').value = st.turn;
+        document.querySelectorAll('#noise button').forEach(b => b.classList.toggle('on', b.dataset.n === st.noise)); draw(); }
+    $('dd').oninput = e => set({ d: +e.target.value }); $('rr').oninput = e => set({ lr: +e.target.value });
+    $('tt').oninput = e => set({ turn: +e.target.value });
+    document.querySelectorAll('#noise button').forEach(b => b.onclick = () => set({ noise: b.dataset.n }));
+    addEventListener('resize', draw);
+    window.__sep = { bound, pair, curve, set, state: () => ({ ...st, ...state.last }) };
+    set({});
+})();
+</script>
+</body>
+</html>

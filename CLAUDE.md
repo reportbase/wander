@@ -630,9 +630,17 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   tolerance, S4 by its letter; run 2 not. Run 3 (R1275, `runs/sep/sep3.py`, BMRB bmse000297 ethanol ¹H, not committed):
   Lorentzian fits give J, the CH₂/CH₃ total (1.2%) and the multiplet shares (within 6%); the matrix pencil as built fails
   (killed by my method). In *Reads and Writes* §7 and essay 33 §16 (R1275).
+  SEP run 4 (`runs/sep/sep4.py`, post hoc `sep4-posthoc.py`; SPN R1279; Tom: "1"): which noise keeps the difficulty to the hyperbolic distance alone: counted noise exactly (draws binned); even-frequency channels 20–29% off; channels even in the turn about i keep its turns exactly and nearby pairs to 0.6–4% (T4 killed by my bound), T2 by its letter. Not in any paper.
+  R1281 (27 Nov; Tom: "Not new, but clarifying.  Classical is dhv,"; "The how is that the math simplifies, it often does
+  when replacing dhv with shv"): the SEP results classical, the DHV's statement; from one standpoint the split's bound
+  one distance (cosh d rational), what does not reduce the number line's chart. *Reads and Writes* §7. Clarifying, not new.
+  R1280 (27 Nov; Tom: "1 2 3 4"): SEP run 4 in *Reads and Writes* §7 and essay 33 §16; SEP runs 5–6 (`runs/sep/sep5.py`,
+  `sep6.py`, PbSO₄'s Cu Kα round-robin pattern, raw counts, not committed): the doublet's share comes back (0.474) with
+  the spacing and one width held, failing below d ≈ 1.4; the counting bound killed by the lines' shape (not Lorentzians);
+  run 4's claim untested on data. `separate.html` and its `demos.html` card.
   R1277 (27 Nov; Tom: "add it to the papers and merge"): SEP sorted by reads and writes in *Reads and Writes* §7 and essay 33 §16: place and width the standpoint (J a read), the area paint (2 : 3 a count, the payload's), noise an amount breaking the invariance, the total kept, a measured line a chain of reads (natural + the magnet's) so one pole a line fails, the spectrometer's filter a write read as a record. Claude's reading, not ruled.
-  NBS run 6 (`runs/nbs/nbs6.mjs`, as run 4; SPN R1280; Tom: "Run 6"): the 65 jumps nearest the new one given up when narrower than its span's eighth; both maps finish, the cut unchanged, G2 killed by my rule: the jumps are found left to right, so the window (the last 65) slid out of the band over the sparse jumps past it (1.46·10⁻² rad, 1.8% in the band).
-  NBS run 5 (`runs/nbs/nbs5.mjs`, as run 4; SPN R1279; Tom: "Merge, then run 5"): only the smallest busy span given up;
+  NBS run 6 (`runs/nbs/nbs6.mjs`, as run 4; SPN R1283; Tom: "Run 6"): the 65 jumps nearest the new one given up when narrower than its span's eighth; both maps finish, the cut unchanged, G2 killed by my rule: the jumps are found left to right, so the window (the last 65) slid out of the band over the sparse jumps past it (1.46·10⁻² rad, 1.8% in the band).
+  NBS run 5 (`runs/nbs/nbs5.mjs`, as run 4; SPN R1282; Tom: "Merge, then run 5"): only the smallest busy span given up;
   every number run 4's, F2 killed by my rule: B′'s spans end at jumps, so a cluster always sits at a span's edge and no
   small span encloses it. A count must be taken about a place, not over a span.
   NBS run 4 (`runs/nbs/nbs4.mjs map cut|tworail 16|64`, then `report`; SPN R1278; Tom: "Run 4"): the floor replaced by a
@@ -1742,6 +1750,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   a plot of the count told apart against N (27 flat from 10² to 10¹⁵); the writer's layout, 2W/N px an item (all 100 told
   apart at N = 100, none past about 1,000, no width without end). Params add `slots=1&outlines=0&writer=0&mult=&append=1`;
   hook adds `writerCounts`, `history`.
+- `separate.html`: **two lines apart** (27 Nov 2026, SPN R1280; SEP runs 2 and 4; Tom: "1 2 3 4"), a standalone page, plain
+  canvas. Two Cauchy lines set by their hyperbolic distance d and width ratio r (SEP run 2's pairs, r within e^(±d)),
+  turnable about i; the bound on the split from ∫ ∂f ∂f · w dx with counted noise (w = 1/f, the draws binned), even in
+  frequency (w = 1) or even in the turn about i (w = π(1 + x²)); a seeded sample spectrum; the bound against r at this d
+  for all three (counted flat, 0.000%; even 33.6% at d = 1.5; turn-laid 1.1%). Matches run 4 to 12 digits.
+  `?d=&r=<log2 r>&noise=count|freq|turn&turn=`; hook `window.__sep` (`bound`, `pair`, `curve`, `set`, `state`). Not in the flying page.
 - `gravity-ring.html`: **fingers browsing gravity** (27 Nov 2026, SPN R1267; Tom: "Let's stay gravity is an array, the value
   is the strength of the field."; "Gravity has its own cautchy. So fingers browsing fingers browsing gravity array"; "Own page
   merge"), a standalone page, plain canvas. In the plane (masses as rods end on, the ground a line): each mass M at depth d
