@@ -623,6 +623,13 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1270 (27 Nov; Tom: "search for it, add it to the papers and merge"): CDW and the search in *Reads and Writes* §7
+  ("Writes the read takes for a continuum"): the numbers classical, the kernel as the point's geometry in part (harmonic
+  measure as subtended angle), the sorting not found (snippet depth).
+  R1269 (27 Nov; Tom: "do they pull out the payload/", "we use this for gravity", "both"): CDW run 2 (`runs/cdw/cdw2.py`),
+  a row of masses read from u = (a + d)/s and pulled back out: an equal row's ripple 2/sinh(2πu) exactly; uneven masses
+  told apart as e^(−πu), recovery failing near ln(1/σ)/π (Q3 slope 0.925 of π at σ = 10⁻⁶, untested at 10⁻³ by my window;
+  Q4 shift 2.25 against 2.20), the total mass always back; `gravity-ring.html`'s row. Claude's reading, not ruled.
   R1268 (27 Nov; Tom: "seems to me you can have a SHV sweep of a DHV sweep.   in other words a continuous read heat
   sweeping a discrete write heat.", "yes and merge"): CDW (`plans/cdw-plan.md` + `runs/cdw/cdw.py`, exact, the identity
   known beforehand): the read's heat over writes at the whole numbers sums to sinh(2πH)/(cosh(2πH) − cos(2πf)), the
@@ -1714,8 +1721,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   added (SUM's relay, upward continuation; CRC's result, R1237, essay 33 §16, this page its demo): 3.5·10⁻¹⁵ of the peak at a = 1.5 and 5 with 4,096 fingers, 4·10⁻⁶ at a = 0.3; the
   array sampled every 0.1 or 0.5, 2.6·10⁻⁴ and 6.5·10⁻³; mass ×10 multiplies the mean by 10 and moves no finger; raising the
   reader by h sinks every mass by h. Uses tan and atan (the turn's chart). Never calls the pull a read (R1183) or the mass
-  told from its depth (R1197). `?a=&f=&seed=&mult=&step=0|0.1|0.5&n=`; hook `window.__gravRing` (`field`, `arrayAt`,
-  `composite`, `direct`, `check`, `fingers`, `masses`, `set`, `state`). Not in the flying page.
+  told from its depth (R1197). Since R1269 a row (`?scene=row|uneven`, `s=`, `d=`): masses s apart at depth d without end,
+  eight to a period, each mass's row a periodic Cauchy in closed form; the readout gives u = (a + d)/s and the ripple
+  against 2/sinh(2πu) (equal row) or e^(−πu) (uneven); there the fingers' mean meets the masses read from a + d only as the
+  fingers grow (10⁻⁵ at 65,536), the far fingers landing on the endless ripple. `?a=&f=&seed=&mult=&step=0|0.1|0.5&n=&scene=&s=&d=`;
+  hook `window.__gravRing` (`field`, `arrayAt`, `composite`, `direct`, `check`, `fingers`, `masses`, `ripple`, `row`, `set`,
+  `state`). Not in the flying page.
 - `look-pull.html`: **a look and a pull** (24 Nov 2026, SPN R1182; essay 33; FCL; Tom: "merge, 1, 2, 3"), a standalone page
   like `faces.html`, plain canvas. Masses about a place (a seeded scatter in the drawing's plane, an even shell with the
   place off its centre, one mass), a facing turned by a slider: the faced take F(n) (a definition from FCL run 6) in front

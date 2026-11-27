@@ -1873,6 +1873,27 @@ Holtsmark's law of random pulls (Holtsmark 1919; Chandrasekhar 1943), the place 
 is a law of amounts, wholly the write's side, and index 3/2, not the turn's (R1203). The sorting is the stage's, the
 results the same (R1229).
 
+*Writes the read takes for a continuum* (R1268–R1270; Tom: "seems to me you can have a SHV sweep of a DHV sweep",
+"we use this for gravity", then "search for it, add it to the papers and merge"; CDW, `plans/cdw-plan.md`,
+`runs/cdw/`; on a line, `gravity-ring.html`'s row). The read's heat laid over writes at the whole numbers sums exactly
+to sinh(2πH)/(cosh(2πH) − cos(2πf)), the wrapped Cauchy (Poisson summation): the writes' discreteness is left as a
+ripple of about 2e^(−2πH), 0.0037 at one write a thumb, 3·10⁻²² at eight. Past one write a thumb the read cannot tell
+its writes from a continuum. A row of masses s apart at depth d, read from a, is the same with u = (a + d)/s: an equal
+row's ripple is exactly 2/sinh(2πu), and masses told apart go as e^(−πu). Pulled back out, the total mass always comes
+back; the arrangement fails near u ≈ ln(1/σ)/π (run 2: slope 0.925 of π at σ = 10⁻⁶; at 10⁻³ untested by my window).
+That is the inverse problem's non-uniqueness read as the writes' discreteness falling below the read's reach.
+
+What a search found (27 Nov, snippet depth, so not found is not absent). The equation and its uses are classical and
+in the standard accounts: upward continuation, its factor e^(−kh) a wavelength, so e^(−2πh/s) for a row; downward
+continuation ill-posed; the half-plane's Poisson kernel; the wrapped Cauchy; Abel summation. The kernel read as the
+point's own geometry is classical too, in part: in the half-plane the harmonic measure of an interval is the angle it
+subtends from the point over π, and (from memory, not checked) a uniform double layer's potential is its solid angle
+over 4π. What was not found: the continuation kernel named as the law a look uses, the same for a look and a pull; the
+row's ripple stated as a lattice of sources against a sheet; and the sorting itself, a continuous read over discrete
+writes, the arrangement lost where the discreteness drops under the read's reach, the amount kept. So the numbers are
+others', the attribution in part, the sorting ours. By R1240 the read's density and gravity's share the form for
+different reasons; this says what each reads of the other, not that they are one. No result changes (R1229).
+
 *Fingers reading fingers reading the payload* (R1238; Tom: "Think about it, we have fingers reading fingers reading
 payload."). The run has three layers: the reader's fingers (the read's heat, one hemisphere, no amount), the plane's
 fingers (gravity's take at each painted place, both hemispheres, each finger weighing its column; a take, not a read,
