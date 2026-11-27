@@ -118,3 +118,36 @@ not quite Lorentzian), the HDO presaturation.
 
 Reported, not predicted: each adjacent pair's hyperbolic distance acosh(1 + J²/(2γ²)), and how each line's error stands
 against it.
+
+### Run 3 (`runs/sep/sep3.py`, output `runs/sep/sep3-out.txt`)
+
+Data: BMRB bmse000297 (ethanol), nmr/set01/1H, from bmrb.io (BMRB's data are freely available); 400.13 MHz, zg, one
+scan, D1 5 s, AQ 3.4 s; `fid` sha256 2d4eb82cc62be0897d0b583625cecf097c2ac7211eeb00b4b1132da3e3e0ad64, `acqus`
+7514424ca61b297a9f6d7ba915553fad4592c7606132ad9374cc8e39f478731b; not committed. Read with `python3 -I`.
+
+The first execution was KILLED by my code, four faults found one after another and fixed before any verdict was taken:
+the windows (the sample is referenced so the CH₃ triplet sits at 1.06 ppm and the CH₂ quartet at 3.55, not where I
+assumed); M1's Lorentzian written with the wrong sign of i; M2's singular vectors conjugated (every frequency shifted;
+found on a synthetic decay, which then came back exact); and spinning sidebands at ±15.0 Hz, which both methods modelled,
+lying on twice the spacing (2J = 14.17 Hz), so the "sideband" terms took the multiplets' own outer lines. The sidebands
+(about 1% of each line) were dropped from both methods and M2 kept only poles narrower than 30 s⁻¹ within 2.5 Hz of a
+line, a rule set on a synthetic decay with M1's lines (each line back within 6%) before the real data were run again,
+once. The script as committed is that last version.
+
+M1 (Lorentzians fitted to the spectrum), every prediction holds: J = 7.097, 7.081 (CH₃) and 7.093, 7.090, 7.070 Hz
+(CH₂), the two groups' mean J 0.004 Hz apart (N1); CH₂/CH₃ = 0.6746, 1.2% over 2/3 (N2); shares 0.2500 : 0.4976 : 0.2524
+and 0.1322 : 0.3766 : 0.3683 : 0.1229, every line within 5.8% of 1:2:1 and 1:3:3:1 (N3); widths within 3.2% and 6.2%
+(N5); residual 1.3% of the peak. The adjacent lines sit 5.5 apart in hyperbolic distance (J ≈ 7.1 Hz against
+γ ≈ 2.8 s⁻¹, a linewidth about 0.9 Hz), well apart, where SEP run 2 puts the split's error small.
+M2 (the matrix pencil on the decay, as built) fails: CH₂/CH₃ = 1.13 (N2), the triplet's shares off by up to 31% (N3),
+the spacings 7.02–7.27 Hz (N1), widths spread 1.65× (N5); so N1, N2, N3 and N5 are KILLED by their letter ("by both
+methods"), by my second method, not by the data: on a real line the pencil finds several poles (a narrow one near
+γ ≈ 3 s⁻¹ and broader ones: the lines are not quite single Cauchys, as shimming leaves them), and its rule for
+gathering them loses part of the tallest multiplet's amount (CH₃'s total 1,094 against M1's 1,832). N4 not killed in
+its letter (single lines disagree by up to 59%, totals by up to 40%), but with M2 failing it says nothing.
+
+Reading (Claude's, not ruled). On measured data the payload came out where the chemistry puts it, from the fit that
+treats each line as one Cauchy: the totals to 1.2% and the splits to 6%, the overlap no obstacle at a hyperbolic
+distance of 5.5. Where it would bite (a doublet whose lines sit within one or two of each other in that distance) is
+untested here. The second route, poles from the decay, needs a model of a real line as more than one pole; that is a
+run of its own, not attempted.

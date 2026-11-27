@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1275** (27 Nov 2026; Tom: "Merge, then 1 and 2"): SEP run 3 (`runs/sep/sep3.py`), measured data, predictions first:
+  ethanol's ¹H spectrum (BMRB bmse000297, 400 MHz), the CH₃ triplet and CH₂ quartet as overlapping Cauchys whose amounts
+  are known beforehand. Fitted as Lorentzians (M1): J 7.07–7.10 Hz in both, CH₂/CH₃ 1.2% from 2/3, every line's share
+  within 5.8% of 1:2:1 and 1:3:3:1, widths within 6%. The matrix pencil on the decay (M2), as built, failed (real lines
+  several poles; the tallest multiplet's amount lost), so N1–N3, N5 killed by their "both methods", by my method; four
+  code faults in the first execution, recorded. SEP in *Reads and Writes* §7 and essay 33 §16. Claude's reading, not ruled.
 - **R1274** (27 Nov 2026; Tom: "To tease out the payload, you might need to separate multiple overlapping cauchies. We
   could test this and make the idea robust. Has any one done this?", then "Yes"): SEP (`plans/sep-plan.md`,
   `runs/sep/`), predictions first. Prony exact (10⁻⁴⁶, K = 1–4); a non-affine Möbius map carries every fit of draws onto

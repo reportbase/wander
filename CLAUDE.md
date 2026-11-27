@@ -627,7 +627,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   multiple overlapping cauchies.", "Yes"): separating overlapping Cauchys, predictions first. Prony exact; in draws the
   difficulty set by the hyperbolic distance alone (Möbius equivariance, McCullagh 1996; bounds equal across width ratios to
   10⁻²⁸); a spectrum with additive noise breaks it by 20–29%; the total amount always kept. Run 1's S3 killed by my
-  tolerance, S4 by its letter; run 2 not. Not in any paper.
+  tolerance, S4 by its letter; run 2 not. Run 3 (R1275, `runs/sep/sep3.py`, BMRB bmse000297 ethanol ¹H, not committed):
+  Lorentzian fits give J, the CH₂/CH₃ total (1.2%) and the multiplet shares (within 6%); the matrix pencil as built fails
+  (killed by my method). In *Reads and Writes* §7 and essay 33 §16 (R1275).
   NBS run 2 (`runs/nbs/nbs2.mjs map cut|tworail 16|64`, then `report`; SPN R1273; Tom: "Continue if your still making
   progress"): B′ on PEB's event engine. Cut: no scan, the same 137 jumps from 16 or 64 spans, all 75 of PEB run 5's and 62
   it missed, every piece held by 8 leaves (R1263 shown); two rails capped in a window where a touching pair chatters (C1,
