@@ -631,6 +631,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Lorentzian fits give J, the CH₂/CH₃ total (1.2%) and the multiplet shares (within 6%); the matrix pencil as built fails
   (killed by my method). In *Reads and Writes* §7 and essay 33 §16 (R1275).
   SEP run 4 (`runs/sep/sep4.py`, post hoc `sep4-posthoc.py`; SPN R1279; Tom: "1"): which noise keeps the difficulty to the hyperbolic distance alone: counted noise exactly (draws binned); even-frequency channels 20–29% off; channels even in the turn about i keep its turns exactly and nearby pairs to 0.6–4% (T4 killed by my bound), T2 by its letter. Not in any paper.
+  R1281 (27 Nov; Tom: "Not new, but clarifying.  Classical is dhv,"; "The how is that the math simplifies, it often does
+  when replacing dhv with shv"): the SEP results classical, the DHV's statement; from one standpoint the split's bound
+  one distance (cosh d rational), what does not reduce the number line's chart. *Reads and Writes* §7. Clarifying, not new.
   R1280 (27 Nov; Tom: "1 2 3 4"): SEP run 4 in *Reads and Writes* §7 and essay 33 §16; SEP runs 5–6 (`runs/sep/sep5.py`,
   `sep6.py`, PbSO₄'s Cu Kα round-robin pattern, raw counts, not committed): the doublet's share comes back (0.474) with
   the spacing and one width held, failing below d ≈ 1.4; the counting bound killed by the lines' shape (not Lorentzians);
