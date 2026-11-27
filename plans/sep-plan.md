@@ -209,3 +209,74 @@ standpoint keep exactly the turns about that standpoint, a read's own symmetry, 
 spectrum's 20–29% is not the noise as such but the noise's chart: an amount laid evenly in frequency. A spectrum that
 counted (photons, nuclei) would separate its lines as draws do; one with a fixed electronic noise per channel carries the
 chart its channels were laid on.
+
+## Run 5: a counted doublet, from tight to loose (27 Nov 2026; SPN R1280; Tom: "1 2 3 4")
+
+Run 4 says counted noise keeps the separation's difficulty to the hyperbolic distance alone, as draws do. A spectrum
+made by counting is the case to try, and the run also gives what run 3 lacked: pairs from tight (distance under 2) to
+loose. Data: the IUCr powder-diffraction round robin's PbSO₄ pattern (Hill 1992, *J. Appl. Cryst.* 25, 589), laboratory
+Cu Kα, raw counts, 10°–160° 2θ in 0.025° steps (6,001 points), as distributed with the GSAS-II tutorials
+(AdvancedPhotonSource/GSAS-II-tutorials, `CWCombined/data/PBSO4.XRA`); sha256
+ca2da02fc7e17d2fc912de22a979f8101ba6140f2e8104f9d3aa64f030ca58bb; not committed. Only the header has been looked at
+before these predictions.
+
+Every Bragg reflection is a doublet: Kα₁ and Kα₂ (λ = 1.540598 and 1.544426 Å, Hölzer et al. 1997), the second about
+half as strong (2p₃/₂ against 2p₁/₂, statistical weights 4 : 2; measured ratios near 0.50), spaced
+Δ(2θ) = 2·tanθ·Δλ/λ: about 0.05° at 20°, 0.78° at 140°, against widths of a tenth of a degree and more. So the pair's
+hyperbolic distance grows with angle through one pattern. Known beforehand: the 0.5 ratio and the spacing.
+
+Method, fixed now. Reflections from PbSO₄'s cell (Pnma, a 8.480, b 5.398, c 6.958 Å; the extinctions of Pnma), kept
+only where no other allowed reflection's Kα₁ lies within max(0.5°, 3·Δ) and the peak stands 20 √(background) above a
+linear background. Each kept window (Kα₁ ± (0.4° + 2Δ)) fitted by Poisson maximum likelihood: a linear background and
+two Lorentzians in 2θ, free places, widths and amounts. The hyperbolic distance from the fitted standpoints,
+cosh d = 1 + |z₁ − z₂|²/(2γ₁γ₂).
+
+- U1: the median Kα₂/Kα₁ amount ratio over the kept reflections within 0.05 of 0.50.
+- U2: the median fitted spacing within 10% of 2·tanθ·Δλ/λ over reflections with d ≥ 3.
+- U3: the share's error grows as the pair tightens: Spearman's ρ between d and |ratio − 0.5| below −0.3.
+- U4: where d ≥ 3, the scatter of the ratios about 0.5 is within twice the median Poisson standard error the fits give
+  (the counting bound holding on real data). Line shapes are not pure Lorentzians (instrument profile, axial divergence),
+  so this is the clause most at risk; it is the one that tests run 4 on data.
+- U5: the total (both amounts) of each reflection matches the background-subtracted counts in its window within 2%.
+
+### Run 5 (`runs/sep/sep5.py`, `sep5-out.txt`)
+
+383 allowed reflections, 17 isolated and strong enough, all but one below 51° (the isolation window max(0.5°, 3Δ) leaves
+little at high angle in this crowded pattern), so only one pair (64.6°, the fit wrong there: spacing 3.4 times the
+prediction) reached d ≥ 3; the rest sit at d = 1.35–2.54.
+
+- U1 KILLED: median Kα₂/Kα₁ 0.329, not within 0.05 of 0.50; the free fits put Kα₂ narrow (γ₂ ≈ 0.6–0.7 γ₁) and weak.
+- U2 KILLED: one reflection at d ≥ 3, and that fit failed (spacing/prediction 3.35). Below d 3 the spacing agrees within
+  10% at 15 of 16.
+- U3 not killed: Spearman ρ(d, |ratio − 0.5|) = −0.54; the tightest pairs miss the share most, the ratio rising toward
+  0.45–0.48 by d 2.3–2.5.
+- U4 KILLED: rms(ratio − 0.5) 0.14 against twice the median Poisson standard error 0.028 (one reflection).
+- U5 KILLED by my set-up: the amounts are whole-line integrals, the window holds 92–97% of a Lorentzian, so 1.03–1.08.
+
+Deviance per point 1.4 to 110: two free Lorentzians do not fit these lines (an instrument profile, a low-angle
+asymmetry from axial divergence), and with the model wrong the counting bound does not describe the scatter. Killed by
+the data's shapes and by my set-up, not a test of run 4's claim.
+
+## Run 6: what is known held fixed (27 Nov 2026; SPN R1280)
+
+Both lines pass through one instrument, so one width; the spacing is the wavelengths' (2·tanθ·Δλ/λ), so fixed. Free:
+background, Kα₁'s place, the common width, the two amounts. The selection and windows as run 5.
+
+- V1: median Kα₂/Kα₁ within 0.05 of 0.50.
+- V3: Spearman ρ(d, |ratio − 0.5|) below −0.3.
+- V4: where d ≥ 2, rms(ratio − 0.5) within twice the median Poisson standard error.
+
+### Run 6 (`runs/sep/sep6.py`, `sep6-out.txt`)
+
+- V1 not killed: median Kα₂/Kα₁ 0.474 over 17 reflections.
+- V3 not killed: Spearman ρ(d, |ratio − 0.5|) = −0.49. The three tightest (d 0.89, 1.15, 1.37) give 1.66, 1.39, 0.97;
+  from d ≈ 1.4 on the ratio sits at 0.43–0.59 (0.47 median).
+- V4 KILLED: d ≥ 2, eight reflections, rms(ratio − 0.5) 0.052 against twice the median Poisson error 0.031.
+
+Deviance per point still 2–108: one Lorentzian width does not fit these lines, so the scatter is the shape's, not the
+counts'. Reading (Claude's, not ruled). With what is known beforehand held (the spacing, one instrument), the split
+comes back where the pair is more than about 1.4 apart in hyperbolic distance and fails below it, as the draws' bound
+says it must (it grows fast as d falls); run 4's exact claim, that counted noise leaves the difficulty to d alone, is
+untested on data, since it needs the lines to be the family the claim is about. A counted spectrum of true Lorentzians
+(natural widths far above the instrument's: Mössbauer lines, or X-ray emission measured with a crystal spectrometer)
+is the test that remains.
