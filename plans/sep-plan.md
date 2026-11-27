@@ -265,3 +265,18 @@ background, Kα₁'s place, the common width, the two amounts. The selection and
 - V1: median Kα₂/Kα₁ within 0.05 of 0.50.
 - V3: Spearman ρ(d, |ratio − 0.5|) below −0.3.
 - V4: where d ≥ 2, rms(ratio − 0.5) within twice the median Poisson standard error.
+
+### Run 6 (`runs/sep/sep6.py`, `sep6-out.txt`)
+
+- V1 not killed: median Kα₂/Kα₁ 0.474 over 17 reflections.
+- V3 not killed: Spearman ρ(d, |ratio − 0.5|) = −0.49. The three tightest (d 0.89, 1.15, 1.37) give 1.66, 1.39, 0.97;
+  from d ≈ 1.4 on the ratio sits at 0.43–0.59 (0.47 median).
+- V4 KILLED: d ≥ 2, eight reflections, rms(ratio − 0.5) 0.052 against twice the median Poisson error 0.031.
+
+Deviance per point still 2–108: one Lorentzian width does not fit these lines, so the scatter is the shape's, not the
+counts'. Reading (Claude's, not ruled). With what is known beforehand held (the spacing, one instrument), the split
+comes back where the pair is more than about 1.4 apart in hyperbolic distance and fails below it, as the draws' bound
+says it must (it grows fast as d falls); run 4's exact claim, that counted noise leaves the difficulty to d alone, is
+untested on data, since it needs the lines to be the family the claim is about. A counted spectrum of true Lorentzians
+(natural widths far above the instrument's: Mössbauer lines, or X-ray emission measured with a crystal spectrometer)
+is the test that remains.
