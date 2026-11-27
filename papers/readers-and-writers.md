@@ -1838,12 +1838,12 @@ hemispherical vantage's Cauchy; gravity's take at a place is the dual hemispheri
 | How it is met | it is the read | only through a read of its effects (a plumb line, a lens) |
 
 Each row was found in its own run (FCL runs 6 and 10, COS, LGS, LNS, CLM); here they are set side by side. Two cautions.
-They are two uses of one weight, not two laws per direction: the DHV Cauchy stays the turn's law of directions, with an
+They are two uses of one weight, not two laws per direction: gravity's density stays the turn's law of directions, with an
 amount carried along each, never a Cauchy of amounts (R1203). And the DHV here is met in the world, not only drawn: until
 now the DHV existed only as drawn, from no standpoint (R890, R967), and a pull was said to be neither a read nor the DHV
 ("Even from a point" above, R1184). As a view the DHV is still only drawn; as a take at a place it is gravity's, made by
 the matter and held by no observer (R950: no one holds the whole, the things carry it). A pull is still not a read
-(R1183). So observing gravity is an SHV read of a DHV take: what a plumb line or a bent ray shows the look is the whole
+(R1183). So observing gravity is a read of gravity's take (R1240 below: not the DHV's): what a plumb line or a bent ray shows the look is the whole
 sphere's columns summed at a place, reaching one hemisphere as directions (LNS). A way to organize known gravity, not new
 physics (R1229); no number changes.
 
@@ -1880,7 +1880,7 @@ parts (Galileo's fall; Lee's τ, here read on a body falling away); the sorting 
 cauchy."; then "yes, add it to §7 and merge"; CRC, `plans/crc-plan.md`); on a line, `gravity-ring.html`, R1267: Tom, "Gravity has its own cautchy. So fingers browsing fingers browsing gravity
 array"). Lay the read's heat over gravity's take: a
 plane painted point by point with the pull found there from matter below it, a reader a height a above it looking down,
-its heat per unit of the plane the flat screen's a/(2π(a² + ρ²)^(3/2)). Three things come out exactly. The two Cauchies
+its heat per unit of the plane the flat screen's a/(2π(a² + ρ²)^(3/2)). Three things come out exactly. The two densities
 compose to one, the heights added (P_a ∗ P_h = P_(a+h)). The heat-weighted reading of the paint is the pull at the
 reader's own place, every component. On the line it is the Cauchy at the complex point (X − m₂) + i(a + h + c): feet
 subtract, heights add, the reader's, the plane's and the matter's (the relay of standpoints, one of them the matter's).
