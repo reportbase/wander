@@ -1685,6 +1685,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   of the horizon, K, terms a read, sup error, Lebesgue constant, trig calls; reproduces DBR's numbers.
   `?z=<ζ>&K=12|24|48&win=ratio|records&paint=ratio|size`; hook `window.__dialBridge` (`set`, `state`, `rebuild`, `lattice`,
   `cheb`). Not in the flying page.
+- `ring.html`: **a ring of slopes** (27 Nov 2026, SPN R1266; Tom: "Do this in a demo.   Let's see if we can create a true
+  shv version of the ring.  It should work with any array,  the array is the payload."), a standalone page, plain canvas. The
+  games page's tool ring turned round: any array (numbers, words, emoji, colours, pasted; N from 8 to 10¹⁵ or without end) read
+  from a focus f with a thumb H, item i at the slope s = (i − f)/H, laid at x = s/(1 + |s|) (the share of the sweep along
+  h + v = 1): rational both ways, one thumb at half the bar, x(s) + x(1/s) = 1, the ends the horizon. Chips while neighbours
+  are 1.5 px apart, then a strip of their paint to each horizon; none culled; told apart 27 at H = 8 for every N ≥ 10⁴. The
+  page counts Math's square roots and trigonometry each frame: 0 on this chart (the half-slope's √, the turn's atan and tan
+  for comparison, the turn drawn beside it). Drag keeps the item under the finger (f = i₀ − H·s(x)), wheel or pinch H by
+  10/9, tap the pick; wrap a count mod N. `?chart=line|half|turn&payload=numbers|words|emoji|colours|paste&N=|inf&H=&f=&wrap=1&compare=0`;
+  hook `window.__ring` (`xOf`, `sOf`, `layout`, `counts`, `payloadAt`, `set`, `state`, `mathCalls`). Not in the flying page.
 - `look-pull.html`: **a look and a pull** (24 Nov 2026, SPN R1182; essay 33; FCL; Tom: "merge, 1, 2, 3"), a standalone page
   like `faces.html`, plain canvas. Masses about a place (a seeded scatter in the drawing's plane, an even shell with the
   place off its centre, one mass), a facing turned by a slider: the faced take F(n) (a definition from FCL run 6) in front
