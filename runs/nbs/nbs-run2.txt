@@ -1,0 +1,22 @@
+cut: S=16 flights 9149 (bisection steps 4735, leaf flights 4414), 137 jumps, 348 pieces, dropped 0 (widest 0.0e+0), capped false
+   S=64 flights 8954, 137 jumps, 378 pieces, dropped 0, capped false
+   the scan's flights 1,024 + 2475 = 3499
+   PEB jumps found: 75/75 (S=64 75/75); missed at -
+   flagged pieces with a jump inside: 4/4: 0.124 [0.124183 0.125236]; 0.145 [0.147858]; 2.387 [2.389153]; 3.958 [3.959950]
+   pieces wider than 1e-4: 222, held to 1e-6 by their K=8 bridge 222; worst 2.88e-9
+   S=16 against S=64: jumps of 16 found in 64 137/137, of 64 in 16 137/137; flights ratio 0.979
+   cost bound 12K·P + 45·J = 39573; flights per piece 26.3; median halvings-depth width of pieces 8.83e-4
+tworail: S=16 flights 200007 (bisection steps 40879, leaf flights 159658), 24748 jumps, 21249 pieces, dropped 0 (widest 0.0e+0), capped true
+   S=64 flights 200001, 25486 jumps, 21755 pieces, dropped 0, capped true
+   the scan's flights 1,024 + 3597 = 4621
+   PEB jumps found: 45/109 (S=64 44/109); missed at 0.454072 0.535336 0.537934 0.543313 0.549896 0.572555 0.578129 0.627708 0.670857 0.714453 0.950509 0.996790 0.998240 1.005496 1.029197 1.049006 1.053501 1.064600 1.127693 1.134401 1.154108 1.159772 1.196301 1.242946 1.475079 1.666514 2.053749 2.242385 2.470735 2.497904 2.770406 2.806862 2.814831 2.841709 2.872094 2.949500 3.045875 3.237310 3.376907 3.419140 3.463503 3.511128 3.514330 3.541406 3.551355 3.577584 3.812450 3.843828 4.121342 4.144868 4.314291 4.616671 4.808107 5.093391 5.298949 5.610235 5.612328 5.618028 5.630609 5.675998 5.699121 5.856740 6.004158 6.187468
+   flagged pieces with a jump inside: 0/1: 0.389 none
+   pieces wider than 1e-4: 151, held to 1e-6 by their K=8 bridge 151; worst 5.61e-9
+   S=16 against S=64: jumps of 16 found in 64 24747/24748, of 64 in 16 25484/25486; flights ratio 1.000
+   cost bound 12K·P + 45·J = 3153564; flights per piece 9.4; median halvings-depth width of pieces 0.00e+0
+C1 KILLED
+C2 KILLED
+C3 not killed (4/5)
+C4 not killed (373/373)
+C5 KILLED
+C6 KILLED

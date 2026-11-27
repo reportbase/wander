@@ -623,11 +623,18 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
-  SEP (`plans/sep-plan.md` + `runs/sep/`, 27 Nov; SPN R1272; Tom: "To tease out the payload, you might need to separate
+  SEP (`plans/sep-plan.md` + `runs/sep/`, 27 Nov; SPN R1274; Tom: "To tease out the payload, you might need to separate
   multiple overlapping cauchies.", "Yes"): separating overlapping Cauchys, predictions first. Prony exact; in draws the
   difficulty set by the hyperbolic distance alone (Möbius equivariance, McCullagh 1996; bounds equal across width ratios to
   10⁻²⁸); a spectrum with additive noise breaks it by 20–29%; the total amount always kept. Run 1's S3 killed by my
   tolerance, S4 by its letter; run 2 not. Not in any paper.
+  NBS run 2 (`runs/nbs/nbs2.mjs map cut|tworail 16|64`, then `report`; SPN R1273; Tom: "Continue if your still making
+  progress"): B′ on PEB's event engine. Cut: no scan, the same 137 jumps from 16 or 64 spans, all 75 of PEB run 5's and 62
+  it missed, every piece held by 8 leaves (R1263 shown); two rails capped in a window where a touching pair chatters (C1,
+  C2, C5 killed by the engine, C6 by my bound). A place with no pieces needs a rule.
+  NBS run 1 (`runs/nbs/nbs.mjs run`, then `report`; SPN R1272; Tom: "Merge and run"): 60 positions, games unchanged; B (the
+  whole circle) beats the ghost-ball planner on pots found and made (A1, A2, A4, A5), at 4,001 times the flights (A3 killed,
+  my guess); A7 (K is n) killed by the fixed tick's hidden jumps, B′ capped everywhere; its fair test is the event engine.
   R1271 (27 Nov; Tom: "how deep does it go? human continuous reads a continuous tellisicope read of a discrete write",
   "yes, run it and merge"): CDW run 3 (`runs/cdw/cdw3.py`): a chain of reads is one read at h₁ + (h₂ + h₃)/M, a later
   read counting 1/M, the layers uncountable; a pixel layer a write with its own ripple 2e^(−2πh₃/p) and box sinc(πp/M).

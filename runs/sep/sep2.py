@@ -1,4 +1,4 @@
-"""SEP run 2: exact Cramer-Rao bounds (SPN R1272; plans/sep-plan.md). Run from the root: python3 runs/sep/sep2.py"""
+"""SEP run 2: exact Cramer-Rao bounds (SPN R1274; plans/sep-plan.md). Run from the root: python3 runs/sep/sep2.py"""
 import numpy as np, mpmath as mp
 mp.mp.dps = 30
 out = []

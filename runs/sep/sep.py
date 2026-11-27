@@ -1,4 +1,4 @@
-"""SEP: separating overlapping Cauchys (SPN R1272; plans/sep-plan.md). Run from the root: python3 runs/sep/sep.py"""
+"""SEP: separating overlapping Cauchys (SPN R1274; plans/sep-plan.md). Run from the root: python3 runs/sep/sep.py"""
 import numpy as np, mpmath as mp
 from scipy.optimize import minimize, least_squares
 out = []

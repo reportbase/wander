@@ -1,0 +1,11 @@
+it 20000 flights 94522 stack 17 jumps 10485 pieces 9313 cache 94522 span 1.99e-11 at 0.535336
+it 40000 flights 174848 stack 17 jumps 21249 pieces 18549 cache 174848 span 4.06e-11 at 0.535336
+mapped 200007 jumps 24748 pieces 21249 at 1795737383588
+held check 20 flights 204025 1795737383866
+held check 40 flights 208025 1795737384037
+held check 60 flights 212025 1795737384224
+held check 80 flights 216025 1795737384466
+held check 100 flights 220025 1795737384731
+held check 120 flights 224025 1795737385003
+held check 140 flights 228025 1795737385257
+tworail 16 longest 599920 chatter 5566 flights 200007 jumps 24748 pieces 21249 capped true s 4469.201

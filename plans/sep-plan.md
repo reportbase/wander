@@ -1,6 +1,6 @@
 # SEP: separating overlapping Cauchys, standpoints and amounts
 
-27 Nov 2026; SPN R1272. Tom: "To tease out the payload, you might need to separate multiple overlapping cauchies. We
+27 Nov 2026; SPN R1274. Tom: "To tease out the payload, you might need to separate multiple overlapping cauchies. We
 could test this and make the idea robust. Has any one done this?", then "Yes".
 
 ## The case

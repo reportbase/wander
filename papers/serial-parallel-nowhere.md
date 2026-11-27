@@ -7607,7 +7607,7 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
-- **R1272** (27 Nov 2026; Tom: "To tease out the payload, you might need to separate multiple overlapping cauchies. We
+- **R1274** (27 Nov 2026; Tom: "To tease out the payload, you might need to separate multiple overlapping cauchies. We
   could test this and make the idea robust. Has any one done this?", then "Yes"): SEP (`plans/sep-plan.md`,
   `runs/sep/`), predictions first. Prony exact (10⁻⁴⁶, K = 1–4); a non-affine Möbius map carries every fit of draws onto
   its image (10⁻⁶); the Cramér–Rao bound on the weight from draws the same across width ratios to 10⁻²⁸ at each
@@ -7615,6 +7615,25 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   Cauchy's always. Run 1's S3 killed by my tolerance (Monte Carlo scatter), S4 by its letter; run 2 exact, not killed.
   Separation known widely (spectroscopy, Prony, harmonic inversion, Cauchy mixtures; McCullagh 1996's equivariance); the
   limit stated in the hyperbolic distance, and the draws/spectrum split, not found. Claude's reading, not ruled.
+
+- **R1273** (26 Nov 2026; Tom: "Continue if your still making progress"): NBS run 2 (`plans/nbs-plan.md`,
+  `runs/nbs/nbs2.mjs`): B′, the map with no scan, on PEB's event engine with its full signature. On the cut it settles
+  in 9,149 flights from 16 or 64 starting spans alike, finds all 75 of PEB run 5's jumps and 62 more the 1,024-aim scan
+  stepped over (the five its post hoc suspected among them), and holds every piece wider than 10⁻⁴ by its own 8 leaves
+  to 10⁻⁶ (373 of 373 over both maps): R1263 shown on one table, a cost of leaves and bisection steps, no N. On two
+  rails it is capped at 200,000 flights in a window 3·10⁻⁴ rad wide near 0.53534 where the white comes to rest touching
+  the 1 and the engine chatters (up to 599,920 events a shot, the signature different at every aim down to 10⁻¹⁴), so it
+  maps nothing past it. C1, C2, C5 killed there, by the engine; C6 killed by my bound (the cut cost 2.6 times the scan,
+  which had missed 62 jumps); C3, C4 not killed. A map that must hold every piece needs a rule for a place with none.
+
+- **R1272** (26 Nov 2026; Tom: "Merge and run"): NBS run 1 (`plans/nbs-plan.md`, `runs/nbs/`), 60 seeded 9-ball
+  positions on games' own fixed-tick engine, `games.html` unchanged. B (the whole circle mapped, pot windows weighed by the
+  hand's error) finds a pot wherever the games' ghost-ball planner C does and in 20 of the 25 where C finds none (A1), and
+  pots far more under the hand's error (level 3 61.0% against 32.8%, level 5 85.8% against 47.2%; A2), mostly from the
+  positions C cannot pot; the leave held by K ≤ 12 in 82.4% of wide pot pieces (A4), the bridged aim as good as 64 flights in
+  24 of 26 (A5). A3 killed by my guess (B costs 48,018 flights a position, 4,001 times C's 12). A7 (K is n) killed on this
+  engine, by the engine: the tick's hidden jumps keep B′ halving to its cap at every position; R1263's test belongs on the
+  event engine (PEB runs 4–5).
 - **R1271** (27 Nov 2026; Tom: "how deep does it go? human continuous reads a continuous tellisicope read of a discrete
   write", then "yes, run it and merge"): CDW run 3 (`runs/cdw/cdw3.py`), predictions first, nothing killed. A chain of
   Cauchy reads with a magnification M is one read at h₁ + (h₂ + h₃)/M (2·10⁻¹²); the order and split of layers do not
