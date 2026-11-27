@@ -543,6 +543,18 @@ the read: the rule answers for any one place from no standpoint, a lookup and no
 would mean making all of it. A stored representation out to 10²⁶ units would be about 10⁵² cells; the read scans some 29,000 at
 every distance (essay 22, §13; `sky-city.html`).
 
+**A bar of tools.** The plainest case is a menu. The games page's bottom bar holds a game's tools on a ring. Each is read
+by one slope, its count from the focus over a thumb H, and laid at x = s/(1 + |s|) of the half bar: fractions only, no
+angle and no π. One thumb out is half the bar; past it the tools bunch toward the two ends, the horizon, shrinking with
+the room they have. `ring.html` does the same with any array as the payload: numbers, words, emoji, your own list, from
+eight items to 10¹⁵ or without end. About 27 are told apart whatever N is; doubling N, or adding items as you watch,
+moves no slot near the focus and only thickens the strips at the ends; repainting the array, or multiplying every number
+by a million, changes the paint under outlines that never move. Beside it, the writer's layout gives every item an equal
+share of the width, 2W/N pixels: all of a hundred told apart, none past about a thousand, and an array without end gets
+no width at all. The bar's first form laid equal turns by tan and kept the middle, the dual vantage's way, and put the
+chips in the same places; nothing in what it showed said which form made it (essay 27 §5). The Cauchy was in it all
+along, though no line of its code named one (essay 17 §2).
+
 ---
 
 ## 11. What the dual hemispherical vantage adds

@@ -1337,7 +1337,12 @@ N and the view does not change; make N unbounded and it still does not (an infin
 the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull: an implementation holding K samples does
 O(K) work, whatever N. What the cull gives up is sameness: a count that holds N holds every item as 1/N of the whole, all
 alike, with no standpoint favoured; a read's K is spent finest at the corner and coarser each stretch away, and that
-unevenness is the vantage. **Checked** (`star-field.html`). The cull leaves K and compresses N at the horizon (Tom, R1109): nothing is
+unevenness is the vantage. **Checked** (`star-field.html`). The same fact runs in a bar of tools (R1264–R1266): the games page's bottom bar, and `ring.html` with any array as
+its payload, lay each item at its slope from a focus, s = (count from the focus)/H, at x = s/(1 + |s|) of the half bar,
+fractions only; one thumb falls at half the bar and the ends are the horizon. About 27 are told apart from a hundred
+items to 10¹⁵ or without end, a repaint moves no slot, and a writer's layout of 2W/N pixels an item tells none apart
+past about a thousand. Its first form, equal turns put on the bar by tan, was the dual vantage's and placed the same;
+the two forms agree, which is why they are so easily taken for each other (R1264). **Checked** (`ring.html`). The cull leaves K and compresses N at the horizon (Tom, R1109): nothing is
 cut, every thing keeps its direction, and what lies past the last address (about 2K/π thumbs out, counted) shares it with
 everything beyond. What does the compressing is the heat, ds/(1 + s²), thinning toward the horizon, not a count; K is a
 fineness, counted as addresses only by a count (R706). The same fact in statistics: readings from one standpoint averaged
@@ -1844,7 +1849,8 @@ corner at one arm, the size ratio) and recovers from the paint g/L and t/2, neve
 parts (Galileo's fall; Lee's τ, here read on a body falling away); the sorting ours, the numbers unchanged (R1229).
 
 *A Cauchy reading a Cauchy* (R1237; Tom: "This is worth understanding in more detail.  A cauchy reading another
-cauchy."; then "yes, add it to §7 and merge"; CRC, `plans/crc-plan.md`). Lay the read's heat over gravity's take: a
+cauchy."; then "yes, add it to §7 and merge"; CRC, `plans/crc-plan.md`); on a line, `gravity-ring.html`, R1267: Tom, "Gravity has its own cautchy. So fingers browsing fingers browsing gravity
+array"). Lay the read's heat over gravity's take: a
 plane painted point by point with the pull found there from matter below it, a reader a height a above it looking down,
 its heat per unit of the plane the flat screen's a/(2π(a² + ρ²)^(3/2)). Three things come out exactly. The two Cauchies
 compose to one, the heights added (P_a ∗ P_h = P_(a+h)). The heat-weighted reading of the paint is the pull at the

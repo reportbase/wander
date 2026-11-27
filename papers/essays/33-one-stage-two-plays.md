@@ -451,7 +451,9 @@ Tom's picture of it: "we have fingers reading fingers reading payload." The read
 fingers, which point to the matter. Stacked, they are one set of fingers, so only the total height reaches the reading.
 A plane at 1 over matter at 2 reads exactly as a plane at 2 over matter at 1. The layers cannot be counted from the
 reading, which is the inverse problem's old fact, that one field fits many arrangements of matter. The amount enters
-once, where the last fingers meet the matter. Tom, later: "forget pointers, its just an indirection."
+once, where the last fingers meet the matter. Tom, later: "forget pointers, its just an indirection." On a line it can be watched: in `gravity-ring.html` a reader is dragged over masses at their depths, its fingers'
+average lies on the masses read from a + d to fifteen digits, and raising the reader sinks every mass by as much
+(Tom, 27 November: "Gravity has its own cautchy. So fingers browsing fingers browsing gravity array").
 
 It stops in two places, and both were predicted. The median of the painted pulls is 59% off: the reading is the heat's
 average, a sum, so a read passed through a take comes out a sum, and the order a read keeps is lost on the way. And the
