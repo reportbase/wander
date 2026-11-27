@@ -95,3 +95,26 @@ the one number the read's geometry gives them, their hyperbolic distance; widths
 spectrum (an amount per channel with its own error, the write side) the same pairs part by up to 29%: the channel's
 noise is an amount, and amounts are not unmoved by the turn's maps. Either way the total amount survives where the
 split between the two does not (CDW run 2's total mass). The arithmetic is classical; the sorting is ours.
+
+## Run 3: measured data, a ¹H spectrum's multiplets (predictions committed before the data were downloaded)
+
+27 Nov 2026; Tom: "Merge, then 1 and 2". BMRB metabolomics entry bmse000297, ethanol, set01, the 1D ¹H free induction
+decay (Bruker), read with nmrglue. Chosen before looking: a J-coupled multiplet is a sum of overlapping Cauchys whose
+amounts are known beforehand (first order: the CH₃ triplet 1:2:1, the CH₂ quartet 1:3:3:1, the CH₂ : CH₃ total 2 : 3 by
+proton count), equally spaced by one J (about 7.1 Hz, known beforehand). Each line is one standpoint m + iγ. In the
+free induction decay each is one pole, e^(i·m·t − γ·t) (essay 2 §9's phasor), so two methods: M1, a least-squares fit of
+Lorentzians to the phased spectrum in a window about each multiplet; M2, the matrix pencil (Prony's family) on the
+decay itself, shifted to the window and low-passed, poles kept inside the window. Known sources of error, stated now:
+second-order roofing (about J/Δν, under 1%), the recycle delay (totals off if relaxation is incomplete), shimming (lines
+not quite Lorentzian), the HDO presaturation.
+
+- **N1.** In both multiplets and by both methods the lines are equally spaced, J between 6.9 and 7.3 Hz, the CH₃'s and
+  the CH₂'s J agreeing within 0.05 Hz.
+- **N2.** The total amount, the payload of each multiplet: CH₂/CH₃ = 2/3 within 5%, by both methods.
+- **N3.** The split: each line's share of its multiplet within 10% of 1:2:1 and 1:3:3:1, by both methods.
+- **N4 (the reading).** The two methods disagree less on each multiplet's total than on its single lines (largest
+  relative disagreement over lines larger than over totals).
+- **N5.** The lines of one multiplet share one width within 10% (one height for the standpoints of one group).
+
+Reported, not predicted: each adjacent pair's hyperbolic distance acosh(1 + J²/(2γ²)), and how each line's error stands
+against it.
