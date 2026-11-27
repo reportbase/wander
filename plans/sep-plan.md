@@ -180,3 +180,32 @@ it for the turns about i, and only those. So:
 
 If T4 fails (the spread under 5%), laying channels by one turn restores more than its own stabilizer, and the reasoning
 above is wrong. Exact at 30 digits (mpmath), continuum, the whole line by x = tan t.
+
+### Run 4 (`runs/sep/sep4.py`, `sep4-out.txt`; post hoc `sep4-posthoc.py`, `sep4-posthoc-out.txt`)
+
+- T1 not killed: the Cauchy about i keeps g′(x)·ρ(g(x)) = ρ(x) under turns about i to 4.9·10⁻³¹; a translation by 1
+  misses by 1.62, a dilation by 2 by 1.0.
+- T2 KILLED by its letter, by my set-up: with each channel's noise its own count, the bound on the split is the same for
+  every width ratio to 10⁻²⁵ (d = 1.5), 10⁻²⁷ (2, 3), as predicted, but I set its agreement with run 2's draws bound "to
+  10⁻¹⁵" against run 2's printed values, which carry twelve digits (apart 1.05·10⁻¹², 3.0·10⁻¹³, 6.0·10⁻¹⁴; the script's
+  10⁻¹⁰ tolerance was mine, not the plan's). Post hoc the draws bound recomputed at full precision equals the counts' to
+  10⁻³¹, 10⁻³¹, 7.7·10⁻³⁰: counted noise is the draws' case binned, exactly.
+- T3 not killed: the same noise in channels even in frequency, the whole line, spreads 28.6%, 20.4%, 21.8% across r at
+  d = 1.5, 2, 3 (run 2's finite window gave 28.6%, 20.4%, 21.8%).
+- T4 KILLED: channels even in the turn about i spread only 0.56%, 0.79%, 4.1% across r, under my 5%. The reasoning's
+  exact clause holds (T5), its size was wrong: run 2's pairs all sit with their middle near i (widths 1/√r and √r, feet
+  symmetric), so they are nearly turns of one another about i, and the turn-laid channels nearly keep them alike; the
+  farthest from that (d = 3, r = 16) parts most.
+- T5 not killed: the d = 1.5, r = 1 pair turned about i by 0.3, 1.0, 2.0 keeps one turn-laid bound to 3·10⁻²⁶; even in
+  frequency it moves by 21%, 2.8%, 0.3%.
+
+Post hoc, the d = 1.5 pair carried away from i by a dilation (a hyperbolic step D): turn-laid bound 3.96, 3.73, 3.27,
+2.16, 1.33 at D = 0, ½, 1, 2, 3; even in frequency 13.7, 17.6, 22.5, 37.2, 61.3; counted 3.9206 at every D.
+
+Reading (Claude's, not ruled). The only noise that leaves the separation's difficulty to the hyperbolic distance alone is
+noise that is the paint's own count: it is draws binned, and every map of the stage keeps it. Noise laid as an amount on
+channels picks a chart, and no chart of the line is kept by every map; channels laid evenly by the turn from one
+standpoint keep exactly the turns about that standpoint, a read's own symmetry, and nearly keep what lies near it. So the
+spectrum's 20–29% is not the noise as such but the noise's chart: an amount laid evenly in frequency. A spectrum that
+counted (photons, nuclei) would separate its lines as draws do; one with a fixed electronic noise per channel carries the
+chart its channels were laid on.

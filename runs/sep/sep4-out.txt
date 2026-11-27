@@ -1,0 +1,48 @@
+T1: turns about i, worst relative departure 4.94e-31; translation by 1 1.62; dilation by 2 1.0
+count d = 1.5, r =  1: bound on the split 3.92060250550412
+count d = 1.5, r =  2: bound on the split 3.92060250550412
+count d = 1.5, r =  4: bound on the split 3.92060250550412
+count d = 2.0, r =  1: bound on the split 1.90607019580943
+count d = 2.0, r =  2: bound on the split 1.90607019580943
+count d = 2.0, r =  4: bound on the split 1.90607019580943
+count d = 3.0, r =  1: bound on the split 0.876654356749052
+count d = 3.0, r =  2: bound on the split 0.876654356749052
+count d = 3.0, r =  4: bound on the split 0.876654356749052
+count d = 3.0, r = 16: bound on the split 0.876654356749052
+freq  d = 1.5, r =  1: bound on the split 13.6696925095961
+freq  d = 1.5, r =  2: bound on the split 15.9218121104618
+freq  d = 1.5, r =  4: bound on the split 12.3843673462402
+freq  d = 2.0, r =  1: bound on the split 7.16941241081557
+freq  d = 2.0, r =  2: bound on the split 7.88776674606874
+freq  d = 2.0, r =  4: bound on the split 8.62995090045094
+freq  d = 3.0, r =  1: bound on the split 3.72328165937603
+freq  d = 3.0, r =  2: bound on the split 3.89209167038441
+freq  d = 3.0, r =  4: bound on the split 4.3991680340629
+freq  d = 3.0, r = 16: bound on the split 4.53337122800946
+turn  d = 1.5, r =  1: bound on the split 3.96390974060423
+turn  d = 1.5, r =  2: bound on the split 3.9533073873685
+turn  d = 1.5, r =  4: bound on the split 3.97559315668682
+turn  d = 2.0, r =  1: bound on the split 1.92959237918228
+turn  d = 2.0, r =  2: bound on the split 1.92190954482547
+turn  d = 2.0, r =  4: bound on the split 1.91445849263837
+turn  d = 3.0, r =  1: bound on the split 0.78680196588052
+turn  d = 3.0, r =  2: bound on the split 0.790025280341099
+turn  d = 3.0, r =  4: bound on the split 0.795039593978697
+turn  d = 3.0, r = 16: bound on the split 0.818855864894622
+counts d = 1.5: spread across r 8.64e-26; against run 2's draws 1.05e-12
+counts d = 2.0: spread across r 1.86e-27; against run 2's draws 3.01e-13
+counts d = 3.0: spread across r 4.93e-27; against run 2's draws 5.96e-14
+freq d = 1.5: spread across r 0.2856
+freq d = 2.0: spread across r 0.2037
+freq d = 3.0: spread across r 0.2176
+turn d = 1.5: spread across r 0.005637
+turn d = 2.0: spread across r 0.007905
+turn d = 3.0: spread across r 0.04074
+turned by 0.3: d 1.5; turn-laid bound 3.96390974060423 (off 3.39e-27); even in frequency 16.555318 (off 0.211)
+turned by 1.0: d 1.5; turn-laid bound 3.96390974060423 (off 2.88e-26); even in frequency 13.282239 (off 0.0283)
+turned by 2.0: d 1.5; turn-laid bound 3.96390974060423 (off 2.23e-27); even in frequency 13.62738 (off 0.0031)
+T1: not killed
+T2: not killed
+T3: not killed
+T4: KILLED
+T5: not killed

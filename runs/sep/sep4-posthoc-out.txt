@@ -1,0 +1,8 @@
+d = 1.5: counts 3.9206025055041225766, draws at full precision 3.9206025055041225766, apart 1.01e-31
+d = 2.0: counts 1.9060701958094259754, draws at full precision 1.9060701958094259754, apart 1.03e-31
+d = 3.0: counts 0.87665435674905226393, draws at full precision 0.87665435674905226393, apart 7.65e-30
+carried 0 from i: turn-laid 3.963909741, even in frequency 13.66969251, counts 3.920602506 (the draws' 3.920602506)
+carried 0.5 from i: turn-laid 3.7269569, even in frequency 17.55223262, counts 3.920602506 (the draws' 3.920602506)
+carried 1 from i: turn-laid 3.26806475, even in frequency 22.5375128, counts 3.920602506 (the draws' 3.920602506)
+carried 2 from i: turn-laid 2.157260561, even in frequency 37.15807675, counts 3.920602506 (the draws' 3.920602506)
+carried 3 from i: turn-laid 1.326276906, even in frequency 61.26331152, counts 3.920602506 (the draws' 3.920602506)
