@@ -7607,6 +7607,11 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1271** (27 Nov 2026; Tom: "how deep does it go? human continuous reads a continuous tellisicope read of a discrete
+  write", then "yes, run it and merge"): CDW run 3 (`runs/cdw/cdw3.py`), predictions first, nothing killed. A chain of
+  Cauchy reads with a magnification M is one read at h₁ + (h₂ + h₃)/M (2·10⁻¹²); the order and split of layers do not
+  show; the equal row's ripple 2/sinh(2πu); a pixel layer a write in the middle, its own ripple 2e^(−2πh₃/p), its box
+  sinc(πp/M) on the sky's (1.7·10⁻⁶, the aliases). Claude's reading, not ruled. *Reads and Writes* §7.
 - **R1270** (27 Nov 2026; Tom: "you are saying they use this equation, but for different purposes.", then "search for
   it, add it to the papers and merge"): searched. The equation and its uses are classical (upward continuation, e^(−kh),
   the half-plane's Poisson kernel, the wrapped Cauchy, Abel summation); the kernel as the point's geometry is in print in

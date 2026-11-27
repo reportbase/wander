@@ -1890,7 +1890,11 @@ point's own geometry is classical too, in part: in the half-plane the harmonic m
 subtends from the point over π, and (from memory, not checked) a uniform double layer's potential is its solid angle
 over 4π. What was not found: the continuation kernel named as the law a look uses, the same for a look and a pull; the
 row's ripple stated as a lattice of sources against a sheet; and the sorting itself, a continuous read over discrete
-writes, the arrangement lost where the discreteness drops under the read's reach, the amount kept. So the numbers are
+writes, the arrangement lost where the discreteness drops under the read's reach, the amount kept. A chain of reads (run 3, R1271; Tom: "human continuous reads a continuous tellisicope read of a discrete write") is one
+read: an objective h₁, a magnification M and later reads h₂, h₃ give exactly the read from h₁ + (h₂ + h₃)/M (to
+2·10⁻¹² of the peak), so the layers' order and split never show, a later read counts 1/M, and no layer gives back what an
+earlier one smoothed. A detector between is a write: its pixels leave their own ripple, 2e^(−2πh₃/p) at their own
+spacing p, beside the sky's, and its box adds the one factor sinc(πp/M). So the numbers are
 others', the attribution in part, the sorting ours. By R1240 the read's density and gravity's share the form for
 different reasons; this says what each reads of the other, not that they are one. No result changes (R1229).
 

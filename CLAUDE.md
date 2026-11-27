@@ -623,6 +623,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1271 (27 Nov; Tom: "how deep does it go? human continuous reads a continuous tellisicope read of a discrete write",
+  "yes, run it and merge"): CDW run 3 (`runs/cdw/cdw3.py`): a chain of reads is one read at h₁ + (h₂ + h₃)/M, a later
+  read counting 1/M, the layers uncountable; a pixel layer a write with its own ripple 2e^(−2πh₃/p) and box sinc(πp/M).
+  Nothing killed; in *Reads and Writes* §7. Claude's reading, not ruled.
   R1270 (27 Nov; Tom: "search for it, add it to the papers and merge"): CDW and the search in *Reads and Writes* §7
   ("Writes the read takes for a continuum"): the numbers classical, the kernel as the point's geometry in part (harmonic
   measure as subtended angle), the sorting not found (snippet depth).
