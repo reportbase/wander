@@ -628,6 +628,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   difficulty set by the hyperbolic distance alone (Möbius equivariance, McCullagh 1996; bounds equal across width ratios to
   10⁻²⁸); a spectrum with additive noise breaks it by 20–29%; the total amount always kept. Run 1's S3 killed by my
   tolerance, S4 by its letter; run 2 not. Not in any paper.
+  NBS run 3 (`runs/nbs/nbs3.mjs map cut|tworail 16|64`, then `report`; SPN R1275; Tom: "1"): B′ with a floor of 10⁻⁷ rad
+  for places with no pieces; two rails still capped (the chattering band 4·10⁻⁵ rad wide, my floor far below it), the cut's
+  slow ends marked; D2, D5 not killed, the rest killed. A width cannot tell no pieces from many; a jump count per span can.
   NBS run 2 (`runs/nbs/nbs2.mjs map cut|tworail 16|64`, then `report`; SPN R1273; Tom: "Continue if your still making
   progress"): B′ on PEB's event engine. Cut: no scan, the same 137 jumps from 16 or 64 spans, all 75 of PEB run 5's and 62
   it missed, every piece held by 8 leaves (R1263 shown); two rails capped in a window where a touching pair chatters (C1,

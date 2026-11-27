@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1275** (27 Nov 2026; Tom: "1"): NBS run 3 (`plans/nbs-plan.md`, `runs/nbs/nbs3.mjs`): R1273's B′ given a floor, a
+  span narrower than 10⁻⁷ rad with three signatures among its leaves (or leaves agreeing and coefficients failing)
+  marked unmapped. On two rails it marks 3.2·10⁻⁵ rad, 99% in the chattering window (D2), and every wide piece is still
+  held (D5), but it hits the cap again: the chattering band is at least 4·10⁻⁵ rad wide with jumps at every scale, so
+  the floor (my choice) sits far below it and 7,475 jumps are bisected there (D1, D3, D6, D7 killed). On the cut it
+  marks four slow ends of 2.7·10⁻⁷ rad that run 2 held (D4 killed). A width cannot tell a place with no pieces from a
+  place with many; the count of jumps a span yields for its width can (a run 4, not run).
 - **R1274** (27 Nov 2026; Tom: "To tease out the payload, you might need to separate multiple overlapping cauchies. We
   could test this and make the idea robust. Has any one done this?", then "Yes"): SEP (`plans/sep-plan.md`,
   `runs/sep/`), predictions first. Prony exact (10⁻⁴⁶, K = 1–4); a non-affine Möbius map carries every fit of draws onto

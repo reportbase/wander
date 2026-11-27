@@ -237,3 +237,31 @@ fail is marked unmapped too. Neighbouring unmapped spans are joined into windows
 Each killed by its own number. Known beforehand: run 2 (where the chatter is, the cut's numbers); D2's "at least 90%"
 and D7 are guesses. If D1–D6 stand: a map with no scan count says where the table has pieces and where it does not, at a
 cost of leaves and steps, and the window it gives up on is the engine's, not the table's.
+
+### Run 3 (27 Nov 2026; `runs/nbs/nbs3.mjs`, outputs `runs/nbs/nbs3-{cut,tworail}-{16,64}.json`, `nbs-run3.txt`)
+
+| | cut | two rails |
+| --- | --- | --- |
+| flights, S = 16 | 8,465 (run 2 9,149) | 200,004, capped |
+| jumps, pieces | 137, 292 | 7,578, 2,940 (7,475 of the jumps at 0.53533–0.53537) |
+| unmapped | 4 windows, 2.7·10⁻⁷ rad | 8 windows, 3.2·10⁻⁵ rad, 99.0% inside 0.5352–0.5356 |
+| pieces wider than 10⁻⁴ held to 10⁻⁶ | 222 of 222 | 151 of 151 |
+
+- **D1 KILLED** by two rails, by my floor. 10⁻⁷ is far below the chattering band, which runs at least from 0.53533 to
+  0.53537 (4·10⁻⁵ rad): every span in it wider than the floor that holds a change is bisected (about 33 chattering flights
+  a jump, up to 600,000 events each), and the cap went in finding 7,475 jumps there; the map reached 0.53537 and stopped.
+- **D2 not killed.** What was marked unmapped on two rails is 3.2·10⁻⁵ rad, 99.0% of it in the chattering window.
+- **D3 KILLED** by the cap again: 62 of PEB run 5's 104 jumps outside the unmapped windows lie past 0.5379, never reached;
+  all 42 before it found.
+- **D4 KILLED**: on the cut the floor marks four slow-converging ends (0.0596, 0.4115, 1.1015, 1.2798; 2.7·10⁻⁷ rad in
+  all) that run 2 halved below 10⁻⁷ and held, and that saves 7.5% of the flights; the same 137 jumps.
+- **D5 not killed**: 151 of 151 on two rails, 222 of 222 on the cut.
+- **D6 KILLED**: both capped (flights 1.000); outside both runs' windows 98 of 100 and 98 of 99 jumps shared, the
+  differences in the chattering band's edge.
+- **D7 KILLED**: capped.
+
+**What it says.** A floor on width cannot tell a place with no pieces from a place with many: the chattering band is
+4·10⁻⁵ rad wide with jumps at every scale inside it, and the cut's slow ends are 10⁻⁷ rad wide with none. What tells them
+apart is how many jumps a span holds for its width, not its width. A run 4 would mark a span unmapped when it has yielded
+more than a set number of jumps (say 64) and none of its pieces is wider than its K-th part, with predictions written
+first; or the engine settles a touching pair (step 2 of R1273's list). Not run.
