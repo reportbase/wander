@@ -81,3 +81,20 @@ period) applied by direct quadrature, not by Fourier, so the composition is comp
   (h₃ = 0.5): the sky's writes and the detector's writes each leave their own ripple.
 
 Kill: any of T1–T3 outside its bound.
+
+### Run 3's results (`runs/cdw/cdw3.py`, output `runs/cdw/cdw3-out.txt`; one second)
+
+Nothing killed.
+- T1: the objective, magnification and two later reads are one read on the sky at u = h₁ + (h₂ + h₃)/M, worst gap
+  1.2·10⁻¹⁴, 6.4·10⁻¹⁴ and 2.0·10⁻¹² of the peak at M = 1, 2, 10; the three splits at M = 1 one image to 2.1·10⁻¹⁴.
+- T2: the equal row's ripple 2/sinh(2πu) to 2.2·10⁻¹² relative; at M = 10 (u = 0.36) 30.1 times that at M = 1 (u = 0.9).
+- T3: (a) the uniform sky's pixel ripple 0.1731790751 against 2/sinh(π) to ten digits; (b) the stars' component
+  0.19981872 against 2e^(−2πh₁)·sinc(π/8)·e^(−2πh₃/8) = 0.19981906, relative 1.7·10⁻⁶ (the aliased harmonics, about
+  e^(−2π·7h₁), as expected); (c) the pixel-frequency ripple 2e^(−π) to 2.6·10⁻¹³.
+
+Reading (Claude's, not ruled). However deep the chain of continuous reads, it is one read, the heights summed, each
+weighted by 1/M of the magnification before it; no layer brings back what an earlier one smoothed, and the order and
+split of the layers do not show. A telescope rescales what follows it, so the objective's grain decides. A detector is
+a write in the middle: its pixels leave a ripple of their own at their own spacing, by the same law, beside the sky's,
+and its box adds one factor, sinc(πp/M), to the sky's. Classical optics (cascaded transfer functions, the pixel's
+box); the sorting into reads, writes and the one place an amount enters is ours.
