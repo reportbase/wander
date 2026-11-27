@@ -1901,7 +1901,10 @@ standpoint, how hard two are to separate is set by their hyperbolic distance alo
 its image, and the bound on the amounts is the same for every width ratio at one distance to 10⁻²⁸ (McCullagh's
 equivariance, 1996, with the isometries' transitivity). From a spectrum, an amount per channel with its own noise, the
 same pairs part by 20–29%: the channels' noise is an amount, which the turn's maps do not leave alone. Either way the
-total amount comes back within twice one Cauchy's error, where the split between the two does not. So the numbers are
+total amount comes back within twice one Cauchy's error, where the split between the two does not. On a measured spectrum
+(ethanol's ¹H, its triplet and quartet, amounts known beforehand as 1:2:1, 1:3:3:1 and 2 : 3) the lines fitted as
+Cauchys give the totals to 1.2% and the splits to 6%, the lines 5.5 apart in that distance; a second route, poles from the
+decay, failed as I built it (SEP run 3, R1275). So the numbers are
 others', the attribution in part, the sorting ours. By R1240 the read's density and gravity's share the form for
 different reasons; this says what each reads of the other, not that they are one. No result changes (R1229).
 
