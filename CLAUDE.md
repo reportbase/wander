@@ -1706,7 +1706,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   merge"), a standalone page, plain canvas. In the plane (masses as rods end on, the ground a line): each mass M at depth d
   pulls on the ground with M·C(x; m, d), gravity's fingers (GRV); added, the array. A reader at height a over f turns evenly,
   its fingers landing at f + a·tan θ, each painted by the array there; their mean equals Σ M·C(f; m, d + a), the heights
-  added (SUM's relay, upward continuation): 3.5·10⁻¹⁵ of the peak at a = 1.5 and 5 with 4,096 fingers, 4·10⁻⁶ at a = 0.3; the
+  added (SUM's relay, upward continuation; CRC's result, R1237, essay 33 §16, this page its demo): 3.5·10⁻¹⁵ of the peak at a = 1.5 and 5 with 4,096 fingers, 4·10⁻⁶ at a = 0.3; the
   array sampled every 0.1 or 0.5, 2.6·10⁻⁴ and 6.5·10⁻³; mass ×10 multiplies the mean by 10 and moves no finger; raising the
   reader by h sinks every mass by h. Uses tan and atan (the turn's chart). Never calls the pull a read (R1183) or the mass
   told from its depth (R1197). `?a=&f=&seed=&mult=&step=0|0.1|0.5&n=`; hook `window.__gravRing` (`field`, `arrayAt`,
