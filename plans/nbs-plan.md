@@ -317,3 +317,25 @@ finishes, cheaply, without touching the cut. But the rule as written gives up th
 not the chatter: a tally counted up the whole chain of spans fires first at the top. The fix is to give up the smallest
 span that qualifies (the one where the count passes J, checked only on the span being opened, not its ancestors), with
 the jumps' count per width still the test. A run 5, predictions first, not run.
+
+### Run 5, planned (27 Nov 2026; Tom: "Merge, then run 5"). Predictions written before any script changes
+
+Run 4's count stopped the map but gave up the largest span holding the chatter. Run 5 changes only which span is given
+up. **The smallest busy span**: each jump found adds one to the tally of every span it lies in, as in run 4; when a jump
+takes one or more spans past J = 64 with no piece wider than their eighth, only the smallest of them is given up, and its
+live tally is then taken off every span above it, so a span is given up only for jumps outside the windows already
+given up. Everything else is run 4's (no width floor, K = 8, 10⁻⁷, the cap, the bracket rule at 10⁻¹²).
+
+- **F1 (it finishes).** Both maps finish under the cap at S = 16 and S = 64.
+- **F2 (only where the engine chatters).** On two rails the unmapped windows total under 10⁻³ rad, at least 90% of their
+  measure within 0.5352–0.5356.
+- **F3 (the jumps outside).** On two rails every jump of PEB run 5 not inside an unmapped window has a B′ jump within
+  10⁻⁹ rad.
+- **F4 (the cut unchanged).** On the cut nothing unmapped, the same 137 jumps, flights within 5% of 9,149.
+- **F5 (pieces held).** On two rails at least 95% of pieces wider than 10⁻⁴ rad held to 10⁻⁶.
+- **F6 (no N).** On two rails S = 16 and S = 64 find the same jumps outside both runs' windows, flights within 20%.
+- **F7 (cost).** Two rails' flights at most 4 × 4,621.
+
+Each killed by its own number. Known beforehand: runs 2–4 (the band at least 0.53533–0.53537; run 4's numbers); the
+window's width under this rule I have not worked out, so F2 is the test that matters. If F1–F7 stand: a map with no scan
+count says where the table has pieces and gives up only the place where the engine has none.
