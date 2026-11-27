@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1276** (27 Nov 2026; Tom: "1"): NBS run 3 (`plans/nbs-plan.md`, `runs/nbs/nbs3.mjs`): R1273's B′ given a floor, a
+  span narrower than 10⁻⁷ rad with three signatures among its leaves (or leaves agreeing and coefficients failing)
+  marked unmapped. On two rails it marks 3.2·10⁻⁵ rad, 99% in the chattering window (D2), and every wide piece is still
+  held (D5), but it hits the cap again: the chattering band is at least 4·10⁻⁵ rad wide with jumps at every scale, so
+  the floor (my choice) sits far below it and 7,475 jumps are bisected there (D1, D3, D6, D7 killed). On the cut it
+  marks four slow ends of 2.7·10⁻⁷ rad that run 2 held (D4 killed). A width cannot tell a place with no pieces from a
+  place with many; the count of jumps a span yields for its width can (a run 4, not run).
 - **R1275** (27 Nov 2026; Tom: "Merge, then 1 and 2"): SEP run 3 (`runs/sep/sep3.py`), measured data, predictions first:
   ethanol's ¹H spectrum (BMRB bmse000297, 400 MHz), the CH₃ triplet and CH₂ quartet as overlapping Cauchys whose amounts
   are known beforehand. Fitted as Lorentzians (M1): J 7.07–7.10 Hz in both, CH₂/CH₃ 1.2% from 2/3, every line's share
