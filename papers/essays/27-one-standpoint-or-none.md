@@ -116,6 +116,18 @@ apply (R950). What separates them is what each needs and what each covers:
   pairs of 353 (1.4%) were behind; cosine gave them values, the read gave them none.
 - **The trigonometry.** Cosine is the cosine of an angle. The read is a ratio of parts.
 
+The same thing happens in a menu bar, which shows why the two are so easily taken for each other. The games page's bottom
+bar holds a game's tools on a ring: with more tools than the screen fits, it shows about as many as fit, whatever the
+number of tools, the rest past the bar's ends, brought round by turning it. That is K, not N, on a screen (essay 16). But
+the code that does it is the dual hemispherical vantage's: each tool at an equal turn, `angle + i·π/N`, put on the screen by
+`tan`, the ones drawn found by `atan`, the ring closing on itself after a half turn. A single vantage would hold a slope for
+the focus, place the others by composing slopes, (s + a)/(1 − sa), cull by comparing slopes, and have a fan running to a
+horizon, never a loop; the wrap would be a count of the tools, not a turn. Both give the same chips in the same places. So
+the bar works, and it is still not a read. Nothing in what it shows says which form made it; only what the code holds does:
+an angle, π and a closing, or a slope, a composition and a horizon. They part only where the dual vantage has what a read
+cannot (a closing, a total, turns in space that do not commute), and until a problem reaches one of those nothing forces
+anyone to tell them apart. That is how the conflation survives: because it can. (R1264.)
+
 ## 6. What the words showed
 
 The data: GloVe's 50-dimensional word vectors (Pennington, Socher and Manning 2014; 400,000 words from Wikipedia and
@@ -222,7 +234,8 @@ lets it be held at all; a complete record of what it was trained on would be as 
 
 - Tom, 16 November 2026: "Cauchy works on 3d. Does it work on 4d or greater? If so, could be used in AI."; "But AI
   dimensions are orthogonal. In observation, they share a denominator."; "Yes, write the plan and run the test";
-  "Cosine is dhv, so is Ai."; "Write an essay on this and a section to the read wrote paper as a point of comparison
+  "Cosine is dhv, so is Ai."; "This uses arctan, so it's not fully shv"; "No.  Arctan works fine,  it's just not shv"; "This is why people
+  conflate shv and dhv, because you can." (27 November, of the games page's tool ring); "Write an essay on this and a section to the read wrote paper as a point of comparison
   between shv and DHV."
 - `plans/shd-plan.md`, `runs/shd/shd.py`, `runs/shd/shd2.py` (runs 1 and 2; the data's sources and sha256s in the plan).
 - *Reads and Writes* (`../readers-and-writers.md`) §7, "Similarity from one standpoint and from none"; §1 (the reader uses

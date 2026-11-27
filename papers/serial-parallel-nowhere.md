@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1264** (27 Nov 2026; Tom, of the games page's bottom tool ring: "This is k not n in action, the read write paper talks
+  about."; "This uses arctan, so it's not fully shv"; "No.  Arctan works fine,  it's just not shv"; "This is why people
+  conflate shv and dhv, because you can."; "Add it 27 and merge"): the ring (`RING_BOMA`, `makeRing` in reportbase/games)
+  shows about (W + 4·chip)/chip chips whatever the number of tools, K not N; written in the DHV's terms (equal turns iπ/N,
+  `tan`, `atan`, a closing), not a read; left as it is. The two forms agree wherever both apply, so nothing in the output
+  tells them apart; only what each needs does, which is why they are conflated. Essay 27 §5.
 - **R1263** (26 Nov 2026; Tom: "This might seem like a lot extra work, but tb allows us to make real the idea that k is
   n. N is not n."): read as: with the Tangent Bridge the count a procedure runs over is K, the leaves laid on what is met
   between its events, not N, the aims or samples a search could take; the work it buys is set by the world's events and
