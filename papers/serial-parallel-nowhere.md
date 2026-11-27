@@ -7607,6 +7607,14 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1274** (27 Nov 2026; Tom: "To tease out the payload, you might need to separate multiple overlapping cauchies. We
+  could test this and make the idea robust. Has any one done this?", then "Yes"): SEP (`plans/sep-plan.md`,
+  `runs/sep/`), predictions first. Prony exact (10⁻⁴⁶, K = 1–4); a non-affine Möbius map carries every fit of draws onto
+  its image (10⁻⁶); the Cramér–Rao bound on the weight from draws the same across width ratios to 10⁻²⁸ at each
+  hyperbolic distance, from a spectrum with additive noise differing by 20–29%; the total amount within 2× of one
+  Cauchy's always. Run 1's S3 killed by my tolerance (Monte Carlo scatter), S4 by its letter; run 2 exact, not killed.
+  Separation known widely (spectroscopy, Prony, harmonic inversion, Cauchy mixtures; McCullagh 1996's equivariance); the
+  limit stated in the hyperbolic distance, and the draws/spectrum split, not found. Claude's reading, not ruled.
 
 - **R1273** (26 Nov 2026; Tom: "Continue if your still making progress"): NBS run 2 (`plans/nbs-plan.md`,
   `runs/nbs/nbs2.mjs`): B′, the map with no scan, on PEB's event engine with its full signature. On the cut it settles
