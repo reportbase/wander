@@ -623,6 +623,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1268 (27 Nov; Tom: "seems to me you can have a SHV sweep of a DHV sweep.   in other words a continuous read heat
+  sweeping a discrete write heat.", "yes and merge"): CDW (`plans/cdw-plan.md` + `runs/cdw/cdw.py`, exact, the identity
+  known beforehand): the read's heat over writes at the whole numbers sums to sinh(2πH)/(cosh(2πH) − cos(2πf)), the
+  writes' discreteness a ripple of about 2e^(−2πH) (0.0037 at H = 1, 3·10⁻²² at H = 8). Claude's reading, not ruled: one
+  write a thumb a corner; past it the read cannot tell its writes from a continuum, why the ring needs no N. Not in any paper.
   R1265 (27 Nov; Tom: "The ring is cauchy without cauchy"): the tool ring writes no Cauchy, yet equal turns laid by tan
   give 1/(1 + s²), the turn's heat given, not computed; essay 17 §2.
   R1264 (27 Nov; Tom, of the games page's tool ring: "This is k not n in action"; "it's just not shv"; "This is why people
