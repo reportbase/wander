@@ -461,6 +461,28 @@ plane must have nothing on the reader's side of it: matter between the plane and
 matter above the reader 96%. Afterwards, not predicted: what lies on a layer's own side is read as its mirror in the
 plane. Classical throughout: the Poisson kernel's semigroup, geophysics' upward continuation, Kelvin's images.
 
+The plane's matter need not be smooth. Tom, the next day: "seems to me you can have a SHV sweep of a DHV sweep. in other
+words a continuous read heat sweeping a discrete write heat." Lay the read's weight over writes standing at the whole
+numbers and the sum is exact (CDW, Poisson summation): sinh(2πH)/(cosh(2πH) − cos(2πf)), the wrapped Cauchy, a smooth
+value with a ripple of about 2e^(−2πH) on it. At one write a thumb the ripple is four parts in a thousand, at eight
+thumbs three parts in 10²². Past one write a thumb the read cannot tell its writes from a continuum. A row of masses s
+apart at depth d is the same with u = (a + d)/s: an equal row's ripple is exactly 2/sinh(2πu), and masses that differ
+are told apart only as e^(−πu). Pulled back out (Tom: "do they pull out the payload?", "we use this for gravity"), the
+total mass always comes back and the arrangement goes near u ≈ ln(1/σ)/π, σ the reading's error: the old fact that one
+field fits many arrangements, read as the writes' discreteness falling below the read's reach. `gravity-ring.html`'s
+row shows it. A search afterwards found the equation and its uses classical (upward continuation fades each wavelength
+as e^(−kh); the half-plane's harmonic measure of an interval is the angle it subtends over π), and did not find the
+continuation kernel named as a look's law, nor the sorting of a continuous read over discrete writes; the numbers are
+others', the sorting ours (*Reads and Writes* §7, "Writes the read takes for a continuum").
+
+How deep does it go? Tom: "human continuous reads a continuous tellisicope read of a discrete write." As deep as you like,
+and it is still one read (CDW run 3, predictions first, nothing killed). An objective from h₁, a magnification M, an
+eyepiece h₂ and an eye h₃ are exactly the one read from h₁ + (h₂ + h₃)/M, to two parts in 10¹²: the layers' order and
+how the reach was shared never show, a read after the telescope counts 1/M, so the objective decides, and no layer gives
+back what an earlier one smoothed. A camera in the chain is a write in the middle: its pixels leave a ripple of their own
+at their own spacing, 2e^(−2πh₃/p), beside the sky's, and its box adds one factor, sinc(πp/M), to what reaches the eye
+from the stars. Classical optics, transfer functions multiplying; the sorting is the stage's.
+
 Then two corrections of the words used so far. Tom, the same evening: "gravity uses both hemispheres, but its not a dhv,
 gravity has no vantage." And: "the cauchy is just a word we use for lack of a better one. its just a density. gravity has
 a density as well, but for different reasons." So there are three, not two. A read holds one hemisphere from a
