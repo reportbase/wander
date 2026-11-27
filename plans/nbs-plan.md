@@ -358,3 +358,26 @@ narrowly, and so no small span can hold 64 of its jumps; the first span that doe
 rule and run 5's give up the same span for this reason, not for the reason run 4 gave (the order of the tally). A count
 has to be taken about a place, not over a span: for example, the jumps found within w/K of the new jump inside the span
 being cut. A run 6, predictions first, not run.
+
+### Run 6, planned (27 Nov 2026; Tom: "Run 6"). Predictions written before any script changes
+
+Runs 4 and 5 counted jumps over a span, and B′'s spans always end at a jump, so no small span ever held the chatter.
+Run 6 counts **about a place**. Every jump found is kept in order of aim. When a new jump is found at x in a span of
+width w, the J + 1 = 65 jumps found so far nearest to x (x among them) are taken; if they lie within a window I narrower
+than w/K, and no piece found so far that overlaps I is wider than |I|/K, I is given up. A span popped later that
+overlaps a given-up window is cut down to its parts outside it. There is no tally over spans any more. Everything else
+is run 5's (no width floor, K = 8, 10⁻⁷, the cap, the bracket rule at 10⁻¹²).
+
+- **G1 (it finishes).** Both maps finish under the cap at S = 16 and S = 64.
+- **G2 (only where the engine chatters).** On two rails the unmapped windows total under 10⁻³ rad, at least 90% of their
+  measure within 0.5352–0.5356.
+- **G3 (the jumps outside).** On two rails every jump of PEB run 5 not inside an unmapped window has a B′ jump within
+  10⁻⁹ rad.
+- **G4 (the cut unchanged).** On the cut nothing unmapped, the same 137 jumps, flights within 5% of 9,149.
+- **G5 (pieces held).** On two rails at least 95% of pieces wider than 10⁻⁴ rad held to 10⁻⁶.
+- **G6 (no N).** On two rails S = 16 and S = 64 find the same jumps outside both runs' windows, flights within 20%.
+- **G7 (cost).** Two rails' flights at most 4 × 4,621.
+
+Each killed by its own number. Known beforehand: runs 2–5 (the band at least 0.53533–0.53537, 54 jumps found at
+0.5353361 by run 5 at S = 64, the widest piece there 9.2·10⁻³). I have not worked out how many jumps the chatter yields
+before 65 lie close together, so G1 and G7 are as open as G2.
