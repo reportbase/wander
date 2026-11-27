@@ -630,6 +630,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   tolerance, S4 by its letter; run 2 not. Run 3 (R1275, `runs/sep/sep3.py`, BMRB bmse000297 ethanol ¹H, not committed):
   Lorentzian fits give J, the CH₂/CH₃ total (1.2%) and the multiplet shares (within 6%); the matrix pencil as built fails
   (killed by my method). In *Reads and Writes* §7 and essay 33 §16 (R1275).
+  R1277 (27 Nov; Tom: "add it to the papers and merge"): SEP sorted by reads and writes in *Reads and Writes* §7 and essay 33 §16: place and width the standpoint (J a read), the area paint (2 : 3 a count, the payload's), noise an amount breaking the invariance, the total kept, a measured line a chain of reads (natural + the magnet's) so one pole a line fails, the spectrometer's filter a write read as a record. Claude's reading, not ruled.
   NBS run 3 (`runs/nbs/nbs3.mjs map cut|tworail 16|64`, then `report`; SPN R1276; Tom: "1"): B′ with a floor of 10⁻⁷ rad
   for places with no pieces; two rails still capped (the chattering band 4·10⁻⁵ rad wide, my floor far below it), the cut's
   slow ends marked; D2, D5 not killed, the rest killed. A width cannot tell no pieces from many; a jump count per span can.

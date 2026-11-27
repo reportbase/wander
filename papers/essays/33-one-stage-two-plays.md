@@ -490,7 +490,7 @@ only on their hyperbolic distance, the one number the half-plane gives a pair: a
 distance are as hard as two alike, to 28 digits. From a spectrum, an amount in each channel with its own noise, the
 equality slips by a fifth to three tenths, the noise being an amount. The total always comes back; the split is what
 the overlap costs. Separating Cauchys is old (spectroscopy's line fitting, Prony, McCullagh's Möbius equivariance); the
-limit put in the hyperbolic distance, and the split between draws and a spectrum, were not found said.
+limit put in the hyperbolic distance, and the split between draws and a spectrum, were not found said. On ethanol's measured spectrum the fitted lines gave the totals to about one part in a hundred and the splits to six; a route that took each line for one pole failed. Sorted by the two tests: where a line sits and how wide it is are its standpoint, so the coupling between lines is read; its area is paint, and the 2 : 3 of the protons a count the spins wrote. The noise is an amount, and that is where the half-plane's evenness gives way. A measured line is the nucleus's turn read through the magnet's unevenness, two reads whose heights add, which a Lorentzian fit respects and a single pole does not. And the spectrometer had already sampled and filtered what it heard: we read the record of its write.
 
 Then two corrections of the words used so far. Tom, the same evening: "gravity uses both hemispheres, but its not a dhv,
 gravity has no vantage." And: "the cauchy is just a word we use for lack of a better one. its just a density. gravity has
