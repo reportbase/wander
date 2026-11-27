@@ -70,3 +70,28 @@ quadrature (mpmath, 30 digits); for the spectrum, σ²·(JᵀJ)⁻¹ on the same
 - **S4′.** Spectrum: the bound at d = 1.5 differs across r by more than 5% (the additive noise not Möbius-invariant).
   Kill: within 5%.
 - **S5′.** Spectrum: the bound on the total amount within 3× of one Cauchy's in every case.
+
+### Run 2 (`runs/sep/sep2.py`, output `runs/sep/sep2-out.txt`)
+
+Nothing killed. S3′: the draws' bound on the weight per draw is 3.9206, 1.9061, 0.8767 at d = 1.5, 2, 3, the same
+across r = 1, 2, 4 (16) to 10⁻²⁸ relative: in draws, separating two Cauchys depends on their hyperbolic distance alone.
+S4′: the spectrum's bound differs across r by 29%, 20% and 22% at d = 1.5, 2, 3 (not monotone in r at d = 1.5): the
+additive noise per channel breaks the invariance, by tens of percent, not by orders. S5′: the total amount's bound within
+2.0× of one Cauchy's in every case.
+
+### S6, the search (27 Nov, two searches, snippet depth)
+
+Found: McCullagh 1996 (*Ann. Statist.* 24(2), 787–808), the complex parameter m + iγ and Möbius equivariance of Cauchy
+estimation; the Cauchy family's Fisher–Rao distance a rescaled Poincaré distance (Nielsen and colleagues; the Cauchy
+Voronoi diagrams hyperbolic, *Entropy* 2020); a chapter on the mixture family of two prescribed Cauchys (not read). Not
+found: the resolution limit for separating Cauchy components stated in the hyperbolic distance, or the split between
+draws, where it holds exactly, and a spectrum, where it does not. S2–S3′ follow from McCullagh's equivariance and the
+isometries' transitivity, so expected in effect; not found said.
+
+### Reading (Claude's, not ruled)
+
+In draws (directions from a uniform turn about each standpoint, a read) how hard two Cauchys are to separate is set by
+the one number the read's geometry gives them, their hyperbolic distance; widths and gaps in a unit do not enter. In a
+spectrum (an amount per channel with its own error, the write side) the same pairs part by up to 29%: the channel's
+noise is an amount, and amounts are not unmoved by the turn's maps. Either way the total amount survives where the
+split between the two does not (CDW run 2's total mass). The arithmetic is classical; the sorting is ours.
