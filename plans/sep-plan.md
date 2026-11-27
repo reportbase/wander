@@ -151,3 +151,32 @@ treats each line as one Cauchy: the totals to 1.2% and the splits to 6%, the ove
 distance of 5.5. Where it would bite (a doublet whose lines sit within one or two of each other in that distance) is
 untested here. The second route, poles from the decay, needs a model of a real line as more than one pole; that is a
 run of its own, not attempted.
+
+## Run 4: channels laid by the turn (27 Nov 2026; SPN R1279; Tom: "1")
+
+Run 2 found draws keep the separation's difficulty a function of the hyperbolic distance alone, and a spectrum with the
+same noise in every channel breaks it by 20–29%. I offered to lay the channels evenly in the turn about a reference
+standpoint and said the equality should come back. Working it through before any code changed that prediction, and the
+predictions below are the changed ones, committed before the script.
+
+The reasoning. In the continuum a spectrum's information is ∫ ∂f ∂f · w(x) dx, with w set by the noise: the same noise
+in channels spread with density ρ(x) gives w ∝ 1/ρ; noise that is the paint's own count (a channel's variance its
+expected amount) gives w = 1/f. A Möbius map carries each Cauchy onto a Cauchy as a density (f ↦ f/g′), so the
+information is unchanged by the map exactly when w transforms the same way. With w = 1/f it does, for every map (that is
+the draws' case, binned). With w = 1/ρ it does only for maps with g′(x)·ρ(g(x)) = ρ(x), and no positive ρ on the line
+satisfies that for every real Möbius map (they act on the line with no invariant measure). The Cauchy about i satisfies
+it for the turns about i, and only those. So:
+
+- T1 (exact): the Cauchy density about i keeps g′(x)·ρ(g(x)) = ρ(x) for turns about i (three turns, to 10⁻²⁵) and fails it
+  for a translation and a dilation (by more than 10⁻³ at some x).
+- T2 (counts): with each channel's noise its own count, the bound on the split at d = 1.5, 2, 3 is the same for width
+  ratios r = 1, 2, 4 (and 16 at d = 3) to 10⁻²⁰, and bound × √(total) equals run 2's draws bound (3.9206025055,
+  1.90607019581, 0.876654356749) to 10⁻¹⁵.
+- T3 (the same noise, channels even in frequency, the whole line): the spread across r at d = 1.5 above 5%.
+- T4 (the same noise, channels even in the turn about i): the spread across r at d = 1.5 also above 5%. The equality does
+  not come back for pairs that are not turns of one another about i.
+- T5 (the same noise, channels even in the turn about i): run 2's pair at d = 1.5, r = 1 and its images under turns about
+  i by 0.3, 1.0 and 2.0 radians give one bound to 10⁻²⁰; with channels even in frequency they differ by more than 1%.
+
+If T4 fails (the spread under 5%), laying channels by one turn restores more than its own stabilizer, and the reasoning
+above is wrong. Exact at 30 digits (mpmath), continuum, the whole line by x = tan t.
