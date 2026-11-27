@@ -1701,6 +1701,16 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   a plot of the count told apart against N (27 flat from 10² to 10¹⁵); the writer's layout, 2W/N px an item (all 100 told
   apart at N = 100, none past about 1,000, no width without end). Params add `slots=1&outlines=0&writer=0&mult=&append=1`;
   hook adds `writerCounts`, `history`.
+- `gravity-ring.html`: **fingers browsing gravity** (27 Nov 2026, SPN R1267; Tom: "Let's stay gravity is an array, the value
+  is the strength of the field."; "Gravity has its own cautchy. So fingers browsing fingers browsing gravity array"; "Own page
+  merge"), a standalone page, plain canvas. In the plane (masses as rods end on, the ground a line): each mass M at depth d
+  pulls on the ground with M·C(x; m, d), gravity's fingers (GRV); added, the array. A reader at height a over f turns evenly,
+  its fingers landing at f + a·tan θ, each painted by the array there; their mean equals Σ M·C(f; m, d + a), the heights
+  added (SUM's relay, upward continuation): 3.5·10⁻¹⁵ of the peak at a = 1.5 and 5 with 4,096 fingers, 4·10⁻⁶ at a = 0.3; the
+  array sampled every 0.1 or 0.5, 2.6·10⁻⁴ and 6.5·10⁻³; mass ×10 multiplies the mean by 10 and moves no finger; raising the
+  reader by h sinks every mass by h. Uses tan and atan (the turn's chart). Never calls the pull a read (R1183) or the mass
+  told from its depth (R1197). `?a=&f=&seed=&mult=&step=0|0.1|0.5&n=`; hook `window.__gravRing` (`field`, `arrayAt`,
+  `composite`, `direct`, `check`, `fingers`, `masses`, `set`, `state`). Not in the flying page.
 - `look-pull.html`: **a look and a pull** (24 Nov 2026, SPN R1182; essay 33; FCL; Tom: "merge, 1, 2, 3"), a standalone page
   like `faces.html`, plain canvas. Masses about a place (a seeded scatter in the drawing's plane, an even shell with the
   place off its centre, one mass), a facing turned by a slider: the faced take F(n) (a definition from FCL run 6) in front

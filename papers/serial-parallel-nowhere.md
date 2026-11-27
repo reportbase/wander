@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1267** (27 Nov 2026; Tom: "Let's stay gravity is an array, the value is the strength of the field."; "Gravity has its
+  own cautchy. So fingers browsing fingers browsing gravity array"; "Own page merge"): `gravity-ring.html`. Gravity's array
+  indexed by place on the ground, its value the pull there, each mass's part its own Cauchy of its depth (GRV); a reader's
+  fingers browsing it from height a average it to the masses read from a + d, the Cauchy family closed (scales add; SUM's
+  relay, R358; upward continuation). Exact to 3.5·10⁻¹⁵ of the peak over the ground. Claude's precisions, kept on the page:
+  the two kinds of fingers are two plays on one stage (the read's a law over directions, gravity's a weight times a mass,
+  summed; R1183); the composite adds the heights and never gives the mass apart from its depth (R1197).
 - **R1266** (27 Nov 2026; Tom: "How would we convert the ring to true cauchy"; "Do this in a demo.   Let's see if we can
   create a true shv version of the ring.  It should work with any array,  the array is the payload."): `ring.html`. The list
   is the shore and the bar the read: item i at the slope (i − f)/H, laid at x = s/(1 + |s|), the share of the sweep along

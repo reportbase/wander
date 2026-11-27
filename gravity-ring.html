@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fingers browsing gravity</title>
+<!--
+  FINGERS BROWSING FINGERS BROWSING A GRAVITY ARRAY (27 Nov 2026; Tom: "Let's stay gravity is an array, the value is the
+  strength of the field.", "Gravity has its own cautchy. So fingers browsing fingers browsing gravity array", "Own page
+  merge"; SPN R1267).
+
+  In the drawing's plane (each mass a long rod seen end on, the ground a line): a mass M at depth d below the ground pulls
+  on it straight down with M times the Cauchy of scale d centred over it, (1/π)·d/((x − m)² + d²) (GRV: the Poisson kernel
+  of the half-plane; a point mass in space gives the 2D Cauchy on a plane, the same story one dimension up). Those are
+  gravity's fingers: one fixed shape for every mass, times its amount. Added over the masses they make the array: its
+  index a place on the ground, its value the pull there.
+
+  A reader stands at height a above the ground at f and turns evenly. Its fingers land on the ground by its own Cauchy,
+  scale a, centred under it; each finger is painted by the array's value where it lands. The mean over the fingers is
+  ∫ g(x)·C(x; f, a) dx, and since the Cauchy family is closed under this (scales add), it equals the masses read from
+  a + d: Σ M·C(f; m, d + a). Fingers browsing fingers are one set of fingers, their heights added (SUM's relay, R358;
+  upward continuation in geophysics).
+
+  Kept apart, by the rulings: the reader's fingers are a law over directions, no amount; gravity's are a weight times a
+  mass, summed. The pull is not a read (R1183); the composite gives the heights added, never the mass apart from its depth
+  (R1197). This page uses atan and tan (the turn's chart, the dual vantage's), since the Cauchy is the point here.
+
+  The array can be the field itself (no step) or sampled every Δ; the finger reads the item it lands on. Mass ×10 repaints
+  every value; no finger moves.
+
+  ?a=&f=&seed=&mult=&step=0|0.1|0.5&n=  Hook window.__gravRing: field, arrayAt, composite, direct, check, fingers, masses,
+  set, state.
+-->
+<style>
+  :root { --bg: #0f1218; --fg: #e8e6e1; --dim: #8a8f99; --gold: #e0b44c; --teal: #4fb3a6; --violet: #9b86d6; --rust: #c0675a; --line: #2a2f39; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; overflow: hidden; }
+  canvas { display: block; width: 100vw; height: 100vh; touch-action: none; }
+  #bar { position: fixed; left: 0; right: 0; top: 0; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center;
+    padding: 8px 12px; background: rgba(15,18,24,.88); border-bottom: 1px solid var(--line); z-index: 2; }
+  #bar label { color: var(--dim); font-size: 12px; }
+  select, button { font: inherit; font-size: 13px; color: var(--fg); background: #1b2029; border: 1px solid #343b47; border-radius: 6px; padding: 3px 7px; }
+  button:hover, select:hover { border-color: var(--gold); }
+  input[type=range] { width: 140px; vertical-align: middle; }
+  #about { display: none; position: fixed; left: 12px; right: 12px; bottom: 12px; max-width: 780px; z-index: 3;
+    background: rgba(20,24,32,.96); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-size: 13px; }
+  #about p { margin: .4em 0; }
+  #read { position: fixed; right: 12px; top: 54px; color: var(--dim); font-size: 12px; z-index: 1; white-space: pre; text-align: right; }
+</style>
+</head>
+<body>
+<div id="bar">
+  <label>the reader's height a <input type="range" id="a" min="0.1" max="8" step="0.05"></label>
+  <label>where it stands <input type="range" id="f" min="-10" max="10" step="0.05"></label>
+  <label>the array <select id="step"><option value="0">the field itself</option><option value="0.1">sampled every 0.1</option><option value="0.5">sampled every 0.5</option></select></label>
+  <button id="mult" title="Every mass ×10: every value repainted, no finger moved">mass ×10</button>
+  <button id="seed">other masses</button>
+  <button id="aboutBtn">?</button>
+</div>
+<div id="about">
+  <p><b>Fingers browsing fingers browsing a gravity array.</b> Below the ground, masses (rods seen end on). Each pulls on the
+  ground with its own Cauchy: one fixed shape, as wide as the mass is deep, times its amount. Gravity's fingers. Added up they
+  make the array: a place on the ground, and the pull there.</p>
+  <p>Above the ground, a reader at height a turns evenly. Its fingers land on the ground by its own Cauchy, as wide as it is
+  high, and each is painted by the array's value where it lands. The bottom bar is those fingers, one column an equal turn.</p>
+  <p>The mean over the reader's fingers equals the masses read from a + d: the heights add (gold line on the dashed one).
+  Raise the reader and it is the same as sinking the masses. Mass ×10 repaints every finger and moves none; the depth and the
+  mass are never told apart this way.</p>
+  <p>The two kinds of fingers are different plays on one stage: the reader's a law over directions, gravity's a weight times
+  a mass, summed. A pull is not a read.</p>
+</div>
+<canvas id="cv"></canvas>
+<div id="read"></div>
+<script>
+(() => {
+  'use strict';
+  const q = new URLSearchParams(location.search);
+  const S = { a: +(q.get('a') || 1.5), f: +(q.get('f') || 0), seed: +(q.get('seed') || 1), mult: +(q.get('mult') || 1), step: +(q.get('step') || 0), n: Math.max(1, Math.min(8, +(q.get('n') || 4))) };
+  const X0 = -12, X1 = 12, PI = Math.PI;
+  let masses = [];
+  function rng(seed){ let s = seed >>> 0 || 1; return () => { s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return s / 4294967296; }; }
+  function makeMasses(){ const r = rng(S.seed * 2654435761); masses = [];
+    for (let k = 0; k < S.n; k++) masses.push({ m: -7 + 14 * r(), d: 0.4 + 2.6 * r(), M: 0.5 + 1.5 * r() }); }
+  makeMasses();
+  const C = (x, m, g) => g / (PI * ((x - m) * (x - m) + g * g));
+  const field = x => { let s = 0; for (const o of masses) s += o.M * C(x, o.m, o.d); return s * S.mult; };
+  const arrayAt = x => S.step > 0 ? field(Math.round(x / S.step) * S.step) : field(x);
+  // the reader's fingers: J equal turns, each landing at f + a·tan θ, painted by the array there
+  const landing = (f, a, j, J) => f + a * Math.tan(-PI / 2 + (j + 0.5) * PI / J);
+  function composite(f, a, J = 4096){ let s = 0; for (let j = 0; j < J; j++) s += arrayAt(landing(f, a, j, J)); return s / J; }
+  const direct = (f, a) => { let s = 0; for (const o of masses) s += o.M * C(f, o.m, o.d + a); return s * S.mult; };
+  function check(){ let worst = 0, top = 0; for (let k = 0; k <= 60; k++){ const f = X0 + 2 + (X1 - X0 - 4) * k / 60, c = composite(f, S.a), d = direct(f, S.a);
+      worst = Math.max(worst, Math.abs(c - d)); top = Math.max(top, d); } return { worst, top, rel: worst / top }; }
+
+  const cv = document.getElementById('cv'), cx = cv.getContext('2d');
+  let W = 0, H = 0;
+  function size(){ const r = window.devicePixelRatio || 1; W = innerWidth; H = innerHeight; cv.width = W * r; cv.height = H * r; cx.setTransform(r, 0, 0, r, 0, 0); draw(); }
+  addEventListener('resize', size);
+  const M = 40;
+
+  let geo = null;
+  function draw(){
+    if (!W) return;
+    cx.fillStyle = '#0f1218'; cx.fillRect(0, 0, W, H);
+    const top = document.getElementById('bar').getBoundingClientRect().bottom + 8, av = H - top - 8;
+    const sx = x => M + (x - X0) / (X1 - X0) * (W - 2 * M);
+    // ---- 1. the side view: ground, masses, the reader, both kinds of fingers ----
+    const p1 = top, h1 = av * 0.42, groundY = p1 + h1 * 0.52, unit = Math.min((W - 2 * M) / (X1 - X0), (h1 * 0.46) / 8);
+    const sy = y => groundY - y * unit;                         // y above the ground positive
+    geo = { sx, sy, groundY, unit, p1, h1 };
+    cx.fillStyle = 'rgba(155,134,214,0.06)'; cx.fillRect(M, groundY, W - 2 * M, p1 + h1 - groundY);
+    // gravity's fingers, from each mass up to the ground: equal turns
+    for (const o of masses){
+      cx.strokeStyle = 'rgba(155,134,214,0.28)'; cx.lineWidth = 1;
+      for (let j = 0; j < 15; j++){ const th = -PI / 2 + (j + 0.5) * PI / 15, x = o.m + o.d * Math.tan(th);
+        if (x < X0 - 4 || x > X1 + 4) continue; cx.beginPath(); cx.moveTo(sx(o.m), sy(-o.d)); cx.lineTo(sx(x), groundY); cx.stroke(); }
+      const r = 4 + 6 * Math.sqrt(o.M * S.mult / (S.mult >= 10 ? 10 : 1));
+      cx.fillStyle = '#9b86d6'; cx.beginPath(); cx.arc(sx(o.m), sy(-o.d), Math.min(r, 18), 0, 2 * PI); cx.fill();
+    }
+    // the reader's fingers, from the eye down to the ground: equal turns
+    cx.strokeStyle = 'rgba(79,179,166,0.45)';
+    for (let j = 0; j < 21; j++){ const x = landing(S.f, S.a, j, 21); if (x < X0 - 4 || x > X1 + 4) continue;
+      cx.beginPath(); cx.moveTo(sx(S.f), sy(S.a)); cx.lineTo(sx(x), groundY); cx.stroke(); }
+    // the equivalent: the masses as if at a + d below the eye
+    cx.setLineDash([3, 4]); cx.strokeStyle = 'rgba(224,180,76,0.5)';
+    for (const o of masses){ cx.beginPath(); cx.arc(sx(o.m), sy(-o.d - S.a), 5, 0, 2 * PI); cx.stroke(); }
+    cx.setLineDash([]);
+    cx.strokeStyle = '#59606c'; cx.lineWidth = 1.5; cx.beginPath(); cx.moveTo(M, groundY); cx.lineTo(W - M, groundY); cx.stroke();
+    cx.fillStyle = '#4fb3a6'; cx.beginPath(); cx.arc(sx(S.f), sy(S.a), 6, 0, 2 * PI); cx.fill();
+    cx.font = '12px system-ui, sans-serif'; cx.fillStyle = '#8a8f99'; cx.textAlign = 'left';
+    cx.fillText('the reader (drag it), its fingers down to the ground', M, p1 + 12);
+    cx.fillText('the masses, gravity\'s fingers up to the ground; dashed: each mass as deep again as the reader is high', M, p1 + h1 - 4);
+
+    // ---- 2. the array along the ground, and what the reader makes of it ----
+    const p2 = p1 + h1 + 6, h2 = av * 0.3, base2 = p2 + h2 - 18;
+    const fs = [], gs = [], cs = [], ds = []; const NS = 240;
+    for (let k = 0; k <= NS; k++){ const f = X0 + (X1 - X0) * k / NS; fs.push(f); gs.push(arrayAt(f)); cs.push(composite(f, S.a, 512)); ds.push(direct(f, S.a)); }
+    const vmax = Math.max(...gs, ...ds) * 1.08 || 1, vy = v => base2 - v / vmax * (h2 - 28);
+    // the array as bars (sampled) or a filled curve (the field)
+    cx.fillStyle = 'rgba(155,134,214,0.35)';
+    if (S.step >= 0.3){ for (let x = Math.ceil(X0 / S.step) * S.step; x <= X1; x += S.step){ const v = field(x), w = Math.max(1, (S.step / (X1 - X0)) * (W - 2 * M) - 2); cx.fillRect(sx(x) - w / 2, vy(v), w, base2 - vy(v)); } }
+    else { cx.beginPath(); cx.moveTo(sx(X0), base2); fs.forEach((f, k) => cx.lineTo(sx(f), vy(gs[k]))); cx.lineTo(sx(X1), base2); cx.closePath(); cx.fill(); }
+    const curve = (arr, col, dash, wdt) => { cx.setLineDash(dash || []); cx.strokeStyle = col; cx.lineWidth = wdt || 2; cx.beginPath(); fs.forEach((f, k) => k ? cx.lineTo(sx(f), vy(arr[k])) : cx.moveTo(sx(f), vy(arr[k]))); cx.stroke(); cx.setLineDash([]); };
+    curve(cs, '#4fb3a6', null, 3); curve(ds, '#e0b44c', [6, 5], 2);
+    cx.strokeStyle = '#3a414d'; cx.lineWidth = 1; cx.beginPath(); cx.moveTo(M, base2); cx.lineTo(W - M, base2); cx.stroke();
+    cx.strokeStyle = 'rgba(79,179,166,0.6)'; cx.beginPath(); cx.moveTo(sx(S.f), p2 + 8); cx.lineTo(sx(S.f), base2); cx.stroke();
+    cx.font = '12px system-ui, sans-serif'; cx.textAlign = 'left';
+    cx.fillStyle = '#9b86d6'; cx.fillText('the gravity array: the pull at each place on the ground', M, p2 + 10);
+    cx.fillStyle = '#4fb3a6'; cx.fillText('the reader\'s fingers averaged, at each place it could stand', M + 330, p2 + 10);
+    cx.fillStyle = '#e0b44c'; cx.fillText('the masses read from a + d (dashed)', M + 690, p2 + 10);
+
+    // ---- 3. the reader's fingers, one column an equal turn, painted by the array ----
+    const p3 = p2 + h2 + 10, h3 = H - p3 - 30, base3 = p3 + h3 - 4, K = Math.max(60, Math.floor((W - 2 * M) / 3));
+    const vals = []; for (let j = 0; j < K; j++) vals.push(arrayAt(landing(S.f, S.a, j, K)));
+    const vm = Math.max(...vals) * 1.1 || 1, cw = (W - 2 * M) / K;
+    for (let j = 0; j < K; j++){ const v = vals[j], hh = v / vm * (h3 - 22), t = Math.min(1, v / vm);
+      cx.fillStyle = `rgba(${Math.round(79 + 140 * t)},${Math.round(120 + 60 * t)},${Math.round(166 - 40 * t)},0.9)`; cx.fillRect(M + j * cw, base3 - hh, Math.max(1, cw - 0.5), hh); }
+    const mean = vals.reduce((s, v) => s + v, 0) / K, dv = direct(S.f, S.a);
+    cx.strokeStyle = '#4fb3a6'; cx.lineWidth = 2; cx.beginPath(); cx.moveTo(M, base3 - mean / vm * (h3 - 22)); cx.lineTo(W - M, base3 - mean / vm * (h3 - 22)); cx.stroke();
+    cx.setLineDash([6, 5]); cx.strokeStyle = '#e0b44c'; cx.beginPath(); cx.moveTo(M, base3 - dv / vm * (h3 - 22)); cx.lineTo(W - M, base3 - dv / vm * (h3 - 22)); cx.stroke(); cx.setLineDash([]);
+    cx.strokeStyle = '#59606c'; cx.lineWidth = 1; for (const e of [M, W - M]){ cx.beginPath(); cx.moveTo(e, p3 + 14); cx.lineTo(e, base3 + 4); cx.stroke(); }
+    cx.fillStyle = '#8a8f99'; cx.font = '12px system-ui, sans-serif'; cx.textAlign = 'left';
+    cx.fillText(`the reader's fingers, ${K} equal turns from one horizon to the other, each painted by the array where it lands; their mean (teal) on the masses read from a + d (gold dashed)`, M, p3 + 10);
+    cx.textAlign = 'left'; cx.fillText('horizon', M + 4, H - 12); cx.textAlign = 'right'; cx.fillText('horizon', W - M - 4, H - 12);
+    cx.textAlign = 'center'; cx.fillStyle = 'rgba(224,180,76,0.85)'; cx.fillText('straight down', W / 2, H - 12);
+
+    const c = composite(S.f, S.a), ck = check();
+    document.getElementById('read').textContent =
+      `fingers' mean ${c.toPrecision(10)}\nmasses read from a + d ${dv.toPrecision(10)}\n` +
+      `worst gap over the ground ${ck.rel.toExponential(2)} of the peak${S.step ? '  (the array sampled every ' + S.step + ')' : ''}`;
+  }
+
+  // ---- input ----
+  const $ = id => document.getElementById(id);
+  const sync = () => { $('a').value = S.a; $('f').value = S.f; $('step').value = String(S.step); $('mult').textContent = S.mult === 1 ? 'mass ×10' : 'mass ÷10'; };
+  $('a').oninput = () => { S.a = +$('a').value; draw(); };
+  $('f').oninput = () => { S.f = +$('f').value; draw(); };
+  $('step').onchange = () => { S.step = +$('step').value; draw(); };
+  $('mult').onclick = () => { S.mult = S.mult === 1 ? 10 : 1; sync(); draw(); };
+  $('seed').onclick = () => { S.seed++; makeMasses(); draw(); };
+  $('aboutBtn').onclick = () => { const a = $('about'); a.style.display = a.style.display === 'block' ? 'none' : 'block'; };
+  let dragging = false;
+  cv.addEventListener('pointerdown', e => { if (!geo || e.clientY > geo.p1 + geo.h1) return; dragging = true; cv.setPointerCapture(e.pointerId); move(e); });
+  cv.addEventListener('pointermove', e => { if (dragging) move(e); });
+  cv.addEventListener('pointerup', () => { dragging = false; });
+  function move(e){ const x = X0 + (e.clientX - M) / (W - 2 * M) * (X1 - X0), y = (geo.groundY - e.clientY) / geo.unit;
+    S.f = Math.max(-10, Math.min(10, x)); S.a = Math.max(0.1, Math.min(8, y)); sync(); draw(); }
+
+  window.__gravRing = {
+    field, arrayAt, composite: (f, a, J) => composite(f, a, J), direct, check,
+    fingers: (f, a, J) => { const out = []; for (let j = 0; j < J; j++) out.push(landing(f, a, j, J)); return out; },
+    masses: () => masses.map(o => ({ ...o })),
+    set(o){ for (const k of ['a', 'f', 'mult', 'step', 'n']) if (k in o) S[k] = o[k]; if ('seed' in o || 'n' in o){ if ('seed' in o) S.seed = o.seed; makeMasses(); } sync(); draw(); return this.state(); },
+    state: () => ({ ...S }),
+  };
+  sync(); size();
+})();
+</script>
+</body>
+</html>
