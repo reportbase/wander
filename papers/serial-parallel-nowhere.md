@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1270** (27 Nov 2026; Tom: "you are saying they use this equation, but for different purposes.", then "search for
+  it, add it to the papers and merge"): searched. The equation and its uses are classical (upward continuation, e^(−kh),
+  the half-plane's Poisson kernel, the wrapped Cauchy, Abel summation); the kernel as the point's geometry is in print in
+  part (harmonic measure as the subtended angle over π; a double layer's solid angle, from memory). Not found: the
+  continuation kernel named as a look's law, a lattice of sources against a sheet, the sorting of a continuous read over
+  discrete writes. In *Reads and Writes* §7, "Writes the read takes for a continuum". No result changes (R1229).
 - **R1269** (27 Nov 2026; Tom: "do they pull out the payload/", "we use this for gravity", "both"): CDW run 2
   (`runs/cdw/cdw2.py`), a row of masses spaced s apart, read from u = (a + d)/s and pulled back out by least squares;
   predictions first. Exact: an equal row's ripple is 2/sinh(2πu). Unequal masses' detail is damped e^(−πu) (frequencies

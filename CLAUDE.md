@@ -623,6 +623,9 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1270 (27 Nov; Tom: "search for it, add it to the papers and merge"): CDW and the search in *Reads and Writes* §7
+  ("Writes the read takes for a continuum"): the numbers classical, the kernel as the point's geometry in part (harmonic
+  measure as subtended angle), the sorting not found (snippet depth).
   R1269 (27 Nov; Tom: "do they pull out the payload/", "we use this for gravity", "both"): CDW run 2 (`runs/cdw/cdw2.py`),
   a row of masses read from u = (a + d)/s and pulled back out: an equal row's ripple 2/sinh(2πu) exactly; uneven masses
   told apart as e^(−πu), recovery failing near ln(1/σ)/π (Q3 slope 0.925 of π at σ = 10⁻⁶, untested at 10⁻³ by my window;
