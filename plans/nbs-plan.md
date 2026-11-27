@@ -97,3 +97,119 @@ it (the engine text not touched; A6 checks). Parts run in parallel on four cores
 `runs/nbs/nbs-run1.txt`.
 
 ## Runs
+
+### Run 1 (26 Nov 2026; Tom: "Merge and run")
+
+`node runs/nbs/nbs.mjs run`, then `report` (`runs/nbs/nbs-run1.txt`; one JSON a position, `runs/nbs/nbs-pos-*.json`;
+the log `runs/nbs/run1.log`). games at `de6a98d`, the text above "IN THE FIELD" sha256 `8a5e806c…b97061e505471c0fd99d52ec8c1bc938e703b2e6497b24aca`
+before and after. Sixty positions from racks 0–3 (15, 20, 17 and 8 shots), self-play seed 20261126; about 5.5 hours of
+flights on four browsers. Choices I made in writing the runner, stated here because the plan did not fix them: the
+fixed-tick engine records no grips' choices or phase ends, so the signature is the contacts, cushions and pockets in time
+order; B bridges each pot piece on 8 leaves (counted in its flights) and picks the best of 64 aims in each piece by the
+Gaussian share of that piece times the bridged score; B′ uses K = 8, its leave the white's place, tolerance 10⁻⁶ table
+units, and a cap of 50,000 flights a power (after a trial of three positions in which a cap of 200,000 was hit at every
+one); a planner with no pot in hand still flies its best shot under the hand's error.
+
+| | | |
+| --- | --- | --- |
+| A1 | B finds a pot in all 35 positions where C does, and in 20 of the 25 where C finds none (80%) | not killed |
+| A2 | legal pots under the hand's error, mean over positions: level 3 B 61.0%, C 32.8%; level 5 B 85.8%, C 47.2% | not killed |
+| A3 | B's flights per position median 48,018 (6,896–105,419), C's 12: 4,001 times | **killed** (my guess of 4,000 at most) |
+| A4 | 1,317 pot pieces wider than 10⁻³ rad; the white's rest place held to 0.05 by some K ≤ 12 in 1,085 (82.4%); median error 0.017, 0.015, 0.014 at K 6, 8, 12 | not killed (narrowly) |
+| A5 | in 26 positions with a level-5 window potting the lowest ball, B's aim within 0.1 of the best of 64 flown aims in 24 (92.3%) | not killed |
+| A6 | the engine text unchanged; the referee games' `simulate` | not killed |
+| A7 | (a) B′ covers all of B's wide pot pieces in 5 of 60 positions; (b) the doubled scan costs B 1.13 times, not 1.6; (c) B′ hit its cap in every position at both powers, holding a median of no pot piece | **killed** in (a) and (b); (c) meaningless under the cap |
+
+Post hoc, not predicted. Split by whether C's own aim pots: where it does (35), level 3 B 72.7% against C 54.7%, level 5
+92.9% against 80.9%; where it does not (25), B 44.6% and 75.7% against C's 2.1% and 0.1% (its safeties). So most of A2's
+margin is the 25 positions with no ghost-ball pot, where B finds banks, kicks and other lines; on the positions both can
+pot, B's margin is the wider window it aims into (B's level-5 windows a median 0.0136 rad, about 0.78°). The fixed-tick
+engine's map has a median 545 edges a power, pot windows a median 0.001 rad wide, and 481 of the bridged pot pieces had a
+leaf off the piece's own events (hidden changes between scan aims, as PEB run 5 found on a 1,024 scan).
+
+What it says. B, the map of the whole circle, is a better planner than the games' ghost-ball line on every measure tried,
+and its price is about four thousand times the flights. A3's 4,000 was my guess and is killed by a factor of twelve. A7,
+K is n (R1263), is killed on this engine, by the engine: the fixed tick puts jumps inside every span (PEB run 1), so a span
+whose leave must be held to 10⁻⁶ is halved until the cap, and B′ never reaches a piece the size of a pot window. The test
+of R1263 that can pass is on an engine whose pieces are smooth between its events (PEB runs 4–5, the event engine); a
+B′ there is the next run, if wanted. Nothing in `games.html` was changed, and carrying B into it is not proposed on this run:
+4,000 times the flights is minutes of thinking on a phone, against the 48 shots now.
+
+### Run 2, planned (26 Nov 2026; Tom: "Continue if your still making progress"). Predictions written before any script exists
+
+Run 1 left R1263 untested where it can pass: on the fixed-tick engine every span holds hidden jumps. Run 2 puts B′ on
+PEB's event engine with its full signature (PEB run 5's copy `runs/peb/play-trick-event5.html`, motion unchanged), on
+PEB run 5's two maps: the cut on the open table and the challenge "two rails", power 14, rest places of the white and the
+object ball as the leave (PEB's four outputs). PEB run 5 mapped them by a scan of N = 1,024 aims, each change bisected
+(cut 75 jumps, two rails 109, known beforehand), and its post hoc found five pieces with a jump the scan never saw (cut
+0.124–0.141, 0.145–0.160, 2.387–2.424, 3.958–3.995; two rails 0.389–0.406).
+
+**B′ as run** (`runs/nbs/nbs2.mjs`): start from S even spans of the circle. A span flies its K = 8 Chebyshev leaves. If two
+neighbouring leaves differ in the full signature, the change between them is bisected to 10⁻¹² rad, one flight a step, and
+the span is cut there; the pieces left are spans again. If all leaves agree, the span is a piece when the last two
+Chebyshev coefficients of every output are under 10⁻⁷ table units; otherwise it is halved. Nothing is scanned: the leaves
+are the only aims flown that are not bisection steps. A span under 10⁻¹² that still fails is counted as dropped. Cap
+200,000 flights a map. Its flights are counted against the scan's: 1,024 + the bisection steps PEB run 5 took (60 at most a
+jump), its bridges not counted.
+
+- **C1 (it settles).** On both maps B′ finishes under its cap with no span dropped wider than 10⁻⁹.
+- **C2 (the same jumps).** Every jump of PEB run 5's map is found by B′ (a B′ jump within 10⁻⁹ rad, the same signatures
+  either side).
+- **C3 (and the hidden ones).** In at least 4 of the 5 pieces PEB run 5's post hoc flagged, B′ finds a jump inside.
+- **C4 (pieces held).** Of B′'s pieces wider than 10⁻⁴, at least 95% have their K = 8 bridge hold all four outputs to 10⁻⁶
+  on 200 aims spread through the piece (the coefficient test is not fooled).
+- **C5 (no N).** With S = 64 starting spans instead of 16, B′ finds the same jumps (C2's sense, both ways) and its flights
+  change by under 20%.
+- **C6 (cost).** B′'s flights per map are at most 2 × the scan's (1,024 + its bisections), and at most 12 K per piece plus
+  45 per jump.
+
+Each killed by its own number. Known beforehand: PEB runs 4–5 (the jumps, the pieces held, 6 leaves the median, 19 pieces
+converging slowly near their ends, where B′ will halve and pay), so C2 and C4 are not blind; C3, C5 and C6 can fail.
+If C1–C6 stand: on an engine whose pieces are smooth between the table's events, the map's cost is counted in leaves a
+piece and steps a jump, with no scan count in it, which is R1263 shown on one table; carrying it to the 9-ball computer
+would need that engine in `games.html`, Tom's call.
+
+### Run 2 (26 Nov 2026; `runs/nbs/nbs2.mjs`, outputs `runs/nbs/nbs2-{cut,tworail}-{16,64}.json`, `nbs-run2.txt`)
+
+Choices made in writing the runner, before any result was read: the leaves are Chebyshev–Lobatto (the span's ends
+included, so every aim lies between two neighbouring leaves of some span; first-kind leaves would leave a change between
+two spans unseen), and each aim is flown once (a cache; a shared end costs one flight); the scan's bisection steps are
+counted as PEB run 5's loop takes them, 33 a jump. Two faults of mine found while running, fixed before the counted runs:
+a span already narrower than 10⁻¹² that held a change was cut again for ever (now recorded as a jump), and the full
+signature kept as a string filled the page's memory (now a 52-bit hash of its keys). The cut's numbers are the same
+before and after both fixes.
+
+| | cut | two rails |
+| --- | --- | --- |
+| flights, S = 16 | 9,149 (4,414 leaves, 4,735 bisection steps) | 200,007, capped |
+| the scan's (1,024 + bisections) | 3,499 | 4,621 |
+| jumps, pieces | 137, 348 | 24,748, 21,249 (24,645 and 20,943 inside 0.5352–0.5355) |
+| PEB run 5's jumps found | 75 of 75 | 45 of 109 (47 of the 47 below where B′ stopped, by place) |
+| pieces wider than 10⁻⁴ held to 10⁻⁶ by their 8 leaves | 222 of 222 (worst 2.9·10⁻⁹) | 151 of 151 (worst 5.6·10⁻⁹) |
+| S = 64 against S = 16 | the same 137 jumps; flights 0.979 | capped at the same place; flights 1.000 |
+
+- **C1 KILLED** by two rails, by the engine. Near the aim 0.53534 rad the white comes to rest touching the 1 and the
+  event engine chatters: contact, stop, restart, up to 599,920 events a shot, the full signature different at every
+  aim down to 10⁻¹⁴ rad (5,566 such flights). B′ finds a change between every two leaves there and bisects each, so it
+  spent its cap in a window 3·10⁻⁴ rad wide and mapped nothing past 0.5353. The cut settles in 4 seconds.
+- **C2 KILLED** by two rails' cap: the 62 jumps it missed lie past where it stopped; on the cut, and below 0.5353 on two
+  rails, every one of PEB run 5's jumps is there (one, at 0.454072, matched by place only: B′ found it as two jumps
+  8·10⁻¹³ apart, a sliver of another order between, which PEB's bracket straddled; my check's signatures, not a miss).
+- **C3 not killed.** The cut's four flagged pieces each have a jump inside (0.124 two, the others one); two rails'
+  0.3897–0.4064 has five, which my lookup (0.389 within 6·10⁻⁴, my code) did not find, so the report says 4 of 5; it is 5.
+- **C4 not killed.** 373 of 373 pieces wider than 10⁻⁴ held to 10⁻⁶ on 200 aims each; the coefficient test was never
+  fooled.
+- **C5 KILLED** by two rails (both capped in the chatter, their jump lists differing there by a few); on the cut not
+  killed: 16 or 64 starting spans give the same 137 jumps and flights within 2.1%.
+- **C6 KILLED.** The cut cost 2.6 times the scan's flights, against my 2; two rails capped. The bound per piece and jump
+  held on both (cut 9,149 against 39,573), but it is loose.
+
+**What it says.** On the cut, R1263 holds as stated: B′ has no scan count, starts from 16 or 64 spans to the same map,
+finds every jump the 1,024 scan found and 62 it stepped over (among them the five the scan's post hoc suspected), and
+every piece is held by its own 8 leaves to 10⁻⁶; its flights are leaves and bisection steps, 26 a piece. It costs 2.6
+times the scan because the scan's map was wrong by 62 jumps; a scan fine enough to find them all would cost more. On
+two rails the same procedure meets a place where the engine has no pieces at all (a ball left touching another chatters
+without end), and a map that will not stop until every piece is held spends everything there. The scan stepped over it
+(PEB run 5 saw one jump at 0.535336). So B′ does what the scan cannot, says where the map has no pieces, and needs a rule
+for such a place: stop halving a window whose leaves change at every width (here 10⁻¹⁴) and mark it unmapped, or an
+engine that settles a touching pair. Neither is in this run.
