@@ -290,3 +290,30 @@ Each killed by its own number. Known beforehand: runs 2 and 3 (the chattering ba
 found in it before the cap; the cut's 137 jumps, none closer than run 2 held). J = 64 and the K-th part are my choices;
 E2's 90% and E7 are guesses. If E1–E6 stand: the count a span yields tells a place with no pieces from a place with
 many, and the map needs no N to say where the table has pieces.
+
+### Run 4 (27 Nov 2026; `runs/nbs/nbs4.mjs`, outputs `runs/nbs/nbs4-{cut,tworail}-{16,64}.json`, `nbs-run4.txt`)
+
+| | cut, S = 16 | cut, S = 64 | two rails, S = 16 | two rails, S = 64 |
+| --- | --- | --- | --- | --- |
+| flights | 9,149 | 8,954 | 12,600 | 14,548 |
+| jumps, pieces | 137, 348 | 137, 378 | 201, 515 | 229, 614 |
+| unmapped | none | none | 0.0612–0.7854 (0.724 rad) | 0.4909–0.5890 (0.098 rad) |
+
+- **E1 not killed.** All four finish, two rails in 12,600 and 14,548 flights (runs 2 and 3 capped at 200,000).
+- **E2 KILLED**, by my rule. The window given up is not the chatter but the largest span holding it: at S = 16 0.724
+  rad, only 0.1% of it within 0.5352–0.5356; at S = 64 the whole starting span, 0.098 rad. The tally runs up the chain of
+  spans, and a large span's count passes 64 as soon as its smallest one's does, with its count of jumps the sum of
+  everything found in it; its widest piece is still under its eighth because the map, depth first, had not yet reached
+  its wide pieces. I named this risk in the plan and kept the rule as written.
+- **E3 not killed**: all 54 of PEB run 5's jumps outside the window found within 10⁻⁹.
+- **E4 not killed**: the cut unchanged from run 2, 137 jumps, nothing unmapped, 9,149 flights.
+- **E5 not killed**: 262 of 262 pieces wider than 10⁻⁴ held to 10⁻⁶ on two rails (worst 2.7·10⁻⁹), 222 of 222 on the cut.
+- **E6 not killed**, in its letter: outside both windows (so outside the S = 16 run's 0.724 rad) the two runs share all
+  70 jumps, flights 1.155 apart. With so much given up the clause tests little.
+- **E7 not killed**: 12,600 flights against 4 × 4,621.
+
+**What it says.** A count stops the map where a width could not: the chattering place is given up and every map
+finishes, cheaply, without touching the cut. But the rule as written gives up the widest span that holds the chatter,
+not the chatter: a tally counted up the whole chain of spans fires first at the top. The fix is to give up the smallest
+span that qualifies (the one where the count passes J, checked only on the span being opened, not its ancestors), with
+the jumps' count per width still the test. A run 5, predictions first, not run.

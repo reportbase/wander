@@ -7607,6 +7607,13 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1277** (27 Nov 2026; Tom: "Run 4"): NBS run 4 (`plans/nbs-plan.md`, `runs/nbs/nbs4.mjs`): run 3's width floor replaced
+  by a count, a span with more than 64 jumps found inside it and no piece wider than its eighth given up. Every map
+  finishes (two rails 12,600 and 14,548 flights, against the 200,000 cap runs 2 and 3 hit), the cut is unchanged (137
+  jumps, nothing unmapped), every wide piece is held and every outside jump found (E1, E3–E7 not killed). E2 killed by my
+  rule: the tally runs up the chain of spans, so the largest span holding the chatter fires first and is given up whole,
+  0.724 rad at S = 16 and 0.098 rad at S = 64, against a band about 4·10⁻⁵ rad wide. A count tells a place with no pieces
+  from one with many; it must be applied to the smallest span that qualifies (a run 5, not run).
 - **R1276** (27 Nov 2026; Tom: "1"): NBS run 3 (`plans/nbs-plan.md`, `runs/nbs/nbs3.mjs`): R1273's B′ given a floor, a
   span narrower than 10⁻⁷ rad with three signatures among its leaves (or leaves agreeing and coefficients failing)
   marked unmapped. On two rails it marks 3.2·10⁻⁵ rad, 99% in the chattering window (D2), and every wide piece is still

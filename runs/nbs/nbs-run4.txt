@@ -1,0 +1,11 @@
+cut16: flights 9149, capped false, 137 jumps, 348 pieces, unmapped 0 windows, 0.000e+0 rad: ; longest shot 17 events, chatter flights 0
+cut64: flights 8954, capped false, 137 jumps, 378 pieces, unmapped 0 windows, 0.000e+0 rad: ; longest shot 17 events, chatter flights 0
+tworail16: flights 12600, capped false, 201 jumps, 515 pieces, unmapped 1 windows, 7.242e-1 rad: 0.0612268..0.7853982; longest shot 399981 events, chatter flights 17
+tworail64: flights 14548, capped false, 229 jumps, 614 pieces, unmapped 1 windows, 9.817e-2 rad: 0.4908739..0.5890486; longest shot 599923 events, chatter flights 40
+E1 not killed
+E2 KILLED (two rails unmapped 7.242e-1 rad, 0.1% inside 0.5352–0.5356)
+E3 not killed (PEB jumps outside unmapped 54, found 54; missed at -)
+E4 not killed (cut 137 jumps, unmapped 0.00e+0, flights 9149 against 9149)
+E5 not killed (262/262, worst 2.67e-9; cut 222/222)
+E6 not killed (outside both windows: 16 in 64 70/70, 64 in 16 70/70; flights 1.155)
+E7 not killed (two rails 12600 against 4 × 4,621 = 18,484)
