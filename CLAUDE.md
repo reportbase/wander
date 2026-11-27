@@ -642,6 +642,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   the spacing and one width held, failing below d ≈ 1.4; the counting bound killed by the lines' shape (not Lorentzians);
   run 4's claim untested on data. `separate.html` and its `demos.html` card.
   R1277 (27 Nov; Tom: "add it to the papers and merge"): SEP sorted by reads and writes in *Reads and Writes* §7 and essay 33 §16: place and width the standpoint (J a read), the area paint (2 : 3 a count, the payload's), noise an amount breaking the invariance, the total kept, a measured line a chain of reads (natural + the magnet's) so one pole a line fails, the spectrometer's filter a write read as a record. Claude's reading, not ruled.
+  NBS run 6 (`runs/nbs/nbs6.mjs`, as run 4; SPN R1284; Tom: "Run 6"): the 65 jumps nearest the new one given up when narrower than its span's eighth; both maps finish, the cut unchanged, G2 killed by my rule: the jumps are found left to right, so the window (the last 65) slid out of the band over the sparse jumps past it (1.46·10⁻² rad, 1.8% in the band).
+  NBS run 5 (`runs/nbs/nbs5.mjs`, as run 4; SPN R1283; Tom: "Merge, then run 5"): only the smallest busy span given up;
+  every number run 4's, F2 killed by my rule: B′'s spans end at jumps, so a cluster always sits at a span's edge and no
+  small span encloses it. A count must be taken about a place, not over a span.
   NBS run 4 (`runs/nbs/nbs4.mjs map cut|tworail 16|64`, then `report`; SPN R1278; Tom: "Run 4"): the floor replaced by a
   count (more than 64 jumps in a span, no piece wider than its eighth: given up). Every map finishes, the cut unchanged;
   E2 killed by my rule (the largest span holding the chatter fires first, 0.724 rad given up); the smallest span should.
