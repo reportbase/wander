@@ -7607,6 +7607,9 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1265** (27 Nov 2026; Tom: "The ring is cauchy without cauchy"; "Add to 17 and merge"): the games page's tool ring
+  writes no Cauchy (no density, no 1/(1 + s²), no γ; "fisheye" in the code), yet equal turns laid by tan spread the tools
+  by 1/(1 + s²): the turn's own heat, given, not computed (R389, R458), the lighthouse in a menu. Essay 17 §2.
 - **R1264** (27 Nov 2026; Tom, of the games page's bottom tool ring: "This is k not n in action, the read write paper talks
   about."; "This uses arctan, so it's not fully shv"; "No.  Arctan works fine,  it's just not shv"; "This is why people
   conflate shv and dhv, because you can."; "Add it 27 and merge"): the ring (`RING_BOMA`, `makeRing` in reportbase/games)

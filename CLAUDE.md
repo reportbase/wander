@@ -623,6 +623,8 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
+  R1265 (27 Nov; Tom: "The ring is cauchy without cauchy"): the tool ring writes no Cauchy, yet equal turns laid by tan
+  give 1/(1 + s²), the turn's heat given, not computed; essay 17 §2.
   R1264 (27 Nov; Tom, of the games page's tool ring: "This is k not n in action"; "it's just not shv"; "This is why people
   conflate shv and dhv, because you can."): K, not N, written in the DHV's terms (tan, atan, a closing); the two forms agree,
   so only what each needs tells them apart. Essay 27 §5.
