@@ -339,3 +339,22 @@ given up. Everything else is run 4's (no width floor, K = 8, 10⁻⁷, the cap, 
 Each killed by its own number. Known beforehand: runs 2–4 (the band at least 0.53533–0.53537; run 4's numbers); the
 window's width under this rule I have not worked out, so F2 is the test that matters. If F1–F7 stand: a map with no scan
 count says where the table has pieces and gives up only the place where the engine has none.
+
+### Run 5 (27 Nov 2026; `runs/nbs/nbs5.mjs`, outputs `runs/nbs/nbs5-{cut,tworail}-{16,64}.json`, `nbs-run5.txt`)
+
+Every number is run 4's to the flight: the cut 9,149 and 8,954 flights, 137 jumps, nothing unmapped; two rails 12,600 and
+14,548 flights, 201 and 229 jumps, one window 0.0612–0.7854 (two starting spans, joined) at S = 16 and the starting span
+0.4909–0.5890 at S = 64.
+
+- **F1, F3–F7 not killed**, as E1, E3–E7 (54 of 54 outside jumps found, 262 of 262 wide pieces held, the cut unchanged,
+  S = 16 and 64 sharing all 70 jumps outside both windows, 12,600 flights).
+- **F2 KILLED**, by my rule again: 0.724 rad given up, 0.1% of it in the chattering window.
+
+**Why the smallest busy span is the largest.** At S = 64 the window holds 65 jumps, 54 of them at one place, 0.5353361
+(the touching pair's chatter), and no piece wider than 9.2·10⁻³ against its eighth, 1.2·10⁻². B′ cuts a span at each
+jump it finds, so every span it makes ends at a jump: the chatter's jumps always sit at the edge of the spans that hold
+them, each of which reaches back to a far end of the span it was cut from. No span B′ makes ever encloses the chatter
+narrowly, and so no small span can hold 64 of its jumps; the first span that does is the one it started in. Run 4's
+rule and run 5's give up the same span for this reason, not for the reason run 4 gave (the order of the tally). A count
+has to be taken about a place, not over a span: for example, the jumps found within w/K of the new jump inside the span
+being cut. A run 6, predictions first, not run.

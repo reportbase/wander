@@ -7607,6 +7607,12 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   a look kept, a reach counted), "what is kept is a write" where the keeping may be private, R568's "reading and writing
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
+- **R1279** (27 Nov 2026; Tom: "Merge, then run 5"): NBS run 5 (`plans/nbs-plan.md`, `runs/nbs/nbs5.mjs`): run 4's count,
+  only the smallest busy span given up. Every number run 4's to the flight; F2 killed by my rule again (0.724 rad given
+  up). Why: B′ cuts a span at each jump it finds, so every span ends at a jump and the chatter's 54 jumps at 0.5353361
+  always lie at the edge of spans that reach back to a far end; no small span ever encloses them, and the first span
+  holding 64 is the one the map started in (corrects R1278's reason, the tally's order). A count must be taken about a
+  place, not over a span (a run 6, not run).
 - **R1278** (27 Nov 2026; Tom: "Run 4"): NBS run 4 (`plans/nbs-plan.md`, `runs/nbs/nbs4.mjs`): run 3's width floor replaced
   by a count, a span with more than 64 jumps found inside it and no piece wider than its eighth given up. Every map
   finishes (two rails 12,600 and 14,548 flights, against the 200,000 cap runs 2 and 3 hit), the cut is unchanged (137
