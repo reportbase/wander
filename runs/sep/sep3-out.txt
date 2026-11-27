@@ -1,0 +1,30 @@
+400 MHz class: BF1 400.13 MHz, SW 4807.7 Hz, 16310 complex points, frequency sign 1
+spinning sidebands at +/- 15.000 Hz (from the water line)
+CH3: M2 poles assigned to lines: 5, 5, 4
+CH3: M1 residual 1.26e-02 of the peak; lines (Hz, gamma 1/s, amount): -1461.819 2.861 458; -1454.721 2.772 911.5; -1447.640 2.792 462.5
+CH3: M2 lines: -1461.584 6.505 189.4; -1454.566 3.942 660.3; -1447.538 5.506 244.8
+CH2: M2 poles assigned to lines: 2, 5, 5, 4
+CH2: M1 residual 1.39e-02 of the peak; lines (Hz, gamma 1/s, amount): -476.610 3.014 163.4; -469.517 2.866 465.4; -462.427 2.837 455.2; -455.357 2.894 151.9
+CH2: M2 lines: -476.694 3.726 182.8; -469.485 3.425 473.1; -462.318 3.715 425.7; -455.044 2.928 155.7
+N1 M1: spacings CH3 [7.097 7.081], CH2 [7.093 7.09  7.07 ] Hz
+N2 M1: CH2/CH3 = 0.6746 (2/3 = 0.6667, off +1.20%)
+N3 M1 CH3: shares [0.25   0.4976 0.2524] against [0.25 0.5  0.25], off [-0.   -0.49  0.98]%
+N5 M1 CH3: widths gamma [2.861 2.772 2.792] /s, max/min 1.032
+   CH3: adjacent hyperbolic distances [5.53 5.55]
+N3 M1 CH2: shares [0.1322 0.3766 0.3683 0.1229] against [0.125 0.375 0.375 0.125], off [ 5.77  0.42 -1.79 -1.64]%
+N5 M1 CH2: widths gamma [3.014 2.866 2.837 2.894] /s, max/min 1.062
+   CH2: adjacent hyperbolic distances [5.45 5.51 5.49]
+N1 M2: spacings CH3 [7.018 7.028], CH2 [7.209 7.167 7.274] Hz
+N2 M2: CH2/CH3 = 1.1304 (2/3 = 0.6667, off +69.56%)
+N3 M2 CH3: shares [0.173  0.6033 0.2237] against [0.25 0.5  0.25], off [-30.79  20.65 -10.51]%
+N5 M2 CH3: widths gamma [6.505 3.942 5.506] /s, max/min 1.650
+   CH3: adjacent hyperbolic distances [4.35 4.52]
+N3 M2 CH2: shares [0.1478 0.3824 0.3441 0.1258] against [0.125 0.375 0.375 0.125], off [18.2   1.97 -8.25  0.65]%
+N5 M2 CH2: widths gamma [3.726 3.425 3.715 2.928] /s, max/min 1.273
+   CH2: adjacent hyperbolic distances [5.09 5.08 5.27]
+N4: methods disagree on single lines by up to 58.651%, on totals by up to 40.257%
+N1: KILLED
+N2: KILLED
+N3: KILLED
+N4: not killed
+N5: KILLED
