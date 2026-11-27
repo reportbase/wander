@@ -199,7 +199,7 @@ belongs to that chart, not to the directions; the bounded chart s/(1 + s) of the
 the quartiles name the same directions on every chart, because they commute with every order-keeping change, so they belong
 to the directions; the mean does not. A mean can be had, from the dual hemispherical vantage (DHV). Add the directions as unit vectors and the average
 points at the corner, at length 2√2/π, the DHV's measure with π in it. Cap the world at some bound and the Cauchy has a
-mean, set by the extent (about 8.8 at a cap of a million): the mean appears only once an extent is written in, and its
+mean, set by the extent (about 8.8 at a cap of a million): the mean appears only once an extent is carried in, and its
 value is set by that bound, not equal to it. A computer's Cauchy has one for the same reason.
 
 **The payload is not lost.** None of the payload goes into making the heat, so all of it arrives, along directions whose heat
