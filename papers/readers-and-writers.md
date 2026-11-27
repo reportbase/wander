@@ -1337,7 +1337,12 @@ N and the view does not change; make N unbounded and it still does not (an infin
 the same view, apart by less than 10⁻⁷ at N = 2⁴⁰). So the Cauchy is a cull: an implementation holding K samples does
 O(K) work, whatever N. What the cull gives up is sameness: a count that holds N holds every item as 1/N of the whole, all
 alike, with no standpoint favoured; a read's K is spent finest at the corner and coarser each stretch away, and that
-unevenness is the vantage. **Checked** (`star-field.html`). The cull leaves K and compresses N at the horizon (Tom, R1109): nothing is
+unevenness is the vantage. **Checked** (`star-field.html`). The same fact runs in a bar of tools (R1264–R1266): the games page's bottom bar, and `ring.html` with any array as
+its payload, lay each item at its slope from a focus, s = (count from the focus)/H, at x = s/(1 + |s|) of the half bar,
+fractions only; one thumb falls at half the bar and the ends are the horizon. About 27 are told apart from a hundred
+items to 10¹⁵ or without end, a repaint moves no slot, and a writer's layout of 2W/N pixels an item tells none apart
+past about a thousand. Its first form, equal turns put on the bar by tan, was the dual vantage's and placed the same;
+the two forms agree, which is why they are so easily taken for each other (R1264). **Checked** (`ring.html`). The cull leaves K and compresses N at the horizon (Tom, R1109): nothing is
 cut, every thing keeps its direction, and what lies past the last address (about 2K/π thumbs out, counted) shares it with
 everything beyond. What does the compressing is the heat, ds/(1 + s²), thinning toward the horizon, not a count; K is a
 fineness, counted as addresses only by a count (R706). The same fact in statistics: readings from one standpoint averaged
@@ -1844,7 +1849,8 @@ corner at one arm, the size ratio) and recovers from the paint g/L and t/2, neve
 parts (Galileo's fall; Lee's τ, here read on a body falling away); the sorting ours, the numbers unchanged (R1229).
 
 *A Cauchy reading a Cauchy* (R1237; Tom: "This is worth understanding in more detail.  A cauchy reading another
-cauchy."; then "yes, add it to §7 and merge"; CRC, `plans/crc-plan.md`). Lay the read's heat over gravity's take: a
+cauchy."; then "yes, add it to §7 and merge"; CRC, `plans/crc-plan.md`); on a line, `gravity-ring.html`, R1267: Tom, "Gravity has its own cautchy. So fingers browsing fingers browsing gravity
+array"). Lay the read's heat over gravity's take: a
 plane painted point by point with the pull found there from matter below it, a reader a height a above it looking down,
 its heat per unit of the plane the flat screen's a/(2π(a² + ρ²)^(3/2)). Three things come out exactly. The two Cauchies
 compose to one, the heights added (P_a ∗ P_h = P_(a+h)). The heat-weighted reading of the paint is the pull at the
@@ -1866,6 +1872,31 @@ it; Kakutani and Spitzer use the turn's law to compute a write (a harmonic funct
 Holtsmark's law of random pulls (Holtsmark 1919; Chandrasekhar 1943), the place gravity best known meets a stable law,
 is a law of amounts, wholly the write's side, and index 3/2, not the turn's (R1203). The sorting is the stage's, the
 results the same (R1229).
+
+*Writes the read takes for a continuum* (R1268–R1270; Tom: "seems to me you can have a SHV sweep of a DHV sweep",
+"we use this for gravity", then "search for it, add it to the papers and merge"; CDW, `plans/cdw-plan.md`,
+`runs/cdw/`; on a line, `gravity-ring.html`'s row). The read's heat laid over writes at the whole numbers sums exactly
+to sinh(2πH)/(cosh(2πH) − cos(2πf)), the wrapped Cauchy (Poisson summation): the writes' discreteness is left as a
+ripple of about 2e^(−2πH), 0.0037 at one write a thumb, 3·10⁻²² at eight. Past one write a thumb the read cannot tell
+its writes from a continuum. A row of masses s apart at depth d, read from a, is the same with u = (a + d)/s: an equal
+row's ripple is exactly 2/sinh(2πu), and masses told apart go as e^(−πu). Pulled back out, the total mass always comes
+back; the arrangement fails near u ≈ ln(1/σ)/π (run 2: slope 0.925 of π at σ = 10⁻⁶; at 10⁻³ untested by my window).
+That is the inverse problem's non-uniqueness read as the writes' discreteness falling below the read's reach.
+
+What a search found (27 Nov, snippet depth, so not found is not absent). The equation and its uses are classical and
+in the standard accounts: upward continuation, its factor e^(−kh) a wavelength, so e^(−2πh/s) for a row; downward
+continuation ill-posed; the half-plane's Poisson kernel; the wrapped Cauchy; Abel summation. The kernel read as the
+point's own geometry is classical too, in part: in the half-plane the harmonic measure of an interval is the angle it
+subtends from the point over π, and (from memory, not checked) a uniform double layer's potential is its solid angle
+over 4π. What was not found: the continuation kernel named as the law a look uses, the same for a look and a pull; the
+row's ripple stated as a lattice of sources against a sheet; and the sorting itself, a continuous read over discrete
+writes, the arrangement lost where the discreteness drops under the read's reach, the amount kept. A chain of reads (run 3, R1271; Tom: "human continuous reads a continuous tellisicope read of a discrete write") is one
+read: an objective h₁, a magnification M and later reads h₂, h₃ give exactly the read from h₁ + (h₂ + h₃)/M (to
+2·10⁻¹² of the peak), so the layers' order and split never show, a later read counts 1/M, and no layer gives back what an
+earlier one smoothed. A detector between is a write: its pixels leave their own ripple, 2e^(−2πh₃/p) at their own
+spacing p, beside the sky's, and its box adds the one factor sinc(πp/M). So the numbers are
+others', the attribution in part, the sorting ours. By R1240 the read's density and gravity's share the form for
+different reasons; this says what each reads of the other, not that they are one. No result changes (R1229).
 
 *Fingers reading fingers reading the payload* (R1238; Tom: "Think about it, we have fingers reading fingers reading
 payload."). The run has three layers: the reader's fingers (the read's heat, one hemisphere, no amount), the plane's

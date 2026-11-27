@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A ring of slopes</title>
+<!--
+  THE RING, SINGLE-VANTAGE (27 Nov 2026; Tom: "How would we convert the ring to true cauchy", then "Do this in a demo.
+  Let's see if we can create a true shv version of the ring.  It should work with any array,  the array is the payload.").
+
+  The games page's bottom ring (RING_BOMA) lays N tools at equal turns, angle + i·π/N, puts each at tan of its turn and
+  keeps the few within an aperture: the Cauchy's flat middle, written in the dual vantage's terms (an angle, π, a closing;
+  wander essay 27 §5, essay 17 §2). This page turns it round. The array is the shore, the payload; the bar is the read.
+
+  - An item's reading is a slope: s = (i − f)/H, its distance from the focus f counted in items, over the thumb H.
+  - The bar lays the slope on a bounded chart. The default is the share of the sweep along h + v = 1,
+        x = s / (1 + |s|),        s = x / (1 − |x|),
+    rational both ways: no angle, no π, no square root. One thumb (s = ±1) falls at exactly half the bar; the exchange
+    s ↔ 1/s sends x to 1 − x, so the near field and the far field are each other's complement about the corner; the bar's
+    ends are the horizon (s = ±∞), never reached.
+  - Every item has a place; none is culled. Where neighbours come closer than a chip, they shrink; closer than a pixel and
+    they are drawn as a strip of their paint toward the horizon. So the count told apart stays about the same whatever N
+    is (K), and the rest is compressed into the horizon, not cut off.
+  - The payload never moves an address: repaint the array (other contents, another kind) and every chip stays put.
+  - A drag keeps the item under the finger under the finger (f = i₀ − H·s(x)); the wheel or a pinch changes H about the
+    pointer; a tap glides the focus to the item there. All of it fractions.
+
+  Two other charts for comparison: the half-slope t = s/(1 + √(1 + s²)) (one square root, the stereographic chart) and
+  the turn (2/π)·atan(s) (the dual vantage's: equal room for equal heat, an angle and π). The page counts the calls it
+  makes to Math's square root and trigonometric functions in each frame and shows the count.
+
+  Made stronger (27 Nov; Tom: "How can we strengthen the demo.  No,  it's not a proof but it illustrates the idea very well.",
+  then "1-4 merge"): (1) "addresses only" draws the empty slots, each with its slope as a fraction, before any payload; (2) gold
+  outlines of the slots drawn over the chips, so a repaint, another kind of array or every number ×10⁶ changes the paint
+  under outlines that do not move; (3) "double N" and "keep adding" grow the array with the focus held, and a small plot
+  keeps the count told apart against N; (4) the writer's layout beside it, every item 2W/N pixels, which a large N leaves
+  under a pixel and an array without end leaves with no width at all.
+
+  ?chart=line|half|turn&payload=numbers|words|emoji|colours|paste&N=<count>|inf&H=&f=&wrap=1&compare=0&slots=1&outlines=0
+  &writer=0&mult=<k>&append=1
+  Hook window.__ring: xOf, sOf, layout, counts, writerCounts, history, set, state, mathCalls, payloadAt.
+-->
+<style>
+  :root { --bg: #0f1218; --fg: #e8e6e1; --dim: #8a8f99; --gold: #e0b44c; --teal: #4fb3a6; --violet: #9b86d6; --line: #2a2f39; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg);
+    font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; overflow: hidden; }
+  canvas { display: block; width: 100vw; height: 100vh; touch-action: none; }
+  #bar { position: fixed; left: 0; right: 0; top: 0; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center;
+    padding: 8px 12px; background: rgba(15,18,24,.85); border-bottom: 1px solid var(--line); z-index: 2; }
+  #bar label { color: var(--dim); font-size: 12px; }
+  select, button, textarea { font: inherit; font-size: 13px; color: var(--fg); background: #1b2029; border: 1px solid #343b47;
+    border-radius: 6px; padding: 3px 7px; }
+  button:hover, select:hover { border-color: var(--gold); }
+  #paste { display: none; position: fixed; left: 12px; right: 12px; top: 92px; height: 120px; z-index: 3; }
+  #about { display: none; position: fixed; left: 12px; right: 12px; bottom: 12px; max-width: 760px; z-index: 3;
+    background: rgba(20,24,32,.95); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-size: 13px; }
+  #about p { margin: .4em 0; }
+  #read { position: fixed; left: 12px; bottom: 12px; color: var(--dim); font-size: 12px; z-index: 1; white-space: pre; }
+</style>
+</head>
+<body>
+<div id="bar">
+  <label>chart <select id="chart">
+    <option value="line">share along h + v = 1 (fractions)</option>
+    <option value="half">half-slope (one √)</option>
+    <option value="turn">turn, (2/π)·atan (the dual vantage)</option>
+  </select></label>
+  <label>array <select id="payload">
+    <option value="numbers">numbers</option><option value="words">words</option><option value="emoji">emoji</option>
+    <option value="colours">colours</option><option value="paste">your own (paste)</option>
+  </select></label>
+  <label>N <select id="N">
+    <option>8</option><option>100</option><option selected>10000</option><option>1000000</option>
+    <option>1000000000</option><option>1000000000000000</option><option value="inf">without end</option>
+  </select></label>
+  <label><input type="checkbox" id="wrap"> wrap (a count mod N)</label>
+  <label><input type="checkbox" id="compare" checked> the turn beside it</label>
+  <button id="repaint" title="Change the contents; no item moves">repaint</button>
+  <button id="mult" title="Multiply every number in the array by a million; no item moves">numbers ×10⁶</button>
+  <label><input type="checkbox" id="slots"> addresses only</label>
+  <label><input type="checkbox" id="outlines" checked> outlines</label>
+  <button id="double" title="Twice as many items; the focus stays">double N</button>
+  <label><input type="checkbox" id="append"> keep adding</label>
+  <label><input type="checkbox" id="writer" checked> the writer's layout</label>
+  <button id="aboutBtn">?</button>
+</div>
+<textarea id="paste" placeholder="One item a line (or separated by commas). The array is the payload."></textarea>
+<div id="about">
+  <p><b>A ring of slopes.</b> Each item of the array is read by one slope, s = (distance from the focus, in items) ÷ H.
+  The bar lays it at x = s/(1 + |s|): fractions only, no angle, no π, no square root.</p>
+  <p>The H items either side of the focus take half the bar, in proportion: the near field. Past them the far field bunches
+  toward the ends, which are the horizon: two thumbs out at ⅔ of the way, ten at 0.91, never the end. Every item has a
+  place; near the ends they are a strip of their paint. So about the same number are told apart whatever N is: K, not N.</p>
+  <p>Repaint the array and nothing moves: the addresses are the read's, the contents the payload's. Drag to move the
+  focus (the item under your finger stays there), wheel or pinch to change H, tap an item to bring it to the middle.</p>
+  <p><b>Addresses only</b> draws the empty slots, each with its slope, before any payload. The gold <b>outlines</b> are those
+  slots drawn over the paint: repaint, choose another kind of array or multiply every number by a million, and the paint
+  changes under outlines that never move. <b>Double N</b> or <b>keep adding</b> grows the array with the focus held: the count
+  told apart stays where it is, only the strips at the horizon thicken (the plot keeps both). <b>The writer's layout</b> gives
+  every item an equal share of the width, 2W/N each: a large N leaves each under a pixel, an array without end has no width.</p>
+  <p>The games page's ring lays equal turns by tan and keeps the middle: the same idea in the dual vantage's terms, and a
+  ring that closes. This one has two horizons and no turn; "wrap" only counts round the array.</p>
+</div>
+<canvas id="cv"></canvas>
+<div id="read"></div>
+<script>
+(() => {
+  'use strict';
+  // ---- counting Math's roots and trigonometry, per frame ----
+  const COUNT = { sqrt: 0, tan: 0, atan: 0, atan2: 0, sin: 0, cos: 0, hypot: 0, exp: 0, log: 0, pow: 0 };
+  for (const k of Object.keys(COUNT)){ const f = Math[k]; Math[k] = function(){ COUNT[k]++; return f.apply(Math, arguments); }; }
+  const resetCount = () => { for (const k in COUNT) COUNT[k] = 0; };
+  const sumCount = () => { const o = {}; let t = 0; for (const k in COUNT){ if (COUNT[k]){ o[k] = COUNT[k]; t += COUNT[k]; } } o.total = t; return o; };
+  let lastCalls = { total: 0 };
+
+  // ---- the charts: x in (−1, 1), the bar's ends the horizon ----
+  const CH = {
+    line: { x: s => s / (1 + (s < 0 ? -s : s)),          s: x => x / (1 - (x < 0 ? -x : x)) },
+    half: { x: s => s / (1 + Math.sqrt(1 + s * s)),      s: x => 2 * x / (1 - x * x) },
+    turn: { x: s => Math.atan(s) * 2 / Math.PI,           s: x => Math.tan(x * Math.PI / 2) },
+  };
+
+  // ---- the payload ----
+  const EMOJI = '🍎🍐🍊🍋🍌🍉🍇🍓🫐🍒🍑🥭🍍🥥🥝🍅🥑🥦🥕🌽🌶🥔🍄🌰🍞🧀🥚🍔🍕🌮🍣🍩🍪🎂🍫🍬🍯☕🍵🧃🐶🐱🐭🐹🐰🦊🐻🐼🐨🐯🦁🐮🐷🐸🐵🐔🐧🐦🦆🦉🐝🐞🦋🐢🐍🐙🐬🐳🐟🌵🌲🌻🌹🍀⭐🌙☀️⛅🌈❄️🔥💧'.match(/\p{Extended_Pictographic}️?/gu);
+  const SYL = ['ka','lo','mi','ne','ru','sa','ti','vo','be','da','fe','gi','ho','ju','pa','ze','ri','mo','lu','na','te','so','ba','ki'];
+  const hash = (i, seed) => {
+    const lo = ((i % 4294967296) + 4294967296) % 4294967296, hi = Math.floor(i / 4294967296);
+    let h = Math.imul((lo ^ 0x9e3779b9) >>> 0, 0x85ebca6b) ^ Math.imul((hi + 0x632be5ab + seed * 0x27d4eb2d) | 0, 0xc2b2ae35);
+    h ^= h >>> 13; h = Math.imul(h, 0x27d4eb2d); h ^= h >>> 15; h = Math.imul(h ^ seed, 0x165667b1); h ^= h >>> 16; return h >>> 0;
+  };
+  let pasted = [];
+  const P = { kind: 'numbers', seed: 0, mult: 1 };
+  function payloadAt(i){
+    const h = hash(i, P.seed);
+    const hue = h % 360, col = `hsl(${hue} 45% 34%)`, bright = `hsl(${hue} 70% 62%)`;
+    switch (P.kind){
+      case 'numbers': return { text: ((P.seed ? (i * (2 * P.seed + 1)) : i) * P.mult).toLocaleString('en-US'), col: '#27303c', tick: bright };
+      case 'words': { let w = ''; const n = 2 + (h & 1); for (let k = 0; k < n; k++) w += SYL[(h >>> (3 + 5 * k)) % SYL.length]; return { text: w, col, tick: bright }; }
+      case 'emoji': return { text: EMOJI[h % EMOJI.length], col: '#222833', tick: bright };
+      case 'colours': return { text: '', col: `hsl(${hue} 65% 52%)`, tick: `hsl(${hue} 65% 52%)` };
+      case 'paste': { const t = pasted[i] ?? ''; const q = hash(t.length * 7919 + (t.charCodeAt(0) || 0), P.seed) % 360; return { text: t, col: `hsl(${q} 40% 30%)`, tick: `hsl(${q} 65% 60%)` }; }
+    }
+  }
+
+  // ---- state ----
+  const S = { chart: 'line', N: 10000, H: 8, f: 0, wrap: false, compare: true, target: null };
+  const q = new URLSearchParams(location.search);
+  if (CH[q.get('chart')]) S.chart = q.get('chart');
+  if (q.get('payload')) P.kind = q.get('payload');
+  if (q.get('N')) S.N = q.get('N') === 'inf' ? Infinity : Math.max(1, Math.floor(+q.get('N')) || 1);
+  if (q.get('H')) S.H = Math.max(0.25, +q.get('H') || 8);
+  S.f = q.get('f') != null ? +q.get('f') || 0 : (isFinite(S.N) ? Math.floor((S.N - 1) / 2) : 0);
+  S.wrap = q.get('wrap') === '1'; S.compare = q.get('compare') !== '0';
+  S.slots = q.get('slots') === '1'; S.outlines = q.get('outlines') !== '0'; S.writer = q.get('writer') !== '0'; S.append = q.get('append') === '1';
+  if (q.get('mult')) P.mult = +q.get('mult') || 1;
+  const fracStr = (d, H) => { const r = Math.round(d), Hr = Math.round(H);
+    if (Math.abs(d - r) < 1e-9 && Math.abs(H - Hr) < 1e-9 && Hr > 0){ if (r === 0) return '0'; let a = Math.abs(r), b = Hr; while (b){ [a, b] = [b, a % b]; } const g = a;
+      return (r < 0 ? '−' : '') + (Hr / g === 1 ? String(Math.abs(r) / g) : Math.abs(r) / g + '/' + Hr / g); }
+    return (d / H < 0 ? '−' : '') + Math.abs(d / H).toFixed(3); };
+
+  const cv = document.getElementById('cv'), cx = cv.getContext('2d');
+  let W = 0, Hh = 0, DPR = 1;
+  function size(){ DPR = window.devicePixelRatio || 1; W = innerWidth; Hh = innerHeight; cv.width = W * DPR; cv.height = Hh * DPR; cx.setTransform(DPR, 0, 0, DPR, 0, 0); }
+  addEventListener('resize', () => { size(); draw(); });
+
+  const MARGIN = 18, CHIP = 54, MINPX = 1.5;
+  const half = () => W / 2 - MARGIN;
+  const indexOf = i => S.wrap && isFinite(S.N) ? ((i % S.N) + S.N) % S.N : i;
+  const has = i => (S.wrap && isFinite(S.N)) ? true : (i >= 0 && (!isFinite(S.N) || i <= S.N - 1));
+
+  // the layout of one bar: chips while neighbours are at least MINPX apart, then a strip to each horizon
+  function layout(chartName, widthHalf){
+    const C = CH[chartName], H = S.H, f = S.f, chips = [], strips = [];
+    const X = i => C.x((i - f) / H) * widthHalf;
+    const i0 = Math.round(f);
+    let edgeR = widthHalf, edgeL = -widthHalf;
+    // rightward from the focus
+    for (let i = i0, k = 0; k < 100000; i++, k++){
+      const x = X(i), gap = Math.min(X(i + 1) - x, x - X(i - 1));
+      if (gap < MINPX){ edgeR = x; break; }
+      if (has(i)) chips.push({ i, x, gap });
+    }
+    for (let i = i0 - 1, k = 0; k < 100000; i--, k++){
+      const x = X(i), gap = Math.min(X(i + 1) - x, x - X(i - 1));
+      if (gap < MINPX){ edgeL = x; break; }
+      if (has(i)) chips.push({ i, x, gap });
+    }
+    // the strips: a pixel column each, painted by the item there
+    for (let px = Math.ceil(edgeR); px < widthHalf; px++){ const i = Math.floor(f + H * C.s(px / widthHalf)); if (has(i)) strips.push({ i, x: px }); }
+    for (let px = Math.floor(edgeL); px > -widthHalf; px--){ const i = Math.ceil(f + H * C.s(px / widthHalf)); if (has(i)) strips.push({ i, x: px }); }
+    return { chips, strips, edgeL, edgeR, corner: C.x(1) * widthHalf };
+  }
+
+  function rounded(x, y, w, h, r){ cx.beginPath(); cx.moveTo(x + r, y); cx.lineTo(x + w - r, y); cx.quadraticCurveTo(x + w, y, x + w, y + r);
+    cx.lineTo(x + w, y + h - r); cx.quadraticCurveTo(x + w, y + h, x + w - r, y + h); cx.lineTo(x + r, y + h); cx.quadraticCurveTo(x, y + h, x, y + h - r);
+    cx.lineTo(x, y + r); cx.quadraticCurveTo(x, y, x + r, y); cx.closePath(); }
+
+  function drawBar(chartName, yc, chipMax, label, faint){
+    const wh = half(), mid = W / 2, L = layout(chartName, wh);
+    cx.globalAlpha = faint ? 0.75 : 1;
+    // the near field, between the two corners
+    cx.fillStyle = 'rgba(79,179,166,0.07)'; cx.fillRect(mid - L.corner, yc - chipMax / 2 - 10, 2 * L.corner, chipMax + 20);
+    // the horizons
+    cx.strokeStyle = '#59606c'; cx.lineWidth = 1;
+    for (const e of [-wh, wh]){ cx.beginPath(); cx.moveTo(mid + e, yc - chipMax / 2 - 14); cx.lineTo(mid + e, yc + chipMax / 2 + 14); cx.stroke(); }
+    // the corners, one thumb out
+    cx.setLineDash([4, 4]); cx.strokeStyle = 'rgba(224,180,76,0.7)';
+    for (const e of [-L.corner, L.corner]){ cx.beginPath(); cx.moveTo(mid + e, yc - chipMax / 2 - 12); cx.lineTo(mid + e, yc + chipMax / 2 + 12); cx.stroke(); }
+    cx.setLineDash([]);
+    // the strips toward the horizons
+    const sh = Math.max(4, chipMax * 0.16);
+    for (const s of L.strips){ cx.fillStyle = S.slots ? '#3a414d' : payloadAt(indexOf(s.i)).tick; cx.fillRect(mid + s.x, yc - sh / 2, 1, sh); }
+    // the chips, smaller ones first so the middle is on top
+    L.chips.sort((a, b) => a.gap - b.gap);
+    for (const c of L.chips){
+      const w = Math.max(1, Math.min(chipMax, c.gap - (c.gap > 6 ? 2 : 0))), h = Math.max(sh, Math.min(chipMax, w));
+      const x = mid + c.x - w / 2, y = yc - h / 2;
+      if (S.slots){                                            // the address alone: an empty slot and its slope
+        if (w >= 10){ rounded(x, y, w, h, Math.min(8, w / 4)); cx.strokeStyle = Math.abs(c.i - S.f) < 0.5 ? '#e0b44c' : '#5b6372'; cx.lineWidth = 1.5; cx.stroke(); }
+        else { cx.fillStyle = '#4a5260'; cx.fillRect(x, y, w, h); }
+        if (w >= 26 && !faint){ cx.font = `${Math.min(13, Math.floor(w * 0.26))}px system-ui, sans-serif`; cx.fillStyle = '#c9b27a'; cx.textAlign = 'center'; cx.textBaseline = 'middle';
+          cx.fillText(fracStr(c.i - S.f, S.H), mid + c.x, yc); }
+        continue;
+      }
+      const p = payloadAt(indexOf(c.i));
+      const fits = !p.text || w >= 18;
+      if (w >= 10){ rounded(x, y, w, h, Math.min(8, w / 4)); cx.fillStyle = fits ? p.col : p.tick; cx.fill();
+        if (Math.abs(c.i - S.f) < 0.5){ cx.strokeStyle = '#e0b44c'; cx.lineWidth = 2; cx.stroke(); } }
+      else { cx.fillStyle = p.tick; cx.fillRect(x, y, w, h); }
+      if (p.text && w >= 18){
+        const fs = Math.min(18, Math.floor(w * (P.kind === 'emoji' ? 0.6 : 0.34)));
+        cx.font = `${fs}px system-ui, sans-serif`; cx.fillStyle = '#ece9e2'; cx.textAlign = 'center'; cx.textBaseline = 'middle';
+        let t = p.text; if (cx.measureText(t).width > w - 4){ while (t.length > 1 && cx.measureText(t + '…').width > w - 4) t = t.slice(0, -1); t += '…'; }
+        cx.fillText(t, mid + c.x, yc);
+      }
+    }
+    if (S.outlines && !S.slots && !faint){                     // the slots over the paint: the address, which no payload moves
+      cx.strokeStyle = 'rgba(224,180,76,0.45)'; cx.lineWidth = 1;
+      for (const c of L.chips){ const w = Math.max(1, Math.min(chipMax, c.gap - (c.gap > 6 ? 2 : 0))), h = Math.max(sh, Math.min(chipMax, w));
+        if (w >= 10){ rounded(mid + c.x - w / 2 - 2, yc - h / 2 - 2, w + 4, h + 4, Math.min(9, w / 4 + 1)); cx.stroke(); } }
+    }
+    cx.globalAlpha = 1;
+    cx.font = '12px system-ui, sans-serif'; cx.fillStyle = '#8a8f99'; cx.textAlign = 'center'; cx.textBaseline = 'alphabetic';
+    cx.fillText(label, mid, yc - chipMax / 2 - 20);
+    cx.fillStyle = 'rgba(224,180,76,0.9)'; cx.fillText('one thumb', mid - L.corner, yc + chipMax / 2 + 26); cx.fillText('one thumb', mid + L.corner, yc + chipMax / 2 + 26);
+    cx.fillStyle = '#6c7380'; cx.textAlign = 'left'; cx.fillText('horizon', mid - wh + 4, yc + chipMax / 2 + 26);
+    cx.textAlign = 'right'; cx.fillText('horizon', mid + wh - 4, yc + chipMax / 2 + 26);
+    return L;
+  }
+
+  function counts(chartName){
+    const L = layout(chartName, half()), told = L.chips.filter(c => c.gap >= 10).length;
+    return { told, chips: L.chips.length, strip: L.strips.length };
+  }
+
+  // ---- the writer's layout: every item an equal share of the width, 2W/N each ----
+  function writerCounts(){ const wh = half(); if (!isFinite(S.N)) return { per: 0, told: 0, drawable: false };
+    const per = 2 * wh / S.N; return { per, told: per >= 10 ? S.N : 0, drawable: true }; }
+  function drawWriter(yc){
+    const wh = half(), mid = W / 2, Wc = writerCounts(), ch = 30;
+    cx.font = '12px system-ui, sans-serif'; cx.fillStyle = '#8a8f99'; cx.textAlign = 'center'; cx.textBaseline = 'alphabetic';
+    cx.strokeStyle = '#59606c'; cx.lineWidth = 1;
+    for (const e of [-wh, wh]){ cx.beginPath(); cx.moveTo(mid + e, yc - ch / 2 - 8); cx.lineTo(mid + e, yc + ch / 2 + 8); cx.stroke(); }
+    if (!Wc.drawable){ cx.fillText('the writer\'s layout: an array without end has no width to share, so nothing can be laid', mid, yc - ch / 2 - 14);
+      cx.fillStyle = '#3a414d'; cx.fillRect(mid - wh, yc - 1, 2 * wh, 2); return; }
+    const per = Wc.per;
+    cx.fillText(`the writer's layout: every item 2W/N = ${per >= 0.01 ? +per.toFixed(2) : per.toExponential(1)} px wide, the array's ends at the bar's ends`, mid, yc - ch / 2 - 14);
+    if (per >= MINPX){
+      for (let i = 0; i < S.N; i++){ const x = mid - wh + i * per, w = Math.max(1, per - (per > 6 ? 2 : 0)), p = payloadAt(i);
+        if (S.slots){ cx.strokeStyle = '#5b6372'; if (w >= 6){ rounded(x, yc - ch / 2, w, ch, Math.min(6, w / 4)); cx.stroke(); } else { cx.fillStyle = '#4a5260'; cx.fillRect(x, yc - ch / 2, w, ch); } continue; }
+        cx.fillStyle = w >= 18 ? p.col : p.tick; cx.fillRect(x, yc - ch / 2, w, ch);
+        if (p.text && w >= 22){ cx.font = `${Math.min(14, Math.floor(w * 0.34))}px system-ui, sans-serif`; cx.fillStyle = '#ece9e2'; cx.textBaseline = 'middle'; cx.fillText(p.text.slice(0, 6), x + w / 2, yc); cx.textBaseline = 'alphabetic'; } }
+    } else {
+      for (let px = 0; px < 2 * wh; px++){ const i = Math.floor(px / per); cx.fillStyle = S.slots ? '#3a414d' : payloadAt(i).tick; cx.fillRect(mid - wh + px, yc - ch / 2, 1, ch); }
+    }
+    const fx = mid - wh + (S.f + 0.5) * per; cx.fillStyle = '#e0b44c'; cx.fillRect(fx - 1, yc - ch / 2 - 6, 2, ch + 12);
+    cx.font = '12px system-ui, sans-serif'; cx.textAlign = 'center'; cx.fillStyle = '#8a8f99'; cx.fillText(Wc.told ? `all ${S.N.toLocaleString('en-US')} told apart` : 'none told apart: each under 10 px', mid, yc + ch / 2 + 20);
+  }
+  // ---- told apart against N, kept as N changes ----
+  const hist = [];
+  function note(){ if (!isFinite(S.N)) return; const last = hist[hist.length - 1];
+    if (last && last.N === S.N && last.chart === S.chart && last.H === S.H) return;
+    if (last && (last.chart !== S.chart || last.H !== S.H)) hist.length = 0;
+    hist.push({ N: S.N, chart: S.chart, H: S.H, told: counts(S.chart).told, writer: writerCounts().told }); if (hist.length > 400) hist.shift(); }
+  function drawPlot(){
+    if (hist.length < 2) return;
+    const pw = Math.min(300, W * 0.42), ph = 120, x0 = W - pw - 16, y0 = Hh - ph - 34, L = v => Math.log10(Math.max(1, v)), mx = 16;
+    cx.fillStyle = 'rgba(20,24,32,0.92)'; cx.fillRect(x0 - 8, y0 - 22, pw + 16, ph + 40); cx.strokeStyle = '#2a2f39'; cx.strokeRect(x0 - 8, y0 - 22, pw + 16, ph + 40);
+    const X = n => x0 + L(n) / mx * pw, Y = v => y0 + ph - L(v) / mx * ph;
+    cx.font = '11px system-ui, sans-serif'; cx.textAlign = 'left'; cx.textBaseline = 'alphabetic'; cx.fillStyle = '#8a8f99';
+    cx.fillText('as N grows (both axes ×10 a step)', x0, y0 - 8);
+    const line = (key, col) => { cx.strokeStyle = col; cx.lineWidth = 2; cx.beginPath(); hist.forEach((h, k) => { const v = key === 'N' ? h.N : h[key]; k ? cx.lineTo(X(h.N), Y(v)) : cx.moveTo(X(h.N), Y(v)); }); cx.stroke(); };
+    line('N', '#9b86d6'); line('writer', '#c0675a'); line('told', '#4fb3a6');
+    cx.fillStyle = '#9b86d6'; cx.fillText('N', x0 + 4, y0 + 12); cx.fillStyle = '#4fb3a6'; cx.fillText('told apart, the read', x0 + 22, y0 + 12);
+    cx.fillStyle = '#c0675a'; cx.fillText('told apart, the writer', x0 + 150, y0 + 12);
+  }
+
+  let lastL = null;
+  function draw(){
+    resetCount();
+    cx.clearRect(0, 0, W, Hh); cx.fillStyle = '#0f1218'; cx.fillRect(0, 0, W, Hh);
+    const top = document.getElementById('bar').getBoundingClientRect().bottom;
+    const av = Hh - top, y1 = top + av * (S.compare || S.writer ? 0.26 : 0.45);
+    const name = { line: 'the share along h + v = 1: x = s/(1 + |s|), fractions only', half: 'the half-slope: x = s/(1 + √(1 + s²))', turn: 'the turn: x = (2/π)·atan s, the dual vantage' }[S.chart];
+    lastL = drawBar(S.chart, y1, CHIP, name, false);
+    const mainCalls = sumCount();
+    if (S.compare && S.chart !== 'turn') drawBar('turn', top + av * 0.5, 36, 'beside it, the turn (2/π)·atan s: an angle and π (the games ring\'s way, with no wrap)', true);
+    lastCalls = mainCalls;
+    if (S.writer) drawWriter(top + av * (S.compare && S.chart !== 'turn' ? 0.72 : 0.56));
+    note(); drawPlot();
+    const c = counts(S.chart), i = Math.round(S.f);
+    document.getElementById('read').textContent =
+      `N ${isFinite(S.N) ? S.N.toLocaleString('en-US') : 'without end'}   H ${+S.H.toFixed(3)} items   focus #${indexOf(i).toLocaleString('en-US')}\n` +
+      `told apart ${c.told}   chips ${c.chips}   in the horizon strips ${c.strip} px   the writer's layout: ${writerCounts().told.toLocaleString('en-US')}\n` +
+      `square roots and trigonometry in the top bar this frame: ${mainCalls.total}${mainCalls.total ? ' (' + Object.entries(mainCalls).filter(e => e[0] !== 'total').map(e => e[0] + ' ' + e[1]).join(', ') + ')' : ''}`;
+  }
+
+  // ---- input ----
+  const clampF = () => { if (!S.wrap && isFinite(S.N)) S.f = Math.max(0, Math.min(S.N - 1, S.f)); else if (!isFinite(S.N) && !S.wrap) S.f = Math.max(0, S.f); };
+  const xn = px => { const v = (px - W / 2) / half(); return v > 0.999 ? 0.999 : v < -0.999 ? -0.999 : v; };
+  const sAt = px => CH[S.chart].s(xn(px));
+  const ptrs = new Map(); let drag = null, pinch = null;
+  cv.addEventListener('pointerdown', e => { cv.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, e.clientX); S.target = null;
+    if (ptrs.size === 1) drag = { i0: S.f + S.H * sAt(e.clientX), x0: e.clientX, moved: false };
+    else if (ptrs.size === 2){ const xs = [...ptrs.values()]; pinch = { d0: Math.abs(xs[0] - xs[1]) || 1, H0: S.H, mid: (xs[0] + xs[1]) / 2 }; pinch.i0 = S.f + S.H * sAt(pinch.mid); drag = null; } });
+  cv.addEventListener('pointermove', e => { if (!ptrs.has(e.pointerId)) return; ptrs.set(e.pointerId, e.clientX);
+    if (pinch && ptrs.size >= 2){ const xs = [...ptrs.values()], d = Math.abs(xs[0] - xs[1]) || 1; S.H = Math.max(0.25, pinch.H0 * d / pinch.d0); S.f = pinch.i0 - S.H * sAt(pinch.mid); clampF(); draw(); return; }
+    if (drag){ if (Math.abs(e.clientX - drag.x0) > 4) drag.moved = true; if (drag.moved){ S.f = drag.i0 - S.H * sAt(e.clientX); clampF(); draw(); } } });
+  const up = e => { if (drag && !drag.moved && ptrs.size === 1){ const i = Math.round(S.f + S.H * sAt(e.clientX)); if (has(i)) S.target = i; }
+    ptrs.delete(e.pointerId); if (ptrs.size < 2) pinch = null; if (!ptrs.size) drag = null; };
+  cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
+  cv.addEventListener('wheel', e => { e.preventDefault(); const i0 = S.f + S.H * sAt(e.clientX);
+    S.H = Math.max(0.25, e.deltaY > 0 ? S.H * 10 / 9 : S.H * 9 / 10); S.f = i0 - S.H * sAt(e.clientX); clampF(); draw(); }, { passive: false });
+  addEventListener('keydown', e => { if (e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'ArrowRight'){ S.target = Math.round(S.f) + 1; } else if (e.key === 'ArrowLeft'){ S.target = Math.round(S.f) - 1; }
+    else if (e.key === '+' || e.key === '='){ S.H *= 9 / 10; draw(); } else if (e.key === '-'){ S.H *= 10 / 9; draw(); } });
+  function tick(){
+    if (S.append){ if (!isFinite(S.N) || S.N >= 1e15){ S.append = false; syncControls(); } else { S.N = Math.min(1e15, Math.ceil(S.N * 1.04) + 1); syncControls(); draw(); } }
+    if (S.target != null){ S.f += (S.target - S.f) / 4; if (Math.abs(S.target - S.f) < 1e-3){ S.f = S.target; S.target = null; } clampF(); draw(); } requestAnimationFrame(tick); }
+
+  // ---- controls ----
+  const $ = id => document.getElementById(id);
+  function syncControls(){ $('chart').value = S.chart; $('payload').value = P.kind; $('wrap').checked = S.wrap; $('compare').checked = S.compare;
+    $('slots').checked = S.slots; $('outlines').checked = S.outlines; $('writer').checked = S.writer; $('append').checked = S.append;
+    $('mult').textContent = P.mult === 1 ? 'numbers ×10⁶' : 'numbers ÷10⁶';
+    const sel = $('N'); let cur = sel.querySelector('option[data-cur]');
+    if (!isFinite(S.N)){ if (cur) cur.remove(); sel.value = 'inf'; }
+    else if ([...sel.options].some(o => !o.dataset.cur && +o.value === S.N)){ if (cur) cur.remove(); sel.value = String(S.N); }
+    else { if (!cur){ cur = document.createElement('option'); cur.dataset.cur = '1'; sel.insertBefore(cur, sel.firstChild); }
+      cur.value = String(S.N); cur.textContent = S.N.toLocaleString('en-US'); sel.value = cur.value; } }
+  syncControls();
+  $('chart').onchange = () => { S.chart = $('chart').value; draw(); };
+  $('payload').onchange = () => { P.kind = $('payload').value; $('paste').style.display = P.kind === 'paste' ? 'block' : 'none'; if (P.kind === 'paste') readPaste(); draw(); };
+  function readPaste(){ const t = $('paste').value; pasted = t.includes('\n') ? t.split('\n') : t.split(','); pasted = pasted.map(s => s.trim()).filter(Boolean);
+    if (!pasted.length) pasted = ['paste', 'an', 'array', 'here']; S.N = pasted.length; S.f = Math.min(S.f, S.N - 1); clampF(); }
+  $('paste').oninput = () => { readPaste(); draw(); };
+  $('N').onchange = () => { const v = $('N').value; S.N = v === 'inf' ? Infinity : +v; if (isFinite(S.N)) S.f = Math.floor((S.N - 1) / 2); clampF(); draw(); };
+  $('wrap').onchange = () => { S.wrap = $('wrap').checked; clampF(); draw(); };
+  $('compare').onchange = () => { S.compare = $('compare').checked; draw(); };
+  $('repaint').onclick = () => { P.seed = (P.seed + 1) % 7; draw(); };
+  $('mult').onclick = () => { P.mult = P.mult === 1 ? 1e6 : 1; syncControls(); draw(); };
+  $('slots').onchange = () => { S.slots = $('slots').checked; draw(); };
+  $('outlines').onchange = () => { S.outlines = $('outlines').checked; draw(); };
+  $('writer').onchange = () => { S.writer = $('writer').checked; draw(); };
+  $('append').onchange = () => { S.append = $('append').checked; };
+  $('double').onclick = () => { if (isFinite(S.N)) S.N = Math.min(2 ** 53, S.N * 2); syncControls(); draw(); };
+  $('aboutBtn').onclick = () => { const a = $('about'); a.style.display = a.style.display === 'block' ? 'none' : 'block'; };
+
+  // ---- hook ----
+  window.__ring = {
+    xOf: (s, chart) => CH[chart || S.chart].x(s), sOf: (x, chart) => CH[chart || S.chart].s(x),
+    layout: chart => { const L = layout(chart || S.chart, half()); return { chips: L.chips.map(c => ({ i: c.i, x: c.x, gap: c.gap })), strips: L.strips.length, corner: L.corner, half: half() }; },
+    counts: chart => counts(chart || S.chart), payloadAt: i => payloadAt(i),
+    set(o){ Object.assign(S, o.S || {}); for (const k of ['chart', 'N', 'H', 'f', 'wrap', 'compare', 'slots', 'outlines', 'writer', 'append']) if (k in o) S[k] = o[k]; if ('mult' in o) P.mult = o.mult;
+      if ('payload' in o) P.kind = o.payload; if ('seed' in o) P.seed = o.seed; clampF(); syncControls(); draw(); return this.state(); },
+    state: () => ({ chart: S.chart, N: S.N, H: S.H, f: S.f, wrap: S.wrap, payload: P.kind, seed: P.seed, mult: P.mult, slots: S.slots, outlines: S.outlines, writer: S.writer, append: S.append }),
+    mathCalls: () => ({ ...lastCalls }), writerCounts: () => writerCounts(), history: () => hist.map(h => ({ ...h })),
+  };
+  size(); draw(); tick();
+})();
+</script>
+</body>
+</html>

@@ -7608,7 +7608,7 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   are the scale-invariant and the scale-variant", the older "writer" as an observer, headings and titles. The physics
   paper and the demos not swept.
 
-- **R1265** (26 Nov 2026; Tom: "Continue if your still making progress"): NBS run 2 (`plans/nbs-plan.md`,
+- **R1273** (26 Nov 2026; Tom: "Continue if your still making progress"): NBS run 2 (`plans/nbs-plan.md`,
   `runs/nbs/nbs2.mjs`): B′, the map with no scan, on PEB's event engine with its full signature. On the cut it settles
   in 9,149 flights from 16 or 64 starting spans alike, finds all 75 of PEB run 5's jumps and 62 more the 1,024-aim scan
   stepped over (the five its post hoc suspected among them), and holds every piece wider than 10⁻⁴ by its own 8 leaves
@@ -7618,7 +7618,7 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   maps nothing past it. C1, C2, C5 killed there, by the engine; C6 killed by my bound (the cut cost 2.6 times the scan,
   which had missed 62 jumps); C3, C4 not killed. A map that must hold every piece needs a rule for a place with none.
 
-- **R1264** (26 Nov 2026; Tom: "Merge and run"): NBS run 1 (`plans/nbs-plan.md`, `runs/nbs/`), 60 seeded 9-ball
+- **R1272** (26 Nov 2026; Tom: "Merge and run"): NBS run 1 (`plans/nbs-plan.md`, `runs/nbs/`), 60 seeded 9-ball
   positions on games' own fixed-tick engine, `games.html` unchanged. B (the whole circle mapped, pot windows weighed by the
   hand's error) finds a pot wherever the games' ghost-ball planner C does and in 20 of the 25 where C finds none (A1), and
   pots far more under the hand's error (level 3 61.0% against 32.8%, level 5 85.8% against 47.2%; A2), mostly from the
@@ -7626,6 +7626,58 @@ misread link (P1). Corrections: `physics.md` §1½ and its dictionary, `parallax
   24 of 26 (A5). A3 killed by my guess (B costs 48,018 flights a position, 4,001 times C's 12). A7 (K is n) killed on this
   engine, by the engine: the tick's hidden jumps keep B′ halving to its cap at every position; R1263's test belongs on the
   event engine (PEB runs 4–5).
+- **R1271** (27 Nov 2026; Tom: "how deep does it go? human continuous reads a continuous tellisicope read of a discrete
+  write", then "yes, run it and merge"): CDW run 3 (`runs/cdw/cdw3.py`), predictions first, nothing killed. A chain of
+  Cauchy reads with a magnification M is one read at h₁ + (h₂ + h₃)/M (2·10⁻¹²); the order and split of layers do not
+  show; the equal row's ripple 2/sinh(2πu); a pixel layer a write in the middle, its own ripple 2e^(−2πh₃/p), its box
+  sinc(πp/M) on the sky's (1.7·10⁻⁶, the aliases). Claude's reading, not ruled. *Reads and Writes* §7.
+- **R1270** (27 Nov 2026; Tom: "you are saying they use this equation, but for different purposes.", then "search for
+  it, add it to the papers and merge"): searched. The equation and its uses are classical (upward continuation, e^(−kh),
+  the half-plane's Poisson kernel, the wrapped Cauchy, Abel summation); the kernel as the point's geometry is in print in
+  part (harmonic measure as the subtended angle over π; a double layer's solid angle, from memory). Not found: the
+  continuation kernel named as a look's law, a lattice of sources against a sheet, the sorting of a continuous read over
+  discrete writes. In *Reads and Writes* §7, "Writes the read takes for a continuum". No result changes (R1229).
+- **R1269** (27 Nov 2026; Tom: "do they pull out the payload/", "we use this for gravity", "both"): CDW run 2
+  (`runs/cdw/cdw2.py`), a row of masses spaced s apart, read from u = (a + d)/s and pulled back out by least squares;
+  predictions first. Exact: an equal row's ripple is 2/sinh(2πu). Unequal masses' detail is damped e^(−πu) (frequencies
+  up to 1/(2s)): error slope 0.925 of π at σ = 10⁻⁶ (Q3; untested at 10⁻³ by my window), failure at u = ln(1/σ)/π up to a
+  constant (5.0 and 2.75, shift 2.25 against 2.20), the total mass back to 0.26σ at every u. Claude's reading, not ruled:
+  past about ln(1/σ)/π spacings a reader has the total mass per spacing and nothing of its sharing; depth and height trade
+  one for one; downward continuation's ill-posedness, classical. `gravity-ring.html` gains the row (`?scene=row`).
+- **R1268** (27 Nov 2026; Tom: "seems to me you can have a SHV sweep of a DHV sweep.   in other words a continuous read
+  heat sweeping a discrete write heat."; "yes and merge"): **a continuous read sweeps discrete writes.** CDW
+  (`plans/cdw-plan.md` + `runs/cdw/cdw.py`), exact at 40 digits, the identity known beforehand (Poisson summation, the
+  writer's mathematics): the read's heat from a focus f with thumb H over writes at the whole numbers sums to
+  sinh(2πH)/(cosh(2πH) − cos(2πf)), so the writes' discreteness reaches the read only as a ripple of about
+  2e^(−2πH)·cos(2πf) (0.0037 at H = 1, 3·10⁻²² at H = 8; at H = ¼ a total of 1.52 on a write, 0.66 between). Claude's
+  reading, not ruled: H ≈ 1, one write a thumb, is a corner between the read's fineness and the writes' spacing; past it
+  the read cannot tell its writes from a continuum, which is why the ring needs no N; the composition CRC's and
+  `gravity-ring.html`'s, the density beneath a comb. Wording: a write has no facing (R1138) and the DHV is a synthesis
+  (R1239), so "a DHV sweep" is the discrete writes laid out the writer's way.
+- **R1267** (27 Nov 2026; Tom: "Let's stay gravity is an array, the value is the strength of the field."; "Gravity has its
+  own cautchy. So fingers browsing fingers browsing gravity array"; "Own page merge"): `gravity-ring.html`. Gravity's array
+  indexed by place on the ground, its value the pull there, each mass's part its own Cauchy of its depth (GRV); a reader's
+  fingers browsing it from height a average it to the masses read from a + d, the Cauchy family closed (scales add; SUM's
+  relay, R358; upward continuation), as CRC found exactly on 26 November (R1237; essay 33 §16); this page its demo. Exact to 3.5·10⁻¹⁵ of the peak over the ground. Claude's precisions, kept on the page:
+  the two kinds of fingers are two plays on one stage (the read's a law over directions, gravity's a weight times a mass,
+  summed; R1183); the composite adds the heights and never gives the mass apart from its depth (R1197).
+- **R1266** (27 Nov 2026; Tom: "How would we convert the ring to true cauchy"; "Do this in a demo.   Let's see if we can
+  create a true shv version of the ring.  It should work with any array,  the array is the payload."): `ring.html`. The list
+  is the shore and the bar the read: item i at the slope (i − f)/H, laid at x = s/(1 + |s|), the share of the sweep along
+  h + v = 1 (paths.html's line), rational both ways; one thumb at half the bar and x(s) + x(1/s) = 1 by the exchange; the
+  ends the horizon, every item placed, none culled; 0 square roots or trigonometric calls a frame (the half-slope 310 √,
+  the turn 400 tan and atan); told apart 27 at H = 8 for every N from 10⁴ to 10¹⁵ and without end; a repaint moves no chip.
+  Claude's precision: the spacing on this chart is not equal heat (that needs the turn's arctangent); what it keeps is the
+  corner at half and the exchange, which every fair chart keeps (OFS Theorem 6(e)).
+- **R1265** (27 Nov 2026; Tom: "The ring is cauchy without cauchy"; "Add to 17 and merge"): the games page's tool ring
+  writes no Cauchy (no density, no 1/(1 + s²), no γ; "fisheye" in the code), yet equal turns laid by tan spread the tools
+  by 1/(1 + s²): the turn's own heat, given, not computed (R389, R458), the lighthouse in a menu. Essay 17 §2.
+- **R1264** (27 Nov 2026; Tom, of the games page's bottom tool ring: "This is k not n in action, the read write paper talks
+  about."; "This uses arctan, so it's not fully shv"; "No.  Arctan works fine,  it's just not shv"; "This is why people
+  conflate shv and dhv, because you can."; "Add it 27 and merge"): the ring (`RING_BOMA`, `makeRing` in reportbase/games)
+  shows about (W + 4·chip)/chip chips whatever the number of tools, K not N; written in the DHV's terms (equal turns iπ/N,
+  `tan`, `atan`, a closing), not a read; left as it is. The two forms agree wherever both apply, so nothing in the output
+  tells them apart; only what each needs does, which is why they are conflated. Essay 27 §5.
 - **R1263** (26 Nov 2026; Tom: "This might seem like a lot extra work, but tb allows us to make real the idea that k is
   n. N is not n."): read as: with the Tangent Bridge the count a procedure runs over is K, the leaves laid on what is met
   between its events, not N, the aims or samples a search could take; the work it buys is set by the world's events and

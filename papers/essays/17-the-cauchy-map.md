@@ -97,6 +97,14 @@ The photographer's cos⁴ is this cos³ and one more for the aperture, which a r
 foreshortened. The three geometric cosines would be there for a pinhole with no light at all; they are where the looking
 is.
 
+A menu bar shows how little the heat asks for. The games page's bottom bar holds a game's tools on a ring that spins:
+each tool at an equal turn, `angle + i·π/N`, put on the bar at `tan` of its turn. Nobody wrote a Cauchy there: no
+density, no 1/(1 + s²), no γ; the code calls it a fisheye. Yet that is the derivation above, run: equal turns read in
+s, so the share of the tools per unit of the bar is 1/(1 + s²), most at the middle, thinning to the ends, with no mean.
+It is the lighthouse in a menu, the bar its shore. Cauchy without Cauchy: the heat came with the turn, given, not
+computed, which is also why it is so easily taken for a design choice. (The bar's code is the dual vantage's, written in
+angles and π, a ring that closes; essay 27 §5. R1265.)
+
 ## 3. What it is not
 
 There is an easy way to get this backward, and it is worth getting it wrong once on purpose.
@@ -191,6 +199,13 @@ It is also why a sum of Cauchys is a Cauchy: a relay of standpoints, each one he
 the total height (the SUM run). The heights add, and the map stays a map of directions. Nothing has to be reconciled,
 because a heat map has no boundary: combining shapes means working out where their edges meet, combining heat maps means
 adding heat. Two maps laid over each other add too, but their sum is two peaks, a heat map and not one Cauchy.
+
+A wall need not be smooth either. If it is a row of posts one apart, the map laid over them sums exactly to the wrapped
+Cauchy, sinh(2πd)/(cosh(2πd) − cos(2πy)), and the posts are left as a ripple of about 2e^(−2πd): from one post-spacing
+back it is four parts in a thousand, from eight, three in 10²². Stepping back does not only dim the fine patterns; past
+one post a step it makes the posts a continuum to the map (CDW, Poisson summation; essay 33 §16 carries it to a row of
+masses). However many maps are stacked, each stepped back from the last, they are one map from the summed distance, a
+magnification between them dividing what comes after it (CDW run 3, essay 33 §16).
 
 And it is how the epicycles of essay 4 and the demo `epicycles.html` blur: seen from a height γ, circle k of an outline
 shrinks by e^(−γ|k|), and no circle moves.
@@ -361,6 +376,8 @@ second map in distance), `read.html` (the read with no world: the hemisphere in 
 - Tom, 25 November 2026: "We have found repeatedly that cauchy is misunderstood."; "This is an internal document so we
   didn't need to be careful, just accurate, our assessments can can be modified later."; "Yes" (to the finding in the
   essays). SPN R1203–R1204.
+- Tom, 27 November 2026: "The ring is cauchy without cauchy" (of the games page's tool ring); "Add to 17 and merge".
+  SPN R1265.
 - Doyle, P. G. and Snell, J. L. (1984). *Random Walks and Electric Networks*. Carus Mathematical Monographs 22.
 - Jaynes, E. T. (1968). Prior probabilities. *IEEE Transactions on Systems Science and Cybernetics* 4(3), 227–241.
 - Kakutani, S. (1944). Two-dimensional Brownian motion and harmonic functions. *Proceedings of the Imperial Academy

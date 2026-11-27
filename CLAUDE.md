@@ -623,13 +623,34 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   point a third of the way between the centres at M₂/M₁ = (27/4)(R₂/D)³ and both go (three or one, never two); two lens
   masses on a line keep the Cauchy along it (sources Cauchy(z − Σ εᵢ/(z − aᵢ)), three images three Cauchys, points
   adding to w + a + b). `look-pull.html` the thread's demo.
-  NBS run 2 (`runs/nbs/nbs2.mjs map cut|tworail 16|64`, then `report`; SPN R1265; Tom: "Continue if your still making
+  NBS run 2 (`runs/nbs/nbs2.mjs map cut|tworail 16|64`, then `report`; SPN R1273; Tom: "Continue if your still making
   progress"): B′ on PEB's event engine. Cut: no scan, the same 137 jumps from 16 or 64 spans, all 75 of PEB run 5's and 62
   it missed, every piece held by 8 leaves (R1263 shown); two rails capped in a window where a touching pair chatters (C1,
   C2, C5 killed by the engine, C6 by my bound). A place with no pieces needs a rule.
-  NBS run 1 (`runs/nbs/nbs.mjs run`, then `report`; SPN R1264; Tom: "Merge and run"): 60 positions, games unchanged; B (the
+  NBS run 1 (`runs/nbs/nbs.mjs run`, then `report`; SPN R1272; Tom: "Merge and run"): 60 positions, games unchanged; B (the
   whole circle) beats the ghost-ball planner on pots found and made (A1, A2, A4, A5), at 4,001 times the flights (A3 killed,
   my guess); A7 (K is n) killed by the fixed tick's hidden jumps, B′ capped everywhere; its fair test is the event engine.
+  R1271 (27 Nov; Tom: "how deep does it go? human continuous reads a continuous tellisicope read of a discrete write",
+  "yes, run it and merge"): CDW run 3 (`runs/cdw/cdw3.py`): a chain of reads is one read at h₁ + (h₂ + h₃)/M, a later
+  read counting 1/M, the layers uncountable; a pixel layer a write with its own ripple 2e^(−2πh₃/p) and box sinc(πp/M).
+  Nothing killed; in *Reads and Writes* §7. Claude's reading, not ruled.
+  R1270 (27 Nov; Tom: "search for it, add it to the papers and merge"): CDW and the search in *Reads and Writes* §7
+  ("Writes the read takes for a continuum"): the numbers classical, the kernel as the point's geometry in part (harmonic
+  measure as subtended angle), the sorting not found (snippet depth).
+  R1269 (27 Nov; Tom: "do they pull out the payload/", "we use this for gravity", "both"): CDW run 2 (`runs/cdw/cdw2.py`),
+  a row of masses read from u = (a + d)/s and pulled back out: an equal row's ripple 2/sinh(2πu) exactly; uneven masses
+  told apart as e^(−πu), recovery failing near ln(1/σ)/π (Q3 slope 0.925 of π at σ = 10⁻⁶, untested at 10⁻³ by my window;
+  Q4 shift 2.25 against 2.20), the total mass always back; `gravity-ring.html`'s row. Claude's reading, not ruled.
+  R1268 (27 Nov; Tom: "seems to me you can have a SHV sweep of a DHV sweep.   in other words a continuous read heat
+  sweeping a discrete write heat.", "yes and merge"): CDW (`plans/cdw-plan.md` + `runs/cdw/cdw.py`, exact, the identity
+  known beforehand): the read's heat over writes at the whole numbers sums to sinh(2πH)/(cosh(2πH) − cos(2πf)), the
+  writes' discreteness a ripple of about 2e^(−2πH) (0.0037 at H = 1, 3·10⁻²² at H = 8). Claude's reading, not ruled: one
+  write a thumb a corner; past it the read cannot tell its writes from a continuum, why the ring needs no N. Not in any paper.
+  R1265 (27 Nov; Tom: "The ring is cauchy without cauchy"): the tool ring writes no Cauchy, yet equal turns laid by tan
+  give 1/(1 + s²), the turn's heat given, not computed; essay 17 §2.
+  R1264 (27 Nov; Tom, of the games page's tool ring: "This is k not n in action"; "it's just not shv"; "This is why people
+  conflate shv and dhv, because you can."): K, not N, written in the DHV's terms (tan, atan, a closing); the two forms agree,
+  so only what each needs tells them apart. Essay 27 §5.
   R1263 (26 Nov; Tom: "tb allows us to make real the idea that k is n. N is not n."): the count a procedure runs over is
   K (leaves between the world's events), not N (what a scan could fly); NBS gains B′ (no fixed scan, pieces found by halving
   until the K-leaf bridge holds) and A7 (K is n), before any run.
@@ -1687,6 +1708,36 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   of the horizon, K, terms a read, sup error, Lebesgue constant, trig calls; reproduces DBR's numbers.
   `?z=<ζ>&K=12|24|48&win=ratio|records&paint=ratio|size`; hook `window.__dialBridge` (`set`, `state`, `rebuild`, `lattice`,
   `cheb`). Not in the flying page.
+- `ring.html`: **a ring of slopes** (27 Nov 2026, SPN R1266; Tom: "Do this in a demo.   Let's see if we can create a true
+  shv version of the ring.  It should work with any array,  the array is the payload."), a standalone page, plain canvas. The
+  games page's tool ring turned round: any array (numbers, words, emoji, colours, pasted; N from 8 to 10¹⁵ or without end) read
+  from a focus f with a thumb H, item i at the slope s = (i − f)/H, laid at x = s/(1 + |s|) (the share of the sweep along
+  h + v = 1): rational both ways, one thumb at half the bar, x(s) + x(1/s) = 1, the ends the horizon. Chips while neighbours
+  are 1.5 px apart, then a strip of their paint to each horizon; none culled; told apart 27 at H = 8 for every N ≥ 10⁴. The
+  page counts Math's square roots and trigonometry each frame: 0 on this chart (the half-slope's √, the turn's atan and tan
+  for comparison, the turn drawn beside it). Drag keeps the item under the finger (f = i₀ − H·s(x)), wheel or pinch H by
+  10/9, tap the pick; wrap a count mod N. `?chart=line|half|turn&payload=numbers|words|emoji|colours|paste&N=|inf&H=&f=&wrap=1&compare=0`;
+  hook `window.__ring` (`xOf`, `sOf`, `layout`, `counts`, `payloadAt`, `set`, `state`, `mathCalls`). Not in the flying page.
+  Since 27 Nov (Tom: "How can we strengthen the demo.  No,  it's not a proof but it illustrates the idea very well.", "1-4
+  merge"): "addresses only" (the empty slots, each with its slope as a fraction); gold outlines of the slots over the paint
+  (a repaint, another kind of array or numbers ×10⁶ moves none, to 10⁻⁹); "double N" and "keep adding" with the focus held,
+  a plot of the count told apart against N (27 flat from 10² to 10¹⁵); the writer's layout, 2W/N px an item (all 100 told
+  apart at N = 100, none past about 1,000, no width without end). Params add `slots=1&outlines=0&writer=0&mult=&append=1`;
+  hook adds `writerCounts`, `history`.
+- `gravity-ring.html`: **fingers browsing gravity** (27 Nov 2026, SPN R1267; Tom: "Let's stay gravity is an array, the value
+  is the strength of the field."; "Gravity has its own cautchy. So fingers browsing fingers browsing gravity array"; "Own page
+  merge"), a standalone page, plain canvas. In the plane (masses as rods end on, the ground a line): each mass M at depth d
+  pulls on the ground with M·C(x; m, d), gravity's fingers (GRV); added, the array. A reader at height a over f turns evenly,
+  its fingers landing at f + a·tan θ, each painted by the array there; their mean equals Σ M·C(f; m, d + a), the heights
+  added (SUM's relay, upward continuation; CRC's result, R1237, essay 33 §16, this page its demo): 3.5·10⁻¹⁵ of the peak at a = 1.5 and 5 with 4,096 fingers, 4·10⁻⁶ at a = 0.3; the
+  array sampled every 0.1 or 0.5, 2.6·10⁻⁴ and 6.5·10⁻³; mass ×10 multiplies the mean by 10 and moves no finger; raising the
+  reader by h sinks every mass by h. Uses tan and atan (the turn's chart). Never calls the pull a read (R1183) or the mass
+  told from its depth (R1197). Since R1269 a row (`?scene=row|uneven`, `s=`, `d=`): masses s apart at depth d without end,
+  eight to a period, each mass's row a periodic Cauchy in closed form; the readout gives u = (a + d)/s and the ripple
+  against 2/sinh(2πu) (equal row) or e^(−πu) (uneven); there the fingers' mean meets the masses read from a + d only as the
+  fingers grow (10⁻⁵ at 65,536), the far fingers landing on the endless ripple. `?a=&f=&seed=&mult=&step=0|0.1|0.5&n=&scene=&s=&d=`;
+  hook `window.__gravRing` (`field`, `arrayAt`, `composite`, `direct`, `check`, `fingers`, `masses`, `ripple`, `row`, `set`,
+  `state`). Not in the flying page.
 - `look-pull.html`: **a look and a pull** (24 Nov 2026, SPN R1182; essay 33; FCL; Tom: "merge, 1, 2, 3"), a standalone page
   like `faces.html`, plain canvas. Masses about a place (a seeded scatter in the drawing's plane, an even shell with the
   place off its centre, one mass), a facing turned by a slider: the faced take F(n) (a definition from FCL run 6) in front
