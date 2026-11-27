@@ -475,6 +475,14 @@ as e^(−kh); the half-plane's harmonic measure of an interval is the angle it s
 continuation kernel named as a look's law, nor the sorting of a continuous read over discrete writes; the numbers are
 others', the sorting ours (*Reads and Writes* §7, "Writes the read takes for a continuum").
 
+How deep does it go? Tom: "human continuous reads a continuous tellisicope read of a discrete write." As deep as you like,
+and it is still one read (CDW run 3, predictions first, nothing killed). An objective from h₁, a magnification M, an
+eyepiece h₂ and an eye h₃ are exactly the one read from h₁ + (h₂ + h₃)/M, to two parts in 10¹²: the layers' order and
+how the reach was shared never show, a read after the telescope counts 1/M, so the objective decides, and no layer gives
+back what an earlier one smoothed. A camera in the chain is a write in the middle: its pixels leave a ripple of their own
+at their own spacing, 2e^(−2πh₃/p), beside the sky's, and its box adds one factor, sinc(πp/M), to what reaches the eye
+from the stars. Classical optics, transfer functions multiplying; the sorting is the stage's.
+
 Then two corrections of the words used so far. Tom, the same evening: "gravity uses both hemispheres, but its not a dhv,
 gravity has no vantage." And: "the cauchy is just a word we use for lack of a better one. its just a density. gravity has
 a density as well, but for different reasons." So there are three, not two. A read holds one hemisphere from a
