@@ -64,7 +64,7 @@
     <span class="g">up–down</span> (the altitude), both the geometry's, given before anything arrives. Each gives a ratio, so every point in view is a direction, two ratios:
     how far across against how far ahead, and how far up against how far out. From one place that is a picture, every
     direction and every angle, but no distance. One step, its length never measured, makes it a map: every place and size
-    as so many steps. One counted stride writes it in metres.</p>
+    as so many steps. One counted stride gives it in metres.</p>
     <div class="panel">
         <div class="row" id="steps"></div>
         <div class="row" id="things"></div>
@@ -335,7 +335,7 @@
         } else {
             note = 'Between things, unitless, the same in steps or in metres: ' + ratios().map(r => r[0] + ' ' + r[1].toFixed(3) + ' ' + r[2]).join('; ') + '. ' +
                 (st.step === 2 ? 'Every number in the table is so many steps, and the step was never measured: it is the observer\'s own one, its H.'
-                    : 'One stride, measured once against a rule (' + unit.toFixed(3) + ' m), writes every place and size in metres. That one amount is the only thing carried in.');
+                    : 'One stride, measured once against a rule (' + unit.toFixed(3) + ' m), gives every place and size in metres. That one amount is the only thing carried in.');
         }
         $('note').innerHTML = note;
         $('say').innerHTML = [

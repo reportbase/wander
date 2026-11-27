@@ -214,7 +214,7 @@
     function read1() {
         const c = counts(st.N), k = Math.pow(10, st.lk);
         let s = `<span class="b">${st.N} things</span>: ${c.places} places on the levels hold all ${c.ratios} ratios between them.\n\n`;
-        s += 'thing  turn     v/h (its reading)   level     distance (a write, ×k)\n';
+        s += 'thing  turn     v/h (its reading)   level     distance (an amount, ×k)\n';
         st.things.forEach((T, i) => {
             s += `  ${T.name}    ${T.theta.toFixed(1).padStart(5)}°   ${reading(i).toPrecision(4).padStart(9)}        ${(level(i) >= 0 ? '+' : '') + level(i).toFixed(3)}`
                 + `    ${(T.d * k).toPrecision(3)}\n`;

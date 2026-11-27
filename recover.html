@@ -549,7 +549,7 @@ function hudMany(W, RS, eps, k, inW){
     lines.push(`one standpoint: ${painted} of ${MB.NCAP} directions painted, by ${seenCensus} bodies; ${W.hides.size} pairs ordered by what hides what, none sized`);
     lines.push(`three standpoints |AB| = 1 apart, pixels ε = ${eps ? eps.toExponential(0) : '0 (exact)'}${eps ? ` (B/ε = ${(1 / eps).toPrecision(2)})` : ''}:`);
     lines.push(`  shape ${cnt.shape} (out to ${reach('shape').toFixed(0)}), place ${cnt.place} (to ${reach('place').toFixed(0)}), direction only ${cnt.direction}, hidden ${cnt.hidden}`);
-    lines.push(`at ε = 0 every seen point in |AB| to ${f(Math.max(e0, 1e-17))} of its distance: the geometry has no bands; one length |AB| writes the field`);
+    lines.push(`at ε = 0 every seen point in |AB| to ${f(Math.max(e0, 1e-17))} of its distance: the geometry has no bands; one length |AB| gives the field`);
     lines.push(`scale the world ×${k >= 1e3 || k < 1e-2 ? k.toExponential(1) : k.toPrecision(3)}: points in |AB| moved ${f(Math.max(dq, 1e-17))}`);
     document.getElementById('hud').textContent = lines.join('\n');
     S._last = { cnt, painted, seenCensus, hides: W.hides.size, e0, dq, inWedge };

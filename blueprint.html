@@ -97,7 +97,7 @@
                 <p class="cap">Passive: 128 directions given round one point, each dot the colour of what its line meets first.
                     Nothing on the lot sends, so no distance arrives and every dot sits on the circle. Send a pulse and a
                     range comes back along each direction, drawn over their geometric mean: the shape, but in the unit the
-                    pulse carried in (its speed and a clock), so ranging is writing. Scale the world and nothing here moves.</p>
+                    pulse carried in (its speed and a clock), so the ranges are amounts. Scale the world and nothing here moves.</p>
                 <p class="read" id="readP"></p>
             </div>
             <div class="panel">
@@ -334,12 +334,12 @@ function describe() {
     const k = K(), w = writer(k), t = S.hover;
     $('readW').textContent = (t ? `${THINGS[t].name}. ` : '') + `The lot ${fmtM(w.lot[0])} × ${fmtM(w.lot[1])}; the living room ${fmtM(w.rooms[0].w)} × ${fmtM(w.rooms[0].d)}; ` +
         `the standpoint is at (${fmtM(S.at[0] * k)}, ${fmtM(S.at[1] * k)}). Every one of these moves with k.` +
-        (WR ? `\nWritten from one stride (${fmtM(WR.stride)}, counted): ${WR.points.length} corners seen from home and from the stride's end, each two rays crossing, ` +
+        (WR ? `\nGiven from one stride (${fmtM(WR.stride)}, counted): ${WR.points.length} corners seen from home and from the stride's end, each two rays crossing, ` +
             `out to ${fmtM(WR.span[0])} along h and ${fmtM(WR.span[1])} along v; the largest error ${WR.maxErr.toExponential(1)} of a length. In strides the same at every k; in metres by k.` : '');
     const pr = t ? P.rays.filter(o => o.what === t) : [];
     $('readP').textContent = t ? (pr.length ? `${THINGS[t].name}: ${pr.length} of ${NP} directions from this vantage (a share of the turn, not a size)` + (S.pulse ? `; the pulse's ranges ${pr.map(o => o.shape).reduce((a, b) => Math.min(a, b)).toFixed(3)} to ${pr.map(o => o.shape).reduce((a, b) => Math.max(a, b)).toFixed(3)} of their mean` : '') : `${THINGS[t].name}: nothing arrives from it here`)
         : S.pulse ? `A pulse sent: ${NP} ranges back, the shape from ${Math.min(...P.rays.map(o => o.shape)).toFixed(3)} to ${Math.max(...P.rays.map(o => o.shape)).toFixed(3)} of their mean, in the unit the pulse carried in (its speed and a clock).`
-            : `${new Set(P.rays.map(o => o.what)).size} things paint the read's directions; no distance in them. Send a pulse for ranges, and that is a write.`;
+            : `${new Set(P.rays.map(o => o.what)).size} things paint the read's directions; no distance in them. Send a pulse for ranges, and those are amounts.`;
     const ar = t ? A.filter(o => o.what === t) : [];
     $('readA').textContent = t ? (ar.length ? `${THINGS[t].name}: directions from [1 : ${ar[0].ratio.toPrecision(3)}] to [1 : ${ar[ar.length - 1].ratio.toPrecision(3)}], ${ar.length} of ${NA} (g ${ar[0].g.toFixed(3)} to ${ar[ar.length - 1].g.toFixed(3)}); how far, never` : `${THINGS[t].name}: not seen from ${HOMES[S.home].name}`)
         : `From ${HOMES[S.home].name}: ${Object.keys(shareOf(A)).length} things met, each a stretch of directions; half the turn either side of v = h.`;

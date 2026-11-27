@@ -116,7 +116,7 @@
         e<sup>iπ</sup> = −1: the stride reaches it in a finite count, the fixed share approaches it. Two looks one
         counted stride apart already give the strides left and the size in strides.</p>
     <p class="note"><b>The count and the write on the walk.</b> Each stride from the corner to the foot is a write, a thing with a size;
-    counting them is a count, a description laid over them, with no unit, the same in a world of any size. Saying a stride is 0.7 m is a write, an amount in a unit, and only
+    counting them is a count, a description laid over them, with no unit, the same in a world of any size. Saying a stride is 0.7 m is an amount in a unit, and only
     that makes the 3.0 km. A single look keeps nothing; going back exactly to where the count began needs the count kept, in marks, each a write
     (<i>Reads and Writes</i> §1, "Steps, never positions").</p>
 
@@ -286,7 +286,7 @@
             (arrived ? `arrived: the ${THINGS[S.thing].name}'s foot is straight down, at your feet, where it can be touched\n`
                 : `time to contact τ ≈ ${tr.toFixed(1)} ticks (two looks joined: distance over the step)   τ̇ ≈ ${tdot.toFixed(3)} (scale-free)   ${S.pace === 'steady' ? 'you will arrive at speed' : 'you will stop at the foot'}\n`) +
             (S.count ? (crossed ? `strides counted from the corner: ${sc.toFixed(0)}   placed: the ${THINGS[S.thing].name} is ${wv.inStrides.toFixed(2)} strides wide` +
-                `${arrived ? ` = ${wv.inMetres.toFixed(1)} m written, with the stride (0.7 m) carried in` : ' so far'}\n` : 'counting starts at the corner\n') : 'not counting: no amount is written\n') +
+                `${arrived ? ` = ${wv.inMetres.toFixed(1)} m, given with the stride (0.7 m) carried in` : ' so far'}\n` : 'counting starts at the corner\n') : 'not counting: no amount is given\n') +
             (S.ground ? `the DHV's account: d = ${fmtM(Math.max(d, 0))}, the corner at ${fmtM(dc)}, its mirror partner at ${fmtM(isFinite(x) && d > 0 ? mirror(d) : 0)}, true width ${fmtM(Vstar())}` : '');
     }
     const fmtM = m => m >= 1000 ? `${(m / 1000).toFixed(m >= 1e5 ? 0 : 2)} km` : `${m.toFixed(m >= 100 ? 0 : 1)} m`;

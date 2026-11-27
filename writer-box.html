@@ -112,8 +112,8 @@
         A <b class="gold">read</b> is taken inside it, with a vantage, not a shape: one standpoint, drawn here as the DHV draws it,
         a sphere and one octant of it, the wedge, its directions and their heat. Each direction is two numbers; it points at a point of the box, three numbers. The one
         between is the distance, the DHV's, never read. The read has a vantage, the DHV none; the third view is
-        ranging, a write.</p>
-    <div class="vant" id="vant"><button data-v="writer">the DHV</button><button data-v="address">the read, from home</button><button data-v="payload">ranges, a write</button></div>
+        ranging, amounts.</p>
+    <div class="vant" id="vant"><button data-v="writer">the DHV</button><button data-v="address">the read, from home</button><button data-v="payload">ranges, amounts</button></div>
     <p id="vcap"></p>
     <div class="more">
         <h3>the wedge's place (amounts, from the box's middle)</h3>
@@ -372,7 +372,7 @@ function applyView() { const v = S.view, P = S.P, Hr = H();
 const VCAP = {
     writer: `<b class="blue">The dual hemispherical vantage</b>, both hemispheres at once: classical geometry's view, shown for comparison. The box whole, front and back of everything, drawn with parallel rays from no standpoint. Every point is three amounts on three number lines; the distance along each ray is one of them.`,
     address: `<b class="gold">The read</b>, from its standpoint (home), looking out down the wedge: its directions and their heat, given before anything arrives. The heat is given; the paint is met. It holds directions only, [h : v : v₂], each painted by what arrives (here the colour of the face its ray meets). No distance arrives, and no box.`,
-    payload: `<b class="teal">Ranges, a write</b>: a pulse sent along each given direction brings back an amount, in a unit the pulse carries in (the signal's speed and a clock), so ranging is writing, not reading. Over their geometric mean the ranges give the shape of the box's corner seen from here, not its size.` };
+    payload: `<b class="teal">Ranges, amounts</b>: a pulse sent along each given direction brings back an amount, in a unit the pulse carries in (the signal's speed and a clock), so the ranges are amounts, not reads. Over their geometric mean the ranges give the shape of the box's corner seen from here, not its size.` };
 const HINT = {
     writer: 'Drag the gold ball to move the wedge (arrows, page up/down too). Drag elsewhere to turn the view, scroll to zoom. Point at a dot for its direction and where it lands.',
     address: 'You stand at the read\'s standpoint. Move it with the arrows or the sliders, turn it, scale the world: the directions and their heat stay; only the paint changes. Point at a dot for its direction.',
@@ -387,10 +387,10 @@ function hud() { const k = K(), a = G.anglesOfRot(S.R), c = CN, n = L.length, hv
         if (hv) { const m = Math.max(hv.h, hv.v, hv.v2); s += `\n\ndirection [${[hv.h, hv.v, hv.v2].map(x => (x / m).toFixed(3)).join(' : ')}], painted ${G.FACES[hv.face]}; how far, never`; }
         $('hud').textContent = s; return; }
     if (S.view === 'payload') { const rel = SH.rel, mx = Math.max(...rel), mn = Math.min(...rel);
-        let s = `ranging (a write) gives ${n.toLocaleString('en')} amounts, one along each given direction, in the unit the pulse carries in\n` +
+        let s = `ranging gives ${n.toLocaleString('en')} amounts, one along each given direction, in the unit the pulse carries in\n` +
             `drawn over their geometric mean (${fmt(SH.gm)} in the box's units at k = ${fmt(k)}; no reading gives it): the shell, nearest ${mn.toFixed(3)}, farthest ${mx.toFixed(3)} of it\n` +
             `the shape of the box's corner seen from here, not its size: scale the world and every amount moves by k, the shell not at all`;
-        if (hv) s += `\n\nalong [${[hv.h, hv.v, hv.v2].map(x => (x / Math.max(hv.h, hv.v, hv.v2)).toFixed(3)).join(' : ')}] (given): ${rel[S.hover].toFixed(4)} of the mean (the shape); ${fmt(hv.t)} in the box's units (a write)`;
+        if (hv) s += `\n\nalong [${[hv.h, hv.v, hv.v2].map(x => (x / Math.max(hv.h, hv.v, hv.v2)).toFixed(3)).join(' : ')}] (given): ${rel[S.hover].toFixed(4)} of the mean (the shape); ${fmt(hv.t)} in the box's units (an amount)`;
         $('hud').textContent = s; return; }
     let s = `the DHV holds the box, ${S.E.map(x => fmt(x * k)).join(' × ')}, and the read's standpoint in it, (${S.P.map(x => fmt(x * k)).join(', ')}), from its middle: amounts\n` +
         `its triple corner points at longitude ${a.lon.toFixed(1)}°, latitude ${a.lat.toFixed(1)}°, turned ${a.roll.toFixed(1)}°; H = ${fmt(H())}, the zoom\n` +
