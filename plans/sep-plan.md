@@ -209,3 +209,32 @@ standpoint keep exactly the turns about that standpoint, a read's own symmetry, 
 spectrum's 20–29% is not the noise as such but the noise's chart: an amount laid evenly in frequency. A spectrum that
 counted (photons, nuclei) would separate its lines as draws do; one with a fixed electronic noise per channel carries the
 chart its channels were laid on.
+
+## Run 5: a counted doublet, from tight to loose (27 Nov 2026; SPN R1280; Tom: "1 2 3 4")
+
+Run 4 says counted noise keeps the separation's difficulty to the hyperbolic distance alone, as draws do. A spectrum
+made by counting is the case to try, and the run also gives what run 3 lacked: pairs from tight (distance under 2) to
+loose. Data: the IUCr powder-diffraction round robin's PbSO₄ pattern (Hill 1992, *J. Appl. Cryst.* 25, 589), laboratory
+Cu Kα, raw counts, 10°–160° 2θ in 0.025° steps (6,001 points), as distributed with the GSAS-II tutorials
+(AdvancedPhotonSource/GSAS-II-tutorials, `CWCombined/data/PBSO4.XRA`); sha256
+ca2da02fc7e17d2fc912de22a979f8101ba6140f2e8104f9d3aa64f030ca58bb; not committed. Only the header has been looked at
+before these predictions.
+
+Every Bragg reflection is a doublet: Kα₁ and Kα₂ (λ = 1.540598 and 1.544426 Å, Hölzer et al. 1997), the second about
+half as strong (2p₃/₂ against 2p₁/₂, statistical weights 4 : 2; measured ratios near 0.50), spaced
+Δ(2θ) = 2·tanθ·Δλ/λ: about 0.05° at 20°, 0.78° at 140°, against widths of a tenth of a degree and more. So the pair's
+hyperbolic distance grows with angle through one pattern. Known beforehand: the 0.5 ratio and the spacing.
+
+Method, fixed now. Reflections from PbSO₄'s cell (Pnma, a 8.480, b 5.398, c 6.958 Å; the extinctions of Pnma), kept
+only where no other allowed reflection's Kα₁ lies within max(0.5°, 3·Δ) and the peak stands 20 √(background) above a
+linear background. Each kept window (Kα₁ ± (0.4° + 2Δ)) fitted by Poisson maximum likelihood: a linear background and
+two Lorentzians in 2θ, free places, widths and amounts. The hyperbolic distance from the fitted standpoints,
+cosh d = 1 + |z₁ − z₂|²/(2γ₁γ₂).
+
+- U1: the median Kα₂/Kα₁ amount ratio over the kept reflections within 0.05 of 0.50.
+- U2: the median fitted spacing within 10% of 2·tanθ·Δλ/λ over reflections with d ≥ 3.
+- U3: the share's error grows as the pair tightens: Spearman's ρ between d and |ratio − 0.5| below −0.3.
+- U4: where d ≥ 3, the scatter of the ratios about 0.5 is within twice the median Poisson standard error the fits give
+  (the counting bound holding on real data). Line shapes are not pure Lorentzians (instrument profile, axial divergence),
+  so this is the clause most at risk; it is the one that tests run 4 on data.
+- U5: the total (both amounts) of each reflection matches the background-subtracted counts in its window within 2%.
