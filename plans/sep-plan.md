@@ -238,3 +238,30 @@ cosh d = 1 + |z₁ − z₂|²/(2γ₁γ₂).
   (the counting bound holding on real data). Line shapes are not pure Lorentzians (instrument profile, axial divergence),
   so this is the clause most at risk; it is the one that tests run 4 on data.
 - U5: the total (both amounts) of each reflection matches the background-subtracted counts in its window within 2%.
+
+### Run 5 (`runs/sep/sep5.py`, `sep5-out.txt`)
+
+383 allowed reflections, 17 isolated and strong enough, all but one below 51° (the isolation window max(0.5°, 3Δ) leaves
+little at high angle in this crowded pattern), so only one pair (64.6°, the fit wrong there: spacing 3.4 times the
+prediction) reached d ≥ 3; the rest sit at d = 1.35–2.54.
+
+- U1 KILLED: median Kα₂/Kα₁ 0.329, not within 0.05 of 0.50; the free fits put Kα₂ narrow (γ₂ ≈ 0.6–0.7 γ₁) and weak.
+- U2 KILLED: one reflection at d ≥ 3, and that fit failed (spacing/prediction 3.35). Below d 3 the spacing agrees within
+  10% at 15 of 16.
+- U3 not killed: Spearman ρ(d, |ratio − 0.5|) = −0.54; the tightest pairs miss the share most, the ratio rising toward
+  0.45–0.48 by d 2.3–2.5.
+- U4 KILLED: rms(ratio − 0.5) 0.14 against twice the median Poisson standard error 0.028 (one reflection).
+- U5 KILLED by my set-up: the amounts are whole-line integrals, the window holds 92–97% of a Lorentzian, so 1.03–1.08.
+
+Deviance per point 1.4 to 110: two free Lorentzians do not fit these lines (an instrument profile, a low-angle
+asymmetry from axial divergence), and with the model wrong the counting bound does not describe the scatter. Killed by
+the data's shapes and by my set-up, not a test of run 4's claim.
+
+## Run 6: what is known held fixed (27 Nov 2026; SPN R1280)
+
+Both lines pass through one instrument, so one width; the spacing is the wavelengths' (2·tanθ·Δλ/λ), so fixed. Free:
+background, Kα₁'s place, the common width, the two amounts. The selection and windows as run 5.
+
+- V1: median Kα₂/Kα₁ within 0.05 of 0.50.
+- V3: Spearman ρ(d, |ratio − 0.5|) below −0.3.
+- V4: where d ≥ 2, rms(ratio − 0.5) within twice the median Poisson standard error.
