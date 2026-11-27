@@ -59,3 +59,25 @@ Reading (Claude's, not ruled): each mass's share is had only while (a + d)/s sta
 past it the reader still has the total mass per spacing exactly and nothing of how it is shared out. Only a + d enters,
 so a mass's depth and the reader's height trade one for one, and the mass is never had apart from them (R1197). This is
 potential-field geophysics' downward continuation, ill-posed for the same reason (classical).
+
+## Run 3: a chain of reads, a telescope, a pixel layer (27 Nov 2026; Tom: "how deep does it go? human continuous reads a continuous tellisicope read of a discrete write", then "yes, run it and merge")
+
+Predictions committed before the script (SPN R1271). On a line, the sky's writes at the whole numbers (spacing s = 1,
+period 16, unequal amplitudes seeded 1271, and an equal row), read through layers, each layer a Cauchy (wrapped on the
+period) applied by direct quadrature, not by Fourier, so the composition is computed, not assumed.
+
+- **T1, the chain collapses.** An objective of height h₁ on the sky, a magnification M (y = Mx), an eyepiece h₂ and an
+  eye h₃ on the image give exactly one Cauchy read on the sky of height u = h₁ + (h₂ + h₃)/M, for M = 1, 2, 10, to
+  10⁻¹⁰ of the peak. At M = 1 the layers' order and split do not show: (0.1, 0.2, 0.3), (0.3, 0.2, 0.1) and (0.6, 0, 0)
+  give one image (to 10⁻¹⁰).
+- **T2, later layers count 1/M.** The equal row's ripple at the eye is exactly 2/sinh(2πu) with that u (to 10⁻⁹
+  relative); with h₁ = h₂ = h₃ = 0.3, the ripple at M = 10 (u = 0.36) is more than 20 times that at M = 1 (u = 0.9).
+- **T3, a pixel layer is a second write.** After the objective (h₁ = 0.3) and M = 8, a detector of pitch p = 1 (image
+  units) integrates the image over each pixel, and the eye reads the pixel values as point writes at the pixels'
+  middles with a Cauchy of height h₃. (a) A uniform sky reads with a ripple at the pixel spacing of exactly
+  2/sinh(2πh₃/p) of its mean (h₃ = 0.5, to 10⁻⁹). (b) For the equal star row, the image's component at the stars'
+  frequency 1/M is 2e^(−2πh₁)·sinc(πp/M)·e^(−2πh₃/M) (sinc x = sin x/x), to 10⁻⁵ relative, the pixel's box the one new
+  factor. (c) The same image has a second ripple, at the pixel frequency 1/p, equal to 2e^(−2πh₃/p) of the mean to 1%
+  (h₃ = 0.5): the sky's writes and the detector's writes each leave their own ripple.
+
+Kill: any of T1–T3 outside its bound.
