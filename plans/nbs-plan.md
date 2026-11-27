@@ -265,3 +265,55 @@ cost of leaves and steps, and the window it gives up on is the engine's, not the
 apart is how many jumps a span holds for its width, not its width. A run 4 would mark a span unmapped when it has yielded
 more than a set number of jumps (say 64) and none of its pieces is wider than its K-th part, with predictions written
 first; or the engine settles a touching pair (step 2 of R1273's list). Not run.
+
+### Run 4, planned (27 Nov 2026; Tom: "Run 4"). Predictions written before any script changes
+
+Run 3 found that a floor on width cannot tell a place with no pieces from a place with many. Run 4 replaces the floor
+with a count. **The busy rule**: every span B′ opens keeps a tally of the jumps found inside it and of the widest piece
+held inside it. When a span has yielded more than J = 64 jumps and no piece inside it is wider than its K-th part
+(w/8), it is marked unmapped and nothing still waiting inside it is opened. Neighbouring unmapped spans are joined into
+windows. Run 3's floor is gone; everything else is run 2's B′ (the engine, K = 8, the tolerance 10⁻⁷, the cap of 200,000
+flights, the bracket rule at 10⁻¹²). A span counts its jumps as they are found, depth first, so a span can be marked
+before its later pieces are reached; that is part of the rule as tested.
+
+- **E1 (it finishes).** Both maps finish under the cap at S = 16 and S = 64.
+- **E2 (only where the engine chatters).** On two rails the unmapped windows total under 10⁻³ rad, at least 90% of their
+  measure within 0.5352–0.5356.
+- **E3 (the jumps outside).** On two rails every jump of PEB run 5 not inside an unmapped window has a B′ jump within
+  10⁻⁹ rad (by place).
+- **E4 (the cut unchanged).** On the cut nothing unmapped, the same 137 jumps as run 2, flights within 5% of its 9,149.
+- **E5 (pieces held).** On two rails at least 95% of pieces wider than 10⁻⁴ rad held to 10⁻⁶ by their 8 leaves.
+- **E6 (no N).** On two rails S = 16 and S = 64 find the same jumps outside both runs' unmapped windows, flights within 20%.
+- **E7 (cost).** Two rails' flights at most 4 × the scan's 4,621.
+
+Each killed by its own number. Known beforehand: runs 2 and 3 (the chattering band at least 0.53533–0.53537, 7,475 jumps
+found in it before the cap; the cut's 137 jumps, none closer than run 2 held). J = 64 and the K-th part are my choices;
+E2's 90% and E7 are guesses. If E1–E6 stand: the count a span yields tells a place with no pieces from a place with
+many, and the map needs no N to say where the table has pieces.
+
+### Run 4 (27 Nov 2026; `runs/nbs/nbs4.mjs`, outputs `runs/nbs/nbs4-{cut,tworail}-{16,64}.json`, `nbs-run4.txt`)
+
+| | cut, S = 16 | cut, S = 64 | two rails, S = 16 | two rails, S = 64 |
+| --- | --- | --- | --- | --- |
+| flights | 9,149 | 8,954 | 12,600 | 14,548 |
+| jumps, pieces | 137, 348 | 137, 378 | 201, 515 | 229, 614 |
+| unmapped | none | none | 0.0612–0.7854 (0.724 rad) | 0.4909–0.5890 (0.098 rad) |
+
+- **E1 not killed.** All four finish, two rails in 12,600 and 14,548 flights (runs 2 and 3 capped at 200,000).
+- **E2 KILLED**, by my rule. The window given up is not the chatter but the largest span holding it: at S = 16 0.724
+  rad, only 0.1% of it within 0.5352–0.5356; at S = 64 the whole starting span, 0.098 rad. The tally runs up the chain of
+  spans, and a large span's count passes 64 as soon as its smallest one's does, with its count of jumps the sum of
+  everything found in it; its widest piece is still under its eighth because the map, depth first, had not yet reached
+  its wide pieces. I named this risk in the plan and kept the rule as written.
+- **E3 not killed**: all 54 of PEB run 5's jumps outside the window found within 10⁻⁹.
+- **E4 not killed**: the cut unchanged from run 2, 137 jumps, nothing unmapped, 9,149 flights.
+- **E5 not killed**: 262 of 262 pieces wider than 10⁻⁴ held to 10⁻⁶ on two rails (worst 2.7·10⁻⁹), 222 of 222 on the cut.
+- **E6 not killed**, in its letter: outside both windows (so outside the S = 16 run's 0.724 rad) the two runs share all
+  70 jumps, flights 1.155 apart. With so much given up the clause tests little.
+- **E7 not killed**: 12,600 flights against 4 × 4,621.
+
+**What it says.** A count stops the map where a width could not: the chattering place is given up and every map
+finishes, cheaply, without touching the cut. But the rule as written gives up the widest span that holds the chatter,
+not the chatter: a tally counted up the whole chain of spans fires first at the top. The fix is to give up the smallest
+span that qualifies (the one where the count passes J, checked only on the span being opened, not its ancestors), with
+the jumps' count per width still the test. A run 5, predictions first, not run.
