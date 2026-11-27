@@ -420,6 +420,34 @@ classical route takes ln, arctan or π; the dual vantage is still needed for the
 step its share of Ω, an oscillator's period four facings (2π/ω), Kepler's period the whole turn and his time to a point
 a part of it.
 
+**Where restating from one standpoint simplifies, and where it stops** (R1282; Tom: "The how is that the math simplifies,
+it often does when replacing dhv with shv", R1281). The results are classical, stated from no standpoint, the DHV's; each
+row sets that statement beside the same result from one standpoint and says what the restatement no longer needs, and
+where it stops, what is left over, which is always a completion, a chart or a unit. The numbers agree in every row (R950,
+R1229); what changes is what each form needs. Rows where nothing reduces are kept, since they mark the limit. The demo
+`simplify.html` steps through them, each form computed beside the other.
+
+| result | from no standpoint (the DHV's) | from one standpoint | where it stops |
+|---|---|---|---|
+| the circle | x² + y² = r², two lengths, π for its totals | 1 + s² = (r/x)²; the shares 1/(1 + s²), s²/(1 + s²), rational in s (PYT) | √(1 + s²), the one root; π, the total |
+| adding turns | tan(α + β) through two angles and the functions of each | s ⊕ a = (s + a)/(1 − sa), one rational rule, the same for boosts and strides by κ (PYK) | the angle's total, π |
+| Euler's identity | e^(iπ) = −1: e, π and a limit | w(s)·w(1/s) = −1 for every slope, w = (1 + is)/(1 − is); i·i = −1 at the corner (R848, R811) | the home–horizon member, which alone needs the limit |
+| the Cauchy | (1/π)/(1 + x²), a density whose total is π | the heat 1/(1 + s²); the corner the median by the exchange, no total needed (R813) | the normalising 2/π, the total |
+| parallax | d from the parallax angle, d = (B/2)/tan(γ/2); the parsec's 648000/π | 1/(d/B) = 1/s₁ + 1/s₂, rational (R818) | making a slope an angle |
+| the walk to a thing | arrival as a limit, the half circle e^(iπ) | strides telescope exactly; two looks a stride apart give the strides left (WLK run 3) | a start without end, short by 2/x₀ |
+| the slope's own equation | ds/dw = 1 + s² integrated in N steps | exact rational Möbius steps, no N, composing by tangent addition (RIC) | the clock time τ, a completion |
+| derivatives | a limit of difference quotients | dual numbers, rational, no limit; the chain rule a tower (CLC) | integration leaving the rationals (a log part) |
+| reading each other | an endless back-and-forth of steps | one closed form, d* = √(d_A·d_B), the pair's corner (MUT) | unequal shares a weighted mean; overshoot no collapse |
+| two Cauchys, added | a convolution of densities | the standpoints add, z₁ + z₂ (SUM); a chain of reads one read at h₁ + (h₂ + h₃)/M (CDW) | a pixel layer, a write, with its own ripple |
+| a disc's light | the inverse square over a source, 4π the sphere's | one share 1/(1 + s²); E(s) + E(1/s) = πL, half at d = a (ISX) | the total πL |
+| two lines apart | the bound a function of every parameter and the channels' laying | one distance, cosh d = 1 + |z₁ − z₂|²/(2γ₁γ₂), with counted noise (SEP, R1281) | the width ratio under even channels: the number line's chart |
+| turns in a program | float sines and cosines, drifting (2.9·10⁻¹³ at 10⁵) | rational half-slopes, exact return (ALG, TWK) | digits growing with the turns |
+| **nothing reduces** | the Gaussian (e and π both its content); Kepler's time to a point; the circle's area; Basel's π²/6; generic chaos | a pair's direction only (the Cauchy, R816); the orbit's shape rational, its time not (ORB); no constant-stretch chart (CXB) | the completion is the result |
+
+**Exact** where each row's run says so; the rows and the sorting **a reading**. The pattern the table shows: what the
+one-standpoint form drops is always a total over both hemispheres or a chart laid from no standpoint, and what it keeps
+is rational in the slopes.
+
 **The Cauchy averages to itself, and where calculus does the same.** Readings from standpoints z₁ = m₁ + iγ₁ and
 z₂ = m₂ + iγ₂, independent, average to a reading from (z₁ + z₂)/2; from one standpoint, the average of any number of
 readings is the same Cauchy as one. What is averaged is the standpoint, a point m + iγ, not an amount, which is how a law
@@ -1894,19 +1922,11 @@ writes, the arrangement lost where the discreteness drops under the read's reach
 read: an objective h₁, a magnification M and later reads h₂, h₃ give exactly the read from h₁ + (h₂ + h₃)/M (to
 2·10⁻¹² of the peak), so the layers' order and split never show, a later read counts 1/M, and no layer gives back what an
 earlier one smoothed. A detector between is a write: its pixels leave their own ripple, 2e^(−2πh₃/p) at their own
-spacing p, beside the sky's, and its box adds the one factor sinc(πp/M). Pulling overlapping Cauchys apart (SEP, R1274; Tom: "To tease out the payload, you might need to
-separate multiple overlapping cauchies") recovers each one's standpoint m + iγ, the read geometry, and its amount, the
-payload. With no noise it is exact (Prony's method, 10⁻⁴⁶). From draws, directions from a uniform turn about each
-standpoint, how hard two are to separate is set by their hyperbolic distance alone: a Möbius map carries every fit onto
-its image, and the bound on the amounts is the same for every width ratio at one distance to 10⁻²⁸ (McCullagh's
-equivariance, 1996, with the isometries' transitivity). From a spectrum, an amount per channel with its own noise, the
-same pairs part by 20–29%: the channels' noise is an amount, which the turn's maps do not leave alone. Either way the
-total amount comes back within twice one Cauchy's error, where the split between the two does not. On a measured spectrum
-(ethanol's ¹H, its triplet and quartet, amounts known beforehand as 1:2:1, 1:3:3:1 and 2 : 3) the lines fitted as
-Cauchys give the totals to 1.2% and the splits to 6%, the lines 5.5 apart in that distance; a second route, poles from the
-decay, failed as I built it (SEP run 3, R1275). Sorted by the two tests (R1277; Tom: "add it to the papers"): a line's place m and width γ are its standpoint, so the coupling J, a gap between places, is a read; its area is an amount, the paint, and the 2 : 3 and the binomial shares are counts the spins wrote, ratios of amounts, unmoved by scaling and still the payload's. Draws keep the separation's difficulty in the read geometry; a spectrum's noise is an amount entering, which is where the family's invariance gives way (R359). The total, a sum of amounts, survives every method; the split needs the standpoints read right. The pencil assumed one pole a line, one standpoint; a measured line is the nucleus's turn read through the magnet's unevenness, a chain of reads whose heights add (R1271), the natural width plus the instrument's, so the Lorentzian fit holds and the single pole does not; the shape is a turn's heat only where that turn is named (R719). The spectrometer sampled and filtered before anything was read, a write we read the record of (R1065), which is why its digital filter came off first. Claude's reading, not ruled. Which noise breaks the separation is the noise's chart (SEP run 4, R1279, exact): noise that is the paint's own count, a channel's variance its own amount, is the draws binned, and the difficulty is the hyperbolic distance's alone for every width ratio (10⁻²⁵, the draws' bound to 10⁻³⁰); the same noise in channels laid evenly in frequency spreads 20–29%; laid evenly in the turn about one standpoint it keeps exactly the turns about that standpoint (10⁻²⁶) and nearly what lies near it. No chart of the line is kept by every map (the maps act on it with no invariant measure), so an amount laid on channels always chooses a standpoint, and the read's own symmetry is the most it keeps. These are classical results (McCullagh's equivariance, the Cramér–Rao bound), stated from no standpoint, the dual hemispherical vantage's: the bound a function of both places, both widths, the share and the laying of the channels. Restated from one standpoint the mathematics simplifies (R1281; Tom: "The how is that the math simplifies, it often does when replacing dhv with shv"): with the paint's own count the bound is a function of one number, the distance between the two standpoints, cosh d = 1 + |z₁ − z₂|²/(2γ₁γ₂), rational in the places and widths, every pair at one distance the same problem; and what does not reduce, the width ratio's return when the noise is laid on even channels, is exactly the number line's chart. The numbers are classical; the simplification, and where it stops, are the sorting's. So the numbers are
+spacing p, beside the sky's, and its box adds the one factor sinc(πp/M). So the numbers are
 others', the attribution in part, the sorting ours. By R1240 the read's density and gravity's share the form for
 different reasons; this says what each reads of the other, not that they are one. No result changes (R1229).
+
+*Pulling overlapping Cauchys apart* (SEP runs 1–6, R1274–R1281; `plans/sep-plan.md`; the demo `separate.html`). Each line is a standpoint m + iγ, the read geometry, and an amount, the payload; with no noise both come back exactly (Prony). From one standpoint, how hard two are to separate is a function of one number, their distance in the half-plane, cosh d = 1 + |z₁ − z₂|²/(2γ₁γ₂), whenever the noise is the paint's own count (the draws, or counts binned: one bound for every width ratio, to 10⁻²⁵). Noise laid on channels is an amount and the channels a chart: laid evenly in frequency the same pairs part by 20–29%; laid evenly in the turn about one standpoint they keep that standpoint's turns exactly and nothing more, since no chart of the line is kept by every map. The total, a sum of amounts, survives every method; the split needs the standpoints. The numbers are classical (McCullagh's equivariance, the Cramér–Rao bound), the DHV's statement, a function of every parameter and of the channels' laying; restated from one standpoint they reduce to one distance, and what does not reduce is the number line's chart (R1281). Measured: ethanol's ¹H (place and width read, the coupling a read, the area paint, its 2 : 3 a count the spins wrote) gave the totals to 1.2% and the splits to 6% at d ≈ 5.5; a counted Cu Kα doublet (PbSO₄, Hill 1992) gave its ½ back (median 0.474) where the pair stood more than about 1.4 apart and failed below, its scatter the lines' shape, not the counts, so the counted-noise claim is untested on data. A measured line is a chain of reads, the natural width plus the instrument's (R1271), and the spectrometer's filter a write read as a record (R1065). Claude's reading, not ruled.
 
 *Fingers reading fingers reading the payload* (R1238; Tom: "Think about it, we have fingers reading fingers reading
 payload."). The run has three layers: the reader's fingers (the read's heat, one hemisphere, no amount), the plane's
