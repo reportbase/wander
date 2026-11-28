@@ -631,6 +631,11 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Lorentzian fits give J, the CH₂/CH₃ total (1.2%) and the multiplet shares (within 6%); the matrix pencil as built fails
   (killed by my method). In *Reads and Writes* §7 and essay 33 §16 (R1275).
   SEP run 4 (`runs/sep/sep4.py`, post hoc `sep4-posthoc.py`; SPN R1279; Tom: "1"): which noise keeps the difficulty to the hyperbolic distance alone: counted noise exactly (draws binned); even-frequency channels 20–29% off; channels even in the turn about i keep its turns exactly and nearby pairs to 0.6–4% (T4 killed by my bound), T2 by its letter. Not in any paper.
+  R1287 (28 Nov; Tom: "The best support for the shv is the dial in caladar folder.   When you do not know N you are forced
+  to sweep, not browse indexed data.", then "Yes"): **without N there is no index, only a sweep, and the sweep is
+  enough**: the calendar dial's thumb mode (no count, no end) pushes from home at a rate, reaches any record in time
+  logarithmic in its distance, and holds the same 2K + 1 edges and heat at every place whatever N; its count mode, the
+  length handed in, is the writer's indexing. *Reads and Writes* §6 "Without N, a sweep; with N, an index".
   R1286 (28 Nov; Tom: "Cauchy asks us to pick a point and the heat map builds out from there … A discrete object has heat
   map as well, but we can't pick a point on it, so it has no vantage"; "Agreed, dhv is not actually physically possible.
   It's a synthesis.   So the read heat map and the write heat map are the same but decided derived differently"): **the

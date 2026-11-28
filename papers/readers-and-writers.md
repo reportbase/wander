@@ -1421,6 +1421,26 @@ is a sample of the floor, read at the detail its footprint earns, a few dozen ti
 one in two is an octave, and a tone of octaves that rises without arriving (Shepard 1964) is the horizon heard. None of it
 needs a count of what is out there. **Checked** (reportbase/calendar's dials).
 
+*Without N, a sweep; with N, an index* (R1287; Tom: "The best support for the shv is the dial in caladar folder. When
+you do not know N you are forced to sweep, not browse indexed data. Explain how the dial works and why it let's you
+sweep infinity k items at a time."; then "Yes"). The calendar's dial has two modes, and they part on whether N is known.
+Given a count, it browses: a window of the list round a centre, a jump to any record by its index, recentring after
+each move; that needs the list's length, the writer's. Given only a thumb, the list has no end, and there is nothing to
+divide by, so no record can be gone to by its index: the one thing to do is push outward from home at a rate. The gold
+needle is that rate (held, ζ grows at a steady rate set by how far it leans; let go, it springs home and the rate is
+none), the blue needle the place it has reached, the slope s = sinh ζ, the record one thumb times s; the needle never
+leaves the quarter turn, the horizon approached and never met. Far out a steady push walks by a steady ratio, so any
+record x is reached in about ln(2x/H) of ζ: at the dial's widest push (2⁵ times its corner rate, 12.8 of ζ a second) a
+thousand thumbs out in under a second, 10¹⁵ (where a double stops holding the number, the machine's limit, not the
+dial's) in under three. And what is held at any moment never depends on N: the same 2K + 1 edges, s = 2, 4 … 2^K and
+½, ¼ … 2^(−K) (eleven at K = 5), half inside the corner and half past it, at every place on a list of ten or without end;
+the heat 1/(1 + s²) gives the records near the needle their room and packs the rest toward the horizon, none cut. So
+not knowing N is what forces the sweep, and the sweep is enough: one thumb, a rate and a fixed K reach any record of an
+endless list, in time that grows with the logarithm of how far, holding the same handful at every distance (K, not N,
+§6 "K and N"). Knowing N is what lets a writer index instead (the count mode, the same dial with the length handed to
+it). **Checked** (reportbase/calendar `dial.js`, read: the thumb mode's `H · sinh ζ`, `ZMAX = asinh(10¹⁵)`, the edge
+marks for k = −K … K, `heat() = cos²θ`).
+
 **Drawing a shape: circles, a height, a step toward the detail.** A closed outline about a centre can be written as
 circles on circles, its Fourier series: the turns of one standpoint at the centre, evenly. Seen from a height γ, the
 outline is smoothed by the circle's own Cauchy, the wrapped Cauchy, shrinking circle k by e^(−γ|k|) and moving none: the
