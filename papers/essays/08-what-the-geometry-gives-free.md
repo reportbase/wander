@@ -99,6 +99,9 @@ a snapshot (Tom: "Knowing N means that it is static not growing or decreasing.")
 so indexing by it holds the list still, and once the list grows or shrinks everything laid against the length moves. The
 sweep has no length in it: a record stands at one thumb times s from home whatever comes or goes past the horizon, so
 every place already reached stays put and only the paint changes. Indexed is right as of the count; swept is right now.
+The circle is the same case (Tom: "if you know where the circle cycles, you know it's N items."): to come back to the
+start is to know how many steps make the round, a count mod N or the turn's total held whole. A ring of buttons wraps only
+because it knows how many it has; a sweep has no return and no wrap, and a ring that gains members moves where it closes.
 
 **On a dome.** With the push a direction as well as a size, the dial becomes a dome looking down on a floor without end:
 straight down is home, the rim the horizon all round, and the heat per unit of floor cos³α, the flat screen's own law (section 4).
