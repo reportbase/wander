@@ -1421,6 +1421,26 @@ is a sample of the floor, read at the detail its footprint earns, a few dozen ti
 one in two is an octave, and a tone of octaves that rises without arriving (Shepard 1964) is the horizon heard. None of it
 needs a count of what is out there. **Checked** (reportbase/calendar's dials).
 
+*Without N, a sweep; with N, an index* (R1287; Tom: "The best support for the shv is the dial in caladar folder. When
+you do not know N you are forced to sweep, not browse indexed data. Explain how the dial works and why it let's you
+sweep infinity k items at a time."; then "Yes"). The calendar's dial has two modes, and they part on whether N is known.
+Given a count, it browses: a window of the list round a centre, a jump to any record by its index, recentring after
+each move; that needs the list's length, the writer's. Given only a thumb, the list has no end, and there is nothing to
+divide by, so no record can be gone to by its index: the one thing to do is push outward from home at a rate. The gold
+needle is that rate (held, ζ grows at a steady rate set by how far it leans; let go, it springs home and the rate is
+none), the blue needle the place it has reached, the slope s = sinh ζ, the record one thumb times s; the needle never
+leaves the quarter turn, the horizon approached and never met. Far out a steady push walks by a steady ratio, so any
+record x is reached in about ln(2x/H) of ζ: at the dial's widest push (2⁵ times its corner rate, 12.8 of ζ a second) a
+thousand thumbs out in under a second, 10¹⁵ (where a double stops holding the number, the machine's limit, not the
+dial's) in under three. And what is held at any moment never depends on N: the same 2K + 1 edges, s = 2, 4 … 2^K and
+½, ¼ … 2^(−K) (eleven at K = 5), half inside the corner and half past it, at every place on a list of ten or without end;
+the heat 1/(1 + s²) gives the records near the needle their room and packs the rest toward the horizon, none cut. So
+not knowing N is what forces the sweep, and the sweep is enough: one thumb, a rate and a fixed K reach any record of an
+endless list, in time that grows with the logarithm of how far, holding the same handful at every distance (K, not N,
+§6 "K and N"). Knowing N is what lets a writer index instead (the count mode, the same dial with the length handed to
+it). **Checked** (reportbase/calendar `dial.js`, read: the thumb mode's `H · sinh ζ`, `ZMAX = asinh(10¹⁵)`, the edge
+marks for k = −K … K, `heat() = cos²θ`).
+
 **Drawing a shape: circles, a height, a step toward the detail.** A closed outline about a centre can be written as
 circles on circles, its Fourier series: the turns of one standpoint at the centre, evenly. Seen from a height γ, the
 outline is smoothed by the circle's own Cauchy, the wrapped Cauchy, shrinking circle k by e^(−γ|k|) and moving none: the
@@ -1860,6 +1880,22 @@ CLM). The two have the same form, a/(2π(a² + ρ²)^(3/2)) on a plane, for diff
 compose (CRC). That they share it is the one premise both rest on, even over directions from a point (R1184), met once
 by a turn and once by a law of pull; it is not one density owned by both, and the stage's "same for a look and a pull"
 (R1195, R1234) is to be read so: the same form, different reasons. Nothing in the numbers changes.
+
+*A write's heat, from no point picked* (R1286; Tom: "Cauchy asks us to pick a point and the heat map builds out from
+there. So the first cauchy is shv by definitionb because we have a vantage or facing. A discrete object has heat map as
+well, but we can't pick a point on it, so it has no vantage, it must be a dhv."; then "Agreed, dhv is not actually
+physically possible. It's a synthesis. So the read heat map and the write heat map are the same but decided derived
+differently"). The read's heat is single-vantage by definition: the Cauchy asks for a point taken and another picked
+(§0), and only then does its heat 1/(1 + s²) build out about the look. A discrete thing, a write, has a heat too
+(gravity's take about a mass; the ripple a row of writes leaves under a read, CDW), but no point of its own is picked to
+build it from, so it has no vantage and no facing. It is still not the DHV, which is not physically possible: the DHV is
+a synthesis (R1239, R1240). So the read's heat and a write's heat are the same heat map, derived differently: the read's
+from a point picked and an even turn about it, the write's from the thing itself, from no point. And the read is not of a
+thing (Tom: "But the read is not for a specific objective, but for their complete visual horizon   there are many
+discrete objects in visual frame"): its heat is one heat over the whole hemisphere in front of the standpoint (R700,
+R701), built about the look, the same whatever is there and however many things (R1107), and the many discrete things in
+view land in it together as paint, each at its own directions. Each of them has its own heat with no vantage; the read
+has one, with a vantage, and holds them all at once. The point picked is where the look falls, not a thing chosen.
 
 *A rock dropped from the hand: reading gravity's effects* (R1241; Tom: "we observe the affects of gravity. dropping a
 rock from your hand. where is read geometry in that", then "yes and merge"). What is observed is gravity's effects, never
