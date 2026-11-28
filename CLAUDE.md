@@ -631,6 +631,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Lorentzian fits give J, the CH₂/CH₃ total (1.2%) and the multiplet shares (within 6%); the matrix pencil as built fails
   (killed by my method). In *Reads and Writes* §7 and essay 33 §16 (R1275).
   SEP run 4 (`runs/sep/sep4.py`, post hoc `sep4-posthoc.py`; SPN R1279; Tom: "1"): which noise keeps the difficulty to the hyperbolic distance alone: counted noise exactly (draws binned); even-frequency channels 20–29% off; channels even in the turn about i keep its turns exactly and nearby pairs to 0.6–4% (T4 killed by my bound), T2 by its letter. Not in any paper.
+  R1290 (28 Nov; Tom: "Re-read it against the new framing", of the archived Born draft): `plans/born-reread.md`, Claude's
+  reading, nothing run: the click a write, the frequency a count, Born's weight the read's share 1/(1 + |ζ|²) (rational,
+  no π), the Cauchy the heat over the hemisphere and not Born's; the ray the read, normalisation the one-length circle,
+  the Bloch sphere whole the DHV; no derivation claimed, Born's rule the bridge (R286). No paper changed.
   R1289 (28 Nov; Tom: "It's theb same for circles, if you know where the circle cycles, you know it's N items.", then
   "Yes, add it and merge"): **a cycle is a known count**: returning to the start needs the round's count (mod N, or the
   turn's total held whole), a snapshot; a read closes nothing; the button rings wrap only because they know n. *Reads and
