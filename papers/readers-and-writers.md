@@ -1441,6 +1441,16 @@ endless list, in time that grows with the logarithm of how far, holding the same
 it). **Checked** (reportbase/calendar `dial.js`, read: the thumb mode's `H · sinh ζ`, `ZMAX = asinh(10¹⁵)`, the edge
 marks for k = −K … K, `heat() = cos²θ`).
 
+*Knowing N is holding the list still* (R1288; Tom: "Knowing N means that it is static not growing or decreasing."; then
+"Yes, add it and merge"). A count describes writes already made, so a known N is a snapshot, the list as it stood when
+counted (a record, lagging: §1 "Reads, writes and the blueprint"). To index by it is to treat the list as static; once it
+grows or shrinks the N held is stale, and everything laid against it moves: the count mode's window (count^reach), its
+recentring, any place given as a share of the length (the archived OFS's growth test, R315). The sweep has no length in
+it: a record stands at H·s from home whatever comes or goes past the horizon, so every place already reached stays where
+it was and only the paint changes. N can be counted again, but each count is a new snapshot, current only as of itself.
+So knowing N is a static list, indexed, right as of the count; not knowing it is a list that may be growing, swept, right
+now.
+
 **Drawing a shape: circles, a height, a step toward the detail.** A closed outline about a centre can be written as
 circles on circles, its Fourier series: the turns of one standpoint at the centre, evenly. Seen from a height γ, the
 outline is smoothed by the circle's own Cauchy, the wrapped Cauchy, shrinking circle k by e^(−γ|k|) and moving none: the
