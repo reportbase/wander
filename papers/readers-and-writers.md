@@ -1861,6 +1861,19 @@ compose (CRC). That they share it is the one premise both rest on, even over dir
 by a turn and once by a law of pull; it is not one density owned by both, and the stage's "same for a look and a pull"
 (R1195, R1234) is to be read so: the same form, different reasons. Nothing in the numbers changes.
 
+*A write's heat, from no point picked* (R1286; Tom: "Cauchy asks us to pick a point and the heat map builds out from
+there. So the first cauchy is shv by definitionb because we have a vantage or facing. A discrete object has heat map as
+well, but we can't pick a point on it, so it has no vantage, it must be a dhv."; then "Agreed, dhv is not actually
+physically possible. It's a synthesis. So the read heat map and the write heat map are the same but decided derived
+differently"). The read's heat is single-vantage by definition: the Cauchy asks for a point taken and another picked
+(§0), and only then does its heat 1/(1 + s²) build out about the look. A discrete thing, a write, has a heat too
+(gravity's take about a mass; the ripple a row of writes leaves under a read, CDW), but no point of its own is picked to
+build it from, so it has no vantage and no facing. It is still not the DHV, which is not physically possible: the DHV is
+a synthesis (R1239, R1240). So the read's heat and a write's heat are the same heat map, derived differently: the read's
+from a point picked and an even turn about it, the write's from the thing itself, from no point. What has no vantage is
+the write's own heat, not the thing: anyone may stand somewhere and read the thing, and that read has a vantage, the
+thing in its paint.
+
 *A rock dropped from the hand: reading gravity's effects* (R1241; Tom: "we observe the affects of gravity. dropping a
 rock from your hand. where is read geometry in that", then "yes and merge"). What is observed is gravity's effects, never
 its take; a dropped rock shows where the read sits. Held at arm's length L and let go, the rock is a direction going down,

@@ -631,6 +631,12 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Lorentzian fits give J, the CH₂/CH₃ total (1.2%) and the multiplet shares (within 6%); the matrix pencil as built fails
   (killed by my method). In *Reads and Writes* §7 and essay 33 §16 (R1275).
   SEP run 4 (`runs/sep/sep4.py`, post hoc `sep4-posthoc.py`; SPN R1279; Tom: "1"): which noise keeps the difficulty to the hyperbolic distance alone: counted noise exactly (draws binned); even-frequency channels 20–29% off; channels even in the turn about i keep its turns exactly and nearby pairs to 0.6–4% (T4 killed by my bound), T2 by its letter. Not in any paper.
+  R1286 (28 Nov; Tom: "Cauchy asks us to pick a point and the heat map builds out from there … A discrete object has heat
+  map as well, but we can't pick a point on it, so it has no vantage"; "Agreed, dhv is not actually physically possible.
+  It's a synthesis.   So the read heat map and the write heat map are the same but decided derived differently"): **the
+  read's heat is SHV by definition; a write's heat has no point picked and no vantage, yet is not the DHV (a synthesis,
+  not physically possible); the two are the same heat map, derived differently.** Generalizes R1240 to any write.
+  *Reads and Writes* §7 "A write's heat, from no point picked". **For new writing: never call a thing's own heat the DHV.**
   R1285 (27 Nov; Tom: "Yes, close SEP and do the sweep"): SEP closed (`plans/sep-plan.md`, its counted case exact and
   untested on data; transmission Mössbauer the even-channel case). The R1174–R1179 and R1240 wording carried through the
   essays, the physics paper, the index pages and 22 demos (visible wording only): amounts, not writes; a count gives.
