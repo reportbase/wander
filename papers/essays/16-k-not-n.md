@@ -484,6 +484,13 @@ holds K of it. A program that makes the world from its cells has not found N som
 a hash that would answer for any cell, and the view never asks the rule for a total. In the physical world nothing makes
 the paint for the observer; it arrives, and whether it comes counted is not the read's question.
 
+**A known N is a snapshot.** Knowing N means holding the list still (Tom: "Knowing N means that it is static not growing
+or decreasing."). A count is of writes already made, so an index built on it is right as of the count and stale once the
+list grows or shrinks: every place given as a share of the length moves. The sweep's places hold no length, so a list
+being written moves no place already reached. Without N there is no index to build, only a sweep, and the calendar's dial
+shows the sweep is enough: any record of an endless list in time logarithmic in its distance, the same handful held at
+every place (essay 8 §1).
+
 **Scales without end, at a fixed K.** Let the world have things at every scale 2^j, up and down, and give each scale the
 Cauchy's share of the view, sech(k·ln 2) at k scales from the focus (1, 0.8, 0.47, 0.25, then about half each time). On a
 ground that means a grain √cosh(k·ln 2) times the focus's at each scale, computed as (2^k + 2^−k)/2 with no trigonometry.

@@ -501,6 +501,16 @@ by no one. And "the Cauchy" names a density. The read has one over its direction
 Gravity has one over a plane, from the inverse square, each direction counting its whole column. The two have the same
 form for different reasons, and the shared form is why they compose. It is not one density that both own.
 
+The same goes for any discrete thing, not gravity alone. Tom: "Cauchy asks us to pick a point and the heat map builds out
+from there. So the first cauchy is shv by definitionb because we have a vantage or facing. A discrete object has heat map
+as well, but we can't pick a point on it, so it has no vantage". And, asked whether that made a thing's heat the dual
+vantage: "dhv is not actually physically possible. It's a synthesis. So the read heat map and the write heat map are the
+same but decided derived differently". A read's heat is built out about the look from a point taken and another picked; a
+write's heat, a mass's take or the ripple a row of writes leaves, is built from the thing itself, with no point picked and
+so no facing, and it is still not the synthesis. One heat map, two derivations. And the read is not aimed at one thing
+(Tom: "the read is not for a specific objective, but for their complete visual horizon"): its heat covers the whole
+hemisphere in front, and the many things in view land in it together as paint, each with its own heat and no vantage.
+
 What is experienced of gravity is then a read of its effects. Tom: "we observe the affects of gravity. dropping a rock
 from your hand. where is read geometry in that". Hold a rock at arm's length L and let it go. It is a direction going
 down, and its reading is its fall over the arm, s = y/L = (g/2L)·t², a parabola in the slope counted in ticks, all

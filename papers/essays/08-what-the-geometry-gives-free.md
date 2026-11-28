@@ -88,6 +88,18 @@ per unit of place as cos²θ: that is the heat of the seventeenth essay, held in
 cells and painting each by the first thing it meets, the last cell covers everything from about 163 thumbs out, without
 end; a count of what each cell covers grows without bound toward the horizon, and the dial never needs it.
 
+**Without a count, only a sweep.** The dial's two modes part on whether N is known (Tom: "When you do not know N you are
+forced to sweep, not browse indexed data."). Handed the length, it can browse: a window round a centre, a jump to any
+record by its index, a recentring after each move. Handed only a thumb, there is no length to divide by, so no record can
+be gone to by its index; the one thing left is to push outward from home at a rate. That is enough. At the dial's widest
+push, 2⁵ times its corner rate, a thousand thumbs out is under a second away and 10¹⁵ under three, where a double stops
+holding the number. And what it holds never depends on N: the same eleven edge marks (s = 2, 4 … 32 and ½, ¼ … 1/32,
+half each side of the corner) and the same heat at every place, on a list of ten or one without end. And a known N is only
+a snapshot (Tom: "Knowing N means that it is static not growing or decreasing."): a count describes writes already made,
+so indexing by it holds the list still, and once the list grows or shrinks everything laid against the length moves. The
+sweep has no length in it: a record stands at one thumb times s from home whatever comes or goes past the horizon, so
+every place already reached stays put and only the paint changes. Indexed is right as of the count; swept is right now.
+
 **On a dome.** With the push a direction as well as a size, the dial becomes a dome looking down on a floor without end:
 straight down is home, the rim the horizon all round, and the heat per unit of floor cos³α, the flat screen's own law (section 4).
 Each place on the dome is painted by what its one direction meets, so a far place is a sample of the floor, not a picture
