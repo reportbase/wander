@@ -75,7 +75,7 @@ take a premise this sorting does not supply. It is consistent with them and not 
 1. An exact check (fractions) of the rational forms above: n-outcome shares, Malus by tangent subtraction, the singlet's E
    and CHSH from half-slopes, against the angle forms. These are identities, so the check could fail only by my
    arithmetic.
-2. A test that can fail, on open data: photon-polarisation or qubit counts at rational relative slopes. Prediction: the
+2. *(Run as BNT, `plans/bnt-plan.md`, R1291: the draft's share killed at 30 σ on Weihs 1998.)* A test that can fail, on open data: photon-polarisation or qubit counts at rational relative slopes. Prediction: the
    frequencies are the rational shares and the count's scatter is binomial, with no Cauchy anywhere in a projective
    measurement's outcome law. A Cauchy-shaped tail in outcome frequencies would be against this re-read.
 3. Archive notes: a pointer under `born-rule-draft.md`'s entry in `plans/archive-gems.md`. The archived file stays

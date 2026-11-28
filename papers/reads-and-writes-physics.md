@@ -683,7 +683,7 @@ read. Its Bloch point is at 2θ, (2hv, 0, h² − v²): the point at twice the a
 read's slope s = v/h the doubled turn (1 + is)/(1 − is). Born's rule is the point's foot, h².
 Orthogonal states are antipodal on the sphere; a turn of the state by 2π gives −ψ, so 720° returns it; the complex ratio
 ψ₁/ψ₀ is the Bloch sphere's stereographic chart; a pure state lies on the sphere and a mixture inside. All textbook; the
-reading is the sort's. Entanglement, Bell's theorem and measurement are not touched.
+reading is the sort's. Entanglement, Bell's theorem and measurement are not touched here; §8.4 sorts measurement.
 
 ### 8.2 The duality relation [exact, data]
 
@@ -712,6 +712,31 @@ the Cauchy at ⟨σz⟩ + iV: a read laid by the turn, its point the state's Blo
 reference averages over what it cannot fix (Bartlett, Rudolph and Spekkens 2007): the twirl, an operation on the
 payload. It lowers the ensemble's visibility and changes no member's overlap: amounts are lost, readings kept. Two
 copies twirled together keep only their overlap, (1 + n₁·n₂)/2.
+
+### 8.4 Born's weight as the read's share, and a Bell test [exact, data]
+
+The ray is the read: a direction with no length, unmoved by scaling the amplitudes. Its reading is ζ = ψ₁/ψ₀. Normalising
+(Σ|ψ|² = 1) puts the amplitudes in one unit: the one-length circle, a convention that moves no ray. Born's weights are
+the read's shares, 1/(1 + |ζ|²) and |ζ|²/(1 + |ζ|²), or with n outcomes |s_k|²/(1 + Σ|s_j|²) over one shared denominator:
+rational in the slopes, with no angle and no π. The two outcomes are the read's ends, home and the horizon; the exchange
+swaps them and the corner gives even odds. For spin-½ the amplitude slope is the half-slope tan(φ/2) of the Bloch angle,
+so the half angle is the read's own. Each click is a write, and a frequency is a count laid over clicks, tending to the
+share. That it does is Born's rule, the bridge (§8.1); it is not derived here. The Bloch sphere held whole is the DHV, and
+the state is fixed by counted writes over many copies, not read from one (no-cloning).
+
+The Cauchy is not Born's weight: it is the read's heat over the hemisphere, which needs π and sums to an arctangent. An
+earlier draft (kept in the archive) took it for one, which would make a singlet's correlation linear in the analysers'
+angle, E = −v·(1 − 2φ/π). The read's share gives E = −v·(1 − t²)/(1 + t²) = −v·cos φ. The two agree at 0°, 90° and 180°
+and part at CHSH's 45° and 135°, where the linear share bounds |S| by 2 for any v ≤ 1.
+- **Weihs et al. 1998**, counts as tabulated by Gill (2023), 14,573 coincidences: S = 2.728 ± 0.024. The linear
+  share needs v = 1.365 ± 0.012, 30σ past 1, and is killed; the read's share at v = 0.965 gives 2.729.
+- **Killed by my set-up.** One visibility for all four setting pairs (one pair at 0.87), and marginals from coincidences,
+  which depend on the other side's setting through the detection loophole.
+- **Post hoc, not counted.** Zhang et al.'s event-ready atoms (2022), with no coincidence selection, give S = 2.58 ± 0.08
+  and setting-free marginals.
+
+This is quantum mechanics passing. The sort places the pieces and gives no mechanism for the correlations, which is
+Bell's.
 
 ### 8.4 Berry's phase [classical]
 
@@ -893,7 +918,8 @@ written before it was run and its runs recorded as they came out, the killed one
   `plans/pxc-plan.md`, `runs/pxc/`; the ladder, `plans/lth-plan.md`, `plans/ltr-plan.md`; many standpoints,
   `plans/stc-plan.md`, `runs/stc/`.
 - §8: the qubit, `plans/qbt-plan.md`; the duality relation, `plans/wvp-plan.md`, `plans/duo-plan.md`; weak values and the
-  twirl, `plans/qso-plan.md`, `plans/wvr-plan.md`.
+  twirl, `plans/qso-plan.md`, `plans/wvr-plan.md`; Born's weight and the Bell test, `plans/born-reread.md`,
+  `plans/bnt-plan.md`, `runs/bnt/`.
 - §9: LIGO, `plans/lgo-plan.md`, `runs/lgo/`.
 - §10: pool from inside, `plans/pol-plan.md`, `plans/por-plan.md`; cooling, `plans/mrb-plan.md`; the face from home,
   `plans/cfh-plan.md`.
@@ -982,6 +1008,9 @@ Gaia Collaboration, Smart, R. L. et al. (2021). Gaia Early Data Release 3: the G
 Gauss, C. F. (1828). Disquisitiones generales circa superficies curvas. *Commentationes Societatis Regiae Scientiarum
 Gottingensis Recentiores* 6, 99–146.
 
+Gill, R. D. (2023). Optimal statistical analyses of Bell experiments. *Entropy*;
+arXiv:2209.00702.
+
 González-López, A., Kamran, N. and Olver, P. J. (1992). Lie algebras of vector fields in the real plane. *Proceedings of
 the London Mathematical Society* s3-64(2), 339–368.
 
@@ -1068,8 +1097,14 @@ Engineering* BME-30, 125–126.
 Volz, U., Majerus, M., Liebel, H., Schmitt, A. and Schmoranzer, H. (1996). Precision lifetime measurements on NaI
 3p ²P₁/₂ and 3p ²P₃/₂ by beam-gas-laser spectroscopy. *Physical Review Letters* 76, 2862.
 
+Weihs, G., Jennewein, T., Simon, C., Weinfurter, H. and Zeilinger, A. (1998). Violation of Bell's inequality under strict
+Einstein locality conditions. *Physical Review Letters* 81, 5039–5043.
+
 Weisskopf, V. and Wigner, E. (1930). Berechnung der natürlichen Linienbreite auf Grund der Diracschen Lichttheorie.
 *Zeitschrift für Physik* 63, 54–73.
 
 Wigner, E. (1939). On unitary representations of the inhomogeneous Lorentz group. *Annals of Mathematics* 40(1),
 149–204.
+
+Zhang, W., van Leent, T., Redeker, K. et al. (2022). A device-independent quantum key distribution system for distant
+users. *Nature* 607, 687–691.
