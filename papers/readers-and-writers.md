@@ -1870,9 +1870,12 @@ differently"). The read's heat is single-vantage by definition: the Cauchy asks 
 (gravity's take about a mass; the ripple a row of writes leaves under a read, CDW), but no point of its own is picked to
 build it from, so it has no vantage and no facing. It is still not the DHV, which is not physically possible: the DHV is
 a synthesis (R1239, R1240). So the read's heat and a write's heat are the same heat map, derived differently: the read's
-from a point picked and an even turn about it, the write's from the thing itself, from no point. What has no vantage is
-the write's own heat, not the thing: anyone may stand somewhere and read the thing, and that read has a vantage, the
-thing in its paint.
+from a point picked and an even turn about it, the write's from the thing itself, from no point. And the read is not of a
+thing (Tom: "But the read is not for a specific objective, but for their complete visual horizon   there are many
+discrete objects in visual frame"): its heat is one heat over the whole hemisphere in front of the standpoint (R700,
+R701), built about the look, the same whatever is there and however many things (R1107), and the many discrete things in
+view land in it together as paint, each at its own directions. Each of them has its own heat with no vantage; the read
+has one, with a vantage, and holds them all at once. The point picked is where the look falls, not a thing chosen.
 
 *A rock dropped from the hand: reading gravity's effects* (R1241; Tom: "we observe the affects of gravity. dropping a
 rock from your hand. where is read geometry in that", then "yes and merge"). What is observed is gravity's effects, never

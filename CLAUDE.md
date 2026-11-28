@@ -635,7 +635,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   map as well, but we can't pick a point on it, so it has no vantage"; "Agreed, dhv is not actually physically possible.
   It's a synthesis.   So the read heat map and the write heat map are the same but decided derived differently"): **the
   read's heat is SHV by definition; a write's heat has no point picked and no vantage, yet is not the DHV (a synthesis,
-  not physically possible); the two are the same heat map, derived differently.** Generalizes R1240 to any write.
+  not physically possible); the two are the same heat map, derived differently.** Then (Tom: "But the read is not for a
+  specific objective, but for their complete visual horizon"): **a read is not of a thing**: one heat over the whole
+  hemisphere in front, the same however many things are in view, each landing as paint with its own heat and no vantage;
+  the point picked is where the look falls. Generalizes R1240 to any write.
   *Reads and Writes* §7 "A write's heat, from no point picked". **For new writing: never call a thing's own heat the DHV.**
   R1285 (27 Nov; Tom: "Yes, close SEP and do the sweep"): SEP closed (`plans/sep-plan.md`, its counted case exact and
   untested on data; transmission Mössbauer the even-channel case). The R1174–R1179 and R1240 wording carried through the
