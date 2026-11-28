@@ -24,7 +24,7 @@ angles 45° and 135°) is the case.
 ## Data
 
 Weihs et al. 1998 (PRL 81, 5039), Innsbruck, long distance, polarisation-entangled photons. Coincidence counts per
-setting pair and outcome, as summarised in Gill, *Optimal statistical analyses of Bell experiments*
+setting pair and outcome, as summarised in Gill et al., *Optimal statistical analyses of Bell experiments*
 (arXiv:2209.00702). The raw time tags are on Zenodo 7185335 (1.1 GB) and are not used in this run: their coincidence
 windowing is a known analysis choice of its own. The source, licence and sha256 are to be recorded below once fetched.
 If the paper gives no counts per outcome, the run stops and says so.
@@ -94,8 +94,8 @@ bf820b1ebbc71ca97b3f916c25206ee56bd2af41db7a451769087f837aded72b; it is not comm
   and the fair-sampling assumption, and the Weihs data's coincidence marginals are known to vary in this way. A clean P3
   needs singles counted per setting, or an experiment with no such selection.
 
-**Post hoc, not a prediction.** The same script's arithmetic on Zhang et al. 2022 (Munich, event-ready, atoms; Gill et
-al. Appendix F, 1,649 trials), which has no coincidence selection:
+**Post hoc, not a prediction.** The same script's arithmetic on Zhang et al. 2022 (Munich, event-ready, atoms; Gill
+Appendix F, 1,649 trials), which has no coincidence selection:
 - S = 2.578 ± 0.075, 7.7 standard deviations past 2.
 - Every marginal is independent of the other side's setting: z = −1.3, +1.2, −0.4, +0.9.
 - The four v's (0.94, 0.99, 0.85, 0.87, sd about 0.05) sit within a few sd of one mean.
@@ -107,3 +107,5 @@ This fits the reading of P3's kill as the Weihs selection's. It was seen after t
   what reaches |S| > 2, and the data reach it.
 - As the plan said, this confirms Born's rule as the bridge. It is quantum mechanics passing, not the framing apart from
   it.
+
+*Correction (28 Nov):* the paper above the Runs line is cited as "Gill et al."; its sole author is Richard D. Gill.
