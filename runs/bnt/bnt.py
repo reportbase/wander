@@ -1,5 +1,5 @@
 # BNT run 1: Born's weight as the read's share, on Weihs et al. 1998's CHSH counts
-# (as tabulated in Gill et al., arXiv:2209.00702v3, Appendix E). Predictions in plans/bnt-plan.md.
+# (as tabulated in Gill, arXiv:2209.00702v3, Appendix E). Predictions in plans/bnt-plan.md.
 from math import sqrt, erfc
 from scipy.stats import chi2, norm
 

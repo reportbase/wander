@@ -3161,6 +3161,21 @@ Aspden, Padgett and Spalding's frames (2016) the slits' counts, 9,026 : 10,465 a
 1.000, and the measured contrast, 0.69 and 0.56, lies under that bound, short by the source. The bound is the shares',
 the geometry's; how far below it a pattern falls is what arrives. **Checked** (WVP).
 
+**Born's weight, and a Bell test.** A qubit's state is a ray, a direction with no length: a read. With ζ the ratio of
+its two amplitudes, the two outcomes of a measurement get 1/(1 + |ζ|²) and |ζ|²/(1 + |ζ|²): the read's share between its
+two ends (home and the horizon, swapped by the exchange, even at the corner). This is §9's first identity, rational in the
+slope with no angle and no π. Normalisation is the one-length circle, and the Bloch sphere held whole is the DHV. Each
+click is a write and a frequency a count, which tends to the share and is never it. That the count does tend there is
+Born's rule, the bridge; nothing here derives it. The Cauchy is not Born's weight: it is the read's heat over the
+hemisphere, a density that needs π. Read as a share, it would make two sides' outcomes correlate linearly in the angle
+between their analysers, where the read's share makes them correlate as (1 − t²)/(1 + t²), t the half-slope. The two agree
+at 0°, 90° and 180° and part at a Bell test's settings. On Weihs et al.'s 1998 counts (as tabulated by Gill 2023;
+14,573 coincidences), S = 2.728 ± 0.024: the linear share could reach it only with a visibility 30 standard deviations
+past its ceiling of 1, so it is killed, and the read's share reaches it. Predicting one visibility for every setting
+pair, and marginals read from coincidences, were killed by my set-up (the apparatus, and the detection loophole). This is
+quantum mechanics passing. The sort says where each piece sits and adds no mechanism for Bell's correlations.
+**Checked** (BNT).
+
 **Berry's phase.** A spin carried slowly round a closed loop of field directions comes back with two phases (Berry
 1984). The geometric one is half the solid angle the loop of directions encloses: the same taken twice as slowly, in a
 field twice as strong, in an apparatus twice the size. The dynamical one is energy times time and moves with all three.
@@ -3331,7 +3346,7 @@ reads: `plans/pxs-plan.md`, `runs/pxs/`. Formats as text: `plans/txt-plan.md`, `
 reads: `plans/elm-plan.md`, `runs/elm/`. The three loops: `plans/brl-plan.md`, `runs/brl/`. Loops among standpoints: `plans/tlp-plan.md`, `plans/mny-plan.md`, `runs/tlp/`, `runs/mny/`. Student's t between the Cauchy and the Gaussian: `plans/stt-plan.md`, `runs/stt/`. Chaos as the turn added to itself: `plans/chs-plan.md`, `runs/chs/`. The two completions tested blind, and the odd sums: `plans/twc-plan.md`, `runs/twc/`. The distance between
 standpoints: `plans/frg-plan.md`, `runs/frg/frg.py`. A flat chart in space: `plans/flc-plan.md`, `runs/flc/`. Epicycles and
 aimed terms: `plans/epi-plan.md`, `runs/epi/`. The seed kernels: `plans/tcf-plan.md`, `runs/tcf/`. The pull by direction: `plans/grv-plan.md`, `runs/grv/`. Bodies, motion, delay and the cosine weight (§7, items 1, 2 and 4): `plans/gdi-plan.md`, `plans/mvm-plan.md`, `plans/ldl-plan.md`, `plans/acc-plan.md`, `plans/cos-plan.md`, `plans/clm-plan.md`, `plans/lgs-plan.md`, `plans/lns-plan.md`, with `runs/gdi/`, `runs/mvm/`, `runs/ldl/`, `runs/acc/`, `runs/cos/`, `runs/clm/`, `runs/lgs/`, `runs/lns/`; "find the z" in the geomagnetic field, `plans/gmf-plan.md`, `runs/gmf/`. The data cases:
-`plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, `plans/phr-plan.md`, `plans/frd-plan.md`, `plans/kpl-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`, `runs/phr/`, `runs/frd/`, `runs/kpl/`; each records its
+`plans/lgo-plan.md`, `plans/ebd-plan.md`, `plans/wvp-plan.md`, `plans/phr-plan.md`, `plans/frd-plan.md`, `plans/kpl-plan.md`, `plans/bnt-plan.md`, with `runs/lgo/`, `runs/ebd/`, `runs/wvp/`, `runs/phr/`, `runs/frd/`, `runs/kpl/`, `runs/bnt/`; each records its
 runs as they came out, the killed ones too, and none alone establishes the sort. Pages: `read.html`, `pinhole.html`,
 `crosshairs.html`, `heat-cube.html`, `euler.html`, `approach.html`, `slide-rule.html`, `star-field.html`. The read as a
 control: reportbase/calendar (`dial.js`, `dome.js`, `horizon.html`, `dome.html`, `dome-map.html`, `dome-instrument.html`).
@@ -3402,6 +3417,7 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
   Gottingensis Recentiores* 6, 99–146.
 - Gibbs, J. W. (1899). Fourier's series. *Nature* 59, 606.
 - Gibson, J. J. (1979). *The Ecological Approach to Visual Perception.* Houghton Mifflin.
+- Gill, R. D. (2023). Optimal statistical analyses of Bell experiments. *Entropy*; arXiv:2209.00702.
 - Gillessen, S., Plewa, P. M., Eisenhauer, F. et al. (2017). An update on monitoring stellar orbits in the Galactic
   Center. *The Astrophysical Journal* 837, 30.
 - Girard, A. (1629). *Invention nouvelle en l'algèbre.* Blaeuw, Amsterdam.
@@ -3463,6 +3479,8 @@ The mountain walk's two corners and paces: `plans/breath-note.md` §5. The strid
 - Wallis, J. (1656). *Arithmetica infinitorum.* Oxford.
 - Wantzel, P. L. (1837). Recherches sur les moyens de reconnaître si un problème de géométrie peut se résoudre avec la
   règle et le compas. *Journal de Mathématiques Pures et Appliquées* 2, 366–372.
+- Weihs, G., Jennewein, T., Simon, C., Weinfurter, H. and Zeilinger, A. (1998). Violation of Bell's inequality under
+  strict Einstein locality conditions. *Physical Review Letters* 81, 5039–5043.
 - Wigner, E. (1939). On unitary representations of the inhomogeneous Lorentz group. *Annals of Mathematics* 40(1),
   149–204.
 - Wilbraham, H. (1848). On a certain periodic function. *Cambridge and Dublin Mathematical Journal* 3, 198–201.

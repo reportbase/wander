@@ -632,7 +632,7 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   (killed by my method). In *Reads and Writes* §7 and essay 33 §16 (R1275).
   SEP run 4 (`runs/sep/sep4.py`, post hoc `sep4-posthoc.py`; SPN R1279; Tom: "1"): which noise keeps the difficulty to the hyperbolic distance alone: counted noise exactly (draws binned); even-frequency channels 20–29% off; channels even in the turn about i keep its turns exactly and nearby pairs to 0.6–4% (T4 killed by my bound), T2 by its letter. Not in any paper.
   BNT (`plans/bnt-plan.md` + `runs/bnt/bnt.py`, 28 Nov; SPN R1291; Tom: "Merge, then run the test that can fail"): Weihs
-  1998's CHSH counts (Gill et al., arXiv:2209.00702, App. E). The draft's linear (Cauchy) share killed at 30 σ (S = 2.728
+  1998's CHSH counts (Gill, arXiv:2209.00702, App. E). The draft's linear (Cauchy) share killed at 30 σ (S = 2.728
   ± 0.024); Born's half-slope share reaches it. P1 (one visibility) and P3 (coincidence marginals, the detection
   loophole) killed by my set-up; P4 untested. Post hoc Munich 2022: S = 2.58, marginals setting-free.
   R1290 (28 Nov; Tom: "Re-read it against the new framing", of the archived Born draft): `plans/born-reread.md`, Claude's

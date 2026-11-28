@@ -24,7 +24,7 @@ angles 45° and 135°) is the case.
 ## Data
 
 Weihs et al. 1998 (PRL 81, 5039), Innsbruck, long distance, polarisation-entangled photons. Coincidence counts per
-setting pair and outcome, as summarised in Gill et al., *Optimal statistical analyses of Bell experiments*
+setting pair and outcome, as summarised in Gill, *Optimal statistical analyses of Bell experiments*
 (arXiv:2209.00702). The raw time tags are on Zenodo 7185335 (1.1 GB) and are not used in this run: their coincidence
 windowing is a known analysis choice of its own. The source, licence and sha256 are to be recorded below once fetched.
 If the paper gives no counts per outcome, the run stops and says so.
@@ -58,7 +58,7 @@ frequencies at one setting pair scatter binomially (dispersion index within [0.7
 
 ## Runs
 
-**Data, fetched after the predictions above were committed.** Gill, Larsson et al., *Optimal statistical analyses of
+**Data, fetched after the predictions above were committed.** Gill, *Optimal statistical analyses of
 Bell experiments* (arXiv:2209.00702v3, Entropy version of 28 March 2023, CC BY 4.0), Appendix E: the raw counts of
 Weihs et al. 1998 per setting pair and outcome, 14,573 coincidences in all. The PDF's sha256 is
 bf820b1ebbc71ca97b3f916c25206ee56bd2af41db7a451769087f837aded72b; it is not committed. The counts are typed into
@@ -90,7 +90,7 @@ bf820b1ebbc71ca97b3f916c25206ee56bd2af41db7a451769087f837aded72b; it is not comm
   off. With the setting angles free, Born fits any four correlations, so P1 had no edge against the draft that P2 does
   not have. It was a test of the apparatus, not of the share.
 - **P3 is my set-up.** Shares taken from coincidences are selected by both sides detecting. Only about 1 pair in 400
-  gave two detections (Gill et al. §5.5), so the selection can depend on both settings. This is the detection loophole
+  gave two detections (Gill §5.5), so the selection can depend on both settings. This is the detection loophole
   and the fair-sampling assumption, and the Weihs data's coincidence marginals are known to vary in this way. A clean P3
   needs singles counted per setting, or an experiment with no such selection.
 
