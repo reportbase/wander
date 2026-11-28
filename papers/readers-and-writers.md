@@ -1451,6 +1451,17 @@ it was and only the paint changes. N can be counted again, but each count is a n
 So knowing N is a static list, indexed, right as of the count; not knowing it is a list that may be growing, swept, right
 now.
 
+*A circle that cycles is N known* (R1289; Tom: "It's theb same for circles, if you know where the circle cycles, you
+know it's N items."; then "Yes, add it and merge"). To come back to the start is to know how many steps make the round:
+N items on a ring, or the turn's total, 2π, held whole. So a cycle is a known count, and a snapshot like any count. A read
+closes nothing (§1 D2): it runs from home toward a horizon it never meets, and the closed circle is a join of facings, the
+DHV's (§1 "Steps, never positions"). The button rings of draw and games wrap only because they know n, a chip's distance
+from the focus taken the nearer way round, a count mod n, not a turn; the layout along the strip is the read, the wrap the
+known N, and wander's `ring.html` keeps the two apart (its `wrap=1` the count mod N). The exact arithmetic says the same:
+composed slopes come home only when handed the total (PYT: rational half-slopes close only at 0 and 1; BLD: exactly on the
+horizon only at m = 1, Niven). A ring that gains members moves where it closes, and everything laid round it with it. A
+known cycle is a closed list, indexed mod N; an unknown one is a sweep, with no return and no wrap.
+
 **Drawing a shape: circles, a height, a step toward the detail.** A closed outline about a centre can be written as
 circles on circles, its Fourier series: the turns of one standpoint at the centre, evenly. Seen from a height γ, the
 outline is smoothed by the circle's own Cauchy, the wrapped Cauchy, shrinking circle k by e^(−γ|k|) and moving none: the

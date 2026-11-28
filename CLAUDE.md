@@ -631,6 +631,10 @@ Since 6 Oct 2026 (Tom's choice) the site is three files, no build step. Since 13
   Lorentzian fits give J, the CH₂/CH₃ total (1.2%) and the multiplet shares (within 6%); the matrix pencil as built fails
   (killed by my method). In *Reads and Writes* §7 and essay 33 §16 (R1275).
   SEP run 4 (`runs/sep/sep4.py`, post hoc `sep4-posthoc.py`; SPN R1279; Tom: "1"): which noise keeps the difficulty to the hyperbolic distance alone: counted noise exactly (draws binned); even-frequency channels 20–29% off; channels even in the turn about i keep its turns exactly and nearby pairs to 0.6–4% (T4 killed by my bound), T2 by its letter. Not in any paper.
+  R1289 (28 Nov; Tom: "It's theb same for circles, if you know where the circle cycles, you know it's N items.", then
+  "Yes, add it and merge"): **a cycle is a known count**: returning to the start needs the round's count (mod N, or the
+  turn's total held whole), a snapshot; a read closes nothing; the button rings wrap only because they know n. *Reads and
+  Writes* §6 "A circle that cycles is N known"; essay 8 §1.
   R1288 (28 Nov; Tom: "Knowing N means that it is static not growing or decreasing.", then "Yes, add it and merge"): **a
   known N is a snapshot; indexing by it holds the list static**, stale once it grows or shrinks; the sweep's H·s has no
   length in it, so a growing list moves no place reached. *Reads and Writes* §6 "Knowing N is holding the list still".
